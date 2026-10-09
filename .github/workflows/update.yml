@@ -26,6 +26,8 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: main
 
       - name: Установить pdftotext
         run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
@@ -44,7 +46,8 @@ jobs:
             echo "Данные не изменились"
           else
             git commit -q -m "Расписание на $(TZ=Europe/Moscow date '+%d.%m.%Y %H:%M') МСК"
-            git push
+            # пока шёл сбор, в main могли прийти другие коммиты: свои данные важнее
+            for i in 1 2 3; do git pull -q --rebase -X theirs origin main && git push -q && break; sleep 5; done
           fi
 
       - name: Опубликовать сайт (gh-pages)
