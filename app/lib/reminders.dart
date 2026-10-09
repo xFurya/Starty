@@ -44,11 +44,23 @@ class Reminders {
 
   static int _id(String s) => s.hashCode & 0x7fffffff;
 
-  static const _details = NotificationDetails(
+  // два канала: в настройках Android их можно включать и выключать по отдельности
+  static const _segmentDetails = NotificationDetails(
     android: AndroidNotificationDetails(
       'starts',
-      'Старты',
-      channelDescription: 'Начало сегмента и выход спортсмена',
+      'Начало сегмента',
+      channelDescription: 'За 15 минут до начала отмеченного сегмента',
+      importance: Importance.high,
+      priority: Priority.high,
+    ),
+    iOS: DarwinNotificationDetails(),
+  );
+
+  static const _skaterDetails = NotificationDetails(
+    android: AndroidNotificationDetails(
+      'skaters',
+      'Выход спортсмена',
+      channelDescription: 'За 5 минут до выхода отслеживаемого спортсмена',
       importance: Importance.high,
       priority: Priority.high,
     ),
@@ -102,7 +114,7 @@ class Reminders {
           scheduledDate: tz.TZDateTime.from(p.at, tz.UTC),
           title: p.title,
           body: p.body,
-          notificationDetails: _details,
+          notificationDetails: p.key.startsWith('sk:') ? _skaterDetails : _segmentDetails,
           androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
           payload: p.startId,
         );
