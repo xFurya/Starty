@@ -48,7 +48,9 @@ class SettingsView extends StatelessWidget {
     final planned = state.planned;
     return CustomScrollView(
       slivers: [
-        const SliverToBoxAdapter(child: IceHero(eyebrow: 'Фигурное катание', title: 'Настройки', sparkles: 2)),
+        const SliverToBoxAdapter(
+          child: IceHero(eyebrow: 'Фигурное катание', title: 'Настройки', sparkles: 2),
+        ),
 
         // ---------------------------------------------------------- уведомления
         const SliverToBoxAdapter(child: _Head('Уведомления')),
@@ -87,7 +89,7 @@ class SettingsView extends StatelessWidget {
                     _Block(
                       title: 'Виды',
                       child: TileGrid(
-                        children: [
+                        tiles: [
                           for (final k in NotifyRules.allKinds)
                             ChoiceTile(
                               label: kindNames[k]!,
@@ -102,7 +104,7 @@ class SettingsView extends StatelessWidget {
                     _Block(
                       title: 'Уровень',
                       child: TileGrid(
-                        children: [
+                        tiles: [
                           for (final k in NotifyRules.allLevels)
                             ChoiceTile(
                               label: levelNames[k]!,
@@ -116,9 +118,17 @@ class SettingsView extends StatelessWidget {
                     _Block(
                       title: 'Турниры',
                       child: TileGrid(
-                        children: [
-                          ChoiceTile(label: 'Российские', on: r.russian, onTap: () => set(r.copyWith(russian: !r.russian))),
-                          ChoiceTile(label: 'Международные', on: r.intl, onTap: () => set(r.copyWith(intl: !r.intl))),
+                        tiles: [
+                          ChoiceTile(
+                            label: 'Российские',
+                            on: r.russian,
+                            onTap: () => set(r.copyWith(russian: !r.russian)),
+                          ),
+                          ChoiceTile(
+                            label: 'Международные',
+                            on: r.intl,
+                            onTap: () => set(r.copyWith(intl: !r.intl)),
+                          ),
                         ],
                       ),
                     ),
@@ -126,7 +136,7 @@ class SettingsView extends StatelessWidget {
                     _Block(
                       title: 'Программы',
                       child: TileGrid(
-                        children: [
+                        tiles: [
                           ChoiceTile(
                             label: 'Короткая и ритм-танец',
                             on: r.segs.contains('short'),
@@ -191,12 +201,7 @@ class SettingsView extends StatelessWidget {
                   trailing: const _Chevron(),
                 ),
                 const Hairline(),
-                _SwitchRow(
-                  icon: CupertinoIcons.flag,
-                  title: 'Завершённые',
-                  value: state.showDone,
-                  onChanged: state.setShowDone,
-                ),
+                _SwitchRow(icon: CupertinoIcons.flag, title: 'Завершённые', value: state.showDone, onChanged: state.setShowDone),
                 const Hairline(),
                 _Block(
                   title: 'Тема',
@@ -274,7 +279,10 @@ class _Rules extends StatelessWidget {
     child: AnimatedOpacity(
       duration: const Duration(milliseconds: 180),
       opacity: enabled ? 1 : .42,
-      child: ExcludeSemantics(excluding: !enabled, child: Column(children: children)),
+      child: ExcludeSemantics(
+        excluding: !enabled,
+        child: Column(children: children),
+      ),
     ),
   );
 }
@@ -291,7 +299,10 @@ class _RowIcon extends StatelessWidget {
       width: 32,
       height: 32,
       alignment: Alignment.center,
-      decoration: BoxDecoration(color: c.withValues(alpha: p.isDark ? .16 : .10), borderRadius: BorderRadius.circular(10)),
+      decoration: BoxDecoration(
+        color: c.withValues(alpha: p.isDark ? .16 : .10),
+        borderRadius: BorderRadius.circular(10),
+      ),
       child: Icon(icon, size: 17, color: c),
     );
   }
@@ -331,7 +342,10 @@ class _Row extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(title, style: TextStyle(fontSize: 15.5, fontWeight: FontWeight.w600, color: p.ink, height: 1.25)),
+                  Text(
+                    title,
+                    style: TextStyle(fontSize: 15.5, fontWeight: FontWeight.w600, color: p.ink, height: 1.25),
+                  ),
                   if (subtitle != null)
                     Padding(
                       padding: const EdgeInsets.only(top: 2),
@@ -350,7 +364,10 @@ class _Row extends StatelessWidget {
     );
     if (onTap == null) return MergeSemantics(child: body);
     return MergeSemantics(
-      child: Semantics(button: true, child: InkWell(onTap: onTap, child: body)),
+      child: Semantics(
+        button: true,
+        child: InkWell(onTap: onTap, child: body),
+      ),
     );
   }
 }
@@ -386,7 +403,10 @@ class _Block extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: TextStyle(fontSize: 15.5, fontWeight: FontWeight.w600, color: p.ink)),
+          Text(
+            title,
+            style: TextStyle(fontSize: 15.5, fontWeight: FontWeight.w600, color: p.ink),
+          ),
           const SizedBox(height: 10),
           child,
         ],
@@ -453,7 +473,10 @@ class _Value extends StatelessWidget {
     final p = Palette.of(context);
     return Padding(
       padding: const EdgeInsets.only(right: 4),
-      child: Text(text, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink2, fontFeatures: tnum)),
+      child: Text(
+        text,
+        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink2, fontFeatures: tnum),
+      ),
     );
   }
 }

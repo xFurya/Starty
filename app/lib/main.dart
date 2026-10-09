@@ -155,9 +155,7 @@ ThemeData _theme(Brightness b) {
         (s) => s.contains(WidgetState.selected) ? p.onAccent : (p.isDark ? p.ink2 : Colors.white),
       ),
       trackColor: WidgetStateProperty.resolveWith((s) => s.contains(WidgetState.selected) ? p.accent : p.frost),
-      trackOutlineColor: WidgetStateProperty.resolveWith(
-        (s) => s.contains(WidgetState.selected) ? p.accent : p.control,
-      ),
+      trackOutlineColor: WidgetStateProperty.resolveWith((s) => s.contains(WidgetState.selected) ? p.accent : p.control),
       thumbIcon: const WidgetStatePropertyAll(null),
     ),
     progressIndicatorTheme: ProgressIndicatorThemeData(color: p.accent),

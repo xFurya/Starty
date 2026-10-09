@@ -36,120 +36,126 @@ class _StartSheet extends StatelessWidget {
     final past = s.pastAt(t);
     final d = msk(s.t0);
     final (disc, seg) = splitSegment(s.segment);
-    final date = '${cap(weekdays[d.weekday - 1])}, ${d.day} ${months[d.month - 1]}';
+    // «9 октября» не разрывается
+    final date = '${cap(weekdays[d.weekday - 1])}, ${d.day}\u00A0${months[d.month - 1]}';
+    final narrow = MediaQuery.sizeOf(context).width < 360;
     final notify = _notifyRow(context, t);
     return ConstrainedBox(
       constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * .92),
-      child: Stack(
-        children: [
-          SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
+      child: SheetScroll(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // шапка: лёд, турнир, вид и сегмент; растёт вместе со шрифтом
+            Stack(
               children: [
-                // шапка: лёд, турнир, вид и сегмент; растёт вместе со шрифтом
-                Stack(
+                Positioned.fill(child: IceBackdrop(fadeTo: p.sheet, fadeStart: .25, sparkles: 2)),
+                ConstrainedBox(
+                  constraints: const BoxConstraints(minHeight: 132, minWidth: double.infinity),
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(22, 36, 22, 2),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Eyebrow(s.tournament, color: p.accent),
+                          const SizedBox(height: 8),
+                          Text(disc, style: display(p, 42)),
+                          if (seg.isNotEmpty) ...[
+                            const SizedBox(height: 2),
+                            Text(
+                              segNames[seg]!,
+                              style: display(p, 25, italic: true, color: p.ink2, weight: FontWeight.w500),
+                            ),
+                          ],
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            if (past)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(22, 12, 22, 0),
+                child: Text(
+                  '$date · ${hm(s.t0)}–${hm(s.t1)} · завершён',
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: p.ink2, fontFeatures: tnum),
+                ),
+              )
+            else
+              Padding(
+                padding: const EdgeInsets.fromLTRB(22, 16, 22, 0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Positioned.fill(child: IceBackdrop(fadeTo: p.sheet, fadeStart: .25, sparkles: 2)),
-                    ConstrainedBox(
-                      constraints: const BoxConstraints(minHeight: 132, minWidth: double.infinity),
-                      child: Align(
-                        alignment: Alignment.bottomLeft,
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(22, 36, 22, 2),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Eyebrow(s.tournament, color: p.accent),
-                              const SizedBox(height: 8),
-                              Text(disc, style: display(p, 42)),
-                              if (seg.isNotEmpty) ...[
-                                const SizedBox(height: 2),
-                                Text(segNames[seg]!, style: display(p, 25, italic: true, color: p.ink2, weight: FontWeight.w500)),
-                              ],
-                            ],
+                    Text(hm(s.t0), style: clock(live ? p.live : p.ink, narrow ? 44 : 54)),
+                    const SizedBox(width: 14),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          if (live)
+                            const Padding(padding: EdgeInsets.only(bottom: 5), child: LivePill())
+                          else if (s.day == dayKey(t) || s.day == dayKey(t.add(const Duration(days: 1))))
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 3),
+                              child: Text(
+                                whenLabel(s, t),
+                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: p.accent),
+                              ),
+                            ),
+                          Text(
+                            date,
+                            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink),
                           ),
-                        ),
+                          const SizedBox(height: 3),
+                          Text(
+                            'до ${hm(s.t1)} · МСК',
+                            style: TextStyle(fontSize: 13, color: p.ink2, fontFeatures: tnum),
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
-                if (past)
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(22, 12, 22, 0),
-                    child: Text(
-                      '$date · ${hm(s.t0)}–${hm(s.t1)} · завершён',
-                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: p.ink2, fontFeatures: tnum),
-                    ),
-                  )
-                else
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(22, 16, 22, 0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(hm(s.t0), style: clock(live ? p.live : p.ink, 54)),
-                        const SizedBox(width: 14),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              if (live)
-                                const Padding(padding: EdgeInsets.only(bottom: 5), child: LivePill())
-                              else if (s.day == dayKey(t) || s.day == dayKey(t.add(const Duration(days: 1))))
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 3),
-                                  child: Text(
-                                    whenLabel(s, t),
-                                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: p.accent),
-                                  ),
-                                ),
-                              Text(date, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink)),
-                              const SizedBox(height: 3),
-                              Text('до ${hm(s.t1)} · МСК', style: TextStyle(fontSize: 13, color: p.ink2, fontFeatures: tnum)),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                if (notify != null) Padding(padding: const EdgeInsets.only(top: 18), child: notify),
-                if (past) ..._results(context) else ..._oursAhead(context, t),
-                if (s.src.isNotEmpty)
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 24, 16, 0),
-                    child: SheetButton(
-                      neutral: true,
-                      icon: CupertinoIcons.doc_text,
-                      label: 'Протокол',
-                      onTap: () => openProtocol(context, s.src, s.title),
-                    ),
-                  ),
-                _section(
-                  context,
-                  'Подробности',
-                  Plate(
-                    child: Column(
-                      children: [
-                        _InfoRow(
-                          icon: CupertinoIcons.tv,
-                          label: 'Трансляция',
-                          value: s.broadcast.isEmpty ? '—' : s.broadcast.join(' / '),
-                        ),
-                        const Hairline(indent: 52),
-                        // место международных стартов — как в источнике, латиницей
-                        _InfoRow(icon: CupertinoIcons.location, label: 'Место', value: s.venue.isEmpty ? '—' : s.venue),
-                      ],
-                    ),
-                  ),
+              ),
+            if (notify != null) Padding(padding: const EdgeInsets.only(top: 18), child: notify),
+            if (past) ..._results(context) else ..._oursAhead(context, t),
+            if (s.src.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 24, 16, 0),
+                child: SheetButton(
+                  neutral: true,
+                  icon: CupertinoIcons.doc_text,
+                  label: 'Протокол',
+                  onTap: () => openProtocol(context, s.src, s.title),
                 ),
-                SizedBox(height: 26 + MediaQuery.paddingOf(context).bottom),
-              ],
+              ),
+            _section(
+              context,
+              'Подробности',
+              Plate(
+                child: Column(
+                  children: [
+                    _InfoRow(
+                      icon: CupertinoIcons.tv,
+                      label: 'Трансляция',
+                      value: s.broadcast.isEmpty ? '—' : s.broadcast.join(' / '),
+                    ),
+                    const Hairline(indent: 52),
+                    // место международных стартов — как в источнике, латиницей
+                    _InfoRow(icon: CupertinoIcons.location, label: 'Место', value: s.venue.isEmpty ? '—' : s.venue),
+                  ],
+                ),
+              ),
             ),
-          ),
-          const Positioned(top: 0, left: 0, right: 0, child: SheetHandle()),
-        ],
+            SizedBox(height: 26 + MediaQuery.paddingOf(context).bottom),
+          ],
+        ),
       ),
     );
   }
@@ -192,7 +198,7 @@ class _StartSheet extends StatelessWidget {
     return _NotifyPlate(
       icon: on ? CupertinoIcons.bell_fill : CupertinoIcons.bell_slash,
       iconColor: on ? p.accent : p.ink3,
-      title: on ? 'Уведомление в ${hm(at)}' : 'Без уведомления',
+      title: on ? 'Уведомление в\u00A0${hm(at)}' : 'Без уведомления',
       subtitle: state.isException(s) ? 'исключение из правил' : null,
       onTap: () => state.toggleStart(s),
       trailing: ExcludeSemantics(
@@ -218,7 +224,7 @@ class _StartSheet extends StatelessWidget {
         context,
         'Тройка · ${s.seg.isEmpty ? 'сегмент' : s.seg}',
         top3.isEmpty
-            ? const EmptyPlate('Итогов нет')
+            ? const EmptyPlate('Итогов пока нет')
             : Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Podium(list: top3, data: state.data, intl: s.intl),
@@ -233,8 +239,8 @@ class _StartSheet extends StatelessWidget {
             child: Column(
               children: [
                 for (var i = 0; i < rest.length; i++) ...[
-                  if (i > 0) const Hairline(indent: 86),
-                  _OurResult(o: rest[i], seg: s.seg, data: state.data),
+                  if (i > 0) Hairline(indent: rest.any(isPair) ? 92 : 70),
+                  _OurResult(o: rest[i], seg: s.seg, data: state.data, slot: rest.any(isPair)),
                 ],
               ],
             ),
@@ -254,8 +260,8 @@ class _StartSheet extends StatelessWidget {
           child: Column(
             children: [
               for (var i = 0; i < s.ours.length; i++) ...[
-                if (i > 0) const Hairline(indent: 86),
-                _OurAhead(o: s.ours[i], s: s, state: state, t: t),
+                if (i > 0) Hairline(indent: s.ours.any(isPair) ? 92 : 70),
+                _OurAhead(o: s.ours[i], s: s, state: state, t: t, slot: s.ours.any(isPair)),
               ],
             ],
           ),
@@ -322,7 +328,10 @@ class _NotifyPlate extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(title, style: TextStyle(fontSize: 15.5, fontWeight: FontWeight.w700, color: p.ink, fontFeatures: tnum)),
+                        Text(
+                          title,
+                          style: TextStyle(fontSize: 15.5, fontWeight: FontWeight.w700, color: p.ink, fontFeatures: tnum),
+                        ),
                         if (subtitle != null)
                           Padding(
                             padding: const EdgeInsets.only(top: 2),
@@ -361,7 +370,9 @@ class Podium extends StatelessWidget {
           children: [
             for (final pl in order) ...[
               if (pl != order.first) const SizedBox(width: 6),
-              Expanded(child: _Step(x: byPlace[pl]!, data: data, intl: intl)),
+              Expanded(
+                child: _Step(x: byPlace[pl]!, data: data, intl: intl),
+              ),
             ],
           ],
         ),
@@ -467,18 +478,23 @@ class _Step extends StatelessWidget {
             ],
           ),
           child: Stack(
-            alignment: Alignment.center,
+            fit: StackFit.expand,
             children: [
-              if (first) Positioned.fill(child: CustomPaint(painter: SparklePainter(p.isDark ? Colors.white : Palette.iceBlue, p.isDark ? .55 : .35, variant: 1))),
-              Text(
-                '${x.place}',
-                textScaler: TextScaler.noScaling,
-                style: TextStyle(
-                  fontFamily: serif,
-                  fontSize: first ? 44 : 36,
-                  fontWeight: FontWeight.w700,
-                  height: 1.0,
-                  color: numeral(x.place, p.isDark),
+              if (first)
+                CustomPaint(painter: SparklePainter(p.isDark ? Colors.white : Palette.iceBlue, p.isDark ? .6 : .4, variant: 1)),
+              Center(
+                child: Text(
+                  '${x.place}',
+                  textScaler: TextScaler.noScaling,
+                  style: TextStyle(
+                    fontFamily: serif,
+                    fontSize: first ? 46 : 36,
+                    fontWeight: FontWeight.w700,
+                    height: 1.0,
+                    // цифры «в строку»: без выносных элементов, цифра целиком на ступени
+                    fontFeatures: const [FontFeature.liningFigures()],
+                    color: numeral(x.place, p.isDark),
+                  ),
                 ),
               ),
             ],
@@ -503,14 +519,14 @@ class _TotalPlate extends StatelessWidget {
       child: Column(
         children: [
           for (var i = 0; i < rows.length; i++) ...[
-            if (i > 0) const Hairline(indent: 100),
+            if (i > 0) const Hairline(indent: 96),
             Padding(
               padding: const EdgeInsets.fromLTRB(14, 10, 16, 10),
               child: Row(
                 children: [
                   Medal(rows[i].place, size: 26),
                   const SizedBox(width: 10),
-                  Avatar(name: rows[i].name, data: data, size: 36, slot: true),
+                  Avatar(name: rows[i].name, data: data, size: 36, slot: rows.any((x) => x.name.contains(' / '))),
                   const SizedBox(width: 10),
                   Expanded(
                     child: PlacingName(
@@ -540,7 +556,8 @@ class _OurResult extends StatelessWidget {
   final Skater o;
   final String seg;
   final Schedule? data;
-  const _OurResult({required this.o, required this.seg, required this.data});
+  final bool slot;
+  const _OurResult({required this.o, required this.seg, required this.data, required this.slot});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -548,8 +565,8 @@ class _OurResult extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(14, 10, 16, 10),
       child: Row(
         children: [
-          Avatar(name: o.name, data: data, size: 44, slot: true),
-          const SizedBox(width: 10),
+          Avatar(name: o.name, data: data, size: 44, slot: slot),
+          const SizedBox(width: 12),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -563,7 +580,10 @@ class _OurResult extends StatelessWidget {
                 if (o.overall != null)
                   Padding(
                     padding: const EdgeInsets.only(top: 2),
-                    child: Text('итог ${o.overall}', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: p.accent)),
+                    child: Text(
+                      'итог ${o.overall}',
+                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: p.accent),
+                    ),
                   ),
               ],
             ),
@@ -574,7 +594,14 @@ class _OurResult extends StatelessWidget {
             children: [
               Text(
                 o.place == null ? '—' : '${o.place}',
-                style: TextStyle(fontFamily: serif, fontSize: 32, fontWeight: FontWeight.w700, height: 1.0, color: p.ink),
+                style: TextStyle(
+                  fontFamily: serif,
+                  fontSize: 32,
+                  fontWeight: FontWeight.w700,
+                  height: 1.0,
+                  fontFeatures: const [FontFeature.liningFigures()],
+                  color: p.ink,
+                ),
               ),
               if (o.place != null && seg.isNotEmpty) Eyebrow('место · $seg'),
             ],
@@ -591,26 +618,26 @@ class _OurAhead extends StatelessWidget {
   final Start s;
   final AppState state;
   final DateTime t;
-  const _OurAhead({required this.o, required this.s, required this.state, required this.t});
+  final bool slot;
+  const _OurAhead({required this.o, required this.s, required this.state, required this.t, required this.slot});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     final skate = s.skateAt(o);
     final skated = o.place != null || (skate != null && skate.add(const Duration(minutes: 4)).isBefore(t));
-    final meta = [
-      if (o.no != null) '№ ${o.no}',
-      if (o.warmup != null) 'разминка ${o.warmup}',
-    ];
+    final meta = [if (o.no != null) '№ ${o.no}', if (o.warmup != null) 'разминка ${o.warmup}'];
     if (meta.isEmpty && o.time == null) meta.add('порядок не объявлен');
     // отдельное уведомление о выходе — когда оно и правда стоит в плане
     final alertAt = skate?.subtract(Duration(minutes: state.rules.lead));
-    final alert = state.rules.skaters && state.notifies(s) && alertAt != null && alertAt.isAfter(t) ? 'уведомление в ${hm(alertAt)}' : null;
+    final alert = state.rules.skaters && state.notifies(s) && alertAt != null && alertAt.isAfter(t)
+        ? 'уведомление в ${hm(alertAt)}'
+        : null;
     return Padding(
       padding: const EdgeInsets.fromLTRB(14, 10, 16, 10),
       child: Row(
         children: [
-          Avatar(name: o.name, data: state.data, size: 44, slot: true),
-          const SizedBox(width: 10),
+          Avatar(name: o.name, data: state.data, size: 44, slot: slot),
+          const SizedBox(width: 12),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -627,13 +654,26 @@ class _OurAhead extends StatelessWidget {
                     child: Text(meta.join(' · '), style: TextStyle(fontSize: 13, color: p.ink2, height: 1.35)),
                   ),
                 if (alert != null)
-                  Text(alert, style: TextStyle(fontSize: 13, color: p.accent, fontWeight: FontWeight.w600, height: 1.35)),
+                  Text(
+                    alert,
+                    style: TextStyle(fontSize: 13, color: p.accent, fontWeight: FontWeight.w600, height: 1.35),
+                  ),
               ],
             ),
           ),
           const SizedBox(width: 10),
           if (o.place != null)
-            Text('${o.place}', style: TextStyle(fontFamily: serif, fontSize: 30, fontWeight: FontWeight.w700, height: 1, color: p.ink2))
+            Text(
+              '${o.place}',
+              style: TextStyle(
+                fontFamily: serif,
+                fontSize: 30,
+                fontWeight: FontWeight.w700,
+                height: 1,
+                fontFeatures: const [FontFeature.liningFigures()],
+                color: p.ink2,
+              ),
+            )
           else if (o.time != null)
             Text(o.time!, style: clock(skated ? p.ink2 : p.ink, 24, weight: FontWeight.w400)),
         ],
@@ -743,7 +783,7 @@ class _FilterSheetState extends State<_FilterSheet> {
                 const Eyebrow('Вид'),
                 const SizedBox(height: 10),
                 TileGrid(
-                  children: [
+                  tiles: [
                     for (final k in kindNames.entries)
                       ChoiceTile(
                         label: k.value,
@@ -883,7 +923,12 @@ class _CheckRow extends StatelessWidget {
                 Expanded(
                   child: Text(
                     title,
-                    style: TextStyle(fontSize: 15, color: p.ink, fontWeight: value ? FontWeight.w600 : FontWeight.w500, height: 1.3),
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: p.ink,
+                      fontWeight: value ? FontWeight.w600 : FontWeight.w500,
+                      height: 1.3,
+                    ),
                   ),
                 ),
                 const SizedBox(width: 12),

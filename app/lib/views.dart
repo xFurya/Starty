@@ -20,9 +20,7 @@ String dayTitle(String key) {
 String daySub(String key) {
   final t = now();
   final d = DateTime.parse(key);
-  if (key == dayKey(t) ||
-      key == dayKey(t.add(const Duration(days: 1))) ||
-      key == dayKey(t.subtract(const Duration(days: 1)))) {
+  if (key == dayKey(t) || key == dayKey(t.add(const Duration(days: 1))) || key == dayKey(t.subtract(const Duration(days: 1)))) {
     return '${weekdaysShort[d.weekday - 1]}, ${d.day} ${months[d.month - 1]}';
   }
   return '';
@@ -111,7 +109,7 @@ class FeedView extends StatelessWidget {
     final soon = todayNext.isEmpty ? null : todayNext.first.id;
     final out = <Widget>[];
     if (live.isNotEmpty || todayNext.isNotEmpty || done.isNotEmpty) {
-      out.add(const DayHeader(day: null, top: 14));
+      out.add(const DayHeader(day: null, top: 10));
       for (final s in live) {
         out.add(LiveCard(start: s, state: state));
       }
@@ -126,7 +124,7 @@ class FeedView extends StatelessWidget {
     void flush() {
       final d = day;
       if (d == null || rows.isEmpty) return;
-      out.add(DayHeader(day: d, top: out.isEmpty ? 14 : 26));
+      out.add(DayHeader(day: d, top: out.isEmpty ? 10 : 26));
       out.add(DayPlate(starts: rows, state: state));
     }
 
@@ -162,7 +160,14 @@ class FrostLine extends StatelessWidget {
   final String text;
   final String action;
   final VoidCallback onAction;
-  const FrostLine({super.key, required this.icon, required this.text, required this.action, required this.onAction, this.iconColor});
+  const FrostLine({
+    super.key,
+    required this.icon,
+    required this.text,
+    required this.action,
+    required this.onAction,
+    this.iconColor,
+  });
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -256,8 +261,8 @@ String tournamentName(AppState s, String tid) {
   return tid;
 }
 
-/// Ширина колонки времени в строках.
-const timeCol = 88.0;
+/// Ширина колонки времени в строках; на узком экране — уже.
+double timeColOf(BuildContext context) => MediaQuery.sizeOf(context).width < 360 ? 74 : 88;
 
 /// Заголовок дня: «Сегодня  пт, 9 октября ———». Подпись даты — с многоточием, если тесно.
 class DayHeader extends StatelessWidget {
@@ -330,7 +335,9 @@ class DayPlate extends StatelessWidget {
       }
       children.add(StartTile(start: s, state: state, showTournament: false, countdown: s.id == soon));
     }
-    return Plate(child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: children));
+    return Plate(
+      child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: children),
+    );
   }
 }
 
@@ -396,7 +403,7 @@ class StartTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              width: timeCol,
+              width: timeColOf(context),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -443,7 +450,7 @@ class StartTile extends StatelessWidget {
                     ),
                   ],
                   if (shown.isNotEmpty) const SizedBox(height: 12),
-                  for (final o in shown) OursLine(o: o, data: state.data),
+                  for (final o in shown) OursLine(o: o, data: state.data, slot: shown.any(isPair), times: shown.any(hasSlotTime)),
                   if (ours.length > shown.length)
                     Padding(
                       padding: const EdgeInsets.only(top: 2),
@@ -460,11 +467,20 @@ class StartTile extends StatelessWidget {
 }
 
 /// Наш спортсмен в строке: время выхода, фото, фамилия.
+bool isPair(Skater o) => o.name.contains(' / ');
+bool hasSlotTime(Skater o) => o.time != null || o.no != null;
+
 class OursLine extends StatelessWidget {
   final Skater o;
   final Schedule? data;
   final bool onDark;
-  const OursLine({super.key, required this.o, required this.data, this.onDark = false});
+
+  /// Есть пары рядом — место под аватар одной ширины, имена в столбик ровно.
+  final bool slot;
+
+  /// Колонка времени: нет ни времени, ни номера ни у кого в списке — колонки нет.
+  final bool times;
+  const OursLine({super.key, required this.o, required this.data, this.onDark = false, this.slot = false, this.times = true});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -473,42 +489,52 @@ class OursLine extends StatelessWidget {
     final left = o.time ?? (o.no != null ? '№ ${o.no}' : '—');
     // колонка времени растёт вместе со шрифтом: «19:30» не переносится
     final col = MediaQuery.textScalerOf(context).scale(50);
+    final style = TextStyle(fontSize: 14.5, color: ink, height: 1.25);
+    final warm = o.time == null && o.warmup != null ? '  разминка ${o.warmup}' : '';
     return Padding(
       padding: const EdgeInsets.only(bottom: 6),
       child: Row(
         children: [
-          SizedBox(
-            width: col,
-            child: Text(
-              left,
-              maxLines: 1,
-              softWrap: false,
-              overflow: TextOverflow.fade,
-              style: TextStyle(
-                fontSize: o.time != null ? 14.5 : 13,
-                fontWeight: o.time != null ? FontWeight.w700 : FontWeight.w500,
-                color: o.time != null ? ink : ink2,
-                fontFeatures: tnum,
+          if (times)
+            SizedBox(
+              width: col,
+              child: Text(
+                left,
+                maxLines: 1,
+                softWrap: false,
+                overflow: TextOverflow.fade,
+                style: TextStyle(
+                  fontSize: o.time != null ? 14.5 : 13,
+                  fontWeight: o.time != null ? FontWeight.w700 : FontWeight.w500,
+                  color: o.time != null ? ink : ink2,
+                  fontFeatures: tnum,
+                ),
               ),
             ),
-          ),
-          Avatar(name: o.name, data: data, size: 26, slot: true, ring: onDark ? const Color(0xFF1B4F86) : null),
+          Avatar(name: o.name, data: data, size: 26, slot: slot, ring: onDark ? const Color(0xFF1B4F86) : null),
           const SizedBox(width: 8),
           Expanded(
-            child: Text.rich(
-              TextSpan(
-                children: [
-                  TextSpan(text: o.short),
-                  if (o.time == null && o.warmup != null)
-                    TextSpan(
-                      text: '  разминка ${o.warmup}',
-                      style: TextStyle(color: ink2, fontSize: 12.5),
-                    ),
-                ],
-              ),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontSize: 14.5, color: ink, height: 1.25),
+            child: LayoutBuilder(
+              builder: (context, c) {
+                // не помещается имя с фамилией — только фамилия, а не «Александра Трусо…»
+                final full = o.short;
+                final name = textWidth(context, full, style) <= c.maxWidth ? full : surname(o.name);
+                return Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(text: name),
+                      if (warm.isNotEmpty)
+                        TextSpan(
+                          text: warm,
+                          style: TextStyle(color: ink2, fontSize: 12.5),
+                        ),
+                    ],
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: style,
+                );
+              },
             ),
           ),
         ],
@@ -618,7 +644,10 @@ class LiveCard extends StatelessWidget {
                     const SizedBox(height: 10),
                     Text(disc, style: display(Palette.light, 36, color: white)),
                     if (seg.isNotEmpty)
-                      Text(segNames[seg]!, style: display(Palette.light, 22, italic: true, color: dim, weight: FontWeight.w500)),
+                      Text(
+                        segNames[seg]!,
+                        style: display(Palette.light, 22, italic: true, color: dim, weight: FontWeight.w500),
+                      ),
                     const SizedBox(height: 8),
                     Text(
                       metaLine(s),
@@ -627,12 +656,22 @@ class LiveCard extends StatelessWidget {
                       style: TextStyle(fontSize: 13.5, color: dim),
                     ),
                     if (rest.isNotEmpty) ...[
-                      Container(height: 1, margin: const EdgeInsets.fromLTRB(0, 14, 0, 12), color: Colors.white.withValues(alpha: .16)),
+                      Container(
+                        height: 1,
+                        margin: const EdgeInsets.fromLTRB(0, 14, 0, 12),
+                        color: Colors.white.withValues(alpha: .16),
+                      ),
                       Eyebrow('Наши · впереди', color: Colors.white.withValues(alpha: .7)),
                       const SizedBox(height: 8),
-                      for (final o in rest.take(4)) OursLine(o: o, data: state.data, onDark: true),
-                      if (rest.length > 4)
-                        Text('ещё ${rest.length - 4}', style: TextStyle(fontSize: 13, color: dim)),
+                      for (final o in rest.take(4))
+                        OursLine(
+                          o: o,
+                          data: state.data,
+                          onDark: true,
+                          slot: rest.take(4).any(isPair),
+                          times: rest.any(hasSlotTime),
+                        ),
+                      if (rest.length > 4) Text('ещё ${rest.length - 4}', style: TextStyle(fontSize: 13, color: dim)),
                     ],
                   ],
                 ),
@@ -672,7 +711,7 @@ class PastTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  width: timeCol,
+                  width: timeColOf(context),
                   child: Padding(
                     padding: const EdgeInsets.only(top: 1, right: 8),
                     child: FittedBox(
@@ -702,9 +741,9 @@ class PastTile extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(left: timeCol, top: 10),
+              padding: EdgeInsets.only(left: timeColOf(context), top: 10),
               child: top.isEmpty
-                  ? Text('Итогов нет', style: TextStyle(fontSize: 13.5, color: p.ink2))
+                  ? Text('Итогов пока нет', style: TextStyle(fontSize: 13.5, color: p.ink2))
                   : Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -784,7 +823,9 @@ class MiniPodium extends StatelessWidget {
               children: [
                 Medal(x.place, size: 22),
                 const SizedBox(width: 10),
-                Expanded(child: PlacingName(x: x, intl: intl, short: true, size: 14)),
+                Expanded(
+                  child: PlacingName(x: x, intl: intl, short: true, size: 14),
+                ),
                 if (x.points.isNotEmpty) ...[
                   const SizedBox(width: 8),
                   Text(x.points, style: clock(p.ink2, 14, weight: FontWeight.w500)),
@@ -836,7 +877,11 @@ class EmptyState extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(text, textAlign: TextAlign.center, style: display(p, 26, italic: true, color: p.ink2)),
+            Text(
+              text,
+              textAlign: TextAlign.center,
+              style: display(p, 26, italic: true, color: p.ink2),
+            ),
             if (action != null) ...[
               const SizedBox(height: 14),
               OutlinedButton(
@@ -978,7 +1023,10 @@ class _MonthViewState extends State<MonthView> {
     final sel = key == selected;
     final isToday = key == today;
     final past = key.compareTo(today) < 0;
-    final kinds = [for (final k in _order) if (list.any((s) => s.kind == k)) k];
+    final kinds = [
+      for (final k in _order)
+        if (list.any((s) => s.kind == k)) k,
+    ];
     final other = list.any((s) => !_order.contains(s.kind));
     return Expanded(
       child: Semantics(
@@ -1025,10 +1073,7 @@ class _MonthViewState extends State<MonthView> {
                   height: 5,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      for (final k in kinds) _dot(p.kind(k), past),
-                      if (other) _dot(p.ink3, past),
-                    ],
+                    children: [for (final k in kinds) _dot(p.kind(k), past), if (other) _dot(p.ink3, past)],
                   ),
                 ),
               ],
@@ -1062,9 +1107,16 @@ class _Legend extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Container(width: 7, height: 7, decoration: BoxDecoration(shape: BoxShape.circle, color: p.kind(e.key))),
+              Container(
+                width: 7,
+                height: 7,
+                decoration: BoxDecoration(shape: BoxShape.circle, color: p.kind(e.key)),
+              ),
               const SizedBox(width: 6),
-              Text(e.value, style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w500, color: p.ink2)),
+              Text(
+                e.value,
+                style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w500, color: p.ink2),
+              ),
             ],
           ),
       ],

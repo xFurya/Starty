@@ -27,14 +27,8 @@ TextStyle display(Palette p, double size, {bool italic = false, Color? color, Fo
 );
 
 /// Время: цифры одинаковой ширины.
-TextStyle clock(Color color, double size, {FontWeight weight = FontWeight.w300}) => TextStyle(
-  fontSize: size,
-  fontWeight: weight,
-  height: 1.0,
-  letterSpacing: -.6,
-  color: color,
-  fontFeatures: tnum,
-);
+TextStyle clock(Color color, double size, {FontWeight weight = FontWeight.w300}) =>
+    TextStyle(fontSize: size, fontWeight: weight, height: 1.0, letterSpacing: -.6, color: color, fontFeatures: tnum);
 
 // ------------------------------------------------------------------ слова
 
@@ -52,12 +46,7 @@ String plural(int n, String one, String few, String many) {
 const kindNames = {'women': 'Женщины', 'men': 'Мужчины', 'pairs': 'Пары', 'dance': 'Танцы'};
 const levelNames = {'senior': 'Взрослые', 'junior': 'Юниоры'};
 
-const segNames = {
-  'КП': 'короткая программа',
-  'ПП': 'произвольная программа',
-  'РТ': 'ритм-танец',
-  'ПТ': 'произвольный танец',
-};
+const segNames = {'КП': 'короткая программа', 'ПП': 'произвольная программа', 'РТ': 'ритм-танец', 'ПТ': 'произвольный танец'};
 
 /// «юниорские танцы ПТ» → («Юниорские танцы», «ПТ»).
 (String, String) splitSegment(String segment) {
@@ -72,10 +61,8 @@ String _title(String w) => w.isEmpty ? w : w[0] + w.substring(1).toLowerCase();
 bool _capsWord(String w) => w.length > 1 && w == w.toUpperCase() && RegExp(r'[A-ZА-ЯЁ]').hasMatch(w);
 
 /// «Kaori SAKAMOTO» → «Kaori Sakamoto»; русские имена без изменений.
-String displayName(String name) => name
-    .split(' / ')
-    .map((n) => n.trim().split(RegExp(r'\s+')).map((w) => _capsWord(w) ? _title(w) : w).join(' '))
-    .join(' / ');
+String displayName(String name) =>
+    name.split(' / ').map((n) => n.trim().split(RegExp(r'\s+')).map((w) => _capsWord(w) ? _title(w) : w).join(' ')).join(' / ');
 
 /// Только фамилии: «Бойкова / Козловский», «Sakamoto».
 String surname(String name) => name
@@ -169,8 +156,11 @@ class Hairline extends StatelessWidget {
   final double indent;
   const Hairline({super.key, this.indent = 16});
   @override
-  Widget build(BuildContext context) =>
-      Container(height: 1, margin: EdgeInsets.only(left: indent), color: Palette.of(context).line);
+  Widget build(BuildContext context) => Container(
+    height: 1,
+    margin: EdgeInsets.only(left: indent),
+    color: Palette.of(context).line,
+  );
 }
 
 /// Подпись раздела: мелкие прописные.
@@ -191,7 +181,14 @@ class Eyebrow extends StatelessWidget {
     );
     return Padding(
       padding: padding,
-      child: trailing == null ? label : Row(children: [Expanded(child: label), trailing!]),
+      child: trailing == null
+          ? label
+          : Row(
+              children: [
+                Expanded(child: label),
+                trailing!,
+              ],
+            ),
     );
   }
 }
@@ -214,7 +211,7 @@ class IceHero extends StatelessWidget {
     required this.title,
     this.titleSize = 44,
     this.actions = const [],
-    this.height = 112,
+    this.height = 100,
     this.figure = false,
     this.sparkles = 0,
   });
@@ -225,7 +222,9 @@ class IceHero extends StatelessWidget {
     final top = MediaQuery.paddingOf(context).top;
     return Stack(
       children: [
-        Positioned.fill(child: IceBackdrop(fadeTo: p.bg, sparkles: figure ? -1 : sparkles)),
+        Positioned.fill(
+          child: IceBackdrop(fadeTo: p.bg, sparkles: figure ? -1 : sparkles),
+        ),
         if (figure)
           Positioned(
             right: 64,
@@ -244,7 +243,8 @@ class IceHero extends StatelessWidget {
           child: Align(
             alignment: Alignment.bottomLeft,
             child: Padding(
-              padding: EdgeInsets.fromLTRB(20, top + (actions.isEmpty ? 16 : 56), 20, 8),
+              // кнопки справа вверху; подпись сезона — слева на их уровне, название — ниже кнопок
+              padding: EdgeInsets.fromLTRB(20, top + (actions.isEmpty ? 16 : 26), 20, 8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
@@ -309,12 +309,18 @@ class IceBackdrop extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               stops: [0, fadeStart, 1],
-              colors: [fadeTo.withValues(alpha: p.isDark ? .25 : .0), fadeTo.withValues(alpha: p.isDark ? .35 : .15), fadeTo],
+              colors: [
+                fadeTo.withValues(alpha: p.isDark ? .25 : .0),
+                fadeTo.withValues(alpha: p.isDark ? .35 : .15),
+                fadeTo,
+              ],
             ),
           ),
         ),
         if (sparkles >= 0)
-          CustomPaint(painter: SparklePainter(p.isDark ? Colors.white : Palette.iceBlue, p.isDark ? .85 : .45, variant: sparkles)),
+          CustomPaint(
+            painter: SparklePainter(p.isDark ? Colors.white : Palette.iceBlue, p.isDark ? .85 : .45, variant: sparkles),
+          ),
       ],
     );
   }
@@ -389,6 +395,58 @@ class SheetHandle extends StatelessWidget {
   }
 }
 
+/// Прокрутка листа с закреплённой ручкой: при прокрутке под ручкой — дымка цвета листа,
+/// текст уходит под неё, а не под саму ручку.
+class SheetScroll extends StatefulWidget {
+  final Widget child;
+  const SheetScroll({super.key, required this.child});
+  @override
+  State<SheetScroll> createState() => _SheetScrollState();
+}
+
+class _SheetScrollState extends State<SheetScroll> {
+  bool scrolled = false;
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Stack(
+      children: [
+        NotificationListener<ScrollNotification>(
+          onNotification: (n) {
+            final s = n.metrics.pixels > 2;
+            if (s != scrolled) setState(() => scrolled = s);
+            return false;
+          },
+          child: SingleChildScrollView(child: widget.child),
+        ),
+        Positioned(
+          top: 0,
+          left: 0,
+          right: 0,
+          child: IgnorePointer(
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 150),
+              opacity: scrolled ? 1 : 0,
+              child: Container(
+                height: 30,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    stops: const [.6, 1],
+                    colors: [p.sheet, p.sheet.withValues(alpha: 0)],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+        const Positioned(top: 0, left: 0, right: 0, child: SheetHandle()),
+      ],
+    );
+  }
+}
+
 /// Кнопка листа 52 px: залитая (акцент) или с окантовкой. Без onTap — неактивна.
 class SheetButton extends StatelessWidget {
   final bool filled;
@@ -453,7 +511,9 @@ class SheetButton extends StatelessWidget {
                   if (compact)
                     text
                   else
-                    Flexible(child: FittedBox(fit: BoxFit.scaleDown, child: text)),
+                    Flexible(
+                      child: FittedBox(fit: BoxFit.scaleDown, child: text),
+                    ),
                 ],
               ),
             ),
@@ -531,9 +591,24 @@ class MutedBell extends StatelessWidget {
     final p = Palette.of(context);
     return Semantics(
       label: 'Без уведомления',
-      child: Icon(CupertinoIcons.bell_slash, size: size, color: p.ink3.withValues(alpha: p.isDark ? .9 : .85)),
+      child: Icon(
+        CupertinoIcons.bell_slash,
+        size: size,
+        color: p.ink3.withValues(alpha: p.isDark ? .9 : .85),
+      ),
     );
   }
+}
+
+/// Ширина строки текста при текущем масштабе шрифта.
+double textWidth(BuildContext context, String text, TextStyle style) {
+  final tp = TextPainter(
+    text: TextSpan(text: text, style: DefaultTextStyle.of(context).style.merge(style)),
+    textDirection: TextDirection.ltr,
+    maxLines: 1,
+    textScaler: MediaQuery.textScalerOf(context),
+  )..layout();
+  return tp.width;
 }
 
 /// Плитка выбора: цветная точка (необязательно), подпись, галочка. Равные плитки сеткой.
@@ -542,19 +617,34 @@ class ChoiceTile extends StatelessWidget {
   final bool on;
   final Color? color;
   final VoidCallback? onTap;
-  const ChoiceTile({super.key, required this.label, required this.on, required this.onTap, this.color});
+
+  /// Узкая плитка: поля и значки меньше, подпись того же размера.
+  final bool dense;
+  const ChoiceTile({super.key, required this.label, required this.on, required this.onTap, this.color, this.dense = false});
+
+  static const fontSize = 14.5;
+  static TextStyle styleOf(bool on, Color ink) =>
+      TextStyle(fontSize: fontSize, height: 1.2, fontWeight: on ? FontWeight.w700 : FontWeight.w500, color: ink);
+
+  /// Сколько места займёт всё, кроме подписи.
+  static double chrome({required bool dot, required bool dense}) =>
+      (dense ? 9 + 7 : 12 + 10) + (dot ? (dense ? 13 : 18) : 0) + (dense ? 4 + 18 : 6 + 20) + 2.8;
+
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     final c = color ?? p.accent;
+    // нейтральные плитки (уровень, турниры) — тише цветных
+    final edge = on ? c.withValues(alpha: color == null ? .5 : .85) : p.plateLine;
+    final check = dense ? 18.0 : 20.0;
     return Semantics(
       checked: on,
       button: true,
       child: Material(
-        color: on ? c.withValues(alpha: p.isDark ? .16 : .09) : p.plate,
+        color: on ? c.withValues(alpha: p.isDark ? .14 : (color == null ? .05 : .07)) : p.plate,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
-          side: BorderSide(color: on ? c : p.plateLine, width: on ? 1.6 : 1.2),
+          side: BorderSide(color: edge, width: 1.4),
         ),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
@@ -562,37 +652,33 @@ class ChoiceTile extends StatelessWidget {
           child: ConstrainedBox(
             constraints: const BoxConstraints(minHeight: 50),
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(13, 8, 10, 8),
+              padding: EdgeInsets.fromLTRB(dense ? 9 : 12, 8, dense ? 7 : 10, 8),
               child: Row(
                 children: [
                   if (color != null) ...[
-                    Container(width: 10, height: 10, decoration: BoxDecoration(shape: BoxShape.circle, color: c)),
-                    const SizedBox(width: 10),
+                    Container(
+                      width: dense ? 7 : 9,
+                      height: dense ? 7 : 9,
+                      decoration: BoxDecoration(shape: BoxShape.circle, color: c),
+                    ),
+                    SizedBox(width: dense ? 6 : 9),
                   ],
                   Expanded(
-                    child: Text(
-                      label,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontSize: 15,
-                        height: 1.2,
-                        fontWeight: on ? FontWeight.w700 : FontWeight.w500,
-                        color: p.ink,
-                      ),
-                    ),
+                    child: Text(label, maxLines: 2, overflow: TextOverflow.ellipsis, style: styleOf(on, p.ink)),
                   ),
-                  const SizedBox(width: 6),
+                  SizedBox(width: dense ? 4 : 6),
                   AnimatedContainer(
                     duration: const Duration(milliseconds: 140),
-                    width: 22,
-                    height: 22,
+                    width: check,
+                    height: check,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: on ? c : Colors.transparent,
                       border: Border.all(color: on ? c : p.control, width: 1.4),
                     ),
-                    child: on ? Icon(CupertinoIcons.checkmark_alt, size: 15, color: p.isDark ? p.bg : Colors.white) : null,
+                    child: on
+                        ? Icon(CupertinoIcons.checkmark_alt, size: check * .7, color: p.isDark ? p.bg : Colors.white)
+                        : null,
                   ),
                 ],
               ),
@@ -604,33 +690,51 @@ class ChoiceTile extends StatelessWidget {
   }
 }
 
-/// Плитки по две в ряд, равной ширины и высоты.
+/// Плитки по две в ряд, равной ширины и высоты. Если слово подписи не помещается
+/// в половину ширины даже в узкой плитке — плитки в один столбец: по буквам не переносим.
 class TileGrid extends StatelessWidget {
-  final List<Widget> children;
-  const TileGrid({super.key, required this.children});
+  final List<ChoiceTile> tiles;
+  const TileGrid({super.key, required this.tiles});
   @override
-  Widget build(BuildContext context) {
-    final rows = <Widget>[];
-    for (var i = 0; i < children.length; i += 2) {
-      if (i > 0) rows.add(const SizedBox(height: 8));
-      rows.add(
-        IntrinsicHeight(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(child: children[i]),
-              const SizedBox(width: 8),
-              Expanded(child: i + 1 < children.length ? children[i + 1] : const SizedBox()),
-            ],
-          ),
-        ),
-      );
-    }
-    return Column(children: rows);
-  }
+  Widget build(BuildContext context) => LayoutBuilder(
+    builder: (context, c) {
+      const gap = 8.0;
+      final half = (c.maxWidth - gap) / 2;
+      double longestWord(ChoiceTile t) => t.label
+          .split(' ')
+          .map((w) => textWidth(context, w, ChoiceTile.styleOf(true, Colors.black)))
+          .fold(0.0, (a, b) => a > b ? a : b);
+      bool fits(bool dense) => tiles.every((t) => longestWord(t) <= half - ChoiceTile.chrome(dot: t.color != null, dense: dense));
+      final dense = !fits(false);
+      final cols = !dense || fits(true) ? 2 : 1;
+      final list = [
+        for (final t in tiles) ChoiceTile(label: t.label, on: t.on, onTap: t.onTap, color: t.color, dense: dense && cols == 2),
+      ];
+      final rows = <Widget>[];
+      for (var i = 0; i < list.length; i += cols) {
+        if (i > 0) rows.add(const SizedBox(height: gap));
+        rows.add(
+          cols == 1
+              ? list[i]
+              : IntrinsicHeight(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Expanded(child: list[i]),
+                      const SizedBox(width: gap),
+                      Expanded(child: i + 1 < list.length ? list[i + 1] : const SizedBox()),
+                    ],
+                  ),
+                ),
+        );
+      }
+      return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: rows);
+    },
+  );
 }
 
 /// Выбор одного из нескольких: ледяная дорожка, выбранное — белая плашка.
+/// Подписи одного размера: если не помещаются — уменьшаются все вместе.
 class Segmented<T> extends StatelessWidget {
   final List<(T, String)> items;
   final T value;
@@ -639,55 +743,72 @@ class Segmented<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    return Container(
-      padding: const EdgeInsets.all(3),
-      decoration: BoxDecoration(
-        color: p.frost,
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: p.plateLine),
-      ),
-      child: Row(
-        children: [
-          for (final (v, label) in items)
-            Expanded(
-              child: Semantics(
-                selected: v == value,
-                button: true,
-                child: GestureDetector(
-                  behavior: HitTestBehavior.opaque,
-                  onTap: onChanged == null ? null : () => onChanged!(v),
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 160),
-                    constraints: const BoxConstraints(minHeight: 40),
-                    alignment: Alignment.center,
-                    padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: v == value ? p.plate : Colors.transparent,
-                      borderRadius: BorderRadius.circular(11),
-                      border: v == value ? Border.all(color: p.accent.withValues(alpha: .55)) : null,
-                      boxShadow: v == value && !p.isDark
-                          ? [BoxShadow(color: Palette.deepBlue.withValues(alpha: .08), blurRadius: 6, offset: const Offset(0, 2))]
-                          : null,
-                    ),
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        label,
-                        maxLines: 1,
-                        style: TextStyle(
-                          fontSize: 14.5,
-                          fontWeight: v == value ? FontWeight.w700 : FontWeight.w500,
-                          color: v == value ? p.accent : p.ink2,
-                          fontFeatures: tnum,
+    return LayoutBuilder(
+      builder: (context, c) {
+        const base = 14.5;
+        final seg = (c.maxWidth - 8) / items.length - 10;
+        final widest = items
+            .map(
+              (x) => textWidth(context, x.$2, const TextStyle(fontSize: base, fontWeight: FontWeight.w700, fontFeatures: tnum)),
+            )
+            .fold(0.0, (a, b) => a > b ? a : b);
+        final size = widest > seg ? (base * seg / widest).clamp(11.0, base) : base;
+        return Container(
+          padding: const EdgeInsets.all(3),
+          decoration: BoxDecoration(
+            color: p.frost,
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(color: p.plateLine),
+          ),
+          child: Row(
+            children: [
+              for (final (v, label) in items)
+                Expanded(
+                  child: Semantics(
+                    selected: v == value,
+                    button: true,
+                    child: GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: onChanged == null ? null : () => onChanged!(v),
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 160),
+                        constraints: const BoxConstraints(minHeight: 40),
+                        alignment: Alignment.center,
+                        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
+                        decoration: BoxDecoration(
+                          color: v == value ? p.plate : Colors.transparent,
+                          borderRadius: BorderRadius.circular(11),
+                          border: v == value ? Border.all(color: p.accent.withValues(alpha: .55)) : null,
+                          boxShadow: v == value && !p.isDark
+                              ? [
+                                  BoxShadow(
+                                    color: Palette.deepBlue.withValues(alpha: .08),
+                                    blurRadius: 6,
+                                    offset: const Offset(0, 2),
+                                  ),
+                                ]
+                              : null,
+                        ),
+                        child: Text(
+                          label,
+                          maxLines: 1,
+                          softWrap: false,
+                          overflow: TextOverflow.fade,
+                          style: TextStyle(
+                            fontSize: size,
+                            fontWeight: v == value ? FontWeight.w700 : FontWeight.w500,
+                            color: v == value ? p.accent : p.ink2,
+                            fontFeatures: tnum,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ),
-        ],
-      ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
@@ -736,8 +857,14 @@ class Medal extends StatelessWidget {
         width: size,
         height: size,
         alignment: Alignment.center,
-        decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: p.plateLine)),
-        child: Text('$place', style: TextStyle(fontSize: size * .44, fontWeight: FontWeight.w600, color: p.ink2, fontFeatures: tnum)),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          border: Border.all(color: p.plateLine),
+        ),
+        child: Text(
+          '$place',
+          style: TextStyle(fontSize: size * .44, fontWeight: FontWeight.w600, color: p.ink2, fontFeatures: tnum),
+        ),
       );
     }
     return Container(
@@ -770,7 +897,15 @@ class Avatar extends StatelessWidget {
 
   /// Слот одной ширины для одиночников и пар: имена в столбик ровно.
   final bool slot;
-  const Avatar({super.key, required this.name, required this.data, this.size = 40, this.ring, this.ringWidth = 1.5, this.slot = false});
+  const Avatar({
+    super.key,
+    required this.name,
+    required this.data,
+    this.size = 40,
+    this.ring,
+    this.ringWidth = 1.5,
+    this.slot = false,
+  });
 
   /// Ширина аватара пары: второй круг заходит на первый.
   static double pairWidth(double size) => size * 1.5;
@@ -791,7 +926,11 @@ class Avatar extends StatelessWidget {
             ),
           );
     if (!slot) return face;
-    return SizedBox(width: pairWidth(size), height: size, child: Align(alignment: Alignment.center, child: face));
+    return SizedBox(
+      width: pairWidth(size),
+      height: size,
+      child: Align(alignment: Alignment.center, child: face),
+    );
   }
 
   Widget _one(BuildContext context, String n, double s) {
