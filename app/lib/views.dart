@@ -14,14 +14,22 @@ String dayTitle(String key) {
   if (key == dayKey(t.add(const Duration(days: 1)))) return 'Завтра';
   if (key == dayKey(t.subtract(const Duration(days: 1)))) return 'Вчера';
   final d = DateTime.parse(key);
-  return '${cap(weekdays[d.weekday - 1])}, ${d.day} ${months[d.month - 1]}';
+  return '${cap(weekdays[d.weekday - 1])}, ${d.day}$nb${months[d.month - 1]}';
+}
+
+/// Короткий заголовок дня, когда полный не помещается: «Пн, 12 октября».
+String dayTitleShort(String key) {
+  final full = dayTitle(key);
+  if (!full.contains(',')) return full;
+  final d = DateTime.parse(key);
+  return '${cap(weekdaysShort[d.weekday - 1])}, ${d.day}$nb${months[d.month - 1]}';
 }
 
 String daySub(String key) {
   final t = now();
   final d = DateTime.parse(key);
   if (key == dayKey(t) || key == dayKey(t.add(const Duration(days: 1))) || key == dayKey(t.subtract(const Duration(days: 1)))) {
-    return '${weekdaysShort[d.weekday - 1]}, ${d.day} ${months[d.month - 1]}';
+    return '${weekdaysShort[d.weekday - 1]}, ${d.day}$nb${months[d.month - 1]}';
   }
   return '';
 }
@@ -48,6 +56,55 @@ List<Start> feedPool(AppState st, Filters f, DateTime t) {
   return data.starts
       .where((s) => f.pass(s) && s.t0.isBefore(horizon) && (!s.pastAt(t) || (st.showDone && s.day == today)))
       .toList();
+}
+
+/// Турниры без расписания, которые идут в этот день.
+List<Upcoming> upcomingOn(AppState st, String day) => [
+  for (final u in st.data?.upcoming ?? const <Upcoming>[])
+    if (u.covers(day) && st.filters.passUpcoming(u)) u,
+];
+
+/// Турниры без расписания на ленту: ещё не закончились и начнутся в ближайшие 60 дней.
+List<Upcoming> upcomingAhead(AppState st, DateTime t) {
+  final today = dayKey(t), horizon = dayKey(t.add(const Duration(days: 60)));
+  return [
+    for (final u in st.data?.upcoming ?? const <Upcoming>[])
+      if (u.end.compareTo(today) >= 0 && u.start.compareTo(horizon) < 0 && st.filters.passUpcoming(u)) u,
+  ];
+}
+
+/// «15–18 октября», «30 октября – 2 ноября».
+String dateRange(String from, String to) {
+  final a = DateTime.parse(from), b = DateTime.parse(to);
+  if (from == to) return '${a.day}$nb${months[a.month - 1]}';
+  if (a.month == b.month) return '${a.day}–${b.day}$nb${months[b.month - 1]}';
+  return '${a.day}$nb${months[a.month - 1]} – ${b.day}$nb${months[b.month - 1]}';
+}
+
+/// Свежесть расписания: что написать и тревожно ли. Сборщик ходит в 09:00 и 15:00 МСК,
+/// перерыв между запусками — до 18 ч; старше 20 ч — запуск не состоялся.
+({String text, bool alarm}) freshness(AppState st, {bool short = false}) {
+  final d = st.data!;
+  final g = d.generated;
+  final failed = [
+    for (final e in d.sources.entries)
+      if (e.value != 'ok') e.key,
+  ];
+  final String trouble;
+  if (st.offline) {
+    trouble = 'нет связи';
+  } else if (!d.complete) {
+    trouble = failed.length == 1 ? '${failed.first} не отвечает' : 'источники не отвечают';
+  } else if (now().difference(g) > const Duration(hours: 20)) {
+    trouble = 'расписание устарело';
+  } else {
+    trouble = '';
+  }
+  // «обновлено сегодня в 14:02», «обновлено 8 октября в 23:39» — без предлога перед наречием
+  final day = dayKey(g) == dayKey(now()) ? 'сегодня' : '${msk(g).day}$nb${months[msk(g).month - 1]}';
+  final when = short ? 'обновлено ${dateTime(g).replaceAll(' ', nb).replaceFirst(',$nb', ', ')}' : 'обновлено $day в$nb${hm(g)}';
+  if (trouble.isEmpty) return (text: short ? when : '${cap(when)} · время московское', alarm: false);
+  return (text: '${short ? trouble : cap(trouble)} · $when', alarm: true);
 }
 
 // ------------------------------------------------------------------ лента
@@ -101,6 +158,7 @@ class FeedView extends StatelessWidget {
     final t = now();
     final today = dayKey(t);
     final pool = feedPool(state, state.filters, t);
+    final unscheduled = upcomingAhead(state, t);
     final live = pool.where((s) => s.liveAt(t)).toList();
     final done = pool.where((s) => s.pastAt(t)).toList();
     final next = pool.where((s) => !s.pastAt(t) && !s.liveAt(t)).toList();
@@ -137,6 +195,11 @@ class FeedView extends StatelessWidget {
       rows.add(s);
     }
     flush();
+    // турниры, у которых ещё нет расписания по сегментам: даты, место, наши в заявке
+    if (unscheduled.isNotEmpty) {
+      out.add(DayHeader(day: null, title: 'Без расписания', top: out.isEmpty ? 10 : 26));
+      out.add(UnscheduledPlate(list: unscheduled, state: state, dates: true));
+    }
     return out;
   }
 }
@@ -183,12 +246,16 @@ class FrostLine extends StatelessWidget {
         children: [
           Icon(icon, size: 16, color: iconColor ?? p.accent),
           const SizedBox(width: 10),
+          // главная строка о неполадке читается целиком: до двух строк
           Expanded(
-            child: Text(
-              text,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(color: p.ink, fontSize: 14, fontWeight: FontWeight.w500),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 6),
+              child: Text(
+                text,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(color: p.ink, fontSize: 14, fontWeight: FontWeight.w500, height: 1.25),
+              ),
             ),
           ),
           TextButton(
@@ -239,7 +306,6 @@ class FilterLine extends StatelessWidget {
     final f = state.filters;
     final names = <String>[
       ...f.kinds.map((k) => kindNames[k] ?? k),
-      ...f.athletes.map(surname),
       if (f.tids.isNotEmpty)
         f.tids.length == 1
             ? tournamentName(state, f.tids.first)
@@ -249,7 +315,7 @@ class FilterLine extends StatelessWidget {
       icon: CupertinoIcons.slider_horizontal_3,
       text: names.join(' · '),
       action: 'Сбросить',
-      onAction: () => state.setFilters(const Filters({}, {}, {})),
+      onAction: () => state.setFilters(const Filters({}, {})),
     );
   }
 }
@@ -264,44 +330,65 @@ String tournamentName(AppState s, String tid) {
 /// Ширина колонки времени в строках; на узком экране — уже.
 double timeColOf(BuildContext context) => MediaQuery.sizeOf(context).width < 360 ? 74 : 88;
 
-/// Заголовок дня: «Сегодня  пт, 9 октября ———». Подпись даты — с многоточием, если тесно.
+/// Заголовок дня: «Сегодня  пт, 9 октября ———». Дата не обрезается: не помещается —
+/// сначала без черты, затем короткий день недели («Пн, 12 октября»), затем мельче.
 class DayHeader extends StatelessWidget {
   /// null — сегодня.
   final String? day;
   final double top;
-  const DayHeader({super.key, required this.day, this.top = 26});
+
+  /// Свой заголовок вместо дня: «Без расписания».
+  final String? title;
+  const DayHeader({super.key, required this.day, this.top = 26, this.title});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     final key = day ?? dayKey(now());
-    final sub = daySub(key);
+    final sub = title != null ? '' : daySub(key);
+    final big = display(p, 29, italic: true);
+    final small = TextStyle(fontSize: 13.5, fontWeight: FontWeight.w500, color: p.ink2, height: 1);
     return Padding(
       padding: EdgeInsets.fromLTRB(20, top, 20, 10),
-      child: LayoutBuilder(
-        builder: (context, c) => Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: c.maxWidth - 36),
-              child: Text.rich(
-                TextSpan(
-                  children: [
-                    TextSpan(text: dayTitle(key), style: display(p, 29, italic: true)),
-                    if (sub.isNotEmpty)
-                      TextSpan(
-                        text: '   $sub',
-                        style: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w500, color: p.ink2, height: 1),
-                      ),
-                  ],
-                ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
+      child: MeasuredLayout(
+        builder: (context, c) {
+          double widthOf(String t) =>
+              textWidth(context, t, big) + (sub.isEmpty ? 0 : textWidth(context, '   $sub', small)) + 1;
+          final full = title ?? dayTitle(key);
+          final short = title ?? dayTitleShort(key);
+          const rule = 36.0;
+          var (text, line, shrink) = (short, false, true);
+          for (final (t, l) in [(full, true), (full, false), (short, true), (short, false)]) {
+            if (widthOf(t) + (l ? rule : 0) <= c.maxWidth) {
+              (text, line, shrink) = (t, l, false);
+              break;
+            }
+          }
+          Widget label = Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(text: text, style: big),
+                if (sub.isNotEmpty) TextSpan(text: '   $sub', style: small),
+              ],
             ),
-            const SizedBox(width: 12),
-            Expanded(child: Container(height: 1, color: p.plateLine)),
-          ],
-        ),
+            maxLines: 1,
+            softWrap: false,
+          );
+          if (shrink) {
+            label = Flexible(
+              child: FittedBox(fit: BoxFit.scaleDown, alignment: Alignment.centerLeft, child: label),
+            );
+          }
+          return Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              label,
+              if (line) ...[
+                const SizedBox(width: 12),
+                Expanded(child: Container(height: 1, color: p.plateLine)),
+              ],
+            ],
+          );
+        },
       ),
     );
   }
@@ -319,6 +406,11 @@ class DayPlate extends StatelessWidget {
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     final children = <Widget>[];
+    // колонка времени выхода и место под аватар пары — одни на всю плашку: имена в столбик ровно
+    final t = now();
+    final shown = starts.expand((s) => oursShown(s, t)).toList();
+    final times = shown.any(hasSlotTime);
+    final slot = shown.any(isPair);
     String? tid;
     for (final s in starts) {
       if (s.tid != tid) {
@@ -326,14 +418,16 @@ class DayPlate extends StatelessWidget {
         children.add(
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 14, 16, 0),
-            child: Eyebrow(s.tournament, color: p.accent),
+            child: Eyebrow(s.tournament, color: p.accent, maxLines: 2),
           ),
         );
         tid = s.tid;
       } else {
         children.add(const Hairline());
       }
-      children.add(StartTile(start: s, state: state, showTournament: false, countdown: s.id == soon));
+      children.add(
+        StartTile(start: s, state: state, showTournament: false, countdown: s.id == soon, times: times, slot: slot),
+      );
     }
     return Plate(
       child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: children),
@@ -376,13 +470,29 @@ List<Skater> notYetSkated(Start s, DateTime t) => s.ours.where((o) {
   return o.place == null && (at == null || at.add(const Duration(minutes: 4)).isAfter(t));
 }).toList();
 
+/// Наши в строке старта: у идущего — кто ещё не выходил, у прошедшего — никого.
+List<Skater> oursAll(Start s, DateTime t) => s.pastAt(t) ? const [] : (s.liveAt(t) ? notYetSkated(s, t) : s.ours);
+List<Skater> oursShown(Start s, DateTime t) => oursAll(s, t).take(3).toList();
+
 /// Строка старта в плашке: время, сегмент, турнир, наши со временем выхода.
+/// Тесно (узкий экран, крупный шрифт) — наши под временем, на всю ширину плашки.
 class StartTile extends StatelessWidget {
   final Start start;
   final AppState state;
   final bool showTournament;
   final bool countdown;
-  const StartTile({super.key, required this.start, required this.state, this.showTournament = true, this.countdown = false});
+
+  /// Колонка времени выхода и место под пару — по всей плашке; null — по своему списку.
+  final bool? times, slot;
+  const StartTile({
+    super.key,
+    required this.start,
+    required this.state,
+    this.showTournament = true,
+    this.countdown = false,
+    this.times,
+    this.slot,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -393,74 +503,85 @@ class StartTile extends StatelessWidget {
     final meta = metaLine(s, tournament: showTournament);
     final live = s.liveAt(t);
     final mute = !live && silent(state, s, t);
-    final ours = live ? notYetSkated(s, t) : s.ours;
+    final ours = oursAll(s, t);
     final shown = ours.take(3).toList();
+    final under = tight(context);
+    final list = shown.isEmpty
+        ? null
+        : OursList(
+            list: shown,
+            more: ours.length - shown.length,
+            data: state.data,
+            times: times ?? shown.any(hasSlotTime),
+            blankTime: !shown.any(hasSlotTime),
+            slot: slot ?? shown.any(isPair),
+          );
+    final head = Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          width: timeColOf(context),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 2, right: 8),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerLeft,
+                  child: Text(hm(s.t0), style: clock(live ? p.live : p.ink, 27)),
+                ),
+              ),
+              if (live) ...[const SizedBox(height: 7), const LivePill()],
+            ],
+          ),
+        ),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 3),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(child: SegTitle(start: s)),
+                    if (mute) const Padding(padding: EdgeInsets.only(left: 8, top: 3), child: MutedBell()),
+                  ],
+                ),
+              ),
+              if (meta.isNotEmpty) ...[
+                const SizedBox(height: 3),
+                Text(
+                  meta,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontSize: 13.5, color: p.ink2, height: 1.3),
+                ),
+              ],
+              if (countdown) ...[
+                const SizedBox(height: 4),
+                Text(
+                  whenLabel(s, t),
+                  style: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w700, color: p.accent, height: 1.3),
+                ),
+              ],
+              if (list != null && !under) ...[const SizedBox(height: 12), list],
+            ],
+          ),
+        ),
+      ],
+    );
     return InkWell(
       onTap: () => showStart(context, s, state),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 14, 14, 14),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: timeColOf(context),
-              child: Column(
+        child: list != null && under
+            ? Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 2, right: 8),
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.centerLeft,
-                      child: Text(hm(s.t0), style: clock(live ? p.live : p.ink, 27)),
-                    ),
-                  ),
-                  if (live) ...[const SizedBox(height: 7), const LivePill()],
-                ],
-              ),
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 3),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(child: SegTitle(start: s)),
-                        if (mute) const Padding(padding: EdgeInsets.only(left: 8, top: 3), child: MutedBell()),
-                      ],
-                    ),
-                  ),
-                  if (meta.isNotEmpty) ...[
-                    const SizedBox(height: 3),
-                    Text(
-                      meta,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(fontSize: 13.5, color: p.ink2, height: 1.3),
-                    ),
-                  ],
-                  if (countdown) ...[
-                    const SizedBox(height: 4),
-                    Text(
-                      whenLabel(s, t),
-                      style: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w700, color: p.accent, height: 1.3),
-                    ),
-                  ],
-                  if (shown.isNotEmpty) const SizedBox(height: 12),
-                  for (final o in shown) OursLine(o: o, data: state.data, slot: shown.any(isPair), times: shown.any(hasSlotTime)),
-                  if (ours.length > shown.length)
-                    Padding(
-                      padding: const EdgeInsets.only(top: 2),
-                      child: Text('ещё ${ours.length - shown.length}', style: TextStyle(fontSize: 13, color: p.ink2)),
-                    ),
-                ],
-              ),
-            ),
-          ],
-        ),
+                children: [head, const SizedBox(height: 12), list],
+              )
+            : head,
       ),
     );
   }
@@ -470,6 +591,69 @@ class StartTile extends StatelessWidget {
 bool isPair(Skater o) => o.name.contains(' / ');
 bool hasSlotTime(Skater o) => o.time != null || o.no != null;
 
+/// Ширина под имя в строке «наших»: всё, кроме колонки времени, аватара и зазора.
+double oursNameWidth(BuildContext context, double width, {required bool times, required bool slot}) {
+  const size = 26.0;
+  final col = times ? MediaQuery.textScalerOf(context).scale(OursLine.col) : 0.0;
+  return width - col - (slot ? Avatar.pairWidth(size) : size) - 8;
+}
+
+/// Список наших в строке старта. Формат имени один на весь список: хоть одно полное имя
+/// не помещается — у всех фамилии.
+class OursList extends StatelessWidget {
+  final List<Skater> list;
+  final int more;
+  final Schedule? data;
+  final bool onDark, times, blankTime, slot;
+  const OursList({
+    super.key,
+    required this.list,
+    required this.data,
+    this.more = 0,
+    this.onDark = false,
+    this.times = true,
+    this.blankTime = false,
+    this.slot = false,
+  });
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return MeasuredLayout(
+      builder: (context, c) {
+        final w = oursNameWidth(context, c.maxWidth, times: times, slot: slot);
+        final style = OursLine.nameStyle(onDark ? Colors.white : p.ink);
+        final warm = OursLine.warmStyle(p.ink2);
+        final surnames = list.any(
+          (o) =>
+              !isPair(o) &&
+              !NameLines.fits(
+                context,
+                [displayName(o.name)],
+                style,
+                w,
+                OursLine.warmOf(o).isEmpty ? 0 : textWidth(context, OursLine.warmOf(o), warm) + NameLines.gap,
+              ),
+        );
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            for (final o in list)
+              OursLine(o: o, data: data, onDark: onDark, slot: slot, times: times, blankTime: blankTime, surnames: surnames),
+            if (more > 0)
+              Padding(
+                padding: const EdgeInsets.only(top: 2),
+                child: Text(
+                  'ещё $more',
+                  style: TextStyle(fontSize: 13, color: onDark ? Colors.white.withValues(alpha: .78) : p.ink2),
+                ),
+              ),
+          ],
+        );
+      },
+    );
+  }
+}
+
 class OursLine extends StatelessWidget {
   final Skater o;
   final Schedule? data;
@@ -478,26 +662,48 @@ class OursLine extends StatelessWidget {
   /// Есть пары рядом — место под аватар одной ширины, имена в столбик ровно.
   final bool slot;
 
-  /// Колонка времени: нет ни времени, ни номера ни у кого в списке — колонки нет.
+  /// Колонка времени: нет ни времени, ни номера ни у кого в плашке — колонки нет.
   final bool times;
-  const OursLine({super.key, required this.o, required this.data, this.onDark = false, this.slot = false, this.times = true});
+
+  /// Колонка есть (время у других стартов плашки), а в этом списке времени ни у кого — пусто.
+  final bool blankTime;
+
+  /// У одиночников — только фамилия.
+  final bool surnames;
+  const OursLine({
+    super.key,
+    required this.o,
+    required this.data,
+    this.onDark = false,
+    this.slot = false,
+    this.times = true,
+    this.blankTime = false,
+    this.surnames = false,
+  });
+
+  /// Колонка времени до масштаба шрифта: «19:30» не переносится.
+  static const col = 46.0;
+  static TextStyle nameStyle(Color ink) => TextStyle(fontSize: 14.5, color: ink, height: 1.25);
+  static TextStyle warmStyle(Color ink2) => TextStyle(color: ink2, fontSize: 12.5, height: 1.25);
+  static String warmOf(Skater o) => o.time == null && o.warmup != null ? 'разминка$nb${o.warmup}' : '';
+
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     final ink = onDark ? Colors.white : p.ink;
     final ink2 = onDark ? Colors.white.withValues(alpha: .72) : p.ink2;
-    final left = o.time ?? (o.no != null ? '№ ${o.no}' : '—');
-    // колонка времени растёт вместе со шрифтом: «19:30» не переносится
-    final col = MediaQuery.textScalerOf(context).scale(46);
-    final style = TextStyle(fontSize: 14.5, color: ink, height: 1.25);
-    final warm = o.time == null && o.warmup != null ? '  разминка ${o.warmup}' : '';
+    final left = blankTime ? '' : (o.time ?? (o.no != null ? '№$nb${o.no}' : '—'));
+    // у пары — фамилии, при нехватке места по партнёру на строку; партнёр не теряется
+    final variants = isPair(o)
+        ? nameVariants(o.name, full: false, lines: 2)
+        : (surnames ? [[surname(o.name)]] : nameVariants(o.name));
     return Padding(
       padding: const EdgeInsets.only(bottom: 6),
       child: Row(
         children: [
           if (times)
             SizedBox(
-              width: col,
+              width: MediaQuery.textScalerOf(context).scale(col),
               child: Text(
                 left,
                 maxLines: 1,
@@ -514,27 +720,12 @@ class OursLine extends StatelessWidget {
           Avatar(name: o.name, data: data, size: 26, slot: slot, ring: onDark ? const Color(0xFF1B4F86) : null),
           const SizedBox(width: 8),
           Expanded(
-            child: MeasuredLayout(
-              builder: (context, c) {
-                // не помещается имя с фамилией — только фамилия, а не «Александра Трусо…»
-                final full = o.short;
-                final name = textWidth(context, full, style) <= c.maxWidth ? full : surname(o.name);
-                return Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(text: name),
-                      if (warm.isNotEmpty)
-                        TextSpan(
-                          text: warm,
-                          style: TextStyle(color: ink2, fontSize: 12.5),
-                        ),
-                    ],
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: style,
-                );
-              },
+            child: NameLines(
+              variants: variants,
+              style: nameStyle(ink),
+              suffix: warmOf(o),
+              suffixStyle: warmStyle(ink2),
+              semantics: displayName(o.name),
             ),
           ),
         ],
@@ -633,7 +824,7 @@ class LiveCard extends StatelessWidget {
                         const SizedBox(width: 10),
                         Flexible(
                           child: Text(
-                            '${hm(s.t0)} – ${hm(s.t1)}',
+                            '${hm(s.t0)}$nb–$nb${hm(s.t1)}',
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w600, color: dim, fontFeatures: tnum),
@@ -663,15 +854,14 @@ class LiveCard extends StatelessWidget {
                       ),
                       Eyebrow('Наши · впереди', color: Colors.white.withValues(alpha: .7)),
                       const SizedBox(height: 8),
-                      for (final o in rest.take(4))
-                        OursLine(
-                          o: o,
-                          data: state.data,
-                          onDark: true,
-                          slot: rest.take(4).any(isPair),
-                          times: rest.any(hasSlotTime),
-                        ),
-                      if (rest.length > 4) Text('ещё ${rest.length - 4}', style: TextStyle(fontSize: 13, color: dim)),
+                      OursList(
+                        list: rest.take(4).toList(),
+                        more: rest.length - 4,
+                        data: state.data,
+                        onDark: true,
+                        slot: rest.take(4).any(isPair),
+                        times: rest.any(hasSlotTime),
+                      ),
                     ],
                   ],
                 ),
@@ -740,8 +930,9 @@ class PastTile extends StatelessWidget {
                 ),
               ],
             ),
+            // тесно — тройка под строкой старта на всю ширину, без отступа под время
             Padding(
-              padding: EdgeInsets.only(left: timeColOf(context), top: 10),
+              padding: EdgeInsets.only(left: tight(context) ? 0 : timeColOf(context), top: 10),
               child: top.isEmpty
                   ? Text('Итогов пока нет', style: TextStyle(fontSize: 13.5, color: p.ink2))
                   : Column(
@@ -760,14 +951,20 @@ class PastTile extends StatelessWidget {
 }
 
 /// Имя в итогах: наши на международных — цветом акцента без кода; иностранцы — с кодом
-/// страны; на российских стартах код — это регион, приглушённо.
+/// страны; на российских стартах код — это регион, приглушённо, и никого не выделяем.
+/// Код — отдельно справа и не сжимается: при нехватке места короче становится имя.
 class PlacingName extends StatelessWidget {
   final Placing x;
   final bool intl;
+
+  /// Начинать с короткого: «А. Заикина», у пар — фамилии.
   final bool short;
   final double size;
   final FontWeight weight;
-  final int maxLines;
+
+  /// Регион на российских стартах (в компактной тройке ленты его нет — там тесно).
+  final bool region;
+  final bool center;
   const PlacingName({
     super.key,
     required this.x,
@@ -775,32 +972,34 @@ class PlacingName extends StatelessWidget {
     this.short = false,
     this.size = 15,
     this.weight = FontWeight.w600,
-    this.maxLines = 1,
+    this.region = true,
+    this.center = false,
   });
+
+  /// Код у имени: у иностранцев на международных — страна, на российских — регион.
+  static String codeOf(Placing x, bool intl, {bool region = true}) {
+    if (x.nation.isEmpty || (intl && x.ours)) return '';
+    return intl ? nationCode(x.nation) : (region ? x.nation : '');
+  }
+
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     final ours = intl && x.ours;
-    final code = ours || x.nation.isEmpty ? '' : (intl ? nationCode(x.nation) : x.nation);
-    return Text.rich(
-      TextSpan(
-        children: [
-          TextSpan(text: short ? placingName(x) : displayName(x.name)),
-          if (code.isNotEmpty)
-            TextSpan(
-              text: '  $code',
-              style: TextStyle(
-                fontSize: size * .76,
-                fontWeight: intl ? FontWeight.w700 : FontWeight.w600,
-                letterSpacing: .8,
-                color: intl ? p.ink2 : p.ink3,
-              ),
-            ),
-        ],
-      ),
-      maxLines: maxLines,
-      overflow: TextOverflow.ellipsis,
+    final code = codeOf(x, intl, region: region);
+    return NameLines(
+      variants: nameVariants(x.name, full: !short, initial: true, lines: 2),
       style: TextStyle(fontSize: size, fontWeight: weight, color: ours ? p.accent : p.ink, height: 1.25),
+      suffix: code,
+      suffixStyle: TextStyle(
+        fontSize: size * .76,
+        fontWeight: FontWeight.w700,
+        letterSpacing: .8,
+        height: 1.25,
+        color: p.ink2,
+      ),
+      center: center,
+      semantics: displayName(x.name),
     );
   }
 }
@@ -824,7 +1023,7 @@ class MiniPodium extends StatelessWidget {
                 Medal(x.place, size: 22),
                 const SizedBox(width: 10),
                 Expanded(
-                  child: PlacingName(x: x, intl: intl, short: true, size: 14),
+                  child: PlacingName(x: x, intl: intl, short: true, size: 14, region: false),
                 ),
                 if (x.points.isNotEmpty) ...[
                   const SizedBox(width: 8),
@@ -844,20 +1043,13 @@ class _Freshness extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    final g = state.data!.generated;
-    final when = dayKey(g) == dayKey(now()) ? 'сегодня в ${hm(g)}' : '${msk(g).day} ${months[msk(g).month - 1]} в ${hm(g)}';
-    final stale = now().difference(g).inHours >= 16;
-    final text = state.offline
-        ? 'Нет связи · расписание от $when'
-        : stale
-        ? 'Источники не отвечают · расписание от $when'
-        : 'Обновлено $when · время московское';
+    final f = freshness(state);
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
       child: Text(
-        text,
+        f.text,
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 12.5, color: state.offline || stale ? p.live : p.ink2),
+        style: TextStyle(fontSize: 12.5, color: f.alarm ? p.live : p.ink2),
       ),
     );
   }
@@ -892,6 +1084,65 @@ class EmptyState extends StatelessWidget {
             ],
           ],
         ),
+      ),
+    );
+  }
+}
+
+/// Турниры без расписания по сегментам: название, даты или «Время не объявлено», место,
+/// наши из заявки. Сегментов нет — открывать нечего, строки не нажимаются.
+class UnscheduledPlate extends StatelessWidget {
+  final List<Upcoming> list;
+  final AppState state;
+
+  /// В ленте — даты турнира; в списке дня — «Время не объявлено».
+  final bool dates;
+  const UnscheduledPlate({super.key, required this.list, required this.state, this.dates = false});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Plate(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          for (var i = 0; i < list.length; i++) ...[
+            if (i > 0) const Hairline(indent: 0),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 14, 14, 14),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Eyebrow(list[i].name, color: p.accent, maxLines: 2),
+                  const SizedBox(height: 7),
+                  Text(
+                    dates ? dateRange(list[i].start, list[i].end) : 'Время не объявлено',
+                    style: TextStyle(fontSize: 15.5, fontWeight: FontWeight.w700, color: p.ink, height: 1.25),
+                  ),
+                  // место международных стартов — как в источнике, латиницей
+                  if (list[i].venue.isNotEmpty) ...[
+                    const SizedBox(height: 3),
+                    Text(
+                      list[i].venue,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(fontSize: 13.5, color: p.ink2, height: 1.3),
+                    ),
+                  ],
+                  if (list[i].ours.isNotEmpty) ...[
+                    const SizedBox(height: 12),
+                    OursList(
+                      list: [for (final n in list[i].ours.take(4)) Skater(n, null, null, null)],
+                      more: list[i].ours.length - 4,
+                      data: state.data,
+                      times: false,
+                      slot: list[i].ours.take(4).any((n) => n.contains(' / ')),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ],
+        ],
       ),
     );
   }
@@ -946,6 +1197,10 @@ class _MonthViewState extends State<MonthView> {
     final cells = ((lead + days) / 7).ceil() * 7;
     final today = dayKey(now());
     final dayList = byDay[selected] ?? [];
+    final unscheduled = upcomingOn(state, selected);
+    final monthHasUnscheduled = [
+      for (var d = 1; d <= days; d++) '${month.year}-${two(month.month)}-${two(d)}',
+    ].any((k) => upcomingOn(state, k).isNotEmpty);
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
@@ -968,6 +1223,7 @@ class _MonthViewState extends State<MonthView> {
             ],
           ),
         ),
+        if (state.data != null) SliverToBoxAdapter(child: NoticeLine(state: state)),
         if (state.filters.any) SliverToBoxAdapter(child: FilterLine(state: state)),
         SliverToBoxAdapter(
           child: Plate(
@@ -999,14 +1255,23 @@ class _MonthViewState extends State<MonthView> {
                 const SizedBox(height: 8),
                 Container(height: 1, margin: const EdgeInsets.symmetric(horizontal: 10), color: p.line),
                 const SizedBox(height: 10),
-                const _Legend(),
+                _Legend(unscheduled: monthHasUnscheduled),
               ],
             ),
           ),
         ),
         SliverToBoxAdapter(child: DayHeader(day: selected)),
         SliverToBoxAdapter(
-          child: dayList.isEmpty ? const EmptyPlate('Стартов нет') : DayPlate(starts: dayList, state: state),
+          child: dayList.isEmpty && unscheduled.isEmpty
+              ? const EmptyPlate('Стартов нет')
+              : Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    if (dayList.isNotEmpty) DayPlate(starts: dayList, state: state),
+                    if (dayList.isNotEmpty && unscheduled.isNotEmpty) const SizedBox(height: 12),
+                    if (unscheduled.isNotEmpty) UnscheduledPlate(list: unscheduled, state: state),
+                  ],
+                ),
         ),
         const SliverToBoxAdapter(child: SizedBox(height: 32)),
       ],
@@ -1028,6 +1293,8 @@ class _MonthViewState extends State<MonthView> {
         if (list.any((s) => s.kind == k)) k,
     ];
     final other = list.any((s) => !_order.contains(s.kind));
+    // турнир идёт, а расписания по сегментам ещё нет — полая точка
+    final hollow = upcomingOn(widget.state, key).isNotEmpty;
     return Expanded(
       child: Semantics(
         button: true,
@@ -1062,8 +1329,13 @@ class _MonthViewState extends State<MonthView> {
                     textScaler: TextScaler.noScaling,
                     style: TextStyle(
                       fontSize: 15.5,
-                      fontWeight: isToday || sel ? FontWeight.w700 : (list.isEmpty ? FontWeight.w400 : FontWeight.w600),
-                      color: sel ? p.onAccent : (isToday ? p.accent : (list.isEmpty ? p.ink3 : (past ? p.ink2 : p.ink))),
+                      // только турнир без расписания — день не пустой, но и стартов нет: ink2
+                      fontWeight: isToday || sel
+                          ? FontWeight.w700
+                          : (list.isNotEmpty ? FontWeight.w600 : (hollow ? FontWeight.w500 : FontWeight.w400)),
+                      color: sel
+                          ? p.onAccent
+                          : (isToday ? p.accent : (list.isNotEmpty ? (past ? p.ink2 : p.ink) : (hollow ? p.ink2 : p.ink3))),
                       fontFeatures: tnum,
                     ),
                   ),
@@ -1071,9 +1343,16 @@ class _MonthViewState extends State<MonthView> {
                 const SizedBox(height: 4),
                 SizedBox(
                   height: 5,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [for (final k in kinds) _dot(p.kind(k), past), if (other) _dot(p.ink3, past)],
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        for (final k in kinds) _dot(p.kind(k), past),
+                        if (other) _dot(p.ink3, past),
+                        if (hollow) _ring(p.ink2, past),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -1090,11 +1369,22 @@ class _MonthViewState extends State<MonthView> {
     margin: const EdgeInsets.symmetric(horizontal: 1),
     decoration: BoxDecoration(shape: BoxShape.circle, color: past ? c.withValues(alpha: .55) : c),
   );
+
+  Widget _ring(Color c, bool past) => Container(
+    width: 5,
+    height: 5,
+    margin: const EdgeInsets.symmetric(horizontal: 1),
+    decoration: BoxDecoration(
+      shape: BoxShape.circle,
+      border: Border.all(color: past ? c.withValues(alpha: .55) : c, width: 1.1),
+    ),
+  );
 }
 
-/// Легенда точек под сеткой месяца.
+/// Легенда точек под сеткой месяца; полая точка — турнир без расписания.
 class _Legend extends StatelessWidget {
-  const _Legend();
+  final bool unscheduled;
+  const _Legend({this.unscheduled = false});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -1115,6 +1405,25 @@ class _Legend extends StatelessWidget {
               const SizedBox(width: 6),
               Text(
                 e.value,
+                style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w500, color: p.ink2),
+              ),
+            ],
+          ),
+        if (unscheduled)
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 7,
+                height: 7,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: p.ink2, width: 1.2),
+                ),
+              ),
+              const SizedBox(width: 6),
+              Text(
+                'Без расписания',
                 style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w500, color: p.ink2),
               ),
             ],

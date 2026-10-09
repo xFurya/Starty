@@ -9,23 +9,41 @@ import 'main.dart';
 import 'reminders.dart';
 import 'sheets.dart';
 import 'state.dart';
+import 'system.dart';
 import 'ui.dart';
 import 'update.dart';
 import 'updater.dart';
+import 'views.dart' show freshness;
 
 const _ics = 'webcal://xfurya.github.io/Starty/calendar.ics';
 const _google = 'https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fxfurya.github.io%2FStarty%2Fcalendar.ics';
 
 bool get _ios => !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
 
-/// «2 вида · 1 турнир · 1 спортсмен» или «Все старты».
+/// «2 вида · 1 турнир» или «Все старты».
 String filterSummary(Filters f) {
   if (!f.any) return 'Все старты';
   return [
     if (f.kinds.isNotEmpty) '${f.kinds.length} ${plural(f.kinds.length, 'вид', 'вида', 'видов')}',
     if (f.tids.isNotEmpty) '${f.tids.length} ${plural(f.tids.length, 'турнир', 'турнира', 'турниров')}',
-    if (f.athletes.isNotEmpty) '${f.athletes.length} ${plural(f.athletes.length, 'спортсмен', 'спортсмена', 'спортсменов')}',
   ].join(' · ');
+}
+
+/// Действующие исключения: старт ещё впереди (переключатель в его карточке виден)
+/// и его уведомление и правда расходится с правилами. Прошедшие и совпавшие с правилами
+/// ни на что не влияют — их не считаем.
+int activeExceptions(AppState st) {
+  final r = st.rules;
+  final t = now();
+  return st.data?.starts
+          .where(
+            (s) =>
+                st.isException(s) &&
+                s.t0.subtract(Duration(minutes: r.lead)).isAfter(t) &&
+                st.notifies(s) != r.matches(s),
+          )
+          .length ??
+      0;
 }
 
 /// «17:15», «завтра 07:15», «12 октября 09:00» — неразрывно, одной строкой.
@@ -46,7 +64,47 @@ class SettingsView extends StatelessWidget {
     final r = state.rules;
     void set(NotifyRules n) => state.setRules(n);
     Set<String> flip(Set<String> s, String k) => s.contains(k) ? ({...s}..remove(k)) : {...s, k};
-    final planned = state.planned;
+    // уже сработавшие не считаем: минутный тик перестраивает экран
+    final t = now();
+    final planned = state.planned.where((x) => x.at.isAfter(t)).toList();
+    final exceptions = activeExceptions(state);
+    final p = Palette.of(context);
+    // все плитки карточки — одной плотности и кегля
+    final kinds = [
+      for (final k in NotifyRules.allKinds)
+        ChoiceTile(
+          label: kindNames[k]!,
+          color: p.kind(k),
+          on: r.kinds.contains(k),
+          onTap: () => set(r.copyWith(kinds: flip(r.kinds, k))),
+        ),
+    ];
+    final levels = [
+      for (final k in NotifyRules.allLevels)
+        ChoiceTile(
+          label: levelNames[k]!,
+          on: r.levels.contains(k),
+          onTap: () => set(r.copyWith(levels: flip(r.levels, k))),
+        ),
+    ];
+    final tours = [
+      ChoiceTile(label: 'Российские', on: r.russian, onTap: () => set(r.copyWith(russian: !r.russian))),
+      ChoiceTile(label: 'Международные', on: r.intl, onTap: () => set(r.copyWith(intl: !r.intl))),
+    ];
+    final segs = [
+      ChoiceTile(
+        label: 'Короткая и ритм-танец',
+        on: r.segs.contains('short'),
+        onTap: () => set(r.copyWith(segs: flip(r.segs, 'short'))),
+      ),
+      // ПП и ПТ: произвольная программа и произвольный танец
+      ChoiceTile(
+        label: 'Произвольная и танец',
+        on: r.segs.contains('free'),
+        onTap: () => set(r.copyWith(segs: flip(r.segs, 'free'))),
+      ),
+    ];
+    final group = [...kinds, ...levels, ...tours, ...segs];
     return CustomScrollView(
       slivers: [
         const SliverToBoxAdapter(
@@ -69,19 +127,24 @@ class SettingsView extends StatelessWidget {
                   const Hairline(),
                   _Row(
                     icon: CupertinoIcons.exclamationmark_circle,
-                    iconColor: Palette.of(context).live,
+                    iconColor: p.live,
                     title: 'Запрещены в системе',
-                    trailing: _TextAction('Разрешить', onTap: state.askPermission),
+                    action: 'Разрешить',
+                    onAction: () => allowNotifications(state),
                   ),
                 ],
                 _Rules(
                   enabled: r.on,
                   children: [
                     const Hairline(),
-                    _Block(
+                    // «5 мин … 60 мин» не помещаются — «Заранее, мин» и одни числа
+                    _ShortBlock(
                       title: 'Заранее',
-                      child: Segmented<int>(
-                        items: [for (final m in NotifyRules.leads) (m, '$m мин')],
+                      shortTitle: 'Заранее, мин',
+                      labels: [for (final m in NotifyRules.leads) '$m мин'],
+                      shortLabels: [for (final m in NotifyRules.leads) '$m'],
+                      child: (labels) => Segmented<int>(
+                        items: [for (var i = 0; i < NotifyRules.leads.length; i++) (NotifyRules.leads[i], labels[i])],
                         value: r.lead,
                         onChanged: (v) => set(r.copyWith(lead: v)),
                       ),
@@ -89,68 +152,22 @@ class SettingsView extends StatelessWidget {
                     const Hairline(),
                     _Block(
                       title: 'Виды',
-                      child: TileGrid(
-                        keepGrid: true,
-                        tiles: [
-                          for (final k in NotifyRules.allKinds)
-                            ChoiceTile(
-                              label: kindNames[k]!,
-                              color: Palette.of(context).kind(k),
-                              on: r.kinds.contains(k),
-                              onTap: () => set(r.copyWith(kinds: flip(r.kinds, k))),
-                            ),
-                        ],
-                      ),
+                      child: TileGrid(tiles: kinds, group: group),
                     ),
                     const Hairline(),
                     _Block(
                       title: 'Уровень',
-                      child: TileGrid(
-                        tiles: [
-                          for (final k in NotifyRules.allLevels)
-                            ChoiceTile(
-                              label: levelNames[k]!,
-                              on: r.levels.contains(k),
-                              onTap: () => set(r.copyWith(levels: flip(r.levels, k))),
-                            ),
-                        ],
-                      ),
+                      child: TileGrid(tiles: levels, group: group),
                     ),
                     const Hairline(),
                     _Block(
                       title: 'Турниры',
-                      child: TileGrid(
-                        tiles: [
-                          ChoiceTile(
-                            label: 'Российские',
-                            on: r.russian,
-                            onTap: () => set(r.copyWith(russian: !r.russian)),
-                          ),
-                          ChoiceTile(
-                            label: 'Международные',
-                            on: r.intl,
-                            onTap: () => set(r.copyWith(intl: !r.intl)),
-                          ),
-                        ],
-                      ),
+                      child: TileGrid(tiles: tours, group: group),
                     ),
                     const Hairline(),
                     _Block(
                       title: 'Программы',
-                      child: TileGrid(
-                        tiles: [
-                          ChoiceTile(
-                            label: 'Короткая и ритм-танец',
-                            on: r.segs.contains('short'),
-                            onTap: () => set(r.copyWith(segs: flip(r.segs, 'short'))),
-                          ),
-                          ChoiceTile(
-                            label: 'Произвольная',
-                            on: r.segs.contains('free'),
-                            onTap: () => set(r.copyWith(segs: flip(r.segs, 'free'))),
-                          ),
-                        ],
-                      ),
+                      child: TileGrid(tiles: segs, group: group),
                     ),
                     const Hairline(),
                     _SwitchRow(
@@ -168,22 +185,24 @@ class SettingsView extends StatelessWidget {
                       value: r.skaters,
                       onChanged: (v) => set(r.copyWith(skaters: v)),
                     ),
-                    if (state.exceptions > 0) ...[
+                    if (exceptions > 0) ...[
                       const Hairline(),
                       _Row(
-                        icon: CupertinoIcons.hand_point_right,
-                        title: 'Исключения: ${state.exceptions}',
-                        trailing: _TextAction('Сбросить', onTap: state.clearExceptions),
+                        icon: CupertinoIcons.bell_circle,
+                        title: 'Исключения: $exceptions',
+                        action: 'Сбросить',
+                        onAction: state.clearExceptions,
                       ),
                     ],
                   ],
                 ),
-                _Summary(
-                  text: planned.isEmpty
-                      ? 'Запланированных нет'
-                      : 'Запланировано: ${planned.length} · ближайшее\u00A0${_when(planned.first.at)}',
-                  empty: planned.isEmpty,
-                ),
+                // запрещены в системе — ни одно не придёт, так и пишем
+                if (planned.isEmpty)
+                  const _Summary(head: 'Запланированных нет', empty: true)
+                else if (state.allowed == false)
+                  _Summary(head: 'Запланировано: ${planned.length}', tail: 'не придут', empty: true)
+                else
+                  _Summary(head: 'Запланировано: ${planned.length}', tail: 'ближайшее$nb${_when(planned.first.at)}'),
               ],
             ),
           ),
@@ -205,10 +224,12 @@ class SettingsView extends StatelessWidget {
                 const Hairline(),
                 _SwitchRow(icon: CupertinoIcons.flag, title: 'Завершённые', value: state.showDone, onChanged: state.setShowDone),
                 const Hairline(),
-                _Block(
+                _ShortBlock(
                   title: 'Тема',
-                  child: Segmented<ThemeMode>(
-                    items: const [(ThemeMode.system, 'Системная'), (ThemeMode.light, 'Светлая'), (ThemeMode.dark, 'Тёмная')],
+                  labels: const ['Системная', 'Светлая', 'Тёмная'],
+                  shortLabels: const ['Авто', 'Светлая', 'Тёмная'],
+                  child: (labels) => Segmented<ThemeMode>(
+                    items: [(ThemeMode.system, labels[0]), (ThemeMode.light, labels[1]), (ThemeMode.dark, labels[2])],
                     value: state.theme,
                     onChanged: state.setTheme,
                   ),
@@ -243,18 +264,20 @@ class SettingsView extends StatelessWidget {
                   builder: (context, _) => _Updates(Updates.instance),
                 ),
                 const Hairline(),
-                _Row(
-                  icon: CupertinoIcons.arrow_2_circlepath,
-                  title: 'Расписание',
-                  subtitle: state.data == null
-                      ? (state.loading ? 'загрузка' : 'нет связи')
-                      : state.offline
-                      ? 'нет связи · ${dateTime(state.data!.generated)}'
-                      : 'обновлено ${dateTime(state.data!.generated)}',
-                  subtitleColor: state.offline ? Palette.of(context).live : null,
+                // то же правило, что у нижней строки ленты
+                Builder(
+                  builder: (context) {
+                    final f = state.data == null ? null : freshness(state, short: true);
+                    return _Row(
+                      icon: CupertinoIcons.arrow_2_circlepath,
+                      title: 'Расписание',
+                      subtitle: f?.text ?? (state.loading ? 'загрузка' : 'нет связи'),
+                      subtitleColor: f == null || f.alarm ? p.live : null,
+                    );
+                  },
                 ),
                 const Hairline(),
-                const _Row(icon: CupertinoIcons.doc_text, title: 'Источники', subtitle: 'ФФККР, ISU, Swiss Timing'),
+                _Row(icon: CupertinoIcons.doc_text, title: 'Источники', subtitle: _sources(state)),
               ],
             ),
           ),
@@ -265,7 +288,16 @@ class SettingsView extends StatelessWidget {
   }
 }
 
-/// Заголовок раздела.
+/// Источники данных; не ответившие при последнем сборе — отдельно.
+String _sources(AppState st) {
+  const all = ['ФФККР', 'ISU', 'Swiss Timing', 'Golden Skate'];
+  final failed = [
+    for (final e in st.data?.sources.entries ?? const <MapEntry<String, String>>[])
+      if (e.value != 'ok') e.key,
+  ];
+  return failed.isEmpty ? all.join(', ') : '${all.join(', ')} · нет ответа: ${failed.join(', ')}';
+}
+
 /// Версия и обновления — честное состояние самообновления (как у Дневника).
 class _Updates extends StatelessWidget {
   final Updates u;
@@ -306,7 +338,7 @@ class _Updates extends StatelessWidget {
           _Row(
             icon: CupertinoIcons.lock_open,
             title: 'Разрешить установку',
-            subtitle: 'Установка неизвестных приложений',
+            subtitle: 'Неизвестные приложения',
             onTap: u.allowInstall,
             trailing: const _Chevron(external: true),
           ),
@@ -316,7 +348,7 @@ class _Updates extends StatelessWidget {
           _Row(
             icon: CupertinoIcons.arrow_down_to_line,
             title: 'Обновить сейчас',
-            subtitle: 'Приложение закроется; открыть снова — из уведомления',
+            subtitle: 'С перезапуском',
             onTap: u.installNow,
           ),
         ],
@@ -325,7 +357,6 @@ class _Updates extends StatelessWidget {
           _Row(
             icon: CupertinoIcons.square_arrow_up,
             title: 'Открыть установщик',
-            subtitle: 'Обычная установка, как файлом из загрузок',
             onTap: u.openInstaller,
             trailing: const _Chevron(external: true),
           ),
@@ -382,7 +413,8 @@ class _RowIcon extends StatelessWidget {
   }
 }
 
-/// Строка: значок, название, подпись, что-то справа.
+/// Строка: значок, название, подпись, что-то справа. Текстовая кнопка ([action]) — справа,
+/// а если рядом с ней слово названия не помещается — под названием.
 class _Row extends StatelessWidget {
   final IconData icon;
   final Color? iconColor;
@@ -390,6 +422,8 @@ class _Row extends StatelessWidget {
   final String? subtitle;
   final Color? subtitleColor;
   final Widget? trailing;
+  final String? action;
+  final VoidCallback? onAction;
   final VoidCallback? onTap;
   const _Row({
     required this.icon,
@@ -398,41 +432,50 @@ class _Row extends StatelessWidget {
     this.subtitle,
     this.subtitleColor,
     this.trailing,
+    this.action,
+    this.onAction,
     this.onTap,
   });
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
+    final titleStyle = TextStyle(fontSize: 15.5, fontWeight: FontWeight.w600, color: p.ink, height: 1.25);
     final body = ConstrainedBox(
       constraints: const BoxConstraints(minHeight: 56),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(14, 9, 12, 9),
-        child: Row(
-          children: [
-            _RowIcon(icon, color: iconColor),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyle(fontSize: 15.5, fontWeight: FontWeight.w600, color: p.ink, height: 1.25),
+        child: MeasuredLayout(
+          builder: (context, c) {
+            // значок 32 и зазоры 12 + 8
+            final below = action != null &&
+                actionBelow(context, c.maxWidth - 32 - 12 - 8, title, titleStyle, action!, _TextAction.style);
+            final side = action == null ? trailing : (below ? null : _TextAction(action!, onTap: onAction!));
+            return Row(
+              children: [
+                _RowIcon(icon, color: iconColor),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(title, style: titleStyle),
+                      if (subtitle != null)
+                        Padding(
+                          padding: const EdgeInsets.only(top: 2),
+                          child: Text(
+                            subtitle!,
+                            style: TextStyle(fontSize: 13, color: subtitleColor ?? p.ink2, height: 1.3, fontFeatures: tnum),
+                          ),
+                        ),
+                      if (below) _TextAction(action!, onTap: onAction!, below: true),
+                    ],
                   ),
-                  if (subtitle != null)
-                    Padding(
-                      padding: const EdgeInsets.only(top: 2),
-                      child: Text(
-                        subtitle!,
-                        style: TextStyle(fontSize: 13, color: subtitleColor ?? p.ink2, height: 1.3, fontFeatures: tnum),
-                      ),
-                    ),
-                ],
-              ),
-            ),
-            if (trailing != null) ...[const SizedBox(width: 8), trailing!],
-          ],
+                ),
+                if (side != null) ...[const SizedBox(width: 8), side],
+              ],
+            );
+          },
         ),
       ),
     );
@@ -489,14 +532,17 @@ class _Block extends StatelessWidget {
   }
 }
 
-/// Итог правил: сколько уведомлений стоит в системе и когда ближайшее.
+/// Итог правил: «Запланировано: N · ближайшее 17:15». Не помещается в строку — две строки,
+/// без разделителя на конце первой: «Запланировано: 17» и «ближайшее завтра 07:15».
 class _Summary extends StatelessWidget {
-  final String text;
+  final String head;
+  final String tail;
   final bool empty;
-  const _Summary({required this.text, required this.empty});
+  const _Summary({required this.head, this.tail = '', this.empty = false});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
+    final style = TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: empty ? p.ink2 : p.ink, fontFeatures: tnum);
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.fromLTRB(16, 13, 16, 13),
@@ -509,9 +555,21 @@ class _Summary extends StatelessWidget {
           Icon(empty ? CupertinoIcons.bell_slash : CupertinoIcons.checkmark_seal, size: 17, color: empty ? p.ink2 : p.accent),
           const SizedBox(width: 10),
           Expanded(
-            child: Text(
-              text,
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: empty ? p.ink2 : p.ink, fontFeatures: tnum),
+            child: MeasuredLayout(
+              builder: (context, c) {
+                final one = tail.isEmpty ? head : '$head · $tail';
+                if (tail.isEmpty || textWidth(context, one, style) <= c.maxWidth) {
+                  return Text(one, style: style);
+                }
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(head, style: style),
+                    const SizedBox(height: 2),
+                    Text(tail, style: style.copyWith(fontWeight: FontWeight.w500, color: p.ink2)),
+                  ],
+                );
+              },
             ),
           ),
         ],
@@ -520,10 +578,40 @@ class _Summary extends StatelessWidget {
   }
 }
 
+/// Блок с выбором, у которого есть короткие подписи: длинные не помещаются в дорожку
+/// крупно — короткие («5 / 10 / 15», «Авто») и, если нужно, другой заголовок.
+class _ShortBlock extends StatelessWidget {
+  final String title;
+  final String? shortTitle;
+  final List<String> labels, shortLabels;
+  final Widget Function(List<String> labels) child;
+  const _ShortBlock({
+    required this.title,
+    required this.labels,
+    required this.shortLabels,
+    required this.child,
+    this.shortTitle,
+  });
+  @override
+  Widget build(BuildContext context) => MeasuredLayout(
+    builder: (context, c) {
+      // ширина дорожки — без полей блока
+      final short = Segmented.fontFor(context, c.maxWidth - 28, labels) < Segmented.minFont;
+      return _Block(title: short ? (shortTitle ?? title) : title, child: child(short ? shortLabels : labels));
+    },
+  );
+}
+
+/// Текстовая кнопка в строке. Правый край надписи — на одной линии с переключателями
+/// и значением версии (у них поле 4 от края строки).
 class _TextAction extends StatelessWidget {
   final String label;
   final VoidCallback onTap;
-  const _TextAction(this.label, {required this.onTap});
+
+  /// Под названием строки: край надписи — по левому краю названия.
+  final bool below;
+  const _TextAction(this.label, {required this.onTap, this.below = false});
+  static const style = TextStyle(fontFamily: 'Manrope', fontSize: 14.5, fontWeight: FontWeight.w700);
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -532,7 +620,9 @@ class _TextAction extends StatelessWidget {
       style: TextButton.styleFrom(
         foregroundColor: p.accent,
         minimumSize: const Size(44, 44),
-        textStyle: const TextStyle(fontFamily: 'Manrope', fontSize: 14.5, fontWeight: FontWeight.w700),
+        padding: below ? const EdgeInsets.only(right: 12) : const EdgeInsets.only(left: 12, right: 4),
+        alignment: below ? Alignment.centerLeft : Alignment.centerRight,
+        textStyle: style,
       ),
       child: Text(label, maxLines: 1, softWrap: false),
     );

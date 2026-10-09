@@ -1,7 +1,10 @@
 package ru.furya.starty
 
 import android.content.Intent
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
@@ -26,10 +29,25 @@ class MainActivity : FlutterActivity() {
                 }
                 "openInstaller" -> result.success(Updater.openInstaller(this))
                 "allowInstall" -> result.success(Updater.openInstallPermission(this))
+                // «Разрешить» уведомления, когда система больше не спрашивает сама
+                "notifySettings" -> result.success(openNotificationSettings())
                 else -> result.notImplemented()
             }
         }
         Updater.listener = onChange
+    }
+
+    /** Системный экран уведомлений этого приложения (до Android 8 — сведения о приложении). */
+    private fun openNotificationSettings(): Boolean = try {
+        val i = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS).putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
+        } else {
+            Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.fromParts("package", packageName, null))
+        }
+        startActivity(i)
+        true
+    } catch (_: Exception) {
+        false
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -47,7 +47,9 @@ void main() {
     ..data = d
     ..loading = false;
 
+  // новый ключ — новое приложение: лист прошлого шага не остаётся открытым поверх кнопки
   Widget app(Widget child, Brightness b, double scale) => MaterialApp(
+    key: UniqueKey(),
     theme: ThemeData(brightness: b, fontFamily: 'Manrope'),
     builder: (c, nav) => MediaQuery(
       data: MediaQuery.of(c).copyWith(textScaler: TextScaler.linear(scale)),
@@ -142,15 +144,85 @@ void main() {
     ]);
   });
 
-  test('отсчёт до начала', () {
-    expect(countdown(const Duration(minutes: 110)), 'через 1 ч 50 мин');
-    expect(countdown(const Duration(minutes: 25)), 'через 25 мин');
-    expect(countdown(const Duration(hours: 3)), 'через 3 ч');
+  test('отсчёт до начала — одной строкой, без обычных пробелов', () {
+    String plain(String x) => x.replaceAll(nb, ' ');
+    expect(plain(countdown(const Duration(minutes: 110))), 'через 1 ч 50 мин');
+    expect(plain(countdown(const Duration(minutes: 25))), 'через 25 мин');
+    expect(plain(countdown(const Duration(hours: 3))), 'через 3 ч');
+    expect(countdown(const Duration(minutes: 110)), isNot(contains(' ')));
   });
 
-  test('сводка фильтра', () {
-    expect(filterSummary(const Filters({}, {}, {})), 'Все старты');
-    expect(filterSummary(const Filters({'women', 'men'}, {'x'}, {})), '2 вида · 1 турнир');
+  test('сводка фильтра: виды и турниры, спортсменов нет', () {
+    expect(filterSummary(const Filters({}, {})), 'Все старты');
+    expect(filterSummary(const Filters({'women', 'men'}, {'x'})), '2 вида · 1 турнир');
+  });
+
+  test('имя пары: партнёр не теряется ни в одном варианте', () {
+    const pair = 'Екатерина Рыбакова / Иван Махноносов';
+    final v = nameVariants(pair, lines: 2);
+    expect(v.first, ['Екатерина Рыбакова / Иван Махноносов']);
+    expect(v, contains(equals(['Екатерина Рыбакова /', 'Иван Махноносов'])));
+    expect(v, contains(equals(['Рыбакова / Махноносов'])));
+    expect(v.last, ['Рыбакова /', 'Махноносов']);
+    for (final x in v) {
+      expect(x.join(' '), contains('Махноносов'));
+      expect(x.where((l) => l.trim() == '/'), isEmpty);
+    }
+    expect(nameVariants('Kaori SAKAMOTO', initial: true, full: false), [
+      ['K. Sakamoto'],
+      ['Sakamoto'],
+    ]);
+  });
+
+  test('наш: RUS, AIN2, регион; простой AIN и AIN1 — нет', () {
+    Placing x(String n) => Placing(1, 'A B', n, '');
+    expect(x('RUS').ours, isTrue);
+    expect(x('AIN2').ours, isTrue);
+    expect(x('МОС').ours, isTrue);
+    expect(x('AIN').ours, isFalse);
+    expect(x('AIN1').ours, isFalse);
+    expect(PlacingName.codeOf(x('AIN'), true), 'AIN');
+    expect(PlacingName.codeOf(x('AIN2'), true), '');
+  });
+
+  test('турниры без расписания: разбор, дни, лента', () {
+    final d = Schedule.parse(File('test/events_sample.json').readAsStringSync());
+    final s = stateWith(d);
+    if (d.upcoming.isEmpty) return;
+    final u = d.upcoming.first;
+    expect(u.covers(u.start), isTrue);
+    expect(u.covers(u.end), isTrue);
+    expect(upcomingOn(s, u.start).map((x) => x.tid), contains(u.tid));
+    s.filters = const Filters({}, {'другой'});
+    expect(upcomingOn(s, u.start), isEmpty);
+  });
+
+  test('свежесть расписания: без предлога перед «сегодня», тревога — по делу', () {
+    final s = stateWith(data);
+    final f = freshness(s);
+    expect(f.text, isNot(contains('от сегодня')));
+    final g = Schedule(data.starts, now().subtract(const Duration(hours: 17)), true, false);
+    // 17 ч — обычный перерыв между запусками (09:00 и 15:00 МСК): не тревожно
+    expect(freshness(stateWith(g)).alarm, isFalse);
+    final old = Schedule(data.starts, now().subtract(const Duration(hours: 21)), true, false);
+    expect(freshness(stateWith(old)).alarm, isTrue);
+    expect(freshness(stateWith(old)).text, startsWith('Расписание устарело'));
+    final bad = Schedule(data.starts, now(), false, false, sources: const {'ФФККР': 'ok', 'ISU': 'fail'});
+    expect(freshness(stateWith(bad)).text, startsWith('ISU не отвечает'));
+    final off = stateWith(data)..offline = true;
+    expect(freshness(off).text, startsWith('Нет связи · обновлено '));
+  });
+
+  test('исключения: считаются только действующие', () {
+    final s = stateWith(data);
+    final t = now();
+    final past = data.starts.firstWhere((x) => x.pastAt(t));
+    final ahead = data.starts.firstWhere((x) => x.t0.subtract(const Duration(hours: 1)).isAfter(t));
+    s.forcedOff = {past.id, ahead.id};
+    expect(activeExceptions(s), 1);
+    // правила сами исключили этот вид — исключение лишнее
+    s.rules = s.rules.copyWith(kinds: {...s.rules.kinds}..remove(ahead.kind));
+    expect(activeExceptions(s), 0);
   });
 
   test('палитра: обводка флажков не ниже 3:1 к фону листа', () {
@@ -162,5 +234,14 @@ void main() {
 
     expect(ratio(Palette.light.control, Palette.light.sheet), greaterThanOrEqualTo(3));
     expect(ratio(Palette.dark.control, Palette.dark.sheet), greaterThanOrEqualTo(3));
+    // подписи разделов (ink2) — не ниже 4.5:1 к фону и к плашке
+    for (final p in [Palette.light, Palette.dark]) {
+      expect(ratio(p.ink2, p.bg), greaterThanOrEqualTo(4.5));
+      expect(ratio(p.ink2, p.plate), greaterThanOrEqualTo(4.5));
+      // включённый переключатель: белый бегунок на дорожке
+      expect(ratio(Colors.white, p.switchOn), greaterThanOrEqualTo(4.5));
+      // перечёркнутый колокольчик различим на плашке
+      expect(ratio(p.control, p.plate), greaterThanOrEqualTo(3));
+    }
   });
 }

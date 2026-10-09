@@ -112,6 +112,9 @@ class Palette {
   );
   static Palette of(BuildContext c) => Theme.of(c).brightness == Brightness.dark ? dark : light;
 
+  /// Дорожка включённого переключателя: под белым бегунком не ниже 4.5:1.
+  Color get switchOn => isDark ? iceBlue : accent;
+
   Color kind(String k) => switch (k) {
     'women' => women,
     'men' => men,
@@ -153,12 +156,13 @@ ThemeData _theme(Brightness b) {
       elevation: 0,
       titleTextStyle: TextStyle(fontFamily: 'Manrope', fontSize: 17, fontWeight: FontWeight.w600, color: p.ink),
     ),
+    // включённый — белый бегунок на синем в обеих темах; в тёмной дорожка — синий из иконки
     switchTheme: SwitchThemeData(
       thumbColor: WidgetStateProperty.resolveWith(
-        (s) => s.contains(WidgetState.selected) ? p.onAccent : (p.isDark ? p.ink2 : Colors.white),
+        (s) => s.contains(WidgetState.selected) ? Colors.white : (p.isDark ? p.ink2 : Colors.white),
       ),
-      trackColor: WidgetStateProperty.resolveWith((s) => s.contains(WidgetState.selected) ? p.accent : p.frost),
-      trackOutlineColor: WidgetStateProperty.resolveWith((s) => s.contains(WidgetState.selected) ? p.accent : p.control),
+      trackColor: WidgetStateProperty.resolveWith((s) => s.contains(WidgetState.selected) ? p.switchOn : p.frost),
+      trackOutlineColor: WidgetStateProperty.resolveWith((s) => s.contains(WidgetState.selected) ? p.switchOn : p.control),
       thumbIcon: const WidgetStatePropertyAll(null),
     ),
     progressIndicatorTheme: ProgressIndicatorThemeData(color: p.accent),
@@ -228,8 +232,10 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
     if (done != null) _say(done);
     final ready = u.takeReadyNotice();
     if (ready != null) {
-      final hand = u.state?.needsHand == true;
-      _say(ready, action: hand ? 'Установить' : 'Сейчас', onAction: () {
+      final s = u.state;
+      // подпись — по действию: без разрешения кнопка ведёт к разрешению, а не к установке
+      final action = s?.canInstall == false ? 'Разрешить' : (s?.needsHand == true ? 'Установить' : 'Сейчас');
+      _say(ready, action: action, onAction: () {
         if (u.state?.canInstall == false) {
           u.allowInstall();
         } else {

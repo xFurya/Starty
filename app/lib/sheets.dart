@@ -1,4 +1,6 @@
 // Нижние листы: карточка старта (уведомление, пьедестал, итог, наши) и фильтр ленты.
+import 'dart:math' as math;
+
 import 'package:flutter/cupertino.dart' show CupertinoIcons;
 import 'package:flutter/material.dart';
 
@@ -6,6 +8,7 @@ import 'data.dart';
 import 'main.dart';
 import 'protocol.dart';
 import 'state.dart';
+import 'system.dart';
 import 'ui.dart';
 import 'views.dart';
 
@@ -50,7 +53,9 @@ class _StartSheet extends StatelessWidget {
             // шапка: лёд, турнир, вид и сегмент; растёт вместе со шрифтом
             Stack(
               children: [
-                Positioned.fill(child: IceBackdrop(fadeTo: p.sheet, fadeStart: .25, sparkles: 2)),
+                Positioned.fill(child: IceBackdrop(fadeTo: p.sheet, fadeStart: .25, sparkles: -1)),
+                // искры — над подписью турнира, на текст не ложатся
+                const Positioned(top: 0, left: 0, right: 0, child: SheetSparkles()),
                 ConstrainedBox(
                   constraints: const BoxConstraints(minHeight: 132, minWidth: double.infinity),
                   child: Align(
@@ -61,7 +66,8 @@ class _StartSheet extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Eyebrow(s.tournament, color: p.accent),
+                          // название турнира есть только здесь — до двух строк, не обрезаем
+                          Eyebrow(s.tournament, color: p.accent, maxLines: 2),
                           const SizedBox(height: 8),
                           Text(disc, style: display(p, 42)),
                           if (seg.isNotEmpty) ...[
@@ -79,11 +85,21 @@ class _StartSheet extends StatelessWidget {
               ],
             ),
             if (past)
+              // перенос — только между частями, интервал «09:00–13:20» не рвётся
               Padding(
                 padding: const EdgeInsets.fromLTRB(22, 12, 22, 0),
-                child: Text(
-                  '$date · ${hm(s.t0)}–${hm(s.t1)} · завершён',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: p.ink2, fontFeatures: tnum),
+                child: Wrap(
+                  spacing: 4,
+                  runSpacing: 2,
+                  children: [
+                    for (final part in ['$date ·', '${hm(s.t0)}–${hm(s.t1)} ·', 'завершён'])
+                      Text(
+                        part,
+                        maxLines: 1,
+                        softWrap: false,
+                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: p.ink2, fontFeatures: tnum),
+                      ),
+                  ],
                 ),
               )
             else
@@ -92,7 +108,12 @@ class _StartSheet extends StatelessWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(hm(s.t0), style: clock(live ? p.live : p.ink, narrow ? 44 : 54)),
+                    // время и так крупное: со шрифтом не растёт, место справа остаётся словам
+                    Text(
+                      hm(s.t0),
+                      textScaler: TextScaler.noScaling,
+                      style: clock(live ? p.live : p.ink, narrow ? 44 : 54),
+                    ),
                     SizedBox(width: narrow ? 12 : 14),
                     Expanded(
                       child: Column(
@@ -114,7 +135,7 @@ class _StartSheet extends StatelessWidget {
                           ),
                           const SizedBox(height: 3),
                           Text(
-                            'до ${hm(s.t1)} · МСК',
+                            'до$nb${hm(s.t1)}$nb·$nbМСК',
                             style: TextStyle(fontSize: 13, color: p.ink2, fontFeatures: tnum),
                           ),
                         ],
@@ -141,12 +162,11 @@ class _StartSheet extends StatelessWidget {
               Plate(
                 child: Column(
                   children: [
-                    _InfoRow(
-                      icon: CupertinoIcons.tv,
-                      label: 'Трансляция',
-                      value: s.broadcast.isEmpty ? '—' : s.broadcast.join(' / '),
-                    ),
-                    const Hairline(indent: 52),
+                    // трансляции нет в данных — строки нет
+                    if (s.broadcast.isNotEmpty) ...[
+                      _InfoRow(icon: CupertinoIcons.tv, label: 'Трансляция', value: s.broadcast.join(' / ')),
+                      const Hairline(indent: 52),
+                    ],
                     // место международных стартов — как в источнике, латиницей
                     _InfoRow(icon: CupertinoIcons.location, label: 'Место', value: s.venue.isEmpty ? '—' : s.venue),
                   ],
@@ -181,14 +201,8 @@ class _StartSheet extends StatelessWidget {
         icon: CupertinoIcons.bell_slash,
         iconColor: p.live,
         title: 'Запрещены в системе',
-        trailing: TextButton(
-          onPressed: state.askPermission,
-          style: TextButton.styleFrom(
-            foregroundColor: p.accent,
-            textStyle: const TextStyle(fontFamily: 'Manrope', fontSize: 14.5, fontWeight: FontWeight.w700),
-          ),
-          child: const Text('Разрешить'),
-        ),
+        action: 'Разрешить',
+        onAction: () => allowNotifications(state),
       );
     }
     // до начала меньше, чем «заранее»: уведомлять уже поздно
@@ -199,7 +213,8 @@ class _StartSheet extends StatelessWidget {
       icon: on ? CupertinoIcons.bell_fill : CupertinoIcons.bell_slash,
       iconColor: on ? p.accent : p.ink3,
       title: on ? 'Уведомление в\u00A0${hm(at)}' : 'Без уведомления',
-      subtitle: state.isException(s) ? 'исключение из правил' : null,
+      // исключение — только когда оно и правда расходится с правилами
+      subtitle: state.notifies(s) != state.rules.matches(s) ? 'исключение из правил' : null,
       onTap: () => state.toggleStart(s),
       trailing: ExcludeSemantics(
         child: Switch(value: on, onChanged: (_) => state.toggleStart(s)),
@@ -230,19 +245,26 @@ class _StartSheet extends StatelessWidget {
                 child: Podium(list: top3, data: state.data, intl: s.intl),
               ),
       ),
-      if (s.total.isNotEmpty) _section(context, 'Итог турнира', _TotalPlate(list: s.total, data: state.data, intl: s.intl)),
+      if (s.total.isNotEmpty)
+        _section(context, 'Итог турнира', _TotalPlate(list: s.total, data: state.data, intl: s.intl)),
       if (rest.isNotEmpty)
         _section(
           context,
           'Наши',
           Plate(
-            child: Column(
-              children: [
-                for (var i = 0; i < rest.length; i++) ...[
-                  if (i > 0) Hairline(indent: rest.any(isPair) ? 92 : 70),
-                  _OurResult(o: rest[i], seg: s.seg, data: state.data, slot: rest.any(isPair)),
-                ],
-              ],
+            child: MeasuredLayout(
+              builder: (context, c) {
+                final slot = rest.any(isPair);
+                final full = _oursFull(context, c.maxWidth, rest, slot, (o) => _OurResult.right(context, o, s.seg));
+                return Column(
+                  children: [
+                    for (var i = 0; i < rest.length; i++) ...[
+                      if (i > 0) Hairline(indent: slot ? 92 : 70),
+                      _OurResult(o: rest[i], seg: s.seg, data: state.data, slot: slot, full: full),
+                    ],
+                  ],
+                );
+              },
             ),
           ),
         ),
@@ -257,18 +279,37 @@ class _StartSheet extends StatelessWidget {
         context,
         s.ours.any((o) => o.time != null) ? 'Наши · выход на лёд' : 'Наши',
         Plate(
-          child: Column(
-            children: [
-              for (var i = 0; i < s.ours.length; i++) ...[
-                if (i > 0) Hairline(indent: s.ours.any(isPair) ? 92 : 70),
-                _OurAhead(o: s.ours[i], s: s, state: state, t: t, slot: s.ours.any(isPair)),
-              ],
-            ],
+          child: MeasuredLayout(
+            builder: (context, c) {
+              final slot = s.ours.any(isPair);
+              final full = _oursFull(context, c.maxWidth, s.ours, slot, (o) => _OurAhead.right(context, o));
+              return Column(
+                children: [
+                  for (var i = 0; i < s.ours.length; i++) ...[
+                    if (i > 0) Hairline(indent: slot ? 92 : 70),
+                    _OurAhead(o: s.ours[i], s: s, state: state, t: t, slot: slot, full: full),
+                  ],
+                ],
+              );
+            },
           ),
         ),
       ),
     ];
   }
+
+  /// Полные имена у всех наших — только если у каждого полное имя помещается рядом
+  /// с фото и тем, что справа (место, время выхода); иначе у всех фамилии.
+  static bool _oursFull(BuildContext context, double width, List<Skater> list, bool slot, double Function(Skater) right) {
+    // поля 14 и 16, фото 44 (у пар шире), зазоры 12 и 10
+    final base = width - 14 - (slot ? Avatar.pairWidth(44) : 44) - 12 - 10 - 16;
+    for (final o in list) {
+      if (!allFull(context, [o.name], _oursStyle, base - right(o))) return false;
+    }
+    return true;
+  }
+
+  static const _oursStyle = TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.25);
 
   Widget _section(BuildContext context, String label, Widget child) => Padding(
     padding: const EdgeInsets.only(top: 24),
@@ -282,27 +323,48 @@ class _StartSheet extends StatelessWidget {
   );
 }
 
-/// Плашка уведомления: значок, «Уведомление в 17:15», переключатель.
+/// Плашка уведомления: значок, «Уведомление в 17:15», переключатель. Кнопка-действие
+/// ([action]) встаёт под заголовок, если рядом с ней слово заголовка не помещается.
 class _NotifyPlate extends StatelessWidget {
   final IconData icon;
   final Color iconColor;
   final String title;
   final String? subtitle;
-  final Widget trailing;
+  final Widget? trailing;
+  final String? action;
+  final VoidCallback? onAction;
   final VoidCallback? onTap;
   final bool? toggled;
   const _NotifyPlate({
     required this.icon,
     required this.iconColor,
     required this.title,
-    required this.trailing,
+    this.trailing,
+    this.action,
+    this.onAction,
     this.subtitle,
     this.onTap,
     this.toggled,
   });
+
+  static const _actionStyle = TextStyle(fontFamily: 'Manrope', fontSize: 14.5, fontWeight: FontWeight.w700);
+
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
+    final titleStyle = TextStyle(fontSize: 15.5, fontWeight: FontWeight.w700, color: p.ink, fontFeatures: tnum);
+    Widget? button(EdgeInsets padding) => action == null
+        ? null
+        : TextButton(
+            onPressed: onAction,
+            style: TextButton.styleFrom(
+              foregroundColor: p.accent,
+              padding: padding,
+              minimumSize: const Size(44, 44),
+              textStyle: _actionStyle,
+            ),
+            child: Text(action!, maxLines: 1, softWrap: false),
+          );
     return Plate(
       child: Semantics(
         toggled: toggled,
@@ -313,36 +375,42 @@ class _NotifyPlate extends StatelessWidget {
             constraints: const BoxConstraints(minHeight: 60),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(16, 8, 10, 8),
-              child: Row(
-                children: [
-                  Container(
-                    width: 34,
-                    height: 34,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(shape: BoxShape.circle, color: iconColor.withValues(alpha: .12)),
-                    child: Icon(icon, size: 18, color: iconColor),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          title,
-                          style: TextStyle(fontSize: 15.5, fontWeight: FontWeight.w700, color: p.ink, fontFeatures: tnum),
+              child: MeasuredLayout(
+                builder: (context, c) {
+                  // заголовок рядом с кнопкой: 34 значок, 12 и 8 зазоры
+                  final below =
+                      action != null &&
+                      actionBelow(context, c.maxWidth - 34 - 12 - 8, title, titleStyle, action!, _actionStyle);
+                  final side = below ? trailing : (trailing ?? button(const EdgeInsets.symmetric(horizontal: 12)));
+                  return Row(
+                    children: [
+                      Container(
+                        width: 34,
+                        height: 34,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(shape: BoxShape.circle, color: iconColor.withValues(alpha: .12)),
+                        child: Icon(icon, size: 18, color: iconColor),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(title, style: titleStyle),
+                            if (subtitle != null)
+                              Padding(
+                                padding: const EdgeInsets.only(top: 2),
+                                child: Text(subtitle!, style: TextStyle(fontSize: 13, color: p.ink2)),
+                              ),
+                            if (below) button(const EdgeInsets.only(right: 12))!,
+                          ],
                         ),
-                        if (subtitle != null)
-                          Padding(
-                            padding: const EdgeInsets.only(top: 2),
-                            child: Text(subtitle!, style: TextStyle(fontSize: 13, color: p.ink2)),
-                          ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  trailing,
-                ],
+                      ),
+                      if (side != null) ...[const SizedBox(width: 8), side],
+                    ],
+                  );
+                },
               ),
             ),
           ),
@@ -352,7 +420,8 @@ class _NotifyPlate extends StatelessWidget {
   }
 }
 
-/// Пьедестал: 2 — 1 — 3, фото на ледяных ступенях.
+/// Пьедестал: 2 — 1 — 3, фото на ледяных ступенях. Подписи у всех трёх одной высоты
+/// и прижаты к ступени: высоту фото задают только ступени, а не длина имени или код страны.
 class Podium extends StatelessWidget {
   final List<Placing> list;
   final Schedule? data;
@@ -363,6 +432,9 @@ class Podium extends StatelessWidget {
     final p = Palette.of(context);
     final byPlace = {for (final x in list) x.place: x};
     final order = [2, 1, 3].where(byPlace.containsKey).toList();
+    // у пары — по партнёру на строку
+    final lines = list.map((x) => x.name.split(' / ').length).fold(1, math.max);
+    final codes = list.any((x) => PlacingName.codeOf(x, intl).isNotEmpty);
     return Column(
       children: [
         Row(
@@ -371,7 +443,7 @@ class Podium extends StatelessWidget {
             for (final pl in order) ...[
               if (pl != order.first) const SizedBox(width: 6),
               Expanded(
-                child: _Step(x: byPlace[pl]!, data: data, intl: intl),
+                child: _Step(x: byPlace[pl]!, data: data, intl: intl, lines: lines, codes: codes),
               ),
             ],
           ],
@@ -381,7 +453,11 @@ class Podium extends StatelessWidget {
           height: 1.5,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [p.plateLine.withValues(alpha: 0), p.accent.withValues(alpha: .45), p.plateLine.withValues(alpha: 0)],
+              colors: [
+                p.plateLine.withValues(alpha: 0),
+                p.accent.withValues(alpha: .45),
+                p.plateLine.withValues(alpha: 0),
+              ],
             ),
           ),
         ),
@@ -394,7 +470,11 @@ class _Step extends StatelessWidget {
   final Placing x;
   final Schedule? data;
   final bool intl;
-  const _Step({required this.x, required this.data, required this.intl});
+
+  /// Строк имени у самой длинной подписи пьедестала и есть ли у кого-то код.
+  final int lines;
+  final bool codes;
+  const _Step({required this.x, required this.data, required this.intl, required this.lines, required this.codes});
 
   /// Золото, серебро, бронза: кант ступени, ободок фото и цифра.
   static Color metal(int place, bool dark) => switch (place) {
@@ -419,36 +499,68 @@ class _Step extends StatelessWidget {
       2 => 58.0,
       _ => 46.0,
     };
-    final pair = x.name.contains(' / ');
     final ours = intl && x.ours;
-    final code = ours || x.nation.isEmpty ? '' : (intl ? nationCode(x.nation) : x.nation);
+    final code = PlacingName.codeOf(x, intl);
+    final nameStyle = TextStyle(
+      fontSize: lines > 1 ? 13 : 14.5,
+      fontWeight: first ? FontWeight.w800 : FontWeight.w700,
+      color: ours ? p.accent : p.ink,
+      height: 1.2,
+    );
+    final codeStyle = TextStyle(
+      fontSize: 11,
+      fontWeight: FontWeight.w700,
+      letterSpacing: .9,
+      height: 1.3,
+      color: p.ink2,
+    );
+    final pointsStyle = clock(p.ink2, 16, weight: FontWeight.w500);
+    // подпись: фамилия (у пары — по партнёру на строку, длинная — мельче, но целиком), код, баллы
+    final sur = surname(x.name).split(' / ');
+    Widget caption({bool ghost = false}) => Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        if (ghost)
+          for (var i = 0; i < lines; i++) Text('И', style: nameStyle)
+        else
+          NameLines(
+            variants: [
+              [for (var i = 0; i < sur.length; i++) i < sur.length - 1 ? '${sur[i]} /' : sur[i]],
+            ],
+            style: nameStyle,
+            center: true,
+            semantics: displayName(x.name),
+          ),
+        if (ghost ? codes : code.isNotEmpty)
+          Padding(
+            padding: const EdgeInsets.only(top: 2),
+            child: Text(ghost ? 'X' : code, style: codeStyle),
+          ),
+        Padding(
+          padding: const EdgeInsets.only(top: 3, bottom: 8),
+          child: Text(ghost || x.points.isEmpty ? '—' : x.points, style: pointsStyle),
+        ),
+      ],
+    );
     return Column(
       children: [
         Avatar(name: x.name, data: data, size: avatar, ring: c, ringWidth: 2.5),
         const SizedBox(height: 8),
-        Text(
-          pair ? surname(x.name).replaceAll(' / ', ' /\n') : surname(x.name),
-          maxLines: 2,
-          textAlign: TextAlign.center,
-          overflow: TextOverflow.ellipsis,
-          style: TextStyle(
-            fontSize: pair ? 13 : 14.5,
-            fontWeight: first ? FontWeight.w800 : FontWeight.w700,
-            color: ours ? p.accent : p.ink,
-            height: 1.2,
-          ),
-        ),
-        if (code.isNotEmpty)
-          Padding(
-            padding: const EdgeInsets.only(top: 2),
-            child: Text(
-              code,
-              style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, letterSpacing: .9, color: intl ? p.ink2 : p.ink3),
+        Stack(
+          alignment: Alignment.bottomCenter,
+          children: [
+            // невидимая подпись наибольшей высоты задаёт высоту у всех трёх
+            ExcludeSemantics(
+              child: Visibility(
+                visible: false,
+                maintainSize: true,
+                maintainAnimation: true,
+                maintainState: true,
+                child: caption(ghost: true),
+              ),
             ),
-          ),
-        Padding(
-          padding: const EdgeInsets.only(top: 3, bottom: 8),
-          child: Text(x.points.isEmpty ? '—' : x.points, style: clock(p.ink2, 16, weight: FontWeight.w500)),
+            caption(),
+          ],
         ),
         // ступень — прозрачный лёд с металлическим кантом
         Container(
@@ -478,7 +590,9 @@ class _Step extends StatelessWidget {
             children: [
               Positioned(top: 0, left: 0, right: 0, height: 3, child: ColoredBox(color: c)),
               if (first)
-                CustomPaint(painter: SparklePainter(p.isDark ? Colors.white : Palette.iceBlue, p.isDark ? .6 : .4, variant: 1)),
+                CustomPaint(
+                  painter: SparklePainter(p.isDark ? Colors.white : Palette.iceBlue, p.isDark ? .6 : .4, variant: 1),
+                ),
               Center(
                 child: Text(
                   '${x.place}',
@@ -512,38 +626,74 @@ class _TotalPlate extends StatelessWidget {
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     final rows = [...list]..sort((a, b) => a.place.compareTo(b.place));
+    final pairs = rows.any((x) => x.name.contains(' / '));
+    // крупные баллы растут со шрифтом не больше чем на 10 %: место нужнее имени
+    final scale = math.min(MediaQuery.textScalerOf(context).scale(1), 1.1);
+    final pointsStyle = clock(p.ink, 18, weight: FontWeight.w500);
     return Plate(
-      child: Column(
-        children: [
-          for (var i = 0; i < rows.length; i++) ...[
-            if (i > 0) const Hairline(indent: 96),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(14, 10, 16, 10),
-              child: Row(
-                children: [
-                  Medal(rows[i].place, size: 26),
-                  const SizedBox(width: 10),
-                  Avatar(name: rows[i].name, data: data, size: 36, slot: rows.any((x) => x.name.contains(' / '))),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: PlacingName(
-                      x: rows[i],
-                      intl: intl,
-                      size: 15,
-                      weight: rows[i].place == 1 ? FontWeight.w700 : FontWeight.w600,
-                      maxLines: 2,
-                    ),
-                  ),
-                  if (rows[i].points.isNotEmpty) ...[
-                    const SizedBox(width: 8),
-                    Text(rows[i].points, style: clock(p.ink, 18, weight: FontWeight.w500)),
-                  ],
-                ],
-              ),
-            ),
-          ],
-        ],
+      child: MeasuredLayout(
+        builder: (context, c) {
+          // место под имя: поля 14 и 16, медаль 26, аватар, зазоры, самые широкие баллы
+          final points = rows
+              .map((x) => x.points.isEmpty ? 0.0 : _width(x.points, pointsStyle, scale) + 8)
+              .fold(0.0, math.max);
+          final nameW = c.maxWidth - 14 - 26 - 10 - (pairs ? Avatar.pairWidth(36) : 36) - 10 - 16 - points;
+          final codeStyle = TextStyle(fontSize: 15 * .76, fontWeight: FontWeight.w700, letterSpacing: .8, height: 1.25);
+          // полные имена — только если помещаются у всех; иначе у всех короткие
+          final full = allFull(
+            context,
+            [for (final x in rows) x.name],
+            TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.25),
+            nameW,
+            suffix: (i) {
+              final code = PlacingName.codeOf(rows[i], intl);
+              return code.isEmpty ? 0 : textWidth(context, code, codeStyle) + NameLines.gap;
+            },
+          );
+          return _rows(context, rows, pairs, full, scale, pointsStyle);
+        },
       ),
+    );
+  }
+
+  static double _width(String text, TextStyle style, double scale) => (TextPainter(
+    text: TextSpan(text: text, style: style),
+    textDirection: TextDirection.ltr,
+    textScaler: TextScaler.linear(scale),
+  )..layout()).width;
+
+  Widget _rows(BuildContext context, List<Placing> rows, bool pairs, bool full, double scale, TextStyle pointsStyle) {
+    return Column(
+      children: [
+        for (var i = 0; i < rows.length; i++) ...[
+          // линия — под именем: 14 + медаль 26 + 10 + аватар (у пар шире) + 10
+          if (i > 0) Hairline(indent: 60 + (pairs ? Avatar.pairWidth(36) : 36)),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(14, 10, 16, 10),
+            child: Row(
+              children: [
+                Medal(rows[i].place, size: 26),
+                const SizedBox(width: 10),
+                Avatar(name: rows[i].name, data: data, size: 36, slot: pairs),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: PlacingName(
+                    x: rows[i],
+                    intl: intl,
+                    short: !full,
+                    size: 15,
+                    weight: rows[i].place == 1 ? FontWeight.w700 : FontWeight.w600,
+                  ),
+                ),
+                if (rows[i].points.isNotEmpty) ...[
+                  const SizedBox(width: 8),
+                  Text(rows[i].points, textScaler: TextScaler.linear(scale), style: pointsStyle),
+                ],
+              ],
+            ),
+          ),
+        ],
+      ],
     );
   }
 }
@@ -554,7 +704,24 @@ class _OurResult extends StatelessWidget {
   final String seg;
   final Schedule? data;
   final bool slot;
-  const _OurResult({required this.o, required this.seg, required this.data, required this.slot});
+
+  /// Полное имя (решается на весь список «Наши»).
+  final bool full;
+  const _OurResult({required this.o, required this.seg, required this.data, required this.slot, this.full = true});
+
+  static const _placeStyle = TextStyle(
+    fontFamily: serif,
+    fontSize: 32,
+    fontWeight: FontWeight.w700,
+    height: 1.0,
+    fontFeatures: [FontFeature.liningFigures()],
+  );
+
+  /// Ширина правой колонки: место крупно и подпись «место · ПП».
+  static double right(BuildContext context, Skater o, String seg) => math.max(
+    textWidth(context, o.place == null ? '—' : '${o.place}', _placeStyle),
+    o.place != null && seg.isNotEmpty ? textWidth(context, 'место · $seg'.toUpperCase(), Eyebrow.style(Colors.black)) : 0,
+  );
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -568,11 +735,11 @@ class _OurResult extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  displayName(o.name).replaceAll(' / ', ' /\n'),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+                // пара — по партнёру на строку или фамилиями; партнёр не теряется
+                NameLines(
+                  variants: nameVariants(o.name, full: full, lines: 2),
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink, height: 1.25),
+                  semantics: displayName(o.name),
                 ),
                 if (o.overall != null)
                   Padding(
@@ -589,17 +756,7 @@ class _OurResult extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text(
-                o.place == null ? '—' : '${o.place}',
-                style: TextStyle(
-                  fontFamily: serif,
-                  fontSize: 32,
-                  fontWeight: FontWeight.w700,
-                  height: 1.0,
-                  fontFeatures: const [FontFeature.liningFigures()],
-                  color: p.ink,
-                ),
-              ),
+              Text(o.place == null ? '—' : '${o.place}', style: _placeStyle.copyWith(color: p.ink)),
               if (o.place != null && seg.isNotEmpty) Eyebrow('место · $seg'),
             ],
           ),
@@ -616,18 +773,43 @@ class _OurAhead extends StatelessWidget {
   final AppState state;
   final DateTime t;
   final bool slot;
-  const _OurAhead({required this.o, required this.s, required this.state, required this.t, required this.slot});
+
+  /// Полное имя (решается на весь список «Наши»).
+  final bool full;
+  const _OurAhead({
+    required this.o,
+    required this.s,
+    required this.state,
+    required this.t,
+    required this.slot,
+    this.full = true,
+  });
+
+  static const _placeStyle = TextStyle(
+    fontFamily: serif,
+    fontSize: 30,
+    fontWeight: FontWeight.w700,
+    height: 1,
+    fontFeatures: [FontFeature.liningFigures()],
+  );
+  static TextStyle _timeStyle(Color c) => clock(c, 24, weight: FontWeight.w400);
+
+  /// Ширина правой колонки: место или время выхода.
+  static double right(BuildContext context, Skater o) => o.place != null
+      ? textWidth(context, '${o.place}', _placeStyle)
+      : (o.time != null ? textWidth(context, o.time!, _timeStyle(Colors.black)) : 0);
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     final skate = s.skateAt(o);
     final skated = o.place != null || (skate != null && skate.add(const Duration(minutes: 4)).isBefore(t));
-    final meta = [if (o.no != null) '№ ${o.no}', if (o.warmup != null) 'разминка ${o.warmup}'];
+    final meta = [if (o.no != null) '№$nb${o.no}', if (o.warmup != null) 'разминка$nb${o.warmup}'];
     if (meta.isEmpty && o.time == null) meta.add('порядок не объявлен');
-    // отдельное уведомление о выходе — когда оно и правда стоит в плане
+    // отдельное уведомление о выходе — когда оно и правда стоит в плане и система его покажет
     final alertAt = skate?.subtract(Duration(minutes: state.rules.lead));
-    final alert = state.rules.skaters && state.notifies(s) && alertAt != null && alertAt.isAfter(t)
-        ? 'уведомление в ${hm(alertAt)}'
+    final alert =
+        state.rules.skaters && state.notifies(s) && state.allowed != false && alertAt != null && alertAt.isAfter(t)
+        ? 'уведомление в$nb${hm(alertAt)}'
         : null;
     return Padding(
       padding: const EdgeInsets.fromLTRB(14, 10, 16, 10),
@@ -639,11 +821,10 @@ class _OurAhead extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  displayName(o.name).replaceAll(' / ', ' /\n'),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+                NameLines(
+                  variants: nameVariants(o.name, full: full, lines: 2),
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink, height: 1.25),
+                  semantics: displayName(o.name),
                 ),
                 if (meta.isNotEmpty)
                   Padding(
@@ -660,19 +841,9 @@ class _OurAhead extends StatelessWidget {
           ),
           const SizedBox(width: 10),
           if (o.place != null)
-            Text(
-              '${o.place}',
-              style: TextStyle(
-                fontFamily: serif,
-                fontSize: 30,
-                fontWeight: FontWeight.w700,
-                height: 1,
-                fontFeatures: const [FontFeature.liningFigures()],
-                color: p.ink2,
-              ),
-            )
+            Text('${o.place}', style: _placeStyle.copyWith(color: p.ink2))
           else if (o.time != null)
-            Text(o.time!, style: clock(skated ? p.ink2 : p.ink, 24, weight: FontWeight.w400)),
+            Text(o.time!, style: _timeStyle(skated ? p.ink2 : p.ink)),
         ],
       ),
     );
@@ -733,15 +904,6 @@ class _FilterSheet extends StatefulWidget {
 class _FilterSheetState extends State<_FilterSheet> {
   late Set<String> kinds = {...widget.state.filters.kinds};
   late Set<String> tids = {...widget.state.filters.tids};
-  late Set<String> athletes = {...widget.state.filters.athletes};
-  final _q = TextEditingController();
-  String q = '';
-
-  @override
-  void dispose() {
-    _q.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -752,101 +914,72 @@ class _FilterSheetState extends State<_FilterSheet> {
     for (final s in data.starts) {
       if (!s.pastAt(t)) tours.putIfAbsent(s.tid, () => s.tournament);
     }
-    final all = <String>{...data.watchlist};
-    for (final s in data.starts) {
-      if (s.pastAt(t)) continue;
-      all.addAll(s.ours.map((o) => o.name));
-      all.addAll(s.athletes);
-    }
-    final found = q.isEmpty
-        ? (athletes.toList()..sort())
-        : (all.where((a) => norm(a).contains(norm(q))).toList()..sort()).take(8).toList();
-    final canReset = kinds.isNotEmpty || tids.isNotEmpty || athletes.isNotEmpty || widget.state.filters.any;
-    final count = feedPool(widget.state, Filters(kinds, tids, athletes), t).length;
+    final canReset = kinds.isNotEmpty || tids.isNotEmpty || widget.state.filters.any;
+    final count = feedPool(widget.state, Filters(kinds, tids), t).length;
     return DraggableScrollableSheet(
       expand: false,
       initialChildSize: .88,
       maxChildSize: .95,
       builder: (c, scroll) => Column(
         children: [
-          const SizedBox(height: 22, child: SheetHandle()),
           Expanded(
-            child: ListView(
-              controller: scroll,
-              padding: const EdgeInsets.fromLTRB(20, 8, 20, 16),
+            child: Stack(
               children: [
-                Text('Фильтр', style: display(p, 42)),
-                const SizedBox(height: 20),
-                const Eyebrow('Вид'),
-                const SizedBox(height: 10),
-                TileGrid(
-                  keepGrid: true,
-                  tiles: [
-                    for (final k in kindNames.entries)
-                      ChoiceTile(
-                        label: k.value,
-                        color: p.kind(k.key),
-                        on: kinds.contains(k.key),
-                        onTap: () => setState(() => kinds.contains(k.key) ? kinds.remove(k.key) : kinds.add(k.key)),
+                ListView(
+                  controller: scroll,
+                  padding: EdgeInsets.zero,
+                  children: [
+                    // шапка — тот же лёд, что у листа старта
+                    Stack(
+                      children: [
+                        Positioned.fill(child: IceBackdrop(fadeTo: p.sheet, fadeStart: .25, sparkles: -1)),
+                        const Positioned(top: 0, left: 0, right: 0, child: SheetSparkles()),
+                        ConstrainedBox(
+                          constraints: const BoxConstraints(minHeight: 110, minWidth: double.infinity),
+                          child: Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(20, 36, 20, 4),
+                              child: Text('Фильтр', style: display(p, 42)),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 16, 20, 16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          const Eyebrow('Вид'),
+                          const SizedBox(height: 10),
+                          TileGrid(
+                            tiles: [
+                              for (final k in kindNames.entries)
+                                ChoiceTile(
+                                  label: k.value,
+                                  color: p.kind(k.key),
+                                  on: kinds.contains(k.key),
+                                  onTap: () =>
+                                      setState(() => kinds.contains(k.key) ? kinds.remove(k.key) : kinds.add(k.key)),
+                                ),
+                            ],
+                          ),
+                          const SizedBox(height: 26),
+                          const Eyebrow('Турнир'),
+                          const SizedBox(height: 4),
+                          for (final e in tours.entries)
+                            _CheckRow(
+                              title: e.value,
+                              value: tids.contains(e.key),
+                              onTap: () => setState(() => tids.contains(e.key) ? tids.remove(e.key) : tids.add(e.key)),
+                            ),
+                        ],
                       ),
+                    ),
                   ],
                 ),
-                const SizedBox(height: 26),
-                const Eyebrow('Спортсмен'),
-                const SizedBox(height: 10),
-                TextField(
-                  controller: _q,
-                  style: TextStyle(fontSize: 15.5, color: p.ink),
-                  decoration: InputDecoration(
-                    hintText: 'Фамилия',
-                    hintStyle: TextStyle(color: p.ink2),
-                    prefixIcon: Icon(CupertinoIcons.search, size: 19, color: p.ink2),
-                    suffixIcon: q.isEmpty
-                        ? null
-                        : IconButton(
-                            tooltip: 'Очистить',
-                            icon: Icon(CupertinoIcons.xmark_circle_fill, size: 19, color: p.ink3),
-                            onPressed: () => setState(() {
-                              _q.clear();
-                              q = '';
-                            }),
-                          ),
-                    filled: true,
-                    fillColor: p.plate,
-                    contentPadding: const EdgeInsets.symmetric(vertical: 14),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16),
-                      borderSide: BorderSide(color: p.control.withValues(alpha: .6)),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16),
-                      borderSide: BorderSide(color: p.accent, width: 1.4),
-                    ),
-                  ),
-                  onChanged: (v) => setState(() => q = v.trim()),
-                ),
-                if (found.isNotEmpty) const SizedBox(height: 6),
-                for (final a in found)
-                  _CheckRow(
-                    leading: Avatar(name: a, data: data, size: 34, slot: true),
-                    title: displayName(a),
-                    value: athletes.contains(a),
-                    onTap: () => setState(() => athletes.contains(a) ? athletes.remove(a) : athletes.add(a)),
-                  ),
-                if (q.isNotEmpty && found.isEmpty)
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: Text('Не найдено', style: TextStyle(color: p.ink2, fontSize: 15)),
-                  ),
-                const SizedBox(height: 26),
-                const Eyebrow('Турнир'),
-                const SizedBox(height: 4),
-                for (final e in tours.entries)
-                  _CheckRow(
-                    title: e.value,
-                    value: tids.contains(e.key),
-                    onTap: () => setState(() => tids.contains(e.key) ? tids.remove(e.key) : tids.add(e.key)),
-                  ),
+                const Positioned(top: 0, left: 0, right: 0, child: SheetHandle()),
               ],
             ),
           ),
@@ -856,39 +989,44 @@ class _FilterSheetState extends State<_FilterSheet> {
               border: Border(top: BorderSide(color: p.plateLine)),
             ),
             padding: EdgeInsets.fromLTRB(16, 12, 16, 12 + MediaQuery.paddingOf(context).bottom),
-            child: Row(
-              children: [
-                SheetButton(
-                  neutral: true,
-                  compact: true,
-                  label: 'Сбросить',
-                  onTap: canReset
-                      ? () {
-                          setState(() {
-                            kinds.clear();
-                            tids.clear();
-                            athletes.clear();
-                            _q.clear();
-                            q = '';
-                          });
-                          widget.state.setFilters(const Filters({}, {}, {}));
-                        }
-                      : null,
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: SheetButton(
-                    filled: true,
-                    label: count == 0 ? 'Стартов нет' : 'Показать $count ${plural(count, 'старт', 'старта', 'стартов')}',
-                    onTap: count == 0
-                        ? null
-                        : () {
-                            widget.state.setFilters(Filters(kinds, tids, athletes));
-                            Navigator.pop(context);
-                          },
+            // «Сбросить» — не шире 40 % ряда: главная кнопка остаётся главной
+            child: LayoutBuilder(
+              builder: (context, k) => Row(
+                children: [
+                  ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: k.maxWidth * .4),
+                    child: SheetButton(
+                      neutral: true,
+                      compact: true,
+                      label: 'Сбросить',
+                      onTap: canReset
+                          ? () {
+                              setState(() {
+                                kinds.clear();
+                                tids.clear();
+                              });
+                              widget.state.setFilters(const Filters({}, {}));
+                            }
+                          : null,
+                    ),
                   ),
-                ),
-              ],
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: SheetButton(
+                      filled: true,
+                      label: count == 0
+                          ? 'Стартов нет'
+                          : 'Показать $count ${plural(count, 'старт', 'старта', 'стартов')}',
+                      onTap: count == 0
+                          ? null
+                          : () {
+                              widget.state.setFilters(Filters(kinds, tids));
+                              Navigator.pop(context);
+                            },
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
@@ -898,11 +1036,10 @@ class _FilterSheetState extends State<_FilterSheet> {
 }
 
 class _CheckRow extends StatelessWidget {
-  final Widget? leading;
   final String title;
   final bool value;
   final VoidCallback onTap;
-  const _CheckRow({this.leading, required this.title, required this.value, required this.onTap});
+  const _CheckRow({required this.title, required this.value, required this.onTap});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -917,7 +1054,6 @@ class _CheckRow extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 6),
             child: Row(
               children: [
-                if (leading != null) ...[leading!, const SizedBox(width: 12)],
                 Expanded(
                   child: Text(
                     title,

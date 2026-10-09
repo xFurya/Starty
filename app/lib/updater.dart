@@ -75,13 +75,14 @@ class UpdateState {
     if (ready) {
       final v = 'Версия $readyVersion';
       if (wait == 'confirm') return '$v ждёт подтверждения установки';
-      if (!canInstall) return '$v скачана — нужно разрешение на установку';
-      if (installError.isNotEmpty) return '$v не установилась: $installError';
+      if (!canInstall) return '$v скачана · нет разрешения на установку';
+      // сырое системное сообщение (часто английское) не показываем: ниже есть «Открыть установщик»
+      if (installError.isNotEmpty) return '$v не установилась';
       if (stuck) return '$v не установилась автоматически';
-      return '$v скачана — установится после сворачивания';
+      return '$v скачана · установится после сворачивания';
     }
     if (checking) return 'Проверка…';
-    if (error.isNotEmpty) return 'Не вышло: $error';
+    if (error.isNotEmpty) return 'Ошибка проверки · $error';
     final at = checkedAt;
     return at == null ? 'Устанавливаются автоматически' : 'Устанавливаются автоматически · проверено ${ago(at, now)}';
   }
@@ -165,7 +166,7 @@ class Updates extends ChangeNotifier {
     if (s == null || !s.ready || readyAnnounced == s.readyVersion) return null;
     readyAnnounced = s.readyVersion;
     if (s.needsHand) return 'Обновление ${s.readyVersion} ждёт установки';
-    return 'Вышла версия ${s.readyVersion}. Установится после сворачивания';
+    return 'Версия ${s.readyVersion} скачана';
   }
 
   String? takeUpdatedMessage() {
