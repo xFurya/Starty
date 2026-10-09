@@ -130,20 +130,57 @@ class Placing {
       points = j['points'] ?? '';
 
   /// Наш: RUS или AIN2 (нейтральные россияне); на российских стартах — регион.
-  bool get ours => nation == 'RUS' || nation == 'AIN2' || nation == 'AIN' || RegExp(r'^[А-ЯЁ]{3}$').hasMatch(nation);
+  /// Простой AIN — неизвестно чей: показываем как иностранца, с кодом.
+  bool get ours => nation == 'RUS' || nation == 'AIN2' || RegExp(r'^[А-ЯЁ]{3}$').hasMatch(nation);
   String get short => name.contains(' / ') ? name.split(' / ').map((p) => p.trim().split(' ').last).join(' / ') : name;
+}
+
+/// Турнир, у которого ещё нет расписания по сегментам: только даты и место.
+class Upcoming {
+  final String tid, name, venue;
+  final bool intl;
+
+  /// Дни по Москве: «2026-10-15».
+  final String start, end;
+  final List<String> ours;
+  Upcoming.fromJson(Map<String, dynamic> j)
+    : tid = j['tid'] ?? '',
+      name = j['name'] ?? '',
+      venue = j['venue'] ?? '',
+      intl = j['intl'] == true,
+      start = (j['start'] as String? ?? '').split('T').first,
+      end = ((j['end'] ?? j['start']) as String? ?? '').split('T').first,
+      ours = List<String>.from(j['ours'] ?? const []);
+
+  /// Идёт ли турнир в этот день.
+  bool covers(String day) => start.isNotEmpty && day.compareTo(start) >= 0 && day.compareTo(end) <= 0;
 }
 
 class Schedule {
   final List<Start> starts;
   final DateTime generated;
+
+  /// Все источники ответили при последнем сборе.
   final bool complete;
-  final List<String> watchlist;
   final bool fromCache;
 
   /// Фотографии спортсменов: «Имя Фамилия» → миниатюра на сайте (photos/…) или адрес.
   final Map<String, String> photos;
-  Schedule(this.starts, this.generated, this.complete, this.watchlist, this.fromCache, [this.photos = const {}]);
+
+  /// Турниры без расписания по сегментам, по дате начала.
+  final List<Upcoming> upcoming;
+
+  /// Источники последнего сбора: «ФФККР» → ok / fail.
+  final Map<String, String> sources;
+  Schedule(
+    this.starts,
+    this.generated,
+    this.complete,
+    this.fromCache, {
+    this.photos = const {},
+    this.upcoming = const [],
+    this.sources = const {},
+  });
 
   String? photoOf(String name) {
     final p = photos[name];
@@ -154,13 +191,18 @@ class Schedule {
   static Schedule parse(String body, {bool fromCache = false}) {
     final j = jsonDecode(body) as Map<String, dynamic>;
     final starts = [for (final e in j['events'] as List) Start.fromJson(e)]..sort((a, b) => a.t0.compareTo(b.t0));
+    final upcoming = [
+      for (final u in (j['upcoming'] as List? ?? const [])) Upcoming.fromJson(Map<String, dynamic>.from(u as Map)),
+    ]..removeWhere((u) => u.name.isEmpty || u.start.isEmpty);
+    upcoming.sort((a, b) => a.start.compareTo(b.start));
     return Schedule(
       starts,
       DateTime.parse(j['generated']),
       j['complete'] != false,
-      List<String>.from(j['watchlist'] ?? const []),
       fromCache,
-      Map<String, String>.from(j['photos'] ?? const {}),
+      photos: Map<String, String>.from(j['photos'] ?? const {}),
+      upcoming: upcoming,
+      sources: {for (final e in (j['sources'] as Map? ?? const {}).entries) '${e.key}': '${e.value}'},
     );
   }
 
@@ -208,7 +250,10 @@ class Repo {
 /// Что отметил человек и какие фильтры выбрал — хранится на устройстве.
 class Prefs {
   static late SharedPreferences _p;
-  static Future<void> init() async => _p = await SharedPreferences.getInstance();
+  static Future<void> init() async {
+    _p = await SharedPreferences.getInstance();
+    await dropOld();
+  }
 
   // Уведомления: правила (строка JSON, разбирает reminders.dart) и ручные исключения.
   static String? get rulesJson => _p.getString('n.rules');
@@ -234,29 +279,33 @@ class Prefs {
 
   static Set<String> get kinds => (_p.getStringList('f.kinds') ?? const []).toSet();
   static Set<String> get tids => (_p.getStringList('f.tids') ?? const []).toSet();
-  static Set<String> get athletes => (_p.getStringList('f.athletes') ?? const []).toSet();
-  static Future<void> setFilters(Set<String> k, Set<String> t, Set<String> a) async {
+  static Future<void> setFilters(Set<String> k, Set<String> t) async {
     await _p.setStringList('f.kinds', k.toList());
     await _p.setStringList('f.tids', t.toList());
-    await _p.setStringList('f.athletes', a.toList());
+  }
+
+  /// Фильтр по спортсменам из прежних версий: отбора по спортсменам больше нет,
+  /// а сохранённый скрыто сужал бы ленту.
+  static Future<void> dropOld() async {
+    if (_p.containsKey('f.athletes')) await _p.remove('f.athletes');
   }
 }
 
 String norm(String s) => s.toLowerCase().replaceAll('ё', 'е');
 
+/// Фильтр ленты: виды и турниры.
 class Filters {
-  final Set<String> kinds, tids, athletes;
-  const Filters(this.kinds, this.tids, this.athletes);
-  bool get any => kinds.isNotEmpty || tids.isNotEmpty || athletes.isNotEmpty;
-  int get count => kinds.length + tids.length + athletes.length;
+  final Set<String> kinds, tids;
+  const Filters(this.kinds, this.tids);
+  bool get any => kinds.isNotEmpty || tids.isNotEmpty;
+  int get count => kinds.length + tids.length;
 
   bool pass(Start s) {
     if (kinds.isNotEmpty && !kinds.contains(s.kind)) return false;
     if (tids.isNotEmpty && !tids.contains(s.tid)) return false;
-    if (athletes.isNotEmpty) {
-      final names = {...s.athletes, ...s.ours.map((o) => o.name)}.map(norm).toSet();
-      if (!athletes.any((a) => names.contains(norm(a)))) return false;
-    }
     return true;
   }
+
+  /// Турнир без расписания: виды у него неизвестны — отсекает только выбор турниров.
+  bool passUpcoming(Upcoming u) => tids.isEmpty || tids.contains(u.tid);
 }
