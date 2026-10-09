@@ -7,6 +7,9 @@ import 'package:flutter/services.dart';
 import 'background.dart';
 import 'data.dart';
 import 'reminders.dart';
+import 'settings.dart';
+import 'state.dart';
+import 'ui.dart';
 import 'update.dart';
 import 'views.dart';
 
@@ -21,139 +24,185 @@ Future<void> main() async {
   await scheduleBackground();
 }
 
+/// Цвета «Лёд»: светлая тема — главная, тёмная — ночной каток.
+/// Акцент — синий из иконки (#2B78C2 → #0A2342).
 class Palette {
-  final Color bg, surface, ink, ink2, ink3, line, accent, live, sheet;
-  const Palette(this.bg, this.surface, this.ink, this.ink2, this.ink3, this.line, this.accent, this.live, this.sheet);
+  final bool isDark;
+  final Color bg, bgTop, plate, plateLine, ink, ink2, ink3, line, accent, onAccent, live, sheet, frost, nav;
+
+  /// Обводка флажков и переключателей: не ниже 3:1 к фону листа.
+  final Color control;
+
+  /// Виды: приглушённые ледяные оттенки — женщины, мужчины, пары, танцы.
+  final Color women, men, pairs, dance;
+
+  const Palette({
+    required this.isDark,
+    required this.bg,
+    required this.bgTop,
+    required this.plate,
+    required this.plateLine,
+    required this.ink,
+    required this.ink2,
+    required this.ink3,
+    required this.line,
+    required this.accent,
+    required this.onAccent,
+    required this.live,
+    required this.sheet,
+    required this.frost,
+    required this.nav,
+    required this.control,
+    required this.women,
+    required this.men,
+    required this.pairs,
+    required this.dance,
+  });
+
+  /// Синий из иконки: верх и низ градиента.
+  static const iceBlue = Color(0xFF2B78C2);
+  static const deepBlue = Color(0xFF0A2342);
+
   static const light = Palette(
-    Color(0xFFF3F6F9),
-    Color(0xFFFFFFFF),
-    Color(0xFF0D1925),
-    Color(0xFF55667A),
-    Color(0xFF93A2B1),
-    Color(0xFFE2E8EE),
-    Color(0xFF1C5C9C),
-    Color(0xFFE0353B),
-    Color(0xFFFFFFFF),
+    isDark: false,
+    bg: Color(0xFFF1F6FB),
+    bgTop: Color(0xFFE2EEF9),
+    plate: Color(0xFFFFFFFF),
+    plateLine: Color(0xFFD6E3EF),
+    ink: Color(0xFF0B1A2A),
+    ink2: Color(0xFF4A6077),
+    ink3: Color(0xFF8396AA),
+    line: Color(0xFFE4ECF4),
+    accent: Color(0xFF1D63AD),
+    onAccent: Color(0xFFFFFFFF),
+    live: Color(0xFFD5304A),
+    sheet: Color(0xFFF7FAFD),
+    frost: Color(0xFFE6F0FA),
+    nav: Color(0xFFFBFDFF),
+    control: Color(0xFF6F8399),
+    women: Color(0xFFB9668A),
+    men: Color(0xFF3D7CC0),
+    pairs: Color(0xFF3A9294),
+    dance: Color(0xFF8576C0),
   );
   static const dark = Palette(
-    Color(0xFF09131D),
-    Color(0xFF111F2D),
-    Color(0xFFE9F0F6),
-    Color(0xFF9DAEBC),
-    Color(0xFF627588),
-    Color(0xFF1B2A39),
-    Color(0xFF72B4F2),
-    Color(0xFFFF5A5F),
-    Color(0xFF142433),
+    isDark: true,
+    bg: Color(0xFF06101B),
+    bgTop: Color(0xFF0B2036),
+    plate: Color(0xFF0C1B2B),
+    plateLine: Color(0xFF1A2F46),
+    ink: Color(0xFFE8F1FA),
+    ink2: Color(0xFF9CB1C6),
+    ink3: Color(0xFF627990),
+    line: Color(0xFF15283C),
+    accent: Color(0xFF80BBF2),
+    onAccent: Color(0xFF06101B),
+    live: Color(0xFFFF6B78),
+    sheet: Color(0xFF0A1726),
+    frost: Color(0xFF132A42),
+    nav: Color(0xFF081422),
+    control: Color(0xFF6E86A0),
+    women: Color(0xFFE59AB5),
+    men: Color(0xFF7FB2E8),
+    pairs: Color(0xFF6FCBC8),
+    dance: Color(0xFFB3A6EC),
   );
   static Palette of(BuildContext c) => Theme.of(c).brightness == Brightness.dark ? dark : light;
+
+  Color kind(String k) => switch (k) {
+    'women' => women,
+    'men' => men,
+    'pairs' => pairs,
+    'dance' => dance,
+    _ => ink3,
+  };
 }
 
 ThemeData _theme(Brightness b) {
   final p = b == Brightness.dark ? Palette.dark : Palette.light;
-  final base = ThemeData(brightness: b, useMaterial3: true, colorSchemeSeed: p.accent);
+  final base = ThemeData(brightness: b, useMaterial3: true, colorSchemeSeed: Palette.iceBlue, fontFamily: 'Manrope');
   return base.copyWith(
     scaffoldBackgroundColor: p.bg,
-    colorScheme: base.colorScheme.copyWith(primary: p.accent, surface: p.bg, onSurface: p.ink),
-    dividerColor: p.line,
-    splashFactory: InkSparkle.splashFactory,
-    textTheme: base.textTheme.apply(bodyColor: p.ink, displayColor: p.ink),
-    navigationBarTheme: NavigationBarThemeData(
-      backgroundColor: p.bg,
-      indicatorColor: p.accent.withValues(alpha: .14),
-      surfaceTintColor: Colors.transparent,
-      height: 64,
-      labelTextStyle: WidgetStateProperty.resolveWith(
-        (s) => TextStyle(
-          fontSize: 12.5,
-          fontWeight: s.contains(WidgetState.selected) ? FontWeight.w600 : FontWeight.w500,
-          color: s.contains(WidgetState.selected) ? p.ink : p.ink2,
-        ),
-      ),
+    colorScheme: base.colorScheme.copyWith(
+      primary: p.accent,
+      onPrimary: p.onAccent,
+      surface: p.bg,
+      onSurface: p.ink,
+      outline: p.plateLine,
     ),
-    bottomSheetTheme: BottomSheetThemeData(backgroundColor: p.sheet, surfaceTintColor: Colors.transparent, showDragHandle: true),
+    dividerColor: p.line,
+    splashFactory: InkRipple.splashFactory,
+    highlightColor: p.accent.withValues(alpha: .06),
+    splashColor: p.accent.withValues(alpha: .08),
+    textTheme: base.textTheme.apply(bodyColor: p.ink, displayColor: p.ink, fontFamily: 'Manrope'),
+    textSelectionTheme: TextSelectionThemeData(cursorColor: p.accent),
+    bottomSheetTheme: BottomSheetThemeData(
+      backgroundColor: p.sheet,
+      surfaceTintColor: Colors.transparent,
+      showDragHandle: false,
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(28))),
+      clipBehavior: Clip.antiAlias,
+    ),
+    appBarTheme: AppBarTheme(
+      backgroundColor: p.bg,
+      surfaceTintColor: Colors.transparent,
+      foregroundColor: p.ink,
+      elevation: 0,
+      titleTextStyle: TextStyle(fontFamily: 'Manrope', fontSize: 17, fontWeight: FontWeight.w600, color: p.ink),
+    ),
+    switchTheme: SwitchThemeData(
+      thumbColor: WidgetStateProperty.resolveWith(
+        (s) => s.contains(WidgetState.selected) ? p.onAccent : (p.isDark ? p.ink2 : Colors.white),
+      ),
+      trackColor: WidgetStateProperty.resolveWith((s) => s.contains(WidgetState.selected) ? p.accent : p.frost),
+      trackOutlineColor: WidgetStateProperty.resolveWith(
+        (s) => s.contains(WidgetState.selected) ? p.accent : p.control,
+      ),
+      thumbIcon: const WidgetStatePropertyAll(null),
+    ),
+    progressIndicatorTheme: ProgressIndicatorThemeData(color: p.accent),
+    tooltipTheme: TooltipThemeData(
+      decoration: BoxDecoration(color: p.ink.withValues(alpha: .92), borderRadius: BorderRadius.circular(8)),
+      textStyle: TextStyle(fontFamily: 'Manrope', fontSize: 13, color: p.bg),
+    ),
   );
 }
 
-class StartyApp extends StatelessWidget {
+class StartyApp extends StatefulWidget {
   const StartyApp({super.key});
   @override
-  Widget build(BuildContext context) => MaterialApp(
-    title: 'Старты',
-    debugShowCheckedModeBanner: false,
-    theme: _theme(Brightness.light),
-    darkTheme: _theme(Brightness.dark),
-    locale: const Locale('ru'),
-    home: const Home(),
-  );
+  State<StartyApp> createState() => _StartyAppState();
 }
 
-/// Общее состояние: расписание, отметки, фильтры.
-class AppState extends ChangeNotifier {
-  Schedule? data;
-  bool loading = true;
-  bool offline = false;
-  Set<String> watched = Prefs.watched;
-  Set<String> followed = Prefs.followed;
-  Filters filters = Filters(Prefs.kinds, Prefs.tids, Prefs.athletes);
+class _StartyAppState extends State<StartyApp> {
+  final state = AppState();
 
-  Future<void> load() async {
-    data ??= await Repo.cached();
-    if (data != null) {
-      loading = false;
-      notifyListeners();
-    }
-    final fresh = await Repo.fetch();
-    if (fresh != null) {
-      data = fresh;
-      offline = false;
-    } else {
-      offline = true;
-    }
-    loading = false;
-    notifyListeners();
-    Reminders.sync(data, watched, followed);
-  }
-
-  Future<void> toggleWatch(String id) async {
-    final on = !watched.contains(id);
-    watched = {...watched};
-    on ? watched.add(id) : watched.remove(id);
-    notifyListeners();
-    await Prefs.setWatched(watched);
-    if (on) await Reminders.ask();
-    await Reminders.sync(data, watched, followed);
-  }
-
-  bool follows(String name) => followed.contains(name);
-
-  /// Уведомление о выходе спортсмена: за 5 минут, когда время выхода известно.
-  Future<void> toggleFollow(String name) async {
-    final on = !followed.contains(name);
-    followed = {...followed};
-    on ? followed.add(name) : followed.remove(name);
-    notifyListeners();
-    await Prefs.setFollowed(followed);
-    if (on) await Reminders.ask();
-    await Reminders.sync(data, watched, followed);
-  }
-
-  Future<void> setFilters(Filters f) async {
-    filters = f;
-    notifyListeners();
-    await Prefs.setFilters(f.kinds, f.tids, f.athletes);
-  }
+  @override
+  Widget build(BuildContext context) => ListenableBuilder(
+    listenable: state,
+    builder: (context, _) => MaterialApp(
+      title: 'Фигурное катание',
+      debugShowCheckedModeBanner: false,
+      theme: _theme(Brightness.light),
+      darkTheme: _theme(Brightness.dark),
+      themeMode: state.theme,
+      locale: const Locale('ru'),
+      // крупный системный шрифт — до 130 %: дальше разметка теряет смысл
+      builder: (context, child) => MediaQuery.withClampedTextScaling(maxScaleFactor: 1.3, child: child!),
+      home: Home(state: state),
+    ),
+  );
 }
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  final AppState state;
+  const Home({super.key, required this.state});
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> with WidgetsBindingObserver {
-  final state = AppState();
-  int tab = 0;
+  AppState get state => widget.state;
   Timer? _tick;
   UpdateInfo? update;
 
@@ -162,14 +211,17 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     state.load();
-    // раз в минуту: «идёт сейчас», кто уже откатал
+    // раз в минуту: «идёт сейчас», кто уже откатал, отсчёт до начала
     _tick = Timer.periodic(const Duration(minutes: 1), (_) => setState(() {}));
     if (!kIsWeb) checkUpdate().then((u) => mounted && u != null ? setState(() => update = u) : null);
   }
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState s) {
-    if (s == AppLifecycleState.resumed) state.load();
+    if (s == AppLifecycleState.resumed) {
+      state.load();
+      state.refreshPermission();
+    }
   }
 
   @override
@@ -183,52 +235,44 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     SystemChrome.setSystemUIOverlayStyle(
-      Theme.of(context).brightness == Brightness.dark
-          ? SystemUiOverlayStyle.light.copyWith(statusBarColor: Colors.transparent, systemNavigationBarColor: p.bg)
-          : SystemUiOverlayStyle.dark.copyWith(statusBarColor: Colors.transparent, systemNavigationBarColor: p.bg),
+      p.isDark
+          ? SystemUiOverlayStyle.light.copyWith(statusBarColor: Colors.transparent, systemNavigationBarColor: p.nav)
+          : SystemUiOverlayStyle.dark.copyWith(statusBarColor: Colors.transparent, systemNavigationBarColor: p.nav),
     );
-    return ListenableBuilder(
-      listenable: state,
-      builder: (context, _) => Scaffold(
-        body: SafeArea(
-          bottom: false,
-          child: Column(
+    return ValueListenableBuilder<int>(
+      valueListenable: homeTab,
+      builder: (context, tab, _) => ListenableBuilder(
+        listenable: state,
+        builder: (context, _) => Scaffold(
+          body: Column(
             children: [
-              if (update != null) UpdateBar(info: update!, onClose: () => setState(() => update = null)),
+              if (update != null)
+                SafeArea(
+                  bottom: false,
+                  child: UpdateBar(info: update!, onClose: () => setState(() => update = null)),
+                ),
               Expanded(
-                child: IndexedStack(
-                  index: tab,
-                  children: [
-                    FeedView(state: state),
-                    MonthView(state: state),
-                    MineView(state: state),
-                  ],
+                child: MediaQuery.removePadding(
+                  context: context,
+                  removeTop: update != null,
+                  child: IndexedStack(
+                    index: tab,
+                    children: [
+                      FeedView(state: state),
+                      MonthView(state: state),
+                      SettingsView(state: state),
+                    ],
+                  ),
                 ),
               ),
             ],
           ),
-        ),
-        bottomNavigationBar: NavigationBar(
-          selectedIndex: tab,
-          onDestinationSelected: (i) => setState(() => tab = i),
-          labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-          destinations: [
-            const NavigationDestination(
-              icon: Icon(Icons.view_agenda_outlined),
-              selectedIcon: Icon(Icons.view_agenda),
-              label: 'Лента',
-            ),
-            const NavigationDestination(
-              icon: Icon(Icons.calendar_month_outlined),
-              selectedIcon: Icon(Icons.calendar_month),
-              label: 'Месяц',
-            ),
-            NavigationDestination(
-              icon: Badge(isLabelVisible: state.watched.isNotEmpty, smallSize: 7, child: const Icon(Icons.notifications_none)),
-              selectedIcon: const Icon(Icons.notifications),
-              label: 'Мои',
-            ),
-          ],
+          bottomNavigationBar: IceNav(
+            index: tab,
+            onTap: (i) => homeTab.value = i,
+            // в системе уведомления запрещены, а правила их ждут — точка у «Настроек»
+            settingsDot: state.rules.on && state.allowed == false,
+          ),
         ),
       ),
     );
