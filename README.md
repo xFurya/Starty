@@ -1,10 +1,22 @@
 # Старты — календарь стартов по фигурному катанию
 
-Приложение (PWA) и ICS-лента: российские старты и международные с нашими.
-Время везде московское. Расписание обновляется само в 09:00 и 15:00 МСК.
+Приложение для Android и iPhone (Flutter, папка `app/`) и ICS-лента: российские
+старты и международные с нашими. Время везде московское. Расписание
+обновляется само в 09:00 и 15:00 МСК.
 
-- Приложение: `https://<владелец>.github.io/starty/`
-- Лента для календаря: `https://<владелец>.github.io/starty/calendar.ics`
+- Скачать: https://xfurya.github.io/Starty/ (Android — .apk, iPhone — через SideStore)
+- Расписание, которое читает приложение: `…/Starty/data/events.json`
+- Лента для календаря: `…/Starty/calendar.ics`
+
+## Сборка приложения
+
+- Android: `cd app && flutter build apk --release --target-platform android-arm64
+  --dart-define=BUILD=<номер>` — подпись ключом из `android/key.properties`
+  (ключа в этом репозитории нет). Готовый файл кладётся в `site/app/Starty.apk`,
+  номер — в `site/app/version.json`: по нему приложение предлагает обновиться.
+- iPhone: `.github/workflows/app-ios.yml` собирает `.ipa` без подписи на macOS
+  при каждом изменении `app/` и кладёт её в `site/app/Starty.ipa`; SideStore
+  берёт её по `site/app/sidestore.json`.
 
 ## Что попадает в календарь
 

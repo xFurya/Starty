@@ -1,0 +1,53 @@
+name: Сборка iOS
+
+# .ipa без подписи: на iPhone её ставит и подписывает SideStore вашим Apple ID.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['app/**', '.github/workflows/app-ios.yml']
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: app-ios
+  cancel-in-progress: true
+
+jobs:
+  ios:
+    runs-on: macos-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.47.7
+          cache: true
+
+      - name: Собрать
+        working-directory: app
+        run: |
+          BUILD=$(grep '^version:' pubspec.yaml | sed 's/.*+//')
+          flutter pub get
+          flutter build ios --release --no-codesign --dart-define=BUILD=$BUILD
+          cd build/ios/iphoneos
+          rm -rf Payload && mkdir Payload && cp -R Runner.app Payload/
+          zip -qry Starty.ipa Payload
+          ls -la Starty.ipa
+
+      - name: Выложить на сайт
+        run: |
+          cp app/build/ios/iphoneos/Starty.ipa site/app/Starty.ipa
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/app/Starty.ipa
+          git commit -q -m "iOS: сборка $(grep '^version:' app/pubspec.yaml | sed 's/version: //')" || exit 0
+          for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 5; done
+          # опубликовать сайт сразу, не дожидаясь расписания
+          gh workflow run update.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}
