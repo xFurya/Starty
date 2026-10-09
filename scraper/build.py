@@ -315,6 +315,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                     names.add(one)
         codes = [seg_code(s["name"]) for s in c["segments"]]
         last_seg = max((SEG_ORDER[x] for x in codes if x), default=None)
+        cat_events, cat_total, cat_rows = [], None, []
         for s, seg in zip(c["segments"], codes):
             if not seg:
                 continue
@@ -364,25 +365,37 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 if place.get(p["name"]):
                     o["place"] = place[p["name"]]
                 ours.append(o)
-            if intl and not ours:
-                continue
-            podium = top3(results, names) if done else None
-            total = None
             if done and SEG_ORDER[seg] == last_seg and c.get("results_url"):
                 try:
                     cr = st.parse_category_results(c["results_url"])
                     if cr["complete"]:
-                        total = top3(cr["rows"], names)
+                        cat_total, cat_rows = top3(cr["rows"], names), cr["rows"]
                 except Exception as e:
                     log("  ! итог вида:", c["results_url"], e)
+            if intl and not ours:
+                continue
+            podium = top3(results, names) if done else None
+            total = cat_total if SEG_ORDER[seg] == last_seg else None
             last = max(msk_times.values()) if msk_times else None
             end = estimate_end(start, seg, kind, len(people), last)
             athletes = [names.to_ru(p["name"]) for p in people] if not intl else [o["name"] for o in ours]
-            events.append(make_event(
+            ev = make_event(
                 tid=tid, tournament=tournament, kind=kind, level=level, seg=seg, mixed=mixed,
                 start=start, end=end, venue=venue, intl=intl, broadcast=broadcast,
                 ours=sort_ours(ours), athletes=athletes, src=idx["url"],
-                podium=podium, total=total))
+                podium=podium, total=total)
+            events.append(ev)
+            cat_events.append(ev)
+        if cat_total and cat_events:
+            # наши не прошли в последний сегмент — итог вида у их последнего старта
+            ev = cat_events[-1]
+            ev["total"] = cat_total
+            # место наших в итоге вида
+            final = {nm.key(names.to_ru(r["name"])): r["place"] for r in cat_rows}
+            for o in ev["ours"]:
+                if final.get(nm.key(o["name"])):
+                    o["final"] = final[nm.key(o["name"])]
+            ev["desc"] = describe(ev)
     return events
 
 
@@ -779,7 +792,7 @@ def main():
             p = was.get(o["name"])
             if not p or (o.get("no") and p.get("no") and o["no"] != p["no"]):
                 continue
-            for k in ("time", "no", "warmup", "place"):
+            for k in ("time", "no", "warmup", "place", "final"):
                 if p.get(k) and not o.get(k):
                     o[k] = p[k]
                     changed = True

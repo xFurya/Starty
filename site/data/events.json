@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-09T14:00:09+03:00",
- "checked": "2026-10-09T14:00:09+03:00",
+ "generated": "2026-10-09T14:02:45+03:00",
+ "checked": "2026-10-09T14:02:45+03:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -73,7 +73,8 @@
      "name": "Александра Бойкова / Дмитрий Козловский",
      "no": 11,
      "warmup": null,
-     "place": 1
+     "place": 1,
+     "final": 1
     }
    ],
    "athletes": [
@@ -198,13 +199,15 @@
      "name": "Полина Шешелева / Егор Карнаухов",
      "no": 14,
      "warmup": null,
-     "place": 1
+     "place": 1,
+     "final": 2
     },
     {
      "name": "Таисия Гусева / Даниил Овчинников",
      "no": 15,
      "warmup": null,
-     "place": 2
+     "place": 2,
+     "final": 1
     }
    ],
    "athletes": [
@@ -319,7 +322,8 @@
      "name": "Матвей Ветлугин",
      "no": 9,
      "warmup": null,
-     "place": 2
+     "place": 2,
+     "final": 2
     }
    ],
    "athletes": [
@@ -767,13 +771,15 @@
      "name": "Софья Смагина",
      "no": 16,
      "warmup": null,
-     "place": 4
+     "place": 4,
+     "final": 4
     },
     {
      "name": "Виктория Стрельцова",
      "no": 18,
      "warmup": null,
-     "place": 2
+     "place": 2,
+     "final": 1
     }
    ],
    "athletes": [
@@ -1166,19 +1172,22 @@
      "name": "Екатерина Рыбакова / Иван Махноносов",
      "no": 2,
      "warmup": null,
-     "place": 9
+     "place": 9,
+     "final": 13
     },
     {
      "name": "Елизавета Шичина / Павел Дрозд",
      "no": 13,
      "warmup": null,
-     "place": 8
+     "place": 8,
+     "final": 6
     },
     {
      "name": "Елизавета Пасечник / Дарио Чиризано",
      "no": 17,
      "warmup": null,
-     "place": 2
+     "place": 2,
+     "final": 2
     }
    ],
    "athletes": [
@@ -1247,13 +1256,15 @@
      "name": "Матвей Ветлугин",
      "no": 9,
      "warmup": null,
-     "place": 3
+     "place": 3,
+     "final": 4
     },
     {
      "name": "Николай Угожаев",
      "no": 10,
      "warmup": null,
-     "place": 2
+     "place": 2,
+     "final": 2
     }
    ],
    "athletes": [
@@ -1321,19 +1332,22 @@
      "name": "Анастасия Мухортова / Дмитрий Евгеньев",
      "no": 4,
      "warmup": null,
-     "place": 4
+     "place": 4,
+     "final": 4
     },
     {
      "name": "Анастасия Мишина / Александр Галлямов",
      "no": 5,
      "warmup": null,
-     "place": 2
+     "place": 2,
+     "final": 2
     },
     {
      "name": "Екатерина Чикмарёва / Матвей Янченков",
      "no": 6,
      "warmup": null,
-     "place": 3
+     "place": 3,
+     "final": 3
     }
    ],
    "athletes": [
@@ -1402,13 +1416,15 @@
      "name": "Аделия Петросян",
      "no": 11,
      "warmup": null,
-     "place": 1
+     "place": 1,
+     "final": 2
     },
     {
      "name": "Анна Фролова",
      "no": 13,
      "warmup": null,
-     "place": 3
+     "place": 3,
+     "final": 3
     }
    ],
    "athletes": [
@@ -1670,13 +1686,15 @@
      "name": "Полина Шешелева / Егор Карнаухов",
      "no": 5,
      "warmup": null,
-     "place": 2
+     "place": 2,
+     "final": 2
     },
     {
      "name": "Таисия Гусева / Даниил Овчинников",
      "no": 6,
      "warmup": null,
-     "place": 1
+     "place": 1,
+     "final": 1
     }
    ],
    "athletes": [
@@ -1900,25 +1918,29 @@
      "name": "София Сарновская",
      "no": 15,
      "warmup": null,
-     "place": 4
+     "place": 4,
+     "final": 4
     },
     {
      "name": "Софья Смагина",
      "no": 16,
      "warmup": null,
-     "place": 1
+     "place": 1,
+     "final": 1
     },
     {
      "name": "Анна Докукина",
      "no": 17,
      "warmup": null,
-     "place": 3
+     "place": 3,
+     "final": 3
     },
     {
      "name": "Екатерина Корчажникова",
      "no": 18,
      "warmup": null,
-     "place": 2
+     "place": 2,
+     "final": 2
     }
    ],
    "athletes": [
@@ -2004,7 +2026,8 @@
      "name": "Алдар Самбуев",
      "no": 16,
      "warmup": null,
-     "place": 2
+     "place": 2,
+     "final": 2
     }
    ],
    "athletes": [
@@ -2387,6 +2410,7 @@
      "no": 23,
      "warmup": 5,
      "place": 1,
+     "final": 1,
      "time": "12:43"
     },
     {
@@ -2394,6 +2418,7 @@
      "no": 25,
      "warmup": 5,
      "place": 3,
+     "final": 3,
      "time": "12:58"
     },
     {
@@ -2401,6 +2426,7 @@
      "no": 26,
      "warmup": 5,
      "place": 4,
+     "final": 2,
      "time": "13:05"
     }
    ],
