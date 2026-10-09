@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-jgp-ankara-2026:pairs-junior-pp@starty
-DTSTAMP:20261008T220545Z
+DTSTAMP:20261009T051825Z
 DTSTART;TZID=Europe/Moscow:20260918T133000
 DTEND;TZID=Europe/Moscow:20260918T160500
 SUMMARY:JGP Ankara — пары ПП
@@ -23,6 +23,8 @@ DESCRIPTION:Наши:\n• Полина Шешелева / Егор Кар
  чинников — 15-й\n\nНачало: 13:30 МСК\nТрансляц
  ия: Okko
 LOCATION:Ankara\, Türkiye
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-ankara-2026:pairs-junior
+ -pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

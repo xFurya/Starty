@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:women-junior-pp@starty
-DTSTAMP:20261008T220545Z
+DTSTAMP:20261009T051825Z
 DTSTART;TZID=Europe/Moscow:20261009T090000
 DTEND;TZID=Europe/Moscow:20261009T131300
 SUMMARY:CS Denis Ten Memorial — девушки ПП
@@ -22,6 +22,8 @@ DESCRIPTION:Наши:\n• Алиса Заикина — 12:43\n• Алё
  на Принёва — 12:58\n• Виктория Стрельцова 
  — 13:05\n\nНачало: 09:00 МСК
 LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:women-
+ junior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

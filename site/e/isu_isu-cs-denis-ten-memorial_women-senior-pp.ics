@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:women-senior-pp@starty
-DTSTAMP:20261008T220545Z
+DTSTAMP:20261009T051825Z
 DTSTART;TZID=Europe/Moscow:20261009T173000
 DTEND;TZID=Europe/Moscow:20261009T204000
 SUMMARY:CS Denis Ten Memorial — женщины ПП
@@ -22,6 +22,8 @@ DESCRIPTION:Наши:\n• Мария Захарова — 19:30\n• Ди
  на Хуснутдинова — 20:00\n• Александра Трус
  ова — 20:32\n\nНачало: 17:30 МСК
 LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:women-
+ senior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
