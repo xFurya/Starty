@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:women-ju
+ nior-pp@starty
+DTSTAMP:20261008T220545Z
+DTSTART;TZID=Europe/Moscow:20260927T074500
+DTEND;TZID=Europe/Moscow:20260927T103500
+SUMMARY:ЮГП России «Лёд Мечты» — девушки ПП
+DESCRIPTION:Наши:\n• Софья Смагина — 16-й\n• Вик
+ тория Стрельцова — 18-й\n\nНачало: 07:45 МСК\n
+ Трансляция: Первый канал
+LOCATION:Навка Арена\, Москва
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Лёд Мечты» — девушки П
+ П
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

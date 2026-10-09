@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
+ 026:men-junior-pp@starty
+DTSTAMP:20261008T220545Z
+DTSTART;TZID=Europe/Moscow:20261007T154500
+DTEND;TZID=Europe/Moscow:20261007T183500
+SUMMARY:ЮГП России «Мемориал Горшкова» — юн
+ оши ПП
+DESCRIPTION:Наши:\n• Алдар Самбуев — 16-й\n\nНача
+ ло: 15:45 МСК\nТрансляция: Первый канал
+LOCATION:СК «Мечта»\, Москва
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Мемориал Горшкова» — 
+ юноши ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

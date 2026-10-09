@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
+ 026:dance-junior-rt@starty
+DTSTAMP:20261008T220545Z
+DTSTART;TZID=Europe/Moscow:20261005T173000
+DTEND;TZID=Europe/Moscow:20261005T194000
+SUMMARY:ЮГП России «Мемориал Горшкова» — та
+ нцы РТ
+DESCRIPTION:Начало: 17:30 МСК\nТрансляция: Первый 
+ канал
+LOCATION:СК «Мечта»\, Москва
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Мемориал Горшкова» — 
+ танцы РТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

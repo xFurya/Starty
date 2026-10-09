@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
+ 026:pairs-junior-kp@starty
+DTSTAMP:20261008T220545Z
+DTSTART;TZID=Europe/Moscow:20261005T195000
+DTEND;TZID=Europe/Moscow:20261005T204000
+SUMMARY:ЮГП России «Мемориал Горшкова» — па
+ ры КП
+DESCRIPTION:Наши:\n• Таисия Гусева / Даниил Овч
+ инников — 2-й\n• Полина Шешелева / Егор Ка
+ рнаухов — 6-й\n\nНачало: 19:50 МСК\nТрансляци
+ я: Первый канал
+LOCATION:СК «Мечта»\, Москва
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Мемориал Горшкова» — 
+ пары КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

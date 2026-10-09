@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:wome
+ n-junior-pp@starty
+DTSTAMP:20261008T220545Z
+DTSTART;TZID=Europe/Moscow:20261014T124500
+DTEND;TZID=Europe/Moscow:20261014T152000
+SUMMARY:ЮГП России «Рапсодия льда» — девушк
+ и ПП
+DESCRIPTION:Начало: 12:45 МСК\nТрансляция: Первый 
+ канал
+LOCATION:СК «Мечта»\, Москва
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Рапсодия льда» — деву
+ шки ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

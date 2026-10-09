@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Старты · фигурное катание</title>
+<meta name="description" content="Календарь стартов по фигурному катанию: российские турниры и международные с нашими. Время московское.">
+<meta name="theme-color" content="#EEF3F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#08121A" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Старты">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="style.css">
+<script>
+  // тема до отрисовки, чтобы не мигало
+  try { var t = localStorage.getItem('starty.theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+    <symbol id="i-eye-on" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" fill="currentColor"/><circle cx="12" cy="12" r="3.2" fill="var(--paper)"/></symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="19" cy="12" r="1.8" fill="currentColor"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15V3m0 0L7.5 7.5M12 3l4.5 4.5M5 11v8.5h14V11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 8.5v7M8.5 12h7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="mark" viewBox="20 60 470 420"><path d="M64 404C140 410 196 380 232 330c44-60 54-150 128-160 60-8 92 50 62 94-30 44-104 40-112-14-8-54 50-100 140-104" fill="none" stroke="currentColor" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/><circle cx="450" cy="146" r="40" fill="var(--red)"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="top-row">
+    <a class="brand" href="./" aria-label="Старты — на главную">
+      <svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg>
+      <span class="brand-word">Старты</span>
+    </a>
+    <div class="top-actions">
+      <button class="icon-btn" id="btn-filter" aria-label="Фильтры"><svg><use href="#i-filter"/></svg><span class="badge" hidden></span></button>
+      <button class="icon-btn" id="btn-more" aria-label="Ещё"><svg><use href="#i-more"/></svg></button>
+    </div>
+  </div>
+  <div class="top-row sub">
+    <div class="clock" id="clock" aria-live="off"></div>
+    <div class="switch" role="tablist" aria-label="Вид">
+      <button role="tab" id="tab-feed" aria-selected="true">Лента</button>
+      <button role="tab" id="tab-month" aria-selected="false">Месяц</button>
+    </div>
+  </div>
+  <div class="chips-active" id="active-filters" hidden></div>
+</header>
+
+<div class="install" id="install" hidden></div>
+
+<main id="main" tabindex="-1">
+  <section id="feed" class="feed" aria-label="Ближайшие старты"></section>
+  <section id="month" class="month" aria-label="Месяц" hidden></section>
+</main>
+
+<footer class="foot" id="foot"></footer>
+
+<dialog id="sheet" class="sheet" aria-labelledby="sheet-title">
+  <div class="sheet-inner" id="sheet-body"></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="app.js" defer></script>
+</body>
+</html>

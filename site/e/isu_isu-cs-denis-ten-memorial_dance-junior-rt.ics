@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:dance-junior-rt@starty
+DTSTAMP:20261008T220545Z
+DTSTART;TZID=Europe/Moscow:20261008T193500
+DTEND;TZID=Europe/Moscow:20261008T201500
+SUMMARY:CS Denis Ten Memorial — юниорские танцы РТ
+DESCRIPTION:Наши:\n• Дарья Дрожжина / Иван Тель
+ нов — 3-й\n• Мария Фефелова / Артём Валов 
+ — 4-й\n\nНачало: 19:35 МСК
+LOCATION:Almaty\, Kazakhstan
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Denis Ten Memorial — юниорские танцы РТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

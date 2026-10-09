@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
+ 026:women-junior-kp@starty
+DTSTAMP:20261008T220545Z
+DTSTART;TZID=Europe/Moscow:20261006T164500
+DTEND;TZID=Europe/Moscow:20261006T192000
+SUMMARY:ЮГП России «Мемориал Горшкова» — де
+ вушки КП
+DESCRIPTION:Наши:\n• София Сарновская — 5-й\n• С
+ офья Смагина — 12-й\n• Анна Докукина — 13-й
+ \n• Екатерина Корчажникова — 15-й\n\nНачал
+ о: 16:45 МСК\nТрансляция: Первый канал
+LOCATION:СК «Мечта»\, Москва
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Мемориал Горшкова» — 
+ девушки КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
