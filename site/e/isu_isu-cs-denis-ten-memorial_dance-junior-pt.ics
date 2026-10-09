@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:dance-junior-pt@starty
-DTSTAMP:20261009T075614Z
+DTSTAMP:20261009T104410Z
 DTSTART;TZID=Europe/Moscow:20261009T140000
 DTEND;TZID=Europe/Moscow:20261009T144200
 SUMMARY:CS Denis Ten Memorial — юниорские танцы ПТ
@@ -22,8 +22,6 @@ DESCRIPTION:Наши:\n• Дарья Дрожжина / Иван Тель
  нов — 14:27\n• Мария Фефелова / Артём Валов 
  — 14:34\n\nНачало: 14:00 МСК
 LOCATION:Almaty\, Kazakhstan
-URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:dance-
- junior-pt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

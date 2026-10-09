@@ -14,17 +14,21 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-trialeti-trophy:dance-senior-pt@starty
-DTSTAMP:20261009T075614Z
+DTSTAMP:20261009T104410Z
 DTSTART;TZID=Europe/Moscow:20261002T151500
 DTEND;TZID=Europe/Moscow:20261002T181000
 SUMMARY:CS Trialeti Trophy — танцы ПТ
-DESCRIPTION:Наши:\n• Екатерина Рыбакова / Иван 
- Махноносов — 2-й\n• Елизавета Шичина / Па
- вел Дрозд — 13-й\n• Елизавета Пасечник / Д
- арио Чиризано — 17-й\n\nНачало: 15:15 МСК
+DESCRIPTION:Итог:\n1. Diana Davis / Gleb Smolkin — 123.44\n2. Ели
+ завета Пасечник / Дарио Чиризано — 106.02\n3.
+  Nadiia Bashynska / Noé Perron — 98.27\n\nИтог турнира:\n1. 
+ Diana Davis / Gleb Smolkin — 208.67\n2. Елизавета Пасечн
+ ик / Дарио Чиризано — 178.53\n3. Mariia Ignateva / Daniji
+ l Leonyidovics Szemko — 165.72\n\nНаши:\n• Екатерина Ры
+ бакова / Иван Махноносов — 2-й\n• Елизаве
+ та Шичина / Павел Дрозд — 13-й\n• Елизавет
+ а Пасечник / Дарио Чиризано — 17-й\n\nНачал
+ о: 15:15 МСК
 LOCATION:Batumi\, Georgia
-URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-trialeti-trophy:dance-sen
- ior-pt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

@@ -14,6 +14,8 @@ from . import net
 SITE = "https://isu-skating.com/en/figure-skating"
 API = "https://front-api.isu.org"
 RSC = {"RSC": "1"}
+# хранилище картинок сайта ISU; адрес уточняется по странице турниров
+IMG_BASE = "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/"
 
 _dec = json.JSONDecoder()
 
@@ -29,7 +31,11 @@ def _grab(text, marker):
 def events():
     """[{event_id, slug, name, sub, from, to, tz, city, country, country_name,
     results_url, where_to_watch}]"""
+    global IMG_BASE
     raw = net.fetch(SITE + "/events/", headers=RSC)
+    bases = re.findall(r"https://[a-z0-9.-]+/isudamcontainer/", raw)
+    if bases:
+        IMG_BASE = max(set(bases), key=bases.count)
     data = _grab(raw, '"initialData":')
     if not data:
         raise net.FetchError("ISU: нет initialData в списке турниров")
@@ -75,9 +81,20 @@ def categories(slug, event_id):
     return out
 
 
+def portrait(path):
+    """Путь из thumbnail_image → полный адрес; заглушки «нет фото» отбрасываем."""
+    if not path or "placeholder" in path:
+        return None
+    if path.startswith("http"):
+        return path
+    return IMG_BASE + path.lstrip("/")
+
+
 def entries(event_id, cat):
-    """[{name, code, nationality}] — заявка категории. code — под каким флагом
-    выступает (AIN1/AIN2/RUS/…), nationality — гражданство участников."""
+    """[{name, code, nationality, rank, points, photos}] — заявка категории.
+    code — под каким флагом выступает (AIN1/AIN2/RUS/…), nationality — гражданство
+    участников. rank/points — итог вида (final_rank/final_points), пока турнир не
+    закончен, пустые. photos — {имя как в протоколе: портрет} по каждому человеку."""
     # тип категории в ISU бывает перепутан (юниоры-одиночники помечены «Couples»),
     # поэтому решаем по названию
     team = bool(re.search(r"pair|dance", cat["name"], re.I))
@@ -94,11 +111,34 @@ def entries(event_id, cat):
             nats = {m.get("nationality_code") for m in members}
         else:
             s = x.get("skaters") or x.get("skater") or {}
+            members = [s]
             name = s.get("full_name") or ""
             nats = {s.get("nationality_code")}
         if (x.get("participant_status_name") or "Active") not in ("Active", ""):
             continue
-        out.append({"name": name, "code": code, "nationality": sorted(n for n in nats if n)})
+        photos = {}
+        for m in members:
+            u = portrait(m.get("thumbnail_image"))
+            if u and m.get("full_name"):
+                photos[m["full_name"]] = u
+        rank = x.get("final_rank")
+        points = str(x.get("final_points") or "").strip()
+        out.append({"name": name, "code": code, "nationality": sorted(n for n in nats if n),
+                    "rank": rank if isinstance(rank, int) and rank > 0 else None,
+                    "points": points if re.fullmatch(r"\d+\.\d{2}", points) else None,
+                    "photos": photos})
+    return out
+
+
+def portraits(slug, event_id):
+    """{имя как в протоколе: портрет} по всем заявкам турнира."""
+    out = {}
+    for c in categories(slug, event_id):
+        try:
+            for x in entries(event_id, c):
+                out.update(x["photos"])
+        except (net.FetchError, ValueError):
+            continue
     return out
 
 

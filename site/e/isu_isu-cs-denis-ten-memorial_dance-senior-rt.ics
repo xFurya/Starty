@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:dance-senior-rt@starty
-DTSTAMP:20261009T075614Z
+DTSTAMP:20261009T104410Z
 DTSTART;TZID=Europe/Moscow:20261009T151500
 DTEND;TZID=Europe/Moscow:20261009T170000
 SUMMARY:CS Denis Ten Memorial — танцы РТ
@@ -23,8 +23,6 @@ DESCRIPTION:Наши:\n• Василиса Кагановская / Мак
  ор Гончаров — 15:33\n• Ирина Хавронина / Де
  вид Нарижный — 16:46\n\nНачало: 15:15 МСК
 LOCATION:Almaty\, Kazakhstan
-URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:dance-
- senior-rt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

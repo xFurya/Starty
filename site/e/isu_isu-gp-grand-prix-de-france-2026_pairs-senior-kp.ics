@@ -14,15 +14,13 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-grand-prix-de-france-2026:pairs-senior-kp@starty
-DTSTAMP:20261009T075614Z
+DTSTAMP:20261009T104410Z
 DTSTART;TZID=Europe/Moscow:20261024T190000
 DTEND;TZID=Europe/Moscow:20261024T201000
 SUMMARY:GP de France — пары КП
 DESCRIPTION:Наши:\n• Александра Бойкова / Дмитр
  ий Козловский\n\nНачало: 19:00 МСК
 LOCATION:Angers\, France
-URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-grand-prix-de-france-2026
- :pairs-senior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

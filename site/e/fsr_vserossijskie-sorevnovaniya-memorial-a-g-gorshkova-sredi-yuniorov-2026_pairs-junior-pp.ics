@@ -15,18 +15,23 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
  026:pairs-junior-pp@starty
-DTSTAMP:20261009T075614Z
+DTSTAMP:20261009T104410Z
 DTSTART;TZID=Europe/Moscow:20261006T153500
 DTEND;TZID=Europe/Moscow:20261006T163000
 SUMMARY:ЮГП России «Мемориал Горшкова» — па
  ры ПП
-DESCRIPTION:Наши:\n• Полина Шешелева / Егор Кар
- наухов — 5-й\n• Таисия Гусева / Даниил Овч
- инников — 6-й\n\nНачало: 15:35 МСК\nТрансляци
- я: Первый канал
+DESCRIPTION:Итог:\n1. Таисия Гусева / Даниил Овчи
+ нников — 127.66\n2. Полина Шешелева / Егор Ка
+ рнаухов — 124.19\n3. Дарья Самохвалова / Рома
+ н Романычев — 95.69\n\nИтог турнира:\n1. Таиси
+ я Гусева / Даниил Овчинников — 198.93\n2. Пол
+ ина Шешелева / Егор Карнаухов — 195.08\n3. Ан
+ астасия Иванкевич / Георгий Павловский 
+ — 154.22\n\nНаши:\n• Полина Шешелева / Егор Ка
+ рнаухов — 5-й\n• Таисия Гусева / Даниил Ов
+ чинников — 6-й\n\nНачало: 15:35 МСК\nТрансляц
+ ия: Первый канал
 LOCATION:СК «Мечта»\, Москва
-URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-memo
- rial-a-g-gorshkova-sredi-yuniorov-2026:pairs-junior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

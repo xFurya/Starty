@@ -15,16 +15,20 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
  026:dance-junior-pt@starty
-DTSTAMP:20261009T075614Z
+DTSTAMP:20261009T104410Z
 DTSTART;TZID=Europe/Moscow:20261006T130000
 DTEND;TZID=Europe/Moscow:20261006T152500
 SUMMARY:ЮГП России «Мемориал Горшкова» — та
  нцы ПТ
-DESCRIPTION:Начало: 13:00 МСК\nТрансляция: Первый 
- канал
+DESCRIPTION:Итог:\n1. Анна Билибина / Дмитрий Каш
+ аев — 88.23\n2. Анна Соболева / Матвей Чурако
+ в — 86.86\n3. Софья Грабчак / Максим Полторак
+  — 85.43\n\nИтог турнира:\n1. Анна Билибина / Д
+ митрий Кашаев — 149.12\n2. Зоя Пестова / Серг
+ ей Лагутов — 148.28\n3. Анна Соболева / Матве
+ й Чураков — 146.46\n\nНачало: 13:00 МСК\nТрансля
+ ция: Первый канал
 LOCATION:СК «Мечта»\, Москва
-URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-memo
- rial-a-g-gorshkova-sredi-yuniorov-2026:dance-junior-pt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-09T10:56:14+03:00",
- "checked": "2026-10-09T10:56:14+03:00",
+ "generated": "2026-10-09T13:44:10+03:00",
+ "checked": "2026-10-09T13:44:10+03:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -25,14 +25,35 @@
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 1
     }
    ],
    "athletes": [
     "Александра Бойкова / Дмитрий Козловский"
    ],
    "src": "https://ijs.usfigureskating.org/leaderboard/results/2026/37250/index.htm",
-   "desc": "Наши:\n• Александра Бойкова / Дмитрий Козловский — 1-й\n\nНачало: 23:33 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Александра Бойкова / Дмитрий Козловский",
+     "nation": "AIN2",
+     "points": "70.39"
+    },
+    {
+     "place": 2,
+     "name": "Karina Akopova / Nikita Rakhmanin",
+     "nation": "ARM",
+     "points": "68.03"
+    },
+    {
+     "place": 3,
+     "name": "Audrey Shin / Spencer Akira Howe",
+     "nation": "USA",
+     "points": "67.25"
+    }
+   ],
+   "desc": "Итог:\n1. Александра Бойкова / Дмитрий Козловский — 70.39\n2. Karina Akopova / Nikita Rakhmanin — 68.03\n3. Audrey Shin / Spencer Akira Howe — 67.25\n\nНаши:\n• Александра Бойкова / Дмитрий Козловский — 1-й\n\nНачало: 23:33 МСК"
   },
   {
    "id": "isu:isu-cs-john-nicks-pairs-international-2026:pairs-senior-pp",
@@ -51,14 +72,55 @@
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
      "no": 11,
-     "warmup": null
+     "warmup": null,
+     "place": 1
     }
    ],
    "athletes": [
     "Александра Бойкова / Дмитрий Козловский"
    ],
    "src": "https://ijs.usfigureskating.org/leaderboard/results/2026/37250/index.htm",
-   "desc": "Наши:\n• Александра Бойкова / Дмитрий Козловский — 11-й\n\nНачало: 21:40 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Александра Бойкова / Дмитрий Козловский",
+     "nation": "AIN2",
+     "points": "128.27"
+    },
+    {
+     "place": 2,
+     "name": "Audrey Shin / Spencer Akira Howe",
+     "nation": "USA",
+     "points": "116.56"
+    },
+    {
+     "place": 3,
+     "name": "Katie McBEATH / Balazs Nagy",
+     "nation": "USA",
+     "points": "113.78"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Александра Бойкова / Дмитрий Козловский",
+     "nation": "AIN2",
+     "points": "198.66"
+    },
+    {
+     "place": 2,
+     "name": "Audrey Shin / Spencer Akira Howe",
+     "nation": "USA",
+     "points": "183.81"
+    },
+    {
+     "place": 3,
+     "name": "Katie McBEATH / Balazs Nagy",
+     "nation": "USA",
+     "points": "180.95"
+    }
+   ],
+   "desc": "Итог:\n1. Александра Бойкова / Дмитрий Козловский — 128.27\n2. Audrey Shin / Spencer Akira Howe — 116.56\n3. Katie McBEATH / Balazs Nagy — 113.78\n\nИтог турнира:\n1. Александра Бойкова / Дмитрий Козловский — 198.66\n2. Audrey Shin / Spencer Akira Howe — 183.81\n3. Katie McBEATH / Balazs Nagy — 180.95\n\nНаши:\n• Александра Бойкова / Дмитрий Козловский — 11-й\n\nНачало: 21:40 МСК"
   },
   {
    "id": "isu:isu-jgp-ankara-2026:pairs-junior-kp",
@@ -79,12 +141,14 @@
     {
      "name": "Таисия Гусева / Даниил Овчинников",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 1
     },
     {
      "name": "Полина Шешелева / Егор Карнаухов",
      "no": 10,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     }
    ],
    "athletes": [
@@ -92,7 +156,27 @@
     "Таисия Гусева / Даниил Овчинников"
    ],
    "src": "https://results.isu.org/results/season2627/jgptur2026/index.htm",
-   "desc": "Наши:\n• Таисия Гусева / Даниил Овчинников — 1-й\n• Полина Шешелева / Егор Карнаухов — 10-й\n\nНачало: 15:45 МСК\nТрансляция: Okko"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Таисия Гусева / Даниил Овчинников",
+     "nation": "AIN2",
+     "points": "70.48"
+    },
+    {
+     "place": 2,
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "AIN2",
+     "points": "63.26"
+    },
+    {
+     "place": 3,
+     "name": "Anita Mapelli / Noah Quesada Grau",
+     "nation": "ESP",
+     "points": "57.55"
+    }
+   ],
+   "desc": "Итог:\n1. Таисия Гусева / Даниил Овчинников — 70.48\n2. Полина Шешелева / Егор Карнаухов — 63.26\n3. Anita Mapelli / Noah Quesada Grau — 57.55\n\nНаши:\n• Таисия Гусева / Даниил Овчинников — 1-й\n• Полина Шешелева / Егор Карнаухов — 10-й\n\nНачало: 15:45 МСК\nТрансляция: Okko"
   },
   {
    "id": "isu:isu-jgp-ankara-2026:pairs-junior-pp",
@@ -113,12 +197,14 @@
     {
      "name": "Полина Шешелева / Егор Карнаухов",
      "no": 14,
-     "warmup": null
+     "warmup": null,
+     "place": 1
     },
     {
      "name": "Таисия Гусева / Даниил Овчинников",
      "no": 15,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     }
    ],
    "athletes": [
@@ -126,7 +212,47 @@
     "Таисия Гусева / Даниил Овчинников"
    ],
    "src": "https://results.isu.org/results/season2627/jgptur2026/index.htm",
-   "desc": "Наши:\n• Полина Шешелева / Егор Карнаухов — 14-й\n• Таисия Гусева / Даниил Овчинников — 15-й\n\nНачало: 13:30 МСК\nТрансляция: Okko"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "AIN2",
+     "points": "127.53"
+    },
+    {
+     "place": 2,
+     "name": "Таисия Гусева / Даниил Овчинников",
+     "nation": "AIN2",
+     "points": "126.43"
+    },
+    {
+     "place": 3,
+     "name": "Anita Mapelli / Noah Quesada Grau",
+     "nation": "ESP",
+     "points": "96.52"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Таисия Гусева / Даниил Овчинников",
+     "nation": "AIN2",
+     "points": "196.91"
+    },
+    {
+     "place": 2,
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "AIN2",
+     "points": "190.79"
+    },
+    {
+     "place": 3,
+     "name": "Anita Mapelli / Noah Quesada Grau",
+     "nation": "ESP",
+     "points": "154.07"
+    }
+   ],
+   "desc": "Итог:\n1. Полина Шешелева / Егор Карнаухов — 127.53\n2. Таисия Гусева / Даниил Овчинников — 126.43\n3. Anita Mapelli / Noah Quesada Grau — 96.52\n\nИтог турнира:\n1. Таисия Гусева / Даниил Овчинников — 196.91\n2. Полина Шешелева / Егор Карнаухов — 190.79\n3. Anita Mapelli / Noah Quesada Grau — 154.07\n\nНаши:\n• Полина Шешелева / Егор Карнаухов — 14-й\n• Таисия Гусева / Даниил Овчинников — 15-й\n\nНачало: 13:30 МСК\nТрансляция: Okko"
   },
   {
    "id": "isu:isu-cs-lombardia-trophy-2026:men-senior-kp",
@@ -145,14 +271,35 @@
     {
      "name": "Матвей Ветлугин",
      "no": 2,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     }
    ],
    "athletes": [
     "Матвей Ветлугин"
    ],
    "src": "https://www.fisg.it/upload/result/7089/online/index.htm",
-   "desc": "Наши:\n• Матвей Ветлугин — 2-й\n\nНачало: 17:15 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "points": "91.09"
+    },
+    {
+     "place": 2,
+     "name": "Матвей Ветлугин",
+     "nation": "AIN2",
+     "points": "90.02"
+    },
+    {
+     "place": 3,
+     "name": "Corentin Spinar",
+     "nation": "FRA",
+     "points": "89.08"
+    }
+   ],
+   "desc": "Итог:\n1. Mihhail Selevko — 91.09\n2. Матвей Ветлугин — 90.02\n3. Corentin Spinar — 89.08\n\nНаши:\n• Матвей Ветлугин — 2-й\n\nНачало: 17:15 МСК"
   },
   {
    "id": "isu:isu-cs-lombardia-trophy-2026:men-senior-pp",
@@ -171,14 +318,55 @@
     {
      "name": "Матвей Ветлугин",
      "no": 9,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     }
    ],
    "athletes": [
     "Матвей Ветлугин"
    ],
    "src": "https://www.fisg.it/upload/result/7089/online/index.htm",
-   "desc": "Наши:\n• Матвей Ветлугин — 9-й\n\nНачало: 14:30 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "points": "169.78"
+    },
+    {
+     "place": 2,
+     "name": "Матвей Ветлугин",
+     "nation": "AIN2",
+     "points": "164.51"
+    },
+    {
+     "place": 3,
+     "name": "Kyrylo Marsak",
+     "nation": "UKR",
+     "points": "159.37"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "points": "260.87"
+    },
+    {
+     "place": 2,
+     "name": "Матвей Ветлугин",
+     "nation": "AIN2",
+     "points": "254.53"
+    },
+    {
+     "place": 3,
+     "name": "Corentin Spinar",
+     "nation": "FRA",
+     "points": "247.66"
+    }
+   ],
+   "desc": "Итог:\n1. Mihhail Selevko — 169.78\n2. Матвей Ветлугин — 164.51\n3. Kyrylo Marsak — 159.37\n\nИтог турнира:\n1. Mihhail Selevko — 260.87\n2. Матвей Ветлугин — 254.53\n3. Corentin Spinar — 247.66\n\nНаши:\n• Матвей Ветлугин — 9-й\n\nНачало: 14:30 МСК"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:dance-junior-rt",
@@ -214,7 +402,27 @@
     "Устинья Смирнова / Матвей Шипилов"
    ],
    "src": "https://fsrussia.ru/results/2627/1etap_jun/index.htm",
-   "desc": "Начало: 12:30 МСК\nТрансляция: Первый канал"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Мария Фефелова / Артём Валов",
+     "nation": "МОБ",
+     "points": "72.64"
+    },
+    {
+     "place": 2,
+     "name": "Полина Жарова / Алексей Столяров",
+     "nation": "МОС",
+     "points": "64.19"
+    },
+    {
+     "place": 3,
+     "name": "Арина Новикова / Кирилл Лихачев",
+     "nation": "МОС",
+     "points": "59.16"
+    }
+   ],
+   "desc": "Итог:\n1. Мария Фефелова / Артём Валов — 72.64\n2. Полина Жарова / Алексей Столяров — 64.19\n3. Арина Новикова / Кирилл Лихачев — 59.16\n\nНачало: 12:30 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:pairs-junior-kp",
@@ -242,7 +450,27 @@
     "Софья Звездина / Дмитрий Шеремет"
    ],
    "src": "https://fsrussia.ru/results/2627/1etap_jun/index.htm",
-   "desc": "Начало: 14:50 МСК\nТрансляция: Первый канал"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Полина Сажина / Алексей Белкин",
+     "nation": "МОС",
+     "points": "68.12"
+    },
+    {
+     "place": 2,
+     "name": "Арина Парсегова / Матвей Богданов",
+     "nation": "МОС",
+     "points": "63.77"
+    },
+    {
+     "place": 3,
+     "name": "Дарья Самохвалова / Роман Романычев",
+     "nation": "МОС",
+     "points": "60.01"
+    }
+   ],
+   "desc": "Итог:\n1. Полина Сажина / Алексей Белкин — 68.12\n2. Арина Парсегова / Матвей Богданов — 63.77\n3. Дарья Самохвалова / Роман Романычев — 60.01\n\nНачало: 14:50 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:dance-junior-pt",
@@ -278,7 +506,47 @@
     "Устинья Смирнова / Матвей Шипилов"
    ],
    "src": "https://fsrussia.ru/results/2627/1etap_jun/index.htm",
-   "desc": "Начало: 08:00 МСК\nТрансляция: Первый канал"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Мария Фефелова / Артём Валов",
+     "nation": "МОБ",
+     "points": "107.13"
+    },
+    {
+     "place": 2,
+     "name": "Полина Жарова / Алексей Столяров",
+     "nation": "МОС",
+     "points": "95.18"
+    },
+    {
+     "place": 3,
+     "name": "Софья Грабчак / Максим Полторак",
+     "nation": "МОС",
+     "points": "89.77"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Мария Фефелова / Артём Валов",
+     "nation": "МОБ",
+     "points": "179.77"
+    },
+    {
+     "place": 2,
+     "name": "Полина Жарова / Алексей Столяров",
+     "nation": "МОС",
+     "points": "159.37"
+    },
+    {
+     "place": 3,
+     "name": "Софья Грабчак / Максим Полторак",
+     "nation": "МОС",
+     "points": "148.46"
+    }
+   ],
+   "desc": "Итог:\n1. Мария Фефелова / Артём Валов — 107.13\n2. Полина Жарова / Алексей Столяров — 95.18\n3. Софья Грабчак / Максим Полторак — 89.77\n\nИтог турнира:\n1. Мария Фефелова / Артём Валов — 179.77\n2. Полина Жарова / Алексей Столяров — 159.37\n3. Софья Грабчак / Максим Полторак — 148.46\n\nНачало: 08:00 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:pairs-junior-pp",
@@ -306,7 +574,47 @@
     "Софья Звездина / Дмитрий Шеремет"
    ],
    "src": "https://fsrussia.ru/results/2627/1etap_jun/index.htm",
-   "desc": "Начало: 10:35 МСК\nТрансляция: Первый канал"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Арина Парсегова / Матвей Богданов",
+     "nation": "МОС",
+     "points": "112.21"
+    },
+    {
+     "place": 2,
+     "name": "Полина Сажина / Алексей Белкин",
+     "nation": "МОС",
+     "points": "107.16"
+    },
+    {
+     "place": 3,
+     "name": "Дарья Самохвалова / Роман Романычев",
+     "nation": "МОС",
+     "points": "103.46"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Арина Парсегова / Матвей Богданов",
+     "nation": "МОС",
+     "points": "175.98"
+    },
+    {
+     "place": 2,
+     "name": "Полина Сажина / Алексей Белкин",
+     "nation": "МОС",
+     "points": "175.28"
+    },
+    {
+     "place": 3,
+     "name": "Дарья Самохвалова / Роман Романычев",
+     "nation": "МОС",
+     "points": "163.47"
+    }
+   ],
+   "desc": "Итог:\n1. Арина Парсегова / Матвей Богданов — 112.21\n2. Полина Сажина / Алексей Белкин — 107.16\n3. Дарья Самохвалова / Роман Романычев — 103.46\n\nИтог турнира:\n1. Арина Парсегова / Матвей Богданов — 175.98\n2. Полина Сажина / Алексей Белкин — 175.28\n3. Дарья Самохвалова / Роман Романычев — 163.47\n\nНачало: 10:35 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:women-junior-kp",
@@ -327,12 +635,14 @@
     {
      "name": "Виктория Стрельцова",
      "no": 5,
-     "warmup": null
+     "warmup": null,
+     "place": 1
     },
     {
      "name": "Софья Смагина",
      "no": 14,
-     "warmup": null
+     "warmup": null,
+     "place": 3
     }
    ],
    "athletes": [
@@ -356,7 +666,27 @@
     "Ярослава Быстрова"
    ],
    "src": "https://fsrussia.ru/results/2627/1etap_jun/index.htm",
-   "desc": "Наши:\n• Виктория Стрельцова — 5-й\n• Софья Смагина — 14-й\n\nНачало: 11:55 МСК\nТрансляция: Первый канал"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Виктория Стрельцова",
+     "nation": "МОС",
+     "points": "72.73"
+    },
+    {
+     "place": 2,
+     "name": "Диана Мильто",
+     "nation": "МОС",
+     "points": "70.00"
+    },
+    {
+     "place": 3,
+     "name": "Софья Смагина",
+     "nation": "МОС",
+     "points": "69.05"
+    }
+   ],
+   "desc": "Итог:\n1. Виктория Стрельцова — 72.73\n2. Диана Мильто — 70.00\n3. Софья Смагина — 69.05\n\nНаши:\n• Виктория Стрельцова — 5-й\n• Софья Смагина — 14-й\n\nНачало: 11:55 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:men-junior-kp",
@@ -395,7 +725,27 @@
     "Ярослав Крегель"
    ],
    "src": "https://fsrussia.ru/results/2627/1etap_jun/index.htm",
-   "desc": "Начало: 14:30 МСК\nТрансляция: Первый канал"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Макар Солодников",
+     "nation": "СПБ",
+     "points": "83.94"
+    },
+    {
+     "place": 2,
+     "name": "Даниил Жолобов",
+     "nation": "МОС",
+     "points": "79.24"
+    },
+    {
+     "place": 3,
+     "name": "Илья Малышев",
+     "nation": "МОС",
+     "points": "78.46"
+    }
+   ],
+   "desc": "Итог:\n1. Макар Солодников — 83.94\n2. Даниил Жолобов — 79.24\n3. Илья Малышев — 78.46\n\nНачало: 14:30 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:women-junior-pp",
@@ -416,12 +766,14 @@
     {
      "name": "Софья Смагина",
      "no": 16,
-     "warmup": null
+     "warmup": null,
+     "place": 4
     },
     {
      "name": "Виктория Стрельцова",
      "no": 18,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     }
    ],
    "athletes": [
@@ -445,7 +797,47 @@
     "Ярослава Быстрова"
    ],
    "src": "https://fsrussia.ru/results/2627/1etap_jun/index.htm",
-   "desc": "Наши:\n• Софья Смагина — 16-й\n• Виктория Стрельцова — 18-й\n\nНачало: 07:45 МСК\nТрансляция: Первый канал"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Дарья Лебедева",
+     "nation": "МОС",
+     "points": "134.26"
+    },
+    {
+     "place": 2,
+     "name": "Виктория Стрельцова",
+     "nation": "МОС",
+     "points": "129.00"
+    },
+    {
+     "place": 3,
+     "name": "Диана Мильто",
+     "nation": "МОС",
+     "points": "128.16"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Виктория Стрельцова",
+     "nation": "МОС",
+     "points": "201.73"
+    },
+    {
+     "place": 2,
+     "name": "Диана Мильто",
+     "nation": "МОС",
+     "points": "198.16"
+    },
+    {
+     "place": 3,
+     "name": "Дарья Лебедева",
+     "nation": "МОС",
+     "points": "197.23"
+    }
+   ],
+   "desc": "Итог:\n1. Дарья Лебедева — 134.26\n2. Виктория Стрельцова — 129.00\n3. Диана Мильто — 128.16\n\nИтог турнира:\n1. Виктория Стрельцова — 201.73\n2. Диана Мильто — 198.16\n3. Дарья Лебедева — 197.23\n\nНаши:\n• Софья Смагина — 16-й\n• Виктория Стрельцова — 18-й\n\nНачало: 07:45 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:men-junior-pp",
@@ -484,7 +876,47 @@
     "Ярослав Крегель"
    ],
    "src": "https://fsrussia.ru/results/2627/1etap_jun/index.htm",
-   "desc": "Начало: 10:45 МСК\nТрансляция: Первый канал"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Макар Солодников",
+     "nation": "СПБ",
+     "points": "153.71"
+    },
+    {
+     "place": 2,
+     "name": "Михаил Алексахин",
+     "nation": "МОБ",
+     "points": "146.68"
+    },
+    {
+     "place": 3,
+     "name": "Эдуард Камоев",
+     "nation": "СПБ",
+     "points": "144.41"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Макар Солодников",
+     "nation": "СПБ",
+     "points": "237.65"
+    },
+    {
+     "place": 2,
+     "name": "Эдуард Камоев",
+     "nation": "СПБ",
+     "points": "221.20"
+    },
+    {
+     "place": 3,
+     "name": "Илья Малышев",
+     "nation": "МОС",
+     "points": "220.15"
+    }
+   ],
+   "desc": "Итог:\n1. Макар Солодников — 153.71\n2. Михаил Алексахин — 146.68\n3. Эдуард Камоев — 144.41\n\nИтог турнира:\n1. Макар Солодников — 237.65\n2. Эдуард Камоев — 221.20\n3. Илья Малышев — 220.15\n\nНачало: 10:45 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:women-senior-kp",
@@ -503,12 +935,14 @@
     {
      "name": "Аделия Петросян",
      "no": 7,
-     "warmup": null
+     "warmup": null,
+     "place": 4
     },
     {
      "name": "Анна Фролова",
      "no": 11,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     }
    ],
    "athletes": [
@@ -516,7 +950,27 @@
     "Анна Фролова"
    ],
    "src": "https://results.vistream.com.pl/FS/2627/CSGEO2026/index.htm",
-   "desc": "Наши:\n• Аделия Петросян — 7-й\n• Анна Фролова — 11-й\n\nНачало: 13:45 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Niina Petrokina",
+     "nation": "EST",
+     "points": "74.69"
+    },
+    {
+     "place": 2,
+     "name": "Анна Фролова",
+     "nation": "AIN2",
+     "points": "73.31"
+    },
+    {
+     "place": 3,
+     "name": "Anastasiia Gubanova",
+     "nation": "GEO",
+     "points": "70.69"
+    }
+   ],
+   "desc": "Итог:\n1. Niina Petrokina — 74.69\n2. Анна Фролова — 73.31\n3. Anastasiia Gubanova — 70.69\n\nНаши:\n• Аделия Петросян — 7-й\n• Анна Фролова — 11-й\n\nНачало: 13:45 МСК"
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:dance-senior-rt",
@@ -535,17 +989,20 @@
     {
      "name": "Екатерина Рыбакова / Иван Махноносов",
      "no": 3,
-     "warmup": null
+     "warmup": null,
+     "place": 17
     },
     {
      "name": "Елизавета Пасечник / Дарио Чиризано",
      "no": 6,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     },
     {
      "name": "Елизавета Шичина / Павел Дрозд",
      "no": 17,
-     "warmup": null
+     "warmup": null,
+     "place": 6
     }
    ],
    "athletes": [
@@ -554,7 +1011,27 @@
     "Елизавета Шичина / Павел Дрозд"
    ],
    "src": "https://results.vistream.com.pl/FS/2627/CSGEO2026/index.htm",
-   "desc": "Наши:\n• Екатерина Рыбакова / Иван Махноносов — 3-й\n• Елизавета Пасечник / Дарио Чиризано — 6-й\n• Елизавета Шичина / Павел Дрозд — 17-й\n\nНачало: 16:45 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Diana Davis / Gleb Smolkin",
+     "nation": "GEO",
+     "points": "85.23"
+    },
+    {
+     "place": 2,
+     "name": "Елизавета Пасечник / Дарио Чиризано",
+     "nation": "AIN2",
+     "points": "72.51"
+    },
+    {
+     "place": 3,
+     "name": "Mariia Ignateva / Danijil Leonyidovics Szemko",
+     "nation": "HUN",
+     "points": "69.80"
+    }
+   ],
+   "desc": "Итог:\n1. Diana Davis / Gleb Smolkin — 85.23\n2. Елизавета Пасечник / Дарио Чиризано — 72.51\n3. Mariia Ignateva / Danijil Leonyidovics Szemko — 69.80\n\nНаши:\n• Екатерина Рыбакова / Иван Махноносов — 3-й\n• Елизавета Пасечник / Дарио Чиризано — 6-й\n• Елизавета Шичина / Павел Дрозд — 17-й\n\nНачало: 16:45 МСК"
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:men-senior-kp",
@@ -573,12 +1050,14 @@
     {
      "name": "Николай Угожаев",
      "no": 2,
-     "warmup": null
+     "warmup": null,
+     "place": 3
     },
     {
      "name": "Матвей Ветлугин",
      "no": 3,
-     "warmup": null
+     "warmup": null,
+     "place": 4
     }
    ],
    "athletes": [
@@ -586,7 +1065,27 @@
     "Николай Угожаев"
    ],
    "src": "https://results.vistream.com.pl/FS/2627/CSGEO2026/index.htm",
-   "desc": "Наши:\n• Николай Угожаев — 2-й\n• Матвей Ветлугин — 3-й\n\nНачало: 19:50 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Nika Egadze",
+     "nation": "GEO",
+     "points": "93.80"
+    },
+    {
+     "place": 2,
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "points": "87.87"
+    },
+    {
+     "place": 3,
+     "name": "Николай Угожаев",
+     "nation": "AIN2",
+     "points": "82.96"
+    }
+   ],
+   "desc": "Итог:\n1. Nika Egadze — 93.80\n2. Mihhail Selevko — 87.87\n3. Николай Угожаев — 82.96\n\nНаши:\n• Николай Угожаев — 2-й\n• Матвей Ветлугин — 3-й\n\nНачало: 19:50 МСК"
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:pairs-senior-kp",
@@ -605,17 +1104,20 @@
     {
      "name": "Анастасия Мухортова / Дмитрий Евгеньев",
      "no": 3,
-     "warmup": null
+     "warmup": null,
+     "place": 4
     },
     {
      "name": "Екатерина Чикмарёва / Матвей Янченков",
      "no": 4,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     },
     {
      "name": "Анастасия Мишина / Александр Галлямов",
      "no": 6,
-     "warmup": null
+     "warmup": null,
+     "place": 3
     }
    ],
    "athletes": [
@@ -624,7 +1126,27 @@
     "Екатерина Чикмарёва / Матвей Янченков"
    ],
    "src": "https://results.vistream.com.pl/FS/2627/CSGEO2026/index.htm",
-   "desc": "Наши:\n• Анастасия Мухортова / Дмитрий Евгеньев — 3-й\n• Екатерина Чикмарёва / Матвей Янченков — 4-й\n• Анастасия Мишина / Александр Галлямов — 6-й\n\nНачало: 14:00 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Anastasiia Metelkina / Luka Berulava",
+     "nation": "GEO",
+     "points": "80.01"
+    },
+    {
+     "place": 2,
+     "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "nation": "AIN2",
+     "points": "74.00"
+    },
+    {
+     "place": 3,
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "AIN2",
+     "points": "73.48"
+    }
+   ],
+   "desc": "Итог:\n1. Anastasiia Metelkina / Luka Berulava — 80.01\n2. Екатерина Чикмарёва / Матвей Янченков — 74.00\n3. Анастасия Мишина / Александр Галлямов — 73.48\n\nНаши:\n• Анастасия Мухортова / Дмитрий Евгеньев — 3-й\n• Екатерина Чикмарёва / Матвей Янченков — 4-й\n• Анастасия Мишина / Александр Галлямов — 6-й\n\nНачало: 14:00 МСК"
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:dance-senior-pt",
@@ -643,17 +1165,20 @@
     {
      "name": "Екатерина Рыбакова / Иван Махноносов",
      "no": 2,
-     "warmup": null
+     "warmup": null,
+     "place": 9
     },
     {
      "name": "Елизавета Шичина / Павел Дрозд",
      "no": 13,
-     "warmup": null
+     "warmup": null,
+     "place": 8
     },
     {
      "name": "Елизавета Пасечник / Дарио Чиризано",
      "no": 17,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     }
    ],
    "athletes": [
@@ -662,7 +1187,47 @@
     "Елизавета Шичина / Павел Дрозд"
    ],
    "src": "https://results.vistream.com.pl/FS/2627/CSGEO2026/index.htm",
-   "desc": "Наши:\n• Екатерина Рыбакова / Иван Махноносов — 2-й\n• Елизавета Шичина / Павел Дрозд — 13-й\n• Елизавета Пасечник / Дарио Чиризано — 17-й\n\nНачало: 15:15 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Diana Davis / Gleb Smolkin",
+     "nation": "GEO",
+     "points": "123.44"
+    },
+    {
+     "place": 2,
+     "name": "Елизавета Пасечник / Дарио Чиризано",
+     "nation": "AIN2",
+     "points": "106.02"
+    },
+    {
+     "place": 3,
+     "name": "Nadiia Bashynska / Noé Perron",
+     "nation": "CAN",
+     "points": "98.27"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Diana Davis / Gleb Smolkin",
+     "nation": "GEO",
+     "points": "208.67"
+    },
+    {
+     "place": 2,
+     "name": "Елизавета Пасечник / Дарио Чиризано",
+     "nation": "AIN2",
+     "points": "178.53"
+    },
+    {
+     "place": 3,
+     "name": "Mariia Ignateva / Danijil Leonyidovics Szemko",
+     "nation": "HUN",
+     "points": "165.72"
+    }
+   ],
+   "desc": "Итог:\n1. Diana Davis / Gleb Smolkin — 123.44\n2. Елизавета Пасечник / Дарио Чиризано — 106.02\n3. Nadiia Bashynska / Noé Perron — 98.27\n\nИтог турнира:\n1. Diana Davis / Gleb Smolkin — 208.67\n2. Елизавета Пасечник / Дарио Чиризано — 178.53\n3. Mariia Ignateva / Danijil Leonyidovics Szemko — 165.72\n\nНаши:\n• Екатерина Рыбакова / Иван Махноносов — 2-й\n• Елизавета Шичина / Павел Дрозд — 13-й\n• Елизавета Пасечник / Дарио Чиризано — 17-й\n\nНачало: 15:15 МСК"
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:men-senior-pp",
@@ -681,12 +1246,14 @@
     {
      "name": "Матвей Ветлугин",
      "no": 9,
-     "warmup": null
+     "warmup": null,
+     "place": 3
     },
     {
      "name": "Николай Угожаев",
      "no": 10,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     }
    ],
    "athletes": [
@@ -694,7 +1261,47 @@
     "Николай Угожаев"
    ],
    "src": "https://results.vistream.com.pl/FS/2627/CSGEO2026/index.htm",
-   "desc": "Наши:\n• Матвей Ветлугин — 9-й\n• Николай Угожаев — 10-й\n\nНачало: 19:30 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Nika Egadze",
+     "nation": "GEO",
+     "points": "168.85"
+    },
+    {
+     "place": 2,
+     "name": "Николай Угожаев",
+     "nation": "AIN2",
+     "points": "153.45"
+    },
+    {
+     "place": 3,
+     "name": "Матвей Ветлугин",
+     "nation": "AIN2",
+     "points": "145.98"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Nika Egadze",
+     "nation": "GEO",
+     "points": "262.65"
+    },
+    {
+     "place": 2,
+     "name": "Николай Угожаев",
+     "nation": "AIN2",
+     "points": "236.41"
+    },
+    {
+     "place": 3,
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "points": "227.74"
+    }
+   ],
+   "desc": "Итог:\n1. Nika Egadze — 168.85\n2. Николай Угожаев — 153.45\n3. Матвей Ветлугин — 145.98\n\nИтог турнира:\n1. Nika Egadze — 262.65\n2. Николай Угожаев — 236.41\n3. Mihhail Selevko — 227.74\n\nНаши:\n• Матвей Ветлугин — 9-й\n• Николай Угожаев — 10-й\n\nНачало: 19:30 МСК"
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:pairs-senior-pp",
@@ -713,17 +1320,20 @@
     {
      "name": "Анастасия Мухортова / Дмитрий Евгеньев",
      "no": 4,
-     "warmup": null
+     "warmup": null,
+     "place": 4
     },
     {
      "name": "Анастасия Мишина / Александр Галлямов",
      "no": 5,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     },
     {
      "name": "Екатерина Чикмарёва / Матвей Янченков",
      "no": 6,
-     "warmup": null
+     "warmup": null,
+     "place": 3
     }
    ],
    "athletes": [
@@ -732,7 +1342,47 @@
     "Екатерина Чикмарёва / Матвей Янченков"
    ],
    "src": "https://results.vistream.com.pl/FS/2627/CSGEO2026/index.htm",
-   "desc": "Наши:\n• Анастасия Мухортова / Дмитрий Евгеньев — 4-й\n• Анастасия Мишина / Александр Галлямов — 5-й\n• Екатерина Чикмарёва / Матвей Янченков — 6-й\n\nНачало: 14:00 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Anastasiia Metelkina / Luka Berulava",
+     "nation": "GEO",
+     "points": "135.82"
+    },
+    {
+     "place": 2,
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "AIN2",
+     "points": "132.83"
+    },
+    {
+     "place": 3,
+     "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "nation": "AIN2",
+     "points": "122.63"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Anastasiia Metelkina / Luka Berulava",
+     "nation": "GEO",
+     "points": "215.83"
+    },
+    {
+     "place": 2,
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "AIN2",
+     "points": "206.31"
+    },
+    {
+     "place": 3,
+     "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "nation": "AIN2",
+     "points": "196.63"
+    }
+   ],
+   "desc": "Итог:\n1. Anastasiia Metelkina / Luka Berulava — 135.82\n2. Анастасия Мишина / Александр Галлямов — 132.83\n3. Екатерина Чикмарёва / Матвей Янченков — 122.63\n\nИтог турнира:\n1. Anastasiia Metelkina / Luka Berulava — 215.83\n2. Анастасия Мишина / Александр Галлямов — 206.31\n3. Екатерина Чикмарёва / Матвей Янченков — 196.63\n\nНаши:\n• Анастасия Мухортова / Дмитрий Евгеньев — 4-й\n• Анастасия Мишина / Александр Галлямов — 5-й\n• Екатерина Чикмарёва / Матвей Янченков — 6-й\n\nНачало: 14:00 МСК"
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:women-senior-pp",
@@ -751,12 +1401,14 @@
     {
      "name": "Аделия Петросян",
      "no": 11,
-     "warmup": null
+     "warmup": null,
+     "place": 1
     },
     {
      "name": "Анна Фролова",
      "no": 13,
-     "warmup": null
+     "warmup": null,
+     "place": 3
     }
    ],
    "athletes": [
@@ -764,7 +1416,47 @@
     "Анна Фролова"
    ],
    "src": "https://results.vistream.com.pl/FS/2627/CSGEO2026/index.htm",
-   "desc": "Наши:\n• Аделия Петросян — 11-й\n• Анна Фролова — 13-й\n\nНачало: 16:30 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Аделия Петросян",
+     "nation": "AIN2",
+     "points": "135.74"
+    },
+    {
+     "place": 2,
+     "name": "Niina Petrokina",
+     "nation": "EST",
+     "points": "131.25"
+    },
+    {
+     "place": 3,
+     "name": "Анна Фролова",
+     "nation": "AIN2",
+     "points": "129.90"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Niina Petrokina",
+     "nation": "EST",
+     "points": "205.94"
+    },
+    {
+     "place": 2,
+     "name": "Аделия Петросян",
+     "nation": "AIN2",
+     "points": "204.16"
+    },
+    {
+     "place": 3,
+     "name": "Анна Фролова",
+     "nation": "AIN2",
+     "points": "203.21"
+    }
+   ],
+   "desc": "Итог:\n1. Аделия Петросян — 135.74\n2. Niina Petrokina — 131.25\n3. Анна Фролова — 129.90\n\nИтог турнира:\n1. Niina Petrokina — 205.94\n2. Аделия Петросян — 204.16\n3. Анна Фролова — 203.21\n\nНаши:\n• Аделия Петросян — 11-й\n• Анна Фролова — 13-й\n\nНачало: 16:30 МСК"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:dance-junior-rt",
@@ -800,7 +1492,27 @@
     "Эвелина Валиева / Даниил Лавриненко"
    ],
    "src": "https://fsrussia.ru/results/2627/2etap_jun/index.htm",
-   "desc": "Начало: 17:30 МСК\nТрансляция: Первый канал"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Зоя Пестова / Сергей Лагутов",
+     "nation": "МОС",
+     "points": "63.17"
+    },
+    {
+     "place": 2,
+     "name": "Анна Билибина / Дмитрий Кашаев",
+     "nation": "МОС",
+     "points": "60.89"
+    },
+    {
+     "place": 3,
+     "name": "Анна Соболева / Матвей Чураков",
+     "nation": "ПРМ",
+     "points": "59.60"
+    }
+   ],
+   "desc": "Итог:\n1. Зоя Пестова / Сергей Лагутов — 63.17\n2. Анна Билибина / Дмитрий Кашаев — 60.89\n3. Анна Соболева / Матвей Чураков — 59.60\n\nНачало: 17:30 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:pairs-junior-kp",
@@ -821,12 +1533,14 @@
     {
      "name": "Таисия Гусева / Даниил Овчинников",
      "no": 2,
-     "warmup": null
+     "warmup": null,
+     "place": 1
     },
     {
      "name": "Полина Шешелева / Егор Карнаухов",
      "no": 6,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     }
    ],
    "athletes": [
@@ -838,7 +1552,27 @@
     "Таисия Гусева / Даниил Овчинников"
    ],
    "src": "https://fsrussia.ru/results/2627/2etap_jun/index.htm",
-   "desc": "Наши:\n• Таисия Гусева / Даниил Овчинников — 2-й\n• Полина Шешелева / Егор Карнаухов — 6-й\n\nНачало: 19:50 МСК\nТрансляция: Первый канал"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Таисия Гусева / Даниил Овчинников",
+     "nation": "МОС",
+     "points": "71.27"
+    },
+    {
+     "place": 2,
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "МОС",
+     "points": "70.89"
+    },
+    {
+     "place": 3,
+     "name": "Анастасия Иванкевич / Георгий Павловский",
+     "nation": "СПБ",
+     "points": "58.67"
+    }
+   ],
+   "desc": "Итог:\n1. Таисия Гусева / Даниил Овчинников — 71.27\n2. Полина Шешелева / Егор Карнаухов — 70.89\n3. Анастасия Иванкевич / Георгий Павловский — 58.67\n\nНаши:\n• Таисия Гусева / Даниил Овчинников — 2-й\n• Полина Шешелева / Егор Карнаухов — 6-й\n\nНачало: 19:50 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:dance-junior-pt",
@@ -874,7 +1608,47 @@
     "Эвелина Валиева / Даниил Лавриненко"
    ],
    "src": "https://fsrussia.ru/results/2627/2etap_jun/index.htm",
-   "desc": "Начало: 13:00 МСК\nТрансляция: Первый канал"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Анна Билибина / Дмитрий Кашаев",
+     "nation": "МОС",
+     "points": "88.23"
+    },
+    {
+     "place": 2,
+     "name": "Анна Соболева / Матвей Чураков",
+     "nation": "ПРМ",
+     "points": "86.86"
+    },
+    {
+     "place": 3,
+     "name": "Софья Грабчак / Максим Полторак",
+     "nation": "МОС",
+     "points": "85.43"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Анна Билибина / Дмитрий Кашаев",
+     "nation": "МОС",
+     "points": "149.12"
+    },
+    {
+     "place": 2,
+     "name": "Зоя Пестова / Сергей Лагутов",
+     "nation": "МОС",
+     "points": "148.28"
+    },
+    {
+     "place": 3,
+     "name": "Анна Соболева / Матвей Чураков",
+     "nation": "ПРМ",
+     "points": "146.46"
+    }
+   ],
+   "desc": "Итог:\n1. Анна Билибина / Дмитрий Кашаев — 88.23\n2. Анна Соболева / Матвей Чураков — 86.86\n3. Софья Грабчак / Максим Полторак — 85.43\n\nИтог турнира:\n1. Анна Билибина / Дмитрий Кашаев — 149.12\n2. Зоя Пестова / Сергей Лагутов — 148.28\n3. Анна Соболева / Матвей Чураков — 146.46\n\nНачало: 13:00 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:pairs-junior-pp",
@@ -895,12 +1669,14 @@
     {
      "name": "Полина Шешелева / Егор Карнаухов",
      "no": 5,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     },
     {
      "name": "Таисия Гусева / Даниил Овчинников",
      "no": 6,
-     "warmup": null
+     "warmup": null,
+     "place": 1
     }
    ],
    "athletes": [
@@ -912,7 +1688,47 @@
     "Таисия Гусева / Даниил Овчинников"
    ],
    "src": "https://fsrussia.ru/results/2627/2etap_jun/index.htm",
-   "desc": "Наши:\n• Полина Шешелева / Егор Карнаухов — 5-й\n• Таисия Гусева / Даниил Овчинников — 6-й\n\nНачало: 15:35 МСК\nТрансляция: Первый канал"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Таисия Гусева / Даниил Овчинников",
+     "nation": "МОС",
+     "points": "127.66"
+    },
+    {
+     "place": 2,
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "МОС",
+     "points": "124.19"
+    },
+    {
+     "place": 3,
+     "name": "Дарья Самохвалова / Роман Романычев",
+     "nation": "МОС",
+     "points": "95.69"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Таисия Гусева / Даниил Овчинников",
+     "nation": "МОС",
+     "points": "198.93"
+    },
+    {
+     "place": 2,
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "МОС",
+     "points": "195.08"
+    },
+    {
+     "place": 3,
+     "name": "Анастасия Иванкевич / Георгий Павловский",
+     "nation": "СПБ",
+     "points": "154.22"
+    }
+   ],
+   "desc": "Итог:\n1. Таисия Гусева / Даниил Овчинников — 127.66\n2. Полина Шешелева / Егор Карнаухов — 124.19\n3. Дарья Самохвалова / Роман Романычев — 95.69\n\nИтог турнира:\n1. Таисия Гусева / Даниил Овчинников — 198.93\n2. Полина Шешелева / Егор Карнаухов — 195.08\n3. Анастасия Иванкевич / Георгий Павловский — 154.22\n\nНаши:\n• Полина Шешелева / Егор Карнаухов — 5-й\n• Таисия Гусева / Даниил Овчинников — 6-й\n\nНачало: 15:35 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:women-junior-kp",
@@ -933,22 +1749,26 @@
     {
      "name": "София Сарновская",
      "no": 5,
-     "warmup": null
+     "warmup": null,
+     "place": 4
     },
     {
      "name": "Софья Смагина",
      "no": 12,
-     "warmup": null
+     "warmup": null,
+     "place": 3
     },
     {
      "name": "Анна Докукина",
      "no": 13,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     },
     {
      "name": "Екатерина Корчажникова",
      "no": 15,
-     "warmup": null
+     "warmup": null,
+     "place": 1
     }
    ],
    "athletes": [
@@ -972,7 +1792,27 @@
     "Софья Федотова"
    ],
    "src": "https://fsrussia.ru/results/2627/2etap_jun/index.htm",
-   "desc": "Наши:\n• София Сарновская — 5-й\n• Софья Смагина — 12-й\n• Анна Докукина — 13-й\n• Екатерина Корчажникова — 15-й\n\nНачало: 16:45 МСК\nТрансляция: Первый канал"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Екатерина Корчажникова",
+     "nation": "МОС",
+     "points": "72.02"
+    },
+    {
+     "place": 2,
+     "name": "Анна Докукина",
+     "nation": "МОС",
+     "points": "70.86"
+    },
+    {
+     "place": 3,
+     "name": "Софья Смагина",
+     "nation": "МОС",
+     "points": "70.64"
+    }
+   ],
+   "desc": "Итог:\n1. Екатерина Корчажникова — 72.02\n2. Анна Докукина — 70.86\n3. Софья Смагина — 70.64\n\nНаши:\n• София Сарновская — 5-й\n• Софья Смагина — 12-й\n• Анна Докукина — 13-й\n• Екатерина Корчажникова — 15-й\n\nНачало: 16:45 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:men-junior-kp",
@@ -993,7 +1833,8 @@
     {
      "name": "Алдар Самбуев",
      "no": 2,
-     "warmup": null
+     "warmup": null,
+     "place": 3
     }
    ],
    "athletes": [
@@ -1017,7 +1858,27 @@
     "Тимофей Бочков"
    ],
    "src": "https://fsrussia.ru/results/2627/2etap_jun/index.htm",
-   "desc": "Наши:\n• Алдар Самбуев — 2-й\n\nНачало: 19:20 МСК\nТрансляция: Первый канал"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Марк Лукин",
+     "nation": "МОС",
+     "points": "81.52"
+    },
+    {
+     "place": 2,
+     "name": "Николай Колесников",
+     "nation": "МОС",
+     "points": "80.72"
+    },
+    {
+     "place": 3,
+     "name": "Алдар Самбуев",
+     "nation": "МОС",
+     "points": "78.03"
+    }
+   ],
+   "desc": "Итог:\n1. Марк Лукин — 81.52\n2. Николай Колесников — 80.72\n3. Алдар Самбуев — 78.03\n\nНаши:\n• Алдар Самбуев — 2-й\n\nНачало: 19:20 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:women-junior-pp",
@@ -1038,22 +1899,26 @@
     {
      "name": "София Сарновская",
      "no": 15,
-     "warmup": null
+     "warmup": null,
+     "place": 4
     },
     {
      "name": "Софья Смагина",
      "no": 16,
-     "warmup": null
+     "warmup": null,
+     "place": 1
     },
     {
      "name": "Анна Докукина",
      "no": 17,
-     "warmup": null
+     "warmup": null,
+     "place": 3
     },
     {
      "name": "Екатерина Корчажникова",
      "no": 18,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     }
    ],
    "athletes": [
@@ -1077,7 +1942,47 @@
     "Софья Федотова"
    ],
    "src": "https://fsrussia.ru/results/2627/2etap_jun/index.htm",
-   "desc": "Наши:\n• София Сарновская — 15-й\n• Софья Смагина — 16-й\n• Анна Докукина — 17-й\n• Екатерина Корчажникова — 18-й\n\nНачало: 12:45 МСК\nТрансляция: Первый канал"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Софья Смагина",
+     "nation": "МОС",
+     "points": "145.39"
+    },
+    {
+     "place": 2,
+     "name": "Екатерина Корчажникова",
+     "nation": "МОС",
+     "points": "142.47"
+    },
+    {
+     "place": 3,
+     "name": "Анна Докукина",
+     "nation": "МОС",
+     "points": "137.58"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Софья Смагина",
+     "nation": "МОС",
+     "points": "216.03"
+    },
+    {
+     "place": 2,
+     "name": "Екатерина Корчажникова",
+     "nation": "МОС",
+     "points": "214.49"
+    },
+    {
+     "place": 3,
+     "name": "Анна Докукина",
+     "nation": "МОС",
+     "points": "208.44"
+    }
+   ],
+   "desc": "Итог:\n1. Софья Смагина — 145.39\n2. Екатерина Корчажникова — 142.47\n3. Анна Докукина — 137.58\n\nИтог турнира:\n1. Софья Смагина — 216.03\n2. Екатерина Корчажникова — 214.49\n3. Анна Докукина — 208.44\n\nНаши:\n• София Сарновская — 15-й\n• Софья Смагина — 16-й\n• Анна Докукина — 17-й\n• Екатерина Корчажникова — 18-й\n\nНачало: 12:45 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:men-junior-pp",
@@ -1098,7 +2003,8 @@
     {
      "name": "Алдар Самбуев",
      "no": 16,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     }
    ],
    "athletes": [
@@ -1122,7 +2028,47 @@
     "Тимофей Бочков"
    ],
    "src": "https://fsrussia.ru/results/2627/2etap_jun/index.htm",
-   "desc": "Наши:\n• Алдар Самбуев — 16-й\n\nНачало: 15:45 МСК\nТрансляция: Первый канал"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Марк Лукин",
+     "nation": "МОС",
+     "points": "159.67"
+    },
+    {
+     "place": 2,
+     "name": "Алдар Самбуев",
+     "nation": "МОС",
+     "points": "152.79"
+    },
+    {
+     "place": 3,
+     "name": "Никита Малютин",
+     "nation": "МОС",
+     "points": "149.03"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Марк Лукин",
+     "nation": "МОС",
+     "points": "241.19"
+    },
+    {
+     "place": 2,
+     "name": "Алдар Самбуев",
+     "nation": "МОС",
+     "points": "230.82"
+    },
+    {
+     "place": 3,
+     "name": "Никита Малютин",
+     "nation": "МОС",
+     "points": "224.15"
+    }
+   ],
+   "desc": "Итог:\n1. Марк Лукин — 159.67\n2. Алдар Самбуев — 152.79\n3. Никита Малютин — 149.03\n\nИтог турнира:\n1. Марк Лукин — 241.19\n2. Алдар Самбуев — 230.82\n3. Никита Малютин — 224.15\n\nНаши:\n• Алдар Самбуев — 16-й\n\nНачало: 15:45 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:men-junior-kp",
@@ -1141,17 +2087,20 @@
     {
      "name": "Арсений Федотов",
      "no": 6,
-     "warmup": null
+     "warmup": null,
+     "place": 1
     },
     {
      "name": "Александр Чмиль",
      "no": 8,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     },
     {
      "name": "Глеб Ковтун",
      "no": 10,
-     "warmup": null
+     "warmup": null,
+     "place": 3
     }
    ],
    "athletes": [
@@ -1160,7 +2109,27 @@
     "Глеб Ковтун"
    ],
    "src": "https://www.denistenmemorial.kz/results/index.htm",
-   "desc": "Наши:\n• Арсений Федотов — 6-й\n• Александр Чмиль — 8-й\n• Глеб Ковтун — 10-й\n\nНачало: 08:45 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Арсений Федотов",
+     "nation": "AIN2",
+     "points": "91.38"
+    },
+    {
+     "place": 2,
+     "name": "Александр Чмиль",
+     "nation": "AIN2",
+     "points": "74.01"
+    },
+    {
+     "place": 3,
+     "name": "Глеб Ковтун",
+     "nation": "AIN2",
+     "points": "73.18"
+    }
+   ],
+   "desc": "Итог:\n1. Арсений Федотов — 91.38\n2. Александр Чмиль — 74.01\n3. Глеб Ковтун — 73.18\n\nНаши:\n• Арсений Федотов — 6-й\n• Александр Чмиль — 8-й\n• Глеб Ковтун — 10-й\n\nНачало: 08:45 МСК"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:women-junior-kp",
@@ -1179,17 +2148,20 @@
     {
      "name": "Алёна Принёва",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     },
     {
      "name": "Виктория Стрельцова",
      "no": 18,
-     "warmup": null
+     "warmup": null,
+     "place": 1
     },
     {
      "name": "Алиса Заикина",
      "no": 20,
-     "warmup": null
+     "warmup": null,
+     "place": 4
     }
    ],
    "athletes": [
@@ -1198,7 +2170,27 @@
     "Виктория Стрельцова"
    ],
    "src": "https://www.denistenmemorial.kz/results/index.htm",
-   "desc": "Наши:\n• Алёна Принёва — 1-й\n• Виктория Стрельцова — 18-й\n• Алиса Заикина — 20-й\n\nНачало: 10:55 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Виктория Стрельцова",
+     "nation": "AIN2",
+     "points": "78.38"
+    },
+    {
+     "place": 2,
+     "name": "Алёна Принёва",
+     "nation": "AIN2",
+     "points": "73.82"
+    },
+    {
+     "place": 3,
+     "name": "Hyewon Joo",
+     "nation": "KOR",
+     "points": "69.65"
+    }
+   ],
+   "desc": "Итог:\n1. Виктория Стрельцова — 78.38\n2. Алёна Принёва — 73.82\n3. Hyewon Joo — 69.65\n\nНаши:\n• Алёна Принёва — 1-й\n• Виктория Стрельцова — 18-й\n• Алиса Заикина — 20-й\n\nНачало: 10:55 МСК"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:women-senior-kp",
@@ -1217,17 +2209,20 @@
     {
      "name": "Мария Захарова",
      "no": 4,
-     "warmup": null
+     "warmup": null,
+     "place": 8
     },
     {
      "name": "Александра Трусова",
      "no": 14,
-     "warmup": null
+     "warmup": null,
+     "place": 1
     },
     {
      "name": "Дина Хуснутдинова",
      "no": 16,
-     "warmup": null
+     "warmup": null,
+     "place": 5
     }
    ],
    "athletes": [
@@ -1236,7 +2231,27 @@
     "Мария Захарова"
    ],
    "src": "https://www.denistenmemorial.kz/results/index.htm",
-   "desc": "Наши:\n• Мария Захарова — 4-й\n• Александра Трусова — 14-й\n• Дина Хуснутдинова — 16-й\n\nНачало: 15:05 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Александра Трусова",
+     "nation": "AIN2",
+     "points": "77.39"
+    },
+    {
+     "place": 2,
+     "name": "Yujae Kim",
+     "nation": "KOR",
+     "points": "75.99"
+    },
+    {
+     "place": 3,
+     "name": "Sofia Samodelkina",
+     "nation": "KAZ",
+     "points": "69.45"
+    }
+   ],
+   "desc": "Итог:\n1. Александра Трусова — 77.39\n2. Yujae Kim — 75.99\n3. Sofia Samodelkina — 69.45\n\nНаши:\n• Мария Захарова — 4-й\n• Александра Трусова — 14-й\n• Дина Хуснутдинова — 16-й\n\nНачало: 15:05 МСК"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:men-senior-kp",
@@ -1255,17 +2270,20 @@
     {
      "name": "Владислав Дикиджи",
      "no": 3,
-     "warmup": null
+     "warmup": null,
+     "place": 1
     },
     {
      "name": "Пётр Гуменник",
      "no": 8,
-     "warmup": null
+     "warmup": null,
+     "place": 3
     },
     {
      "name": "Глеб Лутфуллин",
      "no": 9,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     }
    ],
    "athletes": [
@@ -1274,7 +2292,27 @@
     "Пётр Гуменник"
    ],
    "src": "https://www.denistenmemorial.kz/results/index.htm",
-   "desc": "Наши:\n• Владислав Дикиджи — 3-й\n• Пётр Гуменник — 8-й\n• Глеб Лутфуллин — 9-й\n\nНачало: 18:00 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Владислав Дикиджи",
+     "nation": "AIN2",
+     "points": "107.31"
+    },
+    {
+     "place": 2,
+     "name": "Глеб Лутфуллин",
+     "nation": "AIN2",
+     "points": "95.79"
+    },
+    {
+     "place": 3,
+     "name": "Пётр Гуменник",
+     "nation": "AIN2",
+     "points": "80.63"
+    }
+   ],
+   "desc": "Итог:\n1. Владислав Дикиджи — 107.31\n2. Глеб Лутфуллин — 95.79\n3. Пётр Гуменник — 80.63\n\nНаши:\n• Владислав Дикиджи — 3-й\n• Пётр Гуменник — 8-й\n• Глеб Лутфуллин — 9-й\n\nНачало: 18:00 МСК"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:dance-junior-rt",
@@ -1293,12 +2331,14 @@
     {
      "name": "Дарья Дрожжина / Иван Тельнов",
      "no": 3,
-     "warmup": null
+     "warmup": null,
+     "place": 2
     },
     {
      "name": "Мария Фефелова / Артём Валов",
      "no": 4,
-     "warmup": null
+     "warmup": null,
+     "place": 1
     }
    ],
    "athletes": [
@@ -1306,7 +2346,27 @@
     "Мария Фефелова / Артём Валов"
    ],
    "src": "https://www.denistenmemorial.kz/results/index.htm",
-   "desc": "Наши:\n• Дарья Дрожжина / Иван Тельнов — 3-й\n• Мария Фефелова / Артём Валов — 4-й\n\nНачало: 19:35 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Мария Фефелова / Артём Валов",
+     "nation": "AIN2",
+     "points": "67.11"
+    },
+    {
+     "place": 2,
+     "name": "Дарья Дрожжина / Иван Тельнов",
+     "nation": "AIN2",
+     "points": "59.41"
+    },
+    {
+     "place": 3,
+     "name": "Sofiia Beznosikova / Max Leleu",
+     "nation": "AZE",
+     "points": "57.90"
+    }
+   ],
+   "desc": "Итог:\n1. Мария Фефелова / Артём Валов — 67.11\n2. Дарья Дрожжина / Иван Тельнов — 59.41\n3. Sofiia Beznosikova / Max Leleu — 57.90\n\nНаши:\n• Дарья Дрожжина / Иван Тельнов — 3-й\n• Мария Фефелова / Артём Валов — 4-й\n\nНачало: 19:35 МСК"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:women-junior-pp",
@@ -1317,28 +2377,31 @@
    "seg": "ПП",
    "title": "CS Denis Ten Memorial — девушки ПП",
    "start": "2026-10-09T09:00:00+03:00",
-   "end": "2026-10-09T13:13:00+03:00",
+   "end": "2026-10-09T13:20:00+03:00",
    "venue": "Almaty, Kazakhstan",
    "intl": true,
    "broadcast": [],
    "ours": [
     {
      "name": "Алиса Заикина",
-     "time": "12:43",
      "no": 23,
-     "warmup": 5
+     "warmup": 5,
+     "place": 1,
+     "time": "12:43"
     },
     {
      "name": "Алёна Принёва",
-     "time": "12:58",
      "no": 25,
-     "warmup": 5
+     "warmup": 5,
+     "place": 3,
+     "time": "12:58"
     },
     {
      "name": "Виктория Стрельцова",
-     "time": "13:05",
      "no": 26,
-     "warmup": 5
+     "warmup": 5,
+     "place": 4,
+     "time": "13:05"
     }
    ],
    "athletes": [
@@ -1347,7 +2410,47 @@
     "Виктория Стрельцова"
    ],
    "src": "https://www.denistenmemorial.kz/results/index.htm",
-   "desc": "Наши:\n• Алиса Заикина — 12:43\n• Алёна Принёва — 12:58\n• Виктория Стрельцова — 13:05\n\nНачало: 09:00 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Алиса Заикина",
+     "nation": "AIN2",
+     "points": "136.72"
+    },
+    {
+     "place": 2,
+     "name": "Varvara Stahovich",
+     "nation": "AIN1",
+     "points": "126.43"
+    },
+    {
+     "place": 3,
+     "name": "Алёна Принёва",
+     "nation": "AIN2",
+     "points": "124.77"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Алиса Заикина",
+     "nation": "AIN2",
+     "points": "206.05"
+    },
+    {
+     "place": 2,
+     "name": "Виктория Стрельцова",
+     "nation": "AIN2",
+     "points": "200.99"
+    },
+    {
+     "place": 3,
+     "name": "Алёна Принёва",
+     "nation": "AIN2",
+     "points": "198.59"
+    }
+   ],
+   "desc": "Итог:\n1. Алиса Заикина — 136.72\n2. Varvara Stahovich — 126.43\n3. Алёна Принёва — 124.77\n\nИтог турнира:\n1. Алиса Заикина — 206.05\n2. Виктория Стрельцова — 200.99\n3. Алёна Принёва — 198.59\n\nНаши:\n• Алиса Заикина — 12:43\n• Алёна Принёва — 12:58\n• Виктория Стрельцова — 13:05\n\nНачало: 09:00 МСК"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:dance-junior-pt",
@@ -2343,5 +3446,94 @@
   "Алдар Самбуев",
   "Полина Шешелева / Егор Карнаухов",
   "Таисия Гусева / Даниил Овчинников"
- ]
+ ],
+ "photos": {
+  "Александра Бойкова": "https://fsrussia.ru/images/teams/2526/seniors/boikova_small.jpg",
+  "Дмитрий Козловский": "https://fsrussia.ru/images/teams/2526/seniors/kozlovsky_small.jpg",
+  "Karina Akopova": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2025-2026/Skater-Portraits/karina-akapova.jpg",
+  "Nikita Rakhmanin": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2025-2026/Skater-Portraits/nikita-rakhmanin.jpg",
+  "Audrey Shin": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2025-2026/Skater-Portraits/audrey-shin.jpg",
+  "Spencer Akira Howe": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2024-2025/Skater-Portraits/spencer-akira-howe.jpg",
+  "Balazs Nagy": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2024-2025/Skater-Portraits/balazs-nagy.jpg",
+  "Таисия Гусева": "https://fsrussia.ru/images/teams/2526/juniors/guseva_small.jpg",
+  "Даниил Овчинников": "https://fsrussia.ru/images/teams/2526/juniors/ovchinnikov_small.jpg",
+  "Полина Шешелева": "https://fsrussia.ru/images/teams/2526/juniors/shesheleva_small.jpg",
+  "Егор Карнаухов": "https://fsrussia.ru/images/teams/2526/juniors/karnaukhov_small.jpg",
+  "Матвей Ветлугин": "https://fsrussia.ru/images/teams/2627/seniors/vetlugin_small.jpeg",
+  "Mihhail Selevko": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2025-2026/Skater-Portraits/mihhail-selevko.jpg",
+  "Kyrylo Marsak": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2025-2026/Skater-Portraits/kyrylo-marsak.jpg",
+  "Мария Фефелова": "https://fsrussia.ru/images/teams/2526/juniors/fefelova_small.jpg",
+  "Артём Валов": "https://fsrussia.ru/images/teams/2526/juniors/valov_small.jpg",
+  "Полина Жарова": "https://fsrussia.ru/images/teams/2627/juniors/zharova_small.jpg",
+  "Алексей Столяров": "https://fsrussia.ru/images/teams/2627/juniors/stoliarov_small.jpg",
+  "Полина Сажина": "https://fsrussia.ru/images/teams/2627/juniors/sazhina_small.jpg",
+  "Алексей Белкин": "https://fsrussia.ru/images/teams/2627/juniors/belkin_small.jpg",
+  "Арина Парсегова": "https://fsrussia.ru/images/teams/2627/juniors/parsegova_small.jpg",
+  "Матвей Богданов": "https://fsrussia.ru/images/teams/2627/juniors/bogdanov_small.jpg",
+  "Виктория Стрельцова": "https://fsrussia.ru/images/teams/2526/juniors/streltsova_small.jpg",
+  "Макар Солодников": "https://fsrussia.ru/images/teams/2526/juniors/solodnikov_small.jpg",
+  "Аделия Петросян": "https://fsrussia.ru/images/teams/2526/seniors/petrosian_small.jpg",
+  "Анна Фролова": "https://fsrussia.ru/images/teams/2526/seniors/frolova_small.jpg",
+  "Niina Petrokina": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2024-2025/Skater-Portraits/niina-petrokina.jpg",
+  "Anastasiia Gubanova": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2024-2025/Skater-Portraits/anastasiia-gubanova.jpg",
+  "Екатерина Рыбакова": "https://fsrussia.ru/images/teams/seniors_main/rybakova_small.jpg",
+  "Иван Махноносов": "https://fsrussia.ru/images/teams/seniors_main/makhnonosov_small.jpg",
+  "Елизавета Пасечник": "https://fsrussia.ru/images/teams/2526/seniors/pasechnik_small.jpg",
+  "Дарио Чиризано": "https://fsrussia.ru/images/teams/2526/seniors/chirizano_small.jpg",
+  "Елизавета Шичина": "https://fsrussia.ru/images/teams/2627/seniors/schichina_small.png",
+  "Павел Дрозд": "https://fsrussia.ru/images/teams/2627/seniors/drozd_small.png",
+  "Diana Davis": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2024-2025/Skater-Portraits/diana-davis.jpg",
+  "Gleb Smolkin": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2024-2025/Skater-Portraits/gleb-smolkin.jpg",
+  "Mariia Ignateva": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2025-2026/Skater-Portraits/mariia-ignateva.jpg",
+  "Danijil Leonyidovics Szemko": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2025-2026/Skater-Portraits/danijil-leonyidovics-szemko.jpg",
+  "Николай Угожаев": "https://fsrussia.ru/images/teams/2526/seniors/ugozhaev_small.jpg",
+  "Nika Egadze": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2024-2025/Skater-Portraits/nika-egadze.jpg",
+  "Анастасия Мухортова": "https://fsrussia.ru/images/teams/2526/seniors/mukhortova_small.jpg",
+  "Дмитрий Евгеньев": "https://fsrussia.ru/images/teams/2526/seniors/evgeniev_small.jpg",
+  "Екатерина Чикмарёва": "https://fsrussia.ru/images/teams/2526/seniors/chikmareva_small.jpg",
+  "Матвей Янченков": "https://fsrussia.ru/images/teams/2526/seniors/yanchenkov_small.jpg",
+  "Анастасия Мишина": "https://fsrussia.ru/images/teams/2526/seniors/mishina_small.jpg",
+  "Александр Галлямов": "https://fsrussia.ru/images/teams/2526/seniors/galliamov_small.jpg",
+  "Anastasiia Metelkina": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/uploads/isunewrevamp/user/original/10f6fd21-2a01-4f24-a1b3-5c2f7eb6a8e83002f9c92c2901ca2205f8563cdbec3c4af152129f6a417dcc10b6318e8cb1e6.jpg",
+  "Luka Berulava": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2024-2025/Skater-Portraits/luka-berulava.jpg",
+  "Nadiia Bashynska": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2024-2025/Skater-Portraits/nadiia-bashynska.jpg",
+  "Зоя Пестова": "https://fsrussia.ru/images/teams/2526/juniors/pestova_small.jpg",
+  "Сергей Лагутов": "https://fsrussia.ru/images/teams/2526/juniors/lagutov_small.jpg",
+  "Анна Билибина": "https://fsrussia.ru/images/teams/2526/juniors/bilibina_small.jpg",
+  "Дмитрий Кашаев": "https://fsrussia.ru/images/teams/2526/juniors/kashaev_small.jpg",
+  "Анна Соболева": "https://fsrussia.ru/images/teams/2627/juniors/soboleva_small.jpg",
+  "Матвей Чураков": "https://fsrussia.ru/images/teams/2627/juniors/churakov_small.jpg",
+  "София Сарновская": "https://fsrussia.ru/images/teams/2526/juniors/sarnovskaya_small.jpg",
+  "Анна Докукина": "https://fsrussia.ru/images/teams/2627/juniors/dokukina_small.JPG",
+  "Екатерина Корчажникова": "https://fsrussia.ru/images/teams/2627/juniors/korchazhnikova_small.jpg",
+  "Алдар Самбуев": "https://fsrussia.ru/images/teams/2627/juniors/sambuev_small.jpg",
+  "Марк Лукин": "https://fsrussia.ru/images/teams/juniors/lukin_small.jpg",
+  "Николай Колесников": "https://fsrussia.ru/images/teams/2526/juniors/kolesnikov_small.jpg",
+  "Арсений Федотов": "https://fsrussia.ru/images/teams/2526/juniors/fedotov_arseny_small.jpg",
+  "Александр Чмиль": "https://fsrussia.ru/images/teams/2627/seniors/chmil_small.jpg",
+  "Глеб Ковтун": "https://fsrussia.ru/images/teams/2627/juniors/kovtun_small.jpg",
+  "Алёна Принёва": "https://fsrussia.ru/images/teams/2526/juniors/prineva_small.jpg",
+  "Алиса Заикина": "https://fsrussia.ru/images/teams/2627/juniors/zaikina_small.jpeg",
+  "Мария Захарова": "https://fsrussia.ru/images/teams/2627/seniors/zakharova_small.png",
+  "Александра Трусова": "https://fsrussia.ru/images/teams/2627/seniors/ignatova_small.jpg",
+  "Дина Хуснутдинова": "https://fsrussia.ru/images/teams/2526/juniors/khusnutdinova_small.jpg",
+  "Yujae Kim": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2024-2025/Skater-Portraits/yujae-kim.jpg",
+  "Sofia Samodelkina": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isudamcontainer/CMS/Fansite/Figure-Skating/2025-2026/Skater-Portraits/sofia-samodelkina.jpg",
+  "Владислав Дикиджи": "https://fsrussia.ru/images/teams/2526/seniors/dikidzhi_small.jpg",
+  "Пётр Гуменник": "https://fsrussia.ru/images/teams/2526/seniors/gumennik_small.jpg",
+  "Глеб Лутфуллин": "https://fsrussia.ru/images/teams/2526/seniors/lutfullin_small.jpg",
+  "Дарья Дрожжина": "https://fsrussia.ru/images/teams/2526/juniors/drozhzhina_small.jpg",
+  "Иван Тельнов": "https://fsrussia.ru/images/teams/2526/juniors/telnov_small.jpg",
+  "Василиса Кагановская": "https://fsrussia.ru/images/teams/2526/seniors/kaganovskaia_small.jpg",
+  "Максим Некрасов": "https://fsrussia.ru/images/teams/2526/seniors/nekrasov_small.jpg",
+  "Анна Щербакова": "https://fsrussia.ru/images/teams/2526/seniors/scherbakova_small.jpg",
+  "Егор Гончаров": "https://fsrussia.ru/images/teams/2526/seniors/goncharov_small.jpg",
+  "Ирина Хавронина": "https://fsrussia.ru/images/teams/2526/seniors/khavronina_small.png",
+  "Девид Нарижный": "https://fsrussia.ru/images/teams/2526/seniors/narizhny_small.jpeg",
+  "Алина Горбачёва": "https://fsrussia.ru/images/teams/2526/seniors/gorbacheva_small.jpg",
+  "Василиса Григорьева": "https://fsrussia.ru/images/teams/2526/seniors/grigoreva_small.jpg",
+  "Евгений Артющенко": "https://fsrussia.ru/images/teams/2526/seniors/artyschenko_small.jpg",
+  "Милана Кузьмина": "https://fsrussia.ru/images/teams/2526/seniors/kuzmina_small.jpg",
+  "Дмитрий Студеникин": "https://fsrussia.ru/images/teams/2526/seniors/studenikin_small.jpg"
+ }
 }
