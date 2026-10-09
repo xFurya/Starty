@@ -600,6 +600,33 @@ class MutedBell extends StatelessWidget {
   }
 }
 
+/// LayoutBuilder, который пересобирается, когда догрузились шрифты: в вебе шрифты
+/// приходят после первого кадра, и замер текста до этого — по чужому шрифту.
+class MeasuredLayout extends StatefulWidget {
+  final Widget Function(BuildContext, BoxConstraints) builder;
+  const MeasuredLayout({super.key, required this.builder});
+  @override
+  State<MeasuredLayout> createState() => _MeasuredLayoutState();
+}
+
+class _MeasuredLayoutState extends State<MeasuredLayout> {
+  void _fonts() => setState(() {});
+  @override
+  void initState() {
+    super.initState();
+    PaintingBinding.instance.systemFonts.addListener(_fonts);
+  }
+
+  @override
+  void dispose() {
+    PaintingBinding.instance.systemFonts.removeListener(_fonts);
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => LayoutBuilder(builder: widget.builder);
+}
+
 /// Ширина строки текста при текущем масштабе шрифта.
 double textWidth(BuildContext context, String text, TextStyle style) {
   final tp = TextPainter(
@@ -618,17 +645,26 @@ class ChoiceTile extends StatelessWidget {
   final Color? color;
   final VoidCallback? onTap;
 
-  /// Узкая плитка: поля и значки меньше, подпись того же размера.
+  /// Узкая плитка: поля и значки меньше.
   final bool dense;
-  const ChoiceTile({super.key, required this.label, required this.on, required this.onTap, this.color, this.dense = false});
+  final double fontSize;
+  const ChoiceTile({
+    super.key,
+    required this.label,
+    required this.on,
+    required this.onTap,
+    this.color,
+    this.dense = false,
+    this.fontSize = 14.5,
+  });
 
-  static const fontSize = 14.5;
-  static TextStyle styleOf(bool on, Color ink) =>
-      TextStyle(fontSize: fontSize, height: 1.2, fontWeight: on ? FontWeight.w700 : FontWeight.w500, color: ink);
+  /// Начертание одно и то же — выбранная плитка не становится шире.
+  static TextStyle styleOf(double size, Color ink) =>
+      TextStyle(fontSize: size, height: 1.2, fontWeight: FontWeight.w600, color: ink);
 
   /// Сколько места займёт всё, кроме подписи.
   static double chrome({required bool dot, required bool dense}) =>
-      (dense ? 9 + 7 : 12 + 10) + (dot ? (dense ? 13 : 18) : 0) + (dense ? 4 + 18 : 6 + 20) + 2.8;
+      (dense ? 8 + 6 : 12 + 10) + (dot ? (dense ? 11 : 18) : 0) + (dense ? 4 + 16 : 6 + 20) + 2.8 + 2;
 
   @override
   Widget build(BuildContext context) {
@@ -636,7 +672,7 @@ class ChoiceTile extends StatelessWidget {
     final c = color ?? p.accent;
     // нейтральные плитки (уровень, турниры) — тише цветных
     final edge = on ? c.withValues(alpha: color == null ? .5 : .85) : p.plateLine;
-    final check = dense ? 18.0 : 20.0;
+    final check = dense ? 16.0 : 20.0;
     return Semantics(
       checked: on,
       button: true,
@@ -652,19 +688,24 @@ class ChoiceTile extends StatelessWidget {
           child: ConstrainedBox(
             constraints: const BoxConstraints(minHeight: 50),
             child: Padding(
-              padding: EdgeInsets.fromLTRB(dense ? 9 : 12, 8, dense ? 7 : 10, 8),
+              padding: EdgeInsets.fromLTRB(dense ? 8 : 12, 8, dense ? 6 : 10, 8),
               child: Row(
                 children: [
                   if (color != null) ...[
                     Container(
-                      width: dense ? 7 : 9,
-                      height: dense ? 7 : 9,
+                      width: dense ? 6 : 9,
+                      height: dense ? 6 : 9,
                       decoration: BoxDecoration(shape: BoxShape.circle, color: c),
                     ),
-                    SizedBox(width: dense ? 6 : 9),
+                    SizedBox(width: dense ? 5 : 9),
                   ],
                   Expanded(
-                    child: Text(label, maxLines: 2, overflow: TextOverflow.ellipsis, style: styleOf(on, p.ink)),
+                    child: Text(
+                      label,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: styleOf(fontSize, on ? p.ink : p.ink),
+                    ),
                   ),
                   SizedBox(width: dense ? 4 : 6),
                   AnimatedContainer(
@@ -694,21 +735,34 @@ class ChoiceTile extends StatelessWidget {
 /// в половину ширины даже в узкой плитке — плитки в один столбец: по буквам не переносим.
 class TileGrid extends StatelessWidget {
   final List<ChoiceTile> tiles;
-  const TileGrid({super.key, required this.tiles});
+
+  /// Сетка 2×2 обязательна (виды): прежде чем перейти в столбец — шрифт чуть мельче.
+  final bool keepGrid;
+  const TileGrid({super.key, required this.tiles, this.keepGrid = false});
   @override
-  Widget build(BuildContext context) => LayoutBuilder(
+  Widget build(BuildContext context) => MeasuredLayout(
     builder: (context, c) {
       const gap = 8.0;
       final half = (c.maxWidth - gap) / 2;
-      double longestWord(ChoiceTile t) => t.label
+      double longestWord(ChoiceTile t, double size) => t.label
           .split(' ')
-          .map((w) => textWidth(context, w, ChoiceTile.styleOf(true, Colors.black)))
+          .map((w) => textWidth(context, w, ChoiceTile.styleOf(size, Colors.black)))
           .fold(0.0, (a, b) => a > b ? a : b);
-      bool fits(bool dense) => tiles.every((t) => longestWord(t) <= half - ChoiceTile.chrome(dot: t.color != null, dense: dense));
-      final dense = !fits(false);
-      final cols = !dense || fits(true) ? 2 : 1;
+      bool fits(bool dense, double size) =>
+          tiles.every((t) => longestWord(t, size) <= half - ChoiceTile.chrome(dot: t.color != null, dense: dense));
+      // по порядку: обычная плитка, узкая, узкая и на пункт мельче, ещё мельче (только для видов), один столбец
+      var (cols, dense, size) = (1, false, 14.5);
+      if (fits(false, 14.5)) {
+        (cols, dense, size) = (2, false, 14.5);
+      } else if (fits(true, 14.5)) {
+        (cols, dense, size) = (2, true, 14.5);
+      } else if (fits(true, 13.5)) {
+        (cols, dense, size) = (2, true, 13.5);
+      } else if (keepGrid && fits(true, 13)) {
+        (cols, dense, size) = (2, true, 13);
+      }
       final list = [
-        for (final t in tiles) ChoiceTile(label: t.label, on: t.on, onTap: t.onTap, color: t.color, dense: dense && cols == 2),
+        for (final t in tiles) ChoiceTile(label: t.label, on: t.on, onTap: t.onTap, color: t.color, dense: dense, fontSize: size),
       ];
       final rows = <Widget>[];
       for (var i = 0; i < list.length; i += cols) {
@@ -743,10 +797,11 @@ class Segmented<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    return LayoutBuilder(
+    return MeasuredLayout(
       builder: (context, c) {
         const base = 14.5;
-        final seg = (c.maxWidth - 8) / items.length - 10;
+        // дорожка: окантовка и поля 8, у сегмента — поля 8 и рамка выбранного 2, плюс запас
+        final seg = (c.maxWidth - 8) / items.length - 13;
         final widest = items
             .map(
               (x) => textWidth(context, x.$2, const TextStyle(fontSize: base, fontWeight: FontWeight.w700, fontFeatures: tnum)),

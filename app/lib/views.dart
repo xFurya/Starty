@@ -488,7 +488,7 @@ class OursLine extends StatelessWidget {
     final ink2 = onDark ? Colors.white.withValues(alpha: .72) : p.ink2;
     final left = o.time ?? (o.no != null ? '№ ${o.no}' : '—');
     // колонка времени растёт вместе со шрифтом: «19:30» не переносится
-    final col = MediaQuery.textScalerOf(context).scale(50);
+    final col = MediaQuery.textScalerOf(context).scale(46);
     final style = TextStyle(fontSize: 14.5, color: ink, height: 1.25);
     final warm = o.time == null && o.warmup != null ? '  разминка ${o.warmup}' : '';
     return Padding(
@@ -514,7 +514,7 @@ class OursLine extends StatelessWidget {
           Avatar(name: o.name, data: data, size: 26, slot: slot, ring: onDark ? const Color(0xFF1B4F86) : null),
           const SizedBox(width: 8),
           Expanded(
-            child: LayoutBuilder(
+            child: MeasuredLayout(
               builder: (context, c) {
                 // не помещается имя с фамилией — только фамилия, а не «Александра Трусо…»
                 final full = o.short;
