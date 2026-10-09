@@ -1,0 +1,3565 @@
+{
+ "generated": "2026-10-09T14:02:45+03:00",
+ "checked": "2026-10-09T14:02:45+03:00",
+ "complete": true,
+ "sources": {
+  "ФФККР": "ok",
+  "ISU": "ok",
+  "Golden Skate": "ok"
+ },
+ "events": [
+  {
+   "id": "isu:isu-cs-john-nicks-pairs-international-2026:pairs-senior-kp",
+   "tid": "isu:isu-cs-john-nicks-pairs-international-2026",
+   "tournament": "CS John Nicks Pairs International",
+   "kind": "pairs",
+   "level": "senior",
+   "seg": "КП",
+   "title": "CS John Nicks Pairs International — пары КП",
+   "start": "2026-09-11T23:33:00+03:00",
+   "end": "2026-09-12T01:03:00+03:00",
+   "venue": "Norwood, USA",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Александра Бойкова / Дмитрий Козловский",
+     "no": 1,
+     "warmup": null,
+     "place": 1
+    }
+   ],
+   "athletes": [
+    "Александра Бойкова / Дмитрий Козловский"
+   ],
+   "src": "https://ijs.usfigureskating.org/leaderboard/results/2026/37250/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Александра Бойкова / Дмитрий Козловский",
+     "nation": "AIN2",
+     "points": "70.39"
+    },
+    {
+     "place": 2,
+     "name": "Karina Akopova / Nikita Rakhmanin",
+     "nation": "ARM",
+     "points": "68.03"
+    },
+    {
+     "place": 3,
+     "name": "Audrey Shin / Spencer Akira Howe",
+     "nation": "USA",
+     "points": "67.25"
+    }
+   ],
+   "desc": "Итог:\n1. Александра Бойкова / Дмитрий Козловский — 70.39\n2. Karina Akopova / Nikita Rakhmanin — 68.03\n3. Audrey Shin / Spencer Akira Howe — 67.25\n\nНаши:\n• Александра Бойкова / Дмитрий Козловский — 1-й\n\nНачало: 23:33 МСК"
+  },
+  {
+   "id": "isu:isu-cs-john-nicks-pairs-international-2026:pairs-senior-pp",
+   "tid": "isu:isu-cs-john-nicks-pairs-international-2026",
+   "tournament": "CS John Nicks Pairs International",
+   "kind": "pairs",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "CS John Nicks Pairs International — пары ПП",
+   "start": "2026-09-12T21:40:00+03:00",
+   "end": "2026-09-12T23:20:00+03:00",
+   "venue": "Norwood, USA",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Александра Бойкова / Дмитрий Козловский",
+     "no": 11,
+     "warmup": null,
+     "place": 1,
+     "final": 1
+    }
+   ],
+   "athletes": [
+    "Александра Бойкова / Дмитрий Козловский"
+   ],
+   "src": "https://ijs.usfigureskating.org/leaderboard/results/2026/37250/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Александра Бойкова / Дмитрий Козловский",
+     "nation": "AIN2",
+     "points": "128.27"
+    },
+    {
+     "place": 2,
+     "name": "Audrey Shin / Spencer Akira Howe",
+     "nation": "USA",
+     "points": "116.56"
+    },
+    {
+     "place": 3,
+     "name": "Katie McBEATH / Balazs Nagy",
+     "nation": "USA",
+     "points": "113.78"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Александра Бойкова / Дмитрий Козловский",
+     "nation": "AIN2",
+     "points": "198.66"
+    },
+    {
+     "place": 2,
+     "name": "Audrey Shin / Spencer Akira Howe",
+     "nation": "USA",
+     "points": "183.81"
+    },
+    {
+     "place": 3,
+     "name": "Katie McBEATH / Balazs Nagy",
+     "nation": "USA",
+     "points": "180.95"
+    }
+   ],
+   "desc": "Итог:\n1. Александра Бойкова / Дмитрий Козловский — 128.27\n2. Audrey Shin / Spencer Akira Howe — 116.56\n3. Katie McBEATH / Balazs Nagy — 113.78\n\nИтог турнира:\n1. Александра Бойкова / Дмитрий Козловский — 198.66\n2. Audrey Shin / Spencer Akira Howe — 183.81\n3. Katie McBEATH / Balazs Nagy — 180.95\n\nНаши:\n• Александра Бойкова / Дмитрий Козловский — 11-й\n\nНачало: 21:40 МСК"
+  },
+  {
+   "id": "isu:isu-jgp-ankara-2026:pairs-junior-kp",
+   "tid": "isu:isu-jgp-ankara-2026",
+   "tournament": "JGP Ankara",
+   "kind": "pairs",
+   "level": "junior",
+   "seg": "КП",
+   "title": "JGP Ankara — пары КП",
+   "start": "2026-09-17T15:45:00+03:00",
+   "end": "2026-09-17T18:05:00+03:00",
+   "venue": "Ankara, Türkiye",
+   "intl": true,
+   "broadcast": [
+    "Okko"
+   ],
+   "ours": [
+    {
+     "name": "Таисия Гусева / Даниил Овчинников",
+     "no": 1,
+     "warmup": null,
+     "place": 1
+    },
+    {
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "no": 10,
+     "warmup": null,
+     "place": 2
+    }
+   ],
+   "athletes": [
+    "Полина Шешелева / Егор Карнаухов",
+    "Таисия Гусева / Даниил Овчинников"
+   ],
+   "src": "https://results.isu.org/results/season2627/jgptur2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Таисия Гусева / Даниил Овчинников",
+     "nation": "AIN2",
+     "points": "70.48"
+    },
+    {
+     "place": 2,
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "AIN2",
+     "points": "63.26"
+    },
+    {
+     "place": 3,
+     "name": "Anita Mapelli / Noah Quesada Grau",
+     "nation": "ESP",
+     "points": "57.55"
+    }
+   ],
+   "desc": "Итог:\n1. Таисия Гусева / Даниил Овчинников — 70.48\n2. Полина Шешелева / Егор Карнаухов — 63.26\n3. Anita Mapelli / Noah Quesada Grau — 57.55\n\nНаши:\n• Таисия Гусева / Даниил Овчинников — 1-й\n• Полина Шешелева / Егор Карнаухов — 10-й\n\nНачало: 15:45 МСК\nТрансляция: Okko"
+  },
+  {
+   "id": "isu:isu-jgp-ankara-2026:pairs-junior-pp",
+   "tid": "isu:isu-jgp-ankara-2026",
+   "tournament": "JGP Ankara",
+   "kind": "pairs",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "JGP Ankara — пары ПП",
+   "start": "2026-09-18T13:30:00+03:00",
+   "end": "2026-09-18T16:05:00+03:00",
+   "venue": "Ankara, Türkiye",
+   "intl": true,
+   "broadcast": [
+    "Okko"
+   ],
+   "ours": [
+    {
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "no": 14,
+     "warmup": null,
+     "place": 1,
+     "final": 2
+    },
+    {
+     "name": "Таисия Гусева / Даниил Овчинников",
+     "no": 15,
+     "warmup": null,
+     "place": 2,
+     "final": 1
+    }
+   ],
+   "athletes": [
+    "Полина Шешелева / Егор Карнаухов",
+    "Таисия Гусева / Даниил Овчинников"
+   ],
+   "src": "https://results.isu.org/results/season2627/jgptur2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "AIN2",
+     "points": "127.53"
+    },
+    {
+     "place": 2,
+     "name": "Таисия Гусева / Даниил Овчинников",
+     "nation": "AIN2",
+     "points": "126.43"
+    },
+    {
+     "place": 3,
+     "name": "Anita Mapelli / Noah Quesada Grau",
+     "nation": "ESP",
+     "points": "96.52"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Таисия Гусева / Даниил Овчинников",
+     "nation": "AIN2",
+     "points": "196.91"
+    },
+    {
+     "place": 2,
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "AIN2",
+     "points": "190.79"
+    },
+    {
+     "place": 3,
+     "name": "Anita Mapelli / Noah Quesada Grau",
+     "nation": "ESP",
+     "points": "154.07"
+    }
+   ],
+   "desc": "Итог:\n1. Полина Шешелева / Егор Карнаухов — 127.53\n2. Таисия Гусева / Даниил Овчинников — 126.43\n3. Anita Mapelli / Noah Quesada Grau — 96.52\n\nИтог турнира:\n1. Таисия Гусева / Даниил Овчинников — 196.91\n2. Полина Шешелева / Егор Карнаухов — 190.79\n3. Anita Mapelli / Noah Quesada Grau — 154.07\n\nНаши:\n• Полина Шешелева / Егор Карнаухов — 14-й\n• Таисия Гусева / Даниил Овчинников — 15-й\n\nНачало: 13:30 МСК\nТрансляция: Okko"
+  },
+  {
+   "id": "isu:isu-cs-lombardia-trophy-2026:men-senior-kp",
+   "tid": "isu:isu-cs-lombardia-trophy-2026",
+   "tournament": "CS Lombardia Trophy",
+   "kind": "men",
+   "level": "senior",
+   "seg": "КП",
+   "title": "CS Lombardia Trophy — мужчины КП",
+   "start": "2026-09-18T17:15:00+03:00",
+   "end": "2026-09-18T18:35:00+03:00",
+   "venue": "Bergamo, Italy",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Матвей Ветлугин",
+     "no": 2,
+     "warmup": null,
+     "place": 2
+    }
+   ],
+   "athletes": [
+    "Матвей Ветлугин"
+   ],
+   "src": "https://www.fisg.it/upload/result/7089/online/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "points": "91.09"
+    },
+    {
+     "place": 2,
+     "name": "Матвей Ветлугин",
+     "nation": "AIN2",
+     "points": "90.02"
+    },
+    {
+     "place": 3,
+     "name": "Corentin Spinar",
+     "nation": "FRA",
+     "points": "89.08"
+    }
+   ],
+   "desc": "Итог:\n1. Mihhail Selevko — 91.09\n2. Матвей Ветлугин — 90.02\n3. Corentin Spinar — 89.08\n\nНаши:\n• Матвей Ветлугин — 2-й\n\nНачало: 17:15 МСК"
+  },
+  {
+   "id": "isu:isu-cs-lombardia-trophy-2026:men-senior-pp",
+   "tid": "isu:isu-cs-lombardia-trophy-2026",
+   "tournament": "CS Lombardia Trophy",
+   "kind": "men",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "CS Lombardia Trophy — мужчины ПП",
+   "start": "2026-09-20T14:30:00+03:00",
+   "end": "2026-09-20T16:00:00+03:00",
+   "venue": "Bergamo, Italy",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Матвей Ветлугин",
+     "no": 9,
+     "warmup": null,
+     "place": 2,
+     "final": 2
+    }
+   ],
+   "athletes": [
+    "Матвей Ветлугин"
+   ],
+   "src": "https://www.fisg.it/upload/result/7089/online/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "points": "169.78"
+    },
+    {
+     "place": 2,
+     "name": "Матвей Ветлугин",
+     "nation": "AIN2",
+     "points": "164.51"
+    },
+    {
+     "place": 3,
+     "name": "Kyrylo Marsak",
+     "nation": "UKR",
+     "points": "159.37"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "points": "260.87"
+    },
+    {
+     "place": 2,
+     "name": "Матвей Ветлугин",
+     "nation": "AIN2",
+     "points": "254.53"
+    },
+    {
+     "place": 3,
+     "name": "Corentin Spinar",
+     "nation": "FRA",
+     "points": "247.66"
+    }
+   ],
+   "desc": "Итог:\n1. Mihhail Selevko — 169.78\n2. Матвей Ветлугин — 164.51\n3. Kyrylo Marsak — 159.37\n\nИтог турнира:\n1. Mihhail Selevko — 260.87\n2. Матвей Ветлугин — 254.53\n3. Corentin Spinar — 247.66\n\nНаши:\n• Матвей Ветлугин — 9-й\n\nНачало: 14:30 МСК"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:dance-junior-rt",
+   "tid": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Лёд Мечты»",
+   "kind": "dance",
+   "level": "junior",
+   "seg": "РТ",
+   "title": "ЮГП России «Лёд Мечты» — танцы РТ",
+   "start": "2026-09-25T12:30:00+03:00",
+   "end": "2026-09-25T14:40:00+03:00",
+   "venue": "Навка Арена, Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [
+    "Арина Новикова / Кирилл Лихачев",
+    "Екатерина Старостина / Тимофей Столяренко",
+    "Елизавета Ростилова / Денис Ауров",
+    "Мария Фефелова / Артём Валов",
+    "Милана Чегемова / Кирилл Евграфов",
+    "Полина Жарова / Алексей Столяров",
+    "Полина Неганова / Степан Чучкалов",
+    "Полина Пунегова / Дмитрий Кашубин",
+    "Полина Тихонова / Матвей Лысов",
+    "Сандра Давыденко / Игнат Пахомов",
+    "Софья Гончарова / Александр Синцов",
+    "Софья Грабчак / Максим Полторак",
+    "Таиса Мусурова / Дмитрий Карбовский",
+    "Ульяна Трушникова / Кирилл Ведерников",
+    "Устинья Смирнова / Матвей Шипилов"
+   ],
+   "src": "https://fsrussia.ru/results/2627/1etap_jun/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Мария Фефелова / Артём Валов",
+     "nation": "МОБ",
+     "points": "72.64"
+    },
+    {
+     "place": 2,
+     "name": "Полина Жарова / Алексей Столяров",
+     "nation": "МОС",
+     "points": "64.19"
+    },
+    {
+     "place": 3,
+     "name": "Арина Новикова / Кирилл Лихачев",
+     "nation": "МОС",
+     "points": "59.16"
+    }
+   ],
+   "desc": "Итог:\n1. Мария Фефелова / Артём Валов — 72.64\n2. Полина Жарова / Алексей Столяров — 64.19\n3. Арина Новикова / Кирилл Лихачев — 59.16\n\nНачало: 12:30 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:pairs-junior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Лёд Мечты»",
+   "kind": "pairs",
+   "level": "junior",
+   "seg": "КП",
+   "title": "ЮГП России «Лёд Мечты» — пары КП",
+   "start": "2026-09-25T14:50:00+03:00",
+   "end": "2026-09-25T15:55:00+03:00",
+   "venue": "Навка Арена, Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [
+    "Арина Парсегова / Матвей Богданов",
+    "Дарья Самохвалова / Роман Романычев",
+    "Дарья Третьякова / Александр Саморуков",
+    "Майя Бабиченко / Максим Савинский",
+    "Мария Карпанова / Артем Устинов",
+    "Полина Сажина / Алексей Белкин",
+    "Софья Звездина / Дмитрий Шеремет"
+   ],
+   "src": "https://fsrussia.ru/results/2627/1etap_jun/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Полина Сажина / Алексей Белкин",
+     "nation": "МОС",
+     "points": "68.12"
+    },
+    {
+     "place": 2,
+     "name": "Арина Парсегова / Матвей Богданов",
+     "nation": "МОС",
+     "points": "63.77"
+    },
+    {
+     "place": 3,
+     "name": "Дарья Самохвалова / Роман Романычев",
+     "nation": "МОС",
+     "points": "60.01"
+    }
+   ],
+   "desc": "Итог:\n1. Полина Сажина / Алексей Белкин — 68.12\n2. Арина Парсегова / Матвей Богданов — 63.77\n3. Дарья Самохвалова / Роман Романычев — 60.01\n\nНачало: 14:50 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:dance-junior-pt",
+   "tid": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Лёд Мечты»",
+   "kind": "dance",
+   "level": "junior",
+   "seg": "ПТ",
+   "title": "ЮГП России «Лёд Мечты» — танцы ПТ",
+   "start": "2026-09-26T08:00:00+03:00",
+   "end": "2026-09-26T10:25:00+03:00",
+   "venue": "Навка Арена, Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [
+    "Арина Новикова / Кирилл Лихачев",
+    "Екатерина Старостина / Тимофей Столяренко",
+    "Елизавета Ростилова / Денис Ауров",
+    "Мария Фефелова / Артём Валов",
+    "Милана Чегемова / Кирилл Евграфов",
+    "Полина Жарова / Алексей Столяров",
+    "Полина Неганова / Степан Чучкалов",
+    "Полина Пунегова / Дмитрий Кашубин",
+    "Полина Тихонова / Матвей Лысов",
+    "Сандра Давыденко / Игнат Пахомов",
+    "Софья Гончарова / Александр Синцов",
+    "Софья Грабчак / Максим Полторак",
+    "Таиса Мусурова / Дмитрий Карбовский",
+    "Ульяна Трушникова / Кирилл Ведерников",
+    "Устинья Смирнова / Матвей Шипилов"
+   ],
+   "src": "https://fsrussia.ru/results/2627/1etap_jun/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Мария Фефелова / Артём Валов",
+     "nation": "МОБ",
+     "points": "107.13"
+    },
+    {
+     "place": 2,
+     "name": "Полина Жарова / Алексей Столяров",
+     "nation": "МОС",
+     "points": "95.18"
+    },
+    {
+     "place": 3,
+     "name": "Софья Грабчак / Максим Полторак",
+     "nation": "МОС",
+     "points": "89.77"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Мария Фефелова / Артём Валов",
+     "nation": "МОБ",
+     "points": "179.77"
+    },
+    {
+     "place": 2,
+     "name": "Полина Жарова / Алексей Столяров",
+     "nation": "МОС",
+     "points": "159.37"
+    },
+    {
+     "place": 3,
+     "name": "Софья Грабчак / Максим Полторак",
+     "nation": "МОС",
+     "points": "148.46"
+    }
+   ],
+   "desc": "Итог:\n1. Мария Фефелова / Артём Валов — 107.13\n2. Полина Жарова / Алексей Столяров — 95.18\n3. Софья Грабчак / Максим Полторак — 89.77\n\nИтог турнира:\n1. Мария Фефелова / Артём Валов — 179.77\n2. Полина Жарова / Алексей Столяров — 159.37\n3. Софья Грабчак / Максим Полторак — 148.46\n\nНачало: 08:00 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:pairs-junior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Лёд Мечты»",
+   "kind": "pairs",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "ЮГП России «Лёд Мечты» — пары ПП",
+   "start": "2026-09-26T10:35:00+03:00",
+   "end": "2026-09-26T11:45:00+03:00",
+   "venue": "Навка Арена, Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [
+    "Арина Парсегова / Матвей Богданов",
+    "Дарья Самохвалова / Роман Романычев",
+    "Дарья Третьякова / Александр Саморуков",
+    "Майя Бабиченко / Максим Савинский",
+    "Мария Карпанова / Артем Устинов",
+    "Полина Сажина / Алексей Белкин",
+    "Софья Звездина / Дмитрий Шеремет"
+   ],
+   "src": "https://fsrussia.ru/results/2627/1etap_jun/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Арина Парсегова / Матвей Богданов",
+     "nation": "МОС",
+     "points": "112.21"
+    },
+    {
+     "place": 2,
+     "name": "Полина Сажина / Алексей Белкин",
+     "nation": "МОС",
+     "points": "107.16"
+    },
+    {
+     "place": 3,
+     "name": "Дарья Самохвалова / Роман Романычев",
+     "nation": "МОС",
+     "points": "103.46"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Арина Парсегова / Матвей Богданов",
+     "nation": "МОС",
+     "points": "175.98"
+    },
+    {
+     "place": 2,
+     "name": "Полина Сажина / Алексей Белкин",
+     "nation": "МОС",
+     "points": "175.28"
+    },
+    {
+     "place": 3,
+     "name": "Дарья Самохвалова / Роман Романычев",
+     "nation": "МОС",
+     "points": "163.47"
+    }
+   ],
+   "desc": "Итог:\n1. Арина Парсегова / Матвей Богданов — 112.21\n2. Полина Сажина / Алексей Белкин — 107.16\n3. Дарья Самохвалова / Роман Романычев — 103.46\n\nИтог турнира:\n1. Арина Парсегова / Матвей Богданов — 175.98\n2. Полина Сажина / Алексей Белкин — 175.28\n3. Дарья Самохвалова / Роман Романычев — 163.47\n\nНачало: 10:35 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:women-junior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Лёд Мечты»",
+   "kind": "women",
+   "level": "junior",
+   "seg": "КП",
+   "title": "ЮГП России «Лёд Мечты» — девушки КП",
+   "start": "2026-09-26T11:55:00+03:00",
+   "end": "2026-09-26T14:30:00+03:00",
+   "venue": "Навка Арена, Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [
+    {
+     "name": "Виктория Стрельцова",
+     "no": 5,
+     "warmup": null,
+     "place": 1
+    },
+    {
+     "name": "Софья Смагина",
+     "no": 14,
+     "warmup": null,
+     "place": 3
+    }
+   ],
+   "athletes": [
+    "Алена Болдырева",
+    "Алёна Галкина",
+    "Арина Коршунова",
+    "Арина Марусич",
+    "Валерия Лукашова",
+    "Варвара Авдеева",
+    "Виктория Стрельцова",
+    "Дарья Лебедева",
+    "Дарья Царегородцева",
+    "Диана Мильто",
+    "Елизавета Крылова",
+    "Ксения Логачева",
+    "Мирослава Лезина",
+    "Полина Мартыненко",
+    "Риана Ганиева",
+    "София Шепелева",
+    "Софья Смагина",
+    "Ярослава Быстрова"
+   ],
+   "src": "https://fsrussia.ru/results/2627/1etap_jun/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Виктория Стрельцова",
+     "nation": "МОС",
+     "points": "72.73"
+    },
+    {
+     "place": 2,
+     "name": "Диана Мильто",
+     "nation": "МОС",
+     "points": "70.00"
+    },
+    {
+     "place": 3,
+     "name": "Софья Смагина",
+     "nation": "МОС",
+     "points": "69.05"
+    }
+   ],
+   "desc": "Итог:\n1. Виктория Стрельцова — 72.73\n2. Диана Мильто — 70.00\n3. Софья Смагина — 69.05\n\nНаши:\n• Виктория Стрельцова — 5-й\n• Софья Смагина — 14-й\n\nНачало: 11:55 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:men-junior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Лёд Мечты»",
+   "kind": "men",
+   "level": "junior",
+   "seg": "КП",
+   "title": "ЮГП России «Лёд Мечты» — юноши КП",
+   "start": "2026-09-26T14:30:00+03:00",
+   "end": "2026-09-26T17:05:00+03:00",
+   "venue": "Навка Арена, Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [
+    "Алексей Пычин",
+    "Артем Федотов",
+    "Владислав Левичев",
+    "Георгий Терехов",
+    "Даниил Жолобов",
+    "Дмитрий Железняк",
+    "Захар Колобов",
+    "Илья Малышев",
+    "Искандер Амиров",
+    "Кирилл Андреянов",
+    "Константин Волков",
+    "Макар Солодников",
+    "Максим Бадави",
+    "Михаил Алексахин",
+    "Павел Грибуля",
+    "Степан Юров",
+    "Эдуард Камоев",
+    "Ярослав Крегель"
+   ],
+   "src": "https://fsrussia.ru/results/2627/1etap_jun/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Макар Солодников",
+     "nation": "СПБ",
+     "points": "83.94"
+    },
+    {
+     "place": 2,
+     "name": "Даниил Жолобов",
+     "nation": "МОС",
+     "points": "79.24"
+    },
+    {
+     "place": 3,
+     "name": "Илья Малышев",
+     "nation": "МОС",
+     "points": "78.46"
+    }
+   ],
+   "desc": "Итог:\n1. Макар Солодников — 83.94\n2. Даниил Жолобов — 79.24\n3. Илья Малышев — 78.46\n\nНачало: 14:30 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:women-junior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Лёд Мечты»",
+   "kind": "women",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "ЮГП России «Лёд Мечты» — девушки ПП",
+   "start": "2026-09-27T07:45:00+03:00",
+   "end": "2026-09-27T10:35:00+03:00",
+   "venue": "Навка Арена, Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [
+    {
+     "name": "Софья Смагина",
+     "no": 16,
+     "warmup": null,
+     "place": 4,
+     "final": 4
+    },
+    {
+     "name": "Виктория Стрельцова",
+     "no": 18,
+     "warmup": null,
+     "place": 2,
+     "final": 1
+    }
+   ],
+   "athletes": [
+    "Алена Болдырева",
+    "Алёна Галкина",
+    "Арина Коршунова",
+    "Арина Марусич",
+    "Валерия Лукашова",
+    "Варвара Авдеева",
+    "Виктория Стрельцова",
+    "Дарья Лебедева",
+    "Дарья Царегородцева",
+    "Диана Мильто",
+    "Елизавета Крылова",
+    "Ксения Логачева",
+    "Мирослава Лезина",
+    "Полина Мартыненко",
+    "Риана Ганиева",
+    "София Шепелева",
+    "Софья Смагина",
+    "Ярослава Быстрова"
+   ],
+   "src": "https://fsrussia.ru/results/2627/1etap_jun/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Дарья Лебедева",
+     "nation": "МОС",
+     "points": "134.26"
+    },
+    {
+     "place": 2,
+     "name": "Виктория Стрельцова",
+     "nation": "МОС",
+     "points": "129.00"
+    },
+    {
+     "place": 3,
+     "name": "Диана Мильто",
+     "nation": "МОС",
+     "points": "128.16"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Виктория Стрельцова",
+     "nation": "МОС",
+     "points": "201.73"
+    },
+    {
+     "place": 2,
+     "name": "Диана Мильто",
+     "nation": "МОС",
+     "points": "198.16"
+    },
+    {
+     "place": 3,
+     "name": "Дарья Лебедева",
+     "nation": "МОС",
+     "points": "197.23"
+    }
+   ],
+   "desc": "Итог:\n1. Дарья Лебедева — 134.26\n2. Виктория Стрельцова — 129.00\n3. Диана Мильто — 128.16\n\nИтог турнира:\n1. Виктория Стрельцова — 201.73\n2. Диана Мильто — 198.16\n3. Дарья Лебедева — 197.23\n\nНаши:\n• Софья Смагина — 16-й\n• Виктория Стрельцова — 18-й\n\nНачало: 07:45 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:men-junior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Лёд Мечты»",
+   "kind": "men",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "ЮГП России «Лёд Мечты» — юноши ПП",
+   "start": "2026-09-27T10:45:00+03:00",
+   "end": "2026-09-27T13:35:00+03:00",
+   "venue": "Навка Арена, Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [
+    "Алексей Пычин",
+    "Артем Федотов",
+    "Владислав Левичев",
+    "Георгий Терехов",
+    "Даниил Жолобов",
+    "Дмитрий Железняк",
+    "Захар Колобов",
+    "Илья Малышев",
+    "Искандер Амиров",
+    "Кирилл Андреянов",
+    "Константин Волков",
+    "Макар Солодников",
+    "Максим Бадави",
+    "Михаил Алексахин",
+    "Павел Грибуля",
+    "Степан Юров",
+    "Эдуард Камоев",
+    "Ярослав Крегель"
+   ],
+   "src": "https://fsrussia.ru/results/2627/1etap_jun/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Макар Солодников",
+     "nation": "СПБ",
+     "points": "153.71"
+    },
+    {
+     "place": 2,
+     "name": "Михаил Алексахин",
+     "nation": "МОБ",
+     "points": "146.68"
+    },
+    {
+     "place": 3,
+     "name": "Эдуард Камоев",
+     "nation": "СПБ",
+     "points": "144.41"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Макар Солодников",
+     "nation": "СПБ",
+     "points": "237.65"
+    },
+    {
+     "place": 2,
+     "name": "Эдуард Камоев",
+     "nation": "СПБ",
+     "points": "221.20"
+    },
+    {
+     "place": 3,
+     "name": "Илья Малышев",
+     "nation": "МОС",
+     "points": "220.15"
+    }
+   ],
+   "desc": "Итог:\n1. Макар Солодников — 153.71\n2. Михаил Алексахин — 146.68\n3. Эдуард Камоев — 144.41\n\nИтог турнира:\n1. Макар Солодников — 237.65\n2. Эдуард Камоев — 221.20\n3. Илья Малышев — 220.15\n\nНачало: 10:45 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "isu:isu-cs-trialeti-trophy:women-senior-kp",
+   "tid": "isu:isu-cs-trialeti-trophy",
+   "tournament": "CS Trialeti Trophy",
+   "kind": "women",
+   "level": "senior",
+   "seg": "КП",
+   "title": "CS Trialeti Trophy — женщины КП",
+   "start": "2026-10-01T13:45:00+03:00",
+   "end": "2026-10-01T15:50:00+03:00",
+   "venue": "Batumi, Georgia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Аделия Петросян",
+     "no": 7,
+     "warmup": null,
+     "place": 4
+    },
+    {
+     "name": "Анна Фролова",
+     "no": 11,
+     "warmup": null,
+     "place": 2
+    }
+   ],
+   "athletes": [
+    "Аделия Петросян",
+    "Анна Фролова"
+   ],
+   "src": "https://results.vistream.com.pl/FS/2627/CSGEO2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Niina Petrokina",
+     "nation": "EST",
+     "points": "74.69"
+    },
+    {
+     "place": 2,
+     "name": "Анна Фролова",
+     "nation": "AIN2",
+     "points": "73.31"
+    },
+    {
+     "place": 3,
+     "name": "Anastasiia Gubanova",
+     "nation": "GEO",
+     "points": "70.69"
+    }
+   ],
+   "desc": "Итог:\n1. Niina Petrokina — 74.69\n2. Анна Фролова — 73.31\n3. Anastasiia Gubanova — 70.69\n\nНаши:\n• Аделия Петросян — 7-й\n• Анна Фролова — 11-й\n\nНачало: 13:45 МСК"
+  },
+  {
+   "id": "isu:isu-cs-trialeti-trophy:dance-senior-rt",
+   "tid": "isu:isu-cs-trialeti-trophy",
+   "tournament": "CS Trialeti Trophy",
+   "kind": "dance",
+   "level": "senior",
+   "seg": "РТ",
+   "title": "CS Trialeti Trophy — танцы РТ",
+   "start": "2026-10-01T16:45:00+03:00",
+   "end": "2026-10-01T19:20:00+03:00",
+   "venue": "Batumi, Georgia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Екатерина Рыбакова / Иван Махноносов",
+     "no": 3,
+     "warmup": null,
+     "place": 17
+    },
+    {
+     "name": "Елизавета Пасечник / Дарио Чиризано",
+     "no": 6,
+     "warmup": null,
+     "place": 2
+    },
+    {
+     "name": "Елизавета Шичина / Павел Дрозд",
+     "no": 17,
+     "warmup": null,
+     "place": 6
+    }
+   ],
+   "athletes": [
+    "Екатерина Рыбакова / Иван Махноносов",
+    "Елизавета Пасечник / Дарио Чиризано",
+    "Елизавета Шичина / Павел Дрозд"
+   ],
+   "src": "https://results.vistream.com.pl/FS/2627/CSGEO2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Diana Davis / Gleb Smolkin",
+     "nation": "GEO",
+     "points": "85.23"
+    },
+    {
+     "place": 2,
+     "name": "Елизавета Пасечник / Дарио Чиризано",
+     "nation": "AIN2",
+     "points": "72.51"
+    },
+    {
+     "place": 3,
+     "name": "Mariia Ignateva / Danijil Leonyidovics Szemko",
+     "nation": "HUN",
+     "points": "69.80"
+    }
+   ],
+   "desc": "Итог:\n1. Diana Davis / Gleb Smolkin — 85.23\n2. Елизавета Пасечник / Дарио Чиризано — 72.51\n3. Mariia Ignateva / Danijil Leonyidovics Szemko — 69.80\n\nНаши:\n• Екатерина Рыбакова / Иван Махноносов — 3-й\n• Елизавета Пасечник / Дарио Чиризано — 6-й\n• Елизавета Шичина / Павел Дрозд — 17-й\n\nНачало: 16:45 МСК"
+  },
+  {
+   "id": "isu:isu-cs-trialeti-trophy:men-senior-kp",
+   "tid": "isu:isu-cs-trialeti-trophy",
+   "tournament": "CS Trialeti Trophy",
+   "kind": "men",
+   "level": "senior",
+   "seg": "КП",
+   "title": "CS Trialeti Trophy — мужчины КП",
+   "start": "2026-10-01T19:50:00+03:00",
+   "end": "2026-10-01T21:20:00+03:00",
+   "venue": "Batumi, Georgia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Николай Угожаев",
+     "no": 2,
+     "warmup": null,
+     "place": 3
+    },
+    {
+     "name": "Матвей Ветлугин",
+     "no": 3,
+     "warmup": null,
+     "place": 4
+    }
+   ],
+   "athletes": [
+    "Матвей Ветлугин",
+    "Николай Угожаев"
+   ],
+   "src": "https://results.vistream.com.pl/FS/2627/CSGEO2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Nika Egadze",
+     "nation": "GEO",
+     "points": "93.80"
+    },
+    {
+     "place": 2,
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "points": "87.87"
+    },
+    {
+     "place": 3,
+     "name": "Николай Угожаев",
+     "nation": "AIN2",
+     "points": "82.96"
+    }
+   ],
+   "desc": "Итог:\n1. Nika Egadze — 93.80\n2. Mihhail Selevko — 87.87\n3. Николай Угожаев — 82.96\n\nНаши:\n• Николай Угожаев — 2-й\n• Матвей Ветлугин — 3-й\n\nНачало: 19:50 МСК"
+  },
+  {
+   "id": "isu:isu-cs-trialeti-trophy:pairs-senior-kp",
+   "tid": "isu:isu-cs-trialeti-trophy",
+   "tournament": "CS Trialeti Trophy",
+   "kind": "pairs",
+   "level": "senior",
+   "seg": "КП",
+   "title": "CS Trialeti Trophy — пары КП",
+   "start": "2026-10-02T14:00:00+03:00",
+   "end": "2026-10-02T15:05:00+03:00",
+   "venue": "Batumi, Georgia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Анастасия Мухортова / Дмитрий Евгеньев",
+     "no": 3,
+     "warmup": null,
+     "place": 4
+    },
+    {
+     "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "no": 4,
+     "warmup": null,
+     "place": 2
+    },
+    {
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "no": 6,
+     "warmup": null,
+     "place": 3
+    }
+   ],
+   "athletes": [
+    "Анастасия Мишина / Александр Галлямов",
+    "Анастасия Мухортова / Дмитрий Евгеньев",
+    "Екатерина Чикмарёва / Матвей Янченков"
+   ],
+   "src": "https://results.vistream.com.pl/FS/2627/CSGEO2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Anastasiia Metelkina / Luka Berulava",
+     "nation": "GEO",
+     "points": "80.01"
+    },
+    {
+     "place": 2,
+     "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "nation": "AIN2",
+     "points": "74.00"
+    },
+    {
+     "place": 3,
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "AIN2",
+     "points": "73.48"
+    }
+   ],
+   "desc": "Итог:\n1. Anastasiia Metelkina / Luka Berulava — 80.01\n2. Екатерина Чикмарёва / Матвей Янченков — 74.00\n3. Анастасия Мишина / Александр Галлямов — 73.48\n\nНаши:\n• Анастасия Мухортова / Дмитрий Евгеньев — 3-й\n• Екатерина Чикмарёва / Матвей Янченков — 4-й\n• Анастасия Мишина / Александр Галлямов — 6-й\n\nНачало: 14:00 МСК"
+  },
+  {
+   "id": "isu:isu-cs-trialeti-trophy:dance-senior-pt",
+   "tid": "isu:isu-cs-trialeti-trophy",
+   "tournament": "CS Trialeti Trophy",
+   "kind": "dance",
+   "level": "senior",
+   "seg": "ПТ",
+   "title": "CS Trialeti Trophy — танцы ПТ",
+   "start": "2026-10-02T15:15:00+03:00",
+   "end": "2026-10-02T18:10:00+03:00",
+   "venue": "Batumi, Georgia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Екатерина Рыбакова / Иван Махноносов",
+     "no": 2,
+     "warmup": null,
+     "place": 9,
+     "final": 13
+    },
+    {
+     "name": "Елизавета Шичина / Павел Дрозд",
+     "no": 13,
+     "warmup": null,
+     "place": 8,
+     "final": 6
+    },
+    {
+     "name": "Елизавета Пасечник / Дарио Чиризано",
+     "no": 17,
+     "warmup": null,
+     "place": 2,
+     "final": 2
+    }
+   ],
+   "athletes": [
+    "Екатерина Рыбакова / Иван Махноносов",
+    "Елизавета Пасечник / Дарио Чиризано",
+    "Елизавета Шичина / Павел Дрозд"
+   ],
+   "src": "https://results.vistream.com.pl/FS/2627/CSGEO2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Diana Davis / Gleb Smolkin",
+     "nation": "GEO",
+     "points": "123.44"
+    },
+    {
+     "place": 2,
+     "name": "Елизавета Пасечник / Дарио Чиризано",
+     "nation": "AIN2",
+     "points": "106.02"
+    },
+    {
+     "place": 3,
+     "name": "Nadiia Bashynska / Noé Perron",
+     "nation": "CAN",
+     "points": "98.27"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Diana Davis / Gleb Smolkin",
+     "nation": "GEO",
+     "points": "208.67"
+    },
+    {
+     "place": 2,
+     "name": "Елизавета Пасечник / Дарио Чиризано",
+     "nation": "AIN2",
+     "points": "178.53"
+    },
+    {
+     "place": 3,
+     "name": "Mariia Ignateva / Danijil Leonyidovics Szemko",
+     "nation": "HUN",
+     "points": "165.72"
+    }
+   ],
+   "desc": "Итог:\n1. Diana Davis / Gleb Smolkin — 123.44\n2. Елизавета Пасечник / Дарио Чиризано — 106.02\n3. Nadiia Bashynska / Noé Perron — 98.27\n\nИтог турнира:\n1. Diana Davis / Gleb Smolkin — 208.67\n2. Елизавета Пасечник / Дарио Чиризано — 178.53\n3. Mariia Ignateva / Danijil Leonyidovics Szemko — 165.72\n\nНаши:\n• Екатерина Рыбакова / Иван Махноносов — 2-й\n• Елизавета Шичина / Павел Дрозд — 13-й\n• Елизавета Пасечник / Дарио Чиризано — 17-й\n\nНачало: 15:15 МСК"
+  },
+  {
+   "id": "isu:isu-cs-trialeti-trophy:men-senior-pp",
+   "tid": "isu:isu-cs-trialeti-trophy",
+   "tournament": "CS Trialeti Trophy",
+   "kind": "men",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "CS Trialeti Trophy — мужчины ПП",
+   "start": "2026-10-02T19:30:00+03:00",
+   "end": "2026-10-02T21:15:00+03:00",
+   "venue": "Batumi, Georgia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Матвей Ветлугин",
+     "no": 9,
+     "warmup": null,
+     "place": 3,
+     "final": 4
+    },
+    {
+     "name": "Николай Угожаев",
+     "no": 10,
+     "warmup": null,
+     "place": 2,
+     "final": 2
+    }
+   ],
+   "athletes": [
+    "Матвей Ветлугин",
+    "Николай Угожаев"
+   ],
+   "src": "https://results.vistream.com.pl/FS/2627/CSGEO2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Nika Egadze",
+     "nation": "GEO",
+     "points": "168.85"
+    },
+    {
+     "place": 2,
+     "name": "Николай Угожаев",
+     "nation": "AIN2",
+     "points": "153.45"
+    },
+    {
+     "place": 3,
+     "name": "Матвей Ветлугин",
+     "nation": "AIN2",
+     "points": "145.98"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Nika Egadze",
+     "nation": "GEO",
+     "points": "262.65"
+    },
+    {
+     "place": 2,
+     "name": "Николай Угожаев",
+     "nation": "AIN2",
+     "points": "236.41"
+    },
+    {
+     "place": 3,
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "points": "227.74"
+    }
+   ],
+   "desc": "Итог:\n1. Nika Egadze — 168.85\n2. Николай Угожаев — 153.45\n3. Матвей Ветлугин — 145.98\n\nИтог турнира:\n1. Nika Egadze — 262.65\n2. Николай Угожаев — 236.41\n3. Mihhail Selevko — 227.74\n\nНаши:\n• Матвей Ветлугин — 9-й\n• Николай Угожаев — 10-й\n\nНачало: 19:30 МСК"
+  },
+  {
+   "id": "isu:isu-cs-trialeti-trophy:pairs-senior-pp",
+   "tid": "isu:isu-cs-trialeti-trophy",
+   "tournament": "CS Trialeti Trophy",
+   "kind": "pairs",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "CS Trialeti Trophy — пары ПП",
+   "start": "2026-10-03T14:00:00+03:00",
+   "end": "2026-10-03T15:10:00+03:00",
+   "venue": "Batumi, Georgia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Анастасия Мухортова / Дмитрий Евгеньев",
+     "no": 4,
+     "warmup": null,
+     "place": 4,
+     "final": 4
+    },
+    {
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "no": 5,
+     "warmup": null,
+     "place": 2,
+     "final": 2
+    },
+    {
+     "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "no": 6,
+     "warmup": null,
+     "place": 3,
+     "final": 3
+    }
+   ],
+   "athletes": [
+    "Анастасия Мишина / Александр Галлямов",
+    "Анастасия Мухортова / Дмитрий Евгеньев",
+    "Екатерина Чикмарёва / Матвей Янченков"
+   ],
+   "src": "https://results.vistream.com.pl/FS/2627/CSGEO2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Anastasiia Metelkina / Luka Berulava",
+     "nation": "GEO",
+     "points": "135.82"
+    },
+    {
+     "place": 2,
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "AIN2",
+     "points": "132.83"
+    },
+    {
+     "place": 3,
+     "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "nation": "AIN2",
+     "points": "122.63"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Anastasiia Metelkina / Luka Berulava",
+     "nation": "GEO",
+     "points": "215.83"
+    },
+    {
+     "place": 2,
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "AIN2",
+     "points": "206.31"
+    },
+    {
+     "place": 3,
+     "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "nation": "AIN2",
+     "points": "196.63"
+    }
+   ],
+   "desc": "Итог:\n1. Anastasiia Metelkina / Luka Berulava — 135.82\n2. Анастасия Мишина / Александр Галлямов — 132.83\n3. Екатерина Чикмарёва / Матвей Янченков — 122.63\n\nИтог турнира:\n1. Anastasiia Metelkina / Luka Berulava — 215.83\n2. Анастасия Мишина / Александр Галлямов — 206.31\n3. Екатерина Чикмарёва / Матвей Янченков — 196.63\n\nНаши:\n• Анастасия Мухортова / Дмитрий Евгеньев — 4-й\n• Анастасия Мишина / Александр Галлямов — 5-й\n• Екатерина Чикмарёва / Матвей Янченков — 6-й\n\nНачало: 14:00 МСК"
+  },
+  {
+   "id": "isu:isu-cs-trialeti-trophy:women-senior-pp",
+   "tid": "isu:isu-cs-trialeti-trophy",
+   "tournament": "CS Trialeti Trophy",
+   "kind": "women",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "CS Trialeti Trophy — женщины ПП",
+   "start": "2026-10-03T16:30:00+03:00",
+   "end": "2026-10-03T18:50:00+03:00",
+   "venue": "Batumi, Georgia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Аделия Петросян",
+     "no": 11,
+     "warmup": null,
+     "place": 1,
+     "final": 2
+    },
+    {
+     "name": "Анна Фролова",
+     "no": 13,
+     "warmup": null,
+     "place": 3,
+     "final": 3
+    }
+   ],
+   "athletes": [
+    "Аделия Петросян",
+    "Анна Фролова"
+   ],
+   "src": "https://results.vistream.com.pl/FS/2627/CSGEO2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Аделия Петросян",
+     "nation": "AIN2",
+     "points": "135.74"
+    },
+    {
+     "place": 2,
+     "name": "Niina Petrokina",
+     "nation": "EST",
+     "points": "131.25"
+    },
+    {
+     "place": 3,
+     "name": "Анна Фролова",
+     "nation": "AIN2",
+     "points": "129.90"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Niina Petrokina",
+     "nation": "EST",
+     "points": "205.94"
+    },
+    {
+     "place": 2,
+     "name": "Аделия Петросян",
+     "nation": "AIN2",
+     "points": "204.16"
+    },
+    {
+     "place": 3,
+     "name": "Анна Фролова",
+     "nation": "AIN2",
+     "points": "203.21"
+    }
+   ],
+   "desc": "Итог:\n1. Аделия Петросян — 135.74\n2. Niina Petrokina — 131.25\n3. Анна Фролова — 129.90\n\nИтог турнира:\n1. Niina Petrokina — 205.94\n2. Аделия Петросян — 204.16\n3. Анна Фролова — 203.21\n\nНаши:\n• Аделия Петросян — 11-й\n• Анна Фролова — 13-й\n\nНачало: 16:30 МСК"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:dance-junior-rt",
+   "tid": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Мемориал Горшкова»",
+   "kind": "dance",
+   "level": "junior",
+   "seg": "РТ",
+   "title": "ЮГП России «Мемориал Горшкова» — танцы РТ",
+   "start": "2026-10-05T17:30:00+03:00",
+   "end": "2026-10-05T19:40:00+03:00",
+   "venue": "СК «Мечта», Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [
+    "Аксинья Панасенко / Максим Вахрамеев",
+    "Александра Васенева / Максим Ситько",
+    "Анна Билибина / Дмитрий Кашаев",
+    "Анна Соболева / Матвей Чураков",
+    "Влада Бердникова / Кирилл Алексеев",
+    "Екатерина Старостина / Тимофей Столяренко",
+    "Зоя Пестова / Сергей Лагутов",
+    "Ирина Скопина / Дмитрий Симонов",
+    "Мария Семенова / Илья Ивкин",
+    "Полина Афанасьева / Максим Кузнецов",
+    "София Варенова / Сергей Кузлякин",
+    "София Загребаева / Иван Тертышников",
+    "Софья Грабчак / Максим Полторак",
+    "Таиса Мусурова / Дмитрий Карбовский",
+    "Эвелина Валиева / Даниил Лавриненко"
+   ],
+   "src": "https://fsrussia.ru/results/2627/2etap_jun/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Зоя Пестова / Сергей Лагутов",
+     "nation": "МОС",
+     "points": "63.17"
+    },
+    {
+     "place": 2,
+     "name": "Анна Билибина / Дмитрий Кашаев",
+     "nation": "МОС",
+     "points": "60.89"
+    },
+    {
+     "place": 3,
+     "name": "Анна Соболева / Матвей Чураков",
+     "nation": "ПРМ",
+     "points": "59.60"
+    }
+   ],
+   "desc": "Итог:\n1. Зоя Пестова / Сергей Лагутов — 63.17\n2. Анна Билибина / Дмитрий Кашаев — 60.89\n3. Анна Соболева / Матвей Чураков — 59.60\n\nНачало: 17:30 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:pairs-junior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Мемориал Горшкова»",
+   "kind": "pairs",
+   "level": "junior",
+   "seg": "КП",
+   "title": "ЮГП России «Мемориал Горшкова» — пары КП",
+   "start": "2026-10-05T19:50:00+03:00",
+   "end": "2026-10-05T20:40:00+03:00",
+   "venue": "СК «Мечта», Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [
+    {
+     "name": "Таисия Гусева / Даниил Овчинников",
+     "no": 2,
+     "warmup": null,
+     "place": 1
+    },
+    {
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "no": 6,
+     "warmup": null,
+     "place": 2
+    }
+   ],
+   "athletes": [
+    "Анастасия Иванкевич / Георгий Павловский",
+    "Ангелина Кулагина / Максим Ихсанов",
+    "Дарья Самохвалова / Роман Романычев",
+    "Майя Бабиченко / Максим Савинский",
+    "Полина Шешелева / Егор Карнаухов",
+    "Таисия Гусева / Даниил Овчинников"
+   ],
+   "src": "https://fsrussia.ru/results/2627/2etap_jun/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Таисия Гусева / Даниил Овчинников",
+     "nation": "МОС",
+     "points": "71.27"
+    },
+    {
+     "place": 2,
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "МОС",
+     "points": "70.89"
+    },
+    {
+     "place": 3,
+     "name": "Анастасия Иванкевич / Георгий Павловский",
+     "nation": "СПБ",
+     "points": "58.67"
+    }
+   ],
+   "desc": "Итог:\n1. Таисия Гусева / Даниил Овчинников — 71.27\n2. Полина Шешелева / Егор Карнаухов — 70.89\n3. Анастасия Иванкевич / Георгий Павловский — 58.67\n\nНаши:\n• Таисия Гусева / Даниил Овчинников — 2-й\n• Полина Шешелева / Егор Карнаухов — 6-й\n\nНачало: 19:50 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:dance-junior-pt",
+   "tid": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Мемориал Горшкова»",
+   "kind": "dance",
+   "level": "junior",
+   "seg": "ПТ",
+   "title": "ЮГП России «Мемориал Горшкова» — танцы ПТ",
+   "start": "2026-10-06T13:00:00+03:00",
+   "end": "2026-10-06T15:25:00+03:00",
+   "venue": "СК «Мечта», Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [
+    "Аксинья Панасенко / Максим Вахрамеев",
+    "Александра Васенева / Максим Ситько",
+    "Анна Билибина / Дмитрий Кашаев",
+    "Анна Соболева / Матвей Чураков",
+    "Влада Бердникова / Кирилл Алексеев",
+    "Екатерина Старостина / Тимофей Столяренко",
+    "Зоя Пестова / Сергей Лагутов",
+    "Ирина Скопина / Дмитрий Симонов",
+    "Мария Семенова / Илья Ивкин",
+    "Полина Афанасьева / Максим Кузнецов",
+    "София Варенова / Сергей Кузлякин",
+    "София Загребаева / Иван Тертышников",
+    "Софья Грабчак / Максим Полторак",
+    "Таиса Мусурова / Дмитрий Карбовский",
+    "Эвелина Валиева / Даниил Лавриненко"
+   ],
+   "src": "https://fsrussia.ru/results/2627/2etap_jun/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Анна Билибина / Дмитрий Кашаев",
+     "nation": "МОС",
+     "points": "88.23"
+    },
+    {
+     "place": 2,
+     "name": "Анна Соболева / Матвей Чураков",
+     "nation": "ПРМ",
+     "points": "86.86"
+    },
+    {
+     "place": 3,
+     "name": "Софья Грабчак / Максим Полторак",
+     "nation": "МОС",
+     "points": "85.43"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Анна Билибина / Дмитрий Кашаев",
+     "nation": "МОС",
+     "points": "149.12"
+    },
+    {
+     "place": 2,
+     "name": "Зоя Пестова / Сергей Лагутов",
+     "nation": "МОС",
+     "points": "148.28"
+    },
+    {
+     "place": 3,
+     "name": "Анна Соболева / Матвей Чураков",
+     "nation": "ПРМ",
+     "points": "146.46"
+    }
+   ],
+   "desc": "Итог:\n1. Анна Билибина / Дмитрий Кашаев — 88.23\n2. Анна Соболева / Матвей Чураков — 86.86\n3. Софья Грабчак / Максим Полторак — 85.43\n\nИтог турнира:\n1. Анна Билибина / Дмитрий Кашаев — 149.12\n2. Зоя Пестова / Сергей Лагутов — 148.28\n3. Анна Соболева / Матвей Чураков — 146.46\n\nНачало: 13:00 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:pairs-junior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Мемориал Горшкова»",
+   "kind": "pairs",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "ЮГП России «Мемориал Горшкова» — пары ПП",
+   "start": "2026-10-06T15:35:00+03:00",
+   "end": "2026-10-06T16:30:00+03:00",
+   "venue": "СК «Мечта», Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [
+    {
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "no": 5,
+     "warmup": null,
+     "place": 2,
+     "final": 2
+    },
+    {
+     "name": "Таисия Гусева / Даниил Овчинников",
+     "no": 6,
+     "warmup": null,
+     "place": 1,
+     "final": 1
+    }
+   ],
+   "athletes": [
+    "Анастасия Иванкевич / Георгий Павловский",
+    "Ангелина Кулагина / Максим Ихсанов",
+    "Дарья Самохвалова / Роман Романычев",
+    "Майя Бабиченко / Максим Савинский",
+    "Полина Шешелева / Егор Карнаухов",
+    "Таисия Гусева / Даниил Овчинников"
+   ],
+   "src": "https://fsrussia.ru/results/2627/2etap_jun/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Таисия Гусева / Даниил Овчинников",
+     "nation": "МОС",
+     "points": "127.66"
+    },
+    {
+     "place": 2,
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "МОС",
+     "points": "124.19"
+    },
+    {
+     "place": 3,
+     "name": "Дарья Самохвалова / Роман Романычев",
+     "nation": "МОС",
+     "points": "95.69"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Таисия Гусева / Даниил Овчинников",
+     "nation": "МОС",
+     "points": "198.93"
+    },
+    {
+     "place": 2,
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "МОС",
+     "points": "195.08"
+    },
+    {
+     "place": 3,
+     "name": "Анастасия Иванкевич / Георгий Павловский",
+     "nation": "СПБ",
+     "points": "154.22"
+    }
+   ],
+   "desc": "Итог:\n1. Таисия Гусева / Даниил Овчинников — 127.66\n2. Полина Шешелева / Егор Карнаухов — 124.19\n3. Дарья Самохвалова / Роман Романычев — 95.69\n\nИтог турнира:\n1. Таисия Гусева / Даниил Овчинников — 198.93\n2. Полина Шешелева / Егор Карнаухов — 195.08\n3. Анастасия Иванкевич / Георгий Павловский — 154.22\n\nНаши:\n• Полина Шешелева / Егор Карнаухов — 5-й\n• Таисия Гусева / Даниил Овчинников — 6-й\n\nНачало: 15:35 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:women-junior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Мемориал Горшкова»",
+   "kind": "women",
+   "level": "junior",
+   "seg": "КП",
+   "title": "ЮГП России «Мемориал Горшкова» — девушки КП",
+   "start": "2026-10-06T16:45:00+03:00",
+   "end": "2026-10-06T19:20:00+03:00",
+   "venue": "СК «Мечта», Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [
+    {
+     "name": "София Сарновская",
+     "no": 5,
+     "warmup": null,
+     "place": 4
+    },
+    {
+     "name": "Софья Смагина",
+     "no": 12,
+     "warmup": null,
+     "place": 3
+    },
+    {
+     "name": "Анна Докукина",
+     "no": 13,
+     "warmup": null,
+     "place": 2
+    },
+    {
+     "name": "Екатерина Корчажникова",
+     "no": 15,
+     "warmup": null,
+     "place": 1
+    }
+   ],
+   "athletes": [
+    "Анастасия Выровая",
+    "Анастасия Жуланова",
+    "Анна Докукина",
+    "Валерия Литвинчёва",
+    "Варвара Гарибян",
+    "Вероника Дятчина",
+    "Дарья Балясникова",
+    "Диана Мильто",
+    "Екатерина Корчажникова",
+    "Елизавета Ширяева",
+    "Кира Кузьмина",
+    "Майя Сарафанова",
+    "Мария Тихонова",
+    "Полина Бершадская",
+    "София Пашко",
+    "София Сарновская",
+    "Софья Смагина",
+    "Софья Федотова"
+   ],
+   "src": "https://fsrussia.ru/results/2627/2etap_jun/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Екатерина Корчажникова",
+     "nation": "МОС",
+     "points": "72.02"
+    },
+    {
+     "place": 2,
+     "name": "Анна Докукина",
+     "nation": "МОС",
+     "points": "70.86"
+    },
+    {
+     "place": 3,
+     "name": "Софья Смагина",
+     "nation": "МОС",
+     "points": "70.64"
+    }
+   ],
+   "desc": "Итог:\n1. Екатерина Корчажникова — 72.02\n2. Анна Докукина — 70.86\n3. Софья Смагина — 70.64\n\nНаши:\n• София Сарновская — 5-й\n• Софья Смагина — 12-й\n• Анна Докукина — 13-й\n• Екатерина Корчажникова — 15-й\n\nНачало: 16:45 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:men-junior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Мемориал Горшкова»",
+   "kind": "men",
+   "level": "junior",
+   "seg": "КП",
+   "title": "ЮГП России «Мемориал Горшкова» — юноши КП",
+   "start": "2026-10-06T19:20:00+03:00",
+   "end": "2026-10-06T21:55:00+03:00",
+   "venue": "СК «Мечта», Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [
+    {
+     "name": "Алдар Самбуев",
+     "no": 2,
+     "warmup": null,
+     "place": 3
+    }
+   ],
+   "athletes": [
+    "Алдар Самбуев",
+    "Андрей Шилин",
+    "Артемий Денисов",
+    "Валентин Сидоренко",
+    "Василий Пономарев",
+    "Владислав Виниченко",
+    "Вячеслав Касьяненко",
+    "Егор Васько",
+    "Захар Колобов",
+    "Искандер Амиров",
+    "Лев Бобык",
+    "Марк Лукин",
+    "Михаил Клепацкий",
+    "Никита Малютин",
+    "Николай Колесников",
+    "Роман Яковлев",
+    "Серафим Макеев",
+    "Тимофей Бочков"
+   ],
+   "src": "https://fsrussia.ru/results/2627/2etap_jun/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Марк Лукин",
+     "nation": "МОС",
+     "points": "81.52"
+    },
+    {
+     "place": 2,
+     "name": "Николай Колесников",
+     "nation": "МОС",
+     "points": "80.72"
+    },
+    {
+     "place": 3,
+     "name": "Алдар Самбуев",
+     "nation": "МОС",
+     "points": "78.03"
+    }
+   ],
+   "desc": "Итог:\n1. Марк Лукин — 81.52\n2. Николай Колесников — 80.72\n3. Алдар Самбуев — 78.03\n\nНаши:\n• Алдар Самбуев — 2-й\n\nНачало: 19:20 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:women-junior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Мемориал Горшкова»",
+   "kind": "women",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "ЮГП России «Мемориал Горшкова» — девушки ПП",
+   "start": "2026-10-07T12:45:00+03:00",
+   "end": "2026-10-07T15:35:00+03:00",
+   "venue": "СК «Мечта», Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [
+    {
+     "name": "София Сарновская",
+     "no": 15,
+     "warmup": null,
+     "place": 4,
+     "final": 4
+    },
+    {
+     "name": "Софья Смагина",
+     "no": 16,
+     "warmup": null,
+     "place": 1,
+     "final": 1
+    },
+    {
+     "name": "Анна Докукина",
+     "no": 17,
+     "warmup": null,
+     "place": 3,
+     "final": 3
+    },
+    {
+     "name": "Екатерина Корчажникова",
+     "no": 18,
+     "warmup": null,
+     "place": 2,
+     "final": 2
+    }
+   ],
+   "athletes": [
+    "Анастасия Выровая",
+    "Анастасия Жуланова",
+    "Анна Докукина",
+    "Валерия Литвинчёва",
+    "Варвара Гарибян",
+    "Вероника Дятчина",
+    "Дарья Балясникова",
+    "Диана Мильто",
+    "Екатерина Корчажникова",
+    "Елизавета Ширяева",
+    "Кира Кузьмина",
+    "Майя Сарафанова",
+    "Мария Тихонова",
+    "Полина Бершадская",
+    "София Пашко",
+    "София Сарновская",
+    "Софья Смагина",
+    "Софья Федотова"
+   ],
+   "src": "https://fsrussia.ru/results/2627/2etap_jun/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Софья Смагина",
+     "nation": "МОС",
+     "points": "145.39"
+    },
+    {
+     "place": 2,
+     "name": "Екатерина Корчажникова",
+     "nation": "МОС",
+     "points": "142.47"
+    },
+    {
+     "place": 3,
+     "name": "Анна Докукина",
+     "nation": "МОС",
+     "points": "137.58"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Софья Смагина",
+     "nation": "МОС",
+     "points": "216.03"
+    },
+    {
+     "place": 2,
+     "name": "Екатерина Корчажникова",
+     "nation": "МОС",
+     "points": "214.49"
+    },
+    {
+     "place": 3,
+     "name": "Анна Докукина",
+     "nation": "МОС",
+     "points": "208.44"
+    }
+   ],
+   "desc": "Итог:\n1. Софья Смагина — 145.39\n2. Екатерина Корчажникова — 142.47\n3. Анна Докукина — 137.58\n\nИтог турнира:\n1. Софья Смагина — 216.03\n2. Екатерина Корчажникова — 214.49\n3. Анна Докукина — 208.44\n\nНаши:\n• София Сарновская — 15-й\n• Софья Смагина — 16-й\n• Анна Докукина — 17-й\n• Екатерина Корчажникова — 18-й\n\nНачало: 12:45 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:men-junior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Мемориал Горшкова»",
+   "kind": "men",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "ЮГП России «Мемориал Горшкова» — юноши ПП",
+   "start": "2026-10-07T15:45:00+03:00",
+   "end": "2026-10-07T18:35:00+03:00",
+   "venue": "СК «Мечта», Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [
+    {
+     "name": "Алдар Самбуев",
+     "no": 16,
+     "warmup": null,
+     "place": 2,
+     "final": 2
+    }
+   ],
+   "athletes": [
+    "Алдар Самбуев",
+    "Андрей Шилин",
+    "Артемий Денисов",
+    "Валентин Сидоренко",
+    "Василий Пономарев",
+    "Владислав Виниченко",
+    "Вячеслав Касьяненко",
+    "Егор Васько",
+    "Захар Колобов",
+    "Искандер Амиров",
+    "Лев Бобык",
+    "Марк Лукин",
+    "Михаил Клепацкий",
+    "Никита Малютин",
+    "Николай Колесников",
+    "Роман Яковлев",
+    "Серафим Макеев",
+    "Тимофей Бочков"
+   ],
+   "src": "https://fsrussia.ru/results/2627/2etap_jun/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Марк Лукин",
+     "nation": "МОС",
+     "points": "159.67"
+    },
+    {
+     "place": 2,
+     "name": "Алдар Самбуев",
+     "nation": "МОС",
+     "points": "152.79"
+    },
+    {
+     "place": 3,
+     "name": "Никита Малютин",
+     "nation": "МОС",
+     "points": "149.03"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Марк Лукин",
+     "nation": "МОС",
+     "points": "241.19"
+    },
+    {
+     "place": 2,
+     "name": "Алдар Самбуев",
+     "nation": "МОС",
+     "points": "230.82"
+    },
+    {
+     "place": 3,
+     "name": "Никита Малютин",
+     "nation": "МОС",
+     "points": "224.15"
+    }
+   ],
+   "desc": "Итог:\n1. Марк Лукин — 159.67\n2. Алдар Самбуев — 152.79\n3. Никита Малютин — 149.03\n\nИтог турнира:\n1. Марк Лукин — 241.19\n2. Алдар Самбуев — 230.82\n3. Никита Малютин — 224.15\n\nНаши:\n• Алдар Самбуев — 16-й\n\nНачало: 15:45 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "isu:isu-cs-denis-ten-memorial:men-junior-kp",
+   "tid": "isu:isu-cs-denis-ten-memorial",
+   "tournament": "CS Denis Ten Memorial",
+   "kind": "men",
+   "level": "junior",
+   "seg": "КП",
+   "title": "CS Denis Ten Memorial — юноши КП",
+   "start": "2026-10-08T08:45:00+03:00",
+   "end": "2026-10-08T10:50:00+03:00",
+   "venue": "Almaty, Kazakhstan",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Арсений Федотов",
+     "no": 6,
+     "warmup": null,
+     "place": 1
+    },
+    {
+     "name": "Александр Чмиль",
+     "no": 8,
+     "warmup": null,
+     "place": 2
+    },
+    {
+     "name": "Глеб Ковтун",
+     "no": 10,
+     "warmup": null,
+     "place": 3
+    }
+   ],
+   "athletes": [
+    "Александр Чмиль",
+    "Арсений Федотов",
+    "Глеб Ковтун"
+   ],
+   "src": "https://www.denistenmemorial.kz/results/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Арсений Федотов",
+     "nation": "AIN2",
+     "points": "91.38"
+    },
+    {
+     "place": 2,
+     "name": "Александр Чмиль",
+     "nation": "AIN2",
+     "points": "74.01"
+    },
+    {
+     "place": 3,
+     "name": "Глеб Ковтун",
+     "nation": "AIN2",
+     "points": "73.18"
+    }
+   ],
+   "desc": "Итог:\n1. Арсений Федотов — 91.38\n2. Александр Чмиль — 74.01\n3. Глеб Ковтун — 73.18\n\nНаши:\n• Арсений Федотов — 6-й\n• Александр Чмиль — 8-й\n• Глеб Ковтун — 10-й\n\nНачало: 08:45 МСК"
+  },
+  {
+   "id": "isu:isu-cs-denis-ten-memorial:women-junior-kp",
+   "tid": "isu:isu-cs-denis-ten-memorial",
+   "tournament": "CS Denis Ten Memorial",
+   "kind": "women",
+   "level": "junior",
+   "seg": "КП",
+   "title": "CS Denis Ten Memorial — девушки КП",
+   "start": "2026-10-08T10:55:00+03:00",
+   "end": "2026-10-08T14:50:00+03:00",
+   "venue": "Almaty, Kazakhstan",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Алёна Принёва",
+     "no": 1,
+     "warmup": null,
+     "place": 2
+    },
+    {
+     "name": "Виктория Стрельцова",
+     "no": 18,
+     "warmup": null,
+     "place": 1
+    },
+    {
+     "name": "Алиса Заикина",
+     "no": 20,
+     "warmup": null,
+     "place": 4
+    }
+   ],
+   "athletes": [
+    "Алиса Заикина",
+    "Алёна Принёва",
+    "Виктория Стрельцова"
+   ],
+   "src": "https://www.denistenmemorial.kz/results/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Виктория Стрельцова",
+     "nation": "AIN2",
+     "points": "78.38"
+    },
+    {
+     "place": 2,
+     "name": "Алёна Принёва",
+     "nation": "AIN2",
+     "points": "73.82"
+    },
+    {
+     "place": 3,
+     "name": "Hyewon Joo",
+     "nation": "KOR",
+     "points": "69.65"
+    }
+   ],
+   "desc": "Итог:\n1. Виктория Стрельцова — 78.38\n2. Алёна Принёва — 73.82\n3. Hyewon Joo — 69.65\n\nНаши:\n• Алёна Принёва — 1-й\n• Виктория Стрельцова — 18-й\n• Алиса Заикина — 20-й\n\nНачало: 10:55 МСК"
+  },
+  {
+   "id": "isu:isu-cs-denis-ten-memorial:women-senior-kp",
+   "tid": "isu:isu-cs-denis-ten-memorial",
+   "tournament": "CS Denis Ten Memorial",
+   "kind": "women",
+   "level": "senior",
+   "seg": "КП",
+   "title": "CS Denis Ten Memorial — женщины КП",
+   "start": "2026-10-08T15:05:00+03:00",
+   "end": "2026-10-08T17:50:00+03:00",
+   "venue": "Almaty, Kazakhstan",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Мария Захарова",
+     "no": 4,
+     "warmup": null,
+     "place": 8
+    },
+    {
+     "name": "Александра Трусова",
+     "no": 14,
+     "warmup": null,
+     "place": 1
+    },
+    {
+     "name": "Дина Хуснутдинова",
+     "no": 16,
+     "warmup": null,
+     "place": 5
+    }
+   ],
+   "athletes": [
+    "Александра Трусова",
+    "Дина Хуснутдинова",
+    "Мария Захарова"
+   ],
+   "src": "https://www.denistenmemorial.kz/results/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Александра Трусова",
+     "nation": "AIN2",
+     "points": "77.39"
+    },
+    {
+     "place": 2,
+     "name": "Yujae Kim",
+     "nation": "KOR",
+     "points": "75.99"
+    },
+    {
+     "place": 3,
+     "name": "Sofia Samodelkina",
+     "nation": "KAZ",
+     "points": "69.45"
+    }
+   ],
+   "desc": "Итог:\n1. Александра Трусова — 77.39\n2. Yujae Kim — 75.99\n3. Sofia Samodelkina — 69.45\n\nНаши:\n• Мария Захарова — 4-й\n• Александра Трусова — 14-й\n• Дина Хуснутдинова — 16-й\n\nНачало: 15:05 МСК"
+  },
+  {
+   "id": "isu:isu-cs-denis-ten-memorial:men-senior-kp",
+   "tid": "isu:isu-cs-denis-ten-memorial",
+   "tournament": "CS Denis Ten Memorial",
+   "kind": "men",
+   "level": "senior",
+   "seg": "КП",
+   "title": "CS Denis Ten Memorial — мужчины КП",
+   "start": "2026-10-08T18:00:00+03:00",
+   "end": "2026-10-08T19:20:00+03:00",
+   "venue": "Almaty, Kazakhstan",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Владислав Дикиджи",
+     "no": 3,
+     "warmup": null,
+     "place": 1
+    },
+    {
+     "name": "Пётр Гуменник",
+     "no": 8,
+     "warmup": null,
+     "place": 3
+    },
+    {
+     "name": "Глеб Лутфуллин",
+     "no": 9,
+     "warmup": null,
+     "place": 2
+    }
+   ],
+   "athletes": [
+    "Владислав Дикиджи",
+    "Глеб Лутфуллин",
+    "Пётр Гуменник"
+   ],
+   "src": "https://www.denistenmemorial.kz/results/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Владислав Дикиджи",
+     "nation": "AIN2",
+     "points": "107.31"
+    },
+    {
+     "place": 2,
+     "name": "Глеб Лутфуллин",
+     "nation": "AIN2",
+     "points": "95.79"
+    },
+    {
+     "place": 3,
+     "name": "Пётр Гуменник",
+     "nation": "AIN2",
+     "points": "80.63"
+    }
+   ],
+   "desc": "Итог:\n1. Владислав Дикиджи — 107.31\n2. Глеб Лутфуллин — 95.79\n3. Пётр Гуменник — 80.63\n\nНаши:\n• Владислав Дикиджи — 3-й\n• Пётр Гуменник — 8-й\n• Глеб Лутфуллин — 9-й\n\nНачало: 18:00 МСК"
+  },
+  {
+   "id": "isu:isu-cs-denis-ten-memorial:dance-junior-rt",
+   "tid": "isu:isu-cs-denis-ten-memorial",
+   "tournament": "CS Denis Ten Memorial",
+   "kind": "dance",
+   "level": "junior",
+   "seg": "РТ",
+   "title": "CS Denis Ten Memorial — юниорские танцы РТ",
+   "start": "2026-10-08T19:35:00+03:00",
+   "end": "2026-10-08T20:15:00+03:00",
+   "venue": "Almaty, Kazakhstan",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Дарья Дрожжина / Иван Тельнов",
+     "no": 3,
+     "warmup": null,
+     "place": 2
+    },
+    {
+     "name": "Мария Фефелова / Артём Валов",
+     "no": 4,
+     "warmup": null,
+     "place": 1
+    }
+   ],
+   "athletes": [
+    "Дарья Дрожжина / Иван Тельнов",
+    "Мария Фефелова / Артём Валов"
+   ],
+   "src": "https://www.denistenmemorial.kz/results/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Мария Фефелова / Артём Валов",
+     "nation": "AIN2",
+     "points": "67.11"
+    },
+    {
+     "place": 2,
+     "name": "Дарья Дрожжина / Иван Тельнов",
+     "nation": "AIN2",
+     "points": "59.41"
+    },
+    {
+     "place": 3,
+     "name": "Sofiia Beznosikova / Max Leleu",
+     "nation": "AZE",
+     "points": "57.90"
+    }
+   ],
+   "desc": "Итог:\n1. Мария Фефелова / Артём Валов — 67.11\n2. Дарья Дрожжина / Иван Тельнов — 59.41\n3. Sofiia Beznosikova / Max Leleu — 57.90\n\nНаши:\n• Дарья Дрожжина / Иван Тельнов — 3-й\n• Мария Фефелова / Артём Валов — 4-й\n\nНачало: 19:35 МСК"
+  },
+  {
+   "id": "isu:isu-cs-denis-ten-memorial:women-junior-pp",
+   "tid": "isu:isu-cs-denis-ten-memorial",
+   "tournament": "CS Denis Ten Memorial",
+   "kind": "women",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "CS Denis Ten Memorial — девушки ПП",
+   "start": "2026-10-09T09:00:00+03:00",
+   "end": "2026-10-09T13:20:00+03:00",
+   "venue": "Almaty, Kazakhstan",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Алиса Заикина",
+     "no": 23,
+     "warmup": 5,
+     "place": 1,
+     "final": 1,
+     "time": "12:43"
+    },
+    {
+     "name": "Алёна Принёва",
+     "no": 25,
+     "warmup": 5,
+     "place": 3,
+     "final": 3,
+     "time": "12:58"
+    },
+    {
+     "name": "Виктория Стрельцова",
+     "no": 26,
+     "warmup": 5,
+     "place": 4,
+     "final": 2,
+     "time": "13:05"
+    }
+   ],
+   "athletes": [
+    "Алиса Заикина",
+    "Алёна Принёва",
+    "Виктория Стрельцова"
+   ],
+   "src": "https://www.denistenmemorial.kz/results/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Алиса Заикина",
+     "nation": "AIN2",
+     "points": "136.72"
+    },
+    {
+     "place": 2,
+     "name": "Varvara Stahovich",
+     "nation": "AIN1",
+     "points": "126.43"
+    },
+    {
+     "place": 3,
+     "name": "Алёна Принёва",
+     "nation": "AIN2",
+     "points": "124.77"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Алиса Заикина",
+     "nation": "AIN2",
+     "points": "206.05"
+    },
+    {
+     "place": 2,
+     "name": "Виктория Стрельцова",
+     "nation": "AIN2",
+     "points": "200.99"
+    },
+    {
+     "place": 3,
+     "name": "Алёна Принёва",
+     "nation": "AIN2",
+     "points": "198.59"
+    }
+   ],
+   "desc": "Итог:\n1. Алиса Заикина — 136.72\n2. Varvara Stahovich — 126.43\n3. Алёна Принёва — 124.77\n\nИтог турнира:\n1. Алиса Заикина — 206.05\n2. Виктория Стрельцова — 200.99\n3. Алёна Принёва — 198.59\n\nНаши:\n• Алиса Заикина — 12:43\n• Алёна Принёва — 12:58\n• Виктория Стрельцова — 13:05\n\nНачало: 09:00 МСК"
+  },
+  {
+   "id": "isu:isu-cs-denis-ten-memorial:dance-junior-pt",
+   "tid": "isu:isu-cs-denis-ten-memorial",
+   "tournament": "CS Denis Ten Memorial",
+   "kind": "dance",
+   "level": "junior",
+   "seg": "ПТ",
+   "title": "CS Denis Ten Memorial — юниорские танцы ПТ",
+   "start": "2026-10-09T14:00:00+03:00",
+   "end": "2026-10-09T14:42:00+03:00",
+   "venue": "Almaty, Kazakhstan",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Дарья Дрожжина / Иван Тельнов",
+     "time": "14:27",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Мария Фефелова / Артём Валов",
+     "time": "14:34",
+     "no": 5,
+     "warmup": 1
+    }
+   ],
+   "athletes": [
+    "Дарья Дрожжина / Иван Тельнов",
+    "Мария Фефелова / Артём Валов"
+   ],
+   "src": "https://www.denistenmemorial.kz/results/index.htm",
+   "desc": "Наши:\n• Дарья Дрожжина / Иван Тельнов — 14:27\n• Мария Фефелова / Артём Валов — 14:34\n\nНачало: 14:00 МСК"
+  },
+  {
+   "id": "isu:isu-cs-denis-ten-memorial:dance-senior-rt",
+   "tid": "isu:isu-cs-denis-ten-memorial",
+   "tournament": "CS Denis Ten Memorial",
+   "kind": "dance",
+   "level": "senior",
+   "seg": "РТ",
+   "title": "CS Denis Ten Memorial — танцы РТ",
+   "start": "2026-10-09T15:15:00+03:00",
+   "end": "2026-10-09T17:00:00+03:00",
+   "venue": "Almaty, Kazakhstan",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Василиса Кагановская / Максим Некрасов",
+     "time": "15:20",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Анна Щербакова / Егор Гончаров",
+     "time": "15:33",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Ирина Хавронина / Девид Нарижный",
+     "time": "16:46",
+     "no": 10,
+     "warmup": 3
+    }
+   ],
+   "athletes": [
+    "Анна Щербакова / Егор Гончаров",
+    "Василиса Кагановская / Максим Некрасов",
+    "Ирина Хавронина / Девид Нарижный"
+   ],
+   "src": "https://www.denistenmemorial.kz/results/index.htm",
+   "desc": "Наши:\n• Василиса Кагановская / Максим Некрасов — 15:20\n• Анна Щербакова / Егор Гончаров — 15:33\n• Ирина Хавронина / Девид Нарижный — 16:46\n\nНачало: 15:15 МСК"
+  },
+  {
+   "id": "isu:isu-cs-denis-ten-memorial:women-senior-pp",
+   "tid": "isu:isu-cs-denis-ten-memorial",
+   "tournament": "CS Denis Ten Memorial",
+   "kind": "women",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "CS Denis Ten Memorial — женщины ПП",
+   "start": "2026-10-09T17:30:00+03:00",
+   "end": "2026-10-09T20:40:00+03:00",
+   "venue": "Almaty, Kazakhstan",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Мария Захарова",
+     "time": "19:30",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Дина Хуснутдинова",
+     "time": "20:00",
+     "no": 15,
+     "warmup": 4
+    },
+    {
+     "name": "Александра Трусова",
+     "time": "20:32",
+     "no": 19,
+     "warmup": 4
+    }
+   ],
+   "athletes": [
+    "Александра Трусова",
+    "Дина Хуснутдинова",
+    "Мария Захарова"
+   ],
+   "src": "https://www.denistenmemorial.kz/results/index.htm",
+   "desc": "Наши:\n• Мария Захарова — 19:30\n• Дина Хуснутдинова — 20:00\n• Александра Трусова — 20:32\n\nНачало: 17:30 МСК"
+  },
+  {
+   "id": "isu:isu-cs-denis-ten-memorial:men-junior-pp",
+   "tid": "isu:isu-cs-denis-ten-memorial",
+   "tournament": "CS Denis Ten Memorial",
+   "kind": "men",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "CS Denis Ten Memorial — юноши ПП",
+   "start": "2026-10-10T07:30:00+03:00",
+   "end": "2026-10-10T09:45:00+03:00",
+   "venue": "Almaty, Kazakhstan",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Глеб Ковтун",
+     "time": "09:23",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Александр Чмиль",
+     "time": "09:30",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Арсений Федотов",
+     "time": "09:37",
+     "no": 14,
+     "warmup": 3
+    }
+   ],
+   "athletes": [
+    "Александр Чмиль",
+    "Арсений Федотов",
+    "Глеб Ковтун"
+   ],
+   "src": "https://www.denistenmemorial.kz/results/index.htm",
+   "desc": "Наши:\n• Глеб Ковтун — 09:23\n• Александр Чмиль — 09:30\n• Арсений Федотов — 09:37\n\nНачало: 07:30 МСК"
+  },
+  {
+   "id": "isu:isu-cs-denis-ten-memorial:dance-senior-pt",
+   "tid": "isu:isu-cs-denis-ten-memorial",
+   "tournament": "CS Denis Ten Memorial",
+   "kind": "dance",
+   "level": "senior",
+   "seg": "ПТ",
+   "title": "CS Denis Ten Memorial — танцы ПТ",
+   "start": "2026-10-10T10:00:00+03:00",
+   "end": "2026-10-10T11:55:00+03:00",
+   "venue": "Almaty, Kazakhstan",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Анна Щербакова / Егор Гончаров"
+    },
+    {
+     "name": "Василиса Кагановская / Максим Некрасов"
+    },
+    {
+     "name": "Ирина Хавронина / Девид Нарижный"
+    }
+   ],
+   "athletes": [
+    "Анна Щербакова / Егор Гончаров",
+    "Василиса Кагановская / Максим Некрасов",
+    "Ирина Хавронина / Девид Нарижный"
+   ],
+   "src": "https://www.denistenmemorial.kz/results/index.htm",
+   "desc": "Наши:\n• Анна Щербакова / Егор Гончаров\n• Василиса Кагановская / Максим Некрасов\n• Ирина Хавронина / Девид Нарижный\n\nНачало: 10:00 МСК"
+  },
+  {
+   "id": "isu:isu-cs-denis-ten-memorial:men-senior-pp",
+   "tid": "isu:isu-cs-denis-ten-memorial",
+   "tournament": "CS Denis Ten Memorial",
+   "kind": "men",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "CS Denis Ten Memorial — мужчины ПП",
+   "start": "2026-10-10T12:30:00+03:00",
+   "end": "2026-10-10T14:01:00+03:00",
+   "venue": "Almaty, Kazakhstan",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Пётр Гуменник",
+     "time": "13:37",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Глеб Лутфуллин",
+     "time": "13:45",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Владислав Дикиджи",
+     "time": "13:53",
+     "no": 10,
+     "warmup": 2
+    }
+   ],
+   "athletes": [
+    "Владислав Дикиджи",
+    "Глеб Лутфуллин",
+    "Пётр Гуменник"
+   ],
+   "src": "https://www.denistenmemorial.kz/results/index.htm",
+   "desc": "Наши:\n• Пётр Гуменник — 13:37\n• Глеб Лутфуллин — 13:45\n• Владислав Дикиджи — 13:53\n\nНачало: 12:30 МСК"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:dance-junior-rt",
+   "tid": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Рапсодия льда»",
+   "kind": "dance",
+   "level": "junior",
+   "seg": "РТ",
+   "title": "ЮГП России «Рапсодия льда» — танцы РТ",
+   "start": "2026-10-12T17:30:00+03:00",
+   "end": "2026-10-12T19:15:00+03:00",
+   "venue": "СК «Мечта», Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/3etap2627_jun_competition_schedule.pdf",
+   "desc": "Начало: 17:30 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:pairs-junior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Рапсодия льда»",
+   "kind": "pairs",
+   "level": "junior",
+   "seg": "КП",
+   "title": "ЮГП России «Рапсодия льда» — пары КП",
+   "start": "2026-10-12T19:30:00+03:00",
+   "end": "2026-10-12T20:00:00+03:00",
+   "venue": "СК «Мечта», Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/3etap2627_jun_competition_schedule.pdf",
+   "desc": "Начало: 19:30 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:dance-junior-pt",
+   "tid": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Рапсодия льда»",
+   "kind": "dance",
+   "level": "junior",
+   "seg": "ПТ",
+   "title": "ЮГП России «Рапсодия льда» — танцы ПТ",
+   "start": "2026-10-13T13:00:00+03:00",
+   "end": "2026-10-13T15:15:00+03:00",
+   "venue": "СК «Мечта», Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/3etap2627_jun_competition_schedule.pdf",
+   "desc": "Начало: 13:00 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:pairs-junior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Рапсодия льда»",
+   "kind": "pairs",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "ЮГП России «Рапсодия льда» — пары ПП",
+   "start": "2026-10-13T15:30:00+03:00",
+   "end": "2026-10-13T16:10:00+03:00",
+   "venue": "СК «Мечта», Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/3etap2627_jun_competition_schedule.pdf",
+   "desc": "Начало: 15:30 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:women-junior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Рапсодия льда»",
+   "kind": "women",
+   "level": "junior",
+   "seg": "КП",
+   "title": "ЮГП России «Рапсодия льда» — девушки КП",
+   "start": "2026-10-13T16:30:00+03:00",
+   "end": "2026-10-13T18:50:00+03:00",
+   "venue": "СК «Мечта», Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/3etap2627_jun_competition_schedule.pdf",
+   "desc": "Начало: 16:30 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:men-junior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Рапсодия льда»",
+   "kind": "men",
+   "level": "junior",
+   "seg": "КП",
+   "title": "ЮГП России «Рапсодия льда» — юноши КП",
+   "start": "2026-10-13T19:05:00+03:00",
+   "end": "2026-10-13T21:20:00+03:00",
+   "venue": "СК «Мечта», Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/3etap2627_jun_competition_schedule.pdf",
+   "desc": "Начало: 19:05 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:women-junior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Рапсодия льда»",
+   "kind": "women",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "ЮГП России «Рапсодия льда» — девушки ПП",
+   "start": "2026-10-14T12:45:00+03:00",
+   "end": "2026-10-14T15:20:00+03:00",
+   "venue": "СК «Мечта», Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/3etap2627_jun_competition_schedule.pdf",
+   "desc": "Начало: 12:45 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:men-junior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Рапсодия льда»",
+   "kind": "men",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "ЮГП России «Рапсодия льда» — юноши ПП",
+   "start": "2026-10-14T15:45:00+03:00",
+   "end": "2026-10-14T18:25:00+03:00",
+   "venue": "СК «Мечта», Москва",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/3etap2627_jun_competition_schedule.pdf",
+   "desc": "Начало: 15:45 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "isu:isu-gp-grand-prix-de-france-2026:pairs-senior-kp",
+   "tid": "isu:isu-gp-grand-prix-de-france-2026",
+   "tournament": "GP de France",
+   "kind": "pairs",
+   "level": "senior",
+   "seg": "КП",
+   "title": "GP de France — пары КП",
+   "start": "2026-10-24T19:00:00+03:00",
+   "end": "2026-10-24T20:10:00+03:00",
+   "venue": "Angers, France",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Александра Бойкова / Дмитрий Козловский"
+    }
+   ],
+   "athletes": [
+    "Александра Бойкова / Дмитрий Козловский"
+   ],
+   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
+   "desc": "Наши:\n• Александра Бойкова / Дмитрий Козловский\n\nНачало: 19:00 МСК"
+  },
+  {
+   "id": "isu:isu-gp-grand-prix-de-france-2026:pairs-senior-pp",
+   "tid": "isu:isu-gp-grand-prix-de-france-2026",
+   "tournament": "GP de France",
+   "kind": "pairs",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "GP de France — пары ПП",
+   "start": "2026-10-25T13:30:00+03:00",
+   "end": "2026-10-25T14:50:00+03:00",
+   "venue": "Angers, France",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Александра Бойкова / Дмитрий Козловский"
+    }
+   ],
+   "athletes": [
+    "Александра Бойкова / Дмитрий Козловский"
+   ],
+   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
+   "desc": "Наши:\n• Александра Бойкова / Дмитрий Козловский\n\nНачало: 13:30 МСК"
+  },
+  {
+   "id": "isu:isu-gp-cup-of-china-2026:men-senior-kp",
+   "tid": "isu:isu-gp-cup-of-china-2026",
+   "tournament": "GP Cup of China",
+   "kind": "men",
+   "level": "senior",
+   "seg": "КП",
+   "title": "GP Cup of China — мужчины КП",
+   "start": "2026-11-06T15:25:00+03:00",
+   "end": "2026-11-06T16:55:00+03:00",
+   "venue": "Shenzhen, China",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Владислав Дикиджи"
+    }
+   ],
+   "athletes": [
+    "Владислав Дикиджи"
+   ],
+   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-cup-of-china-2026/",
+   "desc": "Наши:\n• Владислав Дикиджи\n\nНачало: 15:25 МСК"
+  },
+  {
+   "id": "isu:isu-gp-cup-of-china-2026:men-senior-pp",
+   "tid": "isu:isu-gp-cup-of-china-2026",
+   "tournament": "GP Cup of China",
+   "kind": "men",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "GP Cup of China — мужчины ПП",
+   "start": "2026-11-08T08:00:00+03:00",
+   "end": "2026-11-08T09:45:00+03:00",
+   "venue": "Shenzhen, China",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Владислав Дикиджи"
+    }
+   ],
+   "athletes": [
+    "Владислав Дикиджи"
+   ],
+   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-cup-of-china-2026/",
+   "desc": "Наши:\n• Владислав Дикиджи\n\nНачало: 08:00 МСК"
+  },
+  {
+   "id": "isu:isu-gp-finlandia-trophy-2026:pairs-senior-kp",
+   "tid": "isu:isu-gp-finlandia-trophy-2026",
+   "tournament": "GP Finlandia Trophy",
+   "kind": "pairs",
+   "level": "senior",
+   "seg": "КП",
+   "title": "GP Finlandia Trophy — пары КП",
+   "start": "2026-11-20T15:00:00+03:00",
+   "end": "2026-11-20T16:10:00+03:00",
+   "venue": "Helsinki, Finland",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Александра Бойкова / Дмитрий Козловский"
+    },
+    {
+     "name": "Екатерина Чикмарёва / Матвей Янченков"
+    }
+   ],
+   "athletes": [
+    "Александра Бойкова / Дмитрий Козловский",
+    "Екатерина Чикмарёва / Матвей Янченков"
+   ],
+   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
+   "desc": "Наши:\n• Александра Бойкова / Дмитрий Козловский\n• Екатерина Чикмарёва / Матвей Янченков\n\nНачало: 15:00 МСК"
+  },
+  {
+   "id": "isu:isu-gp-finlandia-trophy-2026:pairs-senior-pp",
+   "tid": "isu:isu-gp-finlandia-trophy-2026",
+   "tournament": "GP Finlandia Trophy",
+   "kind": "pairs",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "GP Finlandia Trophy — пары ПП",
+   "start": "2026-11-21T13:15:00+03:00",
+   "end": "2026-11-21T14:35:00+03:00",
+   "venue": "Helsinki, Finland",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Александра Бойкова / Дмитрий Козловский"
+    },
+    {
+     "name": "Екатерина Чикмарёва / Матвей Янченков"
+    }
+   ],
+   "athletes": [
+    "Александра Бойкова / Дмитрий Козловский",
+    "Екатерина Чикмарёва / Матвей Янченков"
+   ],
+   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
+   "desc": "Наши:\n• Александра Бойкова / Дмитрий Козловский\n• Екатерина Чикмарёва / Матвей Янченков\n\nНачало: 13:15 МСК"
+  }
+ ],
+ "upcoming": [
+  {
+   "tid": "isu:isu-cs-budapest-trophy",
+   "name": "CS Budapest Trophy",
+   "intl": true,
+   "venue": "Budapest, Hungary",
+   "start": "2026-10-15",
+   "end": "2026-10-18",
+   "ours": [
+    "Алина Горбачёва",
+    "Василиса Григорьева / Евгений Артющенко",
+    "Мария Захарова",
+    "Милана Кузьмина / Дмитрий Студеникин"
+   ],
+   "broadcast": []
+  },
+  {
+   "tid": "fsr:gran-pri-rossii-rapsodiia-lda-2026-10-16",
+   "name": "Гран-при России «Рапсодия льда»",
+   "start": "2026-10-16",
+   "end": "2026-10-19",
+   "venue": "Дворец спорта, Казань",
+   "intl": false
+  },
+  {
+   "tid": "fsr:gran-pri-rossii-nevskii-led-2026-10-22",
+   "name": "Гран-при России «Невский лёд»",
+   "start": "2026-10-22",
+   "end": "2026-10-26",
+   "venue": "ДС «Юбилейный», Санкт-Петербург",
+   "intl": false
+  },
+  {
+   "tid": "fsr:iugp-rossii-krasnoiare-2026-10-27",
+   "name": "ЮГП России «Красноярье»",
+   "start": "2026-10-27",
+   "end": "2026-10-30",
+   "venue": "ЛД «Кристалл», Красноярск",
+   "intl": false
+  },
+  {
+   "tid": "fsr:gran-pri-rossii-krasnoiare-2026-10-30",
+   "name": "Гран-при России «Красноярье»",
+   "start": "2026-10-30",
+   "end": "2026-11-02",
+   "venue": "ЛД «Кристалл», Красноярск",
+   "intl": false
+  },
+  {
+   "tid": "fsr:iugp-rossii-zoloto-urala-2026-11-03",
+   "name": "ЮГП России «Золото Урала»",
+   "start": "2026-11-03",
+   "end": "2026-11-06",
+   "venue": "УГМК Арена, Екатеринбург",
+   "intl": false
+  },
+  {
+   "tid": "fsr:gran-pri-rossii-zoloto-urala-2026-11-06",
+   "name": "Гран-при России «Золото Урала»",
+   "start": "2026-11-06",
+   "end": "2026-11-09",
+   "venue": "УГМК Арена, Екатеринбург",
+   "intl": false
+  },
+  {
+   "tid": "fsr:iugp-rossii-serdtse-sibiri-2026-11-10",
+   "name": "ЮГП России «Сердце Сибири»",
+   "start": "2026-11-10",
+   "end": "2026-11-13",
+   "venue": "G-Drive Арена, Омск",
+   "intl": false
+  },
+  {
+   "tid": "fsr:gran-pri-rossii-serdtse-sibiri-2026-11-13",
+   "name": "Гран-при России «Сердце Сибири»",
+   "start": "2026-11-13",
+   "end": "2026-11-16",
+   "venue": "G-Drive Арена, Омск",
+   "intl": false
+  },
+  {
+   "tid": "fsr:na-prizy-klimova-2026-11-17",
+   "name": "На призы Климова",
+   "start": "2026-11-17",
+   "end": "2026-11-19",
+   "venue": "ДС «Большой», Сириус",
+   "intl": false
+  },
+  {
+   "tid": "fsr:idel-2026-11-20",
+   "name": "Идель",
+   "start": "2026-11-20",
+   "end": "2026-11-23",
+   "venue": "Казань",
+   "intl": false
+  },
+  {
+   "tid": "fsr:tiumenskii-meridian-2026-11-24",
+   "name": "Тюменский меридиан",
+   "start": "2026-11-24",
+   "end": "2026-11-26",
+   "venue": "СШ «Прибой», Тюмень",
+   "intl": false
+  },
+  {
+   "tid": "fsr:chempionat-rossii-po-pryzhkovym-elementam-2026-11-27",
+   "name": "Чемпионат России по прыжковым элементам",
+   "start": "2026-11-27",
+   "end": "2026-11-30",
+   "venue": "Навка Арена, Москва",
+   "intl": false
+  },
+  {
+   "tid": "fsr:posviashchennye-gosudarstvennosti-udmurtii-2026-11-28",
+   "name": "Посвященные государственности Удмуртии",
+   "start": "2026-11-28",
+   "end": "2026-12-01",
+   "venue": "Ижевск",
+   "intl": false
+  },
+  {
+   "tid": "fsr:pamiati-panina-kolomenkina-2026-12-03",
+   "name": "Памяти Панина-Коломенкина",
+   "start": "2026-12-03",
+   "end": "2026-12-06",
+   "venue": "СШОР АФК, Санкт-Петербург",
+   "intl": false
+  },
+  {
+   "tid": "fsr:mordovskie-uzory-2026-12-11",
+   "name": "Мордовские узоры",
+   "start": "2026-12-11",
+   "end": "2026-12-13",
+   "venue": "Саранск",
+   "intl": false
+  },
+  {
+   "tid": "fsr:chempionat-rossii-2026-12-16",
+   "name": "Чемпионат России",
+   "start": "2026-12-16",
+   "end": "2026-12-21",
+   "venue": "ЛА «Трактор», Челябинск",
+   "intl": false
+  },
+  {
+   "tid": "fsr:chempionat-i-pervenstvo-szfo-2027-01-13",
+   "name": "Чемпионат и первенство СЗФО",
+   "start": "2027-01-13",
+   "end": "2027-01-17",
+   "venue": "Выборг",
+   "intl": false
+  },
+  {
+   "tid": "fsr:pamiati-grushmana-2027-01-19",
+   "name": "Памяти Грушмана",
+   "start": "2027-01-19",
+   "end": "2027-01-22",
+   "venue": "СШОР АФК, Санкт-Петербург",
+   "intl": false
+  },
+  {
+   "tid": "fsr:krasnoiarskie-uzory-2027-01-22",
+   "name": "Красноярские узоры",
+   "start": "2027-01-22",
+   "end": "2027-01-24",
+   "venue": "ЛД «Кристалл», Красноярск",
+   "intl": false
+  },
+  {
+   "tid": "fsr:zhiguli-2027-01-24",
+   "name": "Жигули",
+   "start": "2027-01-24",
+   "end": "2027-01-26",
+   "venue": "Самара",
+   "intl": false
+  },
+  {
+   "tid": "fsr:na-prizy-chaikovskoi-2027-01-28",
+   "name": "На призы Чайковской",
+   "start": "2027-01-28",
+   "end": "2027-01-29",
+   "venue": "ДС «Янтарь», Москва",
+   "intl": false
+  },
+  {
+   "tid": "fsr:uralskie-samotsvety-2027-01-31",
+   "name": "Уральские самоцветы",
+   "start": "2027-01-31",
+   "end": "2027-02-02",
+   "venue": "Екатеринбург",
+   "intl": false
+  },
+  {
+   "tid": "fsr:pervenstvo-rossii-sredi-iuniorov-2027-02-01",
+   "name": "Первенство России среди юниоров",
+   "start": "2027-02-01",
+   "end": "2027-02-05",
+   "venue": "Казань",
+   "intl": false
+  },
+  {
+   "tid": "fsr:zimniaia-spartakiada-molodezhi-ii-etap-szfo-iufo-i-skfo-2027",
+   "name": "Зимняя Спартакиада молодежи (II этап) – СЗФО, ЮФО и СКФО",
+   "start": "2027-02-08",
+   "end": "2027-02-10",
+   "venue": "Выборг",
+   "intl": false
+  },
+  {
+   "tid": "fsr:zimniaia-spartakiada-molodezhi-ii-etap-sfo-i-dfo-2027-02-11",
+   "name": "Зимняя Спартакиада молодежи (II этап) – СФО и ДФО",
+   "start": "2027-02-11",
+   "end": "2027-02-14",
+   "venue": "Омск",
+   "intl": false
+  },
+  {
+   "tid": "fsr:zimniaia-spartakiada-molodezhi-ii-etap-tsfo-2027-02-11",
+   "name": "Зимняя Спартакиада молодежи (II этап) – ЦФО",
+   "start": "2027-02-11",
+   "end": "2027-02-14",
+   "venue": "Владимир",
+   "intl": false
+  },
+  {
+   "tid": "fsr:zimniaia-spartakiada-molodezhi-ii-etap-ufo-i-pfo-2027-02-12",
+   "name": "Зимняя Спартакиада молодежи (II этап) – УФО и ПФО",
+   "start": "2027-02-12",
+   "end": "2027-02-15",
+   "venue": "Йошкар-Ола",
+   "intl": false
+  },
+  {
+   "tid": "fsr:kumparsita-2027-02-12",
+   "name": "Кумпарсита",
+   "start": "2027-02-12",
+   "end": "2027-02-15",
+   "venue": "Самара",
+   "intl": false
+  },
+  {
+   "tid": "fsr:mezhregionalnye-sorevnovaniia-pervenstvo-szfo-skfo-i-iufo-sr",
+   "name": "Межрегиональные соревнования – Первенство СЗФО, СКФО и ЮФО среди юношей и девушек",
+   "start": "2027-02-17",
+   "end": "2027-02-19",
+   "venue": "Ухта",
+   "intl": false
+  },
+  {
+   "tid": "fsr:mezhregionalnye-sorevnovaniia-pervenstvo-ufo-i-pfo-sredi-iun",
+   "name": "Межрегиональные соревнования – Первенство УФО и ПФО среди юношей и девушек",
+   "start": "2027-02-19",
+   "end": "2027-02-21",
+   "venue": "Казань",
+   "intl": false
+  },
+  {
+   "tid": "fsr:mezhregionalnye-sorevnovaniia-pervenstvo-tsfo-sredi-iunoshei",
+   "name": "Межрегиональные соревнования – Первенство ЦФО среди юношей и девушек",
+   "start": "2027-02-21",
+   "end": "2027-02-22",
+   "venue": "ЛД «Наро-Фоминск», Наро-Фоминск, Московская обл.",
+   "intl": false
+  },
+  {
+   "tid": "fsr:mezhregionalnye-sorevnovaniia-pervenstvo-sfo-i-dfo-sredi-iun",
+   "name": "Межрегиональные соревнования – Первенство СФО и ДФО среди юношей и девушек",
+   "start": "2027-02-22",
+   "end": "2027-02-24",
+   "venue": "ЛД «Кристалл», Красноярск",
+   "intl": false
+  },
+  {
+   "tid": "fsr:vserossiiskie-finalnye-sorevnovaniia-kubok-federatsii-2027-0",
+   "name": "Всероссийские финальные соревнования \"Кубок Федерации\"",
+   "start": "2027-02-23",
+   "end": "2027-02-25",
+   "venue": "Огарев Арена, Саранск",
+   "intl": false
+  },
+  {
+   "tid": "fsr:final-gran-pri-rossii-2027-02-25",
+   "name": "Финал Гран-при России",
+   "start": "2027-02-25",
+   "end": "2027-02-28",
+   "venue": "Огарев Арена, Саранск",
+   "intl": false
+  },
+  {
+   "tid": "fsr:pamiati-rusakova-2027-03-01",
+   "name": "Памяти Русакова",
+   "start": "2027-03-01",
+   "end": "2027-03-03",
+   "venue": "ДС «Мегаспорт», Москва",
+   "intl": false
+  },
+  {
+   "tid": "fsr:na-prizy-ffkmo-2027-03-06",
+   "name": "На призы ФФКМО",
+   "start": "2027-03-06",
+   "end": "2027-03-08",
+   "venue": "ЛД им. В. Харламова, Клин, Московская обл.",
+   "intl": false
+  },
+  {
+   "tid": "fsr:zimniaia-spartakiada-molodezhi-final-2027-03-08",
+   "name": "Зимняя Спартакиада молодежи (Финал)",
+   "start": "2027-03-08",
+   "end": "2027-03-12",
+   "venue": "Йошкар-Ола",
+   "intl": false
+  },
+  {
+   "tid": "fsr:kubok-pervogo-kanala-sredi-iuniorov-2027-03-11",
+   "name": "Кубок Первого канала среди юниоров",
+   "start": "2027-03-11",
+   "end": "2027-03-12",
+   "venue": "Санкт-Петербург",
+   "intl": false
+  },
+  {
+   "tid": "fsr:kubok-pervogo-kanala-2027-03-12",
+   "name": "Кубок Первого канала",
+   "start": "2027-03-12",
+   "end": "2027-03-15",
+   "venue": "Санкт-Петербург",
+   "intl": false
+  },
+  {
+   "tid": "fsr:kubok-pliushchenko-2027-03-12",
+   "name": "Кубок Плющенко",
+   "start": "2027-03-12",
+   "end": "2027-03-14",
+   "venue": "Москва",
+   "intl": false
+  },
+  {
+   "tid": "fsr:pamiati-tiukova-2027-03-15",
+   "name": "Памяти Тюкова",
+   "start": "2027-03-15",
+   "end": "2027-03-17",
+   "venue": "Пермь",
+   "intl": false
+  },
+  {
+   "tid": "fsr:serebrianoe-ozherele-rossii-2027-03-18",
+   "name": "Серебряное ожерелье России",
+   "start": "2027-03-18",
+   "end": "2027-03-21",
+   "venue": "Великий Устюг",
+   "intl": false
+  },
+  {
+   "tid": "fsr:sibirskie-konki-2027-03-22",
+   "name": "Сибирские коньки",
+   "start": "2027-03-22",
+   "end": "2027-03-25",
+   "venue": "Омск",
+   "intl": false
+  },
+  {
+   "tid": "fsr:iuzhnyi-briz-2027-03-24",
+   "name": "Южный бриз",
+   "start": "2027-03-24",
+   "end": "2027-03-26",
+   "venue": "ДС «Большой», Сириус",
+   "intl": false
+  },
+  {
+   "tid": "fsr:45-parallel-2027-03-27",
+   "name": "45-параллель",
+   "start": "2027-03-27",
+   "end": "2027-03-29",
+   "venue": "Ставрополь Арена, Ставрополь",
+   "intl": false
+  },
+  {
+   "tid": "fsr:pervenstvo-rossii-sredi-devushek-i-iunoshei-2027-04-01",
+   "name": "Первенство России среди девушек и юношей",
+   "start": "2027-04-01",
+   "end": "2027-04-05",
+   "venue": "Казань",
+   "intl": false
+  },
+  {
+   "tid": "fsr:na-prizy-ffkm-2027-04-06",
+   "name": "На призы ФФКМ",
+   "start": "2027-04-06",
+   "end": "2027-04-09",
+   "venue": "ЛД «Мечта», Москва",
+   "intl": false
+  },
+  {
+   "tid": "fsr:pamiati-serebrovskogo-2027-04-09",
+   "name": "Памяти Серебровского",
+   "start": "2027-04-09",
+   "end": "2027-04-11",
+   "venue": "Нижний Новгород",
+   "intl": false
+  },
+  {
+   "tid": "fsr:pamiati-chernomyrdina-2027-04-12",
+   "name": "Памяти Черномырдина",
+   "start": "2027-04-12",
+   "end": "2027-04-14",
+   "venue": "Оренбург",
+   "intl": false
+  },
+  {
+   "tid": "fsr:na-prizy-federatsii-figurnogo-kataniia-na-konkakh-sankt-pete",
+   "name": "На призы Федерации фигурного катания на коньках Санкт-Петербурга",
+   "start": "2027-04-14",
+   "end": "2027-04-17",
+   "venue": "СШОР АФК, Санкт-Петербург",
+   "intl": false
+  },
+  {
+   "tid": "fsr:pamiati-ksenofontova-2027-04-17",
+   "name": "Памяти Ксенофонтова",
+   "start": "2027-04-17",
+   "end": "2027-04-19",
+   "venue": "ФОК «Факел», Екатеринбург",
+   "intl": false
+  },
+  {
+   "tid": "fsr:pamiati-romarovskogo-2027-04-21",
+   "name": "Памяти Ромаровского",
+   "start": "2027-04-21",
+   "end": "2027-04-23",
+   "venue": "Челябинск",
+   "intl": false
+  },
+  {
+   "tid": "fsr:pamiati-kudriavtseva-2027-04-23",
+   "name": "Памяти Кудрявцева",
+   "start": "2027-04-23",
+   "end": "2027-04-25",
+   "venue": "МФЛА «Сибирь-Арена» (малая арена), Новосибирск",
+   "intl": false
+  }
+ ],
+ "watchlist": [
+  "Виктория Стрельцова",
+  "Алиса Заикина",
+  "Екатерина Корчажникова",
+  "София Сарновская",
+  "Анна Докукина",
+  "Софья Смагина",
+  "Алдар Самбуев",
+  "Полина Шешелева / Егор Карнаухов",
+  "Таисия Гусева / Даниил Овчинников"
+ ],
+ "photos": {
+  "Александра Бойкова": "photos/d4887dae02a55b28.jpg",
+  "Дмитрий Козловский": "photos/219d943483de33ef.jpg",
+  "Karina Akopova": "photos/37e22b74cf18dd75.jpg",
+  "Nikita Rakhmanin": "photos/1cdbd3005999e986.jpg",
+  "Audrey Shin": "photos/d94470f914026180.jpg",
+  "Spencer Akira Howe": "photos/8642dba1f4226b00.jpg",
+  "Balazs Nagy": "photos/83e9e2cc73a7e30b.jpg",
+  "Таисия Гусева": "photos/543d86d25f8a9068.jpg",
+  "Даниил Овчинников": "photos/6ea9a0b1e4ec7929.jpg",
+  "Полина Шешелева": "photos/a018e195d5c5e86a.jpg",
+  "Егор Карнаухов": "photos/048f4c1d1c3f4b41.jpg",
+  "Матвей Ветлугин": "photos/ac86283cc3d3b9a8.jpg",
+  "Mihhail Selevko": "photos/82dac8c231e5093e.jpg",
+  "Kyrylo Marsak": "photos/1f3dae3b62b99ec0.jpg",
+  "Мария Фефелова": "photos/034b9fdf0e34b3de.jpg",
+  "Артём Валов": "photos/ea6f2cf09ac72f5e.jpg",
+  "Полина Жарова": "photos/4ddcc18c2be4ad3e.jpg",
+  "Алексей Столяров": "photos/b831c80a93501529.jpg",
+  "Полина Сажина": "photos/7291ba2c394404eb.jpg",
+  "Алексей Белкин": "photos/8d208e971abe8094.jpg",
+  "Арина Парсегова": "photos/dc0e8e7b6f473d11.jpg",
+  "Матвей Богданов": "photos/c1d6ddb8c4817698.jpg",
+  "Виктория Стрельцова": "photos/c2dd8c7979d59d65.jpg",
+  "Макар Солодников": "photos/ba86939dd673016a.jpg",
+  "Аделия Петросян": "photos/dc173c2323cacefc.jpg",
+  "Анна Фролова": "photos/f9d0ea28c0f5d902.jpg",
+  "Niina Petrokina": "photos/71874c846079d589.jpg",
+  "Anastasiia Gubanova": "photos/dc3d94e56257f0de.jpg",
+  "Екатерина Рыбакова": "photos/e10669af8a0af7a3.jpg",
+  "Иван Махноносов": "photos/2972b9f71a193472.jpg",
+  "Елизавета Пасечник": "photos/4bcac199f4d6dcaa.jpg",
+  "Дарио Чиризано": "photos/be6c424dccb24e06.jpg",
+  "Елизавета Шичина": "photos/2ff012aab4d3df9b.jpg",
+  "Павел Дрозд": "photos/44b04063ec223902.jpg",
+  "Diana Davis": "photos/b5028e1cc7f88f24.jpg",
+  "Gleb Smolkin": "photos/1584a571f3304dd6.jpg",
+  "Mariia Ignateva": "photos/82d1d0f7f2eff4ca.jpg",
+  "Danijil Leonyidovics Szemko": "photos/3f88c1fcf8475fd1.jpg",
+  "Николай Угожаев": "photos/1f0fd7b6aaecc011.jpg",
+  "Nika Egadze": "photos/69f1b76907385f7e.jpg",
+  "Анастасия Мухортова": "photos/fda7051a86f985f9.jpg",
+  "Дмитрий Евгеньев": "photos/c25d5df3fec4231a.jpg",
+  "Екатерина Чикмарёва": "photos/4e3b3985b3669b53.jpg",
+  "Матвей Янченков": "photos/fd84614609d35c57.jpg",
+  "Анастасия Мишина": "photos/00679ff3cdc79b4b.jpg",
+  "Александр Галлямов": "photos/764ff6f052555952.jpg",
+  "Anastasiia Metelkina": "photos/3a27c2eaa2b85fd3.jpg",
+  "Luka Berulava": "photos/ffab51cd44be6f29.jpg",
+  "Nadiia Bashynska": "photos/b14ff229ad03776b.jpg",
+  "Зоя Пестова": "photos/90f4fb44be645b30.jpg",
+  "Сергей Лагутов": "photos/e7cffc1f7d5980a7.jpg",
+  "Анна Билибина": "photos/1fddc1cd14c41d55.jpg",
+  "Дмитрий Кашаев": "photos/f4a4c6326b4988e3.jpg",
+  "Анна Соболева": "photos/9a32934cbb35794c.jpg",
+  "Матвей Чураков": "photos/0ea0f135d2e817c5.jpg",
+  "София Сарновская": "photos/af7e799b6dcba020.jpg",
+  "Анна Докукина": "photos/2f8f3369f428d60c.jpg",
+  "Екатерина Корчажникова": "photos/ba95e491668e83ed.jpg",
+  "Алдар Самбуев": "photos/a0395e7d7a01fe84.jpg",
+  "Марк Лукин": "photos/9148592c96e112cb.jpg",
+  "Николай Колесников": "photos/f50c03c3b2db7e0a.jpg",
+  "Арсений Федотов": "photos/22d4b14b7118dcfb.jpg",
+  "Александр Чмиль": "photos/499979811fa484ce.jpg",
+  "Глеб Ковтун": "photos/276dee44128f6ea7.jpg",
+  "Алёна Принёва": "photos/e5aa669b40db9c63.jpg",
+  "Алиса Заикина": "photos/14bd06e5d6cb3a16.jpg",
+  "Мария Захарова": "photos/1db0d66f13aa3a42.jpg",
+  "Александра Трусова": "photos/55c5061be564390b.jpg",
+  "Дина Хуснутдинова": "photos/de9e5733107cc998.jpg",
+  "Yujae Kim": "photos/1490af95af41544c.jpg",
+  "Sofia Samodelkina": "photos/b30103a360766da7.jpg",
+  "Владислав Дикиджи": "photos/7a6987d7a81fcddb.jpg",
+  "Пётр Гуменник": "photos/b87b9746c91d940e.jpg",
+  "Глеб Лутфуллин": "photos/1ace3445253d3255.jpg",
+  "Дарья Дрожжина": "photos/135171f4904bf813.jpg",
+  "Иван Тельнов": "photos/c5a097eec52163b9.jpg",
+  "Василиса Кагановская": "photos/6a79e6a82625735f.jpg",
+  "Максим Некрасов": "photos/4c16608f003aab24.jpg",
+  "Анна Щербакова": "photos/8d0bac1b87977be0.jpg",
+  "Егор Гончаров": "photos/692a00cc0f3b9c5b.jpg",
+  "Ирина Хавронина": "photos/7a02dd8e46ab5e79.jpg",
+  "Девид Нарижный": "photos/b0c41552dcbc13d4.jpg",
+  "Алина Горбачёва": "photos/d63bfe2c8896e122.jpg",
+  "Василиса Григорьева": "photos/46f0f3da45e4894d.jpg",
+  "Евгений Артющенко": "photos/1fbc471ec1fea876.jpg",
+  "Милана Кузьмина": "photos/823fc619e18ede3e.jpg",
+  "Дмитрий Студеникин": "photos/4d95a0ce330e54a8.jpg"
+ }
+}

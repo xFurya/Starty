@@ -10,6 +10,9 @@ import 'main.dart';
 
 /// Номер этой сборки; растёт с каждой выкладкой.
 const appBuild = int.fromEnvironment('BUILD', defaultValue: 1);
+
+/// Версия для показа; на Android точная — из установленного пакета (updater.dart).
+const appVersion = String.fromEnvironment('VERSION', defaultValue: '1.0.2');
 const versionUrl = 'https://xfurya.github.io/Starty/app/version.json';
 
 class UpdateInfo {
