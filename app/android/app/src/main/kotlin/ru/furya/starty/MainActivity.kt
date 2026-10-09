@@ -10,6 +10,7 @@ import kotlin.concurrent.thread
 class MainActivity : FlutterActivity() {
     private var channel: MethodChannel? = null
     private var lastCheck = 0L
+    private val onChange: () -> Unit = { runOnUiThread { channel?.invokeMethod("changed", Updater.statusJson(this)) } }
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
@@ -20,28 +21,38 @@ class MainActivity : FlutterActivity() {
                 "status" -> result.success(Updater.statusJson(this))
                 "check" -> { Updater.check(this); result.success(null) }
                 "install" -> thread(name = "update-install") {
-                    val r = Updater.install(applicationContext, fromUser = true)
+                    val r = try { Updater.install(applicationContext, fromUser = true) } catch (e: Throwable) { e.message ?: "ошибка" }
                     runOnUiThread { result.success(r) }
                 }
                 "openInstaller" -> result.success(Updater.openInstaller(this))
+                "allowInstall" -> result.success(Updater.openInstallPermission(this))
                 else -> result.notImplemented()
             }
         }
-        Updater.listener = { runOnUiThread { channel?.invokeMethod("changed", Updater.statusJson(this)) } }
+        Updater.listener = onChange
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Восстановление после гибели процесса или запуск из недавних отдают старый интент
+        // уведомления ещё раз — повторно ставить по нему нельзя.
+        if (savedInstanceState != null || (intent.flags and Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY) != 0) {
+            intent.removeExtra(Updater.EXTRA_INSTALL)
+        }
         super.onCreate(savedInstanceState)
         Updater.schedule(this)
     }
 
+    override fun onStart() {
+        super.onStart()
+        Updater.onStart()
+    }
+
     override fun onResume() {
         super.onResume()
-        visible = true
         Updater.clearNotice(this)
         if (intent?.getBooleanExtra(Updater.EXTRA_INSTALL, false) == true) {
             intent.removeExtra(Updater.EXTRA_INSTALL)
-            thread(name = "update-install") { Updater.install(applicationContext, fromUser = true) }
+            thread(name = "update-install") { try { Updater.install(applicationContext, fromUser = true) } catch (_: Throwable) {} }
         } else if (System.currentTimeMillis() - lastCheck > 60_000L) {
             lastCheck = System.currentTimeMillis()
             Updater.check(this)
@@ -50,9 +61,9 @@ class MainActivity : FlutterActivity() {
 
     override fun onStop() {
         super.onStop()
-        visible = false
-        // Свернули — самое время обновиться.
-        thread(name = "update-install") { Updater.installQuietly(applicationContext) }
+        Updater.onStop()
+        // Свернули — обновление встанет через минуту, если к тому времени не вернутся.
+        if (!Updater.visible) Updater.installSoon(applicationContext)
     }
 
     override fun onNewIntent(intent: Intent) {
@@ -61,13 +72,8 @@ class MainActivity : FlutterActivity() {
     }
 
     override fun onDestroy() {
-        if (isFinishing) Updater.listener = null
+        if (Updater.listener === onChange) Updater.listener = null
         channel?.setMethodCallHandler(null)
         super.onDestroy()
-    }
-
-    companion object {
-        /** Приложение на экране — ставить обновление нельзя, оно закроет его на глазах. */
-        @Volatile var visible = false
     }
 }

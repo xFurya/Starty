@@ -10,7 +10,7 @@
 # репозитория, путь в app/android/key.properties.
 #
 # После: закоммитить и запушить main. iPhone-сборку соберёт .github/workflows/app-ios.yml
-# и сам обновит site/app/sidestore.json.
+# и сам обновит site/app/sidestore.json и запись ios в version.json.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 VER=${1:?"версия, например 1.0.3"}
@@ -21,6 +21,8 @@ fail() { echo "$*" >&2; exit 1; }
 [[ $VER =~ ^[0-9]{1,2}\.[0-9]{1,2}\.[0-9]{1,2}$ ]] || fail "версия — три числа: 1.0.3"
 [[ $NOTES != *$'\n'* && ${#NOTES} -le 120 ]] || fail "описание — одна строка до 120 знаков"
 test -f app/android/key.properties || fail "нет app/android/key.properties — без ключа подписи обновление не встанет"
+[[ $(git rev-parse --abbrev-ref HEAD) == main ]] || fail "выпуск — только из main"
+git diff --quiet && git diff --cached --quiet || fail "есть незакоммиченные правки — выпуск должен совпадать с исходниками"
 cut -f2 tools/released.tsv | grep -qx "$VER" && fail "версия $VER уже выпускалась"
 LAST=$(tail -n1 tools/released.tsv | cut -f1)
 BUILD=$((LAST + 1))
@@ -49,10 +51,12 @@ now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"
 latest = {"version": ver, "code": build, "notes": notes, "at": now,
           "android": {"file": os.path.basename(apk), "size": len(raw), "sha256": hashlib.sha256(raw).hexdigest()}}
 json.dump(latest, open("site/app/latest.json", "w"), ensure_ascii=False, indent=1)
-# для версий до 1.0.2 — у них только строка «Новая версия» со ссылкой на файл
+# для 1.0.1 — у неё только строка «Есть новая версия приложения» со ссылкой на файл.
+# Пустое описание: тогда она пишет свою строку, а не описание того, чего в ней нет.
+# Имя с версией — кэш сайта не отдаст старый файл. iPhone обновит app-ios.yml вместе со сборкой.
 v = json.load(open("site/app/version.json"))
-v["android"].update(version=ver, build=build, note=notes)
-v["ios"].update(version=ver, build=build, note=notes)
+v["android"].update(version=ver, build=build, note="",
+                    url=f"https://xfurya.github.io/Starty/app/starty-{ver}.apk")
 json.dump(v, open("site/app/version.json", "w"), ensure_ascii=False, indent=1)
 with open("tools/released.tsv", "a") as f:
     f.write(f"{build}\t{ver}\t{now[:10]}\t{latest['android']['sha256']}\t{notes}\n")
