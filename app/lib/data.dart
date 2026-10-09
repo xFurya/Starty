@@ -61,7 +61,8 @@ class Skater {
   final int? no;
   final int? warmup;
   final int? place; // место в сегменте, когда он прошёл
-  Skater(this.name, this.time, this.no, this.warmup, [this.place]);
+  final int? overall; // место в итоге вида — у события с итогом турнира
+  Skater(this.name, this.time, this.no, this.warmup, [this.place, this.overall]);
 
   /// В списке у пар — только фамилии.
   String get short => name.contains(' / ') ? name.split(' / ').map((p) => p.trim().split(' ').last).join(' / ') : name;
@@ -89,7 +90,7 @@ class Start {
       broadcast = List<String>.from(j['broadcast'] ?? const []),
       athletes = List<String>.from(j['athletes'] ?? const []),
       ours = [
-        for (final o in (j['ours'] as List? ?? const [])) Skater(o['name'], o['time'], o['no'], o['warmup'], o['place']),
+        for (final o in (j['ours'] as List? ?? const [])) Skater(o['name'], o['time'], o['no'], o['warmup'], o['place'], o['final']),
       ],
       podium = [for (final p in (j['podium'] as List? ?? const [])) Placing.fromJson(p)],
       total = [for (final p in (j['total'] as List? ?? const [])) Placing.fromJson(p)];
