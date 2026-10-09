@@ -1,6 +1,10 @@
-// Уведомления, поставленные в системный планировщик — срабатывают и при закрытом приложении:
-//  • отмеченный сегмент («Смотрю») — за 15 минут до начала;
-//  • отслеживаемый спортсмен — за 5 минут до выхода на лёд, когда время выхода известно.
+// Уведомления о стартах. По умолчанию — о каждом старте, за 15 минут до начала;
+// какие старты и за сколько — решают правила из настроек, отдельный старт можно
+// включить или выключить вручную. Ставятся в системный планировщик — срабатывают
+// и при закрытом приложении.
+import 'dart:async';
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/data/latest.dart' as tzdata;
@@ -8,30 +12,165 @@ import 'package:timezone/timezone.dart' as tz;
 
 import 'data.dart';
 
-const segmentLead = Duration(minutes: 15);
-const skaterLead = Duration(minutes: 5);
+/// Правила: о каких стартах напоминать и за сколько минут.
+class NotifyRules {
+  final bool on;
+  final int lead; // минут до начала
+  final Set<String> kinds; // women, men, pairs, dance
+  final Set<String> levels; // senior, junior
+  final Set<String> segs; // short — КП и РТ, free — ПП и ПТ
+  final bool russian, intl;
+  final bool night; // старты с 00:00 до 08:00 МСК
+  final bool skaters; // отдельно — выход каждого нашего, когда время известно
+
+  static const allKinds = ['women', 'men', 'pairs', 'dance'];
+  static const allLevels = ['senior', 'junior'];
+  static const allSegs = ['short', 'free'];
+  static const leads = [5, 10, 15, 30, 60];
+
+  const NotifyRules({
+    this.on = true,
+    this.lead = 15,
+    this.kinds = const {'women', 'men', 'pairs', 'dance'},
+    this.levels = const {'senior', 'junior'},
+    this.segs = const {'short', 'free'},
+    this.russian = true,
+    this.intl = true,
+    this.night = true,
+    this.skaters = false,
+  });
+
+  static String segOf(Start s) => s.seg == 'ПП' || s.seg == 'ПТ' ? 'free' : 'short';
+
+  /// Подходит ли старт под правила (без учёта общего выключателя).
+  bool matches(Start s) {
+    // незнакомые значения из данных не прячем: правило о них ничего не знает
+    if (allKinds.contains(s.kind) && !kinds.contains(s.kind)) return false;
+    if (allLevels.contains(s.level) && !levels.contains(s.level)) return false;
+    if (!segs.contains(segOf(s))) return false;
+    if (s.intl ? !intl : !russian) return false;
+    if (!night && msk(s.t0).hour < 8) return false;
+    return true;
+  }
+
+  /// Правила по умолчанию — ни одного ограничения.
+  bool get isDefault =>
+      kinds.length == allKinds.length &&
+      levels.length == allLevels.length &&
+      segs.length == allSegs.length &&
+      russian &&
+      intl &&
+      night;
+
+  NotifyRules copyWith({
+    bool? on,
+    int? lead,
+    Set<String>? kinds,
+    Set<String>? levels,
+    Set<String>? segs,
+    bool? russian,
+    bool? intl,
+    bool? night,
+    bool? skaters,
+  }) => NotifyRules(
+    on: on ?? this.on,
+    lead: lead ?? this.lead,
+    kinds: kinds ?? this.kinds,
+    levels: levels ?? this.levels,
+    segs: segs ?? this.segs,
+    russian: russian ?? this.russian,
+    intl: intl ?? this.intl,
+    night: night ?? this.night,
+    skaters: skaters ?? this.skaters,
+  );
+
+  String toJson() => jsonEncode({
+    'on': on,
+    'lead': lead,
+    'kinds': kinds.toList(),
+    'levels': levels.toList(),
+    'segs': segs.toList(),
+    'russian': russian,
+    'intl': intl,
+    'night': night,
+    'skaters': skaters,
+  });
+
+  static NotifyRules fromJson(String? s) {
+    const d = NotifyRules();
+    if (s == null || s.isEmpty) return d;
+    try {
+      final j = jsonDecode(s) as Map<String, dynamic>;
+      Set<String> set(String k, Set<String> def) => j[k] is List ? Set<String>.from(j[k]) : def;
+      final lead = j['lead'] is int && leads.contains(j['lead']) ? j['lead'] as int : d.lead;
+      return NotifyRules(
+        on: j['on'] is bool ? j['on'] : d.on,
+        lead: lead,
+        kinds: set('kinds', d.kinds),
+        levels: set('levels', d.levels),
+        segs: set('segs', d.segs),
+        russian: j['russian'] is bool ? j['russian'] : d.russian,
+        intl: j['intl'] is bool ? j['intl'] : d.intl,
+        night: j['night'] is bool ? j['night'] : d.night,
+        skaters: j['skaters'] is bool ? j['skaters'] : d.skaters,
+      );
+    } catch (_) {
+      return d;
+    }
+  }
+}
+
+/// Правила плюс ручные исключения по отдельным стартам.
+class NotifyPlan {
+  final NotifyRules rules;
+  final Set<String> forcedOn, forcedOff;
+  const NotifyPlan(this.rules, this.forcedOn, this.forcedOff);
+
+  /// Будет ли уведомление о начале старта (если время ещё не прошло).
+  bool wants(Start s) {
+    if (!rules.on) return false;
+    if (forcedOn.contains(s.id)) return true;
+    if (forcedOff.contains(s.id)) return false;
+    return rules.matches(s);
+  }
+
+  /// Момент уведомления о начале старта или null — уведомления не будет.
+  DateTime? at(Start s, DateTime now) {
+    if (!wants(s)) return null;
+    final t = s.t0.subtract(Duration(minutes: rules.lead));
+    return t.isAfter(now) ? t : null;
+  }
+}
 
 class Reminders {
   static final _n = FlutterLocalNotificationsPlugin();
   static bool _ready = false;
+  static final _done = Completer<void>();
+
+  /// Завершается, когда init() отработал — удачно или нет.
+  static Future<void> get settled => _done.future;
 
   static Future<void> init() async {
-    if (kIsWeb || _ready) return;
-    tzdata.initializeTimeZones();
-    await _n.initialize(
-      settings: const InitializationSettings(
-        android: AndroidInitializationSettings('@drawable/ic_notify'),
-        iOS: DarwinInitializationSettings(
-          requestAlertPermission: false,
-          requestBadgePermission: false,
-          requestSoundPermission: false,
+    try {
+      if (kIsWeb || _ready) return;
+      tzdata.initializeTimeZones();
+      await _n.initialize(
+        settings: const InitializationSettings(
+          android: AndroidInitializationSettings('@drawable/ic_notify'),
+          iOS: DarwinInitializationSettings(
+            requestAlertPermission: false,
+            requestBadgePermission: false,
+            requestSoundPermission: false,
+          ),
         ),
-      ),
-    );
-    _ready = true;
+      );
+      _ready = true;
+    } finally {
+      if (!_done.isCompleted) _done.complete();
+    }
   }
 
-  /// Разрешение спрашивается при первой отметке. Отказ — не ошибка: отметка остаётся.
+  /// Спросить разрешение у системы. Отказ — не ошибка: правила остаются.
   static Future<void> ask() async {
     if (!_ready) return;
     try {
@@ -42,14 +181,25 @@ class Reminders {
     } catch (_) {}
   }
 
+  /// Разрешены ли уведомления в системе; null — узнать нельзя (веб, сбой).
+  static Future<bool?> allowed() async {
+    if (!_ready) return null;
+    try {
+      final a = _n.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>();
+      if (a != null) return await a.areNotificationsEnabled();
+      final i = _n.resolvePlatformSpecificImplementation<IOSFlutterLocalNotificationsPlugin>();
+      if (i != null) return (await i.checkPermissions())?.isEnabled;
+    } catch (_) {}
+    return null;
+  }
+
   static int _id(String s) => s.hashCode & 0x7fffffff;
 
-  // два канала: в настройках Android их можно включать и выключать по отдельности
-  static const _segmentDetails = NotificationDetails(
+  static const _startDetails = NotificationDetails(
     android: AndroidNotificationDetails(
       'starts',
-      'Начало сегмента',
-      channelDescription: 'За 15 минут до начала отмеченного сегмента',
+      'Старты',
+      channelDescription: 'Начало старта',
       importance: Importance.high,
       priority: Priority.high,
     ),
@@ -59,68 +209,63 @@ class Reminders {
   static const _skaterDetails = NotificationDetails(
     android: AndroidNotificationDetails(
       'skaters',
-      'Выход спортсмена',
-      channelDescription: 'За 5 минут до выхода отслеживаемого спортсмена',
+      'Выход наших',
+      channelDescription: 'Выход нашего спортсмена на лёд',
       importance: Importance.high,
       priority: Priority.high,
     ),
     iOS: DarwinNotificationDetails(),
   );
 
-  /// Все будущие уведомления по отметкам: время, заголовок, текст.
-  static List<Planned> plan(Schedule data, Set<String> watched, Set<String> followed, DateTime now) {
+  /// Все будущие уведомления: время, заголовок, текст. Ближайшие 60 —
+  /// iOS держит не больше 64 запланированных.
+  static List<Planned> plan(Schedule data, NotifyPlan p, DateTime now) {
     final out = <Planned>[];
-    final follow = followed.map(norm).toSet();
+    final lead = Duration(minutes: p.rules.lead);
     for (final s in data.starts) {
-      if (watched.contains(s.id)) {
-        final at = s.t0.subtract(segmentLead);
-        if (at.isAfter(now)) {
-          out.add(Planned('seg:${s.id}', at, '${hm(s.t0)} · ${_cap(s.segment)}',
-              [s.tournament, if (s.broadcast.isNotEmpty) s.broadcast.join(' / ')].join(' · '), s.id));
-        }
+      if (!p.wants(s)) continue;
+      final at = s.t0.subtract(lead);
+      if (at.isAfter(now)) {
+        final ours = s.ours.where((o) => o.time != null).map((o) => '${o.time} ${o.short}').join(', ');
+        out.add(Planned(
+          's:${s.id}',
+          at,
+          '${hm(s.t0)} · ${s.segment}',
+          [s.tournament, if (ours.isNotEmpty) ours, if (s.broadcast.isNotEmpty) s.broadcast.join(' / ')].join(' · '),
+          s.id,
+        ));
       }
+      if (!p.rules.skaters) continue;
       for (final o in s.ours) {
-        if (!_followed(o.name, follow)) continue;
         final skate = s.skateAt(o);
         if (skate == null) continue;
-        final at = skate.subtract(skaterLead);
-        if (!at.isAfter(now)) continue;
-        out.add(Planned('sk:${s.id}:${o.name}', at, '${o.time} · ${o.name}',
-            [_cap(s.segment), s.tournament, if (s.broadcast.isNotEmpty) s.broadcast.join(' / ')].join(' · '), s.id));
+        final t = skate.subtract(lead);
+        if (!t.isAfter(now)) continue;
+        out.add(Planned('k:${s.id}:${o.name}', t, '${o.time} · ${o.name}', '${s.segment} · ${s.tournament}', s.id));
       }
     }
     out.sort((a, b) => a.at.compareTo(b.at));
-    // iOS держит не больше 64 запланированных уведомлений — берём ближайшие
     return out.take(60).toList();
   }
 
-  /// Спортсмен отслеживается сам или в составе пары.
-  static bool _followed(String name, Set<String> follow) {
-    if (follow.contains(norm(name))) return true;
-    if (name.contains(' / ')) return name.split(' / ').any((p) => follow.contains(norm(p.trim())));
-    return false;
-  }
-
-  static String _cap(String s) => s.isEmpty ? s : s[0].toUpperCase() + s.substring(1);
-
-  /// Пересобрать все уведомления по текущему расписанию и отметкам.
-  static Future<void> sync(Schedule? data, Set<String> watched, Set<String> followed) async {
+  /// Пересобрать все уведомления по расписанию и правилам.
+  static Future<void> sync(Schedule? data, NotifyPlan p) async {
     if (!_ready || data == null) return;
     try {
       await _n.cancelAll();
-      for (final p in plan(data, watched, followed, DateTime.now())) {
+      for (final x in plan(data, p, DateTime.now())) {
         await _n.zonedSchedule(
-          id: _id(p.key),
-          scheduledDate: tz.TZDateTime.from(p.at, tz.UTC),
-          title: p.title,
-          body: p.body,
-          notificationDetails: p.key.startsWith('sk:') ? _skaterDetails : _segmentDetails,
+          id: _id(x.key),
+          scheduledDate: tz.TZDateTime.from(x.at, tz.UTC),
+          title: x.title,
+          body: x.body,
+          notificationDetails: x.key.startsWith('k:') ? _skaterDetails : _startDetails,
           androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
-          payload: p.startId,
+          payload: x.startId,
         );
       }
     } catch (_) {
-      // без уведомлений — молча: отметки всё равно работают
+      // без уведомлений — молча: расписание всё равно работает
     }
   }
 }

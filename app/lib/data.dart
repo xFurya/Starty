@@ -210,12 +210,27 @@ class Prefs {
   static late SharedPreferences _p;
   static Future<void> init() async => _p = await SharedPreferences.getInstance();
 
-  static Set<String> get watched => (_p.getStringList('watched') ?? const []).toSet();
-  static Future<void> setWatched(Set<String> v) => _p.setStringList('watched', v.toList());
+  // Уведомления: правила (строка JSON, разбирает reminders.dart) и ручные исключения.
+  static String? get rulesJson => _p.getString('n.rules');
+  static Future<void> setRulesJson(String v) => _p.setString('n.rules', v);
+  static Set<String> get forcedOn => (_p.getStringList('n.on') ?? const []).toSet();
+  static Set<String> get forcedOff => (_p.getStringList('n.off') ?? const []).toSet();
+  static Future<void> setForced(Set<String> on, Set<String> off) async {
+    await _p.setStringList('n.on', on.toList());
+    await _p.setStringList('n.off', off.toList());
+  }
 
-  /// Отслеживаемые спортсмены: уведомление перед каждым выходом.
-  static Set<String> get followed => (_p.getStringList('followed') ?? const []).toSet();
-  static Future<void> setFollowed(Set<String> v) => _p.setStringList('followed', v.toList());
+  /// Разрешение у системы уже спрашивали.
+  static bool get asked => _p.getBool('n.asked') ?? false;
+  static Future<void> setAsked() => _p.setBool('n.asked', true);
+
+  // Лента и оформление.
+  static bool get showDone => _p.getBool('f.done') ?? true;
+  static Future<void> setShowDone(bool v) => _p.setBool('f.done', v);
+
+  /// system, light, dark
+  static String get theme => _p.getString('theme') ?? 'system';
+  static Future<void> setTheme(String v) => _p.setString('theme', v);
 
   static Set<String> get kinds => (_p.getStringList('f.kinds') ?? const []).toSet();
   static Set<String> get tids => (_p.getStringList('f.tids') ?? const []).toSet();
