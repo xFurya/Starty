@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'background.dart';
 import 'data.dart';
 import 'reminders.dart';
 import 'update.dart';
@@ -17,6 +18,7 @@ Future<void> main() async {
   try {
     await Reminders.init();
   } catch (_) {}
+  await scheduleBackground();
 }
 
 class Palette {
@@ -92,6 +94,7 @@ class AppState extends ChangeNotifier {
   bool loading = true;
   bool offline = false;
   Set<String> watched = Prefs.watched;
+  Set<String> followed = Prefs.followed;
   Filters filters = Filters(Prefs.kinds, Prefs.tids, Prefs.athletes);
 
   Future<void> load() async {
@@ -109,7 +112,7 @@ class AppState extends ChangeNotifier {
     }
     loading = false;
     notifyListeners();
-    Reminders.sync(data, watched);
+    Reminders.sync(data, watched, followed);
   }
 
   Future<void> toggleWatch(String id) async {
@@ -119,7 +122,20 @@ class AppState extends ChangeNotifier {
     notifyListeners();
     await Prefs.setWatched(watched);
     if (on) await Reminders.ask();
-    await Reminders.sync(data, watched);
+    await Reminders.sync(data, watched, followed);
+  }
+
+  bool follows(String name) => followed.contains(name);
+
+  /// Уведомление о выходе спортсмена: за 5 минут, когда время выхода известно.
+  Future<void> toggleFollow(String name) async {
+    final on = !followed.contains(name);
+    followed = {...followed};
+    on ? followed.add(name) : followed.remove(name);
+    notifyListeners();
+    await Prefs.setFollowed(followed);
+    if (on) await Reminders.ask();
+    await Reminders.sync(data, watched, followed);
   }
 
   Future<void> setFilters(Filters f) async {

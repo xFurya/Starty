@@ -1,11 +1,15 @@
-// Напоминание за 15 минут до старта, отмеченного «Смотрю».
-// Ставится в системный планировщик — срабатывает и при закрытом приложении.
+// Уведомления, поставленные в системный планировщик — срабатывают и при закрытом приложении:
+//  • отмеченный сегмент («Смотрю») — за 15 минут до начала;
+//  • отслеживаемый спортсмен — за 5 минут до выхода на лёд, когда время выхода известно.
 import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/data/latest.dart' as tzdata;
 import 'package:timezone/timezone.dart' as tz;
 
 import 'data.dart';
+
+const segmentLead = Duration(minutes: 15);
+const skaterLead = Duration(minutes: 5);
 
 class Reminders {
   static final _n = FlutterLocalNotificationsPlugin();
@@ -27,7 +31,7 @@ class Reminders {
     _ready = true;
   }
 
-  /// Спросить разрешение при первой отметке. Отказ — не ошибка: отметка остаётся.
+  /// Разрешение спрашивается при первой отметке. Отказ — не ошибка: отметка остаётся.
   static Future<void> ask() async {
     if (!_ready) return;
     try {
@@ -40,39 +44,78 @@ class Reminders {
 
   static int _id(String s) => s.hashCode & 0x7fffffff;
 
-  /// Пересобрать все напоминания по отмеченным стартам.
-  static Future<void> sync(Schedule? data, Set<String> watched) async {
+  static const _details = NotificationDetails(
+    android: AndroidNotificationDetails(
+      'starts',
+      'Старты',
+      channelDescription: 'Начало сегмента и выход спортсмена',
+      importance: Importance.high,
+      priority: Priority.high,
+    ),
+    iOS: DarwinNotificationDetails(),
+  );
+
+  /// Все будущие уведомления по отметкам: время, заголовок, текст.
+  static List<Planned> plan(Schedule data, Set<String> watched, Set<String> followed, DateTime now) {
+    final out = <Planned>[];
+    final follow = followed.map(norm).toSet();
+    for (final s in data.starts) {
+      if (watched.contains(s.id)) {
+        final at = s.t0.subtract(segmentLead);
+        if (at.isAfter(now)) {
+          out.add(Planned('seg:${s.id}', at, '${hm(s.t0)} · ${_cap(s.segment)}',
+              [s.tournament, if (s.broadcast.isNotEmpty) s.broadcast.join(' / ')].join(' · '), s.id));
+        }
+      }
+      for (final o in s.ours) {
+        if (!_followed(o.name, follow)) continue;
+        final skate = s.skateAt(o);
+        if (skate == null) continue;
+        final at = skate.subtract(skaterLead);
+        if (!at.isAfter(now)) continue;
+        out.add(Planned('sk:${s.id}:${o.name}', at, '${o.time} · ${o.name}',
+            [_cap(s.segment), s.tournament, if (s.broadcast.isNotEmpty) s.broadcast.join(' / ')].join(' · '), s.id));
+      }
+    }
+    out.sort((a, b) => a.at.compareTo(b.at));
+    // iOS держит не больше 64 запланированных уведомлений — берём ближайшие
+    return out.take(60).toList();
+  }
+
+  /// Спортсмен отслеживается сам или в составе пары.
+  static bool _followed(String name, Set<String> follow) {
+    if (follow.contains(norm(name))) return true;
+    if (name.contains(' / ')) return name.split(' / ').any((p) => follow.contains(norm(p.trim())));
+    return false;
+  }
+
+  static String _cap(String s) => s.isEmpty ? s : s[0].toUpperCase() + s.substring(1);
+
+  /// Пересобрать все уведомления по текущему расписанию и отметкам.
+  static Future<void> sync(Schedule? data, Set<String> watched, Set<String> followed) async {
     if (!_ready || data == null) return;
     try {
       await _n.cancelAll();
-      final t = DateTime.now();
-      for (final id in watched) {
-        final s = data.byId(id);
-        if (s == null) continue;
-        final at = s.t0.subtract(const Duration(minutes: 15));
-        if (!at.isAfter(t)) continue;
-        final ours = s.ours.where((o) => o.time != null).map((o) => '${o.time} ${o.short}').join(', ');
+      for (final p in plan(data, watched, followed, DateTime.now())) {
         await _n.zonedSchedule(
-          id: _id(id),
-          scheduledDate: tz.TZDateTime.from(at, tz.UTC),
-          title: '${hm(s.t0)} · ${s.segment}',
-          body: [s.tournament, if (ours.isNotEmpty) ours, if (s.broadcast.isNotEmpty) s.broadcast.join(' / ')].join(' · '),
-          notificationDetails: const NotificationDetails(
-            android: AndroidNotificationDetails(
-              'starts',
-              'Старты',
-              channelDescription: 'Напоминания за 15 минут до старта',
-              importance: Importance.high,
-              priority: Priority.high,
-            ),
-            iOS: DarwinNotificationDetails(),
-          ),
+          id: _id(p.key),
+          scheduledDate: tz.TZDateTime.from(p.at, tz.UTC),
+          title: p.title,
+          body: p.body,
+          notificationDetails: _details,
           androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
-          payload: id,
+          payload: p.startId,
         );
       }
     } catch (_) {
-      // без уведомлений — молча: отметка «Смотрю» всё равно работает
+      // без уведомлений — молча: отметки всё равно работают
     }
   }
+}
+
+class Planned {
+  final String key;
+  final DateTime at;
+  final String title, body, startId;
+  Planned(this.key, this.at, this.title, this.body, this.startId);
 }
