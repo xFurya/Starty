@@ -2,7 +2,7 @@
 import datetime as dt
 import html
 import re
-from urllib.parse import urljoin
+from urllib.parse import quote, urljoin
 
 from . import net
 
@@ -238,12 +238,23 @@ def schedule_pdf(url, season_hint):
     return out
 
 
+def team():
+    """Сборная: [(ФАМИЛИЯ, Имя, фото или None)]. На странице у каждого две ссылки
+    на /sbornaya/teams/<slug>: в первой фото, во второй <strong>ФАМИЛИЯ<br>Имя<br>Отчество."""
+    page = net.fetch(BASE + "/sbornaya")
+    photos = {}
+    for m in re.finditer(r'(?s)<a href="/sbornaya/teams/([^"]+)"[^>]*>\s*<img[^>]*?\ssrc="([^"]+)"', page):
+        photos.setdefault(m.group(1), urljoin(BASE, quote(html.unescape(m.group(2)), safe="/:%?=&.-_~")))
+    out = []
+    seen = set()
+    for m in re.finditer(r'(?s)<a href="/sbornaya/teams/([^"]+)"[^>]*>\s*<strong[^>]*>(.*?)</strong>', page):
+        parts = [p for p in _text(m.group(2)).split("\n") if p]
+        if len(parts) >= 2 and m.group(1) not in seen:
+            seen.add(m.group(1))
+            out.append((parts[0], parts[1], photos.get(m.group(1))))
+    return out
+
+
 def team_names():
     """Сборная: [(ФАМИЛИЯ, Имя)]."""
-    page = net.fetch(BASE + "/sbornaya")
-    out = []
-    for m in re.finditer(r'(?s)<a href="/sbornaya/teams/[^"]+"[^>]*>\s*<strong[^>]*>(.*?)</strong>', page):
-        parts = [p for p in _text(m.group(1)).split("\n") if p]
-        if len(parts) >= 2:
-            out.append((parts[0], parts[1]))
-    return out
+    return [(sur, giv) for sur, giv, _ in team()]

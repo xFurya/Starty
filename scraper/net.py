@@ -89,6 +89,27 @@ def _decode(raw):
     return raw.decode("utf-8", errors="replace")
 
 
+def is_image(url, timeout=20):
+    """Отдаёт ли адрес картинку. True/False; None — проверить не удалось (сеть)."""
+    for method, extra in (("HEAD", {}), ("GET", {"Range": "bytes=0-1023"})):
+        _throttle(url)
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA, **extra}, method=method)
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return (r.headers.get("Content-Type") or "").lower().startswith("image/")
+        except urllib.error.HTTPError as e:
+            if e.code in (404, 410):
+                return False
+            if method == "HEAD" and e.code in (400, 403, 405, 501):
+                continue  # не любят HEAD — спросим первый килобайт
+            return None if e.code >= 500 or e.code == 429 else False
+        except Exception:
+            if method == "HEAD":
+                continue
+            return None
+    return None
+
+
 def fetch_json(url, data=None, headers=None, timeout=30):
     return json.loads(fetch(url, data=data, headers=headers, timeout=timeout))
 

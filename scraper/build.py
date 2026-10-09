@@ -9,6 +9,12 @@
 
 Результат: site/data/events.json, site/calendar.ics, data/names.json.
 Если источник не ответил, его события берутся из прошлого успешного запуска.
+
+Когда сегмент прошёл, у события есть podium — первая тройка протокола
+[{place, name, nation, points}] (nation у российских стартов — регион: МОС, СПБ…),
+у наших — place. У последнего сегмента вида после его окончания — total, первая
+тройка турнира. photos — {«Имя Фамилия»: адрес фото} для имён из ours, podium,
+total и watchlist (пары — по людям): сборная ФФККР, иначе портрет ISU.
 """
 import datetime as dt
 import json
@@ -193,7 +199,7 @@ def estimate_end(start, seg, kind, n, last_start=None):
 # ---------------------------------------------------------------- событие
 
 def make_event(*, tid, tournament, kind, level, seg, mixed, start, end, venue, intl,
-               broadcast, ours, athletes, src):
+               broadcast, ours, athletes, src, podium=None, total=None):
     label = kind_label(kind, level, mixed)
     start = start.astimezone(MSK)
     end = end.astimezone(MSK)
@@ -206,12 +212,22 @@ def make_event(*, tid, tournament, kind, level, seg, mixed, start, end, venue, i
         "venue": venue, "intl": intl, "broadcast": broadcast,
         "ours": ours, "athletes": sorted(set(athletes)), "src": src,
     }
+    if podium:
+        ev["podium"] = podium
+    if total:
+        ev["total"] = total
     ev["desc"] = describe(ev)
     return ev
 
 
 def describe(ev):
     lines = []
+    for key, head in (("podium", "Итог:"), ("total", "Итог турнира:")):
+        if ev.get(key):
+            lines.append(head)
+            for r in ev[key]:
+                lines.append(f"{r['place']}. {r['name']} — {r['points']}")
+            lines.append("")
     if ev["ours"]:
         lines.append("Наши:")
         for o in ev["ours"]:
@@ -227,6 +243,13 @@ def describe(ev):
     if ev["broadcast"]:
         lines.append("Трансляция: " + " / ".join(ev["broadcast"]))
     return "\n".join(lines)
+
+
+def top3(rows, names):
+    """Первые три места протокола; имена — как везде в приложении."""
+    return [{"place": r["place"], "name": names.to_ru(r["name"]), "nation": r["nation"],
+             "points": r["points"]}
+            for r in sorted(rows, key=lambda r: r["place"])[:3]]
 
 
 def sort_ours(ours):
@@ -278,6 +301,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
     levels = {lv for _, _, lv in cats}
     mixed = len(levels) > 1
     events = []
+    now = dt.datetime.now(dt.timezone.utc)
     for c, kind, level in cats:
         try:
             entries = st.parse_entries(c["entries_url"])
@@ -287,17 +311,30 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
             if nm.is_cyr(p["name"]):
                 for one in p["name"].split(" / "):
                     names.add(one)
-        for s in c["segments"]:
-            seg = seg_code(s["name"])
+        codes = [seg_code(s["name"]) for s in c["segments"]]
+        last_seg = max((SEG_ORDER[x] for x in codes if x), default=None)
+        for s, seg in zip(c["segments"], codes):
             if not seg:
                 continue
             start = s.get("start") or (extra_starts or {}).get((kind, level, seg))
             if not start:
                 continue
             try:
-                order = st.parse_starting_order(s["url"])
+                seg_page = net.fetch(s["url"])
             except net.FetchError:
-                order = []
+                seg_page = None
+            order = st.parse_starting_order(s["url"], seg_page) if seg_page else []
+            # Сегмент прошёл, только когда страница — протокол, время старта позади и,
+            # если табло вообще выкладывает судейские оценки, они у сегмента уже есть
+            # (до конца проката протокол может быть неполным).
+            try:
+                results = st.parse_segment_results(seg_page) if seg_page else None
+            except Exception as e:  # итог необязателен — расписание важнее
+                log("  ! протокол сегмента:", s["url"], e)
+                results = None
+            done = bool(results) and start.astimezone(dt.timezone.utc) <= now and \
+                (s.get("final") or not idx.get("final_marks"))
+            place = {r["name"]: r["place"] for r in results} if done else {}
             people = order if order else [dict(p, no=None, warmup=None) for p in entries]
             for p in people:
                 if nm.is_cyr(p["name"]):
@@ -322,16 +359,28 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                     # после проката табло показывает итог, но стартовый номер в нём остаётся
                     o["no"] = no
                     o["warmup"] = p.get("warmup") or warm.get(no)
+                if place.get(p["name"]):
+                    o["place"] = place[p["name"]]
                 ours.append(o)
             if intl and not ours:
                 continue
+            podium = top3(results, names) if done else None
+            total = None
+            if done and SEG_ORDER[seg] == last_seg and c.get("results_url"):
+                try:
+                    cr = st.parse_category_results(c["results_url"])
+                    if cr["complete"]:
+                        total = top3(cr["rows"], names)
+                except Exception as e:
+                    log("  ! итог вида:", c["results_url"], e)
             last = max(msk_times.values()) if msk_times else None
             end = estimate_end(start, seg, kind, len(people), last)
             athletes = [names.to_ru(p["name"]) for p in people] if not intl else [o["name"] for o in ours]
             events.append(make_event(
                 tid=tid, tournament=tournament, kind=kind, level=level, seg=seg, mixed=mixed,
                 start=start, end=end, venue=venue, intl=intl, broadcast=broadcast,
-                ours=sort_ours(ours), athletes=athletes, src=idx["url"]))
+                ours=sort_ours(ours), athletes=athletes, src=idx["url"],
+                podium=podium, total=total))
     return events
 
 
@@ -343,11 +392,19 @@ def watch_rule(watch_keys):
     return rule
 
 
-def do_fsr(names, report, failed, upcoming):
+def do_fsr(names, report, failed, upcoming, photos):
     season_start = dt.date.fromisoformat(CFG["season_start"])
     cal = fsr.calendar()
-    for sur, giv in fsr.team_names():
+    try:
+        team = fsr.team()
+        photos["team_ok"] = True
+    except net.FetchError as e:
+        log("  ! сборная:", e)
+        team = []
+    for sur, giv, img in team:
         names.add_fsr(sur, giv)
+        if img:
+            photos["raw"].append((f"{giv} {sur}", img, 0))
     page_urls = {c["page"] for c in cal if c["page"]}
     try:
         page_urls |= set(fsr.recent_pages())
@@ -477,7 +534,7 @@ def results_index(url):
     return u
 
 
-def do_isu(names, report, failed, upcoming):
+def do_isu(names, report, failed, upcoming, photos):
     events = []
     now = dt.datetime.now(dt.timezone.utc)
     for e in isu.events():
@@ -518,8 +575,14 @@ def do_isu(names, report, failed, upcoming):
                 got = from_swisstiming(idx, tid=tid, tournament=name, venue=venue, intl=True,
                                        broadcast=bcast, names=names, ours_rule=ours_rule_intl,
                                        extra_starts=extra)
+                if got:
+                    try:
+                        for full, url in isu.portraits(e["slug"], e["event_id"]).items():
+                            photos["raw"].append((full, url, 1))
+                    except Exception as ex:  # фото не повод терять турнир
+                        log("  ! портреты ISU:", ex)
             else:
-                got, ours_all = isu_api_events(e, tid, name, venue, bcast, names, sched)
+                got, ours_all = isu_api_events(e, tid, name, venue, bcast, names, sched, photos)
                 if not got and ours_all and to > now:
                     upcoming.append({
                         "tid": tid, "name": name, "intl": True, "venue": venue,
@@ -537,11 +600,12 @@ def do_isu(names, report, failed, upcoming):
     return events
 
 
-def isu_api_events(e, tid, name, venue, bcast, names, sched):
+def isu_api_events(e, tid, name, venue, bcast, names, sched, photos):
     cats = isu.categories(e["slug"], e["event_id"])
     levels = {cat_en(c["name"])[1] for c in cats}
     out = []
     ours_all = []
+    now = dt.datetime.now(dt.timezone.utc)
     for c in cats:
         kind, level = cat_en(c["name"])
         if not kind:
@@ -550,19 +614,28 @@ def isu_api_events(e, tid, name, venue, bcast, names, sched):
         ours = [{"name": names.to_ru(x["name"])} for x in ents if x["code"] in CFG["ours_codes"]]
         if not ours:
             continue
+        for x in ents:
+            for full, url in x.get("photos", {}).items():
+                photos["raw"].append((full, url, 1))
         ours_all += [o["name"] for o in ours]
-        for when, cat, segname in sched:
-            if cat_en(cat) != (kind, level):
-                continue
-            seg = seg_code(segname)
-            if not seg:
-                continue
+        segs = [(when, seg_code(segname)) for when, cat, segname in sched
+                if cat_en(cat) == (kind, level) and seg_code(segname)]
+        last_seg = max((SEG_ORDER[sc] for _, sc in segs), default=None)
+        # итог вида из заявки ISU (final_rank/final_points) — только когда последний
+        # сегмент позади и места проставлены с первого
+        ranked = sorted((x for x in ents if x.get("rank") and x.get("points")), key=lambda x: x["rank"])
+        for when, seg in segs:
             end = estimate_end(when, seg, kind, len(ents))
+            total = None
+            if SEG_ORDER[seg] == last_seg and end < now and ranked and ranked[0]["rank"] == 1:
+                total = [{"place": x["rank"], "name": names.to_ru(x["name"]), "nation": x["code"],
+                          "points": x["points"]} for x in ranked[:3]]
             out.append(make_event(
                 tid=tid, tournament=name, kind=kind, level=level, seg=seg, mixed=len(levels) > 1,
                 start=when, end=end, venue=venue, intl=True, broadcast=bcast,
                 ours=sorted(ours, key=lambda o: o["name"]), athletes=[o["name"] for o in ours],
-                src=f"https://isu-skating.com/en/figure-skating/events/eventdetail/{e['slug']}/"))
+                src=f"https://isu-skating.com/en/figure-skating/events/eventdetail/{e['slug']}/",
+                total=total))
     return out, ours_all
 
 
@@ -598,6 +671,51 @@ def do_goldenskate(names, report, failed, isu_ok):
 
 # ---------------------------------------------------------------- main
 
+def collect_photos(events, upcoming, names, photos, prev_photos):
+    """{«Имя Фамилия» как в ours/podium/total/watchlist: адрес фото}. Пары — по людям.
+    Источники: сборная ФФККР, потом портреты ISU. Адрес берётся, только если он
+    действительно отдаёт картинку."""
+    want = []
+
+    def add(n):
+        for one in n.split(" / "):
+            one = one.strip()
+            if one and one not in want:
+                want.append(one)
+
+    for e in events:
+        for o in e["ours"]:
+            add(o["name"])
+        for r in (e.get("podium") or []) + (e.get("total") or []):
+            add(r["name"])
+    for w in CFG["watchlist"]:
+        add(w)
+    for u in upcoming:
+        for n in u.get("ours") or []:
+            add(n)
+
+    src = {}
+    for raw, url, _ in sorted(photos["raw"], key=lambda x: x[2]):
+        src.setdefault(nm.key(names.to_ru(raw)), url)
+    checked = {}
+    out = {}
+    for n in want:
+        url = src.get(nm.key(names.to_ru(n)))
+        if not url:
+            # страница сборной не открылась — прошлое фото того же человека остаётся
+            if not photos["team_ok"] and prev_photos.get(n):
+                out[n] = prev_photos[n]
+            continue
+        if url not in checked:
+            checked[url] = net.is_image(url)
+        ok = checked[url]
+        if ok or (ok is None and prev_photos.get(n) == url):
+            out[n] = url
+    bad = [u for u, ok in checked.items() if not ok]
+    log(f"  фото: {len(out)} из {len(want)}" + (f"; не открылись: {len(bad)}" if bad else ""))
+    return out
+
+
 def load_prev():
     try:
         with open(OUT_JSON, encoding="utf-8") as f:
@@ -614,8 +732,9 @@ def main():
     failed = set()
     upcoming = []
     events = []
-    for label, fn in (("ФФККР", lambda: do_fsr(names, report, failed, upcoming)),
-                      ("ISU", lambda: do_isu(names, report, failed, upcoming))):
+    photos = {"raw": [], "team_ok": False}  # (имя как в источнике, адрес, приоритет)
+    for label, fn in (("ФФККР", lambda: do_fsr(names, report, failed, upcoming, photos)),
+                      ("ISU", lambda: do_isu(names, report, failed, upcoming, photos))):
         try:
             got = fn()
             events += got
@@ -636,7 +755,8 @@ def main():
         failed.add("gs:*")
 
     # После старта табло показывает результаты вместо стартового листа — время выхода
-    # и номера наших берём из прошлого сбора, пока он их помнит.
+    # и номера наших берём из прошлого сбора, пока он их помнит. Так же итоги
+    # прошедших сегментов: если протокол сейчас не открылся, остаётся прошлый.
     prev_by_id = {e["id"]: e for e in prev.get("events", [])}
     for e in events:
         old = prev_by_id.get(e["id"])
@@ -648,10 +768,14 @@ def main():
             p = was.get(o["name"])
             if not p or (o.get("no") and p.get("no") and o["no"] != p["no"]):
                 continue
-            for k in ("time", "no", "warmup"):
+            for k in ("time", "no", "warmup", "place"):
                 if p.get(k) and not o.get(k):
                     o[k] = p[k]
                     changed = True
+        for k in ("podium", "total"):
+            if old.get(k) and not e.get(k):
+                e[k] = old[k]
+                changed = True
         if changed:
             e["ours"] = sort_ours(e["ours"])
             e["desc"] = describe(e)
@@ -701,6 +825,7 @@ def main():
         "events": events,
         "upcoming": upcoming,
         "watchlist": CFG["watchlist"],
+        "photos": collect_photos(events, upcoming, names, photos, prev.get("photos") or {}),
     }
     # Если сбор вернул заметно меньше будущих стартов, чем было, — это поломка
     # источника, а не отмена турниров. Тогда оставляем прошлые данные.
