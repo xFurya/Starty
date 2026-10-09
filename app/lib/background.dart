@@ -1,6 +1,6 @@
 // Фоновое обновление (Android): раз в несколько часов подтянуть расписание и
-// переставить уведомления — время выхода спортсменов появляется после жеребьёвки,
-// когда приложение может быть закрыто.
+// переставить уведомления — новые старты, сдвиги времени и время выхода наших
+// появляются, когда приложение может быть закрыто.
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:workmanager/workmanager.dart';
@@ -16,7 +16,7 @@ void backgroundDispatcher() {
       await Prefs.init();
       await Reminders.init();
       final data = await Repo.fetch() ?? await Repo.cached();
-      await Reminders.sync(data, Prefs.watched, Prefs.followed);
+      await Reminders.sync(data, NotifyPlan(NotifyRules.fromJson(Prefs.rulesJson), Prefs.forcedOn, Prefs.forcedOff));
     } catch (_) {}
     return true;
   });

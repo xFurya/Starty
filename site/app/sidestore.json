@@ -1,14 +1,14 @@
 {
- "name": "Старты",
+ "name": "Фигурное катание",
  "identifier": "ru.furya.starty.source",
  "sourceURL": "https://xfurya.github.io/Starty/app/sidestore.json",
  "apps": [
   {
-   "name": "Старты",
+   "name": "Фигурное катание",
    "bundleIdentifier": "ru.furya.starty",
    "developerName": "Furya",
-   "subtitle": "Календарь стартов по фигурному катанию",
-   "localizedDescription": "Российские старты и международные с нашими. Время московское, напоминание за 15 минут.",
+   "subtitle": "Календарь стартов",
+   "localizedDescription": "Российские старты и международные с нашими. Время московское. Уведомления о стартах настраиваются.",
    "iconURL": "https://xfurya.github.io/Starty/app/icon.png",
    "tintColor": "1C5C9C",
    "versions": [
