@@ -140,11 +140,15 @@ class Schedule {
   final List<String> watchlist;
   final bool fromCache;
 
-  /// Фотографии спортсменов: «Имя Фамилия» → адрес картинки.
+  /// Фотографии спортсменов: «Имя Фамилия» → миниатюра на сайте (photos/…) или адрес.
   final Map<String, String> photos;
   Schedule(this.starts, this.generated, this.complete, this.watchlist, this.fromCache, [this.photos = const {}]);
 
-  String? photoOf(String name) => photos[name];
+  String? photoOf(String name) {
+    final p = photos[name];
+    if (p == null || p.isEmpty) return null;
+    return p.startsWith('http') ? p : Uri.parse(dataUrl).resolve('../$p').toString();
+  }
 
   static Schedule parse(String body, {bool fromCache = false}) {
     final j = jsonDecode(body) as Map<String, dynamic>;

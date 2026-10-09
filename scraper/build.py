@@ -13,8 +13,9 @@
 Когда сегмент прошёл, у события есть podium — первая тройка протокола
 [{place, name, nation, points}] (nation у российских стартов — регион: МОС, СПБ…),
 у наших — place. У последнего сегмента вида после его окончания — total, первая
-тройка турнира. photos — {«Имя Фамилия»: адрес фото} для имён из ours, podium,
-total и watchlist (пары — по людям): сборная ФФККР, иначе портрет ISU.
+тройка турнира. photos — {«Имя Фамилия»: фото} для имён из ours, podium,
+total и watchlist (пары — по людям): сборная ФФККР, иначе портрет ISU. Фото —
+миниатюра photos/xxx.jpg относительно сайта, без Pillow — адрес оригинала.
 """
 import datetime as dt
 import json
@@ -25,6 +26,7 @@ import sys
 import traceback
 
 from . import fsr, goldenskate, ics, isu, net
+from . import photos as ph
 from . import names as nm
 from . import swisstiming as st
 
@@ -702,17 +704,26 @@ def collect_photos(events, upcoming, names, photos, prev_photos):
     for n in want:
         url = src.get(nm.key(names.to_ru(n)))
         if not url:
-            # страница сборной не открылась — прошлое фото того же человека остаётся
-            if not photos["team_ok"] and prev_photos.get(n):
-                out[n] = prev_photos[n]
+            # источник фото в этот раз не ответил — прошлое фото того же человека остаётся
+            old = prev_photos.get(n)
+            if old and (old.startswith("http") or os.path.exists(os.path.join(SITE, old))):
+                out[n] = old
+            continue
+        if ph.have(SITE, url):
+            out[n] = ph.rel_path(url)
             continue
         if url not in checked:
             checked[url] = net.is_image(url)
         ok = checked[url]
-        if ok or (ok is None and prev_photos.get(n) == url):
+        if ok:
+            out[n] = ph.make(SITE, url) or url
+        elif ok is None and prev_photos.get(n) == url:
             out[n] = url
     bad = [u for u, ok in checked.items() if not ok]
-    log(f"  фото: {len(out)} из {len(want)}" + (f"; не открылись: {len(bad)}" if bad else ""))
+    local = sum(1 for v in out.values() if not v.startswith("http"))
+    gone = ph.prune(SITE, set(out.values()))
+    log(f"  фото: {len(out)} из {len(want)}, миниатюр {local}" + (f"; не открылись: {len(bad)}" if bad else "")
+        + (f"; убрано старых: {gone}" if gone else ""))
     return out
 
 
