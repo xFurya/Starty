@@ -21,6 +21,8 @@ class UpdateState {
   final String? readyVersion, readyNotes;
   final String wait; // leave — после сворачивания, confirm — ждёт подтверждения
   final bool stuck;
+  final bool canInstall; // разрешена ли приложению установка приложений
+  final String installError;
   final String? updatedVersion, updatedNotes;
 
   const UpdateState({
@@ -34,6 +36,8 @@ class UpdateState {
     this.readyNotes,
     this.wait = '',
     this.stuck = false,
+    this.canInstall = true,
+    this.installError = '',
     this.updatedVersion,
     this.updatedNotes,
   });
@@ -52,6 +56,8 @@ class UpdateState {
       readyNotes: ready?['notes'] as String?,
       wait: (j['wait'] as String?) ?? '',
       stuck: j['stuck'] == true,
+      canInstall: j['canInstall'] != false,
+      installError: (j['installError'] as String?) ?? '',
       updatedVersion: updated?['version'] as String?,
       updatedNotes: updated?['notes'] as String?,
     );
@@ -59,14 +65,19 @@ class UpdateState {
 
   bool get ready => readyVersion != null && readyVersion!.isNotEmpty;
 
+  /// Скачанное не встанет само: нужен человек (подтверждение, разрешение, сбой).
+  bool get needsHand => ready && (wait == 'confirm' || !canInstall || installError.isNotEmpty || stuck);
+
   /// Строка состояния для настроек — то, что есть на самом деле.
   String line(DateTime now) {
     if (!enabled) return 'Недоступно';
     if (downloading != null && !ready) return 'Скачивается версия $downloading…';
     if (ready) {
       final v = 'Версия $readyVersion';
-      if (stuck) return '$v не установилась автоматически';
       if (wait == 'confirm') return '$v ждёт подтверждения установки';
+      if (!canInstall) return '$v скачана — нужно разрешение на установку';
+      if (installError.isNotEmpty) return '$v не установилась: $installError';
+      if (stuck) return '$v не установилась автоматически';
       return '$v скачана — установится после сворачивания';
     }
     if (checking) return 'Проверка…';
@@ -153,7 +164,7 @@ class Updates extends ChangeNotifier {
     final s = state;
     if (s == null || !s.ready || readyAnnounced == s.readyVersion) return null;
     readyAnnounced = s.readyVersion;
-    if (s.wait == 'confirm' || s.stuck) return 'Обновление ${s.readyVersion} ждёт установки';
+    if (s.needsHand) return 'Обновление ${s.readyVersion} ждёт установки';
     return 'Вышла версия ${s.readyVersion}. Установится после сворачивания';
   }
 
@@ -185,6 +196,14 @@ class Updates extends ChangeNotifier {
     if (!native) return;
     try {
       await _ch.invokeMethod('openInstaller');
+    } catch (_) {}
+  }
+
+  /// Системный экран «Установка неизвестных приложений» для этого приложения.
+  Future<void> allowInstall() async {
+    if (!native) return;
+    try {
+      await _ch.invokeMethod('allowInstall');
     } catch (_) {}
   }
 }

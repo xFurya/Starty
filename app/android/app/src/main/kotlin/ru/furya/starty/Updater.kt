@@ -16,7 +16,10 @@ import android.content.Intent
 import android.content.pm.PackageInfo
 import android.content.pm.PackageInstaller
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
+import android.os.PersistableBundle
+import android.provider.Settings
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.FileProvider
@@ -30,18 +33,20 @@ import kotlin.concurrent.thread
 
 /**
  * Самообновление — как у Дневника, только канал не облако, а сайт приложения:
- * <сайт>/app/latest.json и рядом сборка.
+ * <сайт>/app/latest.json и рядом сборка под именем с версией.
  *
  * Раз в час (и при каждом открытии) приложение смотрит описание; новую сборку
  * скачивает, сверяет размер и хеш, проверяет, что это та же программа, номер сходится
  * и она подписана тем же ключом, и ставит сама — без вопросов (Android 12+ разрешает
- * приложению тихо обновлять себя). Пока приложение на экране, установка ждёт: она
- * закрыла бы его на глазах. Встаёт, как только его свернут.
+ * приложению тихо обновлять себя, если ему разрешена установка приложений). Пока
+ * приложение на экране, установка ждёт: она закрыла бы его на глазах. Встаёт через
+ * минуту после того, как его свернут.
  */
 object Updater {
     private const val BASE = "https://xfurya.github.io/Starty/app/"
     private const val PREFS = "update"
     private const val JOB_ID = 7311
+    private const val JOB_SOON = 7313
     private const val CHANNEL = "update"
     private const val NOTE_ID = 7312
     const val ACTION_STATUS = "ru.furya.starty.UPDATE_STATUS"
@@ -54,10 +59,18 @@ object Updater {
     @Volatile var listener: (() -> Unit)? = null
     private val lock = Any()
     @Volatile private var checking = false
+    /** Идёт загрузка — в памяти: после гибели процесса не залипает. */
+    @Volatile private var downloading: String? = null
+
+    /** Сколько экранов приложения сейчас видно (onStart/onStop). */
+    private var started = 0
+    val visible: Boolean get() = synchronized(this) { started > 0 }
+    fun onStart() = synchronized(this) { started++ }
+    fun onStop() = synchronized(this) { if (started > 0) started-- }
 
     private fun prefs(ctx: Context) = ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
     private fun dir(ctx: Context) = File(ctx.filesDir, "update").apply { mkdirs() }
-    private fun changed() { listener?.invoke() }
+    private fun changed() { try { listener?.invoke() } catch (_: Exception) {} }
 
     @Suppress("DEPRECATION")
     private fun installedCode(ctx: Context): Long {
@@ -67,6 +80,10 @@ object Updater {
 
     private fun installedName(ctx: Context): String =
         ctx.packageManager.getPackageInfo(ctx.packageName, 0).versionName ?: ""
+
+    /** Разрешена ли приложению установка приложений (без этого тихо обновиться нельзя). */
+    private fun canInstall(ctx: Context): Boolean =
+        Build.VERSION.SDK_INT < 26 || ctx.packageManager.canRequestPackageInstalls()
 
     // ---------- сеть ----------
 
@@ -87,6 +104,8 @@ object Updater {
         return c
     }
 
+    private fun hex(b: ByteArray) = b.joinToString("") { "%02x".format(it) }
+
     private fun sha256(f: File): String {
         val md = MessageDigest.getInstance("SHA-256")
         f.inputStream().use { s ->
@@ -97,15 +116,14 @@ object Updater {
                 md.update(buf, 0, n)
             }
         }
-        return md.digest().joinToString("") { "%02x".format(it) }
+        return hex(md.digest())
     }
 
-    private fun sha256(b: ByteArray): String =
-        MessageDigest.getInstance("SHA-256").digest(b).joinToString("") { "%02x".format(it) }
+    private fun sha256(b: ByteArray): String = hex(MessageDigest.getInstance("SHA-256").digest(b))
 
     /**
-     * Проверить сайт и, если есть новее, скачать. Ставит сразу, если [install] и
-     * приложение не на экране. Вызывается не из главного потока.
+     * Проверить сайт и, если есть новее, скачать. Ставит, если [install] и приложение не
+     * на экране. Вызывается не из главного потока.
      */
     fun run(ctx: Context, install: Boolean) {
         if (checking) return
@@ -117,6 +135,8 @@ object Updater {
                 err = fetch(ctx)
             } catch (e: Exception) {
                 err = netMessage(e)
+            } finally {
+                downloading = null
             }
             prefs(ctx).edit().putLong("checkedAt", System.currentTimeMillis()).putString("error", err).apply()
             checking = false
@@ -135,15 +155,20 @@ object Updater {
 
     /** Возвращает текст ошибки или пустую строку. */
     private fun fetch(ctx: Context): String {
+        val p = prefs(ctx)
+        // Адрес без «?t=»: кэш сайта на запрос не смотрит, а описание и так меняется только с выпуском.
         val text = try {
-            open(BASE + "latest.json?t=" + System.currentTimeMillis() / 60_000).let { c ->
+            open(BASE + "latest.json").let { c ->
                 try { c.inputStream.use { String(it.readBytes(), Charsets.UTF_8) } } finally { c.disconnect() }
             }
         } catch (e: HttpError) {
-            if (e.code == 404) { dropReady(ctx); return "" }
+            // Пока выпусков не было, описания нет — это не ошибка. Потом пропажа — сломанный канал.
+            if (e.code == 404 && !p.getBoolean("seenLatest", false)) return ""
+            if (e.code == 404) return "на сайте нет описания обновлений"
             throw e
         }
         val body = try { JSONObject(text) } catch (_: Exception) { return "описание обновления не читается" }
+        p.edit().putBoolean("seenLatest", true).apply()
         val version = body.optString("version")
         val code = body.optLong("code")
         val apk = body.optJSONObject("android") ?: return ""
@@ -154,43 +179,28 @@ object Updater {
         val sha = apk.optString("sha256").lowercase()
         if (!FILE_NAME.matches(name) || size <= 0 || size > MAX_APK || !SHA.matches(sha)) return "описание обновления испорчено"
 
-        val p = prefs(ctx)
         val dst = File(dir(ctx), "starty-$code.apk")
         if (p.getString("readySha", "") == sha && dst.isFile && dst.length() == size && sha256(dst) == sha) return ""
+        // Эта сборка уже не прошла сверку — не качать те же мегабайты каждый час, пока описание то же.
+        if (p.getString("badSha", "") == sha) return p.getString("badWhy", "") ?: ""
         dropReady(ctx)
-        // Сразу видно, что идёт загрузка, а не «ничего нет».
-        p.edit().putString("dl", version).apply(); changed()
+        downloading = version
+        changed()
         val tmp = File(dir(ctx), "download.part")
-        try {
-            val md = MessageDigest.getInstance("SHA-256")
-            var got = 0L
-            val c = open(BASE + name)
-            try {
-                c.inputStream.use { inp ->
-                    tmp.outputStream().use { out ->
-                        val buf = ByteArray(64 * 1024)
-                        while (true) {
-                            val n = inp.read(buf)
-                            if (n < 0) break
-                            got += n
-                            if (got > size) return "сборка больше, чем в описании"
-                            md.update(buf, 0, n)
-                            out.write(buf, 0, n)
-                        }
-                    }
-                }
-            } finally { c.disconnect() }
-            if (got == 0L) return "сайт отдал сборку пустой"
-            if (got != size) return "сборка скачалась не целиком"
-            if (md.digest().joinToString("") { "%02x".format(it) } != sha) return "сборка скачалась с ошибками"
-            // Хеш сошёлся — файл целый; кладём под настоящим именем (.apk нужно разбору).
-            if (!tmp.renameTo(dst)) return "не получилось сохранить сборку"
+        val why = try {
+            download(BASE + name, tmp, size, sha).ifEmpty {
+                if (!tmp.renameTo(dst)) "не получилось сохранить сборку" else checkApk(ctx, dst, code)
+            }
         } finally {
-            p.edit().remove("dl").apply()
+            downloading = null
             tmp.delete()
         }
-        val why = checkApk(ctx, dst, code)
-        if (why.isNotEmpty()) { dst.delete(); return why }
+        if (why.isNotEmpty()) {
+            dst.delete()
+            // Обрыв связи — не вина сборки, остальное запоминаем.
+            if (why != "сборка скачалась не целиком") p.edit().putString("badSha", sha).putString("badWhy", why).apply()
+            return why
+        }
         p.edit()
             .putString("readyVersion", version)
             .putLong("readyCode", code)
@@ -198,8 +208,36 @@ object Updater {
             .putString("readySha", sha)
             .putString("readyFile", dst.name)
             .putString("wait", "")
+            .putString("installError", "")
             .putInt("tries", 0)
+            .remove("badSha").remove("badWhy")
             .apply()
+        return ""
+    }
+
+    /** Скачивает в [to], сверяя размер и хеш на лету. Пустая строка — всё сошлось. */
+    private fun download(url: String, to: File, size: Long, sha: String): String {
+        val md = MessageDigest.getInstance("SHA-256")
+        var got = 0L
+        val c = open(url)
+        try {
+            c.inputStream.use { inp ->
+                to.outputStream().use { out ->
+                    val buf = ByteArray(64 * 1024)
+                    while (true) {
+                        val n = inp.read(buf)
+                        if (n < 0) break
+                        got += n
+                        if (got > size) return "сборка больше, чем в описании"
+                        md.update(buf, 0, n)
+                        out.write(buf, 0, n)
+                    }
+                }
+            }
+        } finally { c.disconnect() }
+        if (got == 0L) return "сайт отдал сборку пустой"
+        if (got != size) return "сборка скачалась не целиком"
+        if (hex(md.digest()) != sha) return "сборка не сходится с описанием"
         return ""
     }
 
@@ -231,7 +269,7 @@ object Updater {
     private fun dropReady(ctx: Context) {
         dir(ctx).listFiles()?.forEach { it.delete() }
         prefs(ctx).edit().remove("readyVersion").remove("readyCode").remove("readyNotes").remove("readySha")
-            .remove("readyFile").remove("wait").remove("tries").apply()
+            .remove("readyFile").remove("wait").remove("tries").remove("installError").apply()
     }
 
     /** Скачанное и проверенное обновление или null. */
@@ -246,23 +284,30 @@ object Updater {
 
     /**
      * Поставить без человека: только если приложение не на экране, система не ждёт
-     * подтверждения (оно уже висит уведомлением) и попыток было немного — иначе это вечный круг.
+     * подтверждения (оно уже висит уведомлением) и попыток было немного — иначе это вечный
+     * круг. Если разрешение на установку выдали уже после запроса — пробуем снова.
      */
     fun installQuietly(ctx: Context) {
         val p = prefs(ctx)
-        if (MainActivity.visible || ready(ctx) == null) return
-        if (p.getString("wait", "") == "confirm" || p.getInt("tries", 0) >= 3) return
+        if (visible || ready(ctx) == null) return
+        if (p.getString("wait", "") == "confirm") {
+            if (!canInstall(ctx)) return
+            p.edit().putString("wait", "").apply()
+        }
+        if (p.getInt("tries", 0) >= 3) return
         install(ctx, fromUser = false)
     }
 
     /** Ставит скачанное. [fromUser] — нажали «Обновить сейчас»: после установки откроем снова. */
-    fun install(ctx: Context, fromUser: Boolean): String {
-        val f = ready(ctx) ?: return "обновление ещё не скачано"
+    fun install(ctx: Context, fromUser: Boolean): String { synchronized(lock) {
         val p = prefs(ctx)
-        // Проверка ещё раз: файл мог испортиться с тех пор, как скачан.
-        if (sha256(f) != p.getString("readySha", "")) { dropReady(ctx); return "скачанное обновление испортилось" }
-        p.edit().putBoolean("reopen", fromUser).putInt("tries", p.getInt("tries", 0) + 1).putString("wait", "").apply()
-        return try {
+        try {
+            val f = ready(ctx) ?: return "обновление ещё не скачано"
+            // Проверка ещё раз: файл мог испортиться с тех пор, как скачан.
+            if (sha256(f) != p.getString("readySha", "")) { dropReady(ctx); changed(); return "скачанное обновление испортилось" }
+            val e = p.edit().putBoolean("reopen", fromUser).putString("wait", "").putString("installError", "")
+            if (!fromUser) e.putInt("tries", p.getInt("tries", 0) + 1)
+            e.apply()
             val pi = ctx.packageManager.packageInstaller
             val params = PackageInstaller.SessionParams(PackageInstaller.SessionParams.MODE_FULL_INSTALL)
             params.setAppPackageName(ctx.packageName)
@@ -278,14 +323,14 @@ object Updater {
                 s.commit(PendingIntent.getBroadcast(ctx, 3, cb, flags).intentSender)
             }
             changed()
-            "ok"
+            return "ok"
         } catch (e: Exception) {
             val m = e.message ?: e.javaClass.simpleName
-            p.edit().putString("error", "не получилось поставить: $m").apply()
+            p.edit().putString("installError", m).apply()
             changed()
-            m
+            return m
         }
-    }
+    } }
 
     /**
      * Запасной путь — обычный системный установщик, как у файла из загрузок. На случай,
@@ -300,6 +345,14 @@ object Updater {
         return "ok"
     }
 
+    /** Системный экран «Установка неизвестных приложений» для этого приложения. */
+    fun openInstallPermission(a: Activity): String {
+        if (Build.VERSION.SDK_INT < 26) return "ok"
+        val i = Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, Uri.parse("package:${a.packageName}"))
+        a.runOnUiThread { try { a.startActivity(i) } catch (_: Exception) {} }
+        return "ok"
+    }
+
     /** Ответ установщика системы. */
     fun onStatus(ctx: Context, intent: Intent) {
         val p = prefs(ctx)
@@ -310,17 +363,18 @@ object Updater {
                 val confirm = (if (Build.VERSION.SDK_INT >= 33) intent.getParcelableExtra(Intent.EXTRA_INTENT, Intent::class.java)
                     else intent.getParcelableExtra(Intent.EXTRA_INTENT)) ?: return
                 p.edit().putString("wait", "confirm").apply()
-                if (MainActivity.visible) {
+                if (visible) {
                     try { ctx.startActivity(confirm.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) } catch (_: Exception) {}
                 } else {
                     notify(ctx, "Обновление готово", "Версия ${p.getString("readyVersion", "")} ждёт подтверждения установки", true)
                 }
             }
             PackageInstaller.STATUS_SUCCESS -> {}
+            // Окно подтверждения закрыли — ждём человека; строка и кнопка — в настройках.
             PackageInstaller.STATUS_FAILURE_ABORTED -> p.edit().putString("wait", "confirm").apply()
             else -> {
                 val m = intent.getStringExtra(PackageInstaller.EXTRA_STATUS_MESSAGE) ?: "установка не прошла"
-                p.edit().putString("error", "не получилось поставить: $m").apply()
+                p.edit().putString("installError", m).apply()
             }
         }
         changed()
@@ -335,9 +389,8 @@ object Updater {
         }
         val reopen = p.getBoolean("reopen", false)
         p.edit().remove("reopen").apply()
-        dir(ctx).listFiles()?.forEach { it.delete() }
-        p.edit().remove("readyVersion").remove("readyCode").remove("readyNotes").remove("readySha")
-            .remove("readyFile").remove("wait").remove("tries").putString("error", "").apply()
+        dropReady(ctx)
+        p.edit().putString("error", "").remove("badSha").remove("badWhy").apply()
         // Установка закрыла открытое приложение — вернуться одним касанием.
         if (reopen) notify(ctx, "Фигурное катание обновлено до ${installedName(ctx)}", p.getString("updatedNotes", "") ?: "", false)
         schedule(ctx)
@@ -352,18 +405,21 @@ object Updater {
         val open = Intent(ctx, MainActivity::class.java).putExtra(EXTRA_INSTALL, install)
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
         val pi = PendingIntent.getActivity(ctx, NOTE_ID, open, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
-        val n = NotificationCompat.Builder(ctx, CHANNEL)
+        val b = NotificationCompat.Builder(ctx, CHANNEL)
             .setSmallIcon(R.drawable.ic_notify)
             .setColor(0xFF1C5C9C.toInt())
             .setContentTitle(title)
-            .setContentText(text)
             .setContentIntent(pi)
             .setAutoCancel(true)
-            .build()
-        try { NotificationManagerCompat.from(ctx).notify(NOTE_ID, n) } catch (_: SecurityException) {}
+        if (text.isNotEmpty()) b.setContentText(text)
+        try { NotificationManagerCompat.from(ctx).notify(NOTE_ID, b.build()) } catch (_: SecurityException) {}
     }
 
-    fun clearNotice(ctx: Context) = NotificationManagerCompat.from(ctx).cancel(NOTE_ID)
+    /** Убрать уведомление — но не «ждёт подтверждения»: это единственный путь к установке. */
+    fun clearNotice(ctx: Context) {
+        if (prefs(ctx).getString("wait", "") == "confirm" && ready(ctx) != null) return
+        NotificationManagerCompat.from(ctx).cancel(NOTE_ID)
+    }
 
     // ---------- расписание проверок ----------
 
@@ -378,19 +434,36 @@ object Updater {
         try { js.schedule(job) } catch (_: Exception) {}
     }
 
+    /**
+     * Свернули — поставить через минуту, если готово. Сразу нельзя: вернутся через пару
+     * секунд — а приложение уже закрывается установкой.
+     */
+    fun installSoon(ctx: Context) {
+        if (ready(ctx) == null) return
+        val js = ctx.getSystemService(JobScheduler::class.java) ?: return
+        val job = JobInfo.Builder(JOB_SOON, ComponentName(ctx, UpdateJob::class.java))
+            .setMinimumLatency(60_000L)
+            .setOverrideDeadline(5 * 60_000L)
+            .setExtras(PersistableBundle().apply { putBoolean("installOnly", true) })
+            .build()
+        try { js.schedule(job) } catch (_: Exception) {}
+    }
+
     /** Для интерфейса: честное состояние обновлений. */
     fun statusJson(ctx: Context): String {
         val p = prefs(ctx)
         val o = JSONObject()
             .put("enabled", true)
             .put("current", installedName(ctx))
+            .put("canInstall", canInstall(ctx))
         if (checking) o.put("checking", true)
         p.getLong("checkedAt", 0).takeIf { it > 0 }?.let { o.put("checkedAt", it) }
         p.getString("error", "")?.takeIf { it.isNotEmpty() }?.let { o.put("error", it) }
-        p.getString("dl", "")?.takeIf { it.isNotEmpty() }?.let { o.put("downloading", it) }
+        downloading?.let { o.put("downloading", it) }
         if (ready(ctx) != null) {
             o.put("ready", JSONObject().put("version", p.getString("readyVersion", "")).put("notes", p.getString("readyNotes", "")))
             o.put("wait", p.getString("wait", "").takeIf { !it.isNullOrEmpty() } ?: "leave")
+            p.getString("installError", "")?.takeIf { it.isNotEmpty() }?.let { o.put("installError", it) }
             if (p.getInt("tries", 0) >= 3) o.put("stuck", true)
         }
         p.getString("updatedVersion", "")?.takeIf { it.isNotEmpty() }?.let {
@@ -399,7 +472,9 @@ object Updater {
         return o.toString()
     }
 
-    fun check(ctx: Context) { thread(name = "update") { run(ctx.applicationContext, install = false) } }
+    fun check(ctx: Context) {
+        thread(name = "update") { try { run(ctx.applicationContext, install = false) } catch (_: Throwable) {} }
+    }
 }
 
 class UpdateReceiver : BroadcastReceiver() {
@@ -420,8 +495,13 @@ class ReplacedReceiver : BroadcastReceiver() {
 
 class UpdateJob : JobService() {
     override fun onStartJob(params: JobParameters): Boolean {
+        val installOnly = params.extras.getBoolean("installOnly", false)
         thread(name = "update-job") {
-            try { Updater.run(applicationContext, install = true) } finally { jobFinished(params, false) }
+            try {
+                if (installOnly) Updater.installQuietly(applicationContext)
+                else Updater.run(applicationContext, install = true)
+            } catch (_: Throwable) {
+            } finally { jobFinished(params, false) }
         }
         return true
     }

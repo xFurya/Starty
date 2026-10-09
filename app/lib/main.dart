@@ -11,6 +11,7 @@ import 'settings.dart';
 import 'state.dart';
 import 'ui.dart';
 import 'update.dart';
+import 'updater.dart';
 import 'views.dart';
 
 Future<void> main() async {
@@ -22,6 +23,8 @@ Future<void> main() async {
     await Reminders.init();
   } catch (_) {}
   await scheduleBackground();
+  // самообновление: состояние с нативной стороны, «обновлено до …» один раз
+  await Updates.instance.init();
 }
 
 /// Цвета «Лёд»: светлая тема — главная, тёмная — ночной каток.
@@ -211,7 +214,45 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
     state.load();
     // раз в минуту: «идёт сейчас», кто уже откатал, отсчёт до начала
     _tick = Timer.periodic(const Duration(minutes: 1), (_) => setState(() {}));
-    if (!kIsWeb) checkUpdate().then((u) => mounted && u != null ? setState(() => update = u) : null);
+    // на Android обновления ставятся сами (updater.dart); строка «Новая версия» — только для iPhone
+    if (!kIsWeb && !Updates.native) checkUpdate().then((u) => mounted && u != null ? setState(() => update = u) : null);
+    Updates.instance.addListener(_onUpdates);
+    WidgetsBinding.instance.addPostFrameCallback((_) => _onUpdates());
+  }
+
+  /// Однократные сообщения: «обновлено до …» и «вышла версия …».
+  void _onUpdates() {
+    if (!mounted) return;
+    final u = Updates.instance;
+    final done = u.takeUpdatedMessage();
+    if (done != null) _say(done);
+    final ready = u.takeReadyNotice();
+    if (ready != null) {
+      final hand = u.state?.needsHand == true;
+      _say(ready, action: hand ? 'Установить' : 'Сейчас', onAction: () {
+        if (u.state?.canInstall == false) {
+          u.allowInstall();
+        } else {
+          u.installNow();
+        }
+      });
+    }
+  }
+
+  void _say(String text, {String? action, VoidCallback? onAction}) {
+    final p = Palette.of(context);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(text, style: TextStyle(fontFamily: 'Manrope', fontSize: 14.5, color: p.bg, height: 1.3)),
+        behavior: SnackBarBehavior.floating,
+        backgroundColor: p.ink,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+        duration: const Duration(seconds: 6),
+        action: action == null
+            ? null
+            : SnackBarAction(label: action, textColor: p.isDark ? Palette.light.accent : Palette.dark.accent, onPressed: onAction ?? () {}),
+      ),
+    );
   }
 
   @override
@@ -225,6 +266,7 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
   @override
   void dispose() {
     _tick?.cancel();
+    Updates.instance.removeListener(_onUpdates);
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }

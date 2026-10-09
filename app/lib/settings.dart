@@ -11,6 +11,7 @@ import 'sheets.dart';
 import 'state.dart';
 import 'ui.dart';
 import 'update.dart';
+import 'updater.dart';
 
 const _ics = 'webcal://xfurya.github.io/Starty/calendar.ics';
 const _google = 'https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fxfurya.github.io%2FStarty%2Fcalendar.ics';
@@ -237,7 +238,10 @@ class SettingsView extends StatelessWidget {
           child: Plate(
             child: Column(
               children: [
-                _Row(icon: CupertinoIcons.info, title: 'Версия', trailing: _Value(appVersion)),
+                ListenableBuilder(
+                  listenable: Updates.instance,
+                  builder: (context, _) => _Updates(Updates.instance),
+                ),
                 const Hairline(),
                 _Row(
                   icon: CupertinoIcons.arrow_2_circlepath,
@@ -262,6 +266,75 @@ class SettingsView extends StatelessWidget {
 }
 
 /// Заголовок раздела.
+/// Версия и обновления — честное состояние самообновления (как у Дневника).
+class _Updates extends StatelessWidget {
+  final Updates u;
+  const _Updates(this.u);
+  @override
+  Widget build(BuildContext context) {
+    final s = u.state;
+    final version = _Row(icon: CupertinoIcons.info, title: 'Версия', trailing: _Value(s?.current ?? appVersion));
+    if (!Updates.native) {
+      if (kIsWeb) return version;
+      // iPhone: ставит SideStore, приложение только говорит о новой версии
+      final a = u.available;
+      return Column(
+        children: [
+          version,
+          const Hairline(),
+          _Row(
+            icon: CupertinoIcons.arrow_down_circle,
+            title: 'Обновления',
+            subtitle: a == null ? 'Через SideStore' : 'Новая версия — в SideStore',
+          ),
+        ],
+      );
+    }
+    return Column(
+      children: [
+        version,
+        const Hairline(),
+        _Row(
+          icon: CupertinoIcons.arrow_down_circle,
+          title: 'Обновления',
+          subtitle: s == null ? 'Проверка…' : s.line(DateTime.now()),
+          subtitleColor: s != null && (s.needsHand || (!s.ready && s.error.isNotEmpty)) ? Palette.of(context).live : null,
+          onTap: s?.checking == true ? null : u.check,
+        ),
+        if (s != null && s.ready && !s.canInstall) ...[
+          const Hairline(),
+          _Row(
+            icon: CupertinoIcons.lock_open,
+            title: 'Разрешить установку',
+            subtitle: 'Установка неизвестных приложений',
+            onTap: u.allowInstall,
+            trailing: const _Chevron(external: true),
+          ),
+        ],
+        if (s != null && s.ready && s.canInstall) ...[
+          const Hairline(),
+          _Row(
+            icon: CupertinoIcons.arrow_down_to_line,
+            title: 'Обновить сейчас',
+            subtitle: 'Приложение закроется; открыть снова — из уведомления',
+            onTap: u.installNow,
+          ),
+        ],
+        if (s != null && s.ready && (s.wait == 'confirm' || s.installError.isNotEmpty || s.stuck)) ...[
+          const Hairline(),
+          _Row(
+            icon: CupertinoIcons.square_arrow_up,
+            title: 'Открыть установщик',
+            subtitle: 'Обычная установка, как файлом из загрузок',
+            onTap: u.openInstaller,
+            trailing: const _Chevron(external: true),
+          ),
+        ],
+      ],
+    );
+  }
+}
+
 class _Head extends StatelessWidget {
   final String text;
   const _Head(this.text);
