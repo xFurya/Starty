@@ -32,8 +32,9 @@ jobs:
         working-directory: app
         run: |
           BUILD=$(grep '^version:' pubspec.yaml | sed 's/.*+//')
+          VER=$(grep '^version:' pubspec.yaml | sed 's/version: *//; s/+.*//')
           flutter pub get
-          flutter build ios --release --no-codesign --dart-define=BUILD=$BUILD
+          flutter build ios --release --no-codesign --dart-define=BUILD=$BUILD --dart-define=VERSION=$VER
           cd build/ios/iphoneos
           rm -rf Payload && mkdir Payload && cp -R Runner.app Payload/
           zip -qry Starty.ipa Payload
@@ -42,9 +43,20 @@ jobs:
       - name: Выложить на сайт
         run: |
           cp app/build/ios/iphoneos/Starty.ipa site/app/Starty.ipa
+          # SideStore видит новую версию только вместе с готовой сборкой
+          python3 - <<'PY'
+          import datetime, json, os, re
+          ver, build = re.search(r"^version:\s*(\S+)\+(\d+)", open("app/pubspec.yaml").read(), re.M).groups()
+          p = "site/app/sidestore.json"
+          j = json.load(open(p))
+          v = j["apps"][0]["versions"][0]
+          v.update(version=ver, buildVersion=build, date=datetime.date.today().isoformat(),
+                   size=os.path.getsize("site/app/Starty.ipa"))
+          json.dump(j, open(p, "w"), ensure_ascii=False, indent=1)
+          PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/app/Starty.ipa
+          git add site/app/Starty.ipa site/app/sidestore.json
           git commit -q -m "iOS: сборка $(grep '^version:' app/pubspec.yaml | sed 's/version: //')" || exit 0
           for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 5; done
           # опубликовать сайт сразу, не дожидаясь расписания
