@@ -48,7 +48,7 @@ class UpdateBar extends StatelessWidget {
         children: [
           Expanded(
             child: Text(
-              info.note.isEmpty ? 'Есть новая версия приложения' : info.note,
+              info.note.isEmpty ? 'Новая версия' : info.note,
               style: TextStyle(fontSize: 14.5, color: p.ink),
             ),
           ),

@@ -60,7 +60,8 @@ class Skater {
   final String? time; // «19:30» по Москве
   final int? no;
   final int? warmup;
-  Skater(this.name, this.time, this.no, this.warmup);
+  final int? place; // место в сегменте, когда он прошёл
+  Skater(this.name, this.time, this.no, this.warmup, [this.place]);
 
   /// В списке у пар — только фамилии.
   String get short => name.contains(' / ') ? name.split(' / ').map((p) => p.trim().split(' ').last).join(' / ') : name;
@@ -87,7 +88,17 @@ class Start {
       intl = j['intl'] == true,
       broadcast = List<String>.from(j['broadcast'] ?? const []),
       athletes = List<String>.from(j['athletes'] ?? const []),
-      ours = [for (final o in (j['ours'] as List? ?? const [])) Skater(o['name'], o['time'], o['no'], o['warmup'])];
+      ours = [
+        for (final o in (j['ours'] as List? ?? const [])) Skater(o['name'], o['time'], o['no'], o['warmup'], o['place']),
+      ],
+      podium = [for (final p in (j['podium'] as List? ?? const [])) Placing.fromJson(p)],
+      total = [for (final p in (j['total'] as List? ?? const [])) Placing.fromJson(p)];
+
+  /// Первая тройка сегмента (пусто, пока сегмент не прошёл).
+  final List<Placing> podium;
+
+  /// Первая тройка турнира в этом виде — у последнего сегмента, когда вид закончен.
+  final List<Placing> total;
 
   /// «женщины ПП» — часть названия после турнира.
   String get segment => title.substring(tournament.length).replaceFirst(RegExp(r'^\s*—\s*'), '');
@@ -106,13 +117,34 @@ class Start {
   }
 }
 
+/// Место в итоговом протоколе: 1–3, имя (по-русски, если знаем), флаг, баллы.
+class Placing {
+  final int place;
+  final String name, nation, points;
+  Placing(this.place, this.name, this.nation, this.points);
+  Placing.fromJson(Map<String, dynamic> j)
+    : place = j['place'],
+      name = j['name'],
+      nation = j['nation'] ?? '',
+      points = j['points'] ?? '';
+
+  /// Наш: RUS или AIN2 (нейтральные россияне); на российских стартах — регион.
+  bool get ours => nation == 'RUS' || nation == 'AIN2' || nation == 'AIN' || RegExp(r'^[А-ЯЁ]{3}$').hasMatch(nation);
+  String get short => name.contains(' / ') ? name.split(' / ').map((p) => p.trim().split(' ').last).join(' / ') : name;
+}
+
 class Schedule {
   final List<Start> starts;
   final DateTime generated;
   final bool complete;
   final List<String> watchlist;
   final bool fromCache;
-  Schedule(this.starts, this.generated, this.complete, this.watchlist, this.fromCache);
+
+  /// Фотографии спортсменов: «Имя Фамилия» → адрес картинки.
+  final Map<String, String> photos;
+  Schedule(this.starts, this.generated, this.complete, this.watchlist, this.fromCache, [this.photos = const {}]);
+
+  String? photoOf(String name) => photos[name];
 
   static Schedule parse(String body, {bool fromCache = false}) {
     final j = jsonDecode(body) as Map<String, dynamic>;
@@ -123,6 +155,7 @@ class Schedule {
       j['complete'] != false,
       List<String>.from(j['watchlist'] ?? const []),
       fromCache,
+      Map<String, String>.from(j['photos'] ?? const {}),
     );
   }
 
@@ -174,6 +207,10 @@ class Prefs {
 
   static Set<String> get watched => (_p.getStringList('watched') ?? const []).toSet();
   static Future<void> setWatched(Set<String> v) => _p.setStringList('watched', v.toList());
+
+  /// Отслеживаемые спортсмены: уведомление перед каждым выходом.
+  static Set<String> get followed => (_p.getStringList('followed') ?? const []).toSet();
+  static Future<void> setFollowed(Set<String> v) => _p.setStringList('followed', v.toList());
 
   static Set<String> get kinds => (_p.getStringList('f.kinds') ?? const []).toSet();
   static Set<String> get tids => (_p.getStringList('f.tids') ?? const []).toSet();
