@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Значок уведомления берётся по имени из Dart — сборщик ресурсов этого не видит и выкидывает его. -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@drawable/ic_notify" />

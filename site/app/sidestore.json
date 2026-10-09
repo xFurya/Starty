@@ -1,26 +1,26 @@
 {
-  "name": "Старты",
-  "identifier": "ru.furya.starty.source",
-  "sourceURL": "https://xfurya.github.io/Starty/app/sidestore.json",
-  "apps": [
+ "name": "Старты",
+ "identifier": "ru.furya.starty.source",
+ "sourceURL": "https://xfurya.github.io/Starty/app/sidestore.json",
+ "apps": [
+  {
+   "name": "Старты",
+   "bundleIdentifier": "ru.furya.starty",
+   "developerName": "Furya",
+   "subtitle": "Календарь стартов по фигурному катанию",
+   "localizedDescription": "Российские старты и международные с нашими. Время московское, напоминание за 15 минут.",
+   "iconURL": "https://xfurya.github.io/Starty/app/icon.png",
+   "tintColor": "1C5C9C",
+   "versions": [
     {
-      "name": "Старты",
-      "bundleIdentifier": "ru.furya.starty",
-      "developerName": "Furya",
-      "subtitle": "Календарь стартов по фигурному катанию",
-      "localizedDescription": "Российские старты и международные с нашими. Время московское, напоминание за 15 минут.",
-      "iconURL": "https://xfurya.github.io/Starty/app/icon.png",
-      "tintColor": "1C5C9C",
-      "versions": [
-        {
-          "version": "1.0.0",
-          "buildVersion": "1",
-          "date": "2026-10-09",
-          "downloadURL": "https://xfurya.github.io/Starty/app/Starty.ipa",
-          "minOSVersion": "15.0"
-        }
-      ]
+     "version": "1.0.1",
+     "buildVersion": "2",
+     "date": "2026-10-09",
+     "downloadURL": "https://xfurya.github.io/Starty/app/Starty.ipa",
+     "minOSVersion": "15.0"
     }
-  ],
-  "news": []
+   ]
+  }
+ ],
+ "news": []
 }

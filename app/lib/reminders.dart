@@ -12,7 +12,7 @@ class Reminders {
   static bool _ready = false;
 
   static Future<void> init() async {
-    if (kIsWeb) return;
+    if (kIsWeb || _ready) return;
     tzdata.initializeTimeZones();
     await _n.initialize(
       settings: const InitializationSettings(

@@ -1,4 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2468A8"/><stop offset="1" stop-color="#0A2342"/></linearGradient></defs><rect width="512" height="512" fill="url(#g)"/><g transform="translate(55.94 56.32) scale(0.15360)"><g transform="translate(0.000000,2600.000000) scale(0.100000,-0.100000)"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B78C2"/><stop offset=".62" stop-color="#123F72"/><stop offset="1" stop-color="#0A2342"/></linearGradient>
+<radialGradient id="glow" cx=".52" cy=".44" r=".42"><stop offset="0" stop-color="#8FD0FF" stop-opacity=".55"/><stop offset="1" stop-color="#8FD0FF" stop-opacity="0"/></radialGradient>
+<radialGradient id="ice" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#E8F6FF" stop-opacity=".85"/><stop offset=".6" stop-color="#BFE4FF" stop-opacity=".35"/><stop offset="1" stop-color="#BFE4FF" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1024" height="1024" fill="url(#bg)"/>
+<circle cx="532.48" cy="450.56" r="368.64" fill="url(#glow)"/><ellipse cx="505" cy="884" rx="266" ry="46" fill="url(#ice)"/><g fill="none" stroke-linecap="round">
+<path d="M198 807 A 307 77 -8 0 0 802 755" stroke="#DFF3FF" stroke-opacity=".75" stroke-width="12"/>
+<path d="M280 714 A 246 56 -8 0 0 740 673" stroke="#DFF3FF" stroke-opacity=".45" stroke-width="8"/>
+</g><g transform="translate(101.61 71.68) scale(0.31508)"><g transform="translate(0.000000,2600.000000) scale(0.100000,-0.100000)"
 fill="#FFFFFF" stroke="none">
 <path d="M14717 25986 c-3 -8 -30 -21 -60 -30 -29 -9 -71 -29 -92 -46 -21 -16
 -41 -30 -44 -30 -16 0 -105 -97 -144 -158 -110 -172 -177 -404 -177 -619 0
@@ -133,4 +142,4 @@ fill="#FFFFFF" stroke="none">
 -137 55 -60 117 -101 151 -101 28 0 29 2 23 31 -3 17 -15 42 -26 56 -11 14
 -20 32 -20 41 0 16 -89 175 -117 208 -63 75 -368 234 -449 234 -11 0 -37 9
 -59 20 -37 19 -59 20 -386 20 -289 0 -348 -2 -352 -14z"/>
-</g></g></svg>
+</g></g><path d="M276.48 237.568 L284.50816000000003 258.21184 L305.15200000000004 266.24 L284.50816000000003 274.26816 L276.48 294.91200000000003 L268.45184 274.26816 L247.80800000000002 266.24 L268.45184 258.21184Z" fill="#FFFFFF" opacity="0.95"/><path d="M788.48 288.768 L793.6409600000001 302.03904 L806.912 307.2 L793.6409600000001 312.36096 L788.48 325.632 L783.31904 312.36096 L770.048 307.2 L783.31904 302.03904Z" fill="#FFFFFF" opacity="0.8"/><path d="M737.28 161.792 L740.72064 170.63936 L749.568 174.08 L740.72064 177.52064000000001 L737.28 186.36800000000002 L733.8393599999999 177.52064000000001 L724.992 174.08 L733.8393599999999 170.63936Z" fill="#FFFFFF" opacity="0.7"/></svg>

@@ -1,4 +1,14 @@
 {
-  "android": {"version": "1.0.0", "build": 1, "url": "https://xfurya.github.io/Starty/app/Starty.apk", "note": ""},
-  "ios": {"version": "1.0.0", "build": 1, "url": "https://xfurya.github.io/Starty/", "note": ""}
+ "android": {
+  "version": "1.0.1",
+  "build": 2,
+  "url": "https://xfurya.github.io/Starty/app/Starty.apk",
+  "note": ""
+ },
+ "ios": {
+  "version": "1.0.1",
+  "build": 2,
+  "url": "https://xfurya.github.io/Starty/",
+  "note": ""
+ }
 }

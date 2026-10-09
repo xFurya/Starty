@@ -12,8 +12,11 @@ import 'views.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Prefs.init();
-  await Reminders.init();
   runApp(const StartyApp());
+  // уведомления настраиваются после показа экрана: их сбой не должен мешать запуску
+  try {
+    await Reminders.init();
+  } catch (_) {}
 }
 
 class Palette {
