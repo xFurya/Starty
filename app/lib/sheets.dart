@@ -93,7 +93,7 @@ class _StartSheet extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(hm(s.t0), style: clock(live ? p.live : p.ink, narrow ? 44 : 54)),
-                    const SizedBox(width: 14),
+                    SizedBox(width: narrow ? 12 : 14),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -454,7 +454,7 @@ class _Step extends StatelessWidget {
         Container(
           height: step,
           width: double.infinity,
-          alignment: Alignment.center,
+          clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.vertical(top: Radius.circular(14)),
             gradient: LinearGradient(
@@ -464,11 +464,7 @@ class _Step extends StatelessWidget {
                   ? [Color.lerp(const Color(0xFF1B3A5C), c, .10)!, const Color(0xFF0C1B2B)]
                   : [Colors.white, Color.lerp(const Color(0xFFDCEAF7), c, .08)!],
             ),
-            border: Border(
-              top: BorderSide(color: c, width: 3),
-              left: BorderSide(color: p.plateLine),
-              right: BorderSide(color: p.plateLine),
-            ),
+            border: Border.all(color: p.plateLine),
             boxShadow: [
               BoxShadow(
                 color: (p.isDark ? Colors.black : Palette.deepBlue).withValues(alpha: p.isDark ? .25 : .06),
@@ -480,6 +476,7 @@ class _Step extends StatelessWidget {
           child: Stack(
             fit: StackFit.expand,
             children: [
+              Positioned(top: 0, left: 0, right: 0, height: 3, child: ColoredBox(color: c)),
               if (first)
                 CustomPaint(painter: SparklePainter(p.isDark ? Colors.white : Palette.iceBlue, p.isDark ? .6 : .4, variant: 1)),
               Center(
@@ -783,6 +780,7 @@ class _FilterSheetState extends State<_FilterSheet> {
                 const Eyebrow('Вид'),
                 const SizedBox(height: 10),
                 TileGrid(
+                  keepGrid: true,
                   tiles: [
                     for (final k in kindNames.entries)
                       ChoiceTile(

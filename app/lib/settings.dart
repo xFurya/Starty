@@ -27,13 +27,13 @@ String filterSummary(Filters f) {
   ].join(' · ');
 }
 
-/// «17:15», «завтра 07:15», «12 октября 09:00».
+/// «17:15», «завтра 07:15», «12 октября 09:00» — неразрывно, одной строкой.
 String _when(DateTime at) {
   final t = now();
   if (dayKey(at) == dayKey(t)) return hm(at);
-  if (dayKey(at) == dayKey(t.add(const Duration(days: 1)))) return 'завтра ${hm(at)}';
+  if (dayKey(at) == dayKey(t.add(const Duration(days: 1)))) return 'завтра\u00A0${hm(at)}';
   final m = msk(at);
-  return '${m.day} ${months[m.month - 1]} ${hm(at)}';
+  return '${m.day}\u00A0${months[m.month - 1]}\u00A0${hm(at)}';
 }
 
 class SettingsView extends StatelessWidget {
@@ -89,6 +89,7 @@ class SettingsView extends StatelessWidget {
                     _Block(
                       title: 'Виды',
                       child: TileGrid(
+                        keepGrid: true,
                         tiles: [
                           for (final k in NotifyRules.allKinds)
                             ChoiceTile(
@@ -179,7 +180,7 @@ class SettingsView extends StatelessWidget {
                 _Summary(
                   text: planned.isEmpty
                       ? 'Запланированных нет'
-                      : 'Запланировано: ${planned.length} · ближайшее ${_when(planned.first.at)}',
+                      : 'Запланировано: ${planned.length} · ближайшее\u00A0${_when(planned.first.at)}',
                   empty: planned.isEmpty,
                 ),
               ],

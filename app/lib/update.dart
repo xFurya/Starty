@@ -45,23 +45,36 @@ class UpdateBar extends StatelessWidget {
     final p = Palette.of(context);
     return Container(
       margin: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-      padding: const EdgeInsets.fromLTRB(16, 6, 6, 6),
-      decoration: BoxDecoration(color: p.accent.withValues(alpha: .12), borderRadius: BorderRadius.circular(14)),
+      padding: const EdgeInsets.fromLTRB(14, 4, 4, 4),
+      decoration: BoxDecoration(
+        color: p.frost,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: p.plateLine),
+      ),
       child: Row(
         children: [
+          Icon(Icons.arrow_circle_down_rounded, size: 20, color: p.accent),
+          const SizedBox(width: 10),
           Expanded(
             child: Text(
-              info.note.isEmpty ? 'Новая версия' : info.note,
-              style: TextStyle(fontSize: 14.5, color: p.ink),
+              'Новая версия',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: 14.5, fontWeight: FontWeight.w600, color: p.ink),
             ),
           ),
           TextButton(
             onPressed: () => launchUrl(Uri.parse(info.url), mode: LaunchMode.externalApplication),
+            style: TextButton.styleFrom(
+              foregroundColor: p.accent,
+              textStyle: const TextStyle(fontFamily: 'Manrope', fontSize: 14.5, fontWeight: FontWeight.w700),
+            ),
             child: const Text('Обновить'),
           ),
           IconButton(
+            tooltip: 'Закрыть',
             onPressed: onClose,
-            icon: Icon(Icons.close, size: 18, color: p.ink3),
+            icon: Icon(Icons.close, size: 18, color: p.ink2),
           ),
         ],
       ),
