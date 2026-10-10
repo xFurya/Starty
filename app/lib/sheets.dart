@@ -568,15 +568,7 @@ class _Step extends StatelessWidget {
     );
     return Column(
       children: [
-        Avatar(
-          name: x.name,
-          data: data,
-          size: avatar,
-          ring: c,
-          ringWidth: 2.5,
-          nation: intl ? x.nation : null,
-          flagRing: first ? c : null,
-        ),
+        Avatar(name: x.name, data: data, size: avatar, ring: c, ringWidth: 2.5),
         const SizedBox(height: 8),
         Stack(
           alignment: Alignment.bottomCenter,
@@ -706,7 +698,7 @@ class _TotalPlate extends StatelessWidget {
               children: [
                 Medal(rows[i].place, size: 26),
                 const SizedBox(width: 10),
-                Avatar(name: rows[i].name, data: data, size: 36, slot: pairs, nation: intl ? rows[i].nation : null),
+                Avatar(name: rows[i].name, data: data, size: 36, slot: pairs),
                 const SizedBox(width: 10),
                 Expanded(
                   child: PlacingName(

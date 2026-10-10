@@ -206,19 +206,6 @@ void main() {
     expect(PlacingName.codeOf(x('AIN2'), true), '');
   });
 
-  test('флаг: коды ISU → страна; нейтральные — значок без флага; код у имени не дублирует флаг', () {
-    expect(FlagBadge.iso('GER'), 'DE');
-    expect(FlagBadge.iso('SUI'), 'CH');
-    expect(FlagBadge.iso('XXX'), isNull);
-    expect(FlagBadge.has('AIN2'), isTrue);
-    expect(FlagBadge.has('AIN'), isTrue);
-    expect(FlagBadge.has('XXX'), isFalse);
-    Placing x(String n) => Placing(1, 'A B', n, '');
-    expect(PlacingName.codeOf(x('FIN'), true), '');
-    expect(PlacingName.codeOf(x('XXX'), true), 'XXX');
-    expect(PlacingName.codeOf(x('AIN'), true), 'AIN');
-  });
-
   test('турниры без расписания: разбор, дни, лента', () {
     final d = Schedule.parse(File('test/events_sample.json').readAsStringSync());
     final s = stateWith(d);
