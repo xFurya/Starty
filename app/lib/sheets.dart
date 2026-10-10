@@ -122,11 +122,18 @@ class _StartSheet extends StatelessWidget {
                           if (live)
                             const Padding(padding: EdgeInsets.only(bottom: 5), child: LivePill())
                           else if (s.day == dayKey(t) || s.day == dayKey(t.add(const Duration(days: 1))))
+                            // «через 1 ч 50 мин» одной строкой: не помещается — мельче, а не по буквам
                             Padding(
                               padding: const EdgeInsets.only(bottom: 3),
-                              child: Text(
-                                whenLabel(s, t),
-                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: p.accent),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  whenLabel(s, t),
+                                  maxLines: 1,
+                                  softWrap: false,
+                                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: p.accent),
+                                ),
                               ),
                             ),
                           Text(

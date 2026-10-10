@@ -745,14 +745,19 @@ bool actionBelow(BuildContext context, double width, String title, TextStyle tit
 }
 
 /// Имя по строкам (см. [nameVariants]): берётся первый вариант, который помещается целиком,
-/// вместе с подписью справа ([suffix] — код страны, «разминка 2»; она не сжимается).
-/// Не поместился ни один — строки последнего варианта уменьшаются, а не рвутся по буквам.
+/// вместе с подписью справа ([suffix] — код страны, «разминка 2»; она не сжимается отдельно
+/// от имени). Не поместился ни один — строки последнего варианта и подпись уменьшаются одним
+/// кеглем, а не рвутся по буквам. Подпись [optional] (регион на российских стартах) в таком
+/// случае просто не выводится: имя важнее.
 class NameLines extends StatelessWidget {
   final List<List<String>> variants;
   final TextStyle style;
   final String suffix;
   final TextStyle? suffixStyle;
   final bool center;
+
+  /// Подпись можно не выводить, если с ней имя не помещается.
+  final bool optional;
 
   /// Что прочтёт экранный диктор: имя целиком.
   final String? semantics;
@@ -763,6 +768,7 @@ class NameLines extends StatelessWidget {
     this.suffix = '',
     this.suffixStyle,
     this.center = false,
+    this.optional = false,
     this.semantics,
   });
 
@@ -780,11 +786,25 @@ class NameLines extends StatelessWidget {
   Widget build(BuildContext context) => MeasuredLayout(
     builder: (context, c) {
       final w = c.maxWidth;
-      final sw = suffix.isEmpty ? 0.0 : textWidth(context, suffix, suffixStyle ?? style) + gap;
+      final sStyle = suffixStyle ?? style;
+      var tail = suffix;
+      var sw = tail.isEmpty ? 0.0 : textWidth(context, tail, sStyle) + gap;
+      bool any(double sw) => variants.any((v) => fits(context, v, style, w, sw));
+      if (optional && tail.isNotEmpty && !any(sw)) (tail, sw) = ('', 0.0);
       final pick = variants.firstWhere((v) => fits(context, v, style, w, sw), orElse: () => variants.last);
       final shrink = !fits(context, pick, style, w, sw);
+      // уменьшается всё вместе и одинаково: «Davis /», «Smolkin» и «GEO» — одним масштабом
+      var k = 1.0;
+      if (shrink) {
+        for (var i = 0; i < pick.length; i++) {
+          final need = textWidth(context, pick[i], style) + (i == pick.length - 1 ? sw : 0);
+          if (need > w) k = math.min(k, math.max(w, 1) / need);
+        }
+        k *= .98;
+      }
+      TextStyle scaled(TextStyle x) => k < 1 ? x.copyWith(fontSize: (x.fontSize ?? 14) * k) : x;
       Widget line(String t, bool last) {
-        Widget text = Text(t, maxLines: 1, softWrap: false, overflow: TextOverflow.clip, style: style);
+        Widget text = Text(t, maxLines: 1, softWrap: false, overflow: TextOverflow.clip, style: scaled(style));
         if (shrink) {
           text = FittedBox(
             fit: BoxFit.scaleDown,
@@ -792,15 +812,15 @@ class NameLines extends StatelessWidget {
             child: text,
           );
         }
-        if (!last || suffix.isEmpty) return text;
+        if (!last || tail.isEmpty) return text;
         return Row(
           mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: shrink ? CrossAxisAlignment.end : CrossAxisAlignment.baseline,
+          crossAxisAlignment: CrossAxisAlignment.baseline,
           textBaseline: TextBaseline.alphabetic,
           children: [
             Flexible(child: text),
-            const SizedBox(width: gap),
-            Text(suffix, maxLines: 1, softWrap: false, style: suffixStyle ?? style),
+            SizedBox(width: gap * k),
+            Text(tail, maxLines: 1, softWrap: false, style: scaled(sStyle)),
           ],
         );
       }
@@ -812,7 +832,7 @@ class NameLines extends StatelessWidget {
       );
       if (semantics == null) return body;
       return Semantics(
-        label: suffix.isEmpty ? semantics : '$semantics $suffix',
+        label: tail.isEmpty ? semantics : '$semantics $tail',
         child: ExcludeSemantics(child: body),
       );
     },
