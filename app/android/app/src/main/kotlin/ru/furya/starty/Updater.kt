@@ -61,6 +61,7 @@ object Updater {
     @Volatile private var checking = false
     /** Идёт загрузка — в памяти: после гибели процесса не залипает. */
     @Volatile private var downloading: String? = null
+    @Volatile private var progress = 0
 
     /** Сколько экранов приложения сейчас видно (onStart/onStop). */
     private var started = 0
@@ -89,15 +90,18 @@ object Updater {
 
     private class HttpError(val code: Int) : IOException("HTTP $code")
 
-    private fun open(url: String): HttpURLConnection {
+    /** [from] > 0 — докачка с этого байта; сервер может ответить 200 и отдать файл с начала. */
+    private fun open(url: String, from: Long = 0): HttpURLConnection {
         val c = URL(url).openConnection() as HttpURLConnection
         c.connectTimeout = 15_000
-        c.readTimeout = 30_000
+        c.readTimeout = 60_000
         c.useCaches = false
         c.setRequestProperty("Cache-Control", "no-cache")
+        c.setRequestProperty("Accept-Encoding", "identity") // сборка уже сжата, обмен длиной не нужен
+        if (from > 0) c.setRequestProperty("Range", "bytes=$from-")
         c.instanceFollowRedirects = true
-        if (c.responseCode != 200) {
-            val code = c.responseCode
+        val code = c.responseCode
+        if (code != 200 && !(from > 0 && code == 206)) {
             c.disconnect()
             throw HttpError(code)
         }
@@ -183,22 +187,25 @@ object Updater {
         if (p.getString("readySha", "") == sha && dst.isFile && dst.length() == size && sha256(dst) == sha) return ""
         // Эта сборка уже не прошла сверку — не качать те же мегабайты каждый час, пока описание то же.
         if (p.getString("badSha", "") == sha) return p.getString("badWhy", "") ?: ""
-        dropReady(ctx)
+        // недокачанное этой же сборки остаётся между запусками — докачка, а не заново
+        val tmp = File(dir(ctx), "download-${sha.take(12)}.part")
+        dropReady(ctx, keep = tmp.name)
         downloading = version
+        progress = if (tmp.isFile) (tmp.length() * 100 / size).toInt().coerceIn(0, 99) else 0
         changed()
-        val tmp = File(dir(ctx), "download.part")
         val why = try {
             download(BASE + name, tmp, size, sha).ifEmpty {
                 if (!tmp.renameTo(dst)) "не получилось сохранить сборку" else checkApk(ctx, dst, code)
             }
         } finally {
             downloading = null
-            tmp.delete()
         }
         if (why.isNotEmpty()) {
             dst.delete()
-            // Обрыв связи — не вина сборки, остальное запоминаем.
-            if (why != "сборка скачалась не целиком") p.edit().putString("badSha", sha).putString("badWhy", why).apply()
+            // Обрыв связи — не вина сборки: недокачанное остаётся. Остальное — испорчено, запоминаем.
+            if (why.startsWith("обрыв")) return why
+            tmp.delete()
+            p.edit().putString("badSha", sha).putString("badWhy", why).apply()
             return why
         }
         p.edit()
@@ -215,29 +222,49 @@ object Updater {
         return ""
     }
 
-    /** Скачивает в [to], сверяя размер и хеш на лету. Пустая строка — всё сошлось. */
+    /**
+     * Скачивает в [to] с докачкой: на медленной или рвущейся связи уже полученное не пропадает.
+     * Пустая строка — всё сошлось; «обрыв…» — не докачано, продолжим при следующей проверке.
+     */
     private fun download(url: String, to: File, size: Long, sha: String): String {
-        val md = MessageDigest.getInstance("SHA-256")
-        var got = 0L
-        val c = open(url)
-        try {
-            c.inputStream.use { inp ->
-                to.outputStream().use { out ->
-                    val buf = ByteArray(64 * 1024)
-                    while (true) {
-                        val n = inp.read(buf)
-                        if (n < 0) break
-                        got += n
-                        if (got > size) return "сборка больше, чем в описании"
-                        md.update(buf, 0, n)
-                        out.write(buf, 0, n)
+        var fails = 0
+        var lastPush = -1
+        while (true) {
+            var have = if (to.isFile) to.length() else 0L
+            if (have > size) { to.delete(); have = 0 }
+            if (have == size) break
+            try {
+                val c = open(url, have)
+                try {
+                    // 200 на запрос с Range — сервер отдаёт с начала
+                    val append = have > 0 && c.responseCode == 206
+                    if (!append) have = 0
+                    c.inputStream.use { inp ->
+                        java.io.FileOutputStream(to, append).use { out ->
+                            val buf = ByteArray(128 * 1024)
+                            while (true) {
+                                val n = inp.read(buf)
+                                if (n < 0) break
+                                have += n
+                                if (have > size) return run { to.delete(); "сборка больше, чем в описании" }
+                                out.write(buf, 0, n)
+                                val pc = (have * 100 / size).toInt()
+                                if (pc != lastPush) { lastPush = pc; progress = pc; changed() }
+                            }
+                        }
                     }
-                }
+                } finally { c.disconnect() }
+                fails = 0
+            } catch (e: HttpError) {
+                throw e
+            } catch (e: IOException) {
+                // связь рвётся — пробуем докачать ещё несколько раз подряд
+                if (++fails >= 5) return "обрыв связи, будет докачано"
+                try { Thread.sleep(2_000L * fails) } catch (_: InterruptedException) { return "обрыв связи, будет докачано" }
             }
-        } finally { c.disconnect() }
-        if (got == 0L) return "сайт отдал сборку пустой"
-        if (got != size) return "сборка скачалась не целиком"
-        if (hex(md.digest()) != sha) return "сборка не сходится с описанием"
+        }
+        if (to.length() != size) return "обрыв связи, будет докачано"
+        if (sha256(to) != sha) return "сборка не сходится с описанием"
         return ""
     }
 
@@ -266,8 +293,8 @@ object Updater {
         return sigs.orEmpty().map { sha256(it.toByteArray()) }.toSet()
     }
 
-    private fun dropReady(ctx: Context) {
-        dir(ctx).listFiles()?.forEach { it.delete() }
+    private fun dropReady(ctx: Context, keep: String? = null) {
+        dir(ctx).listFiles()?.forEach { if (it.name != keep) it.delete() }
         prefs(ctx).edit().remove("readyVersion").remove("readyCode").remove("readyNotes").remove("readySha")
             .remove("readyFile").remove("wait").remove("tries").remove("installError").apply()
     }
@@ -462,7 +489,7 @@ object Updater {
         if (checking) o.put("checking", true)
         p.getLong("checkedAt", 0).takeIf { it > 0 }?.let { o.put("checkedAt", it) }
         p.getString("error", "")?.takeIf { it.isNotEmpty() }?.let { o.put("error", it) }
-        downloading?.let { o.put("downloading", it) }
+        downloading?.let { o.put("downloading", it).put("progress", progress) }
         if (ready(ctx) != null) {
             o.put("ready", JSONObject().put("version", p.getString("readyVersion", "")).put("notes", p.getString("readyNotes", "")))
             o.put("wait", p.getString("wait", "").takeIf { !it.isNullOrEmpty() } ?: "leave")

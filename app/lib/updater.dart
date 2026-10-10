@@ -18,6 +18,7 @@ class UpdateState {
   final DateTime? checkedAt;
   final String error;
   final String? downloading;
+  final int progress; // процентов скачано
   final String? readyVersion, readyNotes;
   final String wait; // leave — после сворачивания, confirm — ждёт подтверждения
   final bool stuck;
@@ -32,6 +33,7 @@ class UpdateState {
     this.checkedAt,
     this.error = '',
     this.downloading,
+    this.progress = 0,
     this.readyVersion,
     this.readyNotes,
     this.wait = '',
@@ -52,6 +54,7 @@ class UpdateState {
       checkedAt: j['checkedAt'] is int ? DateTime.fromMillisecondsSinceEpoch(j['checkedAt']) : null,
       error: (j['error'] as String?) ?? '',
       downloading: j['downloading'] as String?,
+      progress: (j['progress'] as int?) ?? 0,
       readyVersion: ready?['version'] as String?,
       readyNotes: ready?['notes'] as String?,
       wait: (j['wait'] as String?) ?? '',
@@ -81,7 +84,7 @@ class UpdateState {
   /// Строка состояния для настроек — то, что есть на самом деле.
   String line(DateTime now) {
     if (!enabled) return 'Недоступно';
-    if (downloading != null && !ready) return 'Скачивается версия $downloading…';
+    if (downloading != null && !ready) return 'Скачивается версия $downloading · $progress %';
     if (ready) {
       final v = 'Версия $readyVersion';
       if (wait == 'confirm') return '$v ждёт подтверждения установки';
