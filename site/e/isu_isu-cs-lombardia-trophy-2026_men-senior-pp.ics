@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-lombardia-trophy-2026:men-senior-pp@starty
-DTSTAMP:20261010T085102Z
+DTSTAMP:20261010T085816Z
 DTSTART;TZID=Europe/Moscow:20260920T143000
 DTEND;TZID=Europe/Moscow:20260920T160000
 SUMMARY:CS Lombardia Trophy — мужчины ПП
@@ -24,6 +24,8 @@ DESCRIPTION:Итог:\n1. Mihhail Selevko — 169.78\n2. Матвей Ве
  — 254.53\n3. Corentin Spinar — 247.66\n\nНаши:\n• Матвей 
  Ветлугин — 9-й\n\nНачало: 14:30 МСК
 LOCATION:Bergamo\, Italy
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-lombardia-trophy-2026:men
+ -senior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

@@ -15,7 +15,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:wome
  n-junior-pp@starty
-DTSTAMP:20261010T085102Z
+DTSTAMP:20261010T085816Z
 DTSTART;TZID=Europe/Moscow:20261014T124500
 DTEND;TZID=Europe/Moscow:20261014T152000
 SUMMARY:ЮГП России «Рапсодия льда» — девушк
@@ -23,6 +23,8 @@ SUMMARY:ЮГП России «Рапсодия льда» — девушк
 DESCRIPTION:Начало: 12:45 МСК\nТрансляция: Первый 
  канал
 LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-raps
+ odiya-l-da-sredi-yuniorov-2026:women-junior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

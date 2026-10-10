@@ -15,7 +15,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
  026:men-junior-kp@starty
-DTSTAMP:20261010T085102Z
+DTSTAMP:20261010T085816Z
 DTSTART;TZID=Europe/Moscow:20261006T192000
 DTEND;TZID=Europe/Moscow:20261006T215500
 SUMMARY:ЮГП России «Мемориал Горшкова» — юн
@@ -25,6 +25,8 @@ DESCRIPTION:Итог:\n1. Марк Лукин — 81.52\n2. Николай
  Наши:\n• Алдар Самбуев — 2-й\n\nНачало: 19:20 
  МСК\nТрансляция: Первый канал
 LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-memo
+ rial-a-g-gorshkova-sredi-yuniorov-2026:men-junior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

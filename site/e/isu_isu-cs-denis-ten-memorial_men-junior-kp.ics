@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:men-junior-kp@starty
-DTSTAMP:20261010T085102Z
+DTSTAMP:20261010T085816Z
 DTSTART;TZID=Europe/Moscow:20261008T084500
 DTEND;TZID=Europe/Moscow:20261008T105000
 SUMMARY:CS Denis Ten Memorial — юноши КП
@@ -24,6 +24,8 @@ DESCRIPTION:Итог:\n1. Арсений Федотов — 91.38\n2. Ал
  др Чмиль — 8-й\n• Глеб Ковтун — 10-й\n\nНача
  ло: 08:45 МСК
 LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:men-ju
+ nior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
