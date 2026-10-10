@@ -509,18 +509,54 @@ class SheetScroll extends StatefulWidget {
 
 class _SheetScrollState extends State<SheetScroll> {
   bool scrolled = false;
+
+  /// Закрытие свайпом вниз: тянуть надо с самого верха и достаточно далеко — случайные
+  /// касания и обычная прокрутка лист не закрывают.
+  static const _closeAt = 120.0;
+  bool _fromTop = false;
+  double _pull = 0;
+  bool _dragging = false;
+
+  bool _onScroll(ScrollNotification n) {
+    final s = n.metrics.pixels > 2;
+    if (s != scrolled) setState(() => scrolled = s);
+    if (n.depth != 0) return false;
+    if (n is ScrollStartNotification) {
+      _fromTop = n.metrics.pixels <= 0.5;
+      _dragging = n.dragDetails != null;
+      _pull = 0;
+    } else if (n is OverscrollNotification && n.overscroll < 0 && _fromTop && n.dragDetails != null) {
+      setState(() => _pull = (_pull - n.overscroll).clamp(0.0, 260.0));
+    } else if (n is ScrollUpdateNotification && n.metrics.pixels < 0 && _fromTop && n.dragDetails != null) {
+      // iOS: прокрутка «пружинит» ниже верха
+      setState(() => _pull = (-n.metrics.pixels).clamp(0.0, 260.0));
+    } else if (n is ScrollEndNotification) {
+      final close = _fromTop && _pull >= _closeAt;
+      _fromTop = false;
+      _dragging = false;
+      if (close) {
+        Navigator.of(context).maybePop();
+      } else if (_pull != 0) {
+        setState(() => _pull = 0);
+      }
+    }
+    return false;
+  }
+
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    return Stack(
+    return TweenAnimationBuilder<double>(
+      tween: Tween(end: _pull),
+      duration: _dragging ? Duration.zero : const Duration(milliseconds: 180),
+      curve: Curves.easeOutCubic,
+      // лист следует за пальцем, но медленнее: видно, что он поддаётся, и сколько осталось
+      builder: (context, v, child) => Transform.translate(offset: Offset(0, v * .5), child: child),
+      child: Stack(
       children: [
         NotificationListener<ScrollNotification>(
-          onNotification: (n) {
-            final s = n.metrics.pixels > 2;
-            if (s != scrolled) setState(() => scrolled = s);
-            return false;
-          },
-          child: SingleChildScrollView(child: widget.child),
+          onNotification: _onScroll,
+          child: SingleChildScrollView(physics: const AlwaysScrollableScrollPhysics(), child: widget.child),
         ),
         Positioned(
           top: 0,
@@ -546,6 +582,7 @@ class _SheetScrollState extends State<SheetScroll> {
         ),
         const Positioned(top: 0, left: 0, right: 0, child: SheetHandle()),
       ],
+      ),
     );
   }
 }
