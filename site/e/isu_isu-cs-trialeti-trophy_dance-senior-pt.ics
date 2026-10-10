@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-trialeti-trophy:dance-senior-pt@starty
-DTSTAMP:20261010T060835Z
+DTSTAMP:20261010T063944Z
 DTSTART;TZID=Europe/Moscow:20261002T151500
 DTEND;TZID=Europe/Moscow:20261002T181000
 SUMMARY:CS Trialeti Trophy — танцы ПТ
@@ -29,8 +29,6 @@ DESCRIPTION:Итог:\n1. Diana Davis / Gleb Smolkin — 123.44\n2. Ели
  а Пасечник / Дарио Чиризано — 17-й\n\nНачал
  о: 15:15 МСК
 LOCATION:Batumi\, Georgia
-URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-trialeti-trophy:dance-sen
- ior-pt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

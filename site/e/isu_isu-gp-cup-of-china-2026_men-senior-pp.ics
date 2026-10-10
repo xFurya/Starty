@@ -14,15 +14,13 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-cup-of-china-2026:men-senior-pp@starty
-DTSTAMP:20261010T060835Z
+DTSTAMP:20261010T063944Z
 DTSTART;TZID=Europe/Moscow:20261108T080000
 DTEND;TZID=Europe/Moscow:20261108T094500
 SUMMARY:GP Cup of China — мужчины ПП
 DESCRIPTION:Наши:\n• Владислав Дикиджи\n\nНачал
  о: 08:00 МСК
 LOCATION:Shenzhen\, China
-URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:men-sen
- ior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

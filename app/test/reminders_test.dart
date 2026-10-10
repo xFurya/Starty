@@ -14,7 +14,7 @@ void main() {
 
   test('по умолчанию — каждый будущий старт, за 15 минут, текст как в 1.0.1', () {
     final p = Reminders.plan(data, plan(), now);
-    final future = data.starts.where((s) => s.t0.subtract(const Duration(minutes: 15)).isAfter(now)).length;
+    final future = data.starts.where((s) => s.t1.isAfter(now)).length;
     expect(p.length, future > 60 ? 60 : future);
     final x = p.firstWhere((x) => x.startId == womenFs.id);
     expect(x.at, womenFs.t0.subtract(const Duration(minutes: 15)));
@@ -97,5 +97,18 @@ void main() {
     expect(NotifyRules.fromJson('{oops').isDefault, isTrue);
     expect(NotifyRules.fromJson('{"lead": 7}').lead, 15);
     expect(NotifyRules.fromJson(null).on, isTrue);
+  });
+
+  test('идущий старт остаётся в плане с концом — показанное уведомление не снимается', () {
+    final live = data.starts.firstWhere((e) => e.t0.isBefore(now) && e.t1.isAfter(now));
+    final x = Reminders.plan(data, plan(), now).firstWhere((x) => x.startId == live.id);
+    expect(x.at.isBefore(now), isTrue);
+    expect(x.end, live.t1);
+  });
+
+  test('место без многоточия у города', () {
+    final json = File('test/events_sample.json').readAsStringSync().replaceAll('"Almaty, Kazakhstan"', '"Almaty..., Kazakhstan"');
+    final d = Schedule.parse(json);
+    expect(d.starts.any((e) => e.venue.contains('...')), isFalse);
   });
 }

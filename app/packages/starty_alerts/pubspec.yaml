@@ -1,0 +1,19 @@
+name: starty_alerts
+description: Уведомления о стартах для Android — несмахиваемые до конца старта, без цифры на иконке.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.13.5
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: ru.furya.starty.alerts
+        pluginClass: AlertsPlugin

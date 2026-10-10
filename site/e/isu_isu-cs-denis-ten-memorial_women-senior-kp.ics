@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:women-senior-kp@starty
-DTSTAMP:20261010T060835Z
+DTSTAMP:20261010T063944Z
 DTSTART;TZID=Europe/Moscow:20261008T150500
 DTEND;TZID=Europe/Moscow:20261008T175000
 SUMMARY:CS Denis Ten Memorial — женщины КП
@@ -23,9 +23,7 @@ DESCRIPTION:Итог:\n1. Александра Трусова — 77.39\n2.
  ария Захарова — 4-й\n• Александра Трусов
  а — 14-й\n• Дина Хуснутдинова — 16-й\n\nНача
  ло: 15:05 МСК
-LOCATION:Almaty...\, Kazakhstan
-URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:women-
- senior-kp
+LOCATION:Almaty\, Kazakhstan
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

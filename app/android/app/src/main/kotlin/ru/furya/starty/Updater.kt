@@ -47,7 +47,7 @@ object Updater {
     private const val PREFS = "update"
     private const val JOB_ID = 7311
     private const val JOB_SOON = 7313
-    private const val CHANNEL = "update"
+    private const val CHANNEL = "update2" // «update» был со значком на иконке
     private const val NOTE_ID = 7312
     const val ACTION_STATUS = "ru.furya.starty.UPDATE_STATUS"
     const val EXTRA_INSTALL = "update_install"
@@ -399,8 +399,11 @@ object Updater {
     @SuppressLint("MissingPermission")
     private fun notify(ctx: Context, title: String, text: String, install: Boolean) {
         if (Build.VERSION.SDK_INT >= 26) {
+            val m = ctx.getSystemService(NotificationManager::class.java)
+            m.deleteNotificationChannel("update")
             val ch = NotificationChannel(CHANNEL, "Обновления", NotificationManager.IMPORTANCE_DEFAULT)
-            ctx.getSystemService(NotificationManager::class.java).createNotificationChannel(ch)
+            ch.setShowBadge(false)
+            m.createNotificationChannel(ch)
         }
         val open = Intent(ctx, MainActivity::class.java).putExtra(EXTRA_INSTALL, install)
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)

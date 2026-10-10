@@ -413,6 +413,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.12.2"
+  starty_alerts:
+    dependency: "direct main"
+    description:
+      path: "packages/starty_alerts"
+      relative: true
+    source: path
+    version: "1.0.0"
   stream_channel:
     dependency: transitive
     description:

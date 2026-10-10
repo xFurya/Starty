@@ -10,6 +10,8 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/data/latest.dart' as tzdata;
 import 'package:timezone/timezone.dart' as tz;
 
+import 'package:starty_alerts/starty_alerts.dart';
+
 import 'data.dart';
 
 /// Правила: о каких стартах напоминать и за сколько минут.
@@ -195,71 +197,83 @@ class Reminders {
 
   static int _id(String s) => s.hashCode & 0x7fffffff;
 
-  static const _startDetails = NotificationDetails(
-    android: AndroidNotificationDetails(
-      'starts',
-      'Старты',
-      channelDescription: 'Начало старта',
-      importance: Importance.high,
-      priority: Priority.high,
-    ),
-    iOS: DarwinNotificationDetails(),
+  /// iPhone: уведомления ставит общий плагин; значок на иконке никогда не меняется.
+  static const _iosDetails = NotificationDetails(
+    iOS: DarwinNotificationDetails(presentBadge: false, presentAlert: true, presentSound: true),
   );
 
-  static const _skaterDetails = NotificationDetails(
-    android: AndroidNotificationDetails(
-      'skaters',
-      'Выход наших',
-      channelDescription: 'Выход нашего спортсмена на лёд',
-      importance: Importance.high,
-      priority: Priority.high,
-    ),
-    iOS: DarwinNotificationDetails(),
-  );
+  static bool get _android => !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
 
-  /// Все будущие уведомления: время, заголовок, текст. Ближайшие 60 —
-  /// iOS держит не больше 64 запланированных.
+  /// Уведомления, которые должны быть: время, заголовок, текст и конец старта — до него
+  /// уведомление висит. Сюда попадают и уже показанные (старт идёт), чтобы их не убирали.
+  /// Ближайшие 60 — iOS держит не больше 64 запланированных.
   static List<Planned> plan(Schedule data, NotifyPlan p, DateTime now) {
     final out = <Planned>[];
     final lead = Duration(minutes: p.rules.lead);
     for (final s in data.starts) {
-      if (!p.wants(s)) continue;
+      if (!p.wants(s) || !s.t1.isAfter(now)) continue;
       final at = s.t0.subtract(lead);
-      if (at.isAfter(now)) {
-        final ours = s.ours.where((o) => o.time != null).map((o) => '${o.time} ${o.short}').join(', ');
-        out.add(Planned(
-          's:${s.id}',
-          at,
-          '${hm(s.t0)} · ${s.segment}',
-          [s.tournament, if (ours.isNotEmpty) ours, if (s.broadcast.isNotEmpty) s.broadcast.join(' / ')].join(' · '),
-          s.id,
-        ));
-      }
+      final ours = s.ours.where((o) => o.time != null).map((o) => '${o.time} ${o.short}').join(', ');
+      out.add(Planned(
+        's:${s.id}',
+        at,
+        s.t1,
+        '${hm(s.t0)} · ${s.segment}',
+        [s.tournament, if (ours.isNotEmpty) ours, if (s.broadcast.isNotEmpty) s.broadcast.join(' / ')].join(' · '),
+        s.id,
+      ));
       if (!p.rules.skaters) continue;
       for (final o in s.ours) {
         final skate = s.skateAt(o);
         if (skate == null) continue;
-        final t = skate.subtract(lead);
-        if (!t.isAfter(now)) continue;
-        out.add(Planned('k:${s.id}:${o.name}', t, '${o.time} · ${o.name}', '${s.segment} · ${s.tournament}', s.id));
+        out.add(Planned(
+          'k:${s.id}:${o.name}',
+          skate.subtract(lead),
+          s.t1,
+          '${o.time} · ${o.name}',
+          '${s.segment} · ${s.tournament}',
+          s.id,
+        ));
       }
     }
     out.sort((a, b) => a.at.compareTo(b.at));
     return out.take(60).toList();
   }
 
-  /// Пересобрать все уведомления по расписанию и правилам.
-  static Future<void> sync(Schedule? data, NotifyPlan p) async {
-    if (!_ready || data == null) return;
+  /// Один раз после перехода на свои уведомления: убрать то, что поставил общий плагин в 1.0.3 и раньше.
+  static Future<void> _migrate() async {
+    if (Prefs.alertsMigrated) return;
     try {
       await _n.cancelAll();
-      for (final x in plan(data, p, DateTime.now())) {
+    } catch (_) {}
+    await Prefs.setAlertsMigrated();
+  }
+
+  /// Привести уведомления в соответствие с расписанием и правилами. Уже показанные не трогаются
+  /// (открытие приложения их не убирает), пока старт не кончился или его не выключили.
+  static Future<void> sync(Schedule? data, NotifyPlan p) async {
+    if (data == null) return;
+    try {
+      final now = DateTime.now();
+      final list = plan(data, p, now);
+      if (_android) {
+        await _migrate();
+        await StartyAlerts.sync([
+          for (final x in list) AlertEntry(key: x.key, at: x.at, end: x.end, title: x.title, body: x.body),
+        ]);
+        return;
+      }
+      if (!_ready) return;
+      // iPhone: убираем только запланированное, показанное остаётся
+      await _n.cancelAllPendingNotifications();
+      for (final x in list) {
+        if (!x.at.isAfter(now)) continue;
         await _n.zonedSchedule(
           id: _id(x.key),
           scheduledDate: tz.TZDateTime.from(x.at, tz.UTC),
           title: x.title,
           body: x.body,
-          notificationDetails: x.key.startsWith('k:') ? _skaterDetails : _startDetails,
+          notificationDetails: _iosDetails,
           androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
           payload: x.startId,
         );
@@ -272,7 +286,7 @@ class Reminders {
 
 class Planned {
   final String key;
-  final DateTime at;
+  final DateTime at, end;
   final String title, body, startId;
-  Planned(this.key, this.at, this.title, this.body, this.startId);
+  Planned(this.key, this.at, this.end, this.title, this.body, this.startId);
 }

@@ -41,6 +41,8 @@ dependencies:
   url_launcher: ^6.3.3
   webview_flutter: ^4.14.1
   workmanager: ^0.10.10
+  starty_alerts:
+    path: packages/starty_alerts
 
 dev_dependencies:
   flutter_test:

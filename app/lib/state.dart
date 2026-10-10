@@ -10,6 +10,9 @@ class AppState extends ChangeNotifier {
   Schedule? data;
   bool loading = true;
   bool offline = false;
+
+  /// Идёт ручное или фоновое обновление расписания — для строки в настройках.
+  bool refreshing = false;
   Filters filters = Filters(Prefs.kinds, Prefs.tids, Prefs.athletes);
 
   // уведомления
@@ -40,13 +43,17 @@ class AppState extends ChangeNotifier {
   int get exceptions => forcedOn.length + forcedOff.length;
 
   Future<void> load() async {
+    if (refreshing) return;
     data ??= await Repo.cached();
     if (data != null) {
       loading = false;
       notifyListeners();
       unawaited(_sync());
     }
+    refreshing = true;
+    notifyListeners();
     final fresh = await Repo.fetch();
+    refreshing = false;
     if (fresh != null) {
       data = fresh;
       offline = false;

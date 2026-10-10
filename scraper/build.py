@@ -157,7 +157,8 @@ def ru_venue(city, venue):
 
 
 def intl_venue(city, nation_code, country_name=""):
-    c = city.split(",")[0].strip()
+    # табло иногда отдаёт город с многоточием («Almaty...») — оно не часть названия
+    c = city.split(",")[0].strip().rstrip(".…").strip()
     if c.isupper():
         c = c.title()
     country = COUNTRIES.get(nation_code, country_name or nation_code)

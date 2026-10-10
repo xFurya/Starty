@@ -272,8 +272,17 @@ class SettingsView extends StatelessWidget {
                     return _Row(
                       icon: CupertinoIcons.arrow_2_circlepath,
                       title: 'Расписание',
-                      subtitle: f?.text ?? (state.loading ? 'загрузка' : 'нет связи'),
-                      subtitleColor: f == null || f.alarm ? p.live : null,
+                      subtitle: state.refreshing ? 'обновление…' : (f?.text ?? (state.loading ? 'загрузка' : 'нет связи')),
+                      subtitleColor: !state.refreshing && (f == null || f.alarm) ? p.live : null,
+                      // нажатие — обновить расписание сейчас
+                      onTap: state.refreshing ? null : state.load,
+                      trailing: state.refreshing
+                          ? SizedBox(
+                              width: 18,
+                              height: 18,
+                              child: CircularProgressIndicator(strokeWidth: 2, color: p.accent),
+                            )
+                          : null,
                     );
                   },
                 ),

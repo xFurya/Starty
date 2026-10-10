@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:dance-junior-rt@starty
-DTSTAMP:20261010T060835Z
+DTSTAMP:20261010T063944Z
 DTSTART;TZID=Europe/Moscow:20261008T193500
 DTEND;TZID=Europe/Moscow:20261008T201500
 SUMMARY:CS Denis Ten Memorial — юниорские танцы РТ
@@ -24,9 +24,7 @@ DESCRIPTION:Итог:\n1. Мария Фефелова / Артём Вало
  рья Дрожжина / Иван Тельнов — 3-й\n• Мария
   Фефелова / Артём Валов — 4-й\n\nНачало: 19:35 
  МСК
-LOCATION:Almaty...\, Kazakhstan
-URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:dance-
- junior-rt
+LOCATION:Almaty\, Kazakhstan
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

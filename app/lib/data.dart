@@ -68,6 +68,9 @@ class Skater {
   String get short => name.contains(' / ') ? name.split(' / ').map((p) => p.trim().split(' ').last).join(' / ') : name;
 }
 
+/// Город без хвостового многоточия: «Almaty..., Kazakhstan» → «Almaty, Kazakhstan».
+String _cleanVenue(Object? v) => ((v as String?) ?? '').replaceAll(RegExp(r'\s*(\.{2,}|…)+(?=\s*(,|$))'), '').trim();
+
 class Start {
   final String id, tid, tournament, kind, level, seg, title, venue, src;
   final DateTime t0, t1;
@@ -82,7 +85,7 @@ class Start {
       level = j['level'],
       seg = j['seg'],
       title = j['title'],
-      venue = j['venue'] ?? '',
+      venue = _cleanVenue(j['venue']),
       src = j['src'] ?? '',
       t0 = DateTime.parse(j['start']),
       t1 = DateTime.parse(j['end']),
@@ -146,7 +149,7 @@ class Upcoming {
   Upcoming.fromJson(Map<String, dynamic> j)
     : tid = j['tid'] ?? '',
       name = j['name'] ?? '',
-      venue = j['venue'] ?? '',
+      venue = _cleanVenue(j['venue']),
       intl = j['intl'] == true,
       start = (j['start'] as String? ?? '').split('T').first,
       end = ((j['end'] ?? j['start']) as String? ?? '').split('T').first,
@@ -266,6 +269,10 @@ class Prefs {
     await _p.setStringList('n.on', on.toList());
     await _p.setStringList('n.off', off.toList());
   }
+
+  /// Уведомления Android переведены на свои (старые, от общего плагина, убраны).
+  static bool get alertsMigrated => _p.getBool('n.mig2') ?? false;
+  static Future<void> setAlertsMigrated() => _p.setBool('n.mig2', true);
 
   /// Разрешение у системы уже спрашивали.
   static bool get asked => _p.getBool('n.asked') ?? false;

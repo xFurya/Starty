@@ -14,16 +14,14 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:men-junior-pp@starty
-DTSTAMP:20261010T060835Z
+DTSTAMP:20261010T063944Z
 DTSTART;TZID=Europe/Moscow:20261010T073000
 DTEND;TZID=Europe/Moscow:20261010T094500
 SUMMARY:CS Denis Ten Memorial — юноши ПП
 DESCRIPTION:Наши:\n• Глеб Ковтун — 09:23\n• Алекс
  андр Чмиль — 09:30\n• Арсений Федотов — 09:37
  \n\nНачало: 07:30 МСК
-LOCATION:Almaty...\, Kazakhstan
-URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:men-ju
- nior-pp
+LOCATION:Almaty\, Kazakhstan
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

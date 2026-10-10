@@ -14,16 +14,14 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:men-senior-pp@starty
-DTSTAMP:20261010T060835Z
+DTSTAMP:20261010T063944Z
 DTSTART;TZID=Europe/Moscow:20261010T123000
 DTEND;TZID=Europe/Moscow:20261010T140100
 SUMMARY:CS Denis Ten Memorial — мужчины ПП
 DESCRIPTION:Наши:\n• Пётр Гуменник — 13:37\n• Гле
  б Лутфуллин — 13:45\n• Владислав Дикиджи —
   13:53\n\nНачало: 12:30 МСК
-LOCATION:Almaty...\, Kazakhstan
-URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:men-se
- nior-pp
+LOCATION:Almaty\, Kazakhstan
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-john-nicks-pairs-international-2026:pairs-senior-pp@starty
-DTSTAMP:20261010T060835Z
+DTSTAMP:20261010T063944Z
 DTSTART;TZID=Europe/Moscow:20260912T214000
 DTEND;TZID=Europe/Moscow:20260912T232000
 SUMMARY:CS John Nicks Pairs International — пары ПП
@@ -27,8 +27,6 @@ DESCRIPTION:Итог:\n1. Александра Бойкова / Дмитр
  дра Бойкова / Дмитрий Козловский — 11-й\n\n
  Начало: 21:40 МСК
 LOCATION:Norwood\, USA
-URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-john-nicks-pairs-internat
- ional-2026:pairs-senior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
