@@ -307,18 +307,18 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
         builder: (context, _) => Scaffold(
           body: Column(
             children: [
-              if (update != null)
-                SafeArea(
-                  bottom: false,
-                  child: UpdateBar(info: update!, onClose: () => setState(() => update = null)),
-                ),
+              // область строки состояния — неподвижная и однотонная: содержимое под неё не заезжает,
+              // значки системы всегда на ровном фоне
+              Container(height: MediaQuery.paddingOf(context).top, color: Palette.of(context).bg),
+              if (update != null) UpdateBar(info: update!, onClose: () => setState(() => update = null)),
               Expanded(
                 child: MediaQuery.removePadding(
                   context: context,
-                  removeTop: update != null,
+                  removeTop: true,
                   // вкладки листаются свайпом; в «Месяце» свайп по самому календарю листает месяцы
                   child: PageView(
                     controller: _pages,
+                    physics: const _FirmPaging(),
                     onPageChanged: (i) => homeTab.value = i,
                     children: [
                       _Keep(FeedView(state: state)),
@@ -361,4 +361,27 @@ class _KeepState extends State<_Keep> with AutomaticKeepAliveClientMixin {
     super.build(context);
     return widget.child;
   }
+}
+
+/// Листание вкладок только намеренное: жест начинается после заметного сдвига, а страница
+/// меняется, если протянули больше половины экрана или смахнули резко. Случайные касания
+/// и диагональная прокрутка вкладки не переключают.
+class _FirmPaging extends PageScrollPhysics {
+  const _FirmPaging({super.parent});
+
+  @override
+  _FirmPaging applyTo(ScrollPhysics? ancestor) => _FirmPaging(parent: buildParent(ancestor));
+
+  @override
+  double? get dragStartDistanceMotionThreshold => 36;
+
+  @override
+  double get minFlingVelocity => 1400;
+
+  @override
+  double get minFlingDistance => 90;
+
+  @override
+  Tolerance toleranceFor(ScrollMetrics metrics) =>
+      Tolerance(velocity: 1400, distance: 0.5, time: 0.001);
 }

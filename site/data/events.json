@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-10T11:20:46+03:00",
- "checked": "2026-10-10T11:20:46+03:00",
+ "generated": "2026-10-10T11:51:02+03:00",
+ "checked": "2026-10-10T11:51:02+03:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -2487,26 +2487,26 @@
    "seg": "ПТ",
    "title": "CS Denis Ten Memorial — юниорские танцы ПТ",
    "start": "2026-10-09T14:00:00+03:00",
-   "end": "2026-10-09T14:45:00+03:00",
+   "end": "2026-10-09T14:42:00+03:00",
    "venue": "Almaty, Kazakhstan",
    "intl": true,
    "broadcast": [],
    "ours": [
     {
      "name": "Дарья Дрожжина / Иван Тельнов",
+     "time": "14:27",
      "no": 4,
      "warmup": 1,
      "place": 2,
-     "final": 2,
-     "time": "14:27"
+     "final": 2
     },
     {
      "name": "Мария Фефелова / Артём Валов",
+     "time": "14:34",
      "no": 5,
      "warmup": 1,
      "place": 1,
-     "final": 1,
-     "time": "14:34"
+     "final": 1
     }
    ],
    "athletes": [
@@ -2514,6 +2514,7 @@
     "Мария Фефелова / Артём Валов"
    ],
    "src": "https://www.denistenmemorial.kz/results/index.htm",
+   "desc": "Итог:\n1. Мария Фефелова / Артём Валов — 97.45\n2. Дарья Дрожжина / Иван Тельнов — 94.46\n3. Sofiia Beznosikova / Max Leleu — 88.44\n\nИтог турнира:\n1. Мария Фефелова / Артём Валов — 164.56\n2. Дарья Дрожжина / Иван Тельнов — 153.87\n3. Sofiia Beznosikova / Max Leleu — 146.34\n\nНаши:\n• Дарья Дрожжина / Иван Тельнов — 14:27\n• Мария Фефелова / Артём Валов — 14:34\n\nНачало: 14:00 МСК",
    "podium": [
     {
      "place": 1,
@@ -2553,8 +2554,7 @@
      "nation": "AZE",
      "points": "146.34"
     }
-   ],
-   "desc": "Итог:\n1. Мария Фефелова / Артём Валов — 97.45\n2. Дарья Дрожжина / Иван Тельнов — 94.46\n3. Sofiia Beznosikova / Max Leleu — 88.44\n\nИтог турнира:\n1. Мария Фефелова / Артём Валов — 164.56\n2. Дарья Дрожжина / Иван Тельнов — 153.87\n3. Sofiia Beznosikova / Max Leleu — 146.34\n\nНаши:\n• Дарья Дрожжина / Иван Тельнов — 14:27\n• Мария Фефелова / Артём Валов — 14:34\n\nНачало: 14:00 МСК"
+   ]
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:dance-senior-rt",
@@ -2572,24 +2572,24 @@
    "ours": [
     {
      "name": "Василиса Кагановская / Максим Некрасов",
+     "time": "15:20",
      "no": 1,
      "warmup": 1,
-     "place": 3,
-     "time": "15:20"
+     "place": 3
     },
     {
      "name": "Анна Щербакова / Егор Гончаров",
+     "time": "15:33",
      "no": 3,
      "warmup": 1,
-     "place": 6,
-     "time": "15:33"
+     "place": 6
     },
     {
      "name": "Ирина Хавронина / Девид Нарижный",
+     "time": "16:46",
      "no": 10,
      "warmup": 3,
-     "place": 4,
-     "time": "16:46"
+     "place": 4
     }
    ],
    "athletes": [
@@ -2598,6 +2598,7 @@
     "Ирина Хавронина / Девид Нарижный"
    ],
    "src": "https://www.denistenmemorial.kz/results/index.htm",
+   "desc": "Итог:\n1. Caroline Green / Michael Parsons — 78.64\n2. Juulia Turkkila / Matthias Versluis — 74.33\n3. Василиса Кагановская / Максим Некрасов — 74.28\n\nНаши:\n• Василиса Кагановская / Максим Некрасов — 15:20\n• Анна Щербакова / Егор Гончаров — 15:33\n• Ирина Хавронина / Девид Нарижный — 16:46\n\nНачало: 15:15 МСК",
    "podium": [
     {
      "place": 1,
@@ -2617,8 +2618,7 @@
      "nation": "AIN2",
      "points": "74.28"
     }
-   ],
-   "desc": "Итог:\n1. Caroline Green / Michael Parsons — 78.64\n2. Juulia Turkkila / Matthias Versluis — 74.33\n3. Василиса Кагановская / Максим Некрасов — 74.28\n\nНаши:\n• Василиса Кагановская / Максим Некрасов — 15:20\n• Анна Щербакова / Егор Гончаров — 15:33\n• Ирина Хавронина / Девид Нарижный — 16:46\n\nНачало: 15:15 МСК"
+   ]
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:women-senior-pp",
@@ -2629,34 +2629,34 @@
    "seg": "ПП",
    "title": "CS Denis Ten Memorial — женщины ПП",
    "start": "2026-10-09T17:30:00+03:00",
-   "end": "2026-10-09T20:35:00+03:00",
+   "end": "2026-10-09T20:40:00+03:00",
    "venue": "Almaty, Kazakhstan",
    "intl": true,
    "broadcast": [],
    "ours": [
     {
      "name": "Мария Захарова",
+     "time": "19:30",
      "no": 12,
      "warmup": 3,
      "place": 5,
-     "final": 5,
-     "time": "19:30"
+     "final": 5
     },
     {
      "name": "Дина Хуснутдинова",
+     "time": "20:00",
      "no": 15,
      "warmup": 4,
      "place": 7,
-     "final": 7,
-     "time": "20:00"
+     "final": 7
     },
     {
      "name": "Александра Трусова",
+     "time": "20:32",
      "no": 19,
      "warmup": 4,
      "place": 1,
-     "final": 1,
-     "time": "20:32"
+     "final": 1
     }
    ],
    "athletes": [
@@ -2665,6 +2665,7 @@
     "Мария Захарова"
    ],
    "src": "https://www.denistenmemorial.kz/results/index.htm",
+   "desc": "Итог:\n1. Александра Трусова — 148.62\n2. Sofia Samodelkina — 134.91\n3. Yujae Kim — 133.21\n\nИтог турнира:\n1. Александра Трусова — 226.01\n2. Yujae Kim — 209.20\n3. Sofia Samodelkina — 204.36\n\nНаши:\n• Мария Захарова — 19:30\n• Дина Хуснутдинова — 20:00\n• Александра Трусова — 20:32\n\nНачало: 17:30 МСК",
    "podium": [
     {
      "place": 1,
@@ -2704,8 +2705,7 @@
      "nation": "KAZ",
      "points": "204.36"
     }
-   ],
-   "desc": "Итог:\n1. Александра Трусова — 148.62\n2. Sofia Samodelkina — 134.91\n3. Yujae Kim — 133.21\n\nИтог турнира:\n1. Александра Трусова — 226.01\n2. Yujae Kim — 209.20\n3. Sofia Samodelkina — 204.36\n\nНаши:\n• Мария Захарова — 19:30\n• Дина Хуснутдинова — 20:00\n• Александра Трусова — 20:32\n\nНачало: 17:30 МСК"
+   ]
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:men-junior-pp",
@@ -2716,34 +2716,34 @@
    "seg": "ПП",
    "title": "CS Denis Ten Memorial — юноши ПП",
    "start": "2026-10-10T07:30:00+03:00",
-   "end": "2026-10-10T09:50:00+03:00",
+   "end": "2026-10-10T09:45:00+03:00",
    "venue": "Almaty, Kazakhstan",
    "intl": true,
    "broadcast": [],
    "ours": [
     {
      "name": "Глеб Ковтун",
+     "time": "09:23",
      "no": 12,
      "warmup": 3,
      "place": 3,
-     "final": 3,
-     "time": "09:23"
+     "final": 3
     },
     {
      "name": "Александр Чмиль",
+     "time": "09:30",
      "no": 13,
      "warmup": 3,
      "place": 2,
-     "final": 2,
-     "time": "09:30"
+     "final": 2
     },
     {
      "name": "Арсений Федотов",
+     "time": "09:37",
      "no": 14,
      "warmup": 3,
      "place": 1,
-     "final": 1,
-     "time": "09:37"
+     "final": 1
     }
    ],
    "athletes": [
@@ -2752,6 +2752,7 @@
     "Глеб Ковтун"
    ],
    "src": "https://www.denistenmemorial.kz/results/index.htm",
+   "desc": "Итог:\n1. Арсений Федотов — 160.30\n2. Александр Чмиль — 130.09\n3. Глеб Ковтун — 128.35\n\nИтог турнира:\n1. Арсений Федотов — 251.68\n2. Александр Чмиль — 204.10\n3. Глеб Ковтун — 201.53\n\nНаши:\n• Глеб Ковтун — 09:23\n• Александр Чмиль — 09:30\n• Арсений Федотов — 09:37\n\nНачало: 07:30 МСК",
    "podium": [
     {
      "place": 1,
@@ -2791,8 +2792,7 @@
      "nation": "AIN2",
      "points": "201.53"
     }
-   ],
-   "desc": "Итог:\n1. Арсений Федотов — 160.30\n2. Александр Чмиль — 130.09\n3. Глеб Ковтун — 128.35\n\nИтог турнира:\n1. Арсений Федотов — 251.68\n2. Александр Чмиль — 204.10\n3. Глеб Ковтун — 201.53\n\nНаши:\n• Глеб Ковтун — 09:23\n• Александр Чмиль — 09:30\n• Арсений Федотов — 09:37\n\nНачало: 07:30 МСК"
+   ]
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:dance-senior-pt",
@@ -2803,7 +2803,7 @@
    "seg": "ПТ",
    "title": "CS Denis Ten Memorial — танцы ПТ",
    "start": "2026-10-10T10:00:00+03:00",
-   "end": "2026-10-10T11:57:00+03:00",
+   "end": "2026-10-10T11:55:00+03:00",
    "venue": "Almaty, Kazakhstan",
    "intl": true,
    "broadcast": [],
@@ -3212,7 +3212,7 @@
    "broadcast": []
   },
   {
-   "tid": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026",
+   "tid": "fsr:gran-pri-rossii-rapsodiia-lda-2026-10-16",
    "name": "Гран-при России «Рапсодия льда»",
    "start": "2026-10-16",
    "end": "2026-10-19",
@@ -3648,96 +3648,96 @@
   "Таисия Гусева / Даниил Овчинников"
  ],
  "photos": {
-  "Александра Бойкова": "photos/d4887dae02a55b28.jpg",
-  "Дмитрий Козловский": "photos/219d943483de33ef.jpg",
-  "Karina Akopova": "photos/37e22b74cf18dd75.jpg",
-  "Nikita Rakhmanin": "photos/1cdbd3005999e986.jpg",
-  "Audrey Shin": "photos/d94470f914026180.jpg",
-  "Spencer Akira Howe": "photos/8642dba1f4226b00.jpg",
-  "Balazs Nagy": "photos/83e9e2cc73a7e30b.jpg",
-  "Таисия Гусева": "photos/543d86d25f8a9068.jpg",
-  "Даниил Овчинников": "photos/6ea9a0b1e4ec7929.jpg",
-  "Полина Шешелева": "photos/a018e195d5c5e86a.jpg",
-  "Егор Карнаухов": "photos/048f4c1d1c3f4b41.jpg",
-  "Матвей Ветлугин": "photos/ac86283cc3d3b9a8.jpg",
-  "Mihhail Selevko": "photos/82dac8c231e5093e.jpg",
-  "Kyrylo Marsak": "photos/1f3dae3b62b99ec0.jpg",
-  "Мария Фефелова": "photos/034b9fdf0e34b3de.jpg",
-  "Артём Валов": "photos/ea6f2cf09ac72f5e.jpg",
-  "Полина Жарова": "photos/4ddcc18c2be4ad3e.jpg",
-  "Алексей Столяров": "photos/b831c80a93501529.jpg",
-  "Полина Сажина": "photos/7291ba2c394404eb.jpg",
-  "Алексей Белкин": "photos/8d208e971abe8094.jpg",
-  "Арина Парсегова": "photos/dc0e8e7b6f473d11.jpg",
-  "Матвей Богданов": "photos/c1d6ddb8c4817698.jpg",
-  "Виктория Стрельцова": "photos/c2dd8c7979d59d65.jpg",
-  "Макар Солодников": "photos/ba86939dd673016a.jpg",
-  "Аделия Петросян": "photos/dc173c2323cacefc.jpg",
-  "Анна Фролова": "photos/f9d0ea28c0f5d902.jpg",
-  "Niina Petrokina": "photos/71874c846079d589.jpg",
-  "Anastasiia Gubanova": "photos/dc3d94e56257f0de.jpg",
-  "Екатерина Рыбакова": "photos/e10669af8a0af7a3.jpg",
-  "Иван Махноносов": "photos/2972b9f71a193472.jpg",
-  "Елизавета Пасечник": "photos/4bcac199f4d6dcaa.jpg",
-  "Дарио Чиризано": "photos/be6c424dccb24e06.jpg",
-  "Елизавета Шичина": "photos/2ff012aab4d3df9b.jpg",
-  "Павел Дрозд": "photos/44b04063ec223902.jpg",
-  "Diana Davis": "photos/b5028e1cc7f88f24.jpg",
-  "Gleb Smolkin": "photos/1584a571f3304dd6.jpg",
-  "Mariia Ignateva": "photos/82d1d0f7f2eff4ca.jpg",
-  "Danijil Leonyidovics Szemko": "photos/3f88c1fcf8475fd1.jpg",
-  "Николай Угожаев": "photos/1f0fd7b6aaecc011.jpg",
-  "Nika Egadze": "photos/69f1b76907385f7e.jpg",
-  "Анастасия Мухортова": "photos/fda7051a86f985f9.jpg",
-  "Дмитрий Евгеньев": "photos/c25d5df3fec4231a.jpg",
-  "Екатерина Чикмарёва": "photos/4e3b3985b3669b53.jpg",
-  "Матвей Янченков": "photos/fd84614609d35c57.jpg",
-  "Анастасия Мишина": "photos/00679ff3cdc79b4b.jpg",
-  "Александр Галлямов": "photos/764ff6f052555952.jpg",
-  "Anastasiia Metelkina": "photos/3a27c2eaa2b85fd3.jpg",
-  "Luka Berulava": "photos/ffab51cd44be6f29.jpg",
-  "Nadiia Bashynska": "photos/b14ff229ad03776b.jpg",
-  "Зоя Пестова": "photos/90f4fb44be645b30.jpg",
-  "Сергей Лагутов": "photos/e7cffc1f7d5980a7.jpg",
-  "Анна Билибина": "photos/1fddc1cd14c41d55.jpg",
-  "Дмитрий Кашаев": "photos/f4a4c6326b4988e3.jpg",
-  "Анна Соболева": "photos/9a32934cbb35794c.jpg",
-  "Матвей Чураков": "photos/0ea0f135d2e817c5.jpg",
-  "София Сарновская": "photos/af7e799b6dcba020.jpg",
-  "Анна Докукина": "photos/2f8f3369f428d60c.jpg",
-  "Екатерина Корчажникова": "photos/ba95e491668e83ed.jpg",
-  "Алдар Самбуев": "photos/a0395e7d7a01fe84.jpg",
-  "Марк Лукин": "photos/9148592c96e112cb.jpg",
-  "Николай Колесников": "photos/f50c03c3b2db7e0a.jpg",
-  "Арсений Федотов": "photos/22d4b14b7118dcfb.jpg",
-  "Александр Чмиль": "photos/499979811fa484ce.jpg",
-  "Глеб Ковтун": "photos/276dee44128f6ea7.jpg",
-  "Алёна Принёва": "photos/e5aa669b40db9c63.jpg",
-  "Алиса Заикина": "photos/14bd06e5d6cb3a16.jpg",
-  "Мария Захарова": "photos/1db0d66f13aa3a42.jpg",
-  "Александра Трусова": "photos/55c5061be564390b.jpg",
-  "Дина Хуснутдинова": "photos/de9e5733107cc998.jpg",
-  "Yujae Kim": "photos/1490af95af41544c.jpg",
-  "Sofia Samodelkina": "photos/b30103a360766da7.jpg",
-  "Владислав Дикиджи": "photos/7a6987d7a81fcddb.jpg",
-  "Пётр Гуменник": "photos/b87b9746c91d940e.jpg",
-  "Глеб Лутфуллин": "photos/1ace3445253d3255.jpg",
-  "Дарья Дрожжина": "photos/135171f4904bf813.jpg",
-  "Иван Тельнов": "photos/c5a097eec52163b9.jpg",
-  "Василиса Кагановская": "photos/6a79e6a82625735f.jpg",
-  "Максим Некрасов": "photos/4c16608f003aab24.jpg",
-  "Анна Щербакова": "photos/8d0bac1b87977be0.jpg",
-  "Егор Гончаров": "photos/692a00cc0f3b9c5b.jpg",
-  "Ирина Хавронина": "photos/7a02dd8e46ab5e79.jpg",
-  "Девид Нарижный": "photos/b0c41552dcbc13d4.jpg",
-  "Caroline Green": "photos/d4ed768457b0683f.jpg",
-  "Michael Parsons": "photos/e4c60a20a4a87316.jpg",
-  "Juulia Turkkila": "photos/ddfe1cade4f0b6b3.jpg",
-  "Matthias Versluis": "photos/24b897b8c64743a9.jpg",
-  "Алина Горбачёва": "photos/d63bfe2c8896e122.jpg",
-  "Василиса Григорьева": "photos/46f0f3da45e4894d.jpg",
-  "Евгений Артющенко": "photos/1fbc471ec1fea876.jpg",
-  "Милана Кузьмина": "photos/823fc619e18ede3e.jpg",
-  "Дмитрий Студеникин": "photos/4d95a0ce330e54a8.jpg"
+  "Александра Бойкова": "photos/e1ee3df5caa22e16.jpg",
+  "Дмитрий Козловский": "photos/9f47d63b32ef7c59.jpg",
+  "Karina Akopova": "photos/46f9094c0f27dd34.jpg",
+  "Nikita Rakhmanin": "photos/8f98c3c65c4c3940.jpg",
+  "Audrey Shin": "photos/3a863e2acb0b26cd.jpg",
+  "Spencer Akira Howe": "photos/016e75fec40182ee.jpg",
+  "Balazs Nagy": "photos/a746a869823a3c20.jpg",
+  "Таисия Гусева": "photos/44699c0ad6097e7e.jpg",
+  "Даниил Овчинников": "photos/22c8cece4dc29fb5.jpg",
+  "Полина Шешелева": "photos/d14452e9503b82a6.jpg",
+  "Егор Карнаухов": "photos/1fedd9fd721a769e.jpg",
+  "Матвей Ветлугин": "photos/d65a12209e6353d1.jpg",
+  "Mihhail Selevko": "photos/139aff88be092a4e.jpg",
+  "Kyrylo Marsak": "photos/e4f3dc79ccd86a85.jpg",
+  "Мария Фефелова": "photos/99f541950f8f255a.jpg",
+  "Артём Валов": "photos/12b471099598a8a9.jpg",
+  "Полина Жарова": "photos/b0634f7780af8349.jpg",
+  "Алексей Столяров": "photos/b4cd14f8bd9af4de.jpg",
+  "Полина Сажина": "photos/702c77973aafafd4.jpg",
+  "Алексей Белкин": "photos/5184a4c2261de20e.jpg",
+  "Арина Парсегова": "photos/ea639d9cb3c285a8.jpg",
+  "Матвей Богданов": "photos/0ef47abceaa82c7a.jpg",
+  "Виктория Стрельцова": "photos/b37e31d23f6950e2.jpg",
+  "Макар Солодников": "photos/35e65615a4e2afa4.jpg",
+  "Аделия Петросян": "photos/4d3defaa9c11bb3f.jpg",
+  "Анна Фролова": "photos/4a409d089931a5e6.jpg",
+  "Niina Petrokina": "photos/32d5d64a53b8010f.jpg",
+  "Anastasiia Gubanova": "photos/f6e58b7aff4f6782.jpg",
+  "Екатерина Рыбакова": "photos/3635ae9b2944e94d.jpg",
+  "Иван Махноносов": "photos/fb25c50bd2bfcef7.jpg",
+  "Елизавета Пасечник": "photos/e9d41f3a05d88b8d.jpg",
+  "Дарио Чиризано": "photos/684944ff3b90d847.jpg",
+  "Елизавета Шичина": "photos/d5285979be5d0b56.jpg",
+  "Павел Дрозд": "photos/955c0fb0e50808bf.jpg",
+  "Diana Davis": "photos/64c0e52ff114b715.jpg",
+  "Gleb Smolkin": "photos/3b121a64298ebceb.jpg",
+  "Mariia Ignateva": "photos/3e45cbf35b4f3813.jpg",
+  "Danijil Leonyidovics Szemko": "photos/3104515286102ed9.jpg",
+  "Николай Угожаев": "photos/988917bb65fa5a01.jpg",
+  "Nika Egadze": "photos/685f11325d5b7d99.jpg",
+  "Анастасия Мухортова": "photos/e50ab742ee33187f.jpg",
+  "Дмитрий Евгеньев": "photos/646a71b66000c5fc.jpg",
+  "Екатерина Чикмарёва": "photos/cbf954566388113b.jpg",
+  "Матвей Янченков": "photos/e7583a52a6a7b287.jpg",
+  "Анастасия Мишина": "photos/6fcc7665f2719d86.jpg",
+  "Александр Галлямов": "photos/1de5ecd6d1190fe2.jpg",
+  "Anastasiia Metelkina": "photos/4b85bd0baa3a05f6.jpg",
+  "Luka Berulava": "photos/70b9c937c9bdf60f.jpg",
+  "Nadiia Bashynska": "photos/e8633c751ebb005e.jpg",
+  "Зоя Пестова": "photos/c04ba7a43973a2c1.jpg",
+  "Сергей Лагутов": "photos/b3ceb223b8cce75b.jpg",
+  "Анна Билибина": "photos/40ecec04caea3d33.jpg",
+  "Дмитрий Кашаев": "photos/bc684612e6cb7b64.jpg",
+  "Анна Соболева": "photos/b14c90a88090e4b3.jpg",
+  "Матвей Чураков": "photos/878d91fbad3307c6.jpg",
+  "София Сарновская": "photos/80f76690e358789c.jpg",
+  "Анна Докукина": "photos/47abd1ad6525a598.jpg",
+  "Екатерина Корчажникова": "photos/0d2dc62b9a0ed85c.jpg",
+  "Алдар Самбуев": "photos/c946706db31975bb.jpg",
+  "Марк Лукин": "photos/decea4de2ae6733a.jpg",
+  "Николай Колесников": "photos/d779b8a3a5538b93.jpg",
+  "Арсений Федотов": "photos/4e65d4a513de28ed.jpg",
+  "Александр Чмиль": "photos/db34fd836dc55ec7.jpg",
+  "Глеб Ковтун": "photos/9077c91cd07ab59a.jpg",
+  "Алёна Принёва": "photos/115d5d244516f9f6.jpg",
+  "Алиса Заикина": "photos/ba24dbea5db1f127.jpg",
+  "Мария Захарова": "photos/8e09b5c7a969bda4.jpg",
+  "Александра Трусова": "photos/cb2bbc06037761cd.jpg",
+  "Дина Хуснутдинова": "photos/6a319f7b5127782a.jpg",
+  "Yujae Kim": "photos/df21778209a908fe.jpg",
+  "Sofia Samodelkina": "photos/b741edd9fda709e8.jpg",
+  "Владислав Дикиджи": "photos/59ac75a70684dac2.jpg",
+  "Пётр Гуменник": "photos/a85892c30a47078a.jpg",
+  "Глеб Лутфуллин": "photos/bc5d38e665d0f23a.jpg",
+  "Дарья Дрожжина": "photos/7d6fa47c8dcac4b2.jpg",
+  "Иван Тельнов": "photos/8a093993b7538c46.jpg",
+  "Василиса Кагановская": "photos/85cd244564b7f2e2.jpg",
+  "Максим Некрасов": "photos/95d853de5c461ca4.jpg",
+  "Анна Щербакова": "photos/d4c122a92f0b2e73.jpg",
+  "Егор Гончаров": "photos/e1234092ea083f90.jpg",
+  "Ирина Хавронина": "photos/48a755adccd9b687.jpg",
+  "Девид Нарижный": "photos/f6ca6fe50662d487.jpg",
+  "Caroline Green": "photos/5474006efc1fcb70.jpg",
+  "Michael Parsons": "photos/ed69e0a81cf6abb5.jpg",
+  "Juulia Turkkila": "photos/26cbec2a789316cc.jpg",
+  "Matthias Versluis": "photos/d6c1c59fc96e2574.jpg",
+  "Алина Горбачёва": "photos/93186d2aba20824d.jpg",
+  "Василиса Григорьева": "photos/d4dfa9363ac7c495.jpg",
+  "Евгений Артющенко": "photos/822067c9432e1a89.jpg",
+  "Милана Кузьмина": "photos/7c6e947082ce9299.jpg",
+  "Дмитрий Студеникин": "photos/f300f862c5ab3ce4.jpg"
  }
 }

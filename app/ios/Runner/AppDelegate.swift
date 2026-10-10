@@ -12,7 +12,7 @@ import workmanager_apple
     // уведомления «за 15 минут» показываются и когда приложение открыто
     UNUserNotificationCenter.current().delegate = self
     // фоновое обновление: iOS сам будит приложение, оно подтягивает расписание и переставляет уведомления
-    WorkmanagerPlugin.registerPeriodicTask(withIdentifier: "refresh", earliestBeginInSeconds: 3 * 3600)
+    WorkmanagerPlugin.registerPeriodicTask(withIdentifier: "refresh", earliestBeginInSeconds: NSNumber(value: 3 * 3600))
     WorkmanagerPlugin.setPluginRegistrantCallback { registry in
       GeneratedPluginRegistrant.register(with: registry)
     }

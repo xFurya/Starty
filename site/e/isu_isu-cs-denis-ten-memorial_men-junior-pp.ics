@@ -14,9 +14,9 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:men-junior-pp@starty
-DTSTAMP:20261010T082046Z
+DTSTAMP:20261010T085102Z
 DTSTART;TZID=Europe/Moscow:20261010T073000
-DTEND;TZID=Europe/Moscow:20261010T095000
+DTEND;TZID=Europe/Moscow:20261010T094500
 SUMMARY:CS Denis Ten Memorial — юноши ПП
 DESCRIPTION:Итог:\n1. Арсений Федотов — 160.30\n2. Ал
  ександр Чмиль — 130.09\n3. Глеб Ковтун — 128.35\
@@ -26,8 +26,6 @@ DESCRIPTION:Итог:\n1. Арсений Федотов — 160.30\n2. Ал
  ндр Чмиль — 09:30\n• Арсений Федотов — 09:37\n
  \nНачало: 07:30 МСК
 LOCATION:Almaty\, Kazakhstan
-URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:men-ju
- nior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

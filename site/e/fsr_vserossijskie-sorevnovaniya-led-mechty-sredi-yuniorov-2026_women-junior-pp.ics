@@ -15,7 +15,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:women-ju
  nior-pp@starty
-DTSTAMP:20261010T082046Z
+DTSTAMP:20261010T085102Z
 DTSTART;TZID=Europe/Moscow:20260927T074500
 DTEND;TZID=Europe/Moscow:20260927T103500
 SUMMARY:ЮГП России «Лёд Мечты» — девушки ПП
@@ -27,8 +27,6 @@ DESCRIPTION:Итог:\n1. Дарья Лебедева — 134.26\n2. Вик
  -й\n• Виктория Стрельцова — 18-й\n\nНачало: 
  07:45 МСК\nТрансляция: Первый канал
 LOCATION:Навка Арена\, Москва
-URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-led-
- mechty-sredi-yuniorov-2026:women-junior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

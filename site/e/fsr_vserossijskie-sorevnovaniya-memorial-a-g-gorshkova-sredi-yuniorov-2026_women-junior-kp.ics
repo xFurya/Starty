@@ -15,7 +15,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
  026:women-junior-kp@starty
-DTSTAMP:20261010T082046Z
+DTSTAMP:20261010T085102Z
 DTSTART;TZID=Europe/Moscow:20261006T164500
 DTEND;TZID=Europe/Moscow:20261006T192000
 SUMMARY:ЮГП России «Мемориал Горшкова» — де
@@ -27,8 +27,6 @@ DESCRIPTION:Итог:\n1. Екатерина Корчажникова — 7
  -й\n• Екатерина Корчажникова — 15-й\n\nНача
  ло: 16:45 МСК\nТрансляция: Первый канал
 LOCATION:СК «Мечта»\, Москва
-URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-memo
- rial-a-g-gorshkova-sredi-yuniorov-2026:women-junior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

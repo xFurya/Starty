@@ -1275,8 +1275,8 @@ class _MonthViewState extends State<MonthView> {
                   onHorizontalDragUpdate: (d) => _drag += d.primaryDelta ?? 0,
                   onHorizontalDragEnd: (d) {
                     final v = d.primaryVelocity ?? 0;
-                    // короткий быстрый взмах или протяжка на 50 пикселей
-                    if (_drag.abs() > 50 || v.abs() > 300) _go((_drag != 0 ? _drag : v) < 0 ? 1 : -1);
+                    // протяжка на 90 пикселей или резкий взмах — не любое касание
+                    if (_drag.abs() > 90 || v.abs() > 900) _go((_drag != 0 ? _drag : v) < 0 ? 1 : -1);
                   },
                   child: AnimatedSwitcher(
                     duration: const Duration(milliseconds: 220),

@@ -15,15 +15,13 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:pair
  s-junior-kp@starty
-DTSTAMP:20261010T082046Z
+DTSTAMP:20261010T085102Z
 DTSTART;TZID=Europe/Moscow:20261012T193000
 DTEND;TZID=Europe/Moscow:20261012T200000
 SUMMARY:ЮГП России «Рапсодия льда» — пары КП
 DESCRIPTION:Начало: 19:30 МСК\nТрансляция: Первый 
  канал
 LOCATION:СК «Мечта»\, Москва
-URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-raps
- odiya-l-da-sredi-yuniorov-2026:pairs-junior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
