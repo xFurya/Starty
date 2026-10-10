@@ -112,6 +112,8 @@ void main() {
             expect(t.takeException(), isNull, reason: st.title);
           }
 
+          // фильтр со спортсменом: строки найденных с фото и флажком
+          s.filters = Filters({'pairs'}, {}, {...data.watchlist.where((n) => n.contains(' / ')).take(1)});
           await t.pumpWidget(
             app(
               Builder(
@@ -152,9 +154,21 @@ void main() {
     expect(countdown(const Duration(minutes: 110)), isNot(contains(' ')));
   });
 
-  test('сводка фильтра: виды и турниры, спортсменов нет', () {
-    expect(filterSummary(const Filters({}, {})), 'Все старты');
-    expect(filterSummary(const Filters({'women', 'men'}, {'x'})), '2 вида · 1 турнир');
+  test('фильтр ленты: виды, турниры, спортсмен; сводка в настройках', () {
+    expect(filterSummary(Filters.none), 'Все старты');
+    expect(filterSummary(const Filters({'women', 'men'}, {'x'}, {})), '2 вида · 1 турнир');
+    expect(filterSummary(const Filters({'women', 'men'}, {'x'}, {'Мария Захарова'})), '2 вида · 1 турнир · 1 спортсмен');
+    // спортсмен: только старты, где он есть среди наших или в списке участников
+    final s = data.starts.firstWhere((x) => x.ours.isNotEmpty);
+    final name = s.ours.first.name;
+    final f = Filters({}, {}, {name.toUpperCase()});
+    expect(f.pass(s), isTrue);
+    expect(data.starts.where(f.pass).every((x) => [...x.athletes, ...x.ours.map((o) => o.name)].contains(name)), isTrue);
+    expect(data.starts.where((x) => !Filters({}, {}, {name}).pass(x)), isNotEmpty);
+    // турнир без расписания — по заявке наших
+    final u = Upcoming.fromJson({'tid': 'u', 'name': 'U', 'start': '2026-10-15', 'ours': ['Мария Захарова']});
+    expect(const Filters({}, {}, {'Мария Захарова'}).passUpcoming(u), isTrue);
+    expect(const Filters({}, {}, {'Алина Горбачёва'}).passUpcoming(u), isFalse);
   });
 
   test('имя пары: партнёр не теряется ни в одном варианте', () {
@@ -193,7 +207,7 @@ void main() {
     expect(u.covers(u.start), isTrue);
     expect(u.covers(u.end), isTrue);
     expect(upcomingOn(s, u.start).map((x) => x.tid), contains(u.tid));
-    s.filters = const Filters({}, {'другой'});
+    s.filters = const Filters({}, {'другой'}, {});
     expect(upcomingOn(s, u.start), isEmpty);
   });
 

@@ -421,7 +421,8 @@ class _NotifyPlate extends StatelessWidget {
 }
 
 /// Пьедестал: 2 — 1 — 3, фото на ледяных ступенях. Подписи у всех трёх одной высоты
-/// и прижаты к ступени: высоту фото задают только ступени, а не длина имени или код страны.
+/// и прижаты к ступени: высоту фото задают только ступени, а не длина имени или код страны
+/// (код стоит в строке баллов: «GEO 123.44»).
 class Podium extends StatelessWidget {
   final List<Placing> list;
   final Schedule? data;
@@ -434,7 +435,6 @@ class Podium extends StatelessWidget {
     final order = [2, 1, 3].where(byPlace.containsKey).toList();
     // у пары — по партнёру на строку
     final lines = list.map((x) => x.name.split(' / ').length).fold(1, math.max);
-    final codes = list.any((x) => PlacingName.codeOf(x, intl).isNotEmpty);
     return Column(
       children: [
         Row(
@@ -443,7 +443,7 @@ class Podium extends StatelessWidget {
             for (final pl in order) ...[
               if (pl != order.first) const SizedBox(width: 6),
               Expanded(
-                child: _Step(x: byPlace[pl]!, data: data, intl: intl, lines: lines, codes: codes),
+                child: _Step(x: byPlace[pl]!, data: data, intl: intl, lines: lines),
               ),
             ],
           ],
@@ -471,10 +471,9 @@ class _Step extends StatelessWidget {
   final Schedule? data;
   final bool intl;
 
-  /// Строк имени у самой длинной подписи пьедестала и есть ли у кого-то код.
+  /// Строк имени у самой длинной подписи пьедестала.
   final int lines;
-  final bool codes;
-  const _Step({required this.x, required this.data, required this.intl, required this.lines, required this.codes});
+  const _Step({required this.x, required this.data, required this.intl, required this.lines});
 
   /// Золото, серебро, бронза: кант ступени, ободок фото и цифра.
   static Color metal(int place, bool dark) => switch (place) {
@@ -511,11 +510,12 @@ class _Step extends StatelessWidget {
       fontSize: 11,
       fontWeight: FontWeight.w700,
       letterSpacing: .9,
-      height: 1.3,
+      height: 1.0,
       color: p.ink2,
     );
     final pointsStyle = clock(p.ink2, 16, weight: FontWeight.w500);
-    // подпись: фамилия (у пары — по партнёру на строку, длинная — мельче, но целиком), код, баллы
+    // подпись: фамилия (у пары — по партнёру на строку, длинная — мельче, но целиком),
+    // ниже одной строкой код страны и баллы
     final sur = surname(x.name).split(' / ');
     Widget caption({bool ghost = false}) => Column(
       mainAxisSize: MainAxisSize.min,
@@ -529,16 +529,25 @@ class _Step extends StatelessWidget {
             ],
             style: nameStyle,
             center: true,
-            semantics: displayName(x.name),
-          ),
-        if (ghost ? codes : code.isNotEmpty)
-          Padding(
-            padding: const EdgeInsets.only(top: 2),
-            child: Text(ghost ? 'X' : code, style: codeStyle),
+            semantics: code.isEmpty ? displayName(x.name) : '${displayName(x.name)} $code',
           ),
         Padding(
-          padding: const EdgeInsets.only(top: 3, bottom: 8),
-          child: Text(ghost || x.points.isEmpty ? '—' : x.points, style: pointsStyle),
+          padding: const EdgeInsets.only(top: 4, bottom: 8),
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.baseline,
+              textBaseline: TextBaseline.alphabetic,
+              children: [
+                if (!ghost && code.isNotEmpty) ...[
+                  ExcludeSemantics(child: Text(code, style: codeStyle)),
+                  const SizedBox(width: 6),
+                ],
+                Text(ghost || x.points.isEmpty ? '—' : x.points, style: pointsStyle),
+              ],
+            ),
+          ),
         ),
       ],
     );
@@ -904,6 +913,15 @@ class _FilterSheet extends StatefulWidget {
 class _FilterSheetState extends State<_FilterSheet> {
   late Set<String> kinds = {...widget.state.filters.kinds};
   late Set<String> tids = {...widget.state.filters.tids};
+  late Set<String> athletes = {...widget.state.filters.athletes};
+  final _q = TextEditingController();
+  String q = '';
+
+  @override
+  void dispose() {
+    _q.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -914,132 +932,201 @@ class _FilterSheetState extends State<_FilterSheet> {
     for (final s in data.starts) {
       if (!s.pastAt(t)) tours.putIfAbsent(s.tid, () => s.tournament);
     }
-    final canReset = kinds.isNotEmpty || tids.isNotEmpty || widget.state.filters.any;
-    final count = feedPool(widget.state, Filters(kinds, tids), t).length;
-    return DraggableScrollableSheet(
-      expand: false,
-      initialChildSize: .88,
-      maxChildSize: .95,
-      builder: (c, scroll) => Column(
-        children: [
-          Expanded(
-            child: Stack(
-              children: [
-                ListView(
-                  controller: scroll,
-                  padding: EdgeInsets.zero,
-                  children: [
-                    // шапка — тот же лёд, что у листа старта
-                    Stack(
-                      children: [
-                        Positioned.fill(child: IceBackdrop(fadeTo: p.sheet, fadeStart: .25, sparkles: -1)),
-                        const Positioned(top: 0, left: 0, right: 0, child: SheetSparkles()),
-                        ConstrainedBox(
-                          constraints: const BoxConstraints(minHeight: 110, minWidth: double.infinity),
-                          child: Align(
-                            alignment: Alignment.bottomLeft,
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(20, 36, 20, 4),
-                              child: Text('Фильтр', style: display(p, 42)),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 16, 20, 16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
+    // кого искать: список сборщика, наши и заявленные на стартах впереди, заявки турниров без расписания
+    final all = <String>{...data.watchlist};
+    for (final s in data.starts) {
+      if (s.pastAt(t)) continue;
+      all.addAll(s.ours.map((o) => o.name));
+      all.addAll(s.athletes);
+    }
+    for (final u in data.upcoming) {
+      all.addAll(u.ours);
+    }
+    final found = q.isEmpty
+        ? (athletes.toList()..sort())
+        : (all.where((a) => norm(displayName(a)).contains(norm(q))).toList()..sort()).take(8).toList();
+    final canReset = kinds.isNotEmpty || tids.isNotEmpty || athletes.isNotEmpty || widget.state.filters.any;
+    final count = feedPool(widget.state, Filters(kinds, tids, athletes), t).length;
+    // клавиатура поиска не закрывает ни найденных, ни кнопок внизу
+    return Padding(
+      padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
+      child: DraggableScrollableSheet(
+        expand: false,
+        initialChildSize: .88,
+        maxChildSize: .95,
+        builder: (c, scroll) => Column(
+          children: [
+            Expanded(
+              child: Stack(
+                children: [
+                  ListView(
+                    controller: scroll,
+                    padding: EdgeInsets.zero,
+                    children: [
+                      // шапка — тот же лёд, что у листа старта
+                      Stack(
                         children: [
-                          const Eyebrow('Вид'),
-                          const SizedBox(height: 10),
-                          TileGrid(
-                            tiles: [
-                              for (final k in kindNames.entries)
-                                ChoiceTile(
-                                  label: k.value,
-                                  color: p.kind(k.key),
-                                  on: kinds.contains(k.key),
-                                  onTap: () =>
-                                      setState(() => kinds.contains(k.key) ? kinds.remove(k.key) : kinds.add(k.key)),
-                                ),
-                            ],
-                          ),
-                          const SizedBox(height: 26),
-                          const Eyebrow('Турнир'),
-                          const SizedBox(height: 4),
-                          for (final e in tours.entries)
-                            _CheckRow(
-                              title: e.value,
-                              value: tids.contains(e.key),
-                              onTap: () => setState(() => tids.contains(e.key) ? tids.remove(e.key) : tids.add(e.key)),
+                          Positioned.fill(child: IceBackdrop(fadeTo: p.sheet, fadeStart: .25, sparkles: -1)),
+                          const Positioned(top: 0, left: 0, right: 0, child: SheetSparkles()),
+                          ConstrainedBox(
+                            constraints: const BoxConstraints(minHeight: 110, minWidth: double.infinity),
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.fromLTRB(20, 36, 20, 4),
+                                child: Text('Фильтр', style: display(p, 42)),
+                              ),
                             ),
+                          ),
                         ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 16, 20, 16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            const Eyebrow('Вид'),
+                            const SizedBox(height: 10),
+                            TileGrid(
+                              tiles: [
+                                for (final k in kindNames.entries)
+                                  ChoiceTile(
+                                    label: k.value,
+                                    color: p.kind(k.key),
+                                    on: kinds.contains(k.key),
+                                    onTap: () =>
+                                        setState(() => kinds.contains(k.key) ? kinds.remove(k.key) : kinds.add(k.key)),
+                                  ),
+                              ],
+                            ),
+                            const SizedBox(height: 26),
+                            const Eyebrow('Спортсмен'),
+                            const SizedBox(height: 10),
+                            TextField(
+                              controller: _q,
+                              style: TextStyle(fontSize: 15.5, color: p.ink),
+                              textInputAction: TextInputAction.search,
+                              decoration: InputDecoration(
+                                hintText: 'Фамилия',
+                                hintStyle: TextStyle(color: p.ink2),
+                                prefixIcon: Icon(CupertinoIcons.search, size: 19, color: p.ink2),
+                                suffixIcon: q.isEmpty
+                                    ? null
+                                    : IconButton(
+                                        tooltip: 'Очистить',
+                                        icon: Icon(CupertinoIcons.xmark_circle_fill, size: 19, color: p.ink2),
+                                        onPressed: () => setState(() {
+                                          _q.clear();
+                                          q = '';
+                                        }),
+                                      ),
+                                filled: true,
+                                fillColor: p.plate,
+                                contentPadding: const EdgeInsets.symmetric(vertical: 14),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                  borderSide: BorderSide(color: p.control),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                  borderSide: BorderSide(color: p.accent, width: 1.4),
+                                ),
+                              ),
+                              onChanged: (v) => setState(() => q = v.trim()),
+                            ),
+                            if (found.isNotEmpty) const SizedBox(height: 6),
+                            for (final a in found)
+                              _CheckRow(
+                                leading: Avatar(name: a, data: data, size: 34, slot: true),
+                                title: displayName(a),
+                                value: athletes.contains(a),
+                                onTap: () => setState(() => athletes.contains(a) ? athletes.remove(a) : athletes.add(a)),
+                              ),
+                            if (q.isNotEmpty && found.isEmpty)
+                              Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 14),
+                                child: Text('Не найдено', style: TextStyle(color: p.ink2, fontSize: 15)),
+                              ),
+                            const SizedBox(height: 26),
+                            const Eyebrow('Турнир'),
+                            const SizedBox(height: 4),
+                            for (final e in tours.entries)
+                              _CheckRow(
+                                title: e.value,
+                                value: tids.contains(e.key),
+                                onTap: () => setState(() => tids.contains(e.key) ? tids.remove(e.key) : tids.add(e.key)),
+                              ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Positioned(top: 0, left: 0, right: 0, child: SheetHandle()),
+                ],
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: p.sheet,
+                border: Border(top: BorderSide(color: p.plateLine)),
+              ),
+              padding: EdgeInsets.fromLTRB(16, 12, 16, 12 + MediaQuery.paddingOf(context).bottom),
+              // «Сбросить» — не шире 40 % ряда: главная кнопка остаётся главной
+              child: LayoutBuilder(
+                builder: (context, k) => Row(
+                  children: [
+                    ConstrainedBox(
+                      constraints: BoxConstraints(maxWidth: k.maxWidth * .4),
+                      child: SheetButton(
+                        neutral: true,
+                        compact: true,
+                        label: 'Сбросить',
+                        onTap: canReset
+                            ? () {
+                                setState(() {
+                                  kinds.clear();
+                                  tids.clear();
+                                  athletes.clear();
+                                  _q.clear();
+                                  q = '';
+                                });
+                                widget.state.setFilters(Filters.none);
+                              }
+                            : null,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: SheetButton(
+                        filled: true,
+                        label: count == 0
+                            ? 'Стартов нет'
+                            : 'Показать $count ${plural(count, 'старт', 'старта', 'стартов')}',
+                        onTap: count == 0
+                            ? null
+                            : () {
+                                widget.state.setFilters(Filters(kinds, tids, athletes));
+                                Navigator.pop(context);
+                              },
                       ),
                     ),
                   ],
                 ),
-                const Positioned(top: 0, left: 0, right: 0, child: SheetHandle()),
-              ],
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              color: p.sheet,
-              border: Border(top: BorderSide(color: p.plateLine)),
-            ),
-            padding: EdgeInsets.fromLTRB(16, 12, 16, 12 + MediaQuery.paddingOf(context).bottom),
-            // «Сбросить» — не шире 40 % ряда: главная кнопка остаётся главной
-            child: LayoutBuilder(
-              builder: (context, k) => Row(
-                children: [
-                  ConstrainedBox(
-                    constraints: BoxConstraints(maxWidth: k.maxWidth * .4),
-                    child: SheetButton(
-                      neutral: true,
-                      compact: true,
-                      label: 'Сбросить',
-                      onTap: canReset
-                          ? () {
-                              setState(() {
-                                kinds.clear();
-                                tids.clear();
-                              });
-                              widget.state.setFilters(const Filters({}, {}));
-                            }
-                          : null,
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: SheetButton(
-                      filled: true,
-                      label: count == 0
-                          ? 'Стартов нет'
-                          : 'Показать $count ${plural(count, 'старт', 'старта', 'стартов')}',
-                      onTap: count == 0
-                          ? null
-                          : () {
-                              widget.state.setFilters(Filters(kinds, tids));
-                              Navigator.pop(context);
-                            },
-                    ),
-                  ),
-                ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 }
 
 class _CheckRow extends StatelessWidget {
+  final Widget? leading;
   final String title;
   final bool value;
   final VoidCallback onTap;
-  const _CheckRow({required this.title, required this.value, required this.onTap});
+  const _CheckRow({this.leading, required this.title, required this.value, required this.onTap});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -1054,6 +1141,7 @@ class _CheckRow extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 6),
             child: Row(
               children: [
+                if (leading != null) ...[leading!, const SizedBox(width: 12)],
                 Expanded(
                   child: Text(
                     title,

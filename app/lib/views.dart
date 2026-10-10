@@ -306,6 +306,7 @@ class FilterLine extends StatelessWidget {
     final f = state.filters;
     final names = <String>[
       ...f.kinds.map((k) => kindNames[k] ?? k),
+      ...f.athletes.map(surname),
       if (f.tids.isNotEmpty)
         f.tids.length == 1
             ? tournamentName(state, f.tids.first)
@@ -315,7 +316,7 @@ class FilterLine extends StatelessWidget {
       icon: CupertinoIcons.slider_horizontal_3,
       text: names.join(' · '),
       action: 'Сбросить',
-      onAction: () => state.setFilters(const Filters({}, {})),
+      onAction: () => state.setFilters(Filters.none),
     );
   }
 }
