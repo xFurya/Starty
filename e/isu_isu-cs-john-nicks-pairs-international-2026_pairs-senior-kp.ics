@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-john-nicks-pairs-international-2026:pairs-senior-kp@starty
+DTSTAMP:20261010T170738Z
+DTSTART;TZID=Europe/Moscow:20260911T233300
+DTEND;TZID=Europe/Moscow:20260912T010300
+SUMMARY:CS John Nicks Pairs International — пары КП
+DESCRIPTION:Итог:\n1. Александра Бойкова / Дмитр
+ ий Козловский — 70.39\n2. Karina Akopova / Nikita Rakhmanin 
+ — 68.03\n3. Audrey Shin / Spencer Akira Howe — 67.25\n\nРоссиян
+ е:\n• Александра Бойкова / Дмитрий Козлов
+ ский — 1-й\n\nНачало: 23:33 МСК
+LOCATION:Norwood\, USA
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-john-nicks-pairs-internat
+ ional-2026:pairs-senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS John Nicks Pairs International — пары КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

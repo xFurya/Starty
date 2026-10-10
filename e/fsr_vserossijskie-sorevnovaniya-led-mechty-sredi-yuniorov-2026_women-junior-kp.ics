@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:women-ju
+ nior-kp@starty
+DTSTAMP:20261010T170738Z
+DTSTART;TZID=Europe/Moscow:20260926T115500
+DTEND;TZID=Europe/Moscow:20260926T143000
+SUMMARY:ЮГП России «Лёд Мечты» — девушки КП
+DESCRIPTION:Итог:\n1. Виктория Стрельцова — 72.73\n
+ 2. Диана Мильто — 70.00\n3. Софья Смагина — 69.
+ 05\n\nПримечательное:\n• Виктория Стрельцо
+ ва — Тройной аксель\n\nРоссияне:\n• Викто
+ рия Стрельцова — 5-й\n• Софья Смагина — 14
+ -й\n\nНачало: 11:55 МСК\nТрансляция: Первый ка
+ нал
+LOCATION:Навка Арена\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-led-
+ mechty-sredi-yuniorov-2026:women-junior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Лёд Мечты» — девушки К
+ П
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

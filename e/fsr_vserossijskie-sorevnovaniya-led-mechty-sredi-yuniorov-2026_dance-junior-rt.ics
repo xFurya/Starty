@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:dance-ju
+ nior-rt@starty
+DTSTAMP:20261010T170738Z
+DTSTART;TZID=Europe/Moscow:20260925T123000
+DTEND;TZID=Europe/Moscow:20260925T144000
+SUMMARY:ЮГП России «Лёд Мечты» — танцы РТ
+DESCRIPTION:Итог:\n1. Мария Фефелова / Артём Вало
+ в — 72.64\n2. Полина Жарова / Алексей Столяро
+ в — 64.19\n3. Арина Новикова / Кирилл Лихачев
+  — 59.16\n\nНачало: 12:30 МСК\nТрансляция: Первы
+ й канал
+LOCATION:Навка Арена\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-led-
+ mechty-sredi-yuniorov-2026:dance-junior-rt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Лёд Мечты» — танцы РТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

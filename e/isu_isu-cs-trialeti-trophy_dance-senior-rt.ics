@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-trialeti-trophy:dance-senior-rt@starty
+DTSTAMP:20261010T170738Z
+DTSTART;TZID=Europe/Moscow:20261001T164500
+DTEND;TZID=Europe/Moscow:20261001T192000
+SUMMARY:CS Trialeti Trophy — танцы РТ
+DESCRIPTION:Итог:\n1. Diana Davis / Gleb Smolkin — 85.23\n2. Елиз
+ авета Пасечник / Дарио Чиризано — 72.51\n3. Ma
+ riia Ignateva / Danijil Leonyidovics Szemko — 69.80\n\nРоссияне:
+ \n• Viktoryia Plaskonnaya / Uladzislau Sytsik — 2-й\n• Екатер
+ ина Рыбакова / Иван Махноносов — 3-й\n• Ел
+ изавета Пасечник / Дарио Чиризано — 6-й\n
+ • Ekaterina Andreeva / Dzmitryi Blinou — 8-й\n• Елизавета 
+ Шичина / Павел Дрозд — 17-й\n\nНачало: 16:45 МС
+ К
+LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-trialeti-trophy:dance-sen
+ ior-rt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Trialeti Trophy — танцы РТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

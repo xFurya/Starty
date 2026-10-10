@@ -1,0 +1,58 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:men-senior-pp@starty
+DTSTAMP:20261010T170738Z
+DTSTART;TZID=Europe/Moscow:20261010T123000
+DTEND;TZID=Europe/Moscow:20261010T140000
+SUMMARY:CS Denis Ten Memorial — мужчины ПП
+DESCRIPTION:Итог:\n1. Владислав Дикиджи — 205.48\n2. 
+ Глеб Лутфуллин — 181.44\n3. Пётр Гуменник — 1
+ 81.13\n\nИтог турнира:\n1. Владислав Дикиджи 
+ — 312.79\n2. Глеб Лутфуллин — 277.23\n3. Пётр Гум
+ енник — 261.76\n\nПримечательное:\n• Владисл
+ ав Дикиджи — Лучшая в мире оценка сезона
+  за ПП: 205.48\n• Владислав Дикиджи — Личный
+  рекорд за ПП: 205.48 (был 176.89)\n• Глеб Лутфул
+ лин — Каскад 4T+3A+3A\n• Глеб Лутфуллин — 5 ч
+ етверных в программе: 4F\, 4Lo\, 4T\, 4S\, 4S\n• Гл
+ еб Лутфуллин — Личный рекорд за ПП: 181.44 (
+ был 165.76)\n• Vasil Barakhouski — Личный рекорд за 
+ ПП: 140.40 (был 129.81)\n• Alex Labovich — Личный реко
+ рд за ПП: 128.11 (был 99.03)\n• Весь пьедестал —
+  россияне\n• Владислав Дикиджи — Лучшая 
+ в мире сумма сезона: 312.79\n• Владислав Дик
+ иджи — Личный рекорд по сумме: 312.79 (был 265
+ .68)\n• Глеб Лутфуллин — Личный рекорд по 
+ сумме: 277.23 (был 251.46)\n• Vasil Barakhouski — Личный
+  рекорд по сумме: 218.36 (был 199.09)\n• Alex Labovich 
+ — Личный рекорд по сумме: 189.37 (был 158.44)\n•
+  Весь пьедестал — россияне\n• Владислав 
+ Дикиджи — Отрыв от второго места — 35.56 б
+ алла\n\nРоссияне:\n• Пётр Гуменник — 13:37\n
+ • Глеб Лутфуллин — 13:45\n• Владислав Дики
+ джи — 13:53\n• Alex Labovich — 2-й\n• Heorhi Kazlouski — 5-
+ й\n• Vasil Barakhouski — 7-й\n\nНачало: 12:30 МСК
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:men-se
+ nior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Denis Ten Memorial — мужчины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

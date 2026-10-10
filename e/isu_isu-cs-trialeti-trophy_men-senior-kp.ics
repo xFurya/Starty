@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-trialeti-trophy:men-senior-kp@starty
+DTSTAMP:20261010T170738Z
+DTSTART;TZID=Europe/Moscow:20261001T195000
+DTEND;TZID=Europe/Moscow:20261001T212000
+SUMMARY:CS Trialeti Trophy — мужчины КП
+DESCRIPTION:Итог:\n1. Nika Egadze — 93.80\n2. Mihhail Selevko — 87.
+ 87\n3. Николай Угожаев — 82.96\n\nРоссияне:\n• A
+ lex Labovich — 1-й\n• Николай Угожаев — 2-й\n• М
+ атвей Ветлугин — 3-й\n• Vasil Barakhouski — 9-й\n\nН
+ ачало: 19:50 МСК
+LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-trialeti-trophy:men-senio
+ r-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Trialeti Trophy — мужчины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

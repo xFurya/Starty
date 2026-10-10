@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:women-senior-kp@starty
+DTSTAMP:20261010T170738Z
+DTSTART;TZID=Europe/Moscow:20261008T150500
+DTEND;TZID=Europe/Moscow:20261008T175000
+SUMMARY:CS Denis Ten Memorial — женщины КП
+DESCRIPTION:Итог:\n1. Александра Трусова — 77.39\n2.
+  Yujae Kim — 75.99\n3. Sofia Samodelkina — 69.45\n\nПримечате
+ льное:\n• Yujae Kim — Тройной аксель\n• Yujae Kim 
+ — Личный рекорд за КП: 75.99 (был 66.59)\n• Sofia S
+ amodelkina — Личный рекорд за КП: 69.45 (был 68.47)\n
+ • Viktoriia Safonova — Личный рекорд за КП: 68.42 (б
+ ыл 66.67)\n• Дина Хуснутдинова — Тройной ак
+ сель\n\nРоссияне:\n• Viktoriia Safonova — 3-й\n• Мар
+ ия Захарова — 4-й\n• Александра Трусова 
+ — 14-й\n• Дина Хуснутдинова — 16-й\n\nНачало
+ : 15:05 МСК
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:women-
+ senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Denis Ten Memorial — женщины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

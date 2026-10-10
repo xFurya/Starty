@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:women-ju
+ nior-pp@starty
+DTSTAMP:20261010T170738Z
+DTSTART;TZID=Europe/Moscow:20260927T074500
+DTEND;TZID=Europe/Moscow:20260927T103500
+SUMMARY:ЮГП России «Лёд Мечты» — девушки ПП
+DESCRIPTION:Итог:\n1. Дарья Лебедева — 134.26\n2. Вик
+ тория Стрельцова — 129.00\n3. Диана Мильто —
+  128.16\n\nИтог турнира:\n1. Виктория Стрельцо
+ ва — 201.73\n2. Диана Мильто — 198.16\n3. Дарья Ле
+ бедева — 197.23\n\nПримечательное:\n• Дарья 
+ Лебедева — 2 четверных в программе: 4S\, 4T\n
+ • Виктория Стрельцова — Тройной аксель\
+ n• Виктория Стрельцова — 3 четверных в п
+ рограмме: 4S\, 4T\, 4S\n• Софья Смагина — Четв
+ ерной сальхов\n• Алена Болдырева — Четв
+ ерной тулуп\n• Дарья Лебедева — После пе
+ рвого сегмента — 10-е место\, в итоге — 3-е\
+ n\nРоссияне:\n• Софья Смагина — 16-й\n• Вик
+ тория Стрельцова — 18-й\n\nНачало: 07:45 МСК\n
+ Трансляция: Первый канал
+LOCATION:Навка Арена\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-led-
+ mechty-sredi-yuniorov-2026:women-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Лёд Мечты» — девушки П
+ П
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-jgp-ankara-2026:pairs-junior-pp@starty
+DTSTAMP:20261010T170738Z
+DTSTART;TZID=Europe/Moscow:20260918T133000
+DTEND;TZID=Europe/Moscow:20260918T160500
+SUMMARY:JGP Ankara — пары ПП
+DESCRIPTION:Итог:\n1. Полина Шешелева / Егор Карн
+ аухов — 127.53\n2. Таисия Гусева / Даниил Овч
+ инников — 126.43\n3. Anita Mapelli / Noah Quesada Grau — 96.52\
+ n\nИтог турнира:\n1. Таисия Гусева / Даниил 
+ Овчинников — 196.91\n2. Полина Шешелева / Его
+ р Карнаухов — 190.79\n3. Anita Mapelli / Noah Quesada Grau —
+  154.07\n\nПримечательное:\n• Таисия Гусева / 
+ Даниил Овчинников — Четверная подкрутк
+ а\n\nРоссияне:\n• Полина Шешелева / Егор Ка
+ рнаухов — 14-й\n• Таисия Гусева / Даниил О
+ вчинников — 15-й\n\nНачало: 13:30 МСК\nТрансля
+ ция: Okko
+LOCATION:Ankara\, Türkiye
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-ankara-2026:pairs-junior
+ -pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JGP Ankara — пары ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

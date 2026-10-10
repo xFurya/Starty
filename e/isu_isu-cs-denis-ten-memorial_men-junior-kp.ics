@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:men-junior-kp@starty
+DTSTAMP:20261010T170738Z
+DTSTART;TZID=Europe/Moscow:20261008T084500
+DTEND;TZID=Europe/Moscow:20261008T105000
+SUMMARY:CS Denis Ten Memorial — юноши КП
+DESCRIPTION:Итог:\n1. Арсений Федотов — 91.38\n2. Ал
+ ександр Чмиль — 74.01\n3. Глеб Ковтун — 73.18\n\
+ nПримечательное:\n• Арсений Федотов — Лу
+ чшая среди юниоров оценка сезона за КП: 91
+ .38\n• Весь пьедестал — россияне\n\nРоссия
+ не:\n• Арсений Федотов — 6-й\n• Александр 
+ Чмиль — 8-й\n• Глеб Ковтун — 10-й\n• Pavel Gavdis
+  — 11-й\n\nНачало: 08:45 МСК
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:men-ju
+ nior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Denis Ten Memorial — юноши КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

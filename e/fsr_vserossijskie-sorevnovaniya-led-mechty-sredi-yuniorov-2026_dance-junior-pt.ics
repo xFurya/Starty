@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:dance-ju
+ nior-pt@starty
+DTSTAMP:20261010T170738Z
+DTSTART;TZID=Europe/Moscow:20260926T080000
+DTEND;TZID=Europe/Moscow:20260926T102500
+SUMMARY:ЮГП России «Лёд Мечты» — танцы ПТ
+DESCRIPTION:Итог:\n1. Мария Фефелова / Артём Вало
+ в — 107.13\n2. Полина Жарова / Алексей Столяр
+ ов — 95.18\n3. Софья Грабчак / Максим Полтора
+ к — 89.77\n\nИтог турнира:\n1. Мария Фефелова /
+  Артём Валов — 179.77\n2. Полина Жарова / Алек
+ сей Столяров — 159.37\n3. Софья Грабчак / Мак
+ сим Полторак — 148.46\n\nПримечательное:\n• 
+ Мария Фефелова / Артём Валов — Отрыв от в
+ торого места — 20.40 балла\n\nНачало: 08:00 МСК
+ \nТрансляция: Первый канал
+LOCATION:Навка Арена\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-led-
+ mechty-sredi-yuniorov-2026:dance-junior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Лёд Мечты» — танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

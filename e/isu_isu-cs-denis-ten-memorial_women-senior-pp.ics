@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:women-senior-pp@starty
+DTSTAMP:20261010T170738Z
+DTSTART;TZID=Europe/Moscow:20261009T173000
+DTEND;TZID=Europe/Moscow:20261009T203500
+SUMMARY:CS Denis Ten Memorial — женщины ПП
+DESCRIPTION:Итог:\n1. Александра Трусова — 148.62\n2
+ . Sofia Samodelkina — 134.91\n3. Yujae Kim — 133.21\n\nИтог тур
+ нира:\n1. Александра Трусова — 226.01\n2. Yujae Kim
+  — 209.20\n3. Sofia Samodelkina — 204.36\n\nПримечательно
+ е:\n• Александра Трусова — Четверной лут
+ ц\n• Yujae Kim — Тройной аксель\n• Viktoriia Safonova 
+ — Личный рекорд за ПП: 130.38 (был 128.27)\n• Ма
+ рия Захарова — Четверной тулуп\n• Мария 
+ Захарова — Личный рекорд за ПП: 129.48 (был 1
+ 21.29)\n• Дина Хуснутдинова — Тройной аксе
+ ль\n• Yujae Kim — Личный рекорд по сумме: 209.20 
+ (был 199.86)\n• Viktoriia Safonova — Личный рекорд по
+  сумме: 198.80 (был 192.49)\n• Александра Трусов
+ а — Отрыв от второго места — 16.81 балла\n\n
+ Россияне:\n• Мария Захарова — 19:30\n• Дина
+  Хуснутдинова — 20:00\n• Александра Трусов
+ а — 20:32\n• Viktoriia Safonova — 16-й\n\nНачало: 17:30 МС
+ К
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:women-
+ senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Denis Ten Memorial — женщины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-trialeti-trophy:pairs-senior-kp@starty
+DTSTAMP:20261010T170738Z
+DTSTART;TZID=Europe/Moscow:20261002T140000
+DTEND;TZID=Europe/Moscow:20261002T150500
+SUMMARY:CS Trialeti Trophy — пары КП
+DESCRIPTION:Итог:\n1. Anastasiia Metelkina / Luka Berulava — 80.01\n2
+ . Екатерина Чикмарёва / Матвей Янченков 
+ — 74.00\n3. Анастасия Мишина / Александр Гал
+ лямов — 73.48\n\nРоссияне:\n• Анастасия Мухо
+ ртова / Дмитрий Евгеньев — 3-й\n• Екатери
+ на Чикмарёва / Матвей Янченков — 4-й\n• Ан
+ астасия Мишина / Александр Галлямов — 6-й
+ \n\nНачало: 14:00 МСК
+LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-trialeti-trophy:pairs-sen
+ ior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Trialeti Trophy — пары КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

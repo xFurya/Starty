@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:dance-junior-rt@starty
+DTSTAMP:20261010T170738Z
+DTSTART;TZID=Europe/Moscow:20261008T193500
+DTEND;TZID=Europe/Moscow:20261008T201500
+SUMMARY:CS Denis Ten Memorial — юниорские танцы РТ
+DESCRIPTION:Итог:\n1. Мария Фефелова / Артём Вало
+ в — 67.11\n2. Дарья Дрожжина / Иван Тельнов —
+  59.41\n3. Sofiia Beznosikova / Max Leleu — 57.90\n\nПримечате
+ льное:\n• Мария Фефелова / Артём Валов — 
+ Лучшая среди юниоров оценка сезона за РТ
+ : 67.11\n• Мария Фефелова / Артём Валов — Ли
+ чный рекорд за РТ: 67.11 (был 65.33)\n\nРоссияне:
+ \n• Дарья Дрожжина / Иван Тельнов — 3-й\n• 
+ Мария Фефелова / Артём Валов — 4-й\n\nНачал
+ о: 19:35 МСК
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:dance-
+ junior-rt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Denis Ten Memorial — юниорские танцы РТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
