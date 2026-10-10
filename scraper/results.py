@@ -15,6 +15,9 @@ FACTS = os.path.join(ROOT, "data", "facts.json")
 
 _store = None
 
+# версия правил: при смене всё примечательное считается заново
+VERSION = "2"
+
 
 def _load():
     global _store
@@ -30,6 +33,9 @@ def _load():
 def save():
     if _store is None:
         return
+    # записи прошлых версий правил больше не нужны
+    for k in [k for k in _store if not k.startswith(VERSION + "|")]:
+        del _store[k]
     os.makedirs(os.path.dirname(FACTS), exist_ok=True)
     with open(FACTS, "w", encoding="utf-8") as f:
         json.dump(_store, f, ensure_ascii=False, indent=1, sort_keys=True)
@@ -47,8 +53,9 @@ def _ours(nation):
 def segment_facts(pdf, *, kind, level, seg, intl, season, to_ru, log=print):
     """Факты сегмента по судейским оценкам: [{who, text, kind}] (кэш — по адресу PDF)."""
     store = _load()
-    if pdf in store:
-        return store[pdf]
+    pdf_key = f"{VERSION}|{pdf}"
+    if pdf_key in store:
+        return store[pdf_key]
     try:
         skaters = st.parse_judges(net.pdf_text(pdf))
     except Exception as e:  # примечательное необязательно — расписание и итоги важнее
@@ -62,7 +69,7 @@ def segment_facts(pdf, *, kind, level, seg, intl, season, to_ru, log=print):
     except Exception as e:
         log("  ! примечательное:", pdf, e)
         return []
-    store[pdf] = out
+    store[pdf_key] = out
     return out
 
 
@@ -85,6 +92,7 @@ def total_facts(key, rows, first_places, *, kind, level, intl, season, to_ru):
     первого сегмента, весь пьедестал — наши, большой отрыв. rows — итог по местам
     (имена латиницей, как в протоколе); first_places — {имя латиницей: место после первого сегмента}."""
     store = _load()
+    key = f"{VERSION}|{key}"
     if key in store:
         return store[key]
     try:

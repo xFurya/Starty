@@ -20,15 +20,15 @@ _cache = {}
 ROT = {1: "одинарный", 2: "двойной", 3: "тройной", 4: "четверной", 5: "пятиоборотный"}
 JUMP_RU = {"A": "аксель", "Lz": "лутц", "F": "флип", "Lo": "риттбергер", "S": "сальхов", "T": "тулуп",
            "Eu": "ойлер"}
-JUMP = re.compile(r"^([1-5])(A|Lz|F|Lo|S|T|Eu)(.*)$")
-THROW = re.compile(r"^([1-5])(A|Lz|F|Lo|S|T)Th(.*)$")
+JUMP = re.compile(r"^([1-5])(A|Lz|F|Lo|S|T|Eu)((?:<<|<|q|e|!|\*|F|V)*)$")
+THROW = re.compile(r"^([1-5])(A|Lz|F|Lo|S|T)Th((?:<<|<|q|e|!|\*|F|V)*)$")
 TWIST = re.compile(r"^([1-5])Tw")
 
 
 def _key(name):
     s = unicodedata.normalize("NFKD", name)
     s = "".join(c for c in s if not unicodedata.combining(c))
-    return re.sub(r"[^a-z/]", "", s.lower())
+    return re.sub(r"[^a-zа-я/]", "", s.lower().replace("ё", "е"))
 
 
 def _jump(part):
