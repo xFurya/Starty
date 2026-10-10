@@ -203,7 +203,7 @@ class SettingsView extends StatelessWidget {
                 else if (state.allowed == false)
                   _Summary(head: 'Запланировано: ${planned.length}', tail: 'не придут', empty: true)
                 else
-                  _Summary(head: 'Запланировано: ${planned.length}', tail: 'ближайшее$nb${_when(planned.first.at)}'),
+                  _Summary(head: 'Запланировано: ${planned.length}', tail: 'ближайшее ${_when(planned.first.at)}'),
               ],
             ),
           ),

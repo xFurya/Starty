@@ -562,9 +562,15 @@ class StartTile extends StatelessWidget {
               ],
               if (countdown) ...[
                 const SizedBox(height: 4),
-                Text(
-                  whenLabel(s, t),
-                  style: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w700, color: p.accent, height: 1.3),
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    whenLabel(s, t),
+                    maxLines: 1,
+                    softWrap: false,
+                    style: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w700, color: p.accent, height: 1.3),
+                  ),
                 ),
               ],
               if (list != null && !under) ...[const SizedBox(height: 12), list],
@@ -1000,6 +1006,8 @@ class PlacingName extends StatelessWidget {
         color: p.ink2,
       ),
       center: center,
+      // регион на российских стартах — справочно: не помещается вместе с именем — без него
+      optional: !intl,
       semantics: displayName(x.name),
     );
   }
