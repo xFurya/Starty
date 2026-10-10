@@ -1,23 +1,11 @@
 {
- "version": "1.0.9",
- "code": 10,
- "notes": "Версии для Windows и Mac.",
- "at": "2026-10-10T10:02:31Z",
+ "version": "1.0.10",
+ "code": 11,
+ "notes": "Итоги во время старта и примечательное.",
+ "at": "2026-10-10T11:38:35Z",
  "android": {
-  "file": "starty-1.0.9.apk",
-  "size": 20290732,
-  "sha256": "badace5c7129edcef1af96ee17d6a0458c1e69f21c6b00b105744af4ed4522e2"
- },
- "windows": {
-  "code": 10,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.9/Starty-windows.zip",
-  "size": 13623093,
-  "sha256": "8e0f48acaf01295f0677f4597c6aab5da3c5734e8113c8dd13b3001d27401da8"
- },
- "macos": {
-  "code": 10,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.9/Starty-macos.zip",
-  "size": 20490392,
-  "sha256": "2a6ea428fb80992bc97ef81daae6b991d1ad37086e043e2c175c2a3788b42a29"
+  "file": "starty-1.0.10.apk",
+  "size": 20356756,
+  "sha256": "680ecf22a376d24ab4b02c6d5834be51599593e227c95478447c11680a80bd78"
  }
 }
