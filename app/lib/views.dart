@@ -1185,6 +1185,13 @@ class MonthView extends StatefulWidget {
 class _MonthViewState extends State<MonthView> {
   late DateTime month;
   late String selected;
+  double _dir = 1;
+  double _drag = 0;
+
+  void _go(int delta) => setState(() {
+    _dir = delta.toDouble();
+    month = DateTime(month.year, month.month + delta);
+  });
 
   @override
   void initState() {
@@ -1223,12 +1230,12 @@ class _MonthViewState extends State<MonthView> {
               RoundButton(
                 icon: CupertinoIcons.chevron_left,
                 tooltip: 'Предыдущий месяц',
-                onTap: () => setState(() => month = DateTime(month.year, month.month - 1)),
+                onTap: () => _go(-1),
               ),
               RoundButton(
                 icon: CupertinoIcons.chevron_right,
                 tooltip: 'Следующий месяц',
-                onTap: () => setState(() => month = DateTime(month.year, month.month + 1)),
+                onTap: () => _go(1),
               ),
               if (state.data != null) FilterButton(state: state),
             ],
@@ -1261,8 +1268,34 @@ class _MonthViewState extends State<MonthView> {
                   ],
                 ),
                 const SizedBox(height: 6),
-                for (var r = 0; r < cells ~/ 7; r++)
-                  Row(children: [for (var c = 0; c < 7; c++) _cell(context, r * 7 + c - lead + 1, days, byDay, today)]),
+                // свайп по сетке листает месяцы (и не отдаёт жест перелистыванию вкладок)
+                GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onHorizontalDragStart: (_) => _drag = 0,
+                  onHorizontalDragUpdate: (d) => _drag += d.primaryDelta ?? 0,
+                  onHorizontalDragEnd: (d) {
+                    final v = d.primaryVelocity ?? 0;
+                    // короткий быстрый взмах или протяжка на 50 пикселей
+                    if (_drag.abs() > 50 || v.abs() > 300) _go((_drag != 0 ? _drag : v) < 0 ? 1 : -1);
+                  },
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 220),
+                    transitionBuilder: (child, a) => FadeTransition(
+                      opacity: a,
+                      child: SlideTransition(
+                        position: Tween(begin: Offset(.08 * _dir, 0), end: Offset.zero).animate(a),
+                        child: child,
+                      ),
+                    ),
+                    child: Column(
+                      key: ValueKey(month),
+                      children: [
+                        for (var r = 0; r < cells ~/ 7; r++)
+                          Row(children: [for (var c = 0; c < 7; c++) _cell(context, r * 7 + c - lead + 1, days, byDay, today)]),
+                      ],
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 8),
                 Container(height: 1, margin: const EdgeInsets.symmetric(horizontal: 10), color: p.line),
                 const SizedBox(height: 10),

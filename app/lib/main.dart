@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart' show PointerDeviceKind;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -191,6 +192,8 @@ class _StartyAppState extends State<StartyApp> {
       theme: _theme(Brightness.light),
       darkTheme: _theme(Brightness.dark),
       themeMode: state.theme,
+      // свайпы и мышью (веб-стенд); на телефоне — пальцем, как обычно
+      scrollBehavior: const MaterialScrollBehavior().copyWith(dragDevices: PointerDeviceKind.values.toSet()),
       locale: const Locale('ru'),
       // крупный системный шрифт — до 130 %: дальше разметка теряет смысл
       builder: (context, child) => MediaQuery.withClampedTextScaling(maxScaleFactor: 1.3, child: child!),
@@ -207,6 +210,15 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with WidgetsBindingObserver {
+  final _pages = PageController(initialPage: homeTab.value);
+
+  /// homeTab меняют и снаружи (из листа старта — в «Настройки»): страницы догоняют.
+  void _syncPage() {
+    if (_pages.hasClients && (_pages.page ?? 0).round() != homeTab.value) {
+      _pages.animateToPage(homeTab.value, duration: const Duration(milliseconds: 280), curve: Curves.easeOutCubic);
+    }
+  }
+
   AppState get state => widget.state;
   Timer? _tick;
   UpdateInfo? update;
@@ -221,6 +233,7 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
     // на Android обновления ставятся сами (updater.dart); строка «Новая версия» — только для iPhone
     if (!kIsWeb && !Updates.native) checkUpdate().then((u) => mounted && u != null ? setState(() => update = u) : null);
     Updates.instance.addListener(_onUpdates);
+    homeTab.addListener(_syncPage);
     WidgetsBinding.instance.addPostFrameCallback((_) => _onUpdates());
   }
 
@@ -273,6 +286,8 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
   void dispose() {
     _tick?.cancel();
     Updates.instance.removeListener(_onUpdates);
+    homeTab.removeListener(_syncPage);
+    _pages.dispose();
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
@@ -301,12 +316,14 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
                 child: MediaQuery.removePadding(
                   context: context,
                   removeTop: update != null,
-                  child: IndexedStack(
-                    index: tab,
+                  // вкладки листаются свайпом; в «Месяце» свайп по самому календарю листает месяцы
+                  child: PageView(
+                    controller: _pages,
+                    onPageChanged: (i) => homeTab.value = i,
                     children: [
-                      FeedView(state: state),
-                      MonthView(state: state),
-                      SettingsView(state: state),
+                      _Keep(FeedView(state: state)),
+                      _Keep(MonthView(state: state)),
+                      _Keep(SettingsView(state: state)),
                     ],
                   ),
                 ),
@@ -315,12 +332,33 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
           ),
           bottomNavigationBar: IceNav(
             index: tab,
-            onTap: (i) => homeTab.value = i,
+            onTap: (i) {
+              homeTab.value = i;
+              if (_pages.hasClients && (_pages.page ?? 0).round() != i) _pages.jumpToPage(i);
+            },
             // в системе уведомления запрещены, а правила их ждут — точка у «Настроек»
             settingsDot: state.rules.on && state.allowed == false,
           ),
         ),
       ),
     );
+  }
+}
+
+/// Вкладка не пересобирается при перелистывании: прокрутка и состояние остаются.
+class _Keep extends StatefulWidget {
+  final Widget child;
+  const _Keep(this.child);
+  @override
+  State<_Keep> createState() => _KeepState();
+}
+
+class _KeepState extends State<_Keep> with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
+    return widget.child;
   }
 }

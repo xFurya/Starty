@@ -1288,13 +1288,12 @@ class Avatar extends StatelessWidget {
                 fit: StackFit.expand,
                 children: [
                   fallback,
-                  Transform.scale(
-                    scale: 1.32,
-                    alignment: const Alignment(0, -.55),
-                    child: Image.network(
+                  // миниатюра уже обрезана под кружок на сайте (scraper/photos.py) — без своего увеличения:
+                  // у крупных портретов ISU оно оставляло от лица лоб и глаза
+                  Image.network(
                       url,
                       fit: BoxFit.cover,
-                      alignment: const Alignment(0, -.5),
+                      alignment: const Alignment(0, -.2),
                       filterQuality: FilterQuality.medium,
                       errorBuilder: (c, e, st) => fallback,
                       frameBuilder: (c, child, frame, sync) => sync
@@ -1305,7 +1304,6 @@ class Avatar extends StatelessWidget {
                               child: child,
                             ),
                     ),
-                  ),
                 ],
               ),
       ),

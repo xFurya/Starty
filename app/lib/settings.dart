@@ -246,8 +246,8 @@ class SettingsView extends StatelessWidget {
           child: Plate(
             child: _Row(
               icon: CupertinoIcons.calendar_badge_plus,
-              title: 'Подписка',
-              subtitle: _ios ? 'Календарь' : 'Google Календарь',
+              title: _ios ? 'Старты в Календаре' : 'Старты в Google Календаре',
+              subtitle: 'Все старты, обновляются сами',
               onTap: () => launchUrl(Uri.parse(_ios ? _ics : _google), mode: LaunchMode.externalApplication),
               trailing: const _Chevron(external: true),
             ),
