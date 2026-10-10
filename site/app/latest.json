@@ -1,11 +1,11 @@
 {
- "version": "1.0.7",
- "code": 8,
- "notes": "Уведомления на iPhone обновляются сами.",
- "at": "2026-10-10T08:20:18Z",
+ "version": "1.0.8",
+ "code": 9,
+ "notes": "Исправлены фото и строка состояния.",
+ "at": "2026-10-10T08:57:38Z",
  "android": {
-  "file": "starty-1.0.7.apk",
+  "file": "starty-1.0.8.apk",
   "size": 20290536,
-  "sha256": "2c6ecaf79d75667670d41cf8f3db393b08689d9b521ac7af19dafa50f167f82b"
+  "sha256": "00d7553cdb01d4cd3a7947c9f8be15d9e6d27c77215542f001a6bd0bd8e65823"
  }
 }
