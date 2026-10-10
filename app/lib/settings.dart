@@ -340,7 +340,7 @@ class _Updates extends StatelessWidget {
           icon: CupertinoIcons.arrow_down_circle,
           title: 'Обновления',
           subtitle: s == null ? 'Проверка…' : s.line(DateTime.now()),
-          subtitleColor: s != null && (s.needsHand || (!s.ready && s.error.isNotEmpty)) ? Palette.of(context).live : null,
+          subtitleColor: s != null && s.problem ? Palette.of(context).live : null,
           onTap: s?.checking == true ? null : u.check,
         ),
         if (s != null && s.ready && !s.canInstall) ...[

@@ -68,6 +68,16 @@ class UpdateState {
   /// Скачанное не встанет само: нужен человек (подтверждение, разрешение, сбой).
   bool get needsHand => ready && (wait == 'confirm' || !canInstall || installError.isNotEmpty || stuck);
 
+  /// Показанная строка — про неполадку (красным), а не про ход дела. Совпадает с порядком в line():
+  /// пока идёт загрузка или проверка, прошлая ошибка не в счёт.
+  bool get problem {
+    if (!enabled) return false;
+    if (downloading != null && !ready) return false;
+    if (ready) return needsHand;
+    if (checking) return false;
+    return error.isNotEmpty;
+  }
+
   /// Строка состояния для настроек — то, что есть на самом деле.
   String line(DateTime now) {
     if (!enabled) return 'Недоступно';
