@@ -739,6 +739,10 @@ class _FactsPlate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
+    // сначала рекорды и редкие элементы, потом итоги и оценки — внутри вида как на табло
+    const order = ['record', 'element', 'place', 'score'];
+    int rank(Fact f) => order.indexOf(f.kind) * 1000 + this.facts.indexOf(f);
+    final facts = [...this.facts]..sort((a, b) => rank(a).compareTo(rank(b)));
     return Plate(
       child: Column(
         children: [

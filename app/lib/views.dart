@@ -992,7 +992,7 @@ class PastTile extends StatelessWidget {
                                 const SizedBox(width: 6),
                                 Expanded(
                                   child: Text(
-                                    [if (f.who.isNotEmpty) f.who.contains(' / ') ? f.who : f.who.split(' ').last, f.text].join(' · ') +
+                                    [if (f.who.isNotEmpty) f.who.split(' / ').map((x) => x.trim().split(' ').last).join(' / '), f.text].join(' · ') +
                                         (s.facts.length > 1 ? ' · ещё ${s.facts.length - 1}' : ''),
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
