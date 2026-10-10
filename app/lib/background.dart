@@ -1,4 +1,4 @@
-// Фоновое обновление (Android): раз в несколько часов подтянуть расписание и
+// Фоновое обновление (Android раз в 3 часа, iPhone — когда его будит система): раз в несколько часов подтянуть расписание и
 // переставить уведомления — новые старты, сдвиги времени и время выхода наших
 // появляются, когда приложение может быть закрыто.
 import 'package:flutter/foundation.dart';
@@ -23,15 +23,20 @@ void backgroundDispatcher() {
 }
 
 Future<void> scheduleBackground() async {
-  if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) return;
+  if (kIsWeb) return;
   try {
     await Workmanager().initialize(backgroundDispatcher);
-    await Workmanager().registerPeriodicTask(
-      'refresh',
-      'refresh',
-      frequency: const Duration(hours: 3),
-      constraints: Constraints(networkType: NetworkType.connected),
-      existingWorkPolicy: ExistingPeriodicWorkPolicy.keep,
-    );
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      await Workmanager().registerPeriodicTask(
+        'refresh',
+        'refresh',
+        frequency: const Duration(hours: 3),
+        constraints: Constraints(networkType: NetworkType.connected),
+        existingWorkPolicy: ExistingPeriodicWorkPolicy.keep,
+      );
+    } else if (defaultTargetPlatform == TargetPlatform.iOS) {
+      // iOS запускает не чаще, чем сам решит (обычно несколько раз в сутки); идентификатор — как в Info.plist
+      await Workmanager().registerPeriodicTask('refresh', 'refresh', initialDelay: const Duration(hours: 3));
+    }
   } catch (_) {}
 }
