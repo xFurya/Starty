@@ -348,11 +348,19 @@ class IceBackdrop extends StatelessWidget {
     return Stack(
       fit: StackFit.expand,
       children: [
-        Image.asset(
-          p.isDark ? 'assets/images/ice-dark.jpg' : 'assets/images/ice-light.jpg',
-          fit: BoxFit.cover,
-          alignment: const Alignment(0, -.4),
-          filterQuality: FilterQuality.medium,
+        // снизу фото не доходит до края: на дробной границе (лист фильтра) иначе остаётся
+        // тонкая полоса льда под растворением; там растворение уже сплошное
+        Positioned(
+          left: 0,
+          top: 0,
+          right: 0,
+          bottom: 2,
+          child: Image.asset(
+            p.isDark ? 'assets/images/ice-dark.jpg' : 'assets/images/ice-light.jpg',
+            fit: BoxFit.cover,
+            alignment: const Alignment(0, -.4),
+            filterQuality: FilterQuality.medium,
+          ),
         ),
         // сияние льда, как в иконке
         DecoratedBox(

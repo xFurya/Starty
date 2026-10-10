@@ -20,12 +20,13 @@ const _google = 'https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2F
 
 bool get _ios => !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
 
-/// «2 вида · 1 турнир» или «Все старты».
+/// «2 вида · 1 турнир · 1 спортсмен» или «Все старты».
 String filterSummary(Filters f) {
   if (!f.any) return 'Все старты';
   return [
     if (f.kinds.isNotEmpty) '${f.kinds.length} ${plural(f.kinds.length, 'вид', 'вида', 'видов')}',
     if (f.tids.isNotEmpty) '${f.tids.length} ${plural(f.tids.length, 'турнир', 'турнира', 'турниров')}',
+    if (f.athletes.isNotEmpty) '${f.athletes.length} ${plural(f.athletes.length, 'спортсмен', 'спортсмена', 'спортсменов')}',
   ].join(' · ');
 }
 

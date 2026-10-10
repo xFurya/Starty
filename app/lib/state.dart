@@ -10,7 +10,7 @@ class AppState extends ChangeNotifier {
   Schedule? data;
   bool loading = true;
   bool offline = false;
-  Filters filters = Filters(Prefs.kinds, Prefs.tids);
+  Filters filters = Filters(Prefs.kinds, Prefs.tids, Prefs.athletes);
 
   // уведомления
   NotifyRules rules = NotifyRules.fromJson(Prefs.rulesJson);
@@ -114,7 +114,7 @@ class AppState extends ChangeNotifier {
   Future<void> setFilters(Filters f) async {
     filters = f;
     notifyListeners();
-    await Prefs.setFilters(f.kinds, f.tids);
+    await Prefs.setFilters(f.kinds, f.tids, f.athletes);
   }
 
   Future<void> setShowDone(bool v) async {
