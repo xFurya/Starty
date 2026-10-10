@@ -112,6 +112,7 @@ def parse_index(url):
                 "times_pdf": urljoin(url, pdf) if pdf else None,
                 # судейские оценки выкладывают, когда сегмент закончен и протокол утверждён
                 "final": any("JudgesDetails" in l for l in links),
+                "judges_pdf": next((urljoin(url, l) for l in links if "JudgesDetails" in l), None),
             })
             continue
         if in_schedule:
@@ -319,3 +320,76 @@ def parse_times_pdf(url):
         elif w:
             group = int(w.group(1))
     return times, warm
+
+
+# ---------------------------------------------------------------- судейские оценки
+
+JUDGES_HEAD = re.compile(
+    r"^\s*(\d{1,3})\s+(\S.*?)\s{2,}([A-ZА-ЯЁ]{2,4}\d?)\s+(\d{1,3})\s+"
+    r"(-?\d+\.\d\d)\s+(-?\d+\.\d\d)\s+(-?\d+\.\d\d)\s+(-?\d+\.\d\d)\s*$")
+FLOAT = re.compile(r"^-?\d+\.\d\d$")
+COMPONENTS = ("Composition", "Presentation", "Skating Skills", "Skating skills",
+              "Композиция", "Представление", "Мастерство катания")
+
+
+def parse_judges(text):
+    """Судейские оценки по каждому (…JudgesDetailsperSkater.pdf, pdftotext -layout):
+    [{rank, name, nation, tss, tes, pcs, ded,
+      elements: [{code, info, base, goe, judges: [int], score}],
+      components: [{name, judges: [float]}]}]"""
+    out = []
+    cur = None
+    for line in text.splitlines():
+        m = JUDGES_HEAD.match(line)
+        if m:
+            cur = {"rank": int(m.group(1)), "name": m.group(2).strip(), "nation": m.group(3),
+                   "tss": float(m.group(5)), "tes": float(m.group(6)), "pcs": float(m.group(7)),
+                   "ded": float(m.group(8)), "elements": [], "components": []}
+            out.append(cur)
+            continue
+        if cur is None:
+            continue
+        el = _element(line)
+        if el:
+            cur["elements"].append(el)
+            continue
+        stripped = line.strip()
+        for c in COMPONENTS:
+            if stripped.startswith(c):
+                nums = [float(t) for t in stripped[len(c):].split() if FLOAT.match(t)]
+                # множитель, оценки судей, итог
+                if len(nums) >= 4:
+                    cur["components"].append({"name": c, "judges": nums[1:-1]})
+                break
+    return out
+
+
+def _element(line):
+    """«   3    4T+3A+3A+SEQ      25.50    1.14   0 1 1 1 2 1 2     26.64» → элемент."""
+    t = line.split()
+    if len(t) < 5 or not re.fullmatch(r"\d{1,2}", t[0]):
+        return None
+    code = t[1]
+    rest = t[2:]
+    info = []
+    while rest and not FLOAT.match(rest[0]):
+        if rest[0] == "x":
+            rest = rest[1:]
+            continue
+        info.append(rest[0])
+        rest = rest[1:]
+    nums = []
+    for v in rest:
+        if v == "x":
+            continue
+        if FLOAT.match(v) or re.fullmatch(r"-?\d", v) or v == "-":
+            nums.append(v)
+        else:
+            return None
+    floats = [v for v in nums if FLOAT.match(v)]
+    if len(floats) < 3:
+        return None
+    base, goe, score = float(nums[0]), float(nums[1]), float(nums[-1])
+    judges = [int(v) for v in nums[2:-1] if re.fullmatch(r"-?\d", v)]
+    return {"code": code, "info": " ".join(info), "base": base, "goe": goe,
+            "judges": judges, "score": score}

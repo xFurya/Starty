@@ -96,7 +96,66 @@ class Start {
         for (final o in (j['ours'] as List? ?? const [])) Skater(o['name'], o['time'], o['no'], o['warmup'], o['place'], o['final']),
       ],
       podium = [for (final p in (j['podium'] as List? ?? const [])) Placing.fromJson(p)],
-      total = [for (final p in (j['total'] as List? ?? const [])) Placing.fromJson(p)];
+      total = [for (final p in (j['total'] as List? ?? const [])) Placing.fromJson(p)],
+      provisional = j['provisional'] == true,
+      facts = [
+        for (final f in (j['facts'] as List? ?? const []))
+          if (f is Map && (f['text'] as String? ?? '').isNotEmpty) Fact.fromJson(Map<String, dynamic>.from(f)),
+      ],
+      live = j['live'] is Map ? LiveSrc.fromJson(Map<String, dynamic>.from(j['live'] as Map)) : null;
+
+  /// Тот же старт с итогами, прочитанными с табло турнира (live.dart).
+  Start._with(
+    Start o, {
+    required this.ours,
+    required this.podium,
+    required this.total,
+    required this.provisional,
+  }) : id = o.id,
+       tid = o.tid,
+       tournament = o.tournament,
+       kind = o.kind,
+       level = o.level,
+       seg = o.seg,
+       title = o.title,
+       venue = o.venue,
+       src = o.src,
+       t0 = o.t0,
+       t1 = o.t1,
+       intl = o.intl,
+       broadcast = o.broadcast,
+       athletes = o.athletes,
+       facts = o.facts,
+       live = o.live;
+
+  Start withResults({
+    required List<Placing> podium,
+    required bool provisional,
+    Map<String, int> places = const {},
+    List<Placing>? total,
+    Map<String, int> finals = const {},
+  }) => Start._with(
+    this,
+    ours: [
+      for (final o in ours)
+        Skater(o.name, o.time, o.no, o.warmup, places[norm(o.name)] ?? o.place, finals[norm(o.name)] ?? o.overall),
+    ],
+    podium: podium,
+    total: total ?? this.total,
+    provisional: provisional,
+  );
+
+  /// Тройка пока промежуточная: протокол на табло, судейских оценок ещё нет.
+  final bool provisional;
+
+  /// Примечательное: рекорды, редкие прыжки, лучшие оценки сезона, взлёт по итогу.
+  final List<Fact> facts;
+
+  /// Адреса табло турнира — во время старта приложение читает итоги оттуда само.
+  final LiveSrc? live;
+
+  /// Итог окончательный — табло больше не опрашиваем.
+  bool get settled => podium.isNotEmpty && !provisional && (live?.cat == null || total.isNotEmpty);
 
   /// Первая тройка сегмента (пусто, пока сегмент не прошёл).
   final List<Placing> podium;
@@ -119,6 +178,27 @@ class Start {
     if (mins < -120) mins += 24 * 60;
     return t0.add(Duration(minutes: mins));
   }
+}
+
+/// Примечательное в сегменте. who пустой — о турнире в целом («Весь пьедестал — наши»).
+class Fact {
+  final String who, text, kind;
+  Fact(this.who, this.text, this.kind);
+  Fact.fromJson(Map<String, dynamic> j) : who = j['who'] ?? '', text = j['text'] ?? '', kind = j['kind'] ?? '';
+}
+
+/// Табло турнира (Swiss Timing): оглавление, страница сегмента, итог вида, первый сегмент
+/// и имена латиницей → как их пишет приложение.
+class LiveSrc {
+  final String idx, seg;
+  final String? cat, first;
+  final Map<String, String> names;
+  LiveSrc.fromJson(Map<String, dynamic> j)
+    : idx = j['idx'] ?? '',
+      seg = j['seg'] ?? '',
+      cat = j['cat'],
+      first = j['first'],
+      names = {for (final e in (j['names'] as Map? ?? const {}).entries) '${e.key}': '${e.value}'};
 }
 
 /// Место в итоговом протоколе: 1–3, имя (по-русски, если знаем), флаг, баллы.
@@ -213,6 +293,18 @@ class Schedule {
       watchlist: List<String>.from(j['watchlist'] ?? const []),
     );
   }
+
+  /// То же расписание с другими стартами (итоги с табло).
+  Schedule withStarts(List<Start> list) => Schedule(
+    list,
+    generated,
+    complete,
+    fromCache,
+    photos: photos,
+    upcoming: upcoming,
+    sources: sources,
+    watchlist: watchlist,
+  );
 
   Start? byId(String id) {
     for (final s in starts) {

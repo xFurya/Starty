@@ -1,9 +1,11 @@
 // Общее состояние приложения: расписание, фильтр ленты, уведомления, оформление.
 import 'dart:async';
 
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 
 import 'data.dart';
+import 'live.dart';
 import 'reminders.dart';
 
 class AppState extends ChangeNotifier {
@@ -55,7 +57,8 @@ class AppState extends ChangeNotifier {
     final fresh = await Repo.fetch();
     refreshing = false;
     if (fresh != null) {
-      data = fresh;
+      _fetchedAt = DateTime.now();
+      data = _apply(fresh);
       offline = false;
     } else {
       offline = true;
@@ -149,6 +152,93 @@ class AppState extends ChangeNotifier {
       forcedOff = off;
       unawaited(Prefs.setForced(on, off));
     }
+  }
+
+  // ---------------------------------------------------------------- итоги с табло
+
+  /// Итоги, прочитанные с табло, пока сервер их не догнал: id → старт.
+  final Map<String, Start> _live = {};
+  Timer? _liveTimer;
+  bool _polling = false;
+  DateTime _fetchedAt = DateTime.fromMillisecondsSinceEpoch(0);
+
+  /// Старты, итоги которых сейчас читаются с табло: идут, вот-вот начнутся или прошли,
+  /// а окончательного протокола ещё нет.
+  List<Start> get watching {
+    final t = now();
+    return [
+      for (final s in data?.starts ?? const <Start>[])
+        if (s.live != null &&
+            !s.settled &&
+            !t.isBefore(s.t0.subtract(const Duration(minutes: 10))) &&
+            t.isBefore(s.t1.add(const Duration(hours: 24))))
+          s,
+    ];
+  }
+
+  /// Приложение на экране: раз в минуту — табло. Свёрнуто — не опрашиваем.
+  void startLive() {
+    _liveTimer?.cancel();
+    if (kIsWeb) return; // браузер не пустит на чужой сайт без разрешения сайта
+    _liveTimer = Timer.periodic(const Duration(minutes: 1), (_) => pollLive());
+    unawaited(pollLive());
+  }
+
+  void stopLive() {
+    _liveTimer?.cancel();
+    _liveTimer = null;
+  }
+
+  Future<void> pollLive() async {
+    if (_polling || data == null) return;
+    final list = watching.take(8).toList();
+    if (list.isEmpty) return;
+    _polling = true;
+    try {
+      final got = await Future.wait(list.map(Live.poll));
+      var changed = false;
+      for (var i = 0; i < list.length; i++) {
+        final g = got[i];
+        if (g == null) continue;
+        if (_sig(g) != _sig(_live[g.id] ?? list[i])) changed = true;
+        _live[g.id] = g;
+      }
+      if (changed && data != null) {
+        data = _apply(data!);
+        notifyListeners();
+      }
+      // примечательное и окончательный итог считает сервер — забираем его чаще, пока что-то идёт
+      if (DateTime.now().difference(_fetchedAt) > const Duration(minutes: 5)) unawaited(load());
+    } finally {
+      _polling = false;
+    }
+  }
+
+  static String _sig(Start s) => [
+    s.provisional,
+    for (final p in s.podium) '${p.place}${p.name}${p.points}',
+    for (final p in s.total) '${p.place}${p.name}${p.points}',
+    for (final o in s.ours) '${o.name}${o.place}${o.overall}',
+  ].join('|');
+
+  /// Наложить итоги с табло на расписание с сервера. Сервер дошёл до окончательного — его и берём.
+  Schedule _apply(Schedule d) {
+    if (_live.isEmpty) return d;
+    _live.removeWhere((id, _) => d.byId(id)?.settled ?? true);
+    if (_live.isEmpty) return d;
+    return d.withStarts([
+      for (final s in d.starts)
+        if (_live[s.id] case final l?)
+          s.withResults(
+            podium: l.podium,
+            provisional: l.provisional,
+            places: {for (final o in l.ours) if (o.place != null) norm(o.name): o.place!},
+            total: l.total.isNotEmpty ? l.total : null,
+            finals: {for (final o in l.ours) if (o.overall != null) norm(o.name): o.overall!},
+          )
+        else
+          s,
+    ]);
   }
 
   Future<void> _sync() async {

@@ -152,7 +152,9 @@ class _StartSheet extends StatelessWidget {
                 ),
               ),
             if (notify != null) Padding(padding: const EdgeInsets.only(top: 18), child: notify),
-            if (past) ..._results(context) else ..._oursAhead(context, t),
+            // во время старта — места по ходу, с табло; после — итог
+            if (past) ..._results(context) else ...[if (s.podium.isNotEmpty) _podium(context), ..._oursAhead(context, t)],
+            if (s.facts.isNotEmpty) _section(context, 'Примечательное', _FactsPlate(facts: s.facts, data: state.data)),
             if (s.src.isNotEmpty)
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 24, 16, 0),
@@ -242,16 +244,7 @@ class _StartSheet extends StatelessWidget {
       return true;
     }).toList()..sort((a, b) => (a.place ?? 999).compareTo(b.place ?? 999));
     return [
-      _section(
-        context,
-        'Тройка · ${s.seg.isEmpty ? 'сегмент' : s.seg}',
-        top3.isEmpty
-            ? const EmptyPlate('Итогов пока нет')
-            : Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Podium(list: top3, data: state.data, intl: s.intl),
-              ),
-      ),
+      _podium(context),
       if (s.total.isNotEmpty)
         _section(context, 'Итог турнира', _TotalPlate(list: s.total, data: state.data, intl: s.intl)),
       if (rest.isNotEmpty)
@@ -276,6 +269,21 @@ class _StartSheet extends StatelessWidget {
           ),
         ),
     ];
+  }
+
+  /// Тройка сегмента. Пока протокол не утверждён — с пометкой «промежуточные».
+  Widget _podium(BuildContext context) {
+    final top3 = ([...s.podium]..sort((a, b) => a.place.compareTo(b.place))).where((x) => x.place <= 3).toList();
+    return _section(
+      context,
+      podiumLabel(s),
+      top3.isEmpty
+          ? const EmptyPlate('Итогов пока нет')
+          : Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Podium(list: top3, data: state.data, intl: s.intl),
+            ),
+    );
   }
 
   /// Предстоящий или идущий сегмент: наши со временем выхода.
@@ -710,6 +718,63 @@ class _TotalPlate extends StatelessWidget {
           ),
         ],
       ],
+    );
+  }
+}
+
+/// Примечательное: рекорды, редкие прыжки, лучшие оценки сезона, взлёт по итогу.
+class _FactsPlate extends StatelessWidget {
+  final List<Fact> facts;
+  final Schedule? data;
+  const _FactsPlate({required this.facts, required this.data});
+
+  static IconData iconOf(String kind) => switch (kind) {
+    'record' => CupertinoIcons.rosette,
+    'element' => CupertinoIcons.sparkles,
+    'score' => CupertinoIcons.chart_bar_alt_fill,
+    'place' => CupertinoIcons.arrow_up_right,
+    _ => CupertinoIcons.star,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Plate(
+      child: Column(
+        children: [
+          for (var i = 0; i < facts.length; i++) ...[
+            if (i > 0) const Hairline(indent: 52),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 1),
+                    child: Icon(iconOf(facts[i].kind), size: 20, color: facts[i].kind == 'record' ? p.live : p.accent),
+                  ),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          facts[i].text,
+                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink, height: 1.3),
+                        ),
+                        if (facts[i].who.isNotEmpty) ...[
+                          const SizedBox(height: 2),
+                          Text(facts[i].who, style: TextStyle(fontSize: 13.5, color: p.ink2, height: 1.3)),
+                        ],
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ],
+      ),
     );
   }
 }

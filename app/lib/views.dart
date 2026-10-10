@@ -855,6 +855,23 @@ class LiveCard extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(fontSize: 13.5, color: dim),
                     ),
+                    // места по ходу старта — с табло турнира
+                    if (s.podium.isNotEmpty) ...[
+                      Container(
+                        height: 1,
+                        margin: const EdgeInsets.fromLTRB(0, 14, 0, 12),
+                        color: Colors.white.withValues(alpha: .16),
+                      ),
+                      Eyebrow(
+                        s.provisional ? 'Лидеры · промежуточные' : 'Тройка',
+                        color: Colors.white.withValues(alpha: .7),
+                      ),
+                      const SizedBox(height: 6),
+                      Theme(
+                        data: Theme.of(context).copyWith(brightness: Brightness.dark),
+                        child: MiniPodium(top: s.podium, intl: s.intl),
+                      ),
+                    ],
                     if (rest.isNotEmpty) ...[
                       Container(
                         height: 1,
@@ -884,8 +901,21 @@ class LiveCard extends StatelessWidget {
 }
 
 /// Чья тройка: итог турнира, когда вид закончен, иначе — тройка сегмента.
-(String, List<Placing>) topOf(Start s) =>
-    s.total.isNotEmpty ? ('Итог турнира', s.total) : ('Тройка · ${s.seg.isEmpty ? 'сегмент' : s.seg}', s.podium);
+(String, List<Placing>) topOf(Start s) => s.total.isNotEmpty ? ('Итог турнира', s.total) : (podiumLabel(s), s.podium);
+
+/// «Тройка · ПП» или, пока протокол не утверждён, «Тройка · ПП · промежуточные».
+String podiumLabel(Start s) =>
+    'Тройка · ${s.seg.isEmpty ? 'сегмент' : s.seg}${s.provisional && s.podium.isNotEmpty ? ' · промежуточные' : ''}';
+
+/// Самое заметное из примечательного — одной строкой в ленте.
+Fact? topFact(Start s) {
+  const order = ['record', 'element', 'place', 'score'];
+  Fact? best;
+  for (final f in s.facts) {
+    if (best == null || order.indexOf(f.kind) < order.indexOf(best.kind)) best = f;
+  }
+  return best;
+}
 
 /// Прошедший сегмент: компактно, с первой тройкой.
 class PastTile extends StatelessWidget {
@@ -949,6 +979,29 @@ class PastTile extends StatelessWidget {
                       children: [
                         Eyebrow(label, padding: const EdgeInsets.only(bottom: 5)),
                         MiniPodium(top: top, intl: s.intl),
+                        if (topFact(s) case final f?)
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 1),
+                                  child: Icon(CupertinoIcons.sparkles, size: 15, color: p.accent),
+                                ),
+                                const SizedBox(width: 6),
+                                Expanded(
+                                  child: Text(
+                                    [if (f.who.isNotEmpty) f.who.contains(' / ') ? f.who : f.who.split(' ').last, f.text].join(' · ') +
+                                        (s.facts.length > 1 ? ' · ещё ${s.facts.length - 1}' : ''),
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(fontSize: 13, color: p.ink2, height: 1.3),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                       ],
                     ),
             ),

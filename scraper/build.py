@@ -28,6 +28,7 @@ import traceback
 from . import fsr, goldenskate, ics, isu, net
 from . import photos as ph
 from . import names as nm
+from . import results as rs
 from . import swisstiming as st
 
 MSK = dt.timezone(dt.timedelta(hours=3))
@@ -226,11 +227,18 @@ def make_event(*, tid, tournament, kind, level, seg, mixed, start, end, venue, i
 def describe(ev):
     lines = []
     for key, head in (("podium", "Итог:"), ("total", "Итог турнира:")):
+        if key == "podium" and ev.get("provisional"):
+            head = "Промежуточные итоги:"
         if ev.get(key):
             lines.append(head)
             for r in ev[key]:
                 lines.append(f"{r['place']}. {r['name']} — {r['points']}")
             lines.append("")
+    if ev.get("facts"):
+        lines.append("Примечательное:")
+        for f in ev["facts"]:
+            lines.append(f"• {f['who']} — {f['text']}" if f.get("who") else f"• {f['text']}")
+        lines.append("")
     if ev["ours"]:
         lines.append("Наши:")
         for o in ev["ours"]:
@@ -317,7 +325,10 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
         codes = [seg_code(s["name"]) for s in c["segments"]]
         last_seg = max((SEG_ORDER[x] for x in codes if x), default=None)
         cat_events, cat_total, cat_rows = [], None, []
+        first_places, first_url = {}, None
         for s, seg in zip(c["segments"], codes):
+            if seg and SEG_ORDER[seg] == 0:
+                first_url = s["url"]
             if not seg:
                 continue
             start = s.get("start") or (extra_starts or {}).get((kind, level, seg))
@@ -336,9 +347,13 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
             except Exception as e:  # итог необязателен — расписание важнее
                 log("  ! протокол сегмента:", s["url"], e)
                 results = None
-            done = bool(results) and start.astimezone(dt.timezone.utc) <= now and \
-                (s.get("final") or not idx.get("final_marks"))
-            place = {r["name"]: r["place"] for r in results} if done else {}
+            started = bool(results) and start.astimezone(dt.timezone.utc) <= now
+            done = started and bool(s.get("final") or not idx.get("final_marks"))
+            # протокол уже на табло, но судейских оценок ещё нет — промежуточные итоги
+            partial = started and not done
+            place = {r["name"]: r["place"] for r in results} if started else {}
+            if started and SEG_ORDER[seg] == 0:
+                first_places = place
             people = order if order else [dict(p, no=None, warmup=None) for p in entries]
             for p in people:
                 if nm.is_cyr(p["name"]):
@@ -375,7 +390,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                     log("  ! итог вида:", c["results_url"], e)
             if intl and not ours:
                 continue
-            podium = top3(results, names) if done else None
+            podium = top3(results, names) if started else None
             total = cat_total if SEG_ORDER[seg] == last_seg else None
             last = max(msk_times.values()) if msk_times else None
             end = estimate_end(start, seg, kind, len(people), last)
@@ -385,6 +400,22 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 start=start, end=end, venue=venue, intl=intl, broadcast=broadcast,
                 ours=sort_ours(ours), athletes=athletes, src=idx["url"],
                 podium=podium, total=total)
+            if partial:
+                ev["provisional"] = True
+            is_last = SEG_ORDER[seg] == last_seg
+            # адреса табло — приложение во время старта читает их само, не дожидаясь сбора
+            ev["live"] = {
+                "idx": idx["url"], "seg": s["url"],
+                "cat": c.get("results_url") if is_last else None,
+                "first": first_url if is_last and first_url != s["url"] else None,
+                "names": {p["name"]: names.to_ru(p["name"]) for p in people},
+            }
+            if done and s.get("judges_pdf"):
+                f = rs.segment_facts(s["judges_pdf"], kind=kind, level=level, seg=seg, intl=intl,
+                                     season=rs.season_of(CFG), to_ru=names.to_ru, log=log)
+                if f:
+                    ev["facts"] = f
+            ev["desc"] = describe(ev)
             events.append(ev)
             cat_events.append(ev)
         if cat_total and cat_events:
@@ -396,6 +427,11 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
             for o in ev["ours"]:
                 if final.get(nm.key(o["name"])):
                     o["final"] = final[nm.key(o["name"])]
+            if c.get("results_url"):
+                f = rs.total_facts(c["results_url"] + "#total", cat_rows, first_places, kind=kind,
+                                   level=level, intl=intl, season=rs.season_of(CFG), to_ru=names.to_ru)
+                if f:
+                    ev["facts"] = (ev.get("facts") or []) + f
             ev["desc"] = describe(ev)
     return events
 
@@ -863,7 +899,18 @@ def main():
         data = prev
     else:
         names.save()
+        rs.save()
 
+    write_site(data)
+    log(f"готово: {len(data['events'])} стартов, {len(data['upcoming'])} турниров без расписания;"
+        f" источники: {report['sources']}; ошибок: {len(report['errors'])}")
+    for e in report["errors"]:
+        log("   -", e)
+    return 0
+
+
+def write_site(data):
+    """events.json, общая лента calendar.ics и по файлу .ics на старт."""
     os.makedirs(os.path.dirname(OUT_JSON), exist_ok=True)
     with open(OUT_JSON, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
@@ -882,11 +929,6 @@ def main():
     for fn in os.listdir(edir):
         if fn.endswith(".ics") and fn not in keep:
             os.unlink(os.path.join(edir, fn))
-    log(f"готово: {len(data['events'])} стартов, {len(data['upcoming'])} турниров без расписания;"
-        f" источники: {report['sources']}; ошибок: {len(report['errors'])}")
-    for e in report["errors"]:
-        log("   -", e)
-    return 0
 
 
 if __name__ == "__main__":

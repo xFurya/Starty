@@ -227,7 +227,7 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    state.load();
+    state.load().then((_) => state.startLive());
     // раз в минуту: «идёт сейчас», кто уже откатал, отсчёт до начала
     _tick = Timer.periodic(const Duration(minutes: 1), (_) => setState(() {}));
     // компьютер: фоновых задач у системы нет, пока приложение открыто — обновляем сами
@@ -281,12 +281,16 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
     if (s == AppLifecycleState.resumed) {
       state.load();
       state.refreshPermission();
+      state.startLive();
+    } else if (s == AppLifecycleState.paused || s == AppLifecycleState.hidden) {
+      state.stopLive();
     }
   }
 
   @override
   void dispose() {
     _tick?.cancel();
+    state.stopLive();
     _refresh?.cancel();
     Updates.instance.removeListener(_onUpdates);
     homeTab.removeListener(_syncPage);
