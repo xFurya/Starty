@@ -15,7 +15,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:men-juni
  or-kp@starty
-DTSTAMP:20261009T180835Z
+DTSTAMP:20261010T052115Z
 DTSTART;TZID=Europe/Moscow:20260926T143000
 DTEND;TZID=Europe/Moscow:20260926T170500
 SUMMARY:ЮГП России «Лёд Мечты» — юноши КП
@@ -24,6 +24,8 @@ DESCRIPTION:Итог:\n1. Макар Солодников — 83.94\n2. Д
  n\nНачало: 14:30 МСК\nТрансляция: Первый кана
  л
 LOCATION:Навка Арена\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-led-
+ mechty-sredi-yuniorov-2026:men-junior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

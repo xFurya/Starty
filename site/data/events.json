@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-09T21:08:35+03:00",
- "checked": "2026-10-09T21:08:35+03:00",
+ "generated": "2026-10-10T08:21:15+03:00",
+ "checked": "2026-10-10T08:21:15+03:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -2103,7 +2103,7 @@
    "title": "CS Denis Ten Memorial — юноши КП",
    "start": "2026-10-08T08:45:00+03:00",
    "end": "2026-10-08T10:50:00+03:00",
-   "venue": "Almaty, Kazakhstan",
+   "venue": "Almaty..., Kazakhstan",
    "intl": true,
    "broadcast": [],
    "ours": [
@@ -2164,7 +2164,7 @@
    "title": "CS Denis Ten Memorial — девушки КП",
    "start": "2026-10-08T10:55:00+03:00",
    "end": "2026-10-08T14:50:00+03:00",
-   "venue": "Almaty, Kazakhstan",
+   "venue": "Almaty..., Kazakhstan",
    "intl": true,
    "broadcast": [],
    "ours": [
@@ -2225,7 +2225,7 @@
    "title": "CS Denis Ten Memorial — женщины КП",
    "start": "2026-10-08T15:05:00+03:00",
    "end": "2026-10-08T17:50:00+03:00",
-   "venue": "Almaty, Kazakhstan",
+   "venue": "Almaty..., Kazakhstan",
    "intl": true,
    "broadcast": [],
    "ours": [
@@ -2286,7 +2286,7 @@
    "title": "CS Denis Ten Memorial — мужчины КП",
    "start": "2026-10-08T18:00:00+03:00",
    "end": "2026-10-08T19:20:00+03:00",
-   "venue": "Almaty, Kazakhstan",
+   "venue": "Almaty..., Kazakhstan",
    "intl": true,
    "broadcast": [],
    "ours": [
@@ -2347,7 +2347,7 @@
    "title": "CS Denis Ten Memorial — юниорские танцы РТ",
    "start": "2026-10-08T19:35:00+03:00",
    "end": "2026-10-08T20:15:00+03:00",
-   "venue": "Almaty, Kazakhstan",
+   "venue": "Almaty..., Kazakhstan",
    "intl": true,
    "broadcast": [],
    "ours": [
@@ -2401,7 +2401,7 @@
    "title": "CS Denis Ten Memorial — девушки ПП",
    "start": "2026-10-09T09:00:00+03:00",
    "end": "2026-10-09T13:20:00+03:00",
-   "venue": "Almaty, Kazakhstan",
+   "venue": "Almaty..., Kazakhstan",
    "intl": true,
    "broadcast": [],
    "ours": [
@@ -2409,18 +2409,24 @@
      "name": "Алиса Заикина",
      "no": 23,
      "warmup": 5,
+     "place": 1,
+     "final": 1,
      "time": "12:43"
     },
     {
      "name": "Алёна Принёва",
      "no": 25,
      "warmup": 5,
+     "place": 3,
+     "final": 3,
      "time": "12:58"
     },
     {
      "name": "Виктория Стрельцова",
      "no": 26,
      "warmup": 5,
+     "place": 4,
+     "final": 2,
      "time": "13:05"
     }
    ],
@@ -2482,7 +2488,7 @@
    "title": "CS Denis Ten Memorial — юниорские танцы ПТ",
    "start": "2026-10-09T14:00:00+03:00",
    "end": "2026-10-09T14:45:00+03:00",
-   "venue": "Almaty, Kazakhstan",
+   "venue": "Almaty..., Kazakhstan",
    "intl": true,
    "broadcast": [],
    "ours": [
@@ -2490,12 +2496,16 @@
      "name": "Дарья Дрожжина / Иван Тельнов",
      "no": 4,
      "warmup": 1,
+     "place": 2,
+     "final": 2,
      "time": "14:27"
     },
     {
      "name": "Мария Фефелова / Артём Валов",
      "no": 5,
      "warmup": 1,
+     "place": 1,
+     "final": 1,
      "time": "14:34"
     }
    ],
@@ -2504,7 +2514,47 @@
     "Мария Фефелова / Артём Валов"
    ],
    "src": "https://www.denistenmemorial.kz/results/index.htm",
-   "desc": "Наши:\n• Дарья Дрожжина / Иван Тельнов — 14:27\n• Мария Фефелова / Артём Валов — 14:34\n\nНачало: 14:00 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Мария Фефелова / Артём Валов",
+     "nation": "AIN2",
+     "points": "97.45"
+    },
+    {
+     "place": 2,
+     "name": "Дарья Дрожжина / Иван Тельнов",
+     "nation": "AIN2",
+     "points": "94.46"
+    },
+    {
+     "place": 3,
+     "name": "Sofiia Beznosikova / Max Leleu",
+     "nation": "AZE",
+     "points": "88.44"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Мария Фефелова / Артём Валов",
+     "nation": "AIN2",
+     "points": "164.56"
+    },
+    {
+     "place": 2,
+     "name": "Дарья Дрожжина / Иван Тельнов",
+     "nation": "AIN2",
+     "points": "153.87"
+    },
+    {
+     "place": 3,
+     "name": "Sofiia Beznosikova / Max Leleu",
+     "nation": "AZE",
+     "points": "146.34"
+    }
+   ],
+   "desc": "Итог:\n1. Мария Фефелова / Артём Валов — 97.45\n2. Дарья Дрожжина / Иван Тельнов — 94.46\n3. Sofiia Beznosikova / Max Leleu — 88.44\n\nИтог турнира:\n1. Мария Фефелова / Артём Валов — 164.56\n2. Дарья Дрожжина / Иван Тельнов — 153.87\n3. Sofiia Beznosikova / Max Leleu — 146.34\n\nНаши:\n• Дарья Дрожжина / Иван Тельнов — 14:27\n• Мария Фефелова / Артём Валов — 14:34\n\nНачало: 14:00 МСК"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:dance-senior-rt",
@@ -2516,7 +2566,7 @@
    "title": "CS Denis Ten Memorial — танцы РТ",
    "start": "2026-10-09T15:15:00+03:00",
    "end": "2026-10-09T17:00:00+03:00",
-   "venue": "Almaty, Kazakhstan",
+   "venue": "Almaty..., Kazakhstan",
    "intl": true,
    "broadcast": [],
    "ours": [
@@ -2524,18 +2574,21 @@
      "name": "Василиса Кагановская / Максим Некрасов",
      "no": 1,
      "warmup": 1,
+     "place": 3,
      "time": "15:20"
     },
     {
      "name": "Анна Щербакова / Егор Гончаров",
      "no": 3,
      "warmup": 1,
+     "place": 6,
      "time": "15:33"
     },
     {
      "name": "Ирина Хавронина / Девид Нарижный",
      "no": 10,
      "warmup": 3,
+     "place": 4,
      "time": "16:46"
     }
    ],
@@ -2545,7 +2598,27 @@
     "Ирина Хавронина / Девид Нарижный"
    ],
    "src": "https://www.denistenmemorial.kz/results/index.htm",
-   "desc": "Наши:\n• Василиса Кагановская / Максим Некрасов — 15:20\n• Анна Щербакова / Егор Гончаров — 15:33\n• Ирина Хавронина / Девид Нарижный — 16:46\n\nНачало: 15:15 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Caroline Green / Michael Parsons",
+     "nation": "USA",
+     "points": "78.64"
+    },
+    {
+     "place": 2,
+     "name": "Juulia Turkkila / Matthias Versluis",
+     "nation": "FIN",
+     "points": "74.33"
+    },
+    {
+     "place": 3,
+     "name": "Василиса Кагановская / Максим Некрасов",
+     "nation": "AIN2",
+     "points": "74.28"
+    }
+   ],
+   "desc": "Итог:\n1. Caroline Green / Michael Parsons — 78.64\n2. Juulia Turkkila / Matthias Versluis — 74.33\n3. Василиса Кагановская / Максим Некрасов — 74.28\n\nНаши:\n• Василиса Кагановская / Максим Некрасов — 15:20\n• Анна Щербакова / Егор Гончаров — 15:33\n• Ирина Хавронина / Девид Нарижный — 16:46\n\nНачало: 15:15 МСК"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:women-senior-pp",
@@ -2557,7 +2630,7 @@
    "title": "CS Denis Ten Memorial — женщины ПП",
    "start": "2026-10-09T17:30:00+03:00",
    "end": "2026-10-09T20:35:00+03:00",
-   "venue": "Almaty, Kazakhstan",
+   "venue": "Almaty..., Kazakhstan",
    "intl": true,
    "broadcast": [],
    "ours": [
@@ -2565,18 +2638,24 @@
      "name": "Мария Захарова",
      "no": 12,
      "warmup": 3,
+     "place": 5,
+     "final": 5,
      "time": "19:30"
     },
     {
      "name": "Дина Хуснутдинова",
      "no": 15,
      "warmup": 4,
+     "place": 7,
+     "final": 7,
      "time": "20:00"
     },
     {
      "name": "Александра Трусова",
      "no": 19,
      "warmup": 4,
+     "place": 1,
+     "final": 1,
      "time": "20:32"
     }
    ],
@@ -2586,7 +2665,47 @@
     "Мария Захарова"
    ],
    "src": "https://www.denistenmemorial.kz/results/index.htm",
-   "desc": "Наши:\n• Мария Захарова — 19:30\n• Дина Хуснутдинова — 20:00\n• Александра Трусова — 20:32\n\nНачало: 17:30 МСК"
+   "podium": [
+    {
+     "place": 1,
+     "name": "Александра Трусова",
+     "nation": "AIN2",
+     "points": "148.62"
+    },
+    {
+     "place": 2,
+     "name": "Sofia Samodelkina",
+     "nation": "KAZ",
+     "points": "134.91"
+    },
+    {
+     "place": 3,
+     "name": "Yujae Kim",
+     "nation": "KOR",
+     "points": "133.21"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Александра Трусова",
+     "nation": "AIN2",
+     "points": "226.01"
+    },
+    {
+     "place": 2,
+     "name": "Yujae Kim",
+     "nation": "KOR",
+     "points": "209.20"
+    },
+    {
+     "place": 3,
+     "name": "Sofia Samodelkina",
+     "nation": "KAZ",
+     "points": "204.36"
+    }
+   ],
+   "desc": "Итог:\n1. Александра Трусова — 148.62\n2. Sofia Samodelkina — 134.91\n3. Yujae Kim — 133.21\n\nИтог турнира:\n1. Александра Трусова — 226.01\n2. Yujae Kim — 209.20\n3. Sofia Samodelkina — 204.36\n\nНаши:\n• Мария Захарова — 19:30\n• Дина Хуснутдинова — 20:00\n• Александра Трусова — 20:32\n\nНачало: 17:30 МСК"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:men-junior-pp",
@@ -2598,7 +2717,7 @@
    "title": "CS Denis Ten Memorial — юноши ПП",
    "start": "2026-10-10T07:30:00+03:00",
    "end": "2026-10-10T09:45:00+03:00",
-   "venue": "Almaty, Kazakhstan",
+   "venue": "Almaty..., Kazakhstan",
    "intl": true,
    "broadcast": [],
    "ours": [
@@ -2639,7 +2758,7 @@
    "title": "CS Denis Ten Memorial — танцы ПТ",
    "start": "2026-10-10T10:00:00+03:00",
    "end": "2026-10-10T11:57:00+03:00",
-   "venue": "Almaty, Kazakhstan",
+   "venue": "Almaty..., Kazakhstan",
    "intl": true,
    "broadcast": [],
    "ours": [
@@ -2680,7 +2799,7 @@
    "title": "CS Denis Ten Memorial — мужчины ПП",
    "start": "2026-10-10T12:30:00+03:00",
    "end": "2026-10-10T14:01:00+03:00",
-   "venue": "Almaty, Kazakhstan",
+   "venue": "Almaty..., Kazakhstan",
    "intl": true,
    "broadcast": [],
    "ours": [
@@ -3559,6 +3678,10 @@
   "Егор Гончаров": "photos/692a00cc0f3b9c5b.jpg",
   "Ирина Хавронина": "photos/7a02dd8e46ab5e79.jpg",
   "Девид Нарижный": "photos/b0c41552dcbc13d4.jpg",
+  "Caroline Green": "photos/d4ed768457b0683f.jpg",
+  "Michael Parsons": "photos/e4c60a20a4a87316.jpg",
+  "Juulia Turkkila": "photos/ddfe1cade4f0b6b3.jpg",
+  "Matthias Versluis": "photos/24b897b8c64743a9.jpg",
   "Алина Горбачёва": "photos/d63bfe2c8896e122.jpg",
   "Василиса Григорьева": "photos/46f0f3da45e4894d.jpg",
   "Евгений Артющенко": "photos/1fbc471ec1fea876.jpg",

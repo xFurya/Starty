@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:dance-senior-pt@starty
-DTSTAMP:20261009T180835Z
+DTSTAMP:20261010T052115Z
 DTSTART;TZID=Europe/Moscow:20261010T100000
 DTEND;TZID=Europe/Moscow:20261010T115700
 SUMMARY:CS Denis Ten Memorial — танцы ПТ
@@ -22,7 +22,9 @@ DESCRIPTION:Наши:\n• Анна Щербакова / Егор Гонч
  аров — 11:05\n• Ирина Хавронина / Девид Нар
  ижный — 11:26\n• Василиса Кагановская / Мак
  сим Некрасов — 11:34\n\nНачало: 10:00 МСК
-LOCATION:Almaty\, Kazakhstan
+LOCATION:Almaty...\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:dance-
+ senior-pt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

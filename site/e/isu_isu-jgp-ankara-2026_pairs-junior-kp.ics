@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-jgp-ankara-2026:pairs-junior-kp@starty
-DTSTAMP:20261009T180835Z
+DTSTAMP:20261010T052115Z
 DTSTART;TZID=Europe/Moscow:20260917T154500
 DTEND;TZID=Europe/Moscow:20260917T180500
 SUMMARY:JGP Ankara — пары КП
@@ -25,6 +25,8 @@ DESCRIPTION:Итог:\n1. Таисия Гусева / Даниил Овчи
  в — 1-й\n• Полина Шешелева / Егор Карнаухо
  в — 10-й\n\nНачало: 15:45 МСК\nТрансляция: Okko
 LOCATION:Ankara\, Türkiye
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-ankara-2026:pairs-junior
+ -kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
