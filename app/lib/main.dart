@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart' show PointerDeviceKind;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'background.dart';
 import 'data.dart';
+import 'platform.dart';
 import 'reminders.dart';
 import 'settings.dart';
 import 'state.dart';
@@ -196,7 +196,7 @@ class _StartyAppState extends State<StartyApp> {
       scrollBehavior: const MaterialScrollBehavior().copyWith(dragDevices: PointerDeviceKind.values.toSet()),
       locale: const Locale('ru'),
       // крупный системный шрифт — до 130 %: дальше разметка теряет смысл
-      builder: (context, child) => MediaQuery.withClampedTextScaling(maxScaleFactor: 1.3, child: child!),
+      builder: (context, child) => MediaQuery.withClampedTextScaling(maxScaleFactor: 1.3, child: _Wide(child: child!)),
       home: Home(state: state),
     ),
   );
@@ -220,7 +220,7 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
   }
 
   AppState get state => widget.state;
-  Timer? _tick;
+  Timer? _tick, _refresh;
   UpdateInfo? update;
 
   @override
@@ -230,8 +230,10 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
     state.load();
     // раз в минуту: «идёт сейчас», кто уже откатал, отсчёт до начала
     _tick = Timer.periodic(const Duration(minutes: 1), (_) => setState(() {}));
+    // компьютер: фоновых задач у системы нет, пока приложение открыто — обновляем сами
+    if (isDesktop) _refresh = Timer.periodic(const Duration(hours: 3), (_) => state.load());
     // на Android обновления ставятся сами (updater.dart); строка «Новая версия» — только для iPhone
-    if (!kIsWeb && !Updates.native) checkUpdate().then((u) => mounted && u != null ? setState(() => update = u) : null);
+    if (isIos) checkUpdate().then((u) => mounted && u != null ? setState(() => update = u) : null);
     Updates.instance.addListener(_onUpdates);
     homeTab.addListener(_syncPage);
     WidgetsBinding.instance.addPostFrameCallback((_) => _onUpdates());
@@ -285,6 +287,7 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
   @override
   void dispose() {
     _tick?.cancel();
+    _refresh?.cancel();
     Updates.instance.removeListener(_onUpdates);
     homeTab.removeListener(_syncPage);
     _pages.dispose();
@@ -339,6 +342,27 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
             // в системе уведомления запрещены, а правила их ждут — точка у «Настроек»
             settingsDot: state.rules.on && state.allowed == false,
           ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Широкое окно (компьютер): содержимое — колонкой по центру, как на телефоне, а не растянутое на весь экран.
+class _Wide extends StatelessWidget {
+  final Widget child;
+  const _Wide({required this.child});
+  @override
+  Widget build(BuildContext context) {
+    final w = MediaQuery.sizeOf(context).width;
+    if (w <= 760) return child;
+    final p = Palette.of(context);
+    return ColoredBox(
+      color: p.isDark ? p.bgTop : p.line.withValues(alpha: .5),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 640),
+          child: ClipRect(child: child),
         ),
       ),
     );

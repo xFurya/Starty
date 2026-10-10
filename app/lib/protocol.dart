@@ -6,8 +6,9 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 Future<void> openProtocol(BuildContext context, String url, String title) async {
   if (url.isEmpty) return;
-  if (kIsWeb) {
-    await launchUrl(Uri.parse(url), webOnlyWindowName: '_blank');
+  // на Windows встроенного браузера у Flutter нет — протокол открывается в браузере системы
+  if (kIsWeb || defaultTargetPlatform == TargetPlatform.windows) {
+    await launchUrl(Uri.parse(url), webOnlyWindowName: '_blank', mode: LaunchMode.externalApplication);
     return;
   }
   await Navigator.of(context).push(MaterialPageRoute(builder: (_) => ProtocolPage(url: url, title: title)));

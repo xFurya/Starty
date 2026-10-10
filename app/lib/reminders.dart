@@ -8,11 +8,13 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/data/latest.dart' as tzdata;
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/timezone.dart' as tz;
 
 import 'package:starty_alerts/starty_alerts.dart';
 
 import 'data.dart';
+import 'platform.dart';
 
 /// Правила: о каких стартах напоминать и за сколько минут.
 class NotifyRules {
@@ -152,6 +154,12 @@ class Reminders {
   /// Завершается, когда init() отработал — удачно или нет.
   static Future<void> get settled => _done.future;
 
+  static const _darwin = DarwinInitializationSettings(
+    requestAlertPermission: false,
+    requestBadgePermission: false,
+    requestSoundPermission: false,
+  );
+
   static Future<void> init() async {
     try {
       if (kIsWeb || _ready) return;
@@ -159,10 +167,12 @@ class Reminders {
       await _n.initialize(
         settings: const InitializationSettings(
           android: AndroidInitializationSettings('@drawable/ic_notify'),
-          iOS: DarwinInitializationSettings(
-            requestAlertPermission: false,
-            requestBadgePermission: false,
-            requestSoundPermission: false,
+          iOS: _darwin,
+          macOS: _darwin,
+          windows: WindowsInitializationSettings(
+            appName: 'Фигурное катание',
+            appUserModelId: 'ru.furya.starty',
+            guid: '6f1c2f4e-5b0d-4c6e-9a53-3c1d8a7e2b91',
           ),
         ),
       );
@@ -180,6 +190,8 @@ class Reminders {
       await a?.requestNotificationsPermission();
       final i = _n.resolvePlatformSpecificImplementation<IOSFlutterLocalNotificationsPlugin>();
       await i?.requestPermissions(alert: true, sound: true);
+      final m = _n.resolvePlatformSpecificImplementation<MacOSFlutterLocalNotificationsPlugin>();
+      await m?.requestPermissions(alert: true, sound: true);
     } catch (_) {}
   }
 
@@ -191,16 +203,17 @@ class Reminders {
       if (a != null) return await a.areNotificationsEnabled();
       final i = _n.resolvePlatformSpecificImplementation<IOSFlutterLocalNotificationsPlugin>();
       if (i != null) return (await i.checkPermissions())?.isEnabled;
+      final m = _n.resolvePlatformSpecificImplementation<MacOSFlutterLocalNotificationsPlugin>();
+      if (m != null) return (await m.checkPermissions())?.isEnabled;
     } catch (_) {}
     return null;
   }
 
   static int _id(String s) => s.hashCode & 0x7fffffff;
 
-  /// iPhone: уведомления ставит общий плагин; значок на иконке никогда не меняется.
-  static const _iosDetails = NotificationDetails(
-    iOS: DarwinNotificationDetails(presentBadge: false, presentAlert: true, presentSound: true),
-  );
+  /// iPhone и Mac: уведомления ставит общий плагин; значок на иконке никогда не меняется.
+  static const _darwinDetails = DarwinNotificationDetails(presentBadge: false, presentAlert: true, presentSound: true);
+  static const _details = NotificationDetails(iOS: _darwinDetails, macOS: _darwinDetails);
 
   static bool get _android => !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
 
@@ -240,6 +253,43 @@ class Reminders {
     return out.take(60).toList();
   }
 
+  /// Windows: тосты ставит сама система (работают и при закрытом приложении), но отменить
+  /// поставленное без пакета MSIX нельзя. Поэтому помним, что уже поставлено, и ставим только новое
+  /// или изменившееся — повторное открытие приложения не плодит дубликаты.
+  static Future<void> _syncWindows(List<Planned> list, DateTime now) async {
+    final prefs = await SharedPreferences.getInstance();
+    Map<String, dynamic> have;
+    try {
+      have = Map<String, dynamic>.from(jsonDecode(prefs.getString('w.sched') ?? '{}') as Map);
+    } catch (_) {
+      have = {};
+    }
+    final next = <String, dynamic>{};
+    for (final x in list) {
+      if (!x.at.isAfter(now)) continue;
+      final sig = '${x.at.millisecondsSinceEpoch}|${x.title}|${x.body}';
+      next[x.key] = sig;
+      if (have[x.key] == sig) continue;
+      await _n.zonedSchedule(
+        id: _id(x.key),
+        scheduledDate: tz.TZDateTime.from(x.at, tz.UTC),
+        title: x.title,
+        body: x.body,
+        notificationDetails: const NotificationDetails(windows: WindowsNotificationDetails()),
+        androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+        payload: x.startId,
+      );
+    }
+    // выключенное или сдвинутое: пробуем снять, получится не везде
+    for (final k in have.keys) {
+      if (next.containsKey(k)) continue;
+      try {
+        await _n.cancel(id: _id(k));
+      } catch (_) {}
+    }
+    await prefs.setString('w.sched', jsonEncode(next));
+  }
+
   /// Один раз после перехода на свои уведомления: убрать то, что поставил общий плагин в 1.0.3 и раньше.
   static Future<void> _migrate() async {
     if (Prefs.alertsMigrated) return;
@@ -264,7 +314,11 @@ class Reminders {
         return;
       }
       if (!_ready) return;
-      // iPhone: убираем только запланированное, показанное остаётся
+      if (isWindows) {
+        await _syncWindows(list, now);
+        return;
+      }
+      // iPhone и Mac: убираем только запланированное, показанное остаётся
       await _n.cancelAllPendingNotifications();
       for (final x in list) {
         if (!x.at.isAfter(now)) continue;
@@ -273,7 +327,7 @@ class Reminders {
           scheduledDate: tz.TZDateTime.from(x.at, tz.UTC),
           title: x.title,
           body: x.body,
-          notificationDetails: _iosDetails,
+          notificationDetails: _details,
           androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
           payload: x.startId,
         );

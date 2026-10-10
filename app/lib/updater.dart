@@ -3,12 +3,18 @@
 // сама, как только приложение свернут. Здесь — только честно показать, что
 // происходит. На iPhone обновления приходят через SideStore; приложение лишь
 // говорит, что вышла новая версия (version.json).
+import 'dart:async';
 import 'dart:convert';
+import 'dart:io' show exit;
+import 'dart:ui' show AppExitResponse;
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart' show AppLifecycleListener;
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'desktop_updater.dart';
+import 'platform.dart';
 import 'update.dart';
 
 class UpdateState {
@@ -25,6 +31,7 @@ class UpdateState {
   final bool canInstall; // разрешена ли приложению установка приложений
   final String installError;
   final String? updatedVersion, updatedNotes;
+  final bool desktop; // компьютер: ставится при закрытии
 
   const UpdateState({
     this.enabled = true,
@@ -42,6 +49,7 @@ class UpdateState {
     this.installError = '',
     this.updatedVersion,
     this.updatedNotes,
+    this.desktop = false,
   });
 
   factory UpdateState.fromJson(Map<String, dynamic> j) {
@@ -92,6 +100,7 @@ class UpdateState {
       // сырое системное сообщение (часто английское) не показываем: ниже есть «Открыть установщик»
       if (installError.isNotEmpty) return '$v не установилась';
       if (stuck) return '$v не установилась автоматически';
+      if (desktop) return '$v скачана · установится при закрытии';
       return '$v скачана · установится после сворачивания';
     }
     if (checking) return 'Проверка…';
@@ -118,6 +127,18 @@ class Updates extends ChangeNotifier {
   /// Нативное самообновление есть только на Android.
   static bool get native => !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
 
+  /// Windows и macOS: самообновление на стороне Dart (desktop_updater.dart).
+  static bool get desktop => isDesktop;
+
+  /// Приложение обновляет себя само (Android, Windows, macOS); iPhone — через SideStore.
+  static bool get managed => native || desktop;
+
+  DesktopUpdater? _desk;
+  // ignore: unused_field
+  Timer? _deskTimer;
+  // ignore: unused_field
+  AppLifecycleListener? _exitHook;
+
   /// Android: состояние самообновления; null — ещё не получено.
   UpdateState? state;
 
@@ -140,7 +161,19 @@ class Updates extends ChangeNotifier {
       try {
         _apply(await _ch.invokeMethod<String>('status'));
       } catch (_) {}
-    } else if (!kIsWeb) {
+    } else if (desktop) {
+      final d = _desk = DesktopUpdater((st) {
+        state = st;
+        notifyListeners();
+      });
+      // закрытие окна — момент для установки: скрипт дождётся выхода и заменит файлы
+      _exitHook = AppLifecycleListener(onExitRequested: () async {
+        if (d.ready) await d.install(relaunch: false);
+        return AppExitResponse.exit;
+      });
+      _deskTimer = Timer.periodic(const Duration(hours: 1), (_) => d.check());
+      unawaited(d.check());
+    } else if (isIos) {
       available = await checkUpdate();
       notifyListeners();
     }
@@ -164,7 +197,8 @@ class Updates extends ChangeNotifier {
       if (seen != current) {
         if (seen != null) {
           final s = state;
-          final notes = s != null && s.updatedVersion == current ? (s.updatedNotes ?? '') : '';
+          var notes = s != null && s.updatedVersion == current ? (s.updatedNotes ?? '') : '';
+          if (desktop) notes = p.getString('deskNotes:$current') ?? '';
           updatedMessage = 'Фигурное катание обновлено до $current${notes.isNotEmpty ? '. $notes' : ''}';
           notifyListeners();
         }
@@ -189,6 +223,7 @@ class Updates extends ChangeNotifier {
   }
 
   Future<void> check() async {
+    if (desktop) return _desk?.check();
     if (!native) return;
     try {
       await _ch.invokeMethod('check');
@@ -197,6 +232,11 @@ class Updates extends ChangeNotifier {
 
   /// «Обновить сейчас»: приложение закроется, открыть снова — из уведомления.
   Future<String> installNow() async {
+    if (desktop) {
+      final d = _desk;
+      if (d != null && await d.install(relaunch: true)) exit(0);
+      return '';
+    }
     if (!native) return '';
     try {
       return await _ch.invokeMethod<String>('install') ?? '';

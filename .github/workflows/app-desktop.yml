@@ -1,0 +1,156 @@
+name: Сборка Windows и macOS
+
+# Windows — zip с готовой папкой, macOS — zip с Starty.app (подпись ad-hoc, без Apple ID).
+# Архивы лежат во вкладке Releases, а их адрес, размер и sha256 — в site/app/latest.json:
+# по ним приложение обновляет себя само. Номер выдаётся один раз (tools/released.tsv):
+# если в latest.json уже есть записи windows и macos для этого номера — ничего не пересобирается.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['app/**', '.github/workflows/app-desktop.yml', 'site/app/latest.json']
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: app-desktop
+  cancel-in-progress: false
+
+jobs:
+  prep:
+    runs-on: ubuntu-latest
+    outputs:
+      new: ${{ steps.num.outputs.new }}
+      version: ${{ steps.num.outputs.version }}
+      build: ${{ steps.num.outputs.build }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
+      - id: num
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          # выпуск = коммит, который менял latest.json; вручную запущенная сборка — пробная, ничего не выкладывает
+          TOUCHED=$(git diff --name-only HEAD~1 HEAD | grep -c '^site/app/latest.json$' || true)
+          export TOUCHED
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os, re
+          ver, build = re.search(r"^version:\s*(\S+)\+(\d+)", open("app/pubspec.yaml").read(), re.M).groups()
+          j = json.load(open("site/app/latest.json"))
+          # собираем, когда Android-выпуск этого номера вышел, а записей для компьютера ещё нет
+          new = j.get("code") == int(build) and not ("windows" in j and "macos" in j)
+          if os.environ["EVENT"] == "workflow_dispatch":
+              new = True
+          elif os.environ["TOUCHED"] == "0":
+              new = False
+          print(f"new={'true' if new else 'false'}")
+          print(f"version={ver}")
+          print(f"build={build}")
+          PY
+
+  windows:
+    needs: prep
+    if: needs.prep.outputs.new == 'true'
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.47.7
+          cache: true
+      - name: Собрать
+        working-directory: app
+        run: |
+          flutter config --enable-windows-desktop
+          flutter pub get
+          flutter build windows --release --dart-define=BUILD=${{ needs.prep.outputs.build }} --dart-define=VERSION=${{ needs.prep.outputs.version }}
+      - name: Упаковать
+        shell: pwsh
+        run: |
+          $rel = "app/build/windows/x64/runner/Release"
+          # библиотеки среды выполнения лежат рядом — ставить Visual C++ Redistributable не нужно
+          foreach ($d in 'msvcp140.dll', 'vcruntime140.dll', 'vcruntime140_1.dll') { Copy-Item "$env:WINDIR\System32\$d" $rel -Force }
+          Compress-Archive -Path "$rel/*" -DestinationPath Starty-windows.zip
+          Get-Item Starty-windows.zip | Select-Object Name, Length
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows
+          path: Starty-windows.zip
+          if-no-files-found: error
+
+  macos:
+    needs: prep
+    if: needs.prep.outputs.new == 'true'
+    runs-on: macos-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.47.7
+          cache: true
+      - name: Собрать
+        working-directory: app
+        run: |
+          flutter config --enable-macos-desktop
+          flutter pub get
+          flutter build macos --release --dart-define=BUILD=${{ needs.prep.outputs.build }} --dart-define=VERSION=${{ needs.prep.outputs.version }}
+      - name: Упаковать
+        run: |
+          APP=app/build/macos/Build/Products/Release/Starty.app
+          test -d "$APP"
+          codesign --verify --deep --strict "$APP" || codesign --force --deep --sign - "$APP"
+          ditto -c -k --sequesterRsrc --keepParent "$APP" Starty-macos.zip
+          ls -la Starty-macos.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: macos
+          path: Starty-macos.zip
+          if-no-files-found: error
+
+  publish:
+    needs: [prep, windows, macos]
+    if: github.event_name != 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+      - name: Выложить
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VER: ${{ needs.prep.outputs.version }}
+          BUILD: ${{ needs.prep.outputs.build }}
+        run: |
+          TAG="app-v$VER"
+          NOTES=$(python3 -c "import json; print(json.load(open('site/app/latest.json'))['notes'])")
+          if ! gh release view "$TAG" >/dev/null 2>&1; then
+            gh release create "$TAG" dist/windows/Starty-windows.zip dist/macos/Starty-macos.zip \
+              --title "Фигурное катание $VER" --notes "$NOTES" --latest
+          fi
+          python3 - <<'PY'
+          import hashlib, json, os
+          ver, build, repo = os.environ["VER"], int(os.environ["BUILD"]), os.environ["GITHUB_REPOSITORY"]
+          p = "site/app/latest.json"
+          j = json.load(open(p))
+          assert j["code"] == build, "latest.json относится к другому номеру"
+          for key, f in (("windows", "dist/windows/Starty-windows.zip"), ("macos", "dist/macos/Starty-macos.zip")):
+              raw = open(f, "rb").read()
+              j[key] = {"code": build,
+                        "url": f"https://github.com/{repo}/releases/download/app-v{ver}/{os.path.basename(f)}",
+                        "size": len(raw), "sha256": hashlib.sha256(raw).hexdigest()}
+          json.dump(j, open(p, "w"), ensure_ascii=False, indent=1)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/app/latest.json
+          git commit -q -m "Компьютер: сборки $VER ($BUILD)" || exit 0
+          for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 5; done
+          gh workflow run update.yml --ref main

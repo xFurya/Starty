@@ -18,7 +18,7 @@ import 'views.dart' show freshness;
 const _ics = 'webcal://xfurya.github.io/Starty/calendar.ics';
 const _google = 'https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fxfurya.github.io%2FStarty%2Fcalendar.ics';
 
-bool get _ios => !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
+bool get _ios => !kIsWeb && (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.macOS);
 
 /// «2 вида · 1 турнир · 1 спортсмен» или «Все старты».
 String filterSummary(Filters f) {
@@ -316,7 +316,7 @@ class _Updates extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = u.state;
     final version = _Row(icon: CupertinoIcons.info, title: 'Версия', trailing: _Value(s?.current ?? appVersion));
-    if (!Updates.native) {
+    if (!Updates.managed) {
       if (kIsWeb) return version;
       // iPhone: ставит SideStore, приложение только говорит о новой версии
       final a = u.available;

@@ -23,7 +23,7 @@ void backgroundDispatcher() {
 }
 
 Future<void> scheduleBackground() async {
-  if (kIsWeb) return;
+  if (kIsWeb || defaultTargetPlatform == TargetPlatform.windows || defaultTargetPlatform == TargetPlatform.macOS) return;
   try {
     await Workmanager().initialize(backgroundDispatcher);
     if (defaultTargetPlatform == TargetPlatform.android) {
