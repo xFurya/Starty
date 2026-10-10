@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-trialeti-trophy:pairs-senior-kp@starty
-DTSTAMP:20261010T063944Z
+DTSTAMP:20261010T064415Z
 DTSTART;TZID=Europe/Moscow:20261002T140000
 DTEND;TZID=Europe/Moscow:20261002T150500
 SUMMARY:CS Trialeti Trophy — пары КП
@@ -27,6 +27,8 @@ DESCRIPTION:Итог:\n1. Anastasiia Metelkina / Luka Berulava — 80.01\n2
  сия Мишина / Александр Галлямов — 6-й\n\nНа
  чало: 14:00 МСК
 LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-trialeti-trophy:pairs-sen
+ ior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

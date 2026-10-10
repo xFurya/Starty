@@ -15,7 +15,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:dance-ju
  nior-pt@starty
-DTSTAMP:20261010T063944Z
+DTSTAMP:20261010T064415Z
 DTSTART;TZID=Europe/Moscow:20260926T080000
 DTEND;TZID=Europe/Moscow:20260926T102500
 SUMMARY:ЮГП России «Лёд Мечты» — танцы ПТ
@@ -28,6 +28,8 @@ DESCRIPTION:Итог:\n1. Мария Фефелова / Артём Вало
  сим Полторак — 148.46\n\nНачало: 08:00 МСК\nТран
  сляция: Первый канал
 LOCATION:Навка Арена\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-led-
+ mechty-sredi-yuniorov-2026:dance-junior-pt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
