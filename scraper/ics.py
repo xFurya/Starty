@@ -79,7 +79,7 @@ def build(events, generated, url=""):
         "CALSCALE:GREGORIAN",
         "METHOD:PUBLISH",
         "X-WR-CALNAME:Фигурное катание · старты",
-        "X-WR-CALDESC:Старты по фигурному катанию: российские и международные с россиянами и белорусами. Время московское.",
+        "X-WR-CALDESC:Старты по фигурному катанию: российские и международные с россиянами. Время московское.",
         "X-WR-TIMEZONE:Europe/Moscow",
         "REFRESH-INTERVAL;VALUE=DURATION:PT6H",
         "X-PUBLISHED-TTL:PT6H",

@@ -250,7 +250,7 @@ class _StartSheet extends StatelessWidget {
       if (rest.isNotEmpty)
         _section(
           context,
-          'Россияне и белорусы',
+          'Россияне',
           Plate(
             child: MeasuredLayout(
               builder: (context, c) {
@@ -292,7 +292,7 @@ class _StartSheet extends StatelessWidget {
     return [
       _section(
         context,
-        s.ours.any((o) => o.time != null) ? 'Россияне и белорусы · выход на лёд' : 'Россияне и белорусы',
+        s.ours.any((o) => o.time != null) ? 'Россияне · выход на лёд' : 'Россияне',
         Plate(
           child: MeasuredLayout(
             builder: (context, c) {

@@ -199,21 +199,52 @@ def score_facts(name, score, kind, level, seg, season, ours_or_top):
 
 # ---------------------------------------------------------------- итоги вида
 
+_SIDE_WORD = {"ru": "россияне", "by": "белорусы"}
+
+
+def sides_label(sides):
+    """«россияне», «белорусы» или «россияне и белорусы»."""
+    return " и ".join(_SIDE_WORD[k] for k in ("ru", "by") if k in sides)
+
+
+def lead_facts(rows, intl, who_key):
+    """Россияне и белорусы впереди: победа белоруса; весь пьедестал или первые места подряд.
+    Белорусы называются, только когда они выиграли или входят в такую череду, — просто так
+    о них не пишем. rows — по местам: {place, name, nation}."""
+    out = []
+    if not intl:
+        return out
+    top = sorted(rows, key=lambda r: r["place"])
+    if not top:
+        return out
+    if who_key(top[0]) == "by":
+        name = top[0]["name"]
+        out.append((name, "place", "Победа белорусов" if " / " in name else "Победа белоруса"))
+    n = 0
+    for r in top:
+        if who_key(r) not in ("ru", "by"):
+            break
+        n += 1
+    if n >= 3:
+        sides = {who_key(r) for r in top[:n]}
+        # россияне одни — тоже интересно, если это весь пьедестал или больше; белорусы — в названии
+        label = sides_label(sides)
+        text = f"Весь пьедестал — {label}" if n == 3 else f"Первые {n} мест — {label}"
+        out.append(("", "place", text))
+    return out
+
+
 def place_facts(seg_places, final_rows, intl, who_key, margin_min):
-    """По итогу вида: взлёт после первого сегмента, весь пьедестал — наши, большой отрыв.
+    """По итогу вида: взлёт после первого сегмента, россияне и белорусы впереди, большой отрыв.
     seg_places — {ключ имени: место после первого сегмента}; final_rows — итог по местам."""
     out = []
-    top = sorted(final_rows, key=lambda r: r["place"])[:3]
+    rows = sorted(final_rows, key=lambda r: r["place"])
+    top = rows[:3]
     for r in top:
         first = seg_places.get(_key(r["name"]))
         if first and first - r["place"] >= 3:
             out.append((r["name"], "place", f"После первого сегмента — {first}-е место, в итоге — {r['place']}-е"))
-    if intl and len(top) == 3:
-        sides = {who_key(r) for r in top}
-        if sides <= {"ru", "by"} and sides:
-            text = {"ru": "россияне", "by": "белорусы"}
-            label = text[next(iter(sides))] if len(sides) == 1 else "россияне и белорусы"
-            out.append(("", "place", f"Весь пьедестал — {label}"))
+    out += lead_facts(rows, intl, who_key)
     if len(top) >= 2:
         try:
             gap = float(top[0]["points"]) - float(top[1]["points"])

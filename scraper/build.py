@@ -240,7 +240,7 @@ def describe(ev):
             lines.append(f"• {f['who']} — {f['text']}" if f.get("who") else f"• {f['text']}")
         lines.append("")
     if ev["ours"]:
-        lines.append("Россияне и белорусы:")
+        lines.append("Россияне:")
         for o in ev["ours"]:
             if o.get("time"):
                 lines.append(f"• {o['name']} — {o['time']}")

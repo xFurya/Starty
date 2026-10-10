@@ -878,7 +878,7 @@ class LiveCard extends StatelessWidget {
                         margin: const EdgeInsets.fromLTRB(0, 14, 0, 12),
                         color: Colors.white.withValues(alpha: .16),
                       ),
-                      Eyebrow('Россияне и белорусы · впереди', color: Colors.white.withValues(alpha: .7)),
+                      Eyebrow('Россияне · впереди', color: Colors.white.withValues(alpha: .7)),
                       const SizedBox(height: 8),
                       OursList(
                         list: rest.take(4).toList(),

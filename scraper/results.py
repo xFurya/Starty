@@ -16,7 +16,7 @@ FACTS = os.path.join(ROOT, "data", "facts.json")
 _store = None
 
 # версия правил: при смене всё примечательное считается заново
-VERSION = "3"
+VERSION = "4"
 
 
 def _load():
@@ -93,12 +93,16 @@ def _segment(skaters, kind, level, seg, intl, season, to_ru):
             notable = sk["rank"] <= 3 or _ours(sk["nation"])
             for k, text in fx.score_facts(sk["name"], sk["tss"], kind, level, seg, season, notable):
                 out.append({"who": who, "text": text, "kind": k})
+    if intl:
+        rows = [{"place": sk["rank"], "name": sk["name"], "nation": sk["nation"]} for sk in skaters]
+        for name, k, text in fx.lead_facts(rows, intl, lambda r: side(r["nation"])):
+            out.append({"who": to_ru(name) if name else "", "text": text, "kind": k})
     return out
 
 
 def total_facts(key, rows, first_places, *, kind, level, intl, season, to_ru):
     """Итог вида: рекорд суммы, лучшая сумма сезона, личный рекорд суммы, взлёт после
-    первого сегмента, весь пьедестал — россияне и белорусы, большой отрыв. rows — итог по местам
+    первого сегмента, россияне и белорусы впереди (белорусов называем только если выиграли), большой отрыв. rows — итог по местам
     (имена латиницей, как в протоколе); first_places — {имя латиницей: место после первого сегмента}."""
     store = _load()
     key = f"{VERSION}|{key}"

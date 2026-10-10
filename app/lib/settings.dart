@@ -181,7 +181,7 @@ class SettingsView extends StatelessWidget {
                     const Hairline(),
                     _SwitchRow(
                       icon: CupertinoIcons.person_2,
-                      title: 'Выход россиян и белорусов',
+                      title: 'Выход россиян',
                       subtitle: 'за ${r.lead} мин до выхода',
                       value: r.skaters,
                       onChanged: (v) => set(r.copyWith(skaters: v)),
