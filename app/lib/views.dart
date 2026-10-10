@@ -878,7 +878,7 @@ class LiveCard extends StatelessWidget {
                         margin: const EdgeInsets.fromLTRB(0, 14, 0, 12),
                         color: Colors.white.withValues(alpha: .16),
                       ),
-                      Eyebrow('Наши · впереди', color: Colors.white.withValues(alpha: .7)),
+                      Eyebrow('Россияне и белорусы · впереди', color: Colors.white.withValues(alpha: .7)),
                       const SizedBox(height: 8),
                       OursList(
                         list: rest.take(4).toList(),
@@ -1041,6 +1041,8 @@ class PlacingName extends StatelessWidget {
   /// Код у имени: у иностранцев на международных — страна, на российских — регион.
   static String codeOf(Placing x, bool intl, {bool region = true}) {
     if (x.nation.isEmpty || (intl && x.ours)) return '';
+    // флаг страны уже показан значком — код рядом с именем не повторяем
+    if (intl && FlagBadge.iso(x.nation) != null) return '';
     return intl ? nationCode(x.nation) : (region ? x.nation : '');
   }
 
@@ -1086,6 +1088,10 @@ class MiniPodium extends StatelessWidget {
               children: [
                 Medal(x.place, size: 22),
                 const SizedBox(width: 10),
+                if (intl && FlagBadge.has(x.nation)) ...[
+                  FlagBadge(nation: x.nation, size: 16, ringWidth: 1),
+                  const SizedBox(width: 8),
+                ],
                 Expanded(
                   child: PlacingName(x: x, intl: intl, short: true, size: 14, region: false),
                 ),

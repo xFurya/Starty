@@ -194,15 +194,29 @@ void main() {
     ]);
   });
 
-  test('наш: RUS, AIN2, регион; простой AIN и AIN1 — нет', () {
+  test('россиянин или белорус: RUS, AIN2, BLR, AIN1, регион; простой AIN — нет', () {
     Placing x(String n) => Placing(1, 'A B', n, '');
     expect(x('RUS').ours, isTrue);
     expect(x('AIN2').ours, isTrue);
     expect(x('МОС').ours, isTrue);
     expect(x('AIN').ours, isFalse);
-    expect(x('AIN1').ours, isFalse);
+    expect(x('AIN1').ours, isTrue);
+    expect(x('BLR').ours, isTrue);
     expect(PlacingName.codeOf(x('AIN'), true), 'AIN');
     expect(PlacingName.codeOf(x('AIN2'), true), '');
+  });
+
+  test('флаг: коды ISU → страна; нейтральные — значок без флага; код у имени не дублирует флаг', () {
+    expect(FlagBadge.iso('GER'), 'DE');
+    expect(FlagBadge.iso('SUI'), 'CH');
+    expect(FlagBadge.iso('XXX'), isNull);
+    expect(FlagBadge.has('AIN2'), isTrue);
+    expect(FlagBadge.has('AIN'), isTrue);
+    expect(FlagBadge.has('XXX'), isFalse);
+    Placing x(String n) => Placing(1, 'A B', n, '');
+    expect(PlacingName.codeOf(x('FIN'), true), '');
+    expect(PlacingName.codeOf(x('XXX'), true), 'XXX');
+    expect(PlacingName.codeOf(x('AIN'), true), 'AIN');
   });
 
   test('турниры без расписания: разбор, дни, лента', () {

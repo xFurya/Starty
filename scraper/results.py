@@ -16,7 +16,7 @@ FACTS = os.path.join(ROOT, "data", "facts.json")
 _store = None
 
 # версия правил: при смене всё примечательное считается заново
-VERSION = "2"
+VERSION = "3"
 
 
 def _load():
@@ -46,8 +46,17 @@ def season_of(cfg):
     return f"{y}-{str(y + 1)[2:]}"
 
 
+def side(nation):
+    """ru — россиянин (RUS, AIN2, регион на российских стартах), by — белорус (BLR, AIN1), иначе пусто."""
+    if nation in ("RUS", "AIN2") or (len(nation) == 3 and nation.isalpha() and not nation.isascii()):
+        return "ru"
+    if nation in ("BLR", "AIN1"):
+        return "by"
+    return ""
+
+
 def _ours(nation):
-    return nation in ("RUS", "AIN2") or (len(nation) == 3 and nation.isalpha() and not nation.isascii())
+    return bool(side(nation))
 
 
 def segment_facts(pdf, *, kind, level, seg, intl, season, to_ru, log=print):
@@ -89,7 +98,7 @@ def _segment(skaters, kind, level, seg, intl, season, to_ru):
 
 def total_facts(key, rows, first_places, *, kind, level, intl, season, to_ru):
     """Итог вида: рекорд суммы, лучшая сумма сезона, личный рекорд суммы, взлёт после
-    первого сегмента, весь пьедестал — наши, большой отрыв. rows — итог по местам
+    первого сегмента, весь пьедестал — россияне и белорусы, большой отрыв. rows — итог по местам
     (имена латиницей, как в протоколе); first_places — {имя латиницей: место после первого сегмента}."""
     store = _load()
     key = f"{VERSION}|{key}"
@@ -118,6 +127,6 @@ def _total(rows, first_places, kind, level, intl, season, to_ru):
             out.append({"who": to_ru(r["name"]), "text": text, "kind": k})
     firsts = {fx._key(n): p for n, p in first_places.items()}
     margin = 8 if kind == "dance" else 15
-    for name, k, text in fx.place_facts(firsts, top, intl, lambda r: _ours(r["nation"]), margin):
+    for name, k, text in fx.place_facts(firsts, top, intl, lambda r: side(r["nation"]), margin):
         out.append({"who": to_ru(name) if name else "", "text": text, "kind": k})
     return out

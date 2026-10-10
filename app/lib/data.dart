@@ -180,7 +180,7 @@ class Start {
   }
 }
 
-/// Примечательное в сегменте. who пустой — о турнире в целом («Весь пьедестал — наши»).
+/// Примечательное в сегменте. who пустой — о турнире в целом («Весь пьедестал — россияне»).
 class Fact {
   final String who, text, kind;
   Fact(this.who, this.text, this.kind);
@@ -212,9 +212,9 @@ class Placing {
       nation = j['nation'] ?? '',
       points = j['points'] ?? '';
 
-  /// Наш: RUS или AIN2 (нейтральные россияне); на российских стартах — регион.
+  /// Россиянин или белорус: RUS, AIN2, BLR, AIN1; на российских стартах — регион.
   /// Простой AIN — неизвестно чей: показываем как иностранца, с кодом.
-  bool get ours => nation == 'RUS' || nation == 'AIN2' || RegExp(r'^[А-ЯЁ]{3}$').hasMatch(nation);
+  bool get ours => nation == 'RUS' || nation == 'AIN2' || nation == 'BLR' || nation == 'AIN1' || RegExp(r'^[А-ЯЁ]{3}$').hasMatch(nation);
   String get short => name.contains(' / ') ? name.split(' / ').map((p) => p.trim().split(' ').last).join(' / ') : name;
 }
 

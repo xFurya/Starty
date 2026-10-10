@@ -1,6 +1,7 @@
 // Оформление «Лёд»: шрифты, слова, плашки, фото-шапка, аватары, медали, кнопки, нижняя панель.
 import 'dart:math' as math;
 
+import 'package:country_flags/country_flags.dart';
 import 'package:flutter/cupertino.dart' show CupertinoIcons;
 import 'package:flutter/material.dart';
 
@@ -151,6 +152,85 @@ bool tight(BuildContext context) =>
 
 /// Код страны на экране: нейтральный статус — «AIN».
 String nationCode(String n) => n.startsWith('AIN') ? 'AIN' : n;
+
+/// Коды ISU (как у МОК) → ISO: флаги в пакете подписаны по ISO.
+const _iso = {
+  'ALB': 'AL', 'AND': 'AD', 'ARG': 'AR', 'ARM': 'AM', 'AUS': 'AU', 'AUT': 'AT', 'AZE': 'AZ', 'BEL': 'BE',
+  'BIH': 'BA', 'BLR': 'BY', 'BRA': 'BR', 'BUL': 'BG', 'CAN': 'CA', 'CHI': 'CL', 'CHN': 'CN', 'COL': 'CO',
+  'CRO': 'HR', 'CYP': 'CY', 'CZE': 'CZ', 'DEN': 'DK', 'ESP': 'ES', 'EST': 'EE', 'FIN': 'FI', 'FRA': 'FR',
+  'GBR': 'GB', 'GEO': 'GE', 'GER': 'DE', 'GRE': 'GR', 'HKG': 'HK', 'HUN': 'HU', 'INA': 'ID', 'IND': 'IN',
+  'IRI': 'IR', 'IRL': 'IE', 'ISL': 'IS', 'ISR': 'IL', 'ITA': 'IT', 'JPN': 'JP', 'KAZ': 'KZ', 'KGZ': 'KG',
+  'KOR': 'KR', 'LAT': 'LV', 'LIE': 'LI', 'LTU': 'LT', 'LUX': 'LU', 'MAS': 'MY', 'MDA': 'MD', 'MEX': 'MX',
+  'MGL': 'MN', 'MKD': 'MK', 'MLT': 'MT', 'MNE': 'ME', 'MON': 'MC', 'NED': 'NL', 'NOR': 'NO', 'NZL': 'NZ',
+  'PHI': 'PH', 'POL': 'PL', 'POR': 'PT', 'PRK': 'KP', 'ROU': 'RO', 'RSA': 'ZA', 'RUS': 'RU', 'SGP': 'SG',
+  'SLO': 'SI', 'SMR': 'SM', 'SRB': 'RS', 'SUI': 'CH', 'SVK': 'SK', 'SWE': 'SE', 'THA': 'TH', 'TPE': 'TW',
+  'TUR': 'TR', 'UKR': 'UA', 'URU': 'UY', 'USA': 'US', 'UZB': 'UZ', 'VIE': 'VN',
+};
+
+/// Флаг страны кружком, с ободком цвета подложки. Нейтральные спортсмены (AIN) выступают без флага —
+/// у них ледяной значок со снежинкой: ни чужого флага, ни выдуманного.
+class FlagBadge extends StatelessWidget {
+  final String nation;
+  final double size;
+
+  /// Ободок: цвет подложки, чтобы значок читался на фото и на плашке.
+  final Color? ring;
+  final double ringWidth;
+  const FlagBadge({super.key, required this.nation, this.size = 18, this.ring, this.ringWidth = 1.5});
+
+  static String? iso(String n) => _iso[n];
+  static bool neutral(String n) => n.startsWith('AIN');
+
+  /// Есть ли что показать: флаг страны или значок нейтрального статуса.
+  static bool has(String n) => iso(n) != null || neutral(n);
+
+  /// Подпись для чтения с экрана.
+  static String label(String n) => neutral(n) ? 'нейтральный статус' : n;
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final code = iso(nation);
+    if (code == null && !neutral(nation)) return const SizedBox.shrink();
+    final total = size + ringWidth * 2;
+    return ExcludeSemantics(
+      child: Container(
+        width: total,
+        height: total,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: ring ?? p.plate,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: p.isDark ? .35 : .16),
+              blurRadius: size * .22,
+              offset: Offset(0, size * .07),
+            ),
+          ],
+        ),
+        padding: EdgeInsets.all(ringWidth),
+        child: ClipOval(
+          child: code != null
+              ? CountryFlag.fromCountryCode(
+                  code,
+                  theme: ImageTheme(width: size, height: size, shape: const Circle()),
+                )
+              : Container(
+                  alignment: Alignment.center,
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [Palette.iceBlue, Palette.deepBlue],
+                    ),
+                  ),
+                  child: Icon(CupertinoIcons.snow, size: size * .66, color: Colors.white),
+                ),
+        ),
+      ),
+    );
+  }
+}
 
 /// Неразрывный пробел: «1 ч», «в 17:30» не разрываются.
 const nb = '\u00A0';
@@ -1214,6 +1294,12 @@ class Avatar extends StatelessWidget {
 
   /// Слот одной ширины для одиночников и пар: имена в столбик ровно.
   final bool slot;
+
+  /// Страна спортсмена: флаг-значок в углу фото (только на международных стартах).
+  final String? nation;
+
+  /// Ободок значка: у победителя — золотой.
+  final Color? flagRing;
   const Avatar({
     super.key,
     required this.name,
@@ -1222,6 +1308,8 @@ class Avatar extends StatelessWidget {
     this.ring,
     this.ringWidth = 1.5,
     this.slot = false,
+    this.nation,
+    this.flagRing,
   });
 
   /// Ширина аватара пары: второй круг заходит на первый.
@@ -1243,11 +1331,31 @@ class Avatar extends StatelessWidget {
               ],
             ),
           );
-    if (!slot) return face;
+    final n = nation;
+    final w = parts.length < 2 || noPhotos ? size : pairWidth(size);
+    final badge = n != null && FlagBadge.has(n) ? size * (size >= 60 ? .4 : .42) : 0.0;
+    final shown = badge == 0
+        ? face
+        : SizedBox(
+            width: w,
+            height: size,
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Positioned.fill(child: face),
+                Positioned(
+                  right: -badge * .12,
+                  bottom: -badge * .12,
+                  child: FlagBadge(nation: n!, size: badge, ring: flagRing, ringWidth: size >= 60 ? 2.5 : 2),
+                ),
+              ],
+            ),
+          );
+    if (!slot) return shown;
     return SizedBox(
       width: pairWidth(size),
       height: size,
-      child: Align(alignment: Alignment.center, child: face),
+      child: Align(alignment: Alignment.center, child: shown),
     );
   }
 

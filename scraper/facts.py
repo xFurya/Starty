@@ -87,9 +87,8 @@ def element_facts(sk, kind, level, seg):
             nq = sum(1 for r, j in big if r >= 4)
             na = sum(1 for r, j in big if r == 3 and j == "A")
             if len(js) >= 2 and (nq >= 2 or (nq >= 1 and na >= 1) or na >= 2 or (nq >= 1 and len(big) >= 3)):
-                what = "Связка" if "SEQ" in code else "Каскад"
                 clean = "+".join(p for p in code.split("+") if p not in ("SEQ", "COMBO", "REP"))
-                out.append(("element", f"{what} {clean}"))
+                out.append(("element", f"Каскад {clean}"))
             continue
         m = THROW.match(code)
         if m and int(m.group(1)) >= 4 and _credited(4, m.group(3) + info):
@@ -165,7 +164,7 @@ def _stat(path):
 
 def score_facts(name, score, kind, level, seg, season, ours_or_top):
     """Оценка против статистики ISU: мировой рекорд (взрослые), лучшая оценка сезона
-    в мире (своего уровня) и личный рекорд (у наших и тройки)."""
+    в мире (своего уровня) и личный рекорд (у россиян, белорусов и тройки)."""
     k, s = KIND_CODE.get(kind), SEG_CODE.get(seg)
     if not k or not s:
         return []
@@ -180,7 +179,7 @@ def score_facts(name, score, kind, level, seg, season, ours_or_top):
             best = max(wr, key=lambda r: r["score"])
             if score > best["score"]:
                 where = {"to": "по сумме", "sp": "за КП", "fs": "за ПП", "rd": "за РТ", "fd": "за ПТ"}[s]
-                out.append(("record", f"Выше мирового рекорда {where}: {_fmt(score)} (рекорд {_fmt(best['score'])})"))
+                out.append(("record", f"Выше исторического рекорда {where}: {_fmt(score)} (рекорд {_fmt(best['score'])})"))
     sb = [r for r in _stat(f"sb{season}/sbts{k}{s}.htm") if r["level"] == ("J" if level == "junior" else "S")]
     if sb and not out:
         top = max(r["score"] for r in sb)
@@ -200,7 +199,7 @@ def score_facts(name, score, kind, level, seg, season, ours_or_top):
 
 # ---------------------------------------------------------------- итоги вида
 
-def place_facts(seg_places, final_rows, intl, ours_key, margin_min):
+def place_facts(seg_places, final_rows, intl, who_key, margin_min):
     """По итогу вида: взлёт после первого сегмента, весь пьедестал — наши, большой отрыв.
     seg_places — {ключ имени: место после первого сегмента}; final_rows — итог по местам."""
     out = []
@@ -209,8 +208,12 @@ def place_facts(seg_places, final_rows, intl, ours_key, margin_min):
         first = seg_places.get(_key(r["name"]))
         if first and first - r["place"] >= 3:
             out.append((r["name"], "place", f"После первого сегмента — {first}-е место, в итоге — {r['place']}-е"))
-    if intl and len(top) == 3 and all(ours_key(r) for r in top):
-        out.append(("", "place", "Весь пьедестал — наши"))
+    if intl and len(top) == 3:
+        sides = {who_key(r) for r in top}
+        if sides <= {"ru", "by"} and sides:
+            text = {"ru": "россияне", "by": "белорусы"}
+            label = text[next(iter(sides))] if len(sides) == 1 else "россияне и белорусы"
+            out.append(("", "place", f"Весь пьедестал — {label}"))
     if len(top) >= 2:
         try:
             gap = float(top[0]["points"]) - float(top[1]["points"])
