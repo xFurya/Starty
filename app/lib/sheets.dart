@@ -953,7 +953,11 @@ class _FilterSheetState extends State<_FilterSheet> {
         ? (athletes.toList()..sort())
         : (all.where((a) => norm(displayName(a)).contains(norm(q))).toList()..sort()).take(8).toList();
     final canReset = kinds.isNotEmpty || tids.isNotEmpty || athletes.isNotEmpty || widget.state.filters.any;
-    final count = feedPool(widget.state, Filters(kinds, tids, athletes), t).length;
+    // что покажет лента с этим выбором: старты и турниры без расписания (у них только заявка)
+    final f = Filters(kinds, tids, athletes);
+    final count = feedPool(widget.state, f, t).length;
+    final more = upcomingAhead(widget.state, t, f).length;
+    final action = filterAction(count, more);
     // клавиатура поиска не закрывает ни найденных, ни кнопок внизу
     return Padding(
       padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
@@ -1106,13 +1110,12 @@ class _FilterSheetState extends State<_FilterSheet> {
                     Expanded(
                       child: SheetButton(
                         filled: true,
-                        label: count == 0
-                            ? 'Стартов нет'
-                            : 'Показать $count ${plural(count, 'старт', 'старта', 'стартов')}',
-                        onTap: count == 0
+                        label: action.$1,
+                        detail: action.$2,
+                        onTap: count + more == 0
                             ? null
                             : () {
-                                widget.state.setFilters(Filters(kinds, tids, athletes));
+                                widget.state.setFilters(f);
                                 Navigator.pop(context);
                               },
                       ),
@@ -1126,6 +1129,17 @@ class _FilterSheetState extends State<_FilterSheet> {
       ),
     );
   }
+}
+
+/// Главная кнопка листа фильтра: сколько покажет лента — старты и турниры без расписания.
+/// Есть и те и другие — турниры второй строкой: в одну на узком экране не помещается.
+(String, String?) filterAction(int starts, int tours) {
+  final a = '$starts ${plural(starts, 'старт', 'старта', 'стартов')}';
+  final b = '$tours ${plural(tours, 'турнир', 'турнира', 'турниров')}';
+  if (starts == 0 && tours == 0) return ('Стартов нет', null);
+  if (tours == 0) return ('Показать $a', null);
+  if (starts == 0) return ('Показать $b', null);
+  return ('Показать $a', 'и $b');
 }
 
 class _CheckRow extends StatelessWidget {

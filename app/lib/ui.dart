@@ -558,6 +558,9 @@ class SheetButton extends StatelessWidget {
   final String label;
   final VoidCallback? onTap;
 
+  /// Вторая строка мельче — уточнение к надписи, когда одной строке тесно.
+  final String? detail;
+
   /// По ширине надписи, а не на всю доступную ширину.
   final bool compact;
   const SheetButton({
@@ -565,6 +568,7 @@ class SheetButton extends StatelessWidget {
     required this.label,
     required this.onTap,
     this.icon,
+    this.detail,
     this.filled = false,
     this.neutral = false,
     this.compact = false,
@@ -613,7 +617,29 @@ class SheetButton extends StatelessWidget {
                 children: [
                   if (icon != null) ...[Icon(icon, size: 19, color: fg), const SizedBox(width: 8)],
                   Flexible(
-                    child: FittedBox(fit: BoxFit.scaleDown, child: text),
+                    child: detail == null
+                        ? FittedBox(fit: BoxFit.scaleDown, child: text)
+                        : Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              FittedBox(fit: BoxFit.scaleDown, child: text),
+                              const SizedBox(height: 1),
+                              FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  detail!,
+                                  maxLines: 1,
+                                  softWrap: false,
+                                  style: TextStyle(
+                                    fontSize: 12.5,
+                                    fontWeight: FontWeight.w600,
+                                    height: 1.15,
+                                    color: fg.withValues(alpha: .82),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                   ),
                 ],
               ),

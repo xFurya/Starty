@@ -65,11 +65,13 @@ List<Upcoming> upcomingOn(AppState st, String day) => [
 ];
 
 /// Турниры без расписания на ленту: ещё не закончились и начнутся в ближайшие 60 дней.
-List<Upcoming> upcomingAhead(AppState st, DateTime t) {
+/// Фильтр — действующий; лист фильтра передаёт свой, ещё не применённый.
+List<Upcoming> upcomingAhead(AppState st, DateTime t, [Filters? f]) {
+  final pass = f ?? st.filters;
   final today = dayKey(t), horizon = dayKey(t.add(const Duration(days: 60)));
   return [
     for (final u in st.data?.upcoming ?? const <Upcoming>[])
-      if (u.end.compareTo(today) >= 0 && u.start.compareTo(horizon) < 0 && st.filters.passUpcoming(u)) u,
+      if (u.end.compareTo(today) >= 0 && u.start.compareTo(horizon) < 0 && pass.passUpcoming(u)) u,
   ];
 }
 

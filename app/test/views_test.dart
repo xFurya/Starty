@@ -112,22 +112,28 @@ void main() {
             expect(t.takeException(), isNull, reason: st.title);
           }
 
-          // фильтр со спортсменом: строки найденных с фото и флажком
-          s.filters = Filters({'pairs'}, {}, {...data.watchlist.where((n) => n.contains(' / ')).take(1)});
-          await t.pumpWidget(
-            app(
-              Builder(
-                builder: (c) => Center(
-                  child: TextButton(onPressed: () => showFilters(c, s), child: const Text('open')),
+          // фильтр со спортсменом: строки найденных с фото и флажком;
+          // без фильтра — кнопка в две строки: старты и турниры без расписания
+          for (final f in [
+            Filters({'pairs'}, {}, {...data.watchlist.where((n) => n.contains(' / ')).take(1)}),
+            Filters.none,
+          ]) {
+            s.filters = f;
+            await t.pumpWidget(
+              app(
+                Builder(
+                  builder: (c) => Center(
+                    child: TextButton(onPressed: () => showFilters(c, s), child: const Text('open')),
+                  ),
                 ),
+                b,
+                scale,
               ),
-              b,
-              scale,
-            ),
-          );
-          await t.tap(find.text('open'));
-          await t.pumpAndSettle();
-          expect(t.takeException(), isNull);
+            );
+            await t.tap(find.text('open'));
+            await t.pumpAndSettle();
+            expect(t.takeException(), isNull);
+          }
         });
       }
     }
@@ -209,6 +215,31 @@ void main() {
     expect(upcomingOn(s, u.start).map((x) => x.tid), contains(u.tid));
     s.filters = const Filters({}, {'другой'}, {});
     expect(upcomingOn(s, u.start), isEmpty);
+  });
+
+  test('лист фильтра: спортсмен только в заявке турнира без расписания — кнопка его считает', () {
+    final t = now();
+    String day(int d) => dayKey(t.add(Duration(days: d)));
+    final u = Upcoming.fromJson({
+      'tid': 'u',
+      'name': 'U',
+      'start': day(6),
+      'end': day(9),
+      'ours': ['Алина Горбачёва'],
+    });
+    final s = stateWith(Schedule(data.starts, t, true, false, upcoming: [u]));
+    const f = Filters({}, {}, {'Алина Горбачёва'});
+    // лента с этим выбором: стартов нет, турнир — в «Без расписания»
+    expect(feedPool(s, f, t), isEmpty);
+    expect(upcomingAhead(s, t, f).map((x) => x.tid), ['u']);
+    // действующий фильтр ни при чём: лист считает свой выбор
+    s.filters = const Filters({}, {}, {'Мария Захарова'});
+    expect(upcomingAhead(s, t), isEmpty);
+    expect(upcomingAhead(s, t, f), hasLength(1));
+    expect(filterAction(0, 1), ('Показать 1 турнир', null));
+    expect(filterAction(0, 0), ('Стартов нет', null));
+    expect(filterAction(3, 0), ('Показать 3 старта', null));
+    expect(filterAction(21, 15), ('Показать 21 старт', 'и 15 турниров'));
   });
 
   test('свежесть расписания: без предлога перед «сегодня», тревога — по делу', () {
