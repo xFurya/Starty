@@ -1,11 +1,11 @@
 {
- "version": "1.0.4",
- "code": 5,
- "notes": "Уведомления держатся до конца старта.",
- "at": "2026-10-10T06:43:39Z",
+ "version": "1.0.5",
+ "code": 6,
+ "notes": "Исправлена строка обновлений.",
+ "at": "2026-10-10T07:43:37Z",
  "android": {
-  "file": "starty-1.0.4.apk",
-  "size": 20290536,
-  "sha256": "5bcdaad907d59a76dd5b9e6b1ce185272e03df0c7b8f6d57fdb6d8cbe25a5c31"
+  "file": "starty-1.0.5.apk",
+  "size": 20290540,
+  "sha256": "066307c32dd697895010a1e90bbd563fcc0e1b17bd9147d4f4ac798ca41d556c"
  }
 }
