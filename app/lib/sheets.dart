@@ -19,6 +19,11 @@ void showStart(BuildContext context, Start s, AppState state) {
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
+    backgroundColor: Colors.transparent,
+    surfaceTintColor: Colors.transparent,
+    elevation: 0,
+    shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(26))),
+    clipBehavior: Clip.none,
     enableDrag: false,
     builder: (c) => ListenableBuilder(
       listenable: state,
@@ -251,7 +256,7 @@ class _StartSheet extends StatelessWidget {
       if (rest.isNotEmpty)
         _section(
           context,
-          'Россияне',
+          oursLabel(s.ours),
           Plate(
             child: MeasuredLayout(
               builder: (context, c) {
@@ -293,7 +298,7 @@ class _StartSheet extends StatelessWidget {
     return [
       _section(
         context,
-        s.ours.any((o) => o.time != null) ? 'Россияне · выход на лёд' : 'Россияне',
+        oursLabel(s.ours, exitTimes: s.ours.any((o) => o.time != null)),
         Plate(
           child: MeasuredLayout(
             builder: (context, c) {
