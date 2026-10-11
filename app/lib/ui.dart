@@ -1,8 +1,8 @@
 // Оформление «Лёд»: шрифты, слова, плашки, фото-шапка, аватары, медали, кнопки, нижняя панель.
 import 'dart:math' as math;
 
-import 'package:flutter/gestures.dart' show PointerDeviceKind;
 import 'package:flutter/cupertino.dart' show CupertinoIcons;
+import 'package:flutter/gestures.dart' show PointerDeviceKind;
 import 'package:flutter/material.dart';
 
 import 'data.dart';
@@ -656,6 +656,7 @@ class _SheetScrollState extends State<SheetScroll> {
       ),
     );
   }
+}
 
 /// Кнопка листа 52 px: залитая (акцент) или с окантовкой. Без onTap — неактивна.
 class SheetButton extends StatelessWidget {
