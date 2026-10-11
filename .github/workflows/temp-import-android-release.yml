@@ -28,8 +28,6 @@ jobs:
           unzip -q /tmp/starty-artifact.zip -d /tmp/starty-artifact
           test -s /tmp/starty-artifact/Starty-1.0.14.apk
           echo "APK_BYTES=$(stat -c '%s' /tmp/starty-artifact/Starty-1.0.14.apk)" >> "$GITHUB_ENV"
-      - name: Verify package signature
-        uses: android-actions/setup-android@v3
       - name: Check signing certificate
         run: |
           set -euo pipefail
