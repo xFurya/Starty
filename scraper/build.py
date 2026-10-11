@@ -370,7 +370,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
             for p in people:
                 if not ours_rule(p["name"], p.get("nation", "")):
                     continue
-                o = {"name": names.to_ru(p["name"])}
+                o = {"name": names.to_ru(p["name"]), "nation": p.get("nation", "")}
                 no = p.get("no")
                 if no and no in msk_times and "rank" not in p:
                     o["time"] = msk_times[no].strftime("%H:%M")
