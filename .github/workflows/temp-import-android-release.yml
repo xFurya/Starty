@@ -31,8 +31,13 @@ jobs:
       - name: Check signing certificate
         run: |
           set -euo pipefail
-          sdkmanager "build-tools;35.0.0" >/dev/null
-          SIGNER="$ANDROID_HOME/build-tools/35.0.0/apksigner"
+          SDK_ROOT="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
+          SDKMANAGER="$SDK_ROOT/cmdline-tools/latest/bin/sdkmanager"
+          SIGNER="$SDK_ROOT/build-tools/35.0.0/apksigner"
+          if [[ ! -x "$SIGNER" ]]; then
+            "$SDKMANAGER" "build-tools;35.0.0" >/dev/null
+          fi
+          test -x "$SIGNER"
           "$SIGNER" verify --print-certs /tmp/starty-artifact/Starty-1.0.14.apk > /tmp/starty-signature.txt
           ACTUAL=$(grep -i 'SHA-256 digest:' /tmp/starty-signature.txt | tail -n1 | sed 's/.*digest:[[:space:]]*//' | tr -d ': ' | tr '[:upper:]' '[:lower:]')
           EXPECTED=84f451ebac960ae69f8bf06949be9ad8abe86571cc475a36249790851fb0e7d1
