@@ -16,7 +16,7 @@ FACTS = os.path.join(ROOT, "data", "facts.json")
 _store = None
 
 # версия правил: при смене всё примечательное считается заново
-VERSION = "5"
+VERSION = "4"
 
 
 def _load():
@@ -39,22 +39,6 @@ def save():
     os.makedirs(os.path.dirname(FACTS), exist_ok=True)
     with open(FACTS, "w", encoding="utf-8") as f:
         json.dump(_store, f, ensure_ascii=False, indent=1, sort_keys=True)
-
-
-def unique_facts(facts):
-    """Убирает повторы по отображаемому содержимому (спортсмен + текст факта)."""
-    out = []
-    seen = set()
-    for fact in facts or []:
-        who = " ".join(str(fact.get("who") or "").split()).casefold()
-        text = " ".join(str(fact.get("text") or "").split()).casefold()
-        if not text:
-            continue
-        key = (who, text)
-        if key not in seen:
-            seen.add(key)
-            out.append(fact)
-    return out
 
 
 def season_of(cfg):
@@ -80,7 +64,7 @@ def segment_facts(pdf, *, kind, level, seg, intl, season, to_ru, log=print):
     store = _load()
     pdf_key = f"{VERSION}|{pdf}"
     if pdf_key in store:
-        return unique_facts(store[pdf_key])
+        return store[pdf_key]
     try:
         skaters = st.parse_judges(net.pdf_text(pdf))
     except Exception as e:  # примечательное необязательно — расписание и итоги важнее
@@ -94,8 +78,8 @@ def segment_facts(pdf, *, kind, level, seg, intl, season, to_ru, log=print):
     except Exception as e:
         log("  ! примечательное:", pdf, e)
         return []
-    store[pdf_key] = unique_facts(out)
-    return store[pdf_key]
+    store[pdf_key] = out
+    return out
 
 
 def _segment(skaters, kind, level, seg, intl, season, to_ru):
@@ -113,7 +97,7 @@ def _segment(skaters, kind, level, seg, intl, season, to_ru):
         rows = [{"place": sk["rank"], "name": sk["name"], "nation": sk["nation"]} for sk in skaters]
         for name, k, text in fx.lead_facts(rows, intl, lambda r: side(r["nation"])):
             out.append({"who": to_ru(name) if name else "", "text": text, "kind": k})
-    return unique_facts(out)
+    return out
 
 
 def total_facts(key, rows, first_places, *, kind, level, intl, season, to_ru):
@@ -123,13 +107,13 @@ def total_facts(key, rows, first_places, *, kind, level, intl, season, to_ru):
     store = _load()
     key = f"{VERSION}|{key}"
     if key in store:
-        return unique_facts(store[key])
+        return store[key]
     try:
         out = _total(rows, first_places, kind, level, intl, season, to_ru)
     except Exception:
         return []
-    store[key] = unique_facts(out)
-    return store[key]
+    store[key] = out
+    return out
 
 
 def _total(rows, first_places, kind, level, intl, season, to_ru):
@@ -149,4 +133,4 @@ def _total(rows, first_places, kind, level, intl, season, to_ru):
     margin = 8 if kind == "dance" else 15
     for name, k, text in fx.place_facts(firsts, top, intl, lambda r: side(r["nation"]), margin):
         out.append({"who": to_ru(name) if name else "", "text": text, "kind": k})
-    return unique_facts(out)
+    return out
