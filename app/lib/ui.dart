@@ -569,6 +569,7 @@ class _SheetScrollState extends State<SheetScroll> {
       ],
     );
   }
+}
 
 /// Кнопка листа 52 px: залитая (акцент) или с окантовкой. Без onTap — неактивна.
 class SheetButton extends StatelessWidget {
