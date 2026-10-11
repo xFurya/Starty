@@ -229,7 +229,7 @@ def lead_facts(rows, intl, who_key):
         sides = {who_key(r) for r in top[:n]}
         # россияне одни — тоже интересно, если это весь пьедестал или больше; белорусы — в названии
         label = sides_label(sides)
-        text = f"Весь пьедестал — {label}" if n == 3 else f"Первые {n} мест — {label}"
+        text = f"Весь пьедестал — {label}" if n == 3 else f"Первые {n} {_plural(n, 'место', 'места', 'мест')} — {label}
         out.append(("", "place", text))
     return out
 

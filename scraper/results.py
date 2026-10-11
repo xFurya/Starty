@@ -16,7 +16,7 @@ FACTS = os.path.join(ROOT, "data", "facts.json")
 _store = None
 
 # версия правил: при смене всё примечательное считается заново
-VERSION = "4"
+VERSION = "5"
 
 
 def _load():
