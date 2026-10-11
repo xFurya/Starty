@@ -19,6 +19,7 @@ void showStart(BuildContext context, Start s, AppState state) {
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
+    enableDrag: false,
     builder: (c) => ListenableBuilder(
       listenable: state,
       builder: (c, _) => _StartSheet(s: s, state: state),
@@ -975,6 +976,7 @@ void showFilters(BuildContext context, AppState state) {
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
+    enableDrag: false,
     builder: (c) => _FilterSheet(state: state),
   );
 }
@@ -1033,7 +1035,9 @@ class _FilterSheetState extends State<_FilterSheet> {
       child: DraggableScrollableSheet(
         expand: false,
         initialChildSize: .88,
+        minChildSize: .30,
         maxChildSize: .95,
+        shouldCloseOnMinExtent: true,
         builder: (c, scroll) => Column(
           children: [
             Expanded(
