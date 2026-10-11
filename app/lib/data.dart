@@ -71,12 +71,29 @@ class Skater {
 
 /// Название группы участников по фактическим кодам из табло.
 /// AIN2 отображаем как RUS, AIN1 — как BLR; региональные коды на стартах ФСР относятся к россиянам.
+bool _isRussianRegion(String nation) =>
+    nation.length == 3 &&
+    nation.codeUnits.every((v) => (v >= 0x410 && v <= 0x42F) || v == 0x401 || v == 0x451);
+
 String oursLabel(Iterable<Skater> skaters, {bool exitTimes = false}) {
   var russian = false;
   var belarusian = false;
   for (final skater in skaters) {
     final nation = skater.nation.trim();
-    if (nation == 'RUS' || nation == 'AIN2' || RegExp(r'^[А-ЯЁ]{3}
+    if (nation == 'RUS' || nation == 'AIN2' || _isRussianRegion(nation)) {
+      russian = true;
+    } else if (nation == 'BLR' || nation == 'AIN1') {
+      belarusian = true;
+    }
+  }
+  final label = russian && belarusian
+      ? 'Россияне и белорусы'
+      : belarusian
+          ? 'Белорусы'
+          : 'Россияне';
+  return exitTimes ? '$label · выход на лёд' : label;
+}
+
 String _cleanVenue(Object? v) => ((v as String?) ?? '').replaceAll(RegExp(r'\s*(\.{2,}|…)+(?=\s*(,|$))'), '').trim();
 
 class Start {
