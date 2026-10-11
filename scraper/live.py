@@ -103,7 +103,7 @@ def refresh(ev, idx, names, now):
             f = rs.total_facts(live["cat"] + "#total", rows, first, kind=ev["kind"], level=ev["level"],
                                intl=ev["intl"], season=rs.season_of(b.CFG), to_ru=to_ru)
             if f:
-                ev["facts"] = (ev.get("facts") or []) + f
+                ev["facts"] = rs.unique_facts((ev.get("facts") or []) + f)
     ev["desc"] = b.describe(ev)
     return json.dumps(ev, sort_keys=True, ensure_ascii=False) != before
 
