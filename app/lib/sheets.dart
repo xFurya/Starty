@@ -19,15 +19,19 @@ void showStart(BuildContext context, Start s, AppState state) {
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
-    backgroundColor: Colors.transparent,
-    surfaceTintColor: Colors.transparent,
-    elevation: 0,
-    shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(26))),
-    clipBehavior: Clip.none,
     enableDrag: false,
-    builder: (c) => ListenableBuilder(
-      listenable: state,
-      builder: (c, _) => _StartSheet(s: s, state: state),
+    builder: (c) => DraggableScrollableSheet(
+      expand: false,
+      initialChildSize: .92,
+      minChildSize: .75,
+      maxChildSize: .92,
+      snap: true,
+      snapSizes: const [.92],
+      shouldCloseOnMinExtent: true,
+      builder: (sheetContext, scrollController) => ListenableBuilder(
+        listenable: state,
+        builder: (c, _) => _StartSheet(s: s, state: state, scrollController: scrollController),
+      ),
     ),
   );
 }
@@ -35,7 +39,8 @@ void showStart(BuildContext context, Start s, AppState state) {
 class _StartSheet extends StatelessWidget {
   final Start s;
   final AppState state;
-  const _StartSheet({required this.s, required this.state});
+  final ScrollController scrollController;
+  const _StartSheet({required this.s, required this.state, required this.scrollController});
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +57,7 @@ class _StartSheet extends StatelessWidget {
     return ConstrainedBox(
       constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * .92),
       child: SheetScroll(
+        controller: scrollController,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
