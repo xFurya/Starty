@@ -98,10 +98,10 @@ class Start {
       podium = [for (final p in (j['podium'] as List? ?? const [])) Placing.fromJson(p)],
       total = [for (final p in (j['total'] as List? ?? const [])) Placing.fromJson(p)],
       provisional = j['provisional'] == true,
-      facts = _uniqueFacts([
+      facts = [
         for (final f in (j['facts'] as List? ?? const []))
           if (f is Map && (f['text'] as String? ?? '').isNotEmpty) Fact.fromJson(Map<String, dynamic>.from(f)),
-      ]),
+      ],
       live = j['live'] is Map ? LiveSrc.fromJson(Map<String, dynamic>.from(j['live'] as Map)) : null;
 
   /// Тот же старт с итогами, прочитанными с табло турнира (live.dart).
@@ -185,20 +185,6 @@ class Fact {
   final String who, text, kind;
   Fact(this.who, this.text, this.kind);
   Fact.fromJson(Map<String, dynamic> j) : who = j['who'] ?? '', text = j['text'] ?? '', kind = j['kind'] ?? '';
-}
-
-/// Убирает одинаковые факты, пришедшие из результатов сегмента и общего итога.
-/// Разные достижения одного спортсмена сохраняются.
-List<Fact> _uniqueFacts(Iterable<Fact> source) {
-  final seen = <String>{};
-  return [
-    for (final fact in source)
-      if (seen.add(jsonEncode([
-        fact.who.trim().toLowerCase(),
-        fact.text.trim().replaceAll(RegExp(r'\s+'), ' ').toLowerCase(),
-      ])))
-        fact,
-  ];
 }
 
 /// Табло турнира (Swiss Timing): оглавление, страница сегмента, итог вида, первый сегмент
