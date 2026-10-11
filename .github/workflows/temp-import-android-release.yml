@@ -1,0 +1,93 @@
+name: TEMP Import signed Starty Android 1.0.14
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/temp-import-android-release.yml'
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download the APK artifact from the private build
+        env:
+          ARTIFACT_URL: 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-21b4-8210-9564-b75d7c04d10f/raw?se=2026-10-11T19%3A13%3A17Z&sp=r&sv=2026-02-06&sr=b&scid=86f85fae-6366-546a-8610-19bd7de35062&skoid=56822d8b-6cfd-42ed-a00d-1452dca42036&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-11T09%3A29%3A02Z&ske=2026-10-12T09%3A29%3A02Z&sks=b&skv=2026-02-06&sig=mWvt/Q07sOu5r37BlAri%2B1d%2BWPr1SCTE71N8Qrw3QBA%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 2 --max-time 60 "$ARTIFACT_URL" -o /tmp/starty-artifact.zip
+          mkdir -p /tmp/starty-artifact
+          unzip -q /tmp/starty-artifact.zip -d /tmp/starty-artifact
+          test -s /tmp/starty-artifact/Starty-1.0.14.apk
+          echo "APK_BYTES=$(stat -c '%s' /tmp/starty-artifact/Starty-1.0.14.apk)" >> "$GITHUB_ENV"
+      - name: Verify package signature
+        uses: android-actions/setup-android@v3
+      - name: Check signing certificate
+        run: |
+          set -euo pipefail
+          sdkmanager "build-tools;35.0.0" >/dev/null
+          SIGNER="$ANDROID_HOME/build-tools/35.0.0/apksigner"
+          "$SIGNER" verify --print-certs /tmp/starty-artifact/Starty-1.0.14.apk > /tmp/starty-signature.txt
+          ACTUAL=$(grep -i 'SHA-256 digest:' /tmp/starty-signature.txt | tail -n1 | sed 's/.*digest:[[:space:]]*//' | tr -d ': ' | tr '[:upper:]' '[:lower:]')
+          EXPECTED=84f451ebac960ae69f8bf06949be9ad8abe86571cc475a36249790851fb0e7d1
+          echo "APK signer SHA-256: $ACTUAL"
+          test "$ACTUAL" = "$EXPECTED"
+      - name: Commit APK and release metadata to main
+        env:
+          GH_TOKEN: \${{ github.token }}
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B publish-starty-release origin/main
+          cp /tmp/starty-artifact/Starty-1.0.14.apk site/app/Starty.apk
+          cp /tmp/starty-artifact/Starty-1.0.14.apk site/app/starty-1.0.14.apk
+          python3 - <<'PY'
+          import datetime, hashlib, json, os
+          version, build = "1.0.14", 15
+          path = "site/app/starty-1.0.14.apk"
+          raw = open(path, "rb").read()
+          sha = hashlib.sha256(raw).hexdigest()
+          now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+          notes = "Исправлены повторы и закрытие карточки свайпом вниз."
+          latest = {
+              "version": version,
+              "code": build,
+              "notes": notes,
+              "at": now,
+              "android": {"file": os.path.basename(path), "size": len(raw), "sha256": sha},
+          }
+          with open("site/app/latest.json", "w", encoding="utf-8") as f:
+              json.dump(latest, f, ensure_ascii=False, indent=1)
+              f.write("\n")
+          vp = "site/app/version.json"
+          version_data = json.load(open(vp, encoding="utf-8"))
+          version_data["android"].update(
+              version=version,
+              build=build,
+              url="https://xfurya.github.io/Starty/app/starty-1.0.14.apk",
+              note="",
+          )
+          with open(vp, "w", encoding="utf-8") as f:
+              json.dump(version_data, f, ensure_ascii=False, indent=1)
+              f.write("\n")
+          released = "tools/released.tsv"
+          current = open(released, encoding="utf-8").read()
+          if "\t1.0.14\t" not in "\n" + current:
+              with open(released, "a", encoding="utf-8") as f:
+                  f.write(f"{build}\t{version}\t{now[:10]}\t{sha}\t{notes}\n")
+          print(f"Prepared Android {version} ({build}), SHA-256 {sha}, bytes {len(raw)}")
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/app/Starty.apk site/app/starty-1.0.14.apk site/app/latest.json site/app/version.json tools/released.tsv
+          git commit -m "Выпуск Android 1.0.14 (15): исправлены повторы и свайп"
+          git push origin HEAD:main
+          gh workflow run update.yml --ref main
