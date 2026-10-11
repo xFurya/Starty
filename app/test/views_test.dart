@@ -203,7 +203,52 @@ void main() {
     expect(x('AIN1').ours, isTrue);
     expect(x('BLR').ours, isTrue);
     expect(PlacingName.codeOf(x('AIN'), true), 'AIN');
-    expect(PlacingName.codeOf(x('AIN2'), true), '');
+    expect(PlacingName.codeOf(x('RUS'), true), 'RUS');
+    expect(PlacingName.codeOf(x('AIN2'), true), 'RUS');
+    expect(PlacingName.codeOf(x('BLR'), true), 'BLR');
+    expect(PlacingName.codeOf(x('AIN1'), true), 'BLR');
+  });
+
+  test('подписи групп участников различают россиян и белорусов', () {
+    Skater sk(String nation) => Skater('A B', null, null, null, null, null, nation);
+    expect(oursLabel([sk('RUS')]), 'Россияне');
+    expect(oursLabel([sk('AIN2')]), 'Россияне');
+    expect(oursLabel([sk('BLR')]), 'Белорусы');
+    expect(oursLabel([sk('AIN1')]), 'Белорусы');
+    expect(oursLabel([sk('RUS'), sk('BLR')]), 'Россияне и белорусы');
+    expect(oursLabel([sk('RUS'), sk('BLR')], exitTimes: true), 'Россияне и белорусы · выход на лёд');
+    expect(oursLabel([sk('МОС')]), 'Россияне');
+  });
+
+  testWidgets('карточка закрывается намеренным свайпом, а вся поверхность движется вместе', (t) async {
+    final s = stateWith(data);
+    final st = data.starts.first;
+    await t.pumpWidget(app(
+      Builder(
+        builder: (c) => Center(
+          child: TextButton(onPressed: () => showStart(c, st, s), child: const Text('open sheet')),
+        ),
+      ),
+      Brightness.light,
+      1,
+    ));
+    await t.tap(find.text('open sheet'));
+    await t.pumpAndSettle();
+    final sheet = find.byType(SheetScroll);
+    expect(sheet, findsOneWidget);
+
+    // Короткое движение не должно закрывать окно.
+    var rect = t.getRect(sheet);
+    await t.dragFrom(Offset(rect.center.dx, rect.top + 24), const Offset(0, 48));
+    await t.pumpAndSettle();
+    expect(sheet, findsOneWidget);
+
+    // Длинный вертикальный жест от верхней точки — закрывает.
+    rect = t.getRect(sheet);
+    await t.dragFrom(Offset(rect.center.dx, rect.top + 24), const Offset(0, 150));
+    await t.pumpAndSettle();
+    expect(sheet, findsNothing);
+    expect(t.takeException(), isNull);
   });
 
   test('турниры без расписания: разбор, дни, лента', () {
