@@ -431,7 +431,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 f = rs.total_facts(c["results_url"] + "#total", cat_rows, first_places, kind=kind,
                                    level=level, intl=intl, season=rs.season_of(CFG), to_ru=names.to_ru)
                 if f:
-                    ev["facts"] = rs.unique_facts((ev.get("facts") or []) + f)
+                    ev["facts"] = (ev.get("facts") or []) + f
             ev["desc"] = describe(ev)
     return events
 
