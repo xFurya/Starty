@@ -2,7 +2,6 @@
 import 'dart:math' as math;
 
 import 'package:flutter/cupertino.dart' show CupertinoIcons;
-import 'package:flutter/gestures.dart' show PointerDeviceKind;
 import 'package:flutter/material.dart';
 
 import 'data.dart';
@@ -511,148 +510,78 @@ class SheetScroll extends StatefulWidget {
 class _SheetScrollState extends State<SheetScroll> {
   bool scrolled = false;
 
-  /// Закрываем только осознанный свайп вниз от верхней позиции листа.
-  /// Короткие жесты, прокрутка вверх и горизонтальные движения не закрывают окно.
+  /// Закрытие свайпом вниз: тянуть надо с самого верха и достаточно далеко — случайные
+  /// касания и обычная прокрутка лист не закрывают.
   static const _closeAt = 120.0;
-  final ScrollController _scrollController = ScrollController();
-  int? _activePointer;
-  Offset? _start;
-  bool _eligible = false;
-  bool _dragging = false;
-  bool _closing = false;
+  bool _fromTop = false;
   double _pull = 0;
-
-  bool get _atTop => _scrollController.hasClients && _scrollController.position.pixels <= 0.5;
-
-  void _onPointerDown(PointerDownEvent event) {
-    if (_activePointer != null || _closing) return;
-    if (event.kind != PointerDeviceKind.touch && event.kind != PointerDeviceKind.stylus) return;
-    _activePointer = event.pointer;
-    _start = event.position;
-    _eligible = _atTop;
-    _pull = 0;
-    _dragging = false;
-  }
-
-  void _onPointerMove(PointerMoveEvent event) {
-    if (_activePointer != event.pointer || !_eligible || _start == null) return;
-    final dx = event.position.dx - _start!.dx;
-    final dy = event.position.dy - _start!.dy;
-
-    // Как только движение явно направлено вверх или вбок, это обычная прокрутка/жест.
-    if (dy < -8 || (dx.abs() >= 14 && dx.abs() > dy.abs())) {
-      _eligible = false;
-      if (_pull != 0 || _dragging) {
-        setState(() {
-          _pull = 0;
-          _dragging = false;
-        });
-      }
-      return;
-    }
-    if (!_atTop) {
-      _eligible = false;
-      return;
-    }
-    if (dy >= 8 && dy > dx.abs() * 1.25) {
-      final next = dy.clamp(0.0, 260.0).toDouble();
-      if ((next - _pull).abs() > 0.5 || !_dragging) {
-        setState(() {
-          _pull = next;
-          _dragging = true;
-        });
-      }
-    }
-  }
-
-  void _finishPointer(int pointer, {required bool cancelled}) {
-    if (_activePointer != pointer) return;
-    final close = !cancelled && _eligible && _atTop && _pull >= _closeAt && !_closing;
-    _activePointer = null;
-    _start = null;
-    _eligible = false;
-
-    if (close) {
-      _closing = true;
-      _dragging = false;
-      Navigator.of(context).maybePop().then((closed) {
-        if (!closed && mounted) setState(() => _closing = false);
-      });
-      return;
-    }
-    if (_pull != 0 || _dragging) {
-      setState(() {
-        _pull = 0;
-        _dragging = false;
-      });
-    } else {
-      _dragging = false;
-    }
-  }
+  bool _dragging = false;
 
   bool _onScroll(ScrollNotification n) {
+    final s = n.metrics.pixels > 2;
+    if (s != scrolled) setState(() => scrolled = s);
     if (n.depth != 0) return false;
-    final next = n.metrics.pixels > 2;
-    if (next != scrolled) setState(() => scrolled = next);
+    if (n is ScrollStartNotification) {
+      _fromTop = n.metrics.pixels <= 0.5;
+      _dragging = n.dragDetails != null;
+      _pull = 0;
+    } else if (n is OverscrollNotification && n.overscroll < 0 && _fromTop && n.dragDetails != null) {
+      setState(() => _pull = (_pull - n.overscroll).clamp(0.0, 260.0));
+    } else if (n is ScrollUpdateNotification && n.metrics.pixels < 0 && _fromTop && n.dragDetails != null) {
+      // iOS: прокрутка «пружинит» ниже верха
+      setState(() => _pull = (-n.metrics.pixels).clamp(0.0, 260.0));
+    } else if (n is ScrollEndNotification) {
+      final close = _fromTop && _pull >= _closeAt;
+      _fromTop = false;
+      _dragging = false;
+      if (close) {
+        Navigator.of(context).maybePop();
+      } else if (_pull != 0) {
+        setState(() => _pull = 0);
+      }
+    }
     return false;
-  }
-
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    return Listener(
-      behavior: HitTestBehavior.opaque,
-      onPointerDown: _onPointerDown,
-      onPointerMove: _onPointerMove,
-      onPointerUp: (event) => _finishPointer(event.pointer, cancelled: false),
-      onPointerCancel: (event) => _finishPointer(event.pointer, cancelled: true),
-      child: TweenAnimationBuilder<double>(
-        tween: Tween(end: _pull),
-        duration: _dragging ? Duration.zero : const Duration(milliseconds: 180),
-        curve: Curves.easeOutCubic,
-        // Лист следует за пальцем, но медленнее: видно, что он поддаётся.
-        builder: (context, v, child) => Transform.translate(offset: Offset(0, v * .5), child: child),
-        child: Stack(
-          children: [
-            NotificationListener<ScrollNotification>(
-              onNotification: _onScroll,
-              child: SingleChildScrollView(
-                controller: _scrollController,
-                physics: const AlwaysScrollableScrollPhysics(),
-                child: widget.child,
-              ),
-            ),
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: IgnorePointer(
-                child: AnimatedOpacity(
-                  duration: const Duration(milliseconds: 150),
-                  opacity: scrolled ? 1 : 0,
-                  child: Container(
-                    height: 30,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        stops: const [.6, 1],
-                        colors: [p.sheet, p.sheet.withValues(alpha: 0)],
-                      ),
-                    ),
+    return TweenAnimationBuilder<double>(
+      tween: Tween(end: _pull),
+      duration: _dragging ? Duration.zero : const Duration(milliseconds: 180),
+      curve: Curves.easeOutCubic,
+      // лист следует за пальцем, но медленнее: видно, что он поддаётся, и сколько осталось
+      builder: (context, v, child) => Transform.translate(offset: Offset(0, v * .5), child: child),
+      child: Stack(
+      children: [
+        NotificationListener<ScrollNotification>(
+          onNotification: _onScroll,
+          child: SingleChildScrollView(physics: const AlwaysScrollableScrollPhysics(), child: widget.child),
+        ),
+        Positioned(
+          top: 0,
+          left: 0,
+          right: 0,
+          child: IgnorePointer(
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 150),
+              opacity: scrolled ? 1 : 0,
+              child: Container(
+                height: 30,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    stops: const [.6, 1],
+                    colors: [p.sheet, p.sheet.withValues(alpha: 0)],
                   ),
                 ),
               ),
             ),
-            const Positioned(top: 0, left: 0, right: 0, child: SheetHandle()),
-          ],
+          ),
         ),
+        const Positioned(top: 0, left: 0, right: 0, child: SheetHandle()),
+      ],
       ),
     );
   }
