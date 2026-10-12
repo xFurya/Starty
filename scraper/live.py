@@ -64,10 +64,7 @@ def refresh(ev, idx, names, now):
     done = bool(seg.get("final") or not idx.get("final_marks"))
     to_ru = lambda n: live.get("names", {}).get(n) or names.to_ru(n)
     place = {nm.key(to_ru(r["name"])): r["place"] for r in results}
-    nation = {nm.key(to_ru(r["name"])): r.get("nation", "") for r in results}
     for o in ev["ours"]:
-        if nation.get(nm.key(o["name"])):
-            o["nation"] = nation[nm.key(o["name"])]
         p = place.get(nm.key(o["name"]))
         if p:
             o["place"] = p

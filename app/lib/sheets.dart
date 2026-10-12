@@ -19,10 +19,19 @@ void showStart(BuildContext context, Start s, AppState state) {
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
-    enableDrag: true,
-    builder: (c) => ListenableBuilder(
-      listenable: state,
-      builder: (c, _) => _StartSheet(s: s, state: state),
+    enableDrag: false,
+    builder: (c) => DraggableScrollableSheet(
+      expand: false,
+      initialChildSize: .92,
+      minChildSize: .75,
+      maxChildSize: .92,
+      snap: true,
+      snapSizes: const [.92],
+      shouldCloseOnMinExtent: true,
+      builder: (sheetContext, scrollController) => ListenableBuilder(
+        listenable: state,
+        builder: (c, _) => _StartSheet(s: s, state: state, scrollController: scrollController),
+      ),
     ),
   );
 }
@@ -30,7 +39,8 @@ void showStart(BuildContext context, Start s, AppState state) {
 class _StartSheet extends StatelessWidget {
   final Start s;
   final AppState state;
-  const _StartSheet({required this.s, required this.state});
+  final ScrollController scrollController;
+  const _StartSheet({required this.s, required this.state, required this.scrollController});
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +57,7 @@ class _StartSheet extends StatelessWidget {
     return ConstrainedBox(
       constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * .92),
       child: SheetScroll(
+        controller: scrollController,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -248,29 +259,27 @@ class _StartSheet extends StatelessWidget {
       _podium(context),
       if (s.total.isNotEmpty)
         _section(context, 'Итог турнира', _TotalPlate(list: s.total, data: state.data, intl: s.intl)),
-      for (final group in _groupOurSkaters(rest))
-        if (group.$2.isNotEmpty)
-          _section(
-            context,
-            group.$1,
-            Plate(
-              child: MeasuredLayout(
-                builder: (context, c) {
-                  final list = group.$2;
-                  final slot = list.any(isPair);
-                  final full = _oursFull(context, c.maxWidth, list, slot, (o) => _OurResult.right(context, o, s.seg));
-                  return Column(
-                    children: [
-                      for (var i = 0; i < list.length; i++) ...[
-                        if (i > 0) Hairline(indent: slot ? 92 : 70),
-                        _OurResult(o: list[i], seg: s.seg, data: state.data, slot: slot, full: full),
-                      ],
+      if (rest.isNotEmpty)
+        _section(
+          context,
+          oursLabel(s.ours),
+          Plate(
+            child: MeasuredLayout(
+              builder: (context, c) {
+                final slot = rest.any(isPair);
+                final full = _oursFull(context, c.maxWidth, rest, slot, (o) => _OurResult.right(context, o, s.seg));
+                return Column(
+                  children: [
+                    for (var i = 0; i < rest.length; i++) ...[
+                      if (i > 0) Hairline(indent: slot ? 92 : 70),
+                      _OurResult(o: rest[i], seg: s.seg, data: state.data, slot: slot, full: full),
                     ],
-                  );
-                },
-              ),
+                  ],
+                );
+              },
             ),
           ),
+        ),
     ];
   }
 
@@ -293,46 +302,29 @@ class _StartSheet extends StatelessWidget {
   List<Widget> _oursAhead(BuildContext context, DateTime t) {
     if (s.ours.isEmpty) return const [];
     return [
-      for (final group in _groupOurSkaters(s.ours))
-        if (group.$2.isNotEmpty)
-          _section(
-            context,
-            group.$2.any((o) => o.time != null) ? '${group.$1} · выход на лёд' : group.$1,
-            Plate(
-              child: MeasuredLayout(
-                builder: (context, c) {
-                  final list = group.$2;
-                  final slot = list.any(isPair);
-                  final full = _oursFull(context, c.maxWidth, list, slot, (o) => _OurAhead.right(context, o));
-                  return Column(
-                    children: [
-                      for (var i = 0; i < list.length; i++) ...[
-                        if (i > 0) Hairline(indent: slot ? 92 : 70),
-                        _OurAhead(o: list[i], s: s, state: state, t: t, slot: slot, full: full),
-                      ],
-                    ],
-                  );
-                },
-              ),
-            ),
+      _section(
+        context,
+        oursLabel(s.ours, exitTimes: s.ours.any((o) => o.time != null)),
+        Plate(
+          child: MeasuredLayout(
+            builder: (context, c) {
+              final slot = s.ours.any(isPair);
+              final full = _oursFull(context, c.maxWidth, s.ours, slot, (o) => _OurAhead.right(context, o));
+              return Column(
+                children: [
+                  for (var i = 0; i < s.ours.length; i++) ...[
+                    if (i > 0) Hairline(indent: slot ? 92 : 70),
+                    _OurAhead(o: s.ours[i], s: s, state: state, t: t, slot: slot, full: full),
+                  ],
+                ],
+              );
+            },
           ),
+        ),
+      ),
     ];
   }
 
-  /// Разделяем россиян и белорусов по стране из протокола, а не по имени.
-  static List<(String, List<Skater>)> _groupOurSkaters(List<Skater> skaters) {
-    final russia = <Skater>[];
-    final belarus = <Skater>[];
-    for (final skater in skaters) {
-      final nation = skater.nation.toUpperCase();
-      if (nation == 'BLR' || nation == 'AIN1') {
-        belarus.add(skater);
-      } else {
-        russia.add(skater);
-      }
-    }
-    return [('Россияне', russia), ('Белорусы', belarus)];
-  }
   /// Полные имена у всех наших — только если у каждого полное имя помещается рядом
   /// с фото и тем, что справа (место, время выхода); иначе у всех фамилии.
   static bool _oursFull(BuildContext context, double width, List<Skater> list, bool slot, double Function(Skater) right) {
@@ -995,7 +987,7 @@ void showFilters(BuildContext context, AppState state) {
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
-    enableDrag: true,
+    enableDrag: false,
     builder: (c) => _FilterSheet(state: state),
   );
 }
