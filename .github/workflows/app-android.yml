@@ -105,23 +105,23 @@ jobs:
           cp "$APK" site/app/Starty.apk
           cp "$APK" "site/app/starty-$VER.apk"
           python3 - "$VER" "$BUILD" "$NOTES" <<'PY'
-import datetime, hashlib, json, sys
-ver, build, notes = sys.argv[1], int(sys.argv[2]), sys.argv[3]
-apk = f"site/app/starty-{ver}.apk"
-raw = open(apk, "rb").read()
-now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-latest = {"version": ver, "code": build, "notes": notes, "at": now,
-          "android": {"file": f"starty-{ver}.apk", "size": len(raw),
-                      "sha256": hashlib.sha256(raw).hexdigest()}}
-json.dump(latest, open("site/app/latest.json", "w"), ensure_ascii=False, indent=1)
-v = json.load(open("site/app/version.json"))
-v["android"].update(version=ver, build=build, note="",
-                    url=f"https://xfurya.github.io/Starty/app/starty-{ver}.apk")
-json.dump(v, open("site/app/version.json", "w"), ensure_ascii=False, indent=1)
-with open("tools/released.tsv", "a") as f:
-    f.write(f"{build}\t{ver}\t{now[:10]}\t{latest['android']['sha256']}\t{notes}\n")
-print(f"выпуск {ver} ({build}): {len(raw)} байт, sha256 {latest['android']['sha256'][:12]}…")
-PY
+          import datetime, hashlib, json, sys
+          ver, build, notes = sys.argv[1], int(sys.argv[2]), sys.argv[3]
+          apk = f"site/app/starty-{ver}.apk"
+          raw = open(apk, "rb").read()
+          now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+          latest = {"version": ver, "code": build, "notes": notes, "at": now,
+                    "android": {"file": f"starty-{ver}.apk", "size": len(raw),
+                                "sha256": hashlib.sha256(raw).hexdigest()}}
+          json.dump(latest, open("site/app/latest.json", "w"), ensure_ascii=False, indent=1)
+          v = json.load(open("site/app/version.json"))
+          v["android"].update(version=ver, build=build, note="",
+                              url=f"https://xfurya.github.io/Starty/app/starty-{ver}.apk")
+          json.dump(v, open("site/app/version.json", "w"), ensure_ascii=False, indent=1)
+          with open("tools/released.tsv", "a") as f:
+              f.write(f"{build}\t{ver}\t{now[:10]}\t{latest['android']['sha256']}\t{notes}\n")
+          print(f"выпуск {ver} ({build}): {len(raw)} байт, sha256 {latest['android']['sha256'][:12]}…")
+          PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A site/app tools/released.tsv
