@@ -128,3 +128,5 @@ jobs:
           git commit -q -m "Android: сборка $(grep '^version:' app/pubspec.yaml | sed 's/version: //')" || exit 0
           for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 5; done
           gh workflow run update.yml --ref main
+          gh workflow run app-desktop.yml --ref main -f publish=true
+

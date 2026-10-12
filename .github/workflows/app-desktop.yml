@@ -6,6 +6,11 @@ name: Сборка Windows и macOS
 # если в latest.json уже есть записи windows и macos для этого номера — ничего не пересобирается.
 on:
   workflow_dispatch:
+    inputs:
+      publish:
+        description: 'true — выложить сборки как выпуск'
+        required: false
+        default: 'false'
   push:
     branches: [main]
     paths: ['app/**', '.github/workflows/app-desktop.yml', 'site/app/latest.json']
@@ -116,7 +121,7 @@ jobs:
 
   publish:
     needs: [prep, windows, macos]
-    if: github.event_name != 'workflow_dispatch'
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.publish == 'true')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
