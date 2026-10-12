@@ -300,8 +300,12 @@ class Schedule {
   /// Источники последнего сбора: «ФФККР» → ok / fail.
   final Map<String, String> sources;
 
-  /// Наши, за которыми следит сборщик: из них — поиск по спортсмену в фильтре ленты.
+  /// Наши, за которыми следит сборщик.
   final List<String> watchlist;
+
+  /// Все, кого видел сборщик (российские МС/КМС и участники международных турниров):
+  /// из них идёт поиск по спортсмену в фильтре.
+  final List<String> roster;
   Schedule(
     this.starts,
     this.generated,
@@ -311,6 +315,7 @@ class Schedule {
     this.upcoming = const [],
     this.sources = const {},
     this.watchlist = const [],
+    this.roster = const [],
   });
 
   String? photoOf(String name) {
@@ -335,6 +340,7 @@ class Schedule {
       upcoming: upcoming,
       sources: {for (final e in (j['sources'] as Map? ?? const {}).entries) '${e.key}': '${e.value}'},
       watchlist: List<String>.from(j['watchlist'] ?? const []),
+      roster: List<String>.from(j['roster'] ?? const []),
     );
   }
 
@@ -348,6 +354,7 @@ class Schedule {
     upcoming: upcoming,
     sources: sources,
     watchlist: watchlist,
+    roster: roster,
   );
 
   Start? byId(String id) {

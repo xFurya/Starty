@@ -26,6 +26,7 @@ class NotifyRules {
   final bool russian, intl;
   final bool night; // старты с 00:00 до 08:00 МСК
   final bool skaters; // отдельно — выход каждого нашего, когда время известно
+  final Set<String> athletes; // пусто — все, иначе — только старты этих спортсменов
 
   static const allKinds = ['women', 'men', 'pairs', 'dance'];
   static const allLevels = ['senior', 'junior'];
@@ -42,6 +43,7 @@ class NotifyRules {
     this.intl = true,
     this.night = true,
     this.skaters = false,
+    this.athletes = const {},
   });
 
   static String segOf(Start s) => s.seg == 'ПП' || s.seg == 'ПТ' ? 'free' : 'short';
@@ -54,6 +56,10 @@ class NotifyRules {
     if (!segs.contains(segOf(s))) return false;
     if (s.intl ? !intl : !russian) return false;
     if (!night && msk(s.t0).hour < 8) return false;
+    if (athletes.isNotEmpty) {
+      final have = {...s.athletes, ...s.ours.map((o) => o.name)};
+      if (!athletes.any((a) => have.any((h) => norm(h) == norm(a)))) return false;
+    }
     return true;
   }
 
@@ -76,6 +82,7 @@ class NotifyRules {
     bool? intl,
     bool? night,
     bool? skaters,
+    Set<String>? athletes,
   }) => NotifyRules(
     on: on ?? this.on,
     lead: lead ?? this.lead,
@@ -86,6 +93,7 @@ class NotifyRules {
     intl: intl ?? this.intl,
     night: night ?? this.night,
     skaters: skaters ?? this.skaters,
+    athletes: athletes ?? this.athletes,
   );
 
   String toJson() => jsonEncode({
@@ -98,6 +106,7 @@ class NotifyRules {
     'intl': intl,
     'night': night,
     'skaters': skaters,
+    'athletes': athletes.toList(),
   });
 
   static NotifyRules fromJson(String? s) {
@@ -117,6 +126,7 @@ class NotifyRules {
         intl: j['intl'] is bool ? j['intl'] : d.intl,
         night: j['night'] is bool ? j['night'] : d.night,
         skaters: j['skaters'] is bool ? j['skaters'] : d.skaters,
+        athletes: set('athletes', d.athletes),
       );
     } catch (_) {
       return d;

@@ -1075,7 +1075,7 @@ class _FilterSheetState extends State<_FilterSheet> {
       if (!s.pastAt(t)) tours.putIfAbsent(s.tid, () => s.tournament);
     }
     // кого искать: список сборщика, наши и заявленные на стартах впереди, заявки турниров без расписания
-    final all = <String>{...data.watchlist};
+    final all = <String>{...data.roster, ...data.watchlist};
     for (final s in data.starts) {
       if (s.pastAt(t)) continue;
       all.addAll(s.ours.map((o) => o.name));
@@ -1316,6 +1316,130 @@ class _CheckRow extends StatelessWidget {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+// ------------------------------------------------------------------ выбор спортсменов
+
+/// Выбор спортсменов из полного справочника сборщика: поиск по фамилии,
+/// сразу применяется через [onChanged]. Используется в настройках уведомлений.
+Future<void> pickAthletes(
+  BuildContext context,
+  List<String> roster,
+  Set<String> selected,
+  ValueChanged<Set<String>> onChanged,
+) {
+  return showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,
+    useSafeArea: true,
+    enableDrag: false,
+    builder: (c) => _AthletePicker(roster: roster, selected: selected, onChanged: onChanged),
+  );
+}
+
+class _AthletePicker extends StatefulWidget {
+  final List<String> roster;
+  final Set<String> selected;
+  final ValueChanged<Set<String>> onChanged;
+  const _AthletePicker({required this.roster, required this.selected, required this.onChanged});
+
+  @override
+  State<_AthletePicker> createState() => _AthletePickerState();
+}
+
+class _AthletePickerState extends State<_AthletePicker> {
+  late final Set<String> sel = {...widget.selected};
+  final _q = TextEditingController();
+  String q = '';
+
+  @override
+  void dispose() {
+    _q.dispose();
+    super.dispose();
+  }
+
+  void _toggle(String a) {
+    setState(() => sel.contains(a) ? sel.remove(a) : sel.add(a));
+    widget.onChanged({...sel});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final found = widget.roster.where((a) => norm(displayName(a)).contains(norm(q))).toList()..sort();
+    final shown = q.isEmpty ? ([...sel]..sort()) : found.take(30).toList();
+    return Padding(
+      padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
+      child: DraggableScrollableSheet(
+        expand: false,
+        initialChildSize: .9,
+        minChildSize: .4,
+        maxChildSize: .95,
+        builder: (c, scroll) => Column(
+          children: [
+            const SheetHandle(),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 4, 12, 0),
+              child: Row(
+                children: [
+                  Text('Спортсмены', style: display(p, 28)),
+                  const Spacer(),
+                  TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('Готово')),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 4, 20, 10),
+              child: TextField(
+                controller: _q,
+                style: TextStyle(fontSize: 15.5, color: p.ink),
+                textInputAction: TextInputAction.search,
+                decoration: InputDecoration(
+                  hintText: 'Фамилия',
+                  hintStyle: TextStyle(color: p.ink2),
+                  prefixIcon: Icon(CupertinoIcons.search, size: 19, color: p.ink2),
+                  filled: true,
+                  fillColor: p.plate,
+                  contentPadding: const EdgeInsets.symmetric(vertical: 14),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                    borderSide: BorderSide(color: p.control),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                    borderSide: BorderSide(color: p.accent, width: 1.4),
+                  ),
+                ),
+                onChanged: (v) => setState(() => q = v.trim()),
+              ),
+            ),
+            if (sel.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 4),
+                child: Text('Выбрано: ${sel.length}', style: TextStyle(fontSize: 13, color: p.ink2)),
+              ),
+            Expanded(
+              child: ListView(
+                controller: scroll,
+                padding: const EdgeInsets.fromLTRB(20, 4, 20, 20),
+                children: [
+                  for (final a in shown)
+                    _CheckRow(
+                      title: displayName(a),
+                      value: sel.contains(a),
+                      onTap: () => _toggle(a),
+                    ),
+                  if (shown.isEmpty) Text('Не найдено', style: TextStyle(color: p.ink2, fontSize: 15)),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -171,6 +171,18 @@ class SettingsView extends StatelessWidget {
                       child: TileGrid(tiles: segs, group: group),
                     ),
                     const Hairline(),
+                    _Row(
+                      icon: CupertinoIcons.person_2,
+                      title: r.athletes.isEmpty ? 'Спортсмены' : 'Спортсмены · ${r.athletes.length}',
+                      action: r.athletes.isEmpty ? 'Выбрать' : 'Изменить',
+                      onAction: () => pickAthletes(
+                        context,
+                        state.data?.roster ?? const [],
+                        r.athletes,
+                        (v) => set(r.copyWith(athletes: v)),
+                      ),
+                    ),
+                    const Hairline(),
                     _SwitchRow(
                       icon: CupertinoIcons.moon,
                       title: 'Ночные старты',

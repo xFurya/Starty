@@ -37,6 +37,21 @@ SITE = os.path.join(ROOT, "site")
 OUT_JSON = os.path.join(SITE, "data", "events.json")
 OUT_ICS = os.path.join(SITE, "calendar.ics")
 NAMES = os.path.join(ROOT, "data", "names.json")
+ROSTER = os.path.join(ROOT, "data", "roster.json")
+
+
+def load_roster():
+    """Все спортсмены, которых сборщик когда-либо видел, — для фильтра по именам."""
+    try:
+        with open(ROSTER, encoding="utf-8") as f:
+            return {s for s in json.load(f) if s}
+    except Exception:
+        return set()
+
+
+def save_roster(roster):
+    with open(ROSTER, "w", encoding="utf-8") as f:
+        json.dump(sorted(roster), f, ensure_ascii=False, indent=0)
 PUBLIC_URL = os.environ.get("STARTY_URL", "")
 
 with open(os.path.join(os.path.dirname(__file__), "config.json"), encoding="utf-8") as f:
@@ -394,7 +409,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
             total = cat_total if SEG_ORDER[seg] == last_seg else None
             last = max(msk_times.values()) if msk_times else None
             end = estimate_end(start, seg, kind, len(people), last)
-            athletes = [names.to_ru(p["name"]) for p in people] if not intl else [o["name"] for o in ours]
+            athletes = sorted({names.to_ru(p["name"]) for p in people})
             ev = make_event(
                 tid=tid, tournament=tournament, kind=kind, level=level, seg=seg, mixed=mixed,
                 start=start, end=end, venue=venue, intl=intl, broadcast=broadcast,
@@ -789,6 +804,7 @@ def main():
     now = dt.datetime.now(MSK).replace(microsecond=0)
     prev = load_prev()
     names = nm.Names(NAMES, CFG.get("aliases"))
+    roster = load_roster()
     report = {"errors": [], "sources": {}}
     failed = set()
     upcoming = []
@@ -877,6 +893,17 @@ def main():
                 upcoming.append(u)
     upcoming.sort(key=lambda u: u["start"])
 
+    # Справочник для фильтра по спортсменам копится между сборами: все, кого видел
+    # сборщик, — российские старты (МС/КМС) и участники международных турниров.
+    roster.update(names.ru.values())
+    roster.update(CFG["watchlist"])
+    for e in events:
+        roster.update(e.get("athletes", []))
+        roster.update(o["name"] for o in e.get("ours", []))
+        roster.update(p["name"] for p in e.get("podium", []))
+        roster.update(p["name"] for p in e.get("total", []))
+        roster.update((e.get("live") or {}).get("names", {}).values())
+
     all_ok = all(s == "ok" for s in report["sources"].values()) and not report["errors"]
     data = {
         "generated": now.isoformat(),
@@ -886,6 +913,7 @@ def main():
         "events": events,
         "upcoming": upcoming,
         "watchlist": CFG["watchlist"],
+        "roster": sorted(roster),
         "photos": collect_photos(events, upcoming, names, photos, prev.get("photos") or {}),
     }
     # Если сбор вернул заметно меньше будущих стартов, чем было, — это поломка
@@ -899,6 +927,7 @@ def main():
         data = prev
     else:
         names.save()
+        save_roster(roster)
         rs.save()
 
     write_site(data)
