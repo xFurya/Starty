@@ -151,7 +151,7 @@ bool tight(BuildContext context) =>
     MediaQuery.sizeOf(context).width < 360 || MediaQuery.textScalerOf(context).scale(10) > 11;
 
 /// Код страны на экране: нейтральный статус — «AIN».
-String nationCode(String n) => n.startsWith('AIN') ? 'AIN' : n;
+String nationCode(String n) => n == 'AIN1' ? 'BLR' : n == 'AIN2' ? 'RUS' : n;
 
 /// Неразрывный пробел: «1 ч», «в 17:30» не разрываются.
 const nb = '\u00A0';
