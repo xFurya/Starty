@@ -1040,7 +1040,7 @@ class PlacingName extends StatelessWidget {
 
   /// Код у имени: у иностранцев на международных — страна, на российских — регион.
   static String codeOf(Placing x, bool intl, {bool region = true}) {
-    if (x.nation.isEmpty || (intl && x.ours)) return '';
+    if (x.nation.isEmpty || !intl) return '';
     return intl ? nationCode(x.nation) : (region ? x.nation : '');
   }
 
