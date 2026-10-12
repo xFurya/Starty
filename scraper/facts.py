@@ -234,16 +234,17 @@ def lead_facts(rows, intl, who_key):
     return out
 
 
-def place_facts(seg_places, final_rows, intl, who_key, margin_min):
+def place_facts(seg_places, final_rows, intl, who_key, margin_min, first_seg):
     """По итогу вида: взлёт после первого сегмента, россияне и белорусы впереди, большой отрыв.
-    seg_places — {ключ имени: место после первого сегмента}; final_rows — итог по местам."""
+    seg_places — {ключ имени: место после первого сегмента}; final_rows — итог по местам;
+    first_seg — название первого сегмента в родительном падеже («короткой программы», «ритм-танца»)."""
     out = []
     rows = sorted(final_rows, key=lambda r: r["place"])
     top = rows[:3]
     for r in top:
         first = seg_places.get(_key(r["name"]))
         if first and first - r["place"] >= 3:
-            out.append((r["name"], "place", f"После первого сегмента — {first}-е место, в итоге — {r['place']}-е"))
+            out.append((r["name"], "place", f"После {first_seg} — {first}-е место, в итоге — {r['place']}-е место"))
     out += lead_facts(rows, intl, who_key)
     if len(top) >= 2:
         try:

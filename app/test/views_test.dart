@@ -243,9 +243,15 @@ void main() {
     await t.pumpAndSettle();
     expect(sheet, findsOneWidget);
 
-    // Длинный вертикальный жест от верхней точки — закрывает.
+    // Длинный вертикальный жест от верхней точки: пока палец не отпущен — окно
+    // ещё на месте, закрывается только после отпускания.
     rect = t.getRect(sheet);
-    await t.dragFrom(Offset(rect.center.dx, rect.top + 24), const Offset(0, 150));
+    final g = await t.startGesture(Offset(rect.center.dx, rect.top + 24));
+    await g.moveBy(const Offset(0, 40));
+    await g.moveBy(const Offset(0, 120));
+    await t.pump();
+    expect(sheet, findsOneWidget);
+    await g.up();
     await t.pumpAndSettle();
     expect(sheet, findsNothing);
     expect(t.takeException(), isNull);

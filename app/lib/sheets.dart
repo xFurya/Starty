@@ -1,4 +1,5 @@
 // Нижние листы: карточка старта (уведомление, пьедестал, итог, наши) и фильтр ленты.
+import 'dart:async' show scheduleMicrotask;
 import 'dart:math' as math;
 
 import 'package:flutter/cupertino.dart' show CupertinoIcons;
@@ -20,20 +21,71 @@ void showStart(BuildContext context, Start s, AppState state) {
     isScrollControlled: true,
     useSafeArea: true,
     enableDrag: false,
-    builder: (c) => DraggableScrollableSheet(
-      expand: false,
-      initialChildSize: .92,
-      minChildSize: .75,
-      maxChildSize: .92,
-      snap: true,
-      snapSizes: const [.92],
-      shouldCloseOnMinExtent: true,
-      builder: (sheetContext, scrollController) => ListenableBuilder(
-        listenable: state,
-        builder: (c, _) => _StartSheet(s: s, state: state, scrollController: scrollController),
-      ),
-    ),
+    builder: (c) => _StartSheetHost(s: s, state: state),
   );
+}
+
+// Лист закрывается только когда палец отпущен: если к этому моменту его дотянули
+// до нижней границы — закрываем, иначе плавно возвращаем наверх. Пока палец держится,
+// окно ходит за ним и не исчезает.
+class _StartSheetHost extends StatefulWidget {
+  final Start s;
+  final AppState state;
+  const _StartSheetHost({required this.s, required this.state});
+
+  @override
+  State<_StartSheetHost> createState() => _StartSheetHostState();
+}
+
+class _StartSheetHostState extends State<_StartSheetHost> {
+  static const _top = .92;
+  static const _min = .75;
+  final _sheet = DraggableScrollableController();
+
+  // Решение принимаем после окончания жеста (в микрозадаче), а не во время движения.
+  void _settle() {
+    if (!mounted || !_sheet.isAttached) return;
+    if (_sheet.size <= _min + 0.0001) {
+      Navigator.of(context).pop();
+    } else if (_sheet.size < _top - 0.0001) {
+      _sheet.animateTo(
+        _top,
+        duration: const Duration(milliseconds: 220),
+        curve: Curves.easeOutCubic,
+      );
+    }
+  }
+
+  @override
+  void dispose() {
+    _sheet.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Listener(
+      onPointerUp: (_) => scheduleMicrotask(_settle),
+      onPointerCancel: (_) => scheduleMicrotask(_settle),
+      child: DraggableScrollableSheet(
+        controller: _sheet,
+        expand: false,
+        initialChildSize: _top,
+        minChildSize: _min,
+        maxChildSize: _top,
+        snap: false,
+        shouldCloseOnMinExtent: false,
+        builder: (sheetContext, scrollController) => ListenableBuilder(
+          listenable: widget.state,
+          builder: (c, _) => _StartSheet(
+            s: widget.s,
+            state: widget.state,
+            scrollController: scrollController,
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class _StartSheet extends StatelessWidget {

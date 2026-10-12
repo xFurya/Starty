@@ -16,7 +16,7 @@ FACTS = os.path.join(ROOT, "data", "facts.json")
 _store = None
 
 # версия правил: при смене всё примечательное считается заново
-VERSION = "4"
+VERSION = "5"
 
 
 def _load():
@@ -147,6 +147,7 @@ def _total(rows, first_places, kind, level, intl, season, to_ru):
             out.append({"who": to_ru(r["name"]), "text": text, "kind": k})
     firsts = {fx._key(n): p for n, p in first_places.items()}
     margin = 8 if kind == "dance" else 15
-    for name, k, text in fx.place_facts(firsts, top, intl, lambda r: side(r["nation"]), margin):
+    first_seg = "ритм-танца" if kind == "dance" else "короткой программы"
+    for name, k, text in fx.place_facts(firsts, top, intl, lambda r: side(r["nation"]), margin, first_seg):
         out.append({"who": to_ru(name) if name else "", "text": text, "kind": k})
     return unique_facts(out)
