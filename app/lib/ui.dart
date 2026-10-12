@@ -510,85 +510,7 @@ class SheetScroll extends StatefulWidget {
 
 class _SheetScrollState extends State<SheetScroll> {
   bool scrolled = false;
-
-  /// Закрываем только осознанный свайп вниз от верхней позиции листа.
-  /// Короткие жесты, прокрутка вверх и горизонтальные движения не закрывают окно.
-  static const _closeAt = 120.0;
   final ScrollController _scrollController = ScrollController();
-  int? _activePointer;
-  Offset? _start;
-  bool _eligible = false;
-  bool _dragging = false;
-  bool _closing = false;
-  double _pull = 0;
-
-  bool get _atTop => _scrollController.hasClients && _scrollController.position.pixels <= 0.5;
-
-  void _onPointerDown(PointerDownEvent event) {
-    if (_activePointer != null || _closing) return;
-    if (event.kind != PointerDeviceKind.touch && event.kind != PointerDeviceKind.stylus) return;
-    _activePointer = event.pointer;
-    _start = event.position;
-    _eligible = _atTop;
-    _pull = 0;
-    _dragging = false;
-  }
-
-  void _onPointerMove(PointerMoveEvent event) {
-    if (_activePointer != event.pointer || !_eligible || _start == null) return;
-    final dx = event.position.dx - _start!.dx;
-    final dy = event.position.dy - _start!.dy;
-
-    // Как только движение явно направлено вверх или вбок, это обычная прокрутка/жест.
-    if (dy < -8 || (dx.abs() >= 14 && dx.abs() > dy.abs())) {
-      _eligible = false;
-      if (_pull != 0 || _dragging) {
-        setState(() {
-          _pull = 0;
-          _dragging = false;
-        });
-      }
-      return;
-    }
-    if (!_atTop) {
-      _eligible = false;
-      return;
-    }
-    if (dy >= 8 && dy > dx.abs() * 1.25) {
-      final next = dy.clamp(0.0, 260.0).toDouble();
-      if ((next - _pull).abs() > 0.5 || !_dragging) {
-        setState(() {
-          _pull = next;
-          _dragging = true;
-        });
-      }
-    }
-  }
-
-  void _finishPointer(int pointer, {required bool cancelled}) {
-    if (_activePointer != pointer) return;
-    final close = !cancelled && _eligible && _atTop && _pull >= _closeAt && !_closing;
-    _activePointer = null;
-    _start = null;
-    _eligible = false;
-
-    if (close) {
-      _closing = true;
-      _dragging = false;
-      Navigator.of(context).maybePop().then((closed) {
-        if (!closed && mounted) setState(() => _closing = false);
-      });
-      return;
-    }
-    if (_pull != 0 || _dragging) {
-      setState(() {
-        _pull = 0;
-        _dragging = false;
-      });
-    } else {
-      _dragging = false;
-    }
-  }
 
   bool _onScroll(ScrollNotification n) {
     if (n.depth != 0) return false;
@@ -606,54 +528,40 @@ class _SheetScrollState extends State<SheetScroll> {
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    return Listener(
-      behavior: HitTestBehavior.opaque,
-      onPointerDown: _onPointerDown,
-      onPointerMove: _onPointerMove,
-      onPointerUp: (event) => _finishPointer(event.pointer, cancelled: false),
-      onPointerCancel: (event) => _finishPointer(event.pointer, cancelled: true),
-      child: TweenAnimationBuilder<double>(
-        tween: Tween(end: _pull),
-        duration: _dragging ? Duration.zero : const Duration(milliseconds: 180),
-        curve: Curves.easeOutCubic,
-        // Лист следует за пальцем, но медленнее: видно, что он поддаётся.
-        builder: (context, v, child) => Transform.translate(offset: Offset(0, v * .5), child: child),
-        child: Stack(
-          children: [
-            NotificationListener<ScrollNotification>(
-              onNotification: _onScroll,
-              child: SingleChildScrollView(
-                controller: _scrollController,
-                physics: const AlwaysScrollableScrollPhysics(),
-                child: widget.child,
-              ),
-            ),
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: IgnorePointer(
-                child: AnimatedOpacity(
-                  duration: const Duration(milliseconds: 150),
-                  opacity: scrolled ? 1 : 0,
-                  child: Container(
-                    height: 30,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        stops: const [.6, 1],
-                        colors: [p.sheet, p.sheet.withValues(alpha: 0)],
-                      ),
-                    ),
+    return Stack(
+      children: [
+        NotificationListener<ScrollNotification>(
+          onNotification: _onScroll,
+          child: SingleChildScrollView(
+            controller: _scrollController,
+            physics: const ClampingScrollPhysics(),
+            child: widget.child,
+          ),
+        ),
+        Positioned(
+          top: 0,
+          left: 0,
+          right: 0,
+          child: IgnorePointer(
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 150),
+              opacity: scrolled ? 1 : 0,
+              child: Container(
+                height: 30,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    stops: const [.6, 1],
+                    colors: [p.sheet, p.sheet.withValues(alpha: 0)],
                   ),
                 ),
               ),
             ),
-            const Positioned(top: 0, left: 0, right: 0, child: SheetHandle()),
-          ],
+          ),
         ),
-      ),
+        const Positioned(top: 0, left: 0, right: 0, child: SheetHandle()),
+      ],
     );
   }
 }
