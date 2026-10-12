@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-12T06:42:57+03:00",
- "checked": "2026-10-12T06:42:57+03:00",
+ "generated": "2026-10-12T06:47:35+03:00",
+ "checked": "2026-10-12T06:47:35+03:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -24,6 +24,7 @@
    "ours": [
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
+     "nation": "AIN2",
      "no": 1,
      "warmup": null,
      "place": 1
@@ -90,6 +91,7 @@
    "ours": [
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
+     "nation": "AIN2",
      "no": 11,
      "warmup": null,
      "place": 1,
@@ -186,12 +188,14 @@
    "ours": [
     {
      "name": "Таисия Гусева / Даниил Овчинников",
+     "nation": "AIN2",
      "no": 1,
      "warmup": null,
      "place": 1
     },
     {
      "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "AIN2",
      "no": 10,
      "warmup": null,
      "place": 2
@@ -265,6 +269,7 @@
    "ours": [
     {
      "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "AIN2",
      "no": 14,
      "warmup": null,
      "place": 1,
@@ -272,6 +277,7 @@
     },
     {
      "name": "Таисия Гусева / Даниил Овчинников",
+     "nation": "AIN2",
      "no": 15,
      "warmup": null,
      "place": 2,
@@ -371,6 +377,7 @@
    "ours": [
     {
      "name": "Матвей Ветлугин",
+     "nation": "AIN2",
      "no": 2,
      "warmup": null,
      "place": 2
@@ -436,6 +443,7 @@
    "ours": [
     {
      "name": "Матвей Ветлугин",
+     "nation": "AIN2",
      "no": 9,
      "warmup": null,
      "place": 2,
@@ -855,12 +863,14 @@
    "ours": [
     {
      "name": "Виктория Стрельцова",
+     "nation": "МОС",
      "no": 5,
      "warmup": null,
      "place": 1
     },
     {
      "name": "Софья Смагина",
+     "nation": "МОС",
      "no": 14,
      "warmup": null,
      "place": 3
@@ -1045,6 +1055,7 @@
    "ours": [
     {
      "name": "Софья Смагина",
+     "nation": "МОС",
      "no": 16,
      "warmup": null,
      "place": 4,
@@ -1052,6 +1063,7 @@
     },
     {
      "name": "Виктория Стрельцова",
+     "nation": "МОС",
      "no": 18,
      "warmup": null,
      "place": 2,
@@ -1327,18 +1339,21 @@
    "ours": [
     {
      "name": "Аделия Петросян",
+     "nation": "AIN2",
      "no": 7,
      "warmup": null,
      "place": 4
     },
     {
      "name": "Viktoriia Safonova",
+     "nation": "AIN1",
      "no": 8,
      "warmup": null,
      "place": 6
     },
     {
      "name": "Анна Фролова",
+     "nation": "AIN2",
      "no": 11,
      "warmup": null,
      "place": 2
@@ -1410,30 +1425,35 @@
    "ours": [
     {
      "name": "Viktoryia Plaskonnaya / Uladzislau Sytsik",
+     "nation": "AIN1",
      "no": 2,
      "warmup": null,
      "place": 16
     },
     {
      "name": "Екатерина Рыбакова / Иван Махноносов",
+     "nation": "AIN2",
      "no": 3,
      "warmup": null,
      "place": 17
     },
     {
      "name": "Елизавета Пасечник / Дарио Чиризано",
+     "nation": "AIN2",
      "no": 6,
      "warmup": null,
      "place": 2
     },
     {
      "name": "Ekaterina Andreeva / Dzmitryi Blinou",
+     "nation": "AIN1",
      "no": 8,
      "warmup": null,
      "place": 4
     },
     {
      "name": "Елизавета Шичина / Павел Дрозд",
+     "nation": "AIN2",
      "no": 17,
      "warmup": null,
      "place": 6
@@ -1511,24 +1531,28 @@
    "ours": [
     {
      "name": "Alex Labovich",
+     "nation": "AIN1",
      "no": 1,
      "warmup": null,
      "place": 10
     },
     {
      "name": "Николай Угожаев",
+     "nation": "AIN2",
      "no": 2,
      "warmup": null,
      "place": 3
     },
     {
      "name": "Матвей Ветлугин",
+     "nation": "AIN2",
      "no": 3,
      "warmup": null,
      "place": 4
     },
     {
      "name": "Vasil Barakhouski",
+     "nation": "AIN1",
      "no": 9,
      "warmup": null,
      "place": 8
@@ -1599,18 +1623,21 @@
    "ours": [
     {
      "name": "Анастасия Мухортова / Дмитрий Евгеньев",
+     "nation": "AIN2",
      "no": 3,
      "warmup": null,
      "place": 4
     },
     {
      "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "nation": "AIN2",
      "no": 4,
      "warmup": null,
      "place": 2
     },
     {
      "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "AIN2",
      "no": 6,
      "warmup": null,
      "place": 3
@@ -1675,6 +1702,7 @@
    "ours": [
     {
      "name": "Екатерина Рыбакова / Иван Махноносов",
+     "nation": "AIN2",
      "no": 2,
      "warmup": null,
      "place": 9,
@@ -1682,6 +1710,7 @@
     },
     {
      "name": "Viktoryia Plaskonnaya / Uladzislau Sytsik",
+     "nation": "AIN1",
      "no": 3,
      "warmup": null,
      "place": 17,
@@ -1689,6 +1718,7 @@
     },
     {
      "name": "Елизавета Шичина / Павел Дрозд",
+     "nation": "AIN2",
      "no": 13,
      "warmup": null,
      "place": 8,
@@ -1696,6 +1726,7 @@
     },
     {
      "name": "Ekaterina Andreeva / Dzmitryi Blinou",
+     "nation": "AIN1",
      "no": 15,
      "warmup": null,
      "place": 4,
@@ -1703,6 +1734,7 @@
     },
     {
      "name": "Елизавета Пасечник / Дарио Чиризано",
+     "nation": "AIN2",
      "no": 17,
      "warmup": null,
      "place": 2,
@@ -1808,6 +1840,7 @@
    "ours": [
     {
      "name": "Alex Labovich",
+     "nation": "AIN1",
      "no": 3,
      "warmup": null,
      "place": 10,
@@ -1815,6 +1848,7 @@
     },
     {
      "name": "Vasil Barakhouski",
+     "nation": "AIN1",
      "no": 5,
      "warmup": null,
      "place": 7,
@@ -1822,6 +1856,7 @@
     },
     {
      "name": "Матвей Ветлугин",
+     "nation": "AIN2",
      "no": 9,
      "warmup": null,
      "place": 3,
@@ -1829,6 +1864,7 @@
     },
     {
      "name": "Николай Угожаев",
+     "nation": "AIN2",
      "no": 10,
      "warmup": null,
      "place": 2,
@@ -1927,6 +1963,7 @@
    "ours": [
     {
      "name": "Анастасия Мухортова / Дмитрий Евгеньев",
+     "nation": "AIN2",
      "no": 4,
      "warmup": null,
      "place": 4,
@@ -1934,6 +1971,7 @@
     },
     {
      "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "AIN2",
      "no": 5,
      "warmup": null,
      "place": 2,
@@ -1941,6 +1979,7 @@
     },
     {
      "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "nation": "AIN2",
      "no": 6,
      "warmup": null,
      "place": 3,
@@ -2026,6 +2065,7 @@
    "ours": [
     {
      "name": "Viktoriia Safonova",
+     "nation": "AIN1",
      "no": 9,
      "warmup": null,
      "place": 4,
@@ -2033,6 +2073,7 @@
     },
     {
      "name": "Аделия Петросян",
+     "nation": "AIN2",
      "no": 11,
      "warmup": null,
      "place": 1,
@@ -2040,6 +2081,7 @@
     },
     {
      "name": "Анна Фролова",
+     "nation": "AIN2",
      "no": 13,
      "warmup": null,
      "place": 3,
@@ -2213,12 +2255,14 @@
    "ours": [
     {
      "name": "Таисия Гусева / Даниил Овчинников",
+     "nation": "МОС",
      "no": 2,
      "warmup": null,
      "place": 1
     },
     {
      "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "МОС",
      "no": 6,
      "warmup": null,
      "place": 2
@@ -2386,6 +2430,7 @@
    "ours": [
     {
      "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "МОС",
      "no": 5,
      "warmup": null,
      "place": 2,
@@ -2393,6 +2438,7 @@
     },
     {
      "name": "Таисия Гусева / Даниил Овчинников",
+     "nation": "МОС",
      "no": 6,
      "warmup": null,
      "place": 1,
@@ -2489,24 +2535,28 @@
    "ours": [
     {
      "name": "София Сарновская",
+     "nation": "МОС",
      "no": 5,
      "warmup": null,
      "place": 4
     },
     {
      "name": "Софья Смагина",
+     "nation": "МОС",
      "no": 12,
      "warmup": null,
      "place": 3
     },
     {
      "name": "Анна Докукина",
+     "nation": "МОС",
      "no": 13,
      "warmup": null,
      "place": 2
     },
     {
      "name": "Екатерина Корчажникова",
+     "nation": "МОС",
      "no": 15,
      "warmup": null,
      "place": 1
@@ -2606,6 +2656,7 @@
    "ours": [
     {
      "name": "Алдар Самбуев",
+     "nation": "МОС",
      "no": 2,
      "warmup": null,
      "place": 3
@@ -2698,6 +2749,7 @@
    "ours": [
     {
      "name": "София Сарновская",
+     "nation": "МОС",
      "no": 15,
      "warmup": null,
      "place": 4,
@@ -2705,6 +2757,7 @@
     },
     {
      "name": "Софья Смагина",
+     "nation": "МОС",
      "no": 16,
      "warmup": null,
      "place": 1,
@@ -2712,6 +2765,7 @@
     },
     {
      "name": "Анна Докукина",
+     "nation": "МОС",
      "no": 17,
      "warmup": null,
      "place": 3,
@@ -2719,6 +2773,7 @@
     },
     {
      "name": "Екатерина Корчажникова",
+     "nation": "МОС",
      "no": 18,
      "warmup": null,
      "place": 2,
@@ -2854,6 +2909,7 @@
    "ours": [
     {
      "name": "Алдар Самбуев",
+     "nation": "МОС",
      "no": 16,
      "warmup": null,
      "place": 2,
@@ -2972,24 +3028,28 @@
    "ours": [
     {
      "name": "Арсений Федотов",
+     "nation": "AIN2",
      "no": 6,
      "warmup": null,
      "place": 1
     },
     {
      "name": "Александр Чмиль",
+     "nation": "AIN2",
      "no": 8,
      "warmup": null,
      "place": 2
     },
     {
      "name": "Глеб Ковтун",
+     "nation": "AIN2",
      "no": 10,
      "warmup": null,
      "place": 3
     },
     {
      "name": "Pavel Gavdis",
+     "nation": "AIN1",
      "no": 11,
      "warmup": null,
      "place": 6
@@ -3074,36 +3134,42 @@
    "ours": [
     {
      "name": "Алёна Принёва",
+     "nation": "AIN2",
      "no": 1,
      "warmup": null,
      "place": 2
     },
     {
      "name": "Varvara Stahovich",
+     "nation": "AIN1",
      "no": 16,
      "warmup": null,
      "place": 5
     },
     {
      "name": "Виктория Стрельцова",
+     "nation": "AIN2",
      "no": 18,
      "warmup": null,
      "place": 1
     },
     {
      "name": "Алиса Заикина",
+     "nation": "AIN2",
      "no": 20,
      "warmup": null,
      "place": 4
     },
     {
      "name": "Yaraslava Kniazeva",
+     "nation": "AIN1",
      "no": 23,
      "warmup": null,
      "place": 6
     },
     {
      "name": "Mariya Evtukhina",
+     "nation": "AIN1",
      "no": 25,
      "warmup": null,
      "place": 9
@@ -3217,24 +3283,28 @@
    "ours": [
     {
      "name": "Viktoriia Safonova",
+     "nation": "AIN1",
      "no": 3,
      "warmup": null,
      "place": 4
     },
     {
      "name": "Мария Захарова",
+     "nation": "AIN2",
      "no": 4,
      "warmup": null,
      "place": 8
     },
     {
      "name": "Александра Трусова",
+     "nation": "AIN2",
      "no": 14,
      "warmup": null,
      "place": 1
     },
     {
      "name": "Дина Хуснутдинова",
+     "nation": "AIN2",
      "no": 16,
      "warmup": null,
      "place": 5
@@ -3339,36 +3409,42 @@
    "ours": [
     {
      "name": "Владислав Дикиджи",
+     "nation": "AIN2",
      "no": 3,
      "warmup": null,
      "place": 1
     },
     {
      "name": "Heorhi Kazlouski",
+     "nation": "AIN1",
      "no": 4,
      "warmup": null,
      "place": 6
     },
     {
      "name": "Alex Labovich",
+     "nation": "AIN1",
      "no": 6,
      "warmup": null,
      "place": 9
     },
     {
      "name": "Vasil Barakhouski",
+     "nation": "AIN1",
      "no": 7,
      "warmup": null,
      "place": 4
     },
     {
      "name": "Пётр Гуменник",
+     "nation": "AIN2",
      "no": 8,
      "warmup": null,
      "place": 3
     },
     {
      "name": "Глеб Лутфуллин",
+     "nation": "AIN2",
      "no": 9,
      "warmup": null,
      "place": 2
@@ -3471,12 +3547,14 @@
    "ours": [
     {
      "name": "Дарья Дрожжина / Иван Тельнов",
+     "nation": "AIN2",
      "no": 3,
      "warmup": null,
      "place": 2
     },
     {
      "name": "Мария Фефелова / Артём Валов",
+     "nation": "AIN2",
      "no": 4,
      "warmup": null,
      "place": 1
@@ -3545,6 +3623,7 @@
    "ours": [
     {
      "name": "Алиса Заикина",
+     "nation": "AIN2",
      "no": 23,
      "warmup": 5,
      "place": 1,
@@ -3553,6 +3632,7 @@
     },
     {
      "name": "Алёна Принёва",
+     "nation": "AIN2",
      "no": 25,
      "warmup": 5,
      "place": 3,
@@ -3561,6 +3641,7 @@
     },
     {
      "name": "Виктория Стрельцова",
+     "nation": "AIN2",
      "no": 26,
      "warmup": 5,
      "place": 4,
@@ -3569,6 +3650,7 @@
     },
     {
      "name": "Mariya Evtukhina",
+     "nation": "AIN1",
      "no": 18,
      "warmup": null,
      "place": 6,
@@ -3576,6 +3658,7 @@
     },
     {
      "name": "Yaraslava Kniazeva",
+     "nation": "AIN1",
      "no": 21,
      "warmup": null,
      "place": 5,
@@ -3583,6 +3666,7 @@
     },
     {
      "name": "Varvara Stahovich",
+     "nation": "AIN1",
      "no": 22,
      "warmup": null,
      "place": 2,
@@ -3732,6 +3816,7 @@
    "ours": [
     {
      "name": "Дарья Дрожжина / Иван Тельнов",
+     "nation": "AIN2",
      "no": 4,
      "warmup": 1,
      "place": 2,
@@ -3740,6 +3825,7 @@
     },
     {
      "name": "Мария Фефелова / Артём Валов",
+     "nation": "AIN2",
      "no": 5,
      "warmup": 1,
      "place": 1,
@@ -3830,6 +3916,7 @@
    "ours": [
     {
      "name": "Василиса Кагановская / Максим Некрасов",
+     "nation": "AIN2",
      "no": 1,
      "warmup": 1,
      "place": 3,
@@ -3837,6 +3924,7 @@
     },
     {
      "name": "Анна Щербакова / Егор Гончаров",
+     "nation": "AIN2",
      "no": 3,
      "warmup": 1,
      "place": 6,
@@ -3844,6 +3932,7 @@
     },
     {
      "name": "Ирина Хавронина / Девид Нарижный",
+     "nation": "AIN2",
      "no": 10,
      "warmup": 3,
      "place": 4,
@@ -3851,12 +3940,14 @@
     },
     {
      "name": "Viktoryia Plaskonnaya / Uladzislau Sytsik",
+     "nation": "AIN1",
      "no": 6,
      "warmup": null,
      "place": 11
     },
     {
      "name": "Ekaterina Andreeva / Dzmitryi Blinou",
+     "nation": "AIN1",
      "no": 9,
      "warmup": null,
      "place": 5
@@ -3944,6 +4035,7 @@
    "ours": [
     {
      "name": "Мария Захарова",
+     "nation": "AIN2",
      "no": 12,
      "warmup": 3,
      "place": 5,
@@ -3952,6 +4044,7 @@
     },
     {
      "name": "Дина Хуснутдинова",
+     "nation": "AIN2",
      "no": 15,
      "warmup": 4,
      "place": 7,
@@ -3960,6 +4053,7 @@
     },
     {
      "name": "Александра Трусова",
+     "nation": "AIN2",
      "no": 19,
      "warmup": 4,
      "place": 1,
@@ -3968,6 +4062,7 @@
     },
     {
      "name": "Viktoriia Safonova",
+     "nation": "AIN1",
      "no": 16,
      "warmup": null,
      "place": 4,
@@ -4113,6 +4208,7 @@
    "ours": [
     {
      "name": "Глеб Ковтун",
+     "nation": "AIN2",
      "no": 12,
      "warmup": 3,
      "place": 3,
@@ -4121,6 +4217,7 @@
     },
     {
      "name": "Александр Чмиль",
+     "nation": "AIN2",
      "no": 13,
      "warmup": 3,
      "place": 2,
@@ -4129,6 +4226,7 @@
     },
     {
      "name": "Арсений Федотов",
+     "nation": "AIN2",
      "no": 14,
      "warmup": 3,
      "place": 1,
@@ -4137,6 +4235,7 @@
     },
     {
      "name": "Pavel Gavdis",
+     "nation": "AIN1",
      "no": 9,
      "warmup": null,
      "place": 6,
@@ -4247,6 +4346,7 @@
    "ours": [
     {
      "name": "Анна Щербакова / Егор Гончаров",
+     "nation": "AIN2",
      "no": 6,
      "warmup": 2,
      "place": 5,
@@ -4255,6 +4355,7 @@
     },
     {
      "name": "Ирина Хавронина / Девид Нарижный",
+     "nation": "AIN2",
      "no": 8,
      "warmup": 3,
      "place": 3,
@@ -4263,6 +4364,7 @@
     },
     {
      "name": "Василиса Кагановская / Максим Некрасов",
+     "nation": "AIN2",
      "no": 9,
      "warmup": 3,
      "place": 2,
@@ -4271,6 +4373,7 @@
     },
     {
      "name": "Viktoryia Plaskonnaya / Uladzislau Sytsik",
+     "nation": "AIN1",
      "no": 1,
      "warmup": null,
      "place": 11,
@@ -4278,6 +4381,7 @@
     },
     {
      "name": "Ekaterina Andreeva / Dzmitryi Blinou",
+     "nation": "AIN1",
      "no": 7,
      "warmup": null,
      "place": 6,
@@ -4401,6 +4505,7 @@
    "ours": [
     {
      "name": "Пётр Гуменник",
+     "nation": "AIN2",
      "no": 8,
      "warmup": 2,
      "place": 3,
@@ -4409,6 +4514,7 @@
     },
     {
      "name": "Глеб Лутфуллин",
+     "nation": "AIN2",
      "no": 9,
      "warmup": 2,
      "place": 2,
@@ -4417,6 +4523,7 @@
     },
     {
      "name": "Владислав Дикиджи",
+     "nation": "AIN2",
      "no": 10,
      "warmup": 2,
      "place": 1,
@@ -4425,6 +4532,7 @@
     },
     {
      "name": "Alex Labovich",
+     "nation": "AIN1",
      "no": 2,
      "warmup": null,
      "place": 7,
@@ -4432,6 +4540,7 @@
     },
     {
      "name": "Heorhi Kazlouski",
+     "nation": "AIN1",
      "no": 5,
      "warmup": null,
      "place": 10,
@@ -4439,6 +4548,7 @@
     },
     {
      "name": "Vasil Barakhouski",
+     "nation": "AIN1",
      "no": 7,
      "warmup": null,
      "place": 5,
