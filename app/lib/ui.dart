@@ -2,7 +2,6 @@
 import 'dart:math' as math;
 
 import 'package:flutter/cupertino.dart' show CupertinoIcons;
-import 'package:flutter/gestures.dart' show PointerDeviceKind;
 import 'package:flutter/material.dart';
 
 import 'data.dart';
@@ -151,7 +150,7 @@ bool tight(BuildContext context) =>
     MediaQuery.sizeOf(context).width < 360 || MediaQuery.textScalerOf(context).scale(10) > 11;
 
 /// Код страны на экране: нейтральный статус — «AIN».
-String nationCode(String n) => n == 'AIN1' ? 'BLR' : n == 'AIN2' ? 'RUS' : n;
+String nationCode(String n) => n.startsWith('AIN') ? 'AIN' : n;
 
 /// Неразрывный пробел: «1 ч», «в 17:30» не разрываются.
 const nb = '\u00A0';
@@ -503,14 +502,20 @@ class SheetHandle extends StatelessWidget {
 /// текст уходит под неё, а не под саму ручку.
 class SheetScroll extends StatefulWidget {
   final Widget child;
-  const SheetScroll({super.key, required this.child});
+
+  /// When nested in a DraggableScrollableSheet, pass its controller so dragging
+  /// resizes the actual modal surface before normal content scrolling begins.
+  final ScrollController? controller;
+  const SheetScroll({super.key, required this.child, this.controller});
   @override
   State<SheetScroll> createState() => _SheetScrollState();
 }
 
 class _SheetScrollState extends State<SheetScroll> {
   bool scrolled = false;
-  final ScrollController _scrollController = ScrollController();
+  final ScrollController _ownedScrollController = ScrollController();
+
+  ScrollController get _scrollController => widget.controller ?? _ownedScrollController;
 
   bool _onScroll(ScrollNotification n) {
     if (n.depth != 0) return false;
@@ -521,7 +526,7 @@ class _SheetScrollState extends State<SheetScroll> {
 
   @override
   void dispose() {
-    _scrollController.dispose();
+    _ownedScrollController.dispose();
     super.dispose();
   }
 
@@ -534,7 +539,7 @@ class _SheetScrollState extends State<SheetScroll> {
           onNotification: _onScroll,
           child: SingleChildScrollView(
             controller: _scrollController,
-            physics: const ClampingScrollPhysics(),
+            physics: const AlwaysScrollableScrollPhysics(),
             child: widget.child,
           ),
         ),

@@ -1012,8 +1012,8 @@ class PastTile extends StatelessWidget {
   }
 }
 
-/// Имя в итогах: наши на международных — цветом акцента без кода; иностранцы — с кодом
-/// страны; на российских стартах код — это регион, приглушённо, и никого не выделяем.
+/// Имя в итогах: россияне и белорусы выделены цветом, но их страна тоже подписана;
+/// у остальных показывается код страны, на российских стартах — код региона.
 /// Код — отдельно справа и не сжимается: при нехватке места короче становится имя.
 class PlacingName extends StatelessWidget {
   final Placing x;
@@ -1038,10 +1038,14 @@ class PlacingName extends StatelessWidget {
     this.center = false,
   });
 
-  /// Код у имени: у иностранцев на международных — страна, на российских — регион.
+  /// На международных стартах всегда показываем код страны. Нейтральные коды наших
+  /// спортсменов приводим к стране: AIN2 → RUS, AIN1 → BLR.
   static String codeOf(Placing x, bool intl, {bool region = true}) {
-    if (x.nation.isEmpty || !intl) return '';
-    return intl ? nationCode(x.nation) : (region ? x.nation : '');
+    if (x.nation.isEmpty) return '';
+    if (!intl) return region ? x.nation : '';
+    if (x.nation == 'RUS' || x.nation == 'AIN2') return 'RUS';
+    if (x.nation == 'BLR' || x.nation == 'AIN1') return 'BLR';
+    return nationCode(x.nation);
   }
 
   @override
