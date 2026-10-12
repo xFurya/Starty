@@ -19,7 +19,7 @@ void showStart(BuildContext context, Start s, AppState state) {
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
-    enableDrag: false,
+    enableDrag: true,
     builder: (c) => ListenableBuilder(
       listenable: state,
       builder: (c, _) => _StartSheet(s: s, state: state),
@@ -976,7 +976,7 @@ void showFilters(BuildContext context, AppState state) {
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
-    enableDrag: false,
+    enableDrag: true,
     builder: (c) => _FilterSheet(state: state),
   );
 }
