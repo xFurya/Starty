@@ -39,13 +39,14 @@ class _StartSheetHost extends StatefulWidget {
 
 class _StartSheetHostState extends State<_StartSheetHost> {
   static const _top = .92;
-  static const _min = .75;
+  static const _floor = 0.0; // нижнего стопа нет: окно тянется до самого низа
+  static const _dismiss = .5;
   final _sheet = DraggableScrollableController();
 
   // Решение принимаем после окончания жеста (в микрозадаче), а не во время движения.
   void _settle() {
     if (!mounted || !_sheet.isAttached) return;
-    if (_sheet.size <= _min + 0.0001) {
+    if (_sheet.size <= _dismiss + 0.0001) {
       Navigator.of(context).pop();
     } else if (_sheet.size < _top - 0.0001) {
       _sheet.animateTo(
@@ -71,7 +72,7 @@ class _StartSheetHostState extends State<_StartSheetHost> {
         controller: _sheet,
         expand: false,
         initialChildSize: _top,
-        minChildSize: _min,
+        minChildSize: _floor,
         maxChildSize: _top,
         snap: false,
         shouldCloseOnMinExtent: false,
@@ -314,7 +315,7 @@ class _StartSheet extends StatelessWidget {
       if (rest.isNotEmpty)
         _section(
           context,
-          oursLabel(s.ours),
+          oursLabel(s.ours, intl: s.intl),
           Plate(
             child: MeasuredLayout(
               builder: (context, c) {
@@ -356,7 +357,7 @@ class _StartSheet extends StatelessWidget {
     return [
       _section(
         context,
-        oursLabel(s.ours, exitTimes: s.ours.any((o) => o.time != null)),
+        oursLabel(s.ours, exitTimes: s.ours.any((o) => o.time != null), intl: s.intl),
         Plate(
           child: MeasuredLayout(
             builder: (context, c) {
@@ -395,7 +396,7 @@ class _StartSheet extends StatelessWidget {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Eyebrow(label, padding: const EdgeInsets.fromLTRB(22, 0, 22, 10)),
+        if (label.isNotEmpty) Eyebrow(label, padding: const EdgeInsets.fromLTRB(22, 0, 22, 10)),
         child,
       ],
     ),

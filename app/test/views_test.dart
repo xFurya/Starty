@@ -218,6 +218,8 @@ void main() {
     expect(oursLabel([sk('RUS'), sk('BLR')]), 'Россияне и белорусы');
     expect(oursLabel([sk('RUS'), sk('BLR')], exitTimes: true), 'Россияне и белорусы · выход на лёд');
     expect(oursLabel([sk('МОС')]), 'Россияне');
+    expect(oursLabel([sk('RUS')], intl: false), '');
+    expect(oursLabel([sk('RUS'), sk('МОС')], exitTimes: true, intl: false), 'Выход на лёд');
   });
 
   testWidgets('карточка закрывается намеренным свайпом, а вся поверхность движется вместе', (t) async {
@@ -243,14 +245,16 @@ void main() {
     await t.pumpAndSettle();
     expect(sheet, findsOneWidget);
 
-    // Длинный вертикальный жест от верхней точки: пока палец не отпущен — окно
-    // ещё на месте, закрывается только после отпускания.
+    // Длинный вертикальный жест: окно следует за пальцем до самого низа,
+    // но закрывается только после отпускания.
     rect = t.getRect(sheet);
     final g = await t.startGesture(Offset(rect.center.dx, rect.top + 24));
-    await g.moveBy(const Offset(0, 40));
-    await g.moveBy(const Offset(0, 120));
+    await g.moveBy(const Offset(0, 240));
     await t.pump();
     expect(sheet, findsOneWidget);
+    await g.moveBy(const Offset(0, 480));
+    await t.pump();
+    expect(sheet, findsOneWidget); // уже у низа, но палец ещё не отпущен
     await g.up();
     await t.pumpAndSettle();
     expect(sheet, findsNothing);
