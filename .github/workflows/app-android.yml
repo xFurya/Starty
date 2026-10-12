@@ -1,0 +1,130 @@
+name: Сборка Android
+
+# Android-выпуск: подписанный APK на сайт (site/app/), номер из app/pubspec.yaml.
+# Ключ подписи запрещено класть в этот публичный репозиторий — он лежит в
+# xFurya/-VPN (ветка ccr-0ea504fd-67m7mq, папка starty/keystore) и скачивается
+# через секрет VPN_PAT (fine-grained PAT только на чтение -VPN).
+# Запуск: пуш в main, меняющий tools/release_note.txt (первая строка — описание
+# обновления) или app/**. Повторный запуск той же сборки — пропуск.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['tools/release_note.txt', 'app/**']
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: app-android
+  cancel-in-progress: false
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Номер версии
+        id: num
+        run: |
+          VER=$(grep '^version:' app/pubspec.yaml | sed 's/version: *//; s/+.*//')
+          BUILD=$(grep '^version:' app/pubspec.yaml | sed 's/.*+//')
+          HAVE=$(python3 -c "import json; print(json.load(open('site/app/version.json'))['android']['build'])")
+          if [ "$BUILD" = "$HAVE" ]; then echo "сборка $BUILD уже выложена"; echo "new=false" >> "$GITHUB_OUTPUT"; else echo "new=true" >> "$GITHUB_OUTPUT"; fi
+          echo "ver=$VER" >> "$GITHUB_OUTPUT"
+          echo "build=$BUILD" >> "$GITHUB_OUTPUT"
+          echo "notes=$(head -n1 tools/release_note.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Ключ подписи из приватного репозитория
+        if: steps.num.outputs.new == 'true'
+        env:
+          VPN_PAT: ${{ secrets.VPN_PAT }}
+        run: |
+          set -euo pipefail
+          BASE="https://raw.githubusercontent.com/xFurya/-VPN/ccr-0ea504fd-67m7mq/starty/keystore"
+          fetch() {
+            local out="$1"; local url="$2"
+            for AUTH in "Bearer $VPN_PAT" "token $VPN_PAT"; do
+              if curl -fsSL -H "Authorization: $AUTH" -o "$out" "$url"; then return 0; fi
+            done
+            return 1
+          }
+          fetch app/android/starty-release.jks "$BASE/starty-release.jks"
+          fetch app/android/key.properties "$BASE/key.properties"
+          sed -i "s|^storeFile=.*|storeFile=${PWD}/app/android/starty-release.jks|" app/android/key.properties
+          test -s app/android/starty-release.jks
+          grep -q '^keyAlias=' app/android/key.properties
+
+      - uses: actions/setup-java@v4
+        if: steps.num.outputs.new == 'true'
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: subosito/flutter-action@v2
+        if: steps.num.outputs.new == 'true'
+        with:
+          channel: stable
+          flutter-version: 3.47.7
+          cache: true
+
+      - name: Собрать
+        if: steps.num.outputs.new == 'true'
+        working-directory: app
+        run: |
+          FLUTTER_ROOT="$(dirname "$(dirname "$(command -v flutter)")")"
+          SDK="${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager"
+          if [ -x "$SDK" ]; then
+            COMPILE_SDK=$(grep -rhoE 'compileSdkVersion[[:space:]]*=[[:space:]]*[0-9]+' \
+              "$FLUTTER_ROOT/packages/flutter_tools/gradle" 2>/dev/null | grep -oE '[0-9]+' | head -n1)
+            yes | "$SDK" --licenses >/dev/null 2>&1 || true
+            if [ -n "$COMPILE_SDK" ]; then "$SDK" --install "platforms;android-$COMPILE_SDK" >/dev/null 2>&1 || true; fi
+          fi
+          flutter pub get
+          flutter build apk --release --target-platform android-arm64 \
+            --dart-define=BUILD=${{ steps.num.outputs.build }} --dart-define=VERSION=${{ steps.num.outputs.ver }}
+
+      - name: Выложить на сайт
+        if: steps.num.outputs.new == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          VER=$(grep '^version:' app/pubspec.yaml | sed 's/version: *//; s/+.*//')
+          BUILD=$(grep '^version:' app/pubspec.yaml | sed 's/.*+//')
+          NOTES=$(head -n1 tools/release_note.txt)
+          CERT=84f451ebac960ae69f8bf06949be9ad8abe86571cc475a36249790851fb0e7d1
+          APK=app/build/app/outputs/flutter-apk/app-release.apk
+          SIGNER=$(ls -d "${ANDROID_HOME}"/build-tools/*/ | sort -V | tail -n1)apksigner
+          "$SIGNER" verify --print-certs "$APK" | grep -q "SHA-256 digest: $CERT" || {
+            echo "сборка подписана не тем ключом" >&2; exit 1; }
+          rm -f site/app/starty-*.apk
+          cp "$APK" site/app/Starty.apk
+          cp "$APK" "site/app/starty-$VER.apk"
+          python3 - "$VER" "$BUILD" "$NOTES" <<'PY'
+import datetime, hashlib, json, sys
+ver, build, notes = sys.argv[1], int(sys.argv[2]), sys.argv[3]
+apk = f"site/app/starty-{ver}.apk"
+raw = open(apk, "rb").read()
+now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+latest = {"version": ver, "code": build, "notes": notes, "at": now,
+          "android": {"file": f"starty-{ver}.apk", "size": len(raw),
+                      "sha256": hashlib.sha256(raw).hexdigest()}}
+json.dump(latest, open("site/app/latest.json", "w"), ensure_ascii=False, indent=1)
+v = json.load(open("site/app/version.json"))
+v["android"].update(version=ver, build=build, note="",
+                    url=f"https://xfurya.github.io/Starty/app/starty-{ver}.apk")
+json.dump(v, open("site/app/version.json", "w"), ensure_ascii=False, indent=1)
+with open("tools/released.tsv", "a") as f:
+    f.write(f"{build}\t{ver}\t{now[:10]}\t{latest['android']['sha256']}\t{notes}\n")
+print(f"выпуск {ver} ({build}): {len(raw)} байт, sha256 {latest['android']['sha256'][:12]}…")
+PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A site/app tools/released.tsv
+          git commit -q -m "Android: сборка $(grep '^version:' app/pubspec.yaml | sed 's/version: //')" || exit 0
+          for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 5; done
+          gh workflow run update.yml --ref main
