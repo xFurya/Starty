@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13T16:58:30+03:00",
- "checked": "2026-10-13T16:58:30+03:00",
+ "checked": "2026-10-13T16:20:52.180932+00:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -5284,7 +5284,8 @@
      "nation": "МОС",
      "time": "17:30",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2
     }
    ],
    "athletes": [
@@ -5311,25 +5312,24 @@
    "podium": [
     {
      "place": 1,
-     "name": "Валерия Шарапова",
-     "nation": "СПБ",
-     "points": "65.87"
+     "name": "Алёна Принёва",
+     "nation": "МОС",
+     "points": "74.47"
     },
     {
      "place": 2,
-     "name": "Валерия Иорданова",
-     "nation": "СМО",
-     "points": "49.04"
+     "name": "Алиса Заикина",
+     "nation": "МОС",
+     "points": "69.49"
     },
     {
      "place": 3,
-     "name": "Милана Соколова",
-     "nation": "ХМА",
-     "points": "48.88"
+     "name": "Полина Мартыненко",
+     "nation": "МОС",
+     "points": "68.51"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Валерия Шарапова — 65.87\n2. Валерия Иорданова — 49.04\n3. Милана Соколова — 48.88\n\nРоссияне:\n• Алиса Заикина — 17:30\n\nНачало: 16:30 МСК\nТрансляция: Первый канал",
-   "provisional": true,
+   "desc": "Итог:\n1. Алёна Принёва — 74.47\n2. Алиса Заикина — 69.49\n3. Полина Мартыненко — 68.51\n\nПримечательное:\n• Алиса Заикина — Тройной аксель\n\nРоссияне:\n• Алиса Заикина — 17:30\n\nНачало: 16:30 МСК\nТрансляция: Первый канал",
    "live": {
     "idx": "https://fsrussia.ru/results/2627/3etap_jun/index.htm",
     "seg": "https://fsrussia.ru/results/2627/3etap_jun/SEG003.htm",
@@ -5355,7 +5355,14 @@
      "Мирослава ЛЕЗИНА": "Мирослава Лезина",
      "Милана ИШКИНА": "Милана Ишкина"
     }
-   }
+   },
+   "facts": [
+    {
+     "who": "Алиса Заикина",
+     "text": "Тройной аксель",
+     "kind": "element"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:men-junior-kp",
@@ -5394,7 +5401,7 @@
     "Степан Юров"
    ],
    "src": "https://fsrussia.ru/results/2627/3etap_jun/index.htm",
-   "desc": "Начало: 19:05 МСК\nТрансляция: Первый канал",
+   "desc": "Промежуточные итоги:\n1. Марк Соколов — 76.88\n\nНачало: 19:05 МСК\nТрансляция: Первый канал",
    "live": {
     "idx": "https://fsrussia.ru/results/2627/3etap_jun/index.htm",
     "seg": "https://fsrussia.ru/results/2627/3etap_jun/SEG001.htm",
@@ -5420,7 +5427,16 @@
      "Леонид НОВОЖИЛОВ": "Леонид Новожилов",
      "Добромир ВОРОНОВ": "Добромир Воронов"
     }
-   }
+   },
+   "podium": [
+    {
+     "place": 1,
+     "name": "Марк Соколов",
+     "nation": "МОС",
+     "points": "76.88"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:women-junior-pp",
