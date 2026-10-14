@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13T22:03:02+03:00",
- "checked": "2026-10-13T22:03:02+03:00",
+ "checked": "2026-10-14T10:30:23.612460+00:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -5470,7 +5470,8 @@
      "nation": "МОС",
      "time": "15:06",
      "no": 17,
-     "warmup": 3
+     "warmup": 3,
+     "place": 17
     }
    ],
    "athletes": [
@@ -5494,7 +5495,7 @@
     "Полина Мартыненко"
    ],
    "src": "https://fsrussia.ru/results/2627/3etap_jun/index.htm",
-   "desc": "Россияне:\n• Алиса Заикина — 15:06\n\nНачало: 12:45 МСК\nТрансляция: Первый канал",
+   "desc": "Промежуточные итоги:\n1. Аделина Камалова — 160.90\n1. Аделина Камалова — 113.44\n2. Валерия Иорданова — 145.18\n\nРоссияне:\n• Алиса Заикина — 15:06\n\nНачало: 12:45 МСК\nТрансляция: Первый канал",
    "live": {
     "idx": "https://fsrussia.ru/results/2627/3etap_jun/index.htm",
     "seg": "https://fsrussia.ru/results/2627/3etap_jun/SEG004.htm",
@@ -5520,7 +5521,28 @@
      "Алиса ЗАИКИНА": "Алиса Заикина",
      "Алёна ПРИНЁВА": "Алёна Принёва"
     }
-   }
+   },
+   "podium": [
+    {
+     "place": 1,
+     "name": "Аделина Камалова",
+     "nation": "ТАТ",
+     "points": "160.90"
+    },
+    {
+     "place": 1,
+     "name": "Аделина Камалова",
+     "nation": "ТАТ",
+     "points": "113.44"
+    },
+    {
+     "place": 2,
+     "name": "Валерия Иорданова",
+     "nation": "СМО",
+     "points": "145.18"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:men-junior-pp",
