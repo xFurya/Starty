@@ -99,7 +99,9 @@ begin
   end if;
   insert into public.code_settings (code_hash, doc, updated_at)
   values (code_hash, doc, clock_timestamp())
-  on conflict (code_hash) do update set doc = excluded.doc, updated_at = clock_timestamp()
+  -- параметр назван как колонка (это ключ JSON в rpc), поэтому конфликт — по имени ограничения,
+  -- иначе PL/pgSQL отвечает «column reference "code_hash" is ambiguous»
+  on conflict on constraint code_settings_pkey do update set doc = excluded.doc, updated_at = clock_timestamp()
   returning updated_at into saved;
   return saved;
 end;
