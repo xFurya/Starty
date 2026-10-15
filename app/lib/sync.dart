@@ -267,7 +267,10 @@ DateTime _savedAt(http.Response r) {
 /// Ошибка, которую можно показать человеку.
 class SyncError implements Exception {
   final String message;
-  const SyncError(this.message);
+
+  /// Код ответа сервера, если ошибка пришла из ответа (а не из сети).
+  final int? status;
+  const SyncError(this.message, {this.status});
   @override
   String toString() => message;
 }
@@ -344,13 +347,17 @@ class AccountBackend implements SyncBackend {
           body: jsonEncode({'refresh_token': s.refresh}),
         ),
       );
-      session = AccountSession.fromJson(_json(r), s.email);
+      final fresh = AccountSession.fromJson(_json(r), s.email);
+      // вышли или сменили аккаунт, пока шло обновление: старая сессия не возвращается
+      if (!identical(session, s)) return;
+      session = fresh;
     } on SyncError catch (e) {
-      // сеть — просто не получилось сейчас; иначе вход недействителен, нужен новый
-      if (e.message == 'Сервер не отвечает' || e.message == 'Нет связи с сервером') {
-        rethrow;
+      // вход недействителен (сервер отказал в обновлении) — нужен новый; сеть, 5xx, 429 и прочее —
+      // не получилось сейчас, токен остаётся, сообщение как есть
+      if (e.status == 400 || e.status == 401) {
+        throw const SyncError('Войдите в аккаунт заново');
       }
-      throw const SyncError('Войдите в аккаунт заново');
+      rethrow;
     }
     await keep?.call(session!);
   }
@@ -389,7 +396,7 @@ class AccountBackend implements SyncBackend {
     try {
       final r = await call().timeout(const Duration(seconds: 20));
       if (r.statusCode >= 200 && r.statusCode < 300) return r;
-      throw SyncError(_explain(r));
+      throw SyncError(_explain(r), status: r.statusCode);
     } on SyncError {
       rethrow;
     } on TimeoutException {
@@ -405,14 +412,19 @@ class AccountBackend implements SyncBackend {
   }
 
   static String _explain(http.Response r) {
-    String msg = '';
+    String msg = '', code = '';
     try {
       final j = jsonDecode(utf8.decode(r.bodyBytes));
       if (j is Map) {
         msg = '${j['error_description'] ?? j['msg'] ?? j['message'] ?? ''}';
+        code = '${j['error_code'] ?? ''}'.toLowerCase();
       }
     } catch (_) {}
-    if (r.statusCode == 400 || r.statusCode == 401 || r.statusCode == 403) {
+    if (code == 'weak_password') return 'Пароль слишком простой';
+    if (code == 'user_already_exists' || code == 'email_exists') {
+      return 'Такая почта уже зарегистрирована';
+    }
+    if ([400, 401, 403, 422].contains(r.statusCode)) {
       if (msg.toLowerCase().contains('invalid login')) {
         return 'Неверная почта или пароль';
       }
@@ -530,7 +542,7 @@ class CodeBackend implements SyncBackend {
       if (r.statusCode == 404) {
         throw const SyncError('Такого кода нет на сервере');
       }
-      throw SyncError('Сервер ответил ошибкой (${r.statusCode})');
+      throw SyncError('Сервер ответил ошибкой (${r.statusCode})', status: r.statusCode);
     } on SyncError {
       rethrow;
     } on TimeoutException {
@@ -647,7 +659,10 @@ class SyncController {
   final void Function()? onChange;
 
   Timer? _debounce;
-  bool _busy = false, _again = false;
+  bool _again = false;
+
+  /// Идущая сверка: тот, кто просит сверить во время неё, ждёт её итога, а не получает пустой ответ.
+  Future<bool>? _running;
 
   /// Число правок. Растёт при каждом [touch]: отправка сравнивает его до и после сохранения, чтобы
   /// понять, не пришла ли правка, пока документ уходил. Порядок правок — по счётчику, не по часам.
@@ -675,14 +690,19 @@ class SyncController {
 
   /// Сверить с сервером: что новее — то и побеждает. Возвращает true, если что-то поменялось.
   /// Правка, пришедшая во время сверки, не теряется: она остаётся отмеченной и уйдёт следующей сверкой.
-  Future<bool> reconcile() async {
+  Future<bool> reconcile() {
     final b = backend;
-    if (b == null) return false;
-    if (_busy) {
+    if (b == null) return Future.value(false);
+    final running = _running;
+    if (running != null) {
+      // сверка уже идёт: после неё пройдём ещё раз (вдруг изменилось), а этот вызов получит итог идущей
       _again = true;
-      return false;
+      return running;
     }
-    _busy = true;
+    return _running = _reconcile(b);
+  }
+
+  Future<bool> _reconcile(SyncBackend b) async {
     try {
       final changed = await _run(b);
       problem = null;
@@ -691,7 +711,7 @@ class SyncController {
       problem = e is SyncError ? e.message : 'Не удалось синхронизировать';
       return false;
     } finally {
-      _busy = false;
+      _running = null;
       onChange?.call();
       if (_again) {
         _again = false;
@@ -712,9 +732,16 @@ class SyncController {
       pending: st.pending,
     )) {
       case SyncAction.pull:
+        // Применение пишет серверные значения разом, в самом начале: правка, пришедшая после этого,
+        // лежит поверх них. Номер правок сверяем, как при отправке: правку не снимаем, её отправит следующая сверка.
+        final seq = _editSeq;
         await apply(remote!);
         if (!identical(backend, b)) return true;
         await local.markBase(remote.updatedAt);
+        if (_editSeq != seq) {
+          await local.markPending(true);
+          _later();
+        }
         await local.markSynced(_now());
         return true;
       case SyncAction.push:

@@ -568,10 +568,11 @@ class Prefs {
   static Future<void> setRulesJson(String v) => _p.setString('n.rules', v);
   static Set<String> get forcedOn => (_p.getStringList('n.on') ?? const []).toSet();
   static Set<String> get forcedOff => (_p.getStringList('n.off') ?? const []).toSet();
-  static Future<void> setForced(Set<String> on, Set<String> off) async {
-    await _p.setStringList('n.on', on.toList());
-    await _p.setStringList('n.off', off.toList());
-  }
+  /// Все записи стартуют сразу, без ожидания между ними: кэш обновляется синхронно (см. [AppState._applySync]).
+  static Future<void> setForced(Set<String> on, Set<String> off) => Future.wait([
+    _p.setStringList('n.on', on.toList()),
+    _p.setStringList('n.off', off.toList()),
+  ]);
 
   /// Уведомления Android переведены на свои (старые, от общего плагина, убраны).
   static bool get alertsMigrated => _p.getBool('n.mig2') ?? false;
@@ -602,15 +603,11 @@ class Prefs {
   static bool get followRussians => _p.getBool('follow.ru') ?? true;
   static bool get followBelarusians => _p.getBool('follow.by') ?? true;
   /// null — снова «по умолчанию»: ключа нет, действует список сборщика.
-  static Future<void> setFollow(Iterable<String>? v, {required bool russians, required bool belarusians}) async {
-    if (v == null) {
-      await _p.remove('follow');
-    } else {
-      await _p.setStringList('follow', v.toList());
-    }
-    await _p.setBool('follow.ru', russians);
-    await _p.setBool('follow.by', belarusians);
-  }
+  static Future<void> setFollow(Iterable<String>? v, {required bool russians, required bool belarusians}) => Future.wait([
+    if (v == null) _p.remove('follow') else _p.setStringList('follow', v.toList()),
+    _p.setBool('follow.ru', russians),
+    _p.setBool('follow.by', belarusians),
+  ]);
 
   /// Живые места: общий режим и переопределения по id старта (см. [effectiveLiveMode]).
   static String get liveMode => validLiveMode(_p.getString('live.mode')) ?? liveInstant;
@@ -632,24 +629,24 @@ class Prefs {
     }
   }
 
-  static Future<void> setLiveOverrides(Map<String, String> v) async {
+  static Future<void> setLiveOverrides(Map<String, String> v) {
     final clean = {
       for (final e in v.entries)
         if (validLiveMode(e.value) != null) e.key: e.value,
     };
-    await _p.setString('live.over', jsonEncode(clean));
+    return _p.setString('live.over', jsonEncode(clean));
   }
 
   /// Отслеживаемые в фоне (без состояния приложения).
   static Follow followOr(List<String> fallback) =>
       Follow(follow ?? fallback, russians: followRussians, belarusians: followBelarusians);
-  static Future<void> setFilters(Filters f) async {
-    await _p.setStringList('f.kinds', f.kinds.toList());
-    await _p.setStringList('f.tids', f.tids.toList());
-    await _p.setStringList('f.athletes', f.athletes.toList());
-    await _p.setStringList('f.levels', f.levels.toList());
-    await _p.setStringList('f.scope', f.scope.toList());
-  }
+  static Future<void> setFilters(Filters f) => Future.wait([
+    _p.setStringList('f.kinds', f.kinds.toList()),
+    _p.setStringList('f.tids', f.tids.toList()),
+    _p.setStringList('f.athletes', f.athletes.toList()),
+    _p.setStringList('f.levels', f.levels.toList()),
+    _p.setStringList('f.scope', f.scope.toList()),
+  ]);
 }
 
 /// Адрес файла протокола турнира на сайте: рядом с events.json, в каталоге protocols/.
