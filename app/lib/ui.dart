@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart' show CupertinoIcons;
 import 'package:flutter/material.dart';
 
 import 'data.dart';
-import 'main.dart';
+import 'palette.dart';
 
 /// Открытая вкладка: 0 — лента, 1 — месяц, 2 — настройки. Лист старта переключает
 /// её сам, когда ведёт в настройки.
