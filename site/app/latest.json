@@ -1,23 +1,11 @@
 {
- "version": "1.0.21",
- "code": 22,
- "notes": "Все спортсмены в поиске, с фото; уведомления смахиваются после выступления.",
- "at": "2026-10-15T09:10:26Z",
+ "version": "1.0.22",
+ "code": 23,
+ "notes": "Отслеживаемые спортсмены, новый фильтр и настройки уведомлений.",
+ "at": "2026-10-15T10:01:49Z",
  "android": {
-  "file": "starty-1.0.21.apk",
-  "size": 20356972,
-  "sha256": "57a8e278c2c572b036160e070b1d548f6076ff1e80924e0932fa992af7c2c675"
- },
- "windows": {
-  "code": 22,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.21/Starty-windows.zip",
-  "size": 13665865,
-  "sha256": "733ba67c326851c31f86b8372d7624e69375dd4470b2f7fc884580bcb688cd58"
- },
- "macos": {
-  "code": 22,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.21/Starty-macos.zip",
-  "size": 20575101,
-  "sha256": "d135d1d6a69fd4974f98eac14020906653f7767afd3b5cf3c785a1e0aefa12d8"
+  "file": "starty-1.0.22.apk",
+  "size": 20422708,
+  "sha256": "af19f374801e46a63fdc3f8aab5ad06883999ca7061f1b89f6cb221163294435"
  }
 }
