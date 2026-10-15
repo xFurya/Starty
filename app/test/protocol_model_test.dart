@@ -149,7 +149,6 @@ void main() {
     test('полный контракт строки: элементы, компоненты, сбавки, суммы', () {
       final r = row({
         'bv': 20.30,
-        'start': 6,
         'els': [
           {'no': 1, 'n': '3Lz+3T', 'info': '<', 'b': 10.10, 'x': true, 'g': 1.21, 'j': [1, 2, null, 1], 's': 11.31},
           {'no': 2, 'n': 'FCSp4', 'b': '3.20', 'g': -0.4, 's': 2.8},
@@ -162,7 +161,6 @@ void main() {
         ],
       });
       expect(r.bv, '20.30');
-      expect(r.start, '6');
       final e = r.elements.first;
       expect((e.no, e.name, e.info, e.base, e.x, e.goe, e.score), (1, '3Lz+3T', '<', '10.10', true, '1.21', '11.31'));
       expect(e.judges, [1, 2, null, 1], reason: 'null судьи сохраняется на своём месте');
@@ -179,7 +177,6 @@ void main() {
     test('нет необязательных полей — null и пустые списки, а не нули', () {
       final r = row({});
       expect(r.bv, isNull);
-      expect(r.start, isNull);
       expect(r.elements, isEmpty);
       expect(r.components, isEmpty);
       expect(r.deductions, isEmpty);
@@ -241,6 +238,31 @@ void main() {
       expect(r.deductions, isEmpty);
     });
 
+    test('числа и строкой, и числом; корректное число не превращается в прочерк', () {
+      final r = row({
+        'points': 1000.12,
+        'tes': '0.125',
+        'pcs': 7,
+        'ded': -1,
+        'bv': '12.5',
+        'els': [
+          {'n': 'A', 'b': 1000.12, 'g': '-0.125', 's': 0.125},
+        ],
+        'deds': [
+          {'n': 'D', 'v': '-1'},
+        ],
+      });
+      expect((r.points, r.tes, r.pcs, r.ded, r.bv), ('1000.12', '0.125', '7.00', '-1.00', '12.50'));
+      final e = r.elements.single;
+      expect((e.base, e.goe, e.score), ('1000.12', '-0.125', '0.125'));
+      expect(r.deductions.single.value, '-1.00');
+    });
+
+    test('мусор вместо числа — прочерк', () {
+      final r = row({'points': 'NaN', 'tes': '1e5', 'pcs': double.infinity, 'ded': '--1', 'bv': '1,5', 'bad': 1});
+      expect((r.points, r.tes, r.pcs, r.ded, r.bv), (null, null, null, null, null));
+    });
+
     test('коэффициент без хвостовых нулей: 2 — «2», 1.5 — «1.5»', () {
       final r = row({
         'comp': [
@@ -256,7 +278,7 @@ void main() {
   group('судьи сегмента', () {
     List<ProtocolJudge> panel(Object? judges) {
       final j = sample();
-      seg(j)['judges'] = judges;
+      seg(j)['panel'] = judges;
       return ProtocolDoc.fromJson(j).categories.first.segments.first.panel;
     }
 
@@ -273,7 +295,7 @@ void main() {
       expect(panel([]), isEmpty);
       expect(panel(['a', 1, {}, {'nation': 'RUS'}]), isEmpty);
       final j = sample();
-      seg(j)['judges'] = {'no': 'J1'};
+      seg(j)['panel'] = {'no': 'J1'};
       expect(ProtocolDoc.fromJson(j).categories.first.segments.first.state, SegmentState.finalized);
     });
 
@@ -285,12 +307,22 @@ void main() {
 
     test('список судей не ломает строки сегмента', () {
       final j = sample();
+      seg(j)['panel'] = [
+        {'no': 'J1', 'name': 'Мария ПЕТРОВА'},
+      ];
+      final s = ProtocolDoc.fromJson(j).categories.first.segments.first;
+      expect(s.judges, endsWith('.pdf'), reason: 'judges — только ссылка');
+      expect(s.rows, hasLength(2));
+    });
+
+    test('массив в judges — не бригада: ссылки нет, судей нет', () {
+      final j = sample();
       seg(j)['judges'] = [
         {'no': 'J1', 'name': 'Мария ПЕТРОВА'},
       ];
       final s = ProtocolDoc.fromJson(j).categories.first.segments.first;
       expect(s.judges, isNull);
-      expect(s.rows, hasLength(2));
+      expect(s.panel, isEmpty);
     });
   });
 

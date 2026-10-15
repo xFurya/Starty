@@ -58,8 +58,10 @@ ProtocolView protocolView(
   if (cached != null && cachedAt != null) {
     final v = _inFile(category, tab, hasField: hasField, built: cached.built);
     // сохранённая версия: строки есть, но статус — что связи нет и когда файл сохранён
+    // «Нет связи» — только для сетевого сбоя; при 404, битом файле и чужой версии связь ни при чём
+    final saved = '${_dm(cachedAt)}, ${hm(cachedAt)}';
     return ProtocolView(
-      'Нет связи · сохранено ${_dm(cachedAt)}, ${hm(cachedAt)}',
+      load is ProtocolNetError ? 'Нет связи · сохранено $saved' : 'Показана сохранённая версия · $saved',
       ProtocolTone.quiet,
       retry: true,
       rows: v.rows,
@@ -347,10 +349,10 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
                           ours: ours.contains(personKey(view.rows[i].name)),
                           total: tab == totalTab,
                           cols: tab == totalTab ? (cat?.total?.cols ?? const []) : const [],
-                          open: _open.contains('$tab/${view.rows[i].i}'),
+                          open: _open.contains(_rowKey(tab, view.rows[i])),
                           onTap: _hasDetails(view.rows[i])
                               ? () => setState(() {
-                                  final key = '$tab/${view.rows[i].i}';
+                                  final key = _rowKey(tab, view.rows[i]);
                                   _open.contains(key) ? _open.remove(key) : _open.add(key);
                                 })
                               : null,
@@ -415,6 +417,9 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
       ),
     );
   }
+
+  /// Ключ раскрытой строки: вкладка, стартовый номер и имя — после обновления файла раскрыт тот же человек.
+  static String _rowKey(String tab, ProtocolRow r) => '$tab/${r.no ?? ''}/${r.name}';
 
   /// Раскрывается строка, где есть судейские оценки или элементы.
   static bool _hasDetails(ProtocolRow r) =>

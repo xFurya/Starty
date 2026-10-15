@@ -54,7 +54,7 @@ enum TotalState {
 }
 
 const _tables = {'results', 'judges_pdf', 'starting', 'empty', 'format'};
-final _points = RegExp(r'^\d{1,3}\.\d{2}$');
+final _decimal = RegExp(r'^[+-]?\d+(\.\d+)?$');
 
 /// Файл турнира целиком.
 class ProtocolDoc {
@@ -245,7 +245,7 @@ class ProtocolSegment {
       skipped: skipped is int && skipped > 0 ? skipped : 0,
       rows: parsed,
       // судья без номера и имени пропускается; битый список судей сегмент не ломает
-      panel: _maps(judges is List ? judges : null, ProtocolJudge.tryParse),
+      panel: _maps(j['panel'], ProtocolJudge.tryParse),
     );
   }
 }
@@ -275,8 +275,8 @@ class ProtocolRow {
   final String nation;
   final String? points, tes, pcs, ded;
 
-  /// Сумма базовых стоимостей элементов (bv) и стартовая отметка (start): необязательные, как в файле.
-  final String? bv, start;
+  /// Сумма базовых стоимостей элементов (bv): необязательная, как в файле.
+  final String? bv;
 
   /// Элементы с базой, GOE и оценкой. Пусто — в файле их нет (блок не показываем).
   final List<ProtocolElement> elements;
@@ -302,7 +302,6 @@ class ProtocolRow {
     this.pcs,
     this.ded,
     this.bv,
-    this.start,
     this.elements = const [],
     this.components = const [],
     this.deductions = const [],
@@ -330,7 +329,6 @@ class ProtocolRow {
       // снижение может быть отрицательным
       ded: _signed(j['ded']),
       bv: _score(j['bv']),
-      start: _startMark(j['start']),
       elements: _maps(j['els'], ProtocolElement.tryParse),
       components: _maps(j['comp'], ProtocolComponent.tryParse),
       deductions: _maps(j['deds'], ProtocolDeduction.tryParse),
@@ -505,19 +503,34 @@ List<T> _maps<T>(Object? v, T? Function(Map<String, dynamic>) parse) => [
 List<num?> _marks(Object? v) => [if (v is List) for (final m in v) m is num && m.isFinite ? m : null];
 
 /// 1.33 -> «1.33», 2.0 -> «2», 1.5 -> «1.5».
-String _trimZeros(num v) => v.toStringAsFixed(2).replaceFirst(RegExp(r'\.?0+$'), '');
-
-/// Стартовая отметка: число или короткая строка; пустое — null.
-String? _startMark(Object? v) {
-  final t = _text(v);
-  return t.isEmpty || t.length > 12 ? null : t;
+String _trimZeros(num v) {
+  final t = v.toString();
+  return t.endsWith('.0') ? t.substring(0, t.length - 2) : t;
 }
 
-/// Строка-число вида NN.NN; иное — null (показываем прочерк, не число).
-String? _score(Object? v) {
-  if (v is num) v = v.toStringAsFixed(2);
-  return v is String && _points.hasMatch(v) ? v : null;
+/// Число как текст: строка или число, любое конечное десятичное; не меньше двух знаков после точки,
+/// но без округления (0.125 остаётся 0.125, 1000.12 — 1000.12). Мусор — null (прочерк, не число).
+String? _dec(Object? v, {required bool signed}) {
+  String t;
+  if (v is num) {
+    if (!v.isFinite) return null;
+    t = v.toString();
+    if (t.contains('e') || t.contains('E')) t = v.toStringAsFixed(12).replaceFirst(RegExp(r'0+$'), '');
+    if (t.endsWith('.')) t = t.substring(0, t.length - 1);
+  } else if (v is String) {
+    t = v.trim();
+  } else {
+    return null;
+  }
+  if (!_decimal.hasMatch(t)) return null;
+  if (!signed && (t.startsWith('-') || t.startsWith('+'))) return null;
+  final dot = t.indexOf('.');
+  if (dot < 0) return '$t.00';
+  return t.length - dot - 1 < 2 ? t.padRight(dot + 3, '0') : t;
 }
+
+/// Неотрицательное число (баллы, база, оценка).
+String? _score(Object? v) => _dec(v, signed: false);
 
 /// Значение колонки итога: место за сегмент (целое) или баллы (NN.NN); иное — null.
 String? _part(Object? v) {
@@ -525,11 +538,8 @@ String? _part(Object? v) {
   return v is String && RegExp(r'^\d{1,3}(\.\d{2})?$').hasMatch(v) ? v : null;
 }
 
-/// GOE: знак и число, например -0.80 или 1.10; иное — null.
-String? _signed(Object? v) {
-  if (v is num) v = v.toStringAsFixed(2);
-  return v is String && RegExp(r'^[+-]?\d{1,2}\.\d{2}$').hasMatch(v) ? v : null;
-}
+/// Число со знаком (GOE, сбавки, снижение): «-0.80», «1.10».
+String? _signed(Object? v) => _dec(v, signed: true);
 
 DateTime? _date(Object? v) {
   if (v is! String) return null;

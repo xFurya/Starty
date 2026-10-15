@@ -312,7 +312,7 @@ void main() {
   group('судьи сегмента — свёрнутый блок в конце', () {
     testWidgets('есть список — блок свёрнут, по тапу показывает судей', (tester) async {
       final j = withDetails();
-      _seg(j)['judges'] = [
+      _seg(j)['panel'] = [
         {'no': 'J1', 'name': 'Мария Ивановна ПЕТРОВА', 'nation': 'RUS'},
         {'no': 'J2', 'name': 'Иван Сергеевич СИДОРОВ'},
       ];
@@ -361,12 +361,37 @@ void main() {
         await tester.tap(find.byTooltip('Обновить'));
         await tester.pumpAndSettle();
         expect(opened, isEmpty);
-        expect(find.text('Нет связи · сохранено 15.10, 22:00'), findsOneWidget);
+        final net = c.$2 == null || c.$2 == 'timeout' || c.$2 == 500;
+        expect(find.text(net ? 'Нет связи · сохранено 15.10, 22:00' : 'Показана сохранённая версия · 15.10, 22:00'), findsOneWidget);
+        expect(find.textContaining(net ? 'Показана' : 'Нет связи'), findsNothing, reason: 'связь упоминается только при сетевом сбое');
         expect(find.text('66.36'), findsOneWidget);
         expect(find.text('Повторить'), findsOneWidget);
         expectNoHorizontalScroll(tester);
       });
     }
+
+    testWidgets('раскрытая строка остаётся за тем же человеком после обновления файла', (tester) async {
+      final j = sample();
+      final first = _seg(j)['rows'] as List;
+      final swapped = jsonDecode(jsonEncode(j)) as Map<String, dynamic>;
+      // в новом файле порядок строк другой: Жарова стала первой, i поменялись
+      final rows = (_seg(swapped)['rows'] as List).reversed.toList();
+      for (var i = 0; i < rows.length; i++) {
+        (rows[i] as Map)['i'] = i + 1;
+      }
+      _seg(swapped)['rows'] = rows;
+      expect(first, hasLength(2));
+      await pumpScreen(tester, s: start(), repo: repoWith(j, then: swapped));
+      await tester.tap(find.text(_pair));
+      await tester.pumpAndSettle();
+      expect(find.text('ТЕХ'), findsOneWidget);
+      await tester.tap(find.byTooltip('Обновить'));
+      await tester.pumpAndSettle();
+      expect(find.text('ТЕХ'), findsOneWidget);
+      // раскрыт по-прежнему Билибин/Кашаев (37.77), а не новая первая строка
+      expect(find.text('37.77'), findsOneWidget);
+      expect(find.text('37.02'), findsNothing);
+    });
 
     testWidgets('старт без proto — открывается оригинал', (tester) async {
       final opened = <String>[];
