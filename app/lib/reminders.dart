@@ -67,8 +67,9 @@ class NotifyRules {
     if (!segs.contains(segOf(s))) return false;
     if (s.intl ? !intl : !russian) return false;
     if (!night && msk(s.t0).hour < 8) return false;
-    // ours — уже отслеживаемые (россияне и белорусы на международных — если их отслеживают)
-    if (onlyFollowed && s.ours.isEmpty) return false;
+    // ours — уже отслеживаемые (россияне и белорусы на международных — если их отслеживают).
+    // Состав ещё не опубликован — убрать нельзя: вдруг там как раз отслеживаемые.
+    if (onlyFollowed && s.ours.isEmpty && s.compositionKnown) return false;
     // международный старт, где нет никого из отслеживаемых, — не о чем напоминать
     if (!s.shown) return false;
     return true;

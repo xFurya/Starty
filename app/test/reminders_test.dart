@@ -132,4 +132,28 @@ void main() {
     final d = Schedule.parse(json);
     expect(d.starts.any((e) => e.venue.contains('...')), isFalse);
   });
+
+  test('«только с отслеживаемыми»: старт с неопубликованным составом остаётся, с известным без них — нет', () {
+    Start start(Map<String, dynamic> extra) => Start.fromJson({
+      'id': 'x', 'tid': 't', 'tournament': 'T', 'kind': 'women', 'level': 'senior', 'seg': 'КП',
+      'title': 'T — женщины КП', 'start': '2026-10-20T10:00:00+03:00', 'end': '2026-10-20T13:00:00+03:00',
+      'venue': '', 'intl': false, 'ours': [], ...extra,
+    }).withFollow(Follow(const []));
+    final rules = const NotifyRules().copyWith(onlyFollowed: true);
+    // состав неизвестен (расписание есть, стартового листа нет) — напомнить на всякий случай
+    expect(rules.matches(start({})), isTrue);
+    expect(start({}).compositionKnown, isFalse);
+    // состав известен, отслеживаемых нет — не напоминать
+    final known = start({'field': [{'name': 'Алиса Заикина', 'nation': 'СПБ'}], 'athletes': ['Алиса Заикина']});
+    expect(rules.matches(known), isFalse);
+    // состав известен, отслеживаемый есть
+    final has = Start.fromJson({
+      'id': 'y', 'tid': 't', 'tournament': 'T', 'kind': 'women', 'level': 'senior', 'seg': 'КП',
+      'title': 'T — женщины КП', 'start': '2026-10-20T10:00:00+03:00', 'end': '2026-10-20T13:00:00+03:00',
+      'venue': '', 'intl': false, 'ours': [],
+      'field': [{'name': 'Алиса Заикина', 'nation': 'СПБ'}], 'athletes': ['Алиса Заикина'],
+    }).withFollow(Follow(['Алиса Заикина']));
+    expect(rules.matches(has), isTrue);
+  });
 }
+

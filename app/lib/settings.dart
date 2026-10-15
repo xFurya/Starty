@@ -61,6 +61,19 @@ String _when(DateTime at) {
   return '${m.day}\u00A0${months[m.month - 1]}\u00A0${hm(at)}';
 }
 
+/// Сколько запланированных стартов с неопубликованным составом: приходят «на всякий случай»,
+/// когда выбрано «Только с отслеживаемыми» (участие отслеживаемых проверить нельзя).
+int unknownComposition(AppState state, List<Planned> planned) {
+  if (!state.rules.onlyFollowed) return 0;
+  var n = 0;
+  for (final x in planned) {
+    if (!x.key.startsWith('s:')) continue;
+    final s = state.data?.byId(x.startId);
+    if (s != null && s.ours.isEmpty && !s.compositionKnown) n++;
+  }
+  return n;
+}
+
 /// Кратко о правилах: «за 15 мин · все старты» или «за 15 мин · девушки, юниоры · отслеживаемые».
 String rulesSummary(NotifyRules r) {
   final parts = <String>['за ${r.lead} мин'];
@@ -137,7 +150,13 @@ class SettingsView extends StatelessWidget {
                 else if (state.allowed == false)
                   _Summary(head: 'Запланировано: ${planned.length}', tail: 'не придут', empty: true)
                 else
-                  _Summary(head: 'Запланировано: ${planned.length}', tail: 'ближайшее ${_when(planned.first.at)}'),
+                  _Summary(
+                    head: 'Запланировано: ${planned.length}',
+                    tail: [
+                      'ближайшее ${_when(planned.first.at)}',
+                      if (unknownComposition(state, planned) > 0) 'у ${unknownComposition(state, planned)} состав неизвестен',
+                    ].join(' · '),
+                  ),
               ],
             ),
           ),

@@ -1247,11 +1247,35 @@ class _FilterSheet extends StatefulWidget {
 }
 
 class _FilterSheetState extends State<_FilterSheet> {
-  late Set<String> kinds = {...widget.state.filters.kinds};
-  late Set<String> levels = {...widget.state.filters.levels};
-  late Set<String> scope = {...widget.state.filters.scope};
-  late Set<String> tids = {...widget.state.filters.tids};
+  // По умолчанию выбрано всё: убрал галочку — этого в ленте нет; убрал все — стартов нет.
+  // Сохраняется как пустой набор («без ограничения»), когда выбрано всё (Filters).
+  static final _allKinds = kindNames.keys.toSet();
+  static final _allLevels = levelNames.keys.toSet();
+  static const _allScope = {'russian', 'intl'};
+  late final Set<String> allTids = _tourIds(widget.state.data!, now());
+  late Set<String> kinds = _full(widget.state.filters.kinds, _allKinds);
+  late Set<String> levels = _full(widget.state.filters.levels, _allLevels);
+  late Set<String> scope = _full(widget.state.filters.scope, _allScope);
+  late Set<String> tids = _full(widget.state.filters.tids, allTids);
   late Set<String> athletes = {...widget.state.filters.athletes};
+
+  static Set<String> _full(Set<String> saved, Set<String> all) => saved.isEmpty ? {...all} : {...saved};
+
+  /// Выбрано всё — это «без ограничения» (пустой набор).
+  static Set<String> _save(Set<String> sel, Set<String> all) =>
+      sel.length == all.length && sel.containsAll(all) ? <String>{} : {...sel};
+
+  static Set<String> _tourIds(Schedule data, DateTime t) {
+    final out = <String>{};
+    for (final s in data.starts) {
+      if (!s.pastAt(t)) out.add(s.tid);
+    }
+    final today = dayKey(t), horizon = dayKey(t.add(const Duration(days: 60)));
+    for (final u in data.upcoming) {
+      if (u.end.compareTo(today) >= 0 && u.start.compareTo(horizon) < 0) out.add(u.tid);
+    }
+    return out;
+  }
   final _q = TextEditingController();
   String q = '';
 
@@ -1268,7 +1292,15 @@ class _FilterSheetState extends State<_FilterSheet> {
     final p = Palette.of(context);
     final data = widget.state.data!;
     final t = now();
-    final f = Filters(kinds, tids, athletes, levels: levels, scope: scope);
+    // пустая группа — ничего не выбрано, а значит и стартов нет
+    final nothing = kinds.isEmpty || levels.isEmpty || scope.isEmpty || (allTids.isNotEmpty && tids.isEmpty);
+    final f = Filters(
+      _save(kinds, _allKinds),
+      _save(tids, allTids),
+      athletes,
+      levels: _save(levels, _allLevels),
+      scope: _save(scope, _allScope),
+    );
 
     // турниры впереди: со стартами в расписании и без расписания; российские и международные отдельно
     final tours = <String, ({String name, bool intl, String from, String to})>{};
@@ -1297,10 +1329,10 @@ class _FilterSheetState extends State<_FilterSheet> {
     final picked = athletes.toList()..sort();
     final quick = [for (final a in follow.toList()..sort()) if (!athletes.contains(a)) a];
 
-    final count = feedPool(widget.state, f, t).length;
-    final more = upcomingAhead(widget.state, t, f).length;
-    final action = filterAction(count, more);
-    final canReset = f.any || widget.state.filters.any;
+    final count = nothing ? 0 : feedPool(widget.state, f, t).length;
+    final more = nothing ? 0 : upcomingAhead(widget.state, t, f).length;
+    final action = nothing ? ('Ничего не выбрано', null) : filterAction(count, more);
+    final canReset = f.any || nothing || widget.state.filters.any;
 
     Widget athleteRow(String a) => _CheckRow(
       leading: Avatar(name: a, data: data, size: 34, slot: true),
@@ -1365,6 +1397,11 @@ class _FilterSheetState extends State<_FilterSheet> {
                           const SizedBox(height: 10),
                           SearchBox(controller: _q, onChanged: (v) => setState(() => q = v.trim())),
                           const SizedBox(height: 6),
+                          if (q.isEmpty && athletes.isEmpty)
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 8),
+                              child: Text('Все спортсмены', style: TextStyle(fontSize: 14, color: p.ink2, fontWeight: FontWeight.w600)),
+                            ),
                           if (q.isNotEmpty) ...[
                             for (final a in found) athleteRow(a),
                             if (found.isEmpty)
@@ -1407,10 +1444,10 @@ class _FilterSheetState extends State<_FilterSheet> {
             onSecondary: canReset
                 ? () {
                     setState(() {
-                      kinds.clear();
-                      levels.clear();
-                      scope.clear();
-                      tids.clear();
+                      kinds = {..._allKinds};
+                      levels = {..._allLevels};
+                      scope = {..._allScope};
+                      tids = {...allTids};
                       athletes.clear();
                       _q.clear();
                       q = '';
@@ -1419,7 +1456,7 @@ class _FilterSheetState extends State<_FilterSheet> {
                 : null,
             primary: action.$1,
             detail: action.$2,
-            onPrimary: count + more == 0
+            onPrimary: nothing || count + more == 0
                 ? null
                 : () {
                     widget.state.setFilters(f);
