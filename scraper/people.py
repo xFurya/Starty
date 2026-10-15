@@ -30,10 +30,10 @@ FSR = "https://fsrussia.ru"
 STAT = "https://www.isuresults.com/isujsstat/"
 OURS = {"RUS", "AIN2", "BLR", "AIN1", "AIN"}
 KINDS = {"w": "women", "m": "men", "p": "pairs", "d": "dance"}
-# сколько страниц раздела «Соревнования» листать при первом сборе (по 10 турниров)
-MAX_PAGES = 40
+# сколько страниц раздела «Соревнования» листать за сбор (по 10 турниров; конец — пустая страница)
+MAX_PAGES = 200
 # версия разбора протоколов: при смене разобранное считается заново
-RULES = 3
+RULES = 4
 
 
 def _load():
@@ -115,28 +115,18 @@ def russians(cache, season_codes, log=print):
         links = _tournament_links(listing)
         if not links:
             break
-        new = [l for l in links if l not in known]
-        old_season = 0
+        # листаем весь раздел: старые турниры на последних страницах, и порядок дат не гарантирован
         for l in links:
             if l in known:
-                res = known[l]
-            else:
-                try:
-                    res = fsr.tournament(FSR + l)["results"] or ""
-                except net.FetchError:
-                    continue
-                known[l] = res
-                fresh_pages += 1
-            m = re.search(r"/results/(\d{4})/", res or "")
-            if m and m.group(1) < oldest:
-                old_season += 1
-            if re.search(r"-20(1\d|2[0-4])$", l):
-                old_season += 1
-        # дошли до прошлых сезонов или до уже известного — дальше листать незачем
-        if old_season >= len(links) // 2 or (not new and n > 0):
-            break
+                continue
+            try:
+                res = fsr.tournament(FSR + l)["results"] or ""
+            except net.FetchError:
+                continue
+            known[l] = res
+            fresh_pages += 1
     out = []
-    for page, res in known.items():
+    for page, res in known.items():  # noqa: E501
         if not res or _SKIP_TOUR.search(page.replace("-", " ")):
             continue
         m = re.search(r"/results/(\d{4})/", res)
@@ -233,6 +223,28 @@ def internationals(season_codes, log=print):
 
 # ---------------------------------------------------------------- фото
 
+def isu_russians(log=print):
+    """[(имя латиницей, гражданство, организация)] — активные фигуристы ISU из России и Беларуси."""
+    out = {}
+    for page in range(1, 40):
+        d = net.fetch_json(f"{isu.API}/skaters/merged-list",
+                           data={"pagesize": 1000, "page": page, "discipline_id": 1})
+        for x in d.get("data") or []:
+            n = x.get("nationality_code") or ""
+            org = x.get("organization_code") or x.get("nf_organization_code") or ""
+            if n not in ("RUS", "BLR") and org not in ("RUS", "BLR", "AIN"):
+                continue
+            if x.get("status") not in ("Active", None, ""):
+                continue
+            name = x.get("full_name") or ""
+            if name:
+                out.setdefault(name, (n or org, org))
+        if d.get("is_next_page") != "Y":
+            break
+    log(f"  список ISU, россияне и белорусы: {len(out)}")
+    return [(k, v[0], v[1]) for k, v in out.items()]
+
+
 def isu_photos(log=print):
     """[(имя латиницей, портрет)] из общего списка фигуристов ISU."""
     out = []
@@ -317,6 +329,13 @@ def build(names, season_start, log=print):
         if nm.is_cyr(name) and not nm.is_cyr(p["n"]):
             p["n"] = name
 
+    # полный список ISU: все фигуристы с российским или белорусским гражданством (вид — по заявке ISU)
+    try:
+        for raw, nation, org in isu_russians(log):
+            add(names.to_ru(raw) if nation == "RUS" or nation == "BLR" else raw,
+                "BLR" if nation == "BLR" else "RUS", None, None)
+    except net.FetchError as e:
+        log("  ! список ISU:", e)
     # сборная ФФККР — российские спортсмены по определению (КМС и выше); вид пока неизвестен
     try:
         from . import fsr
