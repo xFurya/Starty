@@ -113,33 +113,39 @@ class AppState extends ChangeNotifier {
 
   /// Пришёл документ с сервера: записать в настройки устройства и перерисовать. Поле, которого в документе
   /// нет или которое испорчено (SyncDoc.absent), не трогаем: остаётся настройка устройства.
+  /// Все записи в Prefs стартуют подряд, без ожидания между ними (кэш обновляется сразу, на диск — потом):
+  /// правка человека, пришедшая в любой момент применения, ложится поверх целиком серверного состояния.
+  /// Значок идёт последним и может ждать систему.
   Future<void> _applySync(SyncDoc d) async {
     bool has(String k) => !d.absent.contains(k);
-    if (has('rules')) await Prefs.setRulesJson(NotifyRules.mergeJson(rules.toJson(), d.rules));
-    await Prefs.setForced(
-      has('forcedOn') ? d.forcedOn.toSet() : Prefs.forcedOn,
-      has('forcedOff') ? d.forcedOff.toSet() : Prefs.forcedOff,
-    );
-    await Prefs.setFollow(
-      has('follow') ? d.follow : Prefs.follow,
-      russians: has('followRussians') ? d.followRussians : Prefs.followRussians,
-      belarusians: has('followBelarusians') ? d.followBelarusians : Prefs.followBelarusians,
-    );
     Set<String> pick(String k, Set<String> local) => has('filters.$k') ? d.filters[k]!.toSet() : local;
-    await Prefs.setFilters(
-      Filters(
-        pick('kinds', Prefs.kinds),
-        pick('tids', Prefs.tids),
-        pick('athletes', Prefs.athletes),
-        levels: pick('levels', Prefs.levels),
-        scope: pick('scope', Prefs.scope),
+    final writes = <Future<void>>[
+      if (has('rules')) Prefs.setRulesJson(NotifyRules.mergeJson(rules.toJson(), d.rules)),
+      Prefs.setForced(
+        has('forcedOn') ? d.forcedOn.toSet() : Prefs.forcedOn,
+        has('forcedOff') ? d.forcedOff.toSet() : Prefs.forcedOff,
       ),
-    );
-    if (has('showDone')) await Prefs.setShowDone(d.showDone);
-    if (has('regional')) await Prefs.setRegional(d.regional);
-    if (has('liveMode')) await Prefs.setLiveMode(d.liveMode);
-    if (has('liveOverrides')) await Prefs.setLiveOverrides(d.liveOverrides);
-    if (has('theme')) await Prefs.setTheme(d.theme);
+      Prefs.setFollow(
+        has('follow') ? d.follow : Prefs.follow,
+        russians: has('followRussians') ? d.followRussians : Prefs.followRussians,
+        belarusians: has('followBelarusians') ? d.followBelarusians : Prefs.followBelarusians,
+      ),
+      Prefs.setFilters(
+        Filters(
+          pick('kinds', Prefs.kinds),
+          pick('tids', Prefs.tids),
+          pick('athletes', Prefs.athletes),
+          levels: pick('levels', Prefs.levels),
+          scope: pick('scope', Prefs.scope),
+        ),
+      ),
+      if (has('showDone')) Prefs.setShowDone(d.showDone),
+      if (has('regional')) Prefs.setRegional(d.regional),
+      if (has('liveMode')) Prefs.setLiveMode(d.liveMode),
+      if (has('liveOverrides')) Prefs.setLiveOverrides(d.liveOverrides),
+      if (has('theme')) Prefs.setTheme(d.theme),
+    ];
+    await Future.wait(writes);
     if (has('icon')) await _applyIcon(d.icon);
     _reloadFromPrefs();
   }

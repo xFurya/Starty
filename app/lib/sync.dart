@@ -664,10 +664,6 @@ class SyncController {
   /// Идущая сверка: тот, кто просит сверить во время неё, ждёт её итога, а не получает пустой ответ.
   Future<bool>? _running;
 
-  /// Идёт применение документа с сервера; [_during] — документ устройства, снятый на последней правке за это время.
-  bool _applying = false;
-  SyncDoc? _during;
-
   /// Число правок. Растёт при каждом [touch]: отправка сравнивает его до и после сохранения, чтобы
   /// понять, не пришла ли правка, пока документ уходил. Порядок правок — по счётчику, не по часам.
   int _editSeq = 0;
@@ -680,9 +676,6 @@ class SyncController {
 
   /// Пользователь что-то поменял: отметить правку и отправить чуть позже (несколько правок — одной отправкой).
   Future<void> touch() async {
-    // правка во время применения серверного документа: применение перепишет настройки, поэтому
-    // значения человека снимаем сразу, пока их ещё не перезаписали, и вернём после
-    if (_applying) _during = await capture();
     _editSeq++;
     await local.markPending(true);
     if (backend == null) return;
@@ -739,25 +732,13 @@ class SyncController {
       pending: st.pending,
     )) {
       case SyncAction.pull:
-        var seq = _editSeq;
-        _during = null;
-        _applying = true;
-        var edited = false;
-        try {
-          await apply(remote!);
-          // правка пришла, пока применялся документ: возвращаем значения человека поверх серверных
-          while (_editSeq != seq && _during != null) {
-            seq = _editSeq;
-            edited = true;
-            await apply(_during!);
-          }
-        } finally {
-          _applying = false;
-        }
+        // Применение пишет серверные значения разом, в самом начале: правка, пришедшая после этого,
+        // лежит поверх них. Номер правок сверяем, как при отправке: правку не снимаем, её отправит следующая сверка.
+        final seq = _editSeq;
+        await apply(remote!);
         if (!identical(backend, b)) return true;
         await local.markBase(remote.updatedAt);
-        if (edited) {
-          // правка остаётся несохранённой и уйдёт на сервер следующей отправкой
+        if (_editSeq != seq) {
           await local.markPending(true);
           _later();
         }

@@ -138,8 +138,8 @@ void main() {
     });
   });
 
-  group('правка во время загрузки документа', () {
-    test('не теряется: значения человека после применения, правка отправляется', () async {
+  group('правка во время применения документа', () {
+    test('контроллер: правка остаётся несохранённой и уходит на сервер', () async {
       final p = await SharedPreferences.getInstance();
       var theme = 'system';
       final remote = _Memory()..remote = doc('dark', DateTime.utc(2026, 1, 1));
@@ -147,9 +147,10 @@ void main() {
       final c = SyncController(
         local: SyncLocal(p),
         capture: () async => doc(theme, SyncDoc.epoch),
+        // как _applySync: серверные значения пишутся сразу, потом применение ещё чего-то ждёт
         apply: (d) async {
-          if (!gate.isCompleted) await gate.future;
           theme = d.theme;
+          await gate.future;
         },
       )..backend = remote;
       final r = c.reconcile();
@@ -158,46 +159,61 @@ void main() {
       await c.touch();
       gate.complete();
       await r;
-      expect(theme, 'light');
       expect(SyncLocal(p).state.pending, isTrue);
       await c.reconcile();
       expect(remote.remote!.theme, 'light');
       c.dispose();
     });
 
-    test('в приложении: тема, выбранная во время применения, остаётся в Prefs и уходит на сервер', () async {
-      final srv = Server();
-      final s = AppState()..syncClient = srv.client;
-      srv.stored = doc('dark', DateTime.utc(2026, 1, 1));
-      await s.signInSync('a@b.ru', 'secret1'); // подключились, документ взяли
-      srv.stored = doc('light', DateTime.utc(2026, 1, 2)); // новый документ с другого устройства
-      final gate = Completer<void>();
-      final inner = s.sync.apply;
-      var first = true;
-      final c = SyncController(
-        local: s.sync.local,
-        capture: s.sync.capture,
-        apply: (d) async {
-          if (first) {
-            first = false;
-            await gate.future;
-          }
-          await inner(d);
-        },
-      )..backend = s.sync.backend;
-      final r = c.reconcile();
-      await settle();
-      await s.setTheme(ThemeMode.dark);
-      unawaited(c.touch());
-      await settle();
-      gate.complete();
-      await r;
-      expect(Prefs.theme, 'dark');
-      await c.reconcile();
-      expect(srv.stored!.theme, 'dark');
-      c.dispose();
-      s.sync.dispose();
-    });
+    // Правка в каждой точке ожидания применения (в том числе до и после значка): в Prefs и в документе
+    // для отправки — все серверные поля плюс правка человека, ни одного старого локального значения.
+    for (var k = 0; k < 8; k++) {
+      test('приложение: правка после $k ожиданий применения', () async {
+        final s = AppState();
+        await s.setShowDone(true);
+        await s.setRegional(false);
+        await s.setLiveMode('instant');
+        final server = doc('light', DateTime.utc(2026, 1, 2), liveMode: 'delayed');
+        final serverDoc = SyncDoc(
+          updatedAt: server.updatedAt,
+          rules: server.rules,
+          forcedOn: const ['x'],
+          forcedOff: const ['y'],
+          follow: const ['Иванов'],
+          followRussians: false,
+          followBelarusians: true,
+          filters: const {'kinds': ['women'], 'tids': ['t1'], 'athletes': [], 'levels': ['junior'], 'scope': []},
+          showDone: false,
+          theme: 'light',
+          icon: 'classic',
+          regional: true,
+          liveMode: 'delayed',
+          liveOverrides: const {'a': 'delayed'},
+        );
+        final f = s.sync.apply(serverDoc);
+        for (var i = 0; i < k; i++) {
+          await Future<void>.delayed(Duration.zero);
+        }
+        await s.setTheme(ThemeMode.dark);
+        await f;
+        await pumpEventQueue();
+        final got = await s.sync.capture();
+        expect(got.theme, 'dark');
+        expect(Prefs.theme, 'dark');
+        expect(got.showDone, isFalse);
+        expect(got.regional, isTrue);
+        expect(got.liveMode, 'delayed');
+        expect(got.liveOverrides, {'a': 'delayed'});
+        expect(got.forcedOn, ['x']);
+        expect(got.forcedOff, ['y']);
+        expect(got.follow, ['Иванов']);
+        expect(got.followRussians, isFalse);
+        expect(got.filters['kinds'], ['women']);
+        expect(got.filters['levels'], ['junior']);
+        expect(SyncLocal(Prefs.raw).state.pending, isTrue);
+        s.sync.dispose();
+      });
+    }
   });
 
   group('обновление токена', () {
