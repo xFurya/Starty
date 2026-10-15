@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:ffkm:2026-08-24_pm:pairs-junior-kp@starty
+DTSTAMP:20261015T185857Z
+DTSTART;TZID=Europe/Moscow:20260825T183700
+DTEND;TZID=Europe/Moscow:20260825T194700
+SUMMARY:Первенство Москвы — пары КП
+DESCRIPTION:Итог:\n1. Таисия Гусева / Даниил Овчи
+ нников — 71.49\n2. Полина Сажина / Алексей Бе
+ лкин — 65.55\n3. Зоя Ковязина / Дмитрий Родио
+ нов — 63.24\n\nРоссияне:\n• Таисия Гусева / Д
+ аниил Овчинников — 8-й\n\nНачало: 18:37 МСК
+LOCATION:ЛД «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=ffkm:2026-08-24_pm:pairs-junior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Первенство Москвы — пары КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

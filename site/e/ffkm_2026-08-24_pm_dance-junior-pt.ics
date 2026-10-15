@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:ffkm:2026-08-24_pm:dance-junior-pt@starty
+DTSTAMP:20261015T185857Z
+DTSTART;TZID=Europe/Moscow:20260825T140000
+DTEND;TZID=Europe/Moscow:20260825T180000
+SUMMARY:Первенство Москвы — танцы ПТ
+DESCRIPTION:Итог:\n1. Полина Жарова / Алексей Сто
+ ляров — 98.04\n2. Алиса Кремер / Илья Целковс
+ кий — 92.08\n3. Евдокия Крючкова / Артем Мяки
+ шев — 91.88\n\nИтог турнира:\n1. Полина Жарова
+  / Алексей Столяров — 163.32\n2. Евдокия Крюч
+ кова / Артем Мякишев — 154.33\n3. Анна Билиби
+ на / Дмитрий Кашаев — 151.63\n\nПримечательн
+ ое:\n• Полина Жарова / Алексей Столяров —
+  Отрыв от второго места — 8.99 балла\n\nНача
+ ло: 14:00 МСК
+LOCATION:ЛД «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=ffkm:2026-08-24_pm:dance-junior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Первенство Москвы — танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
