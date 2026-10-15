@@ -187,10 +187,25 @@ def classify(text):
     return kind, level
 
 
+# Сокращения, которыми подписаны сегменты в расписаниях ФФККР: «Женщины, КП», «Танцы на льду, РП».
+# У танцев «РП» — ритм-танец, а «ПП» последнего дня — произвольный танец.
+SEG_ABBR = [
+    (r"(?<![а-я])(?:рт|рп|рд)(?![а-я])", "РТ"),
+    (r"(?<![а-я])(?:пт|пд)(?![а-я])", "ПТ"),
+    (r"(?<![а-я])кп(?![а-я])", "КП"),
+    (r"(?<![а-я])пп(?![а-я])", "ПП"),
+]
+
+
 def segment_of(text):
     t = text.lower()
     for rx, code in SEG_WORDS:
         if re.search(rx, t):
+            return code
+    for rx, code in SEG_ABBR:
+        if re.search(rx, t):
+            if classify(text)[0] == "dance":
+                return {"КП": "РТ", "ПП": "ПТ"}.get(code, code)
             return code
     return None
 

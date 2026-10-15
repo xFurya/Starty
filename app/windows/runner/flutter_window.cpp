@@ -48,26 +48,26 @@ bool FlutterWindow::OnCreate() {
           return;
         }
         const auto* path = std::get_if<std::string>(call.arguments());
-        HICON big = nullptr, small = nullptr;
+        HICON icon_big = nullptr, icon_small = nullptr;
         if (path && !path->empty()) {
           int n = MultiByteToWideChar(CP_UTF8, 0, path->c_str(), -1, nullptr, 0);
           std::wstring w(n, L'\0');
           MultiByteToWideChar(CP_UTF8, 0, path->c_str(), -1, w.data(), n);
-          big = static_cast<HICON>(LoadImageW(nullptr, w.c_str(), IMAGE_ICON, GetSystemMetrics(SM_CXICON),
+          icon_big = static_cast<HICON>(LoadImageW(nullptr, w.c_str(), IMAGE_ICON, GetSystemMetrics(SM_CXICON),
                                               GetSystemMetrics(SM_CYICON), LR_LOADFROMFILE));
-          small = static_cast<HICON>(LoadImageW(nullptr, w.c_str(), IMAGE_ICON, GetSystemMetrics(SM_CXSMICON),
+          icon_small = static_cast<HICON>(LoadImageW(nullptr, w.c_str(), IMAGE_ICON, GetSystemMetrics(SM_CXSMICON),
                                                 GetSystemMetrics(SM_CYSMICON), LR_LOADFROMFILE));
         } else {
           // classic icon from the exe resources (IDI_APP_ICON = 101)
           HINSTANCE inst = GetModuleHandle(nullptr);
-          big = static_cast<HICON>(LoadImageW(inst, MAKEINTRESOURCEW(101), IMAGE_ICON, GetSystemMetrics(SM_CXICON),
+          icon_big = static_cast<HICON>(LoadImageW(inst, MAKEINTRESOURCEW(101), IMAGE_ICON, GetSystemMetrics(SM_CXICON),
                                               GetSystemMetrics(SM_CYICON), 0));
-          small = static_cast<HICON>(LoadImageW(inst, MAKEINTRESOURCEW(101), IMAGE_ICON, GetSystemMetrics(SM_CXSMICON),
+          icon_small = static_cast<HICON>(LoadImageW(inst, MAKEINTRESOURCEW(101), IMAGE_ICON, GetSystemMetrics(SM_CXSMICON),
                                                 GetSystemMetrics(SM_CYSMICON), 0));
         }
-        if (big) SendMessage(hwnd, WM_SETICON, ICON_BIG, reinterpret_cast<LPARAM>(big));
-        if (small) SendMessage(hwnd, WM_SETICON, ICON_SMALL, reinterpret_cast<LPARAM>(small));
-        result->Success(flutter::EncodableValue(big != nullptr));
+        if (icon_big) SendMessage(hwnd, WM_SETICON, ICON_BIG, reinterpret_cast<LPARAM>(icon_big));
+        if (icon_small) SendMessage(hwnd, WM_SETICON, ICON_SMALL, reinterpret_cast<LPARAM>(icon_small));
+        result->Success(flutter::EncodableValue(icon_big != nullptr));
       });
   SetChildContent(flutter_controller_->view()->GetNativeWindow());
 
