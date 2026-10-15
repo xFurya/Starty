@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-16T01:09:25+03:00",
- "checked": "2026-10-16T01:09:25+03:00",
+ "generated": "2026-10-16T01:21:02+03:00",
+ "checked": "2026-10-16T01:21:02+03:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -276,7 +276,8 @@
     "basis": "judges"
    },
    "tier": "regional",
-   "region": "Москва"
+   "region": "Москва",
+   "proto": "ffkm_2026-08-24_pm.json"
   },
   {
    "id": "ffkm:2026-08-24_pm:dance-junior-pt",
@@ -595,7 +596,8 @@
     }
    ],
    "tier": "regional",
-   "region": "Москва"
+   "region": "Москва",
+   "proto": "ffkm_2026-08-24_pm.json"
   },
   {
    "id": "ffkm:2026-08-24_pm:pairs-junior-kp",
@@ -727,7 +729,8 @@
     "basis": "judges"
    },
    "tier": "regional",
-   "region": "Москва"
+   "region": "Москва",
+   "proto": "ffkm_2026-08-24_pm.json"
   },
   {
    "id": "ffkm:2026-08-24_pm:women-junior-kp",
@@ -1219,7 +1222,8 @@
     "basis": "judges"
    },
    "tier": "regional",
-   "region": "Москва"
+   "region": "Москва",
+   "proto": "ffkm_2026-08-24_pm.json"
   },
   {
    "id": "ffkm:2026-08-24_pm:men-junior-kp",
@@ -1546,7 +1550,8 @@
     "basis": null
    },
    "tier": "regional",
-   "region": "Москва"
+   "region": "Москва",
+   "proto": "ffkm_2026-08-24_pm.json"
   },
   {
    "id": "isu:isu-cs-john-nicks-pairs-international-2026:pairs-senior-kp",
@@ -1623,7 +1628,8 @@
      "Sydney COOKE / Matthew KENNEDY": "Sydney Cooke / Matthew Kennedy",
      "Sarah NUNEZ / Blake EISENACH": "Sarah Nunez / Blake Eisenach"
     }
-   }
+   },
+   "proto": null
   },
   {
    "id": "isu:isu-cs-john-nicks-pairs-international-2026:pairs-senior-pp",
@@ -1728,7 +1734,8 @@
      "text": "Четверной выброс сальхов",
      "who": "Александра Бойкова / Дмитрий Козловский"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-ankara-2026:women-junior-kp",
@@ -2131,7 +2138,8 @@
      "Sarah ABU ELSEOUD": "Sarah Abu Elseoud"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-ankara-2026.json"
   },
   {
    "id": "isu:isu-jgp-ankara-2026:pairs-junior-kp",
@@ -2333,7 +2341,8 @@
      "Vassilianna SHELESTOVA / Abay SADYKOV": "Vassilianna Shelestova / Abay Sadykov"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-ankara-2026.json"
   },
   {
    "id": "isu:isu-jgp-ankara-2026:men-junior-kp",
@@ -2682,7 +2691,8 @@
      "Rahul RAVINDRAN": "Rahul Ravindran"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-ankara-2026.json"
   },
   {
    "id": "isu:isu-jgp-ankara-2026:dance-junior-rt",
@@ -2914,7 +2924,8 @@
      "Lumia SASSI / Aarne SAVOLA": "Lumia Sassi / Aarne Savola"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-ankara-2026.json"
   },
   {
    "id": "isu:isu-jgp-ankara-2026:pairs-junior-pp",
@@ -3160,7 +3171,8 @@
      "text": "Четверная подкрутка",
      "who": "Таисия Гусева / Даниил Овчинников"
     }
-   ]
+   ],
+   "proto": "isu_isu-jgp-ankara-2026.json"
   },
   {
    "id": "isu:isu-cs-lombardia-trophy-2026:women-senior-kp",
@@ -3372,7 +3384,8 @@
      "Marietta ATKINS": "Marietta Atkins"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-lombardia-trophy-2026.json"
   },
   {
    "id": "isu:isu-jgp-ankara-2026:women-junior-pp",
@@ -3846,7 +3859,8 @@
      "text": "После короткой программы — 7-е место, в итоге — 3-е место",
      "who": "Stefania Gladki"
     }
-   ]
+   ],
+   "proto": "isu_isu-jgp-ankara-2026.json"
   },
   {
    "id": "isu:isu-cs-lombardia-trophy-2026:men-senior-kp",
@@ -3994,7 +4008,8 @@
      "Dillon JUDGE": "Dillon Judge"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-lombardia-trophy-2026.json"
   },
   {
    "id": "isu:isu-jgp-ankara-2026:men-junior-pp",
@@ -4393,7 +4408,8 @@
      "text": "3 четверных в программе: 4Lz, 4Lz, 4T",
      "who": "Habin Choi"
     }
-   ]
+   ],
+   "proto": "isu_isu-jgp-ankara-2026.json"
   },
   {
    "id": "isu:isu-cs-lombardia-trophy-2026:dance-senior-rt",
@@ -4578,7 +4594,8 @@
      "Sophia AWNY FARAJALLAH / Maksym SPODYRIEV": "Sophia Awny Farajallah / Maksym Spodyriev"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-lombardia-trophy-2026.json"
   },
   {
    "id": "isu:isu-jgp-ankara-2026:dance-junior-pt",
@@ -4850,7 +4867,8 @@
      "Lumia SASSI / Aarne SAVOLA": "Lumia Sassi / Aarne Savola"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-ankara-2026.json"
   },
   {
    "id": "isu:isu-cs-lombardia-trophy-2026:women-senior-pp",
@@ -5100,7 +5118,8 @@
      "Chiara MINIGHINI": "Chiara Minighini"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-lombardia-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-lombardia-trophy-2026:men-senior-pp",
@@ -5279,7 +5298,8 @@
      "Dillon JUDGE": "Dillon Judge"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-lombardia-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-lombardia-trophy-2026:dance-senior-pt",
@@ -5499,7 +5519,8 @@
      "Denisa CIMLOVA / Stefano FRASCA": "Denisa Cimlova / Stefano Frasca"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-lombardia-trophy-2026.json"
   },
   {
    "id": "isu:isu-jgp-batumi-2026:men-junior-kp",
@@ -5785,7 +5806,8 @@
      "Mantas GRYBA": "Mantas Gryba"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-batumi-2026.json"
   },
   {
    "id": "isu:isu-cs-nebelhorn-trophy-2026:men-senior-kp",
@@ -5961,7 +5983,8 @@
      "Dillon JUDGE": "Dillon Judge"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
   },
   {
    "id": "isu:isu-jgp-batumi-2026:women-junior-kp",
@@ -6328,7 +6351,8 @@
      "Raffaella OBERTI PINTO": "Raffaella Oberti Pinto"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-batumi-2026.json"
   },
   {
    "id": "isu:isu-cs-nebelhorn-trophy-2026:pairs-senior-kp",
@@ -6477,7 +6501,8 @@
      "Oxana VOUILLAMOZ / Tom BOUVART": "Oxana Vouillamoz / Tom Bouvart"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-nebelhorn-trophy-2026:women-senior-kp",
@@ -6608,7 +6633,8 @@
      "Nela SNEBERGEROVA": "Nela Snebergerova"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:dance-junior-rt",
@@ -6795,7 +6821,8 @@
      "Ульяна ТРУШНИКОВА / Кирилл ВЕДЕРНИКОВ": "Ульяна Трушникова / Кирилл Ведерников"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
   },
   {
    "id": "isu:isu-jgp-batumi-2026:dance-junior-rt",
@@ -7009,7 +7036,8 @@
      "Veronika KRIUCHKOVA / Denys FEDIANKIN": "Veronika Kriuchkova / Denys Fediankin"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-batumi-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:pairs-junior-kp",
@@ -7124,7 +7152,8 @@
      "Дарья ТРЕТЬЯКОВА / Александр САМОРУКОВ": "Дарья Третьякова / Александр Саморуков"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
   },
   {
    "id": "isu:isu-cs-nebelhorn-trophy-2026:men-senior-pp",
@@ -7346,7 +7375,8 @@
      "text": "После короткой программы — 7-е место, в итоге — 3-е место",
      "who": "Francois Pitot"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
   },
   {
    "id": "isu:isu-jgp-batumi-2026:men-junior-pp",
@@ -7685,7 +7715,8 @@
      "text": "После короткой программы — 7-е место, в итоге — 2-е место",
      "who": "Hayato Okazaki"
     }
-   ]
+   ],
+   "proto": "isu_isu-jgp-batumi-2026.json"
   },
   {
    "id": "isu:isu-cs-nebelhorn-trophy-2026:dance-senior-rt",
@@ -7843,7 +7874,8 @@
      "Gabriela PALOMEQUE / Tanner WHITE": "Gabriela Palomeque / Tanner White"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-nebelhorn-trophy-2026:pairs-senior-pp",
@@ -8030,7 +8062,8 @@
      "text": "Отрыв от второго места — 16.65 балла",
      "who": "Lia Pereira / Trennt Michaud"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:dance-junior-pt",
@@ -8259,7 +8292,8 @@
      "text": "Отрыв от второго места — 20.40 балла",
      "who": "Мария Фефелова / Артём Валов"
     }
-   ]
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:pairs-junior-pp",
@@ -8401,7 +8435,8 @@
      "Мария КАРПАНОВА / Артем УСТИНОВ": "Мария Карпанова / Артем Устинов"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
   },
   {
    "id": "isu:isu-jgp-batumi-2026:dance-junior-pt",
@@ -8653,7 +8688,8 @@
      "Veronika KRIUCHKOVA / Denys FEDIANKIN": "Veronika Kriuchkova / Denys Fediankin"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-batumi-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:women-junior-kp",
@@ -8889,7 +8925,8 @@
      "text": "Тройной аксель",
      "who": "Виктория Стрельцова"
     }
-   ]
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
   },
   {
    "id": "isu:isu-cs-nebelhorn-trophy-2026:women-senior-pp",
@@ -9061,7 +9098,8 @@
      "text": "Отрыв от второго места — 17.76 балла",
      "who": "Mia Risa Gomez"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:men-junior-kp",
@@ -9275,7 +9313,8 @@
      "Ярослав КРЕГЕЛЬ": "Ярослав Крегель"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
   },
   {
    "id": "isu:isu-jgp-batumi-2026:women-junior-pp",
@@ -9704,7 +9743,8 @@
      "text": "Четверной сальхов",
      "who": "Arina Kalugina"
     }
-   ]
+   ],
+   "proto": "isu_isu-jgp-batumi-2026.json"
   },
   {
    "id": "isu:isu-cs-nebelhorn-trophy-2026:dance-senior-pt",
@@ -9894,7 +9934,8 @@
      "Gabriela PALOMEQUE / Tanner WHITE": "Gabriela Palomeque / Tanner White"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:women-junior-pp",
@@ -10195,7 +10236,8 @@
      "text": "После короткой программы — 10-е место, в итоге — 3-е место",
      "who": "Дарья Лебедева"
     }
-   ]
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:men-junior-pp",
@@ -10474,7 +10516,8 @@
      "text": "Отрыв от второго места — 16.45 балла",
      "who": "Макар Солодников"
     }
-   ]
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:women-senior-kp",
@@ -10672,7 +10715,8 @@
      "Salma AGAMOVA": "Salma Agamova"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-trialeti-trophy.json"
   },
   {
    "id": "ffkm:2026-10-01_cm:men-senior-kp",
@@ -10859,7 +10903,8 @@
     "basis": "judges"
    },
    "tier": "regional",
-   "region": "Москва"
+   "region": "Москва",
+   "proto": "ffkm_2026-10-01_cm.json"
   },
   {
    "id": "isu:isu-jgp-ljubljana-2026:women-junior-kp",
@@ -11235,7 +11280,8 @@
      "Raffaella OBERTI PINTO": "Raffaella Oberti Pinto"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-ljubljana-2026.json"
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:dance-senior-rt",
@@ -11483,7 +11529,8 @@
      "Maxine WEATHERBY / Oleksandr KOLOSOVSKYI": "Maxine Weatherby / Oleksandr Kolosovskyi"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-trialeti-trophy.json"
   },
   {
    "id": "ffkm:2026-10-01_cm:pairs-senior-kp",
@@ -11589,7 +11636,8 @@
     "basis": "judges"
    },
    "tier": "regional",
-   "region": "Москва"
+   "region": "Москва",
+   "proto": "ffkm_2026-10-01_cm.json"
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:men-senior-kp",
@@ -11776,7 +11824,8 @@
      "Oleg MELNIKOV": "Oleg Melnikov"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-trialeti-trophy.json"
   },
   {
    "id": "isu:isu-jgp-ljubljana-2026:men-junior-kp",
@@ -12035,7 +12084,8 @@
      "Fedir BABENKO": "Fedir Babenko"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-ljubljana-2026.json"
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:pairs-senior-kp",
@@ -12170,7 +12220,8 @@
      "Chelsea LIU / Ryan BEDARD": "Chelsea Liu / Ryan Bedard"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-trialeti-trophy.json"
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:dance-senior-pt",
@@ -12468,7 +12519,8 @@
      "text": "Отрыв от второго места — 30.14 балла",
      "who": "Diana Davis / Gleb Smolkin"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-trialeti-trophy.json"
   },
   {
    "id": "isu:isu-jgp-ljubljana-2026:dance-junior-rt",
@@ -12673,7 +12725,8 @@
      "Mihana NAKAJIMA / Isak Bengt-Eric GRANS": "Mihana Nakajima / Isak Bengt-Eric Grans"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-ljubljana-2026.json"
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:men-senior-pp",
@@ -12903,7 +12956,8 @@
      "text": "Отрыв от второго места — 26.24 балла",
      "who": "Nika Egadze"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-trialeti-trophy.json"
   },
   {
    "id": "isu:isu-jgp-ljubljana-2026:men-junior-pp",
@@ -13195,7 +13249,8 @@
      "Edoardo Luigi PROFAIZER": "Edoardo Luigi Profaizer"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-ljubljana-2026.json"
   },
   {
    "id": "isu:isu-jgp-ljubljana-2026:dance-junior-pt",
@@ -13437,7 +13492,8 @@
      "Barbora KLESALOVA / Matej KLESAL": "Barbora Klesalova / Matej Klesal"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-ljubljana-2026.json"
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:pairs-senior-pp",
@@ -13602,7 +13658,8 @@
      "Chelsea LIU / Ryan BEDARD": "Chelsea Liu / Ryan Bedard"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-trialeti-trophy.json"
   },
   {
    "id": "isu:isu-jgp-ljubljana-2026:women-junior-pp",
@@ -14036,7 +14093,8 @@
      "text": "Тройной аксель",
      "who": "Leandra Tzimpoukakis"
     }
-   ]
+   ],
+   "proto": "isu_isu-jgp-ljubljana-2026.json"
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:women-senior-pp",
@@ -14271,7 +14329,8 @@
      "Mariia ARUTIUNIAN": "Mariia Arutiunian"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-trialeti-trophy.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:dance-junior-rt",
@@ -14458,7 +14517,8 @@
      "Аксинья ПАНАСЕНКО / Максим ВАХРАМЕЕВ": "Аксинья Панасенко / Максим Вахрамеев"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:pairs-junior-kp",
@@ -14579,7 +14639,8 @@
      "Ангелина КУЛАГИНА / Максим ИХСАНОВ": "Ангелина Кулагина / Максим Ихсанов"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:dance-junior-pt",
@@ -14801,7 +14862,8 @@
      "Екатерина СТАРОСТИНА / Тимофей СТОЛЯРЕНКО": "Екатерина Старостина / Тимофей Столяренко"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:pairs-junior-pp",
@@ -14957,7 +15019,8 @@
      "text": "Четверная подкрутка",
      "who": "Таисия Гусева / Даниил Овчинников"
     }
-   ]
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:women-junior-kp",
@@ -15207,7 +15270,8 @@
      "text": "Тройной аксель",
      "who": "София Сарновская"
     }
-   ]
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:men-junior-kp",
@@ -15429,7 +15493,8 @@
      "Артемий ДЕНИСОВ": "Артемий Денисов"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:women-junior-pp",
@@ -15736,7 +15801,8 @@
      "text": "Тройной аксель",
      "who": "София Сарновская"
     }
-   ]
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:men-junior-pp",
@@ -16004,7 +16070,8 @@
      "text": "3 четверных в программе: 4S, 4T, 4T",
      "who": "Никита Малютин"
     }
-   ]
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:men-junior-kp",
@@ -16221,7 +16288,8 @@
      "text": "Весь пьедестал — россияне",
      "who": ""
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-denis-ten-memorial.json"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:women-junior-kp",
@@ -16575,7 +16643,8 @@
      "text": "Личный рекорд за КП: 69.18 (был 61.01)",
      "who": "Варвара Стахович"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-denis-ten-memorial.json"
   },
   {
    "id": "isu:isu-jgp-gdansk-2026:women-junior-kp",
@@ -16951,7 +17020,8 @@
      "Maria Ignacia CASTRO": "Maria Ignacia Castro"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-gdansk-2026.json"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:women-senior-kp",
@@ -17213,7 +17283,8 @@
      "text": "Тройной аксель",
      "who": "Дина Хуснутдинова"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-denis-ten-memorial.json"
   },
   {
    "id": "isu:isu-jgp-gdansk-2026:pairs-junior-kp",
@@ -17391,7 +17462,8 @@
      "Teryn KIM / Lazuli LUNE": "Teryn Kim / Lazuli Lune"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-gdansk-2026.json"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:men-senior-kp",
@@ -17581,7 +17653,8 @@
      "text": "Первые 4 места — россияне и белорусы",
      "who": ""
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-denis-ten-memorial.json"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:dance-junior-rt",
@@ -17698,7 +17771,8 @@
      "text": "Личный рекорд за РТ: 67.11 (был 65.33)",
      "who": "Мария Фефелова / Артём Валов"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-denis-ten-memorial.json"
   },
   {
    "id": "isu:isu-jgp-gdansk-2026:men-junior-kp",
@@ -17984,7 +18058,8 @@
      "Tim NORDIN": "Tim Nordin"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-gdansk-2026.json"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:women-junior-pp",
@@ -18411,7 +18486,8 @@
      "text": "После короткой программы — 4-е место, в итоге — 1-е место",
      "who": "Алиса Заикина"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-denis-ten-memorial.json"
   },
   {
    "id": "isu:isu-jgp-gdansk-2026:dance-junior-rt",
@@ -18643,7 +18719,8 @@
      "Lumia SASSI / Aarne SAVOLA": "Lumia Sassi / Aarne Savola"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-gdansk-2026.json"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:dance-junior-pt",
@@ -18791,7 +18868,8 @@
      "text": "Отрыв от второго места — 10.69 балла",
      "who": "Мария Фефелова / Артём Валов"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-denis-ten-memorial.json"
   },
   {
    "id": "isu:isu-jgp-gdansk-2026:pairs-junior-pp",
@@ -19003,7 +19081,8 @@
      "Teryn KIM / Lazuli LUNE": "Teryn Kim / Lazuli Lune"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-gdansk-2026.json"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:dance-senior-rt",
@@ -19194,7 +19273,8 @@
      "Viktoryia PLASKONNAYA / Uladzislau SYTSIK": "Виктория Пласконная / Владислав Сыцик"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-denis-ten-memorial.json"
   },
   {
    "id": "isu:isu-jgp-gdansk-2026:women-junior-pp",
@@ -19626,7 +19706,8 @@
      "Maria Ignacia CASTRO": "Maria Ignacia Castro"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-gdansk-2026.json"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:women-senior-pp",
@@ -19952,7 +20033,8 @@
      "text": "Отрыв от второго места — 16.81 балла",
      "who": "Александра Трусова"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-denis-ten-memorial.json"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:men-junior-pp",
@@ -20218,7 +20300,8 @@
      "text": "Отрыв от второго места — 47.58 балла",
      "who": "Арсений Федотов"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-denis-ten-memorial.json"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:dance-senior-pt",
@@ -20445,7 +20528,8 @@
      "Viktoryia PLASKONNAYA / Uladzislau SYTSIK": "Виктория Пласконная / Владислав Сыцик"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-cs-denis-ten-memorial.json"
   },
   {
    "id": "gs:tayside-trophy:women-junior-kp",
@@ -20700,7 +20784,8 @@
      "text": "Личный рекорд за КП: 59.29 (был 57.05)",
      "who": "Kaya Tiernan"
     }
-   ]
+   ],
+   "proto": "gs_tayside-trophy.json"
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:men-senior-pp",
@@ -20947,7 +21032,8 @@
      "text": "Отрыв от второго места — 35.56 балла",
      "who": "Владислав Дикиджи"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-denis-ten-memorial.json"
   },
   {
    "id": "isu:isu-jgp-gdansk-2026:dance-junior-pt",
@@ -21219,7 +21305,8 @@
      "Lumia SASSI / Aarne SAVOLA": "Lumia Sassi / Aarne Savola"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "isu_isu-jgp-gdansk-2026.json"
   },
   {
    "id": "gs:tayside-trophy:men-junior-kp",
@@ -21341,7 +21428,8 @@
      "Callum GILCHRIST": "Callum Gilchrist"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "gs_tayside-trophy.json"
   },
   {
    "id": "gs:tayside-trophy:pairs-junior-kp",
@@ -21439,7 +21527,8 @@
      "text": "Личный рекорд за КП: 42.43 (был 39.22)",
      "who": "Amy Ritchie / Mitchell Dunn"
     }
-   ]
+   ],
+   "proto": "gs_tayside-trophy.json"
   },
   {
    "id": "gs:tayside-trophy:pairs-senior-kp",
@@ -21577,7 +21666,8 @@
      "text": "Личный рекорд за КП: 64.68 (был 64.21)",
      "who": "Ava Kemp / Yohnatan Elizarov"
     }
-   ]
+   ],
+   "proto": "gs_tayside-trophy.json"
   },
   {
    "id": "isu:isu-jgp-gdansk-2026:men-junior-pp",
@@ -21916,7 +22006,8 @@
      "text": "Отрыв от второго места — 22.08 балла",
      "who": "Denis Krouglov"
     }
-   ]
+   ],
+   "proto": "isu_isu-jgp-gdansk-2026.json"
   },
   {
    "id": "gs:tayside-trophy:women-senior-kp",
@@ -22090,7 +22181,8 @@
      "text": "Личный рекорд за КП: 65.29 (был 63.59)",
      "who": "Sarina Joos"
     }
-   ]
+   ],
+   "proto": "gs_tayside-trophy.json"
   },
   {
    "id": "gs:tayside-trophy:men-senior-kp",
@@ -22237,7 +22329,8 @@
      "text": "Личный рекорд за КП: 69.30 (был 68.76)",
      "who": "Tao Macrae"
     }
-   ]
+   ],
+   "proto": "gs_tayside-trophy.json"
   },
   {
    "id": "gs:tayside-trophy:women-junior-pp",
@@ -22544,7 +22637,8 @@
      "text": "После короткой программы — 8-е место, в итоге — 3-е место",
      "who": "Noemi Joos"
     }
-   ]
+   ],
+   "proto": "gs_tayside-trophy.json"
   },
   {
    "id": "gs:tayside-trophy:men-junior-pp",
@@ -22694,7 +22788,8 @@
      "Callum GILCHRIST": "Callum Gilchrist"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "gs_tayside-trophy.json"
   },
   {
    "id": "gs:tayside-trophy:pairs-junior-pp",
@@ -22821,7 +22916,8 @@
      "text": "Отрыв от второго места — 16.95 балла",
      "who": "Elizabeth Yun / Mitchell Castelletti"
     }
-   ]
+   ],
+   "proto": "gs_tayside-trophy.json"
   },
   {
    "id": "gs:tayside-trophy:pairs-senior-pp",
@@ -23003,7 +23099,8 @@
      "text": "Отрыв от второго места — 19.94 балла",
      "who": "Ava Kemp / Yohnatan Elizarov"
     }
-   ]
+   ],
+   "proto": "gs_tayside-trophy.json"
   },
   {
    "id": "gs:tayside-trophy:women-senior-pp",
@@ -23203,7 +23300,8 @@
      "Oliwia STROKOSZ": "Oliwia Strokosz"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "gs_tayside-trophy.json"
   },
   {
    "id": "gs:tayside-trophy:men-senior-pp",
@@ -23395,7 +23493,8 @@
      "text": "Отрыв от второго места — 17.17 балла",
      "who": "Donovan Carrillo"
     }
-   ]
+   ],
+   "proto": "gs_tayside-trophy.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:dance-junior-rt",
@@ -23582,7 +23681,8 @@
      "Ангелина СЕНЬКО / Вадим КАЙЗЕР": "Ангелина Сенько / Вадим Кайзер"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:pairs-junior-kp",
@@ -23661,7 +23761,8 @@
      "Дарья ТРЕТЬЯКОВА / Александр САМОРУКОВ": "Дарья Третьякова / Александр Саморуков"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:dance-junior-pt",
@@ -23883,7 +23984,8 @@
      "Ангелина СЕНЬКО / Вадим КАЙЗЕР": "Ангелина Сенько / Вадим Кайзер"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:pairs-junior-pp",
@@ -23992,7 +24094,8 @@
      "text": "Отрыв от второго места — 21.80 балла",
      "who": "Зоя Ковязина / Дмитрий Родионов"
     }
-   ]
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:women-junior-kp",
@@ -24223,7 +24326,8 @@
      "text": "Тройной аксель",
      "who": "Алиса Заикина"
     }
-   ]
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:men-junior-kp",
@@ -24437,7 +24541,8 @@
      "Артем ЕРМОЛАЕВ": "Артем Ермолаев"
     },
     "basis": "judges"
-   }
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:women-junior-pp",
@@ -24717,7 +24822,8 @@
      "text": "2 четверных в программе: 4S, 4T",
      "who": "Дарья Лебедева"
     }
-   ]
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:men-junior-pp",
@@ -24996,7 +25102,8 @@
      "text": "После короткой программы — 12-е место, в итоге — 3-е место",
      "who": "Николай Колесников"
     }
-   ]
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:men-junior-kp",
@@ -25097,7 +25204,8 @@
      "Gion SCHMID": "Gion Schmid"
     },
     "basis": null
-   }
+   },
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:women-junior-kp",
@@ -25361,7 +25469,8 @@
      "Adelina VOROTELIAK": "Adelina Voroteliak"
     },
     "basis": null
-   }
+   },
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:men-senior-kp",
@@ -25643,7 +25752,8 @@
      "Patrick BLACKWELL": "Patrick Blackwell"
     },
     "basis": null
-   }
+   },
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-senior-rt",
@@ -25886,7 +25996,8 @@
      "Vasilisa GRIGOREVA / Evgenii ARTIUSHCHENKO": "Василиса Григорьева / Евгений Артющенко"
     },
     "basis": null
-   }
+   },
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-junior-rt",
@@ -26114,7 +26225,8 @@
      "Seraina TSCHARNER / Laurin WIEDERKEHR": "Seraina Tscharner / Laurin Wiederkehr"
     },
     "basis": null
-   }
+   },
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:women-junior-pp",
@@ -26300,7 +26412,8 @@
      "Anissa MAMAEV": "Anissa Mamaev"
     },
     "basis": null
-   }
+   },
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:men-junior-pp",
@@ -26377,7 +26490,8 @@
      "Gion SCHMID": "Gion Schmid"
     },
     "basis": null
-   }
+   },
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:women-senior-kp",
@@ -26397,7 +26511,8 @@
    "ours": [],
    "athletes": [],
    "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
-   "desc": "Начало: 13:30 МСК\nТрансляция: Первый канал"
+   "desc": "Начало: 13:30 МСК\nТрансляция: Первый канал",
+   "proto": null
   },
   {
    "id": "isu:isu-cs-budapest-trophy:women-senior-kp",
@@ -26768,7 +26883,8 @@
      "Lovisa AAV": "Lovisa Aav"
     },
     "basis": null
-   }
+   },
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men-senior-kp",
@@ -26788,7 +26904,8 @@
    "ours": [],
    "athletes": [],
    "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
-   "desc": "Начало: 15:15 МСК\nТрансляция: Первый канал"
+   "desc": "Начало: 15:15 МСК\nТрансляция: Первый канал",
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pairs-senior-kp",
@@ -26808,7 +26925,8 @@
    "ours": [],
    "athletes": [],
    "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
-   "desc": "Начало: 16:55 МСК\nТрансляция: Первый канал"
+   "desc": "Начало: 16:55 МСК\nТрансляция: Первый канал",
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:dance-senior-rt",
@@ -26828,7 +26946,8 @@
    "ours": [],
    "athletes": [],
    "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
-   "desc": "Начало: 18:25 МСК\nТрансляция: Первый канал"
+   "desc": "Начало: 18:25 МСК\nТрансляция: Первый канал",
+   "proto": null
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-junior-pt",
@@ -26990,7 +27109,8 @@
      "Aneta VACLAVIKOVA / William LISSAUER": "Aneta Vaclavikova / William Lissauer"
     },
     "basis": null
-   }
+   },
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-senior-pt",
@@ -27161,7 +27281,8 @@
      "Amy CUI / Jonathan ROGERS": "Amy Cui / Jonathan Rogers"
     },
     "basis": null
-   }
+   },
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:men-senior-pp",
@@ -27359,7 +27480,8 @@
      "Taira SHINOHARA": "Taira Shinohara"
     },
     "basis": null
-   }
+   },
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:women-senior-pp",
@@ -27379,7 +27501,8 @@
    "ours": [],
    "athletes": [],
    "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
-   "desc": "Начало: 13:00 МСК\nТрансляция: Первый канал"
+   "desc": "Начало: 13:00 МСК\nТрансляция: Первый канал",
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men-senior-pp",
@@ -27399,7 +27522,8 @@
    "ours": [],
    "athletes": [],
    "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
-   "desc": "Начало: 15:05 МСК\nТрансляция: Первый канал"
+   "desc": "Начало: 15:05 МСК\nТрансляция: Первый канал",
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pairs-senior-pp",
@@ -27419,7 +27543,8 @@
    "ours": [],
    "athletes": [],
    "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
-   "desc": "Начало: 17:10 МСК\nТрансляция: Первый канал"
+   "desc": "Начало: 17:10 МСК\nТрансляция: Первый канал",
+   "proto": null
   },
   {
    "id": "isu:isu-cs-budapest-trophy:women-senior-pp",
@@ -27676,7 +27801,8 @@
      "Sophie Joline von FELTEN": "Sophie Joline von Felten"
     },
     "basis": null
-   }
+   },
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:dance-senior-pt",
@@ -27696,7 +27822,8 @@
    "ours": [],
    "athletes": [],
    "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
-   "desc": "Начало: 18:45 МСК\nТрансляция: Первый канал"
+   "desc": "Начало: 18:45 МСК\nТрансляция: Первый канал",
+   "proto": null
   },
   {
    "id": "gs:blackburn-trophy:dance-senior-pt",
@@ -27804,7 +27931,8 @@
      "Sofiia KHODORCHUK": "Sofiia Khodorchuk"
     },
     "basis": null
-   }
+   },
+   "proto": "gs_blackburn-trophy.json"
   },
   {
    "id": "gs:blackburn-trophy:dance-senior-pt",
@@ -27936,7 +28064,8 @@
      "Seren SHORT": "Seren Short"
     },
     "basis": null
-   }
+   },
+   "proto": "gs_blackburn-trophy.json"
   },
   {
    "id": "gs:blackburn-trophy:dance-senior-pt",
@@ -28032,7 +28161,8 @@
      "Daria HOROSHKO": "Daria Horoshko"
     },
     "basis": null
-   }
+   },
+   "proto": "gs_blackburn-trophy.json"
   },
   {
    "id": "gs:blackburn-trophy:dance-junior-rt",
@@ -28230,7 +28360,8 @@
      "Ella SANDBERG": "Ella Sandberg"
     },
     "basis": null
-   }
+   },
+   "proto": "gs_blackburn-trophy.json"
   },
   {
    "id": "gs:blackburn-trophy:dance-senior-rt",
@@ -28388,7 +28519,8 @@
      "Ebba AHLIN": "Ebba Ahlin"
     },
     "basis": null
-   }
+   },
+   "proto": "gs_blackburn-trophy.json"
   },
   {
    "id": "gs:blackburn-trophy:dance-junior-pt",
@@ -28544,7 +28676,8 @@
      "Sonja WERNER": "Sonja Werner"
     },
     "basis": null
-   }
+   },
+   "proto": "gs_blackburn-trophy.json"
   },
   {
    "id": "gs:blackburn-trophy:dance-senior-pt",
@@ -28670,7 +28803,8 @@
      "Sofiia HOLUBENKO": "Sofiia Holubenko"
     },
     "basis": null
-   }
+   },
+   "proto": "gs_blackburn-trophy.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:dance-senior-rt",
@@ -28741,7 +28875,8 @@
      "name": "Sofia Val / Asaf Kazimov",
      "nation": "ESP"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:women-senior-kp",
@@ -28822,7 +28957,8 @@
      "name": "Yuseong Kim",
      "nation": "KOR"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:men-senior-kp",
@@ -28903,7 +29039,8 @@
      "name": "Sota Yamamoto",
      "nation": "JPN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:dance-senior-pt",
@@ -28974,7 +29111,8 @@
      "name": "Sofia Val / Asaf Kazimov",
      "nation": "ESP"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:pairs-senior-kp",
@@ -29040,7 +29178,8 @@
      "name": "Александра Бойкова / Дмитрий Козловский",
      "nation": "AIN2"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:women-senior-pp",
@@ -29121,7 +29260,8 @@
      "name": "Yuseong Kim",
      "nation": "KOR"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:pairs-senior-pp",
@@ -29187,7 +29327,8 @@
      "name": "Александра Бойкова / Дмитрий Козловский",
      "nation": "AIN2"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:men-senior-pp",
@@ -29268,7 +29409,8 @@
      "name": "Sota Yamamoto",
      "nation": "JPN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:men-senior-kp",
@@ -29349,7 +29491,8 @@
      "name": "Wesley Chiu",
      "nation": "CAN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:pairs-senior-kp",
@@ -29410,7 +29553,8 @@
      "name": "Sofiia Holichenko / Artem Darenskyi",
      "nation": "UKR"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:women-senior-kp",
@@ -29491,7 +29635,8 @@
      "name": "Yujae Kim",
      "nation": "KOR"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:dance-senior-rt",
@@ -29562,7 +29707,8 @@
      "name": "Oona Brown / Gage Brown",
      "nation": "USA"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:men-senior-pp",
@@ -29643,7 +29789,8 @@
      "name": "Wesley Chiu",
      "nation": "CAN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:pairs-senior-pp",
@@ -29704,7 +29851,8 @@
      "name": "Sofiia Holichenko / Artem Darenskyi",
      "nation": "UKR"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:women-senior-pp",
@@ -29785,7 +29933,8 @@
      "name": "Yujae Kim",
      "nation": "KOR"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:dance-senior-pt",
@@ -29856,7 +30005,8 @@
      "name": "Oona Brown / Gage Brown",
      "nation": "USA"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:dance-senior-rt",
@@ -29927,7 +30077,8 @@
      "name": "Zixi Xiao / Linghao He",
      "nation": "CHN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:women-senior-kp",
@@ -30013,7 +30164,8 @@
      "name": "Александра Трусова",
      "nation": "AIN2"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:pairs-senior-kp",
@@ -30074,7 +30226,8 @@
      "name": "Yuna Nagaoka / Sumitada Moriguchi",
      "nation": "JPN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:men-senior-kp",
@@ -30164,7 +30317,8 @@
      "name": "Евгений Семененко",
      "nation": "AIN2"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:dance-senior-pt",
@@ -30235,7 +30389,8 @@
      "name": "Zixi Xiao / Linghao He",
      "nation": "CHN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:women-senior-pp",
@@ -30321,7 +30476,8 @@
      "name": "Александра Трусова",
      "nation": "AIN2"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:pairs-senior-pp",
@@ -30382,7 +30538,8 @@
      "name": "Yuna Nagaoka / Sumitada Moriguchi",
      "nation": "JPN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:men-senior-pp",
@@ -30472,7 +30629,8 @@
      "name": "Евгений Семененко",
      "nation": "AIN2"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-america-2026:men-senior-kp",
@@ -30553,7 +30711,8 @@
      "name": "Tamir Kuperman",
      "nation": "ISR"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-america-2026:pairs-senior-kp",
@@ -30614,7 +30773,8 @@
      "name": "Sofiia Holichenko / Artem Darenskyi",
      "nation": "UKR"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-america-2026:dance-senior-rt",
@@ -30685,7 +30845,8 @@
      "name": "Sofia Val / Asaf Kazimov",
      "nation": "ESP"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-america-2026:women-senior-kp",
@@ -30761,7 +30922,8 @@
      "name": "Yujae Kim",
      "nation": "KOR"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-america-2026:men-senior-pp",
@@ -30842,7 +31004,8 @@
      "name": "Tamir Kuperman",
      "nation": "ISR"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-america-2026:pairs-senior-pp",
@@ -30903,7 +31066,8 @@
      "name": "Sofiia Holichenko / Artem Darenskyi",
      "nation": "UKR"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-america-2026:dance-senior-pt",
@@ -30974,7 +31138,8 @@
      "name": "Sofia Val / Asaf Kazimov",
      "nation": "ESP"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-america-2026:women-senior-pp",
@@ -31050,7 +31215,8 @@
      "name": "Yujae Kim",
      "nation": "KOR"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:pairs-senior-kp",
@@ -31120,7 +31286,8 @@
      "name": "Екатерина Чикмарёва / Матвей Янченков",
      "nation": "AIN2"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:women-senior-kp",
@@ -31201,7 +31368,8 @@
      "name": "Yuseong Kim",
      "nation": "KOR"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:men-senior-kp",
@@ -31282,7 +31450,8 @@
      "name": "Yudong Chen",
      "nation": "CHN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:dance-senior-rt",
@@ -31353,7 +31522,8 @@
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:pairs-senior-pp",
@@ -31423,7 +31593,8 @@
      "name": "Екатерина Чикмарёва / Матвей Янченков",
      "nation": "AIN2"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:women-senior-pp",
@@ -31504,7 +31675,8 @@
      "name": "Yuseong Kim",
      "nation": "KOR"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:men-senior-pp",
@@ -31585,7 +31757,8 @@
      "name": "Yudong Chen",
      "nation": "CHN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:dance-senior-pt",
@@ -31656,7 +31829,8 @@
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:dance-senior-rt",
@@ -31727,7 +31901,8 @@
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:pairs-senior-kp",
@@ -31788,7 +31963,8 @@
      "name": "Yuna Nagaoka / Sumitada Moriguchi",
      "nation": "JPN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:women-senior-kp",
@@ -31869,7 +32045,8 @@
      "name": "Yuna Aoki",
      "nation": "JPN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:men-senior-kp",
@@ -31955,7 +32132,8 @@
      "name": "Владислав Дикиджи",
      "nation": "AIN2"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:dance-senior-pt",
@@ -32026,7 +32204,8 @@
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:pairs-senior-pp",
@@ -32087,7 +32266,8 @@
      "name": "Yuna Nagaoka / Sumitada Moriguchi",
      "nation": "JPN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:women-senior-pp",
@@ -32168,7 +32348,8 @@
      "name": "Yuna Aoki",
      "nation": "JPN"
     }
-   ]
+   ],
+   "proto": null
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:men-senior-pp",
@@ -32254,7 +32435,8 @@
      "name": "Владислав Дикиджи",
      "nation": "AIN2"
     }
-   ]
+   ],
+   "proto": null
   }
  ],
  "upcoming": [
@@ -52354,7 +52536,7 @@
   "Olexandra Borysova": "photos/0cbdbfe9c2f65ddd.jpg",
   "Aaron Freeman": "photos/5cefadc07992f39e.jpg",
   "Oliver Praetorius": "photos/327025139e680bfd.jpg",
-  "Olivia Elin Phillips": "photos/1e481124d41f1b6b.jpg",
+  "Olivia Elin Phillips": "photos/37e190e838ddc10a.jpg",
   "Olivia Flores": "photos/938326843651f16c.jpg",
   "Luke Wang": "photos/f3c03fed32e00faa.jpg",
   "Olivia Josephine Shilling": "photos/cff34ecd2b94fb61.jpg",
@@ -52366,7 +52548,7 @@
   "Tim Dieck": "photos/7100ef85069cecb8.jpg",
   "Oliviia Bazlova": "photos/cd2c663e661f7e53.jpg",
   "Oliviia Zherebko": "photos/31653bbfd120ac93.jpg",
-  "Olympia Kalaganis": "photos/bbadde822c6eb95e.jpg",
+  "Olympia Kalaganis": "photos/62630c9b9896557e.jpg",
   "Emile Deveau": "photos/72ae29d2440d1852.jpg",
   "Oona Brown": "photos/6bea68b07ac5d390.jpg",
   "Gage Brown": "photos/6e33b2322d37516a.jpg",
