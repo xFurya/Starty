@@ -1,23 +1,11 @@
 {
- "version": "1.0.19",
- "code": 20,
- "notes": "В фильтре — все спортсмены; такой же фильтр появился в уведомлениях.",
- "at": "2026-10-12T18:39:13Z",
+ "version": "1.0.20",
+ "code": 21,
+ "notes": "Исправлены повторы в итогах и имена белорусов.",
+ "at": "2026-10-15T07:15:42Z",
  "android": {
-  "file": "starty-1.0.19.apk",
-  "size": 20356760,
-  "sha256": "55c66108534efe5399b54f5232deb1620343d4ef203d0e13aa68cda397cbebc2"
- },
- "windows": {
-  "code": 20,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.19/Starty-windows.zip",
-  "size": 13653292,
-  "sha256": "9e5d38f752c362abb8e683803bb9dd19601c5fae3be203f26b2352d43e25f915"
- },
- "macos": {
-  "code": 20,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.19/Starty-macos.zip",
-  "size": 20558290,
-  "sha256": "a1d6f7f08637f8bc192ef63a9fdd47bf776c92fca33c5d452bc0733f41f02dc3"
+  "file": "starty-1.0.20.apk",
+  "size": 20356756,
+  "sha256": "9084dcff0977c39961aa6f3585ee6fc77dd4fbdf958f52b0191ed70d7031cda4"
  }
 }
