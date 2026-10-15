@@ -310,12 +310,20 @@ def build(names, season_start, log=print):
         p = people.setdefault(key, {"n": name, "c": nation, "k": {}})
         if not p["c"]:
             p["c"] = nation
-        # первый — из самого нового сезона
-        p["k"].setdefault(kind, level)
+        # первый — из самого нового сезона; без вида (сборная, протокола не нашли) — только страна
+        if kind is not None:
+            p["k"].setdefault(kind, level)
         # русское написание важнее латинского
         if nm.is_cyr(name) and not nm.is_cyr(p["n"]):
             p["n"] = name
 
+    # сборная ФФККР — российские спортсмены по определению (КМС и выше); вид пока неизвестен
+    try:
+        from . import fsr
+        for sur, giv, _ in fsr.team():
+            add(nm.pretty_ru(f"{giv} {sur}"), "RUS", None, None)
+    except net.FetchError as e:
+        log("  ! сборная ФФККР:", e)
     try:
         ru = russians(cache, codes, log)
     except net.FetchError as e:
