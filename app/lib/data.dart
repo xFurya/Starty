@@ -143,6 +143,10 @@ class Start {
   final String id, tid, tournament, kind, level, seg, title, venue, src;
   final DateTime t0, t1;
   final bool intl;
+
+  /// Региональная федерация (не федеральный старт): показываются, только если включено в настройках.
+  final bool regional;
+  final String region;
   final List<String> broadcast, athletes;
 
   /// Кого показывать в карточке: россияне и белорусы на международных стартах и все,
@@ -164,6 +168,8 @@ class Start {
       t0 = DateTime.parse(j['start']),
       t1 = DateTime.parse(j['end']),
       intl = j['intl'] == true,
+      regional = j['tier'] == 'regional',
+      region = '${j['region'] ?? ''}',
       broadcast = List<String>.from(j['broadcast'] ?? const []),
       athletes = List<String>.from(j['athletes'] ?? const []),
       ours = [for (final o in (j['ours'] as List? ?? const [])) Skater.fromJson(o)],
@@ -198,6 +204,8 @@ class Start {
        t0 = o.t0,
        t1 = o.t1,
        intl = o.intl,
+       regional = o.regional,
+       region = o.region,
        broadcast = o.broadcast,
        athletes = o.athletes,
        facts = o.facts,
@@ -549,6 +557,8 @@ class Prefs {
   // Лента и оформление.
   static bool get showDone => _p.getBool('f.done') ?? true;
   static Future<void> setShowDone(bool v) => _p.setBool('f.done', v);
+  static bool get regional => _p.getBool('f.regional') ?? false;
+  static Future<void> setRegional(bool v) => _p.setBool('f.regional', v);
 
   /// system, light, dark
   static String get theme => _p.getString('theme') ?? 'system';

@@ -36,6 +36,7 @@ class SyncDoc {
   final bool showDone;
   final String theme; // system, light, dark
   final String icon; // classic, skate_teal, date_orange_… (см. app_icon.dart)
+  final bool regional; // старты региональных федераций в ленте и уведомлениях
 
   const SyncDoc({
     required this.updatedAt,
@@ -49,6 +50,7 @@ class SyncDoc {
     required this.showDone,
     required this.theme,
     required this.icon,
+    this.regional = false,
   });
 
   static const _filterKeys = ['kinds', 'tids', 'athletes', 'levels', 'scope'];
@@ -66,6 +68,7 @@ class SyncDoc {
     'showDone': showDone,
     'theme': theme,
     'icon': icon,
+    'regional': regional,
   };
 
   /// Разбор с защитой: битое поле — значение по умолчанию, а не падение.
@@ -97,6 +100,7 @@ class SyncDoc {
       showDone: j['showDone'] is bool ? j['showDone'] as bool : true,
       theme: j['theme'] is String ? j['theme'] as String : 'system',
       icon: j['icon'] is String ? j['icon'] as String : 'classic',
+      regional: j['regional'] is bool ? j['regional'] as bool : false,
     );
   }
 
@@ -113,6 +117,7 @@ class SyncDoc {
     showDone: showDone,
     theme: theme,
     icon: icon,
+    regional: regional,
   );
 
   static DateTime get epoch =>

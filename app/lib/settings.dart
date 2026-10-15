@@ -193,6 +193,14 @@ class SettingsView extends StatelessWidget {
                 ),
                 const Hairline(),
                 _SwitchRow(icon: CupertinoIcons.flag, title: 'Завершённые', value: state.showDone, onChanged: state.setShowDone),
+                const Hairline(),
+                _SwitchRow(
+                  icon: CupertinoIcons.map,
+                  title: 'Региональные федерации',
+                  subtitle: state.regionNames.isEmpty ? 'в расписании пока нет' : state.regionNames.join(', '),
+                  value: state.regional,
+                  onChanged: state.setRegional,
+                ),
 
               ],
             ),

@@ -78,6 +78,7 @@ class AppState extends ChangeNotifier {
       showDone: showDone,
       theme: theme.name,
       icon: icon,
+      regional: regional,
     );
   }
 
@@ -101,6 +102,7 @@ class AppState extends ChangeNotifier {
       ),
     );
     await Prefs.setShowDone(d.showDone);
+    await Prefs.setRegional(d.regional);
     await Prefs.setTheme(d.theme);
     if (d.icon != (await AppIcons.current())) {
       await AppIcons.set(d.icon);
@@ -124,6 +126,7 @@ class AppState extends ChangeNotifier {
     _followRu = Prefs.followRussians;
     _followBy = Prefs.followBelarusians;
     showDone = Prefs.showDone;
+    regional = Prefs.regional;
     theme = _mode(Prefs.theme);
     if (_raw != null) data = _apply(_raw!);
     notifyListeners();
@@ -247,6 +250,14 @@ class AppState extends ChangeNotifier {
   bool showDone = Prefs.showDone;
   ThemeMode theme = _mode(Prefs.theme);
 
+  /// Старты региональных федераций: по умолчанию не показываются.
+  bool regional = Prefs.regional;
+
+  /// Регионы, у которых есть старты в расписании — видно и при выключенном показе.
+  List<String> get regionNames => {
+    for (final s in _raw?.starts ?? const <Start>[]) if (s.regional && s.region.isNotEmpty) s.region,
+  }.toList()..sort();
+
   NotifyPlan get plan => NotifyPlan(rules, forcedOn, forcedOff);
 
   /// Придёт ли уведомление о начале старта (правила + исключения).
@@ -360,6 +371,15 @@ class AppState extends ChangeNotifier {
     touchSync();
   }
 
+  Future<void> setRegional(bool v) async {
+    regional = v;
+    if (_raw != null) data = _apply(_raw!);
+    notifyListeners();
+    await Prefs.setRegional(v);
+    touchSync();
+    await _sync();
+  }
+
   Future<void> setTheme(ThemeMode m) async {
     theme = m;
     notifyListeners();
@@ -452,7 +472,8 @@ class AppState extends ChangeNotifier {
 
   /// Расписание с сервера → под отслеживаемых и с итогами с табло. Сервер дошёл до окончательного — его и берём.
   Schedule _apply(Schedule raw) {
-    final d = raw.withFollow(follow);
+    final shown = regional ? raw : raw.withStarts([for (final s in raw.starts) if (!s.regional) s]);
+    final d = shown.withFollow(follow);
     if (_live.isEmpty) return d;
     _live.removeWhere((id, _) => d.byId(id)?.settled ?? true);
     if (_live.isEmpty) return d;
