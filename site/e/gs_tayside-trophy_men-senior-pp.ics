@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:tayside-trophy:men-senior-pp@starty
+DTSTAMP:20261015T094229Z
+DTSTART;TZID=Europe/Moscow:20261011T210100
+DTEND;TZID=Europe/Moscow:20261011T223100
+SUMMARY:Tayside Trophy — мужчины ПП
+DESCRIPTION:Итог:\n1. Donovan Carrillo — 161.12\n2. Mark Gorodnitsky 
+ — 135.92\n3. Ean Weiler — 130.28\n\nИтог турнира:\n1. Donov
+ an Carrillo — 234.63\n2. Mark Gorodnitsky — 217.46\n3. Ean Weiler — 
+ 196.41\n\nПримечательное:\n• Donovan Carrillo — Личн
+ ый рекорд за ПП: 161.12 (был 152.48)\n• Donovan Carrillo 
+ — Личный рекорд по сумме: 234.63 (был 232.67)\n•
+  Ean Weiler — После короткой программы — 6-е м
+ есто\, в итоге — 3-е место\n• Donovan Carrillo — О
+ трыв от второго места — 17.17 балла\n\nНачал
+ о: 21:01 МСК
+LOCATION:Dundee\, Great Britain
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tayside Trophy — мужчины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

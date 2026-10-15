@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:tayside-trophy:women-senior-pp@starty
+DTSTAMP:20261015T094229Z
+DTSTART;TZID=Europe/Moscow:20261011T184000
+DTEND;TZID=Europe/Moscow:20261011T205500
+SUMMARY:Tayside Trophy — женщины ПП
+DESCRIPTION:Итог:\n1. Olga Mikutina — 121.59\n2. Marie-Maude Pomerlea
+ u — 118.62\n3. Ekaterina Kurakova — 117.43\n\nИтог турнира:
+ \n1. Olga Mikutina — 186.79\n2. Ekaterina Kurakova — 183.76\n3. Marie-
+ Maude Pomerleau — 179.48\n\nНачало: 18:40 МСК
+LOCATION:Dundee\, Great Britain
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tayside Trophy — женщины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

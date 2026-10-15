@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:tayside-trophy:pairs-junior-kp@starty
+DTSTAMP:20261015T094229Z
+DTSTART;TZID=Europe/Moscow:20261010T154500
+DTEND;TZID=Europe/Moscow:20261010T162000
+SUMMARY:Tayside Trophy — юниорские пары КП
+DESCRIPTION:Итог:\n1. Elizabeth Yun / Mitchell Castelletti — 49.98\n2
+ . Juliet Meek / Devin Meek — 42.76\n3. Amy Ritchie / Mitchell Dunn — 4
+ 2.43\n\nПримечательное:\n• Elizabeth Yun / Mitchell Castel
+ letti — Личный рекорд за КП: 49.98 (был 44.45)\n• A
+ my Ritchie / Mitchell Dunn — Личный рекорд за КП: 42.43 
+ (был 39.22)\n\nНачало: 15:45 МСК
+LOCATION:Dundee\, Great Britain
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tayside Trophy — юниорские пары КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

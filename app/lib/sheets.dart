@@ -1033,28 +1033,197 @@ class _InfoRow extends StatelessWidget {
   }
 }
 
-// ------------------------------------------------------------------ фильтр
+// ------------------------------------------------------------------ лист со свайпом
 
-void showFilters(BuildContext context, AppState state) {
-  if (state.data == null) return;
-  showModalBottomSheet(
+/// Лист настроек и выбора: тянется пальцем целиком, закрывается, только если его дотянули
+/// ниже середины и отпустили; иначе возвращается наверх. Закрытие свайпом — без сохранения.
+Future<T?> showSwipeSheet<T>(BuildContext context, Widget Function(BuildContext, ScrollController) builder) {
+  return showModalBottomSheet<T>(
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
     enableDrag: false,
-    builder: (c) => _FilterSheet(state: state),
+    builder: (c) => _SwipeSheet(builder: builder),
   );
+}
+
+class _SwipeSheet extends StatefulWidget {
+  final Widget Function(BuildContext, ScrollController) builder;
+  const _SwipeSheet({required this.builder});
+  @override
+  State<_SwipeSheet> createState() => _SwipeSheetState();
+}
+
+class _SwipeSheetState extends State<_SwipeSheet> {
+  static const _top = .94;
+  static const _dismiss = .5;
+  final _sheet = DraggableScrollableController();
+
+  void _settle() {
+    if (!mounted || !_sheet.isAttached) return;
+    if (_sheet.size <= _dismiss + 0.0001) {
+      Navigator.of(context).pop();
+    } else if (_sheet.size < _top - 0.0001) {
+      _sheet.animateTo(_top, duration: const Duration(milliseconds: 220), curve: Curves.easeOutCubic);
+    }
+  }
+
+  @override
+  void dispose() {
+    _sheet.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // клавиатура поиска не закрывает ни найденных, ни кнопок внизу
+    return Padding(
+      padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
+      child: Listener(
+        onPointerUp: (_) => scheduleMicrotask(_settle),
+        onPointerCancel: (_) => scheduleMicrotask(_settle),
+        child: DraggableScrollableSheet(
+          controller: _sheet,
+          expand: false,
+          initialChildSize: _top,
+          minChildSize: 0,
+          maxChildSize: _top,
+          snap: false,
+          shouldCloseOnMinExtent: false,
+          builder: widget.builder,
+        ),
+      ),
+    );
+  }
+}
+
+/// Шапка листа: лёд и название; [trailing] — справа.
+class _SheetTitle extends StatelessWidget {
+  final String title;
+  const _SheetTitle(this.title);
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Stack(
+      children: [
+        Positioned.fill(child: IceBackdrop(fadeTo: p.sheet, fadeStart: .25, sparkles: -1)),
+        const Positioned(top: 0, left: 0, right: 0, child: SheetSparkles()),
+        ConstrainedBox(
+          constraints: const BoxConstraints(minHeight: 104, minWidth: double.infinity),
+          child: Align(
+            alignment: Alignment.bottomLeft,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 34, 20, 4),
+              child: Text(title, style: display(p, 40)),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// Нижняя полоса листа: «Сбросить»/«Отменить» и главная кнопка — подтверждение.
+class _SheetBar extends StatelessWidget {
+  final String secondary;
+  final VoidCallback? onSecondary;
+  final String primary;
+  final String? detail;
+  final VoidCallback? onPrimary;
+  const _SheetBar({
+    required this.secondary,
+    required this.onSecondary,
+    required this.primary,
+    required this.onPrimary,
+    this.detail,
+  });
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Container(
+      decoration: BoxDecoration(
+        color: p.sheet,
+        border: Border(top: BorderSide(color: p.plateLine)),
+      ),
+      padding: EdgeInsets.fromLTRB(16, 12, 16, 12 + MediaQuery.paddingOf(context).bottom),
+      // левая кнопка — не шире 40 % ряда: главная остаётся главной
+      child: LayoutBuilder(
+        builder: (context, k) => Row(
+          children: [
+            ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: k.maxWidth * .4),
+              child: SheetButton(neutral: true, compact: true, label: secondary, onTap: onSecondary),
+            ),
+            const SizedBox(width: 10),
+            Expanded(child: SheetButton(filled: true, label: primary, detail: detail, onTap: onPrimary)),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SearchField extends StatelessWidget {
+  final TextEditingController controller;
+  final ValueChanged<String> onChanged;
+  const _SearchField({required this.controller, required this.onChanged});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return TextField(
+      controller: controller,
+      style: TextStyle(fontSize: 15.5, color: p.ink),
+      textInputAction: TextInputAction.search,
+      decoration: InputDecoration(
+        hintText: 'Фамилия',
+        hintStyle: TextStyle(color: p.ink2),
+        prefixIcon: Icon(CupertinoIcons.search, size: 19, color: p.ink2),
+        suffixIcon: controller.text.isEmpty
+            ? null
+            : IconButton(
+                tooltip: 'Очистить',
+                icon: Icon(CupertinoIcons.xmark_circle_fill, size: 19, color: p.ink2),
+                onPressed: () {
+                  controller.clear();
+                  onChanged('');
+                },
+              ),
+        filled: true,
+        fillColor: p.plate,
+        contentPadding: const EdgeInsets.symmetric(vertical: 14),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide(color: p.control),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide(color: p.accent, width: 1.4),
+        ),
+      ),
+      onChanged: onChanged,
+    );
+  }
+}
+
+// ------------------------------------------------------------------ фильтр
+
+void showFilters(BuildContext context, AppState state) {
+  if (state.data == null) return;
+  showSwipeSheet<void>(context, (c, scroll) => _FilterSheet(state: state, scroll: scroll));
 }
 
 class _FilterSheet extends StatefulWidget {
   final AppState state;
-  const _FilterSheet({required this.state});
+  final ScrollController scroll;
+  const _FilterSheet({required this.state, required this.scroll});
   @override
   State<_FilterSheet> createState() => _FilterSheetState();
 }
 
 class _FilterSheetState extends State<_FilterSheet> {
   late Set<String> kinds = {...widget.state.filters.kinds};
+  late Set<String> levels = {...widget.state.filters.levels};
+  late Set<String> scope = {...widget.state.filters.scope};
   late Set<String> tids = {...widget.state.filters.tids};
   late Set<String> athletes = {...widget.state.filters.athletes};
   final _q = TextEditingController();
@@ -1066,193 +1235,172 @@ class _FilterSheetState extends State<_FilterSheet> {
     super.dispose();
   }
 
+  void _flip(Set<String> set, String k) => setState(() => set.contains(k) ? set.remove(k) : set.add(k));
+
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     final data = widget.state.data!;
     final t = now();
-    final tours = <String, String>{};
+    final f = Filters(kinds, tids, athletes, levels: levels, scope: scope);
+
+    // турниры впереди: со стартами в расписании и без расписания; российские и международные отдельно
+    final tours = <String, ({String name, bool intl, String from, String to})>{};
     for (final s in data.starts) {
-      if (!s.pastAt(t)) tours.putIfAbsent(s.tid, () => s.tournament);
+      if (s.pastAt(t)) continue;
+      final d = dayKey(s.t0);
+      final have = tours[s.tid];
+      tours[s.tid] = (
+        name: s.tournament,
+        intl: s.intl,
+        from: have == null || d.compareTo(have.from) < 0 ? d : have.from,
+        to: have == null || d.compareTo(have.to) > 0 ? d : have.to,
+      );
     }
-    final found = q.isEmpty ? (athletes.toList()..sort()) : searchAthletes(data, q, soon: soonAthletes(data, t));
-    final canReset = kinds.isNotEmpty || tids.isNotEmpty || athletes.isNotEmpty || widget.state.filters.any;
-    // что покажет лента с этим выбором: старты и турниры без расписания (у них только заявка)
-    final f = Filters(kinds, tids, athletes);
+    final today = dayKey(t), horizon = dayKey(t.add(const Duration(days: 60)));
+    for (final u in data.upcoming) {
+      if (u.end.compareTo(today) < 0 || u.start.compareTo(horizon) >= 0) continue;
+      tours.putIfAbsent(u.tid, () => (name: u.name, intl: u.intl, from: u.start, to: u.end));
+    }
+    final byDate = tours.entries.toList()..sort((a, b) => a.value.from.compareTo(b.value.from));
+    List<MapEntry<String, ({String name, bool intl, String from, String to})>> group(bool intl) =>
+        [for (final e in byDate) if (e.value.intl == intl && (scope.isEmpty || scope.contains(intl ? 'intl' : 'russian'))) e];
+
+    final follow = widget.state.follow.names;
+    final found = q.isEmpty ? const <String>[] : searchAthletes(data, q, soon: soonAthletes(data, t));
+    final picked = athletes.toList()..sort();
+    final quick = [for (final a in follow.toList()..sort()) if (!athletes.contains(a)) a];
+
     final count = feedPool(widget.state, f, t).length;
     final more = upcomingAhead(widget.state, t, f).length;
     final action = filterAction(count, more);
-    // клавиатура поиска не закрывает ни найденных, ни кнопок внизу
-    return Padding(
-      padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
-      child: DraggableScrollableSheet(
-        expand: false,
-        initialChildSize: .88,
-        minChildSize: .30,
-        maxChildSize: .95,
-        shouldCloseOnMinExtent: true,
-        builder: (c, scroll) => Column(
-          children: [
-            Expanded(
-              child: Stack(
-                children: [
-                  ListView(
-                    controller: scroll,
-                    padding: EdgeInsets.zero,
-                    children: [
-                      // шапка — тот же лёд, что у листа старта
-                      Stack(
+    final canReset = f.any || widget.state.filters.any;
+
+    Widget athleteRow(String a) => _CheckRow(
+      leading: Avatar(name: a, data: data, size: 34, slot: true),
+      title: displayName(a),
+      subtitle: _personLine(data, a),
+      value: athletes.contains(a),
+      onTap: () => _flip(athletes, a),
+    );
+
+    return Material(
+      color: p.sheet,
+      borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        children: [
+          Expanded(
+            child: Stack(
+              children: [
+                ListView(
+                  controller: widget.scroll,
+                  padding: EdgeInsets.zero,
+                  children: [
+                    const _SheetTitle('Фильтр'),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 14, 20, 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Positioned.fill(child: IceBackdrop(fadeTo: p.sheet, fadeStart: .25, sparkles: -1)),
-                          const Positioned(top: 0, left: 0, right: 0, child: SheetSparkles()),
-                          ConstrainedBox(
-                            constraints: const BoxConstraints(minHeight: 110, minWidth: double.infinity),
-                            child: Align(
-                              alignment: Alignment.bottomLeft,
-                              child: Padding(
-                                padding: const EdgeInsets.fromLTRB(20, 36, 20, 4),
-                                child: Text('Фильтр', style: display(p, 42)),
-                              ),
-                            ),
+                          const Eyebrow('Турниры'),
+                          const SizedBox(height: 10),
+                          TileGrid(
+                            tiles: [
+                              ChoiceTile(label: 'Российские', on: scope.contains('russian'), onTap: () => _flip(scope, 'russian')),
+                              ChoiceTile(label: 'Международные', on: scope.contains('intl'), onTap: () => _flip(scope, 'intl')),
+                            ],
                           ),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(20, 16, 20, 16),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            const Eyebrow('Вид'),
-                            const SizedBox(height: 10),
-                            TileGrid(
-                              tiles: [
-                                for (final k in kindNames.entries)
-                                  ChoiceTile(
-                                    label: k.value,
-                                    color: p.kind(k.key),
-                                    on: kinds.contains(k.key),
-                                    onTap: () =>
-                                        setState(() => kinds.contains(k.key) ? kinds.remove(k.key) : kinds.add(k.key)),
-                                  ),
-                              ],
-                            ),
-                            const SizedBox(height: 26),
-                            const Eyebrow('Спортсмен'),
-                            const SizedBox(height: 10),
-                            TextField(
-                              controller: _q,
-                              style: TextStyle(fontSize: 15.5, color: p.ink),
-                              textInputAction: TextInputAction.search,
-                              decoration: InputDecoration(
-                                hintText: 'Фамилия, на любом языке',
-                                hintStyle: TextStyle(color: p.ink2),
-                                prefixIcon: Icon(CupertinoIcons.search, size: 19, color: p.ink2),
-                                suffixIcon: q.isEmpty
-                                    ? null
-                                    : IconButton(
-                                        tooltip: 'Очистить',
-                                        icon: Icon(CupertinoIcons.xmark_circle_fill, size: 19, color: p.ink2),
-                                        onPressed: () => setState(() {
-                                          _q.clear();
-                                          q = '';
-                                        }),
-                                      ),
-                                filled: true,
-                                fillColor: p.plate,
-                                contentPadding: const EdgeInsets.symmetric(vertical: 14),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(16),
-                                  borderSide: BorderSide(color: p.control),
+                          const SizedBox(height: 22),
+                          const Eyebrow('Уровень'),
+                          const SizedBox(height: 10),
+                          TileGrid(
+                            tiles: [
+                              for (final l in levelNames.entries)
+                                ChoiceTile(label: l.value, on: levels.contains(l.key), onTap: () => _flip(levels, l.key)),
+                            ],
+                          ),
+                          const SizedBox(height: 22),
+                          const Eyebrow('Вид'),
+                          const SizedBox(height: 10),
+                          TileGrid(
+                            tiles: [
+                              for (final k in kindNames.keys)
+                                ChoiceTile(
+                                  label: kindLabel(k, levels),
+                                  color: p.kind(k),
+                                  on: kinds.contains(k),
+                                  onTap: () => _flip(kinds, k),
                                 ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(16),
-                                  borderSide: BorderSide(color: p.accent, width: 1.4),
-                                ),
-                              ),
-                              onChanged: (v) => setState(() => q = v.trim()),
-                            ),
-                            if (found.isNotEmpty) const SizedBox(height: 6),
-                            for (final a in found)
-                              _CheckRow(
-                                leading: Avatar(name: a, data: data, size: 34, slot: true),
-                                title: displayName(a),
-                                subtitle: _personLine(data, a),
-                                value: athletes.contains(a),
-                                onTap: () => setState(() => athletes.contains(a) ? athletes.remove(a) : athletes.add(a)),
-                              ),
-                            if (q.isNotEmpty && found.isEmpty)
+                            ],
+                          ),
+                          const SizedBox(height: 26),
+                          const Eyebrow('Спортсмены'),
+                          const SizedBox(height: 10),
+                          _SearchField(controller: _q, onChanged: (v) => setState(() => q = v.trim())),
+                          const SizedBox(height: 6),
+                          if (q.isNotEmpty) ...[
+                            for (final a in found) athleteRow(a),
+                            if (found.isEmpty)
                               Padding(
                                 padding: const EdgeInsets.symmetric(vertical: 14),
                                 child: Text('Не найдено', style: TextStyle(color: p.ink2, fontSize: 15)),
                               ),
-                            const SizedBox(height: 26),
-                            const Eyebrow('Турнир'),
-                            const SizedBox(height: 4),
-                            for (final e in tours.entries)
-                              _CheckRow(
-                                title: e.value,
-                                value: tids.contains(e.key),
-                                onTap: () => setState(() => tids.contains(e.key) ? tids.remove(e.key) : tids.add(e.key)),
-                              ),
+                          ] else ...[
+                            for (final a in picked) athleteRow(a),
+                            if (quick.isNotEmpty) ...[
+                              const SizedBox(height: 12),
+                              Text('Отслеживаемые', style: TextStyle(fontSize: 13, color: p.ink2, fontWeight: FontWeight.w600)),
+                              for (final a in quick) athleteRow(a),
+                            ],
                           ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  const Positioned(top: 0, left: 0, right: 0, child: SheetHandle()),
-                ],
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: p.sheet,
-                border: Border(top: BorderSide(color: p.plateLine)),
-              ),
-              padding: EdgeInsets.fromLTRB(16, 12, 16, 12 + MediaQuery.paddingOf(context).bottom),
-              // «Сбросить» — не шире 40 % ряда: главная кнопка остаётся главной
-              child: LayoutBuilder(
-                builder: (context, k) => Row(
-                  children: [
-                    ConstrainedBox(
-                      constraints: BoxConstraints(maxWidth: k.maxWidth * .4),
-                      child: SheetButton(
-                        neutral: true,
-                        compact: true,
-                        label: 'Сбросить',
-                        onTap: canReset
-                            ? () {
-                                setState(() {
-                                  kinds.clear();
-                                  tids.clear();
-                                  athletes.clear();
-                                  _q.clear();
-                                  q = '';
-                                });
-                                widget.state.setFilters(Filters.none);
-                              }
-                            : null,
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: SheetButton(
-                        filled: true,
-                        label: action.$1,
-                        detail: action.$2,
-                        onTap: count + more == 0
-                            ? null
-                            : () {
-                                widget.state.setFilters(f);
-                                Navigator.pop(context);
-                              },
+                          for (final intl in [false, true])
+                            if (group(intl).isNotEmpty) ...[
+                              const SizedBox(height: 26),
+                              Eyebrow(intl ? 'Международные турниры' : 'Российские турниры'),
+                              const SizedBox(height: 4),
+                              for (final e in group(intl))
+                                _CheckRow(
+                                  title: e.value.name,
+                                  subtitle: dateRange(e.value.from, e.value.to),
+                                  value: tids.contains(e.key),
+                                  onTap: () => _flip(tids, e.key),
+                                ),
+                            ],
+                        ],
                       ),
                     ),
                   ],
                 ),
-              ),
+                const Positioned(top: 0, left: 0, right: 0, child: SheetHandle()),
+              ],
             ),
-          ],
-        ),
+          ),
+          _SheetBar(
+            secondary: 'Сбросить',
+            onSecondary: canReset
+                ? () {
+                    setState(() {
+                      kinds.clear();
+                      levels.clear();
+                      scope.clear();
+                      tids.clear();
+                      athletes.clear();
+                      _q.clear();
+                      q = '';
+                    });
+                  }
+                : null,
+            primary: action.$1,
+            detail: action.$2,
+            onPrimary: count + more == 0
+                ? null
+                : () {
+                    widget.state.setFilters(f);
+                    Navigator.pop(context);
+                  },
+          ),
+        ],
       ),
     );
   }
@@ -1263,7 +1411,7 @@ class _FilterSheetState extends State<_FilterSheet> {
 (String, String?) filterAction(int starts, int tours) {
   final a = '$starts ${plural(starts, 'старт', 'старта', 'стартов')}';
   final b = '$tours ${plural(tours, 'турнир', 'турнира', 'турниров')}';
-  if (starts == 0 && tours == 0) return ('Стартов нет', null);
+  if (starts == 0 && tours == 0) return ('Впереди стартов нет', null);
   if (tours == 0) return ('Показать $a', null);
   if (starts == 0) return ('Показать $b', null);
   return ('Показать $a', 'и $b');
@@ -1273,7 +1421,7 @@ class _FilterSheetState extends State<_FilterSheet> {
 Set<String> soonAthletes(Schedule data, DateTime t) => {
   for (final s in data.starts)
     if (!s.pastAt(t)) ...[...s.ours.map((o) => o.name), ...s.athletes],
-  for (final u in data.upcoming) ...u.ours,
+  for (final u in data.upcoming) ...[...u.ours, ...u.athletes],
 };
 
 String? _personLine(Schedule data, String name) {
@@ -1334,32 +1482,36 @@ class _CheckRow extends StatelessWidget {
   }
 }
 
-
-
 // ------------------------------------------------------------------ выбор спортсменов
 
-/// Выбор спортсменов из полного справочника сборщика: поиск по фамилии на любом языке,
-/// сразу применяется через [onChanged]. Используется в настройках уведомлений.
+/// Выбор спортсменов из справочника: поиск по фамилии на любом алфавите. Выбор вступает
+/// в силу по кнопке «Сохранить» ([onSave]); «Отменить» и свайп вниз — без изменений.
 Future<void> pickAthletes(
   BuildContext context,
   Schedule? data,
   Set<String> selected,
-  ValueChanged<Set<String>> onChanged,
-) {
-  return showModalBottomSheet(
-    context: context,
-    isScrollControlled: true,
-    useSafeArea: true,
-    enableDrag: false,
-    builder: (c) => _AthletePicker(data: data, selected: selected, onChanged: onChanged),
+  ValueChanged<Set<String>> onSave, {
+  String title = 'Спортсмены',
+}) {
+  return showSwipeSheet<void>(
+    context,
+    (c, scroll) => _AthletePicker(data: data, selected: selected, onSave: onSave, title: title, scroll: scroll),
   );
 }
 
 class _AthletePicker extends StatefulWidget {
   final Schedule? data;
   final Set<String> selected;
-  final ValueChanged<Set<String>> onChanged;
-  const _AthletePicker({required this.data, required this.selected, required this.onChanged});
+  final ValueChanged<Set<String>> onSave;
+  final String title;
+  final ScrollController scroll;
+  const _AthletePicker({
+    required this.data,
+    required this.selected,
+    required this.onSave,
+    required this.title,
+    required this.scroll,
+  });
 
   @override
   State<_AthletePicker> createState() => _AthletePickerState();
@@ -1376,10 +1528,7 @@ class _AthletePickerState extends State<_AthletePicker> {
     super.dispose();
   }
 
-  void _toggle(String a) {
-    setState(() => sel.contains(a) ? sel.remove(a) : sel.add(a));
-    widget.onChanged({...sel});
-  }
+  bool get _changed => sel.length != widget.selected.length || !sel.containsAll(widget.selected);
 
   @override
   Widget build(BuildContext context) {
@@ -1388,78 +1537,66 @@ class _AthletePickerState extends State<_AthletePicker> {
     final shown = q.isEmpty || data == null
         ? ([...sel]..sort())
         : searchAthletes(data, q, soon: soonAthletes(data, now()));
-    return Padding(
-      padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
-      child: DraggableScrollableSheet(
-        expand: false,
-        initialChildSize: .9,
-        minChildSize: .4,
-        maxChildSize: .95,
-        builder: (c, scroll) => Column(
-          children: [
-            const SheetHandle(),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 4, 12, 0),
-              child: Row(
-                children: [
-                  Text('Спортсмены', style: display(p, 28)),
-                  const Spacer(),
-                  TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('Готово')),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 4, 20, 10),
-              child: TextField(
-                controller: _q,
-                style: TextStyle(fontSize: 15.5, color: p.ink),
-                textInputAction: TextInputAction.search,
-                decoration: InputDecoration(
-                  hintText: 'Фамилия, на любом языке',
-                  hintStyle: TextStyle(color: p.ink2),
-                  prefixIcon: Icon(CupertinoIcons.search, size: 19, color: p.ink2),
-                  filled: true,
-                  fillColor: p.plate,
-                  contentPadding: const EdgeInsets.symmetric(vertical: 14),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: BorderSide(color: p.control),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: BorderSide(color: p.accent, width: 1.4),
-                  ),
-                ),
-                onChanged: (v) => setState(() => q = v.trim()),
-              ),
-            ),
-            if (sel.isNotEmpty)
-              Padding(
-                padding: const EdgeInsets.fromLTRB(20, 0, 20, 4),
-                child: Text('Выбрано: ${sel.length}', style: TextStyle(fontSize: 13, color: p.ink2)),
-              ),
-            Expanded(
-              child: ListView(
-                controller: scroll,
-                padding: const EdgeInsets.fromLTRB(20, 4, 20, 20),
-                children: [
-                  for (final a in shown)
-                    _CheckRow(
-                      leading: Avatar(name: a, data: data, size: 34, slot: true),
-                      title: displayName(a),
-                      subtitle: data == null ? null : _personLine(data, a),
-                      value: sel.contains(a),
-                      onTap: () => _toggle(a),
+    return Material(
+      color: p.sheet,
+      borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        children: [
+          Expanded(
+            child: Stack(
+              children: [
+                ListView(
+                  controller: widget.scroll,
+                  padding: EdgeInsets.zero,
+                  children: [
+                    _SheetTitle(widget.title),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 14, 20, 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          _SearchField(controller: _q, onChanged: (v) => setState(() => q = v.trim())),
+                          const SizedBox(height: 8),
+                          if (q.isEmpty)
+                            Text(
+                              sel.isEmpty ? 'Не выбрано' : 'Выбрано: ${sel.length}',
+                              style: TextStyle(fontSize: 13, color: p.ink2, fontWeight: FontWeight.w600),
+                            ),
+                          for (final a in shown)
+                            _CheckRow(
+                              leading: Avatar(name: a, data: data, size: 34, slot: true),
+                              title: displayName(a),
+                              subtitle: data == null ? null : _personLine(data, a),
+                              value: sel.contains(a),
+                              onTap: () => setState(() => sel.contains(a) ? sel.remove(a) : sel.add(a)),
+                            ),
+                          if (shown.isEmpty && q.isNotEmpty)
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 14),
+                              child: Text('Не найдено', style: TextStyle(color: p.ink2, fontSize: 15)),
+                            ),
+                        ],
+                      ),
                     ),
-                  if (shown.isEmpty && q.isNotEmpty) Text('Не найдено', style: TextStyle(color: p.ink2, fontSize: 15)),
-                  if (shown.isEmpty && q.isEmpty)
-                    Text('Найдите по фамилии — уведомления придут только о стартах выбранных',
-                        style: TextStyle(color: p.ink2, fontSize: 15, height: 1.35)),
-                ],
-              ),
+                  ],
+                ),
+                const Positioned(top: 0, left: 0, right: 0, child: SheetHandle()),
+              ],
             ),
-          ],
-        ),
+          ),
+          _SheetBar(
+            secondary: 'Отменить',
+            onSecondary: () => Navigator.pop(context),
+            primary: 'Сохранить',
+            onPrimary: _changed
+                ? () {
+                    widget.onSave({...sel});
+                    Navigator.pop(context);
+                  }
+                : null,
+          ),
+        ],
       ),
     );
   }

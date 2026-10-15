@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:starty/countries.dart';
 import 'package:starty/data.dart';
+import 'package:starty/ui.dart';
 
 void main() {
   test('поиск на любом алфавите', () {
@@ -27,5 +28,39 @@ void main() {
     expect(personLine('RUS', 'w'), 'Россия · женщины');
     expect(personLine('JPN', 'M'), 'Япония · юноши');
     expect(personLine('RUS', 'P'), 'Россия · юниорские пары');
+  });
+
+  test('отслеживаемые: россияне на международном и выбранные иностранцы; на российском — только выбранные', () {
+    Map<String, dynamic> ev(bool intl) => {
+      'id': 'x', 'tid': 't', 'tournament': 'T', 'kind': 'women', 'level': 'junior', 'seg': 'КП',
+      'title': 'T — девушки КП', 'start': '2026-10-20T10:00:00+03:00', 'end': '2026-10-20T13:00:00+03:00',
+      'venue': '', 'intl': intl, 'ours': [],
+      'field': [
+        {'name': 'Stefania Gladki', 'nation': 'FRA'},
+        {'name': 'Алиса Заикина', 'nation': intl ? 'AIN2' : 'СПБ'},
+        {'name': 'Mao Shimada', 'nation': 'JPN'},
+      ],
+    };
+    final f = Follow(['Stefania Gladki']);
+    final intl = Start.fromJson(ev(true)).withFollow(f);
+    expect(intl.ours.map((o) => o.name), ['Stefania Gladki', 'Алиса Заикина']);
+    expect(oursLabel(intl.ours), 'Россияне, отслеживаемые');
+    final none = Start.fromJson(ev(true)).withFollow(Follow(const []));
+    expect(none.ours.map((o) => o.name), ['Алиса Заикина']);
+    final ru = Start.fromJson(ev(false)).withFollow(Follow(['Алиса Заикина']));
+    expect(ru.ours.map((o) => o.name), ['Алиса Заикина']);
+    // международный без россиян и отслеживаемых в ленту по умолчанию не идёт, но находится фильтром
+    final bare = Start.fromJson({...ev(true), 'field': [{'name': 'Mao Shimada', 'nation': 'JPN'}]}).withFollow(Follow(const []));
+    expect(bare.shown, isFalse);
+    expect(Filters.none.pass(bare), isFalse);
+    expect(const Filters({}, {}, {'Mao Shimada'}).pass(bare), isTrue);
+  });
+
+  test('вид под уровень: женщины — взрослые, девушки — юниорки', () {
+    expect(kindLabel('women', {'junior'}), 'Девушки');
+    expect(kindLabel('women', {'senior'}), 'Женщины');
+    expect(kindLabel('women', const {}), 'Женщины (девушки)');
+    expect(kindLabel('men', {'senior', 'junior'}), 'Мужчины (юноши)');
+    expect(kindLabel('pairs', {'junior'}), 'Пары');
   });
 }

@@ -15,7 +15,8 @@ void backgroundDispatcher() {
       WidgetsFlutterBinding.ensureInitialized();
       await Prefs.init();
       await Reminders.init();
-      final data = await Repo.fetch() ?? await Repo.cached();
+      final raw = await Repo.fetch() ?? await Repo.cached();
+      final data = raw?.withFollow(Follow(Prefs.follow ?? raw.watchlist));
       await Reminders.sync(data, NotifyPlan(NotifyRules.fromJson(Prefs.rulesJson), Prefs.forcedOn, Prefs.forcedOff));
     } catch (_) {}
     return true;

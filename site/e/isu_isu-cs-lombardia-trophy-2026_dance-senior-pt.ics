@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-lombardia-trophy-2026:dance-senior-pt@starty
+DTSTAMP:20261015T094229Z
+DTSTART;TZID=Europe/Moscow:20260920T163000
+DTEND;TZID=Europe/Moscow:20260920T185500
+SUMMARY:CS Lombardia Trophy — танцы ПТ
+DESCRIPTION:Итог:\n1. Katerina Mrazkova / Daniel Mrazek — 112.86\n2. 
+ Evgeniia Lopareva / Geoffrey Brissaud — 108.14\n3. Emily Bratti / Ian So
+ merville — 106.79\n\nИтог турнира:\n1. Katerina Mrazkova / Da
+ niel Mrazek — 188.61\n2. Evgeniia Lopareva / Geoffrey Brissaud — 187.3
+ 5\n3. Emily Bratti / Ian Somerville — 178.03\n\nНачало: 16:30 МС
+ К
+LOCATION:Bergamo\, Italy
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Lombardia Trophy — танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -64,7 +64,7 @@ def refresh(ev, idx, names, now):
     done = bool(seg.get("final") or not idx.get("final_marks"))
     to_ru = lambda n: live.get("names", {}).get(n) or names.to_ru(n)
     place = {nm.key(to_ru(r["name"])): r["place"] for r in results}
-    for o in ev["ours"]:
+    for o in ev["ours"] + ev.get("field", []):
         p = place.get(nm.key(o["name"]))
         if p:
             o["place"] = p
@@ -90,7 +90,7 @@ def refresh(ev, idx, names, now):
             ev["total"] = [{"place": r["place"], "name": to_ru(r["name"]), "nation": r["nation"],
                             "points": r["points"]} for r in rows[:3]]
             final = {nm.key(to_ru(r["name"])): r["place"] for r in rows}
-            for o in ev["ours"]:
+            for o in ev["ours"] + ev.get("field", []):
                 if final.get(nm.key(o["name"])):
                     o["final"] = final[nm.key(o["name"])]
             first = {}

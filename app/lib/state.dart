@@ -9,13 +9,30 @@ import 'live.dart';
 import 'reminders.dart';
 
 class AppState extends ChangeNotifier {
+  /// Расписание под выбор человека (отслеживаемые) с итогами с табло.
   Schedule? data;
+
+  /// Как пришло с сервера — от него пересчитывается [data], когда меняются отслеживаемые.
+  Schedule? _raw;
   bool loading = true;
   bool offline = false;
 
   /// Идёт ручное или фоновое обновление расписания — для строки в настройках.
   bool refreshing = false;
-  Filters filters = Filters(Prefs.kinds, Prefs.tids, Prefs.athletes);
+  Filters filters = Filters(Prefs.kinds, Prefs.tids, Prefs.athletes, levels: Prefs.levels, scope: Prefs.scope);
+
+  /// Отслеживаемые. Пока человек не выбирал — список сборщика (data.watchlist).
+  List<String>? _follow = Prefs.follow;
+  Follow get follow => Follow(_follow ?? _raw?.watchlist ?? const []);
+  bool get followChosen => _follow != null;
+
+  Future<void> setFollow(Set<String> v) async {
+    _follow = v.toList()..sort();
+    if (_raw != null) data = _apply(_raw!);
+    notifyListeners();
+    await Prefs.setFollow(_follow!);
+    await _sync();
+  }
 
   // уведомления
   NotifyRules rules = NotifyRules.fromJson(Prefs.rulesJson);
@@ -46,7 +63,10 @@ class AppState extends ChangeNotifier {
 
   Future<void> load() async {
     if (refreshing) return;
-    data ??= await Repo.cached();
+    if (data == null) {
+      _raw = await Repo.cached();
+      if (_raw != null) data = _apply(_raw!);
+    }
     if (data != null) {
       loading = false;
       notifyListeners();
@@ -58,6 +78,7 @@ class AppState extends ChangeNotifier {
     refreshing = false;
     if (fresh != null) {
       _fetchedAt = DateTime.now();
+      _raw = fresh;
       data = _apply(fresh);
       offline = false;
     } else {
@@ -124,7 +145,7 @@ class AppState extends ChangeNotifier {
   Future<void> setFilters(Filters f) async {
     filters = f;
     notifyListeners();
-    await Prefs.setFilters(f.kinds, f.tids, f.athletes);
+    await Prefs.setFilters(f);
   }
 
   Future<void> setShowDone(bool v) async {
@@ -169,6 +190,7 @@ class AppState extends ChangeNotifier {
     return [
       for (final s in data?.starts ?? const <Start>[])
         if (s.live != null &&
+            (s.shown || filters.pass(s)) &&
             !s.settled &&
             !t.isBefore(s.t0.subtract(const Duration(minutes: 10))) &&
             t.isBefore(s.t1.add(const Duration(hours: 24))))
@@ -203,8 +225,8 @@ class AppState extends ChangeNotifier {
         if (_sig(g) != _sig(_live[g.id] ?? list[i])) changed = true;
         _live[g.id] = g;
       }
-      if (changed && data != null) {
-        data = _apply(data!);
+      if (changed && _raw != null) {
+        data = _apply(_raw!);
         notifyListeners();
       }
       // примечательное и окончательный итог считает сервер — забираем его чаще, пока что-то идёт
@@ -221,8 +243,9 @@ class AppState extends ChangeNotifier {
     for (final o in s.ours) '${o.name}${o.place}${o.overall}',
   ].join('|');
 
-  /// Наложить итоги с табло на расписание с сервера. Сервер дошёл до окончательного — его и берём.
-  Schedule _apply(Schedule d) {
+  /// Расписание с сервера → под отслеживаемых и с итогами с табло. Сервер дошёл до окончательного — его и берём.
+  Schedule _apply(Schedule raw) {
+    final d = raw.withFollow(follow);
     if (_live.isEmpty) return d;
     _live.removeWhere((id, _) => d.byId(id)?.settled ?? true);
     if (_live.isEmpty) return d;

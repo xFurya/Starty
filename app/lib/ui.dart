@@ -48,6 +48,19 @@ String plural(int n, String one, String few, String many) {
 const kindNames = {'women': 'Женщины', 'men': 'Мужчины', 'pairs': 'Пары', 'dance': 'Танцы'};
 const levelNames = {'senior': 'Взрослые', 'junior': 'Юниоры'};
 
+/// Название вида под выбранный уровень: у взрослых женщины и мужчины, у юниоров девушки
+/// и юноши; оба уровня (или любой) — «Женщины (девушки)», «Мужчины (юноши)».
+String kindLabel(String kind, Set<String> levels) {
+  final senior = levels.isEmpty || levels.contains('senior');
+  final junior = levels.isEmpty || levels.contains('junior');
+  const young = {'women': 'Девушки', 'men': 'Юноши'};
+  final adult = kindNames[kind] ?? kind;
+  final y = young[kind];
+  if (y == null) return adult;
+  if (senior && junior) return '$adult (${y.toLowerCase()})';
+  return junior ? y : adult;
+}
+
 const segNames = {'КП': 'короткая программа', 'ПП': 'произвольная программа', 'РТ': 'ритм-танец', 'ПТ': 'произвольный танец'};
 
 /// «юниорские танцы ПТ» → («Юниорские танцы», «ПТ»).

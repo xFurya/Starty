@@ -382,10 +382,8 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 except (net.FetchError, OSError) as e:
                     log("  ! PDF времени:", e)
             msk_times = times_to_msk(start, local, idx["offset"]) if local and idx["offset"] is not None else {}
-            ours = []
+            ours, field = [], []
             for p in people:
-                if not ours_rule(p["name"], p.get("nation", "")):
-                    continue
                 o = {"name": names.to_ru(p["name"]), "nation": p.get("nation", "")}
                 no = p.get("no")
                 if no and no in msk_times and "rank" not in p:
@@ -396,7 +394,10 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                     o["warmup"] = p.get("warmup") or warm.get(no)
                 if place.get(p["name"]):
                     o["place"] = place[p["name"]]
-                ours.append(o)
+                # field — весь состав: за кем следить, решает человек в приложении
+                field.append(o)
+                if ours_rule(p["name"], p.get("nation", "")):
+                    ours.append(o)
             if done and SEG_ORDER[seg] == last_seg and c.get("results_url"):
                 try:
                     cr = st.parse_category_results(c["results_url"])
@@ -404,8 +405,6 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                         cat_total, cat_rows = top3(cr["rows"], names), cr["rows"]
                 except Exception as e:
                     log("  ! итог вида:", c["results_url"], e)
-            if intl and not ours:
-                continue
             podium = top3(results, names) if started else None
             total = cat_total if SEG_ORDER[seg] == last_seg else None
             last = max(msk_times.values()) if msk_times else None
@@ -416,6 +415,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 start=start, end=end, venue=venue, intl=intl, broadcast=broadcast,
                 ours=sort_ours(ours), athletes=athletes, src=idx["url"],
                 podium=podium, total=total)
+            ev["field"] = sort_ours(field)
             if partial:
                 ev["provisional"] = True
             is_last = SEG_ORDER[seg] == last_seg
@@ -440,7 +440,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
             ev["total"] = cat_total
             # место наших в итоге вида
             final = {nm.key(names.to_ru(r["name"])): r["place"] for r in cat_rows}
-            for o in ev["ours"]:
+            for o in ev["ours"] + ev.get("field", []):
                 if final.get(nm.key(o["name"])):
                     o["final"] = final[nm.key(o["name"])]
             if c.get("results_url"):
@@ -650,13 +650,15 @@ def do_isu(names, report, failed, upcoming, photos):
                     except Exception as ex:  # фото не повод терять турнир
                         log("  ! портреты ISU:", ex)
             else:
-                got, ours_all = isu_api_events(e, tid, name, venue, bcast, names, sched, photos)
-                if not got and ours_all and to > now:
+                got, ours_all, all_names = isu_api_events(e, tid, name, venue, bcast, names, sched, photos)
+                if not got and to > now:
+                    # заявка есть, расписания нет: турнир — в «скоро», с полным составом для поиска
                     upcoming.append({
                         "tid": tid, "name": name, "intl": True, "venue": venue,
                         "start": fr.astimezone(MSK).date().isoformat(),
                         "end": (to - dt.timedelta(hours=12)).astimezone(MSK).date().isoformat(),
-                        "ours": sorted(set(ours_all)), "broadcast": bcast})
+                        "ours": sorted(set(ours_all)), "athletes": sorted(set(all_names)),
+                        "broadcast": bcast})
         except Exception as ex:
             log(f"  ! {name}: {ex}")
             traceback.print_exc()
@@ -672,7 +674,7 @@ def isu_api_events(e, tid, name, venue, bcast, names, sched, photos):
     cats = isu.categories(e["slug"], e["event_id"])
     levels = {cat_en(c["name"])[1] for c in cats}
     out = []
-    ours_all = []
+    ours_all, all_names = [], []
     now = dt.datetime.now(dt.timezone.utc)
     for c in cats:
         kind, level = cat_en(c["name"])
@@ -680,12 +682,14 @@ def isu_api_events(e, tid, name, venue, bcast, names, sched, photos):
             continue
         ents = isu.entries(e["event_id"], c)
         ours = [{"name": names.to_ru(x["name"])} for x in ents if x["code"] in CFG["ours_codes"]]
-        if not ours:
+        field = [{"name": names.to_ru(x["name"]), "nation": x["code"]} for x in ents]
+        if not field:
             continue
         for x in ents:
             for full, url in x.get("photos", {}).items():
                 photos["raw"].append((full, url, 1))
         ours_all += [o["name"] for o in ours]
+        all_names += [o["name"] for o in field]
         segs = [(when, seg_code(segname)) for when, cat, segname in sched
                 if cat_en(cat) == (kind, level) and seg_code(segname)]
         last_seg = max((SEG_ORDER[sc] for _, sc in segs), default=None)
@@ -698,13 +702,15 @@ def isu_api_events(e, tid, name, venue, bcast, names, sched, photos):
             if SEG_ORDER[seg] == last_seg and end < now and ranked and ranked[0]["rank"] == 1:
                 total = [{"place": x["rank"], "name": names.to_ru(x["name"]), "nation": x["code"],
                           "points": x["points"]} for x in ranked[:3]]
-            out.append(make_event(
+            ev = make_event(
                 tid=tid, tournament=name, kind=kind, level=level, seg=seg, mixed=len(levels) > 1,
                 start=when, end=end, venue=venue, intl=True, broadcast=bcast,
-                ours=sorted(ours, key=lambda o: o["name"]), athletes=[o["name"] for o in ours],
+                ours=sorted(ours, key=lambda o: o["name"]), athletes=sorted(o["name"] for o in field),
                 src=f"https://isu-skating.com/en/figure-skating/events/eventdetail/{e['slug']}/",
-                total=total))
-    return out, ours_all
+                total=total)
+            ev["field"] = sorted(field, key=lambda o: o["name"])
+            out.append(ev)
+    return out, ours_all, all_names
 
 
 def do_goldenskate(names, report, failed, isu_ok):
@@ -998,7 +1004,9 @@ def write_site(data):
         json.dump(data, f, ensure_ascii=False, indent=1)
     gen = dt.datetime.fromisoformat(data["generated"])
     with open(OUT_ICS, "w", encoding="utf-8", newline="") as f:
-        f.write(ics.build(data["events"], gen, PUBLIC_URL))
+        # общая лента календаря — как лента приложения по умолчанию: российские старты
+        # и международные с россиянами и белорусами
+        f.write(ics.build([e for e in data["events"] if not e["intl"] or e["ours"]], gen, PUBLIC_URL))
     # по файлу на старт — кнопка «В календарь» с напоминанием за 15 минут
     edir = os.path.join(SITE, "e")
     os.makedirs(edir, exist_ok=True)

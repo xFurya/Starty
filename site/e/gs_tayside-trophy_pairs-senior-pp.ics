@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:tayside-trophy:pairs-senior-pp@starty
+DTSTAMP:20261015T094229Z
+DTSTART;TZID=Europe/Moscow:20261011T163400
+DTEND;TZID=Europe/Moscow:20261011T175900
+SUMMARY:Tayside Trophy — пары ПП
+DESCRIPTION:Итог:\n1. Ava Kemp / Yohnatan Elizarov — 118.04\n2. Anna 
+ Valesi / Martin Bidar — 102.95\n3. Camille Kovalev / Pavel Kovalev — 1
+ 00.04\n\nИтог турнира:\n1. Ava Kemp / Yohnatan Elizarov — 182
+ .72\n2. Camille Kovalev / Pavel Kovalev — 162.78\n3. Anna Valesi / Marti
+ n Bidar — 157.59\n\nПримечательное:\n• Ava Kemp / Yohnat
+ an Elizarov — Личный рекорд за ПП: 118.04 (был 115.49
+ )\n• Ava Kemp / Yohnatan Elizarov — Личный рекорд по с
+ умме: 182.72 (был 179.43)\n• Anna Valesi / Martin Bidar — По
+ сле короткой программы — 6-е место\, в ито
+ ге — 3-е место\n• Ava Kemp / Yohnatan Elizarov — Отрыв 
+ от второго места — 19.94 балла\n\nНачало: 16:34
+  МСК
+LOCATION:Dundee\, Great Britain
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tayside Trophy — пары ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

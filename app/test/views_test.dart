@@ -293,7 +293,7 @@ void main() {
     expect(upcomingAhead(s, t), isEmpty);
     expect(upcomingAhead(s, t, f), hasLength(1));
     expect(filterAction(0, 1), ('Показать 1 турнир', null));
-    expect(filterAction(0, 0), ('Стартов нет', null));
+    expect(filterAction(0, 0), ('Впереди стартов нет', null));
     expect(filterAction(3, 0), ('Показать 3 старта', null));
     expect(filterAction(21, 15), ('Показать 21 старт', 'и 15 турниров'));
   });

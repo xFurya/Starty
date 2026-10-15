@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-jgp-ljubljana-2026:women-junior-pp@starty
+DTSTAMP:20261015T094229Z
+DTSTART;TZID=Europe/Moscow:20261003T161000
+DTEND;TZID=Europe/Moscow:20261003T214500
+SUMMARY:JGP Ljubljana — девушки ПП
+DESCRIPTION:Итог:\n1. Hana Bath — 131.11\n2. Leandra Tzimpoukakis —
+  119.97\n3. Yuxuan Liu — 117.94\n\nИтог турнира:\n1. Hana Bat
+ h — 198.86\n2. Yuxuan Liu — 188.04\n3. Leandra Tzimpoukakis — 176.19
+ \n\nПримечательное:\n• Hana Bath — Тройной акс
+ ель\n• Leandra Tzimpoukakis — Тройной аксель\n\nНач
+ ало: 16:10 МСК\nТрансляция: Okko
+LOCATION:Ljubljana\, Slovenia
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JGP Ljubljana — девушки ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

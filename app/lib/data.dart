@@ -55,6 +55,23 @@ const monthsNom = [
 const weekdays = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
 const weekdaysShort = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
 
+/// Отслеживаемые спортсмены — выбор человека (пара — целиком или по одному из пары).
+class Follow {
+  final Set<String> names;
+  final Set<String> _keys;
+  Follow(Iterable<String> list) : names = list.toSet(), _keys = {for (final n in list) norm(n)};
+  static final none = Follow(const []);
+
+  bool has(String name) {
+    if (_keys.isEmpty) return false;
+    if (_keys.contains(norm(name))) return true;
+    return name.contains(' / ') && name.split(' / ').any((m) => _keys.contains(norm(m.trim())));
+  }
+}
+
+/// Россиянин или белорус по коду из табло: RUS, AIN2, BLR, AIN1, AIN, регион на стартах ФСР.
+bool isOurNation(String n) => const {'RUS', 'AIN2', 'BLR', 'AIN1', 'AIN'}.contains(n) || _isRussianRegion(n);
+
 class Skater {
   final String name;
   final String? time; // «19:30» по Москве
@@ -64,6 +81,8 @@ class Skater {
   final int? overall; // место в итоге вида — у события с итогом турнира
   final String nation; // код страны/команды из табло, нужен для подписи групп
   Skater(this.name, this.time, this.no, this.warmup, [this.place, this.overall, this.nation = '']);
+  factory Skater.fromJson(Map o) =>
+      Skater(o['name'], o['time'], o['no'], o['warmup'], o['place'], o['final'], o['nation'] ?? '');
 
   /// В списке у пар — только фамилии.
   String get short => name.contains(' / ') ? name.split(' / ').map((p) => p.trim().split(' ').last).join(' / ') : name;
@@ -80,19 +99,26 @@ String oursLabel(Iterable<Skater> skaters, {bool exitTimes = false, bool intl = 
   if (intl) {
     var russian = false;
     var belarusian = false;
+    var others = false;
     for (final skater in skaters) {
       final nation = skater.nation.trim();
       if (nation == 'RUS' || nation == 'AIN2' || _isRussianRegion(nation)) {
         russian = true;
       } else if (nation == 'BLR' || nation == 'AIN1') {
         belarusian = true;
+      } else {
+        others = true;
       }
     }
     group = russian && belarusian
         ? 'Россияне и белорусы'
         : belarusian
             ? 'Белорусы'
-            : 'Россияне';
+            : russian
+                ? 'Россияне'
+                : '';
+    // иностранцы здесь только потому, что человек их отслеживает
+    if (others) group = group.isEmpty ? 'Отслеживаемые' : '$group, отслеживаемые';
   }
   // на российских стартах все россияне — группа не подписывается
   if (exitTimes) return group.isEmpty ? 'Выход на лёд' : '$group · выход на лёд';
@@ -106,7 +132,13 @@ class Start {
   final DateTime t0, t1;
   final bool intl;
   final List<String> broadcast, athletes;
+
+  /// Кого показывать в карточке: россияне и белорусы на международных стартах и все,
+  /// кого человек отслеживает (см. [withFollow]).
   final List<Skater> ours;
+
+  /// Весь состав со временем выхода и местами; пусто — данные старой версии сборщика.
+  final List<Skater> field;
   Start.fromJson(Map<String, dynamic> j)
     : id = j['id'],
       tid = j['tid'],
@@ -122,9 +154,8 @@ class Start {
       intl = j['intl'] == true,
       broadcast = List<String>.from(j['broadcast'] ?? const []),
       athletes = List<String>.from(j['athletes'] ?? const []),
-      ours = [
-        for (final o in (j['ours'] as List? ?? const [])) Skater(o['name'], o['time'], o['no'], o['warmup'], o['place'], o['final'], o['nation'] ?? ''),
-      ],
+      ours = [for (final o in (j['ours'] as List? ?? const [])) Skater.fromJson(o)],
+      field = [for (final o in (j['field'] as List? ?? const [])) Skater.fromJson(o)],
       podium = [for (final p in (j['podium'] as List? ?? const [])) Placing.fromJson(p)],
       total = [for (final p in (j['total'] as List? ?? const [])) Placing.fromJson(p)],
       provisional = j['provisional'] == true,
@@ -141,7 +172,9 @@ class Start {
     required this.podium,
     required this.total,
     required this.provisional,
-  }) : id = o.id,
+    List<Skater>? field,
+  }) : field = field ?? o.field,
+       id = o.id,
        tid = o.tid,
        tournament = o.tournament,
        kind = o.kind,
@@ -164,16 +197,34 @@ class Start {
     Map<String, int> places = const {},
     List<Placing>? total,
     Map<String, int> finals = const {},
-  }) => Start._with(
-    this,
-    ours: [
-      for (final o in ours)
-        Skater(o.name, o.time, o.no, o.warmup, places[norm(o.name)] ?? o.place, finals[norm(o.name)] ?? o.overall, o.nation),
-    ],
-    podium: podium,
-    total: total ?? this.total,
-    provisional: provisional,
-  );
+  }) {
+    Skater up(Skater o) =>
+        Skater(o.name, o.time, o.no, o.warmup, places[norm(o.name)] ?? o.place, finals[norm(o.name)] ?? o.overall, o.nation);
+    return Start._with(
+      this,
+      ours: [for (final o in ours) up(o)],
+      field: [for (final o in field) up(o)],
+      podium: podium,
+      total: total ?? this.total,
+      provisional: provisional,
+    );
+  }
+
+  /// Карточка под выбор человека: на международных — россияне и белорусы и отслеживаемые,
+  /// на российских — отслеживаемые.
+  Start withFollow(Follow follow) {
+    if (field.isEmpty) return this;
+    return Start._with(
+      this,
+      ours: [for (final o in field) if ((intl && isOurNation(o.nation)) || follow.has(o.name)) o],
+      podium: podium,
+      total: total,
+      provisional: provisional,
+    );
+  }
+
+  /// В ленте по умолчанию: российский старт или международный, где есть кого показать.
+  bool get shown => !intl || ours.isNotEmpty;
 
   /// Тройка пока промежуточная: протокол на табло, судейских оценок ещё нет.
   final bool provisional;
@@ -270,6 +321,9 @@ class Upcoming {
   /// Дни по Москве: «2026-10-15».
   final String start, end;
   final List<String> ours;
+
+  /// Весь заявленный состав (у международных) — для поиска и отслеживаемых.
+  final List<String> athletes;
   Upcoming.fromJson(Map<String, dynamic> j)
     : tid = j['tid'] ?? '',
       name = j['name'] ?? '',
@@ -277,7 +331,22 @@ class Upcoming {
       intl = j['intl'] == true,
       start = (j['start'] as String? ?? '').split('T').first,
       end = ((j['end'] ?? j['start']) as String? ?? '').split('T').first,
-      ours = List<String>.from(j['ours'] ?? const []);
+      ours = List<String>.from(j['ours'] ?? const []),
+      athletes = List<String>.from(j['athletes'] ?? const []);
+
+  Upcoming._(Upcoming u, this.ours)
+    : tid = u.tid,
+      name = u.name,
+      venue = u.venue,
+      intl = u.intl,
+      start = u.start,
+      end = u.end,
+      athletes = u.athletes;
+
+  /// Россияне и белорусы из заявки плюс отслеживаемые.
+  Upcoming withFollow(Follow f) => Upcoming._(this, {...ours, ...athletes.where(f.has)}.toList()..sort());
+
+  bool get shown => !intl || ours.isNotEmpty;
 
   /// Идёт ли турнир в этот день.
   bool covers(String day) => start.isNotEmpty && day.compareTo(start) >= 0 && day.compareTo(end) <= 0;
@@ -354,6 +423,20 @@ class Schedule {
       },
     );
   }
+
+  /// Под выбор человека: кого показывать в карточках и что попадает в ленту.
+  Schedule withFollow(Follow f) => Schedule(
+    [for (final s in starts) s.withFollow(f)],
+    generated,
+    complete,
+    fromCache,
+    photos: photos,
+    upcoming: [for (final u in upcoming) u.withFollow(f)],
+    sources: sources,
+    watchlist: watchlist,
+    roster: roster,
+    people: people,
+  );
 
   /// То же расписание с другими стартами (итоги с табло).
   Schedule withStarts(List<Start> list) => Schedule(
@@ -444,10 +527,18 @@ class Prefs {
   static Set<String> get kinds => (_p.getStringList('f.kinds') ?? const []).toSet();
   static Set<String> get tids => (_p.getStringList('f.tids') ?? const []).toSet();
   static Set<String> get athletes => (_p.getStringList('f.athletes') ?? const []).toSet();
-  static Future<void> setFilters(Set<String> k, Set<String> t, Set<String> a) async {
-    await _p.setStringList('f.kinds', k.toList());
-    await _p.setStringList('f.tids', t.toList());
-    await _p.setStringList('f.athletes', a.toList());
+  static Set<String> get levels => (_p.getStringList('f.levels') ?? const []).toSet();
+  static Set<String> get scope => (_p.getStringList('f.scope') ?? const []).toSet();
+
+  /// Отслеживаемые; null — человек ещё не выбирал (тогда — список сборщика).
+  static List<String>? get follow => _p.getStringList('follow');
+  static Future<void> setFollow(Iterable<String> v) => _p.setStringList('follow', v.toList());
+  static Future<void> setFilters(Filters f) async {
+    await _p.setStringList('f.kinds', f.kinds.toList());
+    await _p.setStringList('f.tids', f.tids.toList());
+    await _p.setStringList('f.athletes', f.athletes.toList());
+    await _p.setStringList('f.levels', f.levels.toList());
+    await _p.setStringList('f.scope', f.scope.toList());
   }
 }
 
@@ -540,14 +631,22 @@ List<String> searchAthletes(Schedule data, String query, {Set<String> soon = con
   return found.take(limit).toList();
 }
 
-/// Фильтр ленты: виды, турниры, спортсмены. Только то, что видно в ленте и в месяце, —
-/// к уведомлениям отношения не имеет.
+/// Фильтр ленты: виды, уровень, российские или международные, турниры, спортсмены.
+/// Только то, что видно в ленте и в месяце, — к уведомлениям отношения не имеет.
+/// Пустой набор — без ограничения.
 class Filters {
   final Set<String> kinds, tids, athletes;
-  const Filters(this.kinds, this.tids, this.athletes);
+  final Set<String> levels; // senior, junior
+  final Set<String> scope; // russian, intl
+  const Filters(this.kinds, this.tids, this.athletes, {this.levels = const {}, this.scope = const {}});
   static const none = Filters({}, {}, {});
-  bool get any => kinds.isNotEmpty || tids.isNotEmpty || athletes.isNotEmpty;
-  int get count => kinds.length + tids.length + athletes.length;
+  bool get any => kinds.isNotEmpty || tids.isNotEmpty || athletes.isNotEmpty || levels.isNotEmpty || scope.isNotEmpty;
+  int get count => kinds.length + tids.length + athletes.length + levels.length + scope.length;
+
+  /// Человек сам назвал турнир или спортсмена — показываем и международные старты без россиян.
+  bool get explicit => tids.isNotEmpty || athletes.isNotEmpty;
+
+  bool _scope(bool intl) => scope.isEmpty || scope.contains(intl ? 'intl' : 'russian');
 
   bool _has(Iterable<String> names) {
     final list = names.toList();
@@ -555,12 +654,19 @@ class Filters {
   }
 
   bool pass(Start s) {
+    if (!explicit && !s.shown) return false;
+    if (!_scope(s.intl)) return false;
+    if (levels.isNotEmpty && !levels.contains(s.level)) return false;
     if (kinds.isNotEmpty && !kinds.contains(s.kind)) return false;
     if (tids.isNotEmpty && !tids.contains(s.tid)) return false;
-    if (athletes.isNotEmpty && !_has([...s.athletes, ...s.ours.map((o) => o.name)])) return false;
+    if (athletes.isNotEmpty && !_has([...s.athletes, ...s.ours.map((o) => o.name), ...s.field.map((o) => o.name)])) return false;
     return true;
   }
 
   /// Турнир без расписания: виды у него неизвестны — отсекают выбор турниров и заявка наших.
-  bool passUpcoming(Upcoming u) => (tids.isEmpty || tids.contains(u.tid)) && (athletes.isEmpty || _has(u.ours));
+  bool passUpcoming(Upcoming u) =>
+      (explicit || u.shown) &&
+      _scope(u.intl) &&
+      (tids.isEmpty || tids.contains(u.tid)) &&
+      (athletes.isEmpty || _has([...u.ours, ...u.athletes]));
 }

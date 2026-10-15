@@ -307,7 +307,9 @@ class FilterLine extends StatelessWidget {
   Widget build(BuildContext context) {
     final f = state.filters;
     final names = <String>[
-      ...f.kinds.map((k) => kindNames[k] ?? k),
+      if (f.scope.length == 1) f.scope.first == 'intl' ? 'Международные' : 'Российские',
+      if (f.levels.length == 1) levelNames[f.levels.first]!,
+      ...f.kinds.map((k) => kindLabel(k, f.levels)),
       ...f.athletes.map(surname),
       if (f.tids.isNotEmpty)
         f.tids.length == 1

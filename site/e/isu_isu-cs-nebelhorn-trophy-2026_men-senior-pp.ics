@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-nebelhorn-trophy-2026:men-senior-pp@starty
+DTSTAMP:20261015T094229Z
+DTSTART;TZID=Europe/Moscow:20260925T150000
+DTEND;TZID=Europe/Moscow:20260925T172000
+SUMMARY:CS Nebelhorn Trophy — мужчины ПП
+DESCRIPTION:Итог:\n1. Aleksandr Selevko — 164.68\n2. Genrikh Gartung 
+ — 152.34\n3. Francois Pitot — 148.91\n\nИтог турнира:\n1. A
+ leksandr Selevko — 246.24\n2. Genrikh Gartung — 231.39\n3. Francois Pi
+ tot — 224.19\n\nПримечательное:\n• Genrikh Gartung — 
+ После короткой программы — 5-е место\, в и
+ тоге — 2-е место\n• Francois Pitot — После корот
+ кой программы — 7-е место\, в итоге — 3-е м
+ есто\n\nНачало: 15:00 МСК
+LOCATION:Oberstdorf\, Germany
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Nebelhorn Trophy — мужчины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

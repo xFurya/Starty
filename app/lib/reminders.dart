@@ -65,6 +65,9 @@ class NotifyRules {
     if (athletes.isNotEmpty) {
       final have = [...s.athletes, ...s.ours.map((o) => o.name)];
       if (!athletes.any((a) => namesInclude(have, a))) return false;
+    } else if (!s.shown) {
+      // международный старт без россиян и отслеживаемых — только если выбран спортсмен
+      return false;
     }
     return true;
   }

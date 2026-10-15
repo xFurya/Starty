@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:tayside-trophy:pairs-junior-pp@starty
+DTSTAMP:20261015T094229Z
+DTSTART;TZID=Europe/Moscow:20261011T155900
+DTEND;TZID=Europe/Moscow:20261011T163900
+SUMMARY:Tayside Trophy — юниорские пары ПП
+DESCRIPTION:Итог:\n1. Elizabeth Yun / Mitchell Castelletti — 82.21\n2
+ . Amy Ritchie / Mitchell Dunn — 72.81\n3. Juliet Meek / Devin Meek — 6
+ 8.74\n\nИтог турнира:\n1. Elizabeth Yun / Mitchell Castelletti 
+ — 132.19\n2. Amy Ritchie / Mitchell Dunn — 115.24\n3. Juliet Meek / De
+ vin Meek — 111.50\n\nПримечательное:\n• Elizabeth Yun / 
+ Mitchell Castelletti — Личный рекорд за ПП: 82.21 (бы
+ л 71.61)\n• Elizabeth Yun / Mitchell Castelletti — Личный ре
+ корд по сумме: 132.19 (был 116.06)\n• Elizabeth Yun / Mitc
+ hell Castelletti — Отрыв от второго места — 16.95 
+ балла\n\nНачало: 15:59 МСК
+LOCATION:Dundee\, Great Britain
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tayside Trophy — юниорские пары ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
