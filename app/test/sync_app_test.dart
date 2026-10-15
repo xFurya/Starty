@@ -87,11 +87,11 @@ void main() {
       test(e.key, () async {
         final local = SyncLocal(Prefs.raw);
         final s = AppState();
-        expect(local.state.localAt, SyncDoc.epoch);
+        expect(local.state.pending, isFalse);
         // setter с _sync ждёт уведомления до 10 с: правка уже отмечена, не ждём весь вызов
         unawaited(e.value(s));
         await settle();
-        expect(local.state.localAt.isAfter(SyncDoc.epoch), isTrue);
+        expect(local.state.pending, isTrue);
       });
     }
   });
@@ -101,7 +101,7 @@ void main() {
     final s = AppState();
     await s.sync.apply(SyncDoc.fromJson({'v': 2, 'theme': 'dark', 'follow': ['Камила Валиева']}));
     await settle();
-    expect(local.state.localAt, SyncDoc.epoch);
+    expect(local.state.pending, isFalse);
   });
 
   test('захват → применение → захват даёт тот же документ, каждое поле на месте', () async {

@@ -34,16 +34,19 @@ SyncDoc doc(
 final t0 = DateTime.utc(2026, 10, 15, 10);
 DateTime at(int min) => t0.add(Duration(minutes: min));
 
-/// Память вместо сервера: один документ на всех.
+/// Память вместо сервера: один документ на всех. Время сохранения ставит «сервер» — счётчик,
+/// растёт на каждом save (как updated_at на сервере), и это время возвращается отправителю.
 class MemoryBackend implements SyncBackend {
   SyncDoc? stored;
   int saves = 0;
   @override
   Future<SyncDoc?> load() async => stored;
   @override
-  Future<void> save(SyncDoc d) async {
+  Future<DateTime> save(SyncDoc d) async {
     saves++;
-    stored = d;
+    final t = at(1000 + saves);
+    stored = d.at(t);
+    return t;
   }
 }
 
@@ -51,37 +54,37 @@ void main() {
   group('правило слияния', () {
     test('сервер пуст — отправить свои настройки', () {
       expect(
-        decideSync(remote: null, baseAt: at(0), localAt: at(0)),
+        decideSync(remote: null, baseAt: at(0), pending: false),
         SyncAction.push,
       );
     });
     test('ничего не менялось — ничего не делать', () {
       expect(
-        decideSync(remote: at(5), baseAt: at(5), localAt: at(5)),
+        decideSync(remote: at(5), baseAt: at(5), pending: false),
         SyncAction.none,
       );
     });
     test('на сервере новее, у нас тихо — взять с сервера', () {
       expect(
-        decideSync(remote: at(9), baseAt: at(5), localAt: at(5)),
+        decideSync(remote: at(9), baseAt: at(5), pending: false),
         SyncAction.pull,
       );
     });
-    test('у нас поменяли, на сервере нет — отправить', () {
+    test('у нас правка — отправить', () {
       expect(
-        decideSync(remote: at(5), baseAt: at(5), localAt: at(7)),
+        decideSync(remote: at(5), baseAt: at(5), pending: true),
         SyncAction.push,
       );
     });
-    test('поменяли оба: позже изменение побеждает (сервер позже)', () {
+    test('у нас правка, на сервере новее — правка побеждает: кто сохранил последним', () {
       expect(
-        decideSync(remote: at(9), baseAt: at(5), localAt: at(7)),
-        SyncAction.pull,
+        decideSync(remote: at(9), baseAt: at(5), pending: true),
+        SyncAction.push,
       );
     });
-    test('поменяли оба: позже изменение побеждает (у нас позже)', () {
+    test('сервер пуст, а правка есть — отправить', () {
       expect(
-        decideSync(remote: at(7), baseAt: at(5), localAt: at(9)),
+        decideSync(remote: null, baseAt: at(5), pending: true),
         SyncAction.push,
       );
     });
@@ -137,11 +140,11 @@ void main() {
     test('ввод: регистр и дефисы не важны', () {
       expect(CodeBackend.normalize('abcd-2345 efgh'), 'ABCD2345EFGH');
     });
-    test('сохранение шлёт хэш и документ, но не сам код', () async {
+    test('сохранение шлёт хэш и документ, но не сам код, и возвращает время от сервера', () async {
       late http.Request sent;
       final client = MockClient((r) async {
         sent = r;
-        return http.Response('', 200);
+        return http.Response(jsonEncode('2026-10-15T10:02:00Z'), 200);
       });
       final b = CodeBackend(
         url: 'https://x.supabase.co',
@@ -149,19 +152,39 @@ void main() {
         code: 'ABCD2345EFGH6789',
         client: client,
       );
-      await b.save(doc(at(2)));
+      expect(await b.save(doc(at(2))), at(2));
       expect(sent.url.path, '/rest/v1/rpc/save_settings_by_code');
       final body = jsonDecode(sent.body) as Map<String, dynamic>;
       expect(body['code_hash'], CodeBackend.hashOf('ABCD2345EFGH6789'));
       expect(sent.body.contains('ABCD2345EFGH6789'), isFalse);
       expect(sent.headers['apikey'], 'anon');
     });
-    test('загрузка: первая строка функции', () async {
+    test('сервер не сказал время сохранения — ошибка, а не тихий успех', () async {
+      final client = MockClient((r) async => http.Response('', 200));
+      final b = CodeBackend(
+        url: 'https://x',
+        key: 'anon',
+        code: 'ABCD2345EFGH6789',
+        client: client,
+      );
+      await expectLater(
+        () => b.save(doc(at(2))),
+        throwsA(
+          isA<SyncError>().having(
+            (e) => e.message,
+            'message',
+            'Сервер не сообщил время сохранения',
+          ),
+        ),
+      );
+    });
+    test('загрузка: время документа — колонка updated_at строки, а не поле в JSON', () async {
       final client = MockClient(
         (r) async => http.Response(
           jsonEncode([
             {
-              'doc': doc(at(4), theme: 'light').toJson(),
+              // в JSON старое время; колонка сервера — настоящее
+              'doc': doc(at(99), theme: 'light').toJson(),
               'updated_at': '2026-10-15T10:04:00Z',
             },
           ]),
@@ -247,12 +270,12 @@ void main() {
         if (r.url.path.endsWith('load_settings')) {
           return http.Response(
             jsonEncode([
-              {'doc': doc(at(6)).toJson()},
+              {'doc': doc(at(6)).toJson(), 'updated_at': '2026-10-15T10:06:00Z'},
             ]),
             200,
           );
         }
-        return http.Response('', 200);
+        return http.Response(jsonEncode('2026-10-15T10:07:00Z'), 200);
       });
       final b = AccountBackend(
         url: 'https://x',
@@ -266,7 +289,7 @@ void main() {
         ),
       );
       expect((await b.load())!.updatedAt, at(6));
-      await b.save(doc(at(7)));
+      expect(await b.save(doc(at(7))), at(7));
       expect(
         seen.every((r) => r.headers['Authorization'] == 'Bearer tok'),
         isTrue,
@@ -351,25 +374,25 @@ void main() {
     test('изменение здесь уходит на сервер', () async {
       server.stored = doc(at(10));
       await ctl.reconcile();
-      now = at(20);
-      await local.markLocal(now);
-      current = doc(now, theme: 'light');
+      await local.markPending(true);
+      current = doc(SyncDoc.epoch, theme: 'light');
       await ctl.reconcile();
       expect(server.stored!.theme, 'light');
-      expect(server.stored!.updatedAt, at(20));
+      // база — время, которое вернул сервер, а не часы устройства
+      expect(local.state.baseAt, server.stored!.updatedAt);
+      expect(local.state.pending, isFalse);
     });
 
-    test('одновременные правки: побеждает позже', () async {
+    test('своя правка побеждает, даже если на сервере новее: кто сохранил последним', () async {
       server.stored = doc(at(10));
       await ctl.reconcile();
-      // на сервере поменяли в 12:00, здесь — в 11:00 (позже менее)
+      // на сервере поменяли, здесь — правка; она уходит и перезаписывает
       server.stored = doc(at(12), theme: 'dark');
-      now = at(11);
-      await local.markLocal(at(11));
-      current = doc(at(11), theme: 'light');
+      await local.markPending(true);
+      current = doc(SyncDoc.epoch, theme: 'light');
       await ctl.reconcile();
-      expect(current.theme, 'dark');
-      expect(applied.last.theme, 'dark');
+      expect(server.stored!.theme, 'light');
+      expect(local.state.pending, isFalse);
     });
   });
 
@@ -379,7 +402,7 @@ void main() {
       () async {
         SharedPreferences.setMockInitialValues({});
         final local = SyncLocal(await SharedPreferences.getInstance());
-        await local.markLocal(at(20)); // меняли до входа
+        await local.markPending(true); // меняли до входа
         final server = MemoryBackend()..stored = doc(at(10), theme: 'dark');
         var current = doc(SyncDoc.epoch, theme: 'light');
         final applied = <SyncDoc>[];
@@ -397,6 +420,7 @@ void main() {
         await ctl.reconcile();
         expect(applied.single.theme, 'dark');
         expect(server.saves, 0);
+        expect(local.state.pending, isFalse);
       },
     );
 
@@ -416,16 +440,38 @@ void main() {
       expect(ctl.problem, isNull);
     });
 
-    test('правка во время отправки уходит на сервер при повторе сверки', () async {
+    test('сбой сети при несохранённой правке: флаг остаётся, правка уходит при следующей сверке', () async {
+      SharedPreferences.setMockInitialValues({});
+      final local = SyncLocal(await SharedPreferences.getInstance());
+      final ctl = SyncController(
+        local: local,
+        capture: () async => doc(SyncDoc.epoch, theme: 'dark'),
+        apply: (_) async {},
+        clock: () => at(5),
+      )..backend = _BrokenSave();
+      await ctl.touch();
+      await ctl.reconcile();
+      expect(ctl.problem, 'Нет связи с сервером');
+      expect(local.state.pending, isTrue);
+      final server = MemoryBackend();
+      ctl.backend = server;
+      await ctl.reconcile();
+      ctl.dispose();
+      expect(ctl.problem, isNull);
+      expect(server.stored!.theme, 'dark');
+      expect(local.state.pending, isFalse);
+    });
+
+    test('правка во время отправки не теряется: флаг остаётся, сверка её отправит', () async {
       SharedPreferences.setMockInitialValues({});
       final local = SyncLocal(await SharedPreferences.getInstance());
       late SyncController ctl;
       var current = doc(SyncDoc.epoch);
-      // на первой отправке человек меняет тему (уже после захвата) и приходит вторая сверка
+      // на первой отправке человек меняет тему (уже после захвата): правка и вторая сверка
       final server = _OnSave((n) async {
         if (n != 1) return;
-        current = doc(at(7), theme: 'light');
-        await local.markLocal(at(7));
+        current = doc(SyncDoc.epoch, theme: 'light');
+        await ctl.touch();
         unawaited(ctl.reconcile());
       });
       ctl = SyncController(
@@ -434,21 +480,24 @@ void main() {
         apply: (_) async {},
         clock: () => at(6),
       )..backend = server;
-      await local.markLocal(at(5));
-      current = doc(at(5), theme: 'dark');
+      await local.markPending(true);
+      current = doc(SyncDoc.epoch, theme: 'dark');
       await ctl.reconcile();
-      for (var i = 0; i < 40 && server.saves < 2; i++) {
+      // вторая отправка — с правкой; ждём, пока флаг снимется
+      for (var i = 0; i < 40 && (server.saves < 2 || local.state.pending); i++) {
         await Future<void>.delayed(const Duration(milliseconds: 5));
       }
+      ctl.dispose();
       expect(server.saves, 2);
       expect(server.stored!.theme, 'light');
+      expect(local.state.pending, isFalse);
     });
 
     test('смена аккаунта во время отправки: база и правки нового аккаунта не портятся', () async {
       SharedPreferences.setMockInitialValues({});
       final local = SyncLocal(await SharedPreferences.getInstance());
       await local.markBase(at(1));
-      await local.markLocal(at(5));
+      await local.markPending(true);
       var current = doc(at(5), theme: 'light');
       final applied = <SyncDoc>[];
       late SyncController ctl;
@@ -506,7 +555,7 @@ void main() {
       expect(local.state.baseAt, at(4));
     });
 
-    test('часы отстают: правка всё равно уходит на сервер', () async {
+    test('часы устройства отстают: правка всё равно уходит (порядок задаёт сервер)', () async {
       SharedPreferences.setMockInitialValues({});
       final local = SyncLocal(await SharedPreferences.getInstance());
       var now = at(0);
@@ -520,15 +569,15 @@ void main() {
       )..backend = server;
       await ctl.reconcile(); // сверились с документом на 10:10
       expect(local.state.baseAt, at(10));
-      // часы устройства на час позади: правка по ним раньше документа
+      // часы устройства на час позади: раньше они мешали бы отправке, теперь — нет
       now = at(-50);
-      current = doc(now, theme: 'light');
+      current = doc(SyncDoc.epoch, theme: 'light');
       await ctl.touch();
       await ctl.reconcile();
       ctl.dispose();
       expect(server.saves, 1);
       expect(server.stored!.theme, 'light');
-      expect(server.stored!.updatedAt.isAfter(at(10)), isTrue);
+      expect(local.state.baseAt, server.stored!.updatedAt);
     });
 
     test('обновлённый вход сохраняется: токен обновления меняется при каждом обновлении', () async {
@@ -587,6 +636,60 @@ void main() {
       );
     });
   });
+
+  group('два устройства, один сервер', () {
+    test('последнее сохранение побеждает; первое устройство потом подтягивает', () async {
+      // два устройства — два хранилища настроек: у каждого свой кэш, общего состояния нет
+      SharedPreferences.setMockInitialValues({});
+      final localA = SyncLocal(await SharedPreferences.getInstance());
+      SharedPreferences.setMockInitialValues({});
+      final localB = SyncLocal(await SharedPreferences.getInstance());
+      final server = MemoryBackend();
+      var docA = doc(SyncDoc.epoch, theme: 'dark');
+      var docB = doc(SyncDoc.epoch);
+      final ctlA = SyncController(
+        local: localA,
+        capture: () async => docA,
+        apply: (d) async {
+          docA = d;
+        },
+        clock: () => at(0),
+      )..backend = server;
+      final ctlB = SyncController(
+        local: localB,
+        capture: () async => docB,
+        apply: (d) async {
+          docB = d;
+        },
+        clock: () => at(0),
+      )..backend = server;
+
+      // A создаёт документ, B получает его
+      await ctlA.reconcile();
+      await ctlB.reconcile();
+      expect(docB.theme, 'dark');
+
+      // A меняет тему и сохраняет
+      docA = doc(SyncDoc.epoch, theme: 'light');
+      await ctlA.touch();
+      await ctlA.reconcile();
+      expect(server.stored!.theme, 'light');
+
+      // B меняет тему и сохраняет позже: его сохранение перезаписывает сохранение A
+      docB = doc(SyncDoc.epoch, theme: 'system');
+      await ctlB.touch();
+      await ctlB.reconcile();
+      expect(server.stored!.theme, 'system');
+
+      // A подтягивает то, что сохранил B последним
+      await ctlA.reconcile();
+      ctlA.dispose();
+      ctlB.dispose();
+      expect(docA.theme, 'system');
+      expect(localA.state.baseAt, server.stored!.updatedAt);
+      expect(localA.state.pending, isFalse);
+    });
+  });
 }
 
 /// Сервер, который не отвечает.
@@ -595,7 +698,14 @@ class _Broken implements SyncBackend {
   Future<SyncDoc?> load() async =>
       throw const SyncError('Нет связи с сервером');
   @override
-  Future<void> save(SyncDoc d) async =>
+  Future<DateTime> save(SyncDoc d) async =>
+      throw const SyncError('Нет связи с сервером');
+}
+
+/// Загрузка проходит, а сохранение — нет: связь пропала на отправке.
+class _BrokenSave extends MemoryBackend {
+  @override
+  Future<DateTime> save(SyncDoc d) async =>
       throw const SyncError('Нет связи с сервером');
 }
 
@@ -617,8 +727,9 @@ class _OnSave extends MemoryBackend {
   _OnSave(this.onSave);
   final Future<void> Function(int n) onSave;
   @override
-  Future<void> save(SyncDoc d) async {
-    await super.save(d);
+  Future<DateTime> save(SyncDoc d) async {
+    final t = await super.save(d);
     await onSave(saves);
+    return t;
   }
 }

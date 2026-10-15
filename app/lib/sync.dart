@@ -5,9 +5,9 @@
 // Сервер задаётся сборкой: --dart-define=SUPABASE_URL=… --dart-define=SUPABASE_ANON=…
 // Без них раздел честно показывает, что сервер не подключён.
 //
-// Слияние — по времени последнего изменения. Устройство помнит, на каком документе
-// (времени) оно остановилось (baseAt) и когда его меняли сами (localAt). Что изменилось
-// позже, то и побеждает; при одновременных правках — последнее по времени.
+// Слияние — документ целиком. Побеждает последнее сохранение на сервере: время его ставит
+// сервер при каждом сохранении. Часы устройств в порядке не участвуют. Правки на двух устройствах
+// одновременно — одна затирает другую; список отслеживаемых — тоже целиком.
 import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
@@ -28,7 +28,7 @@ const kConfirmMail = 'Письмо для подтверждения отпра�
 /// (кэш расписания, разрешение ОС, заметки обновления и т. п. — см. ПРОЕКТ.md, раздел 2.4).
 /// Версия 2 — текущая; версию 1 читаем (см. [_followOf]). Лишние поля игнорируются.
 class SyncDoc {
-  final DateTime updatedAt; // UTC
+  final DateTime updatedAt; // UTC; время сохранения на сервере (см. _docOf)
   final String rules; // NotifyRules.toJson()
   final List<String> forcedOn, forcedOff;
 
@@ -199,30 +199,49 @@ String iconToSync({
 /// Что делать при сверке.
 enum SyncAction { none, pull, push }
 
-/// Правило слияния. remote — updatedAt документа на сервере (null — документа ещё нет),
-/// baseAt — документ, на котором устройство остановилось, localAt — последнее изменение здесь.
+/// Правило слияния. Документ целиком; побеждает последнее сохранение на сервере.
+/// remote — updatedAt документа на сервере (его ставит сервер; null — документа ещё нет),
+/// baseAt — время сохранения, которое видело устройство, pending — есть несохранённая правка.
+/// Часы устройства в сравнении не участвуют: порядок задаёт сервер.
 SyncAction decideSync({
   required DateTime? remote,
   required DateTime baseAt,
-  required DateTime localAt,
+  required bool pending,
 }) {
-  final remoteChanged = remote != null && remote.isAfter(baseAt);
-  final localChanged = localAt.isAfter(baseAt);
   if (remote == null) return SyncAction.push;
-  if (remoteChanged && localChanged) {
-    return remote.isAfter(localAt) ? SyncAction.pull : SyncAction.push;
-  }
-  if (remoteChanged) return SyncAction.pull;
-  if (localChanged) return SyncAction.push;
+  // своя правка уходит на сервер и перезаписывает документ, даже если там уже новее:
+  // кто сохранил последним, тот и прав
+  if (pending) return SyncAction.push;
+  if (remote.isAfter(baseAt)) return SyncAction.pull;
   return SyncAction.none;
 }
 
 /// Функции, возвращающие таблицу, отдают список строк: берём первую (или ничего).
+/// Время документа — колонка updated_at строки: его ставит сервер при каждом сохранении.
+/// Поле updatedAt внутри JSON не доверяем; если колонки нет — остаётся то, что в JSON.
 SyncDoc? _docOf(http.Response r) {
   final rows = jsonDecode(utf8.decode(r.bodyBytes));
   if (rows is! List || rows.isEmpty || rows.first is! Map) return null;
-  final doc = (rows.first as Map)['doc'];
-  return doc is Map ? SyncDoc.fromJson(Map<String, dynamic>.from(doc)) : null;
+  final row = rows.first as Map;
+  final doc = row['doc'];
+  if (doc is! Map) return null;
+  final parsed = SyncDoc.fromJson(Map<String, dynamic>.from(doc));
+  final col = row['updated_at'] is String
+      ? DateTime.tryParse(row['updated_at'] as String)
+      : null;
+  return col == null ? parsed : parsed.at(col);
+}
+
+/// Время сохранения, которое вернул сервер: scalar-функция отдаёт JSON-строку с временем.
+/// Не разобралось — сохранение нельзя считать подтверждённым.
+DateTime _savedAt(http.Response r) {
+  DateTime? t;
+  try {
+    final v = jsonDecode(utf8.decode(r.bodyBytes));
+    if (v is String) t = DateTime.tryParse(v);
+  } catch (_) {}
+  if (t == null) throw const SyncError('Сервер не сообщил время сохранения');
+  return t.toUtc();
 }
 
 /// Ошибка, которую можно показать человеку.
@@ -236,7 +255,9 @@ class SyncError implements Exception {
 /// Хранилище документа на сервере.
 abstract class SyncBackend {
   Future<SyncDoc?> load();
-  Future<void> save(SyncDoc doc);
+
+  /// Сохранить документ. Возвращает время сохранения, которое поставил сервер.
+  Future<DateTime> save(SyncDoc doc);
 }
 
 /// Вход по почте и паролю: Supabase (GoTrue для входа, PostgREST для таблицы user_settings).
@@ -331,16 +352,17 @@ class AccountBackend implements SyncBackend {
   }
 
   @override
-  Future<void> save(SyncDoc doc) async {
+  Future<DateTime> save(SyncDoc doc) async {
     if (session == null) throw const SyncError('Нужен вход в аккаунт');
     await refreshIfNeeded();
-    await _send(
+    final r = await _send(
       () => _http.post(
         Uri.parse('$url/rest/v1/rpc/save_settings'),
         headers: _headers(),
         body: jsonEncode({'doc': doc.toJson()}),
       ),
     );
+    return _savedAt(r);
   }
 
   Future<http.Response> _send(Future<http.Response> Function() call) async {
@@ -470,14 +492,15 @@ class CodeBackend implements SyncBackend {
   }
 
   @override
-  Future<void> save(SyncDoc doc) async {
-    await _send(
+  Future<DateTime> save(SyncDoc doc) async {
+    final r = await _send(
       () => _http.post(
         Uri.parse('$url/rest/v1/rpc/save_settings_by_code'),
         headers: _headers,
         body: jsonEncode({'code_hash': hashOf(code), 'doc': doc.toJson()}),
       ),
     );
+    return _savedAt(r);
   }
 
   Future<http.Response> _send(Future<http.Response> Function() call) async {
@@ -498,10 +521,12 @@ class CodeBackend implements SyncBackend {
   }
 }
 
-/// Что сохранено на устройстве о синхронизации: базовый момент и локальные изменения.
+/// Что сохранено на устройстве о синхронизации: время сохранения, которое устройство видело
+/// (baseAt, его ставит сервер), и есть ли несохранённая правка (pending).
 class SyncState {
-  final DateTime baseAt, localAt;
-  const SyncState(this.baseAt, this.localAt);
+  final DateTime baseAt;
+  final bool pending;
+  const SyncState(this.baseAt, this.pending);
 }
 
 /// Хранение состояния синхронизации в preferences. Ключи — отдельные, не пересекаются с настройками.
@@ -512,12 +537,25 @@ class SyncLocal {
   SyncState get state => SyncState(
     DateTime.tryParse(_p.getString('sync.base') ?? '')?.toUtc() ??
         SyncDoc.epoch,
-    DateTime.tryParse(_p.getString('sync.local') ?? '')?.toUtc() ??
-        SyncDoc.epoch,
+    _pending,
   );
 
-  Future<void> markLocal(DateTime at) =>
-      _p.setString('sync.local', at.toUtc().toIso8601String());
+  /// Флаг правки. Раньше хранилось время правки (sync.local): пока флага нет, а старое время есть,
+  /// правка считается несохранённой, если она позже базы. Первая запись флага старый ключ убирает.
+  bool get _pending {
+    final flag = _p.getString('sync.pending');
+    if (flag != null) return flag == '1';
+    final old = DateTime.tryParse(_p.getString('sync.local') ?? '')?.toUtc();
+    final base = DateTime.tryParse(_p.getString('sync.base') ?? '')?.toUtc() ??
+        SyncDoc.epoch;
+    return old != null && old.isAfter(base);
+  }
+
+  Future<void> markPending(bool v) async {
+    await _p.setString('sync.pending', v ? '1' : '0');
+    await _p.remove('sync.local');
+  }
+
   Future<void> markBase(DateTime at) =>
       _p.setString('sync.base', at.toUtc().toIso8601String());
 
@@ -591,30 +629,32 @@ class SyncController {
   Timer? _debounce;
   bool _busy = false, _again = false;
 
-  /// Время правки или отправки. Часы устройства могут отставать: тогда его правка сравнилась бы как
-  /// «старее» документа, на котором оно стоит, и не ушла бы на сервер. Поэтому не раньше [floor] + 1 мс.
-  DateTime _stampAfter(DateTime floor) {
-    final t = _now();
-    final min = floor.add(const Duration(milliseconds: 1));
-    return t.isAfter(min) ? t : min;
-  }
+  /// Число правок. Растёт при каждом [touch]: отправка сравнивает его до и после сохранения, чтобы
+  /// понять, не пришла ли правка, пока документ уходил. Порядок правок — по счётчику, не по часам.
+  int _editSeq = 0;
 
-  /// Пользователь что-то поменял: отметить время и отправить чуть позже (несколько правок — одной отправкой).
-  Future<void> touch() async {
-    await local.markLocal(_stampAfter(local.state.baseAt));
-    if (backend == null) return;
+  /// Отложенная сверка: несколько правок подряд уходят одной отправкой.
+  void _later() {
     _debounce?.cancel();
     _debounce = Timer(const Duration(seconds: 3), () => unawaited(reconcile()));
+  }
+
+  /// Пользователь что-то поменял: отметить правку и отправить чуть позже (несколько правок — одной отправкой).
+  Future<void> touch() async {
+    _editSeq++;
+    await local.markPending(true);
+    if (backend == null) return;
+    _later();
   }
 
   /// Вошли в уже существующие настройки: свои прошлые правки не шлём, сначала берём серверные.
   Future<void> preferRemote() async {
     await local.markBase(SyncDoc.epoch);
-    await local.markLocal(SyncDoc.epoch);
+    await local.markPending(false);
   }
 
   /// Сверить с сервером: что новее — то и побеждает. Возвращает true, если что-то поменялось.
-  /// Правка, пришедшая во время сверки, не теряется: сверка повторится сразу после.
+  /// Правка, пришедшая во время сверки, не теряется: она остаётся отмеченной и уйдёт следующей сверкой.
   Future<bool> reconcile() async {
     final b = backend;
     if (b == null) return false;
@@ -649,7 +689,7 @@ class SyncController {
     switch (decideSync(
       remote: remote?.updatedAt,
       baseAt: st.baseAt,
-      localAt: st.localAt,
+      pending: st.pending,
     )) {
       case SyncAction.pull:
         await apply(remote!);
@@ -658,12 +698,18 @@ class SyncController {
         await local.markSynced(_now());
         return true;
       case SyncAction.push:
-        // не раньше того, что уже известно: иначе отставшие часы спрячут правку от других устройств
-        final known = remote != null && remote.updatedAt.isAfter(st.baseAt) ? remote.updatedAt : st.baseAt;
-        final stamped = (await capture()).at(_stampAfter(known));
-        await b.save(stamped);
+        // номер читаем до захвата: правки до него уже в документе, после него сверим по номеру
+        final seq = _editSeq;
+        final doc = await capture();
+        final saved = await b.save(doc);
         if (!identical(backend, b)) return false;
-        await local.markBase(stamped.updatedAt);
+        await local.markBase(saved);
+        if (_editSeq == seq) {
+          await local.markPending(false);
+        } else {
+          // правка пришла, пока документ уходил: отметку не снимаем, её отправит следующая сверка
+          _later();
+        }
         await local.markSynced(_now());
         return false;
       case SyncAction.none:
