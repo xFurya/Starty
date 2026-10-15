@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'app_icon.dart';
 import 'data.dart';
 import 'live.dart';
+import 'protocol_repo.dart';
 import 'reminders.dart';
 import 'sync.dart';
 
@@ -81,6 +82,8 @@ class AppState extends ChangeNotifier {
       theme: theme.name,
       icon: icon,
       regional: regional,
+      liveMode: liveMode,
+      liveOverrides: liveOverrides,
     );
   }
 
@@ -110,6 +113,8 @@ class AppState extends ChangeNotifier {
     );
     if (has('showDone')) await Prefs.setShowDone(d.showDone);
     if (has('regional')) await Prefs.setRegional(d.regional);
+    if (has('liveMode')) await Prefs.setLiveMode(d.liveMode);
+    if (has('liveOverrides')) await Prefs.setLiveOverrides(d.liveOverrides);
     if (has('theme')) await Prefs.setTheme(d.theme);
     if (has('icon')) await _applyIcon(d.icon);
     _reloadFromPrefs();
@@ -151,6 +156,8 @@ class AppState extends ChangeNotifier {
     _followBy = Prefs.followBelarusians;
     showDone = Prefs.showDone;
     regional = Prefs.regional;
+    liveMode = Prefs.liveMode;
+    liveOverrides = Prefs.liveOverrides;
     theme = _mode(Prefs.theme);
     if (_raw != null) data = _apply(_raw!);
     notifyListeners();
@@ -290,6 +297,13 @@ class AppState extends ChangeNotifier {
   /// Старты региональных федераций: по умолчанию не показываются.
   bool regional = Prefs.regional;
 
+  /// Живые места: общий режим (instant — табло раз в минуту, delayed — файл протокола) и переопределения.
+  String liveMode = Prefs.liveMode;
+  Map<String, String> liveOverrides = Prefs.liveOverrides;
+
+  /// Действующий режим старта: своё переопределение или общий.
+  String liveModeOf(Start s) => effectiveLiveMode(liveMode, liveOverrides, s.id);
+
   /// Регионы, у которых есть старты в расписании — видно и при выключенном показе.
   List<String> get regionNames => {
     for (final s in _raw?.starts ?? const <Start>[]) if (s.regional && s.region.isNotEmpty) s.region,
@@ -408,6 +422,38 @@ class AppState extends ChangeNotifier {
     touchSync();
   }
 
+  /// Общий режим живых мест. Смена режима сбрасывает прошлые итоги: они могли прийти из другого источника.
+  Future<void> setLiveMode(String v) async {
+    liveMode = validLiveMode(v) ?? liveInstant;
+    await Prefs.setLiveMode(liveMode);
+    _resetLiveSource();
+    touchSync();
+  }
+
+  /// Режим одного старта: null — как в настройках.
+  Future<void> setLiveOverride(String startId, String? mode) async {
+    final next = {...liveOverrides};
+    final m = validLiveMode(mode);
+    if (m == null) {
+      next.remove(startId);
+    } else {
+      next[startId] = m;
+    }
+    liveOverrides = next;
+    await Prefs.setLiveOverrides(next);
+    _resetLiveSource();
+    touchSync();
+  }
+
+  /// Итоги, прочитанные из другого источника, не должны остаться поверх нового режима.
+  void _resetLiveSource() {
+    _live.clear();
+    _fileAt.clear();
+    if (_raw != null) data = _apply(_raw!);
+    notifyListeners();
+    unawaited(pollLive());
+  }
+
   Future<void> setRegional(bool v) async {
     regional = v;
     if (_raw != null) data = _apply(_raw!);
@@ -442,8 +488,12 @@ class AppState extends ChangeNotifier {
 
   // ---------------------------------------------------------------- итоги с табло
 
-  /// Итоги, прочитанные с табло, пока сервер их не догнал: id → старт.
-  final Map<String, Start> _live = {};
+  /// Итоги, прочитанные с табло или из файла протокола, пока сервер их не догнал: id → итог.
+  final Map<String, LiveOk> _live = {};
+
+  /// Когда в последний раз читали файл протокола для старта (режим «с опозданием» — не чаще раза в 5 минут).
+  final Map<String, DateTime> _fileAt = {};
+  static const _fileEvery = Duration(minutes: 5);
   Timer? _liveTimer;
   bool _polling = false;
   DateTime _fetchedAt = DateTime.fromMillisecondsSinceEpoch(0);
@@ -458,7 +508,9 @@ class AppState extends ChangeNotifier {
             (s.shown || filters.pass(s)) &&
             !s.settled &&
             !t.isBefore(s.t0.subtract(const Duration(minutes: 10))) &&
-            t.isBefore(s.t1.add(const Duration(hours: 24))))
+            // без basis окончательность на табло не определить: опрос идёт недолго после конца,
+            // дальше — итог сервера (иначе батарея тратится сутки после каждого старта)
+            t.isBefore(s.t1.add(s.live!.basis == null ? const Duration(hours: 2) : const Duration(hours: 24))))
           s,
     ];
   }
@@ -482,13 +534,33 @@ class AppState extends ChangeNotifier {
     if (list.isEmpty) return;
     _polling = true;
     try {
-      final got = await Future.wait(list.map(Live.poll));
+      // «моментально» — табло раз в минуту; «с опозданием» — табло не трогаем, файл протокола раз в 5 минут
+      final table = [for (final s in list) if (liveModeOf(s) == liveInstant) s];
+      final now = DateTime.now();
+      final file = [
+        for (final s in list)
+          if (liveModeOf(s) == liveDelayed && s.proto != null && now.difference(_fileAt[s.id] ?? _epoch) >= _fileEvery) s,
+      ];
+      final gotTable = await Future.wait(table.map(Live.poll));
+      final gotFile = await Future.wait(file.map(_fromFile));
+      for (final s in file) {
+        _fileAt[s.id] = now;
+      }
       var changed = false;
-      for (var i = 0; i < list.length; i++) {
-        final g = got[i];
-        if (g == null) continue;
-        if (_sig(g) != _sig(_live[g.id] ?? list[i])) changed = true;
-        _live[g.id] = g;
+      void take(Start s, LiveResult g) {
+        // сеть, пустое табло или чужая страница — прошлые итоги остаются как были
+        if (g is! LiveOk) return;
+        final prev = _live[s.id];
+        // окончательный протокол не понижаем до промежуточного из-за неполного опроса
+        if (prev != null && !prev.provisional && g.provisional) return;
+        if (prev == null || _sig(g) != _sig(prev)) changed = true;
+        _live[s.id] = g;
+      }
+      for (var i = 0; i < table.length; i++) {
+        take(table[i], gotTable[i]);
+      }
+      for (var i = 0; i < file.length; i++) {
+        take(file[i], gotFile[i]);
       }
       if (changed && _raw != null) {
         data = _apply(_raw!);
@@ -501,11 +573,25 @@ class AppState extends ChangeNotifier {
     }
   }
 
-  static String _sig(Start s) => [
+  static final _epoch = DateTime.fromMillisecondsSinceEpoch(0);
+
+  /// Итоги старта из файла протокола: тот же вид результата, что и с табло.
+  Future<LiveResult> _fromFile(Start s) async {
+    final load = await ProtocolRepo.app.load(s.proto!);
+    return switch (load) {
+      ProtocolOk(:final doc) => liveFromProtocol(s, doc),
+      ProtocolNetError() => const LiveNet(),
+      ProtocolMissing() => const LiveNone(),
+      ProtocolFormatError() => const LiveFormat(),
+    };
+  }
+
+  static String _sig(LiveOk s) => [
     s.provisional,
     for (final p in s.podium) '${p.place}${p.name}${p.points}',
-    for (final p in s.total) '${p.place}${p.name}${p.points}',
-    for (final o in s.ours) '${o.name}${o.place}${o.overall}',
+    for (final p in s.total ?? const <Placing>[]) '${p.place}${p.name}${p.points}',
+    for (final e in s.places.entries) '${e.key}${e.value}',
+    for (final e in s.finals.entries) '${e.key}${e.value}',
   ].join('|');
 
   /// Расписание с сервера → под отслеживаемых и с итогами с табло. Сервер дошёл до окончательного — его и берём.
@@ -521,9 +607,9 @@ class AppState extends ChangeNotifier {
           s.withResults(
             podium: l.podium,
             provisional: l.provisional,
-            places: {for (final o in l.ours) if (o.place != null) norm(o.name): o.place!},
-            total: l.total.isNotEmpty ? l.total : null,
-            finals: {for (final o in l.ours) if (o.overall != null) norm(o.name): o.overall!},
+            places: l.places,
+            total: l.total,
+            finals: l.finals,
           )
         else
           s,

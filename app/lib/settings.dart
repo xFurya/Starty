@@ -201,7 +201,14 @@ class SettingsView extends StatelessWidget {
                   value: state.regional,
                   onChanged: state.setRegional,
                 ),
-
+                const Hairline(),
+                _Row(
+                  icon: CupertinoIcons.timer,
+                  title: 'Живые места',
+                  subtitle: '${liveModeLabel(state.liveMode)} — ${state.liveMode == liveDelayed ? 'из файла протокола, до 10 минут' : 'табло раз в минуту'}',
+                  onTap: () => showLiveModeSheet(context, state),
+                  trailing: const _Chevron(),
+                ),
               ],
             ),
           ),
