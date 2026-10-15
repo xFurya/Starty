@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-15T16:28:01+03:00",
- "checked": "2026-10-15T16:28:01+03:00",
+ "generated": "2026-10-15T17:12:17+03:00",
+ "checked": "2026-10-15T17:12:17+03:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -24184,6 +24184,26 @@
    }
   },
   {
+   "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:women-senior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026",
+   "tournament": "Гран-при России «Рапсодия льда»",
+   "kind": "women",
+   "level": "senior",
+   "seg": "КП",
+   "title": "Гран-при России «Рапсодия льда» — женщины КП",
+   "start": "2026-10-17T13:30:00+03:00",
+   "end": "2026-10-17T14:55:00+03:00",
+   "venue": "Дворец спорта, Казань",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
+   "desc": "Начало: 13:30 МСК\nТрансляция: Первый канал"
+  },
+  {
    "id": "isu:isu-cs-budapest-trophy:women-senior-kp",
    "tid": "isu:isu-cs-budapest-trophy",
    "tournament": "CS Budapest Trophy",
@@ -24460,6 +24480,66 @@
      "Sophie Joline von FELTEN": "Sophie Joline von Felten"
     }
    }
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men-senior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026",
+   "tournament": "Гран-при России «Рапсодия льда»",
+   "kind": "men",
+   "level": "senior",
+   "seg": "КП",
+   "title": "Гран-при России «Рапсодия льда» — мужчины КП",
+   "start": "2026-10-17T15:15:00+03:00",
+   "end": "2026-10-17T16:35:00+03:00",
+   "venue": "Дворец спорта, Казань",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
+   "desc": "Начало: 15:15 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pairs-senior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026",
+   "tournament": "Гран-при России «Рапсодия льда»",
+   "kind": "pairs",
+   "level": "senior",
+   "seg": "КП",
+   "title": "Гран-при России «Рапсодия льда» — пары КП",
+   "start": "2026-10-17T16:55:00+03:00",
+   "end": "2026-10-17T18:05:00+03:00",
+   "venue": "Дворец спорта, Казань",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
+   "desc": "Начало: 16:55 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:dance-senior-rt",
+   "tid": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026",
+   "tournament": "Гран-при России «Рапсодия льда»",
+   "kind": "dance",
+   "level": "senior",
+   "seg": "РТ",
+   "title": "Гран-при России «Рапсодия льда» — танцы РТ",
+   "start": "2026-10-17T18:25:00+03:00",
+   "end": "2026-10-17T19:45:00+03:00",
+   "venue": "Дворец спорта, Казань",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
+   "desc": "Начало: 18:25 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-junior-pt",
@@ -25008,6 +25088,66 @@
    }
   },
   {
+   "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:women-senior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026",
+   "tournament": "Гран-при России «Рапсодия льда»",
+   "kind": "women",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Гран-при России «Рапсодия льда» — женщины ПП",
+   "start": "2026-10-18T13:00:00+03:00",
+   "end": "2026-10-18T14:45:00+03:00",
+   "venue": "Дворец спорта, Казань",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
+   "desc": "Начало: 13:00 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men-senior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026",
+   "tournament": "Гран-при России «Рапсодия льда»",
+   "kind": "men",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Гран-при России «Рапсодия льда» — мужчины ПП",
+   "start": "2026-10-18T15:05:00+03:00",
+   "end": "2026-10-18T16:55:00+03:00",
+   "venue": "Дворец спорта, Казань",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
+   "desc": "Начало: 15:05 МСК\nТрансляция: Первый канал"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pairs-senior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026",
+   "tournament": "Гран-при России «Рапсодия льда»",
+   "kind": "pairs",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Гран-при России «Рапсодия льда» — пары ПП",
+   "start": "2026-10-18T17:10:00+03:00",
+   "end": "2026-10-18T18:25:00+03:00",
+   "venue": "Дворец спорта, Казань",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
+   "desc": "Начало: 17:10 МСК\nТрансляция: Первый канал"
+  },
+  {
    "id": "isu:isu-cs-budapest-trophy:women-senior-pp",
    "tid": "isu:isu-cs-budapest-trophy",
    "tournament": "CS Budapest Trophy",
@@ -25284,6 +25424,26 @@
      "Sophie Joline von FELTEN": "Sophie Joline von Felten"
     }
    }
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:dance-senior-pt",
+   "tid": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026",
+   "tournament": "Гран-при России «Рапсодия льда»",
+   "kind": "dance",
+   "level": "senior",
+   "seg": "ПТ",
+   "title": "Гран-при России «Рапсодия льда» — танцы ПТ",
+   "start": "2026-10-18T18:45:00+03:00",
+   "end": "2026-10-18T20:15:00+03:00",
+   "venue": "Дворец спорта, Казань",
+   "intl": false,
+   "broadcast": [
+    "Первый канал"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
+   "desc": "Начало: 18:45 МСК\nТрансляция: Первый канал"
   },
   {
    "id": "gs:blackburn-trophy:dance-senior-pt",
@@ -29838,14 +29998,6 @@
   }
  ],
  "upcoming": [
-  {
-   "tid": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026",
-   "name": "Гран-при России «Рапсодия льда»",
-   "start": "2026-10-16",
-   "end": "2026-10-19",
-   "venue": "Дворец спорта, Казань",
-   "intl": false
-  },
   {
    "tid": "fsr:gran-pri-rossii-nevskii-led-2026-10-22",
    "name": "Гран-при России «Невский лёд»",
@@ -42441,7 +42593,7 @@
   "Louie Fukuda-wu": "photos/49f6334e08e6c6a1.jpg",
   "Louis Mallane": "photos/4bfed20ff7e4be4f.jpg",
   "Louise Bordet": "photos/5f8803417abf7c4e.jpg",
-  "Martin Chardain": "photos/b1d71052d53f7aab.jpg",
+  "Martin Chardain": "photos/a072df4896fe4a11.jpg",
   "Louise Cohas-bogey": "photos/afdc42440e1b3bbc.jpg",
   "Daniil Grishin": "photos/2fb526a8706859fc.jpg",
   "Louise Dos Santos": "photos/e5ef4d237f6f0404.jpg",
@@ -42606,7 +42758,7 @@
   "Olexandra Borysova": "photos/0cbdbfe9c2f65ddd.jpg",
   "Aaron Freeman": "photos/5cefadc07992f39e.jpg",
   "Oliver Praetorius": "photos/327025139e680bfd.jpg",
-  "Olivia Elin Phillips": "photos/7a2bcbc24cac07ad.jpg",
+  "Olivia Elin Phillips": "photos/ca930bde11158083.jpg",
   "Olivia Flores": "photos/938326843651f16c.jpg",
   "Luke Wang": "photos/f3c03fed32e00faa.jpg",
   "Olivia Josephine Shilling": "photos/cff34ecd2b94fb61.jpg",
@@ -42618,7 +42770,7 @@
   "Tim Dieck": "photos/7100ef85069cecb8.jpg",
   "Oliviia Bazlova": "photos/cd2c663e661f7e53.jpg",
   "Oliviia Zherebko": "photos/31653bbfd120ac93.jpg",
-  "Olympia Kalaganis": "photos/40b1dccfb4a90347.jpg",
+  "Olympia Kalaganis": "photos/4ea9d3a339dea8ff.jpg",
   "Emile Deveau": "photos/72ae29d2440d1852.jpg",
   "Oona Brown": "photos/6bea68b07ac5d390.jpg",
   "Gage Brown": "photos/6e33b2322d37516a.jpg",
