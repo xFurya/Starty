@@ -14,12 +14,13 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:gs:blackburn-trophy:dance-senior-rt@starty
-DTSTAMP:20261015T094229Z
+DTSTAMP:20261015T095620Z
 DTSTART;TZID=Europe/Moscow:20261020T190200
 DTEND;TZID=Europe/Moscow:20261020T212700
 SUMMARY:Blackburn Trophy — танцы РТ
 DESCRIPTION:Начало: 19:02 МСК
 LOCATION:Blackburn\, Great Britain
+URL:https://xfurya.github.io/Starty/#e=gs:blackburn-trophy:dance-senior-rt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

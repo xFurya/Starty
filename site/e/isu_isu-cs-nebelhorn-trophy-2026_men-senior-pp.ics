@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-nebelhorn-trophy-2026:men-senior-pp@starty
-DTSTAMP:20261015T094229Z
+DTSTAMP:20261015T095620Z
 DTSTART;TZID=Europe/Moscow:20260925T150000
 DTEND;TZID=Europe/Moscow:20260925T172000
 SUMMARY:CS Nebelhorn Trophy — мужчины ПП
@@ -27,6 +27,8 @@ DESCRIPTION:Итог:\n1. Aleksandr Selevko — 164.68\n2. Genrikh Gartung
  кой программы — 7-е место\, в итоге — 3-е м
  есто\n\nНачало: 15:00 МСК
 LOCATION:Oberstdorf\, Germany
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-nebelhorn-trophy-2026:men
+ -senior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

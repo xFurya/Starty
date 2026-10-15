@@ -14,12 +14,14 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-skate-america-2026:women-senior-pp@starty
-DTSTAMP:20261015T094229Z
+DTSTAMP:20261015T095620Z
 DTSTART;TZID=Europe/Moscow:20261116T000500
 DTEND;TZID=Europe/Moscow:20261116T014000
 SUMMARY:GP Skate America — женщины ПП
 DESCRIPTION:Начало: 00:05 МСК
 LOCATION:Everett\, USA
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-skate-america-2026:women-
+ senior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

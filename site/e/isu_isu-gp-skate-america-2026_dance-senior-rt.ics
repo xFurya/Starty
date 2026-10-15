@@ -14,12 +14,14 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-skate-america-2026:dance-senior-rt@starty
-DTSTAMP:20261015T094229Z
+DTSTAMP:20261015T095620Z
 DTSTART;TZID=Europe/Moscow:20261115T010300
 DTEND;TZID=Europe/Moscow:20261115T021800
 SUMMARY:GP Skate America — танцы РТ
 DESCRIPTION:Начало: 01:03 МСК
 LOCATION:Everett\, USA
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-skate-america-2026:dance-
+ senior-rt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

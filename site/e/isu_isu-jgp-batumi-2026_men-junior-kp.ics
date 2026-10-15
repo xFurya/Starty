@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-jgp-batumi-2026:men-junior-kp@starty
-DTSTAMP:20261015T094229Z
+DTSTAMP:20261015T095620Z
 DTSTART;TZID=Europe/Moscow:20260924T130000
 DTEND;TZID=Europe/Moscow:20260924T165500
 SUMMARY:JGP Batumi — юноши КП
@@ -22,6 +22,8 @@ DESCRIPTION:Итог:\n1. Sena Takahashi — 86.19\n2. Ean Weiler — 81.17
  \n3. Denis Krouglov — 77.24\n\nНачало: 13:00 МСК\nТрансл
  яция: Okko
 LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-batumi-2026:men-junior-k
+ p
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

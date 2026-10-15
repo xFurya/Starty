@@ -14,12 +14,14 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-cup-of-china-2026:women-senior-kp@starty
-DTSTAMP:20261015T094229Z
+DTSTAMP:20261015T095620Z
 DTSTART;TZID=Europe/Moscow:20261106T112500
 DTEND;TZID=Europe/Moscow:20261106T125000
 SUMMARY:GP Cup of China — женщины КП
 DESCRIPTION:Начало: 11:25 МСК
 LOCATION:Shenzhen\, China
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:women-s
+ enior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

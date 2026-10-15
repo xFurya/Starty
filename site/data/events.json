@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-15T12:42:29+03:00",
- "checked": "2026-10-15T12:42:29+03:00",
+ "generated": "2026-10-15T12:56:20+03:00",
+ "checked": "2026-10-15T12:56:20+03:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -2290,14 +2290,14 @@
    },
    "facts": [
     {
-     "who": "Arina Kalugina",
+     "kind": "element",
      "text": "Четверной сальхов",
-     "kind": "element"
+     "who": "Arina Kalugina"
     },
     {
-     "who": "Stefania Gladki",
+     "kind": "place",
      "text": "После короткой программы — 7-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Stefania Gladki"
     }
    ]
   },
@@ -2840,9 +2840,9 @@
    },
    "facts": [
     {
-     "who": "Habin Choi",
+     "kind": "element",
      "text": "3 четверных в программе: 4Lz, 4Lz, 4T",
-     "kind": "element"
+     "who": "Habin Choi"
     }
    ]
   },
@@ -5774,14 +5774,14 @@
    },
    "facts": [
     {
-     "who": "Genrikh Gartung",
+     "kind": "place",
      "text": "После короткой программы — 5-е место, в итоге — 2-е место",
-     "kind": "place"
+     "who": "Genrikh Gartung"
     },
     {
-     "who": "Francois Pitot",
+     "kind": "place",
      "text": "После короткой программы — 7-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Francois Pitot"
     }
    ]
   },
@@ -6117,9 +6117,9 @@
    },
    "facts": [
     {
-     "who": "Hayato Okazaki",
+     "kind": "place",
      "text": "После короткой программы — 7-е место, в итоге — 2-е место",
-     "kind": "place"
+     "who": "Hayato Okazaki"
     }
    ]
   },
@@ -6460,9 +6460,9 @@
    },
    "facts": [
     {
-     "who": "Lia Pereira / Trennt Michaud",
+     "kind": "place",
      "text": "Отрыв от второго места — 16.65 балла",
-     "kind": "place"
+     "who": "Lia Pereira / Trennt Michaud"
     }
    ]
   },
@@ -7481,14 +7481,14 @@
    },
    "facts": [
     {
-     "who": "Marina Piredda",
+     "kind": "place",
      "text": "После короткой программы — 5-е место, в итоге — 2-е место",
-     "kind": "place"
+     "who": "Marina Piredda"
     },
     {
-     "who": "Mia Risa Gomez",
+     "kind": "place",
      "text": "Отрыв от второго места — 17.76 балла",
-     "kind": "place"
+     "who": "Mia Risa Gomez"
     }
    ]
   },
@@ -8127,9 +8127,9 @@
    },
    "facts": [
     {
-     "who": "Arina Kalugina",
+     "kind": "element",
      "text": "Четверной сальхов",
-     "kind": "element"
+     "who": "Arina Kalugina"
     }
    ]
   },
@@ -12145,14 +12145,14 @@
    },
    "facts": [
     {
-     "who": "Hana Bath",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Hana Bath"
     },
     {
-     "who": "Leandra Tzimpoukakis",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Leandra Tzimpoukakis"
     }
    ]
   },
@@ -18787,9 +18787,9 @@
    },
    "facts": [
     {
-     "who": "Kaya Tiernan",
+     "kind": "score",
      "text": "Личный рекорд за КП: 59.29 (был 57.05)",
-     "kind": "score"
+     "who": "Kaya Tiernan"
     }
    ]
   },
@@ -19517,14 +19517,14 @@
    },
    "facts": [
     {
-     "who": "Elizabeth Yun / Mitchell Castelletti",
+     "kind": "score",
      "text": "Личный рекорд за КП: 49.98 (был 44.45)",
-     "kind": "score"
+     "who": "Elizabeth Yun / Mitchell Castelletti"
     },
     {
-     "who": "Amy Ritchie / Mitchell Dunn",
+     "kind": "score",
      "text": "Личный рекорд за КП: 42.43 (был 39.22)",
-     "kind": "score"
+     "who": "Amy Ritchie / Mitchell Dunn"
     }
    ]
   },
@@ -19659,9 +19659,9 @@
    },
    "facts": [
     {
-     "who": "Ava Kemp / Yohnatan Elizarov",
+     "kind": "score",
      "text": "Личный рекорд за КП: 64.68 (был 64.21)",
-     "kind": "score"
+     "who": "Ava Kemp / Yohnatan Elizarov"
     }
    ]
   },
@@ -19997,9 +19997,9 @@
    },
    "facts": [
     {
-     "who": "Denis Krouglov",
+     "kind": "place",
      "text": "Отрыв от второго места — 22.08 балла",
-     "kind": "place"
+     "who": "Denis Krouglov"
     }
    ]
   },
@@ -20170,9 +20170,9 @@
    },
    "facts": [
     {
-     "who": "Sarina Joos",
+     "kind": "score",
      "text": "Личный рекорд за КП: 65.29 (был 63.59)",
-     "kind": "score"
+     "who": "Sarina Joos"
     }
    ]
   },
@@ -20316,9 +20316,9 @@
    },
    "facts": [
     {
-     "who": "Tao Macrae",
+     "kind": "score",
      "text": "Личный рекорд за КП: 69.30 (был 68.76)",
-     "kind": "score"
+     "who": "Tao Macrae"
     }
    ]
   },
@@ -20612,19 +20612,19 @@
    },
    "facts": [
     {
-     "who": "Noemi Joos",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 105.10 (был 98.69)",
-     "kind": "score"
+     "who": "Noemi Joos"
     },
     {
-     "who": "Noemi Joos",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 155.97 (был 149.57)",
-     "kind": "score"
+     "who": "Noemi Joos"
     },
     {
-     "who": "Noemi Joos",
+     "kind": "place",
      "text": "После короткой программы — 8-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Noemi Joos"
     }
    ]
   },
@@ -20887,19 +20887,19 @@
    },
    "facts": [
     {
-     "who": "Elizabeth Yun / Mitchell Castelletti",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 82.21 (был 71.61)",
-     "kind": "score"
+     "who": "Elizabeth Yun / Mitchell Castelletti"
     },
     {
-     "who": "Elizabeth Yun / Mitchell Castelletti",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 132.19 (был 116.06)",
-     "kind": "score"
+     "who": "Elizabeth Yun / Mitchell Castelletti"
     },
     {
-     "who": "Elizabeth Yun / Mitchell Castelletti",
+     "kind": "place",
      "text": "Отрыв от второго места — 16.95 балла",
-     "kind": "place"
+     "who": "Elizabeth Yun / Mitchell Castelletti"
     }
    ]
   },
@@ -21063,24 +21063,24 @@
    },
    "facts": [
     {
-     "who": "Ava Kemp / Yohnatan Elizarov",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 118.04 (был 115.49)",
-     "kind": "score"
+     "who": "Ava Kemp / Yohnatan Elizarov"
     },
     {
-     "who": "Ava Kemp / Yohnatan Elizarov",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 182.72 (был 179.43)",
-     "kind": "score"
+     "who": "Ava Kemp / Yohnatan Elizarov"
     },
     {
-     "who": "Anna Valesi / Martin Bidar",
+     "kind": "place",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Anna Valesi / Martin Bidar"
     },
     {
-     "who": "Ava Kemp / Yohnatan Elizarov",
+     "kind": "place",
      "text": "Отрыв от второго места — 19.94 балла",
-     "kind": "place"
+     "who": "Ava Kemp / Yohnatan Elizarov"
     }
    ]
   },
@@ -21453,24 +21453,24 @@
    },
    "facts": [
     {
-     "who": "Donovan Carrillo",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 161.12 (был 152.48)",
-     "kind": "score"
+     "who": "Donovan Carrillo"
     },
     {
-     "who": "Donovan Carrillo",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 234.63 (был 232.67)",
-     "kind": "score"
+     "who": "Donovan Carrillo"
     },
     {
-     "who": "Ean Weiler",
+     "kind": "place",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Ean Weiler"
     },
     {
-     "who": "Donovan Carrillo",
+     "kind": "place",
      "text": "Отрыв от второго места — 17.17 балла",
-     "kind": "place"
+     "who": "Donovan Carrillo"
     }
    ]
   },
@@ -42553,7 +42553,7 @@
   "Olexandra Borysova": "photos/0cbdbfe9c2f65ddd.jpg",
   "Aaron Freeman": "photos/5cefadc07992f39e.jpg",
   "Oliver Praetorius": "photos/327025139e680bfd.jpg",
-  "Olivia Elin Phillips": "photos/48cafd52259c4a22.jpg",
+  "Olivia Elin Phillips": "photos/e25ae329e57cc2fd.jpg",
   "Olivia Flores": "photos/938326843651f16c.jpg",
   "Luke Wang": "photos/f3c03fed32e00faa.jpg",
   "Olivia Josephine Shilling": "photos/cff34ecd2b94fb61.jpg",
@@ -42565,7 +42565,7 @@
   "Tim Dieck": "photos/7100ef85069cecb8.jpg",
   "Oliviia Bazlova": "photos/cd2c663e661f7e53.jpg",
   "Oliviia Zherebko": "photos/31653bbfd120ac93.jpg",
-  "Olympia Kalaganis": "photos/b26b3c88d9ec2c04.jpg",
+  "Olympia Kalaganis": "photos/2848bba0cbd74264.jpg",
   "Emile Deveau": "photos/72ae29d2440d1852.jpg",
   "Oona Brown": "photos/6bea68b07ac5d390.jpg",
   "Gage Brown": "photos/6e33b2322d37516a.jpg",

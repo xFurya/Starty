@@ -14,12 +14,14 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-budapest-trophy:women-junior-pp@starty
-DTSTAMP:20261015T094229Z
+DTSTAMP:20261015T095620Z
 DTSTART;TZID=Europe/Moscow:20261017T090000
 DTEND;TZID=Europe/Moscow:20261017T134500
 SUMMARY:CS Budapest Trophy — девушки ПП
 DESCRIPTION:Начало: 09:00 МСК
 LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:women-jun
+ ior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
