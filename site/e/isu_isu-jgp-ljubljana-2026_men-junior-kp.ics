@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-jgp-ljubljana-2026:men-junior-kp@starty
-DTSTAMP:20261015T171100Z
+DTSTAMP:20261015T175926Z
 DTSTART;TZID=Europe/Moscow:20261001T201500
 DTEND;TZID=Europe/Moscow:20261001T233000
 SUMMARY:JGP Ljubljana — юноши КП
@@ -22,6 +22,8 @@ DESCRIPTION:Итог:\n1. Jaekeun Lee — 85.13\n2. Taiga Nishino — 84.29
  \n3. Hiro Kaewtathip — 83.67\n\nНачало: 20:15 МСК\nТрансл
  яция: Okko
 LOCATION:Ljubljana\, Slovenia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-ljubljana-2026:men-junio
+ r-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

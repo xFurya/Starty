@@ -14,13 +14,15 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-budapest-trophy:women-senior-pp@starty
-DTSTAMP:20261015T171100Z
+DTSTAMP:20261015T175926Z
 DTSTART;TZID=Europe/Moscow:20261018T172500
 DTEND;TZID=Europe/Moscow:20261018T233500
 SUMMARY:CS Budapest Trophy — женщины ПП
 DESCRIPTION:Россияне:\n• Алина Горбачёва\n\nНач
  ало: 17:25 МСК
 LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:women-sen
+ ior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

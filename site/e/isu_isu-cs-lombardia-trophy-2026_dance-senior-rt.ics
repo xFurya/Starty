@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-lombardia-trophy-2026:dance-senior-rt@starty
-DTSTAMP:20261015T171100Z
+DTSTAMP:20261015T175926Z
 DTSTART;TZID=Europe/Moscow:20260919T133000
 DTEND;TZID=Europe/Moscow:20260919T154000
 SUMMARY:CS Lombardia Trophy — танцы РТ
@@ -22,6 +22,8 @@ DESCRIPTION:Итог:\n1. Evgeniia Lopareva / Geoffrey Brissaud — 79.21\n
  2. Katerina Mrazkova / Daniel Mrazek — 75.75\n3. Yuka Orihara / Juho Pir
  inen — 71.93\n\nНачало: 13:30 МСК
 LOCATION:Bergamo\, Italy
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-lombardia-trophy-2026:dan
+ ce-senior-rt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

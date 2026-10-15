@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-lombardia-trophy-2026:dance-senior-pt@starty
-DTSTAMP:20261015T171100Z
+DTSTAMP:20261015T175926Z
 DTSTART;TZID=Europe/Moscow:20260920T163000
 DTEND;TZID=Europe/Moscow:20260920T185500
 SUMMARY:CS Lombardia Trophy — танцы ПТ
@@ -25,6 +25,8 @@ DESCRIPTION:Итог:\n1. Katerina Mrazkova / Daniel Mrazek — 112.86\n2.
  5\n3. Emily Bratti / Ian Somerville — 178.03\n\nНачало: 16:30 МС
  К
 LOCATION:Bergamo\, Italy
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-lombardia-trophy-2026:dan
+ ce-senior-pt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

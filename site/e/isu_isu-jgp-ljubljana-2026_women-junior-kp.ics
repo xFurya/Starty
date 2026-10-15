@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-jgp-ljubljana-2026:women-junior-kp@starty
-DTSTAMP:20261015T171100Z
+DTSTAMP:20261015T175926Z
 DTSTART;TZID=Europe/Moscow:20261001T150000
 DTEND;TZID=Europe/Moscow:20261001T200500
 SUMMARY:JGP Ljubljana — девушки КП
@@ -22,6 +22,8 @@ DESCRIPTION:Итог:\n1. Yuxuan Liu — 70.10\n2. Hana Bath — 67.75\n3.
  Harin Jang — 64.77\n\nНачало: 15:00 МСК\nТрансляция: 
  Okko
 LOCATION:Ljubljana\, Slovenia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-ljubljana-2026:women-jun
+ ior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

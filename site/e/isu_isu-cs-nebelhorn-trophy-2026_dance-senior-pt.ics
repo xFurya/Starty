@@ -14,17 +14,19 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-nebelhorn-trophy-2026:dance-senior-pt@starty
-DTSTAMP:20261015T171100Z
+DTSTAMP:20261015T175926Z
 DTSTART;TZID=Europe/Moscow:20260926T144500
 DTEND;TZID=Europe/Moscow:20260926T165000
 SUMMARY:CS Nebelhorn Trophy — танцы ПТ
 DESCRIPTION:Итог:\n1. Katerina Mrazkova / Daniel Mrazek — 109.95\n2. 
  Christina Carreira / Anthony Ponomarenko — 109.85\n3. Holly Harris / Jas
  on Chan — 108.76\n\nИтог турнира:\n1. Christina Carreira / An
- thony Ponomarenko — 188.83\n2. Marie-Jade Lauriault / Romain le Gac — 
+ thony Ponomarenko — 188.83\n2. Marie-Jade Lauriault / Romain Le Gac — 
  183.40\n3. Holly Harris / Jason Chan — 176.04\n\nНачало: 14:45 М
  СК
 LOCATION:Oberstdorf\, Germany
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-nebelhorn-trophy-2026:dan
+ ce-senior-pt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

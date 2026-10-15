@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-jgp-batumi-2026:men-junior-pp@starty
-DTSTAMP:20261015T171100Z
+DTSTAMP:20261015T175926Z
 DTSTART;TZID=Europe/Moscow:20260925T174000
 DTEND;TZID=Europe/Moscow:20260925T220000
 SUMMARY:JGP Batumi — юноши ПП
@@ -25,6 +25,8 @@ DESCRIPTION:Итог:\n1. Hayato Okazaki — 150.09\n2. Ean Weiler — 140.
  откой программы — 7-е место\, в итоге — 2-е
   место\n\nНачало: 17:40 МСК\nТрансляция: Okko
 LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-batumi-2026:men-junior-p
+ p
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
