@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-15T19:34:16+03:00",
- "checked": "2026-10-15T19:34:16+03:00",
+ "generated": "2026-10-15T19:54:28+03:00",
+ "checked": "2026-10-15T19:54:28+03:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -23076,60 +23076,71 @@
    "seg": "КП",
    "title": "CS Budapest Trophy — юноши КП",
    "start": "2026-10-16T09:00:00+03:00",
-   "end": "2026-10-16T10:05:00+03:00",
+   "end": "2026-10-16T10:00:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [],
    "ours": [
     {
      "name": "Илья Мальков",
-     "nation": "AIN2"
+     "nation": "AIN2",
+     "no": 2,
+     "warmup": 1
     }
    ],
    "athletes": [
     "Aaron Kim",
     "Akims Kirilovs",
     "Gion Schmid",
-    "Igor Gyula Kind",
     "Kirill Sheiko",
     "Robert Wildt",
     "Ryszard Siudek",
     "Илья Мальков"
    ],
    "src": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
-   "desc": "Россияне:\n• Илья Мальков\n\nНачало: 09:00 МСК",
+   "desc": "Россияне:\n• Илья Мальков — 2-й (разминка 1)\n\nНачало: 09:00 МСК",
    "field": [
     {
-     "name": "Aaron Kim",
-     "nation": "KOR"
-    },
-    {
-     "name": "Akims Kirilovs",
-     "nation": "LAT"
-    },
-    {
-     "name": "Gion Schmid",
-     "nation": "SUI"
-    },
-    {
-     "name": "Igor Gyula Kind",
-     "nation": "HUN"
-    },
-    {
-     "name": "Kirill Sheiko",
-     "nation": "ISR"
-    },
-    {
      "name": "Robert Wildt",
-     "nation": "GER"
-    },
-    {
-     "name": "Ryszard Siudek",
-     "nation": "POL"
+     "nation": "GER",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Илья Мальков",
-     "nation": "AIN2"
+     "nation": "AIN2",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Ryszard Siudek",
+     "nation": "POL",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Kirill Sheiko",
+     "nation": "ISR",
+     "no": 4,
+     "warmup": 2
+    },
+    {
+     "name": "Aaron Kim",
+     "nation": "KOR",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Akims Kirilovs",
+     "nation": "LAT",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Gion Schmid",
+     "nation": "SUI",
+     "no": 7,
+     "warmup": 2
     }
    ],
    "live": {
@@ -23138,13 +23149,12 @@
     "cat": null,
     "first": null,
     "names": {
-     "Ilia MALKOV": "Илья Мальков",
      "Robert WILDT": "Robert Wildt",
-     "Igor Gyula KIND": "Igor Gyula Kind",
+     "Ilia MALKOV": "Илья Мальков",
+     "Ryszard SIUDEK": "Ryszard Siudek",
      "Kirill SHEIKO": "Kirill Sheiko",
      "Aaron KIM": "Aaron Kim",
      "Akims KIRILOVS": "Akims Kirilovs",
-     "Ryszard SIUDEK": "Ryszard Siudek",
      "Gion SCHMID": "Gion Schmid"
     }
    }
@@ -23158,7 +23168,7 @@
    "seg": "КП",
    "title": "CS Budapest Trophy — девушки КП",
    "start": "2026-10-16T10:10:00+03:00",
-   "end": "2026-10-16T14:25:00+03:00",
+   "end": "2026-10-16T14:05:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [],
@@ -23182,136 +23192,173 @@
     "Mila Bertsch",
     "Milena Velcheva",
     "Natalia Runcanu",
-    "Natasa Jermolicka",
     "Polina Bykova",
     "Rebecca Lo Cascio",
     "Shahaf Pinchas",
     "Shaked Pinchas",
-    "Skylar Lautowa-peguero",
-    "Sophie Erhardt",
     "Summer Wijkhuizen",
+    "Valeria Huber",
     "Varvara Abramkina",
-    "Zsofia Szeplaki",
     "Амалия Насыбуллина"
    ],
    "src": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
    "desc": "Начало: 10:10 МСК",
    "field": [
     {
-     "name": "Adelina Voroteliak",
-     "nation": "GER"
-    },
-    {
-     "name": "Anissa Mamaev",
-     "nation": "UZB"
-    },
-    {
-     "name": "Dorina Szigeti",
-     "nation": "HUN"
-    },
-    {
-     "name": "Evgeniia Nikolaeva",
-     "nation": "UAE"
-    },
-    {
-     "name": "Ginevra Antonina Volante",
-     "nation": "ITA"
-    },
-    {
-     "name": "Greta Norina Major",
-     "nation": "HUN"
-    },
-    {
-     "name": "Hanna Laura Viranyi",
-     "nation": "HUN"
-    },
-    {
-     "name": "Hedda Hedstrom",
-     "nation": "SWE"
-    },
-    {
-     "name": "Jiaying Ellyse Johnson",
-     "nation": "USA"
-    },
-    {
-     "name": "Karina Sheina",
-     "nation": "KAZ"
-    },
-    {
-     "name": "Leandra Tzimpoukakis",
-     "nation": "SUI"
-    },
-    {
-     "name": "Lidiia Tsukanova",
-     "nation": "FIN"
-    },
-    {
-     "name": "Martina Petra Major",
-     "nation": "HUN"
-    },
-    {
-     "name": "Mayuka Sueess",
-     "nation": "SUI"
-    },
-    {
-     "name": "Mia Kasparovica",
-     "nation": "LAT"
-    },
-    {
-     "name": "Mila Bertsch",
-     "nation": "FRA"
-    },
-    {
      "name": "Milena Velcheva",
-     "nation": "BUL"
+     "nation": "BUL",
+     "no": 1,
+     "warmup": 1
     },
     {
-     "name": "Natalia Runcanu",
-     "nation": "ROU"
-    },
-    {
-     "name": "Natasa Jermolicka",
-     "nation": "LAT"
-    },
-    {
-     "name": "Polina Bykova",
-     "nation": "SLO"
-    },
-    {
-     "name": "Rebecca Lo Cascio",
-     "nation": "ITA"
-    },
-    {
-     "name": "Shahaf Pinchas",
-     "nation": "ISR"
-    },
-    {
-     "name": "Shaked Pinchas",
-     "nation": "ISR"
-    },
-    {
-     "name": "Skylar Lautowa-peguero",
-     "nation": "USA"
-    },
-    {
-     "name": "Sophie Erhardt",
-     "nation": "GER"
+     "name": "Valeria Huber",
+     "nation": "GER",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Summer Wijkhuizen",
-     "nation": "NED"
+     "nation": "NED",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Varvara Abramkina",
-     "nation": "BUL"
+     "nation": "BUL",
+     "no": 4,
+     "warmup": 1
     },
     {
-     "name": "Zsofia Szeplaki",
-     "nation": "HUN"
+     "name": "Hedda Hedstrom",
+     "nation": "SWE",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Mia Kasparovica",
+     "nation": "LAT",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Evgeniia Nikolaeva",
+     "nation": "UAE",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Mayuka Sueess",
+     "nation": "SUI",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Polina Bykova",
+     "nation": "SLO",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Rebecca Lo Cascio",
+     "nation": "ITA",
+     "no": 10,
+     "warmup": 2
     },
     {
      "name": "Амалия Насыбуллина",
-     "nation": "GEO"
+     "nation": "GEO",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Leandra Tzimpoukakis",
+     "nation": "SUI",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Hanna Laura Viranyi",
+     "nation": "HUN",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Natalia Runcanu",
+     "nation": "ROU",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Shaked Pinchas",
+     "nation": "ISR",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Lidiia Tsukanova",
+     "nation": "FIN",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Dorina Szigeti",
+     "nation": "HUN",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Shahaf Pinchas",
+     "nation": "ISR",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Karina Sheina",
+     "nation": "KAZ",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Greta Norina Major",
+     "nation": "HUN",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Martina Petra Major",
+     "nation": "HUN",
+     "no": 21,
+     "warmup": 5
+    },
+    {
+     "name": "Jiaying Ellyse Johnson",
+     "nation": "USA",
+     "no": 22,
+     "warmup": 5
+    },
+    {
+     "name": "Ginevra Antonina Volante",
+     "nation": "ITA",
+     "no": 23,
+     "warmup": 5
+    },
+    {
+     "name": "Anissa Mamaev",
+     "nation": "UZB",
+     "no": 24,
+     "warmup": 5
+    },
+    {
+     "name": "Mila Bertsch",
+     "nation": "FRA",
+     "no": 25,
+     "warmup": 5
+    },
+    {
+     "name": "Adelina Voroteliak",
+     "nation": "GER",
+     "no": 26,
+     "warmup": 5
     }
    ],
    "live": {
@@ -23320,35 +23367,32 @@
     "cat": null,
     "first": null,
     "names": {
-     "Varvara ABRAMKINA": "Varvara Abramkina",
      "Milena VELCHEVA": "Milena Velcheva",
-     "Lidiia TSUKANOVA": "Lidiia Tsukanova",
-     "Mila BERTSCH": "Mila Bertsch",
+     "Valeria HUBER": "Valeria Huber",
+     "Summer WIJKHUIZEN": "Summer Wijkhuizen",
+     "Varvara ABRAMKINA": "Varvara Abramkina",
+     "Hedda HEDSTROM": "Hedda Hedstrom",
+     "Mia KASPAROVICA": "Mia Kasparovica",
+     "Evgeniia NIKOLAEVA": "Evgeniia Nikolaeva",
+     "Mayuka SUEESS": "Mayuka Sueess",
+     "Polina BYKOVA": "Polina Bykova",
+     "Rebecca LO CASCIO": "Rebecca Lo Cascio",
      "Amaliia NASYBULLINA": "Амалия Насыбуллина",
-     "Sophie ERHARDT": "Sophie Erhardt",
-     "Adelina VOROTELIAK": "Adelina Voroteliak",
+     "Leandra TZIMPOUKAKIS": "Leandra Tzimpoukakis",
+     "Hanna Laura VIRANYI": "Hanna Laura Viranyi",
+     "Natalia RUNCANU": "Natalia Runcanu",
+     "Shaked PINCHAS": "Shaked Pinchas",
+     "Lidiia TSUKANOVA": "Lidiia Tsukanova",
+     "Dorina SZIGETI": "Dorina Szigeti",
+     "Shahaf PINCHAS": "Shahaf Pinchas",
+     "Karina SHEINA": "Karina Sheina",
      "Greta Norina MAJOR": "Greta Norina Major",
      "Martina Petra MAJOR": "Martina Petra Major",
-     "Zsofia SZEPLAKI": "Zsofia Szeplaki",
-     "Dorina SZIGETI": "Dorina Szigeti",
-     "Hanna Laura VIRANYI": "Hanna Laura Viranyi",
-     "Shahaf PINCHAS": "Shahaf Pinchas",
-     "Shaked PINCHAS": "Shaked Pinchas",
-     "Rebecca LO CASCIO": "Rebecca Lo Cascio",
-     "Ginevra Antonina VOLANTE": "Ginevra Antonina Volante",
-     "Karina SHEINA": "Karina Sheina",
-     "Natasa JERMOLICKA": "Natasa Jermolicka",
-     "Mia KASPAROVICA": "Mia Kasparovica",
-     "Summer WIJKHUIZEN": "Summer Wijkhuizen",
-     "Natalia RUNCANU": "Natalia Runcanu",
-     "Polina BYKOVA": "Polina Bykova",
-     "Mayuka SUEESS": "Mayuka Sueess",
-     "Leandra TZIMPOUKAKIS": "Leandra Tzimpoukakis",
-     "Hedda HEDSTROM": "Hedda Hedstrom",
-     "Evgeniia NIKOLAEVA": "Evgeniia Nikolaeva",
      "Jiaying Ellyse JOHNSON": "Jiaying Ellyse Johnson",
-     "Skylar LAUTOWA-PEGUERO": "Skylar Lautowa-peguero",
-     "Anissa MAMAEV": "Anissa Mamaev"
+     "Ginevra Antonina VOLANTE": "Ginevra Antonina Volante",
+     "Anissa MAMAEV": "Anissa Mamaev",
+     "Mila BERTSCH": "Mila Bertsch",
+     "Adelina VOROTELIAK": "Adelina Voroteliak"
     }
    }
   },
@@ -23361,20 +23405,18 @@
    "seg": "КП",
    "title": "CS Budapest Trophy — мужчины КП",
    "start": "2026-10-16T13:50:00+03:00",
-   "end": "2026-10-16T18:10:00+03:00",
+   "end": "2026-10-16T17:55:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [],
    "ours": [],
    "athletes": [
     "Aleksei Vlasenko",
-    "Andre Zapata",
     "Andreas Nordeback",
     "Arlet Levandi",
     "Daniel Grassl",
     "David Sedej",
     "Davide Lewton Brain",
-    "Donovan Carrillo",
     "Douglas Gerber",
     "Elias Sayed",
     "Fedirs Kuliss",
@@ -23402,124 +23444,172 @@
    "desc": "Начало: 13:50 МСК",
    "field": [
     {
-     "name": "Aleksei Vlasenko",
-     "nation": "HUN"
-    },
-    {
-     "name": "Andre Zapata",
-     "nation": "ESP"
-    },
-    {
-     "name": "Andreas Nordeback",
-     "nation": "SWE"
-    },
-    {
-     "name": "Arlet Levandi",
-     "nation": "EST"
-    },
-    {
-     "name": "Daniel Grassl",
-     "nation": "ITA"
-    },
-    {
-     "name": "David Sedej",
-     "nation": "SLO"
-    },
-    {
-     "name": "Davide Lewton Brain",
-     "nation": "MON"
-    },
-    {
-     "name": "Donovan Carrillo",
-     "nation": "MEX"
-    },
-    {
-     "name": "Douglas Gerber",
-     "nation": "AUS"
-    },
-    {
-     "name": "Elias Sayed",
-     "nation": "SWE"
-    },
-    {
-     "name": "Fedirs Kuliss",
-     "nation": "LAT"
-    },
-    {
-     "name": "Genrikh Gartung",
-     "nation": "GER"
-    },
-    {
-     "name": "John Kim",
-     "nation": "CAN"
-    },
-    {
-     "name": "Kevin Aymoz",
-     "nation": "FRA"
-    },
-    {
-     "name": "Lukas Britschgi",
-     "nation": "SUI"
-    },
-    {
-     "name": "Makar Suntsev",
-     "nation": "FIN"
-    },
-    {
-     "name": "Matias Lindfors",
-     "nation": "FIN"
-    },
-    {
-     "name": "Matvii Yefymenko",
-     "nation": "POL"
-    },
-    {
      "name": "Nico Steffen",
-     "nation": "SUI"
-    },
-    {
-     "name": "Nikita Krivosheyev",
-     "nation": "KAZ"
+     "nation": "SUI",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Nikita Sheiko",
-     "nation": "ISR"
-    },
-    {
-     "name": "Nikita Starostin",
-     "nation": "GER"
+     "nation": "ISR",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Pablo Garcia",
-     "nation": "ESP"
+     "nation": "ESP",
+     "no": 3,
+     "warmup": 1
     },
     {
-     "name": "Patrick Blackwell",
-     "nation": "USA"
+     "name": "Matvii Yefymenko",
+     "nation": "POL",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Aleksei Vlasenko",
+     "nation": "HUN",
+     "no": 5,
+     "warmup": 1
     },
     {
      "name": "Taira Shinohara",
-     "nation": "USA"
+     "nation": "USA",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Daniel Grassl",
+     "nation": "ITA",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Douglas Gerber",
+     "nation": "AUS",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Arlet Levandi",
+     "nation": "EST",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Genrikh Gartung",
+     "nation": "GER",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Elias Sayed",
+     "nation": "SWE",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Davide Lewton Brain",
+     "nation": "MON",
+     "no": 12,
+     "warmup": 3
     },
     {
      "name": "Tamir Kuperman",
-     "nation": "ISR"
+     "nation": "ISR",
+     "no": 13,
+     "warmup": 3
     },
     {
-     "name": "Tobia Oellerer",
-     "nation": "AUT"
+     "name": "Nikita Krivosheyev",
+     "nation": "KAZ",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Nikita Starostin",
+     "nation": "GER",
+     "no": 15,
+     "warmup": 3
     },
     {
      "name": "Vadym Novikov",
-     "nation": "UKR"
+     "nation": "UKR",
+     "no": 16,
+     "warmup": 3
     },
     {
-     "name": "Vladimir Samoilov",
-     "nation": "POL"
+     "name": "Tobia Oellerer",
+     "nation": "AUT",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "John Kim",
+     "nation": "CAN",
+     "no": 18,
+     "warmup": 4
     },
     {
      "name": "Wesley Chiu",
-     "nation": "CAN"
+     "nation": "CAN",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Andreas Nordeback",
+     "nation": "SWE",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "David Sedej",
+     "nation": "SLO",
+     "no": 21,
+     "warmup": 4
+    },
+    {
+     "name": "Fedirs Kuliss",
+     "nation": "LAT",
+     "no": 22,
+     "warmup": 4
+    },
+    {
+     "name": "Kevin Aymoz",
+     "nation": "FRA",
+     "no": 23,
+     "warmup": 5
+    },
+    {
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "no": 24,
+     "warmup": 5
+    },
+    {
+     "name": "Lukas Britschgi",
+     "nation": "SUI",
+     "no": 25,
+     "warmup": 5
+    },
+    {
+     "name": "Makar Suntsev",
+     "nation": "FIN",
+     "no": 26,
+     "warmup": 5
+    },
+    {
+     "name": "Matias Lindfors",
+     "nation": "FIN",
+     "no": 27,
+     "warmup": 5
+    },
+    {
+     "name": "Patrick Blackwell",
+     "nation": "USA",
+     "no": 28,
+     "warmup": 5
     }
    ],
    "live": {
@@ -23528,36 +23618,34 @@
     "cat": null,
     "first": null,
     "names": {
-     "Douglas GERBER": "Douglas Gerber",
-     "Tobia OELLERER": "Tobia Oellerer",
-     "Wesley CHIU": "Wesley Chiu",
-     "John KIM": "John Kim",
-     "Pablo GARCIA": "Pablo Garcia",
-     "Andre ZAPATA": "Andre Zapata",
-     "Arlet LEVANDI": "Arlet Levandi",
-     "Matias LINDFORS": "Matias Lindfors",
-     "Makar SUNTSEV": "Makar Suntsev",
-     "Kevin AYMOZ": "Kevin Aymoz",
-     "Genrikh GARTUNG": "Genrikh Gartung",
-     "Nikita STAROSTIN": "Nikita Starostin",
-     "Aleksei VLASENKO": "Aleksei Vlasenko",
-     "Tamir KUPERMAN": "Tamir Kuperman",
-     "Nikita SHEIKO": "Nikita Sheiko",
-     "Daniel GRASSL": "Daniel Grassl",
-     "Nikita KRIVOSHEYEV": "Nikita Krivosheyev",
-     "Fedirs KULISS": "Fedirs Kuliss",
-     "Donovan CARRILLO": "Donovan Carrillo",
-     "Davide LEWTON BRAIN": "Davide Lewton Brain",
-     "Vladimir SAMOILOV": "Vladimir Samoilov",
-     "Matvii YEFYMENKO": "Matvii Yefymenko",
-     "David SEDEJ": "David Sedej",
-     "Lukas BRITSCHGI": "Lukas Britschgi",
      "Nico STEFFEN": "Nico Steffen",
-     "Andreas NORDEBACK": "Andreas Nordeback",
+     "Nikita SHEIKO": "Nikita Sheiko",
+     "Pablo GARCIA": "Pablo Garcia",
+     "Matvii YEFYMENKO": "Matvii Yefymenko",
+     "Aleksei VLASENKO": "Aleksei Vlasenko",
+     "Taira SHINOHARA": "Taira Shinohara",
+     "Daniel GRASSL": "Daniel Grassl",
+     "Douglas GERBER": "Douglas Gerber",
+     "Arlet LEVANDI": "Arlet Levandi",
+     "Genrikh GARTUNG": "Genrikh Gartung",
      "Elias SAYED": "Elias Sayed",
+     "Davide LEWTON BRAIN": "Davide Lewton Brain",
+     "Tamir KUPERMAN": "Tamir Kuperman",
+     "Nikita KRIVOSHEYEV": "Nikita Krivosheyev",
+     "Nikita STAROSTIN": "Nikita Starostin",
      "Vadym NOVIKOV": "Vadym Novikov",
-     "Patrick BLACKWELL": "Patrick Blackwell",
-     "Taira SHINOHARA": "Taira Shinohara"
+     "Tobia OELLERER": "Tobia Oellerer",
+     "John KIM": "John Kim",
+     "Wesley CHIU": "Wesley Chiu",
+     "Andreas NORDEBACK": "Andreas Nordeback",
+     "David SEDEJ": "David Sedej",
+     "Fedirs KULISS": "Fedirs Kuliss",
+     "Kevin AYMOZ": "Kevin Aymoz",
+     "Vladimir SAMOILOV": "Vladimir Samoilov",
+     "Lukas BRITSCHGI": "Lukas Britschgi",
+     "Makar SUNTSEV": "Makar Suntsev",
+     "Matias LINDFORS": "Matias Lindfors",
+     "Patrick BLACKWELL": "Patrick Blackwell"
     }
    }
   },
@@ -23570,18 +23658,22 @@
    "seg": "РТ",
    "title": "CS Budapest Trophy — танцы РТ",
    "start": "2026-10-16T17:45:00+03:00",
-   "end": "2026-10-16T21:15:00+03:00",
+   "end": "2026-10-16T21:10:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [],
    "ours": [
     {
-     "name": "Василиса Григорьева / Евгений Артющенко",
-     "nation": "AIN2"
+     "name": "Милана Кузьмина / Дмитрий Студеникин",
+     "nation": "AIN2",
+     "no": 9,
+     "warmup": 3
     },
     {
-     "name": "Милана Кузьмина / Дмитрий Студеникин",
-     "nation": "AIN2"
+     "name": "Василиса Григорьева / Евгений Артющенко",
+     "nation": "AIN2",
+     "no": 22,
+     "warmup": 5
     }
    ],
    "athletes": [
@@ -23598,7 +23690,6 @@
     "Jamie Fournier / Everest Zhu",
     "Loicia Demougeot / Theo le Mercier",
     "Luiza-Elena Ilie / Giovanni Stefano Poli",
-    "Mariia Ignateva / Danijil Leonyidovics Szemko",
     "Natalie Taschlerova / Filip Taschler",
     "Noemi Maria Tali / Noah Lafornara",
     "Olivia Smart / Tim Dieck",
@@ -23610,99 +23701,139 @@
     "Милана Кузьмина / Дмитрий Студеникин"
    ],
    "src": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
-   "desc": "Россияне:\n• Василиса Григорьева / Евгений Артющенко\n• Милана Кузьмина / Дмитрий Студеникин\n\nНачало: 17:45 МСК",
+   "desc": "Россияне:\n• Милана Кузьмина / Дмитрий Студеникин — 9-й (разминка 3)\n• Василиса Григорьева / Евгений Артющенко — 22-й (разминка 5)\n\nНачало: 17:45 МСК",
    "field": [
     {
-     "name": "Alisa Ovsiankina / Maximilien Rahier",
-     "nation": "FRA"
-    },
-    {
-     "name": "Amy Cui / Jonathan Rogers",
-     "nation": "USA"
-    },
-    {
-     "name": "Anita Straub / Andreas Straub",
-     "nation": "AUT"
-    },
-    {
-     "name": "Charise Matthaei / Max Liebers",
-     "nation": "GER"
+     "name": "Gina Zehnder / Beda Leon Sieber",
+     "nation": "SUI",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Chloe Nguyen / Brendan Giang",
-     "nation": "CAN"
+     "nation": "CAN",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Emese Csiszer / Mark Shapiro",
-     "nation": "HUN"
-    },
-    {
-     "name": "Emily Bratti / Ian Somerville",
-     "nation": "USA"
-    },
-    {
-     "name": "Gina Zehnder / Beda Leon Sieber",
-     "nation": "SUI"
-    },
-    {
-     "name": "Giulia Isabella Paolino / Andrea Tuba",
-     "nation": "ITA"
-    },
-    {
-     "name": "Iryna Pidgaina / Артём Ковалёв",
-     "nation": "UKR"
+     "name": "Anita Straub / Andreas Straub",
+     "nation": "AUT",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Jamie Fournier / Everest Zhu",
-     "nation": "CAN"
-    },
-    {
-     "name": "Loicia Demougeot / Theo le Mercier",
-     "nation": "FRA"
-    },
-    {
-     "name": "Luiza-Elena Ilie / Giovanni Stefano Poli",
-     "nation": "ROU"
-    },
-    {
-     "name": "Mariia Ignateva / Danijil Leonyidovics Szemko",
-     "nation": "HUN"
-    },
-    {
-     "name": "Natalie Taschlerova / Filip Taschler",
-     "nation": "CZE"
-    },
-    {
-     "name": "Noemi Maria Tali / Noah Lafornara",
-     "nation": "ITA"
+     "nation": "CAN",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Olivia Smart / Tim Dieck",
-     "nation": "ESP"
+     "nation": "ESP",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Charise Matthaei / Max Liebers",
+     "nation": "GER",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Natalie Taschlerova / Filip Taschler",
+     "nation": "CZE",
+     "no": 7,
+     "warmup": 2
     },
     {
      "name": "Philomene Sabourin / Raul Bermejo",
-     "nation": "ESP"
-    },
-    {
-     "name": "Shira Ichilov / Mikhail Nosovitskiy",
-     "nation": "ISR"
-    },
-    {
-     "name": "Yuka Orihara / Juho Pirinen",
-     "nation": "FIN"
-    },
-    {
-     "name": "Zofia Grzegorzewska / Oleg Muratov",
-     "nation": "POL"
-    },
-    {
-     "name": "Василиса Григорьева / Евгений Артющенко",
-     "nation": "AIN2"
+     "nation": "ESP",
+     "no": 8,
+     "warmup": 2
     },
     {
      "name": "Милана Кузьмина / Дмитрий Студеникин",
-     "nation": "AIN2"
+     "nation": "AIN2",
+     "no": 9,
+     "warmup": 3
+    },
+    {
+     "name": "Alisa Ovsiankina / Maximilien Rahier",
+     "nation": "FRA",
+     "no": 10,
+     "warmup": 3
+    },
+    {
+     "name": "Loicia Demougeot / Theo le Mercier",
+     "nation": "FRA",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Zofia Grzegorzewska / Oleg Muratov",
+     "nation": "POL",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Shira Ichilov / Mikhail Nosovitskiy",
+     "nation": "ISR",
+     "no": 13,
+     "warmup": 4
+    },
+    {
+     "name": "Giulia Isabella Paolino / Andrea Tuba",
+     "nation": "ITA",
+     "no": 14,
+     "warmup": 4
+    },
+    {
+     "name": "Iryna Pidgaina / Артём Ковалёв",
+     "nation": "UKR",
+     "no": 15,
+     "warmup": 4
+    },
+    {
+     "name": "Luiza-Elena Ilie / Giovanni Stefano Poli",
+     "nation": "ROU",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Emese Csiszer / Mark Shapiro",
+     "nation": "HUN",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Yuka Orihara / Juho Pirinen",
+     "nation": "FIN",
+     "no": 18,
+     "warmup": 5
+    },
+    {
+     "name": "Noemi Maria Tali / Noah Lafornara",
+     "nation": "ITA",
+     "no": 19,
+     "warmup": 5
+    },
+    {
+     "name": "Amy Cui / Jonathan Rogers",
+     "nation": "USA",
+     "no": 20,
+     "warmup": 5
+    },
+    {
+     "name": "Emily Bratti / Ian Somerville",
+     "nation": "USA",
+     "no": 21,
+     "warmup": 5
+    },
+    {
+     "name": "Василиса Григорьева / Евгений Артющенко",
+     "nation": "AIN2",
+     "no": 22,
+     "warmup": 5
     }
    ],
    "live": {
@@ -23711,29 +23842,28 @@
     "cat": null,
     "first": null,
     "names": {
-     "Vasilisa GRIGOREVA / Evgenii ARTIUSHCHENKO": "Василиса Григорьева / Евгений Артющенко",
-     "Milana KUZMINA / Dmitrii STUDENIKIN": "Милана Кузьмина / Дмитрий Студеникин",
+     "Gina ZEHNDER / Beda Leon SIEBER": "Gina Zehnder / Beda Leon Sieber",
+     "Chloe NGUYEN / Brendan GIANG": "Chloe Nguyen / Brendan Giang",
      "Anita STRAUB / Andreas STRAUB": "Anita Straub / Andreas Straub",
      "Jamie FOURNIER / Everest ZHU": "Jamie Fournier / Everest Zhu",
-     "Chloe NGUYEN / Brendan GIANG": "Chloe Nguyen / Brendan Giang",
+     "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck",
+     "Charise MATTHAEI / Max LIEBERS": "Charise Matthaei / Max Liebers",
      "Natalie TASCHLEROVA / Filip TASCHLER": "Natalie Taschlerova / Filip Taschler",
      "Philomene SABOURIN / Raul BERMEJO": "Philomene Sabourin / Raul Bermejo",
-     "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck",
-     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
-     "Loicia DEMOUGEOT / Theo le MERCIER": "Loicia Demougeot / Theo le Mercier",
+     "Milana KUZMINA / Dmitrii STUDENIKIN": "Милана Кузьмина / Дмитрий Студеникин",
      "Alisa OVSIANKINA / Maximilien RAHIER": "Alisa Ovsiankina / Maximilien Rahier",
-     "Charise MATTHAEI / Max LIEBERS": "Charise Matthaei / Max Liebers",
-     "Emese CSISZER / Mark SHAPIRO": "Emese Csiszer / Mark Shapiro",
-     "Mariia IGNATEVA / Danijil Leonyidovics SZEMKO": "Mariia Ignateva / Danijil Leonyidovics Szemko",
+     "Loicia DEMOUGEOT / Theo le MERCIER": "Loicia Demougeot / Theo le Mercier",
+     "Zofia GRZEGORZEWSKA / Oleg MURATOV": "Zofia Grzegorzewska / Oleg Muratov",
      "Shira ICHILOV / Mikhail NOSOVITSKIY": "Shira Ichilov / Mikhail Nosovitskiy",
      "Giulia Isabella PAOLINO / Andrea TUBA": "Giulia Isabella Paolino / Andrea Tuba",
-     "Noemi Maria TALI / Noah LAFORNARA": "Noemi Maria Tali / Noah Lafornara",
-     "Zofia GRZEGORZEWSKA / Oleg MURATOV": "Zofia Grzegorzewska / Oleg Muratov",
-     "Luiza-Elena ILIE / Giovanni Stefano POLI": "Luiza-Elena Ilie / Giovanni Stefano Poli",
-     "Gina ZEHNDER / Beda Leon SIEBER": "Gina Zehnder / Beda Leon Sieber",
      "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Артём Ковалёв",
+     "Luiza-Elena ILIE / Giovanni Stefano POLI": "Luiza-Elena Ilie / Giovanni Stefano Poli",
+     "Emese CSISZER / Mark SHAPIRO": "Emese Csiszer / Mark Shapiro",
+     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
+     "Noemi Maria TALI / Noah LAFORNARA": "Noemi Maria Tali / Noah Lafornara",
+     "Amy CUI / Jonathan ROGERS": "Amy Cui / Jonathan Rogers",
      "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
-     "Amy CUI / Jonathan ROGERS": "Amy Cui / Jonathan Rogers"
+     "Vasilisa GRIGOREVA / Evgenii ARTIUSHCHENKO": "Василиса Григорьева / Евгений Артющенко"
     }
    }
   },
@@ -23779,92 +23909,136 @@
    "desc": "Начало: 21:10 МСК",
    "field": [
     {
-     "name": "Aletta Lanyi / Ilya Laurenau",
-     "nation": "HUN"
-    },
-    {
-     "name": "Alexandra Rouskova / Lukas Toman",
-     "nation": "CZE"
-    },
-    {
-     "name": "Alexia Kruk / Jan Eisenhaber",
-     "nation": "GER"
-    },
-    {
-     "name": "Aneta Vaclavikova / William Lissauer",
-     "nation": "USA"
-    },
-    {
-     "name": "Anna Ruis / Andrew Cayden Evert",
-     "nation": "AUT"
-    },
-    {
-     "name": "Annabel Mann / Jack Hammond",
-     "nation": "GBR"
+     "name": "Лилия Литенко / Александр Рыженков",
+     "nation": "ISR",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Arianna Soldati / Nicholas Tagliabue",
-     "nation": "ITA"
-    },
-    {
-     "name": "Carlota Garcia Barranco / Александр Островский",
-     "nation": "ESP"
-    },
-    {
-     "name": "Chanelle Chum / Osckar Chum",
-     "nation": "AUS"
-    },
-    {
-     "name": "Eniko Kobor / Zoard Kobor",
-     "nation": "GER"
-    },
-    {
-     "name": "Hana Maria Aboian / Daniil Veselukhin",
-     "nation": "USA"
-    },
-    {
-     "name": "Klara Vlckova / Tomas Vlcek",
-     "nation": "CZE"
-    },
-    {
-     "name": "Laura Balcerska / David Diadchenko",
-     "nation": "POL"
-    },
-    {
-     "name": "Lena Zerinvary-simon / Huba Gallai",
-     "nation": "HUN"
-    },
-    {
-     "name": "Lucia Stefanovova / Jacopo Boeris",
-     "nation": "SVK"
-    },
-    {
-     "name": "Maite van Mulders / Tudor Dominic Andrei",
-     "nation": "ROU"
-    },
-    {
-     "name": "Rose Anne Marie Bordet / Hugo Tomas",
-     "nation": "FRA"
-    },
-    {
-     "name": "Seraina Tscharner / Laurin Wiederkehr",
-     "nation": "SUI"
-    },
-    {
-     "name": "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
-     "nation": "FRA"
+     "nation": "ITA",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Villo Mira Szilagyi / Istvan Jaracs",
-     "nation": "HUN"
+     "nation": "HUN",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
+     "nation": "FRA",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Chanelle Chum / Osckar Chum",
+     "nation": "AUS",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Carlota Garcia Barranco / Александр Островский",
+     "nation": "ESP",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Rose Anne Marie Bordet / Hugo Tomas",
+     "nation": "FRA",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Aneta Vaclavikova / William Lissauer",
+     "nation": "USA",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Maite van Mulders / Tudor Dominic Andrei",
+     "nation": "ROU",
+     "no": 9,
+     "warmup": 3
+    },
+    {
+     "name": "Lena Zerinvary-simon / Huba Gallai",
+     "nation": "HUN",
+     "no": 10,
+     "warmup": 3
+    },
+    {
+     "name": "Hana Maria Aboian / Daniil Veselukhin",
+     "nation": "USA",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Alexandra Rouskova / Lukas Toman",
+     "nation": "CZE",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Annabel Mann / Jack Hammond",
+     "nation": "GBR",
+     "no": 13,
+     "warmup": 4
+    },
+    {
+     "name": "Laura Balcerska / David Diadchenko",
+     "nation": "POL",
+     "no": 14,
+     "warmup": 4
+    },
+    {
+     "name": "Eniko Kobor / Zoard Kobor",
+     "nation": "GER",
+     "no": 15,
+     "warmup": 4
+    },
+    {
+     "name": "Lucia Stefanovova / Jacopo Boeris",
+     "nation": "SVK",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Aletta Lanyi / Ilya Laurenau",
+     "nation": "HUN",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Klara Vlckova / Tomas Vlcek",
+     "nation": "CZE",
+     "no": 18,
+     "warmup": 5
     },
     {
      "name": "Zoe Bianchi / Daniel Basile",
-     "nation": "ITA"
+     "nation": "ITA",
+     "no": 19,
+     "warmup": 5
     },
     {
-     "name": "Лилия Литенко / Александр Рыженков",
-     "nation": "ISR"
+     "name": "Anna Ruis / Andrew Cayden Evert",
+     "nation": "AUT",
+     "no": 20,
+     "warmup": 5
+    },
+    {
+     "name": "Alexia Kruk / Jan Eisenhaber",
+     "nation": "GER",
+     "no": 21,
+     "warmup": 5
+    },
+    {
+     "name": "Seraina Tscharner / Laurin Wiederkehr",
+     "nation": "SUI",
+     "no": 22,
+     "warmup": 5
     }
    ],
    "live": {
@@ -23873,28 +24047,28 @@
     "cat": null,
     "first": null,
     "names": {
+     "Liliia LITENKO / Aleksandr RYZHENKOV": "Лилия Литенко / Александр Рыженков",
+     "Arianna SOLDATI / Nicholas TAGLIABUE": "Arianna Soldati / Nicholas Tagliabue",
+     "Villo Mira SZILAGYI / Istvan JARACS": "Villo Mira Szilagyi / Istvan Jaracs",
+     "Siloe Nayeli Clai. DESBOIS-RENAUDIN / Enzo TOMAS": "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
      "Chanelle CHUM / Osckar CHUM": "Chanelle Chum / Osckar Chum",
-     "Anna RUIS / Andrew Cayden EVERT": "Anna Ruis / Andrew Cayden Evert",
-     "Alexandra ROUSKOVA / Lukas TOMAN": "Alexandra Rouskova / Lukas Toman",
-     "Klara VLCKOVA / Tomas VLCEK": "Klara Vlckova / Tomas Vlcek",
      "Carlota GARCIA BARRANCO / Aleksandr OSTROVSKII": "Carlota Garcia Barranco / Александр Островский",
      "Rose Anne Marie BORDET / Hugo TOMAS": "Rose Anne Marie Bordet / Hugo Tomas",
-     "Siloe Nayeli Clai. DESBOIS-RENAUDIN / Enzo TOMAS": "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
-     "Annabel MANN / Jack HAMMOND": "Annabel Mann / Jack Hammond",
-     "Eniko KOBOR / Zoard KOBOR": "Eniko Kobor / Zoard Kobor",
-     "Alexia KRUK / Jan EISENHABER": "Alexia Kruk / Jan Eisenhaber",
-     "Aletta LANYI / Ilya LAURENAU": "Aletta Lanyi / Ilya Laurenau",
-     "Villo Mira SZILAGYI / Istvan JARACS": "Villo Mira Szilagyi / Istvan Jaracs",
-     "Lena ZERINVARY-SIMON / Huba GALLAI": "Lena Zerinvary-simon / Huba Gallai",
-     "Liliia LITENKO / Aleksandr RYZHENKOV": "Лилия Литенко / Александр Рыженков",
-     "Zoe BIANCHI / Daniel BASILE": "Zoe Bianchi / Daniel Basile",
-     "Arianna SOLDATI / Nicholas TAGLIABUE": "Arianna Soldati / Nicholas Tagliabue",
-     "Laura BALCERSKA / David DIADCHENKO": "Laura Balcerska / David Diadchenko",
+     "Aneta VACLAVIKOVA / William LISSAUER": "Aneta Vaclavikova / William Lissauer",
      "Maite van MULDERS / Tudor Dominic ANDREI": "Maite van Mulders / Tudor Dominic Andrei",
-     "Seraina TSCHARNER / Laurin WIEDERKEHR": "Seraina Tscharner / Laurin Wiederkehr",
-     "Lucia STEFANOVOVA / Jacopo BOERIS": "Lucia Stefanovova / Jacopo Boeris",
+     "Lena ZERINVARY-SIMON / Huba GALLAI": "Lena Zerinvary-simon / Huba Gallai",
      "Hana Maria ABOIAN / Daniil VESELUKHIN": "Hana Maria Aboian / Daniil Veselukhin",
-     "Aneta VACLAVIKOVA / William LISSAUER": "Aneta Vaclavikova / William Lissauer"
+     "Alexandra ROUSKOVA / Lukas TOMAN": "Alexandra Rouskova / Lukas Toman",
+     "Annabel MANN / Jack HAMMOND": "Annabel Mann / Jack Hammond",
+     "Laura BALCERSKA / David DIADCHENKO": "Laura Balcerska / David Diadchenko",
+     "Eniko KOBOR / Zoard KOBOR": "Eniko Kobor / Zoard Kobor",
+     "Lucia STEFANOVOVA / Jacopo BOERIS": "Lucia Stefanovova / Jacopo Boeris",
+     "Aletta LANYI / Ilya LAURENAU": "Aletta Lanyi / Ilya Laurenau",
+     "Klara VLCKOVA / Tomas VLCEK": "Klara Vlckova / Tomas Vlcek",
+     "Zoe BIANCHI / Daniel BASILE": "Zoe Bianchi / Daniel Basile",
+     "Anna RUIS / Andrew Cayden EVERT": "Anna Ruis / Andrew Cayden Evert",
+     "Alexia KRUK / Jan EISENHABER": "Alexia Kruk / Jan Eisenhaber",
+     "Seraina TSCHARNER / Laurin WIEDERKEHR": "Seraina Tscharner / Laurin Wiederkehr"
     }
    }
   },
@@ -23907,7 +24081,7 @@
    "seg": "ПП",
    "title": "CS Budapest Trophy — девушки ПП",
    "start": "2026-10-17T09:00:00+03:00",
-   "end": "2026-10-17T13:45:00+03:00",
+   "end": "2026-10-17T13:20:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [],
@@ -23931,16 +24105,13 @@
     "Mila Bertsch",
     "Milena Velcheva",
     "Natalia Runcanu",
-    "Natasa Jermolicka",
     "Polina Bykova",
     "Rebecca Lo Cascio",
     "Shahaf Pinchas",
     "Shaked Pinchas",
-    "Skylar Lautowa-peguero",
-    "Sophie Erhardt",
     "Summer Wijkhuizen",
+    "Valeria Huber",
     "Varvara Abramkina",
-    "Zsofia Szeplaki",
     "Амалия Насыбуллина"
    ],
    "src": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
@@ -24019,10 +24190,6 @@
      "nation": "ROU"
     },
     {
-     "name": "Natasa Jermolicka",
-     "nation": "LAT"
-    },
-    {
      "name": "Polina Bykova",
      "nation": "SLO"
     },
@@ -24039,24 +24206,16 @@
      "nation": "ISR"
     },
     {
-     "name": "Skylar Lautowa-peguero",
-     "nation": "USA"
-    },
-    {
-     "name": "Sophie Erhardt",
-     "nation": "GER"
-    },
-    {
      "name": "Summer Wijkhuizen",
      "nation": "NED"
     },
     {
-     "name": "Varvara Abramkina",
-     "nation": "BUL"
+     "name": "Valeria Huber",
+     "nation": "GER"
     },
     {
-     "name": "Zsofia Szeplaki",
-     "nation": "HUN"
+     "name": "Varvara Abramkina",
+     "nation": "BUL"
     },
     {
      "name": "Амалия Насыбуллина",
@@ -24074,11 +24233,10 @@
      "Lidiia TSUKANOVA": "Lidiia Tsukanova",
      "Mila BERTSCH": "Mila Bertsch",
      "Amaliia NASYBULLINA": "Амалия Насыбуллина",
-     "Sophie ERHARDT": "Sophie Erhardt",
+     "Valeria HUBER": "Valeria Huber",
      "Adelina VOROTELIAK": "Adelina Voroteliak",
      "Greta Norina MAJOR": "Greta Norina Major",
      "Martina Petra MAJOR": "Martina Petra Major",
-     "Zsofia SZEPLAKI": "Zsofia Szeplaki",
      "Dorina SZIGETI": "Dorina Szigeti",
      "Hanna Laura VIRANYI": "Hanna Laura Viranyi",
      "Shahaf PINCHAS": "Shahaf Pinchas",
@@ -24086,7 +24244,6 @@
      "Rebecca LO CASCIO": "Rebecca Lo Cascio",
      "Ginevra Antonina VOLANTE": "Ginevra Antonina Volante",
      "Karina SHEINA": "Karina Sheina",
-     "Natasa JERMOLICKA": "Natasa Jermolicka",
      "Mia KASPAROVICA": "Mia Kasparovica",
      "Summer WIJKHUIZEN": "Summer Wijkhuizen",
      "Natalia RUNCANU": "Natalia Runcanu",
@@ -24096,7 +24253,6 @@
      "Hedda HEDSTROM": "Hedda Hedstrom",
      "Evgeniia NIKOLAEVA": "Evgeniia Nikolaeva",
      "Jiaying Ellyse JOHNSON": "Jiaying Ellyse Johnson",
-     "Skylar LAUTOWA-PEGUERO": "Skylar Lautowa-peguero",
      "Anissa MAMAEV": "Anissa Mamaev"
     }
    }
@@ -24110,7 +24266,7 @@
    "seg": "ПП",
    "title": "CS Budapest Trophy — юноши ПП",
    "start": "2026-10-17T13:05:00+03:00",
-   "end": "2026-10-17T14:20:00+03:00",
+   "end": "2026-10-17T14:10:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [],
@@ -24124,7 +24280,6 @@
     "Aaron Kim",
     "Akims Kirilovs",
     "Gion Schmid",
-    "Igor Gyula Kind",
     "Kirill Sheiko",
     "Robert Wildt",
     "Ryszard Siudek",
@@ -24144,10 +24299,6 @@
     {
      "name": "Gion Schmid",
      "nation": "SUI"
-    },
-    {
-     "name": "Igor Gyula Kind",
-     "nation": "HUN"
     },
     {
      "name": "Kirill Sheiko",
@@ -24174,7 +24325,6 @@
     "names": {
      "Ilia MALKOV": "Илья Мальков",
      "Robert WILDT": "Robert Wildt",
-     "Igor Gyula KIND": "Igor Gyula Kind",
      "Kirill SHEIKO": "Kirill Sheiko",
      "Aaron KIM": "Aaron Kim",
      "Akims KIRILOVS": "Akims Kirilovs",
@@ -24212,25 +24362,22 @@
    "seg": "КП",
    "title": "CS Budapest Trophy — женщины КП",
    "start": "2026-10-17T14:25:00+03:00",
-   "end": "2026-10-17T20:20:00+03:00",
+   "end": "2026-10-17T20:00:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [],
    "ours": [
     {
      "name": "Алина Горбачёва",
-     "nation": "AIN2"
-    },
-    {
-     "name": "Мария Захарова",
-     "nation": "AIN2"
+     "nation": "AIN2",
+     "no": 36,
+     "warmup": 7
     }
    ],
    "athletes": [
     "Alexandra Feigin",
     "Alina Bonillo",
     "Ana Stratulat",
-    "Andrea Montesinos Cantu",
     "Anita Ostlund",
     "Anna Pezzetta",
     "Annika Lytchoff Skibby",
@@ -24260,176 +24407,236 @@
     "Polina Dzsumanyijazova",
     "Sara-Maude Dupuis",
     "Saskia Oudejans",
-    "Selma Valitalo",
     "Sofja Stepcenko",
     "Sophie Joline von Felten",
     "Weronika Ferlin",
     "Zere Sarbalina",
-    "Алина Горбачёва",
-    "Мария Захарова"
+    "Алина Горбачёва"
    ],
    "src": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
-   "desc": "Россияне:\n• Алина Горбачёва\n• Мария Захарова\n\nНачало: 14:25 МСК",
+   "desc": "Россияне:\n• Алина Горбачёва — 36-й (разминка 7)\n\nНачало: 14:25 МСК",
    "field": [
     {
-     "name": "Alexandra Feigin",
-     "nation": "BUL"
-    },
-    {
-     "name": "Alina Bonillo",
-     "nation": "USA"
-    },
-    {
-     "name": "Ana Stratulat",
-     "nation": "ROU"
-    },
-    {
-     "name": "Andrea Montesinos Cantu",
-     "nation": "MEX"
-    },
-    {
-     "name": "Anita Ostlund",
-     "nation": "SWE"
-    },
-    {
-     "name": "Anna Pezzetta",
-     "nation": "ITA"
-    },
-    {
-     "name": "Annika Lytchoff Skibby",
-     "nation": "DEN"
-    },
-    {
      "name": "Elizabet Gervits",
-     "nation": "ISR"
-    },
-    {
-     "name": "Hannah Frank",
-     "nation": "AUT"
-    },
-    {
-     "name": "Haruna Murakami",
-     "nation": "AUS"
-    },
-    {
-     "name": "Inga Gurgenidze",
-     "nation": "GEO"
-    },
-    {
-     "name": "Julia Kasprzyk",
-     "nation": "POL"
-    },
-    {
-     "name": "Julia Sauter",
-     "nation": "ROU"
-    },
-    {
-     "name": "Julia van Dijk",
-     "nation": "NED"
-    },
-    {
-     "name": "Kimmy Repond",
-     "nation": "SUI"
-    },
-    {
-     "name": "Livia Kaiser",
-     "nation": "SUI"
-    },
-    {
-     "name": "Lotta Artimo",
-     "nation": "FIN"
-    },
-    {
-     "name": "Lovisa Aav",
-     "nation": "SWE"
-    },
-    {
-     "name": "Madeline Schizas",
-     "nation": "CAN"
-    },
-    {
-     "name": "Maria Eliise Kaljuvere",
-     "nation": "EST"
-    },
-    {
-     "name": "Mariia Dmitrieva",
-     "nation": "ISR"
-    },
-    {
-     "name": "Marina Piredda",
-     "nation": "ITA"
-    },
-    {
-     "name": "Maxine Bautista",
-     "nation": "PHI"
-    },
-    {
-     "name": "Meda Variakojyte",
-     "nation": "LTU"
-    },
-    {
-     "name": "Mia Risa Gomez",
-     "nation": "NOR"
-    },
-    {
-     "name": "Michaela Vrastakova",
-     "nation": "CZE"
-    },
-    {
-     "name": "Nataly Langerbaur",
-     "nation": "EST"
-    },
-    {
-     "name": "Nikola Fomchenkova",
-     "nation": "LAT"
-    },
-    {
-     "name": "Olga Mikutina",
-     "nation": "AUT"
-    },
-    {
-     "name": "Pernille With",
-     "nation": "NOR"
-    },
-    {
-     "name": "Polina Dzsumanyijazova",
-     "nation": "HUN"
-    },
-    {
-     "name": "Sara-Maude Dupuis",
-     "nation": "CAN"
-    },
-    {
-     "name": "Saskia Oudejans",
-     "nation": "NED"
-    },
-    {
-     "name": "Selma Valitalo",
-     "nation": "FIN"
-    },
-    {
-     "name": "Sofja Stepcenko",
-     "nation": "LAT"
+     "nation": "ISR",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Sophie Joline von Felten",
-     "nation": "USA"
+     "nation": "USA",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Weronika Ferlin",
-     "nation": "POL"
+     "name": "Julia Kasprzyk",
+     "nation": "POL",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Mia Risa Gomez",
+     "nation": "NOR",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Alexandra Feigin",
+     "nation": "BUL",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Meda Variakojyte",
+     "nation": "LTU",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Julia van Dijk",
+     "nation": "NED",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Sara-Maude Dupuis",
+     "nation": "CAN",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Polina Dzsumanyijazova",
+     "nation": "HUN",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Haruna Murakami",
+     "nation": "AUS",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Pernille With",
+     "nation": "NOR",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Maxine Bautista",
+     "nation": "PHI",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Anita Ostlund",
+     "nation": "SWE",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Lotta Artimo",
+     "nation": "FIN",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Sofja Stepcenko",
+     "nation": "LAT",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Ana Stratulat",
+     "nation": "ROU",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Mariia Dmitrieva",
+     "nation": "ISR",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Julia Sauter",
+     "nation": "ROU",
+     "no": 18,
+     "warmup": 4
     },
     {
      "name": "Zere Sarbalina",
-     "nation": "KAZ"
+     "nation": "KAZ",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Nataly Langerbaur",
+     "nation": "EST",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Inga Gurgenidze",
+     "nation": "GEO",
+     "no": 21,
+     "warmup": 5
+    },
+    {
+     "name": "Nikola Fomchenkova",
+     "nation": "LAT",
+     "no": 22,
+     "warmup": 5
+    },
+    {
+     "name": "Michaela Vrastakova",
+     "nation": "CZE",
+     "no": 23,
+     "warmup": 5
+    },
+    {
+     "name": "Maria Eliise Kaljuvere",
+     "nation": "EST",
+     "no": 24,
+     "warmup": 5
+    },
+    {
+     "name": "Saskia Oudejans",
+     "nation": "NED",
+     "no": 25,
+     "warmup": 5
+    },
+    {
+     "name": "Olga Mikutina",
+     "nation": "AUT",
+     "no": 26,
+     "warmup": 6
+    },
+    {
+     "name": "Hannah Frank",
+     "nation": "AUT",
+     "no": 27,
+     "warmup": 6
+    },
+    {
+     "name": "Anna Pezzetta",
+     "nation": "ITA",
+     "no": 28,
+     "warmup": 6
+    },
+    {
+     "name": "Annika Lytchoff Skibby",
+     "nation": "DEN",
+     "no": 29,
+     "warmup": 6
+    },
+    {
+     "name": "Weronika Ferlin",
+     "nation": "POL",
+     "no": 30,
+     "warmup": 6
+    },
+    {
+     "name": "Kimmy Repond",
+     "nation": "SUI",
+     "no": 31,
+     "warmup": 6
+    },
+    {
+     "name": "Livia Kaiser",
+     "nation": "SUI",
+     "no": 32,
+     "warmup": 7
+    },
+    {
+     "name": "Madeline Schizas",
+     "nation": "CAN",
+     "no": 33,
+     "warmup": 7
+    },
+    {
+     "name": "Marina Piredda",
+     "nation": "ITA",
+     "no": 34,
+     "warmup": 7
+    },
+    {
+     "name": "Alina Bonillo",
+     "nation": "USA",
+     "no": 35,
+     "warmup": 7
     },
     {
      "name": "Алина Горбачёва",
-     "nation": "AIN2"
+     "nation": "AIN2",
+     "no": 36,
+     "warmup": 7
     },
     {
-     "name": "Мария Захарова",
-     "nation": "AIN2"
+     "name": "Lovisa Aav",
+     "nation": "SWE",
+     "no": 37,
+     "warmup": 7
     }
    ],
    "live": {
@@ -24438,46 +24645,43 @@
     "cat": null,
     "first": null,
     "names": {
-     "Alina GORBACHEVA": "Алина Горбачёва",
-     "Mariia ZAKHAROVA": "Мария Захарова",
-     "Haruna MURAKAMI": "Haruna Murakami",
-     "Hannah FRANK": "Hannah Frank",
-     "Olga MIKUTINA": "Olga Mikutina",
-     "Alexandra FEIGIN": "Alexandra Feigin",
-     "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
-     "Madeline SCHIZAS": "Madeline Schizas",
-     "Michaela VRASTAKOVA": "Michaela Vrastakova",
-     "Annika Lytchoff SKIBBY": "Annika Lytchoff Skibby",
-     "Maria Eliise KALJUVERE": "Maria Eliise Kaljuvere",
-     "Nataly LANGERBAUR": "Nataly Langerbaur",
-     "Lotta ARTIMO": "Lotta Artimo",
-     "Selma VALITALO": "Selma Valitalo",
-     "Inga GURGENIDZE": "Inga Gurgenidze",
-     "Polina DZSUMANYIJAZOVA": "Polina Dzsumanyijazova",
-     "Mariia DMITRIEVA": "Mariia Dmitrieva",
      "Elizabet GERVITS": "Elizabet Gervits",
-     "Anna PEZZETTA": "Anna Pezzetta",
-     "Marina PIREDDA": "Marina Piredda",
-     "Zere SARBALINA": "Zere Sarbalina",
-     "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
-     "Sofja STEPCENKO": "Sofja Stepcenko",
-     "Meda VARIAKOJYTE": "Meda Variakojyte",
-     "Andrea MONTESINOS CANTU": "Andrea Montesinos Cantu",
-     "Saskia OUDEJANS": "Saskia Oudejans",
-     "Julia van DIJK": "Julia van Dijk",
+     "Sophie Joline von FELTEN": "Sophie Joline von Felten",
+     "Julia KASPRZYK": "Julia Kasprzyk",
      "Mia RISA GOMEZ": "Mia Risa Gomez",
+     "Alexandra FEIGIN": "Alexandra Feigin",
+     "Meda VARIAKOJYTE": "Meda Variakojyte",
+     "Julia van DIJK": "Julia van Dijk",
+     "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
+     "Polina DZSUMANYIJAZOVA": "Polina Dzsumanyijazova",
+     "Haruna MURAKAMI": "Haruna Murakami",
      "Pernille WITH": "Pernille With",
      "Maxine BAUTISTA": "Maxine Bautista",
-     "Weronika FERLIN": "Weronika Ferlin",
-     "Julia KASPRZYK": "Julia Kasprzyk",
-     "Julia SAUTER": "Julia Sauter",
-     "Ana STRATULAT": "Ana Stratulat",
-     "Livia KAISER": "Livia Kaiser",
-     "Kimmy REPOND": "Kimmy Repond",
-     "Lovisa AAV": "Lovisa Aav",
      "Anita OSTLUND": "Anita Ostlund",
+     "Lotta ARTIMO": "Lotta Artimo",
+     "Sofja STEPCENKO": "Sofja Stepcenko",
+     "Ana STRATULAT": "Ana Stratulat",
+     "Mariia DMITRIEVA": "Mariia Dmitrieva",
+     "Julia SAUTER": "Julia Sauter",
+     "Zere SARBALINA": "Zere Sarbalina",
+     "Nataly LANGERBAUR": "Nataly Langerbaur",
+     "Inga GURGENIDZE": "Inga Gurgenidze",
+     "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
+     "Michaela VRASTAKOVA": "Michaela Vrastakova",
+     "Maria Eliise KALJUVERE": "Maria Eliise Kaljuvere",
+     "Saskia OUDEJANS": "Saskia Oudejans",
+     "Olga MIKUTINA": "Olga Mikutina",
+     "Hannah FRANK": "Hannah Frank",
+     "Anna PEZZETTA": "Anna Pezzetta",
+     "Annika Lytchoff SKIBBY": "Annika Lytchoff Skibby",
+     "Weronika FERLIN": "Weronika Ferlin",
+     "Kimmy REPOND": "Kimmy Repond",
+     "Livia KAISER": "Livia Kaiser",
+     "Madeline SCHIZAS": "Madeline Schizas",
+     "Marina PIREDDA": "Marina Piredda",
      "Alina BONILLO": "Alina Bonillo",
-     "Sophie Joline von FELTEN": "Sophie Joline von Felten"
+     "Alina GORBACHEVA": "Алина Горбачёва",
+     "Lovisa AAV": "Lovisa Aav"
     }
    }
   },
@@ -24711,7 +24915,7 @@
    "seg": "ПТ",
    "title": "CS Budapest Trophy — танцы ПТ",
    "start": "2026-10-18T09:00:00+03:00",
-   "end": "2026-10-18T12:55:00+03:00",
+   "end": "2026-10-18T12:45:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [],
@@ -24739,7 +24943,6 @@
     "Jamie Fournier / Everest Zhu",
     "Loicia Demougeot / Theo le Mercier",
     "Luiza-Elena Ilie / Giovanni Stefano Poli",
-    "Mariia Ignateva / Danijil Leonyidovics Szemko",
     "Natalie Taschlerova / Filip Taschler",
     "Noemi Maria Tali / Noah Lafornara",
     "Olivia Smart / Tim Dieck",
@@ -24806,10 +25009,6 @@
      "nation": "ROU"
     },
     {
-     "name": "Mariia Ignateva / Danijil Leonyidovics Szemko",
-     "nation": "HUN"
-    },
-    {
      "name": "Natalie Taschlerova / Filip Taschler",
      "nation": "CZE"
     },
@@ -24865,7 +25064,6 @@
      "Alisa OVSIANKINA / Maximilien RAHIER": "Alisa Ovsiankina / Maximilien Rahier",
      "Charise MATTHAEI / Max LIEBERS": "Charise Matthaei / Max Liebers",
      "Emese CSISZER / Mark SHAPIRO": "Emese Csiszer / Mark Shapiro",
-     "Mariia IGNATEVA / Danijil Leonyidovics SZEMKO": "Mariia Ignateva / Danijil Leonyidovics Szemko",
      "Shira ICHILOV / Mikhail NOSOVITSKIY": "Shira Ichilov / Mikhail Nosovitskiy",
      "Giulia Isabella PAOLINO / Andrea TUBA": "Giulia Isabella Paolino / Andrea Tuba",
      "Noemi Maria TALI / Noah LAFORNARA": "Noemi Maria Tali / Noah Lafornara",
@@ -24887,20 +25085,18 @@
    "seg": "ПП",
    "title": "CS Budapest Trophy — мужчины ПП",
    "start": "2026-10-18T12:50:00+03:00",
-   "end": "2026-10-18T17:40:00+03:00",
+   "end": "2026-10-18T17:25:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [],
    "ours": [],
    "athletes": [
     "Aleksei Vlasenko",
-    "Andre Zapata",
     "Andreas Nordeback",
     "Arlet Levandi",
     "Daniel Grassl",
     "David Sedej",
     "Davide Lewton Brain",
-    "Donovan Carrillo",
     "Douglas Gerber",
     "Elias Sayed",
     "Fedirs Kuliss",
@@ -24932,10 +25128,6 @@
      "nation": "HUN"
     },
     {
-     "name": "Andre Zapata",
-     "nation": "ESP"
-    },
-    {
      "name": "Andreas Nordeback",
      "nation": "SWE"
     },
@@ -24954,10 +25146,6 @@
     {
      "name": "Davide Lewton Brain",
      "nation": "MON"
-    },
-    {
-     "name": "Donovan Carrillo",
-     "nation": "MEX"
     },
     {
      "name": "Douglas Gerber",
@@ -25059,7 +25247,6 @@
      "Wesley CHIU": "Wesley Chiu",
      "John KIM": "John Kim",
      "Pablo GARCIA": "Pablo Garcia",
-     "Andre ZAPATA": "Andre Zapata",
      "Arlet LEVANDI": "Arlet Levandi",
      "Matias LINDFORS": "Matias Lindfors",
      "Makar SUNTSEV": "Makar Suntsev",
@@ -25072,7 +25259,6 @@
      "Daniel GRASSL": "Daniel Grassl",
      "Nikita KRIVOSHEYEV": "Nikita Krivosheyev",
      "Fedirs KULISS": "Fedirs Kuliss",
-     "Donovan CARRILLO": "Donovan Carrillo",
      "Davide LEWTON BRAIN": "Davide Lewton Brain",
      "Vladimir SAMOILOV": "Vladimir Samoilov",
      "Matvii YEFYMENKO": "Matvii Yefymenko",
@@ -25156,7 +25342,7 @@
    "seg": "ПП",
    "title": "CS Budapest Trophy — женщины ПП",
    "start": "2026-10-18T17:25:00+03:00",
-   "end": "2026-10-19T00:00:00+03:00",
+   "end": "2026-10-18T23:35:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [],
@@ -25164,17 +25350,12 @@
     {
      "name": "Алина Горбачёва",
      "nation": "AIN2"
-    },
-    {
-     "name": "Мария Захарова",
-     "nation": "AIN2"
     }
    ],
    "athletes": [
     "Alexandra Feigin",
     "Alina Bonillo",
     "Ana Stratulat",
-    "Andrea Montesinos Cantu",
     "Anita Ostlund",
     "Anna Pezzetta",
     "Annika Lytchoff Skibby",
@@ -25204,16 +25385,14 @@
     "Polina Dzsumanyijazova",
     "Sara-Maude Dupuis",
     "Saskia Oudejans",
-    "Selma Valitalo",
     "Sofja Stepcenko",
     "Sophie Joline von Felten",
     "Weronika Ferlin",
     "Zere Sarbalina",
-    "Алина Горбачёва",
-    "Мария Захарова"
+    "Алина Горбачёва"
    ],
    "src": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
-   "desc": "Россияне:\n• Алина Горбачёва\n• Мария Захарова\n\nНачало: 17:25 МСК",
+   "desc": "Россияне:\n• Алина Горбачёва\n\nНачало: 17:25 МСК",
    "field": [
     {
      "name": "Alexandra Feigin",
@@ -25226,10 +25405,6 @@
     {
      "name": "Ana Stratulat",
      "nation": "ROU"
-    },
-    {
-     "name": "Andrea Montesinos Cantu",
-     "nation": "MEX"
     },
     {
      "name": "Anita Ostlund",
@@ -25348,10 +25523,6 @@
      "nation": "NED"
     },
     {
-     "name": "Selma Valitalo",
-     "nation": "FIN"
-    },
-    {
      "name": "Sofja Stepcenko",
      "nation": "LAT"
     },
@@ -25370,10 +25541,6 @@
     {
      "name": "Алина Горбачёва",
      "nation": "AIN2"
-    },
-    {
-     "name": "Мария Захарова",
-     "nation": "AIN2"
     }
    ],
    "live": {
@@ -25383,7 +25550,6 @@
     "first": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG003.htm",
     "names": {
      "Alina GORBACHEVA": "Алина Горбачёва",
-     "Mariia ZAKHAROVA": "Мария Захарова",
      "Haruna MURAKAMI": "Haruna Murakami",
      "Hannah FRANK": "Hannah Frank",
      "Olga MIKUTINA": "Olga Mikutina",
@@ -25395,7 +25561,6 @@
      "Maria Eliise KALJUVERE": "Maria Eliise Kaljuvere",
      "Nataly LANGERBAUR": "Nataly Langerbaur",
      "Lotta ARTIMO": "Lotta Artimo",
-     "Selma VALITALO": "Selma Valitalo",
      "Inga GURGENIDZE": "Inga Gurgenidze",
      "Polina DZSUMANYIJAZOVA": "Polina Dzsumanyijazova",
      "Mariia DMITRIEVA": "Mariia Dmitrieva",
@@ -25406,7 +25571,6 @@
      "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
      "Sofja STEPCENKO": "Sofja Stepcenko",
      "Meda VARIAKOJYTE": "Meda Variakojyte",
-     "Andrea MONTESINOS CANTU": "Andrea Montesinos Cantu",
      "Saskia OUDEJANS": "Saskia Oudejans",
      "Julia van DIJK": "Julia van Dijk",
      "Mia RISA GOMEZ": "Mia Risa Gomez",
@@ -31559,6 +31723,7 @@
   "Vadym Novikov",
   "Valentina Andrianova",
   "Valentina Plazas / Maximiliano Fernandez",
+  "Valeria Huber",
   "Valeriya Ezhova",
   "Valtter Virtanen",
   "Vanesa Selmekova",
@@ -31913,6 +32078,7 @@
   "Арсений Кузнецов",
   "Арсений Федотов",
   "Арсений Шульц",
+  "Артем Валов",
   "Артем Василенко",
   "Артем Гаманов",
   "Артем Ермолаев",
@@ -32293,6 +32459,7 @@
   "Ирина Хавронина / Девид Нарижный",
   "Ирина Щеглова",
   "Искандер Амиров",
+  "Камила Валиева",
   "Камилла Нелюбова",
   "Камилла Шарафутдинова",
   "Камилла Шарафутдинова / Родион Мурасалимов",
@@ -38021,6 +38188,16 @@
    "k": "M"
   },
   {
+   "n": "Александр Брегей",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Александр Галлямов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Александр Иванов",
    "c": "RUS",
    "k": "m"
@@ -38061,6 +38238,11 @@
    "k": "M"
   },
   {
+   "n": "Александра Бойкова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Александра Бойкова / Дмитрий Козловский",
    "c": "RUS",
    "k": "p"
@@ -38084,6 +38266,11 @@
    "n": "Александра Зотова / Максим Абрамов",
    "c": "RUS",
    "k": "d"
+  },
+  {
+   "n": "Александра Игнатова",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Александра Клячина",
@@ -38114,6 +38301,11 @@
    "n": "Александра Прокопец / Александр Васькович",
    "c": "RUS",
    "k": "d"
+  },
+  {
+   "n": "Александра Степанова",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Александра Степанова / Иван Букин",
@@ -38151,6 +38343,11 @@
    "k": "w"
   },
   {
+   "n": "Алексей Белкин",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Алексей Ефременко",
    "c": "RUS",
    "k": "M"
@@ -38159,6 +38356,11 @@
    "n": "Алексей Пычин",
    "c": "RUS",
    "k": "M"
+  },
+  {
+   "n": "Алексей Столяров",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Алексей Тотмин",
@@ -38286,6 +38488,11 @@
    "k": "W"
   },
   {
+   "n": "Альбина Камалдинова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Альбина Камалдинова / Степан Маришин",
    "c": "RUS",
    "k": "P"
@@ -38401,9 +38608,19 @@
    "k": "w"
   },
   {
+   "n": "Анастасия Мишина",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Анастасия Мишина / Александр Галлямов",
    "c": "RUS",
    "k": "p"
+  },
+  {
+   "n": "Анастасия Мухортова",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Анастасия Мухортова / Дмитрий Евгеньев",
@@ -38531,6 +38748,11 @@
    "k": "w"
   },
   {
+   "n": "Анна Билибина",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Анна Билибина / Дмитрий Кашаев",
    "c": "RUS",
    "k": "D"
@@ -38641,6 +38863,11 @@
    "k": "D"
   },
   {
+   "n": "Анна Соболева",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Анна Соболева / Матвей Чураков",
    "c": "RUS",
    "k": "D"
@@ -38649,6 +38876,11 @@
    "n": "Анна Фролова",
    "c": "RUS",
    "k": "w"
+  },
+  {
+   "n": "Анна Щербакова",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Анна Щербакова / Егор Гончаров",
@@ -38806,6 +39038,11 @@
    "k": "M"
   },
   {
+   "n": "Артем Валов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Артем Василенко",
    "c": "RUS",
    "k": "m"
@@ -38814,6 +39051,11 @@
    "n": "Артем Ермолаев",
    "c": "RUS",
    "k": "M"
+  },
+  {
+   "n": "Артем Петров",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Артем Федотов",
@@ -38839,6 +39081,11 @@
    "n": "Артём Бурнаев",
    "c": "RUS",
    "k": "M"
+  },
+  {
+   "n": "Артём Грицаенко",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Артём Ковалёв",
@@ -38946,6 +39193,11 @@
    "k": "W"
   },
   {
+   "n": "Варвара Жданова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Варвара Жданова / Тимур Бабаев-Смирнов",
    "c": "RUS",
    "k": "d"
@@ -38984,6 +39236,11 @@
    "n": "Варвара Саламатина",
    "c": "RUS",
    "k": "w"
+  },
+  {
+   "n": "Варвара Слуцкая",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Варвара Слуцкая / Глеб Гончаров",
@@ -39031,9 +39288,19 @@
    "k": "W"
   },
   {
+   "n": "Василиса Григорьева",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Василиса Григорьева / Евгений Артющенко",
    "c": "RUS",
    "k": "d"
+  },
+  {
+   "n": "Василиса Кагановская",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Василиса Кагановская / Максим Некрасов",
@@ -39044,6 +39311,11 @@
    "n": "Василиса Курлова",
    "c": "RUS",
    "k": "W"
+  },
+  {
+   "n": "Вениамин Башуров",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Вероника Гаспарян",
@@ -39076,6 +39348,11 @@
    "k": "w"
   },
   {
+   "n": "Виктор Потапов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Виктория Большакова / Глеб Большаков",
    "c": "RUS",
    "k": "d"
@@ -39084,6 +39361,11 @@
    "n": "Виктория Городецкая",
    "c": "RUS",
    "k": "W"
+  },
+  {
+   "n": "Виктория Двинина",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Виктория Двинина / Виктор Потапов",
@@ -39186,6 +39468,11 @@
    "k": "M"
   },
   {
+   "n": "Владислав Михайлов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Владислав Морозов",
    "c": "RUS",
    "k": "M"
@@ -39231,6 +39518,11 @@
    "k": "M"
   },
   {
+   "n": "Глеб Гончаров",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Глеб Ковтун",
    "c": "RUS",
    "k": "M"
@@ -39261,9 +39553,19 @@
    "k": "W"
   },
   {
+   "n": "Даниил Горелкин",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Даниил Жолобов",
    "c": "RUS",
    "k": "M"
+  },
+  {
+   "n": "Даниил Овчинников",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Даниил Самсонов",
@@ -39294,6 +39596,11 @@
    "n": "Дарина Томашевич / Александр Богданович",
    "c": "RUS",
    "k": "D"
+  },
+  {
+   "n": "Дарио Чиризано",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Дарья Автомонова",
@@ -39329,6 +39636,11 @@
    "n": "Дарья Дель",
    "c": "RUS",
    "k": "w"
+  },
+  {
+   "n": "Дарья Дрожжина",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Дарья Дрожжина / Иван Тельнов",
@@ -39421,6 +39733,11 @@
    "k": "W"
   },
   {
+   "n": "Девид Нарижный",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Денис Яшин",
    "c": "RUS",
    "k": "M"
@@ -39446,6 +39763,11 @@
    "k": "w"
   },
   {
+   "n": "Дмитрий Евгеньев",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Дмитрий Епифанов",
    "c": "RUS",
    "k": "m"
@@ -39456,14 +39778,34 @@
    "k": "M"
   },
   {
+   "n": "Дмитрий Кашаев",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Дмитрий Козловский",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Дмитрий Кутовой",
    "c": "RUS",
    "k": "M"
   },
   {
+   "n": "Дмитрий Пекин",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Дмитрий Пустовалов",
    "c": "RUS",
    "k": "M"
+  },
+  {
+   "n": "Дмитрий Студеникин",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Дмитрий Шелковников",
@@ -39516,6 +39858,11 @@
    "k": "W"
   },
   {
+   "n": "Евгений Артющенко",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Евгений Магергут",
    "c": "RUS",
    "k": "m"
@@ -39534,6 +39881,11 @@
    "n": "Евгений Семенов",
    "c": "RUS",
    "k": "M"
+  },
+  {
+   "n": "Евгений Устенко",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Евгения Дубовицкая",
@@ -39574,6 +39926,16 @@
    "n": "Егор Васько",
    "c": "RUS",
    "k": "M"
+  },
+  {
+   "n": "Егор Гончаров",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Егор Карнаухов",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Егор Коваленко",
@@ -39641,6 +40003,11 @@
    "k": "w"
   },
   {
+   "n": "Екатерина Миронова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Екатерина Миронова / Евгений Устенко",
    "c": "RUS",
    "k": "d"
@@ -39649,6 +40016,11 @@
    "n": "Екатерина Москаленко",
    "c": "RUS",
    "k": "w"
+  },
+  {
+   "n": "Екатерина Рыбакова",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Екатерина Рыбакова / Иван Махноносов",
@@ -39704,6 +40076,11 @@
    "n": "Екатерина Чекова",
    "c": "RUS",
    "k": "w"
+  },
+  {
+   "n": "Екатерина Чикмарёва",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Екатерина Чикмарёва / Матвей Янченков",
@@ -39836,9 +40213,19 @@
    "k": "W"
   },
   {
+   "n": "Елизавета Осокина",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Елизавета Осокина / Артём Грицаенко",
    "c": "RUS",
    "k": "p"
+  },
+  {
+   "n": "Елизавета Пасечник",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Елизавета Пасечник / Дарио Чиризано",
@@ -39869,6 +40256,11 @@
    "n": "Елизавета Ширяева",
    "c": "RUS",
    "k": "W"
+  },
+  {
+   "n": "Елизавета Шичина",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Елизавета Шичина / Павел Дрозд",
@@ -39921,9 +40313,19 @@
    "k": "P"
   },
   {
+   "n": "Зоя Пестова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Зоя Пестова / Сергей Лагутов",
    "c": "RUS",
    "k": "D"
+  },
+  {
+   "n": "Иван Букин",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Иван Гришановский",
@@ -39936,9 +40338,19 @@
    "k": "M"
   },
   {
+   "n": "Иван Махноносов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Иван Теленков",
    "c": "RUS",
    "k": "M"
+  },
+  {
+   "n": "Иван Тельнов",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Игорь Ефимчук",
@@ -39954,6 +40366,16 @@
    "n": "Илина Аскарова",
    "c": "RUS",
    "k": "W"
+  },
+  {
+   "n": "Илья Вегера",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Илья Княжук",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Илья Мавлянов",
@@ -40051,6 +40473,11 @@
    "k": "p"
   },
   {
+   "n": "Ирина Хавронина",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Ирина Хавронина / Девид Нарижный",
    "c": "AIN2",
    "k": "d"
@@ -40064,6 +40491,11 @@
    "n": "Искандер Амиров",
    "c": "RUS",
    "k": "M"
+  },
+  {
+   "n": "Камила Валиева",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Камилла Нелюбова",
@@ -40114,6 +40546,11 @@
    "n": "Кира Гудаева",
    "c": "RUS",
    "k": "W"
+  },
+  {
+   "n": "Кира Доможирова",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Кира Доможирова / Илья Вегера",
@@ -40446,6 +40883,11 @@
    "k": "M"
   },
   {
+   "n": "Максим Некрасов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Максим Осадчих",
    "c": "RUS",
    "k": "M"
@@ -40661,6 +41103,11 @@
    "k": "W"
   },
   {
+   "n": "Мария Фефелова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Мария Фефелова / Артём Валов",
    "c": "RUS",
    "k": "D"
@@ -40716,14 +41163,34 @@
    "k": "d"
   },
   {
+   "n": "Матвей Богданов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Матвей Ветлугин",
    "c": "RUS",
    "k": "m"
   },
   {
+   "n": "Матвей Лысов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Матвей Чураков",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Матвей Шнайдер",
    "c": "RUS",
    "k": "M"
+  },
+  {
+   "n": "Матвей Янченков",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Мелания Демиденко",
@@ -40734,6 +41201,11 @@
    "n": "Милана Горицкова",
    "c": "RUS",
    "k": "W"
+  },
+  {
+   "n": "Милана Жабина",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Милана Жабина / Вениамин Башуров",
@@ -40749,6 +41221,11 @@
    "n": "Милана Ишкина",
    "c": "RUS",
    "k": "W"
+  },
+  {
+   "n": "Милана Кузьмина",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Милана Кузьмина / Дмитрий Студеникин",
@@ -40886,6 +41363,11 @@
    "k": "w"
   },
   {
+   "n": "Наталья Хабибуллина",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Наталья Чеснокова",
    "c": "RUS",
    "k": "w"
@@ -41011,6 +41493,11 @@
    "k": "p"
   },
   {
+   "n": "Ольга Сабада",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Ольга Сабада / Павел Астахов",
    "c": "RUS",
    "k": "P"
@@ -41031,6 +41518,11 @@
    "k": "d"
   },
   {
+   "n": "Павел Астахов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Павел Гавдис",
    "c": "RUS",
    "k": "M"
@@ -41039,6 +41531,11 @@
    "n": "Павел Грибуля",
    "c": "RUS",
    "k": "M"
+  },
+  {
+   "n": "Павел Дрозд",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Павел Савченко",
@@ -41079,6 +41576,11 @@
    "n": "Полина Винкус",
    "c": "RUS",
    "k": "W"
+  },
+  {
+   "n": "Полина Жарова",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Полина Жарова / Алексей Столяров",
@@ -41136,6 +41638,11 @@
    "k": "w"
   },
   {
+   "n": "Полина Пилипенко",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Полина Пилипенко / Владислав Михайлов",
    "c": "RUS",
    "k": "D"
@@ -41144,6 +41651,11 @@
    "n": "Полина Пунегова / Дмитрий Кашубин",
    "c": "RUS",
    "k": "D"
+  },
+  {
+   "n": "Полина Сажина",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Полина Сажина / Алексей Белкин",
@@ -41161,6 +41673,11 @@
    "k": "w"
   },
   {
+   "n": "Полина Тихонова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Полина Тихонова / Матвей Лысов",
    "c": "RUS",
    "k": "D"
@@ -41169,6 +41686,11 @@
    "n": "Полина Цурикова",
    "c": "RUS",
    "k": "w"
+  },
+  {
+   "n": "Полина Шешелева",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Полина Шешелева / Егор Карнаухов",
@@ -41281,6 +41803,11 @@
    "k": "M"
   },
   {
+   "n": "Сергей Лагутов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Симфония-юниоры",
    "c": "RUS",
    "k": "W"
@@ -41314,6 +41841,11 @@
    "n": "София Дзепка",
    "c": "RUS",
    "k": "W"
+  },
+  {
+   "n": "София Диана Касинс",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "София Диана Касинс / Александр Брегей",
@@ -41394,6 +41926,11 @@
    "n": "Софья Каракан / Андрей Куваев",
    "c": "RUS",
    "k": "d"
+  },
+  {
+   "n": "Софья Леонтьева",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Софья Леонтьева / Даниил Горелкин",
@@ -41496,6 +42033,11 @@
    "k": "D"
   },
   {
+   "n": "Таисия Гусева",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Таисия Гусева / Даниил Овчинников",
    "c": "RUS",
    "k": "P"
@@ -41516,9 +42058,19 @@
    "k": "d"
   },
   {
+   "n": "Таисия Шепталина",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Таисия Шепталина / Дмитрий Пекин",
    "c": "RUS",
    "k": "D"
+  },
+  {
+   "n": "Таисия Щербинина",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Таисия Щербинина / Артём Петров",
@@ -41569,6 +42121,11 @@
    "n": "Тимофей Шелковников",
    "c": "RUS",
    "k": "m"
+  },
+  {
+   "n": "Тимур Бабаев-Смирнов",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Ульяна Бобринева",
@@ -42000,10 +42557,10 @@
   "Глеб Гончаров": "photos/526ab4b5974de9f8.jpg",
   "Ильяс Халиуллин": "photos/03b3ed8f676bc1f2.jpg",
   "Илья Мальков": "photos/b0a076981be0c1e7.jpg",
-  "Василиса Григорьева": "photos/e04df5486381c84e.jpg",
-  "Евгений Артющенко": "photos/0f8d13bb080663ee.jpg",
   "Милана Кузьмина": "photos/782e441e3698299c.jpg",
   "Дмитрий Студеникин": "photos/c312621d8532ec81.jpg",
+  "Василиса Григорьева": "photos/e04df5486381c84e.jpg",
+  "Евгений Артющенко": "photos/0f8d13bb080663ee.jpg",
   "Алина Горбачёва": "photos/2836fb268a4fc4f2.jpg",
   "Евгений Семененко": "photos/ca414e07447938c0.jpg",
   "Aaron Kim": "photos/2cabe002663d6175.jpg",
@@ -42758,7 +43315,7 @@
   "Olexandra Borysova": "photos/0cbdbfe9c2f65ddd.jpg",
   "Aaron Freeman": "photos/5cefadc07992f39e.jpg",
   "Oliver Praetorius": "photos/327025139e680bfd.jpg",
-  "Olivia Elin Phillips": "photos/431dd2c1868faadb.jpg",
+  "Olivia Elin Phillips": "photos/48faf6b799f96276.jpg",
   "Olivia Flores": "photos/938326843651f16c.jpg",
   "Luke Wang": "photos/f3c03fed32e00faa.jpg",
   "Olivia Josephine Shilling": "photos/cff34ecd2b94fb61.jpg",
@@ -43073,6 +43630,8 @@
   "Zofia Kong": "photos/85679eca80fb2bd4.jpg",
   "Zsofia Szeplaki": "photos/1646a9072959fb82.jpg",
   "Агата Петрова": "photos/c652edf0521afd05.jpg",
+  "Александр Брегей": "photos/8092f867753cd664.jpg",
+  "Александра Игнатова": "photos/0b346be9c8885459.jpg",
   "Александра Степанова": "photos/e88051d1a2504b57.jpg",
   "Иван Букин": "photos/b1b355142b1cffff.jpg",
   "Алиса Двоеглазова": "photos/0a9853d68a9febc1.jpg",
@@ -43084,29 +43643,36 @@
   "Анна Мельникова": "photos/b0f250db81b2449d.jpg",
   "Ярослав Нечаев": "photos/df55625c66ca78c1.jpg",
   "Арина Ореховская": "photos/6831ae69f3f0ed09.jpg",
+  "Артем Валов": "photos/3a4bc76fdaac239e.jpg",
+  "Артем Петров": "photos/78205d1cb179d6d3.jpg",
   "Артур Даниелян": "photos/9c796cda9eb47234.jpg",
+  "Артём Грицаенко": "photos/4571ea6d24a1eefb.jpg",
   "Артём Ковалёв": "photos/a26c61576d122d42.jpg",
   "Варвара Жданова": "photos/ccff8e28b7109f23.jpg",
   "Тимур Бабаев-Смирнов": "photos/e8bf142b570226ab.jpg",
-  "Виктория Двинина": "photos/164d9469df06fd00.jpg",
+  "Вениамин Башуров": "photos/ae1b24a002e63256.jpg",
   "Виктор Потапов": "photos/1956e68cedaa06d2.jpg",
+  "Виктория Двинина": "photos/164d9469df06fd00.jpg",
+  "Владислав Михайлов": "photos/7a887ede47b542b9.jpg",
   "Владислав Морозов": "photos/322d1b6d72f6e82d.jpg",
   "Герман Ленков": "photos/8a45af19bdf05832.jpg",
   "Григорий Фёдоров": "photos/e9d6d72380fc53af.jpg",
+  "Даниил Горелкин": "photos/fe0d336b6eec7d47.jpg",
   "Даниил Самсонов": "photos/6e3594c9c71973ee.jpg",
   "Дарья Садкова": "photos/2f9d0d702c7d92fa.jpg",
+  "Евгений Устенко": "photos/04c70ff2bf9e08f3.jpg",
   "Егор Баулин": "photos/57c376fd3ad31463.jpg",
   "Екатерина Комарова": "photos/4f7780a84af50b7e.jpg",
   "Екатерина Миронова": "photos/6122af157b8b1936.jpg",
-  "Евгений Устенко": "photos/04c70ff2bf9e08f3.jpg",
   "Елена Костылева": "photos/c422dae541f062b0.jpg",
   "Елизавета Крылова": "photos/f9fe03da1087b098.jpg",
   "Елизавета Осокина": "photos/d24df7c043d92f71.jpg",
-  "Артём Грицаенко": "photos/4571ea6d24a1eefb.jpg",
   "Игорь Ефимчук": "photos/165d677ce5d4018c.jpg",
+  "Илья Вегера": "photos/71a88a9927c08c68.jpg",
+  "Илья Княжук": "photos/e4e79b12689ab818.jpg",
+  "Камила Валиева": "photos/08b90431c8647797.jpg",
   "Камилла Нелюбова": "photos/c783361fe66b7260.jpg",
   "Кира Доможирова": "photos/645c5737b4fabb7e.jpg",
-  "Илья Вегера": "photos/71a88a9927c08c68.jpg",
   "Ксения Гущина": "photos/dce385ccbaaae8e4.jpg",
   "Лев Лазарев": "photos/300b999c4ba66a05.jpg",
   "Лидия Плескачёва": "photos/4a76c0cf6b4a5334.jpg",
@@ -43116,24 +43682,21 @@
   "Мария Иванова": "photos/7258a9b0226bdc42.jpg",
   "Мария Котова": "photos/c25ef061b55b49a8.jpg",
   "Марк Кондратюк": "photos/25ee206a266901df.jpg",
+  "Матвей Лысов": "photos/fe03ef8b0c8c6b15.jpg",
   "Милана Жабина": "photos/387d2a05988efb7b.jpg",
-  "Вениамин Башуров": "photos/ae1b24a002e63256.jpg",
+  "Наталья Хабибуллина": "photos/5d00076d80f1c0bb.jpg",
   "Никита Волин": "photos/3c2976cf377f2523.jpg",
   "Никита Сарновский": "photos/a8c9699198acee9c.jpg",
   "Ольга Сабада": "photos/0646a30022886dd6.jpg",
   "Павел Астахов": "photos/96f08d226687272a.jpg",
   "Полина Королькова": "photos/2858f5ac2e5fbef1.jpg",
   "Полина Пилипенко": "photos/981964ec062e819b.jpg",
-  "Владислав Михайлов": "photos/7a887ede47b542b9.jpg",
   "Полина Тихонова": "photos/679bc99f57ef7554.jpg",
-  "Матвей Лысов": "photos/fe03ef8b0c8c6b15.jpg",
   "Роман Савосин": "photos/d69ea28183cf1ca4.jpg",
   "София Дзепка": "photos/6b04227e16da0ee8.jpg",
   "София Диана Касинс": "photos/00a4dcf4e8aeac13.jpg",
-  "Александр Брегей": "photos/8092f867753cd664.jpg",
   "Софья Акатьева": "photos/947ca6aa3667b64e.jpg",
   "Софья Леонтьева": "photos/6b78f4df7f4b4c3f.jpg",
-  "Даниил Горелкин": "photos/fe0d336b6eec7d47.jpg",
   "Софья Муравьёва": "photos/5fd5745bd659b30f.jpg",
   "Софья Шевченко": "photos/7c69f6b8c77b8b88.jpg",
   "Таисия Щербинина": "photos/fe3bba16274e2e3d.jpg",
