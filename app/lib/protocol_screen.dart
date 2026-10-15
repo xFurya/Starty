@@ -9,11 +9,15 @@ import 'data.dart';
 import 'live.dart' show personKey;
 import 'palette.dart';
 import 'protocol_model.dart';
+import 'protocol_details.dart';
 import 'protocol_repo.dart';
 import 'ui.dart';
 
 /// Оригинал на табло — во внешнем браузере. Одинаково на всех платформах: кнопка «Оригинал протокола».
-Future<void> openOriginal(BuildContext context, String url) async {
+Future<void> openOriginal(BuildContext context, String url) => launchOriginal(url);
+
+/// То же без контекста: окно браузера, не встроенный просмотр.
+Future<void> launchOriginal(String url) async {
   if (url.isEmpty) return;
   await launchUrl(Uri.parse(url), webOnlyWindowName: '_blank', mode: LaunchMode.externalApplication);
 }
@@ -48,28 +52,39 @@ ProtocolView protocolView(
   required bool hasField,
   DateTime? built,
 }) {
+  // Любой сбой при наличии сохранённого файла — сохранённая версия; без него — короткий текст
+  // (экран в этом случае не открывается, оригинал уходит во внешний браузер, см. [ProtocolScreen]).
+  final (cached, cachedAt) = savedOf(load);
+  if (cached != null && cachedAt != null) {
+    final v = _inFile(category, tab, hasField: hasField, built: cached.built);
+    // сохранённая версия: строки есть, но статус — что связи нет и когда файл сохранён
+    return ProtocolView(
+      'Нет связи · сохранено ${_dm(cachedAt)}, ${hm(cachedAt)}',
+      ProtocolTone.quiet,
+      retry: true,
+      rows: v.rows,
+      application: v.application,
+    );
+  }
   switch (load) {
     case ProtocolFormatError():
       return const ProtocolView('Экран для этого протокола недоступен', ProtocolTone.quiet);
     case ProtocolMissing():
       return _noProtocol(hasField);
-    case ProtocolNetError(:final cached, :final cachedAt):
-      if (cached == null || cachedAt == null) {
-        return const ProtocolView('Нет связи с сервером', ProtocolTone.quiet, retry: true);
-      }
-      final v = _inFile(category, tab, hasField: hasField, built: cached.built);
-      // сохранённая версия: строки есть, но статус — что связи нет и когда файл сохранён
-      return ProtocolView(
-        'Нет связи · сохранено ${_dm(cachedAt)}, ${hm(cachedAt)}',
-        ProtocolTone.quiet,
-        retry: true,
-        rows: v.rows,
-        application: v.application,
-      );
+    case ProtocolNetError():
+      return const ProtocolView('Нет связи с сервером', ProtocolTone.quiet, retry: true);
     case ProtocolOk():
       return _inFile(category, tab, hasField: hasField, built: built);
   }
 }
+
+/// Сохранённая версия файла и время её сохранения при любом сбое загрузки; (null, null) — её нет или загрузка удалась.
+(ProtocolDoc?, DateTime?) savedOf(ProtocolLoad load) => switch (load) {
+  ProtocolNetError(:final cached, :final cachedAt) => (cached, cachedAt),
+  ProtocolMissing(:final cached, :final cachedAt) => (cached, cachedAt),
+  ProtocolFormatError(:final cached, :final cachedAt) => (cached, cachedAt),
+  ProtocolOk() => (null, null),
+};
 
 ProtocolView _noProtocol(bool hasField) => hasField
     ? const ProtocolView('Протокола пока нет · состав по заявке', ProtocolTone.quiet, application: true)
@@ -138,7 +153,10 @@ class ProtocolScreen extends StatefulWidget {
 
   /// Для тестов; в приложении — общий репозиторий.
   final ProtocolRepo? repo;
-  const ProtocolScreen({super.key, required this.start, this.repo});
+
+  /// Открытие оригинала при сбое файла; в тестах подменяется.
+  final Future<void> Function(String url)? opener;
+  const ProtocolScreen({super.key, required this.start, this.repo, this.opener});
 
   @override
   State<ProtocolScreen> createState() => _ProtocolScreenState();
@@ -149,6 +167,7 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
   bool _busy = false;
   String? _catKey, _tab;
   final Set<String> _open = {};
+  bool _panelOpen = false;
 
   ProtocolRepo get _repo => widget.repo ?? ProtocolRepo.app;
 
@@ -163,6 +182,15 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
     setState(() => _busy = true);
     final load = proto == null ? const ProtocolMissing() : await _repo.load(proto);
     if (!mounted) return;
+    // Нет ни свежего файла, ни сохранённого: наш экран показать нечего — открываем оригинал и уходим.
+    if (load is! ProtocolOk && savedOf(load).$1 == null && widget.start.src.isNotEmpty) {
+      setState(() => _busy = false);
+      try {
+        await (widget.opener ?? launchOriginal)(widget.start.src);
+      } catch (_) {}
+      if (mounted) Navigator.of(context).maybePop();
+      return;
+    }
     setState(() {
       _load = load;
       _busy = false;
@@ -173,8 +201,8 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
   /// Файл протокола, который показываем: свежий или сохранённый (при сбое сети).
   ProtocolDoc? get _doc => switch (_load) {
     ProtocolOk(:final doc) => doc,
-    ProtocolNetError(:final cached) => cached,
-    _ => null,
+    final ProtocolLoad l => savedOf(l).$1,
+    null => null,
   };
 
   List<ProtocolCategory> get _cats => _doc?.categories ?? const [];
@@ -315,6 +343,7 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
                         if (i > 0) const Hairline(indent: 16),
                         _ResultRow(
                           row: view.rows[i],
+                          panel: seg?.panel ?? const [],
                           ours: ours.contains(personKey(view.rows[i].name)),
                           total: tab == totalTab,
                           cols: tab == totalTab ? (cat?.total?.cols ?? const []) : const [],
@@ -357,6 +386,14 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
                   onTap: _busy ? null : _reload,
                 ),
               ],
+              if (seg != null && seg.panel.isNotEmpty) ...[
+                const SizedBox(height: 14),
+                PanelBlock(
+                  panel: seg.panel,
+                  open: _panelOpen,
+                  onTap: () => setState(() => _panelOpen = !_panelOpen),
+                ),
+              ],
               if (seg != null && seg.judges != null) ...[
                 const SizedBox(height: 14),
                 SheetButton(
@@ -381,7 +418,12 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
 
   /// Раскрывается строка, где есть судейские оценки или элементы.
   static bool _hasDetails(ProtocolRow r) =>
-      r.tes != null || r.pcs != null || r.ded != null || r.elements.isNotEmpty || r.components.isNotEmpty;
+      r.tes != null ||
+      r.pcs != null ||
+      r.ded != null ||
+      r.elements.isNotEmpty ||
+      r.components.isNotEmpty ||
+      r.deductions.isNotEmpty;
 }
 
 /// Статус под переключателем: точка и текст.
@@ -449,9 +491,11 @@ class _ResultRow extends StatelessWidget {
   final ProtocolRow row;
   final bool ours, total, open;
   final List<String> cols;
+  final List<ProtocolJudge> panel;
   final VoidCallback? onTap;
   const _ResultRow({
     required this.row,
+    required this.panel,
     required this.ours,
     required this.total,
     required this.cols,
@@ -533,57 +577,7 @@ class _ResultRow extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           InkWell(onTap: onTap, child: body),
-          if (open) _Details(row: row),
-        ],
-      ),
-    );
-  }
-}
-
-/// Раскрытие строки: TES, PCS, снижение, элементы с базой и GOE, компоненты. Пустого не показываем.
-class _Details extends StatelessWidget {
-  final ProtocolRow row;
-  const _Details({required this.row});
-  @override
-  Widget build(BuildContext context) {
-    final p = Palette.of(context);
-    final style = TextStyle(fontSize: 13.5, fontWeight: FontWeight.w600, color: p.ink, fontFeatures: tnum);
-    final label = TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: p.ink2);
-    Widget cell(String name, String? value) => value == null
-        ? const SizedBox.shrink()
-        : Padding(
-            padding: const EdgeInsets.only(right: 16, bottom: 6),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [Text(name, style: label), const SizedBox(width: 6), Text(value, style: style)],
-            ),
-          );
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Wrap(
-            children: [
-              cell('TES', row.tes),
-              cell('PCS', row.pcs),
-              cell('Снижение', row.ded),
-            ],
-          ),
-          for (final e in row.elements)
-            Padding(
-              padding: const EdgeInsets.only(bottom: 6),
-              child: Row(
-                children: [
-                  Expanded(child: Text(e.name, style: style)),
-                  Text('база ${e.base ?? '—'}', style: label),
-                  const SizedBox(width: 12),
-                  Text('GOE ${e.goe ?? '—'}', style: style),
-                ],
-              ),
-            ),
-          if (row.components.isNotEmpty)
-            Text('Компоненты ${row.components.join(' · ')}', style: label),
+          if (open) Details(row: row, panel: panel),
         ],
       ),
     );

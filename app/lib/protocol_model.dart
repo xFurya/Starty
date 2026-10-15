@@ -177,6 +177,9 @@ class ProtocolSegment {
   final int skipped;
   final List<ProtocolRow> rows;
 
+  /// Судейская бригада сегмента; пусто — в файле её нет (блок не показываем).
+  final List<ProtocolJudge> panel;
+
   const ProtocolSegment({
     required this.code,
     required this.name,
@@ -189,6 +192,7 @@ class ProtocolSegment {
     this.basis,
     this.skipped = 0,
     this.rows = const [],
+    this.panel = const [],
   });
 
   /// Сегмент с битыми полями: показываем только его состояние «формат», строк нет.
@@ -240,7 +244,21 @@ class ProtocolSegment {
       basis: basis as String?,
       skipped: skipped is int && skipped > 0 ? skipped : 0,
       rows: parsed,
+      // судья без номера и имени пропускается; битый список судей сегмент не ломает
+      panel: _maps(judges is List ? judges : null, ProtocolJudge.tryParse),
     );
+  }
+}
+
+/// Судья сегмента: номер на табло (J1), имя и страна. Всё необязательное, но не пустое целиком.
+class ProtocolJudge {
+  final String no, name, nation;
+  const ProtocolJudge({required this.no, required this.name, this.nation = ''});
+
+  static ProtocolJudge? tryParse(Map<String, dynamic> j) {
+    final no = _text(j['no']), name = _text(j['name']);
+    if (no.isEmpty && name.isEmpty) return null;
+    return ProtocolJudge(no: no, name: name, nation: _text(j['nation']));
   }
 }
 
@@ -257,11 +275,17 @@ class ProtocolRow {
   final String nation;
   final String? points, tes, pcs, ded;
 
-  /// Элементы с базой и GOE. В контракте 2.3 их пока нет: поле необязательное, см. protocol_model_test.
+  /// Сумма базовых стоимостей элементов (bv) и стартовая отметка (start): необязательные, как в файле.
+  final String? bv, start;
+
+  /// Элементы с базой, GOE и оценкой. Пусто — в файле их нет (блок не показываем).
   final List<ProtocolElement> elements;
 
-  /// Оценки за компоненты, как на табло (например 7.25, 6.75, 7.00). Необязательное поле.
-  final List<String> components;
+  /// Компоненты: название, коэффициент, оценки судей, итог. Пусто — блок не показываем.
+  final List<ProtocolComponent> components;
+
+  /// Сбавки с расшифровкой («Падения» -1.00). Пусто — перечня нет, но сумма [ded] может быть.
+  final List<ProtocolDeduction> deductions;
 
   /// Итог вида: значения колонок по сегментам (как на табло); для сегмента — null.
   final List<String?>? parts;
@@ -277,8 +301,11 @@ class ProtocolRow {
     this.tes,
     this.pcs,
     this.ded,
+    this.bv,
+    this.start,
     this.elements = const [],
     this.components = const [],
+    this.deductions = const [],
     this.parts,
   });
 
@@ -302,26 +329,97 @@ class ProtocolRow {
       pcs: _score(j['pcs']),
       // снижение может быть отрицательным
       ded: _signed(j['ded']),
-      elements: [
-        for (final e in (j['els'] as List? ?? const [])) if (e is Map) ProtocolElement.parse(Map<String, dynamic>.from(e)),
-      ],
-      components: [for (final c in (j['comp'] as List? ?? const [])) if (_score(c) != null) _score(c)!],
+      bv: _score(j['bv']),
+      start: _startMark(j['start']),
+      elements: _maps(j['els'], ProtocolElement.tryParse),
+      components: _maps(j['comp'], ProtocolComponent.tryParse),
+      deductions: _maps(j['deds'], ProtocolDeduction.tryParse),
       parts: parts is List ? [for (final p in parts) _part(p)] : null,
     );
   }
 }
 
-/// Элемент программы: название (как на табло), базовая стоимость, GOE. Значения — строки или null.
+/// Элемент программы: номер, код (как на табло), отметки, база, GOE, оценки судей, итог элемента.
+/// Все числа — строки или null: нет поля — прочерк, а не ноль.
 class ProtocolElement {
+  final int? no;
   final String name;
-  final String? base, goe;
-  const ProtocolElement({required this.name, this.base, this.goe});
 
-  static ProtocolElement parse(Map<String, dynamic> j) => ProtocolElement(
-    name: _str(j['n']),
-    base: _score(j['b']),
-    goe: _signed(j['g']),
-  );
+  /// Отметки судей/технического специалиста («<», «q», «e», «!»); пустая строка — нет.
+  final String info;
+  final String? base, goe, score;
+
+  /// База с пометкой x (прыжок во второй половине программы, бонус).
+  final bool x;
+
+  /// Оценки GOE судей; null — судья не выставил (прочерк на своём месте).
+  final List<num?> judges;
+
+  const ProtocolElement({
+    this.no,
+    required this.name,
+    this.info = '',
+    this.base,
+    this.x = false,
+    this.goe,
+    this.judges = const [],
+    this.score,
+  });
+
+  /// Элемент без названия не показывается: его нечем назвать.
+  static ProtocolElement? tryParse(Map<String, dynamic> j) {
+    final name = _text(j['n']);
+    if (name.isEmpty) return null;
+    final no = j['no'];
+    return ProtocolElement(
+      no: no is int ? no : null,
+      name: name,
+      info: _text(j['info']),
+      base: _score(j['b']),
+      x: j['x'] == true,
+      goe: _signed(j['g']),
+      judges: _marks(j['j']),
+      score: _score(j['s']),
+    );
+  }
+}
+
+/// Компонент программы: название, коэффициент, оценки судей, итог.
+class ProtocolComponent {
+  final String name;
+
+  /// Коэффициент (1.33); null — нет в файле.
+  final String? factor;
+  final List<num?> judges;
+  final String? score;
+  const ProtocolComponent({required this.name, this.factor, this.judges = const [], this.score});
+
+  static ProtocolComponent? tryParse(Map<String, dynamic> j) {
+    final name = _text(j['n']);
+    if (name.isEmpty) return null;
+    final f = j['f'];
+    return ProtocolComponent(
+      name: name,
+      factor: f is num && f.isFinite && f > 0 ? _trimZeros(f) : null,
+      judges: _marks(j['j']),
+      score: _score(j['s']),
+    );
+  }
+}
+
+/// Сбавка: название («Падения») и значение (отрицательное).
+class ProtocolDeduction {
+  final String name;
+
+  /// Сумма сбавки со знаком; null — нет в файле.
+  final String? value;
+  const ProtocolDeduction({required this.name, this.value});
+
+  static ProtocolDeduction? tryParse(Map<String, dynamic> j) {
+    final name = _text(j['n']);
+    if (name.isEmpty) return null;
+    return ProtocolDeduction(name: name, value: _signed(j['v']));
+  }
 }
 
 /// Итог вида (CATnnnRS): колонки по сегментам и строки.
@@ -392,6 +490,28 @@ class _Broken implements Exception {
 }
 
 String _str(Object? v) => v is String ? v : '';
+
+/// Строка или число как текст; остальное — пусто. Пробелы по краям убираем.
+String _text(Object? v) => v is String ? v.trim() : (v is num ? '$v' : '');
+
+/// Разбор необязательного списка объектов: не список — пусто, негодный элемент пропускается.
+List<T> _maps<T>(Object? v, T? Function(Map<String, dynamic>) parse) => [
+  if (v is List)
+    for (final e in v)
+      if (e is Map) ?parse(Map<String, dynamic>.from(e)),
+];
+
+/// Оценки судей: число или null (судья не выставил). Не число — тоже null: мусор не превращаем в ноль.
+List<num?> _marks(Object? v) => [if (v is List) for (final m in v) m is num && m.isFinite ? m : null];
+
+/// 1.33 -> «1.33», 2.0 -> «2», 1.5 -> «1.5».
+String _trimZeros(num v) => v.toStringAsFixed(2).replaceFirst(RegExp(r'\.?0+$'), '');
+
+/// Стартовая отметка: число или короткая строка; пустое — null.
+String? _startMark(Object? v) {
+  final t = _text(v);
+  return t.isEmpty || t.length > 12 ? null : t;
+}
 
 /// Строка-число вида NN.NN; иное — null (показываем прочерк, не число).
 String? _score(Object? v) {

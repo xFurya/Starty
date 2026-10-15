@@ -29,15 +29,20 @@ final class ProtocolNetError extends ProtocolLoad {
   const ProtocolNetError({this.cached, this.cachedAt});
 }
 
-/// Файла нет (404): турнир ещё не собран.
+/// Файла нет (404): турнир ещё не собран. [cached] — последний удачный файл, если он есть.
 final class ProtocolMissing extends ProtocolLoad {
-  const ProtocolMissing();
+  final ProtocolDoc? cached;
+  final DateTime? cachedAt;
+  const ProtocolMissing({this.cached, this.cachedAt});
 }
 
 /// Файл пришёл, но не разобран целиком: не JSON, другая версия или нет обязательных полей.
+/// [cached] — последний удачный файл, если он есть.
 final class ProtocolFormatError extends ProtocolLoad {
   final String message;
-  const ProtocolFormatError(this.message);
+  final ProtocolDoc? cached;
+  final DateTime? cachedAt;
+  const ProtocolFormatError(this.message, {this.cached, this.cachedAt});
 }
 
 class ProtocolRepo {
@@ -69,7 +74,7 @@ class ProtocolRepo {
     } catch (_) {
       return _netError(cached);
     }
-    if (r.statusCode == 404 || r.statusCode == 410) return const ProtocolMissing();
+    if (r.statusCode == 404 || r.statusCode == 410) return ProtocolMissing(cached: cached?.doc, cachedAt: cached?.at);
     if (r.statusCode != 200) return _netError(cached);
     final String body;
     final ProtocolDoc fresh;
@@ -77,9 +82,9 @@ class ProtocolRepo {
       body = utf8.decode(r.bodyBytes);
       fresh = ProtocolDoc.fromJsonString(body);
     } on FormatException catch (e) {
-      return ProtocolFormatError(e.message);
+      return ProtocolFormatError(e.message, cached: cached?.doc, cachedAt: cached?.at);
     } on ProtocolFormatException catch (e) {
-      return ProtocolFormatError(e.message);
+      return ProtocolFormatError(e.message, cached: cached?.doc, cachedAt: cached?.at);
     }
     final old = cached?.doc;
     final (merged, keptFinal) = old == null ? (fresh, false) : keepFinal(fresh, old);

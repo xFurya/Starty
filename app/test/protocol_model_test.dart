@@ -146,20 +146,151 @@ void main() {
     test('снижение может быть отрицательным', () {
       expect(row({'ded': '-1.00'}).ded, '-1.00');
     });
-    test('элементы и компоненты: необязательные поля (не в контракте 2.3, см. protocol_screen)', () {
+    test('полный контракт строки: элементы, компоненты, сбавки, суммы', () {
+      final r = row({
+        'bv': 20.30,
+        'start': 6,
+        'els': [
+          {'no': 1, 'n': '3Lz+3T', 'info': '<', 'b': 10.10, 'x': true, 'g': 1.21, 'j': [1, 2, null, 1], 's': 11.31},
+          {'no': 2, 'n': 'FCSp4', 'b': '3.20', 'g': -0.4, 's': 2.8},
+        ],
+        'comp': [
+          {'n': 'Композиция', 'f': 1.33, 'j': [8.25, 8.0, null], 's': 8.36},
+        ],
+        'deds': [
+          {'n': 'Падения', 'v': -1.0},
+        ],
+      });
+      expect(r.bv, '20.30');
+      expect(r.start, '6');
+      final e = r.elements.first;
+      expect((e.no, e.name, e.info, e.base, e.x, e.goe, e.score), (1, '3Lz+3T', '<', '10.10', true, '1.21', '11.31'));
+      expect(e.judges, [1, 2, null, 1], reason: 'null судьи сохраняется на своём месте');
+      expect(r.elements.last.goe, '-0.40');
+      expect(r.elements.last.x, isFalse);
+      expect(r.elements.last.judges, isEmpty);
+      final c = r.components.single;
+      expect((c.name, c.factor, c.score), ('Композиция', '1.33', '8.36'));
+      expect(c.judges, [8.25, 8.0, null]);
+      expect(r.deductions.single.name, 'Падения');
+      expect(r.deductions.single.value, '-1.00');
+    });
+
+    test('нет необязательных полей — null и пустые списки, а не нули', () {
+      final r = row({});
+      expect(r.bv, isNull);
+      expect(r.start, isNull);
+      expect(r.elements, isEmpty);
+      expect(r.components, isEmpty);
+      expect(r.deductions, isEmpty);
+      final e = row({
+        'els': [
+          {'n': 'StSq'},
+        ],
+        'comp': [
+          {'n': 'Композиция'},
+        ],
+        'deds': [
+          {'n': 'Падения'},
+        ],
+      });
+      expect((e.elements.single.base, e.elements.single.goe, e.elements.single.score), (null, null, null));
+      expect(e.elements.single.x, isFalse);
+      expect(e.elements.single.info, '');
+      expect(e.elements.single.judges, isEmpty);
+      expect((e.components.single.factor, e.components.single.score), (null, null));
+      expect(e.deductions.single.value, isNull);
+    });
+
+    test('мусор в j — null, не ноль; не список — пусто', () {
       final r = row({
         'els': [
-          {'n': '3Lz', 'b': '6.00', 'g': '+1.10'},
-          {'n': 'FCSp4', 'b': '3.20', 'g': 'большой'},
-          'мусор',
+          {'n': 'A', 'j': [1, 'x', null, double.nan.toString(), 2.5]},
+          {'n': 'B', 'j': 'нет'},
+          {'n': 'C', 'j': null},
         ],
-        'comp': ['7.25', '6.75', '7.00'],
       });
-      expect(r.elements.map((e) => e.name), ['3Lz', 'FCSp4']);
-      expect(r.elements.first.base, '6.00');
-      expect(r.elements.first.goe, '+1.10');
-      expect(r.elements.last.goe, isNull, reason: 'GOE не число — прочерк');
-      expect(r.components, ['7.25', '6.75', '7.00']);
+      expect(r.elements[0].judges, [1, null, null, null, 2.5]);
+      expect(r.elements[1].judges, isEmpty);
+      expect(r.elements[2].judges, isEmpty);
+    });
+
+    test('негодные элементы, компоненты и сбавки пропускаются, остальные читаются', () {
+      final r = row({
+        'els': [
+          'мусор',
+          {'no': 1},
+          {'n': '  '},
+          {'n': '3Lo', 'b': 'много', 'g': 'большой', 's': '1,5'},
+        ],
+        'comp': ['7.25', 5, {'f': 1.0}, {'n': 'Скольжение', 'f': -1, 's': 'x'}],
+        'deds': [null, {'v': -1.0}, {'n': 'Время', 'v': 'минус'}],
+      });
+      expect(r.elements.map((e) => e.name), ['3Lo']);
+      expect((r.elements.single.base, r.elements.single.goe, r.elements.single.score), (null, null, null));
+      expect(r.components.single.name, 'Скольжение');
+      expect((r.components.single.factor, r.components.single.score), (null, null));
+      expect(r.deductions.single.value, isNull);
+    });
+
+    test('поля els/comp/deds не списком — пусто, строка цела', () {
+      final r = row({'els': 5, 'comp': 'x', 'deds': {'n': 'a'}});
+      expect(r.name, isNotEmpty);
+      expect(r.elements, isEmpty);
+      expect(r.components, isEmpty);
+      expect(r.deductions, isEmpty);
+    });
+
+    test('коэффициент без хвостовых нулей: 2 — «2», 1.5 — «1.5»', () {
+      final r = row({
+        'comp': [
+          {'n': 'a', 'f': 2.0},
+          {'n': 'b', 'f': 1.5},
+          {'n': 'c', 'f': 1.33},
+        ],
+      });
+      expect(r.components.map((c) => c.factor), ['2', '1.5', '1.33']);
+    });
+  });
+
+  group('судьи сегмента', () {
+    List<ProtocolJudge> panel(Object? judges) {
+      final j = sample();
+      seg(j)['judges'] = judges;
+      return ProtocolDoc.fromJson(j).categories.first.segments.first.panel;
+    }
+
+    test('список судей читается', () {
+      final p = panel([
+        {'no': 'J1', 'name': 'Мария ПЕТРОВА', 'nation': 'RUS'},
+        {'no': 'J2', 'name': 'Иван СИДОРОВ'},
+      ]);
+      expect(p.map((j) => (j.no, j.name, j.nation)), [('J1', 'Мария ПЕТРОВА', 'RUS'), ('J2', 'Иван СИДОРОВ', '')]);
+    });
+
+    test('поля нет, null, пусто или мусор — судей нет, сегмент цел', () {
+      expect(panel(null), isEmpty);
+      expect(panel([]), isEmpty);
+      expect(panel(['a', 1, {}, {'nation': 'RUS'}]), isEmpty);
+      final j = sample();
+      seg(j)['judges'] = {'no': 'J1'};
+      expect(ProtocolDoc.fromJson(j).categories.first.segments.first.state, SegmentState.finalized);
+    });
+
+    test('ссылка на оценки (строка в judges) по-прежнему читается как адрес, судей нет', () {
+      final s = ProtocolDoc.fromJson(sample()).categories.first.segments.first;
+      expect(s.judges, endsWith('.pdf'));
+      expect(s.panel, isEmpty);
+    });
+
+    test('список судей не ломает строки сегмента', () {
+      final j = sample();
+      seg(j)['judges'] = [
+        {'no': 'J1', 'name': 'Мария ПЕТРОВА'},
+      ];
+      final s = ProtocolDoc.fromJson(j).categories.first.segments.first;
+      expect(s.judges, isNull);
+      expect(s.rows, hasLength(2));
     });
   });
 

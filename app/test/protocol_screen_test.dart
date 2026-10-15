@@ -1,6 +1,7 @@
 // Экран протокола: состояния из утверждённых макетов, ширины 360/390/430, масштаб текста 1.0 и 1.3,
 // светлая и тёмная темы; горизонтальной прокрутки и переполнений нет.
 // Шрифты — настоящие (Manrope, Cormorant), как в views_test.
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -23,11 +24,41 @@ Future<void> _font(String family, List<String> files) async {
   await l.load();
 }
 
+const _pair = 'Анна Павловна Билибина / Дмитрий Владимирович Кашаев';
+
 final _now = DateTime.utc(2026, 10, 15, 19, 0); // 22:00 по Москве
 
 Map<String, dynamic> sample() => jsonDecode(File('test/protocol/sample.json').readAsStringSync()) as Map<String, dynamic>;
 
 Map<String, dynamic> _seg(Map<String, dynamic> j) => ((j['categories'] as List).first as Map)['segments'].first as Map<String, dynamic>;
+
+/// Файл с расширенным контрактом: элементы, компоненты, сбавки, оценки судей (с пропуском — null).
+Map<String, dynamic> withDetails() {
+  final j = sample();
+  final r = (_seg(j)['rows'] as List).first as Map<String, dynamic>;
+  r['bv'] = 20.30;
+  r['start'] = 6;
+  r['els'] = [
+    {'no': 1, 'n': '3Lz+3T', 'info': '<', 'b': 10.10, 'x': true, 'g': 1.21, 'j': [1, 2, null, 1, 0], 's': 11.31},
+    {'no': 2, 'n': 'FCSp4', 'b': 3.20, 'g': -0.40, 'j': [0, -1, -1, 0, 0], 's': 2.80},
+  ];
+  r['comp'] = [
+    {'n': 'Композиция', 'f': 1.33, 'j': [8.25, 8.0, 8.5], 's': 8.36},
+  ];
+  r['deds'] = [
+    {'n': 'Падения', 'v': -1.0},
+  ];
+  r['ded'] = '-1.00';
+  return j;
+}
+
+/// Категории файла с длинными названиями элементов и компонентов: худший случай для узкой ширины.
+List<dynamic> _longNames(Map<String, dynamic> j) {
+  final r = (_seg(j)['rows'] as List).first as Map<String, dynamic>;
+  (r['els'] as List).add({'no': 3, 'n': 'FCCoSp4+kombinatsiya', 'info': '< e !', 'b': 100.10, 'x': true, 'g': -12.34, 'j': List.filled(9, 5), 's': 99.99});
+  (r['comp'] as List).add({'n': 'Исполнение и интерпретация музыки', 'f': 1.33, 'j': List.filled(9, 8.25), 's': 8.36});
+  return j['categories'] as List;
+}
 
 /// Файл с другим состоянием ритм-танца; [basis] — только для окончательного.
 Map<String, dynamic> withState(String state, {String? basis = 'judges'}) {
@@ -64,7 +95,9 @@ ProtocolRepo repoWith(Object? first, {Object? then}) {
     client: MockClient((r) async {
       final body = n++ == 0 ? first : then;
       if (body == null) throw const _NetDown();
-      if (body == 404) return http.Response('', 404);
+      if (body == 'timeout') throw TimeoutException('15 секунд');
+      if (body is int) return http.Response('', body); // код ответа без тела: 404, 500
+      if (body is String) return http.Response.bytes(utf8.encode(body), 200); // сырое тело: пустое, не JSON
       if (body is! Map) throw StateError('нет фикстуры');
       return http.Response.bytes(utf8.encode(jsonEncode(body)), 200, headers: {'content-type': 'application/json; charset=utf-8'});
     }),
@@ -82,6 +115,7 @@ Future<void> pumpScreen(
   double width = 390,
   double scale = 1.0,
   Brightness brightness = Brightness.light,
+  List<String>? opened,
 }) async {
   tester.view.physicalSize = Size(width, 900);
   tester.view.devicePixelRatio = 1.0;
@@ -94,7 +128,11 @@ Future<void> pumpScreen(
         data: MediaQuery.of(c).copyWith(textScaler: TextScaler.linear(scale)),
         child: child!,
       ),
-      home: ProtocolScreen(start: s, repo: repo),
+      home: ProtocolScreen(
+        start: s,
+        repo: repo,
+        opener: (url) async => opened?.add(url),
+      ),
     ),
   );
   await tester.pumpAndSettle();
@@ -150,22 +188,10 @@ void main() {
       expectNoHorizontalScroll(tester);
     });
 
-    testWidgets('протокола и заявки нет — пусто', (tester) async {
-      await pumpScreen(tester, s: start(), repo: repoWith(404));
-      expect(find.text('Протокола и заявки пока нет'), findsOneWidget);
-      expect(find.text('Оригинал протокола'), findsOneWidget);
-    });
-
     testWidgets('сверка с оригиналом не сошлась — только статус и оригинал', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(withState('judges_mismatch', basis: null)));
       expect(find.text('Сверка с оригиналом не сошлась'), findsOneWidget);
       expect(find.text('66.36'), findsNothing);
-      expect(find.text('Оригинал протокола'), findsOneWidget);
-    });
-
-    testWidgets('неизвестный формат файла — «Экран недоступен», с оригиналом', (tester) async {
-      await pumpScreen(tester, s: start(), repo: repoWith(sample()..['v'] = 2));
-      expect(find.text('Экран для этого протокола недоступен'), findsOneWidget);
       expect(find.text('Оригинал протокола'), findsOneWidget);
     });
 
@@ -184,13 +210,6 @@ void main() {
       expect(find.text('Повторить'), findsOneWidget);
     });
 
-    testWidgets('нет связи без кэша — «Нет связи с сервером» и «Повторить»', (tester) async {
-      await pumpScreen(tester, s: start(), repo: repoWith(null));
-      expect(find.text('Нет связи с сервером'), findsOneWidget);
-      expect(find.text('Повторить'), findsOneWidget);
-      expect(find.text('Оригинал протокола'), findsOneWidget);
-    });
-
     testWidgets('итог вида не опубликован — честный текст, а не пустая таблица', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(sample()));
       await tester.tap(find.text('Итог'));
@@ -198,11 +217,6 @@ void main() {
       expect(find.text('Итог вида ещё не опубликован'), findsOneWidget);
     });
 
-    testWidgets('старт без протокола в расписании: экран не открывается по этому пути', (tester) async {
-      // proto == null: маршрут открывает оригинал, экран не нужен; сам экран с таким стартом — «нет протокола»
-      await pumpScreen(tester, s: start(proto: null), repo: repoWith(404));
-      expect(find.text('Протокола и заявки пока нет'), findsOneWidget);
-    });
   });
 
   group('строки: раскрытие по тапу, прочерк вместо выдуманного', () {
@@ -213,8 +227,8 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text('37.77'), findsOneWidget);
       expect(find.text('28.59'), findsOneWidget);
-      expect(find.text('TES'), findsOneWidget);
-      expect(find.text('PCS'), findsOneWidget);
+      expect(find.text('ТЕХ'), findsOneWidget);
+      expect(find.text('КОМП'), findsOneWidget);
       expectNoHorizontalScroll(tester);
     });
 
@@ -225,24 +239,172 @@ void main() {
       await pumpScreen(tester, s: start(), repo: repoWith(j));
       await tester.tap(find.text('Анна Павловна Билибина / Дмитрий Владимирович Кашаев'));
       await tester.pumpAndSettle();
-      expect(find.text('TES'), findsNothing);
+      expect(find.text('ТЕХ'), findsNothing);
     });
 
-    testWidgets('элементы с базой и GOE — раскрытие', (tester) async {
+    testWidgets('элементы, компоненты, сбавки и итоги из контракта', (tester) async {
+      await pumpScreen(tester, s: start(), repo: repoWith(withDetails()));
+      await tester.tap(find.text(_pair));
+      await tester.pumpAndSettle();
+      expect(find.text('Элементы'), findsOneWidget);
+      expect(find.text('сумма баз 20.30'), findsOneWidget);
+      expect(find.textContaining('3Lz+3T'), findsOneWidget);
+      expect(find.text('10.10x'), findsOneWidget);
+      expect(find.text('+1.21'), findsOneWidget);
+      expect(find.text('11.31'), findsOneWidget);
+      expect(find.text('< — недокрут'), findsOneWidget);
+      expect(find.text('Компоненты'), findsOneWidget);
+      expect(find.text('Композиция'), findsOneWidget);
+      expect(find.text('×1.33'), findsOneWidget);
+      expect(find.text('Сбавки'), findsWidgets);
+      expect(find.text('Падения'), findsOneWidget);
+      expect(find.text('-1.00'), findsWidgets);
+      expect(find.text('Сумма'), findsOneWidget);
+      expectNoHorizontalScroll(tester);
+    });
+
+    testWidgets('оценки судей по тапу на элемент; null — прочерк на своём месте', (tester) async {
+      await pumpScreen(tester, s: start(), repo: repoWith(withDetails()));
+      await tester.tap(find.text(_pair));
+      await tester.pumpAndSettle();
+      expect(find.text('J3'), findsNothing);
+      await tester.tap(find.textContaining('3Lz+3T'));
+      await tester.pumpAndSettle();
+      expect(find.text('J1'), findsOneWidget);
+      expect(find.text('J3'), findsOneWidget);
+      expect(find.text('—'), findsWidgets);
+      await tester.tap(find.textContaining('3Lz+3T'));
+      await tester.pumpAndSettle();
+      expect(find.text('J3'), findsNothing);
+    });
+
+    testWidgets('нет полей — нет блоков и нет нулей: ни «Элементы», ни «Сбавки»', (tester) async {
+      final j = sample();
+      final r = (_seg(j)['rows'] as List).first as Map<String, dynamic>;
+      r..remove('ded')..remove('pcs');
+      await pumpScreen(tester, s: start(), repo: repoWith(j));
+      await tester.tap(find.text(_pair));
+      await tester.pumpAndSettle();
+      expect(find.text('Элементы'), findsNothing);
+      expect(find.text('Компоненты'), findsNothing);
+      expect(find.text('Сбавки'), findsNothing);
+      expect(find.text('КОМП'), findsNothing);
+      expect(find.text('ТЕХ'), findsOneWidget);
+      expect(find.text('0.00'), findsNothing);
+    });
+
+    testWidgets('элемент без базы, GOE и оценки — прочерки, не нули', (tester) async {
       final j = sample();
       final r = (_seg(j)['rows'] as List).first as Map<String, dynamic>;
       r['els'] = [
-        {'n': '3Lz', 'b': '6.00', 'g': '+1.10'},
-        {'n': 'FCSp4', 'b': '3.20', 'g': '-0.40'},
+        {'no': 1, 'n': 'StSq'},
       ];
-      r['comp'] = ['7.25', '6.75', '7.00'];
+      r.remove('ded');
       await pumpScreen(tester, s: start(), repo: repoWith(j));
-      await tester.tap(find.text('Анна Павловна Билибина / Дмитрий Владимирович Кашаев'));
+      await tester.tap(find.text(_pair));
       await tester.pumpAndSettle();
-      expect(find.text('3Lz'), findsOneWidget);
-      expect(find.text('GOE +1.10'), findsOneWidget);
-      expect(find.text('Компоненты 7.25 · 6.75 · 7.00'), findsOneWidget);
+      expect(find.text('StSq'), findsOneWidget);
+      expect(find.text('—'), findsNWidgets(3));
+      expect(find.text('0.00'), findsNothing);
+    });
+  });
+
+  group('судьи сегмента — свёрнутый блок в конце', () {
+    testWidgets('есть список — блок свёрнут, по тапу показывает судей', (tester) async {
+      final j = withDetails();
+      _seg(j)['judges'] = [
+        {'no': 'J1', 'name': 'Мария Ивановна ПЕТРОВА', 'nation': 'RUS'},
+        {'no': 'J2', 'name': 'Иван Сергеевич СИДОРОВ'},
+      ];
+      await pumpScreen(tester, s: start(), repo: repoWith(j));
+      expect(find.text('Судьи · 2'), findsOneWidget);
+      expect(find.textContaining('Петрова', skipOffstage: false), findsNothing);
+      await tester.ensureVisible(find.text('Судьи · 2'));
+      await tester.tap(find.text('Судьи · 2'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('Петрова'), findsOneWidget);
+      expect(find.text('RUS'), findsOneWidget);
       expectNoHorizontalScroll(tester);
+    });
+
+    testWidgets('списка нет — блока нет', (tester) async {
+      await pumpScreen(tester, s: start(), repo: repoWith(sample()));
+      expect(find.textContaining('Судьи ·'), findsNothing);
+    });
+  });
+
+  group('сбой файла: оригинал во внешнем браузере, без экрана ошибки', () {
+    final src = start().src;
+    final cases = <(String, Object?)>[
+      ('404', 404),
+      ('сеть недоступна', null),
+      ('таймаут', 'timeout'),
+      ('сервер 500', 500),
+      ('битый JSON', '{"v":1,'),
+      ('пустой файл', ''),
+      ('JSON не объект', '[1,2]'),
+      ('неизвестная версия', {'v': 2, 'tid': 'x', 'tournament': 'x', 'src': 'x', 'categories': []}),
+      ('нет обязательных полей', {'v': 1}),
+    ];
+    for (final c in cases) {
+      testWidgets('${c.$1} без сохранённой версии — открывается оригинал', (tester) async {
+        final opened = <String>[];
+        await pumpScreen(tester, s: start(), repo: repoWith(c.$2), opened: opened);
+        expect(opened, [src]);
+        expect(find.text('Нет связи с сервером'), findsNothing);
+        expect(find.text('Экран для этого протокола недоступен'), findsNothing);
+      });
+      testWidgets('${c.$1} при сохранённой версии — показываем её, оригинал не открываем', (tester) async {
+        final opened = <String>[];
+        await pumpScreen(tester, s: start(), repo: repoWith(sample(), then: c.$2), opened: opened);
+        expect(opened, isEmpty);
+        await tester.tap(find.byTooltip('Обновить'));
+        await tester.pumpAndSettle();
+        expect(opened, isEmpty);
+        expect(find.text('Нет связи · сохранено 15.10, 22:00'), findsOneWidget);
+        expect(find.text('66.36'), findsOneWidget);
+        expect(find.text('Повторить'), findsOneWidget);
+        expectNoHorizontalScroll(tester);
+      });
+    }
+
+    testWidgets('старт без proto — открывается оригинал', (tester) async {
+      final opened = <String>[];
+      await pumpScreen(tester, s: start(proto: null), repo: repoWith(404), opened: opened);
+      expect(opened, [src]);
+    });
+
+    testWidgets('экран закрывается после открытия оригинала', (tester) async {
+      final opened = <String>[];
+      tester.view.physicalSize = const Size(390, 900);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Builder(
+            builder: (c) => TextButton(
+              onPressed: () => Navigator.of(c).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => ProtocolScreen(start: start(), repo: repoWith(404), opener: (u) async => opened.add(u)),
+                ),
+              ),
+              child: const Text('открыть'),
+            ),
+          ),
+        ),
+      );
+      await tester.tap(find.text('открыть'));
+      await tester.pumpAndSettle();
+      expect(opened, [start().src]);
+      expect(find.byType(ProtocolScreen), findsNothing);
+      expect(find.text('открыть'), findsOneWidget);
+    });
+
+    testWidgets('окончательный файл удался — оригинал не открывается', (tester) async {
+      final opened = <String>[];
+      await pumpScreen(tester, s: start(), repo: repoWith(sample()), opened: opened);
+      expect(opened, isEmpty);
     });
   });
 
@@ -254,13 +416,19 @@ void main() {
             await pumpScreen(
               tester,
               s: start(ours: ['Анна Билибина / Дмитрий Кашаев']),
-              repo: repoWith(sample()),
+              repo: repoWith(withDetails()..['categories'] = _longNames(withDetails())),
               width: width,
               scale: scale,
               brightness: b,
             );
-            await tester.tap(find.text('Анна Павловна Билибина / Дмитрий Владимирович Кашаев'));
+            await tester.tap(find.text(_pair));
             await tester.pumpAndSettle();
+            expectNoHorizontalScroll(tester);
+            // оценки судей по элементу и компоненту раскрыты — тоже без переполнений
+            await tester.tap(find.textContaining('3Lz+3T'));
+            await tester.tap(find.text('Композиция'));
+            await tester.pumpAndSettle();
+            expect(find.text('J1'), findsNWidgets(2));
             expectNoHorizontalScroll(tester);
           });
         }
