@@ -14,14 +14,12 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-grand-prix-de-france-2026:women-senior-pp@starty
-DTSTAMP:20261015T170225Z
+DTSTAMP:20261015T171100Z
 DTSTART;TZID=Europe/Moscow:20261024T203000
 DTEND;TZID=Europe/Moscow:20261024T221500
 SUMMARY:GP de France — женщины ПП
 DESCRIPTION:Начало: 20:30 МСК
 LOCATION:Angers\, France
-URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-grand-prix-de-france-2026
- :women-senior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

@@ -15,7 +15,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pai
  rs-senior-pp@starty
-DTSTAMP:20261015T170225Z
+DTSTAMP:20261015T171100Z
 DTSTART;TZID=Europe/Moscow:20261018T171000
 DTEND;TZID=Europe/Moscow:20261018T182500
 SUMMARY:Гран-при России «Рапсодия льда» — па
@@ -23,8 +23,6 @@ SUMMARY:Гран-при России «Рапсодия льда» — па
 DESCRIPTION:Начало: 17:10 МСК\nТрансляция: Первый 
  канал
 LOCATION:Дворец спорта\, Казань
-URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
- -pri-rossii-rapsodiya-l-da-2026:pairs-senior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

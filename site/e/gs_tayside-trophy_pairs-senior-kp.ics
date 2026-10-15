@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:gs:tayside-trophy:pairs-senior-kp@starty
-DTSTAMP:20261015T170225Z
+DTSTAMP:20261015T171100Z
 DTSTART;TZID=Europe/Moscow:20261010T162800
 DTEND;TZID=Europe/Moscow:20261010T174300
 SUMMARY:Tayside Trophy — пары КП
@@ -24,7 +24,6 @@ DESCRIPTION:Итог:\n1. Ava Kemp / Yohnatan Elizarov — 64.68\n2. Camill
  — Личный рекорд за КП: 64.68 (был 64.21)\n\nНача
  ло: 16:28 МСК
 LOCATION:Dundee\, Great Britain
-URL:https://xfurya.github.io/Starty/#e=gs:tayside-trophy:pairs-senior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

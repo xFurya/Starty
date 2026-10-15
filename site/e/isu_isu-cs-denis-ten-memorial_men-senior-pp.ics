@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:men-senior-pp@starty
-DTSTAMP:20261015T170225Z
+DTSTAMP:20261015T171100Z
 DTSTART;TZID=Europe/Moscow:20261010T123000
 DTEND;TZID=Europe/Moscow:20261010T140000
 SUMMARY:CS Denis Ten Memorial — мужчины ПП
@@ -33,8 +33,6 @@ DESCRIPTION:Итог:\n1. Владислав Дикиджи — 205.48\n2.
  й Козловский — 5-й\n• Василий Бараховски
  й — 7-й\n\nНачало: 12:30 МСК
 LOCATION:Almaty\, Kazakhstan
-URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:men-se
- nior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

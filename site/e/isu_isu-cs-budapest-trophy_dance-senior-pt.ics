@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-budapest-trophy:dance-senior-pt@starty
-DTSTAMP:20261015T170225Z
+DTSTAMP:20261015T171100Z
 DTSTART;TZID=Europe/Moscow:20261018T090000
 DTEND;TZID=Europe/Moscow:20261018T124500
 SUMMARY:CS Budapest Trophy — танцы ПТ
@@ -22,8 +22,6 @@ DESCRIPTION:Россияне:\n• Василиса Григорьева /
  Евгений Артющенко\n• Милана Кузьмина / Д
  митрий Студеникин\n\nНачало: 09:00 МСК
 LOCATION:Budapest\, Hungary
-URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:dance-sen
- ior-pt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
