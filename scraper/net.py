@@ -160,9 +160,9 @@ def fetch_json(url, data=None, headers=None, timeout=30):
     return json.loads(fetch(url, data=data, headers=headers, timeout=timeout))
 
 
-def pdf_text(url):
+def pdf_text(url, timeout=45, tries=3):
     """Скачивает PDF и возвращает текст с сохранением раскладки (pdftotext -layout)."""
-    raw = fetch(url, binary=True, timeout=45)
+    raw = fetch(url, binary=True, timeout=timeout, tries=tries)
     if not raw.startswith(b"%PDF"):
         raise FetchError(f"{url}: не PDF", kind="format")
     with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as f:

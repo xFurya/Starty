@@ -149,9 +149,11 @@ def parse_index_page(page, url, default_offset=None):
             scores = None
             if "Оценки судей" in " ".join(cells):
                 scores = next((l for l in links if l.lower().endswith("scores.pdf")), None)
+            officials = next((l for l in links if re.fullmatch(r"SEG\d+OF\.htm", l, re.I)), None)
             cur["segments"].append({
                 "name": seg_name,
                 "url": urljoin(url, seg_link),
+                "officials": urljoin(url, officials) if officials else None,  # судейская бригада
                 "times_pdf": urljoin(url, pdf) if pdf else None,
                 "judges_pdf": urljoin(url, details) if details else None,
                 "scores_pdf": urljoin(url, scores) if scores else None,
@@ -360,11 +362,13 @@ def parse_segment_results(page):
             for r in sorted(rows, key=lambda r: r["place"])]
 
 
-def parse_category_results(url):
+def parse_category_results(url, page=None):
     """Итог вида (CATnnnRS.htm): {rows: [{place, name, nation, points}], complete}.
     complete — у первой тройки заполнены места во всех сегментах (до конца
-    последнего сегмента столбец ПП/ПТ пустой, а в «Points» сумма за КП)."""
-    page = net.fetch(url)
+    последнего сегмента столбец ПП/ПТ пустой, а в «Points» сумма за КП).
+    page — уже скачанная страница, чтобы не тянуть её второй раз."""
+    if page is None:
+        page = net.fetch(url)
     header, rows = _result_rows(page, ("Points", "Баллы", "Сумма", "Total", "TSS"), False)
     if header is None or not rows:
         return {"rows": [], "complete": False}
@@ -674,3 +678,175 @@ def judges_header_ok(text, category_name, segment_name):
     head = _words(text[:1500])
     cat, seg = _words(category_name), _words(segment_name)
     return bool(cat) and bool(seg) and cat <= head and seg <= head
+
+
+# ---------------------------------------------------------------- детали оценок для файла протокола
+
+# Компоненты: как на табло → по-русски. Нынешняя система (с 2022): три компонента.
+# Старая (до 2022): пять компонентов; «Skating Skills» и «Composition» в ней переводятся иначе.
+_COMP_NEW = {"composition": "Композиция", "композиция": "Композиция",
+             "presentation": "Представление", "представление": "Представление",
+             "skating skills": "Техника катания", "мастерство катания": "Техника катания",
+             "техника катания": "Техника катания"}
+_COMP_OLD = {"skating skills": "Скольжение", "скольжение": "Скольжение",
+             "transitions": "Связующие элементы", "transitions/linking footwork/movement": "Связующие элементы",
+             "связующие элементы": "Связующие элементы",
+             "performance": "Исполнение", "performance/execution": "Исполнение", "исполнение": "Исполнение",
+             "composition": "Хореография", "choreography/composition": "Хореография",
+             "хореография": "Хореография",
+             "interpretation of the music": "Интерпретация", "interpretation": "Интерпретация",
+             "interpretation of the music/timing": "Интерпретация", "интерпретация": "Интерпретация"}
+_COMP_OLD_ONLY = {"transitions", "transitions/linking footwork/movement", "связующие элементы", "performance",
+                  "performance/execution", "исполнение", "interpretation of the music", "interpretation",
+                  "interpretation of the music/timing", "интерпретация", "хореография", "скольжение",
+                  "choreography/composition"}
+_COMP_NAMES = sorted(set(_COMP_NEW) | set(_COMP_OLD), key=len, reverse=True)
+_DED_RU = {"falls": "Падения", "fall": "Падения", "time violation": "Нарушение времени",
+           "costume/prop violation": "Нарушение костюма", "costume failure": "Нарушение костюма",
+           "illegal element/movement": "Запрещённый элемент", "illegal element": "Запрещённый элемент",
+           "extended lifts": "Длительная поддержка", "extended lift": "Длительная поддержка",
+           "late start": "Поздний старт", "interruption in excess": "Прерывание",
+           "interruption": "Прерывание", "music violation": "Нарушение музыки",
+           "missing reqd. element": "Нет обязательного элемента"}
+_MARK = re.compile(r"^-?\d{1,2}[.,]\d{2}$")
+
+
+def _f(v):
+    return round(float(v.replace(",", ".")), 2)
+
+
+def _detail_element(line):
+    """Строка элемента: № код [отметки] база [x] GOE J1…Jn оценка → dict или None."""
+    t = line.split()
+    if len(t) < 5 or not re.fullmatch(r"\d{1,2}", t[0]):
+        return None
+    no, code, rest = int(t[0]), t[1], t[2:]
+    info = []
+    while rest and not FLOAT.match(rest[0]):
+        info.append(rest.pop(0))
+    if len(rest) < 3:
+        return None
+    base = rest.pop(0)
+    x = False
+    if rest and rest[0].lower() == "x":
+        x = True
+        rest.pop(0)
+    if len(rest) < 2 or not FLOAT.match(rest[0]) or not FLOAT.match(rest[-1]):
+        return None
+    goe, score, marks = rest[0], rest[-1], rest[1:-1]
+    judges = []
+    for m in marks:
+        if re.fullmatch(r"-?\d", m):
+            judges.append(int(m))
+        elif m == "-":
+            judges.append(None)
+        else:
+            return None
+    el = {"no": no, "n": code, "b": _f(base), "g": _f(goe), "j": judges, "s": _f(score)}
+    if info:
+        el["info"] = " ".join(info)
+    if x:
+        el["x"] = True
+    return el
+
+
+def _detail_component(line):
+    """«Композиция 1.33 7,50 7,50 … 7.42» → (имя как на табло, {f, j, s}) или None."""
+    s = line.strip()
+    low = s.lower()
+    for name in _COMP_NAMES:
+        if low.startswith(name) and (len(low) == len(name) or not low[len(name)].isalpha()):
+            nums = s[len(name):].split()
+            if len(nums) < 3 or not FLOAT.match(nums[0]) or not FLOAT.match(nums[-1]):
+                return None
+            judges = []
+            for m in nums[1:-1]:
+                if _MARK.match(m):
+                    judges.append(_f(m))
+                elif m == "-":
+                    judges.append(None)
+                else:
+                    return None
+            return name, {"f": _f(nums[0]), "j": judges, "s": _f(nums[-1])}
+    return None
+
+
+def _detail_deductions(line):
+    """«Снижения Падения: -1.00 Нарушение времени: -1.00 -2.00» → [{n, v}] (по-русски)."""
+    s = re.sub(r"^\s*(Снижения|Deductions:?)", "", line.strip())
+    out = []
+    # ФФКМ: «Падения: -1.00», ISU: «Falls -1.00 (1)»; итог в конце строки без названия не берём
+    for name, v in re.findall(r"([A-Za-zА-Яа-яЁё][A-Za-zА-Яа-яЁё ./]*?):?\s+(-?\d+\.\d\d)", s):
+        n = name.strip()
+        out.append({"n": _DED_RU.get(n.lower(), n), "v": -abs(_f(v)) or 0.0})
+    return out
+
+
+def parse_judges_details(text):
+    """PDF судейских оценок по каждому (ISU JudgesDetailsperSkater и ФФКМ «ДЕТАЛИЗАЦИЯ
+    СУДЕЙСКИХ ОЦЕНОК», pdftotext -layout) → [{place, name, nation, no, points, tes, pcs, ded, bv,
+    els, comp, deds}]. Числа — float, ded — сумма сбавок со знаком минус; points — строка NN.NN.
+    els: [{no, n, info?, b, x?, g, j, s}]; comp: [{n, f, j, s}] (названия по-русски);
+    deds: [{n, v}]. Пропуск судьи в j — None."""
+    out, cur, comps = [], None, []
+
+    def close():
+        if cur is None:
+            return
+        old = any(c[0] in _COMP_OLD_ONLY for c in comps)
+        names = _COMP_OLD if old else _COMP_NEW
+        cur["comp"] = [dict(c[1], n=names.get(c[0], c[0])) for c in comps]
+
+    for line in text.splitlines():
+        m = JUDGES_HEAD.match(line)
+        if m:
+            row = {"place": int(m.group(1)), "name": m.group(2).strip(), "nation": m.group(3),
+                   "no": int(m.group(4)), "points": m.group(5)}
+            vals = [m.group(6), m.group(7), m.group(8)]
+        else:
+            m = JUDGES_PDF_ROW.match(line)
+            if m:
+                row = {"place": int(m.group(1)), "name": m.group(2), "nation": "",
+                       "no": int(m.group(3)), "points": m.group(4)}
+                vals = [m.group(5), m.group(6), m.group(7)]
+        if m:
+            close()
+            cur, comps = row, []
+            cur.update({"tes": _f(vals[0]), "pcs": _f(vals[1]), "ded": -abs(_f(vals[2])) or 0.0,
+                        "els": [], "comp": [], "deds": []})
+            out.append(cur)
+            continue
+        if cur is None:
+            continue
+        stripped = line.strip()
+        if stripped.startswith(("Снижения", "Deductions")):
+            cur["deds"] = _detail_deductions(line)
+            continue
+        el = _detail_element(line)
+        if el:
+            cur["els"].append(el)
+            continue
+        c = _detail_component(line)
+        if c:
+            comps.append((c[0], c[1]))
+    close()
+    for sk in out:
+        sk["bv"] = round(sum(e["b"] for e in sk["els"]), 2)
+    return out
+
+
+def parse_officials(page):
+    """Судейская бригада сегмента (SEGnnnOF.htm): [{no: "J1", name, nation}] по порядку номеров.
+    «Ms.»/«Mr.» перед именем убираем; нация — последняя непустая ячейка строки."""
+    out = []
+    for cells, _ in _rows(page):
+        vals = [c for c in cells if c]
+        if len(vals) < 2:
+            continue
+        m = re.fullmatch(r"(?:Judge No\.?|Судья №|Судья N)\s*(\d{1,2})", vals[0], re.I)
+        if not m:
+            continue
+        name = re.sub(r"^(Mr|Ms|Mrs|Miss)\.?\s+", "", vals[1])
+        nation = vals[-1] if len(vals) > 2 else ""
+        out.append({"no": f"J{int(m.group(1))}", "name": name, "nation": nation})
+    return sorted(out, key=lambda j: int(j["no"][1:]))

@@ -15,6 +15,7 @@ from . import build as b
 from . import live
 from . import names as nm
 from . import net
+from . import protocols as P
 from . import swisstiming as st
 from .test_protocols import FIX, FAMILIES, _pdf_text, _read
 
@@ -55,7 +56,7 @@ class FfkmLive(unittest.TestCase):
             raise net.FetchError(f"{url}: нет в фикстурах", kind="http", status=404)
         return _read(path)
 
-    def _pdf(self, url):
+    def _pdf(self, url, *args, **kwargs):
         if self.pdf_fails:
             raise net.FetchError(f"{url}: сеть", kind="timeout")
         name = url.rsplit("/", 1)[-1]
@@ -106,7 +107,7 @@ class WomenKpScores(FfkmLive):
         idx = self.index(scores=True)
         ev = self.event(idx, "SEG001.HTM", "КП", "women", "junior", self.start, self.end)
         self.assertFalse(live.settled(ev))
-        changed = live.refresh(ev, idx, self.names, self.after, {})
+        changed = live.refresh(ev, idx, self.names, self.after, P.Fetcher())
         self.assertTrue(changed)
         self.assertEqual(ev["live"]["basis"], "judges")
         self.assertNotIn("provisional", ev)
@@ -127,22 +128,22 @@ class WomenKpScores(FfkmLive):
         c, s = self.seg(idx, "SEG001.HTM")
         view = live.P.segment_view(seg=s, category=c["name"], code="КП", page=page, cat_url=None,
                                    now=self.after, start=self.start, end=self.end, marks=True,
-                                   cache={}, final_by_time=False, podium_from_pdf=True)
+                                   fetcher=P.Fetcher(), final_by_time=False, podium_from_pdf=True)
         self.assertEqual(view["reason"], "pdf_start_list")
         self.assertEqual(view["state"], "format")
         self.assertIsNone(view["basis"])
-        self.assertFalse(live.refresh(ev, idx, self.names, self.after, {}))
+        self.assertFalse(live.refresh(ev, idx, self.names, self.after, P.Fetcher()))
         self.assertNotIn("podium", ev)
 
     @unittest.skipUnless(HAS_PDFTOTEXT, "нужен pdftotext")
     def test_final_is_not_downgraded_when_pdf_unreadable_later(self):
         idx = self.index(scores=True)
         ev = self.event(idx, "SEG001.HTM", "КП", "women", "junior", self.start, self.end)
-        live.refresh(ev, idx, self.names, self.after, {})
+        live.refresh(ev, idx, self.names, self.after, P.Fetcher())
         self.assertEqual(ev["live"]["basis"], "judges")
         podium = copy.deepcopy(ev["podium"])
         self.pdf_fails = True  # сеть подвела: оценки не прочитаны в этом опросе
-        live.refresh(ev, idx, self.names, self.after, {})
+        live.refresh(ev, idx, self.names, self.after, P.Fetcher())
         self.assertEqual(ev["live"]["basis"], "judges")
         self.assertNotIn("provisional", ev)
         self.assertEqual(ev["podium"], podium)
@@ -160,7 +161,7 @@ class DanceRtMarks(FfkmLive):
     def test_marks_false_is_provisional_by_default(self):
         idx = self.index(scores=False)
         ev = self.event(idx, "SEG007.HTM", "РТ", "dance", "junior", self.start, self.end)
-        self.assertTrue(live.refresh(ev, idx, self.names, self.after, {}))
+        self.assertTrue(live.refresh(ev, idx, self.names, self.after, P.Fetcher()))
         self.assertIs(ev["provisional"], True)
         self.assertIsNone(ev["live"]["basis"])
         self.assertEqual(ev["podium"][0]["points"], "66.36")
@@ -170,7 +171,7 @@ class DanceRtMarks(FfkmLive):
         idx = self.index(scores=False)
         ev = self.event(idx, "SEG007.HTM", "РТ", "dance", "junior", self.start, self.end)
         with mock.patch.dict(b.CFG, {"final_by_time": True}):
-            live.refresh(ev, idx, self.names, self.after, {})
+            live.refresh(ev, idx, self.names, self.after, P.Fetcher())
         self.assertEqual(ev["live"]["basis"], "time")
         self.assertNotIn("provisional", ev)
         self.assertTrue(live.settled(ev))
@@ -179,7 +180,7 @@ class DanceRtMarks(FfkmLive):
         idx = self.index(scores=False)
         ev = self.event(idx, "SEG007.HTM", "РТ", "dance", "junior", self.start, self.end)
         during = self.start + dt.timedelta(minutes=40)
-        live.refresh(ev, idx, self.names, during, {})
+        live.refresh(ev, idx, self.names, during, P.Fetcher())
         self.assertIsNone(ev["live"]["basis"])
         self.assertTrue(ev["provisional"])
 
@@ -188,10 +189,10 @@ class DanceRtMarks(FfkmLive):
         ev = None
         idx_none = self.index(scores=False)
         ev = self.event(idx_none, "SEG007.HTM", "РТ", "dance", "junior", self.start, self.end)
-        live.refresh(ev, idx_none, self.names, self.after, {})
+        live.refresh(ev, idx_none, self.names, self.after, P.Fetcher())
         self.assertEqual(ev["live"]["basis"], None)
         idx = self.index(scores=True)
-        live.refresh(ev, idx, self.names, self.after, {})
+        live.refresh(ev, idx, self.names, self.after, P.Fetcher())
         self.assertEqual(ev["live"]["basis"], "judges")
         self.assertNotIn("provisional", ev)
         self.assertTrue(live.settled(ev))
@@ -225,7 +226,7 @@ class Replay(FfkmLive):
                           (no_marks, end + dt.timedelta(minutes=5)),
                           (with_marks, end + dt.timedelta(minutes=20)),
                           (with_marks, end + dt.timedelta(hours=2))):
-            live.refresh(ev, idx, self.names, when, {})
+            live.refresh(ev, idx, self.names, when, P.Fetcher())
             order.append(ev["live"]["basis"])
         # промежуточный → окончательный по оценкам; дальше не откатывается
         self.assertEqual(order, [None, None, "judges", "judges"])
@@ -244,6 +245,65 @@ class Network(FfkmLive):
         with mock.patch.object(net, "fetch", side_effect=net.FetchError("x", kind="timeout")):
             self.assertFalse(live.refresh(ev, idx, self.names, end + dt.timedelta(hours=1), {}))
         self.assertEqual(ev, before)
+
+
+class Budget(unittest.TestCase):
+    """Бюджет запросов live: не больше BUDGET за прогон, пропущенное — в журнал, файл годен."""
+
+    def setUp(self):
+        import tempfile
+        from .test_protocols import NOW, build_family
+        self.dir = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, self.dir, True)
+        self.now = NOW
+        self.events, _ = build_family("ffkm", self.dir)  # прежний файл, как после полного сбора
+        self.path = os.path.join(self.dir, "ffkm_2026-08-24_pm.json")
+
+    def run_live(self, budget):
+        from .test_protocols import FixtureNet
+        fetcher = P.Fetcher(budget=budget, timeout=live.TIMEOUT, tries=live.TRIES)
+        with FixtureNet("ffkm"):
+            idx = st.parse_index_page(fetcher.page(SRC), SRC)
+            live.protocols(self.events, self.events, {SRC: idx}, nm.Names(None, {}), self.now, fetcher, self.dir)
+        return fetcher
+
+    @unittest.skipUnless(HAS_PDFTOTEXT, "нужен pdftotext")
+    def test_final_segments_are_not_refetched(self):
+        fetcher = self.run_live(live.BUDGET)
+        self.assertLessEqual(fetcher.requests, live.BUDGET)
+        asked = set(fetcher.pages) | set(fetcher.pdfs)
+        for name in ("SEG001.HTM", "SEG005.HTM", "SEG007.HTM", "TaaCopop_PT_Scores.pdf", "apoeaaeCopop_K_Scores.pdf"):
+            # женский КП, пары и ритм-танец уже окончательные в прежнем файле
+            self.assertFalse(any(u.endswith(name) for u in asked), name)
+        # PDF женского КП скачан для мужского КП: адрес у них общий, мужской не окончательный
+        self.assertTrue(any(u.endswith("SEG003.HTM") for u in asked))
+        self.assertEqual(P.validate(P.load_doc(self.path)), [])
+
+    @unittest.skipUnless(HAS_PDFTOTEXT, "нужен pdftotext")
+    def test_budget_limits_requests_and_keeps_previous_segments(self):
+        before = P.load_doc(self.path)
+        fetcher = self.run_live(2)
+        self.assertEqual(fetcher.requests, 2)
+        self.assertTrue(fetcher.skipped)
+        doc = P.load_doc(self.path)
+        self.assertEqual(P.validate(doc), [])
+        codes = lambda d: [(c["name"], sg["code"], sg["state"]) for c in d["categories"] for sg in c["segments"]]
+        self.assertEqual(codes(doc), codes(before))
+        item = P.read_status(self.dir)["ffkm:2026-08-24_pm"]
+        self.assertIsNone(item["error"])
+        self.assertNotEqual(item["read_ok"], item["checked"])  # чтение неполное: read_ok — от полного сбора
+
+    def test_timeout_and_tries_reach_fetch(self):
+        with mock.patch.object(net, "fetch", return_value="x") as f:
+            P.Fetcher(budget=1, timeout=live.TIMEOUT, tries=live.TRIES).page("https://x/a")
+        f.assert_called_once_with("https://x/a", timeout=15, tries=2)
+        fetcher = P.Fetcher(budget=1)
+        with mock.patch.object(net, "fetch", return_value="x"):
+            fetcher.page("https://x/a")
+            fetcher.page("https://x/a")  # тот же адрес — из кэша, бюджет не тратится
+            with self.assertRaises(P.Skipped):
+                fetcher.page("https://x/b")
+        self.assertEqual((fetcher.requests, fetcher.skipped), (1, ["https://x/b"]))
 
 
 if __name__ == "__main__":

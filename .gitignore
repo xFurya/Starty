@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+# файлы протоколов турниров и status.json живут только на gh-pages (решение владельца);
+# workflow перед сборкой берёт их оттуда — tools/protocols-from-pages.sh
+site/data/protocols/
