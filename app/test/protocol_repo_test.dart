@@ -106,6 +106,22 @@ void main() {
       expect((net as ProtocolNetError).cached, isNotNull);
     });
 
+    test('404, битый файл и неизвестная версия при кэше отдают сохранённую версию', () async {
+      await repo(MockClient((_) async => ok(sample()))).load('a.json');
+      final missing = await repo(MockClient((_) async => http.Response('', 404))).load('a.json');
+      expect((missing as ProtocolMissing).cached, isNotNull);
+      expect(missing.cachedAt, _now);
+      final broken = await repo(MockClient((_) async => http.Response('', 200))).load('a.json');
+      expect((broken as ProtocolFormatError).cached, isNotNull);
+      final v2 = await repo(MockClient((_) async => ok(sample()..['v'] = 2))).load('a.json');
+      expect((v2 as ProtocolFormatError).cached, isNotNull);
+    });
+
+    test('без кэша 404 и битый файл приходят без сохранённой версии', () async {
+      expect(((await repo(MockClient((_) async => http.Response('', 404))).load('b.json')) as ProtocolMissing).cached, isNull);
+      expect(((await repo(MockClient((_) async => http.Response('', 200))).load('b.json')) as ProtocolFormatError).cached, isNull);
+    });
+
     test('испорченная запись кэша не валит экран: загрузка работает без кэша', () async {
       SharedPreferences.setMockInitialValues({'protocol.file.a.json': 'не json'});
       final r = await repo(MockClient((_) async => ok(sample()))).load('a.json');
