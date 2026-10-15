@@ -1,0 +1,622 @@
+{
+ "index": {
+  "index.htm": {
+   "categories": [
+    {
+     "entries": "CAT001EN.htm",
+     "name": "Junior Men",
+     "results": "CAT001RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKMSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Short Program",
+       "page": "SEG001.htm",
+       "start": "2026-09-17T18:30:00+03:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKMSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Free Skating",
+       "page": "SEG002.htm",
+       "start": "2026-09-19T10:00:00+03:00",
+       "times_pdf": null
+      }
+     ]
+    },
+    {
+     "entries": "CAT002EN.htm",
+     "name": "Junior Women",
+     "results": "CAT002RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKWSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Short Program",
+       "page": "SEG003.htm",
+       "start": "2026-09-17T10:00:00+03:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKWSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Free Skating",
+       "page": "SEG004.htm",
+       "start": "2026-09-18T16:30:00+03:00",
+       "times_pdf": null
+      }
+     ]
+    },
+    {
+     "entries": "CAT003EN.htm",
+     "name": "Junior Pairs",
+     "results": "CAT003RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKXPAIRS---JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Short Program",
+       "page": "SEG005.htm",
+       "start": "2026-09-17T15:45:00+03:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKXPAIRS---JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Free Skating",
+       "page": "SEG006.htm",
+       "start": "2026-09-18T13:30:00+03:00",
+       "times_pdf": null
+      }
+     ]
+    },
+    {
+     "entries": "CAT004EN.htm",
+     "name": "Junior Ice Dance",
+     "results": "CAT004RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKXICEDANCEJUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Rhythm Dance",
+       "page": "SEG007.htm",
+       "start": "2026-09-18T10:15:00+03:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKXICEDANCEJUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Free Dance",
+       "page": "SEG008.htm",
+       "start": "2026-09-19T15:15:00+03:00",
+       "times_pdf": null
+      }
+     ]
+    }
+   ],
+   "city": "Ankara",
+   "final_marks": true,
+   "name": "ISU JGP Ankara 2026",
+   "nation": "TUR",
+   "offset": 180,
+   "venue": "Ümitköy Ice Skating Complex"
+  }
+ },
+ "segments": {
+  "SEG003.htm": {
+   "results": [
+    {
+     "name": "Mei OKADA",
+     "nation": "JPN",
+     "place": 1,
+     "points": "74.27"
+    },
+    {
+     "name": "Nayeon KO",
+     "nation": "KOR",
+     "place": 2,
+     "points": "70.21"
+    },
+    {
+     "name": "Shuxian JIN",
+     "nation": "CHN",
+     "place": 3,
+     "points": "68.11"
+    },
+    {
+     "name": "Chen Xi JIN",
+     "nation": "CHN",
+     "place": 4,
+     "points": "64.62"
+    },
+    {
+     "name": "Jessica JURKA",
+     "nation": "USA",
+     "place": 5,
+     "points": "64.58"
+    },
+    {
+     "name": "Amaliia NASYBULLINA",
+     "nation": "GEO",
+     "place": 6,
+     "points": "63.16"
+    },
+    {
+     "name": "Stefania GLADKI",
+     "nation": "FRA",
+     "place": 7,
+     "points": "61.57"
+    },
+    {
+     "name": "Inga GURGENIDZE",
+     "nation": "GEO",
+     "place": 8,
+     "points": "59.57"
+    },
+    {
+     "name": "Angel DELEVAQUE",
+     "nation": "NED",
+     "place": 9,
+     "points": "58.35"
+    },
+    {
+     "name": "Elisabeth DIBBERN",
+     "nation": "SUI",
+     "place": 10,
+     "points": "58.32"
+    },
+    {
+     "name": "Noemi JOOS",
+     "nation": "ITA",
+     "place": 11,
+     "points": "54.00"
+    },
+    {
+     "name": "Deniz TARIM",
+     "nation": "TUR",
+     "place": 12,
+     "points": "51.83"
+    },
+    {
+     "name": "Ariadna GUPTA ESPADA",
+     "nation": "ESP",
+     "place": 13,
+     "points": "51.71"
+    },
+    {
+     "name": "Ula ZADNIKAR",
+     "nation": "SLO",
+     "place": 14,
+     "points": "50.74"
+    },
+    {
+     "name": "Leyla CETIN",
+     "nation": "TUR",
+     "place": 15,
+     "points": "49.92"
+    },
+    {
+     "name": "Sofia NEKRASSOVA",
+     "nation": "EST",
+     "place": 16,
+     "points": "49.91"
+    },
+    {
+     "name": "Adelina VOROTELIAK",
+     "nation": "GER",
+     "place": 17,
+     "points": "49.69"
+    },
+    {
+     "name": "Zlata SAPRINA",
+     "nation": "KGZ",
+     "place": 18,
+     "points": "48.86"
+    },
+    {
+     "name": "Darja TRUBITSON",
+     "nation": "FIN",
+     "place": 19,
+     "points": "48.54"
+    },
+    {
+     "name": "Hannah FRANK",
+     "nation": "AUT",
+     "place": 20,
+     "points": "47.80"
+    },
+    {
+     "name": "Sofia CHEN",
+     "nation": "BUL",
+     "place": 21,
+     "points": "47.68"
+    },
+    {
+     "name": "Ava Yu Tong CHEN",
+     "nation": "TPE",
+     "place": 22,
+     "points": "46.83"
+    },
+    {
+     "name": "Arina KALUGINA",
+     "nation": "AZE",
+     "place": 23,
+     "points": "45.42"
+    },
+    {
+     "name": "Ilona van STEENBERGHE",
+     "nation": "BEL",
+     "place": 24,
+     "points": "44.23"
+    },
+    {
+     "name": "Lelle Agota MOLNAR",
+     "nation": "ROU",
+     "place": 25,
+     "points": "44.13"
+    },
+    {
+     "name": "Jana HORCICKOVA",
+     "nation": "CZE",
+     "place": 26,
+     "points": "43.58"
+    },
+    {
+     "name": "Katarina FEDOROVA COELHO",
+     "nation": "POR",
+     "place": 27,
+     "points": "43.40"
+    },
+    {
+     "name": "Nora SAYED",
+     "nation": "SWE",
+     "place": 28,
+     "points": "42.80"
+    },
+    {
+     "name": "Paula KASNAR",
+     "nation": "CRO",
+     "place": 29,
+     "points": "42.51"
+    },
+    {
+     "name": "Bella AYDIN",
+     "nation": "TUR",
+     "place": 30,
+     "points": "41.87"
+    },
+    {
+     "name": "Arina VOROBEVA",
+     "nation": "GBR",
+     "place": 31,
+     "points": "41.59"
+    },
+    {
+     "name": "Kalyn SHIMOGAKI",
+     "nation": "AUS",
+     "place": 32,
+     "points": "41.43"
+    },
+    {
+     "name": "Safiya ABAYEVA",
+     "nation": "KAZ",
+     "place": 33,
+     "points": "38.13"
+    },
+    {
+     "name": "Martina Petra MAJOR",
+     "nation": "HUN",
+     "place": 34,
+     "points": "38.01"
+    },
+    {
+     "name": "Emma CHEN",
+     "nation": "AUS",
+     "place": 35,
+     "points": "37.23"
+    },
+    {
+     "name": "Stefaniia SOLOVEVA",
+     "nation": "ARG",
+     "place": 36,
+     "points": "34.54"
+    },
+    {
+     "name": "Angela Urvashi NORIN",
+     "nation": "THA",
+     "place": 37,
+     "points": "31.72"
+    },
+    {
+     "name": "Leila FESTIC",
+     "nation": "BIH",
+     "place": 38,
+     "points": "30.70"
+    },
+    {
+     "name": "Sarah ABU ELSEOUD",
+     "nation": "EGY",
+     "place": 39,
+     "points": "19.42"
+    }
+   ],
+   "starting": [
+    {
+     "name": "Mei OKADA",
+     "nation": "JPN",
+     "no": 28,
+     "rank": 1,
+     "warmup": null
+    },
+    {
+     "name": "Nayeon KO",
+     "nation": "KOR",
+     "no": 27,
+     "rank": 2,
+     "warmup": null
+    },
+    {
+     "name": "Shuxian JIN",
+     "nation": "CHN",
+     "no": 4,
+     "rank": 3,
+     "warmup": null
+    },
+    {
+     "name": "Chen Xi JIN",
+     "nation": "CHN",
+     "no": 5,
+     "rank": 4,
+     "warmup": null
+    },
+    {
+     "name": "Jessica JURKA",
+     "nation": "USA",
+     "no": 16,
+     "rank": 5,
+     "warmup": null
+    },
+    {
+     "name": "Amaliia NASYBULLINA",
+     "nation": "GEO",
+     "no": 1,
+     "rank": 6,
+     "warmup": null
+    },
+    {
+     "name": "Stefania GLADKI",
+     "nation": "FRA",
+     "no": 13,
+     "rank": 7,
+     "warmup": null
+    },
+    {
+     "name": "Inga GURGENIDZE",
+     "nation": "GEO",
+     "no": 7,
+     "rank": 8,
+     "warmup": null
+    },
+    {
+     "name": "Angel DELEVAQUE",
+     "nation": "NED",
+     "no": 22,
+     "rank": 9,
+     "warmup": null
+    },
+    {
+     "name": "Elisabeth DIBBERN",
+     "nation": "SUI",
+     "no": 30,
+     "rank": 10,
+     "warmup": null
+    },
+    {
+     "name": "Noemi JOOS",
+     "nation": "ITA",
+     "no": 33,
+     "rank": 11,
+     "warmup": null
+    },
+    {
+     "name": "Deniz TARIM",
+     "nation": "TUR",
+     "no": 3,
+     "rank": 12,
+     "warmup": null
+    },
+    {
+     "name": "Ariadna GUPTA ESPADA",
+     "nation": "ESP",
+     "no": 34,
+     "rank": 13,
+     "warmup": null
+    },
+    {
+     "name": "Ula ZADNIKAR",
+     "nation": "SLO",
+     "no": 24,
+     "rank": 14,
+     "warmup": null
+    },
+    {
+     "name": "Leyla CETIN",
+     "nation": "TUR",
+     "no": 12,
+     "rank": 15,
+     "warmup": null
+    },
+    {
+     "name": "Sofia NEKRASSOVA",
+     "nation": "EST",
+     "no": 21,
+     "rank": 16,
+     "warmup": null
+    },
+    {
+     "name": "Adelina VOROTELIAK",
+     "nation": "GER",
+     "no": 31,
+     "rank": 17,
+     "warmup": null
+    },
+    {
+     "name": "Zlata SAPRINA",
+     "nation": "KGZ",
+     "no": 11,
+     "rank": 18,
+     "warmup": null
+    },
+    {
+     "name": "Darja TRUBITSON",
+     "nation": "FIN",
+     "no": 15,
+     "rank": 19,
+     "warmup": null
+    },
+    {
+     "name": "Hannah FRANK",
+     "nation": "AUT",
+     "no": 20,
+     "rank": 20,
+     "warmup": null
+    },
+    {
+     "name": "Sofia CHEN",
+     "nation": "BUL",
+     "no": 36,
+     "rank": 21,
+     "warmup": null
+    },
+    {
+     "name": "Ava Yu Tong CHEN",
+     "nation": "TPE",
+     "no": 9,
+     "rank": 22,
+     "warmup": null
+    },
+    {
+     "name": "Arina KALUGINA",
+     "nation": "AZE",
+     "no": 39,
+     "rank": 23,
+     "warmup": null
+    },
+    {
+     "name": "Ilona van STEENBERGHE",
+     "nation": "BEL",
+     "no": 25,
+     "rank": 24,
+     "warmup": null
+    },
+    {
+     "name": "Lelle Agota MOLNAR",
+     "nation": "ROU",
+     "no": 6,
+     "rank": 25,
+     "warmup": null
+    },
+    {
+     "name": "Jana HORCICKOVA",
+     "nation": "CZE",
+     "no": 10,
+     "rank": 26,
+     "warmup": null
+    },
+    {
+     "name": "Katarina FEDOROVA COELHO",
+     "nation": "POR",
+     "no": 35,
+     "rank": 27,
+     "warmup": null
+    },
+    {
+     "name": "Nora SAYED",
+     "nation": "SWE",
+     "no": 2,
+     "rank": 28,
+     "warmup": null
+    },
+    {
+     "name": "Paula KASNAR",
+     "nation": "CRO",
+     "no": 19,
+     "rank": 29,
+     "warmup": null
+    },
+    {
+     "name": "Bella AYDIN",
+     "nation": "TUR",
+     "no": 29,
+     "rank": 30,
+     "warmup": null
+    },
+    {
+     "name": "Arina VOROBEVA",
+     "nation": "GBR",
+     "no": 37,
+     "rank": 31,
+     "warmup": null
+    },
+    {
+     "name": "Kalyn SHIMOGAKI",
+     "nation": "AUS",
+     "no": 8,
+     "rank": 32,
+     "warmup": null
+    },
+    {
+     "name": "Safiya ABAYEVA",
+     "nation": "KAZ",
+     "no": 32,
+     "rank": 33,
+     "warmup": null
+    },
+    {
+     "name": "Martina Petra MAJOR",
+     "nation": "HUN",
+     "no": 38,
+     "rank": 34,
+     "warmup": null
+    },
+    {
+     "name": "Emma CHEN",
+     "nation": "AUS",
+     "no": 14,
+     "rank": 35,
+     "warmup": null
+    },
+    {
+     "name": "Stefaniia SOLOVEVA",
+     "nation": "ARG",
+     "no": 18,
+     "rank": 36,
+     "warmup": null
+    },
+    {
+     "name": "Angela Urvashi NORIN",
+     "nation": "THA",
+     "no": 26,
+     "rank": 37,
+     "warmup": null
+    },
+    {
+     "name": "Leila FESTIC",
+     "nation": "BIH",
+     "no": 17,
+     "rank": 38,
+     "warmup": null
+    },
+    {
+     "name": "Sarah ABU ELSEOUD",
+     "nation": "EGY",
+     "no": 23,
+     "rank": 39,
+     "warmup": null
+    }
+   ]
+  }
+ },
+ "totals": {}
+}

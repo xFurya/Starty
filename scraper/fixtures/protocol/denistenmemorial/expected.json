@@ -1,0 +1,829 @@
+{
+ "index": {
+  "index.htm": {
+   "categories": [
+    {
+     "entries": "CAT001EN.htm",
+     "name": "Men",
+     "results": "CAT001RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKMSINGLES-----------QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Short Program",
+       "page": "SEG001.htm",
+       "start": "2026-10-08T20:00:00+05:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKMSINGLES-----------FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Free Skating",
+       "page": "SEG002.htm",
+       "start": "2026-10-10T14:30:00+05:00",
+       "times_pdf": null
+      }
+     ]
+    },
+    {
+     "entries": "CAT002EN.htm",
+     "name": "Women",
+     "results": "CAT002RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKWSINGLES-----------QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Short Program",
+       "page": "SEG003.htm",
+       "start": "2026-10-08T17:05:00+05:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKWSINGLES-----------FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Free Skating",
+       "page": "SEG004.htm",
+       "start": "2026-10-09T19:30:00+05:00",
+       "times_pdf": null
+      }
+     ]
+    },
+    {
+     "entries": "CAT003EN.htm",
+     "name": "Ice Dance",
+     "results": "CAT003RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKXICEDANCE----------QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Rhythm Dance",
+       "page": "SEG005.htm",
+       "start": "2026-10-09T17:15:00+05:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKXICEDANCE----------FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Free Dance",
+       "page": "SEG006.htm",
+       "start": "2026-10-10T12:00:00+05:00",
+       "times_pdf": null
+      }
+     ]
+    },
+    {
+     "entries": "CAT004EN.htm",
+     "name": "Junior Men",
+     "results": "CAT004RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKMSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Short Program",
+       "page": "SEG007.htm",
+       "start": "2026-10-08T10:45:00+05:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKMSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Free Skating",
+       "page": "SEG008.htm",
+       "start": "2026-10-10T09:30:00+05:00",
+       "times_pdf": null
+      }
+     ]
+    },
+    {
+     "entries": "CAT005EN.htm",
+     "name": "Junior Women",
+     "results": "CAT005RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKWSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Short Program",
+       "page": "SEG009.htm",
+       "start": "2026-10-08T12:55:00+05:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKWSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Free Skating",
+       "page": "SEG010.htm",
+       "start": "2026-10-09T11:00:00+05:00",
+       "times_pdf": null
+      }
+     ]
+    },
+    {
+     "entries": "CAT006EN.htm",
+     "name": "Junior Ice Dance",
+     "results": "CAT006RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKXICEDANCEJUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Rhythm Dance",
+       "page": "SEG011.htm",
+       "start": "2026-10-08T21:35:00+05:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKXICEDANCEJUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Free Dance",
+       "page": "SEG012.htm",
+       "start": "2026-10-09T16:00:00+05:00",
+       "times_pdf": null
+      }
+     ]
+    }
+   ],
+   "city": "Almaty",
+   "final_marks": true,
+   "name": "Denis Ten Memorial 2026",
+   "nation": "KAZ",
+   "offset": 300,
+   "venue": "Halyk Arena"
+  },
+  "index_partial.htm": {
+   "categories": [
+    {
+     "entries": "CAT001EN.htm",
+     "name": "Men",
+     "results": "CAT001RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKMSINGLES-----------QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Short Program",
+       "page": "SEG001.htm",
+       "start": "2026-10-08T20:00:00+05:00",
+       "times_pdf": null
+      },
+      {
+       "final": false,
+       "judges_pdf": null,
+       "name": "Free Skating",
+       "page": "SEG002.htm",
+       "start": "2026-10-10T14:30:00+05:00",
+       "times_pdf": null
+      }
+     ]
+    },
+    {
+     "entries": "CAT002EN.htm",
+     "name": "Women",
+     "results": "CAT002RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKWSINGLES-----------QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Short Program",
+       "page": "SEG003.htm",
+       "start": "2026-10-08T17:05:00+05:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKWSINGLES-----------FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Free Skating",
+       "page": "SEG004.htm",
+       "start": "2026-10-09T19:30:00+05:00",
+       "times_pdf": null
+      }
+     ]
+    },
+    {
+     "entries": "CAT003EN.htm",
+     "name": "Ice Dance",
+     "results": "CAT003RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKXICEDANCE----------QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Rhythm Dance",
+       "page": "SEG005.htm",
+       "start": "2026-10-09T17:15:00+05:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKXICEDANCE----------FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Free Dance",
+       "page": "SEG006.htm",
+       "start": "2026-10-10T12:00:00+05:00",
+       "times_pdf": null
+      }
+     ]
+    },
+    {
+     "entries": "CAT004EN.htm",
+     "name": "Junior Men",
+     "results": "CAT004RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKMSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Short Program",
+       "page": "SEG007.htm",
+       "start": "2026-10-08T10:45:00+05:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKMSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Free Skating",
+       "page": "SEG008.htm",
+       "start": "2026-10-10T09:30:00+05:00",
+       "times_pdf": null
+      }
+     ]
+    },
+    {
+     "entries": "CAT005EN.htm",
+     "name": "Junior Women",
+     "results": "CAT005RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKWSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Short Program",
+       "page": "SEG009.htm",
+       "start": "2026-10-08T12:55:00+05:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKWSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Free Skating",
+       "page": "SEG010.htm",
+       "start": "2026-10-09T11:00:00+05:00",
+       "times_pdf": null
+      }
+     ]
+    },
+    {
+     "entries": "CAT006EN.htm",
+     "name": "Junior Ice Dance",
+     "results": "CAT006RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKXICEDANCEJUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Rhythm Dance",
+       "page": "SEG011.htm",
+       "start": "2026-10-08T21:35:00+05:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKXICEDANCEJUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Free Dance",
+       "page": "SEG012.htm",
+       "start": "2026-10-09T16:00:00+05:00",
+       "times_pdf": null
+      }
+     ]
+    }
+   ],
+   "city": "Almaty",
+   "final_marks": true,
+   "name": "Denis Ten Memorial 2026",
+   "nation": "KAZ",
+   "offset": 300,
+   "venue": "Halyk Arena"
+  }
+ },
+ "segments": {
+  "SEG001.htm": {
+   "results": [
+    {
+     "name": "Vladislav DIKIDZHI",
+     "nation": "AIN2",
+     "place": 1,
+     "points": "107.31"
+    },
+    {
+     "name": "Gleb LUTFULLIN",
+     "nation": "AIN2",
+     "place": 2,
+     "points": "95.79"
+    },
+    {
+     "name": "Petr GUMENNIK",
+     "nation": "AIN2",
+     "place": 3,
+     "points": "80.63"
+    },
+    {
+     "name": "Vasil BARAKHOUSKI",
+     "nation": "AIN1",
+     "place": 4,
+     "points": "77.96"
+    },
+    {
+     "name": "Daniel MARTYNOV",
+     "nation": "USA",
+     "place": 5,
+     "points": "77.36"
+    },
+    {
+     "name": "Heorhi KAZLOUSKI",
+     "nation": "AIN1",
+     "place": 6,
+     "points": "75.09"
+    },
+    {
+     "name": "Dias JIRENBAYEV",
+     "nation": "KAZ",
+     "place": 7,
+     "points": "66.11"
+    },
+    {
+     "name": "Yudong CHEN",
+     "nation": "CHN",
+     "place": 8,
+     "points": "64.19"
+    },
+    {
+     "name": "Alex LABOVICH",
+     "nation": "AIN1",
+     "place": 9,
+     "points": "61.26"
+    },
+    {
+     "name": "Douglas GERBER",
+     "nation": "AUS",
+     "place": 10,
+     "points": "60.70"
+    }
+   ],
+   "starting": [
+    {
+     "name": "Vladislav DIKIDZHI",
+     "nation": "AIN2",
+     "no": 3,
+     "rank": 1,
+     "warmup": null
+    },
+    {
+     "name": "Gleb LUTFULLIN",
+     "nation": "AIN2",
+     "no": 9,
+     "rank": 2,
+     "warmup": null
+    },
+    {
+     "name": "Petr GUMENNIK",
+     "nation": "AIN2",
+     "no": 8,
+     "rank": 3,
+     "warmup": null
+    },
+    {
+     "name": "Vasil BARAKHOUSKI",
+     "nation": "AIN1",
+     "no": 7,
+     "rank": 4,
+     "warmup": null
+    },
+    {
+     "name": "Daniel MARTYNOV",
+     "nation": "USA",
+     "no": 1,
+     "rank": 5,
+     "warmup": null
+    },
+    {
+     "name": "Heorhi KAZLOUSKI",
+     "nation": "AIN1",
+     "no": 4,
+     "rank": 6,
+     "warmup": null
+    },
+    {
+     "name": "Dias JIRENBAYEV",
+     "nation": "KAZ",
+     "no": 5,
+     "rank": 7,
+     "warmup": null
+    },
+    {
+     "name": "Yudong CHEN",
+     "nation": "CHN",
+     "no": 10,
+     "rank": 8,
+     "warmup": null
+    },
+    {
+     "name": "Alex LABOVICH",
+     "nation": "AIN1",
+     "no": 6,
+     "rank": 9,
+     "warmup": null
+    },
+    {
+     "name": "Douglas GERBER",
+     "nation": "AUS",
+     "no": 2,
+     "rank": 10,
+     "warmup": null
+    }
+   ]
+  },
+  "SEG002.htm": {
+   "results": [
+    {
+     "name": "Vladislav DIKIDZHI",
+     "nation": "AIN2",
+     "place": 1,
+     "points": "205.48"
+    },
+    {
+     "name": "Gleb LUTFULLIN",
+     "nation": "AIN2",
+     "place": 2,
+     "points": "181.44"
+    },
+    {
+     "name": "Petr GUMENNIK",
+     "nation": "AIN2",
+     "place": 3,
+     "points": "181.13"
+    },
+    {
+     "name": "Daniel MARTYNOV",
+     "nation": "USA",
+     "place": 4,
+     "points": "144.19"
+    },
+    {
+     "name": "Vasil BARAKHOUSKI",
+     "nation": "AIN1",
+     "place": 5,
+     "points": "140.40"
+    },
+    {
+     "name": "Yudong CHEN",
+     "nation": "CHN",
+     "place": 6,
+     "points": "132.41"
+    },
+    {
+     "name": "Alex LABOVICH",
+     "nation": "AIN1",
+     "place": 7,
+     "points": "128.11"
+    },
+    {
+     "name": "Douglas GERBER",
+     "nation": "AUS",
+     "place": 8,
+     "points": "120.69"
+    },
+    {
+     "name": "Dias JIRENBAYEV",
+     "nation": "KAZ",
+     "place": 9,
+     "points": "120.16"
+    },
+    {
+     "name": "Heorhi KAZLOUSKI",
+     "nation": "AIN1",
+     "place": 10,
+     "points": "112.61"
+    }
+   ],
+   "starting": [
+    {
+     "name": "Vladislav DIKIDZHI",
+     "nation": "AIN2",
+     "no": 10,
+     "rank": 1,
+     "warmup": null
+    },
+    {
+     "name": "Gleb LUTFULLIN",
+     "nation": "AIN2",
+     "no": 9,
+     "rank": 2,
+     "warmup": null
+    },
+    {
+     "name": "Petr GUMENNIK",
+     "nation": "AIN2",
+     "no": 8,
+     "rank": 3,
+     "warmup": null
+    },
+    {
+     "name": "Daniel MARTYNOV",
+     "nation": "USA",
+     "no": 6,
+     "rank": 4,
+     "warmup": null
+    },
+    {
+     "name": "Vasil BARAKHOUSKI",
+     "nation": "AIN1",
+     "no": 7,
+     "rank": 5,
+     "warmup": null
+    },
+    {
+     "name": "Yudong CHEN",
+     "nation": "CHN",
+     "no": 3,
+     "rank": 6,
+     "warmup": null
+    },
+    {
+     "name": "Alex LABOVICH",
+     "nation": "AIN1",
+     "no": 2,
+     "rank": 7,
+     "warmup": null
+    },
+    {
+     "name": "Douglas GERBER",
+     "nation": "AUS",
+     "no": 1,
+     "rank": 8,
+     "warmup": null
+    },
+    {
+     "name": "Dias JIRENBAYEV",
+     "nation": "KAZ",
+     "no": 4,
+     "rank": 9,
+     "warmup": null
+    },
+    {
+     "name": "Heorhi KAZLOUSKI",
+     "nation": "AIN1",
+     "no": 5,
+     "rank": 10,
+     "warmup": null
+    }
+   ]
+  },
+  "SEG007.htm": {
+   "results": [
+    {
+     "name": "Arsenii FEDOTOV",
+     "nation": "AIN2",
+     "place": 1,
+     "points": "91.38"
+    },
+    {
+     "name": "Aleksandr CHMIL",
+     "nation": "AIN2",
+     "place": 2,
+     "points": "74.01"
+    },
+    {
+     "name": "Gleb KOVTUN",
+     "nation": "AIN2",
+     "place": 3,
+     "points": "73.18"
+    },
+    {
+     "name": "Artur SMAGULOV",
+     "nation": "KAZ",
+     "place": 4,
+     "points": "71.75"
+    },
+    {
+     "name": "Konstantin SMIRNOV",
+     "nation": "ARM",
+     "place": 5,
+     "points": "63.06"
+    },
+    {
+     "name": "Pavel GAVDIS",
+     "nation": "AIN1",
+     "place": 6,
+     "points": "57.84"
+    },
+    {
+     "name": "Jakhongir ABYLKASSYMOV",
+     "nation": "KAZ",
+     "place": 7,
+     "points": "56.21"
+    },
+    {
+     "name": "Kenan BERDIBAYEV",
+     "nation": "KAZ",
+     "place": 8,
+     "points": "48.42"
+    },
+    {
+     "name": "Yeraly SHAKHIMURAT",
+     "nation": "KAZ",
+     "place": 9,
+     "points": "48.34"
+    },
+    {
+     "name": "Timur ADYLKHANOV",
+     "nation": "KAZ",
+     "place": 10,
+     "points": "46.47"
+    },
+    {
+     "name": "Samir TEMERGALIN",
+     "nation": "UZB",
+     "place": 11,
+     "points": "42.90"
+    },
+    {
+     "name": "Nikita KOZLOV",
+     "nation": "KAZ",
+     "place": 12,
+     "points": "42.82"
+    },
+    {
+     "name": "Klim TSOY",
+     "nation": "KAZ",
+     "place": 13,
+     "points": "35.16"
+    },
+    {
+     "name": "Temirlan YAKIYAEV",
+     "nation": "KAZ",
+     "place": 14,
+     "points": "33.58"
+    }
+   ],
+   "starting": [
+    {
+     "name": "Arsenii FEDOTOV",
+     "nation": "AIN2",
+     "no": 6,
+     "rank": 1,
+     "warmup": null
+    },
+    {
+     "name": "Aleksandr CHMIL",
+     "nation": "AIN2",
+     "no": 8,
+     "rank": 2,
+     "warmup": null
+    },
+    {
+     "name": "Gleb KOVTUN",
+     "nation": "AIN2",
+     "no": 10,
+     "rank": 3,
+     "warmup": null
+    },
+    {
+     "name": "Artur SMAGULOV",
+     "nation": "KAZ",
+     "no": 14,
+     "rank": 4,
+     "warmup": null
+    },
+    {
+     "name": "Konstantin SMIRNOV",
+     "nation": "ARM",
+     "no": 13,
+     "rank": 5,
+     "warmup": null
+    },
+    {
+     "name": "Pavel GAVDIS",
+     "nation": "AIN1",
+     "no": 11,
+     "rank": 6,
+     "warmup": null
+    },
+    {
+     "name": "Jakhongir ABYLKASSYMOV",
+     "nation": "KAZ",
+     "no": 12,
+     "rank": 7,
+     "warmup": null
+    },
+    {
+     "name": "Kenan BERDIBAYEV",
+     "nation": "KAZ",
+     "no": 2,
+     "rank": 8,
+     "warmup": null
+    },
+    {
+     "name": "Yeraly SHAKHIMURAT",
+     "nation": "KAZ",
+     "no": 7,
+     "rank": 9,
+     "warmup": null
+    },
+    {
+     "name": "Timur ADYLKHANOV",
+     "nation": "KAZ",
+     "no": 5,
+     "rank": 10,
+     "warmup": null
+    },
+    {
+     "name": "Samir TEMERGALIN",
+     "nation": "UZB",
+     "no": 1,
+     "rank": 11,
+     "warmup": null
+    },
+    {
+     "name": "Nikita KOZLOV",
+     "nation": "KAZ",
+     "no": 4,
+     "rank": 12,
+     "warmup": null
+    },
+    {
+     "name": "Klim TSOY",
+     "nation": "KAZ",
+     "no": 9,
+     "rank": 13,
+     "warmup": null
+    },
+    {
+     "name": "Temirlan YAKIYAEV",
+     "nation": "KAZ",
+     "no": 3,
+     "rank": 14,
+     "warmup": null
+    }
+   ]
+  }
+ },
+ "totals": {
+  "CAT001RS.htm": {
+   "complete": true,
+   "rows": [
+    {
+     "name": "Vladislav DIKIDZHI",
+     "nation": "AIN2",
+     "place": 1,
+     "points": "312.79"
+    },
+    {
+     "name": "Gleb LUTFULLIN",
+     "nation": "AIN2",
+     "place": 2,
+     "points": "277.23"
+    },
+    {
+     "name": "Petr GUMENNIK",
+     "nation": "AIN2",
+     "place": 3,
+     "points": "261.76"
+    },
+    {
+     "name": "Daniel MARTYNOV",
+     "nation": "USA",
+     "place": 4,
+     "points": "221.55"
+    },
+    {
+     "name": "Vasil BARAKHOUSKI",
+     "nation": "AIN1",
+     "place": 5,
+     "points": "218.36"
+    },
+    {
+     "name": "Yudong CHEN",
+     "nation": "CHN",
+     "place": 6,
+     "points": "196.60"
+    },
+    {
+     "name": "Alex LABOVICH",
+     "nation": "AIN1",
+     "place": 7,
+     "points": "189.37"
+    },
+    {
+     "name": "Heorhi KAZLOUSKI",
+     "nation": "AIN1",
+     "place": 8,
+     "points": "187.70"
+    },
+    {
+     "name": "Dias JIRENBAYEV",
+     "nation": "KAZ",
+     "place": 9,
+     "points": "186.27"
+    },
+    {
+     "name": "Douglas GERBER",
+     "nation": "AUS",
+     "place": 10,
+     "points": "181.39"
+    }
+   ]
+  }
+ }
+}

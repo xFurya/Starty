@@ -1,0 +1,310 @@
+{
+ "index": {
+  "index.htm": {
+   "categories": [
+    {
+     "entries": "CAT001EN.htm",
+     "name": "Юниоры - КМС",
+     "results": "CAT001RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKMSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Короткая программа",
+       "page": "SEG001.htm",
+       "start": "2026-09-26T19:30:00+08:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKMSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Произвольная программа",
+       "page": "SEG002.htm",
+       "start": "2026-09-27T15:45:00+08:00",
+       "times_pdf": null
+      }
+     ]
+    },
+    {
+     "entries": "CAT002EN.htm",
+     "name": "Юниорки - КМС",
+     "results": "CAT002RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKWSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Короткая программа",
+       "page": "SEG003.htm",
+       "start": "2026-09-26T16:55:00+08:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKWSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Произвольная программа",
+       "page": "SEG004.htm",
+       "start": "2026-09-27T12:45:00+08:00",
+       "times_pdf": null
+      }
+     ]
+    },
+    {
+     "entries": "CAT003EN.htm",
+     "name": "Парное катание - КМС",
+     "results": "CAT003RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKXPAIRS---JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Короткая программа",
+       "page": "SEG005.htm",
+       "start": "2026-09-25T19:50:00+08:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKXPAIRS---JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Произвольная программа",
+       "page": "SEG006.htm",
+       "start": "2026-09-26T15:35:00+08:00",
+       "times_pdf": null
+      }
+     ]
+    },
+    {
+     "entries": "CAT004EN.htm",
+     "name": "Танцы на льду - КМС",
+     "results": "CAT004RS.htm",
+     "segments": [
+      {
+       "final": true,
+       "judges_pdf": "FSKXICEDANCEJUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "name": "Ритм-танец",
+       "page": "SEG007.htm",
+       "start": "2026-09-25T17:30:00+08:00",
+       "times_pdf": null
+      },
+      {
+       "final": true,
+       "judges_pdf": "FSKXICEDANCEJUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "name": "Произвольный танец",
+       "page": "SEG008.htm",
+       "start": "2026-09-26T13:00:00+08:00",
+       "times_pdf": null
+      }
+     ]
+    }
+   ],
+   "city": "",
+   "final_marks": true,
+   "name": "Всероссийские соревнования \"Лед Мечты\" среди юниоров",
+   "nation": "",
+   "offset": 480,
+   "venue": ""
+  }
+ },
+ "segments": {
+  "SEG007.htm": {
+   "results": [
+    {
+     "name": "Мария ФЕФЕЛОВА / Артём ВАЛОВ",
+     "nation": "МОБ",
+     "place": 1,
+     "points": "72.64"
+    },
+    {
+     "name": "Полина ЖАРОВА / Алексей СТОЛЯРОВ",
+     "nation": "МОС",
+     "place": 2,
+     "points": "64.19"
+    },
+    {
+     "name": "Арина НОВИКОВА / Кирилл ЛИХАЧЕВ",
+     "nation": "МОС",
+     "place": 3,
+     "points": "59.16"
+    },
+    {
+     "name": "Устинья СМИРНОВА / Матвей ШИПИЛОВ",
+     "nation": "МОС",
+     "place": 4,
+     "points": "58.75"
+    },
+    {
+     "name": "Софья ГРАБЧАК / Максим ПОЛТОРАК",
+     "nation": "МОС",
+     "place": 5,
+     "points": "58.69"
+    },
+    {
+     "name": "Сандра ДАВЫДЕНКО / Игнат ПАХОМОВ",
+     "nation": "МОС",
+     "place": 6,
+     "points": "58.57"
+    },
+    {
+     "name": "Полина ТИХОНОВА / Матвей ЛЫСОВ",
+     "nation": "МОБ",
+     "place": 7,
+     "points": "57.94"
+    },
+    {
+     "name": "Елизавета РОСТИЛОВА / Денис АУРОВ",
+     "nation": "МОС",
+     "place": 8,
+     "points": "56.38"
+    },
+    {
+     "name": "Софья ГОНЧАРОВА / Александр СИНЦОВ",
+     "nation": "МОС",
+     "place": 9,
+     "points": "54.00"
+    },
+    {
+     "name": "Милана ЧЕГЕМОВА / Кирилл ЕВГРАФОВ",
+     "nation": "СПБ",
+     "place": 10,
+     "points": "53.13"
+    },
+    {
+     "name": "Таиса МУСУРОВА / Дмитрий КАРБОВСКИЙ",
+     "nation": "МОС",
+     "place": 11,
+     "points": "51.08"
+    },
+    {
+     "name": "Екатерина СТАРОСТИНА / Тимофей СТОЛЯРЕНКО",
+     "nation": "МОС",
+     "place": 12,
+     "points": "50.79"
+    },
+    {
+     "name": "Полина ПУНЕГОВА / Дмитрий КАШУБИН",
+     "nation": "ТУЛ",
+     "place": 13,
+     "points": "48.74"
+    },
+    {
+     "name": "Полина НЕГАНОВА / Степан ЧУЧКАЛОВ",
+     "nation": "ПРМ",
+     "place": 14,
+     "points": "48.30"
+    },
+    {
+     "name": "Ульяна ТРУШНИКОВА / Кирилл ВЕДЕРНИКОВ",
+     "nation": "КИР",
+     "place": 15,
+     "points": "39.90"
+    }
+   ],
+   "starting": [
+    {
+     "name": "Мария ФЕФЕЛОВА / Артём ВАЛОВ",
+     "nation": "МОБ",
+     "no": 8,
+     "rank": 1,
+     "warmup": null
+    },
+    {
+     "name": "Полина ЖАРОВА / Алексей СТОЛЯРОВ",
+     "nation": "МОС",
+     "no": 7,
+     "rank": 2,
+     "warmup": null
+    },
+    {
+     "name": "Арина НОВИКОВА / Кирилл ЛИХАЧЕВ",
+     "nation": "МОС",
+     "no": 15,
+     "rank": 3,
+     "warmup": null
+    },
+    {
+     "name": "Устинья СМИРНОВА / Матвей ШИПИЛОВ",
+     "nation": "МОС",
+     "no": 13,
+     "rank": 4,
+     "warmup": null
+    },
+    {
+     "name": "Софья ГРАБЧАК / Максим ПОЛТОРАК",
+     "nation": "МОС",
+     "no": 10,
+     "rank": 5,
+     "warmup": null
+    },
+    {
+     "name": "Сандра ДАВЫДЕНКО / Игнат ПАХОМОВ",
+     "nation": "МОС",
+     "no": 9,
+     "rank": 6,
+     "warmup": null
+    },
+    {
+     "name": "Полина ТИХОНОВА / Матвей ЛЫСОВ",
+     "nation": "МОБ",
+     "no": 14,
+     "rank": 7,
+     "warmup": null
+    },
+    {
+     "name": "Елизавета РОСТИЛОВА / Денис АУРОВ",
+     "nation": "МОС",
+     "no": 5,
+     "rank": 8,
+     "warmup": null
+    },
+    {
+     "name": "Софья ГОНЧАРОВА / Александр СИНЦОВ",
+     "nation": "МОС",
+     "no": 3,
+     "rank": 9,
+     "warmup": null
+    },
+    {
+     "name": "Милана ЧЕГЕМОВА / Кирилл ЕВГРАФОВ",
+     "nation": "СПБ",
+     "no": 12,
+     "rank": 10,
+     "warmup": null
+    },
+    {
+     "name": "Таиса МУСУРОВА / Дмитрий КАРБОВСКИЙ",
+     "nation": "МОС",
+     "no": 6,
+     "rank": 11,
+     "warmup": null
+    },
+    {
+     "name": "Екатерина СТАРОСТИНА / Тимофей СТОЛЯРЕНКО",
+     "nation": "МОС",
+     "no": 2,
+     "rank": 12,
+     "warmup": null
+    },
+    {
+     "name": "Полина ПУНЕГОВА / Дмитрий КАШУБИН",
+     "nation": "ТУЛ",
+     "no": 1,
+     "rank": 13,
+     "warmup": null
+    },
+    {
+     "name": "Полина НЕГАНОВА / Степан ЧУЧКАЛОВ",
+     "nation": "ПРМ",
+     "no": 11,
+     "rank": 14,
+     "warmup": null
+    },
+    {
+     "name": "Ульяна ТРУШНИКОВА / Кирилл ВЕДЕРНИКОВ",
+     "nation": "КИР",
+     "no": 4,
+     "rank": 15,
+     "warmup": null
+    }
+   ]
+  }
+ },
+ "totals": {}
+}
