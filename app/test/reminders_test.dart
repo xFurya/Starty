@@ -82,18 +82,37 @@ void main() {
     expect(x.body, 'женщины ПП · CS Denis Ten Memorial');
   });
 
+  test('выход спортсмена: закреплено, пока не откатал, потом смахивается и убирается само', () {
+    final r = const NotifyRules().copyWith(skaters: true);
+    final x = Reminders.plan(data, plan(r), now).firstWhere((x) => x.title == '20:32 · Александра Трусова');
+    final skate = x.at.add(const Duration(minutes: 15));
+    expect(x.hold, skate.add(Reminders.skated));
+    // последняя в разминке: убрать через 15 мин — позже конца старта, значит в конце старта
+    expect(x.end, womenFs.t1);
+    expect(skate.add(Reminders.skaterGone).isAfter(womenFs.t1), isTrue);
+    final start = Reminders.plan(data, plan(r), now).firstWhere((x) => x.key == 's:${womenFs.id}');
+    expect(start.hold, womenFs.t1);
+    // не закреплять — смахиваются сразу; не убирать — висят до конца старта
+    final loose = Reminders.plan(data, plan(r.copyWith(pin: false, clear: false)), now)
+        .firstWhere((x) => x.title == '20:32 · Александра Трусова');
+    expect(loose.hold, loose.at);
+    expect(loose.end, womenFs.t1);
+  });
+
   test('прошедшее не планируется', () {
     final past = data.starts.firstWhere((e) => e.t1.isBefore(now));
     expect(Reminders.plan(data, plan(const NotifyRules(), {past.id}), now).any((x) => x.startId == past.id), isFalse);
   });
 
   test('правила сохраняются и читаются, мусор — правила по умолчанию', () {
-    final r = const NotifyRules().copyWith(lead: 30, kinds: {'dance'}, night: false, skaters: true);
+    final r = const NotifyRules().copyWith(lead: 30, kinds: {'dance'}, night: false, skaters: true, pin: false);
     final back = NotifyRules.fromJson(r.toJson());
     expect(back.lead, 30);
     expect(back.kinds, {'dance'});
     expect(back.night, isFalse);
     expect(back.skaters, isTrue);
+    expect(back.pin, isFalse);
+    expect(back.clear, isTrue);
     expect(NotifyRules.fromJson('{oops').isDefault, isTrue);
     expect(NotifyRules.fromJson('{"lead": 7}').lead, 15);
     expect(NotifyRules.fromJson(null).on, isTrue);

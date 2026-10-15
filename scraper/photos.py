@@ -1,7 +1,12 @@
 """Миниатюры фото спортсменов: квадрат 256 px на своём сайте вместо
 оригиналов по 0,3–1 МБ с чужих. Имя файла — от адреса оригинала, поэтому
 готовая миниатюра не скачивается повторно. Без Pillow (и без ImageMagick)
-остаётся адрес оригинала."""
+остаётся адрес оригинала.
+
+Кадр строится по лицу (детектор YuNet из OpenCV, модель face_yunet.onnx рядом):
+голова целиком с волосами и чуть плеч, лицо по центру. Источники снимают по-разному
+(портрет в рост, групповое фото, обрезанный квадрат), и кадр «по пропорциям» резал
+лицо пополам. Нет OpenCV или лица не нашлось — прежний кадр по пропорциям."""
 import hashlib
 import io
 import os
@@ -16,7 +21,7 @@ DIR = "photos"
 
 
 # версия нарезки: при смене все миниатюры делаются заново (имя файла от неё зависит)
-CUT = "3"
+CUT = "4"
 
 
 def rel_path(url):
@@ -36,14 +41,71 @@ def _box(w, h):
     return left, top, side
 
 
-def _pil(raw, dest):
+_MODEL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "face_yunet.onnx")
+
+
+class Unsure(Exception):
+    """На снимке не понять, кто это: лиц несколько или лицо слишком мелкое."""
+
+
+def _face(im, strict=False):
+    """(x, y, w, h) самого заметного лица на снимке или None. strict — снимок не портрет
+    (Викисклад: прокат, пьедестал, пара): лицо должно быть одно и крупное, иначе Unsure."""
     try:
-        from PIL import Image
+        import cv2
+        import numpy as np
+    except ImportError:
+        if strict:
+            raise Unsure("нет OpenCV")
+        return None
+    w, h = im.size
+    k = min(1.0, 640 / max(w, h))
+    small = im.resize((max(1, int(w * k)), max(1, int(h * k)))) if k < 1 else im
+    arr = cv2.cvtColor(np.asarray(small), cv2.COLOR_RGB2BGR)
+    try:
+        det = cv2.FaceDetectorYN.create(_MODEL, "", (arr.shape[1], arr.shape[0]), 0.75)
+        _, faces = det.detect(arr)
+    except cv2.error:
+        return None
+    if faces is None or not len(faces):
+        if strict:
+            raise Unsure("лица нет")
+        return None
+    faces = sorted(faces, key=lambda f: f[2] * f[3] * f[14], reverse=True)
+    f = faces[0]
+    if strict:
+        if len(faces) > 1 and faces[1][2] * faces[1][3] >= 0.2 * f[2] * f[3]:
+            raise Unsure("лиц несколько")
+        if max(f[2], f[3]) / k < 64:
+            raise Unsure("лицо мелкое")
+    return tuple(float(v) / k for v in f[:4])
+
+
+def face_box(w, h, face):
+    """Квадрат вокруг лица: сторона — 2,6 лица, сверху запас под волосы (0,55 лица),
+    снизу — подбородок и плечи. Не выходит за снимок."""
+    fx, fy, fw, fh = face
+    f = max(fw, fh)
+    side = min(w, h, max(f * 2.6, 96))
+    cx = fx + fw / 2
+    top = fy - f * 0.55
+    # кадр меньше нужного (лицо крупно) — центр по лицу
+    if side < f * 2.6:
+        top = fy + fh / 2 - side / 2
+    left = int(round(min(max(cx - side / 2, 0), w - side)))
+    top = int(round(min(max(top, 0), h - side)))
+    return left, top, int(side)
+
+
+def _pil(raw, dest, strict=False):
+    try:
+        from PIL import Image, ImageOps
     except ImportError:
         return False
     im = Image.open(io.BytesIO(raw))
-    im = im.convert("RGB")
-    left, top, side = _box(*im.size)
+    im = ImageOps.exif_transpose(im).convert("RGB")
+    face = _face(im, strict)
+    left, top, side = face_box(*im.size, face) if face else _box(*im.size)
     im = im.crop((left, top, left + side, top + side)).resize((SIZE, SIZE), Image.LANCZOS)
     im.save(dest, "JPEG", quality=84, optimize=True, progressive=True)
     return True
@@ -84,8 +146,10 @@ def make(site, url):
         return None
     os.makedirs(os.path.dirname(dest), exist_ok=True)
     tmp = dest + ".tmp"
+    # не портрет (Викисклад) — только с найденным лицом, без кадра «по пропорциям»
+    strict = "wikimedia.org" in url
     try:
-        if _pil(raw, tmp) or _magick(raw, tmp):
+        if _pil(raw, tmp, strict) or (not strict and _magick(raw, tmp)):
             os.replace(tmp, dest)
             return rel
     except Exception:

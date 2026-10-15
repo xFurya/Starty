@@ -6,6 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'data.dart';
 import 'main.dart';
+import 'platform.dart';
 import 'reminders.dart';
 import 'sheets.dart';
 import 'state.dart';
@@ -177,7 +178,7 @@ class SettingsView extends StatelessWidget {
                       action: r.athletes.isEmpty ? 'Выбрать' : 'Изменить',
                       onAction: () => pickAthletes(
                         context,
-                        state.data?.roster ?? const [],
+                        state.data,
                         r.athletes,
                         (v) => set(r.copyWith(athletes: v)),
                       ),
@@ -198,6 +199,27 @@ class SettingsView extends StatelessWidget {
                       value: r.skaters,
                       onChanged: (v) => set(r.copyWith(skaters: v)),
                     ),
+                    // закрепить и убрать само умеет только Android
+                    if (isAndroid) ...[
+                      const Hairline(),
+                      _SwitchRow(
+                        icon: CupertinoIcons.pin,
+                        title: 'Не смахиваются',
+                        subtitle: r.skaters ? 'старт — до конца, спортсмен — пока не откатал' : 'до конца старта',
+                        value: r.pin,
+                        onChanged: (v) => set(r.copyWith(pin: v)),
+                      ),
+                      if (r.skaters) ...[
+                        const Hairline(),
+                        _SwitchRow(
+                          icon: CupertinoIcons.clear,
+                          title: 'Убирать после выхода',
+                          subtitle: 'через ${Reminders.skaterGone.inMinutes} мин после выхода спортсмена',
+                          value: r.clear,
+                          onChanged: (v) => set(r.copyWith(clear: v)),
+                        ),
+                      ],
+                    ],
                     if (exceptions > 0) ...[
                       const Hairline(),
                       _Row(

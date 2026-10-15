@@ -27,6 +27,10 @@ class NotifyRules {
   final bool night; // старты с 00:00 до 08:00 МСК
   final bool skaters; // отдельно — выход каждого нашего, когда время известно
   final Set<String> athletes; // пусто — все, иначе — только старты этих спортсменов
+  // Android: закреплять (не смахиваются) — старт до конца, спортсмен — пока не откатал
+  final bool pin;
+  // Android: уведомление о выходе спортсмена убирается само вскоре после его проката
+  final bool clear;
 
   static const allKinds = ['women', 'men', 'pairs', 'dance'];
   static const allLevels = ['senior', 'junior'];
@@ -44,6 +48,8 @@ class NotifyRules {
     this.night = true,
     this.skaters = false,
     this.athletes = const {},
+    this.pin = true,
+    this.clear = true,
   });
 
   static String segOf(Start s) => s.seg == 'ПП' || s.seg == 'ПТ' ? 'free' : 'short';
@@ -57,8 +63,8 @@ class NotifyRules {
     if (s.intl ? !intl : !russian) return false;
     if (!night && msk(s.t0).hour < 8) return false;
     if (athletes.isNotEmpty) {
-      final have = {...s.athletes, ...s.ours.map((o) => o.name)};
-      if (!athletes.any((a) => have.any((h) => norm(h) == norm(a)))) return false;
+      final have = [...s.athletes, ...s.ours.map((o) => o.name)];
+      if (!athletes.any((a) => namesInclude(have, a))) return false;
     }
     return true;
   }
@@ -83,6 +89,8 @@ class NotifyRules {
     bool? night,
     bool? skaters,
     Set<String>? athletes,
+    bool? pin,
+    bool? clear,
   }) => NotifyRules(
     on: on ?? this.on,
     lead: lead ?? this.lead,
@@ -94,6 +102,8 @@ class NotifyRules {
     night: night ?? this.night,
     skaters: skaters ?? this.skaters,
     athletes: athletes ?? this.athletes,
+    pin: pin ?? this.pin,
+    clear: clear ?? this.clear,
   );
 
   String toJson() => jsonEncode({
@@ -107,6 +117,8 @@ class NotifyRules {
     'night': night,
     'skaters': skaters,
     'athletes': athletes.toList(),
+    'pin': pin,
+    'clear': clear,
   });
 
   static NotifyRules fromJson(String? s) {
@@ -127,6 +139,8 @@ class NotifyRules {
         night: j['night'] is bool ? j['night'] : d.night,
         skaters: j['skaters'] is bool ? j['skaters'] : d.skaters,
         athletes: set('athletes', d.athletes),
+        pin: j['pin'] is bool ? j['pin'] : d.pin,
+        clear: j['clear'] is bool ? j['clear'] : d.clear,
       );
     } catch (_) {
       return d;
@@ -227,8 +241,14 @@ class Reminders {
 
   static bool get _android => !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
 
-  /// Уведомления, которые должны быть: время, заголовок, текст и конец старта — до него
-  /// уведомление висит. Сюда попадают и уже показанные (старт идёт), чтобы их не убирали.
+  /// Сколько после времени выхода спортсмен заведомо откатал: программа до 4 мин и оценки.
+  static const skated = Duration(minutes: 8);
+
+  /// Через сколько после выхода уведомление о нём убирается само (если так настроено).
+  static const skaterGone = Duration(minutes: 15);
+
+  /// Уведомления, которые должны быть: время, заголовок, текст, до какого момента закреплено
+  /// и когда убрать. Сюда попадают и уже показанные (старт идёт), чтобы их не убирали.
   /// Ближайшие 60 — iOS держит не больше 64 запланированных.
   static List<Planned> plan(Schedule data, NotifyPlan p, DateTime now) {
     final out = <Planned>[];
@@ -240,6 +260,7 @@ class Reminders {
       out.add(Planned(
         's:${s.id}',
         at,
+        p.rules.pin ? s.t1 : at,
         s.t1,
         '${hm(s.t0)} · ${s.segment}',
         [s.tournament, if (ours.isNotEmpty) ours, if (s.broadcast.isNotEmpty) s.broadcast.join(' / ')].join(' · '),
@@ -249,10 +270,17 @@ class Reminders {
       for (final o in s.ours) {
         final skate = s.skateAt(o);
         if (skate == null) continue;
+        final at = skate.subtract(lead);
+        // место в протоколе — уже откатал, раньше расчётного; закрепление снимается сразу
+        final done = o.place != null ? now : skate.add(skated);
+        var end = p.rules.clear ? skate.add(skaterGone) : s.t1;
+        if (end.isAfter(s.t1)) end = s.t1;
+        if (!end.isAfter(now)) continue;
         out.add(Planned(
           'k:${s.id}:${o.name}',
-          skate.subtract(lead),
-          s.t1,
+          at,
+          !p.rules.pin ? at : (done.isBefore(end) ? done : end),
+          end,
           '${o.time} · ${o.name}',
           '${s.segment} · ${s.tournament}',
           s.id,
@@ -319,7 +347,7 @@ class Reminders {
       if (_android) {
         await _migrate();
         await StartyAlerts.sync([
-          for (final x in list) AlertEntry(key: x.key, at: x.at, end: x.end, title: x.title, body: x.body),
+          for (final x in list) AlertEntry(key: x.key, at: x.at, hold: x.hold, end: x.end, title: x.title, body: x.body),
         ]);
         return;
       }
@@ -350,7 +378,7 @@ class Reminders {
 
 class Planned {
   final String key;
-  final DateTime at, end;
+  final DateTime at, hold, end;
   final String title, body, startId;
-  Planned(this.key, this.at, this.end, this.title, this.body, this.startId);
+  Planned(this.key, this.at, this.hold, this.end, this.title, this.body, this.startId);
 }

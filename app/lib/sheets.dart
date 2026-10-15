@@ -5,6 +5,7 @@ import 'dart:math' as math;
 import 'package:flutter/cupertino.dart' show CupertinoIcons;
 import 'package:flutter/material.dart';
 
+import 'countries.dart';
 import 'data.dart';
 import 'main.dart';
 import 'protocol.dart';
@@ -1074,19 +1075,7 @@ class _FilterSheetState extends State<_FilterSheet> {
     for (final s in data.starts) {
       if (!s.pastAt(t)) tours.putIfAbsent(s.tid, () => s.tournament);
     }
-    // кого искать: список сборщика, наши и заявленные на стартах впереди, заявки турниров без расписания
-    final all = <String>{...data.roster, ...data.watchlist};
-    for (final s in data.starts) {
-      if (s.pastAt(t)) continue;
-      all.addAll(s.ours.map((o) => o.name));
-      all.addAll(s.athletes);
-    }
-    for (final u in data.upcoming) {
-      all.addAll(u.ours);
-    }
-    final found = q.isEmpty
-        ? (athletes.toList()..sort())
-        : (all.where((a) => norm(displayName(a)).contains(norm(q))).toList()..sort()).take(8).toList();
+    final found = q.isEmpty ? (athletes.toList()..sort()) : searchAthletes(data, q, soon: soonAthletes(data, t));
     final canReset = kinds.isNotEmpty || tids.isNotEmpty || athletes.isNotEmpty || widget.state.filters.any;
     // что покажет лента с этим выбором: старты и турниры без расписания (у них только заявка)
     final f = Filters(kinds, tids, athletes);
@@ -1155,7 +1144,7 @@ class _FilterSheetState extends State<_FilterSheet> {
                               style: TextStyle(fontSize: 15.5, color: p.ink),
                               textInputAction: TextInputAction.search,
                               decoration: InputDecoration(
-                                hintText: 'Фамилия',
+                                hintText: 'Фамилия, на любом языке',
                                 hintStyle: TextStyle(color: p.ink2),
                                 prefixIcon: Icon(CupertinoIcons.search, size: 19, color: p.ink2),
                                 suffixIcon: q.isEmpty
@@ -1187,6 +1176,7 @@ class _FilterSheetState extends State<_FilterSheet> {
                               _CheckRow(
                                 leading: Avatar(name: a, data: data, size: 34, slot: true),
                                 title: displayName(a),
+                                subtitle: _personLine(data, a),
                                 value: athletes.contains(a),
                                 onTap: () => setState(() => athletes.contains(a) ? athletes.remove(a) : athletes.add(a)),
                               ),
@@ -1279,12 +1269,27 @@ class _FilterSheetState extends State<_FilterSheet> {
   return ('Показать $a', 'и $b');
 }
 
+/// Кто на стартах впереди — их в поиске выше.
+Set<String> soonAthletes(Schedule data, DateTime t) => {
+  for (final s in data.starts)
+    if (!s.pastAt(t)) ...[...s.ours.map((o) => o.name), ...s.athletes],
+  for (final u in data.upcoming) ...u.ours,
+};
+
+String? _personLine(Schedule data, String name) {
+  final p = data.people[name];
+  if (p == null) return null;
+  final s = personLine(p.nation, p.kinds);
+  return s.isEmpty ? null : s;
+}
+
 class _CheckRow extends StatelessWidget {
   final Widget? leading;
   final String title;
+  final String? subtitle;
   final bool value;
   final VoidCallback onTap;
-  const _CheckRow({this.leading, required this.title, required this.value, required this.onTap});
+  const _CheckRow({this.leading, required this.title, this.subtitle, required this.value, required this.onTap});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -1301,14 +1306,21 @@ class _CheckRow extends StatelessWidget {
               children: [
                 if (leading != null) ...[leading!, const SizedBox(width: 12)],
                 Expanded(
-                  child: Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: p.ink,
-                      fontWeight: value ? FontWeight.w600 : FontWeight.w500,
-                      height: 1.3,
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: p.ink,
+                          fontWeight: value ? FontWeight.w600 : FontWeight.w500,
+                          height: 1.3,
+                        ),
+                      ),
+                      if (subtitle != null)
+                        Text(subtitle!, style: TextStyle(fontSize: 13, color: p.ink2, height: 1.3)),
+                    ],
                   ),
                 ),
                 const SizedBox(width: 12),
@@ -1326,11 +1338,11 @@ class _CheckRow extends StatelessWidget {
 
 // ------------------------------------------------------------------ выбор спортсменов
 
-/// Выбор спортсменов из полного справочника сборщика: поиск по фамилии,
+/// Выбор спортсменов из полного справочника сборщика: поиск по фамилии на любом языке,
 /// сразу применяется через [onChanged]. Используется в настройках уведомлений.
 Future<void> pickAthletes(
   BuildContext context,
-  List<String> roster,
+  Schedule? data,
   Set<String> selected,
   ValueChanged<Set<String>> onChanged,
 ) {
@@ -1339,15 +1351,15 @@ Future<void> pickAthletes(
     isScrollControlled: true,
     useSafeArea: true,
     enableDrag: false,
-    builder: (c) => _AthletePicker(roster: roster, selected: selected, onChanged: onChanged),
+    builder: (c) => _AthletePicker(data: data, selected: selected, onChanged: onChanged),
   );
 }
 
 class _AthletePicker extends StatefulWidget {
-  final List<String> roster;
+  final Schedule? data;
   final Set<String> selected;
   final ValueChanged<Set<String>> onChanged;
-  const _AthletePicker({required this.roster, required this.selected, required this.onChanged});
+  const _AthletePicker({required this.data, required this.selected, required this.onChanged});
 
   @override
   State<_AthletePicker> createState() => _AthletePickerState();
@@ -1372,8 +1384,10 @@ class _AthletePickerState extends State<_AthletePicker> {
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    final found = widget.roster.where((a) => norm(displayName(a)).contains(norm(q))).toList()..sort();
-    final shown = q.isEmpty ? ([...sel]..sort()) : found.take(30).toList();
+    final data = widget.data;
+    final shown = q.isEmpty || data == null
+        ? ([...sel]..sort())
+        : searchAthletes(data, q, soon: soonAthletes(data, now()));
     return Padding(
       padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
       child: DraggableScrollableSheet(
@@ -1401,7 +1415,7 @@ class _AthletePickerState extends State<_AthletePicker> {
                 style: TextStyle(fontSize: 15.5, color: p.ink),
                 textInputAction: TextInputAction.search,
                 decoration: InputDecoration(
-                  hintText: 'Фамилия',
+                  hintText: 'Фамилия, на любом языке',
                   hintStyle: TextStyle(color: p.ink2),
                   prefixIcon: Icon(CupertinoIcons.search, size: 19, color: p.ink2),
                   filled: true,
@@ -1431,11 +1445,16 @@ class _AthletePickerState extends State<_AthletePicker> {
                 children: [
                   for (final a in shown)
                     _CheckRow(
+                      leading: Avatar(name: a, data: data, size: 34, slot: true),
                       title: displayName(a),
+                      subtitle: data == null ? null : _personLine(data, a),
                       value: sel.contains(a),
                       onTap: () => _toggle(a),
                     ),
-                  if (shown.isEmpty) Text('Не найдено', style: TextStyle(color: p.ink2, fontSize: 15)),
+                  if (shown.isEmpty && q.isNotEmpty) Text('Не найдено', style: TextStyle(color: p.ink2, fontSize: 15)),
+                  if (shown.isEmpty && q.isEmpty)
+                    Text('Найдите по фамилии — уведомления придут только о стартах выбранных',
+                        style: TextStyle(color: p.ink2, fontSize: 15, height: 1.35)),
                 ],
               ),
             ),

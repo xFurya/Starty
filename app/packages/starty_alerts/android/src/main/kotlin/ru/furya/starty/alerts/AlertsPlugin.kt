@@ -32,6 +32,7 @@ class AlertsPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
                         Entry(
                             key = x["key"] as String,
                             at = (x["at"] as Number).toLong(),
+                            hold = (x["hold"] as? Number)?.toLong() ?: (x["end"] as Number).toLong(),
                             end = (x["end"] as Number).toLong(),
                             title = x["title"] as? String ?: "",
                             body = x["body"] as? String ?: "",

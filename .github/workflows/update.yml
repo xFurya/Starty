@@ -29,8 +29,11 @@ jobs:
         with:
           ref: main
 
-      - name: Установить pdftotext и Pillow
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils python3-pil
+      - name: Установить pdftotext, Pillow и OpenCV
+        # OpenCV — найти лицо на фото спортсмена и обрезать по нему (scraper/photos.py)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils python3-pil
+          python3 -m pip install -q --break-system-packages opencv-python-headless
 
       - name: Собрать расписание
         run: |

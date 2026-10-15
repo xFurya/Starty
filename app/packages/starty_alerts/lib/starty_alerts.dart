@@ -1,16 +1,25 @@
 // Уведомления о стартах на Android: их ставит своя часть приложения, а не общий плагин.
-// Причина: уведомление должно висеть до конца старта (его нельзя смахнуть),
+// Причина: уведомление может быть закреплено (не смахивается) до своего срока,
 // не пропадать при открытии приложения и никогда не показывать цифру у значка.
 import 'package:flutter/services.dart';
 
 class AlertEntry {
   final String key, title, body;
-  final DateTime at, end;
-  const AlertEntry({required this.key, required this.at, required this.end, required this.title, required this.body});
+  /// at — показать, hold — до этого не смахивается (не позже end), end — убрать.
+  final DateTime at, hold, end;
+  const AlertEntry({
+    required this.key,
+    required this.at,
+    required this.hold,
+    required this.end,
+    required this.title,
+    required this.body,
+  });
 
   Map<String, Object> toMap() => {
     'key': key,
     'at': at.millisecondsSinceEpoch,
+    'hold': hold.millisecondsSinceEpoch,
     'end': end.millisecondsSinceEpoch,
     'title': title,
     'body': body,

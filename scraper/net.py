@@ -7,6 +7,7 @@ import hashlib
 import json
 import os
 import subprocess
+import re
 import tempfile
 import time
 import urllib.error
@@ -14,6 +15,14 @@ import urllib.request
 
 UA = ("Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0 Mobile Safari/537.36")
+
+# Викимедиа просит у роботов честное имя и адрес проекта, иначе отвечает 429
+BOT_UA = "StartyBot/1.0 (https://github.com/xFurya/Starty) python-urllib"
+
+
+def _ua(url):
+    return BOT_UA if re.search(r"//[^/]*(wikimedia|wikidata|wikipedia)\.org/", url) else UA
+
 
 _CACHE = os.environ.get("STARTY_CACHE")
 
@@ -36,7 +45,7 @@ def fetch(url, data=None, headers=None, timeout=30, tries=3, binary=False):
             with open(p, "rb") as f:
                 raw = f.read()
             return raw if binary else _decode(raw)
-    hdrs = {"User-Agent": UA, "Accept-Language": "ru,en;q=0.8"}
+    hdrs = {"User-Agent": _ua(url), "Accept-Language": "ru,en;q=0.8"}
     if headers:
         hdrs.update(headers)
     body = None
@@ -94,7 +103,7 @@ def is_image(url, timeout=20):
     for method, extra in (("HEAD", {}), ("GET", {"Range": "bytes=0-1023"})):
         _throttle(url)
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": UA, **extra}, method=method)
+            req = urllib.request.Request(url, headers={"User-Agent": _ua(url), **extra}, method=method)
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 return (r.headers.get("Content-Type") or "").lower().startswith("image/")
         except urllib.error.HTTPError as e:

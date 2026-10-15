@@ -306,6 +306,9 @@ class Schedule {
   /// Все, кого видел сборщик (российские МС/КМС и участники международных турниров):
   /// из них идёт поиск по спортсмену в фильтре.
   final List<String> roster;
+
+  /// Справочник спортсменов со страной и видами: имя → человек (пара — одной записью).
+  final Map<String, Person> people;
   Schedule(
     this.starts,
     this.generated,
@@ -316,7 +319,11 @@ class Schedule {
     this.sources = const {},
     this.watchlist = const [],
     this.roster = const [],
+    this.people = const {},
   });
+
+  /// Все имена для поиска: справочник, список сборщика и следимые.
+  Set<String> get searchable => {...people.keys, ...roster, ...watchlist};
 
   String? photoOf(String name) {
     final p = photos[name];
@@ -341,6 +348,10 @@ class Schedule {
       sources: {for (final e in (j['sources'] as Map? ?? const {}).entries) '${e.key}': '${e.value}'},
       watchlist: List<String>.from(j['watchlist'] ?? const []),
       roster: List<String>.from(j['roster'] ?? const []),
+      people: {
+        for (final p in (j['people'] as List? ?? const []))
+          if (p is Map && p['n'] is String) '${p['n']}': Person('${p['n']}', '${p['c'] ?? ''}', '${p['k'] ?? ''}'),
+      },
     );
   }
 
@@ -355,6 +366,7 @@ class Schedule {
     sources: sources,
     watchlist: watchlist,
     roster: roster,
+    people: people,
   );
 
   Start? byId(String id) {
@@ -441,6 +453,93 @@ class Prefs {
 
 String norm(String s) => s.toLowerCase().replaceAll('ё', 'е');
 
+/// Спортсмен из справочника: страна (код ISU, у россиян RUS) и виды (w m p d).
+class Person {
+  final String name, nation, kinds;
+  const Person(this.name, this.nation, this.kinds);
+}
+
+/// Есть ли [who] среди [names]: точное имя или один из пары («Метелкина» в «Метелкина / Берулава»).
+bool namesInclude(Iterable<String> names, String who) {
+  final w = norm(who);
+  for (final n in names) {
+    if (norm(n) == w) return true;
+    if (n.contains(' / ') && n.split(' / ').any((m) => norm(m.trim()) == w)) return true;
+  }
+  return false;
+}
+
+const _cyr = {
+  'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ё': 'e', 'ж': 'zh', 'з': 'z', 'и': 'i',
+  'й': 'i', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p', 'р': 'r', 'с': 's', 'т': 't',
+  'у': 'u', 'ф': 'f', 'х': 'kh', 'ц': 'ts', 'ч': 'ch', 'ш': 'sh', 'щ': 'shch', 'ъ': '', 'ы': 'y',
+  'ь': '', 'э': 'e', 'ю': 'iu', 'я': 'ia',
+};
+
+/// Слово латиницей в одном написании: «Гладки» и «Gladki», «Шимада» и «Shimada» дают одно.
+/// Так же сводит сборщик (scraper/names.py, norm_lat).
+String latinKey(String word) {
+  var s = word.toLowerCase().split('').map((c) => _cyr[c] ?? c).join();
+  s = s
+      .replaceAll(RegExp('[àáâãäå]'), 'a')
+      .replaceAll(RegExp('[èéêë]'), 'e')
+      .replaceAll(RegExp('[ìíîï]'), 'i')
+      .replaceAll(RegExp('[òóôõöø]'), 'o')
+      .replaceAll(RegExp('[ùúûü]'), 'u')
+      .replaceAll(RegExp('[çč]'), 'c')
+      .replaceAll(RegExp('[šś]'), 's')
+      .replaceAll(RegExp('[žź]'), 'z')
+      .replaceAll(RegExp('[^a-z]'), '');
+  for (final (a, b) in const [
+    ('x', 'ks'), ('shch', 'sch'), ('kh', 'h'), ('ye', 'e'), ('yo', 'e'), ('iy', 'i'), ('yi', 'i'),
+    ('y', 'i'), ('j', 'i'), ('w', 'v'), ('ph', 'f'), ('ie', 'e'),
+  ]) {
+    s = s.replaceAll(a, b);
+  }
+  return s.replaceAllMapped(RegExp(r'(.)\1+'), (m) => m[1]!);
+}
+
+List<String> _nameWords(String name) =>
+    name.split(RegExp(r'[\s/\-]+')).where((w) => w.isNotEmpty).map(latinKey).where((w) => w.isNotEmpty).toList();
+
+/// Подходит ли имя под запрос: каждое слово запроса — начало какого-то слова имени,
+/// на любом алфавите («глад», «gladki», «Стефания Гладки»).
+bool nameMatches(String name, String query) {
+  final q = _nameWords(query);
+  if (q.isEmpty) return false;
+  final n = _nameWords(name);
+  return q.every((w) => n.any((x) => x.startsWith(w)));
+}
+
+/// Найденные по запросу, лучшие сверху: фамилия с начала запроса, с фото, выступает впереди.
+List<String> searchAthletes(Schedule data, String query, {Set<String> soon = const {}, int limit = 30}) {
+  final q = _nameWords(query);
+  if (q.isEmpty) return const [];
+  // одно имя в разных источниках («Артём» и «Артем») — один раз; со стартов впереди — как там
+  final seen = <String>{};
+  final found = [
+    for (final a in [...soon, ...data.people.keys, ...data.roster, ...data.watchlist])
+      if (nameMatches(a, query) && seen.add(norm(a))) a,
+  ];
+  int score(String a) {
+    final words = _nameWords(a);
+    var s = 0;
+    // фамилия — последнее слово каждого из пары
+    final surnames = a.split(' / ').map((m) => _nameWords(m)).where((w) => w.isNotEmpty).map((w) => w.last);
+    if (!surnames.any((w) => w.startsWith(q.first))) s += 4;
+    if (!words.any((w) => w == q.first)) s += 1;
+    if (a.split(' / ').every((m) => data.photoOf(m.trim()) == null)) s += 2;
+    if (!soon.contains(a)) s += 2;
+    return s;
+  }
+  final scored = {for (final a in found) a: score(a)};
+  found.sort((a, b) {
+    final c = scored[a]!.compareTo(scored[b]!);
+    return c != 0 ? c : a.compareTo(b);
+  });
+  return found.take(limit).toList();
+}
+
 /// Фильтр ленты: виды, турниры, спортсмены. Только то, что видно в ленте и в месяце, —
 /// к уведомлениям отношения не имеет.
 class Filters {
@@ -451,8 +550,8 @@ class Filters {
   int get count => kinds.length + tids.length + athletes.length;
 
   bool _has(Iterable<String> names) {
-    final set = names.map(norm).toSet();
-    return athletes.any((a) => set.contains(norm(a)));
+    final list = names.toList();
+    return athletes.any((a) => namesInclude(list, a));
   }
 
   bool pass(Start s) {

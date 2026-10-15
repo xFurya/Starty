@@ -28,6 +28,7 @@ import traceback
 from . import fsr, goldenskate, ics, isu, net
 from . import photos as ph
 from . import names as nm
+from . import people as pp
 from . import results as rs
 from . import swisstiming as st
 
@@ -738,10 +739,10 @@ def do_goldenskate(names, report, failed, isu_ok):
 
 # ---------------------------------------------------------------- main
 
-def collect_photos(events, upcoming, names, photos, prev_photos):
-    """{«Имя Фамилия» как в ours/podium/total/watchlist: адрес фото}. Пары — по людям.
-    Источники: сборная ФФККР, потом портреты ISU. Адрес берётся, только если он
-    действительно отдаёт картинку."""
+def collect_photos(events, upcoming, names, photos, prev_photos, everyone=()):
+    """{«Имя Фамилия» как в ours/podium/total/watchlist и справочнике: адрес фото}. Пары — по людям.
+    Источники: сборная ФФККР, портреты ISU (заявки, общий список), Викиданные. Адрес берётся,
+    только если он действительно отдаёт картинку."""
     want = []
 
     def add(n):
@@ -760,36 +761,71 @@ def collect_photos(events, upcoming, names, photos, prev_photos):
     for u in upcoming:
         for n in u.get("ours") or []:
             add(n)
+    for n in everyone:
+        add(n)
 
+    # у человека бывает несколько источников — по порядку: сборная, заявки ISU, список ISU, Викиданные
     src = {}
     for raw, url, _ in sorted(photos["raw"], key=lambda x: x[2]):
-        src.setdefault(nm.key(names.to_ru(raw)), url)
+        lst = src.setdefault(nm.key(names.to_ru(raw)), [])
+        if url not in lst:
+            lst.append(url)
+    skip = _load_json(PHOTO_SKIP, [])
+    skip_set = set(skip)
     checked = {}
     out = {}
     for n in want:
-        url = src.get(nm.key(names.to_ru(n)))
-        if not url:
+        urls = [u for u in src.get(nm.key(names.to_ru(n)), []) if u not in skip_set]
+        for url in urls:
+            if ph.have(SITE, url):
+                out[n] = ph.rel_path(url)
+                break
+            if url not in checked:
+                checked[url] = net.is_image(url)
+            ok = checked[url]
+            if ok:
+                rel = ph.make(SITE, url)
+                if rel:
+                    out[n] = rel
+                    break
+                if "wikimedia.org" in url:
+                    # снимок не портрет и лицо на нём не определить — больше не пробуем
+                    skip.append(url)
+                    skip_set.add(url)
+                    continue
+                out[n] = url
+                break
+            if ok is None and prev_photos.get(n) == url:
+                out[n] = url
+                break
+        if n not in out:
             # источник фото в этот раз не ответил — прошлое фото того же человека остаётся
             old = prev_photos.get(n)
             if old and (old.startswith("http") or os.path.exists(os.path.join(SITE, old))):
                 out[n] = old
-            continue
-        if ph.have(SITE, url):
-            out[n] = ph.rel_path(url)
-            continue
-        if url not in checked:
-            checked[url] = net.is_image(url)
-        ok = checked[url]
-        if ok:
-            out[n] = ph.make(SITE, url) or url
-        elif ok is None and prev_photos.get(n) == url:
-            out[n] = url
+    _save_json(PHOTO_SKIP, sorted(skip_set))
     bad = [u for u, ok in checked.items() if not ok]
     local = sum(1 for v in out.values() if not v.startswith("http"))
     gone = ph.prune(SITE, set(out.values()))
     log(f"  фото: {len(out)} из {len(want)}, миниатюр {local}" + (f"; не открылись: {len(bad)}" if bad else "")
         + (f"; убрано старых: {gone}" if gone else ""))
     return out
+
+
+PHOTO_SKIP = os.path.join(ROOT, "data", "photo_skip.json")
+
+
+def _load_json(path, default):
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return default
+
+
+def _save_json(path, value):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(value, f, ensure_ascii=False, indent=0)
 
 
 def load_prev():
@@ -893,6 +929,15 @@ def main():
                 upcoming.append(u)
     upcoming.sort(key=lambda u: u["start"])
 
+    # Справочник для поиска: россияне от КМС и выше, все участники турниров ISU за два сезона
+    try:
+        book = pp.build(names, CFG["season_start"], log)
+    except Exception as e:  # справочник — не расписание: без него лента работает
+        log("!! справочник спортсменов:", e)
+        traceback.print_exc()
+        book = {"people": prev.get("people") or [], "photos": []}
+    photos["raw"].extend(book["photos"])
+
     # Справочник для фильтра по спортсменам копится между сборами: все, кого видел
     # сборщик, — российские старты (МС/КМС) и участники международных турниров.
     roster.update(names.ru.values())
@@ -903,6 +948,7 @@ def main():
         roster.update(p["name"] for p in e.get("podium", []))
         roster.update(p["name"] for p in e.get("total", []))
         roster.update((e.get("live") or {}).get("names", {}).values())
+    roster.update(p["n"] for p in book["people"])
     # латинское написание того, кого уже знаем по-русски, в справочнике не держим: поиск не должен давать двойников
     roster = {n for n in roster if not names.known_latin(n)}
 
@@ -916,7 +962,9 @@ def main():
         "upcoming": upcoming,
         "watchlist": CFG["watchlist"],
         "roster": sorted(roster),
-        "photos": collect_photos(events, upcoming, names, photos, prev.get("photos") or {}),
+        "people": book["people"],
+        "photos": collect_photos(events, upcoming, names, photos, prev.get("photos") or {},
+                                 [p["n"] for p in book["people"]]),
     }
     # Если сбор вернул заметно меньше будущих стартов, чем было, — это поломка
     # источника, а не отмена турниров. Тогда оставляем прошлые данные.
