@@ -21,5 +21,26 @@ import workmanager_apple
 
   func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
     GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
+    // иконка приложения: альтернативные из Assets.xcassets (skate_*); classic — основная
+    if let registrar = engineBridge.pluginRegistry.registrar(forPlugin: "StartyIcon") {
+      let channel = FlutterMethodChannel(name: "starty/icon", binaryMessenger: registrar.messenger())
+      channel.setMethodCallHandler { call, result in
+        switch call.method {
+        case "get":
+          result(UIApplication.shared.alternateIconName ?? "classic")
+        case "set":
+          guard UIApplication.shared.supportsAlternateIcons else {
+            result(false)
+            return
+          }
+          let name = call.arguments as? String
+          UIApplication.shared.setAlternateIconName(name == "classic" ? nil : name) { error in
+            result(error == nil)
+          }
+        default:
+          result(FlutterMethodNotImplemented)
+        }
+      }
+    }
   }
 }

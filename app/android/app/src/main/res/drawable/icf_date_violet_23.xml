@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android" android:inset="16%">
+  <layer-list>
+    <item><bitmap android:src="@drawable/icl_skater"/></item>
+    <item><bitmap android:src="@drawable/icl_num_23_fill"/></item>
+    <item><bitmap android:src="@drawable/icl_num_23_line" android:tint="#B49CFF"/></item>
+    <item><bitmap android:src="@drawable/icl_band_violet"/></item>
+  </layer-list>
+</inset>

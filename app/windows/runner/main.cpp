@@ -1,12 +1,24 @@
 #include <flutter/dart_project.h>
 #include <flutter/flutter_view_controller.h>
 #include <windows.h>
+#include <shobjidl.h>
 
 #include "flutter_window.h"
 #include "utils.h"
 
 int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
                       _In_ wchar_t *command_line, _In_ int show_command) {
+  // Same AppUserModelID as the Start menu shortcut (tools/windows/starty.iss)
+  // and the toast registration (lib/reminders.dart): the taskbar groups the
+  // window with the shortcut and pins the shortcut, not this exe path.
+  // Must be set before any window is created.
+  ::SetCurrentProcessExplicitAppUserModelID(L"ru.furya.starty");
+
+  // "App is running" marker for the installer (AppMutex in starty.iss): it
+  // waits for this to go away before replacing files. Released by the OS when
+  // the process exits; intentionally never closed.
+  ::CreateMutexW(nullptr, FALSE, L"ru.furya.starty.app");
+
   // Attach to console when present (e.g., 'flutter run') or create a
   // new console when running with a debugger.
   if (!::AttachConsole(ATTACH_PARENT_PROCESS) && ::IsDebuggerPresent()) {

@@ -1,7 +1,9 @@
 // Самообновление на компьютере (Windows, macOS): раз в час и при запуске смотрим
-// site/app/latest.json, скачиваем архив своей платформы, сверяем размер и sha256 и
+// site/app/latest.json, скачиваем сборку своей платформы, сверяем размер и sha256 и
 // ставим при закрытии приложения (или по кнопке «Обновить сейчас», с перезапуском).
-// Замену файлов делает отдельный короткий скрипт — приложение не может заменить само себя.
+// Windows: установщик (windows.setup, tools/windows/starty.iss) в тихом режиме; если в выпуске
+// его нет — архив (windows.url), как раньше. macOS: архив; .dmg (macos.dmg) — только для первой
+// установки с сайта. Приложение не может заменить само себя: ставит установщик или отдельный скрипт.
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
@@ -16,6 +18,25 @@ import 'updater.dart';
 
 const _latestUrl = 'https://xfurya.github.io/Starty/app/latest.json';
 
+/// Windows: копия из старого архива (до установщика), когда приложение уже установлено, —
+/// запускает установленное и закрывается. Иначе по старым ярлыкам открывалась бы старая версия:
+/// установщик ставит новую в «Программы», а папку архива не трогает.
+/// true — передано, этой копии надо выйти.
+Future<bool> handOffToInstalled() async {
+  if (!isWindows) return false;
+  try {
+    final base = Platform.environment['LOCALAPPDATA'];
+    if (base == null) return false;
+    final installed = '$base\\Programs\\Figure Skating\\starty.exe';
+    final me = Platform.resolvedExecutable;
+    if (me.toLowerCase() == installed.toLowerCase() || !File(installed).existsSync()) return false;
+    await Process.start(installed, const [], mode: ProcessStartMode.detached);
+    return true;
+  } catch (_) {
+    return false;
+  }
+}
+
 class DesktopUpdater {
   DesktopUpdater(this.onState);
   final void Function(UpdateState) onState;
@@ -26,7 +47,7 @@ class DesktopUpdater {
   String? _downloading;
   int _progress = 0;
   String? _readyVersion, _readyNotes;
-  File? _readyZip;
+  File? _readyFile; // .zip — архив, .exe — установщик Windows
 
   UpdateState get snapshot => UpdateState(
     desktop: true,
@@ -39,7 +60,7 @@ class DesktopUpdater {
     readyNotes: _readyNotes,
   );
 
-  bool get ready => _readyZip != null;
+  bool get ready => _readyFile != null;
 
   void _push() => onState(snapshot);
 
@@ -79,38 +100,53 @@ class DesktopUpdater {
     final e = j[isWindows ? 'windows' : 'macos'] as Map<String, dynamic>?;
     final code = j['code'] as int? ?? 0;
     if (e == null || e['code'] != code || code <= appBuild) {
-      _readyZip = null;
+      _readyFile = null;
       _readyVersion = null;
       _readyNotes = null;
-      if (await _dir.exists()) await _dir.delete(recursive: true);
+      if (await _dir.exists()) await _gone(_dir);
       return;
     }
     final version = j['version'] as String;
-    final size = e['size'] as int;
-    final sha = (e['sha256'] as String).toLowerCase();
+    // Windows: установщик, если он есть в выпуске. Запущенное из папки старого архива тоже ставится
+    // установщиком — так переезжает в настоящую установку (см. install).
+    // url/size/sha256 остаются архивом: по ним обновляются версии, которые установщика не знают.
+    final setup = isWindows ? e['setup'] as Map<String, dynamic>? : null;
+    final src = setup ?? e;
+    final size = src['size'] as int;
+    final sha = (src['sha256'] as String).toLowerCase();
     await _dir.create(recursive: true);
     final name = sha.substring(0, 12);
-    final done = File('${_dir.path}${Platform.pathSeparator}$name.zip');
+    final done = File('${_dir.path}${Platform.pathSeparator}$name.${setup != null ? 'exe' : 'zip'}');
     final part = File('${_dir.path}${Platform.pathSeparator}$name.part');
     // остальные скачанные версии больше не нужны
     await for (final f in _dir.list()) {
-      if (f.path != done.path && f.path != part.path) await f.delete(recursive: true);
+      if (f.path != done.path && f.path != part.path) await _gone(f);
     }
     if (!(await done.exists() && await _valid(done, size, sha))) {
       if (await done.exists()) await done.delete();
       _downloading = version;
       _progress = 0;
       _push();
-      await _download(e['url'] as String, part, size);
+      await _download(src['url'] as String, part, size);
       if (!await _valid(part, size, sha)) {
         await part.delete();
         throw StateError('hash');
       }
       await part.rename(done.path);
     }
-    _readyZip = done;
+    _readyFile = done;
     _readyVersion = version;
     _readyNotes = (j['notes'] as String?) ?? '';
+  }
+
+  /// Удалить, если выйдет. Только что отработавший установщик может ещё держать свой файл
+  /// (Windows не даёт удалить запущенный .exe) — это не сбой проверки: уберётся в следующий раз.
+  Future<void> _gone(FileSystemEntity f) async {
+    try {
+      await f.delete(recursive: true);
+    } on FileSystemException {
+      // занят — оставить до следующей проверки
+    }
   }
 
   Future<bool> _valid(File f, int size, String sha) async {
@@ -163,16 +199,30 @@ class DesktopUpdater {
 
   bool _spawned = false;
 
-  /// Запустить замену файлов. relaunch — открыть приложение снова; иначе (закрытие) оно просто закрылось.
+  /// Запустить установку. relaunch — открыть приложение снова; иначе (закрытие) оно просто закрылось.
+  /// Сразу после true приложение должно выйти: установщик и скрипт ждут, пока оно закроется.
   Future<bool> install({required bool relaunch}) async {
-    final zip = _readyZip;
-    if (zip == null || _spawned) return false;
+    final file = _readyFile;
+    if (file == null || _spawned) return false;
     try {
       final p = await SharedPreferences.getInstance();
       await p.setString('deskNotes:$_readyVersion', _readyNotes ?? '');
       final exe = Platform.resolvedExecutable;
       final sep = Platform.pathSeparator;
-      if (isWindows) {
+      if (isWindows && file.path.endsWith('.exe')) {
+        // Тихая установка: установщик ждёт выхода приложения (мьютекс из main.cpp), ставит в
+        // %LOCALAPPDATA%\Programs\Figure Skating (или туда, где стояла прежняя установка) и при
+        // /RELAUNCH=1 открывает приложение уже оттуда.
+        // Запуск из папки старого архива (рядом нет unins000.exe) — тот же путь: установщик ставит
+        // настоящую установку, а старая папка остаётся как есть, со своей версией. Это допустимо:
+        // чужую папку не удаляем. Если открыть старую копию снова, она снова предложит обновление
+        // и поставит его в установленную, а сама останется прежней.
+        await Process.start(
+          file.path,
+          ['/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/CLOSEAPPLICATIONS', '/RELAUNCH=${relaunch ? 1 : 0}'],
+          mode: ProcessStartMode.detached,
+        );
+      } else if (isWindows) {
         final dir = exe.substring(0, exe.lastIndexOf(sep));
         final script = File('${_dir.path}${sep}apply.ps1');
         await script.writeAsBytes([0xEF, 0xBB, 0xBF, ...utf8.encode(_windowsScript)]);
@@ -181,7 +231,7 @@ class DesktopUpdater {
           [
             '-NoProfile', '-NonInteractive', '-WindowStyle', 'Hidden', '-ExecutionPolicy', 'Bypass',
             '-File', script.path,
-            '-AppPid', '$pid', '-Zip', zip.path, '-Dir', dir, '-Exe', exe, '-Relaunch', relaunch ? '1' : '0',
+            '-AppPid', '$pid', '-Zip', file.path, '-Dir', dir, '-Exe', exe, '-Relaunch', relaunch ? '1' : '0',
           ],
           mode: ProcessStartMode.detached,
         );
@@ -190,7 +240,7 @@ class DesktopUpdater {
         final app = File(exe).parent.parent.parent.path;
         final script = File('${_dir.path}${sep}apply.sh');
         await script.writeAsString(_macScript);
-        await Process.start('/bin/sh', [script.path, '$pid', zip.path, app, relaunch ? '1' : '0'],
+        await Process.start('/bin/sh', [script.path, '$pid', file.path, app, relaunch ? '1' : '0'],
             mode: ProcessStartMode.detached);
       }
       _spawned = true;

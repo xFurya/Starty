@@ -89,7 +89,7 @@ void main() {
     expect(x.hold, skate.add(Reminders.skated));
     // последняя в разминке: убрать через 15 мин — позже конца старта, значит в конце старта
     expect(x.end, womenFs.t1);
-    expect(skate.add(Reminders.skaterGone).isAfter(womenFs.t1), isTrue);
+    expect(skate.add(const Duration(minutes: 15)).isAfter(womenFs.t1), isTrue);
     final start = Reminders.plan(data, plan(r), now).firstWhere((x) => x.key == 's:${womenFs.id}');
     expect(start.hold, womenFs.t1);
     // не закреплять — смахиваются сразу; не убирать — висят до конца старта
@@ -105,7 +105,7 @@ void main() {
   });
 
   test('правила сохраняются и читаются, мусор — правила по умолчанию', () {
-    final r = const NotifyRules().copyWith(lead: 30, kinds: {'dance'}, night: false, skaters: true, pin: false);
+    final r = const NotifyRules().copyWith(lead: 30, kinds: {'dance'}, night: false, skaters: true, pin: false, onlyFollowed: true, gone: 30);
     final back = NotifyRules.fromJson(r.toJson());
     expect(back.lead, 30);
     expect(back.kinds, {'dance'});
@@ -113,6 +113,8 @@ void main() {
     expect(back.skaters, isTrue);
     expect(back.pin, isFalse);
     expect(back.clear, isTrue);
+    expect(back.onlyFollowed, isTrue);
+    expect(back.gone, 30);
     expect(NotifyRules.fromJson('{oops').isDefault, isTrue);
     expect(NotifyRules.fromJson('{"lead": 7}').lead, 15);
     expect(NotifyRules.fromJson(null).on, isTrue);

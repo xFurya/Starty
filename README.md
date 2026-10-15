@@ -18,12 +18,12 @@
   при каждом изменении `app/` и кладёт её в `site/app/Starty.ipa`; SideStore
   берёт её по `site/app/sidestore.json`.
 
-- Windows и macOS: `.github/workflows/app-desktop.yml` собирает zip (Windows — папка с
-  `starty.exe`, macOS — `Starty.app` с подписью ad-hoc) после каждого выпуска
-  (`tools/release.sh`), кладёт архивы во вкладку Releases (`app-v<версия>`), а адрес,
-  размер и sha256 — в `site/app/latest.json`. Приложение обновляет себя само
-  (`app/lib/desktop_updater.dart`): скачивает архив, сверяет sha256 и при закрытии
-  запускает короткий скрипт, который заменяет файлы. Ручной запуск воркфлоу — пробная
+- Windows и macOS: `.github/workflows/app-desktop.yml` после каждого выпуска собирает для
+  Windows установщик (`tools/windows/starty.iss`, Inno Setup: в «Программы» пользователя, ярлык в
+  «Пуске», удаление в «Приложениях») и zip, для macOS — `.dmg` и zip (`Starty.app` с подписью
+  ad-hoc), кладёт их во вкладку Releases (`app-v<версия>`), а адреса, размеры и sha256 — в
+  `site/app/latest.json`. Приложение обновляет себя само (`app/lib/desktop_updater.dart`):
+  Windows — тихим запуском установщика, macOS — заменой `Starty.app` из zip при закрытии. Ручной запуск воркфлоу — пробная
   сборка без выкладки.
 - Уведомления на компьютере: macOS — как на iPhone (планировщик системы); Windows —
   запланированные тосты системы, но снять поставленное без пакета MSIX нельзя, поэтому

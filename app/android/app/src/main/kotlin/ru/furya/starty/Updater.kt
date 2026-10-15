@@ -432,7 +432,7 @@ object Updater {
             ch.setShowBadge(false)
             m.createNotificationChannel(ch)
         }
-        val open = Intent(ctx, MainActivity::class.java).putExtra(EXTRA_INSTALL, install)
+        val open = Intent(ctx, AppActivity::class.java).putExtra(EXTRA_INSTALL, install)
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
         val pi = PendingIntent.getActivity(ctx, NOTE_ID, open, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
         val b = NotificationCompat.Builder(ctx, CHANNEL)

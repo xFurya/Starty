@@ -59,8 +59,16 @@ const weekdaysShort = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
 class Follow {
   final Set<String> names;
   final Set<String> _keys;
-  Follow(Iterable<String> list) : names = list.toSet(), _keys = {for (final n in list) norm(n)};
+
+  /// На международных стартах — все россияне, все белорусы (отдельные переключатели).
+  final bool russians, belarusians;
+  Follow(Iterable<String> list, {this.russians = true, this.belarusians = true})
+    : names = list.toSet(),
+      _keys = {for (final n in list) norm(n)};
   static final none = Follow(const []);
+
+  /// Код страны из табло — россиянин или белорус, которых человек отслеживает на международных.
+  bool nation(String n) => (russians && isRussianNation(n)) || (belarusians && isBelarusianNation(n));
 
   bool has(String name) {
     if (_keys.isEmpty) return false;
@@ -70,7 +78,11 @@ class Follow {
 }
 
 /// Россиянин или белорус по коду из табло: RUS, AIN2, BLR, AIN1, AIN, регион на стартах ФСР.
-bool isOurNation(String n) => const {'RUS', 'AIN2', 'BLR', 'AIN1', 'AIN'}.contains(n) || _isRussianRegion(n);
+bool isOurNation(String n) => isRussianNation(n) || isBelarusianNation(n);
+
+/// RUS, AIN2 (нейтральные россияне), AIN (без уточнения — у нас это россияне), регион ФСР.
+bool isRussianNation(String n) => const {'RUS', 'AIN2', 'AIN'}.contains(n) || _isRussianRegion(n);
+bool isBelarusianNation(String n) => const {'BLR', 'AIN1'}.contains(n);
 
 class Skater {
   final String name;
@@ -216,7 +228,7 @@ class Start {
     if (field.isEmpty) return this;
     return Start._with(
       this,
-      ours: [for (final o in field) if ((intl && isOurNation(o.nation)) || follow.has(o.name)) o],
+      ours: [for (final o in field) if ((intl && follow.nation(o.nation)) || follow.has(o.name)) o],
       podium: podium,
       total: total,
       provisional: provisional,
@@ -322,6 +334,9 @@ class Upcoming {
   final String start, end;
   final List<String> ours;
 
+  /// Страна россиян и белорусов из заявки: имя → код (нет — считаем россиянином).
+  final Map<String, String> oursNation;
+
   /// Весь заявленный состав (у международных) — для поиска и отслеживаемых.
   final List<String> athletes;
   Upcoming.fromJson(Map<String, dynamic> j)
@@ -332,10 +347,12 @@ class Upcoming {
       start = (j['start'] as String? ?? '').split('T').first,
       end = ((j['end'] ?? j['start']) as String? ?? '').split('T').first,
       ours = List<String>.from(j['ours'] ?? const []),
+      oursNation = {for (final e in (j['ours_nation'] as Map? ?? const {}).entries) '${e.key}': '${e.value}'},
       athletes = List<String>.from(j['athletes'] ?? const []);
 
   Upcoming._(Upcoming u, this.ours)
-    : tid = u.tid,
+    : oursNation = u.oursNation,
+      tid = u.tid,
       name = u.name,
       venue = u.venue,
       intl = u.intl,
@@ -343,8 +360,14 @@ class Upcoming {
       end = u.end,
       athletes = u.athletes;
 
-  /// Россияне и белорусы из заявки плюс отслеживаемые.
-  Upcoming withFollow(Follow f) => Upcoming._(this, {...ours, ...athletes.where(f.has)}.toList()..sort());
+  /// Россияне и белорусы из заявки (если их отслеживают) плюс отслеживаемые.
+  Upcoming withFollow(Follow f) => Upcoming._(
+    this,
+    {
+      for (final o in ours) if (!intl || f.nation(oursNation[o] ?? 'RUS') || f.has(o)) o,
+      ...athletes.where(f.has),
+    }.toList()..sort(),
+  );
 
   bool get shown => !intl || ours.isNotEmpty;
 
@@ -532,7 +555,17 @@ class Prefs {
 
   /// Отслеживаемые; null — человек ещё не выбирал (тогда — список сборщика).
   static List<String>? get follow => _p.getStringList('follow');
-  static Future<void> setFollow(Iterable<String> v) => _p.setStringList('follow', v.toList());
+  static bool get followRussians => _p.getBool('follow.ru') ?? true;
+  static bool get followBelarusians => _p.getBool('follow.by') ?? true;
+  static Future<void> setFollow(Iterable<String> v, {required bool russians, required bool belarusians}) async {
+    await _p.setStringList('follow', v.toList());
+    await _p.setBool('follow.ru', russians);
+    await _p.setBool('follow.by', belarusians);
+  }
+
+  /// Отслеживаемые в фоне (без состояния приложения).
+  static Follow followOr(List<String> fallback) =>
+      Follow(follow ?? fallback, russians: followRussians, belarusians: followBelarusians);
   static Future<void> setFilters(Filters f) async {
     await _p.setStringList('f.kinds', f.kinds.toList());
     await _p.setStringList('f.tids', f.tids.toList());

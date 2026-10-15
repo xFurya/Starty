@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io' show exit;
 
 import 'package:flutter/gestures.dart' show PointerDeviceKind;
 import 'package:flutter/material.dart';
@@ -12,11 +13,15 @@ import 'settings.dart';
 import 'state.dart';
 import 'ui.dart';
 import 'update.dart';
+import 'app_icon.dart';
+import 'desktop_updater.dart' show handOffToInstalled;
 import 'updater.dart';
 import 'views.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Windows: старая копия из архива уступает установленной
+  if (await handOffToInstalled()) exit(0);
   await Prefs.init();
   runApp(const StartyApp());
   // уведомления настраиваются после показа экрана: их сбой не должен мешать запуску
@@ -24,6 +29,8 @@ Future<void> main() async {
     await Reminders.init();
   } catch (_) {}
   await scheduleBackground();
+  // компьютер: значок окна и Дока по выбору
+  unawaited(AppIcons.applyDesktop());
   // самообновление: состояние с нативной стороны, «обновлено до …» один раз
   await Updates.instance.init();
 }

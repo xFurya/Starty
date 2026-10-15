@@ -2,8 +2,10 @@
 import 'package:flutter/cupertino.dart' show CupertinoIcons;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:starty_alerts/starty_alerts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'app_icon.dart';
 import 'data.dart';
 import 'main.dart';
 import 'platform.dart';
@@ -59,18 +61,20 @@ String _when(DateTime at) {
   return '${m.day}\u00A0${months[m.month - 1]}\u00A0${hm(at)}';
 }
 
-/// Кратко о правилах: «за 15 мин · все старты» или «за 15 мин · 2 вида, юниоры».
+/// Кратко о правилах: «за 15 мин · все старты» или «за 15 мин · девушки, юниоры · отслеживаемые».
 String rulesSummary(NotifyRules r) {
   final parts = <String>['за ${r.lead} мин'];
-  if (r.isDefault && r.athletes.isEmpty) {
+  if (r.isDefault) {
     parts.add('все старты');
   } else {
-    if (r.kinds.length != NotifyRules.allKinds.length) parts.add([for (final k in r.kinds) kindLabel(k, r.levels).toLowerCase()].join(', '));
+    if (r.kinds.length != NotifyRules.allKinds.length) {
+      parts.add([for (final k in NotifyRules.allKinds) if (r.kinds.contains(k)) kindLabel(k, r.levels).toLowerCase()].join(', '));
+    }
     if (r.levels.length == 1) parts.add(levelNames[r.levels.first]!.toLowerCase());
     if (r.russian != r.intl) parts.add(r.russian ? 'российские' : 'международные');
-    if (r.athletes.isNotEmpty) {
-      parts.add('${r.athletes.length} ${plural(r.athletes.length, 'спортсмен', 'спортсмена', 'спортсменов')}');
-    }
+    if (r.segs.length == 1) parts.add(r.segs.first == 'short' ? 'короткая и ритм-танец' : 'произвольная и танец');
+    if (!r.night) parts.add('без ночных');
+    if (r.onlyFollowed) parts.add('только с отслеживаемыми');
   }
   return parts.join(' · ');
 }
@@ -86,7 +90,6 @@ class SettingsView extends StatelessWidget {
     final t = now();
     final planned = state.planned.where((x) => x.at.isAfter(t)).toList();
     final p = Palette.of(context);
-    final follow = state.follow.names;
     return CustomScrollView(
       slivers: [
         const SliverToBoxAdapter(
@@ -147,10 +150,8 @@ class SettingsView extends StatelessWidget {
             child: _Row(
               icon: CupertinoIcons.person_crop_circle_badge_checkmark,
               title: 'Отслеживаемые',
-              subtitle: follow.isEmpty
-                  ? 'Не выбраны'
-                  : '${follow.length} ${plural(follow.length, 'спортсмен', 'спортсмена', 'спортсменов')} · в карточках стартов',
-              onTap: () => pickAthletes(context, state.data, follow, state.setFollow, title: 'Отслеживаемые'),
+              subtitle: followSummary(state.follow),
+              onTap: () => openFollow(context, state),
               trailing: const _Chevron(),
             ),
           ),
@@ -171,7 +172,26 @@ class SettingsView extends StatelessWidget {
                 ),
                 const Hairline(),
                 _SwitchRow(icon: CupertinoIcons.flag, title: 'Завершённые', value: state.showDone, onChanged: state.setShowDone),
-                const Hairline(),
+
+              ],
+            ),
+          ),
+        ),
+
+        // ---------------------------------------------------------- оформление
+        const SliverToBoxAdapter(child: _Head('Оформление')),
+        SliverToBoxAdapter(
+          child: Plate(
+            child: Column(
+              children: [
+                if (AppIcons.supported)
+                  _Row(
+                    icon: CupertinoIcons.app,
+                    title: 'Значок приложения',
+                    onTap: () => openIcons(context),
+                    trailing: const _Chevron(),
+                  ),
+                if (AppIcons.supported) const Hairline(),
                 _ShortBlock(
                   title: 'Тема',
                   labels: const ['Системная', 'Светлая', 'Тёмная'],
@@ -194,7 +214,7 @@ class SettingsView extends StatelessWidget {
             child: _Row(
               icon: CupertinoIcons.calendar_badge_plus,
               title: _ios ? 'Старты в Календаре' : 'Старты в Google Календаре',
-              subtitle: 'Все старты, обновляются сами',
+              subtitle: 'Российские и международные с россиянами и белорусами · обновляются сами',
               onTap: () => launchUrl(Uri.parse(_ios ? _ics : _google), mode: LaunchMode.externalApplication),
               trailing: const _Chevron(external: true),
             ),
@@ -616,14 +636,140 @@ class _Chevron extends StatelessWidget {
   );
 }
 
-// ------------------------------------------------------------------ окно правил уведомлений
+/// «9 спортсменов · россияне и белорусы на международных».
+String followSummary(Follow f) {
+  final n = f.names.length;
+  final parts = <String>[
+    n == 0 ? 'спортсмены не выбраны' : '$n ${plural(n, 'спортсмен', 'спортсмена', 'спортсменов')}',
+    if (f.russians && f.belarusians)
+      'россияне и белорусы на международных'
+    else if (f.russians)
+      'россияне на международных'
+    else if (f.belarusians)
+      'белорусы на международных',
+  ];
+  return cap(parts.join(' · '));
+}
+
+// ------------------------------------------------------------------ окна настроек
+
+/// Окно настроек: неподвижная однотонная область строки состояния (как на главных экранах),
+/// шапка со «‹ Настройки», содержимое и полоса «Отменить / Сохранить». Выход с несохранённым — вопрос.
+class _SettingsPage extends StatelessWidget {
+  final String title;
+  final List<Widget> slivers;
+  final bool dirty;
+  final Future<void> Function() onSave;
+  const _SettingsPage({required this.title, required this.slivers, required this.dirty, required this.onSave});
+
+  Future<void> _leave(BuildContext context) async {
+    final nav = Navigator.of(context);
+    if (!dirty) {
+      nav.pop();
+      return;
+    }
+    final save = await showDialog<bool>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: const Text('Изменения не сохранены'),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(c, false), child: const Text('Не сохранять')),
+          TextButton(onPressed: () => Navigator.pop(c, true), child: const Text('Сохранить')),
+        ],
+      ),
+    );
+    if (save == null) return;
+    if (save) await onSave();
+    nav.pop();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return PopScope(
+      canPop: !dirty,
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop) _leave(context);
+      },
+      child: Scaffold(
+        backgroundColor: p.bg,
+        body: Column(
+          children: [
+            // область строки состояния — неподвижная и однотонная, как на главных экранах
+            Container(height: MediaQuery.paddingOf(context).top, color: p.bg),
+            Expanded(
+              child: MediaQuery.removePadding(
+                context: context,
+                removeTop: true,
+                child: CustomScrollView(
+                  slivers: [
+                    SliverToBoxAdapter(
+                      child: Stack(
+                        children: [
+                          IceHero(eyebrow: '', title: title, sparkles: 2),
+                          Positioned(
+                            top: 12,
+                            left: 6,
+                            child: TextButton.icon(
+                              onPressed: () => _leave(context),
+                              style: TextButton.styleFrom(
+                                foregroundColor: p.accent,
+                                padding: const EdgeInsets.symmetric(horizontal: 10),
+                              ),
+                              icon: const Icon(CupertinoIcons.chevron_back, size: 18),
+                              label: const Text('Настройки', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    ...slivers,
+                    const SliverToBoxAdapter(child: SizedBox(height: 24)),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(color: p.bg, border: Border(top: BorderSide(color: p.plateLine))),
+              padding: EdgeInsets.fromLTRB(16, 12, 16, 12 + MediaQuery.paddingOf(context).bottom),
+              child: LayoutBuilder(
+                builder: (context, k) => Row(
+                  children: [
+                    ConstrainedBox(
+                      constraints: BoxConstraints(maxWidth: k.maxWidth * .4),
+                      child: SheetButton(neutral: true, compact: true, label: 'Отменить', onTap: () => Navigator.of(context).pop()),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: SheetButton(
+                        filled: true,
+                        label: 'Сохранить',
+                        onTap: dirty
+                            ? () async {
+                                final nav = Navigator.of(context);
+                                await onSave();
+                                nav.pop();
+                              }
+                            : null,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// ------------------------------------------------------------------ правила уведомлений
 
 void openNotifySettings(BuildContext context, AppState state) {
   Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => _NotifyPage(state: state)));
 }
 
-/// Правила уведомлений — отдельным окном. Изменения вступают в силу по «Сохранить»;
-/// выход с несохранёнными — вопрос.
 class _NotifyPage extends StatefulWidget {
   final AppState state;
   const _NotifyPage({required this.state});
@@ -637,34 +783,6 @@ class _NotifyPageState extends State<_NotifyPage> {
   bool get _dirty => r.toJson() != widget.state.rules.toJson();
 
   void _set(NotifyRules n) => setState(() => r = n);
-
-  Future<void> _save() async {
-    await widget.state.setRules(r.copyWith(on: widget.state.rules.on));
-    if (mounted) Navigator.of(context).pop();
-  }
-
-  Future<void> _leave() async {
-    if (!_dirty) {
-      Navigator.of(context).pop();
-      return;
-    }
-    final save = await showDialog<bool>(
-      context: context,
-      builder: (c) => AlertDialog(
-        title: const Text('Изменения не сохранены'),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(c, false), child: const Text('Не сохранять')),
-          TextButton(onPressed: () => Navigator.pop(c, true), child: const Text('Сохранить')),
-        ],
-      ),
-    );
-    if (!mounted || save == null) return;
-    if (save) {
-      await _save();
-    } else {
-      Navigator.of(context).pop();
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -685,7 +803,7 @@ class _NotifyPageState extends State<_NotifyPage> {
       for (final k in NotifyRules.allLevels)
         ChoiceTile(label: levelNames[k]!, on: r.levels.contains(k), onTap: () => _set(r.copyWith(levels: flip(r.levels, k)))),
     ];
-    final tours = [
+    final scope = [
       ChoiceTile(label: 'Российские', on: r.russian, onTap: () => _set(r.copyWith(russian: !r.russian))),
       ChoiceTile(label: 'Международные', on: r.intl, onTap: () => _set(r.copyWith(intl: !r.intl))),
     ];
@@ -694,151 +812,348 @@ class _NotifyPageState extends State<_NotifyPage> {
       // ПП и ПТ: произвольная программа и произвольный танец
       ChoiceTile(label: 'Произвольная и танец', on: r.segs.contains('free'), onTap: () => _set(r.copyWith(segs: flip(r.segs, 'free')))),
     ];
-    final group = [...kinds, ...levels, ...tours, ...segs];
-    return PopScope(
-      canPop: !_dirty,
-      onPopInvokedWithResult: (didPop, _) {
-        if (!didPop) _leave();
-      },
-      child: Scaffold(
-        backgroundColor: p.bg,
-        body: Column(
-          children: [
-            Expanded(
-              child: CustomScrollView(
-                slivers: [
-                  SliverToBoxAdapter(
-                    child: Stack(
-                      children: [
-                        // надпись над заголовком — кнопка «назад»: «‹ Настройки»
-                        const IceHero(eyebrow: '', title: 'Уведомления', sparkles: 2),
-                        Positioned(
-                          top: MediaQuery.paddingOf(context).top + 12,
-                          left: 6,
-                          child: TextButton.icon(
-                            onPressed: _leave,
-                            style: TextButton.styleFrom(foregroundColor: p.accent, padding: const EdgeInsets.symmetric(horizontal: 10)),
-                            icon: const Icon(CupertinoIcons.chevron_back, size: 18),
-                            label: const Text('Настройки', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
-                          ),
+    final group = [...kinds, ...levels, ...scope, ...segs];
+    return _SettingsPage(
+      title: 'Уведомления',
+      dirty: _dirty,
+      onSave: () => state.setRules(r.copyWith(on: state.rules.on)),
+      slivers: [
+        const SliverToBoxAdapter(child: _Head('Начало старта')),
+        SliverToBoxAdapter(
+          child: Plate(
+            child: Column(
+              children: [
+                // «5 мин … 60 мин» не помещаются — «Заранее, мин» и одни числа
+                _ShortBlock(
+                  title: 'Заранее',
+                  shortTitle: 'Заранее, мин',
+                  labels: [for (final m in NotifyRules.leads) '$m мин'],
+                  shortLabels: [for (final m in NotifyRules.leads) '$m'],
+                  child: (labels) => Segmented<int>(
+                    items: [for (var i = 0; i < NotifyRules.leads.length; i++) (NotifyRules.leads[i], labels[i])],
+                    value: r.lead,
+                    onChanged: (v) => _set(r.copyWith(lead: v)),
+                  ),
+                ),
+                const Hairline(),
+                _Block(title: 'Старты', child: TileGrid(tiles: scope, group: group)),
+                const Hairline(),
+                _Block(title: 'Уровень', child: TileGrid(tiles: levels, group: group)),
+                const Hairline(),
+                _Block(title: 'Виды', child: TileGrid(tiles: kinds, group: group)),
+                const Hairline(),
+                _Block(title: 'Программы', child: TileGrid(tiles: segs, group: group)),
+                const Hairline(),
+                _SwitchRow(
+                  icon: CupertinoIcons.person_crop_circle_badge_checkmark,
+                  title: 'Только с отслеживаемыми',
+                  subtitle: followSummary(state.follow),
+                  value: r.onlyFollowed,
+                  onChanged: (v) => _set(r.copyWith(onlyFollowed: v)),
+                ),
+                const Hairline(),
+                _SwitchRow(
+                  icon: CupertinoIcons.moon,
+                  title: 'Ночные старты',
+                  subtitle: '00:00–08:00',
+                  value: r.night,
+                  onChanged: (v) => _set(r.copyWith(night: v)),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const SliverToBoxAdapter(child: _Head('Выход на лёд')),
+        SliverToBoxAdapter(
+          child: Plate(
+            child: Column(
+              children: [
+                _SwitchRow(
+                  icon: CupertinoIcons.person_crop_circle_badge_checkmark,
+                  title: 'Выход отслеживаемых',
+                  subtitle: followSummary(state.follow),
+                  value: r.skaters,
+                  onChanged: (v) => _set(r.copyWith(skaters: v)),
+                ),
+                if (r.skaters)
+                  _ShortBlock(
+                    title: 'Заранее',
+                    shortTitle: 'Заранее, мин',
+                    labels: [for (final m in NotifyRules.leads) '$m мин'],
+                    shortLabels: [for (final m in NotifyRules.leads) '$m'],
+                    child: (labels) => Segmented<int>(
+                      items: [for (var i = 0; i < NotifyRules.leads.length; i++) (NotifyRules.leads[i], labels[i])],
+                      value: r.skaterLead,
+                      onChanged: (v) => _set(r.copyWith(skaterLead: v)),
+                    ),
+                  ),
+                // закрепить и убрать само умеет только Android
+                if (isAndroid) ...[
+                  const Hairline(),
+                  _SwitchRow(
+                    icon: CupertinoIcons.pin,
+                    title: 'Не смахиваются',
+                    subtitle: r.skaters ? 'старт — до конца, спортсмен — до выхода на лёд' : 'до конца старта',
+                    value: r.pin,
+                    onChanged: (v) => _set(r.copyWith(pin: v)),
+                  ),
+                  if (r.skaters) ...[
+                    const Hairline(),
+                    _SwitchRow(
+                      icon: CupertinoIcons.clear,
+                      title: 'Убирать после выхода',
+                      value: r.clear,
+                      onChanged: (v) => _set(r.copyWith(clear: v)),
+                    ),
+                    if (r.clear)
+                      _ShortBlock(
+                        title: 'Через',
+                        shortTitle: 'Через, мин',
+                        labels: [for (final m in NotifyRules.gones) '$m мин'],
+                        shortLabels: [for (final m in NotifyRules.gones) '$m'],
+                        child: (labels) => Segmented<int>(
+                          items: [for (var i = 0; i < NotifyRules.gones.length; i++) (NotifyRules.gones[i], labels[i])],
+                          value: r.gone,
+                          onChanged: (v) => _set(r.copyWith(gone: v)),
                         ),
-                      ],
-                    ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: Plate(
-                      child: Column(
-                        children: [
-                          // «5 мин … 60 мин» не помещаются — «Заранее, мин» и одни числа
-                          _ShortBlock(
-                            title: 'Заранее',
-                            shortTitle: 'Заранее, мин',
-                            labels: [for (final m in NotifyRules.leads) '$m мин'],
-                            shortLabels: [for (final m in NotifyRules.leads) '$m'],
-                            child: (labels) => Segmented<int>(
-                              items: [for (var i = 0; i < NotifyRules.leads.length; i++) (NotifyRules.leads[i], labels[i])],
-                              value: r.lead,
-                              onChanged: (v) => _set(r.copyWith(lead: v)),
-                            ),
-                          ),
-                          const Hairline(),
-                          _Block(title: 'Уровень', child: TileGrid(tiles: levels, group: group)),
-                          const Hairline(),
-                          _Block(title: 'Виды', child: TileGrid(tiles: kinds, group: group)),
-                          const Hairline(),
-                          _Block(title: 'Турниры', child: TileGrid(tiles: tours, group: group)),
-                          const Hairline(),
-                          _Block(title: 'Программы', child: TileGrid(tiles: segs, group: group)),
-                          const Hairline(),
-                          _Row(
-                            icon: CupertinoIcons.person_2,
-                            title: r.athletes.isEmpty ? 'Спортсмены' : 'Спортсмены · ${r.athletes.length}',
-                            subtitle: r.athletes.isEmpty ? 'Любые' : 'Только старты выбранных',
-                            onTap: () => pickAthletes(context, state.data, r.athletes, (v) => _set(r.copyWith(athletes: v))),
-                            trailing: const _Chevron(),
-                          ),
-                          const Hairline(),
-                          _SwitchRow(
-                            icon: CupertinoIcons.moon,
-                            title: 'Ночные старты',
-                            subtitle: '00:00–08:00',
-                            value: r.night,
-                            onChanged: (v) => _set(r.copyWith(night: v)),
-                          ),
-                        ],
                       ),
-                    ),
-                  ),
-                  const SliverToBoxAdapter(child: _Head('Выход на лёд')),
-                  SliverToBoxAdapter(
-                    child: Plate(
-                      child: Column(
-                        children: [
-                          _SwitchRow(
-                            icon: CupertinoIcons.person_crop_circle_badge_checkmark,
-                            title: 'Выход спортсменов',
-                            subtitle: 'россияне, белорусы и отслеживаемые · за ${r.lead} мин',
-                            value: r.skaters,
-                            onChanged: (v) => _set(r.copyWith(skaters: v)),
-                          ),
-                          // закрепить и убрать само умеет только Android
-                          if (isAndroid) ...[
-                            const Hairline(),
-                            _SwitchRow(
-                              icon: CupertinoIcons.pin,
-                              title: 'Не смахиваются',
-                              subtitle: r.skaters ? 'старт — до конца, спортсмен — до выхода на лёд' : 'до конца старта',
-                              value: r.pin,
-                              onChanged: (v) => _set(r.copyWith(pin: v)),
-                            ),
-                            if (r.skaters) ...[
-                              const Hairline(),
-                              _SwitchRow(
-                                icon: CupertinoIcons.clear,
-                                title: 'Убирать после выхода',
-                                subtitle: 'через ${Reminders.skaterGone.inMinutes} мин после выхода',
-                                value: r.clear,
-                                onChanged: (v) => _set(r.copyWith(clear: v)),
-                              ),
-                            ],
-                          ],
-                          if (exceptions > 0) ...[
-                            const Hairline(),
-                            _Row(
-                              icon: CupertinoIcons.bell_circle,
-                              title: 'Исключения: $exceptions',
-                              subtitle: 'старты, включённые или выключенные вручную',
-                              action: 'Сбросить',
-                              onAction: state.clearExceptions,
-                            ),
-                          ],
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SliverToBoxAdapter(child: SizedBox(height: 24)),
+                  ],
                 ],
+                if (exceptions > 0) ...[
+                  const Hairline(),
+                  _Row(
+                    icon: CupertinoIcons.bell_circle,
+                    title: 'Исключения: $exceptions',
+                    subtitle: 'включены или выключены вручную',
+                    action: 'Сбросить',
+                    onAction: state.clearExceptions,
+                  ),
+                ],
+              ],
+            ),
+          ),
+        ),
+        if (isAndroid) ...[
+          const SliverToBoxAdapter(child: _Head('Система')),
+          SliverToBoxAdapter(
+            child: Plate(
+              child: _Row(
+                icon: CupertinoIcons.speaker_2,
+                title: 'Звук и вибрация',
+                subtitle: 'всплывание, экран блокировки',
+                onTap: () => StartyAlerts.channelSettings().catchError((_) {}),
+                trailing: const _Chevron(external: true),
               ),
             ),
-            Container(
-              decoration: BoxDecoration(color: p.bg, border: Border(top: BorderSide(color: p.plateLine))),
-              padding: EdgeInsets.fromLTRB(16, 12, 16, 12 + MediaQuery.paddingOf(context).bottom),
-              child: LayoutBuilder(
-                builder: (context, k) => Row(
-                  children: [
-                    ConstrainedBox(
-                      constraints: BoxConstraints(maxWidth: k.maxWidth * .4),
-                      child: SheetButton(neutral: true, compact: true, label: 'Отменить', onTap: () => Navigator.of(context).pop()),
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(child: SheetButton(filled: true, label: 'Сохранить', onTap: _dirty ? _save : null)),
-                  ],
+          ),
+        ],
+      ],
+    );
+  }
+}
+
+// ------------------------------------------------------------------ отслеживаемые
+
+void openFollow(BuildContext context, AppState state) {
+  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => _FollowPage(state: state)));
+}
+
+/// Отслеживаемые: россияне и белорусы на международных стартах (по отдельности) и выбранные
+/// спортсмены. Они в карточках стартов, в «Выходе на лёд» и в правиле «Только с отслеживаемыми».
+class _FollowPage extends StatefulWidget {
+  final AppState state;
+  const _FollowPage({required this.state});
+  @override
+  State<_FollowPage> createState() => _FollowPageState();
+}
+
+class _FollowPageState extends State<_FollowPage> {
+  late final Follow f0 = widget.state.follow;
+  late bool ru = f0.russians, by = f0.belarusians;
+  late final Set<String> sel = {...f0.names};
+  final _q = TextEditingController();
+  String q = '';
+
+  bool get _dirty => ru != f0.russians || by != f0.belarusians || sel.length != f0.names.length || !sel.containsAll(f0.names);
+
+  @override
+  void dispose() {
+    _q.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final data = widget.state.data;
+    final shown = q.isEmpty || data == null ? ([...sel]..sort()) : searchAthletes(data, q, soon: soonAthletes(data, now()));
+    return _SettingsPage(
+      title: 'Отслеживаемые',
+      dirty: _dirty,
+      onSave: () => widget.state.setFollow(sel, russians: ru, belarusians: by),
+      slivers: [
+        const SliverToBoxAdapter(child: _Head('Международные старты')),
+        SliverToBoxAdapter(
+          child: Plate(
+            child: Column(
+              children: [
+                _SwitchRow(icon: CupertinoIcons.person_2, title: 'Все россияне', value: ru, onChanged: (v) => setState(() => ru = v)),
+                const Hairline(),
+                _SwitchRow(icon: CupertinoIcons.person_2, title: 'Все белорусы', value: by, onChanged: (v) => setState(() => by = v)),
+              ],
+            ),
+          ),
+        ),
+        SliverToBoxAdapter(child: _Head(sel.isEmpty ? 'Спортсмены' : 'Спортсмены · ${sel.length}')),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SearchBox(controller: _q, onChanged: (v) => setState(() => q = v.trim())),
+                const SizedBox(height: 6),
+                for (final a in shown)
+                  AthleteCheckRow(
+                    name: a,
+                    data: data,
+                    value: sel.contains(a),
+                    onTap: () => setState(() => sel.contains(a) ? sel.remove(a) : sel.add(a)),
+                  ),
+                if (shown.isEmpty)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    child: Text(q.isEmpty ? 'Не выбраны' : 'Не найдено', style: TextStyle(color: p.ink2, fontSize: 15)),
+                  ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// ------------------------------------------------------------------ значок приложения
+
+void openIcons(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => const _IconPage()));
+}
+
+class _IconPage extends StatefulWidget {
+  const _IconPage();
+  @override
+  State<_IconPage> createState() => _IconPageState();
+}
+
+class _IconPageState extends State<_IconPage> {
+  List<IconVariant> all = const [];
+  String? was, pick;
+  String? error;
+
+  @override
+  void initState() {
+    super.initState();
+    () async {
+      final a = await AppIcons.available();
+      final c = await AppIcons.current();
+      // у «Календаря» на Android в имени — день: date_teal_15 → date_teal
+      final cur = a.where((v) => c == v.id || c.startsWith('${v.id}_')).firstOrNull?.id ?? 'classic';
+      if (!mounted) return;
+      setState(() {
+        all = a;
+        was = cur;
+        pick = cur;
+      });
+    }();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final groups = <String, String>{
+      'classic': 'Классический',
+      'skate': 'Конёк',
+      'date': 'Календарь · число сегодняшнее',
+    };
+    Widget tile(IconVariant v) {
+      final on = v.id == pick;
+      return Semantics(
+        selected: on,
+        button: true,
+        label: v.name,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(18),
+          onTap: () => setState(() => pick = v.id),
+          child: Padding(
+            padding: const EdgeInsets.all(6),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                DecoratedBox(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: on ? p.accent : Colors.transparent, width: 2.5),
+                  ),
+                  child: Padding(padding: const EdgeInsets.all(3), child: IconPreview(variant: v, size: 64)),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  v.name,
+                  style: TextStyle(fontSize: 13, color: on ? p.ink : p.ink2, fontWeight: on ? FontWeight.w700 : FontWeight.w500),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
+    return _SettingsPage(
+      title: 'Значок',
+      dirty: pick != null && pick != was,
+      onSave: () async {
+        final ok = await AppIcons.set(pick!);
+        if (!ok && mounted) setState(() => error = 'Система не сменила значок');
+      },
+      slivers: [
+        for (final g in groups.entries)
+          if (all.any((v) => v.group == g.key)) ...[
+            SliverToBoxAdapter(child: _Head(g.value)),
+            SliverToBoxAdapter(
+              child: Plate(
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Wrap(spacing: 4, runSpacing: 6, children: [for (final v in all) if (v.group == g.key) tile(v)]),
                 ),
               ),
             ),
           ],
-        ),
-      ),
+        if (isAndroid)
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 12, 20, 0),
+              child: Text('Значок сменится, когда приложение уйдёт с экрана', style: TextStyle(fontSize: 13, color: p.ink2)),
+            ),
+          ),
+        if (isDesktop)
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 12, 20, 0),
+              child: Text(
+                isWindows ? 'Значок окна и панели задач; ярлык в «Пуске» — классический' : 'Значок в Доке, пока приложение открыто',
+                style: TextStyle(fontSize: 13, color: p.ink2),
+              ),
+            ),
+          ),
+        if (error != null)
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 12, 20, 0),
+              child: Text(error!, style: TextStyle(fontSize: 13, color: p.live)),
+            ),
+          ),
+      ],
     );
   }
 }

@@ -657,7 +657,8 @@ def do_isu(names, report, failed, upcoming, photos):
                         "tid": tid, "name": name, "intl": True, "venue": venue,
                         "start": fr.astimezone(MSK).date().isoformat(),
                         "end": (to - dt.timedelta(hours=12)).astimezone(MSK).date().isoformat(),
-                        "ours": sorted(set(ours_all)), "athletes": sorted(set(all_names)),
+                        "ours": sorted({n for n, _ in ours_all}), "ours_nation": dict(sorted(set(ours_all))),
+                        "athletes": sorted(set(all_names)),
                         "broadcast": bcast})
         except Exception as ex:
             log(f"  ! {name}: {ex}")
@@ -681,14 +682,14 @@ def isu_api_events(e, tid, name, venue, bcast, names, sched, photos):
         if not kind:
             continue
         ents = isu.entries(e["event_id"], c)
-        ours = [{"name": names.to_ru(x["name"])} for x in ents if x["code"] in CFG["ours_codes"]]
+        ours = [{"name": names.to_ru(x["name"]), "nation": x["code"]} for x in ents if x["code"] in CFG["ours_codes"]]
         field = [{"name": names.to_ru(x["name"]), "nation": x["code"]} for x in ents]
         if not field:
             continue
         for x in ents:
             for full, url in x.get("photos", {}).items():
                 photos["raw"].append((full, url, 1))
-        ours_all += [o["name"] for o in ours]
+        ours_all += [(o["name"], o["nation"]) for o in ours]
         all_names += [o["name"] for o in field]
         segs = [(when, seg_code(segname)) for when, cat, segname in sched
                 if cat_en(cat) == (kind, level) and seg_code(segname)]

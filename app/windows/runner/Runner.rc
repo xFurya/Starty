@@ -90,7 +90,9 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "ru.furya" "\0"
-            VALUE "FileDescription", "starty" "\0"
+            // CompanyName and ProductName name the settings folder (%APPDATA%/ru.furya/starty,
+            // path_provider) - never change them. FileDescription is what Task Manager shows.
+            VALUE "FileDescription", "Фигурное катание" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "starty" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2026 ru.furya. All rights reserved." "\0"

@@ -45,6 +45,20 @@ class AlertsPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
                     Alerts.clear(c)
                     result.success(null)
                 }
+                // звук, вибрация, всплывание и экран блокировки — настройки канала в системе
+                "channelSettings" -> {
+                    Alerts.ensureChannel(c)
+                    val i = if (android.os.Build.VERSION.SDK_INT >= 26) {
+                        android.content.Intent(android.provider.Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS)
+                            .putExtra(android.provider.Settings.EXTRA_APP_PACKAGE, c.packageName)
+                            .putExtra(android.provider.Settings.EXTRA_CHANNEL_ID, Alerts.CHANNEL)
+                    } else {
+                        android.content.Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                            .setData(android.net.Uri.parse("package:" + c.packageName))
+                    }
+                    c.startActivity(i.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK))
+                    result.success(null)
+                }
                 else -> result.notImplemented()
             }
         } catch (e: Throwable) {

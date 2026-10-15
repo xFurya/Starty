@@ -16,7 +16,7 @@ void backgroundDispatcher() {
       await Prefs.init();
       await Reminders.init();
       final raw = await Repo.fetch() ?? await Repo.cached();
-      final data = raw?.withFollow(Follow(Prefs.follow ?? raw.watchlist));
+      final data = raw?.withFollow(Prefs.followOr(raw.watchlist));
       await Reminders.sync(data, NotifyPlan(NotifyRules.fromJson(Prefs.rulesJson), Prefs.forcedOn, Prefs.forcedOff));
     } catch (_) {}
     return true;

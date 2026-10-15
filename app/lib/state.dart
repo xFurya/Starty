@@ -23,14 +23,16 @@ class AppState extends ChangeNotifier {
 
   /// Отслеживаемые. Пока человек не выбирал — список сборщика (data.watchlist).
   List<String>? _follow = Prefs.follow;
-  Follow get follow => Follow(_follow ?? _raw?.watchlist ?? const []);
-  bool get followChosen => _follow != null;
+  bool _followRu = Prefs.followRussians, _followBy = Prefs.followBelarusians;
+  Follow get follow => Follow(_follow ?? _raw?.watchlist ?? const [], russians: _followRu, belarusians: _followBy);
 
-  Future<void> setFollow(Set<String> v) async {
+  Future<void> setFollow(Set<String> v, {required bool russians, required bool belarusians}) async {
     _follow = v.toList()..sort();
+    _followRu = russians;
+    _followBy = belarusians;
     if (_raw != null) data = _apply(_raw!);
     notifyListeners();
-    await Prefs.setFollow(_follow!);
+    await Prefs.setFollow(_follow!, russians: russians, belarusians: belarusians);
     await _sync();
   }
 

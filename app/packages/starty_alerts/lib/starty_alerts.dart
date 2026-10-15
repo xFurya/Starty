@@ -36,4 +36,7 @@ class StartyAlerts {
 
   /// Убрать всё: запланированное и показанное.
   static Future<void> clear() => _ch.invokeMethod('clear');
+
+  /// Системные настройки канала: звук, вибрация, всплывание, экран блокировки.
+  static Future<void> channelSettings() => _ch.invokeMethod('channelSettings');
 }

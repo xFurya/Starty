@@ -10,7 +10,7 @@ import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 import kotlin.concurrent.thread
 
-class MainActivity : FlutterActivity() {
+class AppActivity : FlutterActivity() {
     private var channel: MethodChannel? = null
     private var lastCheck = 0L
     private val onChange: () -> Unit = { runOnUiThread { channel?.invokeMethod("changed", Updater.statusJson(this)) } }
@@ -35,6 +35,20 @@ class MainActivity : FlutterActivity() {
             }
         }
         Updater.listener = onChange
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "starty/icon").setMethodCallHandler { call, result ->
+            when (call.method) {
+                "get" -> result.success(AppIcons.current(this))
+                "set" -> {
+                    try {
+                        AppIcons.set(applicationContext, call.arguments as String)
+                        result.success(true)
+                    } catch (e: Exception) {
+                        result.error("icon", e.message, null)
+                    }
+                }
+                else -> result.notImplemented()
+            }
+        }
     }
 
     /** Системный экран уведомлений этого приложения (до Android 8 — сведения о приложении). */
@@ -80,6 +94,8 @@ class MainActivity : FlutterActivity() {
     override fun onStop() {
         super.onStop()
         Updater.onStop()
+        // выбранный значок и сегодняшнее число «Календаря» — когда приложение ушло с экрана
+        try { AppIcons.apply(applicationContext) } catch (_: Exception) {}
         // Свернули — обновление встанет через минуту, если к тому времени не вернутся.
         if (!Updater.visible) Updater.installSoon(applicationContext)
     }

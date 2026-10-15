@@ -63,4 +63,19 @@ void main() {
     expect(kindLabel('men', {'senior', 'junior'}), 'Мужчины (юноши)');
     expect(kindLabel('pairs', {'junior'}), 'Пары');
   });
+
+  test('отслеживаемые: россиян и белорусов на международных можно выключить по отдельности', () {
+    final st = Start.fromJson({
+      'id': 'x', 'tid': 't', 'tournament': 'T', 'kind': 'women', 'level': 'senior', 'seg': 'КП',
+      'title': 'T — женщины КП', 'start': '2026-10-20T10:00:00+03:00', 'end': '2026-10-20T13:00:00+03:00',
+      'venue': '', 'intl': true, 'ours': [],
+      'field': [
+        {'name': 'Аделия Петросян', 'nation': 'AIN2'},
+        {'name': 'Виктория Сафонова', 'nation': 'AIN1'},
+      ],
+    });
+    expect(st.withFollow(Follow(const [], russians: false)).ours.map((o) => o.name), ['Виктория Сафонова']);
+    expect(st.withFollow(Follow(const [], belarusians: false)).ours.map((o) => o.name), ['Аделия Петросян']);
+    expect(st.withFollow(Follow(const [], russians: false, belarusians: false)).shown, isFalse);
+  });
 }

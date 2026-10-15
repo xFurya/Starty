@@ -261,6 +261,34 @@ void main() {
     expect(t.takeException(), isNull);
   });
 
+  testWidgets('быстрый свайп вниз закрывает карточку целиком — без оставшегося затемнения', (t) async {
+    final s = stateWith(data);
+    final st = data.starts.first;
+    await t.pumpWidget(app(
+      Builder(
+        builder: (c) => Center(
+          child: TextButton(onPressed: () => showStart(c, st, s), child: const Text('open sheet')),
+        ),
+      ),
+      Brightness.light,
+      1,
+    ));
+    await t.tap(find.text('open sheet'));
+    await t.pumpAndSettle();
+    final sheet = find.byType(SheetScroll);
+    final rect = t.getRect(sheet);
+    // короткий, но резкий жест
+    await t.flingFrom(Offset(rect.center.dx, rect.top + 24), const Offset(0, 160), 3000);
+    await t.pumpAndSettle();
+    expect(sheet, findsNothing);
+    expect(find.byType(ModalBarrier), findsNWidgets(1)); // только у самого приложения
+    expect(find.text('open sheet'), findsOneWidget);
+    await t.tap(find.text('open sheet'));
+    await t.pumpAndSettle();
+    expect(sheet, findsOneWidget); // экран не заблокирован
+    expect(t.takeException(), isNull);
+  });
+
   test('турниры без расписания: разбор, дни, лента', () {
     final d = Schedule.parse(File('test/events_sample.json').readAsStringSync());
     final s = stateWith(d);
@@ -292,10 +320,10 @@ void main() {
     s.filters = const Filters({}, {}, {'Мария Захарова'});
     expect(upcomingAhead(s, t), isEmpty);
     expect(upcomingAhead(s, t, f), hasLength(1));
-    expect(filterAction(0, 1), ('Показать 1 турнир', null));
+    expect(filterAction(0, 1), ('Показать 1 старт', null));
     expect(filterAction(0, 0), ('Впереди стартов нет', null));
     expect(filterAction(3, 0), ('Показать 3 старта', null));
-    expect(filterAction(21, 15), ('Показать 21 старт', 'и 15 турниров'));
+    expect(filterAction(21, 15), ('Показать 36 стартов', null));
   });
 
   test('свежесть расписания: без предлога перед «сегодня», тревога — по делу', () {

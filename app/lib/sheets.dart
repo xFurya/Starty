@@ -39,55 +39,14 @@ class _StartSheetHost extends StatefulWidget {
 }
 
 class _StartSheetHostState extends State<_StartSheetHost> {
-  static const _top = .92;
-  static const _floor = 0.0; // нижнего стопа нет: окно тянется до самого низа
-  static const _dismiss = .5;
-  final _sheet = DraggableScrollableController();
-
-  // Решение принимаем после окончания жеста (в микрозадаче), а не во время движения.
-  void _settle() {
-    if (!mounted || !_sheet.isAttached) return;
-    if (_sheet.size <= _dismiss + 0.0001) {
-      Navigator.of(context).pop();
-    } else if (_sheet.size < _top - 0.0001) {
-      _sheet.animateTo(
-        _top,
-        duration: const Duration(milliseconds: 220),
-        curve: Curves.easeOutCubic,
-      );
-    }
-  }
-
   @override
-  void dispose() {
-    _sheet.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Listener(
-      onPointerUp: (_) => scheduleMicrotask(_settle),
-      onPointerCancel: (_) => scheduleMicrotask(_settle),
-      child: DraggableScrollableSheet(
-        controller: _sheet,
-        expand: false,
-        initialChildSize: _top,
-        minChildSize: _floor,
-        maxChildSize: _top,
-        snap: false,
-        shouldCloseOnMinExtent: false,
-        builder: (sheetContext, scrollController) => ListenableBuilder(
-          listenable: widget.state,
-          builder: (c, _) => _StartSheet(
-            s: widget.s,
-            state: widget.state,
-            scrollController: scrollController,
-          ),
-        ),
-      ),
-    );
-  }
+  Widget build(BuildContext context) => SwipeSurface(
+    top: .92,
+    builder: (sheetContext, scrollController) => ListenableBuilder(
+      listenable: widget.state,
+      builder: (c, _) => _StartSheet(s: widget.s, state: widget.state, scrollController: scrollController),
+    ),
+  );
 }
 
 class _StartSheet extends StatelessWidget {
@@ -1055,43 +1014,109 @@ class _SwipeSheet extends StatefulWidget {
 }
 
 class _SwipeSheetState extends State<_SwipeSheet> {
-  static const _top = .94;
+  @override
+  Widget build(BuildContext context) {
+    // клавиатура поиска не закрывает ни найденных, ни кнопок внизу
+    return Padding(
+      padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
+      child: SwipeSurface(top: .94, builder: widget.builder),
+    );
+  }
+}
+
+/// Поверхность листа, которую тянут пальцем (карточка старта, фильтр).
+///
+/// Решение — когда палец отпущен: дотянули ниже середины или смахнули быстро вниз —
+/// закрыть, иначе плавно вернуть наверх. Быстрый жест лист дотягивает по инерции
+/// и после отпускания — поэтому следим и за самим положением: лист ушёл вниз, пока палец
+/// не касается, — закрываем. Иначе лист пропадал, а затемнение оставалось.
+class SwipeSurface extends StatefulWidget {
+  final double top;
+  final Widget Function(BuildContext, ScrollController) builder;
+  const SwipeSurface({super.key, required this.top, required this.builder});
+  @override
+  State<SwipeSurface> createState() => _SwipeSurfaceState();
+}
+
+class _SwipeSurfaceState extends State<SwipeSurface> {
   static const _dismiss = .5;
+  static const _fling = 1100.0; // логических точек в секунду вниз
   final _sheet = DraggableScrollableController();
+  int _pointers = 0;
+  bool _closing = false;
+  // скорость пальца — по двум последним точкам
+  Offset? _lastPos;
+  Duration? _lastTime;
+  double _vy = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _sheet.addListener(_watch);
+  }
+
+  void _close() {
+    if (_closing || !mounted) return;
+    _closing = true;
+    Navigator.of(context).pop();
+  }
+
+  void _watch() {
+    if (_pointers == 0 && _sheet.isAttached && _sheet.size <= _dismiss) _close();
+  }
 
   void _settle() {
-    if (!mounted || !_sheet.isAttached) return;
-    if (_sheet.size <= _dismiss + 0.0001) {
-      Navigator.of(context).pop();
-    } else if (_sheet.size < _top - 0.0001) {
-      _sheet.animateTo(_top, duration: const Duration(milliseconds: 220), curve: Curves.easeOutCubic);
+    if (!mounted || !_sheet.isAttached || _closing) return;
+    final pulled = _sheet.size < widget.top - 0.04;
+    if (_sheet.size <= _dismiss + 0.0001 || (pulled && _vy > _fling)) {
+      _close();
+    } else if (_sheet.size < widget.top - 0.0001) {
+      _sheet.animateTo(widget.top, duration: const Duration(milliseconds: 220), curve: Curves.easeOutCubic);
     }
   }
 
   @override
   void dispose() {
+    _sheet.removeListener(_watch);
     _sheet.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    // клавиатура поиска не закрывает ни найденных, ни кнопок внизу
-    return Padding(
-      padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
-      child: Listener(
-        onPointerUp: (_) => scheduleMicrotask(_settle),
-        onPointerCancel: (_) => scheduleMicrotask(_settle),
-        child: DraggableScrollableSheet(
-          controller: _sheet,
-          expand: false,
-          initialChildSize: _top,
-          minChildSize: 0,
-          maxChildSize: _top,
-          snap: false,
-          shouldCloseOnMinExtent: false,
-          builder: widget.builder,
-        ),
+    return Listener(
+      onPointerDown: (e) {
+        _pointers++;
+        _lastPos = e.position;
+        _lastTime = e.timeStamp;
+        _vy = 0;
+      },
+      onPointerMove: (e) {
+        final t0 = _lastTime, p0 = _lastPos;
+        if (t0 != null && p0 != null) {
+          final dt = (e.timeStamp - t0).inMicroseconds / 1e6;
+          if (dt > 0) _vy = (e.position.dy - p0.dy) / dt;
+        }
+        _lastPos = e.position;
+        _lastTime = e.timeStamp;
+      },
+      onPointerUp: (_) {
+        _pointers = (_pointers - 1).clamp(0, 10);
+        scheduleMicrotask(_settle);
+      },
+      onPointerCancel: (_) {
+        _pointers = (_pointers - 1).clamp(0, 10);
+        scheduleMicrotask(_settle);
+      },
+      child: DraggableScrollableSheet(
+        controller: _sheet,
+        expand: false,
+        initialChildSize: widget.top,
+        minChildSize: 0,
+        maxChildSize: widget.top,
+        snap: false,
+        shouldCloseOnMinExtent: false,
+        builder: widget.builder,
       ),
     );
   }
@@ -1163,10 +1188,11 @@ class _SheetBar extends StatelessWidget {
   }
 }
 
-class _SearchField extends StatelessWidget {
+/// Поиск спортсмена по фамилии.
+class SearchBox extends StatelessWidget {
   final TextEditingController controller;
   final ValueChanged<String> onChanged;
-  const _SearchField({required this.controller, required this.onChanged});
+  const SearchBox({super.key, required this.controller, required this.onChanged});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -1303,7 +1329,7 @@ class _FilterSheetState extends State<_FilterSheet> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          const Eyebrow('Турниры'),
+                          const Eyebrow('Старты'),
                           const SizedBox(height: 10),
                           TileGrid(
                             tiles: [
@@ -1337,7 +1363,7 @@ class _FilterSheetState extends State<_FilterSheet> {
                           const SizedBox(height: 26),
                           const Eyebrow('Спортсмены'),
                           const SizedBox(height: 10),
-                          _SearchField(controller: _q, onChanged: (v) => setState(() => q = v.trim())),
+                          SearchBox(controller: _q, onChanged: (v) => setState(() => q = v.trim())),
                           const SizedBox(height: 6),
                           if (q.isNotEmpty) ...[
                             for (final a in found) athleteRow(a),
@@ -1357,7 +1383,7 @@ class _FilterSheetState extends State<_FilterSheet> {
                           for (final intl in [false, true])
                             if (group(intl).isNotEmpty) ...[
                               const SizedBox(height: 26),
-                              Eyebrow(intl ? 'Международные турниры' : 'Российские турниры'),
+                              Eyebrow(intl ? 'Международные' : 'Российские'),
                               const SizedBox(height: 4),
                               for (final e in group(intl))
                                 _CheckRow(
@@ -1406,15 +1432,12 @@ class _FilterSheetState extends State<_FilterSheet> {
   }
 }
 
-/// Главная кнопка листа фильтра: сколько покажет лента — старты и турниры без расписания.
-/// Есть и те и другие — турниры второй строкой: в одну на узком экране не помещается.
-(String, String?) filterAction(int starts, int tours) {
-  final a = '$starts ${plural(starts, 'старт', 'старта', 'стартов')}';
-  final b = '$tours ${plural(tours, 'турнир', 'турнира', 'турниров')}';
-  if (starts == 0 && tours == 0) return ('Впереди стартов нет', null);
-  if (tours == 0) return ('Показать $a', null);
-  if (starts == 0) return ('Показать $b', null);
-  return ('Показать $a', 'и $b');
+/// Главная кнопка листа фильтра: сколько стартов покажет лента — с расписанием и без него
+/// (у турнира без расписания один старт в ленте).
+(String, String?) filterAction(int starts, int unscheduled) {
+  final n = starts + unscheduled;
+  if (n == 0) return ('Впереди стартов нет', null);
+  return ('Показать $n ${plural(n, 'старт', 'старта', 'стартов')}', null);
 }
 
 /// Кто на стартах впереди — их в поиске выше.
@@ -1482,122 +1505,20 @@ class _CheckRow extends StatelessWidget {
   }
 }
 
-// ------------------------------------------------------------------ выбор спортсменов
 
-/// Выбор спортсменов из справочника: поиск по фамилии на любом алфавите. Выбор вступает
-/// в силу по кнопке «Сохранить» ([onSave]); «Отменить» и свайп вниз — без изменений.
-Future<void> pickAthletes(
-  BuildContext context,
-  Schedule? data,
-  Set<String> selected,
-  ValueChanged<Set<String>> onSave, {
-  String title = 'Спортсмены',
-}) {
-  return showSwipeSheet<void>(
-    context,
-    (c, scroll) => _AthletePicker(data: data, selected: selected, onSave: onSave, title: title, scroll: scroll),
-  );
-}
-
-class _AthletePicker extends StatefulWidget {
+/// Строка спортсмена с фото, страной и видом и отметкой выбора.
+class AthleteCheckRow extends StatelessWidget {
+  final String name;
   final Schedule? data;
-  final Set<String> selected;
-  final ValueChanged<Set<String>> onSave;
-  final String title;
-  final ScrollController scroll;
-  const _AthletePicker({
-    required this.data,
-    required this.selected,
-    required this.onSave,
-    required this.title,
-    required this.scroll,
-  });
-
+  final bool value;
+  final VoidCallback onTap;
+  const AthleteCheckRow({super.key, required this.name, required this.data, required this.value, required this.onTap});
   @override
-  State<_AthletePicker> createState() => _AthletePickerState();
-}
-
-class _AthletePickerState extends State<_AthletePicker> {
-  late final Set<String> sel = {...widget.selected};
-  final _q = TextEditingController();
-  String q = '';
-
-  @override
-  void dispose() {
-    _q.dispose();
-    super.dispose();
-  }
-
-  bool get _changed => sel.length != widget.selected.length || !sel.containsAll(widget.selected);
-
-  @override
-  Widget build(BuildContext context) {
-    final p = Palette.of(context);
-    final data = widget.data;
-    final shown = q.isEmpty || data == null
-        ? ([...sel]..sort())
-        : searchAthletes(data, q, soon: soonAthletes(data, now()));
-    return Material(
-      color: p.sheet,
-      borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
-      clipBehavior: Clip.antiAlias,
-      child: Column(
-        children: [
-          Expanded(
-            child: Stack(
-              children: [
-                ListView(
-                  controller: widget.scroll,
-                  padding: EdgeInsets.zero,
-                  children: [
-                    _SheetTitle(widget.title),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 14, 20, 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          _SearchField(controller: _q, onChanged: (v) => setState(() => q = v.trim())),
-                          const SizedBox(height: 8),
-                          if (q.isEmpty)
-                            Text(
-                              sel.isEmpty ? 'Не выбрано' : 'Выбрано: ${sel.length}',
-                              style: TextStyle(fontSize: 13, color: p.ink2, fontWeight: FontWeight.w600),
-                            ),
-                          for (final a in shown)
-                            _CheckRow(
-                              leading: Avatar(name: a, data: data, size: 34, slot: true),
-                              title: displayName(a),
-                              subtitle: data == null ? null : _personLine(data, a),
-                              value: sel.contains(a),
-                              onTap: () => setState(() => sel.contains(a) ? sel.remove(a) : sel.add(a)),
-                            ),
-                          if (shown.isEmpty && q.isNotEmpty)
-                            Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 14),
-                              child: Text('Не найдено', style: TextStyle(color: p.ink2, fontSize: 15)),
-                            ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                const Positioned(top: 0, left: 0, right: 0, child: SheetHandle()),
-              ],
-            ),
-          ),
-          _SheetBar(
-            secondary: 'Отменить',
-            onSecondary: () => Navigator.pop(context),
-            primary: 'Сохранить',
-            onPrimary: _changed
-                ? () {
-                    widget.onSave({...sel});
-                    Navigator.pop(context);
-                  }
-                : null,
-          ),
-        ],
-      ),
-    );
-  }
+  Widget build(BuildContext context) => _CheckRow(
+    leading: Avatar(name: name, data: data, size: 34, slot: true),
+    title: displayName(name),
+    subtitle: data == null ? null : _personLine(data!, name),
+    value: value,
+    onTap: onTap,
+  );
 }

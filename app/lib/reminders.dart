@@ -26,7 +26,9 @@ class NotifyRules {
   final bool russian, intl;
   final bool night; // старты с 00:00 до 08:00 МСК
   final bool skaters; // отдельно — выход каждого нашего, когда время известно
-  final Set<String> athletes; // пусто — все, иначе — только старты этих спортсменов
+  final bool onlyFollowed; // только старты, где выступают отслеживаемые
+  final int gone; // через сколько минут после выхода убрать уведомление о спортсмене
+  final int skaterLead; // за сколько минут до выхода спортсмена
   // Android: закреплять (не смахиваются) — старт до конца, спортсмен — пока не откатал
   final bool pin;
   // Android: уведомление о выходе спортсмена убирается само вскоре после его проката
@@ -36,6 +38,7 @@ class NotifyRules {
   static const allLevels = ['senior', 'junior'];
   static const allSegs = ['short', 'free'];
   static const leads = [5, 10, 15, 30, 60];
+  static const gones = [5, 10, 15, 30];
 
   const NotifyRules({
     this.on = true,
@@ -47,7 +50,9 @@ class NotifyRules {
     this.intl = true,
     this.night = true,
     this.skaters = false,
-    this.athletes = const {},
+    this.onlyFollowed = false,
+    this.gone = 15,
+    this.skaterLead = 15,
     this.pin = true,
     this.clear = true,
   });
@@ -62,13 +67,10 @@ class NotifyRules {
     if (!segs.contains(segOf(s))) return false;
     if (s.intl ? !intl : !russian) return false;
     if (!night && msk(s.t0).hour < 8) return false;
-    if (athletes.isNotEmpty) {
-      final have = [...s.athletes, ...s.ours.map((o) => o.name)];
-      if (!athletes.any((a) => namesInclude(have, a))) return false;
-    } else if (!s.shown) {
-      // международный старт без россиян и отслеживаемых — только если выбран спортсмен
-      return false;
-    }
+    // ours — уже отслеживаемые (россияне и белорусы на международных — если их отслеживают)
+    if (onlyFollowed && s.ours.isEmpty) return false;
+    // международный старт, где нет никого из отслеживаемых, — не о чем напоминать
+    if (!s.shown) return false;
     return true;
   }
 
@@ -79,7 +81,8 @@ class NotifyRules {
       segs.length == allSegs.length &&
       russian &&
       intl &&
-      night;
+      night &&
+      !onlyFollowed;
 
   NotifyRules copyWith({
     bool? on,
@@ -91,7 +94,9 @@ class NotifyRules {
     bool? intl,
     bool? night,
     bool? skaters,
-    Set<String>? athletes,
+    bool? onlyFollowed,
+    int? gone,
+    int? skaterLead,
     bool? pin,
     bool? clear,
   }) => NotifyRules(
@@ -104,7 +109,9 @@ class NotifyRules {
     intl: intl ?? this.intl,
     night: night ?? this.night,
     skaters: skaters ?? this.skaters,
-    athletes: athletes ?? this.athletes,
+    onlyFollowed: onlyFollowed ?? this.onlyFollowed,
+    gone: gone ?? this.gone,
+    skaterLead: skaterLead ?? this.skaterLead,
     pin: pin ?? this.pin,
     clear: clear ?? this.clear,
   );
@@ -119,7 +126,9 @@ class NotifyRules {
     'intl': intl,
     'night': night,
     'skaters': skaters,
-    'athletes': athletes.toList(),
+    'onlyFollowed': onlyFollowed,
+    'gone': gone,
+    'skaterLead': skaterLead,
     'pin': pin,
     'clear': clear,
   });
@@ -141,7 +150,10 @@ class NotifyRules {
         intl: j['intl'] is bool ? j['intl'] : d.intl,
         night: j['night'] is bool ? j['night'] : d.night,
         skaters: j['skaters'] is bool ? j['skaters'] : d.skaters,
-        athletes: set('athletes', d.athletes),
+        onlyFollowed: j['onlyFollowed'] is bool ? j['onlyFollowed'] : d.onlyFollowed,
+        gone: j['gone'] is int && gones.contains(j['gone']) ? j['gone'] as int : d.gone,
+        // раньше выход спортсмена шёл за то же время, что и начало старта
+        skaterLead: j['skaterLead'] is int && leads.contains(j['skaterLead']) ? j['skaterLead'] as int : lead,
         pin: j['pin'] is bool ? j['pin'] : d.pin,
         clear: j['clear'] is bool ? j['clear'] : d.clear,
       );
@@ -247,8 +259,6 @@ class Reminders {
   /// Сколько после времени выхода спортсмен заведомо откатал: программа до 4 мин и оценки.
   static const skated = Duration(minutes: 8);
 
-  /// Через сколько после выхода уведомление о нём убирается само (если так настроено).
-  static const skaterGone = Duration(minutes: 15);
 
   /// Уведомления, которые должны быть: время, заголовок, текст, до какого момента закреплено
   /// и когда убрать. Сюда попадают и уже показанные (старт идёт), чтобы их не убирали.
@@ -273,10 +283,10 @@ class Reminders {
       for (final o in s.ours) {
         final skate = s.skateAt(o);
         if (skate == null) continue;
-        final at = skate.subtract(lead);
+        final at = skate.subtract(Duration(minutes: p.rules.skaterLead));
         // место в протоколе — уже откатал, раньше расчётного; закрепление снимается сразу
         final done = o.place != null ? now : skate.add(skated);
-        var end = p.rules.clear ? skate.add(skaterGone) : s.t1;
+        var end = p.rules.clear ? skate.add(Duration(minutes: p.rules.gone)) : s.t1;
         if (end.isAfter(s.t1)) end = s.t1;
         if (!end.isAfter(now)) continue;
         out.add(Planned(
