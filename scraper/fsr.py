@@ -218,7 +218,12 @@ def low_level(text):
 def schedule_pdf(url, season_hint):
     """PDF «Расписание соревнований»: [(date, (h, m), (h2, m2), описание)] —
     только строки из блоков «соревнования:», время местное."""
-    text = net.pdf_text(url)
+    return schedule_text(net.pdf_text(url), season_hint)
+
+
+def schedule_text(text, season_hint):
+    """Текст расписания (pdftotext -layout), см. schedule_pdf. season_hint — год начала
+    сезона: даты июль–декабрь берутся из него, январь–июнь — из следующего года."""
     out = []
     cur_date = None
     in_comp = False

@@ -27,6 +27,32 @@ def _text(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
+# Латинские буквы, набранные вместо похожих кириллических (табло ФФКМ: «Oдинoчнoe кaтaниe, КМC»)
+_LAT2CYR = str.maketrans("AaBEeKMHOoPpCcTXxy", "АаВЕеКМНОоРрСсТХху")
+
+
+def fix_script(s):
+    """Слово, где кириллица смешана с латиницей, переводится в кириллицу.
+    Чисто латинские слова (ISU: «Men Singles») не трогаем, кроме «MC»/«KMC» — это «МС»/«КМС»
+    на табло ФФКМ (по ним различается уровень, КМС — юниорский)."""
+    def fix(m):
+        w = m.group(0)
+        if re.search(r"[А-Яа-яЁё]", w) and re.search(r"[A-Za-z]", w):
+            return w.translate(_LAT2CYR)
+        if re.fullmatch(r"K?MC[,.;:]?", w):
+            return w.translate(_LAT2CYR)
+        return w
+    return re.sub(r"\S+", fix, s)
+
+
+def _cell_text(c):
+    """Текст ячейки. «<a>Имя Фамилия</a><br/>Клуб» — только имя: клуб в той же ячейке."""
+    m = re.search(r"(?is)</a>\s*<br\s*/?>", c)
+    if m:
+        c = c[:m.start()] + "</a>"
+    return _text(c)
+
+
 _NESTED = re.compile(
     r"(?is)(<td[^>]*>)\s*<table[^>]*>\s*(?:<tbody[^>]*>\s*)?<tr[^>]*>"
     r"((?:(?!<table\b|<tr\b|</tr>).)*)</tr>\s*(?:</tbody>\s*)?</table>\s*(</td>)")
@@ -43,25 +69,32 @@ def _flat(page):
 def _rows(page, flat=False):
     """Список строк таблиц: (ячейки-текст, ссылки)."""
     page = re.sub(r"(?s)<(script|style)[^>]*>.*?</\1>", "", page)
+    # подпись таблицы стоит вне <tr>: делаем из неё строку, иначе «Расписание» не находится
+    page = re.sub(r"(?is)<caption[^>]*>(.*?)</caption>", r"<tr><td>\1</td></tr>", page)
     if flat:
         page = _flat(page)
     out = []
     for r in re.findall(r"(?s)<tr[^>]*>(.*?)</tr>", page):
-        cells = [_text(c) for c in re.findall(r"(?s)<t[dh][^>]*>(.*?)</t[dh]>", r)]
+        cells = [_cell_text(c) for c in re.findall(r"(?s)<t[dh][^>]*>(.*?)</t[dh]>", r)]
         links = re.findall(r"""href\s*=\s*["']?([^"' >]+)""", r)
         out.append((cells, links))
     return out
 
 
-def parse_index(url):
+def parse_index(url, default_offset=None):
     """Возвращает описание турнира с табло:
     {
       name, city, nation, venue, offset (минуты от UTC),
       categories: [{name, entries_url, segments: [{name, url, times_pdf, start}]}]
     }
     start — datetime с часовым поясом (из блока расписания), если есть.
+    default_offset — минуты от UTC, если на табло смещения нет (ФФКМ: московское время).
     """
-    page = net.fetch(url)
+    return parse_index_page(net.fetch(url), url, default_offset)
+
+
+def parse_index_page(page, url, default_offset=None):
+    """Разбор уже скачанной страницы index.htm (см. parse_index)."""
     title = re.search(r"(?s)<title>(.*?)</title>", page)
     name = _text(title.group(1)) if title else ""
     body_text = _text(page)
@@ -71,6 +104,8 @@ def parse_index(url):
     if m:
         sign = 1 if m.group(1) == "+" else -1
         offset = sign * (int(m.group(2)) * 60 + int(m.group(3)))
+    if offset is None:
+        offset = default_offset
 
     # Город / страна и площадка: первые строки шапки до таблицы категорий
     lines = [l.strip() for l in re.sub(r"(?s)<[^>]+>", "\n", html.unescape(
@@ -97,14 +132,14 @@ def parse_index(url):
         cat_link = next((l for l in links if re.search(r"CAT\d+EN\.htm", l, re.I)), None)
         seg_link = next((l for l in links if re.fullmatch(r"SEG\d+\.htm", l, re.I)), None)
         if cat_link and not in_schedule:
-            nm = next((c for c in cells if c), "")
+            nm = fix_script(next((c for c in cells if c), ""))
             res_link = next((l for l in links if re.search(r"CAT\d+RS\.htm", l, re.I)), None)
             cur = {"name": nm, "entries_url": urljoin(url, cat_link),
                    "results_url": urljoin(url, res_link) if res_link else None, "segments": []}
             categories.append(cur)
             continue
         if seg_link and cur is not None and not in_schedule:
-            seg_name = next((c for c in cells if c), "")
+            seg_name = fix_script(next((c for c in cells if c), ""))
             pdf = next((l for l in links if "StartListwithTimes" in l), None)
             cur["segments"].append({
                 "name": seg_name,
@@ -143,7 +178,7 @@ def parse_index(url):
 
 
 def _same(a, b):
-    n = lambda s: re.sub(r"[\s\-–]+", " ", s).strip().lower()
+    n = lambda s: re.sub(r"[\s\-–]+", " ", fix_script(s)).strip().lower()
     return n(a) == n(b)
 
 
@@ -166,7 +201,7 @@ def parse_starting_order(url, page=None):
         if w and len([v for v in vals if v]) <= 2:
             warmup = int(w.group(1))
             continue
-        if not header and any(h in vals for h in ("StN.", "Ст.№", "Ст. №", "Pl.", "Мес.", "Место")):
+        if not header and any(h in vals for h in ("StN.", "Ст.№", "Ст. №", "СН.", "Pl.", "Мес.", "Место", "М.")):
             header = vals
             continue
         if header is None:
@@ -174,7 +209,7 @@ def parse_starting_order(url, page=None):
         nonempty = [v for v in vals if v]
         if len(nonempty) < 2:
             continue
-        if header[0] not in ("Pl.", "Мес.", "Место", "Pl"):
+        if header[0] not in RESULT_HEADS:
             if not re.fullmatch(r"\d+", nonempty[0]):
                 continue
             no = int(nonempty[0])
@@ -204,7 +239,7 @@ def _nation_from(vals):
 
 # ---------------------------------------------------------------- протоколы
 
-RESULT_HEADS = ("Pl.", "Pl", "Мес.", "Место", "FPl.", "FPl", "Мест.")
+RESULT_HEADS = ("Pl.", "Pl", "Мес.", "Место", "Мест.", "М.", "FPl.", "FPl")
 NAME_HEADS = ("Name", "Имя", "Спортсмен", "Участник")
 NATION_HEADS = ("Nation", "Nat.", "Регион", "Страна", "Нация")
 POINTS_RE = re.compile(r"\d{1,3}\.\d{2}")
