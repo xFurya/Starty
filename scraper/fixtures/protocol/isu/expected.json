@@ -8,18 +8,22 @@
      "results": "CAT001RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKMSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Short Program",
        "page": "SEG001.htm",
+       "scores_pdf": null,
        "start": "2026-09-17T18:30:00+03:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKMSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Free Skating",
        "page": "SEG002.htm",
+       "scores_pdf": null,
        "start": "2026-09-19T10:00:00+03:00",
        "times_pdf": null
       }
@@ -31,18 +35,22 @@
      "results": "CAT002RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKWSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Short Program",
        "page": "SEG003.htm",
+       "scores_pdf": null,
        "start": "2026-09-17T10:00:00+03:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKWSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Free Skating",
        "page": "SEG004.htm",
+       "scores_pdf": null,
        "start": "2026-09-18T16:30:00+03:00",
        "times_pdf": null
       }
@@ -54,18 +62,22 @@
      "results": "CAT003RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKXPAIRS---JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Short Program",
        "page": "SEG005.htm",
+       "scores_pdf": null,
        "start": "2026-09-17T15:45:00+03:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKXPAIRS---JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Free Skating",
        "page": "SEG006.htm",
+       "scores_pdf": null,
        "start": "2026-09-18T13:30:00+03:00",
        "times_pdf": null
       }
@@ -77,18 +89,22 @@
      "results": "CAT004RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKXICEDANCEJUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Rhythm Dance",
        "page": "SEG007.htm",
+       "scores_pdf": null,
        "start": "2026-09-18T10:15:00+03:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKXICEDANCEJUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Free Dance",
        "page": "SEG008.htm",
+       "scores_pdf": null,
        "start": "2026-09-19T15:15:00+03:00",
        "times_pdf": null
       }
@@ -96,7 +112,7 @@
     }
    ],
    "city": "Ankara",
-   "final_marks": true,
+   "marks": true,
    "name": "ISU JGP Ankara 2026",
    "nation": "TUR",
    "offset": 180,

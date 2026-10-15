@@ -14,6 +14,7 @@ import sys
 from . import build as b
 from . import names as nm
 from . import net
+from . import protocols as P
 from . import results as rs
 from . import swisstiming as st
 
@@ -22,9 +23,13 @@ AFTER = dt.timedelta(hours=24)
 
 
 def settled(ev):
-    """Итог окончательный: тройка без пометки «промежуточные», итог вида (если он здесь
-    бывает) на месте. Такой сегмент больше не опрашиваем."""
+    """Итог окончательный: сегмент окончательный по судейским оценкам (или по времени, если
+    включено), тройка на месте, итог вида (если он здесь бывает) тоже. Такой сегмент больше
+    не опрашиваем. У старых событий без live.basis — прежнее правило."""
     live = ev.get("live") or {}
+    if "basis" in live:
+        return live["basis"] in ("judges", "time") and bool(ev.get("podium")) and \
+            (not live.get("cat") or bool(ev.get("total")))
     return bool(ev.get("podium")) and not ev.get("provisional") and (not live.get("cat") or bool(ev.get("total")))
 
 
@@ -49,19 +54,50 @@ def _seg_of(idx, url):
     return None
 
 
-def refresh(ev, idx, names, now):
-    """Обновить событие по табло. True — что-то изменилось."""
+def _cat_of(idx, url):
+    for c in idx["categories"]:
+        for s in c["segments"]:
+            if s["url"] == url:
+                return c
+    return None
+
+
+def refresh(ev, idx, names, now, judges_cache=None):
+    """Обновить событие по табло. True — что-то изменилось.
+
+    Окончательность — от protocols.segment_view (судейские оценки сегмента). Окончательный
+    сегмент не понижаем: если оценки пропали или PDF не прочитан (сеть), остаётся final."""
     live = ev["live"]
     before = json.dumps(ev, sort_keys=True, ensure_ascii=False)
-    seg = _seg_of(idx, live["seg"]) or {}
+    seg = _seg_of(idx, live["seg"])
+    if not seg:
+        b.log("  ! сегмента нет в табло:", live["seg"])
+        return False
+    cat = _cat_of(idx, live["seg"]) or {}
     try:
-        results = st.parse_segment_results(net.fetch(live["seg"]))
+        page = net.fetch(live["seg"])
     except net.FetchError as e:
         b.log("  ! табло:", live["seg"], e)
         return False
-    if not results or dt.datetime.fromisoformat(ev["start"]) > now:
+    start = dt.datetime.fromisoformat(ev["start"])
+    if start > now:
         return False
-    done = bool(seg.get("final") or not idx.get("final_marks"))
+    view = P.segment_view(
+        seg=seg, category=cat.get("name", ""), code=ev["seg"], page=page, cat_url=live.get("cat"),
+        now=now, start=start, end=dt.datetime.fromisoformat(ev["end"]),
+        marks=bool(idx.get("marks")), cache=judges_cache if judges_cache is not None else {},
+        final_by_time=b.CFG.get("final_by_time", False),
+        podium_from_pdf=b.CFG.get("podium_from_judges_pdf", False))
+    if view["reason"]:
+        b.log("  ! оценки не сошлись с табло, тройку не ставим:", ev["title"], view["reason"])
+    results = view["results"] or []
+    if not results:
+        return False
+    prev_final = live.get("basis") == "judges"
+    basis = view["basis"] or ("judges" if prev_final else None)
+    if prev_final and not view["basis"]:
+        b.log("  ! оценки сегмента сейчас не подтверждены, окончательный протокол оставляем:", ev["title"])
+    done = basis is not None
     to_ru = lambda n: live.get("names", {}).get(n) or names.to_ru(n)
     place = {nm.key(to_ru(r["name"])): r["place"] for r in results}
     for o in ev["ours"] + ev.get("field", []):
@@ -70,6 +106,7 @@ def refresh(ev, idx, names, now):
             o["place"] = p
     ev["podium"] = [{"place": r["place"], "name": to_ru(r["name"]), "nation": r["nation"],
                      "points": r["points"]} for r in results[:3]]
+    live["basis"] = basis
     if done:
         ev.pop("provisional", None)
     else:
@@ -120,6 +157,7 @@ def main():
         return 0
     names = nm.Names(b.NAMES, b.CFG.get("aliases"))
     indexes = {}
+    judges_cache = {}  # PDF оценок: один адрес — один запрос на прогон
     changed = 0
     for ev in todo:
         url = ev["live"]["idx"]
@@ -129,7 +167,7 @@ def main():
             except net.FetchError as e:
                 b.log("  ! табло турнира:", url, e)
                 indexes[url] = None
-        if indexes[url] and refresh(ev, indexes[url], names, now):
+        if indexes[url] and refresh(ev, indexes[url], names, now, judges_cache):
             changed += 1
             b.log("  обновлено:", ev["title"], "(промежуточные)" if ev.get("provisional") else "")
     if changed:

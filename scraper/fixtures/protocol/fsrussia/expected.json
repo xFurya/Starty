@@ -8,18 +8,22 @@
      "results": "CAT001RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKMSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Короткая программа",
        "page": "SEG001.htm",
+       "scores_pdf": null,
        "start": "2026-09-26T19:30:00+08:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKMSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Произвольная программа",
        "page": "SEG002.htm",
+       "scores_pdf": null,
        "start": "2026-09-27T15:45:00+08:00",
        "times_pdf": null
       }
@@ -31,18 +35,22 @@
      "results": "CAT002RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKWSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Короткая программа",
        "page": "SEG003.htm",
+       "scores_pdf": null,
        "start": "2026-09-26T16:55:00+08:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKWSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Произвольная программа",
        "page": "SEG004.htm",
+       "scores_pdf": null,
        "start": "2026-09-27T12:45:00+08:00",
        "times_pdf": null
       }
@@ -54,18 +62,22 @@
      "results": "CAT003RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKXPAIRS---JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Короткая программа",
        "page": "SEG005.htm",
+       "scores_pdf": null,
        "start": "2026-09-25T19:50:00+08:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKXPAIRS---JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Произвольная программа",
        "page": "SEG006.htm",
+       "scores_pdf": null,
        "start": "2026-09-26T15:35:00+08:00",
        "times_pdf": null
       }
@@ -77,18 +89,22 @@
      "results": "CAT004RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKXICEDANCEJUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Ритм-танец",
        "page": "SEG007.htm",
+       "scores_pdf": null,
        "start": "2026-09-25T17:30:00+08:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKXICEDANCEJUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Произвольный танец",
        "page": "SEG008.htm",
+       "scores_pdf": null,
        "start": "2026-09-26T13:00:00+08:00",
        "times_pdf": null
       }
@@ -96,7 +112,7 @@
     }
    ],
    "city": "",
-   "final_marks": true,
+   "marks": true,
    "name": "Всероссийские соревнования \"Лед Мечты\" среди юниоров",
    "nation": "",
    "offset": 480,

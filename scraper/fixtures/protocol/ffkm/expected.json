@@ -8,18 +8,22 @@
      "results": "CAT001RS.HTM",
      "segments": [
       {
-       "final": false,
        "judges_pdf": null,
+       "judges_shared": 2,
+       "marks": true,
        "name": "Короткая программа",
        "page": "SEG001.HTM",
+       "scores_pdf": "OooeaaeCop_K_Scores.pdf",
        "start": "2026-08-26T14:30:00+03:00",
        "times_pdf": null
       },
       {
-       "final": false,
        "judges_pdf": null,
+       "judges_shared": 2,
+       "marks": true,
        "name": "Произвольная программа",
        "page": "SEG002.HTM",
+       "scores_pdf": "OooeaaeCop__Scores.pdf",
        "start": null,
        "times_pdf": null
       }
@@ -31,18 +35,22 @@
      "results": "CAT002RS.HTM",
      "segments": [
       {
-       "final": false,
        "judges_pdf": null,
+       "judges_shared": 2,
+       "marks": true,
        "name": "Короткая программа",
        "page": "SEG003.HTM",
+       "scores_pdf": "OooeaaeCop_K_Scores.pdf",
        "start": "2026-08-27T14:00:00+03:00",
        "times_pdf": null
       },
       {
-       "final": false,
        "judges_pdf": null,
+       "judges_shared": 2,
+       "marks": true,
        "name": "Произвольная программа",
        "page": "SEG004.HTM",
+       "scores_pdf": "OooeaaeCop__Scores.pdf",
        "start": null,
        "times_pdf": null
       }
@@ -54,18 +62,22 @@
      "results": "CAT003RS.HTM",
      "segments": [
       {
-       "final": false,
        "judges_pdf": null,
+       "judges_shared": 1,
+       "marks": true,
        "name": "Короткая программа",
        "page": "SEG005.HTM",
+       "scores_pdf": "apoeaaeCopop_K_Scores.pdf",
        "start": "2026-08-25T18:37:00+03:00",
        "times_pdf": null
       },
       {
-       "final": false,
        "judges_pdf": null,
+       "judges_shared": 1,
+       "marks": true,
        "name": "Произвольная программа",
        "page": "SEG006.HTM",
+       "scores_pdf": "apoeaaeCopop__Scores.pdf",
        "start": null,
        "times_pdf": null
       }
@@ -77,18 +89,22 @@
      "results": "CAT004RS.HTM",
      "segments": [
       {
-       "final": false,
        "judges_pdf": null,
+       "judges_shared": 1,
+       "marks": true,
        "name": "Ритм-танец",
        "page": "SEG007.HTM",
+       "scores_pdf": "TaaCopop_PT_Scores.pdf",
        "start": "2026-08-24T15:00:00+03:00",
        "times_pdf": null
       },
       {
-       "final": false,
        "judges_pdf": null,
+       "judges_shared": 1,
+       "marks": true,
        "name": "Произвольный танец",
        "page": "SEG008.HTM",
+       "scores_pdf": "TaaCopop_T_Scores.pdf",
        "start": "2026-08-25T14:00:00+03:00",
        "times_pdf": null
       }
@@ -96,7 +112,7 @@
     }
    ],
    "city": "",
-   "final_marks": false,
+   "marks": true,
    "name": "Первенство Москвы",
    "nation": "",
    "offset": 180,

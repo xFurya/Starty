@@ -141,13 +141,22 @@ def parse_index_page(page, url, default_offset=None):
         if seg_link and cur is not None and not in_schedule:
             seg_name = fix_script(next((c for c in cells if c), ""))
             pdf = next((l for l in links if "StartListwithTimes" in l), None)
+            # судейские оценки выкладывают, когда сегмент закончен и протокол утверждён.
+            # JudgesDetails — отдельный PDF на каждого спортсмена (ISU, ФФКР, Swiss Timing).
+            # ФФКМ: «Оценки судей (pdf)» — PDF «ДЕТАЛИЗАЦИЯ СУДЕЙСКИХ ОЦЕНОК» (…Scores.pdf);
+            # один такой файл может быть у двух сегментов, его заголовок проверяет протокол.
+            details = next((l for l in links if "JudgesDetails" in l), None)
+            scores = None
+            if "Оценки судей" in " ".join(cells):
+                scores = next((l for l in links if l.lower().endswith("scores.pdf")), None)
             cur["segments"].append({
                 "name": seg_name,
                 "url": urljoin(url, seg_link),
                 "times_pdf": urljoin(url, pdf) if pdf else None,
-                # судейские оценки выкладывают, когда сегмент закончен и протокол утверждён
-                "final": any("JudgesDetails" in l for l in links),
-                "judges_pdf": next((urljoin(url, l) for l in links if "JudgesDetails" in l), None),
+                "judges_pdf": urljoin(url, details) if details else None,
+                "scores_pdf": urljoin(url, scores) if scores else None,
+                "marks": bool(details or scores),
+                "judges_shared": None,
             })
             continue
         if in_schedule:
@@ -172,9 +181,19 @@ def parse_index_page(page, url, default_offset=None):
                     if _same(s["name"], seg) and "start" not in s:
                         s["start"] = when
                         break
-    final_marks = any(s["final"] for c in categories for s in c["segments"])
+    # сколько сегментов ссылаются на один файл оценок (ФФКМ: мужской и женский КП — один файл)
+    shared = {}
+    for c in categories:
+        for sg in c["segments"]:
+            if sg["scores_pdf"]:
+                shared[sg["scores_pdf"]] = shared.get(sg["scores_pdf"], 0) + 1
+    for c in categories:
+        for sg in c["segments"]:
+            if sg["scores_pdf"]:
+                sg["judges_shared"] = shared[sg["scores_pdf"]]
+    marks = any(sg["marks"] for c in categories for sg in c["segments"])
     return {"url": url, "name": name, "city": city, "nation": nation, "venue": venue,
-            "offset": offset, "categories": categories, "final_marks": final_marks}
+            "offset": offset, "categories": categories, "marks": marks}
 
 
 def _same(a, b):

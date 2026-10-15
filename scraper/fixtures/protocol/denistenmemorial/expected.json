@@ -8,18 +8,22 @@
      "results": "CAT001RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKMSINGLES-----------QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Short Program",
        "page": "SEG001.htm",
+       "scores_pdf": null,
        "start": "2026-10-08T20:00:00+05:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKMSINGLES-----------FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Free Skating",
        "page": "SEG002.htm",
+       "scores_pdf": null,
        "start": "2026-10-10T14:30:00+05:00",
        "times_pdf": null
       }
@@ -31,18 +35,22 @@
      "results": "CAT002RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKWSINGLES-----------QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Short Program",
        "page": "SEG003.htm",
+       "scores_pdf": null,
        "start": "2026-10-08T17:05:00+05:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKWSINGLES-----------FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Free Skating",
        "page": "SEG004.htm",
+       "scores_pdf": null,
        "start": "2026-10-09T19:30:00+05:00",
        "times_pdf": null
       }
@@ -54,18 +62,22 @@
      "results": "CAT003RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKXICEDANCE----------QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Rhythm Dance",
        "page": "SEG005.htm",
+       "scores_pdf": null,
        "start": "2026-10-09T17:15:00+05:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKXICEDANCE----------FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Free Dance",
        "page": "SEG006.htm",
+       "scores_pdf": null,
        "start": "2026-10-10T12:00:00+05:00",
        "times_pdf": null
       }
@@ -77,18 +89,22 @@
      "results": "CAT004RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKMSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Short Program",
        "page": "SEG007.htm",
+       "scores_pdf": null,
        "start": "2026-10-08T10:45:00+05:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKMSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Free Skating",
        "page": "SEG008.htm",
+       "scores_pdf": null,
        "start": "2026-10-10T09:30:00+05:00",
        "times_pdf": null
       }
@@ -100,18 +116,22 @@
      "results": "CAT005RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKWSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Short Program",
        "page": "SEG009.htm",
+       "scores_pdf": null,
        "start": "2026-10-08T12:55:00+05:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKWSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Free Skating",
        "page": "SEG010.htm",
+       "scores_pdf": null,
        "start": "2026-10-09T11:00:00+05:00",
        "times_pdf": null
       }
@@ -123,18 +143,22 @@
      "results": "CAT006RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKXICEDANCEJUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Rhythm Dance",
        "page": "SEG011.htm",
+       "scores_pdf": null,
        "start": "2026-10-08T21:35:00+05:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKXICEDANCEJUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Free Dance",
        "page": "SEG012.htm",
+       "scores_pdf": null,
        "start": "2026-10-09T16:00:00+05:00",
        "times_pdf": null
       }
@@ -142,7 +166,7 @@
     }
    ],
    "city": "Almaty",
-   "final_marks": true,
+   "marks": true,
    "name": "Denis Ten Memorial 2026",
    "nation": "KAZ",
    "offset": 300,
@@ -156,18 +180,22 @@
      "results": "CAT001RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKMSINGLES-----------QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Short Program",
        "page": "SEG001.htm",
+       "scores_pdf": null,
        "start": "2026-10-08T20:00:00+05:00",
        "times_pdf": null
       },
       {
-       "final": false,
        "judges_pdf": null,
+       "judges_shared": null,
+       "marks": false,
        "name": "Free Skating",
        "page": "SEG002.htm",
+       "scores_pdf": null,
        "start": "2026-10-10T14:30:00+05:00",
        "times_pdf": null
       }
@@ -179,18 +207,22 @@
      "results": "CAT002RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKWSINGLES-----------QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Short Program",
        "page": "SEG003.htm",
+       "scores_pdf": null,
        "start": "2026-10-08T17:05:00+05:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKWSINGLES-----------FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Free Skating",
        "page": "SEG004.htm",
+       "scores_pdf": null,
        "start": "2026-10-09T19:30:00+05:00",
        "times_pdf": null
       }
@@ -202,18 +234,22 @@
      "results": "CAT003RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKXICEDANCE----------QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Rhythm Dance",
        "page": "SEG005.htm",
+       "scores_pdf": null,
        "start": "2026-10-09T17:15:00+05:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKXICEDANCE----------FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Free Dance",
        "page": "SEG006.htm",
+       "scores_pdf": null,
        "start": "2026-10-10T12:00:00+05:00",
        "times_pdf": null
       }
@@ -225,18 +261,22 @@
      "results": "CAT004RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKMSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Short Program",
        "page": "SEG007.htm",
+       "scores_pdf": null,
        "start": "2026-10-08T10:45:00+05:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKMSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Free Skating",
        "page": "SEG008.htm",
+       "scores_pdf": null,
        "start": "2026-10-10T09:30:00+05:00",
        "times_pdf": null
       }
@@ -248,18 +288,22 @@
      "results": "CAT005RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKWSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Short Program",
        "page": "SEG009.htm",
+       "scores_pdf": null,
        "start": "2026-10-08T12:55:00+05:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKWSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Free Skating",
        "page": "SEG010.htm",
+       "scores_pdf": null,
        "start": "2026-10-09T11:00:00+05:00",
        "times_pdf": null
       }
@@ -271,18 +315,22 @@
      "results": "CAT006RS.htm",
      "segments": [
       {
-       "final": true,
        "judges_pdf": "FSKXICEDANCEJUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Rhythm Dance",
        "page": "SEG011.htm",
+       "scores_pdf": null,
        "start": "2026-10-08T21:35:00+05:00",
        "times_pdf": null
       },
       {
-       "final": true,
        "judges_pdf": "FSKXICEDANCEJUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf",
+       "judges_shared": null,
+       "marks": true,
        "name": "Free Dance",
        "page": "SEG012.htm",
+       "scores_pdf": null,
        "start": "2026-10-09T16:00:00+05:00",
        "times_pdf": null
       }
@@ -290,7 +338,7 @@
     }
    ],
    "city": "Almaty",
-   "final_marks": true,
+   "marks": true,
    "name": "Denis Ten Memorial 2026",
    "nation": "KAZ",
    "offset": 300,

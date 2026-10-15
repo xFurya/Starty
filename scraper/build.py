@@ -27,6 +27,7 @@ import sys
 import traceback
 
 from . import fsr, goldenskate, ics, isu, net
+from . import protocols as P
 from . import photos as ph
 from . import names as nm
 from . import people as pp
@@ -314,12 +315,11 @@ def times_to_msk(seg_start, local_times, offset_min):
 
 
 def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, ours_rule,
-                     extra_starts=None, fix=None, settle_by_end=False):
+                     extra_starts=None, fix=None):
     """Сегменты из табло. ours_rule(name, nation) → bool. extra_starts — запасные
     времена начала {(kind, level, seg): datetime}, если в табло нет расписания.
     fix(имя) — приведение имени из табло (региональные: «Имя Отчество ФАМИЛИЯ» → «Имя ФАМИЛИЯ»).
-    settle_by_end — у табло нет судейских оценок (ФФКМ): протокол считается промежуточным,
-    пока не прошло расчётное окончание сегмента."""
+    Окончательность, оценки и строки протокола — в protocols.segment_view."""
     fix = fix or (lambda s: s)
     cats = []
     for c in idx["categories"]:
@@ -335,6 +335,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
     mixed = len(levels) > 1
     events = []
     now = dt.datetime.now(dt.timezone.utc)
+    judges_cache = {}  # PDF оценок: один адрес — один запрос на сборку
     for c, kind, level in cats:
         try:
             entries = [dict(p, name=fix(p["name"])) for p in st.parse_entries(c["entries_url"])]
@@ -362,23 +363,6 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 seg_page = None
             order = [dict(p, name=fix(p["name"])) for p in st.parse_starting_order(s["url"], seg_page)] \
                 if seg_page else []
-            # Сегмент прошёл, только когда страница — протокол, время старта позади и,
-            # если табло вообще выкладывает судейские оценки, они у сегмента уже есть
-            # (до конца проката протокол может быть неполным).
-            try:
-                results = st.parse_segment_results(seg_page) if seg_page else None
-            except Exception as e:  # итог необязателен — расписание важнее
-                log("  ! протокол сегмента:", s["url"], e)
-                results = None
-            if results:
-                results = [dict(r, name=fix(r["name"])) for r in results]
-            started = bool(results) and start.astimezone(dt.timezone.utc) <= now
-            done = started and bool(s.get("final") or not idx.get("final_marks"))
-            # протокол уже на табло, но судейских оценок ещё нет — промежуточные итоги
-            partial = started and not done
-            place = {r["name"]: r["place"] for r in results} if started else {}
-            if started and SEG_ORDER[seg] == 0:
-                first_places = place
             people = order if order else [dict(p, no=None, warmup=None) for p in entries]
             for p in people:
                 if nm.is_cyr(p["name"]):
@@ -391,6 +375,29 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 except (net.FetchError, OSError) as e:
                     log("  ! PDF времени:", e)
             msk_times = times_to_msk(start, local, idx["offset"]) if local and idx["offset"] is not None else {}
+            last = max(msk_times.values()) if msk_times else None
+            end = estimate_end(start, seg, kind, len(people), last)
+            # состояние сегмента: сегмент прошёл только с подтверждёнными судейскими оценками
+            try:
+                view = P.segment_view(
+                    seg=s, category=c["name"], code=seg, page=seg_page,
+                    cat_url=c.get("results_url") if SEG_ORDER[seg] == last_seg else None,
+                    now=now, start=start.astimezone(dt.timezone.utc), end=end.astimezone(dt.timezone.utc),
+                    marks=idx["marks"], cache=judges_cache,
+                    final_by_time=CFG.get("final_by_time", False),
+                    podium_from_pdf=CFG.get("podium_from_judges_pdf", False))
+            except Exception as e:  # протокол необязателен — расписание важнее
+                log("  ! протокол сегмента:", s["url"], e)
+                view = {"state": "format", "basis": None, "results": None, "reason": None}
+            if view["reason"] or view["state"] == "judges_mismatch":
+                # оценки есть, но не к этому сегменту (или строки PDF не сошлись с табло): тройку не ставим
+                log("  ! оценки сегмента не подтверждены:", s["url"], view["reason"] or "чужой файл")
+            done = view["state"] == "final"
+            results = [dict(r, name=fix(r["name"])) for r in view["results"] or []]
+            started = bool(results) and start.astimezone(dt.timezone.utc) <= now
+            place = {r["name"]: r["place"] for r in results} if started else {}
+            if started and SEG_ORDER[seg] == 0:
+                first_places = place
             ours, field = [], []
             for p in people:
                 o = {"name": names.to_ru(p["name"]), "nation": p.get("nation", "")}
@@ -417,8 +424,6 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                     log("  ! итог вида:", c["results_url"], e)
             podium = top3(results, names) if started else None
             total = cat_total if SEG_ORDER[seg] == last_seg else None
-            last = max(msk_times.values()) if msk_times else None
-            end = estimate_end(start, seg, kind, len(people), last)
             athletes = sorted({names.to_ru(p["name"]) for p in people})
             ev = make_event(
                 tid=tid, tournament=tournament, kind=kind, level=level, seg=seg, mixed=mixed,
@@ -426,15 +431,18 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 ours=sort_ours(ours), athletes=athletes, src=idx["url"],
                 podium=podium, total=total)
             ev["field"] = sort_ours(field)
-            if partial or (settle_by_end and started and end.astimezone(dt.timezone.utc) > now):
+            # протокол уже на табло, но судейских оценок ещё нет — промежуточные итоги
+            if started and not done:
                 ev["provisional"] = True
             is_last = SEG_ORDER[seg] == last_seg
-            # адреса табло — приложение во время старта читает их само, не дожидаясь сбора
+            # адреса табло — приложение во время старта читает их само, не дожидаясь сбора;
+            # basis — окончательность сегмента (judges, time или null), по нему settled
             ev["live"] = {
                 "idx": idx["url"], "seg": s["url"],
                 "cat": c.get("results_url") if is_last else None,
                 "first": first_url if is_last and first_url != s["url"] else None,
                 "names": {p["name"]: names.to_ru(p["name"]) for p in people},
+                "basis": view["basis"],
             }
             if done and s.get("judges_pdf"):
                 f = rs.segment_facts(s["judges_pdf"], kind=kind, level=level, seg=seg, intl=intl,
@@ -674,7 +682,7 @@ def do_ffkm(names, report, failed, upcoming, fed_pages):
                     got = _tag_regional(from_swisstiming(
                         idx, tid=tid, tournament=name, venue=venue, intl=False,
                         broadcast=broadcast_for(name), names=names, ours_rule=rule,
-                        fix=pp.entry_name, settle_by_end=True), "Москва")
+                        fix=pp.entry_name), "Москва")
                 else:
                     log(f"  ФФКМ «{name}»: табло в карточной вёрстке — старты не разобраны")
             except Exception as e:  # один турнир не должен ронять источник
