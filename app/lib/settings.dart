@@ -1071,7 +1071,7 @@ class _IconPageState extends State<_IconPage> {
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    final groups = <String, String>{'classic': 'Классическая', 'date': 'С сегодняшним числом'};
+    final groups = <String, String>{'classic': 'Классический', 'date': 'С сегодняшним числом'};
     Widget tile(IconVariant v) {
       final on = v.id == pick;
       return Semantics(

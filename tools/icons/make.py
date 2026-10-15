@@ -1,10 +1,10 @@
 """Иконки приложения из слоёв render.js (запуск: python3 make.py <папка слоёв 1024×1024>).
 
-Основной значок — вариант «classic» («Классическая · Лёд»): им становятся значки Android (ic_launcher),
+Основной значок — вариант «classic» («Классический · Лёд»): им становятся значки Android (ic_launcher),
 iPhone (AppIcon), macOS, Windows (app_icon.ico), веба и assets/icon/*.png.
 Пишет:
   • Android: слои в res/drawable-nodpi (icl_*), передний план каждой иконки — layer-list
-    (icf_*), адаптивные иконки в mipmap-anydpi-v26 (ic_*), для Android 7 — классическая;
+    (icf_*), адаптивные иконки в mipmap-anydpi-v26 (ic_*), для Android 7 — классический;
     в манифест — по activity-alias на иконку (у значка с числом — на каждый день месяца:
     число в значке рисуется заранее, ставится включением нужного alias в полночь);
   • iPhone: альтернативные иконки без числа (число на iPhone не обновить без вопроса системы);
@@ -119,7 +119,7 @@ def android(src):
                         os.path.join(RES, f"mipmap-{d}", "ic_launcher.png"), optimize=True)
                 continue
             write(os.path.join(RES, "mipmap-anydpi-v26", f"ic_v_{suffix}.xml"), adaptive)
-            # до Android 8 адаптивных иконок нет — там всегда классическая
+            # до Android 8 адаптивных иконок нет — там всегда классический
             write(os.path.join(RES, "mipmap", f"ic_v_{suffix}.xml"), f"""<?xml version="1.0" encoding="utf-8"?>
 <bitmap {A} android:src="@mipmap/ic_launcher"/>
 """)
