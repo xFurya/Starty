@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-jgp-ljubljana-2026:dance-junior-pt@starty
-DTSTAMP:20261015T163416Z
+DTSTAMP:20261015T165344Z
 DTSTART;TZID=Europe/Moscow:20261003T130000
 DTEND;TZID=Europe/Moscow:20261003T154500
 SUMMARY:JGP Ljubljana — танцы ПТ
@@ -25,8 +25,6 @@ DESCRIPTION:Итог:\n1. Darya Grimm / Grigorii Rodin — 102.38\n2. Ambre
  aperman — 164.00\n3. Aneta Vaclavikova / William Lissauer — 159.05\n\n
  Начало: 13:00 МСК\nТрансляция: Okko
 LOCATION:Ljubljana\, Slovenia
-URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-ljubljana-2026:dance-jun
- ior-pt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

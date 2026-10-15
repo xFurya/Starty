@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:gs:tayside-trophy:pairs-junior-pp@starty
-DTSTAMP:20261015T163416Z
+DTSTAMP:20261015T165344Z
 DTSTART;TZID=Europe/Moscow:20261011T155900
 DTEND;TZID=Europe/Moscow:20261011T163900
 SUMMARY:Tayside Trophy — юниорские пары ПП
@@ -29,7 +29,6 @@ DESCRIPTION:Итог:\n1. Elizabeth Yun / Mitchell Castelletti — 82.21\n2
  hell Castelletti — Отрыв от второго места — 16.95 
  балла\n\nНачало: 15:59 МСК
 LOCATION:Dundee\, Great Britain
-URL:https://xfurya.github.io/Starty/#e=gs:tayside-trophy:pairs-junior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

@@ -14,14 +14,12 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-nhk-trophy-2026:dance-senior-pt@starty
-DTSTAMP:20261015T163416Z
+DTSTAMP:20261015T165344Z
 DTSTART;TZID=Europe/Moscow:20261128T060000
 DTEND;TZID=Europe/Moscow:20261128T072500
 SUMMARY:GP NHK Trophy — танцы ПТ
 DESCRIPTION:Начало: 06:00 МСК
 LOCATION:Tokyo\, Japan
-URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-nhk-trophy-2026:dance-sen
- ior-pt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

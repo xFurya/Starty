@@ -14,14 +14,13 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:gs:tayside-trophy:men-junior-kp@starty
-DTSTAMP:20261015T163416Z
+DTSTAMP:20261015T165344Z
 DTSTART;TZID=Europe/Moscow:20261010T140200
 DTEND;TZID=Europe/Moscow:20261010T150700
 SUMMARY:Tayside Trophy — юноши КП
 DESCRIPTION:Итог:\n1. Rui Qin — 69.01\n2. Joshua Snyder — 61.81\n3.
   Lenny Olivier — 59.60\n\nНачало: 14:02 МСК
 LOCATION:Dundee\, Great Britain
-URL:https://xfurya.github.io/Starty/#e=gs:tayside-trophy:men-junior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:gs:tayside-trophy:men-senior-pp@starty
-DTSTAMP:20261015T163416Z
+DTSTAMP:20261015T165344Z
 DTSTART;TZID=Europe/Moscow:20261011T210100
 DTEND;TZID=Europe/Moscow:20261011T223100
 SUMMARY:Tayside Trophy — мужчины ПП
@@ -29,7 +29,6 @@ DESCRIPTION:Итог:\n1. Donovan Carrillo — 161.12\n2. Mark Gorodnitsky
  трыв от второго места — 17.17 балла\n\nНачал
  о: 21:01 МСК
 LOCATION:Dundee\, Great Britain
-URL:https://xfurya.github.io/Starty/#e=gs:tayside-trophy:men-senior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

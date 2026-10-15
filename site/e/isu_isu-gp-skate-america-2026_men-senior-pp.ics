@@ -14,14 +14,12 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-skate-america-2026:men-senior-pp@starty
-DTSTAMP:20261015T163416Z
+DTSTAMP:20261015T165344Z
 DTSTART;TZID=Europe/Moscow:20261115T052500
 DTEND;TZID=Europe/Moscow:20261115T071000
 SUMMARY:GP Skate America — мужчины ПП
 DESCRIPTION:Начало: 05:25 МСК
 LOCATION:Everett\, USA
-URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-skate-america-2026:men-se
- nior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

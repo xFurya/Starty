@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-nebelhorn-trophy-2026:dance-senior-rt@starty
-DTSTAMP:20261015T163416Z
+DTSTAMP:20261015T165344Z
 DTSTART;TZID=Europe/Moscow:20260925T193000
 DTEND;TZID=Europe/Moscow:20260925T212000
 SUMMARY:CS Nebelhorn Trophy — танцы РТ
@@ -22,8 +22,6 @@ DESCRIPTION:Итог:\n1. Christina Carreira / Anthony Ponomarenko — 78.9
  8\n2. Marie-Jade Lauriault / Romain le Gac — 75.57\n3. Katarina Wolfkost
  in / Dimitry Tsarevski — 68.33\n\nНачало: 19:30 МСК
 LOCATION:Oberstdorf\, Germany
-URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-nebelhorn-trophy-2026:dan
- ce-senior-rt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

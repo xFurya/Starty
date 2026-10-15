@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-jgp-gdansk-2026:dance-junior-rt@starty
-DTSTAMP:20261015T163416Z
+DTSTAMP:20261015T165344Z
 DTSTART;TZID=Europe/Moscow:20261009T110000
 DTEND;TZID=Europe/Moscow:20261009T135000
 SUMMARY:JGP Gdansk — танцы РТ
@@ -23,8 +23,6 @@ DESCRIPTION:Итог:\n1. Hana Maria Aboian / Daniil Veselukhin — 68.93\n
  arescon — 59.40\n\nНачало: 11:00 МСК\nТрансляция: Okk
  o
 LOCATION:Gdansk\, Poland
-URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-gdansk-2026:dance-junior
- -rt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

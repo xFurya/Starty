@@ -14,15 +14,13 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-lombardia-trophy-2026:women-senior-kp@starty
-DTSTAMP:20261015T163416Z
+DTSTAMP:20261015T165344Z
 DTSTART;TZID=Europe/Moscow:20260918T143000
 DTEND;TZID=Europe/Moscow:20260918T170500
 SUMMARY:CS Lombardia Trophy — женщины КП
 DESCRIPTION:Итог:\n1. Niina Petrokina — 77.20\n2. Jia Shin — 74.93\
  n3. Lara Naki Gutmann — 70.60\n\nНачало: 14:30 МСК
 LOCATION:Bergamo\, Italy
-URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-lombardia-trophy-2026:wom
- en-senior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

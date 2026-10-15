@@ -14,13 +14,12 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:gs:blackburn-trophy:dance-junior-rt@starty
-DTSTAMP:20261015T163416Z
+DTSTAMP:20261015T165344Z
 DTSTART;TZID=Europe/Moscow:20261020T150500
 DTEND;TZID=Europe/Moscow:20261020T182000
 SUMMARY:Blackburn Trophy — юниорские танцы РТ
 DESCRIPTION:Начало: 15:05 МСК
 LOCATION:Blackburn\, Great Britain
-URL:https://xfurya.github.io/Starty/#e=gs:blackburn-trophy:dance-junior-rt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

@@ -14,16 +14,15 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-budapest-trophy:dance-senior-rt@starty
-DTSTAMP:20261015T163416Z
+DTSTAMP:20261015T165344Z
 DTSTART;TZID=Europe/Moscow:20261016T174500
-DTEND;TZID=Europe/Moscow:20261016T211500
+DTEND;TZID=Europe/Moscow:20261016T211000
 SUMMARY:CS Budapest Trophy — танцы РТ
-DESCRIPTION:Россияне:\n• Василиса Григорьева / 
- Евгений Артющенко\n• Милана Кузьмина / Д
- митрий Студеникин\n\nНачало: 17:45 МСК
+DESCRIPTION:Россияне:\n• Милана Кузьмина / Дмит
+ рий Студеникин — 9-й (разминка 3)\n• Васил
+ иса Григорьева / Евгений Артющенко — 22-й 
+ (разминка 5)\n\nНачало: 17:45 МСК
 LOCATION:Budapest\, Hungary
-URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:dance-sen
- ior-rt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

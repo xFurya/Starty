@@ -14,14 +14,12 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-skate-canada-international-2026:pairs-senior-kp@starty
-DTSTAMP:20261015T163416Z
+DTSTAMP:20261015T165344Z
 DTSTART;TZID=Europe/Moscow:20261031T061500
 DTEND;TZID=Europe/Moscow:20261031T072500
 SUMMARY:GP Skate Canada — пары КП
 DESCRIPTION:Начало: 06:15 МСК
 LOCATION:Kelowna\, Canada
-URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-skate-canada-internationa
- l-2026:pairs-senior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:gs:tayside-trophy:pairs-senior-pp@starty
-DTSTAMP:20261015T163416Z
+DTSTAMP:20261015T165344Z
 DTSTART;TZID=Europe/Moscow:20261011T163400
 DTEND;TZID=Europe/Moscow:20261011T175900
 SUMMARY:Tayside Trophy — пары ПП
@@ -31,7 +31,6 @@ DESCRIPTION:Итог:\n1. Ava Kemp / Yohnatan Elizarov — 118.04\n2. Anna
  от второго места — 19.94 балла\n\nНачало: 16:34
   МСК
 LOCATION:Dundee\, Great Britain
-URL:https://xfurya.github.io/Starty/#e=gs:tayside-trophy:pairs-senior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

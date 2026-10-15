@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-jgp-batumi-2026:dance-junior-pt@starty
-DTSTAMP:20261015T163416Z
+DTSTAMP:20261015T165344Z
 DTSTART;TZID=Europe/Moscow:20260926T111500
 DTEND;TZID=Europe/Moscow:20260926T141000
 SUMMARY:JGP Batumi — танцы ПТ
@@ -25,8 +25,6 @@ DESCRIPTION:Итог:\n1. Ambre Perrier Gianesini / Samuel Blanc Klaperman
  odin — 156.55\n3. Xinyu Chen / Gordei Chitipakhovian — 153.65\n\nНа
  чало: 11:15 МСК\nТрансляция: Okko
 LOCATION:Batumi\, Georgia
-URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-batumi-2026:dance-junior
- -pt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
