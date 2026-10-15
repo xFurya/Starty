@@ -3,7 +3,8 @@
     python3 -m scraper.build
 
 Источники: ФФККР (все российские старты уровня МС/КМС), ISU (Гран-при, юниорский
-Гран-при, челленджеры, чемпионаты), Golden Skate (прочие международные).
+Гран-при, челленджеры, чемпионаты), Golden Skate (прочие международные). Региональные
+(ФФКМ — Москва, Самарская область) — старты с tier="regional" и region; в calendar.ics не попадают.
 Международный сегмент попадает в календарь, только если в нём есть россияне или белорусы
 (RUS или AIN2 — россияне, нейтральные россияне; BLR или AIN1 — белорусы).
 
@@ -29,6 +30,7 @@ from . import fsr, goldenskate, ics, isu, net
 from . import photos as ph
 from . import names as nm
 from . import people as pp
+from . import regional as rg
 from . import results as rs
 from . import swisstiming as st
 
@@ -312,9 +314,13 @@ def times_to_msk(seg_start, local_times, offset_min):
 
 
 def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, ours_rule,
-                     extra_starts=None):
+                     extra_starts=None, fix=None, settle_by_end=False):
     """Сегменты из табло. ours_rule(name, nation) → bool. extra_starts — запасные
-    времена начала {(kind, level, seg): datetime}, если в табло нет расписания."""
+    времена начала {(kind, level, seg): datetime}, если в табло нет расписания.
+    fix(имя) — приведение имени из табло (региональные: «Имя Отчество ФАМИЛИЯ» → «Имя ФАМИЛИЯ»).
+    settle_by_end — у табло нет судейских оценок (ФФКМ): протокол считается промежуточным,
+    пока не прошло расчётное окончание сегмента."""
+    fix = fix or (lambda s: s)
     cats = []
     for c in idx["categories"]:
         if not intl and fsr.low_level(c["name"]):
@@ -331,7 +337,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
     now = dt.datetime.now(dt.timezone.utc)
     for c, kind, level in cats:
         try:
-            entries = st.parse_entries(c["entries_url"])
+            entries = [dict(p, name=fix(p["name"])) for p in st.parse_entries(c["entries_url"])]
         except net.FetchError:
             entries = []
         for p in entries:
@@ -354,7 +360,8 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 seg_page = net.fetch(s["url"])
             except net.FetchError:
                 seg_page = None
-            order = st.parse_starting_order(s["url"], seg_page) if seg_page else []
+            order = [dict(p, name=fix(p["name"])) for p in st.parse_starting_order(s["url"], seg_page)] \
+                if seg_page else []
             # Сегмент прошёл, только когда страница — протокол, время старта позади и,
             # если табло вообще выкладывает судейские оценки, они у сегмента уже есть
             # (до конца проката протокол может быть неполным).
@@ -363,6 +370,8 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
             except Exception as e:  # итог необязателен — расписание важнее
                 log("  ! протокол сегмента:", s["url"], e)
                 results = None
+            if results:
+                results = [dict(r, name=fix(r["name"])) for r in results]
             started = bool(results) and start.astimezone(dt.timezone.utc) <= now
             done = started and bool(s.get("final") or not idx.get("final_marks"))
             # протокол уже на табло, но судейских оценок ещё нет — промежуточные итоги
@@ -402,7 +411,8 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 try:
                     cr = st.parse_category_results(c["results_url"])
                     if cr["complete"]:
-                        cat_total, cat_rows = top3(cr["rows"], names), cr["rows"]
+                        rows = [dict(r, name=fix(r["name"])) for r in cr["rows"]]
+                        cat_total, cat_rows = top3(rows, names), rows
                 except Exception as e:
                     log("  ! итог вида:", c["results_url"], e)
             podium = top3(results, names) if started else None
@@ -416,7 +426,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 ours=sort_ours(ours), athletes=athletes, src=idx["url"],
                 podium=podium, total=total)
             ev["field"] = sort_ours(field)
-            if partial:
+            if partial or (settle_by_end and started and end.astimezone(dt.timezone.utc) > now):
                 ev["provisional"] = True
             is_last = SEG_ORDER[seg] == last_seg
             # адреса табло — приложение во время старта читает их само, не дожидаясь сбора
@@ -484,6 +494,7 @@ def do_fsr(names, report, failed, upcoming, photos):
             pages.append(fsr.tournament(u))
         except net.FetchError as e:
             log("  ! страница турнира:", e)
+    report["fsr_pages"] = pages  # региональные источники отбрасывают турниры, уже взятые отсюда
 
     gp_names = set()
     for c in cal:
@@ -582,6 +593,177 @@ def do_fsr(names, report, failed, upcoming, photos):
         elif c["end"] >= today:
             upcoming.append({"tid": tid, "name": name, "start": c["start"].isoformat(),
                              "end": c["end"].isoformat(), "venue": venue, "intl": False})
+    return events
+
+
+# ---------------------------------------------------------------- регионы
+
+SAMARA_TZ = dt.timezone(dt.timedelta(hours=4))  # Самарская область целиком, включая Сызрань и Тольятти
+MSK_OFFSET = 180  # табло ФФКМ без пояса: московское время
+
+
+class SourceDown(Exception):
+    """Региональный источник не отдал данные. Текст — причина, она уходит в статус источника."""
+
+
+def _core(title):
+    """Название турнира без кавычек — для сравнения с федеральным списком."""
+    m = re.search(r"[«\"](.+?)[»\"]", title)
+    return (m.group(1) if m else title).lower().strip()
+
+
+def _fed_dup(title, start, end, fed_pages):
+    """Турнир уже в федеральном календаре ФФККР: те же даты и то же название. Федеральная запись важнее."""
+    core = _core(title)
+    return any(p.get("start") == start and p.get("end") == end and core and
+               (core in p["title"].lower() or _core(p["title"]) in title.lower())
+               for p in fed_pages)
+
+
+def _regional_upcoming(tid, name, start, end, venue, region):
+    return {"tid": tid, "name": name, "start": start.isoformat(), "end": end.isoformat(),
+            "venue": venue, "intl": False, "tier": "regional", "region": region}
+
+
+def _tag_regional(events, region):
+    for ev in events:
+        ev["tier"] = "regional"
+        ev["region"] = region
+    return events
+
+
+def do_ffkm(names, report, failed, upcoming, fed_pages):
+    """ФФКМ (Москва): календарь → карточка турнира → табло (классическая вёрстка).
+    Карточная вёрстка табло пока не разбирается: турнир уходит в «без расписания»."""
+    try:
+        rows = rg.ffkm_calendar()
+    except net.FetchError as e:
+        raise SourceDown(f"календарь не открылся ({e})")
+    if len(rows) < 20:
+        raise SourceDown(f"в календаре {len(rows)} строк — подозрительно мало")
+    today = dt.datetime.now(MSK).date()
+    fed_urls = {p["results"] for p in fed_pages if p.get("results")}
+    rule = watch_rule({nm.key(w) for w in CFG["watchlist"]})
+    events = []
+    for r in rows:
+        # федеральный порог: разряды без МС/КМС не берём (по программе, а не по каждой категории)
+        if fsr.low_level(r["program"]) and not re.search(r"\bК?МС\b", r["program"]):
+            continue
+        if _fed_dup(r["title"], r["start"], r["end"], fed_pages):
+            continue
+        name = r["title"]
+        venue = ru_venue("Москва", r["place"])
+        # id без табло — реестровый номер ФФКМ: название и даты по slugify склеиваются (обрезка 60 знаков)
+        rn_tid = "ffkm:rn" + r["number"]
+        try:
+            table = rg.ffkm_detail(r["page"], r["start"]) if r["page"] else None
+        except net.FetchError as e:
+            # табло этого турнира неизвестно — прошлые старты ФФКМ остаются (как при сбое источника)
+            log(f"  ! ФФКМ карточка «{name}»: {e}")
+            failed.add("ffkm:*")
+            report["errors"].append(f"ФФКМ {name}: карточка: {e}")
+            continue
+        if table and table in fed_urls:
+            continue
+        tid = "ffkm:" + rg.tail(table.rsplit("/", 1)[0]) if table else rn_tid
+        got = []
+        if table:
+            try:
+                idx = st.parse_index(table, default_offset=MSK_OFFSET)
+                if idx["categories"]:
+                    got = _tag_regional(from_swisstiming(
+                        idx, tid=tid, tournament=name, venue=venue, intl=False,
+                        broadcast=broadcast_for(name), names=names, ours_rule=rule,
+                        fix=pp.entry_name, settle_by_end=True), "Москва")
+                else:
+                    log(f"  ФФКМ «{name}»: табло в карточной вёрстке — старты не разобраны")
+            except Exception as e:  # один турнир не должен ронять источник
+                log(f"  ! ФФКМ «{name}»: {e}")
+                traceback.print_exc()
+                failed.add(tid)
+                report["errors"].append(f"ФФКМ {name}: {e}")
+                continue
+            if got:
+                events += got
+                log(f"  ФФКМ {name}: {len(got)}")
+        if not got and r["end"] >= today:
+            upcoming.append(_regional_upcoming(tid, name, r["start"], r["end"], venue, "Москва"))
+    return events
+
+
+def do_samara(names, report, failed, upcoming, fed_pages):
+    """Самарская область (СООО «ФФКК», skate63.ru): статьи турниров сезона → расписания PDF.
+    Календарь PDF — сверка дат. Протоколы не разбираются: своя вёрстка, разборщика пока нет.
+    Расписание PDF без вида катания («Короткая программа – КМС») не даёт стартов: вид неизвестен."""
+    season_start = dt.date.fromisoformat(CFG["season_start"])
+    try:
+        cards = rg.samara_cards(season_start)
+    except net.FetchError as e:
+        raise SourceDown(f"статьи не открылись ({e})")
+    if len(cards) < 3:
+        raise SourceDown(f"статей сезона {len(cards)} — подозрительно мало")
+    cal = None
+    try:
+        cal_url = rg.samara_calendar_pdf()
+        if cal_url:
+            cal = rg.samara_calendar_ranges(net.pdf_text(cal_url))
+    except net.FetchError as e:
+        log(f"  ! календарь Самары: {e}")
+    today = dt.datetime.now(MSK).date()
+    events, matched = [], 0
+    for c in cards:
+        if _fed_dup(c["title"], c["start"], c["end"], fed_pages):
+            continue
+        if cal is not None:
+            if (c["start"], c["end"]) in cal:
+                matched += 1
+            else:
+                log(f"  Самара: в календаре PDF нет дат {c['start']}–{c['end']}: {c['title']}")
+        tid = "samara:" + rg.tail(c["url"])
+        try:
+            schedules = rg.samara_schedules(c["url"])
+        except net.FetchError as e:
+            log(f"  ! Самара «{c['title']}»: {e}")
+            failed.add(tid)
+            report["errors"].append(f"Самара {c['title']}: {e}")
+            continue
+        got = []
+        season_hint = c["start"].year if c["start"].month >= 7 else c["start"].year - 1
+        for pdf in schedules:
+            try:
+                text = net.pdf_text(pdf)
+                rows = fsr.schedule_text(text, season_hint)
+            except (net.FetchError, OSError) as e:
+                log(f"  ! Самара PDF «{c['title']}»: {e}")
+                failed.add(tid)
+                continue
+            city, place = rg.schedule_venue(text)
+            venue = ru_venue(city, place) if city else ""
+            picks = []
+            for d, (h, m), (h2, m2), what in rows:
+                if fsr.low_level(what):
+                    continue
+                kind, level = fsr.classify(what)
+                seg = fsr.segment_of(what)
+                if kind and seg:
+                    picks.append((kind, level or "senior", seg, d, (h, m), (h2, m2)))
+            mixed = len({p[1] for p in picks}) > 1
+            for kind, level, seg, d, (h, m), (h2, m2) in picks:
+                s0 = dt.datetime(d.year, d.month, d.day, h, m, tzinfo=SAMARA_TZ)
+                e0 = dt.datetime(d.year, d.month, d.day, h2, m2, tzinfo=SAMARA_TZ)
+                if e0 <= s0:
+                    e0 += dt.timedelta(days=1)
+                got.append(make_event(
+                    tid=tid, tournament=c["title"], kind=kind, level=level, seg=seg, mixed=mixed,
+                    start=s0, end=e0, venue=venue, intl=False, broadcast=[], ours=[], athletes=[],
+                    src=pdf))
+        if got:
+            events += _tag_regional(got, "Самарская область")
+            log(f"  Самара {c['title']}: {len(got)}")
+        elif c["end"] >= today:
+            upcoming.append(_regional_upcoming(tid, c["title"], c["start"], c["end"], "", "Самарская область"))
+    if cal is not None:
+        log(f"  Самара: даты статей совпали с календарём PDF: {matched} из {len(cards)}")
     return events
 
 
@@ -874,6 +1056,26 @@ def main():
         report["sources"]["Golden Skate"] = "fail"
         failed.add("gs:*")
 
+    # Регионы: старты с tier=regional. Статус источника — «ok» или причина текстом;
+    # сбой оставляет прошлые старты этого источника (как у федеральных).
+    fed_pages = report.get("fsr_pages") or []
+    for label, prefix, fn in (
+            ("ФФКМ", "ffkm:", lambda: do_ffkm(names, report, failed, upcoming, fed_pages)),
+            ("Самара", "samara:", lambda: do_samara(names, report, failed, upcoming, fed_pages))):
+        try:
+            events += fn()
+            report["sources"][label] = "ok"
+        except SourceDown as e:
+            log(f"!! {label}: {e}")
+            report["sources"][label] = str(e)
+            failed.add(prefix + "*")
+        except Exception as e:
+            log(f"!! {label} недоступен: {e}")
+            traceback.print_exc()
+            report["sources"][label] = f"ошибка: {e}"
+            report["errors"].append(f"{label}: {e}")
+            failed.add(prefix + "*")
+
     # После старта табло показывает результаты вместо стартового листа — время выхода
     # и номера наших берём из прошлого сбора, пока он их помнит. Так же итоги
     # прошедших сегментов: если протокол сейчас не открылся, остаётся прошлый.
@@ -929,7 +1131,7 @@ def main():
 
     have_tids = {e["tid"] for e in events}
     upcoming = [u for u in upcoming if u["tid"] not in have_tids]
-    if any(s == "fail" for s in report["sources"].values()) and prev.get("upcoming"):
+    if any(s != "ok" for s in report["sources"].values()) and prev.get("upcoming"):
         for u in prev["upcoming"]:
             if u["tid"] not in have_tids and u["tid"] not in {x["tid"] for x in upcoming} \
                     and u["end"] >= now.date().isoformat():
@@ -1006,8 +1208,10 @@ def write_site(data):
     gen = dt.datetime.fromisoformat(data["generated"])
     with open(OUT_ICS, "w", encoding="utf-8", newline="") as f:
         # общая лента календаря — как лента приложения по умолчанию: российские старты
-        # и международные с россиянами и белорусами
-        f.write(ics.build([e for e in data["events"] if not e["intl"] or e["ours"]], gen, PUBLIC_URL))
+        # и международные с россиянами и белорусами; региональные сюда не попадают — файл
+        # статичный и не может переключаться в приложении (по файлу на старт — ниже)
+        f.write(ics.build([e for e in data["events"]
+                           if (not e["intl"] or e["ours"]) and e.get("tier") != "regional"], gen, PUBLIC_URL))
     # по файлу на старт — кнопка «В календарь» с напоминанием за 15 минут
     edir = os.path.join(SITE, "e")
     os.makedirs(edir, exist_ok=True)
