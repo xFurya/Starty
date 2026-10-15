@@ -904,7 +904,7 @@ def main():
         roster.update(p["name"] for p in e.get("total", []))
         roster.update((e.get("live") or {}).get("names", {}).values())
     # латинское написание того, кого уже знаем по-русски, в справочнике не держим: поиск не должен давать двойников
-    roster = {n for n in roster if names.to_ru(n) == n}
+    roster = {n for n in roster if not names.known_latin(n)}
 
     all_ok = all(s == "ok" for s in report["sources"].values()) and not report["errors"]
     data = {

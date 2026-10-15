@@ -129,6 +129,14 @@ class Names:
             return self._alias(hit)
         return pretty_latin(name)
 
+    def known_latin(self, name):
+        """Латинское «Имя Фамилия» (в любом регистре), которое мы знаем по-русски."""
+        if is_cyr(name) or " / " in name:
+            return False
+        given, _, family = name.strip().rpartition(" ")
+        k = (norm_lat(family), norm_lat(given))
+        return k in self.latin or k in self.ru
+
     def _alias(self, s):
         return self.aliases.get(s, s)
 

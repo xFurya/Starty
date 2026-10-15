@@ -35,3 +35,5 @@ jobs:
         run: flutter test
       - name: Проверить синтаксис скрапера
         run: python3 -m compileall -q scraper
+      - name: Тесты разбора табло
+        run: python3 -m unittest scraper.test_swisstiming
