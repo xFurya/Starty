@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-15T22:36:04+03:00",
- "checked": "2026-10-15T22:36:04+03:00",
+ "generated": "2026-10-15T23:04:00+03:00",
+ "checked": "2026-10-15T23:04:00+03:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -272,7 +272,8 @@
      "Евдокия ТАРИБО / Николай НИКИТЕНКО": "Евдокия Тарибо / Николай Никитенко",
      "Кристина ЯТТАРА / Артем ГАМАНОВ": "Кристина Яттара / Артем Гаманов",
      "Полина ЛОВЫГИНА / Алексей МОРОЗОВ": "Полина Ловыгина / Алексей Морозов"
-    }
+    },
+    "basis": "judges"
    },
    "tier": "regional",
    "region": "Москва"
@@ -583,7 +584,8 @@
      "Екатерина СТАРОСТИНА / Тимофей СТОЛЯРЕНКО": "Екатерина Старостина / Тимофей Столяренко",
      "Полина ЛОВЫГИНА / Алексей МОРОЗОВ": "Полина Ловыгина / Алексей Морозов",
      "Евдокия ТАРИБО / Николай НИКИТЕНКО": "Евдокия Тарибо / Николай Никитенко"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -721,7 +723,8 @@
      "Александра УКОЛОВА / Роман ОРЛОВ": "Александра Уколова / Роман Орлов",
      "Ангелина КУЛАГИНА / Максим ИХСАНОВ": "Ангелина Кулагина / Максим Ихсанов",
      "Кира МАРКОВА / Илья КОВАЛЬЧУК": "Кира Маркова / Илья Ковальчук"
-    }
+    },
+    "basis": "judges"
    },
    "tier": "regional",
    "region": "Москва"
@@ -744,7 +747,8 @@
      "name": "Софья Смагина",
      "nation": "",
      "no": 38,
-     "warmup": 7
+     "warmup": 7,
+     "place": 2
     }
    ],
    "athletes": [
@@ -798,295 +802,363 @@
     "Яна Иванова"
    ],
    "src": "https://ffkm.ru/results/2026-2027/2026-08-24_pm/index.htm",
-   "desc": "Россияне:\n• Софья Смагина — 38-й (разминка 7)\n\nНачало: 14:30 МСК",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Диана Мильто",
+     "nation": "",
+     "points": "68.21"
+    },
+    {
+     "place": 2,
+     "name": "Софья Смагина",
+     "nation": "",
+     "points": "68.03"
+    },
+    {
+     "place": 3,
+     "name": "Дарья Лебедева",
+     "nation": "",
+     "points": "67.42"
+    }
+   ],
+   "desc": "Итог:\n1. Диана Мильто — 68.21\n2. Софья Смагина — 68.03\n3. Дарья Лебедева — 67.42\n\nРоссияне:\n• Софья Смагина — 38-й (разминка 7)\n\nНачало: 14:30 МСК",
    "field": [
     {
      "name": "Алёна Телятникова",
      "nation": "",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 35
     },
     {
      "name": "Елизавета Ильичева",
      "nation": "",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 42
     },
     {
      "name": "Мелания Гришина",
      "nation": "",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 47
     },
     {
      "name": "Виктория Сомова",
      "nation": "",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 19
     },
     {
      "name": "Мария Галушкина",
      "nation": "",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 18
     },
     {
      "name": "Яна Иванова",
      "nation": "",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 24
     },
     {
      "name": "Екатерина Стоцкая",
      "nation": "",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 13
     },
     {
      "name": "Полина Мартыненко",
      "nation": "",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6
     },
     {
      "name": "Наталья Старшова",
      "nation": "",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 12
     },
     {
      "name": "Алиса Семина",
      "nation": "",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     },
     {
      "name": "Софья Лабуткина",
      "nation": "",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 43
     },
     {
      "name": "Елизавета Андреева",
      "nation": "",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 37
     },
     {
      "name": "Алина Воробьева",
      "nation": "",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "place": 33
     },
     {
      "name": "Ева Тарасенко",
      "nation": "",
      "no": 14,
-     "warmup": 3
+     "warmup": 3,
+     "place": 26
     },
     {
      "name": "Елизавета Борисова",
      "nation": "",
      "no": 15,
-     "warmup": 3
+     "warmup": 3,
+     "place": 20
     },
     {
      "name": "София Левшова",
      "nation": "",
      "no": 16,
-     "warmup": 3
+     "warmup": 3,
+     "place": 40
     },
     {
      "name": "Ева Вачасова",
      "nation": "",
      "no": 17,
-     "warmup": 3
+     "warmup": 3,
+     "place": 21
     },
     {
      "name": "Алиса Корнаухова",
      "nation": "",
      "no": 18,
-     "warmup": 3
+     "warmup": 3,
+     "place": 25
     },
     {
      "name": "Анна Ильиных",
      "nation": "",
      "no": 19,
-     "warmup": 4
+     "warmup": 4,
+     "place": 36
     },
     {
      "name": "Мария Капичникова",
      "nation": "",
      "no": 20,
-     "warmup": 4
+     "warmup": 4,
+     "place": 34
     },
     {
      "name": "Ника Маскайкина",
      "nation": "",
      "no": 21,
-     "warmup": 4
+     "warmup": 4,
+     "place": 10
     },
     {
      "name": "Майя Сарафанова",
      "nation": "",
      "no": 22,
-     "warmup": 4
+     "warmup": 4,
+     "place": 5
     },
     {
      "name": "София Сокольская",
      "nation": "",
      "no": 23,
-     "warmup": 4
+     "warmup": 4,
+     "place": 46
     },
     {
      "name": "Елизавета Самичева",
      "nation": "",
      "no": 24,
-     "warmup": 4
+     "warmup": 4,
+     "place": 45
     },
     {
      "name": "Варвара Полуэктова",
      "nation": "",
      "no": 25,
-     "warmup": 5
+     "warmup": 5,
+     "place": 44
     },
     {
      "name": "Юлиана Черенёва",
      "nation": "",
      "no": 26,
-     "warmup": 5
+     "warmup": 5,
+     "place": 23
     },
     {
      "name": "Виктория Позднякова",
      "nation": "",
      "no": 27,
-     "warmup": 5
+     "warmup": 5,
+     "place": 29
     },
     {
      "name": "Камила Назипова",
      "nation": "",
      "no": 28,
-     "warmup": 5
+     "warmup": 5,
+     "place": 16
     },
     {
      "name": "Екатерина Титова",
      "nation": "",
      "no": 29,
-     "warmup": 5
+     "warmup": 5,
+     "place": 30
     },
     {
      "name": "София Гречихина",
      "nation": "",
      "no": 30,
-     "warmup": 5
+     "warmup": 5,
+     "place": 39
     },
     {
      "name": "Алиса Чистякова",
      "nation": "",
      "no": 31,
-     "warmup": 6
+     "warmup": 6,
+     "place": 28
     },
     {
      "name": "Валерия Литвинчёва",
      "nation": "",
      "no": 32,
-     "warmup": 6
+     "warmup": 6,
+     "place": 9
     },
     {
      "name": "Валерия Лукашова",
      "nation": "",
      "no": 33,
-     "warmup": 6
+     "warmup": 6,
+     "place": 14
     },
     {
      "name": "Софья Федоркова",
      "nation": "",
      "no": 34,
-     "warmup": 6
+     "warmup": 6,
+     "place": 48
     },
     {
      "name": "Елизавета Дубынина",
      "nation": "",
      "no": 35,
-     "warmup": 6
+     "warmup": 6,
+     "place": 31
     },
     {
      "name": "Анастасия Чиннова",
      "nation": "",
      "no": 36,
-     "warmup": 6
+     "warmup": 6,
+     "place": 27
     },
     {
      "name": "Алина Николаева",
      "nation": "",
      "no": 37,
-     "warmup": 7
+     "warmup": 7,
+     "place": 38
     },
     {
      "name": "Софья Смагина",
      "nation": "",
      "no": 38,
-     "warmup": 7
+     "warmup": 7,
+     "place": 2
     },
     {
      "name": "Елизавета Мельникова",
      "nation": "",
      "no": 39,
-     "warmup": 7
+     "warmup": 7,
+     "place": 15
     },
     {
      "name": "Анастасия Трошкина",
      "nation": "",
      "no": 40,
-     "warmup": 7
+     "warmup": 7,
+     "place": 41
     },
     {
      "name": "Дарья Лебедева",
      "nation": "",
      "no": 41,
-     "warmup": 7
+     "warmup": 7,
+     "place": 3
     },
     {
      "name": "Диана Мильто",
      "nation": "",
      "no": 42,
-     "warmup": 7
+     "warmup": 7,
+     "place": 1
     },
     {
      "name": "Полина Павликова",
      "nation": "",
      "no": 43,
-     "warmup": 8
+     "warmup": 8,
+     "place": 4
     },
     {
      "name": "Полина Значкова",
      "nation": "",
      "no": 44,
-     "warmup": 8
+     "warmup": 8,
+     "place": 22
     },
     {
      "name": "Алиса Мильто",
      "nation": "",
      "no": 45,
-     "warmup": 8
+     "warmup": 8,
+     "place": 8
     },
     {
      "name": "Виктория Михайлова",
      "nation": "",
      "no": 46,
-     "warmup": 8
+     "warmup": 8,
+     "place": 11
     },
     {
      "name": "Евдокия Макарова",
      "nation": "",
      "no": 47,
-     "warmup": 8
+     "warmup": 8,
+     "place": 32
     },
     {
      "name": "Алиса Шатохина",
      "nation": "",
      "no": 48,
-     "warmup": 8
+     "warmup": 8,
+     "place": 17
     }
    ],
    "live": {
@@ -1143,7 +1215,8 @@
      "Виктория МИХАЙЛОВА": "Виктория Михайлова",
      "Евдокия МАКАРОВА": "Евдокия Макарова",
      "Алиса ШАТОХИНА": "Алиса Шатохина"
-    }
+    },
+    "basis": "judges"
    },
    "tier": "regional",
    "region": "Москва"
@@ -1469,7 +1542,8 @@
      "Кирилл АРБУЗОВ": "Кирилл Арбузов",
      "Даниил ЖОЛОБОВ": "Даниил Жолобов",
      "Никита ПРОКОФЬЕВ": "Никита Прокофьев"
-    }
+    },
+    "basis": null
    },
    "tier": "regional",
    "region": "Москва"
@@ -2055,7 +2129,8 @@
      "Angela Urvashi NORIN": "Angela Urvashi Norin",
      "Leila FESTIC": "Leila Festic",
      "Sarah ABU ELSEOUD": "Sarah Abu Elseoud"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -2256,7 +2331,8 @@
      "Romane TELEMAQUE / Lucas COULON": "Romane Telemaque / Lucas Coulon",
      "Brianna DION / Jacob COTE": "Brianna Dion / Jacob Cote",
      "Vassilianna SHELESTOVA / Abay SADYKOV": "Vassilianna Shelestova / Abay Sadykov"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -2604,7 +2680,8 @@
      "Ziga JEVNIK": "Ziga Jevnik",
      "Razvan CIONAC": "Razvan Cionac",
      "Rahul RAVINDRAN": "Rahul Ravindran"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -2835,7 +2912,8 @@
      "Mimi MARLER DAVIES / Joseph BLACK": "Mimi Marler Davies / Joseph Black",
      "Warunya Katharina SALENBAUCH / Paiboon Hermann SALENBAUCH": "Warunya Katharina Salenbauch / Paiboon Hermann Salenbauch",
      "Lumia SASSI / Aarne SAVOLA": "Lumia Sassi / Aarne Savola"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -3073,7 +3151,8 @@
      "Brianna DION / Jacob COTE": "Brianna Dion / Jacob Cote",
      "Elizabeth YUN / Mitchell CASTELLETTI": "Elizabeth Yun / Mitchell Castelletti",
      "Vassilianna SHELESTOVA / Abay SADYKOV": "Vassilianna Shelestova / Abay Sadykov"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -3291,7 +3370,8 @@
      "Michaela VRASTAKOVA": "Michaela Vrastakova",
      "Chiara MINIGHINI": "Chiara Minighini",
      "Marietta ATKINS": "Marietta Atkins"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -3752,7 +3832,8 @@
      "Angela Urvashi NORIN": "Angela Urvashi Norin",
      "Leila FESTIC": "Leila Festic",
      "Sarah ABU ELSEOUD": "Sarah Abu Elseoud"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -3911,7 +3992,8 @@
      "Fedirs KULISS": "Fedirs Kuliss",
      "Kirills KORKACS": "Kirills Korkacs",
      "Dillon JUDGE": "Dillon Judge"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -4302,7 +4384,8 @@
      "David ESCRIBANO SALVADOR": "David Escribano Salvador",
      "Rahul RAVINDRAN": "Rahul Ravindran",
      "Niccolo BOERIS": "Niccolo Boeris"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -4493,7 +4576,8 @@
      "Caroline MULLEN / Brendan MULLEN": "Caroline Mullen / Brendan Mullen",
      "Daniela IVANITSKIY / Matthew SPERRY": "Daniela Ivanitskiy / Matthew Sperry",
      "Sophia AWNY FARAJALLAH / Maksym SPODYRIEV": "Sophia Awny Farajallah / Maksym Spodyriev"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -4764,7 +4848,8 @@
      "Claudia AMARO LETESTU / Marco AMARO LETESTU": "Claudia Amaro Letestu / Marco Amaro Letestu",
      "Warunya Katharina SALENBAUCH / Paiboon Hermann SALENBAUCH": "Warunya Katharina Salenbauch / Paiboon Hermann Salenbauch",
      "Lumia SASSI / Aarne SAVOLA": "Lumia Sassi / Aarne Savola"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -5013,7 +5098,8 @@
      "Elizabet GERVITS": "Elizabet Gervits",
      "Marietta ATKINS": "Marietta Atkins",
      "Chiara MINIGHINI": "Chiara Minighini"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -5191,7 +5277,8 @@
      "Fedirs KULISS": "Fedirs Kuliss",
      "Kirills KORKACS": "Kirills Korkacs",
      "Dillon JUDGE": "Dillon Judge"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -5410,7 +5497,8 @@
      "Sophia AWNY FARAJALLAH / Maksym SPODYRIEV": "Sophia Awny Farajallah / Maksym Spodyriev",
      "Daniela IVANITSKIY / Matthew SPERRY": "Daniela Ivanitskiy / Matthew Sperry",
      "Denisa CIMLOVA / Stefano FRASCA": "Denisa Cimlova / Stefano Frasca"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -5695,7 +5783,8 @@
      "Mark LYSYCHENKO": "Mark Lysychenko",
      "Christopher Konstantinos MANIS": "Christopher Konstantinos Manis",
      "Mantas GRYBA": "Mantas Gryba"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -5870,7 +5959,8 @@
      "Luca FUENFER": "Luca Fuenfer",
      "Gabriel MARTINEZ": "Gabriel Martinez",
      "Dillon JUDGE": "Dillon Judge"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -6236,7 +6326,8 @@
      "Aynur BERDIYEVA": "Aynur Berdiyeva",
      "Andrea PAZOS GUERRA": "Andrea Pazos Guerra",
      "Raffaella OBERTI PINTO": "Raffaella Oberti Pinto"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -6384,7 +6475,8 @@
      "Naomi WILLIAMS / Lachlan LEWER": "Naomi Williams / Lachlan Lewer",
      "Aurelie FAULA / Theo BELLE": "Aurelie Faula / Theo Belle",
      "Oxana VOUILLAMOZ / Tom BOUVART": "Oxana Vouillamoz / Tom Bouvart"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -6514,7 +6606,8 @@
      "Noelle STREULI": "Noelle Streuli",
      "Sofja STEPCENKO": "Sofja Stepcenko",
      "Nela SNEBERGEROVA": "Nela Snebergerova"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -6700,7 +6793,8 @@
      "Полина ПУНЕГОВА / Дмитрий КАШУБИН": "Полина Пунегова / Дмитрий Кашубин",
      "Полина НЕГАНОВА / Степан ЧУЧКАЛОВ": "Полина Неганова / Степан Чучкалов",
      "Ульяна ТРУШНИКОВА / Кирилл ВЕДЕРНИКОВ": "Ульяна Трушникова / Кирилл Ведерников"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -6913,7 +7007,8 @@
      "Laura BALCERSKA / David DIADCHENKO": "Laura Balcerska / David Diadchenko",
      "Aletta LANYI / Ilya LAURENAU": "Aletta Lanyi / Ilya Laurenau",
      "Veronika KRIUCHKOVA / Denys FEDIANKIN": "Veronika Kriuchkova / Denys Fediankin"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -7027,7 +7122,8 @@
      "Мария КАРПАНОВА / Артем УСТИНОВ": "Мария Карпанова / Артем Устинов",
      "Майя БАБИЧЕНКО / Максим САВИНСКИЙ": "Майя Бабиченко / Максим Савинский",
      "Дарья ТРЕТЬЯКОВА / Александр САМОРУКОВ": "Дарья Третьякова / Александр Саморуков"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -7236,7 +7332,8 @@
      "Ze Zeng FANG": "Ze Zeng Fang",
      "Dillon JUDGE": "Dillon Judge",
      "Luca FUENFER": "Luca Fuenfer"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -7579,7 +7676,8 @@
      "Lorenzo HEURTEBIS": "Lorenzo Heurtebis",
      "Mark LYSYCHENKO": "Mark Lysychenko",
      "Mantas GRYBA": "Mantas Gryba"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -7743,7 +7841,8 @@
      "Louise BORDET / Martin CHARDAIN": "Louise Bordet / Martin Chardain",
      "Carolina PORTESI PERONI / Pietro PAPETTI": "Carolina Portesi Peroni / Pietro Papetti",
      "Gabriela PALOMEQUE / Tanner WHITE": "Gabriela Palomeque / Tanner White"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -7922,7 +8021,8 @@
      "Karina AKOPOVA / Nikita RAKHMANIN": "Karina Akopova / Nikita Rakhmanin",
      "Aurelie FAULA / Theo BELLE": "Aurelie Faula / Theo Belle",
      "Anna VALESI / Martin BIDAR": "Anna Valesi / Martin Bidar"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -8150,7 +8250,8 @@
      "Екатерина СТАРОСТИНА / Тимофей СТОЛЯРЕНКО": "Екатерина Старостина / Тимофей Столяренко",
      "Полина НЕГАНОВА / Степан ЧУЧКАЛОВ": "Полина Неганова / Степан Чучкалов",
      "Ульяна ТРУШНИКОВА / Кирилл ВЕДЕРНИКОВ": "Ульяна Трушникова / Кирилл Ведерников"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -8298,7 +8399,8 @@
      "Майя БАБИЧЕНКО / Максим САВИНСКИЙ": "Майя Бабиченко / Максим Савинский",
      "Дарья ТРЕТЬЯКОВА / Александр САМОРУКОВ": "Дарья Третьякова / Александр Саморуков",
      "Мария КАРПАНОВА / Артем УСТИНОВ": "Мария Карпанова / Артем Устинов"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -8549,7 +8651,8 @@
      "Aletta LANYI / Ilya LAURENAU": "Aletta Lanyi / Ilya Laurenau",
      "Kristina DOBROSERDOVA / Iaroslav NECHAEV": "Kristina Dobroserdova / Ярослав Нечаев",
      "Veronika KRIUCHKOVA / Denys FEDIANKIN": "Veronika Kriuchkova / Denys Fediankin"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -8777,7 +8880,8 @@
      "Арина КОРШУНОВА": "Арина Коршунова",
      "Ярослава БЫСТРОВА": "Ярослава Быстрова",
      "Ксения ЛОГАЧЕВА": "Ксения Логачева"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -8943,7 +9047,8 @@
      "Nela SNEBERGEROVA": "Nela Snebergerova",
      "Noelle STREULI": "Noelle Streuli",
      "Sofja STEPCENKO": "Sofja Stepcenko"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -9168,7 +9273,8 @@
      "Владислав ЛЕВИЧЕВ": "Владислав Левичев",
      "Захар КОЛОБОВ": "Захар Колобов",
      "Ярослав КРЕГЕЛЬ": "Ярослав Крегель"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -9589,7 +9695,8 @@
      "Andrea PAZOS GUERRA": "Andrea Pazos Guerra",
      "Aynur BERDIYEVA": "Aynur Berdiyeva",
      "Raffaella OBERTI PINTO": "Raffaella Oberti Pinto"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -9785,7 +9892,8 @@
      "Karla Maria KARL / Kai HOFERICHTER": "Karla Maria Karl / Kai Hoferichter",
      "Charise MATTHAEI / Max LIEBERS": "Charise Matthaei / Max Liebers",
      "Gabriela PALOMEQUE / Tanner WHITE": "Gabriela Palomeque / Tanner White"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -10053,7 +10161,8 @@
      "Ярослава БЫСТРОВА": "Ярослава Быстрова",
      "Ксения ЛОГАЧЕВА": "Ксения Логачева",
      "Арина КОРШУНОВА": "Арина Коршунова"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -10336,7 +10445,8 @@
      "Ярослав КРЕГЕЛЬ": "Ярослав Крегель",
      "Владислав ЛЕВИЧЕВ": "Владислав Левичев",
      "Захар КОЛОБОВ": "Захар Колобов"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -10560,7 +10670,8 @@
      "Mariia ARUTIUNIAN": "Mariia Arutiunian",
      "Erica MACHIDA": "Erica Machida",
      "Salma AGAMOVA": "Salma Agamova"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -10744,7 +10855,8 @@
      "Петр ДУБОВИЦКИЙ": "Петр Дубовицкий",
      "Георгий ТЕРЕХОВ": "Георгий Терехов",
      "Иван МАКИЕВ": "Иван Макиев"
-    }
+    },
+    "basis": "judges"
    },
    "tier": "regional",
    "region": "Москва"
@@ -11121,7 +11233,8 @@
      "Eva SUZNJEVIC": "Eva Suznjevic",
      "Salma ELSAKKA": "Salma Elsakka",
      "Raffaella OBERTI PINTO": "Raffaella Oberti Pinto"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -11368,7 +11481,8 @@
      "Viktoryia PLASKONNAYA / Uladzislau SYTSIK": "Виктория Пласконная / Владислав Сыцик",
      "Ekaterina RYBAKOVA / Ivan MAKHNONOSOV": "Екатерина Рыбакова / Иван Махноносов",
      "Maxine WEATHERBY / Oleksandr KOLOSOVSKYI": "Maxine Weatherby / Oleksandr Kolosovskyi"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -11471,7 +11585,8 @@
      "Анастасия ГИРИЧЕВА / Иван ДОЛГОДВОРОВ": "Анастасия Гиричева / Иван Долгодворов",
      "Анна ЛЯШЕНКО / Петр АЛЕКСЕЕНКО": "Анна Ляшенко / Петр Алексеенко",
      "Мария СИМОНОВА / Денис КИРСАНОВ": "Мария Симонова / Денис Кирсанов"
-    }
+    },
+    "basis": "judges"
    },
    "tier": "regional",
    "region": "Москва"
@@ -11659,7 +11774,8 @@
      "Alex LABOVICH": "Алекс Лабович",
      "Nikita KRIVOSHEYEV": "Nikita Krivosheyev",
      "Oleg MELNIKOV": "Oleg Melnikov"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -11917,7 +12033,8 @@
      "Dominik DRNZIK": "Dominik Drnzik",
      "Mohammed AAMARA": "Mohammed Aamara",
      "Fedir BABENKO": "Fedir Babenko"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -12051,7 +12168,8 @@
      "Katie McBEATH / Balazs NAGY": "Katie McBEATH / Balazs Nagy",
      "Sofiia HOLICHENKO / Artem DARENSKYI": "Sofiia Holichenko / Artem Darenskyi",
      "Chelsea LIU / Ryan BEDARD": "Chelsea Liu / Ryan Bedard"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -12341,7 +12459,8 @@
      "Lara LUFT / Ilias FOURATI": "Lara Luft / Ilias Fourati",
      "Viktoryia PLASKONNAYA / Uladzislau SYTSIK": "Виктория Пласконная / Владислав Сыцик",
      "Maxine WEATHERBY / Oleksandr KOLOSOVSKYI": "Maxine Weatherby / Oleksandr Kolosovskyi"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -12552,7 +12671,8 @@
      "Yixuan WANG / Shiqi GUAN": "Yixuan Wang / Shiqi Guan",
      "Barbora KLESALOVA / Matej KLESAL": "Barbora Klesalova / Matej Klesal",
      "Mihana NAKAJIMA / Isak Bengt-Eric GRANS": "Mihana Nakajima / Isak Bengt-Eric Grans"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -12774,7 +12894,8 @@
      "Alex LABOVICH": "Алекс Лабович",
      "Valtter VIRTANEN": "Valtter Virtanen",
      "Oleg MELNIKOV": "Oleg Melnikov"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -13072,7 +13193,8 @@
      "Razvan CIONAC": "Razvan Cionac",
      "Igor Gyula KIND": "Igor Gyula Kind",
      "Edoardo Luigi PROFAIZER": "Edoardo Luigi Profaizer"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -13313,7 +13435,8 @@
      "Yeva ALEKHNOVICH / Stanislaw BORYSEWICZ": "Yeva Alekhnovich / Stanislaw Borysewicz",
      "Mihana NAKAJIMA / Isak Bengt-Eric GRANS": "Mihana Nakajima / Isak Bengt-Eric Grans",
      "Barbora KLESALOVA / Matej KLESAL": "Barbora Klesalova / Matej Klesal"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -13477,7 +13600,8 @@
      "Katie McBEATH / Balazs NAGY": "Katie McBEATH / Balazs Nagy",
      "Sofiia HOLICHENKO / Artem DARENSKYI": "Sofiia Holichenko / Artem Darenskyi",
      "Chelsea LIU / Ryan BEDARD": "Chelsea Liu / Ryan Bedard"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -13898,7 +14022,8 @@
      "Tea SAJKO": "Tea Sajko",
      "Salma ELSAKKA": "Salma Elsakka",
      "Raffaella OBERTI PINTO": "Raffaella Oberti Pinto"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -14144,7 +14269,8 @@
      "Salma AGAMOVA": "Salma Agamova",
      "Mariia DMITRIEVA": "Mariia Dmitrieva",
      "Mariia ARUTIUNIAN": "Mariia Arutiunian"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -14330,7 +14456,8 @@
      "Екатерина СТАРОСТИНА / Тимофей СТОЛЯРЕНКО": "Екатерина Старостина / Тимофей Столяренко",
      "Полина АФАНАСЬЕВА / Максим КУЗНЕЦОВ": "Полина Афанасьева / Максим Кузнецов",
      "Аксинья ПАНАСЕНКО / Максим ВАХРАМЕЕВ": "Аксинья Панасенко / Максим Вахрамеев"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -14450,7 +14577,8 @@
      "Дарья САМОХВАЛОВА / Роман РОМАНЫЧЕВ": "Дарья Самохвалова / Роман Романычев",
      "Майя БАБИЧЕНКО / Максим САВИНСКИЙ": "Майя Бабиченко / Максим Савинский",
      "Ангелина КУЛАГИНА / Максим ИХСАНОВ": "Ангелина Кулагина / Максим Ихсанов"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -14671,7 +14799,8 @@
      "Таиса МУСУРОВА / Дмитрий КАРБОВСКИЙ": "Таиса Мусурова / Дмитрий Карбовский",
      "Полина АФАНАСЬЕВА / Максим КУЗНЕЦОВ": "Полина Афанасьева / Максим Кузнецов",
      "Екатерина СТАРОСТИНА / Тимофей СТОЛЯРЕНКО": "Екатерина Старостина / Тимофей Столяренко"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -14819,7 +14948,8 @@
      "Анастасия ИВАНКЕВИЧ / Георгий ПАВЛОВСКИЙ": "Анастасия Иванкевич / Георгий Павловский",
      "Майя БАБИЧЕНКО / Максим САВИНСКИЙ": "Майя Бабиченко / Максим Савинский",
      "Ангелина КУЛАГИНА / Максим ИХСАНОВ": "Ангелина Кулагина / Максим Ихсанов"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -15068,7 +15198,8 @@
      "Анастасия ЖУЛАНОВА": "Анастасия Жуланова",
      "Мария ТИХОНОВА": "Мария Тихонова",
      "Дарья БАЛЯСНИКОВА": "Дарья Балясникова"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -15296,7 +15427,8 @@
      "Захар КОЛОБОВ": "Захар Колобов",
      "Искандер АМИРОВ": "Искандер Амиров",
      "Артемий ДЕНИСОВ": "Артемий Денисов"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -15580,7 +15712,8 @@
      "Варвара ГАРИБЯН": "Варвара Гарибян",
      "Анастасия ЖУЛАНОВА": "Анастасия Жуланова",
      "Дарья БАЛЯСНИКОВА": "Дарья Балясникова"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -15862,7 +15995,8 @@
      "Андрей ШИЛИН": "Андрей Шилин",
      "Захар КОЛОБОВ": "Захар Колобов",
      "Василий ПОНОМАРЕВ": "Василий Пономарев"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -16073,7 +16207,8 @@
      "Nikita KOZLOV": "Nikita Kozlov",
      "Klim TSOY": "Klim Tsoy",
      "Temirlan YAKIYAEV": "Temirlan Yakiyaev"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -16411,7 +16546,8 @@
      "Latifakhon SHOISAEVA": "Latifakhon Shoisaeva",
      "Kanyshai KADYRBEKOVA": "Kanyshai Kadyrbekova",
      "Abrysha SRIVASTAVA": "Abrysha Srivastava"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -16813,7 +16949,8 @@
      "Saedis Heba GUDMUNDSDOTTIR": "Saedis Heba Gudmundsdottir",
      "Camila Simone AREVALO ARIAS": "Camila Simone Arevalo Arias",
      "Maria Ignacia CASTRO": "Maria Ignacia Castro"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -17062,7 +17199,8 @@
      "Zere SARBALINA": "Zere Sarbalina",
      "Michelle Edgina AXILLE": "Michelle Edgina Axille",
      "Amina ALEXEYEVA": "Amina Alexeyeva"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -17251,7 +17389,8 @@
      "Alia TANG / William BOCSKAY": "Alia Tang / William Bocskay",
      "Olivia JUNG / Carter GRIFFIN": "Olivia Jung / Carter Griffin",
      "Teryn KIM / Lazuli LUNE": "Teryn Kim / Lazuli Lune"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -17433,7 +17572,8 @@
      "Yudong CHEN": "Yudong Chen",
      "Alex LABOVICH": "Алекс Лабович",
      "Douglas GERBER": "Douglas Gerber"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -17549,7 +17689,8 @@
      "Sofiia BEZNOSIKOVA / Max LELEU": "Sofiia Beznosikova / Max Leleu",
      "Kristina DOBROSERDOVA / Iaroslav NECHAEV": "Kristina Dobroserdova / Ярослав Нечаев",
      "Eva SHELAEVA / Ivan SOLOVYEV": "Eva Shelaeva / Ivan Solovyev"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -17841,7 +17982,8 @@
      "Federico BERRUTO": "Federico Berruto",
      "Dominik DRNZIK": "Dominik Drnzik",
      "Tim NORDIN": "Tim Nordin"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -18225,7 +18367,8 @@
      "Varvara PODER": "Varvara Poder",
      "Kanyshai KADYRBEKOVA": "Kanyshai Kadyrbekova",
      "Abrysha SRIVASTAVA": "Abrysha Srivastava"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -18498,7 +18641,8 @@
      "Mihana NAKAJIMA / Isak Bengt-Eric GRANS": "Mihana Nakajima / Isak Bengt-Eric Grans",
      "Lucia STEFANOVOVA / Jacopo BOERIS": "Lucia Stefanovova / Jacopo Boeris",
      "Lumia SASSI / Aarne SAVOLA": "Lumia Sassi / Aarne Savola"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -18638,7 +18782,8 @@
      "Sofiia BEZNOSIKOVA / Max LELEU": "Sofiia Beznosikova / Max Leleu",
      "Kristina DOBROSERDOVA / Iaroslav NECHAEV": "Kristina Dobroserdova / Ярослав Нечаев",
      "Eva SHELAEVA / Ivan SOLOVYEV": "Eva Shelaeva / Ivan Solovyev"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -18856,7 +19001,8 @@
      "Romane TELEMAQUE / Lucas COULON": "Romane Telemaque / Lucas Coulon",
      "Alia TANG / William BOCSKAY": "Alia Tang / William Bocskay",
      "Teryn KIM / Lazuli LUNE": "Teryn Kim / Lazuli Lune"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -19046,7 +19192,8 @@
      "Junfei REN / Jianing XING": "Junfei Ren / Jianing Xing",
      "Olivia Josephine SHILLING / Leo BAETEN": "Olivia Josephine Shilling / Leo Baeten",
      "Viktoryia PLASKONNAYA / Uladzislau SYTSIK": "Виктория Пласконная / Владислав Сыцик"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -19477,7 +19624,8 @@
      "Zofia BOCHENEK": "Zofia Bochenek",
      "Camila Simone AREVALO ARIAS": "Camila Simone Arevalo Arias",
      "Maria Ignacia CASTRO": "Maria Ignacia Castro"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -19775,7 +19923,8 @@
      "Michelle Edgina AXILLE": "Michelle Edgina Axille",
      "Zere SARBALINA": "Zere Sarbalina",
      "Amina ALEXEYEVA": "Amina Alexeyeva"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -20050,7 +20199,8 @@
      "Timur ADYLKHANOV": "Timur Adylkhanov",
      "Temirlan YAKIYAEV": "Temirlan Yakiyaev",
      "Klim TSOY": "Klim Tsoy"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -20293,7 +20443,8 @@
      "Isabella FLORES / Linus Colmor JEPSEN": "Isabella Flores / Linus Colmor Jepsen",
      "Olivia Josephine SHILLING / Leo BAETEN": "Olivia Josephine Shilling / Leo Baeten",
      "Viktoryia PLASKONNAYA / Uladzislau SYTSIK": "Виктория Пласконная / Владислав Сыцик"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -20540,7 +20691,8 @@
      "Maria SYCOVA": "Maria Sycova",
      "Kalina KRAKOWCZYK": "Kalina Krakowczyk",
      "Dana-Syrine CRAUSAZ": "Dana-Syrine Crausaz"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -20771,7 +20923,8 @@
      "Douglas GERBER": "Douglas Gerber",
      "Dias JIRENBAYEV": "Dias Jirenbayev",
      "Heorhi KAZLOUSKI": "Георгий Козловский"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -21064,7 +21217,8 @@
      "Yeva ALEKHNOVICH / Stanislaw BORYSEWICZ": "Yeva Alekhnovich / Stanislaw Borysewicz",
      "Mihana NAKAJIMA / Isak Bengt-Eric GRANS": "Mihana Nakajima / Isak Bengt-Eric Grans",
      "Lumia SASSI / Aarne SAVOLA": "Lumia Sassi / Aarne Savola"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -21185,7 +21339,8 @@
      "Alexander GE": "Alexander Ge",
      "Lewis MACDONALD": "Lewis Macdonald",
      "Callum GILCHRIST": "Callum Gilchrist"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -21270,7 +21425,8 @@
      "Juliet MEEK / Devin MEEK": "Juliet Meek / Devin Meek",
      "Amy RITCHIE / Mitchell DUNN": "Amy Ritchie / Mitchell Dunn",
      "Alie VIGNEAULT / Emerick RASOANAIVO": "Alie Vigneault / Emerick Rasoanaivo"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -21412,7 +21568,8 @@
      "Debora Anna COHEN / Lukas VOCHOZKA": "Debora Anna Cohen / Lukas Vochozka",
      "Jazmine DESROCHERS / Kieran THRASHER": "Jazmine Desrochers / Kieran Thrasher",
      "Sofia TRIDELLO / Alberto TOMMASI": "Sofia Tridello / Alberto Tommasi"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -21750,7 +21907,8 @@
      "Dominik DRNZIK": "Dominik Drnzik",
      "Christopher Konstantinos MANIS": "Christopher Konstantinos Manis",
      "Tim NORDIN": "Tim Nordin"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -21923,7 +22081,8 @@
      "Sara FRANZI": "Sara Franzi",
      "Oliwia STROKOSZ": "Oliwia Strokosz",
      "Lilian MUSGRAVE": "Lilian Musgrave"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -22069,7 +22228,8 @@
      "Corentin SPINAR": "Corentin Spinar",
      "Lucas FITTERER": "Lucas Fitterer",
      "Ken FITTERER": "Ken Fitterer"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -22365,7 +22525,8 @@
      "Kalina KRAKOWCZYK": "Kalina Krakowczyk",
      "Maria SYCOVA": "Maria Sycova",
      "Dana-Syrine CRAUSAZ": "Dana-Syrine Crausaz"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -22531,7 +22692,8 @@
      "Lewis MACDONALD": "Lewis Macdonald",
      "Lenny OLIVIER": "Lenny Olivier",
      "Callum GILCHRIST": "Callum Gilchrist"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -22640,7 +22802,8 @@
      "Amy RITCHIE / Mitchell DUNN": "Amy Ritchie / Mitchell Dunn",
      "Juliet MEEK / Devin MEEK": "Juliet Meek / Devin Meek",
      "Alie VIGNEAULT / Emerick RASOANAIVO": "Alie Vigneault / Emerick Rasoanaivo"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -22816,7 +22979,8 @@
      "Jazmine DESROCHERS / Kieran THRASHER": "Jazmine Desrochers / Kieran Thrasher",
      "Debora Anna COHEN / Lukas VOCHOZKA": "Debora Anna Cohen / Lukas Vochozka",
      "Sofia TRIDELLO / Alberto TOMMASI": "Sofia Tridello / Alberto Tommasi"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -23037,7 +23201,8 @@
      "Emma LYONS": "Emma Lyons",
      "Lilian MUSGRAVE": "Lilian Musgrave",
      "Oliwia STROKOSZ": "Oliwia Strokosz"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -23206,7 +23371,8 @@
      "Jakub LOFEK": "Jakub Lofek",
      "Arin YORKE": "Arin Yorke",
      "Lucas FITTERER": "Lucas Fitterer"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -23414,7 +23580,8 @@
      "Кристина КЛАБУКОВА / Михаил ХРАБРЫХ": "Кристина Клабукова / Михаил Храбрых",
      "Полина ПУНЕГОВА / Дмитрий КАШУБИН": "Полина Пунегова / Дмитрий Кашубин",
      "Ангелина СЕНЬКО / Вадим КАЙЗЕР": "Ангелина Сенько / Вадим Кайзер"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -23492,7 +23659,8 @@
      "Зоя КОВЯЗИНА / Дмитрий РОДИОНОВ": "Зоя Ковязина / Дмитрий Родионов",
      "Софья ЗВЕЗДИНА / Дмитрий ШЕРЕМЕТ": "Софья Звездина / Дмитрий Шеремет",
      "Дарья ТРЕТЬЯКОВА / Александр САМОРУКОВ": "Дарья Третьякова / Александр Саморуков"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -23713,7 +23881,8 @@
      "Кристина КЛАБУКОВА / Михаил ХРАБРЫХ": "Кристина Клабукова / Михаил Храбрых",
      "Сандра ДАВЫДЕНКО / Игнат ПАХОМОВ": "Сандра Давыденко / Игнат Пахомов",
      "Ангелина СЕНЬКО / Вадим КАЙЗЕР": "Ангелина Сенько / Вадим Кайзер"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -23814,7 +23983,8 @@
      "Зоя КОВЯЗИНА / Дмитрий РОДИОНОВ": "Зоя Ковязина / Дмитрий Родионов",
      "Софья ЗВЕЗДИНА / Дмитрий ШЕРЕМЕТ": "Софья Звездина / Дмитрий Шеремет",
      "Дарья ТРЕТЬЯКОВА / Александр САМОРУКОВ": "Дарья Третьякова / Александр Саморуков"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -24044,7 +24214,8 @@
      "Милана СОКОЛОВА": "Милана Соколова",
      "Аделина КАМАЛОВА": "Аделина Камалова",
      "Кира МОНОГАРОВА": "Кира Моногарова"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -24264,7 +24435,8 @@
      "Егор НИКИТИН": "Егор Никитин",
      "Михаил ГОЛОЯД": "Михаил Голояд",
      "Артем ЕРМОЛАЕВ": "Артем Ермолаев"
-    }
+    },
+    "basis": "judges"
    }
   },
   {
@@ -24526,7 +24698,8 @@
      "Милана ИШКИНА": "Милана Ишкина",
      "Милана СОКОЛОВА": "Милана Соколова",
      "Кира МОНОГАРОВА": "Кира Моногарова"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -24794,7 +24967,8 @@
      "Константин ВОЛКОВ": "Константин Волков",
      "Михаил ГОЛОЯД": "Михаил Голояд",
      "Артем ЕРМОЛАЕВ": "Артем Ермолаев"
-    }
+    },
+    "basis": "judges"
    },
    "facts": [
     {
@@ -24921,7 +25095,8 @@
      "Aaron KIM": "Aaron Kim",
      "Akims KIRILOVS": "Akims Kirilovs",
      "Gion SCHMID": "Gion Schmid"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -25184,7 +25359,8 @@
      "Anissa MAMAEV": "Anissa Mamaev",
      "Mila BERTSCH": "Mila Bertsch",
      "Adelina VOROTELIAK": "Adelina Voroteliak"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -25465,7 +25641,8 @@
      "Makar SUNTSEV": "Makar Suntsev",
      "Matias LINDFORS": "Matias Lindfors",
      "Patrick BLACKWELL": "Patrick Blackwell"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -25707,7 +25884,8 @@
      "Amy CUI / Jonathan ROGERS": "Amy Cui / Jonathan Rogers",
      "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
      "Vasilisa GRIGOREVA / Evgenii ARTIUSHCHENKO": "Василиса Григорьева / Евгений Артющенко"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -25934,7 +26112,8 @@
      "Anna RUIS / Andrew Cayden EVERT": "Anna Ruis / Andrew Cayden Evert",
      "Alexia KRUK / Jan EISENHABER": "Alexia Kruk / Jan Eisenhaber",
      "Seraina TSCHARNER / Laurin WIEDERKEHR": "Seraina Tscharner / Laurin Wiederkehr"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -26119,7 +26298,8 @@
      "Evgeniia NIKOLAEVA": "Evgeniia Nikolaeva",
      "Jiaying Ellyse JOHNSON": "Jiaying Ellyse Johnson",
      "Anissa MAMAEV": "Anissa Mamaev"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -26195,7 +26375,8 @@
      "Akims KIRILOVS": "Akims Kirilovs",
      "Ryszard SIUDEK": "Ryszard Siudek",
      "Gion SCHMID": "Gion Schmid"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -26585,7 +26766,8 @@
      "Alina BONILLO": "Alina Bonillo",
      "Alina GORBACHEVA": "Алина Горбачёва",
      "Lovisa AAV": "Lovisa Aav"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -26806,7 +26988,8 @@
      "Lucia STEFANOVOVA / Jacopo BOERIS": "Lucia Stefanovova / Jacopo Boeris",
      "Hana Maria ABOIAN / Daniil VESELUKHIN": "Hana Maria Aboian / Daniil Veselukhin",
      "Aneta VACLAVIKOVA / William LISSAUER": "Aneta Vaclavikova / William Lissauer"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -26976,7 +27159,8 @@
      "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Артём Ковалёв",
      "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
      "Amy CUI / Jonathan ROGERS": "Amy Cui / Jonathan Rogers"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -27173,7 +27357,8 @@
      "Vadym NOVIKOV": "Vadym Novikov",
      "Patrick BLACKWELL": "Patrick Blackwell",
      "Taira SHINOHARA": "Taira Shinohara"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -27489,7 +27674,8 @@
      "Anita OSTLUND": "Anita Ostlund",
      "Alina BONILLO": "Alina Bonillo",
      "Sophie Joline von FELTEN": "Sophie Joline von Felten"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -27616,7 +27802,8 @@
      "Beth WILLIAMS": "Beth Williams",
      "Delia ZINGONE GIANNONE": "Delia Zingone Giannone",
      "Sofiia KHODORCHUK": "Sofiia Khodorchuk"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -27747,7 +27934,8 @@
      "Grace RANSFORD": "Grace Ransford",
      "Lily SEAL": "Lily Seal",
      "Seren SHORT": "Seren Short"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -27842,7 +28030,8 @@
      "Sofia PALMARES": "Sofia Palmares",
      "KIARA PETRASOVIC": "Kiara Petrasovic",
      "Daria HOROSHKO": "Daria Horoshko"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -28039,7 +28228,8 @@
      "Sonja WERNER": "Sonja Werner",
      "Nathalie FOUQUET": "Nathalie Fouquet",
      "Ella SANDBERG": "Ella Sandberg"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -28196,7 +28386,8 @@
      "Sofiia HOLUBENKO": "Sofiia Holubenko",
      "Hermine ERLANDSSON": "Hermine Erlandsson",
      "Ebba AHLIN": "Ebba Ahlin"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -28351,7 +28542,8 @@
      "Jessica HALKYARD": "Jessica Halkyard",
      "Ella SANDBERG": "Ella Sandberg",
      "Sonja WERNER": "Sonja Werner"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -28476,7 +28668,8 @@
      "Hermine ERLANDSSON": "Hermine Erlandsson",
      "Emma KIVIOJA": "Emma Kivioja",
      "Sofiia HOLUBENKO": "Sofiia Holubenko"
-    }
+    },
+    "basis": null
    }
   },
   {
@@ -51858,11 +52051,13 @@
   "Iaroslav Nechaev": "photos/df55625c66ca78c1.jpg",
   "Kristina Fomina": "photos/8ffd50710e652da6.jpg",
   "Kristina Lisovskaja": "photos/9ffbada801bcfcff.jpg",
+  "Kristina Oblasova": "photos/e387e418344f3f72.jpg",
   "Kristina Romanko": "photos/8ddaf8de3fee67b8.jpg",
   "Kristyna Stanclova": "photos/f8eaae13ba9b2821.jpg",
   "Karel Kostron": "photos/94b0feaaf3bd4095.jpg",
   "Ksenia Konkina": "photos/7ffcbe3dc0d37748.jpg",
   "Ksenia Krouzkevitch": "photos/f00bda4efb780e8c.jpg",
+  "Ksenia Makarova": "photos/751f9eb7852fa51b.jpg",
   "Ksenia Monko": "photos/3c550ae0d432d62c.jpg",
   "Ksenia Sipunova": "photos/4d514da42630095c.jpg",
   "Miron Korjagin": "photos/1c292d4d5caa8a0d.jpg",
@@ -51941,7 +52136,7 @@
   "Louie Fukuda-wu": "photos/49f6334e08e6c6a1.jpg",
   "Louis Mallane": "photos/4bfed20ff7e4be4f.jpg",
   "Louise Bordet": "photos/5f8803417abf7c4e.jpg",
-  "Martin Chardain": "photos/b9c786fb4906628e.jpg",
+  "Martin Chardain": "photos/55aa317586fcfba1.jpg",
   "Louise Cohas-bogey": "photos/afdc42440e1b3bbc.jpg",
   "Daniil Grishin": "photos/2fb526a8706859fc.jpg",
   "Louise Dos Santos": "photos/e5ef4d237f6f0404.jpg",
@@ -52010,11 +52205,13 @@
   "Mykyta Pogorielov": "photos/cbff9c21aad09d08.jpg",
   "Mariia Seniuk": "photos/104f5c5c9e5a440a.jpg",
   "Marilena Kitromilis": "photos/93303b3f2c013a84.jpg",
+  "Marina ANISSINA": "photos/618418e34d9e790f.jpg",
   "Marina Sergeeva": "photos/c8bfb45a15f41b71.jpg",
   "Mariya Sosnovskaya": "photos/fc9c2bae6f068530.jpg",
   "Marjorie Lajoie": "photos/6298cc979222004d.jpg",
   "Zachary Lagha": "photos/bf219c5df9ff4559.jpg",
   "Mark Lysychenko": "photos/19e3b0f2db8bc41a.jpg",
+  "Mark Shakhmatov": "photos/9e656e6126742003.jpg",
   "Marketa Sukupova": "photos/05842ef80f995f6d.jpg",
   "Marta Helena Prangel": "photos/17c561abcc250f0e.jpg",
   "Martaliis Kuslap": "photos/ac1f317655199474.jpg",
@@ -52034,6 +52231,7 @@
   "Maxim Marinin": "photos/ae3cc323e68da812.jpg",
   "Maxim Miroshkin": "photos/a82e85226379c80d.jpg",
   "Maxim Naumov": "photos/044764c65f014ce4.jpg",
+  "Maxim Shabalin": "photos/753fddc4820fd01d.jpg",
   "Maxim Trankov": "photos/06eb879bf77eda14.jpg",
   "Maxine Bautista": "photos/5e8cf9e4449ab612.jpg",
   "Maxine Weatherby": "photos/9705e92c0420304f.jpg",
@@ -52059,6 +52257,7 @@
   "Michelle Edgina Axille": "photos/761b0807f691e92e.jpg",
   "Mikalai Kamianchuk": "photos/cf7fa6e540c18840.jpg",
   "Mikayel Salazaryan": "photos/484d8d09c709b96c.jpg",
+  "Mikhail AKULOV": "photos/c580be011234b2d4.jpg",
   "Mikhail KAYGORODTSEV": "photos/07cab5d4f066973e.jpg",
   "Mikhail Karaliuk": "photos/fb6e0a84e3ff98a1.jpg",
   "Mikhail Kolyada": "photos/fc0d39665284e8b2.jpg",
@@ -52152,7 +52351,7 @@
   "Olexandra Borysova": "photos/0cbdbfe9c2f65ddd.jpg",
   "Aaron Freeman": "photos/5cefadc07992f39e.jpg",
   "Oliver Praetorius": "photos/327025139e680bfd.jpg",
-  "Olivia Elin Phillips": "photos/264c00da3cfde577.jpg",
+  "Olivia Elin Phillips": "photos/36e44fa50355e83d.jpg",
   "Olivia Flores": "photos/938326843651f16c.jpg",
   "Luke Wang": "photos/f3c03fed32e00faa.jpg",
   "Olivia Josephine Shilling": "photos/cff34ecd2b94fb61.jpg",
@@ -52164,7 +52363,7 @@
   "Tim Dieck": "photos/7100ef85069cecb8.jpg",
   "Oliviia Bazlova": "photos/cd2c663e661f7e53.jpg",
   "Oliviia Zherebko": "photos/31653bbfd120ac93.jpg",
-  "Olympia Kalaganis": "photos/28c325db72535b40.jpg",
+  "Olympia Kalaganis": "photos/d7790ba04b770fdf.jpg",
   "Emile Deveau": "photos/72ae29d2440d1852.jpg",
   "Oona Brown": "photos/6bea68b07ac5d390.jpg",
   "Gage Brown": "photos/6e33b2322d37516a.jpg",
@@ -52436,6 +52635,7 @@
   "Victoria Sutton Hop": "photos/edb6cf68f8eb6006.jpg",
   "Viktoria Kavaliova": "photos/8cc7c53ee357d24b.jpg",
   "Viktoria Vasilieva": "photos/44f6e3c1f453894b.jpg",
+  "Viktoria Volchkova": "photos/c53dcd873460e1bb.jpg",
   "Viktoriia Pripa": "photos/2a941ce0872b2ccf.jpg",
   "Viktoriia Puzyreva": "photos/11e846c0f11793cf.jpg",
   "Viktoriya Vagapova": "photos/d981d3c425284fa2.jpg",
