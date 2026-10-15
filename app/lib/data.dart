@@ -525,6 +525,9 @@ class Prefs {
   static late SharedPreferences _p;
   static Future<void> init() async => _p = await SharedPreferences.getInstance();
 
+  /// Для синхронизации (sync.dart): те же preferences, отдельные ключи.
+  static SharedPreferences get raw => _p;
+
   // Уведомления: правила (строка JSON, разбирает reminders.dart) и ручные исключения.
   static String? get rulesJson => _p.getString('n.rules');
   static Future<void> setRulesJson(String v) => _p.setString('n.rules', v);

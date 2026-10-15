@@ -4,9 +4,11 @@ import 'dart:async';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 
+import 'app_icon.dart';
 import 'data.dart';
 import 'live.dart';
 import 'reminders.dart';
+import 'sync.dart';
 
 class AppState extends ChangeNotifier {
   /// Расписание под выбор человека (отслеживаемые) с итогами с табло.
@@ -26,6 +28,199 @@ class AppState extends ChangeNotifier {
   bool _followRu = Prefs.followRussians, _followBy = Prefs.followBelarusians;
   Follow get follow => Follow(_follow ?? _raw?.watchlist ?? const [], russians: _followRu, belarusians: _followBy);
 
+  // ---------------------------------------------------------------- синхронизация между устройствами
+
+  /// Сверка и отправка; сервер задаётся сборкой (sync.dart). Пока не подключено — ничего не делает.
+  late final SyncController sync = SyncController(
+    local: SyncLocal(Prefs.raw),
+    capture: _captureSync,
+    apply: _applySync,
+    onChange: () => notifyListeners(),
+  );
+
+  /// Что человек видит в «Аккаунте»: почта, код или ничего.
+  String? get syncEmail => SyncLocal(Prefs.raw).account?['email'];
+  bool get syncCodeOn => SyncLocal(Prefs.raw).code != null;
+  bool get syncOn => sync.backend != null;
+  DateTime? get syncAt => SyncLocal(Prefs.raw).lastSyncAt;
+  String? get syncProblem => sync.problem;
+  String? get syncCode => SyncLocal(Prefs.raw).code;
+
+  /// Сверить сейчас (кнопка в «Синхронизации»). Возвращает причину, если не вышло.
+  Future<String?> syncNow() async {
+    await sync.reconcile();
+    return sync.problem;
+  }
+
+  /// Пользователь поменял настройку: отметить время, сверка — чуть позже.
+  void touchSync() => unawaited(sync.touch());
+
+  Future<void> _keepSession(AccountSession s) =>
+      SyncLocal(Prefs.raw).setAccount(s.toMap());
+
+  Future<SyncDoc> _captureSync() async {
+    final icon = await AppIcons.current();
+    return SyncDoc(
+      updatedAt: SyncDoc.epoch,
+      rules: rules.toJson(),
+      forcedOn: (forcedOn.toList()..sort()),
+      forcedOff: (forcedOff.toList()..sort()),
+      follow: [...?_follow]..sort(),
+      followRussians: _followRu,
+      followBelarusians: _followBy,
+      filters: {
+        'kinds': (filters.kinds.toList()..sort()),
+        'tids': (filters.tids.toList()..sort()),
+        'athletes': (filters.athletes.toList()..sort()),
+        'levels': (filters.levels.toList()..sort()),
+        'scope': (filters.scope.toList()..sort()),
+      },
+      showDone: showDone,
+      theme: theme.name,
+      icon: icon,
+    );
+  }
+
+  /// Пришёл документ с сервера: записать в настройки устройства и перерисовать.
+  Future<void> _applySync(SyncDoc d) async {
+    await Prefs.setRulesJson(d.rules.isEmpty ? rules.toJson() : d.rules);
+    await Prefs.setForced(d.forcedOn.toSet(), d.forcedOff.toSet());
+    await Prefs.setFollow(
+      d.follow,
+      russians: d.followRussians,
+      belarusians: d.followBelarusians,
+    );
+    final f = d.filters;
+    await Prefs.setFilters(
+      Filters(
+        (f['kinds'] ?? const []).toSet(),
+        (f['tids'] ?? const []).toSet(),
+        (f['athletes'] ?? const []).toSet(),
+        levels: (f['levels'] ?? const []).toSet(),
+        scope: (f['scope'] ?? const []).toSet(),
+      ),
+    );
+    await Prefs.setShowDone(d.showDone);
+    await Prefs.setTheme(d.theme);
+    if (d.icon != (await AppIcons.current())) {
+      await AppIcons.set(d.icon);
+    }
+    _reloadFromPrefs();
+  }
+
+  /// Перечитать настройки из preferences (после сверки с сервером).
+  void _reloadFromPrefs() {
+    rules = NotifyRules.fromJson(Prefs.rulesJson);
+    forcedOn = Prefs.forcedOn;
+    forcedOff = Prefs.forcedOff;
+    filters = Filters(
+      Prefs.kinds,
+      Prefs.tids,
+      Prefs.athletes,
+      levels: Prefs.levels,
+      scope: Prefs.scope,
+    );
+    _follow = Prefs.follow;
+    _followRu = Prefs.followRussians;
+    _followBy = Prefs.followBelarusians;
+    showDone = Prefs.showDone;
+    theme = _mode(Prefs.theme);
+    if (_raw != null) data = _apply(_raw!);
+    notifyListeners();
+    unawaited(_sync());
+  }
+
+  /// Подключить сохранённый вход или код (после запуска). Уже подключённое не трогаем.
+  void _restoreSync() {
+    if (sync.backend != null || !syncConfigured) return;
+    final local = SyncLocal(Prefs.raw);
+    final acc = AccountSession.fromMap(local.account);
+    final code = local.code;
+    if (acc != null) {
+      sync.backend = AccountBackend(
+        url: syncUrl,
+        key: syncKey,
+        session: acc,
+        keep: _keepSession,
+      );
+    } else if (code != null) {
+      sync.backend = CodeBackend(url: syncUrl, key: syncKey, code: code);
+    }
+  }
+
+  /// Вход или регистрация по почте. Возвращает текст ошибки или null.
+  Future<String?> signInSync(
+    String email,
+    String password, {
+    bool create = false,
+  }) async {
+    if (!syncConfigured) return 'Сервер не подключён в этой сборке';
+    final b = AccountBackend(url: syncUrl, key: syncKey, keep: _keepSession);
+    try {
+      final s = create
+          ? await b.signUp(email, password)
+          : await b.signIn(email, password);
+      await SyncLocal(Prefs.raw).setCode(null);
+      await _keepSession(s);
+      await sync.preferRemote();
+      sync.backend = b;
+      notifyListeners();
+      await sync.reconcile();
+      return null;
+    } on SyncError catch (e) {
+      return e.message;
+    }
+  }
+
+  /// Выйти из аккаунта: на этом устройстве настройки остаются, на сервере — тоже.
+  Future<void> signOutSync() async {
+    await SyncLocal(Prefs.raw).setAccount(null);
+    sync.backend = null;
+    notifyListeners();
+  }
+
+  /// Создать код синхронизации: настройки этого устройства уходят на сервер под ним.
+  Future<String?> createSyncCode() async {
+    if (!syncConfigured) return 'Сервер не подключён в этой сборке';
+    final code = CodeBackend.newCode();
+    return _useCode(code, create: true);
+  }
+
+  /// Ввести код с другого устройства: настройки берутся с сервера.
+  Future<String?> enterSyncCode(String input) async {
+    if (!syncConfigured) return 'Сервер не подключён в этой сборке';
+    final code = CodeBackend.normalize(input);
+    if (code.length != 16) return 'Код — 16 знаков';
+    return _useCode(code, create: false);
+  }
+
+  Future<String?> _useCode(String code, {required bool create}) async {
+    final b = CodeBackend(url: syncUrl, key: syncKey, code: code);
+    try {
+      if (!create && await b.load() == null) {
+        return 'Такого кода нет на сервере';
+      }
+      await SyncLocal(Prefs.raw).setAccount(null);
+      await SyncLocal(Prefs.raw).setCode(code);
+      // чужой код — значит, настройки уже есть на сервере: берём их, свои прошлые правки не шлём
+      if (!create) await sync.preferRemote();
+      sync.backend = b;
+      notifyListeners();
+      await sync.reconcile();
+      return null;
+    } on SyncError catch (e) {
+      return e.message;
+    }
+  }
+
+  /// Отключить синхронизацию на этом устройстве (код и вход забываются, настройки остаются).
+  Future<void> disconnectSync() async {
+    await SyncLocal(Prefs.raw).setAccount(null);
+    await SyncLocal(Prefs.raw).setCode(null);
+    sync.backend = null;
+    notifyListeners();
+  }
+
   Future<void> setFollow(Set<String> v, {required bool russians, required bool belarusians}) async {
     _follow = v.toList()..sort();
     _followRu = russians;
@@ -33,6 +228,7 @@ class AppState extends ChangeNotifier {
     if (_raw != null) data = _apply(_raw!);
     notifyListeners();
     await Prefs.setFollow(_follow!, russians: russians, belarusians: belarusians);
+    touchSync();
     await _sync();
   }
 
@@ -64,6 +260,7 @@ class AppState extends ChangeNotifier {
   int get exceptions => forcedOn.length + forcedOff.length;
 
   Future<void> load() async {
+    _restoreSync();
     if (refreshing) return;
     if (data == null) {
       _raw = await Repo.cached();
@@ -90,6 +287,8 @@ class AppState extends ChangeNotifier {
     _prune();
     notifyListeners();
     await _sync();
+    // сверка с сервером — при каждом запуске и возврате в приложение (load() вызывается и там)
+    unawaited(sync.reconcile());
     // уведомления включены по умолчанию — разрешение спрашиваем один раз, при первом запуске
     if (rules.on && !Prefs.asked) {
       await Prefs.setAsked();
@@ -118,6 +317,7 @@ class AppState extends ChangeNotifier {
     rules = r;
     notifyListeners();
     await Prefs.setRulesJson(r.toJson());
+    touchSync();
     await _sync();
     if (r.on && wasOff) await askPermission();
   }
@@ -132,6 +332,7 @@ class AppState extends ChangeNotifier {
     if (on != rules.matches(s)) (on ? forcedOn : forcedOff).add(s.id);
     notifyListeners();
     await Prefs.setForced(forcedOn, forcedOff);
+    touchSync();
     await _sync();
     if (on && allowed != true) await askPermission();
   }
@@ -141,6 +342,7 @@ class AppState extends ChangeNotifier {
     forcedOff = {};
     notifyListeners();
     await Prefs.setForced(forcedOn, forcedOff);
+    touchSync();
     await _sync();
   }
 
@@ -148,18 +350,21 @@ class AppState extends ChangeNotifier {
     filters = f;
     notifyListeners();
     await Prefs.setFilters(f);
+    touchSync();
   }
 
   Future<void> setShowDone(bool v) async {
     showDone = v;
     notifyListeners();
     await Prefs.setShowDone(v);
+    touchSync();
   }
 
   Future<void> setTheme(ThemeMode m) async {
     theme = m;
     notifyListeners();
     await Prefs.setTheme(m.name);
+    touchSync();
   }
 
   static ThemeMode _mode(String s) => ThemeMode.values.firstWhere((m) => m.name == s, orElse: () => ThemeMode.system);

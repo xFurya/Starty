@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart' show CupertinoIcons;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:starty_alerts/starty_alerts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -12,6 +13,7 @@ import 'platform.dart';
 import 'reminders.dart';
 import 'sheets.dart';
 import 'state.dart';
+import 'sync.dart';
 import 'system.dart';
 import 'ui.dart';
 import 'update.dart';
@@ -207,7 +209,7 @@ class SettingsView extends StatelessWidget {
                   _Row(
                     icon: CupertinoIcons.app,
                     title: 'Значок приложения',
-                    onTap: () => openIcons(context),
+                    onTap: () => openIcons(context, state),
                     trailing: const _Chevron(),
                   ),
                 if (AppIcons.supported) const Hairline(),
@@ -236,6 +238,21 @@ class SettingsView extends StatelessWidget {
               subtitle: 'Российские и международные с россиянами и белорусами · обновляются сами',
               onTap: () => launchUrl(Uri.parse(_ios ? _ics : _google), mode: LaunchMode.externalApplication),
               trailing: const _Chevron(external: true),
+            ),
+          ),
+        ),
+
+        // ---------------------------------------------------------- аккаунт
+        const SliverToBoxAdapter(child: _Head('Аккаунт')),
+        SliverToBoxAdapter(
+          child: Plate(
+            child: _Row(
+              icon: CupertinoIcons.person_crop_circle,
+              title: 'Синхронизация',
+              subtitle: syncSummary(state),
+              subtitleColor: state.syncProblem != null ? p.live : null,
+              onTap: () => openAccount(context, state),
+              trailing: const _Chevron(),
             ),
           ),
         ),
@@ -678,8 +695,15 @@ class _SettingsPage extends StatelessWidget {
   final String title;
   final List<Widget> slivers;
   final bool dirty;
-  final Future<void> Function() onSave;
-  const _SettingsPage({required this.title, required this.slivers, required this.dirty, required this.onSave});
+
+  /// Есть — внизу панель «Отменить / Сохранить»; нет — страница действует сразу (как «Аккаунт»).
+  final Future<void> Function()? onSave;
+  const _SettingsPage({
+    required this.title,
+    required this.slivers,
+    this.dirty = false,
+    this.onSave,
+  });
 
   Future<void> _leave(BuildContext context) async {
     final nav = Navigator.of(context);
@@ -692,19 +716,26 @@ class _SettingsPage extends StatelessWidget {
       builder: (c) => AlertDialog(
         title: const Text('Изменения не сохранены'),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(c, false), child: const Text('Не сохранять')),
-          TextButton(onPressed: () => Navigator.pop(c, true), child: const Text('Сохранить')),
+          TextButton(
+            onPressed: () => Navigator.pop(c, false),
+            child: const Text('Не сохранять'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(c, true),
+            child: const Text('Сохранить'),
+          ),
         ],
       ),
     );
     if (save == null) return;
-    if (save) await onSave();
+    if (save) await onSave?.call();
     nav.pop();
   }
 
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
+    final save = onSave;
     return PopScope(
       canPop: !dirty,
       onPopInvokedWithResult: (didPop, _) {
@@ -733,10 +764,21 @@ class _SettingsPage extends StatelessWidget {
                               onPressed: () => _leave(context),
                               style: TextButton.styleFrom(
                                 foregroundColor: p.accent,
-                                padding: const EdgeInsets.symmetric(horizontal: 10),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                ),
                               ),
-                              icon: const Icon(CupertinoIcons.chevron_back, size: 18),
-                              label: const Text('Настройки', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
+                              icon: const Icon(
+                                CupertinoIcons.chevron_back,
+                                size: 18,
+                              ),
+                              label: const Text(
+                                'Настройки',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -748,34 +790,48 @@ class _SettingsPage extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              decoration: BoxDecoration(color: p.bg, border: Border(top: BorderSide(color: p.plateLine))),
-              padding: EdgeInsets.fromLTRB(16, 12, 16, 12 + MediaQuery.paddingOf(context).bottom),
-              child: LayoutBuilder(
-                builder: (context, k) => Row(
-                  children: [
-                    ConstrainedBox(
-                      constraints: BoxConstraints(maxWidth: k.maxWidth * .4),
-                      child: SheetButton(neutral: true, compact: true, label: 'Отменить', onTap: () => Navigator.of(context).pop()),
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: SheetButton(
-                        filled: true,
-                        label: 'Сохранить',
-                        onTap: dirty
-                            ? () async {
-                                final nav = Navigator.of(context);
-                                await onSave();
-                                nav.pop();
-                              }
-                            : null,
+            if (save != null)
+              Container(
+                decoration: BoxDecoration(
+                  color: p.bg,
+                  border: Border(top: BorderSide(color: p.plateLine)),
+                ),
+                padding: EdgeInsets.fromLTRB(
+                  16,
+                  12,
+                  16,
+                  12 + MediaQuery.paddingOf(context).bottom,
+                ),
+                child: LayoutBuilder(
+                  builder: (context, k) => Row(
+                    children: [
+                      ConstrainedBox(
+                        constraints: BoxConstraints(maxWidth: k.maxWidth * .4),
+                        child: SheetButton(
+                          neutral: true,
+                          compact: true,
+                          label: 'Отменить',
+                          onTap: () => Navigator.of(context).pop(),
+                        ),
                       ),
-                    ),
-                  ],
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: SheetButton(
+                          filled: true,
+                          label: 'Сохранить',
+                          onTap: dirty
+                              ? () async {
+                                  final nav = Navigator.of(context);
+                                  await save();
+                                  nav.pop();
+                                }
+                              : null,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
           ],
         ),
       ),
@@ -1053,14 +1109,347 @@ class _FollowPageState extends State<_FollowPage> {
   }
 }
 
+// ------------------------------------------------------------------ синхронизация
+
+void openAccount(BuildContext context, AppState state) {
+  Navigator.of(
+    context,
+  ).push(MaterialPageRoute<void>(builder: (_) => _AccountPage(state: state)));
+}
+
+/// Строка в настройках: что с синхронизацией на этом устройстве.
+String syncSummary(AppState st) {
+  if (!syncConfigured) return 'Сервер не подключён в этой сборке';
+  if (!st.syncOn) return 'Выключена · настройки только на этом устройстве';
+  final who = st.syncEmail ?? 'по коду';
+  if (st.syncProblem != null) return '${st.syncProblem} · $who';
+  final at = st.syncAt;
+  return at == null
+      ? 'Ждём первой сверки · $who'
+      : 'Сверено ${_when(at)} · $who';
+}
+
+/// Код группами по четыре знака — так его легче прочитать и продиктовать.
+String _groupedCode(String c) => c.length == 16
+    ? '${c.substring(0, 4)} ${c.substring(4, 8)} ${c.substring(8, 12)} ${c.substring(12)}'
+    : c;
+
+/// Синхронизация настроек между устройствами. Основной путь — почта и пароль; код — без почты.
+/// Настройки общие для всех устройств с одним входом или одним кодом.
+class _AccountPage extends StatefulWidget {
+  final AppState state;
+  const _AccountPage({required this.state});
+  @override
+  State<_AccountPage> createState() => _AccountPageState();
+}
+
+class _AccountPageState extends State<_AccountPage> {
+  final _email = TextEditingController();
+  final _pass = TextEditingController();
+  final _code = TextEditingController();
+  bool _busy = false;
+  String? _error, _info;
+
+  @override
+  void dispose() {
+    _email.dispose();
+    _pass.dispose();
+    _code.dispose();
+    super.dispose();
+  }
+
+  /// Одно действие с сервером. Пока идёт — кнопки неактивны; итог или причина — под разделами.
+  Future<void> _act(Future<String?> Function() action) async {
+    setState(() {
+      _busy = true;
+      _error = null;
+      _info = null;
+    });
+    final msg = await action();
+    if (!mounted) return;
+    final hint = msg == kConfirmMail;
+    setState(() {
+      _busy = false;
+      _error = hint ? null : msg;
+      _info = hint ? msg : null;
+    });
+  }
+
+  Future<void> _mail({required bool create}) async {
+    final mail = _email.text.trim();
+    if (!mail.contains('@')) {
+      setState(() => _error = 'Введите почту');
+      return;
+    }
+    if (_pass.text.isEmpty) {
+      setState(() => _error = 'Введите пароль');
+      return;
+    }
+    await _act(() => widget.state.signInSync(mail, _pass.text, create: create));
+  }
+
+  void _copy(String code) {
+    Clipboard.setData(ClipboardData(text: code));
+    setState(() => _info = 'Код скопирован');
+  }
+
+  InputDecoration _field(Palette p, String hint) => InputDecoration(
+    hintText: hint,
+    hintStyle: TextStyle(color: p.ink2),
+    filled: true,
+    fillColor: p.bg,
+    contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(14),
+      borderSide: BorderSide(color: p.control),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(14),
+      borderSide: BorderSide(color: p.accent, width: 1.4),
+    ),
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return ListenableBuilder(
+      listenable: widget.state,
+      builder: (context, _) {
+        final p = Palette.of(context);
+        final st = widget.state;
+        final code = st.syncCode;
+        final connected = st.syncOn;
+        return _SettingsPage(
+          title: 'Синхронизация',
+          slivers: [
+            if (!syncConfigured) ...[
+              const SliverToBoxAdapter(child: _Head('Сервер')),
+              SliverToBoxAdapter(
+                child: Plate(
+                  child: _Row(
+                    icon: CupertinoIcons.exclamationmark_circle,
+                    iconColor: p.live,
+                    title: 'Сервер не подключён',
+                    subtitle: 'В этой сборке синхронизация не настроена. Настройки хранятся только на этом устройстве.',
+                  ),
+                ),
+              ),
+            ] else if (connected) ...[
+              const SliverToBoxAdapter(child: _Head('Состояние')),
+              SliverToBoxAdapter(
+                child: Plate(
+                  child: _Row(
+                    icon: st.syncProblem == null
+                        ? CupertinoIcons.checkmark_circle
+                        : CupertinoIcons.exclamationmark_circle,
+                    iconColor: st.syncProblem == null ? null : p.live,
+                    title: st.syncProblem ?? 'Синхронизация работает',
+                    subtitle: st.syncAt == null
+                        ? 'Первой сверки ещё не было'
+                        : 'Последняя сверка: ${_when(st.syncAt!)}',
+                    subtitleColor: st.syncProblem == null ? null : p.live,
+                    action: _busy ? null : 'Сверить',
+                    onAction: _busy ? null : () => _act(st.syncNow),
+                  ),
+                ),
+              ),
+              if (st.syncEmail != null) ...[
+                const SliverToBoxAdapter(child: _Head('Аккаунт')),
+                SliverToBoxAdapter(
+                  child: Plate(
+                    child: Column(
+                      children: [
+                        _Row(
+                          icon: CupertinoIcons.mail,
+                          title: st.syncEmail!,
+                          subtitle:
+                              'Настройки одни на все устройства, где вы вошли',
+                        ),
+                        const Hairline(),
+                        _Row(
+                          icon: CupertinoIcons.square_arrow_right,
+                          title: 'Выйти с этого устройства',
+                          subtitle: 'Настройки здесь останутся, на других устройствах не изменятся',
+                          onTap: _busy
+                              ? null
+                              : () => _act(() async {
+                                  await st.signOutSync();
+                                  return null;
+                                }),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ] else if (code != null) ...[
+                const SliverToBoxAdapter(child: _Head('Код синхронизации')),
+                SliverToBoxAdapter(
+                  child: Plate(
+                    child: Column(
+                      children: [
+                        _Row(
+                          icon: CupertinoIcons.number,
+                          title: _groupedCode(code),
+                          subtitle: 'Введите его на другом устройстве, и настройки станут общими. Код открывает настройки: не отправляйте его посторонним',
+                          action: 'Копировать',
+                          onAction: () => _copy(code),
+                        ),
+                        const Hairline(),
+                        _Row(
+                          icon: CupertinoIcons.square_arrow_right,
+                          title: 'Отключить на этом устройстве',
+                          subtitle: 'Код здесь забудется, настройки останутся',
+                          onTap: _busy
+                              ? null
+                              : () => _act(() async {
+                                  await st.disconnectSync();
+                                  return null;
+                                }),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ] else ...[
+              const SliverToBoxAdapter(child: _Head('Аккаунт')),
+              SliverToBoxAdapter(
+                child: Plate(
+                  child: Padding(
+                    padding: const EdgeInsets.all(14),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Text(
+                          'Почта и пароль. Настройки одни на все устройства, где вы вошли.',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: p.ink2,
+                            height: 1.35,
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        TextField(
+                          controller: _email,
+                          keyboardType: TextInputType.emailAddress,
+                          autocorrect: false,
+                          enableSuggestions: false,
+                          style: TextStyle(fontSize: 15.5, color: p.ink),
+                          decoration: _field(p, 'Почта'),
+                        ),
+                        const SizedBox(height: 8),
+                        TextField(
+                          controller: _pass,
+                          obscureText: true,
+                          autocorrect: false,
+                          enableSuggestions: false,
+                          style: TextStyle(fontSize: 15.5, color: p.ink),
+                          decoration: _field(p, 'Пароль'),
+                        ),
+                        const SizedBox(height: 12),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: SheetButton(
+                                filled: true,
+                                label: 'Войти',
+                                onTap: _busy
+                                    ? null
+                                    : () => _mail(create: false),
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: SheetButton(
+                                neutral: true,
+                                label: 'Регистрация',
+                                onTap: _busy ? null : () => _mail(create: true),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              const SliverToBoxAdapter(child: _Head('Код синхронизации')),
+              SliverToBoxAdapter(
+                child: Plate(
+                  child: Column(
+                    children: [
+                      _Row(
+                        icon: CupertinoIcons.plus_circle,
+                        title: 'Создать код',
+                        subtitle: 'Без почты. Настройки этого устройства уйдут на сервер под новым кодом',
+                        onTap: _busy ? null : () => _act(st.createSyncCode),
+                      ),
+                      const Hairline(),
+                      Padding(
+                        padding: const EdgeInsets.all(14),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: TextField(
+                                controller: _code,
+                                textCapitalization:
+                                    TextCapitalization.characters,
+                                autocorrect: false,
+                                enableSuggestions: false,
+                                style: TextStyle(fontSize: 15.5, color: p.ink),
+                                decoration: _field(
+                                  p,
+                                  'Код с другого устройства',
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            SheetButton(
+                              compact: true,
+                              label: 'Ввести',
+                              onTap: _busy
+                                  ? null
+                                  : () => _act(
+                                      () => st.enterSyncCode(_code.text),
+                                    ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+            if (_busy || _error != null || _info != null)
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 12, 20, 0),
+                  child: Text(
+                    _busy ? 'Связываемся с сервером…' : (_error ?? _info!),
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: _error != null ? p.live : p.ink2,
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        );
+      },
+    );
+  }
+}
+
 // ------------------------------------------------------------------ значок приложения
 
-void openIcons(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => const _IconPage()));
+void openIcons(BuildContext context, AppState state) {
+  Navigator.of(context)
+      .push(MaterialPageRoute<void>(builder: (_) => _IconPage(state: state)));
 }
 
 class _IconPage extends StatefulWidget {
-  const _IconPage();
+  final AppState state;
+  const _IconPage({required this.state});
   @override
   State<_IconPage> createState() => _IconPageState();
 }
@@ -1129,6 +1518,7 @@ class _IconPageState extends State<_IconPage> {
       dirty: pick != null && pick != was,
       onSave: () async {
         final ok = await AppIcons.set(pick!);
+        if (ok) widget.state.touchSync();
         if (!ok && mounted) setState(() => error = 'Система не сменила значок');
       },
       slivers: [
