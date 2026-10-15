@@ -201,7 +201,7 @@ def parse_starting_order(url, page=None):
         if w and len([v for v in vals if v]) <= 2:
             warmup = int(w.group(1))
             continue
-        if not header and any(h in vals for h in ("StN.", "Ст.№", "Ст. №", "СН.", "Pl.", "Мес.", "Место", "М.")):
+        if not header and any(h in vals for h in STARTING_HEADS):
             header = vals
             continue
         if header is None:
@@ -240,10 +240,17 @@ def _nation_from(vals):
 # ---------------------------------------------------------------- протоколы
 
 RESULT_HEADS = ("Pl.", "Pl", "Мес.", "Место", "Мест.", "М.", "FPl.", "FPl")
+# шапка стартового листа: стартовый номер в первой колонке (или место, пока сегмент не прошёл)
+STARTING_HEADS = ("StN.", "Ст.№", "Ст. №", "СН.", "Pl.", "Мес.", "Место", "М.", "FPl.", "FPl")
 NAME_HEADS = ("Name", "Имя", "Спортсмен", "Участник")
 NATION_HEADS = ("Nation", "Nat.", "Регион", "Страна", "Нация")
+NO_HEADS = ("СН.", "СН", "StN.", "StN", "Ст.№", "Ст. №", "Стартовый номер")
 POINTS_RE = re.compile(r"\d{1,3}\.\d{2}")
 NATION_RE = re.compile(r"[A-ZА-ЯЁ]{2,4}\d?(?:\s*/\s*[A-ZА-ЯЁ]{2,4}\d?)?")
+NUM_RE = re.compile(r"-?\d{1,3}\.\d{2}")  # баллы с минусом (снижение)
+STATUS_RE = re.compile(r"[A-Za-z]{2,4}")  # WD, DNS, DSQ, Ret, NQD — в колонке места вместо числа
+SEG_POINTS = ("TSS", "Сумма", "Points", "Баллы")
+CAT_POINTS = ("Points", "Баллы", "Сумма", "Total", "TSS")
 
 
 def _col(header, names, prefix=False):
@@ -283,6 +290,19 @@ def _has_components(header):
     return any(h.strip().startswith(("TES", "PCS")) for h in header)
 
 
+def _tables(page):
+    """Таблицы протокола на странице: [(шапка, [ячейки строк ниже шапки])].
+    Таблица начинается с шапки, где первая колонка — место, а есть колонка имени."""
+    tables = []
+    for cells, _ in _rows(page, flat=True):
+        first = next((c for c in cells if c), "")
+        if first in RESULT_HEADS and _col(cells, NAME_HEADS) is not None:
+            tables.append((cells, []))
+        elif tables:
+            tables[-1][1].append(cells)
+    return tables
+
+
 def _result_rows(page, points_heads, segment):
     """Таблица протокола → (шапка, [{place, name, nation, points, cells}]).
     Шапка None — страница не в режиме результатов (стартовый лист).
@@ -290,29 +310,22 @@ def _result_rows(page, points_heads, segment):
     Во время старта на странице бывает несколько таблиц с одной и той же шапкой «Pl.»:
     сам сегмент и общий зачёт (короткая + произвольная). Берётся одна: у сегмента
     (segment=True) — с TES/PCS, у итога — без них; если такой нет — первая. Один человек
-    в таблице — один раз."""
-    tables = []  # [(шапка, [строки])]
-    for cells, _ in _rows(page, flat=True):
-        first = next((c for c in cells if c), "")
-        if first in RESULT_HEADS and _col(cells, NAME_HEADS) is not None:
-            tables.append((cells, []))
-            continue
-        if not tables:
-            continue
-        header, rows = tables[-1]
-        r = _row_result(cells, header, points_heads)
-        if r:
-            rows.append(r)
-    if not tables:
+    на одном месте — один раз: однофамильцы с разными местами не схлопываются."""
+    parsed = []  # [(шапка, [строки с местом и баллами])]
+    for header, cells_rows in _tables(page):
+        rows = [r for r in (_row_result(c, header, points_heads) for c in cells_rows) if r]
+        parsed.append((header, rows))
+    if not parsed:
         return None, []
-    pick = next((t for t in tables if t[1] and _has_components(t[0]) == segment), None) \
-        or next((t for t in tables if t[1]), tables[0])
+    pick = next((t for t in parsed if t[1] and _has_components(t[0]) == segment), None) \
+        or next((t for t in parsed if t[1]), parsed[0])
     header, rows = pick
     seen, out = set(), []
     for r in rows:
-        if r["name"] in seen:
+        key = (r["place"], r["name"])
+        if key in seen:
             continue
-        seen.add(r["name"])
+        seen.add(key)
         out.append(r)
     return header, out
 
@@ -347,6 +360,143 @@ def parse_category_results(url):
             break
     return {"rows": [{k: r[k] for k in ("place", "name", "nation", "points")} for r in rows],
             "complete": complete}
+
+
+def nation_of(text):
+    """Колонка «Регион» или «Нация» как есть: пробелы сведены к одному, «МОС / СПБ» остаётся
+    с пробелами, как на табло. Не похоже на код или регион — пустая строка (клуб, мусор)."""
+    s = re.sub(r"\s*/\s*", " / ", re.sub(r"\s+", " ", text or "").strip())
+    return s if NATION_RE.fullmatch(s) else ""
+
+
+def _num(raw, pattern=NUM_RE):
+    """Значение баллов как строка NN.NN, иначе None (запятая, текст, пусто)."""
+    return raw if raw and pattern.fullmatch(raw) else None
+
+
+def parse_protocol_row(cells, header, points_heads):
+    """Строка таблицы протокола → (строка, причина). Строка None — не участник.
+
+    Участник — строка, совпадающая с шапкой по числу колонок, с именем и местом (число или
+    статус из колонки места: WD, NQD). Легенда («Обозн.», «SK — Мастерство катания») и
+    разделители по числу колонок не совпадают с шапкой и отбрасываются. Причина «points» —
+    баллы похожи на число, но записаны с запятой: points = None, строка учитывается в skipped."""
+    if len(cells) != len(header):
+        return None, None
+    ni = _col(header, NAME_HEADS)
+    name = cells[ni] if ni is not None else ""
+    if not name:
+        return None, None
+    pi0 = _col(header, RESULT_HEADS)
+    place_cell = cells[pi0] if pi0 is not None else ""
+    place = None
+    status = None
+    if re.fullmatch(r"\d{1,3}", place_cell) and 1 <= int(place_cell) <= 999:
+        place = int(place_cell)
+    elif STATUS_RE.fullmatch(place_cell):
+        status = place_cell
+    if place is None and status is None:
+        return None, None
+
+    no = None
+    noi = _col(header, NO_HEADS)
+    if noi is not None:
+        m = re.fullmatch(r"#?(\d{1,3})", cells[noi])
+        if m:
+            no = int(m.group(1))
+
+    ci = _col(header, NATION_HEADS)
+    nation = nation_of(cells[ci]) if ci is not None else ""
+
+    def col(names, pattern=NUM_RE):
+        j = _col(header, names, prefix=True)
+        return _num(cells[j], pattern) if j is not None else None
+
+    pi = _col(header, points_heads, prefix=True)
+    raw_points = cells[pi] if pi is not None else ""
+    points = _num(raw_points, POINTS_RE)
+    reason = "points" if raw_points and points is None else None
+    row = {"place": place, "status": status, "no": no, "name": name, "nation": nation,
+           "points": points, "tes": col(("TES",)), "pcs": col(("PCS",)),
+           "ded": col(("Снижение", "Ded"))}
+    return row, reason
+
+
+def _protocol(page, points_heads, segment):
+    """Общий разбор таблицы протокола: {table, header, rows, kept, skipped, reasons}.
+    kept — ячейки строк, по порядку совпадающие с rows (нужны итогу вида для колонок)."""
+    tables = [t for t in _tables(page) if t[1]]
+    out = {"table": "results", "header": None, "rows": [], "kept": [], "skipped": 0, "reasons": []}
+    if not tables:
+        starting = any(c in STARTING_HEADS for cells, _ in _rows(page, flat=True) for c in cells)
+        out["table"] = "starting" if starting else "empty"
+        return out
+    matching = [t for t in tables if _has_components(t[0]) == segment]
+    if len(matching) == 1:
+        header, cells_rows = matching[0]
+    elif len(tables) == 1:
+        header, cells_rows = tables[0]
+    else:
+        out["table"] = "format"
+        return out
+    out["header"] = header
+    seen = set()
+    for cells in cells_rows:
+        row, reason = parse_protocol_row(cells, header, points_heads)
+        if row is None:
+            continue
+        key = (row["place"] if row["place"] is not None else row["status"], row["name"])
+        if key in seen:
+            out["skipped"] += 1
+            out["reasons"].append("duplicate")
+            continue
+        seen.add(key)
+        if reason:
+            out["skipped"] += 1
+            out["reasons"].append(reason)
+        row["i"] = len(out["rows"]) + 1
+        out["rows"].append(row)
+        out["kept"].append(cells)
+    if not out["rows"]:
+        # шапка есть, участников с местом или статусом нет: стартовый лист до старта
+        out["table"] = "starting" if any(c in STARTING_HEADS for c in header) else "empty"
+    return out
+
+
+def parse_segment_protocol(page):
+    """Протокол сегмента (SEGnnn.htm) для файла: {table, rows, skipped, reasons}.
+    table — results, starting (стартовый лист, результатов нет), empty (страница без таблицы
+    результатов), format (таблицы есть, одну выбрать нельзя). rows — участники по порядку
+    таблицы, i с 1; place и status — из колонки места; points, tes, pcs, ded — «NN.NN» или None.
+    skipped — строки участников, которые не разобрать (запятая в баллах, повтор пары)."""
+    out = _protocol(page, SEG_POINTS, True)
+    return {k: out[k] for k in ("table", "rows", "skipped", "reasons")}
+
+
+def parse_category_protocol(page):
+    """Итог вида (CATnnnRS.htm) для файла: {table, cols, colsKind, rows, complete, skipped, reasons}.
+    cols — колонки после баллов, как на табло (КП, ПП), с исправленной кириллицей. У строк
+    parts — значения этих колонок (строка) или None. complete — у трёх первых мест заполнены
+    все колонки (эвристика parse_category_results). colsKind — places, если значения целые."""
+    out = _protocol(page, CAT_POINTS, False)
+    header = out["header"] or []
+    pi = _col(header, CAT_POINTS, prefix=True)
+    seg_cols = [j for j in range(pi + 1, len(header)) if header[j]] if pi is not None else []
+    rows = out["rows"]
+    for row, cells in zip(rows, out["kept"]):
+        row["parts"] = [cells[j] or None for j in seg_cols]
+    values = [p for r in rows for p in r["parts"] if p]
+    if values and all(re.fullmatch(r"\d{1,3}", v) for v in values):
+        colskind = "places"
+    elif values and all(POINTS_RE.fullmatch(v) for v in values):
+        colskind = "points"
+    else:
+        colskind = "unknown"
+    ranked = sorted((r for r in rows if r["place"] is not None), key=lambda r: r["place"])
+    complete = bool(ranked) and all(all(r["parts"]) for r in ranked[:3])
+    return {"table": out["table"], "cols": [fix_script(header[j]) for j in seg_cols],
+            "colsKind": colskind, "rows": rows, "complete": complete,
+            "skipped": out["skipped"], "reasons": out["reasons"]}
 
 
 def parse_entries(url):
@@ -461,3 +611,47 @@ def _element(line):
     judges = [int(v) for v in nums[2:-1] if re.fullmatch(r"-?\d", v)]
     return {"code": code, "info": " ".join(info), "base": base, "goe": goe,
             "judges": judges, "score": score}
+
+
+# ---------------------------------------------------------------- PDF оценок (ФФКМ «Scores»)
+
+# «ДЕТАЛИЗАЦИЯ СУДЕЙСКИХ ОЦЕНОК» (ФФКМ): строка участника — место, имя, стартовый номер,
+# общая сумма за вид, элементы, компоненты, снижения. Строки элементов и компонентов сюда не
+# попадают: у них в конце нет четырёх чисел с точкой подряд.
+JUDGES_PDF_ROW = re.compile(
+    r"^\s{0,12}(\d{1,2})\s+(\S.*?\S)\s+(\d{1,3})\s+(\d{1,3}\.\d{2})\s+(\d{1,3}\.\d{2})\s+"
+    r"(\d{1,3}\.\d{2})\s+(-?\d{1,3}\.\d{2})\s*$")
+
+
+def parse_judges_pdf(text):
+    """Строки участников PDF оценок (pdftotext -layout): [{place, name, no, points, tes, pcs, ded, i}].
+    points — общая сумма за вид, tes — за элементы, pcs — за компоненты, ded — снижения (модуль).
+    Места в таблице уникальны; повтор места — строка пропускается (как в протоколе табло)."""
+    rows, seen = [], set()
+    for line in text.splitlines():
+        m = JUDGES_PDF_ROW.match(line)
+        if not m:
+            continue
+        place = int(m.group(1))
+        if place in seen:
+            continue
+        seen.add(place)
+        rows.append({"place": place, "name": m.group(2), "no": int(m.group(3)),
+                     "points": m.group(4), "tes": m.group(5), "pcs": m.group(6),
+                     # снижение как модуль, как в колонке «Снижение -» табло (в PDF — со знаком минус)
+                     "ded": m.group(7).lstrip("-"), "i": len(rows) + 1})
+    return rows
+
+
+def _words(s):
+    return set(re.findall(r"[а-яёa-z0-9]+(?:-[а-яёa-z0-9]+)*", fix_script(s).lower()))
+
+
+def judges_header_ok(text, category_name, segment_name):
+    """Заголовок PDF оценок совпадает с категорией и сегментом: все слова названия категории
+    (вид, пол, уровень, например «Одиночное катание, КМС, Юноши, Юниоры») и все слова названия
+    сегмента («Короткая программа») есть в первых 1500 символах. Мужской и женский КП ФФКМ
+    ссылаются на один файл: несовпадение — не наш файл, оценки чужие."""
+    head = _words(text[:1500])
+    cat, seg = _words(category_name), _words(segment_name)
+    return bool(cat) and bool(seg) and cat <= head and seg <= head

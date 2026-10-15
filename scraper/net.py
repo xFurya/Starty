@@ -6,6 +6,7 @@
 import hashlib
 import json
 import os
+import socket
 import subprocess
 import re
 import tempfile
@@ -29,7 +30,27 @@ _CACHE = os.environ.get("STARTY_CACHE")
 
 
 class FetchError(Exception):
-    pass
+    """Табло или сеть не ответили нужным образом.
+
+    kind: http (код в status), timeout (таймаут), net (нет связи, обрыв), format (ответ пришёл,
+    но это не то, что ждём: не PDF, pdftotext не разобрал). status — HTTP-код или None.
+    Текст сообщения тот же, что и раньше."""
+
+    def __init__(self, message, kind="net", status=None):
+        super().__init__(message)
+        self.kind = kind
+        self.status = status
+
+
+def _error_kind(exc):
+    """(kind, status) для исключения из urlopen."""
+    if isinstance(exc, urllib.error.HTTPError):
+        return "http", exc.code
+    if isinstance(exc, (socket.timeout, TimeoutError)):
+        return "timeout", None
+    if isinstance(exc, urllib.error.URLError) and isinstance(exc.reason, (socket.timeout, TimeoutError)):
+        return "timeout", None
+    return "net", None
 
 
 def _cache_path(key):
@@ -88,7 +109,8 @@ def fetch(url, data=None, headers=None, timeout=30, tries=3, binary=False):
         except Exception as e:  # сеть, таймаут, обрыв
             last = e
         time.sleep(1.5 * (attempt + 1))
-    raise FetchError(f"{url}: {last}")
+    kind, status = _error_kind(last)
+    raise FetchError(f"{url}: {last}", kind=kind, status=status)
 
 
 _last_hit = {}
@@ -142,7 +164,7 @@ def pdf_text(url):
     """Скачивает PDF и возвращает текст с сохранением раскладки (pdftotext -layout)."""
     raw = fetch(url, binary=True, timeout=45)
     if not raw.startswith(b"%PDF"):
-        raise FetchError(f"{url}: не PDF")
+        raise FetchError(f"{url}: не PDF", kind="format")
     with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as f:
         f.write(raw)
         path = f.name
@@ -150,7 +172,7 @@ def pdf_text(url):
         out = subprocess.run(["pdftotext", "-layout", path, "-"],
                              capture_output=True, timeout=60)
         if out.returncode != 0:
-            raise FetchError(f"{url}: pdftotext {out.returncode}")
+            raise FetchError(f"{url}: pdftotext {out.returncode}", kind="format")
         return out.stdout.decode("utf-8", errors="replace")
     finally:
         os.unlink(path)

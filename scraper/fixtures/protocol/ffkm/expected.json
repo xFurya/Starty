@@ -105,6 +105,12 @@
  },
  "segments": {
   "SEG001.htm": {
+   "protocol": {
+    "reasons": [],
+    "rows": [],
+    "skipped": 0,
+    "table": "starting"
+   },
    "results": null,
    "starting": [
     {
@@ -398,10 +404,22 @@
    ]
   },
   "SEG002.htm": {
+   "protocol": {
+    "reasons": [],
+    "rows": [],
+    "skipped": 0,
+    "table": "empty"
+   },
    "results": null,
    "starting": []
   },
   "SEG003.htm": {
+   "protocol": {
+    "reasons": [],
+    "rows": [],
+    "skipped": 0,
+    "table": "starting"
+   },
    "results": null,
    "starting": [
     {
@@ -623,6 +641,109 @@
    ]
   },
   "SEG005.htm": {
+   "protocol": {
+    "reasons": [],
+    "rows": [
+     {
+      "ded": "0.00",
+      "i": 1,
+      "name": "Таисия Денисовна ГУСЕВА / Даниил Дмитриевич ОВЧИННИКОВ",
+      "nation": "",
+      "no": 8,
+      "pcs": "30.14",
+      "place": 1,
+      "points": "71.49",
+      "status": null,
+      "tes": "41.35"
+     },
+     {
+      "ded": "0.00",
+      "i": 2,
+      "name": "Полина Ильинична САЖИНА / Алексей Андреевич БЕЛКИН",
+      "nation": "",
+      "no": 1,
+      "pcs": "27.93",
+      "place": 2,
+      "points": "65.55",
+      "status": null,
+      "tes": "37.62"
+     },
+     {
+      "ded": "0.00",
+      "i": 3,
+      "name": "Зоя Дмитриевна КОВЯЗИНА / Дмитрий Антонович РОДИОНОВ",
+      "nation": "",
+      "no": 4,
+      "pcs": "27.15",
+      "place": 3,
+      "points": "63.24",
+      "status": null,
+      "tes": "36.09"
+     },
+     {
+      "ded": "0.00",
+      "i": 4,
+      "name": "Арина Дмитриевна ПАРСЕГОВА / Матвей Андреевич БОГДАНОВ",
+      "nation": "",
+      "no": 7,
+      "pcs": "27.03",
+      "place": 4,
+      "points": "61.02",
+      "status": null,
+      "tes": "33.99"
+     },
+     {
+      "ded": "1.00",
+      "i": 5,
+      "name": "Дарья Александровна САМОХВАЛОВА / Роман Сергеевич РОМАНЫЧЕВ",
+      "nation": "",
+      "no": 3,
+      "pcs": "23.60",
+      "place": 5,
+      "points": "53.58",
+      "status": null,
+      "tes": "30.98"
+     },
+     {
+      "ded": "0.00",
+      "i": 6,
+      "name": "Александра Юрьевна УКОЛОВА / Роман Алексеевич ОРЛОВ",
+      "nation": "",
+      "no": 5,
+      "pcs": "21.39",
+      "place": 6,
+      "points": "45.45",
+      "status": null,
+      "tes": "24.06"
+     },
+     {
+      "ded": "1.00",
+      "i": 7,
+      "name": "Ангелина Дмитриевна КУЛАГИНА / Максим Ринатович ИХСАНОВ",
+      "nation": "",
+      "no": 2,
+      "pcs": "20.84",
+      "place": 7,
+      "points": "43.88",
+      "status": null,
+      "tes": "24.04"
+     },
+     {
+      "ded": "1.00",
+      "i": 8,
+      "name": "Кира Александровна МАРКОВА / Илья Александрович КОВАЛЬЧУК",
+      "nation": "",
+      "no": 6,
+      "pcs": "19.07",
+      "place": 8,
+      "points": "39.17",
+      "status": null,
+      "tes": "21.10"
+     }
+    ],
+    "skipped": 0,
+    "table": "results"
+   },
    "results": [
     {
      "name": "Таисия Денисовна ГУСЕВА / Даниил Дмитриевич ОВЧИННИКОВ",
@@ -733,6 +854,301 @@
    ]
   },
   "SEG007.htm": {
+   "protocol": {
+    "reasons": [],
+    "rows": [
+     {
+      "ded": "0.00",
+      "i": 1,
+      "name": "Анна Павловна БИЛИБИНА / Дмитрий Владимирович КАШАЕВ",
+      "nation": "",
+      "no": 6,
+      "pcs": "28.59",
+      "place": 1,
+      "points": "66.36",
+      "status": null,
+      "tes": "37.77"
+     },
+     {
+      "ded": "0.00",
+      "i": 2,
+      "name": "Полина Андреевна ЖАРОВА / Алексей Игоревич СТОЛЯРОВ",
+      "nation": "",
+      "no": 12,
+      "pcs": "28.26",
+      "place": 2,
+      "points": "65.28",
+      "status": null,
+      "tes": "37.02"
+     },
+     {
+      "ded": "0.00",
+      "i": 3,
+      "name": "Евдокия Максимовна КРЮЧКОВА / Артем Игоревич МЯКИШЕВ",
+      "nation": "",
+      "no": 24,
+      "pcs": "28.15",
+      "place": 3,
+      "points": "62.45",
+      "status": null,
+      "tes": "34.30"
+     },
+     {
+      "ded": "0.00",
+      "i": 4,
+      "name": "Елизавета Андреевна РОСТИЛОВА / Денис Владимирович АУРОВ",
+      "nation": "",
+      "no": 8,
+      "pcs": "26.04",
+      "place": 4,
+      "points": "61.01",
+      "status": null,
+      "tes": "34.97"
+     },
+     {
+      "ded": "0.00",
+      "i": 5,
+      "name": "Эвелина Артуровна ВАЛИЕВА / Даниил Германович ЛАВРИНЕНКО",
+      "nation": "",
+      "no": 23,
+      "pcs": "26.37",
+      "place": 5,
+      "points": "60.80",
+      "status": null,
+      "tes": "34.43"
+     },
+     {
+      "ded": "0.00",
+      "i": 6,
+      "name": "София Ивановна ЗАГРЕБАЕВА / Иван Александрович ТЕРТЫШНИКОВ",
+      "nation": "",
+      "no": 19,
+      "pcs": "26.37",
+      "place": 6,
+      "points": "59.36",
+      "status": null,
+      "tes": "32.99"
+     },
+     {
+      "ded": "0.00",
+      "i": 7,
+      "name": "Алиса Максимовна КРЕМЕР / Илья Валерьевич ЦЕЛКОВСКИЙ",
+      "nation": "",
+      "no": 4,
+      "pcs": "26.28",
+      "place": 7,
+      "points": "59.34",
+      "status": null,
+      "tes": "33.06"
+     },
+     {
+      "ded": "0.00",
+      "i": 8,
+      "name": "Софья Олеговна ГРАБЧАК / Максим Игоревич ПОЛТОРАК",
+      "nation": "",
+      "no": 5,
+      "pcs": "25.28",
+      "place": 8,
+      "points": "58.60",
+      "status": null,
+      "tes": "33.32"
+     },
+     {
+      "ded": "0.00",
+      "i": 9,
+      "name": "Арина Сергеевна НОВИКОВА / Кирилл Вадимович ЛИХАЧЕВ",
+      "nation": "",
+      "no": 11,
+      "pcs": "24.93",
+      "place": 9,
+      "points": "57.91",
+      "status": null,
+      "tes": "32.98"
+     },
+     {
+      "ded": "0.00",
+      "i": 10,
+      "name": "Устинья Романовна СМИРНОВА / Матвей Вадимович ШИПИЛОВ",
+      "nation": "",
+      "no": 17,
+      "pcs": "25.50",
+      "place": 10,
+      "points": "57.75",
+      "status": null,
+      "tes": "32.25"
+     },
+     {
+      "ded": "0.00",
+      "i": 11,
+      "name": "Сандра Руслановна ДАВЫДЕНКО / Игнат Максимович ПАХОМОВ",
+      "nation": "",
+      "no": 20,
+      "pcs": "25.04",
+      "place": 11,
+      "points": "56.70",
+      "status": null,
+      "tes": "31.66"
+     },
+     {
+      "ded": "0.00",
+      "i": 12,
+      "name": "Александра Денисовна ВАСЕНЕВА / Максим Игоревич СИТЬКО",
+      "nation": "",
+      "no": 15,
+      "pcs": "24.05",
+      "place": 12,
+      "points": "54.93",
+      "status": null,
+      "tes": "30.88"
+     },
+     {
+      "ded": "0.00",
+      "i": 13,
+      "name": "Софья Кареновна ГОНЧАРОВА / Александр Андреевич СИНЦОВ",
+      "nation": "",
+      "no": 2,
+      "pcs": "23.71",
+      "place": 13,
+      "points": "54.31",
+      "status": null,
+      "tes": "30.60"
+     },
+     {
+      "ded": "1.00",
+      "i": 14,
+      "name": "Полина Владимировна ПУНЕГОВА / Дмитрий Александрович КАШУБИН",
+      "nation": "",
+      "no": 21,
+      "pcs": "23.50",
+      "place": 14,
+      "points": "53.38",
+      "status": null,
+      "tes": "30.88"
+     },
+     {
+      "ded": "0.00",
+      "i": 15,
+      "name": "Арина Андреевна ВЛАСОВА / Денис Дмитриевич ГОРБУШИН",
+      "nation": "",
+      "no": 9,
+      "pcs": "24.49",
+      "place": 15,
+      "points": "53.28",
+      "status": null,
+      "tes": "28.79"
+     },
+     {
+      "ded": "0.00",
+      "i": 16,
+      "name": "София Владиславовна ВАРЕНОВА / Сергей Павлович КУЗЛЯКИН",
+      "nation": "",
+      "no": 18,
+      "pcs": "24.38",
+      "place": 16,
+      "points": "52.78",
+      "status": null,
+      "tes": "28.40"
+     },
+     {
+      "ded": "0.00",
+      "i": 17,
+      "name": "Екатерина Михайловна СТАРОСТИНА / Тимофей Витальевич СТОЛЯРЕНКО",
+      "nation": "",
+      "no": 13,
+      "pcs": "22.40",
+      "place": 17,
+      "points": "52.60",
+      "status": null,
+      "tes": "30.20"
+     },
+     {
+      "ded": "1.00",
+      "i": 18,
+      "name": "Влада Сергеевна БЕРДНИКОВА / Кирилл Максимович АЛЕКСЕЕВ",
+      "nation": "",
+      "no": 10,
+      "pcs": "22.71",
+      "place": 18,
+      "points": "50.47",
+      "status": null,
+      "tes": "28.76"
+     },
+     {
+      "ded": "0.00",
+      "i": 19,
+      "name": "Яна Андреевна ПИСКЛЯКОВА / Марк Дмитриевич КОТОВ",
+      "nation": "",
+      "no": 16,
+      "pcs": "21.84",
+      "place": 19,
+      "points": "48.89",
+      "status": null,
+      "tes": "27.05"
+     },
+     {
+      "ded": "1.00",
+      "i": 20,
+      "name": "Таиса Армановна МУСУРОВА / Дмитрий Олегович КАРБОВСКИЙ",
+      "nation": "",
+      "no": 7,
+      "pcs": "21.85",
+      "place": 20,
+      "points": "48.51",
+      "status": null,
+      "tes": "27.66"
+     },
+     {
+      "ded": "1.00",
+      "i": 21,
+      "name": "Мария Денисовна КАЗЬМИНА / Никита Андреевич ВОРОЖЕЙКИН",
+      "nation": "",
+      "no": 14,
+      "pcs": "21.40",
+      "place": 21,
+      "points": "46.23",
+      "status": null,
+      "tes": "25.83"
+     },
+     {
+      "ded": "0.00",
+      "i": 22,
+      "name": "Евдокия Евгеньевна ТАРИБО / Николай Евгеньевич НИКИТЕНКО",
+      "nation": "",
+      "no": 22,
+      "pcs": "20.28",
+      "place": 22,
+      "points": "44.91",
+      "status": null,
+      "tes": "24.63"
+     },
+     {
+      "ded": "0.00",
+      "i": 23,
+      "name": "Кристина Максимовна ЯТТАРА / Артем Максимович ГАМАНОВ",
+      "nation": "",
+      "no": 1,
+      "pcs": "20.74",
+      "place": 23,
+      "points": "44.62",
+      "status": null,
+      "tes": "23.88"
+     },
+     {
+      "ded": "2.00",
+      "i": 24,
+      "name": "Полина Алексеевна ЛОВЫГИНА / Алексей Дмитриевич МОРОЗОВ",
+      "nation": "",
+      "no": 3,
+      "pcs": "19.84",
+      "place": 24,
+      "points": "40.37",
+      "status": null,
+      "tes": "22.53"
+     }
+    ],
+    "skipped": 0,
+    "table": "results"
+   },
    "results": [
     {
      "name": "Анна Павловна БИЛИБИНА / Дмитрий Владимирович КАШАЕВ",
@@ -1051,6 +1467,301 @@
    ]
   },
   "SEG008.htm": {
+   "protocol": {
+    "reasons": [],
+    "rows": [
+     {
+      "ded": "0.00",
+      "i": 1,
+      "name": "Полина Андреевна ЖАРОВА / Алексей Игоревич СТОЛЯРОВ",
+      "nation": "",
+      "no": 23,
+      "pcs": "44.16",
+      "place": 1,
+      "points": "98.04",
+      "status": null,
+      "tes": "53.88"
+     },
+     {
+      "ded": "0.00",
+      "i": 2,
+      "name": "Алиса Максимовна КРЕМЕР / Илья Валерьевич ЦЕЛКОВСКИЙ",
+      "nation": "",
+      "no": 18,
+      "pcs": "41.18",
+      "place": 2,
+      "points": "92.08",
+      "status": null,
+      "tes": "50.90"
+     },
+     {
+      "ded": "1.00",
+      "i": 3,
+      "name": "Евдокия Максимовна КРЮЧКОВА / Артем Игоревич МЯКИШЕВ",
+      "nation": "",
+      "no": 22,
+      "pcs": "42.16",
+      "place": 3,
+      "points": "91.88",
+      "status": null,
+      "tes": "50.72"
+     },
+     {
+      "ded": "0.00",
+      "i": 4,
+      "name": "Елизавета Андреевна РОСТИЛОВА / Денис Владимирович АУРОВ",
+      "nation": "",
+      "no": 21,
+      "pcs": "41.84",
+      "place": 4,
+      "points": "90.40",
+      "status": null,
+      "tes": "48.56"
+     },
+     {
+      "ded": "0.00",
+      "i": 5,
+      "name": "София Ивановна ЗАГРЕБАЕВА / Иван Александрович ТЕРТЫШНИКОВ",
+      "nation": "",
+      "no": 19,
+      "pcs": "41.00",
+      "place": 5,
+      "points": "88.61",
+      "status": null,
+      "tes": "47.61"
+     },
+     {
+      "ded": "0.00",
+      "i": 6,
+      "name": "Арина Сергеевна НОВИКОВА / Кирилл Вадимович ЛИХАЧЕВ",
+      "nation": "",
+      "no": 16,
+      "pcs": "39.52",
+      "place": 6,
+      "points": "87.66",
+      "status": null,
+      "tes": "48.14"
+     },
+     {
+      "ded": "0.00",
+      "i": 7,
+      "name": "Софья Олеговна ГРАБЧАК / Максим Игоревич ПОЛТОРАК",
+      "nation": "",
+      "no": 17,
+      "pcs": "39.84",
+      "place": 7,
+      "points": "87.40",
+      "status": null,
+      "tes": "47.56"
+     },
+     {
+      "ded": "1.00",
+      "i": 8,
+      "name": "Анна Павловна БИЛИБИНА / Дмитрий Владимирович КАШАЕВ",
+      "nation": "",
+      "no": 24,
+      "pcs": "41.32",
+      "place": 8,
+      "points": "85.27",
+      "status": null,
+      "tes": "44.95"
+     },
+     {
+      "ded": "0.00",
+      "i": 9,
+      "name": "Устинья Романовна СМИРНОВА / Матвей Вадимович ШИПИЛОВ",
+      "nation": "",
+      "no": 15,
+      "pcs": "37.82",
+      "place": 9,
+      "points": "84.86",
+      "status": null,
+      "tes": "47.04"
+     },
+     {
+      "ded": "0.00",
+      "i": 10,
+      "name": "София Владиславовна ВАРЕНОВА / Сергей Павлович КУЗЛЯКИН",
+      "nation": "",
+      "no": 9,
+      "pcs": "37.66",
+      "place": 10,
+      "points": "84.61",
+      "status": null,
+      "tes": "46.95"
+     },
+     {
+      "ded": "0.00",
+      "i": 11,
+      "name": "Полина Владимировна ПУНЕГОВА / Дмитрий Александрович КАШУБИН",
+      "nation": "",
+      "no": 11,
+      "pcs": "37.18",
+      "place": 11,
+      "points": "82.02",
+      "status": null,
+      "tes": "44.84"
+     },
+     {
+      "ded": "0.00",
+      "i": 12,
+      "name": "Сандра Руслановна ДАВЫДЕНКО / Игнат Максимович ПАХОМОВ",
+      "nation": "",
+      "no": 14,
+      "pcs": "37.66",
+      "place": 12,
+      "points": "81.42",
+      "status": null,
+      "tes": "43.76"
+     },
+     {
+      "ded": "0.00",
+      "i": 13,
+      "name": "Влада Сергеевна БЕРДНИКОВА / Кирилл Максимович АЛЕКСЕЕВ",
+      "nation": "",
+      "no": 7,
+      "pcs": "35.66",
+      "place": 13,
+      "points": "81.22",
+      "status": null,
+      "tes": "45.56"
+     },
+     {
+      "ded": "0.00",
+      "i": 14,
+      "name": "Эвелина Артуровна ВАЛИЕВА / Даниил Германович ЛАВРИНЕНКО",
+      "nation": "",
+      "no": 20,
+      "pcs": "38.68",
+      "place": 14,
+      "points": "80.61",
+      "status": null,
+      "tes": "41.93"
+     },
+     {
+      "ded": "0.00",
+      "i": 15,
+      "name": "Александра Денисовна ВАСЕНЕВА / Максим Игоревич СИТЬКО",
+      "nation": "",
+      "no": 13,
+      "pcs": "36.84",
+      "place": 15,
+      "points": "80.29",
+      "status": null,
+      "tes": "43.45"
+     },
+     {
+      "ded": "0.00",
+      "i": 16,
+      "name": "Арина Андреевна ВЛАСОВА / Денис Дмитриевич ГОРБУШИН",
+      "nation": "",
+      "no": 10,
+      "pcs": "36.82",
+      "place": 16,
+      "points": "78.36",
+      "status": null,
+      "tes": "41.54"
+     },
+     {
+      "ded": "0.00",
+      "i": 17,
+      "name": "Софья Кареновна ГОНЧАРОВА / Александр Андреевич СИНЦОВ",
+      "nation": "",
+      "no": 12,
+      "pcs": "36.66",
+      "place": 17,
+      "points": "78.36",
+      "status": null,
+      "tes": "41.70"
+     },
+     {
+      "ded": "0.00",
+      "i": 18,
+      "name": "Яна Андреевна ПИСКЛЯКОВА / Марк Дмитриевич КОТОВ",
+      "nation": "",
+      "no": 6,
+      "pcs": "34.00",
+      "place": 18,
+      "points": "75.25",
+      "status": null,
+      "tes": "41.25"
+     },
+     {
+      "ded": "0.00",
+      "i": 19,
+      "name": "Таиса Армановна МУСУРОВА / Дмитрий Олегович КАРБОВСКИЙ",
+      "nation": "",
+      "no": 5,
+      "pcs": "33.16",
+      "place": 19,
+      "points": "74.39",
+      "status": null,
+      "tes": "41.23"
+     },
+     {
+      "ded": "0.00",
+      "i": 20,
+      "name": "Мария Денисовна КАЗЬМИНА / Никита Андреевич ВОРОЖЕЙКИН",
+      "nation": "",
+      "no": 4,
+      "pcs": "32.82",
+      "place": 20,
+      "points": "74.33",
+      "status": null,
+      "tes": "41.51"
+     },
+     {
+      "ded": "0.00",
+      "i": 21,
+      "name": "Кристина Максимовна ЯТТАРА / Артем Максимович ГАМАНОВ",
+      "nation": "",
+      "no": 2,
+      "pcs": "31.32",
+      "place": 21,
+      "points": "71.46",
+      "status": null,
+      "tes": "40.14"
+     },
+     {
+      "ded": "3.00",
+      "i": 22,
+      "name": "Екатерина Михайловна СТАРОСТИНА / Тимофей Витальевич СТОЛЯРЕНКО",
+      "nation": "",
+      "no": 8,
+      "pcs": "33.16",
+      "place": 22,
+      "points": "69.96",
+      "status": null,
+      "tes": "39.80"
+     },
+     {
+      "ded": "0.00",
+      "i": 23,
+      "name": "Полина Алексеевна ЛОВЫГИНА / Алексей Дмитриевич МОРОЗОВ",
+      "nation": "",
+      "no": 1,
+      "pcs": "30.50",
+      "place": 23,
+      "points": "68.01",
+      "status": null,
+      "tes": "37.51"
+     },
+     {
+      "ded": "0.00",
+      "i": 24,
+      "name": "Евдокия Евгеньевна ТАРИБО / Николай Евгеньевич НИКИТЕНКО",
+      "nation": "",
+      "no": 3,
+      "pcs": "29.68",
+      "place": 24,
+      "points": "67.26",
+      "status": null,
+      "tes": "37.58"
+     }
+    ],
+    "skipped": 0,
+    "table": "results"
+   },
    "results": [
     {
      "name": "Полина Андреевна ЖАРОВА / Алексей Игоревич СТОЛЯРОВ",
@@ -1372,6 +2083,787 @@
  "totals": {
   "CAT001RS.htm": {
    "complete": true,
+   "protocol": {
+    "cols": [
+     "КП",
+     "ПП"
+    ],
+    "colsKind": "places",
+    "complete": true,
+    "reasons": [],
+    "rows": [
+     {
+      "ded": null,
+      "i": 1,
+      "name": "Дарья Евгеньевна ЛЕБЕДЕВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "3",
+       "1"
+      ],
+      "pcs": null,
+      "place": 1,
+      "points": "205.43",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 2,
+      "name": "Софья Сергеевна СМАГИНА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "2",
+       "2"
+      ],
+      "pcs": null,
+      "place": 2,
+      "points": "200.21",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 3,
+      "name": "Диана Вадимовна МИЛЬТО",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "1",
+       "4"
+      ],
+      "pcs": null,
+      "place": 3,
+      "points": "190.87",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 4,
+      "name": "Майя Андреевна САРАФАНОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "5",
+       "5"
+      ],
+      "pcs": null,
+      "place": 4,
+      "points": "184.63",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 5,
+      "name": "Валерия Дмитриевна ЛУКАШОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "14",
+       "3"
+      ],
+      "pcs": null,
+      "place": 5,
+      "points": "181.65",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 6,
+      "name": "Ника Анатольевна МАСКАЙКИНА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "10",
+       "6"
+      ],
+      "pcs": null,
+      "place": 6,
+      "points": "181.56",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 7,
+      "name": "Валерия Денисовна ЛИТВИНЧЁВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "9",
+       "8"
+      ],
+      "pcs": null,
+      "place": 7,
+      "points": "180.78",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 8,
+      "name": "Полина Евгеньевна МАРТЫНЕНКО",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "6",
+       "10"
+      ],
+      "pcs": null,
+      "place": 8,
+      "points": "180.40",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 9,
+      "name": "Алиса Вадимовна МИЛЬТО",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "8",
+       "12"
+      ],
+      "pcs": null,
+      "place": 9,
+      "points": "178.92",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 10,
+      "name": "Наталья Андреевна СТАРШОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "12",
+       "9"
+      ],
+      "pcs": null,
+      "place": 10,
+      "points": "178.75",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 11,
+      "name": "Виктория Сергеевна МИХАЙЛОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "11",
+       "11"
+      ],
+      "pcs": null,
+      "place": 11,
+      "points": "177.13",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 12,
+      "name": "Екатерина Евгеньевна СТОЦКАЯ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "13",
+       "13"
+      ],
+      "pcs": null,
+      "place": 12,
+      "points": "175.25",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 13,
+      "name": "Юлиана Александровна ЧЕРЕНЁВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "23",
+       "7"
+      ],
+      "pcs": null,
+      "place": 13,
+      "points": "173.72",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 14,
+      "name": "Елизавета Сергеевна МЕЛЬНИКОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "15",
+       "14"
+      ],
+      "pcs": null,
+      "place": 14,
+      "points": "172.77",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 15,
+      "name": "Мария Сергеевна ГАЛУШКИНА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "18",
+       "15"
+      ],
+      "pcs": null,
+      "place": 15,
+      "points": "169.88",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 16,
+      "name": "Полина Владимировна ПАВЛИКОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "4",
+       "19"
+      ],
+      "pcs": null,
+      "place": 16,
+      "points": "167.09",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 17,
+      "name": "Полина Артемовна ЗНАЧКОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "22",
+       "16"
+      ],
+      "pcs": null,
+      "place": 17,
+      "points": "166.79",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 18,
+      "name": "Виктория Антоновна СОМОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "19",
+       "17"
+      ],
+      "pcs": null,
+      "place": 18,
+      "points": "164.61",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 19,
+      "name": "Алиса Олеговна СЕМИНА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "7",
+       "21"
+      ],
+      "pcs": null,
+      "place": 19,
+      "points": "161.44",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 20,
+      "name": "Алиса Валерьевна ШАТОХИНА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "17",
+       "18"
+      ],
+      "pcs": null,
+      "place": 20,
+      "points": "160.22",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 21,
+      "name": "Яна Михайловна ИВАНОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "24",
+       "20"
+      ],
+      "pcs": null,
+      "place": 21,
+      "points": "153.85",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 22,
+      "name": "Елизавета Игоревна БОРИСОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "20",
+       "22"
+      ],
+      "pcs": null,
+      "place": 22,
+      "points": "153.84",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 23,
+      "name": "Ева Владимировна ВАЧАСОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "21",
+       "23"
+      ],
+      "pcs": null,
+      "place": 23,
+      "points": "145.94",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 24,
+      "name": "Камила Ильясовна НАЗИПОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "16",
+       "24"
+      ],
+      "pcs": null,
+      "place": 24,
+      "points": "141.66",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 25,
+      "name": "Алиса Ильинична КОРНАУХОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 26,
+      "name": "Ева Михайловна ТАРАСЕНКО",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 27,
+      "name": "Анастасия Андреевна ЧИННОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 28,
+      "name": "Алиса Андреевна ЧИСТЯКОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 29,
+      "name": "Виктория Алексеевна ПОЗДНЯКОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 30,
+      "name": "Екатерина Дмитриевна ТИТОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 31,
+      "name": "Елизавета Андреевна ДУБЫНИНА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 32,
+      "name": "Евдокия Павловна МАКАРОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 33,
+      "name": "Алина Юрьевна ВОРОБЬЕВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 34,
+      "name": "Мария Евгеньевна КАПИЧНИКОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 35,
+      "name": "Алёна Алексеевна ТЕЛЯТНИКОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 36,
+      "name": "Анна Максимовна ИЛЬИНЫХ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 37,
+      "name": "Елизавета Витальевна АНДРЕЕВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 38,
+      "name": "Алина Павловна НИКОЛАЕВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 39,
+      "name": "София Алексеевна ГРЕЧИХИНА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 40,
+      "name": "София Игоревна ЛЕВШОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 41,
+      "name": "Анастасия Дмитриевна ТРОШКИНА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 42,
+      "name": "Елизавета Алексеевна ИЛЬИЧЕВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 43,
+      "name": "Софья Алексеевна ЛАБУТКИНА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 44,
+      "name": "Варвара Ивановна ПОЛУЭКТОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 45,
+      "name": "Елизавета Александровна САМИЧЕВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 46,
+      "name": "София Алексеевна СОКОЛЬСКАЯ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 47,
+      "name": "Мелания Сергеевна ГРИШИНА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 48,
+      "name": "Софья Евгеньевна ФЕДОРКОВА",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     }
+    ],
+    "skipped": 0,
+    "table": "results"
+   },
    "rows": [
     {
      "name": "Дарья Евгеньевна ЛЕБЕДЕВА",
@@ -1521,6 +3013,595 @@
   },
   "CAT002RS.htm": {
    "complete": true,
+   "protocol": {
+    "cols": [
+     "КП",
+     "ПП"
+    ],
+    "colsKind": "places",
+    "complete": true,
+    "reasons": [],
+    "rows": [
+     {
+      "ded": null,
+      "i": 1,
+      "name": "Даниил Андреевич ЖОЛОБОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "2",
+       "1"
+      ],
+      "pcs": null,
+      "place": 1,
+      "points": "233.89",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 2,
+      "name": "Алдар Арсаланович САМБУЕВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "3",
+       "3"
+      ],
+      "pcs": null,
+      "place": 2,
+      "points": "227.35",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 3,
+      "name": "Никита Сергеевич МАЛЮТИН",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "1",
+       "4"
+      ],
+      "pcs": null,
+      "place": 3,
+      "points": "224.55",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 4,
+      "name": "Марк Евгеньевич ЛУКИН",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "11",
+       "2"
+      ],
+      "pcs": null,
+      "place": 4,
+      "points": "221.13",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 5,
+      "name": "Степан Юрьевич ЮРОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "4",
+       "5"
+      ],
+      "pcs": null,
+      "place": 5,
+      "points": "210.19",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 6,
+      "name": "Илья Евгеньевич МАЛЫШЕВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "10",
+       "6"
+      ],
+      "pcs": null,
+      "place": 6,
+      "points": "199.76",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 7,
+      "name": "Марк Федорович СОКОЛОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "6",
+       "8"
+      ],
+      "pcs": null,
+      "place": 7,
+      "points": "199.43",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 8,
+      "name": "Алексей Александрович ЗАВОДСКИХ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "5",
+       "9"
+      ],
+      "pcs": null,
+      "place": 8,
+      "points": "199.00",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 9,
+      "name": "Георгий Александрович ТЕРЕХОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "9",
+       "10"
+      ],
+      "pcs": null,
+      "place": 9,
+      "points": "196.57",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 10,
+      "name": "Артем Витальевич ФЕДОТОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "14",
+       "7"
+      ],
+      "pcs": null,
+      "place": 10,
+      "points": "194.33",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 11,
+      "name": "Павел Андреевич ГРИБУЛЯ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "13",
+       "12"
+      ],
+      "pcs": null,
+      "place": 11,
+      "points": "191.10",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 12,
+      "name": "Тимофей Алексеевич БОЧКОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "16",
+       "11"
+      ],
+      "pcs": null,
+      "place": 12,
+      "points": "190.85",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 13,
+      "name": "Ярослав Сергеевич ХРУЛЕВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "8",
+       "13"
+      ],
+      "pcs": null,
+      "place": 13,
+      "points": "189.64",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 14,
+      "name": "Александр Ильич КУЗНЕЦОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "7",
+       "16"
+      ],
+      "pcs": null,
+      "place": 14,
+      "points": "183.82",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 15,
+      "name": "Леонтий Александрович КАМЗОЛОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "12",
+       "15"
+      ],
+      "pcs": null,
+      "place": 15,
+      "points": "181.28",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 16,
+      "name": "Григорий Леонидович ХОРОХОРДИН",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "24",
+       "14"
+      ],
+      "pcs": null,
+      "place": 16,
+      "points": "176.73",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 17,
+      "name": "Егор Дмитриевич ВАСЬКО",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "17",
+       "18"
+      ],
+      "pcs": null,
+      "place": 17,
+      "points": "173.96",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 18,
+      "name": "Тагар Арсаланович САМБУЕВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "21",
+       "17"
+      ],
+      "pcs": null,
+      "place": 18,
+      "points": "173.85",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 19,
+      "name": "Александр Андреевич ЩЕРБАКОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "20",
+       "19"
+      ],
+      "pcs": null,
+      "place": 19,
+      "points": "170.65",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 20,
+      "name": "Алексей Евгеньевич ЕФРЕМЕНКО",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "19",
+       "20"
+      ],
+      "pcs": null,
+      "place": 20,
+      "points": "167.23",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 21,
+      "name": "Мирон Максимович АНДРЕАНОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "22",
+       "21"
+      ],
+      "pcs": null,
+      "place": 21,
+      "points": "164.61",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 22,
+      "name": "Кирилл Артемович ЖУРАХОВСКИЙ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "15",
+       "23"
+      ],
+      "pcs": null,
+      "place": 22,
+      "points": "164.53",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 23,
+      "name": "Наиль Русланович САГАДУЛИН",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "23",
+       "22"
+      ],
+      "pcs": null,
+      "place": 23,
+      "points": "163.63",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 24,
+      "name": "Максим Германович БРАГИН",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "18",
+       "24"
+      ],
+      "pcs": null,
+      "place": 24,
+      "points": "148.30",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 25,
+      "name": "Александр Николаевич КОТОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 26,
+      "name": "Алексей Николаевич ПЕРФИЛОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 27,
+      "name": "Максим Алексеевич СТРЕЛКОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 28,
+      "name": "Павел Константинович ШИН",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 29,
+      "name": "Кирилл Антонович АРБУЗОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 30,
+      "name": "Матвей Сергеевич БУГАЕВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 31,
+      "name": "Платон Александрович ЖИЛЬЦОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 32,
+      "name": "Андрей Владимирович КАСАТКИН",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 33,
+      "name": "Яромир Борисович ФУРАЕВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 34,
+      "name": "Никита Олегович ПРОКОФЬЕВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 35,
+      "name": "Владислав Александрович ОБЪЕЗДЧИКОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "NQD",
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 36,
+      "name": "Владислав Алексеевич СКВОРЦОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       null,
+       null
+      ],
+      "pcs": null,
+      "place": null,
+      "points": null,
+      "status": "WD",
+      "tes": null
+     }
+    ],
+    "skipped": 0,
+    "table": "results"
+   },
    "rows": [
     {
      "name": "Даниил Андреевич ЖОЛОБОВ",
@@ -1670,6 +3751,403 @@
   },
   "CAT004RS.htm": {
    "complete": true,
+   "protocol": {
+    "cols": [
+     "PT",
+     "ПТ"
+    ],
+    "colsKind": "places",
+    "complete": true,
+    "reasons": [],
+    "rows": [
+     {
+      "ded": null,
+      "i": 1,
+      "name": "Полина Андреевна ЖАРОВА / Алексей Игоревич СТОЛЯРОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "2",
+       "1"
+      ],
+      "pcs": null,
+      "place": 1,
+      "points": "163.32",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 2,
+      "name": "Евдокия Максимовна КРЮЧКОВА / Артем Игоревич МЯКИШЕВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "3",
+       "3"
+      ],
+      "pcs": null,
+      "place": 2,
+      "points": "154.33",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 3,
+      "name": "Анна Павловна БИЛИБИНА / Дмитрий Владимирович КАШАЕВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "1",
+       "8"
+      ],
+      "pcs": null,
+      "place": 3,
+      "points": "151.63",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 4,
+      "name": "Алиса Максимовна КРЕМЕР / Илья Валерьевич ЦЕЛКОВСКИЙ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "7",
+       "2"
+      ],
+      "pcs": null,
+      "place": 4,
+      "points": "151.42",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 5,
+      "name": "Елизавета Андреевна РОСТИЛОВА / Денис Владимирович АУРОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "4",
+       "4"
+      ],
+      "pcs": null,
+      "place": 5,
+      "points": "151.41",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 6,
+      "name": "София Ивановна ЗАГРЕБАЕВА / Иван Александрович ТЕРТЫШНИКОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "6",
+       "5"
+      ],
+      "pcs": null,
+      "place": 6,
+      "points": "147.97",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 7,
+      "name": "Софья Олеговна ГРАБЧАК / Максим Игоревич ПОЛТОРАК",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "8",
+       "7"
+      ],
+      "pcs": null,
+      "place": 7,
+      "points": "146.00",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 8,
+      "name": "Арина Сергеевна НОВИКОВА / Кирилл Вадимович ЛИХАЧЕВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "9",
+       "6"
+      ],
+      "pcs": null,
+      "place": 8,
+      "points": "145.57",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 9,
+      "name": "Устинья Романовна СМИРНОВА / Матвей Вадимович ШИПИЛОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "10",
+       "9"
+      ],
+      "pcs": null,
+      "place": 9,
+      "points": "142.61",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 10,
+      "name": "Эвелина Артуровна ВАЛИЕВА / Даниил Германович ЛАВРИНЕНКО",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "5",
+       "14"
+      ],
+      "pcs": null,
+      "place": 10,
+      "points": "141.41",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 11,
+      "name": "Сандра Руслановна ДАВЫДЕНКО / Игнат Максимович ПАХОМОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "11",
+       "12"
+      ],
+      "pcs": null,
+      "place": 11,
+      "points": "138.12",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 12,
+      "name": "София Владиславовна ВАРЕНОВА / Сергей Павлович КУЗЛЯКИН",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "16",
+       "10"
+      ],
+      "pcs": null,
+      "place": 12,
+      "points": "137.39",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 13,
+      "name": "Полина Владимировна ПУНЕГОВА / Дмитрий Александрович КАШУБИН",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "14",
+       "11"
+      ],
+      "pcs": null,
+      "place": 13,
+      "points": "135.40",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 14,
+      "name": "Александра Денисовна ВАСЕНЕВА / Максим Игоревич СИТЬКО",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "12",
+       "15"
+      ],
+      "pcs": null,
+      "place": 14,
+      "points": "135.22",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 15,
+      "name": "Софья Кареновна ГОНЧАРОВА / Александр Андреевич СИНЦОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "13",
+       "17"
+      ],
+      "pcs": null,
+      "place": 15,
+      "points": "132.67",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 16,
+      "name": "Влада Сергеевна БЕРДНИКОВА / Кирилл Максимович АЛЕКСЕЕВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "18",
+       "13"
+      ],
+      "pcs": null,
+      "place": 16,
+      "points": "131.69",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 17,
+      "name": "Арина Андреевна ВЛАСОВА / Денис Дмитриевич ГОРБУШИН",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "15",
+       "16"
+      ],
+      "pcs": null,
+      "place": 17,
+      "points": "131.64",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 18,
+      "name": "Яна Андреевна ПИСКЛЯКОВА / Марк Дмитриевич КОТОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "19",
+       "18"
+      ],
+      "pcs": null,
+      "place": 18,
+      "points": "124.14",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 19,
+      "name": "Таиса Армановна МУСУРОВА / Дмитрий Олегович КАРБОВСКИЙ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "20",
+       "19"
+      ],
+      "pcs": null,
+      "place": 19,
+      "points": "122.90",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 20,
+      "name": "Екатерина Михайловна СТАРОСТИНА / Тимофей Витальевич СТОЛЯРЕНКО",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "17",
+       "22"
+      ],
+      "pcs": null,
+      "place": 20,
+      "points": "122.56",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 21,
+      "name": "Мария Денисовна КАЗЬМИНА / Никита Андреевич ВОРОЖЕЙКИН",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "21",
+       "20"
+      ],
+      "pcs": null,
+      "place": 21,
+      "points": "120.56",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 22,
+      "name": "Кристина Максимовна ЯТТАРА / Артем Максимович ГАМАНОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "23",
+       "21"
+      ],
+      "pcs": null,
+      "place": 22,
+      "points": "116.08",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 23,
+      "name": "Евдокия Евгеньевна ТАРИБО / Николай Евгеньевич НИКИТЕНКО",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "22",
+       "24"
+      ],
+      "pcs": null,
+      "place": 23,
+      "points": "112.17",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 24,
+      "name": "Полина Алексеевна ЛОВЫГИНА / Алексей Дмитриевич МОРОЗОВ",
+      "nation": "",
+      "no": null,
+      "parts": [
+       "24",
+       "23"
+      ],
+      "pcs": null,
+      "place": 24,
+      "points": "108.38",
+      "status": null,
+      "tes": null
+     }
+    ],
+    "skipped": 0,
+    "table": "results"
+   },
    "rows": [
     {
      "name": "Полина Андреевна ЖАРОВА / Алексей Игоревич СТОЛЯРОВ",

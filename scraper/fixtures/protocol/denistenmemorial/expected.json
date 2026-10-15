@@ -299,6 +299,133 @@
  },
  "segments": {
   "SEG001.htm": {
+   "protocol": {
+    "reasons": [],
+    "rows": [
+     {
+      "ded": "0.00",
+      "i": 1,
+      "name": "Vladislav DIKIDZHI",
+      "nation": "AIN2",
+      "no": 3,
+      "pcs": "44.51",
+      "place": 1,
+      "points": "107.31",
+      "status": null,
+      "tes": "62.80"
+     },
+     {
+      "ded": "0.00",
+      "i": 2,
+      "name": "Gleb LUTFULLIN",
+      "nation": "AIN2",
+      "no": 9,
+      "pcs": "40.16",
+      "place": 2,
+      "points": "95.79",
+      "status": null,
+      "tes": "55.63"
+     },
+     {
+      "ded": "1.00",
+      "i": 3,
+      "name": "Petr GUMENNIK",
+      "nation": "AIN2",
+      "no": 8,
+      "pcs": "40.67",
+      "place": 3,
+      "points": "80.63",
+      "status": null,
+      "tes": "40.96"
+     },
+     {
+      "ded": "2.00",
+      "i": 4,
+      "name": "Vasil BARAKHOUSKI",
+      "nation": "AIN1",
+      "no": 7,
+      "pcs": "37.07",
+      "place": 4,
+      "points": "77.96",
+      "status": null,
+      "tes": "42.89"
+     },
+     {
+      "ded": "2.00",
+      "i": 5,
+      "name": "Daniel MARTYNOV",
+      "nation": "USA",
+      "no": 1,
+      "pcs": "36.66",
+      "place": 5,
+      "points": "77.36",
+      "status": null,
+      "tes": "42.70"
+     },
+     {
+      "ded": "0.00",
+      "i": 6,
+      "name": "Heorhi KAZLOUSKI",
+      "nation": "AIN1",
+      "no": 4,
+      "pcs": "34.07",
+      "place": 6,
+      "points": "75.09",
+      "status": null,
+      "tes": "41.02"
+     },
+     {
+      "ded": "0.00",
+      "i": 7,
+      "name": "Dias JIRENBAYEV",
+      "nation": "KAZ",
+      "no": 5,
+      "pcs": "37.49",
+      "place": 7,
+      "points": "66.11",
+      "status": null,
+      "tes": "28.62"
+     },
+     {
+      "ded": "1.00",
+      "i": 8,
+      "name": "Yudong CHEN",
+      "nation": "CHN",
+      "no": 10,
+      "pcs": "35.98",
+      "place": 8,
+      "points": "64.19",
+      "status": null,
+      "tes": "29.21"
+     },
+     {
+      "ded": "0.00",
+      "i": 9,
+      "name": "Alex LABOVICH",
+      "nation": "AIN1",
+      "no": 6,
+      "pcs": "33.31",
+      "place": 9,
+      "points": "61.26",
+      "status": null,
+      "tes": "27.95"
+     },
+     {
+      "ded": "0.00",
+      "i": 10,
+      "name": "Douglas GERBER",
+      "nation": "AUS",
+      "no": 2,
+      "pcs": "33.23",
+      "place": 10,
+      "points": "60.70",
+      "status": null,
+      "tes": "27.47"
+     }
+    ],
+    "skipped": 0,
+    "table": "results"
+   },
    "results": [
     {
      "name": "Vladislav DIKIDZHI",
@@ -435,6 +562,133 @@
    ]
   },
   "SEG002.htm": {
+   "protocol": {
+    "reasons": [],
+    "rows": [
+     {
+      "ded": "0.00",
+      "i": 1,
+      "name": "Vladislav DIKIDZHI",
+      "nation": "AIN2",
+      "no": 10,
+      "pcs": "90.74",
+      "place": 1,
+      "points": "205.48",
+      "status": null,
+      "tes": "114.74"
+     },
+     {
+      "ded": "0.00",
+      "i": 2,
+      "name": "Gleb LUTFULLIN",
+      "nation": "AIN2",
+      "no": 9,
+      "pcs": "80.92",
+      "place": 2,
+      "points": "181.44",
+      "status": null,
+      "tes": "100.52"
+     },
+     {
+      "ded": "1.00",
+      "i": 3,
+      "name": "Petr GUMENNIK",
+      "nation": "AIN2",
+      "no": 8,
+      "pcs": "85.58",
+      "place": 3,
+      "points": "181.13",
+      "status": null,
+      "tes": "96.55"
+     },
+     {
+      "ded": "2.00",
+      "i": 4,
+      "name": "Daniel MARTYNOV",
+      "nation": "USA",
+      "no": 6,
+      "pcs": "72.93",
+      "place": 4,
+      "points": "144.19",
+      "status": null,
+      "tes": "73.26"
+     },
+     {
+      "ded": "0.00",
+      "i": 5,
+      "name": "Vasil BARAKHOUSKI",
+      "nation": "AIN1",
+      "no": 7,
+      "pcs": "76.09",
+      "place": 5,
+      "points": "140.40",
+      "status": null,
+      "tes": "64.31"
+     },
+     {
+      "ded": "3.00",
+      "i": 6,
+      "name": "Yudong CHEN",
+      "nation": "CHN",
+      "no": 3,
+      "pcs": "69.09",
+      "place": 6,
+      "points": "132.41",
+      "status": null,
+      "tes": "66.32"
+     },
+     {
+      "ded": "1.00",
+      "i": 7,
+      "name": "Alex LABOVICH",
+      "nation": "AIN1",
+      "no": 2,
+      "pcs": "67.77",
+      "place": 7,
+      "points": "128.11",
+      "status": null,
+      "tes": "61.34"
+     },
+     {
+      "ded": "1.00",
+      "i": 8,
+      "name": "Douglas GERBER",
+      "nation": "AUS",
+      "no": 1,
+      "pcs": "62.44",
+      "place": 8,
+      "points": "120.69",
+      "status": null,
+      "tes": "59.25"
+     },
+     {
+      "ded": "0.00",
+      "i": 9,
+      "name": "Dias JIRENBAYEV",
+      "nation": "KAZ",
+      "no": 4,
+      "pcs": "71.93",
+      "place": 9,
+      "points": "120.16",
+      "status": null,
+      "tes": "48.23"
+     },
+     {
+      "ded": "1.00",
+      "i": 10,
+      "name": "Heorhi KAZLOUSKI",
+      "nation": "AIN1",
+      "no": 5,
+      "pcs": "62.27",
+      "place": 10,
+      "points": "112.61",
+      "status": null,
+      "tes": "51.34"
+     }
+    ],
+    "skipped": 0,
+    "table": "results"
+   },
    "results": [
     {
      "name": "Vladislav DIKIDZHI",
@@ -571,6 +825,181 @@
    ]
   },
   "SEG007.htm": {
+   "protocol": {
+    "reasons": [],
+    "rows": [
+     {
+      "ded": "0.00",
+      "i": 1,
+      "name": "Arsenii FEDOTOV",
+      "nation": "AIN2",
+      "no": 6,
+      "pcs": "41.04",
+      "place": 1,
+      "points": "91.38",
+      "status": null,
+      "tes": "50.34"
+     },
+     {
+      "ded": "0.00",
+      "i": 2,
+      "name": "Aleksandr CHMIL",
+      "nation": "AIN2",
+      "no": 8,
+      "pcs": "34.24",
+      "place": 2,
+      "points": "74.01",
+      "status": null,
+      "tes": "39.77"
+     },
+     {
+      "ded": "0.00",
+      "i": 3,
+      "name": "Gleb KOVTUN",
+      "nation": "AIN2",
+      "no": 10,
+      "pcs": "33.82",
+      "place": 3,
+      "points": "73.18",
+      "status": null,
+      "tes": "39.36"
+     },
+     {
+      "ded": "0.00",
+      "i": 4,
+      "name": "Artur SMAGULOV",
+      "nation": "KAZ",
+      "no": 14,
+      "pcs": "35.20",
+      "place": 4,
+      "points": "71.75",
+      "status": null,
+      "tes": "36.55"
+     },
+     {
+      "ded": "0.00",
+      "i": 5,
+      "name": "Konstantin SMIRNOV",
+      "nation": "ARM",
+      "no": 13,
+      "pcs": "29.36",
+      "place": 5,
+      "points": "63.06",
+      "status": null,
+      "tes": "33.70"
+     },
+     {
+      "ded": "0.00",
+      "i": 6,
+      "name": "Pavel GAVDIS",
+      "nation": "AIN1",
+      "no": 11,
+      "pcs": "32.42",
+      "place": 6,
+      "points": "57.84",
+      "status": null,
+      "tes": "25.42"
+     },
+     {
+      "ded": "0.00",
+      "i": 7,
+      "name": "Jakhongir ABYLKASSYMOV",
+      "nation": "KAZ",
+      "no": 12,
+      "pcs": "29.22",
+      "place": 7,
+      "points": "56.21",
+      "status": null,
+      "tes": "26.99"
+     },
+     {
+      "ded": "1.00",
+      "i": 8,
+      "name": "Kenan BERDIBAYEV",
+      "nation": "KAZ",
+      "no": 2,
+      "pcs": "23.66",
+      "place": 8,
+      "points": "48.42",
+      "status": null,
+      "tes": "25.76"
+     },
+     {
+      "ded": "0.00",
+      "i": 9,
+      "name": "Yeraly SHAKHIMURAT",
+      "nation": "KAZ",
+      "no": 7,
+      "pcs": "24.92",
+      "place": 9,
+      "points": "48.34",
+      "status": null,
+      "tes": "23.42"
+     },
+     {
+      "ded": "0.00",
+      "i": 10,
+      "name": "Timur ADYLKHANOV",
+      "nation": "KAZ",
+      "no": 5,
+      "pcs": "24.37",
+      "place": 10,
+      "points": "46.47",
+      "status": null,
+      "tes": "22.10"
+     },
+     {
+      "ded": "0.00",
+      "i": 11,
+      "name": "Samir TEMERGALIN",
+      "nation": "UZB",
+      "no": 1,
+      "pcs": "22.96",
+      "place": 11,
+      "points": "42.90",
+      "status": null,
+      "tes": "19.94"
+     },
+     {
+      "ded": "0.00",
+      "i": 12,
+      "name": "Nikita KOZLOV",
+      "nation": "KAZ",
+      "no": 4,
+      "pcs": "22.96",
+      "place": 12,
+      "points": "42.82",
+      "status": null,
+      "tes": "19.86"
+     },
+     {
+      "ded": "1.00",
+      "i": 13,
+      "name": "Klim TSOY",
+      "nation": "KAZ",
+      "no": 9,
+      "pcs": "21.16",
+      "place": 13,
+      "points": "35.16",
+      "status": null,
+      "tes": "15.00"
+     },
+     {
+      "ded": "2.00",
+      "i": 14,
+      "name": "Temirlan YAKIYAEV",
+      "nation": "KAZ",
+      "no": 3,
+      "pcs": "19.75",
+      "place": 14,
+      "points": "33.58",
+      "status": null,
+      "tes": "15.83"
+     }
+    ],
+    "skipped": 0,
+    "table": "results"
+   },
    "results": [
     {
      "name": "Arsenii FEDOTOV",
@@ -762,6 +1191,179 @@
  "totals": {
   "CAT001RS.htm": {
    "complete": true,
+   "protocol": {
+    "cols": [
+     "SP",
+     "FS"
+    ],
+    "colsKind": "places",
+    "complete": true,
+    "reasons": [],
+    "rows": [
+     {
+      "ded": null,
+      "i": 1,
+      "name": "Vladislav DIKIDZHI",
+      "nation": "AIN2",
+      "no": null,
+      "parts": [
+       "1",
+       "1"
+      ],
+      "pcs": null,
+      "place": 1,
+      "points": "312.79",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 2,
+      "name": "Gleb LUTFULLIN",
+      "nation": "AIN2",
+      "no": null,
+      "parts": [
+       "2",
+       "2"
+      ],
+      "pcs": null,
+      "place": 2,
+      "points": "277.23",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 3,
+      "name": "Petr GUMENNIK",
+      "nation": "AIN2",
+      "no": null,
+      "parts": [
+       "3",
+       "3"
+      ],
+      "pcs": null,
+      "place": 3,
+      "points": "261.76",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 4,
+      "name": "Daniel MARTYNOV",
+      "nation": "USA",
+      "no": null,
+      "parts": [
+       "5",
+       "4"
+      ],
+      "pcs": null,
+      "place": 4,
+      "points": "221.55",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 5,
+      "name": "Vasil BARAKHOUSKI",
+      "nation": "AIN1",
+      "no": null,
+      "parts": [
+       "4",
+       "5"
+      ],
+      "pcs": null,
+      "place": 5,
+      "points": "218.36",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 6,
+      "name": "Yudong CHEN",
+      "nation": "CHN",
+      "no": null,
+      "parts": [
+       "8",
+       "6"
+      ],
+      "pcs": null,
+      "place": 6,
+      "points": "196.60",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 7,
+      "name": "Alex LABOVICH",
+      "nation": "AIN1",
+      "no": null,
+      "parts": [
+       "9",
+       "7"
+      ],
+      "pcs": null,
+      "place": 7,
+      "points": "189.37",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 8,
+      "name": "Heorhi KAZLOUSKI",
+      "nation": "AIN1",
+      "no": null,
+      "parts": [
+       "6",
+       "10"
+      ],
+      "pcs": null,
+      "place": 8,
+      "points": "187.70",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 9,
+      "name": "Dias JIRENBAYEV",
+      "nation": "KAZ",
+      "no": null,
+      "parts": [
+       "7",
+       "9"
+      ],
+      "pcs": null,
+      "place": 9,
+      "points": "186.27",
+      "status": null,
+      "tes": null
+     },
+     {
+      "ded": null,
+      "i": 10,
+      "name": "Douglas GERBER",
+      "nation": "AUS",
+      "no": null,
+      "parts": [
+       "10",
+       "8"
+      ],
+      "pcs": null,
+      "place": 10,
+      "points": "181.39",
+      "status": null,
+      "tes": null
+     }
+    ],
+    "skipped": 0,
+    "table": "results"
+   },
    "rows": [
     {
      "name": "Vladislav DIKIDZHI",
