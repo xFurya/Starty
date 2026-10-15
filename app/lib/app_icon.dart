@@ -1,8 +1,8 @@
-// Значок приложения: классический, «Конёк» в цветах и «Календарь» с сегодняшним числом.
+// Значок приложения: классический в трёх цветах (основной — «Лёд») и с сегодняшним числом.
 // Набор — assets/icon/variants.json (общий с tools/icons, откуда рисуются значки Android и iPhone).
 //
 // Где как ставится:
-//  • Android — псевдонимы активности (AppIcons.kt); число «Календаря» меняется в полночь;
+//  • Android — псевдонимы активности (AppIcons.kt); число значка «С сегодняшним числом» меняется в полночь;
 //  • iPhone — альтернативные значки, только без числа: сменить число без вопроса системы нельзя;
 //  • Windows и macOS — значок окна, панели задач и Дока, пока приложение открыто
 //    (ярлык в «Пуске» и значок в Finder — классические); число меняется в полночь.
@@ -73,7 +73,7 @@ class AppIcons {
     }
   }
 
-  /// Компьютер: значок окна и Дока по выбору; у «Календаря» — перерисовать в полночь.
+  /// Компьютер: значок окна и Дока по выбору; у значка с числом — перерисовать в полночь.
   static Future<void> applyDesktop() async {
     if (!isDesktop) return;
     _midnight?.cancel();
@@ -230,9 +230,7 @@ class _IconPreviewState extends State<IconPreview> {
 
   Future<void> _draw() async {
     final v = widget.variant;
-    final bytes = v.id == 'classic'
-        ? (await rootBundle.load('assets/icon/layers/classic.png')).buffer.asUint8List()
-        : await AppIcons.renderIcon(v, DateTime.now().day, 256);
+    final bytes = await AppIcons.renderIcon(v, DateTime.now().day, 256);
     if (mounted) setState(() => png = bytes);
   }
 

@@ -1057,7 +1057,7 @@ class _IconPageState extends State<_IconPage> {
     () async {
       final a = await AppIcons.available();
       final c = await AppIcons.current();
-      // у «Календаря» на Android в имени — день: date_teal_15 → date_teal
+      // у значка с числом на Android в имени — день: date_teal_15 → date_teal
       final cur = a.where((v) => c == v.id || c.startsWith('${v.id}_')).firstOrNull?.id ?? 'classic';
       if (!mounted) return;
       setState(() {
@@ -1071,11 +1071,7 @@ class _IconPageState extends State<_IconPage> {
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    final groups = <String, String>{
-      'classic': 'Классический',
-      'skate': 'Конёк',
-      'date': 'Календарь · число сегодняшнее',
-    };
+    final groups = <String, String>{'classic': 'Классическая', 'date': 'С сегодняшним числом'};
     Widget tile(IconVariant v) {
       final on = v.id == pick;
       return Semantics(

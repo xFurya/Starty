@@ -13,7 +13,7 @@ import java.util.Calendar
 /**
  * Иконка приложения. В лаунчере — псевдонимы активности (activity-alias, см. манифест и
  * tools/icons/make.py): классическая «.MainActivity», «.icon.skate_*» и «.icon.date_<цвет>_<день>».
- * Включён ровно один. У «Календаря» число в значке — сегодняшнее: в полночь включается
+ * Включён ровно один. У значка «С сегодняшним числом» число — сегодняшнее: в полночь включается
  * псевдоним следующего дня (точный будильник), а при запуске, перезагрузке и смене времени
  * сверяется ещё раз.
  */
@@ -85,7 +85,7 @@ object AppIcons {
         PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
     )
 
-    /** Будильник на ближайшую полночь — только пока выбран «Календарь». */
+    /** Будильник на ближайшую полночь — только пока выбран значок с числом. */
     private fun schedule(c: Context, on: Boolean) {
         val am = c.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val pi = pending(c)

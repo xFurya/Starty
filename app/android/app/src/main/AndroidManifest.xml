@@ -53,17 +53,6 @@
         </receiver>
         <!-- иконки: создано tools/icons/make.py -->
         <activity-alias
-            android:name=".icon.skate_ice"
-            android:targetActivity=".AppActivity"
-            android:enabled="false"
-            android:exported="true"
-            android:icon="@mipmap/ic_v_skate_ice">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity-alias>
-        <activity-alias
             android:name=".icon.skate_teal"
             android:targetActivity=".AppActivity"
             android:enabled="false"

@@ -1,10 +1,30 @@
 {
   "bands": {
-    "ice":    {"top": "#E6F0FC", "bottom": "#BFD3EC", "accent": "#BFD9FF"},
-    "teal":   {"top": "#62E2D4", "bottom": "#22B2A5", "accent": "#7CF0E2"},
-    "violet": {"top": "#B7A0FF", "bottom": "#8462F2", "accent": "#C6B3FF"},
-    "orange": {"top": "#FFA45C", "bottom": "#FF7638", "accent": "#FFB884"},
-    "coral":  {"top": "#FF8282", "bottom": "#F05252", "accent": "#FFA3A3"}
+    "ice": {
+      "top": "#E6F0FC",
+      "bottom": "#BFD3EC",
+      "accent": "#BFD9FF"
+    },
+    "teal": {
+      "top": "#62E2D4",
+      "bottom": "#22B2A5",
+      "accent": "#7CF0E2"
+    },
+    "violet": {
+      "top": "#B7A0FF",
+      "bottom": "#8462F2",
+      "accent": "#C6B3FF"
+    },
+    "orange": {
+      "top": "#FFA45C",
+      "bottom": "#FF7638",
+      "accent": "#FFB884"
+    },
+    "coral": {
+      "top": "#FF8282",
+      "bottom": "#F05252",
+      "accent": "#FFA3A3"
+    }
   },
   "lines": {
     "orange": "#FF9B57",
@@ -15,15 +35,65 @@
     "gold": "#FFD27A"
   },
   "variants": [
-    {"id": "classic", "group": "classic", "name": "Классический"},
-    {"id": "skate_ice", "group": "skate", "name": "Лёд", "band": "ice"},
-    {"id": "skate_teal", "group": "skate", "name": "Бирюза", "band": "teal"},
-    {"id": "skate_violet", "group": "skate", "name": "Фиалка", "band": "violet"},
-    {"id": "date_orange", "group": "date", "name": "Апельсин", "band": "orange", "line": "orange"},
-    {"id": "date_teal", "group": "date", "name": "Бирюза", "band": "teal", "line": "teal"},
-    {"id": "date_violet", "group": "date", "name": "Фиалка", "band": "violet", "line": "violet"},
-    {"id": "date_ice", "group": "date", "name": "Лёд", "band": "ice", "line": "white"},
-    {"id": "date_coral", "group": "date", "name": "Коралл", "band": "coral", "line": "coral"},
-    {"id": "date_gold", "group": "date", "name": "Золото", "band": "ice", "line": "gold"}
+    {
+      "id": "classic",
+      "group": "classic",
+      "name": "Лёд",
+      "band": "ice"
+    },
+    {
+      "id": "skate_teal",
+      "group": "classic",
+      "name": "Бирюза",
+      "band": "teal"
+    },
+    {
+      "id": "skate_violet",
+      "group": "classic",
+      "name": "Фиалка",
+      "band": "violet"
+    },
+    {
+      "id": "date_orange",
+      "group": "date",
+      "name": "Апельсин",
+      "band": "orange",
+      "line": "orange"
+    },
+    {
+      "id": "date_teal",
+      "group": "date",
+      "name": "Бирюза",
+      "band": "teal",
+      "line": "teal"
+    },
+    {
+      "id": "date_violet",
+      "group": "date",
+      "name": "Фиалка",
+      "band": "violet",
+      "line": "violet"
+    },
+    {
+      "id": "date_ice",
+      "group": "date",
+      "name": "Лёд",
+      "band": "ice",
+      "line": "white"
+    },
+    {
+      "id": "date_coral",
+      "group": "date",
+      "name": "Коралл",
+      "band": "coral",
+      "line": "coral"
+    },
+    {
+      "id": "date_gold",
+      "group": "date",
+      "name": "Золото",
+      "band": "ice",
+      "line": "gold"
+    }
   ]
 }

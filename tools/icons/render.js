@@ -1,5 +1,5 @@
 // Слои иконок приложения (запуск: node render.js <выходная папка>; нужен playwright с Chromium).
-// Рисует в 1024×1024 — это видимая часть иконки; на выходе PNG 512×512:
+// Рисует в 1024×1024 — это видимая часть иконки; на выходе PNG 1024×1024:
 //   bg.png — фон (лёд), skater.png — фигуристка (уменьшена под полосу календаря),
 //   band_<цвет>.png — полоса календаря с кольцами, закладкой и искрами,
 //   num_<d>_fill.png / num_<d>_line.png — число дня: заливка и белый контур (цвет контура — тинтом).
@@ -25,7 +25,7 @@ for (const m of svgSrc.slice(gi).matchAll(/<g\b|<\/g>/g)) {
 const head = svgSrc.slice(0, gi);           // <svg ...><defs>…</defs> фон, свечение, дуги
 const skaterG = svgSrc.slice(gi, gj);
 
-const svg = (body, defs = '') => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="512" height="512">
+const svg = (body, defs = '') => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
 <defs><style>@font-face{font-family:M;src:url(data:font/ttf;base64,${font});font-weight:700}</style>${defs}</defs>${body}</svg>`;
 
 const star = (x, y, r, fill, op = 1) => {
@@ -62,7 +62,7 @@ function num(d, kind) {
 
 (async () => {
   const b = await chromium.launch();
-  const p = await b.newPage({ viewport: { width: 512, height: 512 } });
+  const p = await b.newPage({ viewport: { width: 1024, height: 1024 } });
   const shot = async (name, body) => {
     await p.setContent(`<html><body style="margin:0;background:transparent">${svg(body)}</body></html>`);
     await p.evaluate(() => document.fonts.ready);

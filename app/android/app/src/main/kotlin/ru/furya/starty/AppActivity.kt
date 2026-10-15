@@ -94,7 +94,7 @@ class AppActivity : FlutterActivity() {
     override fun onStop() {
         super.onStop()
         Updater.onStop()
-        // выбранный значок и сегодняшнее число «Календаря» — когда приложение ушло с экрана
+        // выбранный значок и сегодняшнее число в значке — когда приложение ушло с экрана
         try { AppIcons.apply(applicationContext) } catch (_: Exception) {}
         // Свернули — обновление встанет через минуту, если к тому времени не вернутся.
         if (!Updater.visible) Updater.installSoon(applicationContext)
