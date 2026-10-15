@@ -40,6 +40,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "site")
 OUT_JSON = os.path.join(SITE, "data", "events.json")
 OUT_ICS = os.path.join(SITE, "calendar.ics")
+# файлы протоколов турниров: только на сайте (gh-pages), в main не коммитятся (.gitignore)
+PROTO_DIR = os.path.join(SITE, "data", "protocols")
 NAMES = os.path.join(ROOT, "data", "names.json")
 ROSTER = os.path.join(ROOT, "data", "roster.json")
 
@@ -314,13 +316,8 @@ def times_to_msk(seg_start, local_times, offset_min):
     return out
 
 
-def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, ours_rule,
-                     extra_starts=None, fix=None):
-    """Сегменты из табло. ours_rule(name, nation) → bool. extra_starts — запасные
-    времена начала {(kind, level, seg): datetime}, если в табло нет расписания.
-    fix(имя) — приведение имени из табло (региональные: «Имя Отчество ФАМИЛИЯ» → «Имя ФАМИЛИЯ»).
-    Окончательность, оценки и строки протокола — в protocols.segment_view."""
-    fix = fix or (lambda s: s)
+def categories_of(idx, intl):
+    """Категории табло, которые берём в события и в протокол: [(категория, вид, уровень)]."""
     cats = []
     for c in idx["categories"]:
         if not intl and fsr.low_level(c["name"]):
@@ -328,14 +325,46 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
         kind, level = (cat_en(c["name"]) if intl else fsr.classify(c["name"]))
         if kind is None:
             continue
-        if level is None:
-            level = "senior"
-        cats.append((c, kind, level))
+        cats.append((c, kind, level or "senior"))
+    return cats
+
+
+def protocol_name_of(names, fix):
+    """Имя для файла протокола — как в событиях: fix табло, затем to_ru."""
+    return lambda n: names.to_ru(fix(n))
+
+
+def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, ours_rule,
+                     extra_starts=None, fix=None, protos=None, now=None, proto_dir=None):
+    """Сегменты из табло. ours_rule(name, nation) → bool. extra_starts — запасные
+    времена начала {(kind, level, seg): datetime}, если в табло нет расписания.
+    fix(имя) — приведение имени из табло (региональные: «Имя Отчество ФАМИЛИЯ» → «Имя ФАМИЛИЯ»).
+    Окончательность, оценки и строки протокола — в protocols.segment_view.
+    protos — словарь {tid: заготовка файла протокола}: сюда кладутся категории с сегментами
+    (и сегменты без времени в расписании). now и proto_dir — для проверок на фикстурах."""
+    fix = fix or (lambda s: s)
+    cats = categories_of(idx, intl)
     levels = {lv for _, _, lv in cats}
     mixed = len(levels) > 1
     events = []
-    now = dt.datetime.now(dt.timezone.utc)
-    judges_cache = {}  # PDF оценок: один адрес — один запрос на сборку
+    now = now or dt.datetime.now(dt.timezone.utc)
+    fetcher = P.Fetcher()  # PDF оценок и итоги: один адрес — один запрос на сборку
+    name_of = protocol_name_of(names, fix)
+    proto_cats = []
+    prev_doc = P.load_doc(os.path.join(proto_dir or PROTO_DIR, P.proto_name(tid))) if protos is not None else None
+    if protos is not None:
+        protos[tid] = {"tournament": tournament, "src": idx["url"], "marks": idx["marks"],
+                       "categories": proto_cats, "fetcher": fetcher}
+
+    def record(s, seg, category, start, end, view):
+        """Сегмент для файла протокола: с деталями оценок и бригадой, если они есть.
+        Окончательный в прежнем файле и сейчас — берём прежний: PDF оценок второй раз не качаем."""
+        prev = P.find_segment(prev_doc, category, seg)
+        if prev and prev["state"] == "final" and view["state"] == "final" and len(prev["rows"]) == len(view["rows"]):
+            return prev
+        return P.make_segment(seg=s, code=seg, start=start, end=end, view=view, name_of=name_of,
+                              fetcher=fetcher, prev=prev, log=log)
+
     for c, kind, level in cats:
         try:
             entries = [dict(p, name=fix(p["name"])) for p in st.parse_entries(c["entries_url"])]
@@ -349,18 +378,34 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
         last_seg = max((SEG_ORDER[x] for x in codes if x), default=None)
         cat_events, cat_total, cat_rows = [], None, []
         first_places, first_url = {}, None
+        seg_records = []
         for s, seg in zip(c["segments"], codes):
             if seg and SEG_ORDER[seg] == 0:
                 first_url = s["url"]
             if not seg:
                 continue
             start = s.get("start") or (extra_starts or {}).get((kind, level, seg))
-            if not start:
+            if not start and protos is None:
                 continue
             try:
                 seg_page = net.fetch(s["url"])
-            except net.FetchError:
+            except net.FetchError as e:
                 seg_page = None
+                fetcher.errors.append((s["url"], e.kind))
+            if not start:
+                # в расписании табло времени нет (ФФКМ: произвольные) — события нет, сегмент в протоколе есть
+                try:
+                    view = P.segment_view(
+                        seg=s, category=c["name"], code=seg, page=seg_page,
+                        cat_url=c.get("results_url") if SEG_ORDER[seg] == last_seg else None,
+                        now=now, start=None, end=None, marks=idx["marks"], fetcher=fetcher,
+                        final_by_time=CFG.get("final_by_time", False),
+                        podium_from_pdf=CFG.get("podium_from_judges_pdf", False))
+                    if seg_page is not None:
+                        seg_records.append(record(s, seg, c["name"], None, None, view))
+                except Exception as e:  # протокол необязателен — расписание важнее
+                    log("  ! протокол сегмента:", s["url"], e)
+                continue
             order = [dict(p, name=fix(p["name"])) for p in st.parse_starting_order(s["url"], seg_page)] \
                 if seg_page else []
             people = order if order else [dict(p, no=None, warmup=None) for p in entries]
@@ -383,7 +428,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                     seg=s, category=c["name"], code=seg, page=seg_page,
                     cat_url=c.get("results_url") if SEG_ORDER[seg] == last_seg else None,
                     now=now, start=start.astimezone(dt.timezone.utc), end=end.astimezone(dt.timezone.utc),
-                    marks=idx["marks"], cache=judges_cache,
+                    marks=idx["marks"], fetcher=fetcher,
                     final_by_time=CFG.get("final_by_time", False),
                     podium_from_pdf=CFG.get("podium_from_judges_pdf", False))
             except Exception as e:  # протокол необязателен — расписание важнее
@@ -392,6 +437,11 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
             if view["reason"] or view["state"] == "judges_mismatch":
                 # оценки есть, но не к этому сегменту (или строки PDF не сошлись с табло): тройку не ставим
                 log("  ! оценки сегмента не подтверждены:", s["url"], view["reason"] or "чужой файл")
+            if protos is not None and seg_page is not None and "rows" in view:
+                try:
+                    seg_records.append(record(s, seg, c["name"], start, end, view))
+                except Exception as e:
+                    log("  ! протокол сегмента:", s["url"], e)
             done = view["state"] == "final"
             results = [dict(r, name=fix(r["name"])) for r in view["results"] or []]
             started = bool(results) and start.astimezone(dt.timezone.utc) <= now
@@ -452,6 +502,15 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
             ev["desc"] = describe(ev)
             events.append(ev)
             cat_events.append(ev)
+        if protos is not None:
+            total = None
+            last_final = any(r["state"] == "final" for r in seg_records if SEG_ORDER[r["code"]] == last_seg)
+            if c.get("results_url") and any(r["state"] != "scheduled" for r in seg_records):
+                try:
+                    total = P.total_record(fetcher.page(c["results_url"]), last_final, name_of)
+                except net.FetchError:
+                    total = None
+            proto_cats.append(P.category_record(kind, level, c["name"], seg_records, total))
         if cat_total and cat_events:
             # наши не прошли в последний сегмент — итог вида у их последнего старта
             ev = cat_events[-1]
@@ -579,7 +638,7 @@ def do_fsr(names, report, failed, upcoming, photos):
                     idx = None
                 if idx and idx["categories"]:
                     got = from_swisstiming(
-                        idx, tid=tid, tournament=name, venue=venue, intl=False, broadcast=bcast,
+                        idx, protos=report.get("protos"), tid=tid, tournament=name, venue=venue, intl=False, broadcast=bcast,
                         names=names, ours_rule=rule,
                         extra_starts={k: v[0] for k, v in pdf_starts.items()})
             if not got and pdf_starts:
@@ -680,7 +739,7 @@ def do_ffkm(names, report, failed, upcoming, fed_pages):
                 idx = st.parse_index(table, default_offset=MSK_OFFSET)
                 if idx["categories"]:
                     got = _tag_regional(from_swisstiming(
-                        idx, tid=tid, tournament=name, venue=venue, intl=False,
+                        idx, protos=report.get("protos"), tid=tid, tournament=name, venue=venue, intl=False,
                         broadcast=broadcast_for(name), names=names, ours_rule=rule,
                         fix=pp.entry_name), "Москва")
                 else:
@@ -830,7 +889,7 @@ def do_isu(names, report, failed, upcoming, photos):
             if idx and idx["categories"]:
                 if idx["city"]:
                     venue = intl_venue(idx["city"], idx["nation"] or e["country"], e["country_name"])
-                got = from_swisstiming(idx, tid=tid, tournament=name, venue=venue, intl=True,
+                got = from_swisstiming(idx, protos=report.get("protos"), tid=tid, tournament=name, venue=venue, intl=True,
                                        broadcast=bcast, names=names, ours_rule=ours_rule_intl,
                                        extra_starts=extra)
                 if got:
@@ -921,7 +980,7 @@ def do_goldenskate(names, report, failed, isu_ok):
             if not idx["categories"]:
                 continue
             venue = intl_venue(idx["city"] or g["city"], idx["nation"], g["country"])
-            got = from_swisstiming(idx, tid=tid, tournament=name, venue=venue, intl=True,
+            got = from_swisstiming(idx, protos=report.get("protos"), tid=tid, tournament=name, venue=venue, intl=True,
                                    broadcast=broadcast_for(name), names=names,
                                    ours_rule=ours_rule_intl)
         except Exception as ex:
@@ -1038,7 +1097,7 @@ def main():
     prev = load_prev()
     names = nm.Names(NAMES, CFG.get("aliases"))
     roster = load_roster()
-    report = {"errors": [], "sources": {}}
+    report = {"errors": [], "sources": {}, "protos": {}}
     failed = set()
     upcoming = []
     events = []
@@ -1200,12 +1259,41 @@ def main():
         save_roster(roster)
         rs.save()
 
+    report["protocols"] = write_protocols(report["protos"], data["events"], now)
     write_site(data)
     log(f"готово: {len(data['events'])} стартов, {len(data['upcoming'])} турниров без расписания;"
-        f" источники: {report['sources']}; ошибок: {len(report['errors'])}")
+        f" источники: {report['sources']}; протоколы: {report['protocols']}; ошибок: {len(report['errors'])}")
     for e in report["errors"]:
         log("   -", e)
     return 0
+
+
+def write_protocols(protos, events, now, proto_dir=None):
+    """Файлы протоколов собранных турниров и status.json; events[].proto. → {ok, format, net, missing}.
+
+    Прежний файл — с gh-pages (workflow кладёт его в site/data/protocols до сбора): защита от
+    регресса берёт из него окончательные сегменты, а файл, не прошедший проверку, не пишется —
+    на сайте остаётся последний удачный."""
+    proto_dir = proto_dir or PROTO_DIR
+    os.makedirs(proto_dir, exist_ok=True)
+    status = P.read_status(proto_dir)
+    summary = {"ok": 0, "format": 0, "net": 0, "missing": 0}
+    final_by_time = CFG.get("final_by_time", False)
+    for tid, p in protos.items():
+        doc = P.make_doc(tid=tid, tournament=p["tournament"], src=p["src"], marks=p["marks"],
+                         categories=p["categories"], now=now)
+        for note in P.merge_prev(doc, P.load_doc(os.path.join(proto_dir, P.proto_name(tid)))):
+            log(f"  протокол {tid}: {note}")
+        if not doc["categories"]:
+            summary["missing"] += 1
+            continue
+        ok, _ = P.publish(proto_dir, doc, final_by_time, log)
+        error = "format" if not ok else P.fetch_error(p["fetcher"].errors)
+        status[tid] = P.status_item(status.get(tid), now, error)
+        summary["ok" if error is None else ("format" if error == "format" else "net")] += 1
+    P.write_status(proto_dir, status, now)
+    P.attach_proto(events, proto_dir)
+    return summary
 
 
 def write_site(data):
@@ -1232,6 +1320,8 @@ def write_site(data):
     for fn in os.listdir(edir):
         if fn.endswith(".ics") and fn not in keep:
             os.unlink(os.path.join(edir, fn))
+    # файлы протоколов турниров, которых нет среди событий, — на сайте не нужны
+    P.cleanup(PROTO_DIR, {P.proto_name(e["tid"]) for e in data["events"]})
 
 
 if __name__ == "__main__":

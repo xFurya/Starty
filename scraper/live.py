@@ -9,17 +9,24 @@
 """
 import datetime as dt
 import json
+import os
 import sys
 
 from . import build as b
 from . import names as nm
 from . import net
+from . import people as pp
 from . import protocols as P
 from . import results as rs
 from . import swisstiming as st
 
 BEFORE = dt.timedelta(minutes=15)
 AFTER = dt.timedelta(hours=24)
+# Запросов к табло за прогон (оглавления, страницы сегментов, PDF оценок, итоги, судьи) и
+# таймаут одного запроса: задание live — 10 минут. Не хватило бюджета — сегмент остаётся
+# как в прошлом файле, в журнал пишется, что пропущено.
+BUDGET = 12
+TIMEOUT, TRIES = 15, 2
 
 
 def settled(ev):
@@ -62,11 +69,13 @@ def _cat_of(idx, url):
     return None
 
 
-def refresh(ev, idx, names, now, judges_cache=None):
+def refresh(ev, idx, names, now, fetcher=None):
     """Обновить событие по табло. True — что-то изменилось.
 
     Окончательность — от protocols.segment_view (судейские оценки сегмента). Окончательный
-    сегмент не понижаем: если оценки пропали или PDF не прочитан (сеть), остаётся final."""
+    сегмент не понижаем: если оценки пропали или PDF не прочитан (сеть), остаётся final.
+    fetcher — загрузка на прогон (кэш и бюджет запросов)."""
+    fetcher = fetcher or P.Fetcher()
     live = ev["live"]
     before = json.dumps(ev, sort_keys=True, ensure_ascii=False)
     seg = _seg_of(idx, live["seg"])
@@ -75,7 +84,7 @@ def refresh(ev, idx, names, now, judges_cache=None):
         return False
     cat = _cat_of(idx, live["seg"]) or {}
     try:
-        page = net.fetch(live["seg"])
+        page = fetcher.page(live["seg"])
     except net.FetchError as e:
         b.log("  ! табло:", live["seg"], e)
         return False
@@ -85,7 +94,7 @@ def refresh(ev, idx, names, now, judges_cache=None):
     view = P.segment_view(
         seg=seg, category=cat.get("name", ""), code=ev["seg"], page=page, cat_url=live.get("cat"),
         now=now, start=start, end=dt.datetime.fromisoformat(ev["end"]),
-        marks=bool(idx.get("marks")), cache=judges_cache if judges_cache is not None else {},
+        marks=bool(idx.get("marks")), fetcher=fetcher,
         final_by_time=b.CFG.get("final_by_time", False),
         podium_from_pdf=b.CFG.get("podium_from_judges_pdf", False))
     if view["reason"]:
@@ -118,7 +127,7 @@ def refresh(ev, idx, names, now, judges_cache=None):
             ev["facts"] = f
     if done and live.get("cat") and not ev.get("total"):
         try:
-            cr = st.parse_category_results(live["cat"])
+            cr = st.parse_category_results(live["cat"], fetcher.page(live["cat"]))
         except net.FetchError as e:
             b.log("  ! итог вида:", live["cat"], e)
             cr = {"complete": False}
@@ -134,7 +143,7 @@ def refresh(ev, idx, names, now, judges_cache=None):
             if live.get("first"):
                 try:
                     first = {r["name"]: r["place"]
-                             for r in st.parse_segment_results(net.fetch(live["first"])) or []}
+                             for r in st.parse_segment_results(fetcher.page(live["first"])) or []}
                 except net.FetchError:
                     pass
             f = rs.total_facts(live["cat"] + "#total", rows, first, kind=ev["kind"], level=ev["level"],
@@ -143,6 +152,95 @@ def refresh(ev, idx, names, now, judges_cache=None):
                 ev["facts"] = rs.unique_facts((ev.get("facts") or []) + f)
     ev["desc"] = b.describe(ev)
     return json.dumps(ev, sort_keys=True, ensure_ascii=False) != before
+
+
+def tournament_doc(idx, events, names, now, fetcher, prev):
+    """Файл протокола турнира по табло: окончательные сегменты — из прежнего файла (не
+    перечитываем), будущие — без запросов, остальные — страница, PDF оценок, итог вида.
+    Страница не прочиталась (сеть, бюджет) — сегмент остаётся как в прежнем файле."""
+    ev0 = events[0]
+    fix = pp.entry_name if ev0.get("tier") == "regional" else (lambda s: s)
+    name_of = b.protocol_name_of(names, fix)
+    sched = {(e["kind"], e["level"], e["seg"]): (dt.datetime.fromisoformat(e["start"]),
+                                                  dt.datetime.fromisoformat(e["end"])) for e in events}
+    final_by_time = b.CFG.get("final_by_time", False)
+    podium_from_pdf = b.CFG.get("podium_from_judges_pdf", False)
+    cats = []
+    for c, kind, level in b.categories_of(idx, ev0["intl"]):
+        codes = [b.seg_code(s["name"]) for s in c["segments"]]
+        last_seg = max((b.SEG_ORDER[x] for x in codes if x), default=None)
+        recs = []
+        for s, code in zip(c["segments"], codes):
+            if not code:
+                continue
+            start, end = sched.get((kind, level, code), (None, None))
+            prev_seg = P.find_segment(prev, c["name"], code)
+            if prev_seg and prev_seg["state"] == "final":
+                recs.append(prev_seg)
+                continue
+            page = None
+            skipped = len(fetcher.skipped)
+            if start is None or now >= start:
+                try:
+                    page = fetcher.page(s["url"])
+                except net.FetchError:
+                    if prev_seg:
+                        recs.append(prev_seg)
+                    continue
+            view = P.segment_view(
+                seg=s, category=c["name"], code=code, page=page,
+                cat_url=c.get("results_url") if b.SEG_ORDER[code] == last_seg else None,
+                now=now, start=start, end=end, marks=idx["marks"], fetcher=fetcher,
+                final_by_time=final_by_time, podium_from_pdf=podium_from_pdf)
+            rec = P.make_segment(seg=s, code=code, start=start, end=end, view=view, name_of=name_of,
+                                 fetcher=fetcher, prev=prev_seg, log=b.log)
+            if prev_seg and len(fetcher.skipped) > skipped:
+                rec = prev_seg  # не хватило бюджета на PDF или итог — состояние не меняем
+            recs.append(rec)
+        prev_total = P.find_total(prev, c["name"])
+        total = prev_total
+        last_final = any(r["state"] == "final" for r in recs if b.SEG_ORDER[r["code"]] == last_seg)
+        if c.get("results_url") and any(r["state"] != "scheduled" for r in recs) \
+                and not (prev_total and prev_total["state"] == "final"):
+            try:
+                total = P.total_record(fetcher.page(c["results_url"]), last_final, name_of)
+            except net.FetchError:
+                total = prev_total
+        cats.append(P.category_record(kind, level, c["name"], recs, total))
+    return P.make_doc(tid=ev0["tid"], tournament=ev0["tournament"], src=idx["url"], marks=idx["marks"],
+                      categories=cats, now=now)
+
+
+def protocols(todo, events, indexes, names, now, fetcher, proto_dir=None):
+    """Файлы протоколов турниров, у которых сейчас идёт или только что прошёл старт, и status.json.
+    → сколько файлов записано (изменилось содержимое)."""
+    proto_dir = proto_dir or b.PROTO_DIR
+    os.makedirs(proto_dir, exist_ok=True)
+    status = P.read_status(proto_dir)
+    written = 0
+    for tid in dict.fromkeys(e["tid"] for e in todo):
+        evs = [e for e in events if e["tid"] == tid]
+        idx = indexes.get(evs[0]["live"]["idx"])
+        if idx is None:
+            status[tid] = P.status_item(status.get(tid), now, "net")
+            continue
+        errors_before, skipped_before = len(fetcher.errors), len(fetcher.skipped)
+        path = os.path.join(proto_dir, P.proto_name(tid))
+        prev = P.load_doc(path)
+        try:
+            doc = tournament_doc(idx, evs, names, now, fetcher, prev)
+        except Exception as e:  # один турнир не должен срывать остальные
+            b.log(f"  ! протокол {tid}:", e)
+            status[tid] = P.status_item(status.get(tid), now, "format")
+            continue
+        for note in P.merge_prev(doc, prev):
+            b.log(f"  протокол {tid}: {note}")
+        ok, wrote = P.publish(proto_dir, doc, b.CFG.get("final_by_time", False), b.log)
+        written += wrote
+        error = "format" if not ok else P.fetch_error(fetcher.errors[errors_before:])
+        status[tid] = P.status_item(status.get(tid), now, error, complete=len(fetcher.skipped) == skipped_before)
+    P.write_status(proto_dir, status, now)
+    return written
 
 
 def main():
@@ -157,19 +255,28 @@ def main():
         return 0
     names = nm.Names(b.NAMES, b.CFG.get("aliases"))
     indexes = {}
-    judges_cache = {}  # PDF оценок: один адрес — один запрос на прогон
+    fetcher = P.Fetcher(budget=BUDGET, timeout=TIMEOUT, tries=TRIES)
     changed = 0
     for ev in todo:
         url = ev["live"]["idx"]
         if url not in indexes:
             try:
-                indexes[url] = st.parse_index(url)
+                indexes[url] = st.parse_index_page(fetcher.page(url), url)
             except net.FetchError as e:
                 b.log("  ! табло турнира:", url, e)
                 indexes[url] = None
-        if indexes[url] and refresh(ev, indexes[url], names, now, judges_cache):
+        if indexes[url] and refresh(ev, indexes[url], names, now, fetcher):
             changed += 1
             b.log("  обновлено:", ev["title"], "(промежуточные)" if ev.get("provisional") else "")
+    written = protocols(todo, data["events"], indexes, names, now, fetcher)
+    before = [e.get("proto") for e in data["events"]]
+    P.attach_proto(data["events"], b.PROTO_DIR)
+    if [e.get("proto") for e in data["events"]] != before:
+        changed += 1
+    b.log(f"запросов к табло: {fetcher.requests} из {BUDGET}; файлов протоколов записано: {written}")
+    if fetcher.skipped:
+        b.log(f"  ! бюджет запросов исчерпан, пропущено {len(fetcher.skipped)}: "
+              + ", ".join(dict.fromkeys(fetcher.skipped)))
     if changed:
         data["checked"] = now.isoformat()
         b.write_site(data)

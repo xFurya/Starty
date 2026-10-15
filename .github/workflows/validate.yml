@@ -35,5 +35,13 @@ jobs:
         run: flutter test
       - name: Проверить синтаксис скрапера
         run: python3 -m compileall -q scraper
-      - name: Тесты разбора табло
-        run: python3 -m unittest scraper.test_swisstiming
+      - name: Установить pdftotext
+        # без него тесты PDF оценок (ФФКМ) молча пропускаются
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+      - name: Тесты сборщика
+        run: |
+          set -o pipefail
+          python3 -m unittest -v scraper.test_swisstiming scraper.test_regional scraper.test_people \
+            scraper.test_fsr scraper.test_protocols scraper.test_live scraper.test_net 2>&1 | tee tests.log
+          # пропуск теста (нет pdftotext и т. п.) — ошибка: проверка не должна молча слабеть
+          if grep -qE "skipped '|skipped=" tests.log; then echo "::error::тесты пропущены"; grep -E "skipped '|skipped=" tests.log; exit 1; fi

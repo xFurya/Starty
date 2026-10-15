@@ -55,6 +55,11 @@ def _disk(family, name):
     raise AssertionError(f"нет фикстуры {family}/{name}")
 
 
+def _bytes(path):
+    with open(path, "rb") as f:
+        return f.read()
+
+
 def _base(url):
     return url.rsplit("/", 1)[-1] if url else None
 
@@ -367,7 +372,7 @@ class FfkmSegments(unittest.TestCase):
     def setUp(self):
         self.idx = st.parse_index_page(_read(os.path.join(FIX, "ffkm", "index.htm")),
                                        FAMILIES["ffkm"]["src"], b.MSK_OFFSET)
-        self.cache = {}
+        self.fetcher = P.Fetcher()
 
     def seg(self, page_name):
         for c in self.idx["categories"]:
@@ -380,9 +385,9 @@ class FfkmSegments(unittest.TestCase):
         c, s = self.seg(page_name)
         page = page if page is not None else _read(_disk("ffkm", page_name))
         if pdf is not None:
-            self.cache[s["scores_pdf"]] = pdf
+            self.fetcher.pdfs[s["scores_pdf"]] = pdf
         return P.segment_view(seg=s, category=c["name"], code=code, page=page, cat_url=cat_url,
-                              now=now, start=start, end=end, marks=self.idx["marks"], cache=self.cache,
+                              now=now, start=start, end=end, marks=self.idx["marks"], fetcher=self.fetcher,
                               final_by_time=False, podium_from_pdf=podium)
 
     @unittest.skipUnless(HAS_PDFTOTEXT, "нужен pdftotext")
@@ -449,12 +454,297 @@ class FfkmPdfNames(unittest.TestCase):
     def test_key_ignores_case_yo_and_spaces(self):
         self.assertEqual(P.key("  Анна   ЁЖИКОВА "), P.key("анна ежикова"))
 
+    def test_key_ignores_patronymic(self):
+        # табло ФФКМ — с отчеством, PDF оценок того же турнира — без (Чемпионат Москвы 2026-10-01)
+        self.assertEqual(P.key("Лев Дмитриевич ЛАЗАРЕВ"), P.key("Лев ЛАЗАРЕВ"))
+        self.assertEqual(P.key("Анна Юрьевна ЛЯШЕНКО / Петр Алексеевич АЛЕКСЕЕНКО"),
+                         P.key("Анна ЛЯШЕНКО / Петр АЛЕКСЕЕНКО"))
+        self.assertNotEqual(P.key("Лев ЛАЗАРЕВ"), P.key("Лев ЛАЗАРЕНКО"))
+
     def test_pdf_check_start_list_and_empty(self):
         rows = [{"place": 1, "name": "A B", "no": 3}]
         self.assertEqual(P.pdf_check([], [], None), (False, "empty"))
         self.assertEqual(P.pdf_check(rows, [{"no": 3, "name": "a b"}], None), (True, None))
         self.assertEqual(P.pdf_check(rows, [{"no": 4, "name": "A B"}], None), (False, "start_list"))
         self.assertEqual(P.pdf_check(rows, [], None), (False, "unverified"))
+
+
+class FixtureNet:
+    """Сеть из фикстур семейства: страницы — по имени файла без учёта регистра, PDF — текст
+    pdftotext (ФФКМ) или сохранённый .txt рядом (ISU). Чего нет в фикстурах — 404."""
+
+    def __init__(self, family):
+        self.dir = os.path.join(FIX, family)
+        self.files = {f.lower(): os.path.join(self.dir, f) for f in os.listdir(self.dir)}
+
+    def fetch(self, url, *args, **kwargs):
+        p = self.files.get(url.rsplit("/", 1)[-1].lower())
+        if not p or not p.endswith((".htm", ".html")):
+            raise net.FetchError(f"{url}: нет в фикстурах", kind="http", status=404)
+        return _read(p)
+
+    def pdf_text(self, url, *args, **kwargs):
+        name = url.rsplit("/", 1)[-1].lower()
+        txt = self.files.get(name[:-4] + ".txt") if name.endswith(".pdf") else None
+        if txt:
+            with open(txt, encoding="utf-8") as f:
+                return f.read()
+        p = self.files.get(name)
+        if not p or not HAS_PDFTOTEXT:
+            raise net.FetchError(f"{url}: нет в фикстурах", kind="http", status=404)
+        return _pdf_text(os.path.basename(self.dir), os.path.basename(p))
+
+    def __enter__(self):
+        self._patches = [mock.patch.object(net, "fetch", side_effect=self.fetch),
+                         mock.patch.object(net, "pdf_text", side_effect=self.pdf_text),
+                         mock.patch.object(b, "log", lambda *a, **k: None)]
+        for p in self._patches:
+            p.start()
+        return self
+
+    def __exit__(self, *exc):
+        for p in self._patches:
+            p.stop()
+
+
+NOW = dt.datetime(2026, 10, 15, 23, 0, tzinfo=MSK)
+FAMILY_BUILD = {
+    "ffkm": {"tid": "ffkm:2026-08-24_pm", "tournament": "Первенство Москвы", "intl": False,
+             "fix": "entry_name"},
+    "isu": {"tid": "isu:isu-jgp-ankara-2026", "tournament": "ISU JGP Ankara 2026", "intl": True},
+    "fsrussia": {"tid": "fsr:led-mechty-2026", "tournament": "Лёд Мечты", "intl": False},
+    "denistenmemorial": {"tid": "isu:isu-cs-denis-ten-memorial", "tournament": "Denis Ten Memorial",
+                         "intl": True},
+}
+
+
+def build_family(family, proto_dir, now=NOW, cfg=None):
+    """Полный путь сборщика на фикстурах: оглавление → события и файл протокола в proto_dir."""
+    from . import names as nm
+    from . import people as pp
+    spec, fam = FAMILIES[family], FAMILY_BUILD[family]
+    with FixtureNet(family), mock.patch.dict(b.CFG, cfg or {}):
+        idx = st.parse_index_page(_read(os.path.join(FIX, family, "index.htm")), spec["src"], spec["offset"])
+        protos = {}
+        events = b.from_swisstiming(
+            idx, tid=fam["tid"], tournament=fam["tournament"], venue="", intl=fam["intl"], broadcast=[],
+            names=nm.Names(None, {}), ours_rule=lambda n, nat: False,
+            fix=pp.entry_name if fam.get("fix") else None, protos=protos, now=now, proto_dir=proto_dir)
+        summary = b.write_protocols(protos, events, now, proto_dir)
+    return events, summary
+
+
+class ProtocolFiles(unittest.TestCase):
+    """Файл протокола: сборщик на фикстурах воспроизводит protocol.json байт-в-байт.
+    Перезапись эталона — STARTY_REGEN=1 (как expected.json)."""
+
+    def setUp(self):
+        import tempfile
+        self.dir = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, self.dir, True)
+
+    def file(self, family):
+        return os.path.join(self.dir, P.proto_name(FAMILY_BUILD[family]["tid"]))
+
+    def test_golden_files(self):
+        for family in sorted(FAMILY_BUILD):
+            if family == "ffkm" and not HAS_PDFTOTEXT:
+                continue  # строки ФФКМ из PDF без pdftotext не прочитать
+            with self.subTest(family=family):
+                d = os.path.join(self.dir, family)
+                events, summary = build_family(family, d)
+                with open(os.path.join(d, P.proto_name(FAMILY_BUILD[family]["tid"])), "rb") as f:
+                    got = f.read()
+                path = os.path.join(FIX, family, "protocol.json")
+                if os.environ.get("STARTY_REGEN"):
+                    with open(path, "wb") as f:
+                        f.write(got)
+                    continue
+                with open(path, "rb") as f:
+                    self.assertEqual(got, f.read())
+                self.assertEqual(P.validate(json.loads(got)), [])
+                self.assertTrue(all(e["proto"] == P.proto_name(e["tid"]) for e in events))
+
+    def test_second_run_without_changes_keeps_file(self):
+        build_family("isu", self.dir)
+        with mock.patch.object(P, "details_for", wraps=P.details_for) as details:
+            build_family("isu", self.dir, now=NOW + dt.timedelta(minutes=30))
+        self.assertEqual(details.call_count, 0)  # окончательный сегмент — из прежнего файла, PDF не качаем
+        before = _bytes(self.file("isu"))
+        mtime = os.stat(self.file("isu")).st_mtime_ns
+        build_family("isu", self.dir, now=NOW + dt.timedelta(hours=1))
+        self.assertEqual(_bytes(self.file("isu")), before)  # built не сдвинулся
+        self.assertEqual(os.stat(self.file("isu")).st_mtime_ns, mtime)
+
+    def test_isu_details_sum_to_tes_and_pcs(self):
+        build_family("isu", self.dir)
+        doc = P.load_doc(self.file("isu"))
+        seg = next(sg for c in doc["categories"] for sg in c["segments"] if sg["rows"])
+        self.assertEqual(len(seg["panel"]), 9)
+        self.assertEqual(seg["panel"][0], {"no": "J1", "name": "Jennifer LUGINBUHL", "nation": "SUI"})
+        self.check_details(seg["rows"], 39)
+
+    @unittest.skipUnless(HAS_PDFTOTEXT, "нужен pdftotext")
+    def test_ffkm_details_sum_to_tes_and_pcs(self):
+        build_family("ffkm", self.dir)
+        doc = P.load_doc(self.file("ffkm"))
+        women = doc["categories"][0]
+        kp = women["segments"][0]
+        self.assertEqual((kp["state"], kp["table"], kp["judges"].rsplit("/", 1)[-1]),
+                         ("final", "judges_pdf", "OooeaaeCop_K_Scores.pdf"))
+        self.assertEqual(kp["panel"][0]["no"], "J1")
+        self.check_details(kp["rows"], 48)
+        el = kp["rows"][0]["els"][3]
+        self.assertEqual((el["n"], el["info"], el["x"], el["b"], el["g"], el["j"], el["s"]),
+                         ("3F!+3T", "!", True, 10.45, 0.18, [0, 0, 1, 1, 0], 10.63))
+        self.assertEqual([c["n"] for c in kp["rows"][0]["comp"]], ["Композиция", "Представление", "Техника катания"])
+        dance = doc["categories"][3]["segments"][0]
+        self.check_details(dance["rows"], 24)
+        deds = [d for r in dance["rows"] for d in r.get("deds", [])]
+        self.assertIn({"n": "Длительная поддержка", "v": -1.0}, deds)
+        self.assertIn({"n": "Падения", "v": -2.0}, deds)
+
+    def check_details(self, rows, n):
+        with_els = [r for r in rows if "els" in r]
+        self.assertEqual(len(with_els), n)
+        for r in with_els:
+            self.assertAlmostEqual(sum(e["s"] for e in r["els"]), float(r["tes"]), delta=0.011, msg=r["name"])
+            self.assertAlmostEqual(sum(c["s"] * c["f"] for c in r["comp"]), float(r["pcs"]), delta=0.06, msg=r["name"])
+            self.assertAlmostEqual(r["bv"], round(sum(e["b"] for e in r["els"]), 2), delta=0.001)
+            if "deds" in r:
+                self.assertAlmostEqual(sum(d["v"] for d in r["deds"]), -float(r["ded"]), delta=0.001)
+            for k in ("points", "tes", "pcs"):
+                self.assertRegex(r[k], r"^\d{1,3}\.\d{2}$")
+
+    def test_unmatched_pdf_row_gets_no_details(self):
+        view = {"rows": [{"i": 1, "place": 1, "name": "A B", "no": 3, "points": "50.00"}],
+                "table": "results", "state": "final", "basis": "judges", "skipped": 0}
+        details = [{"place": 1, "name": "C D", "no": 3, "els": [], "comp": [], "deds": [], "bv": 0,
+                    "tes": 1.0, "pcs": 1.0, "ded": 0.0}]
+        logged = []
+        rec = P.segment_record(seg={"url": "u", "name": "КП"}, code="КП", start=None, end=None, view=view,
+                               name_of=lambda n: n, details=details, log=lambda *a: logged.append(a))
+        self.assertNotIn("els", rec["rows"][0])
+        self.assertTrue(logged)
+
+
+def _doc(rows=None, state="final", basis="judges"):
+    rows = rows if rows is not None else [{"i": 1, "place": 1, "status": None, "no": 4, "name": "A B",
+                                           "nation": "RUS", "points": "70.00"}]
+    seg = {"code": "КП", "name": "Короткая программа", "start": None, "end": None, "page": "https://x/SEG001.htm",
+           "judges": "https://x/a.pdf", "table": "results", "state": state, "basis": basis, "skipped": 0,
+           "rows": rows}
+    return P.make_doc(tid="t:1", tournament="T", src="https://x/index.htm", marks=True, now=NOW,
+                      categories=[P.category_record("women", "junior", "Женщины", [seg], None)])
+
+
+class Validate(unittest.TestCase):
+    def test_good_document(self):
+        self.assertEqual(P.validate(_doc()), [])
+
+    def test_bad_documents(self):
+        bad = {
+            "state": _doc(state="done"),
+            "final без basis": _doc(basis=None),
+            "time без флага": _doc(basis="time"),
+            "запятая": _doc(rows=[{"i": 1, "place": 1, "name": "A", "points": "70,00"}]),
+            "i": _doc(rows=[{"i": 2, "place": 1, "name": "A", "points": None},
+                            {"i": 2, "place": 2, "name": "B", "points": None}]),
+            "место": _doc(rows=[{"i": 1, "place": 0, "name": "A", "points": None}]),
+        }
+        for why, doc in bad.items():
+            with self.subTest(why=why):
+                self.assertTrue(P.validate(doc))
+        self.assertEqual(P.validate(_doc(basis="time"), final_by_time=True), [])
+
+    def test_parts_length_and_size(self):
+        doc = _doc()
+        doc["categories"][0]["total"] = {"state": "provisional", "complete": False, "cols": ["КП", "ПП"],
+                                         "colsKind": "places", "skipped": 0,
+                                         "rows": [{"i": 1, "place": 1, "name": "A", "points": None, "parts": ["1"]}]}
+        self.assertTrue(any("parts" in e for e in P.validate(doc)))
+        big = _doc(rows=[{"i": k, "place": None, "name": "Я" * 200, "points": None} for k in range(1, 200)])
+        big["categories"] *= 12
+        self.assertTrue(any(e.startswith("размер") for e in P.validate(big)))
+
+
+class Write(unittest.TestCase):
+    def setUp(self):
+        import tempfile
+        self.dir = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, self.dir, True)
+        self.path = os.path.join(self.dir, "t_1.json")
+
+    def test_invalid_document_keeps_last_good_file(self):
+        self.assertEqual(P.publish(self.dir, _doc(), log=lambda *a: None), (True, True))
+        good = _bytes(self.path)
+        self.assertEqual(P.publish(self.dir, _doc(state="done"), log=lambda *a: None), (False, False))
+        self.assertEqual(_bytes(self.path), good)
+
+    def test_atomic_write_survives_interrupted_replace(self):
+        P.publish(self.dir, _doc(), log=lambda *a: None)
+        good = _bytes(self.path)
+        changed = _doc(rows=[{"i": 1, "place": 1, "name": "C D", "points": "71.00"}])
+        with mock.patch.object(P.os, "replace", side_effect=OSError("обрыв")):
+            with self.assertRaises(OSError):
+                P.write_if_changed(self.path, changed)
+        self.assertEqual(_bytes(self.path), good)
+        self.assertEqual(json.loads(good)["categories"][0]["segments"][0]["rows"][0]["name"], "A B")
+
+    def test_too_big_with_details_is_written_without_details(self):
+        rows = [{"i": k, "place": k, "name": f"N{k}", "points": "50.00", "bv": 1.0,
+                 "els": [{"no": 1, "n": "3Lz", "b": 5.9, "g": 1.0, "j": [1] * 9, "s": 6.9}] * 40,
+                 "comp": [], "deds": []} for k in range(1, 199)]
+        doc = _doc(rows=rows)
+        doc["categories"] *= 3
+        logged = []
+        self.assertEqual(P.publish(self.dir, doc, log=lambda *a: logged.append(a)), (True, True))
+        self.assertNotIn("els", P.load_doc(self.path)["categories"][0]["segments"][0]["rows"][0])
+        self.assertTrue(logged)
+
+    def test_status_and_proto_and_cleanup(self):
+        P.publish(self.dir, _doc(), log=lambda *a: None)
+        open(os.path.join(self.dir, "old_t.json"), "w").close()
+        items = {"t:1": P.status_item(None, NOW, None), "t:2": P.status_item({"read_ok": "x"}, NOW, "net")}
+        P.write_status(self.dir, items, NOW)
+        st_ = P.read_status(self.dir)
+        self.assertEqual(st_["t:1"], {"checked": NOW.isoformat(), "read_ok": NOW.isoformat(), "error": None})
+        self.assertEqual(st_["t:2"], {"checked": NOW.isoformat(), "read_ok": "x", "error": "net"})
+        evs = [{"tid": "t:1"}, {"tid": "t:3"}]
+        P.attach_proto(evs, self.dir)
+        self.assertEqual([e["proto"] for e in evs], ["t_1.json", None])
+        P.cleanup(self.dir, {"t_1.json"})
+        self.assertEqual(sorted(os.listdir(self.dir)), ["status.json", "t_1.json"])
+
+
+class Guard(unittest.TestCase):
+    def seg(self, state, n, judges="https://x/a.pdf", table="results"):
+        return {"code": "КП", "state": state, "judges": judges, "table": table,
+                "rows": [{"i": k} for k in range(1, n + 1)]}
+
+    def test_final_is_kept_while_judges_link_is_there(self):
+        prev = self.seg("final", 24)
+        self.assertEqual(P.guard(self.seg("provisional", 24), prev), (prev, "final_kept"))
+        new = self.seg("provisional", 24, judges=None)
+        self.assertEqual(P.guard(new, prev), (new, "judges_vanished"))
+
+    def test_rows_drop_and_lost_rows(self):
+        prev = self.seg("final", 24)
+        self.assertEqual(P.guard(self.seg("final", 5), prev), (prev, "rows_dropped"))
+        prev = self.seg("provisional", 10)
+        self.assertEqual(P.guard(self.seg("not_published", 0, table="starting"), prev), (prev, "rows_lost"))
+        new = self.seg("provisional", 12)
+        self.assertEqual(P.guard(new, prev), (new, None))
+
+    def test_merge_keeps_missing_segment_and_final_total(self):
+        prev = _doc()
+        prev["categories"][0]["total"] = {"state": "final", "rows": []}
+        doc = _doc()
+        doc["categories"][0]["segments"] = []
+        notes = P.merge_prev(doc, prev)
+        self.assertEqual(len(doc["categories"][0]["segments"]), 1)
+        self.assertEqual(doc["categories"][0]["total"]["state"], "final")
+        self.assertTrue(notes)
 
 
 if __name__ == "__main__":

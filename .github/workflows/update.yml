@@ -35,6 +35,12 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils python3-pil
           python3 -m pip install -q --break-system-packages opencv-python-headless
 
+      - name: Прежние протоколы с gh-pages
+        # протоколы в main не хранятся: без них сборщик не знает последних удачных файлов
+        env:
+          REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: bash tools/protocols-from-pages.sh
+
       - name: Собрать расписание
         run: |
           export STARTY_URL="https://${GITHUB_REPOSITORY_OWNER,,}.github.io/${GITHUB_REPOSITORY#*/}/"
