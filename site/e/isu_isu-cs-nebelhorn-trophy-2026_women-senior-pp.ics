@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-nebelhorn-trophy-2026:women-senior-pp@starty
-DTSTAMP:20261015T165344Z
+DTSTAMP:20261015T170225Z
 DTSTART;TZID=Europe/Moscow:20260926T123000
 DTEND;TZID=Europe/Moscow:20260926T135000
 SUMMARY:CS Nebelhorn Trophy — женщины ПП
@@ -26,6 +26,8 @@ DESCRIPTION:Итог:\n1. Mia Risa Gomez — 117.35\n2. Marina Piredda —
  — 2-е место\n• Mia Risa Gomez — Отрыв от второго
   места — 17.76 балла\n\nНачало: 12:30 МСК
 LOCATION:Oberstdorf\, Germany
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-nebelhorn-trophy-2026:wom
+ en-senior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-jgp-ankara-2026:dance-junior-rt@starty
-DTSTAMP:20261015T165344Z
+DTSTAMP:20261015T170225Z
 DTSTART;TZID=Europe/Moscow:20260918T101500
 DTEND;TZID=Europe/Moscow:20260918T130500
 SUMMARY:JGP Ankara — танцы РТ
@@ -22,6 +22,8 @@ DESCRIPTION:Итог:\n1. Hana Maria Aboian / Daniil Veselukhin — 66.17\n
  2. Dania Mouaden / Theo Bigot — 65.09\n3. Xinyu Chen / Gordei Chitipakho
  vian — 61.58\n\nНачало: 10:15 МСК\nТрансляция: Okko
 LOCATION:Ankara\, Türkiye
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-ankara-2026:dance-junior
+ -rt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

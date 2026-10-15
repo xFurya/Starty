@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-jgp-gdansk-2026:men-junior-pp@starty
-DTSTAMP:20261015T165344Z
+DTSTAMP:20261015T170225Z
 DTSTART;TZID=Europe/Moscow:20261010T164000
 DTEND;TZID=Europe/Moscow:20261010T210000
 SUMMARY:JGP Gdansk — юноши ПП
@@ -25,6 +25,8 @@ DESCRIPTION:Итог:\n1. Denis Krouglov — 146.55\n2. Janis Znotins — 1
  т второго места — 22.08 балла\n\nНачало: 16:40 
  МСК\nТрансляция: Okko
 LOCATION:Gdansk\, Poland
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-gdansk-2026:men-junior-p
+ p
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

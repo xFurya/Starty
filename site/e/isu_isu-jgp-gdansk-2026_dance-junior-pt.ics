@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-jgp-gdansk-2026:dance-junior-pt@starty
-DTSTAMP:20261015T165344Z
+DTSTAMP:20261015T170225Z
 DTSTART;TZID=Europe/Moscow:20261010T131500
 DTEND;TZID=Europe/Moscow:20261010T162500
 SUMMARY:JGP Gdansk — танцы ПТ
@@ -25,6 +25,8 @@ DESCRIPTION:Итог:\n1. Melissa Cachova / Ivan Morozov — 92.08\n2. Chai
  3.03\n3. Melissa Cachova / Ivan Morozov — 151.10\n\nНачало: 13:15 
  МСК\nТрансляция: Okko
 LOCATION:Gdansk\, Poland
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-gdansk-2026:dance-junior
+ -pt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
