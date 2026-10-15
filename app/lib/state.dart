@@ -1,8 +1,9 @@
 // Общее состояние приложения: расписание, фильтр ленты, уведомления, оформление.
 import 'dart:async';
 
-import 'package:flutter/foundation.dart' show kIsWeb, visibleForTesting;
+import 'package:flutter/foundation.dart' show kIsWeb, mapEquals, visibleForTesting;
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 import 'app_icon.dart';
 import 'data.dart';
@@ -56,8 +57,31 @@ class AppState extends ChangeNotifier {
   /// Пользователь поменял настройку: отметить время, сверка — чуть позже.
   void touchSync() => unawaited(sync.touch());
 
-  Future<void> _keepSession(AccountSession s) =>
-      SyncLocal(Prefs.raw).setAccount(s.toMap());
+  /// Сохранить обновлённый вход. Только если [b] всё ещё текущее подключение: после выхода или смены
+  /// аккаунта запоздалое обновление токена не должно вернуть старую сессию.
+  Future<void> _keepSession(AccountBackend b, AccountSession s) async {
+    if (!identical(sync.backend, b)) return;
+    await SyncLocal(Prefs.raw).setAccount(s.toMap());
+  }
+
+  /// Для тестов: подмена http-клиента сервера (в тестовой сборке адрес сервера не задан).
+  @visibleForTesting
+  http.Client? syncClient;
+  bool get _syncReady => syncConfigured || syncClient != null;
+  String get _url => syncConfigured ? syncUrl : 'https://sync.test';
+  String get _key => syncConfigured ? syncKey : 'test';
+
+  AccountBackend _accountBackend({AccountSession? session}) {
+    late final AccountBackend b;
+    b = AccountBackend(
+      url: _url,
+      key: _key,
+      client: syncClient,
+      session: session,
+      keep: (s) => _keepSession(b, s),
+    );
+    return b;
+  }
 
   /// Всё, что человек меняет, — в документ (см. SyncDoc). Служебное состояние устройства сюда не входит.
   Future<SyncDoc> _captureSync() async {
@@ -141,6 +165,8 @@ class AppState extends ChangeNotifier {
 
   /// Перечитать настройки из preferences (после сверки с сервером).
   void _reloadFromPrefs() {
+    // режим живых мест сменили на другом устройстве: прошлые итоги могли прийти из другого источника
+    final liveChanged = liveMode != Prefs.liveMode || !mapEquals(liveOverrides, Prefs.liveOverrides);
     rules = NotifyRules.fromJson(Prefs.rulesJson);
     forcedOn = Prefs.forcedOn;
     forcedOff = Prefs.forcedOff;
@@ -160,25 +186,21 @@ class AppState extends ChangeNotifier {
     liveOverrides = Prefs.liveOverrides;
     theme = _mode(Prefs.theme);
     if (_raw != null) data = _apply(_raw!);
+    if (liveChanged) _resetLiveSource();
     notifyListeners();
     unawaited(_sync());
   }
 
   /// Подключить сохранённый вход или код (после запуска). Уже подключённое не трогаем.
   void _restoreSync() {
-    if (sync.backend != null || !syncConfigured) return;
+    if (sync.backend != null || !_syncReady) return;
     final local = SyncLocal(Prefs.raw);
     final acc = AccountSession.fromMap(local.account);
     final code = local.code;
     if (acc != null) {
-      sync.backend = AccountBackend(
-        url: syncUrl,
-        key: syncKey,
-        session: acc,
-        keep: _keepSession,
-      );
+      sync.backend = _accountBackend(session: acc);
     } else if (code != null) {
-      sync.backend = CodeBackend(url: syncUrl, key: syncKey, code: code);
+      sync.backend = CodeBackend(url: _url, key: _key, code: code, client: syncClient);
     }
   }
 
@@ -188,18 +210,21 @@ class AppState extends ChangeNotifier {
     String password, {
     bool create = false,
   }) async {
-    if (!syncConfigured) return 'Сервер не подключён в этой сборке';
-    final b = AccountBackend(url: syncUrl, key: syncKey, keep: _keepSession);
+    if (!_syncReady) return 'Сервер не подключён в этой сборке';
+    final b = _accountBackend();
     try {
       final s = create
           ? await b.signUp(email, password)
           : await b.signIn(email, password);
       // сначала новый вход и сброс сверки, потом сохранение: прерванный вход не оставит
       // правки или базу прежнего состояния под новым аккаунтом
+      // тот же аккаунт (та же почта), что уже подключён: несохранённые правки остаются и уйдут на сервер
+      final prev = SyncLocal(Prefs.raw).account?['email'];
+      final same = prev != null && prev.trim().toLowerCase() == s.email.trim().toLowerCase();
       sync.backend = b;
-      await sync.preferRemote();
+      if (!same) await sync.preferRemote();
       await SyncLocal(Prefs.raw).setCode(null);
-      await _keepSession(s);
+      await _keepSession(b, s);
       notifyListeners();
       await sync.reconcile();
       return null;
@@ -211,35 +236,37 @@ class AppState extends ChangeNotifier {
   /// Выйти из аккаунта: на этом устройстве настройки остаются, на сервере — тоже.
   Future<void> signOutSync() async {
     await SyncLocal(Prefs.raw).setAccount(null);
+    if (sync.backend case final AccountBackend a) a.signOut();
     sync.backend = null;
     notifyListeners();
   }
 
   /// Создать код синхронизации: настройки этого устройства уходят на сервер под ним.
   Future<String?> createSyncCode() async {
-    if (!syncConfigured) return 'Сервер не подключён в этой сборке';
+    if (!_syncReady) return 'Сервер не подключён в этой сборке';
     final code = CodeBackend.newCode();
     return _useCode(code, create: true);
   }
 
   /// Ввести код с другого устройства: настройки берутся с сервера.
   Future<String?> enterSyncCode(String input) async {
-    if (!syncConfigured) return 'Сервер не подключён в этой сборке';
+    if (!_syncReady) return 'Сервер не подключён в этой сборке';
     final code = CodeBackend.normalize(input);
     if (code.length != 16) return 'Код — 16 знаков';
     return _useCode(code, create: false);
   }
 
   Future<String?> _useCode(String code, {required bool create}) async {
-    final b = CodeBackend(url: syncUrl, key: syncKey, code: code);
+    final b = CodeBackend(url: _url, key: _key, code: code, client: syncClient);
     try {
       if (!create && await b.load() == null) {
         return 'Такого кода нет на сервере';
       }
       // чужой код — значит, настройки уже есть на сервере: берём их, свои прошлые правки не шлём.
       // Сброс сверки — раньше сохранения кода (см. signInSync)
+      final same = SyncLocal(Prefs.raw).code == code;
       sync.backend = b;
-      if (!create) await sync.preferRemote();
+      if (!create && !same) await sync.preferRemote();
       await SyncLocal(Prefs.raw).setAccount(null);
       await SyncLocal(Prefs.raw).setCode(code);
       notifyListeners();
@@ -254,6 +281,7 @@ class AppState extends ChangeNotifier {
   Future<void> disconnectSync() async {
     await SyncLocal(Prefs.raw).setAccount(null);
     await SyncLocal(Prefs.raw).setCode(null);
+    if (sync.backend case final AccountBackend a) a.signOut();
     sync.backend = null;
     notifyListeners();
   }
