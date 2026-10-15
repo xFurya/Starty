@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-15T14:14:04+03:00",
- "checked": "2026-10-15T14:14:04+03:00",
+ "generated": "2026-10-15T16:14:53+03:00",
+ "checked": "2026-10-15T16:14:53+03:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -26571,7 +26571,8 @@
    "broadcast": [],
    "ours": [
     {
-     "name": "Александра Бойкова / Дмитрий Козловский"
+     "name": "Александра Бойкова / Дмитрий Козловский",
+     "nation": "AIN2"
     }
    ],
    "athletes": [
@@ -26717,7 +26718,8 @@
    "broadcast": [],
    "ours": [
     {
-     "name": "Александра Бойкова / Дмитрий Козловский"
+     "name": "Александра Бойкова / Дмитрий Козловский",
+     "nation": "AIN2"
     }
    ],
    "athletes": [
@@ -27516,11 +27518,16 @@
    "seg": "КП",
    "title": "GP Cup of China — женщины КП",
    "start": "2026-11-06T11:25:00+03:00",
-   "end": "2026-11-06T12:50:00+03:00",
+   "end": "2026-11-06T12:55:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
    "broadcast": [],
-   "ours": [],
+   "ours": [
+    {
+     "name": "Александра Трусова",
+     "nation": "AIN2"
+    }
+   ],
    "athletes": [
     "Alina Bonillo",
     "Anastasiia Gubanova",
@@ -27532,10 +27539,11 @@
     "Rinka Watanabe",
     "Ruiyang Zhang",
     "Sophie Joline Von Felten",
-    "Yi Zhu"
+    "Yi Zhu",
+    "Александра Трусова"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-cup-of-china-2026/",
-   "desc": "Начало: 11:25 МСК",
+   "desc": "Россияне:\n• Александра Трусова\n\nНачало: 11:25 МСК",
    "field": [
     {
      "name": "Alina Bonillo",
@@ -27580,6 +27588,10 @@
     {
      "name": "Yi Zhu",
      "nation": "CHN"
+    },
+    {
+     "name": "Александра Трусова",
+     "nation": "AIN2"
     }
    ]
   },
@@ -27653,13 +27665,18 @@
    "seg": "КП",
    "title": "GP Cup of China — мужчины КП",
    "start": "2026-11-06T15:25:00+03:00",
-   "end": "2026-11-06T16:50:00+03:00",
+   "end": "2026-11-06T16:55:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
    "broadcast": [],
    "ours": [
     {
-     "name": "Владислав Дикиджи"
+     "name": "Владислав Дикиджи",
+     "nation": "AIN2"
+    },
+    {
+     "name": "Евгений Семененко",
+     "nation": "AIN2"
     }
    ],
    "athletes": [
@@ -27673,10 +27690,11 @@
     "Vladimir Samoilov",
     "Yudong Chen",
     "Zhiming Peng",
-    "Владислав Дикиджи"
+    "Владислав Дикиджи",
+    "Евгений Семененко"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-cup-of-china-2026/",
-   "desc": "Россияне:\n• Владислав Дикиджи\n\nНачало: 15:25 МСК",
+   "desc": "Россияне:\n• Владислав Дикиджи\n• Евгений Семененко\n\nНачало: 15:25 МСК",
    "field": [
     {
      "name": "Jacob Sanchez",
@@ -27720,6 +27738,10 @@
     },
     {
      "name": "Владислав Дикиджи",
+     "nation": "AIN2"
+    },
+    {
+     "name": "Евгений Семененко",
      "nation": "AIN2"
     }
    ]
@@ -27804,11 +27826,16 @@
    "seg": "ПП",
    "title": "GP Cup of China — женщины ПП",
    "start": "2026-11-07T11:30:00+03:00",
-   "end": "2026-11-07T13:05:00+03:00",
+   "end": "2026-11-07T13:15:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
    "broadcast": [],
-   "ours": [],
+   "ours": [
+    {
+     "name": "Александра Трусова",
+     "nation": "AIN2"
+    }
+   ],
    "athletes": [
     "Alina Bonillo",
     "Anastasiia Gubanova",
@@ -27820,10 +27847,11 @@
     "Rinka Watanabe",
     "Ruiyang Zhang",
     "Sophie Joline Von Felten",
-    "Yi Zhu"
+    "Yi Zhu",
+    "Александра Трусова"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-cup-of-china-2026/",
-   "desc": "Начало: 11:30 МСК",
+   "desc": "Россияне:\n• Александра Трусова\n\nНачало: 11:30 МСК",
    "field": [
     {
      "name": "Alina Bonillo",
@@ -27868,6 +27896,10 @@
     {
      "name": "Yi Zhu",
      "nation": "CHN"
+    },
+    {
+     "name": "Александра Трусова",
+     "nation": "AIN2"
     }
    ]
   },
@@ -27941,13 +27973,18 @@
    "seg": "ПП",
    "title": "GP Cup of China — мужчины ПП",
    "start": "2026-11-08T08:00:00+03:00",
-   "end": "2026-11-08T09:35:00+03:00",
+   "end": "2026-11-08T09:45:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
    "broadcast": [],
    "ours": [
     {
-     "name": "Владислав Дикиджи"
+     "name": "Владислав Дикиджи",
+     "nation": "AIN2"
+    },
+    {
+     "name": "Евгений Семененко",
+     "nation": "AIN2"
     }
    ],
    "athletes": [
@@ -27961,10 +27998,11 @@
     "Vladimir Samoilov",
     "Yudong Chen",
     "Zhiming Peng",
-    "Владислав Дикиджи"
+    "Владислав Дикиджи",
+    "Евгений Семененко"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-cup-of-china-2026/",
-   "desc": "Россияне:\n• Владислав Дикиджи\n\nНачало: 08:00 МСК",
+   "desc": "Россияне:\n• Владислав Дикиджи\n• Евгений Семененко\n\nНачало: 08:00 МСК",
    "field": [
     {
      "name": "Jacob Sanchez",
@@ -28008,6 +28046,10 @@
     },
     {
      "name": "Владислав Дикиджи",
+     "nation": "AIN2"
+    },
+    {
+     "name": "Евгений Семененко",
      "nation": "AIN2"
     }
    ]
@@ -28605,10 +28647,12 @@
    "broadcast": [],
    "ours": [
     {
-     "name": "Александра Бойкова / Дмитрий Козловский"
+     "name": "Александра Бойкова / Дмитрий Козловский",
+     "nation": "AIN2"
     },
     {
-     "name": "Екатерина Чикмарёва / Матвей Янченков"
+     "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "nation": "AIN2"
     }
    ],
    "athletes": [
@@ -28906,10 +28950,12 @@
    "broadcast": [],
    "ours": [
     {
-     "name": "Александра Бойкова / Дмитрий Козловский"
+     "name": "Александра Бойкова / Дмитрий Козловский",
+     "nation": "AIN2"
     },
     {
-     "name": "Екатерина Чикмарёва / Матвей Янченков"
+     "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "nation": "AIN2"
     }
    ],
    "athletes": [
@@ -29420,7 +29466,8 @@
    "broadcast": [],
    "ours": [
     {
-     "name": "Владислав Дикиджи"
+     "name": "Владислав Дикиджи",
+     "nation": "AIN2"
     }
    ],
    "athletes": [
@@ -29718,7 +29765,8 @@
    "broadcast": [],
    "ours": [
     {
-     "name": "Владислав Дикиджи"
+     "name": "Владислав Дикиджи",
+     "nation": "AIN2"
     }
    ],
    "athletes": [
@@ -29862,6 +29910,7 @@
    "start": "2026-11-16",
    "end": "2026-11-22",
    "ours": [],
+   "ours_nation": {},
    "athletes": [],
    "broadcast": []
   },
@@ -29897,6 +29946,7 @@
    "start": "2026-11-25",
    "end": "2026-11-29",
    "ours": [],
+   "ours_nation": {},
    "athletes": [],
    "broadcast": []
   },
@@ -29924,6 +29974,7 @@
    "start": "2026-12-02",
    "end": "2026-12-05",
    "ours": [],
+   "ours_nation": {},
    "athletes": [],
    "broadcast": []
   },
@@ -29943,6 +29994,7 @@
    "start": "2026-12-09",
    "end": "2026-12-12",
    "ours": [],
+   "ours_nation": {},
    "athletes": [],
    "broadcast": []
   },
@@ -41801,6 +41853,7 @@
   "Милана Кузьмина": "photos/782e441e3698299c.jpg",
   "Дмитрий Студеникин": "photos/c312621d8532ec81.jpg",
   "Алина Горбачёва": "photos/2836fb268a4fc4f2.jpg",
+  "Евгений Семененко": "photos/ca414e07447938c0.jpg",
   "Aaron Kim": "photos/2cabe002663d6175.jpg",
   "Axel Ahmed": "photos/dbc7ceb4e5b92995.jpg",
   "Abrysha Srivastava": "photos/5f8afc1d0cc13305.jpg",
@@ -42388,7 +42441,7 @@
   "Louie Fukuda-wu": "photos/49f6334e08e6c6a1.jpg",
   "Louis Mallane": "photos/4bfed20ff7e4be4f.jpg",
   "Louise Bordet": "photos/5f8803417abf7c4e.jpg",
-  "Martin Chardain": "photos/3bcac360821d70aa.jpg",
+  "Martin Chardain": "photos/ff1422d5a3169363.jpg",
   "Louise Cohas-bogey": "photos/afdc42440e1b3bbc.jpg",
   "Daniil Grishin": "photos/2fb526a8706859fc.jpg",
   "Louise Dos Santos": "photos/e5ef4d237f6f0404.jpg",
@@ -42553,7 +42606,7 @@
   "Olexandra Borysova": "photos/0cbdbfe9c2f65ddd.jpg",
   "Aaron Freeman": "photos/5cefadc07992f39e.jpg",
   "Oliver Praetorius": "photos/327025139e680bfd.jpg",
-  "Olivia Elin Phillips": "photos/fc6918fbebeb92ca.jpg",
+  "Olivia Elin Phillips": "photos/791d392b95cf5714.jpg",
   "Olivia Flores": "photos/938326843651f16c.jpg",
   "Luke Wang": "photos/f3c03fed32e00faa.jpg",
   "Olivia Josephine Shilling": "photos/cff34ecd2b94fb61.jpg",
@@ -42565,7 +42618,7 @@
   "Tim Dieck": "photos/7100ef85069cecb8.jpg",
   "Oliviia Bazlova": "photos/cd2c663e661f7e53.jpg",
   "Oliviia Zherebko": "photos/31653bbfd120ac93.jpg",
-  "Olympia Kalaganis": "photos/55b30d8e1c382a15.jpg",
+  "Olympia Kalaganis": "photos/4387a545d416d661.jpg",
   "Emile Deveau": "photos/72ae29d2440d1852.jpg",
   "Oona Brown": "photos/6bea68b07ac5d390.jpg",
   "Gage Brown": "photos/6e33b2322d37516a.jpg",
@@ -42890,7 +42943,6 @@
   "Григорий Фёдоров": "photos/e9d6d72380fc53af.jpg",
   "Даниил Самсонов": "photos/6e3594c9c71973ee.jpg",
   "Дарья Садкова": "photos/2f9d0d702c7d92fa.jpg",
-  "Евгений Семененко": "photos/ca414e07447938c0.jpg",
   "Егор Баулин": "photos/57c376fd3ad31463.jpg",
   "Екатерина Комарова": "photos/4f7780a84af50b7e.jpg",
   "Екатерина Миронова": "photos/6122af157b8b1936.jpg",
