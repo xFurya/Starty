@@ -1,0 +1,626 @@
+// Протокол турнира в приложении: категория → сегмент (короткая, произвольная, итог) → строки.
+// Данные — из файла протокола (protocol_model.dart); оригинал табло — кнопкой внизу, одинаково везде.
+// Честность: число показываем только если оно есть в файле, окончательность — только по судейским оценкам.
+import 'package:flutter/cupertino.dart' show CupertinoIcons;
+import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import 'data.dart';
+import 'live.dart' show personKey;
+import 'palette.dart';
+import 'protocol_model.dart';
+import 'protocol_repo.dart';
+import 'ui.dart';
+
+/// Оригинал на табло — во внешнем браузере. Одинаково на всех платформах: кнопка «Оригинал протокола».
+Future<void> openOriginal(BuildContext context, String url) async {
+  if (url.isEmpty) return;
+  await launchUrl(Uri.parse(url), webOnlyWindowName: '_blank', mode: LaunchMode.externalApplication);
+}
+
+/// Подписи вкладок сегментов: короткие, чтобы три вкладки умещались в ширину 360 px.
+const _tabLabel = {'КП': 'Короткая', 'ПП': 'Произвольная', 'РТ': 'Ритм-танец', 'ПТ': 'Произвольный'};
+const totalTab = 'итог';
+
+/// Цвет строки статуса: окончательный — акцент, идущий — цвет живого, остальное — приглушённый.
+enum ProtocolTone { finalized, live, quiet }
+
+/// Что показать под переключателем: текст статуса, список и кнопку «Повторить».
+class ProtocolView {
+  final String status;
+  final ProtocolTone tone;
+  final bool retry;
+
+  /// Строки из файла (места, баллы).
+  final List<ProtocolRow> rows;
+
+  /// Состав по заявке (без мест и баллов) — когда протокола ещё нет.
+  final bool application;
+  const ProtocolView(this.status, this.tone, {this.retry = false, this.rows = const [], this.application = false});
+}
+
+/// Текст статуса по загрузке файла, категории и вкладке. Все тексты — из утверждённых макетов.
+/// [category] — категория из файла (той же загрузки, что и [load], или из кэша); null — её нет.
+ProtocolView protocolView(
+  ProtocolLoad load, {
+  required ProtocolCategory? category,
+  required String tab,
+  required bool hasField,
+  DateTime? built,
+}) {
+  switch (load) {
+    case ProtocolFormatError():
+      return const ProtocolView('Экран для этого протокола недоступен', ProtocolTone.quiet);
+    case ProtocolMissing():
+      return _noProtocol(hasField);
+    case ProtocolNetError(:final cached, :final cachedAt):
+      if (cached == null || cachedAt == null) {
+        return const ProtocolView('Нет связи с сервером', ProtocolTone.quiet, retry: true);
+      }
+      final v = _inFile(category, tab, hasField: hasField, built: cached.built);
+      // сохранённая версия: строки есть, но статус — что связи нет и когда файл сохранён
+      return ProtocolView(
+        'Нет связи · сохранено ${_dm(cachedAt)}, ${hm(cachedAt)}',
+        ProtocolTone.quiet,
+        retry: true,
+        rows: v.rows,
+        application: v.application,
+      );
+    case ProtocolOk():
+      return _inFile(category, tab, hasField: hasField, built: built);
+  }
+}
+
+ProtocolView _noProtocol(bool hasField) => hasField
+    ? const ProtocolView('Протокола пока нет · состав по заявке', ProtocolTone.quiet, application: true)
+    : const ProtocolView('Протокола и заявки пока нет', ProtocolTone.quiet);
+
+ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasField, DateTime? built}) {
+  if (category == null) return _noProtocol(hasField);
+  if (tab == totalTab) {
+    final t = category.total;
+    if (t == null || t.state == TotalState.notPublished) {
+      return const ProtocolView('Итог вида ещё не опубликован', ProtocolTone.quiet);
+    }
+    if (t.state == TotalState.format) return const ProtocolView('Экран для этого протокола недоступен', ProtocolTone.quiet);
+    if (t.state == TotalState.finalized) {
+      return ProtocolView('Окончательный · сверено с оригиналом', ProtocolTone.finalized, rows: t.rows);
+    }
+    return ProtocolView('Промежуточный · ${_updated(built)}', ProtocolTone.live, rows: t.rows);
+  }
+  final seg = category.segmentOf(tab);
+  if (seg == null) return _noProtocol(hasField);
+  switch (seg.state) {
+    case SegmentState.scheduled:
+    case SegmentState.notPublished:
+      return _noProtocol(hasField);
+    case SegmentState.inProgress:
+      if (seg.rows.isEmpty) return _noProtocol(hasField);
+      return ProtocolView('Идёт · промежуточный · ${_updated(built)}', ProtocolTone.live, rows: seg.rows);
+    case SegmentState.provisional:
+      if (seg.rows.isEmpty) return _noProtocol(hasField);
+      return ProtocolView('Промежуточный · ${_updated(built)}', ProtocolTone.quiet, rows: seg.rows);
+    case SegmentState.finalized:
+      // окончательный без строк — нераспознанный файл, а не «протокол пуст»
+      if (seg.rows.isEmpty) return const ProtocolView('Экран для этого протокола недоступен', ProtocolTone.quiet);
+      return ProtocolView('Окончательный · сверено с оригиналом', ProtocolTone.finalized, rows: seg.rows);
+    case SegmentState.judgesMismatch:
+      return const ProtocolView('Сверка с оригиналом не сошлась', ProtocolTone.quiet);
+    case SegmentState.format:
+      return const ProtocolView('Экран для этого протокола недоступен', ProtocolTone.quiet);
+  }
+}
+
+String _updated(DateTime? built) => built == null ? 'обновлено' : 'обновлено ${hm(built)}';
+
+String _dm(DateTime t) {
+  final m = msk(t);
+  return '${two(m.day)}.${two(m.month)}';
+}
+
+/// Подпись категории для переключателя: «Девушки · Юниоры».
+String categoryLabel(ProtocolCategory c) {
+  final kind = kindNames[c.kind] ?? c.kind;
+  final young = {'women': 'Девушки', 'men': 'Юноши'}[c.kind];
+  final k = young != null && c.level == 'junior' ? young : kind;
+  return '$k · ${levelNames[c.level] ?? c.level}';
+}
+
+/// Адрес «Оригинала протокола»: страница сегмента на табло, иначе — оглавление.
+String originalUrl(ProtocolDoc? doc, ProtocolSegment? seg, Start s) {
+  if (seg != null && seg.page.isNotEmpty) return seg.page;
+  if (doc != null && doc.src.isNotEmpty) return doc.src;
+  return s.src;
+}
+
+class ProtocolScreen extends StatefulWidget {
+  final Start start;
+
+  /// Для тестов; в приложении — общий репозиторий.
+  final ProtocolRepo? repo;
+  const ProtocolScreen({super.key, required this.start, this.repo});
+
+  @override
+  State<ProtocolScreen> createState() => _ProtocolScreenState();
+}
+
+class _ProtocolScreenState extends State<ProtocolScreen> {
+  ProtocolLoad? _load;
+  bool _busy = false;
+  String? _catKey, _tab;
+  final Set<String> _open = {};
+
+  ProtocolRepo get _repo => widget.repo ?? ProtocolRepo.app;
+
+  @override
+  void initState() {
+    super.initState();
+    _reload();
+  }
+
+  Future<void> _reload() async {
+    final proto = widget.start.proto;
+    setState(() => _busy = true);
+    final load = proto == null ? const ProtocolMissing() : await _repo.load(proto);
+    if (!mounted) return;
+    setState(() {
+      _load = load;
+      _busy = false;
+      _pickDefaults();
+    });
+  }
+
+  /// Файл протокола, который показываем: свежий или сохранённый (при сбое сети).
+  ProtocolDoc? get _doc => switch (_load) {
+    ProtocolOk(:final doc) => doc,
+    ProtocolNetError(:final cached) => cached,
+    _ => null,
+  };
+
+  List<ProtocolCategory> get _cats => _doc?.categories ?? const [];
+
+  ProtocolCategory? get _category {
+    final cats = _cats;
+    for (final c in cats) {
+      if ('${c.kind}|${c.level}' == _catKey) return c;
+    }
+    return null;
+  }
+
+  /// Выбор по умолчанию: категория и вкладка старта; уже выбранное сохраняем, если оно есть в файле.
+  void _pickDefaults() {
+    final s = widget.start;
+    final cats = _cats;
+    if (cats.isEmpty) {
+      _catKey = null;
+      _tab = null;
+      return;
+    }
+    if (_category == null) {
+      final match = _doc?.categoryFor(s.kind, s.level) ?? cats.first;
+      _catKey = '${match.kind}|${match.level}';
+    }
+    final c = _category!;
+    if (_tab == null || (_tab != totalTab && c.segmentOf(_tab!) == null)) {
+      _tab = c.segmentOf(s.seg) != null ? s.seg : (c.segments.isNotEmpty ? c.segments.first.code : totalTab);
+    }
+  }
+
+  Future<void> _pickCategory() async {
+    final picked = await showModalBottomSheet<String>(
+      context: context,
+      showDragHandle: true,
+      builder: (c) => SafeArea(
+        child: ListView(
+          shrinkWrap: true,
+          padding: const EdgeInsets.fromLTRB(16, 4, 16, 20),
+          children: [
+            for (final cat in _cats)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: ChoiceTile(
+                  label: categoryLabel(cat),
+                  on: '${cat.kind}|${cat.level}' == _catKey,
+                  onTap: () => Navigator.of(c).pop('${cat.kind}|${cat.level}'),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+    if (picked != null && mounted) {
+      setState(() {
+        _catKey = picked;
+        _tab = null;
+        _pickDefaults();
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final s = widget.start;
+    final doc = _doc;
+    final cat = _category;
+    final tab = _tab ?? totalTab;
+    final seg = tab == totalTab ? null : cat?.segmentOf(tab);
+    final hasField = s.field.isNotEmpty;
+    final load = _load;
+    final view = load == null
+        ? const ProtocolView('Загружаем протокол…', ProtocolTone.quiet)
+        : protocolView(load, category: cat, tab: tab, hasField: hasField, built: doc?.built);
+    final cats = _cats;
+    final tabs = cat == null
+        ? const <(String, String)>[]
+        : [
+            for (final x in cat.segments) (x.code, _tabLabel[x.code] ?? x.name),
+            (totalTab, 'Итог'),
+          ];
+    final title = tab == totalTab ? 'итог' : (segNames[tab] ?? (seg?.name ?? tab).toLowerCase());
+    final ours = {for (final o in s.ours) personKey(o.name)};
+    final width = MediaQuery.sizeOf(context).width;
+    final gutter = width < 360 ? 12.0 : 16.0;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(s.tournament, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 17)),
+        actions: [
+          IconButton(
+            tooltip: 'Обновить',
+            icon: const Icon(Icons.refresh),
+            onPressed: _busy ? null : _reload,
+          ),
+        ],
+      ),
+      body: Center(
+        child: ConstrainedBox(
+          // на широком окне (Windows) контент не растягивается на всю ширину
+          constraints: const BoxConstraints(maxWidth: 560),
+          child: ListView(
+            padding: EdgeInsets.fromLTRB(gutter, 4, gutter, 28 + MediaQuery.paddingOf(context).bottom),
+            children: [
+              if (cat != null) Eyebrow(categoryLabel(cat), maxLines: 2),
+              const SizedBox(height: 6),
+              Text(title, style: display(p, 30, italic: true)),
+              const SizedBox(height: 14),
+              if (cats.length == 2)
+                Segmented<String>(
+                  items: [for (final c in cats) ('${c.kind}|${c.level}', categoryLabel(c))],
+                  value: _catKey ?? '',
+                  onChanged: (v) => setState(() {
+                    _catKey = v;
+                    _tab = null;
+                    _pickDefaults();
+                  }),
+                )
+              else if (cats.length > 2)
+                _CategoryRow(label: cat == null ? '' : categoryLabel(cat), onTap: _pickCategory),
+              if (cats.length >= 2) const SizedBox(height: 10),
+              if (tabs.isNotEmpty)
+                Segmented<String>(
+                  items: tabs,
+                  value: tab,
+                  onChanged: (v) => setState(() => _tab = v),
+                ),
+              const SizedBox(height: 12),
+              _StatusLine(text: view.status, tone: view.tone),
+              if (view.rows.isNotEmpty) ...[
+                const SizedBox(height: 10),
+                Plate(
+                  margin: EdgeInsets.zero,
+                  child: Column(
+                    children: [
+                      for (var i = 0; i < view.rows.length; i++) ...[
+                        if (i > 0) const Hairline(indent: 16),
+                        _ResultRow(
+                          row: view.rows[i],
+                          ours: ours.contains(personKey(view.rows[i].name)),
+                          total: tab == totalTab,
+                          cols: tab == totalTab ? (cat?.total?.cols ?? const []) : const [],
+                          open: _open.contains('$tab/${view.rows[i].i}'),
+                          onTap: _hasDetails(view.rows[i])
+                              ? () => setState(() {
+                                  final key = '$tab/${view.rows[i].i}';
+                                  _open.contains(key) ? _open.remove(key) : _open.add(key);
+                                })
+                              : null,
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+              ],
+              if (view.application && s.field.isNotEmpty) ...[
+                const SizedBox(height: 10),
+                Plate(
+                  margin: EdgeInsets.zero,
+                  child: Column(
+                    children: [
+                      for (var i = 0; i < s.field.length; i++) ...[
+                        if (i > 0) const Hairline(indent: 16),
+                        _FieldRow(
+                          name: s.field[i].name,
+                          time: s.field[i].time,
+                          ours: ours.contains(personKey(s.field[i].name)),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+              ],
+              if (view.retry) ...[
+                const SizedBox(height: 14),
+                SheetButton(
+                  neutral: true,
+                  label: 'Повторить',
+                  onTap: _busy ? null : _reload,
+                ),
+              ],
+              if (seg != null && seg.judges != null) ...[
+                const SizedBox(height: 14),
+                SheetButton(
+                  neutral: true,
+                  icon: CupertinoIcons.doc_text,
+                  label: 'Оценки судей',
+                  onTap: () => openOriginal(context, seg.judges!),
+                ),
+              ],
+              const SizedBox(height: 14),
+              SheetButton(
+                filled: true,
+                label: 'Оригинал протокола',
+                onTap: () => openOriginal(context, originalUrl(doc, seg, s)),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// Раскрывается строка, где есть судейские оценки или элементы.
+  static bool _hasDetails(ProtocolRow r) =>
+      r.tes != null || r.pcs != null || r.ded != null || r.elements.isNotEmpty || r.components.isNotEmpty;
+}
+
+/// Статус под переключателем: точка и текст.
+class _StatusLine extends StatelessWidget {
+  final String text;
+  final ProtocolTone tone;
+  const _StatusLine({required this.text, required this.tone});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final color = switch (tone) {
+      ProtocolTone.finalized => p.accent,
+      ProtocolTone.live => p.live,
+      ProtocolTone.quiet => p.ink2,
+    };
+    return Semantics(
+      liveRegion: true,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 5),
+            child: Container(width: 8, height: 8, decoration: BoxDecoration(shape: BoxShape.circle, color: color)),
+          ),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text(text, style: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w700, height: 1.3, color: color)),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Выбор категории, когда их больше двух: строка с текущей категорией и листом выбора.
+class _CategoryRow extends StatelessWidget {
+  final String label;
+  final VoidCallback onTap;
+  const _CategoryRow({required this.label, required this.onTap});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Plate(
+      margin: EdgeInsets.zero,
+      child: InkWell(
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 12, 12, 12),
+          child: Row(
+            children: [
+              Expanded(
+                child: Text(label, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink)),
+              ),
+              Icon(CupertinoIcons.chevron_down, size: 17, color: p.ink3),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Строка протокола: место, имя, страна, баллы. Раскрытие — судейские оценки и элементы.
+class _ResultRow extends StatelessWidget {
+  final ProtocolRow row;
+  final bool ours, total, open;
+  final List<String> cols;
+  final VoidCallback? onTap;
+  const _ResultRow({
+    required this.row,
+    required this.ours,
+    required this.total,
+    required this.cols,
+    required this.open,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final place = row.place;
+    final lead = place != null
+        ? SizedBox(
+            width: 30,
+            child: Center(
+              child: place <= 3
+                  ? Medal(place, size: 26)
+                  : Text('$place', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: p.accent, fontFeatures: tnum)),
+            ),
+          )
+        : SizedBox(
+            width: 30,
+            child: Text(
+              row.status ?? '—',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: p.ink2),
+            ),
+          );
+    final parts = row.parts;
+    final sub = <String>[
+      if (row.nation.isNotEmpty) row.nation,
+      if (parts != null)
+        for (var i = 0; i < parts.length && i < cols.length; i++) '${cols[i]} ${parts[i] ?? '—'}',
+    ];
+    final body = Container(
+      color: ours ? p.frost : null,
+      padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          lead,
+          const SizedBox(width: 10),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  displayName(row.name),
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.25, color: p.ink),
+                ),
+                if (sub.isNotEmpty || ours)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 3),
+                    child: Text(
+                      [if (ours) 'отслеживаемая', ...sub].join(' · '),
+                      style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w500, color: p.ink2, height: 1.3),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+          const SizedBox(width: 8),
+          Text(
+            row.points ?? '—',
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w800, color: p.ink, fontFeatures: tnum),
+          ),
+          if (onTap != null)
+            Padding(
+              padding: const EdgeInsets.only(left: 4),
+              child: Icon(open ? CupertinoIcons.chevron_up : CupertinoIcons.chevron_down, size: 15, color: p.ink3),
+            ),
+        ],
+      ),
+    );
+    return Semantics(
+      button: onTap != null,
+      expanded: onTap == null ? null : open,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          InkWell(onTap: onTap, child: body),
+          if (open) _Details(row: row),
+        ],
+      ),
+    );
+  }
+}
+
+/// Раскрытие строки: TES, PCS, снижение, элементы с базой и GOE, компоненты. Пустого не показываем.
+class _Details extends StatelessWidget {
+  final ProtocolRow row;
+  const _Details({required this.row});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final style = TextStyle(fontSize: 13.5, fontWeight: FontWeight.w600, color: p.ink, fontFeatures: tnum);
+    final label = TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: p.ink2);
+    Widget cell(String name, String? value) => value == null
+        ? const SizedBox.shrink()
+        : Padding(
+            padding: const EdgeInsets.only(right: 16, bottom: 6),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [Text(name, style: label), const SizedBox(width: 6), Text(value, style: style)],
+            ),
+          );
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Wrap(
+            children: [
+              cell('TES', row.tes),
+              cell('PCS', row.pcs),
+              cell('Снижение', row.ded),
+            ],
+          ),
+          for (final e in row.elements)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 6),
+              child: Row(
+                children: [
+                  Expanded(child: Text(e.name, style: style)),
+                  Text('база ${e.base ?? '—'}', style: label),
+                  const SizedBox(width: 12),
+                  Text('GOE ${e.goe ?? '—'}', style: style),
+                ],
+              ),
+            ),
+          if (row.components.isNotEmpty)
+            Text('Компоненты ${row.components.join(' · ')}', style: label),
+        ],
+      ),
+    );
+  }
+}
+
+/// Состав по заявке: имя и время выхода — без мест и баллов.
+class _FieldRow extends StatelessWidget {
+  final String name;
+  final String? time;
+  final bool ours;
+  const _FieldRow({required this.name, required this.time, required this.ours});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Container(
+      color: ours ? p.frost : null,
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(displayName(name), style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.25, color: p.ink)),
+                if (ours)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 3),
+                    child: Text('отслеживаемая', style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w500, color: p.ink2)),
+                  ),
+              ],
+            ),
+          ),
+          const SizedBox(width: 8),
+          Text(time ?? '—', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: p.ink2, fontFeatures: tnum)),
+        ],
+      ),
+    );
+  }
+}

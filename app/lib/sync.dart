@@ -42,6 +42,12 @@ class SyncDoc {
   final String icon; // classic, skate_teal, date_orange_… (см. app_icon.dart)
   final bool regional; // старты региональных федераций в ленте и уведомлениях
 
+  /// Режим живых мест по умолчанию: instant (табло раз в минуту) или delayed (файл протокола).
+  final String liveMode;
+
+  /// Переопределения режима по id старта; отсутствующий id — режим по умолчанию.
+  final Map<String, String> liveOverrides;
+
   /// Поля, которых в документе нет или они испорчены (см. [fromJson]). Такие не применяются:
   /// на устройстве остаётся своя настройка, а не значение по умолчанию. Для документа, собранного
   /// здесь, пусто. Имена полей — как в JSON; у фильтров — «filters.kinds» и т. п.
@@ -60,6 +66,8 @@ class SyncDoc {
     required this.theme,
     required this.icon,
     this.regional = false,
+    this.liveMode = 'instant',
+    this.liveOverrides = const {},
     this.absent = const {},
   });
 
@@ -80,6 +88,8 @@ class SyncDoc {
     'theme': theme,
     'icon': icon,
     'regional': regional,
+    'liveMode': liveMode,
+    'liveOverrides': liveOverrides,
   };
 
   /// Разбор с защитой: битое поле — значение по умолчанию, а не падение.
@@ -107,6 +117,8 @@ class SyncDoc {
       if (!(j['theme'] is String && _themes.contains(j['theme']))) 'theme',
       if (j['icon'] is! String) 'icon',
       if (j['regional'] is! bool) 'regional',
+      if (!(j['liveMode'] is String && (j['liveMode'] == 'instant' || j['liveMode'] == 'delayed'))) 'liveMode',
+      if (j['liveOverrides'] is! Map) 'liveOverrides',
     };
     return SyncDoc(
       updatedAt:
@@ -127,6 +139,12 @@ class SyncDoc {
       theme: j['theme'] is String ? j['theme'] as String : 'system',
       icon: j['icon'] is String ? j['icon'] as String : 'classic',
       regional: j['regional'] is bool ? j['regional'] as bool : false,
+      liveMode: j['liveMode'] == 'delayed' ? 'delayed' : 'instant',
+      liveOverrides: {
+        if (j['liveOverrides'] is Map)
+          for (final e in (j['liveOverrides'] as Map).entries)
+            if (e.value == 'instant' || e.value == 'delayed') '${e.key}': e.value as String,
+      },
       absent: absent,
     );
   }
@@ -164,6 +182,8 @@ class SyncDoc {
     theme: theme,
     icon: icon,
     regional: regional,
+    liveMode: liveMode,
+    liveOverrides: liveOverrides,
     absent: absent,
   );
 

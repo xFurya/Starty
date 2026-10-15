@@ -144,6 +144,9 @@ class Start {
   final DateTime t0, t1;
   final bool intl;
 
+  /// Файл протокола турнира на сайте (имя в protocols/, см. [protocolUrl]); null — файла нет.
+  final String? proto;
+
   /// Региональная федерация (не федеральный старт): показываются, только если включено в настройках.
   final bool regional;
   final String region;
@@ -165,6 +168,7 @@ class Start {
       title = j['title'],
       venue = _cleanVenue(j['venue']),
       src = j['src'] ?? '',
+      proto = j['proto'] is String && (j['proto'] as String).isNotEmpty ? j['proto'] as String : null,
       t0 = DateTime.parse(j['start']),
       t1 = DateTime.parse(j['end']),
       intl = j['intl'] == true,
@@ -201,6 +205,7 @@ class Start {
        title = o.title,
        venue = o.venue,
        src = o.src,
+       proto = o.proto,
        t0 = o.t0,
        t1 = o.t1,
        intl = o.intl,
@@ -259,8 +264,14 @@ class Start {
   /// Адреса табло турнира — во время старта приложение читает итоги оттуда само.
   final LiveSrc? live;
 
-  /// Итог окончательный — табло больше не опрашиваем.
-  bool get settled => podium.isNotEmpty && !provisional && (live?.cat == null || total.isNotEmpty);
+  /// Итог окончательный — табло больше не опрашиваем. С basis из events.json окончательность —
+  /// судейские оценки сборщика; без basis (старые данные) — прежнее правило.
+  bool get settled {
+    if (podium.isEmpty) return false;
+    final basis = live?.basis;
+    final isFinal = basis != null ? basis == 'judges' || basis == 'time' : !provisional;
+    return isFinal && (live?.cat == null || total.isNotEmpty);
+  }
 
   /// Первая тройка сегмента (пусто, пока сегмент не прошёл).
   final List<Placing> podium;
@@ -311,12 +322,16 @@ List<Fact> _uniqueFacts(Iterable<Fact> source) {
 class LiveSrc {
   final String idx, seg;
   final String? cat, first;
+
+  /// Окончательность сегмента из events.json: judges (судейские оценки), time или null.
+  final String? basis;
   final Map<String, String> names;
   LiveSrc.fromJson(Map<String, dynamic> j)
     : idx = j['idx'] ?? '',
       seg = j['seg'] ?? '',
       cat = j['cat'],
       first = j['first'],
+      basis = j['basis'] is String ? j['basis'] as String : null,
       names = {for (final e in (j['names'] as Map? ?? const {}).entries) '${e.key}': '${e.value}'};
 }
 
@@ -528,6 +543,18 @@ class Repo {
   }
 }
 
+/// Режим живых мест на ленте: «instant» — телефон опрашивает табло раз в минуту;
+/// «delayed» — телефон читает файл протокола с сервера (до 10 минут позже, дешевле по трафику и батарее).
+const liveInstant = 'instant';
+const liveDelayed = 'delayed';
+
+/// Значение режима из хранилища или документа; что не режим — null.
+String? validLiveMode(Object? v) => v == liveInstant || v == liveDelayed ? v as String : null;
+
+/// Действующий режим старта: своё переопределение, если есть, иначе общий.
+String effectiveLiveMode(String global, Map<String, String> overrides, String startId) =>
+    overrides[startId] ?? global;
+
 /// Что отметил человек и какие фильтры выбрал — хранится на устройстве.
 class Prefs {
   static late SharedPreferences _p;
@@ -585,6 +612,34 @@ class Prefs {
     await _p.setBool('follow.by', belarusians);
   }
 
+  /// Живые места: общий режим и переопределения по id старта (см. [effectiveLiveMode]).
+  static String get liveMode => validLiveMode(_p.getString('live.mode')) ?? liveInstant;
+  static Future<void> setLiveMode(String v) => _p.setString('live.mode', validLiveMode(v) ?? liveInstant);
+
+  /// id старта → режим. Не читается или испорчено — пусто (как «ничего не переопределено»).
+  static Map<String, String> get liveOverrides {
+    final s = _p.getString('live.over');
+    if (s == null) return {};
+    try {
+      final m = jsonDecode(s);
+      if (m is! Map) return {};
+      return {
+        for (final e in m.entries)
+          if (validLiveMode(e.value) != null) '${e.key}': e.value as String,
+      };
+    } catch (_) {
+      return {};
+    }
+  }
+
+  static Future<void> setLiveOverrides(Map<String, String> v) async {
+    final clean = {
+      for (final e in v.entries)
+        if (validLiveMode(e.value) != null) e.key: e.value,
+    };
+    await _p.setString('live.over', jsonEncode(clean));
+  }
+
   /// Отслеживаемые в фоне (без состояния приложения).
   static Follow followOr(List<String> fallback) =>
       Follow(follow ?? fallback, russians: followRussians, belarusians: followBelarusians);
@@ -595,6 +650,13 @@ class Prefs {
     await _p.setStringList('f.levels', f.levels.toList());
     await _p.setStringList('f.scope', f.scope.toList());
   }
+}
+
+/// Адрес файла протокола турнира на сайте: рядом с events.json, в каталоге protocols/.
+/// Имя файла — из events.json (поле proto); всё, что похоже на путь, отбрасываем.
+String? protocolUrl(String? proto) {
+  if (proto == null || !RegExp(r'^[A-Za-z0-9_.\-]+\.json$').hasMatch(proto)) return null;
+  return Uri.parse(dataUrl).resolve('protocols/$proto').toString();
 }
 
 String norm(String s) => s.toLowerCase().replaceAll('ё', 'е');

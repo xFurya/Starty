@@ -1,19 +1,27 @@
-// Протокол турнира внутри приложения: встроенный браузер, PDF — через просмотрщик.
+// Маршрут протокола: у старта есть файл протокола — наш экран (на всех платформах, включая Windows).
+// Файла нет — как раньше: встроенный браузер на мобильных, браузер системы на Windows и в вебе.
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-Future<void> openProtocol(BuildContext context, String url, String title) async {
+import 'data.dart';
+import 'protocol_screen.dart';
+
+Future<void> openProtocol(BuildContext context, Start s) async {
+  if (s.proto != null) {
+    await Navigator.of(context).push(MaterialPageRoute(builder: (_) => ProtocolScreen(start: s)));
+    return;
+  }
+  final url = s.src;
   if (url.isEmpty) return;
   // на Windows встроенного браузера у Flutter нет — протокол открывается в браузере системы
   if (kIsWeb || defaultTargetPlatform == TargetPlatform.windows) {
     await launchUrl(Uri.parse(url), webOnlyWindowName: '_blank', mode: LaunchMode.externalApplication);
     return;
   }
-  await Navigator.of(context).push(MaterialPageRoute(builder: (_) => ProtocolPage(url: url, title: title)));
+  await Navigator.of(context).push(MaterialPageRoute(builder: (_) => ProtocolPage(url: url, title: s.title)));
 }
-
 class ProtocolPage extends StatefulWidget {
   final String url, title;
   const ProtocolPage({super.key, required this.url, required this.title});
