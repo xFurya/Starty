@@ -64,58 +64,71 @@ int? _col(List<String> header, Set<String> names, {bool prefix = false}) {
   return null;
 }
 
-/// Таблица протокола: null — страница ещё стартовый лист.
-List<LiveRow>? _resultRows(String page, Set<String> pointsHeads) {
-  List<String>? header;
-  final out = <LiveRow>[];
-  for (final cells in _rows(page)) {
-    if (header == null) {
-      final first = cells.firstWhere((c) => c.isNotEmpty, orElse: () => '');
-      if (_resultHeads.contains(first) && _col(cells, _nameHeads) != null) header = cells;
-      continue;
-    }
-    final nonempty = cells.where((c) => c.isNotEmpty).toList();
-    if (nonempty.length < 3 || !_digits.hasMatch(nonempty[0])) continue;
-    final aligned = cells.length == header.length;
-    final ni = aligned ? _col(header, _nameHeads) : null;
-    final name = ni != null && cells[ni].isNotEmpty ? cells[ni] : nonempty[1];
-    final after = cells.sublist(cells.indexOf(name) + 1);
-    final pi = aligned ? _col(header, pointsHeads, prefix: true) : null;
-    final points = pi != null && _points.hasMatch(cells[pi])
-        ? cells[pi]
-        : after.firstWhere(_points.hasMatch, orElse: () => '');
-    if (points.isEmpty) continue;
-    final ci = aligned ? _col(header, _nationHeads) : null;
-    String nation;
-    if (ci != null && _nation.hasMatch(cells[ci])) {
-      nation = cells[ci];
-    } else {
-      final idx = after.indexOf(points);
-      final before = idx >= 0 ? after.sublist(0, idx) : after;
-      nation = before.firstWhere(_nation.hasMatch, orElse: () => '');
-    }
-    out.add(LiveRow(int.parse(nonempty[0]), name, nation.replaceAll(' ', ''), points, cells, pi));
+LiveRow? _rowResult(List<String> cells, List<String> header, Set<String> pointsHeads) {
+  final nonempty = cells.where((c) => c.isNotEmpty).toList();
+  if (nonempty.length < 3 || !_digits.hasMatch(nonempty[0])) return null;
+  final aligned = cells.length == header.length;
+  final ni = aligned ? _col(header, _nameHeads) : null;
+  final name = ni != null && cells[ni].isNotEmpty ? cells[ni] : nonempty[1];
+  final after = cells.sublist(cells.indexOf(name) + 1);
+  final pi = aligned ? _col(header, pointsHeads, prefix: true) : null;
+  final points = pi != null && _points.hasMatch(cells[pi])
+      ? cells[pi]
+      : after.firstWhere(_points.hasMatch, orElse: () => '');
+  if (points.isEmpty) return null;
+  final ci = aligned ? _col(header, _nationHeads) : null;
+  String nation;
+  if (ci != null && _nation.hasMatch(cells[ci])) {
+    nation = cells[ci];
+  } else {
+    final idx = after.indexOf(points);
+    final before = idx >= 0 ? after.sublist(0, idx) : after;
+    nation = before.firstWhere(_nation.hasMatch, orElse: () => '');
   }
-  if (header == null) return null;
-  out.sort((a, b) => a.place.compareTo(b.place));
-  return out;
+  return LiveRow(int.parse(nonempty[0]), name, nation.replaceAll(' ', ''), points, cells, pi);
 }
 
-/// Протокол сегмента по местам; null — прокатов ещё не было.
-List<LiveRow>? segmentResults(String page) => _resultRows(page, {'TSS', 'Сумма', 'Points', 'Баллы'});
+/// Таблица самого сегмента — с оценками за элементы и компоненты (TES, PCS).
+bool _hasComponents(List<String> header) => header.any((h) => h.trim().startsWith('TES') || h.trim().startsWith('PCS'));
 
-/// Итог вида и полон ли он (у первой тройки места во всех сегментах).
-(List<LiveRow>, bool) categoryResults(String page) {
-  List<String>? header;
+/// Таблица протокола: (шапка, строки по местам); null — страница ещё стартовый лист.
+///
+/// Во время старта на странице бывает несколько таблиц с одной шапкой «Pl.»: сам сегмент
+/// и общий зачёт (короткая + произвольная). Берётся одна: у сегмента ([segment]) — с TES/PCS,
+/// у итога — без них; если такой нет — первая. Один человек в таблице — один раз.
+(List<String>, List<LiveRow>)? _resultTable(String page, Set<String> pointsHeads, {required bool segment}) {
+  final tables = <(List<String>, List<LiveRow>)>[];
   for (final cells in _rows(page)) {
     final first = cells.firstWhere((c) => c.isNotEmpty, orElse: () => '');
     if (_resultHeads.contains(first) && _col(cells, _nameHeads) != null) {
-      header = cells;
-      break;
+      tables.add((cells, <LiveRow>[]));
+      continue;
     }
+    if (tables.isEmpty) continue;
+    final row = _rowResult(cells, tables.last.$1, pointsHeads);
+    if (row != null) tables.last.$2.add(row);
   }
-  final rows = _resultRows(page, {'Points', 'Баллы', 'Сумма', 'Total', 'TSS'}) ?? const <LiveRow>[];
-  if (header == null || rows.isEmpty) return (const <LiveRow>[], false);
+  if (tables.isEmpty) return null;
+  final pick = tables.where((t) => t.$2.isNotEmpty && _hasComponents(t.$1) == segment).firstOrNull ??
+      tables.where((t) => t.$2.isNotEmpty).firstOrNull ??
+      tables.first;
+  final seen = <String>{};
+  final rows = [
+    for (final r in pick.$2)
+      if (seen.add(r.name)) r,
+  ]..sort((a, b) => a.place.compareTo(b.place));
+  return (pick.$1, rows);
+}
+
+/// Протокол сегмента по местам; null — прокатов ещё не было.
+List<LiveRow>? segmentResults(String page) =>
+    _resultTable(page, {'TSS', 'Сумма', 'Points', 'Баллы'}, segment: true)?.$2;
+
+/// Итог вида и полон ли он (у первой тройки места во всех сегментах).
+(List<LiveRow>, bool) categoryResults(String page) {
+  final t = _resultTable(page, {'Points', 'Баллы', 'Сумма', 'Total', 'TSS'}, segment: false);
+  if (t == null || t.$2.isEmpty) return (const <LiveRow>[], false);
+  final (header, rows) = t;
   for (final r in rows.take(3)) {
     final pi = r.pi;
     if (pi == null) return (rows, false);
@@ -138,10 +151,11 @@ bool segmentFinal(String index, String segUrl) {
   return false;
 }
 
-/// «Vladislav DIKIDZHI» → «Vladislav Dikidzhi»: так пишет иностранцев сборщик.
-String _titled(String latin) => latin.replaceAllMapped(
-  RegExp(r"\b([A-ZÀ-Ý])([A-ZÀ-Ý'\-]+)\b"),
-  (m) => '${m[1]}${m[2]!.toLowerCase()}',
+/// «Vladislav DIKIDZHI» → «Vladislav Dikidzhi», «Даниил ЖОЛОБОВ» → «Даниил Жолобов»: фамилии капсом
+/// табло приводятся к обычному написанию, если сборщик не передал готовое имя.
+String titledName(String name) => name.replaceAllMapped(
+  RegExp(r"(?<![\p{L}])(\p{Lu})([\p{Lu}'\-]+)(?![\p{L}])", unicode: true),
+  (m) => '${m[1]}${m[2]!.toLowerCase().replaceAllMapped(RegExp(r"-(\p{L})", unicode: true), (h) => "-${h[1]!.toUpperCase()}")}',
 );
 
 class Live {
@@ -171,7 +185,7 @@ class Live {
     final index = await _get(src.idx);
     // оглавление не ответило — окончательным не считаем
     final done = index != null && segmentFinal(index, src.seg);
-    String ru(String latin) => src.names[latin] ?? _titled(latin);
+    String ru(String latin) => src.names[latin] ?? titledName(latin);
     final podium = [for (final r in rows.take(3)) Placing(r.place, ru(r.name), r.nation, r.points)];
     final places = {for (final r in rows) norm(ru(r.name)): r.place};
     List<Placing>? total;

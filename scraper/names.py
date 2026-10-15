@@ -65,11 +65,24 @@ def _lev(a, b):
     return prev[-1]
 
 
+def _latin_names():
+    """Белорусы и другие, кого нет в российских списках: латиница протокола → по-русски (config.json → latin_names)."""
+    try:
+        with open(os.path.join(os.path.dirname(__file__), "config.json"), encoding="utf-8") as f:
+            return json.load(f).get("latin_names") or {}
+    except (OSError, ValueError):
+        return {}
+
+
 class Names:
     def __init__(self, path=None, aliases=None):
         self.path = path
         self.ru = {}  # ключ → «Имя Фамилия»
         self.aliases = aliases or {}
+        self.latin = {}  # ключ из латиницы → «Имя Фамилия»
+        for lat, ru in _latin_names().items():
+            given, _, family = lat.rpartition(" ")
+            self.latin[(norm_lat(family), norm_lat(given))] = ru
         if path and os.path.exists(path):
             with open(path, encoding="utf-8") as f:
                 for full in json.load(f):
@@ -101,7 +114,7 @@ class Names:
             return self._alias(pretty_ru(name))
         given, family = split_given_family(name)
         kf, kg = norm_lat(family), norm_lat(given)
-        hit = self.ru.get((kf, kg))
+        hit = self.latin.get((kf, kg)) or self.ru.get((kf, kg))
         if not hit:
             cands = [v for (f, g), v in self.ru.items() if f == kf and g[:3] == kg[:3]]
             if len(cands) == 1:

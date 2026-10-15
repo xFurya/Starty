@@ -156,6 +156,7 @@ def parse_starting_order(url, page=None):
         page = net.fetch(url)
     rows = _rows(page)
     out = []
+    seen = set()
     warmup = None
     header = None
     for cells, _ in rows:
@@ -184,6 +185,9 @@ def parse_starting_order(url, page=None):
             if not re.fullmatch(r"\d+", nonempty[0]):
                 continue
             name = nonempty[1]
+            if name in seen:  # вторая таблица с той же шапкой — общий зачёт: человек один раз
+                continue
+            seen.add(name)
             stn = next((v for v in reversed(nonempty) if re.fullmatch(r"#\d+", v)), None)
             nation = _nation_from(nonempty[2:])
             out.append({"no": int(stn[1:]) if stn else None, "name": name,
@@ -215,37 +219,66 @@ def _col(header, names, prefix=False):
     return None
 
 
-def _result_rows(page, points_heads):
+def _row_result(cells, header, points_heads):
+    """Строка таблицы протокола → {place, name, nation, points, cells, pi} или None."""
+    nonempty = [c for c in cells if c]
+    if len(nonempty) < 3 or not re.fullmatch(r"\d+", nonempty[0]):
+        return None
+    aligned = len(cells) == len(header)
+    ni = _col(header, NAME_HEADS) if aligned else None
+    name = cells[ni] if ni is not None and cells[ni] else nonempty[1]
+    after = cells[cells.index(name) + 1:]
+    pi = _col(header, points_heads, prefix=True) if aligned else None
+    points = cells[pi] if pi is not None and POINTS_RE.fullmatch(cells[pi]) else \
+        next((v for v in after if POINTS_RE.fullmatch(v)), None)
+    if not points:
+        return None
+    ci = _col(header, NATION_HEADS) if aligned else None
+    if ci is not None and NATION_RE.fullmatch(cells[ci]):
+        nation = cells[ci]
+    else:
+        before = after[:after.index(points)] if points in after else after
+        nation = next((v for v in before if NATION_RE.fullmatch(v)), "")
+    return {"place": int(nonempty[0]), "name": name, "nation": nation.replace(" ", ""),
+            "points": points, "cells": cells, "pi": pi}
+
+
+def _has_components(header):
+    """Таблица самого сегмента — с оценками за элементы и компоненты (TES, PCS)."""
+    return any(h.strip().startswith(("TES", "PCS")) for h in header)
+
+
+def _result_rows(page, points_heads, segment):
     """Таблица протокола → (шапка, [{place, name, nation, points, cells}]).
-    Шапка None — страница не в режиме результатов (стартовый лист)."""
-    header = None
-    out = []
+    Шапка None — страница не в режиме результатов (стартовый лист).
+
+    Во время старта на странице бывает несколько таблиц с одной и той же шапкой «Pl.»:
+    сам сегмент и общий зачёт (короткая + произвольная). Берётся одна: у сегмента
+    (segment=True) — с TES/PCS, у итога — без них; если такой нет — первая. Один человек
+    в таблице — один раз."""
+    tables = []  # [(шапка, [строки])]
     for cells, _ in _rows(page, flat=True):
-        if header is None:
-            first = next((c for c in cells if c), "")
-            if first in RESULT_HEADS and _col(cells, NAME_HEADS) is not None:
-                header = cells
+        first = next((c for c in cells if c), "")
+        if first in RESULT_HEADS and _col(cells, NAME_HEADS) is not None:
+            tables.append((cells, []))
             continue
-        nonempty = [c for c in cells if c]
-        if len(nonempty) < 3 or not re.fullmatch(r"\d+", nonempty[0]):
+        if not tables:
             continue
-        aligned = len(cells) == len(header)
-        ni = _col(header, NAME_HEADS) if aligned else None
-        name = cells[ni] if ni is not None and cells[ni] else nonempty[1]
-        after = cells[cells.index(name) + 1:]
-        pi = _col(header, points_heads, prefix=True) if aligned else None
-        points = cells[pi] if pi is not None and POINTS_RE.fullmatch(cells[pi]) else \
-            next((v for v in after if POINTS_RE.fullmatch(v)), None)
-        if not points:
+        header, rows = tables[-1]
+        r = _row_result(cells, header, points_heads)
+        if r:
+            rows.append(r)
+    if not tables:
+        return None, []
+    pick = next((t for t in tables if t[1] and _has_components(t[0]) == segment), None) \
+        or next((t for t in tables if t[1]), tables[0])
+    header, rows = pick
+    seen, out = set(), []
+    for r in rows:
+        if r["name"] in seen:
             continue
-        ci = _col(header, NATION_HEADS) if aligned else None
-        if ci is not None and NATION_RE.fullmatch(cells[ci]):
-            nation = cells[ci]
-        else:
-            before = after[:after.index(points)] if points in after else after
-            nation = next((v for v in before if NATION_RE.fullmatch(v)), "")
-        out.append({"place": int(nonempty[0]), "name": name, "nation": nation.replace(" ", ""),
-                    "points": points, "cells": cells, "pi": pi})
+        seen.add(r["name"])
+        out.append(r)
     return header, out
 
 
@@ -253,7 +286,7 @@ def parse_segment_results(page):
     """Протокол сегмента (SEGnnn.htm после проката): [{place, name, nation, points}]
     по местам; points — сумма за сегмент (TSS) строкой, как в протоколе.
     None — страница ещё показывает стартовый порядок."""
-    header, rows = _result_rows(page, ("TSS", "Сумма", "Points", "Баллы"))
+    header, rows = _result_rows(page, ("TSS", "Сумма", "Points", "Баллы"), True)
     if header is None:
         return None
     return [{k: r[k] for k in ("place", "name", "nation", "points")}
@@ -265,7 +298,7 @@ def parse_category_results(url):
     complete — у первой тройки заполнены места во всех сегментах (до конца
     последнего сегмента столбец ПП/ПТ пустой, а в «Points» сумма за КП)."""
     page = net.fetch(url)
-    header, rows = _result_rows(page, ("Points", "Баллы", "Сумма", "Total", "TSS"))
+    header, rows = _result_rows(page, ("Points", "Баллы", "Сумма", "Total", "TSS"), False)
     if header is None or not rows:
         return {"rows": [], "complete": False}
     rows.sort(key=lambda r: r["place"])

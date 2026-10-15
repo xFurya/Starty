@@ -37,4 +37,39 @@ void main() {
         '<tr><td>1</td><td>Ivan IVANOV</td><td>AIN2</td></tr></table>';
     expect(segmentResults(start), isNull);
   });
+
+  group('несколько таблиц на странице во время старта', () {
+    const segHead = '<tr><th>Pl.</th><th>Name</th><th>Nation</th><th>TSS</th><th>TES</th><th>PCS</th></tr>';
+    const totHead = '<tr><th>Pl.</th><th>Name</th><th>Nation</th><th>Total</th><th>SP</th><th>FS</th></tr>';
+    const total = '<table>$totHead'
+        '<tr><td>1</td><td>Ivan SEMENOV</td><td>RUS</td><td>178.37</td><td>1</td><td>1</td></tr>'
+        '<tr><td>2</td><td>Max GALKIN</td><td>RUS</td><td>169.82</td><td>2</td><td>2</td></tr></table>';
+    const segment = '<table>$segHead'
+        '<tr><td>1</td><td>Ivan SEMENOV</td><td>RUS</td><td>115.66</td><td>56.56</td><td>59.10</td></tr>'
+        '<tr><td>2</td><td>Max GALKIN</td><td>RUS</td><td>114.72</td><td>52.78</td><td>61.94</td></tr></table>';
+
+    test('берётся таблица сегмента, а не общий зачёт, в любом порядке', () {
+      for (final page in [total + segment, segment + total]) {
+        final rows = segmentResults(page)!;
+        expect(rows.map((r) => r.name), ['Ivan SEMENOV', 'Max GALKIN']);
+        expect(rows.map((r) => r.points), ['115.66', '114.72']);
+      }
+    });
+
+    test('один человек — одна строка', () {
+      const dup = '<table>$segHead'
+          '<tr><td>1</td><td>A B</td><td>RUS</td><td>100.00</td><td>50.00</td><td>50.00</td></tr>'
+          '<tr><td>1</td><td>A B</td><td>RUS</td><td>90.00</td><td>45.00</td><td>45.00</td></tr></table>';
+      final rows = segmentResults(dup)!;
+      expect(rows.length, 1);
+      expect(rows.single.points, '100.00');
+    });
+  });
+
+  test('фамилии капсом приводятся к обычному написанию', () {
+    expect(titledName('Vladislav DIKIDZHI'), 'Vladislav Dikidzhi');
+    expect(titledName('Даниил ЖОЛОБОВ'), 'Даниил Жолобов');
+    expect(titledName('Anna SHCHERBAKOVA / Egor GONCHAROV'), 'Anna Shcherbakova / Egor Goncharov');
+    expect(titledName('Ana Maria TORRES-LOPEZ'), 'Ana Maria Torres-Lopez');
+  });
 }
