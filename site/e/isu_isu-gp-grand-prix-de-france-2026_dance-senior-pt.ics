@@ -14,12 +14,14 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-grand-prix-de-france-2026:dance-senior-pt@starty
-DTSTAMP:20261015T165344Z
+DTSTAMP:20261015T170225Z
 DTSTART;TZID=Europe/Moscow:20261024T152000
 DTEND;TZID=Europe/Moscow:20261024T164500
 SUMMARY:GP de France — танцы ПТ
 DESCRIPTION:Начало: 15:20 МСК
 LOCATION:Angers\, France
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-grand-prix-de-france-2026
+ :dance-senior-pt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

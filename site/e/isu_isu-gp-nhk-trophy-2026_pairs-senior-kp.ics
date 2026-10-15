@@ -14,12 +14,14 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-nhk-trophy-2026:pairs-senior-kp@starty
-DTSTAMP:20261015T165344Z
+DTSTAMP:20261015T170225Z
 DTSTART;TZID=Europe/Moscow:20261127T083500
 DTEND;TZID=Europe/Moscow:20261127T094500
 SUMMARY:GP NHK Trophy — пары КП
 DESCRIPTION:Начало: 08:35 МСК
 LOCATION:Tokyo\, Japan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-nhk-trophy-2026:pairs-sen
+ ior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

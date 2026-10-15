@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-jgp-ankara-2026:women-junior-kp@starty
-DTSTAMP:20261015T165344Z
+DTSTAMP:20261015T170225Z
 DTSTART;TZID=Europe/Moscow:20260917T100000
 DTEND;TZID=Europe/Moscow:20260917T155000
 SUMMARY:JGP Ankara — девушки КП
@@ -22,6 +22,8 @@ DESCRIPTION:Итог:\n1. Mei Okada — 74.27\n2. Nayeon Ko — 70.21\n3. S
  huxian Jin — 68.11\n\nНачало: 10:00 МСК\nТрансляция: 
  Okko
 LOCATION:Ankara\, Türkiye
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-ankara-2026:women-junior
+ -kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
