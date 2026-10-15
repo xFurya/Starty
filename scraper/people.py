@@ -64,8 +64,14 @@ def seasons(season_start):
 
 # ---------------------------------------------------------------- россияне
 
-_SKIP_TOUR = re.compile(r"любител|синхрон|мальчик|девоч|межрегион|фестивал|спортивн\w* бал|балет", re.I)
-_SKIP_CAT = re.compile(r"разряд|юношеск|мальчик|девоч|синхрон|команд|любител|новичк|basic|novice", re.I)
+# Адреса страниц ФФККР набраны латиницей (lyubitel, sinkhron, balet…), названия — кириллицей: ищем в обоих
+_SKIP_TOUR = re.compile(
+    r"любител|синхрон|мальчик|девоч|межрегион|фестивал|спортивн\w* бал|балет"
+    r"|lyubit|sinkhr|sinhr|synchr|balet|ballet|festival|mezhregion|mezhreg",
+    re.I,
+)
+# «Класс I–III», «Пре-бронза», «Молодежный класс» — любительские, в справочнике спортсменов им не место
+_SKIP_CAT = re.compile(r"разряд|юношеск|мальчик|девоч|синхрон|команд|любител|новичк|basic|novice|класс|бронз", re.I)
 
 
 # латинские буквы, которыми на табло ФФККР бывают набраны русские слова («Mужчины», «Жeнщины»)
@@ -121,13 +127,14 @@ def russians(cache, season_codes, log=print):
                 continue
             try:
                 res = fsr.tournament(FSR + l)["results"] or ""
-            except net.FetchError:
+            except net.FetchError as e:
+                log("  ! страница турнира ФФККР:", FSR + l, e)
                 continue
             known[l] = res
             fresh_pages += 1
     out = []
     for page, res in known.items():  # noqa: E501
-        if not res or _SKIP_TOUR.search(page.replace("-", " ")):
+        if not res or _SKIP_TOUR.search(f"{page.replace('-', ' ')} {res}"):
             continue
         m = re.search(r"/results/(\d{4})/", res)
         if not m or m.group(1) not in season_codes:
@@ -165,7 +172,8 @@ def _results(idx_url, log):
             continue
         try:
             page = net.fetch(url)
-        except net.FetchError:
+        except net.FetchError as e:
+            log("  ! протокол категории:", url, e)
             continue
         for cells, _ in st._rows(page):
             vals = [v for v in cells if v]
@@ -236,9 +244,18 @@ def isu_russians(log=print):
                 continue
             if x.get("status") not in ("Active", None, ""):
                 continue
-            name = x.get("full_name") or ""
-            if name:
-                out.setdefault(name, (n or org, org))
+            # пара или танец: у строки имени нет, каждый партнёр — отдельная строка в members
+            if x.get("skaters_type") == "Team":
+                people = x.get("members") or []
+            else:
+                people = [x]
+            for m in people:
+                name = m.get("full_name") or ""
+                if not name:
+                    continue
+                mn = m.get("nationality_code") or ""
+                morg = m.get("organization_code") or org
+                out.setdefault(name, (mn or morg, morg))
         if d.get("is_next_page") != "Y":
             break
     log(f"  список ISU, россияне и белорусы: {len(out)}")

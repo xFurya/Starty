@@ -149,7 +149,8 @@ def tournament(url):
     for a in re.finditer(r'(?s)<a[^>]+href="([^"]+)"[^>]*>(.*?)</a>', body):
         href, label = a.group(1), _text(a.group(2)).lower()
         full = urljoin(BASE, href)
-        if "/results/" in href and href.endswith(".htm"):
+        # табло — файл index.htm или папка с ним (skate63: /results/2526/VSSM26/)
+        if "/results/" in href and (href.endswith(".htm") or href.endswith("/")):
             t["results"] = full
         elif "расписание" in label and href.lower().endswith(".pdf"):
             t["schedule_pdf"] = full

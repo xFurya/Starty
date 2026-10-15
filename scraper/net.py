@@ -12,8 +12,9 @@ import tempfile
 import time
 import urllib.error
 import urllib.request
+from urllib.parse import quote, urlsplit, urlunsplit
 
-UA = ("Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 "
+UA =("Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0 Mobile Safari/537.36")
 
 # Викимедиа просит у роботов честное имя и адрес проекта, иначе отвечает 429
@@ -36,6 +37,20 @@ def _cache_path(key):
     return os.path.join(_CACHE, h)
 
 
+def ascii_url(url):
+    """Кириллический домен — в punycode, кириллица в пути — в %-кодировку: urllib иначе падает на latin-1."""
+    p = urlsplit(url)
+    if p.hostname and not p.hostname.isascii():
+        netloc = p.hostname.encode("idna").decode("ascii")
+        if p.port:
+            netloc += f":{p.port}"
+        p = p._replace(netloc=netloc)
+    return urlunsplit(p._replace(
+        path=quote(p.path, safe="/%:@!$&'()*+,;=-._~"),
+        query=quote(p.query, safe="%=&+:/?;,.-_~!$'()*@"),
+    ))
+
+
 def fetch(url, data=None, headers=None, timeout=30, tries=3, binary=False):
     """GET (или POST, если передан data) с повторами. Возвращает str или bytes."""
     key = url + "|" + (json.dumps(data, sort_keys=True) if data is not None else "")
@@ -56,7 +71,7 @@ def fetch(url, data=None, headers=None, timeout=30, tries=3, binary=False):
     _throttle(url)
     for attempt in range(tries):
         try:
-            req = urllib.request.Request(url, data=body, headers=hdrs)
+            req = urllib.request.Request(ascii_url(url), data=body, headers=hdrs)
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 raw = r.read()
             if _CACHE:
