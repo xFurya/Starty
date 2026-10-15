@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:gs:tayside-trophy:men-junior-pp@starty
-DTSTAMP:20261015T174525Z
+DTSTAMP:20261015T175926Z
 DTSTART;TZID=Europe/Moscow:20261011T140600
 DTEND;TZID=Europe/Moscow:20261011T152100
 SUMMARY:Tayside Trophy — юноши ПП
@@ -23,6 +23,7 @@ DESCRIPTION:Итог:\n1. Rui Qin — 120.86\n2. Joshua Snyder — 118.72\n
  \n2. Joshua Snyder — 180.53\n3. Bowen Yan — 164.17\n\nНачало: 14
  :06 МСК
 LOCATION:Dundee\, Great Britain
+URL:https://xfurya.github.io/Starty/#e=gs:tayside-trophy:men-junior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

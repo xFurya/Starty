@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:gs:tayside-trophy:women-junior-pp@starty
-DTSTAMP:20261015T174525Z
+DTSTAMP:20261015T175926Z
 DTSTART;TZID=Europe/Moscow:20261011T110500
 DTEND;TZID=Europe/Moscow:20261011T143500
 SUMMARY:Tayside Trophy — девушки ПП
@@ -27,6 +27,7 @@ DESCRIPTION:Итог:\n1. Mia Smith — 113.13\n2. Noemi Joos — 105.10\n3
  ткой программы — 8-е место\, в итоге — 3-е 
  место\n\nНачало: 11:05 МСК
 LOCATION:Dundee\, Great Britain
+URL:https://xfurya.github.io/Starty/#e=gs:tayside-trophy:women-junior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

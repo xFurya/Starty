@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-jgp-batumi-2026:women-junior-kp@starty
-DTSTAMP:20261015T174525Z
+DTSTAMP:20261015T175926Z
 DTSTART;TZID=Europe/Moscow:20260924T171000
 DTEND;TZID=Europe/Moscow:20260924T221000
 SUMMARY:JGP Batumi — девушки КП
@@ -22,6 +22,8 @@ DESCRIPTION:Итог:\n1. Yihan Wang — 73.38\n2. Kei Yamada — 68.98\n3.
   Stefania Gladki — 67.94\n\nНачало: 17:10 МСК\nТрансляц
  ия: Okko
 LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-batumi-2026:women-junior
+ -kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

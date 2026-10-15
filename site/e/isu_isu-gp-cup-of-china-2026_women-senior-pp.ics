@@ -14,13 +14,15 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-cup-of-china-2026:women-senior-pp@starty
-DTSTAMP:20261015T174525Z
+DTSTAMP:20261015T175926Z
 DTSTART;TZID=Europe/Moscow:20261107T113000
 DTEND;TZID=Europe/Moscow:20261107T131500
 SUMMARY:GP Cup of China — женщины ПП
 DESCRIPTION:Россияне:\n• Александра Трусова\n\n
  Начало: 11:30 МСК
 LOCATION:Shenzhen\, China
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:women-s
+ enior-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

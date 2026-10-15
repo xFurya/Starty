@@ -15,7 +15,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:pair
  s-junior-kp@starty
-DTSTAMP:20261015T174525Z
+DTSTAMP:20261015T175926Z
 DTSTART;TZID=Europe/Moscow:20261012T195000
 DTEND;TZID=Europe/Moscow:20261012T202000
 SUMMARY:ЮГП России «Рапсодия льда» — пары КП
@@ -25,6 +25,8 @@ DESCRIPTION:Итог:\n1. Зоя Ковязина / Дмитрий Роди
  р Саморуков — 52.50\n\nНачало: 19:50 МСК\nТранс
  ляция: Первый канал
 LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-raps
+ odiya-l-da-sredi-yuniorov-2026:pairs-junior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

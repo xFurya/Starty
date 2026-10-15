@@ -14,12 +14,14 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-skate-canada-international-2026:dance-senior-pt@starty
-DTSTAMP:20261015T174525Z
+DTSTAMP:20261015T175926Z
 DTSTART;TZID=Europe/Moscow:20261102T021500
 DTEND;TZID=Europe/Moscow:20261102T034000
 SUMMARY:GP Skate Canada — танцы ПТ
 DESCRIPTION:Начало: 02:15 МСК
 LOCATION:Kelowna\, Canada
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-skate-canada-internationa
+ l-2026:dance-senior-pt
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:gs:tayside-trophy:women-senior-kp@starty
-DTSTAMP:20261015T174525Z
+DTSTAMP:20261015T175926Z
 DTSTART;TZID=Europe/Moscow:20261010T182500
 DTEND;TZID=Europe/Moscow:20261010T202500
 SUMMARY:Tayside Trophy — женщины КП
@@ -23,6 +23,7 @@ DESCRIPTION:Итог:\n1. Ekaterina Kurakova — 66.33\n2. Sarina Joos —
  rina Joos — Личный рекорд за КП: 65.29 (был 63.59)\n\
  nНачало: 18:25 МСК
 LOCATION:Dundee\, Great Britain
+URL:https://xfurya.github.io/Starty/#e=gs:tayside-trophy:women-senior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

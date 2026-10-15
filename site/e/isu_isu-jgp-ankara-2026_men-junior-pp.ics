@@ -14,7 +14,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-jgp-ankara-2026:men-junior-pp@starty
-DTSTAMP:20261015T174525Z
+DTSTAMP:20261015T175926Z
 DTSTART;TZID=Europe/Moscow:20260919T100000
 DTEND;TZID=Europe/Moscow:20260919T151000
 SUMMARY:JGP Ankara — юноши ПП
@@ -25,6 +25,8 @@ DESCRIPTION:Итог:\n1. Daiya Ebihara — 144.20\n2. Yehor Kurtsev — 13
  программе: 4Lz\, 4Lz\, 4T\n\nНачало: 10:00 МСК\nТран
  сляция: Okko
 LOCATION:Ankara\, Türkiye
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-ankara-2026:men-junior-p
+ p
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
