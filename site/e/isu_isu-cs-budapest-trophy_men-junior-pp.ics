@@ -14,15 +14,13 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-budapest-trophy:men-junior-pp@starty
-DTSTAMP:20261015T072627Z
+DTSTAMP:20261015T085521Z
 DTSTART;TZID=Europe/Moscow:20261017T130500
 DTEND;TZID=Europe/Moscow:20261017T142000
 SUMMARY:CS Budapest Trophy — юноши ПП
 DESCRIPTION:Россияне:\n• Илья Мальков\n\nНачало:
   13:05 МСК
 LOCATION:Budapest\, Hungary
-URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:men-junio
- r-pp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

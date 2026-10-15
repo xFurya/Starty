@@ -28,11 +28,12 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, "data", "people.json")
 FSR = "https://fsrussia.ru"
 STAT = "https://www.isuresults.com/isujsstat/"
+OURS = {"RUS", "AIN2", "BLR", "AIN1", "AIN"}
 KINDS = {"w": "women", "m": "men", "p": "pairs", "d": "dance"}
 # сколько страниц раздела «Соревнования» листать при первом сборе (по 10 турниров)
 MAX_PAGES = 40
 # версия разбора протоколов: при смене разобранное считается заново
-RULES = 2
+RULES = 3
 
 
 def _load():
@@ -71,6 +72,16 @@ _SKIP_CAT = re.compile(r"разряд|юношеск|мальчик|девоч|�
 _HOMO = str.maketrans("AaBEeKMHOoPpCcTXxy", "АаВЕеКМНОоРрСсТХху")
 
 
+def level_of_category(name):
+    """Юниоры, юниорки, девушки, юноши и КМС — юниорский уровень; МС — взрослый."""
+    n = name.translate(_HOMO).lower()
+    if re.search(r"юниор|юнош|девушк", n):
+        return "junior"
+    if re.search(r"\bкмс\b", n) and not re.search(r"(?<!к)\bмс\b", n):
+        return "junior"
+    return "senior"
+
+
 def kind_of_category(name):
     n = name.translate(_HOMO).lower()
     if "пар" in n:
@@ -90,7 +101,7 @@ def _tournament_links(page):
 
 
 def russians(cache, season_codes, log=print):
-    """[(имя по-русски как в протоколе, вид)] со всех всероссийских стартов этих сезонов."""
+    """[(имя по-русски как в протоколе, вид, уровень, сезон)] со всех всероссийских стартов этих сезонов."""
     from . import fsr
     oldest = min(season_codes)
     known = cache["pages"]
@@ -136,8 +147,10 @@ def russians(cache, season_codes, log=print):
             if got is None:
                 continue
             cache["results"][res] = got
-        out.extend((n, k) for n, k in cache["results"][res])
-    log(f"  справочник: россиян с протоколов {len({n for n, _ in out})}; новых страниц турниров {fresh_pages}")
+        out.extend((n, k, lv, m.group(1)) for n, k, lv in cache["results"][res])
+    # новые сезоны первыми: уровень — по последнему
+    out.sort(key=lambda x: x[3], reverse=True)
+    log(f"  справочник: россиян с протоколов {len({x[0] for x in out})}; новых страниц турниров {fresh_pages}")
     return out
 
 
@@ -154,6 +167,7 @@ def _results(idx_url, log):
     for c in idx["categories"]:
         name = (c.get("name") or "").translate(_HOMO)
         kind = kind_of_category(name)
+        level = level_of_category(name)
         if not kind or _SKIP_CAT.search(name):
             continue
         url = c.get("entries_url") or c.get("results_url")
@@ -166,7 +180,7 @@ def _results(idx_url, log):
         for cells, _ in st._rows(page):
             vals = [v for v in cells if v]
             if len(vals) >= 2 and re.fullmatch(r"\d+", vals[0]) and nm.is_cyr(vals[1]):
-                out.append([entry_name(vals[1]), kind])
+                out.append([entry_name(vals[1]), kind, level])
     return out
 
 
@@ -198,21 +212,23 @@ def _stat_rows(path):
         cells = [re.sub(r"\s+", " ", re.sub(r"(?s)<[^>]+>", " ", c)).strip()
                  for c in re.findall(r"(?s)<td[^>]*>(.*?)</td>", r)]
         nation = next((c for c in cells if re.fullmatch(r"[A-Z]{3}\d?", c)), "")
-        out.append((html.unescape(m.group(2)).strip(), nation, m.group(1)))
+        level = "junior" if cells and cells[-1] == "J" else "senior"
+        out.append((html.unescape(m.group(2)).strip(), nation, level))
     return out
 
 
 def internationals(season_codes, log=print):
-    """[(имя латиницей как в протоколе, страна, вид)] — у всех есть оценка на турнире ISU."""
+    """[(имя латиницей как в протоколе, страна, вид, уровень)] — у всех есть оценка на турнире ISU.
+    Сезоны — от нового к старому: уровень берётся по последнему (вчерашняя юниорка уже взрослая)."""
     out = {}
     for s in season_codes:
         season = f"20{s[:2]}-{s[2:]}"
         for k, kind in KINDS.items():
             for seg in ("to", "rd") if k == "d" else ("to", "sp"):
-                for name, nation, _ in _stat_rows(f"sb{season}/sbts{k}{seg}.htm"):
-                    out.setdefault((name, kind), nation)
+                for name, nation, level in _stat_rows(f"sb{season}/sbts{k}{seg}.htm"):
+                    out.setdefault((name, kind), (nation, level))
     log(f"  справочник: участников турниров ISU {len(out)}")
-    return [(n, c, k) for (n, k), c in out.items()]
+    return [(n, c, k, lv) for (n, k), (c, lv) in out.items()]
 
 
 # ---------------------------------------------------------------- фото
@@ -287,15 +303,15 @@ def build(names, season_start, log=print):
     codes = seasons(season_start)
     people = {}
 
-    def add(name, nation, kind):
+    def add(name, nation, kind, level):
         key = nm.key(name)
         if not key:
             return
-        p = people.setdefault(key, {"n": name, "c": nation, "k": []})
+        p = people.setdefault(key, {"n": name, "c": nation, "k": {}})
         if not p["c"]:
             p["c"] = nation
-        if kind not in p["k"]:
-            p["k"].append(kind)
+        # первый — из самого нового сезона
+        p["k"].setdefault(kind, level)
         # русское написание важнее латинского
         if nm.is_cyr(name) and not nm.is_cyr(p["n"]):
             p["n"] = name
@@ -305,12 +321,15 @@ def build(names, season_start, log=print):
     except net.FetchError as e:
         log("  ! россияне:", e)
         ru = []
-    for raw, kind in ru:
+    for raw, kind, level, _ in ru:
         for one in raw.split(" / "):
             names.add(one)
-        add(names.to_ru(raw), "RUS", kind)
-    for raw, nation, kind in internationals(codes, log):
-        add(names.to_ru(raw), nation, kind)
+        add(names.to_ru(raw), "RUS", kind, level)
+    for raw, nation, kind, level in internationals(codes, log):
+        # по-русски — только россияне и белорусы: иначе похожая фамилия иностранца
+        # («Koval» у украинца) превращается в чужого человека с чужим фото
+        ours = nation in OURS
+        add(names.to_ru(raw) if ours else nm.pretty_latin(raw), nation, kind, level)
     _save(cache)
 
     photos = []
@@ -319,6 +338,8 @@ def build(names, season_start, log=print):
     for raw, url in wikidata_photos(log):
         photos.append((raw, url, 3))
     out = sorted(people.values(), key=lambda p: p["n"])
+    # вид буквой: строчная — взрослые, заглавная — юниоры (W — девушки, M — юноши)
+    letter = {"women": "w", "men": "m", "pairs": "p", "dance": "d"}
     for p in out:
-        p["k"] = "".join(sorted({"women": "w", "men": "m", "pairs": "p", "dance": "d"}[k] for k in p["k"]))
+        p["k"] = "".join(sorted(letter[k].upper() if lv == "junior" else letter[k] for k, lv in p["k"].items()))
     return {"people": out, "photos": photos}

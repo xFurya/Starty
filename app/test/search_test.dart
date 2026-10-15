@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:starty/countries.dart';
 import 'package:starty/data.dart';
 
 void main() {
@@ -19,5 +20,12 @@ void main() {
     expect(namesInclude(starts, 'Лука Берулава'), isTrue);
     expect(namesInclude(starts, 'kaori sakamoto'), isTrue);
     expect(namesInclude(starts, 'Лука'), isFalse);
+  });
+
+  test('юниоры — девушки и юноши, взрослые — женщины и мужчины', () {
+    expect(personLine('FRA', 'W'), 'Франция · девушки');
+    expect(personLine('RUS', 'w'), 'Россия · женщины');
+    expect(personLine('JPN', 'M'), 'Япония · юноши');
+    expect(personLine('RUS', 'P'), 'Россия · юниорские пары');
   });
 }

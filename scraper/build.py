@@ -951,6 +951,9 @@ def main():
     roster.update(p["n"] for p in book["people"])
     # латинское написание того, кого уже знаем по-русски, в справочнике не держим: поиск не должен давать двойников
     roster = {n for n in roster if not names.known_latin(n)}
+    # пара наполовину кириллицей, наполовину латиницей — иностранец, ошибочно принятый за нашего
+    roster = {n for n in roster if " / " not in n
+              or len({nm.is_cyr(m) for m in n.split(" / ")}) == 1}
 
     all_ok = all(s == "ok" for s in report["sources"].values()) and not report["errors"]
     data = {
