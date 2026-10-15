@@ -24,12 +24,16 @@ bool get syncConfigured => syncUrl.isNotEmpty && syncKey.isNotEmpty;
 /// Регистрация прошла, но вход станет возможен только после письма. Это подсказка, а не ошибка.
 const kConfirmMail = 'Письмо для подтверждения отправлено на почту';
 
-/// Документ настроек. Версия — для будущих изменений формата: лишние поля игнорируются.
+/// Документ настроек: всё, что человек меняет в приложении, кроме служебного состояния устройства
+/// (кэш расписания, разрешение ОС, заметки обновления и т. п. — см. ПРОЕКТ.md, раздел 2.4).
+/// Версия 2 — текущая; версию 1 читаем (см. [_followOf]). Лишние поля игнорируются.
 class SyncDoc {
   final DateTime updatedAt; // UTC
   final String rules; // NotifyRules.toJson()
   final List<String> forcedOn, forcedOff;
-  final List<String> follow;
+
+  /// null — человек не выбирал отслеживаемых, действует список сборщика; [] — выбрал «никого».
+  final List<String>? follow;
   final bool followRussians, followBelarusians;
   final Map<String, List<String>>
   filters; // kinds, tids, athletes, levels, scope
@@ -37,6 +41,11 @@ class SyncDoc {
   final String theme; // system, light, dark
   final String icon; // classic, skate_teal, date_orange_… (см. app_icon.dart)
   final bool regional; // старты региональных федераций в ленте и уведомлениях
+
+  /// Поля, которых в документе нет или они испорчены (см. [fromJson]). Такие не применяются:
+  /// на устройстве остаётся своя настройка, а не значение по умолчанию. Для документа, собранного
+  /// здесь, пусто. Имена полей — как в JSON; у фильтров — «filters.kinds» и т. п.
+  final Set<String> absent;
 
   const SyncDoc({
     required this.updatedAt,
@@ -51,12 +60,14 @@ class SyncDoc {
     required this.theme,
     required this.icon,
     this.regional = false,
+    this.absent = const {},
   });
 
   static const _filterKeys = ['kinds', 'tids', 'athletes', 'levels', 'scope'];
+  static const _themes = {'system', 'light', 'dark'};
 
   Map<String, dynamic> toJson() => {
-    'v': 1,
+    'v': 2,
     'updatedAt': updatedAt.toUtc().toIso8601String(),
     'rules': rules,
     'forcedOn': forcedOn,
@@ -82,6 +93,21 @@ class SyncDoc {
     final f = j['filters'] is Map
         ? Map<String, dynamic>.from(j['filters'] as Map)
         : const <String, dynamic>{};
+    // что не читается — в absent: при применении такое поле не трогаем (см. SyncDoc.absent)
+    final absent = <String>{
+      if (j['rules'] is! String) 'rules',
+      if (j['forcedOn'] is! List) 'forcedOn',
+      if (j['forcedOff'] is! List) 'forcedOff',
+      if (!_followKnown(j)) 'follow',
+      if (j['followRussians'] is! bool) 'followRussians',
+      if (j['followBelarusians'] is! bool) 'followBelarusians',
+      for (final k in _filterKeys)
+        if (f[k] is! List) 'filters.$k',
+      if (j['showDone'] is! bool) 'showDone',
+      if (!(j['theme'] is String && _themes.contains(j['theme']))) 'theme',
+      if (j['icon'] is! String) 'icon',
+      if (j['regional'] is! bool) 'regional',
+    };
     return SyncDoc(
       updatedAt:
           DateTime.tryParse('${j['updatedAt']}')?.toUtc() ??
@@ -89,7 +115,7 @@ class SyncDoc {
       rules: j['rules'] is String ? j['rules'] as String : '',
       forcedOn: list(j['forcedOn']),
       forcedOff: list(j['forcedOff']),
-      follow: list(j['follow']),
+      follow: _followOf(j),
       followRussians: j['followRussians'] is bool
           ? j['followRussians'] as bool
           : true,
@@ -101,7 +127,27 @@ class SyncDoc {
       theme: j['theme'] is String ? j['theme'] as String : 'system',
       icon: j['icon'] is String ? j['icon'] as String : 'classic',
       regional: j['regional'] is bool ? j['regional'] as bool : false,
+      absent: absent,
     );
+  }
+
+  /// Отслеживаемые читаются, если поле — список или явный null («по умолчанию»); отсутствие поля — не null.
+  static bool _followKnown(Map<String, dynamic> j) =>
+      j['follow'] == null ? j.containsKey('follow') : j['follow'] is List;
+
+  /// Отслеживаемые. В версии 1 пустой список означал и «не выбирал», и «снял всех» — различить нельзя.
+  /// Поэтому пустой список из старого документа читаем как «не выбирал» (null). Цена: тот, кто до
+  /// обновления явно снял всех, снова получит список сборщика. В версии 2 [] — это уже явный выбор.
+  static List<String>? _followOf(Map<String, dynamic> j) {
+    final raw = j['follow'];
+    if (raw is! List) return null;
+    final l = [
+      for (final e in raw)
+        if (e is String) e,
+    ];
+    final v = j['v'];
+    final legacy = v is! num || v < 2;
+    return legacy && l.isEmpty ? null : l;
   }
 
   /// Тот же документ с новым временем изменения.
@@ -118,10 +164,36 @@ class SyncDoc {
     theme: theme,
     icon: icon,
     regional: regional,
+    absent: absent,
   );
 
   static DateTime get epoch =>
       DateTime.fromMillisecondsSinceEpoch(0, isUtc: true);
+}
+
+/// Отслеживаемые для документа. Выбор, совпавший со списком сборщика, — это «по умолчанию» (null):
+/// тогда следующее обновление списка дойдёт и до этого устройства. defaults == null — список
+/// сборщика ещё не загружен, сравнивать не с чем, выбор сохраняется как есть.
+List<String>? followToStore(Iterable<String> chosen, Iterable<String>? defaults) {
+  final c = chosen.toSet();
+  if (defaults != null) {
+    final d = defaults.toSet();
+    if (d.length == c.length && c.containsAll(d)) return null;
+  }
+  return c.toList()..sort();
+}
+
+/// Значок для документа. Если значок устройства с прошлой сверки не менялся, документ сохраняет свой
+/// значок — даже если здесь его не поставили (датированного нет на iPhone, или система отказала),
+/// иначе показанный здесь значок затёр бы документ. Если человек поменял значок здесь, берём здешний.
+String iconToSync({
+  required String device,
+  required String? docIcon,
+  required String? lastDevice,
+}) {
+  if (docIcon == null) return device;
+  final changedHere = lastDevice != null && lastDevice != device;
+  return changedHere ? device : docIcon;
 }
 
 /// Что делать при сверке.
@@ -482,6 +554,14 @@ class SyncLocal {
   DateTime? get lastSyncAt => DateTime.tryParse(_p.getString('sync.at') ?? '');
   Future<void> markSynced(DateTime at) =>
       _p.setString('sync.at', at.toUtc().toIso8601String());
+
+  /// Значок, который документ имел здесь, и значок устройства на той же сверке (см. [iconToSync]).
+  String? get iconDoc => _p.getString('sync.icon.doc');
+  String? get iconDev => _p.getString('sync.icon.dev');
+  Future<void> setIconSeen({required String doc, required String device}) async {
+    await _p.setString('sync.icon.doc', doc);
+    await _p.setString('sync.icon.dev', device);
+  }
 }
 
 /// Сверка и отправка. Не знает, откуда берутся настройки: их даёт [capture], принимает [apply].
@@ -511,9 +591,17 @@ class SyncController {
   Timer? _debounce;
   bool _busy = false, _again = false;
 
+  /// Время правки или отправки. Часы устройства могут отставать: тогда его правка сравнилась бы как
+  /// «старее» документа, на котором оно стоит, и не ушла бы на сервер. Поэтому не раньше [floor] + 1 мс.
+  DateTime _stampAfter(DateTime floor) {
+    final t = _now();
+    final min = floor.add(const Duration(milliseconds: 1));
+    return t.isAfter(min) ? t : min;
+  }
+
   /// Пользователь что-то поменял: отметить время и отправить чуть позже (несколько правок — одной отправкой).
   Future<void> touch() async {
-    await local.markLocal(_now());
+    await local.markLocal(_stampAfter(local.state.baseAt));
     if (backend == null) return;
     _debounce?.cancel();
     _debounce = Timer(const Duration(seconds: 3), () => unawaited(reconcile()));
@@ -554,6 +642,9 @@ class SyncController {
 
   Future<bool> _run(SyncBackend b) async {
     final remote = await b.load();
+    // Вход сменили, пока шла загрузка: документ уже чужой, состояние сверки (база, правки) трогать нельзя —
+    // оно теперь относится к новому аккаунту.
+    if (!identical(backend, b)) return false;
     final st = local.state;
     switch (decideSync(
       remote: remote?.updatedAt,
@@ -562,12 +653,16 @@ class SyncController {
     )) {
       case SyncAction.pull:
         await apply(remote!);
+        if (!identical(backend, b)) return true;
         await local.markBase(remote.updatedAt);
         await local.markSynced(_now());
         return true;
       case SyncAction.push:
-        final stamped = (await capture()).at(_now());
+        // не раньше того, что уже известно: иначе отставшие часы спрячут правку от других устройств
+        final known = remote != null && remote.updatedAt.isAfter(st.baseAt) ? remote.updatedAt : st.baseAt;
+        final stamped = (await capture()).at(_stampAfter(known));
         await b.save(stamped);
+        if (!identical(backend, b)) return false;
         await local.markBase(stamped.updatedAt);
         await local.markSynced(_now());
         return false;

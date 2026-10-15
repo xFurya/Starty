@@ -162,6 +162,33 @@ class NotifyRules {
       return d;
     }
   }
+
+  /// Правила из документа поверх местных ([local] — строка toJson). Поле, которого в строке нет,
+  /// которое другого вида или вне допустимых значений, остаётся местным. Строка, которую не разобрать,
+  /// не применяется вовсе. Так испорченный документ не включает уведомления, которые человек выключил.
+  static String mergeJson(String local, String remote) {
+    final base = Map<String, dynamic>.from(jsonDecode(local) as Map);
+    final Map<String, dynamic> got;
+    try {
+      final j = jsonDecode(remote);
+      if (j is! Map) return local;
+      got = Map<String, dynamic>.from(j);
+    } catch (_) {
+      return local;
+    }
+    for (final k in base.keys) {
+      final v = got[k];
+      if (v != null && _fits(k, base[k], v)) base[k] = v;
+    }
+    return jsonEncode(base);
+  }
+
+  static bool _fits(String key, Object? local, Object v) {
+    final sameKind = (local is bool && v is bool) || (local is int && v is int) || (local is List && v is List);
+    if (!sameKind) return false;
+    if (v is! int) return true;
+    return key == 'gone' ? gones.contains(v) : leads.contains(v);
+  }
 }
 
 /// Правила плюс ручные исключения по отдельным стартам.

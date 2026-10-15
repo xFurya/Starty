@@ -107,7 +107,7 @@ void main() {
       });
       expect(d.updatedAt, SyncDoc.epoch);
       expect(d.theme, 'system');
-      expect(d.follow, isEmpty);
+      expect(d.follow, isNull); // битое поле — «по умолчанию», а не явный пустой выбор
       expect(d.filters['kinds'], isEmpty);
       expect(d.showDone, isTrue);
     });
@@ -416,23 +416,119 @@ void main() {
       expect(ctl.problem, isNull);
     });
 
-    test('правка во время сверки не теряется: сверка повторяется', () async {
+    test('правка во время отправки уходит на сервер при повторе сверки', () async {
       SharedPreferences.setMockInitialValues({});
       final local = SyncLocal(await SharedPreferences.getInstance());
       late SyncController ctl;
-      late _Hooked b;
-      b = _Hooked(() async {
-        // пока идёт первая сверка, приходит вторая
-        if (b.loads == 1) unawaited(ctl.reconcile());
+      var current = doc(SyncDoc.epoch);
+      // на первой отправке человек меняет тему (уже после захвата) и приходит вторая сверка
+      final server = _OnSave((n) async {
+        if (n != 1) return;
+        current = doc(at(7), theme: 'light');
+        await local.markLocal(at(7));
+        unawaited(ctl.reconcile());
       });
       ctl = SyncController(
         local: local,
-        capture: () async => doc(SyncDoc.epoch),
+        capture: () async => current,
         apply: (_) async {},
-        clock: () => at(5),
-      )..backend = b;
+        clock: () => at(6),
+      )..backend = server;
+      await local.markLocal(at(5));
+      current = doc(at(5), theme: 'dark');
       await ctl.reconcile();
-      expect(b.loads, 2);
+      for (var i = 0; i < 40 && server.saves < 2; i++) {
+        await Future<void>.delayed(const Duration(milliseconds: 5));
+      }
+      expect(server.saves, 2);
+      expect(server.stored!.theme, 'light');
+    });
+
+    test('смена аккаунта во время отправки: база и правки нового аккаунта не портятся', () async {
+      SharedPreferences.setMockInitialValues({});
+      final local = SyncLocal(await SharedPreferences.getInstance());
+      await local.markBase(at(1));
+      await local.markLocal(at(5));
+      var current = doc(at(5), theme: 'light');
+      final applied = <SyncDoc>[];
+      late SyncController ctl;
+      final accountB = MemoryBackend()..stored = doc(at(4), theme: 'dark');
+      // пока документ первого аккаунта уходит, человек входит во второй
+      final accountA = _OnSave((n) async {
+        if (n != 1) return;
+        await ctl.preferRemote();
+        ctl.backend = accountB;
+        unawaited(ctl.reconcile());
+      });
+      accountA.stored = doc(at(3), theme: 'system');
+      ctl = SyncController(
+        local: local,
+        capture: () async => current,
+        apply: (d) async {
+          applied.add(d);
+          current = d;
+        },
+        clock: () => at(8),
+      )..backend = accountA;
+      await ctl.reconcile();
+      for (var i = 0; i < 40 && applied.isEmpty; i++) {
+        await Future<void>.delayed(const Duration(milliseconds: 5));
+      }
+      expect(applied.map((d) => d.theme), ['dark']);
+      expect(local.state.baseAt, at(4));
+      expect(accountB.saves, 0);
+    });
+
+    test('смена аккаунта во время загрузки: документ первого аккаунта не применяется', () async {
+      SharedPreferences.setMockInitialValues({});
+      final local = SyncLocal(await SharedPreferences.getInstance());
+      final applied = <SyncDoc>[];
+      late SyncController ctl;
+      final accountB = MemoryBackend()..stored = doc(at(4), theme: 'dark');
+      // вход меняют, пока первый аккаунт отдаёт документ
+      final accountA = _OnLoad(() async {
+        await ctl.preferRemote();
+        ctl.backend = accountB;
+        unawaited(ctl.reconcile());
+      });
+      accountA.stored = doc(at(3), theme: 'system');
+      ctl = SyncController(
+        local: local,
+        capture: () async => doc(SyncDoc.epoch),
+        apply: (d) async => applied.add(d),
+        clock: () => at(8),
+      )..backend = accountA;
+      await ctl.reconcile();
+      for (var i = 0; i < 40 && applied.isEmpty; i++) {
+        await Future<void>.delayed(const Duration(milliseconds: 5));
+      }
+      expect(applied.map((d) => d.theme), ['dark']);
+      expect(local.state.baseAt, at(4));
+    });
+
+    test('часы отстают: правка всё равно уходит на сервер', () async {
+      SharedPreferences.setMockInitialValues({});
+      final local = SyncLocal(await SharedPreferences.getInstance());
+      var now = at(0);
+      var current = doc(SyncDoc.epoch);
+      final server = MemoryBackend()..stored = doc(at(10));
+      final ctl = SyncController(
+        local: local,
+        capture: () async => current,
+        apply: (d) async => current = d,
+        clock: () => now,
+      )..backend = server;
+      await ctl.reconcile(); // сверились с документом на 10:10
+      expect(local.state.baseAt, at(10));
+      // часы устройства на час позади: правка по ним раньше документа
+      now = at(-50);
+      current = doc(now, theme: 'light');
+      await ctl.touch();
+      await ctl.reconcile();
+      ctl.dispose();
+      expect(server.saves, 1);
+      expect(server.stored!.theme, 'light');
+      expect(server.stored!.updatedAt.isAfter(at(10)), isTrue);
     });
 
     test('обновлённый вход сохраняется: токен обновления меняется при каждом обновлении', () async {
@@ -503,18 +599,26 @@ class _Broken implements SyncBackend {
       throw const SyncError('Нет связи с сервером');
 }
 
-/// Сервер, который даёт вызвать хук на каждой загрузке и считает их.
-class _Hooked implements SyncBackend {
-  _Hooked(this.onLoad);
+/// Память, у которой хук вызывается перед ответом на загрузку (вход меняют, пока идёт загрузка).
+class _OnLoad extends MemoryBackend {
+  _OnLoad(this.onLoad);
   final Future<void> Function() onLoad;
-  int loads = 0;
   @override
   Future<SyncDoc?> load() async {
-    loads++;
+    final d = await super.load();
     await onLoad();
-    return null;
+    return d;
   }
+}
 
+/// Память, которая после каждой отправки вызывает хук (номер отправки — с 1): в этот момент
+/// человек меняет настройки или входит в другой аккаунт.
+class _OnSave extends MemoryBackend {
+  _OnSave(this.onSave);
+  final Future<void> Function(int n) onSave;
   @override
-  Future<void> save(SyncDoc d) async {}
+  Future<void> save(SyncDoc d) async {
+    await super.save(d);
+    await onSave(saves);
+  }
 }

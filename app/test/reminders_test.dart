@@ -155,5 +155,32 @@ void main() {
     }).withFollow(Follow(['Алиса Заикина']));
     expect(rules.matches(has), isTrue);
   });
-}
 
+  group('mergeJson: испорченный документ не меняет местные правила', () {
+    final local = const NotifyRules(on: false, lead: 30).toJson();
+    test('строка не разбирается — местные правила', () {
+      expect(NotifyRules.mergeJson(local, '{"on": tr'), local);
+    });
+    test('не объект — местные правила', () {
+      expect(NotifyRules.mergeJson(local, '[1, 2]'), local);
+    });
+    test('поля нет — остаётся местное, остальное берём из документа', () {
+      final m = NotifyRules.fromJson(NotifyRules.mergeJson(local, '{"lead": 60}'));
+      expect(m.on, isFalse);
+      expect(m.lead, 60);
+    });
+    test('поле другого вида — местное', () {
+      expect(NotifyRules.fromJson(NotifyRules.mergeJson(local, '{"on": "нет"}')).on, isFalse);
+    });
+    test('значение вне допустимых — местное', () {
+      expect(NotifyRules.fromJson(NotifyRules.mergeJson(local, '{"lead": 7}')).lead, 30);
+    });
+    test('полный документ — берём его целиком', () {
+      final remote = const NotifyRules(on: true, lead: 5, kinds: {'men'}).toJson();
+      final m = NotifyRules.fromJson(NotifyRules.mergeJson(local, remote));
+      expect(m.on, isTrue);
+      expect(m.lead, 5);
+      expect(m.kinds, {'men'});
+    });
+  });
+}

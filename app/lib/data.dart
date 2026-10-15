@@ -574,8 +574,13 @@ class Prefs {
   static List<String>? get follow => _p.getStringList('follow');
   static bool get followRussians => _p.getBool('follow.ru') ?? true;
   static bool get followBelarusians => _p.getBool('follow.by') ?? true;
-  static Future<void> setFollow(Iterable<String> v, {required bool russians, required bool belarusians}) async {
-    await _p.setStringList('follow', v.toList());
+  /// null — снова «по умолчанию»: ключа нет, действует список сборщика.
+  static Future<void> setFollow(Iterable<String>? v, {required bool russians, required bool belarusians}) async {
+    if (v == null) {
+      await _p.remove('follow');
+    } else {
+      await _p.setStringList('follow', v.toList());
+    }
     await _p.setBool('follow.ru', russians);
     await _p.setBool('follow.by', belarusians);
   }

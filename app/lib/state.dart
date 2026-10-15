@@ -1,7 +1,7 @@
 // Общее состояние приложения: расписание, фильтр ленты, уведомления, оформление.
 import 'dart:async';
 
-import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/foundation.dart' show kIsWeb, visibleForTesting;
 import 'package:flutter/material.dart';
 
 import 'app_icon.dart';
@@ -58,14 +58,16 @@ class AppState extends ChangeNotifier {
   Future<void> _keepSession(AccountSession s) =>
       SyncLocal(Prefs.raw).setAccount(s.toMap());
 
+  /// Всё, что человек меняет, — в документ (см. SyncDoc). Служебное состояние устройства сюда не входит.
   Future<SyncDoc> _captureSync() async {
-    final icon = await AppIcons.current();
+    final icon = await _iconForSync();
     return SyncDoc(
       updatedAt: SyncDoc.epoch,
       rules: rules.toJson(),
       forcedOn: (forcedOn.toList()..sort()),
       forcedOff: (forcedOff.toList()..sort()),
-      follow: [...?_follow]..sort(),
+      // null — «по умолчанию» сохраняем как null, а не как пустой список
+      follow: _follow == null ? null : ([..._follow!]..sort()),
       followRussians: _followRu,
       followBelarusians: _followBy,
       filters: {
@@ -82,32 +84,54 @@ class AppState extends ChangeNotifier {
     );
   }
 
-  /// Пришёл документ с сервера: записать в настройки устройства и перерисовать.
+  /// Пришёл документ с сервера: записать в настройки устройства и перерисовать. Поле, которого в документе
+  /// нет или которое испорчено (SyncDoc.absent), не трогаем: остаётся настройка устройства.
   Future<void> _applySync(SyncDoc d) async {
-    await Prefs.setRulesJson(d.rules.isEmpty ? rules.toJson() : d.rules);
-    await Prefs.setForced(d.forcedOn.toSet(), d.forcedOff.toSet());
-    await Prefs.setFollow(
-      d.follow,
-      russians: d.followRussians,
-      belarusians: d.followBelarusians,
+    bool has(String k) => !d.absent.contains(k);
+    if (has('rules')) await Prefs.setRulesJson(NotifyRules.mergeJson(rules.toJson(), d.rules));
+    await Prefs.setForced(
+      has('forcedOn') ? d.forcedOn.toSet() : Prefs.forcedOn,
+      has('forcedOff') ? d.forcedOff.toSet() : Prefs.forcedOff,
     );
-    final f = d.filters;
+    await Prefs.setFollow(
+      has('follow') ? d.follow : Prefs.follow,
+      russians: has('followRussians') ? d.followRussians : Prefs.followRussians,
+      belarusians: has('followBelarusians') ? d.followBelarusians : Prefs.followBelarusians,
+    );
+    Set<String> pick(String k, Set<String> local) => has('filters.$k') ? d.filters[k]!.toSet() : local;
     await Prefs.setFilters(
       Filters(
-        (f['kinds'] ?? const []).toSet(),
-        (f['tids'] ?? const []).toSet(),
-        (f['athletes'] ?? const []).toSet(),
-        levels: (f['levels'] ?? const []).toSet(),
-        scope: (f['scope'] ?? const []).toSet(),
+        pick('kinds', Prefs.kinds),
+        pick('tids', Prefs.tids),
+        pick('athletes', Prefs.athletes),
+        levels: pick('levels', Prefs.levels),
+        scope: pick('scope', Prefs.scope),
       ),
     );
-    await Prefs.setShowDone(d.showDone);
-    await Prefs.setRegional(d.regional);
-    await Prefs.setTheme(d.theme);
-    if (d.icon != (await AppIcons.current())) {
-      await AppIcons.set(d.icon);
-    }
+    if (has('showDone')) await Prefs.setShowDone(d.showDone);
+    if (has('regional')) await Prefs.setRegional(d.regional);
+    if (has('theme')) await Prefs.setTheme(d.theme);
+    if (has('icon')) await _applyIcon(d.icon);
     _reloadFromPrefs();
+  }
+
+  /// Значок из документа. Датированного значка здесь нет (iPhone) — не пробуем снова на каждой сверке.
+  Future<void> _applyIcon(String id) async {
+    final here = (await AppIcons.available()).any((v) => v.id == id);
+    if (here && id != await AppIcons.current()) {
+      await AppIcons.set(id);
+    }
+    await SyncLocal(Prefs.raw).setIconSeen(doc: id, device: await AppIcons.current());
+  }
+
+  /// Значок в документ. Если человек его здесь не менял, документ сохраняет свой (см. iconToSync):
+  /// не затирает ни датированный значок с другого устройства, ни значок, который система здесь не поставила.
+  Future<String> _iconForSync() async {
+    final sl = SyncLocal(Prefs.raw);
+    final device = await AppIcons.current();
+    final icon = iconToSync(device: device, docIcon: sl.iconDoc, lastDevice: sl.iconDev);
+    await sl.setIconSeen(doc: icon, device: device);
+    return icon;
   }
 
   /// Перечитать настройки из preferences (после сверки с сервером).
@@ -163,10 +187,12 @@ class AppState extends ChangeNotifier {
       final s = create
           ? await b.signUp(email, password)
           : await b.signIn(email, password);
+      // сначала новый вход и сброс сверки, потом сохранение: прерванный вход не оставит
+      // правки или базу прежнего состояния под новым аккаунтом
+      sync.backend = b;
+      await sync.preferRemote();
       await SyncLocal(Prefs.raw).setCode(null);
       await _keepSession(s);
-      await sync.preferRemote();
-      sync.backend = b;
       notifyListeners();
       await sync.reconcile();
       return null;
@@ -203,11 +229,12 @@ class AppState extends ChangeNotifier {
       if (!create && await b.load() == null) {
         return 'Такого кода нет на сервере';
       }
+      // чужой код — значит, настройки уже есть на сервере: берём их, свои прошлые правки не шлём.
+      // Сброс сверки — раньше сохранения кода (см. signInSync)
+      sync.backend = b;
+      if (!create) await sync.preferRemote();
       await SyncLocal(Prefs.raw).setAccount(null);
       await SyncLocal(Prefs.raw).setCode(code);
-      // чужой код — значит, настройки уже есть на сервере: берём их, свои прошлые правки не шлём
-      if (!create) await sync.preferRemote();
-      sync.backend = b;
       notifyListeners();
       await sync.reconcile();
       return null;
@@ -224,15 +251,25 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Выбор совпал со списком сборщика — сохраняем «по умолчанию» (null), чтобы его обновления дошли сюда.
   Future<void> setFollow(Set<String> v, {required bool russians, required bool belarusians}) async {
-    _follow = v.toList()..sort();
+    // список сборщика не загружен и не выбирали: показано пусто, и выбор «как было» — это «по умолчанию»,
+    // а не явный пустой выбор «никого» (его потом не отменить обновлением списка)
+    _follow = followToStore(v, _raw?.watchlist ?? (_follow == null ? const <String>[] : null));
     _followRu = russians;
     _followBy = belarusians;
     if (_raw != null) data = _apply(_raw!);
     notifyListeners();
-    await Prefs.setFollow(_follow!, russians: russians, belarusians: belarusians);
+    await Prefs.setFollow(_follow, russians: russians, belarusians: belarusians);
     touchSync();
     await _sync();
+  }
+
+  /// Только для тестов: расписание, как после загрузки (без сети), с отслеживаемыми по умолчанию.
+  @visibleForTesting
+  void adoptSchedule(Schedule raw) {
+    _raw = raw;
+    data = _apply(raw);
   }
 
   // уведомления
@@ -295,7 +332,7 @@ class AppState extends ChangeNotifier {
       offline = true;
     }
     loading = false;
-    _prune();
+    prune();
     notifyListeners();
     await _sync();
     // сверка с сервером — при каждом запуске и возврате в приложение (load() вызывается и там)
@@ -389,9 +426,10 @@ class AppState extends ChangeNotifier {
 
   static ThemeMode _mode(String s) => ThemeMode.values.firstWhere((m) => m.name == s, orElse: () => ThemeMode.system);
 
-  /// Исключения для стартов, которых больше нет в расписании, не копим.
-  void _prune() {
-    final ids = {for (final s in data?.starts ?? const <Start>[]) s.id};
+  /// Исключения для стартов, которых больше нет в расписании, не копим. Сверяем с полным расписанием,
+  /// а не с показанным: региональные старты при выключенных федерациях не пропали, и их исключения живут.
+  void prune() {
+    final ids = {for (final s in _raw?.starts ?? const <Start>[]) s.id};
     if (ids.isEmpty) return;
     final on = forcedOn.where(ids.contains).toSet();
     final off = forcedOff.where(ids.contains).toSet();
