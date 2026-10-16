@@ -224,7 +224,7 @@ def estimate_end(start, seg, kind, n, last_start=None):
 # ---------------------------------------------------------------- событие
 
 def make_event(*, tid, tournament, kind, level, seg, mixed, start, end, venue, intl,
-               broadcast, ours, athletes, src, podium=None, total=None):
+               broadcast, ours, athletes, src, podium=None, total=None, watch=None):
     label = kind_label(kind, level, mixed)
     start = start.astimezone(MSK)
     end = end.astimezone(MSK)
@@ -237,6 +237,16 @@ def make_event(*, tid, tournament, kind, level, seg, mixed, start, end, venue, i
         "venue": venue, "intl": intl, "broadcast": broadcast,
         "ours": ours, "athletes": sorted(set(athletes)), "src": src,
     }
+    w = watch_for(tournament, watch)
+    if tid.startswith("fsr:"):
+        for x in w:
+            if x["name"] == "YouTube" and x["url"] == FSR_YT_LIVE:
+                x["url"] = fsr_stream(start.date()) or x["url"]
+    if w:
+        ev["watch"] = w
+        for x in w:
+            if x["name"] not in ev["broadcast"]:
+                ev["broadcast"] = ev["broadcast"] + [x["name"]]
     if podium:
         ev["podium"] = podium
     if total:
@@ -301,6 +311,56 @@ def broadcast_for(name, base=None):
     return out
 
 
+FSR_YT_LIVE = "https://www.youtube.com/@ice_skating/live"
+FSR_YT_RSS = "https://www.youtube.com/feeds/videos.xml?channel_id=UChkNUJc2Yvo8ZCtmXBSMxtg"
+_YT = {"streams": None}
+
+
+def yt_streams():
+    """Эфиры канала ФФКР за последнее время: [(видео, название, дата по Москве)]. Нет сети — пусто."""
+    if _YT["streams"] is None:
+        out = []
+        try:
+            xml = net.fetch(FSR_YT_RSS)
+            for e in re.findall(r"(?s)<entry>(.*?)</entry>", xml):
+                v = re.search(r"<yt:videoId>([\w-]{11})<", e)
+                t = re.search(r"<title>(.*?)</title>", e)
+                d = re.search(r"<published>(.*?)</published>", e)
+                if v and t and d:
+                    when = dt.datetime.fromisoformat(d.group(1)).astimezone(MSK).date()
+                    out.append((v.group(1), t.group(1).replace("&amp;", "&"), when))
+        except Exception as ex:
+            log("  ! RSS канала ФФКР:", ex)
+        _YT["streams"] = out
+    return _YT["streams"]
+
+
+def fsr_stream(day):
+    """Ссылка на эфир всего дня («… День 2») в день старта; нет — None (останется /live)."""
+    for vid, title, when in yt_streams():
+        if when == day and re.search(r"Гран-при России", title) and re.search(r"День\s*\d", title):
+            return "https://www.youtube.com/watch?v=" + vid
+    return None
+
+
+def _http_url(u):
+    return isinstance(u, str) and re.match(r"https?://[^\s/]+", u) is not None
+
+
+def watch_for(name, base=None):
+    """Где смотреть: [{name, url}]. Ссылки со страницы турнира (base) важнее общих
+    правил из config.json: правило не добавляет канал, который со страницы уже есть."""
+    out = [dict(w) for w in (base or []) if w.get("name") and _http_url(w.get("url"))]
+    have = {w["name"] for w in out}
+    for r in CFG["broadcast_rules"]:
+        if re.search(r["match"], name):
+            for w in r.get("watch", []):
+                if w["name"] not in have and _http_url(w["url"]):
+                    out.append({"name": w["name"], "url": w["url"]})
+                    have.add(w["name"])
+    return out
+
+
 # ---------------------------------------------------------------- Swiss Timing → события
 
 def times_to_msk(seg_start, local_times, offset_min):
@@ -335,7 +395,7 @@ def protocol_name_of(names, fix):
 
 
 def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, ours_rule,
-                     extra_starts=None, fix=None, protos=None, now=None, proto_dir=None):
+                     extra_starts=None, fix=None, protos=None, now=None, proto_dir=None, watch=None):
     """Сегменты из табло. ours_rule(name, nation) → bool. extra_starts — запасные
     времена начала {(kind, level, seg): datetime}, если в табло нет расписания.
     fix(имя) — приведение имени из табло (региональные: «Имя Отчество ФАМИЛИЯ» → «Имя ФАМИЛИЯ»).
@@ -478,7 +538,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
             ev = make_event(
                 tid=tid, tournament=tournament, kind=kind, level=level, seg=seg, mixed=mixed,
                 start=start, end=end, venue=venue, intl=intl, broadcast=broadcast,
-                ours=sort_ours(ours), athletes=athletes, src=idx["url"],
+                watch=watch, ours=sort_ours(ours), athletes=athletes, src=idx["url"],
                 podium=podium, total=total)
             ev["field"] = sort_ours(field)
             # протокол уже на табло, но судейских оценок ещё нет — промежуточные итоги
@@ -639,7 +699,7 @@ def do_fsr(names, report, failed, upcoming, photos):
                 if idx and idx["categories"]:
                     got = from_swisstiming(
                         idx, protos=report.get("protos"), tid=tid, tournament=name, venue=venue, intl=False, broadcast=bcast,
-                        names=names, ours_rule=rule,
+                        watch=page["watch"] if page else None, names=names, ours_rule=rule,
                         extra_starts={k: v[0] for k, v in pdf_starts.items()})
             if not got and pdf_starts:
                 levels = {k[1] for k in pdf_starts}
@@ -647,7 +707,8 @@ def do_fsr(names, report, failed, upcoming, photos):
                     got.append(make_event(
                         tid=tid, tournament=name, kind=kind, level=level, seg=seg,
                         mixed=len(levels) > 1, start=s0, end=e0, venue=venue, intl=False,
-                        broadcast=bcast, ours=[], athletes=[], src=page["schedule_pdf"]))
+                        broadcast=bcast, watch=page["watch"] if page else None,
+                        ours=[], athletes=[], src=page["schedule_pdf"]))
         except Exception as e:  # один турнир не должен ронять весь сбор
             log(f"  ! {name}: {e}")
             traceback.print_exc()
@@ -908,7 +969,7 @@ def do_isu(names, report, failed, upcoming, photos):
                         "end": (to - dt.timedelta(hours=12)).astimezone(MSK).date().isoformat(),
                         "ours": sorted({n for n, _ in ours_all}), "ours_nation": dict(sorted(set(ours_all))),
                         "athletes": sorted(set(all_names)),
-                        "broadcast": bcast})
+                        "broadcast": bcast, "watch": watch_for(name)})
         except Exception as ex:
             log(f"  ! {name}: {ex}")
             traceback.print_exc()

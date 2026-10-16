@@ -152,6 +152,10 @@ class Start {
   final String region;
   final List<String> broadcast, athletes;
 
+  /// Где смотреть с прямой ссылкой (поле «watch»); пусто — данные старой версии сборщика,
+  /// тогда остаются одни названия из [broadcast].
+  final List<WatchLink> watch;
+
   /// Кого показывать в карточке: россияне и белорусы на международных стартах и все,
   /// кого человек отслеживает (см. [withFollow]).
   final List<Skater> ours;
@@ -175,6 +179,7 @@ class Start {
       regional = j['tier'] == 'regional',
       region = '${j['region'] ?? ''}',
       broadcast = List<String>.from(j['broadcast'] ?? const []),
+      watch = WatchLink.parseAll(j['watch']),
       athletes = List<String>.from(j['athletes'] ?? const []),
       ours = [for (final o in (j['ours'] as List? ?? const [])) Skater.fromJson(o)],
       field = [for (final o in (j['field'] as List? ?? const [])) Skater.fromJson(o)],
@@ -212,6 +217,7 @@ class Start {
        regional = o.regional,
        region = o.region,
        broadcast = o.broadcast,
+       watch = o.watch,
        athletes = o.athletes,
        facts = o.facts,
        live = o.live;
@@ -798,4 +804,27 @@ class Filters {
       _scope(u.intl) &&
       (tids.isEmpty || tids.contains(u.tid)) &&
       (athletes.isEmpty || _has([...u.ours, ...u.athletes]));
+}
+
+
+/// Трансляция: название и прямая ссылка.
+class WatchLink {
+  final String name, url;
+  const WatchLink(this.name, this.url);
+
+  /// Мягкий разбор: битые записи и ссылки не http/https пропускаются.
+  static List<WatchLink> parseAll(Object? raw) {
+    if (raw is! List) return const [];
+    final out = <WatchLink>[];
+    for (final e in raw) {
+      if (e is! Map) continue;
+      final name = e['name'], url = e['url'];
+      if (name is! String || url is! String || name.trim().isEmpty) continue;
+      final u = Uri.tryParse(url.trim());
+      if (u == null || !(u.scheme == 'http' || u.scheme == 'https') || u.host.isEmpty) continue;
+      if (out.any((w) => w.name == name.trim())) continue;
+      out.add(WatchLink(name.trim(), u.toString()));
+    }
+    return out;
+  }
 }
