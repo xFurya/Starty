@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart' show CupertinoIcons;
 import 'package:flutter/material.dart';
 
 import 'data.dart';
+import 'flags.dart';
 import 'live.dart' show LiveOk, personKey;
 import 'palette.dart';
 import 'protocol_model.dart';
@@ -13,6 +14,7 @@ import 'protocol.dart' show openOriginal;
 import 'protocol_repo.dart';
 import 'state.dart' show AppState;
 import 'ui.dart';
+import 'views.dart' show LivePill;
 
 /// Подписи вкладок сегментов: короткие, чтобы три вкладки умещались в ширину 360 px.
 const _tabLabel = {'КП': 'Короткая', 'ПП': 'Произвольная', 'РТ': 'Ритм-танец', 'ПТ': 'Произвольный'};
@@ -23,9 +25,16 @@ enum ProtocolTone { finalized, live, quiet }
 
 /// Что показать под переключателем: текст статуса, список и кнопку «Повторить».
 class ProtocolView {
+  /// Состояние словами; у идущего сегмента может быть пустым — его показывает метка «Идёт».
   final String status;
   final ProtocolTone tone;
   final bool retry;
+
+  /// Сколько выступило: «Выступили 9 из 14» — строкой под состоянием.
+  final String progress;
+
+  /// Когда обновлён или сохранён файл — справа от состояния, тихо.
+  final String note;
 
   /// Строки из файла (места, баллы).
   final List<ProtocolRow> rows;
@@ -42,8 +51,13 @@ class ProtocolView {
     this.rows = const [],
     this.application = false,
     this.noFile = false,
+    this.progress = '',
+    this.note = '',
   });
 }
+
+/// «Выступили 9 из 14» — только если известен весь состав.
+String _progress(int done, int field) => field >= done && done > 0 ? 'Выступили $done из $field' : '';
 
 /// Текст статуса по загрузке файла, категории и вкладке. Все тексты — из утверждённых макетов.
 /// [category] — категория из файла (той же загрузки, что и [load], или из кэша); null — её нет.
@@ -64,12 +78,13 @@ ProtocolView protocolView(
     // «Нет связи» — только для сетевого сбоя; при 404, битом файле и чужой версии связь ни при чём
     final saved = '${_dm(cachedAt)}, ${hm(cachedAt)}';
     return ProtocolView(
-      load is ProtocolNetError ? 'Нет связи · сохранено $saved' : 'Показана сохранённая версия · $saved',
+      load is ProtocolNetError ? 'Нет связи' : 'Сохранённая версия',
       ProtocolTone.quiet,
       retry: true,
       rows: v.rows,
       application: v.application,
       noFile: v.noFile,
+      note: 'сохранено $saved',
     );
   }
   switch (load) {
@@ -93,7 +108,7 @@ ProtocolView protocolView(
 };
 
 ProtocolView _noProtocol(bool hasField) => hasField
-    ? const ProtocolView('Протокола пока нет · состав по заявке', ProtocolTone.quiet, application: true, noFile: true)
+    ? const ProtocolView('Протокола пока нет', ProtocolTone.quiet, application: true, noFile: true)
     : const ProtocolView('Протокола и заявки пока нет', ProtocolTone.quiet, noFile: true);
 
 ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasField, DateTime? built, int fieldCount = 0}) {
@@ -117,10 +132,14 @@ ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasF
       return _noProtocol(hasField);
     case SegmentState.inProgress:
       if (seg.rows.isEmpty) return _noProtocol(hasField);
-      // «9 из 14»: сколько выступило — только если известен весь состав
-      final n = seg.rows.length;
-      final of = fieldCount >= n ? ' · $n из $fieldCount' : '';
-      return ProtocolView('Идёт$of · ${_updated(built)}', ProtocolTone.live, rows: seg.rows);
+      // «Идёт» — меткой; сколько выступило — строкой ниже; когда обновлено — справа
+      return ProtocolView(
+        '',
+        ProtocolTone.live,
+        rows: seg.rows,
+        progress: _progress(seg.rows.length, fieldCount),
+        note: _updated(built),
+      );
     case SegmentState.provisional:
       if (seg.rows.isEmpty) return _noProtocol(hasField);
       return ProtocolView(_updated(built), ProtocolTone.quiet, rows: seg.rows);
@@ -168,12 +187,15 @@ String _dm(DateTime t) {
   return '${two(m.day)}.${two(m.month)}';
 }
 
-/// Подпись категории для переключателя: «Девушки · Юниоры».
+/// Подпись категории для переключателя — одним названием: «Женщины», «Девушки»,
+/// «Юниорские пары»; незнакомый уровень — в скобках.
 String categoryLabel(ProtocolCategory c) {
   final kind = kindNames[c.kind] ?? c.kind;
-  final young = {'women': 'Девушки', 'men': 'Юноши'}[c.kind];
-  final k = young != null && c.level == 'junior' ? young : kind;
-  return '$k · ${levelNames[c.level] ?? c.level}';
+  if (c.level == 'senior') return kind;
+  if (c.level == 'junior') {
+    return {'women': 'Девушки', 'men': 'Юноши', 'pairs': 'Юниорские пары', 'dance': 'Юниорские танцы'}[c.kind] ?? '$kind (юниоры)';
+  }
+  return c.level.isEmpty ? kind : '$kind (${levelNames[c.level]?.toLowerCase() ?? c.level})';
 }
 
 /// Адрес «Оригинала протокола»: страница сегмента на табло, иначе — оглавление.
@@ -339,11 +361,10 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
         tab == s.seg &&
         (cat == null || (cat.kind == s.kind && cat.level == s.level));
     if (onBoard) {
-      final n = live.rows.length;
-      final of = s.field.length >= n ? ' · $n из ${s.field.length}' : '';
       view = ProtocolView(
-        'По табло$of',
+        'По табло',
         live.provisional ? ProtocolTone.live : ProtocolTone.quiet,
+        progress: _progress(live.rows.length, s.field.length),
         rows: [
           for (var i = 0; i < live.rows.length; i++)
             ProtocolRow(i: i + 1, place: live.rows[i].place, name: live.rows[i].name, nation: live.rows[i].nation, points: live.rows[i].points),
@@ -405,7 +426,7 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
                   onChanged: (v) => setState(() => _tab = v),
                 ),
               const SizedBox(height: 12),
-              _StatusLine(text: view.status, tone: view.tone),
+              _StatusLine(text: view.status, tone: view.tone, progress: view.progress, note: view.note),
               if (view.rows.isNotEmpty) ...[
                 const SizedBox(height: 10),
                 Plate(
@@ -434,7 +455,7 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
                 ),
               ],
               if (view.application && s.field.isNotEmpty) ...[
-                const SizedBox(height: 10),
+                const Eyebrow('Состав по заявке', padding: EdgeInsets.fromLTRB(6, 18, 6, 8)),
                 Plate(
                   margin: EdgeInsets.zero,
                   child: Column(
@@ -443,6 +464,7 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
                         if (i > 0) const Hairline(indent: 16),
                         _FieldRow(
                           name: s.field[i].name,
+                          nation: s.field[i].nation,
                           time: s.field[i].time,
                           ours: ours.contains(personKey(s.field[i].name)),
                         ),
@@ -487,11 +509,14 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
       r.deductions.isNotEmpty;
 }
 
-/// Статус под переключателем: точка и текст.
+/// Статус под переключателем: слева состояние (идущий — меткой «Идёт», остальное — точкой
+/// цвета состояния и словом), справа тихо — когда обновлено; строкой ниже — сколько выступило.
 class _StatusLine extends StatelessWidget {
   final String text;
   final ProtocolTone tone;
-  const _StatusLine({required this.text, required this.tone});
+  final String progress;
+  final String note;
+  const _StatusLine({required this.text, required this.tone, this.progress = '', this.note = ''});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -500,20 +525,52 @@ class _StatusLine extends StatelessWidget {
       ProtocolTone.live => p.live,
       ProtocolTone.quiet => p.ink2,
     };
+    final live = tone == ProtocolTone.live;
+    final spoken = [if (live) 'Идёт', if (text.isNotEmpty) text, if (progress.isNotEmpty) progress, if (note.isNotEmpty) note];
     return Semantics(
       liveRegion: true,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 5),
-            child: Container(width: 8, height: 8, decoration: BoxDecoration(shape: BoxShape.circle, color: color)),
-          ),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(text, style: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w700, height: 1.3, color: color)),
-          ),
-        ],
+      label: spoken.join(', '),
+      child: ExcludeSemantics(
+        child: MeasuredLayout(
+          builder: (context, c) {
+            final textStyle = TextStyle(fontSize: 13.5, fontWeight: FontWeight.w700, height: 1.3, color: color);
+            final noteStyle = TextStyle(fontSize: 12.5, fontWeight: FontWeight.w500, height: 1.3, color: p.ink2, fontFeatures: tnum);
+            // время справа помещается рядом с состоянием — в одну строку; нет — строкой ниже
+            final marker = live ? textWidth(context, 'ИДЁТ', const TextStyle(fontSize: 10.5, letterSpacing: 1.1)) + 30 : 16.0;
+            final side = note.isNotEmpty &&
+                marker + (text.isEmpty ? 0 : textWidth(context, text, textStyle)) + 12 + textWidth(context, note, noteStyle) <= c.maxWidth;
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    if (live)
+                      const LivePill()
+                    else
+                      Container(width: 8, height: 8, decoration: BoxDecoration(shape: BoxShape.circle, color: color)),
+                    if (text.isNotEmpty) ...[
+                      SizedBox(width: live ? 10 : 8),
+                      Flexible(child: Text(text, style: textStyle)),
+                    ],
+                    if (side) ...[
+                      const Spacer(),
+                      const SizedBox(width: 12),
+                      Text(note, style: noteStyle),
+                    ],
+                  ],
+                ),
+                if (note.isNotEmpty && !side)
+                  Padding(padding: const EdgeInsets.only(top: 3), child: Text(note, style: noteStyle)),
+                if (progress.isNotEmpty)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4),
+                    child: Text(progress, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, height: 1.3, color: p.ink, fontFeatures: tnum)),
+                  ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }
@@ -583,14 +640,27 @@ class _ResultRow extends StatelessWidget {
           );
     final parts = row.parts;
     final status = place == null && row.status != null ? statusLabel(row.status!) : null;
-    final sub = <String>[
+    // под именем — каждое своим элементом: статус меткой, страна флагом с кодом,
+    // места по сегментам — подписью сегмента и числом
+    final small = TextStyle(fontSize: 12.5, fontWeight: FontWeight.w600, color: p.ink2, height: 1.3, fontFeatures: tnum);
+    final sub = <Widget>[
       // слово статуса переносится вместе с остальным под имя, а не ужимается в узкую колонку
-      ?status,
-      if (row.nation.isNotEmpty) nationCode(row.nation),
+      if (status != null) Tag(status, strong: false),
+      if (row.nation.isNotEmpty) NationTag(row.nation, style: small.copyWith(fontWeight: FontWeight.w700, letterSpacing: .6)),
       // у снятого/не вышедшего прочерки не нужны: только те сегменты, где место есть
       if (parts != null)
         for (var i = 0; i < parts.length && i < cols.length; i++)
-          if (status == null || parts[i] != null) '${colLabel(cols[i])} ${parts[i] ?? '—'}',
+          if (status == null || parts[i] != null)
+            Text.rich(
+              TextSpan(
+                children: [
+                  TextSpan(text: '${colLabel(cols[i])}$nb', style: small.copyWith(color: p.ink3, fontWeight: FontWeight.w700)),
+                  TextSpan(text: parts[i] ?? '—', style: small.copyWith(color: p.ink)),
+                ],
+              ),
+              maxLines: 1,
+              softWrap: false,
+            ),
     ];
     final body = Container(
       decoration: ours ? BoxDecoration(color: p.frost, border: Border(left: BorderSide(color: p.accent, width: 3))) : null,
@@ -610,10 +680,12 @@ class _ResultRow extends StatelessWidget {
                 ),
                 if (sub.isNotEmpty)
                   Padding(
-                    padding: const EdgeInsets.only(top: 3),
-                    child: Text(
-                      sub.join(' · '),
-                      style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w500, color: p.ink2, height: 1.3),
+                    padding: const EdgeInsets.only(top: 4),
+                    child: Wrap(
+                      spacing: 12,
+                      runSpacing: 4,
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      children: sub,
                     ),
                   ),
               ],
@@ -649,9 +721,10 @@ class _ResultRow extends StatelessWidget {
 /// Состав по заявке: имя и время выхода — без мест и баллов.
 class _FieldRow extends StatelessWidget {
   final String name;
+  final String nation;
   final String? time;
   final bool ours;
-  const _FieldRow({required this.name, required this.time, required this.ours});
+  const _FieldRow({required this.name, required this.time, required this.ours, this.nation = ''});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -665,6 +738,14 @@ class _FieldRow extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(protocolName(name), style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.25, color: p.ink)),
+                if (nation.isNotEmpty)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4),
+                    child: NationTag(
+                      nation,
+                      style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700, letterSpacing: .6, height: 1.3, color: p.ink2),
+                    ),
+                  ),
               ],
             ),
           ),

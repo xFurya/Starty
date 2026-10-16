@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart' show CupertinoIcons;
 import 'package:flutter/material.dart';
 
 import 'data.dart';
+import 'flags.dart';
 import 'palette.dart';
 import 'photo_cache.dart';
 
@@ -301,6 +302,32 @@ class Eyebrow extends StatelessWidget {
                 trailing!,
               ],
             ),
+    );
+  }
+}
+
+/// Метка: одно условие, статус или факт — своей плашкой, а не через разделитель в строке.
+/// [strong] — цветом акцента; иначе спокойная, приглушённым цветом.
+class Tag extends StatelessWidget {
+  final String text;
+  final Color? color;
+  final bool strong;
+  const Tag(this.text, {super.key, this.color, this.strong = true});
+
+  static TextStyle style(Color c) => TextStyle(fontSize: 12.5, fontWeight: FontWeight.w600, height: 1.2, color: c);
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final c = color ?? (strong ? p.accent : p.ink2);
+    return Container(
+      padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
+      decoration: BoxDecoration(
+        color: c.withValues(alpha: p.isDark ? .16 : .10),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      // длинная метка переносится, а не обрезается: скрытая часть условия — неправда
+      child: Text(text, style: style(c)),
     );
   }
 }
@@ -855,6 +882,9 @@ class NameLines extends StatelessWidget {
   /// Подпись можно не выводить, если с ней имя не помещается.
   final bool optional;
 
+  /// Подпись — код страны: показывается флагом с кодом ([NationTag]).
+  final bool nation;
+
   /// Что прочтёт экранный диктор: имя целиком.
   final String? semantics;
   const NameLines({
@@ -865,6 +895,7 @@ class NameLines extends StatelessWidget {
     this.suffixStyle,
     this.center = false,
     this.optional = false,
+    this.nation = false,
     this.semantics,
   });
 
@@ -884,7 +915,7 @@ class NameLines extends StatelessWidget {
       final w = c.maxWidth;
       final sStyle = suffixStyle ?? style;
       var tail = suffix;
-      var sw = tail.isEmpty ? 0.0 : textWidth(context, tail, sStyle) + gap;
+      var sw = tail.isEmpty ? 0.0 : (nation ? NationTag.widthOf(context, tail, sStyle) : textWidth(context, tail, sStyle)) + gap;
       bool any(double sw) => variants.any((v) => fits(context, v, style, w, sw));
       if (optional && tail.isNotEmpty && !any(sw)) (tail, sw) = ('', 0.0);
       final pick = variants.firstWhere((v) => fits(context, v, style, w, sw), orElse: () => variants.last);
@@ -916,7 +947,7 @@ class NameLines extends StatelessWidget {
           children: [
             Flexible(child: text),
             SizedBox(width: gap * k),
-            Text(tail, maxLines: 1, softWrap: false, style: scaled(sStyle)),
+            nation ? NationTag(tail, style: scaled(sStyle)) : Text(tail, maxLines: 1, softWrap: false, style: scaled(sStyle)),
           ],
         );
       }
@@ -928,7 +959,7 @@ class NameLines extends StatelessWidget {
       );
       if (semantics == null) return body;
       return Semantics(
-        label: tail.isEmpty ? semantics : '$semantics $tail',
+        label: tail.isEmpty ? semantics : '$semantics ${nation ? NationTag.spoken(tail) : tail}',
         child: ExcludeSemantics(child: body),
       );
     },

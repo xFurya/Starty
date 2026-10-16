@@ -1,4 +1,4 @@
-// Подписи тройки: у завершённого сегмента пометки нет, пока идёт — «идёт» и «N из M».
+// Подписи тройки: у завершённого сегмента пометки нет, пока идёт — «Лидеры» и «выступили N из M».
 import 'package:flutter_test/flutter_test.dart';
 import 'package:starty/data.dart';
 import 'package:starty/views.dart';
@@ -26,26 +26,33 @@ Start _start({required Duration from, required Duration to, bool provisional = t
 }
 
 void main() {
-  test('сегмент идёт — «идёт» и сколько выступило', () {
+  test('сегмент идёт — «Лидеры» и отдельно сколько выступило', () {
     final s = _start(from: const Duration(minutes: -30), to: const Duration(minutes: 60));
-    expect(podiumLabel(s), 'Тройка · КП · идёт · 2 из 5');
-    expect(leadersLabel(s), 'Лидеры · идёт · 2 из 5');
+    expect(podiumLabel(s), 'Лидеры');
+    expect(runningNote(s), 'выступили 2 из 5');
   });
 
-  test('сегмент идёт, а выступивших неизвестно — просто «идёт»', () {
+  test('сегмент идёт, а выступивших неизвестно — без счёта', () {
     final s = _start(from: const Duration(minutes: -30), to: const Duration(minutes: 60), placed: 0);
-    expect(podiumLabel(s), 'Тройка · КП · идёт');
+    expect(podiumLabel(s), 'Лидеры');
+    expect(runningNote(s), '');
   });
 
   test('сегмент завершён, судейских оценок нет — пометки нет', () {
     final s = _start(from: const Duration(hours: -3), to: const Duration(hours: -1));
-    expect(podiumLabel(s), 'Тройка · КП');
-    expect(leadersLabel(s), 'Тройка');
+    expect(podiumLabel(s), 'Тройка');
+    expect(runningNote(s), '');
     expect(podiumLabel(s).toLowerCase(), isNot(contains('промежуточ')));
   });
 
   test('окончательный идущий — без пометки', () {
     final s = _start(from: const Duration(minutes: -30), to: const Duration(minutes: 60), provisional: false);
-    expect(podiumLabel(s), 'Тройка · КП');
+    expect(podiumLabel(s), 'Тройка');
+    expect(runningNote(s), '');
+  });
+
+  test('ни в одной подписи нет разделительной точки', () {
+    final s = _start(from: const Duration(minutes: -30), to: const Duration(minutes: 60));
+    expect('${podiumLabel(s)}${runningNote(s)}', isNot(contains('·')));
   });
 }

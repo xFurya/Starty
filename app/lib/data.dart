@@ -153,8 +153,9 @@ String oursLabel(Iterable<Skater> skaters, {bool exitTimes = false, bool intl = 
     // иностранцы здесь только потому, что человек их отслеживает
     if (others) group = group.isEmpty ? 'Отслеживаемые' : '$group, отслеживаемые';
   }
-  // на российских стартах все россияне — группа не подписывается
-  if (exitTimes) return group.isEmpty ? 'Выход на лёд' : '$group · выход на лёд';
+  // на российских стартах все россияне — группа не подписывается; со временем выхода
+  // подпись «выход на лёд» стоит над колонкой времени справа, а без группы — сама вместо неё
+  if (exitTimes && group.isEmpty) return 'Выход на лёд';
   return group;
 }
 

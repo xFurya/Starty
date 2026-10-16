@@ -25,16 +25,16 @@ const _google = 'https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2F
 
 bool get _ios => !kIsWeb && (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.macOS);
 
-/// «2 вида · 1 турнир · 1 спортсмен» или «Все старты».
-String filterSummary(Filters f) {
-  if (!f.any) return 'Все старты';
+/// Условия фильтра — каждое своей меткой: «2 вида», «1 турнир», «1 спортсмен»; пусто — все старты.
+List<String> filterTags(Filters f) {
+  if (!f.any) return const [];
   return [
     if (f.scope.length == 1) f.scope.first == 'intl' ? 'международные' : 'российские',
     if (f.levels.length == 1) levelNames[f.levels.first]!.toLowerCase(),
     if (f.kinds.isNotEmpty) '${f.kinds.length} ${plural(f.kinds.length, 'вид', 'вида', 'видов')}',
     if (f.tids.isNotEmpty) '${f.tids.length} ${plural(f.tids.length, 'турнир', 'турнира', 'турниров')}',
     if (f.athletes.isNotEmpty) '${f.athletes.length} ${plural(f.athletes.length, 'спортсмен', 'спортсмена', 'спортсменов')}',
-  ].join(' · ');
+  ].map(cap).toList();
 }
 
 /// Действующие исключения: старт ещё впереди (переключатель в его карточке виден)
@@ -63,14 +63,16 @@ String _when(DateTime at) {
   return '${m.day}\u00A0${months[m.month - 1]}\u00A0${hm(at)}';
 }
 
-/// Кратко о правилах: «за 15 мин · все старты» или «за 15 мин · девушки, юниоры · отслеживаемые».
-String rulesSummary(NotifyRules r) {
+/// Правила — каждое условие своей меткой: «За 15 мин», «Все старты» или «За 15 мин»,
+/// «Девушки, юноши», «Юниоры», «Только с отслеживаемыми».
+List<String> rulesTags(NotifyRules r) {
   final parts = <String>['за ${r.lead} мин'];
   if (r.isDefault) {
     parts.add('все старты');
   } else {
     if (r.kinds.length != NotifyRules.allKinds.length) {
-      parts.add([for (final k in NotifyRules.allKinds) if (r.kinds.contains(k)) kindLabel(k, r.levels).toLowerCase()].join(', '));
+      // каждый вид — своей меткой
+      parts.addAll([for (final k in NotifyRules.allKinds) if (r.kinds.contains(k)) kindLabel(k, r.levels).toLowerCase()]);
     }
     if (r.levels.length == 1) parts.add(levelNames[r.levels.first]!.toLowerCase());
     if (r.russian != r.intl) parts.add(r.russian ? 'российские' : 'международные');
@@ -78,7 +80,7 @@ String rulesSummary(NotifyRules r) {
     if (!r.night) parts.add('без ночных');
     if (r.onlyFollowed) parts.add('только с отслеживаемыми');
   }
-  return parts.join(' · ');
+  return parts.map(cap).toList();
 }
 
 class SettingsView extends StatelessWidget {
@@ -127,7 +129,7 @@ class SettingsView extends StatelessWidget {
                     _Row(
                       icon: CupertinoIcons.slider_horizontal_3,
                       title: 'Правила',
-                      subtitle: rulesSummary(r),
+                      tags: rulesTags(r),
                       onTap: () => openNotifySettings(context, state),
                       trailing: const _Chevron(),
                     ),
@@ -171,7 +173,8 @@ class SettingsView extends StatelessWidget {
                 _Row(
                   icon: CupertinoIcons.slider_horizontal_3,
                   title: 'Фильтр',
-                  subtitle: filterSummary(state.filters),
+                  subtitle: state.filters.any ? null : 'Все старты',
+                  tags: filterTags(state.filters),
                   onTap: state.data == null ? null : () => showFilters(context, state),
                   trailing: const _Chevron(),
                 ),
@@ -235,7 +238,7 @@ class SettingsView extends StatelessWidget {
             child: _Row(
               icon: CupertinoIcons.calendar_badge_plus,
               title: _ios ? 'Старты в Календаре' : 'Старты в Google Календаре',
-              subtitle: 'Российские и международные с россиянами и белорусами · обновляются сами',
+              subtitle: 'Российские и международные с россиянами и белорусами\nОбновляются сами',
               onTap: () => launchUrl(Uri.parse(_ios ? _ics : _google), mode: LaunchMode.externalApplication),
               trailing: const _Chevron(external: true),
             ),
@@ -309,7 +312,7 @@ String _sources(AppState st) {
     for (final e in st.data?.sources.entries ?? const <MapEntry<String, String>>[])
       if (e.value != 'ok') e.key,
   ];
-  return failed.isEmpty ? all.join(', ') : '${all.join(', ')} · нет ответа: ${failed.join(', ')}';
+  return failed.isEmpty ? all.join(', ') : '${all.join(', ')}\nНет ответа: ${failed.join(', ')}';
 }
 
 /// Версия и обновления — честное состояние самообновления (как у Дневника).
@@ -382,9 +385,16 @@ class _Updates extends StatelessWidget {
 
 class _Head extends StatelessWidget {
   final String text;
-  const _Head(this.text);
+
+  /// Справа той же подписью: «выбрано 3».
+  final String trailing;
+  const _Head(this.text, {this.trailing = ''});
   @override
-  Widget build(BuildContext context) => Eyebrow(text, padding: const EdgeInsets.fromLTRB(20, 22, 20, 10));
+  Widget build(BuildContext context) => Eyebrow(
+    text,
+    padding: const EdgeInsets.fromLTRB(20, 22, 20, 10),
+    trailing: trailing.isEmpty ? null : Text(trailing.toUpperCase(), style: Eyebrow.style(Palette.of(context).ink2)),
+  );
 }
 
 /// Правила гаснут, пока уведомления выключены.
@@ -429,11 +439,14 @@ class _RowIcon extends StatelessWidget {
 
 /// Строка: значок, название, подпись, что-то справа. Текстовая кнопка ([action]) — справа,
 /// а если рядом с ней слово названия не помещается — под названием.
+/// Подпись — по факту на строку (через перевод строки): [subtitleColor] — у первой, остальные
+/// тихие. Перечень условий ([tags]) — метками под названием.
 class _Row extends StatelessWidget {
   final IconData icon;
   final Color? iconColor;
   final String title;
   final String? subtitle;
+  final List<String> tags;
   final Color? subtitleColor;
   final Widget? trailing;
   final String? action;
@@ -445,6 +458,7 @@ class _Row extends StatelessWidget {
     this.iconColor,
     this.subtitle,
     this.subtitleColor,
+    this.tags = const [],
     this.trailing,
     this.action,
     this.onAction,
@@ -475,12 +489,23 @@ class _Row extends StatelessWidget {
                     children: [
                       Text(title, style: titleStyle),
                       if (subtitle != null)
-                        Padding(
-                          padding: const EdgeInsets.only(top: 2),
-                          child: Text(
-                            subtitle!,
-                            style: TextStyle(fontSize: 13, color: subtitleColor ?? p.ink2, height: 1.3, fontFeatures: tnum),
+                        for (final (i, line) in subtitle!.split('\n').indexed)
+                          Padding(
+                            padding: EdgeInsets.only(top: i == 0 ? 2 : 1),
+                            child: Text(
+                              line,
+                              style: TextStyle(
+                                fontSize: 13,
+                                color: i == 0 ? (subtitleColor ?? p.ink2) : p.ink2,
+                                height: 1.3,
+                                fontFeatures: tnum,
+                              ),
+                            ),
                           ),
+                      if (tags.isNotEmpty)
+                        Padding(
+                          padding: const EdgeInsets.only(top: 6, bottom: 2),
+                          child: Wrap(spacing: 6, runSpacing: 6, children: [for (final t in tags) Tag(t, strong: false)]),
                         ),
                       if (below) _TextAction(action!, onTap: onAction!, below: true),
                     ],
@@ -546,8 +571,8 @@ class _Block extends StatelessWidget {
   }
 }
 
-/// Итог правил: «Запланировано: N · ближайшее 17:15». Не помещается в строку — две строки,
-/// без разделителя на конце первой: «Запланировано: 17» и «ближайшее завтра 07:15».
+/// Итог правил: «Запланировано: N» слева и «ближайшее 17:15» справа. Не помещается
+/// в строку — две строки: «Запланировано: 17» и под ним «ближайшее завтра 07:15».
 class _Summary extends StatelessWidget {
   final String head;
   final String tail;
@@ -571,16 +596,23 @@ class _Summary extends StatelessWidget {
           Expanded(
             child: MeasuredLayout(
               builder: (context, c) {
-                final one = tail.isEmpty ? head : '$head · $tail';
-                if (tail.isEmpty || textWidth(context, one, style) <= c.maxWidth) {
-                  return Text(one, style: style);
+                final small = style.copyWith(fontWeight: FontWeight.w500, color: p.ink2);
+                if (tail.isEmpty) return Text(head, style: style);
+                // помещаются рядом — итог слева, ближайшее справа; нет — под ним
+                if (textWidth(context, head, style) + 16 + textWidth(context, tail, small) <= c.maxWidth) {
+                  return Row(
+                    children: [
+                      Expanded(child: Text(head, style: style)),
+                      Text(tail, style: small),
+                    ],
+                  );
                 }
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(head, style: style),
                     const SizedBox(height: 2),
-                    Text(tail, style: style.copyWith(fontWeight: FontWeight.w500, color: p.ink2)),
+                    Text(tail, style: small),
                   ],
                 );
               },
@@ -727,7 +759,7 @@ class _Chevron extends StatelessWidget {
   );
 }
 
-/// «9 спортсменов · россияне и белорусы на международных».
+/// «9 спортсменов» и строкой ниже «Россияне и белорусы на международных».
 String followSummary(Follow f) {
   final n = f.names.length;
   final parts = <String>[
@@ -739,7 +771,7 @@ String followSummary(Follow f) {
     else if (f.belarusians)
       'белорусы на международных',
   ];
-  return cap(parts.join(' · '));
+  return parts.map(cap).join('\n');
 }
 
 // ------------------------------------------------------------------ окна настроек
@@ -1135,7 +1167,7 @@ class _FollowPageState extends State<_FollowPage> {
             ),
           ),
         ),
-        SliverToBoxAdapter(child: _Head(sel.isEmpty ? 'Спортсмены' : 'Спортсмены · ${sel.length}')),
+        SliverToBoxAdapter(child: _Head('Спортсмены', trailing: sel.isEmpty ? '' : 'выбрано ${sel.length}')),
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -1177,12 +1209,11 @@ void openAccount(BuildContext context, AppState state) {
 String syncSummary(AppState st) {
   if (!syncConfigured) return 'Недоступен в этой сборке';
   if (!st.syncOn) return 'Вход не выполнен';
-  final who = st.syncEmail ?? 'по коду';
-  if (st.syncProblem != null) return '${st.syncProblem} · $who';
+  // что с синхронизацией — первой строкой (у неполадки — цветом), кто вошёл — второй
+  final who = st.syncEmail ?? 'Вход по коду';
+  if (st.syncProblem != null) return '${cap(st.syncProblem!)}\n$who';
   final at = st.syncAt;
-  return at == null
-      ? 'Ещё не обновлялось · $who'
-      : 'Обновлено ${_when(at)} · $who';
+  return at == null ? 'Ещё не обновлялось\n$who' : 'Обновлено ${_when(at)}\n$who';
 }
 
 /// Код группами по четыре знака — так его легче прочитать и продиктовать.

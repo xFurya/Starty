@@ -1,8 +1,11 @@
 // Лента и месяц: старты по дням, идущий старт, итоги завершённых сегментов.
+import 'dart:math' as math;
+
 import 'package:flutter/cupertino.dart' show CupertinoIcons;
 import 'package:flutter/material.dart';
 
 import 'data.dart';
+import 'flags.dart';
 import 'main.dart';
 import 'sheets.dart';
 import 'state.dart';
@@ -105,8 +108,9 @@ String dateRange(String from, String to) {
   // «обновлено сегодня в 14:02», «обновлено 8 октября в 23:39» — без предлога перед наречием
   final day = dayKey(g) == dayKey(now()) ? 'сегодня' : '${msk(g).day}$nb${months[msk(g).month - 1]}';
   final when = short ? 'обновлено ${dateTime(g).replaceAll(' ', nb).replaceFirst(',$nb', ', ')}' : 'обновлено $day в$nb${hm(g)}';
-  if (trouble.isEmpty) return (text: short ? when : '${cap(when)} · время московское', alarm: false);
-  return (text: '${short ? trouble : cap(trouble)} · $when', alarm: true);
+  // по факту на строку: что случилось — первой, когда обновлено — второй
+  if (trouble.isEmpty) return (text: short ? when : '${cap(when)}\nвремя московское', alarm: false);
+  return (text: '${cap(trouble)}\n$when', alarm: true);
 }
 
 // ------------------------------------------------------------------ лента
@@ -225,6 +229,9 @@ class FrostLine extends StatelessWidget {
   final String text;
   final String action;
   final VoidCallback onAction;
+
+  /// Вместо строки текста — свои метки; [text] тогда — то, что прочтёт диктор.
+  final Widget? child;
   const FrostLine({
     super.key,
     required this.icon,
@@ -232,6 +239,7 @@ class FrostLine extends StatelessWidget {
     required this.action,
     required this.onAction,
     this.iconColor,
+    this.child,
   });
   @override
   Widget build(BuildContext context) {
@@ -251,13 +259,15 @@ class FrostLine extends StatelessWidget {
           // главная строка о неполадке читается целиком: до двух строк
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 6),
-              child: Text(
-                text,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(color: p.ink, fontSize: 14, fontWeight: FontWeight.w500, height: 1.25),
-              ),
+              padding: EdgeInsets.symmetric(vertical: child == null ? 6 : 9),
+              child: child == null
+                  ? Text(
+                      text,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(color: p.ink, fontSize: 14, fontWeight: FontWeight.w500, height: 1.25),
+                    )
+                  : Semantics(label: text, child: ExcludeSemantics(child: child)),
             ),
           ),
           TextButton(
@@ -316,11 +326,13 @@ class FilterLine extends StatelessWidget {
             ? tournamentName(state, f.tids.first)
             : '${f.tids.length} ${plural(f.tids.length, 'турнир', 'турнира', 'турниров')}',
     ];
+    // каждое условие фильтра — своей меткой
     return FrostLine(
       icon: CupertinoIcons.slider_horizontal_3,
-      text: names.join(' · '),
+      text: names.join(', '),
       action: 'Сбросить',
       onAction: () => state.setFilters(Filters.none),
+      child: Wrap(spacing: 6, runSpacing: 6, children: [for (final n in names) Tag(n)]),
     );
   }
 }
@@ -466,8 +478,29 @@ class SegTitle extends StatelessWidget {
   }
 }
 
-String metaLine(Start s, {bool tournament = true}) =>
-    [if (tournament) s.tournament, if (s.broadcast.isNotEmpty) s.broadcast.join(' / ')].join(' · ');
+/// Трансляция строки старта: значок телевизора и каналы через запятую. Турнир сюда не пишется —
+/// он надзаголовком над стартом.
+class BroadcastLine extends StatelessWidget {
+  final List<String> channels;
+  final Color color;
+  final double size;
+  const BroadcastLine(this.channels, {super.key, required this.color, this.size = 13.5});
+  @override
+  Widget build(BuildContext context) => Row(
+    children: [
+      Icon(CupertinoIcons.tv, size: MediaQuery.textScalerOf(context).scale(size), color: color, semanticLabel: 'Трансляция'),
+      const SizedBox(width: 6),
+      Flexible(
+        child: Text(
+          channels.join(', '),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(fontSize: size, color: color, height: 1.3),
+        ),
+      ),
+    ],
+  );
+}
 
 /// Наши, которые ещё не выходили (для идущего старта).
 List<Skater> notYetSkated(Start s, DateTime t) => s.ours.where((o) {
@@ -505,7 +538,6 @@ class StartTile extends StatelessWidget {
     final s = start;
     final t = now();
     if (s.pastAt(t)) return PastTile(start: s, state: state, showTournament: showTournament);
-    final meta = metaLine(s, tournament: showTournament);
     final live = s.liveAt(t);
     final mute = !live && silent(state, s, t);
     final ours = oursAll(s, t);
@@ -545,6 +577,7 @@ class StartTile extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              if (showTournament) Eyebrow(s.tournament, color: p.accent, maxLines: 2, padding: const EdgeInsets.only(top: 3)),
               Padding(
                 padding: const EdgeInsets.only(top: 3),
                 child: Row(
@@ -555,14 +588,9 @@ class StartTile extends StatelessWidget {
                   ],
                 ),
               ),
-              if (meta.isNotEmpty) ...[
+              if (s.broadcast.isNotEmpty) ...[
                 const SizedBox(height: 3),
-                Text(
-                  meta,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontSize: 13.5, color: p.ink2, height: 1.3),
-                ),
+                BroadcastLine(s.broadcast, color: p.ink2),
               ],
               if (countdown) ...[
                 const SizedBox(height: 4),
@@ -843,20 +871,20 @@ class LiveCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 12),
+                    // турнир — надзаголовком над видом
+                    Eyebrow(s.tournament, color: dim, maxLines: 2),
+                    const SizedBox(height: 4),
                     Text(disc, style: display(Palette.light, 36, color: white)),
                     if (seg.isNotEmpty)
                       Text(
                         segNames[seg]!,
                         style: display(Palette.light, 22, italic: true, color: dim, weight: FontWeight.w500),
                       ),
-                    const SizedBox(height: 8),
-                    Text(
-                      metaLine(s),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(fontSize: 13.5, color: dim),
-                    ),
+                    if (s.broadcast.isNotEmpty) ...[
+                      const SizedBox(height: 8),
+                      BroadcastLine(s.broadcast, color: dim),
+                    ],
                     // места по ходу старта — с табло турнира
                     if (s.podium.isNotEmpty) ...[
                       Container(
@@ -865,8 +893,11 @@ class LiveCard extends StatelessWidget {
                         color: Colors.white.withValues(alpha: .16),
                       ),
                       Eyebrow(
-                        leadersLabel(s),
+                        podiumLabel(s),
                         color: Colors.white.withValues(alpha: .7),
+                        trailing: runningNote(s).isEmpty
+                            ? null
+                            : Text(runningNote(s).toUpperCase(), style: Eyebrow.style(Colors.white.withValues(alpha: .7))),
                       ),
                       const SizedBox(height: 6),
                       Theme(
@@ -880,8 +911,8 @@ class LiveCard extends StatelessWidget {
                         margin: const EdgeInsets.fromLTRB(0, 14, 0, 12),
                         color: Colors.white.withValues(alpha: .16),
                       ),
-                      if (s.intl)
-                        Eyebrow('Россияне · впереди', color: Colors.white.withValues(alpha: .7)),
+                      // те, кто ещё не выступал: россияне и отслеживаемые
+                      Eyebrow('Ещё выйдут на лёд', color: Colors.white.withValues(alpha: .7)),
                       const SizedBox(height: 8),
                       OursList(
                         list: rest.take(4).toList(),
@@ -906,25 +937,20 @@ class LiveCard extends StatelessWidget {
 /// Чья тройка: итог турнира, когда вид закончен, иначе — тройка сегмента.
 (String, List<Placing>) topOf(Start s) => s.total.isNotEmpty ? ('Итог турнира', s.total) : (podiumLabel(s), s.podium);
 
-/// Пока сегмент идёт и судейских оценок нет: «идёт» и, если известно, «9 из 14» выступивших.
-/// У завершённого сегмента пометки нет.
+/// Сегмент идёт и судейских оценок ещё нет: места по табло, промежуточные.
+bool segmentRunning(Start s) => s.provisional && s.podium.isNotEmpty && s.liveAt(now());
+
+/// Сколько выступило, пока сегмент идёт: «выступили 9 из 14». Неизвестно или сегмент
+/// не идёт — пусто. Само «идёт» здесь не пишется: его показывает метка «Идёт» рядом.
 String runningNote(Start s) {
-  if (!s.provisional || s.podium.isEmpty || !s.liveAt(now())) return '';
+  if (!segmentRunning(s)) return '';
   final done = s.field.where((x) => x.place != null).length;
-  return done > 0 && s.field.length >= done ? 'идёт · $done из ${s.field.length}' : 'идёт';
+  return done > 0 && s.field.length >= done ? 'выступили $done из ${s.field.length}' : '';
 }
 
-/// «Лидеры · идёт · 9 из 14» пока сегмент идёт, иначе «Тройка».
-String leadersLabel(Start s) {
-  final note = runningNote(s);
-  return note.isEmpty ? 'Тройка' : 'Лидеры · $note';
-}
-
-/// «Тройка · ПП»; пока сегмент идёт — «Тройка · ПП · идёт · 9 из 14».
-String podiumLabel(Start s) {
-  final note = runningNote(s);
-  return 'Тройка · ${s.seg.isEmpty ? 'сегмент' : s.seg}${note.isEmpty ? '' : ' · $note'}';
-}
+/// Подпись тройки: пока сегмент идёт — «Лидеры», после — «Тройка». Сегмент не пишется:
+/// он в заголовке над тройкой.
+String podiumLabel(Start s) => segmentRunning(s) ? 'Лидеры' : 'Тройка';
 
 /// Самое заметное из примечательного — одной строкой в ленте.
 Fact? topFact(Start s) {
@@ -947,7 +973,6 @@ class PastTile extends StatelessWidget {
     final p = Palette.of(context);
     final s = start;
     final (label, top) = topOf(s);
-    final meta = metaLine(s, tournament: showTournament);
     return InkWell(
       onTap: () => showStart(context, s, state),
       child: Padding(
@@ -973,15 +998,11 @@ class PastTile extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      if (showTournament) Eyebrow(s.tournament, color: p.accent, maxLines: 2, padding: const EdgeInsets.only(bottom: 3)),
                       SegTitle(start: s, size: 15.5),
-                      if (meta.isNotEmpty) ...[
+                      if (s.broadcast.isNotEmpty) ...[
                         const SizedBox(height: 2),
-                        Text(
-                          meta,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(fontSize: 13, color: p.ink2),
-                        ),
+                        BroadcastLine(s.broadcast, color: p.ink2, size: 13),
                       ],
                     ],
                   ),
@@ -996,7 +1017,11 @@ class PastTile extends StatelessWidget {
                   : Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Eyebrow(label, padding: const EdgeInsets.only(bottom: 5)),
+                        Eyebrow(
+                          label,
+                          padding: const EdgeInsets.only(bottom: 5),
+                          trailing: runningNote(s).isEmpty ? null : Text(runningNote(s).toUpperCase(), style: Eyebrow.style(p.ink2)),
+                        ),
                         MiniPodium(top: top, intl: s.intl),
                         if (topFact(s) case final f?)
                           Padding(
@@ -1009,15 +1034,31 @@ class PastTile extends StatelessWidget {
                                   child: Icon(CupertinoIcons.sparkles, size: 15, color: p.accent),
                                 ),
                                 const SizedBox(width: 6),
+                                // что — строкой, кто — под ним; сколько ещё — справа отдельно
                                 Expanded(
-                                  child: Text(
-                                    [if (f.who.isNotEmpty) f.who.split(' / ').map((x) => x.trim().split(' ').last).join(' / '), f.text].join(' · ') +
-                                        (s.facts.length > 1 ? ' · ещё ${s.facts.length - 1}' : ''),
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(fontSize: 13, color: p.ink2, height: 1.3),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        f.text,
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: p.ink, height: 1.3),
+                                      ),
+                                      if (f.who.isNotEmpty)
+                                        Text(
+                                          f.who.split(' / ').map((x) => x.trim().split(' ').last).join(' / '),
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(fontSize: 12.5, color: p.ink2, height: 1.3),
+                                        ),
+                                    ],
                                   ),
                                 ),
+                                if (s.facts.length > 1) ...[
+                                  const SizedBox(width: 8),
+                                  Text('ещё ${s.facts.length - 1}', style: TextStyle(fontSize: 12.5, color: p.ink2, height: 1.3)),
+                                ],
                               ],
                             ),
                           ),
@@ -1032,8 +1073,9 @@ class PastTile extends StatelessWidget {
 }
 
 /// Имя в итогах: россияне и белорусы выделены цветом, но их страна тоже подписана;
-/// у остальных показывается код страны, на российских стартах — код региона.
+/// у остальных показывается флаг с кодом страны, на российских стартах — код региона.
 /// Код — отдельно справа и не сжимается: при нехватке места короче становится имя.
+/// В списках ([MiniPodium], итог турнира) страна — своей колонкой ([withCode] = false).
 class PlacingName extends StatelessWidget {
   final Placing x;
   final bool intl;
@@ -1046,6 +1088,9 @@ class PlacingName extends StatelessWidget {
   /// Регион на российских стартах (в компактной тройке ленты его нет — там тесно).
   final bool region;
   final bool center;
+
+  /// Страна сразу за именем; false — её показывают отдельной колонкой рядом.
+  final bool withCode;
   const PlacingName({
     super.key,
     required this.x,
@@ -1055,7 +1100,12 @@ class PlacingName extends StatelessWidget {
     this.weight = FontWeight.w600,
     this.region = true,
     this.center = false,
+    this.withCode = true,
   });
+
+  /// Стиль кода страны при имени кеглем [size].
+  static TextStyle codeStyle(Palette p, double size) =>
+      TextStyle(fontSize: size * .76, fontWeight: FontWeight.w700, letterSpacing: .8, height: 1.25, color: p.ink2);
 
   /// На международных стартах всегда показываем код страны. Нейтральные коды наших
   /// спортсменов приводим к стране: AIN2 → RUS, AIN1 → BLR.
@@ -1069,18 +1119,13 @@ class PlacingName extends StatelessWidget {
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     final ours = intl && x.ours;
-    final code = codeOf(x, intl, region: region);
+    final code = withCode ? codeOf(x, intl, region: region) : '';
     return NameLines(
       variants: nameVariants(x.name, full: !short, initial: true, lines: 2),
       style: TextStyle(fontSize: size, fontWeight: weight, color: ours ? p.accent : p.ink, height: 1.25),
       suffix: code,
-      suffixStyle: TextStyle(
-        fontSize: size * .76,
-        fontWeight: FontWeight.w700,
-        letterSpacing: .8,
-        height: 1.25,
-        color: p.ink2,
-      ),
+      suffixStyle: codeStyle(p, size),
+      nation: true,
       center: center,
       // регион на российских стартах — справочно: не помещается вместе с именем — без него
       optional: !intl,
@@ -1089,7 +1134,8 @@ class PlacingName extends StatelessWidget {
   }
 }
 
-/// Первая тройка столбиком: медаль, имя, баллы.
+/// Первая тройка столбиком: медаль, имя, страна, баллы. Страна и баллы — колонками
+/// одной ширины у всех трёх: флаги и цифры стоят ровно друг под другом.
 class MiniPodium extends StatelessWidget {
   final List<Placing> top;
   final bool intl;
@@ -1097,22 +1143,67 @@ class MiniPodium extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    final list = [...top]..sort((a, b) => a.place.compareTo(b.place));
+    final list = ([...top]..sort((a, b) => a.place.compareTo(b.place))).take(3).toList();
+    final tag = PlacingName.codeStyle(p, 14);
+    final pts = clock(p.ink2, 14, weight: FontWeight.w500);
+    final codes = [for (final x in list) PlacingName.codeOf(x, intl, region: false)];
+    final codeW = codes.map((c) => NationTag.widthOf(context, c, tag)).fold(0.0, math.max);
+    final ptsW = list.map((x) => x.points.isEmpty ? 0.0 : textWidth(context, x.points, pts)).fold(0.0, math.max);
+    return MeasuredLayout(
+      builder: (context, c) {
+        // тесно: рядом с колонкой страны хоть одно имя не помещается даже коротким —
+        // у всех флаг с кодом встаёт под имя
+        final nameW = c.maxWidth - 32 - (codeW + 10) - (ptsW > 0 ? ptsW + 12 : 0);
+        final style = TextStyle(fontSize: 14, fontWeight: FontWeight.w600, height: 1.25);
+        final under = codeW > 0 &&
+            !list.every((x) => nameVariants(x.name, full: false, initial: true, lines: 2).any((v) => NameLines.fits(context, v, style, nameW)));
+        return _rows(context, list, codes, under ? 0 : codeW, ptsW, tag, pts, under);
+      },
+    );
+  }
+
+  Widget _rows(
+    BuildContext context,
+    List<Placing> list,
+    List<String> codes,
+    double codeW,
+    double ptsW,
+    TextStyle tag,
+    TextStyle pts,
+    bool under,
+  ) {
     return Column(
       children: [
-        for (final x in list.take(3))
+        for (var i = 0; i < list.length; i++)
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 3),
             child: Row(
               children: [
-                Medal(x.place, size: 22),
+                Medal(list[i].place, size: 22),
                 const SizedBox(width: 10),
                 Expanded(
-                  child: PlacingName(x: x, intl: intl, short: true, size: 14, region: false),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      PlacingName(x: list[i], intl: intl, short: true, size: 14, region: false, withCode: false),
+                      if (under && codes[i].isNotEmpty)
+                        Padding(padding: const EdgeInsets.only(top: 1), child: NationTag(codes[i], style: tag)),
+                    ],
+                  ),
                 ),
-                if (x.points.isNotEmpty) ...[
-                  const SizedBox(width: 8),
-                  Text(x.points, style: clock(p.ink2, 14, weight: FontWeight.w500)),
+                if (codeW > 0) ...[
+                  const SizedBox(width: 10),
+                  SizedBox(
+                    width: codeW + 1,
+                    child: Align(alignment: Alignment.centerLeft, child: NationTag(codes[i], style: tag)),
+                  ),
+                ],
+                if (ptsW > 0) ...[
+                  const SizedBox(width: 12),
+                  SizedBox(
+                    width: ptsW + 1,
+                    child: Text(list[i].points, textAlign: TextAlign.right, maxLines: 1, softWrap: false, style: pts),
+                  ),
                 ],
               ],
             ),

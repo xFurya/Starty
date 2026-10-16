@@ -89,24 +89,25 @@ class UpdateState {
     return error.isNotEmpty;
   }
 
-  /// Строка состояния для настроек — то, что есть на самом деле.
+  /// Строка состояния для настроек — то, что есть на самом деле. По факту на строку:
+  /// второй факт — через перевод строки, без разделителя в строке.
   String line(DateTime now) {
     if (!enabled) return 'Недоступно';
-    if (downloading != null && !ready) return 'Скачивается версия $downloading · $progress %';
+    if (downloading != null && !ready) return 'Скачивается версия $downloading\nГотово $progress %';
     if (ready) {
       final v = 'Версия $readyVersion';
       if (wait == 'confirm') return '$v ждёт подтверждения установки';
-      if (!canInstall) return '$v скачана · нет разрешения на установку';
+      if (!canInstall) return '$v скачана\nНет разрешения на установку';
       // сырое системное сообщение (часто английское) не показываем: ниже есть «Открыть установщик»
       if (installError.isNotEmpty) return '$v не установилась';
       if (stuck) return '$v не установилась автоматически';
-      if (desktop) return '$v скачана · установится при закрытии';
-      return '$v скачана · установится после сворачивания';
+      if (desktop) return '$v скачана\nУстановится при закрытии';
+      return '$v скачана\nУстановится после сворачивания';
     }
     if (checking) return 'Проверка…';
-    if (error.isNotEmpty) return 'Ошибка проверки · $error';
+    if (error.isNotEmpty) return 'Ошибка проверки\n$error';
     final at = checkedAt;
-    return at == null ? 'Устанавливаются автоматически' : 'Устанавливаются автоматически · проверено ${ago(at, now)}';
+    return at == null ? 'Устанавливаются автоматически' : 'Устанавливаются автоматически\nПроверено ${ago(at, now)}';
   }
 }
 
