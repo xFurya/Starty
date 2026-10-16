@@ -982,12 +982,33 @@ class _InfoRow extends StatelessWidget {
   final IconData icon;
   final String label, value;
 
-  /// Названия со своей кнопкой-ссылкой; пусто — обычная строка с текстом.
+  /// Названия со ссылкой: каждое — своя строка во всю ширину; пусто — обычная строка с текстом.
   final List<WatchLink> links;
   const _InfoRow({required this.icon, required this.label, required this.value, this.links = const []});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
+    if (links.isNotEmpty) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 13, 16, 0),
+            child: Row(
+              children: [
+                Icon(icon, size: 21, color: p.accent),
+                const SizedBox(width: 15),
+                Expanded(child: Eyebrow(label)),
+              ],
+            ),
+          ),
+          for (var i = 0; i < links.length; i++) ...[
+            if (i > 0) const Hairline(indent: 52),
+            _WatchRow(link: links[i]),
+          ],
+        ],
+      );
+    }
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 13, 16, 13),
       child: Row(
@@ -1000,18 +1021,10 @@ class _InfoRow extends StatelessWidget {
               children: [
                 Eyebrow(label),
                 const SizedBox(height: 3),
-                if (links.isEmpty)
-                  Text(
-                    value,
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: value == '—' ? p.ink2 : p.ink),
-                  )
-                else
-                  Wrap(
-                    spacing: 14,
-                    runSpacing: 4,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: [for (final w in links) _WatchChip(link: w)],
-                  ),
+                Text(
+                  value,
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: value == '—' ? p.ink2 : p.ink),
+                ),
               ],
             ),
           ),
@@ -1021,43 +1034,37 @@ class _InfoRow extends StatelessWidget {
   }
 }
 
-/// Название трансляции и рядом маленькая круглая кнопка ▶, открывающая именно её.
-class _WatchChip extends StatelessWidget {
+/// Один ресурс трансляции: вся строка нажимается и открывает его ссылку во внешнем приложении.
+/// Название переносится по словам; справа тихий значок акцентного цвета без заливки.
+class _WatchRow extends StatelessWidget {
   final WatchLink link;
-  const _WatchChip({required this.link});
+  const _WatchRow({required this.link});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Flexible(
-          child: Text(link.name, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink)),
-        ),
-        const SizedBox(width: 6),
-        Semantics(
-          button: true,
-          label: 'Открыть: ${link.name}',
-          child: GestureDetector(
-            key: ValueKey('watch:${link.name}'),
-            behavior: HitTestBehavior.opaque,
-            onTap: () => watchOpener(link.url),
-            // область нажатия 34x34, вид — кружок 26
-            child: SizedBox(
-              width: 34,
-              height: 34,
-              child: Center(
-                child: Container(
-                  width: 26,
-                  height: 26,
-                  decoration: BoxDecoration(color: p.accent, shape: BoxShape.circle),
-                  child: const Icon(CupertinoIcons.play_fill, size: 12, color: Colors.white),
+    return Semantics(
+      button: true,
+      label: 'Открыть трансляцию: ${link.name}',
+      child: InkWell(
+        key: ValueKey('watch:${link.name}'),
+        onTap: () => watchOpener(link.url),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(minHeight: 44),
+          child: Padding(
+            // отступ слева совпадает с текстом заголовка: 16 + 21 значок + 15
+            padding: const EdgeInsets.fromLTRB(52, 12, 16, 12),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(link.name, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink)),
                 ),
-              ),
+                const SizedBox(width: 12),
+                Icon(CupertinoIcons.arrow_up_right, size: 16, color: p.accent),
+              ],
             ),
           ),
         ),
-      ],
+      ),
     );
   }
 }
