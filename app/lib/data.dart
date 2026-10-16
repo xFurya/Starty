@@ -647,6 +647,21 @@ class Prefs {
     _p.setStringList('f.levels', f.levels.toList()),
     _p.setStringList('f.scope', f.scope.toList()),
   ]);
+
+  /// Выход из аккаунта: все настройки, что входят в документ синхронизации, — к значениям по умолчанию
+  /// (ключи убираются, геттеры отдают умолчание), и служебные ключи сверки — как при первой установке.
+  /// Несинхронизируемое (n.mig2, n.asked, w.sched, seenVersion и т.п.) не трогаем.
+  static Future<void> resetSynced() => Future.wait([
+    for (final k in const [
+      'n.rules', 'n.on', 'n.off',
+      'follow', 'follow.ru', 'follow.by',
+      'f.kinds', 'f.tids', 'f.athletes', 'f.levels', 'f.scope',
+      'f.done', 'f.regional', 'theme',
+      'live.mode', 'live.over',
+      'sync.pending', 'sync.local', 'sync.base', 'sync.icon.doc', 'sync.icon.dev',
+    ])
+      _p.remove(k),
+  ]);
 }
 
 /// Адрес файла протокола турнира на сайте: рядом с events.json, в каталоге protocols/.

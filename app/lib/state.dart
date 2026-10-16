@@ -239,11 +239,25 @@ class AppState extends ChangeNotifier {
     }
   }
 
-  /// Выйти из аккаунта: на этом устройстве настройки остаются, на сервере — тоже.
+  /// Выйти из аккаунта: настройки на этом устройстве сбрасываются к значениям по умолчанию, на сервере и на
+  /// других устройствах — не меняются. Бэкенд отключаем раньше сброса: сброс не должен уйти на сервер.
   Future<void> signOutSync() async {
     await SyncLocal(Prefs.raw).setAccount(null);
     if (sync.backend case final AccountBackend a) a.signOut();
     sync.backend = null;
+    await _resetDevice();
+  }
+
+  /// Сброс настроек этого устройства к значениям по умолчанию (после отключения синхронизации).
+  Future<void> _resetDevice() async {
+    await Prefs.resetSynced();
+    try {
+      if (await AppIcons.current() != 'classic') await AppIcons.set('classic');
+    } catch (_) {
+      // система не дала поставить значок: остальное всё равно сброшено
+    }
+    _reloadFromPrefs();
+    _resetLiveSource();
     notifyListeners();
   }
 
@@ -283,13 +297,14 @@ class AppState extends ChangeNotifier {
     }
   }
 
-  /// Отключить синхронизацию на этом устройстве (код и вход забываются, настройки остаются).
+  /// Отключить синхронизацию на этом устройстве: код и вход забываются, настройки сбрасываются к умолчанию.
+  /// Бэкенд отключаем раньше сброса, как в [signOutSync]: сброс на сервер не уходит.
   Future<void> disconnectSync() async {
     await SyncLocal(Prefs.raw).setAccount(null);
     await SyncLocal(Prefs.raw).setCode(null);
     if (sync.backend case final AccountBackend a) a.signOut();
     sync.backend = null;
-    notifyListeners();
+    await _resetDevice();
   }
 
   /// Выбор совпал со списком сборщика — сохраняем «по умолчанию» (null), чтобы его обновления дошли сюда.

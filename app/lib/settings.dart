@@ -1,5 +1,5 @@
 // Настройки: уведомления по правилам, лента, календарь, о приложении.
-import 'package:flutter/cupertino.dart' show CupertinoIcons;
+import 'package:flutter/cupertino.dart' show CupertinoAlertDialog, CupertinoDialogAction, CupertinoIcons, showCupertinoDialog;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -1151,6 +1151,29 @@ String _groupedCode(String c) => c.length == 16
 
 /// Синхронизация настроек между устройствами. Основной путь — почта и пароль; код — без почты.
 /// Настройки общие для всех устройств с одним входом или одним кодом.
+/// Подтверждение отключения (выход из аккаунта или код): true — кнопка [action], false — «Отмена».
+/// Только заголовок и кнопки, без пояснений.
+Future<bool> confirmDisconnect(BuildContext context, {required String title, required String action}) async {
+  final go = await showCupertinoDialog<bool>(
+    context: context,
+    builder: (c) => CupertinoAlertDialog(
+      title: Text(title),
+      actions: [
+        CupertinoDialogAction(
+          onPressed: () => Navigator.pop(c, false),
+          child: const Text('Отмена'),
+        ),
+        CupertinoDialogAction(
+          isDestructiveAction: true,
+          onPressed: () => Navigator.pop(c, true),
+          child: Text(action),
+        ),
+      ],
+    ),
+  );
+  return go == true;
+}
+
 class _AccountPage extends StatefulWidget {
   final AppState state;
   const _AccountPage({required this.state});
@@ -1171,6 +1194,24 @@ class _AccountPageState extends State<_AccountPage> {
     _pass.dispose();
     _code.dispose();
     super.dispose();
+  }
+
+  /// Выход из аккаунта сбрасывает настройки этого устройства: сначала спрашиваем.
+  Future<void> _signOut(AppState st) async {
+    if (!await confirmDisconnect(context, title: 'Выйти из аккаунта?', action: 'Выйти') || !mounted) return;
+    await _act(() async {
+      await st.signOutSync();
+      return null;
+    });
+  }
+
+  /// Отключение кода сбрасывает настройки этого устройства: сначала спрашиваем.
+  Future<void> _disconnectCode(AppState st) async {
+    if (!await confirmDisconnect(context, title: 'Отключить код?', action: 'Отключить') || !mounted) return;
+    await _act(() async {
+      await st.disconnectSync();
+      return null;
+    });
   }
 
   /// Одно действие с сервером. Пока идёт — кнопки неактивны; итог или причина — под разделами.
@@ -1283,13 +1324,7 @@ class _AccountPageState extends State<_AccountPage> {
                         _Row(
                           icon: CupertinoIcons.square_arrow_right,
                           title: 'Выйти с этого устройства',
-                          subtitle: 'Настройки здесь останутся, на других устройствах не изменятся',
-                          onTap: _busy
-                              ? null
-                              : () => _act(() async {
-                                  await st.signOutSync();
-                                  return null;
-                                }),
+                          onTap: _busy ? null : () => _signOut(st),
                         ),
                       ],
                     ),
@@ -1312,13 +1347,7 @@ class _AccountPageState extends State<_AccountPage> {
                         _Row(
                           icon: CupertinoIcons.square_arrow_right,
                           title: 'Отключить на этом устройстве',
-                          subtitle: 'Код здесь забудется, настройки останутся',
-                          onTap: _busy
-                              ? null
-                              : () => _act(() async {
-                                  await st.disconnectSync();
-                                  return null;
-                                }),
+                          onTap: _busy ? null : () => _disconnectCode(st),
                         ),
                       ],
                     ),
