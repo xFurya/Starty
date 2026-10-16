@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16T22:59:56+03:00",
- "checked": "2026-10-16T20:43:21.720332+00:00",
+ "checked": "2026-10-16T20:51:21.726008+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26966,7 +26966,7 @@
      "points": "62.78"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Hana Maria Aboian / Daniil Veselukhin — 70.63\n2. Zoe Bianchi / Daniel Basile — 65.55\n3. Aneta Vaclavikova / William Lissauer — 62.78\n\nНачало: 21:10 МСК\nТрансляция: HunSkate TV",
+   "desc": "Итог:\n1. Hana Maria Aboian / Daniil Veselukhin — 70.63\n2. Zoe Bianchi / Daniel Basile — 65.55\n3. Aneta Vaclavikova / William Lissauer — 62.78\n\nНачало: 21:10 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Лилия Литенко / Александр Рыженков",
@@ -27092,7 +27092,8 @@
      "nation": "AUT",
      "time": "23:43",
      "no": 20,
-     "warmup": 5
+     "warmup": 5,
+     "place": 19
     },
     {
      "name": "Eniko Kobor / Zoard Kobor",
@@ -27141,7 +27142,6 @@
      "place": 2
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
     "seg": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG011.htm",
@@ -27171,7 +27171,7 @@
      "Alexia KRUK / Jan EISENHABER": "Alexia Kruk / Jan Eisenhaber",
      "Seraina TSCHARNER / Laurin WIEDERKEHR": "Seraina Tscharner / Laurin Wiederkehr"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-cs-budapest-trophy.json"
   },
