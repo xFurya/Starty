@@ -14,11 +14,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-budapest-trophy:men-senior-pp@starty
-DTSTAMP:20261016T182436Z
+DTSTAMP:20261016T183758Z
 DTSTART;TZID=Europe/Moscow:20261018T125000
 DTEND;TZID=Europe/Moscow:20261018T170700
 SUMMARY:CS Budapest Trophy — мужчины ПП
-DESCRIPTION:Начало: 12:50 МСК
+DESCRIPTION:Начало: 12:50 МСК\nТрансляция: HunSkate TV
 LOCATION:Budapest\, Hungary
 URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:men-senio
  r-pp

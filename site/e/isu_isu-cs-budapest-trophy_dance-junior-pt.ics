@@ -14,11 +14,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-budapest-trophy:dance-junior-pt@starty
-DTSTAMP:20261016T182436Z
+DTSTAMP:20261016T183758Z
 DTSTART;TZID=Europe/Moscow:20261017T195000
 DTEND;TZID=Europe/Moscow:20261017T233500
 SUMMARY:CS Budapest Trophy — юниорские танцы ПТ
-DESCRIPTION:Начало: 19:50 МСК
+DESCRIPTION:Начало: 19:50 МСК\nТрансляция: HunSkate TV
 LOCATION:Budapest\, Hungary
 URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:dance-jun
  ior-pt
