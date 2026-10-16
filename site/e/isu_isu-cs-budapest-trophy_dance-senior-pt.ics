@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-budapest-trophy:dance-senior-pt@starty
+DTSTAMP:20261016T092201Z
+DTSTART;TZID=Europe/Moscow:20261018T090000
+DTEND;TZID=Europe/Moscow:20261018T124500
+SUMMARY:CS Budapest Trophy — танцы ПТ
+DESCRIPTION:Россияне:\n• Василиса Григорьева / 
+ Евгений Артющенко\n• Милана Кузьмина / Д
+ митрий Студеникин\n\nНачало: 09:00 МСК
+LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:dance-sen
+ ior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Budapest Trophy — танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
