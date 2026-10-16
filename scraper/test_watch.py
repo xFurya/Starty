@@ -24,7 +24,6 @@ class WatchTest(unittest.TestCase):
     def test_rule_jgp(self):
         self.assertEqual(b.watch_for("JGP Gdansk"), [{"name": "Okko", "url": "https://okko.tv/"}])
         self.assertEqual(b.broadcast_for("JGP Gdansk"), ["Okko"])
-        self.assertEqual(b.watch_for("CS Budapest Trophy"), [])  # эфир CS не подтверждён — не выдумываем
 
     def test_page_wins_over_rule(self):
         base = [{"name": "Okko", "url": "https://okko.tv/event/1"}, {"name": "x", "url": "ftp://bad"}]
@@ -128,8 +127,23 @@ class IntlWatchTest(unittest.TestCase):
         self.assertEqual(b.watch_for("Чемпионат Европы", base), base)
 
     def test_unconfirmed_series_have_nothing(self):
-        for n in ("CS Nebelhorn Trophy", "CS Denis Ten Memorial", "CS Budapest Trophy", "Tayside Trophy"):
+        for n in ("CS Nebelhorn Trophy", "CS Lombardia Trophy", "CS Golden Spin of Zagreb", "Tayside Trophy"):
             self.assertEqual(b.watch_for(n), [])
+            self.assertEqual(b.broadcast_for(n), [])
+
+    def test_challenger_confirmed(self):
+        want = {
+            "CS Trialeti Trophy": "Okko",
+            "CS Nepela Memorial": "Okko",
+            "CS Ondrej Nepela Memorial": "Okko",
+            "CS Denis Ten Memorial": "VK Видео",
+            "CS Budapest Trophy": "HunSkate TV",
+        }
+        for n, name in want.items():
+            w = b.watch_for(n)
+            self.assertEqual([x["name"] for x in w], [name], n)
+            self.assertTrue(w[0]["url"].startswith("https://"), n)
+            self.assertEqual(b.broadcast_for(n), [name], n)
 
     def test_rules_have_sources(self):
         for r in b.CFG["broadcast_rules"]:
