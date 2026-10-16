@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16T15:57:13+03:00",
- "checked": "2026-10-16T13:19:03.593479+00:00",
+ "checked": "2026-10-16T13:27:04.088375+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26176,7 +26176,7 @@
      "nation": "SUI",
      "no": 1,
      "warmup": 1,
-     "place": 11
+     "place": 12
     },
     {
      "name": "Nikita Sheiko",
@@ -26190,28 +26190,28 @@
      "nation": "ESP",
      "no": 3,
      "warmup": 1,
-     "place": 15
+     "place": 16
     },
     {
      "name": "Matvii Yefymenko",
      "nation": "POL",
      "no": 4,
      "warmup": 1,
-     "place": 16
+     "place": 17
     },
     {
      "name": "Aleksei Vlasenko",
      "nation": "HUN",
      "no": 5,
      "warmup": 1,
-     "place": 18
+     "place": 19
     },
     {
      "name": "Taira Shinohara",
      "nation": "USA",
      "no": 6,
      "warmup": 2,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Daniel Grassl",
@@ -26225,7 +26225,7 @@
      "nation": "AUS",
      "no": 8,
      "warmup": 2,
-     "place": 17
+     "place": 18
     },
     {
      "name": "Arlet Levandi",
@@ -26246,14 +26246,14 @@
      "nation": "SWE",
      "no": 11,
      "warmup": 3,
-     "place": 9
+     "place": 10
     },
     {
      "name": "Davide Lewton Brain",
      "nation": "MON",
      "no": 12,
      "warmup": 3,
-     "place": 14
+     "place": 15
     },
     {
      "name": "Tamir Kuperman",
@@ -26267,21 +26267,21 @@
      "nation": "KAZ",
      "no": 14,
      "warmup": 3,
-     "place": 10
+     "place": 11
     },
     {
      "name": "Nikita Starostin",
      "nation": "GER",
      "no": 15,
      "warmup": 3,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Vadym Novikov",
      "nation": "UKR",
      "no": 16,
      "warmup": 3,
-     "place": 13
+     "place": 14
     },
     {
      "name": "Andreas Nordeback",
@@ -26323,7 +26323,7 @@
     {
      "name": "Tobia Oellerer",
      "nation": "AUT",
-     "place": 12
+     "place": 13
     },
     {
      "name": "Vladimir Samoilov",
@@ -26331,7 +26331,8 @@
     },
     {
      "name": "Wesley Chiu",
-     "nation": "CAN"
+     "nation": "CAN",
+     "place": 7
     }
    ],
    "provisional": true,
