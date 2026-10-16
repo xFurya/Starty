@@ -1,33 +1,11 @@
 {
- "version": "1.0.29",
- "code": 30,
- "notes": "Протокол стал понятнее, кнопки трансляций, живые места выбираются на месте.",
- "at": "2026-10-16T09:35:29Z",
+ "version": "1.0.30",
+ "code": 31,
+ "notes": "Новое меню выбора; к аккаунту можно привязать и почту, и код.",
+ "at": "2026-10-16T10:19:52Z",
  "android": {
-  "file": "starty-1.0.29.apk",
-  "size": 22324941,
-  "sha256": "56d5c32e15ad8c9f3b4161a9c86e59dfdcf4d8e0a6b81c960e856be48df04896"
- },
- "windows": {
-  "code": 30,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.29/Starty-windows.zip",
-  "size": 14028962,
-  "sha256": "d3db670d370668c25c1abb02301b773dca19d9e8ee95532819de1c615e31920b",
-  "setup": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.29/starty-setup-1.0.29.exe",
-   "size": 12032512,
-   "sha256": "3c2c9bc410bac5d2d85de890a3821c730cd4b60ff17823976ff6a3ef7b828bf1"
-  }
- },
- "macos": {
-  "code": 30,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.29/Starty-macos.zip",
-  "size": 21309675,
-  "sha256": "7a3b62f26dbbfe2a7eb632b229e275994361bc479f54f19f38751ee6fc781f38",
-  "dmg": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.29/Starty-macos.dmg",
-   "size": 24008708,
-   "sha256": "858a73889c216b855ae9a5b2bc2f54ef5df21419803188688ad5fe08c929de77"
-  }
+  "file": "starty-1.0.30.apk",
+  "size": 22325265,
+  "sha256": "411e0e97dd225707d139e73f2f08bf8aff2b6d4c6b55cdfbf762823206aa6142"
  }
 }
