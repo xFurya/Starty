@@ -12,9 +12,13 @@ import 'protocol.dart';
 import 'state.dart';
 import 'system.dart';
 import 'ui.dart';
+import 'protocol_screen.dart' show launchOriginal;
 import 'views.dart';
 
 // ------------------------------------------------------------------ карточка старта
+
+/// Как открывается ссылка на трансляцию (во внешнем приложении или браузере); в тестах подменяется.
+Future<void> Function(String url) watchOpener = launchOriginal;
 
 void showStart(BuildContext context, Start s, AppState state) {
   showModalBottomSheet(
@@ -203,8 +207,13 @@ class _StartSheet extends StatelessWidget {
                 child: Column(
                   children: [
                     // трансляции нет в данных — строки нет
-                    if (s.broadcast.isNotEmpty) ...[
-                      _InfoRow(icon: CupertinoIcons.tv, label: 'Трансляция', value: s.broadcast.join(' / ')),
+                    if (s.broadcast.isNotEmpty || s.watch.isNotEmpty) ...[
+                      _InfoRow(
+                        icon: CupertinoIcons.tv,
+                        label: 'Трансляция',
+                        value: s.watch.isNotEmpty ? s.watch.map((w) => w.name).join(' / ') : s.broadcast.join(' / '),
+                        links: s.watch,
+                      ),
                       const Hairline(indent: 52),
                     ],
                     // место международных стартов — как в источнике, латиницей
@@ -969,7 +978,10 @@ class _OurAhead extends StatelessWidget {
 class _InfoRow extends StatelessWidget {
   final IconData icon;
   final String label, value;
-  const _InfoRow({required this.icon, required this.label, required this.value});
+
+  /// Названия со своей кнопкой-ссылкой; пусто — обычная строка с текстом.
+  final List<WatchLink> links;
+  const _InfoRow({required this.icon, required this.label, required this.value, this.links = const []});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -985,15 +997,64 @@ class _InfoRow extends StatelessWidget {
               children: [
                 Eyebrow(label),
                 const SizedBox(height: 3),
-                Text(
-                  value,
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: value == '—' ? p.ink2 : p.ink),
-                ),
+                if (links.isEmpty)
+                  Text(
+                    value,
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: value == '—' ? p.ink2 : p.ink),
+                  )
+                else
+                  Wrap(
+                    spacing: 14,
+                    runSpacing: 4,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [for (final w in links) _WatchChip(link: w)],
+                  ),
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+/// Название трансляции и рядом маленькая круглая кнопка ▶, открывающая именно её.
+class _WatchChip extends StatelessWidget {
+  final WatchLink link;
+  const _WatchChip({required this.link});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Flexible(
+          child: Text(link.name, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink)),
+        ),
+        const SizedBox(width: 6),
+        Semantics(
+          button: true,
+          label: 'Открыть: ${link.name}',
+          child: GestureDetector(
+            key: ValueKey('watch:${link.name}'),
+            behavior: HitTestBehavior.opaque,
+            onTap: () => watchOpener(link.url),
+            // область нажатия 34x34, вид — кружок 26
+            child: SizedBox(
+              width: 34,
+              height: 34,
+              child: Center(
+                child: Container(
+                  width: 26,
+                  height: 26,
+                  decoration: BoxDecoration(color: p.accent, shape: BoxShape.circle),
+                  child: const Icon(CupertinoIcons.play_fill, size: 12, color: Colors.white),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
