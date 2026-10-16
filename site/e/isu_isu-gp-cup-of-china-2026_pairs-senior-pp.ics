@@ -14,11 +14,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-cup-of-china-2026:pairs-senior-pp@starty
-DTSTAMP:20261016T111814Z
+DTSTAMP:20261016T122958Z
 DTSTART;TZID=Europe/Moscow:20261107T134000
 DTEND;TZID=Europe/Moscow:20261107T150000
 SUMMARY:GP Cup of China — пары ПП
-DESCRIPTION:Начало: 13:40 МСК
+DESCRIPTION:Начало: 13:40 МСК\nТрансляция: Okko
 LOCATION:Shenzhen\, China
 URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:pairs-s
  enior-pp

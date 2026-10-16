@@ -1,7 +1,8 @@
 {
- "generated": "2026-10-16T14:18:14+03:00",
- "checked": "2026-10-16T12:43:03.966709+00:00",
+ "generated": "2026-10-16T15:29:58+03:00",
+ "checked": "2026-10-16T15:29:58+03:00",
  "complete": true,
+ "facts_version": "6",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
@@ -17410,7 +17411,7 @@
      "points": "69.45"
     }
    ],
-   "desc": "Итог:\n1. Александра Трусова — 77.39\n2. Yujae Kim — 75.99\n3. Sofia Samodelkina — 69.45\n\nПримечательное:\n• Yujae Kim — Тройной аксель\n• Дина Хуснутдинова — Тройной аксель\n\nРоссияне:\n• Виктория Сафонова — 3-й\n• Мария Захарова — 4-й\n• Александра Трусова — 14-й\n• Дина Хуснутдинова — 16-й\n\nНачало: 15:05 МСК",
+   "desc": "Итог:\n1. Александра Трусова — 77.39\n2. Yujae Kim — 75.99\n3. Sofia Samodelkina — 69.45\n\nПримечательное:\n• Yujae Kim — Тройной аксель\n• Дина Хуснутдинова — Тройной аксель\n• Yujae Kim — Личный рекорд за КП: 75.99 (был 66.59)\n• Sofia Samodelkina — Личный рекорд за КП: 69.45 (был 68.47)\n• Виктория Сафонова — Личный рекорд за КП: 68.42 (был 66.67)\n\nРоссияне:\n• Виктория Сафонова — 3-й\n• Мария Захарова — 4-й\n• Александра Трусова — 14-й\n• Дина Хуснутдинова — 16-й\n\nНачало: 15:05 МСК",
    "field": [
     {
      "name": "Marketa Sukupova",
@@ -17584,6 +17585,21 @@
      "kind": "element",
      "text": "Тройной аксель",
      "who": "Дина Хуснутдинова"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за КП: 75.99 (был 66.59)",
+     "who": "Yujae Kim"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за КП: 69.45 (был 68.47)",
+     "who": "Sofia Samodelkina"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за КП: 68.42 (был 66.67)",
+     "who": "Виктория Сафонова"
     }
    ],
    "proto": "isu_isu-cs-denis-ten-memorial.json"
@@ -17863,7 +17879,7 @@
      "points": "80.63"
     }
    ],
-   "desc": "Итог:\n1. Владислав Дикиджи — 107.31\n2. Глеб Лутфуллин — 95.79\n3. Пётр Гуменник — 80.63\n\nПримечательное:\n• Первые 4 места — россияне и белорусы\n\nРоссияне:\n• Владислав Дикиджи — 3-й\n• Георгий Козловский — 4-й\n• Алекс Лабович — 6-й\n• Василий Бараховский — 7-й\n• Пётр Гуменник — 8-й\n• Глеб Лутфуллин — 9-й\n\nНачало: 18:00 МСК",
+   "desc": "Итог:\n1. Владислав Дикиджи — 107.31\n2. Глеб Лутфуллин — 95.79\n3. Пётр Гуменник — 80.63\n\nПримечательное:\n• Первые 4 места — россияне и белорусы\n• Владислав Дикиджи — Лучшая в мире оценка сезона за КП: 107.31\n• Владислав Дикиджи — Личный рекорд за КП: 107.31 (был 88.79)\n• Глеб Лутфуллин — Личный рекорд за КП: 95.79 (был 85.70)\n• Василий Бараховский — Личный рекорд за КП: 77.96 (был 69.51)\n• Алекс Лабович — Личный рекорд за КП: 61.26 (был 59.41)\n\nРоссияне:\n• Владислав Дикиджи — 3-й\n• Георгий Козловский — 4-й\n• Алекс Лабович — 6-й\n• Василий Бараховский — 7-й\n• Пётр Гуменник — 8-й\n• Глеб Лутфуллин — 9-й\n\nНачало: 18:00 МСК",
    "field": [
     {
      "name": "Daniel Martynov",
@@ -17960,6 +17976,31 @@
      "kind": "place",
      "text": "Первые 4 места — россияне и белорусы",
      "who": ""
+    },
+    {
+     "kind": "score",
+     "text": "Лучшая в мире оценка сезона за КП: 107.31",
+     "who": "Владислав Дикиджи"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за КП: 107.31 (был 88.79)",
+     "who": "Владислав Дикиджи"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за КП: 95.79 (был 85.70)",
+     "who": "Глеб Лутфуллин"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за КП: 77.96 (был 69.51)",
+     "who": "Василий Бараховский"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за КП: 61.26 (был 59.41)",
+     "who": "Алекс Лабович"
     }
    ],
    "proto": "isu_isu-cs-denis-ten-memorial.json"
@@ -19497,7 +19538,7 @@
      "points": "74.28"
     }
    ],
-   "desc": "Итог:\n1. Caroline Green / Michael Parsons — 78.64\n2. Juulia Turkkila / Matthias Versluis — 74.33\n3. Василиса Кагановская / Максим Некрасов — 74.28\n\nРоссияне:\n• Василиса Кагановская / Максим Некрасов — 15:20\n• Анна Щербакова / Егор Гончаров — 15:33\n• Ирина Хавронина / Девид Нарижный — 16:46\n• Виктория Пласконная / Владислав Сыцик — 6-й\n• Екатерина Андреева / Дмитрий Блинов — 9-й\n\nНачало: 15:15 МСК",
+   "desc": "Итог:\n1. Caroline Green / Michael Parsons — 78.64\n2. Juulia Turkkila / Matthias Versluis — 74.33\n3. Василиса Кагановская / Максим Некрасов — 74.28\n\nПримечательное:\n• Василиса Кагановская / Максим Некрасов — Личный рекорд за РТ: 74.28 (был 74.21)\n• Ирина Хавронина / Девид Нарижный — Личный рекорд за РТ: 73.78 (был 73.38)\n• Екатерина Андреева / Дмитрий Блинов — Личный рекорд за РТ: 69.49 (был 67.74)\n\nРоссияне:\n• Василиса Кагановская / Максим Некрасов — 15:20\n• Анна Щербакова / Егор Гончаров — 15:33\n• Ирина Хавронина / Девид Нарижный — 16:46\n• Виктория Пласконная / Владислав Сыцик — 6-й\n• Екатерина Андреева / Дмитрий Блинов — 9-й\n\nНачало: 15:15 МСК",
    "field": [
     {
      "name": "Василиса Кагановская / Максим Некрасов",
@@ -19600,6 +19641,23 @@
     },
     "basis": "judges"
    },
+   "facts": [
+    {
+     "kind": "score",
+     "text": "Личный рекорд за РТ: 74.28 (был 74.21)",
+     "who": "Василиса Кагановская / Максим Некрасов"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за РТ: 73.78 (был 73.38)",
+     "who": "Ирина Хавронина / Девид Нарижный"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за РТ: 69.49 (был 67.74)",
+     "who": "Екатерина Андреева / Дмитрий Блинов"
+    }
+   ],
    "proto": "isu_isu-cs-denis-ten-memorial.json"
   },
   {
@@ -20153,7 +20211,7 @@
      "points": "204.36"
     }
    ],
-   "desc": "Итог:\n1. Александра Трусова — 148.62\n2. Sofia Samodelkina — 134.91\n3. Yujae Kim — 133.21\n\nИтог турнира:\n1. Александра Трусова — 226.01\n2. Yujae Kim — 209.20\n3. Sofia Samodelkina — 204.36\n\nПримечательное:\n• Александра Трусова — Четверной лутц\n• Yujae Kim — Тройной аксель\n• Мария Захарова — Четверной тулуп\n• Дина Хуснутдинова — Тройной аксель\n• Александра Трусова — Отрыв от второго места — 16.81 балла\n\nРоссияне:\n• Мария Захарова — 19:30\n• Дина Хуснутдинова — 20:00\n• Александра Трусова — 20:32\n• Виктория Сафонова — 16-й\n\nНачало: 17:30 МСК",
+   "desc": "Итог:\n1. Александра Трусова — 148.62\n2. Sofia Samodelkina — 134.91\n3. Yujae Kim — 133.21\n\nИтог турнира:\n1. Александра Трусова — 226.01\n2. Yujae Kim — 209.20\n3. Sofia Samodelkina — 204.36\n\nПримечательное:\n• Александра Трусова — Четверной лутц\n• Yujae Kim — Тройной аксель\n• Мария Захарова — Четверной тулуп\n• Дина Хуснутдинова — Тройной аксель\n• Виктория Сафонова — Личный рекорд за ПП: 130.38 (был 128.27)\n• Мария Захарова — Личный рекорд за ПП: 129.48 (был 121.29)\n• Александра Трусова — Отрыв от второго места — 16.81 балла\n• Yujae Kim — Личный рекорд по сумме: 209.20 (был 199.86)\n• Виктория Сафонова — Личный рекорд по сумме: 198.80 (был 192.49)\n\nРоссияне:\n• Мария Захарова — 19:30\n• Дина Хуснутдинова — 20:00\n• Александра Трусова — 20:32\n• Виктория Сафонова — 16-й\n\nНачало: 17:30 МСК",
    "field": [
     {
      "name": "Amina Alexeyeva",
@@ -20361,9 +20419,29 @@
      "who": "Дина Хуснутдинова"
     },
     {
+     "kind": "score",
+     "text": "Личный рекорд за ПП: 130.38 (был 128.27)",
+     "who": "Виктория Сафонова"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за ПП: 129.48 (был 121.29)",
+     "who": "Мария Захарова"
+    },
+    {
      "kind": "place",
      "text": "Отрыв от второго места — 16.81 балла",
      "who": "Александра Трусова"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 209.20 (был 199.86)",
+     "who": "Yujae Kim"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 198.80 (был 192.49)",
+     "who": "Виктория Сафонова"
     }
    ],
    "proto": "isu_isu-cs-denis-ten-memorial.json"
@@ -20747,7 +20825,7 @@
      "points": "180.37"
     }
    ],
-   "desc": "Итог:\n1. Juulia Turkkila / Matthias Versluis — 116.99\n2. Василиса Кагановская / Максим Некрасов — 112.92\n3. Ирина Хавронина / Девид Нарижный — 105.26\n\nИтог турнира:\n1. Juulia Turkkila / Matthias Versluis — 191.32\n2. Василиса Кагановская / Максим Некрасов — 187.20\n3. Caroline Green / Michael Parsons — 180.37\n\nРоссияне:\n• Анна Щербакова / Егор Гончаров — 11:05\n• Ирина Хавронина / Девид Нарижный — 11:26\n• Василиса Кагановская / Максим Некрасов — 11:34\n• Виктория Пласконная / Владислав Сыцик — 1-й\n• Екатерина Андреева / Дмитрий Блинов — 7-й\n\nНачало: 10:00 МСК",
+   "desc": "Итог:\n1. Juulia Turkkila / Matthias Versluis — 116.99\n2. Василиса Кагановская / Максим Некрасов — 112.92\n3. Ирина Хавронина / Девид Нарижный — 105.26\n\nИтог турнира:\n1. Juulia Turkkila / Matthias Versluis — 191.32\n2. Василиса Кагановская / Максим Некрасов — 187.20\n3. Caroline Green / Michael Parsons — 180.37\n\nПримечательное:\n• Василиса Кагановская / Максим Некрасов — Личный рекорд за ПТ: 112.92 (был 110.60)\n• Ирина Хавронина / Девид Нарижный — Личный рекорд за ПТ: 105.26 (был 104.55)\n• Екатерина Андреева / Дмитрий Блинов — Личный рекорд за ПТ: 100.72 (был 97.91)\n• Василиса Кагановская / Максим Некрасов — Личный рекорд по сумме: 187.20 (был 184.81)\n• Ирина Хавронина / Девид Нарижный — Личный рекорд по сумме: 179.04 (был 177.93)\n• Екатерина Андреева / Дмитрий Блинов — Личный рекорд по сумме: 170.21 (был 165.65)\n\nРоссияне:\n• Анна Щербакова / Егор Гончаров — 11:05\n• Ирина Хавронина / Девид Нарижный — 11:26\n• Василиса Кагановская / Максим Некрасов — 11:34\n• Виктория Пласконная / Владислав Сыцик — 1-й\n• Екатерина Андреева / Дмитрий Блинов — 7-й\n\nНачало: 10:00 МСК",
    "field": [
     {
      "name": "Виктория Пласконная / Владислав Сыцик",
@@ -20861,6 +20939,38 @@
     },
     "basis": "judges"
    },
+   "facts": [
+    {
+     "kind": "score",
+     "text": "Личный рекорд за ПТ: 112.92 (был 110.60)",
+     "who": "Василиса Кагановская / Максим Некрасов"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за ПТ: 105.26 (был 104.55)",
+     "who": "Ирина Хавронина / Девид Нарижный"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за ПТ: 100.72 (был 97.91)",
+     "who": "Екатерина Андреева / Дмитрий Блинов"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 187.20 (был 184.81)",
+     "who": "Василиса Кагановская / Максим Некрасов"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 179.04 (был 177.93)",
+     "who": "Ирина Хавронина / Девид Нарижный"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 170.21 (был 165.65)",
+     "who": "Екатерина Андреева / Дмитрий Блинов"
+    }
+   ],
    "proto": "isu_isu-cs-denis-ten-memorial.json"
   },
   {
@@ -21238,7 +21348,7 @@
      "points": "261.76"
     }
    ],
-   "desc": "Итог:\n1. Владислав Дикиджи — 205.48\n2. Глеб Лутфуллин — 181.44\n3. Пётр Гуменник — 181.13\n\nИтог турнира:\n1. Владислав Дикиджи — 312.79\n2. Глеб Лутфуллин — 277.23\n3. Пётр Гуменник — 261.76\n\nПримечательное:\n• Глеб Лутфуллин — Каскад 4T+3A+3A\n• Глеб Лутфуллин — 5 четверных в программе: 4F, 4Lo, 4T, 4S, 4S\n• Весь пьедестал — россияне\n• Владислав Дикиджи — Отрыв от второго места — 35.56 балла\n\nРоссияне:\n• Пётр Гуменник — 13:37\n• Глеб Лутфуллин — 13:45\n• Владислав Дикиджи — 13:53\n• Алекс Лабович — 2-й\n• Георгий Козловский — 5-й\n• Василий Бараховский — 7-й\n\nНачало: 12:30 МСК",
+   "desc": "Итог:\n1. Владислав Дикиджи — 205.48\n2. Глеб Лутфуллин — 181.44\n3. Пётр Гуменник — 181.13\n\nИтог турнира:\n1. Владислав Дикиджи — 312.79\n2. Глеб Лутфуллин — 277.23\n3. Пётр Гуменник — 261.76\n\nПримечательное:\n• Глеб Лутфуллин — Каскад 4T+3A+3A\n• Глеб Лутфуллин — 5 четверных в программе: 4F, 4Lo, 4T, 4S, 4S\n• Весь пьедестал — россияне\n• Владислав Дикиджи — Лучшая в мире оценка сезона за ПП: 205.48\n• Владислав Дикиджи — Личный рекорд за ПП: 205.48 (был 176.89)\n• Глеб Лутфуллин — Личный рекорд за ПП: 181.44 (был 165.76)\n• Василий Бараховский — Личный рекорд за ПП: 140.40 (был 129.81)\n• Алекс Лабович — Личный рекорд за ПП: 128.11 (был 99.03)\n• Владислав Дикиджи — Отрыв от второго места — 35.56 балла\n• Владислав Дикиджи — Лучшая в мире сумма сезона: 312.79\n• Владислав Дикиджи — Личный рекорд по сумме: 312.79 (был 265.68)\n• Глеб Лутфуллин — Личный рекорд по сумме: 277.23 (был 251.46)\n• Василий Бараховский — Личный рекорд по сумме: 218.36 (был 199.09)\n• Алекс Лабович — Личный рекорд по сумме: 189.37 (был 158.44)\n\nРоссияне:\n• Пётр Гуменник — 13:37\n• Глеб Лутфуллин — 13:45\n• Владислав Дикиджи — 13:53\n• Алекс Лабович — 2-й\n• Георгий Козловский — 5-й\n• Василий Бараховский — 7-й\n\nНачало: 12:30 МСК",
    "field": [
     {
      "name": "Douglas Gerber",
@@ -21360,9 +21470,59 @@
      "who": ""
     },
     {
+     "kind": "score",
+     "text": "Лучшая в мире оценка сезона за ПП: 205.48",
+     "who": "Владислав Дикиджи"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за ПП: 205.48 (был 176.89)",
+     "who": "Владислав Дикиджи"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за ПП: 181.44 (был 165.76)",
+     "who": "Глеб Лутфуллин"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за ПП: 140.40 (был 129.81)",
+     "who": "Василий Бараховский"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за ПП: 128.11 (был 99.03)",
+     "who": "Алекс Лабович"
+    },
+    {
      "kind": "place",
      "text": "Отрыв от второго места — 35.56 балла",
      "who": "Владислав Дикиджи"
+    },
+    {
+     "kind": "score",
+     "text": "Лучшая в мире сумма сезона: 312.79",
+     "who": "Владислав Дикиджи"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 312.79 (был 265.68)",
+     "who": "Владислав Дикиджи"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 277.23 (был 251.46)",
+     "who": "Глеб Лутфуллин"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 218.36 (был 199.09)",
+     "who": "Василий Бараховский"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 189.37 (был 158.44)",
+     "who": "Алекс Лабович"
     }
    ],
    "proto": "isu_isu-cs-denis-ten-memorial.json"
@@ -26016,7 +26176,7 @@
      "nation": "SUI",
      "no": 1,
      "warmup": 1,
-     "place": 8
+     "place": 7
     },
     {
      "name": "Nikita Sheiko",
@@ -26030,33 +26190,67 @@
      "nation": "ESP",
      "no": 3,
      "warmup": 1,
-     "place": 10
+     "place": 8
     },
     {
      "name": "Matvii Yefymenko",
      "nation": "POL",
      "no": 4,
      "warmup": 1,
-     "place": 11
+     "place": 9
     },
     {
      "name": "Aleksei Vlasenko",
      "nation": "HUN",
-     "place": 13
+     "no": 5,
+     "warmup": 1,
+     "place": 11
     },
     {
-     "name": "Andreas Nordeback",
-     "nation": "SWE"
-    },
-    {
-     "name": "Arlet Levandi",
-     "nation": "EST",
-     "place": 3
+     "name": "Taira Shinohara",
+     "nation": "USA",
+     "no": 6,
+     "warmup": 2,
+     "place": 5
     },
     {
      "name": "Daniel Grassl",
      "nation": "ITA",
+     "no": 7,
+     "warmup": 2,
      "place": 1
+    },
+    {
+     "name": "Douglas Gerber",
+     "nation": "AUS",
+     "no": 8,
+     "warmup": 2,
+     "place": 10
+    },
+    {
+     "name": "Arlet Levandi",
+     "nation": "EST",
+     "no": 9,
+     "warmup": 2,
+     "place": 3
+    },
+    {
+     "name": "Genrikh Gartung",
+     "nation": "GER",
+     "no": 10,
+     "warmup": 2,
+     "place": 2
+    },
+    {
+     "name": "Elias Sayed",
+     "nation": "SWE",
+     "no": 11,
+     "warmup": 3,
+     "place": 6
+    },
+    {
+     "name": "Andreas Nordeback",
+     "nation": "SWE"
     },
     {
      "name": "David Sedej",
@@ -26068,23 +26262,8 @@
      "place": 9
     },
     {
-     "name": "Douglas Gerber",
-     "nation": "AUS",
-     "place": 12
-    },
-    {
-     "name": "Elias Sayed",
-     "nation": "SWE",
-     "place": 7
-    },
-    {
      "name": "Fedirs Kuliss",
      "nation": "LAT"
-    },
-    {
-     "name": "Genrikh Gartung",
-     "nation": "GER",
-     "place": 2
     },
     {
      "name": "John Kim",
@@ -26119,11 +26298,6 @@
      "nation": "USA"
     },
     {
-     "name": "Taira Shinohara",
-     "nation": "USA",
-     "place": 6
-    },
-    {
      "name": "Tamir Kuperman",
      "nation": "ISR",
      "place": 5
@@ -26152,17 +26326,17 @@
     "cat": null,
     "first": null,
     "names": {
+     "Daniel GRASSL": "Daniel Grassl",
+     "Genrikh GARTUNG": "Genrikh Gartung",
+     "Arlet LEVANDI": "Arlet Levandi",
      "Nikita SHEIKO": "Nikita Sheiko",
+     "Taira SHINOHARA": "Taira Shinohara",
+     "Elias SAYED": "Elias Sayed",
      "Nico STEFFEN": "Nico Steffen",
      "Pablo GARCIA": "Pablo Garcia",
      "Matvii YEFYMENKO": "Matvii Yefymenko",
-     "Aleksei VLASENKO": "Aleksei Vlasenko",
-     "Taira SHINOHARA": "Taira Shinohara",
-     "Daniel GRASSL": "Daniel Grassl",
      "Douglas GERBER": "Douglas Gerber",
-     "Arlet LEVANDI": "Arlet Levandi",
-     "Genrikh GARTUNG": "Genrikh Gartung",
-     "Elias SAYED": "Elias Sayed",
+     "Aleksei VLASENKO": "Aleksei Vlasenko",
      "Davide LEWTON BRAIN": "Davide Lewton Brain",
      "Tamir KUPERMAN": "Tamir Kuperman",
      "Nikita KRIVOSHEYEV": "Nikita Krivosheyev",
@@ -26667,7 +26841,7 @@
    "seg": "ПП",
    "title": "CS Budapest Trophy — девушки ПП",
    "start": "2026-10-17T09:00:00+03:00",
-   "end": "2026-10-17T13:20:00+03:00",
+   "end": "2026-10-17T12:31:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [],
@@ -26676,7 +26850,6 @@
     "Adelina Voroteliak",
     "Anissa Mamaev",
     "Dorina Szigeti",
-    "Evgeniia Nikolaeva",
     "Ginevra Antonina Volante",
     "Greta Norina Major",
     "Hanna Laura Viranyi",
@@ -26704,108 +26877,179 @@
    "desc": "Начало: 09:00 МСК",
    "field": [
     {
-     "name": "Adelina Voroteliak",
-     "nation": "GER"
-    },
-    {
-     "name": "Anissa Mamaev",
-     "nation": "UZB"
-    },
-    {
-     "name": "Dorina Szigeti",
-     "nation": "HUN"
-    },
-    {
-     "name": "Evgeniia Nikolaeva",
-     "nation": "UAE"
-    },
-    {
-     "name": "Ginevra Antonina Volante",
-     "nation": "ITA"
-    },
-    {
-     "name": "Greta Norina Major",
-     "nation": "HUN"
-    },
-    {
-     "name": "Hanna Laura Viranyi",
-     "nation": "HUN"
-    },
-    {
-     "name": "Hedda Hedstrom",
-     "nation": "SWE"
-    },
-    {
-     "name": "Jiaying Ellyse Johnson",
-     "nation": "USA"
-    },
-    {
-     "name": "Karina Sheina",
-     "nation": "KAZ"
-    },
-    {
-     "name": "Leandra Tzimpoukakis",
-     "nation": "SUI"
-    },
-    {
-     "name": "Lidiia Tsukanova",
-     "nation": "FIN"
-    },
-    {
-     "name": "Martina Petra Major",
-     "nation": "HUN"
-    },
-    {
-     "name": "Mayuka Sueess",
-     "nation": "SUI"
-    },
-    {
-     "name": "Mia Kasparovica",
-     "nation": "LAT"
-    },
-    {
-     "name": "Mila Bertsch",
-     "nation": "FRA"
-    },
-    {
-     "name": "Milena Velcheva",
-     "nation": "BUL"
-    },
-    {
-     "name": "Natalia Runcanu",
-     "nation": "ROU"
-    },
-    {
-     "name": "Polina Bykova",
-     "nation": "SLO"
-    },
-    {
-     "name": "Rebecca Lo Cascio",
-     "nation": "ITA"
+     "name": "Shaked Pinchas",
+     "nation": "ISR",
+     "time": "09:06",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Shahaf Pinchas",
-     "nation": "ISR"
+     "nation": "ISR",
+     "time": "09:13",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Shaked Pinchas",
-     "nation": "ISR"
+     "name": "Hanna Laura Viranyi",
+     "nation": "HUN",
+     "time": "09:19",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Natalia Runcanu",
+     "nation": "ROU",
+     "time": "09:26",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Dorina Szigeti",
+     "nation": "HUN",
+     "time": "09:32",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Ginevra Antonina Volante",
+     "nation": "ITA",
+     "time": "09:45",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Milena Velcheva",
+     "nation": "BUL",
+     "time": "09:52",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Martina Petra Major",
+     "nation": "HUN",
+     "time": "09:58",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Hedda Hedstrom",
+     "nation": "SWE",
+     "time": "10:05",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Anissa Mamaev",
+     "nation": "UZB",
+     "time": "10:11",
+     "no": 10,
+     "warmup": 2
     },
     {
      "name": "Summer Wijkhuizen",
-     "nation": "NED"
+     "nation": "NED",
+     "time": "10:24",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Mia Kasparovica",
+     "nation": "LAT",
+     "time": "10:31",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Greta Norina Major",
+     "nation": "HUN",
+     "time": "10:37",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Polina Bykova",
+     "nation": "SLO",
+     "time": "10:44",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Mila Bertsch",
+     "nation": "FRA",
+     "time": "10:50",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Lidiia Tsukanova",
+     "nation": "FIN",
+     "time": "11:18",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Rebecca Lo Cascio",
+     "nation": "ITA",
+     "time": "11:25",
+     "no": 17,
+     "warmup": 4
     },
     {
      "name": "Valeria Huber",
-     "nation": "GER"
+     "nation": "GER",
+     "time": "11:31",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Adelina Voroteliak",
+     "nation": "GER",
+     "time": "11:38",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Karina Sheina",
+     "nation": "KAZ",
+     "time": "11:44",
+     "no": 20,
+     "warmup": 4
     },
     {
      "name": "Varvara Abramkina",
-     "nation": "BUL"
+     "nation": "BUL",
+     "time": "11:57",
+     "no": 21,
+     "warmup": 5
+    },
+    {
+     "name": "Leandra Tzimpoukakis",
+     "nation": "SUI",
+     "time": "12:04",
+     "no": 22,
+     "warmup": 5
+    },
+    {
+     "name": "Mayuka Sueess",
+     "nation": "SUI",
+     "time": "12:10",
+     "no": 23,
+     "warmup": 5
+    },
+    {
+     "name": "Jiaying Ellyse Johnson",
+     "nation": "USA",
+     "time": "12:17",
+     "no": 24,
+     "warmup": 5
     },
     {
      "name": "Амалия Насыбуллина",
-     "nation": "GEO"
+     "nation": "GEO",
+     "time": "12:23",
+     "no": 25,
+     "warmup": 5
     }
    ],
    "live": {
@@ -26814,32 +27058,31 @@
     "cat": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/CAT005RS.htm",
     "first": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG009.htm",
     "names": {
-     "Varvara ABRAMKINA": "Varvara Abramkina",
+     "Shaked PINCHAS": "Shaked Pinchas",
+     "Shahaf PINCHAS": "Shahaf Pinchas",
+     "Hanna Laura VIRANYI": "Hanna Laura Viranyi",
+     "Natalia RUNCANU": "Natalia Runcanu",
+     "Dorina SZIGETI": "Dorina Szigeti",
+     "Ginevra Antonina VOLANTE": "Ginevra Antonina Volante",
      "Milena VELCHEVA": "Milena Velcheva",
-     "Lidiia TSUKANOVA": "Lidiia Tsukanova",
+     "Martina Petra MAJOR": "Martina Petra Major",
+     "Hedda HEDSTROM": "Hedda Hedstrom",
+     "Anissa MAMAEV": "Anissa Mamaev",
+     "Summer WIJKHUIZEN": "Summer Wijkhuizen",
+     "Mia KASPAROVICA": "Mia Kasparovica",
+     "Greta Norina MAJOR": "Greta Norina Major",
+     "Polina BYKOVA": "Polina Bykova",
      "Mila BERTSCH": "Mila Bertsch",
-     "Amaliia NASYBULLINA": "Амалия Насыбуллина",
+     "Lidiia TSUKANOVA": "Lidiia Tsukanova",
+     "Rebecca LO CASCIO": "Rebecca Lo Cascio",
      "Valeria HUBER": "Valeria Huber",
      "Adelina VOROTELIAK": "Adelina Voroteliak",
-     "Greta Norina MAJOR": "Greta Norina Major",
-     "Martina Petra MAJOR": "Martina Petra Major",
-     "Dorina SZIGETI": "Dorina Szigeti",
-     "Hanna Laura VIRANYI": "Hanna Laura Viranyi",
-     "Shahaf PINCHAS": "Shahaf Pinchas",
-     "Shaked PINCHAS": "Shaked Pinchas",
-     "Rebecca LO CASCIO": "Rebecca Lo Cascio",
-     "Ginevra Antonina VOLANTE": "Ginevra Antonina Volante",
      "Karina SHEINA": "Karina Sheina",
-     "Mia KASPAROVICA": "Mia Kasparovica",
-     "Summer WIJKHUIZEN": "Summer Wijkhuizen",
-     "Natalia RUNCANU": "Natalia Runcanu",
-     "Polina BYKOVA": "Polina Bykova",
-     "Mayuka SUEESS": "Mayuka Sueess",
+     "Varvara ABRAMKINA": "Varvara Abramkina",
      "Leandra TZIMPOUKAKIS": "Leandra Tzimpoukakis",
-     "Hedda HEDSTROM": "Hedda Hedstrom",
-     "Evgeniia NIKOLAEVA": "Evgeniia Nikolaeva",
+     "Mayuka SUEESS": "Mayuka Sueess",
      "Jiaying Ellyse JOHNSON": "Jiaying Ellyse Johnson",
-     "Anissa MAMAEV": "Anissa Mamaev"
+     "Amaliia NASYBULLINA": "Амалия Насыбуллина"
     },
     "basis": null
    },
@@ -27480,7 +27723,7 @@
    "seg": "КП",
    "title": "Гран-при России «Рапсодия льда» — мужчины КП",
    "start": "2026-10-17T15:15:00+03:00",
-   "end": "2026-10-17T15:02:00+03:00",
+   "end": "2026-10-17T16:36:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -27517,77 +27760,77 @@
     {
      "name": "Семен Соловьев",
      "nation": "СПБ",
-     "time": "13:43",
+     "time": "15:27",
      "no": 1,
      "warmup": 1
     },
     {
      "name": "Константин Сафонов",
      "nation": "ТУЛ",
-     "time": "13:56",
+     "time": "15:38",
      "no": 3,
      "warmup": 1
     },
     {
      "name": "Даниил Самсонов",
      "nation": "МОС",
-     "time": "14:03",
+     "time": "15:43",
      "no": 4,
      "warmup": 1
     },
     {
      "name": "Вячеслав Проценко",
      "nation": "СПБ",
-     "time": "14:09",
+     "time": "15:49",
      "no": 5,
      "warmup": 1
     },
     {
      "name": "Юрий Сидоров",
      "nation": "ОРЕ",
-     "time": "14:16",
+     "time": "15:55",
      "no": 2,
      "warmup": 1
     },
     {
      "name": "Артём Ковалёв",
      "nation": "МОБ",
-     "time": "14:22",
+     "time": "16:01",
      "no": 6,
      "warmup": 2
     },
     {
      "name": "Иван Конихин",
      "nation": "МОС",
-     "time": "14:29",
+     "time": "16:07",
      "no": 7,
      "warmup": 2
     },
     {
      "name": "Роман Савосин",
      "nation": "МОС",
-     "time": "14:35",
+     "time": "16:12",
      "no": 8,
      "warmup": 2
     },
     {
      "name": "Матвей Ветлугин",
      "nation": "СПБ",
-     "time": "14:42",
+     "time": "16:18",
      "no": 9,
      "warmup": 2
     },
     {
      "name": "Андрей Мозалёв",
      "nation": "МОС",
-     "time": "14:48",
+     "time": "16:23",
      "no": 10,
      "warmup": 2
     },
     {
      "name": "Евгений Семененко",
      "nation": "СПБ",
-     "time": "14:55",
+     "time": "16:29",
      "no": 11,
      "warmup": 2
     }
@@ -29137,7 +29380,7 @@
     "idx": "https://bisresults.co.uk/permits/2610bbsolo/index.htm",
     "seg": "https://bisresults.co.uk/permits/2610bbsolo/SEG007.htm",
     "cat": "https://bisresults.co.uk/permits/2610bbsolo/CAT005RS.htm",
-    "first": null,
+    "first": "https://bisresults.co.uk/permits/2610bbsolo/SEG001.htm",
     "names": {
      "Claire BOMPAIN": "Claire Bompain",
      "Alice NICO": "Alice Nico",
@@ -29266,7 +29509,7 @@
     "idx": "https://bisresults.co.uk/permits/2610bbsolo/index.htm",
     "seg": "https://bisresults.co.uk/permits/2610bbsolo/SEG013.htm",
     "cat": "https://bisresults.co.uk/permits/2610bbsolo/CAT004RS.htm",
-    "first": null,
+    "first": "https://bisresults.co.uk/permits/2610bbsolo/SEG001.htm",
     "names": {
      "Emma GARCIA BALADE": "Emma Garcia Balade",
      "Elsie BLAKE HUGHES": "Elsie Blake Hughes",
@@ -29369,7 +29612,7 @@
     "idx": "https://bisresults.co.uk/permits/2610bbsolo/index.htm",
     "seg": "https://bisresults.co.uk/permits/2610bbsolo/SEG010.htm",
     "cat": "https://bisresults.co.uk/permits/2610bbsolo/CAT003RS.htm",
-    "first": null,
+    "first": "https://bisresults.co.uk/permits/2610bbsolo/SEG001.htm",
     "names": {
      "Nour ALAMI-CHAWFI": "Nour Alami-chawfi",
      "Julie BOURDENX": "Julie Bourdenx",
@@ -30041,7 +30284,9 @@
    "end": "2026-10-23T20:15:00+03:00",
    "venue": "Angers, France",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Celina Fradji / Jean-Hans Fourneaux",
@@ -30056,7 +30301,13 @@
     "Sofia Val / Asaf Kazimov"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
-   "desc": "Начало: 19:00 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 19:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
@@ -30113,7 +30364,9 @@
    "end": "2026-10-23T22:20:00+03:00",
    "venue": "Angers, France",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Ami Nakai",
@@ -30130,7 +30383,13 @@
     "Yuseong Kim"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
-   "desc": "Начало: 20:50 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 20:50 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Ami Nakai",
@@ -30195,7 +30454,9 @@
    "end": "2026-10-24T15:00:00+03:00",
    "venue": "Angers, France",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Adam Hagara",
@@ -30212,7 +30473,13 @@
     "Sota Yamamoto"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
-   "desc": "Начало: 13:30 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 13:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Adam Hagara",
@@ -30277,7 +30544,9 @@
    "end": "2026-10-24T16:45:00+03:00",
    "venue": "Angers, France",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Celina Fradji / Jean-Hans Fourneaux",
@@ -30292,7 +30561,13 @@
     "Sofia Val / Asaf Kazimov"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
-   "desc": "Начало: 15:20 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 15:20 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
@@ -30349,7 +30624,9 @@
    "end": "2026-10-24T20:10:00+03:00",
    "venue": "Angers, France",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
@@ -30367,7 +30644,13 @@
     "Александра Бойкова / Дмитрий Козловский"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
-   "desc": "Россияне:\n• Александра Бойкова / Дмитрий Козловский\n\nНачало: 19:00 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Россияне:\n• Александра Бойкова / Дмитрий Козловский\n\nНачало: 19:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anastasiia Metelkina / Luka Berulava",
@@ -30416,7 +30699,9 @@
    "end": "2026-10-24T22:15:00+03:00",
    "venue": "Angers, France",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Ami Nakai",
@@ -30433,7 +30718,13 @@
     "Yuseong Kim"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
-   "desc": "Начало: 20:30 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 20:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Ami Nakai",
@@ -30498,7 +30789,9 @@
    "end": "2026-10-25T14:50:00+03:00",
    "venue": "Angers, France",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
@@ -30516,7 +30809,13 @@
     "Александра Бойкова / Дмитрий Козловский"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
-   "desc": "Россияне:\n• Александра Бойкова / Дмитрий Козловский\n\nНачало: 13:30 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Россияне:\n• Александра Бойкова / Дмитрий Козловский\n\nНачало: 13:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anastasiia Metelkina / Luka Berulava",
@@ -30565,7 +30864,9 @@
    "end": "2026-10-25T16:55:00+03:00",
    "venue": "Angers, France",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Adam Hagara",
@@ -30582,7 +30883,13 @@
     "Sota Yamamoto"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
-   "desc": "Начало: 15:10 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 15:10 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Adam Hagara",
@@ -30647,7 +30954,9 @@
    "end": "2026-10-31T05:30:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Andrew Torgashev",
@@ -30664,7 +30973,13 @@
     "Wesley Chiu"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
-   "desc": "Начало: 04:00 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 04:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Andrew Torgashev",
@@ -30729,7 +31044,9 @@
    "end": "2026-10-31T07:25:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Alisa Efimova / Misha Mitrofanov",
@@ -30742,7 +31059,13 @@
     "Sofiia Holichenko / Artem Darenskyi"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
-   "desc": "Начало: 06:15 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 06:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Alisa Efimova / Misha Mitrofanov",
@@ -30791,7 +31114,9 @@
    "end": "2026-11-01T00:00:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Anna Pezzetta",
@@ -30808,7 +31133,13 @@
     "Yujae Kim"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
-   "desc": "Начало: 22:30 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 22:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anna Pezzetta",
@@ -30873,7 +31204,9 @@
    "end": "2026-11-01T01:35:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Alyssa Robinson / Jacob Portz",
@@ -30888,7 +31221,13 @@
     "Oona Brown / Gage Brown"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
-   "desc": "Начало: 00:20 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 00:20 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Alyssa Robinson / Jacob Portz",
@@ -30945,7 +31284,9 @@
    "end": "2026-11-01T04:25:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Andrew Torgashev",
@@ -30962,7 +31303,13 @@
     "Wesley Chiu"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
-   "desc": "Начало: 02:40 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 02:40 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Andrew Torgashev",
@@ -31027,7 +31374,9 @@
    "end": "2026-11-01T06:05:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Alisa Efimova / Misha Mitrofanov",
@@ -31040,7 +31389,13 @@
     "Sofiia Holichenko / Artem Darenskyi"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
-   "desc": "Начало: 04:45 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 04:45 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Alisa Efimova / Misha Mitrofanov",
@@ -31089,7 +31444,9 @@
    "end": "2026-11-02T01:45:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Anna Pezzetta",
@@ -31106,7 +31463,13 @@
     "Yujae Kim"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
-   "desc": "Начало: 00:00 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 00:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anna Pezzetta",
@@ -31171,7 +31534,9 @@
    "end": "2026-11-02T03:40:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Alyssa Robinson / Jacob Portz",
@@ -31186,7 +31551,13 @@
     "Oona Brown / Gage Brown"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
-   "desc": "Начало: 02:15 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 02:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Alyssa Robinson / Jacob Portz",
@@ -31243,7 +31614,9 @@
    "end": "2026-11-06T11:00:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Diana Davis / Gleb Smolkin",
@@ -31258,7 +31631,13 @@
     "Zixi Xiao / Linghao He"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-cup-of-china-2026/",
-   "desc": "Начало: 09:45 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 09:45 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Diana Davis / Gleb Smolkin",
@@ -31315,7 +31694,9 @@
    "end": "2026-11-06T12:55:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [
     {
      "name": "Александра Трусова",
@@ -31337,7 +31718,13 @@
     "Александра Трусова"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-cup-of-china-2026/",
-   "desc": "Россияне:\n• Александра Трусова\n\nНачало: 11:25 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Россияне:\n• Александра Трусова\n\nНачало: 11:25 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Alina Bonillo",
@@ -31402,7 +31789,9 @@
    "end": "2026-11-06T15:10:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Anastasiia Metelkina / Luka Berulava",
@@ -31415,7 +31804,13 @@
     "Yuna Nagaoka / Sumitada Moriguchi"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-cup-of-china-2026/",
-   "desc": "Начало: 14:00 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 14:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anastasiia Metelkina / Luka Berulava",
@@ -31464,7 +31859,9 @@
    "end": "2026-11-06T16:55:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [
     {
      "name": "Владислав Дикиджи",
@@ -31490,7 +31887,13 @@
     "Евгений Семененко"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-cup-of-china-2026/",
-   "desc": "Россияне:\n• Владислав Дикиджи\n• Евгений Семененко\n\nНачало: 15:25 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Россияне:\n• Владислав Дикиджи\n• Евгений Семененко\n\nНачало: 15:25 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Jacob Sanchez",
@@ -31555,7 +31958,9 @@
    "end": "2026-11-07T10:55:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Diana Davis / Gleb Smolkin",
@@ -31570,7 +31975,13 @@
     "Zixi Xiao / Linghao He"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-cup-of-china-2026/",
-   "desc": "Начало: 09:30 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 09:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Diana Davis / Gleb Smolkin",
@@ -31627,7 +32038,9 @@
    "end": "2026-11-07T13:15:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [
     {
      "name": "Александра Трусова",
@@ -31649,7 +32062,13 @@
     "Александра Трусова"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-cup-of-china-2026/",
-   "desc": "Россияне:\n• Александра Трусова\n\nНачало: 11:30 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Россияне:\n• Александра Трусова\n\nНачало: 11:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Alina Bonillo",
@@ -31714,7 +32133,9 @@
    "end": "2026-11-07T15:00:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Anastasiia Metelkina / Luka Berulava",
@@ -31727,7 +32148,13 @@
     "Yuna Nagaoka / Sumitada Moriguchi"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-cup-of-china-2026/",
-   "desc": "Начало: 13:40 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 13:40 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anastasiia Metelkina / Luka Berulava",
@@ -31776,7 +32203,9 @@
    "end": "2026-11-08T09:45:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [
     {
      "name": "Владислав Дикиджи",
@@ -31802,7 +32231,13 @@
     "Евгений Семененко"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-cup-of-china-2026/",
-   "desc": "Россияне:\n• Владислав Дикиджи\n• Евгений Семененко\n\nНачало: 08:00 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Россияне:\n• Владислав Дикиджи\n• Евгений Семененко\n\nНачало: 08:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Jacob Sanchez",
@@ -31867,7 +32302,9 @@
    "end": "2026-11-14T07:33:00+03:00",
    "venue": "Everett, USA",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Aleksa Rakic",
@@ -31884,7 +32321,13 @@
     "Tamir Kuperman"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
-   "desc": "Начало: 06:03 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 06:03 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Aleksa Rakic",
@@ -31949,7 +32392,9 @@
    "end": "2026-11-14T09:00:00+03:00",
    "venue": "Everett, USA",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Alisa Efimova / Misha Mitrofanov",
@@ -31962,7 +32407,13 @@
     "Sofiia Holichenko / Artem Darenskyi"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
-   "desc": "Начало: 07:50 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 07:50 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Alisa Efimova / Misha Mitrofanov",
@@ -32011,7 +32462,9 @@
    "end": "2026-11-15T02:18:00+03:00",
    "venue": "Everett, USA",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Emilea Zingas / Vadym Kolesnik",
@@ -32026,7 +32479,13 @@
     "Sofia Val / Asaf Kazimov"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
-   "desc": "Начало: 01:03 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 01:03 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Emilea Zingas / Vadym Kolesnik",
@@ -32083,7 +32542,9 @@
    "end": "2026-11-15T04:07:00+03:00",
    "venue": "Everett, USA",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Ahsun Yun",
@@ -32099,7 +32560,13 @@
     "Yujae Kim"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
-   "desc": "Начало: 02:42 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 02:42 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Ahsun Yun",
@@ -32160,7 +32627,9 @@
    "end": "2026-11-15T07:10:00+03:00",
    "venue": "Everett, USA",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Aleksa Rakic",
@@ -32177,7 +32646,13 @@
     "Tamir Kuperman"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
-   "desc": "Начало: 05:25 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 05:25 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Aleksa Rakic",
@@ -32242,7 +32717,9 @@
    "end": "2026-11-15T08:54:00+03:00",
    "venue": "Everett, USA",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Alisa Efimova / Misha Mitrofanov",
@@ -32255,7 +32732,13 @@
     "Sofiia Holichenko / Artem Darenskyi"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
-   "desc": "Начало: 07:34 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 07:34 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Alisa Efimova / Misha Mitrofanov",
@@ -32304,7 +32787,9 @@
    "end": "2026-11-15T23:35:00+03:00",
    "venue": "Everett, USA",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Emilea Zingas / Vadym Kolesnik",
@@ -32319,7 +32804,13 @@
     "Sofia Val / Asaf Kazimov"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
-   "desc": "Начало: 22:10 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 22:10 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Emilea Zingas / Vadym Kolesnik",
@@ -32376,7 +32867,9 @@
    "end": "2026-11-16T01:40:00+03:00",
    "venue": "Everett, USA",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Ahsun Yun",
@@ -32392,7 +32885,13 @@
     "Yujae Kim"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
-   "desc": "Начало: 00:05 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 00:05 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Ahsun Yun",
@@ -32453,7 +32952,9 @@
    "end": "2026-11-20T16:10:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
@@ -32475,7 +32976,13 @@
     "Екатерина Чикмарёва / Матвей Янченков"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
-   "desc": "Россияне:\n• Александра Бойкова / Дмитрий Козловский\n• Екатерина Чикмарёва / Матвей Янченков\n\nНачало: 15:00 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Россияне:\n• Александра Бойкова / Дмитрий Козловский\n• Екатерина Чикмарёва / Матвей Янченков\n\nНачало: 15:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Annika Hocke / Robert Kunkel",
@@ -32524,7 +33031,9 @@
    "end": "2026-11-20T18:00:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Anna Pezzetta",
@@ -32541,7 +33050,13 @@
     "Yuseong Kim"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
-   "desc": "Начало: 16:30 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 16:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anna Pezzetta",
@@ -32606,7 +33121,9 @@
    "end": "2026-11-20T19:55:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Adam Siao Him Fa",
@@ -32623,7 +33140,13 @@
     "Yudong Chen"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
-   "desc": "Начало: 18:25 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 18:25 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Adam Siao Him Fa",
@@ -32688,7 +33211,9 @@
    "end": "2026-11-20T21:35:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Caroline Green / Michael Parsons",
@@ -32703,7 +33228,13 @@
     "Yuka Orihara / Juho Pirinen"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
-   "desc": "Начало: 20:20 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 20:20 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Caroline Green / Michael Parsons",
@@ -32760,7 +33291,9 @@
    "end": "2026-11-21T14:35:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
@@ -32782,7 +33315,13 @@
     "Екатерина Чикмарёва / Матвей Янченков"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
-   "desc": "Россияне:\n• Александра Бойкова / Дмитрий Козловский\n• Екатерина Чикмарёва / Матвей Янченков\n\nНачало: 13:15 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Россияне:\n• Александра Бойкова / Дмитрий Козловский\n• Екатерина Чикмарёва / Матвей Янченков\n\nНачало: 13:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Annika Hocke / Robert Kunkel",
@@ -32831,7 +33370,9 @@
    "end": "2026-11-21T16:45:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Anna Pezzetta",
@@ -32848,7 +33389,13 @@
     "Yuseong Kim"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
-   "desc": "Начало: 15:00 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 15:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anna Pezzetta",
@@ -32913,7 +33460,9 @@
    "end": "2026-11-21T20:00:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Adam Siao Him Fa",
@@ -32930,7 +33479,13 @@
     "Yudong Chen"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
-   "desc": "Начало: 18:15 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 18:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Adam Siao Him Fa",
@@ -32995,7 +33550,9 @@
    "end": "2026-11-21T21:50:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Caroline Green / Michael Parsons",
@@ -33010,7 +33567,13 @@
     "Yuka Orihara / Juho Pirinen"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
-   "desc": "Начало: 20:25 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 20:25 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Caroline Green / Michael Parsons",
@@ -33067,7 +33630,9 @@
    "end": "2026-11-27T07:50:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Christina Carreira / Anthony Ponomarenko",
@@ -33082,7 +33647,13 @@
     "Yuka Orihara / Juho Pirinen"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
-   "desc": "Начало: 06:35 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 06:35 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Christina Carreira / Anthony Ponomarenko",
@@ -33139,7 +33710,9 @@
    "end": "2026-11-27T09:45:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Anna Valesi / Martin Bidar",
@@ -33152,7 +33725,13 @@
     "Yuna Nagaoka / Sumitada Moriguchi"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
-   "desc": "Начало: 08:35 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 08:35 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anna Valesi / Martin Bidar",
@@ -33201,7 +33780,9 @@
    "end": "2026-11-27T11:45:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Amber Glenn",
@@ -33218,7 +33799,13 @@
     "Yuna Aoki"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
-   "desc": "Начало: 10:15 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 10:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Amber Glenn",
@@ -33283,7 +33870,9 @@
    "end": "2026-11-27T14:30:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [
     {
      "name": "Владислав Дикиджи",
@@ -33305,7 +33894,13 @@
     "Владислав Дикиджи"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
-   "desc": "Россияне:\n• Владислав Дикиджи\n\nНачало: 13:00 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Россияне:\n• Владислав Дикиджи\n\nНачало: 13:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Adam Hagara",
@@ -33370,7 +33965,9 @@
    "end": "2026-11-28T07:25:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Christina Carreira / Anthony Ponomarenko",
@@ -33385,7 +33982,13 @@
     "Yuka Orihara / Juho Pirinen"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
-   "desc": "Начало: 06:00 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 06:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Christina Carreira / Anthony Ponomarenko",
@@ -33442,7 +34045,9 @@
    "end": "2026-11-28T09:20:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Anna Valesi / Martin Bidar",
@@ -33455,7 +34060,13 @@
     "Yuna Nagaoka / Sumitada Moriguchi"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
-   "desc": "Начало: 08:00 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 08:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anna Valesi / Martin Bidar",
@@ -33504,7 +34115,9 @@
    "end": "2026-11-28T12:15:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [],
    "athletes": [
     "Amber Glenn",
@@ -33521,7 +34134,13 @@
     "Yuna Aoki"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
-   "desc": "Начало: 10:30 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Начало: 10:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Amber Glenn",
@@ -33586,7 +34205,9 @@
    "end": "2026-11-28T15:15:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
-   "broadcast": [],
+   "broadcast": [
+    "Okko"
+   ],
    "ours": [
     {
      "name": "Владислав Дикиджи",
@@ -33608,7 +34229,13 @@
     "Владислав Дикиджи"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
-   "desc": "Россияне:\n• Владислав Дикиджи\n\nНачало: 13:30 МСК",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    }
+   ],
+   "desc": "Россияне:\n• Владислав Дикиджи\n\nНачало: 13:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Adam Hagara",
@@ -33886,8 +34513,20 @@
    "ours": [],
    "ours_nation": {},
    "athletes": [],
-   "broadcast": [],
-   "watch": []
+   "broadcast": [
+    "Okko",
+    "YouTube ISU"
+   ],
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    },
+    {
+     "name": "YouTube ISU",
+     "url": "https://www.youtube.com/@SkatingISU/live"
+    }
+   ]
   },
   {
    "tid": "fsr:mordovskie-uzory-2026-12-11",
@@ -52557,7 +53196,7 @@
   "Stefania Gladki": "photos/f32024f356c4ae1e.jpg",
   "Матвей Ветлугин": "photos/afd912e6f85aed98.jpg",
   "Mihhail Selevko": "photos/8e2dfacc10d65738.jpg",
-  "Corentin Spinar": "photos/2f03bcd93f4ba53f.jpg",
+  "Corentin Spinar": "photos/fe301e3277dd95f2.jpg",
   "Kirk Haugeto": "photos/9876788fc8b32822.jpg",
   "Evgeniia Lopareva": "photos/13f549fdf12f58a4.jpg",
   "Geoffrey Brissaud": "photos/9a6aa371a2a098c5.jpg",
@@ -52741,9 +53380,8 @@
   "Gion Schmid": "photos/51a8b88144082c27.jpg",
   "Амалия Насыбуллина": "photos/4c79149bbb1b3a90.jpg",
   "Jiaying Ellyse Johnson": "photos/dd1aff4e1e36450d.jpg",
-  "Nikita Sheiko": "photos/05ffa7c6449e95fd.jpg",
-  "Nico Steffen": "photos/574fc1115135ba31.jpg",
-  "Pablo Garcia": "photos/9c16a5ed24aec043.jpg",
+  "Daniel Grassl": "photos/7a0d917b653c216e.jpg",
+  "Arlet Levandi": "photos/54ecdd7f8d079acd.jpg",
   "Милана Кузьмина": "photos/782e441e3698299c.jpg",
   "Дмитрий Студеникин": "photos/c312621d8532ec81.jpg",
   "Василиса Григорьева": "photos/e04df5486381c84e.jpg",
@@ -52953,7 +53591,6 @@
   "Arina Kalugina": "photos/b853a8b665078ff5.jpg",
   "Arina Ushakova": "photos/821f263c3bae2dd9.jpg",
   "Arina Vorobeva": "photos/3910f9a6b7655462.jpg",
-  "Arlet Levandi": "photos/54ecdd7f8d079acd.jpg",
   "Arseni MARKOV": "photos/122a849cb9043542.jpg",
   "Artem Borodulin": "photos/1a3d5c790fd3d0c8.jpg",
   "Artem Grigoriev": "photos/01aed3f0d2f06b2d.jpg",
@@ -53040,7 +53677,7 @@
   "Chiara Minighini": "photos/8d9b472b506ab836.jpg",
   "Chilly Ann Sintana Wongso": "photos/d960655201bf441f.jpg",
   "Chiranat Chinprapakron": "photos/464ea4f6fac45fc9.jpg",
-  "Chiu Hei Cheung": "photos/c322ec851e1c81a0.jpg",
+  "Chiu Hei Cheung": "photos/2c694380771d89e8.jpg",
   "Chloe Desiree Leung": "photos/f0a06d04dc1400b4.jpg",
   "Chloe Levine": "photos/71c1261dddf861ef.jpg",
   "Chloe Xin Yao Ng": "photos/1d2a6d8d564f0677.jpg",
@@ -53057,7 +53694,6 @@
   "Corey Circelli": "photos/2b77b9435bf0fd6b.jpg",
   "Daiwei Dai": "photos/d213829a4bd6d747.jpg",
   "Dana-Syrine Crausaz": "photos/95d5ed9e81232227.jpg",
-  "Daniel Grassl": "photos/7a0d917b653c216e.jpg",
   "Daniel Koppel": "photos/a317034fe8c22b43.jpg",
   "Daniel Korabelnik": "photos/e472b0898a778930.jpg",
   "Daniel Martynov": "photos/4809f5a3e34148e1.jpg",
@@ -53667,7 +54303,7 @@
   "Michelangelo Caprano": "photos/ab982d77aced84d2.jpg",
   "Michelle Deych": "photos/37c6537bb0d47c8e.jpg",
   "Ryan Hu": "photos/a24e043dfcc1cf6c.jpg",
-  "Michelle Dicicco": "photos/2014396dce083f70.jpg",
+  "Michelle Dicicco": "photos/9daf48f2da126361.jpg",
   "Michelle Edgina Axille": "photos/761b0807f691e92e.jpg",
   "Mikalai Kamianchuk": "photos/cf7fa6e540c18840.jpg",
   "Mikayel Salazaryan": "photos/484d8d09c709b96c.jpg",
@@ -53729,6 +54365,7 @@
   "Nelly Elisa Hemcke": "photos/26ddcdc6e4fb8bf1.jpg",
   "Niccolo Boeris": "photos/fbe8dbe5bd1ed8af.jpg",
   "Nicholas Brooks": "photos/34ed4fd996b24900.jpg",
+  "Nico Steffen": "photos/574fc1115135ba31.jpg",
   "Nicole De Rosa": "photos/8d7eb6af99a4a2ab.jpg",
   "Nika OSIPOVA": "photos/1273f386c7324445.jpg",
   "Niki Wories": "photos/893b31876526ea02.jpg",
@@ -53738,6 +54375,7 @@
   "Nikita Krivosheyev": "photos/0d1c2d315b38b6c6.jpg",
   "Nikita LYSAK": "photos/22240c80dec290ee.jpg",
   "Nikita RAKHMANIN": "photos/3aa9796d0bad8b7b.jpg",
+  "Nikita Sheiko": "photos/05ffa7c6449e95fd.jpg",
   "Nikita Starostin": "photos/31a5b840b07aead9.jpg",
   "Nikita VOLODIN": "photos/3c2976cf377f2523.jpg",
   "Nikol Gosviani": "photos/774b0c06ed234f71.jpg",
@@ -53784,6 +54422,7 @@
   "Gage Brown": "photos/6e33b2322d37516a.jpg",
   "Oona Ounasvuori": "photos/6876a97a62ef1011.jpg",
   "Oscar Oliver": "photos/c1ccade99ac76db0.jpg",
+  "Pablo Garcia": "photos/9c16a5ed24aec043.jpg",
   "Paola Jurisic": "photos/a9a3b72b393ca55a.jpg",
   "Paolo Borromeo": "photos/c03edb6d1918d98e.jpg",
   "Pasuree Marcella Tatirat": "photos/80a1ab545a159c29.jpg",
