@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16T17:42:22+03:00",
- "checked": "2026-10-16T17:42:22+03:00",
+ "checked": "2026-10-16T15:03:04.248665+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26473,14 +26473,15 @@
     "Милана Кузьмина / Дмитрий Студеникин"
    ],
    "src": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
-   "desc": "Россияне:\n• Милана Кузьмина / Дмитрий Студеникин — 19:04\n• Василиса Григорьева / Евгений Артющенко — 20:48\n\nНачало: 17:45 МСК",
+   "desc": "Промежуточные итоги:\n1. Gina Zehnder / Beda Leon Sieber — 55.30\n\nРоссияне:\n• Милана Кузьмина / Дмитрий Студеникин — 19:04\n• Василиса Григорьева / Евгений Артющенко — 20:48\n\nНачало: 17:45 МСК",
    "field": [
     {
      "name": "Gina Zehnder / Beda Leon Sieber",
      "nation": "SUI",
      "time": "17:50",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Chloe Nguyen / Brendan Giang",
@@ -26661,7 +26662,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": "isu_isu-cs-budapest-trophy.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Gina Zehnder / Beda Leon Sieber",
+     "nation": "SUI",
+     "points": "55.30"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-junior-rt",
