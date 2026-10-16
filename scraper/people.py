@@ -294,32 +294,61 @@ _SPARQL = """SELECT ?en ?ru ?img WHERE {
   OPTIONAL { ?p rdfs:label ?en FILTER(LANG(?en) = "en") }
   OPTIONAL { ?p rdfs:label ?ru FILTER(LANG(?ru) = "ru") }
 }"""
+# Россияне и белорусы-фигуристы с фото, но без номера ISU в Викиданных (номер вносят не у всех).
+# Без номера ISU «фигурист» там бывает и певицей, и тренером, поэтому только с известной датой
+# рождения и не старше 1994 года: действующие спортсмены
+_SPARQL_OURS = """SELECT ?en ?ru ?img WHERE {
+  VALUES ?c { wd:Q159 wd:Q184 }
+  ?p wdt:P106 wd:Q13219587 ; wdt:P27 ?c ; wdt:P18 ?img ; wdt:P569 ?dob .
+  FILTER(YEAR(?dob) >= 1994)
+  OPTIONAL { ?p rdfs:label ?en FILTER(LANG(?en) = "en") }
+  OPTIONAL { ?p rdfs:label ?ru FILTER(LANG(?ru) = "ru") }
+}"""
 
 
-def wikidata_photos(log=print):
-    """[(имя, фото)] фигуристов с номером ISU и фотографией на Викискладе."""
-    from urllib.parse import quote, unquote
+def wikidata_label(label, lang):
+    """Подпись из Викиданных → «Имя Фамилия». «Ксения Олеговна Макарова» — без отчества, как в
+    протоколах; «Павлова, Наталья Евгеньевна» — фамилия впереди через запятую."""
+    label = label.strip()
+    if "," in label:
+        fam, _, rest = label.partition(",")
+        w = rest.split()
+        label = f"{w[0]} {fam.strip()}" if w else label
+    w = label.split()
+    if lang == "ru" and len(w) == 3 and re.search(r"(вна|вич|ична|ич)$", w[1]):
+        label = f"{w[0]} {w[2]}"
+    return label
+
+
+def _wikidata_rows(query, log):
+    from urllib.parse import quote
     try:
-        raw = net.fetch(WIKIDATA + "?format=json&query=" + quote(_SPARQL), timeout=90,
+        raw = net.fetch(WIKIDATA + "?format=json&query=" + quote(query), timeout=90,
                         headers={"Accept": "application/sparql-results+json"})
-        rows = json.loads(raw)["results"]["bindings"]
+        return json.loads(raw)["results"]["bindings"]
     except (net.FetchError, ValueError, KeyError) as e:
         log("  ! Викиданные:", e)
         return []
+
+
+def wikidata_photos(log=print):
+    """[(имя, фото)] фигуристов с номером ISU и фотографией на Викискладе, а также наших без номера."""
+    from urllib.parse import quote, unquote
+    rows = _wikidata_rows(_SPARQL, log)
+    ours = _wikidata_rows(_SPARQL_OURS, log)
     out = []
-    for r in rows:
+    seen = set()
+    for r in rows + ours:
         img = r["img"]["value"]
         file = unquote(img.rsplit("/", 1)[-1])
         url = "https://commons.wikimedia.org/wiki/Special:FilePath/" + quote(file) + "?width=500"
         for lang in ("en", "ru"):
             if lang in r:
-                label = r[lang]["value"]
-                # «Ксения Олеговна Макарова» — без отчества, как в протоколах
-                w = label.split()
-                if lang == "ru" and len(w) == 3 and re.search(r"(вна|вич|ична|ич)$", w[1]):
-                    label = f"{w[0]} {w[2]}"
-                out.append((label, url))
-    log(f"  фото из Викиданных: {len(rows)}")
+                label = wikidata_label(r[lang]["value"], lang)
+                if (label, url) not in seen:
+                    seen.add((label, url))
+                    out.append((label, url))
+    log(f"  фото из Викиданных: {len(rows)} с номером ISU, {len(ours)} наших")
     return out
 
 
@@ -378,6 +407,13 @@ def build(names, season_start, log=print):
     _save(cache)
 
     photos = []
+    try:
+        from . import fsr
+        for sur, giv, img in fsr.team():
+            if img:
+                photos.append((nm.pretty_ru(f"{giv} {sur}"), img, 0))
+    except net.FetchError as e:
+        log("  ! фото сборной ФФККР:", e)
     for raw, url in isu_photos(log):
         photos.append((raw, url, 2))
     for raw, url in wikidata_photos(log):

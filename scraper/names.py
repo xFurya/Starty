@@ -10,6 +10,7 @@
 import json
 import os
 import re
+import unicodedata
 
 ICAO = {
     "а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "ё": "e", "ж": "zh",
@@ -26,14 +27,67 @@ def ru_to_lat(s):
 
 def norm_lat(s):
     """Свести разные латинские написания к одному ключу."""
-    s = s.lower()
-    s = re.sub(r"[^a-z]", "", s)
+    s = unicodedata.normalize("NFKD", s.lower().replace("ł", "l").replace("đ", "d"))
+    s = re.sub(r"[^a-z]", "", s)  # «Jakušina» → «jakusina»: знаки над буквами отбрасываем, а не буквы
     for a, b in (("x", "ks"), ("shch", "sch"), ("kh", "h"), ("ye", "e"), ("yo", "e"),
                  ("iy", "i"), ("yi", "i"), ("y", "i"), ("j", "i"), ("w", "v"), ("ph", "f"),
-                 ("ie", "e")):
+                 ("ie", "e"), ("tch", "ch"), ("ts", "c"), ("tc", "c"), ("tz", "c")):
         s = s.replace(a, b)
     s = re.sub(r"(.)\1+", r"\1", s)  # двойные буквы
     return s
+
+
+# Вторая, грубая свёртка — только чтобы узнать одного человека в разных написаниях
+# (Rubtsova / Rubcova / Rubtcova, Skoptsova / Skoptcova, Beklemisheva / Beklemishcheva).
+_FOLD = (("shch", "s"), ("sch", "s"), ("shh", "s"), ("sh", "s"), ("zh", "z"), ("kh", "h"), ("ch", "c"),
+         ("ts", "c"), ("tc", "c"), ("tz", "c"), ("ya", "a"), ("ia", "a"), ("ja", "a"), ("yu", "u"),
+         ("iu", "u"), ("ju", "u"), ("ks", "x"), ("ie", "e"), ("ee", "e"))
+
+
+def fold(s):
+    s = norm_lat(s)
+    for a, b in _FOLD:
+        s = s.replace(a, b)
+    return re.sub(r"(.)\1+", r"\1", s)
+
+
+def _parts(name):
+    """(фамилия, имя) в грубой свёртке; None, если не разобрать."""
+    name = name.replace("ё", "е").replace("Ё", "Е")
+    if is_cyr(name):
+        w = name.split()
+        if len(w) < 2:
+            return None
+        fam, giv = w[-1], " ".join(w[:-1])
+        return fold(ru_to_lat(fam)), fold(ru_to_lat(giv))
+    if "," in name:  # «Павлова, Наталья Евгеньевна» бывает и латиницей: «Kulikova, Svetlana»
+        fam, _, giv = name.partition(",")
+        giv = giv.split()[0] if giv.split() else ""
+    else:
+        giv, fam = split_given_family(name)
+        if not fam:
+            w = name.split()
+            if len(w) < 2:
+                return None
+            giv, fam = " ".join(w[:-1]), w[-1]
+    if not fam or not giv:
+        return None
+    return fold(fam), fold(giv)
+
+
+def near(a, b):
+    """Похоже ли, что это один человек: одно и то же имя и фамилия с точностью до одной буквы
+    (Чернобавская / Чернявская, Олова / Орлова — разные люди). Для имён из надёжных источников."""
+    pa, pb = _parts(a), _parts(b)
+    if not pa or not pb:
+        return False
+    (fa, ga), (fb, gb) = pa, pb
+    if ga[:1] != gb[:1] or fa[:1] != fb[:1]:
+        return False
+    if min(len(fa), len(fb)) < 5 or _lev(ga, gb) > 1 or _lev(fa, fb) > 1:
+        return False
+    # Иванов / Иванова: разный пол — разные люди
+    return not (fa != fb and {fa[-1:], fb[-1:]} == {"a", "v"} or fa[:-1] == fb or fb[:-1] == fa)
 
 
 def is_cyr(s):
@@ -122,7 +176,10 @@ class Names:
         if not hit and len(kf) >= 5:
             # иностранные фамилии наших (Cirisano ↔ Чиризано): имя совпадает точно,
             # фамилия — с точностью до двух букв, и кандидат ровно один
-            cands = [v for (f, g), v in self.ru.items() if g == kg and _lev(f, kf) <= 2]
+            # (первая буква та же и короткие фамилии — на одну букву: Orlova ≠ Фролова)
+            cands = [v for (f, g), v in self.ru.items()
+                     if g == kg and f[:1] == kf[:1] and _lev(f, kf) <= (2 if len(kf) >= 8 else 1)
+                     and f + "a" != kf and kf + "a" != f]  # Иванов ≠ Иванова: другой пол — другой человек
             if len(cands) == 1:
                 hit = cands[0]
         if hit:
