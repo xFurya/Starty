@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-16T15:29:58+03:00",
- "checked": "2026-10-16T12:55:05.640003+00:00",
+ "generated": "2026-10-16T15:45:05+03:00",
+ "checked": "2026-10-16T15:45:05+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26176,7 +26176,7 @@
      "nation": "SUI",
      "no": 1,
      "warmup": 1,
-     "place": 10
+     "place": 9
     },
     {
      "name": "Nikita Sheiko",
@@ -26190,28 +26190,28 @@
      "nation": "ESP",
      "no": 3,
      "warmup": 1,
-     "place": 12
+     "place": 11
     },
     {
      "name": "Matvii Yefymenko",
      "nation": "POL",
      "no": 4,
      "warmup": 1,
-     "place": 13
+     "place": 12
     },
     {
      "name": "Aleksei Vlasenko",
      "nation": "HUN",
      "no": 5,
      "warmup": 1,
-     "place": 15
+     "place": 14
     },
     {
      "name": "Taira Shinohara",
      "nation": "USA",
      "no": 6,
      "warmup": 2,
-     "place": 7
+     "place": 6
     },
     {
      "name": "Daniel Grassl",
@@ -26225,7 +26225,7 @@
      "nation": "AUS",
      "no": 8,
      "warmup": 2,
-     "place": 14
+     "place": 13
     },
     {
      "name": "Arlet Levandi",
@@ -26246,6 +26246,27 @@
      "nation": "SWE",
      "no": 11,
      "warmup": 3,
+     "place": 7
+    },
+    {
+     "name": "Davide Lewton Brain",
+     "nation": "MON",
+     "no": 12,
+     "warmup": 3,
+     "place": 10
+    },
+    {
+     "name": "Tamir Kuperman",
+     "nation": "ISR",
+     "no": 13,
+     "warmup": 3,
+     "place": 5
+    },
+    {
+     "name": "Nikita Krivosheyev",
+     "nation": "KAZ",
+     "no": 14,
+     "warmup": 3,
      "place": 8
     },
     {
@@ -26255,11 +26276,6 @@
     {
      "name": "David Sedej",
      "nation": "SLO"
-    },
-    {
-     "name": "Davide Lewton Brain",
-     "nation": "MON",
-     "place": 11
     },
     {
      "name": "Fedirs Kuliss",
@@ -26286,11 +26302,6 @@
      "nation": "FIN"
     },
     {
-     "name": "Nikita Krivosheyev",
-     "nation": "KAZ",
-     "place": 9
-    },
-    {
      "name": "Nikita Starostin",
      "nation": "GER",
      "place": 6
@@ -26298,11 +26309,6 @@
     {
      "name": "Patrick Blackwell",
      "nation": "USA"
-    },
-    {
-     "name": "Tamir Kuperman",
-     "nation": "ISR",
-     "place": 5
     },
     {
      "name": "Tobia Oellerer",
@@ -26332,16 +26338,16 @@
      "Genrikh GARTUNG": "Genrikh Gartung",
      "Arlet LEVANDI": "Arlet Levandi",
      "Nikita SHEIKO": "Nikita Sheiko",
+     "Tamir KUPERMAN": "Tamir Kuperman",
      "Taira SHINOHARA": "Taira Shinohara",
      "Elias SAYED": "Elias Sayed",
+     "Nikita KRIVOSHEYEV": "Nikita Krivosheyev",
      "Nico STEFFEN": "Nico Steffen",
+     "Davide LEWTON BRAIN": "Davide Lewton Brain",
      "Pablo GARCIA": "Pablo Garcia",
      "Matvii YEFYMENKO": "Matvii Yefymenko",
      "Douglas GERBER": "Douglas Gerber",
      "Aleksei VLASENKO": "Aleksei Vlasenko",
-     "Davide LEWTON BRAIN": "Davide Lewton Brain",
-     "Tamir KUPERMAN": "Tamir Kuperman",
-     "Nikita KRIVOSHEYEV": "Nikita Krivosheyev",
      "Nikita STAROSTIN": "Nikita Starostin",
      "Vadym NOVIKOV": "Vadym Novikov",
      "Tobia OELLERER": "Tobia Oellerer",
@@ -29294,7 +29300,7 @@
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
-   "id": "gs:blackburn-trophy:dance-senior-pt",
+   "id": "gs:blackburn-trophy:dance-senior-pt-basic-novice-solo-ice-dance",
    "tid": "gs:blackburn-trophy",
    "tournament": "Blackburn Trophy",
    "kind": "dance",
@@ -29403,7 +29409,7 @@
    "proto": "gs_blackburn-trophy.json"
   },
   {
-   "id": "gs:blackburn-trophy:dance-senior-pt",
+   "id": "gs:blackburn-trophy:dance-senior-pt-intermediate-novice-solo-ice-dance",
    "tid": "gs:blackburn-trophy",
    "tournament": "Blackburn Trophy",
    "kind": "dance",
@@ -29536,7 +29542,7 @@
    "proto": "gs_blackburn-trophy.json"
   },
   {
-   "id": "gs:blackburn-trophy:dance-senior-pt",
+   "id": "gs:blackburn-trophy:dance-senior-pt-advanced-novice-solo-ice-dance",
    "tid": "gs:blackburn-trophy",
    "tournament": "Blackburn Trophy",
    "kind": "dance",
@@ -30148,7 +30154,7 @@
    "proto": "gs_blackburn-trophy.json"
   },
   {
-   "id": "gs:blackburn-trophy:dance-senior-pt",
+   "id": "gs:blackburn-trophy:dance-senior-pt-senior-solo-ice-dance",
    "tid": "gs:blackburn-trophy",
    "tournament": "Blackburn Trophy",
    "kind": "dance",
