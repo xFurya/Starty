@@ -315,6 +315,15 @@ def make_segment(*, seg, code, start, end, view, name_of, fetcher, prev=None, lo
                           details=details_for(seg, view, fetcher), officials=officials, log=log)
 
 
+# подписи колонок итога: в файл пишем русские (КП, ПП, РТ, ПТ), латиница из протокола переводится
+TOTAL_COLS = {"SP": "КП", "FS": "ПП", "FD": "ПТ", "RD": "РТ", "PT": "РТ"}
+
+
+def total_col_name(code):
+    """Русская подпись колонки итога; неизвестную оставляем как в протоколе."""
+    return TOTAL_COLS.get(re.sub(r"\s+", "", code or "").upper(), code)
+
+
 def total_record(text, last_final, name_of):
     """Итог вида для файла по странице CATnnnRS.htm."""
     t = st.parse_category_protocol(text)
@@ -329,8 +338,8 @@ def total_record(text, last_final, name_of):
         state = "not_published"
     else:
         state = "final" if t["complete"] and last_final else "provisional"
-    return {"state": state, "complete": t["complete"], "cols": t["cols"], "colsKind": t["colsKind"],
-            "rows": rows, "skipped": t["skipped"]}
+    return {"state": state, "complete": t["complete"], "cols": [total_col_name(c) for c in t["cols"]],
+            "colsKind": t["colsKind"], "rows": rows, "skipped": t["skipped"]}
 
 
 def category_record(kind, level, name, segments, total):

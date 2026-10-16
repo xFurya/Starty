@@ -274,6 +274,15 @@ class TotalRows(unittest.TestCase):
         self.assertFalse(t["complete"])
         self.assertEqual(t["colsKind"], "places")
 
+    def test_total_record_writes_russian_column_names(self):
+        page = ('<table><tr><th>Pl.</th><th>Name</th><th>Nation</th><th>Points</th><th>SP</th><th>FS</th></tr>'
+                '<tr><td>1</td><td>A B</td><td>RUS</td><td>200.00</td><td>3</td><td>1</td></tr></table>')
+        self.assertEqual(P.total_record(page, True, lambda n: n)["cols"], ["КП", "ПП"])
+        page = page.replace("<th>SP</th><th>FS</th>", "<th>RD</th><th>FD</th>")
+        self.assertEqual(P.total_record(page, True, lambda n: n)["cols"], ["РТ", "ПТ"])
+        page = page.replace("<th>RD</th>", "<th>PT</th>")
+        self.assertEqual(P.total_record(page, True, lambda n: n)["cols"], ["РТ", "ПТ"])
+
 
 class JudgesPdf(unittest.TestCase):
     """Разбор текста PDF оценок на синтетике: работает без pdftotext."""
