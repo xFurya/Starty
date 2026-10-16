@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-16T13:23:55+03:00",
- "checked": "2026-10-16T13:23:55+03:00",
+ "generated": "2026-10-16T13:36:16+03:00",
+ "checked": "2026-10-16T13:36:16+03:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -25670,7 +25670,7 @@
    "seg": "КП",
    "title": "CS Budapest Trophy — девушки КП",
    "start": "2026-10-16T10:10:00+03:00",
-   "end": "2026-10-16T13:26:00+03:00",
+   "end": "2026-10-16T14:00:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [],
@@ -25729,173 +25729,176 @@
      "name": "Milena Velcheva",
      "nation": "BUL",
      "no": 1,
-     "warmup": 1,
-     "place": 18
+     "warmup": null,
+     "place": 19
     },
     {
      "name": "Valeria Huber",
      "nation": "GER",
      "no": 2,
-     "warmup": 1,
+     "warmup": null,
      "place": 8
     },
     {
      "name": "Summer Wijkhuizen",
      "nation": "NED",
      "no": 3,
-     "warmup": 1,
-     "place": 14
+     "warmup": null,
+     "place": 15
     },
     {
      "name": "Varvara Abramkina",
      "nation": "BUL",
      "no": 4,
-     "warmup": 1,
+     "warmup": null,
      "place": 5
     },
     {
      "name": "Hedda Hedstrom",
      "nation": "SWE",
      "no": 5,
-     "warmup": 1,
-     "place": 16
+     "warmup": null,
+     "place": 17
     },
     {
      "name": "Mia Kasparovica",
      "nation": "LAT",
      "no": 6,
-     "warmup": 2,
-     "place": 13
+     "warmup": null,
+     "place": 14
     },
     {
      "name": "Mayuka Sueess",
      "nation": "SUI",
      "no": 8,
-     "warmup": 2,
+     "warmup": null,
      "place": 3
     },
     {
      "name": "Polina Bykova",
      "nation": "SLO",
      "no": 9,
-     "warmup": 2,
-     "place": 11
+     "warmup": null,
+     "place": 12
     },
     {
      "name": "Rebecca Lo Cascio",
      "nation": "ITA",
      "no": 10,
-     "warmup": 2,
+     "warmup": null,
      "place": 9
     },
     {
      "name": "Амалия Насыбуллина",
      "nation": "GEO",
      "no": 11,
-     "warmup": 3,
+     "warmup": null,
      "place": 1
     },
     {
      "name": "Leandra Tzimpoukakis",
      "nation": "SUI",
      "no": 12,
-     "warmup": 3,
+     "warmup": null,
      "place": 4
     },
     {
      "name": "Hanna Laura Viranyi",
      "nation": "HUN",
      "no": 13,
-     "warmup": 3,
-     "place": 22
+     "warmup": null,
+     "place": 23
     },
     {
      "name": "Natalia Runcanu",
      "nation": "ROU",
      "no": 14,
-     "warmup": 3,
-     "place": 21
+     "warmup": null,
+     "place": 22
     },
     {
      "name": "Shaked Pinchas",
      "nation": "ISR",
      "no": 15,
-     "warmup": 3,
-     "place": 24
+     "warmup": null,
+     "place": 25
     },
     {
      "name": "Lidiia Tsukanova",
      "nation": "FIN",
      "no": 16,
-     "warmup": 4,
+     "warmup": null,
      "place": 10
     },
     {
      "name": "Dorina Szigeti",
      "nation": "HUN",
      "no": 17,
-     "warmup": 4,
-     "place": 20
+     "warmup": null,
+     "place": 21
     },
     {
      "name": "Shahaf Pinchas",
      "nation": "ISR",
      "no": 18,
-     "warmup": 4,
-     "place": 23
+     "warmup": null,
+     "place": 24
     },
     {
      "name": "Karina Sheina",
      "nation": "KAZ",
      "no": 19,
-     "warmup": 4,
+     "warmup": null,
      "place": 6
     },
     {
      "name": "Greta Norina Major",
      "nation": "HUN",
      "no": 20,
-     "warmup": 4,
-     "place": 12
+     "warmup": null,
+     "place": 13
     },
     {
      "name": "Martina Petra Major",
      "nation": "HUN",
      "no": 21,
-     "warmup": 5,
-     "place": 17
+     "warmup": null,
+     "place": 18
     },
     {
      "name": "Jiaying Ellyse Johnson",
      "nation": "USA",
      "no": 22,
-     "warmup": 5,
+     "warmup": null,
      "place": 2
     },
     {
      "name": "Ginevra Antonina Volante",
      "nation": "ITA",
      "no": 23,
-     "warmup": 5,
-     "place": 19
+     "warmup": null,
+     "place": 20
     },
     {
      "name": "Anissa Mamaev",
      "nation": "UZB",
      "no": 24,
-     "warmup": 5,
-     "place": 15
+     "warmup": null,
+     "place": 16
     },
     {
      "name": "Mila Bertsch",
      "nation": "FRA",
      "no": 25,
-     "warmup": 5,
-     "place": 10
+     "warmup": null,
+     "place": 11
     },
     {
      "name": "Adelina Voroteliak",
-     "nation": "GER"
+     "nation": "GER",
+     "no": 26,
+     "warmup": null,
+     "place": 7
     }
    ],
    "live": {
@@ -25910,6 +25913,7 @@
      "Leandra TZIMPOUKAKIS": "Leandra Tzimpoukakis",
      "Varvara ABRAMKINA": "Varvara Abramkina",
      "Karina SHEINA": "Karina Sheina",
+     "Adelina VOROTELIAK": "Adelina Voroteliak",
      "Valeria HUBER": "Valeria Huber",
      "Rebecca LO CASCIO": "Rebecca Lo Cascio",
      "Lidiia TSUKANOVA": "Lidiia Tsukanova",
@@ -25927,19 +25931,18 @@
      "Natalia RUNCANU": "Natalia Runcanu",
      "Hanna Laura VIRANYI": "Hanna Laura Viranyi",
      "Shahaf PINCHAS": "Shahaf Pinchas",
-     "Shaked PINCHAS": "Shaked Pinchas",
-     "Adelina VOROTELIAK": "Adelina Voroteliak"
+     "Shaked PINCHAS": "Shaked Pinchas"
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-budapest-trophy.json",
    "facts": [
     {
-     "who": "Jiaying Ellyse Johnson",
+     "kind": "score",
      "text": "Личный рекорд за КП: 62.50 (был 47.51)",
-     "kind": "score"
+     "who": "Jiaying Ellyse Johnson"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:men-senior-kp",
@@ -26995,7 +26998,7 @@
    "seg": "КП",
    "title": "Гран-при России «Рапсодия льда» — женщины КП",
    "start": "2026-10-17T13:30:00+03:00",
-   "end": "2026-10-17T14:55:00+03:00",
+   "end": "2026-10-17T14:56:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -27003,12 +27006,25 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
+   "athletes": [
+    "Александра Чаткина",
+    "Алиса Юрова",
+    "Анастасия Фурсова",
+    "Анна Фролова",
+    "Екатерина Кольцова",
+    "Елизавета Куликова",
+    "Камилла Нелюбова",
+    "Ксения Гущина",
+    "Ксения Синицына",
+    "Риана Кадырова",
+    "Софья Лукина",
+    "Софья Муравьева"
+   ],
+   "src": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -27016,7 +27032,114 @@
     }
    ],
    "desc": "Начало: 13:30 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Риана Кадырова",
+     "nation": "ТАТ",
+     "time": "13:37",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Анастасия Фурсова",
+     "nation": "БЕЛ",
+     "time": "13:49",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Елизавета Куликова",
+     "nation": "МОС",
+     "time": "13:55",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Софья Муравьева",
+     "nation": "МОС",
+     "time": "14:00",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Софья Лукина",
+     "nation": "БАШ",
+     "time": "14:06",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Екатерина Кольцова",
+     "nation": "КОС",
+     "time": "14:12",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Ксения Синицына",
+     "nation": "МОБ",
+     "time": "14:20",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Александра Чаткина",
+     "nation": "СПБ",
+     "time": "14:25",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Алиса Юрова",
+     "nation": "ЛИП",
+     "time": "14:31",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Камилла Нелюбова",
+     "nation": "ЧУВ",
+     "time": "14:37",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Анна Фролова",
+     "nation": "СПБ",
+     "time": "14:43",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Ксения Гущина",
+     "nation": "СПБ",
+     "time": "14:49",
+     "no": 12,
+     "warmup": 2
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG003.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Риана КАДЫРОВА": "Риана Кадырова",
+     "Екатерина КОЛЬЦОВА": "Екатерина Кольцова",
+     "Анастасия ФУРСОВА": "Анастасия Фурсова",
+     "Елизавета КУЛИКОВА": "Елизавета Куликова",
+     "Софья МУРАВЬЕВА": "Софья Муравьева",
+     "Софья ЛУКИНА": "Софья Лукина",
+     "Ксения СИНИЦЫНА": "Ксения Синицына",
+     "Александра ЧАТКИНА": "Александра Чаткина",
+     "Алиса ЮРОВА": "Алиса Юрова",
+     "Камилла НЕЛЮБОВА": "Камилла Нелюбова",
+     "Анна ФРОЛОВА": "Анна Фролова",
+     "Ксения ГУЩИНА": "Ксения Гущина"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:women-senior-kp",
@@ -27399,7 +27522,7 @@
    "seg": "КП",
    "title": "Гран-при России «Рапсодия льда» — мужчины КП",
    "start": "2026-10-17T15:15:00+03:00",
-   "end": "2026-10-17T16:35:00+03:00",
+   "end": "2026-10-17T16:33:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -27407,12 +27530,24 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
+   "athletes": [
+    "Андрей Мозалёв",
+    "Артём Ковалёв",
+    "Вячеслав Проценко",
+    "Даниил Самсонов",
+    "Евгений Семененко",
+    "Иван Конихин",
+    "Константин Сафонов",
+    "Матвей Ветлугин",
+    "Роман Савосин",
+    "Семен Соловьев",
+    "Юрий Сидоров"
+   ],
+   "src": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -27420,7 +27555,106 @@
     }
    ],
    "desc": "Начало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Семен Соловьев",
+     "nation": "СПБ",
+     "time": "15:22",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Константин Сафонов",
+     "nation": "ТУЛ",
+     "time": "15:33",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Даниил Самсонов",
+     "nation": "МОС",
+     "time": "15:39",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Вячеслав Проценко",
+     "nation": "СПБ",
+     "time": "15:45",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Артём Ковалёв",
+     "nation": "МОБ",
+     "time": "15:50",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Юрий Сидоров",
+     "nation": "ОРЕ",
+     "time": "15:56",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Иван Конихин",
+     "nation": "МОС",
+     "time": "16:04",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Роман Савосин",
+     "nation": "МОС",
+     "time": "16:09",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Матвей Ветлугин",
+     "nation": "СПБ",
+     "time": "16:15",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Андрей Мозалёв",
+     "nation": "МОС",
+     "time": "16:21",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Евгений Семененко",
+     "nation": "СПБ",
+     "time": "16:26",
+     "no": 11,
+     "warmup": 2
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Семен СОЛОВЬЕВ": "Семен Соловьев",
+     "Юрий СИДОРОВ": "Юрий Сидоров",
+     "Константин САФОНОВ": "Константин Сафонов",
+     "Даниил САМСОНОВ": "Даниил Самсонов",
+     "Вячеслав ПРОЦЕНКО": "Вячеслав Проценко",
+     "Артём КОВАЛЁВ": "Артём Ковалёв",
+     "Иван КОНИХИН": "Иван Конихин",
+     "Роман САВОСИН": "Роман Савосин",
+     "Матвей ВЕТЛУГИН": "Матвей Ветлугин",
+     "Андрей МОЗАЛЁВ": "Андрей Мозалёв",
+     "Евгений СЕМЕНЕНКО": "Евгений Семененко"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pairs-senior-kp",
@@ -27431,7 +27665,7 @@
    "seg": "КП",
    "title": "Гран-при России «Рапсодия льда» — пары КП",
    "start": "2026-10-17T16:55:00+03:00",
-   "end": "2026-10-17T18:05:00+03:00",
+   "end": "2026-10-17T18:02:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -27439,12 +27673,21 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
+   "athletes": [
+    "Алиса Блинникова / Алексей Карпов",
+    "Анастасия Мухортова / Дмитрий Евгеньев",
+    "Анна Карпук / Илья Миронов",
+    "Валерия Ходыкина / Даниил Бутенко",
+    "Вероника Меренкова / Даниль Галимов",
+    "Ева Хмелькова / Владислав Антонышев",
+    "Таисия Щербинина / Артём Петров",
+    "Юлия Артемьева / Алексей Брюханов"
+   ],
+   "src": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -27452,7 +27695,82 @@
     }
    ],
    "desc": "Начало: 16:55 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Валерия Ходыкина / Даниил Бутенко",
+     "nation": "МОС",
+     "time": "17:02",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Вероника Меренкова / Даниль Галимов",
+     "nation": "КРД",
+     "time": "17:15",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Алиса Блинникова / Алексей Карпов",
+     "nation": "СПБ",
+     "time": "17:21",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Анна Карпук / Илья Миронов",
+     "nation": "СПБ",
+     "time": "17:27",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Юлия Артемьева / Алексей Брюханов",
+     "nation": "ПРМ",
+     "time": "17:35",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Ева Хмелькова / Владислав Антонышев",
+     "nation": "МОБ",
+     "time": "17:41",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Таисия Щербинина / Артём Петров",
+     "nation": "ПРМ",
+     "time": "17:48",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Анастасия Мухортова / Дмитрий Евгеньев",
+     "nation": "МОС",
+     "time": "17:54",
+     "no": 8,
+     "warmup": 2
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG005.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Валерия ХОДЫКИНА / Даниил БУТЕНКО": "Валерия Ходыкина / Даниил Бутенко",
+     "Анна КАРПУК / Илья МИРОНОВ": "Анна Карпук / Илья Миронов",
+     "Вероника МЕРЕНКОВА / Даниль ГАЛИМОВ": "Вероника Меренкова / Даниль Галимов",
+     "Алиса БЛИННИКОВА / Алексей КАРПОВ": "Алиса Блинникова / Алексей Карпов",
+     "Юлия АРТЕМЬЕВА / Алексей БРЮХАНОВ": "Юлия Артемьева / Алексей Брюханов",
+     "Ева ХМЕЛЬКОВА / Владислав АНТОНЫШЕВ": "Ева Хмелькова / Владислав Антонышев",
+     "Таисия ЩЕРБИНИНА / Артём ПЕТРОВ": "Таисия Щербинина / Артём Петров",
+     "Анастасия МУХОРТОВА / Дмитрий ЕВГЕНЬЕВ": "Анастасия Мухортова / Дмитрий Евгеньев"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:dance-senior-rt",
@@ -27463,7 +27781,7 @@
    "seg": "РТ",
    "title": "Гран-при России «Рапсодия льда» — танцы РТ",
    "start": "2026-10-17T18:25:00+03:00",
-   "end": "2026-10-17T19:45:00+03:00",
+   "end": "2026-10-17T19:31:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -27471,12 +27789,21 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
+   "athletes": [
+    "Алиса Абдуллина / Егор Петров",
+    "Алиса Крайнюкова / Семен Нетсев",
+    "Варвара Жданова / Тимур Бабаев-Смирнов",
+    "Екатерина Рыбакова / Иван Махноносов",
+    "Елизавета Пасечник / Дарио Чиризано",
+    "Софья Леонтьева / Даниил Горелкин",
+    "Софья Тютюнина / Матвей Грачев",
+    "Таисия Линчевская / Дмитрий Щербаков"
+   ],
+   "src": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -27484,7 +27811,82 @@
     }
    ],
    "desc": "Начало: 18:25 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Софья Тютюнина / Матвей Грачев",
+     "nation": "МОС",
+     "time": "18:31",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Таисия Линчевская / Дмитрий Щербаков",
+     "nation": "МОС",
+     "time": "18:44",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Алиса Крайнюкова / Семен Нетсев",
+     "nation": "РОС",
+     "time": "18:51",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Алиса Абдуллина / Егор Петров",
+     "nation": "СПБ",
+     "time": "18:58",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Елизавета Пасечник / Дарио Чиризано",
+     "nation": "МОС",
+     "time": "19:04",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Екатерина Рыбакова / Иван Махноносов",
+     "nation": "МОС",
+     "time": "19:11",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Софья Леонтьева / Даниил Горелкин",
+     "nation": "МОС",
+     "time": "19:18",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Варвара Жданова / Тимур Бабаев-Смирнов",
+     "nation": "МОС",
+     "time": "19:24",
+     "no": 8,
+     "warmup": 2
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG007.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Софья ТЮТЮНИНА / Матвей ГРАЧЕВ": "Софья Тютюнина / Матвей Грачев",
+     "Алиса АБДУЛЛИНА / Егор ПЕТРОВ": "Алиса Абдуллина / Егор Петров",
+     "Таисия ЛИНЧЕВСКАЯ / Дмитрий ЩЕРБАКОВ": "Таисия Линчевская / Дмитрий Щербаков",
+     "Алиса КРАЙНЮКОВА / Семен НЕТСЕВ": "Алиса Крайнюкова / Семен Нетсев",
+     "Елизавета ПАСЕЧНИК / Дарио ЧИРИЗАНО": "Елизавета Пасечник / Дарио Чиризано",
+     "Екатерина РЫБАКОВА / Иван МАХНОНОСОВ": "Екатерина Рыбакова / Иван Махноносов",
+     "Софья ЛЕОНТЬЕВА / Даниил ГОРЕЛКИН": "Софья Леонтьева / Даниил Горелкин",
+     "Варвара ЖДАНОВА / Тимур БАБАЕВ-СМИРНОВ": "Варвара Жданова / Тимур Бабаев-Смирнов"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-junior-pt",
@@ -28037,12 +28439,25 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
+   "athletes": [
+    "Александра Чаткина",
+    "Алиса Юрова",
+    "Анастасия Фурсова",
+    "Анна Фролова",
+    "Екатерина Кольцова",
+    "Елизавета Куликова",
+    "Камилла Нелюбова",
+    "Ксения Гущина",
+    "Ксения Синицына",
+    "Риана Кадырова",
+    "Софья Лукина",
+    "Софья Муравьева"
+   ],
+   "src": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -28050,7 +28465,78 @@
     }
    ],
    "desc": "Начало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Александра Чаткина",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Алиса Юрова",
+     "nation": "ЛИП"
+    },
+    {
+     "name": "Анастасия Фурсова",
+     "nation": "БЕЛ"
+    },
+    {
+     "name": "Анна Фролова",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Екатерина Кольцова",
+     "nation": "КОС"
+    },
+    {
+     "name": "Елизавета Куликова",
+     "nation": "МОС"
+    },
+    {
+     "name": "Камилла Нелюбова",
+     "nation": "ЧУВ"
+    },
+    {
+     "name": "Ксения Гущина",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Ксения Синицына",
+     "nation": "МОБ"
+    },
+    {
+     "name": "Риана Кадырова",
+     "nation": "ТАТ"
+    },
+    {
+     "name": "Софья Лукина",
+     "nation": "БАШ"
+    },
+    {
+     "name": "Софья Муравьева",
+     "nation": "МОС"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG004.htm",
+    "cat": "https://fsrussia.ru/results/2627/1etap_sen/CAT002RS.htm",
+    "first": "https://fsrussia.ru/results/2627/1etap_sen/SEG003.htm",
+    "names": {
+     "Ксения ГУЩИНА": "Ксения Гущина",
+     "Риана КАДЫРОВА": "Риана Кадырова",
+     "Екатерина КОЛЬЦОВА": "Екатерина Кольцова",
+     "Елизавета КУЛИКОВА": "Елизавета Куликова",
+     "Софья ЛУКИНА": "Софья Лукина",
+     "Софья МУРАВЬЕВА": "Софья Муравьева",
+     "Камилла НЕЛЮБОВА": "Камилла Нелюбова",
+     "Ксения СИНИЦЫНА": "Ксения Синицына",
+     "Анна ФРОЛОВА": "Анна Фролова",
+     "Анастасия ФУРСОВА": "Анастасия Фурсова",
+     "Александра ЧАТКИНА": "Александра Чаткина",
+     "Алиса ЮРОВА": "Алиса Юрова"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men-senior-pp",
@@ -28061,7 +28547,7 @@
    "seg": "ПП",
    "title": "Гран-при России «Рапсодия льда» — мужчины ПП",
    "start": "2026-10-18T15:05:00+03:00",
-   "end": "2026-10-18T16:55:00+03:00",
+   "end": "2026-10-18T16:40:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -28069,12 +28555,24 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
+   "athletes": [
+    "Андрей Мозалёв",
+    "Артём Ковалёв",
+    "Вячеслав Проценко",
+    "Даниил Самсонов",
+    "Евгений Семененко",
+    "Иван Конихин",
+    "Константин Сафонов",
+    "Матвей Ветлугин",
+    "Роман Савосин",
+    "Семен Соловьев",
+    "Юрий Сидоров"
+   ],
+   "src": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -28082,7 +28580,73 @@
     }
    ],
    "desc": "Начало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Андрей Мозалёв",
+     "nation": "МОС"
+    },
+    {
+     "name": "Артём Ковалёв",
+     "nation": "МОБ"
+    },
+    {
+     "name": "Вячеслав Проценко",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Даниил Самсонов",
+     "nation": "МОС"
+    },
+    {
+     "name": "Евгений Семененко",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Иван Конихин",
+     "nation": "МОС"
+    },
+    {
+     "name": "Константин Сафонов",
+     "nation": "ТУЛ"
+    },
+    {
+     "name": "Матвей Ветлугин",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Роман Савосин",
+     "nation": "МОС"
+    },
+    {
+     "name": "Семен Соловьев",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Юрий Сидоров",
+     "nation": "ОРЕ"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG002.htm",
+    "cat": "https://fsrussia.ru/results/2627/1etap_sen/CAT001RS.htm",
+    "first": "https://fsrussia.ru/results/2627/1etap_sen/SEG001.htm",
+    "names": {
+     "Матвей ВЕТЛУГИН": "Матвей Ветлугин",
+     "Артём КОВАЛЁВ": "Артём Ковалёв",
+     "Иван КОНИХИН": "Иван Конихин",
+     "Андрей МОЗАЛЁВ": "Андрей Мозалёв",
+     "Вячеслав ПРОЦЕНКО": "Вячеслав Проценко",
+     "Роман САВОСИН": "Роман Савосин",
+     "Даниил САМСОНОВ": "Даниил Самсонов",
+     "Константин САФОНОВ": "Константин Сафонов",
+     "Евгений СЕМЕНЕНКО": "Евгений Семененко",
+     "Юрий СИДОРОВ": "Юрий Сидоров",
+     "Семен СОЛОВЬЕВ": "Семен Соловьев"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pairs-senior-pp",
@@ -28093,7 +28657,7 @@
    "seg": "ПП",
    "title": "Гран-при России «Рапсодия льда» — пары ПП",
    "start": "2026-10-18T17:10:00+03:00",
-   "end": "2026-10-18T18:25:00+03:00",
+   "end": "2026-10-18T18:30:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -28101,12 +28665,21 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
+   "athletes": [
+    "Алиса Блинникова / Алексей Карпов",
+    "Анастасия Мухортова / Дмитрий Евгеньев",
+    "Анна Карпук / Илья Миронов",
+    "Валерия Ходыкина / Даниил Бутенко",
+    "Вероника Меренкова / Даниль Галимов",
+    "Ева Хмелькова / Владислав Антонышев",
+    "Таисия Щербинина / Артём Петров",
+    "Юлия Артемьева / Алексей Брюханов"
+   ],
+   "src": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -28114,7 +28687,58 @@
     }
    ],
    "desc": "Начало: 17:10 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Алиса Блинникова / Алексей Карпов",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Анастасия Мухортова / Дмитрий Евгеньев",
+     "nation": "МОС"
+    },
+    {
+     "name": "Анна Карпук / Илья Миронов",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Валерия Ходыкина / Даниил Бутенко",
+     "nation": "МОС"
+    },
+    {
+     "name": "Вероника Меренкова / Даниль Галимов",
+     "nation": "КРД"
+    },
+    {
+     "name": "Ева Хмелькова / Владислав Антонышев",
+     "nation": "МОБ"
+    },
+    {
+     "name": "Таисия Щербинина / Артём Петров",
+     "nation": "ПРМ"
+    },
+    {
+     "name": "Юлия Артемьева / Алексей Брюханов",
+     "nation": "ПРМ"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG006.htm",
+    "cat": "https://fsrussia.ru/results/2627/1etap_sen/CAT003RS.htm",
+    "first": "https://fsrussia.ru/results/2627/1etap_sen/SEG005.htm",
+    "names": {
+     "Юлия АРТЕМЬЕВА / Алексей БРЮХАНОВ": "Юлия Артемьева / Алексей Брюханов",
+     "Алиса БЛИННИКОВА / Алексей КАРПОВ": "Алиса Блинникова / Алексей Карпов",
+     "Анна КАРПУК / Илья МИРОНОВ": "Анна Карпук / Илья Миронов",
+     "Вероника МЕРЕНКОВА / Даниль ГАЛИМОВ": "Вероника Меренкова / Даниль Галимов",
+     "Анастасия МУХОРТОВА / Дмитрий ЕВГЕНЬЕВ": "Анастасия Мухортова / Дмитрий Евгеньев",
+     "Ева ХМЕЛЬКОВА / Владислав АНТОНЫШЕВ": "Ева Хмелькова / Владислав Антонышев",
+     "Валерия ХОДЫКИНА / Даниил БУТЕНКО": "Валерия Ходыкина / Даниил Бутенко",
+     "Таисия ЩЕРБИНИНА / Артём ПЕТРОВ": "Таисия Щербинина / Артём Петров"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:women-senior-pp",
@@ -28383,7 +29007,7 @@
    "seg": "ПТ",
    "title": "Гран-при России «Рапсодия льда» — танцы ПТ",
    "start": "2026-10-18T18:45:00+03:00",
-   "end": "2026-10-18T20:15:00+03:00",
+   "end": "2026-10-18T19:55:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -28391,12 +29015,21 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/1etap2627_competition_schedule_revised.pdf",
+   "athletes": [
+    "Алиса Абдуллина / Егор Петров",
+    "Алиса Крайнюкова / Семен Нетсев",
+    "Варвара Жданова / Тимур Бабаев-Смирнов",
+    "Екатерина Рыбакова / Иван Махноносов",
+    "Елизавета Пасечник / Дарио Чиризано",
+    "Софья Леонтьева / Даниил Горелкин",
+    "Софья Тютюнина / Матвей Грачев",
+    "Таисия Линчевская / Дмитрий Щербаков"
+   ],
+   "src": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -28404,7 +29037,58 @@
     }
    ],
    "desc": "Начало: 18:45 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Алиса Абдуллина / Егор Петров",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Алиса Крайнюкова / Семен Нетсев",
+     "nation": "РОС"
+    },
+    {
+     "name": "Варвара Жданова / Тимур Бабаев-Смирнов",
+     "nation": "МОС"
+    },
+    {
+     "name": "Екатерина Рыбакова / Иван Махноносов",
+     "nation": "МОС"
+    },
+    {
+     "name": "Елизавета Пасечник / Дарио Чиризано",
+     "nation": "МОС"
+    },
+    {
+     "name": "Софья Леонтьева / Даниил Горелкин",
+     "nation": "МОС"
+    },
+    {
+     "name": "Софья Тютюнина / Матвей Грачев",
+     "nation": "МОС"
+    },
+    {
+     "name": "Таисия Линчевская / Дмитрий Щербаков",
+     "nation": "МОС"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG008.htm",
+    "cat": "https://fsrussia.ru/results/2627/1etap_sen/CAT004RS.htm",
+    "first": "https://fsrussia.ru/results/2627/1etap_sen/SEG007.htm",
+    "names": {
+     "Алиса АБДУЛЛИНА / Егор ПЕТРОВ": "Алиса Абдуллина / Егор Петров",
+     "Варвара ЖДАНОВА / Тимур БАБАЕВ-СМИРНОВ": "Варвара Жданова / Тимур Бабаев-Смирнов",
+     "Алиса КРАЙНЮКОВА / Семен НЕТСЕВ": "Алиса Крайнюкова / Семен Нетсев",
+     "Софья ЛЕОНТЬЕВА / Даниил ГОРЕЛКИН": "Софья Леонтьева / Даниил Горелкин",
+     "Таисия ЛИНЧЕВСКАЯ / Дмитрий ЩЕРБАКОВ": "Таисия Линчевская / Дмитрий Щербаков",
+     "Елизавета ПАСЕЧНИК / Дарио ЧИРИЗАНО": "Елизавета Пасечник / Дарио Чиризано",
+     "Екатерина РЫБАКОВА / Иван МАХНОНОСОВ": "Екатерина Рыбакова / Иван Махноносов",
+     "Софья ТЮТЮНИНА / Матвей ГРАЧЕВ": "Софья Тютюнина / Матвей Грачев"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
    "id": "gs:blackburn-trophy:dance-senior-pt",
@@ -34662,7 +35346,6 @@
   "Ilona Saunina",
   "Ilona Van Steenberghe",
   "Ilona van Steenberghe",
-  "Ilya Mironov",
   "Ilya Nesterov",
   "Ilya Yablokov",
   "Ilya Yukhimuk",
@@ -35681,7 +36364,6 @@
   "Sofja Stepcenko",
   "Sofya Romaslovskaya",
   "Sofya Titova",
-  "Sofya Tyutyunina",
   "Soner Oeztuerk",
   "Sonia Kamyshanova",
   "Sonja Hilmer",
@@ -36161,6 +36843,7 @@
   "Алиса Заикина",
   "Алиса Корнаухова",
   "Алиса Крайнюкова",
+  "Алиса Крайнюкова / Семен Нетсев",
   "Алиса Крайнюкова / Семён Нетcев",
   "Алиса Крайнюкова / Семён Нетсев",
   "Алиса Кремер",
@@ -36268,6 +36951,7 @@
   "Анна Казакевич",
   "Анна Карпук",
   "Анна Карпук / Алексей Хвалько",
+  "Анна Карпук / Илья Миронов",
   "Анна Козлова",
   "Анна Коломенская",
   "Анна Коломенская / Артём Фролов",
@@ -36707,6 +37391,7 @@
   "Илья Мавлянов",
   "Илья Малышев",
   "Илья Мальков",
+  "Илья Миронов",
   "Илья Молянов",
   "Илья Монопьянц",
   "Илья Неретин",
@@ -36924,6 +37609,7 @@
   "Матвей Богданов",
   "Матвей Бугаев",
   "Матвей Ветлугин",
+  "Матвей Грачев",
   "Матвей Лысов",
   "Матвей Самохин",
   "Матвей Чураков",
@@ -37089,6 +37775,7 @@
   "Светлана Кочеткова",
   "Светлана Мамченко",
   "Святослав Нефедов",
+  "Семен Соловьев",
   "Семен Фитерман",
   "Семён Нетcев",
   "Семён Нетсев",
@@ -37139,6 +37826,7 @@
   "Софья Лукина",
   "Софья Метелкина",
   "Софья Минеева",
+  "Софья Муравьева",
   "Софья Муравьёва",
   "Софья Нагуманова",
   "Софья Петрова",
@@ -37147,6 +37835,8 @@
   "Софья Свотина / Арсений Кузнецов",
   "Софья Смагина",
   "Софья Телегина",
+  "Софья Тютюнина",
+  "Софья Тютюнина / Матвей Грачев",
   "Софья Федоркова",
   "Софья Федотова",
   "Софья Хардыкина",
@@ -42004,11 +42694,6 @@
    "k": "W"
   },
   {
-   "n": "Ilya Mironov",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Ilya Nesterov",
    "c": "EST",
    "k": "M"
@@ -46674,11 +47359,6 @@
    "k": "W"
   },
   {
-   "n": "Sofya Tyutyunina",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Soner Oeztuerk",
    "c": "GER",
    "k": "M"
@@ -50354,6 +51034,11 @@
    "k": "M"
   },
   {
+   "n": "Илья Миронов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Илья Молянов",
    "c": "RUS",
    "k": "m"
@@ -51424,7 +52109,7 @@
    "k": "D"
   },
   {
-   "n": "Семён Соловьёв",
+   "n": "Семен Соловьев",
    "c": "RUS",
    "k": "m"
   },
@@ -51564,7 +52249,7 @@
    "k": "w"
   },
   {
-   "n": "Софья Муравьёва",
+   "n": "Софья Муравьева",
    "c": "RUS",
    "k": "w"
   },
@@ -51582,6 +52267,11 @@
    "n": "Софья Смагина",
    "c": "RUS",
    "k": "W"
+  },
+  {
+   "n": "Софья Тютюнина",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Софья Федотова",
@@ -51912,7 +52602,7 @@
   "Stefania Gladki": "photos/f32024f356c4ae1e.jpg",
   "Матвей Ветлугин": "photos/afd912e6f85aed98.jpg",
   "Mihhail Selevko": "photos/8e2dfacc10d65738.jpg",
-  "Corentin Spinar": "photos/e2c55e7e5e061d22.jpg",
+  "Corentin Spinar": "photos/8fc429dce9735696.jpg",
   "Kirk Haugeto": "photos/9876788fc8b32822.jpg",
   "Evgeniia Lopareva": "photos/13f549fdf12f58a4.jpg",
   "Geoffrey Brissaud": "photos/9a6aa371a2a098c5.jpg",
@@ -53581,7 +54271,7 @@
   "София Диана Касинс": "photos/00a4dcf4e8aeac13.jpg",
   "Софья Акатьева": "photos/947ca6aa3667b64e.jpg",
   "Софья Леонтьева": "photos/6b78f4df7f4b4c3f.jpg",
-  "Софья Муравьёва": "photos/5fd5745bd659b30f.jpg",
+  "Софья Муравьева": "photos/5fd5745bd659b30f.jpg",
   "Софья Шевченко": "photos/7c69f6b8c77b8b88.jpg",
   "Таисия Щербинина": "photos/fe3bba16274e2e3d.jpg",
   "Артём Петров": "photos/78205d1cb179d6d3.jpg",
