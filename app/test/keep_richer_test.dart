@@ -79,7 +79,8 @@ Map<String, dynamic> startJson({
 }
 
 Start start(Map<String, dynamic> j) => Start.fromJson(j);
-Start merge(Map<String, dynamic> old, Map<String, dynamic> fresh) => Start.mergeKeepingRicher(start(old), start(fresh));
+Start merge(Map<String, dynamic> old, Map<String, dynamic> fresh, {bool faulty = false, bool freshFacts = false}) =>
+    Start.mergeKeepingRicher(start(old), start(fresh), faulty: faulty, freshFacts: freshFacts);
 
 Schedule sched(
   List<Map<String, dynamic>> events, {
@@ -170,9 +171,13 @@ void main() {
   group('Start.mergeKeepingRicher: тройка, итог, ссылки, состав', () {
     final three = [placing(1, 'Владислав Дикиджи', '205.48'), placing(2, 'Глеб Лутфуллин', '181.44'), placing(3, 'Пётр Гуменник', '181.13')];
 
-    test('тройка: свежая пустая или короче — остаётся прежняя', () {
+    test('тройка: свежая пустая — остаётся прежняя; при сбое и короче — тоже', () {
       expect(merge(startJson(podium: three), startJson()).podium, hasLength(3));
-      expect(merge(startJson(podium: three), startJson(podium: three.take(1).toList())).podium, hasLength(3));
+      expect(merge(startJson(podium: three), startJson(podium: three.take(1).toList()), faulty: true).podium, hasLength(3));
+    });
+
+    test('тройка: непустая свежая при чистом сборе побеждает, даже короче', () {
+      expect(merge(startJson(podium: three), startJson(podium: three.take(1).toList())).podium, hasLength(1));
     });
 
     test('тройка: свежая такой же длины — берётся свежая (поправка баллов)', () {
@@ -182,6 +187,7 @@ void main() {
 
     test('итог турнира: пустой не стирает, тот же по длине заменяет', () {
       expect(merge(startJson(total: three), startJson()).total, hasLength(3));
+      expect(merge(startJson(total: three), startJson(total: three.take(2).toList()), faulty: true).total, hasLength(3));
       final fresh = [three[1], three[0], three[2]];
       expect(merge(startJson(total: three), startJson(total: fresh)).total.first.name, 'Глеб Лутфуллин');
     });
@@ -201,7 +207,15 @@ void main() {
       expect(m.broadcast, unorderedEquals(['Okko', 'Матч ТВ']));
     });
 
-    test('состав: пропавший остаётся, места и время из прежнего, если свежее их не знает', () {
+    test('состав: при чистом сборе снятый уходит; пустой свежий состав не стирает', () {
+      final old = [{'name': 'А Б', 'no': 1}, {'name': 'В Г', 'no': 2}];
+      final m = merge(startJson(field: old, ours: old), startJson(field: [old[1]], ours: [old[1]]));
+      expect(m.field.map((f) => f.name), ['В Г']);
+      expect(m.ours.map((f) => f.name), ['В Г']);
+      expect(merge(startJson(field: old), startJson()).field, hasLength(2));
+    });
+
+    test('состав при сбое: пропавший остаётся, места и время из прежнего, если свежее их не знает', () {
       final old = [
         {'name': 'Глеб Лутфуллин', 'time': '13:45', 'no': 2, 'place': 2},
         {'name': 'Alex Labovich', 'time': '13:00', 'no': 1, 'place': 4},
@@ -209,7 +223,7 @@ void main() {
       final fresh = [
         {'name': 'Глеб Лутфуллин', 'time': '13:50', 'no': 2},
       ];
-      final m = merge(startJson(field: old), startJson(field: fresh));
+      final m = merge(startJson(field: old), startJson(field: fresh), faulty: true);
       expect(m.field.map((f) => f.name), ['Глеб Лутфуллин', 'Alex Labovich'], reason: 'пропавший встаёт после того, за кем шёл');
       final gleb = m.field.first;
       expect(gleb.time, '13:50', reason: 'свежее время побеждает');
@@ -220,6 +234,7 @@ void main() {
       final m = merge(
         startJson(field: [{'name': 'Vasil Barakhouski', 'no': 5, 'time': '13:10'}]),
         startJson(field: [{'name': 'Василий Бараховский', 'no': 5, 'time': '13:10'}]),
+        faulty: true,
       );
       expect(m.field.map((f) => f.name), ['Василий Бараховский']);
     });
@@ -228,6 +243,7 @@ void main() {
       final m = merge(
         startJson(ours: [{'name': 'А Б', 'no': 1}, {'name': 'В Г', 'no': 2}]),
         startJson(ours: [{'name': 'В Г', 'no': 2}]),
+        faulty: true,
       );
       expect(m.ours.map((o) => o.name), ['А Б', 'В Г']);
     });
@@ -363,6 +379,53 @@ void main() {
         'events': [startJson(facts: [])],
       }));
       expect(Schedule.mergeKeepingRicher(m, next, now: _at).starts.single.facts, hasLength(4));
+    });
+
+    Schedule withMeta(List<Map<String, dynamic>> events, {String? version, bool complete = true, Map<String, String>? sources, int min = 0}) =>
+        Schedule.parse(jsonEncode({
+          'generated': _at.add(Duration(minutes: min)).toIso8601String(),
+          'complete': complete,
+          'sources': ?sources,
+          'facts_version': ?version,
+          'events': events,
+        }));
+
+    test('снятый спортсмен при чистом сборе исчезает, при сбойном или пустом ответе остаётся', () {
+      final both = [{'name': 'А Б', 'no': 1}, {'name': 'В Г', 'no': 2}];
+      final one = [{'name': 'В Г', 'no': 2}];
+      final old = withMeta([startJson(field: both, ours: both)], sources: {'ISU': 'ok'});
+      final clean = Schedule.mergeKeepingRicher(old, withMeta([startJson(field: one, ours: one)], sources: {'ISU': 'ok'}, min: 5), now: _at);
+      expect(clean.starts.single.field.map((f) => f.name), ['В Г']);
+      for (final bad in [
+        withMeta([startJson(field: one, ours: one)], complete: false, min: 5),
+        withMeta([startJson(field: one, ours: one)], sources: {'ISU': 'fail'}, min: 5),
+        withMeta([startJson(field: [], ours: [])], sources: {'ISU': 'ok'}, min: 5),
+      ]) {
+        final m = Schedule.mergeKeepingRicher(old, bad, now: _at);
+        expect(m.starts.single.field, hasLength(2));
+        expect(m.starts.single.ours, hasLength(2));
+      }
+    });
+
+    test('смена facts_version — факты свежие целиком; та же версия и потеря 12→4 — остаётся 12', () {
+      final old = withMeta([startJson(facts: twelve())], version: '6');
+      final changed = Schedule.mergeKeepingRicher(old, withMeta([startJson(facts: four())], version: '7', min: 5), now: _at);
+      expect(changed.starts.single.facts, hasLength(4));
+      expect(changed.factsVersion, '7');
+      final same = Schedule.mergeKeepingRicher(old, withMeta([startJson(facts: four())], version: '6', min: 5), now: _at);
+      expect(same.starts.single.facts, hasLength(12));
+      // без версии в прежнем кэше — осторожно: сливаем
+      final unknown = Schedule.mergeKeepingRicher(
+        withMeta([startJson(facts: twelve())]),
+        withMeta([startJson(facts: four())], version: '6', min: 5),
+        now: _at,
+      );
+      expect(unknown.starts.single.facts, hasLength(12));
+    });
+
+    test('фото: тот же ключ с другим файлом — свежий', () {
+      final m = Schedule.mergeKeepingRicher(sched([], photos: {'А Б': 'photos/a.jpg'}), sched([], photos: {'А Б': 'photos/b.jpg'}), now: _at);
+      expect(m.photos['А Б'], 'photos/b.jpg');
     });
 
     test('архив старше срока не копится', () {

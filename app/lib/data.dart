@@ -272,16 +272,20 @@ class Start {
 
   /// Тот же старт после новой загрузки расписания: ничего из уже полученного не пропадает.
   ///
-  /// Старт тот же, если совпали id и время. Тогда каждое поле берётся у [fresh], но пустое или
-  /// более бедное (короче список, нет ссылки) заменяется прежним значением; списки объединяются
-  /// по ключу — свежее значение с тем же ключом побеждает, а то, что перестало приходить,
-  /// остаётся. Изменился id или время (старт перенесён) — [fresh] целиком.
-  static Start mergeKeepingRicher(Start old, Start fresh) {
+  /// Старт тот же, если совпали id и время. Тогда скаляры берутся у [fresh], пустое заменяется прежним.
+  /// Составы и места (field, ours, athletes, podium, total) — свежее побеждает (снятый спортсмен
+  /// уходит), кроме случая, когда свежее пустое при непустом прежнем или загрузка сбойная
+  /// ([faulty]: сбор неполный, источник не ok): тогда прежнее не теряется. Факты, ссылки и
+  /// трансляции объединяются по ключу — свежее с тем же ключом побеждает, а пропавшее остаётся
+  /// (пропажа там почти всегда сбой); если сменились правила сборщика ([freshFacts]) —
+  /// факты свежие целиком. Изменился id или время (старт перенесён) — [fresh] целиком.
+  static Start mergeKeepingRicher(Start old, Start fresh, {bool faulty = false, bool freshFacts = false}) {
     if (old.id != fresh.id || old.t0 != fresh.t0 || old.t1 != fresh.t1) return fresh;
     String text(String o, String f) => f.trim().isEmpty ? o : f;
-    // тройка и итог — упорядоченные списки: короче прежнего значит «пришло не всё», берём прежний целиком
-    final keepPodium = fresh.podium.length < old.podium.length;
-    final keepTotal = fresh.total.length < old.total.length;
+    List<T> roster<T>(List<T> o, List<T> f, List<T> Function() merged) => faulty ? merged() : (f.isEmpty ? o : f);
+    // тройка и итог — упорядоченные списки: пусто (а при сбое ещё и короче прежнего) — берём прежний целиком
+    final keepPodium = faulty ? fresh.podium.length < old.podium.length : fresh.podium.isEmpty && old.podium.isNotEmpty;
+    final keepTotal = faulty ? fresh.total.length < old.total.length : fresh.total.isEmpty && old.total.isNotEmpty;
     return Start._all(
       id: fresh.id,
       tid: text(old.tid, fresh.tid),
@@ -300,13 +304,15 @@ class Start {
       region: text(old.region, fresh.region),
       broadcast: _mergeLists<String>(old.broadcast, fresh.broadcast, same: (a, b) => norm(a) == norm(b)),
       watch: _mergeLists<WatchLink>(old.watch, fresh.watch, same: (a, b) => norm(a.name) == norm(b.name)),
-      athletes: _mergeLists<String>(old.athletes, fresh.athletes, same: (a, b) => norm(a) == norm(b)),
-      ours: _mergeSkaters(old.ours, fresh.ours),
-      field: _mergeSkaters(old.field, fresh.field),
+      athletes: roster(old.athletes, fresh.athletes, () => _mergeLists<String>(old.athletes, fresh.athletes, same: (a, b) => norm(a) == norm(b))),
+      ours: roster(old.ours, fresh.ours, () => _mergeSkaters(old.ours, fresh.ours)),
+      field: roster(old.field, fresh.field, () => _mergeSkaters(old.field, fresh.field)),
       podium: keepPodium ? old.podium : fresh.podium,
       total: keepTotal ? old.total : fresh.total,
       provisional: keepPodium ? old.provisional : fresh.provisional,
-      facts: _uniqueFacts(_mergeLists<Fact>(old.facts, fresh.facts, same: (a, b) => _factKey(a) == _factKey(b))),
+      facts: freshFacts
+          ? fresh.facts
+          : _uniqueFacts(_mergeLists<Fact>(old.facts, fresh.facts, same: (a, b) => _factKey(a) == _factKey(b))),
       live: LiveSrc.mergeKeepingRicher(old.live, fresh.live),
     );
   }
@@ -623,13 +629,17 @@ class Upcoming {
   };
 
   /// Тот же турнир после новой загрузки: списки россиян и заявки не теряют прежних имён.
-  static Upcoming mergeKeepingRicher(Upcoming old, Upcoming fresh) => Upcoming._with(
+  static Upcoming mergeKeepingRicher(Upcoming old, Upcoming fresh, {bool faulty = false}) {
+    List<String> pick(List<String> o, List<String> f) =>
+        faulty ? _mergeLists<String>(o, f, same: (a, b) => norm(a) == norm(b)) : (f.isEmpty ? o : f);
+    return Upcoming._with(
     fresh,
-    ours: _mergeLists<String>(old.ours, fresh.ours, same: (a, b) => norm(a) == norm(b)),
-    athletes: _mergeLists<String>(old.athletes, fresh.athletes, same: (a, b) => norm(a) == norm(b)),
+    ours: pick(old.ours, fresh.ours),
+    athletes: pick(old.athletes, fresh.athletes),
     oursNation: {...old.oursNation, ...fresh.oursNation},
     venue: fresh.venue.isEmpty ? old.venue : fresh.venue,
-  );
+    );
+  }
 
   Upcoming._with(
     Upcoming u, {
@@ -699,6 +709,10 @@ class Schedule {
   /// ошибку разбора, и ложные факты ушли): тогда приложение берёт свежую загрузку целиком, а не
   /// сливает её с прежней (см. [mergeKeepingRicher]). Нет поля — 0.
   final int epoch;
+
+  /// Версия правил, по которым сборщик считает факты (facts_version). Сменилась — набор фактов
+  /// пересчитан намеренно, и слияние с прежними фактами не нужно. Нет поля — null.
+  final String? factsVersion;
   Schedule(
     this.starts,
     this.generated,
@@ -711,6 +725,7 @@ class Schedule {
     this.roster = const [],
     this.people = const {},
     this.epoch = 0,
+    this.factsVersion,
   });
 
   /// Все имена для поиска: справочник, список сборщика и следимые.
@@ -744,6 +759,7 @@ class Schedule {
           if (p is Map && p['n'] is String) '${p['n']}': Person('${p['n']}', '${p['c'] ?? ''}', '${p['k'] ?? ''}'),
       },
       epoch: j['epoch'] is int ? j['epoch'] as int : 0,
+      factsVersion: j['facts_version'] == null ? null : '${j['facts_version']}',
     );
   }
 
@@ -759,6 +775,7 @@ class Schedule {
     'people': [for (final p in people.values) {'n': p.name, 'c': p.nation, 'k': p.kinds}],
     'photos': photos,
     if (epoch != 0) 'epoch': epoch,
+    if (factsVersion != null) 'facts_version': factsVersion,
   };
 
   /// Сколько дней держим старт, который сборщик перестал отдавать: дальше он уже архив.
@@ -781,6 +798,9 @@ class Schedule {
     // сборщик сознательно убрал ранее выданное — слитое с прежним вернуло бы убранное
     if (fresh.epoch > old.epoch) return fresh;
     final at = now ?? DateTime.now();
+    // сбойная загрузка: сбор неполный или какой-то источник не ответил — составы не отбираем
+    final faulty = !fresh.complete || fresh.sources.values.any((v) => v != 'ok');
+    final freshFacts = old.factsVersion != null && fresh.factsVersion != null && old.factsVersion != fresh.factsVersion;
     // id у разных стартов бывает общим (баг сборщика) — тогда прежний выбирается ещё и по времени
     final oldById = <String, List<Start>>{};
     for (final s in old.starts) {
@@ -795,7 +815,7 @@ class Schedule {
     final freshIds = {for (final s in fresh.starts) s.id};
     final freshTids = {for (final s in fresh.starts) s.tid};
     final starts = [
-      for (final s in fresh.starts) twin(s) == null ? s : Start.mergeKeepingRicher(twin(s)!, s),
+      for (final s in fresh.starts) twin(s) == null ? s : Start.mergeKeepingRicher(twin(s)!, s, faulty: faulty, freshFacts: freshFacts),
       for (final s in old.starts)
         if (!freshIds.contains(s.id) &&
             (!fresh.complete || !freshTids.contains(s.tid)) &&
@@ -807,7 +827,7 @@ class Schedule {
     final freshUp = {for (final u in fresh.upcoming) u.tid};
     final today = dayKey(at.subtract(const Duration(days: 2)));
     final upcoming = [
-      for (final u in fresh.upcoming) oldUp[u.tid] == null ? u : Upcoming.mergeKeepingRicher(oldUp[u.tid]!, u),
+      for (final u in fresh.upcoming) oldUp[u.tid] == null ? u : Upcoming.mergeKeepingRicher(oldUp[u.tid]!, u, faulty: faulty),
       // турнир, у которого появилось расписание по сегментам, из «скоро» уходит сам
       for (final u in old.upcoming)
         if (!freshUp.contains(u.tid) && !tids.contains(u.tid) && u.end.compareTo(today) >= 0) u,
@@ -829,6 +849,7 @@ class Schedule {
       roster: _mergeLists<String>(old.roster, fresh.roster, same: (a, b) => norm(a) == norm(b)),
       people: {...old.people, ...fresh.people},
       epoch: fresh.epoch,
+      factsVersion: fresh.factsVersion,
     );
   }
 
@@ -845,6 +866,7 @@ class Schedule {
     roster: roster,
     people: people,
     epoch: epoch,
+    factsVersion: factsVersion,
   );
 
   /// То же расписание с другими стартами (итоги с табло).
@@ -860,6 +882,7 @@ class Schedule {
     roster: roster,
     people: people,
     epoch: epoch,
+    factsVersion: factsVersion,
   );
 
   Start? byId(String id) {
