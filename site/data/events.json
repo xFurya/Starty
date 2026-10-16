@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16T15:57:13+03:00",
- "checked": "2026-10-16T14:35:04.596042+00:00",
+ "checked": "2026-10-16T14:39:04.773901+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26169,49 +26169,49 @@
      "points": "81.50"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Daniel Grassl — 97.14\n2. Genrikh Gartung — 83.59\n3. Arlet Levandi — 81.50\n\nНачало: 13:50 МСК",
+   "desc": "Итог:\n1. Daniel Grassl — 97.14\n2. Genrikh Gartung — 83.59\n3. Arlet Levandi — 81.50\n\nНачало: 13:50 МСК",
    "field": [
     {
      "name": "Nico Steffen",
      "nation": "SUI",
      "no": 1,
      "warmup": 1,
-     "place": 17
+     "place": 18
     },
     {
      "name": "Nikita Sheiko",
      "nation": "ISR",
      "no": 2,
      "warmup": 1,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Pablo Garcia",
      "nation": "ESP",
      "no": 3,
      "warmup": 1,
-     "place": 24
+     "place": 25
     },
     {
      "name": "Matvii Yefymenko",
      "nation": "POL",
      "no": 4,
      "warmup": 1,
-     "place": 25
+     "place": 26
     },
     {
      "name": "Aleksei Vlasenko",
      "nation": "HUN",
      "no": 5,
      "warmup": 1,
-     "place": 27
+     "place": 28
     },
     {
      "name": "Taira Shinohara",
      "nation": "USA",
      "no": 6,
      "warmup": 2,
-     "place": 13
+     "place": 14
     },
     {
      "name": "Daniel Grassl",
@@ -26225,7 +26225,7 @@
      "nation": "AUS",
      "no": 8,
      "warmup": 2,
-     "place": 26
+     "place": 27
     },
     {
      "name": "Arlet Levandi",
@@ -26246,67 +26246,67 @@
      "nation": "SWE",
      "no": 11,
      "warmup": 3,
-     "place": 15
+     "place": 16
     },
     {
      "name": "Davide Lewton Brain",
      "nation": "MON",
      "no": 12,
      "warmup": 3,
-     "place": 21
+     "place": 22
     },
     {
      "name": "Tamir Kuperman",
      "nation": "ISR",
      "no": 13,
      "warmup": 3,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Nikita Krivosheyev",
      "nation": "KAZ",
      "no": 14,
      "warmup": 3,
-     "place": 16
+     "place": 17
     },
     {
      "name": "Nikita Starostin",
      "nation": "GER",
      "no": 15,
      "warmup": 3,
-     "place": 12
+     "place": 13
     },
     {
      "name": "Vadym Novikov",
      "nation": "UKR",
      "no": 16,
      "warmup": 3,
-     "place": 19
+     "place": 20
     },
     {
      "name": "Andreas Nordeback",
      "nation": "SWE",
-     "place": 14
+     "place": 15
     },
     {
      "name": "David Sedej",
      "nation": "SLO",
-     "place": 23
+     "place": 24
     },
     {
      "name": "Fedirs Kuliss",
      "nation": "LAT",
-     "place": 11
+     "place": 12
     },
     {
      "name": "John Kim",
      "nation": "CAN",
-     "place": 8
+     "place": 9
     },
     {
      "name": "Kevin Aymoz",
      "nation": "FRA",
-     "place": 10
+     "place": 11
     },
     {
      "name": "Lukas Britschgi",
@@ -26316,34 +26316,34 @@
     {
      "name": "Makar Suntsev",
      "nation": "FIN",
-     "place": 22
+     "place": 23
     },
     {
      "name": "Matias Lindfors",
      "nation": "FIN",
-     "place": 5
+     "place": 6
     },
     {
      "name": "Patrick Blackwell",
-     "nation": "USA"
+     "nation": "USA",
+     "place": 5
     },
     {
      "name": "Tobia Oellerer",
      "nation": "AUT",
-     "place": 18
+     "place": 19
     },
     {
      "name": "Vladimir Samoilov",
      "nation": "POL",
-     "place": 20
+     "place": 21
     },
     {
      "name": "Wesley Chiu",
      "nation": "CAN",
-     "place": 9
+     "place": 10
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
     "seg": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG001.htm",
@@ -26379,7 +26379,7 @@
      "Matias LINDFORS": "Matias Lindfors",
      "Patrick BLACKWELL": "Patrick Blackwell"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-cs-budapest-trophy.json"
   },
