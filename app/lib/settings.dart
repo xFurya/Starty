@@ -1222,12 +1222,8 @@ class _AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<_AccountPage> {
-  final _email = TextEditingController();
-  final _pass = TextEditingController();
-  final _code = TextEditingController();
   bool _busy = false;
-  bool _mailOpen = false; // в режиме кода: раскрыта форма «Привязать почту»
-  String? _error, _info;
+  String? _error;
 
   @override
   void initState() {
@@ -1235,46 +1231,30 @@ class _AccountPageState extends State<_AccountPage> {
     widget.state.refreshCodeLink();
   }
 
-  @override
-  void dispose() {
-    _email.dispose();
-    _pass.dispose();
-    _code.dispose();
-    super.dispose();
-  }
-
-  /// Выход из аккаунта сбрасывает настройки этого устройства: сначала спрашиваем.
+  /// Выход из аккаунта (или отключение кода) сбрасывает настройки этого устройства: сначала спрашиваем.
   Future<void> _signOut(AppState st) async {
     if (!await confirmDisconnect(context, title: 'Выйти из аккаунта?', action: 'Выйти') || !mounted) return;
     await _act(() async {
-      await st.signOutSync();
+      if (st.syncEmail != null) {
+        await st.signOutSync();
+      } else {
+        await st.disconnectSync();
+      }
       return null;
     });
   }
 
-  /// Отключение кода сбрасывает настройки этого устройства: сначала спрашиваем.
-  Future<void> _disconnectCode(AppState st) async {
-    if (!await confirmDisconnect(context, title: 'Выйти из аккаунта?', action: 'Выйти') || !mounted) return;
-    await _act(() async {
-      await st.disconnectSync();
-      return null;
-    });
-  }
-
-  /// Одно действие с сервером. Пока идёт — кнопки неактивны; итог или причина — под разделами.
+  /// Одно действие с сервером. Пока идёт — строки неактивны; причина неудачи — под разделами.
   Future<void> _act(Future<String?> Function() action) async {
     setState(() {
       _busy = true;
       _error = null;
-      _info = null;
     });
     final msg = await action();
     if (!mounted) return;
-    final hint = msg == kConfirmMail;
     setState(() {
       _busy = false;
-      _error = hint ? null : msg;
-      _info = hint ? msg : null;
+      _error = msg;
     });
     widget.state.refreshCodeLink();
   }
@@ -1285,84 +1265,47 @@ class _AccountPageState extends State<_AccountPage> {
     await _act(st.createLinkedCode);
   }
 
-  Future<void> _mail({required bool create, bool link = false}) async {
-    final mail = _email.text.trim();
-    if (!mail.contains('@')) {
-      setState(() => _error = 'Введите почту');
-      return;
-    }
-    if (_pass.text.isEmpty) {
-      setState(() => _error = 'Введите пароль');
-      return;
-    }
-    await _act(
-      () => link
-          ? widget.state.linkMail(mail, _pass.text, create: create)
-          : widget.state.signInSync(mail, _pass.text, create: create),
+  Future<void> _codeMenu(BuildContext rowContext, AppState st) async {
+    final pick = await showChoiceMenu<bool>(
+      rowContext,
+      items: const [(true, 'Заменить код')],
+      selected: false,
     );
+    if (pick == true && mounted) await _replaceCode(st);
   }
-
-  /// Поля почты и пароля и кнопки «Войти» / «Регистрация» — вход и привязка почты к коду.
-  List<Widget> _mailForm(Palette p, {required bool link}) => [
-    TextField(
-      controller: _email,
-      keyboardType: TextInputType.emailAddress,
-      autocorrect: false,
-      enableSuggestions: false,
-      style: TextStyle(fontSize: 15.5, color: p.ink),
-      decoration: _field(p, 'Почта'),
-    ),
-    const SizedBox(height: 8),
-    TextField(
-      controller: _pass,
-      obscureText: true,
-      autocorrect: false,
-      enableSuggestions: false,
-      style: TextStyle(fontSize: 15.5, color: p.ink),
-      decoration: _field(p, 'Пароль'),
-    ),
-    const SizedBox(height: 12),
-    Row(
-      children: [
-        Expanded(
-          child: SheetButton(
-            filled: true,
-            label: 'Войти',
-            onTap: _busy ? null : () => _mail(create: false, link: link),
-          ),
-        ),
-        const SizedBox(width: 10),
-        Expanded(
-          child: SheetButton(
-            neutral: true,
-            label: 'Регистрация',
-            onTap: _busy ? null : () => _mail(create: true, link: link),
-          ),
-        ),
-      ],
-    ),
-  ];
 
   void _copy(String code) {
     Clipboard.setData(ClipboardData(text: code));
-    setState(() => _info = 'Код скопирован');
+    final p = Palette.of(context);
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        SnackBar(
+          content: Text('Скопировано', style: TextStyle(fontFamily: 'Manrope', fontSize: 14.5, color: p.bg, height: 1.3)),
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: p.ink,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+          duration: const Duration(seconds: 2),
+        ),
+      );
   }
 
-  InputDecoration _field(Palette p, String hint) => InputDecoration(
-    hintText: hint,
-    hintStyle: TextStyle(color: p.ink2),
-    filled: true,
-    fillColor: p.bg,
-    contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
-    enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(14),
-      borderSide: BorderSide(color: p.control),
-    ),
-    focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(14),
-      borderSide: BorderSide(color: p.accent, width: 1.4),
-    ),
-  );
+  void _sheet(_SheetKind kind) {
+    showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      builder: (_) => _SignInSheet(state: widget.state, kind: kind),
+    );
+  }
+
+  /// Строка статуса под именем: «Сохранено в 13:37», «Сохраняется…» или причина ошибки.
+  String _status(AppState st) {
+    if (st.syncProblem != null) return st.syncProblem!;
+    if (_busy || SyncLocal(Prefs.raw).state.pending) return 'Сохраняется…';
+    final at = st.syncAt;
+    return at == null ? 'Ещё не сохранено' : 'Сохранено в ${_when(at)}';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -1372,11 +1315,12 @@ class _AccountPageState extends State<_AccountPage> {
         final p = Palette.of(context);
         final st = widget.state;
         final code = st.syncCode;
+        final mail = st.syncEmail;
         final connected = st.syncOn;
         return _SettingsPage(
           title: 'Аккаунт',
           slivers: [
-            if (!syncConfigured) ...[
+            if (!st.syncAvailable) ...[
               SliverToBoxAdapter(
                 child: Plate(
                   child: _Row(
@@ -1388,247 +1332,436 @@ class _AccountPageState extends State<_AccountPage> {
                 ),
               ),
             ] else if (connected) ...[
-              const SliverToBoxAdapter(child: _Head('Состояние')),
               SliverToBoxAdapter(
-                child: Plate(
-                  child: _Row(
-                    icon: st.syncProblem == null
-                        ? CupertinoIcons.checkmark_circle
-                        : CupertinoIcons.exclamationmark_circle,
-                    iconColor: st.syncProblem == null ? null : p.live,
-                    title: st.syncProblem ?? 'Настройки в аккаунте',
-                    subtitle: st.syncAt == null
-                        ? 'Ещё не обновлялось'
-                        : 'Обновлено: ${_when(st.syncAt!)}',
-                    subtitleColor: st.syncProblem == null ? null : p.live,
-                    action: _busy ? null : 'Обновить',
-                    onAction: _busy ? null : () => _act(st.syncNow),
-                  ),
+                child: _ProfileCard(
+                  icon: CupertinoIcons.number,
+                  letter: mail?.characters.first.toUpperCase(),
+                  title: mail ?? 'Вход по коду',
+                  status: _status(st),
+                  failed: st.syncProblem != null,
+                  onRetry: _busy ? null : () => _act(st.syncNow),
                 ),
               ),
-              if (st.syncEmail != null) ...[
-                const SliverToBoxAdapter(child: _Head('Аккаунт')),
-                SliverToBoxAdapter(
-                  child: Plate(
-                    child: Column(
-                      children: [
-                        _Row(
-                          icon: CupertinoIcons.mail,
-                          title: st.syncEmail!,
-                          subtitle:
-                              'Настройки одни на все устройства, где вы вошли',
-                        ),
-                        const Hairline(),
-                        _Row(
-                          icon: CupertinoIcons.square_arrow_right,
-                          title: 'Выйти с этого устройства',
-                          onTap: _busy ? null : () => _signOut(st),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SliverToBoxAdapter(child: _Head('Вход по коду')),
-                SliverToBoxAdapter(
-                  child: Plate(
-                    child: Column(
-                      children: [
-                        if (st.syncLinkedCode == null && !st.codeLinkChecked)
-                          // сервер ещё не ответил: ничего не утверждаем и действий не даём
-                          const _Row(icon: CupertinoIcons.number, title: 'Проверяем…')
-                        else if (st.syncLinkedCode != null) ...[
-                          _Row(
-                            icon: CupertinoIcons.number,
-                            title: _groupedCode(st.syncLinkedCode!),
-                            action: 'Копировать',
-                            onAction: () => _copy(st.syncLinkedCode!),
-                          ),
-                          const Hairline(),
-                          _Row(
-                            icon: CupertinoIcons.arrow_2_circlepath,
-                            title: 'Создать новый код',
-                            onTap: _busy ? null : () => _replaceCode(st),
-                          ),
-                        ] else if (st.codeLinked == true) ...[
-                          const _Row(icon: CupertinoIcons.number, title: 'Код привязан'),
-                          const Hairline(),
-                          _Row(
-                            icon: CupertinoIcons.arrow_2_circlepath,
-                            title: 'Создать новый код',
-                            onTap: _busy ? null : () => _replaceCode(st),
-                          ),
-                        ] else
-                          _Row(
-                            icon: CupertinoIcons.plus_circle,
-                            title: 'Создать код',
-                            onTap: _busy ? null : () => _act(st.createLinkedCode),
-                          ),
-                        if (st.syncLinkedCode != null || st.codeLinkChecked) ...[
-                        const Hairline(),
-                        Padding(
-                          padding: const EdgeInsets.all(14),
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: TextField(
-                                  controller: _code,
-                                  textCapitalization: TextCapitalization.characters,
-                                  autocorrect: false,
-                                  enableSuggestions: false,
-                                  style: TextStyle(fontSize: 15.5, color: p.ink),
-                                  decoration: _field(p, 'Другой код'),
-                                ),
-                              ),
-                              const SizedBox(width: 10),
-                              SheetButton(
-                                compact: true,
-                                label: 'Привязать',
-                                onTap: _busy ? null : () => _act(() => st.linkEnteredCode(_code.text)),
-                              ),
-                            ],
-                          ),
-                        ),
-                        ],
-                      ],
-                    ),
-                  ),
-                ),
-              ] else if (code != null) ...[
-                const SliverToBoxAdapter(child: _Head('Вход по коду')),
-                SliverToBoxAdapter(
-                  child: Plate(
-                    child: Column(
-                      children: [
-                        _Row(
-                          icon: CupertinoIcons.number,
-                          title: _groupedCode(code),
-                          subtitle: 'Введите его на другом устройстве, и настройки станут общими. Код открывает настройки: не отправляйте его посторонним',
-                          action: 'Копировать',
-                          onAction: () => _copy(code),
-                        ),
-                        const Hairline(),
-                        _Row(
-                          icon: CupertinoIcons.square_arrow_right,
-                          title: 'Выйти с этого устройства',
-                          onTap: _busy ? null : () => _disconnectCode(st),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SliverToBoxAdapter(child: _Head('Почта')),
-                SliverToBoxAdapter(
-                  child: Plate(
-                    child: Column(
-                      children: [
-                        _Row(
-                          icon: CupertinoIcons.mail,
-                          title: 'Привязать почту',
-                          onTap: _busy ? null : () => setState(() => _mailOpen = !_mailOpen),
-                        ),
-                        if (_mailOpen) ...[
-                          const Hairline(),
-                          Padding(
-                            padding: const EdgeInsets.all(14),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: _mailForm(p, link: true),
-                            ),
-                          ),
-                        ],
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ] else ...[
-              const SliverToBoxAdapter(child: _Head('Аккаунт')),
-              SliverToBoxAdapter(
-                child: Plate(
-                  child: Padding(
-                    padding: const EdgeInsets.all(14),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                          'Почта и пароль. Настройки одни на все устройства, где вы вошли.',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: p.ink2,
-                            height: 1.35,
-                          ),
-                        ),
-                        const SizedBox(height: 12),
-                        ..._mailForm(p, link: false),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              const SliverToBoxAdapter(child: _Head('Вход по коду')),
+              const SliverToBoxAdapter(child: _Head('Способы входа')),
               SliverToBoxAdapter(
                 child: Plate(
                   child: Column(
                     children: [
-                      _Row(
-                        icon: CupertinoIcons.plus_circle,
-                        title: 'Создать код',
-                        subtitle: 'Без почты. Настройки этого устройства уйдут на сервер под новым кодом',
-                        onTap: _busy ? null : () => _act(st.createSyncCode),
+                      if (mail != null)
+                        _AccountRow(icon: CupertinoIcons.mail, title: 'Почта', value: mail)
+                      else
+                        _AccountRow(
+                          icon: CupertinoIcons.mail,
+                          title: 'Привязать почту',
+                          chevron: true,
+                          onTap: _busy ? null : () => _sheet(_SheetKind.link),
+                        ),
+                      const Hairline(),
+                      if (mail == null)
+                        _AccountRow(
+                          icon: CupertinoIcons.number,
+                          title: 'Код',
+                          value: _groupedCode(code ?? ''),
+                          code: true,
+                          copyIcon: true,
+                          onTap: code == null ? null : () => _copy(code),
+                        )
+                      else if (st.syncLinkedCode == null && !st.codeLinkChecked)
+                        // сервер ещё не ответил: ничего не утверждаем и действий не даём
+                        const _AccountRow(icon: CupertinoIcons.number, title: 'Код', value: '…')
+                      else if (st.syncLinkedCode != null)
+                        Builder(
+                          builder: (rowContext) => _AccountRow(
+                            icon: CupertinoIcons.number,
+                            title: 'Код',
+                            value: _groupedCode(st.syncLinkedCode!),
+                            code: true,
+                            copyIcon: true,
+                            onTap: () => _copy(st.syncLinkedCode!),
+                            onLongPress: _busy ? null : () => _codeMenu(rowContext, st),
+                          ),
+                        )
+                      else if (st.codeLinked == true)
+                        Builder(
+                          builder: (rowContext) => _AccountRow(
+                            icon: CupertinoIcons.number,
+                            title: 'Код',
+                            value: 'Привязан',
+                            onLongPress: _busy ? null : () => _codeMenu(rowContext, st),
+                          ),
+                        )
+                      else
+                        _AccountRow(
+                          icon: CupertinoIcons.number,
+                          title: 'Создать код',
+                          chevron: true,
+                          onTap: _busy ? null : () => _act(st.createLinkedCode),
+                        ),
+                    ],
+                  ),
+                ),
+              ),
+              if (_error != null)
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 12, 20, 0),
+                    child: Text(_error!, style: TextStyle(fontSize: 14, color: p.live)),
+                  ),
+                ),
+              const SliverToBoxAdapter(child: SizedBox(height: 22)),
+              SliverToBoxAdapter(
+                child: Plate(
+                  child: InkWell(
+                    onTap: _busy ? null : () => _signOut(st),
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(minHeight: 56),
+                      child: Center(
+                        child: Text(
+                          'Выйти',
+                          style: TextStyle(fontSize: 15.5, fontWeight: FontWeight.w700, color: p.live),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ] else ...[
+              const SliverToBoxAdapter(child: _ProfileCard(letter: null, icon: CupertinoIcons.person, title: 'Аккаунт', status: 'Вход не выполнен')),
+              const SliverToBoxAdapter(child: SizedBox(height: 14)),
+              SliverToBoxAdapter(
+                child: Plate(
+                  child: Column(
+                    children: [
+                      _AccountRow(
+                        icon: CupertinoIcons.mail,
+                        title: 'Войти по почте',
+                        chevron: true,
+                        onTap: () => _sheet(_SheetKind.mail),
                       ),
                       const Hairline(),
-                      Padding(
-                        padding: const EdgeInsets.all(14),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: TextField(
-                                controller: _code,
-                                textCapitalization:
-                                    TextCapitalization.characters,
-                                autocorrect: false,
-                                enableSuggestions: false,
-                                style: TextStyle(fontSize: 15.5, color: p.ink),
-                                decoration: _field(
-                                  p,
-                                  'Код с другого устройства',
-                                ),
-                              ),
-                            ),
-                            const SizedBox(width: 10),
-                            SheetButton(
-                              compact: true,
-                              label: 'Ввести',
-                              onTap: _busy
-                                  ? null
-                                  : () => _act(
-                                      () => st.enterSyncCode(_code.text),
-                                    ),
-                            ),
-                          ],
-                        ),
+                      _AccountRow(
+                        icon: CupertinoIcons.number,
+                        title: 'Войти по коду',
+                        chevron: true,
+                        onTap: () => _sheet(_SheetKind.code),
                       ),
                     ],
                   ),
                 ),
               ),
             ],
-            if (_busy || _error != null || _info != null)
-              SliverToBoxAdapter(
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 12, 20, 0),
-                  child: Text(
-                    _busy ? 'Связываемся с сервером…' : (_error ?? _info!),
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: _error != null ? p.live : p.ink2,
-                    ),
-                  ),
-                ),
-              ),
           ],
         );
       },
+    );
+  }
+}
+
+/// Шапка страницы: круг с буквой (или значком), имя и одна тихая строка статуса.
+/// При ошибке статус — цветом «live» и рядом «Повторить».
+class _ProfileCard extends StatelessWidget {
+  final String? letter;
+  final IconData icon;
+  final String title;
+  final String status;
+  final bool failed;
+  final VoidCallback? onRetry;
+  const _ProfileCard({
+    required this.letter,
+    required this.icon,
+    required this.title,
+    required this.status,
+    this.failed = false,
+    this.onRetry,
+  });
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Plate(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Row(
+          children: [
+            Container(
+              width: 56,
+              height: 56,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: p.accent.withValues(alpha: p.isDark ? .20 : .12),
+              ),
+              child: letter == null
+                  ? Icon(icon, size: 26, color: p.accent)
+                  : Text(letter!, style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700, color: p.accent)),
+            ),
+            const SizedBox(width: 14),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: p.ink, height: 1.25),
+                  ),
+                  const SizedBox(height: 3),
+                  Text(
+                    status,
+                    style: TextStyle(fontSize: 13.5, color: failed ? p.live : p.ink2, height: 1.3, fontFeatures: tnum),
+                  ),
+                  if (failed) _TextAction('Повторить', onTap: onRetry ?? () {}, below: true),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Строка «Способов входа»: значок, название, значение справа (обрезается в конце), нажатие по всей строке.
+class _AccountRow extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final String? value;
+  final bool code;
+  final bool copyIcon;
+  final bool chevron;
+  final VoidCallback? onTap;
+  final VoidCallback? onLongPress;
+  const _AccountRow({
+    required this.icon,
+    required this.title,
+    this.value,
+    this.code = false,
+    this.copyIcon = false,
+    this.chevron = false,
+    this.onTap,
+    this.onLongPress,
+  });
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final body = ConstrainedBox(
+      constraints: const BoxConstraints(minHeight: 56),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(14, 9, 12, 9),
+        child: Row(
+          children: [
+            _RowIcon(icon),
+            const SizedBox(width: 12),
+            Text(
+              title,
+              maxLines: 1,
+              softWrap: false,
+              style: TextStyle(fontSize: 15.5, fontWeight: FontWeight.w600, color: p.ink, height: 1.25),
+            ),
+            if (value != null) ...[
+              const SizedBox(width: 12),
+              Flexible(
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: code
+                      ? FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            value!,
+                            maxLines: 1,
+                            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink, letterSpacing: .6, fontFeatures: tnum),
+                          ),
+                        )
+                      : Text(
+                          value!,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.right,
+                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink2, fontFeatures: tnum),
+                        ),
+                ),
+              ),
+            ] else
+              const Spacer(),
+            if (copyIcon) ...[
+              const SizedBox(width: 10),
+              Icon(CupertinoIcons.doc_on_doc, size: 17, color: p.accent),
+            ],
+            if (chevron) const _Chevron(),
+          ],
+        ),
+      ),
+    );
+    if (onTap == null && onLongPress == null) return MergeSemantics(child: body);
+    return MergeSemantics(
+      child: Semantics(
+        button: true,
+        child: InkWell(onTap: onTap ?? () {}, onLongPress: onLongPress, child: body),
+      ),
+    );
+  }
+}
+
+enum _SheetKind { mail, link, code }
+
+InputDecoration _accountField(Palette p, String hint) => InputDecoration(
+  hintText: hint,
+  hintStyle: TextStyle(color: p.ink2),
+  filled: true,
+  fillColor: p.bg,
+  contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
+  enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: BorderSide(color: p.control)),
+  focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: BorderSide(color: p.accent, width: 1.4)),
+);
+
+/// Лист входа: почта и пароль («Войти», «Регистрация»), привязка почты к коду или вход по коду.
+class _SignInSheet extends StatefulWidget {
+  final AppState state;
+  final _SheetKind kind;
+  const _SignInSheet({required this.state, required this.kind});
+  @override
+  State<_SignInSheet> createState() => _SignInSheetState();
+}
+
+class _SignInSheetState extends State<_SignInSheet> {
+  final _email = TextEditingController();
+  final _pass = TextEditingController();
+  final _code = TextEditingController();
+  bool _busy = false;
+  String? _error, _info;
+
+  @override
+  void dispose() {
+    _email.dispose();
+    _pass.dispose();
+    _code.dispose();
+    super.dispose();
+  }
+
+  Future<void> _run(Future<String?> Function() action) async {
+    setState(() {
+      _busy = true;
+      _error = null;
+      _info = null;
+    });
+    final msg = await action();
+    if (!mounted) return;
+    if (msg == null) {
+      widget.state.refreshCodeLink();
+      Navigator.of(context).pop();
+      return;
+    }
+    final hint = msg == kConfirmMail;
+    setState(() {
+      _busy = false;
+      _error = hint ? null : msg;
+      _info = hint ? msg : null;
+    });
+  }
+
+  void _mail({required bool create}) {
+    final mail = _email.text.trim();
+    if (!mail.contains('@')) {
+      setState(() => _error = 'Введите почту');
+      return;
+    }
+    if (_pass.text.isEmpty) {
+      setState(() => _error = 'Введите пароль');
+      return;
+    }
+    final st = widget.state;
+    _run(
+      () => widget.kind == _SheetKind.link
+          ? st.linkMail(mail, _pass.text, create: create)
+          : st.signInSync(mail, _pass.text, create: create),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final st = widget.state;
+    final byCode = widget.kind == _SheetKind.code;
+    final title = switch (widget.kind) {
+      _SheetKind.mail => 'Войти по почте',
+      _SheetKind.link => 'Привязать почту',
+      _SheetKind.code => 'Войти по коду',
+    };
+    return Padding(
+      padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(20, 22, 20, 20),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: p.ink)),
+            const SizedBox(height: 16),
+            if (byCode)
+              TextField(
+                controller: _code,
+                textCapitalization: TextCapitalization.characters,
+                autocorrect: false,
+                enableSuggestions: false,
+                style: TextStyle(fontSize: 15.5, color: p.ink),
+                decoration: _accountField(p, 'Код'),
+              )
+            else ...[
+              TextField(
+                controller: _email,
+                keyboardType: TextInputType.emailAddress,
+                autocorrect: false,
+                enableSuggestions: false,
+                style: TextStyle(fontSize: 15.5, color: p.ink),
+                decoration: _accountField(p, 'Почта'),
+              ),
+              const SizedBox(height: 8),
+              TextField(
+                controller: _pass,
+                obscureText: true,
+                autocorrect: false,
+                enableSuggestions: false,
+                style: TextStyle(fontSize: 15.5, color: p.ink),
+                decoration: _accountField(p, 'Пароль'),
+              ),
+            ],
+            if (_busy || _error != null || _info != null)
+              Padding(
+                padding: const EdgeInsets.only(top: 12),
+                child: Text(
+                  _busy ? 'Связываемся с сервером…' : (_error ?? _info!),
+                  style: TextStyle(fontSize: 14, color: _error != null ? p.live : p.ink2),
+                ),
+              ),
+            const SizedBox(height: 14),
+            if (byCode) ...[
+              SheetButton(
+                filled: true,
+                label: 'Войти',
+                onTap: _busy ? null : () => _run(() => st.enterSyncCode(_code.text)),
+              ),
+              const SizedBox(height: 10),
+              SheetButton(
+                neutral: true,
+                label: 'Создать код',
+                onTap: _busy ? null : () => _run(st.createSyncCode),
+              ),
+            ] else
+              Row(
+                children: [
+                  Expanded(
+                    child: SheetButton(filled: true, label: 'Войти', onTap: _busy ? null : () => _mail(create: false)),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: SheetButton(neutral: true, label: 'Регистрация', onTap: _busy ? null : () => _mail(create: true)),
+                  ),
+                ],
+              ),
+          ],
+        ),
+      ),
     );
   }
 }

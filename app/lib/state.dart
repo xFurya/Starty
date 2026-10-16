@@ -75,6 +75,9 @@ class AppState extends ChangeNotifier {
   @visibleForTesting
   http.Client? syncClient;
   bool get _syncReady => syncConfigured || syncClient != null;
+
+  /// Есть ли с чем входить: адрес сервера в сборке (в тестах — подменённый клиент).
+  bool get syncAvailable => _syncReady;
   String get _url => syncConfigured ? syncUrl : 'https://sync.test';
   String get _key => syncConfigured ? syncKey : 'test';
 
