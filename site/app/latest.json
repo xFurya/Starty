@@ -1,33 +1,11 @@
 {
- "version": "1.0.26",
- "code": 27,
- "notes": "Фильтр: по умолчанию выбрано всё; исправлен счётчик запланированных уведомлений.",
- "at": "2026-10-15T14:23:56Z",
+ "version": "1.0.27",
+ "code": 28,
+ "notes": "Экран протокола с оценками судей; режим живых мест; аккаунт с общими настройками.",
+ "at": "2026-10-16T07:58:06Z",
  "android": {
-  "file": "starty-1.0.26.apk",
-  "size": 21864993,
-  "sha256": "60fd6f55cff59f5475825fba44cabb441a1fab666b9560274c432cc776294196"
- },
- "windows": {
-  "code": 27,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.26/Starty-windows.zip",
-  "size": 13826844,
-  "sha256": "ecb2b58c53e60eb2761c1220c3426e1f279eea919fbdf089bb5b5af758f6760c",
-  "setup": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.26/starty-setup-1.0.26.exe",
-   "size": 11885495,
-   "sha256": "264b0845588311037fdf352109ab3435026d1fc5ea28ac8b1aa6806cc7e9b12a"
-  }
- },
- "macos": {
-  "code": 27,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.26/Starty-macos.zip",
-  "size": 20919959,
-  "sha256": "e2ff7db6e853994896e6a7c0d6927f6cb4060585abbaeead858fb8d1fde75b12",
-  "dmg": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.26/Starty-macos.dmg",
-   "size": 23962825,
-   "sha256": "39dcf1b79abc28a791119dc9178340467207a630f95a155460c198a8e8b23557"
-  }
+  "file": "starty-1.0.27.apk",
+  "size": 22127957,
+  "sha256": "c27b0cfa884ae7b0c3f3c16d6c0170a9dc855774c7f7bf8bd015efc1278a3652"
  }
 }
