@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16T13:50:13+03:00",
- "checked": "2026-10-16T13:50:13+03:00",
+ "checked": "2026-10-16T11:03:16.948871+00:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -25989,14 +25989,15 @@
     "Wesley Chiu"
    ],
    "src": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
-   "desc": "Начало: 13:50 МСК",
+   "desc": "Промежуточные итоги:\n1. Nico Steffen — 60.63\n\nНачало: 13:50 МСК",
    "field": [
     {
      "name": "Nico Steffen",
      "nation": "SUI",
      "time": "13:56",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Nikita Sheiko",
@@ -26225,7 +26226,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": "isu_isu-cs-budapest-trophy.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Nico Steffen",
+     "nation": "SUI",
+     "points": "60.63"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-senior-rt",
