@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16T17:58:34+03:00",
- "checked": "2026-10-16T17:58:34+03:00",
+ "checked": "2026-10-16T15:19:04.348996+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26476,19 +26476,31 @@
    "podium": [
     {
      "place": 1,
-     "name": "Gina Zehnder / Beda Leon Sieber",
-     "nation": "SUI",
-     "points": "55.30"
+     "name": "Jamie Fournier / Everest Zhu",
+     "nation": "CAN",
+     "points": "66.14"
+    },
+    {
+     "place": 2,
+     "name": "Chloe Nguyen / Brendan Giang",
+     "nation": "CAN",
+     "points": "56.47"
+    },
+    {
+     "place": 3,
+     "name": "Anita Straub / Andreas Straub",
+     "nation": "AUT",
+     "points": "55.41"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Gina Zehnder / Beda Leon Sieber — 55.30\n\nРоссияне:\n• Милана Кузьмина / Дмитрий Студеникин — 19:04\n• Василиса Григорьева / Евгений Артющенко — 20:48\n\nНачало: 17:45 МСК",
+   "desc": "Промежуточные итоги:\n1. Jamie Fournier / Everest Zhu — 66.14\n2. Chloe Nguyen / Brendan Giang — 56.47\n3. Anita Straub / Andreas Straub — 55.41\n\nРоссияне:\n• Милана Кузьмина / Дмитрий Студеникин — 19:04\n• Василиса Григорьева / Евгений Артющенко — 20:48\n\nНачало: 17:45 МСК",
    "field": [
     {
      "name": "Gina Zehnder / Beda Leon Sieber",
      "nation": "SUI",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 4,
      "time": "17:50"
     },
     {
@@ -26510,7 +26522,8 @@
      "nation": "AUT",
      "time": "18:02",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Charise Matthaei / Max Liebers",
@@ -26524,7 +26537,8 @@
      "nation": "CAN",
      "time": "17:56",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Emese Csiszer / Mark Shapiro",
@@ -26559,7 +26573,8 @@
      "nation": "CAN",
      "time": "18:08",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Loicia Demougeot / Theo le Mercier",
@@ -26671,28 +26686,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-budapest-trophy.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Chloe Nguyen / Brendan Giang",
-     "nation": "CAN",
-     "points": "56.47"
-    },
-    {
-     "place": 2,
-     "name": "Anita Straub / Andreas Straub",
-     "nation": "AUT",
-     "points": "55.41"
-    },
-    {
-     "place": 3,
-     "name": "Gina Zehnder / Beda Leon Sieber",
-     "nation": "SUI",
-     "points": "55.30"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-junior-rt",
