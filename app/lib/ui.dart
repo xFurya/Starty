@@ -72,12 +72,35 @@ const segNames = {'КП': 'короткая программа', 'ПП': 'про
   return (cap(segment), '');
 }
 
-String _title(String w) => w.isEmpty ? w : w[0] + w.substring(1).toLowerCase();
+/// Каждая часть через дефис с заглавной: «ЛЕБЕДЕВА-ПЕТРОСЯН» → «Лебедева-Петросян».
+String _title(String w) => w
+    .split('-')
+    .map((p) => p.isEmpty ? p : p[0] + p.substring(1).toLowerCase())
+    .join('-');
 bool _capsWord(String w) => w.length > 1 && w == w.toUpperCase() && RegExp(r'[A-ZА-ЯЁ]').hasMatch(w);
 
 /// «Kaori SAKAMOTO» → «Kaori Sakamoto»; русские имена без изменений.
 String displayName(String name) =>
     name.split(' / ').map((n) => n.trim().split(RegExp(r'\s+')).map((w) => _capsWord(w) ? _title(w) : w).join(' ')).join(' / ');
+
+final _patronymic = RegExp(r'(вич|вна|ична|инична|ьич)$', caseSensitive: false);
+
+/// «Анна Павловна БИЛИБИНА» → «Анна БИЛИБИНА»: отчество в файле протокола лишнее, как в расписании
+/// (scraper/people.py entry_name). Среднее слово убирается, если оно на отчество и не капсом.
+String dropPatronymic(String name) => name
+    .split(' / ')
+    .map((one) {
+      final w = one.trim().split(RegExp(r'\s+'));
+      return [
+        for (var i = 0; i < w.length; i++)
+          if (!(i > 0 && i < w.length - 1 && _patronymic.hasMatch(w[i]) && !_capsWord(w[i]))) w[i],
+      ].join(' ');
+    })
+    .where((p) => p.isNotEmpty)
+    .join(' / ');
+
+/// Имя участника из файла протокола: без отчества, фамилия с заглавной («Анна Билибина»).
+String protocolName(String name) => displayName(dropPatronymic(name));
 
 /// Только фамилии: «Бойкова / Козловский», «Sakamoto».
 String surname(String name) => name

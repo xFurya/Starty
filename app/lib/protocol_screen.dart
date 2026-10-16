@@ -587,8 +587,10 @@ class _ResultRow extends StatelessWidget {
       // слово статуса переносится вместе с остальным под имя, а не ужимается в узкую колонку
       ?status,
       if (row.nation.isNotEmpty) row.nation,
+      // у снятого/не вышедшего прочерки не нужны: только те сегменты, где место есть
       if (parts != null)
-        for (var i = 0; i < parts.length && i < cols.length; i++) '${colLabel(cols[i])} ${parts[i] ?? '—'}',
+        for (var i = 0; i < parts.length && i < cols.length; i++)
+          if (status == null || parts[i] != null) '${colLabel(cols[i])} ${parts[i] ?? '—'}',
     ];
     final body = Container(
       decoration: ours ? BoxDecoration(color: p.frost, border: Border(left: BorderSide(color: p.accent, width: 3))) : null,
@@ -603,7 +605,7 @@ class _ResultRow extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  displayName(row.name),
+                  protocolName(row.name),
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.25, color: p.ink),
                 ),
                 if (sub.isNotEmpty)
@@ -662,7 +664,7 @@ class _FieldRow extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(displayName(name), style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.25, color: p.ink)),
+                Text(protocolName(name), style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.25, color: p.ink)),
               ],
             ),
           ),

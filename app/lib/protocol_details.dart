@@ -414,7 +414,7 @@ class PanelBlock extends StatelessWidget {
                   ),
                   Expanded(
                     child: Text(
-                      j.name.isEmpty ? '—' : displayName(j.name),
+                      j.name.isEmpty ? '—' : protocolName(j.name),
                       style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: p.ink, height: 1.25),
                     ),
                   ),

@@ -18,6 +18,7 @@ import 'package:starty/protocol_details.dart' show deductionName;
 import 'package:starty/protocol_model.dart';
 import 'package:starty/protocol_repo.dart';
 import 'package:starty/protocol_screen.dart';
+import 'package:starty/ui.dart' show displayName, protocolName;
 
 Future<void> _font(String family, List<String> files) async {
   final l = FontLoader(family);
@@ -27,7 +28,7 @@ Future<void> _font(String family, List<String> files) async {
   await l.load();
 }
 
-const _pair = 'Анна Павловна Билибина / Дмитрий Владимирович Кашаев';
+const _pair = 'Анна Билибина / Дмитрий Кашаев';
 
 final _now = DateTime.utc(2026, 10, 15, 19, 0); // 22:00 по Москве
 
@@ -200,7 +201,7 @@ void main() {
     testWidgets('окончательный — строки с местами и баллами, значок «Оригинал протокола» вместо кнопки', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(sample()));
       expect(find.text('Окончательный'), findsOneWidget);
-      expect(find.text('Анна Павловна Билибина / Дмитрий Владимирович Кашаев'), findsOneWidget);
+      expect(find.text('Анна Билибина / Дмитрий Кашаев'), findsOneWidget);
       expect(find.text('66.36'), findsOneWidget);
       expect(find.byTooltip('Оригинал протокола'), findsOneWidget);
       expect(find.text('Оригинал протокола'), findsNothing); // большой кнопки внизу нет
@@ -358,6 +359,26 @@ void main() {
       expect(deductionName('Falls'), 'Падения');
     });
 
+    testWidgets('снятый без мест — только слово статуса, без прочерков КП/ПП/РТ/ПТ', (tester) async {
+      await pumpScreen(tester, s: start(), repo: repoWith(withTotal()));
+      await tester.tap(find.text('Итог'));
+      await tester.pumpAndSettle();
+      expect(find.text('снят'), findsOneWidget);
+      expect(find.textContaining('КП —'), findsNothing);
+      expect(find.textContaining('ПП —'), findsNothing);
+    });
+
+    testWidgets('снялся после КП — показываем только место из КП', (tester) async {
+      final j = withTotal();
+      final rows = ((j['categories'] as List).first as Map<String, dynamic>)['total']['rows'] as List;
+      (rows[1] as Map<String, dynamic>)['parts'] = ['7', null];
+      await pumpScreen(tester, s: start(), repo: repoWith(j));
+      await tester.tap(find.text('Итог'));
+      await tester.pumpAndSettle();
+      expect(find.text('снят · КП 7'), findsOneWidget);
+      expect(find.textContaining('ПП —'), findsNothing);
+    });
+
     test('незнакомый статус и колонка остаются как в файле', () {
       expect(statusLabel('ZZ'), 'ZZ');
       expect(colLabel('Блок'), 'Блок');
@@ -366,11 +387,34 @@ void main() {
     });
   });
 
+  group('имена протокола: без отчества, фамилия с заглавной', () {
+    test('двойная и тройная фамилия — заглавная после дефиса', () {
+      expect(protocolName('ЛЕБЕДЕВА-ПЕТРОСЯН'), 'Лебедева-Петросян');
+      expect(protocolName('ВОЛКОВ-ЧЕРНЫШЁВ-МАКСИМОВ'), 'Волков-Чернышёв-Максимов');
+      expect(displayName('ЛЕБЕДЕВА-ПЕТРОСЯН'), 'Лебедева-Петросян');
+    });
+
+    test('отчество убирается, имя и фамилия — с заглавной', () {
+      expect(protocolName('Анна Павловна БИЛИБИНА'), 'Анна Билибина');
+      expect(protocolName('Анна Павловна БИЛИБИНА / Дмитрий Владимирович КАШАЕВ'), 'Анна Билибина / Дмитрий Кашаев');
+    });
+
+    test('латиница — только регистр, отчеств нет', () {
+      expect(protocolName('Kirill SHEIKO'), 'Kirill Sheiko');
+    });
+
+    test('среднее слово не на отчество остаётся; на отчество — уходит', () {
+      expect(protocolName('Анна Билибина'), 'Анна Билибина');
+      expect(protocolName('Мария Лаврентьева Иванова'), 'Мария Лаврентьева Иванова');
+      expect(protocolName('Жанна Ивановна Шарапова'), 'Жанна Шарапова');
+    });
+  });
+
   group('строки: раскрытие по тапу, прочерк вместо выдуманного', () {
     testWidgets('раскрытие показывает TES, PCS и снижение', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(sample()));
       expect(find.text('37.77'), findsNothing);
-      await tester.tap(find.text('Анна Павловна Билибина / Дмитрий Владимирович Кашаев'));
+      await tester.tap(find.text('Анна Билибина / Дмитрий Кашаев'));
       await tester.pumpAndSettle();
       expect(find.text('37.77'), findsOneWidget);
       expect(find.text('28.59'), findsOneWidget);
@@ -384,7 +428,7 @@ void main() {
       final r = (_seg(j)['rows'] as List).first as Map<String, dynamic>;
       r..remove('tes')..remove('pcs')..remove('ded');
       await pumpScreen(tester, s: start(), repo: repoWith(j));
-      await tester.tap(find.text('Анна Павловна Билибина / Дмитрий Владимирович Кашаев'));
+      await tester.tap(find.text('Анна Билибина / Дмитрий Кашаев'));
       await tester.pumpAndSettle();
       expect(find.text('ТЕХ'), findsNothing);
     });
