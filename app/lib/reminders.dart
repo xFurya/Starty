@@ -15,6 +15,7 @@ import 'package:starty_alerts/starty_alerts.dart';
 
 import 'data.dart';
 import 'platform.dart';
+import 'ui.dart' show cap, displayName, segNames;
 
 /// Правила: о каких стартах напоминать и за сколько минут.
 class NotifyRules {
@@ -279,8 +280,17 @@ class Reminders {
   static int _id(String s) => s.hashCode & 0x7fffffff;
 
   /// iPhone и Mac: уведомления ставит общий плагин; значок на иконке никогда не меняется.
-  static const _darwinDetails = DarwinNotificationDetails(presentBadge: false, presentAlert: true, presentSound: true);
-  static const _details = NotificationDetails(iOS: _darwinDetails, macOS: _darwinDetails);
+  /// Подзаголовок — турнир, уведомления одного турнира — в одной стопке (threadIdentifier).
+  static NotificationDetails _darwinDetails(Planned x) {
+    final d = DarwinNotificationDetails(
+      presentBadge: false,
+      presentAlert: true,
+      presentSound: true,
+      subtitle: x.subtitle.isEmpty ? null : x.subtitle,
+      threadIdentifier: x.group,
+    );
+    return NotificationDetails(iOS: d, macOS: d);
+  }
 
   static bool get _android => !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
 
@@ -288,7 +298,51 @@ class Reminders {
   static const skated = Duration(minutes: 8);
 
 
-  /// Уведомления, которые должны быть: время, заголовок, текст, до какого момента закреплено
+  /// «юниорские танцы РТ» → («юниорские танцы», «ритм-танец»), как в карточке старта.
+  /// Незнакомое окончание — всё название как вид, без программы.
+  static (String, String) discipline(Start s) {
+    final w = s.segment.trim().split(RegExp(r'\s+'));
+    if (w.length > 1 && segNames.containsKey(w.last)) return (w.sublist(0, w.length - 1).join(' '), segNames[w.last]!);
+    return (s.segment.trim(), '');
+  }
+
+  /// Имя в уведомлении: у пар — фамилии, без капса из протоколов.
+  static String _name(Skater o) => displayName(o.short);
+
+  /// Уведомление о начале старта.
+  ///  заголовок — «Танцы, ритм-танец в 17:45»;
+  ///  строки — турнир, затем по строке на отслеживаемого: «19:04 — Кузьмина / Студеникин»;
+  ///  свёрнутый вид Android — «Кузьмина / Студеникин в 19:04 и ещё 1» (никого — турнир).
+  static ({String title, List<String> lines, String collapsed}) startText(Start s) {
+    final (disc, seg) = discipline(s);
+    final what = seg.isEmpty ? cap(disc) : '${cap(disc)}, $seg';
+    final ours = s.ours;
+    String one(Skater o) => o.time == null ? _name(o) : '${_name(o)} в ${o.time}';
+    final collapsed = ours.isEmpty
+        ? s.tournament
+        : ours.length == 1
+        ? one(ours.first)
+        : '${one(ours.first)} и ещё ${ours.length - 1}';
+    return (
+      title: '$what в ${hm(s.t0)}',
+      lines: [s.tournament, for (final o in ours) o.time == null ? _name(o) : '${o.time} — ${_name(o)}'],
+      collapsed: collapsed,
+    );
+  }
+
+  /// Уведомление о выходе спортсмена: «В 19:04 выходят Кузьмина / Студеникин» (время первым — длинное имя не обрежет его),
+  /// строка — «CS Budapest Trophy, танцы, ритм-танец».
+  static ({String title, List<String> lines, String collapsed}) skaterText(Start s, Skater o) {
+    final (disc, seg) = discipline(s);
+    final line = [s.tournament, disc, if (seg.isNotEmpty) seg].join(', ');
+    return (
+      title: 'В ${o.time} ${o.name.contains(' / ') ? 'выходят' : 'выходит'} ${_name(o)}',
+      lines: [line],
+      collapsed: line,
+    );
+  }
+
+  /// Уведомления, которые должны быть: время, тексты, до какого момента закреплено
   /// и когда убрать. Сюда попадают и уже показанные (старт идёт), чтобы их не убирали.
   /// Ближайшие 60 — iOS держит не больше 64 запланированных.
   static List<Planned> plan(Schedule data, NotifyPlan p, DateTime now) {
@@ -297,15 +351,19 @@ class Reminders {
     for (final s in data.starts) {
       if (!p.wants(s) || !s.t1.isAfter(now)) continue;
       final at = s.t0.subtract(lead);
-      final ours = s.ours.where((o) => o.time != null).map((o) => '${o.time} ${o.short}').join(', ');
+      final t = startText(s);
       out.add(Planned(
-        's:${s.id}',
-        at,
-        p.rules.pin ? s.t1 : at,
-        s.t1,
-        '${hm(s.t0)} · ${s.segment}',
-        [s.tournament, if (ours.isNotEmpty) ours, if (s.broadcast.isNotEmpty) s.broadcast.join(' / ')].join(' · '),
-        s.id,
+        key: 's:${s.id}',
+        at: at,
+        hold: p.rules.pin ? s.t1 : at,
+        end: s.t1,
+        title: t.title,
+        lines: t.lines,
+        collapsed: t.collapsed,
+        startId: s.id,
+        group: s.tid,
+        groupTitle: s.tournament,
+        reminder: false,
       ));
       if (!p.rules.skaters) continue;
       for (final o in s.ours) {
@@ -317,14 +375,19 @@ class Reminders {
         var end = p.rules.clear ? skate.add(Duration(minutes: p.rules.gone)) : s.t1;
         if (end.isAfter(s.t1)) end = s.t1;
         if (!end.isAfter(now)) continue;
+        final t = skaterText(s, o);
         out.add(Planned(
-          'k:${s.id}:${o.name}',
-          at,
-          !p.rules.pin ? at : (done.isBefore(end) ? done : end),
-          end,
-          '${o.time} · ${o.name}',
-          '${s.segment} · ${s.tournament}',
-          s.id,
+          key: 'k:${s.id}:${o.name}',
+          at: at,
+          hold: !p.rules.pin ? at : (done.isBefore(end) ? done : end),
+          end: end,
+          title: t.title,
+          lines: t.lines,
+          collapsed: t.collapsed,
+          startId: s.id,
+          group: s.tid,
+          groupTitle: s.tournament,
+          reminder: true,
         ));
       }
     }
@@ -346,15 +409,20 @@ class Reminders {
     final next = <String, dynamic>{};
     for (final x in list) {
       if (!x.at.isAfter(now)) continue;
-      final sig = '${x.at.millisecondsSinceEpoch}|${x.title}|${x.body}';
+      final sig = '${x.at.millisecondsSinceEpoch}|${x.title}|${x.text}';
       next[x.key] = sig;
       if (have[x.key] == sig) continue;
       await _n.zonedSchedule(
         id: _id(x.key),
         scheduledDate: tz.TZDateTime.from(x.at, tz.UTC),
         title: x.title,
-        body: x.body,
-        notificationDetails: const NotificationDetails(windows: WindowsNotificationDetails()),
+        body: x.text,
+        // в центре уведомлений тосты одного турнира — под общей шапкой с его названием
+        notificationDetails: NotificationDetails(
+          windows: WindowsNotificationDetails(
+            header: WindowsHeader(id: x.group, title: x.groupTitle, arguments: x.startId),
+          ),
+        ),
         androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
         payload: x.startId,
       );
@@ -388,7 +456,19 @@ class Reminders {
       if (_android) {
         await _migrate();
         await StartyAlerts.sync([
-          for (final x in list) AlertEntry(key: x.key, at: x.at, hold: x.hold, end: x.end, title: x.title, body: x.body),
+          for (final x in list)
+            AlertEntry(
+              key: x.key,
+              at: x.at,
+              hold: x.hold,
+              end: x.end,
+              title: x.title,
+              body: x.collapsed,
+              lines: x.lines,
+              group: x.group,
+              groupTitle: x.groupTitle,
+              reminder: x.reminder,
+            ),
         ]);
         return;
       }
@@ -406,7 +486,7 @@ class Reminders {
           scheduledDate: tz.TZDateTime.from(x.at, tz.UTC),
           title: x.title,
           body: x.body,
-          notificationDetails: _details,
+          notificationDetails: _darwinDetails(x),
           androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
           payload: x.startId,
         );
@@ -417,9 +497,45 @@ class Reminders {
   }
 }
 
+/// Одно уведомление. Главное — в заголовке; дальше по мысли на строку, без склеек через «·».
 class Planned {
   final String key;
   final DateTime at, hold, end;
-  final String title, body, startId;
-  Planned(this.key, this.at, this.hold, this.end, this.title, this.body, this.startId);
+  final String title;
+
+  /// Строки развёрнутого вида: у старта первая — турнир, дальше отслеживаемые; у спортсмена одна.
+  final List<String> lines;
+
+  /// Android, свёрнутый вид: одна строка под заголовком.
+  final String collapsed;
+  final String startId;
+
+  /// Турнир: уведомления одного турнира складываются вместе.
+  final String group, groupTitle;
+
+  /// Выход спортсмена — напоминание; начало старта — событие.
+  final bool reminder;
+
+  const Planned({
+    required this.key,
+    required this.at,
+    required this.hold,
+    required this.end,
+    required this.title,
+    required this.lines,
+    required this.collapsed,
+    required this.startId,
+    required this.group,
+    required this.groupTitle,
+    required this.reminder,
+  });
+
+  /// iPhone и Mac: подзаголовок — турнир, если ниже есть что-то ещё.
+  String get subtitle => lines.length > 1 ? lines.first : '';
+
+  /// iPhone и Mac: текст построчно (под подзаголовком).
+  String get body => (lines.length > 1 ? lines.skip(1) : lines).join('\n');
+
+  /// Windows: заголовок и строки — все, турнир первой.
+  String get text => lines.join('\n');
 }

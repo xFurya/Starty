@@ -12,15 +12,17 @@ void main() {
   Start byTitle(String t) => data.starts.firstWhere((e) => e.title == t);
   final womenFs = byTitle('CS Denis Ten Memorial — женщины ПП');
 
-  test('по умолчанию — каждый будущий старт, за 15 минут, текст как в 1.0.1', () {
+  test('по умолчанию — каждый будущий старт, за 15 минут', () {
     final p = Reminders.plan(data, plan(), now);
     final future = data.starts.where((s) => s.t1.isAfter(now)).length;
     expect(p.length, future > 60 ? 60 : future);
     final x = p.firstWhere((x) => x.startId == womenFs.id);
     expect(x.at, womenFs.t0.subtract(const Duration(minutes: 15)));
-    expect(x.title, '17:30 · женщины ПП');
-    expect(x.body, startsWith('CS Denis Ten Memorial · '));
-    expect(x.body, contains('20:32 Александра Трусова'));
+    expect(x.title, 'Женщины, произвольная программа в 17:30');
+    expect(x.lines.first, 'CS Denis Ten Memorial');
+    expect(x.lines, contains('20:32 — Александра Трусова'));
+    expect(x.group, womenFs.tid);
+    expect(x.reminder, isFalse);
   });
 
   test('только одиночники', () {
@@ -76,15 +78,17 @@ void main() {
   test('выход наших — только если включено, за то же время до выхода', () {
     expect(Reminders.plan(data, plan(), now).any((x) => x.key.startsWith('k:')), isFalse);
     final r = const NotifyRules().copyWith(skaters: true);
-    final x = Reminders.plan(data, plan(r), now).firstWhere((x) => x.title == '20:32 · Александра Трусова');
+    final x = Reminders.plan(data, plan(r), now).firstWhere((x) => x.title == 'В 20:32 выходит Александра Трусова');
     expect(msk(x.at).hour, 20);
     expect(msk(x.at).minute, 17);
-    expect(x.body, 'женщины ПП · CS Denis Ten Memorial');
+    expect(x.lines, ['CS Denis Ten Memorial, женщины, произвольная программа']);
+    expect(x.collapsed, x.lines.single);
+    expect(x.reminder, isTrue);
   });
 
   test('выход спортсмена: закреплено, пока не откатал, потом смахивается и убирается само', () {
     final r = const NotifyRules().copyWith(skaters: true);
-    final x = Reminders.plan(data, plan(r), now).firstWhere((x) => x.title == '20:32 · Александра Трусова');
+    final x = Reminders.plan(data, plan(r), now).firstWhere((x) => x.title == 'В 20:32 выходит Александра Трусова');
     final skate = x.at.add(const Duration(minutes: 15));
     expect(x.hold, skate.add(Reminders.skated));
     // последняя в разминке: убрать через 15 мин — позже конца старта, значит в конце старта
@@ -94,9 +98,104 @@ void main() {
     expect(start.hold, womenFs.t1);
     // не закреплять — смахиваются сразу; не убирать — висят до конца старта
     final loose = Reminders.plan(data, plan(r.copyWith(pin: false, clear: false)), now)
-        .firstWhere((x) => x.title == '20:32 · Александра Трусова');
+        .firstWhere((x) => x.title == 'В 20:32 выходит Александра Трусова');
     expect(loose.hold, loose.at);
     expect(loose.end, womenFs.t1);
+  });
+
+  group('тексты уведомлений', () {
+    Start start({String title = 'CS Budapest Trophy — танцы РТ', String level = 'senior', List<Map<String, Object>> ours = const []}) =>
+        Start.fromJson({
+          'id': 'b', 'tid': 'budapest', 'tournament': 'CS Budapest Trophy', 'kind': 'dance', 'level': level, 'seg': 'РТ',
+          'title': title, 'start': '2026-10-17T17:45:00+03:00', 'end': '2026-10-17T21:30:00+03:00',
+          'venue': '', 'intl': true, 'ours': ours,
+        });
+    const two = [
+      {'name': 'Василиса Кузьмина / Андрей Студеникин', 'time': '19:04'},
+      {'name': 'Софья Григорьева / Андрей Артющенко', 'time': '20:48'},
+    ];
+
+    test('старт: вид полностью и время в заголовке, турнир, по строке на отслеживаемого', () {
+      final t = Reminders.startText(start(ours: two));
+      expect(t.title, 'Танцы, ритм-танец в 17:45');
+      expect(t.lines, ['CS Budapest Trophy', '19:04 — Кузьмина / Студеникин', '20:48 — Григорьева / Артющенко']);
+      expect(t.collapsed, 'Кузьмина / Студеникин в 19:04 и ещё 1');
+    });
+
+    test('старт: один отслеживаемый — без «и ещё»', () {
+      final t = Reminders.startText(start(ours: [two.first]));
+      expect(t.collapsed, 'Кузьмина / Студеникин в 19:04');
+      expect(t.lines, ['CS Budapest Trophy', '19:04 — Кузьмина / Студеникин']);
+    });
+
+    test('старт без отслеживаемых: строка — турнир', () {
+      final t = Reminders.startText(start());
+      expect(t.title, 'Танцы, ритм-танец в 17:45');
+      expect(t.lines, ['CS Budapest Trophy']);
+      expect(t.collapsed, 'CS Budapest Trophy');
+    });
+
+    test('время выхода ещё неизвестно — имя без времени', () {
+      final t = Reminders.startText(start(ours: [{'name': 'Василиса Кузьмина / Андрей Студеникин'}]));
+      expect(t.lines.last, 'Кузьмина / Студеникин');
+      expect(t.collapsed, 'Кузьмина / Студеникин');
+    });
+
+    test('юниоры: уровень в названии вида', () {
+      final t = Reminders.startText(start(title: 'CS Budapest Trophy — юниорские танцы РТ', level: 'junior'));
+      expect(t.title, 'Юниорские танцы, ритм-танец в 17:45');
+      final girls = Reminders.startText(start(title: 'CS Budapest Trophy — девушки КП', level: 'junior'));
+      expect(girls.title, 'Девушки, короткая программа в 17:45');
+    });
+
+    test('длинные пары не режутся и не склеиваются', () {
+      const long = {'name': 'Елизавета Худайбердиева-Лебедева / Егор Базин-Ахметов', 'time': '21:07'};
+      final s = start(ours: [long, ...two]);
+      final t = Reminders.startText(s);
+      expect(t.lines[1], '21:07 — Худайбердиева-Лебедева / Базин-Ахметов');
+      expect(t.collapsed, 'Худайбердиева-Лебедева / Базин-Ахметов в 21:07 и ещё 2');
+      final k = Reminders.skaterText(s, s.ours.first);
+      expect(k.title, 'В 21:07 выходят Худайбердиева-Лебедева / Базин-Ахметов');
+    });
+
+    test('выход спортсмена: кто и когда в заголовке, строка — турнир, вид, программа', () {
+      final s = start(ours: two);
+      final t = Reminders.skaterText(s, s.ours.first);
+      expect(t.title, 'В 19:04 выходят Кузьмина / Студеникин');
+      expect(t.lines, ['CS Budapest Trophy, танцы, ритм-танец']);
+      final j = start(title: 'CS Budapest Trophy — юниорские танцы РТ', level: 'junior', ours: two);
+      expect(Reminders.skaterText(j, j.ours.last).lines, ['CS Budapest Trophy, юниорские танцы, ритм-танец']);
+    });
+
+    test('iPhone и Mac: подзаголовок — турнир, текст построчно', () {
+      final s = start(ours: two);
+      final t = Reminders.startText(s);
+      final p = Planned(
+        key: 's:b', at: s.t0, hold: s.t1, end: s.t1, title: t.title, lines: t.lines, collapsed: t.collapsed,
+        startId: s.id, group: s.tid, groupTitle: s.tournament, reminder: false,
+      );
+      expect(p.subtitle, 'CS Budapest Trophy');
+      expect(p.body, '19:04 — Кузьмина / Студеникин\n20:48 — Григорьева / Артющенко');
+      final none = Reminders.startText(start());
+      final q = Planned(
+        key: 's:b', at: s.t0, hold: s.t1, end: s.t1, title: none.title, lines: none.lines, collapsed: none.collapsed,
+        startId: s.id, group: s.tid, groupTitle: s.tournament, reminder: false,
+      );
+      // без отслеживаемых текст не пустой: турнир в нём, а не в подзаголовке
+      expect(q.subtitle, '');
+      expect(q.body, 'CS Budapest Trophy');
+    });
+
+    test('ни в одном тексте нет « · »', () {
+      final r = const NotifyRules().copyWith(skaters: true);
+      final all = Reminders.plan(data, plan(r), now);
+      expect(all.any((x) => x.key.startsWith('k:')), isTrue);
+      for (final x in all) {
+        for (final t in [x.title, x.collapsed, x.subtitle, x.body, x.text, ...x.lines]) {
+          expect(t, isNot(contains('·')), reason: t);
+        }
+      }
+    });
   });
 
   test('прошедшее не планируется', () {

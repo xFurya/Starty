@@ -36,6 +36,10 @@ class AlertsPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
                             end = (x["end"] as Number).toLong(),
                             title = x["title"] as? String ?: "",
                             body = x["body"] as? String ?: "",
+                            lines = (x["lines"] as? List<*>)?.mapNotNull { it as? String } ?: emptyList(),
+                            group = x["group"] as? String ?: "",
+                            groupTitle = x["groupTitle"] as? String ?: "",
+                            reminder = x["reminder"] as? Boolean ?: false,
                         )
                     }
                     Alerts.sync(c, list)

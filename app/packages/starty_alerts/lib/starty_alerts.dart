@@ -4,9 +4,16 @@
 import 'package:flutter/services.dart';
 
 class AlertEntry {
+  /// title — заголовок; body — одна строка свёрнутого вида.
   final String key, title, body;
   /// at — показать, hold — до этого не смахивается (не позже end), end — убрать.
   final DateTime at, hold, end;
+  /// Строки развёрнутого вида (InboxStyle); пусто — развёрнутый вид повторяет body.
+  final List<String> lines;
+  /// Турнир: его уведомления в шторке складываются в одну стопку с названием [groupTitle].
+  final String group, groupTitle;
+  /// Выход спортсмена — напоминание (CATEGORY_REMINDER), начало старта — событие (CATEGORY_EVENT).
+  final bool reminder;
   const AlertEntry({
     required this.key,
     required this.at,
@@ -14,6 +21,10 @@ class AlertEntry {
     required this.end,
     required this.title,
     required this.body,
+    this.lines = const [],
+    this.group = '',
+    this.groupTitle = '',
+    this.reminder = false,
   });
 
   Map<String, Object> toMap() => {
@@ -23,6 +34,10 @@ class AlertEntry {
     'end': end.millisecondsSinceEpoch,
     'title': title,
     'body': body,
+    'lines': lines,
+    'group': group,
+    'groupTitle': groupTitle,
+    'reminder': reminder,
   };
 }
 
