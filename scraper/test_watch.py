@@ -24,8 +24,7 @@ class WatchTest(unittest.TestCase):
     def test_rule_jgp(self):
         self.assertEqual(b.watch_for("JGP Gdansk"), [{"name": "Okko", "url": "https://okko.tv/"}])
         self.assertEqual(b.broadcast_for("JGP Gdansk"), ["Okko"])
-        self.assertEqual(b.watch_for("GP Skate America"), [])
-        self.assertEqual(b.watch_for("CS Budapest Trophy"), [])
+        self.assertEqual(b.watch_for("CS Budapest Trophy"), [])  # эфир CS не подтверждён — не выдумываем
 
     def test_page_wins_over_rule(self):
         base = [{"name": "Okko", "url": "https://okko.tv/event/1"}, {"name": "x", "url": "ftp://bad"}]
@@ -52,8 +51,8 @@ RSS = '''<feed><entry><yt:videoId>OSkvMe0MyDs</yt:videoId>
 
 class YoutubeTest(unittest.TestCase):
     def setUp(self):
-        b._YT["streams"] = None
-        self.addCleanup(lambda: b._YT.update(streams=None))
+        b._YT.clear()
+        self.addCleanup(b._YT.clear)
 
     def ev(self, tid, name, day):
         import datetime as dt
@@ -77,3 +76,61 @@ class YoutubeTest(unittest.TestCase):
             e = self.ev("fsr:x", "Гран-при России «Рапсодия льда»", 14)
             self.assertEqual(e["watch"][0]["url"], "https://www.youtube.com/@ice_skating/live")
         self.assertEqual(b.watch_for("Первенство Москвы"), [])
+
+
+ISU_RSS = '''<feed><entry><yt:videoId>AAAAAAAAAAA</yt:videoId>
+<title>Men Short Program | ISU European Championships | Sheffield 2026 | #FigureSkating</title>
+<published>2026-01-20T18:00:00+00:00</published></entry>
+<entry><yt:videoId>BBBBBBBBBBB</yt:videoId>
+<title>Junior Men Short Program | ISU Figure Skating Junior World Championships | Tallinn 2026</title>
+<published>2026-01-20T18:30:00+00:00</published></entry></feed>'''
+
+
+class IntlWatchTest(unittest.TestCase):
+    def setUp(self):
+        b._YT.clear()
+        self.addCleanup(b._YT.clear)
+
+    def ev(self, name, kind="men", level="senior", seg="КП"):
+        import datetime as dt
+        z = dt.datetime(2026, 1, 20, 17, tzinfo=dt.timezone.utc)
+        return b.make_event(tid="isu:x", tournament=name, kind=kind, level=level, seg=seg, mixed=False,
+                            start=z, end=z, venue="", intl=True, broadcast=[], ours=[], athletes=[], src="")
+
+    def test_grand_prix_okko(self):
+        e = self.ev("GP Skate America")
+        self.assertEqual(e["watch"], [{"name": "Okko", "url": "https://okko.tv/"}])
+        self.assertEqual(e["broadcast"], ["Okko"])
+
+    def test_final_has_both(self):
+        with mock.patch.object(b.net, "fetch", side_effect=b.net.FetchError("x")):
+            e = self.ev("Финал Гран-при")
+        self.assertEqual([w["name"] for w in e["watch"]], ["Okko", "YouTube ISU"])
+        self.assertEqual(e["watch"][1]["url"], "https://www.youtube.com/@SkatingISU/live")
+
+    def test_rss_match_by_segment(self):
+        with mock.patch.object(b.net, "fetch", return_value=ISU_RSS):
+            e = self.ev("Чемпионат Европы")
+            self.assertEqual(e["watch"], [{"name": "YouTube ISU", "url": "https://www.youtube.com/watch?v=AAAAAAAAAAA"}])
+            # другой сегмент и юниорский чемпионат мира: чужое видео не подставляем
+            self.assertTrue(self.ev("Чемпионат Европы", seg="ПП")["watch"][0]["url"].endswith("/@SkatingISU/live"))
+            self.assertTrue(self.ev("Чемпионат мира", level="junior")["watch"][0]["url"].endswith("/@SkatingISU/live"))
+            j = self.ev("Чемпионат мира среди юниоров", level="junior")
+            self.assertEqual(j["watch"][0]["url"], "https://www.youtube.com/watch?v=BBBBBBBBBBB")
+
+    def test_rss_down_keeps_generic(self):
+        with mock.patch.object(b.net, "fetch", side_effect=b.net.FetchError("x")):
+            e = self.ev("Чемпионат Европы")
+        self.assertEqual(e["watch"][0]["url"], "https://www.youtube.com/@SkatingISU/live")
+
+    def test_tournament_page_wins(self):
+        base = [{"name": "YouTube ISU", "url": "https://www.youtube.com/watch?v=PAGEPAGEPAG"}]
+        self.assertEqual(b.watch_for("Чемпионат Европы", base), base)
+
+    def test_unconfirmed_series_have_nothing(self):
+        for n in ("CS Nebelhorn Trophy", "CS Denis Ten Memorial", "CS Budapest Trophy", "Tayside Trophy"):
+            self.assertEqual(b.watch_for(n), [])
+
+    def test_rules_have_sources(self):
+        for r in b.CFG["broadcast_rules"]:
+            self.assertTrue(r.get("source", "").startswith("http"), r["match"])

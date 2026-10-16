@@ -135,16 +135,24 @@ KIND_CODE = {"men": "m", "women": "w", "pairs": "p", "dance": "d"}
 SEG_CODE = {"КП": "sp", "ПП": "fs", "РТ": "rd", "ПТ": "fd", "total": "to"}
 
 
+class StatUnavailable(Exception):
+    """Статистика ISU не ответила (сеть, 5xx, таймаут). Это не «страницы нет»: считать по ней
+    нельзя, а результат расчёта запоминать — тем более (results.py не пишет его в кэш)."""
+
+
 def _stat(path):
-    """Строки таблицы статистики: [{name, score, level, event, date}]; пусто — нет страницы."""
+    """Строки таблицы статистики: [{name, score, level, event, date}]; пусто — страницы нет
+    (404/410: например, таблицы сезона ещё не создали). Сбой сети — StatUnavailable."""
     if path in _cache:
         return _cache[path]
     rows = []
     try:
         page = net.fetch(STAT + path, timeout=40)
-    except net.FetchError:
-        _cache[path] = rows
-        return rows
+    except net.FetchError as e:
+        if e.kind == "http" and e.status in (404, 410):
+            _cache[path] = rows
+            return rows
+        raise StatUnavailable(str(e)) from e
     for r in re.findall(r"(?s)<tr[^>]*>(.*?)</tr>", page):
         cells = [re.sub(r"\s+", " ", html.unescape(re.sub(r"(?s)<[^>]+>", " ", c))).strip()
                  for c in re.findall(r"(?s)<t[dh][^>]*>(.*?)</t[dh]>", r)]
