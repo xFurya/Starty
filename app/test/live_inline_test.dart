@@ -10,8 +10,8 @@ import 'package:starty/settings.dart';
 import 'package:starty/sheets.dart';
 import 'package:starty/state.dart';
 
-const _instantCaption = 'Моментально · табло раз в минуту';
-const _delayedCaption = 'С опозданием · меньше расход батареи';
+const _instantCaption = 'Моментально';
+const _delayedCaption = 'С опозданием';
 
 Start _start() {
   final now = DateTime.now().toUtc();

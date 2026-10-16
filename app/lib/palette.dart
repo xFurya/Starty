@@ -11,6 +11,9 @@ class Palette {
   /// Обводка флажков и переключателей: не ниже 3:1 к фону листа.
   final Color control;
 
+  /// Поднятый слой (меню): светлее плашки и с более заметной обводкой.
+  final Color raised, raisedLine;
+
   /// Виды: приглушённые ледяные оттенки — женщины, мужчины, пары, танцы.
   final Color women, men, pairs, dance;
 
@@ -31,6 +34,8 @@ class Palette {
     required this.frost,
     required this.nav,
     required this.control,
+    required this.raised,
+    required this.raisedLine,
     required this.women,
     required this.men,
     required this.pairs,
@@ -58,6 +63,8 @@ class Palette {
     frost: Color(0xFFE6F0FA),
     nav: Color(0xFFFBFDFF),
     control: Color(0xFF6F8399),
+    raised: Color(0xFFFFFFFF),
+    raisedLine: Color(0xFFB4C8DC),
     women: Color(0xFFB9668A),
     men: Color(0xFF3D7CC0),
     pairs: Color(0xFF3A9294),
@@ -80,6 +87,8 @@ class Palette {
     frost: Color(0xFF132A42),
     nav: Color(0xFF081422),
     control: Color(0xFF6E86A0),
+    raised: Color(0xFF1B3450),
+    raisedLine: Color(0xFF34557A),
     women: Color(0xFFE59AB5),
     men: Color(0xFF7FB2E8),
     pairs: Color(0xFF6FCBC8),

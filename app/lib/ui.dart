@@ -1553,11 +1553,11 @@ class _ChoiceMenu<T> extends StatelessWidget {
           constraints: const BoxConstraints(minWidth: 220),
           clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
-            color: p.plate,
+            color: p.raised,
             borderRadius: BorderRadius.circular(18),
-            border: Border.all(color: p.plateLine),
+            border: Border.all(color: p.raisedLine),
             boxShadow: [
-              BoxShadow(color: Colors.black.withValues(alpha: p.isDark ? .45 : .14), blurRadius: 24, offset: const Offset(0, 8)),
+              BoxShadow(color: Colors.black.withValues(alpha: p.isDark ? .5 : .16), blurRadius: 28, spreadRadius: 1, offset: const Offset(0, 10)),
             ],
           ),
           child: IntrinsicWidth(

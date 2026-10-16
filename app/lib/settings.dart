@@ -193,7 +193,7 @@ class SettingsView extends StatelessWidget {
                   title: 'Живые места',
                   value: state.liveMode,
                   items: const [(liveInstant, 'Моментально'), (liveDelayed, 'С опозданием')],
-                  caption: (v) => v == liveDelayed ? 'С опозданием · меньше расход батареи' : 'Моментально · табло раз в минуту',
+                  showValue: true,
                   onChanged: state.setLiveMode,
                 ),
               ],
