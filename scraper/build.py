@@ -1125,52 +1125,8 @@ def collect_photos(events, upcoming, names, photos, prev_photos, everyone=()):
     for n in everyone:
         add(n)
 
-    # у человека бывает несколько источников — по порядку: сборная, заявки ISU, список ISU, Викиданные
-    src = {}
-    for raw, url, _ in sorted(photos["raw"], key=lambda x: x[2]):
-        lst = src.setdefault(nm.key(names.to_ru(raw)), [])
-        if url not in lst:
-            lst.append(url)
-    skip = _load_json(PHOTO_SKIP, [])
-    skip_set = set(skip)
-    checked = {}
-    out = {}
-    for n in want:
-        urls = [u for u in src.get(nm.key(names.to_ru(n)), []) if u not in skip_set]
-        for url in urls:
-            if ph.have(SITE, url):
-                out[n] = ph.rel_path(url)
-                break
-            if url not in checked:
-                checked[url] = net.is_image(url)
-            ok = checked[url]
-            if ok:
-                rel = ph.make(SITE, url)
-                if rel:
-                    out[n] = rel
-                    break
-                if "wikimedia.org" in url:
-                    # снимок не портрет и лицо на нём не определить — больше не пробуем
-                    skip.append(url)
-                    skip_set.add(url)
-                    continue
-                out[n] = url
-                break
-            if ok is None and prev_photos.get(n) == url:
-                out[n] = url
-                break
-        if n not in out:
-            # источник фото в этот раз не ответил — прошлое фото того же человека остаётся
-            old = prev_photos.get(n)
-            if old and (old.startswith("http") or os.path.exists(os.path.join(SITE, old))):
-                out[n] = old
-    _save_json(PHOTO_SKIP, sorted(skip_set))
-    bad = [u for u, ok in checked.items() if not ok]
-    local = sum(1 for v in out.values() if not v.startswith("http"))
-    gone = ph.prune(SITE, set(out.values()))
-    log(f"  фото: {len(out)} из {len(want)}, миниатюр {local}" + (f"; не открылись: {len(bad)}" if bad else "")
-        + (f"; убрано старых: {gone}" if gone else ""))
-    return out
+    # выбор источника, миниатюры и память о найденном («не пропадает») — в photos.collect
+    return ph.collect(SITE, want, photos["raw"], prev_photos, names, ph.BOOK, PHOTO_SKIP, log)
 
 
 PHOTO_SKIP = os.path.join(ROOT, "data", "photo_skip.json")
