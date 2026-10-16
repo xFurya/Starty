@@ -1,33 +1,11 @@
 {
- "version": "1.0.34",
- "code": 35,
- "notes": "Подписи видов в уведомлениях ровные; фото спортсменов не пропадают.",
- "at": "2026-10-16T15:25:52Z",
+ "version": "1.0.35",
+ "code": 36,
+ "notes": "Флаги стран, понятные уведомления, только достоверные фото.",
+ "at": "2026-10-16T18:13:59Z",
  "android": {
-  "file": "starty-1.0.34.apk",
-  "size": 22817127,
-  "sha256": "3f1b7d48b1b453f73d37c19d7a7029e624c42782c1b8a259d61142b136f86144"
- },
- "windows": {
-  "code": 35,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.34/Starty-windows.zip",
-  "size": 14070558,
-  "sha256": "d845174ed37e563403b3855fc55798b95fc597245dc252fbdd9f847df64760c1",
-  "setup": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.34/starty-setup-1.0.34.exe",
-   "size": 12057040,
-   "sha256": "5567c00727ce2626ee28422ddbbba003ce8d7bdcf662f354f23a211b267eb91e"
-  }
- },
- "macos": {
-  "code": 35,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.34/Starty-macos.zip",
-  "size": 21453473,
-  "sha256": "945babe4ca853ae686e2ccad0c6b8a25699c242a4db5ac56f226092ff65d77ed",
-  "dmg": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.34/Starty-macos.dmg",
-   "size": 24343424,
-   "sha256": "8a7a4be8a08fee792ad974570c43dca443cf3740e9ab545fd2b4fcd8293ba481"
-  }
+  "file": "starty-1.0.35.apk",
+  "size": 23045955,
+  "sha256": "67c2a6c49971f57a52aa3ce4be64951b2672441e748baef836bfbf8399bfe39f"
  }
 }
