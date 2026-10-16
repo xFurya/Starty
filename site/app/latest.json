@@ -1,33 +1,11 @@
 {
- "version": "1.0.27",
- "code": 28,
- "notes": "Экран протокола с оценками судей; режим живых мест; аккаунт с общими настройками.",
- "at": "2026-10-16T07:58:06Z",
+ "version": "1.0.28",
+ "code": 29,
+ "notes": "Аккаунт: настройки общие на всех устройствах, вход по почте или коду.",
+ "at": "2026-10-16T08:34:12Z",
  "android": {
-  "file": "starty-1.0.27.apk",
-  "size": 22127957,
-  "sha256": "c27b0cfa884ae7b0c3f3c16d6c0170a9dc855774c7f7bf8bd015efc1278a3652"
- },
- "windows": {
-  "code": 28,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.27/Starty-windows.zip",
-  "size": 13976053,
-  "sha256": "1eefaa1357068eece3773e8d88ec77e3837310a295fa19b4100dc5b8d0adab16",
-  "setup": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.27/starty-setup-1.0.27.exe",
-   "size": 11991985,
-   "sha256": "71157b5942e9757941daa63c7bb28a2da4920d43bef4ded62e03885b51c2a353"
-  }
- },
- "macos": {
-  "code": 28,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.27/Starty-macos.zip",
-  "size": 21200360,
-  "sha256": "760a605f8e13c231debac00b36a5f1e1abeb7121be17cf6ce5f84c95369583c3",
-  "dmg": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.27/Starty-macos.dmg",
-   "size": 23986834,
-   "sha256": "b9754906e02166984a704395b8baaeb7382d72b59440c4cc406b85c84df0a194"
-  }
+  "file": "starty-1.0.28.apk",
+  "size": 22259029,
+  "sha256": "8c21cd4629201383c3847a6ffbf2a28f390ef3b302ee000b33bdb235e5aeb550"
  }
 }
