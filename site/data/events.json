@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16T15:57:13+03:00",
- "checked": "2026-10-16T15:57:13+03:00",
+ "checked": "2026-10-16T13:15:04.035745+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26190,21 +26190,21 @@
      "nation": "ESP",
      "no": 3,
      "warmup": 1,
-     "place": 13
+     "place": 14
     },
     {
      "name": "Matvii Yefymenko",
      "nation": "POL",
      "no": 4,
      "warmup": 1,
-     "place": 14
+     "place": 15
     },
     {
      "name": "Aleksei Vlasenko",
      "nation": "HUN",
      "no": 5,
      "warmup": 1,
-     "place": 16
+     "place": 17
     },
     {
      "name": "Taira Shinohara",
@@ -26225,7 +26225,7 @@
      "nation": "AUS",
      "no": 8,
      "warmup": 2,
-     "place": 15
+     "place": 16
     },
     {
      "name": "Arlet Levandi",
@@ -26253,7 +26253,7 @@
      "nation": "MON",
      "no": 12,
      "warmup": 3,
-     "place": 12
+     "place": 13
     },
     {
      "name": "Tamir Kuperman",
@@ -26281,7 +26281,7 @@
      "nation": "UKR",
      "no": 16,
      "warmup": 3,
-     "place": 11
+     "place": 12
     },
     {
      "name": "Andreas Nordeback",
@@ -26321,7 +26321,8 @@
     },
     {
      "name": "Tobia Oellerer",
-     "nation": "AUT"
+     "nation": "AUT",
+     "place": 11
     },
     {
      "name": "Vladimir Samoilov",
