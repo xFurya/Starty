@@ -134,7 +134,7 @@ def tournament(url):
     title = re.search(r'(?s)<h[12][^>]*itemprop="headline"[^>]*>(.*?)</h[12]>', page) or \
         re.search(r"(?s)<title>(.*?)</title>", page)
     t = {"url": url, "title": _text(title.group(1)).split(" - ")[0] if title else "",
-         "results": None, "schedule_pdf": None, "broadcast": [], "place": "", "start": None, "end": None}
+         "results": None, "schedule_pdf": None, "broadcast": [], "watch": [], "place": "", "start": None, "end": None}
     m = re.search(r"Сроки проведения:\s*\n?\s*(\d{1,2})\s*([а-я]+)?\s*[-–]\s*(\d{1,2})\s+([а-я]+)\s+(\d{4})", text)
     if m:
         y = int(m.group(5))
@@ -155,8 +155,19 @@ def tournament(url):
         elif "расписание" in label and href.lower().endswith(".pdf"):
             t["schedule_pdf"] = full
         for rx, name in BROADCASTERS:
-            if re.search(rx, href) and name not in t["broadcast"]:
-                t["broadcast"].append(name)
+            if re.search(rx, href):
+                if name not in t["broadcast"]:
+                    t["broadcast"].append(name)
+                # ссылка прямая: она и открывается кнопкой; из нескольких берём первую
+                # с «трансляц» в подписи, иначе первую попавшуюся
+                if re.match(r"https?://", full) and not any(w["name"] == name for w in t["watch"]):
+                    t["watch"].append({"name": name, "url": full, "_live": "трансляц" in label})
+                elif "трансляц" in label:
+                    for w in t["watch"]:
+                        if w["name"] == name and not w["_live"]:
+                            w.update(url=full, _live=True)
+    for w in t["watch"]:
+        w.pop("_live", None)
     return t
 
 
