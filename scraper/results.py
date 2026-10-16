@@ -7,6 +7,7 @@ import json
 import os
 
 from . import facts as fx
+from . import keep
 from . import net
 from . import swisstiming as st
 
@@ -15,7 +16,8 @@ FACTS = os.path.join(ROOT, "data", "facts.json")
 
 _store = None
 
-# версия правил: при смене всё примечательное считается заново
+# версия правил: при смене примечательное считается заново; оценочные факты (score/record) прежней
+# версии при этом переносятся — их не пересчитать, статистика ISU уже включает этот турнир
 VERSION = "6"
 
 
@@ -33,12 +35,28 @@ def _load():
 def save():
     if _store is None:
         return
-    # записи прошлых версий правил больше не нужны
-    for k in [k for k in _store if not k.startswith(VERSION + "|")]:
+    # записи прошлых версий правил нужны, пока по их адресу нет записи текущей версии:
+    # из них переносятся оценочные факты (_adopt)
+    for k in [k for k in _store if not k.startswith(VERSION + "|") and f"{VERSION}|{_url(k)}" in _store]:
         del _store[k]
     os.makedirs(os.path.dirname(FACTS), exist_ok=True)
     with open(FACTS, "w", encoding="utf-8") as f:
         json.dump(_store, f, ensure_ascii=False, indent=1, sort_keys=True)
+
+
+def _url(key):
+    return key.partition("|")[2]
+
+
+def _adopt(url, facts, to_ru=None):
+    """К фактам текущей версии добавляет оценочные факты прежних версий по тому же адресу."""
+    legacy = []
+    for k, v in _load().items():
+        if not k.startswith(VERSION + "|") and _url(k) == url:
+            legacy += [f for f in v if f.get("kind") in keep.SCORE_KINDS]
+    if not legacy:
+        return facts
+    return unique_facts(keep.merge_facts(facts, legacy, same_rules=False, to_ru=to_ru))
 
 
 def unique_facts(facts):
@@ -80,7 +98,8 @@ def segment_facts(pdf, *, kind, level, seg, intl, season, to_ru, log=print):
     store = _load()
     pdf_key = f"{VERSION}|{pdf}"
     if pdf_key in store:
-        return unique_facts(store[pdf_key])
+        store[pdf_key] = _adopt(pdf, unique_facts(store[pdf_key]), to_ru)
+        return store[pdf_key]
     try:
         skaters = st.parse_judges(net.pdf_text(pdf))
     except Exception as e:  # примечательное необязательно — расписание и итоги важнее
@@ -91,10 +110,10 @@ def segment_facts(pdf, *, kind, level, seg, intl, season, to_ru, log=print):
         return []
     try:
         out = _segment(skaters, kind, level, seg, intl, season, to_ru)
-    except Exception as e:
+    except Exception as e:  # в том числе fx.StatUnavailable: пустой расчёт в кэш не пишем
         log("  ! примечательное:", pdf, e)
         return []
-    store[pdf_key] = unique_facts(out)
+    store[pdf_key] = _adopt(pdf, unique_facts(out), to_ru)
     return store[pdf_key]
 
 
@@ -121,14 +140,15 @@ def total_facts(key, rows, first_places, *, kind, level, intl, season, to_ru):
     первого сегмента, россияне и белорусы впереди (белорусов называем только если выиграли), большой отрыв. rows — итог по местам
     (имена латиницей, как в протоколе); first_places — {имя латиницей: место после первого сегмента}."""
     store = _load()
-    key = f"{VERSION}|{key}"
+    url, key = key, f"{VERSION}|{key}"
     if key in store:
-        return unique_facts(store[key])
+        store[key] = _adopt(url, unique_facts(store[key]), to_ru)
+        return store[key]
     try:
         out = _total(rows, first_places, kind, level, intl, season, to_ru)
-    except Exception:
+    except Exception:  # в том числе статистика ISU не ответила: не запоминаем, посчитаем в следующий раз
         return []
-    store[key] = unique_facts(out)
+    store[key] = _adopt(url, unique_facts(out), to_ru)
     return store[key]
 
 
