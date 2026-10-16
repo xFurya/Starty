@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16T20:33:12+03:00",
- "checked": "2026-10-16T17:51:20.589426+00:00",
+ "checked": "2026-10-16T17:59:20.362160+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26438,7 +26438,7 @@
      "nation": "RUS",
      "no": 9,
      "warmup": 3,
-     "place": 12,
+     "place": 13,
      "time": "19:04"
     },
     {
@@ -26446,7 +26446,8 @@
      "nation": "RUS",
      "time": "20:48",
      "no": 22,
-     "warmup": 5
+     "warmup": 5,
+     "place": 12
     }
    ],
    "athletes": [
@@ -26494,14 +26495,14 @@
      "points": "76.00"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Olivia Smart / Tim Dieck — 79.42\n2. Natalie Taschlerova / Filip Taschler — 76.25\n3. Loicia Demougeot / Theo le Mercier — 76.00\n\nРоссияне:\n• Милана Кузьмина / Дмитрий Студеникин — 19:04\n• Василиса Григорьева / Евгений Артющенко — 20:48\n\nНачало: 17:45 МСК",
+   "desc": "Итог:\n1. Olivia Smart / Tim Dieck — 79.42\n2. Natalie Taschlerova / Filip Taschler — 76.25\n3. Loicia Demougeot / Theo le Mercier — 76.00\n\nРоссияне:\n• Милана Кузьмина / Дмитрий Студеникин — 19:04\n• Василиса Григорьева / Евгений Артющенко — 20:48\n\nНачало: 17:45 МСК",
    "field": [
     {
      "name": "Gina Zehnder / Beda Leon Sieber",
      "nation": "SUI",
      "no": 1,
      "warmup": 1,
-     "place": 18,
+     "place": 19,
      "time": "17:50"
     },
     {
@@ -26509,7 +26510,7 @@
      "nation": "CAN",
      "no": 2,
      "warmup": 1,
-     "place": 15,
+     "place": 16,
      "time": "17:56"
     },
     {
@@ -26517,7 +26518,7 @@
      "nation": "AUT",
      "no": 3,
      "warmup": 1,
-     "place": 17,
+     "place": 18,
      "time": "18:02"
     },
     {
@@ -26557,7 +26558,7 @@
      "nation": "ESP",
      "no": 8,
      "warmup": 2,
-     "place": 16,
+     "place": 17,
      "time": "18:38"
     },
     {
@@ -26565,7 +26566,7 @@
      "nation": "RUS",
      "no": 9,
      "warmup": 3,
-     "place": 12,
+     "place": 13,
      "time": "19:04"
     },
     {
@@ -26573,7 +26574,7 @@
      "nation": "FRA",
      "no": 10,
      "warmup": 3,
-     "place": 20,
+     "place": 21,
      "time": "19:10"
     },
     {
@@ -26589,7 +26590,7 @@
      "nation": "POL",
      "no": 12,
      "warmup": 3,
-     "place": 13,
+     "place": 14,
      "time": "19:22"
     },
     {
@@ -26597,7 +26598,7 @@
      "nation": "ISR",
      "no": 13,
      "warmup": 4,
-     "place": 19,
+     "place": 20,
      "time": "19:34"
     },
     {
@@ -26621,7 +26622,7 @@
      "nation": "ROU",
      "no": 16,
      "warmup": 4,
-     "place": 21,
+     "place": 22,
      "time": "19:52"
     },
     {
@@ -26629,7 +26630,7 @@
      "nation": "HUN",
      "no": 17,
      "warmup": 4,
-     "place": 14,
+     "place": 15,
      "time": "19:58"
     },
     {
@@ -26669,10 +26670,10 @@
      "nation": "RUS",
      "time": "20:48",
      "no": 22,
-     "warmup": 5
+     "warmup": 5,
+     "place": 12
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
     "seg": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG005.htm",
@@ -26702,7 +26703,7 @@
      "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
      "Vasilisa GRIGOREVA / Evgenii ARTIUSHCHENKO": "Василиса Григорьева / Евгений Артющенко"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-cs-budapest-trophy.json"
   },
