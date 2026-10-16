@@ -188,7 +188,14 @@ class SettingsView extends StatelessWidget {
                   onChanged: state.setRegional,
                 ),
                 const Hairline(),
-                _LiveModeBlock(state: state),
+                _ChoiceRow<String>(
+                  icon: state.liveMode == liveDelayed ? CupertinoIcons.timer : CupertinoIcons.bolt,
+                  title: 'Живые места',
+                  value: state.liveMode,
+                  items: const [(liveInstant, 'Моментально'), (liveDelayed, 'С опозданием')],
+                  showValue: true,
+                  onChanged: state.setLiveMode,
+                ),
               ],
             ),
           ),
@@ -208,15 +215,13 @@ class SettingsView extends StatelessWidget {
                     trailing: const _Chevron(),
                   ),
                 if (AppIcons.supported) const Hairline(),
-                _ShortBlock(
+                _ChoiceRow<ThemeMode>(
+                  icon: CupertinoIcons.circle_lefthalf_fill,
                   title: 'Тема',
-                  labels: const ['Системная', 'Светлая', 'Тёмная'],
-                  shortLabels: const ['Авто', 'Светлая', 'Тёмная'],
-                  child: (labels) => Segmented<ThemeMode>(
-                    items: [(ThemeMode.system, labels[0]), (ThemeMode.light, labels[1]), (ThemeMode.dark, labels[2])],
-                    value: state.theme,
-                    onChanged: state.setTheme,
-                  ),
+                  value: state.theme,
+                  items: const [(ThemeMode.system, 'Системная'), (ThemeMode.light, 'Светлая'), (ThemeMode.dark, 'Тёмная')],
+                  showValue: true,
+                  onChanged: state.setTheme,
                 ),
               ],
             ),
@@ -611,35 +616,58 @@ class _ShortBlock extends StatelessWidget {
   );
 }
 
-/// Живые места: переключатель на месте, без окна. Подпись — про выбранный режим.
-class _LiveModeBlock extends StatelessWidget {
-  final AppState state;
-  const _LiveModeBlock({required this.state});
+/// Строка выбора одного из нескольких: как остальные строки, справа «вверх-вниз»;
+/// по нажатию — меню рядом со строкой. Текущее значение видно всегда: в подписи
+/// ([caption]) или справа ([showValue]).
+class _ChoiceRow<T> extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final T value;
+  final List<(T, String)> items;
+  final String Function(T value)? caption;
+  final bool showValue;
+  final ValueChanged<T> onChanged;
+  const _ChoiceRow({
+    required this.icon,
+    required this.title,
+    required this.value,
+    required this.items,
+    required this.onChanged,
+    this.caption,
+    this.showValue = false,
+  });
   @override
   Widget build(BuildContext context) {
-    final p = Palette.of(context);
-    final instant = state.liveMode == liveInstant;
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(14, 12, 14, 14),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('Живые места', style: TextStyle(fontSize: 15.5, fontWeight: FontWeight.w600, color: p.ink)),
-          const SizedBox(height: 2),
-          Text(
-            instant ? 'Табло опрашивается раз в минуту' : 'Файл протокола, задержка до 10 минут, меньше расход батареи',
-            style: TextStyle(fontSize: 13, color: p.ink2, height: 1.3),
-          ),
-          const SizedBox(height: 10),
-          Segmented<String>(
-            items: const [(liveInstant, 'Моментально'), (liveDelayed, 'С опозданием')],
-            value: state.liveMode,
-            onChanged: state.setLiveMode,
-          ),
-        ],
+    final label = [for (final (v, l) in items) if (v == value) l].firstOrNull ?? '';
+    return Builder(
+      builder: (rowContext) => _Row(
+        icon: icon,
+        title: title,
+        subtitle: caption?.call(value),
+        onTap: () async {
+          final v = await showChoiceMenu<T>(rowContext, items: items, selected: value, label: title);
+          if (v != null && v != value) onChanged(v);
+        },
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (showValue) _Value(label),
+            const Padding(
+              padding: EdgeInsets.only(right: 4),
+              child: _UpDown(),
+            ),
+          ],
+        ),
       ),
     );
   }
+}
+
+class _UpDown extends StatelessWidget {
+  const _UpDown();
+  @override
+  Widget build(BuildContext context) =>
+      Icon(CupertinoIcons.chevron_up_chevron_down, size: 17, color: Palette.of(context).ink3);
 }
 
 /// Текстовая кнопка в строке. Правый край надписи — на одной линии с переключателями

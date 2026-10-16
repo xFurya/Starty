@@ -1451,3 +1451,183 @@ class IceNav extends StatelessWidget {
     );
   }
 }
+
+// ------------------------------------------------------------------ меню выбора
+
+/// Меню выбора одного из нескольких: плашка в палитре приложения рядом с элементом [context].
+/// У выбранного пункта — галочка. Выбор закрывает меню и возвращает значение; тап вне — null.
+Future<T?> showChoiceMenu<T>(
+  BuildContext context, {
+  required List<(T, String)> items,
+  required T selected,
+  String? label,
+}) {
+  final box = context.findRenderObject() as RenderBox?;
+  final overlay = Navigator.of(context).overlay?.context.findRenderObject() as RenderBox?;
+  final anchor = box == null || !box.attached
+      ? Rect.zero
+      : box.localToGlobal(Offset.zero, ancestor: overlay) & box.size;
+  final p = Palette.of(context);
+  return showGeneralDialog<T>(
+    context: context,
+    barrierDismissible: true,
+    barrierLabel: 'Закрыть',
+    barrierColor: Colors.transparent,
+    transitionDuration: const Duration(milliseconds: 150),
+    pageBuilder: (c, a, b) => Theme(
+      data: Theme.of(context),
+      child: CustomSingleChildLayout(
+        delegate: _MenuLayout(anchor, MediaQuery.paddingOf(c)),
+        child: _ChoiceMenu<T>(items: items, selected: selected, label: label, palette: p),
+      ),
+    ),
+    transitionBuilder: (c, a, b, child) {
+      final curved = CurvedAnimation(parent: a, curve: Curves.easeOutCubic, reverseCurve: Curves.easeIn);
+      return FadeTransition(
+        opacity: curved,
+        child: ScaleTransition(
+          scale: Tween<double>(begin: .94, end: 1).animate(curved),
+          alignment: _MenuLayout.originOf(anchor, MediaQuery.sizeOf(c)),
+          child: child,
+        ),
+      );
+    },
+  );
+}
+
+/// Положение меню: под элементом, правым краём к его правому краю (или левым — к левому,
+/// если так помещается лучше); не помещается снизу — над ним. Не выходит за края экрана.
+class _MenuLayout extends SingleChildLayoutDelegate {
+  final Rect anchor;
+  final EdgeInsets safe;
+  const _MenuLayout(this.anchor, this.safe);
+  static const margin = 12.0, gap = 6.0;
+
+  static Alignment originOf(Rect a, Size screen) =>
+      Alignment(a.width > screen.width * .6 || a.center.dx > screen.width / 2 ? 1 : -1, a.center.dy > screen.height * .6 ? 1 : -1);
+
+  @override
+  BoxConstraints getConstraintsForChild(BoxConstraints c) => BoxConstraints(
+    maxWidth: math.min(320, c.maxWidth - 2 * margin),
+    maxHeight: c.maxHeight - safe.vertical - 2 * margin,
+  );
+
+  @override
+  Offset getPositionForChild(Size size, Size child) {
+    // широкий элемент (строка настроек) — меню у правого края, где значок выбора
+    final alignRight = anchor.width > size.width * .6 || anchor.center.dx > size.width / 2;
+    var x = alignRight ? anchor.right - child.width : anchor.left;
+    x = x.clamp(margin, math.max(margin, size.width - margin - child.width));
+    final below = anchor.bottom + gap;
+    final top = safe.top + margin;
+    final bottomLimit = size.height - safe.bottom - margin;
+    var y = below;
+    if (below + child.height > bottomLimit) {
+      final above = anchor.top - gap - child.height;
+      y = above >= top ? above : bottomLimit - child.height;
+    }
+    return Offset(x, y.clamp(top, math.max(top, bottomLimit - child.height)));
+  }
+
+  @override
+  bool shouldRelayout(_MenuLayout old) => old.anchor != anchor || old.safe != safe;
+}
+
+class _ChoiceMenu<T> extends StatelessWidget {
+  final List<(T, String)> items;
+  final T selected;
+  final String? label;
+  final Palette palette;
+  const _ChoiceMenu({required this.items, required this.selected, required this.palette, this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    final p = palette;
+    return Semantics(
+      scopesRoute: true,
+      explicitChildNodes: true,
+      label: label,
+      child: Material(
+        type: MaterialType.transparency,
+        child: Container(
+          constraints: const BoxConstraints(minWidth: 220),
+          clipBehavior: Clip.antiAlias,
+          decoration: BoxDecoration(
+            color: p.raised,
+            borderRadius: BorderRadius.circular(18),
+            border: Border.all(color: p.raisedLine),
+            boxShadow: [
+              BoxShadow(color: Colors.black.withValues(alpha: p.isDark ? .5 : .16), blurRadius: 28, spreadRadius: 1, offset: const Offset(0, 10)),
+            ],
+          ),
+          child: IntrinsicWidth(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  for (var i = 0; i < items.length; i++) ...[
+                    if (i > 0) const Hairline(indent: 0),
+                    _ChoiceItem(
+                      text: items[i].$2,
+                      selected: items[i].$1 == selected,
+                      onTap: () => Navigator.of(context).pop(items[i].$1),
+                      palette: p,
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _ChoiceItem extends StatelessWidget {
+  final String text;
+  final bool selected;
+  final VoidCallback onTap;
+  final Palette palette;
+  const _ChoiceItem({required this.text, required this.selected, required this.onTap, required this.palette});
+  @override
+  Widget build(BuildContext context) {
+    final p = palette;
+    return MergeSemantics(
+      child: Semantics(
+        button: true,
+        selected: selected,
+        child: InkWell(
+          onTap: onTap,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 48),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 10, 14, 10),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      text,
+                      style: TextStyle(
+                        fontSize: 15.5,
+                        height: 1.25,
+                        fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
+                        color: p.ink,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  SizedBox(
+                    width: 18,
+                    child: selected ? Icon(CupertinoIcons.checkmark, size: 17, color: p.accent) : null,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
