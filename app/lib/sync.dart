@@ -24,6 +24,9 @@ bool get syncConfigured => syncUrl.isNotEmpty && syncKey.isNotEmpty;
 /// Регистрация прошла, но вход станет возможен только после письма. Это подсказка, а не ошибка.
 const kConfirmMail = 'Письмо для подтверждения отправлено на почту';
 
+/// Схема на сервере старше приложения: нет функции привязки кода.
+const kOldSchema = 'Обновите схему сервера';
+
 /// Документ настроек: всё, что человек меняет в приложении, кроме служебного состояния устройства
 /// (кэш расписания, разрешение ОС, заметки обновления и т. п. — см. ПРОЕКТ.md, раздел 2.4).
 /// Версия 2 — текущая; версию 1 читаем (см. [_followOf]). Лишние поля игнорируются.
@@ -364,6 +367,45 @@ class AccountBackend implements SyncBackend {
 
   void signOut() => session = null;
 
+  /// Привязать код к этому аккаунту (rpc link_code, ПРОЕКТ.md 2.4). Сервер сливает документы и дальше
+  /// ведёт один — аккаунта. Схема сервера без link_code отвечает 404: это не «нет кода», а устаревшая схема.
+  Future<void> linkCode(String code) async {
+    if (session == null) throw const SyncError('Нужен вход в аккаунт');
+    await refreshIfNeeded();
+    try {
+      await _send(
+        () => _http.post(
+          Uri.parse('$url/rest/v1/rpc/link_code'),
+          headers: _headers(),
+          body: jsonEncode({'code_hash': CodeBackend.hashOf(code)}),
+        ),
+      );
+    } on SyncError catch (e) {
+      if (e.status == 404) throw const SyncError(kOldSchema);
+      rethrow;
+    }
+  }
+
+  /// Привязан ли к аккаунту какой-нибудь код. null — не узнать (схема старая или нет связи): тогда
+  /// интерфейс ничего не утверждает.
+  Future<bool?> hasCodeLink() async {
+    if (session == null) return null;
+    try {
+      await refreshIfNeeded();
+      final r = await _send(
+        () => _http.post(
+          Uri.parse('$url/rest/v1/rpc/has_code_link'),
+          headers: _headers(),
+          body: '{}',
+        ),
+      );
+      final v = jsonDecode(utf8.decode(r.bodyBytes));
+      return v is bool ? v : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
   @override
   Future<SyncDoc?> load() async {
     if (session == null) throw const SyncError('Нужен вход в аккаунт');
@@ -420,6 +462,10 @@ class AccountBackend implements SyncBackend {
         code = '${j['error_code'] ?? ''}'.toLowerCase();
       }
     } catch (_) {}
+    // ошибки привязки кода: сервер отвечает стабильным идентификатором (tools/sync/schema.sql, link_code)
+    if (msg == 'code_taken') return 'Код уже привязан к другому аккаунту';
+    if (msg == 'bad_code') return 'Код не подходит';
+    if (msg == 'not_signed_in') return 'Войдите в аккаунт заново';
     if (code == 'weak_password') return 'Пароль слишком простой';
     if (code == 'user_already_exists' || code == 'email_exists') {
       return 'Такая почта уже зарегистрирована';
@@ -618,6 +664,17 @@ class SyncLocal {
       await _p.remove('sync.code');
     } else {
       await _p.setString('sync.code', c);
+    }
+  }
+
+  /// Код, привязанный к аккаунту, если его создали или ввели на этом устройстве. Сервер хранит
+  /// только хэш, поэтому узнать код с другого устройства нельзя.
+  String? get linkedCode => _p.getString('sync.linked');
+  Future<void> setLinkedCode(String? c) async {
+    if (c == null) {
+      await _p.remove('sync.linked');
+    } else {
+      await _p.setString('sync.linked', c);
     }
   }
 
