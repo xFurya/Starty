@@ -1504,7 +1504,7 @@ class _MenuLayout extends SingleChildLayoutDelegate {
   static const margin = 12.0, gap = 6.0;
 
   static Alignment originOf(Rect a, Size screen) =>
-      Alignment(a.center.dx > screen.width / 2 ? 1 : -1, a.center.dy > screen.height * .6 ? 1 : -1);
+      Alignment(a.width > screen.width * .6 || a.center.dx > screen.width / 2 ? 1 : -1, a.center.dy > screen.height * .6 ? 1 : -1);
 
   @override
   BoxConstraints getConstraintsForChild(BoxConstraints c) => BoxConstraints(
@@ -1514,7 +1514,8 @@ class _MenuLayout extends SingleChildLayoutDelegate {
 
   @override
   Offset getPositionForChild(Size size, Size child) {
-    final alignRight = anchor.center.dx > size.width / 2;
+    // широкий элемент (строка настроек) — меню у правого края, где значок выбора
+    final alignRight = anchor.width > size.width * .6 || anchor.center.dx > size.width / 2;
     var x = alignRight ? anchor.right - child.width : anchor.left;
     x = x.clamp(margin, math.max(margin, size.width - margin - child.width));
     final below = anchor.bottom + gap;
