@@ -269,7 +269,7 @@ void main() {
         repo: repoWith(withState('not_published')),
         state: state,
       );
-      expect(find.text('По табло · 2 из 3 · элементов и оценок судей пока нет'), findsOneWidget);
+      expect(find.text('По табло · 2 из 3'), findsOneWidget);
       expect(find.text('70.10'), findsOneWidget);
       expect(find.text('65.00'), findsOneWidget);
       expect(find.textContaining('Протокола пока нет'), findsNothing);

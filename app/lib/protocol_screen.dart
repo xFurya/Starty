@@ -342,7 +342,7 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
       final n = live.rows.length;
       final of = s.field.length >= n ? ' · $n из ${s.field.length}' : '';
       view = ProtocolView(
-        'По табло$of · элементов и оценок судей пока нет',
+        'По табло$of',
         live.provisional ? ProtocolTone.live : ProtocolTone.quiet,
         rows: [
           for (var i = 0; i < live.rows.length; i++)
@@ -465,15 +465,6 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
                   panel: seg.panel,
                   open: _panelOpen,
                   onTap: () => setState(() => _panelOpen = !_panelOpen),
-                ),
-              ],
-              if (seg != null && seg.judges != null) ...[
-                const SizedBox(height: 14),
-                SheetButton(
-                  neutral: true,
-                  icon: CupertinoIcons.doc_text,
-                  label: 'Оценки судей',
-                  onTap: () => _openOrig(seg.judges!),
                 ),
               ],
             ],
