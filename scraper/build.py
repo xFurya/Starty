@@ -1173,12 +1173,15 @@ def main():
     have = {e["id"] for e in events}
     kept = 0
     season_start = CFG["season_start"]
+    vanished = running_tids(prev.get("events", []), {e["tid"] for e in events}, now)
+    if vanished:
+        log("  идущие турниры пропали из источника, остаются прошлые старты:", ", ".join(sorted(vanished)))
     for e in prev.get("events", []):
         if e["id"] in have or e["start"] < season_start:
             continue
         pref = e["tid"].split(":")[0] + ":*"
         past = dt.datetime.fromisoformat(e["end"]) < now
-        if e["tid"] in failed or pref in failed or past:
+        if e["tid"] in failed or pref in failed or past or e["tid"] in vanished:
             events.append(e)
             kept += 1
     if kept:
@@ -1266,6 +1269,18 @@ def main():
     for e in report["errors"]:
         log("   -", e)
     return 0
+
+
+def running_tids(prev_events, new_tids, now):
+    """Турниры, которые в прошлый сбор уже шли (между первым стартом и концом последнего), а в этом
+    из источника пропали (календарь отдал урезанный список): их будущие старты оставляем из
+    прошлого сбора, иначе табло турнира перестают опрашивать посреди проведения."""
+    span = {}
+    for e in prev_events:
+        lo, hi = dt.datetime.fromisoformat(e["start"]), dt.datetime.fromisoformat(e["end"])
+        old = span.get(e["tid"])
+        span[e["tid"]] = (min(lo, old[0]), max(hi, old[1])) if old else (lo, hi)
+    return {t for t, (lo, hi) in span.items() if t not in new_tids and lo <= now <= hi}
 
 
 def write_protocols(protos, events, now, proto_dir=None):

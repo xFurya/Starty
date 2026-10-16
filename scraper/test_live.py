@@ -13,11 +13,13 @@ from unittest import mock
 
 from . import build as b
 from . import live
+from . import isu
 from . import names as nm
 from . import net
+from . import pages_merge
 from . import protocols as P
 from . import swisstiming as st
-from .test_protocols import FIX, FAMILIES, _pdf_text, _read
+from .test_protocols import FIX, FAMILIES, FAMILY_BUILD, FixtureNet, _pdf_text, _read, build_family
 
 FFKM_DIR = os.path.join(FIX, "ffkm")
 SRC = FAMILIES["ffkm"]["src"]
@@ -304,6 +306,228 @@ class Budget(unittest.TestCase):
             with self.assertRaises(P.Skipped):
                 fetcher.page("https://x/b")
         self.assertEqual((fetcher.requests, fetcher.skipped), (1, ["https://x/b"]))
+
+
+class ScheduledToFinal(unittest.TestCase):
+    """Прежний файл турнира собран до старта (всё scheduled, строк нет), потом табло выложило
+    результаты и JudgesDetails: следующий проход обязан переписать файл — строки и final.
+    Оба пути записи: полный сбор (build) и живой (live.protocols)."""
+
+    def setUp(self):
+        import tempfile
+        self.dir = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, self.dir, True)
+        self.fam = FAMILY_BUILD["isu"]
+        self.path = os.path.join(self.dir, P.proto_name(self.fam["tid"]))
+        self.start = dt.datetime(2026, 9, 17, 10, 0, tzinfo=MSK)
+        self.before = self.start - dt.timedelta(hours=20)
+        self.after = dt.datetime(2026, 10, 15, 23, 0, tzinfo=MSK)
+
+    def women_kp(self):
+        doc = P.load_doc(self.path)
+        return P.find_segment(doc, "Junior Women", "КП")
+
+    def stale_file(self):
+        """Файл, как его собрал первый проход до старта: сегмент запланирован, строк нет."""
+        events, _ = build_family("isu", self.dir, now=self.before)
+        doc = P.load_doc(self.path)
+        seg = P.find_segment(doc, "Junior Women", "КП")
+        seg.update(state="scheduled", basis=None, judges=None, rows=[])
+        seg.pop("panel", None)
+        with open(self.path, "wb") as f:
+            f.write(P.canonical(doc))
+        self.assertEqual((self.women_kp()["state"], len(self.women_kp()["rows"])), ("scheduled", 0))
+        return events
+
+    def test_build_rewrites_scheduled_file(self):
+        self.stale_file()
+        _, summary = build_family("isu", self.dir, now=self.after)
+        self.assertEqual(sum(summary.values()), 1)
+        seg = self.women_kp()
+        self.assertEqual((seg["state"], seg["basis"], len(seg["rows"])), ("final", "judges", 39))
+        self.assertIn("els", seg["rows"][0])
+
+    def test_live_rewrites_scheduled_file_even_for_segments_without_events(self):
+        events = self.stale_file()
+        for e in events:  # у события live — адреса табло, как в events.json
+            self.assertTrue(e.get("live"))
+        before = P.load_doc(self.path)
+        # в календаре остался только один старт: у остальных сегментов событий нет
+        only = [e for e in events if e["seg"] == "КП" and e["level"] == "junior" and e["kind"] == "women"]
+        self.assertEqual(len(only), 1)
+        with FixtureNet("isu"):
+            fetcher = P.Fetcher(budget=live.BUDGET, timeout=live.TIMEOUT, tries=live.TRIES)
+            spec = FAMILIES["isu"]
+            idx = st.parse_index_page(_read(os.path.join(FIX, "isu", "index.htm")), spec["src"], spec["offset"])
+            written = live.protocols(only, only, {only[0]["live"]["idx"]: idx}, nm.Names(None, {}),
+                                     self.after, fetcher, self.dir)
+        self.assertEqual(written, 1)
+        seg = self.women_kp()
+        self.assertEqual((seg["state"], len(seg["rows"])), ("final", 39))
+        # будущие сегменты без событий остались «запланирован», а не «не опубликован»
+        after = P.load_doc(self.path)
+        states = lambda d: {(c["name"], sg["code"]): sg["state"] for c in d["categories"] for sg in c["segments"]}
+        for key, state in states(before).items():
+            if key != ("Junior Women", "КП"):
+                self.assertEqual(states(after)[key], state, key)
+
+    def test_segment_without_event_takes_time_from_board_not_state_none(self):
+        # события есть только у мужского КП; мужской ПП (10.10) — в оглавлении табло со временем
+        spec = FAMILIES["denistenmemorial"]
+        now = dt.datetime(2026, 10, 9, 12, 0, tzinfo=dt.timezone(dt.timedelta(hours=5)))
+        with FixtureNet("denistenmemorial"):
+            idx = st.parse_index_page(_read(os.path.join(FIX, "denistenmemorial", "index.htm")),
+                                      spec["src"], spec["offset"])
+            events, _ = build_family("denistenmemorial", self.dir, now=now)
+            only = [e for e in events if (e["kind"], e["level"], e["seg"]) == ("men", "senior", "КП")]
+            self.assertEqual(len(only), 1)
+            doc = live.tournament_doc(idx, only, nm.Names(None, {}), now,
+                                      P.Fetcher(budget=live.BUDGET), None)
+        seg = P.find_segment(doc, "Men", "ПП")
+        self.assertEqual(seg["state"], "scheduled")
+        self.assertTrue(seg["start"].startswith("2026-10-10T14:30"))
+
+
+class Plan(unittest.TestCase):
+    """live.plan: что делать циклу tools/live-loop.sh."""
+
+    def ev(self, start, end, **live_extra):
+        return {"live": dict({"idx": "i", "seg": "s", "basis": None}, **live_extra),
+                "start": start.isoformat(), "end": end.isoformat(), "podium": None}
+
+    def test_phases(self):
+        t = dt.datetime(2026, 10, 16, 12, 0, tzinfo=MSK)
+        h = dt.timedelta(hours=1)
+        running = self.ev(t - h, t + h)
+        self.assertEqual(live.plan([running], t), ("hot", 0))
+        recent = self.ev(t - 3 * h, t - h)  # закончился час назад: ещё горячий
+        self.assertEqual(live.plan([recent], t), ("hot", 0))
+        old = self.ev(t - 10 * h, t - 8 * h)  # оценок так и нет: раз за запуск
+        self.assertEqual(live.plan([old], t), ("cold", 0))
+        soon = self.ev(t + dt.timedelta(minutes=40), t + 2 * h)
+        self.assertEqual(live.plan([soon], t), ("wait", 25 * 60))  # до начала окна опроса (старт минус 15 минут)
+        far = self.ev(t + 3 * h, t + 4 * h)
+        self.assertEqual(live.plan([far], t), ("none", 0))
+        done = self.ev(t - 10 * h, t - 8 * h, basis="judges")
+        done["podium"] = [{"place": 1}]
+        self.assertEqual(live.plan([done], t), ("none", 0))
+        self.assertEqual(live.plan([{"start": t.isoformat(), "end": t.isoformat()}], t), ("none", 0))
+
+    def test_hot_flag_limits_active(self):
+        t = dt.datetime(2026, 10, 16, 12, 0, tzinfo=MSK)
+        old = self.ev(t - dt.timedelta(hours=10), t - dt.timedelta(hours=8))
+        self.assertTrue(live.active(old, t))
+        self.assertFalse(live.active(old, t, hot=True))
+
+
+def _isu_event(slug, sub, start, end, url=None):
+    return {"event_id": "1" + str(abs(hash(slug)) % 1000), "slug": slug, "name": slug,
+            "event_sub_type_name": sub, "from_date_utc": start, "to_date_utc": end,
+            "time_zone": "Europe/Budapest", "city": "Budapest", "country_code": "HUN",
+            "button_1_url": url, "buttons": []}
+
+
+class IsuCalendar(unittest.TestCase):
+    """Корень «файл Budapest не обновлялся»: страница календаря ISU, отрисованная на сервере, отдала
+    список без Challenger Series, и турнир посреди проведения пропал из сборки, а с ним и запись
+    его протокола. Календарь теперь — объединение страницы и API сезона."""
+
+    BUDAPEST = _isu_event("isu-cs-budapest-trophy", "ISU Challenger Series", "2026-10-14T22:00:00.000Z",
+                          "2026-10-18T21:59:59.000Z", "https://hunskate.hu/x/BudTrophy2026/index.htm")
+    GP = _isu_event("isu-gp-skate-canada-international-2026", "ISU Grand Prix", "2026-10-30T07:00:00.000Z",
+                    "2026-11-02T07:59:59.000Z")
+    OPEN = _isu_event("budapest-open-2026", "International Competition", "2026-10-14T22:00:00.000Z",
+                      "2026-10-18T21:59:59.000Z")
+
+    def run_events(self, rsc=(), api=(), rsc_fails=False, api_fails=False):
+        import json
+        page = "RSC ... \"initialData\":" + json.dumps({"data": list(rsc)}) + ",\"x\":1"
+
+        def fetch(url, *a, **k):
+            if rsc_fails:
+                raise net.FetchError("rsc", kind="timeout")
+            return page
+
+        def fetch_json(url, *a, **k):
+            if api_fails:
+                raise net.FetchError("api", kind="timeout")
+            self.assertEqual(k["data"]["season"], "2026/2027")
+            return {"data": list(api)}
+
+        with mock.patch.object(net, "fetch", side_effect=fetch), \
+                mock.patch.object(net, "fetch_json", side_effect=fetch_json):
+            return {e["slug"]: e for e in isu.events(dt.date(2026, 10, 16))}
+
+    def test_season_name(self):
+        self.assertEqual(isu.season_name(dt.date(2026, 10, 16)), "2026/2027")
+        self.assertEqual(isu.season_name(dt.date(2027, 3, 1)), "2026/2027")
+        self.assertEqual(isu.season_name(dt.date(2027, 7, 1)), "2027/2028")
+
+    def test_challenger_missing_on_page_comes_from_api(self):
+        got = self.run_events(rsc=[self.GP], api=[self.BUDAPEST, self.GP, self.OPEN])
+        self.assertEqual(set(got), {"isu-cs-budapest-trophy", "isu-gp-skate-canada-international-2026"})
+        self.assertEqual(got["isu-cs-budapest-trophy"]["results_url"], "https://hunskate.hu/x/BudTrophy2026/index.htm")
+        self.assertEqual(got["isu-cs-budapest-trophy"]["sub"], "ISU Challenger Series")
+
+    def test_either_source_is_enough_both_failing_is_error(self):
+        self.assertEqual(set(self.run_events(rsc=[self.BUDAPEST], api_fails=True)), {"isu-cs-budapest-trophy"})
+        self.assertEqual(set(self.run_events(api=[self.BUDAPEST], rsc_fails=True)), {"isu-cs-budapest-trophy"})
+        with self.assertRaises(net.FetchError):
+            self.run_events(rsc_fails=True, api_fails=True)
+
+
+class RunningTournaments(unittest.TestCase):
+    """Идущий турнир, пропавший из источника, не теряет будущие старты прошлого сбора."""
+
+    def ev(self, tid, start, end):
+        return {"tid": tid, "start": start, "end": end}
+
+    def test_running_and_vanished(self):
+        now = dt.datetime(2026, 10, 16, 12, 0, tzinfo=MSK)
+        prev = [self.ev("isu:budapest", "2026-10-16T09:00:00+03:00", "2026-10-16T09:55:00+03:00"),
+                self.ev("isu:budapest", "2026-10-18T12:00:00+03:00", "2026-10-18T14:00:00+03:00"),
+                self.ev("isu:nebelhorn", "2026-09-23T09:00:00+03:00", "2026-09-27T14:00:00+03:00"),
+                self.ev("isu:later", "2026-10-30T09:00:00+03:00", "2026-11-01T14:00:00+03:00")]
+        self.assertEqual(b.running_tids(prev, set(), now), {"isu:budapest"})
+        self.assertEqual(b.running_tids(prev, {"isu:budapest"}, now), set())
+
+
+class PagesMerge(unittest.TestCase):
+    """Перед публикацией update.yml берёт с gh-pages протоколы, записанные live.yml за время полного сбора."""
+
+    def setUp(self):
+        import tempfile
+        self.fresh, self.ours = tempfile.mkdtemp(), tempfile.mkdtemp()
+        for d in (self.fresh, self.ours):
+            self.addCleanup(shutil.rmtree, d, True)
+
+    def put(self, d, name, built, rows):
+        doc = {"v": 1, "tid": name, "built": built, "categories": [], "rows": rows}
+        with open(os.path.join(d, name), "wb") as f:
+            f.write(P.canonical(doc))
+
+    def test_later_built_wins_and_set_is_ours(self):
+        self.put(self.ours, "a.json", "2026-10-16T12:00:00+03:00", 1)   # наш старее
+        self.put(self.fresh, "a.json", "2026-10-16T12:30:00+03:00", 2)
+        self.put(self.ours, "b.json", "2026-10-16T12:30:00+03:00", 1)   # наш новее
+        self.put(self.fresh, "b.json", "2026-10-16T12:00:00+03:00", 2)
+        self.put(self.fresh, "gone.json", "2026-10-16T12:30:00+03:00", 3)  # такого у нас нет: не добавляем
+        got = pages_merge.merge(self.fresh, self.ours, log=lambda *a: None)
+        self.assertEqual(got, ["a.json"])
+        self.assertEqual(P.load_doc(os.path.join(self.ours, "a.json"))["rows"], 2)
+        self.assertEqual(P.load_doc(os.path.join(self.ours, "b.json"))["rows"], 1)
+        self.assertFalse(os.path.exists(os.path.join(self.ours, "gone.json")))
+
+    def test_status_per_tournament_by_checked(self):
+        now = dt.datetime(2026, 10, 16, 12, 0, tzinfo=MSK)
+        P.write_status(self.ours, {"t1": {"checked": "2026-10-16T10:00:00+03:00", "read_ok": None, "error": None},
+                                   "t2": {"checked": "2026-10-16T11:00:00+03:00", "read_ok": None, "error": None}}, now)
+        P.write_status(self.fresh, {"t1": {"checked": "2026-10-16T11:00:00+03:00", "read_ok": "x", "error": None},
+                                    "t2": {"checked": "2026-10-16T10:00:00+03:00", "read_ok": None, "error": "net"}}, now)
+        pages_merge.merge(self.fresh, self.ours, log=lambda *a: None)
+        items = P.read_status(self.ours)
+        self.assertEqual(items["t1"]["read_ok"], "x")
+        self.assertIsNone(items["t2"]["error"])
 
 
 if __name__ == "__main__":

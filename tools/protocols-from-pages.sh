@@ -4,8 +4,9 @@
 # без этого шага прошлые файлы турниров пропали бы с сайта. Если gh-pages есть, но забрать
 # не удалось, — ошибка: публиковать дальше нельзя, иначе прежние протоколы сотрутся.
 #   REPO_URL — адрес репозитория с токеном (как у шага публикации).
+#   DEST — куда класть (по умолчанию site/data/protocols).
 set -euo pipefail
-dest=site/data/protocols
+dest=${DEST:-site/data/protocols}
 mkdir -p "$dest"
 heads=$(git ls-remote --heads "$REPO_URL")
 if ! grep -q 'refs/heads/gh-pages' <<<"$heads"; then

@@ -2,7 +2,8 @@
 расписание сегментов и заявки по категориям.
 
 Сайт isu-skating.com — это Next.js; список турниров и категории лежат в ответе
-RSC (заголовок «RSC: 1»), а расписание и заявки отдаёт открытый front-api.isu.org.
+RSC (заголовок «RSC: 1»), а расписание, заявки и полный календарь сезона отдаёт открытый
+front-api.isu.org (страница календаря на сервере показывает урезанный список без Challenger Series).
 Время в getschedule — настоящее UTC (сверено с табло Swiss Timing).
 """
 import datetime as dt
@@ -28,9 +29,27 @@ def _grab(text, marker):
     return obj
 
 
-def events():
-    """[{event_id, slug, name, sub, from, to, tz, city, country, country_name,
-    results_url, where_to_watch}]"""
+# Какие типы турниров нужны (как на странице календаря ISU): серии и чемпионаты ISU.
+# «International Competition» и «Solo Ice Dance» в API есть, но их берёт Golden Skate.
+WANTED = re.compile(r"ISU|Championships", re.I)
+
+
+def season_name(today):
+    """Название сезона в API ISU: «2026/2027» (сезон начинается 1 июля)."""
+    y = today.year if today.month >= 7 else today.year - 1
+    return f"{y}/{y + 1}"
+
+
+def _api_list(today):
+    """Календарь сезона из API (тот же запрос, что делает страница календаря). Страница
+    календаря при рендере на сервере отдаёт урезанный список (без Challenger Series, они
+    пропадали посреди турнира), поэтому полный список берём отсюда."""
+    body = {"pagesize": 200, "discipline_id": 1, "season": season_name(today)}
+    data = net.fetch_json(API + "/events/list", data=body)
+    return [e for e in data.get("data") or [] if WANTED.search(e.get("event_sub_type_name") or "")]
+
+
+def _rsc_list():
     global IMG_BASE
     raw = net.fetch(SITE + "/events/", headers=RSC)
     bases = re.findall(r"https://[a-z0-9.-]+/isudamcontainer/", raw)
@@ -39,8 +58,27 @@ def events():
     data = _grab(raw, '"initialData":')
     if not data:
         raise net.FetchError("ISU: нет initialData в списке турниров")
+    return data.get("data", [])
+
+
+def events(today=None):
+    """[{event_id, slug, name, sub, from, to, tz, city, country, country_name,
+    results_url, where_to_watch}]
+
+    Список — объединение API сезона и страницы календаря (по slug): любого из двух источников
+    достаточно, оба пустыми или недоступными — ошибка."""
+    today = today or dt.date.today()
+    raws, errors = {}, []
+    for load in (lambda: _api_list(today), _rsc_list):
+        try:
+            for e in load():
+                raws.setdefault(e.get("slug"), e)
+        except (net.FetchError, ValueError) as ex:
+            errors.append(ex)
+    if not raws:
+        raise errors[0] if errors else net.FetchError("ISU: пустой список турниров")
     out = []
-    for e in data.get("data", []):
+    for e in raws.values():
         res = None
         for b in e.get("buttons") or []:
             u = b.get("url") or ""

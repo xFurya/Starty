@@ -1,11 +1,13 @@
 """Быстрый сбор во время стартов: только итоги идущих и только что прошедших сегментов.
 
-    python3 -m scraper.live          — обновить site/data/events.json и календари
+    python3 -m scraper.live          — один проход: обновить site/data/events.json, календари, протоколы
+    python3 -m scraper.live --hot    — то же, но только идущие и свежие старты (для цикла)
     python3 -m scraper.live --check  — есть ли что обновлять (код выхода 0 — есть)
+    python3 -m scraper.live --plan   — что делать циклу: hot | cold | wait <секунд> | none
 
-Полный сбор (build) идёт минуты и дважды в день; этот — секунды и каждые 10 минут,
-пока что-то идёт: промежуточные итоги, тройка, места наших, итог турнира и
-примечательное появляются, как только их выложили на табло.
+Полный сбор (build) идёт минуты и дважды в день; этот — секунды. Задание live.yml крутит его
+циклом (tools/live-loop.sh) каждые несколько минут, пока что-то идёт: промежуточные итоги,
+тройка, места наших, итог турнира и примечательное появляются, как только их выложили на табло.
 """
 import datetime as dt
 import json
@@ -22,6 +24,12 @@ from . import swisstiming as st
 
 BEFORE = dt.timedelta(minutes=15)
 AFTER = dt.timedelta(hours=24)
+# «Горячий» старт — идёт или закончился недавно: его опрашиваем в каждом проходе цикла. Остальные
+# несостоявшиеся итоги (оценки так и не выложили) — раз за запуск задания, то есть раз в час.
+HOT_AFTER = dt.timedelta(minutes=90)
+# Старт, до которого меньше этого, цикл ждёт, не выходя: следующий запуск по расписанию может
+# опоздать (cron GitHub не точен), и начало старта было бы пропущено.
+HORIZON = dt.timedelta(minutes=75)
 # Запросов к табло за прогон (оглавления, страницы сегментов, PDF оценок, итоги, судьи) и
 # таймаут одного запроса: задание live — 10 минут. Не хватило бюджета — сегмент остаётся
 # как в прошлом файле, в журнал пишется, что пропущено.
@@ -40,12 +48,30 @@ def settled(ev):
     return bool(ev.get("podium")) and not ev.get("provisional") and (not live.get("cat") or bool(ev.get("total")))
 
 
-def active(ev, now):
+def active(ev, now, hot=False):
+    """Событие нужно опросить сейчас. hot — только идущие и недавно закончившиеся."""
     if not ev.get("live"):
         return False
     t0 = dt.datetime.fromisoformat(ev["start"])
     t1 = dt.datetime.fromisoformat(ev["end"])
-    return t0 - BEFORE <= now <= t1 + AFTER and not settled(ev)
+    after = HOT_AFTER if hot else AFTER
+    return t0 - BEFORE <= now <= t1 + after and not settled(ev)
+
+
+def plan(events, now):
+    """Что делать циклу: ("hot", 0) — есть горячие, опрашиваем; ("cold", 0) — горячих нет, но есть
+    старые неокончательные (один проход и выход); ("wait", секунд) — скоро начнётся, ждём;
+    ("none", 0) — делать нечего."""
+    if any(active(e, now, hot=True) for e in events):
+        return "hot", 0
+    if any(active(e, now) for e in events):
+        return "cold", 0
+    soon = [dt.datetime.fromisoformat(e["start"]) - BEFORE - now for e in events
+            if e.get("live") and not settled(e) and dt.datetime.fromisoformat(e["start"]) > now]
+    soon = [d for d in soon if d <= HORIZON]
+    if soon:
+        return "wait", max(1, int(min(soon).total_seconds()))
+    return "none", 0
 
 
 def load():
@@ -173,8 +199,16 @@ def tournament_doc(idx, events, names, now, fetcher, prev):
         for s, code in zip(c["segments"], codes):
             if not code:
                 continue
-            start, end = sched.get((kind, level, code), (None, None))
             prev_seg = P.find_segment(prev, c["name"], code)
+            start, end = sched.get((kind, level, code), (None, None))
+            if start is None:
+                # события на сегмент нет (наших в нём нет): время — из прежнего файла или оглавления табло,
+                # иначе сегмент будущих дней стал бы «не опубликован» вместо «запланирован»
+                if prev_seg and prev_seg.get("start"):
+                    start = dt.datetime.fromisoformat(prev_seg["start"])
+                    end = dt.datetime.fromisoformat(prev_seg["end"]) if prev_seg.get("end") else None
+                elif s.get("start"):
+                    start = s["start"]
             if prev_seg and prev_seg["state"] == "final":
                 recs.append(prev_seg)
                 continue
@@ -246,7 +280,11 @@ def protocols(todo, events, indexes, names, now, fetcher, proto_dir=None):
 def main():
     now = dt.datetime.now(dt.timezone.utc)
     data = load()
-    todo = [e for e in data["events"] if active(e, now)]
+    if "--plan" in sys.argv:
+        what, secs = plan(data["events"], now)
+        print(f"wait {secs}" if what == "wait" else what)
+        return 0
+    todo = [e for e in data["events"] if active(e, now, hot="--hot" in sys.argv)]
     if "--check" in sys.argv:
         print(f"идут или только что прошли: {len(todo)}")
         return 0 if todo else 1
