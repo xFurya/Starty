@@ -987,7 +987,7 @@ class ChoiceTile extends StatelessWidget {
         child: InkWell(
           onTap: onTap,
           child: ConstrainedBox(
-            constraints: const BoxConstraints(minHeight: 50),
+            constraints: const BoxConstraints(minHeight: 48),
             child: Padding(
               padding: EdgeInsets.fromLTRB(dense ? 8 : 12, 8, dense ? 6 : 10, 8),
               child: Row(
@@ -1007,7 +1007,7 @@ class ChoiceTile extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             child: Text(label, maxLines: 1, softWrap: false, style: styleOf(fontSize, p.ink)),
                           )
-                        : Text(label, maxLines: 2, overflow: TextOverflow.ellipsis, style: styleOf(fontSize, p.ink)),
+                        : Text(label, style: styleOf(fontSize, p.ink)),
                   ),
                   SizedBox(width: dense ? 4 : 6),
                   AnimatedContainer(

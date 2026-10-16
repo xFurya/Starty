@@ -923,7 +923,8 @@ class _NotifyPageState extends State<_NotifyPage> {
     final kinds = [
       for (final k in NotifyRules.allKinds)
         ChoiceTile(
-          label: kindLabel(k, r.levels),
+          // короткие подписи одной высоты; «(девушки)», «(юноши)» здесь не нужны — kindLabel остаётся для фильтра и карточек
+          label: kindNames[k]!,
           color: p.kind(k),
           on: r.kinds.contains(k),
           onTap: () => _set(r.copyWith(kinds: flip(r.kinds, k))),
