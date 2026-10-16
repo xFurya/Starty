@@ -8,6 +8,12 @@ import 'package:workmanager/workmanager.dart';
 import 'data.dart';
 import 'reminders.dart';
 
+/// Расписание для напоминаний: региональные старты — только если показ включён (как в ленте), затем под отслеживаемых.
+Schedule remindersSchedule(Schedule raw, {required bool regional, required Follow follow}) {
+  final shown = regional ? raw : raw.withStarts([for (final s in raw.starts) if (!s.regional) s]);
+  return shown.withFollow(follow);
+}
+
 @pragma('vm:entry-point')
 void backgroundDispatcher() {
   Workmanager().executeTask((task, input) async {
@@ -16,7 +22,7 @@ void backgroundDispatcher() {
       await Prefs.init();
       await Reminders.init();
       final raw = await Repo.fetch() ?? await Repo.cached();
-      final data = raw?.withFollow(Prefs.followOr(raw.watchlist));
+      final data = raw == null ? null : remindersSchedule(raw, regional: Prefs.regional, follow: Prefs.followOr(raw.watchlist));
       await Reminders.sync(data, NotifyPlan(NotifyRules.fromJson(Prefs.rulesJson), Prefs.forcedOn, Prefs.forcedOff));
     } catch (_) {}
     return true;
