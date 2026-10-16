@@ -194,13 +194,7 @@ class _StartSheet extends StatelessWidget {
             if (s.live != null && s.proto != null)
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 10, 16, 0),
-                child: SheetButton(
-                  neutral: true,
-                  icon: CupertinoIcons.timer,
-                  label: 'Живые места · ${liveModeLabel(state.liveModeOf(s))}',
-                  detail: state.liveOverrides.containsKey(s.id) ? 'для этого старта' : 'как в настройках',
-                  onTap: () => showLiveModeSheet(context, state, start: s),
-                ),
+                child: _LiveOverrideRow(state: state, start: s),
               ),
             _section(
               context,
@@ -1248,69 +1242,63 @@ class SearchBox extends StatelessWidget {
 /// Подпись режима живых мест для строки и листа.
 String liveModeLabel(String mode) => mode == liveDelayed ? 'С опозданием' : 'Моментально';
 
-/// Выбор режима живых мест: общий (в настройках) или для одного старта — с пунктом «как в настройках».
-void showLiveModeSheet(BuildContext context, AppState state, {Start? start}) {
-  showSwipeSheet<void>(context, (c, scroll) => _LiveModeSheet(state: state, start: start, scroll: scroll));
-}
-
-class _LiveModeSheet extends StatelessWidget {
+/// Строка живых мест в карточке старта: выбор на месте, меню из трёх пунктов.
+/// «Как в настройках» — переопределения для старта нет (Prefs.live.over без его id).
+class _LiveOverrideRow extends StatelessWidget {
   final AppState state;
-  final Start? start;
-  final ScrollController scroll;
-  const _LiveModeSheet({required this.state, required this.start, required this.scroll});
+  final Start start;
+  const _LiveOverrideRow({required this.state, required this.start});
+
+  static const _asSettings = '';
 
   @override
   Widget build(BuildContext context) {
-    final s = start;
-    final own = s == null ? null : state.liveOverrides[s.id];
-    void pick(String? mode) {
-      if (s == null) {
-        if (mode != null) state.setLiveMode(mode);
-      } else {
-        state.setLiveOverride(s.id, mode);
-      }
-      Navigator.of(context).pop();
-    }
-
-    return ListView(
-      controller: scroll,
-      padding: EdgeInsets.zero,
-      children: [
-        const _SheetTitle('Живые места'),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(20, 14, 20, 26),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              // «моментально» — свежее, тратит батарею и трафик; «с опозданием» — из файла протокола
-              Text(
-                s == null
-                    ? 'Моментально — телефон раз в минуту читает табло. С опозданием — берёт файл протокола, '
-                          'он обновляется с задержкой до 10 минут и почти не тратит батарею.'
-                    : 'Для этого старта можно выбрать режим отдельно от настроек.',
-                style: TextStyle(fontSize: 14, height: 1.35, color: Palette.of(context).ink2),
-              ),
-              const SizedBox(height: 16),
-              TileGrid(
-                tiles: [
-                  if (s != null)
-                    ChoiceTile(label: 'Как в настройках', on: own == null, onTap: () => pick(null)),
-                  ChoiceTile(
-                    label: 'Моментально',
-                    on: s == null ? state.liveMode == liveInstant : (own ?? state.liveMode) == liveInstant,
-                    onTap: () => pick(liveInstant),
-                  ),
-                  ChoiceTile(
-                    label: 'С опозданием',
-                    on: s == null ? state.liveMode == liveDelayed : (own ?? state.liveMode) == liveDelayed,
-                    onTap: () => pick(liveDelayed),
+    final p = Palette.of(context);
+    final own = state.liveOverrides[start.id];
+    final mode = state.liveModeOf(start);
+    return PopupMenuButton<String>(
+      tooltip: 'Живые места',
+      position: PopupMenuPosition.under,
+      initialValue: own ?? _asSettings,
+      onSelected: (v) => state.setLiveOverride(start.id, v == _asSettings ? null : v),
+      itemBuilder: (_) => [
+        for (final (v, label) in const [(_asSettings, 'Как в настройках'), (liveInstant, 'Моментально'), (liveDelayed, 'С опозданием')])
+          PopupMenuItem<String>(
+            value: v,
+            child: Text(label, style: TextStyle(fontSize: 15, fontWeight: v == (own ?? _asSettings) ? FontWeight.w700 : FontWeight.w500)),
+          ),
+      ],
+      child: Container(
+        constraints: const BoxConstraints(minHeight: 56),
+        padding: const EdgeInsets.fromLTRB(14, 9, 12, 9),
+        decoration: BoxDecoration(
+          color: p.plate,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: p.plateLine),
+        ),
+        child: Row(
+          children: [
+            Icon(CupertinoIcons.timer, size: 20, color: p.ink2),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text('Живые места', style: TextStyle(fontSize: 15.5, fontWeight: FontWeight.w600, color: p.ink, height: 1.25)),
+                  const SizedBox(height: 2),
+                  Text(
+                    '${liveModeLabel(mode)} · ${own == null ? 'как в настройках' : 'для этого старта'}',
+                    style: TextStyle(fontSize: 13, color: p.ink2, height: 1.3, fontFeatures: tnum),
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+            const SizedBox(width: 8),
+            Icon(CupertinoIcons.chevron_up_chevron_down, size: 16, color: p.ink2),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

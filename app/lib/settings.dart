@@ -197,18 +197,14 @@ class SettingsView extends StatelessWidget {
                 _SwitchRow(
                   icon: CupertinoIcons.map,
                   title: 'Региональные федерации',
-                  subtitle: state.regionNames.isEmpty ? 'в расписании пока нет' : state.regionNames.join(', '),
+                  subtitle: state.regionNames.isEmpty
+                      ? 'в расписании пока нет'
+                      : 'Старты региональных федераций: ${state.regionNames.join(', ')}',
                   value: state.regional,
                   onChanged: state.setRegional,
                 ),
                 const Hairline(),
-                _Row(
-                  icon: CupertinoIcons.timer,
-                  title: 'Живые места',
-                  subtitle: '${liveModeLabel(state.liveMode)} — ${state.liveMode == liveDelayed ? 'из файла протокола, до 10 минут' : 'табло раз в минуту'}',
-                  onTap: () => showLiveModeSheet(context, state),
-                  trailing: const _Chevron(),
-                ),
+                _LiveModeBlock(state: state),
               ],
             ),
           ),
@@ -629,6 +625,37 @@ class _ShortBlock extends StatelessWidget {
       return _Block(title: short ? (shortTitle ?? title) : title, child: child(short ? shortLabels : labels));
     },
   );
+}
+
+/// Живые места: переключатель на месте, без окна. Подпись — про выбранный режим.
+class _LiveModeBlock extends StatelessWidget {
+  final AppState state;
+  const _LiveModeBlock({required this.state});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final instant = state.liveMode == liveInstant;
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(14, 12, 14, 14),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Живые места', style: TextStyle(fontSize: 15.5, fontWeight: FontWeight.w600, color: p.ink)),
+          const SizedBox(height: 2),
+          Text(
+            instant ? 'Табло опрашивается раз в минуту' : 'Файл протокола, задержка до 10 минут, меньше расход батареи',
+            style: TextStyle(fontSize: 13, color: p.ink2, height: 1.3),
+          ),
+          const SizedBox(height: 10),
+          Segmented<String>(
+            items: const [(liveInstant, 'Моментально'), (liveDelayed, 'С опозданием')],
+            value: state.liveMode,
+            onChanged: state.setLiveMode,
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 /// Текстовая кнопка в строке. Правый край надписи — на одной линии с переключателями
