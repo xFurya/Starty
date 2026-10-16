@@ -8,8 +8,8 @@
 (портрет в рост, групповое фото, обрезанный квадрат), и кадр «по пропорциям» резал
 лицо пополам. Нет OpenCV или лица не нашлось — прежний кадр по пропорциям.
 
-Найденное не пропадает. Что уже нашли, записано в data/people.json («photos»: человек → файл,
-откуда, из какого источника) и лежит в site/photos. Сбой сети, пустой ответ источника, пропавший
+Найденное не пропадает. Что уже нашли, записано в data/photos.json (человек → файл, откуда, из какого
+источника) и лежит в site/photos. Сбой сети, пустой ответ источника, пропавший
 профиль ISU или битая картинка прежнего фото не убирают; заменить его можно только снимком из
 более надёжного источника, и только когда новая миниатюра благополучно собрана. Адрес в
 photo_skip.json попадает только за то, что на снимке нельзя понять, кто это, — не за сбой сети."""
@@ -203,12 +203,12 @@ def make(site, url):
 
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BOOK = os.path.join(ROOT, "data", "people.json")
+BOOK = os.path.join(ROOT, "data", "photos.json")
 
 
 def prune(site, keep, book_path=None):
     """Убрать миниатюры, на которые больше никто не ссылается. Всё, что записано в памяти о найденном
-    (data/people.json), остаётся, даже если человека сейчас нет в списках: потеря информации хуже лишних 12 КБ."""
+    (data/photos.json), остаётся, даже если человека сейчас нет в списках: потеря информации хуже лишних 12 КБ."""
     d = os.path.join(site, DIR)
     if not os.path.isdir(d):
         return 0
@@ -234,7 +234,7 @@ def load_book(path):
 
 
 def save_book(path, book):
-    """Записать только раздел «photos»: остальное в people.json (страницы турниров, протоколы) не трогаем."""
+    """Записать раздел «photos» (остальное в файле, если оно там есть, не трогаем)."""
     try:
         with open(path, encoding="utf-8") as f:
             data = json.load(f)
@@ -325,7 +325,7 @@ def collect(site, want, raw, prev_photos, names, book_path, skip_path, log=print
     """{«Имя Фамилия»: путь миниатюры или адрес} для всех из want.
 
     raw — [(имя из источника, адрес, приоритет)], чем меньше приоритет, тем надёжнее источник.
-    Найденное не теряется: у кого фото уже есть (в data/people.json «photos», на сайте, в прошлом
+    Найденное не теряется: у кого фото уже есть (в data/photos.json, на сайте, в прошлом
     events.json), оно остаётся, пока не найдётся снимок из более надёжного источника и его миниатюра
     не получится целиком. Сеть не ответила — прежнее фото остаётся."""
     is_image = is_image or net.is_image
@@ -355,14 +355,14 @@ def collect(site, want, raw, prev_photos, names, book_path, skip_path, log=print
         if url not in checked:
             _polite(url)
             checked[url] = is_image(url)
-            note(url, checked[url] is not None)
         return checked[url]
 
     for n in want:
         k = nm.key(names.to_ru(n))
         entry = book.get(k)
         if entry and not _alive(site, entry.get("f")):
-            entry = None  # файл пропал с диска — найдём заново
+            book.pop(k, None)  # файл пропал с диска: показывать нечего, ищем заново
+            entry = None
         prev = prev_photos.get(n)
         if not entry and prev and _alive(site, prev):
             # было в прошлом сборе, а в памяти нет: берём как есть; источник неизвестен — считаем
@@ -380,14 +380,12 @@ def collect(site, want, raw, prev_photos, names, book_path, skip_path, log=print
             if down(url):
                 stats["net"] += 1
                 continue
-            ok = usable(url)
-            if ok is None:
-                stats["net"] += 1
-                continue
-            if not ok:
+            if usable(url) is False:  # None — проверить не удалось (429 на HEAD), сама загрузка решит
                 continue
             rel, status = make2(site, url)
             note(url, status != "fail")
+            if status == "fail":
+                stats["net"] += 1
             if rel:
                 got = (prio, url, rel)
                 break
