@@ -101,7 +101,7 @@ ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasF
     }
     if (t.state == TotalState.format) return const ProtocolView('Экран для этого протокола недоступен', ProtocolTone.quiet);
     if (t.state == TotalState.finalized) {
-      return ProtocolView('Окончательный · сверено с оригиналом', ProtocolTone.finalized, rows: t.rows);
+      return ProtocolView('Окончательный · проверено по оригиналу', ProtocolTone.finalized, rows: t.rows);
     }
     return ProtocolView('Промежуточный · ${_updated(built)}', ProtocolTone.live, rows: t.rows);
   }
@@ -120,9 +120,9 @@ ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasF
     case SegmentState.finalized:
       // окончательный без строк — нераспознанный файл, а не «протокол пуст»
       if (seg.rows.isEmpty) return const ProtocolView('Экран для этого протокола недоступен', ProtocolTone.quiet);
-      return ProtocolView('Окончательный · сверено с оригиналом', ProtocolTone.finalized, rows: seg.rows);
+      return ProtocolView('Окончательный · проверено по оригиналу', ProtocolTone.finalized, rows: seg.rows);
     case SegmentState.judgesMismatch:
-      return const ProtocolView('Сверка с оригиналом не сошлась', ProtocolTone.quiet);
+      return const ProtocolView('Проверка по оригиналу не сошлась', ProtocolTone.quiet);
     case SegmentState.format:
       return const ProtocolView('Экран для этого протокола недоступен', ProtocolTone.quiet);
   }

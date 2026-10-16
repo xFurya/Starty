@@ -708,7 +708,7 @@ class SyncController {
       problem = null;
       return changed;
     } catch (e) {
-      problem = e is SyncError ? e.message : 'Не удалось синхронизировать';
+      problem = e is SyncError ? e.message : 'Не удалось обновить настройки';
       return false;
     } finally {
       _running = null;

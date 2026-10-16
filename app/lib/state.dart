@@ -216,7 +216,7 @@ class AppState extends ChangeNotifier {
     String password, {
     bool create = false,
   }) async {
-    if (!_syncReady) return 'Сервер не подключён в этой сборке';
+    if (!_syncReady) return 'Аккаунты в этой сборке недоступны';
     final b = _accountBackend();
     try {
       final s = create
@@ -263,14 +263,14 @@ class AppState extends ChangeNotifier {
 
   /// Создать код синхронизации: настройки этого устройства уходят на сервер под ним.
   Future<String?> createSyncCode() async {
-    if (!_syncReady) return 'Сервер не подключён в этой сборке';
+    if (!_syncReady) return 'Аккаунты в этой сборке недоступны';
     final code = CodeBackend.newCode();
     return _useCode(code, create: true);
   }
 
   /// Ввести код с другого устройства: настройки берутся с сервера.
   Future<String?> enterSyncCode(String input) async {
-    if (!_syncReady) return 'Сервер не подключён в этой сборке';
+    if (!_syncReady) return 'Аккаунты в этой сборке недоступны';
     final code = CodeBackend.normalize(input);
     if (code.length != 16) return 'Код — 16 знаков';
     return _useCode(code, create: false);

@@ -158,7 +158,7 @@ void main() {
   group('статусы из макетов', () {
     testWidgets('окончательный — строки с местами и баллами, «Оригинал протокола»', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(sample()));
-      expect(find.text('Окончательный · сверено с оригиналом'), findsOneWidget);
+      expect(find.text('Окончательный · проверено по оригиналу'), findsOneWidget);
       expect(find.text('Анна Павловна Билибина / Дмитрий Владимирович Кашаев'), findsOneWidget);
       expect(find.text('66.36'), findsOneWidget);
       expect(find.text('Оригинал протокола'), findsOneWidget);
@@ -190,7 +190,7 @@ void main() {
 
     testWidgets('сверка с оригиналом не сошлась — только статус и оригинал', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(withState('judges_mismatch', basis: null)));
-      expect(find.text('Сверка с оригиналом не сошлась'), findsOneWidget);
+      expect(find.text('Проверка по оригиналу не сошлась'), findsOneWidget);
       expect(find.text('66.36'), findsNothing);
       expect(find.text('Оригинал протокола'), findsOneWidget);
     });

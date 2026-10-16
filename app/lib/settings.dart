@@ -263,7 +263,7 @@ class SettingsView extends StatelessWidget {
           child: Plate(
             child: _Row(
               icon: CupertinoIcons.person_crop_circle,
-              title: 'Синхронизация',
+              title: 'Аккаунт',
               subtitle: syncSummary(state),
               subtitleColor: state.syncProblem != null ? p.live : null,
               onTap: () => openAccount(context, state),
@@ -1134,14 +1134,14 @@ void openAccount(BuildContext context, AppState state) {
 
 /// Строка в настройках: что с синхронизацией на этом устройстве.
 String syncSummary(AppState st) {
-  if (!syncConfigured) return 'Сервер не подключён в этой сборке';
-  if (!st.syncOn) return 'Выключена · настройки только на этом устройстве';
+  if (!syncConfigured) return 'Недоступен в этой сборке';
+  if (!st.syncOn) return 'Вход не выполнен';
   final who = st.syncEmail ?? 'по коду';
   if (st.syncProblem != null) return '${st.syncProblem} · $who';
   final at = st.syncAt;
   return at == null
-      ? 'Ждём первой сверки · $who'
-      : 'Сверено ${_when(at)} · $who';
+      ? 'Ещё не обновлялось · $who'
+      : 'Обновлено ${_when(at)} · $who';
 }
 
 /// Код группами по четыре знака — так его легче прочитать и продиктовать.
@@ -1275,17 +1275,16 @@ class _AccountPageState extends State<_AccountPage> {
         final code = st.syncCode;
         final connected = st.syncOn;
         return _SettingsPage(
-          title: 'Синхронизация',
+          title: 'Аккаунт',
           slivers: [
             if (!syncConfigured) ...[
-              const SliverToBoxAdapter(child: _Head('Сервер')),
               SliverToBoxAdapter(
                 child: Plate(
                   child: _Row(
                     icon: CupertinoIcons.exclamationmark_circle,
                     iconColor: p.live,
-                    title: 'Сервер не подключён',
-                    subtitle: 'В этой сборке синхронизация не настроена. Настройки хранятся только на этом устройстве.',
+                    title: 'Аккаунты в этой сборке недоступны',
+                    subtitle: 'Настройки хранятся только на этом устройстве.',
                   ),
                 ),
               ),
@@ -1298,12 +1297,12 @@ class _AccountPageState extends State<_AccountPage> {
                         ? CupertinoIcons.checkmark_circle
                         : CupertinoIcons.exclamationmark_circle,
                     iconColor: st.syncProblem == null ? null : p.live,
-                    title: st.syncProblem ?? 'Синхронизация работает',
+                    title: st.syncProblem ?? 'Настройки в аккаунте',
                     subtitle: st.syncAt == null
-                        ? 'Первой сверки ещё не было'
-                        : 'Последняя сверка: ${_when(st.syncAt!)}',
+                        ? 'Ещё не обновлялось'
+                        : 'Обновлено: ${_when(st.syncAt!)}',
                     subtitleColor: st.syncProblem == null ? null : p.live,
-                    action: _busy ? null : 'Сверить',
+                    action: _busy ? null : 'Обновить',
                     onAction: _busy ? null : () => _act(st.syncNow),
                   ),
                 ),
@@ -1331,7 +1330,7 @@ class _AccountPageState extends State<_AccountPage> {
                   ),
                 ),
               ] else if (code != null) ...[
-                const SliverToBoxAdapter(child: _Head('Код синхронизации')),
+                const SliverToBoxAdapter(child: _Head('Вход по коду')),
                 SliverToBoxAdapter(
                   child: Plate(
                     child: Column(
@@ -1416,7 +1415,7 @@ class _AccountPageState extends State<_AccountPage> {
                   ),
                 ),
               ),
-              const SliverToBoxAdapter(child: _Head('Код синхронизации')),
+              const SliverToBoxAdapter(child: _Head('Вход по коду')),
               SliverToBoxAdapter(
                 child: Plate(
                   child: Column(
