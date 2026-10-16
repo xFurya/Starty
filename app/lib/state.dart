@@ -48,6 +48,10 @@ class AppState extends ChangeNotifier {
   String? get syncProblem => sync.problem;
   String? get syncCode => SyncLocal(Prefs.raw).code;
 
+  /// Код, привязанный к аккаунту, если он известен этому устройству; [codeLinked] — знает ли сервер о привязке.
+  String? get syncLinkedCode => SyncLocal(Prefs.raw).linkedCode;
+  bool? codeLinked;
+
   /// Сверить сейчас (кнопка в «Синхронизации»). Возвращает причину, если не вышло.
   Future<String?> syncNow() async {
     await sync.reconcile();
@@ -229,6 +233,7 @@ class AppState extends ChangeNotifier {
       final same = prev != null && prev.trim().toLowerCase() == s.email.trim().toLowerCase();
       sync.backend = b;
       if (!same) await sync.preferRemote();
+      if (!same) await SyncLocal(Prefs.raw).setLinkedCode(null);
       await SyncLocal(Prefs.raw).setCode(null);
       await _keepSession(b, s);
       notifyListeners();
@@ -243,6 +248,8 @@ class AppState extends ChangeNotifier {
   /// других устройствах — не меняются. Бэкенд отключаем раньше сброса: сброс не должен уйти на сервер.
   Future<void> signOutSync() async {
     await SyncLocal(Prefs.raw).setAccount(null);
+    await SyncLocal(Prefs.raw).setLinkedCode(null);
+    codeLinked = null;
     if (sync.backend case final AccountBackend a) a.signOut();
     sync.backend = null;
     await _resetDevice();
@@ -297,10 +304,93 @@ class AppState extends ChangeNotifier {
     }
   }
 
+  // ---------------------------------------------------------------- два входа в один аккаунт
+
+  /// Вошли по коду, привязываем почту: войти (или зарегистрироваться), привязать код к аккаунту и
+  /// переключить устройство на почту. Код остаётся привязанным и работает на других устройствах.
+  /// Сначала уходят несохранённые правки (под кодом), чтобы сервер слил актуальный документ; при любой
+  /// ошибке устройство остаётся на коде, ничего не сбрасывается.
+  Future<String?> linkMail(String email, String password, {bool create = false}) async {
+    if (!_syncReady) return 'Аккаунты в этой сборке недоступны';
+    final code = SyncLocal(Prefs.raw).code;
+    if (code == null || sync.backend is! CodeBackend) return 'Нужен вход по коду';
+    final b = _accountBackend();
+    try {
+      final s = create ? await b.signUp(email, password) : await b.signIn(email, password);
+      await sync.reconcile();
+      if (sync.problem != null) return sync.problem;
+      await b.linkCode(code);
+      // база и правки остаются как были: время документа сервер при слиянии не меняет, так что
+      // следующая сверка заберёт документ аккаунта, только если он новее
+      sync.backend = b;
+      final local = SyncLocal(Prefs.raw);
+      await local.setLinkedCode(code);
+      await local.setCode(null);
+      await _keepSession(b, s);
+      codeLinked = true;
+      notifyListeners();
+      await sync.reconcile();
+      return null;
+    } on SyncError catch (e) {
+      return e.message;
+    }
+  }
+
+  /// Вошли по почте: создать код и сразу привязать его к аккаунту. Прежняя привязка заменяется.
+  Future<String?> createLinkedCode() async {
+    final code = CodeBackend.newCode();
+    return _linkCodeToAccount(code);
+  }
+
+  /// Вошли по почте: привязать к аккаунту существующий код. Документы сливаются на сервере по времени сохранения.
+  Future<String?> linkEnteredCode(String input) async {
+    final code = CodeBackend.normalize(input);
+    if (code.length != 16) return 'Код — 16 знаков';
+    try {
+      if (!_syncReady) return 'Аккаунты в этой сборке недоступны';
+      if (await CodeBackend(url: _url, key: _key, code: code, client: syncClient).load() == null) {
+        return 'Такого кода нет на сервере';
+      }
+    } on SyncError catch (e) {
+      return e.message;
+    }
+    final err = await _linkCodeToAccount(code);
+    if (err == null) await sync.reconcile();
+    return err;
+  }
+
+  Future<String?> _linkCodeToAccount(String code) async {
+    final b = sync.backend;
+    if (b is! AccountBackend) return 'Нужен вход в аккаунт';
+    try {
+      await b.linkCode(code);
+      await SyncLocal(Prefs.raw).setLinkedCode(code);
+      codeLinked = true;
+      notifyListeners();
+      return null;
+    } on SyncError catch (e) {
+      return e.message;
+    }
+  }
+
+  /// Спросить сервер, привязан ли к аккаунту код (если этого устройства он не знает). Не получилось — не утверждаем.
+  Future<void> refreshCodeLink() async {
+    final b = sync.backend;
+    if (b is! AccountBackend) return;
+    final v = await b.hasCodeLink();
+    if (!identical(sync.backend, b)) return;
+    if (v != codeLinked) {
+      codeLinked = v;
+      notifyListeners();
+    }
+  }
+
   /// Отключить синхронизацию на этом устройстве: код и вход забываются, настройки сбрасываются к умолчанию.
   /// Бэкенд отключаем раньше сброса, как в [signOutSync]: сброс на сервер не уходит.
   Future<void> disconnectSync() async {
     await SyncLocal(Prefs.raw).setAccount(null);
+    await SyncLocal(Prefs.raw).setLinkedCode(null);
+    codeLinked = null;
     await SyncLocal(Prefs.raw).setCode(null);
     if (sync.backend case final AccountBackend a) a.signOut();
     sync.backend = null;
