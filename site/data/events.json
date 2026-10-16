@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16T21:53:06+03:00",
- "checked": "2026-10-16T21:53:06+03:00",
+ "checked": "2026-10-16T19:11:21.855172+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26946,7 +26946,7 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Arianna Soldati / Nicholas Tagliabue — 60.93\n2. Лилия Литенко / Александр Рыженков — 50.63\n3. Carlota Garcia Barranco / Александр Островский — 47.67\n\nНачало: 21:10 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Aneta Vaclavikova / William Lissauer — 62.78\n2. Arianna Soldati / Nicholas Tagliabue — 60.93\n3. Лилия Литенко / Александр Рыженков — 50.63\n\nНачало: 21:10 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Лилия Литенко / Александр Рыженков",
@@ -26954,7 +26954,7 @@
      "time": "21:15",
      "no": 1,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Arianna Soldati / Nicholas Tagliabue",
@@ -26962,7 +26962,7 @@
      "time": "21:21",
      "no": 2,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Villo Mira Szilagyi / Istvan Jaracs",
@@ -26970,7 +26970,7 @@
      "time": "21:27",
      "no": 3,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
@@ -26978,7 +26978,7 @@
      "time": "21:33",
      "no": 4,
      "warmup": 1,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Chanelle Chum / Osckar Chum",
@@ -26986,7 +26986,7 @@
      "time": "21:44",
      "no": 5,
      "warmup": 2,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Carlota Garcia Barranco / Александр Островский",
@@ -26994,7 +26994,7 @@
      "time": "21:50",
      "no": 6,
      "warmup": 2,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Rose Anne Marie Bordet / Hugo Tomas",
@@ -27002,14 +27002,15 @@
      "time": "21:56",
      "no": 7,
      "warmup": 2,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Aneta Vaclavikova / William Lissauer",
      "nation": "USA",
      "time": "22:01",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Maite van Mulders / Tudor Dominic Andrei",
@@ -27145,21 +27146,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Aneta Vaclavikova / William Lissauer",
+     "nation": "USA",
+     "points": "62.78"
+    },
+    {
+     "place": 2,
      "name": "Arianna Soldati / Nicholas Tagliabue",
      "nation": "ITA",
      "points": "60.93"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Лилия Литенко / Александр Рыженков",
      "nation": "ISR",
      "points": "50.63"
-    },
-    {
-     "place": 3,
-     "name": "Carlota Garcia Barranco / Александр Островский",
-     "nation": "ESP",
-     "points": "47.67"
     }
    ],
    "provisional": true
