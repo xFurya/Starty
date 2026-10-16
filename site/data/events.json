@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16T14:03:40+03:00",
- "checked": "2026-10-16T14:03:40+03:00",
+ "checked": "2026-10-16T11:19:02.925736+00:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -26001,9 +26001,15 @@
      "name": "Nico Steffen",
      "nation": "SUI",
      "points": "60.63"
+    },
+    {
+     "place": 3,
+     "name": "Pablo Garcia",
+     "nation": "ESP",
+     "points": "54.68"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Nikita Sheiko — 76.31\n2. Nico Steffen — 60.63\n\nНачало: 13:50 МСК",
+   "desc": "Промежуточные итоги:\n1. Nikita Sheiko — 76.31\n2. Nico Steffen — 60.63\n3. Pablo Garcia — 54.68\n\nНачало: 13:50 МСК",
    "field": [
     {
      "name": "Nico Steffen",
@@ -26093,7 +26099,8 @@
     },
     {
      "name": "Pablo Garcia",
-     "nation": "ESP"
+     "nation": "ESP",
+     "place": 3
     },
     {
      "name": "Patrick Blackwell",
@@ -26162,22 +26169,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-budapest-trophy.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Nikita Sheiko",
-     "nation": "ISR",
-     "points": "76.31"
-    },
-    {
-     "place": 2,
-     "name": "Nico Steffen",
-     "nation": "SUI",
-     "points": "60.63"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-senior-rt",
