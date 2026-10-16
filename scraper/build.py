@@ -992,8 +992,8 @@ def isu_api_events(e, tid, name, venue, bcast, names, sched, photos):
         if not kind:
             continue
         ents = isu.entries(e["event_id"], c)
-        ours = [{"name": names.to_ru(x["name"]), "nation": x["code"]} for x in ents if x["code"] in CFG["ours_codes"]]
-        field = [{"name": names.to_ru(x["name"]), "nation": x["code"]} for x in ents]
+        ours = [{"name": names.to_ru(x["name"]), "nation": st.nation_code(x["code"])} for x in ents if x["code"] in CFG["ours_codes"]]
+        field = [{"name": names.to_ru(x["name"]), "nation": st.nation_code(x["code"])} for x in ents]
         if not field:
             continue
         for x in ents:
@@ -1011,7 +1011,7 @@ def isu_api_events(e, tid, name, venue, bcast, names, sched, photos):
             end = estimate_end(when, seg, kind, len(ents))
             total = None
             if SEG_ORDER[seg] == last_seg and end < now and ranked and ranked[0]["rank"] == 1:
-                total = [{"place": x["rank"], "name": names.to_ru(x["name"]), "nation": x["code"],
+                total = [{"place": x["rank"], "name": names.to_ru(x["name"]), "nation": st.nation_code(x["code"]),
                           "points": x["points"]} for x in ranked[:3]]
             ev = make_event(
                 tid=tid, tournament=name, kind=kind, level=level, seg=seg, mixed=len(levels) > 1,

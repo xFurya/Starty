@@ -194,6 +194,15 @@ void main() {
     ]);
   });
 
+  test('код страны для показа: AIN2 → RUS, AIN1 → BLR, остальное как есть', () {
+    expect(nationCode('AIN2'), 'RUS');
+    expect(nationCode(' ain1 '), 'BLR');
+    expect(nationCode('AIN'), 'AIN');
+    expect(nationCode('ISR'), 'ISR');
+    expect(nationCode('RUS'), 'RUS');
+    expect(nationCode('МОС'), 'МОС');
+  });
+
   test('россиянин или белорус: RUS, AIN2, BLR, AIN1, регион; простой AIN — нет', () {
     Placing x(String n) => Placing(1, 'A B', n, '');
     expect(x('RUS').ours, isTrue);

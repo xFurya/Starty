@@ -586,7 +586,7 @@ class _ResultRow extends StatelessWidget {
     final sub = <String>[
       // слово статуса переносится вместе с остальным под имя, а не ужимается в узкую колонку
       ?status,
-      if (row.nation.isNotEmpty) row.nation,
+      if (row.nation.isNotEmpty) nationCode(row.nation),
       // у снятого/не вышедшего прочерки не нужны: только те сегменты, где место есть
       if (parts != null)
         for (var i = 0; i < parts.length && i < cols.length; i++)

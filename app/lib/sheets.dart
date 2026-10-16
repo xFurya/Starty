@@ -1634,7 +1634,7 @@ Set<String> soonAthletes(Schedule data, DateTime t) => {
 String? _personLine(Schedule data, String name) {
   final p = data.people[name];
   if (p == null) return null;
-  final s = personLine(p.nation, p.kinds);
+  final s = personLine(nationCode(p.nation), p.kinds);
   return s.isEmpty ? null : s;
 }
 

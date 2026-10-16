@@ -224,7 +224,10 @@ class SegmentRows(unittest.TestCase):
 
     def test_nation_of(self):
         self.assertEqual(st.nation_of("МОС  /  СПБ"), "МОС / СПБ")
-        self.assertEqual(st.nation_of("AIN2"), "AIN2")
+        self.assertEqual(st.nation_of("AIN2"), "RUS")
+        self.assertEqual(st.nation_of(" AIN1 "), "BLR")
+        self.assertEqual(st.nation_code("AIN"), "AIN")
+        self.assertEqual(st.nation_code(" ISR "), "ISR")
         self.assertEqual(st.nation_of("ГБУ ДО"), "")
         self.assertEqual(st.nation_of(""), "")
         self.assertEqual(st.nation_of("МОС"), "МОС")

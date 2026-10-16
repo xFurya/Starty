@@ -254,7 +254,7 @@ def parse_starting_order(url, page=None):
 def _nation_from(vals):
     for v in vals:
         if re.fullmatch(r"[A-Z]{3}\d?", v) or re.fullmatch(r"[А-ЯЁ]{3}", v):
-            return v
+            return nation_code(v)
     return ""
 
 
@@ -302,7 +302,7 @@ def _row_result(cells, header, points_heads):
     else:
         before = after[:after.index(points)] if points in after else after
         nation = next((v for v in before if NATION_RE.fullmatch(v)), "")
-    return {"place": int(nonempty[0]), "name": name, "nation": nation.replace(" ", ""),
+    return {"place": int(nonempty[0]), "name": name, "nation": nation_code(nation.replace(" ", "")),
             "points": points, "cells": cells, "pi": pi}
 
 
@@ -385,11 +385,23 @@ def parse_category_results(url, page=None):
             "complete": complete}
 
 
+# Нейтральные спортсмены: ISU ставит вместо страны коды AIN1/AIN2. По протоколам: AIN2 — россияне,
+# AIN1 — белорусы. Код AIN в данные не идёт: это то, что мы показываем, а не то, что написано на табло.
+NEUTRAL_NATION = {"AIN1": "BLR", "AIN2": "RUS"}
+
+
+def nation_code(code):
+    """Код страны для данных: AIN2 → RUS, AIN1 → BLR, регистр не важен; остальное как есть, без пробелов по краям."""
+    s = (code or "").strip()
+    return NEUTRAL_NATION.get(s.upper(), s)
+
+
 def nation_of(text):
     """Колонка «Регион» или «Нация» как есть: пробелы сведены к одному, «МОС / СПБ» остаётся
-    с пробелами, как на табло. Не похоже на код или регион — пустая строка (клуб, мусор)."""
+    с пробелами, как на табло. Не похоже на код или регион — пустая строка (клуб, мусор).
+    Нейтральные коды заменяются на страну (nation_code)."""
     s = re.sub(r"\s*/\s*", " / ", re.sub(r"\s+", " ", text or "").strip())
-    return s if NATION_RE.fullmatch(s) else ""
+    return nation_code(s) if NATION_RE.fullmatch(s) else ""
 
 
 def _num(raw, pattern=NUM_RE):

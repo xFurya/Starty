@@ -1061,9 +1061,7 @@ class PlacingName extends StatelessWidget {
   /// спортсменов приводим к стране: AIN2 → RUS, AIN1 → BLR.
   static String codeOf(Placing x, bool intl, {bool region = true}) {
     if (x.nation.isEmpty) return '';
-    if (!intl) return region ? x.nation : '';
-    if (x.nation == 'RUS' || x.nation == 'AIN2') return 'RUS';
-    if (x.nation == 'BLR' || x.nation == 'AIN1') return 'BLR';
+    if (!intl) return region ? nationCode(x.nation) : '';
     return nationCode(x.nation);
   }
 

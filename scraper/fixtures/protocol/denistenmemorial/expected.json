@@ -354,7 +354,7 @@
       "ded": "0.00",
       "i": 1,
       "name": "Vladislav DIKIDZHI",
-      "nation": "AIN2",
+      "nation": "RUS",
       "no": 3,
       "pcs": "44.51",
       "place": 1,
@@ -366,7 +366,7 @@
       "ded": "0.00",
       "i": 2,
       "name": "Gleb LUTFULLIN",
-      "nation": "AIN2",
+      "nation": "RUS",
       "no": 9,
       "pcs": "40.16",
       "place": 2,
@@ -378,7 +378,7 @@
       "ded": "1.00",
       "i": 3,
       "name": "Petr GUMENNIK",
-      "nation": "AIN2",
+      "nation": "RUS",
       "no": 8,
       "pcs": "40.67",
       "place": 3,
@@ -390,7 +390,7 @@
       "ded": "2.00",
       "i": 4,
       "name": "Vasil BARAKHOUSKI",
-      "nation": "AIN1",
+      "nation": "BLR",
       "no": 7,
       "pcs": "37.07",
       "place": 4,
@@ -414,7 +414,7 @@
       "ded": "0.00",
       "i": 6,
       "name": "Heorhi KAZLOUSKI",
-      "nation": "AIN1",
+      "nation": "BLR",
       "no": 4,
       "pcs": "34.07",
       "place": 6,
@@ -450,7 +450,7 @@
       "ded": "0.00",
       "i": 9,
       "name": "Alex LABOVICH",
-      "nation": "AIN1",
+      "nation": "BLR",
       "no": 6,
       "pcs": "33.31",
       "place": 9,
@@ -477,25 +477,25 @@
    "results": [
     {
      "name": "Vladislav DIKIDZHI",
-     "nation": "AIN2",
+     "nation": "RUS",
      "place": 1,
      "points": "107.31"
     },
     {
      "name": "Gleb LUTFULLIN",
-     "nation": "AIN2",
+     "nation": "RUS",
      "place": 2,
      "points": "95.79"
     },
     {
      "name": "Petr GUMENNIK",
-     "nation": "AIN2",
+     "nation": "RUS",
      "place": 3,
      "points": "80.63"
     },
     {
      "name": "Vasil BARAKHOUSKI",
-     "nation": "AIN1",
+     "nation": "BLR",
      "place": 4,
      "points": "77.96"
     },
@@ -507,7 +507,7 @@
     },
     {
      "name": "Heorhi KAZLOUSKI",
-     "nation": "AIN1",
+     "nation": "BLR",
      "place": 6,
      "points": "75.09"
     },
@@ -525,7 +525,7 @@
     },
     {
      "name": "Alex LABOVICH",
-     "nation": "AIN1",
+     "nation": "BLR",
      "place": 9,
      "points": "61.26"
     },
@@ -539,28 +539,28 @@
    "starting": [
     {
      "name": "Vladislav DIKIDZHI",
-     "nation": "AIN2",
+     "nation": "RUS",
      "no": 3,
      "rank": 1,
      "warmup": null
     },
     {
      "name": "Gleb LUTFULLIN",
-     "nation": "AIN2",
+     "nation": "RUS",
      "no": 9,
      "rank": 2,
      "warmup": null
     },
     {
      "name": "Petr GUMENNIK",
-     "nation": "AIN2",
+     "nation": "RUS",
      "no": 8,
      "rank": 3,
      "warmup": null
     },
     {
      "name": "Vasil BARAKHOUSKI",
-     "nation": "AIN1",
+     "nation": "BLR",
      "no": 7,
      "rank": 4,
      "warmup": null
@@ -574,7 +574,7 @@
     },
     {
      "name": "Heorhi KAZLOUSKI",
-     "nation": "AIN1",
+     "nation": "BLR",
      "no": 4,
      "rank": 6,
      "warmup": null
@@ -595,7 +595,7 @@
     },
     {
      "name": "Alex LABOVICH",
-     "nation": "AIN1",
+     "nation": "BLR",
      "no": 6,
      "rank": 9,
      "warmup": null
@@ -617,7 +617,7 @@
       "ded": "0.00",
       "i": 1,
       "name": "Vladislav DIKIDZHI",
-      "nation": "AIN2",
+      "nation": "RUS",
       "no": 10,
       "pcs": "90.74",
       "place": 1,
@@ -629,7 +629,7 @@
       "ded": "0.00",
       "i": 2,
       "name": "Gleb LUTFULLIN",
-      "nation": "AIN2",
+      "nation": "RUS",
       "no": 9,
       "pcs": "80.92",
       "place": 2,
@@ -641,7 +641,7 @@
       "ded": "1.00",
       "i": 3,
       "name": "Petr GUMENNIK",
-      "nation": "AIN2",
+      "nation": "RUS",
       "no": 8,
       "pcs": "85.58",
       "place": 3,
@@ -665,7 +665,7 @@
       "ded": "0.00",
       "i": 5,
       "name": "Vasil BARAKHOUSKI",
-      "nation": "AIN1",
+      "nation": "BLR",
       "no": 7,
       "pcs": "76.09",
       "place": 5,
@@ -689,7 +689,7 @@
       "ded": "1.00",
       "i": 7,
       "name": "Alex LABOVICH",
-      "nation": "AIN1",
+      "nation": "BLR",
       "no": 2,
       "pcs": "67.77",
       "place": 7,
@@ -725,7 +725,7 @@
       "ded": "1.00",
       "i": 10,
       "name": "Heorhi KAZLOUSKI",
-      "nation": "AIN1",
+      "nation": "BLR",
       "no": 5,
       "pcs": "62.27",
       "place": 10,
@@ -740,19 +740,19 @@
    "results": [
     {
      "name": "Vladislav DIKIDZHI",
-     "nation": "AIN2",
+     "nation": "RUS",
      "place": 1,
      "points": "205.48"
     },
     {
      "name": "Gleb LUTFULLIN",
-     "nation": "AIN2",
+     "nation": "RUS",
      "place": 2,
      "points": "181.44"
     },
     {
      "name": "Petr GUMENNIK",
-     "nation": "AIN2",
+     "nation": "RUS",
      "place": 3,
      "points": "181.13"
     },
@@ -764,7 +764,7 @@
     },
     {
      "name": "Vasil BARAKHOUSKI",
-     "nation": "AIN1",
+     "nation": "BLR",
      "place": 5,
      "points": "140.40"
     },
@@ -776,7 +776,7 @@
     },
     {
      "name": "Alex LABOVICH",
-     "nation": "AIN1",
+     "nation": "BLR",
      "place": 7,
      "points": "128.11"
     },
@@ -794,7 +794,7 @@
     },
     {
      "name": "Heorhi KAZLOUSKI",
-     "nation": "AIN1",
+     "nation": "BLR",
      "place": 10,
      "points": "112.61"
     }
@@ -802,21 +802,21 @@
    "starting": [
     {
      "name": "Vladislav DIKIDZHI",
-     "nation": "AIN2",
+     "nation": "RUS",
      "no": 10,
      "rank": 1,
      "warmup": null
     },
     {
      "name": "Gleb LUTFULLIN",
-     "nation": "AIN2",
+     "nation": "RUS",
      "no": 9,
      "rank": 2,
      "warmup": null
     },
     {
      "name": "Petr GUMENNIK",
-     "nation": "AIN2",
+     "nation": "RUS",
      "no": 8,
      "rank": 3,
      "warmup": null
@@ -830,7 +830,7 @@
     },
     {
      "name": "Vasil BARAKHOUSKI",
-     "nation": "AIN1",
+     "nation": "BLR",
      "no": 7,
      "rank": 5,
      "warmup": null
@@ -844,7 +844,7 @@
     },
     {
      "name": "Alex LABOVICH",
-     "nation": "AIN1",
+     "nation": "BLR",
      "no": 2,
      "rank": 7,
      "warmup": null
@@ -865,7 +865,7 @@
     },
     {
      "name": "Heorhi KAZLOUSKI",
-     "nation": "AIN1",
+     "nation": "BLR",
      "no": 5,
      "rank": 10,
      "warmup": null
@@ -880,7 +880,7 @@
       "ded": "0.00",
       "i": 1,
       "name": "Arsenii FEDOTOV",
-      "nation": "AIN2",
+      "nation": "RUS",
       "no": 6,
       "pcs": "41.04",
       "place": 1,
@@ -892,7 +892,7 @@
       "ded": "0.00",
       "i": 2,
       "name": "Aleksandr CHMIL",
-      "nation": "AIN2",
+      "nation": "RUS",
       "no": 8,
       "pcs": "34.24",
       "place": 2,
@@ -904,7 +904,7 @@
       "ded": "0.00",
       "i": 3,
       "name": "Gleb KOVTUN",
-      "nation": "AIN2",
+      "nation": "RUS",
       "no": 10,
       "pcs": "33.82",
       "place": 3,
@@ -940,7 +940,7 @@
       "ded": "0.00",
       "i": 6,
       "name": "Pavel GAVDIS",
-      "nation": "AIN1",
+      "nation": "BLR",
       "no": 11,
       "pcs": "32.42",
       "place": 6,
@@ -1051,19 +1051,19 @@
    "results": [
     {
      "name": "Arsenii FEDOTOV",
-     "nation": "AIN2",
+     "nation": "RUS",
      "place": 1,
      "points": "91.38"
     },
     {
      "name": "Aleksandr CHMIL",
-     "nation": "AIN2",
+     "nation": "RUS",
      "place": 2,
      "points": "74.01"
     },
     {
      "name": "Gleb KOVTUN",
-     "nation": "AIN2",
+     "nation": "RUS",
      "place": 3,
      "points": "73.18"
     },
@@ -1081,7 +1081,7 @@
     },
     {
      "name": "Pavel GAVDIS",
-     "nation": "AIN1",
+     "nation": "BLR",
      "place": 6,
      "points": "57.84"
     },
@@ -1137,21 +1137,21 @@
    "starting": [
     {
      "name": "Arsenii FEDOTOV",
-     "nation": "AIN2",
+     "nation": "RUS",
      "no": 6,
      "rank": 1,
      "warmup": null
     },
     {
      "name": "Aleksandr CHMIL",
-     "nation": "AIN2",
+     "nation": "RUS",
      "no": 8,
      "rank": 2,
      "warmup": null
     },
     {
      "name": "Gleb KOVTUN",
-     "nation": "AIN2",
+     "nation": "RUS",
      "no": 10,
      "rank": 3,
      "warmup": null
@@ -1172,7 +1172,7 @@
     },
     {
      "name": "Pavel GAVDIS",
-     "nation": "AIN1",
+     "nation": "BLR",
      "no": 11,
      "rank": 6,
      "warmup": null
@@ -1252,7 +1252,7 @@
       "ded": null,
       "i": 1,
       "name": "Vladislav DIKIDZHI",
-      "nation": "AIN2",
+      "nation": "RUS",
       "no": null,
       "parts": [
        "1",
@@ -1268,7 +1268,7 @@
       "ded": null,
       "i": 2,
       "name": "Gleb LUTFULLIN",
-      "nation": "AIN2",
+      "nation": "RUS",
       "no": null,
       "parts": [
        "2",
@@ -1284,7 +1284,7 @@
       "ded": null,
       "i": 3,
       "name": "Petr GUMENNIK",
-      "nation": "AIN2",
+      "nation": "RUS",
       "no": null,
       "parts": [
        "3",
@@ -1316,7 +1316,7 @@
       "ded": null,
       "i": 5,
       "name": "Vasil BARAKHOUSKI",
-      "nation": "AIN1",
+      "nation": "BLR",
       "no": null,
       "parts": [
        "4",
@@ -1348,7 +1348,7 @@
       "ded": null,
       "i": 7,
       "name": "Alex LABOVICH",
-      "nation": "AIN1",
+      "nation": "BLR",
       "no": null,
       "parts": [
        "9",
@@ -1364,7 +1364,7 @@
       "ded": null,
       "i": 8,
       "name": "Heorhi KAZLOUSKI",
-      "nation": "AIN1",
+      "nation": "BLR",
       "no": null,
       "parts": [
        "6",
@@ -1415,19 +1415,19 @@
    "rows": [
     {
      "name": "Vladislav DIKIDZHI",
-     "nation": "AIN2",
+     "nation": "RUS",
      "place": 1,
      "points": "312.79"
     },
     {
      "name": "Gleb LUTFULLIN",
-     "nation": "AIN2",
+     "nation": "RUS",
      "place": 2,
      "points": "277.23"
     },
     {
      "name": "Petr GUMENNIK",
-     "nation": "AIN2",
+     "nation": "RUS",
      "place": 3,
      "points": "261.76"
     },
@@ -1439,7 +1439,7 @@
     },
     {
      "name": "Vasil BARAKHOUSKI",
-     "nation": "AIN1",
+     "nation": "BLR",
      "place": 5,
      "points": "218.36"
     },
@@ -1451,13 +1451,13 @@
     },
     {
      "name": "Alex LABOVICH",
-     "nation": "AIN1",
+     "nation": "BLR",
      "place": 7,
      "points": "189.37"
     },
     {
      "name": "Heorhi KAZLOUSKI",
-     "nation": "AIN1",
+     "nation": "BLR",
      "place": 8,
      "points": "187.70"
     },

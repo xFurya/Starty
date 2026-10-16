@@ -185,8 +185,20 @@ bool allFull(BuildContext context, List<String> names, TextStyle style, double w
 bool tight(BuildContext context) =>
     MediaQuery.sizeOf(context).width < 360 || MediaQuery.textScalerOf(context).scale(10) > 11;
 
-/// Код страны на экране: нейтральный статус — «AIN».
-String nationCode(String n) => n.startsWith('AIN') ? 'AIN' : n;
+/// Код страны для показа. Нейтральные коды ISU приводим к стране: AIN2 → RUS, AIN1 → BLR
+/// (по протоколам: AIN2 — россияне, AIN1 — белорусы). Регистр не важен, пробелы по краям
+/// обрезаем; остальное — как есть, в том числе простой AIN.
+String nationCode(String n) {
+  final c = n.trim();
+  switch (c.toUpperCase()) {
+    case 'AIN2':
+      return 'RUS';
+    case 'AIN1':
+      return 'BLR';
+    default:
+      return c;
+  }
+}
 
 /// Неразрывный пробел: «1 ч», «в 17:30» не разрываются.
 const nb = '\u00A0';

@@ -226,7 +226,7 @@ def internationals(season_codes, log=print):
                 for name, nation, level in _stat_rows(f"sb{season}/sbts{k}{seg}.htm"):
                     out.setdefault((name, kind), (nation, level))
     log(f"  справочник: участников турниров ISU {len(out)}")
-    return [(n, c, k, lv) for (n, k), (c, lv) in out.items()]
+    return [(n, st.nation_code(c), k, lv) for (n, k), (c, lv) in out.items()]
 
 
 # ---------------------------------------------------------------- фото
@@ -349,8 +349,9 @@ def build(names, season_start, log=print):
     # полный список ISU: все фигуристы с российским или белорусским гражданством (вид — по заявке ISU)
     try:
         for raw, nation, org in isu_russians(log):
-            add(names.to_ru(raw) if nation == "RUS" or nation == "BLR" else raw,
-                "BLR" if nation == "BLR" else "RUS", None, None)
+            c = st.nation_code(nation)
+            add(names.to_ru(raw) if c in ("RUS", "BLR") else raw,
+                "BLR" if c == "BLR" else "RUS", None, None)
     except net.FetchError as e:
         log("  ! список ISU:", e)
     # сборная ФФККР — российские спортсмены по определению (КМС и выше); вид пока неизвестен

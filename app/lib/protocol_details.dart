@@ -420,7 +420,7 @@ class PanelBlock extends StatelessWidget {
                   ),
                   if (j.nation.isNotEmpty) ...[
                     const SizedBox(width: 8),
-                    Text(j.nation, style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w600, color: p.ink2)),
+                    Text(nationCode(j.nation), style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w600, color: p.ink2)),
                   ],
                 ]),
               ),
