@@ -258,5 +258,4 @@ class UniqueIdTest(unittest.TestCase):
         data = json.load(open(b.OUT_JSON, encoding="utf-8"))
         ids = [e["id"] for e in data["events"]]
         dup = {i for i in ids if ids.count(i) > 1}
-        # Blackburn опубликован до исправления; после ближайшей сборки список обнулить
-        self.assertEqual(dup - {"gs:blackburn-trophy:dance-senior-pt"}, set())
+        self.assertEqual(dup, set())
