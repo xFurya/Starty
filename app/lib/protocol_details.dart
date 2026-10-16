@@ -4,6 +4,7 @@
 import 'package:flutter/cupertino.dart' show CupertinoIcons;
 import 'package:flutter/material.dart';
 
+import 'flags.dart';
 import 'palette.dart';
 import 'protocol_model.dart';
 import 'ui.dart';
@@ -117,11 +118,25 @@ class _DetailsState extends State<Details> {
         }
       }
       if (found.isNotEmpty) {
+        // расшифровка пометок — по одной на строку: знак колонкой, слово рядом
+        final legend = TextStyle(fontSize: 11.5, fontWeight: FontWeight.w500, color: p.ink2, height: 1.3);
         kids.add(Padding(
           padding: const EdgeInsets.only(top: 6),
-          child: Text(
-            [for (final m in found) '$m — ${markLegend[m]}'].join(' · '),
-            style: TextStyle(fontSize: 11.5, fontWeight: FontWeight.w500, color: p.ink3, height: 1.3),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              for (final m in found)
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.textScalerOf(context).scale(22),
+                      child: Text(m, style: legend.copyWith(color: p.live, fontWeight: FontWeight.w700)),
+                    ),
+                    Expanded(child: Text(markLegend[m]!, style: legend)),
+                  ],
+                ),
+            ],
           ),
         ));
       }
@@ -311,14 +326,27 @@ class _Table extends StatelessWidget {
                                 const SizedBox(width: 8),
                                 Text(r.cells[2], style: _val(p)),
                               ]),
+                              // узко: база и GOE — подписанными значениями под названием, каждое отдельно
                               Padding(
                                 padding: EdgeInsets.only(left: lead, top: 2),
-                                child: Text(
-                                  [
+                                child: Wrap(
+                                  spacing: 14,
+                                  runSpacing: 2,
+                                  children: [
                                     for (var i = 0; i < 2; i++)
-                                      if (r.names[i].isNotEmpty && !(hideMiddle && i == 1)) '${r.names[i]} ${r.cells[i]}',
-                                  ].join(' · '),
-                                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: p.ink2, fontFeatures: tnum),
+                                      if (r.names[i].isNotEmpty && !(hideMiddle && i == 1))
+                                        Text.rich(
+                                          TextSpan(
+                                            children: [
+                                              TextSpan(text: '${r.names[i]}$nb', style: TextStyle(color: p.ink3, fontWeight: FontWeight.w600)),
+                                              TextSpan(text: r.cells[i]),
+                                            ],
+                                          ),
+                                          maxLines: 1,
+                                          softWrap: false,
+                                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: p.ink2, fontFeatures: tnum),
+                                        ),
+                                  ],
                                 ),
                               ),
                             ]),
@@ -395,8 +423,11 @@ class PanelBlock extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(16, 12, 14, 12),
                 child: Row(children: [
                   Expanded(
-                    child: Text('Судьи · ${panel.length}', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink)),
+                    child: Text('Судьи', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink)),
                   ),
+                  // сколько судей — числом справа, перед стрелкой
+                  Text('${panel.length}', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: p.ink2, fontFeatures: tnum)),
+                  const SizedBox(width: 8),
                   Icon(open ? CupertinoIcons.chevron_up : CupertinoIcons.chevron_down, size: 17, color: p.ink3),
                 ]),
               ),
@@ -420,7 +451,7 @@ class PanelBlock extends StatelessWidget {
                   ),
                   if (j.nation.isNotEmpty) ...[
                     const SizedBox(width: 8),
-                    Text(nationCode(j.nation), style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w600, color: p.ink2)),
+                    NationTag(j.nation, style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700, letterSpacing: .6, height: 1.25, color: p.ink2)),
                   ],
                 ]),
               ),

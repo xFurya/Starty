@@ -60,7 +60,7 @@ void main() {
 
   Iterable<Start> pick(bool Function(Start) f) => data.starts.where(f).take(1);
 
-  for (final width in [320.0, 360.0, 390.0]) {
+  for (final width in [320.0, 360.0, 390.0, 430.0]) {
     for (final b in Brightness.values) {
       for (final scale in [1.0, 1.3]) {
         testWidgets('лента, месяц, настройки, листы — ${width.toInt()} px, $b, шрифт $scale', (t) async {
@@ -161,9 +161,9 @@ void main() {
   });
 
   test('фильтр ленты: виды, турниры, спортсмен; сводка в настройках', () {
-    expect(filterSummary(Filters.none), 'Все старты');
-    expect(filterSummary(const Filters({'women', 'men'}, {'x'}, {})), '2 вида · 1 турнир');
-    expect(filterSummary(const Filters({'women', 'men'}, {'x'}, {'Мария Захарова'})), '2 вида · 1 турнир · 1 спортсмен');
+    expect(filterTags(Filters.none), isEmpty);
+    expect(filterTags(const Filters({'women', 'men'}, {'x'}, {})), ['2 вида', '1 турнир']);
+    expect(filterTags(const Filters({'women', 'men'}, {'x'}, {'Мария Захарова'})), ['2 вида', '1 турнир', '1 спортсмен']);
     // спортсмен: только старты, где он есть среди наших или в списке участников
     final s = data.starts.firstWhere((x) => x.ours.isNotEmpty);
     final name = s.ours.first.name;
@@ -225,7 +225,8 @@ void main() {
     expect(oursLabel([sk('BLR')]), 'Белорусы');
     expect(oursLabel([sk('AIN1')]), 'Белорусы');
     expect(oursLabel([sk('RUS'), sk('BLR')]), 'Россияне и белорусы');
-    expect(oursLabel([sk('RUS'), sk('BLR')], exitTimes: true), 'Россияне и белорусы · выход на лёд');
+    // «выход на лёд» — подписью над колонкой времени, а не через точку
+    expect(oursLabel([sk('RUS'), sk('BLR')], exitTimes: true), 'Россияне и белорусы');
     expect(oursLabel([sk('МОС')]), 'Россияне');
     expect(oursLabel([sk('RUS')], intl: false), '');
     expect(oursLabel([sk('RUS'), sk('МОС')], exitTimes: true, intl: false), 'Выход на лёд');
@@ -348,7 +349,7 @@ void main() {
     final bad = Schedule(data.starts, now(), false, false, sources: const {'ФФККР': 'ok', 'ISU': 'fail'});
     expect(freshness(stateWith(bad)).text, startsWith('ISU не отвечает'));
     final off = stateWith(data)..offline = true;
-    expect(freshness(off).text, startsWith('Нет связи · обновлено '));
+    expect(freshness(off).text, startsWith('Нет связи\nобновлено '));
   });
 
   test('исключения: считаются только действующие', () {
