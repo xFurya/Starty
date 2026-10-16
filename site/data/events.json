@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-16T20:33:12+03:00",
- "checked": "2026-10-16T17:59:20.362160+00:00",
+ "generated": "2026-10-16T20:54:17+03:00",
+ "checked": "2026-10-16T20:54:17+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26428,7 +26428,7 @@
    "seg": "РТ",
    "title": "CS Budapest Trophy — танцы РТ",
    "start": "2026-10-16T17:45:00+03:00",
-   "end": "2026-10-16T20:55:00+03:00",
+   "end": "2026-10-16T21:10:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [],
@@ -26444,10 +26444,10 @@
     {
      "name": "Василиса Григорьева / Евгений Артющенко",
      "nation": "RUS",
-     "time": "20:48",
      "no": 22,
      "warmup": 5,
-     "place": 12
+     "place": 12,
+     "time": "20:48"
     }
    ],
    "athletes": [
@@ -26652,26 +26652,26 @@
     {
      "name": "Amy Cui / Jonathan Rogers",
      "nation": "USA",
-     "time": "20:36",
      "no": 20,
      "warmup": 5,
-     "place": 9
+     "place": 9,
+     "time": "20:36"
     },
     {
      "name": "Emily Bratti / Ian Somerville",
      "nation": "USA",
-     "time": "20:42",
      "no": 21,
      "warmup": 5,
-     "place": 5
+     "place": 5,
+     "time": "20:42"
     },
     {
      "name": "Василиса Григорьева / Евгений Артющенко",
      "nation": "RUS",
-     "time": "20:48",
      "no": 22,
      "warmup": 5,
-     "place": 12
+     "place": 12,
+     "time": "20:48"
     }
    ],
    "live": {
@@ -26684,11 +26684,14 @@
      "Natalie TASCHLEROVA / Filip TASCHLER": "Natalie Taschlerova / Filip Taschler",
      "Loicia DEMOUGEOT / Theo le MERCIER": "Loicia Demougeot / Theo le Mercier",
      "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
+     "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
      "Giulia Isabella PAOLINO / Andrea TUBA": "Giulia Isabella Paolino / Andrea Tuba",
      "Noemi Maria TALI / Noah LAFORNARA": "Noemi Maria Tali / Noah Lafornara",
      "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Artem Koval",
+     "Amy CUI / Jonathan ROGERS": "Amy Cui / Jonathan Rogers",
      "Jamie FOURNIER / Everest ZHU": "Jamie Fournier / Everest Zhu",
      "Charise MATTHAEI / Max LIEBERS": "Charise Matthaei / Max Liebers",
+     "Vasilisa GRIGOREVA / Evgenii ARTIUSHCHENKO": "Василиса Григорьева / Евгений Артющенко",
      "Milana KUZMINA / Dmitrii STUDENIKIN": "Милана Кузьмина / Дмитрий Студеникин",
      "Zofia GRZEGORZEWSKA / Oleg MURATOV": "Zofia Grzegorzewska / Oleg Muratov",
      "Emese CSISZER / Mark SHAPIRO": "Emese Csiszer / Mark Shapiro",
@@ -26698,10 +26701,7 @@
      "Gina ZEHNDER / Beda Leon SIEBER": "Gina Zehnder / Beda Leon Sieber",
      "Shira ICHILOV / Mikhail NOSOVITSKIY": "Shira Ichilov / Mikhail Nosovitskiy",
      "Alisa OVSIANKINA / Maximilien RAHIER": "Alisa Ovsiankina / Maximilien Rahier",
-     "Luiza-Elena ILIE / Giovanni Stefano POLI": "Luiza-Elena Ilie / Giovanni Stefano Poli",
-     "Amy CUI / Jonathan ROGERS": "Amy Cui / Jonathan Rogers",
-     "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
-     "Vasilisa GRIGOREVA / Evgenii ARTIUSHCHENKO": "Василиса Григорьева / Евгений Артющенко"
+     "Luiza-Elena ILIE / Giovanni Stefano POLI": "Luiza-Elena Ilie / Giovanni Stefano Poli"
     },
     "basis": "judges"
    },
