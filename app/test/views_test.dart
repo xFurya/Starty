@@ -172,6 +172,70 @@ void main() {
     expect(find.text('Сбросить'), findsNothing);
   });
 
+  testWidgets('фильтр: отслеживаемые сворачиваются по заголовку, отметки остаются', (t) async {
+    t.view.physicalSize = const Size(390 * 3, 1600 * 3);
+    t.view.devicePixelRatio = 3;
+    addTearDown(t.view.reset);
+    SharedPreferences.setMockInitialValues({
+      'follow': ['Kaori Sakamoto', 'Алина Горбачёва', 'Анастасия Метелкина / Лука Берулава'],
+    });
+    await Prefs.init();
+    final s = stateWith(data);
+    final quick = s.follow.names.toList()..sort();
+    expect(quick.length, 3);
+    final a = quick.first;
+    Future<void> open() async {
+      await t.pumpWidget(app(
+        Builder(builder: (c) => Center(child: TextButton(onPressed: () => showFilters(c, s), child: const Text('open')))),
+        Brightness.light,
+        1,
+      ));
+      await t.tap(find.text('open'));
+      await t.pumpAndSettle();
+    }
+
+    final row = find.text(displayName(a), findRichText: true, skipOffstage: false);
+    Iterable<bool> checks() => t.widgetList<SquareCheck>(find.byType(SquareCheck, skipOffstage: false)).map((c) => c.on);
+
+    // ничего не отмечено — свёрнут, справа число
+    await open();
+    expect(find.text('Отслеживаемые'), findsOneWidget);
+    expect(find.text('${quick.length}'), findsOneWidget);
+    expect(row, findsNothing);
+
+    // развернуть, отметить, свернуть — отметка на месте, число стало «1 из N»
+    await t.tap(find.text('Отслеживаемые'));
+    await t.pumpAndSettle();
+    expect(row, findsOneWidget);
+    await t.tap(row);
+    await t.pumpAndSettle();
+    expect(checks().where((on) => on).length, 1);
+    await t.tap(find.text('Отслеживаемые'));
+    await t.pumpAndSettle();
+    expect(row, findsNothing);
+    expect(find.text('1 из ${quick.length}'), findsOneWidget);
+    expect(find.text('Снять отметки'), findsOneWidget);
+    await t.tap(find.text('Отслеживаемые'));
+    await t.pumpAndSettle();
+    expect(row, findsOneWidget);
+    expect(checks().where((on) => on).length, 1);
+
+    // сохранённый фильтр с отслеживаемым — лист открывается развёрнутым
+    s.filters = Filters({}, {}, {a});
+    await open();
+    expect(row, findsOneWidget);
+    expect(find.text('1 из ${quick.length}'), findsOneWidget);
+    // сворачивание не меняет ни фильтр, ни отметки в листе
+    await t.tap(find.text('Отслеживаемые'));
+    await t.pumpAndSettle();
+    expect(row, findsNothing);
+    expect(find.text('1 из ${quick.length}'), findsOneWidget);
+    expect(s.filters.athletes, {a});
+    await t.tap(find.text('Отслеживаемые'));
+    await t.pumpAndSettle();
+    expect(checks().where((on) => on).length, 1);
+  });
+
   test('склонение', () {
     expect([1, 2, 5, 11, 21, 22, 25, 111].map((n) => plural(n, 'старт', 'старта', 'стартов')), [
       'старт',
