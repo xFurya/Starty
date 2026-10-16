@@ -325,7 +325,7 @@ def collect(site, want, raw, prev_photos, names, book_path, skip_path, log=print
     """{«Имя Фамилия»: путь миниатюры или адрес} для всех из want.
 
     raw — [(имя из источника, адрес, приоритет)], чем меньше приоритет, тем надёжнее источник.
-    Найденное не теряется: у кого фото уже есть (в data/people.json «photos», на сайте, в прошлом
+    Найденное не теряется: у кого фото уже есть (в data/photos.json, на сайте, в прошлом
     events.json), оно остаётся, пока не найдётся снимок из более надёжного источника и его миниатюра
     не получится целиком. Сеть не ответила — прежнее фото остаётся."""
     is_image = is_image or net.is_image
@@ -361,7 +361,8 @@ def collect(site, want, raw, prev_photos, names, book_path, skip_path, log=print
         k = nm.key(names.to_ru(n))
         entry = book.get(k)
         if entry and not _alive(site, entry.get("f")):
-            entry = None  # файл пропал с диска — найдём заново
+            book.pop(k, None)  # файл пропал с диска: показывать нечего, ищем заново
+            entry = None
         prev = prev_photos.get(n)
         if not entry and prev and _alive(site, prev):
             # было в прошлом сборе, а в памяти нет: берём как есть; источник неизвестен — считаем

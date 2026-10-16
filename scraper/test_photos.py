@@ -106,6 +106,12 @@ class KeepTest(Base):
         self.assertTrue(os.path.exists(os.path.join(self.site, rel)))
         self.assertFalse(os.path.exists(os.path.join(self.site, stray)))
 
+    def test_missing_file_without_source_is_not_shown(self):
+        names = self.seed("Ксения Синицына", "photos/gone.jpg", 2)
+        out = self.run_collect(["Ксения Синицына"], [], names=names)
+        self.assertEqual(out, {})
+        self.assertEqual(ph.load_book(self.book), {})
+
     def test_book_keeps_other_sections_of_people_json(self):
         with open(self.book, "w", encoding="utf-8") as f:
             json.dump({"pages": {"a": "b"}, "results": {}, "v": 4}, f)
