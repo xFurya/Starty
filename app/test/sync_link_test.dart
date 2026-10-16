@@ -247,4 +247,23 @@ void main() {
     expect(s.syncLinkedCode, isNull);
     expect(s.codeLinked, isNull);
   });
+
+  test('пока сервер не ответил о привязке — «не проверено»; ответ или ошибка снимают ожидание', () async {
+    final srv = Srv();
+    final s = AppState()..syncClient = srv.client;
+    await s.signInSync('a@b.ru', 'secret1');
+    expect(s.codeLinkChecked, isFalse);
+    await s.refreshCodeLink();
+    expect(s.codeLinkChecked, isTrue);
+    expect(s.codeLinked, isFalse);
+    // ошибка/404: проверено, но привязка неизвестна — интерфейс вернётся к «Создать код»
+    await s.signOutSync();
+    expect(s.codeLinkChecked, isFalse);
+    srv.oldSchema = true;
+    await s.signInSync('a@b.ru', 'secret1');
+    await s.refreshCodeLink();
+    expect(s.codeLinkChecked, isTrue);
+    expect(s.codeLinked, isNull);
+    s.sync.dispose();
+  });
 }

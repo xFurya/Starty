@@ -52,6 +52,9 @@ class AppState extends ChangeNotifier {
   String? get syncLinkedCode => SyncLocal(Prefs.raw).linkedCode;
   bool? codeLinked;
 
+  /// Сервер уже ответил на вопрос о привязке (пусть и «не знаю»). Пока нет — интерфейс не утверждает ничего.
+  bool codeLinkChecked = false;
+
   /// Сверить сейчас (кнопка в «Синхронизации»). Возвращает причину, если не вышло.
   Future<String?> syncNow() async {
     await sync.reconcile();
@@ -234,6 +237,10 @@ class AppState extends ChangeNotifier {
       sync.backend = b;
       if (!same) await sync.preferRemote();
       if (!same) await SyncLocal(Prefs.raw).setLinkedCode(null);
+      if (!same) {
+        codeLinked = null;
+        codeLinkChecked = false;
+      }
       await SyncLocal(Prefs.raw).setCode(null);
       await _keepSession(b, s);
       notifyListeners();
@@ -250,6 +257,7 @@ class AppState extends ChangeNotifier {
     await SyncLocal(Prefs.raw).setAccount(null);
     await SyncLocal(Prefs.raw).setLinkedCode(null);
     codeLinked = null;
+    codeLinkChecked = false;
     if (sync.backend case final AccountBackend a) a.signOut();
     sync.backend = null;
     await _resetDevice();
@@ -379,8 +387,9 @@ class AppState extends ChangeNotifier {
     if (b is! AccountBackend) return;
     final v = await b.hasCodeLink();
     if (!identical(sync.backend, b)) return;
-    if (v != codeLinked) {
+    if (v != codeLinked || !codeLinkChecked) {
       codeLinked = v;
+      codeLinkChecked = true;
       notifyListeners();
     }
   }
@@ -391,6 +400,7 @@ class AppState extends ChangeNotifier {
     await SyncLocal(Prefs.raw).setAccount(null);
     await SyncLocal(Prefs.raw).setLinkedCode(null);
     codeLinked = null;
+    codeLinkChecked = false;
     await SyncLocal(Prefs.raw).setCode(null);
     if (sync.backend case final AccountBackend a) a.signOut();
     sync.backend = null;

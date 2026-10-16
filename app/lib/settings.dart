@@ -1405,7 +1405,10 @@ class _AccountPageState extends State<_AccountPage> {
                   child: Plate(
                     child: Column(
                       children: [
-                        if (st.syncLinkedCode != null) ...[
+                        if (st.syncLinkedCode == null && !st.codeLinkChecked)
+                          // сервер ещё не ответил: ничего не утверждаем и действий не даём
+                          const _Row(icon: CupertinoIcons.number, title: 'Проверяем…')
+                        else if (st.syncLinkedCode != null) ...[
                           _Row(
                             icon: CupertinoIcons.number,
                             title: _groupedCode(st.syncLinkedCode!),
@@ -1432,6 +1435,7 @@ class _AccountPageState extends State<_AccountPage> {
                             title: 'Создать код',
                             onTap: _busy ? null : () => _act(st.createLinkedCode),
                           ),
+                        if (st.syncLinkedCode != null || st.codeLinkChecked) ...[
                         const Hairline(),
                         Padding(
                           padding: const EdgeInsets.all(14),
@@ -1456,6 +1460,7 @@ class _AccountPageState extends State<_AccountPage> {
                             ],
                           ),
                         ),
+                        ],
                       ],
                     ),
                   ),
