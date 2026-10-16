@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16T21:37:58+03:00",
- "checked": "2026-10-16T21:37:58+03:00",
+ "checked": "2026-10-16T19:03:22.213059+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26946,56 +26946,63 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Начало: 21:10 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Arianna Soldati / Nicholas Tagliabue — 60.93\n2. Лилия Литенко / Александр Рыженков — 50.63\n3. Carlota Garcia Barranco / Александр Островский — 47.67\n\nНачало: 21:10 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Лилия Литенко / Александр Рыженков",
      "nation": "ISR",
      "time": "21:15",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Arianna Soldati / Nicholas Tagliabue",
      "nation": "ITA",
      "time": "21:21",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Villo Mira Szilagyi / Istvan Jaracs",
      "nation": "HUN",
      "time": "21:27",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5
     },
     {
      "name": "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
      "nation": "FRA",
      "time": "21:33",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 6
     },
     {
      "name": "Chanelle Chum / Osckar Chum",
      "nation": "AUS",
      "time": "21:44",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4
     },
     {
      "name": "Carlota Garcia Barranco / Александр Островский",
      "nation": "ESP",
      "time": "21:50",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3
     },
     {
      "name": "Rose Anne Marie Bordet / Hugo Tomas",
      "nation": "FRA",
      "time": "21:56",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     },
     {
      "name": "Aneta Vaclavikova / William Lissauer",
@@ -27134,7 +27141,28 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": "isu_isu-cs-budapest-trophy.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Arianna Soldati / Nicholas Tagliabue",
+     "nation": "ITA",
+     "points": "60.93"
+    },
+    {
+     "place": 2,
+     "name": "Лилия Литенко / Александр Рыженков",
+     "nation": "ISR",
+     "points": "50.63"
+    },
+    {
+     "place": 3,
+     "name": "Carlota Garcia Barranco / Александр Островский",
+     "nation": "ESP",
+     "points": "47.67"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-budapest-trophy:women-junior-pp",
