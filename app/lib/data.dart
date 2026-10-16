@@ -96,6 +96,27 @@ class Skater {
   factory Skater.fromJson(Map o) =>
       Skater(o['name'], o['time'], o['no'], o['warmup'], o['place'], o['final'], o['nation'] ?? '');
 
+  Map<String, dynamic> toJson() => {
+    'name': name,
+    if (time != null) 'time': time,
+    if (no != null) 'no': no,
+    if (warmup != null) 'warmup': warmup,
+    if (place != null) 'place': place,
+    if (overall != null) 'final': overall,
+    if (nation.isNotEmpty) 'nation': nation,
+  };
+
+  /// Тот же человек с данными из [o]: что в [o] пусто, остаётся своё (см. [Start.mergeKeepingRicher]).
+  Skater filledBy(Skater o) => Skater(
+    o.name,
+    o.time ?? time,
+    o.no ?? no,
+    o.warmup ?? warmup,
+    o.place ?? place,
+    o.overall ?? overall,
+    o.nation.isNotEmpty ? o.nation : nation,
+  );
+
   /// В списке у пар — только фамилии.
   String get short => name.contains(' / ') ? name.split(' / ').map((p) => p.trim().split(' ').last).join(' / ') : name;
 }
@@ -192,6 +213,104 @@ class Start {
       ]),
       live = j['live'] is Map ? LiveSrc.fromJson(Map<String, dynamic>.from(j['live'] as Map)) : null;
 
+  Start._all({
+    required this.id,
+    required this.tid,
+    required this.tournament,
+    required this.kind,
+    required this.level,
+    required this.seg,
+    required this.title,
+    required this.venue,
+    required this.src,
+    required this.proto,
+    required this.t0,
+    required this.t1,
+    required this.intl,
+    required this.regional,
+    required this.region,
+    required this.broadcast,
+    required this.watch,
+    required this.athletes,
+    required this.ours,
+    required this.field,
+    required this.podium,
+    required this.total,
+    required this.provisional,
+    required this.facts,
+    required this.live,
+  });
+
+  /// Обратно в формат events.json: так расписание ложится в кэш на устройстве.
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'tid': tid,
+    'tournament': tournament,
+    'kind': kind,
+    'level': level,
+    'seg': seg,
+    'title': title,
+    'venue': venue,
+    'src': src,
+    if (proto != null) 'proto': proto,
+    'start': t0.toIso8601String(),
+    'end': t1.toIso8601String(),
+    'intl': intl,
+    if (regional) 'tier': 'regional',
+    'region': region,
+    'broadcast': broadcast,
+    'watch': [for (final w in watch) w.toJson()],
+    'athletes': athletes,
+    'ours': [for (final o in ours) o.toJson()],
+    'field': [for (final o in field) o.toJson()],
+    'podium': [for (final p in podium) p.toJson()],
+    'total': [for (final p in total) p.toJson()],
+    if (provisional) 'provisional': true,
+    'facts': [for (final f in facts) f.toJson()],
+    if (live != null) 'live': live!.toJson(),
+  };
+
+  /// Тот же старт после новой загрузки расписания: ничего из уже полученного не пропадает.
+  ///
+  /// Старт тот же, если совпали id и время. Тогда каждое поле берётся у [fresh], но пустое или
+  /// более бедное (короче список, нет ссылки) заменяется прежним значением; списки объединяются
+  /// по ключу — свежее значение с тем же ключом побеждает, а то, что перестало приходить,
+  /// остаётся. Изменился id или время (старт перенесён) — [fresh] целиком.
+  static Start mergeKeepingRicher(Start old, Start fresh) {
+    if (old.id != fresh.id || old.t0 != fresh.t0 || old.t1 != fresh.t1) return fresh;
+    String text(String o, String f) => f.trim().isEmpty ? o : f;
+    // тройка и итог — упорядоченные списки: короче прежнего значит «пришло не всё», берём прежний целиком
+    final keepPodium = fresh.podium.length < old.podium.length;
+    final keepTotal = fresh.total.length < old.total.length;
+    return Start._all(
+      id: fresh.id,
+      tid: text(old.tid, fresh.tid),
+      tournament: text(old.tournament, fresh.tournament),
+      kind: fresh.kind,
+      level: fresh.level,
+      seg: fresh.seg,
+      title: text(old.title, fresh.title),
+      venue: text(old.venue, fresh.venue),
+      src: text(old.src, fresh.src),
+      proto: fresh.proto ?? old.proto,
+      t0: fresh.t0,
+      t1: fresh.t1,
+      intl: fresh.intl,
+      regional: fresh.regional,
+      region: text(old.region, fresh.region),
+      broadcast: _mergeLists<String>(old.broadcast, fresh.broadcast, same: (a, b) => norm(a) == norm(b)),
+      watch: _mergeLists<WatchLink>(old.watch, fresh.watch, same: (a, b) => norm(a.name) == norm(b.name)),
+      athletes: _mergeLists<String>(old.athletes, fresh.athletes, same: (a, b) => norm(a) == norm(b)),
+      ours: _mergeSkaters(old.ours, fresh.ours),
+      field: _mergeSkaters(old.field, fresh.field),
+      podium: keepPodium ? old.podium : fresh.podium,
+      total: keepTotal ? old.total : fresh.total,
+      provisional: keepPodium ? old.provisional : fresh.provisional,
+      facts: _uniqueFacts(_mergeLists<Fact>(old.facts, fresh.facts, same: (a, b) => _factKey(a) == _factKey(b))),
+      live: LiveSrc.mergeKeepingRicher(old.live, fresh.live),
+    );
+  }
+
   /// Тот же старт с итогами, прочитанными с табло турнира (live.dart).
   Start._with(
     Start o, {
@@ -231,13 +350,16 @@ class Start {
   }) {
     Skater up(Skater o) =>
         Skater(o.name, o.time, o.no, o.warmup, places[norm(o.name)] ?? o.place, finals[norm(o.name)] ?? o.overall, o.nation);
+    // табло ответило не всем (пока выступили не все) — прежняя тройка, где мест больше, не заменяется
+    final keepPodium = podium.length < this.podium.length;
+    final newTotal = total != null && total.length >= this.total.length ? total : this.total;
     return Start._with(
       this,
       ours: [for (final o in ours) up(o)],
       field: [for (final o in field) up(o)],
-      podium: podium,
-      total: total ?? this.total,
-      provisional: provisional,
+      podium: keepPodium ? this.podium : podium,
+      total: newTotal,
+      provisional: keepPodium ? this.provisional : provisional,
     );
   }
 
@@ -307,7 +429,87 @@ class Fact {
   final String who, text, kind;
   Fact(this.who, this.text, this.kind);
   Fact.fromJson(Map<String, dynamic> j) : who = j['who'] ?? '', text = j['text'] ?? '', kind = j['kind'] ?? '';
+  Map<String, dynamic> toJson() => {'who': who, 'text': text, 'kind': kind};
 }
+
+/// Какой это факт — для слияния старых и новых. У рекордов число в тексте — значение, а не
+/// личность («Личный рекорд за ПП: 181.44 (был 165.76)» → новая цифра заменяет старую); у фактов
+/// о месте личность — слова до тире («Отрыв от второго места — 35.56 балла»); у элементов —
+/// набор прыжков («Связка 4T+3A+3A» и «Каскад 4T+3A+3A» — один и тот же факт, сборщик лишь
+/// переписал слово), а другой каскад — другой факт.
+String _factKey(Fact f) {
+  final who = f.who.trim().toLowerCase();
+  final text = f.text.trim().replaceAll(RegExp(r'\s+'), ' ').toLowerCase();
+  final stripped = text.replaceAll(RegExp(r'\d+(?:[.,]\d+)?'), '#');
+  if (f.kind == 'element') {
+    final jumps = RegExp(r'\d[a-z]+').allMatches(text).map((m) => m[0]).join('+');
+    // «5 четверных в программе: 4F, 4Lo, …» — тоже по составу
+    return '$who|element|${jumps.isEmpty ? text : jumps}';
+  }
+  if (f.kind == 'place') return '$who|place|${stripped.split(' — ').first}';
+  return '$who|${f.kind}|$stripped';
+}
+
+/// Объединение старого и нового списка. Основа — [fresh]: порядок и значения свежие; элемент
+/// с тем же ключом ([same]) заменяет прежний (при [combine] — собирается из обоих). Что было и
+/// перестало приходить, остаётся и встаёт после того элемента, за которым шло в [old].
+/// Каждый свежий элемент закрывает не больше одного прежнего.
+List<T> _mergeLists<T>(
+  List<T> old,
+  List<T> fresh, {
+  required bool Function(T old, T fresh) same,
+  T Function(T old, T fresh)? combine,
+  bool Function(T old, T fresh)? sameLoose,
+}) {
+  if (old.isEmpty) return fresh;
+  final out = [...fresh];
+  final taken = List<bool>.filled(fresh.length, false);
+  final match = List<int>.filled(old.length, -1);
+  void pass(bool Function(T, T) eq) {
+    for (var i = 0; i < old.length; i++) {
+      if (match[i] >= 0) continue;
+      for (var j = 0; j < fresh.length; j++) {
+        if (!taken[j] && eq(old[i], fresh[j])) {
+          taken[j] = true;
+          match[i] = j;
+          break;
+        }
+      }
+    }
+  }
+  pass(same);
+  if (sameLoose != null) pass(sameLoose);
+  if (combine != null) {
+    for (var i = 0; i < old.length; i++) {
+      if (match[i] >= 0) out[match[i]] = combine(old[i], fresh[match[i]]);
+    }
+  }
+  // потерянные встают по месту: после свежего элемента, за которым они шли в прежнем списке
+  final slots = <int, List<T>>{}; // после какого свежего (-1 — в начало) → потерянные
+  var anchor = -1;
+  for (var i = 0; i < old.length; i++) {
+    if (match[i] >= 0) {
+      anchor = match[i];
+    } else {
+      slots.putIfAbsent(anchor, () => []).add(old[i]);
+    }
+  }
+  if (slots.isEmpty) return out;
+  return [
+    ...?slots[-1],
+    for (var j = 0; j < out.length; j++) ...[out[j], ...?slots[j]],
+  ];
+}
+
+/// Список участников: тот же человек — по имени, а если имя записали иначе — по стартовому номеру
+/// (или времени выхода, когда номеров нет). Свежие значения побеждают, пустые берутся из прежних.
+List<Skater> _mergeSkaters(List<Skater> old, List<Skater> fresh) => _mergeLists<Skater>(
+  old,
+  fresh,
+  same: (a, b) => norm(a.name) == norm(b.name),
+  sameLoose: (a, b) => (a.no != null && a.no == b.no) || (a.no == null && b.no == null && a.time != null && a.time == b.time),
+  combine: (a, b) => a.filledBy(b),
+);
 
 /// Убирает одинаковые факты, пришедшие из результатов сегмента и общего итога.
 /// Разные достижения одного спортсмена сохраняются.
@@ -339,6 +541,30 @@ class LiveSrc {
       first = j['first'],
       basis = j['basis'] is String ? j['basis'] as String : null,
       names = {for (final e in (j['names'] as Map? ?? const {}).entries) '${e.key}': '${e.value}'};
+  const LiveSrc._(this.idx, this.seg, this.cat, this.first, this.basis, this.names);
+
+  Map<String, dynamic> toJson() => {
+    'idx': idx,
+    'seg': seg,
+    if (cat != null) 'cat': cat,
+    if (first != null) 'first': first,
+    if (basis != null) 'basis': basis,
+    'names': names,
+  };
+
+  /// Адреса и имена: свежие, но пустое не затирает прежнее; окончательность (basis) не пропадает.
+  static LiveSrc? mergeKeepingRicher(LiveSrc? old, LiveSrc? fresh) {
+    if (old == null) return fresh;
+    if (fresh == null) return old;
+    return LiveSrc._(
+      fresh.idx.isEmpty ? old.idx : fresh.idx,
+      fresh.seg.isEmpty ? old.seg : fresh.seg,
+      fresh.cat ?? old.cat,
+      fresh.first ?? old.first,
+      fresh.basis ?? old.basis,
+      {...old.names, ...fresh.names},
+    );
+  }
 }
 
 /// Место в итоговом протоколе: 1–3, имя (по-русски, если знаем), флаг, баллы.
@@ -351,6 +577,7 @@ class Placing {
       name = j['name'],
       nation = j['nation'] ?? '',
       points = j['points'] ?? '';
+  Map<String, dynamic> toJson() => {'place': place, 'name': name, 'nation': nation, 'points': points};
 
   /// Россиянин или белорус: RUS, AIN2, BLR, AIN1; на российских стартах — регион.
   /// Простой AIN — неизвестно чей: показываем как иностранца, с кодом.
@@ -382,6 +609,39 @@ class Upcoming {
       ours = List<String>.from(j['ours'] ?? const []),
       oursNation = {for (final e in (j['ours_nation'] as Map? ?? const {}).entries) '${e.key}': '${e.value}'},
       athletes = List<String>.from(j['athletes'] ?? const []);
+
+  Map<String, dynamic> toJson() => {
+    'tid': tid,
+    'name': name,
+    'venue': venue,
+    'intl': intl,
+    'start': start,
+    'end': end,
+    'ours': ours,
+    'ours_nation': oursNation,
+    'athletes': athletes,
+  };
+
+  /// Тот же турнир после новой загрузки: списки россиян и заявки не теряют прежних имён.
+  static Upcoming mergeKeepingRicher(Upcoming old, Upcoming fresh) => Upcoming._with(
+    fresh,
+    ours: _mergeLists<String>(old.ours, fresh.ours, same: (a, b) => norm(a) == norm(b)),
+    athletes: _mergeLists<String>(old.athletes, fresh.athletes, same: (a, b) => norm(a) == norm(b)),
+    oursNation: {...old.oursNation, ...fresh.oursNation},
+    venue: fresh.venue.isEmpty ? old.venue : fresh.venue,
+  );
+
+  Upcoming._with(
+    Upcoming u, {
+    required this.ours,
+    required this.athletes,
+    required this.oursNation,
+    required this.venue,
+  }) : tid = u.tid,
+       name = u.name,
+       intl = u.intl,
+       start = u.start,
+       end = u.end;
 
   Upcoming._(Upcoming u, this.ours)
     : oursNation = u.oursNation,
@@ -434,6 +694,11 @@ class Schedule {
 
   /// Справочник спортсменов со страной и видами: имя → человек (пара — одной записью).
   final Map<String, Person> people;
+
+  /// Поколение данных. Сборщик поднимает его, когда сознательно убирает ранее выданное (исправил
+  /// ошибку разбора, и ложные факты ушли): тогда приложение берёт свежую загрузку целиком, а не
+  /// сливает её с прежней (см. [mergeKeepingRicher]). Нет поля — 0.
+  final int epoch;
   Schedule(
     this.starts,
     this.generated,
@@ -445,6 +710,7 @@ class Schedule {
     this.watchlist = const [],
     this.roster = const [],
     this.people = const {},
+    this.epoch = 0,
   });
 
   /// Все имена для поиска: справочник, список сборщика и следимые.
@@ -477,6 +743,92 @@ class Schedule {
         for (final p in (j['people'] as List? ?? const []))
           if (p is Map && p['n'] is String) '${p['n']}': Person('${p['n']}', '${p['c'] ?? ''}', '${p['k'] ?? ''}'),
       },
+      epoch: j['epoch'] is int ? j['epoch'] as int : 0,
+    );
+  }
+
+  /// Обратно в формат events.json — в таком виде расписание лежит в кэше на устройстве.
+  Map<String, dynamic> toJson() => {
+    'generated': generated.toUtc().toIso8601String(),
+    'complete': complete,
+    'sources': sources,
+    'events': [for (final s in starts) s.toJson()],
+    'upcoming': [for (final u in upcoming) u.toJson()],
+    'watchlist': watchlist,
+    'roster': roster,
+    'people': [for (final p in people.values) {'n': p.name, 'c': p.nation, 'k': p.kinds}],
+    'photos': photos,
+    if (epoch != 0) 'epoch': epoch,
+  };
+
+  /// Сколько дней держим старт, который сборщик перестал отдавать: дальше он уже архив.
+  static const carryDays = 45;
+
+  /// Новая загрузка расписания поверх прежней: ничего из уже полученного не пропадает.
+  ///
+  /// Старты — по id, каждый через [Start.mergeKeepingRicher]. Старт, которого в новой загрузке нет,
+  /// остаётся, если пропал весь его турнир (источник не ответил) или загрузка неполная
+  /// (`complete: false`); остаётся не дольше [carryDays] после конца. Если же у турнира другие
+  /// сегменты есть, а этого нет, — сегмент отменён, его убираем. Фото, справочник и состав для
+  /// поиска только прибавляются. Если «новая» загрузка старше прежней (кэш CDN), роли меняются:
+  /// побеждает та, что собрана позже. Поднятый сборщиком [epoch] отменяет слияние.
+  static Schedule mergeKeepingRicher(Schedule old, Schedule fresh, {DateTime? now}) {
+    if (fresh.generated.isBefore(old.generated)) {
+      final t = old;
+      old = fresh;
+      fresh = t;
+    }
+    // сборщик сознательно убрал ранее выданное — слитое с прежним вернуло бы убранное
+    if (fresh.epoch > old.epoch) return fresh;
+    final at = now ?? DateTime.now();
+    // id у разных стартов бывает общим (баг сборщика) — тогда прежний выбирается ещё и по времени
+    final oldById = <String, List<Start>>{};
+    for (final s in old.starts) {
+      oldById.putIfAbsent(s.id, () => []).add(s);
+    }
+    Start? twin(Start f) {
+      final c = oldById[f.id];
+      if (c == null) return null;
+      return c.firstWhere((o) => o.t0 == f.t0 && o.t1 == f.t1, orElse: () => c.first);
+    }
+
+    final freshIds = {for (final s in fresh.starts) s.id};
+    final freshTids = {for (final s in fresh.starts) s.tid};
+    final starts = [
+      for (final s in fresh.starts) twin(s) == null ? s : Start.mergeKeepingRicher(twin(s)!, s),
+      for (final s in old.starts)
+        if (!freshIds.contains(s.id) &&
+            (!fresh.complete || !freshTids.contains(s.tid)) &&
+            s.t1.isAfter(at.subtract(const Duration(days: carryDays))))
+          s,
+    ]..sort((a, b) => a.t0.compareTo(b.t0));
+    final tids = {for (final s in starts) s.tid};
+    final oldUp = {for (final u in old.upcoming) u.tid: u};
+    final freshUp = {for (final u in fresh.upcoming) u.tid};
+    final today = dayKey(at.subtract(const Duration(days: 2)));
+    final upcoming = [
+      for (final u in fresh.upcoming) oldUp[u.tid] == null ? u : Upcoming.mergeKeepingRicher(oldUp[u.tid]!, u),
+      // турнир, у которого появилось расписание по сегментам, из «скоро» уходит сам
+      for (final u in old.upcoming)
+        if (!freshUp.contains(u.tid) && !tids.contains(u.tid) && u.end.compareTo(today) >= 0) u,
+    ]..sort((a, b) => a.start.compareTo(b.start));
+    return Schedule(
+      starts,
+      fresh.generated,
+      fresh.complete,
+      fresh.fromCache,
+      photos: {
+        ...old.photos,
+        for (final e in fresh.photos.entries)
+          if (e.value.isNotEmpty || !old.photos.containsKey(e.key)) e.key: e.value,
+      },
+      upcoming: upcoming,
+      sources: fresh.sources,
+      // список наблюдения сборщик меняет сознательно — берём свежий, пока он не пуст
+      watchlist: fresh.watchlist.isEmpty ? old.watchlist : fresh.watchlist,
+      roster: _mergeLists<String>(old.roster, fresh.roster, same: (a, b) => norm(a) == norm(b)),
+      people: {...old.people, ...fresh.people},
+      epoch: fresh.epoch,
     );
   }
 
@@ -492,6 +844,7 @@ class Schedule {
     watchlist: watchlist,
     roster: roster,
     people: people,
+    epoch: epoch,
   );
 
   /// То же расписание с другими стартами (итоги с табло).
@@ -506,6 +859,7 @@ class Schedule {
     watchlist: watchlist,
     roster: roster,
     people: people,
+    epoch: epoch,
   );
 
   Start? byId(String id) {
@@ -531,18 +885,29 @@ class Repo {
     }
   }
 
-  /// Свежая копия с сайта; при ошибке — null (останется сохранённая).
+  /// Клиент — подменяется в тестах.
+  static http.Client client = http.Client();
+
+  /// Свежая копия с сайта, слитая с сохранённой (см. [Schedule.mergeKeepingRicher]): в кэш
+  /// ложится последняя хорошая версия, а не то, что пришло, — более бедный ответ (сборщик не
+  /// досчитал факты, источник не ответил) прежнее не затирает. При ошибке — null (останется сохранённая).
   static Future<Schedule?> fetch() async {
     try {
-      final r = await http
+      final r = await client
           .get(Uri.parse('$dataUrl?t=${DateTime.now().millisecondsSinceEpoch ~/ 60000}'))
           .timeout(const Duration(seconds: 15));
       if (r.statusCode != 200) return null;
       final body = utf8.decode(r.bodyBytes);
-      final s = Schedule.parse(body);
+      final fresh = Schedule.parse(body);
       final p = await SharedPreferences.getInstance();
-      await p.setString(_key, body);
-      return s;
+      final old = await cached();
+      if (old == null) {
+        await p.setString(_key, body);
+        return fresh;
+      }
+      final merged = Schedule.mergeKeepingRicher(old, fresh, now: now());
+      await p.setString(_key, jsonEncode(merged.toJson()));
+      return merged;
     } catch (_) {
       return null;
     }
@@ -811,6 +1176,7 @@ class Filters {
 class WatchLink {
   final String name, url;
   const WatchLink(this.name, this.url);
+  Map<String, dynamic> toJson() => {'name': name, 'url': url};
 
   /// Мягкий разбор: битые записи и ссылки не http/https пропускаются.
   static List<WatchLink> parseAll(Object? raw) {

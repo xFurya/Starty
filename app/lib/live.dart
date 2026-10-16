@@ -41,6 +41,35 @@ final class LiveOk extends LiveResult {
     this.total,
     this.finals = const {},
   });
+
+  /// На диск — чтобы итоги, уже показанные с табло, не пропадали при перезапуске без сети.
+  Map<String, dynamic> toJson() => {
+    'podium': [for (final p in podium) p.toJson()],
+    'provisional': provisional,
+    'rows': [for (final p in rows) p.toJson()],
+    'places': places,
+    if (total != null) 'total': [for (final p in total!) p.toJson()],
+    'finals': finals,
+  };
+
+  /// Не разобралось — null (такая запись просто не восстанавливается).
+  static LiveOk? tryFromJson(Object? raw) {
+    try {
+      final j = Map<String, dynamic>.from(raw as Map);
+      List<Placing> list(Object? v) => [for (final p in (v as List)) Placing.fromJson(Map<String, dynamic>.from(p as Map))];
+      Map<String, int> ints(Object? v) => {for (final e in (v as Map).entries) '${e.key}': e.value as int};
+      return LiveOk(
+        podium: list(j['podium']),
+        provisional: j['provisional'] == true,
+        rows: list(j['rows'] ?? const []),
+        places: ints(j['places'] ?? const {}),
+        total: j['total'] == null ? null : list(j['total']),
+        finals: ints(j['finals'] ?? const {}),
+      );
+    } catch (_) {
+      return null;
+    }
+  }
 }
 
 /// Прокатов ещё нет (стартовый лист, пустая таблица) — прошлое состояние не меняем.
