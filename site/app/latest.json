@@ -1,33 +1,11 @@
 {
- "version": "1.0.31",
- "code": 32,
- "notes": "Трансляции открываются удобнее.",
- "at": "2026-10-16T10:39:05Z",
+ "version": "1.0.32",
+ "code": 33,
+ "notes": "Новая страница аккаунта; у россиян и белорусов вместо «AIN» страна.",
+ "at": "2026-10-16T11:00:40Z",
  "android": {
-  "file": "starty-1.0.31.apk",
-  "size": 22325225,
-  "sha256": "4db6afa39cac9cf1b3f6d469e7199fa3695028f48a00b468f0658c810820ec42"
- },
- "windows": {
-  "code": 32,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.31/Starty-windows.zip",
-  "size": 14021704,
-  "sha256": "e95bd903b6f2a13976ad37544a0b6db01a56140c01240175e4dd69df6a3afe1c",
-  "setup": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.31/starty-setup-1.0.31.exe",
-   "size": 12026291,
-   "sha256": "fcf124d7e56b20dc54fd0295ec49fb9903988b94b078626b4c4250003edfb088"
-  }
- },
- "macos": {
-  "code": 32,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.31/Starty-macos.zip",
-  "size": 21288252,
-  "sha256": "df043687e1500241895513d81653610d882381870512a6424f4be7edf6e3bd44",
-  "dmg": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.31/Starty-macos.dmg",
-   "size": 24009114,
-   "sha256": "9718dab7fa2f0243a7e51b6a0805275d956ba8a8f5ce54a356d2e60bf0c196c7"
-  }
+  "file": "starty-1.0.32.apk",
+  "size": 22325249,
+  "sha256": "6f166276c658f71e11e8cf13b9957f809a120d8bbdbdabaead7abc4a0f1c975d"
  }
 }
