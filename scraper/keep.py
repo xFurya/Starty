@@ -168,3 +168,48 @@ def merge_event(new, old, *, same_rules, retract_facts=(), retract_urls=(), to_r
         new["proto"] = old["proto"]
         changed = True
     return changed
+
+
+# ---------------------------------------------------------------- справочники верхнего уровня
+
+def merge_map(new, old, retract=()):
+    """photos и подобные {ключ: значение}: прежние ключи остаются, новое значение главнее.
+    Убрать запись можно только через keep_retract."""
+    out = dict(old or {})
+    out.update(new or {})
+    for k in retract:
+        out.pop(k, None)
+    return out
+
+
+def merge_named(new, old, key="n", retract=()):
+    """people: список словарей с ключом key. Прежние записи, которых нет в новом, остаются."""
+    out = list(new or [])
+    have = {p.get(key) for p in out}
+    out += [p for p in old or [] if p.get(key) not in have and p.get(key) not in retract]
+    return [p for p in out if p.get(key) not in retract]
+
+
+def merge_names(new, old, retract=()):
+    """roster: множество имён."""
+    return (set(new or []) | set(old or [])) - set(retract)
+
+
+TID_SOURCE = {"fsr": "ФФККР", "isu": "ISU", "gs": "Golden Skate", "ffkm": "ФФКМ", "samara": "Самара"}
+
+
+def merge_upcoming(new, old, sources, failed, today):
+    """Турниры без расписания. Турнир, у которого появились события (его тут уже нет), уходит.
+    Прежняя запись остаётся, если её источник сейчас не ok или сам турнир собрать не удалось, и
+    турнир не закончился. sources — {источник: ok|причина}, failed — tid и «префикс:*»."""
+    have = {u["tid"] for u in new}
+    out = list(new)
+    for u in old or []:
+        if u["tid"] in have or u["end"] < today:
+            continue
+        prefix = u["tid"].split(":")[0]
+        src = TID_SOURCE.get(prefix)
+        if sources.get(src, "ok") != "ok" or u["tid"] in failed or prefix + ":*" in failed:
+            out.append(u)
+            have.add(u["tid"])
+    return sorted(out, key=lambda u: u["start"])

@@ -192,3 +192,71 @@ class NameTest(unittest.TestCase):
         to_ru = lambda n: table.get(n, n)
         self.assertEqual(kp.ru_name(to_ru, "Vasil Barakhouski"), "Василий Бараховский")
         self.assertEqual(kp.ru_name(to_ru, "Неизвестный Человек"), "Неизвестный Человек")
+
+
+class TopLevelTest(unittest.TestCase):
+    def test_photos_add_only_new_value_wins_retract_removes(self):
+        old = {"А": "u1", "Б": "u2"}
+        self.assertEqual(kp.merge_map({"А": "u3"}, old), {"А": "u3", "Б": "u2"})
+        self.assertEqual(kp.merge_map({}, old, retract=["Б"]), {"А": "u1"})
+
+    def test_people_and_roster(self):
+        old = [{"n": "А", "x": 1}, {"n": "Б"}]
+        got = kp.merge_named([{"n": "А", "x": 2}], old)
+        self.assertEqual(got, [{"n": "А", "x": 2}, {"n": "Б"}])
+        self.assertEqual([p["n"] for p in kp.merge_named([], old, retract=["Б"])], ["А"])
+        self.assertEqual(kp.merge_names({"А"}, ["Б"], retract=["А"]), {"Б"})
+
+    def test_upcoming(self):
+        old = [{"tid": "fsr:a", "start": "2026-11-01", "end": "2026-11-03"},
+               {"tid": "isu:b", "start": "2026-11-05", "end": "2026-11-07"},
+               {"tid": "isu:done", "start": "2026-09-01", "end": "2026-09-03"},
+               {"tid": "isu:scheduled", "start": "2026-11-09", "end": "2026-11-10"},
+               {"tid": "gs:c", "start": "2026-11-11", "end": "2026-11-12"}]
+        new = [{"tid": "fsr:new", "start": "2026-11-02", "end": "2026-11-04"}]
+        # ФФККР не ответил: его записи остаются; ISU ok — isu:b пропал по-настоящему
+        # (isu:scheduled ушёл, потому что у него появились события — вызывающий убирает его из old)
+        got = kp.merge_upcoming(new, [u for u in old if u["tid"] != "isu:scheduled"],
+                                {"ФФККР": "fail", "ISU": "ok", "Golden Skate": "ok"}, set(), "2026-10-16")
+        self.assertEqual([u["tid"] for u in got], ["fsr:a", "fsr:new"])
+        # сбой самого турнира
+        got = kp.merge_upcoming([], old, {"ISU": "ok"}, {"gs:c"}, "2026-10-16")
+        self.assertEqual([u["tid"] for u in got], ["gs:c"])
+        # префикс:* в failed
+        got = kp.merge_upcoming([], old, {"ISU": "ok"}, {"isu:*"}, "2026-10-16")
+        self.assertEqual({u["tid"] for u in got}, {"isu:b", "isu:scheduled"})
+
+
+class UniqueIdTest(unittest.TestCase):
+    def mk(self, eid, cat, start):
+        return {"id": eid, "_cat": cat, "start": start}
+
+    def test_collisions_get_stable_category_suffix_others_untouched(self):
+        from . import build as b
+        evs = [self.mk("gs:t:dance-senior-pt", "Solo Dance U12", "1"),
+               self.mk("gs:t:dance-senior-pt", "Solo Dance Adult", "2"),
+               self.mk("gs:t:men-senior-pp", "Men", "3")]
+        b.unique_ids(evs)
+        ids = [e["id"] for e in evs]
+        self.assertEqual(ids[2], "gs:t:men-senior-pp")
+        self.assertEqual(len(set(ids)), 3)
+        self.assertEqual(evs[0]["_old_id"], "gs:t:dance-senior-pt")
+        # порядок категорий в табло не влияет на id
+        again = [self.mk("gs:t:dance-senior-pt", "Solo Dance Adult", "2"),
+                 self.mk("gs:t:dance-senior-pt", "Solo Dance U12", "1")]
+        b.unique_ids(again)
+        self.assertEqual({e["id"] for e in again}, set(ids[:2]))
+
+    def test_same_category_name_still_unique(self):
+        from . import build as b
+        evs = [self.mk("x:a", "Same", "1"), self.mk("x:a", "Same", "2")]
+        b.unique_ids(evs)
+        self.assertEqual(len({e["id"] for e in evs}), 2)
+
+    def test_current_events_json_has_no_duplicate_ids(self):
+        from . import build as b
+        data = json.load(open(b.OUT_JSON, encoding="utf-8"))
+        ids = [e["id"] for e in data["events"]]
+        dup = {i for i in ids if ids.count(i) > 1}
+        # Blackburn опубликован до исправления; после ближайшей сборки список обнулить
+        self.assertEqual(dup - {"gs:blackburn-trophy:dance-senior-pt"}, set())

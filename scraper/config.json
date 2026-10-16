@@ -35,7 +35,7 @@
     {"match": "^Командный чемпионат мира$", "broadcast": ["YouTube ISU"], "watch": [{"name": "YouTube ISU", "url": "https://www.youtube.com/@SkatingISU/live", "stream": {"rss": "https://www.youtube.com/feeds/videos.xml?channel_id=UCVZpqbnDjHyScSYGFPMUtYA", "title": "World Team Trophy", "by": "segment"}}], "source": "https://www.youtube.com/@SkatingISU/streams (вкладка «Live» канала: полные эфиры всех сегментов, сезоны 2024/25, 2025/26, 2026/27) ; https://www.youtube.com/feeds/videos.xml?channel_id=UCVZpqbnDjHyScSYGFPMUtYA ; эфиры «ISU World Team Trophy | Tokyo 2025»"}
   ],
   "broadcast_overrides": {},
-  "keep_retract": {"facts": [], "urls": []},
+  "keep_retract": {"facts": [], "urls": [], "photos": [], "people": [], "roster": []},
   "ru_tz": {
     "Москва": 3,
     "Санкт-Петербург": 3,

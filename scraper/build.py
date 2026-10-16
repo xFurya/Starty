@@ -558,6 +558,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 watch=watch, ours=sort_ours(ours), athletes=athletes, src=idx["url"],
                 podium=podium, total=total)
             ev["field"] = sort_ours(field)
+            ev["_cat"] = c["name"]
             # протокол уже на табло, но судейских оценок ещё нет — промежуточные итоги
             if started and not done:
                 ev["provisional"] = True
@@ -603,6 +604,32 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 if f:
                     ev["facts"] = rs.unique_facts((ev.get("facts") or []) + f)
             ev["desc"] = describe(ev)
+    return unique_ids(events)
+
+
+def unique_ids(events):
+    """Id = турнир:вид-уровень-сегмент. Если у вида несколько разрядов (Golden Skate: «Solo Dance»
+    по возрастам), id совпадал, и в приложении поле «скакало» между разными стартами. Совпавшим
+    добавляем слаг категории — он стабилен между сборками; остальные id не меняются. Прежний id
+    лежит в _old_id: build.main по нему переносит данные и убирает старые записи."""
+    groups = {}
+    for ev in events:
+        groups.setdefault(ev["id"], []).append(ev)
+    for base, evs in groups.items():
+        if len(evs) > 1:
+            used = set()
+            for ev in evs:
+                suffix = slugify(ev.get("_cat", "")) or "x"
+                new = f"{base}-{suffix}"
+                n = 2
+                while new in used:
+                    new = f"{base}-{suffix}-{n}"
+                    n += 1
+                used.add(new)
+                ev["_old_id"] = base
+                ev["id"] = new
+    for ev in events:
+        ev.pop("_cat", None)
     return events
 
 
@@ -1226,6 +1253,17 @@ def main():
     # и не изменено явно, остаётся. Время выхода и номера наших, итоги прошедших сегментов,
     # примечательное, ссылки трансляций, ссылки табло.
     prev_by_id = {e["id"]: e for e in prev.get("events", [])}
+    # события, у которых id изменился из-за коллизии (unique_ids): данные берём у прежнего
+    # с тем же старым id и временем, прежние записи под старым id убираем
+    migrated = {e["_old_id"] for e in events if "_old_id" in e}
+    for e in events:
+        old_id = e.pop("_old_id", None)
+        if old_id:
+            twin = next((o for o in prev.get("events", [])
+                         if o["id"] in (old_id, e["id"]) and o["start"] == e["start"]), None)
+            if twin:
+                prev_by_id[e["id"]] = twin
+    prev["events"] = [o for o in prev.get("events", []) if o["id"] not in migrated]
     same_rules = prev.get("facts_version", rs.VERSION) == rs.VERSION
     retract = CFG.get("keep_retract") or {}
     for e in events:
@@ -1270,12 +1308,8 @@ def main():
 
     have_tids = {e["tid"] for e in events}
     upcoming = [u for u in upcoming if u["tid"] not in have_tids]
-    if any(s != "ok" for s in report["sources"].values()) and prev.get("upcoming"):
-        for u in prev["upcoming"]:
-            if u["tid"] not in have_tids and u["tid"] not in {x["tid"] for x in upcoming} \
-                    and u["end"] >= now.date().isoformat():
-                upcoming.append(u)
-    upcoming.sort(key=lambda u: u["start"])
+    upcoming = [u for u in kp.merge_upcoming(upcoming, [u for u in prev.get("upcoming", []) if u["tid"] not in have_tids],
+                                             report["sources"], failed, now.date().isoformat())]
 
     # Справочник для поиска: россияне от КМС и выше, все участники турниров ISU за два сезона
     try:
@@ -1297,6 +1331,7 @@ def main():
         roster.update(p["name"] for p in e.get("total", []))
         roster.update((e.get("live") or {}).get("names", {}).values())
     roster.update(p["n"] for p in book["people"])
+    roster = kp.merge_names(roster, prev.get("roster"), retract.get("roster", ()))
     # латинское написание того, кого уже знаем по-русски, в справочнике не держим: поиск не должен давать двойников
     roster = {n for n in roster if not names.known_latin(n)}
     # пара наполовину кириллицей, наполовину латиницей — иностранец, ошибочно принятый за нашего
@@ -1314,9 +1349,10 @@ def main():
         "upcoming": upcoming,
         "watchlist": CFG["watchlist"],
         "roster": sorted(roster),
-        "people": book["people"],
-        "photos": collect_photos(events, upcoming, names, photos, prev.get("photos") or {},
-                                 [p["n"] for p in book["people"]]),
+        "people": kp.merge_named(book["people"], prev.get("people"), "n", retract.get("people", ())),
+        "photos": kp.merge_map(collect_photos(events, upcoming, names, photos, prev.get("photos") or {},
+                                              [p["n"] for p in book["people"]]),
+                               prev.get("photos"), retract.get("photos", ())),
     }
     # Если сбор вернул заметно меньше будущих стартов, чем было, — это поломка
     # источника, а не отмена турниров. Тогда оставляем прошлые данные.
