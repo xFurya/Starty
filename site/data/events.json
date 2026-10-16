@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16T15:57:13+03:00",
- "checked": "2026-10-16T14:11:04.256141+00:00",
+ "checked": "2026-10-16T14:15:03.735046+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26190,21 +26190,21 @@
      "nation": "ESP",
      "no": 3,
      "warmup": 1,
-     "place": 20
+     "place": 21
     },
     {
      "name": "Matvii Yefymenko",
      "nation": "POL",
      "no": 4,
      "warmup": 1,
-     "place": 21
+     "place": 22
     },
     {
      "name": "Aleksei Vlasenko",
      "nation": "HUN",
      "no": 5,
      "warmup": 1,
-     "place": 23
+     "place": 24
     },
     {
      "name": "Taira Shinohara",
@@ -26225,7 +26225,7 @@
      "nation": "AUS",
      "no": 8,
      "warmup": 2,
-     "place": 22
+     "place": 23
     },
     {
      "name": "Arlet Levandi",
@@ -26253,7 +26253,7 @@
      "nation": "MON",
      "no": 12,
      "warmup": 3,
-     "place": 18
+     "place": 19
     },
     {
      "name": "Tamir Kuperman",
@@ -26291,7 +26291,7 @@
     {
      "name": "David Sedej",
      "nation": "SLO",
-     "place": 19
+     "place": 20
     },
     {
      "name": "Fedirs Kuliss",
@@ -26331,7 +26331,8 @@
     },
     {
      "name": "Vladimir Samoilov",
-     "nation": "POL"
+     "nation": "POL",
+     "place": 18
     },
     {
      "name": "Wesley Chiu",
