@@ -81,7 +81,9 @@ as $$
 $$;
 
 -- политика на всякий случай: владелец видит и меняет только свою строку
-alter table public.user_settings force row level security;
+-- без FORCE: функции кода (security definer, владелец таблицы) пишут документ привязанного аккаунта;
+-- для anon и authenticated RLS действует как раньше
+alter table public.user_settings no force row level security;
 drop policy if exists own_settings on public.user_settings;
 create policy own_settings on public.user_settings
   for all to authenticated
