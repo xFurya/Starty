@@ -14,9 +14,28 @@ import androidx.core.app.NotificationManagerCompat
 import org.json.JSONArray
 import org.json.JSONObject
 
-/** at — показать; hold — до этого момента не смахивается (0 — смахивается сразу); end — убрать. */
-class Entry(val key: String, val at: Long, val hold: Long, val end: Long, val title: String, val body: String) {
+/**
+ * at — показать; hold — до этого момента не смахивается (0 — смахивается сразу); end — убрать.
+ * title — заголовок; body — одна строка свёрнутого вида; lines — строки развёрнутого (InboxStyle),
+ * пусто — развёрнутый повторяет body. group — турнир: его уведомления в одной стопке под groupTitle.
+ * reminder — выход спортсмена (напоминание), иначе начало старта (событие).
+ */
+class Entry(
+    val key: String,
+    val at: Long,
+    val hold: Long,
+    val end: Long,
+    val title: String,
+    val body: String,
+    val lines: List<String> = emptyList(),
+    val group: String = "",
+    val groupTitle: String = "",
+    val reminder: Boolean = false,
+) {
     val id: Int get() = key.hashCode() and 0x7fffffff
+
+    /** Тот же текст — обновлять висящее незачем. */
+    fun sameText(o: Entry) = title == o.title && body == o.body && lines == o.lines
 }
 
 /**
@@ -29,7 +48,11 @@ class Entry(val key: String, val at: Long, val hold: Long, val end: Long, val ti
  *  • в строке состояния One UI по умолчанию только три значка «последних» уведомлений, а порядок —
  *    по времени уведомления. Закреплённое поэтому раз в несколько минут обновляется на месте
  *    (без звука) — иначе любое свежее сообщение вытесняет его значок, и видно его только
- *    на экране блокировки, где значков без ограничения.
+ *    на экране блокировки, где значков без ограничения;
+ *  • вид: свёрнутый — заголовок и одна строка, развёрнутый — построчно (InboxStyle);
+ *  • уведомления одного турнира складываются в стопку: при двух и больше висящих — сводное;
+ *  • полоса «Live Notifications» в шторке One UI — для музыки и живых карточек, обычному
+ *    уведомлению туда хода нет (и не просимся): его место — первое среди обычных.
  * Расписание хранится здесь же и поднимается после перезагрузки и обновления.
  */
 object Alerts {
@@ -54,7 +77,12 @@ object Alerts {
             for (i in 0 until a.length()) {
                 val o = a.getJSONObject(i)
                 val end = o.getLong("end")
-                val e = Entry(o.getString("key"), o.getLong("at"), o.optLong("hold", end), end, o.optString("title"), o.optString("body"))
+                val ls = o.optJSONArray("lines")
+                val lines = if (ls == null) emptyList() else List(ls.length()) { ls.optString(it) }
+                val e = Entry(
+                    o.getString("key"), o.getLong("at"), o.optLong("hold", end), end, o.optString("title"), o.optString("body"),
+                    lines, o.optString("group"), o.optString("groupTitle"), o.optBoolean("reminder"),
+                )
                 out[e.key] = e
             }
         } catch (_: Exception) {}
@@ -63,7 +91,12 @@ object Alerts {
 
     private fun save(c: Context, m: Map<String, Entry>) {
         val a = JSONArray()
-        for (e in m.values) a.put(JSONObject().put("key", e.key).put("at", e.at).put("hold", e.hold).put("end", e.end).put("title", e.title).put("body", e.body))
+        for (e in m.values) {
+            a.put(
+                JSONObject().put("key", e.key).put("at", e.at).put("hold", e.hold).put("end", e.end).put("title", e.title).put("body", e.body)
+                    .put("lines", JSONArray(e.lines)).put("group", e.group).put("groupTitle", e.groupTitle).put("reminder", e.reminder)
+            )
+        }
         prefs(c).edit().putString("plan", a.toString()).apply()
     }
 
@@ -149,12 +182,19 @@ object Alerts {
      * висящего и так тихое — setOnlyAlertOnce. setSilent здесь не годится: он кладёт уведомление
      * в общую группу «silent», и такое оболочка может не показать значком в строке состояния.
      */
+    private fun icon(c: Context): Int =
+        c.resources.getIdentifier("ic_notify", "drawable", c.packageName).takeIf { it != 0 } ?: c.applicationInfo.icon
+
+    /** InboxStyle показывает не больше семи строк: лишнее — «и ещё N» в сводке стиля. */
+    private const val MAX_LINES = 7
+
+    private fun groupKey(e: Entry) = if (e.group.isEmpty()) "starty.${e.id}" else "starty.t.${e.group}"
+
     private fun post(c: Context, e: Entry, quiet: Boolean) {
         val now = System.currentTimeMillis()
         if (e.end <= now) return
         val pinned = e.hold > now
         ensureChannel(c)
-        val icon = c.resources.getIdentifier("ic_notify", "drawable", c.packageName).takeIf { it != 0 } ?: c.applicationInfo.icon
         val open = c.packageManager.getLaunchIntentForPackage(c.packageName)?.let {
             PendingIntent.getActivity(c, e.id, it, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
         }
@@ -163,12 +203,21 @@ object Alerts {
             Intent(c, AlertReceiver::class.java).setAction(DELETED).setData(Uri.parse("alert://${e.id}")),
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
         )
+        val style: NotificationCompat.Style = if (e.lines.size > 1) {
+            val inbox = NotificationCompat.InboxStyle()
+            val fit = if (e.lines.size > MAX_LINES) MAX_LINES - 1 else e.lines.size
+            for (l in e.lines.take(fit)) inbox.addLine(l)
+            if (fit < e.lines.size) inbox.setSummaryText("и ещё ${e.lines.size - fit}")
+            inbox
+        } else {
+            NotificationCompat.BigTextStyle().bigText(e.lines.firstOrNull() ?: e.body)
+        }
         val b = NotificationCompat.Builder(c, CHANNEL)
-            .setSmallIcon(icon)
+            .setSmallIcon(icon(c))
             .setContentTitle(e.title)
             .setContentText(e.body)
-            .setStyle(NotificationCompat.BigTextStyle().bigText(e.body))
-            .setCategory(NotificationCompat.CATEGORY_EVENT)
+            .setStyle(style)
+            .setCategory(if (e.reminder) NotificationCompat.CATEGORY_REMINDER else NotificationCompat.CATEGORY_EVENT)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setOngoing(pinned)
             .setAutoCancel(false)
@@ -178,16 +227,69 @@ object Alerts {
             .setShowWhen(false)
             .setTimeoutAfter(e.end - now)
         if (pinned) b.setDeleteIntent(del)
-        if (quiet) {
-            // своя группа из одного уведомления: звучит только «сводка», которой нет
-            b.setGroup("starty.${e.id}").setGroupAlertBehavior(NotificationCompat.GROUP_ALERT_SUMMARY)
-        }
+        // стопка турнира; внутри — по времени. Тихое звучит только «сводкой», а сводное
+        // само не звучит никогда — значит, тихое молчит
+        b.setGroup(groupKey(e))
+            .setSortKey(String.format(java.util.Locale.ROOT, "%015d", e.at))
+            .setGroupAlertBehavior(if (quiet) NotificationCompat.GROUP_ALERT_SUMMARY else NotificationCompat.GROUP_ALERT_CHILDREN)
         if (open != null) b.setContentIntent(open)
         try {
             NotificationManagerCompat.from(c).notify(e.id, b.build())
         } catch (_: SecurityException) {
             // уведомления запрещены — молча: расписание остаётся
         }
+        regroup(c, e.group, posted = e.id)
+    }
+
+    private fun summaryId(group: String) = "group:$group".hashCode() and 0x7fffffff
+
+    /**
+     * Сводное уведомление турнира: есть, пока висят два и больше его уведомлений, иначе снято
+     * (одно показывается само по себе). Само не звучит; закреплено, если закреплено хоть одно.
+     * Показ и снятие доходят до системы не сразу: только что показанное ([posted]) и снятые
+     * ([gone]) учитываются здесь, а не по списку висящих.
+     */
+    private fun regroup(c: Context, group: String, posted: Int? = null, gone: Set<Int> = emptySet()) {
+        if (group.isEmpty()) return
+        val now = System.currentTimeMillis()
+        val sid = summaryId(group)
+        val shown = try {
+            nm(c).activeNotifications.filter { it.packageName == c.packageName }.map { it.id }.toMutableSet()
+        } catch (_: Exception) {
+            return
+        }
+        val hadSummary = sid in shown
+        if (posted != null) shown.add(posted)
+        shown.removeAll(gone)
+        val members = load(c).values.filter { it.group == group && it.end > now && it.id in shown }.sortedBy { it.at }
+        if (members.size < 2) {
+            if (hadSummary) NotificationManagerCompat.from(c).cancel(sid)
+            return
+        }
+        val title = members.first().groupTitle
+        val inbox = NotificationCompat.InboxStyle().setBigContentTitle(title)
+        for (m in members.take(MAX_LINES)) inbox.addLine(m.title)
+        val b = NotificationCompat.Builder(c, CHANNEL)
+            .setSmallIcon(icon(c))
+            .setContentTitle(title)
+            .setContentText(members.first().title)
+            .setStyle(inbox)
+            .setCategory(NotificationCompat.CATEGORY_EVENT)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setGroup(groupKey(members.first()))
+            .setGroupSummary(true)
+            .setGroupAlertBehavior(NotificationCompat.GROUP_ALERT_CHILDREN)
+            .setOngoing(members.any { it.hold > now })
+            .setAutoCancel(false)
+            .setOnlyAlertOnce(true)
+            .setShowWhen(false)
+            .setTimeoutAfter(members.maxOf { it.end } - now)
+        c.packageManager.getLaunchIntentForPackage(c.packageName)?.let {
+            b.setContentIntent(PendingIntent.getActivity(c, sid, it, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE))
+        }
+        try {
+            NotificationManagerCompat.from(c).notify(sid, b.build())
+        } catch (_: SecurityException) {}
     }
 
     // ---------------------------------------------------------------- вызовы из Dart
@@ -203,10 +305,14 @@ object Alerts {
         val oldFired = fired
         // сначала новое расписание — чтобы возврат смахнутого не поднял убранное
         save(c, next)
+        val touched = HashSet<String>()
+        val gone = HashSet<Int>()
         for (o in old.values) {
             if (o.key in next) continue
             cancelAlarm(c, o)
             NotificationManagerCompat.from(c).cancel(o.id)
+            touched.add(o.group)
+            gone.add(o.id)
         }
         saveFired(c, fired.filter { it in next }.toSet())
         for (e in next.values) {
@@ -215,7 +321,7 @@ object Alerts {
                 setAlarm(c, e)
                 setRelease(c, e)
             } else if (e.key in oldFired) {
-                if (p == null || p.title != e.title || p.body != e.body || (p.hold > now) != (e.hold > now)) {
+                if (p == null || !p.sameText(e) || (p.hold > now) != (e.hold > now)) {
                     // текст поменялся или спортсмен уже откатал, пока уведомление висит — обновить тихо
                     if (active(c, e)) post(c, e, quiet = true)
                 }
@@ -223,6 +329,7 @@ object Alerts {
                 setRelease(c, e)
             }
         }
+        for (g in touched) regroup(c, g, gone = gone)
         scheduleTick(c)
     }
 
@@ -234,6 +341,7 @@ object Alerts {
         for (o in old.values) {
             cancelAlarm(c, o)
             NotificationManagerCompat.from(c).cancel(o.id)
+            if (o.group.isNotEmpty()) NotificationManagerCompat.from(c).cancel(summaryId(o.group))
         }
         scheduleTick(c)
     }
