@@ -92,3 +92,56 @@ class WikidataLabelTest(unittest.TestCase):
         self.assertEqual(f("Ксения Алексеевна Синицына", "ru"), "Ксения Синицына")
         self.assertEqual(f("Павлова, Наталья Евгеньевна", "ru"), "Наталья Павлова")
         self.assertEqual(f("Kseniya Sinitsina", "en"), "Kseniya Sinitsina")
+
+
+class WikidataIdentityTest(unittest.TestCase):
+    ITEM = {"dob": {"2004-08-05"}, "prec": 11, "countries": {"RUS"}, "skater": True, "sport": True}
+
+    def same(self, item=None, dob="2004-08-05", nat="RUS", **kw):
+        return people.wikidata_same_person({**(item or self.ITEM), **kw}, dob, nat)
+
+    def test_same_person(self):
+        self.assertTrue(self.same())
+
+    def test_other_birth_year_is_rejected(self):
+        self.assertFalse(self.same(dob="1998-08-05"))
+
+    def test_same_year_other_day_is_rejected_when_wikidata_is_exact(self):
+        self.assertFalse(self.same(dob="2004-03-01"))
+
+    def test_year_only_in_wikidata_matches_by_year(self):
+        self.assertTrue(people.wikidata_same_person({**self.ITEM, "prec": 9}, "2004-03-01", "RUS"))
+        self.assertFalse(people.wikidata_same_person({**self.ITEM, "prec": 9}, "2005-03-01", "RUS"))
+
+    def test_other_country_is_rejected(self):
+        self.assertFalse(self.same(nat="USA"))
+
+    def test_not_a_skater_is_rejected(self):
+        self.assertFalse(self.same(skater=False, sport=False))
+        self.assertTrue(self.same(skater=False, sport=True))
+
+    def test_no_birth_data_means_no_photo(self):
+        self.assertFalse(self.same(dob=None))
+        self.assertFalse(self.same(dob=""))
+        self.assertFalse(people.wikidata_same_person({**self.ITEM, "dob": set()}, "2004-08-05", "RUS"))
+
+    def test_photos_only_for_verified_people(self):
+        def row(p, en, dob, c="RUS", sk="true"):
+            return {"p": {"value": p}, "en": {"value": en}, "img": {"value": "http://commons.wikimedia.org/wiki/Special:FilePath/" + en.replace(" ", "_") + ".jpg"},
+                    "dob": {"value": dob + "T00:00:00Z"}, "prec": {"value": "11"}, "cc": {"value": c},
+                    "sk": {"value": sk}, "fs": {"value": "false"}}
+        rows = [row("Q1", "Ksenia Sinitsyna", "2004-08-05"),
+                row("Q2", "Anna Same", "1980-01-01"),      # однофамилец: другой год
+                row("Q3", "Nobody Known", "2004-08-05")]   # в ISU не найден
+        directory = [("Ksenia SINITSYNA", "ksenia-sinitsyna", "RUS"), ("Anna SAME", "anna-same", "RUS")]
+
+        class B:
+            def get(self, slug):
+                return {"ksenia-sinitsyna": ("2004-08-05", "RUS"), "anna-same": ("2003-02-02", "RUS")}.get(slug)
+
+            def save(self):
+                pass
+        with mock.patch.object(people, "_wikidata_rows", side_effect=[rows, []]):
+            out, ok = people.wikidata_photos(log=lambda *a: None, directory=directory, births=B())
+        self.assertTrue(ok)
+        self.assertEqual([n for n, _ in out], ["Ksenia Sinitsyna"])

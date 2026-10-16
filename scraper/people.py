@@ -289,21 +289,25 @@ def isu_photos(log=print):
 
 
 WIKIDATA = "https://query.wikidata.org/sparql"
-_SPARQL = """SELECT ?en ?ru ?img WHERE {
-  ?p wdt:P2694 ?isu ; wdt:P18 ?img .
+# Строка на (человек, картинка, страна): год рождения, точность даты, коды страны гражданства,
+# «фигурист» (P106) и «вид спорта — фигурное катание» (P641 = Q38108). Всё это нужно для проверки
+# личности: фото из Викиданных берётся только у того, чья дата рождения и страна совпали с ISU.
+_SELECT = """SELECT ?p ?en ?ru ?img ?dob ?prec ?cc ?ioc ?sk ?fs WHERE {
+%s
+  OPTIONAL { ?p wdt:P569 ?dob . ?p p:P569/psv:P569/wikibase:timePrecision ?prec }
+  OPTIONAL { ?p wdt:P27 ?c . OPTIONAL { ?c wdt:P298 ?cc } OPTIONAL { ?c wdt:P984 ?ioc } }
+  BIND(EXISTS { ?p wdt:P106 wd:Q13219587 } AS ?sk)
+  BIND(EXISTS { ?p wdt:P641 wd:Q38108 } AS ?fs)
   OPTIONAL { ?p rdfs:label ?en FILTER(LANG(?en) = "en") }
   OPTIONAL { ?p rdfs:label ?ru FILTER(LANG(?ru) = "ru") }
 }"""
+_SPARQL = _SELECT % "  ?p wdt:P2694 ?isu ; wdt:P18 ?img ."
 # Россияне и белорусы-фигуристы с фото, но без номера ISU в Викиданных (номер вносят не у всех).
 # Без номера ISU «фигурист» там бывает и певицей, и тренером, поэтому только с известной датой
 # рождения и не старше 1994 года: действующие спортсмены
-_SPARQL_OURS = """SELECT ?en ?ru ?img WHERE {
-  VALUES ?c { wd:Q159 wd:Q184 }
-  ?p wdt:P106 wd:Q13219587 ; wdt:P27 ?c ; wdt:P18 ?img ; wdt:P569 ?dob .
-  FILTER(YEAR(?dob) >= 1994)
-  OPTIONAL { ?p rdfs:label ?en FILTER(LANG(?en) = "en") }
-  OPTIONAL { ?p rdfs:label ?ru FILTER(LANG(?ru) = "ru") }
-}"""
+_SPARQL_OURS = _SELECT % """  VALUES ?c0 { wd:Q159 wd:Q184 }
+  ?p wdt:P106 wd:Q13219587 ; wdt:P27 ?c0 ; wdt:P18 ?img ; wdt:P569 ?dob0 .
+  FILTER(YEAR(?dob0) >= 1994)"""
 
 
 def wikidata_label(label, lang):
@@ -328,28 +332,164 @@ def _wikidata_rows(query, log):
         return json.loads(raw)["results"]["bindings"]
     except (net.FetchError, ValueError, KeyError) as e:
         log("  ! Викиданные:", e)
-        return []
+        return None
 
 
-def wikidata_photos(log=print):
-    """[(имя, фото)] фигуристов с номером ISU и фотографией на Викискладе, а также наших без номера."""
+BIRTH_CACHE = os.path.join(ROOT, "data", "photo_dob.json")
+BIRTH_FETCH_MAX = 600  # новых профилей ISU за сбор: остальное доберётся в следующий раз
+
+
+def isu_directory(log=print):
+    """[(имя, slug, гражданство)] всех фигуристов ISU: у каждого есть профиль с датой рождения."""
+    out = []
+    page = 1
+    while page <= 40:
+        try:
+            d = net.fetch_json(f"{isu.API}/skaters/merged-list",
+                               data={"pagesize": 1000, "page": page, "discipline_id": 1})
+        except (net.FetchError, ValueError) as e:
+            log("  ! список ISU для проверки личности:", e)
+            break
+        for x in d.get("data") or []:
+            for m in x.get("members") or [x]:
+                if m.get("full_name") and m.get("slug"):
+                    out.append((m["full_name"], m["slug"], m.get("nationality_code") or x.get("nationality_code") or ""))
+        if d.get("is_next_page") != "Y":
+            break
+        page += 1
+    return out
+
+
+class Births:
+    """Год и дата рождения по профилю ISU (slug → (дата, гражданство)). Дата рождения не меняется,
+    поэтому копится в data/photo_dob.json. Нет профиля или даты — None: личность не подтвердить."""
+
+    def __init__(self, path=BIRTH_CACHE, budget=BIRTH_FETCH_MAX):
+        self.path = path
+        self.budget = budget
+        try:
+            with open(path, encoding="utf-8") as f:
+                self.d = json.load(f)
+        except (OSError, ValueError):
+            self.d = {}
+        self.dirty = False
+
+    def get(self, slug):
+        if slug in self.d:
+            return tuple(self.d[slug]) if self.d[slug] else None
+        if self.budget <= 0:
+            return None
+        self.budget -= 1
+        try:
+            x = net.fetch_json(f"{isu.API}/skaters/detail/{slug}").get("data") or {}
+        except (net.FetchError, ValueError):
+            return None
+        dob = (x.get("date_of_birth") or "")[:10]
+        self.d[slug] = [dob, x.get("nationality_code") or ""] if re.fullmatch(r"\d{4}-\d{2}-\d{2}", dob) else None
+        self.dirty = True
+        return tuple(self.d[slug]) if self.d[slug] else None
+
+    def save(self):
+        if self.dirty:
+            os.makedirs(os.path.dirname(self.path), exist_ok=True)
+            with open(self.path, "w", encoding="utf-8") as f:
+                json.dump(self.d, f, ensure_ascii=False, indent=0, sort_keys=True)
+
+
+def wikidata_same_person(item, isu_dob, isu_nat):
+    """Тот ли это человек, что в ISU. item — {dob: {'YYYY-MM-DD'…}, prec: точность, countries: {коды},
+    skater: P106 = фигурист, sport: P641 = фигурное катание}; isu_dob — 'YYYY-MM-DD', isu_nat — код страны.
+    Нужны все четыре: фигурист (или фигурное катание), страна, год рождения (и день, если в Викиданных
+    он есть). Хоть одного нет — это может быть однофамилец, фото не берём."""
+    if not (item.get("skater") or item.get("sport")):
+        return False
+    if not isu_dob or not isu_nat or isu_nat not in item.get("countries", ()):
+        return False
+    dobs = item.get("dob") or ()
+    if not dobs:
+        return False
+    if item.get("prec", 0) >= 11:
+        return isu_dob in dobs
+    return any(d[:4] == isu_dob[:4] for d in dobs)
+
+
+def _wikidata_items(rows):
+    """Строки SPARQL → {id: {en, ru, imgs, dob, prec, countries, skater, sport}}."""
+    items = {}
+    for r in rows:
+        it = items.setdefault(r["p"]["value"], {"en": None, "ru": None, "imgs": set(), "dob": set(),
+                                                 "prec": 0, "countries": set(), "skater": False, "sport": False})
+        for lang in ("en", "ru"):
+            if lang in r:
+                it[lang] = r[lang]["value"]
+        it["imgs"].add(r["img"]["value"])
+        if "dob" in r:
+            it["dob"].add(r["dob"]["value"][:10])
+            it["prec"] = max(it["prec"], int(r.get("prec", {}).get("value", 0) or 0))
+        for c in ("cc", "ioc"):
+            if c in r:
+                it["countries"].add(r[c]["value"])
+        it["skater"] |= r.get("sk", {}).get("value") == "true"
+        it["sport"] |= r.get("fs", {}).get("value") == "true"
+    return items
+
+
+def wikidata_photos(log=print, covered=(), directory=None, births=None):
+    """[(имя, фото)] из Викиданных — только тех, чья личность подтверждена профилем ISU: человек с таким
+    именем есть в ISU, дата рождения (год, а если в Викиданных точная — вся дата) и страна совпали,
+    в Викиданных он фигурист (P106) или у него фигурное катание (P641). Нет профиля ISU, нет даты
+    рождения — Викиданные для него не используются. covered — ключи имён, у кого уже есть фото ISU или
+    сборной (им Викиданные не нужны, профили не запрашиваем).
+    Возвращает (список, ок): ок=False — Викиданные не ответили."""
     from urllib.parse import quote, unquote
     rows = _wikidata_rows(_SPARQL, log)
     ours = _wikidata_rows(_SPARQL_OURS, log)
+    ok = rows is not None and ours is not None  # один из двух запросов не ответил — «нет в списке» ничего не значит
+    items = _wikidata_items((rows or []) + (ours or []))
+    if directory is None:
+        directory = isu_directory(log)
+    births = births or Births()
+    by_key = {}
+    for name, slug, nat in directory:
+        by_key.setdefault(nm.key(name), []).append(slug)
     out = []
     seen = set()
-    for r in rows + ours:
-        img = r["img"]["value"]
-        file = unquote(img.rsplit("/", 1)[-1])
-        url = "https://commons.wikimedia.org/wiki/Special:FilePath/" + quote(file) + "?width=500"
-        for lang in ("en", "ru"):
-            if lang in r:
-                label = wikidata_label(r[lang]["value"], lang)
+    stats = {"items": len(items), "ok": 0, "no_isu": 0, "mismatch": 0, "covered": 0}
+    for it in items.values():
+        labels = [(lang, it[lang]) for lang in ("en", "ru") if it[lang]]
+        if not labels:
+            continue
+        keys = {nm.key(wikidata_label(v, lang)) for lang, v in labels}
+        if keys & set(covered):
+            stats["covered"] += 1
+            continue
+        slugs = [sl for k in keys for sl in by_key.get(k, ())]
+        if not slugs:
+            stats["no_isu"] += 1
+            continue
+        same = False
+        for sl in dict.fromkeys(slugs):
+            b = births.get(sl)
+            if b and wikidata_same_person(it, b[0], b[1]):
+                same = True
+                break
+        if not same:
+            stats["mismatch"] += 1
+            continue
+        stats["ok"] += 1
+        for img in sorted(it["imgs"]):
+            file = unquote(img.rsplit("/", 1)[-1])
+            url = "https://commons.wikimedia.org/wiki/Special:FilePath/" + quote(file) + "?width=500"
+            for lang, v in labels:
+                label = wikidata_label(v, lang)
                 if (label, url) not in seen:
                     seen.add((label, url))
                     out.append((label, url))
-    log(f"  фото из Викиданных: {len(rows)} с номером ISU, {len(ours)} наших")
-    return out
+    births.save()
+    log(f"  фото из Викиданных: {stats['items']} людей; личность подтверждена {stats['ok']}, "
+        f"нет в ISU {stats['no_isu']}, дата/страна/вид не совпали или профиль не открылся {stats['mismatch']}, "
+        f"уже есть фото ISU {stats['covered']}")
+    return out, ok
 
 
 # ---------------------------------------------------------------- всё вместе
@@ -416,11 +556,13 @@ def build(names, season_start, log=print):
         log("  ! фото сборной ФФККР:", e)
     for raw, url in isu_photos(log):
         photos.append((raw, url, 2))
-    for raw, url in wikidata_photos(log):
+    covered = {nm.key(raw) for raw, _, _ in photos}
+    wiki, wiki_ok = wikidata_photos(log, covered=covered)
+    for raw, url in wiki:
         photos.append((raw, url, 3))
     out = sorted(people.values(), key=lambda p: p["n"])
     # вид буквой: строчная — взрослые, заглавная — юниоры (W — девушки, M — юноши)
     letter = {"women": "w", "men": "m", "pairs": "p", "dance": "d"}
     for p in out:
         p["k"] = "".join(sorted(letter[k].upper() if lv == "junior" else letter[k] for k, lv in p["k"].items()))
-    return {"people": out, "photos": photos}
+    return {"people": out, "photos": photos, "wiki_ok": wiki_ok}

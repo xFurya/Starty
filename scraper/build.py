@@ -1126,7 +1126,8 @@ def collect_photos(events, upcoming, names, photos, prev_photos, everyone=()):
         add(n)
 
     # выбор источника, миниатюры и память о найденном («не пропадает») — в photos.collect
-    return ph.collect(SITE, want, photos["raw"], prev_photos, names, ph.BOOK, PHOTO_SKIP, log)
+    return ph.collect(SITE, want, photos["raw"], prev_photos, names, ph.BOOK, PHOTO_SKIP, log,
+                      wiki_ok=photos.get("wiki_ok", False))
 
 
 PHOTO_SKIP = os.path.join(ROOT, "data", "photo_skip.json")
@@ -1275,6 +1276,7 @@ def main():
         traceback.print_exc()
         book = {"people": prev.get("people") or [], "photos": []}
     photos["raw"].extend(book["photos"])
+    photos["wiki_ok"] = bool(book.get("wiki_ok"))  # Викиданные ответили: неподтверждённые фото можно убирать
 
     # Справочник для фильтра по спортсменам копится между сборами: все, кого видел
     # сборщик, — российские старты (МС/КМС) и участники международных турниров.
