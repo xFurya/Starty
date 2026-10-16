@@ -77,7 +77,7 @@ jobs:
         run: |
           flutter config --enable-windows-desktop
           flutter pub get
-          flutter build windows --release --dart-define=BUILD=${{ needs.prep.outputs.build }} --dart-define=VERSION=${{ needs.prep.outputs.version }}
+          flutter build windows --release --dart-define=BUILD=${{ needs.prep.outputs.build }} --dart-define=VERSION=${{ needs.prep.outputs.version }} --dart-define=SUPABASE_URL=https://klhzfgjzgdmsggbxcinj.supabase.co --dart-define=SUPABASE_ANON=sb_publishable_G4xs2LcAeyQyJoYcigvLAQ_lEx37rWu
       - name: Упаковать
         shell: pwsh
         run: |
@@ -131,7 +131,7 @@ jobs:
         run: |
           flutter config --enable-macos-desktop
           flutter pub get
-          flutter build macos --release --dart-define=BUILD=${{ needs.prep.outputs.build }} --dart-define=VERSION=${{ needs.prep.outputs.version }}
+          flutter build macos --release --dart-define=BUILD=${{ needs.prep.outputs.build }} --dart-define=VERSION=${{ needs.prep.outputs.version }} --dart-define=SUPABASE_URL=https://klhzfgjzgdmsggbxcinj.supabase.co --dart-define=SUPABASE_ANON=sb_publishable_G4xs2LcAeyQyJoYcigvLAQ_lEx37rWu
       - name: Упаковать
         run: |
           APP=app/build/macos/Build/Products/Release/Starty.app

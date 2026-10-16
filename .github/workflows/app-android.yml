@@ -85,7 +85,7 @@ jobs:
           fi
           flutter pub get
           flutter build apk --release --target-platform android-arm64 \
-            --dart-define=BUILD=${{ steps.num.outputs.build }} --dart-define=VERSION=${{ steps.num.outputs.ver }}
+            --dart-define=BUILD=${{ steps.num.outputs.build }} --dart-define=VERSION=${{ steps.num.outputs.ver }} --dart-define=SUPABASE_URL=https://klhzfgjzgdmsggbxcinj.supabase.co --dart-define=SUPABASE_ANON=sb_publishable_G4xs2LcAeyQyJoYcigvLAQ_lEx37rWu
 
       - name: Выложить на сайт
         if: steps.num.outputs.new == 'true'

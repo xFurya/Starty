@@ -44,7 +44,7 @@ jobs:
           BUILD=$(grep '^version:' pubspec.yaml | sed 's/.*+//')
           VER=$(grep '^version:' pubspec.yaml | sed 's/version: *//; s/+.*//')
           flutter pub get
-          flutter build ios --release --no-codesign --dart-define=BUILD=$BUILD --dart-define=VERSION=$VER
+          flutter build ios --release --no-codesign --dart-define=BUILD=$BUILD --dart-define=VERSION=$VER --dart-define=SUPABASE_URL=https://klhzfgjzgdmsggbxcinj.supabase.co --dart-define=SUPABASE_ANON=sb_publishable_G4xs2LcAeyQyJoYcigvLAQ_lEx37rWu
           cd build/ios/iphoneos
           rm -rf Payload && mkdir Payload && cp -R Runner.app Payload/
           zip -qry Starty.ipa Payload
