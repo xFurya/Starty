@@ -197,7 +197,7 @@ void main() {
     s.sync.dispose();
   });
 
-  // Строки «Выйти с этого устройства» и «Отключить на этом устройстве» в «Аккаунте» видны только в сборке с адресом
+  // Строки «Выйти с этого устройства» в «Аккаунте» (почта и код) видны только в сборке с адресом
   // сервера (syncConfigured — из --dart-define), поэтому диалог проверяем напрямую: та же цепочка, что в строке.
   testWidgets('диалоги выхода и отключения: «Отмена» ничего не меняет, подтверждение сбрасывает', (tester) async {
     await makeCustom();
@@ -241,16 +241,16 @@ void main() {
     expect(Prefs.showDone, isFalse);
     expect(Prefs.liveMode, liveDelayed);
 
-    // отключение кода: «Отмена» тоже ничего не меняет
-    await open('Отключить код?', 'Отключить');
+    // выход по коду: тот же диалог, «Отмена» тоже ничего не меняет
+    await open('Выйти из аккаунта?', 'Выйти');
     await tester.tap(find.text('Отмена'));
     await tester.pumpAndSettle();
     expect(answers, [false, false]);
     expect(Prefs.theme, 'dark');
 
     // подтверждение: ответ «да», сам сброс — в настоящем цикле событий
-    await open('Отключить код?', 'Отключить');
-    await tester.tap(find.text('Отключить'));
+    await open('Выйти из аккаунта?', 'Выйти');
+    await tester.tap(find.text('Выйти'));
     await tester.pumpAndSettle();
     expect(answers, [false, false, true]);
     await tester.runAsync(() => s.signOutSync());

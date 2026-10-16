@@ -1207,7 +1207,7 @@ class _AccountPageState extends State<_AccountPage> {
 
   /// Отключение кода сбрасывает настройки этого устройства: сначала спрашиваем.
   Future<void> _disconnectCode(AppState st) async {
-    if (!await confirmDisconnect(context, title: 'Отключить код?', action: 'Отключить') || !mounted) return;
+    if (!await confirmDisconnect(context, title: 'Выйти из аккаунта?', action: 'Выйти') || !mounted) return;
     await _act(() async {
       await st.disconnectSync();
       return null;
@@ -1346,7 +1346,7 @@ class _AccountPageState extends State<_AccountPage> {
                         const Hairline(),
                         _Row(
                           icon: CupertinoIcons.square_arrow_right,
-                          title: 'Отключить на этом устройстве',
+                          title: 'Выйти с этого устройства',
                           onTap: _busy ? null : () => _disconnectCode(st),
                         ),
                       ],
