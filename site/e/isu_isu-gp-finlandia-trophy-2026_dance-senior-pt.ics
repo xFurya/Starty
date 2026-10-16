@@ -14,11 +14,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-finlandia-trophy-2026:dance-senior-pt@starty
-DTSTAMP:20261016T111814Z
+DTSTAMP:20261016T125713Z
 DTSTART;TZID=Europe/Moscow:20261121T202500
 DTEND;TZID=Europe/Moscow:20261121T215000
 SUMMARY:GP Finlandia Trophy — танцы ПТ
-DESCRIPTION:Начало: 20:25 МСК
+DESCRIPTION:Начало: 20:25 МСК\nТрансляция: Okko
 LOCATION:Helsinki\, Finland
 URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-finlandia-trophy-2026:dan
  ce-senior-pt

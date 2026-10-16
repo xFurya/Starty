@@ -24,28 +24,18 @@
     "Александра Игнатова": "Александра Трусова"
   },
   "broadcast_rules": [
-    {
-      "match": "^(Гран-при России|ЮГП России)",
-      "broadcast": [
-        "YouTube"
-      ],
-      "watch": [
-        {"name": "YouTube", "url": "https://www.youtube.com/@ice_skating/live"}
-      ],
-      "source": "https://www.youtube.com/@ice_skating ; https://www.youtube.com/feeds/videos.xml?channel_id=UChkNUJc2Yvo8ZCtmXBSMxtg"
-    },
-    {
-      "match": "^JGP ",
-      "broadcast": [
-        "Okko"
-      ],
-      "watch": [
-        {"name": "Okko", "url": "https://okko.tv/"}
-      ],
-      "source": "https://isu-skating.com/en/news/where-to-watch-isu-figure-skating-junior-grand-prix-series-202627/"
-    }
+    {"match": "^(Гран-при России|ЮГП России)", "broadcast": ["YouTube"], "watch": [{"name": "YouTube", "url": "https://www.youtube.com/@ice_skating/live", "stream": {"rss": "https://www.youtube.com/feeds/videos.xml?channel_id=UChkNUJc2Yvo8ZCtmXBSMxtg", "title": "Гран-при России", "need": "День\\s*\\d", "by": "day"}}], "source": "https://www.youtube.com/@ice_skating ; https://www.youtube.com/feeds/videos.xml?channel_id=UChkNUJc2Yvo8ZCtmXBSMxtg"},
+    {"match": "^(JGP |Финал юниорского Гран-при)", "broadcast": ["Okko"], "watch": [{"name": "Okko", "url": "https://okko.tv/"}], "source": "https://isu-skating.com/en/news/where-to-watch-isu-figure-skating-junior-grand-prix-series-202627/ (OKKO TV — Россия, Беларусь, Казахстан; остальной мир — YouTube ISU)"},
+    {"match": "^(GP |Финал Гран-при$)", "broadcast": ["Okko"], "watch": [{"name": "Okko", "url": "https://okko.tv/"}], "source": "https://www.isu-skating.com/figure-skating/news/where-to-watch-isu-figure-skating-grand-prix-series-2025-broadcast-partners/ (Russia: OKKO). Это страница сезона 2025/26; страницы 2026/27 для Гран-при ISU ещё не выложил — перепроверить после её появления"},
+    {"match": "^Финал Гран-при$", "broadcast": ["YouTube ISU"], "watch": [{"name": "YouTube ISU", "url": "https://www.youtube.com/@SkatingISU/live", "stream": {"rss": "https://www.youtube.com/feeds/videos.xml?channel_id=UCVZpqbnDjHyScSYGFPMUtYA", "title": "Grand Prix Final", "by": "segment"}}], "source": "https://www.youtube.com/@SkatingISU/streams (вкладка «Live» канала: полные эфиры всех сегментов, сезоны 2024/25, 2025/26, 2026/27) ; https://www.youtube.com/feeds/videos.xml?channel_id=UCVZpqbnDjHyScSYGFPMUtYA ; эфиры «Grand Prix Final 2024» и «Grand Prix Final 2025» на канале"},
+    {"match": "^Чемпионат Европы$", "broadcast": ["YouTube ISU"], "watch": [{"name": "YouTube ISU", "url": "https://www.youtube.com/@SkatingISU/live", "stream": {"rss": "https://www.youtube.com/feeds/videos.xml?channel_id=UCVZpqbnDjHyScSYGFPMUtYA", "title": "European Championships", "by": "segment"}}], "source": "https://www.youtube.com/@SkatingISU/streams (вкладка «Live» канала: полные эфиры всех сегментов, сезоны 2024/25, 2025/26, 2026/27) ; https://www.youtube.com/feeds/videos.xml?channel_id=UCVZpqbnDjHyScSYGFPMUtYA ; эфиры «ISU European Championships | Tallinn 2025» и «Sheffield 2026»"},
+    {"match": "^Чемпионат четырёх континентов$", "broadcast": ["YouTube ISU"], "watch": [{"name": "YouTube ISU", "url": "https://www.youtube.com/@SkatingISU/live", "stream": {"rss": "https://www.youtube.com/feeds/videos.xml?channel_id=UCVZpqbnDjHyScSYGFPMUtYA", "title": "Four Continents", "by": "segment"}}], "source": "https://www.youtube.com/@SkatingISU/streams (вкладка «Live» канала: полные эфиры всех сегментов, сезоны 2024/25, 2025/26, 2026/27) ; https://www.youtube.com/feeds/videos.xml?channel_id=UCVZpqbnDjHyScSYGFPMUtYA ; эфиры «ISU Four Continents Championships | Seoul 2025» и «Beijing 2026»"},
+    {"match": "^Чемпионат мира$", "broadcast": ["YouTube ISU"], "watch": [{"name": "YouTube ISU", "url": "https://www.youtube.com/@SkatingISU/live", "stream": {"rss": "https://www.youtube.com/feeds/videos.xml?channel_id=UCVZpqbnDjHyScSYGFPMUtYA", "title": "(?<!Junior )World Championships", "by": "segment"}}], "source": "https://www.youtube.com/@SkatingISU/streams (вкладка «Live» канала: полные эфиры всех сегментов, сезоны 2024/25, 2025/26, 2026/27) ; https://www.youtube.com/feeds/videos.xml?channel_id=UCVZpqbnDjHyScSYGFPMUtYA ; эфиры «ISU World Championships | Boston 2025» и «Prague 2026»"},
+    {"match": "^Чемпионат мира среди юниоров$", "broadcast": ["YouTube ISU"], "watch": [{"name": "YouTube ISU", "url": "https://www.youtube.com/@SkatingISU/live", "stream": {"rss": "https://www.youtube.com/feeds/videos.xml?channel_id=UCVZpqbnDjHyScSYGFPMUtYA", "title": "Junior World Championships", "by": "segment"}}], "source": "https://www.youtube.com/@SkatingISU/streams (вкладка «Live» канала: полные эфиры всех сегментов, сезоны 2024/25, 2025/26, 2026/27) ; https://www.youtube.com/feeds/videos.xml?channel_id=UCVZpqbnDjHyScSYGFPMUtYA ; эфиры «Junior World Championships | Tallinn 2026»"},
+    {"match": "^Командный чемпионат мира$", "broadcast": ["YouTube ISU"], "watch": [{"name": "YouTube ISU", "url": "https://www.youtube.com/@SkatingISU/live", "stream": {"rss": "https://www.youtube.com/feeds/videos.xml?channel_id=UCVZpqbnDjHyScSYGFPMUtYA", "title": "World Team Trophy", "by": "segment"}}], "source": "https://www.youtube.com/@SkatingISU/streams (вкладка «Live» канала: полные эфиры всех сегментов, сезоны 2024/25, 2025/26, 2026/27) ; https://www.youtube.com/feeds/videos.xml?channel_id=UCVZpqbnDjHyScSYGFPMUtYA ; эфиры «ISU World Team Trophy | Tokyo 2025»"}
   ],
   "broadcast_overrides": {},
+  "keep_retract": {"facts": [], "urls": [], "photos": [], "people": [], "roster": []},
   "ru_tz": {
     "Москва": 3,
     "Санкт-Петербург": 3,

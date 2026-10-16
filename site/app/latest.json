@@ -1,33 +1,33 @@
 {
- "version": "1.0.32",
- "code": 33,
- "notes": "Новая страница аккаунта; у россиян и белорусов вместо «AIN» страна.",
- "at": "2026-10-16T11:00:40Z",
+ "version": "1.0.33",
+ "code": 34,
+ "notes": "Данные больше не пропадают при сбоях; фото сохраняются на устройстве.",
+ "at": "2026-10-16T12:51:16Z",
  "android": {
-  "file": "starty-1.0.32.apk",
-  "size": 22325249,
-  "sha256": "6f166276c658f71e11e8cf13b9957f809a120d8bbdbdabaead7abc4a0f1c975d"
+  "file": "starty-1.0.33.apk",
+  "size": 22817127,
+  "sha256": "d065ed141a7f04d98bc0bf064ba863aa99c9b3a6534b1dab318b0feca5b8aa5f"
  },
  "windows": {
-  "code": 33,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.32/Starty-windows.zip",
-  "size": 14023505,
-  "sha256": "8f0c6e5d6b0f2211733b942abc30f6a555b4010e7224aeccbb8addd788fbeb08",
+  "code": 34,
+  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.33/Starty-windows.zip",
+  "size": 14070669,
+  "sha256": "5fd99254302099a5bc5d7228eb417b3c7ea8e73e818694a0cd876f8070148c44",
   "setup": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.32/starty-setup-1.0.32.exe",
-   "size": 12026607,
-   "sha256": "a1a34a5507fb298f18363ca554d4e9c007edf127d6723c38a98ec91a52d260c0"
+   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.33/starty-setup-1.0.33.exe",
+   "size": 12056181,
+   "sha256": "356dbbf7ed2b507f1f4e86e717621fbe00dcce32de29bbab2618792a684538c8"
   }
  },
  "macos": {
-  "code": 33,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.32/Starty-macos.zip",
-  "size": 21291531,
-  "sha256": "f5994ecf01631029c6a357ece61e5e078837da0cc307bc7d141b5704b4e8e9f6",
+  "code": 34,
+  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.33/Starty-macos.zip",
+  "size": 21453121,
+  "sha256": "e31a109e2e8e1b61b3f7a1f587c547884ffa390c6821a79539c585017250b79a",
   "dmg": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.32/Starty-macos.dmg",
-   "size": 24014311,
-   "sha256": "ce358868c6e7a242bf0be318f87b724608aedf4b1b966ce06b62b7a6b4f246fe"
+   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.33/Starty-macos.dmg",
+   "size": 24342808,
+   "sha256": "8453939aa1a987f67bf4c7415346ea1300c5933a3c7f64343a105ce7cd39bd9b"
   }
  }
 }

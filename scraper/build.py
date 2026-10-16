@@ -27,6 +27,7 @@ import sys
 import traceback
 
 from . import fsr, goldenskate, ics, isu, net
+from . import keep as kp
 from . import protocols as P
 from . import photos as ph
 from . import names as nm
@@ -237,11 +238,7 @@ def make_event(*, tid, tournament, kind, level, seg, mixed, start, end, venue, i
         "venue": venue, "intl": intl, "broadcast": broadcast,
         "ours": ours, "athletes": sorted(set(athletes)), "src": src,
     }
-    w = watch_for(tournament, watch)
-    if tid.startswith("fsr:"):
-        for x in w:
-            if x["name"] == "YouTube" and x["url"] == FSR_YT_LIVE:
-                x["url"] = fsr_stream(start.date()) or x["url"]
+    w = watch_for(tournament, watch, (kind, level, seg, start.date()))
     if w:
         ev["watch"] = w
         for x in w:
@@ -311,35 +308,50 @@ def broadcast_for(name, base=None):
     return out
 
 
-FSR_YT_LIVE = "https://www.youtube.com/@ice_skating/live"
-FSR_YT_RSS = "https://www.youtube.com/feeds/videos.xml?channel_id=UChkNUJc2Yvo8ZCtmXBSMxtg"
-_YT = {"streams": None}
+_YT = {}  # адрес RSS → [(видео, название, дата по Москве)]
 
 
-def yt_streams():
-    """Эфиры канала ФФКР за последнее время: [(видео, название, дата по Москве)]. Нет сети — пусто."""
-    if _YT["streams"] is None:
+def yt_streams(rss):
+    """Эфиры канала по его RSS (последние ~15 записей): [(видео, название, дата по Москве)].
+    Нет сети — пусто (ссылка остаётся общей /live, а прежняя конкретная — из прошлого сбора, см. keep.py)."""
+    if rss not in _YT:
         out = []
         try:
-            xml = net.fetch(FSR_YT_RSS)
+            xml = net.fetch(rss)
             for e in re.findall(r"(?s)<entry>(.*?)</entry>", xml):
                 v = re.search(r"<yt:videoId>([\w-]{11})<", e)
                 t = re.search(r"<title>(.*?)</title>", e)
                 d = re.search(r"<published>(.*?)</published>", e)
                 if v and t and d:
                     when = dt.datetime.fromisoformat(d.group(1)).astimezone(MSK).date()
-                    out.append((v.group(1), t.group(1).replace("&amp;", "&"), when))
+                    title = t.group(1).replace("&amp;", "&").replace("&#39;", "'").replace("&quot;", '"')
+                    out.append((v.group(1), title, when))
         except Exception as ex:
-            log("  ! RSS канала ФФКР:", ex)
-        _YT["streams"] = out
-    return _YT["streams"]
+            log("  ! RSS канала:", rss, ex)
+        _YT[rss] = out
+    return _YT[rss]
 
 
-def fsr_stream(day):
-    """Ссылка на эфир всего дня («… День 2») в день старта; нет — None (останется /live)."""
-    for vid, title, when in yt_streams():
-        if when == day and re.search(r"Гран-при России", title) and re.search(r"День\s*\d", title):
-            return "https://www.youtube.com/watch?v=" + vid
+SEG_PHRASE = {"КП": "short program", "ПП": "free skating", "РТ": "rhythm dance", "ПТ": "free dance"}
+KIND_PHRASE = {"men": "men", "women": "women", "pairs": "pairs", "dance": "ice dance"}
+
+
+def stream_url(cfg, kind, level, seg, day):
+    """Конкретный эфир по правилу stream: {rss, title, need?, by: day|segment}. День — «… День 2»
+    на всё соревнование (ФФКР); сегмент — отдельное видео «Men Short Program | …» в день старта
+    (±1 день: эфир заводят до начала). Не нашли — None (остаётся общая ссылка)."""
+    for vid, title, when in yt_streams(cfg["rss"]):
+        if not re.search(cfg["title"], title, re.I) or (cfg.get("need") and not re.search(cfg["need"], title)):
+            continue
+        if cfg.get("by") == "segment":
+            low = " ".join(title.lower().split())
+            if f"{KIND_PHRASE[kind]} {SEG_PHRASE[seg]}" not in low:
+                continue
+            if ("junior" in low) != (level == "junior") or abs((when - day).days) > 1:
+                continue
+        elif when != day:
+            continue
+        return "https://www.youtube.com/watch?v=" + vid
     return None
 
 
@@ -347,16 +359,21 @@ def _http_url(u):
     return isinstance(u, str) and re.match(r"https?://[^\s/]+", u) is not None
 
 
-def watch_for(name, base=None):
+def watch_for(name, base=None, event=None):
     """Где смотреть: [{name, url}]. Ссылки со страницы турнира (base) важнее общих
-    правил из config.json: правило не добавляет канал, который со страницы уже есть."""
+    правил из config.json: правило не добавляет канал, который со страницы уже есть.
+    event = (kind, level, seg, день по Москве): правило со stream подменяет общую ссылку
+    конкретным эфиром, если он нашёлся в RSS."""
     out = [dict(w) for w in (base or []) if w.get("name") and _http_url(w.get("url"))]
     have = {w["name"] for w in out}
     for r in CFG["broadcast_rules"]:
         if re.search(r["match"], name):
             for w in r.get("watch", []):
                 if w["name"] not in have and _http_url(w["url"]):
-                    out.append({"name": w["name"], "url": w["url"]})
+                    url = w["url"]
+                    if event and w.get("stream"):
+                        url = stream_url(w["stream"], *event) or url
+                    out.append({"name": w["name"], "url": url})
                     have.add(w["name"])
     return out
 
@@ -541,6 +558,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 watch=watch, ours=sort_ours(ours), athletes=athletes, src=idx["url"],
                 podium=podium, total=total)
             ev["field"] = sort_ours(field)
+            ev["_cat"] = c["name"]
             # протокол уже на табло, но судейских оценок ещё нет — промежуточные итоги
             if started and not done:
                 ev["provisional"] = True
@@ -586,6 +604,32 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 if f:
                     ev["facts"] = rs.unique_facts((ev.get("facts") or []) + f)
             ev["desc"] = describe(ev)
+    return unique_ids(events)
+
+
+def unique_ids(events):
+    """Id = турнир:вид-уровень-сегмент. Если у вида несколько разрядов (Golden Skate: «Solo Dance»
+    по возрастам), id совпадал, и в приложении поле «скакало» между разными стартами. Совпавшим
+    добавляем слаг категории — он стабилен между сборками; остальные id не меняются. Прежний id
+    лежит в _old_id: build.main по нему переносит данные и убирает старые записи."""
+    groups = {}
+    for ev in events:
+        groups.setdefault(ev["id"], []).append(ev)
+    for base, evs in groups.items():
+        if len(evs) > 1:
+            used = set()
+            for ev in evs:
+                suffix = slugify(ev.get("_cat", "")) or "x"
+                new = f"{base}-{suffix}"
+                n = 2
+                while new in used:
+                    new = f"{base}-{suffix}-{n}"
+                    n += 1
+                used.add(new)
+                ev["_old_id"] = base
+                ev["id"] = new
+    for ev in events:
+        ev.pop("_cat", None)
     return events
 
 
@@ -1204,30 +1248,32 @@ def main():
             report["errors"].append(f"{label}: {e}")
             failed.add(prefix + "*")
 
-    # После старта табло показывает результаты вместо стартового листа — время выхода
-    # и номера наших берём из прошлого сбора, пока он их помнит. Так же итоги
-    # прошедших сегментов: если протокол сейчас не открылся, остаётся прошлый.
+    # Монотонность (scraper/keep.py): после старта табло показывает результаты вместо стартового
+    # листа, источник мог не ответить, PDF не прочитаться — всё, что уже было опубликовано
+    # и не изменено явно, остаётся. Время выхода и номера наших, итоги прошедших сегментов,
+    # примечательное, ссылки трансляций, ссылки табло.
     prev_by_id = {e["id"]: e for e in prev.get("events", [])}
+    # события, у которых id изменился из-за коллизии (unique_ids): данные берём у прежнего
+    # с тем же старым id и временем, прежние записи под старым id убираем
+    migrated = {e["_old_id"] for e in events if "_old_id" in e}
+    for e in events:
+        old_id = e.pop("_old_id", None)
+        if old_id:
+            twin = next((o for o in prev.get("events", [])
+                         if o["id"] in (old_id, e["id"]) and o["start"] == e["start"]), None)
+            if twin:
+                prev_by_id[e["id"]] = twin
+    prev["events"] = [o for o in prev.get("events", []) if o["id"] not in migrated]
+    same_rules = prev.get("facts_version", rs.VERSION) == rs.VERSION
+    retract = CFG.get("keep_retract") or {}
     for e in events:
         old = prev_by_id.get(e["id"])
-        if not old:
-            continue
-        was = {o["name"]: o for o in old.get("ours", [])}
-        changed = False
-        for o in e["ours"]:
-            p = was.get(o["name"])
-            if not p or (o.get("no") and p.get("no") and o["no"] != p["no"]):
-                continue
-            for k in ("time", "no", "warmup", "place", "final"):
-                if p.get(k) and not o.get(k):
-                    o[k] = p[k]
-                    changed = True
-        for k in ("podium", "total"):
-            if old.get(k) and not e.get(k):
-                e[k] = old[k]
-                changed = True
-        if changed:
+        if old and kp.merge_event(e, old, same_rules=same_rules, retract_facts=retract.get("facts", ()),
+                                  retract_urls=retract.get("urls", ()), to_ru=names.to_ru):
             e["ours"] = sort_ours(e["ours"])
+            e["facts"] = rs.unique_facts(e.get("facts"))
+            if not e["facts"]:
+                e.pop("facts", None)
             e["desc"] = describe(e)
 
     # Прошлый успешный сбор: всё, что не удалось получить сейчас, и прошедшие старты
@@ -1262,12 +1308,8 @@ def main():
 
     have_tids = {e["tid"] for e in events}
     upcoming = [u for u in upcoming if u["tid"] not in have_tids]
-    if any(s != "ok" for s in report["sources"].values()) and prev.get("upcoming"):
-        for u in prev["upcoming"]:
-            if u["tid"] not in have_tids and u["tid"] not in {x["tid"] for x in upcoming} \
-                    and u["end"] >= now.date().isoformat():
-                upcoming.append(u)
-    upcoming.sort(key=lambda u: u["start"])
+    upcoming = [u for u in kp.merge_upcoming(upcoming, [u for u in prev.get("upcoming", []) if u["tid"] not in have_tids],
+                                             report["sources"], failed, now.date().isoformat())]
 
     # Справочник для поиска: россияне от КМС и выше, все участники турниров ISU за два сезона
     try:
@@ -1289,6 +1331,7 @@ def main():
         roster.update(p["name"] for p in e.get("total", []))
         roster.update((e.get("live") or {}).get("names", {}).values())
     roster.update(p["n"] for p in book["people"])
+    roster = kp.merge_names(roster, prev.get("roster"), retract.get("roster", ()))
     # латинское написание того, кого уже знаем по-русски, в справочнике не держим: поиск не должен давать двойников
     roster = {n for n in roster if not names.known_latin(n)}
     # пара наполовину кириллицей, наполовину латиницей — иностранец, ошибочно принятый за нашего
@@ -1300,14 +1343,16 @@ def main():
         "generated": now.isoformat(),
         "checked": now.isoformat(),
         "complete": all_ok,
+        "facts_version": rs.VERSION,
         "sources": report["sources"],
         "events": events,
         "upcoming": upcoming,
         "watchlist": CFG["watchlist"],
         "roster": sorted(roster),
-        "people": book["people"],
-        "photos": collect_photos(events, upcoming, names, photos, prev.get("photos") or {},
-                                 [p["n"] for p in book["people"]]),
+        "people": kp.merge_named(book["people"], prev.get("people"), "n", retract.get("people", ())),
+        "photos": kp.merge_map(collect_photos(events, upcoming, names, photos, prev.get("photos") or {},
+                                              [p["n"] for p in book["people"]]),
+                               prev.get("photos"), retract.get("photos", ())),
     }
     # Если сбор вернул заметно меньше будущих стартов, чем было, — это поломка
     # источника, а не отмена турниров. Тогда оставляем прошлые данные.

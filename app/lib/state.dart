@@ -1,9 +1,11 @@
 // Общее состояние приложения: расписание, фильтр ленты, уведомления, оформление.
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:flutter/foundation.dart' show kIsWeb, mapEquals, visibleForTesting;
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app_icon.dart';
 import 'data.dart';
@@ -486,6 +488,7 @@ class AppState extends ChangeNotifier {
     if (refreshing) return;
     if (data == null) {
       _raw = await Repo.cached();
+      await _restoreLive();
       if (_raw != null) data = _apply(_raw!);
     }
     if (data != null) {
@@ -499,8 +502,10 @@ class AppState extends ChangeNotifier {
     refreshing = false;
     if (fresh != null) {
       _fetchedAt = DateTime.now();
-      _raw = fresh;
-      data = _apply(fresh);
+      // ответ беднее прежнего (сборщик не досчитал, источник молчал) показанное не отбирает
+      final prev = _raw;
+      _raw = prev == null ? fresh : Schedule.mergeKeepingRicher(prev, fresh, now: now());
+      data = _apply(_raw!);
       offline = false;
     } else {
       offline = true;
@@ -607,7 +612,8 @@ class AppState extends ChangeNotifier {
 
   /// Итоги, прочитанные из другого источника, не должны остаться поверх нового режима.
   void _resetLiveSource() {
-    _live.clear();
+    // уже показанные итоги не стираем: новый источник заменит их, когда ответит, а до тех пор
+    // они лучше пустого места (ответ беднее прежнего их не заменяет — см. pollLive)
     _fileAt.clear();
     if (_raw != null) data = _apply(_raw!);
     notifyListeners();
@@ -716,6 +722,8 @@ class AppState extends ChangeNotifier {
         final prev = _live[s.id];
         // окончательный протокол не понижаем до промежуточного из-за неполного опроса
         if (prev != null && !prev.provisional && g.provisional) return;
+        // и не оставляем меньше строк, чем уже видели: опрос мог прийти не весь
+        if (prev != null && g.provisional == prev.provisional && g.rows.length < prev.rows.length) return;
         if (prev == null || _sig(g) != _sig(prev)) changed = true;
         _live[s.id] = g;
       }
@@ -728,6 +736,7 @@ class AppState extends ChangeNotifier {
       if (changed && _raw != null) {
         data = _apply(_raw!);
         notifyListeners();
+        unawaited(_saveLive());
       }
       // примечательное и окончательный итог считает сервер — забираем его чаще, пока что-то идёт
       if (DateTime.now().difference(_fetchedAt) > const Duration(minutes: 5)) unawaited(load());
@@ -737,6 +746,30 @@ class AppState extends ChangeNotifier {
   }
 
   static final _epoch = DateTime.fromMillisecondsSinceEpoch(0);
+
+  static const _liveKey = 'live.last';
+
+  /// Итоги с табло — на диск: после перезапуска без сети карточка показывает то, что уже показывала.
+  Future<void> _saveLive() async {
+    try {
+      final p = await SharedPreferences.getInstance();
+      await p.setString(_liveKey, jsonEncode({for (final e in _live.entries) e.key: e.value.toJson()}));
+    } catch (_) {}
+  }
+
+  /// Сохранённые итоги — до первой отрисовки; устаревшие уберёт [_apply] (сервер дошёл до окончательного).
+  Future<void> _restoreLive() async {
+    if (_live.isNotEmpty) return;
+    try {
+      final p = await SharedPreferences.getInstance();
+      final s = p.getString(_liveKey);
+      if (s == null) return;
+      for (final e in (jsonDecode(s) as Map).entries) {
+        final l = LiveOk.tryFromJson(e.value);
+        if (l != null) _live['${e.key}'] = l;
+      }
+    } catch (_) {}
+  }
 
   /// Итоги старта из файла протокола: тот же вид результата, что и с табло.
   Future<LiveResult> _fromFile(Start s) async {

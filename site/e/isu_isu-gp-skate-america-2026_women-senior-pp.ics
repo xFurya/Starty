@@ -14,11 +14,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-skate-america-2026:women-senior-pp@starty
-DTSTAMP:20261016T111814Z
+DTSTAMP:20261016T125713Z
 DTSTART;TZID=Europe/Moscow:20261116T000500
 DTEND;TZID=Europe/Moscow:20261116T014000
 SUMMARY:GP Skate America — женщины ПП
-DESCRIPTION:Начало: 00:05 МСК
+DESCRIPTION:Начало: 00:05 МСК\nТрансляция: Okko
 LOCATION:Everett\, USA
 URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-skate-america-2026:women-
  senior-pp
