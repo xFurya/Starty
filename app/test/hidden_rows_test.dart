@@ -57,11 +57,11 @@ void main() {
 
   testWidgets('карточка старта без протокола не предлагает «Живые места»', (t) async {
     await open(t, _start());
-    expect(find.textContaining('Живые места', skipOffstage: false), findsNothing);
+    expect(find.byTooltip('Живые места', skipOffstage: false), findsNothing);
   });
 
   testWidgets('карточка старта с протоколом предлагает «Живые места»', (t) async {
     await open(t, _start(proto: 'x_1.json'));
-    expect(find.textContaining('Живые места', skipOffstage: false), findsOneWidget);
+    expect(find.byTooltip('Живые места', skipOffstage: false), findsOneWidget);
   });
 }

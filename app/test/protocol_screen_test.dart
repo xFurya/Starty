@@ -12,6 +12,8 @@ import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:starty/data.dart';
+import 'package:starty/live.dart' show LiveOk;
+import 'package:starty/state.dart';
 import 'package:starty/protocol_details.dart' show deductionName;
 import 'package:starty/protocol_model.dart';
 import 'package:starty/protocol_repo.dart';
@@ -150,6 +152,7 @@ Future<void> pumpScreen(
   double scale = 1.0,
   Brightness brightness = Brightness.light,
   List<String>? opened,
+  AppState? state,
 }) async {
   tester.view.physicalSize = Size(width, 900);
   tester.view.devicePixelRatio = 1.0;
@@ -165,6 +168,7 @@ Future<void> pumpScreen(
       home: ProtocolScreen(
         start: s,
         repo: repo,
+        state: state,
         opener: (url) async => opened?.add(url),
       ),
     ),
@@ -187,27 +191,51 @@ void main() {
     await _font('Cormorant', ['CormorantGaramond-SemiBold.ttf', 'CormorantGaramond-Bold.ttf']);
   });
 
-  setUp(() => SharedPreferences.setMockInitialValues({}));
+  setUp(() async {
+    SharedPreferences.setMockInitialValues({});
+    await Prefs.init();
+  });
 
   group('статусы из макетов', () {
-    testWidgets('окончательный — строки с местами и баллами, «Оригинал протокола»', (tester) async {
+    testWidgets('окончательный — строки с местами и баллами, значок «Оригинал протокола» вместо кнопки', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(sample()));
       expect(find.text('Окончательный'), findsOneWidget);
       expect(find.text('Анна Павловна Билибина / Дмитрий Владимирович Кашаев'), findsOneWidget);
       expect(find.text('66.36'), findsOneWidget);
-      expect(find.text('Оригинал протокола'), findsOneWidget);
+      expect(find.byTooltip('Оригинал протокола'), findsOneWidget);
+      expect(find.text('Оригинал протокола'), findsNothing); // большой кнопки внизу нет
+      // шапки, дублирующей выбор, нет
+      expect(find.text('рит-танец'), findsNothing);
+      expect(find.text('Танцы · Юниоры'), findsNothing);
       expectNoHorizontalScroll(tester);
     });
 
-    testWidgets('промежуточный (идёт) — время обновления файла по Москве', (tester) async {
+    testWidgets('значок «Оригинал протокола» открывает страницу сегмента', (tester) async {
+      final opened = <String>[];
+      await pumpScreen(tester, s: start(), repo: repoWith(sample()), opened: opened);
+      await tester.tap(find.byTooltip('Оригинал протокола'));
+      await tester.pumpAndSettle();
+      expect(opened, hasLength(1));
+    });
+
+    testWidgets('идёт — «Идёт» и время обновления файла по Москве, слова «промежуточный» нет', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(withState('in_progress')));
-      expect(find.text('Идёт · промежуточный · обновлено 21:56'), findsOneWidget);
+      expect(find.text('Идёт · Обновлено 21:56'), findsOneWidget);
+      expect(find.textContaining('ромежуточ'), findsNothing);
       expectNoHorizontalScroll(tester);
     });
 
-    testWidgets('промежуточный (сегмент прошёл, оценок нет)', (tester) async {
+    testWidgets('идёт при известном составе — «N из M»', (tester) async {
+      final field = ['Анна Билибина / Дмитрий Кашаев', 'Полина Жарова / Алексей Столяров', 'Третья Пара / Партнёр', 'Четвёртая Пара / Партнёр', 'Пятая Пара / Партнёр'];
+      await pumpScreen(tester, s: start(field: field), repo: repoWith(withState('in_progress')));
+      final n = ((_seg(withState('in_progress'))['rows']) as List).length;
+      expect(find.text('Идёт · $n из 5 · Обновлено 21:56'), findsOneWidget);
+    });
+
+    testWidgets('сегмент прошёл, оценок нет — без пометки статуса, только время обновления', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(withState('provisional', basis: null)));
-      expect(find.text('Промежуточный · обновлено 21:56'), findsOneWidget);
+      expect(find.text('Обновлено 21:56'), findsOneWidget);
+      expect(find.textContaining('ромежуточ'), findsNothing);
     });
 
     testWidgets('протокола нет, есть заявка — состав по заявке без мест', (tester) async {
@@ -218,15 +246,55 @@ void main() {
       );
       expect(find.text('Протокола пока нет · состав по заявке'), findsOneWidget);
       expect(find.text('Полина Жарова / Алексей Столяров'), findsOneWidget);
-      expect(find.text('отслеживаемая'), findsOneWidget);
+      expect(find.textContaining('отслеживаем'), findsNothing); // отслеживаемые только выделены, без слов
       expectNoHorizontalScroll(tester);
+    });
+
+    testWidgets('в файле строк нет, на табло есть — строки с табло и подпись «По табло»', (tester) async {
+      final state = AppState()
+        ..adoptLive(
+          start().id,
+          LiveOk(
+            podium: [Placing(1, 'Анна Билибина / Дмитрий Кашаев', 'RUS', '70.10')],
+            provisional: true,
+            rows: [
+              Placing(1, 'Анна Билибина / Дмитрий Кашаев', 'RUS', '70.10'),
+              Placing(2, 'Полина Жарова / Алексей Столяров', 'RUS', '65.00'),
+            ],
+          ),
+        );
+      await pumpScreen(
+        tester,
+        s: start(field: ['Анна Билибина / Дмитрий Кашаев', 'Полина Жарова / Алексей Столяров', 'Третья Пара / Партнёр']),
+        repo: repoWith(withState('not_published')),
+        state: state,
+      );
+      expect(find.text('По табло · 2 из 3 · элементов и оценок судей пока нет'), findsOneWidget);
+      expect(find.text('70.10'), findsOneWidget);
+      expect(find.text('65.00'), findsOneWidget);
+      expect(find.textContaining('Протокола пока нет'), findsNothing);
+      expectNoHorizontalScroll(tester);
+    });
+
+    testWidgets('в файле строк нет и живых итогов нет — как раньше', (tester) async {
+      await pumpScreen(tester, s: start(), repo: repoWith(withState('not_published')), state: AppState());
+      expect(find.text('Протокола и заявки пока нет'), findsOneWidget);
+      expect(find.textContaining('По табло'), findsNothing);
+    });
+
+    testWidgets('в файле строки есть — табло не подменяет файл', (tester) async {
+      final state = AppState()
+        ..adoptLive(start().id, LiveOk(podium: [], provisional: true, rows: [Placing(1, 'Кто-то Другой', 'RUS', '1.00')]));
+      await pumpScreen(tester, s: start(), repo: repoWith(sample()), state: state);
+      expect(find.text('Кто-то Другой'), findsNothing);
+      expect(find.text('66.36'), findsOneWidget);
     });
 
     testWidgets('сверка с оригиналом не сошлась — только статус и оригинал', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(withState('judges_mismatch', basis: null)));
       expect(find.text('Итоги не подтверждены'), findsOneWidget);
       expect(find.text('66.36'), findsNothing);
-      expect(find.text('Оригинал протокола'), findsOneWidget);
+      expect(find.byTooltip('Оригинал протокола'), findsOneWidget);
     });
 
     testWidgets('сегмент с неизвестным состоянием — «Экран недоступен» только для него', (tester) async {

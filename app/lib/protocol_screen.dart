@@ -1,26 +1,18 @@
 // Протокол турнира в приложении: категория → сегмент (короткая, произвольная, итог) → строки.
-// Данные — из файла протокола (protocol_model.dart); оригинал табло — кнопкой внизу, одинаково везде.
+// Данные — из файла протокола (protocol_model.dart); оригинал табло — значком в верхней панели, во встроенном браузере.
 // Честность: число показываем только если оно есть в файле, окончательность — только по судейским оценкам.
 import 'package:flutter/cupertino.dart' show CupertinoIcons;
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'data.dart';
-import 'live.dart' show personKey;
+import 'live.dart' show LiveOk, personKey;
 import 'palette.dart';
 import 'protocol_model.dart';
 import 'protocol_details.dart';
+import 'protocol.dart' show openOriginal;
 import 'protocol_repo.dart';
+import 'state.dart' show AppState;
 import 'ui.dart';
-
-/// Оригинал на табло — во внешнем браузере. Одинаково на всех платформах: кнопка «Оригинал протокола».
-Future<void> openOriginal(BuildContext context, String url) => launchOriginal(url);
-
-/// То же без контекста: окно браузера, не встроенный просмотр.
-Future<void> launchOriginal(String url) async {
-  if (url.isEmpty) return;
-  await launchUrl(Uri.parse(url), webOnlyWindowName: '_blank', mode: LaunchMode.externalApplication);
-}
 
 /// Подписи вкладок сегментов: короткие, чтобы три вкладки умещались в ширину 360 px.
 const _tabLabel = {'КП': 'Короткая', 'ПП': 'Произвольная', 'РТ': 'Ритм-танец', 'ПТ': 'Произвольный'};
@@ -40,7 +32,17 @@ class ProtocolView {
 
   /// Состав по заявке (без мест и баллов) — когда протокола ещё нет.
   final bool application;
-  const ProtocolView(this.status, this.tone, {this.retry = false, this.rows = const [], this.application = false});
+
+  /// В файле для этого сегмента нет строк (протокола ещё нет) — можно показать живые итоги с табло.
+  final bool noFile;
+  const ProtocolView(
+    this.status,
+    this.tone, {
+    this.retry = false,
+    this.rows = const [],
+    this.application = false,
+    this.noFile = false,
+  });
 }
 
 /// Текст статуса по загрузке файла, категории и вкладке. Все тексты — из утверждённых макетов.
@@ -51,12 +53,13 @@ ProtocolView protocolView(
   required String tab,
   required bool hasField,
   DateTime? built,
+  int fieldCount = 0,
 }) {
   // Любой сбой при наличии сохранённого файла — сохранённая версия; без него — короткий текст
-  // (экран в этом случае не открывается, оригинал уходит во внешний браузер, см. [ProtocolScreen]).
+  // (экран в этом случае не открывается, сразу открывается оригинал, см. [ProtocolScreen]).
   final (cached, cachedAt) = savedOf(load);
   if (cached != null && cachedAt != null) {
-    final v = _inFile(category, tab, hasField: hasField, built: cached.built);
+    final v = _inFile(category, tab, hasField: hasField, built: cached.built, fieldCount: fieldCount);
     // сохранённая версия: строки есть, но статус — что связи нет и когда файл сохранён
     // «Нет связи» — только для сетевого сбоя; при 404, битом файле и чужой версии связь ни при чём
     final saved = '${_dm(cachedAt)}, ${hm(cachedAt)}';
@@ -66,6 +69,7 @@ ProtocolView protocolView(
       retry: true,
       rows: v.rows,
       application: v.application,
+      noFile: v.noFile,
     );
   }
   switch (load) {
@@ -76,7 +80,7 @@ ProtocolView protocolView(
     case ProtocolNetError():
       return const ProtocolView('Нет связи с сервером', ProtocolTone.quiet, retry: true);
     case ProtocolOk():
-      return _inFile(category, tab, hasField: hasField, built: built);
+      return _inFile(category, tab, hasField: hasField, built: built, fieldCount: fieldCount);
   }
 }
 
@@ -89,10 +93,10 @@ ProtocolView protocolView(
 };
 
 ProtocolView _noProtocol(bool hasField) => hasField
-    ? const ProtocolView('Протокола пока нет · состав по заявке', ProtocolTone.quiet, application: true)
-    : const ProtocolView('Протокола и заявки пока нет', ProtocolTone.quiet);
+    ? const ProtocolView('Протокола пока нет · состав по заявке', ProtocolTone.quiet, application: true, noFile: true)
+    : const ProtocolView('Протокола и заявки пока нет', ProtocolTone.quiet, noFile: true);
 
-ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasField, DateTime? built}) {
+ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasField, DateTime? built, int fieldCount = 0}) {
   if (category == null) return _noProtocol(hasField);
   if (tab == totalTab) {
     final t = category.total;
@@ -103,7 +107,7 @@ ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasF
     if (t.state == TotalState.finalized) {
       return ProtocolView('Окончательный', ProtocolTone.finalized, rows: t.rows);
     }
-    return ProtocolView('Промежуточный · ${_updated(built)}', ProtocolTone.live, rows: t.rows);
+    return ProtocolView(_updated(built), ProtocolTone.quiet, rows: t.rows);
   }
   final seg = category.segmentOf(tab);
   if (seg == null) return _noProtocol(hasField);
@@ -113,10 +117,13 @@ ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasF
       return _noProtocol(hasField);
     case SegmentState.inProgress:
       if (seg.rows.isEmpty) return _noProtocol(hasField);
-      return ProtocolView('Идёт · промежуточный · ${_updated(built)}', ProtocolTone.live, rows: seg.rows);
+      // «9 из 14»: сколько выступило — только если известен весь состав
+      final n = seg.rows.length;
+      final of = fieldCount >= n ? ' · $n из $fieldCount' : '';
+      return ProtocolView('Идёт$of · ${_updated(built)}', ProtocolTone.live, rows: seg.rows);
     case SegmentState.provisional:
       if (seg.rows.isEmpty) return _noProtocol(hasField);
-      return ProtocolView('Промежуточный · ${_updated(built)}', ProtocolTone.quiet, rows: seg.rows);
+      return ProtocolView(_updated(built), ProtocolTone.quiet, rows: seg.rows);
     case SegmentState.finalized:
       // окончательный без строк — нераспознанный файл, а не «протокол пуст»
       if (seg.rows.isEmpty) return const ProtocolView('Экран для этого протокола недоступен', ProtocolTone.quiet);
@@ -154,7 +161,7 @@ String statusLabel(String s) {
   return m[s.trim().toUpperCase()] ?? s;
 }
 
-String _updated(DateTime? built) => built == null ? 'обновлено' : 'обновлено ${hm(built)}';
+String _updated(DateTime? built) => built == null ? 'Обновлено' : 'Обновлено ${hm(built)}';
 
 String _dm(DateTime t) {
   final m = msk(t);
@@ -182,9 +189,12 @@ class ProtocolScreen extends StatefulWidget {
   /// Для тестов; в приложении — общий репозиторий.
   final ProtocolRepo? repo;
 
-  /// Открытие оригинала при сбое файла; в тестах подменяется.
+  /// Открытие оригинала; в тестах подменяется. В приложении — встроенный браузер (см. [openOriginal]).
   final Future<void> Function(String url)? opener;
-  const ProtocolScreen({super.key, required this.start, this.repo, this.opener});
+
+  /// Состояние приложения: живые итоги с табло, если в файле у сегмента строк ещё нет.
+  final AppState? state;
+  const ProtocolScreen({super.key, required this.start, this.repo, this.opener, this.state});
 
   @override
   State<ProtocolScreen> createState() => _ProtocolScreenState();
@@ -214,9 +224,13 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
     if (load is! ProtocolOk && savedOf(load).$1 == null && widget.start.src.isNotEmpty) {
       setState(() => _busy = false);
       try {
-        await (widget.opener ?? launchOriginal)(widget.start.src);
+        if (widget.opener case final o?) {
+          await o(widget.start.src);
+          if (mounted) Navigator.of(context).maybePop();
+        } else {
+          await openOriginal(context, widget.start.src, widget.start.tournament, replace: true);
+        }
       } catch (_) {}
-      if (mounted) Navigator.of(context).maybePop();
       return;
     }
     setState(() {
@@ -293,9 +307,21 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
     }
   }
 
+  Future<void> _openOrig(String url) async {
+    if (url.isEmpty) return;
+    try {
+      await (widget.opener ?? (u) => openOriginal(context, u, widget.start.tournament))(url);
+    } catch (_) {}
+  }
+
   @override
   Widget build(BuildContext context) {
-    final p = Palette.of(context);
+    final state = widget.state;
+    if (state == null) return _build(context, null);
+    return ListenableBuilder(listenable: state, builder: (c, _) => _build(c, state.liveOf(widget.start.id)));
+  }
+
+  Widget _build(BuildContext context, LiveOk? live) {
     final s = widget.start;
     final doc = _doc;
     final cat = _category;
@@ -303,9 +329,27 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
     final seg = tab == totalTab ? null : cat?.segmentOf(tab);
     final hasField = s.field.isNotEmpty;
     final load = _load;
-    final view = load == null
+    var view = load == null
         ? const ProtocolView('Загружаем протокол…', ProtocolTone.quiet)
-        : protocolView(load, category: cat, tab: tab, hasField: hasField, built: doc?.built);
+        : protocolView(load, category: cat, tab: tab, hasField: hasField, built: doc?.built, fieldCount: s.field.length);
+    // В файле строк нет, а табло уже показало итоги этого старта — показываем их, пока файл не обновится.
+    final onBoard = live != null &&
+        live.rows.isNotEmpty &&
+        view.noFile &&
+        tab == s.seg &&
+        (cat == null || (cat.kind == s.kind && cat.level == s.level));
+    if (onBoard) {
+      final n = live.rows.length;
+      final of = s.field.length >= n ? ' · $n из ${s.field.length}' : '';
+      view = ProtocolView(
+        'По табло$of · элементов и оценок судей пока нет',
+        live.provisional ? ProtocolTone.live : ProtocolTone.quiet,
+        rows: [
+          for (var i = 0; i < live.rows.length; i++)
+            ProtocolRow(i: i + 1, place: live.rows[i].place, name: live.rows[i].name, nation: live.rows[i].nation, points: live.rows[i].points),
+        ],
+      );
+    }
     final cats = _cats;
     final tabs = cat == null
         ? const <(String, String)>[]
@@ -313,7 +357,6 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
             for (final x in cat.segments) (x.code, _tabLabel[x.code] ?? x.name),
             (totalTab, 'Итог'),
           ];
-    final title = tab == totalTab ? 'итог' : (segNames[tab] ?? (seg?.name ?? tab).toLowerCase());
     final ours = {for (final o in s.ours) personKey(o.name)};
     final width = MediaQuery.sizeOf(context).width;
     final gutter = width < 360 ? 12.0 : 16.0;
@@ -322,6 +365,12 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
       appBar: AppBar(
         title: Text(s.tournament, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 17)),
         actions: [
+          if (originalUrl(doc, seg, s).isNotEmpty)
+            IconButton(
+              tooltip: 'Оригинал протокола',
+              icon: const Icon(CupertinoIcons.globe),
+              onPressed: () => _openOrig(originalUrl(doc, seg, s)),
+            ),
           IconButton(
             tooltip: 'Обновить',
             icon: const Icon(Icons.refresh),
@@ -336,10 +385,6 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
           child: ListView(
             padding: EdgeInsets.fromLTRB(gutter, 4, gutter, 28 + MediaQuery.paddingOf(context).bottom),
             children: [
-              if (cat != null) Eyebrow(categoryLabel(cat), maxLines: 2),
-              const SizedBox(height: 6),
-              Text(title, style: display(p, 30, italic: true)),
-              const SizedBox(height: 14),
               if (cats.length == 2)
                 Segmented<String>(
                   items: [for (final c in cats) ('${c.kind}|${c.level}', categoryLabel(c))],
@@ -428,15 +473,9 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
                   neutral: true,
                   icon: CupertinoIcons.doc_text,
                   label: 'Оценки судей',
-                  onTap: () => openOriginal(context, seg.judges!),
+                  onTap: () => _openOrig(seg.judges!),
                 ),
               ],
-              const SizedBox(height: 14),
-              SheetButton(
-                filled: true,
-                label: 'Оригинал протокола',
-                onTap: () => openOriginal(context, originalUrl(doc, seg, s)),
-              ),
             ],
           ),
         ),
@@ -561,7 +600,7 @@ class _ResultRow extends StatelessWidget {
         for (var i = 0; i < parts.length && i < cols.length; i++) '${colLabel(cols[i])} ${parts[i] ?? '—'}',
     ];
     final body = Container(
-      color: ours ? p.frost : null,
+      decoration: ours ? BoxDecoration(color: p.frost, border: Border(left: BorderSide(color: p.accent, width: 3))) : null,
       padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -576,11 +615,11 @@ class _ResultRow extends StatelessWidget {
                   displayName(row.name),
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.25, color: p.ink),
                 ),
-                if (sub.isNotEmpty || ours)
+                if (sub.isNotEmpty)
                   Padding(
                     padding: const EdgeInsets.only(top: 3),
                     child: Text(
-                      [if (ours) 'отслеживаемая', ...sub].join(' · '),
+                      sub.join(' · '),
                       style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w500, color: p.ink2, height: 1.3),
                     ),
                   ),
@@ -624,7 +663,7 @@ class _FieldRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     return Container(
-      color: ours ? p.frost : null,
+      decoration: ours ? BoxDecoration(color: p.frost, border: Border(left: BorderSide(color: p.accent, width: 3))) : null,
       padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
       child: Row(
         children: [
@@ -633,11 +672,6 @@ class _FieldRow extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(displayName(name), style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.25, color: p.ink)),
-                if (ours)
-                  Padding(
-                    padding: const EdgeInsets.only(top: 3),
-                    child: Text('отслеживаемая', style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w500, color: p.ink2)),
-                  ),
               ],
             ),
           ),

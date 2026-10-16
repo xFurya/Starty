@@ -81,20 +81,22 @@ void main() {
     await t.tap(find.text('open'));
     await t.pumpAndSettle();
 
-    await t.tap(find.text('Живые места'));
+    await t.tap(find.byTooltip('Живые места'));
     await t.pumpAndSettle();
     await t.tap(find.text('С опозданием').last);
     await t.pumpAndSettle();
     expect(s.liveOverrides[st.id], liveDelayed);
     expect(Prefs.liveOverrides[st.id], liveDelayed);
 
-    await t.tap(find.text('Живые места'));
+    await t.tap(find.byTooltip('Живые места'));
     await t.pumpAndSettle();
     await t.tap(find.text('Как в настройках').last);
     await t.pumpAndSettle();
     expect(s.liveOverrides.containsKey(st.id), isFalse);
     expect(Prefs.liveOverrides.containsKey(st.id), isFalse);
-    expect(find.textContaining('как в настройках'), findsOneWidget);
+    // чип показывает действующий режим одним словом, отдельной строки нет
+    expect(find.text('Моментально'), findsOneWidget);
+    expect(find.text('Живые места'), findsNothing);
   });
 
   // Ширины 360/390/430 и масштаб 1.0/1.3: без переполнения ни в настройках, ни в карточке.
@@ -119,7 +121,14 @@ void main() {
         ));
         await t.tap(find.text('open'));
         await t.pumpAndSettle();
-        expect(find.text('Живые места'), findsOneWidget);
+        expect(find.byTooltip('Живые места'), findsOneWidget);
+        expect(find.text('Живые места'), findsNothing);
+        expect(t.takeException(), isNull);
+        await t.ensureVisible(find.byTooltip('Живые места'));
+        await t.pumpAndSettle();
+        await t.tap(find.byTooltip('Живые места'));
+        await t.pumpAndSettle();
+        expect(find.text('Как в настройках'), findsOneWidget);
         expect(t.takeException(), isNull);
       });
     }

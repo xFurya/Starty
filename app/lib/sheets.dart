@@ -67,6 +67,8 @@ class _StartSheet extends StatelessWidget {
     final date = '${cap(weekdays[d.weekday - 1])}, ${d.day}\u00A0${months[d.month - 1]}';
     final narrow = MediaQuery.sizeOf(context).width < 360;
     final notify = _notifyRow(context, t);
+    // живые места: режим для этого старта, если у него есть табло и файл протокола — компактный чип
+    final liveChip = s.live != null && s.proto != null ? _LiveChip(state: state, start: s) : null;
     return ConstrainedBox(
       constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * .92),
       child: SheetScroll(
@@ -124,6 +126,7 @@ class _StartSheet extends StatelessWidget {
                         softWrap: false,
                         style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: p.ink2, fontFeatures: tnum),
                       ),
+                    ?liveChip,
                   ],
                 ),
               )
@@ -176,6 +179,8 @@ class _StartSheet extends StatelessWidget {
                   ],
                 ),
               ),
+            // чип режима — под временем, слева, во всю ширину не растягивается
+            if (liveChip != null && !past) Padding(padding: const EdgeInsets.fromLTRB(22, 10, 22, 0), child: Align(alignment: Alignment.centerLeft, child: liveChip)),
             if (notify != null) Padding(padding: const EdgeInsets.only(top: 18), child: notify),
             // во время старта — места по ходу, с табло; после — итог
             if (past) ..._results(context) else ...[if (s.podium.isNotEmpty) _podium(context), ..._oursAhead(context, t)],
@@ -187,14 +192,8 @@ class _StartSheet extends StatelessWidget {
                   neutral: true,
                   icon: CupertinoIcons.doc_text,
                   label: 'Протокол',
-                  onTap: () => openProtocol(context, s),
+                  onTap: () => openProtocol(context, s, state: state),
                 ),
-              ),
-            // живые места на ленте: режим для этого старта, если у него есть табло и файл протокола
-            if (s.live != null && s.proto != null)
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 10, 16, 0),
-                child: _LiveOverrideRow(state: state, start: s),
               ),
             _section(
               context,
@@ -302,7 +301,7 @@ class _StartSheet extends StatelessWidget {
     ];
   }
 
-  /// Тройка сегмента. Пока протокол не утверждён — с пометкой «промежуточные».
+  /// Тройка сегмента. Пока сегмент идёт — с пометкой «идёт».
   Widget _podium(BuildContext context) {
     final top3 = ([...s.podium]..sort((a, b) => a.place.compareTo(b.place))).where((x) => x.place <= 3).toList();
     return _section(
@@ -1242,12 +1241,13 @@ class SearchBox extends StatelessWidget {
 /// Подпись режима живых мест для строки и листа.
 String liveModeLabel(String mode) => mode == liveDelayed ? 'С опозданием' : 'Моментально';
 
-/// Строка живых мест в карточке старта: выбор на месте, меню из трёх пунктов.
+/// Живые места в карточке старта: маленький чип рядом со временем. Молния — табло раз в минуту,
+/// часы — файл протокола. По нажатию — меню из трёх пунктов.
 /// «Как в настройках» — переопределения для старта нет (Prefs.live.over без его id).
-class _LiveOverrideRow extends StatelessWidget {
+class _LiveChip extends StatelessWidget {
   final AppState state;
   final Start start;
-  const _LiveOverrideRow({required this.state, required this.start});
+  const _LiveChip({required this.state, required this.start});
 
   static const _asSettings = '';
 
@@ -1258,6 +1258,7 @@ class _LiveOverrideRow extends StatelessWidget {
     final mode = state.liveModeOf(start);
     return PopupMenuButton<String>(
       tooltip: 'Живые места',
+      padding: EdgeInsets.zero,
       position: PopupMenuPosition.under,
       initialValue: own ?? _asSettings,
       onSelected: (v) => state.setLiveOverride(start.id, v == _asSettings ? null : v),
@@ -1269,33 +1270,26 @@ class _LiveOverrideRow extends StatelessWidget {
           ),
       ],
       child: Container(
-        constraints: const BoxConstraints(minHeight: 56),
-        padding: const EdgeInsets.fromLTRB(14, 9, 12, 9),
+        constraints: const BoxConstraints(minHeight: 36),
+        padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
         decoration: BoxDecoration(
           color: p.plate,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(18),
           border: Border.all(color: p.plateLine),
         ),
         child: Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(CupertinoIcons.timer, size: 20, color: p.ink2),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text('Живые места', style: TextStyle(fontSize: 15.5, fontWeight: FontWeight.w600, color: p.ink, height: 1.25)),
-                  const SizedBox(height: 2),
-                  Text(
-                    '${liveModeLabel(mode)} · ${own == null ? 'как в настройках' : 'для этого старта'}',
-                    style: TextStyle(fontSize: 13, color: p.ink2, height: 1.3, fontFeatures: tnum),
-                  ),
-                ],
+            Icon(mode == liveDelayed ? CupertinoIcons.clock : CupertinoIcons.bolt_fill, size: 15, color: p.ink2),
+            const SizedBox(width: 6),
+            Flexible(
+              child: Text(
+                liveModeLabel(mode),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: p.ink, height: 1.2),
               ),
             ),
-            const SizedBox(width: 8),
-            Icon(CupertinoIcons.chevron_up_chevron_down, size: 16, color: p.ink2),
           ],
         ),
       ),

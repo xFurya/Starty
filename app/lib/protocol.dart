@@ -1,5 +1,5 @@
 // Маршрут протокола: у старта есть файл протокола — наш экран (на всех платформах, включая Windows).
-// Файла нет — как раньше: встроенный браузер на мобильных, браузер системы на Windows и в вебе.
+// Файла нет — сразу оригинал: встроенный браузер на мобильных, браузер системы на Windows и в вебе.
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -7,20 +7,28 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 import 'data.dart';
 import 'protocol_screen.dart';
+import 'state.dart' show AppState;
 
-Future<void> openProtocol(BuildContext context, Start s) async {
+Future<void> openProtocol(BuildContext context, Start s, {AppState? state}) async {
   if (s.proto != null) {
-    await Navigator.of(context).push(MaterialPageRoute(builder: (_) => ProtocolScreen(start: s)));
+    await Navigator.of(context).push(MaterialPageRoute(builder: (_) => ProtocolScreen(start: s, state: state)));
     return;
   }
-  final url = s.src;
+  await openOriginal(context, s.src, s.title);
+}
+
+/// Оригинал протокола на сайте: во встроенном браузере приложения; на Windows и в вебе встроенного
+/// у Flutter нет — браузер системы. [replace] — экран протокола заменяется оригиналом (файла нет).
+Future<void> openOriginal(BuildContext context, String url, String title, {bool replace = false}) async {
   if (url.isEmpty) return;
-  // на Windows встроенного браузера у Flutter нет — протокол открывается в браузере системы
   if (kIsWeb || defaultTargetPlatform == TargetPlatform.windows) {
     await launchUrl(Uri.parse(url), webOnlyWindowName: '_blank', mode: LaunchMode.externalApplication);
+    if (replace && context.mounted) Navigator.of(context).maybePop();
     return;
   }
-  await Navigator.of(context).push(MaterialPageRoute(builder: (_) => ProtocolPage(url: url, title: s.title)));
+  final route = MaterialPageRoute<void>(builder: (_) => ProtocolPage(url: url, title: title));
+  final nav = Navigator.of(context);
+  await (replace ? nav.pushReplacement(route) : nav.push(route));
 }
 class ProtocolPage extends StatefulWidget {
   final String url, title;

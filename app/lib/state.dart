@@ -328,6 +328,14 @@ class AppState extends ChangeNotifier {
     data = _apply(raw);
   }
 
+  /// Только для тестов: итоги старта, как после опроса табло.
+  @visibleForTesting
+  void adoptLive(String startId, LiveOk l) {
+    _live[startId] = l;
+    if (_raw != null) data = _apply(_raw!);
+    notifyListeners();
+  }
+
   // уведомления
   NotifyRules rules = NotifyRules.fromJson(Prefs.rulesJson);
   Set<String> forcedOn = Prefs.forcedOn;
@@ -539,6 +547,9 @@ class AppState extends ChangeNotifier {
 
   /// Итоги, прочитанные с табло или из файла протокола, пока сервер их не догнал: id → итог.
   final Map<String, LiveOk> _live = {};
+
+  /// Свежие итоги старта с табло (или из файла в режиме «с опозданием»); null — опроса ещё не было.
+  LiveOk? liveOf(String startId) => _live[startId];
 
   /// Когда в последний раз читали файл протокола для старта (режим «с опозданием» — не чаще раза в 5 минут).
   final Map<String, DateTime> _fileAt = {};

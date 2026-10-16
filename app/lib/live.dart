@@ -30,9 +30,13 @@ final class LiveOk extends LiveResult {
   final Map<String, int> places;
   final List<Placing>? total;
   final Map<String, int> finals;
+
+  /// Все строки сегмента (место, имя, страна, баллы), не только тройка.
+  final List<Placing> rows;
   const LiveOk({
     required this.podium,
     required this.provisional,
+    this.rows = const [],
     this.places = const {},
     this.total,
     this.finals = const {},
@@ -254,7 +258,8 @@ LiveResult liveFromProtocol(Start s, ProtocolDoc doc) {
       finals = {for (final r in trows) norm(displayOf(r.name)): r.place!};
     }
   }
-  return LiveOk(podium: podium, provisional: !done, places: places, total: total, finals: finals);
+  final all = [for (final r in rows) Placing(r.place!, displayOf(r.name), r.nation, r.points ?? '')];
+  return LiveOk(podium: podium, provisional: !done, rows: all, places: places, total: total, finals: finals);
 }
 
 class Live {
@@ -304,6 +309,7 @@ class Live {
         }
       }
     }
-    return LiveOk(podium: podium, provisional: !done, places: places, total: total, finals: finals);
+    final all = [for (final r in rows) Placing(r.place, ru(r.name), r.nation, r.points)];
+    return LiveOk(podium: podium, provisional: !done, rows: all, places: places, total: total, finals: finals);
   }
 }

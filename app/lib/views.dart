@@ -865,7 +865,7 @@ class LiveCard extends StatelessWidget {
                         color: Colors.white.withValues(alpha: .16),
                       ),
                       Eyebrow(
-                        s.provisional ? 'Лидеры · промежуточные' : 'Тройка',
+                        leadersLabel(s),
                         color: Colors.white.withValues(alpha: .7),
                       ),
                       const SizedBox(height: 6),
@@ -906,9 +906,25 @@ class LiveCard extends StatelessWidget {
 /// Чья тройка: итог турнира, когда вид закончен, иначе — тройка сегмента.
 (String, List<Placing>) topOf(Start s) => s.total.isNotEmpty ? ('Итог турнира', s.total) : (podiumLabel(s), s.podium);
 
-/// «Тройка · ПП» или, пока протокол не утверждён, «Тройка · ПП · промежуточные».
-String podiumLabel(Start s) =>
-    'Тройка · ${s.seg.isEmpty ? 'сегмент' : s.seg}${s.provisional && s.podium.isNotEmpty ? ' · промежуточные' : ''}';
+/// Пока сегмент идёт и судейских оценок нет: «идёт» и, если известно, «9 из 14» выступивших.
+/// У завершённого сегмента пометки нет.
+String runningNote(Start s) {
+  if (!s.provisional || s.podium.isEmpty || !s.liveAt(now())) return '';
+  final done = s.field.where((x) => x.place != null).length;
+  return done > 0 && s.field.length >= done ? 'идёт · $done из ${s.field.length}' : 'идёт';
+}
+
+/// «Лидеры · идёт · 9 из 14» пока сегмент идёт, иначе «Тройка».
+String leadersLabel(Start s) {
+  final note = runningNote(s);
+  return note.isEmpty ? 'Тройка' : 'Лидеры · $note';
+}
+
+/// «Тройка · ПП»; пока сегмент идёт — «Тройка · ПП · идёт · 9 из 14».
+String podiumLabel(Start s) {
+  final note = runningNote(s);
+  return 'Тройка · ${s.seg.isEmpty ? 'сегмент' : s.seg}${note.isEmpty ? '' : ' · $note'}';
+}
 
 /// Самое заметное из примечательного — одной строкой в ленте.
 Fact? topFact(Start s) {
