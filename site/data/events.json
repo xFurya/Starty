@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-16T14:03:40+03:00",
- "checked": "2026-10-16T11:23:02.646563+00:00",
+ "generated": "2026-10-16T14:18:14+03:00",
+ "checked": "2026-10-16T14:18:14+03:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -26026,6 +26026,20 @@
      "place": 1
     },
     {
+     "name": "Pablo Garcia",
+     "nation": "ESP",
+     "no": 3,
+     "warmup": 1,
+     "place": 3
+    },
+    {
+     "name": "Matvii Yefymenko",
+     "nation": "POL",
+     "no": 4,
+     "warmup": 1,
+     "place": 4
+    },
+    {
      "name": "Aleksei Vlasenko",
      "nation": "HUN"
     },
@@ -26086,22 +26100,12 @@
      "nation": "FIN"
     },
     {
-     "name": "Matvii Yefymenko",
-     "nation": "POL",
-     "place": 4
-    },
-    {
      "name": "Nikita Krivosheyev",
      "nation": "KAZ"
     },
     {
      "name": "Nikita Starostin",
      "nation": "GER"
-    },
-    {
-     "name": "Pablo Garcia",
-     "nation": "ESP",
-     "place": 3
     },
     {
      "name": "Patrick Blackwell",
@@ -27467,7 +27471,7 @@
    "seg": "КП",
    "title": "Гран-при России «Рапсодия льда» — мужчины КП",
    "start": "2026-10-17T15:15:00+03:00",
-   "end": "2026-10-17T16:33:00+03:00",
+   "end": "2026-10-17T15:02:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -27504,77 +27508,77 @@
     {
      "name": "Семен Соловьев",
      "nation": "СПБ",
-     "time": "15:22",
+     "time": "13:43",
      "no": 1,
      "warmup": 1
     },
     {
      "name": "Константин Сафонов",
      "nation": "ТУЛ",
-     "time": "15:33",
+     "time": "13:56",
      "no": 3,
      "warmup": 1
     },
     {
      "name": "Даниил Самсонов",
      "nation": "МОС",
-     "time": "15:39",
+     "time": "14:03",
      "no": 4,
      "warmup": 1
     },
     {
      "name": "Вячеслав Проценко",
      "nation": "СПБ",
-     "time": "15:45",
+     "time": "14:09",
      "no": 5,
-     "warmup": 1
-    },
-    {
-     "name": "Артём Ковалёв",
-     "nation": "МОБ",
-     "time": "15:50",
-     "no": 6,
      "warmup": 1
     },
     {
      "name": "Юрий Сидоров",
      "nation": "ОРЕ",
-     "time": "15:56",
+     "time": "14:16",
      "no": 2,
      "warmup": 1
     },
     {
+     "name": "Артём Ковалёв",
+     "nation": "МОБ",
+     "time": "14:22",
+     "no": 6,
+     "warmup": 2
+    },
+    {
      "name": "Иван Конихин",
      "nation": "МОС",
-     "time": "16:04",
+     "time": "14:29",
      "no": 7,
      "warmup": 2
     },
     {
      "name": "Роман Савосин",
      "nation": "МОС",
-     "time": "16:09",
+     "time": "14:35",
      "no": 8,
      "warmup": 2
     },
     {
      "name": "Матвей Ветлугин",
      "nation": "СПБ",
-     "time": "16:15",
+     "time": "14:42",
      "no": 9,
      "warmup": 2
     },
     {
      "name": "Андрей Мозалёв",
      "nation": "МОС",
-     "time": "16:21",
+     "time": "14:48",
      "no": 10,
      "warmup": 2
     },
     {
      "name": "Евгений Семененко",
      "nation": "СПБ",
-     "time": "16:26",
+     "time": "14:55",
      "no": 11,
      "warmup": 2
     }
@@ -52730,6 +52734,7 @@
   "Jiaying Ellyse Johnson": "photos/dd1aff4e1e36450d.jpg",
   "Nikita Sheiko": "photos/05ffa7c6449e95fd.jpg",
   "Nico Steffen": "photos/574fc1115135ba31.jpg",
+  "Pablo Garcia": "photos/9c16a5ed24aec043.jpg",
   "Милана Кузьмина": "photos/782e441e3698299c.jpg",
   "Дмитрий Студеникин": "photos/c312621d8532ec81.jpg",
   "Василиса Григорьева": "photos/e04df5486381c84e.jpg",
@@ -53770,7 +53775,6 @@
   "Gage Brown": "photos/6e33b2322d37516a.jpg",
   "Oona Ounasvuori": "photos/6876a97a62ef1011.jpg",
   "Oscar Oliver": "photos/c1ccade99ac76db0.jpg",
-  "Pablo Garcia": "photos/9c16a5ed24aec043.jpg",
   "Paola Jurisic": "photos/a9a3b72b393ca55a.jpg",
   "Paolo Borromeo": "photos/c03edb6d1918d98e.jpg",
   "Pasuree Marcella Tatirat": "photos/80a1ab545a159c29.jpg",
