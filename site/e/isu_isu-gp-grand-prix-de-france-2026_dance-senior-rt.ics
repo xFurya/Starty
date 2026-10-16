@@ -14,11 +14,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-grand-prix-de-france-2026:dance-senior-rt@starty
-DTSTAMP:20261016T111814Z
+DTSTAMP:20261016T122958Z
 DTSTART;TZID=Europe/Moscow:20261023T190000
 DTEND;TZID=Europe/Moscow:20261023T201500
 SUMMARY:GP de France — танцы РТ
-DESCRIPTION:Начало: 19:00 МСК
+DESCRIPTION:Начало: 19:00 МСК\nТрансляция: Okko
 LOCATION:Angers\, France
 URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-grand-prix-de-france-2026
  :dance-senior-rt

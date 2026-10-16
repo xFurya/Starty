@@ -14,11 +14,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-cup-of-china-2026:dance-senior-rt@starty
-DTSTAMP:20261016T111814Z
+DTSTAMP:20261016T122958Z
 DTSTART;TZID=Europe/Moscow:20261106T094500
 DTEND;TZID=Europe/Moscow:20261106T110000
 SUMMARY:GP Cup of China — танцы РТ
-DESCRIPTION:Начало: 09:45 МСК
+DESCRIPTION:Начало: 09:45 МСК\nТрансляция: Okko
 LOCATION:Shenzhen\, China
 URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:dance-s
  enior-rt
