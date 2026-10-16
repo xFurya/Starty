@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16T18:17:40+03:00",
- "checked": "2026-10-16T18:17:40+03:00",
+ "checked": "2026-10-16T15:35:19.716560+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26476,31 +26476,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Olivia Smart / Tim Dieck",
+     "nation": "ESP",
+     "points": "79.42"
+    },
+    {
+     "place": 2,
      "name": "Jamie Fournier / Everest Zhu",
      "nation": "CAN",
      "points": "66.14"
     },
     {
-     "place": 2,
-     "name": "Chloe Nguyen / Brendan Giang",
-     "nation": "CAN",
-     "points": "56.47"
-    },
-    {
      "place": 3,
-     "name": "Anita Straub / Andreas Straub",
-     "nation": "AUT",
-     "points": "55.41"
+     "name": "Charise Matthaei / Max Liebers",
+     "nation": "GER",
+     "points": "64.90"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Jamie Fournier / Everest Zhu — 66.14\n2. Chloe Nguyen / Brendan Giang — 56.47\n3. Anita Straub / Andreas Straub — 55.41\n\nРоссияне:\n• Милана Кузьмина / Дмитрий Студеникин — 19:04\n• Василиса Григорьева / Евгений Артющенко — 20:48\n\nНачало: 17:45 МСК",
+   "desc": "Промежуточные итоги:\n1. Olivia Smart / Tim Dieck — 79.42\n2. Jamie Fournier / Everest Zhu — 66.14\n3. Charise Matthaei / Max Liebers — 64.90\n\nРоссияне:\n• Милана Кузьмина / Дмитрий Студеникин — 19:04\n• Василиса Григорьева / Евгений Артющенко — 20:48\n\nНачало: 17:45 МСК",
    "field": [
     {
      "name": "Gina Zehnder / Beda Leon Sieber",
      "nation": "SUI",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 6,
      "time": "17:50"
     },
     {
@@ -26508,7 +26508,7 @@
      "nation": "CAN",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 4,
      "time": "17:56"
     },
     {
@@ -26516,7 +26516,7 @@
      "nation": "AUT",
      "no": 3,
      "warmup": 1,
-     "place": 3,
+     "place": 5,
      "time": "18:02"
     },
     {
@@ -26524,7 +26524,7 @@
      "nation": "CAN",
      "no": 4,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "time": "18:08"
     },
     {
@@ -26546,7 +26546,8 @@
      "nation": "GER",
      "time": "18:26",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3
     },
     {
      "name": "Emese Csiszer / Mark Shapiro",
