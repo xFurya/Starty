@@ -54,7 +54,80 @@ _MODEL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "face_yunet.on
 
 
 class Unsure(Exception):
-    """На снимке не понять, кто это: лиц несколько или лицо слишком мелкое."""
+    """На снимке не понять, кто это, или это не портрет: лиц несколько, лицо мелкое, головной убор,
+    размытость. Текст — причина для photo_skip."""
+
+
+# Версия правил портретного контроля (QUALITY_V в записи книги: снимок уже проверен этими правилами)
+QUALITY_V = "3"
+LAP_MIN = 80.0          # дисперсия Лапласиана миниатюры 256 px: ниже — размыто
+FACE_MIN = 0.18         # ширина лица / ширина кадра после кадрирования
+FACE_MAX_CY = 2 / 3     # центр лица не ниже двух третей кадра
+EYES_MIN = 0.25         # расстояние между глазами / ширина лица: меньше — профиль или поворот
+FOREHEAD_MIN = 0.05     # доля кожи на лбу: меньше — лоб закрыт (шапка, капюшон, чёлка до бровей)
+HAT_WIDTH = 1.6         # светлая однотонная полоса над лицом шире 1.6 ширин лица и не от края до края — шапка
+
+
+def portrait_problem(im):
+    """Причина отказа (строка) или None. im — PIL RGB, уже вырезанный кадр (миниатюра).
+    Нет OpenCV — проверить нечем, отказа нет (но и новых снимков из Викисклада без неё не берём)."""
+    try:
+        import cv2
+        import numpy as np
+    except ImportError:
+        return None
+    arr = cv2.cvtColor(np.asarray(im.convert("RGB").resize((SIZE, SIZE))), cv2.COLOR_RGB2BGR)
+    try:
+        det = cv2.FaceDetectorYN.create(_MODEL, "", (SIZE, SIZE), 0.75)
+        _, faces = det.detect(arr)
+    except cv2.error:
+        return None
+    if faces is None or not len(faces):
+        return "лица нет"
+    faces = sorted(faces, key=lambda f: f[2] * f[3] * f[14], reverse=True)
+    f = faces[0]
+    if len(faces) > 1 and faces[1][2] * faces[1][3] >= 0.2 * f[2] * f[3]:
+        return "лиц несколько"
+    x, y, w, h = (float(v) for v in f[:4])
+    if w / SIZE < FACE_MIN:
+        return "лицо мелкое в кадре"
+    if (y + h / 2) / SIZE > FACE_MAX_CY:
+        return "лицо в нижней трети кадра"
+    if abs(f[6] - f[4]) / w < EYES_MIN:
+        return "не анфас"
+    gray = cv2.cvtColor(arr, cv2.COLOR_BGR2GRAY)
+    if cv2.Laplacian(gray, cv2.CV_64F).var() < LAP_MIN:
+        return "размыто"
+    # лоб: полоса над линией глаз между глазами
+    eye_y = (f[5] + f[7]) / 2
+    dist = abs(f[6] - f[4])
+    ya, yb = int(max(0, eye_y - 1.0 * dist)), int(max(1, eye_y - 0.35 * dist))
+    xa, xb = int(max(0, min(f[4], f[6]))), int(min(SIZE, max(f[4], f[6])))
+    strip = cv2.cvtColor(arr, cv2.COLOR_BGR2YCrCb)[ya:yb, xa:xb]
+    skin = 1.0
+    if strip.size:
+        skin = float(((strip[..., 1] > 133) & (strip[..., 1] < 180) & (strip[..., 2] > 77) & (strip[..., 2] < 135)).mean())
+    # светлая нейтральная (мех, белая шапка) полоса над лицом
+    hsv = cv2.cvtColor(arr, cv2.COLOR_BGR2HSV)
+    r0, r1 = int(max(0, y - 0.35 * h)), int(max(1, y - 0.05 * h))
+    band = hsv[r0:r1]
+    light = ((band[..., 2] > 170) & (band[..., 1] < 70)).mean(0) > 0.5 if band.size else np.zeros(SIZE, bool)
+    best = cur = start = best_start = 0
+    for i, v in enumerate(light):
+        if v:
+            if cur == 0:
+                start = i
+            cur += 1
+            if cur > best:
+                best, best_start = cur, start
+        else:
+            cur = 0
+    spans_edge = best_start == 0 or best_start + best >= SIZE - 1
+    if skin < 0.25 and best / w > HAT_WIDTH and not spans_edge:
+        return "головной убор"
+    if skin < FOREHEAD_MIN:
+        return "лоб закрыт"
+    return None
 
 
 def _face(im, strict=False):
@@ -116,6 +189,10 @@ def _pil(raw, dest, strict=False):
     face = _face(im, strict)
     left, top, side = face_box(*im.size, face) if face else _box(*im.size)
     im = im.crop((left, top, left + side, top + side)).resize((SIZE, SIZE), Image.LANCZOS)
+    if strict:
+        why = portrait_problem(im)
+        if why:
+            raise Unsure(why)
     im.save(dest, "JPEG", quality=84, optimize=True, progressive=True)
     return True
 
@@ -165,6 +242,9 @@ def source_url(url):
     return url.replace("width=500", "width=960") if _wiki(url) else url
 
 
+REASONS = {}  # адрес → причина отбраковки в этом сборе (для photo_skip)
+
+
 def make2(site, url):
     """(путь миниатюры относительно сайта или None, итог): ok; unsure — на снимке не понять, кто это
     (только Викисклад), такой адрес больше не пробуем; fail — сеть, битый файл или нечем обработать,
@@ -188,8 +268,9 @@ def make2(site, url):
             if os.path.getsize(tmp) > 800:  # пустой или обрезанный файл — не фото
                 os.replace(tmp, dest)
                 return rel, "ok"
-    except Unsure:
+    except Unsure as e:
         status = "unsure"
+        REASONS[url] = str(e)
     except Exception:
         pass
     if os.path.exists(tmp):
@@ -251,22 +332,52 @@ def save_book(path, book):
 
 
 SICK_AFTER = 6  # столько отказов подряд — сайт на этот сбор откладываем
+WIKI_PRIO = 3  # с этого приоритета — Викиданные/Викисклад: строгий контроль личности и портрета
 BOOT_PRIO = 3  # приоритет фото, о котором память ничего не знает
-SKIP_V = "2|"  # версия правил отбраковки: при её смене старые записи пересматриваются
+SKIP_V = "3|"  # версия правил отбраковки; «2|» — прежние (лиц несколько, мелкое) — всё ещё действуют
+SKIP_OLD = ("2|",)
+WHY = " # "  # адрес и причина в одной строке: «3|адрес # причина»
 
 
-def load_skip(path):
+def _skip_rows(path):
     try:
         with open(path, encoding="utf-8") as f:
             raw = json.load(f)
     except (OSError, ValueError):
-        return set()
-    return {x[len(SKIP_V):] for x in raw if isinstance(x, str) and x.startswith(SKIP_V)}
+        return {}
+    out = {}
+    for x in raw if isinstance(raw, list) else ():
+        if isinstance(x, str) and x.startswith((SKIP_V,) + SKIP_OLD):
+            url, _, why = x[len(SKIP_V):].partition(WHY)
+            out[url] = why
+    return out
 
 
-def save_skip(path, urls):
+def load_skip(path):
+    return set(_skip_rows(path))
+
+
+def save_skip(path, urls, reasons=None):
+    """urls — адреса (или «person:<ключ>» — человек без подтверждённой личности); reasons — {адрес: причина}."""
+    old = _skip_rows(path)
+    reasons = reasons or {}
+    rows = []
+    for u in urls:
+        why = reasons.get(u) or old.get(u)
+        rows.append(SKIP_V + u + (WHY + why if why else ""))
     with open(path, "w", encoding="utf-8") as f:
-        json.dump(sorted(SKIP_V + u for u in urls), f, ensure_ascii=False, indent=0)
+        json.dump(sorted(rows), f, ensure_ascii=False, indent=0)
+
+
+def thumb_problem(site, rel):
+    """Причина отказа готовой миниатюры или None (файл не открылся — тоже None: это сбой, не снимок)."""
+    try:
+        from PIL import Image
+        with Image.open(os.path.join(site, rel)) as im:
+            im.load()
+            return portrait_problem(im)
+    except Exception:
+        return None
 
 
 def _alive(site, f):
@@ -321,10 +432,16 @@ class Sources:
         return sorted(out, key=lambda t: t[0])
 
 
-def collect(site, want, raw, prev_photos, names, book_path, skip_path, log=print, is_image=None):
+def collect(site, want, raw, prev_photos, names, book_path, skip_path, log=print, is_image=None, wiki_ok=True):
     """{«Имя Фамилия»: путь миниатюры или адрес} для всех из want.
 
     raw — [(имя из источника, адрес, приоритет)], чем меньше приоритет, тем надёжнее источник.
+    Не из личного профиля ISU и не из сборной (приоритет ≥ 3, Викисклад): запись книги держится,
+    только если её адрес есть среди подтверждённых личностью (people.wikidata_photos) и миниатюра
+    прошла портретный контроль текущей версии (поле q). Иначе запись убирается, адрес — в photo_skip
+    с причиной; файл остаётся до prune следующего сбора. wiki_ok=False (Викиданные не ответили) —
+    подтверждённых нет по сбою, а не по существу: ничего не убираем.
+
     Найденное не теряется: у кого фото уже есть (в data/photos.json, на сайте, в прошлом
     events.json), оно остаётся, пока не найдётся снимок из более надёжного источника и его миниатюра
     не получится целиком. Сеть не ответила — прежнее фото остаётся."""
@@ -334,7 +451,8 @@ def collect(site, want, raw, prev_photos, names, book_path, skip_path, log=print
     src = Sources(raw, names, want)
     checked = {}
     out = {}
-    stats = {"kept": 0, "new": 0, "upgraded": 0, "unsure": 0, "net": 0}
+    stats = {"kept": 0, "new": 0, "upgraded": 0, "unsure": 0, "net": 0, "dropped": 0}
+    reasons = {}
 
     sick = {}  # сайт → сколько подряд запросов не ответили
 
@@ -364,10 +482,27 @@ def collect(site, want, raw, prev_photos, names, book_path, skip_path, log=print
             book.pop(k, None)  # файл пропал с диска: показывать нечего, ищем заново
             entry = None
         prev = prev_photos.get(n)
-        if not entry and prev and _alive(site, prev):
+        if not entry and prev and _alive(site, prev) and f"person:{k}" not in skip:
             # было в прошлом сборе, а в памяти нет: берём как есть; источник неизвестен — считаем
             # ISU-уровнем, Викиданные его не перебьют
             entry = {"f": prev, "u": "", "p": BOOT_PRIO, "c": CUT if not prev.startswith("http") else ""}
+        if entry and entry.get("p", 0) >= WIKI_PRIO and entry.get("q") != QUALITY_V:
+            urls = {u for _, u in src.find(n)}
+            why = None
+            if not entry.get("u") or entry["u"] not in urls:
+                if wiki_ok:
+                    why = "личность не подтверждена (нет среди проверенных по году рождения)"
+            else:
+                why = thumb_problem(site, entry["f"])
+                if not why:
+                    entry["q"] = QUALITY_V
+            if why:
+                key = entry.get("u") or f"person:{k}"
+                skip.add(key)
+                reasons[key] = why
+                book.pop(k, None)
+                entry = None
+                stats["dropped"] += 1
         got = None
         for prio, url in src.find(n):
             if url in skip:
@@ -391,6 +526,8 @@ def collect(site, want, raw, prev_photos, names, book_path, skip_path, log=print
                 break
             if status == "unsure":
                 skip.add(url)
+                if url in REASONS:
+                    reasons[url] = REASONS[url]
                 stats["unsure"] += 1
             elif not entry and not _wiki(url):
                 got = (prio, url, url)  # миниатюру не собрать — пока адрес оригинала
@@ -399,18 +536,20 @@ def collect(site, want, raw, prev_photos, names, book_path, skip_path, log=print
             stats["new" if not entry else "kept" if got[2] == entry["f"] else "upgraded"] += 1
             prio, url, rel = got
             book[k] = {"f": rel, "u": url, "p": prio, "c": "" if rel.startswith("http") else CUT}
+            if prio >= WIKI_PRIO and not rel.startswith("http"):
+                book[k]["q"] = QUALITY_V  # make2 строгий для Викисклада: правила уже применены
         elif entry:
             stats["kept"] += 1
             book[k] = entry
         if k in book:
             out[n] = book[k]["f"]
     save_book(book_path, book)
-    save_skip(skip_path, skip)
+    save_skip(skip_path, skip, reasons)
     keep = set(out.values()) | {e["f"] for e in book.values() if e.get("f")}
     gone = prune(site, keep, book_path)
     local = sum(1 for v in out.values() if not v.startswith("http"))
     log(f"  фото: {len(out)} из {len(want)}, миниатюр {local}; новых {stats['new']}, заменено на лучшее "
-        f"{stats['upgraded']}; не понять кто на снимке {stats['unsure']}"
+        f"{stats['upgraded']}; не понять кто на снимке {stats['unsure']}; убрано по новым правилам {stats['dropped']}"
         + (f"; источник не ответил {stats['net']}" if stats["net"] else "")
         + (f"; убрано лишних {gone}" if gone else ""))
     return out

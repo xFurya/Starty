@@ -31,12 +31,12 @@ class Base(unittest.TestCase):
             f.write(b"x" * 2000)
         return rel
 
-    def run_collect(self, want, raw, prev=None, names=None, is_image=lambda u: True, make=None):
+    def run_collect(self, want, raw, prev=None, names=None, is_image=lambda u: True, make=None, wiki_ok=True):
         names = names or _names(*[w for w in want if nm.is_cyr(w)])
         with mock.patch.object(ph, "make2", make or (lambda s, u: (None, "fail"))), \
                 mock.patch.object(ph, "_polite", lambda u: None):
             return ph.collect(self.site, want, raw, prev or {}, names, self.book, self.skip,
-                              log=lambda *a: None, is_image=is_image)
+                              log=lambda *a: None, is_image=is_image, wiki_ok=wiki_ok)
 
     def seed(self, name_ru, rel, prio, url="https://x/old"):
         names = _names(name_ru)
@@ -85,11 +85,22 @@ class KeepTest(Base):
         self.assertEqual(out["Ксения Синицына"], rel)
         self.assertEqual(calls, [])
 
-    def test_previous_events_json_photo_is_adopted(self):
+    def test_previous_events_json_photo_is_adopted_only_while_wikidata_is_silent(self):
+        # источник неизвестен: пока Викиданные не ответили, не трогаем
         rel = self.thumb()
-        out = self.run_collect(["Ксения Синицына"], [], prev={"Ксения Синицына": rel})
+        out = self.run_collect(["Ксения Синицына"], [], prev={"Ксения Синицына": rel}, wiki_ok=False)
         self.assertEqual(out["Ксения Синицына"], rel)
         self.assertIn(nm.key("Ксения Синицына"), ph.load_book(self.book))
+
+    def test_previous_photo_of_unknown_source_is_dropped_when_wikidata_answers(self):
+        rel = self.thumb()
+        out = self.run_collect(["Ксения Синицына"], [], prev={"Ксения Синицына": rel})
+        self.assertNotIn("Ксения Синицына", out)
+        self.assertEqual(ph.load_book(self.book), {})
+        self.assertTrue(any("личность не подтверждена" in x for x in ph._skip_rows(self.skip).values()))
+        # и заново не принимается
+        out = self.run_collect(["Ксения Синицына"], [], prev={"Ксения Синицына": rel})
+        self.assertNotIn("Ксения Синицына", out)
 
     def test_missing_file_is_found_again(self):
         names = self.seed("Ксения Синицына", "photos/gone.jpg", 2)
@@ -217,3 +228,104 @@ class NamesTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+FIX = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures")
+
+
+def _cv():
+    try:
+        import cv2  # noqa: F401
+        from PIL import Image  # noqa: F401
+    except ImportError:
+        raise unittest.SkipTest("нет OpenCV или Pillow")
+
+
+class PortraitTest(unittest.TestCase):
+    """Портретный контроль: Синицына в белой меховой шапке (Викисклад) — отказ."""
+
+    def setUp(self):
+        _cv()
+        from PIL import Image
+        self.Image = Image
+
+    def im(self, name):
+        return self.Image.open(os.path.join(FIX, name)).convert("RGB")
+
+    def test_good_portrait_passes(self):
+        self.assertIsNone(ph.portrait_problem(self.im("portrait_ok.jpg")))
+
+    def test_ushanka_is_rejected(self):
+        self.assertEqual(ph.portrait_problem(self.im("portrait_ushanka.jpg")), "головной убор")
+
+    def test_blur_is_rejected(self):
+        from PIL import ImageFilter
+        blurred = self.im("portrait_ok.jpg").filter(ImageFilter.GaussianBlur(4))
+        self.assertIn(ph.portrait_problem(blurred), ("размыто", "лица нет"))
+        mild = self.im("portrait_ok.jpg").filter(ImageFilter.GaussianBlur(1.6))
+        self.assertEqual(ph.portrait_problem(mild), "размыто")
+
+    def test_two_faces_are_rejected(self):
+        one = self.im("portrait_ok.jpg")
+        two = self.Image.new("RGB", (ph.SIZE, ph.SIZE), "white")
+        half = one.resize((128, 128))
+        two.paste(half, (0, 40))
+        two.paste(half, (128, 40))
+        self.assertIn(ph.portrait_problem(two), ("лиц несколько", "лицо мелкое в кадре"))
+
+    def test_no_face_is_rejected(self):
+        self.assertEqual(ph.portrait_problem(self.Image.new("RGB", (256, 256), "gray")), "лица нет")
+
+    def test_face_in_lower_part_is_rejected(self):
+        one = self.im("portrait_ok.jpg")
+        low = self.Image.new("RGB", (ph.SIZE, ph.SIZE), "white")
+        low.paste(one, (0, 110))
+        self.assertIsNotNone(ph.portrait_problem(low))
+
+    def test_strict_wiki_cut_goes_to_skip_with_reason(self):
+        _cv()
+        import io
+        buf = io.BytesIO()
+        self.im("portrait_ushanka.jpg").resize((600, 600)).save(buf, "JPEG")
+        with self.assertRaises(ph.Unsure) as cm:
+            with tempfile.TemporaryDirectory() as t:
+                ph._pil(buf.getvalue(), os.path.join(t, "a.jpg"), strict=True)
+        self.assertEqual(str(cm.exception), "головной убор")
+
+
+class ThumbAuditTest(Base):
+    def test_wiki_entry_with_hat_is_dropped_with_reason(self):
+        _cv()
+        import shutil
+        url = "https://commons.wikimedia.org/wiki/Special:FilePath/Hat.jpg?width=500"
+        rel = "photos/hat.jpg"
+        shutil.copy(os.path.join(FIX, "portrait_ushanka.jpg"), os.path.join(self.site, rel))
+        names = self.seed("Ксения Синицына", rel, 3, url=url)
+        out = self.run_collect(["Ксения Синицына"], [("Ksenia Sinitsyna", url, 3)], names=names)
+        self.assertNotIn("Ксения Синицына", out)
+        self.assertEqual(ph.load_book(self.book), {})
+        self.assertEqual(ph._skip_rows(self.skip)[url], "головной убор")
+
+    def test_wiki_entry_good_portrait_is_kept_and_marked(self):
+        _cv()
+        import shutil
+        url = "https://commons.wikimedia.org/wiki/Special:FilePath/Ok.jpg?width=500"
+        rel = "photos/ok.jpg"
+        shutil.copy(os.path.join(FIX, "portrait_ok.jpg"), os.path.join(self.site, rel))
+        names = self.seed("Ксения Синицына", rel, 3, url=url)
+        out = self.run_collect(["Ксения Синицына"], [("Ksenia Sinitsyna", url, 3)], names=names)
+        self.assertEqual(out["Ксения Синицына"], rel)
+        self.assertEqual(ph.load_book(self.book)[nm.key("Ксения Синицына")]["q"], ph.QUALITY_V)
+
+    def test_wiki_entry_not_among_verified_urls_is_dropped(self):
+        rel = self.thumb()
+        url = "https://commons.wikimedia.org/wiki/Special:FilePath/Other.jpg?width=500"
+        names = self.seed("Ксения Синицына", rel, 3, url=url)
+        out = self.run_collect(["Ксения Синицына"], [], names=names)
+        self.assertNotIn("Ксения Синицына", out)
+
+    def test_isu_entry_is_not_audited(self):
+        rel = self.thumb()
+        names = self.seed("Ксения Синицына", rel, 2)
+        out = self.run_collect(["Ксения Синицына"], [], names=names)
+        self.assertEqual(out["Ксения Синицына"], rel)
