@@ -258,19 +258,20 @@ class SettingsView extends StatelessWidget {
         ),
 
         // ---------------------------------------------------------- аккаунт
-        const SliverToBoxAdapter(child: _Head('Аккаунт')),
-        SliverToBoxAdapter(
-          child: Plate(
-            child: _Row(
-              icon: CupertinoIcons.person_crop_circle,
-              title: 'Аккаунт',
-              subtitle: syncSummary(state),
-              subtitleColor: state.syncProblem != null ? p.live : null,
-              onTap: () => openAccount(context, state),
-              trailing: const _Chevron(),
+        if (syncConfigured) const SliverToBoxAdapter(child: _Head('Аккаунт')),
+        if (syncConfigured)
+          SliverToBoxAdapter(
+            child: Plate(
+              child: _Row(
+                icon: CupertinoIcons.person_crop_circle,
+                title: 'Аккаунт',
+                subtitle: syncSummary(state),
+                subtitleColor: state.syncProblem != null ? p.live : null,
+                onTap: () => openAccount(context, state),
+                trailing: const _Chevron(),
+              ),
             ),
           ),
-        ),
 
         // ---------------------------------------------------------- приложение
         const SliverToBoxAdapter(child: _Head('Приложение')),

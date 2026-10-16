@@ -190,8 +190,8 @@ class _StartSheet extends StatelessWidget {
                   onTap: () => openProtocol(context, s),
                 ),
               ),
-            // живые места на ленте: режим для этого старта, если табло у него есть
-            if (s.live != null)
+            // живые места на ленте: режим для этого старта, если у него есть табло и файл протокола
+            if (s.live != null && s.proto != null)
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 10, 16, 0),
                 child: SheetButton(
