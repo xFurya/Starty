@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16T13:10:34+03:00",
- "checked": "2026-10-16T10:26:36.535154+00:00",
+ "checked": "2026-10-16T10:30:37.115416+00:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -25723,28 +25723,28 @@
      "points": "60.69"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Амалия Насыбуллина — 62.69\n2. Jiaying Ellyse Johnson — 62.50\n3. Mayuka Sueess — 60.69\n\nНачало: 10:10 МСК",
+   "desc": "Итог:\n1. Амалия Насыбуллина — 62.69\n2. Jiaying Ellyse Johnson — 62.50\n3. Mayuka Sueess — 60.69\n\nПримечательное:\n• Jiaying Ellyse Johnson — Личный рекорд за КП: 62.50 (был 47.51)\n\nНачало: 10:10 МСК",
    "field": [
     {
      "name": "Milena Velcheva",
      "nation": "BUL",
      "no": 1,
      "warmup": 1,
-     "place": 18
+     "place": 19
     },
     {
      "name": "Valeria Huber",
      "nation": "GER",
      "no": 2,
      "warmup": 1,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Summer Wijkhuizen",
      "nation": "NED",
      "no": 3,
      "warmup": 1,
-     "place": 14
+     "place": 15
     },
     {
      "name": "Varvara Abramkina",
@@ -25758,14 +25758,14 @@
      "nation": "SWE",
      "no": 5,
      "warmup": 1,
-     "place": 16
+     "place": 17
     },
     {
      "name": "Mia Kasparovica",
      "nation": "LAT",
      "no": 6,
      "warmup": 2,
-     "place": 13
+     "place": 14
     },
     {
      "name": "Mayuka Sueess",
@@ -25779,14 +25779,14 @@
      "nation": "SLO",
      "no": 9,
      "warmup": 2,
-     "place": 11
+     "place": 12
     },
     {
      "name": "Rebecca Lo Cascio",
      "nation": "ITA",
      "no": 10,
      "warmup": 2,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Амалия Насыбуллина",
@@ -25807,42 +25807,42 @@
      "nation": "HUN",
      "no": 13,
      "warmup": 3,
-     "place": 22
+     "place": 23
     },
     {
      "name": "Natalia Runcanu",
      "nation": "ROU",
      "no": 14,
      "warmup": 3,
-     "place": 21
+     "place": 22
     },
     {
      "name": "Shaked Pinchas",
      "nation": "ISR",
      "no": 15,
      "warmup": 3,
-     "place": 24
+     "place": 25
     },
     {
      "name": "Lidiia Tsukanova",
      "nation": "FIN",
      "no": 16,
      "warmup": 4,
-     "place": 9
+     "place": 10
     },
     {
      "name": "Dorina Szigeti",
      "nation": "HUN",
      "no": 17,
      "warmup": 4,
-     "place": 20
+     "place": 21
     },
     {
      "name": "Shahaf Pinchas",
      "nation": "ISR",
      "no": 18,
      "warmup": 4,
-     "place": 23
+     "place": 24
     },
     {
      "name": "Karina Sheina",
@@ -25856,14 +25856,14 @@
      "nation": "HUN",
      "no": 20,
      "warmup": 4,
-     "place": 12
+     "place": 13
     },
     {
      "name": "Martina Petra Major",
      "nation": "HUN",
      "no": 21,
      "warmup": 5,
-     "place": 17
+     "place": 18
     },
     {
      "name": "Jiaying Ellyse Johnson",
@@ -25877,24 +25877,24 @@
      "nation": "ITA",
      "no": 23,
      "warmup": 5,
-     "place": 19
+     "place": 20
     },
     {
      "name": "Adelina Voroteliak",
-     "nation": "GER"
+     "nation": "GER",
+     "place": 7
     },
     {
      "name": "Anissa Mamaev",
      "nation": "UZB",
-     "place": 15
+     "place": 16
     },
     {
      "name": "Mila Bertsch",
      "nation": "FRA",
-     "place": 10
+     "place": 11
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
     "seg": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG009.htm",
@@ -25927,9 +25927,16 @@
      "Mila BERTSCH": "Mila Bertsch",
      "Adelina VOROTELIAK": "Adelina Voroteliak"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": "isu_isu-cs-budapest-trophy.json",
+   "facts": [
+    {
+     "who": "Jiaying Ellyse Johnson",
+     "text": "Личный рекорд за КП: 62.50 (был 47.51)",
+     "kind": "score"
+    }
+   ]
   },
   {
    "id": "isu:isu-cs-budapest-trophy:men-senior-kp",
