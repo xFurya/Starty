@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'data.dart';
 import 'palette.dart';
+import 'photo_cache.dart';
 
 /// Открытая вкладка: 0 — лента, 1 — месяц, 2 — настройки. Лист старта переключает
 /// её сам, когда ведёт в настройки.
@@ -1359,20 +1360,7 @@ class Avatar extends StatelessWidget {
                   fallback,
                   // миниатюра уже обрезана под кружок на сайте (scraper/photos.py) — без своего увеличения:
                   // у крупных портретов ISU оно оставляло от лица лоб и глаза
-                  Image.network(
-                      url,
-                      fit: BoxFit.cover,
-                      alignment: const Alignment(0, -.2),
-                      filterQuality: FilterQuality.medium,
-                      errorBuilder: (c, e, st) => fallback,
-                      frameBuilder: (c, child, frame, sync) => sync
-                          ? child
-                          : AnimatedOpacity(
-                              opacity: frame == null ? 0 : 1,
-                              duration: const Duration(milliseconds: 250),
-                              child: child,
-                            ),
-                    ),
+                  CachedPhoto(url: url, alignment: const Alignment(0, -.2), fallback: fallback),
                 ],
               ),
       ),

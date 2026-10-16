@@ -44,6 +44,7 @@ dependencies:
   workmanager: ^0.10.10
   starty_alerts:
     path: packages/starty_alerts
+  path_provider: ^2.1.6
 
 dev_dependencies:
   flutter_test:

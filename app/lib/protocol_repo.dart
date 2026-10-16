@@ -1,6 +1,6 @@
 // Файл протокола с сайта (GitHub Pages): загрузка, копия на устройстве и честные исходы.
 // Кэш — в SharedPreferences: не больше восьми турниров, ошибочные файлы в кэш не пишем.
-// Окончательный сегмент из кэша не заменяется промежуточным из свежей загрузки.
+// Что в кэше было полнее (окончательный сегмент, итог, строки), не заменяется беднее из свежей загрузки.
 // Все операции с кэшем — в try/catch: без кэша экран работает.
 import 'dart:convert';
 
@@ -86,14 +86,103 @@ class ProtocolRepo {
     } on ProtocolFormatException catch (e) {
       return ProtocolFormatError(e.message, cached: cached?.doc, cachedAt: cached?.at);
     }
-    final old = cached?.doc;
-    final (merged, keptFinal) = old == null ? (fresh, false) : keepFinal(fresh, old);
-    // при сохранённом окончательном сегменте кэш не перезаписываем промежуточным файлом
-    if (!keptFinal) await _writeCache(proto, body);
-    return ProtocolOk(merged, _now());
+    final old = cached?.raw;
+    if (old == null) {
+      await _writeCache(proto, body);
+      return ProtocolOk(fresh, _now());
+    }
+    // в кэш и на экран идёт последняя хорошая версия: что было полнее, не затирается беднее
+    final (json, kept) = mergeJson(old, jsonDecode(body) as Map<String, dynamic>);
+    if (!kept) {
+      await _writeCache(proto, body);
+      return ProtocolOk(fresh, _now());
+    }
+    try {
+      final merged = ProtocolDoc.fromJson(json);
+      await _writeCache(proto, jsonEncode(json));
+      return ProtocolOk(merged, _now());
+    } on ProtocolFormatException {
+      // слияние не разобралось (не должно) — как раньше: свежий файл, кэш не трогаем
+      return ProtocolOk(fresh, _now());
+    }
   }
 
   ProtocolNetError _netError(_Cached? cached) => ProtocolNetError(cached: cached?.doc, cachedAt: cached?.at);
+
+  static const _segRank = {'final': 5, 'provisional': 4, 'in_progress': 3, 'not_published': 2, 'scheduled': 1};
+  static const _totalRank = {'final': 3, 'provisional': 2, 'not_published': 1};
+
+  static int _rows(Object? m) => m is Map && m['rows'] is List ? (m['rows'] as List).length : 0;
+
+  /// Из двух версий одного куска (сегмент или итог) — та, что полнее: выше состояние, при равном —
+  /// больше строк. Свежая побеждает при равенстве (поправки сборщика доходят).
+  static bool _oldRicher(Map old, Map fresh, Map<String, int> rank) {
+    final o = rank[old['state']] ?? 0, f = rank[fresh['state']] ?? 0;
+    if (o != f) return o > f;
+    return f != rank['final'] && _rows(old) > _rows(fresh);
+  }
+
+  /// Слияние файлов протокола на уровне JSON: всё, что было в [old] и пропало или обеднело
+  /// в [fresh] (сегмент, категория, итог, строки, окончательность), остаётся. Возвращает
+  /// результат и флаг «взято хоть что-то из старого». Другой турнир — [fresh] как есть.
+  static (Map<String, dynamic>, bool) mergeJson(Map<String, dynamic> old, Map<String, dynamic> fresh) {
+    if (old['tid'] != fresh['tid'] || old['categories'] is! List || fresh['categories'] is! List) return (fresh, false);
+    var kept = false;
+    String key(Map c) => '${c['kind']}|${c['level']}';
+    final oldCats = {for (final c in old['categories'] as List) if (c is Map) key(c): Map<String, dynamic>.from(c)};
+    final seen = <String>{};
+    final cats = <Object?>[];
+    for (final c in fresh['categories'] as List) {
+      if (c is! Map) {
+        cats.add(c);
+        continue;
+      }
+      final k = key(c);
+      seen.add(k);
+      final oc = oldCats[k];
+      if (oc == null) {
+        cats.add(c);
+        continue;
+      }
+      final m = Map<String, dynamic>.from(c);
+      final oldSegs = {for (final s in (oc['segments'] as List? ?? const [])) if (s is Map) '${s['code']}': s};
+      final segs = <Object?>[];
+      final segSeen = <String>{};
+      for (final s in (c['segments'] as List? ?? const [])) {
+        final os = s is Map ? oldSegs['${s['code']}'] : null;
+        if (s is Map) segSeen.add('${s['code']}');
+        // «сверка не сошлась» — явное слово сборщика, пока старое не окончательное
+        final mismatch = s is Map && s['state'] == 'judges_mismatch' && os?['state'] != 'final';
+        if (s is Map && os != null && !mismatch && _oldRicher(os, s, _segRank)) {
+          segs.add(os);
+          kept = true;
+        } else {
+          segs.add(s);
+        }
+      }
+      for (final e in oldSegs.entries) {
+        if (!segSeen.contains(e.key)) {
+          segs.add(e.value);
+          kept = true;
+        }
+      }
+      m['segments'] = segs;
+      final ot = oc['total'], ft = c['total'];
+      if (ot is Map && (ft is! Map || _oldRicher(ot, ft, _totalRank))) {
+        m['total'] = ot;
+        kept = true;
+      }
+      cats.add(m);
+    }
+    for (final e in oldCats.entries) {
+      if (!seen.contains(e.key)) {
+        cats.add(e.value);
+        kept = true;
+      }
+    }
+    if (!kept) return (fresh, false);
+    return ({...fresh, 'categories': cats, 'marks': fresh['marks'] == true || old['marks'] == true}, true);
+  }
 
   /// Окончательные сегменты и итоги из [old] сохраняются, если в [fresh] они промежуточные.
   /// Возвращает документ и флаг: сохранено хоть что-то из старого.
@@ -147,7 +236,7 @@ class ProtocolRepo {
       if (raw == null) return null;
       final m = jsonDecode(raw) as Map<String, dynamic>;
       final doc = ProtocolDoc.fromJsonString(m['body'] as String);
-      return _Cached(doc, DateTime.tryParse('${m['at']}'));
+      return _Cached(doc, DateTime.tryParse('${m['at']}'), jsonDecode(m['body'] as String) as Map<String, dynamic>);
     } catch (_) {
       return null;
     }
@@ -170,5 +259,8 @@ class ProtocolRepo {
 class _Cached {
   final ProtocolDoc doc;
   final DateTime? at;
-  const _Cached(this.doc, this.at);
+
+  /// Тот же файл как JSON — для слияния с новым (см. [ProtocolRepo.mergeJson]).
+  final Map<String, dynamic> raw;
+  const _Cached(this.doc, this.at, this.raw);
 }
