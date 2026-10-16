@@ -447,13 +447,16 @@ class ProtocolTotal {
     const broken = ProtocolTotal(state: TotalState.format, complete: false, cols: [], colsKind: 'unknown', rows: [], skipped: 0);
     final state = TotalState.fromWire(j['state']);
     if (state == null) return broken;
-    final cols = [for (final c in (j['cols'] as List? ?? const [])) '$c'];
+    // не список вместо cols/rows — битый итог, а не TypeError
+    final rawCols = j['cols'];
+    final rawRows = j['rows'];
+    if ((rawCols != null && rawCols is! List) || (rawRows != null && rawRows is! List)) return broken;
+    final cols = [for (final c in (rawCols as List? ?? const [])) '$c'];
     final kind = j['colsKind'];
-    final rawRows = j['rows'] as List? ?? const [];
     final parsed = <ProtocolRow>[];
     var bad = false;
     var i = 0;
-    for (final r in rawRows) {
+    for (final r in (rawRows as List? ?? const [])) {
       i++;
       if (r is! Map) {
         bad = true;

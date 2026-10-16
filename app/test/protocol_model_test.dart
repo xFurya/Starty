@@ -353,6 +353,18 @@ void main() {
       expect(t.rows.single.parts, ['3', '1']);
     });
 
+    test('cols или rows не списком — итог format, а не TypeError', () {
+      for (final key in ['cols', 'rows']) {
+        for (final bad in <Object>['строка', 5, {'a': 1}]) {
+          final j = withTotal({'rows': []});
+          ((j['categories'] as List).first as Map<String, dynamic>)['total'][key] = bad;
+          final t = ProtocolDoc.fromJson(j).categories.first.total!;
+          expect(t.state, TotalState.format, reason: '$key = $bad');
+          expect(t.rows, isEmpty);
+        }
+      }
+    });
+
     test('длина parts не совпадает с cols — весь итог format', () {
       final j = withTotal({
         'rows': [
