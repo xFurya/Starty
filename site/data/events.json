@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-16T17:28:01+03:00",
- "checked": "2026-10-16T17:28:01+03:00",
+ "generated": "2026-10-16T17:42:22+03:00",
+ "checked": "2026-10-16T17:42:22+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26113,7 +26113,7 @@
    "seg": "КП",
    "title": "CS Budapest Trophy — мужчины КП",
    "start": "2026-10-16T13:50:00+03:00",
-   "end": "2026-10-16T17:30:00+03:00",
+   "end": "2026-10-16T17:55:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [],
@@ -26169,49 +26169,49 @@
      "points": "81.50"
     }
    ],
-   "desc": "Итог:\n1. Daniel Grassl — 97.14\n2. Genrikh Gartung — 83.59\n3. Arlet Levandi — 81.50\n\nНачало: 13:50 МСК",
+   "desc": "Итог:\n1. Daniel Grassl — 97.14\n2. Genrikh Gartung — 83.59\n3. Arlet Levandi — 81.50\n\nПримечательное:\n• Genrikh Gartung — Личный рекорд за КП: 83.59 (был 79.05)\n• Arlet Levandi — Личный рекорд за КП: 81.50 (был 77.45)\n\nНачало: 13:50 МСК",
    "field": [
     {
      "name": "Nico Steffen",
      "nation": "SUI",
      "no": 1,
      "warmup": 1,
-     "place": 17
+     "place": 18
     },
     {
      "name": "Nikita Sheiko",
      "nation": "ISR",
      "no": 2,
      "warmup": 1,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Pablo Garcia",
      "nation": "ESP",
      "no": 3,
      "warmup": 1,
-     "place": 24
+     "place": 25
     },
     {
      "name": "Matvii Yefymenko",
      "nation": "POL",
      "no": 4,
      "warmup": 1,
-     "place": 25
+     "place": 26
     },
     {
      "name": "Aleksei Vlasenko",
      "nation": "HUN",
      "no": 5,
      "warmup": 1,
-     "place": 27
+     "place": 28
     },
     {
      "name": "Taira Shinohara",
      "nation": "USA",
      "no": 6,
      "warmup": 2,
-     "place": 13
+     "place": 14
     },
     {
      "name": "Daniel Grassl",
@@ -26225,7 +26225,7 @@
      "nation": "AUS",
      "no": 8,
      "warmup": 2,
-     "place": 26
+     "place": 27
     },
     {
      "name": "Arlet Levandi",
@@ -26246,98 +26246,98 @@
      "nation": "SWE",
      "no": 11,
      "warmup": 3,
-     "place": 15
+     "place": 16
     },
     {
      "name": "Davide Lewton Brain",
      "nation": "MON",
      "no": 12,
      "warmup": 3,
-     "place": 21
+     "place": 22
     },
     {
      "name": "Tamir Kuperman",
      "nation": "ISR",
      "no": 13,
      "warmup": 3,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Nikita Krivosheyev",
      "nation": "KAZ",
      "no": 14,
      "warmup": 3,
-     "place": 16
+     "place": 17
     },
     {
      "name": "Nikita Starostin",
      "nation": "GER",
      "no": 15,
      "warmup": 3,
-     "place": 12
+     "place": 13
     },
     {
      "name": "Vadym Novikov",
      "nation": "UKR",
      "no": 16,
      "warmup": 3,
-     "place": 19
+     "place": 20
     },
     {
      "name": "Tobia Oellerer",
      "nation": "AUT",
      "no": 17,
      "warmup": 4,
-     "place": 18
+     "place": 19
     },
     {
      "name": "John Kim",
      "nation": "CAN",
      "no": 18,
      "warmup": 4,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Wesley Chiu",
      "nation": "CAN",
      "no": 19,
      "warmup": 4,
-     "place": 9
+     "place": 10
     },
     {
      "name": "Andreas Nordeback",
      "nation": "SWE",
      "no": 20,
      "warmup": 4,
-     "place": 14
+     "place": 15
     },
     {
      "name": "David Sedej",
      "nation": "SLO",
      "no": 21,
      "warmup": 4,
-     "place": 23
+     "place": 24
     },
     {
      "name": "Fedirs Kuliss",
      "nation": "LAT",
      "no": 22,
      "warmup": 4,
-     "place": 11
+     "place": 12
     },
     {
      "name": "Kevin Aymoz",
      "nation": "FRA",
      "no": 23,
      "warmup": 5,
-     "place": 10
+     "place": 11
     },
     {
      "name": "Vladimir Samoilov",
      "nation": "POL",
      "no": 24,
      "warmup": 5,
-     "place": 20
+     "place": 21
     },
     {
      "name": "Lukas Britschgi",
@@ -26351,18 +26351,21 @@
      "nation": "FIN",
      "no": 26,
      "warmup": 5,
-     "place": 22
+     "place": 23
     },
     {
      "name": "Matias Lindfors",
      "nation": "FIN",
      "no": 27,
      "warmup": 5,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Patrick Blackwell",
-     "nation": "USA"
+     "nation": "USA",
+     "no": 28,
+     "warmup": null,
+     "place": 5
     }
    ],
    "live": {
@@ -26375,6 +26378,7 @@
      "Genrikh GARTUNG": "Genrikh Gartung",
      "Arlet LEVANDI": "Arlet Levandi",
      "Lukas BRITSCHGI": "Lukas Britschgi",
+     "Patrick BLACKWELL": "Patrick Blackwell",
      "Matias LINDFORS": "Matias Lindfors",
      "Nikita SHEIKO": "Nikita Sheiko",
      "Tamir KUPERMAN": "Tamir Kuperman",
@@ -26397,11 +26401,22 @@
      "Pablo GARCIA": "Pablo Garcia",
      "Matvii YEFYMENKO": "Matvii Yefymenko",
      "Douglas GERBER": "Douglas Gerber",
-     "Aleksei VLASENKO": "Aleksei Vlasenko",
-     "Patrick BLACKWELL": "Patrick Blackwell"
+     "Aleksei VLASENKO": "Aleksei Vlasenko"
     },
     "basis": "judges"
    },
+   "facts": [
+    {
+     "who": "Genrikh Gartung",
+     "text": "Личный рекорд за КП: 83.59 (был 79.05)",
+     "kind": "score"
+    },
+    {
+     "who": "Arlet Levandi",
+     "text": "Личный рекорд за КП: 81.50 (был 77.45)",
+     "kind": "score"
+    }
+   ],
    "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
@@ -28518,115 +28533,171 @@
    "field": [
     {
      "name": "Aleksei Vlasenko",
-     "nation": "HUN"
-    },
-    {
-     "name": "Andreas Nordeback",
-     "nation": "SWE"
-    },
-    {
-     "name": "Arlet Levandi",
-     "nation": "EST"
-    },
-    {
-     "name": "Daniel Grassl",
-     "nation": "ITA"
-    },
-    {
-     "name": "David Sedej",
-     "nation": "SLO"
-    },
-    {
-     "name": "Davide Lewton Brain",
-     "nation": "MON"
+     "nation": "HUN",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Douglas Gerber",
-     "nation": "AUS"
-    },
-    {
-     "name": "Elias Sayed",
-     "nation": "SWE"
-    },
-    {
-     "name": "Fedirs Kuliss",
-     "nation": "LAT"
-    },
-    {
-     "name": "Genrikh Gartung",
-     "nation": "GER"
-    },
-    {
-     "name": "John Kim",
-     "nation": "CAN"
-    },
-    {
-     "name": "Kevin Aymoz",
-     "nation": "FRA"
-    },
-    {
-     "name": "Lukas Britschgi",
-     "nation": "SUI"
-    },
-    {
-     "name": "Makar Suntsev",
-     "nation": "FIN"
-    },
-    {
-     "name": "Matias Lindfors",
-     "nation": "FIN"
+     "nation": "AUS",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Matvii Yefymenko",
-     "nation": "POL"
-    },
-    {
-     "name": "Nico Steffen",
-     "nation": "SUI"
-    },
-    {
-     "name": "Nikita Krivosheyev",
-     "nation": "KAZ"
-    },
-    {
-     "name": "Nikita Sheiko",
-     "nation": "ISR"
-    },
-    {
-     "name": "Nikita Starostin",
-     "nation": "GER"
+     "nation": "POL",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Pablo Garcia",
-     "nation": "ESP"
+     "nation": "ESP",
+     "no": 4,
+     "warmup": 1
     },
     {
-     "name": "Patrick Blackwell",
-     "nation": "USA"
+     "name": "David Sedej",
+     "nation": "SLO",
+     "no": 5,
+     "warmup": 1
     },
     {
-     "name": "Taira Shinohara",
-     "nation": "USA"
+     "name": "Makar Suntsev",
+     "nation": "FIN",
+     "no": 6,
+     "warmup": 2
     },
     {
-     "name": "Tamir Kuperman",
-     "nation": "ISR"
-    },
-    {
-     "name": "Tobia Oellerer",
-     "nation": "AUT"
-    },
-    {
-     "name": "Vadym Novikov",
-     "nation": "UKR"
+     "name": "Davide Lewton Brain",
+     "nation": "MON",
+     "no": 7,
+     "warmup": 2
     },
     {
      "name": "Vladimir Samoilov",
-     "nation": "POL"
+     "nation": "POL",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Vadym Novikov",
+     "nation": "UKR",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Tobia Oellerer",
+     "nation": "AUT",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Nico Steffen",
+     "nation": "SUI",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Nikita Krivosheyev",
+     "nation": "KAZ",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Elias Sayed",
+     "nation": "SWE",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Andreas Nordeback",
+     "nation": "SWE",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Taira Shinohara",
+     "nation": "USA",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Nikita Starostin",
+     "nation": "GER",
+     "no": 16,
+     "warmup": 3
+    },
+    {
+     "name": "Fedirs Kuliss",
+     "nation": "LAT",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Kevin Aymoz",
+     "nation": "FRA",
+     "no": 18,
+     "warmup": 4
     },
     {
      "name": "Wesley Chiu",
-     "nation": "CAN"
+     "nation": "CAN",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "John Kim",
+     "nation": "CAN",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Tamir Kuperman",
+     "nation": "ISR",
+     "no": 21,
+     "warmup": 4
+    },
+    {
+     "name": "Nikita Sheiko",
+     "nation": "ISR",
+     "no": 22,
+     "warmup": 4
+    },
+    {
+     "name": "Matias Lindfors",
+     "nation": "FIN",
+     "no": 23,
+     "warmup": 5
+    },
+    {
+     "name": "Patrick Blackwell",
+     "nation": "USA",
+     "no": 24,
+     "warmup": 5
+    },
+    {
+     "name": "Lukas Britschgi",
+     "nation": "SUI",
+     "no": 25,
+     "warmup": 5
+    },
+    {
+     "name": "Arlet Levandi",
+     "nation": "EST",
+     "no": 26,
+     "warmup": 5
+    },
+    {
+     "name": "Genrikh Gartung",
+     "nation": "GER",
+     "no": 27,
+     "warmup": 5
+    },
+    {
+     "name": "Daniel Grassl",
+     "nation": "ITA",
+     "no": 28,
+     "warmup": 5
     }
    ],
    "live": {
@@ -28635,34 +28706,34 @@
     "cat": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/CAT001RS.htm",
     "first": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG001.htm",
     "names": {
-     "Douglas GERBER": "Douglas Gerber",
-     "Tobia OELLERER": "Tobia Oellerer",
-     "Wesley CHIU": "Wesley Chiu",
-     "John KIM": "John Kim",
-     "Pablo GARCIA": "Pablo Garcia",
-     "Arlet LEVANDI": "Arlet Levandi",
-     "Matias LINDFORS": "Matias Lindfors",
-     "Makar SUNTSEV": "Makar Suntsev",
-     "Kevin AYMOZ": "Kevin Aymoz",
-     "Genrikh GARTUNG": "Genrikh Gartung",
-     "Nikita STAROSTIN": "Nikita Starostin",
      "Aleksei VLASENKO": "Aleksei Vlasenko",
-     "Tamir KUPERMAN": "Tamir Kuperman",
-     "Nikita SHEIKO": "Nikita Sheiko",
-     "Daniel GRASSL": "Daniel Grassl",
-     "Nikita KRIVOSHEYEV": "Nikita Krivosheyev",
-     "Fedirs KULISS": "Fedirs Kuliss",
+     "Douglas GERBER": "Douglas Gerber",
+     "Matvii YEFYMENKO": "Matvii Yefymenko",
+     "Pablo GARCIA": "Pablo Garcia",
+     "David SEDEJ": "David Sedej",
+     "Makar SUNTSEV": "Makar Suntsev",
      "Davide LEWTON BRAIN": "Davide Lewton Brain",
      "Vladimir SAMOILOV": "Vladimir Samoilov",
-     "Matvii YEFYMENKO": "Matvii Yefymenko",
-     "David SEDEJ": "David Sedej",
-     "Lukas BRITSCHGI": "Lukas Britschgi",
-     "Nico STEFFEN": "Nico Steffen",
-     "Andreas NORDEBACK": "Andreas Nordeback",
-     "Elias SAYED": "Elias Sayed",
      "Vadym NOVIKOV": "Vadym Novikov",
+     "Tobia OELLERER": "Tobia Oellerer",
+     "Nico STEFFEN": "Nico Steffen",
+     "Nikita KRIVOSHEYEV": "Nikita Krivosheyev",
+     "Elias SAYED": "Elias Sayed",
+     "Andreas NORDEBACK": "Andreas Nordeback",
+     "Taira SHINOHARA": "Taira Shinohara",
+     "Nikita STAROSTIN": "Nikita Starostin",
+     "Fedirs KULISS": "Fedirs Kuliss",
+     "Kevin AYMOZ": "Kevin Aymoz",
+     "Wesley CHIU": "Wesley Chiu",
+     "John KIM": "John Kim",
+     "Tamir KUPERMAN": "Tamir Kuperman",
+     "Nikita SHEIKO": "Nikita Sheiko",
+     "Matias LINDFORS": "Matias Lindfors",
      "Patrick BLACKWELL": "Patrick Blackwell",
-     "Taira SHINOHARA": "Taira Shinohara"
+     "Lukas BRITSCHGI": "Lukas Britschgi",
+     "Arlet LEVANDI": "Arlet Levandi",
+     "Genrikh GARTUNG": "Genrikh Gartung",
+     "Daniel GRASSL": "Daniel Grassl"
     },
     "basis": null
    },
