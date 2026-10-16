@@ -41,8 +41,8 @@ void main() {
     expect(find.text('Аккаунт', skipOffstage: false), findsNothing);
   });
 
-  Future<void> open(WidgetTester t, Start st) async {
-    t.view.physicalSize = const Size(1080, 3000);
+  Future<void> open(WidgetTester t, Start st, {double width = 360}) async {
+    t.view.physicalSize = Size(width * 3, 3000);
     t.view.devicePixelRatio = 3;
     addTearDown(t.view.reset);
     final s = AppState()..loading = false;
@@ -63,5 +63,60 @@ void main() {
   testWidgets('карточка старта с протоколом предлагает «Живые места»', (t) async {
     await open(t, _start(proto: 'x_1.json'));
     expect(find.byTooltip('Живые места', skipOffstage: false), findsOneWidget);
+  });
+
+  // Чип режима живых мест — только пока опрашивать есть что: старт не прошёл, идёт или прошёл без
+  // окончательного итога. Окончательный итог (Start.settled) — чипа нет совсем.
+  Start timedStart({required Duration from, required Duration to, bool withFinal = false, bool judges = true}) {
+    // тройка без судейских оценок — промежуточная: provisional, basis не задан
+    final now = DateTime.now().toUtc();
+    return Start.fromJson({
+      'id': 'x:2',
+      'tid': 'x',
+      'tournament': 'Турнир',
+      'kind': 'dance',
+      'level': 'junior',
+      'seg': 'РТ',
+      'title': 'Турнир — танцы РТ',
+      'src': 'https://example.org/index.htm',
+      'proto': 'x_2.json',
+      'start': now.add(from).toIso8601String(),
+      'end': now.add(to).toIso8601String(),
+      'podium': withFinal ? [{'place': 1, 'name': 'Иванова А.', 'nation': 'RUS', 'points': '90.1'}] : [],
+      'provisional': !withFinal || !judges,
+      'live': {
+        'idx': 'https://example.org/index.htm',
+        'seg': 'https://example.org/SEG1.HTM',
+        'names': {},
+        'basis': withFinal && judges ? 'judges' : null,
+      },
+    });
+  }
+
+  testWidgets('будущий старт: чип есть', (t) async {
+    await open(t, timedStart(from: const Duration(days: 1), to: const Duration(days: 1, hours: 2)), width: 430);
+    expect(find.byTooltip('Живые места', skipOffstage: false), findsOneWidget);
+  });
+
+  testWidgets('идущий старт: чип есть', (t) async {
+    await open(t, timedStart(from: const Duration(hours: -1), to: const Duration(hours: 1)), width: 430);
+    expect(find.byTooltip('Живые места', skipOffstage: false), findsOneWidget);
+  });
+
+  testWidgets('прошедший старт без окончательных результатов: чип есть', (t) async {
+    await open(t, timedStart(from: const Duration(hours: -3), to: const Duration(hours: -1)), width: 430);
+    expect(find.byTooltip('Живые места', skipOffstage: false), findsOneWidget);
+  });
+
+  testWidgets('прошедший старт с промежуточной тройкой (без судейских оценок): чип есть', (t) async {
+    await open(t, timedStart(from: const Duration(hours: -3), to: const Duration(hours: -1), withFinal: true, judges: false), width: 430);
+    expect(find.byTooltip('Живые места', skipOffstage: false), findsOneWidget);
+  });
+
+  testWidgets('завершённый старт с окончательными результатами: чипа нет, и подписи «Живые места» нет', (t) async {
+    await open(t, timedStart(from: const Duration(hours: -3), to: const Duration(hours: -1), withFinal: true), width: 430);
+    expect(find.byTooltip('Живые места', skipOffstage: false), findsNothing);
+    expect(find.text('Живые места', skipOffstage: false), findsNothing);
+    expect(find.text('Моментально', skipOffstage: false), findsNothing);
   });
 }

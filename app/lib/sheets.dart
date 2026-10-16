@@ -75,8 +75,9 @@ class _StartSheet extends StatelessWidget {
     final date = '${cap(weekdays[d.weekday - 1])}, ${d.day}\u00A0${months[d.month - 1]}';
     final narrow = MediaQuery.sizeOf(context).width < 360;
     final notify = _notifyRow(context, t);
-    // живые места: режим для этого старта, если у него есть табло и файл протокола — компактный чип
-    final liveChip = s.live != null && s.proto != null ? _LiveChip(state: state, start: s) : null;
+    // живые места: режим для этого старта, если у него есть табло и файл протокола — компактный чип.
+    // Итог окончательный (settled, как в watching) — опрашивать нечего, чипа нет совсем.
+    final liveChip = s.live != null && s.proto != null && !s.settled ? _LiveChip(state: state, start: s) : null;
     return ConstrainedBox(
       constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * .92),
       child: SheetScroll(
