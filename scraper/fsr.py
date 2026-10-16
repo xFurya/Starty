@@ -276,11 +276,11 @@ def team():
     page = net.fetch(BASE + "/sbornaya")
     # карточки бывают под /sbornaya/teams/ и под /contacts/teams/ (так у части спортсменов)
     photos = {}
-    for m in re.finditer(r'(?s)<a href="/(?:sbornaya|contacts)/teams/([^"]+)"[^>]*>\s*<img[^>]*?\ssrc="([^"]+)"', page):
+    for m in re.finditer(r'(?s)<a href="/(?:sbornaya|contacts|team-profiles)/teams/([^"]+)"[^>]*>\s*<img[^>]*?\ssrc="([^"]+)"', page):
         photos.setdefault(m.group(1), urljoin(BASE, quote(html.unescape(m.group(2)), safe="/:%?=&.-_~")))
     out = []
     seen = set()
-    for m in re.finditer(r'(?s)<a href="/(?:sbornaya|contacts)/teams/([^"]+)"[^>]*>\s*<strong[^>]*>(.*?)</strong>', page):
+    for m in re.finditer(r'(?s)<a href="/(?:sbornaya|contacts|team-profiles)/teams/([^"]+)"[^>]*>\s*<strong[^>]*>(.*?)</strong>', page):
         parts = [p for p in _text(m.group(2)).split("\n") if p]
         if len(parts) >= 2 and m.group(1) not in seen:
             seen.add(m.group(1))

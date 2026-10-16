@@ -84,3 +84,11 @@ class IsuPairsTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class WikidataLabelTest(unittest.TestCase):
+    def test_label_forms(self):
+        f = people.wikidata_label
+        self.assertEqual(f("Ксения Алексеевна Синицына", "ru"), "Ксения Синицына")
+        self.assertEqual(f("Павлова, Наталья Евгеньевна", "ru"), "Наталья Павлова")
+        self.assertEqual(f("Kseniya Sinitsina", "en"), "Kseniya Sinitsina")
