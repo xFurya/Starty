@@ -12,13 +12,17 @@ import 'protocol.dart';
 import 'state.dart';
 import 'system.dart';
 import 'ui.dart';
-import 'protocol_screen.dart' show launchOriginal;
+import 'package:url_launcher/url_launcher.dart';
 import 'views.dart';
 
 // ------------------------------------------------------------------ карточка старта
 
 /// Как открывается ссылка на трансляцию (во внешнем приложении или браузере); в тестах подменяется.
-Future<void> Function(String url) watchOpener = launchOriginal;
+Future<void> Function(String url) watchOpener = _openWatch;
+
+Future<void> _openWatch(String url) async {
+  await launchUrl(Uri.parse(url), webOnlyWindowName: '_blank', mode: LaunchMode.externalApplication);
+}
 
 void showStart(BuildContext context, Start s, AppState state) {
   showModalBottomSheet(
