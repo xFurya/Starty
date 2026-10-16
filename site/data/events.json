@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16T12:00:29+03:00",
- "checked": "2026-10-16T12:00:29+03:00",
+ "checked": "2026-10-16T09:16:56.136962+00:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -25124,7 +25124,8 @@
      "nation": "AIN2",
      "time": "09:12",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     }
    ],
    "athletes": [
@@ -25137,56 +25138,63 @@
     "Илья Мальков"
    ],
    "src": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
-   "desc": "Россияне:\n• Илья Мальков — 09:12\n\nНачало: 09:00 МСК",
+   "desc": "Итог:\n1. Kirill Sheiko — 74.36\n2. Илья Мальков — 70.92\n3. Gion Schmid — 68.24\n\nРоссияне:\n• Илья Мальков — 09:12\n\nНачало: 09:00 МСК",
    "field": [
     {
      "name": "Robert Wildt",
      "nation": "GER",
      "time": "09:06",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5
     },
     {
      "name": "Илья Мальков",
      "nation": "AIN2",
      "time": "09:12",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Ryszard Siudek",
      "nation": "POL",
      "time": "09:18",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 6
     },
     {
      "name": "Kirill Sheiko",
      "nation": "ISR",
      "time": "09:30",
      "no": 4,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Aaron Kim",
      "nation": "KOR",
      "time": "09:36",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4
     },
     {
      "name": "Akims Kirilovs",
      "nation": "LAT",
      "time": "09:42",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     },
     {
      "name": "Gion Schmid",
      "nation": "SUI",
      "time": "09:48",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3
     }
    ],
    "live": {
@@ -25203,9 +25211,29 @@
      "Akims KIRILOVS": "Akims Kirilovs",
      "Gion SCHMID": "Gion Schmid"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": "isu_isu-cs-budapest-trophy.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Kirill Sheiko",
+     "nation": "ISR",
+     "points": "74.36"
+    },
+    {
+     "place": 2,
+     "name": "Илья Мальков",
+     "nation": "AIN2",
+     "points": "70.92"
+    },
+    {
+     "place": 3,
+     "name": "Gion Schmid",
+     "nation": "SUI",
+     "points": "68.24"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:women-senior-kp",
