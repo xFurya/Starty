@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-16T13:10:34+03:00",
- "checked": "2026-10-16T10:30:37.115416+00:00",
+ "generated": "2026-10-16T13:23:55+03:00",
+ "checked": "2026-10-16T13:23:55+03:00",
  "complete": true,
  "sources": {
   "ФФККР": "ok",
@@ -25730,7 +25730,7 @@
      "nation": "BUL",
      "no": 1,
      "warmup": 1,
-     "place": 19
+     "place": 18
     },
     {
      "name": "Valeria Huber",
@@ -25744,7 +25744,7 @@
      "nation": "NED",
      "no": 3,
      "warmup": 1,
-     "place": 15
+     "place": 14
     },
     {
      "name": "Varvara Abramkina",
@@ -25758,14 +25758,14 @@
      "nation": "SWE",
      "no": 5,
      "warmup": 1,
-     "place": 17
+     "place": 16
     },
     {
      "name": "Mia Kasparovica",
      "nation": "LAT",
      "no": 6,
      "warmup": 2,
-     "place": 14
+     "place": 13
     },
     {
      "name": "Mayuka Sueess",
@@ -25779,7 +25779,7 @@
      "nation": "SLO",
      "no": 9,
      "warmup": 2,
-     "place": 12
+     "place": 11
     },
     {
      "name": "Rebecca Lo Cascio",
@@ -25807,21 +25807,21 @@
      "nation": "HUN",
      "no": 13,
      "warmup": 3,
-     "place": 23
+     "place": 22
     },
     {
      "name": "Natalia Runcanu",
      "nation": "ROU",
      "no": 14,
      "warmup": 3,
-     "place": 22
+     "place": 21
     },
     {
      "name": "Shaked Pinchas",
      "nation": "ISR",
      "no": 15,
      "warmup": 3,
-     "place": 25
+     "place": 24
     },
     {
      "name": "Lidiia Tsukanova",
@@ -25835,14 +25835,14 @@
      "nation": "HUN",
      "no": 17,
      "warmup": 4,
-     "place": 21
+     "place": 20
     },
     {
      "name": "Shahaf Pinchas",
      "nation": "ISR",
      "no": 18,
      "warmup": 4,
-     "place": 24
+     "place": 23
     },
     {
      "name": "Karina Sheina",
@@ -25856,14 +25856,14 @@
      "nation": "HUN",
      "no": 20,
      "warmup": 4,
-     "place": 13
+     "place": 12
     },
     {
      "name": "Martina Petra Major",
      "nation": "HUN",
      "no": 21,
      "warmup": 5,
-     "place": 18
+     "place": 17
     },
     {
      "name": "Jiaying Ellyse Johnson",
@@ -25877,22 +25877,25 @@
      "nation": "ITA",
      "no": 23,
      "warmup": 5,
-     "place": 20
-    },
-    {
-     "name": "Adelina Voroteliak",
-     "nation": "GER",
-     "place": 7
+     "place": 19
     },
     {
      "name": "Anissa Mamaev",
      "nation": "UZB",
-     "place": 16
+     "no": 24,
+     "warmup": 5,
+     "place": 15
     },
     {
      "name": "Mila Bertsch",
      "nation": "FRA",
-     "place": 11
+     "no": 25,
+     "warmup": 5,
+     "place": 10
+    },
+    {
+     "name": "Adelina Voroteliak",
+     "nation": "GER"
     }
    ],
    "live": {
@@ -25910,10 +25913,12 @@
      "Valeria HUBER": "Valeria Huber",
      "Rebecca LO CASCIO": "Rebecca Lo Cascio",
      "Lidiia TSUKANOVA": "Lidiia Tsukanova",
+     "Mila BERTSCH": "Mila Bertsch",
      "Polina BYKOVA": "Polina Bykova",
      "Greta Norina MAJOR": "Greta Norina Major",
      "Mia KASPAROVICA": "Mia Kasparovica",
      "Summer WIJKHUIZEN": "Summer Wijkhuizen",
+     "Anissa MAMAEV": "Anissa Mamaev",
      "Hedda HEDSTROM": "Hedda Hedstrom",
      "Martina Petra MAJOR": "Martina Petra Major",
      "Milena VELCHEVA": "Milena Velcheva",
@@ -25923,8 +25928,6 @@
      "Hanna Laura VIRANYI": "Hanna Laura Viranyi",
      "Shahaf PINCHAS": "Shahaf Pinchas",
      "Shaked PINCHAS": "Shaked Pinchas",
-     "Anissa MAMAEV": "Anissa Mamaev",
-     "Mila BERTSCH": "Mila Bertsch",
      "Adelina VOROTELIAK": "Adelina Voroteliak"
     },
     "basis": "judges"
@@ -52389,7 +52392,7 @@
   "Chiara Minighini": "photos/8d9b472b506ab836.jpg",
   "Chilly Ann Sintana Wongso": "photos/d960655201bf441f.jpg",
   "Chiranat Chinprapakron": "photos/464ea4f6fac45fc9.jpg",
-  "Chiu Hei Cheung": "photos/d57bb27fb7e50ae7.jpg",
+  "Chiu Hei Cheung": "photos/a38be0e18a534d60.jpg",
   "Chloe Desiree Leung": "photos/f0a06d04dc1400b4.jpg",
   "Chloe Levine": "photos/71c1261dddf861ef.jpg",
   "Chloe Xin Yao Ng": "photos/1d2a6d8d564f0677.jpg",
@@ -53019,7 +53022,7 @@
   "Michelangelo Caprano": "photos/ab982d77aced84d2.jpg",
   "Michelle Deych": "photos/37c6537bb0d47c8e.jpg",
   "Ryan Hu": "photos/a24e043dfcc1cf6c.jpg",
-  "Michelle Dicicco": "photos/495ec11f8944726e.jpg",
+  "Michelle Dicicco": "photos/0b1be996d3d1a3cc.jpg",
   "Michelle Edgina Axille": "photos/761b0807f691e92e.jpg",
   "Mikalai Kamianchuk": "photos/cf7fa6e540c18840.jpg",
   "Mikayel Salazaryan": "photos/484d8d09c709b96c.jpg",
