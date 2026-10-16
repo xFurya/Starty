@@ -838,11 +838,8 @@ class Schedule {
       fresh.generated,
       fresh.complete,
       fresh.fromCache,
-      photos: {
-        ...old.photos,
-        for (final e in fresh.photos.entries)
-          if (e.value.isNotEmpty || !old.photos.containsKey(e.key)) e.key: e.value,
-      },
+      // свежее значение главнее; пустое — сборщик отозвал снимок (отбракован), прежний забываем
+      photos: {...old.photos, ...fresh.photos},
       upcoming: upcoming,
       sources: fresh.sources,
       // список наблюдения сборщик меняет сознательно — берём свежий, пока он не пуст

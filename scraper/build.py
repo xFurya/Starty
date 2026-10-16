@@ -1100,6 +1100,13 @@ def do_goldenskate(names, report, failed, isu_ok):
 
 # ---------------------------------------------------------------- main
 
+def withdraw_photos(photos, skip):
+    """Отбракованный снимок (адрес в photo_skip) не публикуется, даже если остался в прошлых данных.
+    Имя остаётся с пустым значением: так приложение узнаёт, что прежнее фото надо забыть."""
+    bad = {ph.rel_path(u) for u in skip if not u.startswith("person:")}
+    return {k: ("" if v in bad else v) for k, v in photos.items()}
+
+
 def collect_photos(events, upcoming, names, photos, prev_photos, everyone=()):
     """{«Имя Фамилия» как в ours/podium/total/watchlist и справочнике: адрес фото}. Пары — по людям.
     Источники: сборная ФФККР, портреты ISU (заявки, общий список), Викиданные. Адрес берётся,
@@ -1308,9 +1315,10 @@ def main():
         "watchlist": CFG["watchlist"],
         "roster": sorted(roster),
         "people": kp.merge_named(book["people"], prev.get("people"), "n", retract.get("people", ())),
-        "photos": kp.merge_map(collect_photos(events, upcoming, names, photos, prev.get("photos") or {},
-                                              [p["n"] for p in book["people"]]),
-                               prev.get("photos"), retract.get("photos", ())),
+        "photos": withdraw_photos(kp.merge_map(collect_photos(events, upcoming, names, photos, prev.get("photos") or {},
+                                                              [p["n"] for p in book["people"]]),
+                                               prev.get("photos"), retract.get("photos", ())),
+                                  ph.load_skip(PHOTO_SKIP)),
     }
     # Если сбор вернул заметно меньше будущих стартов, чем было, — это поломка
     # источника, а не отмена турниров. Тогда оставляем прошлые данные.

@@ -329,3 +329,11 @@ class ThumbAuditTest(Base):
         names = self.seed("Ксения Синицына", rel, 2)
         out = self.run_collect(["Ксения Синицына"], [], names=names)
         self.assertEqual(out["Ксения Синицына"], rel)
+
+
+class WithdrawTest(unittest.TestCase):
+    def test_rejected_file_is_withdrawn(self):
+        from scraper import build
+        bad = "https://commons.wikimedia.org/wiki/Special:FilePath/X.jpg?width=500"
+        got = build.withdraw_photos({"А Б": ph.rel_path(bad), "В Г": "photos/ok.jpg"}, {bad, "person:в г"})
+        self.assertEqual(got, {"А Б": "", "В Г": "photos/ok.jpg"})

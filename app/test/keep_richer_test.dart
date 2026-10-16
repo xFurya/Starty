@@ -428,6 +428,11 @@ void main() {
       expect(m.photos['А Б'], 'photos/b.jpg');
     });
 
+    test('фото: пустое значение — снимок отозван, прежний не показывается', () {
+      final m = Schedule.mergeKeepingRicher(sched([], photos: {'А Б': 'photos/a.jpg'}), sched([], photos: {'А Б': ''}), now: _at);
+      expect(m.photoOf('А Б'), isNull);
+    });
+
     test('архив старше срока не копится', () {
       final old = sched([startJson(t0: _day.subtract(const Duration(days: 100)), facts: four())]);
       expect(Schedule.mergeKeepingRicher(old, sched([]), now: _at).starts, isEmpty);
