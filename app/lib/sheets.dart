@@ -1574,6 +1574,11 @@ class _FilterSheetState extends State<_FilterSheet> {
   late Set<String> tids = {...widget.state.filters.tids};
   late Set<String> athletes = {...widget.state.filters.athletes};
 
+  /// Список отслеживаемых раскрыт, если среди них есть отмеченный: отметку не прячем.
+  /// Иначе свёрнут — без отметок он лишь ярлыки и занимает пол-листа. Между открытиями
+  /// листа не запоминается: каждый раз по тому же правилу, отметки и настройки не трогает.
+  late bool _followOpen = widget.state.filters.athletes.any(widget.state.follow.names.contains);
+
   static Set<String> _full(Set<String> saved, Set<String> all) => saved.isEmpty ? {...all} : {...saved};
 
   /// Выбрано всё — это «без ограничения» (пустой набор).
@@ -1757,8 +1762,17 @@ class _FilterSheetState extends State<_FilterSheet> {
                           if (picked.isNotEmpty && quick.isNotEmpty) subhead('Отмеченные'),
                           for (final a in picked) athleteRow(a),
                           if (quick.isNotEmpty) ...[
-                            subhead('Отслеживаемые'),
-                            for (final a in quick) athleteRow(a),
+                            _FoldHead(
+                              label: 'Отслеживаемые',
+                              total: quick.length,
+                              marked: quick.where(athletes.contains).length,
+                              open: _followOpen,
+                              onTap: () => setState(() => _followOpen = !_followOpen),
+                            ),
+                            _Fold(
+                              open: _followOpen,
+                              child: Column(children: [for (final a in quick) athleteRow(a)]),
+                            ),
                           ],
                         ],
                         if (groups.isNotEmpty) ...[
@@ -1796,6 +1810,76 @@ class _FilterSheetState extends State<_FilterSheet> {
       ),
     );
   }
+}
+
+/// Заголовок сворачиваемого списка в листе фильтра: подпись, справа число и стрелка.
+/// Нажатие по всей строке; зона не ниже 44 pt. Отмеченные есть — «1 из 3» цветом акцента:
+/// в свёрнутом списке их не видно, а ленту они сужают.
+class _FoldHead extends StatelessWidget {
+  final String label;
+  final int total, marked;
+  final bool open;
+  final VoidCallback onTap;
+  const _FoldHead({required this.label, required this.total, required this.marked, required this.open, required this.onTap});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final count = marked == 0 ? '$total' : '$marked из $total';
+    final style = TextStyle(fontSize: 13, height: 1.3, color: p.ink2, fontWeight: FontWeight.w600);
+    return Padding(
+      padding: const EdgeInsets.only(top: 4),
+      child: Semantics(
+        button: true,
+        expanded: open,
+        label: marked == 0 ? '$label, $total' : '$label, отмечено $marked из $total',
+        excludeSemantics: true,
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(12),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 44),
+            child: Row(
+              children: [
+                Expanded(child: Text(label, maxLines: 1, overflow: TextOverflow.ellipsis, style: style)),
+                const SizedBox(width: 12),
+                Text(
+                  count,
+                  maxLines: 1,
+                  style: marked == 0 ? style : style.copyWith(color: p.accent, fontWeight: FontWeight.w700),
+                ),
+                const SizedBox(width: 10),
+                // стрелка встаёт по центру квадрата-отметки строк ниже
+                SizedBox(
+                  width: 22,
+                  child: AnimatedRotation(
+                    turns: open ? .5 : 0,
+                    duration: MediaQuery.disableAnimationsOf(context) ? Duration.zero : const Duration(milliseconds: 200),
+                    child: Icon(CupertinoIcons.chevron_down, size: 16, color: p.ink2),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Сворачиваемая часть: плавно по высоте; свёрнутая из дерева уходит целиком.
+class _Fold extends StatelessWidget {
+  final bool open;
+  final Widget child;
+  const _Fold({required this.open, required this.child});
+  @override
+  Widget build(BuildContext context) => ClipRect(
+    child: AnimatedSize(
+      duration: MediaQuery.disableAnimationsOf(context) ? Duration.zero : const Duration(milliseconds: 220),
+      curve: Curves.easeOutCubic,
+      alignment: Alignment.topCenter,
+      child: open ? child : const SizedBox(width: double.infinity),
+    ),
+  );
 }
 
 /// Главная кнопка листа фильтра: сколько стартов покажет лента — с расписанием и без него
