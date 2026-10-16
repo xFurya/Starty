@@ -1321,20 +1321,32 @@ class _LiveChip extends StatelessWidget {
     final p = Palette.of(context);
     final own = state.liveOverrides[start.id];
     final mode = state.liveModeOf(start);
-    return PopupMenuButton<String>(
-      tooltip: 'Живые места',
-      padding: EdgeInsets.zero,
-      position: PopupMenuPosition.under,
-      initialValue: own ?? _asSettings,
-      onSelected: (v) => state.setLiveOverride(start.id, v == _asSettings ? null : v),
-      itemBuilder: (_) => [
-        for (final (v, label) in const [(_asSettings, 'Как в настройках'), (liveInstant, 'Моментально'), (liveDelayed, 'С опозданием')])
-          PopupMenuItem<String>(
-            value: v,
-            child: Text(label, style: TextStyle(fontSize: 15, fontWeight: v == (own ?? _asSettings) ? FontWeight.w700 : FontWeight.w500)),
+    return Builder(
+      builder: (chipContext) => Tooltip(
+        message: 'Живые места',
+        child: InkWell(
+          borderRadius: BorderRadius.circular(22),
+          onTap: () async {
+            final v = await showChoiceMenu<String>(
+              chipContext,
+              label: 'Живые места',
+              selected: own ?? _asSettings,
+              items: const [(_asSettings, 'Как в настройках'), (liveInstant, 'Моментально'), (liveDelayed, 'С опозданием')],
+            );
+            if (v != null) state.setLiveOverride(start.id, v == _asSettings ? null : v);
+          },
+          // зона нажатия не меньше 44 pt, сам чип остаётся компактным
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 44),
+            child: Center(widthFactor: 1, child: _chip(p, mode)),
           ),
-      ],
-      child: Container(
+        ),
+      ),
+    );
+  }
+
+  Widget _chip(Palette p, String mode) {
+    return Container(
         constraints: const BoxConstraints(minHeight: 36),
         padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
         decoration: BoxDecoration(
@@ -1357,7 +1369,6 @@ class _LiveChip extends StatelessWidget {
             ),
           ],
         ),
-      ),
     );
   }
 }
