@@ -1,33 +1,11 @@
 {
- "version": "1.0.37",
- "code": 38,
- "notes": "Новый удобный фильтр; ссылки и трансляции открываются внутри приложения.",
- "at": "2026-10-16T19:52:02Z",
+ "version": "1.0.38",
+ "code": 39,
+ "notes": "Список отслеживаемых в фильтре сворачивается.",
+ "at": "2026-10-16T23:04:31Z",
  "android": {
-  "file": "starty-1.0.37.apk",
+  "file": "starty-1.0.38.apk",
   "size": 23111419,
-  "sha256": "8212f0bda6c20802ac774fd56fa73e035fc8581d1124b7f090f836bc03362790"
- },
- "windows": {
-  "code": 38,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.37/Starty-windows.zip",
-  "size": 14297742,
-  "sha256": "271cccbb5dadff604762fa3a306deb9cd828d06962d0b51c8fe996b53d9e5e5d",
-  "setup": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.37/starty-setup-1.0.37.exe",
-   "size": 12232036,
-   "sha256": "3fb51a43ffbd49a596643f4acc92f930197caf7f4c96b03d9327f581f227bdf5"
-  }
- },
- "macos": {
-  "code": 38,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.37/Starty-macos.zip",
-  "size": 21765048,
-  "sha256": "fd631f6002a60dcc1a6bb9ea786ceb6c79296e48ae01d643daecef9774acc064",
-  "dmg": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.37/Starty-macos.dmg",
-   "size": 24899142,
-   "sha256": "f546c33dda4cd12731302d20a0e3a102fd02a0530f682e1387a0ce30f611ee25"
-  }
+  "sha256": "d704a99b8e1e8698ee75270da75f8ec4529b4358334d5557945ffd88e2491111"
  }
 }
