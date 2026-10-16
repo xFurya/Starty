@@ -139,6 +139,39 @@ void main() {
     }
   }
 
+  test('фильтр: «Все» и пункты в один тап', () {
+    const all = {'women', 'men', 'pairs', 'dance'};
+    // были все — остаётся только нажатый
+    expect(pickChoice(all, all, 'pairs', many: true), {'pairs'});
+    expect(pickChoice({'pairs'}, all, 'women', many: true), {'pairs', 'women'});
+    // снят последний — снова все; отмечены все — тоже «все»
+    expect(pickChoice({'pairs'}, all, 'pairs', many: true), all);
+    expect(pickChoice({'women', 'men', 'pairs'}, all, 'dance', many: true), all);
+    // из двух — один или оба
+    const scope = {'russian', 'intl'};
+    expect(pickChoice(scope, scope, 'intl', many: false), {'intl'});
+    expect(pickChoice({'intl'}, scope, 'russian', many: false), {'russian'});
+    expect(pickChoice({'intl'}, scope, 'intl', many: false), scope);
+  });
+
+  testWidgets('фильтр: один вид в один тап, «Сбросить» — только когда есть что сбрасывать', (t) async {
+    final s = stateWith(data);
+    await t.pumpWidget(app(
+      Builder(builder: (c) => Center(child: TextButton(onPressed: () => showFilters(c, s), child: const Text('open')))),
+      Brightness.dark,
+      1,
+    ));
+    await t.tap(find.text('open'));
+    await t.pumpAndSettle();
+    expect(find.text('Сбросить'), findsNothing);
+    await t.tap(find.text('Пары'));
+    await t.pumpAndSettle();
+    expect(find.text('Сбросить'), findsOneWidget);
+    await t.tap(find.text('Сбросить'));
+    await t.pumpAndSettle();
+    expect(find.text('Сбросить'), findsNothing);
+  });
+
   test('склонение', () {
     expect([1, 2, 5, 11, 21, 22, 25, 111].map((n) => plural(n, 'старт', 'старта', 'стартов')), [
       'старт',

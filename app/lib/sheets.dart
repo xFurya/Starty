@@ -1263,46 +1263,69 @@ class _SwipeSurfaceState extends State<SwipeSurface> {
   }
 }
 
-/// Шапка листа: лёд и название; [trailing] — справа.
-class _SheetTitle extends StatelessWidget {
-  final String title;
-  const _SheetTitle(this.title);
+/// Шапка листа фильтра — закреплена: ручка, название и «Сбросить», только когда есть что
+/// сбрасывать. Пока список прокручен, снизу — тонкая черта: список уходит под шапку.
+class _FilterHeader extends StatelessWidget {
+  final VoidCallback? onReset;
+  final bool scrolled;
+  const _FilterHeader({required this.onReset, required this.scrolled});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    return Stack(
-      children: [
-        Positioned.fill(child: IceBackdrop(fadeTo: p.sheet, fadeStart: .25, sparkles: -1)),
-        const Positioned(top: 0, left: 0, right: 0, child: SheetSparkles()),
-        ConstrainedBox(
-          constraints: const BoxConstraints(minHeight: 104, minWidth: double.infinity),
-          child: Align(
-            alignment: Alignment.bottomLeft,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(20, 34, 20, 4),
-              child: Text(title, style: display(p, 40)),
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: p.sheet,
+        border: Border(bottom: BorderSide(color: scrolled ? p.plateLine : p.sheet.withValues(alpha: 0))),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const SheetHandle(),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 6, 8, 4),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(minHeight: 44),
+              child: Row(
+                children: [
+                  Expanded(child: Text('Фильтр', maxLines: 1, style: display(p, 28))),
+                  if (onReset != null) _TextAction('Сбросить', onReset!),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
 
-/// Нижняя полоса листа: «Сбросить»/«Отменить» и главная кнопка — подтверждение.
+/// Действие надписью цвета акцента; зона нажатия не меньше 44 pt.
+class _TextAction extends StatelessWidget {
+  final String label;
+  final VoidCallback onTap;
+  const _TextAction(this.label, this.onTap);
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return TextButton(
+      onPressed: onTap,
+      style: TextButton.styleFrom(
+        foregroundColor: p.accent,
+        minimumSize: const Size(44, 44),
+        padding: const EdgeInsets.symmetric(horizontal: 12),
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      ),
+      // начертание — на самой надписи: textStyle кнопки заменил бы шрифт приложения целиком
+      child: Text(label, maxLines: 1, softWrap: false, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.accent)),
+    );
+  }
+}
+
+/// Нижняя полоса листа фильтра: одна главная кнопка — сколько стартов покажет лента.
 class _SheetBar extends StatelessWidget {
-  final String secondary;
-  final VoidCallback? onSecondary;
   final String primary;
-  final String? detail;
   final VoidCallback? onPrimary;
-  const _SheetBar({
-    required this.secondary,
-    required this.onSecondary,
-    required this.primary,
-    required this.onPrimary,
-    this.detail,
-  });
+  const _SheetBar({required this.primary, required this.onPrimary});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -1312,17 +1335,99 @@ class _SheetBar extends StatelessWidget {
         border: Border(top: BorderSide(color: p.plateLine)),
       ),
       padding: EdgeInsets.fromLTRB(16, 12, 16, 12 + MediaQuery.paddingOf(context).bottom),
-      // левая кнопка — не шире 40 % ряда: главная остаётся главной
-      child: LayoutBuilder(
-        builder: (context, k) => Row(
-          children: [
-            ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: k.maxWidth * .4),
-              child: SheetButton(neutral: true, compact: true, label: secondary, onTap: onSecondary),
+      child: SheetButton(filled: true, label: primary, onTap: onPrimary),
+    );
+  }
+}
+
+/// Нажатие на пункт группы фильтра, где «все» — без ограничения.
+/// Были все — остаётся только нажатый. Иначе [many] — пункт добавляется или снимается,
+/// без [many] — нажатый становится единственным. Не осталось ни одного или отмечены
+/// все — снова все.
+Set<String> pickChoice(Set<String> sel, Set<String> all, String k, {required bool many}) {
+  final isAll = sel.length == all.length && sel.containsAll(all);
+  if (isAll) return {k};
+  final on = sel.contains(k);
+  final next = many ? (on ? ({...sel}..remove(k)) : {...sel, k}) : (on ? <String>{} : {k});
+  return next.isEmpty || next.containsAll(all) ? {...all} : next;
+}
+
+/// Группа фильтра чипами: «Все» и пункты. Выбранное — залито акцентом.
+class _Choices extends StatelessWidget {
+  final List<(String, String)> items;
+  final Set<String> sel;
+  final bool many;
+  final Map<String, Color> dots;
+  final ValueChanged<Set<String>> onChanged;
+  const _Choices({required this.items, required this.sel, required this.onChanged, this.many = false, this.dots = const {}});
+  @override
+  Widget build(BuildContext context) {
+    final all = {for (final (k, _) in items) k};
+    final isAll = sel.length == all.length && sel.containsAll(all);
+    return Wrap(
+      spacing: 8,
+      children: [
+        _Chip(label: 'Все', on: isAll, onTap: () => onChanged({...all})),
+        for (final (k, label) in items)
+          _Chip(label: label, on: !isAll && sel.contains(k), dot: dots[k], onTap: () => onChanged(pickChoice(sel, all, k, many: many))),
+      ],
+    );
+  }
+}
+
+class _Chip extends StatelessWidget {
+  final String label;
+  final bool on;
+  final Color? dot;
+  final VoidCallback onTap;
+  const _Chip({required this.label, required this.on, required this.onTap, this.dot});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Semantics(
+      button: true,
+      selected: on,
+      label: label,
+      excludeSemantics: true,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: onTap,
+        // видимый чип 40 pt, зона нажатия 48
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 4),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 140),
+            constraints: const BoxConstraints(minHeight: 40),
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+            decoration: BoxDecoration(
+              color: on ? p.accent : p.plate,
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: on ? p.accent : p.control.withValues(alpha: .55), width: 1.2),
             ),
-            const SizedBox(width: 10),
-            Expanded(child: SheetButton(filled: true, label: primary, detail: detail, onTap: onPrimary)),
-          ],
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (dot != null) ...[
+                  Container(
+                    width: 10,
+                    height: 10,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: dot,
+                      border: on ? Border.all(color: p.onAccent, width: 1.5) : null,
+                    ),
+                  ),
+                  const SizedBox(width: 7),
+                ],
+                Flexible(
+                  child: Text(
+                    label,
+                    style: TextStyle(fontSize: 14.5, height: 1.2, fontWeight: FontWeight.w600, color: on ? p.onAccent : p.ink),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -1458,16 +1563,15 @@ class _FilterSheet extends StatefulWidget {
 }
 
 class _FilterSheetState extends State<_FilterSheet> {
-  // По умолчанию выбрано всё: убрал галочку — этого в ленте нет; убрал все — стартов нет.
-  // Сохраняется как пустой набор («без ограничения»), когда выбрано всё (Filters).
+  // Старты, уровень, вид: «Все» — без ограничения, сохраняется пустым набором (Filters).
   static final _allKinds = kindNames.keys.toSet();
   static final _allLevels = levelNames.keys.toSet();
   static const _allScope = {'russian', 'intl'};
-  late final Set<String> allTids = _tourIds(widget.state.data!, now());
   late Set<String> kinds = _full(widget.state.filters.kinds, _allKinds);
   late Set<String> levels = _full(widget.state.filters.levels, _allLevels);
   late Set<String> scope = _full(widget.state.filters.scope, _allScope);
-  late Set<String> tids = _full(widget.state.filters.tids, allTids);
+  // спортсмены и турниры: ничего не отмечено — все; отмеченные — только они
+  late Set<String> tids = {...widget.state.filters.tids};
   late Set<String> athletes = {...widget.state.filters.athletes};
 
   static Set<String> _full(Set<String> saved, Set<String> all) => saved.isEmpty ? {...all} : {...saved};
@@ -1476,19 +1580,9 @@ class _FilterSheetState extends State<_FilterSheet> {
   static Set<String> _save(Set<String> sel, Set<String> all) =>
       sel.length == all.length && sel.containsAll(all) ? <String>{} : {...sel};
 
-  static Set<String> _tourIds(Schedule data, DateTime t) {
-    final out = <String>{};
-    for (final s in data.starts) {
-      if (!s.pastAt(t)) out.add(s.tid);
-    }
-    final today = dayKey(t), horizon = dayKey(t.add(const Duration(days: 60)));
-    for (final u in data.upcoming) {
-      if (u.end.compareTo(today) >= 0 && u.start.compareTo(horizon) < 0) out.add(u.tid);
-    }
-    return out;
-  }
   final _q = TextEditingController();
   String q = '';
+  bool _scrolled = false;
 
   @override
   void dispose() {
@@ -1503,15 +1597,6 @@ class _FilterSheetState extends State<_FilterSheet> {
     final p = Palette.of(context);
     final data = widget.state.data!;
     final t = now();
-    // пустая группа — ничего не выбрано, а значит и стартов нет
-    final nothing = kinds.isEmpty || levels.isEmpty || scope.isEmpty || (allTids.isNotEmpty && tids.isEmpty);
-    final f = Filters(
-      _save(kinds, _allKinds),
-      _save(tids, allTids),
-      athletes,
-      levels: _save(levels, _allLevels),
-      scope: _save(scope, _allScope),
-    );
 
     // турниры впереди: со стартами в расписании и без расписания; российские и международные отдельно
     final tours = <String, ({String name, bool intl, String from, String to})>{};
@@ -1533,17 +1618,29 @@ class _FilterSheetState extends State<_FilterSheet> {
     }
     final byDate = tours.entries.toList()..sort((a, b) => a.value.from.compareTo(b.value.from));
     List<MapEntry<String, ({String name, bool intl, String from, String to})>> group(bool intl) =>
-        [for (final e in byDate) if (e.value.intl == intl && (scope.isEmpty || scope.contains(intl ? 'intl' : 'russian'))) e];
+        [for (final e in byDate) if (e.value.intl == intl && scope.contains(intl ? 'intl' : 'russian')) e];
+    final groups = [for (final intl in [false, true]) if (group(intl).isNotEmpty) (intl, group(intl))];
+
+    // отмеченный турнир, которого в списке нет (прошёл или скрыт выбором стартов), ленту не сужает
+    final shownTids = {for (final g in groups) for (final e in g.$2) e.key};
+    final pickedTids = tids.intersection(shownTids);
+    final f = Filters(
+      _save(kinds, _allKinds),
+      pickedTids,
+      athletes,
+      levels: _save(levels, _allLevels),
+      scope: _save(scope, _allScope),
+    );
 
     final follow = widget.state.follow.names;
     final found = q.isEmpty ? const <String>[] : searchAthletes(data, q, soon: soonAthletes(data, t));
-    final picked = athletes.toList()..sort();
-    final quick = [for (final a in follow.toList()..sort()) if (!athletes.contains(a)) a];
+    // отслеживаемые стоят на своих местах и при отметке не прыгают; отмеченные из поиска — над ними
+    final quick = follow.toList()..sort();
+    final picked = [for (final a in athletes.toList()..sort()) if (!follow.contains(a)) a];
 
-    final count = nothing ? 0 : feedPool(widget.state, f, t).length;
-    final more = nothing ? 0 : upcomingAhead(widget.state, t, f).length;
-    final action = nothing ? ('Ничего не выбрано', null) : filterAction(count, more);
-    final canReset = f.any || nothing || widget.state.filters.any;
+    final count = feedPool(widget.state, f, t).length;
+    final more = upcomingAhead(widget.state, t, f).length;
+    final action = filterAction(count, more);
 
     Widget athleteRow(String a) => _CheckRow(
       leading: Avatar(name: a, data: data, size: 34, slot: true),
@@ -1554,6 +1651,30 @@ class _FilterSheetState extends State<_FilterSheet> {
       onTap: () => _flip(athletes, a),
     );
 
+    // заголовок раздела; есть отметки — справа «Снять отметки». Высота одна, чтобы не прыгало
+    Widget head(String label, {VoidCallback? clear}) => ConstrainedBox(
+      constraints: const BoxConstraints(minHeight: 44),
+      child: Row(
+        children: [
+          Expanded(child: Eyebrow(label)),
+          if (clear != null) _TextAction('Снять отметки', clear),
+        ],
+      ),
+    );
+    // что сейчас попадает в ленту из этого раздела
+    Widget note(String text) => Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Text(text, style: TextStyle(fontSize: 13.5, height: 1.35, color: p.ink2)),
+    );
+    Widget subhead(String text) => Padding(
+      padding: const EdgeInsets.only(top: 12, bottom: 2),
+      child: Text(text, style: TextStyle(fontSize: 13, height: 1.3, color: p.ink2, fontWeight: FontWeight.w600)),
+    );
+    Widget section(String label, Widget child) => Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [Eyebrow(label), const SizedBox(height: 4), child],
+    );
+
     return Material(
       color: p.sheet,
       borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
@@ -1561,114 +1682,110 @@ class _FilterSheetState extends State<_FilterSheet> {
       child: Column(
         children: [
           Expanded(
-            child: Stack(
-              children: [
-                ListView(
-                  controller: widget.scroll,
-                  padding: EdgeInsets.zero,
-                  children: [
-                    const _SheetTitle('Фильтр'),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 14, 20, 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          const Eyebrow('Старты'),
-                          const SizedBox(height: 10),
-                          TileGrid(
-                            tiles: [
-                              ChoiceTile(label: 'Российские', on: scope.contains('russian'), onTap: () => _flip(scope, 'russian')),
-                              ChoiceTile(label: 'Международные', on: scope.contains('intl'), onTap: () => _flip(scope, 'intl')),
-                            ],
-                          ),
-                          const SizedBox(height: 22),
-                          const Eyebrow('Уровень'),
-                          const SizedBox(height: 10),
-                          TileGrid(
-                            tiles: [
-                              for (final l in levelNames.entries)
-                                ChoiceTile(label: l.value, on: levels.contains(l.key), onTap: () => _flip(levels, l.key)),
-                            ],
-                          ),
-                          const SizedBox(height: 22),
-                          const Eyebrow('Вид'),
-                          const SizedBox(height: 10),
-                          TileGrid(
-                            tiles: [
-                              for (final k in kindNames.keys)
-                                ChoiceTile(
-                                  label: kindLabel(k, levels),
-                                  color: p.kind(k),
-                                  on: kinds.contains(k),
-                                  onTap: () => _flip(kinds, k),
-                                ),
-                            ],
-                          ),
-                          const SizedBox(height: 26),
-                          const Eyebrow('Спортсмены'),
-                          const SizedBox(height: 10),
-                          SearchBox(controller: _q, onChanged: (v) => setState(() => q = v.trim())),
-                          const SizedBox(height: 6),
-                          if (q.isEmpty && athletes.isEmpty)
-                            Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 8),
-                              child: Text('Все спортсмены', style: TextStyle(fontSize: 14, color: p.ink2, fontWeight: FontWeight.w600)),
-                            ),
-                          if (q.isNotEmpty) ...[
-                            for (final a in found) athleteRow(a),
-                            if (found.isEmpty)
-                              Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 14),
-                                child: Text('Не найдено', style: TextStyle(color: p.ink2, fontSize: 15)),
-                              ),
-                          ] else ...[
-                            for (final a in picked) athleteRow(a),
-                            if (quick.isNotEmpty) ...[
-                              const SizedBox(height: 12),
-                              Text('Отслеживаемые', style: TextStyle(fontSize: 13, color: p.ink2, fontWeight: FontWeight.w600)),
-                              for (final a in quick) athleteRow(a),
-                            ],
-                          ],
-                          for (final intl in [false, true])
-                            if (group(intl).isNotEmpty) ...[
-                              const SizedBox(height: 26),
-                              Eyebrow(intl ? 'Международные' : 'Российские'),
-                              const SizedBox(height: 4),
-                              for (final e in group(intl))
-                                _CheckRow(
-                                  title: e.value.name,
-                                  subtitle: dateRange(e.value.from, e.value.to),
-                                  value: tids.contains(e.key),
-                                  onTap: () => _flip(tids, e.key),
-                                ),
-                            ],
-                        ],
-                      ),
+            child: NotificationListener<ScrollUpdateNotification>(
+              onNotification: (n) {
+                final on = n.metrics.pixels > 0.5;
+                if (on != _scrolled) setState(() => _scrolled = on);
+                return false;
+              },
+              child: CustomScrollView(
+                controller: widget.scroll,
+                slivers: [
+                  PinnedHeaderSliver(
+                    child: _FilterHeader(
+                      scrolled: _scrolled,
+                      onReset: f.any
+                          ? () => setState(() {
+                              kinds = {..._allKinds};
+                              levels = {..._allLevels};
+                              scope = {..._allScope};
+                              tids.clear();
+                              athletes.clear();
+                              _q.clear();
+                              q = '';
+                            })
+                          : null,
                     ),
-                  ],
-                ),
-                const Positioned(top: 0, left: 0, right: 0, child: SheetHandle()),
-              ],
+                  ),
+                  SliverPadding(
+                    padding: const EdgeInsets.fromLTRB(20, 6, 20, 24),
+                    sliver: SliverList.list(
+                      children: [
+                        section(
+                          'Старты',
+                          _Choices(
+                            items: const [('russian', 'Российские'), ('intl', 'Международные')],
+                            sel: scope,
+                            onChanged: (v) => setState(() => scope = v),
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        section(
+                          'Уровень',
+                          _Choices(
+                            items: [for (final l in levelNames.entries) (l.key, l.value)],
+                            sel: levels,
+                            onChanged: (v) => setState(() => levels = v),
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        section(
+                          'Вид',
+                          _Choices(
+                            // оба уровня — короткие названия, как в настройках уведомлений:
+                            // «Женщины (девушки)» не помещалась в строку
+                            items: [for (final k in kindNames.keys) (k, levels.length == 1 ? kindLabel(k, levels) : kindNames[k]!)],
+                            dots: {for (final k in kindNames.keys) k: p.kind(k)},
+                            many: true,
+                            sel: kinds,
+                            onChanged: (v) => setState(() => kinds = v),
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        head('Спортсмены', clear: athletes.isEmpty ? null : () => setState(athletes.clear)),
+                        note(athletes.isEmpty ? 'Показаны все. Отметьте, чьи старты оставить.' : 'Показаны только отмеченные.'),
+                        SearchBox(controller: _q, onChanged: (v) => setState(() => q = v.trim())),
+                        const SizedBox(height: 6),
+                        if (q.isNotEmpty) ...[
+                          for (final a in found) athleteRow(a),
+                          if (found.isEmpty)
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 14),
+                              child: Text('Не найдено', style: TextStyle(color: p.ink2, fontSize: 15)),
+                            ),
+                        ] else ...[
+                          if (picked.isNotEmpty && quick.isNotEmpty) subhead('Отмеченные'),
+                          for (final a in picked) athleteRow(a),
+                          if (quick.isNotEmpty) ...[
+                            subhead('Отслеживаемые'),
+                            for (final a in quick) athleteRow(a),
+                          ],
+                        ],
+                        if (groups.isNotEmpty) ...[
+                          const SizedBox(height: 10),
+                          head('Турниры', clear: pickedTids.isEmpty ? null : () => setState(tids.clear)),
+                          note(pickedTids.isEmpty ? 'Показаны все. Отметьте, какие оставить.' : 'Показаны только отмеченные.'),
+                          for (final (intl, list) in groups) ...[
+                            if (groups.length > 1) subhead(intl ? 'Международные' : 'Российские'),
+                            for (final e in list)
+                              _CheckRow(
+                                title: e.value.name,
+                                subtitle: dateRange(e.value.from, e.value.to),
+                                value: tids.contains(e.key),
+                                onTap: () => _flip(tids, e.key),
+                              ),
+                          ],
+                        ],
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           _SheetBar(
-            secondary: 'Сбросить',
-            onSecondary: canReset
-                ? () {
-                    setState(() {
-                      kinds = {..._allKinds};
-                      levels = {..._allLevels};
-                      scope = {..._allScope};
-                      tids = {...allTids};
-                      athletes.clear();
-                      _q.clear();
-                      q = '';
-                    });
-                  }
-                : null,
             primary: action.$1,
-            detail: action.$2,
-            onPrimary: nothing || count + more == 0
+            onPrimary: count + more == 0
                 ? null
                 : () {
                     widget.state.setFilters(f);
@@ -1743,7 +1860,11 @@ class _CheckRow extends StatelessWidget {
                               WidgetSpan(
                                 alignment: PlaceholderAlignment.baseline,
                                 baseline: TextBaseline.alphabetic,
-                                child: NationTag(nation, style: PlacingName.codeStyle(p, 15).copyWith(height: 1.3)),
+                                // WidgetSpan сам увеличивает вложенное под крупный шрифт: без этого
+                                // флаг с кодом увеличивались дважды
+                                child: MediaQuery.withNoTextScaling(
+                                  child: NationTag(nation, style: PlacingName.codeStyle(p, 15).copyWith(height: 1.3)),
+                                ),
                               ),
                             ],
                           ],
