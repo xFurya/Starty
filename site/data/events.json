@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-16T19:19:21+03:00",
- "checked": "2026-10-16T17:43:20.934522+00:00",
+ "generated": "2026-10-16T20:33:12+03:00",
+ "checked": "2026-10-16T20:33:12+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26438,7 +26438,7 @@
      "nation": "RUS",
      "no": 9,
      "warmup": 3,
-     "place": 11,
+     "place": 10,
      "time": "19:04"
     },
     {
@@ -26501,7 +26501,7 @@
      "nation": "SUI",
      "no": 1,
      "warmup": 1,
-     "place": 17,
+     "place": 16,
      "time": "17:50"
     },
     {
@@ -26509,7 +26509,7 @@
      "nation": "CAN",
      "no": 2,
      "warmup": 1,
-     "place": 14,
+     "place": 13,
      "time": "17:56"
     },
     {
@@ -26517,7 +26517,7 @@
      "nation": "AUT",
      "no": 3,
      "warmup": 1,
-     "place": 16,
+     "place": 15,
      "time": "18:02"
     },
     {
@@ -26525,7 +26525,7 @@
      "nation": "CAN",
      "no": 4,
      "warmup": 1,
-     "place": 9,
+     "place": 8,
      "time": "18:08"
     },
     {
@@ -26541,7 +26541,7 @@
      "nation": "GER",
      "no": 6,
      "warmup": 2,
-     "place": 10,
+     "place": 9,
      "time": "18:26"
     },
     {
@@ -26557,7 +26557,7 @@
      "nation": "ESP",
      "no": 8,
      "warmup": 2,
-     "place": 15,
+     "place": 14,
      "time": "18:38"
     },
     {
@@ -26565,7 +26565,7 @@
      "nation": "RUS",
      "no": 9,
      "warmup": 3,
-     "place": 11,
+     "place": 10,
      "time": "19:04"
     },
     {
@@ -26573,7 +26573,7 @@
      "nation": "FRA",
      "no": 10,
      "warmup": 3,
-     "place": 19,
+     "place": 18,
      "time": "19:10"
     },
     {
@@ -26585,6 +26585,70 @@
      "time": "19:16"
     },
     {
+     "name": "Zofia Grzegorzewska / Oleg Muratov",
+     "nation": "POL",
+     "no": 12,
+     "warmup": 3,
+     "place": 11,
+     "time": "19:22"
+    },
+    {
+     "name": "Shira Ichilov / Mikhail Nosovitskiy",
+     "nation": "ISR",
+     "no": 13,
+     "warmup": 4,
+     "place": 17,
+     "time": "19:34"
+    },
+    {
+     "name": "Giulia Isabella Paolino / Andrea Tuba",
+     "nation": "ITA",
+     "no": 14,
+     "warmup": 4,
+     "place": 5,
+     "time": "19:40"
+    },
+    {
+     "name": "Iryna Pidgaina / Artem Koval",
+     "nation": "UKR",
+     "no": 15,
+     "warmup": 4,
+     "place": 7,
+     "time": "19:46"
+    },
+    {
+     "name": "Luiza-Elena Ilie / Giovanni Stefano Poli",
+     "nation": "ROU",
+     "no": 16,
+     "warmup": 4,
+     "place": 19,
+     "time": "19:52"
+    },
+    {
+     "name": "Emese Csiszer / Mark Shapiro",
+     "nation": "HUN",
+     "no": 17,
+     "warmup": 4,
+     "place": 12,
+     "time": "19:58"
+    },
+    {
+     "name": "Yuka Orihara / Juho Pirinen",
+     "nation": "FIN",
+     "no": 18,
+     "warmup": 5,
+     "place": 4,
+     "time": "20:24"
+    },
+    {
+     "name": "Noemi Maria Tali / Noah Lafornara",
+     "nation": "ITA",
+     "no": 19,
+     "warmup": 5,
+     "place": 6,
+     "time": "20:30"
+    },
+    {
      "name": "Amy Cui / Jonathan Rogers",
      "nation": "USA",
      "time": "20:36",
@@ -26593,75 +26657,11 @@
      "place": 8
     },
     {
-     "name": "Emese Csiszer / Mark Shapiro",
-     "nation": "HUN",
-     "time": "19:58",
-     "no": 17,
-     "warmup": 4,
-     "place": 13
-    },
-    {
      "name": "Emily Bratti / Ian Somerville",
      "nation": "USA",
      "time": "20:42",
      "no": 21,
      "warmup": 5
-    },
-    {
-     "name": "Giulia Isabella Paolino / Andrea Tuba",
-     "nation": "ITA",
-     "time": "19:40",
-     "no": 14,
-     "warmup": 4,
-     "place": 5
-    },
-    {
-     "name": "Iryna Pidgaina / Artem Koval",
-     "nation": "UKR",
-     "time": "19:46",
-     "no": 15,
-     "warmup": 4,
-     "place": 7
-    },
-    {
-     "name": "Luiza-Elena Ilie / Giovanni Stefano Poli",
-     "nation": "ROU",
-     "time": "19:52",
-     "no": 16,
-     "warmup": 4,
-     "place": 20
-    },
-    {
-     "name": "Noemi Maria Tali / Noah Lafornara",
-     "nation": "ITA",
-     "time": "20:30",
-     "no": 19,
-     "warmup": 5,
-     "place": 6
-    },
-    {
-     "name": "Shira Ichilov / Mikhail Nosovitskiy",
-     "nation": "ISR",
-     "time": "19:34",
-     "no": 13,
-     "warmup": 4,
-     "place": 18
-    },
-    {
-     "name": "Yuka Orihara / Juho Pirinen",
-     "nation": "FIN",
-     "time": "20:24",
-     "no": 18,
-     "warmup": 5,
-     "place": 4
-    },
-    {
-     "name": "Zofia Grzegorzewska / Oleg Muratov",
-     "nation": "POL",
-     "time": "19:22",
-     "no": 12,
-     "warmup": 3,
-     "place": 12
     },
     {
      "name": "Василиса Григорьева / Евгений Артющенко",
@@ -26681,22 +26681,22 @@
      "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck",
      "Natalie TASCHLEROVA / Filip TASCHLER": "Natalie Taschlerova / Filip Taschler",
      "Loicia DEMOUGEOT / Theo le MERCIER": "Loicia Demougeot / Theo le Mercier",
+     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
+     "Giulia Isabella PAOLINO / Andrea TUBA": "Giulia Isabella Paolino / Andrea Tuba",
+     "Noemi Maria TALI / Noah LAFORNARA": "Noemi Maria Tali / Noah Lafornara",
+     "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Artem Koval",
      "Jamie FOURNIER / Everest ZHU": "Jamie Fournier / Everest Zhu",
      "Charise MATTHAEI / Max LIEBERS": "Charise Matthaei / Max Liebers",
      "Milana KUZMINA / Dmitrii STUDENIKIN": "Милана Кузьмина / Дмитрий Студеникин",
+     "Zofia GRZEGORZEWSKA / Oleg MURATOV": "Zofia Grzegorzewska / Oleg Muratov",
+     "Emese CSISZER / Mark SHAPIRO": "Emese Csiszer / Mark Shapiro",
      "Chloe NGUYEN / Brendan GIANG": "Chloe Nguyen / Brendan Giang",
      "Philomene SABOURIN / Raul BERMEJO": "Philomene Sabourin / Raul Bermejo",
      "Anita STRAUB / Andreas STRAUB": "Anita Straub / Andreas Straub",
      "Gina ZEHNDER / Beda Leon SIEBER": "Gina Zehnder / Beda Leon Sieber",
-     "Alisa OVSIANKINA / Maximilien RAHIER": "Alisa Ovsiankina / Maximilien Rahier",
-     "Zofia GRZEGORZEWSKA / Oleg MURATOV": "Zofia Grzegorzewska / Oleg Muratov",
      "Shira ICHILOV / Mikhail NOSOVITSKIY": "Shira Ichilov / Mikhail Nosovitskiy",
-     "Giulia Isabella PAOLINO / Andrea TUBA": "Giulia Isabella Paolino / Andrea Tuba",
-     "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Artem Koval",
+     "Alisa OVSIANKINA / Maximilien RAHIER": "Alisa Ovsiankina / Maximilien Rahier",
      "Luiza-Elena ILIE / Giovanni Stefano POLI": "Luiza-Elena Ilie / Giovanni Stefano Poli",
-     "Emese CSISZER / Mark SHAPIRO": "Emese Csiszer / Mark Shapiro",
-     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
-     "Noemi Maria TALI / Noah LAFORNARA": "Noemi Maria Tali / Noah Lafornara",
      "Amy CUI / Jonathan ROGERS": "Amy Cui / Jonathan Rogers",
      "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
      "Vasilisa GRIGOREVA / Evgenii ARTIUSHCHENKO": "Василиса Григорьева / Евгений Артющенко"
@@ -55196,6 +55196,7 @@
   "Ксения Синицына": "photos/fd45f4011ed6e0c3.jpg",
   "Chloe Nguyen": "photos/dd3298115c4d3635.jpg",
   "Brendan Giang": "photos/c2e3975061a7f03e.jpg",
-  "Theo le Mercier": "photos/a5c1fb5309cfd211.jpg"
+  "Theo le Mercier": "photos/a5c1fb5309cfd211.jpg",
+  "Xavier Vauclin": "photos/a2ab49ff2435b2f6.jpg"
  }
 }
