@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16T22:08:52+03:00",
- "checked": "2026-10-16T19:27:21.802852+00:00",
+ "checked": "2026-10-16T19:31:22.098191+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26949,31 +26949,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Hana Maria Aboian / Daniil Veselukhin",
+     "nation": "USA",
+     "points": "70.63"
+    },
+    {
+     "place": 2,
      "name": "Aneta Vaclavikova / William Lissauer",
      "nation": "USA",
      "points": "62.78"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Arianna Soldati / Nicholas Tagliabue",
      "nation": "ITA",
      "points": "60.93"
-    },
-    {
-     "place": 3,
-     "name": "Лилия Литенко / Александр Рыженков",
-     "nation": "ISR",
-     "points": "50.63"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Aneta Vaclavikova / William Lissauer — 62.78\n2. Arianna Soldati / Nicholas Tagliabue — 60.93\n3. Лилия Литенко / Александр Рыженков — 50.63\n\nНачало: 21:10 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Hana Maria Aboian / Daniil Veselukhin — 70.63\n2. Aneta Vaclavikova / William Lissauer — 62.78\n3. Arianna Soldati / Nicholas Tagliabue — 60.93\n\nНачало: 21:10 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Лилия Литенко / Александр Рыженков",
      "nation": "ISR",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "time": "21:15"
     },
     {
@@ -26981,7 +26981,7 @@
      "nation": "ITA",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "time": "21:21"
     },
     {
@@ -26989,7 +26989,7 @@
      "nation": "HUN",
      "no": 3,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "time": "21:27"
     },
     {
@@ -26997,7 +26997,7 @@
      "nation": "FRA",
      "no": 4,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "time": "21:33"
     },
     {
@@ -27005,7 +27005,7 @@
      "nation": "AUS",
      "no": 5,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "time": "21:44"
     },
     {
@@ -27013,7 +27013,7 @@
      "nation": "ESP",
      "no": 6,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "time": "21:50"
     },
     {
@@ -27021,7 +27021,7 @@
      "nation": "FRA",
      "no": 7,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "time": "21:56"
     },
     {
@@ -27029,7 +27029,7 @@
      "nation": "USA",
      "no": 8,
      "warmup": 2,
-     "place": 1,
+     "place": 2,
      "time": "22:01"
     },
     {
@@ -27079,7 +27079,8 @@
      "nation": "USA",
      "time": "22:24",
      "no": 11,
-     "warmup": 3
+     "warmup": 3,
+     "place": 1
     },
     {
      "name": "Klara Vlckova / Tomas Vlcek",
@@ -27101,7 +27102,7 @@
      "time": "22:19",
      "no": 10,
      "warmup": 3,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Lucia Stefanovova / Jacopo Boeris",
@@ -27116,7 +27117,7 @@
      "time": "22:13",
      "no": 9,
      "warmup": 3,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Seraina Tscharner / Laurin Wiederkehr",
