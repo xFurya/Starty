@@ -25,6 +25,16 @@
   },
   "broadcast_rules": [
     {
+      "match": "^(Гран-при России|ЮГП России)",
+      "broadcast": [
+        "YouTube"
+      ],
+      "watch": [
+        {"name": "YouTube", "url": "https://www.youtube.com/@ice_skating/live"}
+      ],
+      "source": "https://www.youtube.com/@ice_skating ; https://www.youtube.com/feeds/videos.xml?channel_id=UChkNUJc2Yvo8ZCtmXBSMxtg"
+    },
+    {
       "match": "^JGP ",
       "broadcast": [
         "Okko"

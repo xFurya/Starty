@@ -238,6 +238,10 @@ def make_event(*, tid, tournament, kind, level, seg, mixed, start, end, venue, i
         "ours": ours, "athletes": sorted(set(athletes)), "src": src,
     }
     w = watch_for(tournament, watch)
+    if tid.startswith("fsr:"):
+        for x in w:
+            if x["name"] == "YouTube" and x["url"] == FSR_YT_LIVE:
+                x["url"] = fsr_stream(start.date()) or x["url"]
     if w:
         ev["watch"] = w
         for x in w:
@@ -305,6 +309,38 @@ def broadcast_for(name, base=None):
         if k == name:
             out = list(v)
     return out
+
+
+FSR_YT_LIVE = "https://www.youtube.com/@ice_skating/live"
+FSR_YT_RSS = "https://www.youtube.com/feeds/videos.xml?channel_id=UChkNUJc2Yvo8ZCtmXBSMxtg"
+_YT = {"streams": None}
+
+
+def yt_streams():
+    """Эфиры канала ФФКР за последнее время: [(видео, название, дата по Москве)]. Нет сети — пусто."""
+    if _YT["streams"] is None:
+        out = []
+        try:
+            xml = net.fetch(FSR_YT_RSS)
+            for e in re.findall(r"(?s)<entry>(.*?)</entry>", xml):
+                v = re.search(r"<yt:videoId>([\w-]{11})<", e)
+                t = re.search(r"<title>(.*?)</title>", e)
+                d = re.search(r"<published>(.*?)</published>", e)
+                if v and t and d:
+                    when = dt.datetime.fromisoformat(d.group(1)).astimezone(MSK).date()
+                    out.append((v.group(1), t.group(1).replace("&amp;", "&"), when))
+        except Exception as ex:
+            log("  ! RSS канала ФФКР:", ex)
+        _YT["streams"] = out
+    return _YT["streams"]
+
+
+def fsr_stream(day):
+    """Ссылка на эфир всего дня («… День 2») в день старта; нет — None (останется /live)."""
+    for vid, title, when in yt_streams():
+        if when == day and re.search(r"Гран-при России", title) and re.search(r"День\s*\d", title):
+            return "https://www.youtube.com/watch?v=" + vid
+    return None
 
 
 def _http_url(u):
