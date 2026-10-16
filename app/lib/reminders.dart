@@ -330,13 +330,13 @@ class Reminders {
     );
   }
 
-  /// Уведомление о выходе спортсмена: «Кузьмина / Студеникин выходят в 19:04»,
+  /// Уведомление о выходе спортсмена: «В 19:04 выходят Кузьмина / Студеникин» (время первым — длинное имя не обрежет его),
   /// строка — «CS Budapest Trophy, танцы, ритм-танец».
   static ({String title, List<String> lines, String collapsed}) skaterText(Start s, Skater o) {
     final (disc, seg) = discipline(s);
     final line = [s.tournament, disc, if (seg.isNotEmpty) seg].join(', ');
     return (
-      title: '${_name(o)} ${o.name.contains(' / ') ? 'выходят' : 'выходит'} в ${o.time}',
+      title: 'В ${o.time} ${o.name.contains(' / ') ? 'выходят' : 'выходит'} ${_name(o)}',
       lines: [line],
       collapsed: line,
     );

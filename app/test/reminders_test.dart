@@ -78,7 +78,7 @@ void main() {
   test('выход наших — только если включено, за то же время до выхода', () {
     expect(Reminders.plan(data, plan(), now).any((x) => x.key.startsWith('k:')), isFalse);
     final r = const NotifyRules().copyWith(skaters: true);
-    final x = Reminders.plan(data, plan(r), now).firstWhere((x) => x.title == 'Александра Трусова выходит в 20:32');
+    final x = Reminders.plan(data, plan(r), now).firstWhere((x) => x.title == 'В 20:32 выходит Александра Трусова');
     expect(msk(x.at).hour, 20);
     expect(msk(x.at).minute, 17);
     expect(x.lines, ['CS Denis Ten Memorial, женщины, произвольная программа']);
@@ -88,7 +88,7 @@ void main() {
 
   test('выход спортсмена: закреплено, пока не откатал, потом смахивается и убирается само', () {
     final r = const NotifyRules().copyWith(skaters: true);
-    final x = Reminders.plan(data, plan(r), now).firstWhere((x) => x.title == 'Александра Трусова выходит в 20:32');
+    final x = Reminders.plan(data, plan(r), now).firstWhere((x) => x.title == 'В 20:32 выходит Александра Трусова');
     final skate = x.at.add(const Duration(minutes: 15));
     expect(x.hold, skate.add(Reminders.skated));
     // последняя в разминке: убрать через 15 мин — позже конца старта, значит в конце старта
@@ -98,7 +98,7 @@ void main() {
     expect(start.hold, womenFs.t1);
     // не закреплять — смахиваются сразу; не убирать — висят до конца старта
     final loose = Reminders.plan(data, plan(r.copyWith(pin: false, clear: false)), now)
-        .firstWhere((x) => x.title == 'Александра Трусова выходит в 20:32');
+        .firstWhere((x) => x.title == 'В 20:32 выходит Александра Трусова');
     expect(loose.hold, loose.at);
     expect(loose.end, womenFs.t1);
   });
@@ -155,13 +155,13 @@ void main() {
       expect(t.lines[1], '21:07 — Худайбердиева-Лебедева / Базин-Ахметов');
       expect(t.collapsed, 'Худайбердиева-Лебедева / Базин-Ахметов в 21:07 и ещё 2');
       final k = Reminders.skaterText(s, s.ours.first);
-      expect(k.title, 'Худайбердиева-Лебедева / Базин-Ахметов выходят в 21:07');
+      expect(k.title, 'В 21:07 выходят Худайбердиева-Лебедева / Базин-Ахметов');
     });
 
     test('выход спортсмена: кто и когда в заголовке, строка — турнир, вид, программа', () {
       final s = start(ours: two);
       final t = Reminders.skaterText(s, s.ours.first);
-      expect(t.title, 'Кузьмина / Студеникин выходят в 19:04');
+      expect(t.title, 'В 19:04 выходят Кузьмина / Студеникин');
       expect(t.lines, ['CS Budapest Trophy, танцы, ритм-танец']);
       final j = start(title: 'CS Budapest Trophy — юниорские танцы РТ', level: 'junior', ours: two);
       expect(Reminders.skaterText(j, j.ours.last).lines, ['CS Budapest Trophy, юниорские танцы, ритм-танец']);
