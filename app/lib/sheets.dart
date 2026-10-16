@@ -13,17 +13,15 @@ import 'protocol.dart';
 import 'state.dart';
 import 'system.dart';
 import 'ui.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'views.dart';
 
 // ------------------------------------------------------------------ карточка старта
 
-/// Как открывается ссылка на трансляцию (во внешнем приложении или браузере); в тестах подменяется.
-Future<void> Function(String url) watchOpener = _openWatch;
+/// Как открывается ссылка на трансляцию: в установленном приложении сервиса, иначе во встроенном
+/// браузере — из приложения не выходим; в тестах подменяется.
+Future<void> Function(BuildContext context, String url, String title) watchOpener = _openWatch;
 
-Future<void> _openWatch(String url) async {
-  await launchUrl(Uri.parse(url), webOnlyWindowName: '_blank', mode: LaunchMode.externalApplication);
-}
+Future<void> _openWatch(BuildContext context, String url, String title) => openLink(context, url, title, preferApp: true);
 
 void showStart(BuildContext context, Start s, AppState state) {
   showModalBottomSheet(
@@ -1113,7 +1111,7 @@ class _WatchRow extends StatelessWidget {
       label: 'Открыть трансляцию: ${link.name}',
       child: InkWell(
         key: ValueKey('watch:${link.name}'),
-        onTap: () => watchOpener(link.url),
+        onTap: () => watchOpener(context, link.url, link.name),
         child: ConstrainedBox(
           constraints: const BoxConstraints(minHeight: 44),
           child: Padding(

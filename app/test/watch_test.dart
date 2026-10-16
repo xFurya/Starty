@@ -78,8 +78,8 @@ void main() {
 
   testWidgets('один ресурс — та же строка с значком', (t) async {
     final opened = <String>[];
-    watchOpener = (u) async => opened.add(u);
-    addTearDown(() => watchOpener = (u) async {});
+    watchOpener = (c, u, t) async => opened.add(u);
+    addTearDown(() => watchOpener = (c, u, t) async {});
     await open(t, _start(broadcast: ['Первый канал'], watch: [
       {'name': 'Первый канал', 'url': 'https://www.1tv.ru/live'},
     ]));
@@ -90,8 +90,8 @@ void main() {
 
   testWidgets('нажатие на строку открывает именно этот ресурс', (t) async {
     final opened = <String>[];
-    watchOpener = (u) async => opened.add(u);
-    addTearDown(() => watchOpener = (u) async {});
+    watchOpener = (c, u, t) async => opened.add(u);
+    addTearDown(() => watchOpener = (c, u, t) async {});
     await open(t, _start(broadcast: ['Первый канал', 'YouTube'], watch: [
       {'name': 'Первый канал', 'url': 'https://www.1tv.ru/live'},
       {'name': 'YouTube', 'url': 'https://www.youtube.com/watch?v=abc'},

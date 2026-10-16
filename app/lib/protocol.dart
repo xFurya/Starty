@@ -30,6 +30,19 @@ Future<void> openOriginal(BuildContext context, String url, String title, {bool 
   final nav = Navigator.of(context);
   await (replace ? nav.pushReplacement(route) : nav.push(route));
 }
+/// Ссылка изнутри приложения. Правило владельца: из приложения не выходим. [preferApp] — сначала
+/// приложение, которое умеет эту ссылку (Okko, VK Видео, YouTube), если оно установлено; браузер
+/// системы при этом не открывается. Нет такого приложения — встроенный браузер.
+Future<void> openLink(BuildContext context, String url, String title, {bool preferApp = false}) async {
+  if (url.isEmpty) return;
+  if (preferApp && !kIsWeb && defaultTargetPlatform != TargetPlatform.windows) {
+    try {
+      if (await launchUrl(Uri.parse(url), mode: LaunchMode.externalNonBrowserApplication)) return;
+    } catch (_) {}
+  }
+  if (context.mounted) await openOriginal(context, url, title);
+}
+
 class ProtocolPage extends StatefulWidget {
   final String url, title;
   const ProtocolPage({super.key, required this.url, required this.title});
@@ -59,6 +72,12 @@ class _ProtocolPageState extends State<ProtocolPage> {
           if (e.isForMainFrame ?? true) setState(() => _failed = true);
         },
         onNavigationRequest: (r) {
+          // ссылка страницы на приложение (intent:, okko:, vk:) — открываем его, если установлено
+          final scheme = Uri.tryParse(r.url)?.scheme ?? '';
+          if (scheme != 'http' && scheme != 'https' && scheme != 'about' && scheme != 'data' && scheme != 'blob') {
+            launchUrl(Uri.parse(r.url), mode: LaunchMode.externalNonBrowserApplication).catchError((_) => false);
+            return NavigationDecision.prevent;
+          }
           // ссылки на PDF внутри протокола — тоже через просмотрщик
           if (r.url.toLowerCase().endsWith('.pdf') && !r.url.contains('docs.google.com')) {
             _c.loadRequest(Uri.parse(_viewable(r.url)));
@@ -93,11 +112,6 @@ class _ProtocolPageState extends State<ProtocolPage> {
                 setState(() => _failed = false);
                 _c.reload();
               },
-            ),
-            IconButton(
-              tooltip: 'В браузере',
-              icon: const Icon(Icons.open_in_browser),
-              onPressed: () => launchUrl(Uri.parse(widget.url), mode: LaunchMode.externalApplication),
             ),
           ],
           bottom: _progress < 100
