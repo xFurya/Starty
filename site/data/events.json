@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-16T22:59:56+03:00",
- "checked": "2026-10-16T20:51:21.726008+00:00",
+ "generated": "2026-10-17T02:00:07+03:00",
+ "checked": "2026-10-17T02:00:07+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26908,7 +26908,7 @@
    "seg": "РТ",
    "title": "CS Budapest Trophy — юниорские танцы РТ",
    "start": "2026-10-16T21:10:00+03:00",
-   "end": "2026-10-17T00:02:00+03:00",
+   "end": "2026-10-16T23:55:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [
@@ -26918,7 +26918,6 @@
    "athletes": [
     "Aletta Lanyi / Ilya Laurenau",
     "Alexandra Rouskova / Lukas Toman",
-    "Alexia Kruk / Jan Eisenhaber",
     "Aneta Vaclavikova / William Lissauer",
     "Anna Ruis / Andrew Cayden Evert",
     "Annabel Mann / Jack Hammond",
@@ -26930,10 +26929,8 @@
     "Klara Vlckova / Tomas Vlcek",
     "Laura Balcerska / David Diadchenko",
     "Lena Zerinvary-simon / Huba Gallai",
-    "Lucia Stefanovova / Jacopo Boeris",
     "Maite van Mulders / Tudor Dominic Andrei",
     "Rose Anne Marie Bordet / Hugo Tomas",
-    "Seraina Tscharner / Laurin Wiederkehr",
     "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
     "Villo Mira Szilagyi / Istvan Jaracs",
     "Zoe Bianchi / Daniel Basile",
@@ -26966,7 +26963,7 @@
      "points": "62.78"
     }
    ],
-   "desc": "Итог:\n1. Hana Maria Aboian / Daniil Veselukhin — 70.63\n2. Zoe Bianchi / Daniel Basile — 65.55\n3. Aneta Vaclavikova / William Lissauer — 62.78\n\nНачало: 21:10 МСК\nТрансляция: HunSkate TV",
+   "desc": "Итог:\n1. Hana Maria Aboian / Daniil Veselukhin — 70.63\n2. Zoe Bianchi / Daniel Basile — 65.55\n3. Aneta Vaclavikova / William Lissauer — 62.78\n\nПримечательное:\n• Hana Maria Aboian / Daniil Veselukhin — Лучшая среди юниоров оценка сезона за РТ: 70.63\n• Hana Maria Aboian / Daniil Veselukhin — Личный рекорд за РТ: 70.63 (был 68.93)\n• Zoe Bianchi / Daniel Basile — Личный рекорд за РТ: 65.55 (был 63.38)\n\nНачало: 21:10 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Лилия Литенко / Александр Рыженков",
@@ -27073,73 +27070,52 @@
      "time": "22:57"
     },
     {
-     "name": "Aletta Lanyi / Ilya Laurenau",
-     "nation": "HUN",
-     "time": "23:20",
-     "no": 17,
+     "name": "Laura Balcerska / David Diadchenko",
+     "nation": "POL",
+     "no": 14,
      "warmup": 4,
-     "place": 6
-    },
-    {
-     "name": "Alexia Kruk / Jan Eisenhaber",
-     "nation": "GER",
-     "time": "23:49",
-     "no": 21,
-     "warmup": 5
-    },
-    {
-     "name": "Anna Ruis / Andrew Cayden Evert",
-     "nation": "AUT",
-     "time": "23:43",
-     "no": 20,
-     "warmup": 5,
-     "place": 19
+     "place": 12,
+     "time": "23:02"
     },
     {
      "name": "Eniko Kobor / Zoard Kobor",
      "nation": "GER",
-     "time": "23:08",
      "no": 15,
      "warmup": 4,
-     "place": 5
+     "place": 5,
+     "time": "23:08"
+    },
+    {
+     "name": "Aletta Lanyi / Ilya Laurenau",
+     "nation": "HUN",
+     "no": 17,
+     "warmup": 4,
+     "place": 6,
+     "time": "23:20"
     },
     {
      "name": "Klara Vlckova / Tomas Vlcek",
      "nation": "CZE",
-     "time": "23:31",
      "no": 18,
      "warmup": 5,
-     "place": 11
-    },
-    {
-     "name": "Laura Balcerska / David Diadchenko",
-     "nation": "POL",
-     "time": "23:02",
-     "no": 14,
-     "warmup": 4,
-     "place": 12
-    },
-    {
-     "name": "Lucia Stefanovova / Jacopo Boeris",
-     "nation": "SVK",
-     "time": "23:14",
-     "no": 16,
-     "warmup": 4
-    },
-    {
-     "name": "Seraina Tscharner / Laurin Wiederkehr",
-     "nation": "SUI",
-     "time": "23:55",
-     "no": 22,
-     "warmup": 5
+     "place": 11,
+     "time": "23:31"
     },
     {
      "name": "Zoe Bianchi / Daniel Basile",
      "nation": "ITA",
-     "time": "23:37",
      "no": 19,
      "warmup": 5,
-     "place": 2
+     "place": 2,
+     "time": "23:37"
+    },
+    {
+     "name": "Anna Ruis / Andrew Cayden Evert",
+     "nation": "AUT",
+     "no": 20,
+     "warmup": 5,
+     "place": 19,
+     "time": "23:43"
     }
    ],
    "live": {
@@ -27149,30 +27125,44 @@
     "first": null,
     "names": {
      "Hana Maria ABOIAN / Daniil VESELUKHIN": "Hana Maria Aboian / Daniil Veselukhin",
+     "Zoe BIANCHI / Daniel BASILE": "Zoe Bianchi / Daniel Basile",
      "Aneta VACLAVIKOVA / William LISSAUER": "Aneta Vaclavikova / William Lissauer",
      "Arianna SOLDATI / Nicholas TAGLIABUE": "Arianna Soldati / Nicholas Tagliabue",
+     "Eniko KOBOR / Zoard KOBOR": "Eniko Kobor / Zoard Kobor",
+     "Aletta LANYI / Ilya LAURENAU": "Aletta Lanyi / Ilya Laurenau",
      "Liliia LITENKO / Aleksandr RYZHENKOV": "Лилия Литенко / Александр Рыженков",
      "Carlota GARCIA BARRANCO / Aleksandr OSTROVSKII": "Carlota Garcia Barranco / Александр Островский",
      "Maite van MULDERS / Tudor Dominic ANDREI": "Maite van Mulders / Tudor Dominic Andrei",
      "Chanelle CHUM / Osckar CHUM": "Chanelle Chum / Osckar Chum",
+     "Klara VLCKOVA / Tomas VLCEK": "Klara Vlckova / Tomas Vlcek",
+     "Laura BALCERSKA / David DIADCHENKO": "Laura Balcerska / David Diadchenko",
      "Lena ZERINVARY-SIMON / Huba GALLAI": "Lena Zerinvary-simon / Huba Gallai",
      "Alexandra ROUSKOVA / Lukas TOMAN": "Alexandra Rouskova / Lukas Toman",
      "Villo Mira SZILAGYI / Istvan JARACS": "Villo Mira Szilagyi / Istvan Jaracs",
      "Siloe Nayeli Clai. DESBOIS-RENAUDIN / Enzo TOMAS": "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
      "Annabel MANN / Jack HAMMOND": "Annabel Mann / Jack Hammond",
      "Rose Anne Marie BORDET / Hugo TOMAS": "Rose Anne Marie Bordet / Hugo Tomas",
-     "Laura BALCERSKA / David DIADCHENKO": "Laura Balcerska / David Diadchenko",
-     "Eniko KOBOR / Zoard KOBOR": "Eniko Kobor / Zoard Kobor",
-     "Lucia STEFANOVOVA / Jacopo BOERIS": "Lucia Stefanovova / Jacopo Boeris",
-     "Aletta LANYI / Ilya LAURENAU": "Aletta Lanyi / Ilya Laurenau",
-     "Klara VLCKOVA / Tomas VLCEK": "Klara Vlckova / Tomas Vlcek",
-     "Zoe BIANCHI / Daniel BASILE": "Zoe Bianchi / Daniel Basile",
-     "Anna RUIS / Andrew Cayden EVERT": "Anna Ruis / Andrew Cayden Evert",
-     "Alexia KRUK / Jan EISENHABER": "Alexia Kruk / Jan Eisenhaber",
-     "Seraina TSCHARNER / Laurin WIEDERKEHR": "Seraina Tscharner / Laurin Wiederkehr"
+     "Anna RUIS / Andrew Cayden EVERT": "Anna Ruis / Andrew Cayden Evert"
     },
     "basis": "judges"
    },
+   "facts": [
+    {
+     "who": "Hana Maria Aboian / Daniil Veselukhin",
+     "text": "Лучшая среди юниоров оценка сезона за РТ: 70.63",
+     "kind": "score"
+    },
+    {
+     "who": "Hana Maria Aboian / Daniil Veselukhin",
+     "text": "Личный рекорд за РТ: 70.63 (был 68.93)",
+     "kind": "score"
+    },
+    {
+     "who": "Zoe Bianchi / Daniel Basile",
+     "text": "Личный рекорд за РТ: 65.55 (был 63.38)",
+     "kind": "score"
+    }
+   ],
    "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
@@ -28465,7 +28455,7 @@
    "seg": "ПТ",
    "title": "CS Budapest Trophy — юниорские танцы ПТ",
    "start": "2026-10-17T19:50:00+03:00",
-   "end": "2026-10-17T23:35:00+03:00",
+   "end": "2026-10-17T22:50:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [
@@ -28475,7 +28465,6 @@
    "athletes": [
     "Aletta Lanyi / Ilya Laurenau",
     "Alexandra Rouskova / Lukas Toman",
-    "Alexia Kruk / Jan Eisenhaber",
     "Aneta Vaclavikova / William Lissauer",
     "Anna Ruis / Andrew Cayden Evert",
     "Annabel Mann / Jack Hammond",
@@ -28487,10 +28476,8 @@
     "Klara Vlckova / Tomas Vlcek",
     "Laura Balcerska / David Diadchenko",
     "Lena Zerinvary-simon / Huba Gallai",
-    "Lucia Stefanovova / Jacopo Boeris",
     "Maite van Mulders / Tudor Dominic Andrei",
     "Rose Anne Marie Bordet / Hugo Tomas",
-    "Seraina Tscharner / Laurin Wiederkehr",
     "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
     "Villo Mira Szilagyi / Istvan Jaracs",
     "Zoe Bianchi / Daniel Basile",
@@ -28506,92 +28493,118 @@
    "desc": "Начало: 19:50 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
-     "name": "Aletta Lanyi / Ilya Laurenau",
-     "nation": "HUN"
-    },
-    {
-     "name": "Alexandra Rouskova / Lukas Toman",
-     "nation": "CZE"
-    },
-    {
-     "name": "Alexia Kruk / Jan Eisenhaber",
-     "nation": "GER"
-    },
-    {
-     "name": "Aneta Vaclavikova / William Lissauer",
-     "nation": "USA"
-    },
-    {
      "name": "Anna Ruis / Andrew Cayden Evert",
-     "nation": "AUT"
-    },
-    {
-     "name": "Annabel Mann / Jack Hammond",
-     "nation": "GBR"
-    },
-    {
-     "name": "Arianna Soldati / Nicholas Tagliabue",
-     "nation": "ITA"
-    },
-    {
-     "name": "Carlota Garcia Barranco / Александр Островский",
-     "nation": "ESP"
-    },
-    {
-     "name": "Chanelle Chum / Osckar Chum",
-     "nation": "AUS"
-    },
-    {
-     "name": "Eniko Kobor / Zoard Kobor",
-     "nation": "GER"
-    },
-    {
-     "name": "Hana Maria Aboian / Daniil Veselukhin",
-     "nation": "USA"
-    },
-    {
-     "name": "Klara Vlckova / Tomas Vlcek",
-     "nation": "CZE"
-    },
-    {
-     "name": "Laura Balcerska / David Diadchenko",
-     "nation": "POL"
-    },
-    {
-     "name": "Lena Zerinvary-simon / Huba Gallai",
-     "nation": "HUN"
-    },
-    {
-     "name": "Lucia Stefanovova / Jacopo Boeris",
-     "nation": "SVK"
-    },
-    {
-     "name": "Maite van Mulders / Tudor Dominic Andrei",
-     "nation": "ROU"
+     "nation": "AUT",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Rose Anne Marie Bordet / Hugo Tomas",
-     "nation": "FRA"
+     "nation": "FRA",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Seraina Tscharner / Laurin Wiederkehr",
-     "nation": "SUI"
+     "name": "Annabel Mann / Jack Hammond",
+     "nation": "GBR",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
-     "nation": "FRA"
+     "nation": "FRA",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Villo Mira Szilagyi / Istvan Jaracs",
-     "nation": "HUN"
+     "nation": "HUN",
+     "no": 5,
+     "warmup": 2
     },
     {
-     "name": "Zoe Bianchi / Daniel Basile",
-     "nation": "ITA"
+     "name": "Alexandra Rouskova / Lukas Toman",
+     "nation": "CZE",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Lena Zerinvary-simon / Huba Gallai",
+     "nation": "HUN",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Laura Balcerska / David Diadchenko",
+     "nation": "POL",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Klara Vlckova / Tomas Vlcek",
+     "nation": "CZE",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Chanelle Chum / Osckar Chum",
+     "nation": "AUS",
+     "no": 10,
+     "warmup": 3
+    },
+    {
+     "name": "Maite van Mulders / Tudor Dominic Andrei",
+     "nation": "ROU",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Carlota Garcia Barranco / Александр Островский",
+     "nation": "ESP",
+     "no": 12,
+     "warmup": 3
     },
     {
      "name": "Лилия Литенко / Александр Рыженков",
-     "nation": "ISR"
+     "nation": "ISR",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Aletta Lanyi / Ilya Laurenau",
+     "nation": "HUN",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Eniko Kobor / Zoard Kobor",
+     "nation": "GER",
+     "no": 15,
+     "warmup": 4
+    },
+    {
+     "name": "Arianna Soldati / Nicholas Tagliabue",
+     "nation": "ITA",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Aneta Vaclavikova / William Lissauer",
+     "nation": "USA",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Zoe Bianchi / Daniel Basile",
+     "nation": "ITA",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Hana Maria Aboian / Daniil Veselukhin",
+     "nation": "USA",
+     "no": 19,
+     "warmup": 4
     }
    ],
    "live": {
@@ -28600,28 +28613,25 @@
     "cat": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/CAT006RS.htm",
     "first": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG011.htm",
     "names": {
-     "Chanelle CHUM / Osckar CHUM": "Chanelle Chum / Osckar Chum",
      "Anna RUIS / Andrew Cayden EVERT": "Anna Ruis / Andrew Cayden Evert",
-     "Alexandra ROUSKOVA / Lukas TOMAN": "Alexandra Rouskova / Lukas Toman",
-     "Klara VLCKOVA / Tomas VLCEK": "Klara Vlckova / Tomas Vlcek",
-     "Carlota GARCIA BARRANCO / Aleksandr OSTROVSKII": "Carlota Garcia Barranco / Александр Островский",
      "Rose Anne Marie BORDET / Hugo TOMAS": "Rose Anne Marie Bordet / Hugo Tomas",
-     "Siloe Nayeli Clai. DESBOIS-RENAUDIN / Enzo TOMAS": "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
      "Annabel MANN / Jack HAMMOND": "Annabel Mann / Jack Hammond",
-     "Eniko KOBOR / Zoard KOBOR": "Eniko Kobor / Zoard Kobor",
-     "Alexia KRUK / Jan EISENHABER": "Alexia Kruk / Jan Eisenhaber",
-     "Aletta LANYI / Ilya LAURENAU": "Aletta Lanyi / Ilya Laurenau",
+     "Siloe Nayeli Clai. DESBOIS-RENAUDIN / Enzo TOMAS": "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
      "Villo Mira SZILAGYI / Istvan JARACS": "Villo Mira Szilagyi / Istvan Jaracs",
+     "Alexandra ROUSKOVA / Lukas TOMAN": "Alexandra Rouskova / Lukas Toman",
      "Lena ZERINVARY-SIMON / Huba GALLAI": "Lena Zerinvary-simon / Huba Gallai",
-     "Liliia LITENKO / Aleksandr RYZHENKOV": "Лилия Литенко / Александр Рыженков",
-     "Zoe BIANCHI / Daniel BASILE": "Zoe Bianchi / Daniel Basile",
-     "Arianna SOLDATI / Nicholas TAGLIABUE": "Arianna Soldati / Nicholas Tagliabue",
      "Laura BALCERSKA / David DIADCHENKO": "Laura Balcerska / David Diadchenko",
+     "Klara VLCKOVA / Tomas VLCEK": "Klara Vlckova / Tomas Vlcek",
+     "Chanelle CHUM / Osckar CHUM": "Chanelle Chum / Osckar Chum",
      "Maite van MULDERS / Tudor Dominic ANDREI": "Maite van Mulders / Tudor Dominic Andrei",
-     "Seraina TSCHARNER / Laurin WIEDERKEHR": "Seraina Tscharner / Laurin Wiederkehr",
-     "Lucia STEFANOVOVA / Jacopo BOERIS": "Lucia Stefanovova / Jacopo Boeris",
-     "Hana Maria ABOIAN / Daniil VESELUKHIN": "Hana Maria Aboian / Daniil Veselukhin",
-     "Aneta VACLAVIKOVA / William LISSAUER": "Aneta Vaclavikova / William Lissauer"
+     "Carlota GARCIA BARRANCO / Aleksandr OSTROVSKII": "Carlota Garcia Barranco / Александр Островский",
+     "Liliia LITENKO / Aleksandr RYZHENKOV": "Лилия Литенко / Александр Рыженков",
+     "Aletta LANYI / Ilya LAURENAU": "Aletta Lanyi / Ilya Laurenau",
+     "Eniko KOBOR / Zoard KOBOR": "Eniko Kobor / Zoard Kobor",
+     "Arianna SOLDATI / Nicholas TAGLIABUE": "Arianna Soldati / Nicholas Tagliabue",
+     "Aneta VACLAVIKOVA / William LISSAUER": "Aneta Vaclavikova / William Lissauer",
+     "Zoe BIANCHI / Daniel BASILE": "Zoe Bianchi / Daniel Basile",
+     "Hana Maria ABOIAN / Daniil VESELUKHIN": "Hana Maria Aboian / Daniil Veselukhin"
     },
     "basis": null
    },
