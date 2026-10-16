@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-16T15:57:13+03:00",
- "checked": "2026-10-16T14:39:04.773901+00:00",
+ "generated": "2026-10-16T17:28:01+03:00",
+ "checked": "2026-10-16T17:28:01+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26176,42 +26176,42 @@
      "nation": "SUI",
      "no": 1,
      "warmup": 1,
-     "place": 18
+     "place": 17
     },
     {
      "name": "Nikita Sheiko",
      "nation": "ISR",
      "no": 2,
      "warmup": 1,
-     "place": 7
+     "place": 6
     },
     {
      "name": "Pablo Garcia",
      "nation": "ESP",
      "no": 3,
      "warmup": 1,
-     "place": 25
+     "place": 24
     },
     {
      "name": "Matvii Yefymenko",
      "nation": "POL",
      "no": 4,
      "warmup": 1,
-     "place": 26
+     "place": 25
     },
     {
      "name": "Aleksei Vlasenko",
      "nation": "HUN",
      "no": 5,
      "warmup": 1,
-     "place": 28
+     "place": 27
     },
     {
      "name": "Taira Shinohara",
      "nation": "USA",
      "no": 6,
      "warmup": 2,
-     "place": 14
+     "place": 13
     },
     {
      "name": "Daniel Grassl",
@@ -26225,7 +26225,7 @@
      "nation": "AUS",
      "no": 8,
      "warmup": 2,
-     "place": 27
+     "place": 26
     },
     {
      "name": "Arlet Levandi",
@@ -26246,102 +26246,123 @@
      "nation": "SWE",
      "no": 11,
      "warmup": 3,
-     "place": 16
+     "place": 15
     },
     {
      "name": "Davide Lewton Brain",
      "nation": "MON",
      "no": 12,
      "warmup": 3,
-     "place": 22
+     "place": 21
     },
     {
      "name": "Tamir Kuperman",
      "nation": "ISR",
      "no": 13,
      "warmup": 3,
-     "place": 8
+     "place": 7
     },
     {
      "name": "Nikita Krivosheyev",
      "nation": "KAZ",
      "no": 14,
      "warmup": 3,
-     "place": 17
+     "place": 16
     },
     {
      "name": "Nikita Starostin",
      "nation": "GER",
      "no": 15,
      "warmup": 3,
-     "place": 13
+     "place": 12
     },
     {
      "name": "Vadym Novikov",
      "nation": "UKR",
      "no": 16,
      "warmup": 3,
-     "place": 20
+     "place": 19
     },
     {
-     "name": "Andreas Nordeback",
-     "nation": "SWE",
-     "place": 15
-    },
-    {
-     "name": "David Sedej",
-     "nation": "SLO",
-     "place": 24
-    },
-    {
-     "name": "Fedirs Kuliss",
-     "nation": "LAT",
-     "place": 12
+     "name": "Tobia Oellerer",
+     "nation": "AUT",
+     "no": 17,
+     "warmup": 4,
+     "place": 18
     },
     {
      "name": "John Kim",
      "nation": "CAN",
+     "no": 18,
+     "warmup": 4,
+     "place": 8
+    },
+    {
+     "name": "Wesley Chiu",
+     "nation": "CAN",
+     "no": 19,
+     "warmup": 4,
      "place": 9
+    },
+    {
+     "name": "Andreas Nordeback",
+     "nation": "SWE",
+     "no": 20,
+     "warmup": 4,
+     "place": 14
+    },
+    {
+     "name": "David Sedej",
+     "nation": "SLO",
+     "no": 21,
+     "warmup": 4,
+     "place": 23
+    },
+    {
+     "name": "Fedirs Kuliss",
+     "nation": "LAT",
+     "no": 22,
+     "warmup": 4,
+     "place": 11
     },
     {
      "name": "Kevin Aymoz",
      "nation": "FRA",
-     "place": 11
+     "no": 23,
+     "warmup": 5,
+     "place": 10
+    },
+    {
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "no": 24,
+     "warmup": 5,
+     "place": 20
     },
     {
      "name": "Lukas Britschgi",
      "nation": "SUI",
+     "no": 25,
+     "warmup": 5,
      "place": 4
     },
     {
      "name": "Makar Suntsev",
      "nation": "FIN",
-     "place": 23
+     "no": 26,
+     "warmup": 5,
+     "place": 22
     },
     {
      "name": "Matias Lindfors",
      "nation": "FIN",
-     "place": 6
-    },
-    {
-     "name": "Patrick Blackwell",
-     "nation": "USA",
+     "no": 27,
+     "warmup": 5,
      "place": 5
     },
     {
-     "name": "Tobia Oellerer",
-     "nation": "AUT",
-     "place": 19
-    },
-    {
-     "name": "Vladimir Samoilov",
-     "nation": "POL",
-     "place": 21
-    },
-    {
-     "name": "Wesley Chiu",
-     "nation": "CAN",
-     "place": 10
+     "name": "Patrick Blackwell",
+     "nation": "USA"
     }
    ],
    "live": {
@@ -26353,30 +26374,30 @@
      "Daniel GRASSL": "Daniel Grassl",
      "Genrikh GARTUNG": "Genrikh Gartung",
      "Arlet LEVANDI": "Arlet Levandi",
+     "Lukas BRITSCHGI": "Lukas Britschgi",
+     "Matias LINDFORS": "Matias Lindfors",
      "Nikita SHEIKO": "Nikita Sheiko",
      "Tamir KUPERMAN": "Tamir Kuperman",
+     "John KIM": "John Kim",
+     "Wesley CHIU": "Wesley Chiu",
+     "Kevin AYMOZ": "Kevin Aymoz",
+     "Fedirs KULISS": "Fedirs Kuliss",
      "Nikita STAROSTIN": "Nikita Starostin",
      "Taira SHINOHARA": "Taira Shinohara",
+     "Andreas NORDEBACK": "Andreas Nordeback",
      "Elias SAYED": "Elias Sayed",
      "Nikita KRIVOSHEYEV": "Nikita Krivosheyev",
      "Nico STEFFEN": "Nico Steffen",
+     "Tobia OELLERER": "Tobia Oellerer",
      "Vadym NOVIKOV": "Vadym Novikov",
+     "Vladimir SAMOILOV": "Vladimir Samoilov",
      "Davide LEWTON BRAIN": "Davide Lewton Brain",
+     "Makar SUNTSEV": "Makar Suntsev",
+     "David SEDEJ": "David Sedej",
      "Pablo GARCIA": "Pablo Garcia",
      "Matvii YEFYMENKO": "Matvii Yefymenko",
      "Douglas GERBER": "Douglas Gerber",
      "Aleksei VLASENKO": "Aleksei Vlasenko",
-     "Tobia OELLERER": "Tobia Oellerer",
-     "John KIM": "John Kim",
-     "Wesley CHIU": "Wesley Chiu",
-     "Andreas NORDEBACK": "Andreas Nordeback",
-     "David SEDEJ": "David Sedej",
-     "Fedirs KULISS": "Fedirs Kuliss",
-     "Kevin AYMOZ": "Kevin Aymoz",
-     "Vladimir SAMOILOV": "Vladimir Samoilov",
-     "Lukas BRITSCHGI": "Lukas Britschgi",
-     "Makar SUNTSEV": "Makar Suntsev",
-     "Matias LINDFORS": "Matias Lindfors",
      "Patrick BLACKWELL": "Patrick Blackwell"
     },
     "basis": "judges"
@@ -26422,7 +26443,7 @@
     "Emily Bratti / Ian Somerville",
     "Gina Zehnder / Beda Leon Sieber",
     "Giulia Isabella Paolino / Andrea Tuba",
-    "Iryna Pidgaina / Артём Ковалёв",
+    "Iryna Pidgaina / Artem Koval",
     "Jamie Fournier / Everest Zhu",
     "Loicia Demougeot / Theo le Mercier",
     "Luiza-Elena Ilie / Giovanni Stefano Poli",
@@ -26538,7 +26559,7 @@
      "warmup": 4
     },
     {
-     "name": "Iryna Pidgaina / Артём Ковалёв",
+     "name": "Iryna Pidgaina / Artem Koval",
      "nation": "UKR",
      "time": "19:46",
      "no": 15,
@@ -26614,7 +26635,7 @@
      "Zofia GRZEGORZEWSKA / Oleg MURATOV": "Zofia Grzegorzewska / Oleg Muratov",
      "Shira ICHILOV / Mikhail NOSOVITSKIY": "Shira Ichilov / Mikhail Nosovitskiy",
      "Giulia Isabella PAOLINO / Andrea TUBA": "Giulia Isabella Paolino / Andrea Tuba",
-     "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Артём Ковалёв",
+     "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Artem Koval",
      "Luiza-Elena ILIE / Giovanni Stefano POLI": "Luiza-Elena Ilie / Giovanni Stefano Poli",
      "Emese CSISZER / Mark SHAPIRO": "Emese Csiszer / Mark Shapiro",
      "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
@@ -28053,7 +28074,7 @@
     },
     {
      "name": "Алиса Крайнюкова / Семен Нетсев",
-     "nation": "РОС",
+     "nation": "СТА",
      "time": "18:51",
      "no": 4,
      "warmup": 1
@@ -28309,7 +28330,7 @@
     "Emily Bratti / Ian Somerville",
     "Gina Zehnder / Beda Leon Sieber",
     "Giulia Isabella Paolino / Andrea Tuba",
-    "Iryna Pidgaina / Артём Ковалёв",
+    "Iryna Pidgaina / Artem Koval",
     "Jamie Fournier / Everest Zhu",
     "Loicia Demougeot / Theo le Mercier",
     "Luiza-Elena Ilie / Giovanni Stefano Poli",
@@ -28363,7 +28384,7 @@
      "nation": "ITA"
     },
     {
-     "name": "Iryna Pidgaina / Артём Ковалёв",
+     "name": "Iryna Pidgaina / Artem Koval",
      "nation": "UKR"
     },
     {
@@ -28440,7 +28461,7 @@
      "Zofia GRZEGORZEWSKA / Oleg MURATOV": "Zofia Grzegorzewska / Oleg Muratov",
      "Luiza-Elena ILIE / Giovanni Stefano POLI": "Luiza-Elena Ilie / Giovanni Stefano Poli",
      "Gina ZEHNDER / Beda Leon SIEBER": "Gina Zehnder / Beda Leon Sieber",
-     "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Артём Ковалёв",
+     "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Artem Koval",
      "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
      "Amy CUI / Jonathan ROGERS": "Amy Cui / Jonathan Rogers"
     },
@@ -29269,7 +29290,7 @@
     },
     {
      "name": "Алиса Крайнюкова / Семен Нетсев",
-     "nation": "РОС"
+     "nation": "СТА"
     },
     {
      "name": "Варвара Жданова / Тимур Бабаев-Смирнов",
@@ -31236,7 +31257,7 @@
     "Alyssa Robinson / Jacob Portz",
     "Caroline Green / Michael Parsons",
     "Evgeniia Lopareva / Geoffrey Brissaud",
-    "Iryna Pidgaina / Артём Ковалёв",
+    "Iryna Pidgaina / Artem Koval",
     "Katarina Wolfkostin / Dimitry Tsarevski",
     "Katerina Mrazkova / Daniel Mrazek",
     "Layla Veillon / Alexander Brandys",
@@ -31266,7 +31287,7 @@
      "nation": "FRA"
     },
     {
-     "name": "Iryna Pidgaina / Артём Ковалёв",
+     "name": "Iryna Pidgaina / Artem Koval",
      "nation": "UKR"
     },
     {
@@ -31566,7 +31587,7 @@
     "Alyssa Robinson / Jacob Portz",
     "Caroline Green / Michael Parsons",
     "Evgeniia Lopareva / Geoffrey Brissaud",
-    "Iryna Pidgaina / Артём Ковалёв",
+    "Iryna Pidgaina / Artem Koval",
     "Katarina Wolfkostin / Dimitry Tsarevski",
     "Katerina Mrazkova / Daniel Mrazek",
     "Layla Veillon / Alexander Brandys",
@@ -31596,7 +31617,7 @@
      "nation": "FRA"
     },
     {
-     "name": "Iryna Pidgaina / Артём Ковалёв",
+     "name": "Iryna Pidgaina / Artem Koval",
      "nation": "UKR"
     },
     {
@@ -32426,7 +32447,7 @@
     "Aurelie Faula / Theo Belle",
     "Ava Kemp / Yohnatan Elizarov",
     "Katie Mcbeath / Balazs Nagy",
-    "Minerva Fabienne Hase / Никита Волин",
+    "Minerva Fabienne Hase / Nikita Volodin",
     "Oxana Vouillamoz / Tom Bouvart",
     "Sofiia Holichenko / Artem Darenskyi"
    ],
@@ -32460,7 +32481,7 @@
      "nation": "USA"
     },
     {
-     "name": "Minerva Fabienne Hase / Никита Волин",
+     "name": "Minerva Fabienne Hase / Nikita Volodin",
      "nation": "GER"
     },
     {
@@ -32494,7 +32515,7 @@
     "Emilea Zingas / Vadym Kolesnik",
     "Evgeniia Lopareva / Geoffrey Brissaud",
     "Holly Harris / Jason Chan",
-    "Iryna Pidgaina / Артём Ковалёв",
+    "Iryna Pidgaina / Artem Koval",
     "Katarina Wolfkostin / Dimitry Tsarevski",
     "Katerina Mrazkova / Daniel Mrazek",
     "Leah Neset / Artem Markelov",
@@ -32524,7 +32545,7 @@
      "nation": "AUS"
     },
     {
-     "name": "Iryna Pidgaina / Артём Ковалёв",
+     "name": "Iryna Pidgaina / Artem Koval",
      "nation": "UKR"
     },
     {
@@ -32751,7 +32772,7 @@
     "Aurelie Faula / Theo Belle",
     "Ava Kemp / Yohnatan Elizarov",
     "Katie Mcbeath / Balazs Nagy",
-    "Minerva Fabienne Hase / Никита Волин",
+    "Minerva Fabienne Hase / Nikita Volodin",
     "Oxana Vouillamoz / Tom Bouvart",
     "Sofiia Holichenko / Artem Darenskyi"
    ],
@@ -32785,7 +32806,7 @@
      "nation": "USA"
     },
     {
-     "name": "Minerva Fabienne Hase / Никита Волин",
+     "name": "Minerva Fabienne Hase / Nikita Volodin",
      "nation": "GER"
     },
     {
@@ -32819,7 +32840,7 @@
     "Emilea Zingas / Vadym Kolesnik",
     "Evgeniia Lopareva / Geoffrey Brissaud",
     "Holly Harris / Jason Chan",
-    "Iryna Pidgaina / Артём Ковалёв",
+    "Iryna Pidgaina / Artem Koval",
     "Katarina Wolfkostin / Dimitry Tsarevski",
     "Katerina Mrazkova / Daniel Mrazek",
     "Leah Neset / Artem Markelov",
@@ -32849,7 +32870,7 @@
      "nation": "AUS"
     },
     {
-     "name": "Iryna Pidgaina / Артём Ковалёв",
+     "name": "Iryna Pidgaina / Artem Koval",
      "nation": "UKR"
     },
     {
@@ -33744,7 +33765,7 @@
     "Chelsea Liu / Ryan Bedard",
     "Jazmine Desrochers / Kieran Thrasher",
     "Karina Akopova / Nikita Rakhmanin",
-    "Minerva Fabienne Hase / Никита Волин",
+    "Minerva Fabienne Hase / Nikita Volodin",
     "Naomi Williams / Lachlan Lewer",
     "Yuna Nagaoka / Sumitada Moriguchi"
    ],
@@ -33778,7 +33799,7 @@
      "nation": "ARM"
     },
     {
-     "name": "Minerva Fabienne Hase / Никита Волин",
+     "name": "Minerva Fabienne Hase / Nikita Volodin",
      "nation": "GER"
     },
     {
@@ -34079,7 +34100,7 @@
     "Chelsea Liu / Ryan Bedard",
     "Jazmine Desrochers / Kieran Thrasher",
     "Karina Akopova / Nikita Rakhmanin",
-    "Minerva Fabienne Hase / Никита Волин",
+    "Minerva Fabienne Hase / Nikita Volodin",
     "Naomi Williams / Lachlan Lewer",
     "Yuna Nagaoka / Sumitada Moriguchi"
    ],
@@ -34113,7 +34134,7 @@
      "nation": "ARM"
     },
     {
-     "name": "Minerva Fabienne Hase / Никита Волин",
+     "name": "Minerva Fabienne Hase / Nikita Volodin",
      "nation": "GER"
     },
     {
@@ -35025,6 +35046,7 @@
   "Alena Karzova",
   "Alena Kerr / Sam Herbert",
   "Alena Kostornaia",
+  "Alena Leonova",
   "Alena Maltseva",
   "Alena Ponomareva",
   "Alena Tiurina",
@@ -35076,6 +35098,7 @@
   "Alexandra Koshevaia",
   "Alexandra Levy / Alan Llorente",
   "Alexandra Maksimova",
+  "Alexandra Minina",
   "Alexandra Odman",
   "Alexandra Pletneva",
   "Alexandra Proklova",
@@ -35179,6 +35202,7 @@
   "Ana Stratulat",
   "Anaelle Kouevi / Yann Homawoo",
   "Anastaisa Khodkova",
+  "Anastasia Belova",
   "Anastasia Brandenburg",
   "Anastasia Dolidze",
   "Anastasia Freifeld",
@@ -35261,6 +35285,7 @@
   "Andrei Maximishin",
   "Andrei Mokhov",
   "Andrei Novoselov",
+  "Andrei Pylin",
   "Andrei Zuber",
   "Andrew Torgashev",
   "Andrey Filatov",
@@ -35306,6 +35331,7 @@
   "Anna Kuzmenko",
   "Anna Lukina",
   "Anna Mackenzie / Wesley Lockwood",
+  "Anna Markina",
   "Anna Mazinskaia",
   "Anna Motovilova",
   "Anna Neverova",
@@ -35315,6 +35341,7 @@
   "Anna Polikarpova",
   "Anna RUMAK",
   "Anna Ruis / Andrew Cayden Evert",
+  "Anna Salnikova",
   "Anna Sannikova",
   "Anna Saranova",
   "Anna Semenovich",
@@ -35381,7 +35408,9 @@
   "Arlet Levandi",
   "Arseni MARKOV",
   "Artem Borodulin",
+  "Artem Butaev",
   "Artem Grigoriev",
+  "Artem Krylov",
   "Artem Kudashev",
   "Artem Lezheev",
   "Artem Patlasov",
@@ -35508,6 +35537,7 @@
   "Daniil Karpov",
   "Daniil Murzin",
   "Daniil PARKMAN",
+  "Daniil Ragimov",
   "Daniil Tataurov",
   "Daniil Valanov",
   "Daniil Zvorykin",
@@ -35557,6 +35587,7 @@
   "Darya Latushkina",
   "Darya Laurynovich",
   "Darya Puseva",
+  "Darya Rabkova",
   "Darya Timofeeva",
   "David Bondar",
   "David Escribano Salvador",
@@ -35652,6 +35683,7 @@
   "Edward Solovyov",
   "Edward Vasii",
   "Ege Alacan",
+  "Egor Bazin",
   "Egor Britkov",
   "Egor Chudin",
   "Egor Golovkin",
@@ -36233,6 +36265,7 @@
   "Ksenia Baliberdina",
   "Ksenia Chalova",
   "Ksenia Chistiakova",
+  "Ksenia Doronina",
   "Ksenia KOROBKOVA",
   "Ksenia Kashnikova",
   "Ksenia Konkina",
@@ -36248,6 +36281,7 @@
   "Ksenia Stolbova",
   "Ksenia Tsibinova",
   "Kseniia Akhanteva",
+  "Kseniia Iushkova",
   "Kseniia Kasimova",
   "Kseniia Melkumova",
   "Ksenija Heimane",
@@ -36399,6 +36433,7 @@
   "Maksim Klientov",
   "Maksim Nuraliev",
   "Maksim Prokofiev",
+  "Maksim Selkin",
   "Maksim Shagalov",
   "Maksim Yalenich",
   "Maksym Petrychenko",
@@ -36614,6 +36649,7 @@
   "Natalia Loktionova",
   "Natalia Mikhailova",
   "Natalia Mishkutionok",
+  "Natalia Mitina",
   "Natalia Ogoreltseva",
   "Natalia Pallu-neves / Jayin Panesar",
   "Natalia Romaniuta",
@@ -36719,6 +36755,7 @@
   "Olga Mikutina",
   "Olga Naidenova",
   "Olga Nuzhdina",
+  "Olga Orlova",
   "Olga Pogossian",
   "Olga SEMKINA",
   "Olga Safronova",
@@ -37148,6 +37185,7 @@
   "Valeriya Ezhova",
   "Valeriya Ryseva",
   "Valeriya Smirnova",
+  "Valeryia Shedzka",
   "Valeryia Yanuchkouskaya",
   "Valtter Virtanen",
   "Vanesa Selmekova",
@@ -37159,6 +37197,7 @@
   "Varvara Korotkova",
   "Varvara Kurnosenko",
   "Varvara Poder",
+  "Varvara Rauhen / Mikhail Prusiankou",
   "Varvara Sheloumova",
   "Varvara Skorynina",
   "Varvara Stankevich",
@@ -37245,6 +37284,7 @@
   "Vladislav Abramov",
   "Vladislav Churakov",
   "Vladislav Grishin",
+  "Vladislav Ishin",
   "Vladislav Mirzoev",
   "Vladislav Smirnov",
   "Vladislav Tarasenko",
@@ -38877,6 +38917,11 @@
    "k": ""
   },
   {
+   "n": "Alena Leonova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Alena Maltseva",
    "c": "RUS",
    "k": ""
@@ -39119,6 +39164,11 @@
   {
    "n": "Alexandra Maksimova",
    "c": "BLR",
+   "k": ""
+  },
+  {
+   "n": "Alexandra Minina",
+   "c": "RUS",
    "k": ""
   },
   {
@@ -39582,6 +39632,11 @@
    "k": ""
   },
   {
+   "n": "Anastasia Belova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Anastasia Brandenburg",
    "c": "SUI",
    "k": "W"
@@ -39982,6 +40037,11 @@
    "k": ""
   },
   {
+   "n": "Andrei Pylin",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Andrei Zuber",
    "c": "RUS",
    "k": ""
@@ -40202,6 +40262,11 @@
    "k": "D"
   },
   {
+   "n": "Anna Markina",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Anna Mazinskaia",
    "c": "BLR",
    "k": ""
@@ -40238,6 +40303,11 @@
   },
   {
    "n": "Anna RUMAK",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Anna Salnikova",
    "c": "RUS",
    "k": ""
   },
@@ -40552,7 +40622,17 @@
    "k": ""
   },
   {
+   "n": "Artem Butaev",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Artem Grigoriev",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Artem Krylov",
    "c": "RUS",
    "k": ""
   },
@@ -41137,6 +41217,11 @@
    "k": ""
   },
   {
+   "n": "Daniil Ragimov",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Daniil Tataurov",
    "c": "RUS",
    "k": ""
@@ -41358,6 +41443,11 @@
   },
   {
    "n": "Darya Puseva",
+   "c": "BLR",
+   "k": ""
+  },
+  {
+   "n": "Darya Rabkova",
    "c": "BLR",
    "k": ""
   },
@@ -41822,6 +41912,11 @@
    "k": "M"
   },
   {
+   "n": "Egor Bazin",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Egor Britkov",
    "c": "RUS",
    "k": ""
@@ -41887,6 +41982,11 @@
    "k": ""
   },
   {
+   "n": "Ekaterina Belova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Ekaterina Bobrova",
    "c": "RUS",
    "k": ""
@@ -41939,6 +42039,11 @@
   {
    "n": "Ekaterina Gvozdkova",
    "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Ekaterina Iurova",
+   "c": "BLR",
    "k": ""
   },
   {
@@ -41995,11 +42100,6 @@
    "n": "Ekaterina Kurakova",
    "c": "POL",
    "k": "w"
-  },
-  {
-   "n": "Ekaterina Kuznetcova",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Ekaterina Luchina",
@@ -42338,11 +42438,6 @@
   },
   {
    "n": "Elizaveta Korostina",
-   "c": "RUS",
-   "k": ""
-  },
-  {
-   "n": "Elizaveta Krivova",
    "c": "RUS",
    "k": ""
   },
@@ -44517,6 +44612,11 @@
    "k": ""
   },
   {
+   "n": "Ksenia Doronina",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Ksenia KOROBKOVA",
    "c": "RUS",
    "k": ""
@@ -44588,6 +44688,11 @@
   },
   {
    "n": "Kseniia Akhanteva",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Kseniia Iushkova",
    "c": "RUS",
    "k": ""
   },
@@ -45218,6 +45323,11 @@
   },
   {
    "n": "Maksim Prokofiev",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Maksim Selkin",
    "c": "RUS",
    "k": ""
   },
@@ -46237,6 +46347,11 @@
    "k": ""
   },
   {
+   "n": "Natalia Mitina",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Natalia Ogoreltseva",
    "c": "RUS",
    "k": ""
@@ -46728,6 +46843,11 @@
   },
   {
    "n": "Olga Nuzhdina",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Olga Orlova",
    "c": "RUS",
    "k": ""
   },
@@ -48722,6 +48842,11 @@
    "k": ""
   },
   {
+   "n": "Valeryia Shedzka",
+   "c": "BLR",
+   "k": ""
+  },
+  {
    "n": "Valeryia Yanuchkouskaya",
    "c": "BLR",
    "k": ""
@@ -48770,6 +48895,11 @@
    "n": "Varvara Kurnosenko",
    "c": "RUS",
    "k": ""
+  },
+  {
+   "n": "Varvara Rauhen / Mikhail Prusiankou",
+   "c": "BLR",
+   "k": "D"
   },
   {
    "n": "Varvara Sheloumova",
@@ -49193,6 +49323,11 @@
   },
   {
    "n": "Vladislav Grishin",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Vladislav Ishin",
    "c": "RUS",
    "k": ""
   },
@@ -50052,11 +50187,6 @@
    "k": "W"
   },
   {
-   "n": "Алиса Крайнюкова / Семён Нетcев",
-   "c": "RUS",
-   "k": "d"
-  },
-  {
    "n": "Алиса Крайнюкова / Семён Нетсев",
    "c": "RUS",
    "k": "d"
@@ -50407,11 +50537,6 @@
    "k": "d"
   },
   {
-   "n": "Анна Явкина",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Арина Бойцова",
    "c": "RUS",
    "k": "W"
@@ -50643,7 +50768,7 @@
   },
   {
    "n": "Валерия Шедько",
-   "c": "BLR",
+   "c": "RUS",
    "k": "W"
   },
   {
@@ -50685,11 +50810,6 @@
    "n": "Варвара Кузьминых",
    "c": "RUS",
    "k": "W"
-  },
-  {
-   "n": "Варвара Равгень / Mikhail Prusiankou",
-   "c": "BLR",
-   "k": "D"
   },
   {
    "n": "Варвара Равгень / Михаил Прусенков",
@@ -50932,11 +51052,6 @@
    "k": ""
   },
   {
-   "n": "Владислав Мухин",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Владислав Скворцов",
    "c": "RUS",
    "k": "M"
@@ -51108,7 +51223,7 @@
   },
   {
    "n": "Дарья Садкова",
-   "c": "BLR",
+   "c": "RUS",
    "k": "w"
   },
   {
@@ -51380,11 +51495,6 @@
    "n": "Екатерина Рыбакова / Иван Махноносов",
    "c": "RUS",
    "k": "d"
-  },
-  {
-   "n": "Екатерина Серова",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Екатерина Старостина / Тимофей Столяренко",
@@ -51897,11 +52007,6 @@
    "k": "W"
   },
   {
-   "n": "Ксения Глушкова",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Ксения Гущина",
    "c": "RUS",
    "k": "w"
@@ -52397,11 +52502,6 @@
    "k": "W"
   },
   {
-   "n": "Наталья Мухина",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Наталья Хабибуллина",
    "c": "RUS",
    "k": ""
@@ -52485,11 +52585,6 @@
    "n": "Ольга Сабада / Павел Астахов",
    "c": "RUS",
    "k": "P"
-  },
-  {
-   "n": "Ольга Фролова",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Ольга Фёдорова",
@@ -53180,6 +53275,56 @@
    "n": "Ярослава Князева",
    "c": "BLR",
    "k": ""
+  },
+  {
+   "n": "Ekaterina Kuznetcova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Elizaveta Krivova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Алиса Крайнюкова / Семён Нетcев",
+   "c": "RUS",
+   "k": "d"
+  },
+  {
+   "n": "Анна Явкина",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Варвара Равгень / Mikhail Prusiankou",
+   "c": "BLR",
+   "k": "D"
+  },
+  {
+   "n": "Владислав Мухин",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Екатерина Серова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Ксения Глушкова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Наталья Мухина",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Ольга Фролова",
+   "c": "RUS",
+   "k": ""
   }
  ],
  "photos": {
@@ -53220,7 +53365,7 @@
   "Stefania Gladki": "photos/f32024f356c4ae1e.jpg",
   "Матвей Ветлугин": "photos/afd912e6f85aed98.jpg",
   "Mihhail Selevko": "photos/8e2dfacc10d65738.jpg",
-  "Corentin Spinar": "photos/fe301e3277dd95f2.jpg",
+  "Corentin Spinar": "photos/d2e283136d4ccc7b.jpg",
   "Kirk Haugeto": "photos/9876788fc8b32822.jpg",
   "Evgeniia Lopareva": "photos/13f549fdf12f58a4.jpg",
   "Geoffrey Brissaud": "photos/9a6aa371a2a098c5.jpg",
@@ -53701,7 +53846,7 @@
   "Chiara Minighini": "photos/8d9b472b506ab836.jpg",
   "Chilly Ann Sintana Wongso": "photos/d960655201bf441f.jpg",
   "Chiranat Chinprapakron": "photos/464ea4f6fac45fc9.jpg",
-  "Chiu Hei Cheung": "photos/14f9359cc19e8bbb.jpg",
+  "Chiu Hei Cheung": "photos/5adebb867bae1cd3.jpg",
   "Chloe Desiree Leung": "photos/f0a06d04dc1400b4.jpg",
   "Chloe Levine": "photos/71c1261dddf861ef.jpg",
   "Chloe Xin Yao Ng": "photos/1d2a6d8d564f0677.jpg",
@@ -54327,7 +54472,7 @@
   "Michelangelo Caprano": "photos/ab982d77aced84d2.jpg",
   "Michelle Deych": "photos/37c6537bb0d47c8e.jpg",
   "Ryan Hu": "photos/a24e043dfcc1cf6c.jpg",
-  "Michelle Dicicco": "photos/75419e411dd1da4a.jpg",
+  "Michelle Dicicco": "photos/460a37edcb1dd006.jpg",
   "Michelle Edgina Axille": "photos/761b0807f691e92e.jpg",
   "Mikalai Kamianchuk": "photos/cf7fa6e540c18840.jpg",
   "Mikayel Salazaryan": "photos/484d8d09c709b96c.jpg",
@@ -54348,7 +54493,7 @@
   "Joseph Black": "photos/9a6ff9da25323dbb.jpg",
   "Minchae Kim": "photos/85825da1fefe9317.jpg",
   "Minerva Fabienne Hase": "photos/a8f34d265d801050.jpg",
-  "Nikita Volodin": "photos/ebff5a46cc1477e4.jpg",
+  "Nikita Volodin": "photos/3c2976cf377f2523.jpg",
   "Ming Han Xu": "photos/a6006955241e9b7b.jpg",
   "Minja Peltonen": "photos/6ea6cf6d64f45d0f.jpg",
   "Minkyu Seo": "photos/4b4f17c8d07d541d.jpg",
@@ -54838,7 +54983,7 @@
   "Артем Петров": "photos/78205d1cb179d6d3.jpg",
   "Артур Даниелян": "photos/9c796cda9eb47234.jpg",
   "Артём Грицаенко": "photos/4571ea6d24a1eefb.jpg",
-  "Артём Ковалёв": "photos/a26c61576d122d42.jpg",
+  "Артём Ковалёв": "photos/56adc01ce92b5836.jpg",
   "Варвара Жданова": "photos/ccff8e28b7109f23.jpg",
   "Тимур Бабаев-Смирнов": "photos/e8bf142b570226ab.jpg",
   "Вениамин Башуров": "photos/ae1b24a002e63256.jpg",
@@ -54890,6 +55035,14 @@
   "Таисия Щербинина": "photos/fe3bba16274e2e3d.jpg",
   "Артём Петров": "photos/78205d1cb179d6d3.jpg",
   "Александр Островский": "photos/1c7f020f70c68c5d.jpg",
-  "Юлия Артемьева": "photos/9c5d87f48d52ffc9.jpg"
+  "Юлия Артемьева": "photos/9c5d87f48d52ffc9.jpg",
+  "Alena Leonova": "photos/f936f721668e530e.jpg",
+  "Anna Salnikova": "photos/b0f250db81b2449d.jpg",
+  "Egor Bazin": "photos/57c376fd3ad31463.jpg",
+  "Iasmina Kadyrova": "photos/ea815b21e49f9b67.jpg",
+  "Artem Koval": "photos/a26c61576d122d42.jpg",
+  "Liubov ILYUSHECHKINA": "photos/64a450fe77fed7b4.jpg",
+  "Степан Маришин": "photos/defd97a32b1c7be1.jpg",
+  "Вероника Яметова": "photos/7d4dd3d24ebf8015.jpg"
  }
 }
