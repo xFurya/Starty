@@ -19,6 +19,36 @@ const markLegend = {
   'F': 'падение',
 };
 
+/// Названия сбавок из файла по-русски; неизвестное остаётся как в файле.
+const _deductionNames = {
+  'falls': 'Падения',
+  'fall': 'Падения',
+  'music tempo': 'Темп музыки',
+  'extra element': 'Лишний элемент',
+  'extra elements': 'Лишние элементы',
+  'time violation': 'Нарушение времени',
+  'costume failure': 'Костюм',
+  'costume & prop violation': 'Костюм и реквизит',
+  'costume and prop violation': 'Костюм и реквизит',
+  'prop violation': 'Реквизит',
+  'late start': 'Опоздание со стартом',
+  'interruption': 'Остановка программы',
+  'interruptions': 'Остановка программы',
+  'illegal element': 'Запрещённый элемент',
+  'illegal elements': 'Запрещённые элементы',
+  'illegal movements': 'Запрещённые движения',
+  'music violation': 'Нарушение музыки',
+  'costume': 'Костюм',
+};
+
+String deductionName(String name) => _deductionNames[name.trim().toLowerCase()] ?? name;
+
+/// Номер судьи: «J1» → «С1»; прочее — как в файле.
+String judgeLabel(String no) {
+  final m = RegExp(r'^[Jj]\s*(\d+)$').firstMatch(no.trim());
+  return m == null ? no : 'С${m.group(1)}';
+}
+
 /// Отметки элемента по отдельности: «< e» и «<,e» — две отметки.
 List<String> marksOf(String info) => [
   for (final m in info.split(RegExp(r'[\s,;]+'))) if (m.isNotEmpty) m,
@@ -46,7 +76,7 @@ class _DetailsState extends State<Details> {
 
   void _toggle(String key) => setState(() => _open.contains(key) ? _open.remove(key) : _open.add(key));
 
-  String _judgeNo(int i) => i < widget.panel.length && widget.panel[i].no.isNotEmpty ? widget.panel[i].no : 'J${i + 1}';
+  String _judgeNo(int i) => i < widget.panel.length && widget.panel[i].no.isNotEmpty ? judgeLabel(widget.panel[i].no) : 'С${i + 1}';
 
   @override
   Widget build(BuildContext context) {
@@ -128,7 +158,7 @@ class _DetailsState extends State<Details> {
           padding: const EdgeInsets.symmetric(vertical: 4),
           child: Row(
             children: [
-              Expanded(child: Text(d.name, style: _name(p))),
+              Expanded(child: Text(deductionName(d.name), style: _name(p))),
               const SizedBox(width: 8),
               Text(d.value ?? '—', style: _val(p)),
             ],
@@ -380,7 +410,7 @@ class PanelBlock extends StatelessWidget {
                 child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   SizedBox(
                     width: 36,
-                    child: Text(j.no.isEmpty ? '—' : j.no, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: p.ink3)),
+                    child: Text(j.no.isEmpty ? '—' : judgeLabel(j.no), style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: p.ink3)),
                   ),
                   Expanded(
                     child: Text(

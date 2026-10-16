@@ -101,7 +101,7 @@ ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasF
     }
     if (t.state == TotalState.format) return const ProtocolView('Экран для этого протокола недоступен', ProtocolTone.quiet);
     if (t.state == TotalState.finalized) {
-      return ProtocolView('Окончательный · проверено по оригиналу', ProtocolTone.finalized, rows: t.rows);
+      return ProtocolView('Окончательный', ProtocolTone.finalized, rows: t.rows);
     }
     return ProtocolView('Промежуточный · ${_updated(built)}', ProtocolTone.live, rows: t.rows);
   }
@@ -120,12 +120,38 @@ ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasF
     case SegmentState.finalized:
       // окончательный без строк — нераспознанный файл, а не «протокол пуст»
       if (seg.rows.isEmpty) return const ProtocolView('Экран для этого протокола недоступен', ProtocolTone.quiet);
-      return ProtocolView('Окончательный · проверено по оригиналу', ProtocolTone.finalized, rows: seg.rows);
+      return ProtocolView('Окончательный', ProtocolTone.finalized, rows: seg.rows);
     case SegmentState.judgesMismatch:
-      return const ProtocolView('Проверка по оригиналу не сошлась', ProtocolTone.quiet);
+      return const ProtocolView('Итоги не подтверждены', ProtocolTone.quiet);
     case SegmentState.format:
       return const ProtocolView('Экран для этого протокола недоступен', ProtocolTone.quiet);
   }
+}
+
+/// Подписи колонок итога по-русски (КП, ПП, РТ, ПТ); незнакомая остаётся как в файле.
+String colLabel(String c) {
+  final t = c.trim().toUpperCase();
+  const en = {'SP': 'КП', 'FS': 'ПП', 'RD': 'РТ', 'FD': 'ПТ', 'PT': 'РТ'};
+  if (en.containsKey(t)) return en[t]!;
+  // латинские двойники кириллических букв (KП, PТ)
+  const twin = {'K': 'К', 'P': 'Р', 'T': 'Т', 'H': 'Н', 'C': 'С', 'E': 'Е', 'A': 'А', 'O': 'О', 'X': 'Х', 'M': 'М', 'B': 'В'};
+  final cyr = t.split('').map((ch) => twin[ch] ?? ch).join();
+  return const {'КП', 'ПП', 'РТ', 'ПТ'}.contains(cyr) ? cyr : c;
+}
+
+/// Статус участника без места по-русски; незнакомый остаётся как в файле.
+String statusLabel(String s) {
+  const m = {
+    'WD': 'снят',
+    'DNS': 'не вышел',
+    'DQ': 'дисквалифицирован',
+    'RET': 'прервал',
+    'NQ': 'не допущен',
+    'NQD': 'не прошёл',
+    'UNR': 'без места',
+    'NP': 'без места',
+  };
+  return m[s.trim().toUpperCase()] ?? s;
 }
 
 String _updated(DateTime? built) => built == null ? 'обновлено' : 'обновлено ${hm(built)}';
@@ -523,17 +549,16 @@ class _ResultRow extends StatelessWidget {
           )
         : SizedBox(
             width: 30,
-            child: Text(
-              row.status ?? '—',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: p.ink2),
-            ),
+            child: Text('—', textAlign: TextAlign.center, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: p.ink2)),
           );
     final parts = row.parts;
+    final status = place == null && row.status != null ? statusLabel(row.status!) : null;
     final sub = <String>[
+      // слово статуса переносится вместе с остальным под имя, а не ужимается в узкую колонку
+      ?status,
       if (row.nation.isNotEmpty) row.nation,
       if (parts != null)
-        for (var i = 0; i < parts.length && i < cols.length; i++) '${cols[i]} ${parts[i] ?? '—'}',
+        for (var i = 0; i < parts.length && i < cols.length; i++) '${colLabel(cols[i])} ${parts[i] ?? '—'}',
     ];
     final body = Container(
       color: ours ? p.frost : null,

@@ -12,6 +12,7 @@ import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:starty/data.dart';
+import 'package:starty/protocol_details.dart' show deductionName;
 import 'package:starty/protocol_model.dart';
 import 'package:starty/protocol_repo.dart';
 import 'package:starty/protocol_screen.dart';
@@ -58,6 +59,39 @@ List<dynamic> _longNames(Map<String, dynamic> j) {
   (r['els'] as List).add({'no': 3, 'n': 'FCCoSp4+kombinatsiya', 'info': '< e !', 'b': 100.10, 'x': true, 'g': -12.34, 'j': List.filled(9, 5), 's': 99.99});
   (r['comp'] as List).add({'n': 'Исполнение и интерпретация музыки', 'f': 1.33, 'j': List.filled(9, 8.25), 's': 8.36});
   return j['categories'] as List;
+}
+
+/// Файл с итогом вида: латинские подписи колонок и участники без места (статусы из файла).
+Map<String, dynamic> withTotal({List<String> cols = const ['SP', 'FS'], String state = 'final', List<String> statuses = const ['WD', 'NQD', 'DQ']}) {
+  final j = sample();
+  ((j['categories'] as List).first as Map<String, dynamic>)['total'] = {
+    'state': state,
+    'complete': true,
+    'cols': cols,
+    'colsKind': 'places',
+    'skipped': 0,
+    'rows': [
+      {
+        'i': 1,
+        'place': 1,
+        'name': 'Анна Павловна БИЛИБИНА / Дмитрий Владимирович КАШАЕВ',
+        'nation': '',
+        'points': '151.63',
+        'parts': [for (var k = 0; k < cols.length; k++) '${k + 1}'],
+      },
+      for (var k = 0; k < statuses.length; k++)
+        {
+          'i': k + 2,
+          'place': null,
+          'status': statuses[k],
+          'name': 'Елизавета Андреевна ЛЕБЕДЕВА-ПЕТРОСЯН / Александр ВОЛКОВ ${k + 1}',
+          'nation': '',
+          'points': null,
+          'parts': [for (var c = 0; c < cols.length; c++) null],
+        },
+    ],
+  };
+  return j;
 }
 
 /// Файл с другим состоянием ритм-танца; [basis] — только для окончательного.
@@ -158,7 +192,7 @@ void main() {
   group('статусы из макетов', () {
     testWidgets('окончательный — строки с местами и баллами, «Оригинал протокола»', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(sample()));
-      expect(find.text('Окончательный · проверено по оригиналу'), findsOneWidget);
+      expect(find.text('Окончательный'), findsOneWidget);
       expect(find.text('Анна Павловна Билибина / Дмитрий Владимирович Кашаев'), findsOneWidget);
       expect(find.text('66.36'), findsOneWidget);
       expect(find.text('Оригинал протокола'), findsOneWidget);
@@ -190,7 +224,7 @@ void main() {
 
     testWidgets('сверка с оригиналом не сошлась — только статус и оригинал', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(withState('judges_mismatch', basis: null)));
-      expect(find.text('Проверка по оригиналу не сошлась'), findsOneWidget);
+      expect(find.text('Итоги не подтверждены'), findsOneWidget);
       expect(find.text('66.36'), findsNothing);
       expect(find.text('Оригинал протокола'), findsOneWidget);
     });
@@ -217,6 +251,51 @@ void main() {
       expect(find.text('Итог вида ещё не опубликован'), findsOneWidget);
     });
 
+  });
+
+  group('итог вида: подписи колонок и статусы по-русски', () {
+    testWidgets('SP/FS, RD/FD, PT показываются как КП/ПП, РТ/ПТ', (tester) async {
+      await pumpScreen(tester, s: start(), repo: repoWith(withTotal(cols: ['SP', 'FS', 'RD', 'FD', 'PT', 'XYZ'])));
+      await tester.tap(find.text('Итог'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('КП 1 · ПП 2 · РТ 3 · ПТ 4 · РТ 5 · XYZ 6'), findsOneWidget);
+      expect(find.textContaining('SP'), findsNothing);
+    });
+
+    testWidgets('статусы WD, NQD, DQ — словами, а не сырыми кодами', (tester) async {
+      await pumpScreen(tester, s: start(), repo: repoWith(withTotal()));
+      await tester.tap(find.text('Итог'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('снят'), findsOneWidget);
+      expect(find.textContaining('не прошёл'), findsOneWidget);
+      expect(find.textContaining('дисквалифицирован'), findsOneWidget);
+      expect(find.text('WD'), findsNothing);
+    });
+
+    testWidgets('английские сбавки из файла — по-русски, неизвестная как в файле', (tester) async {
+      final j = withDetails();
+      final r = (_seg(j)['rows'] as List).first as Map<String, dynamic>;
+      r['deds'] = [
+        {'n': 'Music tempo', 'v': -1.0},
+        {'n': 'Extra element', 'v': -2.0},
+        {'n': 'Zebra rule', 'v': -1.0},
+      ];
+      await pumpScreen(tester, s: start(), repo: repoWith(j));
+      await tester.tap(find.text(_pair));
+      await tester.pumpAndSettle();
+      expect(find.text('Темп музыки'), findsOneWidget);
+      expect(find.text('Лишний элемент'), findsOneWidget);
+      expect(find.text('Zebra rule'), findsOneWidget);
+      expect(find.text('Music tempo'), findsNothing);
+      expect(deductionName('Falls'), 'Падения');
+    });
+
+    test('незнакомый статус и колонка остаются как в файле', () {
+      expect(statusLabel('ZZ'), 'ZZ');
+      expect(colLabel('Блок'), 'Блок');
+      expect(statusLabel('DNS'), 'не вышел');
+      expect(colLabel('KП'), 'КП');
+    });
   });
 
   group('строки: раскрытие по тапу, прочерк вместо выдуманного', () {
@@ -267,15 +346,15 @@ void main() {
       await pumpScreen(tester, s: start(), repo: repoWith(withDetails()));
       await tester.tap(find.text(_pair));
       await tester.pumpAndSettle();
-      expect(find.text('J3'), findsNothing);
+      expect(find.text('С3'), findsNothing);
       await tester.tap(find.textContaining('3Lz+3T'));
       await tester.pumpAndSettle();
-      expect(find.text('J1'), findsOneWidget);
-      expect(find.text('J3'), findsOneWidget);
+      expect(find.text('С1'), findsOneWidget);
+      expect(find.text('С3'), findsOneWidget);
       expect(find.text('—'), findsWidgets);
       await tester.tap(find.textContaining('3Lz+3T'));
       await tester.pumpAndSettle();
-      expect(find.text('J3'), findsNothing);
+      expect(find.text('С3'), findsNothing);
     });
 
     testWidgets('нет полей — нет блоков и нет нулей: ни «Элементы», ни «Сбавки»', (tester) async {
@@ -453,7 +532,28 @@ void main() {
             await tester.tap(find.textContaining('3Lz+3T'));
             await tester.tap(find.text('Композиция'));
             await tester.pumpAndSettle();
-            expect(find.text('J1'), findsNWidgets(2));
+            expect(find.text('С1'), findsNWidgets(2));
+            expectNoHorizontalScroll(tester);
+          });
+        }
+      }
+    }
+
+    for (final width in [360.0, 390.0, 430.0]) {
+      for (final scale in [1.0, 1.3]) {
+        for (final b in [Brightness.light, Brightness.dark]) {
+          testWidgets('вкладка «Итог», ширина $width, масштаб $scale, ${b.name}', (tester) async {
+            await pumpScreen(
+              tester,
+              s: start(ours: ['Анна Билибина / Дмитрий Кашаев']),
+              repo: repoWith(withTotal(cols: ['SP', 'FS', 'RD', 'FD', 'PT'], statuses: ['WD', 'NQD', 'DQ', 'DNS', 'RET'])),
+              width: width,
+              scale: scale,
+              brightness: b,
+            );
+            await tester.tap(find.text('Итог'));
+            await tester.pumpAndSettle();
+            expect(find.textContaining('дисквалифицирован'), findsOneWidget);
             expectNoHorizontalScroll(tester);
           });
         }
