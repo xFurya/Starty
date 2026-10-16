@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-16T17:58:34+03:00",
- "checked": "2026-10-16T15:31:20.048536+00:00",
+ "generated": "2026-10-16T18:17:40+03:00",
+ "checked": "2026-10-16T18:17:40+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -26476,32 +26476,56 @@
    "podium": [
     {
      "place": 1,
-     "name": "Olivia Smart / Tim Dieck",
-     "nation": "ESP",
-     "points": "79.42"
-    },
-    {
-     "place": 2,
      "name": "Jamie Fournier / Everest Zhu",
      "nation": "CAN",
      "points": "66.14"
     },
     {
-     "place": 3,
+     "place": 2,
      "name": "Chloe Nguyen / Brendan Giang",
      "nation": "CAN",
      "points": "56.47"
+    },
+    {
+     "place": 3,
+     "name": "Anita Straub / Andreas Straub",
+     "nation": "AUT",
+     "points": "55.41"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Olivia Smart / Tim Dieck — 79.42\n2. Jamie Fournier / Everest Zhu — 66.14\n3. Chloe Nguyen / Brendan Giang — 56.47\n\nРоссияне:\n• Милана Кузьмина / Дмитрий Студеникин — 19:04\n• Василиса Григорьева / Евгений Артющенко — 20:48\n\nНачало: 17:45 МСК",
+   "desc": "Промежуточные итоги:\n1. Jamie Fournier / Everest Zhu — 66.14\n2. Chloe Nguyen / Brendan Giang — 56.47\n3. Anita Straub / Andreas Straub — 55.41\n\nРоссияне:\n• Милана Кузьмина / Дмитрий Студеникин — 19:04\n• Василиса Григорьева / Евгений Артющенко — 20:48\n\nНачало: 17:45 МСК",
    "field": [
     {
      "name": "Gina Zehnder / Beda Leon Sieber",
      "nation": "SUI",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 4,
      "time": "17:50"
+    },
+    {
+     "name": "Chloe Nguyen / Brendan Giang",
+     "nation": "CAN",
+     "no": 2,
+     "warmup": 1,
+     "place": 2,
+     "time": "17:56"
+    },
+    {
+     "name": "Anita Straub / Andreas Straub",
+     "nation": "AUT",
+     "no": 3,
+     "warmup": 1,
+     "place": 3,
+     "time": "18:02"
+    },
+    {
+     "name": "Jamie Fournier / Everest Zhu",
+     "nation": "CAN",
+     "no": 4,
+     "warmup": 1,
+     "place": 1,
+     "time": "18:08"
     },
     {
      "name": "Alisa Ovsiankina / Maximilien Rahier",
@@ -26518,27 +26542,11 @@
      "warmup": 5
     },
     {
-     "name": "Anita Straub / Andreas Straub",
-     "nation": "AUT",
-     "time": "18:02",
-     "no": 3,
-     "warmup": 1,
-     "place": 4
-    },
-    {
      "name": "Charise Matthaei / Max Liebers",
      "nation": "GER",
      "time": "18:26",
      "no": 6,
      "warmup": 2
-    },
-    {
-     "name": "Chloe Nguyen / Brendan Giang",
-     "nation": "CAN",
-     "time": "17:56",
-     "no": 2,
-     "warmup": 1,
-     "place": 3
     },
     {
      "name": "Emese Csiszer / Mark Shapiro",
@@ -26567,14 +26575,6 @@
      "time": "19:46",
      "no": 15,
      "warmup": 4
-    },
-    {
-     "name": "Jamie Fournier / Everest Zhu",
-     "nation": "CAN",
-     "time": "18:08",
-     "no": 4,
-     "warmup": 1,
-     "place": 2
     },
     {
      "name": "Loicia Demougeot / Theo le Mercier",
@@ -26662,10 +26662,10 @@
     "cat": null,
     "first": null,
     "names": {
-     "Gina ZEHNDER / Beda Leon SIEBER": "Gina Zehnder / Beda Leon Sieber",
+     "Jamie FOURNIER / Everest ZHU": "Jamie Fournier / Everest Zhu",
      "Chloe NGUYEN / Brendan GIANG": "Chloe Nguyen / Brendan Giang",
      "Anita STRAUB / Andreas STRAUB": "Anita Straub / Andreas Straub",
-     "Jamie FOURNIER / Everest ZHU": "Jamie Fournier / Everest Zhu",
+     "Gina ZEHNDER / Beda Leon SIEBER": "Gina Zehnder / Beda Leon Sieber",
      "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck",
      "Charise MATTHAEI / Max LIEBERS": "Charise Matthaei / Max Liebers",
      "Natalie TASCHLEROVA / Filip TASCHLER": "Natalie Taschlerova / Filip Taschler",
@@ -28519,7 +28519,7 @@
    "seg": "ПП",
    "title": "CS Budapest Trophy — мужчины ПП",
    "start": "2026-10-18T12:50:00+03:00",
-   "end": "2026-10-18T17:25:00+03:00",
+   "end": "2026-10-18T17:07:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [],
@@ -28560,168 +28560,196 @@
     {
      "name": "Aleksei Vlasenko",
      "nation": "HUN",
+     "time": "12:56",
      "no": 1,
      "warmup": 1
     },
     {
      "name": "Douglas Gerber",
      "nation": "AUS",
+     "time": "13:03",
      "no": 2,
      "warmup": 1
     },
     {
      "name": "Matvii Yefymenko",
      "nation": "POL",
+     "time": "13:10",
      "no": 3,
      "warmup": 1
     },
     {
      "name": "Pablo Garcia",
      "nation": "ESP",
+     "time": "13:17",
      "no": 4,
      "warmup": 1
     },
     {
      "name": "David Sedej",
      "nation": "SLO",
+     "time": "13:24",
      "no": 5,
      "warmup": 1
     },
     {
      "name": "Makar Suntsev",
      "nation": "FIN",
+     "time": "13:37",
      "no": 6,
      "warmup": 2
     },
     {
      "name": "Davide Lewton Brain",
      "nation": "MON",
+     "time": "13:44",
      "no": 7,
      "warmup": 2
     },
     {
      "name": "Vladimir Samoilov",
      "nation": "POL",
+     "time": "13:51",
      "no": 8,
      "warmup": 2
     },
     {
      "name": "Vadym Novikov",
      "nation": "UKR",
+     "time": "13:58",
      "no": 9,
      "warmup": 2
     },
     {
      "name": "Tobia Oellerer",
      "nation": "AUT",
+     "time": "14:05",
      "no": 10,
      "warmup": 2
     },
     {
      "name": "Nico Steffen",
      "nation": "SUI",
+     "time": "14:33",
      "no": 11,
      "warmup": 3
     },
     {
      "name": "Nikita Krivosheyev",
      "nation": "KAZ",
+     "time": "14:40",
      "no": 12,
      "warmup": 3
     },
     {
      "name": "Elias Sayed",
      "nation": "SWE",
+     "time": "14:47",
      "no": 13,
      "warmup": 3
     },
     {
      "name": "Andreas Nordeback",
      "nation": "SWE",
+     "time": "14:54",
      "no": 14,
      "warmup": 3
     },
     {
      "name": "Taira Shinohara",
      "nation": "USA",
+     "time": "15:01",
      "no": 15,
      "warmup": 3
     },
     {
      "name": "Nikita Starostin",
      "nation": "GER",
+     "time": "15:08",
      "no": 16,
      "warmup": 3
     },
     {
      "name": "Fedirs Kuliss",
      "nation": "LAT",
+     "time": "15:21",
      "no": 17,
      "warmup": 4
     },
     {
      "name": "Kevin Aymoz",
      "nation": "FRA",
+     "time": "15:28",
      "no": 18,
      "warmup": 4
     },
     {
      "name": "Wesley Chiu",
      "nation": "CAN",
+     "time": "15:35",
      "no": 19,
      "warmup": 4
     },
     {
      "name": "John Kim",
      "nation": "CAN",
+     "time": "15:42",
      "no": 20,
      "warmup": 4
     },
     {
      "name": "Tamir Kuperman",
      "nation": "ISR",
+     "time": "15:49",
      "no": 21,
      "warmup": 4
     },
     {
      "name": "Nikita Sheiko",
      "nation": "ISR",
+     "time": "15:56",
      "no": 22,
      "warmup": 4
     },
     {
      "name": "Matias Lindfors",
      "nation": "FIN",
+     "time": "16:24",
      "no": 23,
      "warmup": 5
     },
     {
      "name": "Patrick Blackwell",
      "nation": "USA",
+     "time": "16:31",
      "no": 24,
      "warmup": 5
     },
     {
      "name": "Lukas Britschgi",
      "nation": "SUI",
+     "time": "16:38",
      "no": 25,
      "warmup": 5
     },
     {
      "name": "Arlet Levandi",
      "nation": "EST",
+     "time": "16:45",
      "no": 26,
      "warmup": 5
     },
     {
      "name": "Genrikh Gartung",
      "nation": "GER",
+     "time": "16:52",
      "no": 27,
      "warmup": 5
     },
     {
      "name": "Daniel Grassl",
      "nation": "ITA",
+     "time": "16:59",
      "no": 28,
      "warmup": 5
     }
@@ -55149,6 +55177,8 @@
   "Anzhelika Abachkina": "photos/ea9faae72faad438.jpg",
   "Kirill Aleshin": "photos/c9c5c13f43e4f43a.jpg",
   "Victoria Kovaleva": "photos/8cc7c53ee357d24b.jpg",
-  "Ксения Синицына": "photos/fd45f4011ed6e0c3.jpg"
+  "Ксения Синицына": "photos/fd45f4011ed6e0c3.jpg",
+  "Chloe Nguyen": "photos/dd3298115c4d3635.jpg",
+  "Brendan Giang": "photos/c2e3975061a7f03e.jpg"
  }
 }
