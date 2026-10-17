@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-17T16:13:21+03:00",
- "checked": "2026-10-17T14:02:23.253217+00:00",
+ "generated": "2026-10-17T16:55:07+03:00",
+ "checked": "2026-10-17T16:55:07+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -28086,19 +28086,59 @@
      "time": "16:07"
     },
     {
+     "name": "Lotta Artimo",
+     "nation": "FIN",
+     "no": 14,
+     "warmup": 3,
+     "place": 12,
+     "time": "16:13"
+    },
+    {
+     "name": "Sofja Stepcenko",
+     "nation": "LAT",
+     "no": 15,
+     "warmup": 3,
+     "place": 9,
+     "time": "16:18"
+    },
+    {
+     "name": "Ana Stratulat",
+     "nation": "ROU",
+     "no": 16,
+     "warmup": 4,
+     "place": 19,
+     "time": "16:31"
+    },
+    {
+     "name": "Mariia Dmitrieva",
+     "nation": "ISR",
+     "no": 17,
+     "warmup": 4,
+     "place": 18,
+     "time": "16:36"
+    },
+    {
+     "name": "Julia Sauter",
+     "nation": "ROU",
+     "no": 18,
+     "warmup": 4,
+     "place": 1,
+     "time": "16:42"
+    },
+    {
+     "name": "Zere Sarbalina",
+     "nation": "KAZ",
+     "no": 19,
+     "warmup": 4,
+     "place": 17,
+     "time": "16:48"
+    },
+    {
      "name": "Alina Bonillo",
      "nation": "USA",
      "time": "19:08",
      "no": 35,
      "warmup": 7
-    },
-    {
-     "name": "Ana Stratulat",
-     "nation": "ROU",
-     "time": "16:31",
-     "no": 16,
-     "warmup": 4,
-     "place": 20
     },
     {
      "name": "Anna Pezzetta",
@@ -28129,14 +28169,6 @@
      "warmup": 5
     },
     {
-     "name": "Julia Sauter",
-     "nation": "ROU",
-     "time": "16:42",
-     "no": 18,
-     "warmup": 4,
-     "place": 1
-    },
-    {
      "name": "Kimmy Repond",
      "nation": "SUI",
      "time": "18:24",
@@ -28149,14 +28181,6 @@
      "time": "18:51",
      "no": 32,
      "warmup": 7
-    },
-    {
-     "name": "Lotta Artimo",
-     "nation": "FIN",
-     "time": "16:13",
-     "no": 14,
-     "warmup": 3,
-     "place": 13
     },
     {
      "name": "Lovisa Aav",
@@ -28178,14 +28202,6 @@
      "time": "17:37",
      "no": 24,
      "warmup": 5
-    },
-    {
-     "name": "Mariia Dmitrieva",
-     "nation": "ISR",
-     "time": "16:36",
-     "no": 17,
-     "warmup": 4,
-     "place": 19
     },
     {
      "name": "Marina Piredda",
@@ -28231,27 +28247,11 @@
      "warmup": 5
     },
     {
-     "name": "Sofja Stepcenko",
-     "nation": "LAT",
-     "time": "16:18",
-     "no": 15,
-     "warmup": 3,
-     "place": 10
-    },
-    {
      "name": "Weronika Ferlin",
      "nation": "POL",
      "time": "18:18",
      "no": 30,
      "warmup": 6
-    },
-    {
-     "name": "Zere Sarbalina",
-     "nation": "KAZ",
-     "time": "16:48",
-     "no": 19,
-     "warmup": 4,
-     "place": 18
     },
     {
      "name": "Алина Горбачёва",
@@ -28268,6 +28268,7 @@
     "cat": null,
     "first": null,
     "names": {
+     "Julia SAUTER": "Julia Sauter",
      "Anita OSTLUND": "Anita Ostlund",
      "Sophie Joline von FELTEN": "Sophie Joline von Felten",
      "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
@@ -28275,18 +28276,17 @@
      "Mia RISA GOMEZ": "Mia Risa Gomez",
      "Alexandra FEIGIN": "Alexandra Feigin",
      "Julia KASPRZYK": "Julia Kasprzyk",
+     "Sofja STEPCENKO": "Sofja Stepcenko",
      "Pernille WITH": "Pernille With",
      "Elizabet GERVITS": "Elizabet Gervits",
+     "Lotta ARTIMO": "Lotta Artimo",
      "Haruna MURAKAMI": "Haruna Murakami",
      "Maxine BAUTISTA": "Maxine Bautista",
      "Julia van DIJK": "Julia van Dijk",
      "Meda VARIAKOJYTE": "Meda Variakojyte",
-     "Lotta ARTIMO": "Lotta Artimo",
-     "Sofja STEPCENKO": "Sofja Stepcenko",
-     "Ana STRATULAT": "Ana Stratulat",
-     "Mariia DMITRIEVA": "Mariia Dmitrieva",
-     "Julia SAUTER": "Julia Sauter",
      "Zere SARBALINA": "Zere Sarbalina",
+     "Mariia DMITRIEVA": "Mariia Dmitrieva",
+     "Ana STRATULAT": "Ana Stratulat",
      "Nataly LANGERBAUR": "Nataly Langerbaur",
      "Inga GURGENIDZE": "Inga Gurgenidze",
      "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
@@ -28319,7 +28319,7 @@
    "seg": "КП",
    "title": "Гран-при России «Рапсодия льда» — мужчины КП",
    "start": "2026-10-17T15:15:00+03:00",
-   "end": "2026-10-17T16:36:00+03:00",
+   "end": "2026-10-17T16:40:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -28422,44 +28422,44 @@
      "time": "16:01"
     },
     {
-     "name": "Андрей Мозалёв",
-     "nation": "МОС",
-     "time": "16:23",
-     "no": 10,
-     "warmup": 2,
-     "place": 2
-    },
-    {
-     "name": "Евгений Семененко",
-     "nation": "СПБ",
-     "time": "16:29",
-     "no": 11,
-     "warmup": 2,
-     "place": 1
-    },
-    {
      "name": "Иван Конихин",
      "nation": "МОС",
-     "time": "16:07",
      "no": 7,
      "warmup": 2,
-     "place": 8
-    },
-    {
-     "name": "Матвей Ветлугин",
-     "nation": "СПБ",
-     "time": "16:18",
-     "no": 9,
-     "warmup": 2,
-     "place": 4
+     "place": 8,
+     "time": "16:07"
     },
     {
      "name": "Роман Савосин",
      "nation": "МОС",
-     "time": "16:12",
      "no": 8,
      "warmup": 2,
-     "place": 5
+     "place": 5,
+     "time": "16:12"
+    },
+    {
+     "name": "Матвей Ветлугин",
+     "nation": "СПБ",
+     "no": 9,
+     "warmup": 2,
+     "place": 4,
+     "time": "16:18"
+    },
+    {
+     "name": "Андрей Мозалёв",
+     "nation": "МОС",
+     "no": 10,
+     "warmup": 2,
+     "place": 2,
+     "time": "16:23"
+    },
+    {
+     "name": "Евгений Семененко",
+     "nation": "СПБ",
+     "no": 11,
+     "warmup": 2,
+     "place": 1,
+     "time": "16:29"
     }
    ],
    "live": {
@@ -28468,17 +28468,17 @@
     "cat": null,
     "first": null,
     "names": {
+     "Евгений СЕМЕНЕНКО": "Евгений Семененко",
+     "Андрей МОЗАЛЁВ": "Андрей Мозалёв",
      "Даниил САМСОНОВ": "Даниил Самсонов",
+     "Матвей ВЕТЛУГИН": "Матвей Ветлугин",
+     "Роман САВОСИН": "Роман Савосин",
      "Артём КОВАЛЁВ": "Артём Ковалёв",
      "Семен СОЛОВЬЕВ": "Семен Соловьев",
+     "Иван КОНИХИН": "Иван Конихин",
      "Константин САФОНОВ": "Константин Сафонов",
      "Юрий СИДОРОВ": "Юрий Сидоров",
-     "Вячеслав ПРОЦЕНКО": "Вячеслав Проценко",
-     "Иван КОНИХИН": "Иван Конихин",
-     "Роман САВОСИН": "Роман Савосин",
-     "Матвей ВЕТЛУГИН": "Матвей Ветлугин",
-     "Андрей МОЗАЛЁВ": "Андрей Мозалёв",
-     "Евгений СЕМЕНЕНКО": "Евгений Семененко"
+     "Вячеслав ПРОЦЕНКО": "Вячеслав Проценко"
     },
     "basis": "judges"
    },
@@ -29665,48 +29665,70 @@
    "desc": "Начало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
-     "name": "Андрей Мозалёв",
-     "nation": "МОС"
-    },
-    {
-     "name": "Артём Ковалёв",
-     "nation": "МОБ"
-    },
-    {
      "name": "Вячеслав Проценко",
-     "nation": "СПБ"
-    },
-    {
-     "name": "Даниил Самсонов",
-     "nation": "МОС"
-    },
-    {
-     "name": "Евгений Семененко",
-     "nation": "СПБ"
-    },
-    {
-     "name": "Иван Конихин",
-     "nation": "МОС"
-    },
-    {
-     "name": "Константин Сафонов",
-     "nation": "ТУЛ"
-    },
-    {
-     "name": "Матвей Ветлугин",
-     "nation": "СПБ"
-    },
-    {
-     "name": "Роман Савосин",
-     "nation": "МОС"
-    },
-    {
-     "name": "Семен Соловьев",
-     "nation": "СПБ"
+     "nation": "СПБ",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Юрий Сидоров",
-     "nation": "ОРЕ"
+     "nation": "ОРЕ",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Константин Сафонов",
+     "nation": "ТУЛ",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Иван Конихин",
+     "nation": "МОС",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Семен Соловьев",
+     "nation": "СПБ",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Артём Ковалёв",
+     "nation": "МОБ",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Роман Савосин",
+     "nation": "МОС",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Матвей Ветлугин",
+     "nation": "СПБ",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Даниил Самсонов",
+     "nation": "МОС",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Андрей Мозалёв",
+     "nation": "МОС",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Евгений Семененко",
+     "nation": "СПБ",
+     "no": 11,
+     "warmup": 2
     }
    ],
    "live": {
@@ -29715,17 +29737,17 @@
     "cat": "https://fsrussia.ru/results/2627/1etap_sen/CAT001RS.htm",
     "first": "https://fsrussia.ru/results/2627/1etap_sen/SEG001.htm",
     "names": {
-     "Матвей ВЕТЛУГИН": "Матвей Ветлугин",
-     "Артём КОВАЛЁВ": "Артём Ковалёв",
-     "Иван КОНИХИН": "Иван Конихин",
-     "Андрей МОЗАЛЁВ": "Андрей Мозалёв",
      "Вячеслав ПРОЦЕНКО": "Вячеслав Проценко",
-     "Роман САВОСИН": "Роман Савосин",
-     "Даниил САМСОНОВ": "Даниил Самсонов",
-     "Константин САФОНОВ": "Константин Сафонов",
-     "Евгений СЕМЕНЕНКО": "Евгений Семененко",
      "Юрий СИДОРОВ": "Юрий Сидоров",
-     "Семен СОЛОВЬЕВ": "Семен Соловьев"
+     "Константин САФОНОВ": "Константин Сафонов",
+     "Иван КОНИХИН": "Иван Конихин",
+     "Семен СОЛОВЬЕВ": "Семен Соловьев",
+     "Артём КОВАЛЁВ": "Артём Ковалёв",
+     "Роман САВОСИН": "Роман Савосин",
+     "Матвей ВЕТЛУГИН": "Матвей Ветлугин",
+     "Даниил САМСОНОВ": "Даниил Самсонов",
+     "Андрей МОЗАЛЁВ": "Андрей Мозалёв",
+     "Евгений СЕМЕНЕНКО": "Евгений Семененко"
     },
     "basis": null
    },
