@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T16:13:21+03:00",
- "checked": "2026-10-17T13:38:23.922790+00:00",
+ "checked": "2026-10-17T13:42:23.858915+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -28350,31 +28350,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Евгений Семененко",
+     "nation": "СПБ",
+     "points": "100.20"
+    },
+    {
+     "place": 2,
      "name": "Андрей Мозалёв",
      "nation": "МОС",
      "points": "98.13"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Даниил Самсонов",
      "nation": "МОС",
      "points": "91.60"
-    },
-    {
-     "place": 3,
-     "name": "Матвей Ветлугин",
-     "nation": "СПБ",
-     "points": "89.94"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Андрей Мозалёв — 98.13\n2. Даниил Самсонов — 91.60\n3. Матвей Ветлугин — 89.94\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Евгений Семененко — 100.20\n2. Андрей Мозалёв — 98.13\n3. Даниил Самсонов — 91.60\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Семен Соловьев",
      "nation": "СПБ",
      "no": 1,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "time": "15:27"
     },
     {
@@ -28382,7 +28382,7 @@
      "nation": "ОРЕ",
      "no": 2,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "time": "15:55"
     },
     {
@@ -28390,7 +28390,7 @@
      "nation": "ТУЛ",
      "no": 3,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "time": "15:38"
     },
     {
@@ -28398,7 +28398,7 @@
      "nation": "МОС",
      "no": 4,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "time": "15:43"
     },
     {
@@ -28406,7 +28406,7 @@
      "nation": "СПБ",
      "no": 5,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "time": "15:49"
     },
     {
@@ -28414,7 +28414,7 @@
      "nation": "МОБ",
      "no": 6,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "time": "16:01"
     },
     {
@@ -28423,14 +28423,15 @@
      "time": "16:23",
      "no": 10,
      "warmup": 2,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Евгений Семененко",
      "nation": "СПБ",
      "time": "16:29",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Иван Конихин",
@@ -28438,7 +28439,7 @@
      "time": "16:07",
      "no": 7,
      "warmup": 2,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Матвей Ветлугин",
@@ -28446,7 +28447,7 @@
      "time": "16:18",
      "no": 9,
      "warmup": 2,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Роман Савосин",
@@ -28454,10 +28455,9 @@
      "time": "16:12",
      "no": 8,
      "warmup": 2,
-     "place": 4
+     "place": 5
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG001.htm",
@@ -28476,7 +28476,7 @@
      "Андрей МОЗАЛЁВ": "Андрей Мозалёв",
      "Евгений СЕМЕНЕНКО": "Евгений Семененко"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
