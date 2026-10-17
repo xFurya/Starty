@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T15:58:40+03:00",
- "checked": "2026-10-17T13:14:25.370224+00:00",
+ "checked": "2026-10-17T13:18:23.826947+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27962,31 +27962,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Anita Ostlund",
+     "nation": "SWE",
+     "points": "61.33"
+    },
+    {
+     "place": 2,
      "name": "Sophie Joline von Felten",
      "nation": "USA",
      "points": "57.72"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Sara-Maude Dupuis",
      "nation": "CAN",
      "points": "56.92"
-    },
-    {
-     "place": 3,
-     "name": "Polina Dzsumanyijazova",
-     "nation": "HUN",
-     "points": "56.21"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sophie Joline von Felten — 57.72\n2. Sara-Maude Dupuis — 56.92\n3. Polina Dzsumanyijazova — 56.21\n\nРоссияне:\n• Алина Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Anita Ostlund — 61.33\n2. Sophie Joline von Felten — 57.72\n3. Sara-Maude Dupuis — 56.92\n\nРоссияне:\n• Алина Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Elizabet Gervits",
      "nation": "ISR",
      "no": 1,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "time": "14:31"
     },
     {
@@ -27994,7 +27994,7 @@
      "nation": "USA",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "time": "14:37"
     },
     {
@@ -28002,7 +28002,7 @@
      "nation": "POL",
      "no": 3,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "time": "14:42"
     },
     {
@@ -28010,7 +28010,7 @@
      "nation": "NOR",
      "no": 4,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "time": "14:48"
     },
     {
@@ -28018,7 +28018,7 @@
      "nation": "BUL",
      "no": 5,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "time": "14:54"
     },
     {
@@ -28026,7 +28026,7 @@
      "nation": "LTU",
      "no": 6,
      "warmup": 2,
-     "place": 12,
+     "place": 13,
      "time": "15:06"
     },
     {
@@ -28034,7 +28034,7 @@
      "nation": "NED",
      "no": 7,
      "warmup": 2,
-     "place": 11,
+     "place": 12,
      "time": "15:12"
     },
     {
@@ -28042,7 +28042,7 @@
      "nation": "CAN",
      "no": 8,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "time": "15:17"
     },
     {
@@ -28050,7 +28050,7 @@
      "nation": "HUN",
      "no": 9,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "time": "15:23"
     },
     {
@@ -28058,7 +28058,7 @@
      "nation": "AUS",
      "no": 10,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "time": "15:29"
     },
     {
@@ -28066,7 +28066,7 @@
      "nation": "NOR",
      "no": 11,
      "warmup": 3,
-     "place": 7,
+     "place": 8,
      "time": "15:56"
     },
     {
@@ -28088,7 +28088,8 @@
      "nation": "SWE",
      "time": "16:07",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "place": 1
     },
     {
      "name": "Anna Pezzetta",
@@ -28187,7 +28188,7 @@
      "time": "16:01",
      "no": 12,
      "warmup": 3,
-     "place": 10
+     "place": 11
     },
     {
      "name": "Michaela Vrastakova",
@@ -28378,7 +28379,7 @@
      "nation": "ОРЕ",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "time": "15:55"
     },
     {
@@ -28386,7 +28387,7 @@
      "nation": "ТУЛ",
      "no": 3,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "time": "15:38"
     },
     {
@@ -28402,7 +28403,7 @@
      "nation": "СПБ",
      "no": 5,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "time": "15:49"
     },
     {
@@ -28432,7 +28433,8 @@
      "nation": "МОС",
      "time": "16:07",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4
     },
     {
      "name": "Матвей Ветлугин",
