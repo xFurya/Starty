@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T18:55:29+03:00",
- "checked": "2026-10-17T16:22:23.940977+00:00",
+ "checked": "2026-10-17T16:26:24.346366+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27980,7 +27980,7 @@
      "points": "65.53"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Алина Горбачёва — 73.02\n2. Maria Eliise Kaljuvere — 66.36\n3. Julia Sauter — 65.53\n\nРоссияне:\n• Алина Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансляция: HunSkate TV",
+   "desc": "Итог:\n1. Алина Горбачёва — 73.02\n2. Maria Eliise Kaljuvere — 66.36\n3. Julia Sauter — 65.53\n\nРоссияне:\n• Алина Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Elizabet Gervits",
@@ -28211,7 +28211,7 @@
      "nation": "DEN",
      "no": 29,
      "warmup": 6,
-     "place": 36,
+     "place": 37,
      "time": "18:12"
     },
     {
@@ -28219,7 +28219,7 @@
      "nation": "POL",
      "no": 30,
      "warmup": 6,
-     "place": 35,
+     "place": 36,
      "time": "18:18"
     },
     {
@@ -28251,7 +28251,8 @@
      "nation": "SWE",
      "time": "19:19",
      "no": 37,
-     "warmup": 7
+     "warmup": 7,
+     "place": 35
     },
     {
      "name": "Madeline Schizas",
@@ -28278,7 +28279,6 @@
      "place": 1
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
     "seg": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG003.htm",
@@ -28323,7 +28323,7 @@
      "Alina GORBACHEVA": "Алина Горбачёва",
      "Lovisa AAV": "Lovisa Aav"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-cs-budapest-trophy.json"
   },
