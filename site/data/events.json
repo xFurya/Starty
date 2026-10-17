@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T15:43:27+03:00",
- "checked": "2026-10-17T13:02:23.912624+00:00",
+ "checked": "2026-10-17T13:10:23.992102+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -28026,7 +28026,7 @@
      "nation": "LTU",
      "no": 6,
      "warmup": 2,
-     "place": 11,
+     "place": 12,
      "time": "15:06"
     },
     {
@@ -28034,7 +28034,7 @@
      "nation": "NED",
      "no": 7,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "time": "15:12"
     },
     {
@@ -28178,7 +28178,8 @@
      "nation": "PHI",
      "time": "16:01",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "place": 10
     },
     {
      "name": "Michaela Vrastakova",
