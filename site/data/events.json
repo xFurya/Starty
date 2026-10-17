@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T16:55:07+03:00",
- "checked": "2026-10-17T14:10:23.512184+00:00",
+ "checked": "2026-10-17T14:14:23.722456+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -28522,14 +28522,15 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 16:55 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Валерия Ходыкина / Даниил Бутенко — 57.74\n\nНачало: 16:55 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Валерия Ходыкина / Даниил Бутенко",
      "nation": "МОС",
      "time": "17:02",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Вероника Меренкова / Даниль Галимов",
@@ -28598,7 +28599,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Валерия Ходыкина / Даниил Бутенко",
+     "nation": "МОС",
+     "points": "57.74"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:dance-senior-rt",
