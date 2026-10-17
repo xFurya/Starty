@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-17T15:16:59+03:00",
- "checked": "2026-10-17T12:42:24.511502+00:00",
+ "generated": "2026-10-17T15:29:50+03:00",
+ "checked": "2026-10-17T15:29:50+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27882,9 +27882,9 @@
    },
    "facts": [
     {
-     "who": "Камилла Нелюбова",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Камилла Нелюбова"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
@@ -28026,7 +28026,7 @@
      "nation": "LTU",
      "no": 6,
      "warmup": 2,
-     "place": 10,
+     "place": 9,
      "time": "15:06"
     },
     {
@@ -28034,8 +28034,24 @@
      "nation": "NED",
      "no": 7,
      "warmup": 2,
-     "place": 9,
+     "place": 8,
      "time": "15:12"
+    },
+    {
+     "name": "Sara-Maude Dupuis",
+     "nation": "CAN",
+     "no": 8,
+     "warmup": 2,
+     "place": 2,
+     "time": "15:17"
+    },
+    {
+     "name": "Polina Dzsumanyijazova",
+     "nation": "HUN",
+     "no": 9,
+     "warmup": 2,
+     "place": 3,
+     "time": "15:23"
     },
     {
      "name": "Alina Bonillo",
@@ -28200,22 +28216,6 @@
      "warmup": 3
     },
     {
-     "name": "Polina Dzsumanyijazova",
-     "nation": "HUN",
-     "time": "15:23",
-     "no": 9,
-     "warmup": 2,
-     "place": 3
-    },
-    {
-     "name": "Sara-Maude Dupuis",
-     "nation": "CAN",
-     "time": "15:17",
-     "no": 8,
-     "warmup": 2,
-     "place": 2
-    },
-    {
      "name": "Saskia Oudejans",
      "nation": "NED",
      "time": "17:43",
@@ -28259,14 +28259,14 @@
     "first": null,
     "names": {
      "Sophie Joline von FELTEN": "Sophie Joline von Felten",
+     "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
+     "Polina DZSUMANYIJAZOVA": "Polina Dzsumanyijazova",
      "Mia RISA GOMEZ": "Mia Risa Gomez",
      "Alexandra FEIGIN": "Alexandra Feigin",
      "Julia KASPRZYK": "Julia Kasprzyk",
      "Elizabet GERVITS": "Elizabet Gervits",
      "Julia van DIJK": "Julia van Dijk",
      "Meda VARIAKOJYTE": "Meda Variakojyte",
-     "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
-     "Polina DZSUMANYIJAZOVA": "Polina Dzsumanyijazova",
      "Haruna MURAKAMI": "Haruna Murakami",
      "Pernille WITH": "Pernille With",
      "Maxine BAUTISTA": "Maxine Bautista",
