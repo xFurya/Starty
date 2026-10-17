@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T15:16:59+03:00",
- "checked": "2026-10-17T12:34:23.412710+00:00",
+ "checked": "2026-10-17T12:38:23.562077+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -28026,7 +28026,7 @@
      "nation": "LTU",
      "no": 6,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "time": "15:06"
     },
     {
@@ -28034,7 +28034,7 @@
      "nation": "NED",
      "no": 7,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "time": "15:12"
     },
     {
@@ -28084,7 +28084,8 @@
      "nation": "AUS",
      "time": "15:29",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 8
     },
     {
      "name": "Inga Gurgenidze",
