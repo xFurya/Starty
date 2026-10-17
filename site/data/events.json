@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T18:55:29+03:00",
- "checked": "2026-10-17T16:30:24.036337+00:00",
+ "checked": "2026-10-17T16:54:23.784542+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -28833,140 +28833,159 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Начало: 19:40 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Anna Ruis / Andrew Cayden Evert — 53.85\n2. Rose Anne Marie Bordet / Hugo Tomas — 39.61\n3. Annabel Mann / Jack Hammond — 39.64\n\nНачало: 19:40 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Anna Ruis / Andrew Cayden Evert",
      "nation": "AUT",
      "time": "19:45",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Rose Anne Marie Bordet / Hugo Tomas",
      "nation": "FRA",
      "time": "19:52",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Annabel Mann / Jack Hammond",
      "nation": "GBR",
      "time": "19:58",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
      "nation": "FRA",
      "time": "20:05",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4
     },
     {
      "name": "Villo Mira Szilagyi / Istvan Jaracs",
      "nation": "HUN",
      "time": "20:17",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5
     },
     {
      "name": "Alexandra Rouskova / Lukas Toman",
      "nation": "CZE",
      "time": "20:23",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6
     },
     {
      "name": "Lena Zerinvary-simon / Huba Gallai",
      "nation": "HUN",
      "time": "20:30",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     },
     {
      "name": "Laura Balcerska / David Diadchenko",
      "nation": "POL",
      "time": "20:36",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 8
     },
     {
      "name": "Klara Vlckova / Tomas Vlcek",
      "nation": "CZE",
      "time": "20:43",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 9
     },
     {
      "name": "Chanelle Chum / Osckar Chum",
      "nation": "AUS",
      "time": "21:10",
      "no": 10,
-     "warmup": 3
+     "warmup": 3,
+     "place": 10
     },
     {
      "name": "Maite van Mulders / Tudor Dominic Andrei",
      "nation": "ROU",
      "time": "21:16",
      "no": 11,
-     "warmup": 3
+     "warmup": 3,
+     "place": 11
     },
     {
      "name": "Carlota Garcia Barranco / Александр Островский",
      "nation": "ESP",
      "time": "21:23",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "place": 12
     },
     {
      "name": "Лилия Литенко / Александр Рыженков",
      "nation": "ISR",
      "time": "21:29",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "place": 13
     },
     {
      "name": "Aletta Lanyi / Ilya Laurenau",
      "nation": "HUN",
      "time": "21:36",
      "no": 14,
-     "warmup": 3
+     "warmup": 3,
+     "place": 14
     },
     {
      "name": "Eniko Kobor / Zoard Kobor",
      "nation": "GER",
      "time": "21:48",
      "no": 15,
-     "warmup": 4
+     "warmup": 4,
+     "place": 15
     },
     {
      "name": "Arianna Soldati / Nicholas Tagliabue",
      "nation": "ITA",
      "time": "21:54",
      "no": 16,
-     "warmup": 4
+     "warmup": 4,
+     "place": 16
     },
     {
      "name": "Aneta Vaclavikova / William Lissauer",
      "nation": "USA",
      "time": "22:01",
      "no": 17,
-     "warmup": 4
+     "warmup": 4,
+     "place": 17
     },
     {
      "name": "Zoe Bianchi / Daniel Basile",
      "nation": "ITA",
      "time": "22:07",
      "no": 18,
-     "warmup": 4
+     "warmup": 4,
+     "place": 18
     },
     {
      "name": "Hana Maria Aboian / Daniil Veselukhin",
      "nation": "USA",
      "time": "22:14",
      "no": 19,
-     "warmup": 4
+     "warmup": 4,
+     "place": 19
     }
    ],
    "live": {
@@ -28997,7 +29016,28 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": "isu_isu-cs-budapest-trophy.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Anna Ruis / Andrew Cayden Evert",
+     "nation": "AUT",
+     "points": "53.85"
+    },
+    {
+     "place": 2,
+     "name": "Rose Anne Marie Bordet / Hugo Tomas",
+     "nation": "FRA",
+     "points": "39.61"
+    },
+    {
+     "place": 3,
+     "name": "Annabel Mann / Jack Hammond",
+     "nation": "GBR",
+     "points": "39.64"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-senior-pt",
