@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T18:13:55+03:00",
- "checked": "2026-10-17T15:34:25.854716+00:00",
+ "checked": "2026-10-17T15:38:23.462772+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -28677,14 +28677,15 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 18:25 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Софья Тютюнина / Матвей Грачев — 70.56\n\nНачало: 18:25 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Софья Тютюнина / Матвей Грачев",
      "nation": "МОС",
      "time": "18:31",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Таисия Линчевская / Дмитрий Щербаков",
@@ -28753,7 +28754,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Софья Тютюнина / Матвей Грачев",
+     "nation": "МОС",
+     "points": "70.56"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-junior-pt",
