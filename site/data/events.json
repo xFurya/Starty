@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T13:28:12+03:00",
- "checked": "2026-10-17T10:50:05.387267+00:00",
+ "checked": "2026-10-17T10:54:05.373811+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27559,29 +27559,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Gion Schmid",
+     "nation": "SUI",
+     "points": "116.79"
+    },
+    {
+     "place": 2,
      "name": "Aaron Kim",
      "nation": "KOR",
      "points": "110.30"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Ryszard Siudek",
      "nation": "POL",
      "points": "98.03"
-    },
-    {
-     "place": 3,
-     "name": "Robert Wildt",
-     "nation": "GER",
-     "points": "94.19"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Aaron Kim — 110.30\n2. Ryszard Siudek — 98.03\n3. Robert Wildt — 94.19\n\nРоссияне:\n• Илья Мальков — 13:51\n\nНачало: 13:05 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Gion Schmid — 116.79\n2. Aaron Kim — 110.30\n3. Ryszard Siudek — 98.03\n\nРоссияне:\n• Илья Мальков — 13:51\n\nНачало: 13:05 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Aaron Kim",
      "nation": "KOR",
-     "place": 1,
+     "place": 2,
      "time": "13:38",
      "no": 4,
      "warmup": 2
@@ -27589,7 +27589,7 @@
     {
      "name": "Akims Kirilovs",
      "nation": "LAT",
-     "place": 4,
+     "place": 5,
      "time": "13:11",
      "no": 1,
      "warmup": 1
@@ -27597,7 +27597,7 @@
     {
      "name": "Gion Schmid",
      "nation": "SUI",
-     "place": 5,
+     "place": 1,
      "time": "13:44",
      "no": 5,
      "warmup": 2
@@ -27613,7 +27613,7 @@
     {
      "name": "Robert Wildt",
      "nation": "GER",
-     "place": 3,
+     "place": 4,
      "time": "13:24",
      "no": 3,
      "warmup": 1
@@ -27621,7 +27621,7 @@
     {
      "name": "Ryszard Siudek",
      "nation": "POL",
-     "place": 2,
+     "place": 3,
      "time": "13:18",
      "no": 2,
      "warmup": 1
