@@ -11,7 +11,7 @@ import 'ui.dart';
 
 /// Расшифровка отметок рядом с элементом; неизвестная отметка остаётся без пояснения.
 const markLegend = {
-  '<': 'недокрут',
+  '<': 'недокрут больше четверти оборота',
   '<<': 'сильный недокрут',
   'q': 'недокрут на четверть оборота',
   'e': 'неверное ребро',
@@ -117,7 +117,13 @@ class _DetailsState extends State<Details> {
           if (markLegend.containsKey(m) && !found.contains(m)) found.add(m);
         }
       }
-      if (found.isNotEmpty) {
+      // «x» — не отметка в файле, а множитель базы: прыжок во второй половине программы
+      final hasX = r.elements.any((e) => e.x);
+      final legendRows = [
+        for (final m in found) (m, markLegend[m]!),
+        if (hasX) ('x', 'прыжок во второй половине программы, база ×1,1'),
+      ];
+      if (legendRows.isNotEmpty) {
         // расшифровка пометок — по одной на строку: знак колонкой, слово рядом
         final legend = TextStyle(fontSize: 11.5, fontWeight: FontWeight.w500, color: p.ink2, height: 1.3);
         kids.add(Padding(
@@ -125,7 +131,7 @@ class _DetailsState extends State<Details> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              for (final m in found)
+              for (final (m, text) in legendRows)
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -133,7 +139,7 @@ class _DetailsState extends State<Details> {
                       width: MediaQuery.textScalerOf(context).scale(22),
                       child: Text(m, style: legend.copyWith(color: p.live, fontWeight: FontWeight.w700)),
                     ),
-                    Expanded(child: Text(markLegend[m]!, style: legend)),
+                    Expanded(child: Text(text, style: legend)),
                   ],
                 ),
             ],

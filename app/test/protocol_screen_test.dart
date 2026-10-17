@@ -454,7 +454,7 @@ void main() {
       expect(find.text('+1.21'), findsOneWidget);
       expect(find.text('11.31'), findsOneWidget);
       // расшифровка — по пометке на строку: знак и слово отдельно
-      expect(find.text('недокрут'), findsOneWidget);
+      expect(find.text('недокрут больше четверти оборота'), findsOneWidget);
       expect(find.text('Компоненты'), findsOneWidget);
       expect(find.text('Композиция'), findsOneWidget);
       expect(find.text('×1.33'), findsOneWidget);
