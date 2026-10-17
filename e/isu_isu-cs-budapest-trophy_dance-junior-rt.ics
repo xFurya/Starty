@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-budapest-trophy:dance-junior-rt@starty
+DTSTAMP:20261017T155529Z
+DTSTART;TZID=Europe/Moscow:20261016T211000
+DTEND;TZID=Europe/Moscow:20261016T235500
+SUMMARY:CS Budapest Trophy — юниорские танцы РТ
+DESCRIPTION:Итог:\n1. Hana Maria Aboian / Daniil Veselukhin — 70.63\n
+ 2. Zoe Bianchi / Daniel Basile — 65.55\n3. Aneta Vaclavikova / William L
+ issauer — 62.78\n\nПримечательное:\n• Hana Maria Aboian 
+ / Daniil Veselukhin — Лучшая среди юниоров оценк
+ а сезона за РТ: 70.63\n• Hana Maria Aboian / Daniil Veselukhi
+ n — Личный рекорд за РТ: 70.63 (был 68.93)\n• Zoe B
+ ianchi / Daniel Basile — Личный рекорд за РТ: 65.55 (б
+ ыл 63.38)\n\nНачало: 21:10 МСК\nТрансляция: HunSkate 
+ TV
+LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:dance-jun
+ ior-rt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Budapest Trophy — юниорские танцы РТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

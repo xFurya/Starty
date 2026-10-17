@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:dance-senior-rt@starty
+DTSTAMP:20261017T155529Z
+DTSTART;TZID=Europe/Moscow:20261009T151500
+DTEND;TZID=Europe/Moscow:20261009T170000
+SUMMARY:CS Denis Ten Memorial — танцы РТ
+DESCRIPTION:Итог:\n1. Caroline Green / Michael Parsons — 78.64\n2. Ju
+ ulia Turkkila / Matthias Versluis — 74.33\n3. Василиса Кага
+ новская / Максим Некрасов — 74.28\n\nПримеча
+ тельное:\n• Василиса Кагановская / Макси
+ м Некрасов — Личный рекорд за РТ: 74.28 (был
+  74.21)\n• Ирина Хавронина / Девид Нарижный 
+ — Личный рекорд за РТ: 73.78 (был 73.38)\n• Ека
+ терина Андреева / Дмитрий Блинов — Личны
+ й рекорд за РТ: 69.49 (был 67.74)\n\nРоссияне:\n• 
+ Василиса Кагановская / Максим Некрасов 
+ — 15:20\n• Анна Щербакова / Егор Гончаров —
+  15:33\n• Ирина Хавронина / Девид Нарижный 
+ — 16:46\n• Виктория Пласконная / Владислав 
+ Сыцик — 6-й\n• Екатерина Андреева / Дмитр
+ ий Блинов — 9-й\n\nНачало: 15:15 МСК\nТрансляц
+ ия: VK Видео
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:dance-
+ senior-rt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Denis Ten Memorial — танцы РТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

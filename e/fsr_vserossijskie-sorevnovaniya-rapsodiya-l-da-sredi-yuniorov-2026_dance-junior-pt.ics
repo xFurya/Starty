@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:danc
+ e-junior-pt@starty
+DTSTAMP:20261017T155529Z
+DTSTART;TZID=Europe/Moscow:20261013T130000
+DTEND;TZID=Europe/Moscow:20261013T152500
+SUMMARY:ЮГП России «Рапсодия льда» — танцы П
+ Т
+DESCRIPTION:Итог:\n1. Варвара Слуцкая / Глеб Гонч
+ аров — 97.74\n2. Полина Жарова / Алексей Стол
+ яров — 95.73\n3. Эвелина Валиева / Даниил Лав
+ риненко — 92.35\n\nИтог турнира:\n1. Варвара С
+ луцкая / Глеб Гончаров — 162.51\n2. Полина Жа
+ рова / Алексей Столяров — 156.52\n3. Эвелина 
+ Валиева / Даниил Лавриненко — 152.33\n\nНача
+ ло: 13:00 МСК\nТрансляция: Первый канал / YouTub
+ e
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-raps
+ odiya-l-da-sredi-yuniorov-2026:dance-junior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Рапсодия льда» — танц
+ ы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

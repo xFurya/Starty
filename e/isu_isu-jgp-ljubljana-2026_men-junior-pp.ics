@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-jgp-ljubljana-2026:men-junior-pp@starty
+DTSTAMP:20261017T155529Z
+DTSTART;TZID=Europe/Moscow:20261002T193000
+DTEND;TZID=Europe/Moscow:20261002T230000
+SUMMARY:JGP Ljubljana — юноши ПП
+DESCRIPTION:Итог:\n1. Hiro Kaewtathip — 150.06\n2. Jaekeun Lee — 14
+ 3.62\n3. Taiga Nishino — 142.99\n\nИтог турнира:\n1. Hiro Kae
+ wtathip — 233.73\n2. Jaekeun Lee — 228.75\n3. Taiga Nishino — 227.28
+ \n\nНачало: 19:30 МСК\nТрансляция: Okko
+LOCATION:Ljubljana\, Slovenia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-ljubljana-2026:men-junio
+ r-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JGP Ljubljana — юноши ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

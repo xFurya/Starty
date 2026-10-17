@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-jgp-ljubljana-2026:dance-junior-pt@starty
+DTSTAMP:20261017T155529Z
+DTSTART;TZID=Europe/Moscow:20261003T130000
+DTEND;TZID=Europe/Moscow:20261003T154500
+SUMMARY:JGP Ljubljana — танцы ПТ
+DESCRIPTION:Итог:\n1. Darya Grimm / Grigorii Rodin — 102.38\n2. Ambre
+  Perrier Gianesini / Samuel Blanc Klaperman — 99.16\n3. Aneta Vaclavikov
+ a / William Lissauer — 94.32\n\nИтог турнира:\n1. Darya Grimm
+  / Grigorii Rodin — 169.40\n2. Ambre Perrier Gianesini / Samuel Blanc Kl
+ aperman — 164.00\n3. Aneta Vaclavikova / William Lissauer — 159.05\n\n
+ Начало: 13:00 МСК\nТрансляция: Okko
+LOCATION:Ljubljana\, Slovenia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-ljubljana-2026:dance-jun
+ ior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JGP Ljubljana — танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
