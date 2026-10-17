@@ -137,7 +137,7 @@ class _DetailsState extends State<Details> {
                   children: [
                     SizedBox(
                       width: MediaQuery.textScalerOf(context).scale(22),
-                      child: Text(m, style: legend.copyWith(color: p.live, fontWeight: FontWeight.w700)),
+                      child: Text(m, style: legend.copyWith(color: m == 'x' ? (p.isDark ? const Color(0xFF5FD39A) : const Color(0xFF1E8A56)) : p.live, fontWeight: FontWeight.w700)),
                     ),
                     Expanded(child: Text(text, style: legend)),
                   ],
