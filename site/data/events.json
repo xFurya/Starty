@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T16:55:07+03:00",
- "checked": "2026-10-17T14:18:23.341331+00:00",
+ "checked": "2026-10-17T14:26:23.597767+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27968,25 +27968,25 @@
     },
     {
      "place": 2,
-     "name": "Anita Ostlund",
-     "nation": "SWE",
-     "points": "61.33"
+     "name": "Inga Gurgenidze",
+     "nation": "GEO",
+     "points": "63.71"
     },
     {
      "place": 3,
-     "name": "Sophie Joline von Felten",
-     "nation": "USA",
-     "points": "57.72"
+     "name": "Anita Ostlund",
+     "nation": "SWE",
+     "points": "61.33"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Julia Sauter — 65.53\n2. Anita Ostlund — 61.33\n3. Sophie Joline von Felten — 57.72\n\nРоссияне:\n• Алина Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Julia Sauter — 65.53\n2. Inga Gurgenidze — 63.71\n3. Anita Ostlund — 61.33\n\nРоссияне:\n• Алина Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Elizabet Gervits",
      "nation": "ISR",
      "no": 1,
      "warmup": 1,
-     "place": 12,
+     "place": 13,
      "time": "14:31"
     },
     {
@@ -27994,7 +27994,7 @@
      "nation": "USA",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "time": "14:37"
     },
     {
@@ -28002,7 +28002,7 @@
      "nation": "POL",
      "no": 3,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "time": "14:42"
     },
     {
@@ -28010,7 +28010,7 @@
      "nation": "NOR",
      "no": 4,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "time": "14:48"
     },
     {
@@ -28018,7 +28018,7 @@
      "nation": "BUL",
      "no": 5,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "time": "14:54"
     },
     {
@@ -28026,7 +28026,7 @@
      "nation": "LTU",
      "no": 6,
      "warmup": 2,
-     "place": 17,
+     "place": 18,
      "time": "15:06"
     },
     {
@@ -28034,7 +28034,7 @@
      "nation": "NED",
      "no": 7,
      "warmup": 2,
-     "place": 16,
+     "place": 17,
      "time": "15:12"
     },
     {
@@ -28042,7 +28042,7 @@
      "nation": "CAN",
      "no": 8,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "time": "15:17"
     },
     {
@@ -28050,7 +28050,7 @@
      "nation": "HUN",
      "no": 9,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "time": "15:23"
     },
     {
@@ -28058,7 +28058,7 @@
      "nation": "AUS",
      "no": 10,
      "warmup": 2,
-     "place": 14,
+     "place": 15,
      "time": "15:29"
     },
     {
@@ -28066,7 +28066,7 @@
      "nation": "NOR",
      "no": 11,
      "warmup": 3,
-     "place": 11,
+     "place": 12,
      "time": "15:56"
     },
     {
@@ -28074,7 +28074,7 @@
      "nation": "PHI",
      "no": 12,
      "warmup": 3,
-     "place": 15,
+     "place": 16,
      "time": "16:01"
     },
     {
@@ -28082,7 +28082,7 @@
      "nation": "SWE",
      "no": 13,
      "warmup": 3,
-     "place": 2,
+     "place": 3,
      "time": "16:07"
     },
     {
@@ -28090,7 +28090,7 @@
      "nation": "FIN",
      "no": 14,
      "warmup": 3,
-     "place": 13,
+     "place": 14,
      "time": "16:13"
     },
     {
@@ -28098,7 +28098,7 @@
      "nation": "LAT",
      "no": 15,
      "warmup": 3,
-     "place": 10,
+     "place": 11,
      "time": "16:18"
     },
     {
@@ -28106,7 +28106,7 @@
      "nation": "ROU",
      "no": 16,
      "warmup": 4,
-     "place": 20,
+     "place": 21,
      "time": "16:31"
     },
     {
@@ -28114,7 +28114,7 @@
      "nation": "ISR",
      "no": 17,
      "warmup": 4,
-     "place": 19,
+     "place": 20,
      "time": "16:36"
     },
     {
@@ -28130,7 +28130,7 @@
      "nation": "KAZ",
      "no": 19,
      "warmup": 4,
-     "place": 18,
+     "place": 19,
      "time": "16:48"
     },
     {
@@ -28166,7 +28166,8 @@
      "nation": "GEO",
      "time": "17:20",
      "no": 21,
-     "warmup": 5
+     "warmup": 5,
+     "place": 2
     },
     {
      "name": "Kimmy Repond",
@@ -28223,7 +28224,7 @@
      "time": "16:53",
      "no": 20,
      "warmup": 4,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Nikola Fomchenkova",
@@ -28522,7 +28523,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Валерия Ходыкина / Даниил Бутенко — 57.74\n2. Анна Карпук / Илья Миронов — 53.06\n\nНачало: 16:55 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Валерия Ходыкина / Даниил Бутенко — 57.74\n2. Вероника Меренкова / Даниль Галимов — 53.23\n3. Анна Карпук / Илья Миронов — 53.06\n\nНачало: 16:55 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Валерия Ходыкина / Даниил Бутенко",
@@ -28537,7 +28538,8 @@
      "nation": "КРД",
      "time": "17:15",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Алиса Блинникова / Алексей Карпов",
@@ -28552,7 +28554,7 @@
      "time": "17:27",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Юлия Артемьева / Алексей Брюханов",
@@ -28610,6 +28612,12 @@
     },
     {
      "place": 2,
+     "name": "Вероника Меренкова / Даниль Галимов",
+     "nation": "КРД",
+     "points": "53.23"
+    },
+    {
+     "place": 3,
      "name": "Анна Карпук / Илья Миронов",
      "nation": "СПБ",
      "points": "53.06"
