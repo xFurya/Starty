@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T02:13:02+03:00",
- "checked": "2026-10-17T06:21:03.337825+00:00",
+ "checked": "2026-10-17T06:29:03.814552+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27215,7 +27215,7 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Shaked Pinchas — 44.04\n2. Shahaf Pinchas — 42.99\n3. Hanna Laura Viranyi — 29.32\n\nНачало: 09:00 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Hanna Laura Viranyi — 59.41\n2. Shaked Pinchas — 44.04\n3. Shahaf Pinchas — 42.99\n\nНачало: 09:00 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Shaked Pinchas",
@@ -27223,7 +27223,7 @@
      "time": "09:06",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Shahaf Pinchas",
@@ -27231,7 +27231,7 @@
      "time": "09:13",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Hanna Laura Viranyi",
@@ -27239,7 +27239,7 @@
      "time": "09:19",
      "no": 3,
      "warmup": 1,
-     "place": 3
+     "place": 1
     },
     {
      "name": "Natalia Runcanu",
@@ -27456,21 +27456,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Hanna Laura Viranyi",
+     "nation": "HUN",
+     "points": "59.41"
+    },
+    {
+     "place": 2,
      "name": "Shaked Pinchas",
      "nation": "ISR",
      "points": "44.04"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Shahaf Pinchas",
      "nation": "ISR",
      "points": "42.99"
-    },
-    {
-     "place": 3,
-     "name": "Hanna Laura Viranyi",
-     "nation": "HUN",
-     "points": "29.32"
     }
    ],
    "provisional": true
