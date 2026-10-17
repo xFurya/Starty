@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-17T15:29:50+03:00",
- "checked": "2026-10-17T12:54:23.906966+00:00",
+ "generated": "2026-10-17T15:43:27+03:00",
+ "checked": "2026-10-17T15:43:27+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -28054,6 +28054,14 @@
      "time": "15:23"
     },
     {
+     "name": "Haruna Murakami",
+     "nation": "AUS",
+     "no": 10,
+     "warmup": 2,
+     "place": 8,
+     "time": "15:29"
+    },
+    {
      "name": "Alina Bonillo",
      "nation": "USA",
      "time": "19:08",
@@ -28094,14 +28102,6 @@
      "time": "18:01",
      "no": 27,
      "warmup": 6
-    },
-    {
-     "name": "Haruna Murakami",
-     "nation": "AUS",
-     "time": "15:29",
-     "no": 10,
-     "warmup": 2,
-     "place": 8
     },
     {
      "name": "Inga Gurgenidze",
@@ -28265,9 +28265,9 @@
      "Alexandra FEIGIN": "Alexandra Feigin",
      "Julia KASPRZYK": "Julia Kasprzyk",
      "Elizabet GERVITS": "Elizabet Gervits",
+     "Haruna MURAKAMI": "Haruna Murakami",
      "Julia van DIJK": "Julia van Dijk",
      "Meda VARIAKOJYTE": "Meda Variakojyte",
-     "Haruna MURAKAMI": "Haruna Murakami",
      "Pernille WITH": "Pernille With",
      "Maxine BAUTISTA": "Maxine Bautista",
      "Anita OSTLUND": "Anita Ostlund",
@@ -28341,23 +28341,58 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Даниил Самсонов — 91.60\n2. Семен Соловьев — 78.39\n3. Константин Сафонов — 60.83\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Семен Соловьев",
+     "nation": "СПБ",
+     "points": "78.39"
+    },
+    {
+     "place": 2,
+     "name": "Юрий Сидоров",
+     "nation": "ОРЕ",
+     "points": "57.24"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Семен Соловьев — 78.39\n2. Юрий Сидоров — 57.24\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Семен Соловьев",
      "nation": "СПБ",
-     "time": "15:27",
      "no": 1,
      "warmup": 1,
-     "place": 2
+     "place": 1,
+     "time": "15:27"
     },
     {
-     "name": "Константин Сафонов",
-     "nation": "ТУЛ",
-     "time": "15:38",
-     "no": 3,
+     "name": "Юрий Сидоров",
+     "nation": "ОРЕ",
+     "no": 2,
      "warmup": 1,
-     "place": 3
+     "place": 2,
+     "time": "15:55"
+    },
+    {
+     "name": "Андрей Мозалёв",
+     "nation": "МОС",
+     "time": "16:23",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Артём Ковалёв",
+     "nation": "МОБ",
+     "time": "16:01",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Вячеслав Проценко",
+     "nation": "СПБ",
+     "time": "15:49",
+     "no": 5,
+     "warmup": 1
     },
     {
      "name": "Даниил Самсонов",
@@ -28368,25 +28403,10 @@
      "place": 1
     },
     {
-     "name": "Вячеслав Проценко",
+     "name": "Евгений Семененко",
      "nation": "СПБ",
-     "time": "15:49",
-     "no": 5,
-     "warmup": 1
-    },
-    {
-     "name": "Юрий Сидоров",
-     "nation": "ОРЕ",
-     "time": "15:55",
-     "no": 2,
-     "warmup": 1,
-     "place": 4
-    },
-    {
-     "name": "Артём Ковалёв",
-     "nation": "МОБ",
-     "time": "16:01",
-     "no": 6,
+     "time": "16:29",
+     "no": 11,
      "warmup": 2
     },
     {
@@ -28397,11 +28417,11 @@
      "warmup": 2
     },
     {
-     "name": "Роман Савосин",
-     "nation": "МОС",
-     "time": "16:12",
-     "no": 8,
-     "warmup": 2
+     "name": "Константин Сафонов",
+     "nation": "ТУЛ",
+     "time": "15:38",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Матвей Ветлугин",
@@ -28411,20 +28431,14 @@
      "warmup": 2
     },
     {
-     "name": "Андрей Мозалёв",
+     "name": "Роман Савосин",
      "nation": "МОС",
-     "time": "16:23",
-     "no": 10,
-     "warmup": 2
-    },
-    {
-     "name": "Евгений Семененко",
-     "nation": "СПБ",
-     "time": "16:29",
-     "no": 11,
+     "time": "16:12",
+     "no": 8,
      "warmup": 2
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG001.htm",
@@ -28445,28 +28459,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Даниил Самсонов",
-     "nation": "МОС",
-     "points": "91.60"
-    },
-    {
-     "place": 2,
-     "name": "Семен Соловьев",
-     "nation": "СПБ",
-     "points": "78.39"
-    },
-    {
-     "place": 3,
-     "name": "Константин Сафонов",
-     "nation": "ТУЛ",
-     "points": "60.83"
-    }
-   ],
-   "provisional": true
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pairs-senior-kp",
