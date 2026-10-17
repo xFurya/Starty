@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T15:16:59+03:00",
- "checked": "2026-10-17T12:30:24.053615+00:00",
+ "checked": "2026-10-17T12:34:23.412710+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27974,19 +27974,19 @@
     },
     {
      "place": 3,
-     "name": "Mia Risa Gomez",
-     "nation": "NOR",
-     "points": "53.23"
+     "name": "Polina Dzsumanyijazova",
+     "nation": "HUN",
+     "points": "56.21"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sophie Joline von Felten — 57.72\n2. Sara-Maude Dupuis — 56.92\n3. Mia Risa Gomez — 53.23\n\nРоссияне:\n• Алина Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Sophie Joline von Felten — 57.72\n2. Sara-Maude Dupuis — 56.92\n3. Polina Dzsumanyijazova — 56.21\n\nРоссияне:\n• Алина Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Elizabet Gervits",
      "nation": "ISR",
      "no": 1,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "time": "14:31"
     },
     {
@@ -28002,7 +28002,7 @@
      "nation": "POL",
      "no": 3,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "time": "14:42"
     },
     {
@@ -28010,7 +28010,7 @@
      "nation": "NOR",
      "no": 4,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "time": "14:48"
     },
     {
@@ -28018,7 +28018,7 @@
      "nation": "BUL",
      "no": 5,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "time": "14:54"
     },
     {
@@ -28026,7 +28026,7 @@
      "nation": "LTU",
      "no": 6,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "time": "15:06"
     },
     {
@@ -28034,7 +28034,7 @@
      "nation": "NED",
      "no": 7,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "time": "15:12"
     },
     {
@@ -28203,7 +28203,8 @@
      "nation": "HUN",
      "time": "15:23",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3
     },
     {
      "name": "Sara-Maude Dupuis",
@@ -28339,14 +28340,15 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Семен Соловьев — 78.39\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Семен Соловьев",
      "nation": "СПБ",
      "time": "15:27",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Константин Сафонов",
@@ -28439,7 +28441,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Семен Соловьев",
+     "nation": "СПБ",
+     "points": "78.39"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pairs-senior-kp",
