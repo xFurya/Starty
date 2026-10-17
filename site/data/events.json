@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-17T15:43:27+03:00",
- "checked": "2026-10-17T13:10:23.992102+00:00",
+ "generated": "2026-10-17T15:58:40+03:00",
+ "checked": "2026-10-17T15:58:40+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -28026,7 +28026,7 @@
      "nation": "LTU",
      "no": 6,
      "warmup": 2,
-     "place": 12,
+     "place": 11,
      "time": "15:06"
     },
     {
@@ -28034,7 +28034,7 @@
      "nation": "NED",
      "no": 7,
      "warmup": 2,
-     "place": 11,
+     "place": 10,
      "time": "15:12"
     },
     {
@@ -28060,6 +28060,14 @@
      "warmup": 2,
      "place": 9,
      "time": "15:29"
+    },
+    {
+     "name": "Pernille With",
+     "nation": "NOR",
+     "no": 11,
+     "warmup": 3,
+     "place": 7,
+     "time": "15:56"
     },
     {
      "name": "Alina Bonillo",
@@ -28210,14 +28218,6 @@
      "warmup": 6
     },
     {
-     "name": "Pernille With",
-     "nation": "NOR",
-     "time": "15:56",
-     "no": 11,
-     "warmup": 3,
-     "place": 7
-    },
-    {
      "name": "Saskia Oudejans",
      "nation": "NED",
      "time": "17:43",
@@ -28266,11 +28266,11 @@
      "Mia RISA GOMEZ": "Mia Risa Gomez",
      "Alexandra FEIGIN": "Alexandra Feigin",
      "Julia KASPRZYK": "Julia Kasprzyk",
+     "Pernille WITH": "Pernille With",
      "Elizabet GERVITS": "Elizabet Gervits",
      "Haruna MURAKAMI": "Haruna Murakami",
      "Julia van DIJK": "Julia van Dijk",
      "Meda VARIAKOJYTE": "Meda Variakojyte",
-     "Pernille WITH": "Pernille With",
      "Maxine BAUTISTA": "Maxine Bautista",
      "Anita OSTLUND": "Anita Ostlund",
      "Lotta ARTIMO": "Lotta Artimo",
@@ -28382,6 +28382,30 @@
      "time": "15:55"
     },
     {
+     "name": "Константин Сафонов",
+     "nation": "ТУЛ",
+     "no": 3,
+     "warmup": 1,
+     "place": 3,
+     "time": "15:38"
+    },
+    {
+     "name": "Даниил Самсонов",
+     "nation": "МОС",
+     "no": 4,
+     "warmup": 1,
+     "place": 1,
+     "time": "15:43"
+    },
+    {
+     "name": "Вячеслав Проценко",
+     "nation": "СПБ",
+     "no": 5,
+     "warmup": 1,
+     "place": 5,
+     "time": "15:49"
+    },
+    {
      "name": "Андрей Мозалёв",
      "nation": "МОС",
      "time": "16:23",
@@ -28396,22 +28420,6 @@
      "warmup": 2
     },
     {
-     "name": "Вячеслав Проценко",
-     "nation": "СПБ",
-     "time": "15:49",
-     "no": 5,
-     "warmup": 1,
-     "place": 5
-    },
-    {
-     "name": "Даниил Самсонов",
-     "nation": "МОС",
-     "time": "15:43",
-     "no": 4,
-     "warmup": 1,
-     "place": 1
-    },
-    {
      "name": "Евгений Семененко",
      "nation": "СПБ",
      "time": "16:29",
@@ -28424,14 +28432,6 @@
      "time": "16:07",
      "no": 7,
      "warmup": 2
-    },
-    {
-     "name": "Константин Сафонов",
-     "nation": "ТУЛ",
-     "time": "15:38",
-     "no": 3,
-     "warmup": 1,
-     "place": 3
     },
     {
      "name": "Матвей Ветлугин",
@@ -28455,10 +28455,10 @@
     "cat": null,
     "first": null,
     "names": {
-     "Семен СОЛОВЬЕВ": "Семен Соловьев",
-     "Юрий СИДОРОВ": "Юрий Сидоров",
-     "Константин САФОНОВ": "Константин Сафонов",
      "Даниил САМСОНОВ": "Даниил Самсонов",
+     "Семен СОЛОВЬЕВ": "Семен Соловьев",
+     "Константин САФОНОВ": "Константин Сафонов",
+     "Юрий СИДОРОВ": "Юрий Сидоров",
      "Вячеслав ПРОЦЕНКО": "Вячеслав Проценко",
      "Артём КОВАЛЁВ": "Артём Ковалёв",
      "Иван КОНИХИН": "Иван Конихин",
@@ -28711,8 +28711,8 @@
    "level": "junior",
    "seg": "ПТ",
    "title": "CS Budapest Trophy — юниорские танцы ПТ",
-   "start": "2026-10-17T19:50:00+03:00",
-   "end": "2026-10-17T22:32:00+03:00",
+   "start": "2026-10-17T19:40:00+03:00",
+   "end": "2026-10-17T22:22:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [
@@ -28747,138 +28747,138 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Начало: 19:50 МСК\nТрансляция: HunSkate TV",
+   "desc": "Начало: 19:40 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Anna Ruis / Andrew Cayden Evert",
      "nation": "AUT",
-     "time": "19:55",
+     "time": "19:45",
      "no": 1,
      "warmup": 1
     },
     {
      "name": "Rose Anne Marie Bordet / Hugo Tomas",
      "nation": "FRA",
-     "time": "20:02",
+     "time": "19:52",
      "no": 2,
      "warmup": 1
     },
     {
      "name": "Annabel Mann / Jack Hammond",
      "nation": "GBR",
-     "time": "20:08",
+     "time": "19:58",
      "no": 3,
      "warmup": 1
     },
     {
      "name": "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
      "nation": "FRA",
-     "time": "20:15",
+     "time": "20:05",
      "no": 4,
      "warmup": 1
     },
     {
      "name": "Villo Mira Szilagyi / Istvan Jaracs",
      "nation": "HUN",
-     "time": "20:27",
+     "time": "20:17",
      "no": 5,
      "warmup": 2
     },
     {
      "name": "Alexandra Rouskova / Lukas Toman",
      "nation": "CZE",
-     "time": "20:33",
+     "time": "20:23",
      "no": 6,
      "warmup": 2
     },
     {
      "name": "Lena Zerinvary-simon / Huba Gallai",
      "nation": "HUN",
-     "time": "20:40",
+     "time": "20:30",
      "no": 7,
      "warmup": 2
     },
     {
      "name": "Laura Balcerska / David Diadchenko",
      "nation": "POL",
-     "time": "20:46",
+     "time": "20:36",
      "no": 8,
      "warmup": 2
     },
     {
      "name": "Klara Vlckova / Tomas Vlcek",
      "nation": "CZE",
-     "time": "20:53",
+     "time": "20:43",
      "no": 9,
      "warmup": 2
     },
     {
      "name": "Chanelle Chum / Osckar Chum",
      "nation": "AUS",
-     "time": "21:20",
+     "time": "21:10",
      "no": 10,
      "warmup": 3
     },
     {
      "name": "Maite van Mulders / Tudor Dominic Andrei",
      "nation": "ROU",
-     "time": "21:26",
+     "time": "21:16",
      "no": 11,
      "warmup": 3
     },
     {
      "name": "Carlota Garcia Barranco / Александр Островский",
      "nation": "ESP",
-     "time": "21:33",
+     "time": "21:23",
      "no": 12,
      "warmup": 3
     },
     {
      "name": "Лилия Литенко / Александр Рыженков",
      "nation": "ISR",
-     "time": "21:39",
+     "time": "21:29",
      "no": 13,
      "warmup": 3
     },
     {
      "name": "Aletta Lanyi / Ilya Laurenau",
      "nation": "HUN",
-     "time": "21:46",
+     "time": "21:36",
      "no": 14,
      "warmup": 3
     },
     {
      "name": "Eniko Kobor / Zoard Kobor",
      "nation": "GER",
-     "time": "21:58",
+     "time": "21:48",
      "no": 15,
      "warmup": 4
     },
     {
      "name": "Arianna Soldati / Nicholas Tagliabue",
      "nation": "ITA",
-     "time": "22:04",
+     "time": "21:54",
      "no": 16,
      "warmup": 4
     },
     {
      "name": "Aneta Vaclavikova / William Lissauer",
      "nation": "USA",
-     "time": "22:11",
+     "time": "22:01",
      "no": 17,
      "warmup": 4
     },
     {
      "name": "Zoe Bianchi / Daniel Basile",
      "nation": "ITA",
-     "time": "22:17",
+     "time": "22:07",
      "no": 18,
      "warmup": 4
     },
     {
      "name": "Hana Maria Aboian / Daniil Veselukhin",
      "nation": "USA",
-     "time": "22:24",
+     "time": "22:14",
      "no": 19,
      "warmup": 4
     }
