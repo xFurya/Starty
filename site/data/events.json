@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T02:13:02+03:00",
- "checked": "2026-10-17T09:41:03.630583+00:00",
+ "checked": "2026-10-17T10:18:04.457788+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27546,7 +27546,8 @@
      "nation": "RUS",
      "time": "13:51",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6
     }
    ],
    "athletes": [
@@ -27565,56 +27566,63 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Россияне:\n• Илья Мальков — 13:51\n\nНачало: 13:05 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Akims Kirilovs — 74.33\n2. Ryszard Siudek — 46.85\n3. Robert Wildt — 58.72\n\nРоссияне:\n• Илья Мальков — 13:51\n\nНачало: 13:05 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Akims Kirilovs",
      "nation": "LAT",
      "time": "13:11",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Ryszard Siudek",
      "nation": "POL",
      "time": "13:18",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Robert Wildt",
      "nation": "GER",
      "time": "13:24",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Aaron Kim",
      "nation": "KOR",
      "time": "13:38",
      "no": 4,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4
     },
     {
      "name": "Gion Schmid",
      "nation": "SUI",
      "time": "13:44",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5
     },
     {
      "name": "Илья Мальков",
      "nation": "RUS",
      "time": "13:51",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6
     },
     {
      "name": "Kirill Sheiko",
      "nation": "ISR",
      "time": "13:58",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     }
    ],
    "live": {
@@ -27633,7 +27641,28 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": "isu_isu-cs-budapest-trophy.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Akims Kirilovs",
+     "nation": "LAT",
+     "points": "74.33"
+    },
+    {
+     "place": 2,
+     "name": "Ryszard Siudek",
+     "nation": "POL",
+     "points": "46.85"
+    },
+    {
+     "place": 3,
+     "name": "Robert Wildt",
+     "nation": "GER",
+     "points": "58.72"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:women-senior-kp",
