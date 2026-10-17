@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T13:28:12+03:00",
- "checked": "2026-10-17T11:06:05.575269+00:00",
+ "checked": "2026-10-17T11:10:05.506155+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27537,7 +27537,8 @@
      "place": 1,
      "time": "13:51",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "final": 2
     }
    ],
    "athletes": [
@@ -27576,7 +27577,7 @@
      "points": "116.79"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Илья Мальков — 134.38\n2. Kirill Sheiko — 134.19\n3. Gion Schmid — 116.79\n\nРоссияне:\n• Илья Мальков — 13:51\n\nНачало: 13:05 МСК\nТрансляция: HunSkate TV",
+   "desc": "Итог:\n1. Илья Мальков — 134.38\n2. Kirill Sheiko — 134.19\n3. Gion Schmid — 116.79\n\nИтог турнира:\n1. Kirill Sheiko — 208.55\n2. Илья Мальков — 205.30\n3. Gion Schmid — 185.03\n\nПримечательное:\n• Илья Мальков — 3 четверных в программе: 4T, 4S, 4S\n• Kirill Sheiko — Личный рекорд за ПП: 134.19 (был 123.13)\n• Kirill Sheiko — Личный рекорд по сумме: 208.55 (был 199.93)\n\nРоссияне:\n• Илья Мальков — 13:51\n\nНачало: 13:05 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Aaron Kim",
@@ -27584,7 +27585,8 @@
      "place": 4,
      "time": "13:38",
      "no": 4,
-     "warmup": 2
+     "warmup": 2,
+     "final": 4
     },
     {
      "name": "Akims Kirilovs",
@@ -27592,7 +27594,8 @@
      "place": 7,
      "time": "13:11",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 7
     },
     {
      "name": "Gion Schmid",
@@ -27600,7 +27603,8 @@
      "place": 3,
      "time": "13:44",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "final": 3
     },
     {
      "name": "Kirill Sheiko",
@@ -27608,7 +27612,8 @@
      "place": 2,
      "time": "13:58",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "final": 1
     },
     {
      "name": "Robert Wildt",
@@ -27616,7 +27621,8 @@
      "place": 6,
      "time": "13:24",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 5
     },
     {
      "name": "Ryszard Siudek",
@@ -27624,7 +27630,8 @@
      "place": 5,
      "time": "13:18",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 6
     },
     {
      "name": "Илья Мальков",
@@ -27632,10 +27639,10 @@
      "place": 1,
      "time": "13:51",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "final": 2
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
     "seg": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG008.htm",
@@ -27650,9 +27657,46 @@
      "Ilia MALKOV": "Илья Мальков",
      "Kirill SHEIKO": "Kirill Sheiko"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": "isu_isu-cs-budapest-trophy.json",
+   "facts": [
+    {
+     "who": "Илья Мальков",
+     "text": "3 четверных в программе: 4T, 4S, 4S",
+     "kind": "element"
+    },
+    {
+     "who": "Kirill Sheiko",
+     "text": "Личный рекорд за ПП: 134.19 (был 123.13)",
+     "kind": "score"
+    },
+    {
+     "who": "Kirill Sheiko",
+     "text": "Личный рекорд по сумме: 208.55 (был 199.93)",
+     "kind": "score"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Kirill Sheiko",
+     "nation": "ISR",
+     "points": "208.55"
+    },
+    {
+     "place": 2,
+     "name": "Илья Мальков",
+     "nation": "RUS",
+     "points": "205.30"
+    },
+    {
+     "place": 3,
+     "name": "Gion Schmid",
+     "nation": "SUI",
+     "points": "185.03"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:women-senior-kp",
@@ -27696,7 +27740,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Елизавета Куликова — 69.23\n2. Риана Кадырова — 64.50\n3. Екатерина Кольцова — 61.69\n\nНачало: 13:30 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Елизавета Куликова — 69.23\n2. Риана Кадырова — 64.50\n3. Софья Муравьева — 63.21\n\nНачало: 13:30 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Риана Кадырова",
@@ -27712,7 +27756,7 @@
      "time": "13:49",
      "no": 3,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Елизавета Куликова",
@@ -27727,7 +27771,8 @@
      "nation": "МОС",
      "time": "14:00",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Софья Лукина",
@@ -27742,7 +27787,7 @@
      "time": "14:12",
      "no": 2,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Ксения Синицына",
@@ -27824,9 +27869,9 @@
     },
     {
      "place": 3,
-     "name": "Екатерина Кольцова",
-     "nation": "КОС",
-     "points": "61.69"
+     "name": "Софья Муравьева",
+     "nation": "МОС",
+     "points": "63.21"
     }
    ],
    "provisional": true
