@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T13:28:12+03:00",
- "checked": "2026-10-17T11:34:23.827434+00:00",
+ "checked": "2026-10-17T11:38:23.629717+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27949,14 +27949,15 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Россияне:\n• Алина Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Elizabet Gervits — 48.94\n\nРоссияне:\n• Алина Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Elizabet Gervits",
      "nation": "ISR",
      "time": "14:31",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Sophie Joline von Felten",
@@ -28257,7 +28258,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": "isu_isu-cs-budapest-trophy.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Elizabet Gervits",
+     "nation": "ISR",
+     "points": "48.94"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men-senior-kp",
