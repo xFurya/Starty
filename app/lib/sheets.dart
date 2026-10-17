@@ -790,10 +790,10 @@ class _TotalPlate extends StatelessWidget {
                 ],
                 if (pointsW > 0) ...[
                   const SizedBox(width: 12),
-                  SizedBox(
-                    width: pointsW + 1,
-                    child: Transform.translate(
-                      offset: const Offset(-4, 0),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8),
+                    child: SizedBox(
+                      width: pointsW + 9,
                       child: Text(
                         rows[i].points,
                         textAlign: TextAlign.right,
