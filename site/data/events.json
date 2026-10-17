@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-17T16:55:07+03:00",
- "checked": "2026-10-17T14:38:24.136599+00:00",
+ "generated": "2026-10-17T17:25:43+03:00",
+ "checked": "2026-10-17T17:25:43+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27986,7 +27986,7 @@
      "nation": "ISR",
      "no": 1,
      "warmup": 1,
-     "place": 14,
+     "place": 13,
      "time": "14:31"
     },
     {
@@ -28026,7 +28026,7 @@
      "nation": "LTU",
      "no": 6,
      "warmup": 2,
-     "place": 20,
+     "place": 18,
      "time": "15:06"
     },
     {
@@ -28034,7 +28034,7 @@
      "nation": "NED",
      "no": 7,
      "warmup": 2,
-     "place": 18,
+     "place": 17,
      "time": "15:12"
     },
     {
@@ -28058,7 +28058,7 @@
      "nation": "AUS",
      "no": 10,
      "warmup": 2,
-     "place": 16,
+     "place": 15,
      "time": "15:29"
     },
     {
@@ -28074,7 +28074,7 @@
      "nation": "PHI",
      "no": 12,
      "warmup": 3,
-     "place": 17,
+     "place": 16,
      "time": "16:01"
     },
     {
@@ -28090,7 +28090,7 @@
      "nation": "FIN",
      "no": 14,
      "warmup": 3,
-     "place": 15,
+     "place": 14,
      "time": "16:13"
     },
     {
@@ -28106,7 +28106,7 @@
      "nation": "ROU",
      "no": 16,
      "warmup": 4,
-     "place": 23,
+     "place": 21,
      "time": "16:31"
     },
     {
@@ -28114,7 +28114,7 @@
      "nation": "ISR",
      "no": 17,
      "warmup": 4,
-     "place": 22,
+     "place": 20,
      "time": "16:36"
     },
     {
@@ -28130,8 +28130,24 @@
      "nation": "KAZ",
      "no": 19,
      "warmup": 4,
-     "place": 21,
+     "place": 19,
      "time": "16:48"
+    },
+    {
+     "name": "Nataly Langerbaur",
+     "nation": "EST",
+     "no": 20,
+     "warmup": 4,
+     "place": 7,
+     "time": "16:53"
+    },
+    {
+     "name": "Inga Gurgenidze",
+     "nation": "GEO",
+     "no": 21,
+     "warmup": 5,
+     "place": 2,
+     "time": "17:20"
     },
     {
      "name": "Alina Bonillo",
@@ -28160,14 +28176,6 @@
      "time": "18:01",
      "no": 27,
      "warmup": 6
-    },
-    {
-     "name": "Inga Gurgenidze",
-     "nation": "GEO",
-     "time": "17:20",
-     "no": 21,
-     "warmup": 5,
-     "place": 2
     },
     {
      "name": "Kimmy Repond",
@@ -28220,14 +28228,6 @@
      "place": 19
     },
     {
-     "name": "Nataly Langerbaur",
-     "nation": "EST",
-     "time": "16:53",
-     "no": 20,
-     "warmup": 4,
-     "place": 7
-    },
-    {
      "name": "Nikola Fomchenkova",
      "nation": "LAT",
      "time": "17:26",
@@ -28272,10 +28272,12 @@
     "first": null,
     "names": {
      "Julia SAUTER": "Julia Sauter",
+     "Inga GURGENIDZE": "Inga Gurgenidze",
      "Anita OSTLUND": "Anita Ostlund",
      "Sophie Joline von FELTEN": "Sophie Joline von Felten",
      "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
      "Polina DZSUMANYIJAZOVA": "Polina Dzsumanyijazova",
+     "Nataly LANGERBAUR": "Nataly Langerbaur",
      "Mia RISA GOMEZ": "Mia Risa Gomez",
      "Alexandra FEIGIN": "Alexandra Feigin",
      "Julia KASPRZYK": "Julia Kasprzyk",
@@ -28290,8 +28292,6 @@
      "Zere SARBALINA": "Zere Sarbalina",
      "Mariia DMITRIEVA": "Mariia Dmitrieva",
      "Ana STRATULAT": "Ana Stratulat",
-     "Nataly LANGERBAUR": "Nataly Langerbaur",
-     "Inga GURGENIDZE": "Inga Gurgenidze",
      "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
      "Michaela VRASTAKOVA": "Michaela Vrastakova",
      "Maria Eliise KALJUVERE": "Maria Eliise Kaljuvere",
@@ -28525,23 +28525,51 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Валерия Ходыкина / Даниил Бутенко — 57.74\n2. Алиса Блинникова / Алексей Карпов — 56.17\n3. Вероника Меренкова / Даниль Галимов — 53.23\n\nНачало: 16:55 МСК\nТрансляция: Первый канал / YouTube",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Валерия Ходыкина / Даниил Бутенко",
+     "nation": "МОС",
+     "points": "57.74"
+    },
+    {
+     "place": 2,
+     "name": "Вероника Меренкова / Даниль Галимов",
+     "nation": "КРД",
+     "points": "53.23"
+    },
+    {
+     "place": 3,
+     "name": "Анна Карпук / Илья Миронов",
+     "nation": "СПБ",
+     "points": "53.06"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Валерия Ходыкина / Даниил Бутенко — 57.74\n2. Вероника Меренкова / Даниль Галимов — 53.23\n3. Анна Карпук / Илья Миронов — 53.06\n\nНачало: 16:55 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Валерия Ходыкина / Даниил Бутенко",
      "nation": "МОС",
-     "time": "17:02",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 1,
+     "time": "17:02"
+    },
+    {
+     "name": "Анна Карпук / Илья Миронов",
+     "nation": "СПБ",
+     "no": 2,
+     "warmup": 1,
+     "place": 3,
+     "time": "17:27"
     },
     {
      "name": "Вероника Меренкова / Даниль Галимов",
      "nation": "КРД",
-     "time": "17:15",
      "no": 3,
      "warmup": 1,
-     "place": 3
+     "place": 2,
+     "time": "17:15"
     },
     {
      "name": "Алиса Блинникова / Алексей Карпов",
@@ -28552,18 +28580,10 @@
      "place": 2
     },
     {
-     "name": "Анна Карпук / Илья Миронов",
-     "nation": "СПБ",
-     "time": "17:27",
-     "no": 2,
-     "warmup": 1,
-     "place": 4
-    },
-    {
-     "name": "Юлия Артемьева / Алексей Брюханов",
-     "nation": "ПРМ",
-     "time": "17:35",
-     "no": 5,
+     "name": "Анастасия Мухортова / Дмитрий Евгеньев",
+     "nation": "МОС",
+     "time": "17:54",
+     "no": 8,
      "warmup": 2
     },
     {
@@ -28581,13 +28601,14 @@
      "warmup": 2
     },
     {
-     "name": "Анастасия Мухортова / Дмитрий Евгеньев",
-     "nation": "МОС",
-     "time": "17:54",
-     "no": 8,
+     "name": "Юлия Артемьева / Алексей Брюханов",
+     "nation": "ПРМ",
+     "time": "17:35",
+     "no": 5,
      "warmup": 2
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG005.htm",
@@ -28595,8 +28616,8 @@
     "first": null,
     "names": {
      "Валерия ХОДЫКИНА / Даниил БУТЕНКО": "Валерия Ходыкина / Даниил Бутенко",
-     "Анна КАРПУК / Илья МИРОНОВ": "Анна Карпук / Илья Миронов",
      "Вероника МЕРЕНКОВА / Даниль ГАЛИМОВ": "Вероника Меренкова / Даниль Галимов",
+     "Анна КАРПУК / Илья МИРОНОВ": "Анна Карпук / Илья Миронов",
      "Алиса БЛИННИКОВА / Алексей КАРПОВ": "Алиса Блинникова / Алексей Карпов",
      "Юлия АРТЕМЬЕВА / Алексей БРЮХАНОВ": "Юлия Артемьева / Алексей Брюханов",
      "Ева ХМЕЛЬКОВА / Владислав АНТОНЫШЕВ": "Ева Хмелькова / Владислав Антонышев",
@@ -28605,28 +28626,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Валерия Ходыкина / Даниил Бутенко",
-     "nation": "МОС",
-     "points": "57.74"
-    },
-    {
-     "place": 2,
-     "name": "Алиса Блинникова / Алексей Карпов",
-     "nation": "СПБ",
-     "points": "56.17"
-    },
-    {
-     "place": 3,
-     "name": "Вероника Меренкова / Даниль Галимов",
-     "nation": "КРД",
-     "points": "53.23"
-    }
-   ],
-   "provisional": true
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:dance-senior-rt",
