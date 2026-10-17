@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T13:28:12+03:00",
- "checked": "2026-10-17T13:28:12+03:00",
+ "checked": "2026-10-17T10:46:05.599151+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27559,29 +27559,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Aaron Kim",
+     "nation": "KOR",
+     "points": "110.30"
+    },
+    {
+     "place": 2,
      "name": "Ryszard Siudek",
      "nation": "POL",
      "points": "98.03"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Robert Wildt",
      "nation": "GER",
      "points": "94.19"
-    },
-    {
-     "place": 3,
-     "name": "Akims Kirilovs",
-     "nation": "LAT",
-     "points": "74.33"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ryszard Siudek — 98.03\n2. Robert Wildt — 94.19\n3. Akims Kirilovs — 74.33\n\nРоссияне:\n• Илья Мальков — 13:51\n\nНачало: 13:05 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Aaron Kim — 110.30\n2. Ryszard Siudek — 98.03\n3. Robert Wildt — 94.19\n\nРоссияне:\n• Илья Мальков — 13:51\n\nНачало: 13:05 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Aaron Kim",
      "nation": "KOR",
-     "place": 4,
+     "place": 1,
      "time": "13:38",
      "no": 4,
      "warmup": 2
@@ -27589,7 +27589,7 @@
     {
      "name": "Akims Kirilovs",
      "nation": "LAT",
-     "place": 3,
+     "place": 4,
      "time": "13:11",
      "no": 1,
      "warmup": 1
@@ -27613,7 +27613,7 @@
     {
      "name": "Robert Wildt",
      "nation": "GER",
-     "place": 2,
+     "place": 3,
      "time": "13:24",
      "no": 3,
      "warmup": 1
@@ -27621,7 +27621,7 @@
     {
      "name": "Ryszard Siudek",
      "nation": "POL",
-     "place": 1,
+     "place": 2,
      "time": "13:18",
      "no": 2,
      "warmup": 1
@@ -27696,14 +27696,15 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 13:30 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Риана Кадырова — 64.50\n\nНачало: 13:30 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Риана Кадырова",
      "nation": "ТАТ",
      "time": "13:37",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Анастасия Фурсова",
@@ -27804,7 +27805,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Риана Кадырова",
+     "nation": "ТАТ",
+     "points": "64.50"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-budapest-trophy:women-senior-kp",
