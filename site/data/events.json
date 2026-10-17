@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-17T18:27:52+03:00",
- "checked": "2026-10-17T15:50:23.467294+00:00",
+ "generated": "2026-10-17T18:40:44+03:00",
+ "checked": "2026-10-17T18:40:44+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -28677,23 +28677,30 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Софья Тютюнина / Матвей Грачев — 70.56\n2. Таисия Линчевская / Дмитрий Щербаков — 62.20\n3. Алиса Абдуллина / Егор Петров — 56.36\n\nНачало: 18:25 МСК\nТрансляция: Первый канал / YouTube",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Софья Тютюнина / Матвей Грачев",
+     "nation": "МОС",
+     "points": "70.56"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Софья Тютюнина / Матвей Грачев — 70.56\n\nНачало: 18:25 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Софья Тютюнина / Матвей Грачев",
      "nation": "МОС",
-     "time": "18:31",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 1,
+     "time": "18:31"
     },
     {
-     "name": "Таисия Линчевская / Дмитрий Щербаков",
-     "nation": "МОС",
-     "time": "18:44",
-     "no": 3,
-     "warmup": 1,
-     "place": 2
+     "name": "Алиса Абдуллина / Егор Петров",
+     "nation": "СПБ",
+     "time": "18:58",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Алиса Крайнюкова / Семен Нетсев",
@@ -28703,18 +28710,10 @@
      "warmup": 1
     },
     {
-     "name": "Алиса Абдуллина / Егор Петров",
-     "nation": "СПБ",
-     "time": "18:58",
-     "no": 2,
-     "warmup": 1,
-     "place": 3
-    },
-    {
-     "name": "Елизавета Пасечник / Дарио Чиризано",
+     "name": "Варвара Жданова / Тимур Бабаев-Смирнов",
      "nation": "МОС",
-     "time": "19:04",
-     "no": 5,
+     "time": "19:24",
+     "no": 8,
      "warmup": 2
     },
     {
@@ -28725,6 +28724,13 @@
      "warmup": 2
     },
     {
+     "name": "Елизавета Пасечник / Дарио Чиризано",
+     "nation": "МОС",
+     "time": "19:04",
+     "no": 5,
+     "warmup": 2
+    },
+    {
      "name": "Софья Леонтьева / Даниил Горелкин",
      "nation": "МОС",
      "time": "19:18",
@@ -28732,13 +28738,14 @@
      "warmup": 2
     },
     {
-     "name": "Варвара Жданова / Тимур Бабаев-Смирнов",
+     "name": "Таисия Линчевская / Дмитрий Щербаков",
      "nation": "МОС",
-     "time": "19:24",
-     "no": 8,
-     "warmup": 2
+     "time": "18:44",
+     "no": 3,
+     "warmup": 1
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG007.htm",
@@ -28756,28 +28763,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Софья Тютюнина / Матвей Грачев",
-     "nation": "МОС",
-     "points": "70.56"
-    },
-    {
-     "place": 2,
-     "name": "Таисия Линчевская / Дмитрий Щербаков",
-     "nation": "МОС",
-     "points": "62.20"
-    },
-    {
-     "place": 3,
-     "name": "Алиса Абдуллина / Егор Петров",
-     "nation": "СПБ",
-     "points": "56.36"
-    }
-   ],
-   "provisional": true
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-junior-pt",
