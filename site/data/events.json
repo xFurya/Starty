@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-17T15:58:40+03:00",
- "checked": "2026-10-17T13:26:24.095850+00:00",
+ "generated": "2026-10-17T16:13:21+03:00",
+ "checked": "2026-10-17T16:13:21+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27986,7 +27986,7 @@
      "nation": "ISR",
      "no": 1,
      "warmup": 1,
-     "place": 10,
+     "place": 9,
      "time": "14:31"
     },
     {
@@ -28026,7 +28026,7 @@
      "nation": "LTU",
      "no": 6,
      "warmup": 2,
-     "place": 15,
+     "place": 13,
      "time": "15:06"
     },
     {
@@ -28034,7 +28034,7 @@
      "nation": "NED",
      "no": 7,
      "warmup": 2,
-     "place": 14,
+     "place": 12,
      "time": "15:12"
     },
     {
@@ -28058,7 +28058,7 @@
      "nation": "AUS",
      "no": 10,
      "warmup": 2,
-     "place": 12,
+     "place": 10,
      "time": "15:29"
     },
     {
@@ -28066,8 +28066,24 @@
      "nation": "NOR",
      "no": 11,
      "warmup": 3,
-     "place": 9,
+     "place": 8,
      "time": "15:56"
+    },
+    {
+     "name": "Maxine Bautista",
+     "nation": "PHI",
+     "no": 12,
+     "warmup": 3,
+     "place": 11,
+     "time": "16:01"
+    },
+    {
+     "name": "Anita Ostlund",
+     "nation": "SWE",
+     "no": 13,
+     "warmup": 3,
+     "place": 1,
+     "time": "16:07"
     },
     {
      "name": "Alina Bonillo",
@@ -28082,14 +28098,6 @@
      "time": "16:31",
      "no": 16,
      "warmup": 4
-    },
-    {
-     "name": "Anita Ostlund",
-     "nation": "SWE",
-     "time": "16:07",
-     "no": 13,
-     "warmup": 3,
-     "place": 1
     },
     {
      "name": "Anna Pezzetta",
@@ -28184,14 +28192,6 @@
      "warmup": 7
     },
     {
-     "name": "Maxine Bautista",
-     "nation": "PHI",
-     "time": "16:01",
-     "no": 12,
-     "warmup": 3,
-     "place": 13
-    },
-    {
      "name": "Michaela Vrastakova",
      "nation": "CZE",
      "time": "17:32",
@@ -28263,6 +28263,7 @@
     "cat": null,
     "first": null,
     "names": {
+     "Anita OSTLUND": "Anita Ostlund",
      "Sophie Joline von FELTEN": "Sophie Joline von Felten",
      "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
      "Polina DZSUMANYIJAZOVA": "Polina Dzsumanyijazova",
@@ -28272,10 +28273,9 @@
      "Pernille WITH": "Pernille With",
      "Elizabet GERVITS": "Elizabet Gervits",
      "Haruna MURAKAMI": "Haruna Murakami",
+     "Maxine BAUTISTA": "Maxine Bautista",
      "Julia van DIJK": "Julia van Dijk",
      "Meda VARIAKOJYTE": "Meda Variakojyte",
-     "Maxine BAUTISTA": "Maxine Bautista",
-     "Anita OSTLUND": "Anita Ostlund",
      "Lotta ARTIMO": "Lotta Artimo",
      "Sofja STEPCENKO": "Sofja Stepcenko",
      "Ana STRATULAT": "Ana Stratulat",
@@ -28355,25 +28355,25 @@
     },
     {
      "place": 2,
-     "name": "Роман Савосин",
-     "nation": "МОС",
-     "points": "83.85"
-    },
-    {
-     "place": 3,
      "name": "Артём Ковалёв",
      "nation": "МОБ",
      "points": "81.56"
+    },
+    {
+     "place": 3,
+     "name": "Семен Соловьев",
+     "nation": "СПБ",
+     "points": "78.39"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Даниил Самсонов — 91.60\n2. Роман Савосин — 83.85\n3. Артём Ковалёв — 81.56\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Даниил Самсонов — 91.60\n2. Артём Ковалёв — 81.56\n3. Семен Соловьев — 78.39\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Семен Соловьев",
      "nation": "СПБ",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 3,
      "time": "15:27"
     },
     {
@@ -28381,7 +28381,7 @@
      "nation": "ОРЕ",
      "no": 2,
      "warmup": 1,
-     "place": 7,
+     "place": 5,
      "time": "15:55"
     },
     {
@@ -28389,7 +28389,7 @@
      "nation": "ТУЛ",
      "no": 3,
      "warmup": 1,
-     "place": 6,
+     "place": 4,
      "time": "15:38"
     },
     {
@@ -28405,8 +28405,16 @@
      "nation": "СПБ",
      "no": 5,
      "warmup": 1,
-     "place": 8,
+     "place": 6,
      "time": "15:49"
+    },
+    {
+     "name": "Артём Ковалёв",
+     "nation": "МОБ",
+     "no": 6,
+     "warmup": 2,
+     "place": 2,
+     "time": "16:01"
     },
     {
      "name": "Андрей Мозалёв",
@@ -28414,14 +28422,6 @@
      "time": "16:23",
      "no": 10,
      "warmup": 2
-    },
-    {
-     "name": "Артём Ковалёв",
-     "nation": "МОБ",
-     "time": "16:01",
-     "no": 6,
-     "warmup": 2,
-     "place": 3
     },
     {
      "name": "Евгений Семененко",
@@ -28462,11 +28462,11 @@
     "first": null,
     "names": {
      "Даниил САМСОНОВ": "Даниил Самсонов",
+     "Артём КОВАЛЁВ": "Артём Ковалёв",
      "Семен СОЛОВЬЕВ": "Семен Соловьев",
      "Константин САФОНОВ": "Константин Сафонов",
      "Юрий СИДОРОВ": "Юрий Сидоров",
      "Вячеслав ПРОЦЕНКО": "Вячеслав Проценко",
-     "Артём КОВАЛЁВ": "Артём Ковалёв",
      "Иван КОНИХИН": "Иван Конихин",
      "Роман САВОСИН": "Роман Савосин",
      "Матвей ВЕТЛУГИН": "Матвей Ветлугин",
