@@ -1,33 +1,11 @@
 {
- "version": "1.0.39",
- "code": 40,
- "notes": "Баллы в итоге турнира теперь видны полностью.",
- "at": "2026-10-17T12:42:01Z",
+ "version": "1.0.38",
+ "code": 39,
+ "notes": "Список отслеживаемых в фильтре сворачивается.",
+ "at": "2026-10-17T12:57:08Z",
  "android": {
-  "file": "starty-1.0.39.apk",
-  "size": 23111415,
-  "sha256": "7a72d3fb3f0d97a48d0ce44794d546e5882ed22db448ff87a190fad83ab39eca"
- },
- "windows": {
-  "code": 40,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.39/Starty-windows.zip",
-  "size": 14303376,
-  "sha256": "250fe563d77c1097c410967db970082c7c1dd5bdc490455c21e2f67ea409dd73",
-  "setup": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.39/starty-setup-1.0.39.exe",
-   "size": 12237938,
-   "sha256": "51f597682d25dab684f97860f540b6297d24d38c2fa912d26eac9461b3d23272"
-  }
- },
- "macos": {
-  "code": 40,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.39/Starty-macos.zip",
-  "size": 21772730,
-  "sha256": "dbc951baec085203324104cb6bb41b29684f94fea2672f539f4128ec07863e68",
-  "dmg": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.39/Starty-macos.dmg",
-   "size": 24907754,
-   "sha256": "0efcdba43475feab083aa259da9f8d0be7c7ada067a9be8405d7a72fea36a9a0"
-  }
+  "file": "starty-1.0.38.apk",
+  "size": 23111419,
+  "sha256": "2397e6856455421b8c818494534291ed88fbc8624f79e6e8da800e2c82b59021"
  }
 }
