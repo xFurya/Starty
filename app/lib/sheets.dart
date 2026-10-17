@@ -792,13 +792,16 @@ class _TotalPlate extends StatelessWidget {
                   const SizedBox(width: 12),
                   SizedBox(
                     width: pointsW + 1,
-                    child: Text(
-                      rows[i].points,
-                      textAlign: TextAlign.right,
-                      maxLines: 1,
-                      softWrap: false,
-                      textScaler: TextScaler.linear(scale),
-                      style: pointsStyle,
+                    child: Transform.translate(
+                      offset: const Offset(-4, 0),
+                      child: Text(
+                        rows[i].points,
+                        textAlign: TextAlign.right,
+                        maxLines: 1,
+                        softWrap: false,
+                        textScaler: TextScaler.linear(scale),
+                        style: pointsStyle,
+                      ),
                     ),
                   ),
                 ],
