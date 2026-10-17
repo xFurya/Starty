@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T13:28:12+03:00",
- "checked": "2026-10-17T11:58:23.692222+00:00",
+ "checked": "2026-10-17T12:02:23.573199+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27740,7 +27740,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Анна Фролова — 74.70\n2. Камилла Нелюбова — 70.89\n3. Елизавета Куликова — 69.23\n\nНачало: 13:30 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Анна Фролова — 74.70\n2. Камилла Нелюбова — 70.89\n3. Елизавета Куликова — 69.23\n\nНачало: 13:30 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Риана Кадырова",
@@ -27858,7 +27858,7 @@
      "Анна ФРОЛОВА": "Анна Фролова",
      "Ксения ГУЩИНА": "Ксения Гущина"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json",
    "podium": [
@@ -27880,8 +27880,7 @@
      "nation": "МОС",
      "points": "69.23"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "isu:isu-cs-budapest-trophy:women-senior-kp",
@@ -27953,7 +27952,7 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sophie Joline von Felten — 57.72\n2. Mia Risa Gomez — 53.23\n3. Julia Kasprzyk — 51.39\n\nРоссияне:\n• Алина Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Sophie Joline von Felten — 57.72\n2. Mia Risa Gomez — 53.23\n3. Alexandra Feigin — 51.42\n\nРоссияне:\n• Алина Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Elizabet Gervits",
@@ -27961,7 +27960,7 @@
      "time": "14:31",
      "no": 1,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Sophie Joline von Felten",
@@ -27977,7 +27976,7 @@
      "time": "14:42",
      "no": 3,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Mia Risa Gomez",
@@ -27992,7 +27991,8 @@
      "nation": "BUL",
      "time": "14:54",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Meda Variakojyte",
@@ -28281,9 +28281,9 @@
     },
     {
      "place": 3,
-     "name": "Julia Kasprzyk",
-     "nation": "POL",
-     "points": "51.39"
+     "name": "Alexandra Feigin",
+     "nation": "BUL",
+     "points": "51.42"
     }
    ],
    "provisional": true
