@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-17T17:25:43+03:00",
- "checked": "2026-10-17T14:50:23.626030+00:00",
+ "generated": "2026-10-17T17:42:31+03:00",
+ "checked": "2026-10-17T17:42:31+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -28150,6 +28150,30 @@
      "time": "17:20"
     },
     {
+     "name": "Nikola Fomchenkova",
+     "nation": "LAT",
+     "no": 22,
+     "warmup": 5,
+     "place": 14,
+     "time": "17:26"
+    },
+    {
+     "name": "Michaela Vrastakova",
+     "nation": "CZE",
+     "no": 23,
+     "warmup": 5,
+     "place": 20,
+     "time": "17:32"
+    },
+    {
+     "name": "Maria Eliise Kaljuvere",
+     "nation": "EST",
+     "no": 24,
+     "warmup": 5,
+     "place": 1,
+     "time": "17:37"
+    },
+    {
      "name": "Alina Bonillo",
      "nation": "USA",
      "time": "19:08",
@@ -28206,35 +28230,11 @@
      "warmup": 7
     },
     {
-     "name": "Maria Eliise Kaljuvere",
-     "nation": "EST",
-     "time": "17:37",
-     "no": 24,
-     "warmup": 5,
-     "place": 1
-    },
-    {
      "name": "Marina Piredda",
      "nation": "ITA",
      "time": "19:02",
      "no": 34,
      "warmup": 7
-    },
-    {
-     "name": "Michaela Vrastakova",
-     "nation": "CZE",
-     "time": "17:32",
-     "no": 23,
-     "warmup": 5,
-     "place": 20
-    },
-    {
-     "name": "Nikola Fomchenkova",
-     "nation": "LAT",
-     "time": "17:26",
-     "no": 22,
-     "warmup": 5,
-     "place": 14
     },
     {
      "name": "Olga Mikutina",
@@ -28273,6 +28273,7 @@
     "cat": null,
     "first": null,
     "names": {
+     "Maria Eliise KALJUVERE": "Maria Eliise Kaljuvere",
      "Julia SAUTER": "Julia Sauter",
      "Inga GURGENIDZE": "Inga Gurgenidze",
      "Anita OSTLUND": "Anita Ostlund",
@@ -28285,18 +28286,17 @@
      "Julia KASPRZYK": "Julia Kasprzyk",
      "Sofja STEPCENKO": "Sofja Stepcenko",
      "Pernille WITH": "Pernille With",
+     "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
      "Elizabet GERVITS": "Elizabet Gervits",
      "Lotta ARTIMO": "Lotta Artimo",
      "Haruna MURAKAMI": "Haruna Murakami",
      "Maxine BAUTISTA": "Maxine Bautista",
      "Julia van DIJK": "Julia van Dijk",
+     "Michaela VRASTAKOVA": "Michaela Vrastakova",
      "Meda VARIAKOJYTE": "Meda Variakojyte",
      "Zere SARBALINA": "Zere Sarbalina",
      "Mariia DMITRIEVA": "Mariia Dmitrieva",
      "Ana STRATULAT": "Ana Stratulat",
-     "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
-     "Michaela VRASTAKOVA": "Michaela Vrastakova",
-     "Maria Eliise KALJUVERE": "Maria Eliise Kaljuvere",
      "Saskia OUDEJANS": "Saskia Oudejans",
      "Olga MIKUTINA": "Olga Mikutina",
      "Hannah FRANK": "Hannah Frank",
@@ -28576,10 +28576,18 @@
     {
      "name": "Алиса Блинникова / Алексей Карпов",
      "nation": "СПБ",
-     "time": "17:21",
      "no": 4,
      "warmup": 1,
-     "place": 3
+     "place": 3,
+     "time": "17:21"
+    },
+    {
+     "name": "Юлия Артемьева / Алексей Брюханов",
+     "nation": "ПРМ",
+     "no": 5,
+     "warmup": 2,
+     "place": 1,
+     "time": "17:35"
     },
     {
      "name": "Анастасия Мухортова / Дмитрий Евгеньев",
@@ -28602,14 +28610,6 @@
      "time": "17:48",
      "no": 7,
      "warmup": 2
-    },
-    {
-     "name": "Юлия Артемьева / Алексей Брюханов",
-     "nation": "ПРМ",
-     "time": "17:35",
-     "no": 5,
-     "warmup": 2,
-     "place": 1
     }
    ],
    "provisional": true,
@@ -28619,11 +28619,11 @@
     "cat": null,
     "first": null,
     "names": {
+     "Юлия АРТЕМЬЕВА / Алексей БРЮХАНОВ": "Юлия Артемьева / Алексей Брюханов",
      "Валерия ХОДЫКИНА / Даниил БУТЕНКО": "Валерия Ходыкина / Даниил Бутенко",
+     "Алиса БЛИННИКОВА / Алексей КАРПОВ": "Алиса Блинникова / Алексей Карпов",
      "Вероника МЕРЕНКОВА / Даниль ГАЛИМОВ": "Вероника Меренкова / Даниль Галимов",
      "Анна КАРПУК / Илья МИРОНОВ": "Анна Карпук / Илья Миронов",
-     "Алиса БЛИННИКОВА / Алексей КАРПОВ": "Алиса Блинникова / Алексей Карпов",
-     "Юлия АРТЕМЬЕВА / Алексей БРЮХАНОВ": "Юлия Артемьева / Алексей Брюханов",
      "Ева ХМЕЛЬКОВА / Владислав АНТОНЫШЕВ": "Ева Хмелькова / Владислав Антонышев",
      "Таисия ЩЕРБИНИНА / Артём ПЕТРОВ": "Таисия Щербинина / Артём Петров",
      "Анастасия МУХОРТОВА / Дмитрий ЕВГЕНЬЕВ": "Анастасия Мухортова / Дмитрий Евгеньев"
