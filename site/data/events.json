@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T13:28:12+03:00",
- "checked": "2026-10-17T11:46:24.136428+00:00",
+ "checked": "2026-10-17T11:50:23.492672+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27951,7 +27951,7 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sophie Joline von Felten — 57.72\n2. Elizabet Gervits — 48.94\n\nРоссияне:\n• Алина Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Sophie Joline von Felten — 57.72\n2. Julia Kasprzyk — 51.39\n3. Elizabet Gervits — 48.94\n\nРоссияне:\n• Алина Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Elizabet Gervits",
@@ -27959,7 +27959,7 @@
      "time": "14:31",
      "no": 1,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Sophie Joline von Felten",
@@ -27974,7 +27974,8 @@
      "nation": "POL",
      "time": "14:42",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Mia Risa Gomez",
@@ -28271,6 +28272,12 @@
     },
     {
      "place": 2,
+     "name": "Julia Kasprzyk",
+     "nation": "POL",
+     "points": "51.39"
+    },
+    {
+     "place": 3,
      "name": "Elizabet Gervits",
      "nation": "ISR",
      "points": "48.94"
