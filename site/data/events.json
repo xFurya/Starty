@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T02:13:02+03:00",
- "checked": "2026-10-17T06:45:03.351129+00:00",
+ "checked": "2026-10-17T06:57:03.594451+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27215,7 +27215,7 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Natalia Runcanu — 61.01\n2. Hanna Laura Viranyi — 59.41\n3. Dorina Szigeti — 55.20\n\nНачало: 09:00 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Ginevra Antonina Volante — 65.77\n2. Natalia Runcanu — 61.01\n3. Hanna Laura Viranyi — 59.41\n\nНачало: 09:00 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Shaked Pinchas",
@@ -27223,7 +27223,7 @@
      "time": "09:06",
      "no": 1,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Shahaf Pinchas",
@@ -27231,7 +27231,7 @@
      "time": "09:13",
      "no": 2,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Hanna Laura Viranyi",
@@ -27239,7 +27239,7 @@
      "time": "09:19",
      "no": 3,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Natalia Runcanu",
@@ -27247,7 +27247,7 @@
      "time": "09:26",
      "no": 4,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Dorina Szigeti",
@@ -27255,7 +27255,7 @@
      "time": "09:32",
      "no": 5,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Ginevra Antonina Volante",
@@ -27263,7 +27263,7 @@
      "time": "09:45",
      "no": 6,
      "warmup": 2,
-     "place": 6
+     "place": 1
     },
     {
      "name": "Milena Velcheva",
@@ -27456,21 +27456,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Ginevra Antonina Volante",
+     "nation": "ITA",
+     "points": "65.77"
+    },
+    {
+     "place": 2,
      "name": "Natalia Runcanu",
      "nation": "ROU",
      "points": "61.01"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Hanna Laura Viranyi",
      "nation": "HUN",
      "points": "59.41"
-    },
-    {
-     "place": 3,
-     "name": "Dorina Szigeti",
-     "nation": "HUN",
-     "points": "55.20"
     }
    ],
    "provisional": true
