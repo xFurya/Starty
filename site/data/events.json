@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T18:55:29+03:00",
- "checked": "2026-10-18T10:55:33.968541+00:00",
+ "checked": "2026-10-18T10:59:33.434958+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -29487,7 +29487,7 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Makar Suntsev — 107.86\n2. Matvii Yefymenko — 104.36\n3. David Sedej — 100.57\n\nНачало: 12:50 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Davide Lewton Brain — 117.85\n2. Makar Suntsev — 107.86\n3. Matvii Yefymenko — 104.36\n\nНачало: 12:50 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Aleksei Vlasenko",
@@ -29495,7 +29495,7 @@
      "time": "12:56",
      "no": 1,
      "warmup": 1,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Douglas Gerber",
@@ -29503,7 +29503,7 @@
      "time": "13:03",
      "no": 2,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Matvii Yefymenko",
@@ -29511,7 +29511,7 @@
      "time": "13:10",
      "no": 3,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Pablo Garcia",
@@ -29519,7 +29519,7 @@
      "time": "13:17",
      "no": 4,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "David Sedej",
@@ -29527,7 +29527,7 @@
      "time": "13:24",
      "no": 5,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Makar Suntsev",
@@ -29535,7 +29535,7 @@
      "time": "13:37",
      "no": 6,
      "warmup": 2,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Davide Lewton Brain",
@@ -29543,7 +29543,7 @@
      "time": "13:44",
      "no": 7,
      "warmup": 2,
-     "place": 7
+     "place": 1
     },
     {
      "name": "Vladimir Samoilov",
@@ -29755,21 +29755,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Davide Lewton Brain",
+     "nation": "MON",
+     "points": "117.85"
+    },
+    {
+     "place": 2,
      "name": "Makar Suntsev",
      "nation": "FIN",
      "points": "107.86"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Matvii Yefymenko",
      "nation": "POL",
      "points": "104.36"
-    },
-    {
-     "place": 3,
-     "name": "David Sedej",
-     "nation": "SLO",
-     "points": "100.57"
     }
    ],
    "provisional": true
