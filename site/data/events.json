@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T18:55:29+03:00",
- "checked": "2026-10-18T09:43:32.912164+00:00",
+ "checked": "2026-10-18T10:07:32.565731+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -29487,203 +29487,231 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Начало: 12:50 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Aleksei Vlasenko — 93.09\n2. Douglas Gerber — 49.12\n3. Matvii Yefymenko — 50.26\n\nНачало: 12:50 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Aleksei Vlasenko",
      "nation": "HUN",
      "time": "12:56",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Douglas Gerber",
      "nation": "AUS",
      "time": "13:03",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Matvii Yefymenko",
      "nation": "POL",
      "time": "13:10",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Pablo Garcia",
      "nation": "ESP",
      "time": "13:17",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4
     },
     {
      "name": "David Sedej",
      "nation": "SLO",
      "time": "13:24",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5
     },
     {
      "name": "Makar Suntsev",
      "nation": "FIN",
      "time": "13:37",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6
     },
     {
      "name": "Davide Lewton Brain",
      "nation": "MON",
      "time": "13:44",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     },
     {
      "name": "Vladimir Samoilov",
      "nation": "POL",
      "time": "13:51",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 8
     },
     {
      "name": "Vadym Novikov",
      "nation": "UKR",
      "time": "13:58",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 9
     },
     {
      "name": "Tobia Oellerer",
      "nation": "AUT",
      "time": "14:05",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 10
     },
     {
      "name": "Nico Steffen",
      "nation": "SUI",
      "time": "14:33",
      "no": 11,
-     "warmup": 3
+     "warmup": 3,
+     "place": 11
     },
     {
      "name": "Nikita Krivosheyev",
      "nation": "KAZ",
      "time": "14:40",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "place": 12
     },
     {
      "name": "Elias Sayed",
      "nation": "SWE",
      "time": "14:47",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "place": 13
     },
     {
      "name": "Andreas Nordeback",
      "nation": "SWE",
      "time": "14:54",
      "no": 14,
-     "warmup": 3
+     "warmup": 3,
+     "place": 14
     },
     {
      "name": "Taira Shinohara",
      "nation": "USA",
      "time": "15:01",
      "no": 15,
-     "warmup": 3
+     "warmup": 3,
+     "place": 15
     },
     {
      "name": "Nikita Starostin",
      "nation": "GER",
      "time": "15:08",
      "no": 16,
-     "warmup": 3
+     "warmup": 3,
+     "place": 16
     },
     {
      "name": "Fedirs Kuliss",
      "nation": "LAT",
      "time": "15:21",
      "no": 17,
-     "warmup": 4
+     "warmup": 4,
+     "place": 17
     },
     {
      "name": "Kevin Aymoz",
      "nation": "FRA",
      "time": "15:28",
      "no": 18,
-     "warmup": 4
+     "warmup": 4,
+     "place": 18
     },
     {
      "name": "Wesley Chiu",
      "nation": "CAN",
      "time": "15:35",
      "no": 19,
-     "warmup": 4
+     "warmup": 4,
+     "place": 19
     },
     {
      "name": "John Kim",
      "nation": "CAN",
      "time": "15:42",
      "no": 20,
-     "warmup": 4
+     "warmup": 4,
+     "place": 20
     },
     {
      "name": "Tamir Kuperman",
      "nation": "ISR",
      "time": "15:49",
      "no": 21,
-     "warmup": 4
+     "warmup": 4,
+     "place": 21
     },
     {
      "name": "Nikita Sheiko",
      "nation": "ISR",
      "time": "15:56",
      "no": 22,
-     "warmup": 4
+     "warmup": 4,
+     "place": 22
     },
     {
      "name": "Matias Lindfors",
      "nation": "FIN",
      "time": "16:24",
      "no": 23,
-     "warmup": 5
+     "warmup": 5,
+     "place": 23
     },
     {
      "name": "Patrick Blackwell",
      "nation": "USA",
      "time": "16:31",
      "no": 24,
-     "warmup": 5
+     "warmup": 5,
+     "place": 24
     },
     {
      "name": "Lukas Britschgi",
      "nation": "SUI",
      "time": "16:38",
      "no": 25,
-     "warmup": 5
+     "warmup": 5,
+     "place": 25
     },
     {
      "name": "Arlet Levandi",
      "nation": "EST",
      "time": "16:45",
      "no": 26,
-     "warmup": 5
+     "warmup": 5,
+     "place": 26
     },
     {
      "name": "Genrikh Gartung",
      "nation": "GER",
      "time": "16:52",
      "no": 27,
-     "warmup": 5
+     "warmup": 5,
+     "place": 27
     },
     {
      "name": "Daniel Grassl",
      "nation": "ITA",
      "time": "16:59",
      "no": 28,
-     "warmup": 5
+     "warmup": 5,
+     "place": 28
     }
    ],
    "live": {
@@ -29723,7 +29751,28 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": "isu_isu-cs-budapest-trophy.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Aleksei Vlasenko",
+     "nation": "HUN",
+     "points": "93.09"
+    },
+    {
+     "place": 2,
+     "name": "Douglas Gerber",
+     "nation": "AUS",
+     "points": "49.12"
+    },
+    {
+     "place": 3,
+     "name": "Matvii Yefymenko",
+     "nation": "POL",
+     "points": "50.26"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:women-senior-pp",
