@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T18:55:29+03:00",
- "checked": "2026-10-18T10:11:32.691751+00:00",
+ "checked": "2026-10-18T10:19:32.157940+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -29487,7 +29487,7 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Douglas Gerber — 93.63\n2. Aleksei Vlasenko — 93.09\n3. Matvii Yefymenko — 50.26\n\nНачало: 12:50 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Matvii Yefymenko — 104.36\n2. Douglas Gerber — 93.63\n3. Aleksei Vlasenko — 93.09\n\nНачало: 12:50 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Aleksei Vlasenko",
@@ -29495,7 +29495,7 @@
      "time": "12:56",
      "no": 1,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Douglas Gerber",
@@ -29503,7 +29503,7 @@
      "time": "13:03",
      "no": 2,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Matvii Yefymenko",
@@ -29511,7 +29511,7 @@
      "time": "13:10",
      "no": 3,
      "warmup": 1,
-     "place": 3
+     "place": 1
     },
     {
      "name": "Pablo Garcia",
@@ -29755,21 +29755,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Matvii Yefymenko",
+     "nation": "POL",
+     "points": "104.36"
+    },
+    {
+     "place": 2,
      "name": "Douglas Gerber",
      "nation": "AUS",
      "points": "93.63"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Aleksei Vlasenko",
      "nation": "HUN",
      "points": "93.09"
-    },
-    {
-     "place": 3,
-     "name": "Matvii Yefymenko",
-     "nation": "POL",
-     "points": "50.26"
     }
    ],
    "provisional": true
@@ -29816,91 +29816,103 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Анастасия Фурсова — 98.19\n2. Софья Лукина — 56.03\n3. Алиса Юрова — 60.18\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Анастасия Фурсова",
      "nation": "БЕЛ",
      "time": "13:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Алиса Юрова",
      "nation": "ЛИП",
      "time": "13:22",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Екатерина Кольцова",
      "nation": "КОС",
      "time": "13:30",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4
     },
     {
      "name": "Александра Чаткина",
      "nation": "СПБ",
      "time": "13:37",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5
     },
     {
      "name": "Ксения Гущина",
      "nation": "СПБ",
      "time": "13:45",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 6
     },
     {
      "name": "Софья Лукина",
      "nation": "БАШ",
      "time": "13:52",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Ксения Синицына",
      "nation": "МОБ",
      "time": "14:00",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     },
     {
      "name": "Софья Муравьева",
      "nation": "МОС",
      "time": "14:07",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 8
     },
     {
      "name": "Риана Кадырова",
      "nation": "ТАТ",
      "time": "14:15",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 9
     },
     {
      "name": "Елизавета Куликова",
      "nation": "МОС",
      "time": "14:22",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 10
     },
     {
      "name": "Камилла Нелюбова",
      "nation": "ЧУВ",
      "time": "14:30",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 11
     },
     {
      "name": "Анна Фролова",
      "nation": "СПБ",
      "time": "14:37",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 12
     }
    ],
    "live": {
@@ -29924,7 +29936,28 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Анастасия Фурсова",
+     "nation": "БЕЛ",
+     "points": "98.19"
+    },
+    {
+     "place": 2,
+     "name": "Софья Лукина",
+     "nation": "БАШ",
+     "points": "56.03"
+    },
+    {
+     "place": 3,
+     "name": "Алиса Юрова",
+     "nation": "ЛИП",
+     "points": "60.18"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men-senior-pp",
