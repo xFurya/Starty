@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-17T18:55:29+03:00",
- "checked": "2026-10-18T10:59:33.434958+00:00",
+ "generated": "2026-10-18T13:47:08+03:00",
+ "checked": "2026-10-18T13:47:08+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -27898,7 +27898,7 @@
    "seg": "КП",
    "title": "CS Budapest Trophy — женщины КП",
    "start": "2026-10-17T14:25:00+03:00",
-   "end": "2026-10-17T19:26:00+03:00",
+   "end": "2026-10-17T20:00:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [
@@ -27908,10 +27908,10 @@
     {
      "name": "Алина Горбачёва",
      "nation": "RUS",
-     "time": "19:13",
      "no": 36,
      "warmup": 7,
-     "place": 1
+     "place": 1,
+     "time": "19:13"
     }
    ],
    "athletes": [
@@ -27980,7 +27980,7 @@
      "points": "65.53"
     }
    ],
-   "desc": "Итог:\n1. Алина Горбачёва — 73.02\n2. Maria Eliise Kaljuvere — 66.36\n3. Julia Sauter — 65.53\n\nРоссияне:\n• Алина Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансляция: HunSkate TV",
+   "desc": "Итог:\n1. Алина Горбачёва — 73.02\n2. Maria Eliise Kaljuvere — 66.36\n3. Julia Sauter — 65.53\n\nПримечательное:\n• Maria Eliise Kaljuvere — Личный рекорд за КП: 66.36 (был 63.52)\n• Julia Sauter — Личный рекорд за КП: 65.53 (был 64.03)\n\nРоссияне:\n• Алина Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Elizabet Gervits",
@@ -28239,44 +28239,44 @@
      "time": "18:51"
     },
     {
-     "name": "Alina Bonillo",
-     "nation": "USA",
-     "time": "19:08",
-     "no": 35,
-     "warmup": 7,
-     "place": 10
-    },
-    {
-     "name": "Lovisa Aav",
-     "nation": "SWE",
-     "time": "19:19",
-     "no": 37,
-     "warmup": 7,
-     "place": 35
-    },
-    {
      "name": "Madeline Schizas",
      "nation": "CAN",
-     "time": "18:56",
      "no": 33,
      "warmup": 7,
-     "place": 9
+     "place": 9,
+     "time": "18:56"
     },
     {
      "name": "Marina Piredda",
      "nation": "ITA",
-     "time": "19:02",
      "no": 34,
      "warmup": 7,
-     "place": 12
+     "place": 12,
+     "time": "19:02"
+    },
+    {
+     "name": "Alina Bonillo",
+     "nation": "USA",
+     "no": 35,
+     "warmup": 7,
+     "place": 10,
+     "time": "19:08"
     },
     {
      "name": "Алина Горбачёва",
      "nation": "RUS",
-     "time": "19:13",
      "no": 36,
      "warmup": 7,
-     "place": 1
+     "place": 1,
+     "time": "19:13"
+    },
+    {
+     "name": "Lovisa Aav",
+     "nation": "SWE",
+     "no": 37,
+     "warmup": 7,
+     "place": 35,
+     "time": "19:19"
     }
    ],
    "live": {
@@ -28285,6 +28285,7 @@
     "cat": null,
     "first": null,
     "names": {
+     "Alina GORBACHEVA": "Алина Горбачёва",
      "Maria Eliise KALJUVERE": "Maria Eliise Kaljuvere",
      "Julia SAUTER": "Julia Sauter",
      "Inga GURGENIDZE": "Inga Gurgenidze",
@@ -28292,7 +28293,10 @@
      "Kimmy REPOND": "Kimmy Repond",
      "Livia KAISER": "Livia Kaiser",
      "Anita OSTLUND": "Anita Ostlund",
+     "Madeline SCHIZAS": "Madeline Schizas",
+     "Alina BONILLO": "Alina Bonillo",
      "Sophie Joline von FELTEN": "Sophie Joline von Felten",
+     "Marina PIREDDA": "Marina Piredda",
      "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
      "Polina DZSUMANYIJAZOVA": "Polina Dzsumanyijazova",
      "Anna PEZZETTA": "Anna Pezzetta",
@@ -28315,16 +28319,24 @@
      "Mariia DMITRIEVA": "Mariia Dmitrieva",
      "Ana STRATULAT": "Ana Stratulat",
      "Saskia OUDEJANS": "Saskia Oudejans",
+     "Lovisa AAV": "Lovisa Aav",
      "Weronika FERLIN": "Weronika Ferlin",
-     "Annika Lytchoff SKIBBY": "Annika Lytchoff Skibby",
-     "Madeline SCHIZAS": "Madeline Schizas",
-     "Marina PIREDDA": "Marina Piredda",
-     "Alina BONILLO": "Alina Bonillo",
-     "Alina GORBACHEVA": "Алина Горбачёва",
-     "Lovisa AAV": "Lovisa Aav"
+     "Annika Lytchoff SKIBBY": "Annika Lytchoff Skibby"
     },
     "basis": "judges"
    },
+   "facts": [
+    {
+     "who": "Maria Eliise Kaljuvere",
+     "text": "Личный рекорд за КП: 66.36 (был 63.52)",
+     "kind": "score"
+    },
+    {
+     "who": "Julia Sauter",
+     "text": "Личный рекорд за КП: 65.53 (был 64.03)",
+     "kind": "score"
+    }
+   ],
    "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
@@ -28654,7 +28666,7 @@
    "seg": "РТ",
    "title": "Гран-при России «Рапсодия льда» — танцы РТ",
    "start": "2026-10-17T18:25:00+03:00",
-   "end": "2026-10-17T19:31:00+03:00",
+   "end": "2026-10-17T19:30:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -28738,36 +28750,36 @@
      "time": "18:51"
     },
     {
-     "name": "Варвара Жданова / Тимур Бабаев-Смирнов",
+     "name": "Елизавета Пасечник / Дарио Чиризано",
      "nation": "МОС",
-     "time": "19:24",
-     "no": 8,
+     "no": 5,
      "warmup": 2,
-     "place": 5
+     "place": 2,
+     "time": "19:04"
     },
     {
      "name": "Екатерина Рыбакова / Иван Махноносов",
      "nation": "МОС",
-     "time": "19:11",
      "no": 6,
      "warmup": 2,
-     "place": 3
-    },
-    {
-     "name": "Елизавета Пасечник / Дарио Чиризано",
-     "nation": "МОС",
-     "time": "19:04",
-     "no": 5,
-     "warmup": 2,
-     "place": 2
+     "place": 3,
+     "time": "19:11"
     },
     {
      "name": "Софья Леонтьева / Даниил Горелкин",
      "nation": "МОС",
-     "time": "19:18",
      "no": 7,
      "warmup": 2,
-     "place": 1
+     "place": 1,
+     "time": "19:18"
+    },
+    {
+     "name": "Варвара Жданова / Тимур Бабаев-Смирнов",
+     "nation": "МОС",
+     "no": 8,
+     "warmup": 2,
+     "place": 5,
+     "time": "19:24"
     }
    ],
    "live": {
@@ -28776,14 +28788,14 @@
     "cat": null,
     "first": null,
     "names": {
-     "Софья ТЮТЮНИНА / Матвей ГРАЧЕВ": "Софья Тютюнина / Матвей Грачев",
-     "Таисия ЛИНЧЕВСКАЯ / Дмитрий ЩЕРБАКОВ": "Таисия Линчевская / Дмитрий Щербаков",
-     "Алиса АБДУЛЛИНА / Егор ПЕТРОВ": "Алиса Абдуллина / Егор Петров",
-     "Алиса КРАЙНЮКОВА / Семен НЕТСЕВ": "Алиса Крайнюкова / Семен Нетсев",
+     "Софья ЛЕОНТЬЕВА / Даниил ГОРЕЛКИН": "Софья Леонтьева / Даниил Горелкин",
      "Елизавета ПАСЕЧНИК / Дарио ЧИРИЗАНО": "Елизавета Пасечник / Дарио Чиризано",
      "Екатерина РЫБАКОВА / Иван МАХНОНОСОВ": "Екатерина Рыбакова / Иван Махноносов",
-     "Софья ЛЕОНТЬЕВА / Даниил ГОРЕЛКИН": "Софья Леонтьева / Даниил Горелкин",
-     "Варвара ЖДАНОВА / Тимур БАБАЕВ-СМИРНОВ": "Варвара Жданова / Тимур Бабаев-Смирнов"
+     "Софья ТЮТЮНИНА / Матвей ГРАЧЕВ": "Софья Тютюнина / Матвей Грачев",
+     "Варвара ЖДАНОВА / Тимур БАБАЕВ-СМИРНОВ": "Варвара Жданова / Тимур Бабаев-Смирнов",
+     "Таисия ЛИНЧЕВСКАЯ / Дмитрий ЩЕРБАКОВ": "Таисия Линчевская / Дмитрий Щербаков",
+     "Алиса АБДУЛЛИНА / Егор ПЕТРОВ": "Алиса Абдуллина / Егор Петров",
+     "Алиса КРАЙНЮКОВА / Семен НЕТСЕВ": "Алиса Крайнюкова / Семен Нетсев"
     },
     "basis": "judges"
    },
@@ -28798,7 +28810,7 @@
    "seg": "ПТ",
    "title": "CS Budapest Trophy — юниорские танцы ПТ",
    "start": "2026-10-17T19:40:00+03:00",
-   "end": "2026-10-17T22:22:00+03:00",
+   "end": "2026-10-17T22:40:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [
@@ -28833,209 +28845,6 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Итог:\n1. Hana Maria Aboian / Daniil Veselukhin — 99.74\n2. Zoe Bianchi / Daniel Basile — 99.34\n3. Arianna Soldati / Nicholas Tagliabue — 94.47\n\nИтог турнира:\n1. Hana Maria Aboian / Daniil Veselukhin — 170.37\n2. Zoe Bianchi / Daniel Basile — 164.89\n3. Aneta Vaclavikova / William Lissauer — 157.16\n\nПримечательное:\n• Hana Maria Aboian / Daniil Veselukhin — Лучшая среди юниоров сумма сезона: 170.37\n• Hana Maria Aboian / Daniil Veselukhin — Личный рекорд по сумме: 170.37 (был 167.11)\n• Zoe Bianchi / Daniel Basile — Личный рекорд по сумме: 164.89 (был 160.28)\n\nНачало: 19:40 МСК\nТрансляция: HunSkate TV",
-   "field": [
-    {
-     "name": "Anna Ruis / Andrew Cayden Evert",
-     "nation": "AUT",
-     "time": "19:45",
-     "no": 1,
-     "warmup": 1,
-     "place": 19,
-     "final": 19
-    },
-    {
-     "name": "Rose Anne Marie Bordet / Hugo Tomas",
-     "nation": "FRA",
-     "time": "19:52",
-     "no": 2,
-     "warmup": 1,
-     "place": 14,
-     "final": 16
-    },
-    {
-     "name": "Annabel Mann / Jack Hammond",
-     "nation": "GBR",
-     "time": "19:58",
-     "no": 3,
-     "warmup": 1,
-     "place": 12,
-     "final": 14
-    },
-    {
-     "name": "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
-     "nation": "FRA",
-     "time": "20:05",
-     "no": 4,
-     "warmup": 1,
-     "place": 18,
-     "final": 18
-    },
-    {
-     "name": "Villo Mira Szilagyi / Istvan Jaracs",
-     "nation": "HUN",
-     "time": "20:17",
-     "no": 5,
-     "warmup": 2,
-     "place": 17,
-     "final": 17
-    },
-    {
-     "name": "Alexandra Rouskova / Lukas Toman",
-     "nation": "CZE",
-     "time": "20:23",
-     "no": 6,
-     "warmup": 2,
-     "place": 11,
-     "final": 11
-    },
-    {
-     "name": "Lena Zerinvary-simon / Huba Gallai",
-     "nation": "HUN",
-     "time": "20:30",
-     "no": 7,
-     "warmup": 2,
-     "place": 16,
-     "final": 15
-    },
-    {
-     "name": "Laura Balcerska / David Diadchenko",
-     "nation": "POL",
-     "time": "20:36",
-     "no": 8,
-     "warmup": 2,
-     "place": 9,
-     "final": 10
-    },
-    {
-     "name": "Klara Vlckova / Tomas Vlcek",
-     "nation": "CZE",
-     "time": "20:43",
-     "no": 9,
-     "warmup": 2,
-     "place": 15,
-     "final": 13
-    },
-    {
-     "name": "Chanelle Chum / Osckar Chum",
-     "nation": "AUS",
-     "time": "21:10",
-     "no": 10,
-     "warmup": 3,
-     "place": 13,
-     "final": 12
-    },
-    {
-     "name": "Maite van Mulders / Tudor Dominic Andrei",
-     "nation": "ROU",
-     "time": "21:16",
-     "no": 11,
-     "warmup": 3,
-     "place": 6,
-     "final": 8
-    },
-    {
-     "name": "Carlota Garcia Barranco / Александр Островский",
-     "nation": "ESP",
-     "time": "21:23",
-     "no": 12,
-     "warmup": 3,
-     "place": 8,
-     "final": 9
-    },
-    {
-     "name": "Лилия Литенко / Александр Рыженков",
-     "nation": "ISR",
-     "time": "21:29",
-     "no": 13,
-     "warmup": 3,
-     "place": 5,
-     "final": 5
-    },
-    {
-     "name": "Aletta Lanyi / Ilya Laurenau",
-     "nation": "HUN",
-     "time": "21:36",
-     "no": 14,
-     "warmup": 3,
-     "place": 7,
-     "final": 6
-    },
-    {
-     "name": "Eniko Kobor / Zoard Kobor",
-     "nation": "GER",
-     "time": "21:48",
-     "no": 15,
-     "warmup": 4,
-     "place": 10,
-     "final": 7
-    },
-    {
-     "name": "Arianna Soldati / Nicholas Tagliabue",
-     "nation": "ITA",
-     "time": "21:54",
-     "no": 16,
-     "warmup": 4,
-     "place": 3,
-     "final": 4
-    },
-    {
-     "name": "Aneta Vaclavikova / William Lissauer",
-     "nation": "USA",
-     "time": "22:01",
-     "no": 17,
-     "warmup": 4,
-     "place": 4,
-     "final": 3
-    },
-    {
-     "name": "Zoe Bianchi / Daniel Basile",
-     "nation": "ITA",
-     "time": "22:07",
-     "no": 18,
-     "warmup": 4,
-     "place": 2,
-     "final": 2
-    },
-    {
-     "name": "Hana Maria Aboian / Daniil Veselukhin",
-     "nation": "USA",
-     "time": "22:14",
-     "no": 19,
-     "warmup": 4,
-     "place": 1,
-     "final": 1
-    }
-   ],
-   "live": {
-    "idx": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
-    "seg": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG012.htm",
-    "cat": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/CAT006RS.htm",
-    "first": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG011.htm",
-    "names": {
-     "Anna RUIS / Andrew Cayden EVERT": "Anna Ruis / Andrew Cayden Evert",
-     "Rose Anne Marie BORDET / Hugo TOMAS": "Rose Anne Marie Bordet / Hugo Tomas",
-     "Annabel MANN / Jack HAMMOND": "Annabel Mann / Jack Hammond",
-     "Siloe Nayeli Clai. DESBOIS-RENAUDIN / Enzo TOMAS": "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
-     "Villo Mira SZILAGYI / Istvan JARACS": "Villo Mira Szilagyi / Istvan Jaracs",
-     "Alexandra ROUSKOVA / Lukas TOMAN": "Alexandra Rouskova / Lukas Toman",
-     "Lena ZERINVARY-SIMON / Huba GALLAI": "Lena Zerinvary-simon / Huba Gallai",
-     "Laura BALCERSKA / David DIADCHENKO": "Laura Balcerska / David Diadchenko",
-     "Klara VLCKOVA / Tomas VLCEK": "Klara Vlckova / Tomas Vlcek",
-     "Chanelle CHUM / Osckar CHUM": "Chanelle Chum / Osckar Chum",
-     "Maite van MULDERS / Tudor Dominic ANDREI": "Maite van Mulders / Tudor Dominic Andrei",
-     "Carlota GARCIA BARRANCO / Aleksandr OSTROVSKII": "Carlota Garcia Barranco / Александр Островский",
-     "Liliia LITENKO / Aleksandr RYZHENKOV": "Лилия Литенко / Александр Рыженков",
-     "Aletta LANYI / Ilya LAURENAU": "Aletta Lanyi / Ilya Laurenau",
-     "Eniko KOBOR / Zoard KOBOR": "Eniko Kobor / Zoard Kobor",
-     "Arianna SOLDATI / Nicholas TAGLIABUE": "Arianna Soldati / Nicholas Tagliabue",
-     "Aneta VACLAVIKOVA / William LISSAUER": "Aneta Vaclavikova / William Lissauer",
-     "Zoe BIANCHI / Daniel BASILE": "Zoe Bianchi / Daniel Basile",
-     "Hana Maria ABOIAN / Daniil VESELUKHIN": "Hana Maria Aboian / Daniil Veselukhin"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-cs-budapest-trophy.json",
    "podium": [
     {
      "place": 1,
@@ -29076,23 +28885,236 @@
      "points": "157.16"
     }
    ],
+   "desc": "Итог:\n1. Hana Maria Aboian / Daniil Veselukhin — 99.74\n2. Zoe Bianchi / Daniel Basile — 99.34\n3. Arianna Soldati / Nicholas Tagliabue — 94.47\n\nИтог турнира:\n1. Hana Maria Aboian / Daniil Veselukhin — 170.37\n2. Zoe Bianchi / Daniel Basile — 164.89\n3. Aneta Vaclavikova / William Lissauer — 157.16\n\nПримечательное:\n• Zoe Bianchi / Daniel Basile — Личный рекорд за ПТ: 99.34 (был 96.90)\n• Arianna Soldati / Nicholas Tagliabue — Личный рекорд за ПТ: 94.47 (был 91.86)\n• Hana Maria Aboian / Daniil Veselukhin — Лучшая среди юниоров сумма сезона: 170.37\n• Hana Maria Aboian / Daniil Veselukhin — Личный рекорд по сумме: 170.37 (был 167.11)\n• Zoe Bianchi / Daniel Basile — Личный рекорд по сумме: 164.89 (был 160.28)\n\nНачало: 19:40 МСК\nТрансляция: HunSkate TV",
+   "field": [
+    {
+     "name": "Anna Ruis / Andrew Cayden Evert",
+     "nation": "AUT",
+     "no": 1,
+     "warmup": 1,
+     "place": 19,
+     "final": 19,
+     "time": "19:45"
+    },
+    {
+     "name": "Rose Anne Marie Bordet / Hugo Tomas",
+     "nation": "FRA",
+     "no": 2,
+     "warmup": 1,
+     "place": 14,
+     "final": 16,
+     "time": "19:52"
+    },
+    {
+     "name": "Annabel Mann / Jack Hammond",
+     "nation": "GBR",
+     "no": 3,
+     "warmup": 1,
+     "place": 12,
+     "final": 14,
+     "time": "19:58"
+    },
+    {
+     "name": "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
+     "nation": "FRA",
+     "no": 4,
+     "warmup": 1,
+     "place": 18,
+     "final": 18,
+     "time": "20:05"
+    },
+    {
+     "name": "Villo Mira Szilagyi / Istvan Jaracs",
+     "nation": "HUN",
+     "no": 5,
+     "warmup": 2,
+     "place": 17,
+     "final": 17,
+     "time": "20:17"
+    },
+    {
+     "name": "Alexandra Rouskova / Lukas Toman",
+     "nation": "CZE",
+     "no": 6,
+     "warmup": 2,
+     "place": 11,
+     "final": 11,
+     "time": "20:23"
+    },
+    {
+     "name": "Lena Zerinvary-simon / Huba Gallai",
+     "nation": "HUN",
+     "no": 7,
+     "warmup": 2,
+     "place": 16,
+     "final": 15,
+     "time": "20:30"
+    },
+    {
+     "name": "Laura Balcerska / David Diadchenko",
+     "nation": "POL",
+     "no": 8,
+     "warmup": 2,
+     "place": 9,
+     "final": 10,
+     "time": "20:36"
+    },
+    {
+     "name": "Klara Vlckova / Tomas Vlcek",
+     "nation": "CZE",
+     "no": 9,
+     "warmup": 2,
+     "place": 15,
+     "final": 13,
+     "time": "20:43"
+    },
+    {
+     "name": "Chanelle Chum / Osckar Chum",
+     "nation": "AUS",
+     "no": 10,
+     "warmup": 3,
+     "place": 13,
+     "final": 12,
+     "time": "21:10"
+    },
+    {
+     "name": "Maite van Mulders / Tudor Dominic Andrei",
+     "nation": "ROU",
+     "no": 11,
+     "warmup": 3,
+     "place": 6,
+     "final": 8,
+     "time": "21:16"
+    },
+    {
+     "name": "Carlota Garcia Barranco / Александр Островский",
+     "nation": "ESP",
+     "no": 12,
+     "warmup": 3,
+     "place": 8,
+     "final": 9,
+     "time": "21:23"
+    },
+    {
+     "name": "Лилия Литенко / Александр Рыженков",
+     "nation": "ISR",
+     "no": 13,
+     "warmup": 3,
+     "place": 5,
+     "final": 5,
+     "time": "21:29"
+    },
+    {
+     "name": "Aletta Lanyi / Ilya Laurenau",
+     "nation": "HUN",
+     "no": 14,
+     "warmup": 3,
+     "place": 7,
+     "final": 6,
+     "time": "21:36"
+    },
+    {
+     "name": "Eniko Kobor / Zoard Kobor",
+     "nation": "GER",
+     "no": 15,
+     "warmup": 4,
+     "place": 10,
+     "final": 7,
+     "time": "21:48"
+    },
+    {
+     "name": "Arianna Soldati / Nicholas Tagliabue",
+     "nation": "ITA",
+     "no": 16,
+     "warmup": 4,
+     "place": 3,
+     "final": 4,
+     "time": "21:54"
+    },
+    {
+     "name": "Aneta Vaclavikova / William Lissauer",
+     "nation": "USA",
+     "no": 17,
+     "warmup": 4,
+     "place": 4,
+     "final": 3,
+     "time": "22:01"
+    },
+    {
+     "name": "Zoe Bianchi / Daniel Basile",
+     "nation": "ITA",
+     "no": 18,
+     "warmup": 4,
+     "place": 2,
+     "final": 2,
+     "time": "22:07"
+    },
+    {
+     "name": "Hana Maria Aboian / Daniil Veselukhin",
+     "nation": "USA",
+     "no": 19,
+     "warmup": 4,
+     "place": 1,
+     "final": 1,
+     "time": "22:14"
+    }
+   ],
+   "live": {
+    "idx": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
+    "seg": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG012.htm",
+    "cat": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/CAT006RS.htm",
+    "first": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG011.htm",
+    "names": {
+     "Hana Maria ABOIAN / Daniil VESELUKHIN": "Hana Maria Aboian / Daniil Veselukhin",
+     "Zoe BIANCHI / Daniel BASILE": "Zoe Bianchi / Daniel Basile",
+     "Arianna SOLDATI / Nicholas TAGLIABUE": "Arianna Soldati / Nicholas Tagliabue",
+     "Aneta VACLAVIKOVA / William LISSAUER": "Aneta Vaclavikova / William Lissauer",
+     "Liliia LITENKO / Aleksandr RYZHENKOV": "Лилия Литенко / Александр Рыженков",
+     "Maite van MULDERS / Tudor Dominic ANDREI": "Maite van Mulders / Tudor Dominic Andrei",
+     "Aletta LANYI / Ilya LAURENAU": "Aletta Lanyi / Ilya Laurenau",
+     "Carlota GARCIA BARRANCO / Aleksandr OSTROVSKII": "Carlota Garcia Barranco / Александр Островский",
+     "Laura BALCERSKA / David DIADCHENKO": "Laura Balcerska / David Diadchenko",
+     "Eniko KOBOR / Zoard KOBOR": "Eniko Kobor / Zoard Kobor",
+     "Alexandra ROUSKOVA / Lukas TOMAN": "Alexandra Rouskova / Lukas Toman",
+     "Annabel MANN / Jack HAMMOND": "Annabel Mann / Jack Hammond",
+     "Chanelle CHUM / Osckar CHUM": "Chanelle Chum / Osckar Chum",
+     "Rose Anne Marie BORDET / Hugo TOMAS": "Rose Anne Marie Bordet / Hugo Tomas",
+     "Klara VLCKOVA / Tomas VLCEK": "Klara Vlckova / Tomas Vlcek",
+     "Lena ZERINVARY-SIMON / Huba GALLAI": "Lena Zerinvary-simon / Huba Gallai",
+     "Villo Mira SZILAGYI / Istvan JARACS": "Villo Mira Szilagyi / Istvan Jaracs",
+     "Siloe Nayeli Clai. DESBOIS-RENAUDIN / Enzo TOMAS": "Siloe Nayeli Clai. Desbois-renaudin / Enzo Tomas",
+     "Anna RUIS / Andrew Cayden EVERT": "Anna Ruis / Andrew Cayden Evert"
+    },
+    "basis": "judges"
+   },
    "facts": [
     {
-     "who": "Hana Maria Aboian / Daniil Veselukhin",
-     "text": "Лучшая среди юниоров сумма сезона: 170.37",
-     "kind": "score"
-    },
-    {
-     "who": "Hana Maria Aboian / Daniil Veselukhin",
-     "text": "Личный рекорд по сумме: 170.37 (был 167.11)",
-     "kind": "score"
-    },
-    {
      "who": "Zoe Bianchi / Daniel Basile",
-     "text": "Личный рекорд по сумме: 164.89 (был 160.28)",
+     "text": "Личный рекорд за ПТ: 99.34 (был 96.90)",
      "kind": "score"
+    },
+    {
+     "who": "Arianna Soldati / Nicholas Tagliabue",
+     "text": "Личный рекорд за ПТ: 94.47 (был 91.86)",
+     "kind": "score"
+    },
+    {
+     "kind": "score",
+     "text": "Лучшая среди юниоров сумма сезона: 170.37",
+     "who": "Hana Maria Aboian / Daniil Veselukhin"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 170.37 (был 167.11)",
+     "who": "Hana Maria Aboian / Daniil Veselukhin"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 164.89 (был 160.28)",
+     "who": "Zoe Bianchi / Daniel Basile"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-senior-pt",
@@ -29103,7 +29125,7 @@
    "seg": "ПТ",
    "title": "CS Budapest Trophy — танцы ПТ",
    "start": "2026-10-18T09:00:00+03:00",
-   "end": "2026-10-18T12:32:00+03:00",
+   "end": "2026-10-18T12:45:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [
@@ -29113,20 +29135,20 @@
     {
      "name": "Милана Кузьмина / Дмитрий Студеникин",
      "nation": "RUS",
-     "time": "10:34",
      "no": 10,
      "warmup": 3,
      "place": 11,
-     "final": 12
+     "final": 12,
+     "time": "10:34"
     },
     {
      "name": "Василиса Григорьева / Евгений Артющенко",
      "nation": "RUS",
-     "time": "10:41",
      "no": 11,
      "warmup": 3,
      "place": 9,
-     "final": 11
+     "final": 11,
+     "time": "10:41"
     }
    ],
    "athletes": [
@@ -29160,239 +29182,6 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Итог:\n1. Natalie Taschlerova / Filip Taschler — 109.41\n2. Yuka Orihara / Juho Pirinen — 108.63\n3. Noemi Maria Tali / Noah Lafornara — 106.08\n\nИтог турнира:\n1. Natalie Taschlerova / Filip Taschler — 185.66\n2. Olivia Smart / Tim Dieck — 185.09\n3. Yuka Orihara / Juho Pirinen — 182.73\n\nРоссияне:\n• Милана Кузьмина / Дмитрий Студеникин — 10:34\n• Василиса Григорьева / Евгений Артющенко — 10:41\n\nНачало: 09:00 МСК\nТрансляция: HunSkate TV",
-   "field": [
-    {
-     "name": "Luiza-Elena Ilie / Giovanni Stefano Poli",
-     "nation": "ROU",
-     "time": "09:05",
-     "no": 1,
-     "warmup": 1,
-     "place": 22,
-     "final": 22
-    },
-    {
-     "name": "Alisa Ovsiankina / Maximilien Rahier",
-     "nation": "FRA",
-     "time": "09:12",
-     "no": 2,
-     "warmup": 1,
-     "place": 18,
-     "final": 18
-    },
-    {
-     "name": "Shira Ichilov / Mikhail Nosovitskiy",
-     "nation": "ISR",
-     "time": "09:19",
-     "no": 3,
-     "warmup": 1,
-     "place": 13,
-     "final": 14
-    },
-    {
-     "name": "Gina Zehnder / Beda Leon Sieber",
-     "nation": "SUI",
-     "time": "09:26",
-     "no": 4,
-     "warmup": 1,
-     "place": 15,
-     "final": 17
-    },
-    {
-     "name": "Anita Straub / Andreas Straub",
-     "nation": "AUT",
-     "time": "09:39",
-     "no": 5,
-     "warmup": 2,
-     "place": 19,
-     "final": 19
-    },
-    {
-     "name": "Philomene Sabourin / Raul Bermejo",
-     "nation": "ESP",
-     "time": "09:46",
-     "no": 6,
-     "warmup": 2,
-     "place": 21,
-     "final": 21
-    },
-    {
-     "name": "Chloe Nguyen / Brendan Giang",
-     "nation": "CAN",
-     "time": "09:53",
-     "no": 7,
-     "warmup": 2,
-     "place": 16,
-     "final": 16
-    },
-    {
-     "name": "Emese Csiszer / Mark Shapiro",
-     "nation": "HUN",
-     "time": "10:00",
-     "no": 8,
-     "warmup": 2,
-     "place": 20,
-     "final": 20
-    },
-    {
-     "name": "Zofia Grzegorzewska / Oleg Muratov",
-     "nation": "POL",
-     "time": "10:27",
-     "no": 9,
-     "warmup": 3,
-     "place": 17,
-     "final": 15
-    },
-    {
-     "name": "Милана Кузьмина / Дмитрий Студеникин",
-     "nation": "RUS",
-     "time": "10:34",
-     "no": 10,
-     "warmup": 3,
-     "place": 11,
-     "final": 12
-    },
-    {
-     "name": "Василиса Григорьева / Евгений Артющенко",
-     "nation": "RUS",
-     "time": "10:41",
-     "no": 11,
-     "warmup": 3,
-     "place": 9,
-     "final": 11
-    },
-    {
-     "name": "Charise Matthaei / Max Liebers",
-     "nation": "GER",
-     "time": "10:48",
-     "no": 12,
-     "warmup": 3,
-     "place": 14,
-     "final": 13
-    },
-    {
-     "name": "Jamie Fournier / Everest Zhu",
-     "nation": "CAN",
-     "time": "11:01",
-     "no": 13,
-     "warmup": 4,
-     "place": 10,
-     "final": 10
-    },
-    {
-     "name": "Amy Cui / Jonathan Rogers",
-     "nation": "USA",
-     "time": "11:08",
-     "no": 14,
-     "warmup": 4,
-     "place": 5,
-     "final": 6
-    },
-    {
-     "name": "Iryna Pidgaina / Artem Koval",
-     "nation": "UKR",
-     "time": "11:15",
-     "no": 15,
-     "warmup": 4,
-     "place": 8,
-     "final": 8
-    },
-    {
-     "name": "Noemi Maria Tali / Noah Lafornara",
-     "nation": "ITA",
-     "time": "11:22",
-     "no": 16,
-     "warmup": 4,
-     "place": 3,
-     "final": 5
-    },
-    {
-     "name": "Giulia Isabella Paolino / Andrea Tuba",
-     "nation": "ITA",
-     "time": "11:29",
-     "no": 17,
-     "warmup": 4,
-     "place": 6,
-     "final": 7
-    },
-    {
-     "name": "Emily Bratti / Ian Somerville",
-     "nation": "USA",
-     "time": "11:56",
-     "no": 18,
-     "warmup": 5,
-     "place": 12,
-     "final": 9
-    },
-    {
-     "name": "Yuka Orihara / Juho Pirinen",
-     "nation": "FIN",
-     "time": "12:03",
-     "no": 19,
-     "warmup": 5,
-     "place": 2,
-     "final": 3
-    },
-    {
-     "name": "Loicia Demougeot / Theo le Mercier",
-     "nation": "FRA",
-     "time": "12:10",
-     "no": 20,
-     "warmup": 5,
-     "place": 7,
-     "final": 4
-    },
-    {
-     "name": "Natalie Taschlerova / Filip Taschler",
-     "nation": "CZE",
-     "time": "12:17",
-     "no": 21,
-     "warmup": 5,
-     "place": 1,
-     "final": 1
-    },
-    {
-     "name": "Olivia Smart / Tim Dieck",
-     "nation": "ESP",
-     "time": "12:24",
-     "no": 22,
-     "warmup": 5,
-     "place": 4,
-     "final": 2
-    }
-   ],
-   "live": {
-    "idx": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
-    "seg": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG006.htm",
-    "cat": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/CAT003RS.htm",
-    "first": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG005.htm",
-    "names": {
-     "Luiza-Elena ILIE / Giovanni Stefano POLI": "Luiza-Elena Ilie / Giovanni Stefano Poli",
-     "Alisa OVSIANKINA / Maximilien RAHIER": "Alisa Ovsiankina / Maximilien Rahier",
-     "Shira ICHILOV / Mikhail NOSOVITSKIY": "Shira Ichilov / Mikhail Nosovitskiy",
-     "Gina ZEHNDER / Beda Leon SIEBER": "Gina Zehnder / Beda Leon Sieber",
-     "Anita STRAUB / Andreas STRAUB": "Anita Straub / Andreas Straub",
-     "Philomene SABOURIN / Raul BERMEJO": "Philomene Sabourin / Raul Bermejo",
-     "Chloe NGUYEN / Brendan GIANG": "Chloe Nguyen / Brendan Giang",
-     "Emese CSISZER / Mark SHAPIRO": "Emese Csiszer / Mark Shapiro",
-     "Zofia GRZEGORZEWSKA / Oleg MURATOV": "Zofia Grzegorzewska / Oleg Muratov",
-     "Milana KUZMINA / Dmitrii STUDENIKIN": "Милана Кузьмина / Дмитрий Студеникин",
-     "Vasilisa GRIGOREVA / Evgenii ARTIUSHCHENKO": "Василиса Григорьева / Евгений Артющенко",
-     "Charise MATTHAEI / Max LIEBERS": "Charise Matthaei / Max Liebers",
-     "Jamie FOURNIER / Everest ZHU": "Jamie Fournier / Everest Zhu",
-     "Amy CUI / Jonathan ROGERS": "Amy Cui / Jonathan Rogers",
-     "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Artem Koval",
-     "Noemi Maria TALI / Noah LAFORNARA": "Noemi Maria Tali / Noah Lafornara",
-     "Giulia Isabella PAOLINO / Andrea TUBA": "Giulia Isabella Paolino / Andrea Tuba",
-     "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
-     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
-     "Loicia DEMOUGEOT / Theo le MERCIER": "Loicia Demougeot / Theo le Mercier",
-     "Natalie TASCHLEROVA / Filip TASCHLER": "Natalie Taschlerova / Filip Taschler",
-     "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-cs-budapest-trophy.json",
    "podium": [
     {
      "place": 1,
@@ -29432,7 +29221,240 @@
      "nation": "FIN",
      "points": "182.73"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Natalie Taschlerova / Filip Taschler — 109.41\n2. Yuka Orihara / Juho Pirinen — 108.63\n3. Noemi Maria Tali / Noah Lafornara — 106.08\n\nИтог турнира:\n1. Natalie Taschlerova / Filip Taschler — 185.66\n2. Olivia Smart / Tim Dieck — 185.09\n3. Yuka Orihara / Juho Pirinen — 182.73\n\nРоссияне:\n• Милана Кузьмина / Дмитрий Студеникин — 10:34\n• Василиса Григорьева / Евгений Артющенко — 10:41\n\nНачало: 09:00 МСК\nТрансляция: HunSkate TV",
+   "field": [
+    {
+     "name": "Luiza-Elena Ilie / Giovanni Stefano Poli",
+     "nation": "ROU",
+     "no": 1,
+     "warmup": 1,
+     "place": 22,
+     "final": 22,
+     "time": "09:05"
+    },
+    {
+     "name": "Alisa Ovsiankina / Maximilien Rahier",
+     "nation": "FRA",
+     "no": 2,
+     "warmup": 1,
+     "place": 18,
+     "final": 18,
+     "time": "09:12"
+    },
+    {
+     "name": "Shira Ichilov / Mikhail Nosovitskiy",
+     "nation": "ISR",
+     "no": 3,
+     "warmup": 1,
+     "place": 13,
+     "final": 14,
+     "time": "09:19"
+    },
+    {
+     "name": "Gina Zehnder / Beda Leon Sieber",
+     "nation": "SUI",
+     "no": 4,
+     "warmup": 1,
+     "place": 15,
+     "final": 17,
+     "time": "09:26"
+    },
+    {
+     "name": "Anita Straub / Andreas Straub",
+     "nation": "AUT",
+     "no": 5,
+     "warmup": 2,
+     "place": 19,
+     "final": 19,
+     "time": "09:39"
+    },
+    {
+     "name": "Philomene Sabourin / Raul Bermejo",
+     "nation": "ESP",
+     "no": 6,
+     "warmup": 2,
+     "place": 21,
+     "final": 21,
+     "time": "09:46"
+    },
+    {
+     "name": "Chloe Nguyen / Brendan Giang",
+     "nation": "CAN",
+     "no": 7,
+     "warmup": 2,
+     "place": 16,
+     "final": 16,
+     "time": "09:53"
+    },
+    {
+     "name": "Emese Csiszer / Mark Shapiro",
+     "nation": "HUN",
+     "no": 8,
+     "warmup": 2,
+     "place": 20,
+     "final": 20,
+     "time": "10:00"
+    },
+    {
+     "name": "Zofia Grzegorzewska / Oleg Muratov",
+     "nation": "POL",
+     "no": 9,
+     "warmup": 3,
+     "place": 17,
+     "final": 15,
+     "time": "10:27"
+    },
+    {
+     "name": "Милана Кузьмина / Дмитрий Студеникин",
+     "nation": "RUS",
+     "no": 10,
+     "warmup": 3,
+     "place": 11,
+     "final": 12,
+     "time": "10:34"
+    },
+    {
+     "name": "Василиса Григорьева / Евгений Артющенко",
+     "nation": "RUS",
+     "no": 11,
+     "warmup": 3,
+     "place": 9,
+     "final": 11,
+     "time": "10:41"
+    },
+    {
+     "name": "Charise Matthaei / Max Liebers",
+     "nation": "GER",
+     "no": 12,
+     "warmup": 3,
+     "place": 14,
+     "final": 13,
+     "time": "10:48"
+    },
+    {
+     "name": "Jamie Fournier / Everest Zhu",
+     "nation": "CAN",
+     "no": 13,
+     "warmup": 4,
+     "place": 10,
+     "final": 10,
+     "time": "11:01"
+    },
+    {
+     "name": "Amy Cui / Jonathan Rogers",
+     "nation": "USA",
+     "no": 14,
+     "warmup": 4,
+     "place": 5,
+     "final": 6,
+     "time": "11:08"
+    },
+    {
+     "name": "Iryna Pidgaina / Artem Koval",
+     "nation": "UKR",
+     "no": 15,
+     "warmup": 4,
+     "place": 8,
+     "final": 8,
+     "time": "11:15"
+    },
+    {
+     "name": "Noemi Maria Tali / Noah Lafornara",
+     "nation": "ITA",
+     "no": 16,
+     "warmup": 4,
+     "place": 3,
+     "final": 5,
+     "time": "11:22"
+    },
+    {
+     "name": "Giulia Isabella Paolino / Andrea Tuba",
+     "nation": "ITA",
+     "no": 17,
+     "warmup": 4,
+     "place": 6,
+     "final": 7,
+     "time": "11:29"
+    },
+    {
+     "name": "Emily Bratti / Ian Somerville",
+     "nation": "USA",
+     "no": 18,
+     "warmup": 5,
+     "place": 12,
+     "final": 9,
+     "time": "11:56"
+    },
+    {
+     "name": "Yuka Orihara / Juho Pirinen",
+     "nation": "FIN",
+     "no": 19,
+     "warmup": 5,
+     "place": 2,
+     "final": 3,
+     "time": "12:03"
+    },
+    {
+     "name": "Loicia Demougeot / Theo le Mercier",
+     "nation": "FRA",
+     "no": 20,
+     "warmup": 5,
+     "place": 7,
+     "final": 4,
+     "time": "12:10"
+    },
+    {
+     "name": "Natalie Taschlerova / Filip Taschler",
+     "nation": "CZE",
+     "no": 21,
+     "warmup": 5,
+     "place": 1,
+     "final": 1,
+     "time": "12:17"
+    },
+    {
+     "name": "Olivia Smart / Tim Dieck",
+     "nation": "ESP",
+     "no": 22,
+     "warmup": 5,
+     "place": 4,
+     "final": 2,
+     "time": "12:24"
+    }
+   ],
+   "live": {
+    "idx": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
+    "seg": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG006.htm",
+    "cat": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/CAT003RS.htm",
+    "first": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG005.htm",
+    "names": {
+     "Natalie TASCHLEROVA / Filip TASCHLER": "Natalie Taschlerova / Filip Taschler",
+     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
+     "Noemi Maria TALI / Noah LAFORNARA": "Noemi Maria Tali / Noah Lafornara",
+     "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck",
+     "Amy CUI / Jonathan ROGERS": "Amy Cui / Jonathan Rogers",
+     "Giulia Isabella PAOLINO / Andrea TUBA": "Giulia Isabella Paolino / Andrea Tuba",
+     "Loicia DEMOUGEOT / Theo le MERCIER": "Loicia Demougeot / Theo le Mercier",
+     "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Artem Koval",
+     "Vasilisa GRIGOREVA / Evgenii ARTIUSHCHENKO": "Василиса Григорьева / Евгений Артющенко",
+     "Jamie FOURNIER / Everest ZHU": "Jamie Fournier / Everest Zhu",
+     "Milana KUZMINA / Dmitrii STUDENIKIN": "Милана Кузьмина / Дмитрий Студеникин",
+     "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
+     "Shira ICHILOV / Mikhail NOSOVITSKIY": "Shira Ichilov / Mikhail Nosovitskiy",
+     "Charise MATTHAEI / Max LIEBERS": "Charise Matthaei / Max Liebers",
+     "Gina ZEHNDER / Beda Leon SIEBER": "Gina Zehnder / Beda Leon Sieber",
+     "Chloe NGUYEN / Brendan GIANG": "Chloe Nguyen / Brendan Giang",
+     "Zofia GRZEGORZEWSKA / Oleg MURATOV": "Zofia Grzegorzewska / Oleg Muratov",
+     "Alisa OVSIANKINA / Maximilien RAHIER": "Alisa Ovsiankina / Maximilien Rahier",
+     "Anita STRAUB / Andreas STRAUB": "Anita Straub / Andreas Straub",
+     "Emese CSISZER / Mark SHAPIRO": "Emese Csiszer / Mark Shapiro",
+     "Philomene SABOURIN / Raul BERMEJO": "Philomene Sabourin / Raul Bermejo",
+     "Luiza-Elena ILIE / Giovanni Stefano POLI": "Luiza-Elena Ilie / Giovanni Stefano Poli"
+    },
+    "basis": "judges"
+   },
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:men-senior-pp",
@@ -29487,245 +29509,266 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Davide Lewton Brain — 117.85\n2. Makar Suntsev — 107.86\n3. Matvii Yefymenko — 104.36\n\nНачало: 12:50 МСК\nТрансляция: HunSkate TV",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Makar Suntsev",
+     "nation": "FIN",
+     "points": "107.86"
+    },
+    {
+     "place": 2,
+     "name": "Matvii Yefymenko",
+     "nation": "POL",
+     "points": "104.36"
+    },
+    {
+     "place": 3,
+     "name": "David Sedej",
+     "nation": "SLO",
+     "points": "100.57"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Makar Suntsev — 107.86\n2. Matvii Yefymenko — 104.36\n3. David Sedej — 100.57\n\nНачало: 12:50 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Aleksei Vlasenko",
      "nation": "HUN",
+     "place": 6,
      "time": "12:56",
      "no": 1,
-     "warmup": 1,
-     "place": 7
-    },
-    {
-     "name": "Douglas Gerber",
-     "nation": "AUS",
-     "time": "13:03",
-     "no": 2,
-     "warmup": 1,
-     "place": 6
-    },
-    {
-     "name": "Matvii Yefymenko",
-     "nation": "POL",
-     "time": "13:10",
-     "no": 3,
-     "warmup": 1,
-     "place": 3
-    },
-    {
-     "name": "Pablo Garcia",
-     "nation": "ESP",
-     "time": "13:17",
-     "no": 4,
-     "warmup": 1,
-     "place": 5
-    },
-    {
-     "name": "David Sedej",
-     "nation": "SLO",
-     "time": "13:24",
-     "no": 5,
-     "warmup": 1,
-     "place": 4
-    },
-    {
-     "name": "Makar Suntsev",
-     "nation": "FIN",
-     "time": "13:37",
-     "no": 6,
-     "warmup": 2,
-     "place": 2
-    },
-    {
-     "name": "Davide Lewton Brain",
-     "nation": "MON",
-     "time": "13:44",
-     "no": 7,
-     "warmup": 2,
-     "place": 1
-    },
-    {
-     "name": "Vladimir Samoilov",
-     "nation": "POL",
-     "time": "13:51",
-     "no": 8,
-     "warmup": 2,
-     "place": 8
-    },
-    {
-     "name": "Vadym Novikov",
-     "nation": "UKR",
-     "time": "13:58",
-     "no": 9,
-     "warmup": 2,
-     "place": 9
-    },
-    {
-     "name": "Tobia Oellerer",
-     "nation": "AUT",
-     "time": "14:05",
-     "no": 10,
-     "warmup": 2,
-     "place": 10
-    },
-    {
-     "name": "Nico Steffen",
-     "nation": "SUI",
-     "time": "14:33",
-     "no": 11,
-     "warmup": 3,
-     "place": 11
-    },
-    {
-     "name": "Nikita Krivosheyev",
-     "nation": "KAZ",
-     "time": "14:40",
-     "no": 12,
-     "warmup": 3,
-     "place": 12
-    },
-    {
-     "name": "Elias Sayed",
-     "nation": "SWE",
-     "time": "14:47",
-     "no": 13,
-     "warmup": 3,
-     "place": 13
+     "warmup": 1
     },
     {
      "name": "Andreas Nordeback",
      "nation": "SWE",
+     "place": 14,
      "time": "14:54",
      "no": 14,
-     "warmup": 3,
-     "place": 14
-    },
-    {
-     "name": "Taira Shinohara",
-     "nation": "USA",
-     "time": "15:01",
-     "no": 15,
-     "warmup": 3,
-     "place": 15
-    },
-    {
-     "name": "Nikita Starostin",
-     "nation": "GER",
-     "time": "15:08",
-     "no": 16,
-     "warmup": 3,
-     "place": 16
-    },
-    {
-     "name": "Fedirs Kuliss",
-     "nation": "LAT",
-     "time": "15:21",
-     "no": 17,
-     "warmup": 4,
-     "place": 17
-    },
-    {
-     "name": "Kevin Aymoz",
-     "nation": "FRA",
-     "time": "15:28",
-     "no": 18,
-     "warmup": 4,
-     "place": 18
-    },
-    {
-     "name": "Wesley Chiu",
-     "nation": "CAN",
-     "time": "15:35",
-     "no": 19,
-     "warmup": 4,
-     "place": 19
-    },
-    {
-     "name": "John Kim",
-     "nation": "CAN",
-     "time": "15:42",
-     "no": 20,
-     "warmup": 4,
-     "place": 20
-    },
-    {
-     "name": "Tamir Kuperman",
-     "nation": "ISR",
-     "time": "15:49",
-     "no": 21,
-     "warmup": 4,
-     "place": 21
-    },
-    {
-     "name": "Nikita Sheiko",
-     "nation": "ISR",
-     "time": "15:56",
-     "no": 22,
-     "warmup": 4,
-     "place": 22
-    },
-    {
-     "name": "Matias Lindfors",
-     "nation": "FIN",
-     "time": "16:24",
-     "no": 23,
-     "warmup": 5,
-     "place": 23
-    },
-    {
-     "name": "Patrick Blackwell",
-     "nation": "USA",
-     "time": "16:31",
-     "no": 24,
-     "warmup": 5,
-     "place": 24
-    },
-    {
-     "name": "Lukas Britschgi",
-     "nation": "SUI",
-     "time": "16:38",
-     "no": 25,
-     "warmup": 5,
-     "place": 25
+     "warmup": 3
     },
     {
      "name": "Arlet Levandi",
      "nation": "EST",
+     "place": 26,
      "time": "16:45",
      "no": 26,
-     "warmup": 5,
-     "place": 26
-    },
-    {
-     "name": "Genrikh Gartung",
-     "nation": "GER",
-     "time": "16:52",
-     "no": 27,
-     "warmup": 5,
-     "place": 27
+     "warmup": 5
     },
     {
      "name": "Daniel Grassl",
      "nation": "ITA",
+     "place": 28,
      "time": "16:59",
      "no": 28,
-     "warmup": 5,
-     "place": 28
+     "warmup": 5
+    },
+    {
+     "name": "David Sedej",
+     "nation": "SLO",
+     "place": 3,
+     "time": "13:24",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Davide Lewton Brain",
+     "nation": "MON",
+     "place": 7,
+     "time": "13:44",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Douglas Gerber",
+     "nation": "AUS",
+     "place": 5,
+     "time": "13:03",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Elias Sayed",
+     "nation": "SWE",
+     "place": 13,
+     "time": "14:47",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Fedirs Kuliss",
+     "nation": "LAT",
+     "place": 17,
+     "time": "15:21",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Genrikh Gartung",
+     "nation": "GER",
+     "place": 27,
+     "time": "16:52",
+     "no": 27,
+     "warmup": 5
+    },
+    {
+     "name": "John Kim",
+     "nation": "CAN",
+     "place": 20,
+     "time": "15:42",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Kevin Aymoz",
+     "nation": "FRA",
+     "place": 18,
+     "time": "15:28",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Lukas Britschgi",
+     "nation": "SUI",
+     "place": 25,
+     "time": "16:38",
+     "no": 25,
+     "warmup": 5
+    },
+    {
+     "name": "Makar Suntsev",
+     "nation": "FIN",
+     "place": 1,
+     "time": "13:37",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Matias Lindfors",
+     "nation": "FIN",
+     "place": 23,
+     "time": "16:24",
+     "no": 23,
+     "warmup": 5
+    },
+    {
+     "name": "Matvii Yefymenko",
+     "nation": "POL",
+     "place": 2,
+     "time": "13:10",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Nico Steffen",
+     "nation": "SUI",
+     "place": 11,
+     "time": "14:33",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Nikita Krivosheyev",
+     "nation": "KAZ",
+     "place": 12,
+     "time": "14:40",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Nikita Sheiko",
+     "nation": "ISR",
+     "place": 22,
+     "time": "15:56",
+     "no": 22,
+     "warmup": 4
+    },
+    {
+     "name": "Nikita Starostin",
+     "nation": "GER",
+     "place": 16,
+     "time": "15:08",
+     "no": 16,
+     "warmup": 3
+    },
+    {
+     "name": "Pablo Garcia",
+     "nation": "ESP",
+     "place": 4,
+     "time": "13:17",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Patrick Blackwell",
+     "nation": "USA",
+     "place": 24,
+     "time": "16:31",
+     "no": 24,
+     "warmup": 5
+    },
+    {
+     "name": "Taira Shinohara",
+     "nation": "USA",
+     "place": 15,
+     "time": "15:01",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Tamir Kuperman",
+     "nation": "ISR",
+     "place": 21,
+     "time": "15:49",
+     "no": 21,
+     "warmup": 4
+    },
+    {
+     "name": "Tobia Oellerer",
+     "nation": "AUT",
+     "place": 10,
+     "time": "14:05",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Vadym Novikov",
+     "nation": "UKR",
+     "place": 9,
+     "time": "13:58",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "place": 8,
+     "time": "13:51",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Wesley Chiu",
+     "nation": "CAN",
+     "place": 19,
+     "time": "15:35",
+     "no": 19,
+     "warmup": 4
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
     "seg": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG002.htm",
     "cat": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/CAT001RS.htm",
     "first": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG001.htm",
     "names": {
-     "Aleksei VLASENKO": "Aleksei Vlasenko",
-     "Douglas GERBER": "Douglas Gerber",
+     "Makar SUNTSEV": "Makar Suntsev",
+     "David SEDEJ": "David Sedej",
      "Matvii YEFYMENKO": "Matvii Yefymenko",
      "Pablo GARCIA": "Pablo Garcia",
-     "David SEDEJ": "David Sedej",
-     "Makar SUNTSEV": "Makar Suntsev",
+     "Douglas GERBER": "Douglas Gerber",
+     "Aleksei VLASENKO": "Aleksei Vlasenko",
      "Davide LEWTON BRAIN": "Davide Lewton Brain",
      "Vladimir SAMOILOV": "Vladimir Samoilov",
      "Vadym NOVIKOV": "Vadym Novikov",
@@ -29751,28 +29794,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-budapest-trophy.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Davide Lewton Brain",
-     "nation": "MON",
-     "points": "117.85"
-    },
-    {
-     "place": 2,
-     "name": "Makar Suntsev",
-     "nation": "FIN",
-     "points": "107.86"
-    },
-    {
-     "place": 3,
-     "name": "Matvii Yefymenko",
-     "nation": "POL",
-     "points": "104.36"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:women-senior-pp",
@@ -29816,127 +29838,6 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Алиса Юрова — 128.53\n2. Ксения Гущина — 126.54\n3. Екатерина Кольцова — 122.09\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
-   "field": [
-    {
-     "name": "Анастасия Фурсова",
-     "nation": "БЕЛ",
-     "time": "13:07",
-     "no": 1,
-     "warmup": 1,
-     "place": 6
-    },
-    {
-     "name": "Алиса Юрова",
-     "nation": "ЛИП",
-     "time": "13:22",
-     "no": 3,
-     "warmup": 1,
-     "place": 1
-    },
-    {
-     "name": "Екатерина Кольцова",
-     "nation": "КОС",
-     "time": "13:30",
-     "no": 4,
-     "warmup": 1,
-     "place": 3
-    },
-    {
-     "name": "Александра Чаткина",
-     "nation": "СПБ",
-     "time": "13:37",
-     "no": 5,
-     "warmup": 1,
-     "place": 4
-    },
-    {
-     "name": "Ксения Гущина",
-     "nation": "СПБ",
-     "time": "13:45",
-     "no": 6,
-     "warmup": 1,
-     "place": 2
-    },
-    {
-     "name": "Софья Лукина",
-     "nation": "БАШ",
-     "time": "13:52",
-     "no": 2,
-     "warmup": 1,
-     "place": 5
-    },
-    {
-     "name": "Ксения Синицына",
-     "nation": "МОБ",
-     "time": "14:00",
-     "no": 7,
-     "warmup": 2,
-     "place": 7
-    },
-    {
-     "name": "Софья Муравьева",
-     "nation": "МОС",
-     "time": "14:07",
-     "no": 8,
-     "warmup": 2,
-     "place": 8
-    },
-    {
-     "name": "Риана Кадырова",
-     "nation": "ТАТ",
-     "time": "14:15",
-     "no": 9,
-     "warmup": 2,
-     "place": 9
-    },
-    {
-     "name": "Елизавета Куликова",
-     "nation": "МОС",
-     "time": "14:22",
-     "no": 10,
-     "warmup": 2,
-     "place": 10
-    },
-    {
-     "name": "Камилла Нелюбова",
-     "nation": "ЧУВ",
-     "time": "14:30",
-     "no": 11,
-     "warmup": 2,
-     "place": 11
-    },
-    {
-     "name": "Анна Фролова",
-     "nation": "СПБ",
-     "time": "14:37",
-     "no": 12,
-     "warmup": 2,
-     "place": 12
-    }
-   ],
-   "live": {
-    "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
-    "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG004.htm",
-    "cat": "https://fsrussia.ru/results/2627/1etap_sen/CAT002RS.htm",
-    "first": "https://fsrussia.ru/results/2627/1etap_sen/SEG003.htm",
-    "names": {
-     "Анастасия ФУРСОВА": "Анастасия Фурсова",
-     "Софья ЛУКИНА": "Софья Лукина",
-     "Алиса ЮРОВА": "Алиса Юрова",
-     "Екатерина КОЛЬЦОВА": "Екатерина Кольцова",
-     "Александра ЧАТКИНА": "Александра Чаткина",
-     "Ксения ГУЩИНА": "Ксения Гущина",
-     "Ксения СИНИЦЫНА": "Ксения Синицына",
-     "Софья МУРАВЬЕВА": "Софья Муравьева",
-     "Риана КАДЫРОВА": "Риана Кадырова",
-     "Елизавета КУЛИКОВА": "Елизавета Куликова",
-     "Камилла НЕЛЮБОВА": "Камилла Нелюбова",
-     "Анна ФРОЛОВА": "Анна Фролова"
-    },
-    "basis": null
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json",
    "podium": [
     {
      "place": 1,
@@ -29952,12 +29853,133 @@
     },
     {
      "place": 3,
-     "name": "Екатерина Кольцова",
-     "nation": "КОС",
-     "points": "122.09"
+     "name": "Александра Чаткина",
+     "nation": "СПБ",
+     "points": "115.23"
     }
    ],
-   "provisional": true
+   "desc": "Промежуточные итоги:\n1. Алиса Юрова — 128.53\n2. Екатерина Кольцова — 122.09\n3. Александра Чаткина — 115.23\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Александра Чаткина",
+     "nation": "СПБ",
+     "place": 3,
+     "time": "13:37",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Алиса Юрова",
+     "nation": "ЛИП",
+     "place": 1,
+     "time": "13:22",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Анастасия Фурсова",
+     "nation": "БЕЛ",
+     "place": 5,
+     "time": "13:07",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Анна Фролова",
+     "nation": "СПБ",
+     "place": 12,
+     "time": "14:37",
+     "no": 12,
+     "warmup": 2
+    },
+    {
+     "name": "Екатерина Кольцова",
+     "nation": "КОС",
+     "place": 2,
+     "time": "13:30",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Елизавета Куликова",
+     "nation": "МОС",
+     "place": 10,
+     "time": "14:22",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Камилла Нелюбова",
+     "nation": "ЧУВ",
+     "place": 11,
+     "time": "14:30",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Ксения Гущина",
+     "nation": "СПБ",
+     "place": 6,
+     "time": "13:45",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Ксения Синицына",
+     "nation": "МОБ",
+     "place": 7,
+     "time": "14:00",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Риана Кадырова",
+     "nation": "ТАТ",
+     "place": 9,
+     "time": "14:15",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Софья Лукина",
+     "nation": "БАШ",
+     "place": 4,
+     "time": "13:52",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Софья Муравьева",
+     "nation": "МОС",
+     "place": 8,
+     "time": "14:07",
+     "no": 8,
+     "warmup": 2
+    }
+   ],
+   "provisional": true,
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG004.htm",
+    "cat": "https://fsrussia.ru/results/2627/1etap_sen/CAT002RS.htm",
+    "first": "https://fsrussia.ru/results/2627/1etap_sen/SEG003.htm",
+    "names": {
+     "Алиса ЮРОВА": "Алиса Юрова",
+     "Екатерина КОЛЬЦОВА": "Екатерина Кольцова",
+     "Александра ЧАТКИНА": "Александра Чаткина",
+     "Софья ЛУКИНА": "Софья Лукина",
+     "Анастасия ФУРСОВА": "Анастасия Фурсова",
+     "Ксения ГУЩИНА": "Ксения Гущина",
+     "Ксения СИНИЦЫНА": "Ксения Синицына",
+     "Софья МУРАВЬЕВА": "Софья Муравьева",
+     "Риана КАДЫРОВА": "Риана Кадырова",
+     "Елизавета КУЛИКОВА": "Елизавета Куликова",
+     "Камилла НЕЛЮБОВА": "Камилла Нелюбова",
+     "Анна ФРОЛОВА": "Анна Фролова"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men-senior-pp",
@@ -30227,7 +30249,7 @@
    "seg": "ПП",
    "title": "CS Budapest Trophy — женщины ПП",
    "start": "2026-10-18T17:25:00+03:00",
-   "end": "2026-10-18T23:35:00+03:00",
+   "end": "2026-10-18T23:12:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [
@@ -30236,7 +30258,10 @@
    "ours": [
     {
      "name": "Алина Горбачёва",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "23:04",
+     "no": 37,
+     "warmup": 7
     }
    ],
    "athletes": [
@@ -30285,155 +30310,266 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Россияне:\n• Алина Горбачёва\n\nНачало: 17:25 МСК\nТрансляция: HunSkate TV",
+   "desc": "Россияне:\n• Алина Горбачёва — 23:04\n\nНачало: 17:25 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
-     "name": "Alexandra Feigin",
-     "nation": "BUL"
-    },
-    {
-     "name": "Alina Bonillo",
-     "nation": "USA"
-    },
-    {
-     "name": "Ana Stratulat",
-     "nation": "ROU"
-    },
-    {
-     "name": "Anita Ostlund",
-     "nation": "SWE"
-    },
-    {
-     "name": "Anna Pezzetta",
-     "nation": "ITA"
-    },
-    {
      "name": "Annika Lytchoff Skibby",
-     "nation": "DEN"
-    },
-    {
-     "name": "Elizabet Gervits",
-     "nation": "ISR"
-    },
-    {
-     "name": "Hannah Frank",
-     "nation": "AUT"
-    },
-    {
-     "name": "Haruna Murakami",
-     "nation": "AUS"
-    },
-    {
-     "name": "Inga Gurgenidze",
-     "nation": "GEO"
-    },
-    {
-     "name": "Julia Kasprzyk",
-     "nation": "POL"
-    },
-    {
-     "name": "Julia Sauter",
-     "nation": "ROU"
-    },
-    {
-     "name": "Julia van Dijk",
-     "nation": "NED"
-    },
-    {
-     "name": "Kimmy Repond",
-     "nation": "SUI"
-    },
-    {
-     "name": "Livia Kaiser",
-     "nation": "SUI"
-    },
-    {
-     "name": "Lotta Artimo",
-     "nation": "FIN"
-    },
-    {
-     "name": "Lovisa Aav",
-     "nation": "SWE"
-    },
-    {
-     "name": "Madeline Schizas",
-     "nation": "CAN"
-    },
-    {
-     "name": "Maria Eliise Kaljuvere",
-     "nation": "EST"
-    },
-    {
-     "name": "Mariia Dmitrieva",
-     "nation": "ISR"
-    },
-    {
-     "name": "Marina Piredda",
-     "nation": "ITA"
-    },
-    {
-     "name": "Maxine Bautista",
-     "nation": "PHI"
-    },
-    {
-     "name": "Meda Variakojyte",
-     "nation": "LTU"
-    },
-    {
-     "name": "Mia Risa Gomez",
-     "nation": "NOR"
-    },
-    {
-     "name": "Michaela Vrastakova",
-     "nation": "CZE"
-    },
-    {
-     "name": "Nataly Langerbaur",
-     "nation": "EST"
-    },
-    {
-     "name": "Nikola Fomchenkova",
-     "nation": "LAT"
-    },
-    {
-     "name": "Olga Mikutina",
-     "nation": "AUT"
-    },
-    {
-     "name": "Pernille With",
-     "nation": "NOR"
-    },
-    {
-     "name": "Polina Dzsumanyijazova",
-     "nation": "HUN"
-    },
-    {
-     "name": "Sara-Maude Dupuis",
-     "nation": "CAN"
-    },
-    {
-     "name": "Saskia Oudejans",
-     "nation": "NED"
-    },
-    {
-     "name": "Sofja Stepcenko",
-     "nation": "LAT"
-    },
-    {
-     "name": "Sophie Joline von Felten",
-     "nation": "USA"
+     "nation": "DEN",
+     "time": "17:31",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Weronika Ferlin",
-     "nation": "POL"
+     "nation": "POL",
+     "time": "17:38",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Lovisa Aav",
+     "nation": "SWE",
+     "time": "17:45",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Saskia Oudejans",
+     "nation": "NED",
+     "time": "17:52",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Ana Stratulat",
+     "nation": "ROU",
+     "time": "17:59",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Mariia Dmitrieva",
+     "nation": "ISR",
+     "time": "18:12",
+     "no": 6,
+     "warmup": 2
     },
     {
      "name": "Zere Sarbalina",
-     "nation": "KAZ"
+     "nation": "KAZ",
+     "time": "18:19",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Meda Variakojyte",
+     "nation": "LTU",
+     "time": "18:26",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Michaela Vrastakova",
+     "nation": "CZE",
+     "time": "18:33",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Julia van Dijk",
+     "nation": "NED",
+     "time": "18:40",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Maxine Bautista",
+     "nation": "PHI",
+     "time": "19:08",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Haruna Murakami",
+     "nation": "AUS",
+     "time": "19:15",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Lotta Artimo",
+     "nation": "FIN",
+     "time": "19:22",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Elizabet Gervits",
+     "nation": "ISR",
+     "time": "19:29",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Nikola Fomchenkova",
+     "nation": "LAT",
+     "time": "19:36",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Pernille With",
+     "nation": "NOR",
+     "time": "19:49",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Sofja Stepcenko",
+     "nation": "LAT",
+     "time": "19:56",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Julia Kasprzyk",
+     "nation": "POL",
+     "time": "20:03",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Alexandra Feigin",
+     "nation": "BUL",
+     "time": "20:10",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Mia Risa Gomez",
+     "nation": "NOR",
+     "time": "20:17",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Nataly Langerbaur",
+     "nation": "EST",
+     "time": "20:45",
+     "no": 21,
+     "warmup": 5
+    },
+    {
+     "name": "Hannah Frank",
+     "nation": "AUT",
+     "time": "20:52",
+     "no": 22,
+     "warmup": 5
+    },
+    {
+     "name": "Anna Pezzetta",
+     "nation": "ITA",
+     "time": "20:59",
+     "no": 23,
+     "warmup": 5
+    },
+    {
+     "name": "Polina Dzsumanyijazova",
+     "nation": "HUN",
+     "time": "21:06",
+     "no": 24,
+     "warmup": 5
+    },
+    {
+     "name": "Sara-Maude Dupuis",
+     "nation": "CAN",
+     "time": "21:13",
+     "no": 25,
+     "warmup": 5
+    },
+    {
+     "name": "Marina Piredda",
+     "nation": "ITA",
+     "time": "21:26",
+     "no": 26,
+     "warmup": 6
+    },
+    {
+     "name": "Sophie Joline von Felten",
+     "nation": "USA",
+     "time": "21:33",
+     "no": 27,
+     "warmup": 6
+    },
+    {
+     "name": "Alina Bonillo",
+     "nation": "USA",
+     "time": "21:40",
+     "no": 28,
+     "warmup": 6
+    },
+    {
+     "name": "Madeline Schizas",
+     "nation": "CAN",
+     "time": "21:47",
+     "no": 29,
+     "warmup": 6
+    },
+    {
+     "name": "Anita Ostlund",
+     "nation": "SWE",
+     "time": "21:54",
+     "no": 30,
+     "warmup": 6
+    },
+    {
+     "name": "Livia Kaiser",
+     "nation": "SUI",
+     "time": "22:01",
+     "no": 31,
+     "warmup": 6
+    },
+    {
+     "name": "Kimmy Repond",
+     "nation": "SUI",
+     "time": "22:29",
+     "no": 32,
+     "warmup": 7
+    },
+    {
+     "name": "Olga Mikutina",
+     "nation": "AUT",
+     "time": "22:36",
+     "no": 33,
+     "warmup": 7
+    },
+    {
+     "name": "Inga Gurgenidze",
+     "nation": "GEO",
+     "time": "22:43",
+     "no": 34,
+     "warmup": 7
+    },
+    {
+     "name": "Julia Sauter",
+     "nation": "ROU",
+     "time": "22:50",
+     "no": 35,
+     "warmup": 7
+    },
+    {
+     "name": "Maria Eliise Kaljuvere",
+     "nation": "EST",
+     "time": "22:57",
+     "no": 36,
+     "warmup": 7
     },
     {
      "name": "Алина Горбачёва",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "23:04",
+     "no": 37,
+     "warmup": 7
     }
    ],
    "live": {
@@ -30442,43 +30578,43 @@
     "cat": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/CAT002RS.htm",
     "first": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG003.htm",
     "names": {
-     "Alina GORBACHEVA": "Алина Горбачёва",
-     "Haruna MURAKAMI": "Haruna Murakami",
-     "Hannah FRANK": "Hannah Frank",
-     "Olga MIKUTINA": "Olga Mikutina",
-     "Alexandra FEIGIN": "Alexandra Feigin",
-     "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
-     "Madeline SCHIZAS": "Madeline Schizas",
-     "Michaela VRASTAKOVA": "Michaela Vrastakova",
      "Annika Lytchoff SKIBBY": "Annika Lytchoff Skibby",
-     "Maria Eliise KALJUVERE": "Maria Eliise Kaljuvere",
-     "Nataly LANGERBAUR": "Nataly Langerbaur",
-     "Lotta ARTIMO": "Lotta Artimo",
-     "Inga GURGENIDZE": "Inga Gurgenidze",
-     "Polina DZSUMANYIJAZOVA": "Polina Dzsumanyijazova",
-     "Mariia DMITRIEVA": "Mariia Dmitrieva",
-     "Elizabet GERVITS": "Elizabet Gervits",
-     "Anna PEZZETTA": "Anna Pezzetta",
-     "Marina PIREDDA": "Marina Piredda",
-     "Zere SARBALINA": "Zere Sarbalina",
-     "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
-     "Sofja STEPCENKO": "Sofja Stepcenko",
-     "Meda VARIAKOJYTE": "Meda Variakojyte",
-     "Saskia OUDEJANS": "Saskia Oudejans",
-     "Julia van DIJK": "Julia van Dijk",
-     "Mia RISA GOMEZ": "Mia Risa Gomez",
-     "Pernille WITH": "Pernille With",
-     "Maxine BAUTISTA": "Maxine Bautista",
      "Weronika FERLIN": "Weronika Ferlin",
-     "Julia KASPRZYK": "Julia Kasprzyk",
-     "Julia SAUTER": "Julia Sauter",
+     "Lovisa AAV": "Lovisa Aav",
+     "Saskia OUDEJANS": "Saskia Oudejans",
      "Ana STRATULAT": "Ana Stratulat",
+     "Mariia DMITRIEVA": "Mariia Dmitrieva",
+     "Zere SARBALINA": "Zere Sarbalina",
+     "Meda VARIAKOJYTE": "Meda Variakojyte",
+     "Michaela VRASTAKOVA": "Michaela Vrastakova",
+     "Julia van DIJK": "Julia van Dijk",
+     "Maxine BAUTISTA": "Maxine Bautista",
+     "Haruna MURAKAMI": "Haruna Murakami",
+     "Lotta ARTIMO": "Lotta Artimo",
+     "Elizabet GERVITS": "Elizabet Gervits",
+     "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
+     "Pernille WITH": "Pernille With",
+     "Sofja STEPCENKO": "Sofja Stepcenko",
+     "Julia KASPRZYK": "Julia Kasprzyk",
+     "Alexandra FEIGIN": "Alexandra Feigin",
+     "Mia RISA GOMEZ": "Mia Risa Gomez",
+     "Nataly LANGERBAUR": "Nataly Langerbaur",
+     "Hannah FRANK": "Hannah Frank",
+     "Anna PEZZETTA": "Anna Pezzetta",
+     "Polina DZSUMANYIJAZOVA": "Polina Dzsumanyijazova",
+     "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
+     "Marina PIREDDA": "Marina Piredda",
+     "Sophie Joline von FELTEN": "Sophie Joline von Felten",
+     "Alina BONILLO": "Alina Bonillo",
+     "Madeline SCHIZAS": "Madeline Schizas",
+     "Anita OSTLUND": "Anita Ostlund",
      "Livia KAISER": "Livia Kaiser",
      "Kimmy REPOND": "Kimmy Repond",
-     "Lovisa AAV": "Lovisa Aav",
-     "Anita OSTLUND": "Anita Ostlund",
-     "Alina BONILLO": "Alina Bonillo",
-     "Sophie Joline von FELTEN": "Sophie Joline von Felten"
+     "Olga MIKUTINA": "Olga Mikutina",
+     "Inga GURGENIDZE": "Inga Gurgenidze",
+     "Julia SAUTER": "Julia Sauter",
+     "Maria Eliise KALJUVERE": "Maria Eliise Kaljuvere",
+     "Alina GORBACHEVA": "Алина Горбачёва"
     },
     "basis": null
    },
@@ -30493,7 +30629,7 @@
    "seg": "ПТ",
    "title": "Гран-при России «Рапсодия льда» — танцы ПТ",
    "start": "2026-10-18T18:45:00+03:00",
-   "end": "2026-10-18T19:55:00+03:00",
+   "end": "2026-10-18T20:00:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -30525,36 +30661,60 @@
    "desc": "Начало: 18:45 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
-     "name": "Алиса Абдуллина / Егор Петров",
-     "nation": "СПБ"
-    },
-    {
      "name": "Алиса Крайнюкова / Семен Нетсев",
-     "nation": "СТА"
-    },
-    {
-     "name": "Варвара Жданова / Тимур Бабаев-Смирнов",
-     "nation": "МОС"
-    },
-    {
-     "name": "Екатерина Рыбакова / Иван Махноносов",
-     "nation": "МОС"
-    },
-    {
-     "name": "Елизавета Пасечник / Дарио Чиризано",
-     "nation": "МОС"
-    },
-    {
-     "name": "Софья Леонтьева / Даниил Горелкин",
-     "nation": "МОС"
-    },
-    {
-     "name": "Софья Тютюнина / Матвей Грачев",
-     "nation": "МОС"
+     "nation": "СТА",
+     "time": "18:51",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Таисия Линчевская / Дмитрий Щербаков",
-     "nation": "МОС"
+     "nation": "МОС",
+     "time": "19:07",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Варвара Жданова / Тимур Бабаев-Смирнов",
+     "nation": "МОС",
+     "time": "19:15",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Алиса Абдуллина / Егор Петров",
+     "nation": "СПБ",
+     "time": "19:22",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Софья Тютюнина / Матвей Грачев",
+     "nation": "МОС",
+     "time": "19:29",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Екатерина Рыбакова / Иван Махноносов",
+     "nation": "МОС",
+     "time": "19:37",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Елизавета Пасечник / Дарио Чиризано",
+     "nation": "МОС",
+     "time": "19:45",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Софья Леонтьева / Даниил Горелкин",
+     "nation": "МОС",
+     "time": "19:52",
+     "no": 8,
+     "warmup": 2
     }
    ],
    "live": {
@@ -30563,14 +30723,14 @@
     "cat": "https://fsrussia.ru/results/2627/1etap_sen/CAT004RS.htm",
     "first": "https://fsrussia.ru/results/2627/1etap_sen/SEG007.htm",
     "names": {
-     "Алиса АБДУЛЛИНА / Егор ПЕТРОВ": "Алиса Абдуллина / Егор Петров",
-     "Варвара ЖДАНОВА / Тимур БАБАЕВ-СМИРНОВ": "Варвара Жданова / Тимур Бабаев-Смирнов",
      "Алиса КРАЙНЮКОВА / Семен НЕТСЕВ": "Алиса Крайнюкова / Семен Нетсев",
-     "Софья ЛЕОНТЬЕВА / Даниил ГОРЕЛКИН": "Софья Леонтьева / Даниил Горелкин",
+     "Алиса АБДУЛЛИНА / Егор ПЕТРОВ": "Алиса Абдуллина / Егор Петров",
      "Таисия ЛИНЧЕВСКАЯ / Дмитрий ЩЕРБАКОВ": "Таисия Линчевская / Дмитрий Щербаков",
-     "Елизавета ПАСЕЧНИК / Дарио ЧИРИЗАНО": "Елизавета Пасечник / Дарио Чиризано",
+     "Варвара ЖДАНОВА / Тимур БАБАЕВ-СМИРНОВ": "Варвара Жданова / Тимур Бабаев-Смирнов",
+     "Софья ТЮТЮНИНА / Матвей ГРАЧЕВ": "Софья Тютюнина / Матвей Грачев",
      "Екатерина РЫБАКОВА / Иван МАХНОНОСОВ": "Екатерина Рыбакова / Иван Махноносов",
-     "Софья ТЮТЮНИНА / Матвей ГРАЧЕВ": "Софья Тютюнина / Матвей Грачев"
+     "Елизавета ПАСЕЧНИК / Дарио ЧИРИЗАНО": "Елизавета Пасечник / Дарио Чиризано",
+     "Софья ЛЕОНТЬЕВА / Даниил ГОРЕЛКИН": "Софья Леонтьева / Даниил Горелкин"
     },
     "basis": null
    },
