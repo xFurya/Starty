@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-18T13:47:08+03:00",
- "checked": "2026-10-18T11:47:33.303565+00:00",
+ "checked": "2026-10-18T11:51:54.487998+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -29534,7 +29534,7 @@
     {
      "name": "Aleksei Vlasenko",
      "nation": "HUN",
-     "place": 11,
+     "place": 12,
      "time": "12:56",
      "no": 1,
      "warmup": 1
@@ -29566,7 +29566,7 @@
     {
      "name": "David Sedej",
      "nation": "SLO",
-     "place": 8,
+     "place": 9,
      "time": "13:24",
      "no": 5,
      "warmup": 1
@@ -29582,7 +29582,7 @@
     {
      "name": "Douglas Gerber",
      "nation": "AUS",
-     "place": 10,
+     "place": 11,
      "time": "13:03",
      "no": 2,
      "warmup": 1
@@ -29638,7 +29638,7 @@
     {
      "name": "Makar Suntsev",
      "nation": "FIN",
-     "place": 6,
+     "place": 7,
      "time": "13:37",
      "no": 6,
      "warmup": 2
@@ -29654,7 +29654,7 @@
     {
      "name": "Matvii Yefymenko",
      "nation": "POL",
-     "place": 7,
+     "place": 8,
      "time": "13:10",
      "no": 3,
      "warmup": 1
@@ -29670,7 +29670,7 @@
     {
      "name": "Nikita Krivosheyev",
      "nation": "KAZ",
-     "place": 12,
+     "place": 5,
      "time": "14:40",
      "no": 12,
      "warmup": 3
@@ -29694,7 +29694,7 @@
     {
      "name": "Pablo Garcia",
      "nation": "ESP",
-     "place": 9,
+     "place": 10,
      "time": "13:17",
      "no": 4,
      "warmup": 1
@@ -29726,7 +29726,7 @@
     {
      "name": "Tobia Oellerer",
      "nation": "AUT",
-     "place": 5,
+     "place": 6,
      "time": "14:05",
      "no": 10,
      "warmup": 2
@@ -29858,7 +29858,7 @@
      "points": "133.62"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Камилла Нелюбова — 146.86\n2. Ксения Синицына — 136.95\n3. Анна Фролова — 133.62\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Камилла Нелюбова — 146.86\n2. Ксения Синицына — 136.95\n3. Анна Фролова — 133.62\n\nИтог турнира:\n1. Камилла Нелюбова — 217.75\n2. Анна Фролова — 208.32\n3. Ксения Синицына — 199.83\n\nПримечательное:\n• Камилла Нелюбова — Тройной аксель\n• Ксения Синицына — После короткой программы — 6-е место, в итоге — 3-е место\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Александра Чаткина",
@@ -29866,7 +29866,8 @@
      "place": 9,
      "time": "13:37",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "final": 9
     },
     {
      "name": "Алиса Юрова",
@@ -29874,7 +29875,8 @@
      "place": 4,
      "time": "13:22",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 6
     },
     {
      "name": "Анастасия Фурсова",
@@ -29882,7 +29884,8 @@
      "place": 12,
      "time": "13:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 12
     },
     {
      "name": "Анна Фролова",
@@ -29890,7 +29893,8 @@
      "place": 3,
      "time": "14:37",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "final": 2
     },
     {
      "name": "Екатерина Кольцова",
@@ -29898,7 +29902,8 @@
      "place": 7,
      "time": "13:30",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 8
     },
     {
      "name": "Елизавета Куликова",
@@ -29906,7 +29911,8 @@
      "place": 8,
      "time": "14:22",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "final": 4
     },
     {
      "name": "Камилла Нелюбова",
@@ -29914,7 +29920,8 @@
      "place": 1,
      "time": "14:30",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "final": 1
     },
     {
      "name": "Ксения Гущина",
@@ -29922,7 +29929,8 @@
      "place": 5,
      "time": "13:45",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "final": 5
     },
     {
      "name": "Ксения Синицына",
@@ -29930,7 +29938,8 @@
      "place": 2,
      "time": "14:00",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "final": 3
     },
     {
      "name": "Риана Кадырова",
@@ -29938,7 +29947,8 @@
      "place": 6,
      "time": "14:15",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "final": 7
     },
     {
      "name": "Софья Лукина",
@@ -29946,7 +29956,8 @@
      "place": 11,
      "time": "13:52",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 11
     },
     {
      "name": "Софья Муравьева",
@@ -29954,10 +29965,10 @@
      "place": 10,
      "time": "14:07",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "final": 10
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG004.htm",
@@ -29977,9 +29988,41 @@
      "Камилла НЕЛЮБОВА": "Камилла Нелюбова",
      "Анна ФРОЛОВА": "Анна Фролова"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json",
+   "facts": [
+    {
+     "who": "Камилла Нелюбова",
+     "text": "Тройной аксель",
+     "kind": "element"
+    },
+    {
+     "who": "Ксения Синицына",
+     "text": "После короткой программы — 6-е место, в итоге — 3-е место",
+     "kind": "place"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Камилла Нелюбова",
+     "nation": "ЧУВ",
+     "points": "217.75"
+    },
+    {
+     "place": 2,
+     "name": "Анна Фролова",
+     "nation": "СПБ",
+     "points": "208.32"
+    },
+    {
+     "place": 3,
+     "name": "Ксения Синицына",
+     "nation": "МОБ",
+     "points": "199.83"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men-senior-pp",
