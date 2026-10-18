@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-18T13:47:08+03:00",
- "checked": "2026-10-18T15:47:53.232516+00:00",
+ "generated": "2026-10-18T18:35:23+03:00",
+ "checked": "2026-10-18T18:35:23+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -28327,14 +28327,14 @@
    },
    "facts": [
     {
-     "who": "Maria Eliise Kaljuvere",
+     "kind": "score",
      "text": "Личный рекорд за КП: 66.36 (был 63.52)",
-     "kind": "score"
+     "who": "Maria Eliise Kaljuvere"
     },
     {
-     "who": "Julia Sauter",
+     "kind": "score",
      "text": "Личный рекорд за КП: 65.53 (был 64.03)",
-     "kind": "score"
+     "who": "Julia Sauter"
     }
    ],
    "proto": "isu_isu-cs-budapest-trophy.json"
@@ -29089,14 +29089,14 @@
    },
    "facts": [
     {
-     "who": "Zoe Bianchi / Daniel Basile",
+     "kind": "score",
      "text": "Личный рекорд за ПТ: 99.34 (был 96.90)",
-     "kind": "score"
+     "who": "Zoe Bianchi / Daniel Basile"
     },
     {
-     "who": "Arianna Soldati / Nicholas Tagliabue",
+     "kind": "score",
      "text": "Личный рекорд за ПТ: 94.47 (был 91.86)",
-     "kind": "score"
+     "who": "Arianna Soldati / Nicholas Tagliabue"
     },
     {
      "kind": "score",
@@ -29465,7 +29465,7 @@
    "seg": "ПП",
    "title": "CS Budapest Trophy — мужчины ПП",
    "start": "2026-10-18T12:50:00+03:00",
-   "end": "2026-10-18T17:07:00+03:00",
+   "end": "2026-10-18T17:25:00+03:00",
    "venue": "Budapest, Hungary",
    "intl": true,
    "broadcast": [
@@ -29529,321 +29529,6 @@
      "points": "159.96"
     }
    ],
-   "desc": "Итог:\n1. Daniel Grassl — 171.70\n2. Patrick Blackwell — 164.49\n3. Lukas Britschgi — 159.96\n\nИтог турнира:\n1. Daniel Grassl — 268.84\n2. Patrick Blackwell — 242.93\n3. Lukas Britschgi — 240.01\n\nПримечательное:\n• Patrick Blackwell — Личный рекорд за ПП: 164.49 (был 152.14)\n• Patrick Blackwell — Личный рекорд по сумме: 242.93 (был 222.17)\n• Patrick Blackwell — После короткой программы — 5-е место, в итоге — 2-е место\n• Daniel Grassl — Отрыв от второго места — 25.91 балла\n\nНачало: 12:50 МСК\nТрансляция: HunSkate TV",
-   "field": [
-    {
-     "name": "Aleksei Vlasenko",
-     "nation": "HUN",
-     "place": 28,
-     "time": "12:56",
-     "no": 1,
-     "warmup": 1,
-     "final": 28
-    },
-    {
-     "name": "Andreas Nordeback",
-     "nation": "SWE",
-     "place": 6,
-     "time": "14:54",
-     "no": 14,
-     "warmup": 3,
-     "final": 8
-    },
-    {
-     "name": "Arlet Levandi",
-     "nation": "EST",
-     "place": 7,
-     "time": "16:45",
-     "no": 26,
-     "warmup": 5,
-     "final": 6
-    },
-    {
-     "name": "Daniel Grassl",
-     "nation": "ITA",
-     "place": 1,
-     "time": "16:59",
-     "no": 28,
-     "warmup": 5,
-     "final": 1
-    },
-    {
-     "name": "David Sedej",
-     "nation": "SLO",
-     "place": 25,
-     "time": "13:24",
-     "no": 5,
-     "warmup": 1,
-     "final": 24
-    },
-    {
-     "name": "Davide Lewton Brain",
-     "nation": "MON",
-     "place": 14,
-     "time": "13:44",
-     "no": 7,
-     "warmup": 2,
-     "final": 16
-    },
-    {
-     "name": "Douglas Gerber",
-     "nation": "AUS",
-     "place": 27,
-     "time": "13:03",
-     "no": 2,
-     "warmup": 1,
-     "final": 27
-    },
-    {
-     "name": "Elias Sayed",
-     "nation": "SWE",
-     "place": 23,
-     "time": "14:47",
-     "no": 13,
-     "warmup": 3,
-     "final": 22
-    },
-    {
-     "name": "Fedirs Kuliss",
-     "nation": "LAT",
-     "place": 22,
-     "time": "15:21",
-     "no": 17,
-     "warmup": 4,
-     "final": 17
-    },
-    {
-     "name": "Genrikh Gartung",
-     "nation": "GER",
-     "place": 5,
-     "time": "16:52",
-     "no": 27,
-     "warmup": 5,
-     "final": 4
-    },
-    {
-     "name": "John Kim",
-     "nation": "CAN",
-     "place": 10,
-     "time": "15:42",
-     "no": 20,
-     "warmup": 4,
-     "final": 10
-    },
-    {
-     "name": "Kevin Aymoz",
-     "nation": "FRA",
-     "place": 4,
-     "time": "15:28",
-     "no": 18,
-     "warmup": 4,
-     "final": 5
-    },
-    {
-     "name": "Lukas Britschgi",
-     "nation": "SUI",
-     "place": 3,
-     "time": "16:38",
-     "no": 25,
-     "warmup": 5,
-     "final": 3
-    },
-    {
-     "name": "Makar Suntsev",
-     "nation": "FIN",
-     "place": 21,
-     "time": "13:37",
-     "no": 6,
-     "warmup": 2,
-     "final": 23
-    },
-    {
-     "name": "Matias Lindfors",
-     "nation": "FIN",
-     "place": 12,
-     "time": "16:24",
-     "no": 23,
-     "warmup": 5,
-     "final": 9
-    },
-    {
-     "name": "Matvii Yefymenko",
-     "nation": "POL",
-     "place": 24,
-     "time": "13:10",
-     "no": 3,
-     "warmup": 1,
-     "final": 25
-    },
-    {
-     "name": "Nico Steffen",
-     "nation": "SUI",
-     "place": 17,
-     "time": "14:33",
-     "no": 11,
-     "warmup": 3,
-     "final": 18
-    },
-    {
-     "name": "Nikita Krivosheyev",
-     "nation": "KAZ",
-     "place": 19,
-     "time": "14:40",
-     "no": 12,
-     "warmup": 3,
-     "final": 20
-    },
-    {
-     "name": "Nikita Sheiko",
-     "nation": "ISR",
-     "place": 18,
-     "time": "15:56",
-     "no": 22,
-     "warmup": 4,
-     "final": 13
-    },
-    {
-     "name": "Nikita Starostin",
-     "nation": "GER",
-     "place": 11,
-     "time": "15:08",
-     "no": 16,
-     "warmup": 3,
-     "final": 12
-    },
-    {
-     "name": "Pablo Garcia",
-     "nation": "ESP",
-     "place": 26,
-     "time": "13:17",
-     "no": 4,
-     "warmup": 1,
-     "final": 26
-    },
-    {
-     "name": "Patrick Blackwell",
-     "nation": "USA",
-     "place": 2,
-     "time": "16:31",
-     "no": 24,
-     "warmup": 5,
-     "final": 2
-    },
-    {
-     "name": "Taira Shinohara",
-     "nation": "USA",
-     "place": 13,
-     "time": "15:01",
-     "no": 15,
-     "warmup": 3,
-     "final": 15
-    },
-    {
-     "name": "Tamir Kuperman",
-     "nation": "ISR",
-     "place": 8,
-     "time": "15:49",
-     "no": 21,
-     "warmup": 4,
-     "final": 7
-    },
-    {
-     "name": "Tobia Oellerer",
-     "nation": "AUT",
-     "place": 20,
-     "time": "14:05",
-     "no": 10,
-     "warmup": 2,
-     "final": 21
-    },
-    {
-     "name": "Vadym Novikov",
-     "nation": "UKR",
-     "place": 16,
-     "time": "13:58",
-     "no": 9,
-     "warmup": 2,
-     "final": 19
-    },
-    {
-     "name": "Vladimir Samoilov",
-     "nation": "POL",
-     "place": 9,
-     "time": "13:51",
-     "no": 8,
-     "warmup": 2,
-     "final": 11
-    },
-    {
-     "name": "Wesley Chiu",
-     "nation": "CAN",
-     "place": 15,
-     "time": "15:35",
-     "no": 19,
-     "warmup": 4,
-     "final": 14
-    }
-   ],
-   "live": {
-    "idx": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
-    "seg": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG002.htm",
-    "cat": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/CAT001RS.htm",
-    "first": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG001.htm",
-    "names": {
-     "Makar SUNTSEV": "Makar Suntsev",
-     "David SEDEJ": "David Sedej",
-     "Matvii YEFYMENKO": "Matvii Yefymenko",
-     "Pablo GARCIA": "Pablo Garcia",
-     "Douglas GERBER": "Douglas Gerber",
-     "Aleksei VLASENKO": "Aleksei Vlasenko",
-     "Davide LEWTON BRAIN": "Davide Lewton Brain",
-     "Vladimir SAMOILOV": "Vladimir Samoilov",
-     "Vadym NOVIKOV": "Vadym Novikov",
-     "Tobia OELLERER": "Tobia Oellerer",
-     "Nico STEFFEN": "Nico Steffen",
-     "Nikita KRIVOSHEYEV": "Nikita Krivosheyev",
-     "Elias SAYED": "Elias Sayed",
-     "Andreas NORDEBACK": "Andreas Nordeback",
-     "Taira SHINOHARA": "Taira Shinohara",
-     "Nikita STAROSTIN": "Nikita Starostin",
-     "Fedirs KULISS": "Fedirs Kuliss",
-     "Kevin AYMOZ": "Kevin Aymoz",
-     "Wesley CHIU": "Wesley Chiu",
-     "John KIM": "John Kim",
-     "Tamir KUPERMAN": "Tamir Kuperman",
-     "Nikita SHEIKO": "Nikita Sheiko",
-     "Matias LINDFORS": "Matias Lindfors",
-     "Patrick BLACKWELL": "Patrick Blackwell",
-     "Lukas BRITSCHGI": "Lukas Britschgi",
-     "Arlet LEVANDI": "Arlet Levandi",
-     "Genrikh GARTUNG": "Genrikh Gartung",
-     "Daniel GRASSL": "Daniel Grassl"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-cs-budapest-trophy.json",
-   "facts": [
-    {
-     "who": "Patrick Blackwell",
-     "text": "Личный рекорд за ПП: 164.49 (был 152.14)",
-     "kind": "score"
-    },
-    {
-     "who": "Patrick Blackwell",
-     "text": "Личный рекорд по сумме: 242.93 (был 222.17)",
-     "kind": "score"
-    },
-    {
-     "who": "Patrick Blackwell",
-     "text": "После короткой программы — 5-е место, в итоге — 2-е место",
-     "kind": "place"
-    },
-    {
-     "who": "Daniel Grassl",
-     "text": "Отрыв от второго места — 25.91 балла",
-     "kind": "place"
-    }
-   ],
    "total": [
     {
      "place": 1,
@@ -29863,7 +29548,322 @@
      "nation": "SUI",
      "points": "240.01"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Daniel Grassl — 171.70\n2. Patrick Blackwell — 164.49\n3. Lukas Britschgi — 159.96\n\nИтог турнира:\n1. Daniel Grassl — 268.84\n2. Patrick Blackwell — 242.93\n3. Lukas Britschgi — 240.01\n\nПримечательное:\n• Patrick Blackwell — Личный рекорд за ПП: 164.49 (был 152.14)\n• Patrick Blackwell — Личный рекорд по сумме: 242.93 (был 222.17)\n• Patrick Blackwell — После короткой программы — 5-е место, в итоге — 2-е место\n• Daniel Grassl — Отрыв от второго места — 25.91 балла\n\nНачало: 12:50 МСК\nТрансляция: HunSkate TV",
+   "field": [
+    {
+     "name": "Aleksei Vlasenko",
+     "nation": "HUN",
+     "no": 1,
+     "warmup": 1,
+     "place": 28,
+     "final": 28,
+     "time": "12:56"
+    },
+    {
+     "name": "Douglas Gerber",
+     "nation": "AUS",
+     "no": 2,
+     "warmup": 1,
+     "place": 27,
+     "final": 27,
+     "time": "13:03"
+    },
+    {
+     "name": "Matvii Yefymenko",
+     "nation": "POL",
+     "no": 3,
+     "warmup": 1,
+     "place": 24,
+     "final": 25,
+     "time": "13:10"
+    },
+    {
+     "name": "Pablo Garcia",
+     "nation": "ESP",
+     "no": 4,
+     "warmup": 1,
+     "place": 26,
+     "final": 26,
+     "time": "13:17"
+    },
+    {
+     "name": "David Sedej",
+     "nation": "SLO",
+     "no": 5,
+     "warmup": 1,
+     "place": 25,
+     "final": 24,
+     "time": "13:24"
+    },
+    {
+     "name": "Makar Suntsev",
+     "nation": "FIN",
+     "no": 6,
+     "warmup": 2,
+     "place": 21,
+     "final": 23,
+     "time": "13:37"
+    },
+    {
+     "name": "Davide Lewton Brain",
+     "nation": "MON",
+     "no": 7,
+     "warmup": 2,
+     "place": 14,
+     "final": 16,
+     "time": "13:44"
+    },
+    {
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "no": 8,
+     "warmup": 2,
+     "place": 9,
+     "final": 11,
+     "time": "13:51"
+    },
+    {
+     "name": "Vadym Novikov",
+     "nation": "UKR",
+     "no": 9,
+     "warmup": 2,
+     "place": 16,
+     "final": 19,
+     "time": "13:58"
+    },
+    {
+     "name": "Tobia Oellerer",
+     "nation": "AUT",
+     "no": 10,
+     "warmup": 2,
+     "place": 20,
+     "final": 21,
+     "time": "14:05"
+    },
+    {
+     "name": "Nico Steffen",
+     "nation": "SUI",
+     "no": 11,
+     "warmup": 3,
+     "place": 17,
+     "final": 18,
+     "time": "14:33"
+    },
+    {
+     "name": "Nikita Krivosheyev",
+     "nation": "KAZ",
+     "no": 12,
+     "warmup": 3,
+     "place": 19,
+     "final": 20,
+     "time": "14:40"
+    },
+    {
+     "name": "Elias Sayed",
+     "nation": "SWE",
+     "no": 13,
+     "warmup": 3,
+     "place": 23,
+     "final": 22,
+     "time": "14:47"
+    },
+    {
+     "name": "Andreas Nordeback",
+     "nation": "SWE",
+     "no": 14,
+     "warmup": 3,
+     "place": 6,
+     "final": 8,
+     "time": "14:54"
+    },
+    {
+     "name": "Taira Shinohara",
+     "nation": "USA",
+     "no": 15,
+     "warmup": 3,
+     "place": 13,
+     "final": 15,
+     "time": "15:01"
+    },
+    {
+     "name": "Nikita Starostin",
+     "nation": "GER",
+     "no": 16,
+     "warmup": 3,
+     "place": 11,
+     "final": 12,
+     "time": "15:08"
+    },
+    {
+     "name": "Fedirs Kuliss",
+     "nation": "LAT",
+     "no": 17,
+     "warmup": 4,
+     "place": 22,
+     "final": 17,
+     "time": "15:21"
+    },
+    {
+     "name": "Kevin Aymoz",
+     "nation": "FRA",
+     "no": 18,
+     "warmup": 4,
+     "place": 4,
+     "final": 5,
+     "time": "15:28"
+    },
+    {
+     "name": "Wesley Chiu",
+     "nation": "CAN",
+     "no": 19,
+     "warmup": 4,
+     "place": 15,
+     "final": 14,
+     "time": "15:35"
+    },
+    {
+     "name": "John Kim",
+     "nation": "CAN",
+     "no": 20,
+     "warmup": 4,
+     "place": 10,
+     "final": 10,
+     "time": "15:42"
+    },
+    {
+     "name": "Tamir Kuperman",
+     "nation": "ISR",
+     "no": 21,
+     "warmup": 4,
+     "place": 8,
+     "final": 7,
+     "time": "15:49"
+    },
+    {
+     "name": "Nikita Sheiko",
+     "nation": "ISR",
+     "no": 22,
+     "warmup": 4,
+     "place": 18,
+     "final": 13,
+     "time": "15:56"
+    },
+    {
+     "name": "Matias Lindfors",
+     "nation": "FIN",
+     "no": 23,
+     "warmup": 5,
+     "place": 12,
+     "final": 9,
+     "time": "16:24"
+    },
+    {
+     "name": "Patrick Blackwell",
+     "nation": "USA",
+     "no": 24,
+     "warmup": 5,
+     "place": 2,
+     "final": 2,
+     "time": "16:31"
+    },
+    {
+     "name": "Lukas Britschgi",
+     "nation": "SUI",
+     "no": 25,
+     "warmup": 5,
+     "place": 3,
+     "final": 3,
+     "time": "16:38"
+    },
+    {
+     "name": "Arlet Levandi",
+     "nation": "EST",
+     "no": 26,
+     "warmup": 5,
+     "place": 7,
+     "final": 6,
+     "time": "16:45"
+    },
+    {
+     "name": "Genrikh Gartung",
+     "nation": "GER",
+     "no": 27,
+     "warmup": 5,
+     "place": 5,
+     "final": 4,
+     "time": "16:52"
+    },
+    {
+     "name": "Daniel Grassl",
+     "nation": "ITA",
+     "no": 28,
+     "warmup": 5,
+     "place": 1,
+     "final": 1,
+     "time": "16:59"
+    }
+   ],
+   "live": {
+    "idx": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
+    "seg": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG002.htm",
+    "cat": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/CAT001RS.htm",
+    "first": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG001.htm",
+    "names": {
+     "Daniel GRASSL": "Daniel Grassl",
+     "Patrick BLACKWELL": "Patrick Blackwell",
+     "Lukas BRITSCHGI": "Lukas Britschgi",
+     "Kevin AYMOZ": "Kevin Aymoz",
+     "Genrikh GARTUNG": "Genrikh Gartung",
+     "Andreas NORDEBACK": "Andreas Nordeback",
+     "Arlet LEVANDI": "Arlet Levandi",
+     "Tamir KUPERMAN": "Tamir Kuperman",
+     "Vladimir SAMOILOV": "Vladimir Samoilov",
+     "John KIM": "John Kim",
+     "Nikita STAROSTIN": "Nikita Starostin",
+     "Matias LINDFORS": "Matias Lindfors",
+     "Taira SHINOHARA": "Taira Shinohara",
+     "Davide LEWTON BRAIN": "Davide Lewton Brain",
+     "Wesley CHIU": "Wesley Chiu",
+     "Vadym NOVIKOV": "Vadym Novikov",
+     "Nico STEFFEN": "Nico Steffen",
+     "Nikita SHEIKO": "Nikita Sheiko",
+     "Nikita KRIVOSHEYEV": "Nikita Krivosheyev",
+     "Tobia OELLERER": "Tobia Oellerer",
+     "Makar SUNTSEV": "Makar Suntsev",
+     "Fedirs KULISS": "Fedirs Kuliss",
+     "Elias SAYED": "Elias Sayed",
+     "Matvii YEFYMENKO": "Matvii Yefymenko",
+     "David SEDEJ": "David Sedej",
+     "Pablo GARCIA": "Pablo Garcia",
+     "Douglas GERBER": "Douglas Gerber",
+     "Aleksei VLASENKO": "Aleksei Vlasenko"
+    },
+    "basis": "judges"
+   },
+   "facts": [
+    {
+     "kind": "score",
+     "text": "Личный рекорд за ПП: 164.49 (был 152.14)",
+     "who": "Patrick Blackwell"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 242.93 (был 222.17)",
+     "who": "Patrick Blackwell"
+    },
+    {
+     "kind": "place",
+     "text": "После короткой программы — 5-е место, в итоге — 2-е место",
+     "who": "Patrick Blackwell"
+    },
+    {
+     "kind": "place",
+     "text": "Отрыв от второго места — 25.91 балла",
+     "who": "Daniel Grassl"
+    }
+   ],
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:women-senior-pp",
@@ -29927,151 +29927,6 @@
      "points": "133.62"
     }
    ],
-   "desc": "Итог:\n1. Камилла Нелюбова — 146.86\n2. Ксения Синицына — 136.95\n3. Анна Фролова — 133.62\n\nИтог турнира:\n1. Камилла Нелюбова — 217.75\n2. Анна Фролова — 208.32\n3. Ксения Синицына — 199.83\n\nПримечательное:\n• Камилла Нелюбова — Тройной аксель\n• Ксения Синицына — После короткой программы — 6-е место, в итоге — 3-е место\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
-   "field": [
-    {
-     "name": "Александра Чаткина",
-     "nation": "СПБ",
-     "place": 9,
-     "time": "13:37",
-     "no": 5,
-     "warmup": 1,
-     "final": 9
-    },
-    {
-     "name": "Алиса Юрова",
-     "nation": "ЛИП",
-     "place": 4,
-     "time": "13:22",
-     "no": 3,
-     "warmup": 1,
-     "final": 6
-    },
-    {
-     "name": "Анастасия Фурсова",
-     "nation": "БЕЛ",
-     "place": 12,
-     "time": "13:07",
-     "no": 1,
-     "warmup": 1,
-     "final": 12
-    },
-    {
-     "name": "Анна Фролова",
-     "nation": "СПБ",
-     "place": 3,
-     "time": "14:37",
-     "no": 12,
-     "warmup": 2,
-     "final": 2
-    },
-    {
-     "name": "Екатерина Кольцова",
-     "nation": "КОС",
-     "place": 7,
-     "time": "13:30",
-     "no": 4,
-     "warmup": 1,
-     "final": 8
-    },
-    {
-     "name": "Елизавета Куликова",
-     "nation": "МОС",
-     "place": 8,
-     "time": "14:22",
-     "no": 10,
-     "warmup": 2,
-     "final": 4
-    },
-    {
-     "name": "Камилла Нелюбова",
-     "nation": "ЧУВ",
-     "place": 1,
-     "time": "14:30",
-     "no": 11,
-     "warmup": 2,
-     "final": 1
-    },
-    {
-     "name": "Ксения Гущина",
-     "nation": "СПБ",
-     "place": 5,
-     "time": "13:45",
-     "no": 6,
-     "warmup": 1,
-     "final": 5
-    },
-    {
-     "name": "Ксения Синицына",
-     "nation": "МОБ",
-     "place": 2,
-     "time": "14:00",
-     "no": 7,
-     "warmup": 2,
-     "final": 3
-    },
-    {
-     "name": "Риана Кадырова",
-     "nation": "ТАТ",
-     "place": 6,
-     "time": "14:15",
-     "no": 9,
-     "warmup": 2,
-     "final": 7
-    },
-    {
-     "name": "Софья Лукина",
-     "nation": "БАШ",
-     "place": 11,
-     "time": "13:52",
-     "no": 2,
-     "warmup": 1,
-     "final": 11
-    },
-    {
-     "name": "Софья Муравьева",
-     "nation": "МОС",
-     "place": 10,
-     "time": "14:07",
-     "no": 8,
-     "warmup": 2,
-     "final": 10
-    }
-   ],
-   "live": {
-    "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
-    "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG004.htm",
-    "cat": "https://fsrussia.ru/results/2627/1etap_sen/CAT002RS.htm",
-    "first": "https://fsrussia.ru/results/2627/1etap_sen/SEG003.htm",
-    "names": {
-     "Алиса ЮРОВА": "Алиса Юрова",
-     "Екатерина КОЛЬЦОВА": "Екатерина Кольцова",
-     "Александра ЧАТКИНА": "Александра Чаткина",
-     "Софья ЛУКИНА": "Софья Лукина",
-     "Анастасия ФУРСОВА": "Анастасия Фурсова",
-     "Ксения ГУЩИНА": "Ксения Гущина",
-     "Ксения СИНИЦЫНА": "Ксения Синицына",
-     "Софья МУРАВЬЕВА": "Софья Муравьева",
-     "Риана КАДЫРОВА": "Риана Кадырова",
-     "Елизавета КУЛИКОВА": "Елизавета Куликова",
-     "Камилла НЕЛЮБОВА": "Камилла Нелюбова",
-     "Анна ФРОЛОВА": "Анна Фролова"
-    },
-    "basis": "judges"
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json",
-   "facts": [
-    {
-     "who": "Камилла Нелюбова",
-     "text": "Тройной аксель",
-     "kind": "element"
-    },
-    {
-     "who": "Ксения Синицына",
-     "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "kind": "place"
-    }
-   ],
    "total": [
     {
      "place": 1,
@@ -30091,7 +29946,152 @@
      "nation": "МОБ",
      "points": "199.83"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Камилла Нелюбова — 146.86\n2. Ксения Синицына — 136.95\n3. Анна Фролова — 133.62\n\nИтог турнира:\n1. Камилла Нелюбова — 217.75\n2. Анна Фролова — 208.32\n3. Ксения Синицына — 199.83\n\nПримечательное:\n• Камилла Нелюбова — Тройной аксель\n• Ксения Синицына — После короткой программы — 6-е место, в итоге — 3-е место\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Анастасия Фурсова",
+     "nation": "БЕЛ",
+     "no": 1,
+     "warmup": 1,
+     "place": 12,
+     "final": 12,
+     "time": "13:07"
+    },
+    {
+     "name": "Софья Лукина",
+     "nation": "БАШ",
+     "no": 2,
+     "warmup": 1,
+     "place": 11,
+     "final": 11,
+     "time": "13:52"
+    },
+    {
+     "name": "Алиса Юрова",
+     "nation": "ЛИП",
+     "no": 3,
+     "warmup": 1,
+     "place": 4,
+     "final": 6,
+     "time": "13:22"
+    },
+    {
+     "name": "Екатерина Кольцова",
+     "nation": "КОС",
+     "no": 4,
+     "warmup": 1,
+     "place": 7,
+     "final": 8,
+     "time": "13:30"
+    },
+    {
+     "name": "Александра Чаткина",
+     "nation": "СПБ",
+     "no": 5,
+     "warmup": 1,
+     "place": 9,
+     "final": 9,
+     "time": "13:37"
+    },
+    {
+     "name": "Ксения Гущина",
+     "nation": "СПБ",
+     "no": 6,
+     "warmup": 1,
+     "place": 5,
+     "final": 5,
+     "time": "13:45"
+    },
+    {
+     "name": "Ксения Синицына",
+     "nation": "МОБ",
+     "no": 7,
+     "warmup": 2,
+     "place": 2,
+     "final": 3,
+     "time": "14:00"
+    },
+    {
+     "name": "Софья Муравьева",
+     "nation": "МОС",
+     "no": 8,
+     "warmup": 2,
+     "place": 10,
+     "final": 10,
+     "time": "14:07"
+    },
+    {
+     "name": "Риана Кадырова",
+     "nation": "ТАТ",
+     "no": 9,
+     "warmup": 2,
+     "place": 6,
+     "final": 7,
+     "time": "14:15"
+    },
+    {
+     "name": "Елизавета Куликова",
+     "nation": "МОС",
+     "no": 10,
+     "warmup": 2,
+     "place": 8,
+     "final": 4,
+     "time": "14:22"
+    },
+    {
+     "name": "Камилла Нелюбова",
+     "nation": "ЧУВ",
+     "no": 11,
+     "warmup": 2,
+     "place": 1,
+     "final": 1,
+     "time": "14:30"
+    },
+    {
+     "name": "Анна Фролова",
+     "nation": "СПБ",
+     "no": 12,
+     "warmup": 2,
+     "place": 3,
+     "final": 2,
+     "time": "14:37"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG004.htm",
+    "cat": "https://fsrussia.ru/results/2627/1etap_sen/CAT002RS.htm",
+    "first": "https://fsrussia.ru/results/2627/1etap_sen/SEG003.htm",
+    "names": {
+     "Камилла НЕЛЮБОВА": "Камилла Нелюбова",
+     "Ксения СИНИЦЫНА": "Ксения Синицына",
+     "Анна ФРОЛОВА": "Анна Фролова",
+     "Алиса ЮРОВА": "Алиса Юрова",
+     "Ксения ГУЩИНА": "Ксения Гущина",
+     "Риана КАДЫРОВА": "Риана Кадырова",
+     "Екатерина КОЛЬЦОВА": "Екатерина Кольцова",
+     "Елизавета КУЛИКОВА": "Елизавета Куликова",
+     "Александра ЧАТКИНА": "Александра Чаткина",
+     "Софья МУРАВЬЕВА": "Софья Муравьева",
+     "Софья ЛУКИНА": "Софья Лукина",
+     "Анастасия ФУРСОВА": "Анастасия Фурсова"
+    },
+    "basis": "judges"
+   },
+   "facts": [
+    {
+     "kind": "element",
+     "text": "Тройной аксель",
+     "who": "Камилла Нелюбова"
+    },
+    {
+     "kind": "place",
+     "text": "После короткой программы — 6-е место, в итоге — 3-е место",
+     "who": "Ксения Синицына"
+    }
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men-senior-pp",
@@ -30102,7 +30102,7 @@
    "seg": "ПП",
    "title": "Гран-при России «Рапсодия льда» — мужчины ПП",
    "start": "2026-10-18T15:05:00+03:00",
-   "end": "2026-10-18T16:52:00+03:00",
+   "end": "2026-10-18T16:40:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -30134,129 +30134,6 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Итог:\n1. Евгений Семененко — 195.93\n2. Артём Ковалёв — 166.32\n3. Роман Савосин — 155.51\n\nИтог турнира:\n1. Евгений Семененко — 296.13\n2. Андрей Мозалёв — 252.16\n3. Артём Ковалёв — 247.88\n\nПримечательное:\n• Артём Ковалёв — После короткой программы — 6-е место, в итоге — 3-е место\n• Евгений Семененко — Отрыв от второго места — 43.97 балла\n\nНачало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
-   "field": [
-    {
-     "name": "Вячеслав Проценко",
-     "nation": "СПБ",
-     "time": "15:11",
-     "no": 1,
-     "warmup": 1,
-     "place": 9,
-     "final": 9
-    },
-    {
-     "name": "Константин Сафонов",
-     "nation": "ТУЛ",
-     "time": "15:27",
-     "no": 3,
-     "warmup": 1,
-     "place": 11,
-     "final": 10
-    },
-    {
-     "name": "Иван Конихин",
-     "nation": "МОС",
-     "time": "15:35",
-     "no": 4,
-     "warmup": 1,
-     "place": 7,
-     "final": 8
-    },
-    {
-     "name": "Семен Соловьев",
-     "nation": "СПБ",
-     "time": "15:42",
-     "no": 5,
-     "warmup": 1,
-     "place": 8,
-     "final": 7
-    },
-    {
-     "name": "Артём Ковалёв",
-     "nation": "МОБ",
-     "time": "15:50",
-     "no": 6,
-     "warmup": 2,
-     "place": 2,
-     "final": 3
-    },
-    {
-     "name": "Юрий Сидоров",
-     "nation": "ОРЕ",
-     "time": "15:58",
-     "no": 2,
-     "warmup": 1,
-     "place": 10,
-     "final": 11
-    },
-    {
-     "name": "Роман Савосин",
-     "nation": "МОС",
-     "time": "16:05",
-     "no": 7,
-     "warmup": 2,
-     "place": 3,
-     "final": 5
-    },
-    {
-     "name": "Матвей Ветлугин",
-     "nation": "СПБ",
-     "time": "16:12",
-     "no": 8,
-     "warmup": 2,
-     "place": 6,
-     "final": 6
-    },
-    {
-     "name": "Даниил Самсонов",
-     "nation": "МОС",
-     "time": "16:20",
-     "no": 9,
-     "warmup": 2,
-     "place": 5,
-     "final": 4
-    },
-    {
-     "name": "Андрей Мозалёв",
-     "nation": "МОС",
-     "time": "16:28",
-     "no": 10,
-     "warmup": 2,
-     "place": 4,
-     "final": 2
-    },
-    {
-     "name": "Евгений Семененко",
-     "nation": "СПБ",
-     "time": "16:36",
-     "no": 11,
-     "warmup": 2,
-     "place": 1,
-     "final": 1
-    }
-   ],
-   "live": {
-    "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
-    "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG002.htm",
-    "cat": "https://fsrussia.ru/results/2627/1etap_sen/CAT001RS.htm",
-    "first": "https://fsrussia.ru/results/2627/1etap_sen/SEG001.htm",
-    "names": {
-     "Вячеслав ПРОЦЕНКО": "Вячеслав Проценко",
-     "Юрий СИДОРОВ": "Юрий Сидоров",
-     "Константин САФОНОВ": "Константин Сафонов",
-     "Иван КОНИХИН": "Иван Конихин",
-     "Семен СОЛОВЬЕВ": "Семен Соловьев",
-     "Артём КОВАЛЁВ": "Артём Ковалёв",
-     "Роман САВОСИН": "Роман Савосин",
-     "Матвей ВЕТЛУГИН": "Матвей Ветлугин",
-     "Даниил САМСОНОВ": "Даниил Самсонов",
-     "Андрей МОЗАЛЁВ": "Андрей Мозалёв",
-     "Евгений СЕМЕНЕНКО": "Евгений Семененко"
-    },
-    "basis": "judges"
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json",
    "podium": [
     {
      "place": 1,
@@ -30297,18 +30174,141 @@
      "points": "247.88"
     }
    ],
-   "facts": [
+   "desc": "Итог:\n1. Евгений Семененко — 195.93\n2. Артём Ковалёв — 166.32\n3. Роман Савосин — 155.51\n\nИтог турнира:\n1. Евгений Семененко — 296.13\n2. Андрей Мозалёв — 252.16\n3. Артём Ковалёв — 247.88\n\nПримечательное:\n• Артём Ковалёв — После короткой программы — 6-е место, в итоге — 3-е место\n• Евгений Семененко — Отрыв от второго места — 43.97 балла\n\nНачало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
     {
-     "who": "Артём Ковалёв",
-     "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "kind": "place"
+     "name": "Вячеслав Проценко",
+     "nation": "СПБ",
+     "no": 1,
+     "warmup": 1,
+     "place": 9,
+     "final": 9,
+     "time": "15:11"
     },
     {
-     "who": "Евгений Семененко",
-     "text": "Отрыв от второго места — 43.97 балла",
-     "kind": "place"
+     "name": "Юрий Сидоров",
+     "nation": "ОРЕ",
+     "no": 2,
+     "warmup": 1,
+     "place": 10,
+     "final": 11,
+     "time": "15:58"
+    },
+    {
+     "name": "Константин Сафонов",
+     "nation": "ТУЛ",
+     "no": 3,
+     "warmup": 1,
+     "place": 11,
+     "final": 10,
+     "time": "15:27"
+    },
+    {
+     "name": "Иван Конихин",
+     "nation": "МОС",
+     "no": 4,
+     "warmup": 1,
+     "place": 7,
+     "final": 8,
+     "time": "15:35"
+    },
+    {
+     "name": "Семен Соловьев",
+     "nation": "СПБ",
+     "no": 5,
+     "warmup": 1,
+     "place": 8,
+     "final": 7,
+     "time": "15:42"
+    },
+    {
+     "name": "Артём Ковалёв",
+     "nation": "МОБ",
+     "no": 6,
+     "warmup": 2,
+     "place": 2,
+     "final": 3,
+     "time": "15:50"
+    },
+    {
+     "name": "Роман Савосин",
+     "nation": "МОС",
+     "no": 7,
+     "warmup": 2,
+     "place": 3,
+     "final": 5,
+     "time": "16:05"
+    },
+    {
+     "name": "Матвей Ветлугин",
+     "nation": "СПБ",
+     "no": 8,
+     "warmup": 2,
+     "place": 6,
+     "final": 6,
+     "time": "16:12"
+    },
+    {
+     "name": "Даниил Самсонов",
+     "nation": "МОС",
+     "no": 9,
+     "warmup": 2,
+     "place": 5,
+     "final": 4,
+     "time": "16:20"
+    },
+    {
+     "name": "Андрей Мозалёв",
+     "nation": "МОС",
+     "no": 10,
+     "warmup": 2,
+     "place": 4,
+     "final": 2,
+     "time": "16:28"
+    },
+    {
+     "name": "Евгений Семененко",
+     "nation": "СПБ",
+     "no": 11,
+     "warmup": 2,
+     "place": 1,
+     "final": 1,
+     "time": "16:36"
     }
-   ]
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG002.htm",
+    "cat": "https://fsrussia.ru/results/2627/1etap_sen/CAT001RS.htm",
+    "first": "https://fsrussia.ru/results/2627/1etap_sen/SEG001.htm",
+    "names": {
+     "Евгений СЕМЕНЕНКО": "Евгений Семененко",
+     "Артём КОВАЛЁВ": "Артём Ковалёв",
+     "Роман САВОСИН": "Роман Савосин",
+     "Андрей МОЗАЛЁВ": "Андрей Мозалёв",
+     "Даниил САМСОНОВ": "Даниил Самсонов",
+     "Матвей ВЕТЛУГИН": "Матвей Ветлугин",
+     "Иван КОНИХИН": "Иван Конихин",
+     "Семен СОЛОВЬЕВ": "Семен Соловьев",
+     "Вячеслав ПРОЦЕНКО": "Вячеслав Проценко",
+     "Юрий СИДОРОВ": "Юрий Сидоров",
+     "Константин САФОНОВ": "Константин Сафонов"
+    },
+    "basis": "judges"
+   },
+   "facts": [
+    {
+     "kind": "place",
+     "text": "После короткой программы — 6-е место, в итоге — 3-е место",
+     "who": "Артём Ковалёв"
+    },
+    {
+     "kind": "place",
+     "text": "Отрыв от второго места — 43.97 балла",
+     "who": "Евгений Семененко"
+    }
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pairs-senior-pp",
@@ -30319,7 +30319,7 @@
    "seg": "ПП",
    "title": "Гран-при России «Рапсодия льда» — пары ПП",
    "start": "2026-10-18T17:10:00+03:00",
-   "end": "2026-10-18T18:26:00+03:00",
+   "end": "2026-10-18T18:30:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -30348,99 +30348,6 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Итог:\n1. Юлия Артемьева / Алексей Брюханов — 117.07\n2. Таисия Щербинина / Артём Петров — 115.30\n3. Алиса Блинникова / Алексей Карпов — 114.06\n\nИтог турнира:\n1. Юлия Артемьева / Алексей Брюханов — 187.50\n2. Таисия Щербинина / Артём Петров — 184.06\n3. Анастасия Мухортова / Дмитрий Евгеньев — 177.52\n\nНачало: 17:10 МСК\nТрансляция: Первый канал / YouTube",
-   "field": [
-    {
-     "name": "Ева Хмелькова / Владислав Антонышев",
-     "nation": "МОБ",
-     "time": "17:17",
-     "no": 1,
-     "warmup": 1,
-     "place": 7,
-     "final": 7
-    },
-    {
-     "name": "Вероника Меренкова / Даниль Галимов",
-     "nation": "КРД",
-     "time": "17:32",
-     "no": 3,
-     "warmup": 1,
-     "place": 8,
-     "final": 8
-    },
-    {
-     "name": "Алиса Блинникова / Алексей Карпов",
-     "nation": "СПБ",
-     "time": "17:40",
-     "no": 4,
-     "warmup": 1,
-     "place": 3,
-     "final": 5
-    },
-    {
-     "name": "Анна Карпук / Илья Миронов",
-     "nation": "СПБ",
-     "time": "17:47",
-     "no": 2,
-     "warmup": 1,
-     "place": 6,
-     "final": 6
-    },
-    {
-     "name": "Валерия Ходыкина / Даниил Бутенко",
-     "nation": "МОС",
-     "time": "17:55",
-     "no": 5,
-     "warmup": 2,
-     "place": 4,
-     "final": 4
-    },
-    {
-     "name": "Анастасия Мухортова / Дмитрий Евгеньев",
-     "nation": "МОС",
-     "time": "18:02",
-     "no": 6,
-     "warmup": 2,
-     "place": 5,
-     "final": 3
-    },
-    {
-     "name": "Таисия Щербинина / Артём Петров",
-     "nation": "ПРМ",
-     "time": "18:10",
-     "no": 7,
-     "warmup": 2,
-     "place": 2,
-     "final": 2
-    },
-    {
-     "name": "Юлия Артемьева / Алексей Брюханов",
-     "nation": "ПРМ",
-     "time": "18:17",
-     "no": 8,
-     "warmup": 2,
-     "place": 1,
-     "final": 1
-    }
-   ],
-   "live": {
-    "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
-    "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG006.htm",
-    "cat": "https://fsrussia.ru/results/2627/1etap_sen/CAT003RS.htm",
-    "first": "https://fsrussia.ru/results/2627/1etap_sen/SEG005.htm",
-    "names": {
-     "Ева ХМЕЛЬКОВА / Владислав АНТОНЫШЕВ": "Ева Хмелькова / Владислав Антонышев",
-     "Анна КАРПУК / Илья МИРОНОВ": "Анна Карпук / Илья Миронов",
-     "Вероника МЕРЕНКОВА / Даниль ГАЛИМОВ": "Вероника Меренкова / Даниль Галимов",
-     "Алиса БЛИННИКОВА / Алексей КАРПОВ": "Алиса Блинникова / Алексей Карпов",
-     "Валерия ХОДЫКИНА / Даниил БУТЕНКО": "Валерия Ходыкина / Даниил Бутенко",
-     "Анастасия МУХОРТОВА / Дмитрий ЕВГЕНЬЕВ": "Анастасия Мухортова / Дмитрий Евгеньев",
-     "Таисия ЩЕРБИНИНА / Артём ПЕТРОВ": "Таисия Щербинина / Артём Петров",
-     "Юлия АРТЕМЬЕВА / Алексей БРЮХАНОВ": "Юлия Артемьева / Алексей Брюханов"
-    },
-    "basis": "judges"
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json",
    "podium": [
     {
      "place": 1,
@@ -30480,7 +30387,100 @@
      "nation": "МОС",
      "points": "177.52"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Юлия Артемьева / Алексей Брюханов — 117.07\n2. Таисия Щербинина / Артём Петров — 115.30\n3. Алиса Блинникова / Алексей Карпов — 114.06\n\nИтог турнира:\n1. Юлия Артемьева / Алексей Брюханов — 187.50\n2. Таисия Щербинина / Артём Петров — 184.06\n3. Анастасия Мухортова / Дмитрий Евгеньев — 177.52\n\nНачало: 17:10 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Алиса Блинникова / Алексей Карпов",
+     "nation": "СПБ",
+     "place": 3,
+     "final": 5,
+     "time": "17:40",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Анастасия Мухортова / Дмитрий Евгеньев",
+     "nation": "МОС",
+     "place": 5,
+     "final": 3,
+     "time": "18:02",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Анна Карпук / Илья Миронов",
+     "nation": "СПБ",
+     "place": 6,
+     "final": 6,
+     "time": "17:47",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Валерия Ходыкина / Даниил Бутенко",
+     "nation": "МОС",
+     "place": 4,
+     "final": 4,
+     "time": "17:55",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Вероника Меренкова / Даниль Галимов",
+     "nation": "КРД",
+     "place": 8,
+     "final": 8,
+     "time": "17:32",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Ева Хмелькова / Владислав Антонышев",
+     "nation": "МОБ",
+     "place": 7,
+     "final": 7,
+     "time": "17:17",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Таисия Щербинина / Артём Петров",
+     "nation": "ПРМ",
+     "place": 2,
+     "final": 2,
+     "time": "18:10",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Юлия Артемьева / Алексей Брюханов",
+     "nation": "ПРМ",
+     "place": 1,
+     "final": 1,
+     "time": "18:17",
+     "no": 8,
+     "warmup": 2
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/1etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/1etap_sen/SEG006.htm",
+    "cat": "https://fsrussia.ru/results/2627/1etap_sen/CAT003RS.htm",
+    "first": "https://fsrussia.ru/results/2627/1etap_sen/SEG005.htm",
+    "names": {
+     "Юлия АРТЕМЬЕВА / Алексей БРЮХАНОВ": "Юлия Артемьева / Алексей Брюханов",
+     "Таисия ЩЕРБИНИНА / Артём ПЕТРОВ": "Таисия Щербинина / Артём Петров",
+     "Анастасия МУХОРТОВА / Дмитрий ЕВГЕНЬЕВ": "Анастасия Мухортова / Дмитрий Евгеньев",
+     "Валерия ХОДЫКИНА / Даниил БУТЕНКО": "Валерия Ходыкина / Даниил Бутенко",
+     "Алиса БЛИННИКОВА / Алексей КАРПОВ": "Алиса Блинникова / Алексей Карпов",
+     "Анна КАРПУК / Илья МИРОНОВ": "Анна Карпук / Илья Миронов",
+     "Ева ХМЕЛЬКОВА / Владислав АНТОНЫШЕВ": "Ева Хмелькова / Владислав Антонышев",
+     "Вероника МЕРЕНКОВА / Даниль ГАЛИМОВ": "Вероника Меренкова / Даниль Галимов"
+    },
+    "basis": "judges"
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
    "id": "isu:isu-cs-budapest-trophy:women-senior-pp",
@@ -30501,10 +30501,10 @@
     {
      "name": "Алина Горбачёва",
      "nation": "RUS",
+     "place": 37,
      "time": "23:04",
      "no": 37,
-     "warmup": 7,
-     "place": 37
+     "warmup": 7
     }
    ],
    "athletes": [
@@ -30553,319 +30553,340 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Michaela Vrastakova — 89.73\n2. Meda Variakojyte — 82.20\n3. Weronika Ferlin — 69.25\n\nРоссияне:\n• Алина Горбачёва — 23:04\n\nНачало: 17:25 МСК\nТрансляция: HunSkate TV",
-   "field": [
+   "podium": [
     {
-     "name": "Annika Lytchoff Skibby",
-     "nation": "DEN",
-     "time": "17:31",
-     "no": 1,
-     "warmup": 1,
-     "place": 8
-    },
-    {
-     "name": "Weronika Ferlin",
-     "nation": "POL",
-     "time": "17:38",
-     "no": 2,
-     "warmup": 1,
-     "place": 3
-    },
-    {
-     "name": "Lovisa Aav",
-     "nation": "SWE",
-     "time": "17:45",
-     "no": 3,
-     "warmup": 1,
-     "place": 5
-    },
-    {
-     "name": "Saskia Oudejans",
-     "nation": "NED",
-     "time": "17:52",
-     "no": 4,
-     "warmup": 1,
-     "place": 4
-    },
-    {
-     "name": "Ana Stratulat",
-     "nation": "ROU",
-     "time": "17:59",
-     "no": 5,
-     "warmup": 1,
-     "place": 6
-    },
-    {
-     "name": "Mariia Dmitrieva",
-     "nation": "ISR",
-     "time": "18:12",
-     "no": 6,
-     "warmup": 2,
-     "place": 7
-    },
-    {
-     "name": "Zere Sarbalina",
-     "nation": "KAZ",
-     "time": "18:19",
-     "no": 7,
-     "warmup": 2,
-     "place": 9
-    },
-    {
+     "place": 1,
      "name": "Meda Variakojyte",
      "nation": "LTU",
-     "time": "18:26",
-     "no": 8,
-     "warmup": 2,
-     "place": 2
+     "points": "82.20"
     },
     {
-     "name": "Michaela Vrastakova",
-     "nation": "CZE",
-     "time": "18:33",
-     "no": 9,
-     "warmup": 2,
-     "place": 1
-    },
-    {
-     "name": "Julia van Dijk",
-     "nation": "NED",
-     "time": "18:40",
-     "no": 10,
-     "warmup": 2,
-     "place": 10
-    },
-    {
-     "name": "Maxine Bautista",
-     "nation": "PHI",
-     "time": "19:08",
-     "no": 11,
-     "warmup": 3,
-     "place": 11
-    },
-    {
-     "name": "Haruna Murakami",
-     "nation": "AUS",
-     "time": "19:15",
-     "no": 12,
-     "warmup": 3,
-     "place": 12
-    },
-    {
-     "name": "Lotta Artimo",
-     "nation": "FIN",
-     "time": "19:22",
-     "no": 13,
-     "warmup": 3,
-     "place": 13
-    },
-    {
-     "name": "Elizabet Gervits",
-     "nation": "ISR",
-     "time": "19:29",
-     "no": 14,
-     "warmup": 3,
-     "place": 14
-    },
-    {
-     "name": "Nikola Fomchenkova",
-     "nation": "LAT",
-     "time": "19:36",
-     "no": 15,
-     "warmup": 3,
-     "place": 15
-    },
-    {
-     "name": "Pernille With",
-     "nation": "NOR",
-     "time": "19:49",
-     "no": 16,
-     "warmup": 4,
-     "place": 16
-    },
-    {
-     "name": "Sofja Stepcenko",
-     "nation": "LAT",
-     "time": "19:56",
-     "no": 17,
-     "warmup": 4,
-     "place": 17
-    },
-    {
-     "name": "Julia Kasprzyk",
+     "place": 2,
+     "name": "Weronika Ferlin",
      "nation": "POL",
-     "time": "20:03",
-     "no": 18,
-     "warmup": 4,
-     "place": 18
+     "points": "69.25"
     },
+    {
+     "place": 3,
+     "name": "Saskia Oudejans",
+     "nation": "NED",
+     "points": "66.79"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Meda Variakojyte — 82.20\n2. Weronika Ferlin — 69.25\n3. Saskia Oudejans — 66.79\n\nРоссияне:\n• Алина Горбачёва — 23:04\n\nНачало: 17:25 МСК\nТрансляция: HunSkate TV",
+   "field": [
     {
      "name": "Alexandra Feigin",
      "nation": "BUL",
+     "place": 19,
      "time": "20:10",
      "no": 19,
-     "warmup": 4,
-     "place": 19
-    },
-    {
-     "name": "Mia Risa Gomez",
-     "nation": "NOR",
-     "time": "20:17",
-     "no": 20,
-     "warmup": 4,
-     "place": 20
-    },
-    {
-     "name": "Nataly Langerbaur",
-     "nation": "EST",
-     "time": "20:45",
-     "no": 21,
-     "warmup": 5,
-     "place": 21
-    },
-    {
-     "name": "Hannah Frank",
-     "nation": "AUT",
-     "time": "20:52",
-     "no": 22,
-     "warmup": 5,
-     "place": 22
-    },
-    {
-     "name": "Anna Pezzetta",
-     "nation": "ITA",
-     "time": "20:59",
-     "no": 23,
-     "warmup": 5,
-     "place": 23
-    },
-    {
-     "name": "Polina Dzsumanyijazova",
-     "nation": "HUN",
-     "time": "21:06",
-     "no": 24,
-     "warmup": 5,
-     "place": 24
-    },
-    {
-     "name": "Sara-Maude Dupuis",
-     "nation": "CAN",
-     "time": "21:13",
-     "no": 25,
-     "warmup": 5,
-     "place": 25
-    },
-    {
-     "name": "Marina Piredda",
-     "nation": "ITA",
-     "time": "21:26",
-     "no": 26,
-     "warmup": 6,
-     "place": 26
-    },
-    {
-     "name": "Sophie Joline von Felten",
-     "nation": "USA",
-     "time": "21:33",
-     "no": 27,
-     "warmup": 6,
-     "place": 27
+     "warmup": 4
     },
     {
      "name": "Alina Bonillo",
      "nation": "USA",
+     "place": 28,
      "time": "21:40",
      "no": 28,
-     "warmup": 6,
-     "place": 28
+     "warmup": 6
     },
     {
-     "name": "Madeline Schizas",
-     "nation": "CAN",
-     "time": "21:47",
-     "no": 29,
-     "warmup": 6,
-     "place": 29
+     "name": "Ana Stratulat",
+     "nation": "ROU",
+     "place": 5,
+     "time": "17:59",
+     "no": 5,
+     "warmup": 1
     },
     {
      "name": "Anita Ostlund",
      "nation": "SWE",
+     "place": 30,
      "time": "21:54",
      "no": 30,
-     "warmup": 6,
-     "place": 30
+     "warmup": 6
     },
     {
-     "name": "Livia Kaiser",
-     "nation": "SUI",
-     "time": "22:01",
-     "no": 31,
-     "warmup": 6,
-     "place": 31
+     "name": "Anna Pezzetta",
+     "nation": "ITA",
+     "place": 23,
+     "time": "20:59",
+     "no": 23,
+     "warmup": 5
     },
     {
-     "name": "Kimmy Repond",
-     "nation": "SUI",
-     "time": "22:29",
-     "no": 32,
-     "warmup": 7,
-     "place": 32
+     "name": "Annika Lytchoff Skibby",
+     "nation": "DEN",
+     "place": 7,
+     "time": "17:31",
+     "no": 1,
+     "warmup": 1
     },
     {
-     "name": "Olga Mikutina",
+     "name": "Elizabet Gervits",
+     "nation": "ISR",
+     "place": 14,
+     "time": "19:29",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Hannah Frank",
      "nation": "AUT",
-     "time": "22:36",
-     "no": 33,
-     "warmup": 7,
-     "place": 33
+     "place": 22,
+     "time": "20:52",
+     "no": 22,
+     "warmup": 5
+    },
+    {
+     "name": "Haruna Murakami",
+     "nation": "AUS",
+     "place": 12,
+     "time": "19:15",
+     "no": 12,
+     "warmup": 3
     },
     {
      "name": "Inga Gurgenidze",
      "nation": "GEO",
+     "place": 34,
      "time": "22:43",
      "no": 34,
-     "warmup": 7,
-     "place": 34
+     "warmup": 7
+    },
+    {
+     "name": "Julia Kasprzyk",
+     "nation": "POL",
+     "place": 18,
+     "time": "20:03",
+     "no": 18,
+     "warmup": 4
     },
     {
      "name": "Julia Sauter",
      "nation": "ROU",
+     "place": 35,
      "time": "22:50",
      "no": 35,
-     "warmup": 7,
-     "place": 35
+     "warmup": 7
+    },
+    {
+     "name": "Julia van Dijk",
+     "nation": "NED",
+     "place": 10,
+     "time": "18:40",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Kimmy Repond",
+     "nation": "SUI",
+     "place": 32,
+     "time": "22:29",
+     "no": 32,
+     "warmup": 7
+    },
+    {
+     "name": "Livia Kaiser",
+     "nation": "SUI",
+     "place": 31,
+     "time": "22:01",
+     "no": 31,
+     "warmup": 6
+    },
+    {
+     "name": "Lotta Artimo",
+     "nation": "FIN",
+     "place": 13,
+     "time": "19:22",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Lovisa Aav",
+     "nation": "SWE",
+     "place": 4,
+     "time": "17:45",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Madeline Schizas",
+     "nation": "CAN",
+     "place": 29,
+     "time": "21:47",
+     "no": 29,
+     "warmup": 6
     },
     {
      "name": "Maria Eliise Kaljuvere",
      "nation": "EST",
+     "place": 36,
      "time": "22:57",
      "no": 36,
-     "warmup": 7,
-     "place": 36
+     "warmup": 7
+    },
+    {
+     "name": "Mariia Dmitrieva",
+     "nation": "ISR",
+     "place": 6,
+     "time": "18:12",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Marina Piredda",
+     "nation": "ITA",
+     "place": 26,
+     "time": "21:26",
+     "no": 26,
+     "warmup": 6
+    },
+    {
+     "name": "Maxine Bautista",
+     "nation": "PHI",
+     "place": 11,
+     "time": "19:08",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Meda Variakojyte",
+     "nation": "LTU",
+     "place": 1,
+     "time": "18:26",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Mia Risa Gomez",
+     "nation": "NOR",
+     "place": 20,
+     "time": "20:17",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Michaela Vrastakova",
+     "nation": "CZE",
+     "place": 9,
+     "time": "18:33",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Nataly Langerbaur",
+     "nation": "EST",
+     "place": 21,
+     "time": "20:45",
+     "no": 21,
+     "warmup": 5
+    },
+    {
+     "name": "Nikola Fomchenkova",
+     "nation": "LAT",
+     "place": 15,
+     "time": "19:36",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Olga Mikutina",
+     "nation": "AUT",
+     "place": 33,
+     "time": "22:36",
+     "no": 33,
+     "warmup": 7
+    },
+    {
+     "name": "Pernille With",
+     "nation": "NOR",
+     "place": 16,
+     "time": "19:49",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Polina Dzsumanyijazova",
+     "nation": "HUN",
+     "place": 24,
+     "time": "21:06",
+     "no": 24,
+     "warmup": 5
+    },
+    {
+     "name": "Sara-Maude Dupuis",
+     "nation": "CAN",
+     "place": 25,
+     "time": "21:13",
+     "no": 25,
+     "warmup": 5
+    },
+    {
+     "name": "Saskia Oudejans",
+     "nation": "NED",
+     "place": 3,
+     "time": "17:52",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Sofja Stepcenko",
+     "nation": "LAT",
+     "place": 17,
+     "time": "19:56",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Sophie Joline von Felten",
+     "nation": "USA",
+     "place": 27,
+     "time": "21:33",
+     "no": 27,
+     "warmup": 6
+    },
+    {
+     "name": "Weronika Ferlin",
+     "nation": "POL",
+     "place": 2,
+     "time": "17:38",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Zere Sarbalina",
+     "nation": "KAZ",
+     "place": 8,
+     "time": "18:19",
+     "no": 7,
+     "warmup": 2
     },
     {
      "name": "Алина Горбачёва",
      "nation": "RUS",
+     "place": 37,
      "time": "23:04",
      "no": 37,
-     "warmup": 7,
-     "place": 37
+     "warmup": 7
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/index.htm",
     "seg": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG004.htm",
     "cat": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/CAT002RS.htm",
     "first": "https://hunskate.hu/external/mukorcsolya/2026_2027/BudTrophy2026/SEG003.htm",
     "names": {
-     "Annika Lytchoff SKIBBY": "Annika Lytchoff Skibby",
-     "Weronika FERLIN": "Weronika Ferlin",
-     "Lovisa AAV": "Lovisa Aav",
-     "Saskia OUDEJANS": "Saskia Oudejans",
-     "Ana STRATULAT": "Ana Stratulat",
-     "Mariia DMITRIEVA": "Mariia Dmitrieva",
-     "Zere SARBALINA": "Zere Sarbalina",
      "Meda VARIAKOJYTE": "Meda Variakojyte",
+     "Saskia OUDEJANS": "Saskia Oudejans",
+     "Weronika FERLIN": "Weronika Ferlin",
+     "Mariia DMITRIEVA": "Mariia Dmitrieva",
+     "Lovisa AAV": "Lovisa Aav",
+     "Ana STRATULAT": "Ana Stratulat",
+     "Zere SARBALINA": "Zere Sarbalina",
+     "Annika Lytchoff SKIBBY": "Annika Lytchoff Skibby",
      "Michaela VRASTAKOVA": "Michaela Vrastakova",
      "Julia van DIJK": "Julia van Dijk",
      "Maxine BAUTISTA": "Maxine Bautista",
@@ -30898,28 +30919,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-budapest-trophy.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Michaela Vrastakova",
-     "nation": "CZE",
-     "points": "89.73"
-    },
-    {
-     "place": 2,
-     "name": "Meda Variakojyte",
-     "nation": "LTU",
-     "points": "82.20"
-    },
-    {
-     "place": 3,
-     "name": "Weronika Ferlin",
-     "nation": "POL",
-     "points": "69.25"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-cs-budapest-trophy.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:dance-senior-pt",
