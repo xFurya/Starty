@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-18T13:47:08+03:00",
- "checked": "2026-10-18T14:19:53.441893+00:00",
+ "checked": "2026-10-18T14:31:53.592177+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -30348,63 +30348,71 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 17:10 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Ева Хмелькова / Владислав Антонышев — 99.52\n2. Анна Карпук / Илья Миронов — 53.06\n3. Вероника Меренкова / Даниль Галимов — 53.23\n\nНачало: 17:10 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Ева Хмелькова / Владислав Антонышев",
      "nation": "МОБ",
      "time": "17:17",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Вероника Меренкова / Даниль Галимов",
      "nation": "КРД",
      "time": "17:32",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Алиса Блинникова / Алексей Карпов",
      "nation": "СПБ",
      "time": "17:40",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4
     },
     {
      "name": "Анна Карпук / Илья Миронов",
      "nation": "СПБ",
      "time": "17:47",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Валерия Ходыкина / Даниил Бутенко",
      "nation": "МОС",
      "time": "17:55",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5
     },
     {
      "name": "Анастасия Мухортова / Дмитрий Евгеньев",
      "nation": "МОС",
      "time": "18:02",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6
     },
     {
      "name": "Таисия Щербинина / Артём Петров",
      "nation": "ПРМ",
      "time": "18:10",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     },
     {
      "name": "Юлия Артемьева / Алексей Брюханов",
      "nation": "ПРМ",
      "time": "18:17",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 8
     }
    ],
    "live": {
@@ -30424,7 +30432,28 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Ева Хмелькова / Владислав Антонышев",
+     "nation": "МОБ",
+     "points": "99.52"
+    },
+    {
+     "place": 2,
+     "name": "Анна Карпук / Илья Миронов",
+     "nation": "СПБ",
+     "points": "53.06"
+    },
+    {
+     "place": 3,
+     "name": "Вероника Меренкова / Даниль Галимов",
+     "nation": "КРД",
+     "points": "53.23"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-budapest-trophy:women-senior-pp",
