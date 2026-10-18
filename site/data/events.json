@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T18:55:29+03:00",
- "checked": "2026-10-18T07:35:31.991640+00:00",
+ "checked": "2026-10-18T07:43:32.459401+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -29116,7 +29116,7 @@
      "time": "10:34",
      "no": 10,
      "warmup": 3,
-     "place": 10
+     "place": 1
     },
     {
      "name": "Василиса Григорьева / Евгений Артющенко",
@@ -29158,7 +29158,7 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Shira Ichilov / Mikhail Nosovitskiy — 92.20\n2. Gina Zehnder / Beda Leon Sieber — 89.08\n3. Chloe Nguyen / Brendan Giang — 88.75\n\nРоссияне:\n• Милана Кузьмина / Дмитрий Студеникин — 10:34\n• Василиса Григорьева / Евгений Артющенко — 10:41\n\nНачало: 09:00 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Милана Кузьмина / Дмитрий Студеникин — 96.85\n2. Shira Ichilov / Mikhail Nosovitskiy — 92.20\n3. Gina Zehnder / Beda Leon Sieber — 89.08\n\nРоссияне:\n• Милана Кузьмина / Дмитрий Студеникин — 10:34\n• Василиса Григорьева / Евгений Артющенко — 10:41\n\nНачало: 09:00 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Luiza-Elena Ilie / Giovanni Stefano Poli",
@@ -29166,7 +29166,7 @@
      "time": "09:05",
      "no": 1,
      "warmup": 1,
-     "place": 9
+     "place": 10
     },
     {
      "name": "Alisa Ovsiankina / Maximilien Rahier",
@@ -29174,7 +29174,7 @@
      "time": "09:12",
      "no": 2,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Shira Ichilov / Mikhail Nosovitskiy",
@@ -29182,7 +29182,7 @@
      "time": "09:19",
      "no": 3,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Gina Zehnder / Beda Leon Sieber",
@@ -29190,7 +29190,7 @@
      "time": "09:26",
      "no": 4,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Anita Straub / Andreas Straub",
@@ -29198,7 +29198,7 @@
      "time": "09:39",
      "no": 5,
      "warmup": 2,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Philomene Sabourin / Raul Bermejo",
@@ -29206,7 +29206,7 @@
      "time": "09:46",
      "no": 6,
      "warmup": 2,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Chloe Nguyen / Brendan Giang",
@@ -29214,7 +29214,7 @@
      "time": "09:53",
      "no": 7,
      "warmup": 2,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Emese Csiszer / Mark Shapiro",
@@ -29222,7 +29222,7 @@
      "time": "10:00",
      "no": 8,
      "warmup": 2,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Zofia Grzegorzewska / Oleg Muratov",
@@ -29230,7 +29230,7 @@
      "time": "10:27",
      "no": 9,
      "warmup": 3,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Милана Кузьмина / Дмитрий Студеникин",
@@ -29238,7 +29238,7 @@
      "time": "10:34",
      "no": 10,
      "warmup": 3,
-     "place": 10
+     "place": 1
     },
     {
      "name": "Василиса Григорьева / Евгений Артющенко",
@@ -29372,21 +29372,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Милана Кузьмина / Дмитрий Студеникин",
+     "nation": "RUS",
+     "points": "96.85"
+    },
+    {
+     "place": 2,
      "name": "Shira Ichilov / Mikhail Nosovitskiy",
      "nation": "ISR",
      "points": "92.20"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Gina Zehnder / Beda Leon Sieber",
      "nation": "SUI",
      "points": "89.08"
-    },
-    {
-     "place": 3,
-     "name": "Chloe Nguyen / Brendan Giang",
-     "nation": "CAN",
-     "points": "88.75"
     }
    ],
    "provisional": true
