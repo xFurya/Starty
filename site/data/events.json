@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-18T13:47:08+03:00",
- "checked": "2026-10-18T12:23:53.579761+00:00",
+ "checked": "2026-10-18T12:31:53.953974+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -30065,84 +30065,95 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Вячеслав Проценко — 141.98\n2. Юрий Сидоров — 57.24\n3. Константин Сафонов — 60.83\n\nНачало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Вячеслав Проценко",
      "nation": "СПБ",
      "time": "15:11",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Константин Сафонов",
      "nation": "ТУЛ",
      "time": "15:27",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Иван Конихин",
      "nation": "МОС",
      "time": "15:35",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4
     },
     {
      "name": "Семен Соловьев",
      "nation": "СПБ",
      "time": "15:42",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5
     },
     {
      "name": "Артём Ковалёв",
      "nation": "МОБ",
      "time": "15:50",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6
     },
     {
      "name": "Юрий Сидоров",
      "nation": "ОРЕ",
      "time": "15:58",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Роман Савосин",
      "nation": "МОС",
      "time": "16:05",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     },
     {
      "name": "Матвей Ветлугин",
      "nation": "СПБ",
      "time": "16:12",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 8
     },
     {
      "name": "Даниил Самсонов",
      "nation": "МОС",
      "time": "16:20",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 9
     },
     {
      "name": "Андрей Мозалёв",
      "nation": "МОС",
      "time": "16:28",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 10
     },
     {
      "name": "Евгений Семененко",
      "nation": "СПБ",
      "time": "16:36",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 11
     }
    ],
    "live": {
@@ -30165,7 +30176,28 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Вячеслав Проценко",
+     "nation": "СПБ",
+     "points": "141.98"
+    },
+    {
+     "place": 2,
+     "name": "Юрий Сидоров",
+     "nation": "ОРЕ",
+     "points": "57.24"
+    },
+    {
+     "place": 3,
+     "name": "Константин Сафонов",
+     "nation": "ТУЛ",
+     "points": "60.83"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pairs-senior-pp",
