@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-17T18:55:29+03:00",
- "checked": "2026-10-17T19:30:46.490019+00:00",
+ "checked": "2026-10-18T06:15:32.529182+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -29115,14 +29115,16 @@
      "nation": "RUS",
      "time": "10:34",
      "no": 10,
-     "warmup": 3
+     "warmup": 3,
+     "place": 10
     },
     {
      "name": "Василиса Григорьева / Евгений Артющенко",
      "nation": "RUS",
      "time": "10:41",
      "no": 11,
-     "warmup": 3
+     "warmup": 3,
+     "place": 11
     }
    ],
    "athletes": [
@@ -29156,161 +29158,183 @@
      "url": "https://hunskate.tv/"
     }
    ],
-   "desc": "Россияне:\n• Милана Кузьмина / Дмитрий Студеникин — 10:34\n• Василиса Григорьева / Евгений Артющенко — 10:41\n\nНачало: 09:00 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Luiza-Elena Ilie / Giovanni Stefano Poli — 57.33\n2. Alisa Ovsiankina / Maximilien Rahier — 50.90\n3. Shira Ichilov / Mikhail Nosovitskiy — 54.77\n\nРоссияне:\n• Милана Кузьмина / Дмитрий Студеникин — 10:34\n• Василиса Григорьева / Евгений Артющенко — 10:41\n\nНачало: 09:00 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Luiza-Elena Ilie / Giovanni Stefano Poli",
      "nation": "ROU",
      "time": "09:05",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Alisa Ovsiankina / Maximilien Rahier",
      "nation": "FRA",
      "time": "09:12",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Shira Ichilov / Mikhail Nosovitskiy",
      "nation": "ISR",
      "time": "09:19",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Gina Zehnder / Beda Leon Sieber",
      "nation": "SUI",
      "time": "09:26",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4
     },
     {
      "name": "Anita Straub / Andreas Straub",
      "nation": "AUT",
      "time": "09:39",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5
     },
     {
      "name": "Philomene Sabourin / Raul Bermejo",
      "nation": "ESP",
      "time": "09:46",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6
     },
     {
      "name": "Chloe Nguyen / Brendan Giang",
      "nation": "CAN",
      "time": "09:53",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     },
     {
      "name": "Emese Csiszer / Mark Shapiro",
      "nation": "HUN",
      "time": "10:00",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 8
     },
     {
      "name": "Zofia Grzegorzewska / Oleg Muratov",
      "nation": "POL",
      "time": "10:27",
      "no": 9,
-     "warmup": 3
+     "warmup": 3,
+     "place": 9
     },
     {
      "name": "Милана Кузьмина / Дмитрий Студеникин",
      "nation": "RUS",
      "time": "10:34",
      "no": 10,
-     "warmup": 3
+     "warmup": 3,
+     "place": 10
     },
     {
      "name": "Василиса Григорьева / Евгений Артющенко",
      "nation": "RUS",
      "time": "10:41",
      "no": 11,
-     "warmup": 3
+     "warmup": 3,
+     "place": 11
     },
     {
      "name": "Charise Matthaei / Max Liebers",
      "nation": "GER",
      "time": "10:48",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "place": 12
     },
     {
      "name": "Jamie Fournier / Everest Zhu",
      "nation": "CAN",
      "time": "11:01",
      "no": 13,
-     "warmup": 4
+     "warmup": 4,
+     "place": 13
     },
     {
      "name": "Amy Cui / Jonathan Rogers",
      "nation": "USA",
      "time": "11:08",
      "no": 14,
-     "warmup": 4
+     "warmup": 4,
+     "place": 14
     },
     {
      "name": "Iryna Pidgaina / Artem Koval",
      "nation": "UKR",
      "time": "11:15",
      "no": 15,
-     "warmup": 4
+     "warmup": 4,
+     "place": 15
     },
     {
      "name": "Noemi Maria Tali / Noah Lafornara",
      "nation": "ITA",
      "time": "11:22",
      "no": 16,
-     "warmup": 4
+     "warmup": 4,
+     "place": 16
     },
     {
      "name": "Giulia Isabella Paolino / Andrea Tuba",
      "nation": "ITA",
      "time": "11:29",
      "no": 17,
-     "warmup": 4
+     "warmup": 4,
+     "place": 17
     },
     {
      "name": "Emily Bratti / Ian Somerville",
      "nation": "USA",
      "time": "11:56",
      "no": 18,
-     "warmup": 5
+     "warmup": 5,
+     "place": 18
     },
     {
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN",
      "time": "12:03",
      "no": 19,
-     "warmup": 5
+     "warmup": 5,
+     "place": 19
     },
     {
      "name": "Loicia Demougeot / Theo le Mercier",
      "nation": "FRA",
      "time": "12:10",
      "no": 20,
-     "warmup": 5
+     "warmup": 5,
+     "place": 20
     },
     {
      "name": "Natalie Taschlerova / Filip Taschler",
      "nation": "CZE",
      "time": "12:17",
      "no": 21,
-     "warmup": 5
+     "warmup": 5,
+     "place": 21
     },
     {
      "name": "Olivia Smart / Tim Dieck",
      "nation": "ESP",
      "time": "12:24",
      "no": 22,
-     "warmup": 5
+     "warmup": 5,
+     "place": 22
     }
    ],
    "live": {
@@ -29344,7 +29368,28 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": "isu_isu-cs-budapest-trophy.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Luiza-Elena Ilie / Giovanni Stefano Poli",
+     "nation": "ROU",
+     "points": "57.33"
+    },
+    {
+     "place": 2,
+     "name": "Alisa Ovsiankina / Maximilien Rahier",
+     "nation": "FRA",
+     "points": "50.90"
+    },
+    {
+     "place": 3,
+     "name": "Shira Ichilov / Mikhail Nosovitskiy",
+     "nation": "ISR",
+     "points": "54.77"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-budapest-trophy:men-senior-pp",
