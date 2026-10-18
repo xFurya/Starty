@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-18T18:35:23+03:00",
- "checked": "2026-10-18T17:23:53.537050+00:00",
+ "checked": "2026-10-18T17:31:54.128034+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -30556,29 +30556,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Mia Risa Gomez",
+     "nation": "NOR",
+     "points": "114.41"
+    },
+    {
+     "place": 2,
      "name": "Pernille With",
      "nation": "NOR",
      "points": "98.88"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Haruna Murakami",
      "nation": "AUS",
      "points": "93.72"
-    },
-    {
-     "place": 3,
-     "name": "Michaela Vrastakova",
-     "nation": "CZE",
-     "points": "89.73"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Pernille With — 98.88\n2. Haruna Murakami — 93.72\n3. Michaela Vrastakova — 89.73\n\nРоссияне:\n• Алина Горбачёва — 23:04\n\nНачало: 17:25 МСК\nТрансляция: HunSkate TV",
+   "desc": "Промежуточные итоги:\n1. Mia Risa Gomez — 114.41\n2. Pernille With — 98.88\n3. Haruna Murakami — 93.72\n\nРоссияне:\n• Алина Горбачёва — 23:04\n\nНачало: 17:25 МСК\nТрансляция: HunSkate TV",
    "field": [
     {
      "name": "Alexandra Feigin",
      "nation": "BUL",
-     "place": 11,
+     "place": 12,
      "time": "20:10",
      "no": 19,
      "warmup": 4
@@ -30594,7 +30594,7 @@
     {
      "name": "Ana Stratulat",
      "nation": "ROU",
-     "place": 16,
+     "place": 17,
      "time": "17:59",
      "no": 5,
      "warmup": 1
@@ -30618,7 +30618,7 @@
     {
      "name": "Annika Lytchoff Skibby",
      "nation": "DEN",
-     "place": 18,
+     "place": 19,
      "time": "17:31",
      "no": 1,
      "warmup": 1
@@ -30626,7 +30626,7 @@
     {
      "name": "Elizabet Gervits",
      "nation": "ISR",
-     "place": 4,
+     "place": 5,
      "time": "19:29",
      "no": 14,
      "warmup": 3
@@ -30642,7 +30642,7 @@
     {
      "name": "Haruna Murakami",
      "nation": "AUS",
-     "place": 2,
+     "place": 3,
      "time": "19:15",
      "no": 12,
      "warmup": 3
@@ -30658,7 +30658,7 @@
     {
      "name": "Julia Kasprzyk",
      "nation": "POL",
-     "place": 7,
+     "place": 8,
      "time": "20:03",
      "no": 18,
      "warmup": 4
@@ -30674,7 +30674,7 @@
     {
      "name": "Julia van Dijk",
      "nation": "NED",
-     "place": 5,
+     "place": 6,
      "time": "18:40",
      "no": 10,
      "warmup": 2
@@ -30698,7 +30698,7 @@
     {
      "name": "Lotta Artimo",
      "nation": "FIN",
-     "place": 10,
+     "place": 11,
      "time": "19:22",
      "no": 13,
      "warmup": 3
@@ -30706,7 +30706,7 @@
     {
      "name": "Lovisa Aav",
      "nation": "SWE",
-     "place": 15,
+     "place": 16,
      "time": "17:45",
      "no": 3,
      "warmup": 1
@@ -30730,7 +30730,7 @@
     {
      "name": "Mariia Dmitrieva",
      "nation": "ISR",
-     "place": 17,
+     "place": 18,
      "time": "18:12",
      "no": 6,
      "warmup": 2
@@ -30746,7 +30746,7 @@
     {
      "name": "Maxine Bautista",
      "nation": "PHI",
-     "place": 8,
+     "place": 9,
      "time": "19:08",
      "no": 11,
      "warmup": 3
@@ -30754,7 +30754,7 @@
     {
      "name": "Meda Variakojyte",
      "nation": "LTU",
-     "place": 9,
+     "place": 10,
      "time": "18:26",
      "no": 8,
      "warmup": 2
@@ -30762,7 +30762,7 @@
     {
      "name": "Mia Risa Gomez",
      "nation": "NOR",
-     "place": 20,
+     "place": 1,
      "time": "20:17",
      "no": 20,
      "warmup": 4
@@ -30770,7 +30770,7 @@
     {
      "name": "Michaela Vrastakova",
      "nation": "CZE",
-     "place": 3,
+     "place": 4,
      "time": "18:33",
      "no": 9,
      "warmup": 2
@@ -30786,7 +30786,7 @@
     {
      "name": "Nikola Fomchenkova",
      "nation": "LAT",
-     "place": 6,
+     "place": 7,
      "time": "19:36",
      "no": 15,
      "warmup": 3
@@ -30802,7 +30802,7 @@
     {
      "name": "Pernille With",
      "nation": "NOR",
-     "place": 1,
+     "place": 2,
      "time": "19:49",
      "no": 16,
      "warmup": 4
@@ -30826,7 +30826,7 @@
     {
      "name": "Saskia Oudejans",
      "nation": "NED",
-     "place": 14,
+     "place": 15,
      "time": "17:52",
      "no": 4,
      "warmup": 1
@@ -30834,7 +30834,7 @@
     {
      "name": "Sofja Stepcenko",
      "nation": "LAT",
-     "place": 13,
+     "place": 14,
      "time": "19:56",
      "no": 17,
      "warmup": 4
@@ -30850,7 +30850,7 @@
     {
      "name": "Weronika Ferlin",
      "nation": "POL",
-     "place": 12,
+     "place": 13,
      "time": "17:38",
      "no": 2,
      "warmup": 1
@@ -30858,7 +30858,7 @@
     {
      "name": "Zere Sarbalina",
      "nation": "KAZ",
-     "place": 19,
+     "place": 20,
      "time": "18:19",
      "no": 7,
      "warmup": 2
