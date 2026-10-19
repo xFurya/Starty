@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:pairs-
+ senior-kp@starty
+DTSTAMP:20261019T124758Z
+DTSTART;TZID=Europe/Moscow:20261024T165500
+DTEND;TZID=Europe/Moscow:20261024T180500
+SUMMARY:Гран-при России «Невский лёд» — пары
+  КП
+DESCRIPTION:Начало: 16:55 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:СК «Юбилейный»\, Санкт-Петербург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-nevskij-led-2026:pairs-senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Гран-при России «Невский лёд» — па
+ ры КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
