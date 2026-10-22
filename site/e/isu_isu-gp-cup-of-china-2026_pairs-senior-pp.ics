@@ -14,11 +14,13 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-cup-of-china-2026:pairs-senior-pp@starty
-DTSTAMP:20261022T113726Z
+DTSTAMP:20261022T165134Z
 DTSTART;TZID=Europe/Moscow:20261107T134000
-DTEND;TZID=Europe/Moscow:20261107T145000
+DTEND;TZID=Europe/Moscow:20261107T150000
 SUMMARY:GP Cup of China — пары ПП
-DESCRIPTION:Начало: 13:40 МСК\nТрансляция: Okko
+DESCRIPTION:Россияне:\n• Анастасия Мишина / Але
+ ксандр Галлямов\n\nНачало: 13:40 МСК\nТрансл
+ яция: Okko
 LOCATION:Shenzhen\, China
 URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:pairs-s
  enior-pp

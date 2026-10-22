@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-22T14:37:26+03:00",
- "checked": "2026-10-22T14:37:26+03:00",
+ "generated": "2026-10-22T19:51:34+03:00",
+ "checked": "2026-10-22T19:51:34+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -32154,6 +32154,907 @@
    "proto": "gs_blackburn-trophy.json"
   },
   {
+   "id": "gs:golden-bear:women-senior-pp-chicks-girls",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "women",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Golden Bear — женщины ПП",
+   "start": "2026-10-22T19:00:00+03:00",
+   "end": "2026-10-22T20:20:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Alessandro Liberatore",
+    "Arin Yorke",
+    "Corentin Spinar",
+    "David Sedej",
+    "Jan Valtera",
+    "Maxim Varakin",
+    "Oliver Praetorius",
+    "Vladimir Samoilov",
+    "Xan Rols"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "desc": "Начало: 19:00 МСК",
+   "field": [
+    {
+     "name": "Alessandro Liberatore",
+     "nation": "SLO"
+    },
+    {
+     "name": "Arin Yorke",
+     "nation": "GBR"
+    },
+    {
+     "name": "Corentin Spinar",
+     "nation": "FRA"
+    },
+    {
+     "name": "David Sedej",
+     "nation": "SLO"
+    },
+    {
+     "name": "Jan Valtera",
+     "nation": "CZE"
+    },
+    {
+     "name": "Maxim Varakin",
+     "nation": "CRO"
+    },
+    {
+     "name": "Oliver Praetorius",
+     "nation": "SWE"
+    },
+    {
+     "name": "Vladimir Samoilov",
+     "nation": "POL"
+    },
+    {
+     "name": "Xan Rols",
+     "nation": "FRA"
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG002.htm",
+    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT001RS.htm",
+    "first": null,
+    "names": {
+     "Maxim VARAKIN": "Maxim Varakin",
+     "Jan VALTERA": "Jan Valtera",
+     "Xan ROLS": "Xan Rols",
+     "Corentin SPINAR": "Corentin Spinar",
+     "Arin YORKE": "Arin Yorke",
+     "Vladimir SAMOILOV": "Vladimir Samoilov",
+     "Alessandro LIBERATORE": "Alessandro Liberatore",
+     "David SEDEJ": "David Sedej",
+     "Oliver PRAETORIUS": "Oliver Praetorius"
+    },
+    "basis": null
+   },
+   "proto": "gs_golden-bear.json"
+  },
+  {
+   "id": "gs:golden-bear:men-senior-pp",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "men",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Golden Bear — мужчины ПП",
+   "start": "2026-10-22T21:45:00+03:00",
+   "end": "2026-10-22T23:05:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Alessandro Liberatore",
+    "Arin Yorke",
+    "Corentin Spinar",
+    "David Sedej",
+    "Jan Valtera",
+    "Maxim Varakin",
+    "Oliver Praetorius",
+    "Vladimir Samoilov",
+    "Xan Rols"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "desc": "Начало: 21:45 МСК",
+   "field": [
+    {
+     "name": "Corentin Spinar",
+     "nation": "FRA",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "David Sedej",
+     "nation": "SLO",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Xan Rols",
+     "nation": "FRA",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Arin Yorke",
+     "nation": "GBR",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Oliver Praetorius",
+     "nation": "SWE",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Jan Valtera",
+     "nation": "CZE",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Maxim Varakin",
+     "nation": "CRO",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Alessandro Liberatore",
+     "nation": "SLO",
+     "no": 9,
+     "warmup": 2
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG001.htm",
+    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT002RS.htm",
+    "first": null,
+    "names": {
+     "Corentin SPINAR": "Corentin Spinar",
+     "David SEDEJ": "David Sedej",
+     "Xan ROLS": "Xan Rols",
+     "Arin YORKE": "Arin Yorke",
+     "Vladimir SAMOILOV": "Vladimir Samoilov",
+     "Oliver PRAETORIUS": "Oliver Praetorius",
+     "Jan VALTERA": "Jan Valtera",
+     "Maxim VARAKIN": "Maxim Varakin",
+     "Alessandro LIBERATORE": "Alessandro Liberatore"
+    },
+    "basis": null
+   },
+   "proto": "gs_golden-bear.json"
+  },
+  {
+   "id": "gs:golden-bear:women-senior-pp-basic-novice-women-i",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "women",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Golden Bear — женщины ПП",
+   "start": "2026-10-22T22:20:00+03:00",
+   "end": "2026-10-23T00:50:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Ariadna Gupta Espada",
+    "Barbora Tykalova",
+    "Dunja Tresnjic",
+    "Elena Agostinelli",
+    "Ema Vukovic",
+    "Ginevra Lavinia Negrello",
+    "Julia Fennell",
+    "Julija Lovrencic",
+    "Katerina Hanusova",
+    "Lorena Cizmek",
+    "Marietta Atkins",
+    "Olivia Lengyelova",
+    "Oliwia Strokosz",
+    "Zala Grum",
+    "Zofia Bochenek"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "desc": "Начало: 22:20 МСК",
+   "field": [
+    {
+     "name": "Ema Vukovic",
+     "nation": "CRO",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Julija Lovrencic",
+     "nation": "SLO",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Elena Agostinelli",
+     "nation": "ITA",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Lorena Cizmek",
+     "nation": "CRO",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Marietta Atkins",
+     "nation": "POL",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Ginevra Lavinia Negrello",
+     "nation": "ITA",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Zofia Bochenek",
+     "nation": "POL",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Julia Fennell",
+     "nation": "ISR",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Oliwia Strokosz",
+     "nation": "POL",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Katerina Hanusova",
+     "nation": "CZE",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Barbora Tykalova",
+     "nation": "CZE",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Zala Grum",
+     "nation": "SLO",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Ariadna Gupta Espada",
+     "nation": "ESP",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Dunja Tresnjic",
+     "nation": "SRB",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Olivia Lengyelova",
+     "nation": "SVK",
+     "no": 15,
+     "warmup": 3
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG003.htm",
+    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT003RS.htm",
+    "first": null,
+    "names": {
+     "Ema VUKOVIC": "Ema Vukovic",
+     "Julija LOVRENCIC": "Julija Lovrencic",
+     "Elena AGOSTINELLI": "Elena Agostinelli",
+     "Lorena CIZMEK": "Lorena Cizmek",
+     "Marietta ATKINS": "Marietta Atkins",
+     "Ginevra Lavinia NEGRELLO": "Ginevra Lavinia Negrello",
+     "Zofia BOCHENEK": "Zofia Bochenek",
+     "Julia FENNELL": "Julia Fennell",
+     "Oliwia STROKOSZ": "Oliwia Strokosz",
+     "Katerina HANUSOVA": "Katerina Hanusova",
+     "Barbora TYKALOVA": "Barbora Tykalova",
+     "Zala GRUM": "Zala Grum",
+     "Ariadna GUPTA ESPADA": "Ariadna Gupta Espada",
+     "Dunja TRESNJIC": "Dunja Tresnjic",
+     "Olivia LENGYELOVA": "Olivia Lengyelova"
+    },
+    "basis": null
+   },
+   "proto": "gs_golden-bear.json"
+  },
+  {
+   "id": "gs:golden-bear:women-senior-pp-basic-novice-women-iii",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "women",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Golden Bear — женщины ПП",
+   "start": "2026-10-23T10:00:00+03:00",
+   "end": "2026-10-23T13:20:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Ekaterina Balaganskaia",
+    "Eleonora Ciferri",
+    "Enja Sivic",
+    "Eva Dudic",
+    "Hana Operckal",
+    "Lea Marie Castlunger",
+    "Liana Smrekar",
+    "Lija Kroselj",
+    "Louane Wolff",
+    "Luna Rozman",
+    "Nadja Savic",
+    "Neza Lusic",
+    "Nicole de Rosa",
+    "Nika Sajko",
+    "Paula Kasnar",
+    "Tara Plahutar",
+    "Tea Sajko",
+    "Ula Zadnikar",
+    "Vasilisa Bogomolova",
+    "Ziva Aupic",
+    "Zsofia Szeplaki"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "desc": "Начало: 10:00 МСК",
+   "field": [
+    {
+     "name": "Ekaterina Balaganskaia",
+     "nation": "SRB"
+    },
+    {
+     "name": "Eleonora Ciferri",
+     "nation": "ITA"
+    },
+    {
+     "name": "Enja Sivic",
+     "nation": "SLO"
+    },
+    {
+     "name": "Eva Dudic",
+     "nation": "CRO"
+    },
+    {
+     "name": "Hana Operckal",
+     "nation": "SLO"
+    },
+    {
+     "name": "Lea Marie Castlunger",
+     "nation": "ITA"
+    },
+    {
+     "name": "Liana Smrekar",
+     "nation": "SLO"
+    },
+    {
+     "name": "Lija Kroselj",
+     "nation": "SLO"
+    },
+    {
+     "name": "Louane Wolff",
+     "nation": "FRA"
+    },
+    {
+     "name": "Luna Rozman",
+     "nation": "SLO"
+    },
+    {
+     "name": "Nadja Savic",
+     "nation": "SRB"
+    },
+    {
+     "name": "Neza Lusic",
+     "nation": "SLO"
+    },
+    {
+     "name": "Nicole de Rosa",
+     "nation": "ITA"
+    },
+    {
+     "name": "Nika Sajko",
+     "nation": "CRO"
+    },
+    {
+     "name": "Paula Kasnar",
+     "nation": "CRO"
+    },
+    {
+     "name": "Tara Plahutar",
+     "nation": "CRO"
+    },
+    {
+     "name": "Tea Sajko",
+     "nation": "CRO"
+    },
+    {
+     "name": "Ula Zadnikar",
+     "nation": "SLO"
+    },
+    {
+     "name": "Vasilisa Bogomolova",
+     "nation": "CYP"
+    },
+    {
+     "name": "Ziva Aupic",
+     "nation": "SLO"
+    },
+    {
+     "name": "Zsofia Szeplaki",
+     "nation": "HUN"
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG004.htm",
+    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT004RS.htm",
+    "first": null,
+    "names": {
+     "Eva DUDIC": "Eva Dudic",
+     "Paula KASNAR": "Paula Kasnar",
+     "Tara PLAHUTAR": "Tara Plahutar",
+     "Nika SAJKO": "Nika Sajko",
+     "Tea SAJKO": "Tea Sajko",
+     "Vasilisa BOGOMOLOVA": "Vasilisa Bogomolova",
+     "Louane WOLFF": "Louane Wolff",
+     "Zsofia SZEPLAKI": "Zsofia Szeplaki",
+     "Lea Marie CASTLUNGER": "Lea Marie Castlunger",
+     "Eleonora CIFERRI": "Eleonora Ciferri",
+     "Nicole de ROSA": "Nicole de Rosa",
+     "Ziva AUPIC": "Ziva Aupic",
+     "Lija KROSELJ": "Lija Kroselj",
+     "Neza LUSIC": "Neza Lusic",
+     "Hana OPERCKAL": "Hana Operckal",
+     "Luna ROZMAN": "Luna Rozman",
+     "Enja SIVIC": "Enja Sivic",
+     "Liana SMREKAR": "Liana Smrekar",
+     "Ula ZADNIKAR": "Ula Zadnikar",
+     "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
+     "Nadja SAVIC": "Nadja Savic"
+    },
+    "basis": null
+   },
+   "proto": "gs_golden-bear.json"
+  },
+  {
+   "id": "gs:golden-bear:women-senior-pp-basic-novice-women-ii",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "women",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Golden Bear — женщины ПП",
+   "start": "2026-10-23T10:35:00+03:00",
+   "end": "2026-10-23T11:25:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Alessandro Giuliano",
+    "Daniel Verbat",
+    "Elian Thomann",
+    "Felix Oberbacher",
+    "Lenny Olivier",
+    "Matteo Marchioni"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "desc": "Начало: 10:35 МСК",
+   "field": [
+    {
+     "name": "Daniel Verbat",
+     "nation": "FRA",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Elian Thomann",
+     "nation": "FRA",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Lenny Olivier",
+     "nation": "FRA",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Alessandro Giuliano",
+     "nation": "ITA",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Felix Oberbacher",
+     "nation": "ITA",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Matteo Marchioni",
+     "nation": "ITA",
+     "no": 6,
+     "warmup": 1
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG005.htm",
+    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT005RS.htm",
+    "first": null,
+    "names": {
+     "Daniel VERBAT": "Daniel Verbat",
+     "Elian THOMANN": "Elian Thomann",
+     "Lenny OLIVIER": "Lenny Olivier",
+     "Alessandro GIULIANO": "Alessandro Giuliano",
+     "Felix OBERBACHER": "Felix Oberbacher",
+     "Matteo MARCHIONI": "Matteo Marchioni"
+    },
+    "basis": null
+   },
+   "proto": "gs_golden-bear.json"
+  },
+  {
+   "id": "gs:golden-bear:women-senior-pp-cubs-girls-ii",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "women",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Golden Bear — женщины ПП",
+   "start": "2026-10-23T11:45:00+03:00",
+   "end": "2026-10-23T14:20:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Adriana Shevtsova",
+    "Alexa Riddoch",
+    "Anna Greta Varro",
+    "Anna Stepanchuk",
+    "Aria Lusa Kogovsek",
+    "Beatriz Juratovac",
+    "Elisa Irsara",
+    "Hannah Gerard",
+    "Kincso Dorina Simon",
+    "Olivia Zoe Szili",
+    "Pia Cizmek",
+    "Polina Zeciri",
+    "Sara Klepetkova",
+    "Tara Besic",
+    "Tena Evelyn Skalicki",
+    "Valentina Beer"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "desc": "Начало: 11:45 МСК",
+   "field": [
+    {
+     "name": "Adriana Shevtsova",
+     "nation": "UKR"
+    },
+    {
+     "name": "Alexa Riddoch",
+     "nation": "GBR"
+    },
+    {
+     "name": "Anna Greta Varro",
+     "nation": "HUN"
+    },
+    {
+     "name": "Anna Stepanchuk",
+     "nation": "CRO"
+    },
+    {
+     "name": "Aria Lusa Kogovsek",
+     "nation": "SLO"
+    },
+    {
+     "name": "Beatriz Juratovac",
+     "nation": "CRO"
+    },
+    {
+     "name": "Elisa Irsara",
+     "nation": "ITA"
+    },
+    {
+     "name": "Hannah Gerard",
+     "nation": "FRA"
+    },
+    {
+     "name": "Kincso Dorina Simon",
+     "nation": "HUN"
+    },
+    {
+     "name": "Olivia Zoe Szili",
+     "nation": "HUN"
+    },
+    {
+     "name": "Pia Cizmek",
+     "nation": "CRO"
+    },
+    {
+     "name": "Polina Zeciri",
+     "nation": "AUT"
+    },
+    {
+     "name": "Sara Klepetkova",
+     "nation": "CZE"
+    },
+    {
+     "name": "Tara Besic",
+     "nation": "CRO"
+    },
+    {
+     "name": "Tena Evelyn Skalicki",
+     "nation": "SLO"
+    },
+    {
+     "name": "Valentina Beer",
+     "nation": "GER"
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG006.htm",
+    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT006RS.htm",
+    "first": null,
+    "names": {
+     "Polina ZECIRI": "Polina Zeciri",
+     "Tara BESIC": "Tara Besic",
+     "Pia CIZMEK": "Pia Cizmek",
+     "Beatriz JURATOVAC": "Beatriz Juratovac",
+     "Anna STEPANCHUK": "Anna Stepanchuk",
+     "Sara KLEPETKOVA": "Sara Klepetkova",
+     "Hannah GERARD": "Hannah Gerard",
+     "Alexa RIDDOCH": "Alexa Riddoch",
+     "Valentina BEER": "Valentina Beer",
+     "Kincso Dorina SIMON": "Kincso Dorina Simon",
+     "Olivia Zoe SZILI": "Olivia Zoe Szili",
+     "Anna Greta VARRO": "Anna Greta Varro",
+     "Elisa IRSARA": "Elisa Irsara",
+     "Aria Lusa KOGOVSEK": "Aria Lusa Kogovsek",
+     "Tena Evelyn SKALICKI": "Tena Evelyn Skalicki",
+     "Adriana SHEVTSOVA": "Adriana Shevtsova"
+    },
+    "basis": null
+   },
+   "proto": "gs_golden-bear.json"
+  },
+  {
+   "id": "gs:golden-bear:women-senior-pp-cubs-girls-i",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "women",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Golden Bear — женщины ПП",
+   "start": "2026-10-23T12:20:00+03:00",
+   "end": "2026-10-23T15:40:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Ekaterina Balaganskaia",
+    "Eleonora Ciferri",
+    "Enja Sivic",
+    "Eva Dudic",
+    "Hana Operckal",
+    "Lea Marie Castlunger",
+    "Liana Smrekar",
+    "Lija Kroselj",
+    "Louane Wolff",
+    "Luna Rozman",
+    "Nadja Savic",
+    "Neza Lusic",
+    "Nicole de Rosa",
+    "Nika Sajko",
+    "Paula Kasnar",
+    "Tara Plahutar",
+    "Tea Sajko",
+    "Ula Zadnikar",
+    "Vasilisa Bogomolova",
+    "Ziva Aupic",
+    "Zsofia Szeplaki"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "desc": "Начало: 12:20 МСК",
+   "field": [
+    {
+     "name": "Lea Marie Castlunger",
+     "nation": "ITA",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Ekaterina Balaganskaia",
+     "nation": "SRB",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Nika Sajko",
+     "nation": "CRO",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Liana Smrekar",
+     "nation": "SLO",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Nadja Savic",
+     "nation": "SRB",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Eva Dudic",
+     "nation": "CRO",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Ziva Aupic",
+     "nation": "SLO",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Eleonora Ciferri",
+     "nation": "ITA",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Vasilisa Bogomolova",
+     "nation": "CYP",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Nicole de Rosa",
+     "nation": "ITA",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Tea Sajko",
+     "nation": "CRO",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Tara Plahutar",
+     "nation": "CRO",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Enja Sivic",
+     "nation": "SLO",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Hana Operckal",
+     "nation": "SLO",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Ula Zadnikar",
+     "nation": "SLO",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Neza Lusic",
+     "nation": "SLO",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Louane Wolff",
+     "nation": "FRA",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Zsofia Szeplaki",
+     "nation": "HUN",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Paula Kasnar",
+     "nation": "CRO",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Luna Rozman",
+     "nation": "SLO",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Lija Kroselj",
+     "nation": "SLO",
+     "no": 21,
+     "warmup": 4
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG007.htm",
+    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT007RS.htm",
+    "first": null,
+    "names": {
+     "Lea Marie CASTLUNGER": "Lea Marie Castlunger",
+     "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
+     "Nika SAJKO": "Nika Sajko",
+     "Liana SMREKAR": "Liana Smrekar",
+     "Nadja SAVIC": "Nadja Savic",
+     "Eva DUDIC": "Eva Dudic",
+     "Ziva AUPIC": "Ziva Aupic",
+     "Eleonora CIFERRI": "Eleonora Ciferri",
+     "Vasilisa BOGOMOLOVA": "Vasilisa Bogomolova",
+     "Nicole de ROSA": "Nicole de Rosa",
+     "Tea SAJKO": "Tea Sajko",
+     "Tara PLAHUTAR": "Tara Plahutar",
+     "Enja SIVIC": "Enja Sivic",
+     "Hana OPERCKAL": "Hana Operckal",
+     "Ula ZADNIKAR": "Ula Zadnikar",
+     "Neza LUSIC": "Neza Lusic",
+     "Louane WOLFF": "Louane Wolff",
+     "Zsofia SZEPLAKI": "Zsofia Szeplaki",
+     "Paula KASNAR": "Paula Kasnar",
+     "Luna ROZMAN": "Luna Rozman",
+     "Lija KROSELJ": "Lija Kroselj"
+    },
+    "basis": null
+   },
+   "proto": "gs_golden-bear.json"
+  },
+  {
    "id": "isu:isu-gp-grand-prix-de-france-2026:dance-senior-rt",
    "tid": "isu:isu-gp-grand-prix-de-france-2026",
    "tournament": "GP de France",
@@ -32594,7 +33495,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_revised.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_upd221026.pdf",
    "watch": [
     {
      "name": "Первый канал",
@@ -32626,7 +33527,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_revised.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_upd221026.pdf",
    "watch": [
     {
      "name": "Первый канал",
@@ -32757,7 +33658,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_revised.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_upd221026.pdf",
    "watch": [
     {
      "name": "Первый канал",
@@ -32789,7 +33690,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_revised.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_upd221026.pdf",
    "watch": [
     {
      "name": "Первый канал",
@@ -33143,7 +34044,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_revised.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_upd221026.pdf",
    "watch": [
     {
      "name": "Первый канал",
@@ -33286,7 +34187,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_revised.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_upd221026.pdf",
    "watch": [
     {
      "name": "Первый канал",
@@ -33318,7 +34219,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_revised.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_upd221026.pdf",
    "watch": [
     {
      "name": "Первый канал",
@@ -33350,7 +34251,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_revised.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_upd221026.pdf",
    "watch": [
     {
      "name": "Первый канал",
@@ -33629,7 +34530,7 @@
    "seg": "КП",
    "title": "GP Skate Canada — мужчины КП",
    "start": "2026-10-31T04:00:00+03:00",
-   "end": "2026-10-31T05:25:00+03:00",
+   "end": "2026-10-31T05:30:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -33638,6 +34539,7 @@
    "ours": [],
    "athletes": [
     "David Bondar",
+    "Genrikh Gartung",
     "Georgii Reshtenko",
     "Hyungyeom Kim",
     "Kazuki Tomono",
@@ -33661,6 +34563,10 @@
     {
      "name": "David Bondar",
      "nation": "CAN"
+    },
+    {
+     "name": "Genrikh Gartung",
+     "nation": "GER"
     },
     {
      "name": "Georgii Reshtenko",
@@ -33880,13 +34786,18 @@
    "seg": "КП",
    "title": "GP Skate Canada — женщины КП",
    "start": "2026-10-31T22:30:00+03:00",
-   "end": "2026-10-31T23:55:00+03:00",
+   "end": "2026-11-01T00:00:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
     "Okko"
    ],
-   "ours": [],
+   "ours": [
+    {
+     "name": "Виктория Сафонова",
+     "nation": "BLR"
+    }
+   ],
    "athletes": [
     "Anna Pezzetta",
     "Fee Ann Landry",
@@ -33898,7 +34809,8 @@
     "Saki Miyake",
     "Sara-Maude Dupuis",
     "Sofia Samodelkina",
-    "Yujae Kim"
+    "Yujae Kim",
+    "Виктория Сафонова"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
    "watch": [
@@ -33907,7 +34819,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 22:30 МСК\nТрансляция: Okko",
+   "desc": "Россияне:\n• Виктория Сафонова\n\nНачало: 22:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anna Pezzetta",
@@ -33952,6 +34864,10 @@
     {
      "name": "Yujae Kim",
      "nation": "KOR"
+    },
+    {
+     "name": "Виктория Сафонова",
+     "nation": "BLR"
     }
    ],
    "proto": null
@@ -34045,7 +34961,7 @@
    "seg": "ПП",
    "title": "GP Skate Canada — мужчины ПП",
    "start": "2026-11-01T02:40:00+03:00",
-   "end": "2026-11-01T04:15:00+03:00",
+   "end": "2026-11-01T04:25:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -34054,6 +34970,7 @@
    "ours": [],
    "athletes": [
     "David Bondar",
+    "Genrikh Gartung",
     "Georgii Reshtenko",
     "Hyungyeom Kim",
     "Kazuki Tomono",
@@ -34077,6 +34994,10 @@
     {
      "name": "David Bondar",
      "nation": "CAN"
+    },
+    {
+     "name": "Genrikh Gartung",
+     "nation": "GER"
     },
     {
      "name": "Georgii Reshtenko",
@@ -34296,13 +35217,18 @@
    "seg": "ПП",
    "title": "GP Skate Canada — женщины ПП",
    "start": "2026-11-02T00:00:00+03:00",
-   "end": "2026-11-02T01:35:00+03:00",
+   "end": "2026-11-02T01:45:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
     "Okko"
    ],
-   "ours": [],
+   "ours": [
+    {
+     "name": "Виктория Сафонова",
+     "nation": "BLR"
+    }
+   ],
    "athletes": [
     "Anna Pezzetta",
     "Fee Ann Landry",
@@ -34314,7 +35240,8 @@
     "Saki Miyake",
     "Sara-Maude Dupuis",
     "Sofia Samodelkina",
-    "Yujae Kim"
+    "Yujae Kim",
+    "Виктория Сафонова"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
    "watch": [
@@ -34323,7 +35250,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 00:00 МСК\nТрансляция: Okko",
+   "desc": "Россияне:\n• Виктория Сафонова\n\nНачало: 00:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anna Pezzetta",
@@ -34368,6 +35295,10 @@
     {
      "name": "Yujae Kim",
      "nation": "KOR"
+    },
+    {
+     "name": "Виктория Сафонова",
+     "nation": "BLR"
     }
    ],
    "proto": null
@@ -34636,13 +35567,18 @@
    "seg": "КП",
    "title": "GP Cup of China — пары КП",
    "start": "2026-11-06T14:00:00+03:00",
-   "end": "2026-11-06T15:05:00+03:00",
+   "end": "2026-11-06T15:10:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
    "broadcast": [
     "Okko"
    ],
-   "ours": [],
+   "ours": [
+    {
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "RUS"
+    }
+   ],
    "athletes": [
     "Anastasiia Metelkina / Luka Berulava",
     "Chelsea Liu / Ryan Bedard",
@@ -34650,7 +35586,8 @@
     "Jiaxuan Zhang / Yihang Huang",
     "Karina Akopova / Nikita Rakhmanin",
     "Valentina Plazas / Maximiliano Fernandez",
-    "Yuna Nagaoka / Sumitada Moriguchi"
+    "Yuna Nagaoka / Sumitada Moriguchi",
+    "Анастасия Мишина / Александр Галлямов"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-cup-of-china-2026/",
    "watch": [
@@ -34659,7 +35596,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 14:00 МСК\nТрансляция: Okko",
+   "desc": "Россияне:\n• Анастасия Мишина / Александр Галлямов\n\nНачало: 14:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anastasiia Metelkina / Luka Berulava",
@@ -34688,6 +35625,10 @@
     {
      "name": "Yuna Nagaoka / Sumitada Moriguchi",
      "nation": "JPN"
+    },
+    {
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "RUS"
     }
    ],
    "proto": null
@@ -34975,13 +35916,18 @@
    "seg": "ПП",
    "title": "GP Cup of China — пары ПП",
    "start": "2026-11-07T13:40:00+03:00",
-   "end": "2026-11-07T14:50:00+03:00",
+   "end": "2026-11-07T15:00:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
    "broadcast": [
     "Okko"
    ],
-   "ours": [],
+   "ours": [
+    {
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "RUS"
+    }
+   ],
    "athletes": [
     "Anastasiia Metelkina / Luka Berulava",
     "Chelsea Liu / Ryan Bedard",
@@ -34989,7 +35935,8 @@
     "Jiaxuan Zhang / Yihang Huang",
     "Karina Akopova / Nikita Rakhmanin",
     "Valentina Plazas / Maximiliano Fernandez",
-    "Yuna Nagaoka / Sumitada Moriguchi"
+    "Yuna Nagaoka / Sumitada Moriguchi",
+    "Анастасия Мишина / Александр Галлямов"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-cup-of-china-2026/",
    "watch": [
@@ -34998,7 +35945,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 13:40 МСК\nТрансляция: Okko",
+   "desc": "Россияне:\n• Анастасия Мишина / Александр Галлямов\n\nНачало: 13:40 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anastasiia Metelkina / Luka Berulava",
@@ -35027,6 +35974,10 @@
     {
      "name": "Yuna Nagaoka / Sumitada Moriguchi",
      "nation": "JPN"
+    },
+    {
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "RUS"
     }
    ],
    "proto": null
@@ -35379,13 +36330,18 @@
    "seg": "КП",
    "title": "GP Skate America — женщины КП",
    "start": "2026-11-15T02:42:00+03:00",
-   "end": "2026-11-15T04:07:00+03:00",
+   "end": "2026-11-15T04:12:00+03:00",
    "venue": "Everett, USA",
    "intl": true,
    "broadcast": [
     "Okko"
    ],
-   "ours": [],
+   "ours": [
+    {
+     "name": "Александра Трусова",
+     "nation": "RUS"
+    }
+   ],
    "athletes": [
     "Ahsun Yun",
     "Alexa Gasparotto",
@@ -35397,7 +36353,8 @@
     "Sofia Samodelkina",
     "Sophie Joline Von Felten",
     "Young You",
-    "Yujae Kim"
+    "Yujae Kim",
+    "Александра Трусова"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
    "watch": [
@@ -35406,7 +36363,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 02:42 МСК\nТрансляция: Okko",
+   "desc": "Россияне:\n• Александра Трусова\n\nНачало: 02:42 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Ahsun Yun",
@@ -35451,6 +36408,10 @@
     {
      "name": "Yujae Kim",
      "nation": "KOR"
+    },
+    {
+     "name": "Александра Трусова",
+     "nation": "RUS"
     }
    ],
    "proto": null
@@ -35704,13 +36665,18 @@
    "seg": "ПП",
    "title": "GP Skate America — женщины ПП",
    "start": "2026-11-16T00:05:00+03:00",
-   "end": "2026-11-16T01:40:00+03:00",
+   "end": "2026-11-16T01:50:00+03:00",
    "venue": "Everett, USA",
    "intl": true,
    "broadcast": [
     "Okko"
    ],
-   "ours": [],
+   "ours": [
+    {
+     "name": "Александра Трусова",
+     "nation": "RUS"
+    }
+   ],
    "athletes": [
     "Ahsun Yun",
     "Alexa Gasparotto",
@@ -35722,7 +36688,8 @@
     "Sofia Samodelkina",
     "Sophie Joline Von Felten",
     "Young You",
-    "Yujae Kim"
+    "Yujae Kim",
+    "Александра Трусова"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
    "watch": [
@@ -35731,7 +36698,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 00:05 МСК\nТрансляция: Okko",
+   "desc": "Россияне:\n• Александра Трусова\n\nНачало: 00:05 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Ahsun Yun",
@@ -35776,6 +36743,10 @@
     {
      "name": "Yujae Kim",
      "nation": "KOR"
+    },
+    {
+     "name": "Александра Трусова",
+     "nation": "RUS"
     }
    ],
    "proto": null
@@ -35958,13 +36929,18 @@
    "seg": "КП",
    "title": "GP Finlandia Trophy — мужчины КП",
    "start": "2026-11-20T18:25:00+03:00",
-   "end": "2026-11-20T19:50:00+03:00",
+   "end": "2026-11-20T19:55:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
    "broadcast": [
     "Okko"
    ],
-   "ours": [],
+   "ours": [
+    {
+     "name": "Евгений Семененко",
+     "nation": "RUS"
+    }
+   ],
    "athletes": [
     "Adam Siao Him Fa",
     "Andreas Nordeback",
@@ -35976,7 +36952,8 @@
     "Mihhail Selevko",
     "Nika Egadze",
     "Stephen Gogolev",
-    "Yudong Chen"
+    "Yudong Chen",
+    "Евгений Семененко"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
    "watch": [
@@ -35985,7 +36962,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 18:25 МСК\nТрансляция: Okko",
+   "desc": "Россияне:\n• Евгений Семененко\n\nНачало: 18:25 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Adam Siao Him Fa",
@@ -36030,6 +37007,10 @@
     {
      "name": "Yudong Chen",
      "nation": "CHN"
+    },
+    {
+     "name": "Евгений Семененко",
+     "nation": "RUS"
     }
    ],
    "proto": null
@@ -36292,13 +37273,18 @@
    "seg": "ПП",
    "title": "GP Finlandia Trophy — мужчины ПП",
    "start": "2026-11-21T18:15:00+03:00",
-   "end": "2026-11-21T19:50:00+03:00",
+   "end": "2026-11-21T20:00:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
    "broadcast": [
     "Okko"
    ],
-   "ours": [],
+   "ours": [
+    {
+     "name": "Евгений Семененко",
+     "nation": "RUS"
+    }
+   ],
    "athletes": [
     "Adam Siao Him Fa",
     "Andreas Nordeback",
@@ -36310,7 +37296,8 @@
     "Mihhail Selevko",
     "Nika Egadze",
     "Stephen Gogolev",
-    "Yudong Chen"
+    "Yudong Chen",
+    "Евгений Семененко"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
    "watch": [
@@ -36319,7 +37306,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 18:15 МСК\nТрансляция: Okko",
+   "desc": "Россияне:\n• Евгений Семененко\n\nНачало: 18:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Adam Siao Him Fa",
@@ -36364,6 +37351,10 @@
     {
      "name": "Yudong Chen",
      "nation": "CHN"
+    },
+    {
+     "name": "Евгений Семененко",
+     "nation": "RUS"
     }
    ],
    "proto": null
@@ -36613,10 +37604,14 @@
    "broadcast": [
     "Okko"
    ],
-   "ours": [],
+   "ours": [
+    {
+     "name": "Аделия Петросян",
+     "nation": "RUS"
+    }
+   ],
    "athletes": [
     "Amber Glenn",
-    "Chaeyeon Kim",
     "Jia Shin",
     "Julia Sauter",
     "Kimmy Repond",
@@ -36626,7 +37621,8 @@
     "Olivia Lisko",
     "Sarah Everhardt",
     "Young You",
-    "Yuna Aoki"
+    "Yuna Aoki",
+    "Аделия Петросян"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
    "watch": [
@@ -36635,15 +37631,11 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 10:15 МСК\nТрансляция: Okko",
+   "desc": "Россияне:\n• Аделия Петросян\n\nНачало: 10:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Amber Glenn",
      "nation": "USA"
-    },
-    {
-     "name": "Chaeyeon Kim",
-     "nation": "KOR"
     },
     {
      "name": "Jia Shin",
@@ -36684,6 +37676,10 @@
     {
      "name": "Yuna Aoki",
      "nation": "JPN"
+    },
+    {
+     "name": "Аделия Петросян",
+     "nation": "RUS"
     }
    ],
    "proto": null
@@ -36948,10 +37944,14 @@
    "broadcast": [
     "Okko"
    ],
-   "ours": [],
+   "ours": [
+    {
+     "name": "Аделия Петросян",
+     "nation": "RUS"
+    }
+   ],
    "athletes": [
     "Amber Glenn",
-    "Chaeyeon Kim",
     "Jia Shin",
     "Julia Sauter",
     "Kimmy Repond",
@@ -36961,7 +37961,8 @@
     "Olivia Lisko",
     "Sarah Everhardt",
     "Young You",
-    "Yuna Aoki"
+    "Yuna Aoki",
+    "Аделия Петросян"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
    "watch": [
@@ -36970,15 +37971,11 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 10:30 МСК\nТрансляция: Okko",
+   "desc": "Россияне:\n• Аделия Петросян\n\nНачало: 10:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Amber Glenn",
      "nation": "USA"
-    },
-    {
-     "name": "Chaeyeon Kim",
-     "nation": "KOR"
     },
     {
      "name": "Jia Shin",
@@ -37019,6 +38016,10 @@
     {
      "name": "Yuna Aoki",
      "nation": "JPN"
+    },
+    {
+     "name": "Аделия Петросян",
+     "nation": "RUS"
     }
    ],
    "proto": null
@@ -37129,26 +38130,6 @@
    "intl": false,
    "tier": "regional",
    "region": "Самарская область"
-  },
-  {
-   "tid": "ffkm:rn",
-   "name": "Межрегиональные соревнования «Кубок Мечты»",
-   "start": "2026-10-29",
-   "end": "2026-11-01",
-   "venue": "ЛД «Мечта», Москва",
-   "intl": false,
-   "tier": "regional",
-   "region": "Москва"
-  },
-  {
-   "tid": "ffkm:rn",
-   "name": "Всероссийские соревнования «Кубок Мечты»",
-   "start": "2026-10-29",
-   "end": "2026-11-01",
-   "venue": "ЛД «Мечта», Москва",
-   "intl": false,
-   "tier": "regional",
-   "region": "Москва"
   },
   {
    "tid": "ffkm:rn",
@@ -37335,11 +38316,11 @@
    "region": "Москва"
   },
   {
-   "tid": "fsr:tiumenskii-meridian-2026-11-24",
+   "tid": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026",
    "name": "Тюменский меридиан",
    "start": "2026-11-24",
    "end": "2026-11-26",
-   "venue": "СШ «Прибой», Тюмень",
+   "venue": "«Каток Прибой», Тюмень",
    "intl": false
   },
   {
@@ -37849,6 +38830,7 @@
   "Adian Pitkeev",
   "Adria Liliac",
   "Adrian Jimenez De Baldomero",
+  "Adriana Shevtsova",
   "Agata Starykava",
   "Agathe Tournadre",
   "Ahsun Yun",
@@ -37906,10 +38888,13 @@
   "Alena Tiurina",
   "Alena Zavarukhina",
   "Alesia Kurkina",
+  "Alessandro Giuliano",
+  "Alessandro Liberatore",
   "Alesya Kolesnikova",
   "Aletta Lanyi / Huba Gallai",
   "Aletta Lanyi / Ilya Laurenau",
   "Alexa Gasparotto",
+  "Alexa Riddoch",
   "Alexander Baidukov",
   "Alexander Bortzov",
   "Alexander Borzov",
@@ -38180,6 +39165,7 @@
   "Anna Esaulenko",
   "Anna Galcheniuk",
   "Anna Gerke",
+  "Anna Greta Varro",
   "Anna Iakovleva",
   "Anna Kaverzina",
   "Anna Kublikova",
@@ -38205,6 +39191,7 @@
   "Anna Shershak",
   "Anna Shkurdai",
   "Anna Silaeva",
+  "Anna Stepanchuk",
   "Anna Streltsova",
   "Anna Tarusina",
   "Anna Valesi / Martin Bidar",
@@ -38242,6 +39229,7 @@
   "Anzhelika Gayazova",
   "Apollinariia Gradilenko",
   "Apollinariia Panfilova",
+  "Aria Lusa Kogovsek",
   "Ariadna Gupta Espada",
   "Arianna Sassi / Luca Morini",
   "Arianna Soldati / Nicholas Tagliabue",
@@ -38302,6 +39290,7 @@
   "Barbora Vrankova",
   "Baylen Taich / Nikolai Apter",
   "Beatrice Soldati",
+  "Beatriz Juratovac",
   "Beau Callahan / Vladimir Furman",
   "Bella Aydin",
   "Beth Williams",
@@ -38531,6 +39520,7 @@
   "Donovan Carrillo",
   "Dorina Szigeti",
   "Douglas Gerber",
+  "Dunja Tresnjic",
   "E. Proskurina",
   "Ean Ee Yang Lam",
   "Ean Weiler",
@@ -38623,12 +39613,15 @@
   "Elena Riabchuk",
   "Elena Romanovskaya",
   "Elena Sokolova",
+  "Eleonora Ciferri",
   "Eleonore Gabet / Raphael Duclusaud",
   "Eles Namazalieva",
+  "Elian Thomann",
   "Elias Sayed",
   "Elin Katla Sveinbjornsdottir",
   "Elina Goidina",
   "Elina Tsirskikh",
+  "Elisa Irsara",
   "Elisabeth Dibbern",
   "Eliska Brezinova",
   "Eliska Kubanova",
@@ -38676,6 +39669,7 @@
   "Elvira Kildeeva",
   "Elvira Matveeva",
   "Elyce Lin-gracey",
+  "Ema Vukovic",
   "Emese Csiszer / Mark Shapiro",
   "Emilea Zingas / Vadym Kolesnik",
   "Emilia Monika Ziobrowska / Shiloh Douglas Judd",
@@ -38692,11 +39686,13 @@
   "Emma Loubeyres",
   "Emma Lyons",
   "Eniko Kobor / Zoard Kobor",
+  "Enja Sivic",
   "Erica Machida",
   "Esme Ashcroft",
   "Ethan Luo",
   "Eugenia Tkachenka",
   "Euken Alberdi",
+  "Eva Dudic",
   "Eva KHACHATURIAN",
   "Eva Kuts",
   "Eva Pate / Logan Bye",
@@ -38749,6 +39745,7 @@
   "Fedor Zonov",
   "Fee Ann Landry",
   "Felix Haoyu Zeng",
+  "Felix Oberbacher",
   "Feodosiy Efremenkov",
   "Filip Kaymakchiev",
   "Filip Scerba",
@@ -38777,6 +39774,7 @@
   "Gianni Motilla",
   "Gina Zehnder / Beda Leon Sieber",
   "Ginevra Antonina Volante",
+  "Ginevra Lavinia Negrello",
   "Gioia Fiori",
   "Gion Schmid",
   "Giorgi REVIA",
@@ -38796,6 +39794,7 @@
   "Haein Lee",
   "Hana Bath",
   "Hana Maria Aboian / Daniil Veselukhin",
+  "Hana Operckal",
   "Hana Yoshida",
   "Hanna Asadchaya",
   "Hanna Hardzeichyk",
@@ -38805,6 +39804,7 @@
   "Hanna Paroshyna",
   "Hanna Yasmine Neila Semlali",
   "Hannah Frank",
+  "Hannah Gerard",
   "Hannah Gibbon",
   "Hannah Herrera / Ivan Khobta",
   "Hannah Kim",
@@ -39078,6 +40078,7 @@
   "Kiara Petrasovic",
   "Kiki Werlen",
   "Kimmy Repond",
+  "Kincso Dorina Simon",
   "Kira Baranovska",
   "Kira Khomenko",
   "Kira Listkova / Tahory Taddei-dugue",
@@ -39172,6 +40173,7 @@
   "Lavinia Casteller",
   "Layla Veillon / Alexander Brandys",
   "Lea Hienne / Louis Varescon",
+  "Lea Marie Castlunger",
   "Lea Serna",
   "Leah Neset / Artem Markelov",
   "Leandra Tzimpoukakis",
@@ -39201,9 +40203,11 @@
   "Lia Lyubenova",
   "Lia Pereira / Trennt Michaud",
   "Liam Kapeikis",
+  "Liana Smrekar",
   "Libby Hopwood",
   "Lidiia Shakhova",
   "Lidiia Tsukanova",
+  "Lija Kroselj",
   "Lilah Fear / Lewis Gibson",
   "Lilia Biktagirova",
   "Lilia Hallet",
@@ -39242,12 +40246,14 @@
   "Lola Hesketh",
   "Lola Ocampo",
   "Lolita Esaian",
+  "Lorena Cizmek",
   "Lorenzo Elano",
   "Lorenzo Heurtebis",
   "Lorine Schild",
   "Lotta Artimo",
   "Lou Koch / Lucas Chataignoux",
   "Lou Terreaux",
+  "Louane Wolff",
   "Louie Fukuda-wu",
   "Louis Mallane",
   "Louise Bordet / Martin Chardain",
@@ -39298,6 +40304,7 @@
   "Maksim Prokofiev",
   "Maksim Selkin",
   "Maksim Shagalov",
+  "Maksim Varakin",
   "Maksim Yalenich",
   "Maksym Petrychenko",
   "Manjesh Tiwari",
@@ -39545,15 +40552,18 @@
   "Nela Snebergerova",
   "Nelli ZHIGANSHINA",
   "Nelly Elisa Hemcke / Artyom Sladkov",
+  "Neza Lusic",
   "Niccolo Boeris",
   "Nicholas Brooks",
   "Nico Steffen",
   "Nicole De Rosa",
+  "Nicole de Rosa",
   "Niina Petrokina",
   "Nika Dayneko",
   "Nika Egadze",
   "Nika OSIPOVA",
   "Nika Riabinina",
+  "Nika Sajko",
   "Niki Wories",
   "Nikita Bochkov",
   "Nikita Katsalapov",
@@ -39642,6 +40652,7 @@
   "Olivia Lengyelova",
   "Olivia Lisko",
   "Olivia Smart / Tim Dieck",
+  "Olivia Zoe Szili",
   "Oliviia Bazlova",
   "Oliviia Zherebko",
   "Oliwia Strokosz",
@@ -39674,6 +40685,7 @@
   "Phattaratida Kaneshige",
   "Phebe Bekker / James Hernandez",
   "Philomene Sabourin / Raul Bermejo",
+  "Pia Cizmek",
   "Pimmpida Lerdpraiwan",
   "Piper Gilles / Paul Poirier",
   "Piper Seedel",
@@ -39706,6 +40718,7 @@
   "Polina Vlasova",
   "Polina Yakobs",
   "Polina Zankova",
+  "Polina Zeciri",
   "Qihan Zhao",
   "Rachel Samiri",
   "Radzivon Iliutka",
@@ -39781,6 +40794,7 @@
   "Sara Bin Karam",
   "Sara Conti / Niccolo Macii",
   "Sara Franzi",
+  "Sara Klepetkova",
   "Sara Zofrea Bravo",
   "Sara-Maude Dupuis",
   "Sarah Abu Elseoud",
@@ -39965,6 +40979,8 @@
   "Tamir Kuperman",
   "Tania Anechkina",
   "Tao Macrae",
+  "Tara Besic",
+  "Tara Plahutar",
   "Tara Prasad",
   "Tasha Shin Hui Lai / Gabriel Liu",
   "Tatiana Aldashova",
@@ -39990,6 +41006,7 @@
   "Tea Sajko",
   "Teimuraz Pulin",
   "Temirlan Yakiyaev",
+  "Tena Evelyn Skalicki",
   "Tera Gropp",
   "Terezia Pocsova",
   "Teryn Kim / Lazuli Lune",
@@ -40035,6 +41052,7 @@
   "Valentin Kuziaev",
   "Valentin Molotov",
   "Valentina Andrianova",
+  "Valentina Beer",
   "Valentina Plazas / Maximiliano Fernandez",
   "Valentina Razskazova",
   "Valeria Bulygina",
@@ -40249,6 +41267,7 @@
   "Yuxuan Liu",
   "Yuxuan Xing / Han Wan Chau",
   "Zachary Lopinto",
+  "Zala Grum",
   "Zarah Wood / Alex Lapsky",
   "Zarah Wood / Flavien Giniaux",
   "Ze Yu Song / Guang Ye Zhao",
@@ -40261,6 +41280,7 @@
   "Zhuo Lang Li",
   "Ziga Jevnik",
   "Zihao Harvey Zhou",
+  "Ziva Aupic",
   "Zixi Xiao / Linghao He",
   "Ziyao Wu",
   "Ziyi Li",
@@ -48298,6 +49318,11 @@
    "k": ""
   },
   {
+   "n": "Maksim Varakin",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Maksim Yalenich",
    "c": "BLR",
    "k": ""
@@ -48854,11 +49879,6 @@
   },
   {
    "n": "Maxim Trankov",
-   "c": "RUS",
-   "k": ""
-  },
-  {
-   "n": "Maxim Varakin",
    "c": "RUS",
    "k": ""
   },
@@ -56340,6 +57360,11 @@
   {
    "n": "Ярослава Князева",
    "c": "BLR",
+   "k": ""
+  },
+  {
+   "n": "Maxim Varakin",
+   "c": "RUS",
    "k": ""
   },
   {
