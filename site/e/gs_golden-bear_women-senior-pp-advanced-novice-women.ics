@@ -13,18 +13,19 @@ TZNAME:MSK
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:gs:golden-bear:men-senior-pp@starty
-DTSTAMP:20261022T165134Z
-DTSTART;TZID=Europe/Moscow:20261022T214500
-DTEND;TZID=Europe/Moscow:20261022T230500
-SUMMARY:Golden Bear — мужчины ПП
-DESCRIPTION:Начало: 21:45 МСК
+UID:gs:golden-bear:women-senior-pp-advanced-novice-women@starty
+DTSTAMP:20261022T212913Z
+DTSTART;TZID=Europe/Moscow:20261023T135500
+DTEND;TZID=Europe/Moscow:20261023T163000
+SUMMARY:Golden Bear — женщины ПП
+DESCRIPTION:Начало: 13:55 МСК
 LOCATION:Zagreb\, Croatia
-URL:https://xfurya.github.io/Starty/#e=gs:golden-bear:men-senior-pp
+URL:https://xfurya.github.io/Starty/#e=gs:golden-bear:women-senior-pp-advan
+ ced-novice-women
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Golden Bear — мужчины ПП
+DESCRIPTION:Golden Bear — женщины ПП
 TRIGGER:-PT15M
 END:VALARM
 END:VEVENT

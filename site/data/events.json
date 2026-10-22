@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-22T19:51:34+03:00",
- "checked": "2026-10-22T19:51:34+03:00",
+ "generated": "2026-10-23T00:29:13+03:00",
+ "checked": "2026-10-23T00:29:13+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -32239,505 +32239,334 @@
    "proto": "gs_golden-bear.json"
   },
   {
-   "id": "gs:golden-bear:men-senior-pp",
+   "id": "gs:golden-bear:men-senior-kp-advanced-novice-men",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "men",
+   "level": "senior",
+   "seg": "КП",
+   "title": "Golden Bear — мужчины КП",
+   "start": "2026-10-22T19:30:00+03:00",
+   "end": "2026-10-22T20:05:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Alexandre Lirot",
+    "Aron Horvath-berkes",
+    "Gabin Telemaque",
+    "Rocco Malik Dietrich"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Alexandre Lirot",
+     "nation": "FRA",
+     "points": "40.50"
+    },
+    {
+     "place": 2,
+     "name": "Gabin Telemaque",
+     "nation": "FRA",
+     "points": "36.60"
+    },
+    {
+     "place": 3,
+     "name": "Rocco Malik Dietrich",
+     "nation": "GER",
+     "points": "33.51"
+    }
+   ],
+   "desc": "Итог:\n1. Alexandre Lirot — 40.50\n2. Gabin Telemaque — 36.60\n3. Rocco Malik Dietrich — 33.51\n\nНачало: 19:30 МСК",
+   "field": [
+    {
+     "name": "Gabin Telemaque",
+     "nation": "FRA",
+     "no": 1,
+     "warmup": null,
+     "place": 2
+    },
+    {
+     "name": "Rocco Malik Dietrich",
+     "nation": "GER",
+     "no": 2,
+     "warmup": null,
+     "place": 3
+    },
+    {
+     "name": "Aron Horvath-berkes",
+     "nation": "GER",
+     "no": 3,
+     "warmup": null,
+     "place": 4
+    },
+    {
+     "name": "Alexandre Lirot",
+     "nation": "FRA",
+     "no": 4,
+     "warmup": null,
+     "place": 1
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG009.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Alexandre LIROT": "Alexandre Lirot",
+     "Gabin TELEMAQUE": "Gabin Telemaque",
+     "Rocco Malik DIETRICH": "Rocco Malik Dietrich",
+     "Aron HORVATH-BERKES": "Aron Horvath-berkes"
+    },
+    "basis": "judges"
+   },
+   "proto": "gs_golden-bear.json"
+  },
+  {
+   "id": "gs:golden-bear:women-senior-kp-advanced-novice-women",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "women",
+   "level": "senior",
+   "seg": "КП",
+   "title": "Golden Bear — женщины КП",
+   "start": "2026-10-22T20:10:00+03:00",
+   "end": "2026-10-22T22:15:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Adriana Shevtsova",
+    "Alexa Riddoch",
+    "Anna Greta Varro",
+    "Anna Stepanchuk",
+    "Aria Lusa Kogovsek",
+    "Elisa Irsara",
+    "Hannah Gerard",
+    "Olivia Zoe Szili",
+    "Pia Cizmek",
+    "Polina Zeciri",
+    "Sara Klepetkova",
+    "Tara Besic",
+    "Tena Evelyn Skalicki",
+    "Valentina Beer"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Valentina Beer",
+     "nation": "GER",
+     "points": "41.25"
+    },
+    {
+     "place": 2,
+     "name": "Adriana Shevtsova",
+     "nation": "UKR",
+     "points": "40.21"
+    },
+    {
+     "place": 3,
+     "name": "Olivia Zoe Szili",
+     "nation": "HUN",
+     "points": "39.99"
+    }
+   ],
+   "desc": "Итог:\n1. Valentina Beer — 41.25\n2. Adriana Shevtsova — 40.21\n3. Olivia Zoe Szili — 39.99\n\nНачало: 20:10 МСК",
+   "field": [
+    {
+     "name": "Anna Stepanchuk",
+     "nation": "CRO",
+     "no": 1,
+     "warmup": null,
+     "place": 8
+    },
+    {
+     "name": "Anna Greta Varro",
+     "nation": "HUN",
+     "no": 2,
+     "warmup": null,
+     "place": 12
+    },
+    {
+     "name": "Aria Lusa Kogovsek",
+     "nation": "SLO",
+     "no": 3,
+     "warmup": null,
+     "place": 9
+    },
+    {
+     "name": "Elisa Irsara",
+     "nation": "ITA",
+     "no": 4,
+     "warmup": null,
+     "place": 4
+    },
+    {
+     "name": "Adriana Shevtsova",
+     "nation": "UKR",
+     "no": 5,
+     "warmup": null,
+     "place": 2
+    },
+    {
+     "name": "Valentina Beer",
+     "nation": "GER",
+     "no": 7,
+     "warmup": null,
+     "place": 1
+    },
+    {
+     "name": "Pia Cizmek",
+     "nation": "CRO",
+     "no": 8,
+     "warmup": null,
+     "place": 14
+    },
+    {
+     "name": "Sara Klepetkova",
+     "nation": "CZE",
+     "no": 9,
+     "warmup": null,
+     "place": 5
+    },
+    {
+     "name": "Tena Evelyn Skalicki",
+     "nation": "SLO",
+     "no": 10,
+     "warmup": null,
+     "place": 10
+    },
+    {
+     "name": "Tara Besic",
+     "nation": "CRO",
+     "no": 11,
+     "warmup": null,
+     "place": 13
+    },
+    {
+     "name": "Alexa Riddoch",
+     "nation": "GBR",
+     "no": 13,
+     "warmup": null,
+     "place": 6
+    },
+    {
+     "name": "Hannah Gerard",
+     "nation": "FRA",
+     "no": 14,
+     "warmup": null,
+     "place": 7
+    },
+    {
+     "name": "Polina Zeciri",
+     "nation": "AUT",
+     "no": 15,
+     "warmup": null,
+     "place": 11
+    },
+    {
+     "name": "Olivia Zoe Szili",
+     "nation": "HUN",
+     "no": 16,
+     "warmup": null,
+     "place": 3
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG011.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Valentina BEER": "Valentina Beer",
+     "Adriana SHEVTSOVA": "Adriana Shevtsova",
+     "Olivia Zoe SZILI": "Olivia Zoe Szili",
+     "Elisa IRSARA": "Elisa Irsara",
+     "Sara KLEPETKOVA": "Sara Klepetkova",
+     "Alexa RIDDOCH": "Alexa Riddoch",
+     "Hannah GERARD": "Hannah Gerard",
+     "Anna STEPANCHUK": "Anna Stepanchuk",
+     "Aria Lusa KOGOVSEK": "Aria Lusa Kogovsek",
+     "Tena Evelyn SKALICKI": "Tena Evelyn Skalicki",
+     "Polina ZECIRI": "Polina Zeciri",
+     "Anna Greta VARRO": "Anna Greta Varro",
+     "Tara BESIC": "Tara Besic",
+     "Pia CIZMEK": "Pia Cizmek"
+    },
+    "basis": "judges"
+   },
+   "proto": "gs_golden-bear.json"
+  },
+  {
+   "id": "gs:golden-bear:men-senior-pp-advanced-novice-men",
    "tid": "gs:golden-bear",
    "tournament": "Golden Bear",
    "kind": "men",
    "level": "senior",
    "seg": "ПП",
    "title": "Golden Bear — мужчины ПП",
-   "start": "2026-10-22T21:45:00+03:00",
-   "end": "2026-10-22T23:05:00+03:00",
+   "start": "2026-10-23T13:25:00+03:00",
+   "end": "2026-10-23T14:00:00+03:00",
    "venue": "Zagreb, Croatia",
    "intl": true,
    "broadcast": [],
    "ours": [],
    "athletes": [
-    "Alessandro Liberatore",
-    "Arin Yorke",
-    "Corentin Spinar",
-    "David Sedej",
-    "Jan Valtera",
-    "Maxim Varakin",
-    "Oliver Praetorius",
-    "Vladimir Samoilov",
-    "Xan Rols"
+    "Alexandre Lirot",
+    "Aron Horvath-berkes",
+    "Gabin Telemaque",
+    "Rocco Malik Dietrich"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Начало: 21:45 МСК",
+   "desc": "Начало: 13:25 МСК",
    "field": [
     {
-     "name": "Corentin Spinar",
-     "nation": "FRA",
-     "no": 1,
-     "warmup": 1
-    },
-    {
-     "name": "David Sedej",
-     "nation": "SLO",
-     "no": 2,
-     "warmup": 1
-    },
-    {
-     "name": "Xan Rols",
-     "nation": "FRA",
-     "no": 3,
-     "warmup": 1
-    },
-    {
-     "name": "Arin Yorke",
-     "nation": "GBR",
-     "no": 4,
-     "warmup": 1
-    },
-    {
-     "name": "Vladimir Samoilov",
-     "nation": "POL",
-     "no": 5,
-     "warmup": 2
-    },
-    {
-     "name": "Oliver Praetorius",
-     "nation": "SWE",
-     "no": 6,
-     "warmup": 2
-    },
-    {
-     "name": "Jan Valtera",
-     "nation": "CZE",
-     "no": 7,
-     "warmup": 2
-    },
-    {
-     "name": "Maxim Varakin",
-     "nation": "CRO",
-     "no": 8,
-     "warmup": 2
-    },
-    {
-     "name": "Alessandro Liberatore",
-     "nation": "SLO",
-     "no": 9,
-     "warmup": 2
-    }
-   ],
-   "live": {
-    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG001.htm",
-    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT002RS.htm",
-    "first": null,
-    "names": {
-     "Corentin SPINAR": "Corentin Spinar",
-     "David SEDEJ": "David Sedej",
-     "Xan ROLS": "Xan Rols",
-     "Arin YORKE": "Arin Yorke",
-     "Vladimir SAMOILOV": "Vladimir Samoilov",
-     "Oliver PRAETORIUS": "Oliver Praetorius",
-     "Jan VALTERA": "Jan Valtera",
-     "Maxim VARAKIN": "Maxim Varakin",
-     "Alessandro LIBERATORE": "Alessandro Liberatore"
-    },
-    "basis": null
-   },
-   "proto": "gs_golden-bear.json"
-  },
-  {
-   "id": "gs:golden-bear:women-senior-pp-basic-novice-women-i",
-   "tid": "gs:golden-bear",
-   "tournament": "Golden Bear",
-   "kind": "women",
-   "level": "senior",
-   "seg": "ПП",
-   "title": "Golden Bear — женщины ПП",
-   "start": "2026-10-22T22:20:00+03:00",
-   "end": "2026-10-23T00:50:00+03:00",
-   "venue": "Zagreb, Croatia",
-   "intl": true,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Ariadna Gupta Espada",
-    "Barbora Tykalova",
-    "Dunja Tresnjic",
-    "Elena Agostinelli",
-    "Ema Vukovic",
-    "Ginevra Lavinia Negrello",
-    "Julia Fennell",
-    "Julija Lovrencic",
-    "Katerina Hanusova",
-    "Lorena Cizmek",
-    "Marietta Atkins",
-    "Olivia Lengyelova",
-    "Oliwia Strokosz",
-    "Zala Grum",
-    "Zofia Bochenek"
-   ],
-   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Начало: 22:20 МСК",
-   "field": [
-    {
-     "name": "Ema Vukovic",
-     "nation": "CRO",
-     "no": 1,
-     "warmup": 1
-    },
-    {
-     "name": "Julija Lovrencic",
-     "nation": "SLO",
-     "no": 2,
-     "warmup": 1
-    },
-    {
-     "name": "Elena Agostinelli",
-     "nation": "ITA",
-     "no": 3,
-     "warmup": 1
-    },
-    {
-     "name": "Lorena Cizmek",
-     "nation": "CRO",
-     "no": 4,
-     "warmup": 1
-    },
-    {
-     "name": "Marietta Atkins",
-     "nation": "POL",
-     "no": 5,
-     "warmup": 1
-    },
-    {
-     "name": "Ginevra Lavinia Negrello",
-     "nation": "ITA",
-     "no": 6,
-     "warmup": 2
-    },
-    {
-     "name": "Zofia Bochenek",
-     "nation": "POL",
-     "no": 7,
-     "warmup": 2
-    },
-    {
-     "name": "Julia Fennell",
-     "nation": "ISR",
-     "no": 8,
-     "warmup": 2
-    },
-    {
-     "name": "Oliwia Strokosz",
-     "nation": "POL",
-     "no": 9,
-     "warmup": 2
-    },
-    {
-     "name": "Katerina Hanusova",
-     "nation": "CZE",
-     "no": 10,
-     "warmup": 2
-    },
-    {
-     "name": "Barbora Tykalova",
-     "nation": "CZE",
-     "no": 11,
-     "warmup": 3
-    },
-    {
-     "name": "Zala Grum",
-     "nation": "SLO",
-     "no": 12,
-     "warmup": 3
-    },
-    {
-     "name": "Ariadna Gupta Espada",
-     "nation": "ESP",
-     "no": 13,
-     "warmup": 3
-    },
-    {
-     "name": "Dunja Tresnjic",
-     "nation": "SRB",
-     "no": 14,
-     "warmup": 3
-    },
-    {
-     "name": "Olivia Lengyelova",
-     "nation": "SVK",
-     "no": 15,
-     "warmup": 3
-    }
-   ],
-   "live": {
-    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG003.htm",
-    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT003RS.htm",
-    "first": null,
-    "names": {
-     "Ema VUKOVIC": "Ema Vukovic",
-     "Julija LOVRENCIC": "Julija Lovrencic",
-     "Elena AGOSTINELLI": "Elena Agostinelli",
-     "Lorena CIZMEK": "Lorena Cizmek",
-     "Marietta ATKINS": "Marietta Atkins",
-     "Ginevra Lavinia NEGRELLO": "Ginevra Lavinia Negrello",
-     "Zofia BOCHENEK": "Zofia Bochenek",
-     "Julia FENNELL": "Julia Fennell",
-     "Oliwia STROKOSZ": "Oliwia Strokosz",
-     "Katerina HANUSOVA": "Katerina Hanusova",
-     "Barbora TYKALOVA": "Barbora Tykalova",
-     "Zala GRUM": "Zala Grum",
-     "Ariadna GUPTA ESPADA": "Ariadna Gupta Espada",
-     "Dunja TRESNJIC": "Dunja Tresnjic",
-     "Olivia LENGYELOVA": "Olivia Lengyelova"
-    },
-    "basis": null
-   },
-   "proto": "gs_golden-bear.json"
-  },
-  {
-   "id": "gs:golden-bear:women-senior-pp-basic-novice-women-iii",
-   "tid": "gs:golden-bear",
-   "tournament": "Golden Bear",
-   "kind": "women",
-   "level": "senior",
-   "seg": "ПП",
-   "title": "Golden Bear — женщины ПП",
-   "start": "2026-10-23T10:00:00+03:00",
-   "end": "2026-10-23T13:20:00+03:00",
-   "venue": "Zagreb, Croatia",
-   "intl": true,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Ekaterina Balaganskaia",
-    "Eleonora Ciferri",
-    "Enja Sivic",
-    "Eva Dudic",
-    "Hana Operckal",
-    "Lea Marie Castlunger",
-    "Liana Smrekar",
-    "Lija Kroselj",
-    "Louane Wolff",
-    "Luna Rozman",
-    "Nadja Savic",
-    "Neza Lusic",
-    "Nicole de Rosa",
-    "Nika Sajko",
-    "Paula Kasnar",
-    "Tara Plahutar",
-    "Tea Sajko",
-    "Ula Zadnikar",
-    "Vasilisa Bogomolova",
-    "Ziva Aupic",
-    "Zsofia Szeplaki"
-   ],
-   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Начало: 10:00 МСК",
-   "field": [
-    {
-     "name": "Ekaterina Balaganskaia",
-     "nation": "SRB"
-    },
-    {
-     "name": "Eleonora Ciferri",
-     "nation": "ITA"
-    },
-    {
-     "name": "Enja Sivic",
-     "nation": "SLO"
-    },
-    {
-     "name": "Eva Dudic",
-     "nation": "CRO"
-    },
-    {
-     "name": "Hana Operckal",
-     "nation": "SLO"
-    },
-    {
-     "name": "Lea Marie Castlunger",
-     "nation": "ITA"
-    },
-    {
-     "name": "Liana Smrekar",
-     "nation": "SLO"
-    },
-    {
-     "name": "Lija Kroselj",
-     "nation": "SLO"
-    },
-    {
-     "name": "Louane Wolff",
+     "name": "Alexandre Lirot",
      "nation": "FRA"
     },
     {
-     "name": "Luna Rozman",
-     "nation": "SLO"
+     "name": "Aron Horvath-berkes",
+     "nation": "GER"
     },
     {
-     "name": "Nadja Savic",
-     "nation": "SRB"
+     "name": "Gabin Telemaque",
+     "nation": "FRA"
     },
     {
-     "name": "Neza Lusic",
-     "nation": "SLO"
-    },
-    {
-     "name": "Nicole de Rosa",
-     "nation": "ITA"
-    },
-    {
-     "name": "Nika Sajko",
-     "nation": "CRO"
-    },
-    {
-     "name": "Paula Kasnar",
-     "nation": "CRO"
-    },
-    {
-     "name": "Tara Plahutar",
-     "nation": "CRO"
-    },
-    {
-     "name": "Tea Sajko",
-     "nation": "CRO"
-    },
-    {
-     "name": "Ula Zadnikar",
-     "nation": "SLO"
-    },
-    {
-     "name": "Vasilisa Bogomolova",
-     "nation": "CYP"
-    },
-    {
-     "name": "Ziva Aupic",
-     "nation": "SLO"
-    },
-    {
-     "name": "Zsofia Szeplaki",
-     "nation": "HUN"
+     "name": "Rocco Malik Dietrich",
+     "nation": "GER"
     }
    ],
    "live": {
     "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG004.htm",
-    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT004RS.htm",
-    "first": null,
-    "names": {
-     "Eva DUDIC": "Eva Dudic",
-     "Paula KASNAR": "Paula Kasnar",
-     "Tara PLAHUTAR": "Tara Plahutar",
-     "Nika SAJKO": "Nika Sajko",
-     "Tea SAJKO": "Tea Sajko",
-     "Vasilisa BOGOMOLOVA": "Vasilisa Bogomolova",
-     "Louane WOLFF": "Louane Wolff",
-     "Zsofia SZEPLAKI": "Zsofia Szeplaki",
-     "Lea Marie CASTLUNGER": "Lea Marie Castlunger",
-     "Eleonora CIFERRI": "Eleonora Ciferri",
-     "Nicole de ROSA": "Nicole de Rosa",
-     "Ziva AUPIC": "Ziva Aupic",
-     "Lija KROSELJ": "Lija Kroselj",
-     "Neza LUSIC": "Neza Lusic",
-     "Hana OPERCKAL": "Hana Operckal",
-     "Luna ROZMAN": "Luna Rozman",
-     "Enja SIVIC": "Enja Sivic",
-     "Liana SMREKAR": "Liana Smrekar",
-     "Ula ZADNIKAR": "Ula Zadnikar",
-     "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
-     "Nadja SAVIC": "Nadja Savic"
-    },
-    "basis": null
-   },
-   "proto": "gs_golden-bear.json"
-  },
-  {
-   "id": "gs:golden-bear:women-senior-pp-basic-novice-women-ii",
-   "tid": "gs:golden-bear",
-   "tournament": "Golden Bear",
-   "kind": "women",
-   "level": "senior",
-   "seg": "ПП",
-   "title": "Golden Bear — женщины ПП",
-   "start": "2026-10-23T10:35:00+03:00",
-   "end": "2026-10-23T11:25:00+03:00",
-   "venue": "Zagreb, Croatia",
-   "intl": true,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Alessandro Giuliano",
-    "Daniel Verbat",
-    "Elian Thomann",
-    "Felix Oberbacher",
-    "Lenny Olivier",
-    "Matteo Marchioni"
-   ],
-   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Начало: 10:35 МСК",
-   "field": [
-    {
-     "name": "Daniel Verbat",
-     "nation": "FRA",
-     "no": 1,
-     "warmup": 1
-    },
-    {
-     "name": "Elian Thomann",
-     "nation": "FRA",
-     "no": 2,
-     "warmup": 1
-    },
-    {
-     "name": "Lenny Olivier",
-     "nation": "FRA",
-     "no": 3,
-     "warmup": 1
-    },
-    {
-     "name": "Alessandro Giuliano",
-     "nation": "ITA",
-     "no": 4,
-     "warmup": 1
-    },
-    {
-     "name": "Felix Oberbacher",
-     "nation": "ITA",
-     "no": 5,
-     "warmup": 1
-    },
-    {
-     "name": "Matteo Marchioni",
-     "nation": "ITA",
-     "no": 6,
-     "warmup": 1
-    }
-   ],
-   "live": {
-    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG005.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG010.htm",
     "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT005RS.htm",
-    "first": null,
+    "first": "https://www.croskate.hr/cscro2025/GB2026/SEG009.htm",
     "names": {
-     "Daniel VERBAT": "Daniel Verbat",
-     "Elian THOMANN": "Elian Thomann",
-     "Lenny OLIVIER": "Lenny Olivier",
-     "Alessandro GIULIANO": "Alessandro Giuliano",
-     "Felix OBERBACHER": "Felix Oberbacher",
-     "Matteo MARCHIONI": "Matteo Marchioni"
+     "Alexandre LIROT": "Alexandre Lirot",
+     "Gabin TELEMAQUE": "Gabin Telemaque",
+     "Rocco Malik DIETRICH": "Rocco Malik Dietrich",
+     "Aron HORVATH-BERKES": "Aron Horvath-berkes"
     },
     "basis": null
    },
    "proto": "gs_golden-bear.json"
   },
   {
-   "id": "gs:golden-bear:women-senior-pp-cubs-girls-ii",
+   "id": "gs:golden-bear:women-senior-pp-advanced-novice-women",
    "tid": "gs:golden-bear",
    "tournament": "Golden Bear",
    "kind": "women",
    "level": "senior",
    "seg": "ПП",
    "title": "Golden Bear — женщины ПП",
-   "start": "2026-10-23T11:45:00+03:00",
-   "end": "2026-10-23T14:20:00+03:00",
+   "start": "2026-10-23T13:55:00+03:00",
+   "end": "2026-10-23T16:30:00+03:00",
    "venue": "Zagreb, Croatia",
    "intl": true,
    "broadcast": [],
@@ -32761,7 +32590,7 @@
     "Valentina Beer"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Начало: 11:45 МСК",
+   "desc": "Начало: 13:55 МСК",
    "field": [
     {
      "name": "Adriana Shevtsova",
@@ -32830,9 +32659,9 @@
    ],
    "live": {
     "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG006.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG012.htm",
     "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT006RS.htm",
-    "first": null,
+    "first": "https://www.croskate.hr/cscro2025/GB2026/SEG011.htm",
     "names": {
      "Polina ZECIRI": "Polina Zeciri",
      "Tara BESIC": "Tara Besic",
@@ -32856,15 +32685,94 @@
    "proto": "gs_golden-bear.json"
   },
   {
-   "id": "gs:golden-bear:women-senior-pp-cubs-girls-i",
+   "id": "gs:golden-bear:men-junior-kp",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "men",
+   "level": "junior",
+   "seg": "КП",
+   "title": "Golden Bear — юноши КП",
+   "start": "2026-10-23T15:45:00+03:00",
+   "end": "2026-10-23T16:30:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Alessandro Giuliano",
+    "Daniel Verbat",
+    "Elian Thomann",
+    "Felix Oberbacher",
+    "Lenny Olivier",
+    "Matteo Marchioni"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "desc": "Начало: 15:45 МСК",
+   "field": [
+    {
+     "name": "Daniel Verbat",
+     "nation": "FRA",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Elian Thomann",
+     "nation": "FRA",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Lenny Olivier",
+     "nation": "FRA",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Alessandro Giuliano",
+     "nation": "ITA",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Felix Oberbacher",
+     "nation": "ITA",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Matteo Marchioni",
+     "nation": "ITA",
+     "no": 6,
+     "warmup": 1
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG005.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Daniel VERBAT": "Daniel Verbat",
+     "Elian THOMANN": "Elian Thomann",
+     "Lenny OLIVIER": "Lenny Olivier",
+     "Alessandro GIULIANO": "Alessandro Giuliano",
+     "Felix OBERBACHER": "Felix Oberbacher",
+     "Matteo MARCHIONI": "Matteo Marchioni"
+    },
+    "basis": null
+   },
+   "proto": "gs_golden-bear.json"
+  },
+  {
+   "id": "gs:golden-bear:women-junior-kp",
    "tid": "gs:golden-bear",
    "tournament": "Golden Bear",
    "kind": "women",
-   "level": "senior",
-   "seg": "ПП",
-   "title": "Golden Bear — женщины ПП",
-   "start": "2026-10-23T12:20:00+03:00",
-   "end": "2026-10-23T15:40:00+03:00",
+   "level": "junior",
+   "seg": "КП",
+   "title": "Golden Bear — девушки КП",
+   "start": "2026-10-23T16:45:00+03:00",
+   "end": "2026-10-23T19:45:00+03:00",
    "venue": "Zagreb, Croatia",
    "intl": true,
    "broadcast": [],
@@ -32893,7 +32801,7 @@
     "Zsofia Szeplaki"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Начало: 12:20 МСК",
+   "desc": "Начало: 16:45 МСК",
    "field": [
     {
      "name": "Lea Marie Castlunger",
@@ -33025,7 +32933,7 @@
    "live": {
     "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
     "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG007.htm",
-    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT007RS.htm",
+    "cat": null,
     "first": null,
     "names": {
      "Lea Marie CASTLUNGER": "Lea Marie Castlunger",
@@ -33184,6 +33092,133 @@
    "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
+   "id": "gs:golden-bear:women-senior-pp-intermediate-novice-women",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "women",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Golden Bear — женщины ПП",
+   "start": "2026-10-23T19:05:00+03:00",
+   "end": "2026-10-23T20:50:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Csilla Galhidi",
+    "Ema Gulin",
+    "Ema Viljusic",
+    "Eva Dobranic",
+    "Karla Ljubic",
+    "Lena Laudan",
+    "Mija Hebar",
+    "Mila Jakovljevic",
+    "Reka Kiss",
+    "Sofija Georgieva",
+    "Tinkara Poklic",
+    "Vanesa Novosel"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "desc": "Начало: 19:05 МСК",
+   "field": [
+    {
+     "name": "Karla Ljubic",
+     "nation": "CRO",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Lena Laudan",
+     "nation": "HUN",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Ema Gulin",
+     "nation": "CRO",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Csilla Galhidi",
+     "nation": "HUN",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Sofija Georgieva",
+     "nation": "CRO",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Tinkara Poklic",
+     "nation": "SLO",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Reka Kiss",
+     "nation": "HUN",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Eva Dobranic",
+     "nation": "CRO",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Vanesa Novosel",
+     "nation": "CRO",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Mija Hebar",
+     "nation": "SLO",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Mila Jakovljevic",
+     "nation": "CRO",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Ema Viljusic",
+     "nation": "CRO",
+     "no": 12,
+     "warmup": 2
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG013.htm",
+    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT007RS.htm",
+    "first": null,
+    "names": {
+     "Karla LJUBIC": "Karla Ljubic",
+     "Lena LAUDAN": "Lena Laudan",
+     "Ema GULIN": "Ema Gulin",
+     "Csilla GALHIDI": "Csilla Galhidi",
+     "Sofija GEORGIEVA": "Sofija Georgieva",
+     "Tinkara POKLIC": "Tinkara Poklic",
+     "Reka KISS": "Reka Kiss",
+     "Eva DOBRANIC": "Eva Dobranic",
+     "Vanesa NOVOSEL": "Vanesa Novosel",
+     "Mija HEBAR": "Mija Hebar",
+     "Mila JAKOVLJEVIC": "Mila Jakovljevic",
+     "Ema VILJUSIC": "Ema Viljusic"
+    },
+    "basis": null
+   },
+   "proto": "gs_golden-bear.json"
+  },
+  {
    "id": "isu:isu-gp-grand-prix-de-france-2026:women-senior-kp",
    "tid": "isu:isu-gp-grand-prix-de-france-2026",
    "tournament": "GP de France",
@@ -33329,6 +33364,230 @@
     "basis": null
    },
    "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
+  },
+  {
+   "id": "gs:golden-bear:men-junior-pp",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "men",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "Golden Bear — юноши ПП",
+   "start": "2026-10-24T12:00:00+03:00",
+   "end": "2026-10-24T12:50:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Alessandro Giuliano",
+    "Daniel Verbat",
+    "Elian Thomann",
+    "Felix Oberbacher",
+    "Lenny Olivier",
+    "Matteo Marchioni"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "desc": "Начало: 12:00 МСК",
+   "field": [
+    {
+     "name": "Alessandro Giuliano",
+     "nation": "ITA"
+    },
+    {
+     "name": "Daniel Verbat",
+     "nation": "FRA"
+    },
+    {
+     "name": "Elian Thomann",
+     "nation": "FRA"
+    },
+    {
+     "name": "Felix Oberbacher",
+     "nation": "ITA"
+    },
+    {
+     "name": "Lenny Olivier",
+     "nation": "FRA"
+    },
+    {
+     "name": "Matteo Marchioni",
+     "nation": "ITA"
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG006.htm",
+    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT003RS.htm",
+    "first": "https://www.croskate.hr/cscro2025/GB2026/SEG005.htm",
+    "names": {
+     "Lenny OLIVIER": "Lenny Olivier",
+     "Elian THOMANN": "Elian Thomann",
+     "Daniel VERBAT": "Daniel Verbat",
+     "Alessandro GIULIANO": "Alessandro Giuliano",
+     "Matteo MARCHIONI": "Matteo Marchioni",
+     "Felix OBERBACHER": "Felix Oberbacher"
+    },
+    "basis": null
+   },
+   "proto": "gs_golden-bear.json"
+  },
+  {
+   "id": "gs:golden-bear:women-junior-pp",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "women",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "Golden Bear — девушки ПП",
+   "start": "2026-10-24T13:15:00+03:00",
+   "end": "2026-10-24T16:35:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Ekaterina Balaganskaia",
+    "Eleonora Ciferri",
+    "Enja Sivic",
+    "Eva Dudic",
+    "Hana Operckal",
+    "Lea Marie Castlunger",
+    "Liana Smrekar",
+    "Lija Kroselj",
+    "Louane Wolff",
+    "Luna Rozman",
+    "Nadja Savic",
+    "Neza Lusic",
+    "Nicole de Rosa",
+    "Nika Sajko",
+    "Paula Kasnar",
+    "Tara Plahutar",
+    "Tea Sajko",
+    "Ula Zadnikar",
+    "Vasilisa Bogomolova",
+    "Ziva Aupic",
+    "Zsofia Szeplaki"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "desc": "Начало: 13:15 МСК",
+   "field": [
+    {
+     "name": "Ekaterina Balaganskaia",
+     "nation": "SRB"
+    },
+    {
+     "name": "Eleonora Ciferri",
+     "nation": "ITA"
+    },
+    {
+     "name": "Enja Sivic",
+     "nation": "SLO"
+    },
+    {
+     "name": "Eva Dudic",
+     "nation": "CRO"
+    },
+    {
+     "name": "Hana Operckal",
+     "nation": "SLO"
+    },
+    {
+     "name": "Lea Marie Castlunger",
+     "nation": "ITA"
+    },
+    {
+     "name": "Liana Smrekar",
+     "nation": "SLO"
+    },
+    {
+     "name": "Lija Kroselj",
+     "nation": "SLO"
+    },
+    {
+     "name": "Louane Wolff",
+     "nation": "FRA"
+    },
+    {
+     "name": "Luna Rozman",
+     "nation": "SLO"
+    },
+    {
+     "name": "Nadja Savic",
+     "nation": "SRB"
+    },
+    {
+     "name": "Neza Lusic",
+     "nation": "SLO"
+    },
+    {
+     "name": "Nicole de Rosa",
+     "nation": "ITA"
+    },
+    {
+     "name": "Nika Sajko",
+     "nation": "CRO"
+    },
+    {
+     "name": "Paula Kasnar",
+     "nation": "CRO"
+    },
+    {
+     "name": "Tara Plahutar",
+     "nation": "CRO"
+    },
+    {
+     "name": "Tea Sajko",
+     "nation": "CRO"
+    },
+    {
+     "name": "Ula Zadnikar",
+     "nation": "SLO"
+    },
+    {
+     "name": "Vasilisa Bogomolova",
+     "nation": "CYP"
+    },
+    {
+     "name": "Ziva Aupic",
+     "nation": "SLO"
+    },
+    {
+     "name": "Zsofia Szeplaki",
+     "nation": "HUN"
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG008.htm",
+    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT004RS.htm",
+    "first": "https://www.croskate.hr/cscro2025/GB2026/SEG007.htm",
+    "names": {
+     "Eva DUDIC": "Eva Dudic",
+     "Paula KASNAR": "Paula Kasnar",
+     "Tara PLAHUTAR": "Tara Plahutar",
+     "Nika SAJKO": "Nika Sajko",
+     "Tea SAJKO": "Tea Sajko",
+     "Vasilisa BOGOMOLOVA": "Vasilisa Bogomolova",
+     "Louane WOLFF": "Louane Wolff",
+     "Zsofia SZEPLAKI": "Zsofia Szeplaki",
+     "Lea Marie CASTLUNGER": "Lea Marie Castlunger",
+     "Eleonora CIFERRI": "Eleonora Ciferri",
+     "Nicole de ROSA": "Nicole de Rosa",
+     "Ziva AUPIC": "Ziva Aupic",
+     "Lija KROSELJ": "Lija Kroselj",
+     "Neza LUSIC": "Neza Lusic",
+     "Hana OPERCKAL": "Hana Operckal",
+     "Luna ROZMAN": "Luna Rozman",
+     "Enja SIVIC": "Enja Sivic",
+     "Liana SMREKAR": "Liana Smrekar",
+     "Ula ZADNIKAR": "Ula Zadnikar",
+     "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
+     "Nadja SAVIC": "Nadja Savic"
+    },
+    "basis": null
+   },
+   "proto": "gs_golden-bear.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:men-senior-kp",
@@ -33641,6 +33900,109 @@
    "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
+   "id": "gs:golden-bear:men-senior-kp-men",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "men",
+   "level": "senior",
+   "seg": "КП",
+   "title": "Golden Bear — мужчины КП",
+   "start": "2026-10-24T16:05:00+03:00",
+   "end": "2026-10-24T17:15:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Alessandro Liberatore",
+    "Arin Yorke",
+    "Corentin Spinar",
+    "David Sedej",
+    "Jan Valtera",
+    "Maxim Varakin",
+    "Oliver Praetorius",
+    "Vladimir Samoilov",
+    "Xan Rols"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "desc": "Начало: 16:05 МСК",
+   "field": [
+    {
+     "name": "Corentin Spinar",
+     "nation": "FRA",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "David Sedej",
+     "nation": "SLO",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Xan Rols",
+     "nation": "FRA",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Arin Yorke",
+     "nation": "GBR",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Oliver Praetorius",
+     "nation": "SWE",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Jan Valtera",
+     "nation": "CZE",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Maxim Varakin",
+     "nation": "CRO",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Alessandro Liberatore",
+     "nation": "SLO",
+     "no": 9,
+     "warmup": 2
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Corentin SPINAR": "Corentin Spinar",
+     "David SEDEJ": "David Sedej",
+     "Xan ROLS": "Xan Rols",
+     "Arin YORKE": "Arin Yorke",
+     "Vladimir SAMOILOV": "Vladimir Samoilov",
+     "Oliver PRAETORIUS": "Oliver Praetorius",
+     "Jan VALTERA": "Jan Valtera",
+     "Maxim VARAKIN": "Maxim Varakin",
+     "Alessandro LIBERATORE": "Alessandro Liberatore"
+    },
+    "basis": null
+   },
+   "proto": "gs_golden-bear.json"
+  },
+  {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:pairs-senior-kp",
    "tid": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026",
    "tournament": "Гран-при России «Невский лёд»",
@@ -33671,6 +34033,157 @@
    ],
    "desc": "Начало: 16:55 МСК\nТрансляция: Первый канал / YouTube",
    "proto": null
+  },
+  {
+   "id": "gs:golden-bear:women-senior-kp-women",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "women",
+   "level": "senior",
+   "seg": "КП",
+   "title": "Golden Bear — женщины КП",
+   "start": "2026-10-24T17:15:00+03:00",
+   "end": "2026-10-24T19:30:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Ariadna Gupta Espada",
+    "Barbora Tykalova",
+    "Dunja Tresnjic",
+    "Elena Agostinelli",
+    "Ema Vukovic",
+    "Ginevra Lavinia Negrello",
+    "Julia Fennell",
+    "Julija Lovrencic",
+    "Katerina Hanusova",
+    "Lorena Cizmek",
+    "Marietta Atkins",
+    "Olivia Lengyelova",
+    "Oliwia Strokosz",
+    "Zala Grum",
+    "Zofia Bochenek"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "desc": "Начало: 17:15 МСК",
+   "field": [
+    {
+     "name": "Ema Vukovic",
+     "nation": "CRO",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Julija Lovrencic",
+     "nation": "SLO",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Elena Agostinelli",
+     "nation": "ITA",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Lorena Cizmek",
+     "nation": "CRO",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Marietta Atkins",
+     "nation": "POL",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Ginevra Lavinia Negrello",
+     "nation": "ITA",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Zofia Bochenek",
+     "nation": "POL",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Julia Fennell",
+     "nation": "ISR",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Oliwia Strokosz",
+     "nation": "POL",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Katerina Hanusova",
+     "nation": "CZE",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Barbora Tykalova",
+     "nation": "CZE",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Zala Grum",
+     "nation": "SLO",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Ariadna Gupta Espada",
+     "nation": "ESP",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Dunja Tresnjic",
+     "nation": "SRB",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Olivia Lengyelova",
+     "nation": "SVK",
+     "no": 15,
+     "warmup": 3
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG003.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Ema VUKOVIC": "Ema Vukovic",
+     "Julija LOVRENCIC": "Julija Lovrencic",
+     "Elena AGOSTINELLI": "Elena Agostinelli",
+     "Lorena CIZMEK": "Lorena Cizmek",
+     "Marietta ATKINS": "Marietta Atkins",
+     "Ginevra Lavinia NEGRELLO": "Ginevra Lavinia Negrello",
+     "Zofia BOCHENEK": "Zofia Bochenek",
+     "Julia FENNELL": "Julia Fennell",
+     "Oliwia STROKOSZ": "Oliwia Strokosz",
+     "Katerina HANUSOVA": "Katerina Hanusova",
+     "Barbora TYKALOVA": "Barbora Tykalova",
+     "Zala GRUM": "Zala Grum",
+     "Ariadna GUPTA ESPADA": "Ariadna Gupta Espada",
+     "Dunja TRESNJIC": "Dunja Tresnjic",
+     "Olivia LENGYELOVA": "Olivia Lengyelova"
+    },
+    "basis": null
+   },
+   "proto": "gs_golden-bear.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:dance-senior-rt",
@@ -33933,6 +34446,212 @@
     "basis": null
    },
    "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
+  },
+  {
+   "id": "gs:golden-bear:men-senior-pp-men",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "men",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Golden Bear — мужчины ПП",
+   "start": "2026-10-25T11:00:00+03:00",
+   "end": "2026-10-25T12:20:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Alessandro Liberatore",
+    "Arin Yorke",
+    "Corentin Spinar",
+    "David Sedej",
+    "Jan Valtera",
+    "Maxim Varakin",
+    "Oliver Praetorius",
+    "Vladimir Samoilov",
+    "Xan Rols"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "desc": "Начало: 11:00 МСК",
+   "field": [
+    {
+     "name": "Alessandro Liberatore",
+     "nation": "SLO"
+    },
+    {
+     "name": "Arin Yorke",
+     "nation": "GBR"
+    },
+    {
+     "name": "Corentin Spinar",
+     "nation": "FRA"
+    },
+    {
+     "name": "David Sedej",
+     "nation": "SLO"
+    },
+    {
+     "name": "Jan Valtera",
+     "nation": "CZE"
+    },
+    {
+     "name": "Maxim Varakin",
+     "nation": "CRO"
+    },
+    {
+     "name": "Oliver Praetorius",
+     "nation": "SWE"
+    },
+    {
+     "name": "Vladimir Samoilov",
+     "nation": "POL"
+    },
+    {
+     "name": "Xan Rols",
+     "nation": "FRA"
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG002.htm",
+    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT001RS.htm",
+    "first": "https://www.croskate.hr/cscro2025/GB2026/SEG001.htm",
+    "names": {
+     "Maxim VARAKIN": "Maxim Varakin",
+     "Jan VALTERA": "Jan Valtera",
+     "Xan ROLS": "Xan Rols",
+     "Corentin SPINAR": "Corentin Spinar",
+     "Arin YORKE": "Arin Yorke",
+     "Vladimir SAMOILOV": "Vladimir Samoilov",
+     "Alessandro LIBERATORE": "Alessandro Liberatore",
+     "David SEDEJ": "David Sedej",
+     "Oliver PRAETORIUS": "Oliver Praetorius"
+    },
+    "basis": null
+   },
+   "proto": "gs_golden-bear.json"
+  },
+  {
+   "id": "gs:golden-bear:women-senior-pp-women",
+   "tid": "gs:golden-bear",
+   "tournament": "Golden Bear",
+   "kind": "women",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Golden Bear — женщины ПП",
+   "start": "2026-10-25T12:25:00+03:00",
+   "end": "2026-10-25T14:55:00+03:00",
+   "venue": "Zagreb, Croatia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Ariadna Gupta Espada",
+    "Barbora Tykalova",
+    "Dunja Tresnjic",
+    "Elena Agostinelli",
+    "Ema Vukovic",
+    "Ginevra Lavinia Negrello",
+    "Julia Fennell",
+    "Julija Lovrencic",
+    "Katerina Hanusova",
+    "Lorena Cizmek",
+    "Marietta Atkins",
+    "Olivia Lengyelova",
+    "Oliwia Strokosz",
+    "Zala Grum",
+    "Zofia Bochenek"
+   ],
+   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "desc": "Начало: 12:25 МСК",
+   "field": [
+    {
+     "name": "Ariadna Gupta Espada",
+     "nation": "ESP"
+    },
+    {
+     "name": "Barbora Tykalova",
+     "nation": "CZE"
+    },
+    {
+     "name": "Dunja Tresnjic",
+     "nation": "SRB"
+    },
+    {
+     "name": "Elena Agostinelli",
+     "nation": "ITA"
+    },
+    {
+     "name": "Ema Vukovic",
+     "nation": "CRO"
+    },
+    {
+     "name": "Ginevra Lavinia Negrello",
+     "nation": "ITA"
+    },
+    {
+     "name": "Julia Fennell",
+     "nation": "ISR"
+    },
+    {
+     "name": "Julija Lovrencic",
+     "nation": "SLO"
+    },
+    {
+     "name": "Katerina Hanusova",
+     "nation": "CZE"
+    },
+    {
+     "name": "Lorena Cizmek",
+     "nation": "CRO"
+    },
+    {
+     "name": "Marietta Atkins",
+     "nation": "POL"
+    },
+    {
+     "name": "Olivia Lengyelova",
+     "nation": "SVK"
+    },
+    {
+     "name": "Oliwia Strokosz",
+     "nation": "POL"
+    },
+    {
+     "name": "Zala Grum",
+     "nation": "SLO"
+    },
+    {
+     "name": "Zofia Bochenek",
+     "nation": "POL"
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG004.htm",
+    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT002RS.htm",
+    "first": "https://www.croskate.hr/cscro2025/GB2026/SEG003.htm",
+    "names": {
+     "Lorena CIZMEK": "Lorena Cizmek",
+     "Ema VUKOVIC": "Ema Vukovic",
+     "Katerina HANUSOVA": "Katerina Hanusova",
+     "Barbora TYKALOVA": "Barbora Tykalova",
+     "Ariadna GUPTA ESPADA": "Ariadna Gupta Espada",
+     "Julia FENNELL": "Julia Fennell",
+     "Elena AGOSTINELLI": "Elena Agostinelli",
+     "Ginevra Lavinia NEGRELLO": "Ginevra Lavinia Negrello",
+     "Marietta ATKINS": "Marietta Atkins",
+     "Zofia BOCHENEK": "Zofia Bochenek",
+     "Oliwia STROKOSZ": "Oliwia Strokosz",
+     "Zala GRUM": "Zala Grum",
+     "Julija LOVRENCIC": "Julija Lovrencic",
+     "Dunja TRESNJIC": "Dunja Tresnjic",
+     "Olivia LENGYELOVA": "Olivia Lengyelova"
+    },
+    "basis": null
+   },
+   "proto": "gs_golden-bear.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:pairs-senior-pp",
@@ -38945,6 +39664,7 @@
   "Alexandra Shevchenko",
   "Alexandra Tetenko",
   "Alexandra VOLCHEK",
+  "Alexandre Lirot",
   "Alexei Kiselev",
   "Alexei Krivoruchko",
   "Alexei Menshikov",
@@ -39249,6 +39969,7 @@
   "Arina Vorobeva",
   "Arkadi Sergeev",
   "Arlet Levandi",
+  "Aron Horvath-berkes",
   "Arseni MARKOV",
   "Artem Borodulin",
   "Artem Butaev",
@@ -39362,6 +40083,7 @@
   "Colton Moness",
   "Corentin Spinar",
   "Corey Circelli",
+  "Csilla Galhidi",
   "Daisy Gellatly",
   "Daiwei Dai",
   "Daiya Ebihara",
@@ -39669,6 +40391,8 @@
   "Elvira Kildeeva",
   "Elvira Matveeva",
   "Elyce Lin-gracey",
+  "Ema Gulin",
+  "Ema Viljusic",
   "Ema Vukovic",
   "Emese Csiszer / Mark Shapiro",
   "Emilea Zingas / Vadym Kolesnik",
@@ -39692,6 +40416,7 @@
   "Ethan Luo",
   "Eugenia Tkachenka",
   "Euken Alberdi",
+  "Eva Dobranic",
   "Eva Dudic",
   "Eva KHACHATURIAN",
   "Eva Kuts",
@@ -39753,6 +40478,7 @@
   "Flora Marie Schaller",
   "Francois Pitot",
   "Furkan Emre Incel",
+  "Gabin Telemaque",
   "Gabriel Martinez",
   "Gabriela Palomeque / Tanner White",
   "Gabriele Frangipani",
@@ -40044,6 +40770,7 @@
   "Karina Shesterikova",
   "Karina Sidarenka",
   "Karine Zhuravleva",
+  "Karla Ljubic",
   "Karla Maria Karl / Kai Hoferichter",
   "Karoliine Raudsepp",
   "Karolina Bialas",
@@ -40182,6 +40909,7 @@
   "Leina You / Henrick Chan",
   "Lelle Agota Molnar",
   "Lena Kopytowska",
+  "Lena Laudan",
   "Lena Zerinvary-simon / Huba Gallai",
   "Lenny Olivier",
   "Leon Lo",
@@ -40452,6 +41180,7 @@
   "Michelle Edgina Axille",
   "Mihana Nakajima / Isak Bengt-Eric Grans",
   "Mihhail Selevko",
+  "Mija Hebar",
   "Mikalai Kamianchuk",
   "Mikalai Kazlou",
   "Mikayel Salazaryan",
@@ -40472,6 +41201,7 @@
   "Mikhail Stifunin",
   "Mikhail ZHIRNOV",
   "Mila Bertsch",
+  "Mila Jakovljevic",
   "Milada Kovar / Jared Mcpike",
   "Milana Matakaeva",
   "Milana Mozeiko",
@@ -40737,6 +41467,7 @@
   "Rebecca Lo Cascio",
   "Reese Rose",
   "Regina Llado Fernandez Del Campo",
+  "Reka Kiss",
   "Rena Uezono",
   "Renata Khabibullina",
   "Renata Shavaleeva",
@@ -40751,6 +41482,7 @@
   "Rio Nakata",
   "Rion Sumiyoshi",
   "Robert Wildt",
+  "Rocco Malik Dietrich",
   "Roman Ignatchik",
   "Roman Kostomarov",
   "Roman Mylnikov",
@@ -40909,6 +41641,7 @@
   "Sofiia Shubina",
   "Sofiia Titanian",
   "Sofiia Trusova",
+  "Sofija Georgieva",
   "Sofiya Farafonova",
   "Sofja Stepcenko",
   "Sofya Romaslovskaya",
@@ -41019,6 +41752,7 @@
   "Tim Nordin",
   "Timur Adylkhanov",
   "Timur Alaskhanov",
+  "Tinkara Poklic",
   "Tobia Oellerer",
   "Tomas Guarino Sabate",
   "Tomoki Hiwatashi",
@@ -41083,6 +41817,7 @@
   "Valeryia Shedzka",
   "Valeryia Yanuchkouskaya",
   "Valtter Virtanen",
+  "Vanesa Novosel",
   "Vanesa Selmekova",
   "Varvara Abramkina",
   "Varvara Artemova",
@@ -59155,6 +59890,8 @@
   "Lovisa Aav": "photos/36ce4634280d077f.jpg",
   "Luiza-Elena Ilie": "photos/7dc76bc104609714.jpg",
   "Maryia Luksha": "photos/d56b812897c36228.jpg",
-  "Brooke Gewalt": "photos/26cba8b15131bcf1.jpg"
+  "Brooke Gewalt": "photos/26cba8b15131bcf1.jpg",
+  "Alexandre Lirot": "photos/4a4e7db4d900d2a6.jpg",
+  "Rocco Malik Dietrich": "photos/7c578e9d0515bd4d.jpg"
  }
 }
