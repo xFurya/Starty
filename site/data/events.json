@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-21T19:51:39+03:00",
- "checked": "2026-10-21T19:51:39+03:00",
+ "generated": "2026-10-22T14:37:26+03:00",
+ "checked": "2026-10-22T14:37:26+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -32162,7 +32162,7 @@
    "seg": "РТ",
    "title": "GP de France — танцы РТ",
    "start": "2026-10-23T19:00:00+03:00",
-   "end": "2026-10-23T20:15:00+03:00",
+   "end": "2026-10-23T20:19:00+03:00",
    "venue": "Angers, France",
    "intl": true,
    "broadcast": [
@@ -32181,7 +32181,7 @@
     "Milla Ruud Reitan / Nikolaj Majorov",
     "Sofia Val / Asaf Kazimov"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
+   "src": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -32191,47 +32191,96 @@
    "desc": "Начало: 19:00 МСК\nТрансляция: Okko",
    "field": [
     {
-     "name": "Celina Fradji / Jean-Hans Fourneaux",
-     "nation": "FRA"
-    },
-    {
-     "name": "Christina Carreira / Anthony Ponomarenko",
-     "nation": "USA"
-    },
-    {
-     "name": "Diana Davis / Gleb Smolkin",
-     "nation": "GEO"
-    },
-    {
-     "name": "Eva Pate / Logan Bye",
-     "nation": "USA"
-    },
-    {
-     "name": "Holly Harris / Jason Chan",
-     "nation": "AUS"
-    },
-    {
-     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
-     "nation": "FRA"
-    },
-    {
-     "name": "Leah Neset / Artem Markelov",
-     "nation": "USA"
-    },
-    {
      "name": "Louise Bordet / Martin Chardain",
-     "nation": "FRA"
-    },
-    {
-     "name": "Milla Ruud Reitan / Nikolaj Majorov",
-     "nation": "SWE"
+     "nation": "FRA",
+     "time": "19:06",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Sofia Val / Asaf Kazimov",
-     "nation": "ESP"
+     "nation": "ESP",
+     "time": "19:13",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "time": "19:19",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Celina Fradji / Jean-Hans Fourneaux",
+     "nation": "FRA",
+     "time": "19:26",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Leah Neset / Artem Markelov",
+     "nation": "USA",
+     "time": "19:32",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Eva Pate / Logan Bye",
+     "nation": "USA",
+     "time": "19:46",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Holly Harris / Jason Chan",
+     "nation": "AUS",
+     "time": "19:52",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "nation": "FRA",
+     "time": "19:59",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Diana Davis / Gleb Smolkin",
+     "nation": "GEO",
+     "time": "20:05",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Christina Carreira / Anthony Ponomarenko",
+     "nation": "USA",
+     "time": "20:12",
+     "no": 10,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG007.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Louise BORDET / Martin CHARDAIN": "Louise Bordet / Martin Chardain",
+     "Sofia VAL / Asaf KAZIMOV": "Sofia Val / Asaf Kazimov",
+     "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov",
+     "Celina FRADJI / Jean-Hans FOURNEAUX": "Celina Fradji / Jean-Hans Fourneaux",
+     "Leah NESET / Artem MARKELOV": "Leah Neset / Artem Markelov",
+     "Eva PATE / Logan BYE": "Eva Pate / Logan Bye",
+     "Holly HARRIS / Jason CHAN": "Holly Harris / Jason Chan",
+     "Laurence FOURNIER BEAUDRY / Guillaume CIZERON": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "Diana DAVIS / Gleb SMOLKIN": "Diana Davis / Gleb Smolkin",
+     "Christina CARREIRA / Anthony PONOMARENKO": "Christina Carreira / Anthony Ponomarenko"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:women-senior-kp",
@@ -32263,7 +32312,7 @@
     "Yuna Aoki",
     "Yuseong Kim"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
+   "src": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -32273,55 +32322,112 @@
    "desc": "Начало: 20:50 МСК\nТрансляция: Okko",
    "field": [
     {
-     "name": "Ami Nakai",
-     "nation": "JPN"
-    },
-    {
-     "name": "Anastasiia Gubanova",
-     "nation": "GEO"
-    },
-    {
      "name": "Eve Dubecq",
-     "nation": "FRA"
-    },
-    {
-     "name": "Gabrielle Daleman",
-     "nation": "CAN"
-    },
-    {
-     "name": "Lara Naki Gutmann",
-     "nation": "ITA"
-    },
-    {
-     "name": "Nina Pinzarrone",
-     "nation": "BEL"
-    },
-    {
-     "name": "Rion Sumiyoshi",
-     "nation": "JPN"
-    },
-    {
-     "name": "Sarah Everhardt",
-     "nation": "USA"
-    },
-    {
-     "name": "Sarina Joos",
-     "nation": "ITA"
+     "nation": "FRA",
+     "time": "20:57",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Seojin Youn",
-     "nation": "KOR"
+     "nation": "KOR",
+     "time": "21:03",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Yuna Aoki",
-     "nation": "JPN"
+     "name": "Gabrielle Daleman",
+     "nation": "CAN",
+     "time": "21:10",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Rion Sumiyoshi",
+     "nation": "JPN",
+     "time": "21:16",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Sarina Joos",
+     "nation": "ITA",
+     "time": "21:22",
+     "no": 5,
+     "warmup": 1
     },
     {
      "name": "Yuseong Kim",
-     "nation": "KOR"
+     "nation": "KOR",
+     "time": "21:28",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Yuna Aoki",
+     "nation": "JPN",
+     "time": "21:42",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Nina Pinzarrone",
+     "nation": "BEL",
+     "time": "21:48",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Sarah Everhardt",
+     "nation": "USA",
+     "time": "21:54",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Anastasiia Gubanova",
+     "nation": "GEO",
+     "time": "22:01",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Lara Naki Gutmann",
+     "nation": "ITA",
+     "time": "22:07",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Ami Nakai",
+     "nation": "JPN",
+     "time": "22:13",
+     "no": 12,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG003.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Eve DUBECQ": "Eve Dubecq",
+     "Seojin YOUN": "Seojin Youn",
+     "Gabrielle DALEMAN": "Gabrielle Daleman",
+     "Rion SUMIYOSHI": "Rion Sumiyoshi",
+     "Sarina JOOS": "Sarina Joos",
+     "Yuseong KIM": "Yuseong Kim",
+     "Yuna AOKI": "Yuna Aoki",
+     "Nina PINZARRONE": "Nina Pinzarrone",
+     "Sarah EVERHARDT": "Sarah Everhardt",
+     "Anastasiia GUBANOVA": "Anastasiia Gubanova",
+     "Lara Naki GUTMANN": "Lara Naki Gutmann",
+     "Ami NAKAI": "Ami Nakai"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:men-senior-kp",
@@ -32353,7 +32459,7 @@
     "Samy Hammi",
     "Sota Yamamoto"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
+   "src": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -32363,55 +32469,112 @@
    "desc": "Начало: 13:30 МСК\nТрансляция: Okko",
    "field": [
     {
-     "name": "Adam Hagara",
-     "nation": "SVK"
-    },
-    {
-     "name": "Adam Siao Him Fa",
-     "nation": "FRA"
-    },
-    {
-     "name": "Aleksandr Selevko",
-     "nation": "EST"
-    },
-    {
-     "name": "Francois Pitot",
-     "nation": "FRA"
-    },
-    {
-     "name": "Jacob Sanchez",
-     "nation": "USA"
+     "name": "Samy Hammi",
+     "nation": "FRA",
+     "time": "13:37",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Jimmy Ma",
-     "nation": "USA"
+     "nation": "USA",
+     "time": "13:43",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Kao Miura",
-     "nation": "JPN"
+     "name": "Francois Pitot",
+     "nation": "FRA",
+     "time": "13:50",
+     "no": 3,
+     "warmup": 1
     },
     {
-     "name": "Mikhail Shaidorov",
-     "nation": "KAZ"
-    },
-    {
-     "name": "Minkyu Seo",
-     "nation": "KOR"
-    },
-    {
-     "name": "Nikolaj Memola",
-     "nation": "ITA"
-    },
-    {
-     "name": "Samy Hammi",
-     "nation": "FRA"
+     "name": "Adam Hagara",
+     "nation": "SVK",
+     "time": "13:56",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Sota Yamamoto",
-     "nation": "JPN"
+     "nation": "JPN",
+     "time": "14:02",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Jacob Sanchez",
+     "nation": "USA",
+     "time": "14:08",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Minkyu Seo",
+     "nation": "KOR",
+     "time": "14:22",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Nikolaj Memola",
+     "nation": "ITA",
+     "time": "14:28",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Kao Miura",
+     "nation": "JPN",
+     "time": "14:34",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Aleksandr Selevko",
+     "nation": "EST",
+     "time": "14:41",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Adam Siao Him Fa",
+     "nation": "FRA",
+     "time": "14:47",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Mikhail Shaidorov",
+     "nation": "KAZ",
+     "time": "14:53",
+     "no": 12,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Samy HAMMI": "Samy Hammi",
+     "Jimmy MA": "Jimmy Ma",
+     "Francois PITOT": "Francois Pitot",
+     "Adam HAGARA": "Adam Hagara",
+     "Sota YAMAMOTO": "Sota Yamamoto",
+     "Jacob SANCHEZ": "Jacob Sanchez",
+     "Minkyu SEO": "Minkyu Seo",
+     "Nikolaj MEMOLA": "Nikolaj Memola",
+     "Kao MIURA": "Kao Miura",
+     "Aleksandr SELEVKO": "Aleksandr Selevko",
+     "Adam SIAO HIM FA": "Adam Siao Him Fa",
+     "Mikhail SHAIDOROV": "Mikhail Shaidorov"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:men-senior-kp",
@@ -32505,7 +32668,7 @@
     "Milla Ruud Reitan / Nikolaj Majorov",
     "Sofia Val / Asaf Kazimov"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
+   "src": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -32555,7 +32718,26 @@
      "nation": "ESP"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG008.htm",
+    "cat": "https://results.isu.org/results/season2627/gpfra2026/CAT004RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpfra2026/SEG007.htm",
+    "names": {
+     "Holly HARRIS / Jason CHAN": "Holly Harris / Jason Chan",
+     "Sofia VAL / Asaf KAZIMOV": "Sofia Val / Asaf Kazimov",
+     "Louise BORDET / Martin CHARDAIN": "Louise Bordet / Martin Chardain",
+     "Laurence FOURNIER BEAUDRY / Guillaume CIZERON": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "Celina FRADJI / Jean-Hans FOURNEAUX": "Celina Fradji / Jean-Hans Fourneaux",
+     "Diana DAVIS / Gleb SMOLKIN": "Diana Davis / Gleb Smolkin",
+     "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov",
+     "Christina CARREIRA / Anthony PONOMARENKO": "Christina Carreira / Anthony Ponomarenko",
+     "Leah NESET / Artem MARKELOV": "Leah Neset / Artem Markelov",
+     "Eva PATE / Logan BYE": "Eva Pate / Logan Bye"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:pairs-senior-kp",
@@ -32630,7 +32812,7 @@
    "seg": "КП",
    "title": "GP de France — пары КП",
    "start": "2026-10-24T19:00:00+03:00",
-   "end": "2026-10-24T20:10:00+03:00",
+   "end": "2026-10-24T20:07:00+03:00",
    "venue": "Angers, France",
    "intl": true,
    "broadcast": [
@@ -32639,7 +32821,10 @@
    "ours": [
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "19:20",
+     "no": 3,
+     "warmup": 1
     }
    ],
    "athletes": [
@@ -32652,49 +32837,90 @@
     "Megan Wessenberg / Denys Strekalin",
     "Александра Бойкова / Дмитрий Козловский"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
+   "src": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
    "watch": [
     {
      "name": "Okko",
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Россияне:\n• Александра Бойкова / Дмитрий Козловский\n\nНачало: 19:00 МСК\nТрансляция: Okko",
+   "desc": "Россияне:\n• Александра Бойкова / Дмитрий Козловский — 19:20\n\nНачало: 19:00 МСК\nТрансляция: Okko",
    "field": [
     {
-     "name": "Anastasiia Metelkina / Luka Berulava",
-     "nation": "GEO"
-    },
-    {
-     "name": "Annika Hocke / Robert Kunkel",
-     "nation": "GER"
-    },
-    {
-     "name": "Aurelie Faula / Theo Belle",
-     "nation": "FRA"
-    },
-    {
-     "name": "Camille Kovalev / Pavel Kovalev",
-     "nation": "FRA"
+     "name": "Megan Wessenberg / Denys Strekalin",
+     "nation": "FRA",
+     "time": "19:07",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Hannah Herrera / Ivan Khobta",
-     "nation": "UKR"
-    },
-    {
-     "name": "Jiaxuan Zhang / Yihang Huang",
-     "nation": "CHN"
-    },
-    {
-     "name": "Megan Wessenberg / Denys Strekalin",
-     "nation": "FRA"
+     "nation": "UKR",
+     "time": "19:13",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "19:20",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Aurelie Faula / Theo Belle",
+     "nation": "FRA",
+     "time": "19:26",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Camille Kovalev / Pavel Kovalev",
+     "nation": "FRA",
+     "time": "19:40",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Annika Hocke / Robert Kunkel",
+     "nation": "GER",
+     "time": "19:46",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Jiaxuan Zhang / Yihang Huang",
+     "nation": "CHN",
+     "time": "19:53",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Anastasiia Metelkina / Luka Berulava",
+     "nation": "GEO",
+     "time": "19:59",
+     "no": 8,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG005.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Megan WESSENBERG / Denys STREKALIN": "Megan Wessenberg / Denys Strekalin",
+     "Hannah HERRERA / Ivan KHOBTA": "Hannah Herrera / Ivan Khobta",
+     "Aleksandra BOIKOVA / Dmitrii KOZLOVSKII": "Александра Бойкова / Дмитрий Козловский",
+     "Aurelie FAULA / Theo BELLE": "Aurelie Faula / Theo Belle",
+     "Camille KOVALEV / Pavel KOVALEV": "Camille Kovalev / Pavel Kovalev",
+     "Annika HOCKE / Robert KUNKEL": "Annika Hocke / Robert Kunkel",
+     "Jiaxuan ZHANG / Yihang HUANG": "Jiaxuan Zhang / Yihang Huang",
+     "Anastasiia METELKINA / Luka BERULAVA": "Anastasiia Metelkina / Luka Berulava"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:women-senior-pp",
@@ -32726,7 +32952,7 @@
     "Yuna Aoki",
     "Yuseong Kim"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
+   "src": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -32784,39 +33010,28 @@
      "nation": "KOR"
     }
    ],
-   "proto": null
-  },
-  {
-   "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:men-senior-pp",
-   "tid": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026",
-   "tournament": "Гран-при России «Невский лёд»",
-   "kind": "men",
-   "level": "senior",
-   "seg": "ПП",
-   "title": "Гран-при России «Невский лёд» — мужчины ПП",
-   "start": "2026-10-25T13:00:00+03:00",
-   "end": "2026-10-25T14:45:00+03:00",
-   "venue": "СК «Юбилейный», Санкт-Петербург",
-   "intl": false,
-   "broadcast": [
-    "Первый канал",
-    "YouTube"
-   ],
-   "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_revised.pdf",
-   "watch": [
-    {
-     "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG004.htm",
+    "cat": "https://results.isu.org/results/season2627/gpfra2026/CAT002RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpfra2026/SEG003.htm",
+    "names": {
+     "Nina PINZARRONE": "Nina Pinzarrone",
+     "Gabrielle DALEMAN": "Gabrielle Daleman",
+     "Eve DUBECQ": "Eve Dubecq",
+     "Anastasiia GUBANOVA": "Anastasiia Gubanova",
+     "Lara Naki GUTMANN": "Lara Naki Gutmann",
+     "Sarina JOOS": "Sarina Joos",
+     "Yuna AOKI": "Yuna Aoki",
+     "Ami NAKAI": "Ami Nakai",
+     "Rion SUMIYOSHI": "Rion Sumiyoshi",
+     "Yuseong KIM": "Yuseong Kim",
+     "Seojin YOUN": "Seojin Youn",
+     "Sarah EVERHARDT": "Sarah Everhardt"
     },
-    {
-     "name": "YouTube",
-     "url": "https://www.youtube.com/@ice_skating/live"
-    }
-   ],
-   "desc": "Начало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+    "basis": null
+   },
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:pairs-senior-pp",
@@ -32826,8 +33041,8 @@
    "level": "senior",
    "seg": "ПП",
    "title": "GP de France — пары ПП",
-   "start": "2026-10-25T13:30:00+03:00",
-   "end": "2026-10-25T14:50:00+03:00",
+   "start": "2026-10-25T12:30:00+03:00",
+   "end": "2026-10-25T13:50:00+03:00",
    "venue": "Angers, France",
    "intl": true,
    "broadcast": [
@@ -32849,14 +33064,14 @@
     "Megan Wessenberg / Denys Strekalin",
     "Александра Бойкова / Дмитрий Козловский"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
+   "src": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
    "watch": [
     {
      "name": "Okko",
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Россияне:\n• Александра Бойкова / Дмитрий Козловский\n\nНачало: 13:30 МСК\nТрансляция: Okko",
+   "desc": "Россияне:\n• Александра Бойкова / Дмитрий Козловский\n\nНачало: 12:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anastasiia Metelkina / Luka Berulava",
@@ -32891,18 +33106,35 @@
      "nation": "RUS"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG006.htm",
+    "cat": "https://results.isu.org/results/season2627/gpfra2026/CAT003RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpfra2026/SEG005.htm",
+    "names": {
+     "Aleksandra BOIKOVA / Dmitrii KOZLOVSKII": "Александра Бойкова / Дмитрий Козловский",
+     "Jiaxuan ZHANG / Yihang HUANG": "Jiaxuan Zhang / Yihang Huang",
+     "Aurelie FAULA / Theo BELLE": "Aurelie Faula / Theo Belle",
+     "Camille KOVALEV / Pavel KOVALEV": "Camille Kovalev / Pavel Kovalev",
+     "Megan WESSENBERG / Denys STREKALIN": "Megan Wessenberg / Denys Strekalin",
+     "Anastasiia METELKINA / Luka BERULAVA": "Anastasiia Metelkina / Luka Berulava",
+     "Annika HOCKE / Robert KUNKEL": "Annika Hocke / Robert Kunkel",
+     "Hannah HERRERA / Ivan KHOBTA": "Hannah Herrera / Ivan Khobta"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
-   "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:women-senior-pp",
+   "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:men-senior-pp",
    "tid": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026",
    "tournament": "Гран-при России «Невский лёд»",
-   "kind": "women",
+   "kind": "men",
    "level": "senior",
    "seg": "ПП",
-   "title": "Гран-при России «Невский лёд» — женщины ПП",
-   "start": "2026-10-25T15:05:00+03:00",
-   "end": "2026-10-25T16:55:00+03:00",
+   "title": "Гран-при России «Невский лёд» — мужчины ПП",
+   "start": "2026-10-25T13:00:00+03:00",
+   "end": "2026-10-25T14:45:00+03:00",
    "venue": "СК «Юбилейный», Санкт-Петербург",
    "intl": false,
    "broadcast": [
@@ -32922,7 +33154,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Начало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
    "proto": null
   },
   {
@@ -32933,8 +33165,8 @@
    "level": "senior",
    "seg": "ПП",
    "title": "GP de France — мужчины ПП",
-   "start": "2026-10-25T15:10:00+03:00",
-   "end": "2026-10-25T16:55:00+03:00",
+   "start": "2026-10-25T14:10:00+03:00",
+   "end": "2026-10-25T15:55:00+03:00",
    "venue": "Angers, France",
    "intl": true,
    "broadcast": [
@@ -32955,14 +33187,14 @@
     "Samy Hammi",
     "Sota Yamamoto"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-grand-prix-de-france-2026/",
+   "src": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
    "watch": [
     {
      "name": "Okko",
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 15:10 МСК\nТрансляция: Okko",
+   "desc": "Начало: 14:10 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Adam Hagara",
@@ -33013,6 +33245,59 @@
      "nation": "JPN"
     }
    ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG002.htm",
+    "cat": "https://results.isu.org/results/season2627/gpfra2026/CAT001RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpfra2026/SEG001.htm",
+    "names": {
+     "Aleksandr SELEVKO": "Aleksandr Selevko",
+     "Samy HAMMI": "Samy Hammi",
+     "Francois PITOT": "Francois Pitot",
+     "Adam SIAO HIM FA": "Adam Siao Him Fa",
+     "Nikolaj MEMOLA": "Nikolaj Memola",
+     "Kao MIURA": "Kao Miura",
+     "Sota YAMAMOTO": "Sota Yamamoto",
+     "Mikhail SHAIDOROV": "Mikhail Shaidorov",
+     "Minkyu SEO": "Minkyu Seo",
+     "Adam HAGARA": "Adam Hagara",
+     "Jimmy MA": "Jimmy Ma",
+     "Jacob SANCHEZ": "Jacob Sanchez"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:women-senior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026",
+   "tournament": "Гран-при России «Невский лёд»",
+   "kind": "women",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Гран-при России «Невский лёд» — женщины ПП",
+   "start": "2026-10-25T15:05:00+03:00",
+   "end": "2026-10-25T16:55:00+03:00",
+   "venue": "СК «Юбилейный», Санкт-Петербург",
+   "intl": false,
+   "broadcast": [
+    "Первый канал",
+    "YouTube"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_revised.pdf",
+   "watch": [
+    {
+     "name": "Первый канал",
+     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+    },
+    {
+     "name": "YouTube",
+     "url": "https://www.youtube.com/@ice_skating/live"
+    }
+   ],
+   "desc": "Начало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
    "proto": null
   },
   {
@@ -36916,7 +37201,100 @@
    "end": "2026-11-22",
    "ours": [],
    "ours_nation": {},
-   "athletes": [],
+   "athletes": [
+    "Adelija Matjunina",
+    "Adrian Jimenez De Baldomero",
+    "Afrina Diyanah",
+    "Alicia Fabbri / Marko Jevgeni Gaidajenko",
+    "Alisa Ovsiankina / Maximilien Rahier",
+    "Amy Cui / Jonathan Rogers",
+    "Anita Ostlund",
+    "Anthony Paradis",
+    "Arianna Sassi / Luca Morini",
+    "Artur Smagulov",
+    "Barbora Vrankova",
+    "Breken Brezden",
+    "Carolina Portesi Peroni / Pietro Papetti",
+    "Celina Fradji / Jean-Hans Fourneaux",
+    "Chelsea Verhaegh / Sherim Van Geffen",
+    "Corey Circelli",
+    "Daniela Ivanitskiy / Matthew Sperry",
+    "David Gouveia",
+    "Debora Anna Cohen / Lukas Vochozka",
+    "Denisa Cimlova / Stefano Frasca",
+    "Douglas Gerber",
+    "Elias Sayed",
+    "Elliana Peal / Ethan Peal",
+    "Emilija Ozola",
+    "Eugenia Sekulovski",
+    "Euken Alberdi",
+    "Flora Marie Schaller",
+    "Gabriele Frangipani",
+    "Gabrielle Daleman",
+    "Genevieve Somerville",
+    "Haruna Murakami",
+    "Holly Harris / Jason Chan",
+    "Hugo Bostedt",
+    "Hyungyeom Kim",
+    "Ian Vauclin",
+    "Irina Napolitano / Edoardo Comi",
+    "Jakub Lofek",
+    "Jimmy Ma",
+    "Julia Brovall",
+    "Julia Grabowski / Lukas Gneiding",
+    "Karla Maria Karl / Kai Hoferichter",
+    "Karoliine Raudsepp",
+    "Karolina Bialas",
+    "Kristina Lisovskaja",
+    "Lara Naki Gutmann",
+    "Larry Loupolover",
+    "Liam Kapeikis",
+    "Lilah Fear / Lewis Gibson",
+    "Linzy Fitzpatrick / Keyton Bearinger",
+    "Livia Kaiser",
+    "Lotta Artimo",
+    "Louise Bordet / Martin Chardain",
+    "Lucrezia Gennaro",
+    "Lukas Vaclavik",
+    "Makar Suntsev",
+    "Maksym Petrychenko",
+    "Maria Eliise Kaljuvere",
+    "Marietta Atkins",
+    "Marina Piredda",
+    "Marta Helena Prangel",
+    "Matteo Nalbone",
+    "Megan Wessenberg / Denys Strekalin",
+    "Mia Risa Gomez",
+    "Michaela Vrastakova",
+    "Michelle Dicicco",
+    "Milania Vaananen / Filippo Ambrosini",
+    "Minja Peltonen",
+    "Miyu Yunoki / Tristan Taylor",
+    "Natalia Pallu-neves / Jayin Panesar",
+    "Nela Snebergerova",
+    "Nikita Krivosheyev",
+    "Nikola Fomchenkova",
+    "Noah Bodenstein",
+    "Nuriya Suleimen",
+    "Olesja Leonova",
+    "Olivia Flores / Mark Sadusky",
+    "Olympia Kalaganis / Emile Deveau",
+    "Pernille With",
+    "Reagan Moss / Jakub Galbavy",
+    "Sandrine Gauthier / Paul Ayer",
+    "Sara Franzi",
+    "Sarina Joos",
+    "Selma Valitalo",
+    "Uma Zagele",
+    "Xavier Vauclin",
+    "Xuantong Li / Filip Bojanowski",
+    "Xuanyu Liu / Wenbao Han",
+    "Yu-Feng Tsai",
+    "Yu-Hsiang Li",
+    "Ze Zeng Fang",
+    "Zhasmin Shlaga",
+    "Zoe Larson / Andrii Kapran"
+   ],
    "broadcast": [],
    "watch": []
   },
@@ -37722,6 +38100,7 @@
   "Anastasiia Ignatova",
   "Anastasiia Kallistova",
   "Anastasiia Koroleva",
+  "Anastasiia Kovalevskaia",
   "Anastasiia Luzhina",
   "Anastasiia Matveeva",
   "Anastasiia Metelkina / Luka Berulava",
@@ -37917,6 +38296,7 @@
   "Ava Yu Tong Chen",
   "Aynur Berdiyeva",
   "Ayumi Shibayama / Tomoki Kimura",
+  "Barbara Pantsevich",
   "Barbora Klesalova / Matej Klesal",
   "Barbora Tykalova",
   "Barbora Vrankova",
@@ -38022,6 +38402,7 @@
   "Daria Afanasyeva",
   "Daria Ambalova",
   "Daria Batura",
+  "Daria Bogatyrenko",
   "Daria Borisova",
   "Daria Busygina",
   "Daria Chupikova",
@@ -38040,6 +38421,7 @@
   "Daria Krashevskaia",
   "Daria Kvartalova",
   "Daria Malaeva",
+  "Daria Malova",
   "Daria Maltsava",
   "Daria Masherova",
   "Daria Morozova",
@@ -38211,6 +38593,7 @@
   "Ekaterina Storublevtceva",
   "Ekaterina Svirina",
   "Ekaterina Taranova",
+  "Ekaterina Tolkacheva",
   "Ekaterina Vasilieva",
   "Ekaterina Velikanova",
   "Ekaterina Vysotina",
@@ -38283,6 +38666,7 @@
   "Elizaveta Tchetinkina",
   "Elizaveta Tuktamysheva",
   "Elizaveta Veselova",
+  "Elizaveta Zelenina",
   "Ella Hawkes",
   "Ella Sandberg",
   "Elliana Peal / Ethan Peal",
@@ -38321,6 +38705,7 @@
   "Eva Suznjevic",
   "Evangelina Iushchenko",
   "Eve Dubecq",
+  "Evelina Alfer",
   "Evelina Stavickyte",
   "Evgeni Kapitoulec",
   "Evgeni Plushenko",
@@ -38337,6 +38722,7 @@
   "Evgenia Shishkova",
   "Evgenia Tarasova",
   "Evgenii Malikov",
+  "Evgeniia Bakhtairova",
   "Evgeniia LOPAREVA",
   "Evgeniia Lopareva / Geoffrey Brissaud",
   "Evgeniia Mariasova",
@@ -38759,6 +39145,7 @@
   "Kseniia Akhanteva",
   "Kseniia Iushkova",
   "Kseniia Kasimova",
+  "Kseniia Kolotygina",
   "Kseniia Melkumova",
   "Ksenija Heimane",
   "Kseniya Zayats",
@@ -38916,9 +39303,11 @@
   "Manjesh Tiwari",
   "Mantas Gryba",
   "Mao Shimada",
+  "Margarita Ashcheulova",
   "Margarita Shestakova",
   "Margarita Svistunova",
   "Margerita Beliakova",
+  "Marharyta Bohdan",
   "Marharyta Chachyk",
   "Marharyta Selivonik",
   "Maria Artemieva",
@@ -38962,14 +39351,18 @@
   "Mariia Istomina",
   "Mariia Korenchenko",
   "Mariia Kryzhova",
+  "Mariia Lipniagova",
   "Mariia Markova",
   "Mariia Medvedeva",
   "Mariia NEKHAEVA",
   "Mariia Nekhaeva / Dmytriy Kravchenko",
+  "Mariia Nekrasova",
   "Mariia Pinchuk / Mykyta Pogorielov",
+  "Mariia Pinskaia",
   "Mariia Sannikova",
   "Mariia Seniuk",
   "Mariia Smirnova",
+  "Mariia Tsyganok",
   "Marilena Kitromilis",
   "Marina ANISSINA",
   "Marina Antipova",
@@ -38983,6 +39376,7 @@
   "Marjorie Lajoie / Jean-Luc Baker",
   "Marjorie Lajoie / Zachary Lagha",
   "Mark Gorodnitsky",
+  "Mark Ivanov",
   "Mark Lysychenko",
   "Mark Shakhmatov",
   "Mark Volkov",
@@ -39075,6 +39469,7 @@
   "Milana Matakaeva",
   "Milana Mozeiko",
   "Milana Mustafaeva",
+  "Milana Omelchenko",
   "Milana Panagushina",
   "Milana Ramashova",
   "Milana Siniavskyte",
@@ -39106,6 +39501,7 @@
   "Mya Li Poe",
   "Mya Milne",
   "Myroslava Tkachenko / Riccardo Pesca",
+  "Nadezhda Kolotygina",
   "Nadezhda Labazina",
   "Nadiia Bashynska / Noé Perron",
   "Nadja Savic",
@@ -39297,7 +39693,9 @@
   "Polina Korobeynikova",
   "Polina Kostiukovich",
   "Polina Meleshchenko",
+  "Polina Mut",
   "Polina Novokupova",
+  "Polina Otroshchenko",
   "Polina Pankova",
   "Polina Platonova",
   "Polina Polman / Gabriel Renoldi",
@@ -39494,6 +39892,8 @@
   "Sofiia Khodorchuk",
   "Sofiia Naumenko",
   "Sofiia Rymshyna",
+  "Sofiia Shubina",
+  "Sofiia Titanian",
   "Sofiia Trusova",
   "Sofiya Farafonova",
   "Sofja Stepcenko",
@@ -39615,6 +40015,7 @@
   "Uladzislau Palkhouski",
   "Uladzislau SAPRYKIN",
   "Uladzislau Saprykin",
+  "Uladzislava Hanchar",
   "Uliana Emarkova",
   "Uliana Ionkina",
   "Uliana Shiryaeva",
@@ -39667,6 +40068,7 @@
   "Vanesa Selmekova",
   "Varvara Abramkina",
   "Varvara Artemova",
+  "Varvara Bogomolova",
   "Varvara Degtiareva",
   "Varvara Kisel",
   "Varvara Klimava",
@@ -39674,6 +40076,7 @@
   "Varvara Kurnosenko",
   "Varvara Poder",
   "Varvara Rauhen / Mikhail Prusiankou",
+  "Varvara Romashova",
   "Varvara Sheloumova",
   "Varvara Skorynina",
   "Varvara Stankevich",
@@ -39730,6 +40133,7 @@
   "Viktoriya Druganova",
   "Viktoriya Vagapova",
   "Viktoryia Plaskonnaya / Uladzislau Sytsik",
+  "Viktoryia Zdarautsova",
   "Villo Mira Szilagyi / Istvan Jaracs",
   "Vinceman Chong",
   "Violet Zhiyan Ee",
@@ -39785,6 +40189,7 @@
   "Xuanqi Zhang / Wenqiang Feng",
   "Yadviha Shutava",
   "Yahor Maistrov",
+  "Yahor Turubchuk",
   "Yakau Zenko",
   "Yan LUKOUSKI",
   "Yana Anufryenka",
@@ -42328,6 +42733,11 @@
    "k": ""
   },
   {
+   "n": "Anastasiia Kovalevskaia",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Anastasiia Luzhina",
    "c": "RUS",
    "k": ""
@@ -43273,6 +43683,11 @@
    "k": "D"
   },
   {
+   "n": "Barbara Pantsevich",
+   "c": "BLR",
+   "k": ""
+  },
+  {
    "n": "Barbora Klesalova / Matej Klesal",
    "c": "CZE",
    "k": "D"
@@ -43748,6 +44163,11 @@
    "k": ""
   },
   {
+   "n": "Daria Bogatyrenko",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Daria Borisova",
    "c": "RUS",
    "k": ""
@@ -43824,6 +44244,11 @@
   },
   {
    "n": "Daria Malaeva",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Daria Malova",
    "c": "RUS",
    "k": ""
   },
@@ -44658,6 +45083,11 @@
    "k": ""
   },
   {
+   "n": "Ekaterina Tolkacheva",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Ekaterina Vasilieva",
    "c": "RUS",
    "k": ""
@@ -45008,6 +45438,11 @@
    "k": ""
   },
   {
+   "n": "Elizaveta Zelenina",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Ella Hawkes",
    "c": "RSA",
    "k": "W"
@@ -45163,6 +45598,11 @@
    "k": "w"
   },
   {
+   "n": "Evelina Alfer",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Evelina Stavickyte",
    "c": "LTU",
    "k": "w"
@@ -45239,6 +45679,11 @@
   },
   {
    "n": "Evgenii Malikov",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Evgeniia Bakhtairova",
    "c": "RUS",
    "k": ""
   },
@@ -47198,6 +47643,11 @@
    "k": ""
   },
   {
+   "n": "Kseniia Kolotygina",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Kseniia Melkumova",
    "c": "RUS",
    "k": ""
@@ -47873,6 +48323,11 @@
    "k": "w"
   },
   {
+   "n": "Margarita Ashcheulova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Margarita Shestakova",
    "c": "RUS",
    "k": ""
@@ -47885,6 +48340,11 @@
   {
    "n": "Margerita Beliakova",
    "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Marharyta Bohdan",
+   "c": "BLR",
    "k": ""
   },
   {
@@ -48088,6 +48548,11 @@
    "k": ""
   },
   {
+   "n": "Mariia Lipniagova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Mariia Markova",
    "c": "RUS",
    "k": ""
@@ -48108,9 +48573,19 @@
    "k": "D"
   },
   {
+   "n": "Mariia Nekrasova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Mariia Pinchuk / Mykyta Pogorielov",
    "c": "UKR",
    "k": "d"
+  },
+  {
+   "n": "Mariia Pinskaia",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Mariia Sannikova",
@@ -48124,6 +48599,11 @@
   },
   {
    "n": "Mariia Smirnova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Mariia Tsyganok",
    "c": "RUS",
    "k": ""
   },
@@ -48186,6 +48666,11 @@
    "n": "Mark Gorodnitsky",
    "c": "ISR",
    "k": "m"
+  },
+  {
+   "n": "Mark Ivanov",
+   "c": "BLR",
+   "k": ""
   },
   {
    "n": "Mark Lysychenko",
@@ -48618,6 +49103,11 @@
    "k": ""
   },
   {
+   "n": "Milana Omelchenko",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Milana Panagushina",
    "c": "RUS",
    "k": ""
@@ -48761,6 +49251,11 @@
    "n": "Myroslava Tkachenko / Riccardo Pesca",
    "c": "UKR",
    "k": "D"
+  },
+  {
+   "n": "Nadezhda Kolotygina",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Nadezhda Labazina",
@@ -49678,7 +50173,17 @@
    "k": ""
   },
   {
+   "n": "Polina Mut",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Polina Novokupova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Polina Otroshchenko",
    "c": "RUS",
    "k": ""
   },
@@ -50578,6 +51083,16 @@
    "k": "W"
   },
   {
+   "n": "Sofiia Shubina",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Sofiia Titanian",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Sofiia Trusova",
    "c": "RUS",
    "k": ""
@@ -51138,6 +51653,11 @@
    "k": ""
   },
   {
+   "n": "Uladzislava Hanchar",
+   "c": "BLR",
+   "k": ""
+  },
+  {
    "n": "Uliana Emarkova",
    "c": "RUS",
    "k": ""
@@ -51388,6 +51908,11 @@
    "k": ""
   },
   {
+   "n": "Varvara Bogomolova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Varvara Degtiareva",
    "c": "RUS",
    "k": ""
@@ -51416,6 +51941,11 @@
    "n": "Varvara Rauhen / Mikhail Prusiankou",
    "c": "BLR",
    "k": "D"
+  },
+  {
+   "n": "Varvara Romashova",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Varvara Sheloumova",
@@ -51693,6 +52223,11 @@
    "k": "W"
   },
   {
+   "n": "Viktoryia Zdarautsova",
+   "c": "BLR",
+   "k": ""
+  },
+  {
    "n": "Villo Mira Szilagyi / Istvan Jaracs",
    "c": "HUN",
    "k": "D"
@@ -51964,6 +52499,11 @@
   },
   {
    "n": "Yahor Maistrov",
+   "c": "BLR",
+   "k": ""
+  },
+  {
+   "n": "Yahor Turubchuk",
    "c": "BLR",
    "k": ""
   },
@@ -54058,6 +54598,11 @@
    "k": "w"
   },
   {
+   "n": "Елизавета Андреева",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Елизавета Банных",
    "c": "RUS",
    "k": "W"
@@ -55216,6 +55761,11 @@
    "n": "Полина Неганова / Степан Чучкалов",
    "c": "RUS",
    "k": "D"
+  },
+  {
+   "n": "Полина Павликова",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Полина Пилипенко",
@@ -56988,7 +57538,7 @@
   "Michelangelo Caprano": "photos/ab982d77aced84d2.jpg",
   "Michelle Deych": "photos/37c6537bb0d47c8e.jpg",
   "Ryan Hu": "photos/a24e043dfcc1cf6c.jpg",
-  "Michelle Dicicco": "photos/0f58c8724d0ad456.jpg",
+  "Michelle Dicicco": "photos/6c1cf4ac019f7ac7.jpg",
   "Michelle Edgina Axille": "photos/761b0807f691e92e.jpg",
   "Mikalai Kamianchuk": "photos/cf7fa6e540c18840.jpg",
   "Mikayel Salazaryan": "photos/484d8d09c709b96c.jpg",
@@ -57572,7 +58122,7 @@
   "Chloe Nguyen": "photos/dd3298115c4d3635.jpg",
   "Brendan Giang": "photos/c2e3975061a7f03e.jpg",
   "Theo le Mercier": "photos/a5c1fb5309cfd211.jpg",
-  "Xavier Vauclin": "photos/a2ab49ff2435b2f6.jpg",
+  "Xavier Vauclin": "photos/78b13a79fc6c85e0.jpg",
   "Sophie Joline von Felten": "photos/98a33eeb705677b9.jpg",
   "Ana Stratulat": "photos/d09d5b0e04a5334e.jpg",
   "Annika Lytchoff Skibby": "photos/5ffe0980972d2cf3.jpg",
