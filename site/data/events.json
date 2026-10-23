@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-23T19:43:29+03:00",
- "checked": "2026-10-23T19:43:29+03:00",
+ "checked": "2026-10-23T17:04:28.990488+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -33194,31 +33194,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Eva Pate / Logan Bye",
+     "nation": "USA",
+     "points": "64.80"
+    },
+    {
+     "place": 2,
      "name": "Sofia Val / Asaf Kazimov",
      "nation": "ESP",
      "points": "64.78"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Leah Neset / Artem Markelov",
      "nation": "USA",
      "points": "64.60"
-    },
-    {
-     "place": 3,
-     "name": "Milla Ruud Reitan / Nikolaj Majorov",
-     "nation": "SWE",
-     "points": "63.01"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sofia Val / Asaf Kazimov — 64.78\n2. Leah Neset / Artem Markelov — 64.60\n3. Milla Ruud Reitan / Nikolaj Majorov — 63.01\n\nНачало: 19:00 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Eva Pate / Logan Bye — 64.80\n2. Sofia Val / Asaf Kazimov — 64.78\n3. Leah Neset / Artem Markelov — 64.60\n\nНачало: 19:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Louise Bordet / Martin Chardain",
      "nation": "FRA",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 7,
      "time": "19:06"
     },
     {
@@ -33226,7 +33226,7 @@
      "nation": "ESP",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "time": "19:13"
     },
     {
@@ -33234,7 +33234,7 @@
      "nation": "SWE",
      "no": 3,
      "warmup": 1,
-     "place": 3,
+     "place": 5,
      "time": "19:19"
     },
     {
@@ -33242,7 +33242,7 @@
      "nation": "FRA",
      "no": 4,
      "warmup": 1,
-     "place": 4,
+     "place": 6,
      "time": "19:26"
     },
     {
@@ -33250,7 +33250,7 @@
      "nation": "USA",
      "no": 5,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "time": "19:32"
     },
     {
@@ -33351,32 +33351,32 @@
     },
     {
      "place": 2,
-     "name": "Karla Ljubic",
-     "nation": "CRO",
-     "points": "24.25"
+     "name": "Csilla Galhidi",
+     "nation": "HUN",
+     "points": "37.72"
     },
     {
      "place": 3,
-     "name": "Lena Laudan",
-     "nation": "HUN",
-     "points": "22.51"
+     "name": "Sofija Georgieva",
+     "nation": "CRO",
+     "points": "33.80"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ema Gulin — 40.35\n2. Karla Ljubic — 24.25\n3. Lena Laudan — 22.51\n\nНачало: 19:05 МСК",
+   "desc": "Промежуточные итоги:\n1. Ema Gulin — 40.35\n2. Csilla Galhidi — 37.72\n3. Sofija Georgieva — 33.80\n\nНачало: 19:05 МСК",
    "field": [
     {
      "name": "Karla Ljubic",
      "nation": "CRO",
      "no": 1,
      "warmup": 1,
-     "place": 2
+     "place": 4
     },
     {
      "name": "Lena Laudan",
      "nation": "HUN",
      "no": 2,
      "warmup": 1,
-     "place": 3
+     "place": 5
     },
     {
      "name": "Ema Gulin",
@@ -33426,7 +33426,8 @@
      "name": "Sofija Georgieva",
      "nation": "CRO",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Tinkara Poklic",
