@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-23T14:23:16+03:00",
- "checked": "2026-10-23T12:52:29.382534+00:00",
+ "checked": "2026-10-23T13:08:29.753117+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -32819,13 +32819,14 @@
     "Matteo Marchioni"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Начало: 15:45 МСК",
+   "desc": "Промежуточные итоги:\n1. Daniel Verbat — 54.58\n\nНачало: 15:45 МСК",
    "field": [
     {
      "name": "Daniel Verbat",
      "nation": "FRA",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Elian Thomann",
@@ -32873,7 +32874,16 @@
     },
     "basis": null
    },
-   "proto": "gs_golden-bear.json"
+   "proto": "gs_golden-bear.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Daniel Verbat",
+     "nation": "FRA",
+     "points": "54.58"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "gs:golden-bear:women-junior-kp",
