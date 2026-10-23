@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-23T14:23:16+03:00",
- "checked": "2026-10-23T13:20:30.196939+00:00",
+ "checked": "2026-10-23T13:28:29.408831+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -32819,7 +32819,7 @@
     "Matteo Marchioni"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Daniel Verbat — 54.58\n2. Elian Thomann — 49.61\n3. Lenny Olivier — 45.92\n\nНачало: 15:45 МСК",
+   "desc": "Промежуточные итоги:\n1. Daniel Verbat — 54.58\n2. Alessandro Giuliano — 49.91\n3. Elian Thomann — 49.61\n\nНачало: 15:45 МСК",
    "field": [
     {
      "name": "Daniel Verbat",
@@ -32833,20 +32833,21 @@
      "nation": "FRA",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Lenny Olivier",
      "nation": "FRA",
      "no": 3,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Alessandro Giuliano",
      "nation": "ITA",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Felix Oberbacher",
@@ -32886,15 +32887,15 @@
     },
     {
      "place": 2,
-     "name": "Elian Thomann",
-     "nation": "FRA",
-     "points": "49.61"
+     "name": "Alessandro Giuliano",
+     "nation": "ITA",
+     "points": "49.91"
     },
     {
      "place": 3,
-     "name": "Lenny Olivier",
+     "name": "Elian Thomann",
      "nation": "FRA",
-     "points": "45.92"
+     "points": "49.61"
     }
    ],
    "provisional": true
