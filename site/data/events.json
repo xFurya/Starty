@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-23T14:23:16+03:00",
- "checked": "2026-10-23T14:23:16+03:00",
+ "checked": "2026-10-23T11:40:28.713619+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -32647,24 +32647,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Aria Lusa Kogovsek",
+     "nation": "SLO",
+     "points": "52.48"
+    },
+    {
+     "place": 2,
      "name": "Polina Zeciri",
      "nation": "AUT",
      "points": "48.71"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Anna Greta Varro",
      "nation": "HUN",
      "points": "48.29"
-    },
-    {
-     "place": 3,
-     "name": "Tara Besic",
-     "nation": "CRO",
-     "points": "40.46"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Polina Zeciri — 48.71\n2. Anna Greta Varro — 48.29\n3. Tara Besic — 40.46\n\nНачало: 13:55 МСК",
+   "desc": "Промежуточные итоги:\n1. Aria Lusa Kogovsek — 52.48\n2. Polina Zeciri — 48.71\n3. Anna Greta Varro — 48.29\n\nНачало: 13:55 МСК",
    "field": [
     {
      "name": "Adriana Shevtsova",
@@ -32679,7 +32679,7 @@
     {
      "name": "Anna Greta Varro",
      "nation": "HUN",
-     "place": 2
+     "place": 3
     },
     {
      "name": "Anna Stepanchuk",
@@ -32689,7 +32689,7 @@
     {
      "name": "Aria Lusa Kogovsek",
      "nation": "SLO",
-     "place": 6
+     "place": 1
     },
     {
      "name": "Elisa Irsara",
@@ -32709,12 +32709,12 @@
     {
      "name": "Pia Cizmek",
      "nation": "CRO",
-     "place": 4
+     "place": 6
     },
     {
      "name": "Polina Zeciri",
      "nation": "AUT",
-     "place": 1
+     "place": 2
     },
     {
      "name": "Sara Klepetkova",
@@ -32724,12 +32724,12 @@
     {
      "name": "Tara Besic",
      "nation": "CRO",
-     "place": 3
+     "place": 5
     },
     {
      "name": "Tena Evelyn Skalicki",
      "nation": "SLO",
-     "place": 5
+     "place": 4
     },
     {
      "name": "Valentina Beer",
