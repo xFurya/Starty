@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-23T14:23:16+03:00",
- "checked": "2026-10-23T13:08:29.753117+00:00",
+ "checked": "2026-10-23T13:16:28.943975+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -32819,7 +32819,7 @@
     "Matteo Marchioni"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Daniel Verbat — 54.58\n\nНачало: 15:45 МСК",
+   "desc": "Промежуточные итоги:\n1. Daniel Verbat — 54.58\n2. Elian Thomann — 49.61\n\nНачало: 15:45 МСК",
    "field": [
     {
      "name": "Daniel Verbat",
@@ -32832,7 +32832,8 @@
      "name": "Elian Thomann",
      "nation": "FRA",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Lenny Olivier",
@@ -32881,6 +32882,12 @@
      "name": "Daniel Verbat",
      "nation": "FRA",
      "points": "54.58"
+    },
+    {
+     "place": 2,
+     "name": "Elian Thomann",
+     "nation": "FRA",
+     "points": "49.61"
     }
    ],
    "provisional": true
