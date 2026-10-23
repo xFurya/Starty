@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-23T00:29:13+03:00",
- "checked": "2026-10-23T00:29:13+03:00",
+ "generated": "2026-10-23T14:23:16+03:00",
+ "checked": "2026-10-23T14:23:16+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -32276,10 +32276,10 @@
      "place": 3,
      "name": "Rocco Malik Dietrich",
      "nation": "GER",
-     "points": "33.51"
+     "points": "34.51"
     }
    ],
-   "desc": "Итог:\n1. Alexandre Lirot — 40.50\n2. Gabin Telemaque — 36.60\n3. Rocco Malik Dietrich — 33.51\n\nНачало: 19:30 МСК",
+   "desc": "Итог:\n1. Alexandre Lirot — 40.50\n2. Gabin Telemaque — 36.60\n3. Rocco Malik Dietrich — 34.51\n\nНачало: 19:30 МСК",
    "field": [
     {
      "name": "Gabin Telemaque",
@@ -32523,23 +32523,79 @@
     "Rocco Malik Dietrich"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Начало: 13:25 МСК",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Gabin Telemaque",
+     "nation": "FRA",
+     "points": "63.20"
+    },
+    {
+     "place": 2,
+     "name": "Rocco Malik Dietrich",
+     "nation": "GER",
+     "points": "60.86"
+    },
+    {
+     "place": 3,
+     "name": "Alexandre Lirot",
+     "nation": "FRA",
+     "points": "58.46"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Gabin Telemaque",
+     "nation": "FRA",
+     "points": "99.80"
+    },
+    {
+     "place": 2,
+     "name": "Alexandre Lirot",
+     "nation": "FRA",
+     "points": "98.96"
+    },
+    {
+     "place": 3,
+     "name": "Rocco Malik Dietrich",
+     "nation": "GER",
+     "points": "95.37"
+    }
+   ],
+   "desc": "Итог:\n1. Gabin Telemaque — 63.20\n2. Rocco Malik Dietrich — 60.86\n3. Alexandre Lirot — 58.46\n\nИтог турнира:\n1. Gabin Telemaque — 99.80\n2. Alexandre Lirot — 98.96\n3. Rocco Malik Dietrich — 95.37\n\nНачало: 13:25 МСК",
    "field": [
     {
-     "name": "Alexandre Lirot",
-     "nation": "FRA"
-    },
-    {
      "name": "Aron Horvath-berkes",
-     "nation": "GER"
-    },
-    {
-     "name": "Gabin Telemaque",
-     "nation": "FRA"
+     "nation": "GER",
+     "no": 1,
+     "warmup": null,
+     "place": 4,
+     "final": 4
     },
     {
      "name": "Rocco Malik Dietrich",
-     "nation": "GER"
+     "nation": "GER",
+     "no": 2,
+     "warmup": null,
+     "place": 2,
+     "final": 3
+    },
+    {
+     "name": "Gabin Telemaque",
+     "nation": "FRA",
+     "no": 3,
+     "warmup": null,
+     "place": 1,
+     "final": 1
+    },
+    {
+     "name": "Alexandre Lirot",
+     "nation": "FRA",
+     "no": 4,
+     "warmup": null,
+     "place": 3,
+     "final": 2
     }
    ],
    "live": {
@@ -32548,12 +32604,12 @@
     "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT005RS.htm",
     "first": "https://www.croskate.hr/cscro2025/GB2026/SEG009.htm",
     "names": {
-     "Alexandre LIROT": "Alexandre Lirot",
      "Gabin TELEMAQUE": "Gabin Telemaque",
      "Rocco Malik DIETRICH": "Rocco Malik Dietrich",
+     "Alexandre LIROT": "Alexandre Lirot",
      "Aron HORVATH-BERKES": "Aron Horvath-berkes"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "gs_golden-bear.json"
   },
@@ -32566,7 +32622,7 @@
    "seg": "ПП",
    "title": "Golden Bear — женщины ПП",
    "start": "2026-10-23T13:55:00+03:00",
-   "end": "2026-10-23T16:30:00+03:00",
+   "end": "2026-10-23T16:15:00+03:00",
    "venue": "Zagreb, Croatia",
    "intl": true,
    "broadcast": [],
@@ -32577,10 +32633,8 @@
     "Anna Greta Varro",
     "Anna Stepanchuk",
     "Aria Lusa Kogovsek",
-    "Beatriz Juratovac",
     "Elisa Irsara",
     "Hannah Gerard",
-    "Kincso Dorina Simon",
     "Olivia Zoe Szili",
     "Pia Cizmek",
     "Polina Zeciri",
@@ -32590,73 +32644,100 @@
     "Valentina Beer"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Начало: 13:55 МСК",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Polina Zeciri",
+     "nation": "AUT",
+     "points": "48.71"
+    },
+    {
+     "place": 2,
+     "name": "Anna Greta Varro",
+     "nation": "HUN",
+     "points": "48.29"
+    },
+    {
+     "place": 3,
+     "name": "Tara Besic",
+     "nation": "CRO",
+     "points": "40.46"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Polina Zeciri — 48.71\n2. Anna Greta Varro — 48.29\n3. Tara Besic — 40.46\n\nНачало: 13:55 МСК",
    "field": [
     {
      "name": "Adriana Shevtsova",
-     "nation": "UKR"
+     "nation": "UKR",
+     "place": 13
     },
     {
      "name": "Alexa Riddoch",
-     "nation": "GBR"
+     "nation": "GBR",
+     "place": 9
     },
     {
      "name": "Anna Greta Varro",
-     "nation": "HUN"
+     "nation": "HUN",
+     "place": 2
     },
     {
      "name": "Anna Stepanchuk",
-     "nation": "CRO"
+     "nation": "CRO",
+     "place": 7
     },
     {
      "name": "Aria Lusa Kogovsek",
-     "nation": "SLO"
-    },
-    {
-     "name": "Beatriz Juratovac",
-     "nation": "CRO"
+     "nation": "SLO",
+     "place": 6
     },
     {
      "name": "Elisa Irsara",
-     "nation": "ITA"
+     "nation": "ITA",
+     "place": 11
     },
     {
      "name": "Hannah Gerard",
-     "nation": "FRA"
-    },
-    {
-     "name": "Kincso Dorina Simon",
-     "nation": "HUN"
+     "nation": "FRA",
+     "place": 8
     },
     {
      "name": "Olivia Zoe Szili",
-     "nation": "HUN"
+     "nation": "HUN",
+     "place": 12
     },
     {
      "name": "Pia Cizmek",
-     "nation": "CRO"
+     "nation": "CRO",
+     "place": 4
     },
     {
      "name": "Polina Zeciri",
-     "nation": "AUT"
+     "nation": "AUT",
+     "place": 1
     },
     {
      "name": "Sara Klepetkova",
-     "nation": "CZE"
+     "nation": "CZE",
+     "place": 10
     },
     {
      "name": "Tara Besic",
-     "nation": "CRO"
+     "nation": "CRO",
+     "place": 3
     },
     {
      "name": "Tena Evelyn Skalicki",
-     "nation": "SLO"
+     "nation": "SLO",
+     "place": 5
     },
     {
      "name": "Valentina Beer",
-     "nation": "GER"
+     "nation": "GER",
+     "place": 14
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
     "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG012.htm",
@@ -32664,21 +32745,19 @@
     "first": "https://www.croskate.hr/cscro2025/GB2026/SEG011.htm",
     "names": {
      "Polina ZECIRI": "Polina Zeciri",
+     "Anna Greta VARRO": "Anna Greta Varro",
      "Tara BESIC": "Tara Besic",
      "Pia CIZMEK": "Pia Cizmek",
-     "Beatriz JURATOVAC": "Beatriz Juratovac",
+     "Tena Evelyn SKALICKI": "Tena Evelyn Skalicki",
+     "Aria Lusa KOGOVSEK": "Aria Lusa Kogovsek",
      "Anna STEPANCHUK": "Anna Stepanchuk",
-     "Sara KLEPETKOVA": "Sara Klepetkova",
      "Hannah GERARD": "Hannah Gerard",
      "Alexa RIDDOCH": "Alexa Riddoch",
-     "Valentina BEER": "Valentina Beer",
-     "Kincso Dorina SIMON": "Kincso Dorina Simon",
-     "Olivia Zoe SZILI": "Olivia Zoe Szili",
-     "Anna Greta VARRO": "Anna Greta Varro",
+     "Sara KLEPETKOVA": "Sara Klepetkova",
      "Elisa IRSARA": "Elisa Irsara",
-     "Aria Lusa KOGOVSEK": "Aria Lusa Kogovsek",
-     "Tena Evelyn SKALICKI": "Tena Evelyn Skalicki",
-     "Adriana SHEVTSOVA": "Adriana Shevtsova"
+     "Olivia Zoe SZILI": "Olivia Zoe Szili",
+     "Adriana SHEVTSOVA": "Adriana Shevtsova",
+     "Valentina BEER": "Valentina Beer"
     },
     "basis": null
    },
