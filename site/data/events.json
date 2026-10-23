@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-23T14:23:16+03:00",
- "checked": "2026-10-23T16:40:29.854969+00:00",
+ "checked": "2026-10-23T16:48:28.853417+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -33336,7 +33336,7 @@
     "Vanesa Novosel"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Karla Ljubic — 24.25\n\nНачало: 19:05 МСК",
+   "desc": "Промежуточные итоги:\n1. Karla Ljubic — 24.25\n2. Lena Laudan — 22.51\n\nНачало: 19:05 МСК",
    "field": [
     {
      "name": "Karla Ljubic",
@@ -33349,7 +33349,8 @@
      "name": "Lena Laudan",
      "nation": "HUN",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Ema Gulin",
@@ -33440,6 +33441,12 @@
      "name": "Karla Ljubic",
      "nation": "CRO",
      "points": "24.25"
+    },
+    {
+     "place": 2,
+     "name": "Lena Laudan",
+     "nation": "HUN",
+     "points": "22.51"
     }
    ],
    "provisional": true
