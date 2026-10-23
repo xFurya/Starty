@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-23T14:23:16+03:00",
- "checked": "2026-10-23T16:16:29.219144+00:00",
+ "checked": "2026-10-23T16:20:41.148908+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -32946,7 +32946,7 @@
     "Zsofia Szeplaki"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Eleonora Ciferri — 53.99\n2. Paula Kasnar — 52.83\n3. Ula Zadnikar — 50.10\n\nНачало: 16:45 МСК",
+   "desc": "Итог:\n1. Eleonora Ciferri — 53.99\n2. Paula Kasnar — 52.83\n3. Ula Zadnikar — 50.10\n\nПримечательное:\n• Paula Kasnar — Личный рекорд за КП: 52.83 (был 44.60)\n\nНачало: 16:45 МСК",
    "field": [
     {
      "name": "Lea Marie Castlunger",
@@ -32967,14 +32967,14 @@
      "nation": "CRO",
      "no": 3,
      "warmup": 1,
-     "place": 17
+     "place": 18
     },
     {
      "name": "Liana Smrekar",
      "nation": "SLO",
      "no": 4,
      "warmup": 1,
-     "place": 15
+     "place": 16
     },
     {
      "name": "Nadja Savic",
@@ -32994,7 +32994,7 @@
      "nation": "SLO",
      "no": 7,
      "warmup": 2,
-     "place": 16
+     "place": 17
     },
     {
      "name": "Eleonora Ciferri",
@@ -33035,14 +33035,14 @@
      "nation": "SLO",
      "no": 13,
      "warmup": 3,
-     "place": 14
+     "place": 15
     },
     {
      "name": "Hana Operckal",
      "nation": "SLO",
      "no": 14,
      "warmup": 3,
-     "place": 13
+     "place": 14
     },
     {
      "name": "Ula Zadnikar",
@@ -33089,7 +33089,8 @@
      "name": "Lija Kroselj",
      "nation": "SLO",
      "no": 21,
-     "warmup": 4
+     "warmup": 4,
+     "place": 13
     }
    ],
    "live": {
@@ -33120,7 +33121,7 @@
      "Luna ROZMAN": "Luna Rozman",
      "Lija KROSELJ": "Lija Kroselj"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "gs_golden-bear.json",
    "podium": [
@@ -33143,7 +33144,13 @@
      "points": "50.10"
     }
    ],
-   "provisional": true
+   "facts": [
+    {
+     "who": "Paula Kasnar",
+     "text": "Личный рекорд за КП: 52.83 (был 44.60)",
+     "kind": "score"
+    }
+   ]
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:dance-senior-rt",
@@ -33180,7 +33187,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Louise Bordet / Martin Chardain — 57.55\n\nНачало: 19:00 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Sofia Val / Asaf Kazimov — 64.78\n2. Louise Bordet / Martin Chardain — 57.55\n\nНачало: 19:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Louise Bordet / Martin Chardain",
@@ -33188,14 +33195,15 @@
      "time": "19:06",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Sofia Val / Asaf Kazimov",
      "nation": "ESP",
      "time": "19:13",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
@@ -33277,6 +33285,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Sofia Val / Asaf Kazimov",
+     "nation": "ESP",
+     "points": "64.78"
+    },
+    {
+     "place": 2,
      "name": "Louise Bordet / Martin Chardain",
      "nation": "FRA",
      "points": "57.55"
