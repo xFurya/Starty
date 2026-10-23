@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-23T19:43:29+03:00",
- "checked": "2026-10-23T18:24:48.113510+00:00",
+ "checked": "2026-10-23T18:28:48.253335+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -33543,7 +33543,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Rion Sumiyoshi — 61.10\n2. Seojin Youn — 57.50\n3. Gabrielle Daleman — 55.66\n\nНачало: 20:50 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Sarina Joos — 63.67\n2. Rion Sumiyoshi — 61.10\n3. Seojin Youn — 57.50\n\nНачало: 20:50 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Eve Dubecq",
@@ -33551,7 +33551,7 @@
      "time": "20:57",
      "no": 1,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Seojin Youn",
@@ -33559,7 +33559,7 @@
      "time": "21:03",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Gabrielle Daleman",
@@ -33567,7 +33567,7 @@
      "time": "21:10",
      "no": 3,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Rion Sumiyoshi",
@@ -33575,14 +33575,15 @@
      "time": "21:16",
      "no": 4,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Sarina Joos",
      "nation": "ITA",
      "time": "21:22",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Yuseong Kim",
@@ -33659,21 +33660,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Sarina Joos",
+     "nation": "ITA",
+     "points": "63.67"
+    },
+    {
+     "place": 2,
      "name": "Rion Sumiyoshi",
      "nation": "JPN",
      "points": "61.10"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Seojin Youn",
      "nation": "KOR",
      "points": "57.50"
-    },
-    {
-     "place": 3,
-     "name": "Gabrielle Daleman",
-     "nation": "CAN",
-     "points": "55.66"
     }
    ],
    "provisional": true
