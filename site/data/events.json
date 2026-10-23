@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-23T19:43:29+03:00",
- "checked": "2026-10-23T17:20:28.429899+00:00",
+ "checked": "2026-10-23T17:24:29.357684+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -33371,14 +33371,14 @@
      "nation": "CRO",
      "no": 1,
      "warmup": 1,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Lena Laudan",
      "nation": "HUN",
      "no": 2,
      "warmup": 1,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Ema Gulin",
@@ -33405,7 +33405,7 @@
      "nation": "CRO",
      "no": 8,
      "warmup": 2,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Mija Hebar",
@@ -33444,7 +33444,8 @@
      "name": "Vanesa Novosel",
      "nation": "CRO",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6
     }
    ],
    "provisional": true,
