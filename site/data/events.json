@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-23T14:23:16+03:00",
- "checked": "2026-10-23T17:00:29.579839+00:00",
+ "generated": "2026-10-23T19:43:29+03:00",
+ "checked": "2026-10-23T19:43:29+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -32664,117 +32664,6 @@
      "points": "63.34"
     }
    ],
-   "desc": "Итог:\n1. Adriana Shevtsova — 64.08\n2. Alexa Riddoch — 64.07\n3. Valentina Beer — 63.34\n\nИтог турнира:\n1. Valentina Beer — 104.59\n2. Adriana Shevtsova — 104.29\n3. Olivia Zoe Szili — 99.09\n\nНачало: 13:55 МСК",
-   "field": [
-    {
-     "name": "Adriana Shevtsova",
-     "nation": "UKR",
-     "place": 1,
-     "final": 2
-    },
-    {
-     "name": "Alexa Riddoch",
-     "nation": "GBR",
-     "place": 2,
-     "final": 4
-    },
-    {
-     "name": "Anna Greta Varro",
-     "nation": "HUN",
-     "place": 10,
-     "final": 11
-    },
-    {
-     "name": "Anna Stepanchuk",
-     "nation": "CRO",
-     "place": 8,
-     "final": 9
-    },
-    {
-     "name": "Aria Lusa Kogovsek",
-     "nation": "SLO",
-     "place": 5,
-     "final": 8
-    },
-    {
-     "name": "Elisa Irsara",
-     "nation": "ITA",
-     "place": 11,
-     "final": 5
-    },
-    {
-     "name": "Hannah Gerard",
-     "nation": "FRA",
-     "place": 6,
-     "final": 7
-    },
-    {
-     "name": "Olivia Zoe Szili",
-     "nation": "HUN",
-     "place": 4,
-     "final": 3
-    },
-    {
-     "name": "Pia Cizmek",
-     "nation": "CRO",
-     "place": 14,
-     "final": 14
-    },
-    {
-     "name": "Polina Zeciri",
-     "nation": "AUT",
-     "place": 9,
-     "final": 10
-    },
-    {
-     "name": "Sara Klepetkova",
-     "nation": "CZE",
-     "place": 7,
-     "final": 6
-    },
-    {
-     "name": "Tara Besic",
-     "nation": "CRO",
-     "place": 13,
-     "final": 13
-    },
-    {
-     "name": "Tena Evelyn Skalicki",
-     "nation": "SLO",
-     "place": 12,
-     "final": 12
-    },
-    {
-     "name": "Valentina Beer",
-     "nation": "GER",
-     "place": 3,
-     "final": 1
-    }
-   ],
-   "live": {
-    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG012.htm",
-    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT006RS.htm",
-    "first": "https://www.croskate.hr/cscro2025/GB2026/SEG011.htm",
-    "names": {
-     "Polina ZECIRI": "Polina Zeciri",
-     "Anna Greta VARRO": "Anna Greta Varro",
-     "Tara BESIC": "Tara Besic",
-     "Pia CIZMEK": "Pia Cizmek",
-     "Tena Evelyn SKALICKI": "Tena Evelyn Skalicki",
-     "Aria Lusa KOGOVSEK": "Aria Lusa Kogovsek",
-     "Anna STEPANCHUK": "Anna Stepanchuk",
-     "Hannah GERARD": "Hannah Gerard",
-     "Alexa RIDDOCH": "Alexa Riddoch",
-     "Sara KLEPETKOVA": "Sara Klepetkova",
-     "Elisa IRSARA": "Elisa Irsara",
-     "Olivia Zoe SZILI": "Olivia Zoe Szili",
-     "Adriana SHEVTSOVA": "Adriana Shevtsova",
-     "Valentina BEER": "Valentina Beer"
-    },
-    "basis": "judges"
-   },
-   "proto": "gs_golden-bear.json",
    "total": [
     {
      "place": 1,
@@ -32794,7 +32683,146 @@
      "nation": "HUN",
      "points": "99.09"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Adriana Shevtsova — 64.08\n2. Alexa Riddoch — 64.07\n3. Valentina Beer — 63.34\n\nИтог турнира:\n1. Valentina Beer — 104.59\n2. Adriana Shevtsova — 104.29\n3. Olivia Zoe Szili — 99.09\n\nНачало: 13:55 МСК",
+   "field": [
+    {
+     "name": "Pia Cizmek",
+     "nation": "CRO",
+     "no": 1,
+     "warmup": null,
+     "place": 14,
+     "final": 14
+    },
+    {
+     "name": "Tara Besic",
+     "nation": "CRO",
+     "no": 2,
+     "warmup": null,
+     "place": 13,
+     "final": 13
+    },
+    {
+     "name": "Anna Greta Varro",
+     "nation": "HUN",
+     "no": 3,
+     "warmup": null,
+     "place": 10,
+     "final": 11
+    },
+    {
+     "name": "Polina Zeciri",
+     "nation": "AUT",
+     "no": 4,
+     "warmup": null,
+     "place": 9,
+     "final": 10
+    },
+    {
+     "name": "Tena Evelyn Skalicki",
+     "nation": "SLO",
+     "no": 5,
+     "warmup": null,
+     "place": 12,
+     "final": 12
+    },
+    {
+     "name": "Aria Lusa Kogovsek",
+     "nation": "SLO",
+     "no": 6,
+     "warmup": null,
+     "place": 5,
+     "final": 8
+    },
+    {
+     "name": "Anna Stepanchuk",
+     "nation": "CRO",
+     "no": 7,
+     "warmup": null,
+     "place": 8,
+     "final": 9
+    },
+    {
+     "name": "Hannah Gerard",
+     "nation": "FRA",
+     "no": 8,
+     "warmup": null,
+     "place": 6,
+     "final": 7
+    },
+    {
+     "name": "Alexa Riddoch",
+     "nation": "GBR",
+     "no": 9,
+     "warmup": null,
+     "place": 2,
+     "final": 4
+    },
+    {
+     "name": "Sara Klepetkova",
+     "nation": "CZE",
+     "no": 10,
+     "warmup": null,
+     "place": 7,
+     "final": 6
+    },
+    {
+     "name": "Elisa Irsara",
+     "nation": "ITA",
+     "no": 11,
+     "warmup": null,
+     "place": 11,
+     "final": 5
+    },
+    {
+     "name": "Olivia Zoe Szili",
+     "nation": "HUN",
+     "no": 12,
+     "warmup": null,
+     "place": 4,
+     "final": 3
+    },
+    {
+     "name": "Adriana Shevtsova",
+     "nation": "UKR",
+     "no": 13,
+     "warmup": null,
+     "place": 1,
+     "final": 2
+    },
+    {
+     "name": "Valentina Beer",
+     "nation": "GER",
+     "no": 14,
+     "warmup": null,
+     "place": 3,
+     "final": 1
+    }
+   ],
+   "live": {
+    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG012.htm",
+    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT006RS.htm",
+    "first": "https://www.croskate.hr/cscro2025/GB2026/SEG011.htm",
+    "names": {
+     "Adriana SHEVTSOVA": "Adriana Shevtsova",
+     "Alexa RIDDOCH": "Alexa Riddoch",
+     "Valentina BEER": "Valentina Beer",
+     "Olivia Zoe SZILI": "Olivia Zoe Szili",
+     "Aria Lusa KOGOVSEK": "Aria Lusa Kogovsek",
+     "Hannah GERARD": "Hannah Gerard",
+     "Sara KLEPETKOVA": "Sara Klepetkova",
+     "Anna STEPANCHUK": "Anna Stepanchuk",
+     "Polina ZECIRI": "Polina Zeciri",
+     "Anna Greta VARRO": "Anna Greta Varro",
+     "Elisa IRSARA": "Elisa Irsara",
+     "Tena Evelyn SKALICKI": "Tena Evelyn Skalicki",
+     "Tara BESIC": "Tara Besic",
+     "Pia CIZMEK": "Pia Cizmek"
+    },
+    "basis": "judges"
+   },
+   "proto": "gs_golden-bear.json"
   },
   {
    "id": "gs:golden-bear:men-junior-kp",
@@ -32819,6 +32847,26 @@
     "Matteo Marchioni"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Daniel Verbat",
+     "nation": "FRA",
+     "points": "54.58"
+    },
+    {
+     "place": 2,
+     "name": "Matteo Marchioni",
+     "nation": "ITA",
+     "points": "54.48"
+    },
+    {
+     "place": 3,
+     "name": "Alessandro Giuliano",
+     "nation": "ITA",
+     "points": "49.91"
+    }
+   ],
    "desc": "Итог:\n1. Daniel Verbat — 54.58\n2. Matteo Marchioni — 54.48\n3. Alessandro Giuliano — 49.91\n\nПримечательное:\n• Daniel Verbat — Личный рекорд за КП: 54.58 (был 44.15)\n\nНачало: 15:45 МСК",
    "field": [
     {
@@ -32871,42 +32919,22 @@
     "first": null,
     "names": {
      "Daniel VERBAT": "Daniel Verbat",
+     "Matteo MARCHIONI": "Matteo Marchioni",
+     "Alessandro GIULIANO": "Alessandro Giuliano",
      "Elian THOMANN": "Elian Thomann",
      "Lenny OLIVIER": "Lenny Olivier",
-     "Alessandro GIULIANO": "Alessandro Giuliano",
-     "Felix OBERBACHER": "Felix Oberbacher",
-     "Matteo MARCHIONI": "Matteo Marchioni"
+     "Felix OBERBACHER": "Felix Oberbacher"
     },
     "basis": "judges"
    },
-   "proto": "gs_golden-bear.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Daniel Verbat",
-     "nation": "FRA",
-     "points": "54.58"
-    },
-    {
-     "place": 2,
-     "name": "Matteo Marchioni",
-     "nation": "ITA",
-     "points": "54.48"
-    },
-    {
-     "place": 3,
-     "name": "Alessandro Giuliano",
-     "nation": "ITA",
-     "points": "49.91"
-    }
-   ],
    "facts": [
     {
-     "who": "Daniel Verbat",
+     "kind": "score",
      "text": "Личный рекорд за КП: 54.58 (был 44.15)",
-     "kind": "score"
+     "who": "Daniel Verbat"
     }
-   ]
+   ],
+   "proto": "gs_golden-bear.json"
   },
   {
    "id": "gs:golden-bear:women-junior-kp",
@@ -32917,7 +32945,7 @@
    "seg": "КП",
    "title": "Golden Bear — девушки КП",
    "start": "2026-10-23T16:45:00+03:00",
-   "end": "2026-10-23T19:45:00+03:00",
+   "end": "2026-10-23T19:20:00+03:00",
    "venue": "Zagreb, Croatia",
    "intl": true,
    "broadcast": [],
@@ -32926,7 +32954,6 @@
     "Ekaterina Balaganskaia",
     "Eleonora Ciferri",
     "Enja Sivic",
-    "Eva Dudic",
     "Hana Operckal",
     "Lea Marie Castlunger",
     "Liana Smrekar",
@@ -32938,14 +32965,32 @@
     "Nicole de Rosa",
     "Nika Sajko",
     "Paula Kasnar",
-    "Tara Plahutar",
     "Tea Sajko",
     "Ula Zadnikar",
     "Vasilisa Bogomolova",
-    "Ziva Aupic",
-    "Zsofia Szeplaki"
+    "Ziva Aupic"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Eleonora Ciferri",
+     "nation": "ITA",
+     "points": "53.99"
+    },
+    {
+     "place": 2,
+     "name": "Paula Kasnar",
+     "nation": "CRO",
+     "points": "52.83"
+    },
+    {
+     "place": 3,
+     "name": "Ula Zadnikar",
+     "nation": "SLO",
+     "points": "50.10"
+    }
+   ],
    "desc": "Итог:\n1. Eleonora Ciferri — 53.99\n2. Paula Kasnar — 52.83\n3. Ula Zadnikar — 50.10\n\nПримечательное:\n• Paula Kasnar — Личный рекорд за КП: 52.83 (был 44.60)\n\nНачало: 16:45 МСК",
    "field": [
     {
@@ -32984,12 +33029,6 @@
      "place": 10
     },
     {
-     "name": "Eva Dudic",
-     "nation": "CRO",
-     "no": 6,
-     "warmup": 2
-    },
-    {
      "name": "Ziva Aupic",
      "nation": "SLO",
      "no": 7,
@@ -33023,12 +33062,6 @@
      "no": 11,
      "warmup": 3,
      "place": 12
-    },
-    {
-     "name": "Tara Plahutar",
-     "nation": "CRO",
-     "no": 12,
-     "warmup": 3
     },
     {
      "name": "Enja Sivic",
@@ -33066,12 +33099,6 @@
      "place": 6
     },
     {
-     "name": "Zsofia Szeplaki",
-     "nation": "HUN",
-     "no": 18,
-     "warmup": 4
-    },
-    {
      "name": "Paula Kasnar",
      "nation": "CRO",
      "no": 19,
@@ -33099,58 +33126,35 @@
     "cat": null,
     "first": null,
     "names": {
-     "Lea Marie CASTLUNGER": "Lea Marie Castlunger",
-     "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
-     "Nika SAJKO": "Nika Sajko",
-     "Liana SMREKAR": "Liana Smrekar",
-     "Nadja SAVIC": "Nadja Savic",
-     "Eva DUDIC": "Eva Dudic",
-     "Ziva AUPIC": "Ziva Aupic",
      "Eleonora CIFERRI": "Eleonora Ciferri",
-     "Vasilisa BOGOMOLOVA": "Vasilisa Bogomolova",
-     "Nicole de ROSA": "Nicole de Rosa",
-     "Tea SAJKO": "Tea Sajko",
-     "Tara PLAHUTAR": "Tara Plahutar",
-     "Enja SIVIC": "Enja Sivic",
-     "Hana OPERCKAL": "Hana Operckal",
-     "Ula ZADNIKAR": "Ula Zadnikar",
-     "Neza LUSIC": "Neza Lusic",
-     "Louane WOLFF": "Louane Wolff",
-     "Zsofia SZEPLAKI": "Zsofia Szeplaki",
      "Paula KASNAR": "Paula Kasnar",
+     "Ula ZADNIKAR": "Ula Zadnikar",
+     "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
+     "Nicole de ROSA": "Nicole de Rosa",
+     "Louane WOLFF": "Louane Wolff",
+     "Lea Marie CASTLUNGER": "Lea Marie Castlunger",
      "Luna ROZMAN": "Luna Rozman",
-     "Lija KROSELJ": "Lija Kroselj"
+     "Vasilisa BOGOMOLOVA": "Vasilisa Bogomolova",
+     "Nadja SAVIC": "Nadja Savic",
+     "Neza LUSIC": "Neza Lusic",
+     "Tea SAJKO": "Tea Sajko",
+     "Lija KROSELJ": "Lija Kroselj",
+     "Hana OPERCKAL": "Hana Operckal",
+     "Enja SIVIC": "Enja Sivic",
+     "Liana SMREKAR": "Liana Smrekar",
+     "Ziva AUPIC": "Ziva Aupic",
+     "Nika SAJKO": "Nika Sajko"
     },
     "basis": "judges"
    },
-   "proto": "gs_golden-bear.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Eleonora Ciferri",
-     "nation": "ITA",
-     "points": "53.99"
-    },
-    {
-     "place": 2,
-     "name": "Paula Kasnar",
-     "nation": "CRO",
-     "points": "52.83"
-    },
-    {
-     "place": 3,
-     "name": "Ula Zadnikar",
-     "nation": "SLO",
-     "points": "50.10"
-    }
-   ],
    "facts": [
     {
-     "who": "Paula Kasnar",
+     "kind": "score",
      "text": "Личный рекорд за КП: 52.83 (был 44.60)",
-     "kind": "score"
+     "who": "Paula Kasnar"
     }
-   ]
+   ],
+   "proto": "gs_golden-bear.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:dance-senior-rt",
@@ -33187,47 +33191,81 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Eva Pate / Logan Bye — 64.80\n2. Sofia Val / Asaf Kazimov — 64.78\n3. Leah Neset / Artem Markelov — 64.60\n\nНачало: 19:00 МСК\nТрансляция: Okko",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Sofia Val / Asaf Kazimov",
+     "nation": "ESP",
+     "points": "64.78"
+    },
+    {
+     "place": 2,
+     "name": "Leah Neset / Artem Markelov",
+     "nation": "USA",
+     "points": "64.60"
+    },
+    {
+     "place": 3,
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "points": "63.01"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Sofia Val / Asaf Kazimov — 64.78\n2. Leah Neset / Artem Markelov — 64.60\n3. Milla Ruud Reitan / Nikolaj Majorov — 63.01\n\nНачало: 19:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Louise Bordet / Martin Chardain",
      "nation": "FRA",
-     "time": "19:06",
      "no": 1,
      "warmup": 1,
-     "place": 7
+     "place": 5,
+     "time": "19:06"
     },
     {
      "name": "Sofia Val / Asaf Kazimov",
      "nation": "ESP",
-     "time": "19:13",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 1,
+     "time": "19:13"
     },
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
      "nation": "SWE",
-     "time": "19:19",
      "no": 3,
      "warmup": 1,
-     "place": 5
+     "place": 3,
+     "time": "19:19"
     },
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
      "nation": "FRA",
-     "time": "19:26",
      "no": 4,
      "warmup": 1,
-     "place": 6
+     "place": 4,
+     "time": "19:26"
     },
     {
      "name": "Leah Neset / Artem Markelov",
      "nation": "USA",
-     "time": "19:32",
      "no": 5,
      "warmup": 1,
-     "place": 3
+     "place": 2,
+     "time": "19:32"
+    },
+    {
+     "name": "Christina Carreira / Anthony Ponomarenko",
+     "nation": "USA",
+     "time": "20:12",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Diana Davis / Gleb Smolkin",
+     "nation": "GEO",
+     "time": "20:05",
+     "no": 9,
+     "warmup": 2
     },
     {
      "name": "Eva Pate / Logan Bye",
@@ -33251,33 +33289,20 @@
      "time": "19:59",
      "no": 8,
      "warmup": 2
-    },
-    {
-     "name": "Diana Davis / Gleb Smolkin",
-     "nation": "GEO",
-     "time": "20:05",
-     "no": 9,
-     "warmup": 2
-    },
-    {
-     "name": "Christina Carreira / Anthony Ponomarenko",
-     "nation": "USA",
-     "time": "20:12",
-     "no": 10,
-     "warmup": 2
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG007.htm",
     "cat": null,
     "first": null,
     "names": {
-     "Louise BORDET / Martin CHARDAIN": "Louise Bordet / Martin Chardain",
      "Sofia VAL / Asaf KAZIMOV": "Sofia Val / Asaf Kazimov",
+     "Leah NESET / Artem MARKELOV": "Leah Neset / Artem Markelov",
      "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov",
      "Celina FRADJI / Jean-Hans FOURNEAUX": "Celina Fradji / Jean-Hans Fourneaux",
-     "Leah NESET / Artem MARKELOV": "Leah Neset / Artem Markelov",
+     "Louise BORDET / Martin CHARDAIN": "Louise Bordet / Martin Chardain",
      "Eva PATE / Logan BYE": "Eva Pate / Logan Bye",
      "Holly HARRIS / Jason CHAN": "Holly Harris / Jason Chan",
      "Laurence FOURNIER BEAUDRY / Guillaume CIZERON": "Laurence Fournier Beaudry / Guillaume Cizeron",
@@ -33286,28 +33311,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Eva Pate / Logan Bye",
-     "nation": "USA",
-     "points": "64.80"
-    },
-    {
-     "place": 2,
-     "name": "Sofia Val / Asaf Kazimov",
-     "nation": "ESP",
-     "points": "64.78"
-    },
-    {
-     "place": 3,
-     "name": "Leah Neset / Artem Markelov",
-     "nation": "USA",
-     "points": "64.60"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
    "id": "gs:golden-bear:women-senior-pp-intermediate-novice-women",
@@ -33338,21 +33342,41 @@
     "Vanesa Novosel"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Ema Gulin — 40.35\n2. Csilla Galhidi — 37.72\n3. Sofija Georgieva — 33.80\n\nНачало: 19:05 МСК",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Ema Gulin",
+     "nation": "CRO",
+     "points": "40.35"
+    },
+    {
+     "place": 2,
+     "name": "Karla Ljubic",
+     "nation": "CRO",
+     "points": "24.25"
+    },
+    {
+     "place": 3,
+     "name": "Lena Laudan",
+     "nation": "HUN",
+     "points": "22.51"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Ema Gulin — 40.35\n2. Karla Ljubic — 24.25\n3. Lena Laudan — 22.51\n\nНачало: 19:05 МСК",
    "field": [
     {
      "name": "Karla Ljubic",
      "nation": "CRO",
      "no": 1,
      "warmup": 1,
-     "place": 4
+     "place": 2
     },
     {
      "name": "Lena Laudan",
      "nation": "HUN",
      "no": 2,
      "warmup": 1,
-     "place": 5
+     "place": 3
     },
     {
      "name": "Ema Gulin",
@@ -33369,34 +33393,15 @@
      "place": 2
     },
     {
-     "name": "Sofija Georgieva",
+     "name": "Ema Viljusic",
      "nation": "CRO",
-     "no": 5,
-     "warmup": 1,
-     "place": 3
-    },
-    {
-     "name": "Tinkara Poklic",
-     "nation": "SLO",
-     "no": 6,
-     "warmup": 1
-    },
-    {
-     "name": "Reka Kiss",
-     "nation": "HUN",
-     "no": 7,
+     "no": 12,
      "warmup": 2
     },
     {
      "name": "Eva Dobranic",
      "nation": "CRO",
      "no": 8,
-     "warmup": 2
-    },
-    {
-     "name": "Vanesa Novosel",
-     "nation": "CRO",
-     "no": 9,
      "warmup": 2
     },
     {
@@ -33412,21 +33417,40 @@
      "warmup": 2
     },
     {
-     "name": "Ema Viljusic",
+     "name": "Reka Kiss",
+     "nation": "HUN",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Sofija Georgieva",
      "nation": "CRO",
-     "no": 12,
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Tinkara Poklic",
+     "nation": "SLO",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Vanesa Novosel",
+     "nation": "CRO",
+     "no": 9,
      "warmup": 2
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
     "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG013.htm",
     "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT007RS.htm",
     "first": null,
     "names": {
+     "Ema GULIN": "Ema Gulin",
      "Karla LJUBIC": "Karla Ljubic",
      "Lena LAUDAN": "Lena Laudan",
-     "Ema GULIN": "Ema Gulin",
      "Csilla GALHIDI": "Csilla Galhidi",
      "Sofija GEORGIEVA": "Sofija Georgieva",
      "Tinkara POKLIC": "Tinkara Poklic",
@@ -33439,28 +33463,7 @@
     },
     "basis": null
    },
-   "proto": "gs_golden-bear.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Ema Gulin",
-     "nation": "CRO",
-     "points": "40.35"
-    },
-    {
-     "place": 2,
-     "name": "Csilla Galhidi",
-     "nation": "HUN",
-     "points": "37.72"
-    },
-    {
-     "place": 3,
-     "name": "Sofija Georgieva",
-     "nation": "CRO",
-     "points": "33.80"
-    }
-   ],
-   "provisional": true
+   "proto": "gs_golden-bear.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:women-senior-kp",
@@ -33618,7 +33621,7 @@
    "seg": "ПП",
    "title": "Golden Bear — юноши ПП",
    "start": "2026-10-24T12:00:00+03:00",
-   "end": "2026-10-24T12:50:00+03:00",
+   "end": "2026-10-24T12:51:00+03:00",
    "venue": "Zagreb, Croatia",
    "intl": true,
    "broadcast": [],
@@ -33635,28 +33638,46 @@
    "desc": "Начало: 12:00 МСК",
    "field": [
     {
-     "name": "Alessandro Giuliano",
-     "nation": "ITA"
-    },
-    {
-     "name": "Daniel Verbat",
-     "nation": "FRA"
-    },
-    {
-     "name": "Elian Thomann",
-     "nation": "FRA"
-    },
-    {
      "name": "Felix Oberbacher",
-     "nation": "ITA"
+     "nation": "ITA",
+     "time": "12:06",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Lenny Olivier",
-     "nation": "FRA"
+     "nation": "FRA",
+     "time": "12:13",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Elian Thomann",
+     "nation": "FRA",
+     "time": "12:21",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Alessandro Giuliano",
+     "nation": "ITA",
+     "time": "12:28",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Matteo Marchioni",
-     "nation": "ITA"
+     "nation": "ITA",
+     "time": "12:35",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Daniel Verbat",
+     "nation": "FRA",
+     "time": "12:43",
+     "no": 6,
+     "warmup": 1
     }
    ],
    "live": {
@@ -33665,12 +33686,12 @@
     "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT003RS.htm",
     "first": "https://www.croskate.hr/cscro2025/GB2026/SEG005.htm",
     "names": {
+     "Felix OBERBACHER": "Felix Oberbacher",
      "Lenny OLIVIER": "Lenny Olivier",
      "Elian THOMANN": "Elian Thomann",
-     "Daniel VERBAT": "Daniel Verbat",
      "Alessandro GIULIANO": "Alessandro Giuliano",
      "Matteo MARCHIONI": "Matteo Marchioni",
-     "Felix OBERBACHER": "Felix Oberbacher"
+     "Daniel VERBAT": "Daniel Verbat"
     },
     "basis": null
    },
@@ -33685,7 +33706,7 @@
    "seg": "ПП",
    "title": "Golden Bear — девушки ПП",
    "start": "2026-10-24T13:15:00+03:00",
-   "end": "2026-10-24T16:35:00+03:00",
+   "end": "2026-10-24T16:05:00+03:00",
    "venue": "Zagreb, Croatia",
    "intl": true,
    "broadcast": [],
@@ -33694,7 +33715,6 @@
     "Ekaterina Balaganskaia",
     "Eleonora Ciferri",
     "Enja Sivic",
-    "Eva Dudic",
     "Hana Operckal",
     "Lea Marie Castlunger",
     "Liana Smrekar",
@@ -33706,99 +33726,121 @@
     "Nicole de Rosa",
     "Nika Sajko",
     "Paula Kasnar",
-    "Tara Plahutar",
     "Tea Sajko",
     "Ula Zadnikar",
     "Vasilisa Bogomolova",
-    "Ziva Aupic",
-    "Zsofia Szeplaki"
+    "Ziva Aupic"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
    "desc": "Начало: 13:15 МСК",
    "field": [
     {
-     "name": "Ekaterina Balaganskaia",
-     "nation": "SRB"
-    },
-    {
-     "name": "Eleonora Ciferri",
-     "nation": "ITA"
-    },
-    {
-     "name": "Enja Sivic",
-     "nation": "SLO"
-    },
-    {
-     "name": "Eva Dudic",
-     "nation": "CRO"
-    },
-    {
-     "name": "Hana Operckal",
-     "nation": "SLO"
-    },
-    {
-     "name": "Lea Marie Castlunger",
-     "nation": "ITA"
-    },
-    {
-     "name": "Liana Smrekar",
-     "nation": "SLO"
-    },
-    {
-     "name": "Lija Kroselj",
-     "nation": "SLO"
-    },
-    {
-     "name": "Louane Wolff",
-     "nation": "FRA"
-    },
-    {
-     "name": "Luna Rozman",
-     "nation": "SLO"
-    },
-    {
-     "name": "Nadja Savic",
-     "nation": "SRB"
-    },
-    {
-     "name": "Neza Lusic",
-     "nation": "SLO"
-    },
-    {
-     "name": "Nicole de Rosa",
-     "nation": "ITA"
-    },
-    {
      "name": "Nika Sajko",
-     "nation": "CRO"
-    },
-    {
-     "name": "Paula Kasnar",
-     "nation": "CRO"
-    },
-    {
-     "name": "Tara Plahutar",
-     "nation": "CRO"
-    },
-    {
-     "name": "Tea Sajko",
-     "nation": "CRO"
-    },
-    {
-     "name": "Ula Zadnikar",
-     "nation": "SLO"
-    },
-    {
-     "name": "Vasilisa Bogomolova",
-     "nation": "CYP"
+     "nation": "CRO",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Ziva Aupic",
-     "nation": "SLO"
+     "nation": "SLO",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Zsofia Szeplaki",
-     "nation": "HUN"
+     "name": "Liana Smrekar",
+     "nation": "SLO",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Enja Sivic",
+     "nation": "SLO",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Hana Operckal",
+     "nation": "SLO",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Lija Kroselj",
+     "nation": "SLO",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Tea Sajko",
+     "nation": "CRO",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Neza Lusic",
+     "nation": "SLO",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Nadja Savic",
+     "nation": "SRB",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Vasilisa Bogomolova",
+     "nation": "CYP",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Luna Rozman",
+     "nation": "SLO",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Lea Marie Castlunger",
+     "nation": "ITA",
+     "no": 12,
+     "warmup": 2
+    },
+    {
+     "name": "Louane Wolff",
+     "nation": "FRA",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Nicole de Rosa",
+     "nation": "ITA",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Ekaterina Balaganskaia",
+     "nation": "SRB",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Ula Zadnikar",
+     "nation": "SLO",
+     "no": 16,
+     "warmup": 3
+    },
+    {
+     "name": "Paula Kasnar",
+     "nation": "CRO",
+     "no": 17,
+     "warmup": 3
+    },
+    {
+     "name": "Eleonora Ciferri",
+     "nation": "ITA",
+     "no": 18,
+     "warmup": 3
     }
    ],
    "live": {
@@ -33807,27 +33849,24 @@
     "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT004RS.htm",
     "first": "https://www.croskate.hr/cscro2025/GB2026/SEG007.htm",
     "names": {
-     "Eva DUDIC": "Eva Dudic",
-     "Paula KASNAR": "Paula Kasnar",
-     "Tara PLAHUTAR": "Tara Plahutar",
      "Nika SAJKO": "Nika Sajko",
-     "Tea SAJKO": "Tea Sajko",
-     "Vasilisa BOGOMOLOVA": "Vasilisa Bogomolova",
-     "Louane WOLFF": "Louane Wolff",
-     "Zsofia SZEPLAKI": "Zsofia Szeplaki",
-     "Lea Marie CASTLUNGER": "Lea Marie Castlunger",
-     "Eleonora CIFERRI": "Eleonora Ciferri",
-     "Nicole de ROSA": "Nicole de Rosa",
      "Ziva AUPIC": "Ziva Aupic",
-     "Lija KROSELJ": "Lija Kroselj",
-     "Neza LUSIC": "Neza Lusic",
-     "Hana OPERCKAL": "Hana Operckal",
-     "Luna ROZMAN": "Luna Rozman",
-     "Enja SIVIC": "Enja Sivic",
      "Liana SMREKAR": "Liana Smrekar",
-     "Ula ZADNIKAR": "Ula Zadnikar",
+     "Enja SIVIC": "Enja Sivic",
+     "Hana OPERCKAL": "Hana Operckal",
+     "Lija KROSELJ": "Lija Kroselj",
+     "Tea SAJKO": "Tea Sajko",
+     "Neza LUSIC": "Neza Lusic",
+     "Nadja SAVIC": "Nadja Savic",
+     "Vasilisa BOGOMOLOVA": "Vasilisa Bogomolova",
+     "Luna ROZMAN": "Luna Rozman",
+     "Lea Marie CASTLUNGER": "Lea Marie Castlunger",
+     "Louane WOLFF": "Louane Wolff",
+     "Nicole de ROSA": "Nicole de Rosa",
      "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
-     "Nadja SAVIC": "Nadja Savic"
+     "Ula ZADNIKAR": "Ula Zadnikar",
+     "Paula KASNAR": "Paula Kasnar",
+     "Eleonora CIFERRI": "Eleonora Ciferri"
     },
     "basis": null
    },
@@ -33989,7 +34028,7 @@
    "seg": "КП",
    "title": "Гран-при России «Невский лёд» — мужчины КП",
    "start": "2026-10-24T13:30:00+03:00",
-   "end": "2026-10-24T14:55:00+03:00",
+   "end": "2026-10-24T14:56:00+03:00",
    "venue": "СК «Юбилейный», Санкт-Петербург",
    "intl": false,
    "broadcast": [
@@ -33997,12 +34036,25 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_upd221026.pdf",
+   "athletes": [
+    "Арсений Федотов",
+    "Артемий Маринин",
+    "Артур Даниелян",
+    "Владислав Дикиджи",
+    "Глеб Лутфуллин",
+    "Даниил Постарнаков",
+    "Дмитрий Шелковников",
+    "Илья Строганов",
+    "Лев Лазарев",
+    "Макар Игнатов",
+    "Никита Сарновский",
+    "Пётр Гуменник"
+   ],
+   "src": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -34010,7 +34062,114 @@
     }
    ],
    "desc": "Начало: 13:30 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Илья Строганов",
+     "nation": "СПБ",
+     "time": "13:37",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Даниил Постарнаков",
+     "nation": "СТА",
+     "time": "13:49",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Артемий Маринин",
+     "nation": "МОС",
+     "time": "13:55",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Дмитрий Шелковников",
+     "nation": "МОБ",
+     "time": "14:00",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Никита Сарновский",
+     "nation": "МОС",
+     "time": "14:06",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Артур Даниелян",
+     "nation": "СПБ",
+     "time": "14:12",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Макар Игнатов",
+     "nation": "МОС",
+     "time": "14:20",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Лев Лазарев",
+     "nation": "МОС",
+     "time": "14:25",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Глеб Лутфуллин",
+     "nation": "СПБ",
+     "time": "14:31",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Владислав Дикиджи",
+     "nation": "СПБ",
+     "time": "14:37",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Арсений Федотов",
+     "nation": "МОС",
+     "time": "14:43",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Пётр Гуменник",
+     "nation": "СПБ",
+     "time": "14:49",
+     "no": 12,
+     "warmup": 2
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/2etap_sen/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Илья СТРОГАНОВ": "Илья Строганов",
+     "Артур ДАНИЕЛЯН": "Артур Даниелян",
+     "Даниил ПОСТАРНАКОВ": "Даниил Постарнаков",
+     "Артемий МАРИНИН": "Артемий Маринин",
+     "Дмитрий ШЕЛКОВНИКОВ": "Дмитрий Шелковников",
+     "Никита САРНОВСКИЙ": "Никита Сарновский",
+     "Макар ИГНАТОВ": "Макар Игнатов",
+     "Лев ЛАЗАРЕВ": "Лев Лазарев",
+     "Глеб ЛУТФУЛЛИН": "Глеб Лутфуллин",
+     "Владислав ДИКИДЖИ": "Владислав Дикиджи",
+     "Арсений ФЕДОТОВ": "Арсений Федотов",
+     "Пётр ГУМЕННИК": "Пётр Гуменник"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:women-senior-kp",
@@ -34021,7 +34180,7 @@
    "seg": "КП",
    "title": "Гран-при России «Невский лёд» — женщины КП",
    "start": "2026-10-24T15:15:00+03:00",
-   "end": "2026-10-24T16:35:00+03:00",
+   "end": "2026-10-24T16:37:00+03:00",
    "venue": "СК «Юбилейный», Санкт-Петербург",
    "intl": false,
    "broadcast": [
@@ -34029,12 +34188,25 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_upd221026.pdf",
+   "athletes": [
+    "Агата Петрова",
+    "Арина Кудлай",
+    "Вероника Яметова",
+    "Диана Евлахина",
+    "Дина Хуснутдинова",
+    "Злата Буря",
+    "Ксения Синицына",
+    "Мария Артёмова",
+    "Мария Захарова",
+    "Мария Котова",
+    "Мария Лабутина",
+    "Милана Лебедева"
+   ],
+   "src": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -34042,7 +34214,114 @@
     }
    ],
    "desc": "Начало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Арина Кудлай",
+     "nation": "СПБ",
+     "time": "15:22",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Вероника Яметова",
+     "nation": "МОБ",
+     "time": "15:33",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Мария Артёмова",
+     "nation": "НВГ",
+     "time": "15:39",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Мария Котова",
+     "nation": "ТАТ",
+     "time": "15:44",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Злата Буря",
+     "nation": "МОС",
+     "time": "15:50",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Мария Лабутина",
+     "nation": "ВОЛ",
+     "time": "15:55",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Диана Евлахина",
+     "nation": "ИВА",
+     "time": "16:03",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Милана Лебедева",
+     "nation": "МОС",
+     "time": "16:08",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Ксения Синицына",
+     "nation": "МОБ",
+     "time": "16:14",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Мария Захарова",
+     "nation": "МОС",
+     "time": "16:19",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Дина Хуснутдинова",
+     "nation": "ТАТ",
+     "time": "16:25",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Агата Петрова",
+     "nation": "СПБ",
+     "time": "16:30",
+     "no": 12,
+     "warmup": 2
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/2etap_sen/SEG003.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Арина КУДЛАЙ": "Арина Кудлай",
+     "Мария ЛАБУТИНА": "Мария Лабутина",
+     "Вероника ЯМЕТОВА": "Вероника Яметова",
+     "Мария АРТЁМОВА": "Мария Артёмова",
+     "Мария КОТОВА": "Мария Котова",
+     "Злата БУРЯ": "Злата Буря",
+     "Диана ЕВЛАХИНА": "Диана Евлахина",
+     "Милана ЛЕБЕДЕВА": "Милана Лебедева",
+     "Ксения СИНИЦЫНА": "Ксения Синицына",
+     "Мария ЗАХАРОВА": "Мария Захарова",
+     "Дина ХУСНУТДИНОВА": "Дина Хуснутдинова",
+     "Агата ПЕТРОВА": "Агата Петрова"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:dance-senior-pt",
@@ -34152,7 +34431,7 @@
    "seg": "КП",
    "title": "Golden Bear — мужчины КП",
    "start": "2026-10-24T16:05:00+03:00",
-   "end": "2026-10-24T17:15:00+03:00",
+   "end": "2026-10-24T17:10:00+03:00",
    "venue": "Zagreb, Croatia",
    "intl": true,
    "broadcast": [],
@@ -34174,54 +34453,63 @@
     {
      "name": "Corentin Spinar",
      "nation": "FRA",
+     "time": "16:11",
      "no": 1,
      "warmup": 1
     },
     {
      "name": "David Sedej",
      "nation": "SLO",
+     "time": "16:17",
      "no": 2,
      "warmup": 1
     },
     {
      "name": "Xan Rols",
      "nation": "FRA",
+     "time": "16:22",
      "no": 3,
      "warmup": 1
     },
     {
      "name": "Arin Yorke",
      "nation": "GBR",
+     "time": "16:28",
      "no": 4,
      "warmup": 1
     },
     {
      "name": "Vladimir Samoilov",
      "nation": "POL",
+     "time": "16:40",
      "no": 5,
      "warmup": 2
     },
     {
      "name": "Oliver Praetorius",
      "nation": "SWE",
+     "time": "16:46",
      "no": 6,
      "warmup": 2
     },
     {
      "name": "Jan Valtera",
      "nation": "CZE",
+     "time": "16:52",
      "no": 7,
      "warmup": 2
     },
     {
      "name": "Maxim Varakin",
      "nation": "CRO",
+     "time": "16:57",
      "no": 8,
      "warmup": 2
     },
     {
      "name": "Alessandro Liberatore",
      "nation": "SLO",
+     "time": "17:03",
      "no": 9,
      "warmup": 2
     }
@@ -34255,7 +34543,7 @@
    "seg": "КП",
    "title": "Гран-при России «Невский лёд» — пары КП",
    "start": "2026-10-24T16:55:00+03:00",
-   "end": "2026-10-24T18:05:00+03:00",
+   "end": "2026-10-24T17:57:00+03:00",
    "venue": "СК «Юбилейный», Санкт-Петербург",
    "intl": false,
    "broadcast": [
@@ -34263,12 +34551,20 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_upd221026.pdf",
+   "athletes": [
+    "Анастасия Мишина / Александр Галлямов",
+    "Анна Ляшенко / Пётр Алексеенко",
+    "Ева Хмелькова / Владислав Антонышев",
+    "Екатерина Гейниш / Андрей Рудь",
+    "Екатерина Чикмарёва / Матвей Янченков",
+    "София Диана Касинс / Александр Брегей",
+    "Юлия Филимонова / Андрей Шадерков"
+   ],
+   "src": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -34276,7 +34572,74 @@
     }
    ],
    "desc": "Начало: 16:55 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Анна Ляшенко / Пётр Алексеенко",
+     "nation": "МОС",
+     "time": "17:02",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Ева Хмелькова / Владислав Антонышев",
+     "nation": "МОБ",
+     "time": "17:15",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Юлия Филимонова / Андрей Шадерков",
+     "nation": "КРД",
+     "time": "17:22",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Екатерина Гейниш / Андрей Рудь",
+     "nation": "МОС",
+     "time": "17:29",
+     "no": 4,
+     "warmup": 2
+    },
+    {
+     "name": "София Диана Касинс / Александр Брегей",
+     "nation": "СПБ",
+     "time": "17:36",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "СПБ",
+     "time": "17:42",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "nation": "ПРМ",
+     "time": "17:49",
+     "no": 7,
+     "warmup": 2
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/2etap_sen/SEG005.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Анна ЛЯШЕНКО / Пётр АЛЕКСЕЕНКО": "Анна Ляшенко / Пётр Алексеенко",
+     "Юлия ФИЛИМОНОВА / Андрей ШАДЕРКОВ": "Юлия Филимонова / Андрей Шадерков",
+     "Ева ХМЕЛЬКОВА / Владислав АНТОНЫШЕВ": "Ева Хмелькова / Владислав Антонышев",
+     "Екатерина ГЕЙНИШ / Андрей РУДЬ": "Екатерина Гейниш / Андрей Рудь",
+     "София Диана КАСИНС / Александр БРЕГЕЙ": "София Диана Касинс / Александр Брегей",
+     "Анастасия МИШИНА / Александр ГАЛЛЯМОВ": "Анастасия Мишина / Александр Галлямов",
+     "Екатерина ЧИКМАРЁВА / Матвей ЯНЧЕНКОВ": "Екатерина Чикмарёва / Матвей Янченков"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
   },
   {
    "id": "gs:golden-bear:women-senior-kp-women",
@@ -34287,7 +34650,7 @@
    "seg": "КП",
    "title": "Golden Bear — женщины КП",
    "start": "2026-10-24T17:15:00+03:00",
-   "end": "2026-10-24T19:30:00+03:00",
+   "end": "2026-10-24T19:20:00+03:00",
    "venue": "Zagreb, Croatia",
    "intl": true,
    "broadcast": [],
@@ -34315,90 +34678,105 @@
     {
      "name": "Ema Vukovic",
      "nation": "CRO",
+     "time": "17:21",
      "no": 1,
      "warmup": 1
     },
     {
      "name": "Julija Lovrencic",
      "nation": "SLO",
+     "time": "17:27",
      "no": 2,
      "warmup": 1
     },
     {
      "name": "Elena Agostinelli",
      "nation": "ITA",
+     "time": "17:33",
      "no": 3,
      "warmup": 1
     },
     {
      "name": "Lorena Cizmek",
      "nation": "CRO",
+     "time": "17:39",
      "no": 4,
      "warmup": 1
     },
     {
      "name": "Marietta Atkins",
      "nation": "POL",
+     "time": "17:45",
      "no": 5,
      "warmup": 1
     },
     {
      "name": "Ginevra Lavinia Negrello",
      "nation": "ITA",
+     "time": "17:58",
      "no": 6,
      "warmup": 2
     },
     {
      "name": "Zofia Bochenek",
      "nation": "POL",
+     "time": "18:04",
      "no": 7,
      "warmup": 2
     },
     {
      "name": "Julia Fennell",
      "nation": "ISR",
+     "time": "18:10",
      "no": 8,
      "warmup": 2
     },
     {
      "name": "Oliwia Strokosz",
      "nation": "POL",
+     "time": "18:16",
      "no": 9,
      "warmup": 2
     },
     {
      "name": "Katerina Hanusova",
      "nation": "CZE",
+     "time": "18:22",
      "no": 10,
      "warmup": 2
     },
     {
      "name": "Barbora Tykalova",
      "nation": "CZE",
+     "time": "18:49",
      "no": 11,
      "warmup": 3
     },
     {
      "name": "Zala Grum",
      "nation": "SLO",
+     "time": "18:55",
      "no": 12,
      "warmup": 3
     },
     {
      "name": "Ariadna Gupta Espada",
      "nation": "ESP",
+     "time": "19:01",
      "no": 13,
      "warmup": 3
     },
     {
      "name": "Dunja Tresnjic",
      "nation": "SRB",
+     "time": "19:07",
      "no": 14,
      "warmup": 3
     },
     {
      "name": "Olivia Lengyelova",
      "nation": "SVK",
+     "time": "19:13",
      "no": 15,
      "warmup": 3
     }
@@ -34438,7 +34816,7 @@
    "seg": "РТ",
    "title": "Гран-при России «Невский лёд» — танцы РТ",
    "start": "2026-10-24T18:25:00+03:00",
-   "end": "2026-10-24T19:45:00+03:00",
+   "end": "2026-10-24T19:38:00+03:00",
    "venue": "СК «Юбилейный», Санкт-Петербург",
    "intl": false,
    "broadcast": [
@@ -34446,12 +34824,22 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_upd221026.pdf",
+   "athletes": [
+    "Александра Прокопец / Александр Васькович",
+    "Анна Смирнова / Богдан Шамков",
+    "Анна Щербакова / Егор Гончаров",
+    "Василиса Григорьева / Евгений Артющенко",
+    "Василиса Кагановская / Максим Некрасов",
+    "Екатерина Миронова / Евгений Устенко",
+    "Елизавета Шичина / Павел Дрозд",
+    "Милана Кузьмина / Дмитрий Студеникин",
+    "Софья Тютюнина / Матвей Грачев"
+   ],
+   "src": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -34459,7 +34847,90 @@
     }
    ],
    "desc": "Начало: 18:25 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Александра Прокопец / Александр Васькович",
+     "nation": "МОБ",
+     "time": "18:31",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Анна Смирнова / Богдан Шамков",
+     "nation": "ТУЛ",
+     "time": "18:44",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Василиса Григорьева / Евгений Артющенко",
+     "nation": "МОС",
+     "time": "18:51",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Софья Тютюнина / Матвей Грачев",
+     "nation": "МОС",
+     "time": "18:58",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Милана Кузьмина / Дмитрий Студеникин",
+     "nation": "МОС",
+     "time": "19:04",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Василиса Кагановская / Максим Некрасов",
+     "nation": "СПБ",
+     "time": "19:11",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Анна Щербакова / Егор Гончаров",
+     "nation": "МОС",
+     "time": "19:18",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Екатерина Миронова / Евгений Устенко",
+     "nation": "СПБ",
+     "time": "19:24",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Елизавета Шичина / Павел Дрозд",
+     "nation": "МОС",
+     "time": "19:31",
+     "no": 9,
+     "warmup": 2
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/2etap_sen/SEG007.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Александра ПРОКОПЕЦ / Александр ВАСЬКОВИЧ": "Александра Прокопец / Александр Васькович",
+     "Софья ТЮТЮНИНА / Матвей ГРАЧЕВ": "Софья Тютюнина / Матвей Грачев",
+     "Анна СМИРНОВА / Богдан ШАМКОВ": "Анна Смирнова / Богдан Шамков",
+     "Василиса ГРИГОРЬЕВА / Евгений АРТЮЩЕНКО": "Василиса Григорьева / Евгений Артющенко",
+     "Милана КУЗЬМИНА / Дмитрий СТУДЕНИКИН": "Милана Кузьмина / Дмитрий Студеникин",
+     "Василиса КАГАНОВСКАЯ / Максим НЕКРАСОВ": "Василиса Кагановская / Максим Некрасов",
+     "Анна ЩЕРБАКОВА / Егор ГОНЧАРОВ": "Анна Щербакова / Егор Гончаров",
+     "Екатерина МИРОНОВА / Евгений УСТЕНКО": "Екатерина Миронова / Евгений Устенко",
+     "Елизавета ШИЧИНА / Павел ДРОЗД": "Елизавета Шичина / Павел Дрозд"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:pairs-senior-kp",
@@ -35006,12 +35477,25 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_upd221026.pdf",
+   "athletes": [
+    "Арсений Федотов",
+    "Артемий Маринин",
+    "Артур Даниелян",
+    "Владислав Дикиджи",
+    "Глеб Лутфуллин",
+    "Даниил Постарнаков",
+    "Дмитрий Шелковников",
+    "Илья Строганов",
+    "Лев Лазарев",
+    "Макар Игнатов",
+    "Никита Сарновский",
+    "Пётр Гуменник"
+   ],
+   "src": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -35019,7 +35503,78 @@
     }
    ],
    "desc": "Начало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Арсений Федотов",
+     "nation": "МОС"
+    },
+    {
+     "name": "Артемий Маринин",
+     "nation": "МОС"
+    },
+    {
+     "name": "Артур Даниелян",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Владислав Дикиджи",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Глеб Лутфуллин",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Даниил Постарнаков",
+     "nation": "СТА"
+    },
+    {
+     "name": "Дмитрий Шелковников",
+     "nation": "МОБ"
+    },
+    {
+     "name": "Илья Строганов",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Лев Лазарев",
+     "nation": "МОС"
+    },
+    {
+     "name": "Макар Игнатов",
+     "nation": "МОС"
+    },
+    {
+     "name": "Никита Сарновский",
+     "nation": "МОС"
+    },
+    {
+     "name": "Пётр Гуменник",
+     "nation": "СПБ"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/2etap_sen/SEG002.htm",
+    "cat": "https://fsrussia.ru/results/2627/2etap_sen/CAT001RS.htm",
+    "first": "https://fsrussia.ru/results/2627/2etap_sen/SEG001.htm",
+    "names": {
+     "Пётр ГУМЕННИК": "Пётр Гуменник",
+     "Артур ДАНИЕЛЯН": "Артур Даниелян",
+     "Владислав ДИКИДЖИ": "Владислав Дикиджи",
+     "Макар ИГНАТОВ": "Макар Игнатов",
+     "Лев ЛАЗАРЕВ": "Лев Лазарев",
+     "Глеб ЛУТФУЛЛИН": "Глеб Лутфуллин",
+     "Артемий МАРИНИН": "Артемий Маринин",
+     "Даниил ПОСТАРНАКОВ": "Даниил Постарнаков",
+     "Никита САРНОВСКИЙ": "Никита Сарновский",
+     "Илья СТРОГАНОВ": "Илья Строганов",
+     "Арсений ФЕДОТОВ": "Арсений Федотов",
+     "Дмитрий ШЕЛКОВНИКОВ": "Дмитрий Шелковников"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:men-senior-pp",
@@ -35141,7 +35696,7 @@
    "seg": "ПП",
    "title": "Гран-при России «Невский лёд» — женщины ПП",
    "start": "2026-10-25T15:05:00+03:00",
-   "end": "2026-10-25T16:55:00+03:00",
+   "end": "2026-10-25T16:50:00+03:00",
    "venue": "СК «Юбилейный», Санкт-Петербург",
    "intl": false,
    "broadcast": [
@@ -35149,12 +35704,25 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_upd221026.pdf",
+   "athletes": [
+    "Агата Петрова",
+    "Арина Кудлай",
+    "Вероника Яметова",
+    "Диана Евлахина",
+    "Дина Хуснутдинова",
+    "Злата Буря",
+    "Ксения Синицына",
+    "Мария Артёмова",
+    "Мария Захарова",
+    "Мария Котова",
+    "Мария Лабутина",
+    "Милана Лебедева"
+   ],
+   "src": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -35162,7 +35730,78 @@
     }
    ],
    "desc": "Начало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Агата Петрова",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Арина Кудлай",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Вероника Яметова",
+     "nation": "МОБ"
+    },
+    {
+     "name": "Диана Евлахина",
+     "nation": "ИВА"
+    },
+    {
+     "name": "Дина Хуснутдинова",
+     "nation": "ТАТ"
+    },
+    {
+     "name": "Злата Буря",
+     "nation": "МОС"
+    },
+    {
+     "name": "Ксения Синицына",
+     "nation": "МОБ"
+    },
+    {
+     "name": "Мария Артёмова",
+     "nation": "НВГ"
+    },
+    {
+     "name": "Мария Захарова",
+     "nation": "МОС"
+    },
+    {
+     "name": "Мария Котова",
+     "nation": "ТАТ"
+    },
+    {
+     "name": "Мария Лабутина",
+     "nation": "ВОЛ"
+    },
+    {
+     "name": "Милана Лебедева",
+     "nation": "МОС"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/2etap_sen/SEG004.htm",
+    "cat": "https://fsrussia.ru/results/2627/2etap_sen/CAT002RS.htm",
+    "first": "https://fsrussia.ru/results/2627/2etap_sen/SEG003.htm",
+    "names": {
+     "Мария АРТЁМОВА": "Мария Артёмова",
+     "Злата БУРЯ": "Злата Буря",
+     "Диана ЕВЛАХИНА": "Диана Евлахина",
+     "Мария ЗАХАРОВА": "Мария Захарова",
+     "Мария КОТОВА": "Мария Котова",
+     "Арина КУДЛАЙ": "Арина Кудлай",
+     "Мария ЛАБУТИНА": "Мария Лабутина",
+     "Милана ЛЕБЕДЕВА": "Милана Лебедева",
+     "Агата ПЕТРОВА": "Агата Петрова",
+     "Ксения СИНИЦЫНА": "Ксения Синицына",
+     "Дина ХУСНУТДИНОВА": "Дина Хуснутдинова",
+     "Вероника ЯМЕТОВА": "Вероника Яметова"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:pairs-senior-pp",
@@ -35173,7 +35812,7 @@
    "seg": "ПП",
    "title": "Гран-при России «Невский лёд» — пары ПП",
    "start": "2026-10-25T17:10:00+03:00",
-   "end": "2026-10-25T18:25:00+03:00",
+   "end": "2026-10-25T18:20:00+03:00",
    "venue": "СК «Юбилейный», Санкт-Петербург",
    "intl": false,
    "broadcast": [
@@ -35181,12 +35820,20 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_upd221026.pdf",
+   "athletes": [
+    "Анастасия Мишина / Александр Галлямов",
+    "Анна Ляшенко / Пётр Алексеенко",
+    "Ева Хмелькова / Владислав Антонышев",
+    "Екатерина Гейниш / Андрей Рудь",
+    "Екатерина Чикмарёва / Матвей Янченков",
+    "София Диана Касинс / Александр Брегей",
+    "Юлия Филимонова / Андрей Шадерков"
+   ],
+   "src": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -35194,7 +35841,53 @@
     }
    ],
    "desc": "Начало: 17:10 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Анна Ляшенко / Пётр Алексеенко",
+     "nation": "МОС"
+    },
+    {
+     "name": "Ева Хмелькова / Владислав Антонышев",
+     "nation": "МОБ"
+    },
+    {
+     "name": "Екатерина Гейниш / Андрей Рудь",
+     "nation": "МОС"
+    },
+    {
+     "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "nation": "ПРМ"
+    },
+    {
+     "name": "София Диана Касинс / Александр Брегей",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Юлия Филимонова / Андрей Шадерков",
+     "nation": "КРД"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/2etap_sen/SEG006.htm",
+    "cat": "https://fsrussia.ru/results/2627/2etap_sen/CAT003RS.htm",
+    "first": "https://fsrussia.ru/results/2627/2etap_sen/SEG005.htm",
+    "names": {
+     "Екатерина ГЕЙНИШ / Андрей РУДЬ": "Екатерина Гейниш / Андрей Рудь",
+     "София Диана КАСИНС / Александр БРЕГЕЙ": "София Диана Касинс / Александр Брегей",
+     "Анна ЛЯШЕНКО / Пётр АЛЕКСЕЕНКО": "Анна Ляшенко / Пётр Алексеенко",
+     "Анастасия МИШИНА / Александр ГАЛЛЯМОВ": "Анастасия Мишина / Александр Галлямов",
+     "Юлия ФИЛИМОНОВА / Андрей ШАДЕРКОВ": "Юлия Филимонова / Андрей Шадерков",
+     "Ева ХМЕЛЬКОВА / Владислав АНТОНЫШЕВ": "Ева Хмелькова / Владислав Антонышев",
+     "Екатерина ЧИКМАРЁВА / Матвей ЯНЧЕНКОВ": "Екатерина Чикмарёва / Матвей Янченков"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:dance-senior-pt",
@@ -35205,7 +35898,7 @@
    "seg": "ПТ",
    "title": "Гран-при России «Невский лёд» — танцы ПТ",
    "start": "2026-10-25T18:45:00+03:00",
-   "end": "2026-10-25T20:15:00+03:00",
+   "end": "2026-10-25T20:05:00+03:00",
    "venue": "СК «Юбилейный», Санкт-Петербург",
    "intl": false,
    "broadcast": [
@@ -35213,12 +35906,22 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/2etap2627_competition_schedule_upd221026.pdf",
+   "athletes": [
+    "Александра Прокопец / Александр Васькович",
+    "Анна Смирнова / Богдан Шамков",
+    "Анна Щербакова / Егор Гончаров",
+    "Василиса Григорьева / Евгений Артющенко",
+    "Василиса Кагановская / Максим Некрасов",
+    "Екатерина Миронова / Евгений Устенко",
+    "Елизавета Шичина / Павел Дрозд",
+    "Милана Кузьмина / Дмитрий Студеникин",
+    "Софья Тютюнина / Матвей Грачев"
+   ],
+   "src": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -35226,7 +35929,63 @@
     }
    ],
    "desc": "Начало: 18:45 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Александра Прокопец / Александр Васькович",
+     "nation": "МОБ"
+    },
+    {
+     "name": "Анна Смирнова / Богдан Шамков",
+     "nation": "ТУЛ"
+    },
+    {
+     "name": "Анна Щербакова / Егор Гончаров",
+     "nation": "МОС"
+    },
+    {
+     "name": "Василиса Григорьева / Евгений Артющенко",
+     "nation": "МОС"
+    },
+    {
+     "name": "Василиса Кагановская / Максим Некрасов",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Екатерина Миронова / Евгений Устенко",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Елизавета Шичина / Павел Дрозд",
+     "nation": "МОС"
+    },
+    {
+     "name": "Милана Кузьмина / Дмитрий Студеникин",
+     "nation": "МОС"
+    },
+    {
+     "name": "Софья Тютюнина / Матвей Грачев",
+     "nation": "МОС"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/2etap_sen/SEG008.htm",
+    "cat": "https://fsrussia.ru/results/2627/2etap_sen/CAT004RS.htm",
+    "first": "https://fsrussia.ru/results/2627/2etap_sen/SEG007.htm",
+    "names": {
+     "Василиса ГРИГОРЬЕВА / Евгений АРТЮЩЕНКО": "Василиса Григорьева / Евгений Артющенко",
+     "Василиса КАГАНОВСКАЯ / Максим НЕКРАСОВ": "Василиса Кагановская / Максим Некрасов",
+     "Милана КУЗЬМИНА / Дмитрий СТУДЕНИКИН": "Милана Кузьмина / Дмитрий Студеникин",
+     "Екатерина МИРОНОВА / Евгений УСТЕНКО": "Екатерина Миронова / Евгений Устенко",
+     "Александра ПРОКОПЕЦ / Александр ВАСЬКОВИЧ": "Александра Прокопец / Александр Васькович",
+     "Анна СМИРНОВА / Богдан ШАМКОВ": "Анна Смирнова / Богдан Шамков",
+     "Софья ТЮТЮНИНА / Матвей ГРАЧЕВ": "Софья Тютюнина / Матвей Грачев",
+     "Елизавета ШИЧИНА / Павел ДРОЗД": "Елизавета Шичина / Павел Дрозд",
+     "Анна ЩЕРБАКОВА / Егор ГОНЧАРОВ": "Анна Щербакова / Егор Гончаров"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:dance-junior-rt",
@@ -41554,6 +42313,7 @@
   "Nikita Trushkov",
   "Nikita VOLODIN",
   "Nikita Vitryanyuk",
+  "Nikol Dvornikava",
   "Nikol Gosviani",
   "Nikol Kuperman",
   "Nikola Fomchenkova",
@@ -42500,6 +43260,7 @@
   "Анна Корабанова",
   "Анна Ляшенко",
   "Анна Ляшенко / Петр Алексеенко",
+  "Анна Ляшенко / Пётр Алексеенко",
   "Анна Мезенева",
   "Анна Мельникова",
   "Анна Москалёва",
@@ -42704,6 +43465,7 @@
   "Даниил Жолобов",
   "Даниил Лавриненко",
   "Даниил Овчинников",
+  "Даниил Постарнаков",
   "Даниил Самсонов",
   "Даниил Шарков",
   "Данил Колосков",
@@ -42900,6 +43662,7 @@
   "Зазеркалье",
   "Залина Капачева",
   "Захар Колобов",
+  "Злата Буря",
   "Злата Камалова",
   "Злата Камалова / Данил Панов",
   "Зоя Ковязина",
@@ -43101,6 +43864,7 @@
   "Марина Фомина",
   "Марина Щёголева",
   "Марис Тамужс",
+  "Мария Артёмова",
   "Мария Бойцова",
   "Мария Волченко",
   "Мария Галушкина",
@@ -43458,6 +44222,7 @@
   "Юлия Кулешова",
   "Юлия Осипова",
   "Юлия Филимонова",
+  "Юлия Филимонова / Андрей Шадерков",
   "Юлия Филимонова / Илья Пыльнев",
   "Юность",
   "Юрий Сидоров",
@@ -50362,11 +51127,6 @@
    "k": ""
   },
   {
-   "n": "Maria Artemieva",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Maria Bakusheva",
    "c": "BLR",
    "k": ""
@@ -51584,6 +52344,11 @@
   {
    "n": "Nikita Vitryanyuk",
    "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Nikol Dvornikava",
+   "c": "BLR",
    "k": ""
   },
   {
@@ -56722,6 +57487,11 @@
    "k": "M"
   },
   {
+   "n": "Злата Буря",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Злата Камалова / Данил Панов",
    "c": "RUS",
    "k": "P"
@@ -57268,6 +58038,11 @@
   },
   {
    "n": "Марина Петрова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Мария Артёмова",
    "c": "RUS",
    "k": ""
   },
@@ -58339,6 +59114,11 @@
   {
    "n": "Ярослава Князева",
    "c": "BLR",
+   "k": ""
+  },
+  {
+   "n": "Maria Artemieva",
+   "c": "RUS",
    "k": ""
   },
   {
@@ -60136,6 +60916,7 @@
   "Maryia Luksha": "photos/d56b812897c36228.jpg",
   "Brooke Gewalt": "photos/26cba8b15131bcf1.jpg",
   "Alexandre Lirot": "photos/4a4e7db4d900d2a6.jpg",
-  "Rocco Malik Dietrich": "photos/7c578e9d0515bd4d.jpg"
+  "Rocco Malik Dietrich": "photos/7c578e9d0515bd4d.jpg",
+  "Alexa Riddoch": "photos/46cad6a70407b975.jpg"
  }
 }
