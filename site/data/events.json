@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-23T19:43:29+03:00",
- "checked": "2026-10-23T17:36:48.131433+00:00",
+ "checked": "2026-10-23T17:40:47.883456+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -33364,93 +33364,105 @@
      "points": "39.13"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Mija Hebar — 41.51\n2. Ema Gulin — 40.35\n3. Mila Jakovljevic — 39.13\n\nНачало: 19:05 МСК",
+   "desc": "Итог:\n1. Mija Hebar — 41.51\n2. Ema Gulin — 40.35\n3. Mila Jakovljevic — 39.13\n\nИтог турнира:\n1. Mija Hebar — 41.51\n2. Ema Gulin — 40.35\n3. Mila Jakovljevic — 39.13\n\nНачало: 19:05 МСК",
    "field": [
     {
      "name": "Karla Ljubic",
      "nation": "CRO",
      "no": 1,
      "warmup": 1,
-     "place": 9
+     "place": 10,
+     "final": 10
     },
     {
      "name": "Lena Laudan",
      "nation": "HUN",
      "no": 2,
      "warmup": 1,
-     "place": 10
+     "place": 11,
+     "final": 11
     },
     {
      "name": "Ema Gulin",
      "nation": "CRO",
      "no": 3,
      "warmup": 1,
-     "place": 2
+     "place": 2,
+     "final": 2
     },
     {
      "name": "Csilla Galhidi",
      "nation": "HUN",
      "no": 4,
      "warmup": 1,
-     "place": 5
+     "place": 5,
+     "final": 5
     },
     {
      "name": "Ema Viljusic",
      "nation": "CRO",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7,
+     "final": 7
     },
     {
      "name": "Eva Dobranic",
      "nation": "CRO",
      "no": 8,
      "warmup": 2,
-     "place": 11
+     "place": 12,
+     "final": 12
     },
     {
      "name": "Mija Hebar",
      "nation": "SLO",
      "no": 10,
      "warmup": 2,
-     "place": 1
+     "place": 1,
+     "final": 1
     },
     {
      "name": "Mila Jakovljevic",
      "nation": "CRO",
      "no": 11,
      "warmup": 2,
-     "place": 3
+     "place": 3,
+     "final": 3
     },
     {
      "name": "Reka Kiss",
      "nation": "HUN",
      "no": 7,
      "warmup": 2,
-     "place": 4
+     "place": 4,
+     "final": 4
     },
     {
      "name": "Sofija Georgieva",
      "nation": "CRO",
      "no": 5,
      "warmup": 1,
-     "place": 6
+     "place": 6,
+     "final": 6
     },
     {
      "name": "Tinkara Poklic",
      "nation": "SLO",
      "no": 6,
      "warmup": 1,
-     "place": 7
+     "place": 8,
+     "final": 8
     },
     {
      "name": "Vanesa Novosel",
      "nation": "CRO",
      "no": 9,
      "warmup": 2,
-     "place": 8
+     "place": 9,
+     "final": 9
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
     "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG013.htm",
@@ -33470,9 +33482,29 @@
      "Mila JAKOVLJEVIC": "Mila Jakovljevic",
      "Ema VILJUSIC": "Ema Viljusic"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "gs_golden-bear.json"
+   "proto": "gs_golden-bear.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Mija Hebar",
+     "nation": "SLO",
+     "points": "41.51"
+    },
+    {
+     "place": 2,
+     "name": "Ema Gulin",
+     "nation": "CRO",
+     "points": "40.35"
+    },
+    {
+     "place": 3,
+     "name": "Mila Jakovljevic",
+     "nation": "CRO",
+     "points": "39.13"
+    }
+   ]
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:women-senior-kp",
