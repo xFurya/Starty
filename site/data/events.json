@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-23T19:43:29+03:00",
- "checked": "2026-10-23T17:40:47.883456+00:00",
+ "checked": "2026-10-23T18:04:48.227059+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -33543,14 +33543,15 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 20:50 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Eve Dubecq — 51.74\n\nНачало: 20:50 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Eve Dubecq",
      "nation": "FRA",
      "time": "20:57",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Seojin Youn",
@@ -33651,7 +33652,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Eve Dubecq",
+     "nation": "FRA",
+     "points": "51.74"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "gs:golden-bear:men-junior-pp",
