@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-23T19:43:29+03:00",
- "checked": "2026-10-23T17:16:29.372678+00:00",
+ "checked": "2026-10-23T17:20:28.429899+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -33206,19 +33206,19 @@
     },
     {
      "place": 3,
-     "name": "Eva Pate / Logan Bye",
+     "name": "Christina Carreira / Anthony Ponomarenko",
      "nation": "USA",
-     "points": "64.80"
+     "points": "77.83"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Laurence Fournier Beaudry / Guillaume Cizeron — 82.56\n2. Diana Davis / Gleb Smolkin — 77.90\n3. Eva Pate / Logan Bye — 64.80\n\nНачало: 19:00 МСК\nТрансляция: Okko",
+   "desc": "Итог:\n1. Laurence Fournier Beaudry / Guillaume Cizeron — 82.56\n2. Diana Davis / Gleb Smolkin — 77.90\n3. Christina Carreira / Anthony Ponomarenko — 77.83\n\nНачало: 19:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Louise Bordet / Martin Chardain",
      "nation": "FRA",
      "no": 1,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "time": "19:06"
     },
     {
@@ -33226,7 +33226,7 @@
      "nation": "ESP",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "time": "19:13"
     },
     {
@@ -33234,7 +33234,7 @@
      "nation": "SWE",
      "no": 3,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "time": "19:19"
     },
     {
@@ -33242,7 +33242,7 @@
      "nation": "FRA",
      "no": 4,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "time": "19:26"
     },
     {
@@ -33250,7 +33250,7 @@
      "nation": "USA",
      "no": 5,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "time": "19:32"
     },
     {
@@ -33258,7 +33258,8 @@
      "nation": "USA",
      "time": "20:12",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3
     },
     {
      "name": "Diana Davis / Gleb Smolkin",
@@ -33274,7 +33275,7 @@
      "time": "19:46",
      "no": 6,
      "warmup": 2,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Holly Harris / Jason Chan",
@@ -33282,7 +33283,7 @@
      "time": "19:52",
      "no": 7,
      "warmup": 2,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
@@ -33293,7 +33294,6 @@
      "place": 1
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG007.htm",
@@ -33311,7 +33311,7 @@
      "Diana DAVIS / Gleb SMOLKIN": "Diana Davis / Gleb Smolkin",
      "Christina CARREIRA / Anthony PONOMARENKO": "Christina Carreira / Anthony Ponomarenko"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
@@ -33404,7 +33404,8 @@
      "name": "Eva Dobranic",
      "nation": "CRO",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 8
     },
     {
      "name": "Mija Hebar",
