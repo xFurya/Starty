@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-23T19:43:29+03:00",
- "checked": "2026-10-23T18:12:47.560134+00:00",
+ "checked": "2026-10-23T18:16:48.481819+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -33543,7 +33543,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Seojin Youn — 57.50\n2. Eve Dubecq — 51.74\n\nНачало: 20:50 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Seojin Youn — 57.50\n2. Gabrielle Daleman — 55.66\n3. Eve Dubecq — 51.74\n\nНачало: 20:50 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Eve Dubecq",
@@ -33551,7 +33551,7 @@
      "time": "20:57",
      "no": 1,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Seojin Youn",
@@ -33566,7 +33566,8 @@
      "nation": "CAN",
      "time": "21:10",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Rion Sumiyoshi",
@@ -33663,6 +33664,12 @@
     },
     {
      "place": 2,
+     "name": "Gabrielle Daleman",
+     "nation": "CAN",
+     "points": "55.66"
+    },
+    {
+     "place": 3,
      "name": "Eve Dubecq",
      "nation": "FRA",
      "points": "51.74"
