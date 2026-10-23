@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-23T14:23:16+03:00",
- "checked": "2026-10-23T12:44:29.196643+00:00",
+ "checked": "2026-10-23T12:52:29.382534+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -32659,85 +32659,98 @@
     },
     {
      "place": 3,
-     "name": "Olivia Zoe Szili",
-     "nation": "HUN",
-     "points": "59.10"
+     "name": "Valentina Beer",
+     "nation": "GER",
+     "points": "63.34"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Adriana Shevtsova — 64.08\n2. Alexa Riddoch — 64.07\n3. Olivia Zoe Szili — 59.10\n\nНачало: 13:55 МСК",
+   "desc": "Итог:\n1. Adriana Shevtsova — 64.08\n2. Alexa Riddoch — 64.07\n3. Valentina Beer — 63.34\n\nИтог турнира:\n1. Valentina Beer — 104.59\n2. Adriana Shevtsova — 104.29\n3. Olivia Zoe Szili — 99.09\n\nНачало: 13:55 МСК",
    "field": [
     {
      "name": "Adriana Shevtsova",
      "nation": "UKR",
-     "place": 1
+     "place": 1,
+     "final": 2
     },
     {
      "name": "Alexa Riddoch",
      "nation": "GBR",
-     "place": 2
+     "place": 2,
+     "final": 4
     },
     {
      "name": "Anna Greta Varro",
      "nation": "HUN",
-     "place": 9
+     "place": 10,
+     "final": 11
     },
     {
      "name": "Anna Stepanchuk",
      "nation": "CRO",
-     "place": 7
+     "place": 8,
+     "final": 9
     },
     {
      "name": "Aria Lusa Kogovsek",
      "nation": "SLO",
-     "place": 4
+     "place": 5,
+     "final": 8
     },
     {
      "name": "Elisa Irsara",
      "nation": "ITA",
-     "place": 10
+     "place": 11,
+     "final": 5
     },
     {
      "name": "Hannah Gerard",
      "nation": "FRA",
-     "place": 5
+     "place": 6,
+     "final": 7
     },
     {
      "name": "Olivia Zoe Szili",
      "nation": "HUN",
-     "place": 3
+     "place": 4,
+     "final": 3
     },
     {
      "name": "Pia Cizmek",
      "nation": "CRO",
-     "place": 13
+     "place": 14,
+     "final": 14
     },
     {
      "name": "Polina Zeciri",
      "nation": "AUT",
-     "place": 8
+     "place": 9,
+     "final": 10
     },
     {
      "name": "Sara Klepetkova",
      "nation": "CZE",
-     "place": 6
+     "place": 7,
+     "final": 6
     },
     {
      "name": "Tara Besic",
      "nation": "CRO",
-     "place": 12
+     "place": 13,
+     "final": 13
     },
     {
      "name": "Tena Evelyn Skalicki",
      "nation": "SLO",
-     "place": 11
+     "place": 12,
+     "final": 12
     },
     {
      "name": "Valentina Beer",
      "nation": "GER",
-     "place": 14
+     "place": 3,
+     "final": 1
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
     "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG012.htm",
@@ -32759,9 +32772,29 @@
      "Adriana SHEVTSOVA": "Adriana Shevtsova",
      "Valentina BEER": "Valentina Beer"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "gs_golden-bear.json"
+   "proto": "gs_golden-bear.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Valentina Beer",
+     "nation": "GER",
+     "points": "104.59"
+    },
+    {
+     "place": 2,
+     "name": "Adriana Shevtsova",
+     "nation": "UKR",
+     "points": "104.29"
+    },
+    {
+     "place": 3,
+     "name": "Olivia Zoe Szili",
+     "nation": "HUN",
+     "points": "99.09"
+    }
+   ]
   },
   {
    "id": "gs:golden-bear:men-junior-kp",
