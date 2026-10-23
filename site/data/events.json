@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-23T14:23:16+03:00",
- "checked": "2026-10-23T16:20:41.148908+00:00",
+ "checked": "2026-10-23T16:28:29.015289+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -33187,7 +33187,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sofia Val / Asaf Kazimov — 64.78\n2. Louise Bordet / Martin Chardain — 57.55\n\nНачало: 19:00 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Sofia Val / Asaf Kazimov — 64.78\n2. Milla Ruud Reitan / Nikolaj Majorov — 63.01\n3. Louise Bordet / Martin Chardain — 57.55\n\nНачало: 19:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Louise Bordet / Martin Chardain",
@@ -33195,7 +33195,7 @@
      "time": "19:06",
      "no": 1,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Sofia Val / Asaf Kazimov",
@@ -33210,7 +33210,8 @@
      "nation": "SWE",
      "time": "19:19",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
@@ -33291,6 +33292,12 @@
     },
     {
      "place": 2,
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "points": "63.01"
+    },
+    {
+     "place": 3,
      "name": "Louise Bordet / Martin Chardain",
      "nation": "FRA",
      "points": "57.55"
