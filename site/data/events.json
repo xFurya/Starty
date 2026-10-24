@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-23T19:43:29+03:00",
- "checked": "2026-10-23T19:20:48.466143+00:00",
+ "generated": "2026-10-24T13:42:30+03:00",
+ "checked": "2026-10-24T13:42:30+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -33165,7 +33165,7 @@
    "seg": "РТ",
    "title": "GP de France — танцы РТ",
    "start": "2026-10-23T19:00:00+03:00",
-   "end": "2026-10-23T20:19:00+03:00",
+   "end": "2026-10-23T20:15:00+03:00",
    "venue": "Angers, France",
    "intl": true,
    "broadcast": [
@@ -33254,44 +33254,44 @@
      "time": "19:32"
     },
     {
-     "name": "Christina Carreira / Anthony Ponomarenko",
-     "nation": "USA",
-     "time": "20:12",
-     "no": 10,
-     "warmup": 2,
-     "place": 3
-    },
-    {
-     "name": "Diana Davis / Gleb Smolkin",
-     "nation": "GEO",
-     "time": "20:05",
-     "no": 9,
-     "warmup": 2,
-     "place": 2
-    },
-    {
      "name": "Eva Pate / Logan Bye",
      "nation": "USA",
-     "time": "19:46",
      "no": 6,
      "warmup": 2,
-     "place": 4
+     "place": 4,
+     "time": "19:46"
     },
     {
      "name": "Holly Harris / Jason Chan",
      "nation": "AUS",
-     "time": "19:52",
      "no": 7,
      "warmup": 2,
-     "place": 7
+     "place": 7,
+     "time": "19:52"
     },
     {
      "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
      "nation": "FRA",
-     "time": "19:59",
      "no": 8,
      "warmup": 2,
-     "place": 1
+     "place": 1,
+     "time": "19:59"
+    },
+    {
+     "name": "Diana Davis / Gleb Smolkin",
+     "nation": "GEO",
+     "no": 9,
+     "warmup": 2,
+     "place": 2,
+     "time": "20:05"
+    },
+    {
+     "name": "Christina Carreira / Anthony Ponomarenko",
+     "nation": "USA",
+     "no": 10,
+     "warmup": 2,
+     "place": 3,
+     "time": "20:12"
     }
    ],
    "live": {
@@ -33300,16 +33300,16 @@
     "cat": null,
     "first": null,
     "names": {
-     "Sofia VAL / Asaf KAZIMOV": "Sofia Val / Asaf Kazimov",
-     "Leah NESET / Artem MARKELOV": "Leah Neset / Artem Markelov",
-     "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov",
-     "Celina FRADJI / Jean-Hans FOURNEAUX": "Celina Fradji / Jean-Hans Fourneaux",
-     "Louise BORDET / Martin CHARDAIN": "Louise Bordet / Martin Chardain",
-     "Eva PATE / Logan BYE": "Eva Pate / Logan Bye",
-     "Holly HARRIS / Jason CHAN": "Holly Harris / Jason Chan",
      "Laurence FOURNIER BEAUDRY / Guillaume CIZERON": "Laurence Fournier Beaudry / Guillaume Cizeron",
      "Diana DAVIS / Gleb SMOLKIN": "Diana Davis / Gleb Smolkin",
-     "Christina CARREIRA / Anthony PONOMARENKO": "Christina Carreira / Anthony Ponomarenko"
+     "Christina CARREIRA / Anthony PONOMARENKO": "Christina Carreira / Anthony Ponomarenko",
+     "Eva PATE / Logan BYE": "Eva Pate / Logan Bye",
+     "Sofia VAL / Asaf KAZIMOV": "Sofia Val / Asaf Kazimov",
+     "Leah NESET / Artem MARKELOV": "Leah Neset / Artem Markelov",
+     "Holly HARRIS / Jason CHAN": "Holly Harris / Jason Chan",
+     "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov",
+     "Celina FRADJI / Jean-Hans FOURNEAUX": "Celina Fradji / Jean-Hans Fourneaux",
+     "Louise BORDET / Martin CHARDAIN": "Louise Bordet / Martin Chardain"
     },
     "basis": "judges"
    },
@@ -33364,6 +33364,26 @@
      "points": "39.13"
     }
    ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Mija Hebar",
+     "nation": "SLO",
+     "points": "41.51"
+    },
+    {
+     "place": 2,
+     "name": "Ema Gulin",
+     "nation": "CRO",
+     "points": "40.35"
+    },
+    {
+     "place": 3,
+     "name": "Mila Jakovljevic",
+     "nation": "CRO",
+     "points": "39.13"
+    }
+   ],
    "desc": "Итог:\n1. Mija Hebar — 41.51\n2. Ema Gulin — 40.35\n3. Mila Jakovljevic — 39.13\n\nИтог турнира:\n1. Mija Hebar — 41.51\n2. Ema Gulin — 40.35\n3. Mila Jakovljevic — 39.13\n\nНачало: 19:05 МСК",
    "field": [
     {
@@ -33399,12 +33419,28 @@
      "final": 5
     },
     {
-     "name": "Ema Viljusic",
+     "name": "Sofija Georgieva",
      "nation": "CRO",
-     "no": 12,
+     "no": 5,
+     "warmup": 1,
+     "place": 6,
+     "final": 6
+    },
+    {
+     "name": "Tinkara Poklic",
+     "nation": "SLO",
+     "no": 6,
+     "warmup": 1,
+     "place": 8,
+     "final": 8
+    },
+    {
+     "name": "Reka Kiss",
+     "nation": "HUN",
+     "no": 7,
      "warmup": 2,
-     "place": 7,
-     "final": 7
+     "place": 4,
+     "final": 4
     },
     {
      "name": "Eva Dobranic",
@@ -33413,6 +33449,14 @@
      "warmup": 2,
      "place": 12,
      "final": 12
+    },
+    {
+     "name": "Vanesa Novosel",
+     "nation": "CRO",
+     "no": 9,
+     "warmup": 2,
+     "place": 9,
+     "final": 9
     },
     {
      "name": "Mija Hebar",
@@ -33431,36 +33475,12 @@
      "final": 3
     },
     {
-     "name": "Reka Kiss",
-     "nation": "HUN",
-     "no": 7,
-     "warmup": 2,
-     "place": 4,
-     "final": 4
-    },
-    {
-     "name": "Sofija Georgieva",
+     "name": "Ema Viljusic",
      "nation": "CRO",
-     "no": 5,
-     "warmup": 1,
-     "place": 6,
-     "final": 6
-    },
-    {
-     "name": "Tinkara Poklic",
-     "nation": "SLO",
-     "no": 6,
-     "warmup": 1,
-     "place": 8,
-     "final": 8
-    },
-    {
-     "name": "Vanesa Novosel",
-     "nation": "CRO",
-     "no": 9,
+     "no": 12,
      "warmup": 2,
-     "place": 9,
-     "final": 9
+     "place": 7,
+     "final": 7
     }
    ],
    "live": {
@@ -33469,42 +33489,22 @@
     "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT007RS.htm",
     "first": null,
     "names": {
+     "Mija HEBAR": "Mija Hebar",
      "Ema GULIN": "Ema Gulin",
-     "Karla LJUBIC": "Karla Ljubic",
-     "Lena LAUDAN": "Lena Laudan",
+     "Mila JAKOVLJEVIC": "Mila Jakovljevic",
+     "Reka KISS": "Reka Kiss",
      "Csilla GALHIDI": "Csilla Galhidi",
      "Sofija GEORGIEVA": "Sofija Georgieva",
+     "Ema VILJUSIC": "Ema Viljusic",
      "Tinkara POKLIC": "Tinkara Poklic",
-     "Reka KISS": "Reka Kiss",
-     "Eva DOBRANIC": "Eva Dobranic",
      "Vanesa NOVOSEL": "Vanesa Novosel",
-     "Mija HEBAR": "Mija Hebar",
-     "Mila JAKOVLJEVIC": "Mila Jakovljevic",
-     "Ema VILJUSIC": "Ema Viljusic"
+     "Karla LJUBIC": "Karla Ljubic",
+     "Lena LAUDAN": "Lena Laudan",
+     "Eva DOBRANIC": "Eva Dobranic"
     },
     "basis": "judges"
    },
-   "proto": "gs_golden-bear.json",
-   "total": [
-    {
-     "place": 1,
-     "name": "Mija Hebar",
-     "nation": "SLO",
-     "points": "41.51"
-    },
-    {
-     "place": 2,
-     "name": "Ema Gulin",
-     "nation": "CRO",
-     "points": "40.35"
-    },
-    {
-     "place": 3,
-     "name": "Mila Jakovljevic",
-     "nation": "CRO",
-     "points": "39.13"
-    }
-   ]
+   "proto": "gs_golden-bear.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:women-senior-kp",
@@ -33543,127 +33543,6 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Итог:\n1. Yuna Aoki — 76.31\n2. Anastasiia Gubanova — 72.63\n3. Ami Nakai — 70.66\n\nНачало: 20:50 МСК\nТрансляция: Okko",
-   "field": [
-    {
-     "name": "Eve Dubecq",
-     "nation": "FRA",
-     "time": "20:57",
-     "no": 1,
-     "warmup": 1,
-     "place": 12
-    },
-    {
-     "name": "Seojin Youn",
-     "nation": "KOR",
-     "time": "21:03",
-     "no": 2,
-     "warmup": 1,
-     "place": 10
-    },
-    {
-     "name": "Gabrielle Daleman",
-     "nation": "CAN",
-     "time": "21:10",
-     "no": 3,
-     "warmup": 1,
-     "place": 11
-    },
-    {
-     "name": "Rion Sumiyoshi",
-     "nation": "JPN",
-     "time": "21:16",
-     "no": 4,
-     "warmup": 1,
-     "place": 8
-    },
-    {
-     "name": "Sarina Joos",
-     "nation": "ITA",
-     "time": "21:22",
-     "no": 5,
-     "warmup": 1,
-     "place": 6
-    },
-    {
-     "name": "Yuseong Kim",
-     "nation": "KOR",
-     "time": "21:28",
-     "no": 6,
-     "warmup": 1,
-     "place": 4
-    },
-    {
-     "name": "Yuna Aoki",
-     "nation": "JPN",
-     "time": "21:42",
-     "no": 7,
-     "warmup": 2,
-     "place": 1
-    },
-    {
-     "name": "Nina Pinzarrone",
-     "nation": "BEL",
-     "time": "21:48",
-     "no": 8,
-     "warmup": 2,
-     "place": 7
-    },
-    {
-     "name": "Sarah Everhardt",
-     "nation": "USA",
-     "time": "21:54",
-     "no": 9,
-     "warmup": 2,
-     "place": 9
-    },
-    {
-     "name": "Anastasiia Gubanova",
-     "nation": "GEO",
-     "time": "22:01",
-     "no": 10,
-     "warmup": 2,
-     "place": 2
-    },
-    {
-     "name": "Lara Naki Gutmann",
-     "nation": "ITA",
-     "time": "22:07",
-     "no": 11,
-     "warmup": 2,
-     "place": 5
-    },
-    {
-     "name": "Ami Nakai",
-     "nation": "JPN",
-     "time": "22:13",
-     "no": 12,
-     "warmup": 2,
-     "place": 3
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG003.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Eve DUBECQ": "Eve Dubecq",
-     "Seojin YOUN": "Seojin Youn",
-     "Gabrielle DALEMAN": "Gabrielle Daleman",
-     "Rion SUMIYOSHI": "Rion Sumiyoshi",
-     "Sarina JOOS": "Sarina Joos",
-     "Yuseong KIM": "Yuseong Kim",
-     "Yuna AOKI": "Yuna Aoki",
-     "Nina PINZARRONE": "Nina Pinzarrone",
-     "Sarah EVERHARDT": "Sarah Everhardt",
-     "Anastasiia GUBANOVA": "Anastasiia Gubanova",
-     "Lara Naki GUTMANN": "Lara Naki Gutmann",
-     "Ami NAKAI": "Ami Nakai"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json",
    "podium": [
     {
      "place": 1,
@@ -33683,7 +33562,145 @@
      "nation": "JPN",
      "points": "70.66"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Yuna Aoki — 76.31\n2. Anastasiia Gubanova — 72.63\n3. Ami Nakai — 70.66\n\nПримечательное:\n• Yuna Aoki — Личный рекорд за КП: 76.31 (был 71.41)\n• Anastasiia Gubanova — Личный рекорд за КП: 72.63 (был 71.77)\n• Yuseong Kim — Тройной аксель\n\nНачало: 20:50 МСК\nТрансляция: Okko",
+   "field": [
+    {
+     "name": "Eve Dubecq",
+     "nation": "FRA",
+     "no": 1,
+     "warmup": 1,
+     "place": 12,
+     "time": "20:57"
+    },
+    {
+     "name": "Seojin Youn",
+     "nation": "KOR",
+     "no": 2,
+     "warmup": 1,
+     "place": 10,
+     "time": "21:03"
+    },
+    {
+     "name": "Gabrielle Daleman",
+     "nation": "CAN",
+     "no": 3,
+     "warmup": 1,
+     "place": 11,
+     "time": "21:10"
+    },
+    {
+     "name": "Rion Sumiyoshi",
+     "nation": "JPN",
+     "no": 4,
+     "warmup": 1,
+     "place": 8,
+     "time": "21:16"
+    },
+    {
+     "name": "Sarina Joos",
+     "nation": "ITA",
+     "no": 5,
+     "warmup": 1,
+     "place": 6,
+     "time": "21:22"
+    },
+    {
+     "name": "Yuseong Kim",
+     "nation": "KOR",
+     "no": 6,
+     "warmup": 1,
+     "place": 4,
+     "time": "21:28"
+    },
+    {
+     "name": "Yuna Aoki",
+     "nation": "JPN",
+     "no": 7,
+     "warmup": 2,
+     "place": 1,
+     "time": "21:42"
+    },
+    {
+     "name": "Nina Pinzarrone",
+     "nation": "BEL",
+     "no": 8,
+     "warmup": 2,
+     "place": 7,
+     "time": "21:48"
+    },
+    {
+     "name": "Sarah Everhardt",
+     "nation": "USA",
+     "no": 9,
+     "warmup": 2,
+     "place": 9,
+     "time": "21:54"
+    },
+    {
+     "name": "Anastasiia Gubanova",
+     "nation": "GEO",
+     "no": 10,
+     "warmup": 2,
+     "place": 2,
+     "time": "22:01"
+    },
+    {
+     "name": "Lara Naki Gutmann",
+     "nation": "ITA",
+     "no": 11,
+     "warmup": 2,
+     "place": 5,
+     "time": "22:07"
+    },
+    {
+     "name": "Ami Nakai",
+     "nation": "JPN",
+     "no": 12,
+     "warmup": 2,
+     "place": 3,
+     "time": "22:13"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG003.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Yuna AOKI": "Yuna Aoki",
+     "Anastasiia GUBANOVA": "Anastasiia Gubanova",
+     "Ami NAKAI": "Ami Nakai",
+     "Yuseong KIM": "Yuseong Kim",
+     "Lara Naki GUTMANN": "Lara Naki Gutmann",
+     "Sarina JOOS": "Sarina Joos",
+     "Nina PINZARRONE": "Nina Pinzarrone",
+     "Rion SUMIYOSHI": "Rion Sumiyoshi",
+     "Sarah EVERHARDT": "Sarah Everhardt",
+     "Seojin YOUN": "Seojin Youn",
+     "Gabrielle DALEMAN": "Gabrielle Daleman",
+     "Eve DUBECQ": "Eve Dubecq"
+    },
+    "basis": "judges"
+   },
+   "facts": [
+    {
+     "who": "Yuna Aoki",
+     "text": "Личный рекорд за КП: 76.31 (был 71.41)",
+     "kind": "score"
+    },
+    {
+     "who": "Anastasiia Gubanova",
+     "text": "Личный рекорд за КП: 72.63 (был 71.77)",
+     "kind": "score"
+    },
+    {
+     "who": "Yuseong Kim",
+     "text": "Тройной аксель",
+     "kind": "element"
+    }
+   ],
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
    "id": "gs:golden-bear:men-junior-pp",
@@ -33694,7 +33711,7 @@
    "seg": "ПП",
    "title": "Golden Bear — юноши ПП",
    "start": "2026-10-24T12:00:00+03:00",
-   "end": "2026-10-24T12:51:00+03:00",
+   "end": "2026-10-24T12:45:00+03:00",
    "venue": "Zagreb, Croatia",
    "intl": true,
    "broadcast": [],
@@ -33702,55 +33719,97 @@
    "athletes": [
     "Alessandro Giuliano",
     "Daniel Verbat",
-    "Elian Thomann",
     "Felix Oberbacher",
     "Lenny Olivier",
     "Matteo Marchioni"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Начало: 12:00 МСК",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Matteo Marchioni",
+     "nation": "ITA",
+     "points": "92.38"
+    },
+    {
+     "place": 2,
+     "name": "Felix Oberbacher",
+     "nation": "ITA",
+     "points": "90.37"
+    },
+    {
+     "place": 3,
+     "name": "Daniel Verbat",
+     "nation": "FRA",
+     "points": "88.92"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Matteo Marchioni",
+     "nation": "ITA",
+     "points": "146.86"
+    },
+    {
+     "place": 2,
+     "name": "Daniel Verbat",
+     "nation": "FRA",
+     "points": "143.50"
+    },
+    {
+     "place": 3,
+     "name": "Felix Oberbacher",
+     "nation": "ITA",
+     "points": "135.84"
+    }
+   ],
+   "desc": "Итог:\n1. Matteo Marchioni — 92.38\n2. Felix Oberbacher — 90.37\n3. Daniel Verbat — 88.92\n\nИтог турнира:\n1. Matteo Marchioni — 146.86\n2. Daniel Verbat — 143.50\n3. Felix Oberbacher — 135.84\n\nПримечательное:\n• Daniel Verbat — Личный рекорд за ПП: 88.92 (был 85.28)\n• Daniel Verbat — Личный рекорд по сумме: 143.50 (был 129.43)\n• Felix Oberbacher — После короткой программы — 6-е место, в итоге — 3-е место\n\nНачало: 12:00 МСК",
    "field": [
     {
      "name": "Felix Oberbacher",
      "nation": "ITA",
-     "time": "12:06",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "final": 3,
+     "time": "12:06"
     },
     {
      "name": "Lenny Olivier",
      "nation": "FRA",
-     "time": "12:13",
      "no": 2,
-     "warmup": 1
-    },
-    {
-     "name": "Elian Thomann",
-     "nation": "FRA",
-     "time": "12:21",
-     "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4,
+     "final": 4,
+     "time": "12:13"
     },
     {
      "name": "Alessandro Giuliano",
      "nation": "ITA",
-     "time": "12:28",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5,
+     "final": 5,
+     "time": "12:28"
     },
     {
      "name": "Matteo Marchioni",
      "nation": "ITA",
-     "time": "12:35",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "final": 1,
+     "time": "12:35"
     },
     {
      "name": "Daniel Verbat",
      "nation": "FRA",
-     "time": "12:43",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3,
+     "final": 2,
+     "time": "12:43"
     }
    ],
    "live": {
@@ -33759,15 +33818,31 @@
     "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT003RS.htm",
     "first": "https://www.croskate.hr/cscro2025/GB2026/SEG005.htm",
     "names": {
-     "Felix OBERBACHER": "Felix Oberbacher",
-     "Lenny OLIVIER": "Lenny Olivier",
-     "Elian THOMANN": "Elian Thomann",
-     "Alessandro GIULIANO": "Alessandro Giuliano",
      "Matteo MARCHIONI": "Matteo Marchioni",
-     "Daniel VERBAT": "Daniel Verbat"
+     "Felix OBERBACHER": "Felix Oberbacher",
+     "Daniel VERBAT": "Daniel Verbat",
+     "Lenny OLIVIER": "Lenny Olivier",
+     "Alessandro GIULIANO": "Alessandro Giuliano"
     },
-    "basis": null
+    "basis": "judges"
    },
+   "facts": [
+    {
+     "who": "Daniel Verbat",
+     "text": "Личный рекорд за ПП: 88.92 (был 85.28)",
+     "kind": "score"
+    },
+    {
+     "who": "Daniel Verbat",
+     "text": "Личный рекорд по сумме: 143.50 (был 129.43)",
+     "kind": "score"
+    },
+    {
+     "who": "Felix Oberbacher",
+     "text": "После короткой программы — 6-е место, в итоге — 3-е место",
+     "kind": "place"
+    }
+   ],
    "proto": "gs_golden-bear.json"
   },
   {
@@ -33779,7 +33854,7 @@
    "seg": "ПП",
    "title": "Golden Bear — девушки ПП",
    "start": "2026-10-24T13:15:00+03:00",
-   "end": "2026-10-24T16:05:00+03:00",
+   "end": "2026-10-24T15:50:00+03:00",
    "venue": "Zagreb, Croatia",
    "intl": true,
    "broadcast": [],
@@ -33805,127 +33880,166 @@
     "Ziva Aupic"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Начало: 13:15 МСК",
-   "field": [
+   "podium": [
     {
-     "name": "Nika Sajko",
-     "nation": "CRO",
-     "no": 1,
-     "warmup": 1
-    },
-    {
-     "name": "Ziva Aupic",
-     "nation": "SLO",
-     "no": 2,
-     "warmup": 1
-    },
-    {
+     "place": 1,
      "name": "Liana Smrekar",
      "nation": "SLO",
-     "no": 3,
-     "warmup": 1
+     "points": "52.90"
+    },
+    {
+     "place": 2,
+     "name": "Enja Sivic",
+     "nation": "SLO",
+     "points": "50.90"
+    },
+    {
+     "place": 3,
+     "name": "Ziva Aupic",
+     "nation": "SLO",
+     "points": "46.82"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Liana Smrekar — 52.90\n2. Enja Sivic — 50.90\n3. Ziva Aupic — 46.82\n\nНачало: 13:15 МСК",
+   "field": [
+    {
+     "name": "Ekaterina Balaganskaia",
+     "nation": "SRB",
+     "place": 15,
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Eleonora Ciferri",
+     "nation": "ITA",
+     "place": 18,
+     "no": 18,
+     "warmup": 3
     },
     {
      "name": "Enja Sivic",
      "nation": "SLO",
+     "place": 2,
      "no": 4,
      "warmup": 1
     },
     {
      "name": "Hana Operckal",
      "nation": "SLO",
+     "place": 5,
      "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Lea Marie Castlunger",
+     "nation": "ITA",
+     "place": 12,
+     "no": 12,
+     "warmup": 2
+    },
+    {
+     "name": "Liana Smrekar",
+     "nation": "SLO",
+     "place": 1,
+     "no": 3,
      "warmup": 1
     },
     {
      "name": "Lija Kroselj",
      "nation": "SLO",
+     "place": 6,
      "no": 6,
      "warmup": 1
     },
     {
-     "name": "Tea Sajko",
-     "nation": "CRO",
-     "no": 7,
-     "warmup": 2
+     "name": "Louane Wolff",
+     "nation": "FRA",
+     "place": 13,
+     "no": 13,
+     "warmup": 3
     },
     {
-     "name": "Neza Lusic",
+     "name": "Luna Rozman",
      "nation": "SLO",
-     "no": 8,
+     "place": 11,
+     "no": 11,
      "warmup": 2
     },
     {
      "name": "Nadja Savic",
      "nation": "SRB",
+     "place": 9,
      "no": 9,
      "warmup": 2
     },
     {
-     "name": "Vasilisa Bogomolova",
-     "nation": "CYP",
-     "no": 10,
-     "warmup": 2
-    },
-    {
-     "name": "Luna Rozman",
+     "name": "Neza Lusic",
      "nation": "SLO",
-     "no": 11,
+     "place": 8,
+     "no": 8,
      "warmup": 2
-    },
-    {
-     "name": "Lea Marie Castlunger",
-     "nation": "ITA",
-     "no": 12,
-     "warmup": 2
-    },
-    {
-     "name": "Louane Wolff",
-     "nation": "FRA",
-     "no": 13,
-     "warmup": 3
     },
     {
      "name": "Nicole de Rosa",
      "nation": "ITA",
+     "place": 14,
      "no": 14,
      "warmup": 3
     },
     {
-     "name": "Ekaterina Balaganskaia",
-     "nation": "SRB",
-     "no": 15,
-     "warmup": 3
-    },
-    {
-     "name": "Ula Zadnikar",
-     "nation": "SLO",
-     "no": 16,
-     "warmup": 3
+     "name": "Nika Sajko",
+     "nation": "CRO",
+     "place": 4,
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Paula Kasnar",
      "nation": "CRO",
+     "place": 17,
      "no": 17,
      "warmup": 3
     },
     {
-     "name": "Eleonora Ciferri",
-     "nation": "ITA",
-     "no": 18,
+     "name": "Tea Sajko",
+     "nation": "CRO",
+     "place": 7,
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Ula Zadnikar",
+     "nation": "SLO",
+     "place": 16,
+     "no": 16,
      "warmup": 3
+    },
+    {
+     "name": "Vasilisa Bogomolova",
+     "nation": "CYP",
+     "place": 10,
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Ziva Aupic",
+     "nation": "SLO",
+     "place": 3,
+     "no": 2,
+     "warmup": 1
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
     "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG008.htm",
     "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT004RS.htm",
     "first": "https://www.croskate.hr/cscro2025/GB2026/SEG007.htm",
     "names": {
-     "Nika SAJKO": "Nika Sajko",
-     "Ziva AUPIC": "Ziva Aupic",
      "Liana SMREKAR": "Liana Smrekar",
      "Enja SIVIC": "Enja Sivic",
+     "Ziva AUPIC": "Ziva Aupic",
+     "Nika SAJKO": "Nika Sajko",
      "Hana OPERCKAL": "Hana Operckal",
      "Lija KROSELJ": "Lija Kroselj",
      "Tea SAJKO": "Tea Sajko",
@@ -33982,13 +34096,57 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 13:30 МСК\nТрансляция: Okko",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Samy Hammi",
+     "nation": "FRA",
+     "points": "65.53"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Samy Hammi — 65.53\n\nНачало: 13:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Samy Hammi",
      "nation": "FRA",
-     "time": "13:37",
      "no": 1,
+     "warmup": 1,
+     "place": 1,
+     "time": "13:37"
+    },
+    {
+     "name": "Adam Hagara",
+     "nation": "SVK",
+     "time": "13:56",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Adam Siao Him Fa",
+     "nation": "FRA",
+     "time": "14:47",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Aleksandr Selevko",
+     "nation": "EST",
+     "time": "14:41",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Francois Pitot",
+     "nation": "FRA",
+     "time": "13:50",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Jacob Sanchez",
+     "nation": "USA",
+     "time": "14:08",
+     "no": 6,
      "warmup": 1
     },
     {
@@ -33999,32 +34157,18 @@
      "warmup": 1
     },
     {
-     "name": "Francois Pitot",
-     "nation": "FRA",
-     "time": "13:50",
-     "no": 3,
-     "warmup": 1
-    },
-    {
-     "name": "Adam Hagara",
-     "nation": "SVK",
-     "time": "13:56",
-     "no": 4,
-     "warmup": 1
-    },
-    {
-     "name": "Sota Yamamoto",
+     "name": "Kao Miura",
      "nation": "JPN",
-     "time": "14:02",
-     "no": 5,
-     "warmup": 1
+     "time": "14:34",
+     "no": 9,
+     "warmup": 2
     },
     {
-     "name": "Jacob Sanchez",
-     "nation": "USA",
-     "time": "14:08",
-     "no": 6,
-     "warmup": 1
+     "name": "Mikhail Shaidorov",
+     "nation": "KAZ",
+     "time": "14:53",
+     "no": 12,
+     "warmup": 2
     },
     {
      "name": "Minkyu Seo",
@@ -34041,34 +34185,14 @@
      "warmup": 2
     },
     {
-     "name": "Kao Miura",
+     "name": "Sota Yamamoto",
      "nation": "JPN",
-     "time": "14:34",
-     "no": 9,
-     "warmup": 2
-    },
-    {
-     "name": "Aleksandr Selevko",
-     "nation": "EST",
-     "time": "14:41",
-     "no": 10,
-     "warmup": 2
-    },
-    {
-     "name": "Adam Siao Him Fa",
-     "nation": "FRA",
-     "time": "14:47",
-     "no": 11,
-     "warmup": 2
-    },
-    {
-     "name": "Mikhail Shaidorov",
-     "nation": "KAZ",
-     "time": "14:53",
-     "no": 12,
-     "warmup": 2
+     "time": "14:02",
+     "no": 5,
+     "warmup": 1
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG001.htm",
@@ -34134,41 +34258,36 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 13:30 МСК\nТрансляция: Первый канал / YouTube",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Илья Строганов",
+     "nation": "СПБ",
+     "points": "85.95"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Илья Строганов — 85.95\n\nНачало: 13:30 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Илья Строганов",
      "nation": "СПБ",
-     "time": "13:37",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "time": "13:37"
     },
     {
-     "name": "Даниил Постарнаков",
-     "nation": "СТА",
-     "time": "13:49",
-     "no": 3,
-     "warmup": 1
+     "name": "Арсений Федотов",
+     "nation": "МОС",
+     "time": "14:43",
+     "no": 11,
+     "warmup": 2
     },
     {
      "name": "Артемий Маринин",
      "nation": "МОС",
      "time": "13:55",
      "no": 4,
-     "warmup": 1
-    },
-    {
-     "name": "Дмитрий Шелковников",
-     "nation": "МОБ",
-     "time": "14:00",
-     "no": 5,
-     "warmup": 1
-    },
-    {
-     "name": "Никита Сарновский",
-     "nation": "МОС",
-     "time": "14:06",
-     "no": 6,
      "warmup": 1
     },
     {
@@ -34179,17 +34298,10 @@
      "warmup": 1
     },
     {
-     "name": "Макар Игнатов",
-     "nation": "МОС",
-     "time": "14:20",
-     "no": 7,
-     "warmup": 2
-    },
-    {
-     "name": "Лев Лазарев",
-     "nation": "МОС",
-     "time": "14:25",
-     "no": 8,
+     "name": "Владислав Дикиджи",
+     "nation": "СПБ",
+     "time": "14:37",
+     "no": 10,
      "warmup": 2
     },
     {
@@ -34200,18 +34312,39 @@
      "warmup": 2
     },
     {
-     "name": "Владислав Дикиджи",
-     "nation": "СПБ",
-     "time": "14:37",
-     "no": 10,
+     "name": "Даниил Постарнаков",
+     "nation": "СТА",
+     "time": "13:49",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Дмитрий Шелковников",
+     "nation": "МОБ",
+     "time": "14:00",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Лев Лазарев",
+     "nation": "МОС",
+     "time": "14:25",
+     "no": 8,
      "warmup": 2
     },
     {
-     "name": "Арсений Федотов",
+     "name": "Макар Игнатов",
      "nation": "МОС",
-     "time": "14:43",
-     "no": 11,
+     "time": "14:20",
+     "no": 7,
      "warmup": 2
+    },
+    {
+     "name": "Никита Сарновский",
+     "nation": "МОС",
+     "time": "14:06",
+     "no": 6,
+     "warmup": 1
     },
     {
      "name": "Пётр Гуменник",
@@ -34221,6 +34354,7 @@
      "warmup": 2
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/2etap_sen/SEG001.htm",
@@ -34405,7 +34539,7 @@
    "seg": "ПТ",
    "title": "GP de France — танцы ПТ",
    "start": "2026-10-24T15:20:00+03:00",
-   "end": "2026-10-24T16:45:00+03:00",
+   "end": "2026-10-24T16:52:00+03:00",
    "venue": "Angers, France",
    "intl": true,
    "broadcast": [
@@ -34434,44 +34568,74 @@
    "desc": "Начало: 15:20 МСК\nТрансляция: Okko",
    "field": [
     {
-     "name": "Celina Fradji / Jean-Hans Fourneaux",
-     "nation": "FRA"
-    },
-    {
-     "name": "Christina Carreira / Anthony Ponomarenko",
-     "nation": "USA"
-    },
-    {
-     "name": "Diana Davis / Gleb Smolkin",
-     "nation": "GEO"
-    },
-    {
-     "name": "Eva Pate / Logan Bye",
-     "nation": "USA"
-    },
-    {
-     "name": "Holly Harris / Jason Chan",
-     "nation": "AUS"
-    },
-    {
-     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
-     "nation": "FRA"
-    },
-    {
-     "name": "Leah Neset / Artem Markelov",
-     "nation": "USA"
-    },
-    {
      "name": "Louise Bordet / Martin Chardain",
-     "nation": "FRA"
+     "nation": "FRA",
+     "time": "15:26",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Celina Fradji / Jean-Hans Fourneaux",
+     "nation": "FRA",
+     "time": "15:34",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
-     "nation": "SWE"
+     "nation": "SWE",
+     "time": "15:42",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Holly Harris / Jason Chan",
+     "nation": "AUS",
+     "time": "15:50",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Leah Neset / Artem Markelov",
+     "nation": "USA",
+     "time": "15:58",
+     "no": 5,
+     "warmup": 1
     },
     {
      "name": "Sofia Val / Asaf Kazimov",
-     "nation": "ESP"
+     "nation": "ESP",
+     "time": "16:12",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Eva Pate / Logan Bye",
+     "nation": "USA",
+     "time": "16:20",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Christina Carreira / Anthony Ponomarenko",
+     "nation": "USA",
+     "time": "16:28",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Diana Davis / Gleb Smolkin",
+     "nation": "GEO",
+     "time": "16:36",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "nation": "FRA",
+     "time": "16:44",
+     "no": 10,
+     "warmup": 2
     }
    ],
    "live": {
@@ -34480,16 +34644,16 @@
     "cat": "https://results.isu.org/results/season2627/gpfra2026/CAT004RS.htm",
     "first": "https://results.isu.org/results/season2627/gpfra2026/SEG007.htm",
     "names": {
-     "Holly HARRIS / Jason CHAN": "Holly Harris / Jason Chan",
-     "Sofia VAL / Asaf KAZIMOV": "Sofia Val / Asaf Kazimov",
      "Louise BORDET / Martin CHARDAIN": "Louise Bordet / Martin Chardain",
-     "Laurence FOURNIER BEAUDRY / Guillaume CIZERON": "Laurence Fournier Beaudry / Guillaume Cizeron",
      "Celina FRADJI / Jean-Hans FOURNEAUX": "Celina Fradji / Jean-Hans Fourneaux",
-     "Diana DAVIS / Gleb SMOLKIN": "Diana Davis / Gleb Smolkin",
      "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov",
-     "Christina CARREIRA / Anthony PONOMARENKO": "Christina Carreira / Anthony Ponomarenko",
+     "Holly HARRIS / Jason CHAN": "Holly Harris / Jason Chan",
      "Leah NESET / Artem MARKELOV": "Leah Neset / Artem Markelov",
-     "Eva PATE / Logan BYE": "Eva Pate / Logan Bye"
+     "Sofia VAL / Asaf KAZIMOV": "Sofia Val / Asaf Kazimov",
+     "Eva PATE / Logan BYE": "Eva Pate / Logan Bye",
+     "Christina CARREIRA / Anthony PONOMARENKO": "Christina Carreira / Anthony Ponomarenko",
+     "Diana DAVIS / Gleb SMOLKIN": "Diana Davis / Gleb Smolkin",
+     "Laurence FOURNIER BEAUDRY / Guillaume CIZERON": "Laurence Fournier Beaudry / Guillaume Cizeron"
     },
     "basis": null
    },
@@ -35133,7 +35297,7 @@
    "seg": "ПП",
    "title": "GP de France — женщины ПП",
    "start": "2026-10-24T20:30:00+03:00",
-   "end": "2026-10-24T22:15:00+03:00",
+   "end": "2026-10-24T22:17:00+03:00",
    "venue": "Angers, France",
    "intl": true,
    "broadcast": [
@@ -35164,52 +35328,88 @@
    "desc": "Начало: 20:30 МСК\nТрансляция: Okko",
    "field": [
     {
-     "name": "Ami Nakai",
-     "nation": "JPN"
-    },
-    {
-     "name": "Anastasiia Gubanova",
-     "nation": "GEO"
-    },
-    {
      "name": "Eve Dubecq",
-     "nation": "FRA"
+     "nation": "FRA",
+     "time": "20:37",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Gabrielle Daleman",
-     "nation": "CAN"
-    },
-    {
-     "name": "Lara Naki Gutmann",
-     "nation": "ITA"
-    },
-    {
-     "name": "Nina Pinzarrone",
-     "nation": "BEL"
-    },
-    {
-     "name": "Rion Sumiyoshi",
-     "nation": "JPN"
-    },
-    {
-     "name": "Sarah Everhardt",
-     "nation": "USA"
-    },
-    {
-     "name": "Sarina Joos",
-     "nation": "ITA"
+     "nation": "CAN",
+     "time": "20:45",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Seojin Youn",
-     "nation": "KOR"
+     "nation": "KOR",
+     "time": "20:53",
+     "no": 3,
+     "warmup": 1
     },
     {
-     "name": "Yuna Aoki",
-     "nation": "JPN"
+     "name": "Sarah Everhardt",
+     "nation": "USA",
+     "time": "21:00",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Rion Sumiyoshi",
+     "nation": "JPN",
+     "time": "21:08",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Nina Pinzarrone",
+     "nation": "BEL",
+     "time": "21:16",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Sarina Joos",
+     "nation": "ITA",
+     "time": "21:31",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Lara Naki Gutmann",
+     "nation": "ITA",
+     "time": "21:39",
+     "no": 8,
+     "warmup": 2
     },
     {
      "name": "Yuseong Kim",
-     "nation": "KOR"
+     "nation": "KOR",
+     "time": "21:46",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Ami Nakai",
+     "nation": "JPN",
+     "time": "21:54",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Anastasiia Gubanova",
+     "nation": "GEO",
+     "time": "22:02",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Yuna Aoki",
+     "nation": "JPN",
+     "time": "22:09",
+     "no": 12,
+     "warmup": 2
     }
    ],
    "live": {
@@ -35218,18 +35418,18 @@
     "cat": "https://results.isu.org/results/season2627/gpfra2026/CAT002RS.htm",
     "first": "https://results.isu.org/results/season2627/gpfra2026/SEG003.htm",
     "names": {
-     "Nina PINZARRONE": "Nina Pinzarrone",
-     "Gabrielle DALEMAN": "Gabrielle Daleman",
      "Eve DUBECQ": "Eve Dubecq",
-     "Anastasiia GUBANOVA": "Anastasiia Gubanova",
-     "Lara Naki GUTMANN": "Lara Naki Gutmann",
-     "Sarina JOOS": "Sarina Joos",
-     "Yuna AOKI": "Yuna Aoki",
-     "Ami NAKAI": "Ami Nakai",
-     "Rion SUMIYOSHI": "Rion Sumiyoshi",
-     "Yuseong KIM": "Yuseong Kim",
+     "Gabrielle DALEMAN": "Gabrielle Daleman",
      "Seojin YOUN": "Seojin Youn",
-     "Sarah EVERHARDT": "Sarah Everhardt"
+     "Sarah EVERHARDT": "Sarah Everhardt",
+     "Rion SUMIYOSHI": "Rion Sumiyoshi",
+     "Nina PINZARRONE": "Nina Pinzarrone",
+     "Sarina JOOS": "Sarina Joos",
+     "Lara Naki GUTMANN": "Lara Naki Gutmann",
+     "Yuseong KIM": "Yuseong Kim",
+     "Ami NAKAI": "Ami Nakai",
+     "Anastasiia GUBANOVA": "Anastasiia Gubanova",
+     "Yuna AOKI": "Yuna Aoki"
     },
     "basis": null
    },
@@ -60990,6 +61190,7 @@
   "Brooke Gewalt": "photos/26cba8b15131bcf1.jpg",
   "Alexandre Lirot": "photos/4a4e7db4d900d2a6.jpg",
   "Rocco Malik Dietrich": "photos/7c578e9d0515bd4d.jpg",
-  "Alexa Riddoch": "photos/46cad6a70407b975.jpg"
+  "Alexa Riddoch": "photos/46cad6a70407b975.jpg",
+  "Felix Oberbacher": "photos/66d30ab9dc2b7f23.jpg"
  }
 }
