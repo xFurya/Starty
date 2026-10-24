@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T15:38:06+03:00",
- "checked": "2026-10-24T15:38:06+03:00",
+ "checked": "2026-10-24T12:53:57.479111+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -33883,153 +33883,170 @@
    "podium": [
     {
      "place": 1,
+     "name": "Eleonora Ciferri",
+     "nation": "ITA",
+     "points": "92.99"
+    },
+    {
+     "place": 2,
      "name": "Lea Marie Castlunger",
      "nation": "ITA",
      "points": "88.42"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Ula Zadnikar",
      "nation": "SLO",
      "points": "87.35"
-    },
-    {
-     "place": 3,
-     "name": "Vasilisa Bogomolova",
-     "nation": "CYP",
-     "points": "85.23"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Lea Marie Castlunger — 88.42\n2. Ula Zadnikar — 87.35\n3. Vasilisa Bogomolova — 85.23\n\nНачало: 13:15 МСК",
+   "desc": "Итог:\n1. Eleonora Ciferri — 92.99\n2. Lea Marie Castlunger — 88.42\n3. Ula Zadnikar — 87.35\n\nИтог турнира:\n1. Eleonora Ciferri — 146.98\n2. Ula Zadnikar — 137.45\n3. Lea Marie Castlunger — 133.76\n\nПримечательное:\n• Lea Marie Castlunger — После короткой программы — 7-е место, в итоге — 3-е место\n\nНачало: 13:15 МСК",
    "field": [
     {
      "name": "Ekaterina Balaganskaia",
      "nation": "SRB",
-     "place": 9,
+     "place": 10,
      "no": 15,
-     "warmup": 3
+     "warmup": 3,
+     "final": 10
     },
     {
      "name": "Eleonora Ciferri",
      "nation": "ITA",
-     "place": 18,
+     "place": 1,
      "no": 18,
-     "warmup": 3
+     "warmup": 3,
+     "final": 1
     },
     {
      "name": "Enja Sivic",
      "nation": "SLO",
-     "place": 15,
+     "place": 16,
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 16
     },
     {
      "name": "Hana Operckal",
      "nation": "SLO",
-     "place": 13,
+     "place": 14,
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "final": 14
     },
     {
      "name": "Lea Marie Castlunger",
      "nation": "ITA",
-     "place": 1,
+     "place": 2,
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "final": 3
     },
     {
      "name": "Liana Smrekar",
      "nation": "SLO",
-     "place": 14,
+     "place": 15,
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 15
     },
     {
      "name": "Lija Kroselj",
      "nation": "SLO",
-     "place": 11,
+     "place": 12,
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "final": 12
     },
     {
      "name": "Louane Wolff",
      "nation": "FRA",
-     "place": 8,
+     "place": 9,
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "final": 8
     },
     {
      "name": "Luna Rozman",
      "nation": "SLO",
-     "place": 7,
+     "place": 8,
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "final": 9
     },
     {
      "name": "Nadja Savic",
      "nation": "SRB",
-     "place": 5,
+     "place": 6,
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "final": 7
     },
     {
      "name": "Neza Lusic",
      "nation": "SLO",
-     "place": 12,
+     "place": 13,
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "final": 13
     },
     {
      "name": "Nicole de Rosa",
      "nation": "ITA",
-     "place": 4,
+     "place": 5,
      "no": 14,
-     "warmup": 3
+     "warmup": 3,
+     "final": 6
     },
     {
      "name": "Nika Sajko",
      "nation": "CRO",
-     "place": 17,
+     "place": 18,
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 18
     },
     {
      "name": "Paula Kasnar",
      "nation": "CRO",
-     "place": 6,
+     "place": 7,
      "no": 17,
-     "warmup": 3
+     "warmup": 3,
+     "final": 4
     },
     {
      "name": "Tea Sajko",
      "nation": "CRO",
-     "place": 10,
+     "place": 11,
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "final": 11
     },
     {
      "name": "Ula Zadnikar",
      "nation": "SLO",
-     "place": 2,
+     "place": 3,
      "no": 16,
-     "warmup": 3
+     "warmup": 3,
+     "final": 2
     },
     {
      "name": "Vasilisa Bogomolova",
      "nation": "CYP",
-     "place": 3,
+     "place": 4,
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "final": 5
     },
     {
      "name": "Ziva Aupic",
      "nation": "SLO",
-     "place": 16,
+     "place": 17,
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 17
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
     "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG008.htm",
@@ -34055,9 +34072,36 @@
      "Nika SAJKO": "Nika Sajko",
      "Eleonora CIFERRI": "Eleonora Ciferri"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "gs_golden-bear.json"
+   "proto": "gs_golden-bear.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Eleonora Ciferri",
+     "nation": "ITA",
+     "points": "146.98"
+    },
+    {
+     "place": 2,
+     "name": "Ula Zadnikar",
+     "nation": "SLO",
+     "points": "137.45"
+    },
+    {
+     "place": 3,
+     "name": "Lea Marie Castlunger",
+     "nation": "ITA",
+     "points": "133.76"
+    }
+   ],
+   "facts": [
+    {
+     "who": "Lea Marie Castlunger",
+     "text": "После короткой программы — 7-е место, в итоге — 3-е место",
+     "kind": "place"
+    }
+   ]
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:men-senior-kp",
@@ -34473,12 +34517,18 @@
     },
     {
      "place": 2,
+     "name": "Вероника Яметова",
+     "nation": "МОБ",
+     "points": "67.25"
+    },
+    {
+     "place": 3,
      "name": "Мария Лабутина",
      "nation": "ВОЛ",
      "points": "60.57"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Арина Кудлай — 67.56\n2. Мария Лабутина — 60.57\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Арина Кудлай — 67.56\n2. Вероника Яметова — 67.25\n3. Мария Лабутина — 60.57\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Арина Кудлай",
@@ -34493,7 +34543,7 @@
      "nation": "ВОЛ",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "time": "15:55"
     },
     {
@@ -34544,7 +34594,8 @@
      "nation": "НВГ",
      "time": "15:39",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4
     },
     {
      "name": "Мария Захарова",
@@ -34630,24 +34681,24 @@
    "podium": [
     {
      "place": 1,
-     "name": "Louise Bordet / Martin Chardain",
-     "nation": "FRA",
-     "points": "84.39"
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "points": "92.94"
     },
     {
      "place": 2,
      "name": "Celina Fradji / Jean-Hans Fourneaux",
      "nation": "FRA",
-     "points": "62.40"
+     "points": "88.84"
     },
     {
      "place": 3,
-     "name": "Milla Ruud Reitan / Nikolaj Majorov",
-     "nation": "SWE",
-     "points": "63.01"
+     "name": "Louise Bordet / Martin Chardain",
+     "nation": "FRA",
+     "points": "84.39"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Louise Bordet / Martin Chardain — 84.39\n2. Celina Fradji / Jean-Hans Fourneaux — 62.40\n3. Milla Ruud Reitan / Nikolaj Majorov — 63.01\n\nНачало: 15:20 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Milla Ruud Reitan / Nikolaj Majorov — 92.94\n2. Celina Fradji / Jean-Hans Fourneaux — 88.84\n3. Louise Bordet / Martin Chardain — 84.39\n\nНачало: 15:20 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
@@ -34655,8 +34706,7 @@
      "place": 2,
      "time": "15:34",
      "no": 2,
-     "warmup": 1,
-     "place": 1
+     "warmup": 1
     },
     {
      "name": "Christina Carreira / Anthony Ponomarenko",
@@ -34664,8 +34714,7 @@
      "place": 8,
      "time": "16:28",
      "no": 8,
-     "warmup": 2,
-     "place": 8
+     "warmup": 2
     },
     {
      "name": "Diana Davis / Gleb Smolkin",
@@ -34673,8 +34722,7 @@
      "place": 9,
      "time": "16:36",
      "no": 9,
-     "warmup": 2,
-     "place": 9
+     "warmup": 2
     },
     {
      "name": "Eva Pate / Logan Bye",
@@ -34682,8 +34730,7 @@
      "place": 7,
      "time": "16:20",
      "no": 7,
-     "warmup": 2,
-     "place": 7
+     "warmup": 2
     },
     {
      "name": "Holly Harris / Jason Chan",
@@ -34691,8 +34738,7 @@
      "place": 4,
      "time": "15:50",
      "no": 4,
-     "warmup": 1,
-     "place": 4
+     "warmup": 1
     },
     {
      "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
@@ -34700,8 +34746,7 @@
      "place": 10,
      "time": "16:44",
      "no": 10,
-     "warmup": 2,
-     "place": 10
+     "warmup": 2
     },
     {
      "name": "Leah Neset / Artem Markelov",
@@ -34709,26 +34754,23 @@
      "place": 5,
      "time": "15:58",
      "no": 5,
-     "warmup": 1,
-     "place": 5
+     "warmup": 1
     },
     {
      "name": "Louise Bordet / Martin Chardain",
      "nation": "FRA",
-     "place": 1,
+     "place": 3,
      "time": "15:26",
      "no": 1,
-     "warmup": 1,
-     "place": 2
+     "warmup": 1
     },
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
      "nation": "SWE",
-     "place": 3,
+     "place": 1,
      "time": "15:42",
      "no": 3,
-     "warmup": 1,
-     "place": 3
+     "warmup": 1
     },
     {
      "name": "Sofia Val / Asaf Kazimov",
@@ -34736,8 +34778,7 @@
      "place": 6,
      "time": "16:12",
      "no": 6,
-     "warmup": 2,
-     "place": 6
+     "warmup": 2
     }
    ],
    "provisional": true,
@@ -34760,28 +34801,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Celina Fradji / Jean-Hans Fourneaux",
-     "nation": "FRA",
-     "points": "88.84"
-    },
-    {
-     "place": 2,
-     "name": "Louise Bordet / Martin Chardain",
-     "nation": "FRA",
-     "points": "84.39"
-    },
-    {
-     "place": 3,
-     "name": "Milla Ruud Reitan / Nikolaj Majorov",
-     "nation": "SWE",
-     "points": "63.01"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
    "id": "gs:golden-bear:men-senior-kp-men",
