@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T17:56:16+03:00",
- "checked": "2026-10-24T17:56:16+03:00",
+ "checked": "2026-10-24T15:13:58.521007+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35036,14 +35036,14 @@
      "points": "67.35"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Анастасия Мишина / Александр Галлямов — 78.94\n2. Екатерина Гейниш / Андрей Рудь — 67.35\n3. София Диана Касинс / Александр Брегей — 65.49\n\nНачало: 16:55 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Екатерина Чикмарёва / Матвей Янченков — 79.43\n2. Анастасия Мишина / Александр Галлямов — 78.94\n3. Екатерина Гейниш / Андрей Рудь — 67.35\n\nНачало: 16:55 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Анна Ляшенко / Пётр Алексеенко",
      "nation": "МОС",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "time": "17:02"
     },
     {
@@ -35051,7 +35051,7 @@
      "nation": "КРД",
      "no": 2,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "time": "17:22"
     },
     {
@@ -35059,7 +35059,7 @@
      "nation": "МОБ",
      "no": 3,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "time": "17:15"
     },
     {
@@ -35067,7 +35067,7 @@
      "nation": "МОС",
      "no": 4,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "time": "17:29"
     },
     {
@@ -35075,7 +35075,7 @@
      "nation": "СПБ",
      "no": 5,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "time": "17:36"
     },
     {
@@ -35083,7 +35083,7 @@
      "nation": "СПБ",
      "no": 6,
      "warmup": 2,
-     "place": 1,
+     "place": 2,
      "time": "17:42"
     },
     {
@@ -35091,10 +35091,10 @@
      "nation": "ПРМ",
      "time": "17:49",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/2etap_sen/SEG005.htm",
@@ -35109,7 +35109,7 @@
      "Юлия ФИЛИМОНОВА / Андрей ШАДЕРКОВ": "Юлия Филимонова / Андрей Шадерков",
      "Екатерина ЧИКМАРЁВА / Матвей ЯНЧЕНКОВ": "Екатерина Чикмарёва / Матвей Янченков"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
   },
@@ -35158,19 +35158,19 @@
     },
     {
      "place": 3,
-     "name": "Elena Agostinelli",
-     "nation": "ITA",
-     "points": "42.96"
+     "name": "Oliwia Strokosz",
+     "nation": "POL",
+     "points": "48.65"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ginevra Lavinia Negrello — 55.44\n2. Julija Lovrencic — 52.29\n3. Elena Agostinelli — 42.96\n\nНачало: 17:15 МСК",
+   "desc": "Промежуточные итоги:\n1. Ginevra Lavinia Negrello — 55.44\n2. Julija Lovrencic — 52.29\n3. Oliwia Strokosz — 48.65\n\nНачало: 17:15 МСК",
    "field": [
     {
      "name": "Ema Vukovic",
      "nation": "CRO",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 7,
      "time": "17:21"
     },
     {
@@ -35186,7 +35186,7 @@
      "nation": "ITA",
      "no": 3,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "time": "17:33"
     },
     {
@@ -35202,7 +35202,7 @@
      "nation": "POL",
      "no": 7,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "time": "18:04"
     },
     {
@@ -35231,7 +35231,8 @@
      "nation": "ISR",
      "time": "18:10",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6
     },
     {
      "name": "Katerina Hanusova",
@@ -35252,7 +35253,8 @@
      "nation": "POL",
      "time": "18:16",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3
     },
     {
      "name": "Zala Grum",
