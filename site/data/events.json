@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T15:38:06+03:00",
- "checked": "2026-10-24T13:01:57.519272+00:00",
+ "checked": "2026-10-24T13:09:57.176181+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -34683,29 +34683,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Leah Neset / Artem Markelov",
+     "nation": "USA",
+     "points": "100.12"
+    },
+    {
+     "place": 2,
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
      "nation": "SWE",
      "points": "92.94"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Holly Harris / Jason Chan",
      "nation": "AUS",
      "points": "91.34"
-    },
-    {
-     "place": 3,
-     "name": "Celina Fradji / Jean-Hans Fourneaux",
-     "nation": "FRA",
-     "points": "88.84"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Milla Ruud Reitan / Nikolaj Majorov — 92.94\n2. Holly Harris / Jason Chan — 91.34\n3. Celina Fradji / Jean-Hans Fourneaux — 88.84\n\nНачало: 15:20 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Leah Neset / Artem Markelov — 100.12\n2. Milla Ruud Reitan / Nikolaj Majorov — 92.94\n3. Holly Harris / Jason Chan — 91.34\n\nНачало: 15:20 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
      "nation": "FRA",
-     "place": 3,
+     "place": 4,
      "time": "15:34",
      "no": 2,
      "warmup": 1
@@ -34737,7 +34737,7 @@
     {
      "name": "Holly Harris / Jason Chan",
      "nation": "AUS",
-     "place": 2,
+     "place": 3,
      "time": "15:50",
      "no": 4,
      "warmup": 1
@@ -34753,7 +34753,7 @@
     {
      "name": "Leah Neset / Artem Markelov",
      "nation": "USA",
-     "place": 5,
+     "place": 1,
      "time": "15:58",
      "no": 5,
      "warmup": 1
@@ -34761,7 +34761,7 @@
     {
      "name": "Louise Bordet / Martin Chardain",
      "nation": "FRA",
-     "place": 4,
+     "place": 5,
      "time": "15:26",
      "no": 1,
      "warmup": 1
@@ -34769,7 +34769,7 @@
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
      "nation": "SWE",
-     "place": 1,
+     "place": 2,
      "time": "15:42",
      "no": 3,
      "warmup": 1
