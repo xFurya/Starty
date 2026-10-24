@@ -55,6 +55,22 @@ List<String> marksOf(String info) => [
   for (final m in info.split(RegExp(r'[\s,;]+'))) if (m.isNotEmpty) m,
 ];
 
+/// Зелёный «хорошо»: бонус «x» и GOE выше нуля (в разметке везде один и тот же).
+Color goodOf(Palette p) => p.isDark ? const Color(0xFF5FD39A) : const Color(0xFF1E8A56);
+
+/// GOE выше нуля — зелёный, ниже — красный, ноль и прочерк — [neutral].
+Color goeColorOf(Palette p, String g, Color neutral) =>
+    g.startsWith('-') ? p.live : (g.startsWith('+') ? goodOf(p) : neutral);
+
+/// Число из таблицы; у базы с бонусом («10.19x») буква «x» зелёная, как в расшифровке.
+TextSpan numSpan(Palette p, String t) => t.length > 1 && t.endsWith('x')
+    ? TextSpan(children: [TextSpan(text: t.substring(0, t.length - 1)), TextSpan(text: 'x', style: TextStyle(color: goodOf(p)))])
+    : TextSpan(text: t);
+
+/// Отметки, уже стоящие в самом названии элемента («3Lz+3T<»): отдельно их повторять не нужно.
+final _nameMark = RegExp(r'(?<=[A-Za-z0-9])(?:<<|<|q|e|!|\*)+(?=\+|\s|$)');
+final _oneMark = RegExp(r'<<|<|q|e|!|\*');
+
 /// GOE со знаком: «+1.21», «-0.40», «0.00».
 String goeText(String g) => g.startsWith('-') || g.startsWith('+') || g == '0.00' ? g : '+$g';
 
@@ -137,7 +153,7 @@ class _DetailsState extends State<Details> {
                   children: [
                     SizedBox(
                       width: MediaQuery.textScalerOf(context).scale(22),
-                      child: Text(m, style: legend.copyWith(color: m == 'x' ? (p.isDark ? const Color(0xFF5FD39A) : const Color(0xFF1E8A56)) : p.live, fontWeight: FontWeight.w700)),
+                      child: Text(m, style: legend.copyWith(color: m == 'x' ? goodOf(p) : p.live, fontWeight: FontWeight.w700)),
                     ),
                     Expanded(child: Text(text, style: legend)),
                   ],
@@ -290,9 +306,13 @@ class _Table extends StatelessWidget {
         final nameW = c.maxWidth - lead - w1 - w2 - w3;
         final grid = nameW >= 100;
         final hd = TextStyle(fontSize: 10.5, fontWeight: FontWeight.w700, color: p.ink3, letterSpacing: .3);
-        Widget numCell(String t, double w, {bool strong = false}) => SizedBox(
+        Widget numCell(String t, double w, {bool strong = false, Color? color}) => SizedBox(
           width: w,
-          child: Text(t, textAlign: TextAlign.right, style: strong ? _val(p) : _val(p).copyWith(fontWeight: FontWeight.w600, color: p.ink2)),
+          child: Text.rich(
+            numSpan(p, t),
+            textAlign: TextAlign.right,
+            style: (strong ? _val(p) : _val(p).copyWith(fontWeight: FontWeight.w600, color: p.ink2)).copyWith(color: color),
+          ),
         );
         return Column(
           children: [
@@ -322,7 +342,7 @@ class _Table extends StatelessWidget {
                               if (lead > 0) SizedBox(width: lead, child: Text(r.lead, style: _val(p).copyWith(color: p.ink3))),
                               Expanded(child: _nameLine(p, r)),
                               numCell(r.cells[0], w1),
-                              if (!hideMiddle) numCell(r.cells[1], w2, strong: true) else const SizedBox.shrink(),
+                              if (!hideMiddle) numCell(r.cells[1], w2, strong: true, color: goeColorOf(p, r.cells[1], p.ink)) else const SizedBox.shrink(),
                               numCell(r.cells[2], w3, strong: true),
                             ])
                           : Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -345,7 +365,10 @@ class _Table extends StatelessWidget {
                                           TextSpan(
                                             children: [
                                               TextSpan(text: '${r.names[i]}$nb', style: TextStyle(color: p.ink3, fontWeight: FontWeight.w600)),
-                                              TextSpan(text: r.cells[i]),
+                                              if (i == 1)
+                                                TextSpan(text: r.cells[i], style: TextStyle(color: goeColorOf(p, r.cells[i], p.ink2)))
+                                              else
+                                                numSpan(p, r.cells[i]),
                                             ],
                                           ),
                                           maxLines: 1,
@@ -386,16 +409,27 @@ class _Table extends StatelessWidget {
     );
   }
 
-  Widget _nameLine(Palette p, _TRow r) => Row(
+  /// Название: отметки внутри него («<» у прыжка в каскаде) окрашены; те же отметки из колонки не повторяются.
+  Widget _nameLine(Palette p, _TRow r) {
+    final inName = {for (final m in _nameMark.allMatches(r.name)) ...[for (final x in _oneMark.allMatches(m.group(0)!)) x.group(0)!]};
+    final rest = [for (final m in marksOf(r.marks)) if (!inName.contains(m)) m].join(' ');
+    final spans = <InlineSpan>[];
+    var at = 0;
+    for (final m in _nameMark.allMatches(r.name)) {
+      spans.add(TextSpan(text: r.name.substring(at, m.start), style: _name(p)));
+      spans.add(TextSpan(text: m.group(0), style: _name(p).copyWith(color: p.live)));
+      at = m.end;
+    }
+    spans.add(TextSpan(text: r.name.substring(at), style: _name(p)));
+    if (rest.isNotEmpty) spans.add(TextSpan(text: '  $rest', style: _name(p).copyWith(color: p.live)));
+    return _nameRow(p, r, TextSpan(children: spans));
+  }
+
+  Widget _nameRow(Palette p, _TRow r, TextSpan name) => Row(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Flexible(
-        child: Text.rich(
-          TextSpan(children: [
-            TextSpan(text: r.name, style: _name(p)),
-            if (r.marks.isNotEmpty) TextSpan(text: '  ${r.marks}', style: _name(p).copyWith(color: p.live)),
-          ]),
-        ),
+        child: Text.rich(name),
       ),
       if (r.judges.isNotEmpty)
         Padding(

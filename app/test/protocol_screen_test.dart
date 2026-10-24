@@ -14,7 +14,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:starty/data.dart';
 import 'package:starty/live.dart' show LiveOk;
 import 'package:starty/state.dart';
-import 'package:starty/protocol_details.dart' show deductionName;
+import 'package:starty/palette.dart';
+import 'package:starty/protocol_details.dart' show deductionName, goodOf;
 import 'package:starty/protocol_model.dart';
 import 'package:starty/protocol_repo.dart';
 import 'package:starty/protocol_screen.dart';
@@ -463,6 +464,38 @@ void main() {
       expect(find.text('-1.00'), findsWidgets);
       expect(find.text('Сумма'), findsOneWidget);
       expectNoHorizontalScroll(tester);
+    });
+
+    testWidgets('отметка в названии не повторяется; GOE и бонус окрашены', (tester) async {
+      final j = withDetails();
+      final els = ((_seg(j)['rows'] as List).first as Map<String, dynamic>)['els'] as List;
+      (els.first as Map)['n'] = '3Lz+3T<';
+      await pumpScreen(tester, s: start(), repo: repoWith(j));
+      await tester.tap(find.text(_pair));
+      await tester.pumpAndSettle();
+      // «<» стоит один раз — у прыжка в названии (и ещё раз в расшифровке)
+      final marks = find.byWidgetPredicate((w) => w is RichText && w.text.toPlainText().contains('3Lz+3T<'));
+      expect(marks, findsOneWidget);
+      expect(tester.widget<RichText>(marks).text.toPlainText(), '3Lz+3T<');
+      Color? colorOf(String t) {
+        Color? c;
+        void walk(InlineSpan sp, Color? inherited) {
+          if (sp is! TextSpan) return;
+          final cur = sp.style?.color ?? inherited;
+          if (sp.text == t) c = cur;
+          for (final k in sp.children ?? const <InlineSpan>[]) {
+            walk(k, cur);
+          }
+        }
+        for (final w in tester.widgetList<RichText>(find.byType(RichText))) {
+          walk(w.text, null);
+        }
+        return c;
+      }
+      final p = Palette.light;
+      expect(colorOf('+1.21'), goodOf(p));
+      expect(colorOf('-0.40'), p.live);
+      expect(colorOf('x'), goodOf(p));
     });
 
     testWidgets('оценки судей по тапу на элемент; null — прочерк на своём месте', (tester) async {
