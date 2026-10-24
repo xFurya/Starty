@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T13:42:30+03:00",
- "checked": "2026-10-24T11:33:57.956418+00:00",
+ "checked": "2026-10-24T11:37:57.191416+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -33883,24 +33883,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Vasilisa Bogomolova",
+     "nation": "CYP",
+     "points": "85.23"
+    },
+    {
+     "place": 2,
      "name": "Nadja Savic",
      "nation": "SRB",
      "points": "77.39"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Tea Sajko",
      "nation": "CRO",
      "points": "62.41"
-    },
-    {
-     "place": 3,
-     "name": "Lija Kroselj",
-     "nation": "SLO",
-     "points": "60.07"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Nadja Savic — 77.39\n2. Tea Sajko — 62.41\n3. Lija Kroselj — 60.07\n\nНачало: 13:15 МСК",
+   "desc": "Промежуточные итоги:\n1. Vasilisa Bogomolova — 85.23\n2. Nadja Savic — 77.39\n3. Tea Sajko — 62.41\n\nНачало: 13:15 МСК",
    "field": [
     {
      "name": "Ekaterina Balaganskaia",
@@ -33919,14 +33919,14 @@
     {
      "name": "Enja Sivic",
      "nation": "SLO",
-     "place": 7,
+     "place": 8,
      "no": 4,
      "warmup": 1
     },
     {
      "name": "Hana Operckal",
      "nation": "SLO",
-     "place": 5,
+     "place": 6,
      "no": 5,
      "warmup": 1
     },
@@ -33940,14 +33940,14 @@
     {
      "name": "Liana Smrekar",
      "nation": "SLO",
-     "place": 6,
+     "place": 7,
      "no": 3,
      "warmup": 1
     },
     {
      "name": "Lija Kroselj",
      "nation": "SLO",
-     "place": 3,
+     "place": 4,
      "no": 6,
      "warmup": 1
     },
@@ -33968,14 +33968,14 @@
     {
      "name": "Nadja Savic",
      "nation": "SRB",
-     "place": 1,
+     "place": 2,
      "no": 9,
      "warmup": 2
     },
     {
      "name": "Neza Lusic",
      "nation": "SLO",
-     "place": 4,
+     "place": 5,
      "no": 8,
      "warmup": 2
     },
@@ -33989,7 +33989,7 @@
     {
      "name": "Nika Sajko",
      "nation": "CRO",
-     "place": 9,
+     "place": 10,
      "no": 1,
      "warmup": 1
     },
@@ -34003,7 +34003,7 @@
     {
      "name": "Tea Sajko",
      "nation": "CRO",
-     "place": 2,
+     "place": 3,
      "no": 7,
      "warmup": 2
     },
@@ -34017,14 +34017,14 @@
     {
      "name": "Vasilisa Bogomolova",
      "nation": "CYP",
-     "place": 10,
+     "place": 1,
      "no": 10,
      "warmup": 2
     },
     {
      "name": "Ziva Aupic",
      "nation": "SLO",
-     "place": 8,
+     "place": 9,
      "no": 2,
      "warmup": 1
     }
@@ -34123,7 +34123,7 @@
      "nation": "FRA",
      "no": 1,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "time": "13:37"
     },
     {
@@ -34132,7 +34132,7 @@
      "time": "13:56",
      "no": 4,
      "warmup": 1,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Adam Siao Him Fa",
@@ -34199,7 +34199,8 @@
      "nation": "ITA",
      "time": "14:28",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6
     },
     {
      "name": "Sota Yamamoto",
@@ -34319,7 +34320,7 @@
      "time": "13:55",
      "no": 4,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Артур Даниелян",
@@ -34327,7 +34328,7 @@
      "time": "14:12",
      "no": 2,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Владислав Дикиджи",
@@ -34349,7 +34350,7 @@
      "time": "13:49",
      "no": 3,
      "warmup": 1,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Дмитрий Шелковников",
@@ -34357,14 +34358,15 @@
      "time": "14:00",
      "no": 5,
      "warmup": 1,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Лев Лазарев",
      "nation": "МОС",
      "time": "14:25",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4
     },
     {
      "name": "Макар Игнатов",
