@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T18:36:54+03:00",
- "checked": "2026-10-24T18:36:54+03:00",
+ "checked": "2026-10-24T15:53:57.667879+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35169,7 +35169,7 @@
      "nation": "CRO",
      "no": 1,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "time": "17:21"
     },
     {
@@ -35185,7 +35185,7 @@
      "nation": "ITA",
      "no": 3,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "time": "17:33"
     },
     {
@@ -35201,7 +35201,7 @@
      "nation": "POL",
      "no": 7,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "time": "18:04"
     },
     {
@@ -35209,7 +35209,7 @@
      "nation": "ISR",
      "no": 8,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "time": "18:10"
     },
     {
@@ -35255,7 +35255,8 @@
      "nation": "SLO",
      "time": "18:55",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "place": 6
     }
    ],
    "provisional": true,
@@ -35327,9 +35328,21 @@
      "name": "Александра Прокопец / Александр Васькович",
      "nation": "МОБ",
      "points": "66.80"
+    },
+    {
+     "place": 2,
+     "name": "Софья Тютюнина / Матвей Грачев",
+     "nation": "МОС",
+     "points": "66.60"
+    },
+    {
+     "place": 3,
+     "name": "Анна Смирнова / Богдан Шамков",
+     "nation": "ТУЛ",
+     "points": "50.20"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Александра Прокопец / Александр Васькович — 66.80\n\nНачало: 18:25 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Александра Прокопец / Александр Васькович — 66.80\n2. Софья Тютюнина / Матвей Грачев — 66.60\n3. Анна Смирнова / Богдан Шамков — 50.20\n\nНачало: 18:25 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Александра Прокопец / Александр Васькович",
@@ -35344,7 +35357,8 @@
      "nation": "ТУЛ",
      "time": "18:44",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Анна Щербакова / Егор Гончаров",
@@ -35393,7 +35407,8 @@
      "nation": "МОС",
      "time": "18:58",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     }
    ],
    "provisional": true,
@@ -35415,22 +35430,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Александра Прокопец / Александр Васькович",
-     "nation": "МОБ",
-     "points": "66.80"
-    },
-    {
-     "place": 2,
-     "name": "Софья Тютюнина / Матвей Грачев",
-     "nation": "МОС",
-     "points": "66.60"
-    }
-   ],
-   "provisional": true
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:pairs-senior-kp",
