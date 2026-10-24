@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T13:42:30+03:00",
- "checked": "2026-10-24T12:01:57.276073+00:00",
+ "checked": "2026-10-24T12:05:58.088912+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -34300,7 +34300,7 @@
      "points": "98.44"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Пётр Гуменник — 108.49\n2. Владислав Дикиджи — 107.83\n3. Глеб Лутфуллин — 98.44\n\nНачало: 13:30 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Пётр Гуменник — 108.49\n2. Владислав Дикиджи — 107.83\n3. Глеб Лутфуллин — 98.44\n\nНачало: 13:30 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Илья Строганов",
@@ -34399,7 +34399,6 @@
      "place": 1
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/2etap_sen/SEG001.htm",
@@ -34419,7 +34418,7 @@
      "Арсений ФЕДОТОВ": "Арсений Федотов",
      "Пётр ГУМЕННИК": "Пётр Гуменник"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
   },
