@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-24T15:22:46+03:00",
- "checked": "2026-10-24T12:49:57.560486+00:00",
+ "generated": "2026-10-24T15:38:06+03:00",
+ "checked": "2026-10-24T15:38:06+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -34036,12 +34036,15 @@
     "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT004RS.htm",
     "first": "https://www.croskate.hr/cscro2025/GB2026/SEG007.htm",
     "names": {
+     "Ula ZADNIKAR": "Ula Zadnikar",
      "Lea Marie CASTLUNGER": "Lea Marie Castlunger",
+     "Paula KASNAR": "Paula Kasnar",
      "Vasilisa BOGOMOLOVA": "Vasilisa Bogomolova",
      "Nicole de ROSA": "Nicole de Rosa",
      "Nadja SAVIC": "Nadja Savic",
      "Louane WOLFF": "Louane Wolff",
      "Luna ROZMAN": "Luna Rozman",
+     "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
      "Tea SAJKO": "Tea Sajko",
      "Lija KROSELJ": "Lija Kroselj",
      "Neza LUSIC": "Neza Lusic",
@@ -34050,9 +34053,6 @@
      "Enja SIVIC": "Enja Sivic",
      "Ziva AUPIC": "Ziva Aupic",
      "Nika SAJKO": "Nika Sajko",
-     "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
-     "Ula ZADNIKAR": "Ula Zadnikar",
-     "Paula KASNAR": "Paula Kasnar",
      "Eleonora CIFERRI": "Eleonora Ciferri"
     },
     "basis": null
@@ -34464,15 +34464,44 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Арина Кудлай — 67.56\n2. Вероника Яметова — 67.25\n3. Мария Лабутина — 60.57\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Арина Кудлай",
+     "nation": "СПБ",
+     "points": "67.56"
+    },
+    {
+     "place": 2,
+     "name": "Мария Лабутина",
+     "nation": "ВОЛ",
+     "points": "60.57"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Арина Кудлай — 67.56\n2. Мария Лабутина — 60.57\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Арина Кудлай",
      "nation": "СПБ",
-     "time": "15:22",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 1,
+     "time": "15:22"
+    },
+    {
+     "name": "Мария Лабутина",
+     "nation": "ВОЛ",
+     "no": 2,
+     "warmup": 1,
+     "place": 2,
+     "time": "15:55"
+    },
+    {
+     "name": "Агата Петрова",
+     "nation": "СПБ",
+     "time": "16:30",
+     "no": 12,
+     "warmup": 2
     },
     {
      "name": "Вероника Яметова",
@@ -34483,61 +34512,10 @@
      "place": 2
     },
     {
-     "name": "Мария Артёмова",
-     "nation": "НВГ",
-     "time": "15:39",
-     "no": 4,
-     "warmup": 1,
-     "place": 4
-    },
-    {
-     "name": "Мария Котова",
-     "nation": "ТАТ",
-     "time": "15:44",
-     "no": 5,
-     "warmup": 1
-    },
-    {
-     "name": "Злата Буря",
-     "nation": "МОС",
-     "time": "15:50",
-     "no": 6,
-     "warmup": 1
-    },
-    {
-     "name": "Мария Лабутина",
-     "nation": "ВОЛ",
-     "time": "15:55",
-     "no": 2,
-     "warmup": 1,
-     "place": 3
-    },
-    {
      "name": "Диана Евлахина",
      "nation": "ИВА",
      "time": "16:03",
      "no": 7,
-     "warmup": 2
-    },
-    {
-     "name": "Милана Лебедева",
-     "nation": "МОС",
-     "time": "16:08",
-     "no": 8,
-     "warmup": 2
-    },
-    {
-     "name": "Ксения Синицына",
-     "nation": "МОБ",
-     "time": "16:14",
-     "no": 9,
-     "warmup": 2
-    },
-    {
-     "name": "Мария Захарова",
-     "nation": "МОС",
-     "time": "16:19",
-     "no": 10,
      "warmup": 2
     },
     {
@@ -34548,13 +34526,49 @@
      "warmup": 2
     },
     {
-     "name": "Агата Петрова",
-     "nation": "СПБ",
-     "time": "16:30",
-     "no": 12,
+     "name": "Злата Буря",
+     "nation": "МОС",
+     "time": "15:50",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Ксения Синицына",
+     "nation": "МОБ",
+     "time": "16:14",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Мария Артёмова",
+     "nation": "НВГ",
+     "time": "15:39",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Мария Захарова",
+     "nation": "МОС",
+     "time": "16:19",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Мария Котова",
+     "nation": "ТАТ",
+     "time": "15:44",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Милана Лебедева",
+     "nation": "МОС",
+     "time": "16:08",
+     "no": 8,
      "warmup": 2
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/2etap_sen/SEG003.htm",
@@ -34576,28 +34590,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Арина Кудлай",
-     "nation": "СПБ",
-     "points": "67.56"
-    },
-    {
-     "place": 2,
-     "name": "Вероника Яметова",
-     "nation": "МОБ",
-     "points": "67.25"
-    },
-    {
-     "place": 3,
-     "name": "Мария Лабутина",
-     "nation": "ВОЛ",
-     "points": "60.57"
-    }
-   ],
-   "provisional": true
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:dance-senior-pt",
@@ -34634,11 +34627,32 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Celina Fradji / Jean-Hans Fourneaux — 88.84\n2. Louise Bordet / Martin Chardain — 84.39\n3. Milla Ruud Reitan / Nikolaj Majorov — 63.01\n\nНачало: 15:20 МСК\nТрансляция: Okko",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Louise Bordet / Martin Chardain",
+     "nation": "FRA",
+     "points": "84.39"
+    },
+    {
+     "place": 2,
+     "name": "Celina Fradji / Jean-Hans Fourneaux",
+     "nation": "FRA",
+     "points": "62.40"
+    },
+    {
+     "place": 3,
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "points": "63.01"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Louise Bordet / Martin Chardain — 84.39\n2. Celina Fradji / Jean-Hans Fourneaux — 62.40\n3. Milla Ruud Reitan / Nikolaj Majorov — 63.01\n\nНачало: 15:20 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
      "nation": "FRA",
+     "place": 2,
      "time": "15:34",
      "no": 2,
      "warmup": 1,
@@ -34647,6 +34661,7 @@
     {
      "name": "Christina Carreira / Anthony Ponomarenko",
      "nation": "USA",
+     "place": 8,
      "time": "16:28",
      "no": 8,
      "warmup": 2,
@@ -34655,6 +34670,7 @@
     {
      "name": "Diana Davis / Gleb Smolkin",
      "nation": "GEO",
+     "place": 9,
      "time": "16:36",
      "no": 9,
      "warmup": 2,
@@ -34663,6 +34679,7 @@
     {
      "name": "Eva Pate / Logan Bye",
      "nation": "USA",
+     "place": 7,
      "time": "16:20",
      "no": 7,
      "warmup": 2,
@@ -34671,6 +34688,7 @@
     {
      "name": "Holly Harris / Jason Chan",
      "nation": "AUS",
+     "place": 4,
      "time": "15:50",
      "no": 4,
      "warmup": 1,
@@ -34679,6 +34697,7 @@
     {
      "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
      "nation": "FRA",
+     "place": 10,
      "time": "16:44",
      "no": 10,
      "warmup": 2,
@@ -34687,6 +34706,7 @@
     {
      "name": "Leah Neset / Artem Markelov",
      "nation": "USA",
+     "place": 5,
      "time": "15:58",
      "no": 5,
      "warmup": 1,
@@ -34695,6 +34715,7 @@
     {
      "name": "Louise Bordet / Martin Chardain",
      "nation": "FRA",
+     "place": 1,
      "time": "15:26",
      "no": 1,
      "warmup": 1,
@@ -34703,6 +34724,7 @@
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
      "nation": "SWE",
+     "place": 3,
      "time": "15:42",
      "no": 3,
      "warmup": 1,
@@ -34711,12 +34733,14 @@
     {
      "name": "Sofia Val / Asaf Kazimov",
      "nation": "ESP",
+     "place": 6,
      "time": "16:12",
      "no": 6,
      "warmup": 2,
      "place": 6
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG008.htm",
