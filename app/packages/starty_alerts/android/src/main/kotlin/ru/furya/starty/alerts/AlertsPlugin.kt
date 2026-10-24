@@ -40,6 +40,12 @@ class AlertsPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
                             group = x["group"] as? String ?: "",
                             groupTitle = x["groupTitle"] as? String ?: "",
                             reminder = x["reminder"] as? Boolean ?: false,
+                            liveAt = (x["liveAt"] as? Number)?.toLong() ?: 0L,
+                            liveTitle = x["liveTitle"] as? String ?: "",
+                            liveMark = x["liveMark"] as? String ?: "",
+                            // ARGB больше Int.MAX_VALUE приходит как Long: младшие 32 бита — тот же цвет
+                            liveColor = (x["liveColor"] as? Number)?.toInt() ?: 0,
+                            liveColorDark = (x["liveColorDark"] as? Number)?.toInt() ?: 0,
                         )
                     }
                     Alerts.sync(c, list)

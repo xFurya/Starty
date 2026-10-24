@@ -142,6 +142,18 @@ void main() {
       expect(t.lines, ['CS Budapest Trophy', '19:04 — Кузьмина / Студеникин']);
     });
 
+    test('старт идёт: вместо времени начала — статус, как метка на карточке', () {
+      final t = Reminders.startText(start(ours: two));
+      expect(Reminders.liveMark, '●\u00A0ИДЁТ');
+      expect(t.live, 'Танцы, ритм-танец ●\u00A0ИДЁТ');
+      expect(t.live, isNot(matches(r'в \d{1,2}:\d\d')));
+      // строки и свёрнутый вид — те же
+      expect(t.lines, ['CS Budapest Trophy', '19:04 — Кузьмина / Студеникин', '20:48 — Григорьева / Артющенко']);
+      expect(t.collapsed, 'Кузьмина / Студеникин в 19:04 и ещё 1');
+      final j = Reminders.startText(start(title: 'CS Budapest Trophy — юниорские танцы РТ', level: 'junior'));
+      expect(j.live, 'Юниорские танцы, ритм-танец ●\u00A0ИДЁТ');
+    });
+
     test('старт без отслеживаемых: строка — турнир', () {
       final t = Reminders.startText(start());
       expect(t.title, 'Танцы, ритм-танец в 17:45');
@@ -205,7 +217,7 @@ void main() {
       final all = Reminders.plan(data, plan(r), now);
       expect(all.any((x) => x.key.startsWith('k:')), isTrue);
       for (final x in all) {
-        for (final t in [x.title, x.collapsed, x.subtitle, x.body, x.text, ...x.lines]) {
+        for (final t in [x.title, x.liveTitle, x.collapsed, x.subtitle, x.body, x.text, ...x.lines]) {
           expect(t, isNot(contains('·')), reason: t);
         }
       }
@@ -238,6 +250,30 @@ void main() {
     final x = Reminders.plan(data, plan(), now).firstWhere((x) => x.startId == live.id);
     expect(x.at.isBefore(now), isTrue);
     expect(x.end, live.t1);
+  });
+
+  test('заголовок о старте: до начала — время начала, во время старта — статус без времени', () {
+    final x = Reminders.plan(data, plan(), now).firstWhere((x) => x.startId == womenFs.id);
+    expect(x.liveAt, womenFs.t0);
+    for (final t in [x.at, womenFs.t0.subtract(const Duration(seconds: 1))]) {
+      expect(x.titleAt(t), 'Женщины, произвольная программа в 17:30');
+    }
+    for (final t in [womenFs.t0, womenFs.t0.add(const Duration(hours: 1)), womenFs.t1.subtract(const Duration(minutes: 1))]) {
+      final title = x.titleAt(t);
+      expect(title, 'Женщины, произвольная программа ${Reminders.liveMark}');
+      expect(title, isNot(matches(r'в \d{1,2}:\d\d')));
+      expect(title, contains('●'));
+      expect(title, contains('ИДЁТ'));
+    }
+    // уже идущий старт — тоже со статусом
+    final live = data.starts.firstWhere((e) => e.t0.isBefore(now) && e.t1.isAfter(now));
+    final y = Reminders.plan(data, plan(), now).firstWhere((x) => x.startId == live.id);
+    expect(y.titleAt(now), endsWith(Reminders.liveMark));
+    // выход спортсмена не меняется
+    final r = const NotifyRules().copyWith(skaters: true);
+    final k = Reminders.plan(data, plan(r), now).firstWhere((x) => x.title == 'В 20:32 выходит Александра Трусова');
+    expect(k.liveTitle, isEmpty);
+    expect(k.titleAt(womenFs.t0.add(const Duration(hours: 1))), k.title);
   });
 
   test('место без многоточия у города', () {

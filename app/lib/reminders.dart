@@ -14,8 +14,9 @@ import 'package:timezone/timezone.dart' as tz;
 import 'package:starty_alerts/starty_alerts.dart';
 
 import 'data.dart';
+import 'palette.dart';
 import 'platform.dart';
-import 'ui.dart' show cap, displayName, segNames;
+import 'ui.dart' show cap, displayName, nb, segNames;
 
 /// Правила: о каких стартах напоминать и за сколько минут.
 class NotifyRules {
@@ -309,13 +310,17 @@ class Reminders {
   /// Имя в уведомлении: у пар — фамилии, без капса из протоколов.
   static String _name(Skater o) => displayName(o.short);
 
+  /// Статус идущего старта — как метка на его карточке: точка и «ИДЁТ» (неразрывно).
+  /// На Android — цветом метки (p.live).
+  static const liveMark = '●$nbИДЁТ';
+
   /// Уведомление о начале старта.
-  ///  заголовок — «Танцы, ритм-танец в 17:45»;
+  ///  заголовок — «Танцы, ритм-танец в 17:45»; когда старт начался — «Танцы, ритм-танец ● ИДЁТ» ([live]);
   ///  строки — турнир, затем по строке на отслеживаемого: «19:04 — Кузьмина / Студеникин»;
   ///  свёрнутый вид Android — «Кузьмина / Студеникин в 19:04 и ещё 1» (никого — турнир).
   /// [own] — спортсмены со своим уведомлением о выходе: здесь их не повторяем, чтобы одно и то же
   /// не приходило дважды.
-  static ({String title, List<String> lines, String collapsed}) startText(Start s, {Set<String> own = const {}}) {
+  static ({String title, String live, List<String> lines, String collapsed}) startText(Start s, {Set<String> own = const {}}) {
     final (disc, seg) = discipline(s);
     final what = seg.isEmpty ? cap(disc) : '${cap(disc)}, $seg';
     final ours = [for (final o in s.ours) if (!own.contains(o.name)) o];
@@ -327,6 +332,7 @@ class Reminders {
         : '${one(ours.first)} и ещё ${ours.length - 1}';
     return (
       title: '$what в ${hm(s.t0)}',
+      live: '$what $liveMark',
       lines: [s.tournament, for (final o in ours) o.time == null ? _name(o) : '${o.time} — ${_name(o)}'],
       collapsed: collapsed,
     );
@@ -362,6 +368,8 @@ class Reminders {
         hold: p.rules.pin ? s.t1 : at,
         end: s.t1,
         title: t.title,
+        liveAt: s.t0,
+        liveTitle: t.live,
         lines: t.lines,
         collapsed: t.collapsed,
         startId: s.id,
@@ -472,6 +480,12 @@ class Reminders {
               group: x.group,
               groupTitle: x.groupTitle,
               reminder: x.reminder,
+              // в начало старта висящее меняет время на статус само, и при закрытом приложении
+              liveAt: x.liveAt,
+              liveTitle: x.liveTitle,
+              liveMark: liveMark,
+              liveColor: Palette.light.live.toARGB32(),
+              liveColorDark: Palette.dark.live.toARGB32(),
             ),
         ]);
         return;
@@ -507,6 +521,12 @@ class Planned {
   final DateTime at, hold, end;
   final String title;
 
+  /// Начало старта: с этого момента висящее уведомление — с [liveTitle] вместо [title].
+  final DateTime? liveAt;
+
+  /// Заголовок, пока старт идёт: статус вместо времени начала. Пусто — заголовок не меняется.
+  final String liveTitle;
+
   /// Строки развёрнутого вида: у старта первая — турнир, дальше отслеживаемые; у спортсмена одна.
   final List<String> lines;
 
@@ -532,7 +552,12 @@ class Planned {
     required this.group,
     required this.groupTitle,
     required this.reminder,
+    this.liveAt,
+    this.liveTitle = '',
   });
+
+  /// Заголовок на момент [t]: старт уже идёт — со статусом, иначе — с временем начала.
+  String titleAt(DateTime t) => liveAt != null && liveTitle.isNotEmpty && !t.isBefore(liveAt!) ? liveTitle : title;
 
   /// iPhone и Mac: подзаголовок — турнир, если ниже есть что-то ещё.
   String get subtitle => lines.length > 1 ? lines.first : '';

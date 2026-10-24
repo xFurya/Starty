@@ -7,8 +7,14 @@ import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
+import android.graphics.Typeface
 import android.net.Uri
 import android.os.Build
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import org.json.JSONArray
@@ -19,6 +25,8 @@ import org.json.JSONObject
  * title — заголовок; body — одна строка свёрнутого вида; lines — строки развёрнутого (InboxStyle),
  * пусто — развёрнутый повторяет body. group — турнир: его уведомления в одной стопке под groupTitle.
  * reminder — выход спортсмена (напоминание), иначе начало старта (событие).
+ * liveAt — начало старта (0 — нет): с него заголовок — liveTitle, где часть liveMark («● ИДЁТ») —
+ * цветом liveColor (liveColorDark в тёмной теме), как метка на карточке старта в приложении.
  */
 class Entry(
     val key: String,
@@ -31,11 +39,21 @@ class Entry(
     val group: String = "",
     val groupTitle: String = "",
     val reminder: Boolean = false,
+    val liveAt: Long = 0,
+    val liveTitle: String = "",
+    val liveMark: String = "",
+    val liveColor: Int = 0,
+    val liveColorDark: Int = 0,
 ) {
     val id: Int get() = key.hashCode() and 0x7fffffff
 
-    /** Тот же текст — обновлять висящее незачем. */
-    fun sameText(o: Entry) = title == o.title && body == o.body && lines == o.lines
+    /** Старт уже идёт — в заголовке статус вместо времени начала. */
+    fun isLive(now: Long) = liveTitle.isNotEmpty() && liveAt in 1..now
+
+    fun titleAt(now: Long) = if (isLive(now)) liveTitle else title
+
+    /** Тот же текст на момент now — обновлять висящее незачем. */
+    fun sameText(o: Entry, now: Long) = titleAt(now) == o.titleAt(now) && body == o.body && lines == o.lines
 }
 
 /**
@@ -50,6 +68,7 @@ class Entry(
  *    (без звука) — иначе любое свежее сообщение вытесняет его значок, и видно его только
  *    на экране блокировки, где значков без ограничения;
  *  • вид: свёрнутый — заголовок и одна строка, развёрнутый — построчно (InboxStyle);
+ *  • в начало старта висящее уведомление о нём тихо меняет время в заголовке на статус «● ИДЁТ»;
  *  • уведомления одного турнира складываются в стопку: при двух и больше висящих — сводное;
  *  • полоса «Live Notifications» в шторке One UI — для музыки и живых карточек, обычному
  *    уведомлению туда хода нет (и не просимся): его место — первое среди обычных.
@@ -62,6 +81,7 @@ object Alerts {
     private const val DELETED = "ru.furya.starty.alerts.DELETED"
     private const val RELEASE = "ru.furya.starty.alerts.RELEASE"
     private const val TICK = "ru.furya.starty.alerts.TICK"
+    private const val LIVE = "ru.furya.starty.alerts.LIVE"
     private const val TICK_EVERY = 5 * 60_000L
     private const val GRACE = 3_000L // удаление по таймеру приходит чуть раньше конца
 
@@ -82,6 +102,7 @@ object Alerts {
                 val e = Entry(
                     o.getString("key"), o.getLong("at"), o.optLong("hold", end), end, o.optString("title"), o.optString("body"),
                     lines, o.optString("group"), o.optString("groupTitle"), o.optBoolean("reminder"),
+                    o.optLong("liveAt"), o.optString("liveTitle"), o.optString("liveMark"), o.optInt("liveColor"), o.optInt("liveColorDark"),
                 )
                 out[e.key] = e
             }
@@ -95,6 +116,8 @@ object Alerts {
             a.put(
                 JSONObject().put("key", e.key).put("at", e.at).put("hold", e.hold).put("end", e.end).put("title", e.title).put("body", e.body)
                     .put("lines", JSONArray(e.lines)).put("group", e.group).put("groupTitle", e.groupTitle).put("reminder", e.reminder)
+                    .put("liveAt", e.liveAt).put("liveTitle", e.liveTitle).put("liveMark", e.liveMark)
+                    .put("liveColor", e.liveColor).put("liveColorDark", e.liveColorDark)
             )
         }
         prefs(c).edit().putString("plan", a.toString()).apply()
@@ -158,9 +181,16 @@ object Alerts {
         if (e.hold in (System.currentTimeMillis() + 1) until e.end) alarm(c, e.hold, intent(c, RELEASE, e.id))
     }
 
+    /** Старт начнётся, пока уведомление висит, — в его начало сменить время на статус. */
+    private fun setLive(c: Context, e: Entry) {
+        val pi = intent(c, LIVE, e.id)
+        if (e.liveTitle.isNotEmpty() && e.liveAt in (System.currentTimeMillis() + 1) until e.end) alarm(c, e.liveAt, pi) else cancel(c, pi)
+    }
+
     private fun cancelAlarm(c: Context, e: Entry) {
         cancel(c, intent(c, FIRE, e.id))
         cancel(c, intent(c, RELEASE, e.id))
+        cancel(c, intent(c, LIVE, e.id))
     }
 
     /** Освежать закреплённые, пока такие висят; одно напоминание на все. */
@@ -190,6 +220,26 @@ object Alerts {
 
     private fun groupKey(e: Entry) = if (e.group.isEmpty()) "starty.${e.id}" else "starty.t.${e.group}"
 
+    private fun night(c: Context) =
+        (c.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
+
+    /**
+     * Заголовок на момент now. У идущего старта статус («● ИДЁТ») — красным и жирным, как метка
+     * на карточке старта. Цвет система может подогнать под контраст фона или снять (старые версии
+     * в тёмной теме) — тогда остаются точка и жирное слово.
+     */
+    private fun shownTitle(c: Context, e: Entry, now: Long): CharSequence {
+        val t = e.titleAt(now)
+        val i = if (e.isLive(now) && e.liveMark.isNotEmpty()) t.lastIndexOf(e.liveMark) else -1
+        if (i < 0) return t
+        val end = i + e.liveMark.length
+        val s = SpannableString(t)
+        val color = if (night(c)) e.liveColorDark else e.liveColor
+        if (color != 0) s.setSpan(ForegroundColorSpan(color), i, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        s.setSpan(StyleSpan(Typeface.BOLD), i, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        return s
+    }
+
     private fun post(c: Context, e: Entry, quiet: Boolean) {
         val now = System.currentTimeMillis()
         if (e.end <= now) return
@@ -214,7 +264,7 @@ object Alerts {
         }
         val b = NotificationCompat.Builder(c, CHANNEL)
             .setSmallIcon(icon(c))
-            .setContentTitle(e.title)
+            .setContentTitle(shownTitle(c, e, now))
             .setContentText(e.body)
             .setStyle(style)
             .setCategory(if (e.reminder) NotificationCompat.CATEGORY_REMINDER else NotificationCompat.CATEGORY_EVENT)
@@ -222,7 +272,7 @@ object Alerts {
             .setOngoing(pinned)
             .setAutoCancel(false)
             .setOnlyAlertOnce(true)
-            // время уже в заголовке; своё время уведомления — момент показа, он и ставит его
+            // время уже в заголовке (у идущего старта — статус); своё время уведомления — момент показа, он и ставит его
             // среди свежих (см. выше про строку состояния)
             .setShowWhen(false)
             .setTimeoutAfter(e.end - now)
@@ -268,11 +318,11 @@ object Alerts {
         }
         val title = members.first().groupTitle
         val inbox = NotificationCompat.InboxStyle().setBigContentTitle(title)
-        for (m in members.take(MAX_LINES)) inbox.addLine(m.title)
+        for (m in members.take(MAX_LINES)) inbox.addLine(shownTitle(c, m, now))
         val b = NotificationCompat.Builder(c, CHANNEL)
             .setSmallIcon(icon(c))
             .setContentTitle(title)
-            .setContentText(members.first().title)
+            .setContentText(shownTitle(c, members.first(), now))
             .setStyle(inbox)
             .setCategory(NotificationCompat.CATEGORY_EVENT)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -320,13 +370,15 @@ object Alerts {
             if (e.at > now) {
                 setAlarm(c, e)
                 setRelease(c, e)
+                setLive(c, e)
             } else if (e.key in oldFired) {
-                if (p == null || !p.sameText(e) || (p.hold > now) != (e.hold > now)) {
+                if (p == null || !p.sameText(e, now) || (p.hold > now) != (e.hold > now)) {
                     // текст поменялся или спортсмен уже откатал, пока уведомление висит — обновить тихо
                     if (active(c, e)) post(c, e, quiet = true)
                 }
                 cancel(c, intent(c, RELEASE, e.id))
                 setRelease(c, e)
+                setLive(c, e)
             }
         }
         for (g in touched) regroup(c, g, gone = gone)
@@ -377,6 +429,13 @@ object Alerts {
         scheduleTick(c)
     }
 
+    /** Старт начался — в висящем уведомлении о нём статус вместо времени начала, тихо. Смахнутое не возвращаем. */
+    @Synchronized
+    fun live(c: Context, id: Int) {
+        val e = load(c).values.firstOrNull { it.id == id } ?: return
+        if (e.key in fired(c) && active(c, e)) post(c, e, quiet = true)
+    }
+
     /** Освежить закреплённые висящие — держать их значок в строке состояния. */
     @Synchronized
     fun tick(c: Context) {
@@ -411,6 +470,7 @@ object Alerts {
                 post(c, e, quiet = true)
                 setRelease(c, e)
             }
+            setLive(c, e)
         }
         save(c, keep)
         saveFired(c, f.filter { it in keep }.toSet())
@@ -426,6 +486,7 @@ class AlertReceiver : BroadcastReceiver() {
             "ru.furya.starty.alerts.DELETED" -> Alerts.deleted(context, id)
             "ru.furya.starty.alerts.RELEASE" -> Alerts.release(context, id)
             "ru.furya.starty.alerts.TICK" -> Alerts.tick(context)
+            "ru.furya.starty.alerts.LIVE" -> Alerts.live(context, id)
         }
     }
 }

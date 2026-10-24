@@ -14,6 +14,11 @@ class AlertEntry {
   final String group, groupTitle;
   /// Выход спортсмена — напоминание (CATEGORY_REMINDER), начало старта — событие (CATEGORY_EVENT).
   final bool reminder;
+  /// С [liveAt] (начало старта) заголовок — [liveTitle]: висящее обновляется само, тихо.
+  /// Часть [liveMark] в нём — цветом [liveColor] ([liveColorDark] в тёмной теме, ARGB).
+  final DateTime? liveAt;
+  final String liveTitle, liveMark;
+  final int liveColor, liveColorDark;
   const AlertEntry({
     required this.key,
     required this.at,
@@ -25,6 +30,11 @@ class AlertEntry {
     this.group = '',
     this.groupTitle = '',
     this.reminder = false,
+    this.liveAt,
+    this.liveTitle = '',
+    this.liveMark = '',
+    this.liveColor = 0,
+    this.liveColorDark = 0,
   });
 
   Map<String, Object> toMap() => {
@@ -38,6 +48,11 @@ class AlertEntry {
     'group': group,
     'groupTitle': groupTitle,
     'reminder': reminder,
+    'liveAt': liveAt?.millisecondsSinceEpoch ?? 0,
+    'liveTitle': liveTitle,
+    'liveMark': liveMark,
+    'liveColor': liveColor,
+    'liveColorDark': liveColorDark,
   };
 }
 
