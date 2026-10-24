@@ -103,6 +103,20 @@ void main() {
     expect(loose.end, womenFs.t1);
   });
 
+  test('без дубликатов: у кого своё уведомление о выходе, того нет в уведомлении о старте', () {
+    final r = const NotifyRules().copyWith(skaters: true);
+    final p = Reminders.plan(data, plan(r), now);
+    final start = p.firstWhere((x) => x.key == 's:${womenFs.id}');
+    expect(start.lines.any((l) => l.contains('Трусова')), isFalse);
+    expect(start.collapsed.contains('Трусова'), isFalse);
+    expect(p.where((x) => x.title.contains('Трусова') || x.lines.any((l) => l.contains('Трусова'))).length, 1);
+    // ни одно уведомление не повторяет другое
+    final seen = <String>{};
+    for (final x in p) {
+      expect(seen.add('${x.title}|${x.lines.join('/')}'), isTrue, reason: x.title);
+    }
+  });
+
   group('тексты уведомлений', () {
     Start start({String title = 'CS Budapest Trophy — танцы РТ', String level = 'senior', List<Map<String, Object>> ours = const []}) =>
         Start.fromJson({

@@ -313,10 +313,12 @@ class Reminders {
   ///  заголовок — «Танцы, ритм-танец в 17:45»;
   ///  строки — турнир, затем по строке на отслеживаемого: «19:04 — Кузьмина / Студеникин»;
   ///  свёрнутый вид Android — «Кузьмина / Студеникин в 19:04 и ещё 1» (никого — турнир).
-  static ({String title, List<String> lines, String collapsed}) startText(Start s) {
+  /// [own] — спортсмены со своим уведомлением о выходе: здесь их не повторяем, чтобы одно и то же
+  /// не приходило дважды.
+  static ({String title, List<String> lines, String collapsed}) startText(Start s, {Set<String> own = const {}}) {
     final (disc, seg) = discipline(s);
     final what = seg.isEmpty ? cap(disc) : '${cap(disc)}, $seg';
-    final ours = s.ours;
+    final ours = [for (final o in s.ours) if (!own.contains(o.name)) o];
     String one(Skater o) => o.time == null ? _name(o) : '${_name(o)} в ${o.time}';
     final collapsed = ours.isEmpty
         ? s.tournament
@@ -351,7 +353,9 @@ class Reminders {
     for (final s in data.starts) {
       if (!p.wants(s) || !s.t1.isAfter(now)) continue;
       final at = s.t0.subtract(lead);
-      final t = startText(s);
+      // у кого время выхода известно, тот приходит отдельным уведомлением — в уведомлении о старте его нет
+      final own = p.rules.skaters ? {for (final o in s.ours) if (s.skateAt(o) != null) o.name} : const <String>{};
+      final t = startText(s, own: own);
       out.add(Planned(
         key: 's:${s.id}',
         at: at,
