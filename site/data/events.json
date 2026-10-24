@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T18:36:54+03:00",
- "checked": "2026-10-24T15:53:57.667879+00:00",
+ "checked": "2026-10-24T15:57:57.639515+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35169,7 +35169,7 @@
      "nation": "CRO",
      "no": 1,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "time": "17:21"
     },
     {
@@ -35185,7 +35185,7 @@
      "nation": "ITA",
      "no": 3,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "time": "17:33"
     },
     {
@@ -35201,7 +35201,7 @@
      "nation": "POL",
      "no": 7,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "time": "18:04"
     },
     {
@@ -35209,7 +35209,7 @@
      "nation": "ISR",
      "no": 8,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "time": "18:10"
     },
     {
@@ -35233,7 +35233,8 @@
      "nation": "ESP",
      "time": "19:01",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "place": 6
     },
     {
      "name": "Barbora Tykalova",
@@ -35256,7 +35257,7 @@
      "time": "18:55",
      "no": 12,
      "warmup": 3,
-     "place": 6
+     "place": 7
     }
    ],
    "provisional": true,
