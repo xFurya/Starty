@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T15:38:06+03:00",
- "checked": "2026-10-24T13:21:58.103971+00:00",
+ "checked": "2026-10-24T13:25:57.562635+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -34517,18 +34517,18 @@
     },
     {
      "place": 2,
-     "name": "Вероника Яметова",
-     "nation": "МОБ",
-     "points": "67.25"
+     "name": "Милана Лебедева",
+     "nation": "МОС",
+     "points": "67.32"
     },
     {
      "place": 3,
-     "name": "Злата Буря",
-     "nation": "МОС",
-     "points": "66.26"
+     "name": "Вероника Яметова",
+     "nation": "МОБ",
+     "points": "67.25"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Арина Кудлай — 67.56\n2. Вероника Яметова — 67.25\n3. Злата Буря — 66.26\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Арина Кудлай — 67.56\n2. Милана Лебедева — 67.32\n3. Вероника Яметова — 67.25\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Арина Кудлай",
@@ -34543,7 +34543,7 @@
      "nation": "ВОЛ",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "time": "15:55"
     },
     {
@@ -34559,7 +34559,7 @@
      "time": "15:33",
      "no": 3,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Диана Евлахина",
@@ -34567,7 +34567,7 @@
      "time": "16:03",
      "no": 7,
      "warmup": 2,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Дина Хуснутдинова",
@@ -34582,7 +34582,7 @@
      "time": "15:50",
      "no": 6,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Ксения Синицына",
@@ -34597,7 +34597,7 @@
      "time": "15:39",
      "no": 4,
      "warmup": 1,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Мария Захарова",
@@ -34612,14 +34612,15 @@
      "time": "15:44",
      "no": 5,
      "warmup": 1,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Милана Лебедева",
      "nation": "МОС",
      "time": "16:08",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2
     }
    ],
    "provisional": true,
@@ -34684,29 +34685,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Sofia Val / Asaf Kazimov",
+     "nation": "ESP",
+     "points": "101.21"
+    },
+    {
+     "place": 2,
      "name": "Leah Neset / Artem Markelov",
      "nation": "USA",
      "points": "100.12"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
      "nation": "SWE",
      "points": "92.94"
-    },
-    {
-     "place": 3,
-     "name": "Holly Harris / Jason Chan",
-     "nation": "AUS",
-     "points": "91.34"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Leah Neset / Artem Markelov — 100.12\n2. Milla Ruud Reitan / Nikolaj Majorov — 92.94\n3. Holly Harris / Jason Chan — 91.34\n\nНачало: 15:20 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Sofia Val / Asaf Kazimov — 101.21\n2. Leah Neset / Artem Markelov — 100.12\n3. Milla Ruud Reitan / Nikolaj Majorov — 92.94\n\nНачало: 15:20 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
      "nation": "FRA",
-     "place": 4,
+     "place": 5,
      "time": "15:34",
      "no": 2,
      "warmup": 1
@@ -34738,7 +34739,7 @@
     {
      "name": "Holly Harris / Jason Chan",
      "nation": "AUS",
-     "place": 3,
+     "place": 4,
      "time": "15:50",
      "no": 4,
      "warmup": 1
@@ -34754,7 +34755,7 @@
     {
      "name": "Leah Neset / Artem Markelov",
      "nation": "USA",
-     "place": 1,
+     "place": 2,
      "time": "15:58",
      "no": 5,
      "warmup": 1
@@ -34762,7 +34763,7 @@
     {
      "name": "Louise Bordet / Martin Chardain",
      "nation": "FRA",
-     "place": 5,
+     "place": 6,
      "time": "15:26",
      "no": 1,
      "warmup": 1
@@ -34770,7 +34771,7 @@
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
      "nation": "SWE",
-     "place": 2,
+     "place": 3,
      "time": "15:42",
      "no": 3,
      "warmup": 1
@@ -34778,7 +34779,7 @@
     {
      "name": "Sofia Val / Asaf Kazimov",
      "nation": "ESP",
-     "place": 6,
+     "place": 1,
      "time": "16:12",
      "no": 6,
      "warmup": 2
