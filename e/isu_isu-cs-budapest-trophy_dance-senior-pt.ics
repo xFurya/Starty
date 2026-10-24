@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-budapest-trophy:dance-senior-pt@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20261018T090000
+DTEND;TZID=Europe/Moscow:20261018T124500
+SUMMARY:CS Budapest Trophy — танцы ПТ
+DESCRIPTION:Итог:\n1. Natalie Taschlerova / Filip Taschler — 109.41\n
+ 2. Yuka Orihara / Juho Pirinen — 108.63\n3. Noemi Maria Tali / Noah Lafo
+ rnara — 106.08\n\nИтог турнира:\n1. Natalie Taschlerova / Fil
+ ip Taschler — 185.66\n2. Olivia Smart / Tim Dieck — 185.09\n3. Yuka Or
+ ihara / Juho Pirinen — 182.73\n\nРоссияне:\n• Милана К
+ узьмина / Дмитрий Студеникин — 10:34\n• Вас
+ илиса Григорьева / Евгений Артющенко — 10
+ :41\n\nНачало: 09:00 МСК\nТрансляция: HunSkate TV
+LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:dance-sen
+ ior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Budapest Trophy — танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

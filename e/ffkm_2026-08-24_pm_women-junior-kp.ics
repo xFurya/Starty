@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:ffkm:2026-08-24_pm:women-junior-kp@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20260826T143000
+DTEND;TZID=Europe/Moscow:20260826T212500
+SUMMARY:Первенство Москвы — девушки КП
+DESCRIPTION:Итог:\n1. Диана Мильто — 68.21\n2. Софья 
+ Смагина — 68.03\n3. Дарья Лебедева — 67.42\n\nРо
+ ссияне:\n• Софья Смагина — 38-й (разминка 7
+ )\n\nНачало: 14:30 МСК
+LOCATION:ЛД «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=ffkm:2026-08-24_pm:women-junior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Первенство Москвы — девушки КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

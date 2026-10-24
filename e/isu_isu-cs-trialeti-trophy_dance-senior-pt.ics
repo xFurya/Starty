@@ -1,0 +1,45 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-trialeti-trophy:dance-senior-pt@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20261002T151500
+DTEND;TZID=Europe/Moscow:20261002T181000
+SUMMARY:CS Trialeti Trophy — танцы ПТ
+DESCRIPTION:Итог:\n1. Diana Davis / Gleb Smolkin — 123.44\n2. Ели
+ завета Пасечник / Дарио Чиризано — 106.02\n3.
+  Nadiia Bashynska / Noé Perron — 98.27\n\nИтог турнира:\n1. 
+ Diana Davis / Gleb Smolkin — 208.67\n2. Елизавета Пасечн
+ ик / Дарио Чиризано — 178.53\n3. Mariia Ignateva / Daniji
+ l Leonyidovics Szemko — 165.72\n\nПримечательное:\n• Dia
+ na Davis / Gleb Smolkin — Отрыв от второго места — 
+ 30.14 балла\n\nРоссияне:\n• Екатерина Рыбако
+ ва / Иван Махноносов — 2-й\n• Виктория Пла
+ сконная / Владислав Сыцик — 3-й\n• Елизав
+ ета Шичина / Павел Дрозд — 13-й\n• Екатери
+ на Андреева / Дмитрий Блинов — 15-й\n• Ели
+ завета Пасечник / Дарио Чиризано — 17-й\n\n
+ Начало: 15:15 МСК\nТрансляция: Okko
+LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-trialeti-trophy:dance-sen
+ ior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Trialeti Trophy — танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

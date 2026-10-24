@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:dance-j
+ unior-rt@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20261028T133000
+DTEND;TZID=Europe/Moscow:20261028T153000
+SUMMARY:ЮГП России «Красноярье» — танцы РТ
+DESCRIPTION:Начало: 13:30 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
+ noyar-e-sredi-yuniorov-2026:dance-junior-rt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Красноярье» — танцы Р
+ Т
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

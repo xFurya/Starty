@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:wome
+ n-junior-kp@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20261013T163000
+DTEND;TZID=Europe/Moscow:20261013T190500
+SUMMARY:ЮГП России «Рапсодия льда» — девушк
+ и КП
+DESCRIPTION:Итог:\n1. Алёна Принёва — 74.47\n2. Алис
+ а Заикина — 69.49\n3. Полина Мартыненко — 68.5
+ 1\n\nПримечательное:\n• Алиса Заикина — Тр
+ ойной аксель\n\nРоссияне:\n• Алиса Заикин
+ а — 17:30\n\nНачало: 16:30 МСК\nТрансляция: Перв
+ ый канал / YouTube
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-raps
+ odiya-l-da-sredi-yuniorov-2026:women-junior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Рапсодия льда» — деву
+ шки КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

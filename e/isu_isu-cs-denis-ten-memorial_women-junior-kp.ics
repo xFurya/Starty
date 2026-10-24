@@ -1,0 +1,45 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:women-junior-kp@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20261008T105500
+DTEND;TZID=Europe/Moscow:20261008T145000
+SUMMARY:CS Denis Ten Memorial — девушки КП
+DESCRIPTION:Итог:\n1. Виктория Стрельцова — 78.38\n
+ 2. Алёна Принёва — 73.82\n3. Hyewon Joo — 69.65\n\nПри
+ мечательное:\n• Виктория Стрельцова — Т
+ ройной аксель\n• Виктория Стрельцова — 
+ Лучшая среди юниоров оценка сезона за КП
+ : 78.38\n• Hyewon Joo — Личный рекорд за КП: 69.65 (б
+ ыл 59.99)\n• Алиса Заикина — Тройной аксель
+ \n• Варвара Стахович — Личный рекорд за 
+ КП: 69.18 (был 61.01)\n\nРоссияне:\n• Алёна Принё
+ ва — 1-й\n• Варвара Стахович — 16-й\n• Викт
+ ория Стрельцова — 18-й\n• Алиса Заикина —
+  20-й\n• Ярослава Князева — 23-й\n• Мария Ев
+ тухина — 25-й\n\nНачало: 10:55 МСК\nТрансляция
+ : VK Видео
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:women-
+ junior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Denis Ten Memorial — девушки КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

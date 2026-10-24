@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:wom
+ en-senior-pp@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20261018T130000
+DTEND;TZID=Europe/Moscow:20261018T144500
+SUMMARY:Гран-при России «Рапсодия льда» — же
+ нщины ПП
+DESCRIPTION:Итог:\n1. Камилла Нелюбова — 146.86\n2. К
+ сения Синицына — 136.95\n3. Анна Фролова — 133
+ .62\n\nИтог турнира:\n1. Камилла Нелюбова — 21
+ 7.75\n2. Анна Фролова — 208.32\n3. Ксения Синицы
+ на — 199.83\n\nПримечательное:\n• Камилла Не
+ любова — Тройной аксель\n• Ксения Синиц
+ ына — После короткой программы — 6-е мес
+ то\, в итоге — 3-е место\n\nНачало: 13:00 МСК\nТ
+ рансляция: Первый канал / YouTube
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-rapsodiya-l-da-2026:women-senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Гран-при России «Рапсодия льда» — 
+ женщины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

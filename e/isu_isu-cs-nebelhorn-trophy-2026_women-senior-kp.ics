@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-nebelhorn-trophy-2026:women-senior-kp@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20260924T210000
+DTEND;TZID=Europe/Moscow:20260924T221000
+SUMMARY:CS Nebelhorn Trophy — женщины КП
+DESCRIPTION:Итог:\n1. Mia Risa Gomez — 58.45\n2. Logan Higase-chen 
+ — 57.34\n3. Nikola Fomchenkova — 56.92\n\nНачало: 21:00 МСК
+LOCATION:Oberstdorf\, Germany
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-nebelhorn-trophy-2026:wom
+ en-senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Nebelhorn Trophy — женщины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

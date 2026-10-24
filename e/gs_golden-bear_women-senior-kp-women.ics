@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:golden-bear:women-senior-kp-women@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20261024T171500
+DTEND;TZID=Europe/Moscow:20261024T184500
+SUMMARY:Golden Bear — женщины КП
+DESCRIPTION:Итог:\n1. Ginevra Lavinia Negrello — 55.44\n2. Katerina H
+ anusova — 55.13\n3. Barbora Tykalova — 53.45\n\nПримечатель
+ ное:\n• Katerina Hanusova — Личный рекорд за КП: 55
+ .13 (был 50.61)\n\nНачало: 17:15 МСК
+LOCATION:Zagreb\, Croatia
+URL:https://xfurya.github.io/Starty/#e=gs:golden-bear:women-senior-kp-women
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Golden Bear — женщины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

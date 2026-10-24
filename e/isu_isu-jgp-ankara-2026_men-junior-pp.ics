@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-jgp-ankara-2026:men-junior-pp@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20260919T100000
+DTEND;TZID=Europe/Moscow:20260919T151000
+SUMMARY:JGP Ankara — юноши ПП
+DESCRIPTION:Итог:\n1. Daiya Ebihara — 144.20\n2. Yehor Kurtsev — 13
+ 0.95\n3. Kirk Haugeto — 127.87\n\nИтог турнира:\n1. Daiya Ebi
+ hara — 216.66\n2. Yehor Kurtsev — 201.95\n3. Habin Choi — 194.89\n\n
+ Примечательное:\n• Habin Choi — 3 четверных в 
+ программе: 4Lz\, 4Lz\, 4T\n\nНачало: 10:00 МСК\nТран
+ сляция: Okko
+LOCATION:Ankara\, Türkiye
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-ankara-2026:men-junior-p
+ p
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JGP Ankara — юноши ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

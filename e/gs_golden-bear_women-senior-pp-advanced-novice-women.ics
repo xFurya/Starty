@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:golden-bear:women-senior-pp-advanced-novice-women@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20261023T135500
+DTEND;TZID=Europe/Moscow:20261023T161500
+SUMMARY:Golden Bear — женщины ПП
+DESCRIPTION:Итог:\n1. Adriana Shevtsova — 64.08\n2. Alexa Riddoch —
+  64.07\n3. Valentina Beer — 63.34\n\nИтог турнира:\n1. Valent
+ ina Beer — 104.59\n2. Adriana Shevtsova — 104.29\n3. Olivia Zoe Szili 
+ — 99.09\n\nНачало: 13:55 МСК
+LOCATION:Zagreb\, Croatia
+URL:https://xfurya.github.io/Starty/#e=gs:golden-bear:women-senior-pp-advan
+ ced-novice-women
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Golden Bear — женщины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

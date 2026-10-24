@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-nebelhorn-trophy-2026:pairs-senior-kp@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20260924T183000
+DTEND;TZID=Europe/Moscow:20260924T200000
+SUMMARY:CS Nebelhorn Trophy — пары КП
+DESCRIPTION:Итог:\n1. Lia Pereira / Trennt Michaud — 74.70\n2. Audrey
+  Shin / Spencer Akira Howe — 66.46\n3. Jiaxuan Zhang / Yihang Huang — 
+ 64.35\n\nНачало: 18:30 МСК
+LOCATION:Oberstdorf\, Germany
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-nebelhorn-trophy-2026:pai
+ rs-senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Nebelhorn Trophy — пары КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

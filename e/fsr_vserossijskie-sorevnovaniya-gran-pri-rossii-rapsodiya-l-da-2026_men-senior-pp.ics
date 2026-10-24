@@ -1,0 +1,44 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men
+ -senior-pp@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20261018T150500
+DTEND;TZID=Europe/Moscow:20261018T164000
+SUMMARY:Гран-при России «Рапсодия льда» — му
+ жчины ПП
+DESCRIPTION:Итог:\n1. Евгений Семененко — 195.93\n2. 
+ Артём Ковалёв — 166.32\n3. Роман Савосин — 155
+ .51\n\nИтог турнира:\n1. Евгений Семененко — 
+ 296.13\n2. Андрей Мозалёв — 252.16\n3. Артём Кова
+ лёв — 247.88\n\nПримечательное:\n• Артём Ков
+ алёв — После короткой программы — 6-е ме
+ сто\, в итоге — 3-е место\n• Евгений Семен
+ енко — Отрыв от второго места — 43.97 балл
+ а\n\nНачало: 15:05 МСК\nТрансляция: Первый ка
+ нал / YouTube
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-rapsodiya-l-da-2026:men-senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Гран-при России «Рапсодия льда» — 
+ мужчины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

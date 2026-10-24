@@ -1,0 +1,33 @@
+{
+ "version": "1.0.45",
+ "code": 46,
+ "notes": "Во время старта в уведомлении вместо времени — статус «ИДЁТ».",
+ "at": "2026-10-24T17:05:39Z",
+ "android": {
+  "file": "starty-1.0.45.apk",
+  "size": 23320295,
+  "sha256": "1c2db1a6cfd74dce7fe0446c2600a6477d202943009533f9f999f49f5dd31ca3"
+ },
+ "windows": {
+  "code": 46,
+  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.45/Starty-windows.zip",
+  "size": 14528381,
+  "sha256": "1fe336b8d19be2a5a41b922eacf986edca955205527a80d94b57ed8c765d565a",
+  "setup": {
+   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.45/starty-setup-1.0.45.exe",
+   "size": 12481711,
+   "sha256": "f1fed44246721c94b8a8f3a244d7a5b779f6c88b25891099690ad979325d2162"
+  }
+ },
+ "macos": {
+  "code": 46,
+  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.45/Starty-macos.zip",
+  "size": 22091204,
+  "sha256": "93e981d9d182c0f7e5b509711d7f3e7bd3eeb0f185d9315ff4c2e4ba553dd72b",
+  "dmg": {
+   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.45/Starty-macos.dmg",
+   "size": 25205193,
+   "sha256": "f5cb61809fbae28876f2093ada2ca78a336dbbc32176a1609c071a8300945536"
+  }
+ }
+}

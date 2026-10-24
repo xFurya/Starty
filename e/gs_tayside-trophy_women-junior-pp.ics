@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:tayside-trophy:women-junior-pp@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20261011T110500
+DTEND;TZID=Europe/Moscow:20261011T143500
+SUMMARY:Tayside Trophy — девушки ПП
+DESCRIPTION:Итог:\n1. Mia Smith — 113.13\n2. Noemi Joos — 105.10\n3
+ . Kaya Tiernan — 102.98\n\nИтог турнира:\n1. Mia Smith — 17
+ 4.51\n2. Kaya Tiernan — 162.27\n3. Noemi Joos — 155.97\n\nПримеч
+ ательное:\n• Noemi Joos — Личный рекорд за ПП:
+  105.10 (был 98.69)\n• Noemi Joos — Личный рекорд по 
+ сумме: 155.97 (был 149.57)\n• Noemi Joos — После коро
+ ткой программы — 8-е место\, в итоге — 3-е 
+ место\n\nНачало: 11:05 МСК
+LOCATION:Dundee\, Great Britain
+URL:https://xfurya.github.io/Starty/#e=gs:tayside-trophy:women-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tayside Trophy — девушки ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

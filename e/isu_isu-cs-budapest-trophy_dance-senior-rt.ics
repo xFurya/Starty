@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-budapest-trophy:dance-senior-rt@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20261016T174500
+DTEND;TZID=Europe/Moscow:20261016T211000
+SUMMARY:CS Budapest Trophy — танцы РТ
+DESCRIPTION:Итог:\n1. Olivia Smart / Tim Dieck — 79.42\n2. Natalie Ta
+ schlerova / Filip Taschler — 76.25\n3. Loicia Demougeot / Theo le Mercie
+ r — 76.00\n\nРоссияне:\n• Милана Кузьмина / Дм
+ итрий Студеникин — 19:04\n• Василиса Григо
+ рьева / Евгений Артющенко — 20:48\n\nНачало: 
+ 17:45 МСК\nТрансляция: HunSkate TV
+LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:dance-sen
+ ior-rt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Budapest Trophy — танцы РТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

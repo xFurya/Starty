@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:tayside-trophy:men-senior-kp@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20261010T202300
+DTEND;TZID=Europe/Moscow:20261010T214300
+SUMMARY:Tayside Trophy — мужчины КП
+DESCRIPTION:Итог:\n1. Mark Gorodnitsky — 81.54\n2. Donovan Carrillo 
+ — 73.51\n3. Tao Macrae — 69.30\n\nПримечательное:\n• T
+ ao Macrae — Личный рекорд за КП: 69.30 (был 68.76)\n\
+ nНачало: 20:23 МСК
+LOCATION:Dundee\, Great Britain
+URL:https://xfurya.github.io/Starty/#e=gs:tayside-trophy:men-senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tayside Trophy — мужчины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

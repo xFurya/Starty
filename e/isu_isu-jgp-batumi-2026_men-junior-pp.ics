@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-jgp-batumi-2026:men-junior-pp@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20260925T174000
+DTEND;TZID=Europe/Moscow:20260925T220000
+SUMMARY:JGP Batumi — юноши ПП
+DESCRIPTION:Итог:\n1. Hayato Okazaki — 150.09\n2. Ean Weiler — 140.
+ 55\n3. Daniil Valanov — 133.43\n\nИтог турнира:\n1. Ean Weile
+ r — 221.72\n2. Hayato Okazaki — 217.27\n3. Sena Takahashi — 214.87\n
+ \nПримечательное:\n• Hayato Okazaki — После кор
+ откой программы — 7-е место\, в итоге — 2-е
+  место\n\nНачало: 17:40 МСК\nТрансляция: Okko
+LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-batumi-2026:men-junior-p
+ p
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JGP Batumi — юноши ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

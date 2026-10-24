@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-jgp-gdansk-2026:dance-junior-pt@starty
+DTSTAMP:20261024T171920Z
+DTSTART;TZID=Europe/Moscow:20261010T131500
+DTEND;TZID=Europe/Moscow:20261010T162500
+SUMMARY:JGP Gdansk — танцы ПТ
+DESCRIPTION:Итог:\n1. Melissa Cachova / Ivan Morozov — 92.08\n2. Chai
+ ma Ben Khelifa / Julien Levesque — 92.01\n3. Arianna Soldati / Nicholas 
+ Tagliabue — 91.86\n\nИтог турнира:\n1. Arianna Soldati / Nich
+ olas Tagliabue — 154.22\n2. Hana Maria Aboian / Daniil Veselukhin — 15
+ 3.03\n3. Melissa Cachova / Ivan Morozov — 151.10\n\nНачало: 13:15 
+ МСК\nТрансляция: Okko
+LOCATION:Gdansk\, Poland
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-gdansk-2026:dance-junior
+ -pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JGP Gdansk — танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
