@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T18:36:54+03:00",
- "checked": "2026-10-24T16:25:58.282206+00:00",
+ "checked": "2026-10-24T16:30:00.732024+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35465,7 +35465,8 @@
      "nation": "RUS",
      "time": "19:20",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     }
    ],
    "athletes": [
@@ -35485,7 +35486,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Megan Wessenberg / Denys Strekalin — 58.37\n2. Hannah Herrera / Ivan Khobta — 53.73\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 19:20\n\nНачало: 19:00 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Александра Бойкова / Дмитрий Козловский — 75.85\n2. Megan Wessenberg / Denys Strekalin — 58.37\n3. Hannah Herrera / Ivan Khobta — 53.73\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 19:20\n\nНачало: 19:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Megan Wessenberg / Denys Strekalin",
@@ -35493,7 +35494,7 @@
      "time": "19:07",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Hannah Herrera / Ivan Khobta",
@@ -35501,14 +35502,15 @@
      "time": "19:13",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
      "nation": "RUS",
      "time": "19:20",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Aurelie Faula / Theo Belle",
@@ -35567,12 +35569,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Александра Бойкова / Дмитрий Козловский",
+     "nation": "RUS",
+     "points": "75.85"
+    },
+    {
+     "place": 2,
      "name": "Megan Wessenberg / Denys Strekalin",
      "nation": "FRA",
      "points": "58.37"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Hannah Herrera / Ivan Khobta",
      "nation": "UKR",
      "points": "53.73"
