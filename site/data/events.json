@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T13:42:30+03:00",
- "checked": "2026-10-24T11:49:58.090333+00:00",
+ "checked": "2026-10-24T11:57:58.125337+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -34099,31 +34099,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Adam Siao Him Fa",
+     "nation": "FRA",
+     "points": "102.46"
+    },
+    {
+     "place": 2,
      "name": "Aleksandr Selevko",
      "nation": "EST",
      "points": "85.49"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Minkyu Seo",
      "nation": "KOR",
      "points": "83.83"
-    },
-    {
-     "place": 3,
-     "name": "Jacob Sanchez",
-     "nation": "USA",
-     "points": "79.63"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Aleksandr Selevko — 85.49\n2. Minkyu Seo — 83.83\n3. Jacob Sanchez — 79.63\n\nНачало: 13:30 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Adam Siao Him Fa — 102.46\n2. Aleksandr Selevko — 85.49\n3. Minkyu Seo — 83.83\n\nНачало: 13:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Samy Hammi",
      "nation": "FRA",
      "no": 1,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "time": "13:37"
     },
     {
@@ -34132,14 +34132,15 @@
      "time": "13:56",
      "no": 4,
      "warmup": 1,
-     "place": 10
+     "place": 11
     },
     {
      "name": "Adam Siao Him Fa",
      "nation": "FRA",
      "time": "14:47",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Aleksandr Selevko",
@@ -34147,7 +34148,7 @@
      "time": "14:41",
      "no": 10,
      "warmup": 2,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Francois Pitot",
@@ -34155,7 +34156,7 @@
      "time": "13:50",
      "no": 3,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Jacob Sanchez",
@@ -34163,7 +34164,7 @@
      "time": "14:08",
      "no": 6,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Jimmy Ma",
@@ -34171,7 +34172,7 @@
      "time": "13:43",
      "no": 2,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Kao Miura",
@@ -34179,7 +34180,7 @@
      "time": "14:34",
      "no": 9,
      "warmup": 2,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Mikhail Shaidorov",
@@ -34194,7 +34195,7 @@
      "time": "14:22",
      "no": 7,
      "warmup": 2,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Nikolaj Memola",
@@ -34202,7 +34203,7 @@
      "time": "14:28",
      "no": 8,
      "warmup": 2,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Sota Yamamoto",
@@ -34210,7 +34211,7 @@
      "time": "14:02",
      "no": 5,
      "warmup": 1,
-     "place": 6
+     "place": 7
     }
    ],
    "provisional": true,
@@ -34306,7 +34307,7 @@
      "nation": "СПБ",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "time": "13:37"
     },
     {
@@ -34314,7 +34315,8 @@
      "nation": "МОС",
      "time": "14:43",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4
     },
     {
      "name": "Артемий Маринин",
@@ -34322,7 +34324,7 @@
      "time": "13:55",
      "no": 4,
      "warmup": 1,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Артур Даниелян",
@@ -34330,7 +34332,7 @@
      "time": "14:12",
      "no": 2,
      "warmup": 1,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Владислав Дикиджи",
@@ -34354,7 +34356,7 @@
      "time": "13:49",
      "no": 3,
      "warmup": 1,
-     "place": 10
+     "place": 11
     },
     {
      "name": "Дмитрий Шелковников",
@@ -34362,7 +34364,7 @@
      "time": "14:00",
      "no": 5,
      "warmup": 1,
-     "place": 9
+     "place": 10
     },
     {
      "name": "Лев Лазарев",
@@ -34370,7 +34372,7 @@
      "time": "14:25",
      "no": 8,
      "warmup": 2,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Макар Игнатов",
@@ -34378,7 +34380,7 @@
      "time": "14:20",
      "no": 7,
      "warmup": 2,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Никита Сарновский",
