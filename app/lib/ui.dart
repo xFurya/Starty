@@ -1483,6 +1483,138 @@ class IceNav extends StatelessWidget {
   }
 }
 
+/// Панель разделов слева — для окна компьютера (вместо нижней [IceNav]).
+class SideNav extends StatelessWidget {
+  final ValueChanged<int> onTap;
+  final bool settingsDot;
+  const SideNav({super.key, required this.onTap, this.settingsDot = false});
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    const items = [
+      (CupertinoIcons.square_list, CupertinoIcons.square_list_fill, 'Лента'),
+      (CupertinoIcons.calendar, CupertinoIcons.calendar_today, 'Месяц'),
+      (CupertinoIcons.gear_alt, CupertinoIcons.gear_alt_fill, 'Настройки'),
+    ];
+    return ValueListenableBuilder<int>(
+      valueListenable: homeTab,
+      builder: (context, index, _) => Material(
+        color: p.nav,
+        child: Container(
+          width: 232,
+          decoration: BoxDecoration(
+            color: p.nav,
+            border: Border(right: BorderSide(color: p.plateLine, width: 1)),
+          ),
+          padding: const EdgeInsets.fromLTRB(14, 26, 14, 18),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(10, 0, 10, 26),
+                child: Row(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(9),
+                      child: Image.asset(
+                        'assets/icon/icon.png',
+                        width: 34,
+                        height: 34,
+                        filterQuality: FilterQuality.medium,
+                      ),
+                    ),
+                    const SizedBox(width: 11),
+                    Expanded(
+                      child: Text(
+                        'Фигурное катание',
+                        maxLines: 2,
+                        style: TextStyle(
+                          fontFamily: serif,
+                          fontSize: 19,
+                          height: 1.05,
+                          fontWeight: FontWeight.w700,
+                          color: p.ink,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              for (var i = 0; i < items.length; i++)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 4),
+                  child: Semantics(
+                    selected: i == index,
+                    button: true,
+                    child: Material(
+                      color: i == index
+                          ? p.accent.withValues(alpha: p.isDark ? .18 : .12)
+                          : Colors.transparent,
+                      borderRadius: BorderRadius.circular(12),
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(12),
+                        onTap: () => onTap(i),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 11,
+                          ),
+                          child: Row(
+                            children: [
+                              Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  Icon(
+                                    i == index ? items[i].$2 : items[i].$1,
+                                    size: 21,
+                                    color: i == index ? p.accent : p.ink3,
+                                  ),
+                                  if (i == tabSettings && settingsDot)
+                                    Positioned(
+                                      right: -3,
+                                      top: -1,
+                                      child: Container(
+                                        width: 9,
+                                        height: 9,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: p.live,
+                                          border: Border.all(
+                                            color: p.nav,
+                                            width: 1.5,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                ],
+                              ),
+                              const SizedBox(width: 13),
+                              Text(
+                                items[i].$3,
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: i == index
+                                      ? FontWeight.w700
+                                      : FontWeight.w500,
+                                  color: i == index ? p.accent : p.ink2,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 // ------------------------------------------------------------------ меню выбора
 
 /// Меню выбора одного из нескольких: плашка в палитре приложения рядом с элементом [context].

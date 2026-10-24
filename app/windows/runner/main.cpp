@@ -38,7 +38,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
 
   FlutterWindow window(project);
   Win32Window::Point origin(80, 40);
-  Win32Window::Size size(900, 900);
+  Win32Window::Size size(1180, 820);
   if (!window.Create(L"\u0424\u0438\u0433\u0443\u0440\u043D\u043E\u0435 \u043A\u0430\u0442\u0430\u043D\u0438\u0435", origin, size)) {
     return EXIT_FAILURE;
   }

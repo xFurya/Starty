@@ -84,7 +84,7 @@ class AppIcons {
       return;
     }
     final now = DateTime.now();
-    final png = await renderIcon(v, now.day, 256);
+    final png = await renderIcon(v, now.day, isMac ? 512 : 256, desktop: true);
     await _sendDesktop(png);
     if (v.dated) {
       final next = DateTime(now.year, now.month, now.day + 1, 0, 0, 2);
@@ -142,10 +142,24 @@ class AppIcons {
   }
 
   /// Значок картинкой PNG [px]×[px] — как его рисует tools/icons/render.js.
-  static Future<Uint8List> renderIcon(IconVariant v, int day, int px) async {
+  /// [desktop] — значок окна и Дока: macOS и Windows углы сами не скругляют, их рисуем здесь
+  /// (как у готовых значков из tools/icons/make.py: macOS — плашка с полями, Windows — на весь квадрат).
+  static Future<Uint8List> renderIcon(IconVariant v, int day, int px, {bool desktop = false}) async {
     final rec = ui.PictureRecorder();
     final c = Canvas(rec);
-    await paint(c, Size.square(px.toDouble()), v, day);
+    final side = px.toDouble();
+    if (desktop) {
+      final inset = isMac ? side * 100 / 1024 : 0.0;
+      final box = side - 2 * inset;
+      c.clipRRect(
+        RRect.fromRectAndRadius(Rect.fromLTWH(inset, inset, box, box), Radius.circular(box * (isMac ? .2237 : .2))),
+        doAntiAlias: true,
+      );
+      c.translate(inset, inset);
+      await paint(c, Size.square(box), v, day);
+    } else {
+      await paint(c, Size.square(side), v, day);
+    }
     final img = await rec.endRecording().toImage(px, px);
     final bytes = await img.toByteData(format: ui.ImageByteFormat.png);
     return bytes!.buffer.asUint8List();

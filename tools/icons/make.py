@@ -17,7 +17,7 @@ import re
 import shutil
 import sys
 
-from PIL import Image
+from PIL import Image, ImageDraw
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 APP = os.path.join(HERE, "..", "..", "app")
@@ -144,6 +144,40 @@ def android(src):
     return len(aliases)
 
 
+def rounded(img, inset=0.0, radius=0.2237):
+    """Квадрат со скруглёнными углами и прозрачными полями. inset — поля с каждой стороны (доля стороны),
+    radius — доля стороны самой плашки. Маска рисуется вчетверо крупнее, чтобы край был гладким."""
+    n = img.width
+    k = 4
+    box = round(n * (1 - 2 * inset))
+    off = (n - box) // 2
+    mask = Image.new("L", (n * k, n * k), 0)
+    ImageDraw.Draw(mask).rounded_rectangle(
+        (off * k, off * k, (off + box) * k - 1, (off + box) * k - 1), radius=box * radius * k, fill=255)
+    mask = mask.resize((n, n), Image.LANCZOS)
+    out = Image.new("RGBA", (n, n), (0, 0, 0, 0))
+    plate = img.convert("RGBA").resize((box, box), Image.LANCZOS)
+    out.paste(plate, (off, off))
+    out.putalpha(Image.composite(out.getchannel("A"), Image.new("L", (n, n), 0), mask))
+    return out
+
+
+MAC_INSET = 100 / 1024  # поля по шаблону macOS: плашка 824 из 1024
+WIN_RADIUS = 0.2
+
+
+def desktop_icons(big):
+    """macOS и Windows сами углы не скругляют (iPhone и Android — да): рисуем в самой картинке."""
+    mac = rounded(big.convert("RGB").resize((1024, 1024), Image.LANCZOS), inset=MAC_INSET)
+    base = os.path.join(APP, "macos", "Runner", "Assets.xcassets", "AppIcon.appiconset")
+    for im in json.load(open(os.path.join(base, "Contents.json")))["images"]:
+        px = round(float(im["size"].split("x")[0]) * int(im["scale"][0]))
+        mac.resize((px, px), Image.LANCZOS).save(os.path.join(base, im["filename"]), optimize=True)
+    win = rounded(big.convert("RGB").resize((256, 256), Image.LANCZOS), radius=WIN_RADIUS)
+    win.save(os.path.join(APP, "windows", "runner", "resources", "app_icon.ico"),
+             sizes=[(16, 16), (24, 24), (32, 32), (48, 48), (64, 64), (128, 128), (256, 256)])
+
+
 def main_icon(src):
     """Основной значок на всех платформах — «classic»."""
     v = next(x for x in cfg["variants"] if x["id"] == "classic")
@@ -154,13 +188,11 @@ def main_icon(src):
     fg = Image.open(os.path.join(src, "skater.png")).convert("RGBA")
     fg.alpha_composite(Image.open(os.path.join(src, f"band_{v['band']}.png")).convert("RGBA"))
     fg.save(os.path.join(icon_dir, "foreground.png"), optimize=True)
-    for base in (os.path.join(IOS_ASSETS, "AppIcon.appiconset"),
-                 os.path.join(APP, "macos", "Runner", "Assets.xcassets", "AppIcon.appiconset")):
-        for im in json.load(open(os.path.join(base, "Contents.json")))["images"]:
-            px = round(float(im["size"].split("x")[0]) * int(im["scale"][0]))
-            big.resize((px, px), Image.LANCZOS).save(os.path.join(base, im["filename"]), optimize=True)
-    big.save(os.path.join(APP, "windows", "runner", "resources", "app_icon.ico"),
-             sizes=[(16, 16), (24, 24), (32, 32), (48, 48), (64, 64), (128, 128), (256, 256)])
+    base = os.path.join(IOS_ASSETS, "AppIcon.appiconset")
+    for im in json.load(open(os.path.join(base, "Contents.json")))["images"]:
+        px = round(float(im["size"].split("x")[0]) * int(im["scale"][0]))
+        big.resize((px, px), Image.LANCZOS).save(os.path.join(base, im["filename"]), optimize=True)
+    desktop_icons(big)
     web = os.path.join(APP, "web")
     big.resize((16, 16), Image.LANCZOS).save(os.path.join(web, "favicon.png"))
     for name, px in (("Icon-192.png", 192), ("Icon-512.png", 512), ("Icon-maskable-192.png", 192), ("Icon-maskable-512.png", 512)):
@@ -203,6 +235,10 @@ def flutter(src):
 
 
 if __name__ == "__main__":
+    if sys.argv[1] == "--desktop":
+        # только значки компьютера из готового assets/icon/icon.png (без слоёв)
+        desktop_icons(Image.open(os.path.join(APP, "assets", "icon", "icon.png")).convert("RGB"))
+        sys.exit(0)
     src = sys.argv[1]
     n = android(src)
     main_icon(src)

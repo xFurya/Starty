@@ -95,11 +95,13 @@ class StartyApp extends StatefulWidget {
 
 class _StartyAppState extends State<StartyApp> {
   final state = AppState();
+  final _nav = GlobalKey<NavigatorState>();
 
   @override
   Widget build(BuildContext context) => ListenableBuilder(
     listenable: state,
     builder: (context, _) => MaterialApp(
+      navigatorKey: _nav,
       title: 'Фигурное катание',
       debugShowCheckedModeBanner: false,
       theme: _theme(Brightness.light),
@@ -109,7 +111,7 @@ class _StartyAppState extends State<StartyApp> {
       scrollBehavior: const MaterialScrollBehavior().copyWith(dragDevices: PointerDeviceKind.values.toSet()),
       locale: const Locale('ru'),
       // крупный системный шрифт — до 130 %: дальше разметка теряет смысл
-      builder: (context, child) => MediaQuery.withClampedTextScaling(maxScaleFactor: 1.3, child: _Wide(child: child!)),
+      builder: (context, child) => MediaQuery.withClampedTextScaling(maxScaleFactor: 1.3, child: _Wide(nav: _nav, settingsDot: state.rules.on && state.allowed == false, child: child!)),
       home: Home(state: state),
     ),
   );
@@ -238,7 +240,7 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
                   // вкладки листаются свайпом; в «Месяце» свайп по самому календарю листает месяцы
                   child: PageView(
                     controller: _pages,
-                    physics: const _FirmPaging(),
+                    physics: isWideWindow(context) ? const NeverScrollableScrollPhysics() : const _FirmPaging(),
                     onPageChanged: (i) => homeTab.value = i,
                     children: [
                       _Keep(FeedView(state: state)),
@@ -250,7 +252,7 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
               ),
             ],
           ),
-          bottomNavigationBar: IceNav(
+          bottomNavigationBar: isWideWindow(context) ? null : IceNav(
             index: tab,
             onTap: (i) {
               homeTab.value = i;
@@ -265,22 +267,44 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
   }
 }
 
-/// Широкое окно (компьютер): содержимое — колонкой по центру, как на телефоне, а не растянутое на весь экран.
+/// Окно шире этого — компьютерная вёрстка: слева панель разделов, справа колонка с содержимым.
+const wideWindow = 820.0;
+bool isWideWindow(BuildContext context) => MediaQuery.sizeOf(context).width >= wideWindow;
+
+/// Широкое окно (компьютер): слева панель разделов вместо нижней, содержимое — колонкой по центру
+/// остального места, а не растянутое на всё окно.
 class _Wide extends StatelessWidget {
   final Widget child;
-  const _Wide({required this.child});
+  final GlobalKey<NavigatorState> nav;
+  final bool settingsDot;
+  const _Wide({required this.child, required this.nav, required this.settingsDot});
   @override
   Widget build(BuildContext context) {
-    final w = MediaQuery.sizeOf(context).width;
-    if (w <= 760) return child;
+    if (!isWideWindow(context)) return child;
     final p = Palette.of(context);
     return ColoredBox(
-      color: p.isDark ? p.bgTop : p.line.withValues(alpha: .5),
-      child: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 640),
-          child: ClipRect(child: child),
-        ),
+      color: p.bg,
+      child: Row(
+        children: [
+          SideNav(
+            onTap: (i) {
+              nav.currentState?.popUntil((r) => r.isFirst);
+              homeTab.value = i;
+            },
+            settingsDot: settingsDot,
+          ),
+          Expanded(
+            child: ColoredBox(
+              color: p.isDark ? p.bgTop : p.line.withValues(alpha: .5),
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 720),
+                  child: ClipRect(child: child),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
