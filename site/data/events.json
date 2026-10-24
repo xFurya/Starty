@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T13:42:30+03:00",
- "checked": "2026-10-24T11:21:57.810608+00:00",
+ "checked": "2026-10-24T11:29:57.457789+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -33883,24 +33883,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Nadja Savic",
+     "nation": "SRB",
+     "points": "77.39"
+    },
+    {
+     "place": 2,
      "name": "Tea Sajko",
      "nation": "CRO",
      "points": "62.41"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Lija Kroselj",
      "nation": "SLO",
      "points": "60.07"
-    },
-    {
-     "place": 3,
-     "name": "Neza Lusic",
-     "nation": "SLO",
-     "points": "56.51"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Tea Sajko — 62.41\n2. Lija Kroselj — 60.07\n3. Neza Lusic — 56.51\n\nНачало: 13:15 МСК",
+   "desc": "Промежуточные итоги:\n1. Nadja Savic — 77.39\n2. Tea Sajko — 62.41\n3. Lija Kroselj — 60.07\n\nНачало: 13:15 МСК",
    "field": [
     {
      "name": "Ekaterina Balaganskaia",
@@ -33919,14 +33919,14 @@
     {
      "name": "Enja Sivic",
      "nation": "SLO",
-     "place": 6,
+     "place": 7,
      "no": 4,
      "warmup": 1
     },
     {
      "name": "Hana Operckal",
      "nation": "SLO",
-     "place": 4,
+     "place": 5,
      "no": 5,
      "warmup": 1
     },
@@ -33940,14 +33940,14 @@
     {
      "name": "Liana Smrekar",
      "nation": "SLO",
-     "place": 5,
+     "place": 6,
      "no": 3,
      "warmup": 1
     },
     {
      "name": "Lija Kroselj",
      "nation": "SLO",
-     "place": 2,
+     "place": 3,
      "no": 6,
      "warmup": 1
     },
@@ -33968,14 +33968,14 @@
     {
      "name": "Nadja Savic",
      "nation": "SRB",
-     "place": 9,
+     "place": 1,
      "no": 9,
      "warmup": 2
     },
     {
      "name": "Neza Lusic",
      "nation": "SLO",
-     "place": 3,
+     "place": 4,
      "no": 8,
      "warmup": 2
     },
@@ -33989,7 +33989,7 @@
     {
      "name": "Nika Sajko",
      "nation": "CRO",
-     "place": 8,
+     "place": 9,
      "no": 1,
      "warmup": 1
     },
@@ -34003,7 +34003,7 @@
     {
      "name": "Tea Sajko",
      "nation": "CRO",
-     "place": 1,
+     "place": 2,
      "no": 7,
      "warmup": 2
     },
@@ -34024,7 +34024,7 @@
     {
      "name": "Ziva Aupic",
      "nation": "SLO",
-     "place": 7,
+     "place": 8,
      "no": 2,
      "warmup": 1
     }
@@ -34099,31 +34099,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Minkyu Seo",
+     "nation": "KOR",
+     "points": "83.83"
+    },
+    {
+     "place": 2,
      "name": "Jacob Sanchez",
      "nation": "USA",
      "points": "79.63"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Francois Pitot",
      "nation": "FRA",
      "points": "79.46"
-    },
-    {
-     "place": 3,
-     "name": "Jimmy Ma",
-     "nation": "USA",
-     "points": "77.11"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Jacob Sanchez — 79.63\n2. Francois Pitot — 79.46\n3. Jimmy Ma — 77.11\n\nНачало: 13:30 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Minkyu Seo — 83.83\n2. Jacob Sanchez — 79.63\n3. Francois Pitot — 79.46\n\nНачало: 13:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Samy Hammi",
      "nation": "FRA",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "time": "13:37"
     },
     {
@@ -34132,7 +34132,7 @@
      "time": "13:56",
      "no": 4,
      "warmup": 1,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Adam Siao Him Fa",
@@ -34154,7 +34154,7 @@
      "time": "13:50",
      "no": 3,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Jacob Sanchez",
@@ -34162,7 +34162,7 @@
      "time": "14:08",
      "no": 6,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Jimmy Ma",
@@ -34170,7 +34170,7 @@
      "time": "13:43",
      "no": 2,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Kao Miura",
@@ -34191,7 +34191,8 @@
      "nation": "KOR",
      "time": "14:22",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Nikolaj Memola",
@@ -34206,7 +34207,7 @@
      "time": "14:02",
      "no": 5,
      "warmup": 1,
-     "place": 4
+     "place": 5
     }
    ],
    "provisional": true,
