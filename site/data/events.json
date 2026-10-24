@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T18:36:54+03:00",
- "checked": "2026-10-24T16:17:57.557903+00:00",
+ "checked": "2026-10-24T16:21:57.322052+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35484,7 +35484,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Megan Wessenberg / Denys Strekalin — 58.37\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 19:20\n\nНачало: 19:00 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Megan Wessenberg / Denys Strekalin — 58.37\n2. Hannah Herrera / Ivan Khobta — 53.73\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 19:20\n\nНачало: 19:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Megan Wessenberg / Denys Strekalin",
@@ -35499,7 +35499,8 @@
      "nation": "UKR",
      "time": "19:13",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
@@ -35568,6 +35569,12 @@
      "name": "Megan Wessenberg / Denys Strekalin",
      "nation": "FRA",
      "points": "58.37"
+    },
+    {
+     "place": 2,
+     "name": "Hannah Herrera / Ivan Khobta",
+     "nation": "UKR",
+     "points": "53.73"
     }
    ],
    "provisional": true
