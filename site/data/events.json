@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T19:37:27+03:00",
- "checked": "2026-10-24T17:02:16.313856+00:00",
+ "checked": "2026-10-24T17:10:16.442505+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35466,7 +35466,7 @@
      "nation": "RUS",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "time": "19:20"
     }
    ],
@@ -35490,31 +35490,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Anastasiia Metelkina / Luka Berulava",
+     "nation": "GEO",
+     "points": "77.34"
+    },
+    {
+     "place": 2,
      "name": "Александра Бойкова / Дмитрий Козловский",
      "nation": "RUS",
      "points": "75.85"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Annika Hocke / Robert Kunkel",
      "nation": "GER",
      "points": "67.03"
-    },
-    {
-     "place": 3,
-     "name": "Camille Kovalev / Pavel Kovalev",
-     "nation": "FRA",
-     "points": "62.40"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Александра Бойкова / Дмитрий Козловский — 75.85\n2. Annika Hocke / Robert Kunkel — 67.03\n3. Camille Kovalev / Pavel Kovalev — 62.40\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 19:20\n\nНачало: 19:00 МСК\nТрансляция: Okko",
+   "desc": "Итог:\n1. Anastasiia Metelkina / Luka Berulava — 77.34\n2. Александра Бойкова / Дмитрий Козловский — 75.85\n3. Annika Hocke / Robert Kunkel — 67.03\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 19:20\n\nНачало: 19:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Megan Wessenberg / Denys Strekalin",
      "nation": "FRA",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "time": "19:07"
     },
     {
@@ -35522,7 +35522,7 @@
      "nation": "UKR",
      "no": 2,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "time": "19:13"
     },
     {
@@ -35530,7 +35530,7 @@
      "nation": "RUS",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "time": "19:20"
     },
     {
@@ -35538,7 +35538,7 @@
      "nation": "FRA",
      "no": 4,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "time": "19:26"
     },
     {
@@ -35546,7 +35546,8 @@
      "nation": "GEO",
      "time": "19:59",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Annika Hocke / Robert Kunkel",
@@ -35554,7 +35555,7 @@
      "time": "19:46",
      "no": 6,
      "warmup": 2,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Camille Kovalev / Pavel Kovalev",
@@ -35562,7 +35563,7 @@
      "time": "19:40",
      "no": 5,
      "warmup": 2,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Jiaxuan Zhang / Yihang Huang",
@@ -35570,10 +35571,9 @@
      "time": "19:53",
      "no": 7,
      "warmup": 2,
-     "place": 6
+     "place": 7
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG005.htm",
@@ -35589,7 +35589,7 @@
      "Jiaxuan ZHANG / Yihang HUANG": "Jiaxuan Zhang / Yihang Huang",
      "Anastasiia METELKINA / Luka BERULAVA": "Anastasiia Metelkina / Luka Berulava"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
