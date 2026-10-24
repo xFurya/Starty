@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T15:38:06+03:00",
- "checked": "2026-10-24T13:41:57.768102+00:00",
+ "checked": "2026-10-24T13:45:58.024056+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -34836,7 +34836,7 @@
     "Xan Rols"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Corentin Spinar — 64.12\n2. David Sedej — 62.26\n3. Arin Yorke — 51.31\n\nНачало: 16:05 МСК",
+   "desc": "Промежуточные итоги:\n1. Vladimir Samoilov — 72.31\n2. Corentin Spinar — 64.12\n3. David Sedej — 62.26\n\nНачало: 16:05 МСК",
    "field": [
     {
      "name": "Corentin Spinar",
@@ -34844,7 +34844,7 @@
      "time": "16:11",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "David Sedej",
@@ -34852,7 +34852,7 @@
      "time": "16:17",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Xan Rols",
@@ -34867,14 +34867,15 @@
      "time": "16:28",
      "no": 4,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Vladimir Samoilov",
      "nation": "POL",
      "time": "16:40",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Oliver Praetorius",
@@ -34927,21 +34928,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "points": "72.31"
+    },
+    {
+     "place": 2,
      "name": "Corentin Spinar",
      "nation": "FRA",
      "points": "64.12"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "David Sedej",
      "nation": "SLO",
      "points": "62.26"
-    },
-    {
-     "place": 3,
-     "name": "Arin Yorke",
-     "nation": "GBR",
-     "points": "51.31"
     }
    ],
    "provisional": true
