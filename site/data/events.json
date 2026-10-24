@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T18:11:42+03:00",
- "checked": "2026-10-24T15:37:57.595285+00:00",
+ "checked": "2026-10-24T15:45:57.156405+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35158,19 +35158,19 @@
     },
     {
      "place": 3,
-     "name": "Julija Lovrencic",
-     "nation": "SLO",
-     "points": "52.29"
+     "name": "Barbora Tykalova",
+     "nation": "CZE",
+     "points": "53.45"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ginevra Lavinia Negrello — 55.44\n2. Katerina Hanusova — 55.13\n3. Julija Lovrencic — 52.29\n\nНачало: 17:15 МСК",
+   "desc": "Промежуточные итоги:\n1. Ginevra Lavinia Negrello — 55.44\n2. Katerina Hanusova — 55.13\n3. Barbora Tykalova — 53.45\n\nНачало: 17:15 МСК",
    "field": [
     {
      "name": "Ema Vukovic",
      "nation": "CRO",
      "no": 1,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "time": "17:21"
     },
     {
@@ -35178,7 +35178,7 @@
      "nation": "SLO",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "time": "17:27"
     },
     {
@@ -35186,7 +35186,7 @@
      "nation": "ITA",
      "no": 3,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "time": "17:33"
     },
     {
@@ -35202,7 +35202,7 @@
      "nation": "POL",
      "no": 7,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "time": "18:04"
     },
     {
@@ -35210,7 +35210,7 @@
      "nation": "ISR",
      "no": 8,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "time": "18:10"
     },
     {
@@ -35218,7 +35218,7 @@
      "nation": "POL",
      "no": 9,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "time": "18:16"
     },
     {
@@ -35241,7 +35241,8 @@
      "nation": "CZE",
      "time": "18:49",
      "no": 11,
-     "warmup": 3
+     "warmup": 3,
+     "place": 3
     },
     {
      "name": "Dunja Tresnjic",
@@ -35329,7 +35330,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Александра Прокопец / Александр Васькович — 66.80\n\nНачало: 18:25 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Александра Прокопец / Александр Васькович — 66.80\n2. Софья Тютюнина / Матвей Грачев — 66.60\n\nНачало: 18:25 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Александра Прокопец / Александр Васькович",
@@ -35358,7 +35359,8 @@
      "nation": "МОС",
      "time": "18:58",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Милана Кузьмина / Дмитрий Студеникин",
@@ -35421,6 +35423,12 @@
      "name": "Александра Прокопец / Александр Васькович",
      "nation": "МОБ",
      "points": "66.80"
+    },
+    {
+     "place": 2,
+     "name": "Софья Тютюнина / Матвей Грачев",
+     "nation": "МОС",
+     "points": "66.60"
     }
    ],
    "provisional": true
