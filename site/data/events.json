@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T13:42:30+03:00",
- "checked": "2026-10-24T11:05:58.085270+00:00",
+ "checked": "2026-10-24T11:09:57.281866+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -34111,19 +34111,19 @@
     },
     {
      "place": 3,
-     "name": "Samy Hammi",
-     "nation": "FRA",
-     "points": "65.53"
+     "name": "Sota Yamamoto",
+     "nation": "JPN",
+     "points": "77.02"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Francois Pitot — 79.46\n2. Jimmy Ma — 77.11\n3. Samy Hammi — 65.53\n\nНачало: 13:30 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Francois Pitot — 79.46\n2. Jimmy Ma — 77.11\n3. Sota Yamamoto — 77.02\n\nНачало: 13:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Samy Hammi",
      "nation": "FRA",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "time": "13:37"
     },
     {
@@ -34132,7 +34132,7 @@
      "time": "13:56",
      "no": 4,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Adam Siao Him Fa",
@@ -34204,7 +34204,8 @@
      "nation": "JPN",
      "time": "14:02",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     }
    ],
    "provisional": true,
