@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T15:38:06+03:00",
- "checked": "2026-10-24T13:57:57.795554+00:00",
+ "checked": "2026-10-24T14:01:57.688487+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -34712,7 +34712,7 @@
      "points": "111.53"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Laurence Fournier Beaudry / Guillaume Cizeron — 125.01\n2. Diana Davis / Gleb Smolkin — 116.03\n3. Christina Carreira / Anthony Ponomarenko — 111.53\n\nНачало: 15:20 МСК\nТрансляция: Okko",
+   "desc": "Итог:\n1. Laurence Fournier Beaudry / Guillaume Cizeron — 125.01\n2. Diana Davis / Gleb Smolkin — 116.03\n3. Christina Carreira / Anthony Ponomarenko — 111.53\n\nИтог турнира:\n1. Laurence Fournier Beaudry / Guillaume Cizeron — 207.57\n2. Diana Davis / Gleb Smolkin — 193.93\n3. Christina Carreira / Anthony Ponomarenko — 189.36\n\nПримечательное:\n• Laurence Fournier Beaudry / Guillaume Cizeron — Отрыв от второго места — 13.64 балла\n\nНачало: 15:20 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
@@ -34720,7 +34720,8 @@
      "place": 9,
      "time": "15:34",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 9
     },
     {
      "name": "Christina Carreira / Anthony Ponomarenko",
@@ -34728,7 +34729,8 @@
      "place": 3,
      "time": "16:28",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "final": 3
     },
     {
      "name": "Diana Davis / Gleb Smolkin",
@@ -34736,7 +34738,8 @@
      "place": 2,
      "time": "16:36",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "final": 2
     },
     {
      "name": "Eva Pate / Logan Bye",
@@ -34744,7 +34747,8 @@
      "place": 8,
      "time": "16:20",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "final": 6
     },
     {
      "name": "Holly Harris / Jason Chan",
@@ -34752,7 +34756,8 @@
      "place": 7,
      "time": "15:50",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 8
     },
     {
      "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
@@ -34760,7 +34765,8 @@
      "place": 1,
      "time": "16:44",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "final": 1
     },
     {
      "name": "Leah Neset / Artem Markelov",
@@ -34768,7 +34774,8 @@
      "place": 5,
      "time": "15:58",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "final": 5
     },
     {
      "name": "Louise Bordet / Martin Chardain",
@@ -34776,7 +34783,8 @@
      "place": 10,
      "time": "15:26",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 10
     },
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
@@ -34784,7 +34792,8 @@
      "place": 6,
      "time": "15:42",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 7
     },
     {
      "name": "Sofia Val / Asaf Kazimov",
@@ -34792,10 +34801,10 @@
      "place": 4,
      "time": "16:12",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "final": 4
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG008.htm",
@@ -34813,9 +34822,36 @@
      "Diana DAVIS / Gleb SMOLKIN": "Diana Davis / Gleb Smolkin",
      "Laurence FOURNIER BEAUDRY / Guillaume CIZERON": "Laurence Fournier Beaudry / Guillaume Cizeron"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "nation": "FRA",
+     "points": "207.57"
+    },
+    {
+     "place": 2,
+     "name": "Diana Davis / Gleb Smolkin",
+     "nation": "GEO",
+     "points": "193.93"
+    },
+    {
+     "place": 3,
+     "name": "Christina Carreira / Anthony Ponomarenko",
+     "nation": "USA",
+     "points": "189.36"
+    }
+   ],
+   "facts": [
+    {
+     "who": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "text": "Отрыв от второго места — 13.64 балла",
+     "kind": "place"
+    }
+   ]
   },
   {
    "id": "gs:golden-bear:men-senior-kp-men",
@@ -34912,7 +34948,8 @@
      "nation": "SLO",
      "time": "17:03",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     }
    ],
    "live": {
