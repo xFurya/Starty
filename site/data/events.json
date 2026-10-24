@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T15:38:06+03:00",
- "checked": "2026-10-24T13:17:58.396830+00:00",
+ "checked": "2026-10-24T13:21:58.103971+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -34832,14 +34832,15 @@
     "Xan Rols"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Начало: 16:05 МСК",
+   "desc": "Промежуточные итоги:\n1. Corentin Spinar — 64.12\n\nНачало: 16:05 МСК",
    "field": [
     {
      "name": "Corentin Spinar",
      "nation": "FRA",
      "time": "16:11",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "David Sedej",
@@ -34916,7 +34917,16 @@
     },
     "basis": null
    },
-   "proto": "gs_golden-bear.json"
+   "proto": "gs_golden-bear.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Corentin Spinar",
+     "nation": "FRA",
+     "points": "64.12"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:pairs-senior-kp",
