@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-24T18:36:54+03:00",
- "checked": "2026-10-24T16:33:58.135234+00:00",
+ "generated": "2026-10-24T19:21:26+03:00",
+ "checked": "2026-10-24T19:21:26+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35122,7 +35122,7 @@
    "seg": "КП",
    "title": "Golden Bear — женщины КП",
    "start": "2026-10-24T17:15:00+03:00",
-   "end": "2026-10-24T19:20:00+03:00",
+   "end": "2026-10-24T18:45:00+03:00",
    "venue": "Zagreb, Croatia",
    "intl": true,
    "broadcast": [],
@@ -35229,36 +35229,36 @@
      "time": "18:22"
     },
     {
-     "name": "Ariadna Gupta Espada",
-     "nation": "ESP",
-     "time": "19:01",
-     "no": 13,
-     "warmup": 3,
-     "place": 6
-    },
-    {
      "name": "Barbora Tykalova",
      "nation": "CZE",
-     "time": "18:49",
      "no": 11,
      "warmup": 3,
-     "place": 3
-    },
-    {
-     "name": "Dunja Tresnjic",
-     "nation": "SRB",
-     "time": "19:07",
-     "no": 14,
-     "warmup": 3,
-     "place": 11
+     "place": 3,
+     "time": "18:49"
     },
     {
      "name": "Zala Grum",
      "nation": "SLO",
-     "time": "18:55",
      "no": 12,
      "warmup": 3,
-     "place": 7
+     "place": 7,
+     "time": "18:55"
+    },
+    {
+     "name": "Ariadna Gupta Espada",
+     "nation": "ESP",
+     "no": 13,
+     "warmup": 3,
+     "place": 6,
+     "time": "19:01"
+    },
+    {
+     "name": "Dunja Tresnjic",
+     "nation": "SRB",
+     "no": 14,
+     "warmup": 3,
+     "place": 11,
+     "time": "19:07"
     }
    ],
    "live": {
@@ -35269,27 +35269,27 @@
     "names": {
      "Ginevra Lavinia NEGRELLO": "Ginevra Lavinia Negrello",
      "Katerina HANUSOVA": "Katerina Hanusova",
+     "Barbora TYKALOVA": "Barbora Tykalova",
      "Julija LOVRENCIC": "Julija Lovrencic",
      "Oliwia STROKOSZ": "Oliwia Strokosz",
+     "Ariadna GUPTA ESPADA": "Ariadna Gupta Espada",
+     "Zala GRUM": "Zala Grum",
      "Elena AGOSTINELLI": "Elena Agostinelli",
      "Zofia BOCHENEK": "Zofia Bochenek",
      "Julia FENNELL": "Julia Fennell",
-     "Ema VUKOVIC": "Ema Vukovic",
-     "Barbora TYKALOVA": "Barbora Tykalova",
-     "Zala GRUM": "Zala Grum",
-     "Ariadna GUPTA ESPADA": "Ariadna Gupta Espada",
-     "Dunja TRESNJIC": "Dunja Tresnjic"
+     "Dunja TRESNJIC": "Dunja Tresnjic",
+     "Ema VUKOVIC": "Ema Vukovic"
     },
     "basis": "judges"
    },
-   "proto": "gs_golden-bear.json",
    "facts": [
     {
-     "who": "Katerina Hanusova",
+     "kind": "score",
      "text": "Личный рекорд за КП: 55.13 (был 50.61)",
-     "kind": "score"
+     "who": "Katerina Hanusova"
     }
-   ]
+   ],
+   "proto": "gs_golden-bear.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:dance-senior-rt",
@@ -35361,12 +35361,44 @@
      "time": "18:31"
     },
     {
+     "name": "Софья Тютюнина / Матвей Грачев",
+     "nation": "МОС",
+     "no": 2,
+     "warmup": 1,
+     "place": 5,
+     "time": "18:58"
+    },
+    {
      "name": "Анна Смирнова / Богдан Шамков",
      "nation": "ТУЛ",
-     "time": "18:44",
      "no": 3,
      "warmup": 1,
-     "place": 7
+     "place": 6,
+     "time": "18:44"
+    },
+    {
+     "name": "Василиса Григорьева / Евгений Артющенко",
+     "nation": "МОС",
+     "no": 4,
+     "warmup": 1,
+     "place": 2,
+     "time": "18:51"
+    },
+    {
+     "name": "Милана Кузьмина / Дмитрий Студеникин",
+     "nation": "МОС",
+     "no": 5,
+     "warmup": 2,
+     "place": 3,
+     "time": "19:04"
+    },
+    {
+     "name": "Василиса Кагановская / Максим Некрасов",
+     "nation": "СПБ",
+     "no": 6,
+     "warmup": 2,
+     "place": 1,
+     "time": "19:11"
     },
     {
      "name": "Анна Щербакова / Егор Гончаров",
@@ -35375,22 +35407,6 @@
      "no": 7,
      "warmup": 2,
      "place": 4
-    },
-    {
-     "name": "Василиса Григорьева / Евгений Артющенко",
-     "nation": "МОС",
-     "time": "18:51",
-     "no": 4,
-     "warmup": 1,
-     "place": 2
-    },
-    {
-     "name": "Василиса Кагановская / Максим Некрасов",
-     "nation": "СПБ",
-     "time": "19:11",
-     "no": 6,
-     "warmup": 2,
-     "place": 1
     },
     {
      "name": "Екатерина Миронова / Евгений Устенко",
@@ -35405,22 +35421,6 @@
      "time": "19:31",
      "no": 9,
      "warmup": 2
-    },
-    {
-     "name": "Милана Кузьмина / Дмитрий Студеникин",
-     "nation": "МОС",
-     "time": "19:04",
-     "no": 5,
-     "warmup": 2,
-     "place": 3
-    },
-    {
-     "name": "Софья Тютюнина / Матвей Грачев",
-     "nation": "МОС",
-     "time": "18:58",
-     "no": 2,
-     "warmup": 1,
-     "place": 6
     }
    ],
    "provisional": true,
@@ -35430,12 +35430,12 @@
     "cat": null,
     "first": null,
     "names": {
+     "Василиса КАГАНОВСКАЯ / Максим НЕКРАСОВ": "Василиса Кагановская / Максим Некрасов",
+     "Василиса ГРИГОРЬЕВА / Евгений АРТЮЩЕНКО": "Василиса Григорьева / Евгений Артющенко",
+     "Милана КУЗЬМИНА / Дмитрий СТУДЕНИКИН": "Милана Кузьмина / Дмитрий Студеникин",
      "Александра ПРОКОПЕЦ / Александр ВАСЬКОВИЧ": "Александра Прокопец / Александр Васькович",
      "Софья ТЮТЮНИНА / Матвей ГРАЧЕВ": "Софья Тютюнина / Матвей Грачев",
      "Анна СМИРНОВА / Богдан ШАМКОВ": "Анна Смирнова / Богдан Шамков",
-     "Василиса ГРИГОРЬЕВА / Евгений АРТЮЩЕНКО": "Василиса Григорьева / Евгений Артющенко",
-     "Милана КУЗЬМИНА / Дмитрий СТУДЕНИКИН": "Милана Кузьмина / Дмитрий Студеникин",
-     "Василиса КАГАНОВСКАЯ / Максим НЕКРАСОВ": "Василиса Кагановская / Максим Некрасов",
      "Анна ЩЕРБАКОВА / Егор ГОНЧАРОВ": "Анна Щербакова / Егор Гончаров",
      "Екатерина МИРОНОВА / Евгений УСТЕНКО": "Екатерина Миронова / Евгений Устенко",
      "Елизавета ШИЧИНА / Павел ДРОЗД": "Елизавета Шичина / Павел Дрозд"
@@ -35486,31 +35486,51 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Александра Бойкова / Дмитрий Козловский — 75.85\n2. Aurelie Faula / Theo Belle — 60.85\n3. Megan Wessenberg / Denys Strekalin — 58.37\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 19:20\n\nНачало: 19:00 МСК\nТрансляция: Okko",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Megan Wessenberg / Denys Strekalin",
+     "nation": "FRA",
+     "points": "58.37"
+    },
+    {
+     "place": 2,
+     "name": "Hannah Herrera / Ivan Khobta",
+     "nation": "UKR",
+     "points": "53.73"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Megan Wessenberg / Denys Strekalin — 58.37\n2. Hannah Herrera / Ivan Khobta — 53.73\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 19:20\n\nНачало: 19:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Megan Wessenberg / Denys Strekalin",
      "nation": "FRA",
-     "time": "19:07",
      "no": 1,
      "warmup": 1,
-     "place": 3
+     "place": 1,
+     "time": "19:07"
     },
     {
      "name": "Hannah Herrera / Ivan Khobta",
      "nation": "UKR",
-     "time": "19:13",
      "no": 2,
      "warmup": 1,
-     "place": 4
+     "place": 2,
+     "time": "19:13"
     },
     {
-     "name": "Александра Бойкова / Дмитрий Козловский",
-     "nation": "RUS",
-     "time": "19:20",
-     "no": 3,
-     "warmup": 1,
-     "place": 1
+     "name": "Anastasiia Metelkina / Luka Berulava",
+     "nation": "GEO",
+     "time": "19:59",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Annika Hocke / Robert Kunkel",
+     "nation": "GER",
+     "time": "19:46",
+     "no": 6,
+     "warmup": 2
     },
     {
      "name": "Aurelie Faula / Theo Belle",
@@ -35528,13 +35548,6 @@
      "warmup": 2
     },
     {
-     "name": "Annika Hocke / Robert Kunkel",
-     "nation": "GER",
-     "time": "19:46",
-     "no": 6,
-     "warmup": 2
-    },
-    {
      "name": "Jiaxuan Zhang / Yihang Huang",
      "nation": "CHN",
      "time": "19:53",
@@ -35542,13 +35555,14 @@
      "warmup": 2
     },
     {
-     "name": "Anastasiia Metelkina / Luka Berulava",
-     "nation": "GEO",
-     "time": "19:59",
-     "no": 8,
-     "warmup": 2
+     "name": "Александра Бойкова / Дмитрий Козловский",
+     "nation": "RUS",
+     "time": "19:20",
+     "no": 3,
+     "warmup": 1
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG005.htm",
@@ -35566,28 +35580,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Александра Бойкова / Дмитрий Козловский",
-     "nation": "RUS",
-     "points": "75.85"
-    },
-    {
-     "place": 2,
-     "name": "Aurelie Faula / Theo Belle",
-     "nation": "FRA",
-     "points": "60.85"
-    },
-    {
-     "place": 3,
-     "name": "Megan Wessenberg / Denys Strekalin",
-     "nation": "FRA",
-     "points": "58.37"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:women-senior-pp",
@@ -35745,7 +35738,7 @@
    "seg": "ПП",
    "title": "Golden Bear — мужчины ПП",
    "start": "2026-10-25T11:00:00+03:00",
-   "end": "2026-10-25T12:20:00+03:00",
+   "end": "2026-10-25T12:03:00+03:00",
    "venue": "Zagreb, Croatia",
    "intl": true,
    "broadcast": [],
@@ -35830,7 +35823,7 @@
    "seg": "ПП",
    "title": "Golden Bear — женщины ПП",
    "start": "2026-10-25T12:25:00+03:00",
-   "end": "2026-10-25T14:55:00+03:00",
+   "end": "2026-10-25T14:06:00+03:00",
    "venue": "Zagreb, Croatia",
    "intl": true,
    "broadcast": [],
@@ -35845,9 +35838,6 @@
     "Julia Fennell",
     "Julija Lovrencic",
     "Katerina Hanusova",
-    "Lorena Cizmek",
-    "Marietta Atkins",
-    "Olivia Lengyelova",
     "Oliwia Strokosz",
     "Zala Grum",
     "Zofia Bochenek"
@@ -35856,64 +35846,88 @@
    "desc": "Начало: 12:25 МСК",
    "field": [
     {
-     "name": "Ariadna Gupta Espada",
-     "nation": "ESP"
-    },
-    {
-     "name": "Barbora Tykalova",
-     "nation": "CZE"
+     "name": "Ema Vukovic",
+     "nation": "CRO",
+     "time": "12:31",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Dunja Tresnjic",
-     "nation": "SRB"
-    },
-    {
-     "name": "Elena Agostinelli",
-     "nation": "ITA"
-    },
-    {
-     "name": "Ema Vukovic",
-     "nation": "CRO"
-    },
-    {
-     "name": "Ginevra Lavinia Negrello",
-     "nation": "ITA"
+     "nation": "SRB",
+     "time": "12:38",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Julia Fennell",
-     "nation": "ISR"
-    },
-    {
-     "name": "Julija Lovrencic",
-     "nation": "SLO"
-    },
-    {
-     "name": "Katerina Hanusova",
-     "nation": "CZE"
-    },
-    {
-     "name": "Lorena Cizmek",
-     "nation": "CRO"
-    },
-    {
-     "name": "Marietta Atkins",
-     "nation": "POL"
-    },
-    {
-     "name": "Olivia Lengyelova",
-     "nation": "SVK"
-    },
-    {
-     "name": "Oliwia Strokosz",
-     "nation": "POL"
-    },
-    {
-     "name": "Zala Grum",
-     "nation": "SLO"
+     "nation": "ISR",
+     "time": "12:46",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Zofia Bochenek",
-     "nation": "POL"
+     "nation": "POL",
+     "time": "12:53",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Elena Agostinelli",
+     "nation": "ITA",
+     "time": "13:00",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Zala Grum",
+     "nation": "SLO",
+     "time": "13:08",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Ariadna Gupta Espada",
+     "nation": "ESP",
+     "time": "13:22",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Oliwia Strokosz",
+     "nation": "POL",
+     "time": "13:29",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Julija Lovrencic",
+     "nation": "SLO",
+     "time": "13:36",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Barbora Tykalova",
+     "nation": "CZE",
+     "time": "13:44",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Katerina Hanusova",
+     "nation": "CZE",
+     "time": "13:51",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Ginevra Lavinia Negrello",
+     "nation": "ITA",
+     "time": "13:58",
+     "no": 12,
+     "warmup": 2
     }
    ],
    "live": {
@@ -35922,21 +35936,18 @@
     "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT002RS.htm",
     "first": "https://www.croskate.hr/cscro2025/GB2026/SEG003.htm",
     "names": {
-     "Lorena CIZMEK": "Lorena Cizmek",
      "Ema VUKOVIC": "Ema Vukovic",
-     "Katerina HANUSOVA": "Katerina Hanusova",
-     "Barbora TYKALOVA": "Barbora Tykalova",
-     "Ariadna GUPTA ESPADA": "Ariadna Gupta Espada",
-     "Julia FENNELL": "Julia Fennell",
-     "Elena AGOSTINELLI": "Elena Agostinelli",
-     "Ginevra Lavinia NEGRELLO": "Ginevra Lavinia Negrello",
-     "Marietta ATKINS": "Marietta Atkins",
-     "Zofia BOCHENEK": "Zofia Bochenek",
-     "Oliwia STROKOSZ": "Oliwia Strokosz",
-     "Zala GRUM": "Zala Grum",
-     "Julija LOVRENCIC": "Julija Lovrencic",
      "Dunja TRESNJIC": "Dunja Tresnjic",
-     "Olivia LENGYELOVA": "Olivia Lengyelova"
+     "Julia FENNELL": "Julia Fennell",
+     "Zofia BOCHENEK": "Zofia Bochenek",
+     "Elena AGOSTINELLI": "Elena Agostinelli",
+     "Zala GRUM": "Zala Grum",
+     "Ariadna GUPTA ESPADA": "Ariadna Gupta Espada",
+     "Oliwia STROKOSZ": "Oliwia Strokosz",
+     "Julija LOVRENCIC": "Julija Lovrencic",
+     "Barbora TYKALOVA": "Barbora Tykalova",
+     "Katerina HANUSOVA": "Katerina Hanusova",
+     "Ginevra Lavinia NEGRELLO": "Ginevra Lavinia Negrello"
     },
     "basis": null
    },
