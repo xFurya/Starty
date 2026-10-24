@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-24T18:11:42+03:00",
- "checked": "2026-10-24T15:45:57.156405+00:00",
+ "generated": "2026-10-24T18:36:54+03:00",
+ "checked": "2026-10-24T18:36:54+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35137,7 +35137,6 @@
     "Julia Fennell",
     "Julija Lovrencic",
     "Katerina Hanusova",
-    "Olivia Lengyelova",
     "Oliwia Strokosz",
     "Zala Grum",
     "Zofia Bochenek"
@@ -35252,13 +35251,6 @@
      "warmup": 3
     },
     {
-     "name": "Olivia Lengyelova",
-     "nation": "SVK",
-     "time": "19:13",
-     "no": 15,
-     "warmup": 3
-    },
-    {
      "name": "Zala Grum",
      "nation": "SLO",
      "time": "18:55",
@@ -35284,8 +35276,7 @@
      "Barbora TYKALOVA": "Barbora Tykalova",
      "Zala GRUM": "Zala Grum",
      "Ariadna GUPTA ESPADA": "Ariadna Gupta Espada",
-     "Dunja TRESNJIC": "Dunja Tresnjic",
-     "Olivia LENGYELOVA": "Olivia Lengyelova"
+     "Dunja TRESNJIC": "Dunja Tresnjic"
     },
     "basis": null
    },
@@ -35330,15 +35321,23 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Александра Прокопец / Александр Васькович — 66.80\n2. Софья Тютюнина / Матвей Грачев — 66.60\n\nНачало: 18:25 МСК\nТрансляция: Первый канал / YouTube",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Александра Прокопец / Александр Васькович",
+     "nation": "МОБ",
+     "points": "66.80"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Александра Прокопец / Александр Васькович — 66.80\n\nНачало: 18:25 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Александра Прокопец / Александр Васькович",
      "nation": "МОБ",
-     "time": "18:31",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 1,
+     "time": "18:31"
     },
     {
      "name": "Анна Смирнова / Богдан Шамков",
@@ -35348,6 +35347,13 @@
      "warmup": 1
     },
     {
+     "name": "Анна Щербакова / Егор Гончаров",
+     "nation": "МОС",
+     "time": "19:18",
+     "no": 7,
+     "warmup": 2
+    },
+    {
      "name": "Василиса Григорьева / Евгений Артющенко",
      "nation": "МОС",
      "time": "18:51",
@@ -35355,32 +35361,10 @@
      "warmup": 1
     },
     {
-     "name": "Софья Тютюнина / Матвей Грачев",
-     "nation": "МОС",
-     "time": "18:58",
-     "no": 2,
-     "warmup": 1,
-     "place": 2
-    },
-    {
-     "name": "Милана Кузьмина / Дмитрий Студеникин",
-     "nation": "МОС",
-     "time": "19:04",
-     "no": 5,
-     "warmup": 2
-    },
-    {
      "name": "Василиса Кагановская / Максим Некрасов",
      "nation": "СПБ",
      "time": "19:11",
      "no": 6,
-     "warmup": 2
-    },
-    {
-     "name": "Анна Щербакова / Егор Гончаров",
-     "nation": "МОС",
-     "time": "19:18",
-     "no": 7,
      "warmup": 2
     },
     {
@@ -35396,8 +35380,23 @@
      "time": "19:31",
      "no": 9,
      "warmup": 2
+    },
+    {
+     "name": "Милана Кузьмина / Дмитрий Студеникин",
+     "nation": "МОС",
+     "time": "19:04",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Софья Тютюнина / Матвей Грачев",
+     "nation": "МОС",
+     "time": "18:58",
+     "no": 2,
+     "warmup": 1
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/2etap_sen/SEG007.htm",
