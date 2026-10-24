@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T15:38:06+03:00",
- "checked": "2026-10-24T14:01:57.688487+00:00",
+ "checked": "2026-10-24T14:05:58.003306+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -34879,7 +34879,7 @@
     "Xan Rols"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Vladimir Samoilov — 72.31\n2. Maxim Varakin — 66.21\n3. Corentin Spinar — 64.12\n\nНачало: 16:05 МСК",
+   "desc": "Итог:\n1. Vladimir Samoilov — 72.31\n2. Maxim Varakin — 66.21\n3. Corentin Spinar — 64.12\n\nНачало: 16:05 МСК",
    "field": [
     {
      "name": "Corentin Spinar",
@@ -34968,7 +34968,7 @@
      "Maxim VARAKIN": "Maxim Varakin",
      "Alessandro LIBERATORE": "Alessandro Liberatore"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "gs_golden-bear.json",
    "podium": [
@@ -34990,8 +34990,7 @@
      "nation": "FRA",
      "points": "64.12"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:pairs-senior-kp",
