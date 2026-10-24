@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T15:38:06+03:00",
- "checked": "2026-10-24T14:25:58.137619+00:00",
+ "checked": "2026-10-24T14:33:57.688398+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35155,14 +35155,15 @@
     "Zofia Bochenek"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Начало: 17:15 МСК",
+   "desc": "Промежуточные итоги:\n1. Ema Vukovic — 15.02\n\nНачало: 17:15 МСК",
    "field": [
     {
      "name": "Ema Vukovic",
      "nation": "CRO",
      "time": "17:21",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Julija Lovrencic",
@@ -35287,7 +35288,16 @@
     },
     "basis": null
    },
-   "proto": "gs_golden-bear.json"
+   "proto": "gs_golden-bear.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Ema Vukovic",
+     "nation": "CRO",
+     "points": "15.02"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:dance-senior-rt",
