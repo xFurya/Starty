@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-24T13:42:30+03:00",
- "checked": "2026-10-24T12:33:58.071066+00:00",
+ "generated": "2026-10-24T15:22:46+03:00",
+ "checked": "2026-10-24T15:22:46+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -33685,19 +33685,19 @@
    },
    "facts": [
     {
-     "who": "Yuna Aoki",
+     "kind": "score",
      "text": "Личный рекорд за КП: 76.31 (был 71.41)",
-     "kind": "score"
+     "who": "Yuna Aoki"
     },
     {
-     "who": "Anastasiia Gubanova",
+     "kind": "score",
      "text": "Личный рекорд за КП: 72.63 (был 71.77)",
-     "kind": "score"
+     "who": "Anastasiia Gubanova"
     },
     {
-     "who": "Yuseong Kim",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Yuseong Kim"
     }
    ],
    "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
@@ -33828,19 +33828,19 @@
    },
    "facts": [
     {
-     "who": "Daniel Verbat",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 88.92 (был 85.28)",
-     "kind": "score"
+     "who": "Daniel Verbat"
     },
     {
-     "who": "Daniel Verbat",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 143.50 (был 129.43)",
-     "kind": "score"
+     "who": "Daniel Verbat"
     },
     {
-     "who": "Felix Oberbacher",
+     "kind": "place",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Felix Oberbacher"
     }
    ],
    "proto": "gs_golden-bear.json"
@@ -33919,14 +33919,14 @@
     {
      "name": "Enja Sivic",
      "nation": "SLO",
-     "place": 13,
+     "place": 12,
      "no": 4,
      "warmup": 1
     },
     {
      "name": "Hana Operckal",
      "nation": "SLO",
-     "place": 11,
+     "place": 10,
      "no": 5,
      "warmup": 1
     },
@@ -33940,14 +33940,14 @@
     {
      "name": "Liana Smrekar",
      "nation": "SLO",
-     "place": 12,
+     "place": 11,
      "no": 3,
      "warmup": 1
     },
     {
      "name": "Lija Kroselj",
      "nation": "SLO",
-     "place": 9,
+     "place": 8,
      "no": 6,
      "warmup": 1
     },
@@ -33975,7 +33975,7 @@
     {
      "name": "Neza Lusic",
      "nation": "SLO",
-     "place": 10,
+     "place": 9,
      "no": 8,
      "warmup": 2
     },
@@ -33989,7 +33989,7 @@
     {
      "name": "Nika Sajko",
      "nation": "CRO",
-     "place": 15,
+     "place": 14,
      "no": 1,
      "warmup": 1
     },
@@ -34003,7 +34003,7 @@
     {
      "name": "Tea Sajko",
      "nation": "CRO",
-     "place": 8,
+     "place": 7,
      "no": 7,
      "warmup": 2
     },
@@ -34024,7 +34024,7 @@
     {
      "name": "Ziva Aupic",
      "nation": "SLO",
-     "place": 14,
+     "place": 13,
      "no": 2,
      "warmup": 1
     }
@@ -34036,20 +34036,20 @@
     "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT004RS.htm",
     "first": "https://www.croskate.hr/cscro2025/GB2026/SEG007.htm",
     "names": {
+     "Lea Marie CASTLUNGER": "Lea Marie Castlunger",
+     "Vasilisa BOGOMOLOVA": "Vasilisa Bogomolova",
+     "Nicole de ROSA": "Nicole de Rosa",
+     "Nadja SAVIC": "Nadja Savic",
+     "Louane WOLFF": "Louane Wolff",
+     "Luna ROZMAN": "Luna Rozman",
+     "Tea SAJKO": "Tea Sajko",
+     "Lija KROSELJ": "Lija Kroselj",
+     "Neza LUSIC": "Neza Lusic",
+     "Hana OPERCKAL": "Hana Operckal",
      "Liana SMREKAR": "Liana Smrekar",
      "Enja SIVIC": "Enja Sivic",
      "Ziva AUPIC": "Ziva Aupic",
      "Nika SAJKO": "Nika Sajko",
-     "Hana OPERCKAL": "Hana Operckal",
-     "Lija KROSELJ": "Lija Kroselj",
-     "Tea SAJKO": "Tea Sajko",
-     "Neza LUSIC": "Neza Lusic",
-     "Nadja SAVIC": "Nadja Savic",
-     "Vasilisa BOGOMOLOVA": "Vasilisa Bogomolova",
-     "Luna ROZMAN": "Luna Rozman",
-     "Lea Marie CASTLUNGER": "Lea Marie Castlunger",
-     "Louane WOLFF": "Louane Wolff",
-     "Nicole de ROSA": "Nicole de Rosa",
      "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
      "Ula ZADNIKAR": "Ula Zadnikar",
      "Paula KASNAR": "Paula Kasnar",
@@ -34127,92 +34127,92 @@
      "time": "13:37"
     },
     {
-     "name": "Adam Hagara",
-     "nation": "SVK",
-     "time": "13:56",
-     "no": 4,
+     "name": "Jimmy Ma",
+     "nation": "USA",
+     "no": 2,
      "warmup": 1,
-     "place": 12
-    },
-    {
-     "name": "Adam Siao Him Fa",
-     "nation": "FRA",
-     "time": "14:47",
-     "no": 11,
-     "warmup": 2,
-     "place": 1
-    },
-    {
-     "name": "Aleksandr Selevko",
-     "nation": "EST",
-     "time": "14:41",
-     "no": 10,
-     "warmup": 2,
-     "place": 2
+     "place": 7,
+     "time": "13:43"
     },
     {
      "name": "Francois Pitot",
      "nation": "FRA",
-     "time": "13:50",
      "no": 3,
      "warmup": 1,
-     "place": 6
+     "place": 6,
+     "time": "13:50"
     },
     {
-     "name": "Jacob Sanchez",
-     "nation": "USA",
-     "time": "14:08",
-     "no": 6,
+     "name": "Adam Hagara",
+     "nation": "SVK",
+     "no": 4,
      "warmup": 1,
-     "place": 5
-    },
-    {
-     "name": "Jimmy Ma",
-     "nation": "USA",
-     "time": "13:43",
-     "no": 2,
-     "warmup": 1,
-     "place": 7
-    },
-    {
-     "name": "Kao Miura",
-     "nation": "JPN",
-     "time": "14:34",
-     "no": 9,
-     "warmup": 2,
-     "place": 9
-    },
-    {
-     "name": "Mikhail Shaidorov",
-     "nation": "KAZ",
-     "time": "14:53",
-     "no": 12,
-     "warmup": 2,
-     "place": 4
-    },
-    {
-     "name": "Minkyu Seo",
-     "nation": "KOR",
-     "time": "14:22",
-     "no": 7,
-     "warmup": 2,
-     "place": 3
-    },
-    {
-     "name": "Nikolaj Memola",
-     "nation": "ITA",
-     "time": "14:28",
-     "no": 8,
-     "warmup": 2,
-     "place": 10
+     "place": 12,
+     "time": "13:56"
     },
     {
      "name": "Sota Yamamoto",
      "nation": "JPN",
-     "time": "14:02",
      "no": 5,
      "warmup": 1,
-     "place": 8
+     "place": 8,
+     "time": "14:02"
+    },
+    {
+     "name": "Jacob Sanchez",
+     "nation": "USA",
+     "no": 6,
+     "warmup": 1,
+     "place": 5,
+     "time": "14:08"
+    },
+    {
+     "name": "Minkyu Seo",
+     "nation": "KOR",
+     "no": 7,
+     "warmup": 2,
+     "place": 3,
+     "time": "14:22"
+    },
+    {
+     "name": "Nikolaj Memola",
+     "nation": "ITA",
+     "no": 8,
+     "warmup": 2,
+     "place": 10,
+     "time": "14:28"
+    },
+    {
+     "name": "Kao Miura",
+     "nation": "JPN",
+     "no": 9,
+     "warmup": 2,
+     "place": 9,
+     "time": "14:34"
+    },
+    {
+     "name": "Aleksandr Selevko",
+     "nation": "EST",
+     "no": 10,
+     "warmup": 2,
+     "place": 2,
+     "time": "14:41"
+    },
+    {
+     "name": "Adam Siao Him Fa",
+     "nation": "FRA",
+     "no": 11,
+     "warmup": 2,
+     "place": 1,
+     "time": "14:47"
+    },
+    {
+     "name": "Mikhail Shaidorov",
+     "nation": "KAZ",
+     "no": 12,
+     "warmup": 2,
+     "place": 4,
+     "time": "14:53"
     }
    ],
    "live": {
@@ -34221,18 +34221,18 @@
     "cat": null,
     "first": null,
     "names": {
-     "Samy HAMMI": "Samy Hammi",
-     "Jimmy MA": "Jimmy Ma",
-     "Francois PITOT": "Francois Pitot",
-     "Adam HAGARA": "Adam Hagara",
-     "Sota YAMAMOTO": "Sota Yamamoto",
-     "Jacob SANCHEZ": "Jacob Sanchez",
-     "Minkyu SEO": "Minkyu Seo",
-     "Nikolaj MEMOLA": "Nikolaj Memola",
-     "Kao MIURA": "Kao Miura",
-     "Aleksandr SELEVKO": "Aleksandr Selevko",
      "Adam SIAO HIM FA": "Adam Siao Him Fa",
-     "Mikhail SHAIDOROV": "Mikhail Shaidorov"
+     "Aleksandr SELEVKO": "Aleksandr Selevko",
+     "Minkyu SEO": "Minkyu Seo",
+     "Mikhail SHAIDOROV": "Mikhail Shaidorov",
+     "Jacob SANCHEZ": "Jacob Sanchez",
+     "Francois PITOT": "Francois Pitot",
+     "Jimmy MA": "Jimmy Ma",
+     "Sota YAMAMOTO": "Sota Yamamoto",
+     "Kao MIURA": "Kao Miura",
+     "Nikolaj MEMOLA": "Nikolaj Memola",
+     "Samy HAMMI": "Samy Hammi",
+     "Adam HAGARA": "Adam Hagara"
     },
     "basis": "judges"
    },
@@ -34247,7 +34247,7 @@
    "seg": "КП",
    "title": "Гран-при России «Невский лёд» — мужчины КП",
    "start": "2026-10-24T13:30:00+03:00",
-   "end": "2026-10-24T14:56:00+03:00",
+   "end": "2026-10-24T15:00:00+03:00",
    "venue": "СК «Юбилейный», Санкт-Петербург",
    "intl": false,
    "broadcast": [
@@ -34311,92 +34311,92 @@
      "time": "13:37"
     },
     {
-     "name": "Арсений Федотов",
-     "nation": "МОС",
-     "time": "14:43",
-     "no": 11,
-     "warmup": 2,
-     "place": 5
-    },
-    {
-     "name": "Артемий Маринин",
-     "nation": "МОС",
-     "time": "13:55",
-     "no": 4,
-     "warmup": 1,
-     "place": 10
-    },
-    {
      "name": "Артур Даниелян",
      "nation": "СПБ",
-     "time": "14:12",
      "no": 2,
      "warmup": 1,
-     "place": 9
-    },
-    {
-     "name": "Владислав Дикиджи",
-     "nation": "СПБ",
-     "time": "14:37",
-     "no": 10,
-     "warmup": 2,
-     "place": 2
-    },
-    {
-     "name": "Глеб Лутфуллин",
-     "nation": "СПБ",
-     "time": "14:31",
-     "no": 9,
-     "warmup": 2,
-     "place": 3
+     "place": 9,
+     "time": "14:12"
     },
     {
      "name": "Даниил Постарнаков",
      "nation": "СТА",
-     "time": "13:49",
      "no": 3,
      "warmup": 1,
-     "place": 12
+     "place": 12,
+     "time": "13:49"
+    },
+    {
+     "name": "Артемий Маринин",
+     "nation": "МОС",
+     "no": 4,
+     "warmup": 1,
+     "place": 10,
+     "time": "13:55"
     },
     {
      "name": "Дмитрий Шелковников",
      "nation": "МОБ",
-     "time": "14:00",
      "no": 5,
      "warmup": 1,
-     "place": 11
-    },
-    {
-     "name": "Лев Лазарев",
-     "nation": "МОС",
-     "time": "14:25",
-     "no": 8,
-     "warmup": 2,
-     "place": 8
-    },
-    {
-     "name": "Макар Игнатов",
-     "nation": "МОС",
-     "time": "14:20",
-     "no": 7,
-     "warmup": 2,
-     "place": 6
+     "place": 11,
+     "time": "14:00"
     },
     {
      "name": "Никита Сарновский",
      "nation": "МОС",
-     "time": "14:06",
      "no": 6,
      "warmup": 1,
-     "place": 4
+     "place": 4,
+     "time": "14:06"
+    },
+    {
+     "name": "Макар Игнатов",
+     "nation": "МОС",
+     "no": 7,
+     "warmup": 2,
+     "place": 6,
+     "time": "14:20"
+    },
+    {
+     "name": "Лев Лазарев",
+     "nation": "МОС",
+     "no": 8,
+     "warmup": 2,
+     "place": 8,
+     "time": "14:25"
+    },
+    {
+     "name": "Глеб Лутфуллин",
+     "nation": "СПБ",
+     "no": 9,
+     "warmup": 2,
+     "place": 3,
+     "time": "14:31"
+    },
+    {
+     "name": "Владислав Дикиджи",
+     "nation": "СПБ",
+     "no": 10,
+     "warmup": 2,
+     "place": 2,
+     "time": "14:37"
+    },
+    {
+     "name": "Арсений Федотов",
+     "nation": "МОС",
+     "no": 11,
+     "warmup": 2,
+     "place": 5,
+     "time": "14:43"
     },
     {
      "name": "Пётр Гуменник",
      "nation": "СПБ",
-     "time": "14:49",
      "no": 12,
      "warmup": 2,
-     "place": 1
+     "place": 1,
+     "time": "14:49"
     }
    ],
    "live": {
@@ -34405,18 +34405,18 @@
     "cat": null,
     "first": null,
     "names": {
+     "Пётр ГУМЕННИК": "Пётр Гуменник",
+     "Владислав ДИКИДЖИ": "Владислав Дикиджи",
+     "Глеб ЛУТФУЛЛИН": "Глеб Лутфуллин",
+     "Никита САРНОВСКИЙ": "Никита Сарновский",
+     "Арсений ФЕДОТОВ": "Арсений Федотов",
+     "Макар ИГНАТОВ": "Макар Игнатов",
      "Илья СТРОГАНОВ": "Илья Строганов",
+     "Лев ЛАЗАРЕВ": "Лев Лазарев",
      "Артур ДАНИЕЛЯН": "Артур Даниелян",
-     "Даниил ПОСТАРНАКОВ": "Даниил Постарнаков",
      "Артемий МАРИНИН": "Артемий Маринин",
      "Дмитрий ШЕЛКОВНИКОВ": "Дмитрий Шелковников",
-     "Никита САРНОВСКИЙ": "Никита Сарновский",
-     "Макар ИГНАТОВ": "Макар Игнатов",
-     "Лев ЛАЗАРЕВ": "Лев Лазарев",
-     "Глеб ЛУТФУЛЛИН": "Глеб Лутфуллин",
-     "Владислав ДИКИДЖИ": "Владислав Дикиджи",
-     "Арсений ФЕДОТОВ": "Арсений Федотов",
-     "Пётр ГУМЕННИК": "Пётр Гуменник"
+     "Даниил ПОСТАРНАКОВ": "Даниил Постарнаков"
     },
     "basis": "judges"
    },
@@ -34622,53 +34622,11 @@
    "desc": "Начало: 15:20 МСК\nТрансляция: Okko",
    "field": [
     {
-     "name": "Louise Bordet / Martin Chardain",
-     "nation": "FRA",
-     "time": "15:26",
-     "no": 1,
-     "warmup": 1
-    },
-    {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
      "nation": "FRA",
      "time": "15:34",
      "no": 2,
      "warmup": 1
-    },
-    {
-     "name": "Milla Ruud Reitan / Nikolaj Majorov",
-     "nation": "SWE",
-     "time": "15:42",
-     "no": 3,
-     "warmup": 1
-    },
-    {
-     "name": "Holly Harris / Jason Chan",
-     "nation": "AUS",
-     "time": "15:50",
-     "no": 4,
-     "warmup": 1
-    },
-    {
-     "name": "Leah Neset / Artem Markelov",
-     "nation": "USA",
-     "time": "15:58",
-     "no": 5,
-     "warmup": 1
-    },
-    {
-     "name": "Sofia Val / Asaf Kazimov",
-     "nation": "ESP",
-     "time": "16:12",
-     "no": 6,
-     "warmup": 2
-    },
-    {
-     "name": "Eva Pate / Logan Bye",
-     "nation": "USA",
-     "time": "16:20",
-     "no": 7,
-     "warmup": 2
     },
     {
      "name": "Christina Carreira / Anthony Ponomarenko",
@@ -34685,10 +34643,52 @@
      "warmup": 2
     },
     {
+     "name": "Eva Pate / Logan Bye",
+     "nation": "USA",
+     "time": "16:20",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Holly Harris / Jason Chan",
+     "nation": "AUS",
+     "time": "15:50",
+     "no": 4,
+     "warmup": 1
+    },
+    {
      "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
      "nation": "FRA",
      "time": "16:44",
      "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Leah Neset / Artem Markelov",
+     "nation": "USA",
+     "time": "15:58",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Louise Bordet / Martin Chardain",
+     "nation": "FRA",
+     "time": "15:26",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "time": "15:42",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Sofia Val / Asaf Kazimov",
+     "nation": "ESP",
+     "time": "16:12",
+     "no": 6,
      "warmup": 2
     }
    ],
@@ -35832,52 +35832,88 @@
    "desc": "Начало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
-     "name": "Арсений Федотов",
-     "nation": "МОС"
+     "name": "Даниил Постарнаков",
+     "nation": "СТА",
+     "time": "13:07",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Артемий Маринин",
-     "nation": "МОС"
+     "nation": "МОС",
+     "time": "13:22",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Артур Даниелян",
-     "nation": "СПБ"
-    },
-    {
-     "name": "Владислав Дикиджи",
-     "nation": "СПБ"
-    },
-    {
-     "name": "Глеб Лутфуллин",
-     "nation": "СПБ"
-    },
-    {
-     "name": "Даниил Постарнаков",
-     "nation": "СТА"
-    },
-    {
-     "name": "Дмитрий Шелковников",
-     "nation": "МОБ"
-    },
-    {
-     "name": "Илья Строганов",
-     "nation": "СПБ"
+     "nation": "СПБ",
+     "time": "13:30",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Лев Лазарев",
-     "nation": "МОС"
+     "nation": "МОС",
+     "time": "13:37",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Илья Строганов",
+     "nation": "СПБ",
+     "time": "13:45",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Дмитрий Шелковников",
+     "nation": "МОБ",
+     "time": "13:52",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Макар Игнатов",
-     "nation": "МОС"
+     "nation": "МОС",
+     "time": "14:00",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Арсений Федотов",
+     "nation": "МОС",
+     "time": "14:07",
+     "no": 8,
+     "warmup": 2
     },
     {
      "name": "Никита Сарновский",
-     "nation": "МОС"
+     "nation": "МОС",
+     "time": "14:15",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Глеб Лутфуллин",
+     "nation": "СПБ",
+     "time": "14:22",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Владислав Дикиджи",
+     "nation": "СПБ",
+     "time": "14:30",
+     "no": 11,
+     "warmup": 2
     },
     {
      "name": "Пётр Гуменник",
-     "nation": "СПБ"
+     "nation": "СПБ",
+     "time": "14:37",
+     "no": 12,
+     "warmup": 2
     }
    ],
    "live": {
@@ -35886,18 +35922,18 @@
     "cat": "https://fsrussia.ru/results/2627/2etap_sen/CAT001RS.htm",
     "first": "https://fsrussia.ru/results/2627/2etap_sen/SEG001.htm",
     "names": {
-     "Пётр ГУМЕННИК": "Пётр Гуменник",
-     "Артур ДАНИЕЛЯН": "Артур Даниелян",
-     "Владислав ДИКИДЖИ": "Владислав Дикиджи",
-     "Макар ИГНАТОВ": "Макар Игнатов",
-     "Лев ЛАЗАРЕВ": "Лев Лазарев",
-     "Глеб ЛУТФУЛЛИН": "Глеб Лутфуллин",
-     "Артемий МАРИНИН": "Артемий Маринин",
      "Даниил ПОСТАРНАКОВ": "Даниил Постарнаков",
-     "Никита САРНОВСКИЙ": "Никита Сарновский",
+     "Дмитрий ШЕЛКОВНИКОВ": "Дмитрий Шелковников",
+     "Артемий МАРИНИН": "Артемий Маринин",
+     "Артур ДАНИЕЛЯН": "Артур Даниелян",
+     "Лев ЛАЗАРЕВ": "Лев Лазарев",
      "Илья СТРОГАНОВ": "Илья Строганов",
+     "Макар ИГНАТОВ": "Макар Игнатов",
      "Арсений ФЕДОТОВ": "Арсений Федотов",
-     "Дмитрий ШЕЛКОВНИКОВ": "Дмитрий Шелковников"
+     "Никита САРНОВСКИЙ": "Никита Сарновский",
+     "Глеб ЛУТФУЛЛИН": "Глеб Лутфуллин",
+     "Владислав ДИКИДЖИ": "Владислав Дикиджи",
+     "Пётр ГУМЕННИК": "Пётр Гуменник"
     },
     "basis": null
    },
@@ -35912,7 +35948,7 @@
    "seg": "ПП",
    "title": "GP de France — мужчины ПП",
    "start": "2026-10-25T14:10:00+03:00",
-   "end": "2026-10-25T15:55:00+03:00",
+   "end": "2026-10-25T15:57:00+03:00",
    "venue": "Angers, France",
    "intl": true,
    "broadcast": [
@@ -35944,51 +35980,87 @@
    "field": [
     {
      "name": "Adam Hagara",
-     "nation": "SVK"
-    },
-    {
-     "name": "Adam Siao Him Fa",
-     "nation": "FRA"
-    },
-    {
-     "name": "Aleksandr Selevko",
-     "nation": "EST"
-    },
-    {
-     "name": "Francois Pitot",
-     "nation": "FRA"
-    },
-    {
-     "name": "Jacob Sanchez",
-     "nation": "USA"
-    },
-    {
-     "name": "Jimmy Ma",
-     "nation": "USA"
-    },
-    {
-     "name": "Kao Miura",
-     "nation": "JPN"
-    },
-    {
-     "name": "Mikhail Shaidorov",
-     "nation": "KAZ"
-    },
-    {
-     "name": "Minkyu Seo",
-     "nation": "KOR"
-    },
-    {
-     "name": "Nikolaj Memola",
-     "nation": "ITA"
+     "nation": "SVK",
+     "time": "14:17",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Samy Hammi",
-     "nation": "FRA"
+     "nation": "FRA",
+     "time": "14:25",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Nikolaj Memola",
+     "nation": "ITA",
+     "time": "14:33",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Kao Miura",
+     "nation": "JPN",
+     "time": "14:40",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Sota Yamamoto",
-     "nation": "JPN"
+     "nation": "JPN",
+     "time": "14:48",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Jimmy Ma",
+     "nation": "USA",
+     "time": "14:56",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Francois Pitot",
+     "nation": "FRA",
+     "time": "15:11",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Jacob Sanchez",
+     "nation": "USA",
+     "time": "15:19",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Mikhail Shaidorov",
+     "nation": "KAZ",
+     "time": "15:26",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Minkyu Seo",
+     "nation": "KOR",
+     "time": "15:34",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Aleksandr Selevko",
+     "nation": "EST",
+     "time": "15:42",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Adam Siao Him Fa",
+     "nation": "FRA",
+     "time": "15:49",
+     "no": 12,
+     "warmup": 2
     }
    ],
    "live": {
@@ -35997,18 +36069,18 @@
     "cat": "https://results.isu.org/results/season2627/gpfra2026/CAT001RS.htm",
     "first": "https://results.isu.org/results/season2627/gpfra2026/SEG001.htm",
     "names": {
-     "Aleksandr SELEVKO": "Aleksandr Selevko",
+     "Adam HAGARA": "Adam Hagara",
      "Samy HAMMI": "Samy Hammi",
-     "Francois PITOT": "Francois Pitot",
-     "Adam SIAO HIM FA": "Adam Siao Him Fa",
      "Nikolaj MEMOLA": "Nikolaj Memola",
      "Kao MIURA": "Kao Miura",
      "Sota YAMAMOTO": "Sota Yamamoto",
+     "Jimmy MA": "Jimmy Ma",
+     "Francois PITOT": "Francois Pitot",
+     "Jacob SANCHEZ": "Jacob Sanchez",
      "Mikhail SHAIDOROV": "Mikhail Shaidorov",
      "Minkyu SEO": "Minkyu Seo",
-     "Adam HAGARA": "Adam Hagara",
-     "Jimmy MA": "Jimmy Ma",
-     "Jacob SANCHEZ": "Jacob Sanchez"
+     "Aleksandr SELEVKO": "Aleksandr Selevko",
+     "Adam SIAO HIM FA": "Adam Siao Him Fa"
     },
     "basis": null
    },
@@ -61245,6 +61317,8 @@
   "Alexandre Lirot": "photos/4a4e7db4d900d2a6.jpg",
   "Rocco Malik Dietrich": "photos/7c578e9d0515bd4d.jpg",
   "Alexa Riddoch": "photos/46cad6a70407b975.jpg",
-  "Felix Oberbacher": "photos/66d30ab9dc2b7f23.jpg"
+  "Felix Oberbacher": "photos/66d30ab9dc2b7f23.jpg",
+  "Lea Marie Castlunger": "photos/b1a2648dde408481.jpg",
+  "Nicole de Rosa": "photos/8d7eb6af99a4a2ab.jpg"
  }
 }
