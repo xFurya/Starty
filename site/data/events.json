@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T15:38:06+03:00",
- "checked": "2026-10-24T13:49:57.997660+00:00",
+ "checked": "2026-10-24T13:57:57.795554+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -34695,29 +34695,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "nation": "FRA",
+     "points": "125.01"
+    },
+    {
+     "place": 2,
      "name": "Diana Davis / Gleb Smolkin",
      "nation": "GEO",
      "points": "116.03"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Christina Carreira / Anthony Ponomarenko",
      "nation": "USA",
      "points": "111.53"
-    },
-    {
-     "place": 3,
-     "name": "Sofia Val / Asaf Kazimov",
-     "nation": "ESP",
-     "points": "101.21"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Diana Davis / Gleb Smolkin — 116.03\n2. Christina Carreira / Anthony Ponomarenko — 111.53\n3. Sofia Val / Asaf Kazimov — 101.21\n\nНачало: 15:20 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Laurence Fournier Beaudry / Guillaume Cizeron — 125.01\n2. Diana Davis / Gleb Smolkin — 116.03\n3. Christina Carreira / Anthony Ponomarenko — 111.53\n\nНачало: 15:20 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
      "nation": "FRA",
-     "place": 8,
+     "place": 9,
      "time": "15:34",
      "no": 2,
      "warmup": 1
@@ -34725,7 +34725,7 @@
     {
      "name": "Christina Carreira / Anthony Ponomarenko",
      "nation": "USA",
-     "place": 2,
+     "place": 3,
      "time": "16:28",
      "no": 8,
      "warmup": 2
@@ -34733,7 +34733,7 @@
     {
      "name": "Diana Davis / Gleb Smolkin",
      "nation": "GEO",
-     "place": 1,
+     "place": 2,
      "time": "16:36",
      "no": 9,
      "warmup": 2
@@ -34741,7 +34741,7 @@
     {
      "name": "Eva Pate / Logan Bye",
      "nation": "USA",
-     "place": 7,
+     "place": 8,
      "time": "16:20",
      "no": 7,
      "warmup": 2
@@ -34749,7 +34749,7 @@
     {
      "name": "Holly Harris / Jason Chan",
      "nation": "AUS",
-     "place": 6,
+     "place": 7,
      "time": "15:50",
      "no": 4,
      "warmup": 1
@@ -34757,7 +34757,7 @@
     {
      "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
      "nation": "FRA",
-     "place": 10,
+     "place": 1,
      "time": "16:44",
      "no": 10,
      "warmup": 2
@@ -34765,7 +34765,7 @@
     {
      "name": "Leah Neset / Artem Markelov",
      "nation": "USA",
-     "place": 4,
+     "place": 5,
      "time": "15:58",
      "no": 5,
      "warmup": 1
@@ -34773,7 +34773,7 @@
     {
      "name": "Louise Bordet / Martin Chardain",
      "nation": "FRA",
-     "place": 9,
+     "place": 10,
      "time": "15:26",
      "no": 1,
      "warmup": 1
@@ -34781,7 +34781,7 @@
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
      "nation": "SWE",
-     "place": 5,
+     "place": 6,
      "time": "15:42",
      "no": 3,
      "warmup": 1
@@ -34789,7 +34789,7 @@
     {
      "name": "Sofia Val / Asaf Kazimov",
      "nation": "ESP",
-     "place": 3,
+     "place": 4,
      "time": "16:12",
      "no": 6,
      "warmup": 2
@@ -34843,7 +34843,7 @@
     "Xan Rols"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Vladimir Samoilov — 72.31\n2. Corentin Spinar — 64.12\n3. David Sedej — 62.26\n\nНачало: 16:05 МСК",
+   "desc": "Промежуточные итоги:\n1. Vladimir Samoilov — 72.31\n2. Maxim Varakin — 66.21\n3. Corentin Spinar — 64.12\n\nНачало: 16:05 МСК",
    "field": [
     {
      "name": "Corentin Spinar",
@@ -34851,7 +34851,7 @@
      "time": "16:11",
      "no": 1,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "David Sedej",
@@ -34859,7 +34859,7 @@
      "time": "16:17",
      "no": 2,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Xan Rols",
@@ -34874,7 +34874,7 @@
      "time": "16:28",
      "no": 4,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Vladimir Samoilov",
@@ -34897,14 +34897,15 @@
      "time": "16:52",
      "no": 7,
      "warmup": 2,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Maxim Varakin",
      "nation": "CRO",
      "time": "16:57",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2
     },
     {
      "name": "Alessandro Liberatore",
@@ -34942,15 +34943,15 @@
     },
     {
      "place": 2,
-     "name": "Corentin Spinar",
-     "nation": "FRA",
-     "points": "64.12"
+     "name": "Maxim Varakin",
+     "nation": "CRO",
+     "points": "66.21"
     },
     {
      "place": 3,
-     "name": "David Sedej",
-     "nation": "SLO",
-     "points": "62.26"
+     "name": "Corentin Spinar",
+     "nation": "FRA",
+     "points": "64.12"
     }
    ],
    "provisional": true
