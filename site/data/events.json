@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T15:38:06+03:00",
- "checked": "2026-10-24T13:29:57.564532+00:00",
+ "checked": "2026-10-24T13:33:57.749082+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -34708,7 +34708,7 @@
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
      "nation": "FRA",
-     "place": 5,
+     "place": 6,
      "time": "15:34",
      "no": 2,
      "warmup": 1
@@ -34732,7 +34732,7 @@
     {
      "name": "Eva Pate / Logan Bye",
      "nation": "USA",
-     "place": 7,
+     "place": 5,
      "time": "16:20",
      "no": 7,
      "warmup": 2
@@ -34764,7 +34764,7 @@
     {
      "name": "Louise Bordet / Martin Chardain",
      "nation": "FRA",
-     "place": 6,
+     "place": 7,
      "time": "15:26",
      "no": 1,
      "warmup": 1
@@ -34834,7 +34834,7 @@
     "Xan Rols"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Corentin Spinar — 64.12\n2. David Sedej — 62.26\n\nНачало: 16:05 МСК",
+   "desc": "Промежуточные итоги:\n1. Corentin Spinar — 64.12\n2. David Sedej — 62.26\n3. Arin Yorke — 51.31\n\nНачало: 16:05 МСК",
    "field": [
     {
      "name": "Corentin Spinar",
@@ -34864,7 +34864,8 @@
      "nation": "GBR",
      "time": "16:28",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Vladimir Samoilov",
@@ -34933,6 +34934,12 @@
      "name": "David Sedej",
      "nation": "SLO",
      "points": "62.26"
+    },
+    {
+     "place": 3,
+     "name": "Arin Yorke",
+     "nation": "GBR",
+     "points": "51.31"
     }
    ],
    "provisional": true
