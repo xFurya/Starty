@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T15:22:46+03:00",
- "checked": "2026-10-24T12:37:58.144684+00:00",
+ "checked": "2026-10-24T12:45:57.847055+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -33905,7 +33905,7 @@
     {
      "name": "Ekaterina Balaganskaia",
      "nation": "SRB",
-     "place": 8,
+     "place": 9,
      "no": 15,
      "warmup": 3
     },
@@ -33919,14 +33919,14 @@
     {
      "name": "Enja Sivic",
      "nation": "SLO",
-     "place": 14,
+     "place": 15,
      "no": 4,
      "warmup": 1
     },
     {
      "name": "Hana Operckal",
      "nation": "SLO",
-     "place": 12,
+     "place": 13,
      "no": 5,
      "warmup": 1
     },
@@ -33940,28 +33940,28 @@
     {
      "name": "Liana Smrekar",
      "nation": "SLO",
-     "place": 13,
+     "place": 14,
      "no": 3,
      "warmup": 1
     },
     {
      "name": "Lija Kroselj",
      "nation": "SLO",
-     "place": 10,
+     "place": 11,
      "no": 6,
      "warmup": 1
     },
     {
      "name": "Louane Wolff",
      "nation": "FRA",
-     "place": 7,
+     "place": 8,
      "no": 13,
      "warmup": 3
     },
     {
      "name": "Luna Rozman",
      "nation": "SLO",
-     "place": 6,
+     "place": 7,
      "no": 11,
      "warmup": 2
     },
@@ -33975,7 +33975,7 @@
     {
      "name": "Neza Lusic",
      "nation": "SLO",
-     "place": 11,
+     "place": 12,
      "no": 8,
      "warmup": 2
     },
@@ -33989,21 +33989,21 @@
     {
      "name": "Nika Sajko",
      "nation": "CRO",
-     "place": 16,
+     "place": 17,
      "no": 1,
      "warmup": 1
     },
     {
      "name": "Paula Kasnar",
      "nation": "CRO",
-     "place": 17,
+     "place": 6,
      "no": 17,
      "warmup": 3
     },
     {
      "name": "Tea Sajko",
      "nation": "CRO",
-     "place": 9,
+     "place": 10,
      "no": 7,
      "warmup": 2
     },
@@ -34024,7 +34024,7 @@
     {
      "name": "Ziva Aupic",
      "nation": "SLO",
-     "place": 15,
+     "place": 16,
      "no": 2,
      "warmup": 1
     }
@@ -34464,7 +34464,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Арина Кудлай — 67.56\n2. Мария Лабутина — 60.57\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Арина Кудлай — 67.56\n2. Вероника Яметова — 67.25\n3. Мария Лабутина — 60.57\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Арина Кудлай",
@@ -34479,7 +34479,8 @@
      "nation": "МОБ",
      "time": "15:33",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Мария Артёмова",
@@ -34508,7 +34509,7 @@
      "time": "15:55",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Диана Евлахина",
@@ -34584,6 +34585,12 @@
     },
     {
      "place": 2,
+     "name": "Вероника Яметова",
+     "nation": "МОБ",
+     "points": "67.25"
+    },
+    {
+     "place": 3,
      "name": "Мария Лабутина",
      "nation": "ВОЛ",
      "points": "60.57"
@@ -34626,7 +34633,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Louise Bordet / Martin Chardain — 84.39\n2. Celina Fradji / Jean-Hans Fourneaux — 62.40\n3. Milla Ruud Reitan / Nikolaj Majorov — 63.01\n\nНачало: 15:20 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Celina Fradji / Jean-Hans Fourneaux — 88.84\n2. Louise Bordet / Martin Chardain — 84.39\n3. Milla Ruud Reitan / Nikolaj Majorov — 63.01\n\nНачало: 15:20 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
@@ -34634,7 +34641,7 @@
      "time": "15:34",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 1
     },
     {
      "name": "Christina Carreira / Anthony Ponomarenko",
@@ -34690,7 +34697,7 @@
      "time": "15:26",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
@@ -34732,15 +34739,15 @@
    "podium": [
     {
      "place": 1,
-     "name": "Louise Bordet / Martin Chardain",
+     "name": "Celina Fradji / Jean-Hans Fourneaux",
      "nation": "FRA",
-     "points": "84.39"
+     "points": "88.84"
     },
     {
      "place": 2,
-     "name": "Celina Fradji / Jean-Hans Fourneaux",
+     "name": "Louise Bordet / Martin Chardain",
      "nation": "FRA",
-     "points": "62.40"
+     "points": "84.39"
     },
     {
      "place": 3,
