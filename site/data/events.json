@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T15:38:06+03:00",
- "checked": "2026-10-24T14:33:57.688398+00:00",
+ "checked": "2026-10-24T14:37:57.692449+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35155,7 +35155,7 @@
     "Zofia Bochenek"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Ema Vukovic — 15.02\n\nНачало: 17:15 МСК",
+   "desc": "Промежуточные итоги:\n1. Julija Lovrencic — 52.29\n2. Ema Vukovic — 15.02\n\nНачало: 17:15 МСК",
    "field": [
     {
      "name": "Ema Vukovic",
@@ -35163,14 +35163,15 @@
      "time": "17:21",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Julija Lovrencic",
      "nation": "SLO",
      "time": "17:27",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Elena Agostinelli",
@@ -35292,6 +35293,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Julija Lovrencic",
+     "nation": "SLO",
+     "points": "52.29"
+    },
+    {
+     "place": 2,
      "name": "Ema Vukovic",
      "nation": "CRO",
      "points": "15.02"
