@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T18:36:54+03:00",
- "checked": "2026-10-24T15:57:57.639515+00:00",
+ "checked": "2026-10-24T16:01:58.156561+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35162,14 +35162,14 @@
      "points": "53.45"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ginevra Lavinia Negrello — 55.44\n2. Katerina Hanusova — 55.13\n3. Barbora Tykalova — 53.45\n\nНачало: 17:15 МСК",
+   "desc": "Итог:\n1. Ginevra Lavinia Negrello — 55.44\n2. Katerina Hanusova — 55.13\n3. Barbora Tykalova — 53.45\n\nПримечательное:\n• Katerina Hanusova — Личный рекорд за КП: 55.13 (был 50.61)\n\nНачало: 17:15 МСК",
    "field": [
     {
      "name": "Ema Vukovic",
      "nation": "CRO",
      "no": 1,
      "warmup": 1,
-     "place": 11,
+     "place": 12,
      "time": "17:21"
     },
     {
@@ -35249,7 +35249,8 @@
      "nation": "SRB",
      "time": "19:07",
      "no": 14,
-     "warmup": 3
+     "warmup": 3,
+     "place": 11
     },
     {
      "name": "Zala Grum",
@@ -35260,7 +35261,6 @@
      "place": 7
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
     "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG003.htm",
@@ -35280,9 +35280,16 @@
      "Ariadna GUPTA ESPADA": "Ariadna Gupta Espada",
      "Dunja TRESNJIC": "Dunja Tresnjic"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "gs_golden-bear.json"
+   "proto": "gs_golden-bear.json",
+   "facts": [
+    {
+     "who": "Katerina Hanusova",
+     "text": "Личный рекорд за КП: 55.13 (был 50.61)",
+     "kind": "score"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:dance-senior-rt",
@@ -35326,31 +35333,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Василиса Григорьева / Евгений Артющенко",
+     "nation": "МОС",
+     "points": "72.38"
+    },
+    {
+     "place": 2,
      "name": "Александра Прокопец / Александр Васькович",
      "nation": "МОБ",
      "points": "66.80"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Софья Тютюнина / Матвей Грачев",
      "nation": "МОС",
      "points": "66.60"
-    },
-    {
-     "place": 3,
-     "name": "Анна Смирнова / Богдан Шамков",
-     "nation": "ТУЛ",
-     "points": "50.20"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Александра Прокопец / Александр Васькович — 66.80\n2. Софья Тютюнина / Матвей Грачев — 66.60\n3. Анна Смирнова / Богдан Шамков — 50.20\n\nНачало: 18:25 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Василиса Григорьева / Евгений Артющенко — 72.38\n2. Александра Прокопец / Александр Васькович — 66.80\n3. Софья Тютюнина / Матвей Грачев — 66.60\n\nНачало: 18:25 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Александра Прокопец / Александр Васькович",
      "nation": "МОБ",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "time": "18:31"
     },
     {
@@ -35359,7 +35366,7 @@
      "time": "18:44",
      "no": 3,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Анна Щербакова / Егор Гончаров",
@@ -35373,7 +35380,8 @@
      "nation": "МОС",
      "time": "18:51",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Василиса Кагановская / Максим Некрасов",
@@ -35409,7 +35417,7 @@
      "time": "18:58",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 3
     }
    ],
    "provisional": true,
