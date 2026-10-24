@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T20:19:20+03:00",
- "checked": "2026-10-24T20:19:20+03:00",
+ "checked": "2026-10-24T17:47:03.478503+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35630,91 +35630,103 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 20:30 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Eve Dubecq — 94.89\n2. Gabrielle Daleman — 55.66\n3. Seojin Youn — 57.50\n\nНачало: 20:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Eve Dubecq",
      "nation": "FRA",
      "time": "20:37",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Gabrielle Daleman",
      "nation": "CAN",
      "time": "20:45",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Seojin Youn",
      "nation": "KOR",
      "time": "20:53",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Sarah Everhardt",
      "nation": "USA",
      "time": "21:00",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4
     },
     {
      "name": "Rion Sumiyoshi",
      "nation": "JPN",
      "time": "21:08",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5
     },
     {
      "name": "Nina Pinzarrone",
      "nation": "BEL",
      "time": "21:16",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 6
     },
     {
      "name": "Sarina Joos",
      "nation": "ITA",
      "time": "21:31",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     },
     {
      "name": "Lara Naki Gutmann",
      "nation": "ITA",
      "time": "21:39",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 8
     },
     {
      "name": "Yuseong Kim",
      "nation": "KOR",
      "time": "21:46",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 9
     },
     {
      "name": "Ami Nakai",
      "nation": "JPN",
      "time": "21:54",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 10
     },
     {
      "name": "Anastasiia Gubanova",
      "nation": "GEO",
      "time": "22:02",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 11
     },
     {
      "name": "Yuna Aoki",
      "nation": "JPN",
      "time": "22:09",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 12
     }
    ],
    "live": {
@@ -35738,7 +35750,28 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Eve Dubecq",
+     "nation": "FRA",
+     "points": "94.89"
+    },
+    {
+     "place": 2,
+     "name": "Gabrielle Daleman",
+     "nation": "CAN",
+     "points": "55.66"
+    },
+    {
+     "place": 3,
+     "name": "Seojin Youn",
+     "nation": "KOR",
+     "points": "57.50"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "gs:golden-bear:men-senior-pp-men",
