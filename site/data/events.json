@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T15:38:06+03:00",
- "checked": "2026-10-24T13:45:58.024056+00:00",
+ "checked": "2026-10-24T13:49:57.997660+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -34528,14 +34528,14 @@
      "points": "70.84"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ксения Синицына — 74.29\n2. Мария Захарова — 70.96\n3. Дина Хуснутдинова — 70.84\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Ксения Синицына — 74.29\n2. Мария Захарова — 70.96\n3. Дина Хуснутдинова — 70.84\n\nПримечательное:\n• Дина Хуснутдинова — Тройной аксель\n\nНачало: 15:15 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Арина Кудлай",
      "nation": "СПБ",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "time": "15:22"
     },
     {
@@ -34543,7 +34543,7 @@
      "nation": "ВОЛ",
      "no": 2,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "time": "15:55"
     },
     {
@@ -34551,7 +34551,8 @@
      "nation": "СПБ",
      "time": "16:30",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4
     },
     {
      "name": "Вероника Яметова",
@@ -34559,7 +34560,7 @@
      "time": "15:33",
      "no": 3,
      "warmup": 1,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Диана Евлахина",
@@ -34567,7 +34568,7 @@
      "time": "16:03",
      "no": 7,
      "warmup": 2,
-     "place": 9
+     "place": 10
     },
     {
      "name": "Дина Хуснутдинова",
@@ -34583,7 +34584,7 @@
      "time": "15:50",
      "no": 6,
      "warmup": 1,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Ксения Синицына",
@@ -34599,7 +34600,7 @@
      "time": "15:39",
      "no": 4,
      "warmup": 1,
-     "place": 10
+     "place": 11
     },
     {
      "name": "Мария Захарова",
@@ -34615,7 +34616,7 @@
      "time": "15:44",
      "no": 5,
      "warmup": 1,
-     "place": 11
+     "place": 12
     },
     {
      "name": "Милана Лебедева",
@@ -34623,10 +34624,9 @@
      "time": "16:08",
      "no": 8,
      "warmup": 2,
-     "place": 5
+     "place": 6
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/2etap_sen/SEG003.htm",
@@ -34646,9 +34646,16 @@
      "Дина ХУСНУТДИНОВА": "Дина Хуснутдинова",
      "Агата ПЕТРОВА": "Агата Петрова"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json",
+   "facts": [
+    {
+     "who": "Дина Хуснутдинова",
+     "text": "Тройной аксель",
+     "kind": "element"
+    }
+   ]
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:dance-senior-pt",
@@ -34688,29 +34695,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Diana Davis / Gleb Smolkin",
+     "nation": "GEO",
+     "points": "116.03"
+    },
+    {
+     "place": 2,
      "name": "Christina Carreira / Anthony Ponomarenko",
      "nation": "USA",
      "points": "111.53"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Sofia Val / Asaf Kazimov",
      "nation": "ESP",
      "points": "101.21"
-    },
-    {
-     "place": 3,
-     "name": "Leah Neset / Artem Markelov",
-     "nation": "USA",
-     "points": "100.12"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Christina Carreira / Anthony Ponomarenko — 111.53\n2. Sofia Val / Asaf Kazimov — 101.21\n3. Leah Neset / Artem Markelov — 100.12\n\nНачало: 15:20 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Diana Davis / Gleb Smolkin — 116.03\n2. Christina Carreira / Anthony Ponomarenko — 111.53\n3. Sofia Val / Asaf Kazimov — 101.21\n\nНачало: 15:20 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
      "nation": "FRA",
-     "place": 7,
+     "place": 8,
      "time": "15:34",
      "no": 2,
      "warmup": 1
@@ -34718,7 +34725,7 @@
     {
      "name": "Christina Carreira / Anthony Ponomarenko",
      "nation": "USA",
-     "place": 1,
+     "place": 2,
      "time": "16:28",
      "no": 8,
      "warmup": 2
@@ -34726,7 +34733,7 @@
     {
      "name": "Diana Davis / Gleb Smolkin",
      "nation": "GEO",
-     "place": 9,
+     "place": 1,
      "time": "16:36",
      "no": 9,
      "warmup": 2
@@ -34734,7 +34741,7 @@
     {
      "name": "Eva Pate / Logan Bye",
      "nation": "USA",
-     "place": 6,
+     "place": 7,
      "time": "16:20",
      "no": 7,
      "warmup": 2
@@ -34742,7 +34749,7 @@
     {
      "name": "Holly Harris / Jason Chan",
      "nation": "AUS",
-     "place": 5,
+     "place": 6,
      "time": "15:50",
      "no": 4,
      "warmup": 1
@@ -34758,7 +34765,7 @@
     {
      "name": "Leah Neset / Artem Markelov",
      "nation": "USA",
-     "place": 3,
+     "place": 4,
      "time": "15:58",
      "no": 5,
      "warmup": 1
@@ -34766,7 +34773,7 @@
     {
      "name": "Louise Bordet / Martin Chardain",
      "nation": "FRA",
-     "place": 8,
+     "place": 9,
      "time": "15:26",
      "no": 1,
      "warmup": 1
@@ -34774,7 +34781,7 @@
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
      "nation": "SWE",
-     "place": 4,
+     "place": 5,
      "time": "15:42",
      "no": 3,
      "warmup": 1
@@ -34782,7 +34789,7 @@
     {
      "name": "Sofia Val / Asaf Kazimov",
      "nation": "ESP",
-     "place": 2,
+     "place": 3,
      "time": "16:12",
      "no": 6,
      "warmup": 2
@@ -34867,7 +34874,7 @@
      "time": "16:28",
      "no": 4,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Vladimir Samoilov",
@@ -34889,7 +34896,8 @@
      "nation": "CZE",
      "time": "16:52",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4
     },
     {
      "name": "Maxim Varakin",
