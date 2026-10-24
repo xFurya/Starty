@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-24T19:59:54+03:00",
- "checked": "2026-10-24T19:59:54+03:00",
+ "generated": "2026-10-24T20:19:20+03:00",
+ "checked": "2026-10-24T20:19:20+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35454,7 +35454,7 @@
    "seg": "КП",
    "title": "GP de France — пары КП",
    "start": "2026-10-24T19:00:00+03:00",
-   "end": "2026-10-24T20:07:00+03:00",
+   "end": "2026-10-24T20:10:00+03:00",
    "venue": "Angers, France",
    "intl": true,
    "broadcast": [
@@ -35522,7 +35522,7 @@
      "nation": "UKR",
      "no": 2,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "time": "19:13"
     },
     {
@@ -35546,7 +35546,7 @@
      "nation": "FRA",
      "no": 5,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "time": "19:40"
     },
     {
@@ -35554,7 +35554,7 @@
      "nation": "GER",
      "no": 6,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "time": "19:46"
     },
     {
@@ -35562,15 +35562,16 @@
      "nation": "CHN",
      "no": 7,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "time": "19:53"
     },
     {
      "name": "Anastasiia Metelkina / Luka Berulava",
      "nation": "GEO",
-     "time": "19:59",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "time": "19:59"
     }
    ],
    "live": {
@@ -35579,14 +35580,14 @@
     "cat": null,
     "first": null,
     "names": {
+     "Anastasiia METELKINA / Luka BERULAVA": "Anastasiia Metelkina / Luka Berulava",
      "Aleksandra BOIKOVA / Dmitrii KOZLOVSKII": "Александра Бойкова / Дмитрий Козловский",
      "Annika HOCKE / Robert KUNKEL": "Annika Hocke / Robert Kunkel",
      "Camille KOVALEV / Pavel KOVALEV": "Camille Kovalev / Pavel Kovalev",
      "Aurelie FAULA / Theo BELLE": "Aurelie Faula / Theo Belle",
      "Megan WESSENBERG / Denys STREKALIN": "Megan Wessenberg / Denys Strekalin",
      "Jiaxuan ZHANG / Yihang HUANG": "Jiaxuan Zhang / Yihang Huang",
-     "Hannah HERRERA / Ivan KHOBTA": "Hannah Herrera / Ivan Khobta",
-     "Anastasiia METELKINA / Luka BERULAVA": "Anastasiia Metelkina / Luka Berulava"
+     "Hannah HERRERA / Ivan KHOBTA": "Hannah Herrera / Ivan Khobta"
     },
     "basis": "judges"
    },
@@ -35972,7 +35973,7 @@
    "seg": "ПП",
    "title": "GP de France — пары ПП",
    "start": "2026-10-25T12:30:00+03:00",
-   "end": "2026-10-25T13:50:00+03:00",
+   "end": "2026-10-25T13:48:00+03:00",
    "venue": "Angers, France",
    "intl": true,
    "broadcast": [
@@ -35981,7 +35982,10 @@
    "ours": [
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "13:32",
+     "no": 7,
+     "warmup": 2
     }
    ],
    "athletes": [
@@ -36001,39 +36005,63 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Россияне:\n• Александра Бойкова / Дмитрий Козловский\n\nНачало: 12:30 МСК\nТрансляция: Okko",
+   "desc": "Россияне:\n• Александра Бойкова / Дмитрий Козловский — 13:32\n\nНачало: 12:30 МСК\nТрансляция: Okko",
    "field": [
     {
-     "name": "Anastasiia Metelkina / Luka Berulava",
-     "nation": "GEO"
-    },
-    {
-     "name": "Annika Hocke / Robert Kunkel",
-     "nation": "GER"
-    },
-    {
-     "name": "Aurelie Faula / Theo Belle",
-     "nation": "FRA"
-    },
-    {
-     "name": "Camille Kovalev / Pavel Kovalev",
-     "nation": "FRA"
-    },
-    {
      "name": "Hannah Herrera / Ivan Khobta",
-     "nation": "UKR"
+     "nation": "UKR",
+     "time": "12:37",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Jiaxuan Zhang / Yihang Huang",
-     "nation": "CHN"
+     "nation": "CHN",
+     "time": "12:45",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Megan Wessenberg / Denys Strekalin",
-     "nation": "FRA"
+     "nation": "FRA",
+     "time": "12:53",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Aurelie Faula / Theo Belle",
+     "nation": "FRA",
+     "time": "13:01",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Camille Kovalev / Pavel Kovalev",
+     "nation": "FRA",
+     "time": "13:16",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Annika Hocke / Robert Kunkel",
+     "nation": "GER",
+     "time": "13:24",
+     "no": 6,
+     "warmup": 2
     },
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "13:32",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Anastasiia Metelkina / Luka Berulava",
+     "nation": "GEO",
+     "time": "13:39",
+     "no": 8,
+     "warmup": 2
     }
    ],
    "live": {
@@ -36042,14 +36070,14 @@
     "cat": "https://results.isu.org/results/season2627/gpfra2026/CAT003RS.htm",
     "first": "https://results.isu.org/results/season2627/gpfra2026/SEG005.htm",
     "names": {
-     "Aleksandra BOIKOVA / Dmitrii KOZLOVSKII": "Александра Бойкова / Дмитрий Козловский",
+     "Hannah HERRERA / Ivan KHOBTA": "Hannah Herrera / Ivan Khobta",
      "Jiaxuan ZHANG / Yihang HUANG": "Jiaxuan Zhang / Yihang Huang",
+     "Megan WESSENBERG / Denys STREKALIN": "Megan Wessenberg / Denys Strekalin",
      "Aurelie FAULA / Theo BELLE": "Aurelie Faula / Theo Belle",
      "Camille KOVALEV / Pavel KOVALEV": "Camille Kovalev / Pavel Kovalev",
-     "Megan WESSENBERG / Denys STREKALIN": "Megan Wessenberg / Denys Strekalin",
-     "Anastasiia METELKINA / Luka BERULAVA": "Anastasiia Metelkina / Luka Berulava",
      "Annika HOCKE / Robert KUNKEL": "Annika Hocke / Robert Kunkel",
-     "Hannah HERRERA / Ivan KHOBTA": "Hannah Herrera / Ivan Khobta"
+     "Aleksandra BOIKOVA / Dmitrii KOZLOVSKII": "Александра Бойкова / Дмитрий Козловский",
+     "Anastasiia METELKINA / Luka BERULAVA": "Anastasiia Metelkina / Luka Berulava"
     },
     "basis": null
    },
