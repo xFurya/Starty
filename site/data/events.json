@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T15:38:06+03:00",
- "checked": "2026-10-24T14:05:58.003306+00:00",
+ "checked": "2026-10-24T14:13:57.915335+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35029,14 +35029,15 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 16:55 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Анна Ляшенко / Пётр Алексеенко — 54.65\n\nНачало: 16:55 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Анна Ляшенко / Пётр Алексеенко",
      "nation": "МОС",
      "time": "17:02",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Ева Хмелькова / Владислав Антонышев",
@@ -35097,7 +35098,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Анна Ляшенко / Пётр Алексеенко",
+     "nation": "МОС",
+     "points": "54.65"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "gs:golden-bear:women-senior-kp-women",
