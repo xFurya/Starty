@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T20:19:20+03:00",
- "checked": "2026-10-24T18:03:02.786562+00:00",
+ "checked": "2026-10-24T18:11:03.597681+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35630,7 +35630,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Gabrielle Daleman — 100.56\n2. Eve Dubecq — 94.89\n3. Seojin Youn — 75.06\n\nНачало: 20:30 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Sarah Everhardt — 123.89\n2. Gabrielle Daleman — 100.56\n3. Eve Dubecq — 94.89\n\nНачало: 20:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Eve Dubecq",
@@ -35638,7 +35638,7 @@
      "time": "20:37",
      "no": 1,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Gabrielle Daleman",
@@ -35646,7 +35646,7 @@
      "time": "20:45",
      "no": 2,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Seojin Youn",
@@ -35654,7 +35654,7 @@
      "time": "20:53",
      "no": 3,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Sarah Everhardt",
@@ -35662,7 +35662,7 @@
      "time": "21:00",
      "no": 4,
      "warmup": 1,
-     "place": 4
+     "place": 1
     },
     {
      "name": "Rion Sumiyoshi",
@@ -35754,21 +35754,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Sarah Everhardt",
+     "nation": "USA",
+     "points": "123.89"
+    },
+    {
+     "place": 2,
      "name": "Gabrielle Daleman",
      "nation": "CAN",
      "points": "100.56"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Eve Dubecq",
      "nation": "FRA",
      "points": "94.89"
-    },
-    {
-     "place": 3,
-     "name": "Seojin Youn",
-     "nation": "KOR",
-     "points": "75.06"
     }
    ],
    "provisional": true
