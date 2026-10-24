@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T13:42:30+03:00",
- "checked": "2026-10-24T11:13:57.729194+00:00",
+ "checked": "2026-10-24T11:17:57.619606+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -33883,24 +33883,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Tea Sajko",
+     "nation": "CRO",
+     "points": "62.41"
+    },
+    {
+     "place": 2,
      "name": "Lija Kroselj",
      "nation": "SLO",
      "points": "60.07"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Hana Operckal",
      "nation": "SLO",
      "points": "56.32"
-    },
-    {
-     "place": 3,
-     "name": "Liana Smrekar",
-     "nation": "SLO",
-     "points": "52.90"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Lija Kroselj — 60.07\n2. Hana Operckal — 56.32\n3. Liana Smrekar — 52.90\n\nНачало: 13:15 МСК",
+   "desc": "Промежуточные итоги:\n1. Tea Sajko — 62.41\n2. Lija Kroselj — 60.07\n3. Hana Operckal — 56.32\n\nНачало: 13:15 МСК",
    "field": [
     {
      "name": "Ekaterina Balaganskaia",
@@ -33919,14 +33919,14 @@
     {
      "name": "Enja Sivic",
      "nation": "SLO",
-     "place": 4,
+     "place": 5,
      "no": 4,
      "warmup": 1
     },
     {
      "name": "Hana Operckal",
      "nation": "SLO",
-     "place": 2,
+     "place": 3,
      "no": 5,
      "warmup": 1
     },
@@ -33940,14 +33940,14 @@
     {
      "name": "Liana Smrekar",
      "nation": "SLO",
-     "place": 3,
+     "place": 4,
      "no": 3,
      "warmup": 1
     },
     {
      "name": "Lija Kroselj",
      "nation": "SLO",
-     "place": 1,
+     "place": 2,
      "no": 6,
      "warmup": 1
     },
@@ -33989,7 +33989,7 @@
     {
      "name": "Nika Sajko",
      "nation": "CRO",
-     "place": 6,
+     "place": 7,
      "no": 1,
      "warmup": 1
     },
@@ -34003,7 +34003,7 @@
     {
      "name": "Tea Sajko",
      "nation": "CRO",
-     "place": 7,
+     "place": 1,
      "no": 7,
      "warmup": 2
     },
@@ -34024,7 +34024,7 @@
     {
      "name": "Ziva Aupic",
      "nation": "SLO",
-     "place": 5,
+     "place": 6,
      "no": 2,
      "warmup": 1
     }
@@ -34099,31 +34099,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Jacob Sanchez",
+     "nation": "USA",
+     "points": "79.63"
+    },
+    {
+     "place": 2,
      "name": "Francois Pitot",
      "nation": "FRA",
      "points": "79.46"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Jimmy Ma",
      "nation": "USA",
      "points": "77.11"
-    },
-    {
-     "place": 3,
-     "name": "Sota Yamamoto",
-     "nation": "JPN",
-     "points": "77.02"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Francois Pitot — 79.46\n2. Jimmy Ma — 77.11\n3. Sota Yamamoto — 77.02\n\nНачало: 13:30 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Jacob Sanchez — 79.63\n2. Francois Pitot — 79.46\n3. Jimmy Ma — 77.11\n\nНачало: 13:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Samy Hammi",
      "nation": "FRA",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "time": "13:37"
     },
     {
@@ -34132,7 +34132,7 @@
      "time": "13:56",
      "no": 4,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Adam Siao Him Fa",
@@ -34154,14 +34154,15 @@
      "time": "13:50",
      "no": 3,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Jacob Sanchez",
      "nation": "USA",
      "time": "14:08",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Jimmy Ma",
@@ -34169,7 +34170,7 @@
      "time": "13:43",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Kao Miura",
@@ -34205,7 +34206,7 @@
      "time": "14:02",
      "no": 5,
      "warmup": 1,
-     "place": 3
+     "place": 4
     }
    ],
    "provisional": true,
@@ -34277,31 +34278,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Никита Сарновский",
+     "nation": "МОС",
+     "points": "98.14"
+    },
+    {
+     "place": 2,
      "name": "Илья Строганов",
      "nation": "СПБ",
      "points": "85.95"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Артур Даниелян",
      "nation": "СПБ",
      "points": "80.49"
-    },
-    {
-     "place": 3,
-     "name": "Артемий Маринин",
-     "nation": "МОС",
-     "points": "73.97"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Илья Строганов — 85.95\n2. Артур Даниелян — 80.49\n3. Артемий Маринин — 73.97\n\nНачало: 13:30 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Никита Сарновский — 98.14\n2. Илья Строганов — 85.95\n3. Артур Даниелян — 80.49\n\nНачало: 13:30 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Илья Строганов",
      "nation": "СПБ",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "time": "13:37"
     },
     {
@@ -34317,7 +34318,7 @@
      "time": "13:55",
      "no": 4,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Артур Даниелян",
@@ -34325,7 +34326,7 @@
      "time": "14:12",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Владислав Дикиджи",
@@ -34347,7 +34348,7 @@
      "time": "13:49",
      "no": 3,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Дмитрий Шелковников",
@@ -34355,7 +34356,7 @@
      "time": "14:00",
      "no": 5,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Лев Лазарев",
@@ -34376,7 +34377,8 @@
      "nation": "МОС",
      "time": "14:06",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Пётр Гуменник",
