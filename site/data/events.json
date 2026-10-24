@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-24T19:21:26+03:00",
- "checked": "2026-10-24T16:50:16.735721+00:00",
+ "generated": "2026-10-24T19:37:27+03:00",
+ "checked": "2026-10-24T19:37:27+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35365,7 +35365,7 @@
      "nation": "МОС",
      "no": 2,
      "warmup": 1,
-     "place": 7,
+     "place": 6,
      "time": "18:58"
     },
     {
@@ -35373,7 +35373,7 @@
      "nation": "ТУЛ",
      "no": 3,
      "warmup": 1,
-     "place": 9,
+     "place": 8,
      "time": "18:44"
     },
     {
@@ -35403,18 +35403,18 @@
     {
      "name": "Анна Щербакова / Егор Гончаров",
      "nation": "МОС",
-     "time": "19:18",
      "no": 7,
      "warmup": 2,
-     "place": 5
+     "place": 4,
+     "time": "19:18"
     },
     {
      "name": "Екатерина Миронова / Евгений Устенко",
      "nation": "СПБ",
-     "time": "19:24",
      "no": 8,
      "warmup": 2,
-     "place": 8
+     "place": 7,
+     "time": "19:24"
     },
     {
      "name": "Елизавета Шичина / Павел Дрозд",
@@ -35434,11 +35434,11 @@
      "Василиса КАГАНОВСКАЯ / Максим НЕКРАСОВ": "Василиса Кагановская / Максим Некрасов",
      "Василиса ГРИГОРЬЕВА / Евгений АРТЮЩЕНКО": "Василиса Григорьева / Евгений Артющенко",
      "Милана КУЗЬМИНА / Дмитрий СТУДЕНИКИН": "Милана Кузьмина / Дмитрий Студеникин",
+     "Анна ЩЕРБАКОВА / Егор ГОНЧАРОВ": "Анна Щербакова / Егор Гончаров",
      "Александра ПРОКОПЕЦ / Александр ВАСЬКОВИЧ": "Александра Прокопец / Александр Васькович",
      "Софья ТЮТЮНИНА / Матвей ГРАЧЕВ": "Софья Тютюнина / Матвей Грачев",
-     "Анна СМИРНОВА / Богдан ШАМКОВ": "Анна Смирнова / Богдан Шамков",
-     "Анна ЩЕРБАКОВА / Егор ГОНЧАРОВ": "Анна Щербакова / Егор Гончаров",
      "Екатерина МИРОНОВА / Евгений УСТЕНКО": "Екатерина Миронова / Евгений Устенко",
+     "Анна СМИРНОВА / Богдан ШАМКОВ": "Анна Смирнова / Богдан Шамков",
      "Елизавета ШИЧИНА / Павел ДРОЗД": "Елизавета Шичина / Павел Дрозд"
     },
     "basis": "judges"
@@ -35464,10 +35464,10 @@
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
      "nation": "RUS",
-     "time": "19:20",
      "no": 3,
      "warmup": 1,
-     "place": 1
+     "place": 1,
+     "time": "19:20"
     }
    ],
    "athletes": [
@@ -35496,25 +35496,25 @@
     },
     {
      "place": 2,
-     "name": "Camille Kovalev / Pavel Kovalev",
-     "nation": "FRA",
-     "points": "62.40"
-    },
-    {
-     "place": 3,
      "name": "Aurelie Faula / Theo Belle",
      "nation": "FRA",
      "points": "60.85"
+    },
+    {
+     "place": 3,
+     "name": "Megan Wessenberg / Denys Strekalin",
+     "nation": "FRA",
+     "points": "58.37"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Александра Бойкова / Дмитрий Козловский — 75.85\n2. Camille Kovalev / Pavel Kovalev — 62.40\n3. Aurelie Faula / Theo Belle — 60.85\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 19:20\n\nНачало: 19:00 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Александра Бойкова / Дмитрий Козловский — 75.85\n2. Aurelie Faula / Theo Belle — 60.85\n3. Megan Wessenberg / Denys Strekalin — 58.37\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 19:20\n\nНачало: 19:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Megan Wessenberg / Denys Strekalin",
      "nation": "FRA",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 3,
      "time": "19:07"
     },
     {
@@ -35522,8 +35522,24 @@
      "nation": "UKR",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 4,
      "time": "19:13"
+    },
+    {
+     "name": "Александра Бойкова / Дмитрий Козловский",
+     "nation": "RUS",
+     "no": 3,
+     "warmup": 1,
+     "place": 1,
+     "time": "19:20"
+    },
+    {
+     "name": "Aurelie Faula / Theo Belle",
+     "nation": "FRA",
+     "no": 4,
+     "warmup": 1,
+     "place": 2,
+     "time": "19:26"
     },
     {
      "name": "Anastasiia Metelkina / Luka Berulava",
@@ -35540,14 +35556,6 @@
      "warmup": 2
     },
     {
-     "name": "Aurelie Faula / Theo Belle",
-     "nation": "FRA",
-     "time": "19:26",
-     "no": 4,
-     "warmup": 1,
-     "place": 3
-    },
-    {
      "name": "Camille Kovalev / Pavel Kovalev",
      "nation": "FRA",
      "time": "19:40",
@@ -35561,14 +35569,6 @@
      "time": "19:53",
      "no": 7,
      "warmup": 2
-    },
-    {
-     "name": "Александра Бойкова / Дмитрий Козловский",
-     "nation": "RUS",
-     "time": "19:20",
-     "no": 3,
-     "warmup": 1,
-     "place": 1
     }
    ],
    "provisional": true,
@@ -35578,10 +35578,10 @@
     "cat": null,
     "first": null,
     "names": {
-     "Megan WESSENBERG / Denys STREKALIN": "Megan Wessenberg / Denys Strekalin",
-     "Hannah HERRERA / Ivan KHOBTA": "Hannah Herrera / Ivan Khobta",
      "Aleksandra BOIKOVA / Dmitrii KOZLOVSKII": "Александра Бойкова / Дмитрий Козловский",
      "Aurelie FAULA / Theo BELLE": "Aurelie Faula / Theo Belle",
+     "Megan WESSENBERG / Denys STREKALIN": "Megan Wessenberg / Denys Strekalin",
+     "Hannah HERRERA / Ivan KHOBTA": "Hannah Herrera / Ivan Khobta",
      "Camille KOVALEV / Pavel KOVALEV": "Camille Kovalev / Pavel Kovalev",
      "Annika HOCKE / Robert KUNKEL": "Annika Hocke / Robert Kunkel",
      "Jiaxuan ZHANG / Yihang HUANG": "Jiaxuan Zhang / Yihang Huang",
