@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-24T19:37:27+03:00",
- "checked": "2026-10-24T16:54:15.789154+00:00",
+ "checked": "2026-10-24T17:02:16.313856+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35522,7 +35522,7 @@
      "nation": "UKR",
      "no": 2,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "time": "19:13"
     },
     {
@@ -35569,7 +35569,8 @@
      "nation": "CHN",
      "time": "19:53",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6
     }
    ],
    "provisional": true,
