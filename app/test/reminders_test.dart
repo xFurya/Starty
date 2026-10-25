@@ -18,7 +18,7 @@ void main() {
     expect(p.length, future > 60 ? 60 : future);
     final x = p.firstWhere((x) => x.startId == womenFs.id);
     expect(x.at, womenFs.t0.subtract(const Duration(minutes: 15)));
-    expect(x.title, 'Женщины, произвольная программа в 17:30');
+    expect(x.title, '17:30 — Женщины, произвольная программа');
     expect(x.lines.first, 'CS Denis Ten Memorial');
     expect(x.lines, contains('20:32 — Александра Трусова'));
     expect(x.group, womenFs.tid);
@@ -131,7 +131,7 @@ void main() {
 
     test('старт: вид полностью и время в заголовке, турнир, по строке на отслеживаемого', () {
       final t = Reminders.startText(start(ours: two));
-      expect(t.title, 'Танцы, ритм-танец в 17:45');
+      expect(t.title, '17:45 — Танцы, ритм-танец');
       expect(t.lines, ['CS Budapest Trophy', '19:04 — Кузьмина / Студеникин', '20:48 — Григорьева / Артющенко']);
       expect(t.collapsed, 'Кузьмина / Студеникин в 19:04 и ещё 1');
     });
@@ -145,18 +145,18 @@ void main() {
     test('старт идёт: вместо времени начала — статус, как метка на карточке', () {
       final t = Reminders.startText(start(ours: two));
       expect(Reminders.liveMark, '●\u00A0ИДЁТ');
-      expect(t.live, 'Танцы, ритм-танец ●\u00A0ИДЁТ');
-      expect(t.live, isNot(matches(r'в \d{1,2}:\d\d')));
+      expect(t.live, '●\u00A0ИДЁТ — Танцы, ритм-танец');
+      expect(t.live, isNot(matches(r'\d{1,2}:\d\d')));
       // строки и свёрнутый вид — те же
       expect(t.lines, ['CS Budapest Trophy', '19:04 — Кузьмина / Студеникин', '20:48 — Григорьева / Артющенко']);
       expect(t.collapsed, 'Кузьмина / Студеникин в 19:04 и ещё 1');
       final j = Reminders.startText(start(title: 'CS Budapest Trophy — юниорские танцы РТ', level: 'junior'));
-      expect(j.live, 'Юниорские танцы, ритм-танец ●\u00A0ИДЁТ');
+      expect(j.live, '●\u00A0ИДЁТ — Юниорские танцы, ритм-танец');
     });
 
     test('старт без отслеживаемых: строка — турнир', () {
       final t = Reminders.startText(start());
-      expect(t.title, 'Танцы, ритм-танец в 17:45');
+      expect(t.title, '17:45 — Танцы, ритм-танец');
       expect(t.lines, ['CS Budapest Trophy']);
       expect(t.collapsed, 'CS Budapest Trophy');
     });
@@ -169,9 +169,9 @@ void main() {
 
     test('юниоры: уровень в названии вида', () {
       final t = Reminders.startText(start(title: 'CS Budapest Trophy — юниорские танцы РТ', level: 'junior'));
-      expect(t.title, 'Юниорские танцы, ритм-танец в 17:45');
+      expect(t.title, '17:45 — Юниорские танцы, ритм-танец');
       final girls = Reminders.startText(start(title: 'CS Budapest Trophy — девушки КП', level: 'junior'));
-      expect(girls.title, 'Девушки, короткая программа в 17:45');
+      expect(girls.title, '17:45 — Девушки, короткая программа');
     });
 
     test('длинные пары не режутся и не склеиваются', () {
@@ -256,19 +256,19 @@ void main() {
     final x = Reminders.plan(data, plan(), now).firstWhere((x) => x.startId == womenFs.id);
     expect(x.liveAt, womenFs.t0);
     for (final t in [x.at, womenFs.t0.subtract(const Duration(seconds: 1))]) {
-      expect(x.titleAt(t), 'Женщины, произвольная программа в 17:30');
+      expect(x.titleAt(t), '17:30 — Женщины, произвольная программа');
     }
     for (final t in [womenFs.t0, womenFs.t0.add(const Duration(hours: 1)), womenFs.t1.subtract(const Duration(minutes: 1))]) {
       final title = x.titleAt(t);
-      expect(title, 'Женщины, произвольная программа ${Reminders.liveMark}');
-      expect(title, isNot(matches(r'в \d{1,2}:\d\d')));
+      expect(title, '${Reminders.liveMark} — Женщины, произвольная программа');
+      expect(title, isNot(matches(r'\d{1,2}:\d\d')));
       expect(title, contains('●'));
       expect(title, contains('ИДЁТ'));
     }
     // уже идущий старт — тоже со статусом
     final live = data.starts.firstWhere((e) => e.t0.isBefore(now) && e.t1.isAfter(now));
     final y = Reminders.plan(data, plan(), now).firstWhere((x) => x.startId == live.id);
-    expect(y.titleAt(now), endsWith(Reminders.liveMark));
+    expect(y.titleAt(now), startsWith(Reminders.liveMark));
     // выход спортсмена не меняется
     final r = const NotifyRules().copyWith(skaters: true);
     final k = Reminders.plan(data, plan(r), now).firstWhere((x) => x.title == 'В 20:32 выходит Александра Трусова');
