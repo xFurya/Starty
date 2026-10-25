@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-25T14:01:12+03:00",
- "checked": "2026-10-25T11:29:02.005472+00:00",
+ "generated": "2026-10-25T14:15:27+03:00",
+ "checked": "2026-10-25T14:15:27+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -36042,10 +36042,10 @@
     {
      "name": "Aurelie Faula / Theo Belle",
      "nation": "FRA",
+     "place": 2,
      "time": "13:01",
      "no": 4,
-     "warmup": 1,
-     "place": 2
+     "warmup": 1
     },
     {
      "name": "Camille Kovalev / Pavel Kovalev",
@@ -36058,7 +36058,7 @@
     {
      "name": "Hannah Herrera / Ivan Khobta",
      "nation": "UKR",
-     "place": 5,
+     "place": 4,
      "time": "12:37",
      "no": 1,
      "warmup": 1
@@ -36095,9 +36095,9 @@
     "first": "https://results.isu.org/results/season2627/gpfra2026/SEG005.htm",
     "names": {
      "Megan WESSENBERG / Denys STREKALIN": "Megan Wessenberg / Denys Strekalin",
+     "Aurelie FAULA / Theo BELLE": "Aurelie Faula / Theo Belle",
      "Jiaxuan ZHANG / Yihang HUANG": "Jiaxuan Zhang / Yihang Huang",
      "Hannah HERRERA / Ivan KHOBTA": "Hannah Herrera / Ivan Khobta",
-     "Aurelie FAULA / Theo BELLE": "Aurelie Faula / Theo Belle",
      "Camille KOVALEV / Pavel KOVALEV": "Camille Kovalev / Pavel Kovalev",
      "Annika HOCKE / Robert KUNKEL": "Annika Hocke / Robert Kunkel",
      "Aleksandra BOIKOVA / Dmitrii KOZLOVSKII": "Александра Бойкова / Дмитрий Козловский",
@@ -36244,10 +36244,10 @@
     {
      "name": "Макар Игнатов",
      "nation": "МОС",
+     "place": 2,
      "time": "14:00",
      "no": 7,
-     "warmup": 2,
-     "place": 4
+     "warmup": 2
     },
     {
      "name": "Никита Сарновский",
@@ -36273,12 +36273,12 @@
     "first": "https://fsrussia.ru/results/2627/2etap_sen/SEG001.htm",
     "names": {
      "Лев ЛАЗАРЕВ": "Лев Лазарев",
+     "Макар ИГНАТОВ": "Макар Игнатов",
      "Илья СТРОГАНОВ": "Илья Строганов",
      "Артур ДАНИЕЛЯН": "Артур Даниелян",
      "Артемий МАРИНИН": "Артемий Маринин",
      "Дмитрий ШЕЛКОВНИКОВ": "Дмитрий Шелковников",
      "Даниил ПОСТАРНАКОВ": "Даниил Постарнаков",
-     "Макар ИГНАТОВ": "Макар Игнатов",
      "Арсений ФЕДОТОВ": "Арсений Федотов",
      "Никита САРНОВСКИЙ": "Никита Сарновский",
      "Глеб ЛУТФУЛЛИН": "Глеб Лутфуллин",
@@ -36332,13 +36332,19 @@
      "points": "80.75"
     },
     {
-     "place": 3,
+     "place": 2,
      "name": "Zala Grum",
      "nation": "SLO",
      "points": "80.56"
+    },
+    {
+     "place": 3,
+     "name": "Elena Agostinelli",
+     "nation": "ITA",
+     "points": "79.09"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ariadna Gupta Espada — 110.70\n2. Zofia Bochenek — 80.75\n3. Zala Grum — 80.56\n\nНачало: 13:25 МСК",
+   "desc": "Промежуточные итоги:\n1. Zofia Bochenek — 80.75\n2. Zala Grum — 80.56\n3. Elena Agostinelli — 79.09\n\nНачало: 13:25 МСК",
    "field": [
     {
      "name": "Ariadna Gupta Espada",
@@ -36358,7 +36364,7 @@
     {
      "name": "Dunja Tresnjic",
      "nation": "SRB",
-     "place": 6,
+     "place": 5,
      "time": "13:38",
      "no": 2,
      "warmup": 1
@@ -36366,7 +36372,7 @@
     {
      "name": "Elena Agostinelli",
      "nation": "ITA",
-     "place": 4,
+     "place": 3,
      "time": "14:00",
      "no": 5,
      "warmup": 1
@@ -36374,7 +36380,7 @@
     {
      "name": "Ema Vukovic",
      "nation": "CRO",
-     "place": 7,
+     "place": 6,
      "time": "13:31",
      "no": 1,
      "warmup": 1
@@ -36389,7 +36395,7 @@
     {
      "name": "Julia Fennell",
      "nation": "ISR",
-     "place": 5,
+     "place": 4,
      "time": "13:46",
      "no": 3,
      "warmup": 1
@@ -36418,10 +36424,10 @@
     {
      "name": "Zala Grum",
      "nation": "SLO",
+     "place": 2,
      "time": "14:08",
      "no": 6,
-     "warmup": 1,
-     "place": 3
+     "warmup": 1
     },
     {
      "name": "Zofia Bochenek",
@@ -36439,12 +36445,12 @@
     "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT002RS.htm",
     "first": "https://www.croskate.hr/cscro2025/GB2026/SEG003.htm",
     "names": {
+     "Zala GRUM": "Zala Grum",
      "Zofia BOCHENEK": "Zofia Bochenek",
      "Elena AGOSTINELLI": "Elena Agostinelli",
      "Julia FENNELL": "Julia Fennell",
      "Dunja TRESNJIC": "Dunja Tresnjic",
      "Ema VUKOVIC": "Ema Vukovic",
-     "Zala GRUM": "Zala Grum",
      "Ariadna GUPTA ESPADA": "Ariadna Gupta Espada",
      "Oliwia STROKOSZ": "Oliwia Strokosz",
      "Julija LOVRENCIC": "Julija Lovrencic",
@@ -61911,6 +61917,7 @@
   "Felix Oberbacher": "photos/66d30ab9dc2b7f23.jpg",
   "Lea Marie Castlunger": "photos/b1a2648dde408481.jpg",
   "Nicole de Rosa": "photos/8d7eb6af99a4a2ab.jpg",
-  "Ginevra Lavinia Negrello": "photos/aff1724f4387acbd.jpg"
+  "Ginevra Lavinia Negrello": "photos/aff1724f4387acbd.jpg",
+  "Zala Grum": "photos/09e6e1a784e8c40e.jpg"
  }
 }
