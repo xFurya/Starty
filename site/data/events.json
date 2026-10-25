@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-25T16:58:26+03:00",
- "checked": "2026-10-25T16:58:26+03:00",
+ "checked": "2026-10-25T14:29:27.075518+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -37076,14 +37076,15 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 17:10 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Юлия Филимонова / Андрей Шадерков — 91.53\n\nНачало: 17:10 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Юлия Филимонова / Андрей Шадерков",
      "nation": "КРД",
      "time": "17:17",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Ева Хмелькова / Владислав Антонышев",
@@ -37144,7 +37145,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Юлия Филимонова / Андрей Шадерков",
+     "nation": "КРД",
+     "points": "91.53"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:dance-senior-pt",
