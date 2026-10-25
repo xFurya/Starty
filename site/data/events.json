@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-25T14:15:27+03:00",
- "checked": "2026-10-25T11:57:02.695714+00:00",
+ "checked": "2026-10-25T12:05:02.910021+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -36421,7 +36421,7 @@
      "points": "89.64"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ariadna Gupta Espada — 110.70\n2. Katerina Hanusova — 94.90\n3. Barbora Tykalova — 89.64\n\nНачало: 13:25 МСК",
+   "desc": "Итог:\n1. Ariadna Gupta Espada — 110.70\n2. Katerina Hanusova — 94.90\n3. Barbora Tykalova — 89.64\n\nИтог турнира:\n1. Ariadna Gupta Espada — 158.67\n2. Katerina Hanusova — 150.03\n3. Barbora Tykalova — 143.09\n\nПримечательное:\n• Ariadna Gupta Espada — Личный рекорд за ПП: 110.70 (был 103.69)\n• Ariadna Gupta Espada — Личный рекорд по сумме: 158.67 (был 150.01)\n• Katerina Hanusova — Личный рекорд по сумме: 150.03 (был 146.59)\n• Ariadna Gupta Espada — После короткой программы — 6-е место, в итоге — 1-е место\n\nНачало: 13:25 МСК",
    "field": [
     {
      "name": "Ariadna Gupta Espada",
@@ -36429,7 +36429,8 @@
      "time": "14:22",
      "no": 7,
      "warmup": 2,
-     "place": 1
+     "place": 1,
+     "final": 1
     },
     {
      "name": "Barbora Tykalova",
@@ -36437,46 +36438,53 @@
      "time": "14:44",
      "no": 10,
      "warmup": 2,
-     "place": 3
+     "place": 3,
+     "final": 3
     },
     {
      "name": "Dunja Tresnjic",
      "nation": "SRB",
-     "place": 10,
+     "place": 11,
      "time": "13:38",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 11
     },
     {
      "name": "Elena Agostinelli",
      "nation": "ITA",
-     "place": 7,
+     "place": 8,
      "time": "14:00",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "final": 9
     },
     {
      "name": "Ema Vukovic",
      "nation": "CRO",
-     "place": 11,
+     "place": 12,
      "time": "13:31",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 12
     },
     {
      "name": "Ginevra Lavinia Negrello",
      "nation": "ITA",
      "time": "14:58",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7,
+     "final": 4
     },
     {
      "name": "Julia Fennell",
      "nation": "ISR",
-     "place": 9,
+     "place": 10,
      "time": "13:46",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 10
     },
     {
      "name": "Julija Lovrencic",
@@ -36484,7 +36492,8 @@
      "time": "14:36",
      "no": 9,
      "warmup": 2,
-     "place": 8
+     "place": 9,
+     "final": 5
     },
     {
      "name": "Katerina Hanusova",
@@ -36492,7 +36501,8 @@
      "time": "14:51",
      "no": 11,
      "warmup": 2,
-     "place": 2
+     "place": 2,
+     "final": 2
     },
     {
      "name": "Oliwia Strokosz",
@@ -36500,7 +36510,8 @@
      "time": "14:29",
      "no": 8,
      "warmup": 2,
-     "place": 4
+     "place": 4,
+     "final": 6
     },
     {
      "name": "Zala Grum",
@@ -36508,7 +36519,8 @@
      "place": 6,
      "time": "14:08",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "final": 7
     },
     {
      "name": "Zofia Bochenek",
@@ -36516,10 +36528,10 @@
      "place": 5,
      "time": "13:53",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 8
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
     "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG004.htm",
@@ -36539,9 +36551,51 @@
      "Katerina HANUSOVA": "Katerina Hanusova",
      "Ginevra Lavinia NEGRELLO": "Ginevra Lavinia Negrello"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "gs_golden-bear.json"
+   "proto": "gs_golden-bear.json",
+   "facts": [
+    {
+     "who": "Ariadna Gupta Espada",
+     "text": "Личный рекорд за ПП: 110.70 (был 103.69)",
+     "kind": "score"
+    },
+    {
+     "who": "Ariadna Gupta Espada",
+     "text": "Личный рекорд по сумме: 158.67 (был 150.01)",
+     "kind": "score"
+    },
+    {
+     "who": "Katerina Hanusova",
+     "text": "Личный рекорд по сумме: 150.03 (был 146.59)",
+     "kind": "score"
+    },
+    {
+     "who": "Ariadna Gupta Espada",
+     "text": "После короткой программы — 6-е место, в итоге — 1-е место",
+     "kind": "place"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Ariadna Gupta Espada",
+     "nation": "ESP",
+     "points": "158.67"
+    },
+    {
+     "place": 2,
+     "name": "Katerina Hanusova",
+     "nation": "CZE",
+     "points": "150.03"
+    },
+    {
+     "place": 3,
+     "name": "Barbora Tykalova",
+     "nation": "CZE",
+     "points": "143.09"
+    }
+   ]
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:men-senior-pp",
