@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-25T14:15:27+03:00",
- "checked": "2026-10-25T11:49:02.646361+00:00",
+ "checked": "2026-10-25T11:53:02.285445+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35984,7 +35984,8 @@
      "time": "13:32",
      "no": 7,
      "warmup": 2,
-     "place": 1
+     "place": 2,
+     "final": 2
     }
    ],
    "athletes": [
@@ -36007,31 +36008,33 @@
    "podium": [
     {
      "place": 1,
+     "name": "Anastasiia Metelkina / Luka Berulava",
+     "nation": "GEO",
+     "points": "127.31"
+    },
+    {
+     "place": 2,
      "name": "Александра Бойкова / Дмитрий Козловский",
      "nation": "RUS",
      "points": "121.81"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Annika Hocke / Robert Kunkel",
      "nation": "GER",
      "points": "112.71"
-    },
-    {
-     "place": 3,
-     "name": "Megan Wessenberg / Denys Strekalin",
-     "nation": "FRA",
-     "points": "105.61"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Александра Бойкова / Дмитрий Козловский — 121.81\n2. Annika Hocke / Robert Kunkel — 112.71\n3. Megan Wessenberg / Denys Strekalin — 105.61\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 13:32\n\nНачало: 12:30 МСК\nТрансляция: Okko",
+   "desc": "Итог:\n1. Anastasiia Metelkina / Luka Berulava — 127.31\n2. Александра Бойкова / Дмитрий Козловский — 121.81\n3. Annika Hocke / Robert Kunkel — 112.71\n\nИтог турнира:\n1. Anastasiia Metelkina / Luka Berulava — 204.65\n2. Александра Бойкова / Дмитрий Козловский — 197.66\n3. Annika Hocke / Robert Kunkel — 179.74\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 13:32\n\nНачало: 12:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anastasiia Metelkina / Luka Berulava",
      "nation": "GEO",
      "time": "13:39",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "final": 1
     },
     {
      "name": "Annika Hocke / Robert Kunkel",
@@ -36039,15 +36042,17 @@
      "time": "13:24",
      "no": 6,
      "warmup": 2,
-     "place": 2
+     "place": 3,
+     "final": 3
     },
     {
      "name": "Aurelie Faula / Theo Belle",
      "nation": "FRA",
-     "place": 4,
+     "place": 5,
      "time": "13:01",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 6
     },
     {
      "name": "Camille Kovalev / Pavel Kovalev",
@@ -36055,31 +36060,35 @@
      "time": "13:16",
      "no": 5,
      "warmup": 2,
-     "place": 6
+     "place": 7,
+     "final": 5
     },
     {
      "name": "Hannah Herrera / Ivan Khobta",
      "nation": "UKR",
-     "place": 7,
+     "place": 8,
      "time": "12:37",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 8
     },
     {
      "name": "Jiaxuan Zhang / Yihang Huang",
      "nation": "CHN",
-     "place": 5,
+     "place": 6,
      "time": "12:45",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 7
     },
     {
      "name": "Megan Wessenberg / Denys Strekalin",
      "nation": "FRA",
-     "place": 3,
+     "place": 4,
      "time": "12:53",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 4
     },
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
@@ -36087,10 +36096,10 @@
      "time": "13:32",
      "no": 7,
      "warmup": 2,
-     "place": 1
+     "place": 2,
+     "final": 2
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG006.htm",
@@ -36106,9 +36115,29 @@
      "Aleksandra BOIKOVA / Dmitrii KOZLOVSKII": "Александра Бойкова / Дмитрий Козловский",
      "Anastasiia METELKINA / Luka BERULAVA": "Anastasiia Metelkina / Luka Berulava"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Anastasiia Metelkina / Luka Berulava",
+     "nation": "GEO",
+     "points": "204.65"
+    },
+    {
+     "place": 2,
+     "name": "Александра Бойкова / Дмитрий Козловский",
+     "nation": "RUS",
+     "points": "197.66"
+    },
+    {
+     "place": 3,
+     "name": "Annika Hocke / Robert Kunkel",
+     "nation": "GER",
+     "points": "179.74"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:men-senior-pp",
@@ -36167,12 +36196,12 @@
     },
     {
      "place": 3,
-     "name": "Лев Лазарев",
-     "nation": "МОС",
-     "points": "184.91"
+     "name": "Пётр Гуменник",
+     "nation": "СПБ",
+     "points": "185.50"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Владислав Дикиджи — 189.84\n2. Арсений Федотов — 188.13\n3. Лев Лазарев — 184.91\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Владислав Дикиджи — 189.84\n2. Арсений Федотов — 188.13\n3. Пётр Гуменник — 185.50\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Арсений Федотов",
@@ -36185,7 +36214,7 @@
     {
      "name": "Артемий Маринин",
      "nation": "МОС",
-     "place": 9,
+     "place": 10,
      "time": "13:22",
      "no": 3,
      "warmup": 1
@@ -36193,7 +36222,7 @@
     {
      "name": "Артур Даниелян",
      "nation": "СПБ",
-     "place": 8,
+     "place": 9,
      "time": "13:30",
      "no": 4,
      "warmup": 1
@@ -36212,12 +36241,12 @@
      "time": "14:22",
      "no": 10,
      "warmup": 2,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Даниил Постарнаков",
      "nation": "СТА",
-     "place": 11,
+     "place": 12,
      "time": "13:07",
      "no": 1,
      "warmup": 1
@@ -36225,7 +36254,7 @@
     {
      "name": "Дмитрий Шелковников",
      "nation": "МОБ",
-     "place": 10,
+     "place": 11,
      "time": "13:52",
      "no": 2,
      "warmup": 1
@@ -36233,7 +36262,7 @@
     {
      "name": "Илья Строганов",
      "nation": "СПБ",
-     "place": 7,
+     "place": 8,
      "time": "13:45",
      "no": 6,
      "warmup": 1
@@ -36241,7 +36270,7 @@
     {
      "name": "Лев Лазарев",
      "nation": "МОС",
-     "place": 3,
+     "place": 4,
      "time": "13:37",
      "no": 5,
      "warmup": 1
@@ -36249,7 +36278,7 @@
     {
      "name": "Макар Игнатов",
      "nation": "МОС",
-     "place": 6,
+     "place": 7,
      "time": "14:00",
      "no": 7,
      "warmup": 2
@@ -36260,14 +36289,15 @@
      "time": "14:15",
      "no": 9,
      "warmup": 2,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Пётр Гуменник",
      "nation": "СПБ",
      "time": "14:37",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3
     }
    ],
    "provisional": true,
