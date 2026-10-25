@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-25T12:41:11+03:00",
- "checked": "2026-10-25T09:57:02.961390+00:00",
+ "checked": "2026-10-25T10:05:04.452339+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35854,56 +35854,62 @@
     },
     {
      "place": 2,
-     "name": "Corentin Spinar",
-     "nation": "FRA",
-     "points": "113.25"
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "points": "118.98"
     },
     {
      "place": 3,
-     "name": "David Sedej",
-     "nation": "SLO",
-     "points": "100.74"
+     "name": "Corentin Spinar",
+     "nation": "FRA",
+     "points": "113.25"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Maxim Varakin — 129.72\n2. Corentin Spinar — 113.25\n3. David Sedej — 100.74\n\nНачало: 11:00 МСК",
+   "desc": "Итог:\n1. Maxim Varakin — 129.72\n2. Vladimir Samoilov — 118.98\n3. Corentin Spinar — 113.25\n\nИтог турнира:\n1. Maxim Varakin — 195.93\n2. Vladimir Samoilov — 191.29\n3. Corentin Spinar — 177.37\n\nНачало: 11:00 МСК",
    "field": [
     {
      "name": "Alessandro Liberatore",
      "nation": "SLO",
-     "place": 6
+     "place": 7,
+     "final": 7
     },
     {
      "name": "Arin Yorke",
      "nation": "GBR",
-     "place": 4
+     "place": 5,
+     "final": 5
     },
     {
      "name": "Corentin Spinar",
      "nation": "FRA",
-     "place": 2
+     "place": 3,
+     "final": 3
     },
     {
      "name": "David Sedej",
      "nation": "SLO",
-     "place": 3
+     "place": 4,
+     "final": 4
     },
     {
      "name": "Jan Valtera",
      "nation": "CZE",
-     "place": 5
+     "place": 6,
+     "final": 6
     },
     {
      "name": "Maxim Varakin",
      "nation": "CRO",
-     "place": 1
+     "place": 1,
+     "final": 1
     },
     {
      "name": "Vladimir Samoilov",
      "nation": "POL",
-     "place": 7
+     "place": 2,
+     "final": 2
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
     "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG002.htm",
@@ -35918,9 +35924,29 @@
      "Maxim VARAKIN": "Maxim Varakin",
      "Vladimir SAMOILOV": "Vladimir Samoilov"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "gs_golden-bear.json"
+   "proto": "gs_golden-bear.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Maxim Varakin",
+     "nation": "CRO",
+     "points": "195.93"
+    },
+    {
+     "place": 2,
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "points": "191.29"
+    },
+    {
+     "place": 3,
+     "name": "Corentin Spinar",
+     "nation": "FRA",
+     "points": "177.37"
+    }
+   ]
   },
   {
    "id": "gs:golden-bear:women-senior-pp-women",
