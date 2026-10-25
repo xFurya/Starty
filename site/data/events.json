@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-25T13:15:59+03:00",
- "checked": "2026-10-25T11:13:02.907097+00:00",
+ "generated": "2026-10-25T14:01:12+03:00",
+ "checked": "2026-10-25T14:01:12+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -36003,31 +36003,43 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Megan Wessenberg / Denys Strekalin — 105.61\n2. Aurelie Faula / Theo Belle — 100.47\n3. Jiaxuan Zhang / Yihang Huang — 99.55\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 13:32\n\nНачало: 12:30 МСК\nТрансляция: Okko",
-   "field": [
+   "podium": [
     {
-     "name": "Hannah Herrera / Ivan Khobta",
-     "nation": "UKR",
-     "time": "12:37",
-     "no": 1,
-     "warmup": 1,
-     "place": 4
-    },
-    {
-     "name": "Jiaxuan Zhang / Yihang Huang",
-     "nation": "CHN",
-     "time": "12:45",
-     "no": 2,
-     "warmup": 1,
-     "place": 3
-    },
-    {
+     "place": 1,
      "name": "Megan Wessenberg / Denys Strekalin",
      "nation": "FRA",
-     "time": "12:53",
-     "no": 3,
-     "warmup": 1,
-     "place": 1
+     "points": "105.61"
+    },
+    {
+     "place": 2,
+     "name": "Jiaxuan Zhang / Yihang Huang",
+     "nation": "CHN",
+     "points": "99.55"
+    },
+    {
+     "place": 3,
+     "name": "Hannah Herrera / Ivan Khobta",
+     "nation": "UKR",
+     "points": "88.23"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Megan Wessenberg / Denys Strekalin — 105.61\n2. Jiaxuan Zhang / Yihang Huang — 99.55\n3. Hannah Herrera / Ivan Khobta — 88.23\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 13:32\n\nНачало: 12:30 МСК\nТрансляция: Okko",
+   "field": [
+    {
+     "name": "Anastasiia Metelkina / Luka Berulava",
+     "nation": "GEO",
+     "time": "13:39",
+     "no": 8,
+     "warmup": 2,
+     "place": 8
+    },
+    {
+     "name": "Annika Hocke / Robert Kunkel",
+     "nation": "GER",
+     "time": "13:24",
+     "no": 6,
+     "warmup": 2,
+     "place": 6
     },
     {
      "name": "Aurelie Faula / Theo Belle",
@@ -36045,36 +36057,48 @@
      "warmup": 2
     },
     {
-     "name": "Annika Hocke / Robert Kunkel",
-     "nation": "GER",
-     "time": "13:24",
-     "no": 6,
-     "warmup": 2
+     "name": "Hannah Herrera / Ivan Khobta",
+     "nation": "UKR",
+     "place": 3,
+     "time": "12:37",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Jiaxuan Zhang / Yihang Huang",
+     "nation": "CHN",
+     "place": 2,
+     "time": "12:45",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Megan Wessenberg / Denys Strekalin",
+     "nation": "FRA",
+     "place": 1,
+     "time": "12:53",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Александра Бойкова / Дмитрий Козловский",
      "nation": "RUS",
      "time": "13:32",
      "no": 7,
-     "warmup": 2
-    },
-    {
-     "name": "Anastasiia Metelkina / Luka Berulava",
-     "nation": "GEO",
-     "time": "13:39",
-     "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG006.htm",
     "cat": "https://results.isu.org/results/season2627/gpfra2026/CAT003RS.htm",
     "first": "https://results.isu.org/results/season2627/gpfra2026/SEG005.htm",
     "names": {
-     "Hannah HERRERA / Ivan KHOBTA": "Hannah Herrera / Ivan Khobta",
-     "Jiaxuan ZHANG / Yihang HUANG": "Jiaxuan Zhang / Yihang Huang",
      "Megan WESSENBERG / Denys STREKALIN": "Megan Wessenberg / Denys Strekalin",
+     "Jiaxuan ZHANG / Yihang HUANG": "Jiaxuan Zhang / Yihang Huang",
+     "Hannah HERRERA / Ivan KHOBTA": "Hannah Herrera / Ivan Khobta",
      "Aurelie FAULA / Theo BELLE": "Aurelie Faula / Theo Belle",
      "Camille KOVALEV / Pavel KOVALEV": "Camille Kovalev / Pavel Kovalev",
      "Annika HOCKE / Robert KUNKEL": "Annika Hocke / Robert Kunkel",
@@ -36083,28 +36107,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Megan Wessenberg / Denys Strekalin",
-     "nation": "FRA",
-     "points": "105.61"
-    },
-    {
-     "place": 2,
-     "name": "Aurelie Faula / Theo Belle",
-     "nation": "FRA",
-     "points": "100.47"
-    },
-    {
-     "place": 3,
-     "name": "Jiaxuan Zhang / Yihang Huang",
-     "nation": "CHN",
-     "points": "99.55"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:men-senior-pp",
@@ -36175,7 +36178,8 @@
      "nation": "МОС",
      "time": "14:07",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 8
     },
     {
      "name": "Артемий Маринин",
@@ -36198,14 +36202,16 @@
      "nation": "СПБ",
      "time": "14:30",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 11
     },
     {
      "name": "Глеб Лутфуллин",
      "nation": "СПБ",
      "time": "14:22",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 10
     },
     {
      "name": "Даниил Постарнаков",
@@ -36245,21 +36251,23 @@
      "time": "14:00",
      "no": 7,
      "warmup": 2,
-     "place": 2
+     "place": 7
     },
     {
      "name": "Никита Сарновский",
      "nation": "МОС",
      "time": "14:15",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 9
     },
     {
      "name": "Пётр Гуменник",
      "nation": "СПБ",
      "time": "14:37",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 12
     }
    ],
    "provisional": true,
@@ -36269,12 +36277,12 @@
     "cat": "https://fsrussia.ru/results/2627/2etap_sen/CAT001RS.htm",
     "first": "https://fsrussia.ru/results/2627/2etap_sen/SEG001.htm",
     "names": {
-     "Даниил ПОСТАРНАКОВ": "Даниил Постарнаков",
-     "Дмитрий ШЕЛКОВНИКОВ": "Дмитрий Шелковников",
-     "Артемий МАРИНИН": "Артемий Маринин",
-     "Артур ДАНИЕЛЯН": "Артур Даниелян",
      "Лев ЛАЗАРЕВ": "Лев Лазарев",
      "Илья СТРОГАНОВ": "Илья Строганов",
+     "Артур ДАНИЕЛЯН": "Артур Даниелян",
+     "Артемий МАРИНИН": "Артемий Маринин",
+     "Дмитрий ШЕЛКОВНИКОВ": "Дмитрий Шелковников",
+     "Даниил ПОСТАРНАКОВ": "Даниил Постарнаков",
      "Макар ИГНАТОВ": "Макар Игнатов",
      "Арсений ФЕДОТОВ": "Арсений Федотов",
      "Никита САРНОВСКИЙ": "Никита Сарновский",
@@ -36315,7 +36323,27 @@
     "Zofia Bochenek"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Zofia Bochenek — 80.75\n2. Zala Grum — 80.56\n3. Elena Agostinelli — 79.09\n\nНачало: 13:25 МСК",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Zofia Bochenek",
+     "nation": "POL",
+     "points": "80.75"
+    },
+    {
+     "place": 2,
+     "name": "Elena Agostinelli",
+     "nation": "ITA",
+     "points": "79.09"
+    },
+    {
+     "place": 3,
+     "name": "Julia Fennell",
+     "nation": "ISR",
+     "points": "56.12"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Zofia Bochenek — 80.75\n2. Elena Agostinelli — 79.09\n3. Julia Fennell — 56.12\n\nНачало: 13:25 МСК",
    "field": [
     {
      "name": "Ariadna Gupta Espada",
@@ -36334,26 +36362,26 @@
     {
      "name": "Dunja Tresnjic",
      "nation": "SRB",
+     "place": 4,
      "time": "13:38",
      "no": 2,
-     "warmup": 1,
-     "place": 5
+     "warmup": 1
     },
     {
      "name": "Elena Agostinelli",
      "nation": "ITA",
+     "place": 2,
      "time": "14:00",
      "no": 5,
-     "warmup": 1,
-     "place": 3
+     "warmup": 1
     },
     {
      "name": "Ema Vukovic",
      "nation": "CRO",
+     "place": 5,
      "time": "13:31",
      "no": 1,
-     "warmup": 1,
-     "place": 6
+     "warmup": 1
     },
     {
      "name": "Ginevra Lavinia Negrello",
@@ -36365,10 +36393,10 @@
     {
      "name": "Julia Fennell",
      "nation": "ISR",
+     "place": 3,
      "time": "13:46",
      "no": 3,
-     "warmup": 1,
-     "place": 4
+     "warmup": 1
     },
     {
      "name": "Julija Lovrencic",
@@ -36402,23 +36430,24 @@
     {
      "name": "Zofia Bochenek",
      "nation": "POL",
+     "place": 1,
      "time": "13:53",
      "no": 4,
-     "warmup": 1,
-     "place": 1
+     "warmup": 1
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
     "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG004.htm",
     "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT002RS.htm",
     "first": "https://www.croskate.hr/cscro2025/GB2026/SEG003.htm",
     "names": {
-     "Ema VUKOVIC": "Ema Vukovic",
-     "Dunja TRESNJIC": "Dunja Tresnjic",
-     "Julia FENNELL": "Julia Fennell",
      "Zofia BOCHENEK": "Zofia Bochenek",
      "Elena AGOSTINELLI": "Elena Agostinelli",
+     "Julia FENNELL": "Julia Fennell",
+     "Dunja TRESNJIC": "Dunja Tresnjic",
+     "Ema VUKOVIC": "Ema Vukovic",
      "Zala GRUM": "Zala Grum",
      "Ariadna GUPTA ESPADA": "Ariadna Gupta Espada",
      "Oliwia STROKOSZ": "Oliwia Strokosz",
@@ -36429,28 +36458,7 @@
     },
     "basis": null
    },
-   "proto": "gs_golden-bear.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Zofia Bochenek",
-     "nation": "POL",
-     "points": "80.75"
-    },
-    {
-     "place": 2,
-     "name": "Zala Grum",
-     "nation": "SLO",
-     "points": "80.56"
-    },
-    {
-     "place": 3,
-     "name": "Elena Agostinelli",
-     "nation": "ITA",
-     "points": "79.09"
-    }
-   ],
-   "provisional": true
+   "proto": "gs_golden-bear.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:men-senior-pp",
