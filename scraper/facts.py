@@ -50,6 +50,12 @@ def _jumps(code):
     return out if out and all(out) else None
 
 
+def _plain(part):
+    """«4Lz<» → «4Lz»: отметки качества (недокрут, нечёткое ребро) в тексте факта не пишем."""
+    r, j, _ = _jump(part)
+    return j if part == "Eu" else f"{r}{j}"
+
+
 def _fmt(x):
     return f"{x:.2f}"
 
@@ -78,8 +84,7 @@ def element_facts(sk, kind, level, seg):
                 if r == 5:
                     out.append(("element", f"Пятиоборотный {JUMP_RU[j]}"))
                 elif r == 4 and j == "A":
-                    under = "<" in m or "<" in info
-                    out.append(("element", "Четверной аксель" + (", недокрут" if under else "")))
+                    out.append(("element", "Четверной аксель"))
                 elif r == 3 and j == "A" and kind == "women":
                     out.append(("element", "Тройной аксель"))
             quads += [f"4{j}" for r, j, m in credited if r == 4]
@@ -87,7 +92,7 @@ def element_facts(sk, kind, level, seg):
             nq = sum(1 for r, j in big if r >= 4)
             na = sum(1 for r, j in big if r == 3 and j == "A")
             if len(js) >= 2 and (nq >= 2 or (nq >= 1 and na >= 1) or na >= 2 or (nq >= 1 and len(big) >= 3)):
-                clean = "+".join(p for p in code.split("+") if p not in ("SEQ", "COMBO", "REP"))
+                clean = "+".join(_plain(p) for p in code.split("+") if p not in ("SEQ", "COMBO", "REP"))
                 out.append(("element", f"Каскад {clean}"))
             continue
         m = THROW.match(code)

@@ -719,14 +719,8 @@ class _TotalPlate extends StatelessWidget {
           final under = codeW > 0 &&
               !rows.every((x) => nameVariants(x.name, full: false, initial: true, lines: 2).any((v) => NameLines.fits(context, v, nameStyle, nameW(codeW))));
           if (under) codeW = 0;
-          // полные имена — только если помещаются у всех; иначе у всех короткие
-          var full = allFull(context, [for (final x in rows) x.name], nameStyle, nameW(codeW));
-          // регион на российских стартах — справочно: с ним полные имена не помещаются — без него
-          if (!intl && !full && codeW > 0) {
-            codeW = 0;
-            full = allFull(context, [for (final x in rows) x.name], nameStyle, nameW(0));
-          }
-          return _rows(context, rows, pairs, full, scale, pointsStyle, codeW > 0 || under ? codes : null, codeW, points, codeStyle, under);
+          // имена всегда сокращённые («В. Дикиджи»): полное у одного и короткое у другого выглядит странно
+          return _rows(context, rows, pairs, scale, pointsStyle, codeW > 0 || under ? codes : null, codeW, points, codeStyle, under);
         },
       ),
     );
@@ -742,7 +736,6 @@ class _TotalPlate extends StatelessWidget {
     BuildContext context,
     List<Placing> rows,
     bool pairs,
-    bool full,
     double scale,
     TextStyle pointsStyle,
     List<String>? codes,
@@ -771,7 +764,7 @@ class _TotalPlate extends StatelessWidget {
                       PlacingName(
                         x: rows[i],
                         intl: intl,
-                        short: !full,
+                        short: true,
                         size: 15,
                         weight: rows[i].place == 1 ? FontWeight.w700 : FontWeight.w600,
                         withCode: false,
