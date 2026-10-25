@@ -14,14 +14,14 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:gs:golden-bear:men-senior-pp-men@starty
-DTSTAMP:20261025T094111Z
-DTSTART;TZID=Europe/Moscow:20261025T110000
-DTEND;TZID=Europe/Moscow:20261025T120300
+DTSTAMP:20261025T095822Z
+DTSTART;TZID=Europe/Moscow:20261025T120000
+DTEND;TZID=Europe/Moscow:20261025T130500
 SUMMARY:Golden Bear — мужчины ПП
 DESCRIPTION:Итог:\n1. Maxim Varakin — 129.72\n2. Vladimir Samoilov 
  — 118.98\n3. Corentin Spinar — 113.25\n\nИтог турнира:\n1. 
  Maxim Varakin — 195.93\n2. Vladimir Samoilov — 191.29\n3. Corentin Spi
- nar — 177.37\n\nНачало: 11:00 МСК
+ nar — 177.37\n\nНачало: 12:00 МСК
 LOCATION:Zagreb\, Croatia
 URL:https://xfurya.github.io/Starty/#e=gs:golden-bear:men-senior-pp-men
 TRANSP:TRANSPARENT

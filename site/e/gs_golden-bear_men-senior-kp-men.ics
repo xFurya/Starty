@@ -14,12 +14,12 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:gs:golden-bear:men-senior-kp-men@starty
-DTSTAMP:20261025T094111Z
-DTSTART;TZID=Europe/Moscow:20261024T160500
-DTEND;TZID=Europe/Moscow:20261024T170500
+DTSTAMP:20261025T095822Z
+DTSTART;TZID=Europe/Moscow:20261024T170500
+DTEND;TZID=Europe/Moscow:20261024T180500
 SUMMARY:Golden Bear — мужчины КП
 DESCRIPTION:Итог:\n1. Vladimir Samoilov — 72.31\n2. Maxim Varakin —
-  66.21\n3. Corentin Spinar — 64.12\n\nНачало: 16:05 МСК
+  66.21\n3. Corentin Spinar — 64.12\n\nНачало: 17:05 МСК
 LOCATION:Zagreb\, Croatia
 URL:https://xfurya.github.io/Starty/#e=gs:golden-bear:men-senior-kp-men
 TRANSP:TRANSPARENT
