@@ -139,6 +139,9 @@ def refresh(ev, idx, names, now, fetcher=None):
         p = place.get(nm.key(o["name"]))
         if p:
             o["place"] = p
+        elif not prev_final:
+            # табло не оценило ещё: прежнее место (чужое, из старого разбора) не оставляем
+            o.pop("place", None)
     ev["podium"] = [{"place": r["place"], "name": to_ru(r["name"]), "nation": r["nation"],
                      "points": r["points"]} for r in results[:3]]
     live["basis"] = basis

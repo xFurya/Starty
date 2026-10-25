@@ -79,6 +79,17 @@ void main() {
     expect(segmentResults(start), isNull);
   });
 
+  test('остаток стартового порядка посреди старта — не места', () {
+    const page = '<table><tr><th>Pl.</th><th>Name</th><th>Nation</th><th>TSS</th><th>TES</th><th>PCS</th></tr>'
+        '<tr><td>1</td><td>Ivan SEMENOV</td><td>RUS</td><td>99.55</td><td>49.82</td><td>50.73</td></tr>'
+        '<tr><td>2</td><td>Max GALKIN</td><td>RUS</td><td>88.23</td><td>39.92</td><td>49.31</td></tr></table>'
+        '<table><tr><th>StN.</th><th>Name</th><th>Nation</th><th>Rank</th><th>Points</th></tr>'
+        '<tr><td>3</td><td>Petr PETROV</td><td>RUS</td><td>6</td><td>58.37</td></tr>'
+        '<tr><td>4</td><td>Oleg OLEGOV</td><td>RUS</td><td>5</td><td>60.85</td></tr></table>';
+    final rows = segmentResults(page)!;
+    expect(rows.map((r) => (r.place, r.points)), [(1, '99.55'), (2, '88.23')]);
+  });
+
   group('несколько таблиц на странице во время старта', () {
     const segHead = '<tr><th>Pl.</th><th>Name</th><th>Nation</th><th>TSS</th><th>TES</th><th>PCS</th></tr>';
     const totHead = '<tr><th>Pl.</th><th>Name</th><th>Nation</th><th>Total</th><th>SP</th><th>FS</th></tr>';

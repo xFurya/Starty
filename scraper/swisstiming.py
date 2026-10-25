@@ -313,13 +313,18 @@ def _has_components(header):
 
 def _tables(page):
     """Таблицы протокола на странице: [(шапка, [ячейки строк ниже шапки])].
-    Таблица начинается с шапки, где первая колонка — место, а есть колонка имени."""
+    Таблица начинается с шапки, где первая колонка — место, а есть колонка имени.
+    Шапка с именем, но не с местом («StN.» — остаток стартового порядка) закрывает таблицу:
+    её строки — не места, а номер и баллы прошлого сегмента."""
     tables = []
+    opened = False
     for cells, _ in _rows(page, flat=True):
         first = next((c for c in cells if c), "")
-        if first in RESULT_HEADS and _col(cells, NAME_HEADS) is not None:
-            tables.append((cells, []))
-        elif tables:
+        if _col(cells, NAME_HEADS) is not None and not first.isdigit():
+            opened = first in RESULT_HEADS
+            if opened:
+                tables.append((cells, []))
+        elif opened:
             tables[-1][1].append(cells)
     return tables
 

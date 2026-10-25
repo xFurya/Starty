@@ -416,8 +416,21 @@ class Start {
 
   /// «женщины ПП» — часть названия после турнира.
   String get segment => title.substring(tournament.length).replaceFirst(RegExp(r'^\s*—\s*'), '');
-  bool liveAt(DateTime t) => !t.isBefore(t0) && t.isBefore(t1);
-  bool pastAt(DateTime t) => !t.isBefore(t1);
+  bool liveAt(DateTime t) => (!t.isBefore(t0) && t.isBefore(t1)) || overrunAt(t);
+  bool pastAt(DateTime t) => !t.isBefore(t1) && !overrunAt(t);
+
+  /// Сколько после расписания ещё верим табло, что сегмент идёт: дальше данные считаем застывшими.
+  static const overrunLimit = Duration(hours: 3);
+
+  /// Время по расписанию вышло, а табло ещё не оценило всех: места промежуточные, выступили не все.
+  /// Старт затянулся — он идёт, а не «завершён».
+  bool overrunAt(DateTime t) =>
+      !t.isBefore(t1) &&
+      t.isBefore(t1.add(overrunLimit)) &&
+      provisional &&
+      podium.isNotEmpty &&
+      field.isNotEmpty &&
+      field.any((x) => x.place == null);
   String get day => dayKey(t0);
 
   /// Момент выхода нашего на лёд (время в списке — по Москве).

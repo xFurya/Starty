@@ -201,13 +201,17 @@ bool _hasComponents(List<String> header) => header.any((h) => h.trim().startsWit
 /// у итога — без них; если такой нет — первая. Один человек в таблице — один раз.
 (List<String>, List<LiveRow>)? _resultTable(String page, Set<String> pointsHeads, {required bool segment}) {
   final tables = <(List<String>, List<LiveRow>)>[];
+  var opened = false;
   for (final cells in _rows(page)) {
     final first = cells.firstWhere((c) => c.isNotEmpty, orElse: () => '');
-    if (_resultHeads.contains(first) && _col(cells, _nameHeads) != null) {
-      tables.add((cells, <LiveRow>[]));
+    // шапка с именем, но не с местом («StN.» — остаток стартового порядка), закрывает таблицу:
+    // её строки — номер и баллы прошлого сегмента, не места (swisstiming.py, _tables)
+    if (_col(cells, _nameHeads) != null && !_digits.hasMatch(first)) {
+      opened = _resultHeads.contains(first);
+      if (opened) tables.add((cells, <LiveRow>[]));
       continue;
     }
-    if (tables.isEmpty) continue;
+    if (!opened) continue;
     final row = _rowResult(cells, tables.last.$1, pointsHeads);
     if (row != null) tables.last.$2.add(row);
   }

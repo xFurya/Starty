@@ -31,6 +31,18 @@ class Tables(unittest.TestCase):
         page = '<table><tr><th>StN.</th><th>Name</th><th>Nation</th></tr><tr><td>1</td><td>A B</td><td>RUS</td></tr></table>'
         self.assertIsNone(st.parse_segment_results(page))
 
+    def test_remaining_starting_order_is_not_results(self):
+        # табло посреди старта: после таблицы сегмента идёт «Remaining Starting Order» —
+        # номер, команда, ранг и баллы прошлого сегмента; это не места
+        page = ('<table>' + SEG +
+                '<tr><td>1</td><td>Ivan SEMENOV</td><td>RUS</td><td>99.55</td><td>49.82</td><td>50.73</td></tr>'
+                '<tr><td>2</td><td>Max GALKIN</td><td>RUS</td><td>88.23</td><td>39.92</td><td>49.31</td></tr></table>'
+                '<table><tr><th>StN.</th><th>Name</th><th>Nation</th><th>Rank</th><th>Points</th></tr>'
+                '<tr><td>3</td><td>Petr PETROV</td><td>RUS</td><td>6</td><td>58.37</td></tr>'
+                '<tr><td>4</td><td>Oleg OLEGOV</td><td>RUS</td><td>5</td><td>60.85</td></tr></table>')
+        rows = st.parse_segment_results(page)
+        self.assertEqual([(r["place"], r["points"]) for r in rows], [(1, "99.55"), (2, "88.23")])
+
 
 if __name__ == "__main__":
     unittest.main()

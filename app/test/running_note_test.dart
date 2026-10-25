@@ -39,10 +39,26 @@ void main() {
   });
 
   test('сегмент завершён, судейских оценок нет — пометки нет', () {
-    final s = _start(from: const Duration(hours: -3), to: const Duration(hours: -1));
+    final s = _start(from: const Duration(hours: -3), to: const Duration(hours: -1), placed: 5);
+    expect(s.pastAt(DateTime.now()), isTrue);
     expect(podiumLabel(s), 'Тройка');
     expect(runningNote(s), '');
     expect(podiumLabel(s).toLowerCase(), isNot(contains('промежуточ')));
+  });
+
+  test('расписание вышло, а табло оценило не всех — старт идёт, не «завершён»', () {
+    final s = _start(from: const Duration(hours: -2), to: const Duration(minutes: -5));
+    final t = DateTime.now();
+    expect(s.liveAt(t), isTrue);
+    expect(s.pastAt(t), isFalse);
+    expect(podiumLabel(s), 'Лидеры');
+    expect(runningNote(s), 'выступили 2 из 5');
+  });
+
+  test('табло застыло: через три часа после расписания старт снова завершён', () {
+    final s = _start(from: const Duration(hours: -6), to: const Duration(hours: -4));
+    expect(s.liveAt(DateTime.now()), isFalse);
+    expect(s.pastAt(DateTime.now()), isTrue);
   });
 
   test('окончательный идущий — без пометки', () {

@@ -169,6 +169,24 @@ class DanceRtMarks(FfkmLive):
         self.assertEqual(ev["podium"][0]["points"], "66.36")
         self.assertFalse(live.settled(ev))
 
+    def test_unscored_skaters_keep_no_place_while_segment_runs(self):
+        # посреди старта на табло два оценённых, а ниже — остаток стартового порядка
+        # (номер, ранг и баллы прошлого сегмента): это не места, и прежнее чужое место снимается
+        self.page_override["seg007.htm"] = (
+            '<table><tr><th>Pl.</th><th>Name</th><th>Nation</th><th>TSS</th><th>TES</th><th>PCS</th></tr>'
+            '<tr><td>1</td><td>Ivan SEMENOV</td><td>RUS</td><td>99.55</td><td>49.82</td><td>50.73</td></tr>'
+            '<tr><td>2</td><td>Max GALKIN</td><td>RUS</td><td>88.23</td><td>39.92</td><td>49.31</td></tr></table>'
+            '<table><tr><th>StN.</th><th>Name</th><th>Nation</th><th>Rank</th><th>Points</th></tr>'
+            '<tr><td>3</td><td>Petr PETROV</td><td>RUS</td><td>6</td><td>58.37</td></tr>'
+            '<tr><td>4</td><td>Oleg OLEGOV</td><td>RUS</td><td>5</td><td>60.85</td></tr></table>')
+        idx = self.index(scores=False)
+        ev = self.event(idx, "SEG007.HTM", "РТ", "dance", "junior", self.start, self.end)
+        ev["field"] = [{"name": n, "place": 7} for n in ("Ivan Semenov", "Petr Petrov")]
+        ev["live"]["names"] = {n: n.title() for n in ("Ivan SEMENOV", "Max GALKIN", "Petr PETROV")}
+        live.refresh(ev, idx, self.names, self.after, P.Fetcher())
+        self.assertEqual([(r["place"], r["points"]) for r in ev["podium"]], [(1, "99.55"), (2, "88.23")])
+        self.assertEqual({o["name"]: o.get("place") for o in ev["field"]}, {"Ivan Semenov": 1, "Petr Petrov": None})
+
     def test_marks_false_is_final_by_time_only_with_flag(self):
         idx = self.index(scores=False)
         ev = self.event(idx, "SEG007.HTM", "РТ", "dance", "junior", self.start, self.end)
