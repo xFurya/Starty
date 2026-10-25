@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-25T14:15:27+03:00",
- "checked": "2026-10-25T11:33:02.968353+00:00",
+ "checked": "2026-10-25T11:37:02.319860+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -36006,24 +36006,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Annika Hocke / Robert Kunkel",
+     "nation": "GER",
+     "points": "112.71"
+    },
+    {
+     "place": 2,
      "name": "Megan Wessenberg / Denys Strekalin",
      "nation": "FRA",
      "points": "105.61"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Aurelie Faula / Theo Belle",
      "nation": "FRA",
      "points": "100.47"
-    },
-    {
-     "place": 3,
-     "name": "Jiaxuan Zhang / Yihang Huang",
-     "nation": "CHN",
-     "points": "99.55"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Megan Wessenberg / Denys Strekalin — 105.61\n2. Aurelie Faula / Theo Belle — 100.47\n3. Jiaxuan Zhang / Yihang Huang — 99.55\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 13:32\n\nНачало: 12:30 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Annika Hocke / Robert Kunkel — 112.71\n2. Megan Wessenberg / Denys Strekalin — 105.61\n3. Aurelie Faula / Theo Belle — 100.47\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 13:32\n\nНачало: 12:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anastasiia Metelkina / Luka Berulava",
@@ -36037,12 +36037,13 @@
      "nation": "GER",
      "time": "13:24",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Aurelie Faula / Theo Belle",
      "nation": "FRA",
-     "place": 2,
+     "place": 3,
      "time": "13:01",
      "no": 4,
      "warmup": 1
@@ -36053,12 +36054,12 @@
      "time": "13:16",
      "no": 5,
      "warmup": 2,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Hannah Herrera / Ivan Khobta",
      "nation": "UKR",
-     "place": 5,
+     "place": 6,
      "time": "12:37",
      "no": 1,
      "warmup": 1
@@ -36066,7 +36067,7 @@
     {
      "name": "Jiaxuan Zhang / Yihang Huang",
      "nation": "CHN",
-     "place": 3,
+     "place": 4,
      "time": "12:45",
      "no": 2,
      "warmup": 1
@@ -36074,7 +36075,7 @@
     {
      "name": "Megan Wessenberg / Denys Strekalin",
      "nation": "FRA",
-     "place": 1,
+     "place": 2,
      "time": "12:53",
      "no": 3,
      "warmup": 1
@@ -36164,12 +36165,12 @@
     },
     {
      "place": 3,
-     "name": "Никита Сарновский",
-     "nation": "МОС",
-     "points": "175.06"
+     "name": "Глеб Лутфуллин",
+     "nation": "СПБ",
+     "points": "184.14"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Арсений Федотов — 188.13\n2. Лев Лазарев — 184.91\n3. Никита Сарновский — 175.06\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Арсений Федотов — 188.13\n2. Лев Лазарев — 184.91\n3. Глеб Лутфуллин — 184.14\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Арсений Федотов",
@@ -36182,7 +36183,7 @@
     {
      "name": "Артемий Маринин",
      "nation": "МОС",
-     "place": 7,
+     "place": 8,
      "time": "13:22",
      "no": 3,
      "warmup": 1
@@ -36190,7 +36191,7 @@
     {
      "name": "Артур Даниелян",
      "nation": "СПБ",
-     "place": 6,
+     "place": 7,
      "time": "13:30",
      "no": 4,
      "warmup": 1
@@ -36207,12 +36208,13 @@
      "nation": "СПБ",
      "time": "14:22",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3
     },
     {
      "name": "Даниил Постарнаков",
      "nation": "СТА",
-     "place": 9,
+     "place": 10,
      "time": "13:07",
      "no": 1,
      "warmup": 1
@@ -36220,7 +36222,7 @@
     {
      "name": "Дмитрий Шелковников",
      "nation": "МОБ",
-     "place": 8,
+     "place": 9,
      "time": "13:52",
      "no": 2,
      "warmup": 1
@@ -36228,7 +36230,7 @@
     {
      "name": "Илья Строганов",
      "nation": "СПБ",
-     "place": 5,
+     "place": 6,
      "time": "13:45",
      "no": 6,
      "warmup": 1
@@ -36244,7 +36246,7 @@
     {
      "name": "Макар Игнатов",
      "nation": "МОС",
-     "place": 4,
+     "place": 5,
      "time": "14:00",
      "no": 7,
      "warmup": 2
@@ -36255,7 +36257,7 @@
      "time": "14:15",
      "no": 9,
      "warmup": 2,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Пётр Гуменник",
