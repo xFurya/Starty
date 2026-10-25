@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-25T14:15:27+03:00",
- "checked": "2026-10-25T12:49:27.217127+00:00",
+ "checked": "2026-10-25T12:57:27.258579+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -36634,7 +36634,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Kao Miura — 175.29\n2. Nikolaj Memola — 140.91\n3. Samy Hammi — 129.60\n\nНачало: 14:10 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Kao Miura — 175.29\n2. Sota Yamamoto — 147.22\n3. Nikolaj Memola — 140.91\n\nНачало: 14:10 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Adam Hagara",
@@ -36649,7 +36649,7 @@
      "time": "14:25",
      "no": 2,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Nikolaj Memola",
@@ -36657,7 +36657,7 @@
      "time": "14:33",
      "no": 3,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Kao Miura",
@@ -36672,7 +36672,8 @@
      "nation": "JPN",
      "time": "14:48",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Jimmy Ma",
@@ -36755,15 +36756,15 @@
     },
     {
      "place": 2,
-     "name": "Nikolaj Memola",
-     "nation": "ITA",
-     "points": "140.91"
+     "name": "Sota Yamamoto",
+     "nation": "JPN",
+     "points": "147.22"
     },
     {
      "place": 3,
-     "name": "Samy Hammi",
-     "nation": "FRA",
-     "points": "129.60"
+     "name": "Nikolaj Memola",
+     "nation": "ITA",
+     "points": "140.91"
     }
    ],
    "provisional": true
@@ -36810,7 +36811,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Мария Артёмова — 108.19\n2. Мария Лабутина — 101.15\n3. Диана Евлахина — 91.64\n\nНачало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Злата Буря — 120.09\n2. Мария Артёмова — 108.19\n3. Мария Лабутина — 101.15\n\nНачало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Мария Котова",
@@ -36818,7 +36819,7 @@
      "time": "15:12",
      "no": 1,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Диана Евлахина",
@@ -36826,7 +36827,7 @@
      "time": "15:28",
      "no": 3,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Мария Лабутина",
@@ -36834,14 +36835,15 @@
      "time": "15:36",
      "no": 4,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Злата Буря",
      "nation": "МОС",
      "time": "15:43",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Вероника Яметова",
@@ -36856,7 +36858,7 @@
      "time": "15:59",
      "no": 2,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Милана Лебедева",
@@ -36926,21 +36928,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Злата Буря",
+     "nation": "МОС",
+     "points": "120.09"
+    },
+    {
+     "place": 2,
      "name": "Мария Артёмова",
      "nation": "НВГ",
      "points": "108.19"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Мария Лабутина",
      "nation": "ВОЛ",
      "points": "101.15"
-    },
-    {
-     "place": 3,
-     "name": "Диана Евлахина",
-     "nation": "ИВА",
-     "points": "91.64"
     }
    ],
    "provisional": true
