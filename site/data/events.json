@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-25T14:15:27+03:00",
- "checked": "2026-10-25T11:53:02.285445+00:00",
+ "checked": "2026-10-25T11:57:02.695714+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -36201,7 +36201,7 @@
      "points": "185.50"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Владислав Дикиджи — 189.84\n2. Арсений Федотов — 188.13\n3. Пётр Гуменник — 185.50\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Владислав Дикиджи — 189.84\n2. Арсений Федотов — 188.13\n3. Пётр Гуменник — 185.50\n\nИтог турнира:\n1. Владислав Дикиджи — 297.67\n2. Пётр Гуменник — 293.99\n3. Арсений Федотов — 283.48\n\nПримечательное:\n• Лев Лазарев — 5 четверных в программе: 4F, 4Lz, 4S, 4Lz, 4T\n• Глеб Лутфуллин — Каскад 4T+3A<+3A\n• Глеб Лутфуллин — 5 четверных в программе: 4F, 4Lo, 4T, 4S, 4S\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Арсений Федотов",
@@ -36209,7 +36209,8 @@
      "time": "14:07",
      "no": 8,
      "warmup": 2,
-     "place": 2
+     "place": 2,
+     "final": 3
     },
     {
      "name": "Артемий Маринин",
@@ -36217,7 +36218,8 @@
      "place": 10,
      "time": "13:22",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 10
     },
     {
      "name": "Артур Даниелян",
@@ -36225,7 +36227,8 @@
      "place": 9,
      "time": "13:30",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 9
     },
     {
      "name": "Владислав Дикиджи",
@@ -36233,7 +36236,8 @@
      "time": "14:30",
      "no": 11,
      "warmup": 2,
-     "place": 1
+     "place": 1,
+     "final": 1
     },
     {
      "name": "Глеб Лутфуллин",
@@ -36241,7 +36245,8 @@
      "time": "14:22",
      "no": 10,
      "warmup": 2,
-     "place": 5
+     "place": 5,
+     "final": 4
     },
     {
      "name": "Даниил Постарнаков",
@@ -36249,7 +36254,8 @@
      "place": 12,
      "time": "13:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 12
     },
     {
      "name": "Дмитрий Шелковников",
@@ -36257,7 +36263,8 @@
      "place": 11,
      "time": "13:52",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 11
     },
     {
      "name": "Илья Строганов",
@@ -36265,7 +36272,8 @@
      "place": 8,
      "time": "13:45",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "final": 8
     },
     {
      "name": "Лев Лазарев",
@@ -36273,7 +36281,8 @@
      "place": 4,
      "time": "13:37",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "final": 6
     },
     {
      "name": "Макар Игнатов",
@@ -36281,7 +36290,8 @@
      "place": 7,
      "time": "14:00",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "final": 7
     },
     {
      "name": "Никита Сарновский",
@@ -36289,7 +36299,8 @@
      "time": "14:15",
      "no": 9,
      "warmup": 2,
-     "place": 6
+     "place": 6,
+     "final": 5
     },
     {
      "name": "Пётр Гуменник",
@@ -36297,10 +36308,10 @@
      "time": "14:37",
      "no": 12,
      "warmup": 2,
-     "place": 3
+     "place": 3,
+     "final": 2
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/2etap_sen/SEG002.htm",
@@ -36320,9 +36331,46 @@
      "Владислав ДИКИДЖИ": "Владислав Дикиджи",
      "Пётр ГУМЕННИК": "Пётр Гуменник"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json",
+   "facts": [
+    {
+     "who": "Лев Лазарев",
+     "text": "5 четверных в программе: 4F, 4Lz, 4S, 4Lz, 4T",
+     "kind": "element"
+    },
+    {
+     "who": "Глеб Лутфуллин",
+     "text": "Каскад 4T+3A<+3A",
+     "kind": "element"
+    },
+    {
+     "who": "Глеб Лутфуллин",
+     "text": "5 четверных в программе: 4F, 4Lo, 4T, 4S, 4S",
+     "kind": "element"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Владислав Дикиджи",
+     "nation": "СПБ",
+     "points": "297.67"
+    },
+    {
+     "place": 2,
+     "name": "Пётр Гуменник",
+     "nation": "СПБ",
+     "points": "293.99"
+    },
+    {
+     "place": 3,
+     "name": "Арсений Федотов",
+     "nation": "МОС",
+     "points": "283.48"
+    }
+   ]
   },
   {
    "id": "gs:golden-bear:women-senior-pp-women",
@@ -36362,18 +36410,18 @@
     },
     {
      "place": 2,
-     "name": "Barbora Tykalova",
+     "name": "Katerina Hanusova",
      "nation": "CZE",
-     "points": "89.64"
+     "points": "94.90"
     },
     {
      "place": 3,
-     "name": "Oliwia Strokosz",
-     "nation": "POL",
-     "points": "82.25"
+     "name": "Barbora Tykalova",
+     "nation": "CZE",
+     "points": "89.64"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ariadna Gupta Espada — 110.70\n2. Barbora Tykalova — 89.64\n3. Oliwia Strokosz — 82.25\n\nНачало: 13:25 МСК",
+   "desc": "Промежуточные итоги:\n1. Ariadna Gupta Espada — 110.70\n2. Katerina Hanusova — 94.90\n3. Barbora Tykalova — 89.64\n\nНачало: 13:25 МСК",
    "field": [
     {
      "name": "Ariadna Gupta Espada",
@@ -36389,12 +36437,12 @@
      "time": "14:44",
      "no": 10,
      "warmup": 2,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Dunja Tresnjic",
      "nation": "SRB",
-     "place": 9,
+     "place": 10,
      "time": "13:38",
      "no": 2,
      "warmup": 1
@@ -36402,7 +36450,7 @@
     {
      "name": "Elena Agostinelli",
      "nation": "ITA",
-     "place": 6,
+     "place": 7,
      "time": "14:00",
      "no": 5,
      "warmup": 1
@@ -36410,7 +36458,7 @@
     {
      "name": "Ema Vukovic",
      "nation": "CRO",
-     "place": 10,
+     "place": 11,
      "time": "13:31",
      "no": 1,
      "warmup": 1
@@ -36425,7 +36473,7 @@
     {
      "name": "Julia Fennell",
      "nation": "ISR",
-     "place": 8,
+     "place": 9,
      "time": "13:46",
      "no": 3,
      "warmup": 1
@@ -36436,14 +36484,15 @@
      "time": "14:36",
      "no": 9,
      "warmup": 2,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Katerina Hanusova",
      "nation": "CZE",
      "time": "14:51",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2
     },
     {
      "name": "Oliwia Strokosz",
@@ -36451,12 +36500,12 @@
      "time": "14:29",
      "no": 8,
      "warmup": 2,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Zala Grum",
      "nation": "SLO",
-     "place": 5,
+     "place": 6,
      "time": "14:08",
      "no": 6,
      "warmup": 1
@@ -36464,7 +36513,7 @@
     {
      "name": "Zofia Bochenek",
      "nation": "POL",
-     "place": 4,
+     "place": 5,
      "time": "13:53",
      "no": 4,
      "warmup": 1
