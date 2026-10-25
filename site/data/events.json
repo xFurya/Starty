@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-25T16:58:26+03:00",
- "checked": "2026-10-25T14:37:27.754089+00:00",
+ "generated": "2026-10-25T17:23:49+03:00",
+ "checked": "2026-10-25T17:23:49+03:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -591,9 +591,9 @@
    },
    "facts": [
     {
-     "who": "Полина Жарова / Алексей Столяров",
+     "kind": "place",
      "text": "Отрыв от второго места — 8.99 балла",
-     "kind": "place"
+     "who": "Полина Жарова / Алексей Столяров"
     }
    ],
    "tier": "regional",
@@ -7455,14 +7455,14 @@
    },
    "facts": [
     {
-     "who": "Genrikh Gartung",
+     "kind": "place",
      "text": "После короткой программы — 5-е место, в итоге — 2-е место",
-     "kind": "place"
+     "who": "Genrikh Gartung"
     },
     {
-     "who": "Francois Pitot",
+     "kind": "place",
      "text": "После короткой программы — 7-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Francois Pitot"
     }
    ],
    "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
@@ -7806,9 +7806,9 @@
    },
    "facts": [
     {
-     "who": "Hayato Okazaki",
+     "kind": "place",
      "text": "После короткой программы — 7-е место, в итоге — 2-е место",
-     "kind": "place"
+     "who": "Hayato Okazaki"
     }
    ],
    "proto": "isu_isu-jgp-batumi-2026.json"
@@ -8153,9 +8153,9 @@
    },
    "facts": [
     {
-     "who": "Lia Pereira / Trennt Michaud",
+     "kind": "place",
      "text": "Отрыв от второго места — 16.65 балла",
-     "kind": "place"
+     "who": "Lia Pereira / Trennt Michaud"
     }
    ],
    "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
@@ -8394,9 +8394,9 @@
    },
    "facts": [
     {
-     "who": "Мария Фефелова / Артём Валов",
+     "kind": "place",
      "text": "Отрыв от второго места — 20.40 балла",
-     "kind": "place"
+     "who": "Мария Фефелова / Артём Валов"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
@@ -9055,9 +9055,9 @@
    },
    "facts": [
     {
-     "who": "Виктория Стрельцова",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Виктория Стрельцова"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
@@ -9223,14 +9223,14 @@
    },
    "facts": [
     {
-     "who": "Marina Piredda",
+     "kind": "place",
      "text": "После короткой программы — 5-е место, в итоге — 2-е место",
-     "kind": "place"
+     "who": "Marina Piredda"
     },
     {
-     "who": "Mia Risa Gomez",
+     "kind": "place",
      "text": "Отрыв от второго места — 17.76 балла",
-     "kind": "place"
+     "who": "Mia Risa Gomez"
     }
    ],
    "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
@@ -9890,9 +9890,9 @@
    },
    "facts": [
     {
-     "who": "Arina Kalugina",
+     "kind": "element",
      "text": "Четверной сальхов",
-     "kind": "element"
+     "who": "Arina Kalugina"
     }
    ],
    "proto": "isu_isu-jgp-batumi-2026.json"
@@ -10369,34 +10369,34 @@
    },
    "facts": [
     {
-     "who": "Дарья Лебедева",
+     "kind": "element",
      "text": "2 четверных в программе: 4S, 4T",
-     "kind": "element"
+     "who": "Дарья Лебедева"
     },
     {
-     "who": "Виктория Стрельцова",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Виктория Стрельцова"
     },
     {
-     "who": "Виктория Стрельцова",
+     "kind": "element",
      "text": "3 четверных в программе: 4S, 4T, 4S",
-     "kind": "element"
+     "who": "Виктория Стрельцова"
     },
     {
-     "who": "Софья Смагина",
+     "kind": "element",
      "text": "Четверной сальхов",
-     "kind": "element"
+     "who": "Софья Смагина"
     },
     {
-     "who": "Алена Болдырева",
+     "kind": "element",
      "text": "Четверной тулуп",
-     "kind": "element"
+     "who": "Алена Болдырева"
     },
     {
-     "who": "Дарья Лебедева",
+     "kind": "place",
      "text": "После короткой программы — 10-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Дарья Лебедева"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
@@ -10665,29 +10665,29 @@
    },
    "facts": [
     {
-     "who": "Макар Солодников",
+     "kind": "element",
      "text": "3 четверных в программе: 4T, 4S, 4S",
-     "kind": "element"
+     "who": "Макар Солодников"
     },
     {
-     "who": "Михаил Алексахин",
+     "kind": "element",
      "text": "3 четверных в программе: 4T, 4S, 4T",
-     "kind": "element"
+     "who": "Михаил Алексахин"
     },
     {
-     "who": "Даниил Жолобов",
+     "kind": "element",
      "text": "3 четверных в программе: 4T, 4Lo, 4Lo",
-     "kind": "element"
+     "who": "Даниил Жолобов"
     },
     {
-     "who": "Эдуард Камоев",
+     "kind": "place",
      "text": "После короткой программы — 5-е место, в итоге — 2-е место",
-     "kind": "place"
+     "who": "Эдуард Камоев"
     },
     {
-     "who": "Макар Солодников",
+     "kind": "place",
      "text": "Отрыв от второго места — 16.45 балла",
-     "kind": "place"
+     "who": "Макар Солодников"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
@@ -12740,9 +12740,9 @@
    },
    "facts": [
     {
-     "who": "Diana Davis / Gleb Smolkin",
+     "kind": "place",
      "text": "Отрыв от второго места — 30.14 балла",
-     "kind": "place"
+     "who": "Diana Davis / Gleb Smolkin"
     }
    ],
    "proto": "isu_isu-cs-trialeti-trophy.json"
@@ -13191,9 +13191,9 @@
    },
    "facts": [
     {
-     "who": "Nika Egadze",
+     "kind": "place",
      "text": "Отрыв от второго места — 26.24 балла",
-     "kind": "place"
+     "who": "Nika Egadze"
     }
    ],
    "proto": "isu_isu-cs-trialeti-trophy.json"
@@ -14349,14 +14349,14 @@
    },
    "facts": [
     {
-     "who": "Hana Bath",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Hana Bath"
     },
     {
-     "who": "Leandra Tzimpoukakis",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Leandra Tzimpoukakis"
     }
    ],
    "proto": "isu_isu-jgp-ljubljana-2026.json"
@@ -15332,9 +15332,9 @@
    },
    "facts": [
     {
-     "who": "Таисия Гусева / Даниил Овчинников",
+     "kind": "element",
      "text": "Четверная подкрутка",
-     "kind": "element"
+     "who": "Таисия Гусева / Даниил Овчинников"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
@@ -15594,9 +15594,9 @@
    },
    "facts": [
     {
-     "who": "София Сарновская",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "София Сарновская"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
@@ -16132,24 +16132,24 @@
    },
    "facts": [
     {
-     "who": "Софья Смагина",
+     "kind": "element",
      "text": "2 четверных в программе: 4S, 4T",
-     "kind": "element"
+     "who": "Софья Смагина"
     },
     {
-     "who": "Екатерина Корчажникова",
+     "kind": "element",
      "text": "2 четверных в программе: 4S, 4S",
-     "kind": "element"
+     "who": "Екатерина Корчажникова"
     },
     {
-     "who": "Анна Докукина",
+     "kind": "element",
      "text": "3 четверных в программе: 4S, 4T, 4T",
-     "kind": "element"
+     "who": "Анна Докукина"
     },
     {
-     "who": "София Сарновская",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "София Сарновская"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
@@ -16427,9 +16427,9 @@
    },
    "facts": [
     {
-     "who": "Никита Малютин",
+     "kind": "element",
      "text": "3 четверных в программе: 4S, 4T, 4T",
-     "kind": "element"
+     "who": "Никита Малютин"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
@@ -16648,14 +16648,14 @@
    },
    "facts": [
     {
-     "who": "Арсений Федотов",
+     "kind": "score",
      "text": "Лучшая среди юниоров оценка сезона за КП: 91.38",
-     "kind": "score"
+     "who": "Арсений Федотов"
     },
     {
-     "who": "",
+     "kind": "place",
      "text": "Весь пьедестал — россияне",
-     "kind": "place"
+     "who": ""
     }
    ],
    "proto": "isu_isu-cs-denis-ten-memorial.json"
@@ -16996,29 +16996,29 @@
    },
    "facts": [
     {
-     "who": "Виктория Стрельцова",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Виктория Стрельцова"
     },
     {
-     "who": "Виктория Стрельцова",
+     "kind": "score",
      "text": "Лучшая среди юниоров оценка сезона за КП: 78.38",
-     "kind": "score"
+     "who": "Виктория Стрельцова"
     },
     {
-     "who": "Hyewon Joo",
+     "kind": "score",
      "text": "Личный рекорд за КП: 69.65 (был 59.99)",
-     "kind": "score"
+     "who": "Hyewon Joo"
     },
     {
-     "who": "Алиса Заикина",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Алиса Заикина"
     },
     {
-     "who": "Варвара Стахович",
+     "kind": "score",
      "text": "Личный рекорд за КП: 69.18 (был 61.01)",
-     "kind": "score"
+     "who": "Варвара Стахович"
     }
    ],
    "proto": "isu_isu-cs-denis-ten-memorial.json"
@@ -17665,14 +17665,14 @@
    },
    "facts": [
     {
-     "who": "Yujae Kim",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Yujae Kim"
     },
     {
-     "who": "Дина Хуснутдинова",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Дина Хуснутдинова"
     },
     {
      "kind": "score",
@@ -18069,9 +18069,9 @@
    },
    "facts": [
     {
-     "who": "",
+     "kind": "place",
      "text": "Первые 4 места — россияне и белорусы",
-     "kind": "place"
+     "who": ""
     },
     {
      "kind": "score",
@@ -18220,9 +18220,9 @@
    },
    "facts": [
     {
-     "who": "Мария Фефелова / Артём Валов",
+     "kind": "score",
      "text": "Личный рекорд за РТ: 67.11 (был 65.33)",
-     "kind": "score"
+     "who": "Мария Фефелова / Артём Валов"
     }
    ],
    "proto": "isu_isu-cs-denis-ten-memorial.json"
@@ -18914,44 +18914,44 @@
    },
    "facts": [
     {
-     "who": "Алиса Заикина",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Алиса Заикина"
     },
     {
-     "who": "Алиса Заикина",
+     "kind": "element",
      "text": "2 четверных в программе: 4T, 4T",
-     "kind": "element"
+     "who": "Алиса Заикина"
     },
     {
-     "who": "Варвара Стахович",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 126.43 (был 122.34)",
-     "kind": "score"
+     "who": "Варвара Стахович"
     },
     {
-     "who": "Виктория Стрельцова",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Виктория Стрельцова"
     },
     {
-     "who": "Виктория Стрельцова",
+     "kind": "element",
      "text": "2 четверных в программе: 4S, 4T",
-     "kind": "element"
+     "who": "Виктория Стрельцова"
     },
     {
-     "who": "",
+     "kind": "place",
      "text": "Первые 6 мест — россияне и белорусы",
-     "kind": "place"
+     "who": ""
     },
     {
-     "who": "Варвара Стахович",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 195.61 (был 183.35)",
-     "kind": "score"
+     "who": "Варвара Стахович"
     },
     {
-     "who": "Алиса Заикина",
+     "kind": "place",
      "text": "После короткой программы — 4-е место, в итоге — 1-е место",
-     "kind": "place"
+     "who": "Алиса Заикина"
     }
    ],
    "proto": "isu_isu-cs-denis-ten-memorial.json"
@@ -19345,9 +19345,9 @@
    },
    "facts": [
     {
-     "who": "Мария Фефелова / Артём Валов",
+     "kind": "place",
      "text": "Отрыв от второго места — 10.69 балла",
-     "kind": "place"
+     "who": "Мария Фефелова / Артём Валов"
     }
    ],
    "proto": "isu_isu-cs-denis-ten-memorial.json"
@@ -20535,24 +20535,24 @@
    },
    "facts": [
     {
-     "who": "Александра Трусова",
+     "kind": "element",
      "text": "Четверной лутц",
-     "kind": "element"
+     "who": "Александра Трусова"
     },
     {
-     "who": "Yujae Kim",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Yujae Kim"
     },
     {
-     "who": "Мария Захарова",
+     "kind": "element",
      "text": "Четверной тулуп",
-     "kind": "element"
+     "who": "Мария Захарова"
     },
     {
-     "who": "Дина Хуснутдинова",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Дина Хуснутдинова"
     },
     {
      "kind": "score",
@@ -20565,9 +20565,9 @@
      "who": "Мария Захарова"
     },
     {
-     "who": "Александра Трусова",
+     "kind": "place",
      "text": "Отрыв от второго места — 16.81 балла",
-     "kind": "place"
+     "who": "Александра Трусова"
     },
     {
      "kind": "score",
@@ -20840,19 +20840,19 @@
    },
    "facts": [
     {
-     "who": "Арсений Федотов",
+     "kind": "element",
      "text": "3 четверных в программе: 4S, 4T, 4T",
-     "kind": "element"
+     "who": "Арсений Федотов"
     },
     {
-     "who": "",
+     "kind": "place",
      "text": "Весь пьедестал — россияне",
-     "kind": "place"
+     "who": ""
     },
     {
-     "who": "Арсений Федотов",
+     "kind": "place",
      "text": "Отрыв от второго места — 47.58 балла",
-     "kind": "place"
+     "who": "Арсений Федотов"
     }
    ],
    "proto": "isu_isu-cs-denis-ten-memorial.json"
@@ -21374,9 +21374,9 @@
    },
    "facts": [
     {
-     "who": "Kaya Tiernan",
+     "kind": "score",
      "text": "Личный рекорд за КП: 59.29 (был 57.05)",
-     "kind": "score"
+     "who": "Kaya Tiernan"
     }
    ],
    "proto": "gs_tayside-trophy.json"
@@ -21615,19 +21615,19 @@
    },
    "facts": [
     {
-     "who": "Глеб Лутфуллин",
+     "kind": "element",
      "text": "Каскад 4T+3A+3A",
-     "kind": "element"
+     "who": "Глеб Лутфуллин"
     },
     {
-     "who": "Глеб Лутфуллин",
+     "kind": "element",
      "text": "5 четверных в программе: 4F, 4Lo, 4T, 4S, 4S",
-     "kind": "element"
+     "who": "Глеб Лутфуллин"
     },
     {
-     "who": "",
+     "kind": "place",
      "text": "Весь пьедестал — россияне",
-     "kind": "place"
+     "who": ""
     },
     {
      "kind": "score",
@@ -21655,9 +21655,9 @@
      "who": "Алекс Лабович"
     },
     {
-     "who": "Владислав Дикиджи",
+     "kind": "place",
      "text": "Отрыв от второго места — 35.56 балла",
-     "kind": "place"
+     "who": "Владислав Дикиджи"
     },
     {
      "kind": "score",
@@ -22176,14 +22176,14 @@
    },
    "facts": [
     {
-     "who": "Elizabeth Yun / Mitchell Castelletti",
+     "kind": "score",
      "text": "Личный рекорд за КП: 49.98 (был 44.45)",
-     "kind": "score"
+     "who": "Elizabeth Yun / Mitchell Castelletti"
     },
     {
-     "who": "Amy Ritchie / Mitchell Dunn",
+     "kind": "score",
      "text": "Личный рекорд за КП: 42.43 (был 39.22)",
-     "kind": "score"
+     "who": "Amy Ritchie / Mitchell Dunn"
     }
    ],
    "proto": "gs_tayside-trophy.json"
@@ -22320,9 +22320,9 @@
    },
    "facts": [
     {
-     "who": "Ava Kemp / Yohnatan Elizarov",
+     "kind": "score",
      "text": "Личный рекорд за КП: 64.68 (был 64.21)",
-     "kind": "score"
+     "who": "Ava Kemp / Yohnatan Elizarov"
     }
    ],
    "proto": "gs_tayside-trophy.json"
@@ -22666,9 +22666,9 @@
    },
    "facts": [
     {
-     "who": "Denis Krouglov",
+     "kind": "place",
      "text": "Отрыв от второго места — 22.08 балла",
-     "kind": "place"
+     "who": "Denis Krouglov"
     }
    ],
    "proto": "isu_isu-jgp-gdansk-2026.json"
@@ -22841,9 +22841,9 @@
    },
    "facts": [
     {
-     "who": "Sarina Joos",
+     "kind": "score",
      "text": "Личный рекорд за КП: 65.29 (был 63.67)",
-     "kind": "score"
+     "who": "Sarina Joos"
     }
    ],
    "proto": "gs_tayside-trophy.json"
@@ -22989,9 +22989,9 @@
    },
    "facts": [
     {
-     "who": "Tao Macrae",
+     "kind": "score",
      "text": "Личный рекорд за КП: 69.30 (был 68.76)",
-     "kind": "score"
+     "who": "Tao Macrae"
     }
    ],
    "proto": "gs_tayside-trophy.json"
@@ -23287,19 +23287,19 @@
    },
    "facts": [
     {
-     "who": "Noemi Joos",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 105.10 (был 98.69)",
-     "kind": "score"
+     "who": "Noemi Joos"
     },
     {
-     "who": "Noemi Joos",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 155.97 (был 149.57)",
-     "kind": "score"
+     "who": "Noemi Joos"
     },
     {
-     "who": "Noemi Joos",
+     "kind": "place",
      "text": "После короткой программы — 8-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Noemi Joos"
     }
    ],
    "proto": "gs_tayside-trophy.json"
@@ -23566,19 +23566,19 @@
    },
    "facts": [
     {
-     "who": "Elizabeth Yun / Mitchell Castelletti",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 82.21 (был 71.61)",
-     "kind": "score"
+     "who": "Elizabeth Yun / Mitchell Castelletti"
     },
     {
-     "who": "Elizabeth Yun / Mitchell Castelletti",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 132.19 (был 116.06)",
-     "kind": "score"
+     "who": "Elizabeth Yun / Mitchell Castelletti"
     },
     {
-     "who": "Elizabeth Yun / Mitchell Castelletti",
+     "kind": "place",
      "text": "Отрыв от второго места — 16.95 балла",
-     "kind": "place"
+     "who": "Elizabeth Yun / Mitchell Castelletti"
     }
    ],
    "proto": "gs_tayside-trophy.json"
@@ -23744,24 +23744,24 @@
    },
    "facts": [
     {
-     "who": "Ava Kemp / Yohnatan Elizarov",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 118.04 (был 115.49)",
-     "kind": "score"
+     "who": "Ava Kemp / Yohnatan Elizarov"
     },
     {
-     "who": "Ava Kemp / Yohnatan Elizarov",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 182.72 (был 179.43)",
-     "kind": "score"
+     "who": "Ava Kemp / Yohnatan Elizarov"
     },
     {
-     "who": "Anna Valesi / Martin Bidar",
+     "kind": "place",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Anna Valesi / Martin Bidar"
     },
     {
-     "who": "Ava Kemp / Yohnatan Elizarov",
+     "kind": "place",
      "text": "Отрыв от второго места — 19.94 балла",
-     "kind": "place"
+     "who": "Ava Kemp / Yohnatan Elizarov"
     }
    ],
    "proto": "gs_tayside-trophy.json"
@@ -24138,24 +24138,24 @@
    },
    "facts": [
     {
-     "who": "Donovan Carrillo",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 161.12 (был 152.48)",
-     "kind": "score"
+     "who": "Donovan Carrillo"
     },
     {
-     "who": "Donovan Carrillo",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 234.63 (был 232.67)",
-     "kind": "score"
+     "who": "Donovan Carrillo"
     },
     {
-     "who": "Ean Weiler",
+     "kind": "place",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Ean Weiler"
     },
     {
-     "who": "Donovan Carrillo",
+     "kind": "place",
      "text": "Отрыв от второго места — 17.17 балла",
-     "kind": "place"
+     "who": "Donovan Carrillo"
     }
    ],
    "proto": "gs_tayside-trophy.json"
@@ -24798,9 +24798,9 @@
    },
    "facts": [
     {
-     "who": "Зоя Ковязина / Дмитрий Родионов",
+     "kind": "place",
      "text": "Отрыв от второго места — 21.80 балла",
-     "kind": "place"
+     "who": "Зоя Ковязина / Дмитрий Родионов"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
@@ -25041,9 +25041,9 @@
    },
    "facts": [
     {
-     "who": "Алиса Заикина",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Алиса Заикина"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
@@ -25549,19 +25549,19 @@
    },
    "facts": [
     {
-     "who": "Алиса Заикина",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Алиса Заикина"
     },
     {
-     "who": "Алиса Заикина",
+     "kind": "element",
      "text": "2 четверных в программе: 4T, 4T",
-     "kind": "element"
+     "who": "Алиса Заикина"
     },
     {
-     "who": "Дарья Лебедева",
+     "kind": "element",
      "text": "2 четверных в программе: 4S, 4T",
-     "kind": "element"
+     "who": "Дарья Лебедева"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
@@ -25830,29 +25830,29 @@
    },
    "facts": [
     {
-     "who": "Даниил Жолобов",
+     "kind": "element",
      "text": "4 четверных в программе: 4T, 4Lz, 4Lo, 4Lo",
-     "kind": "element"
+     "who": "Даниил Жолобов"
     },
     {
-     "who": "Николай Колесников",
+     "kind": "element",
      "text": "3 четверных в программе: 4S, 4T, 4T",
-     "kind": "element"
+     "who": "Николай Колесников"
     },
     {
-     "who": "Ильяс Халиуллин",
+     "kind": "element",
      "text": "3 четверных в программе: 4Lz, 4Lz, 4S",
-     "kind": "element"
+     "who": "Ильяс Халиуллин"
     },
     {
-     "who": "Михаил Алексахин",
+     "kind": "element",
      "text": "3 четверных в программе: 4T, 4S, 4T",
-     "kind": "element"
+     "who": "Михаил Алексахин"
     },
     {
-     "who": "Николай Колесников",
+     "kind": "place",
      "text": "После короткой программы — 12-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Николай Колесников"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
@@ -26273,9 +26273,9 @@
    },
    "facts": [
     {
-     "who": "Jiaying Ellyse Johnson",
+     "kind": "score",
      "text": "Личный рекорд за КП: 62.50 (был 47.51)",
-     "kind": "score"
+     "who": "Jiaying Ellyse Johnson"
     }
    ],
    "proto": "isu_isu-cs-budapest-trophy.json"
@@ -27148,19 +27148,19 @@
    },
    "facts": [
     {
-     "who": "Hana Maria Aboian / Daniil Veselukhin",
+     "kind": "score",
      "text": "Лучшая среди юниоров оценка сезона за РТ: 70.63",
-     "kind": "score"
+     "who": "Hana Maria Aboian / Daniil Veselukhin"
     },
     {
-     "who": "Hana Maria Aboian / Daniil Veselukhin",
+     "kind": "score",
      "text": "Личный рекорд за РТ: 70.63 (был 68.93)",
-     "kind": "score"
+     "who": "Hana Maria Aboian / Daniil Veselukhin"
     },
     {
-     "who": "Zoe Bianchi / Daniel Basile",
+     "kind": "score",
      "text": "Личный рекорд за РТ: 65.55 (был 63.38)",
-     "kind": "score"
+     "who": "Zoe Bianchi / Daniel Basile"
     }
    ],
    "proto": "isu_isu-cs-budapest-trophy.json"
@@ -27508,9 +27508,9 @@
    },
    "facts": [
     {
-     "who": "Амалия Насыбуллина",
+     "kind": "place",
      "text": "Отрыв от второго места — 17.68 балла",
-     "kind": "place"
+     "who": "Амалия Насыбуллина"
     }
    ],
    "proto": "isu_isu-cs-budapest-trophy.json"
@@ -27681,19 +27681,19 @@
    },
    "facts": [
     {
-     "who": "Илья Мальков",
+     "kind": "element",
      "text": "3 четверных в программе: 4T, 4S, 4S",
-     "kind": "element"
+     "who": "Илья Мальков"
     },
     {
-     "who": "Kirill Sheiko",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 134.19 (был 123.13)",
-     "kind": "score"
+     "who": "Kirill Sheiko"
     },
     {
-     "who": "Kirill Sheiko",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 208.55 (был 199.93)",
-     "kind": "score"
+     "who": "Kirill Sheiko"
     }
    ],
    "proto": "isu_isu-cs-budapest-trophy.json"
@@ -27882,9 +27882,9 @@
    },
    "facts": [
     {
-     "who": "Камилла Нелюбова",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Камилла Нелюбова"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
@@ -29089,29 +29089,29 @@
    },
    "facts": [
     {
-     "who": "Zoe Bianchi / Daniel Basile",
+     "kind": "score",
      "text": "Личный рекорд за ПТ: 99.34 (был 96.90)",
-     "kind": "score"
+     "who": "Zoe Bianchi / Daniel Basile"
     },
     {
-     "who": "Arianna Soldati / Nicholas Tagliabue",
+     "kind": "score",
      "text": "Личный рекорд за ПТ: 94.47 (был 91.86)",
-     "kind": "score"
+     "who": "Arianna Soldati / Nicholas Tagliabue"
     },
     {
-     "who": "Hana Maria Aboian / Daniil Veselukhin",
+     "kind": "score",
      "text": "Лучшая среди юниоров сумма сезона: 170.37",
-     "kind": "score"
+     "who": "Hana Maria Aboian / Daniil Veselukhin"
     },
     {
-     "who": "Hana Maria Aboian / Daniil Veselukhin",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 170.37 (был 167.11)",
-     "kind": "score"
+     "who": "Hana Maria Aboian / Daniil Veselukhin"
     },
     {
-     "who": "Zoe Bianchi / Daniel Basile",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 164.89 (был 160.28)",
-     "kind": "score"
+     "who": "Zoe Bianchi / Daniel Basile"
     }
    ],
    "proto": "isu_isu-cs-budapest-trophy.json"
@@ -29848,14 +29848,14 @@
      "who": "Patrick Blackwell"
     },
     {
-     "who": "Patrick Blackwell",
+     "kind": "place",
      "text": "После короткой программы — 5-е место, в итоге — 2-е место",
-     "kind": "place"
+     "who": "Patrick Blackwell"
     },
     {
-     "who": "Daniel Grassl",
+     "kind": "place",
      "text": "Отрыв от второго места — 25.91 балла",
-     "kind": "place"
+     "who": "Daniel Grassl"
     },
     {
      "kind": "score",
@@ -30081,14 +30081,14 @@
    },
    "facts": [
     {
-     "who": "Камилла Нелюбова",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Камилла Нелюбова"
     },
     {
-     "who": "Ксения Синицына",
+     "kind": "place",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Ксения Синицына"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
@@ -30298,14 +30298,14 @@
    },
    "facts": [
     {
-     "who": "Артём Ковалёв",
+     "kind": "place",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Артём Ковалёв"
     },
     {
-     "who": "Евгений Семененко",
+     "kind": "place",
      "text": "Отрыв от второго места — 43.97 балла",
-     "kind": "place"
+     "who": "Евгений Семененко"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
@@ -30978,24 +30978,24 @@
    },
    "facts": [
     {
-     "who": "Sara-Maude Dupuis",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Sara-Maude Dupuis"
     },
     {
-     "who": "Sophie Joline von Felten",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Sophie Joline von Felten"
     },
     {
-     "who": "Kimmy Repond",
+     "kind": "place",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Kimmy Repond"
     },
     {
-     "who": "Алина Горбачёва",
+     "kind": "place",
      "text": "Отрыв от второго места — 23.43 балла",
-     "kind": "place"
+     "who": "Алина Горбачёва"
     }
    ],
    "proto": "isu_isu-cs-budapest-trophy.json"
@@ -32929,9 +32929,9 @@
    },
    "facts": [
     {
-     "who": "Daniel Verbat",
+     "kind": "score",
      "text": "Личный рекорд за КП: 54.58 (был 44.15)",
-     "kind": "score"
+     "who": "Daniel Verbat"
     }
    ],
    "proto": "gs_golden-bear.json"
@@ -33149,9 +33149,9 @@
    },
    "facts": [
     {
-     "who": "Paula Kasnar",
+     "kind": "score",
      "text": "Личный рекорд за КП: 52.83 (был 44.60)",
-     "kind": "score"
+     "who": "Paula Kasnar"
     }
    ],
    "proto": "gs_golden-bear.json"
@@ -33685,9 +33685,9 @@
    },
    "facts": [
     {
-     "who": "Yuseong Kim",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Yuseong Kim"
     },
     {
      "kind": "score",
@@ -33828,19 +33828,19 @@
    },
    "facts": [
     {
-     "who": "Daniel Verbat",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 88.92 (был 85.28)",
-     "kind": "score"
+     "who": "Daniel Verbat"
     },
     {
-     "who": "Daniel Verbat",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 143.50 (был 129.43)",
-     "kind": "score"
+     "who": "Daniel Verbat"
     },
     {
-     "who": "Felix Oberbacher",
+     "kind": "place",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Felix Oberbacher"
     }
    ],
    "proto": "gs_golden-bear.json"
@@ -34280,9 +34280,9 @@
    },
    "facts": [
     {
-     "who": "Lea Marie Castlunger",
+     "kind": "place",
      "text": "После короткой программы — 7-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Lea Marie Castlunger"
     }
    ],
    "proto": "gs_golden-bear.json"
@@ -34650,9 +34650,9 @@
    },
    "facts": [
     {
-     "who": "Дина Хуснутдинова",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Дина Хуснутдинова"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
@@ -34851,9 +34851,9 @@
      "who": "Laurence Fournier Beaudry / Guillaume Cizeron"
     },
     {
-     "who": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "kind": "place",
      "text": "Отрыв от второго места — 13.64 балла",
-     "kind": "place"
+     "who": "Laurence Fournier Beaudry / Guillaume Cizeron"
     }
    ],
    "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
@@ -35284,9 +35284,9 @@
    },
    "facts": [
     {
-     "who": "Katerina Hanusova",
+     "kind": "score",
      "text": "Личный рекорд за КП: 55.13 (был 50.61)",
-     "kind": "score"
+     "who": "Katerina Hanusova"
     }
    ],
    "proto": "gs_golden-bear.json"
@@ -35804,19 +35804,19 @@
    },
    "facts": [
     {
-     "who": "Ami Nakai",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Ami Nakai"
     },
     {
-     "who": "Yuseong Kim",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Yuseong Kim"
     },
     {
-     "who": "Ami Nakai",
+     "kind": "place",
      "text": "Отрыв от второго места — 16.92 балла",
-     "kind": "place"
+     "who": "Ami Nakai"
     }
    ],
    "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
@@ -36178,19 +36178,19 @@
    },
    "facts": [
     {
-     "who": "Лев Лазарев",
+     "kind": "element",
      "text": "5 четверных в программе: 4F, 4Lz, 4S, 4Lz, 4T",
-     "kind": "element"
+     "who": "Лев Лазарев"
     },
     {
-     "who": "Глеб Лутфуллин",
+     "kind": "element",
      "text": "Каскад 4T+3A+3A",
-     "kind": "element"
+     "who": "Глеб Лутфуллин"
     },
     {
-     "who": "Глеб Лутфуллин",
+     "kind": "element",
      "text": "5 четверных в программе: 4F, 4Lo, 4T, 4S, 4S",
-     "kind": "element"
+     "who": "Глеб Лутфуллин"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
@@ -36398,24 +36398,24 @@
    },
    "facts": [
     {
-     "who": "Ariadna Gupta Espada",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 110.70 (был 103.69)",
-     "kind": "score"
+     "who": "Ariadna Gupta Espada"
     },
     {
-     "who": "Ariadna Gupta Espada",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 158.67 (был 150.01)",
-     "kind": "score"
+     "who": "Ariadna Gupta Espada"
     },
     {
-     "who": "Katerina Hanusova",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 150.03 (был 146.59)",
-     "kind": "score"
+     "who": "Katerina Hanusova"
     },
     {
-     "who": "Ariadna Gupta Espada",
+     "kind": "place",
      "text": "После короткой программы — 6-е место, в итоге — 1-е место",
-     "kind": "place"
+     "who": "Ariadna Gupta Espada"
     }
    ],
    "proto": "gs_golden-bear.json"
@@ -36597,9 +36597,9 @@
    },
    "facts": [
     {
-     "who": "Александра Бойкова / Дмитрий Козловский",
+     "kind": "element",
      "text": "Четверной выброс сальхов",
-     "kind": "element"
+     "who": "Александра Бойкова / Дмитрий Козловский"
     }
    ],
    "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
@@ -36686,7 +36686,7 @@
      "points": "197.05"
     }
    ],
-   "desc": "Итог:\n1. Вероника Яметова — 132.59\n2. Ксения Синицына — 131.05\n3. Арина Кудлай — 128.79\n\nИтог турнира:\n1. Ксения Синицына — 205.34\n2. Вероника Яметова — 199.84\n3. Дина Хуснутдинова — 197.05\n\nПримечательное:\n• Вероника Яметова — После короткой программы — 7-е место, в итоге — 2-е место\n\nНачало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Вероника Яметова — 132.59\n2. Ксения Синицына — 131.05\n3. Арина Кудлай — 128.79\n\nИтог турнира:\n1. Ксения Синицына — 205.34\n2. Вероника Яметова — 199.84\n3. Дина Хуснутдинова — 197.05\n\nПримечательное:\n• Дина Хуснутдинова — Тройной аксель\n• Милана Лебедева — Четверной сальхов\n• Мария Захарова — 2 четверных в программе: 4T, 4T\n• Вероника Яметова — После короткой программы — 7-е место, в итоге — 2-е место\n\nНачало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Мария Котова",
@@ -36820,9 +36820,24 @@
    },
    "facts": [
     {
-     "who": "Вероника Яметова",
+     "who": "Дина Хуснутдинова",
+     "text": "Тройной аксель",
+     "kind": "element"
+    },
+    {
+     "who": "Милана Лебедева",
+     "text": "Четверной сальхов",
+     "kind": "element"
+    },
+    {
+     "who": "Мария Захарова",
+     "text": "2 четверных в программе: 4T, 4T",
+     "kind": "element"
+    },
+    {
+     "kind": "place",
      "text": "После короткой программы — 7-е место, в итоге — 2-е место",
-     "kind": "place"
+     "who": "Вероника Яметова"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
@@ -37027,14 +37042,14 @@
    },
    "facts": [
     {
-     "who": "Kao Miura",
+     "kind": "place",
      "text": "После короткой программы — 9-е место, в итоге — 2-е место",
-     "kind": "place"
+     "who": "Kao Miura"
     },
     {
-     "who": "Adam Siao Him Fa",
+     "kind": "place",
      "text": "Отрыв от второго места — 36.28 балла",
-     "kind": "place"
+     "who": "Adam Siao Him Fa"
     }
    ],
    "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
@@ -37079,12 +37094,18 @@
    "desc": "Промежуточные итоги:\n1. Анна Ляшенко / Пётр Алексеенко — 100.36\n2. Юлия Филимонова / Андрей Шадерков — 91.53\n\nНачало: 17:10 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
-     "name": "Юлия Филимонова / Андрей Шадерков",
-     "nation": "КРД",
-     "time": "17:17",
-     "no": 1,
-     "warmup": 1,
-     "place": 2
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "СПБ",
+     "time": "18:04",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Анна Ляшенко / Пётр Алексеенко",
+     "nation": "МОС",
+     "time": "17:41",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Ева Хмелькова / Владислав Антонышев",
@@ -37094,12 +37115,18 @@
      "warmup": 1
     },
     {
-     "name": "Анна Ляшенко / Пётр Алексеенко",
+     "name": "Екатерина Гейниш / Андрей Рудь",
      "nation": "МОС",
-     "time": "17:41",
-     "no": 2,
-     "warmup": 1,
-     "place": 1
+     "time": "17:56",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "nation": "ПРМ",
+     "time": "18:12",
+     "no": 7,
+     "warmup": 2
     },
     {
      "name": "София Диана Касинс / Александр Брегей",
@@ -37109,25 +37136,11 @@
      "warmup": 2
     },
     {
-     "name": "Екатерина Гейниш / Андрей Рудь",
-     "nation": "МОС",
-     "time": "17:56",
-     "no": 5,
-     "warmup": 2
-    },
-    {
-     "name": "Анастасия Мишина / Александр Галлямов",
-     "nation": "СПБ",
-     "time": "18:04",
-     "no": 6,
-     "warmup": 2
-    },
-    {
-     "name": "Екатерина Чикмарёва / Матвей Янченков",
-     "nation": "ПРМ",
-     "time": "18:12",
-     "no": 7,
-     "warmup": 2
+     "name": "Юлия Филимонова / Андрей Шадерков",
+     "nation": "КРД",
+     "time": "17:17",
+     "no": 1,
+     "warmup": 1
     }
    ],
    "live": {
