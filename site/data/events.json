@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-25T09:18:02+03:00",
- "checked": "2026-10-25T09:18:02+03:00",
+ "generated": "2026-10-25T09:33:37+03:00",
+ "checked": "2026-10-25T09:33:37+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35804,14 +35804,14 @@
    },
    "facts": [
     {
-     "who": "Ami Nakai",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Ami Nakai"
     },
     {
-     "who": "Yuseong Kim",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Yuseong Kim"
     },
     {
      "kind": "place",
