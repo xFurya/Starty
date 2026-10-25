@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-25T14:15:27+03:00",
- "checked": "2026-10-25T12:05:02.910021+00:00",
+ "checked": "2026-10-25T12:25:29.188692+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -36786,14 +36786,15 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Мария Котова — 88.90\n\nНачало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Мария Котова",
      "nation": "ТАТ",
      "time": "15:12",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Диана Евлахина",
@@ -36894,7 +36895,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Мария Котова",
+     "nation": "ТАТ",
+     "points": "88.90"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:pairs-senior-pp",
