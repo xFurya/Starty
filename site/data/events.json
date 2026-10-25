@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-25T14:15:27+03:00",
- "checked": "2026-10-25T13:53:28.070190+00:00",
+ "checked": "2026-10-25T14:01:27.222686+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -36634,7 +36634,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Kao Miura — 175.29\n2. Minkyu Seo — 161.07\n3. Sota Yamamoto — 147.22\n\nНачало: 14:10 МСК\nТрансляция: Okko",
+   "desc": "Итог:\n1. Adam Siao Him Fa — 181.78\n2. Kao Miura — 175.29\n3. Minkyu Seo — 161.07\n\nИтог турнира:\n1. Adam Siao Him Fa — 284.24\n2. Kao Miura — 247.96\n3. Minkyu Seo — 244.90\n\nПримечательное:\n• Kao Miura — После короткой программы — 9-е место, в итоге — 2-е место\n• Adam Siao Him Fa — Отрыв от второго места — 36.28 балла\n\nНачало: 14:10 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Adam Hagara",
@@ -36649,7 +36649,8 @@
      "time": "14:25",
      "no": 2,
      "warmup": 1,
-     "place": 9
+     "place": 10,
+     "final": 11
     },
     {
      "name": "Nikolaj Memola",
@@ -36657,7 +36658,8 @@
      "time": "14:33",
      "no": 3,
      "warmup": 1,
-     "place": 7
+     "place": 8,
+     "final": 9
     },
     {
      "name": "Kao Miura",
@@ -36665,7 +36667,8 @@
      "time": "14:40",
      "no": 4,
      "warmup": 1,
-     "place": 1
+     "place": 2,
+     "final": 2
     },
     {
      "name": "Sota Yamamoto",
@@ -36673,7 +36676,8 @@
      "time": "14:48",
      "no": 5,
      "warmup": 1,
-     "place": 3
+     "place": 4,
+     "final": 5
     },
     {
      "name": "Jimmy Ma",
@@ -36681,7 +36685,8 @@
      "time": "14:56",
      "no": 6,
      "warmup": 1,
-     "place": 5
+     "place": 6,
+     "final": 6
     },
     {
      "name": "Francois Pitot",
@@ -36689,7 +36694,8 @@
      "time": "15:11",
      "no": 7,
      "warmup": 2,
-     "place": 6
+     "place": 7,
+     "final": 7
     },
     {
      "name": "Jacob Sanchez",
@@ -36697,7 +36703,8 @@
      "time": "15:19",
      "no": 8,
      "warmup": 2,
-     "place": 8
+     "place": 9,
+     "final": 8
     },
     {
      "name": "Mikhail Shaidorov",
@@ -36705,7 +36712,8 @@
      "time": "15:26",
      "no": 9,
      "warmup": 2,
-     "place": 10
+     "place": 11,
+     "final": 10
     },
     {
      "name": "Minkyu Seo",
@@ -36713,7 +36721,8 @@
      "time": "15:34",
      "no": 10,
      "warmup": 2,
-     "place": 2
+     "place": 3,
+     "final": 3
     },
     {
      "name": "Aleksandr Selevko",
@@ -36721,14 +36730,17 @@
      "time": "15:42",
      "no": 11,
      "warmup": 2,
-     "place": 4
+     "place": 5,
+     "final": 4
     },
     {
      "name": "Adam Siao Him Fa",
      "nation": "FRA",
      "time": "15:49",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "final": 1
     }
    ],
    "live": {
@@ -36750,30 +36762,61 @@
      "Aleksandr SELEVKO": "Aleksandr Selevko",
      "Adam SIAO HIM FA": "Adam Siao Him Fa"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-grand-prix-de-france-2026.json",
    "podium": [
     {
      "place": 1,
+     "name": "Adam Siao Him Fa",
+     "nation": "FRA",
+     "points": "181.78"
+    },
+    {
+     "place": 2,
      "name": "Kao Miura",
      "nation": "JPN",
      "points": "175.29"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Minkyu Seo",
      "nation": "KOR",
      "points": "161.07"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Adam Siao Him Fa",
+     "nation": "FRA",
+     "points": "284.24"
+    },
+    {
+     "place": 2,
+     "name": "Kao Miura",
+     "nation": "JPN",
+     "points": "247.96"
     },
     {
      "place": 3,
-     "name": "Sota Yamamoto",
-     "nation": "JPN",
-     "points": "147.22"
+     "name": "Minkyu Seo",
+     "nation": "KOR",
+     "points": "244.90"
     }
    ],
-   "provisional": true
+   "facts": [
+    {
+     "who": "Kao Miura",
+     "text": "После короткой программы — 9-е место, в итоге — 2-е место",
+     "kind": "place"
+    },
+    {
+     "who": "Adam Siao Him Fa",
+     "text": "Отрыв от второго места — 36.28 балла",
+     "kind": "place"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:women-senior-pp",
@@ -36817,7 +36860,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Вероника Яметова — 132.59\n2. Арина Кудлай — 128.79\n3. Дина Хуснутдинова — 126.21\n\nНачало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Вероника Яметова — 132.59\n2. Ксения Синицына — 131.05\n3. Арина Кудлай — 128.79\n\nИтог турнира:\n1. Ксения Синицына — 205.34\n2. Вероника Яметова — 199.84\n3. Дина Хуснутдинова — 197.05\n\nПримечательное:\n• Вероника Яметова — После короткой программы — 7-е место, в итоге — 2-е место\n\nНачало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Мария Котова",
@@ -36825,7 +36868,8 @@
      "time": "15:12",
      "no": 1,
      "warmup": 1,
-     "place": 11
+     "place": 12,
+     "final": 12
     },
     {
      "name": "Диана Евлахина",
@@ -36833,7 +36877,8 @@
      "time": "15:28",
      "no": 3,
      "warmup": 1,
-     "place": 10
+     "place": 11,
+     "final": 11
     },
     {
      "name": "Мария Лабутина",
@@ -36841,7 +36886,8 @@
      "time": "15:36",
      "no": 4,
      "warmup": 1,
-     "place": 9
+     "place": 10,
+     "final": 9
     },
     {
      "name": "Злата Буря",
@@ -36849,7 +36895,8 @@
      "time": "15:43",
      "no": 5,
      "warmup": 1,
-     "place": 4
+     "place": 5,
+     "final": 5
     },
     {
      "name": "Вероника Яметова",
@@ -36857,7 +36904,8 @@
      "time": "15:51",
      "no": 6,
      "warmup": 1,
-     "place": 1
+     "place": 1,
+     "final": 2
     },
     {
      "name": "Мария Артёмова",
@@ -36865,7 +36913,8 @@
      "time": "15:59",
      "no": 2,
      "warmup": 1,
-     "place": 7
+     "place": 8,
+     "final": 10
     },
     {
      "name": "Милана Лебедева",
@@ -36873,7 +36922,8 @@
      "time": "16:07",
      "no": 7,
      "warmup": 2,
-     "place": 6
+     "place": 7,
+     "final": 7
     },
     {
      "name": "Арина Кудлай",
@@ -36881,7 +36931,8 @@
      "time": "16:14",
      "no": 8,
      "warmup": 2,
-     "place": 2
+     "place": 3,
+     "final": 4
     },
     {
      "name": "Агата Петрова",
@@ -36889,7 +36940,8 @@
      "time": "16:22",
      "no": 9,
      "warmup": 2,
-     "place": 5
+     "place": 6,
+     "final": 6
     },
     {
      "name": "Дина Хуснутдинова",
@@ -36897,7 +36949,8 @@
      "time": "16:30",
      "no": 10,
      "warmup": 2,
-     "place": 3
+     "place": 4,
+     "final": 3
     },
     {
      "name": "Мария Захарова",
@@ -36905,14 +36958,17 @@
      "time": "16:38",
      "no": 11,
      "warmup": 2,
-     "place": 8
+     "place": 9,
+     "final": 8
     },
     {
      "name": "Ксения Синицына",
      "nation": "МОБ",
      "time": "16:46",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "final": 1
     }
    ],
    "live": {
@@ -36934,7 +36990,7 @@
      "Мария ЗАХАРОВА": "Мария Захарова",
      "Ксения СИНИЦЫНА": "Ксения Синицына"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json",
    "podium": [
@@ -36946,18 +37002,44 @@
     },
     {
      "place": 2,
+     "name": "Ксения Синицына",
+     "nation": "МОБ",
+     "points": "131.05"
+    },
+    {
+     "place": 3,
      "name": "Арина Кудлай",
      "nation": "СПБ",
      "points": "128.79"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Ксения Синицына",
+     "nation": "МОБ",
+     "points": "205.34"
+    },
+    {
+     "place": 2,
+     "name": "Вероника Яметова",
+     "nation": "МОБ",
+     "points": "199.84"
     },
     {
      "place": 3,
      "name": "Дина Хуснутдинова",
      "nation": "ТАТ",
-     "points": "126.21"
+     "points": "197.05"
     }
    ],
-   "provisional": true
+   "facts": [
+    {
+     "who": "Вероника Яметова",
+     "text": "После короткой программы — 7-е место, в итоге — 2-е место",
+     "kind": "place"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:pairs-senior-pp",
