@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-25T13:15:59+03:00",
- "checked": "2026-10-25T10:49:02.482772+00:00",
+ "checked": "2026-10-25T10:53:02.549892+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -36004,7 +36004,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Hannah Herrera / Ivan Khobta — 88.23\n2. Jiaxuan Zhang / Yihang Huang — 54.16\n3. Megan Wessenberg / Denys Strekalin — 58.37\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 13:32\n\nНачало: 12:30 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Jiaxuan Zhang / Yihang Huang — 99.55\n2. Hannah Herrera / Ivan Khobta — 88.23\n3. Megan Wessenberg / Denys Strekalin — 58.37\n\nРоссияне:\n• Александра Бойкова / Дмитрий Козловский — 13:32\n\nНачало: 12:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Hannah Herrera / Ivan Khobta",
@@ -36012,7 +36012,7 @@
      "time": "12:37",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Jiaxuan Zhang / Yihang Huang",
@@ -36020,7 +36020,7 @@
      "time": "12:45",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 1
     },
     {
      "name": "Megan Wessenberg / Denys Strekalin",
@@ -36092,15 +36092,15 @@
    "podium": [
     {
      "place": 1,
-     "name": "Hannah Herrera / Ivan Khobta",
-     "nation": "UKR",
-     "points": "88.23"
+     "name": "Jiaxuan Zhang / Yihang Huang",
+     "nation": "CHN",
+     "points": "99.55"
     },
     {
      "place": 2,
-     "name": "Jiaxuan Zhang / Yihang Huang",
-     "nation": "CHN",
-     "points": "54.16"
+     "name": "Hannah Herrera / Ivan Khobta",
+     "nation": "UKR",
+     "points": "88.23"
     },
     {
      "place": 3,
@@ -36325,7 +36325,7 @@
     "Zofia Bochenek"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Dunja Tresnjic — 46.49\n2. Ema Vukovic — 36.28\n3. Julia Fennell — 33.65\n\nНачало: 13:25 МСК",
+   "desc": "Промежуточные итоги:\n1. Julia Fennell — 56.12\n2. Dunja Tresnjic — 46.49\n3. Ema Vukovic — 36.28\n\nНачало: 13:25 МСК",
    "field": [
     {
      "name": "Ariadna Gupta Espada",
@@ -36349,7 +36349,7 @@
      "time": "13:38",
      "no": 2,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Elena Agostinelli",
@@ -36365,7 +36365,7 @@
      "time": "13:31",
      "no": 1,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Ginevra Lavinia Negrello",
@@ -36381,7 +36381,7 @@
      "time": "13:46",
      "no": 3,
      "warmup": 1,
-     "place": 3
+     "place": 1
     },
     {
      "name": "Julija Lovrencic",
@@ -36449,21 +36449,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Julia Fennell",
+     "nation": "ISR",
+     "points": "56.12"
+    },
+    {
+     "place": 2,
      "name": "Dunja Tresnjic",
      "nation": "SRB",
      "points": "46.49"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Ema Vukovic",
      "nation": "CRO",
      "points": "36.28"
-    },
-    {
-     "place": 3,
-     "name": "Julia Fennell",
-     "nation": "ISR",
-     "points": "33.65"
     }
    ],
    "provisional": true
