@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-25T12:58:22+03:00",
- "checked": "2026-10-25T10:29:02.449416+00:00",
+ "generated": "2026-10-25T13:15:59+03:00",
+ "checked": "2026-10-25T13:15:59+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -36123,19 +36123,40 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Дмитрий Шелковников — 111.61\n2. Даниил Постарнаков — 106.61\n3. Артемий Маринин — 73.97\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
-   "field": [
+   "podium": [
     {
+     "place": 1,
      "name": "Даниил Постарнаков",
      "nation": "СТА",
-     "time": "13:07",
-     "no": 1,
-     "warmup": 1,
-     "place": 2
+     "points": "106.61"
+    },
+    {
+     "place": 2,
+     "name": "Дмитрий Шелковников",
+     "nation": "МОБ",
+     "points": "68.07"
+    },
+    {
+     "place": 3,
+     "name": "Артемий Маринин",
+     "nation": "МОС",
+     "points": "73.97"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Даниил Постарнаков — 106.61\n2. Дмитрий Шелковников — 68.07\n3. Артемий Маринин — 73.97\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Арсений Федотов",
+     "nation": "МОС",
+     "place": 8,
+     "time": "14:07",
+     "no": 8,
+     "warmup": 2
     },
     {
      "name": "Артемий Маринин",
      "nation": "МОС",
+     "place": 3,
      "time": "13:22",
      "no": 3,
      "warmup": 1,
@@ -36144,84 +36165,88 @@
     {
      "name": "Артур Даниелян",
      "nation": "СПБ",
+     "place": 4,
      "time": "13:30",
      "no": 4,
      "warmup": 1,
      "place": 4
     },
     {
-     "name": "Лев Лазарев",
-     "nation": "МОС",
-     "time": "13:37",
-     "no": 5,
-     "warmup": 1,
-     "place": 5
-    },
-    {
-     "name": "Илья Строганов",
-     "nation": "СПБ",
-     "time": "13:45",
-     "no": 6,
-     "warmup": 1,
-     "place": 6
-    },
-    {
-     "name": "Дмитрий Шелковников",
-     "nation": "МОБ",
-     "time": "13:52",
-     "no": 2,
-     "warmup": 1,
-     "place": 1
-    },
-    {
-     "name": "Макар Игнатов",
-     "nation": "МОС",
-     "time": "14:00",
-     "no": 7,
-     "warmup": 2,
-     "place": 7
-    },
-    {
-     "name": "Арсений Федотов",
-     "nation": "МОС",
-     "time": "14:07",
-     "no": 8,
-     "warmup": 2,
-     "place": 8
-    },
-    {
-     "name": "Никита Сарновский",
-     "nation": "МОС",
-     "time": "14:15",
-     "no": 9,
-     "warmup": 2,
-     "place": 9
-    },
-    {
-     "name": "Глеб Лутфуллин",
-     "nation": "СПБ",
-     "time": "14:22",
-     "no": 10,
-     "warmup": 2,
-     "place": 10
-    },
-    {
      "name": "Владислав Дикиджи",
      "nation": "СПБ",
+     "place": 11,
      "time": "14:30",
      "no": 11,
      "warmup": 2,
      "place": 11
     },
     {
+     "name": "Глеб Лутфуллин",
+     "nation": "СПБ",
+     "place": 10,
+     "time": "14:22",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Даниил Постарнаков",
+     "nation": "СТА",
+     "place": 1,
+     "time": "13:07",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Дмитрий Шелковников",
+     "nation": "МОБ",
+     "place": 2,
+     "time": "13:52",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Илья Строганов",
+     "nation": "СПБ",
+     "place": 6,
+     "time": "13:45",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Лев Лазарев",
+     "nation": "МОС",
+     "place": 5,
+     "time": "13:37",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Макар Игнатов",
+     "nation": "МОС",
+     "place": 7,
+     "time": "14:00",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Никита Сарновский",
+     "nation": "МОС",
+     "place": 9,
+     "time": "14:15",
+     "no": 9,
+     "warmup": 2
+    },
+    {
      "name": "Пётр Гуменник",
      "nation": "СПБ",
+     "place": 12,
      "time": "14:37",
      "no": 12,
      "warmup": 2,
      "place": 12
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/2etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/2etap_sen/SEG002.htm",
@@ -36275,7 +36300,7 @@
    "seg": "ПП",
    "title": "Golden Bear — женщины ПП",
    "start": "2026-10-25T13:25:00+03:00",
-   "end": "2026-10-25T15:06:00+03:00",
+   "end": "2026-10-25T15:10:00+03:00",
    "venue": "Zagreb, Croatia",
    "intl": true,
    "broadcast": [],
@@ -36298,66 +36323,10 @@
    "desc": "Начало: 13:25 МСК",
    "field": [
     {
-     "name": "Ema Vukovic",
-     "nation": "CRO",
-     "time": "13:31",
-     "no": 1,
-     "warmup": 1
-    },
-    {
-     "name": "Dunja Tresnjic",
-     "nation": "SRB",
-     "time": "13:38",
-     "no": 2,
-     "warmup": 1
-    },
-    {
-     "name": "Julia Fennell",
-     "nation": "ISR",
-     "time": "13:46",
-     "no": 3,
-     "warmup": 1
-    },
-    {
-     "name": "Zofia Bochenek",
-     "nation": "POL",
-     "time": "13:53",
-     "no": 4,
-     "warmup": 1
-    },
-    {
-     "name": "Elena Agostinelli",
-     "nation": "ITA",
-     "time": "14:00",
-     "no": 5,
-     "warmup": 1
-    },
-    {
-     "name": "Zala Grum",
-     "nation": "SLO",
-     "time": "14:08",
-     "no": 6,
-     "warmup": 1
-    },
-    {
      "name": "Ariadna Gupta Espada",
      "nation": "ESP",
      "time": "14:22",
      "no": 7,
-     "warmup": 2
-    },
-    {
-     "name": "Oliwia Strokosz",
-     "nation": "POL",
-     "time": "14:29",
-     "no": 8,
-     "warmup": 2
-    },
-    {
-     "name": "Julija Lovrencic",
-     "nation": "SLO",
-     "time": "14:36",
-     "no": 9,
      "warmup": 2
     },
     {
@@ -36368,11 +36337,25 @@
      "warmup": 2
     },
     {
-     "name": "Katerina Hanusova",
-     "nation": "CZE",
-     "time": "14:51",
-     "no": 11,
-     "warmup": 2
+     "name": "Dunja Tresnjic",
+     "nation": "SRB",
+     "time": "13:38",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Elena Agostinelli",
+     "nation": "ITA",
+     "time": "14:00",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Ema Vukovic",
+     "nation": "CRO",
+     "time": "13:31",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Ginevra Lavinia Negrello",
@@ -36380,6 +36363,48 @@
      "time": "14:58",
      "no": 12,
      "warmup": 2
+    },
+    {
+     "name": "Julia Fennell",
+     "nation": "ISR",
+     "time": "13:46",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Julija Lovrencic",
+     "nation": "SLO",
+     "time": "14:36",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Katerina Hanusova",
+     "nation": "CZE",
+     "time": "14:51",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Oliwia Strokosz",
+     "nation": "POL",
+     "time": "14:29",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Zala Grum",
+     "nation": "SLO",
+     "time": "14:08",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Zofia Bochenek",
+     "nation": "POL",
+     "time": "13:53",
+     "no": 4,
+     "warmup": 1
     }
    ],
    "live": {
