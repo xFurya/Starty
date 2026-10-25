@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-25T14:15:27+03:00",
- "checked": "2026-10-25T12:25:29.188692+00:00",
+ "checked": "2026-10-25T12:33:27.702731+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -36634,7 +36634,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 14:10 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Samy Hammi — 129.60\n\nНачало: 14:10 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Adam Hagara",
@@ -36648,7 +36648,8 @@
      "nation": "FRA",
      "time": "14:25",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Nikolaj Memola",
@@ -36742,7 +36743,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Samy Hammi",
+     "nation": "FRA",
+     "points": "129.60"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:women-senior-pp",
@@ -36786,7 +36796,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Мария Котова — 88.90\n\nНачало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Мария Артёмова — 108.19\n2. Мария Котова — 88.90\n\nНачало: 15:05 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Мария Котова",
@@ -36794,7 +36804,7 @@
      "time": "15:12",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Диана Евлахина",
@@ -36829,7 +36839,8 @@
      "nation": "НВГ",
      "time": "15:59",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Милана Лебедева",
@@ -36899,6 +36910,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Мария Артёмова",
+     "nation": "НВГ",
+     "points": "108.19"
+    },
+    {
+     "place": 2,
      "name": "Мария Котова",
      "nation": "ТАТ",
      "points": "88.90"
