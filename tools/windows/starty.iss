@@ -58,6 +58,10 @@ CloseApplications=yes
 RestartApplications=no
 UninstallDisplayName={#AppName}
 UninstallDisplayIcon={app}\{#AppExe}
+; в конце установки и обновления — SHChangeNotify(SHCNE_ASSOCCHANGED): Проводник сбрасывает кеш значков.
+; Без этого обновление поверх кладёт новый starty.exe по тому же пути, а ярлык в «Пуске», закреплённый
+; значок и кнопка на панели задач (окно связано с ярлыком по AppUserModelID) остаются со старым значком
+ChangesAssociations=yes
 SetupIconFile=..\..\app\windows\runner\resources\app_icon.ico
 WizardStyle=modern
 OutputDir=..\..\app\build\windows\installer

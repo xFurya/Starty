@@ -11,10 +11,12 @@ iPhone (AppIcon), macOS, Windows (app_icon.ico), веба и assets/icon/*.png.
   • приложение: слои для предпросмотра и иконки окна на компьютере, список вариантов.
 Повторный запуск перезаписывает всё сгенерированное.
 """
+import io
 import json
 import os
 import re
 import shutil
+import struct
 import sys
 
 from PIL import Image, ImageDraw
@@ -154,7 +156,8 @@ def rounded(img, inset=0.0, radius=0.2237):
     mask = Image.new("L", (n * k, n * k), 0)
     ImageDraw.Draw(mask).rounded_rectangle(
         (off * k, off * k, (off + box) * k - 1, (off + box) * k - 1), radius=box * radius * k, fill=255)
-    mask = mask.resize((n, n), Image.LANCZOS)
+    # усреднение, а не LANCZOS: тот «звенит» и оставляет в углах альфу 1–2 вместо нуля
+    mask = mask.reduce(k)
     out = Image.new("RGBA", (n, n), (0, 0, 0, 0))
     plate = img.convert("RGBA").resize((box, box), Image.LANCZOS)
     out.paste(plate, (off, off))
@@ -164,6 +167,45 @@ def rounded(img, inset=0.0, radius=0.2237):
 
 MAC_INSET = 100 / 1024  # поля по шаблону macOS: плашка 824 из 1024
 WIN_RADIUS = 0.2
+# панель задач, ярлыки и Проводник при 100–200 % масштаба берут 16…64, крупные виды — 96…256
+WIN_SIZES = (16, 20, 24, 30, 32, 36, 40, 48, 60, 64, 72, 80, 96, 128, 256)
+
+
+def bmp_frame(im):
+    """Кадр ICO в классическом виде: 32-битный BMP с альфой и маской AND (прозрачное — 1).
+    Мелкие кадры — только так: PNG внутри ICO читают не все места оболочки Windows."""
+    n = im.width
+    px = im.transpose(Image.FLIP_TOP_BOTTOM).tobytes("raw", "BGRA")
+    row = ((n + 31) // 32) * 4
+    alpha = im.getchannel("A").transpose(Image.FLIP_TOP_BOTTOM).tobytes()
+    mask = bytearray(row * n)
+    for y in range(n):
+        for x in range(n):
+            if alpha[y * n + x] == 0:
+                mask[y * row + x // 8] |= 0x80 >> (x % 8)
+    head = struct.pack("<IiiHHIIiiII", 40, n, n * 2, 1, 32, 0, len(px) + len(mask), 0, 0, 0, 0)
+    return head + px + bytes(mask)
+
+
+def write_ico(path, frames):
+    """ICO из готовых кадров: каждый размер нарисован отдельно (Pillow сам ужимает из одного крупного
+    и пишет все кадры PNG). 256 — PNG, как принято, меньше — BMP."""
+    blobs = []
+    for im in frames:
+        if im.width >= 256:
+            b = io.BytesIO()
+            im.save(b, "PNG", optimize=True)
+            blobs.append(b.getvalue())
+        else:
+            blobs.append(bmp_frame(im))
+    out = struct.pack("<HHH", 0, 1, len(frames))
+    off = 6 + 16 * len(frames)
+    for im, blob in zip(frames, blobs):
+        s = im.width % 256  # 256 записывается нулём
+        out += struct.pack("<BBBBHHII", s, s, 0, 0, 1, 32, len(blob), off)
+        off += len(blob)
+    with open(path, "wb") as f:
+        f.write(out + b"".join(blobs))
 
 
 def desktop_icons(big):
@@ -173,9 +215,10 @@ def desktop_icons(big):
     for im in json.load(open(os.path.join(base, "Contents.json")))["images"]:
         px = round(float(im["size"].split("x")[0]) * int(im["scale"][0]))
         mac.resize((px, px), Image.LANCZOS).save(os.path.join(base, im["filename"]), optimize=True)
-    win = rounded(big.convert("RGB").resize((256, 256), Image.LANCZOS), radius=WIN_RADIUS)
-    win.save(os.path.join(APP, "windows", "runner", "resources", "app_icon.ico"),
-             sizes=[(16, 16), (24, 24), (32, 32), (48, 48), (64, 64), (128, 128), (256, 256)])
+    # каждый размер — своя плашка со своей маской: углы прозрачны в каждом кадре, а не только в крупном
+    rgb = big.convert("RGB")
+    write_ico(os.path.join(APP, "windows", "runner", "resources", "app_icon.ico"),
+              [rounded(rgb.resize((s, s), Image.LANCZOS), radius=WIN_RADIUS) for s in WIN_SIZES])
 
 
 def main_icon(src):
