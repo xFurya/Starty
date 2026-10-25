@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-25T12:58:22+03:00",
- "checked": "2026-10-25T12:58:22+03:00",
+ "checked": "2026-10-25T10:17:02.663762+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -36123,91 +36123,103 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Даниил Постарнаков — 106.61\n2. Дмитрий Шелковников — 68.07\n3. Артемий Маринин — 73.97\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Даниил Постарнаков",
      "nation": "СТА",
      "time": "13:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Артемий Маринин",
      "nation": "МОС",
      "time": "13:22",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Артур Даниелян",
      "nation": "СПБ",
      "time": "13:30",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4
     },
     {
      "name": "Лев Лазарев",
      "nation": "МОС",
      "time": "13:37",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5
     },
     {
      "name": "Илья Строганов",
      "nation": "СПБ",
      "time": "13:45",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 6
     },
     {
      "name": "Дмитрий Шелковников",
      "nation": "МОБ",
      "time": "13:52",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Макар Игнатов",
      "nation": "МОС",
      "time": "14:00",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     },
     {
      "name": "Арсений Федотов",
      "nation": "МОС",
      "time": "14:07",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 8
     },
     {
      "name": "Никита Сарновский",
      "nation": "МОС",
      "time": "14:15",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 9
     },
     {
      "name": "Глеб Лутфуллин",
      "nation": "СПБ",
      "time": "14:22",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 10
     },
     {
      "name": "Владислав Дикиджи",
      "nation": "СПБ",
      "time": "14:30",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 11
     },
     {
      "name": "Пётр Гуменник",
      "nation": "СПБ",
      "time": "14:37",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 12
     }
    ],
    "live": {
@@ -36231,7 +36243,28 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Даниил Постарнаков",
+     "nation": "СТА",
+     "points": "106.61"
+    },
+    {
+     "place": 2,
+     "name": "Дмитрий Шелковников",
+     "nation": "МОБ",
+     "points": "68.07"
+    },
+    {
+     "place": 3,
+     "name": "Артемий Маринин",
+     "nation": "МОС",
+     "points": "73.97"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "gs:golden-bear:women-senior-pp-women",
