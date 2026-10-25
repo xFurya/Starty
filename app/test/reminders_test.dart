@@ -144,14 +144,14 @@ void main() {
 
     test('старт идёт: вместо времени начала — статус, как метка на карточке', () {
       final t = Reminders.startText(start(ours: two));
-      expect(Reminders.liveMark, '●\u00A0ИДЁТ');
-      expect(t.live, '●\u00A0ИДЁТ — Танцы, ритм-танец');
+      expect(Reminders.liveMark, '🔴\u00A0ИДЁТ');
+      expect(t.live, '🔴\u00A0ИДЁТ — Танцы, ритм-танец');
       expect(t.live, isNot(matches(r'\d{1,2}:\d\d')));
       // строки и свёрнутый вид — те же
       expect(t.lines, ['CS Budapest Trophy', '19:04 — Кузьмина / Студеникин', '20:48 — Григорьева / Артющенко']);
       expect(t.collapsed, 'Кузьмина / Студеникин в 19:04 и ещё 1');
       final j = Reminders.startText(start(title: 'CS Budapest Trophy — юниорские танцы РТ', level: 'junior'));
-      expect(j.live, '●\u00A0ИДЁТ — Юниорские танцы, ритм-танец');
+      expect(j.live, '🔴\u00A0ИДЁТ — Юниорские танцы, ритм-танец');
     });
 
     test('старт без отслеживаемых: строка — турнир', () {
@@ -262,7 +262,7 @@ void main() {
       final title = x.titleAt(t);
       expect(title, '${Reminders.liveMark} — Женщины, произвольная программа');
       expect(title, isNot(matches(r'\d{1,2}:\d\d')));
-      expect(title, contains('●'));
+      expect(title, contains('🔴'));
       expect(title, contains('ИДЁТ'));
     }
     // уже идущий старт — тоже со статусом
