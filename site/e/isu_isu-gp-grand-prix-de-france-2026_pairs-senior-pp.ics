@@ -14,18 +14,21 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-grand-prix-de-france-2026:pairs-senior-pp@starty
-DTSTAMP:20261025T111527Z
-DTSTART;TZID=Europe/Moscow:20261025T123000
-DTEND;TZID=Europe/Moscow:20261025T134800
+DTSTAMP:20261025T135826Z
+DTSTART;TZID=Europe/Moscow:20261025T133000
+DTEND;TZID=Europe/Moscow:20261025T145000
 SUMMARY:GP de France — пары ПП
 DESCRIPTION:Итог:\n1. Anastasiia Metelkina / Luka Berulava — 127.31\n
  2. Александра Бойкова / Дмитрий Козловски
  й — 121.81\n3. Annika Hocke / Robert Kunkel — 112.71\n\nИтог ту
  рнира:\n1. Anastasiia Metelkina / Luka Berulava — 204.65\n2. Але
  ксандра Бойкова / Дмитрий Козловский — 19
- 7.66\n3. Annika Hocke / Robert Kunkel — 179.74\n\nРоссияне:\n•
-  Александра Бойкова / Дмитрий Козловский
-  — 13:32\n\nНачало: 12:30 МСК\nТрансляция: Okko
+ 7.66\n3. Annika Hocke / Robert Kunkel — 179.74\n\nПримечатель
+ ное:\n• Александра Бойкова / Дмитрий Козл
+ овский — Четверной выброс сальхов\n\nРос
+ сияне:\n• Александра Бойкова / Дмитрий Ко
+ зловский — 13:32\n\nНачало: 13:30 МСК\nТрансляц
+ ия: Okko
 LOCATION:Angers\, France
 URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-grand-prix-de-france-2026
  :pairs-senior-pp
