@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-25T09:33:37+03:00",
- "checked": "2026-10-25T09:33:37+03:00",
+ "checked": "2026-10-25T09:17:02.665574+00:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35847,31 +35847,37 @@
     "Xan Rols"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Начало: 11:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Alessandro Liberatore — 91.15\n2. Arin Yorke — 51.31\n3. Jan Valtera — 54.89\n\nНачало: 11:00 МСК",
    "field": [
     {
      "name": "Alessandro Liberatore",
-     "nation": "SLO"
+     "nation": "SLO",
+     "place": 1
     },
     {
      "name": "Arin Yorke",
-     "nation": "GBR"
+     "nation": "GBR",
+     "place": 2
     },
     {
      "name": "Corentin Spinar",
-     "nation": "FRA"
+     "nation": "FRA",
+     "place": 5
     },
     {
      "name": "David Sedej",
-     "nation": "SLO"
+     "nation": "SLO",
+     "place": 4
     },
     {
      "name": "Jan Valtera",
-     "nation": "CZE"
+     "nation": "CZE",
+     "place": 3
     },
     {
      "name": "Maxim Varakin",
-     "nation": "CRO"
+     "nation": "CRO",
+     "place": 6
     },
     {
      "name": "Oliver Praetorius",
@@ -35879,7 +35885,8 @@
     },
     {
      "name": "Vladimir Samoilov",
-     "nation": "POL"
+     "nation": "POL",
+     "place": 7
     },
     {
      "name": "Xan Rols",
@@ -35904,7 +35911,28 @@
     },
     "basis": null
    },
-   "proto": "gs_golden-bear.json"
+   "proto": "gs_golden-bear.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Alessandro Liberatore",
+     "nation": "SLO",
+     "points": "91.15"
+    },
+    {
+     "place": 2,
+     "name": "Arin Yorke",
+     "nation": "GBR",
+     "points": "51.31"
+    },
+    {
+     "place": 3,
+     "name": "Jan Valtera",
+     "nation": "CZE",
+     "points": "54.89"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "gs:golden-bear:women-senior-pp-women",
