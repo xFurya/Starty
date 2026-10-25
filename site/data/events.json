@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-25T18:46:41+03:00",
- "checked": "2026-10-25T18:46:41+03:00",
+ "checked": "2026-10-25T16:02:04.363916+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -37254,7 +37254,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 18:45 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Анна Смирнова / Богдан Шамков — 69.05\n\nНачало: 18:45 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Александра Прокопец / Александр Васькович",
@@ -37268,7 +37268,8 @@
      "nation": "ТУЛ",
      "time": "18:51",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Анна Щербакова / Егор Гончаров",
@@ -37338,7 +37339,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Анна Смирнова / Богдан Шамков",
+     "nation": "ТУЛ",
+     "points": "69.05"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:dance-junior-rt",
