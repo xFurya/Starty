@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-24T20:19:20+03:00",
- "checked": "2026-10-24T19:19:03.768218+00:00",
+ "generated": "2026-10-25T09:18:02+03:00",
+ "checked": "2026-10-25T09:18:02+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35602,7 +35602,7 @@
    "seg": "ПП",
    "title": "GP de France — женщины ПП",
    "start": "2026-10-24T20:30:00+03:00",
-   "end": "2026-10-24T22:17:00+03:00",
+   "end": "2026-10-24T22:15:00+03:00",
    "venue": "Angers, France",
    "intl": true,
    "broadcast": [
@@ -35630,139 +35630,6 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Итог:\n1. Ami Nakai — 149.08\n2. Lara Naki Gutmann — 137.01\n3. Anastasiia Gubanova — 130.19\n\nИтог турнира:\n1. Ami Nakai — 219.74\n2. Anastasiia Gubanova — 202.82\n3. Lara Naki Gutmann — 202.37\n\nПримечательное:\n• Ami Nakai — Отрыв от второго места — 16.92 балла\n\nНачало: 20:30 МСК\nТрансляция: Okko",
-   "field": [
-    {
-     "name": "Eve Dubecq",
-     "nation": "FRA",
-     "time": "20:37",
-     "no": 1,
-     "warmup": 1,
-     "place": 11,
-     "final": 11
-    },
-    {
-     "name": "Gabrielle Daleman",
-     "nation": "CAN",
-     "time": "20:45",
-     "no": 2,
-     "warmup": 1,
-     "place": 9,
-     "final": 10
-    },
-    {
-     "name": "Seojin Youn",
-     "nation": "KOR",
-     "time": "20:53",
-     "no": 3,
-     "warmup": 1,
-     "place": 12,
-     "final": 12
-    },
-    {
-     "name": "Sarah Everhardt",
-     "nation": "USA",
-     "time": "21:00",
-     "no": 4,
-     "warmup": 1,
-     "place": 6,
-     "final": 7
-    },
-    {
-     "name": "Rion Sumiyoshi",
-     "nation": "JPN",
-     "time": "21:08",
-     "no": 5,
-     "warmup": 1,
-     "place": 4,
-     "final": 6
-    },
-    {
-     "name": "Nina Pinzarrone",
-     "nation": "BEL",
-     "time": "21:16",
-     "no": 6,
-     "warmup": 1,
-     "place": 10,
-     "final": 9
-    },
-    {
-     "name": "Sarina Joos",
-     "nation": "ITA",
-     "time": "21:31",
-     "no": 7,
-     "warmup": 2,
-     "place": 8,
-     "final": 8
-    },
-    {
-     "name": "Lara Naki Gutmann",
-     "nation": "ITA",
-     "time": "21:39",
-     "no": 8,
-     "warmup": 2,
-     "place": 2,
-     "final": 3
-    },
-    {
-     "name": "Yuseong Kim",
-     "nation": "KOR",
-     "time": "21:46",
-     "no": 9,
-     "warmup": 2,
-     "place": 7,
-     "final": 5
-    },
-    {
-     "name": "Ami Nakai",
-     "nation": "JPN",
-     "time": "21:54",
-     "no": 10,
-     "warmup": 2,
-     "place": 1,
-     "final": 1
-    },
-    {
-     "name": "Anastasiia Gubanova",
-     "nation": "GEO",
-     "time": "22:02",
-     "no": 11,
-     "warmup": 2,
-     "place": 3,
-     "final": 2
-    },
-    {
-     "name": "Yuna Aoki",
-     "nation": "JPN",
-     "time": "22:09",
-     "no": 12,
-     "warmup": 2,
-     "place": 5,
-     "final": 4
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG004.htm",
-    "cat": "https://results.isu.org/results/season2627/gpfra2026/CAT002RS.htm",
-    "first": "https://results.isu.org/results/season2627/gpfra2026/SEG003.htm",
-    "names": {
-     "Eve DUBECQ": "Eve Dubecq",
-     "Gabrielle DALEMAN": "Gabrielle Daleman",
-     "Seojin YOUN": "Seojin Youn",
-     "Sarah EVERHARDT": "Sarah Everhardt",
-     "Rion SUMIYOSHI": "Rion Sumiyoshi",
-     "Nina PINZARRONE": "Nina Pinzarrone",
-     "Sarina JOOS": "Sarina Joos",
-     "Lara Naki GUTMANN": "Lara Naki Gutmann",
-     "Yuseong KIM": "Yuseong Kim",
-     "Ami NAKAI": "Ami Nakai",
-     "Anastasiia GUBANOVA": "Anastasiia Gubanova",
-     "Yuna AOKI": "Yuna Aoki"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json",
    "podium": [
     {
      "place": 1,
@@ -35803,13 +35670,156 @@
      "points": "202.37"
     }
    ],
+   "desc": "Итог:\n1. Ami Nakai — 149.08\n2. Lara Naki Gutmann — 137.01\n3. Anastasiia Gubanova — 130.19\n\nИтог турнира:\n1. Ami Nakai — 219.74\n2. Anastasiia Gubanova — 202.82\n3. Lara Naki Gutmann — 202.37\n\nПримечательное:\n• Ami Nakai — Тройной аксель\n• Yuseong Kim — Тройной аксель\n• Ami Nakai — Отрыв от второго места — 16.92 балла\n\nНачало: 20:30 МСК\nТрансляция: Okko",
+   "field": [
+    {
+     "name": "Eve Dubecq",
+     "nation": "FRA",
+     "no": 1,
+     "warmup": 1,
+     "place": 11,
+     "final": 11,
+     "time": "20:37"
+    },
+    {
+     "name": "Gabrielle Daleman",
+     "nation": "CAN",
+     "no": 2,
+     "warmup": 1,
+     "place": 9,
+     "final": 10,
+     "time": "20:45"
+    },
+    {
+     "name": "Seojin Youn",
+     "nation": "KOR",
+     "no": 3,
+     "warmup": 1,
+     "place": 12,
+     "final": 12,
+     "time": "20:53"
+    },
+    {
+     "name": "Sarah Everhardt",
+     "nation": "USA",
+     "no": 4,
+     "warmup": 1,
+     "place": 6,
+     "final": 7,
+     "time": "21:00"
+    },
+    {
+     "name": "Rion Sumiyoshi",
+     "nation": "JPN",
+     "no": 5,
+     "warmup": 1,
+     "place": 4,
+     "final": 6,
+     "time": "21:08"
+    },
+    {
+     "name": "Nina Pinzarrone",
+     "nation": "BEL",
+     "no": 6,
+     "warmup": 1,
+     "place": 10,
+     "final": 9,
+     "time": "21:16"
+    },
+    {
+     "name": "Sarina Joos",
+     "nation": "ITA",
+     "no": 7,
+     "warmup": 2,
+     "place": 8,
+     "final": 8,
+     "time": "21:31"
+    },
+    {
+     "name": "Lara Naki Gutmann",
+     "nation": "ITA",
+     "no": 8,
+     "warmup": 2,
+     "place": 2,
+     "final": 3,
+     "time": "21:39"
+    },
+    {
+     "name": "Yuseong Kim",
+     "nation": "KOR",
+     "no": 9,
+     "warmup": 2,
+     "place": 7,
+     "final": 5,
+     "time": "21:46"
+    },
+    {
+     "name": "Ami Nakai",
+     "nation": "JPN",
+     "no": 10,
+     "warmup": 2,
+     "place": 1,
+     "final": 1,
+     "time": "21:54"
+    },
+    {
+     "name": "Anastasiia Gubanova",
+     "nation": "GEO",
+     "no": 11,
+     "warmup": 2,
+     "place": 3,
+     "final": 2,
+     "time": "22:02"
+    },
+    {
+     "name": "Yuna Aoki",
+     "nation": "JPN",
+     "no": 12,
+     "warmup": 2,
+     "place": 5,
+     "final": 4,
+     "time": "22:09"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfra2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfra2026/SEG004.htm",
+    "cat": "https://results.isu.org/results/season2627/gpfra2026/CAT002RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpfra2026/SEG003.htm",
+    "names": {
+     "Ami NAKAI": "Ami Nakai",
+     "Lara Naki GUTMANN": "Lara Naki Gutmann",
+     "Anastasiia GUBANOVA": "Anastasiia Gubanova",
+     "Rion SUMIYOSHI": "Rion Sumiyoshi",
+     "Yuna AOKI": "Yuna Aoki",
+     "Sarah EVERHARDT": "Sarah Everhardt",
+     "Yuseong KIM": "Yuseong Kim",
+     "Sarina JOOS": "Sarina Joos",
+     "Gabrielle DALEMAN": "Gabrielle Daleman",
+     "Nina PINZARRONE": "Nina Pinzarrone",
+     "Eve DUBECQ": "Eve Dubecq",
+     "Seojin YOUN": "Seojin Youn"
+    },
+    "basis": "judges"
+   },
    "facts": [
     {
      "who": "Ami Nakai",
+     "text": "Тройной аксель",
+     "kind": "element"
+    },
+    {
+     "who": "Yuseong Kim",
+     "text": "Тройной аксель",
+     "kind": "element"
+    },
+    {
+     "kind": "place",
      "text": "Отрыв от второго места — 16.92 балла",
-     "kind": "place"
+     "who": "Ami Nakai"
     }
-   ]
+   ],
+   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
    "id": "gs:golden-bear:men-senior-pp-men",
@@ -40693,16 +40703,6 @@
   }
  ],
  "upcoming": [
-  {
-   "tid": "samara:sso-kubok-federatsii-2026-sorevnovaniya-g-o-samara-otkrytie-sezona-",
-   "name": "ССО \"Кубок Федерации\" 2026 - Соревнования г.о. Самара \"Открытие сезона\"",
-   "start": "2026-10-21",
-   "end": "2026-10-24",
-   "venue": "",
-   "intl": false,
-   "tier": "regional",
-   "region": "Самарская область"
-  },
   {
    "tid": "ffkm:rn",
    "name": "Физкультурное мероприятие «Новое поколение» среди юниоров и взрослых (1 этап)",
