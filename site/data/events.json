@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-25T09:33:37+03:00",
- "checked": "2026-10-25T09:29:03.034113+00:00",
+ "generated": "2026-10-25T12:24:27+03:00",
+ "checked": "2026-10-25T12:24:27+03:00",
  "complete": true,
  "facts_version": "6",
  "sources": {
@@ -35842,11 +35842,29 @@
     "David Sedej",
     "Jan Valtera",
     "Maxim Varakin",
-    "Oliver Praetorius",
-    "Vladimir Samoilov",
-    "Xan Rols"
+    "Vladimir Samoilov"
    ],
    "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Arin Yorke",
+     "nation": "GBR",
+     "points": "99.35"
+    },
+    {
+     "place": 2,
+     "name": "Jan Valtera",
+     "nation": "CZE",
+     "points": "94.62"
+    },
+    {
+     "place": 3,
+     "name": "Alessandro Liberatore",
+     "nation": "SLO",
+     "points": "91.15"
+    }
+   ],
    "desc": "Промежуточные итоги:\n1. Arin Yorke — 99.35\n2. Jan Valtera — 94.62\n3. Alessandro Liberatore — 91.15\n\nНачало: 11:00 МСК",
    "field": [
     {
@@ -35880,59 +35898,29 @@
      "place": 6
     },
     {
-     "name": "Oliver Praetorius",
-     "nation": "SWE"
-    },
-    {
      "name": "Vladimir Samoilov",
      "nation": "POL",
      "place": 7
-    },
-    {
-     "name": "Xan Rols",
-     "nation": "FRA"
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
     "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG002.htm",
     "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT001RS.htm",
     "first": "https://www.croskate.hr/cscro2025/GB2026/SEG001.htm",
     "names": {
-     "Maxim VARAKIN": "Maxim Varakin",
-     "Jan VALTERA": "Jan Valtera",
-     "Xan ROLS": "Xan Rols",
-     "Corentin SPINAR": "Corentin Spinar",
      "Arin YORKE": "Arin Yorke",
-     "Vladimir SAMOILOV": "Vladimir Samoilov",
+     "Jan VALTERA": "Jan Valtera",
      "Alessandro LIBERATORE": "Alessandro Liberatore",
      "David SEDEJ": "David Sedej",
-     "Oliver PRAETORIUS": "Oliver Praetorius"
+     "Corentin SPINAR": "Corentin Spinar",
+     "Maxim VARAKIN": "Maxim Varakin",
+     "Vladimir SAMOILOV": "Vladimir Samoilov"
     },
     "basis": null
    },
-   "proto": "gs_golden-bear.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Arin Yorke",
-     "nation": "GBR",
-     "points": "99.35"
-    },
-    {
-     "place": 2,
-     "name": "Jan Valtera",
-     "nation": "CZE",
-     "points": "94.62"
-    },
-    {
-     "place": 3,
-     "name": "Alessandro Liberatore",
-     "nation": "SLO",
-     "points": "91.15"
-    }
-   ],
-   "provisional": true
+   "proto": "gs_golden-bear.json"
   },
   {
    "id": "gs:golden-bear:women-senior-pp-women",
