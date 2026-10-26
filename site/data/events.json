@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-26T15:40:53+03:00",
- "checked": "2026-10-26T15:40:53+03:00",
+ "generated": "2026-10-26T21:28:50+03:00",
+ "checked": "2026-10-26T21:28:50+03:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -38021,7 +38021,7 @@
    "seg": "РТ",
    "title": "GP Skate Canada — танцы РТ",
    "start": "2026-11-01T00:20:00+03:00",
-   "end": "2026-11-01T01:30:00+03:00",
+   "end": "2026-11-01T01:35:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -38037,6 +38037,7 @@
     "Layla Veillon / Alexander Brandys",
     "Lilah Fear / Lewis Gibson",
     "Marie-Jade Lauriault / Romain Le Gac",
+    "Noemi Maria Tali / Noah Lafornara",
     "Oona Brown / Gage Brown"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
@@ -38079,6 +38080,10 @@
     {
      "name": "Marie-Jade Lauriault / Romain Le Gac",
      "nation": "CAN"
+    },
+    {
+     "name": "Noemi Maria Tali / Noah Lafornara",
+     "nation": "ITA"
     },
     {
      "name": "Oona Brown / Gage Brown",
@@ -38447,7 +38452,7 @@
    "seg": "ПТ",
    "title": "GP Skate Canada — танцы ПТ",
    "start": "2026-11-02T02:15:00+03:00",
-   "end": "2026-11-02T03:35:00+03:00",
+   "end": "2026-11-02T03:40:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -38463,6 +38468,7 @@
     "Layla Veillon / Alexander Brandys",
     "Lilah Fear / Lewis Gibson",
     "Marie-Jade Lauriault / Romain Le Gac",
+    "Noemi Maria Tali / Noah Lafornara",
     "Oona Brown / Gage Brown"
    ],
    "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
@@ -38505,6 +38511,10 @@
     {
      "name": "Marie-Jade Lauriault / Romain Le Gac",
      "nation": "CAN"
+    },
+    {
+     "name": "Noemi Maria Tali / Noah Lafornara",
+     "nation": "ITA"
     },
     {
      "name": "Oona Brown / Gage Brown",
@@ -41418,11 +41428,11 @@
    "region": "Самарская область"
   },
   {
-   "tid": "fsr:idel-2026-11-20",
+   "tid": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova",
    "name": "Идель",
    "start": "2026-11-20",
    "end": "2026-11-23",
-   "venue": "Казань",
+   "venue": "Дворец спорта, Казань",
    "intl": false
   },
   {
