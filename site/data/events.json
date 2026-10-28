@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-27T20:43:02+03:00",
- "checked": "2026-10-27T20:43:02+03:00",
+ "generated": "2026-10-28T15:33:36+03:00",
+ "checked": "2026-10-28T15:33:36+03:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -37413,8 +37413,8 @@
    "level": "junior",
    "seg": "РТ",
    "title": "ЮГП России «Красноярье» — танцы РТ",
-   "start": "2026-10-28T13:30:00+03:00",
-   "end": "2026-10-28T15:30:00+03:00",
+   "start": "2026-10-28T12:30:00+03:00",
+   "end": "2026-10-28T14:35:00+03:00",
    "venue": "Кристалл Арена, Красноярск",
    "intl": false,
    "broadcast": [
@@ -37422,20 +37422,185 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/4etap2627_jun_competition_schedule.pdf",
+   "athletes": [
+    "Арина Новикова / Кирилл Лихачев",
+    "Виталина Вовк / Кирилл Ноздреватых",
+    "Влада Бердникова / Кирилл Алексеев",
+    "Дарья Дрожжина / Иван Тельнов",
+    "Диана Сарвартинова / Игорь Зубцов",
+    "Евдокия Крючкова / Артем Мякишев",
+    "Елизавета Ростилова / Денис Ауров",
+    "Зоя Пестова / Сергей Лагутов",
+    "Кристина Яттара / Артем Гаманов",
+    "Мария Казьмина / Никита Ворожейкин",
+    "Мария Чередниченко / Эмиль Хисамов",
+    "Милана Жабина / Вениамин Башуров",
+    "Полина Ловыгина / Алексей Морозов",
+    "Полина Неганова / Степан Чучкалов",
+    "Полина Тихонова / Матвей Лысов"
+   ],
+   "src": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 13:30 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "podium": [
+    {
+     "place": 1,
+     "name": "Зоя Пестова / Сергей Лагутов",
+     "nation": "МОС",
+     "points": "66.45"
+    },
+    {
+     "place": 2,
+     "name": "Полина Тихонова / Матвей Лысов",
+     "nation": "МОБ",
+     "points": "63.71"
+    },
+    {
+     "place": 3,
+     "name": "Елизавета Ростилова / Денис Ауров",
+     "nation": "МОС",
+     "points": "58.92"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Зоя Пестова / Сергей Лагутов — 66.45\n2. Полина Тихонова / Матвей Лысов — 63.71\n3. Елизавета Ростилова / Денис Ауров — 58.92\n\nНачало: 12:30 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Диана Сарвартинова / Игорь Зубцов",
+     "nation": "СПБ",
+     "no": 1,
+     "warmup": null,
+     "place": 8
+    },
+    {
+     "name": "Милана Жабина / Вениамин Башуров",
+     "nation": "МОС",
+     "no": 2,
+     "warmup": null,
+     "place": 5
+    },
+    {
+     "name": "Арина Новикова / Кирилл Лихачев",
+     "nation": "МОС",
+     "no": 3,
+     "warmup": null,
+     "place": 7
+    },
+    {
+     "name": "Полина Тихонова / Матвей Лысов",
+     "nation": "МОБ",
+     "no": 4,
+     "warmup": null,
+     "place": 2
+    },
+    {
+     "name": "Полина Ловыгина / Алексей Морозов",
+     "nation": "МОС",
+     "no": 5,
+     "warmup": null,
+     "place": 13
+    },
+    {
+     "name": "Виталина Вовк / Кирилл Ноздреватых",
+     "nation": "МОБ",
+     "no": 6,
+     "warmup": null,
+     "place": 4
+    },
+    {
+     "name": "Евдокия Крючкова / Артем Мякишев",
+     "nation": "МОС",
+     "no": 7,
+     "warmup": null,
+     "place": 6
+    },
+    {
+     "name": "Елизавета Ростилова / Денис Ауров",
+     "nation": "МОС",
+     "no": 8,
+     "warmup": null,
+     "place": 3
+    },
+    {
+     "name": "Влада Бердникова / Кирилл Алексеев",
+     "nation": "МОС",
+     "no": 9,
+     "warmup": null,
+     "place": 9
+    },
+    {
+     "name": "Полина Неганова / Степан Чучкалов",
+     "nation": "ПРМ",
+     "no": 10,
+     "warmup": null,
+     "place": 14
+    },
+    {
+     "name": "Кристина Яттара / Артем Гаманов",
+     "nation": "МОС",
+     "no": 11,
+     "warmup": null,
+     "place": 12
+    },
+    {
+     "name": "Зоя Пестова / Сергей Лагутов",
+     "nation": "МОС",
+     "no": 12,
+     "warmup": null,
+     "place": 1
+    },
+    {
+     "name": "Мария Казьмина / Никита Ворожейкин",
+     "nation": "МОС",
+     "no": 13,
+     "warmup": null,
+     "place": 10
+    },
+    {
+     "name": "Мария Чередниченко / Эмиль Хисамов",
+     "nation": "СПБ",
+     "no": 14,
+     "warmup": null,
+     "place": 11
+    },
+    {
+     "name": "Дарья Дрожжина / Иван Тельнов",
+     "nation": "МОС"
+    }
+   ],
+   "provisional": true,
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/4etap_jun/SEG007.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Зоя ПЕСТОВА / Сергей ЛАГУТОВ": "Зоя Пестова / Сергей Лагутов",
+     "Полина ТИХОНОВА / Матвей ЛЫСОВ": "Полина Тихонова / Матвей Лысов",
+     "Елизавета РОСТИЛОВА / Денис АУРОВ": "Елизавета Ростилова / Денис Ауров",
+     "Виталина ВОВК / Кирилл НОЗДРЕВАТЫХ": "Виталина Вовк / Кирилл Ноздреватых",
+     "Милана ЖАБИНА / Вениамин БАШУРОВ": "Милана Жабина / Вениамин Башуров",
+     "Евдокия КРЮЧКОВА / Артем МЯКИШЕВ": "Евдокия Крючкова / Артем Мякишев",
+     "Арина НОВИКОВА / Кирилл ЛИХАЧЕВ": "Арина Новикова / Кирилл Лихачев",
+     "Диана САРВАРТИНОВА / Игорь ЗУБЦОВ": "Диана Сарвартинова / Игорь Зубцов",
+     "Влада БЕРДНИКОВА / Кирилл АЛЕКСЕЕВ": "Влада Бердникова / Кирилл Алексеев",
+     "Мария КАЗЬМИНА / Никита ВОРОЖЕЙКИН": "Мария Казьмина / Никита Ворожейкин",
+     "Мария ЧЕРЕДНИЧЕНКО / Эмиль ХИСАМОВ": "Мария Чередниченко / Эмиль Хисамов",
+     "Кристина ЯТТАРА / Артем ГАМАНОВ": "Кристина Яттара / Артем Гаманов",
+     "Полина ЛОВЫГИНА / Алексей МОРОЗОВ": "Полина Ловыгина / Алексей Морозов",
+     "Полина НЕГАНОВА / Степан ЧУЧКАЛОВ": "Полина Неганова / Степан Чучкалов",
+     "Дарья ДРОЖЖИНА / Иван ТЕЛЬНОВ": "Дарья Дрожжина / Иван Тельнов"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:pairs-junior-kp",
@@ -37445,8 +37610,8 @@
    "level": "junior",
    "seg": "КП",
    "title": "ЮГП России «Красноярье» — пары КП",
-   "start": "2026-10-28T15:45:00+03:00",
-   "end": "2026-10-28T16:40:00+03:00",
+   "start": "2026-10-28T14:50:00+03:00",
+   "end": "2026-10-28T15:36:00+03:00",
    "venue": "Кристалл Арена, Красноярск",
    "intl": false,
    "broadcast": [
@@ -37454,20 +37619,77 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/4etap2627_jun_competition_schedule.pdf",
+   "athletes": [
+    "Анастасия Уткина / Артемий Мохов",
+    "Арина Парсегова / Матвей Богданов",
+    "Виктория Двинина / Виктор Потапов",
+    "Дарья Парфенова / Павел Николаев",
+    "Зоя Ковязина / Дмитрий Родионов"
+   ],
+   "src": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 15:45 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "desc": "Начало: 14:50 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Зоя Ковязина / Дмитрий Родионов",
+     "nation": "МОС",
+     "time": "14:57",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Арина Парсегова / Матвей Богданов",
+     "nation": "МОС",
+     "time": "15:09",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Виктория Двинина / Виктор Потапов",
+     "nation": "ПРМ",
+     "time": "15:16",
+     "no": 3,
+     "warmup": 2
+    },
+    {
+     "name": "Дарья Парфенова / Павел Николаев",
+     "nation": "СПБ",
+     "time": "15:22",
+     "no": 4,
+     "warmup": 2
+    },
+    {
+     "name": "Анастасия Уткина / Артемий Мохов",
+     "nation": "МОС",
+     "time": "15:28",
+     "no": 5,
+     "warmup": 2
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/4etap_jun/SEG005.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Зоя КОВЯЗИНА / Дмитрий РОДИОНОВ": "Зоя Ковязина / Дмитрий Родионов",
+     "Арина ПАРСЕГОВА / Матвей БОГДАНОВ": "Арина Парсегова / Матвей Богданов",
+     "Виктория ДВИНИНА / Виктор ПОТАПОВ": "Виктория Двинина / Виктор Потапов",
+     "Дарья ПАРФЕНОВА / Павел НИКОЛАЕВ": "Дарья Парфенова / Павел Николаев",
+     "Анастасия УТКИНА / Артемий МОХОВ": "Анастасия Уткина / Артемий Мохов"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:dance-junior-pt",
@@ -37477,8 +37699,8 @@
    "level": "junior",
    "seg": "ПТ",
    "title": "ЮГП России «Красноярье» — танцы ПТ",
-   "start": "2026-10-29T09:00:00+03:00",
-   "end": "2026-10-29T11:15:00+03:00",
+   "start": "2026-10-29T08:00:00+03:00",
+   "end": "2026-10-29T10:25:00+03:00",
    "venue": "Кристалл Арена, Красноярск",
    "intl": false,
    "broadcast": [
@@ -37486,20 +37708,122 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/4etap2627_jun_competition_schedule.pdf",
+   "athletes": [
+    "Арина Новикова / Кирилл Лихачев",
+    "Виталина Вовк / Кирилл Ноздреватых",
+    "Влада Бердникова / Кирилл Алексеев",
+    "Дарья Дрожжина / Иван Тельнов",
+    "Диана Сарвартинова / Игорь Зубцов",
+    "Евдокия Крючкова / Артем Мякишев",
+    "Елизавета Ростилова / Денис Ауров",
+    "Зоя Пестова / Сергей Лагутов",
+    "Кристина Яттара / Артем Гаманов",
+    "Мария Казьмина / Никита Ворожейкин",
+    "Мария Чередниченко / Эмиль Хисамов",
+    "Милана Жабина / Вениамин Башуров",
+    "Полина Ловыгина / Алексей Морозов",
+    "Полина Неганова / Степан Чучкалов",
+    "Полина Тихонова / Матвей Лысов"
+   ],
+   "src": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 09:00 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "desc": "Начало: 08:00 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Арина Новикова / Кирилл Лихачев",
+     "nation": "МОС"
+    },
+    {
+     "name": "Виталина Вовк / Кирилл Ноздреватых",
+     "nation": "МОБ"
+    },
+    {
+     "name": "Влада Бердникова / Кирилл Алексеев",
+     "nation": "МОС"
+    },
+    {
+     "name": "Дарья Дрожжина / Иван Тельнов",
+     "nation": "МОС"
+    },
+    {
+     "name": "Диана Сарвартинова / Игорь Зубцов",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Евдокия Крючкова / Артем Мякишев",
+     "nation": "МОС"
+    },
+    {
+     "name": "Елизавета Ростилова / Денис Ауров",
+     "nation": "МОС"
+    },
+    {
+     "name": "Зоя Пестова / Сергей Лагутов",
+     "nation": "МОС"
+    },
+    {
+     "name": "Кристина Яттара / Артем Гаманов",
+     "nation": "МОС"
+    },
+    {
+     "name": "Мария Казьмина / Никита Ворожейкин",
+     "nation": "МОС"
+    },
+    {
+     "name": "Мария Чередниченко / Эмиль Хисамов",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Милана Жабина / Вениамин Башуров",
+     "nation": "МОС"
+    },
+    {
+     "name": "Полина Ловыгина / Алексей Морозов",
+     "nation": "МОС"
+    },
+    {
+     "name": "Полина Неганова / Степан Чучкалов",
+     "nation": "ПРМ"
+    },
+    {
+     "name": "Полина Тихонова / Матвей Лысов",
+     "nation": "МОБ"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/4etap_jun/SEG008.htm",
+    "cat": "https://fsrussia.ru/results/2627/4etap_jun/CAT004RS.htm",
+    "first": "https://fsrussia.ru/results/2627/4etap_jun/SEG007.htm",
+    "names": {
+     "Влада БЕРДНИКОВА / Кирилл АЛЕКСЕЕВ": "Влада Бердникова / Кирилл Алексеев",
+     "Виталина ВОВК / Кирилл НОЗДРЕВАТЫХ": "Виталина Вовк / Кирилл Ноздреватых",
+     "Дарья ДРОЖЖИНА / Иван ТЕЛЬНОВ": "Дарья Дрожжина / Иван Тельнов",
+     "Милана ЖАБИНА / Вениамин БАШУРОВ": "Милана Жабина / Вениамин Башуров",
+     "Мария КАЗЬМИНА / Никита ВОРОЖЕЙКИН": "Мария Казьмина / Никита Ворожейкин",
+     "Евдокия КРЮЧКОВА / Артем МЯКИШЕВ": "Евдокия Крючкова / Артем Мякишев",
+     "Полина ЛОВЫГИНА / Алексей МОРОЗОВ": "Полина Ловыгина / Алексей Морозов",
+     "Полина НЕГАНОВА / Степан ЧУЧКАЛОВ": "Полина Неганова / Степан Чучкалов",
+     "Арина НОВИКОВА / Кирилл ЛИХАЧЕВ": "Арина Новикова / Кирилл Лихачев",
+     "Зоя ПЕСТОВА / Сергей ЛАГУТОВ": "Зоя Пестова / Сергей Лагутов",
+     "Елизавета РОСТИЛОВА / Денис АУРОВ": "Елизавета Ростилова / Денис Ауров",
+     "Диана САРВАРТИНОВА / Игорь ЗУБЦОВ": "Диана Сарвартинова / Игорь Зубцов",
+     "Полина ТИХОНОВА / Матвей ЛЫСОВ": "Полина Тихонова / Матвей Лысов",
+     "Мария ЧЕРЕДНИЧЕНКО / Эмиль ХИСАМОВ": "Мария Чередниченко / Эмиль Хисамов",
+     "Кристина ЯТТАРА / Артем ГАМАНОВ": "Кристина Яттара / Артем Гаманов"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:pairs-junior-pp",
@@ -37509,8 +37833,8 @@
    "level": "junior",
    "seg": "ПП",
    "title": "ЮГП России «Красноярье» — пары ПП",
-   "start": "2026-10-29T11:40:00+03:00",
-   "end": "2026-10-29T12:45:00+03:00",
+   "start": "2026-10-29T10:40:00+03:00",
+   "end": "2026-10-29T11:25:00+03:00",
    "venue": "Кристалл Арена, Красноярск",
    "intl": false,
    "broadcast": [
@@ -37518,20 +37842,133 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/4etap2627_jun_competition_schedule.pdf",
+   "athletes": [
+    "Анастасия Уткина / Артемий Мохов",
+    "Арина Парсегова / Матвей Богданов",
+    "Виктория Двинина / Виктор Потапов",
+    "Дарья Парфенова / Павел Николаев",
+    "Зоя Ковязина / Дмитрий Родионов"
+   ],
+   "src": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 11:40 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "desc": "Начало: 10:40 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Анастасия Уткина / Артемий Мохов",
+     "nation": "МОС"
+    },
+    {
+     "name": "Арина Парсегова / Матвей Богданов",
+     "nation": "МОС"
+    },
+    {
+     "name": "Виктория Двинина / Виктор Потапов",
+     "nation": "ПРМ"
+    },
+    {
+     "name": "Дарья Парфенова / Павел Николаев",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Зоя Ковязина / Дмитрий Родионов",
+     "nation": "МОС"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/4etap_jun/SEG006.htm",
+    "cat": "https://fsrussia.ru/results/2627/4etap_jun/CAT003RS.htm",
+    "first": "https://fsrussia.ru/results/2627/4etap_jun/SEG005.htm",
+    "names": {
+     "Виктория ДВИНИНА / Виктор ПОТАПОВ": "Виктория Двинина / Виктор Потапов",
+     "Зоя КОВЯЗИНА / Дмитрий РОДИОНОВ": "Зоя Ковязина / Дмитрий Родионов",
+     "Арина ПАРСЕГОВА / Матвей БОГДАНОВ": "Арина Парсегова / Матвей Богданов",
+     "Дарья ПАРФЕНОВА / Павел НИКОЛАЕВ": "Дарья Парфенова / Павел Николаев",
+     "Анастасия УТКИНА / Артемий МОХОВ": "Анастасия Уткина / Артемий Мохов"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+  },
+  {
+   "id": "gs:crystal-skate:women-senior-kp-advanced-novice-women",
+   "tid": "gs:crystal-skate",
+   "tournament": "Crystal Skate",
+   "kind": "women",
+   "level": "senior",
+   "seg": "КП",
+   "title": "Crystal Skate — женщины КП",
+   "start": "2026-10-29T12:00:00+03:00",
+   "end": "2026-10-29T12:40:00+03:00",
+   "venue": "Cheile Gradistei, Romania",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Alexandra-Catalina Stanescu",
+    "Antonia Riciu",
+    "Maria Amedeea Baban",
+    "Nikol Gabuniia",
+    "Yeva Shepeleva"
+   ],
+   "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
+   "desc": "Начало: 12:00 МСК",
+   "field": [
+    {
+     "name": "Alexandra-Catalina Stanescu",
+     "nation": "ROU",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Maria Amedeea Baban",
+     "nation": "ROU",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Yeva Shepeleva",
+     "nation": "UKR",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Antonia Riciu",
+     "nation": "ROU",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Nikol Gabuniia",
+     "nation": "GEO",
+     "no": 5,
+     "warmup": 1
+    }
+   ],
+   "live": {
+    "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
+    "seg": "https://www.frponline.ro/html2/cryro2026/SEG009.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Alexandra-Catalina STANESCU": "Alexandra-Catalina Stanescu",
+     "Maria Amedeea BABAN": "Maria Amedeea Baban",
+     "Yeva SHEPELEVA": "Yeva Shepeleva",
+     "Antonia RICIU": "Antonia Riciu",
+     "Nikol GABUNIIA": "Nikol Gabuniia"
+    },
+    "basis": null
+   },
+   "proto": "gs_crystal-skate.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:women-junior-kp",
@@ -37541,29 +37978,218 @@
    "level": "junior",
    "seg": "КП",
    "title": "ЮГП России «Красноярье» — девушки КП",
-   "start": "2026-10-29T13:10:00+03:00",
-   "end": "2026-10-29T15:35:00+03:00",
+   "start": "2026-10-29T12:10:00+03:00",
+   "end": "2026-10-29T14:33:00+03:00",
    "venue": "Кристалл Арена, Красноярск",
    "intl": false,
    "broadcast": [
     "Первый канал",
     "YouTube"
    ],
-   "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/4etap2627_jun_competition_schedule.pdf",
+   "ours": [
+    {
+     "name": "Виктория Стрельцова",
+     "nation": "МОС",
+     "time": "13:57",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Екатерина Корчажникова",
+     "nation": "МОС",
+     "time": "14:03",
+     "no": 14,
+     "warmup": 3
+    }
+   ],
+   "athletes": [
+    "Аделина Кузнецова",
+    "Александра Анушова",
+    "Алина Локтева",
+    "Алиса Мильто",
+    "Алёна Клопова",
+    "Анастасия Выровая",
+    "Виктория Стрельцова",
+    "Дарья Антонова",
+    "Дарья Загуменная",
+    "Диана Сашина",
+    "Екатерина Корчажникова",
+    "Екатерина Стоцкая",
+    "Екатерина Чувакина",
+    "Кристина Двуреченская",
+    "Мария Драчёва",
+    "Полина Бершадская",
+    "Софья Федотова",
+    "Эвелина Шестакова"
+   ],
+   "src": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 13:10 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "desc": "Россияне:\n• Виктория Стрельцова — 13:57\n• Екатерина Корчажникова — 14:03\n\nНачало: 12:10 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Дарья Антонова",
+     "nation": "НСО",
+     "time": "12:17",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Алёна Клопова",
+     "nation": "СПБ",
+     "time": "12:35",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Екатерина Чувакина",
+     "nation": "ХМА",
+     "time": "12:40",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Мария Драчёва",
+     "nation": "ТЮМ",
+     "time": "12:46",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Эвелина Шестакова",
+     "nation": "УДМ",
+     "time": "12:52",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Полина Бершадская",
+     "nation": "СПБ",
+     "time": "13:00",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Алина Локтева",
+     "nation": "КРК",
+     "time": "13:05",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Аделина Кузнецова",
+     "nation": "ЧЕЛ",
+     "time": "13:11",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Алиса Мильто",
+     "nation": "МОС",
+     "time": "13:17",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Александра Анушова",
+     "nation": "МОБ",
+     "time": "13:23",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Анастасия Выровая",
+     "nation": "ТАТ",
+     "time": "13:29",
+     "no": 12,
+     "warmup": 2
+    },
+    {
+     "name": "Диана Сашина",
+     "nation": "СВЕ",
+     "time": "13:50",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Виктория Стрельцова",
+     "nation": "МОС",
+     "time": "13:57",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Екатерина Корчажникова",
+     "nation": "МОС",
+     "time": "14:03",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Софья Федотова",
+     "nation": "СПБ",
+     "time": "14:09",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Кристина Двуреченская",
+     "nation": "ОРЕ",
+     "time": "14:15",
+     "no": 16,
+     "warmup": 3
+    },
+    {
+     "name": "Дарья Загуменная",
+     "nation": "ЛОБ",
+     "time": "14:20",
+     "no": 17,
+     "warmup": 3
+    },
+    {
+     "name": "Екатерина Стоцкая",
+     "nation": "МОС",
+     "time": "14:26",
+     "no": 18,
+     "warmup": 3
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/4etap_jun/SEG003.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Дарья АНТОНОВА": "Дарья Антонова",
+     "Эвелина ШЕСТАКОВА": "Эвелина Шестакова",
+     "Диана САШИНА": "Диана Сашина",
+     "Алёна КЛОПОВА": "Алёна Клопова",
+     "Екатерина ЧУВАКИНА": "Екатерина Чувакина",
+     "Мария ДРАЧЁВА": "Мария Драчёва",
+     "Полина БЕРШАДСКАЯ": "Полина Бершадская",
+     "Алина ЛОКТЕВА": "Алина Локтева",
+     "Аделина КУЗНЕЦОВА": "Аделина Кузнецова",
+     "Алиса МИЛЬТО": "Алиса Мильто",
+     "Александра АНУШОВА": "Александра Анушова",
+     "Анастасия ВЫРОВАЯ": "Анастасия Выровая",
+     "Виктория СТРЕЛЬЦОВА": "Виктория Стрельцова",
+     "Екатерина КОРЧАЖНИКОВА": "Екатерина Корчажникова",
+     "Софья ФЕДОТОВА": "Софья Федотова",
+     "Кристина ДВУРЕЧЕНСКАЯ": "Кристина Двуреченская",
+     "Дарья ЗАГУМЕННАЯ": "Дарья Загуменная",
+     "Екатерина СТОЦКАЯ": "Екатерина Стоцкая"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:men-junior-kp",
@@ -37573,8 +38199,8 @@
    "level": "junior",
    "seg": "КП",
    "title": "ЮГП России «Красноярье» — юноши КП",
-   "start": "2026-10-29T15:50:00+03:00",
-   "end": "2026-10-29T18:11:00+03:00",
+   "start": "2026-10-29T14:50:00+03:00",
+   "end": "2026-10-29T17:10:00+03:00",
    "venue": "Кристалл Арена, Красноярск",
    "intl": false,
    "broadcast": [
@@ -37582,20 +38208,388 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/4etap2627_jun_competition_schedule.pdf",
+   "athletes": [
+    "Александр Чмиль",
+    "Алексей Заводских",
+    "Андрей Вересов",
+    "Вадим Воронов",
+    "Георгий Терехов",
+    "Глеб Ковтун",
+    "Евгений Семенов",
+    "Иван Теленков",
+    "Илья Мальков",
+    "Леонид Новожилов",
+    "Макар Солодников",
+    "Максим Галкин",
+    "Марк Соколов",
+    "Марк Титов",
+    "Роман Глазов",
+    "Роман Шереметьев",
+    "Тимофей Бочков",
+    "Эдуард Камоев"
+   ],
+   "src": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 15:50 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "desc": "Начало: 14:50 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Иван Теленков",
+     "nation": "МОБ",
+     "time": "14:57",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Андрей Вересов",
+     "nation": "КЛЖ",
+     "time": "15:14",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Леонид Новожилов",
+     "nation": "ТУЛ",
+     "time": "15:20",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Макар Солодников",
+     "nation": "СПБ",
+     "time": "15:25",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Максим Галкин",
+     "nation": "СВЕ",
+     "time": "15:31",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Евгений Семенов",
+     "nation": "ЛОБ",
+     "time": "15:39",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Марк Соколов",
+     "nation": "МОС",
+     "time": "15:44",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Алексей Заводских",
+     "nation": "МОС",
+     "time": "15:50",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Илья Мальков",
+     "nation": "ТАТ",
+     "time": "15:56",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Вадим Воронов",
+     "nation": "СПБ",
+     "time": "16:01",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Глеб Ковтун",
+     "nation": "СПБ",
+     "time": "16:07",
+     "no": 12,
+     "warmup": 2
+    },
+    {
+     "name": "Эдуард Камоев",
+     "nation": "СПБ",
+     "time": "16:28",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Георгий Терехов",
+     "nation": "МОС",
+     "time": "16:35",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Александр Чмиль",
+     "nation": "СПБ",
+     "time": "16:41",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Роман Шереметьев",
+     "nation": "КРК",
+     "time": "16:46",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Тимофей Бочков",
+     "nation": "МОС",
+     "time": "16:52",
+     "no": 16,
+     "warmup": 3
+    },
+    {
+     "name": "Марк Титов",
+     "nation": "ТАТ",
+     "time": "16:58",
+     "no": 17,
+     "warmup": 3
+    },
+    {
+     "name": "Роман Глазов",
+     "nation": "НИЖ",
+     "time": "17:03",
+     "no": 18,
+     "warmup": 3
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/4etap_jun/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Иван ТЕЛЕНКОВ": "Иван Теленков",
+     "Максим ГАЛКИН": "Максим Галкин",
+     "Эдуард КАМОЕВ": "Эдуард Камоев",
+     "Андрей ВЕРЕСОВ": "Андрей Вересов",
+     "Леонид НОВОЖИЛОВ": "Леонид Новожилов",
+     "Макар СОЛОДНИКОВ": "Макар Солодников",
+     "Евгений СЕМЕНОВ": "Евгений Семенов",
+     "Марк СОКОЛОВ": "Марк Соколов",
+     "Алексей ЗАВОДСКИХ": "Алексей Заводских",
+     "Илья МАЛЬКОВ": "Илья Мальков",
+     "Вадим ВОРОНОВ": "Вадим Воронов",
+     "Глеб КОВТУН": "Глеб Ковтун",
+     "Георгий ТЕРЕХОВ": "Георгий Терехов",
+     "Александр ЧМИЛЬ": "Александр Чмиль",
+     "Роман ШЕРЕМЕТЬЕВ": "Роман Шереметьев",
+     "Тимофей БОЧКОВ": "Тимофей Бочков",
+     "Марк ТИТОВ": "Марк Титов",
+     "Роман ГЛАЗОВ": "Роман Глазов"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+  },
+  {
+   "id": "gs:crystal-skate:men-junior-pp",
+   "tid": "gs:crystal-skate",
+   "tournament": "Crystal Skate",
+   "kind": "men",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "Crystal Skate — юноши ПП",
+   "start": "2026-10-29T15:00:00+03:00",
+   "end": "2026-10-29T15:30:00+03:00",
+   "venue": "Cheile Gradistei, Romania",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Bohdan Pomohaibo",
+    "Razvan Cionac"
+   ],
+   "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
+   "desc": "Начало: 15:00 МСК",
+   "field": [
+    {
+     "name": "Bohdan Pomohaibo",
+     "nation": "UKR"
+    },
+    {
+     "name": "Razvan Cionac",
+     "nation": "ROU"
+    }
+   ],
+   "live": {
+    "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
+    "seg": "https://www.frponline.ro/html2/cryro2026/SEG006.htm",
+    "cat": "https://www.frponline.ro/html2/cryro2026/CAT003RS.htm",
+    "first": "https://www.frponline.ro/html2/cryro2026/SEG005.htm",
+    "names": {
+     "Razvan CIONAC": "Razvan Cionac",
+     "Bohdan POMOHAIBO": "Bohdan Pomohaibo"
+    },
+    "basis": null
+   },
+   "proto": "gs_crystal-skate.json"
+  },
+  {
+   "id": "gs:crystal-skate:women-junior-kp",
+   "tid": "gs:crystal-skate",
+   "tournament": "Crystal Skate",
+   "kind": "women",
+   "level": "junior",
+   "seg": "КП",
+   "title": "Crystal Skate — девушки КП",
+   "start": "2026-10-29T15:25:00+03:00",
+   "end": "2026-10-29T17:40:00+03:00",
+   "venue": "Cheile Gradistei, Romania",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Adria Liliac",
+    "Andreea Cristiana Maria Lazar",
+    "Anhelina Kapuka",
+    "Elena Martinenghi",
+    "Guan Ying Wang",
+    "Iris Victoria Ciurezu",
+    "Lelle Agota Molnar",
+    "Leyla Cetin",
+    "Maria Sycova",
+    "Maryia Luksha",
+    "Natalia Runcanu",
+    "Nikol Kuperman",
+    "Rebecca Rusu",
+    "Simona Tkachman",
+    "Sonia Milik"
+   ],
+   "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
+   "desc": "Начало: 15:25 МСК",
+   "field": [
+    {
+     "name": "Lelle Agota Molnar",
+     "nation": "ROU",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Maria Sycova",
+     "nation": "SVK",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Iris Victoria Ciurezu",
+     "nation": "ROU",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Anhelina Kapuka",
+     "nation": "UKR",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Adria Liliac",
+     "nation": "ROU",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Natalia Runcanu",
+     "nation": "ROU",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Elena Martinenghi",
+     "nation": "SUI",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Nikol Kuperman",
+     "nation": "ISR",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Andreea Cristiana Maria Lazar",
+     "nation": "ROU",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Leyla Cetin",
+     "nation": "TUR",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Sonia Milik",
+     "nation": "ROU",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Rebecca Rusu",
+     "nation": "GER",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Guan Ying Wang",
+     "nation": "TPE",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Simona Tkachman",
+     "nation": "ISR",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Maryia Luksha",
+     "nation": "POL",
+     "no": 15,
+     "warmup": 3
+    }
+   ],
+   "live": {
+    "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
+    "seg": "https://www.frponline.ro/html2/cryro2026/SEG007.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Lelle Agota MOLNAR": "Lelle Agota Molnar",
+     "Maria SYCOVA": "Maria Sycova",
+     "Iris Victoria CIUREZU": "Iris Victoria Ciurezu",
+     "Anhelina KAPUKA": "Anhelina Kapuka",
+     "Adria LILIAC": "Adria Liliac",
+     "Natalia RUNCANU": "Natalia Runcanu",
+     "Elena MARTINENGHI": "Elena Martinenghi",
+     "Nikol KUPERMAN": "Nikol Kuperman",
+     "Andreea Cristiana Maria LAZAR": "Andreea Cristiana Maria Lazar",
+     "Leyla CETIN": "Leyla Cetin",
+     "Sonia MILIK": "Sonia Milik",
+     "Rebecca RUSU": "Rebecca Rusu",
+     "Guan Ying WANG": "Guan Ying Wang",
+     "Simona TKACHMAN": "Simona Tkachman",
+     "Maryia LUKSHA": "Maryia Luksha"
+    },
+    "basis": null
+   },
+   "proto": "gs_crystal-skate.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:women-junior-pp",
@@ -37605,29 +38599,158 @@
    "level": "junior",
    "seg": "ПП",
    "title": "ЮГП России «Красноярье» — девушки ПП",
-   "start": "2026-10-30T08:45:00+03:00",
-   "end": "2026-10-30T11:20:00+03:00",
+   "start": "2026-10-30T07:45:00+03:00",
+   "end": "2026-10-30T10:35:00+03:00",
    "venue": "Кристалл Арена, Красноярск",
    "intl": false,
    "broadcast": [
     "Первый канал",
     "YouTube"
    ],
-   "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/4etap2627_jun_competition_schedule.pdf",
+   "ours": [
+    {
+     "name": "Виктория Стрельцова",
+     "nation": "МОС"
+    },
+    {
+     "name": "Екатерина Корчажникова",
+     "nation": "МОС"
+    }
+   ],
+   "athletes": [
+    "Аделина Кузнецова",
+    "Александра Анушова",
+    "Алина Локтева",
+    "Алиса Мильто",
+    "Алёна Клопова",
+    "Анастасия Выровая",
+    "Виктория Стрельцова",
+    "Дарья Антонова",
+    "Дарья Загуменная",
+    "Диана Сашина",
+    "Екатерина Корчажникова",
+    "Екатерина Стоцкая",
+    "Екатерина Чувакина",
+    "Кристина Двуреченская",
+    "Мария Драчёва",
+    "Полина Бершадская",
+    "Софья Федотова",
+    "Эвелина Шестакова"
+   ],
+   "src": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 08:45 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "desc": "Россияне:\n• Виктория Стрельцова\n• Екатерина Корчажникова\n\nНачало: 07:45 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Аделина Кузнецова",
+     "nation": "ЧЕЛ"
+    },
+    {
+     "name": "Александра Анушова",
+     "nation": "МОБ"
+    },
+    {
+     "name": "Алина Локтева",
+     "nation": "КРК"
+    },
+    {
+     "name": "Алиса Мильто",
+     "nation": "МОС"
+    },
+    {
+     "name": "Алёна Клопова",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Анастасия Выровая",
+     "nation": "ТАТ"
+    },
+    {
+     "name": "Виктория Стрельцова",
+     "nation": "МОС"
+    },
+    {
+     "name": "Дарья Антонова",
+     "nation": "НСО"
+    },
+    {
+     "name": "Дарья Загуменная",
+     "nation": "ЛОБ"
+    },
+    {
+     "name": "Диана Сашина",
+     "nation": "СВЕ"
+    },
+    {
+     "name": "Екатерина Корчажникова",
+     "nation": "МОС"
+    },
+    {
+     "name": "Екатерина Стоцкая",
+     "nation": "МОС"
+    },
+    {
+     "name": "Екатерина Чувакина",
+     "nation": "ХМА"
+    },
+    {
+     "name": "Кристина Двуреченская",
+     "nation": "ОРЕ"
+    },
+    {
+     "name": "Мария Драчёва",
+     "nation": "ТЮМ"
+    },
+    {
+     "name": "Полина Бершадская",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Софья Федотова",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Эвелина Шестакова",
+     "nation": "УДМ"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/4etap_jun/SEG004.htm",
+    "cat": "https://fsrussia.ru/results/2627/4etap_jun/CAT002RS.htm",
+    "first": "https://fsrussia.ru/results/2627/4etap_jun/SEG003.htm",
+    "names": {
+     "Дарья АНТОНОВА": "Дарья Антонова",
+     "Александра АНУШОВА": "Александра Анушова",
+     "Полина БЕРШАДСКАЯ": "Полина Бершадская",
+     "Анастасия ВЫРОВАЯ": "Анастасия Выровая",
+     "Кристина ДВУРЕЧЕНСКАЯ": "Кристина Двуреченская",
+     "Мария ДРАЧЁВА": "Мария Драчёва",
+     "Дарья ЗАГУМЕННАЯ": "Дарья Загуменная",
+     "Алёна КЛОПОВА": "Алёна Клопова",
+     "Екатерина КОРЧАЖНИКОВА": "Екатерина Корчажникова",
+     "Аделина КУЗНЕЦОВА": "Аделина Кузнецова",
+     "Алина ЛОКТЕВА": "Алина Локтева",
+     "Алиса МИЛЬТО": "Алиса Мильто",
+     "Диана САШИНА": "Диана Сашина",
+     "Екатерина СТОЦКАЯ": "Екатерина Стоцкая",
+     "Виктория СТРЕЛЬЦОВА": "Виктория Стрельцова",
+     "Софья ФЕДОТОВА": "Софья Федотова",
+     "Екатерина ЧУВАКИНА": "Екатерина Чувакина",
+     "Эвелина ШЕСТАКОВА": "Эвелина Шестакова"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:men-junior-pp",
@@ -37637,8 +38760,8 @@
    "level": "junior",
    "seg": "ПП",
    "title": "ЮГП России «Красноярье» — юноши ПП",
-   "start": "2026-10-30T11:45:00+03:00",
-   "end": "2026-10-30T14:25:00+03:00",
+   "start": "2026-10-30T10:45:00+03:00",
+   "end": "2026-10-30T13:35:00+03:00",
    "venue": "Кристалл Арена, Красноярск",
    "intl": false,
    "broadcast": [
@@ -37646,20 +38769,376 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/4etap2627_jun_competition_schedule.pdf",
+   "athletes": [
+    "Александр Чмиль",
+    "Алексей Заводских",
+    "Андрей Вересов",
+    "Вадим Воронов",
+    "Георгий Терехов",
+    "Глеб Ковтун",
+    "Евгений Семенов",
+    "Иван Теленков",
+    "Илья Мальков",
+    "Леонид Новожилов",
+    "Макар Солодников",
+    "Максим Галкин",
+    "Марк Соколов",
+    "Марк Титов",
+    "Роман Глазов",
+    "Роман Шереметьев",
+    "Тимофей Бочков",
+    "Эдуард Камоев"
+   ],
+   "src": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 11:45 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "desc": "Начало: 10:45 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Александр Чмиль",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Алексей Заводских",
+     "nation": "МОС"
+    },
+    {
+     "name": "Андрей Вересов",
+     "nation": "КЛЖ"
+    },
+    {
+     "name": "Вадим Воронов",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Георгий Терехов",
+     "nation": "МОС"
+    },
+    {
+     "name": "Глеб Ковтун",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Евгений Семенов",
+     "nation": "ЛОБ"
+    },
+    {
+     "name": "Иван Теленков",
+     "nation": "МОБ"
+    },
+    {
+     "name": "Илья Мальков",
+     "nation": "ТАТ"
+    },
+    {
+     "name": "Леонид Новожилов",
+     "nation": "ТУЛ"
+    },
+    {
+     "name": "Макар Солодников",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Максим Галкин",
+     "nation": "СВЕ"
+    },
+    {
+     "name": "Марк Соколов",
+     "nation": "МОС"
+    },
+    {
+     "name": "Марк Титов",
+     "nation": "ТАТ"
+    },
+    {
+     "name": "Роман Глазов",
+     "nation": "НИЖ"
+    },
+    {
+     "name": "Роман Шереметьев",
+     "nation": "КРК"
+    },
+    {
+     "name": "Тимофей Бочков",
+     "nation": "МОС"
+    },
+    {
+     "name": "Эдуард Камоев",
+     "nation": "СПБ"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/4etap_jun/SEG002.htm",
+    "cat": "https://fsrussia.ru/results/2627/4etap_jun/CAT001RS.htm",
+    "first": "https://fsrussia.ru/results/2627/4etap_jun/SEG001.htm",
+    "names": {
+     "Тимофей БОЧКОВ": "Тимофей Бочков",
+     "Андрей ВЕРЕСОВ": "Андрей Вересов",
+     "Вадим ВОРОНОВ": "Вадим Воронов",
+     "Максим ГАЛКИН": "Максим Галкин",
+     "Роман ГЛАЗОВ": "Роман Глазов",
+     "Алексей ЗАВОДСКИХ": "Алексей Заводских",
+     "Эдуард КАМОЕВ": "Эдуард Камоев",
+     "Глеб КОВТУН": "Глеб Ковтун",
+     "Илья МАЛЬКОВ": "Илья Мальков",
+     "Леонид НОВОЖИЛОВ": "Леонид Новожилов",
+     "Евгений СЕМЕНОВ": "Евгений Семенов",
+     "Марк СОКОЛОВ": "Марк Соколов",
+     "Макар СОЛОДНИКОВ": "Макар Солодников",
+     "Иван ТЕЛЕНКОВ": "Иван Теленков",
+     "Георгий ТЕРЕХОВ": "Георгий Терехов",
+     "Марк ТИТОВ": "Марк Титов",
+     "Александр ЧМИЛЬ": "Александр Чмиль",
+     "Роман ШЕРЕМЕТЬЕВ": "Роман Шереметьев"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+  },
+  {
+   "id": "gs:crystal-skate:women-senior-pp-advanced-novice-women",
+   "tid": "gs:crystal-skate",
+   "tournament": "Crystal Skate",
+   "kind": "women",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Crystal Skate — женщины ПП",
+   "start": "2026-10-30T15:00:00+03:00",
+   "end": "2026-10-30T15:45:00+03:00",
+   "venue": "Cheile Gradistei, Romania",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Alexandra-Catalina Stanescu",
+    "Antonia Riciu",
+    "Maria Amedeea Baban",
+    "Nikol Gabuniia",
+    "Yeva Shepeleva"
+   ],
+   "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
+   "desc": "Начало: 15:00 МСК",
+   "field": [
+    {
+     "name": "Alexandra-Catalina Stanescu",
+     "nation": "ROU"
+    },
+    {
+     "name": "Antonia Riciu",
+     "nation": "ROU"
+    },
+    {
+     "name": "Maria Amedeea Baban",
+     "nation": "ROU"
+    },
+    {
+     "name": "Nikol Gabuniia",
+     "nation": "GEO"
+    },
+    {
+     "name": "Yeva Shepeleva",
+     "nation": "UKR"
+    }
+   ],
+   "live": {
+    "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
+    "seg": "https://www.frponline.ro/html2/cryro2026/SEG010.htm",
+    "cat": "https://www.frponline.ro/html2/cryro2026/CAT005RS.htm",
+    "first": "https://www.frponline.ro/html2/cryro2026/SEG009.htm",
+    "names": {
+     "Nikol GABUNIIA": "Nikol Gabuniia",
+     "Maria Amedeea BABAN": "Maria Amedeea Baban",
+     "Antonia RICIU": "Antonia Riciu",
+     "Alexandra-Catalina STANESCU": "Alexandra-Catalina Stanescu",
+     "Yeva SHEPELEVA": "Yeva Shepeleva"
+    },
+    "basis": null
+   },
+   "proto": "gs_crystal-skate.json"
+  },
+  {
+   "id": "gs:crystal-skate:men-junior-kp",
+   "tid": "gs:crystal-skate",
+   "tournament": "Crystal Skate",
+   "kind": "men",
+   "level": "junior",
+   "seg": "КП",
+   "title": "Crystal Skate — юноши КП",
+   "start": "2026-10-30T15:30:00+03:00",
+   "end": "2026-10-30T16:00:00+03:00",
+   "venue": "Cheile Gradistei, Romania",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Bohdan Pomohaibo",
+    "Razvan Cionac"
+   ],
+   "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
+   "desc": "Начало: 15:30 МСК",
+   "field": [
+    {
+     "name": "Razvan Cionac",
+     "nation": "ROU",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Bohdan Pomohaibo",
+     "nation": "UKR",
+     "no": 2,
+     "warmup": 1
+    }
+   ],
+   "live": {
+    "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
+    "seg": "https://www.frponline.ro/html2/cryro2026/SEG005.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Razvan CIONAC": "Razvan Cionac",
+     "Bohdan POMOHAIBO": "Bohdan Pomohaibo"
+    },
+    "basis": null
+   },
+   "proto": "gs_crystal-skate.json"
+  },
+  {
+   "id": "gs:crystal-skate:men-senior-kp",
+   "tid": "gs:crystal-skate",
+   "tournament": "Crystal Skate",
+   "kind": "men",
+   "level": "senior",
+   "seg": "КП",
+   "title": "Crystal Skate — мужчины КП",
+   "start": "2026-10-30T16:16:00+03:00",
+   "end": "2026-10-30T16:46:00+03:00",
+   "venue": "Cheile Gradistei, Romania",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Filip Kaymakchiev",
+    "Sylvain Ritchie",
+    "Tamir Kuperman"
+   ],
+   "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
+   "desc": "Начало: 16:16 МСК",
+   "field": [
+    {
+     "name": "Filip Kaymakchiev",
+     "nation": "BUL"
+    },
+    {
+     "name": "Sylvain Ritchie",
+     "nation": "FRA"
+    },
+    {
+     "name": "Tamir Kuperman",
+     "nation": "ISR"
+    }
+   ],
+   "live": {
+    "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
+    "seg": "https://www.frponline.ro/html2/cryro2026/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Filip KAYMAKCHIEV": "Filip Kaymakchiev",
+     "Sylvain RITCHIE": "Sylvain Ritchie",
+     "Tamir KUPERMAN": "Tamir Kuperman"
+    },
+    "basis": null
+   },
+   "proto": "gs_crystal-skate.json"
+  },
+  {
+   "id": "gs:crystal-skate:women-senior-kp-women",
+   "tid": "gs:crystal-skate",
+   "tournament": "Crystal Skate",
+   "kind": "women",
+   "level": "senior",
+   "seg": "КП",
+   "title": "Crystal Skate — женщины КП",
+   "start": "2026-10-30T16:55:00+03:00",
+   "end": "2026-10-30T18:00:00+03:00",
+   "venue": "Cheile Gradistei, Romania",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Ana Sofia Beschea",
+    "Ana Stratulat",
+    "Ekaterina Kurakova",
+    "Julia Sauter",
+    "Lilian Musgrave",
+    "Maria Smaranda",
+    "Marietta Atkins",
+    "Milana Mozeiko"
+   ],
+   "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
+   "desc": "Начало: 16:55 МСК",
+   "field": [
+    {
+     "name": "Ana Sofia Beschea",
+     "nation": "ROU"
+    },
+    {
+     "name": "Ana Stratulat",
+     "nation": "ROU"
+    },
+    {
+     "name": "Ekaterina Kurakova",
+     "nation": "POL"
+    },
+    {
+     "name": "Julia Sauter",
+     "nation": "ROU"
+    },
+    {
+     "name": "Lilian Musgrave",
+     "nation": "GBR"
+    },
+    {
+     "name": "Maria Smaranda",
+     "nation": "ROU"
+    },
+    {
+     "name": "Marietta Atkins",
+     "nation": "POL"
+    },
+    {
+     "name": "Milana Mozeiko",
+     "nation": "FRA"
+    }
+   ],
+   "live": {
+    "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
+    "seg": "https://www.frponline.ro/html2/cryro2026/SEG003.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Milana MOZEIKO": "Milana Mozeiko",
+     "Lilian MUSGRAVE": "Lilian Musgrave",
+     "Marietta ATKINS": "Marietta Atkins",
+     "Ekaterina KURAKOVA": "Ekaterina Kurakova",
+     "Ana Sofia BESCHEA": "Ana Sofia Beschea",
+     "Julia SAUTER": "Julia Sauter",
+     "Maria SMARANDA": "Maria Smaranda",
+     "Ana STRATULAT": "Ana Stratulat"
+    },
+    "basis": null
+   },
+   "proto": "gs_crystal-skate.json"
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:men-senior-kp",
@@ -37822,6 +39301,127 @@
    "proto": null
   },
   {
+   "id": "gs:crystal-skate:women-junior-pp",
+   "tid": "gs:crystal-skate",
+   "tournament": "Crystal Skate",
+   "kind": "women",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "Crystal Skate — девушки ПП",
+   "start": "2026-10-31T11:00:00+03:00",
+   "end": "2026-10-31T13:30:00+03:00",
+   "venue": "Cheile Gradistei, Romania",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Adria Liliac",
+    "Andreea Cristiana Maria Lazar",
+    "Anhelina Kapuka",
+    "Elena Martinenghi",
+    "Guan Ying Wang",
+    "Iris Victoria Ciurezu",
+    "Lelle Agota Molnar",
+    "Leyla Cetin",
+    "Maria Sycova",
+    "Maryia Luksha",
+    "Natalia Runcanu",
+    "Nikol Kuperman",
+    "Rebecca Rusu",
+    "Simona Tkachman",
+    "Sonia Milik"
+   ],
+   "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
+   "desc": "Начало: 11:00 МСК",
+   "field": [
+    {
+     "name": "Adria Liliac",
+     "nation": "ROU"
+    },
+    {
+     "name": "Andreea Cristiana Maria Lazar",
+     "nation": "ROU"
+    },
+    {
+     "name": "Anhelina Kapuka",
+     "nation": "UKR"
+    },
+    {
+     "name": "Elena Martinenghi",
+     "nation": "SUI"
+    },
+    {
+     "name": "Guan Ying Wang",
+     "nation": "TPE"
+    },
+    {
+     "name": "Iris Victoria Ciurezu",
+     "nation": "ROU"
+    },
+    {
+     "name": "Lelle Agota Molnar",
+     "nation": "ROU"
+    },
+    {
+     "name": "Leyla Cetin",
+     "nation": "TUR"
+    },
+    {
+     "name": "Maria Sycova",
+     "nation": "SVK"
+    },
+    {
+     "name": "Maryia Luksha",
+     "nation": "POL"
+    },
+    {
+     "name": "Natalia Runcanu",
+     "nation": "ROU"
+    },
+    {
+     "name": "Nikol Kuperman",
+     "nation": "ISR"
+    },
+    {
+     "name": "Rebecca Rusu",
+     "nation": "GER"
+    },
+    {
+     "name": "Simona Tkachman",
+     "nation": "ISR"
+    },
+    {
+     "name": "Sonia Milik",
+     "nation": "ROU"
+    }
+   ],
+   "live": {
+    "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
+    "seg": "https://www.frponline.ro/html2/cryro2026/SEG008.htm",
+    "cat": "https://www.frponline.ro/html2/cryro2026/CAT004RS.htm",
+    "first": "https://www.frponline.ro/html2/cryro2026/SEG007.htm",
+    "names": {
+     "Rebecca RUSU": "Rebecca Rusu",
+     "Nikol KUPERMAN": "Nikol Kuperman",
+     "Simona TKACHMAN": "Simona Tkachman",
+     "Maryia LUKSHA": "Maryia Luksha",
+     "Iris Victoria CIUREZU": "Iris Victoria Ciurezu",
+     "Andreea Cristiana Maria LAZAR": "Andreea Cristiana Maria Lazar",
+     "Adria LILIAC": "Adria Liliac",
+     "Sonia MILIK": "Sonia Milik",
+     "Lelle Agota MOLNAR": "Lelle Agota Molnar",
+     "Natalia RUNCANU": "Natalia Runcanu",
+     "Elena MARTINENGHI": "Elena Martinenghi",
+     "Maria SYCOVA": "Maria Sycova",
+     "Guan Ying WANG": "Guan Ying Wang",
+     "Leyla CETIN": "Leyla Cetin",
+     "Anhelina KAPUKA": "Anhelina Kapuka"
+    },
+    "basis": null
+   },
+   "proto": "gs_crystal-skate.json"
+  },
+  {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:men-senior-kp",
    "tid": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026",
    "tournament": "Гран-при России «Красноярье»",
@@ -37886,6 +39486,55 @@
    "proto": null
   },
   {
+   "id": "gs:crystal-skate:men-senior-pp",
+   "tid": "gs:crystal-skate",
+   "tournament": "Crystal Skate",
+   "kind": "men",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Crystal Skate — мужчины ПП",
+   "start": "2026-10-31T15:00:00+03:00",
+   "end": "2026-10-31T15:30:00+03:00",
+   "venue": "Cheile Gradistei, Romania",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Filip Kaymakchiev",
+    "Sylvain Ritchie",
+    "Tamir Kuperman"
+   ],
+   "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
+   "desc": "Начало: 15:00 МСК",
+   "field": [
+    {
+     "name": "Filip Kaymakchiev",
+     "nation": "BUL"
+    },
+    {
+     "name": "Sylvain Ritchie",
+     "nation": "FRA"
+    },
+    {
+     "name": "Tamir Kuperman",
+     "nation": "ISR"
+    }
+   ],
+   "live": {
+    "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
+    "seg": "https://www.frponline.ro/html2/cryro2026/SEG002.htm",
+    "cat": "https://www.frponline.ro/html2/cryro2026/CAT001RS.htm",
+    "first": "https://www.frponline.ro/html2/cryro2026/SEG001.htm",
+    "names": {
+     "Filip KAYMAKCHIEV": "Filip Kaymakchiev",
+     "Sylvain RITCHIE": "Sylvain Ritchie",
+     "Tamir KUPERMAN": "Tamir Kuperman"
+    },
+    "basis": null
+   },
+   "proto": "gs_crystal-skate.json"
+  },
+  {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:dance-senior-rt",
    "tid": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026",
    "tournament": "Гран-при России «Красноярье»",
@@ -37916,6 +39565,85 @@
    ],
    "desc": "Начало: 15:10 МСК\nТрансляция: Первый канал / YouTube",
    "proto": null
+  },
+  {
+   "id": "gs:crystal-skate:women-senior-pp-women",
+   "tid": "gs:crystal-skate",
+   "tournament": "Crystal Skate",
+   "kind": "women",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Crystal Skate — женщины ПП",
+   "start": "2026-10-31T15:27:00+03:00",
+   "end": "2026-10-31T16:42:00+03:00",
+   "venue": "Cheile Gradistei, Romania",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Ana Sofia Beschea",
+    "Ana Stratulat",
+    "Ekaterina Kurakova",
+    "Julia Sauter",
+    "Lilian Musgrave",
+    "Maria Smaranda",
+    "Marietta Atkins",
+    "Milana Mozeiko"
+   ],
+   "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
+   "desc": "Начало: 15:27 МСК",
+   "field": [
+    {
+     "name": "Ana Sofia Beschea",
+     "nation": "ROU"
+    },
+    {
+     "name": "Ana Stratulat",
+     "nation": "ROU"
+    },
+    {
+     "name": "Ekaterina Kurakova",
+     "nation": "POL"
+    },
+    {
+     "name": "Julia Sauter",
+     "nation": "ROU"
+    },
+    {
+     "name": "Lilian Musgrave",
+     "nation": "GBR"
+    },
+    {
+     "name": "Maria Smaranda",
+     "nation": "ROU"
+    },
+    {
+     "name": "Marietta Atkins",
+     "nation": "POL"
+    },
+    {
+     "name": "Milana Mozeiko",
+     "nation": "FRA"
+    }
+   ],
+   "live": {
+    "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
+    "seg": "https://www.frponline.ro/html2/cryro2026/SEG004.htm",
+    "cat": "https://www.frponline.ro/html2/cryro2026/CAT002RS.htm",
+    "first": "https://www.frponline.ro/html2/cryro2026/SEG003.htm",
+    "names": {
+     "Milana MOZEIKO": "Milana Mozeiko",
+     "Lilian MUSGRAVE": "Lilian Musgrave",
+     "Marietta ATKINS": "Marietta Atkins",
+     "Ekaterina KURAKOVA": "Ekaterina Kurakova",
+     "Ana Sofia BESCHEA": "Ana Sofia Beschea",
+     "Julia SAUTER": "Julia Sauter",
+     "Maria SMARANDA": "Maria Smaranda",
+     "Ana STRATULAT": "Ana Stratulat"
+    },
+    "basis": null
+   },
+   "proto": "gs_crystal-skate.json"
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:women-senior-kp",
@@ -39900,7 +41628,7 @@
    "seg": "КП",
    "title": "GP Finlandia Trophy — пары КП",
    "start": "2026-11-20T15:00:00+03:00",
-   "end": "2026-11-20T16:10:00+03:00",
+   "end": "2026-11-20T16:05:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
    "broadcast": [
@@ -39918,7 +41646,6 @@
    ],
    "athletes": [
     "Annika Hocke / Robert Kunkel",
-    "Gabriella Izzo / Luc Maierhofer",
     "Hannah Herrera / Ivan Khobta",
     "Irma Caldara / Riccardo Maglio",
     "Lia Pereira / Trennt Michaud",
@@ -39938,10 +41665,6 @@
     {
      "name": "Annika Hocke / Robert Kunkel",
      "nation": "GER"
-    },
-    {
-     "name": "Gabriella Izzo / Luc Maierhofer",
-     "nation": "AUT"
     },
     {
      "name": "Hannah Herrera / Ivan Khobta",
@@ -40244,7 +41967,7 @@
    "seg": "ПП",
    "title": "GP Finlandia Trophy — пары ПП",
    "start": "2026-11-21T13:15:00+03:00",
-   "end": "2026-11-21T14:35:00+03:00",
+   "end": "2026-11-21T14:25:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
    "broadcast": [
@@ -40262,7 +41985,6 @@
    ],
    "athletes": [
     "Annika Hocke / Robert Kunkel",
-    "Gabriella Izzo / Luc Maierhofer",
     "Hannah Herrera / Ivan Khobta",
     "Irma Caldara / Riccardo Maglio",
     "Lia Pereira / Trennt Michaud",
@@ -40282,10 +42004,6 @@
     {
      "name": "Annika Hocke / Robert Kunkel",
      "nation": "GER"
-    },
-    {
-     "name": "Gabriella Izzo / Luc Maierhofer",
-     "nation": "AUT"
     },
     {
      "name": "Hannah Herrera / Ivan Khobta",
@@ -42075,6 +43793,7 @@
   "Alexandra Shevchenko",
   "Alexandra Tetenko",
   "Alexandra VOLCHEK",
+  "Alexandra-Catalina Stanescu",
   "Alexandre Lirot",
   "Alexei Kiselev",
   "Alexei Krivoruchko",
@@ -42283,6 +44002,7 @@
   "Angelina Turenko",
   "Angelina Zimina",
   "Anhelina Burlina",
+  "Anhelina Kapuka",
   "Anissa Mamaev",
   "Anita Mapelli / Noah Quesada Grau",
   "Anita Ostlund",
@@ -42354,6 +44074,7 @@
   "Anton Shulepov",
   "Anton Sikharulidze",
   "Anton Tokarev",
+  "Antonia Riciu",
   "Antonina Dubinina",
   "Antonio SOUZA KORDEIRU",
   "Anzhelika Abachkina",
@@ -42430,6 +44151,7 @@
   "Blake Cairns",
   "Bo-Shun Wu",
   "Bogdana Lukashevich",
+  "Bohdan Pomohaibo",
   "Boren Lu",
   "Bowen Yan",
   "Boyang Jin",
@@ -42740,6 +44462,7 @@
   "Elena Kukhlevskaia",
   "Elena Kustarova",
   "Elena Mamchenkova",
+  "Elena Martinenghi",
   "Elena Pavlova",
   "Elena Pavlovskaia",
   "Elena Radionova",
@@ -42926,6 +44649,7 @@
   "Grigori Petrovski",
   "Grigory Smirnov",
   "Grigory Yakushev",
+  "Guan Ying Wang",
   "Gyujin Hwang",
   "Habin Choi",
   "Haein Lee",
@@ -43024,6 +44748,7 @@
   "Irina Slutskaya",
   "Irina Tkatchuk",
   "Iris Lahti / Oskari Liedenpohja",
+  "Iris Victoria Ciurezu",
   "Irma Caldara / Riccardo Maglio",
   "Irmak Yucel / Danil Pak",
   "Iryna Pidgaina / Artem Koval",
@@ -43456,6 +45181,7 @@
   "Marharyta Bohdan",
   "Marharyta Chachyk",
   "Marharyta Selivonik",
+  "Maria Amedeea Baban",
   "Maria Artemieva",
   "Maria Bakusheva",
   "Maria Butyrskaya",
@@ -43474,6 +45200,7 @@
   "Maria Orlova",
   "Maria Paliakova",
   "Maria Pavlova / Alexei Sviatchenko",
+  "Maria Smaranda",
   "Maria Sotskova",
   "Maria Stavitskaia",
   "Maria Sycova",
@@ -43722,6 +45449,7 @@
   "Nikita VOLODIN",
   "Nikita Vitryanyuk",
   "Nikol Dvornikava",
+  "Nikol Gabuniia",
   "Nikol Gosviani",
   "Nikol Kuperman",
   "Nikola Fomchenkova",
@@ -43877,6 +45605,7 @@
   "Rebecca Ghilardi / Filippo Ambrosini",
   "Rebecca Grace Lichtman / Blake Gilman",
   "Rebecca Lo Cascio",
+  "Rebecca Rusu",
   "Reese Rose",
   "Regina Llado Fernandez Del Campo",
   "Reka Kiss",
@@ -44060,6 +45789,7 @@
   "Sofya Titova",
   "Soner Oeztuerk",
   "Sonia Kamyshanova",
+  "Sonia Milik",
   "Sonja Hilmer",
   "Sonja Loewenherz / Robert Loewenherz",
   "Sonja Werner",
@@ -44373,6 +46103,7 @@
   "Yeuk Kwan Zhu",
   "Yeva Alekhnovich / Stanislaw Borysewicz",
   "Yeva Markava",
+  "Yeva Shepeleva",
   "Yi Zhu",
   "Yihan Wang",
   "Yihe Sun",
@@ -44449,6 +46180,7 @@
   "Агата Петрова",
   "Агния Хазова",
   "Аделина Камалова",
+  "Аделина Кузнецова",
   "Аделия Петросян",
   "Азалия Гимадиева",
   "Айс Крим",
@@ -44484,6 +46216,7 @@
   "Александр Чмиль",
   "Александр Щербаков",
   "Александр Щербинин",
+  "Александра Анушова",
   "Александра Бойкова",
   "Александра Бойкова / Дмитрий Козловский",
   "Александра Бунтовская",
@@ -44572,6 +46305,7 @@
   "Алёна Галкина",
   "Алёна Дронова",
   "Алёна Зубова",
+  "Алёна Клопова",
   "Алёна Принёва",
   "Алёна Телятникова",
   "Алёна Фирсова",
@@ -44612,6 +46346,8 @@
   "Анастасия Трошкина",
   "Анастасия Трощилова",
   "Анастасия Тюкавкина",
+  "Анастасия Уткина",
+  "Анастасия Уткина / Артемий Мохов",
   "Анастасия Фурсова",
   "Анастасия Чернышова",
   "Анастасия Чернышова / Владислав Вильчик",
@@ -44624,6 +46360,7 @@
   "Ангелина Сенько / Вадим Кайзер",
   "Ангелина Сенько / Тимофей Пилипенко",
   "Андрей Анисимов",
+  "Андрей Вересов",
   "Андрей Ежлов",
   "Андрей Зверев",
   "Андрей Касаткин",
@@ -44901,6 +46638,8 @@
   "Дарья Лебедева",
   "Дарья Меленевская",
   "Дарья Никейцева",
+  "Дарья Парфенова",
+  "Дарья Парфенова / Павел Николаев",
   "Дарья Полосминкина",
   "Дарья Рябухина",
   "Дарья Рябухина / Кирилл Крестников",
@@ -44923,6 +46662,9 @@
   "Диана Арнет / Ярослав Черняев",
   "Диана Евлахина",
   "Диана Мильто",
+  "Диана Сарвартинова",
+  "Диана Сарвартинова / Игорь Зубцов",
+  "Диана Сашина",
   "Дина Хуснутдинова",
   "Дмитрий Блинов",
   "Дмитрий Евгеньев",
@@ -45016,6 +46758,7 @@
   "Екатерина Чекова",
   "Екатерина Чикмарёва",
   "Екатерина Чикмарёва / Матвей Янченков",
+  "Екатерина Чувакина",
   "Екатерина Шиломагина",
   "Екатерина Щербина",
   "Екатерина Якушенкова",
@@ -45278,6 +47021,7 @@
   "Мария Галушкина",
   "Мария Гоголева",
   "Мария Гришина",
+  "Мария Драчёва",
   "Мария Евтухина",
   "Мария Елисова",
   "Мария Захарова",
@@ -45308,6 +47052,8 @@
   "Мария Фефелова",
   "Мария Фефелова / Артём Валов",
   "Мария Цыцылина",
+  "Мария Чередниченко",
+  "Мария Чередниченко / Эмиль Хисамов",
   "Мария Черемисина",
   "Мария Черемисина / Григорий Мельников",
   "Мария Шаталова",
@@ -45421,6 +47167,7 @@
   "Павел Грибуля",
   "Павел Драко",
   "Павел Дрозд",
+  "Павел Николаев",
   "Павел Савченко",
   "Павел Тартыгин",
   "Павел Фефилов",
@@ -45478,6 +47225,7 @@
   "Роман Савосин",
   "Роман Федотов",
   "Роман Хамзин",
+  "Роман Шереметьев",
   "Роман Яковлев",
   "Рустам Кулманбетов",
   "Руфина Рафикова",
@@ -45613,12 +47361,14 @@
   "Эвелина Валиева",
   "Эвелина Валиева / Александр Островский",
   "Эвелина Валиева / Даниил Лавриненко",
+  "Эвелина Шестакова",
   "Эдуард Камоев",
   "Эдуард Карартынян",
   "Элина Ибраева",
   "Элона Ларина",
   "Эльвина Тугузбаева",
   "Эльвира Елесина",
+  "Эмиль Хисамов",
   "Юлиана Черенёва",
   "Юлия Александрова",
   "Юлия Артемьева",
@@ -62330,6 +64080,7 @@
   "Lea Marie Castlunger": "photos/b1a2648dde408481.jpg",
   "Nicole de Rosa": "photos/8d7eb6af99a4a2ab.jpg",
   "Ginevra Lavinia Negrello": "photos/aff1724f4387acbd.jpg",
-  "Zala Grum": "photos/09e6e1a784e8c40e.jpg"
+  "Zala Grum": "photos/09e6e1a784e8c40e.jpg",
+  "Alina Bonillo": "photos/8b060531bf5c7c4f.jpg"
  }
 }

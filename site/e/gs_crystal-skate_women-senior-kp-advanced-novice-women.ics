@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:crystal-skate:women-senior-kp-advanced-novice-women@starty
+DTSTAMP:20261028T123336Z
+DTSTART;TZID=Europe/Moscow:20261029T120000
+DTEND;TZID=Europe/Moscow:20261029T124000
+SUMMARY:Crystal Skate — женщины КП
+DESCRIPTION:Начало: 12:00 МСК
+LOCATION:Cheile Gradistei\, Romania
+URL:https://xfurya.github.io/Starty/#e=gs:crystal-skate:women-senior-kp-adv
+ anced-novice-women
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crystal Skate — женщины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

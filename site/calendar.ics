@@ -21,7 +21,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-john-nicks-pairs-international-2026:pairs-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20260911T233300
 DTEND;TZID=Europe/Moscow:20260912T010300
 SUMMARY:CS John Nicks Pairs International — пары КП
@@ -37,7 +37,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-john-nicks-pairs-international-2026:pairs-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20260912T214000
 DTEND;TZID=Europe/Moscow:20260912T232000
 SUMMARY:CS John Nicks Pairs International — пары ПП
@@ -58,7 +58,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-jgp-ankara-2026:pairs-junior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20260917T154500
 DTEND;TZID=Europe/Moscow:20260917T180500
 SUMMARY:JGP Ankara — пары КП
@@ -76,7 +76,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-jgp-ankara-2026:pairs-junior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20260918T133000
 DTEND;TZID=Europe/Moscow:20260918T160500
 SUMMARY:JGP Ankara — пары ПП
@@ -99,7 +99,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-lombardia-trophy-2026:men-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20260918T171500
 DTEND;TZID=Europe/Moscow:20260918T183500
 SUMMARY:CS Lombardia Trophy — мужчины КП
@@ -113,7 +113,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-lombardia-trophy-2026:men-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20260920T143000
 DTEND;TZID=Europe/Moscow:20260920T160000
 SUMMARY:CS Lombardia Trophy — мужчины ПП
@@ -130,7 +130,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:dance-ju
  nior-rt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20260925T123000
 DTEND;TZID=Europe/Moscow:20260925T144000
 SUMMARY:ЮГП России «Лёд Мечты» — танцы РТ
@@ -147,7 +147,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:pairs-ju
  nior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20260925T145000
 DTEND;TZID=Europe/Moscow:20260925T155500
 SUMMARY:ЮГП России «Лёд Мечты» — пары КП
@@ -164,7 +164,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:dance-ju
  nior-pt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20260926T080000
 DTEND;TZID=Europe/Moscow:20260926T102500
 SUMMARY:ЮГП России «Лёд Мечты» — танцы ПТ
@@ -186,7 +186,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:pairs-ju
  nior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20260926T103500
 DTEND;TZID=Europe/Moscow:20260926T114500
 SUMMARY:ЮГП России «Лёд Мечты» — пары ПП
@@ -207,7 +207,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:women-ju
  nior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20260926T115500
 DTEND;TZID=Europe/Moscow:20260926T143000
 SUMMARY:ЮГП России «Лёд Мечты» — девушки КП
@@ -226,7 +226,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:men-juni
  or-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20260926T143000
 DTEND;TZID=Europe/Moscow:20260926T170500
 SUMMARY:ЮГП России «Лёд Мечты» — юноши КП
@@ -242,7 +242,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:women-ju
  nior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20260927T074500
 DTEND;TZID=Europe/Moscow:20260927T103500
 SUMMARY:ЮГП России «Лёд Мечты» — девушки ПП
@@ -269,7 +269,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:men-juni
  or-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20260927T104500
 DTEND;TZID=Europe/Moscow:20260927T133500
 SUMMARY:ЮГП России «Лёд Мечты» — юноши ПП
@@ -294,7 +294,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-trialeti-trophy:women-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261001T134500
 DTEND;TZID=Europe/Moscow:20261001T155000
 SUMMARY:CS Trialeti Trophy — женщины КП
@@ -310,7 +310,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-trialeti-trophy:dance-senior-rt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261001T164500
 DTEND;TZID=Europe/Moscow:20261001T192000
 SUMMARY:CS Trialeti Trophy — танцы РТ
@@ -331,7 +331,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-trialeti-trophy:men-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261001T195000
 DTEND;TZID=Europe/Moscow:20261001T212000
 SUMMARY:CS Trialeti Trophy — мужчины КП
@@ -348,7 +348,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-trialeti-trophy:pairs-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261002T140000
 DTEND;TZID=Europe/Moscow:20261002T150500
 SUMMARY:CS Trialeti Trophy — пары КП
@@ -367,7 +367,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-trialeti-trophy:dance-senior-pt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261002T151500
 DTEND;TZID=Europe/Moscow:20261002T181000
 SUMMARY:CS Trialeti Trophy — танцы ПТ
@@ -392,7 +392,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-trialeti-trophy:men-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261002T193000
 DTEND;TZID=Europe/Moscow:20261002T211500
 SUMMARY:CS Trialeti Trophy — мужчины ПП
@@ -412,7 +412,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-trialeti-trophy:pairs-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261003T140000
 DTEND;TZID=Europe/Moscow:20261003T151000
 SUMMARY:CS Trialeti Trophy — пары ПП
@@ -435,7 +435,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-trialeti-trophy:women-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261003T163000
 DTEND;TZID=Europe/Moscow:20261003T185000
 SUMMARY:CS Trialeti Trophy — женщины ПП
@@ -454,7 +454,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
  026:dance-junior-rt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261005T173000
 DTEND;TZID=Europe/Moscow:20261005T194000
 SUMMARY:ЮГП России «Мемориал Горшкова» — та
@@ -472,7 +472,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
  026:pairs-junior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261005T195000
 DTEND;TZID=Europe/Moscow:20261005T204000
 SUMMARY:ЮГП России «Мемориал Горшкова» — па
@@ -493,7 +493,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
  026:dance-junior-pt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261006T130000
 DTEND;TZID=Europe/Moscow:20261006T152500
 SUMMARY:ЮГП России «Мемориал Горшкова» — та
@@ -514,7 +514,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
  026:pairs-junior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261006T153500
 DTEND;TZID=Europe/Moscow:20261006T163000
 SUMMARY:ЮГП России «Мемориал Горшкова» — па
@@ -540,7 +540,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
  026:women-junior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261006T164500
 DTEND;TZID=Europe/Moscow:20261006T192000
 SUMMARY:ЮГП России «Мемориал Горшкова» — де
@@ -561,7 +561,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
  026:men-junior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261006T192000
 DTEND;TZID=Europe/Moscow:20261006T215500
 SUMMARY:ЮГП России «Мемориал Горшкова» — юн
@@ -578,7 +578,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
  026:women-junior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261007T124500
 DTEND;TZID=Europe/Moscow:20261007T153500
 SUMMARY:ЮГП России «Мемориал Горшкова» — де
@@ -605,7 +605,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
  026:men-junior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261007T154500
 DTEND;TZID=Europe/Moscow:20261007T183500
 SUMMARY:ЮГП России «Мемориал Горшкова» — юн
@@ -625,7 +625,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:men-junior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261008T084500
 DTEND;TZID=Europe/Moscow:20261008T105000
 SUMMARY:CS Denis Ten Memorial — юноши КП
@@ -645,7 +645,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:women-junior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261008T105500
 DTEND;TZID=Europe/Moscow:20261008T145000
 SUMMARY:CS Denis Ten Memorial — девушки КП
@@ -670,7 +670,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:women-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261008T150500
 DTEND;TZID=Europe/Moscow:20261008T175000
 SUMMARY:CS Denis Ten Memorial — женщины КП
@@ -693,7 +693,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:men-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261008T180000
 DTEND;TZID=Europe/Moscow:20261008T192000
 SUMMARY:CS Denis Ten Memorial — мужчины КП
@@ -720,7 +720,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:dance-junior-rt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261008T193500
 DTEND;TZID=Europe/Moscow:20261008T201500
 SUMMARY:CS Denis Ten Memorial — юниорские танцы РТ
@@ -739,7 +739,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:women-junior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261009T090000
 DTEND;TZID=Europe/Moscow:20261009T132000
 SUMMARY:CS Denis Ten Memorial — девушки ПП
@@ -770,7 +770,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:dance-junior-pt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261009T140000
 DTEND;TZID=Europe/Moscow:20261009T144500
 SUMMARY:CS Denis Ten Memorial — юниорские танцы ПТ
@@ -792,7 +792,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:dance-senior-rt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261009T151500
 DTEND;TZID=Europe/Moscow:20261009T170000
 SUMMARY:CS Denis Ten Memorial — танцы РТ
@@ -819,7 +819,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:women-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261009T173000
 DTEND;TZID=Europe/Moscow:20261009T203500
 SUMMARY:CS Denis Ten Memorial — женщины ПП
@@ -849,7 +849,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:men-junior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261010T073000
 DTEND;TZID=Europe/Moscow:20261010T095000
 SUMMARY:CS Denis Ten Memorial — юноши ПП
@@ -872,7 +872,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:dance-senior-pt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261010T100000
 DTEND;TZID=Europe/Moscow:20261010T115500
 SUMMARY:CS Denis Ten Memorial — танцы ПТ
@@ -908,7 +908,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-denis-ten-memorial:men-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261010T123000
 DTEND;TZID=Europe/Moscow:20261010T140000
 SUMMARY:CS Denis Ten Memorial — мужчины ПП
@@ -949,7 +949,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:danc
  e-junior-rt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261012T173000
 DTEND;TZID=Europe/Moscow:20261012T194000
 SUMMARY:ЮГП России «Рапсодия льда» — танцы Р
@@ -967,7 +967,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:pair
  s-junior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261012T195000
 DTEND;TZID=Europe/Moscow:20261012T202000
 SUMMARY:ЮГП России «Рапсодия льда» — пары КП
@@ -984,7 +984,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:danc
  e-junior-pt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261013T130000
 DTEND;TZID=Europe/Moscow:20261013T152500
 SUMMARY:ЮГП России «Рапсодия льда» — танцы П
@@ -1006,7 +1006,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:pair
  s-junior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261013T153000
 DTEND;TZID=Europe/Moscow:20261013T160000
 SUMMARY:ЮГП России «Рапсодия льда» — пары ПП
@@ -1029,7 +1029,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:wome
  n-junior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261013T163000
 DTEND;TZID=Europe/Moscow:20261013T190500
 SUMMARY:ЮГП России «Рапсодия льда» — девушк
@@ -1048,7 +1048,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:men-
  junior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261013T190500
 DTEND;TZID=Europe/Moscow:20261013T214000
 SUMMARY:ЮГП России «Рапсодия льда» — юноши К
@@ -1065,7 +1065,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:wome
  n-junior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261014T124500
 DTEND;TZID=Europe/Moscow:20261014T153500
 SUMMARY:ЮГП России «Рапсодия льда» — девушк
@@ -1088,7 +1088,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:men-
  junior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261014T154500
 DTEND;TZID=Europe/Moscow:20261014T183500
 SUMMARY:ЮГП России «Рапсодия льда» — юноши П
@@ -1114,7 +1114,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-budapest-trophy:men-junior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261016T090000
 DTEND;TZID=Europe/Moscow:20261016T100000
 SUMMARY:CS Budapest Trophy — юноши КП
@@ -1129,7 +1129,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-budapest-trophy:dance-senior-rt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261016T174500
 DTEND;TZID=Europe/Moscow:20261016T211000
 SUMMARY:CS Budapest Trophy — танцы РТ
@@ -1146,7 +1146,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-budapest-trophy:men-junior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261017T130500
 DTEND;TZID=Europe/Moscow:20261017T141000
 SUMMARY:CS Budapest Trophy — юноши ПП
@@ -1167,7 +1167,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:wom
  en-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261017T133000
 DTEND;TZID=Europe/Moscow:20261017T150000
 SUMMARY:Гран-при России «Рапсодия льда» — же
@@ -1184,7 +1184,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-budapest-trophy:women-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261017T142500
 DTEND;TZID=Europe/Moscow:20261017T200000
 SUMMARY:CS Budapest Trophy — женщины КП
@@ -1203,7 +1203,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men
  -senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261017T151500
 DTEND;TZID=Europe/Moscow:20261017T164000
 SUMMARY:Гран-при России «Рапсодия льда» — му
@@ -1220,7 +1220,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pai
  rs-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261017T165500
 DTEND;TZID=Europe/Moscow:20261017T180500
 SUMMARY:Гран-при России «Рапсодия льда» — па
@@ -1238,7 +1238,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:dan
  ce-senior-rt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261017T182500
 DTEND;TZID=Europe/Moscow:20261017T193000
 SUMMARY:Гран-при России «Рапсодия льда» — та
@@ -1255,7 +1255,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-budapest-trophy:dance-senior-pt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261018T090000
 DTEND;TZID=Europe/Moscow:20261018T124500
 SUMMARY:CS Budapest Trophy — танцы ПТ
@@ -1275,7 +1275,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:wom
  en-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261018T130000
 DTEND;TZID=Europe/Moscow:20261018T144500
 SUMMARY:Гран-при России «Рапсодия льда» — же
@@ -1297,7 +1297,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men
  -senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261018T150500
 DTEND;TZID=Europe/Moscow:20261018T164000
 SUMMARY:Гран-при России «Рапсодия льда» — му
@@ -1320,7 +1320,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pai
  rs-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261018T171000
 DTEND;TZID=Europe/Moscow:20261018T183000
 SUMMARY:Гран-при России «Рапсодия льда» — па
@@ -1341,7 +1341,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-cs-budapest-trophy:women-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261018T172500
 DTEND;TZID=Europe/Moscow:20261018T233500
 SUMMARY:CS Budapest Trophy — женщины ПП
@@ -1364,7 +1364,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:dan
  ce-senior-pt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261018T184500
 DTEND;TZID=Europe/Moscow:20261018T195500
 SUMMARY:Гран-при России «Рапсодия льда» — та
@@ -1386,7 +1386,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:men-se
  nior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261024T133000
 DTEND;TZID=Europe/Moscow:20261024T150000
 SUMMARY:Гран-при России «Невский лёд» — мужч
@@ -1403,7 +1403,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:women-
  senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261024T151500
 DTEND;TZID=Europe/Moscow:20261024T164500
 SUMMARY:Гран-при России «Невский лёд» — женщ
@@ -1421,7 +1421,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:pairs-
  senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261024T165500
 DTEND;TZID=Europe/Moscow:20261024T180000
 SUMMARY:Гран-при России «Невский лёд» — пары
@@ -1439,7 +1439,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:dance-
  senior-rt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261024T182500
 DTEND;TZID=Europe/Moscow:20261024T193500
 SUMMARY:Гран-при России «Невский лёд» — танц
@@ -1456,7 +1456,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-grand-prix-de-france-2026:pairs-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261024T200000
 DTEND;TZID=Europe/Moscow:20261024T211000
 SUMMARY:GP de France — пары КП
@@ -1474,7 +1474,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:men-se
  nior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261025T130000
 DTEND;TZID=Europe/Moscow:20261025T144500
 SUMMARY:Гран-при России «Невский лёд» — мужч
@@ -1496,7 +1496,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-grand-prix-de-france-2026:pairs-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261025T133000
 DTEND;TZID=Europe/Moscow:20261025T145000
 SUMMARY:GP de France — пары ПП
@@ -1519,7 +1519,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:women-
  senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261025T150500
 DTEND;TZID=Europe/Moscow:20261025T165000
 SUMMARY:Гран-при России «Невский лёд» — женщ
@@ -1544,7 +1544,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:pairs-
  senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261025T171000
 DTEND;TZID=Europe/Moscow:20261025T182000
 SUMMARY:Гран-при России «Невский лёд» — пары
@@ -1566,7 +1566,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:dance-
  senior-pt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261025T184500
 DTEND;TZID=Europe/Moscow:20261025T200500
 SUMMARY:Гран-при России «Невский лёд» — танц
@@ -1591,12 +1591,15 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:dance-j
  unior-rt@starty
-DTSTAMP:20261027T174302Z
-DTSTART;TZID=Europe/Moscow:20261028T133000
-DTEND;TZID=Europe/Moscow:20261028T153000
+DTSTAMP:20261028T123336Z
+DTSTART;TZID=Europe/Moscow:20261028T123000
+DTEND;TZID=Europe/Moscow:20261028T143500
 SUMMARY:ЮГП России «Красноярье» — танцы РТ
-DESCRIPTION:Начало: 13:30 МСК\nТрансляция: Первый 
- канал / YouTube
+DESCRIPTION:Промежуточные итоги:\n1. Зоя Пестов
+ а / Сергей Лагутов — 66.45\n2. Полина Тихонов
+ а / Матвей Лысов — 63.71\n3. Елизавета Ростил
+ ова / Денис Ауров — 58.92\n\nНачало: 12:30 МСК\nТ
+ рансляция: Первый канал / YouTube
 LOCATION:Кристалл Арена\, Красноярск
 URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
  noyar-e-sredi-yuniorov-2026:dance-junior-rt
@@ -1605,11 +1608,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:pairs-j
  unior-kp@starty
-DTSTAMP:20261027T174302Z
-DTSTART;TZID=Europe/Moscow:20261028T154500
-DTEND;TZID=Europe/Moscow:20261028T164000
+DTSTAMP:20261028T123336Z
+DTSTART;TZID=Europe/Moscow:20261028T145000
+DTEND;TZID=Europe/Moscow:20261028T153600
 SUMMARY:ЮГП России «Красноярье» — пары КП
-DESCRIPTION:Начало: 15:45 МСК\nТрансляция: Первый 
+DESCRIPTION:Начало: 14:50 МСК\nТрансляция: Первый 
  канал / YouTube
 LOCATION:Кристалл Арена\, Красноярск
 URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
@@ -1619,11 +1622,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:dance-j
  unior-pt@starty
-DTSTAMP:20261027T174302Z
-DTSTART;TZID=Europe/Moscow:20261029T090000
-DTEND;TZID=Europe/Moscow:20261029T111500
+DTSTAMP:20261028T123336Z
+DTSTART;TZID=Europe/Moscow:20261029T080000
+DTEND;TZID=Europe/Moscow:20261029T102500
 SUMMARY:ЮГП России «Красноярье» — танцы ПТ
-DESCRIPTION:Начало: 09:00 МСК\nТрансляция: Первый 
+DESCRIPTION:Начало: 08:00 МСК\nТрансляция: Первый 
  канал / YouTube
 LOCATION:Кристалл Арена\, Красноярск
 URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
@@ -1633,11 +1636,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:pairs-j
  unior-pp@starty
-DTSTAMP:20261027T174302Z
-DTSTART;TZID=Europe/Moscow:20261029T114000
-DTEND;TZID=Europe/Moscow:20261029T124500
+DTSTAMP:20261028T123336Z
+DTSTART;TZID=Europe/Moscow:20261029T104000
+DTEND;TZID=Europe/Moscow:20261029T112500
 SUMMARY:ЮГП России «Красноярье» — пары ПП
-DESCRIPTION:Начало: 11:40 МСК\nТрансляция: Первый 
+DESCRIPTION:Начало: 10:40 МСК\nТрансляция: Первый 
  канал / YouTube
 LOCATION:Кристалл Арена\, Красноярск
 URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
@@ -1647,13 +1650,15 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:women-j
  unior-kp@starty
-DTSTAMP:20261027T174302Z
-DTSTART;TZID=Europe/Moscow:20261029T131000
-DTEND;TZID=Europe/Moscow:20261029T153500
+DTSTAMP:20261028T123336Z
+DTSTART;TZID=Europe/Moscow:20261029T121000
+DTEND;TZID=Europe/Moscow:20261029T143300
 SUMMARY:ЮГП России «Красноярье» — девушки К
  П
-DESCRIPTION:Начало: 13:10 МСК\nТрансляция: Первый 
- канал / YouTube
+DESCRIPTION:Россияне:\n• Виктория Стрельцова 
+ — 13:57\n• Екатерина Корчажникова — 14:03\n\nН
+ ачало: 12:10 МСК\nТрансляция: Первый канал / 
+ YouTube
 LOCATION:Кристалл Арена\, Красноярск
 URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
  noyar-e-sredi-yuniorov-2026:women-junior-kp
@@ -1662,11 +1667,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:men-jun
  ior-kp@starty
-DTSTAMP:20261027T174302Z
-DTSTART;TZID=Europe/Moscow:20261029T155000
-DTEND;TZID=Europe/Moscow:20261029T181100
+DTSTAMP:20261028T123336Z
+DTSTART;TZID=Europe/Moscow:20261029T145000
+DTEND;TZID=Europe/Moscow:20261029T171000
 SUMMARY:ЮГП России «Красноярье» — юноши КП
-DESCRIPTION:Начало: 15:50 МСК\nТрансляция: Первый 
+DESCRIPTION:Начало: 14:50 МСК\nТрансляция: Первый 
  канал / YouTube
 LOCATION:Кристалл Арена\, Красноярск
 URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
@@ -1676,13 +1681,14 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:women-j
  unior-pp@starty
-DTSTAMP:20261027T174302Z
-DTSTART;TZID=Europe/Moscow:20261030T084500
-DTEND;TZID=Europe/Moscow:20261030T112000
+DTSTAMP:20261028T123336Z
+DTSTART;TZID=Europe/Moscow:20261030T074500
+DTEND;TZID=Europe/Moscow:20261030T103500
 SUMMARY:ЮГП России «Красноярье» — девушки П
  П
-DESCRIPTION:Начало: 08:45 МСК\nТрансляция: Первый 
- канал / YouTube
+DESCRIPTION:Россияне:\n• Виктория Стрельцова\n
+ • Екатерина Корчажникова\n\nНачало: 07:45 М
+ СК\nТрансляция: Первый канал / YouTube
 LOCATION:Кристалл Арена\, Красноярск
 URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
  noyar-e-sredi-yuniorov-2026:women-junior-pp
@@ -1691,11 +1697,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:men-jun
  ior-pp@starty
-DTSTAMP:20261027T174302Z
-DTSTART;TZID=Europe/Moscow:20261030T114500
-DTEND;TZID=Europe/Moscow:20261030T142500
+DTSTAMP:20261028T123336Z
+DTSTART;TZID=Europe/Moscow:20261030T104500
+DTEND;TZID=Europe/Moscow:20261030T133500
 SUMMARY:ЮГП России «Красноярье» — юноши ПП
-DESCRIPTION:Начало: 11:45 МСК\nТрансляция: Первый 
+DESCRIPTION:Начало: 10:45 МСК\nТрансляция: Первый 
  канал / YouTube
 LOCATION:Кристалл Арена\, Красноярск
 URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
@@ -1705,7 +1711,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:men-se
  nior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261031T110000
 DTEND;TZID=Europe/Moscow:20261031T123000
 SUMMARY:Гран-при России «Красноярье» — мужч
@@ -1720,7 +1726,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:women-
  senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261031T132000
 DTEND;TZID=Europe/Moscow:20261031T145000
 SUMMARY:Гран-при России «Красноярье» — женщ
@@ -1735,7 +1741,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:dance-
  senior-rt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261031T151000
 DTEND;TZID=Europe/Moscow:20261031T162500
 SUMMARY:Гран-при России «Красноярье» — танц
@@ -1749,7 +1755,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-skate-canada-international-2026:women-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261031T223000
 DTEND;TZID=Europe/Moscow:20261101T000000
 SUMMARY:GP Skate Canada — женщины КП
@@ -1763,7 +1769,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:men-se
  nior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261101T100000
 DTEND;TZID=Europe/Moscow:20261101T115000
 SUMMARY:Гран-при России «Красноярье» — мужч
@@ -1778,7 +1784,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:women-
  senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261101T121000
 DTEND;TZID=Europe/Moscow:20261101T140000
 SUMMARY:Гран-при России «Красноярье» — женщ
@@ -1793,7 +1799,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:dance-
  senior-pt@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261101T142000
 DTEND;TZID=Europe/Moscow:20261101T155000
 SUMMARY:Гран-при России «Красноярье» — танц
@@ -1807,7 +1813,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-skate-canada-international-2026:women-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261102T000000
 DTEND;TZID=Europe/Moscow:20261102T014500
 SUMMARY:GP Skate Canada — женщины ПП
@@ -1820,7 +1826,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-cup-of-china-2026:women-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261106T112500
 DTEND;TZID=Europe/Moscow:20261106T125500
 SUMMARY:GP Cup of China — женщины КП
@@ -1833,7 +1839,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-cup-of-china-2026:pairs-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261106T140000
 DTEND;TZID=Europe/Moscow:20261106T151000
 SUMMARY:GP Cup of China — пары КП
@@ -1847,7 +1853,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-cup-of-china-2026:men-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261106T152500
 DTEND;TZID=Europe/Moscow:20261106T165500
 SUMMARY:GP Cup of China — мужчины КП
@@ -1861,7 +1867,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-cup-of-china-2026:women-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261107T113000
 DTEND;TZID=Europe/Moscow:20261107T131500
 SUMMARY:GP Cup of China — женщины ПП
@@ -1874,7 +1880,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-cup-of-china-2026:pairs-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261107T134000
 DTEND;TZID=Europe/Moscow:20261107T150000
 SUMMARY:GP Cup of China — пары ПП
@@ -1888,7 +1894,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-cup-of-china-2026:men-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261108T080000
 DTEND;TZID=Europe/Moscow:20261108T094500
 SUMMARY:GP Cup of China — мужчины ПП
@@ -1902,7 +1908,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-skate-america-2026:women-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261115T024200
 DTEND;TZID=Europe/Moscow:20261115T041200
 SUMMARY:GP Skate America — женщины КП
@@ -1915,7 +1921,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-skate-america-2026:women-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261116T000500
 DTEND;TZID=Europe/Moscow:20261116T015000
 SUMMARY:GP Skate America — женщины ПП
@@ -1928,9 +1934,9 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-finlandia-trophy-2026:pairs-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261120T150000
-DTEND;TZID=Europe/Moscow:20261120T161000
+DTEND;TZID=Europe/Moscow:20261120T160500
 SUMMARY:GP Finlandia Trophy — пары КП
 DESCRIPTION:Россияне:\n• Александра Бойкова / Д
  митрий Козловский\n• Екатерина Чикмарёв
@@ -1943,7 +1949,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-finlandia-trophy-2026:men-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261120T182500
 DTEND;TZID=Europe/Moscow:20261120T195500
 SUMMARY:GP Finlandia Trophy — мужчины КП
@@ -1956,9 +1962,9 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-finlandia-trophy-2026:pairs-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261121T131500
-DTEND;TZID=Europe/Moscow:20261121T143500
+DTEND;TZID=Europe/Moscow:20261121T142500
 SUMMARY:GP Finlandia Trophy — пары ПП
 DESCRIPTION:Россияне:\n• Александра Бойкова / Д
  митрий Козловский\n• Екатерина Чикмарёв
@@ -1971,7 +1977,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-finlandia-trophy-2026:men-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261121T181500
 DTEND;TZID=Europe/Moscow:20261121T200000
 SUMMARY:GP Finlandia Trophy — мужчины ПП
@@ -1984,7 +1990,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-nhk-trophy-2026:women-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261127T101500
 DTEND;TZID=Europe/Moscow:20261127T114500
 SUMMARY:GP NHK Trophy — женщины КП
@@ -1997,7 +2003,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-nhk-trophy-2026:men-senior-kp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261127T130000
 DTEND;TZID=Europe/Moscow:20261127T143000
 SUMMARY:GP NHK Trophy — мужчины КП
@@ -2010,7 +2016,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-nhk-trophy-2026:women-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261128T103000
 DTEND;TZID=Europe/Moscow:20261128T121500
 SUMMARY:GP NHK Trophy — женщины ПП
@@ -2023,7 +2029,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:isu:isu-gp-nhk-trophy-2026:men-senior-pp@starty
-DTSTAMP:20261027T174302Z
+DTSTAMP:20261028T123336Z
 DTSTART;TZID=Europe/Moscow:20261128T133000
 DTEND;TZID=Europe/Moscow:20261128T151500
 SUMMARY:GP NHK Trophy — мужчины ПП
