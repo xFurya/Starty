@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-28T15:33:36+03:00",
- "checked": "2026-10-28T12:52:33.430061+00:00",
+ "checked": "2026-10-28T13:08:33.282747+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -37637,14 +37637,15 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 14:50 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Зоя Ковязина / Дмитрий Родионов — 68.12\n\nНачало: 14:50 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Зоя Ковязина / Дмитрий Родионов",
      "nation": "МОС",
      "time": "14:57",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Арина Парсегова / Матвей Богданов",
@@ -37689,7 +37690,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Зоя Ковязина / Дмитрий Родионов",
+     "nation": "МОС",
+     "points": "68.12"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:dance-junior-pt",
