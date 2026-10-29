@@ -435,7 +435,13 @@ class DayPlate extends StatelessWidget {
         children.add(
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 14, 16, 0),
-            child: Eyebrow(s.tournament, color: p.accent, maxLines: 2),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Eyebrow(s.tournament, color: p.accent, maxLines: 2),
+                VenueLine(s.venue, color: p.ink2),
+              ],
+            ),
           ),
         );
         tid = s.tid;
@@ -500,6 +506,37 @@ class BroadcastLine extends StatelessWidget {
       ),
     ],
   );
+}
+
+/// Где проходит турнир: значок и место, как в источнике («Кристалл Арена, Красноярск»).
+/// Стоит сразу под названием турнира — один раз на плашку, а не у каждого старта.
+/// Места нет в данных — строки нет совсем.
+class VenueLine extends StatelessWidget {
+  final String venue;
+  final Color color;
+  final double size;
+  final EdgeInsets padding;
+  const VenueLine(this.venue, {super.key, required this.color, this.size = 13, this.padding = const EdgeInsets.only(top: 3)});
+  @override
+  Widget build(BuildContext context) {
+    if (venue.isEmpty) return const SizedBox.shrink();
+    return Padding(
+      padding: padding,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 1),
+            child: Icon(CupertinoIcons.location, size: MediaQuery.textScalerOf(context).scale(size), color: color, semanticLabel: 'Место'),
+          ),
+          const SizedBox(width: 6),
+          Flexible(
+            child: Text(venue, maxLines: 2, overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: size, color: color, height: 1.3)),
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 /// Наши, которые ещё не выходили (для идущего старта).
@@ -577,7 +614,10 @@ class StartTile extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (showTournament) Eyebrow(s.tournament, color: p.accent, maxLines: 2, padding: const EdgeInsets.only(top: 3)),
+              if (showTournament) ...[
+                Eyebrow(s.tournament, color: p.accent, maxLines: 2, padding: const EdgeInsets.only(top: 3)),
+                VenueLine(s.venue, color: p.ink2),
+              ],
               Padding(
                 padding: const EdgeInsets.only(top: 3),
                 child: Row(
@@ -874,6 +914,7 @@ class LiveCard extends StatelessWidget {
                     const SizedBox(height: 12),
                     // турнир — надзаголовком над видом
                     Eyebrow(s.tournament, color: dim, maxLines: 2),
+                    VenueLine(s.venue, color: dim),
                     const SizedBox(height: 4),
                     Text(disc, style: display(Palette.light, 36, color: white)),
                     if (seg.isNotEmpty)
@@ -998,7 +1039,11 @@ class PastTile extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      if (showTournament) Eyebrow(s.tournament, color: p.accent, maxLines: 2, padding: const EdgeInsets.only(bottom: 3)),
+                      if (showTournament) ...[
+                        Eyebrow(s.tournament, color: p.accent, maxLines: 2),
+                        VenueLine(s.venue, color: p.ink2, padding: const EdgeInsets.only(top: 3)),
+                        const SizedBox(height: 3),
+                      ],
                       SegTitle(start: s, size: 15.5),
                       if (s.broadcast.isNotEmpty) ...[
                         const SizedBox(height: 2),
