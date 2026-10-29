@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-29T16:12:47+03:00",
- "checked": "2026-10-29T14:24:28.558961+00:00",
+ "checked": "2026-10-29T14:28:28.964836+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -38838,7 +38838,7 @@
      "points": "51.82"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Leyla Cetin — 59.72\n2. Simona Tkachman — 54.44\n3. Elena Martinenghi — 51.82\n\nНачало: 15:25 МСК",
+   "desc": "Итог:\n1. Leyla Cetin — 59.72\n2. Simona Tkachman — 54.44\n3. Elena Martinenghi — 51.82\n\nПримечательное:\n• Leyla Cetin — Личный рекорд за КП: 59.72 (был 51.72)\n\nНачало: 15:25 МСК",
    "field": [
     {
      "name": "Lelle Agota Molnar",
@@ -38961,7 +38961,6 @@
      "place": 15
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
     "seg": "https://www.frponline.ro/html2/cryro2026/SEG007.htm",
@@ -38984,9 +38983,16 @@
      "Simona TKACHMAN": "Simona Tkachman",
      "Maryia LUKSHA": "Maryia Luksha"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "gs_crystal-skate.json"
+   "proto": "gs_crystal-skate.json",
+   "facts": [
+    {
+     "who": "Leyla Cetin",
+     "text": "Личный рекорд за КП: 59.72 (был 51.72)",
+     "kind": "score"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:women-junior-pp",
