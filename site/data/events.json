@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-29T16:12:47+03:00",
- "checked": "2026-10-29T14:04:29.118196+00:00",
+ "checked": "2026-10-29T14:08:28.657099+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -38859,7 +38859,7 @@
      "nation": "ROU",
      "no": 3,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "time": "15:42"
     },
     {
@@ -38867,7 +38867,7 @@
      "nation": "UKR",
      "no": 4,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "time": "15:48"
     },
     {
@@ -38937,7 +38937,8 @@
      "nation": "GER",
      "time": "17:01",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "place": 9
     },
     {
      "name": "Simona Tkachman",
@@ -38952,7 +38953,7 @@
      "time": "16:56",
      "no": 11,
      "warmup": 3,
-     "place": 11
+     "place": 12
     }
    ],
    "provisional": true,
