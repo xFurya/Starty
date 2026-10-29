@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-29T15:38:01+03:00",
- "checked": "2026-10-29T12:56:29.621807+00:00",
+ "checked": "2026-10-29T13:08:28.964823+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -38530,14 +38530,15 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 14:50 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Иван Теленков — 57.09\n\nНачало: 14:50 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Иван Теленков",
      "nation": "МОБ",
      "time": "14:57",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Андрей Вересов",
@@ -38686,7 +38687,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Иван Теленков",
+     "nation": "МОБ",
+     "points": "57.09"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "gs:crystal-skate:men-junior-kp",
