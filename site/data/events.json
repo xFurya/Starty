@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-29T15:55:43+03:00",
- "checked": "2026-10-29T13:24:28.684556+00:00",
+ "generated": "2026-10-29T16:12:47+03:00",
+ "checked": "2026-10-29T16:12:47+03:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -38530,15 +38530,51 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Эдуард Камоев — 75.43\n2. Максим Галкин — 62.06\n3. Иван Теленков — 57.09\n\nНачало: 14:50 МСК\nТрансляция: Первый канал / YouTube",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Максим Галкин",
+     "nation": "СВЕ",
+     "points": "62.06"
+    },
+    {
+     "place": 2,
+     "name": "Иван Теленков",
+     "nation": "МОБ",
+     "points": "57.09"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Максим Галкин — 62.06\n2. Иван Теленков — 57.09\n\nНачало: 14:50 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Иван Теленков",
      "nation": "МОБ",
-     "time": "14:57",
      "no": 1,
      "warmup": 1,
-     "place": 3
+     "place": 2,
+     "time": "14:57"
+    },
+    {
+     "name": "Максим Галкин",
+     "nation": "СВЕ",
+     "no": 2,
+     "warmup": 1,
+     "place": 1,
+     "time": "15:31"
+    },
+    {
+     "name": "Александр Чмиль",
+     "nation": "СПБ",
+     "time": "16:41",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Алексей Заводских",
+     "nation": "МОС",
+     "time": "15:50",
+     "no": 9,
+     "warmup": 2
     },
     {
      "name": "Андрей Вересов",
@@ -38547,6 +38583,41 @@
      "no": 4,
      "warmup": 1,
      "place": 4
+    },
+    {
+     "name": "Вадим Воронов",
+     "nation": "СПБ",
+     "time": "16:01",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Георгий Терехов",
+     "nation": "МОС",
+     "time": "16:35",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Глеб Ковтун",
+     "nation": "СПБ",
+     "time": "16:07",
+     "no": 12,
+     "warmup": 2
+    },
+    {
+     "name": "Евгений Семенов",
+     "nation": "ЛОБ",
+     "time": "15:39",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Илья Мальков",
+     "nation": "ТАТ",
+     "time": "15:56",
+     "no": 10,
+     "warmup": 2
     },
     {
      "name": "Леонид Новожилов",
@@ -38563,21 +38634,6 @@
      "warmup": 1
     },
     {
-     "name": "Максим Галкин",
-     "nation": "СВЕ",
-     "time": "15:31",
-     "no": 2,
-     "warmup": 1,
-     "place": 2
-    },
-    {
-     "name": "Евгений Семенов",
-     "nation": "ЛОБ",
-     "time": "15:39",
-     "no": 7,
-     "warmup": 2
-    },
-    {
      "name": "Марк Соколов",
      "nation": "МОС",
      "time": "15:44",
@@ -38585,53 +38641,17 @@
      "warmup": 2
     },
     {
-     "name": "Алексей Заводских",
-     "nation": "МОС",
-     "time": "15:50",
-     "no": 9,
-     "warmup": 2
-    },
-    {
-     "name": "Илья Мальков",
+     "name": "Марк Титов",
      "nation": "ТАТ",
-     "time": "15:56",
-     "no": 10,
-     "warmup": 2
-    },
-    {
-     "name": "Вадим Воронов",
-     "nation": "СПБ",
-     "time": "16:01",
-     "no": 11,
-     "warmup": 2
-    },
-    {
-     "name": "Глеб Ковтун",
-     "nation": "СПБ",
-     "time": "16:07",
-     "no": 12,
-     "warmup": 2
-    },
-    {
-     "name": "Эдуард Камоев",
-     "nation": "СПБ",
-     "time": "16:28",
-     "no": 3,
-     "warmup": 1,
-     "place": 1
-    },
-    {
-     "name": "Георгий Терехов",
-     "nation": "МОС",
-     "time": "16:35",
-     "no": 13,
+     "time": "16:58",
+     "no": 17,
      "warmup": 3
     },
     {
-     "name": "Александр Чмиль",
-     "nation": "СПБ",
-     "time": "16:41",
-     "no": 14,
+     "name": "Роман Глазов",
+     "nation": "НИЖ",
+     "time": "17:03",
+     "no": 18,
      "warmup": 3
     },
     {
@@ -38649,28 +38669,22 @@
      "warmup": 3
     },
     {
-     "name": "Марк Титов",
-     "nation": "ТАТ",
-     "time": "16:58",
-     "no": 17,
-     "warmup": 3
-    },
-    {
-     "name": "Роман Глазов",
-     "nation": "НИЖ",
-     "time": "17:03",
-     "no": 18,
-     "warmup": 3
+     "name": "Эдуард Камоев",
+     "nation": "СПБ",
+     "time": "16:28",
+     "no": 3,
+     "warmup": 1
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
     "seg": "https://fsrussia.ru/results/2627/4etap_jun/SEG001.htm",
     "cat": null,
     "first": null,
     "names": {
-     "Иван ТЕЛЕНКОВ": "Иван Теленков",
      "Максим ГАЛКИН": "Максим Галкин",
+     "Иван ТЕЛЕНКОВ": "Иван Теленков",
      "Эдуард КАМОЕВ": "Эдуард Камоев",
      "Андрей ВЕРЕСОВ": "Андрей Вересов",
      "Леонид НОВОЖИЛОВ": "Леонид Новожилов",
@@ -38690,28 +38704,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Эдуард Камоев",
-     "nation": "СПБ",
-     "points": "75.43"
-    },
-    {
-     "place": 2,
-     "name": "Максим Галкин",
-     "nation": "СВЕ",
-     "points": "62.06"
-    },
-    {
-     "place": 3,
-     "name": "Иван Теленков",
-     "nation": "МОБ",
-     "points": "57.09"
-    }
-   ],
-   "provisional": true
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
   },
   {
    "id": "gs:crystal-skate:men-junior-kp",
@@ -39413,7 +39406,7 @@
    "seg": "ПП",
    "title": "Crystal Skate — юноши ПП",
    "start": "2026-10-30T15:30:00+03:00",
-   "end": "2026-10-30T16:00:00+03:00",
+   "end": "2026-10-30T15:51:00+03:00",
    "venue": "Cheile Gradistei, Romania",
    "intl": true,
    "broadcast": [],
@@ -39428,12 +39421,14 @@
     {
      "name": "Razvan Cionac",
      "nation": "ROU",
+     "time": "15:36",
      "no": 1,
      "warmup": 1
     },
     {
      "name": "Bohdan Pomohaibo",
      "nation": "UKR",
+     "time": "15:43",
      "no": 2,
      "warmup": 1
     }
@@ -39460,7 +39455,7 @@
    "seg": "КП",
    "title": "Crystal Skate — мужчины КП",
    "start": "2026-10-30T16:16:00+03:00",
-   "end": "2026-10-30T16:46:00+03:00",
+   "end": "2026-10-30T16:42:00+03:00",
    "venue": "Cheile Gradistei, Romania",
    "intl": true,
    "broadcast": [],
@@ -39476,18 +39471,21 @@
     {
      "name": "Tamir Kuperman",
      "nation": "ISR",
+     "time": "16:22",
      "no": 1,
      "warmup": 1
     },
     {
      "name": "Filip Kaymakchiev",
      "nation": "BUL",
+     "time": "16:29",
      "no": 2,
      "warmup": 1
     },
     {
      "name": "Sylvain Ritchie",
      "nation": "FRA",
+     "time": "16:35",
      "no": 3,
      "warmup": 1
     }
@@ -39515,7 +39513,7 @@
    "seg": "КП",
    "title": "Crystal Skate — женщины КП",
    "start": "2026-10-30T16:55:00+03:00",
-   "end": "2026-10-30T17:55:00+03:00",
+   "end": "2026-10-30T17:54:00+03:00",
    "venue": "Cheile Gradistei, Romania",
    "intl": true,
    "broadcast": [],
@@ -39535,42 +39533,49 @@
     {
      "name": "Ana Sofia Beschea",
      "nation": "ROU",
+     "time": "17:01",
      "no": 1,
      "warmup": 1
     },
     {
      "name": "Julia Sauter",
      "nation": "ROU",
+     "time": "17:08",
      "no": 2,
      "warmup": 1
     },
     {
      "name": "Ana Stratulat",
      "nation": "ROU",
+     "time": "17:14",
      "no": 3,
      "warmup": 1
     },
     {
      "name": "Ekaterina Kurakova",
      "nation": "POL",
+     "time": "17:27",
      "no": 4,
      "warmup": 2
     },
     {
      "name": "Maria Smaranda",
      "nation": "ROU",
+     "time": "17:34",
      "no": 5,
      "warmup": 2
     },
     {
      "name": "Milana Mozeiko",
      "nation": "FRA",
+     "time": "17:40",
      "no": 6,
      "warmup": 2
     },
     {
      "name": "Lilian Musgrave",
      "nation": "GBR",
+     "time": "17:47",
      "no": 7,
      "warmup": 2
     }
