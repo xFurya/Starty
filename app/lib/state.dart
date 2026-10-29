@@ -697,9 +697,25 @@ class AppState extends ChangeNotifier {
     _liveTimer = null;
   }
 
+  /// Порядок опроса: идущие, потом ближайшие по времени к «сейчас» (вот-вот начнутся или только
+  /// закончились). Без этого при длинном дне утренние сегменты занимали все места, и идущий
+  /// в конец списка не попадал.
+  @visibleForTesting
+  static List<Start> pollOrder(Iterable<Start> starts, DateTime t) {
+    Duration gap(Start s) =>
+        t.isBefore(s.t0) ? s.t0.difference(t) : (t.isAfter(s.t1) ? t.difference(s.t1) : Duration.zero);
+    final items = starts.toList();
+    final index = {for (var i = 0; i < items.length; i++) items[i]: i};
+    items.sort((a, b) {
+      final c = gap(a).compareTo(gap(b));
+      return c != 0 ? c : index[a]!.compareTo(index[b]!);
+    });
+    return items;
+  }
+
   Future<void> pollLive() async {
     if (_polling || data == null) return;
-    final list = watching.take(8).toList();
+    final list = pollOrder(watching, now()).take(8).toList();
     if (list.isEmpty) return;
     _polling = true;
     try {

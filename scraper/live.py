@@ -28,12 +28,15 @@ AFTER = dt.timedelta(hours=24)
 # несостоявшиеся итоги (оценки так и не выложили) — раз за запуск задания, то есть раз в час.
 HOT_AFTER = dt.timedelta(minutes=90)
 # Старт, до которого меньше этого, цикл ждёт, не выходя: следующий запуск по расписанию может
-# опоздать (cron GitHub не точен), и начало старта было бы пропущено.
-HORIZON = dt.timedelta(minutes=75)
+# опоздать (cron GitHub не точен: 29 октября запусков не было с 5:31 до 13:05 МСК, и утренние
+# сегменты остались без итогов), и начало старта было бы пропущено. Задание живёт до 5 ч 50 мин.
+HORIZON = dt.timedelta(hours=5)
 # Запросов к табло за прогон (оглавления, страницы сегментов, PDF оценок, итоги, судьи) и
 # таймаут одного запроса: задание live — 10 минут. Не хватило бюджета — сегмент остаётся
-# как в прошлом файле, в журнал пишется, что пропущено.
+# как в прошлом файле, в журнал пишется, что пропущено. Полный проход (горячие и старые
+# неокончательные вместе) шире: старых сегментов в нём может быть несколько.
 BUDGET = 12
+COLD_BUDGET = 30
 TIMEOUT, TRIES = 15, 2
 
 
@@ -72,6 +75,14 @@ def plan(events, now):
     if soon:
         return "wait", max(1, int(min(soon).total_seconds()))
     return "none", 0
+
+
+def to_refresh(events, now, hot_only):
+    """События прохода. Горячие — первыми: бюджет запросов не должен уйти на старые сегменты
+    раньше идущих (сортировка устойчивая, внутри групп порядок файла)."""
+    todo = [e for e in events if active(e, now, hot=hot_only)]
+    todo.sort(key=lambda e: not active(e, now, hot=True))
+    return todo
 
 
 def load():
@@ -287,7 +298,8 @@ def main():
         what, secs = plan(data["events"], now)
         print(f"wait {secs}" if what == "wait" else what)
         return 0
-    todo = [e for e in data["events"] if active(e, now, hot="--hot" in sys.argv)]
+    hot_only = "--hot" in sys.argv
+    todo = to_refresh(data["events"], now, hot_only)
     if "--check" in sys.argv:
         print(f"идут или только что прошли: {len(todo)}")
         return 0 if todo else 1
@@ -296,7 +308,8 @@ def main():
         return 0
     names = nm.Names(b.NAMES, b.CFG.get("aliases"))
     indexes = {}
-    fetcher = P.Fetcher(budget=BUDGET, timeout=TIMEOUT, tries=TRIES)
+    budget = BUDGET if hot_only else COLD_BUDGET
+    fetcher = P.Fetcher(budget=budget, timeout=TIMEOUT, tries=TRIES)
     changed = 0
     for ev in todo:
         url = ev["live"]["idx"]
@@ -314,7 +327,7 @@ def main():
     P.attach_proto(data["events"], b.PROTO_DIR)
     if [e.get("proto") for e in data["events"]] != before:
         changed += 1
-    b.log(f"запросов к табло: {fetcher.requests} из {BUDGET}; файлов протоколов записано: {written}")
+    b.log(f"запросов к табло: {fetcher.requests} из {budget}; файлов протоколов записано: {written}")
     if fetcher.skipped:
         b.log(f"  ! бюджет запросов исчерпан, пропущено {len(fetcher.skipped)}: "
               + ", ".join(dict.fromkeys(fetcher.skipped)))

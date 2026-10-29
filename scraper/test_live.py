@@ -424,7 +424,9 @@ class Plan(unittest.TestCase):
         self.assertEqual(live.plan([old], t), ("cold", 0))
         soon = self.ev(t + dt.timedelta(minutes=40), t + 2 * h)
         self.assertEqual(live.plan([soon], t), ("wait", 25 * 60))  # до начала окна опроса (старт минус 15 минут)
-        far = self.ev(t + 3 * h, t + 4 * h)
+        later = self.ev(t + 3 * h, t + 4 * h)  # в пределах горизонта: ждём, а не надеемся на cron
+        self.assertEqual(live.plan([later], t), ("wait", 3 * 3600 - 15 * 60))
+        far = self.ev(t + live.HORIZON + 2 * h, t + live.HORIZON + 3 * h)
         self.assertEqual(live.plan([far], t), ("none", 0))
         done = self.ev(t - 10 * h, t - 8 * h, basis="judges")
         done["podium"] = [{"place": 1}]
@@ -436,6 +438,15 @@ class Plan(unittest.TestCase):
         old = self.ev(t - dt.timedelta(hours=10), t - dt.timedelta(hours=8))
         self.assertTrue(live.active(old, t))
         self.assertFalse(live.active(old, t, hot=True))
+
+    def test_hot_events_go_first(self):
+        """Утренний сегмент без итогов не должен остаться за бортом, но идущий опрашивается раньше."""
+        t = dt.datetime(2026, 10, 16, 12, 0, tzinfo=MSK)
+        h = dt.timedelta(hours=1)
+        old = self.ev(t - 5 * h, t - 4 * h)
+        running = self.ev(t - h, t + h)
+        self.assertEqual(live.to_refresh([old, running], t, hot_only=False), [running, old])
+        self.assertEqual(live.to_refresh([old, running], t, hot_only=True), [running])
 
 
 def _isu_event(slug, sub, start, end, url=None):

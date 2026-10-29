@@ -666,6 +666,8 @@ def do_fsr(names, report, failed, upcoming, photos):
         except net.FetchError as e:
             log("  ! страница турнира:", e)
     report["fsr_pages"] = pages  # региональные источники отбрасывают турниры, уже взятые отсюда
+    # и записи календаря без страницы: их тоже нельзя заводить второй раз пустой записью «без расписания»
+    report["fsr_cal"] = [{"title": c["title"], "start": c["start"], "end": c["end"]} for c in cal]
 
     gp_names = set()
     for c in cal:
@@ -804,7 +806,18 @@ def _tag_regional(events, region):
     return events
 
 
-def do_ffkm(names, report, failed, upcoming, fed_pages):
+def _ffkm_rn_tid(r, name):
+    """id турнира ФФКМ без табло — реестровый номер: название и даты по slugify склеиваются (обрезка
+    60 знаков). Номера нет у многих записей календаря — тогда карточка (в адресе номер статьи), а без
+    неё название с датой; иначе у всех таких турниров один id, и они подменяют друг друга в кэше."""
+    if r["number"]:
+        return "ffkm:rn" + r["number"]
+    if r["page"]:
+        return "ffkm:" + rg.tail(r["page"])
+    return "ffkm:" + slugify(name + "-" + r["start"].isoformat())
+
+
+def do_ffkm(names, report, failed, upcoming, fed_pages, fed_cal=()):
     """ФФКМ (Москва): календарь → карточка турнира → табло (классическая вёрстка).
     Карточная вёрстка табло пока не разбирается: турнир уходит в «без расписания»."""
     try:
@@ -825,8 +838,7 @@ def do_ffkm(names, report, failed, upcoming, fed_pages):
             continue
         name = r["title"]
         venue = ru_venue("Москва", r["place"])
-        # id без табло — реестровый номер ФФКМ: название и даты по slugify склеиваются (обрезка 60 знаков)
-        rn_tid = "ffkm:rn" + r["number"]
+        rn_tid = _ffkm_rn_tid(r, name)
         try:
             table = rg.ffkm_detail(r["page"], r["start"]) if r["page"] else None
         except net.FetchError as e:
@@ -858,12 +870,13 @@ def do_ffkm(names, report, failed, upcoming, fed_pages):
             if got:
                 events += got
                 log(f"  ФФКМ {name}: {len(got)}")
-        if not got and r["end"] >= today:
+        # тот же турнир есть в федеральном календаре — вторую пустую запись «без расписания» не заводим
+        if not got and r["end"] >= today and not _fed_dup(name, r["start"], r["end"], fed_cal):
             upcoming.append(_regional_upcoming(tid, name, r["start"], r["end"], venue, "Москва"))
     return events
 
 
-def do_samara(names, report, failed, upcoming, fed_pages):
+def do_samara(names, report, failed, upcoming, fed_pages, fed_cal=()):
     """Самарская область (СООО «ФФКК», skate63.ru): статьи турниров сезона → расписания PDF.
     Календарь PDF — сверка дат. Протоколы не разбираются: своя вёрстка, разборщика пока нет.
     Расписание PDF без вида катания («Короткая программа – КМС») не даёт стартов: вид неизвестен."""
@@ -932,7 +945,7 @@ def do_samara(names, report, failed, upcoming, fed_pages):
         if got:
             events += _tag_regional(got, "Самарская область")
             log(f"  Самара {c['title']}: {len(got)}")
-        elif c["end"] >= today:
+        elif c["end"] >= today and not _fed_dup(c["title"], c["start"], c["end"], fed_cal):
             upcoming.append(_regional_upcoming(tid, c["title"], c["start"], c["end"], "", "Самарская область"))
     if cal is not None:
         log(f"  Самара: даты статей совпали с календарём PDF: {matched} из {len(cards)}")
@@ -1195,9 +1208,10 @@ def main():
     # Регионы: старты с tier=regional. Статус источника — «ok» или причина текстом;
     # сбой оставляет прошлые старты этого источника (как у федеральных).
     fed_pages = report.get("fsr_pages") or []
+    fed_cal = report.get("fsr_cal") or []
     for label, prefix, fn in (
-            ("ФФКМ", "ffkm:", lambda: do_ffkm(names, report, failed, upcoming, fed_pages)),
-            ("Самара", "samara:", lambda: do_samara(names, report, failed, upcoming, fed_pages))):
+            ("ФФКМ", "ffkm:", lambda: do_ffkm(names, report, failed, upcoming, fed_pages, fed_cal)),
+            ("Самара", "samara:", lambda: do_samara(names, report, failed, upcoming, fed_pages, fed_cal))):
         try:
             events += fn()
             report["sources"][label] = "ok"

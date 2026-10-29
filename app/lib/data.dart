@@ -837,14 +837,28 @@ class Schedule {
           s,
     ]..sort((a, b) => a.t0.compareTo(b.t0));
     final tids = {for (final s in starts) s.tid};
-    final oldUp = {for (final u in old.upcoming) u.tid: u};
-    final freshUp = {for (final u in fresh.upcoming) u.tid};
+    // id у разных «скоро» бывает общим (баг сборщика) — прежняя запись выбирается ещё и по названию
+    Upcoming? oldUpOf(Upcoming f) {
+      for (final u in old.upcoming) {
+        if (u.tid == f.tid && norm(u.name) == norm(f.name)) return u;
+      }
+      return null;
+    }
+
+    bool inFresh(Upcoming u) => fresh.upcoming.any((f) => f.tid == u.tid && norm(f.name) == norm(u.name));
     final today = dayKey(at.subtract(const Duration(days: 2)));
+    // когда у турнира появляется страница с расписанием, его id меняется: прежняя запись «скоро» с тем
+    // же названием и днями — это тот же турнир, второй раз его не показываем
+    bool replaced(Upcoming u) =>
+        starts.any((s) => norm(s.tournament) == norm(u.name) && _near(u, s.day, s.day)) ||
+        fresh.upcoming.any((f) => f.tid != u.tid && norm(f.name) == norm(u.name) && _near(u, f.start, f.end));
     final upcoming = [
-      for (final u in fresh.upcoming) oldUp[u.tid] == null ? u : Upcoming.mergeKeepingRicher(oldUp[u.tid]!, u, faulty: faulty),
-      // турнир, у которого появилось расписание по сегментам, из «скоро» уходит сам
-      for (final u in old.upcoming)
-        if (!freshUp.contains(u.tid) && !tids.contains(u.tid) && u.end.compareTo(today) >= 0) u,
+      for (final u in fresh.upcoming) oldUpOf(u) == null ? u : Upcoming.mergeKeepingRicher(oldUpOf(u)!, u, faulty: faulty),
+      // чистый сбор: список «скоро» — решение сборщика, он сам держит записи упавших источников, и пропавшая
+      // запись пропала сознательно. Сбойный — прежние остаются, пока турнир не кончился
+      if (faulty)
+        for (final u in old.upcoming)
+          if (!inFresh(u) && !tids.contains(u.tid) && u.end.compareTo(today) >= 0 && !replaced(u)) u,
     ]..sort((a, b) => a.start.compareTo(b.start));
     return Schedule(
       starts,
@@ -862,6 +876,13 @@ class Schedule {
       epoch: fresh.epoch,
       factsVersion: fresh.factsVersion,
     );
+  }
+
+  /// Дни [from]–[to] (yyyy-MM-dd) лежат рядом с днями записи [u]: неделя запаса на перенос.
+  static bool _near(Upcoming u, String from, String to) {
+    const slack = Duration(days: 7);
+    final a = DateTime.parse(u.start).subtract(slack), b = DateTime.parse(u.end).add(slack);
+    return !DateTime.parse(to).isBefore(a) && !DateTime.parse(from).isAfter(b);
   }
 
   /// Под выбор человека: кого показывать в карточках и что попадает в ленту.

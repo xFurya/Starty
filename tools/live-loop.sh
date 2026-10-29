@@ -2,7 +2,8 @@
 # Цикл живых итогов (live.yml). Пока есть идущие или недавние старты — каждые LIVE_INTERVAL секунд
 # (по умолчанию 240) один проход scraper.live; сам заканчивается, когда стартов нет или вышло
 # LIVE_MAX секунд (по умолчанию 21000 = 5 ч 50 мин: потолок задания GitHub — 6 ч). Следующий
-# запуск по расписанию подхватывает дальше.
+# запуск по расписанию подхватывает дальше. Раз в LIVE_COLD_EVERY секунд (900) вместо горячего
+# прохода идёт полный — с неокончательными итогами уже прошедших сегментов.
 #
 # Что делает проход (под общей блокировкой tools/pages-lock.sh — короткий шаг, секунды):
 #   main → свежие протоколы с gh-pages → scraper.live → коммит в main → публикация gh-pages.
@@ -13,6 +14,7 @@
 set -uo pipefail
 INTERVAL=${LIVE_INTERVAL:-240}
 MAX=${LIVE_MAX:-21000}
+COLD_EVERY=${LIVE_COLD_EVERY:-900}
 started=$(date +%s)
 export STARTY_URL="https://${GITHUB_REPOSITORY_OWNER,,}.github.io/${GITHUB_REPOSITORY#*/}/"
 git config user.name "github-actions[bot]"
@@ -55,6 +57,7 @@ pass() {  # $1 — режим scraper.live ("--hot" или пусто)
 }
 
 first=1
+last_full=0
 while :; do
   loop_start=$(date +%s)
   [ $(( loop_start - started )) -ge "$MAX" ] && { echo "время задания вышло"; exit 0; }
@@ -62,7 +65,15 @@ while :; do
   read -r what secs <<<"$(python3 -m scraper.live --plan)"
   echo "$(date -u +%H:%M:%S) план: $what ${secs:-}"
   case "$what" in
-    hot) pass --hot ;;
+    hot)
+      # идущие старты — каждый проход, а старые неокончательные итоги (утренние сегменты, до
+      # которых задание не дотянулось) — полным проходом при входе и раз в COLD_EVERY секунд:
+      # иначе, пока идёт хоть один старт, они не обновлялись бы вовсе
+      if [ "$first" = 1 ] || [ $(( loop_start - last_full )) -ge "$COLD_EVERY" ]; then
+        pass ""; last_full=$(date +%s)
+      else
+        pass --hot
+      fi ;;
     cold) if [ "$first" = 1 ]; then pass ""; fi; exit 0 ;;   # старые неокончательные итоги — раз за запуск
     wait)
       # до начала старта: ждём, но не дольше, чем хватит задания, и не больше 5 минут за раз

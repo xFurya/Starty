@@ -446,12 +446,43 @@ void main() {
       expect(m.starts.single.facts, hasLength(12));
     });
 
-    test('турнир «скоро» уходит, когда у него появились сегменты, а пропавший остаётся', () {
-      Map<String, dynamic> up(String tid) => {'tid': tid, 'name': tid, 'start': '2026-10-20', 'end': '2026-10-22', 'intl': true};
+    Map<String, dynamic> up(String tid, {String? name, String start = '2026-10-20', String end = '2026-10-22'}) =>
+        {'tid': tid, 'name': name ?? tid, 'start': start, 'end': end, 'intl': true};
+
+    test('турнир «скоро» уходит, когда у него появились сегменты; при сбойном сборе пропавший остаётся', () {
       final old = sched([], upcoming: [up('isu:denis-ten'), up('isu:other')]);
-      final fresh = sched([startJson()]);
+      final fresh = sched([startJson()], complete: false);
       final m = Schedule.mergeKeepingRicher(old, fresh, now: _at);
       expect(m.upcoming.map((u) => u.tid), ['isu:other']);
+    });
+
+    test('чистый сбор: список «скоро» — решение сборщика, пропавшая запись не висит «без расписания»', () {
+      final old = sched([], upcoming: [up('isu:denis-ten'), up('isu:other')]);
+      final m = Schedule.mergeKeepingRicher(old, sched([startJson()]), now: _at);
+      expect(m.upcoming, isEmpty);
+    });
+
+    test('у турнира появилась страница и новый id — прежняя запись «скоро» с тем же названием не остаётся', () {
+      // старт: «CS Denis Ten Memorial» 10 октября; в кэше он висел «скоро» под прежним id
+      final old = sched([], upcoming: [up('fsr:denis-ten-2026-10-08', name: 'CS Denis Ten Memorial', start: '2026-10-08', end: '2026-10-11'), up('isu:other')]);
+      final fresh = sched([startJson()], complete: false);
+      final m = Schedule.mergeKeepingRicher(old, fresh, now: _at);
+      expect(m.upcoming.map((u) => u.tid), ['isu:other']);
+    });
+
+    test('турнир сменил id, но остался «скоро» — прежняя запись с тем же названием не дублирует новую', () {
+      final old = sched([], upcoming: [up('fsr:a-2026-11-03', name: 'ЮГП «Золото»', start: '2026-11-03', end: '2026-11-06')]);
+      final fresh = sched([], complete: false, upcoming: [up('fsr:zoloto', name: 'ЮГП «Золото»', start: '2026-11-04', end: '2026-11-07')]);
+      final m = Schedule.mergeKeepingRicher(old, fresh, now: _at);
+      expect(m.upcoming.map((u) => u.tid), ['fsr:zoloto']);
+    });
+
+    test('одинаковый id у разных «скоро»: каждый сливается только со своей прежней записью', () {
+      Map<String, dynamic> withOurs(String name, List<String> ours) => {...up('ffkm:rn', name: name), 'ours': ours};
+      final old = sched([], upcoming: [withOurs('Кубок А', ['А Б']), withOurs('Кубок Б', [])]);
+      final fresh = sched([], upcoming: [withOurs('Кубок А', []), withOurs('Кубок Б', [])]);
+      final m = Schedule.mergeKeepingRicher(old, fresh, now: _at);
+      expect({for (final u in m.upcoming) u.name: u.ours}, {'Кубок А': ['А Б'], 'Кубок Б': <String>[]});
     });
 
     test('toJson и parse: расписание переживает кэш', () {

@@ -167,8 +167,9 @@ class _StartSheet extends StatelessWidget {
                             style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink),
                           ),
                           const SizedBox(height: 3),
+                          // затянувшийся сегмент идёт дольше расписания: прошедшее время не выдаём за конец
                           Text(
-                            'до$nb${hm(s.t1)}$nbМСК',
+                            '${s.overrunAt(t) ? 'по расписанию ' : ''}до$nb${hm(s.t1)}$nbМСК',
                             style: TextStyle(fontSize: 13, color: p.ink2, fontFeatures: tnum),
                           ),
                         ],

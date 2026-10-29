@@ -246,6 +246,23 @@ class BuildHelpers(unittest.TestCase):
         self.assertFalse(b._fed_dup("Первенство Москвы", dt.date(2026, 8, 25), dt.date(2026, 8, 28), fed))
         self.assertFalse(b._fed_dup("Кубок «Другой»", dt.date(2026, 8, 24), dt.date(2026, 8, 28), fed))
 
+    def test_federal_calendar_entry_without_page_is_a_duplicate_too(self):
+        cal = [{"start": dt.date(2027, 1, 28), "end": dt.date(2027, 1, 29),
+                "title": 'Всероссийские соревнования "На призы ЗТ СССР Е.А. Чайковской"'}]
+        self.assertTrue(b._fed_dup("Всероссийские соревнования «На призы ЗТ СССР Е.А. Чайковской»",
+                                   dt.date(2027, 1, 28), dt.date(2027, 1, 29), cal))
+
+    def test_ffkm_tid_is_unique_without_registry_number(self):
+        a = {"number": "", "page": "https://ffkm.ru/x/detail/vs-led-mechty-a1554/", "start": dt.date(2026, 9, 23)}
+        c = {"number": "", "page": "https://ffkm.ru/x/detail/turnir-vesna-a1700/", "start": dt.date(2027, 4, 9)}
+        self.assertNotEqual(b._ffkm_rn_tid(a, "ВС «Лед Мечты»"), b._ffkm_rn_tid(c, "Турнир «Весна»"))
+        self.assertEqual(b._ffkm_rn_tid(a, "ВС «Лед Мечты»"), "ffkm:vs-led-mechty-a1554")
+        # номер есть — по нему, как раньше
+        self.assertEqual(b._ffkm_rn_tid({"number": "89500", "page": "", "start": dt.date(2026, 8, 14)}, "Х"), "ffkm:rn89500")
+        # нет ни номера, ни карточки — название с датой
+        t = b._ffkm_rn_tid({"number": "", "page": "", "start": dt.date(2026, 8, 14)}, "Турнир Весна")
+        self.assertTrue(t.startswith("ffkm:") and "2026-08-14" in t)
+
     def test_regional_upcoming_is_tagged(self):
         u = b._regional_upcoming("ffkm:x", "Первенство", dt.date(2026, 8, 24), dt.date(2026, 8, 28), "ЛД", "Москва")
         self.assertEqual((u["tier"], u["region"], u["intl"]), ("regional", "Москва", False))
