@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-28T21:04:52+03:00",
- "checked": "2026-10-29T12:28:33.120030+00:00",
+ "checked": "2026-10-29T12:32:29.226988+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -38279,7 +38279,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Виктория Стрельцова — 74.89\n2. Екатерина Корчажникова — 70.54\n3. Анастасия Выровая — 65.41\n\nРоссияне:\n• Виктория Стрельцова — 13:57\n• Екатерина Корчажникова — 14:03\n\nНачало: 12:10 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Виктория Стрельцова — 74.89\n2. Екатерина Корчажникова — 70.54\n3. Екатерина Стоцкая — 65.63\n\nРоссияне:\n• Виктория Стрельцова — 13:57\n• Екатерина Корчажникова — 14:03\n\nНачало: 12:10 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Дарья Антонова",
@@ -38287,7 +38287,7 @@
      "time": "12:17",
      "no": 1,
      "warmup": 1,
-     "place": 14
+     "place": 15
     },
     {
      "name": "Алёна Клопова",
@@ -38295,7 +38295,7 @@
      "time": "12:35",
      "no": 4,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Екатерина Чувакина",
@@ -38303,7 +38303,7 @@
      "time": "12:40",
      "no": 5,
      "warmup": 1,
-     "place": 17
+     "place": 18
     },
     {
      "name": "Мария Драчёва",
@@ -38311,7 +38311,7 @@
      "time": "12:46",
      "no": 6,
      "warmup": 1,
-     "place": 13
+     "place": 14
     },
     {
      "name": "Эвелина Шестакова",
@@ -38319,7 +38319,7 @@
      "time": "12:52",
      "no": 2,
      "warmup": 1,
-     "place": 16
+     "place": 17
     },
     {
      "name": "Полина Бершадская",
@@ -38327,7 +38327,7 @@
      "time": "13:00",
      "no": 7,
      "warmup": 2,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Алина Локтева",
@@ -38335,7 +38335,7 @@
      "time": "13:05",
      "no": 8,
      "warmup": 2,
-     "place": 12
+     "place": 13
     },
     {
      "name": "Аделина Кузнецова",
@@ -38343,7 +38343,7 @@
      "time": "13:11",
      "no": 9,
      "warmup": 2,
-     "place": 10
+     "place": 11
     },
     {
      "name": "Алиса Мильто",
@@ -38351,7 +38351,7 @@
      "time": "13:17",
      "no": 10,
      "warmup": 2,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Александра Анушова",
@@ -38359,7 +38359,7 @@
      "time": "13:23",
      "no": 11,
      "warmup": 2,
-     "place": 9
+     "place": 10
     },
     {
      "name": "Анастасия Выровая",
@@ -38367,7 +38367,7 @@
      "time": "13:29",
      "no": 12,
      "warmup": 2,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Диана Сашина",
@@ -38375,7 +38375,7 @@
      "time": "13:50",
      "no": 3,
      "warmup": 1,
-     "place": 11
+     "place": 12
     },
     {
      "name": "Виктория Стрельцова",
@@ -38399,7 +38399,7 @@
      "time": "14:09",
      "no": 15,
      "warmup": 3,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Кристина Двуреченская",
@@ -38407,7 +38407,7 @@
      "time": "14:15",
      "no": 16,
      "warmup": 3,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Дарья Загуменная",
@@ -38415,14 +38415,15 @@
      "time": "14:20",
      "no": 17,
      "warmup": 3,
-     "place": 15
+     "place": 16
     },
     {
      "name": "Екатерина Стоцкая",
      "nation": "МОС",
      "time": "14:26",
      "no": 18,
-     "warmup": 3
+     "warmup": 3,
+     "place": 3
     }
    ],
    "live": {
@@ -38450,7 +38451,7 @@
      "Дарья ЗАГУМЕННАЯ": "Дарья Загуменная",
      "Екатерина СТОЦКАЯ": "Екатерина Стоцкая"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json",
    "podium": [
@@ -38468,12 +38469,11 @@
     },
     {
      "place": 3,
-     "name": "Анастасия Выровая",
-     "nation": "ТАТ",
-     "points": "65.41"
+     "name": "Екатерина Стоцкая",
+     "nation": "МОС",
+     "points": "65.63"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:men-junior-kp",
@@ -38756,14 +38756,15 @@
     "Sonia Milik"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Начало: 15:25 МСК",
+   "desc": "Промежуточные итоги:\n1. Lelle Agota Molnar — 48.34\n\nНачало: 15:25 МСК",
    "field": [
     {
      "name": "Lelle Agota Molnar",
      "nation": "ROU",
      "time": "15:31",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Maria Sycova",
@@ -38888,7 +38889,16 @@
     },
     "basis": null
    },
-   "proto": "gs_crystal-skate.json"
+   "proto": "gs_crystal-skate.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Lelle Agota Molnar",
+     "nation": "ROU",
+     "points": "48.34"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:women-junior-pp",
