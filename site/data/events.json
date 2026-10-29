@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-29T16:12:47+03:00",
- "checked": "2026-10-29T16:12:47+03:00",
+ "checked": "2026-10-29T13:28:30.346085+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -38533,25 +38533,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Эдуард Камоев",
+     "nation": "СПБ",
+     "points": "75.43"
+    },
+    {
+     "place": 2,
      "name": "Максим Галкин",
      "nation": "СВЕ",
      "points": "62.06"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Иван Теленков",
      "nation": "МОБ",
      "points": "57.09"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Максим Галкин — 62.06\n2. Иван Теленков — 57.09\n\nНачало: 14:50 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Эдуард Камоев — 75.43\n2. Максим Галкин — 62.06\n3. Иван Теленков — 57.09\n\nНачало: 14:50 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Иван Теленков",
      "nation": "МОБ",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "time": "14:57"
     },
     {
@@ -38559,7 +38565,7 @@
      "nation": "СВЕ",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "time": "15:31"
     },
     {
@@ -38673,7 +38679,8 @@
      "nation": "СПБ",
      "time": "16:28",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     }
    ],
    "provisional": true,
@@ -38812,18 +38819,18 @@
     },
     {
      "place": 2,
-     "name": "Maria Sycova",
-     "nation": "SVK",
-     "points": "40.86"
+     "name": "Natalia Runcanu",
+     "nation": "ROU",
+     "points": "44.21"
     },
     {
      "place": 3,
-     "name": "Adria Liliac",
-     "nation": "ROU",
-     "points": "37.06"
+     "name": "Maria Sycova",
+     "nation": "SVK",
+     "points": "40.86"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Lelle Agota Molnar — 48.34\n2. Maria Sycova — 40.86\n3. Adria Liliac — 37.06\n\nНачало: 15:25 МСК",
+   "desc": "Промежуточные итоги:\n1. Lelle Agota Molnar — 48.34\n2. Natalia Runcanu — 44.21\n3. Maria Sycova — 40.86\n\nНачало: 15:25 МСК",
    "field": [
     {
      "name": "Lelle Agota Molnar",
@@ -38838,7 +38845,7 @@
      "nation": "SVK",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "time": "15:37"
     },
     {
@@ -38846,7 +38853,7 @@
      "nation": "ROU",
      "no": 3,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "time": "15:42"
     },
     {
@@ -38854,7 +38861,7 @@
      "nation": "UKR",
      "no": 4,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "time": "15:48"
     },
     {
@@ -38862,7 +38869,7 @@
      "nation": "ROU",
      "no": 5,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "time": "15:54"
     },
     {
@@ -38905,7 +38912,8 @@
      "nation": "ROU",
      "time": "16:21",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2
     },
     {
      "name": "Nikol Kuperman",
