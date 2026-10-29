@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-29T15:38:01+03:00",
- "checked": "2026-10-29T13:08:28.964823+00:00",
+ "generated": "2026-10-29T15:55:43+03:00",
+ "checked": "2026-10-29T15:55:43+03:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -38475,9 +38475,9 @@
    },
    "facts": [
     {
-     "who": "Виктория Стрельцова",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Виктория Стрельцова"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
@@ -38842,12 +38842,20 @@
      "time": "15:42"
     },
     {
+     "name": "Anhelina Kapuka",
+     "nation": "UKR",
+     "no": 4,
+     "warmup": 1,
+     "place": 4,
+     "time": "15:48"
+    },
+    {
      "name": "Adria Liliac",
      "nation": "ROU",
-     "time": "15:54",
      "no": 5,
      "warmup": 1,
-     "place": 3
+     "place": 3,
+     "time": "15:54"
     },
     {
      "name": "Andreea Cristiana Maria Lazar",
@@ -38855,14 +38863,6 @@
      "time": "16:38",
      "no": 9,
      "warmup": 2
-    },
-    {
-     "name": "Anhelina Kapuka",
-     "nation": "UKR",
-     "time": "15:48",
-     "no": 4,
-     "warmup": 1,
-     "place": 4
     },
     {
      "name": "Elena Martinenghi",
@@ -38937,9 +38937,9 @@
     "names": {
      "Lelle Agota MOLNAR": "Lelle Agota Molnar",
      "Maria SYCOVA": "Maria Sycova",
-     "Iris Victoria CIUREZU": "Iris Victoria Ciurezu",
-     "Anhelina KAPUKA": "Anhelina Kapuka",
      "Adria LILIAC": "Adria Liliac",
+     "Anhelina KAPUKA": "Anhelina Kapuka",
+     "Iris Victoria CIUREZU": "Iris Victoria Ciurezu",
      "Natalia RUNCANU": "Natalia Runcanu",
      "Elena MARTINENGHI": "Elena Martinenghi",
      "Nikol KUPERMAN": "Nikol Kuperman",
@@ -65121,6 +65121,7 @@
   "Veronika Bykonia": "photos/d129f97d122b2a28.jpg",
   "Артемий Маринин": "photos/95a8e4669f0ab66c.jpg",
   "Валерия Лукашова": "photos/b9268e15fbc00786.jpg",
-  "Любовь Рубцова": "photos/3d03054a77c01ddf.jpg"
+  "Любовь Рубцова": "photos/3d03054a77c01ddf.jpg",
+  "Adria Liliac": "photos/032ffdb83d3369a9.jpg"
  }
 }
