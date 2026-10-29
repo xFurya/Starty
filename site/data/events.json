@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-29T16:12:47+03:00",
- "checked": "2026-10-29T13:44:28.688460+00:00",
+ "checked": "2026-10-29T13:48:28.532710+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -38557,7 +38557,7 @@
      "nation": "МОБ",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "time": "14:57"
     },
     {
@@ -38588,7 +38588,7 @@
      "time": "15:14",
      "no": 4,
      "warmup": 1,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Вадим Воронов",
@@ -38616,7 +38616,8 @@
      "nation": "ЛОБ",
      "time": "15:39",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5
     },
     {
      "name": "Илья Мальков",
@@ -38815,31 +38816,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Leyla Cetin",
+     "nation": "TUR",
+     "points": "59.72"
+    },
+    {
+     "place": 2,
      "name": "Elena Martinenghi",
      "nation": "SUI",
      "points": "51.82"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Lelle Agota Molnar",
      "nation": "ROU",
      "points": "48.34"
-    },
-    {
-     "place": 3,
-     "name": "Natalia Runcanu",
-     "nation": "ROU",
-     "points": "44.21"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Elena Martinenghi — 51.82\n2. Lelle Agota Molnar — 48.34\n3. Natalia Runcanu — 44.21\n\nНачало: 15:25 МСК",
+   "desc": "Промежуточные итоги:\n1. Leyla Cetin — 59.72\n2. Elena Martinenghi — 51.82\n3. Lelle Agota Molnar — 48.34\n\nНачало: 15:25 МСК",
    "field": [
     {
      "name": "Lelle Agota Molnar",
      "nation": "ROU",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "time": "15:31"
     },
     {
@@ -38847,7 +38848,7 @@
      "nation": "SVK",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "time": "15:37"
     },
     {
@@ -38855,7 +38856,7 @@
      "nation": "ROU",
      "no": 3,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "time": "15:42"
     },
     {
@@ -38863,7 +38864,7 @@
      "nation": "UKR",
      "no": 4,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "time": "15:48"
     },
     {
@@ -38871,7 +38872,7 @@
      "nation": "ROU",
      "no": 5,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "time": "15:54"
     },
     {
@@ -38880,7 +38881,7 @@
      "time": "16:38",
      "no": 9,
      "warmup": 2,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Elena Martinenghi",
@@ -38888,7 +38889,7 @@
      "time": "16:27",
      "no": 7,
      "warmup": 2,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Guan Ying Wang",
@@ -38902,7 +38903,8 @@
      "nation": "TUR",
      "time": "16:44",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Maryia Luksha",
@@ -38917,7 +38919,7 @@
      "time": "16:21",
      "no": 6,
      "warmup": 2,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Nikol Kuperman",
@@ -38925,7 +38927,7 @@
      "time": "16:32",
      "no": 8,
      "warmup": 2,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Rebecca Rusu",
