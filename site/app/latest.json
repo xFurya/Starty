@@ -7,5 +7,27 @@
   "file": "starty-1.0.51.apk",
   "size": 23320311,
   "sha256": "6853e9651c083e0203c63ea4b2b4c9dd81d4779098da7f188fe80b637bb6739d"
+ },
+ "windows": {
+  "code": 52,
+  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.51/Starty-windows.zip",
+  "size": 14573603,
+  "sha256": "ef5f97996c0c7572ee8e9baeabe6d8ca8ebb5e499284ff5bf1b356aede9f634d",
+  "setup": {
+   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.51/starty-setup-1.0.51.exe",
+   "size": 12713682,
+   "sha256": "04c9059ca9fdcf4ca220dd6524cb7cd66454e11e6eef082b6b89b247b088acd7"
+  }
+ },
+ "macos": {
+  "code": 52,
+  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.51/Starty-macos.zip",
+  "size": 22089036,
+  "sha256": "dc213919d7e970e90fb054af944d6db3e1995d36195b97f389623ac81a7eb54e",
+  "dmg": {
+   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.51/Starty-macos.dmg",
+   "size": 25235145,
+   "sha256": "5b2922615bfd30d7c9c013270d4690055d22e62830f80879ea793a86d085e87c"
+  }
  }
 }
