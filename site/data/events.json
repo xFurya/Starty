@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-28T21:04:52+03:00",
- "checked": "2026-10-28T21:04:52+03:00",
+ "checked": "2026-10-29T10:06:24.843059+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -38008,42 +38008,47 @@
     "Yeva Shepeleva"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Начало: 12:00 МСК",
+   "desc": "Итог:\n1. Nikol Gabuniia — 38.24\n2. Antonia Riciu — 24.83\n3. Maria Amedeea Baban — 23.22\n\nНачало: 12:00 МСК",
    "field": [
     {
      "name": "Alexandra-Catalina Stanescu",
      "nation": "ROU",
      "time": "12:04",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5
     },
     {
      "name": "Maria Amedeea Baban",
      "nation": "ROU",
      "time": "12:09",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Yeva Shepeleva",
      "nation": "UKR",
      "time": "12:14",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4
     },
     {
      "name": "Antonia Riciu",
      "nation": "ROU",
      "time": "12:19",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Nikol Gabuniia",
      "nation": "GEO",
      "time": "12:24",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     }
    ],
    "live": {
@@ -38058,9 +38063,29 @@
      "Antonia RICIU": "Antonia Riciu",
      "Nikol GABUNIIA": "Nikol Gabuniia"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "gs_crystal-skate.json"
+   "proto": "gs_crystal-skate.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Nikol Gabuniia",
+     "nation": "GEO",
+     "points": "38.24"
+    },
+    {
+     "place": 2,
+     "name": "Antonia Riciu",
+     "nation": "ROU",
+     "points": "24.83"
+    },
+    {
+     "place": 3,
+     "name": "Maria Amedeea Baban",
+     "nation": "ROU",
+     "points": "23.22"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:women-junior-kp",
