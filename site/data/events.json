@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-29T15:19:51+03:00",
- "checked": "2026-10-29T15:19:51+03:00",
+ "checked": "2026-10-29T12:40:30.453729+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -38111,47 +38111,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Зоя Ковязина / Дмитрий Родионов",
-     "nation": "МОС",
-     "points": "111.25"
-    },
-    {
-     "place": 2,
-     "name": "Арина Парсегова / Матвей Богданов",
-     "nation": "МОС",
-     "points": "103.60"
-    },
-    {
-     "place": 3,
-     "name": "Анастасия Уткина / Артемий Мохов",
-     "nation": "МОС",
-     "points": "99.78"
-    }
-   ],
-   "total": [
-    {
-     "place": 1,
-     "name": "Зоя Ковязина / Дмитрий Родионов",
-     "nation": "МОС",
-     "points": "179.37"
-    },
-    {
-     "place": 2,
-     "name": "Арина Парсегова / Матвей Богданов",
-     "nation": "МОС",
-     "points": "166.72"
-    },
-    {
-     "place": 3,
-     "name": "Анастасия Уткина / Артемий Мохов",
-     "nation": "МОС",
-     "points": "158.62"
-    }
-   ]
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
   },
   {
    "id": "gs:crystal-skate:women-senior-kp-advanced-novice-women",
@@ -38339,14 +38299,14 @@
      "points": "65.63"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Виктория Стрельцова — 74.89\n2. Екатерина Корчажникова — 70.54\n3. Анастасия Выровая — 65.41\n\nРоссияне:\n• Виктория Стрельцова — 13:57\n• Екатерина Корчажникова — 14:03\n\nНачало: 12:10 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Виктория Стрельцова — 74.89\n2. Екатерина Корчажникова — 70.54\n3. Екатерина Стоцкая — 65.63\n\nПримечательное:\n• Виктория Стрельцова — Тройной аксель\n\nРоссияне:\n• Виктория Стрельцова — 13:57\n• Екатерина Корчажникова — 14:03\n\nНачало: 12:10 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Дарья Антонова",
      "nation": "НСО",
      "no": 1,
      "warmup": 1,
-     "place": 14,
+     "place": 15,
      "time": "12:17"
     },
     {
@@ -38354,7 +38314,7 @@
      "nation": "УДМ",
      "no": 2,
      "warmup": 1,
-     "place": 15,
+     "place": 17,
      "time": "12:52"
     },
     {
@@ -38362,7 +38322,7 @@
      "nation": "СВЕ",
      "no": 3,
      "warmup": 1,
-     "place": 11,
+     "place": 12,
      "time": "13:50"
     },
     {
@@ -38370,7 +38330,7 @@
      "nation": "СПБ",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "time": "12:35"
     },
     {
@@ -38378,7 +38338,7 @@
      "nation": "ХМА",
      "no": 5,
      "warmup": 1,
-     "place": 16,
+     "place": 18,
      "time": "12:40"
     },
     {
@@ -38386,7 +38346,7 @@
      "nation": "ТЮМ",
      "no": 6,
      "warmup": 1,
-     "place": 13,
+     "place": 14,
      "time": "12:46"
     },
     {
@@ -38394,7 +38354,7 @@
      "nation": "СПБ",
      "no": 7,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "time": "13:00"
     },
     {
@@ -38402,7 +38362,7 @@
      "nation": "КРК",
      "no": 8,
      "warmup": 2,
-     "place": 12,
+     "place": 13,
      "time": "13:05"
     },
     {
@@ -38410,7 +38370,7 @@
      "nation": "ЧЕЛ",
      "no": 9,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "time": "13:11"
     },
     {
@@ -38418,7 +38378,7 @@
      "nation": "МОС",
      "no": 10,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "time": "13:17"
     },
     {
@@ -38426,7 +38386,7 @@
      "nation": "МОБ",
      "no": 11,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "time": "13:23"
     },
     {
@@ -38434,7 +38394,7 @@
      "nation": "ТАТ",
      "no": 12,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "time": "13:29"
     },
     {
@@ -38458,7 +38418,7 @@
      "nation": "СПБ",
      "no": 15,
      "warmup": 3,
-     "place": 8,
+     "place": 9,
      "time": "14:09"
     },
     {
@@ -38466,7 +38426,7 @@
      "nation": "ОРЕ",
      "no": 16,
      "warmup": 3,
-     "place": 6,
+     "place": 7,
      "time": "14:15"
     },
     {
@@ -38474,17 +38434,18 @@
      "nation": "ЛОБ",
      "time": "14:20",
      "no": 17,
-     "warmup": 3
+     "warmup": 3,
+     "place": 16
     },
     {
      "name": "Екатерина Стоцкая",
      "nation": "МОС",
      "time": "14:26",
      "no": 18,
-     "warmup": 3
+     "warmup": 3,
+     "place": 3
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
     "seg": "https://fsrussia.ru/results/2627/4etap_jun/SEG003.htm",
@@ -38510,9 +38471,16 @@
      "Дарья ЗАГУМЕННАЯ": "Дарья Загуменная",
      "Екатерина СТОЦКАЯ": "Екатерина Стоцкая"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json",
+   "facts": [
+    {
+     "who": "Виктория Стрельцова",
+     "text": "Тройной аксель",
+     "kind": "element"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:men-junior-kp",
