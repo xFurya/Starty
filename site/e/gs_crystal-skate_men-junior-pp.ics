@@ -14,11 +14,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:gs:crystal-skate:men-junior-pp@starty
-DTSTAMP:20261028T180452Z
-DTSTART;TZID=Europe/Moscow:20261029T150000
-DTEND;TZID=Europe/Moscow:20261029T153000
+DTSTAMP:20261029T121951Z
+DTSTART;TZID=Europe/Moscow:20261030T153000
+DTEND;TZID=Europe/Moscow:20261030T160000
 SUMMARY:Crystal Skate — юноши ПП
-DESCRIPTION:Начало: 15:00 МСК
+DESCRIPTION:Начало: 15:30 МСК
 LOCATION:Cheile Gradistei\, Romania
 URL:https://xfurya.github.io/Starty/#e=gs:crystal-skate:men-junior-pp
 TRANSP:TRANSPARENT
