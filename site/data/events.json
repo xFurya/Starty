@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-29T16:12:47+03:00",
- "checked": "2026-10-29T15:08:29.272302+00:00",
+ "checked": "2026-10-29T15:12:29.603002+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -38550,7 +38550,7 @@
      "points": "77.15"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Глеб Ковтун — 79.70\n2. Илья Мальков — 79.17\n3. Александр Чмиль — 77.15\n\nНачало: 14:50 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Глеб Ковтун — 79.70\n2. Илья Мальков — 79.17\n3. Александр Чмиль — 77.15\n\nНачало: 14:50 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Иван Теленков",
@@ -38697,7 +38697,6 @@
      "place": 4
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/4etap_jun/index.htm",
     "seg": "https://fsrussia.ru/results/2627/4etap_jun/SEG001.htm",
@@ -38723,7 +38722,7 @@
      "Марк ТИТОВ": "Марк Титов",
      "Роман ГЛАЗОВ": "Роман Глазов"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
   },
