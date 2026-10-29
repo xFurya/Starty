@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-29T16:12:47+03:00",
- "checked": "2026-10-29T14:08:28.657099+00:00",
+ "checked": "2026-10-29T14:12:28.917387+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -38557,7 +38557,7 @@
      "nation": "МОБ",
      "no": 1,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "time": "14:57"
     },
     {
@@ -38565,7 +38565,7 @@
      "nation": "СВЕ",
      "no": 2,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "time": "15:31"
     },
     {
@@ -38581,7 +38581,7 @@
      "time": "15:50",
      "no": 9,
      "warmup": 2,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Андрей Вересов",
@@ -38589,14 +38589,15 @@
      "time": "15:14",
      "no": 4,
      "warmup": 1,
-     "place": 10
+     "place": 11
     },
     {
      "name": "Вадим Воронов",
      "nation": "СПБ",
      "time": "16:01",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4
     },
     {
      "name": "Георгий Терехов",
@@ -38618,7 +38619,7 @@
      "time": "15:39",
      "no": 7,
      "warmup": 2,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Илья Мальков",
@@ -38634,7 +38635,7 @@
      "time": "15:20",
      "no": 5,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Макар Солодников",
@@ -38650,7 +38651,7 @@
      "time": "15:44",
      "no": 8,
      "warmup": 2,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Марк Титов",
@@ -38859,7 +38860,7 @@
      "nation": "ROU",
      "no": 3,
      "warmup": 1,
-     "place": 11,
+     "place": 12,
      "time": "15:42"
     },
     {
@@ -38867,7 +38868,7 @@
      "nation": "UKR",
      "no": 4,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "time": "15:48"
     },
     {
@@ -38899,7 +38900,8 @@
      "nation": "TPE",
      "time": "17:07",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "place": 10
     },
     {
      "name": "Leyla Cetin",
@@ -38953,7 +38955,7 @@
      "time": "16:56",
      "no": 11,
      "warmup": 3,
-     "place": 12
+     "place": 13
     }
    ],
    "provisional": true,
