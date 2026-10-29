@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-29T16:12:47+03:00",
- "checked": "2026-10-29T13:56:28.953144+00:00",
+ "checked": "2026-10-29T14:00:29.517362+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -38557,7 +38557,7 @@
      "nation": "МОБ",
      "no": 1,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "time": "14:57"
     },
     {
@@ -38565,7 +38565,7 @@
      "nation": "СВЕ",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "time": "15:31"
     },
     {
@@ -38580,7 +38580,8 @@
      "nation": "МОС",
      "time": "15:50",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5
     },
     {
      "name": "Андрей Вересов",
@@ -38588,7 +38589,7 @@
      "time": "15:14",
      "no": 4,
      "warmup": 1,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Вадим Воронов",
@@ -38617,7 +38618,7 @@
      "time": "15:39",
      "no": 7,
      "warmup": 2,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Илья Мальков",
@@ -38949,7 +38950,8 @@
      "nation": "ROU",
      "time": "16:56",
      "no": 11,
-     "warmup": 3
+     "warmup": 3,
+     "place": 11
     }
    ],
    "provisional": true,
