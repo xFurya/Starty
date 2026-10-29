@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-29T15:19:51+03:00",
- "checked": "2026-10-29T12:52:29.465306+00:00",
+ "generated": "2026-10-29T15:38:01+03:00",
+ "checked": "2026-10-29T15:38:01+03:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -37967,9 +37967,9 @@
    },
    "facts": [
     {
-     "who": "Дарья Дрожжина / Иван Тельнов",
+     "kind": "place",
      "text": "После ритм-танца — 6-е место, в итоге — 2-е место",
-     "kind": "place"
+     "who": "Дарья Дрожжина / Иван Тельнов"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
@@ -38223,7 +38223,7 @@
    "seg": "КП",
    "title": "ЮГП России «Красноярье» — девушки КП",
    "start": "2026-10-29T12:10:00+03:00",
-   "end": "2026-10-29T14:33:00+03:00",
+   "end": "2026-10-29T14:45:00+03:00",
    "venue": "Кристалл Арена, Красноярск",
    "intl": false,
    "broadcast": [
@@ -38432,18 +38432,18 @@
     {
      "name": "Дарья Загуменная",
      "nation": "ЛОБ",
-     "time": "14:20",
      "no": 17,
      "warmup": 3,
-     "place": 16
+     "place": 16,
+     "time": "14:20"
     },
     {
      "name": "Екатерина Стоцкая",
      "nation": "МОС",
-     "time": "14:26",
      "no": 18,
      "warmup": 3,
-     "place": 3
+     "place": 3,
+     "time": "14:26"
     }
    ],
    "live": {
@@ -38454,6 +38454,7 @@
     "names": {
      "Виктория СТРЕЛЬЦОВА": "Виктория Стрельцова",
      "Екатерина КОРЧАЖНИКОВА": "Екатерина Корчажникова",
+     "Екатерина СТОЦКАЯ": "Екатерина Стоцкая",
      "Анастасия ВЫРОВАЯ": "Анастасия Выровая",
      "Полина БЕРШАДСКАЯ": "Полина Бершадская",
      "Алёна КЛОПОВА": "Алёна Клопова",
@@ -38466,21 +38467,20 @@
      "Алина ЛОКТЕВА": "Алина Локтева",
      "Мария ДРАЧЁВА": "Мария Драчёва",
      "Дарья АНТОНОВА": "Дарья Антонова",
-     "Эвелина ШЕСТАКОВА": "Эвелина Шестакова",
-     "Екатерина ЧУВАКИНА": "Екатерина Чувакина",
      "Дарья ЗАГУМЕННАЯ": "Дарья Загуменная",
-     "Екатерина СТОЦКАЯ": "Екатерина Стоцкая"
+     "Эвелина ШЕСТАКОВА": "Эвелина Шестакова",
+     "Екатерина ЧУВАКИНА": "Екатерина Чувакина"
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json",
    "facts": [
     {
      "who": "Виктория Стрельцова",
      "text": "Тройной аксель",
      "kind": "element"
     }
-   ]
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:men-junior-kp",
@@ -38785,39 +38785,51 @@
     "Sonia Milik"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Lelle Agota Molnar — 48.34\n2. Maria Sycova — 40.86\n3. Anhelina Kapuka — 30.36\n\nНачало: 15:25 МСК",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Lelle Agota Molnar",
+     "nation": "ROU",
+     "points": "48.34"
+    },
+    {
+     "place": 2,
+     "name": "Maria Sycova",
+     "nation": "SVK",
+     "points": "40.86"
+    },
+    {
+     "place": 3,
+     "name": "Iris Victoria Ciurezu",
+     "nation": "ROU",
+     "points": "25.73"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Lelle Agota Molnar — 48.34\n2. Maria Sycova — 40.86\n3. Iris Victoria Ciurezu — 25.73\n\nНачало: 15:25 МСК",
    "field": [
     {
      "name": "Lelle Agota Molnar",
      "nation": "ROU",
-     "time": "15:31",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 1,
+     "time": "15:31"
     },
     {
      "name": "Maria Sycova",
      "nation": "SVK",
-     "time": "15:37",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 2,
+     "time": "15:37"
     },
     {
      "name": "Iris Victoria Ciurezu",
      "nation": "ROU",
-     "time": "15:42",
      "no": 3,
      "warmup": 1,
-     "place": 4
-    },
-    {
-     "name": "Anhelina Kapuka",
-     "nation": "UKR",
-     "time": "15:48",
-     "no": 4,
-     "warmup": 1,
-     "place": 3
+     "place": 3,
+     "time": "15:42"
     },
     {
      "name": "Adria Liliac",
@@ -38827,17 +38839,52 @@
      "warmup": 1
     },
     {
-     "name": "Natalia Runcanu",
+     "name": "Andreea Cristiana Maria Lazar",
      "nation": "ROU",
-     "time": "16:21",
-     "no": 6,
+     "time": "16:38",
+     "no": 9,
      "warmup": 2
+    },
+    {
+     "name": "Anhelina Kapuka",
+     "nation": "UKR",
+     "time": "15:48",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Elena Martinenghi",
      "nation": "SUI",
      "time": "16:27",
      "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Guan Ying Wang",
+     "nation": "TPE",
+     "time": "17:07",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Leyla Cetin",
+     "nation": "TUR",
+     "time": "16:44",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Maryia Luksha",
+     "nation": "POL",
+     "time": "17:18",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Natalia Runcanu",
+     "nation": "ROU",
+     "time": "16:21",
+     "no": 6,
      "warmup": 2
     },
     {
@@ -38848,38 +38895,10 @@
      "warmup": 2
     },
     {
-     "name": "Andreea Cristiana Maria Lazar",
-     "nation": "ROU",
-     "time": "16:38",
-     "no": 9,
-     "warmup": 2
-    },
-    {
-     "name": "Leyla Cetin",
-     "nation": "TUR",
-     "time": "16:44",
-     "no": 10,
-     "warmup": 2
-    },
-    {
-     "name": "Sonia Milik",
-     "nation": "ROU",
-     "time": "16:56",
-     "no": 11,
-     "warmup": 3
-    },
-    {
      "name": "Rebecca Rusu",
      "nation": "GER",
      "time": "17:01",
      "no": 12,
-     "warmup": 3
-    },
-    {
-     "name": "Guan Ying Wang",
-     "nation": "TPE",
-     "time": "17:07",
-     "no": 13,
      "warmup": 3
     },
     {
@@ -38890,13 +38909,14 @@
      "warmup": 3
     },
     {
-     "name": "Maryia Luksha",
-     "nation": "POL",
-     "time": "17:18",
-     "no": 15,
+     "name": "Sonia Milik",
+     "nation": "ROU",
+     "time": "16:56",
+     "no": 11,
      "warmup": 3
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
     "seg": "https://www.frponline.ro/html2/cryro2026/SEG007.htm",
@@ -38921,28 +38941,7 @@
     },
     "basis": null
    },
-   "proto": "gs_crystal-skate.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Lelle Agota Molnar",
-     "nation": "ROU",
-     "points": "48.34"
-    },
-    {
-     "place": 2,
-     "name": "Maria Sycova",
-     "nation": "SVK",
-     "points": "40.86"
-    },
-    {
-     "place": 3,
-     "name": "Anhelina Kapuka",
-     "nation": "UKR",
-     "points": "30.36"
-    }
-   ],
-   "provisional": true
+   "proto": "gs_crystal-skate.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:women-junior-pp",
@@ -38953,7 +38952,7 @@
    "seg": "ПП",
    "title": "ЮГП России «Красноярье» — девушки ПП",
    "start": "2026-10-30T07:45:00+03:00",
-   "end": "2026-10-30T10:35:00+03:00",
+   "end": "2026-10-30T10:21:00+03:00",
    "venue": "Кристалл Арена, Красноярск",
    "intl": false,
    "broadcast": [
@@ -38962,12 +38961,18 @@
    ],
    "ours": [
     {
-     "name": "Виктория Стрельцова",
-     "nation": "МОС"
+     "name": "Екатерина Корчажникова",
+     "nation": "МОС",
+     "time": "10:06",
+     "no": 17,
+     "warmup": 3
     },
     {
-     "name": "Екатерина Корчажникова",
-     "nation": "МОС"
+     "name": "Виктория Стрельцова",
+     "nation": "МОС",
+     "time": "10:13",
+     "no": 18,
+     "warmup": 3
     }
    ],
    "athletes": [
@@ -39001,79 +39006,133 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Россияне:\n• Виктория Стрельцова\n• Екатерина Корчажникова\n\nНачало: 07:45 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Россияне:\n• Екатерина Корчажникова — 10:06\n• Виктория Стрельцова — 10:13\n\nНачало: 07:45 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
-     "name": "Аделина Кузнецова",
-     "nation": "ЧЕЛ"
-    },
-    {
-     "name": "Александра Анушова",
-     "nation": "МОБ"
-    },
-    {
-     "name": "Алина Локтева",
-     "nation": "КРК"
-    },
-    {
-     "name": "Алиса Мильто",
-     "nation": "МОС"
-    },
-    {
-     "name": "Алёна Клопова",
-     "nation": "СПБ"
-    },
-    {
-     "name": "Анастасия Выровая",
-     "nation": "ТАТ"
-    },
-    {
-     "name": "Виктория Стрельцова",
-     "nation": "МОС"
+     "name": "Екатерина Чувакина",
+     "nation": "ХМА",
+     "time": "07:52",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Дарья Антонова",
-     "nation": "НСО"
-    },
-    {
-     "name": "Дарья Загуменная",
-     "nation": "ЛОБ"
-    },
-    {
-     "name": "Диана Сашина",
-     "nation": "СВЕ"
-    },
-    {
-     "name": "Екатерина Корчажникова",
-     "nation": "МОС"
-    },
-    {
-     "name": "Екатерина Стоцкая",
-     "nation": "МОС"
-    },
-    {
-     "name": "Екатерина Чувакина",
-     "nation": "ХМА"
-    },
-    {
-     "name": "Кристина Двуреченская",
-     "nation": "ОРЕ"
+     "nation": "НСО",
+     "time": "08:12",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Мария Драчёва",
-     "nation": "ТЮМ"
+     "nation": "ТЮМ",
+     "time": "08:18",
+     "no": 5,
+     "warmup": 1
     },
     {
-     "name": "Полина Бершадская",
-     "nation": "СПБ"
-    },
-    {
-     "name": "Софья Федотова",
-     "nation": "СПБ"
+     "name": "Алина Локтева",
+     "nation": "КРК",
+     "time": "08:25",
+     "no": 6,
+     "warmup": 1
     },
     {
      "name": "Эвелина Шестакова",
-     "nation": "УДМ"
+     "nation": "УДМ",
+     "time": "08:31",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Диана Сашина",
+     "nation": "СВЕ",
+     "time": "08:39",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Аделина Кузнецова",
+     "nation": "ЧЕЛ",
+     "time": "08:45",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Александра Анушова",
+     "nation": "МОБ",
+     "time": "08:52",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Софья Федотова",
+     "nation": "СПБ",
+     "time": "08:58",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Алиса Мильто",
+     "nation": "МОС",
+     "time": "09:05",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Кристина Двуреченская",
+     "nation": "ОРЕ",
+     "time": "09:11",
+     "no": 12,
+     "warmup": 2
+    },
+    {
+     "name": "Дарья Загуменная",
+     "nation": "ЛОБ",
+     "time": "09:33",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Алёна Клопова",
+     "nation": "СПБ",
+     "time": "09:40",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Полина Бершадская",
+     "nation": "СПБ",
+     "time": "09:47",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Анастасия Выровая",
+     "nation": "ТАТ",
+     "time": "09:53",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Екатерина Стоцкая",
+     "nation": "МОС",
+     "time": "10:00",
+     "no": 16,
+     "warmup": 3
+    },
+    {
+     "name": "Екатерина Корчажникова",
+     "nation": "МОС",
+     "time": "10:06",
+     "no": 17,
+     "warmup": 3
+    },
+    {
+     "name": "Виктория Стрельцова",
+     "nation": "МОС",
+     "time": "10:13",
+     "no": 18,
+     "warmup": 3
     }
    ],
    "live": {
@@ -39082,24 +39141,24 @@
     "cat": "https://fsrussia.ru/results/2627/4etap_jun/CAT002RS.htm",
     "first": "https://fsrussia.ru/results/2627/4etap_jun/SEG003.htm",
     "names": {
+     "Екатерина ЧУВАКИНА": "Екатерина Чувакина",
+     "Эвелина ШЕСТАКОВА": "Эвелина Шестакова",
+     "Дарья ЗАГУМЕННАЯ": "Дарья Загуменная",
      "Дарья АНТОНОВА": "Дарья Антонова",
+     "Мария ДРАЧЁВА": "Мария Драчёва",
+     "Алина ЛОКТЕВА": "Алина Локтева",
+     "Диана САШИНА": "Диана Сашина",
+     "Аделина КУЗНЕЦОВА": "Аделина Кузнецова",
      "Александра АНУШОВА": "Александра Анушова",
+     "Софья ФЕДОТОВА": "Софья Федотова",
+     "Алиса МИЛЬТО": "Алиса Мильто",
+     "Кристина ДВУРЕЧЕНСКАЯ": "Кристина Двуреченская",
+     "Алёна КЛОПОВА": "Алёна Клопова",
      "Полина БЕРШАДСКАЯ": "Полина Бершадская",
      "Анастасия ВЫРОВАЯ": "Анастасия Выровая",
-     "Кристина ДВУРЕЧЕНСКАЯ": "Кристина Двуреченская",
-     "Мария ДРАЧЁВА": "Мария Драчёва",
-     "Дарья ЗАГУМЕННАЯ": "Дарья Загуменная",
-     "Алёна КЛОПОВА": "Алёна Клопова",
-     "Екатерина КОРЧАЖНИКОВА": "Екатерина Корчажникова",
-     "Аделина КУЗНЕЦОВА": "Аделина Кузнецова",
-     "Алина ЛОКТЕВА": "Алина Локтева",
-     "Алиса МИЛЬТО": "Алиса Мильто",
-     "Диана САШИНА": "Диана Сашина",
      "Екатерина СТОЦКАЯ": "Екатерина Стоцкая",
-     "Виктория СТРЕЛЬЦОВА": "Виктория Стрельцова",
-     "Софья ФЕДОТОВА": "Софья Федотова",
-     "Екатерина ЧУВАКИНА": "Екатерина Чувакина",
-     "Эвелина ШЕСТАКОВА": "Эвелина Шестакова"
+     "Екатерина КОРЧАЖНИКОВА": "Екатерина Корчажникова",
+     "Виктория СТРЕЛЬЦОВА": "Виктория Стрельцова"
     },
     "basis": null
    },
