@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-29T15:19:51+03:00",
- "checked": "2026-10-29T12:40:30.453729+00:00",
+ "checked": "2026-10-29T12:44:29.289294+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -38785,7 +38785,7 @@
     "Sonia Milik"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Lelle Agota Molnar — 48.34\n2. Maria Sycova — 40.86\n\nНачало: 15:25 МСК",
+   "desc": "Промежуточные итоги:\n1. Lelle Agota Molnar — 48.34\n2. Maria Sycova — 40.86\n3. Iris Victoria Ciurezu — 25.73\n\nНачало: 15:25 МСК",
    "field": [
     {
      "name": "Lelle Agota Molnar",
@@ -38808,7 +38808,8 @@
      "nation": "ROU",
      "time": "15:42",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Anhelina Kapuka",
@@ -38932,6 +38933,12 @@
      "name": "Maria Sycova",
      "nation": "SVK",
      "points": "40.86"
+    },
+    {
+     "place": 3,
+     "name": "Iris Victoria Ciurezu",
+     "nation": "ROU",
+     "points": "25.73"
     }
    ],
    "provisional": true
