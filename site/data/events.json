@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-28T21:04:52+03:00",
- "checked": "2026-10-29T10:06:24.843059+00:00",
+ "checked": "2026-10-29T10:26:24.394109+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -38150,14 +38150,15 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Россияне:\n• Виктория Стрельцова — 13:57\n• Екатерина Корчажникова — 14:03\n\nНачало: 12:10 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Дарья Антонова — 44.56\n\nРоссияне:\n• Виктория Стрельцова — 13:57\n• Екатерина Корчажникова — 14:03\n\nНачало: 12:10 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Дарья Антонова",
      "nation": "НСО",
      "time": "12:17",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Алёна Клопова",
@@ -38306,7 +38307,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Дарья Антонова",
+     "nation": "НСО",
+     "points": "44.56"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:men-junior-kp",
