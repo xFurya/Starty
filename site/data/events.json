@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T15:35:42+03:00",
- "checked": "2026-10-30T13:09:03.503792+00:00",
+ "checked": "2026-10-30T13:17:03.202354+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -39761,7 +39761,7 @@
     "Razvan Cionac"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Razvan Cionac — 71.28\n\nНачало: 15:30 МСК",
+   "desc": "Итог:\n1. Bohdan Pomohaibo — 95.80\n2. Razvan Cionac — 71.28\n\nИтог турнира:\n1. Bohdan Pomohaibo — 140.28\n2. Razvan Cionac — 111.31\n\nПримечательное:\n• Bohdan Pomohaibo — Отрыв от второго места — 28.97 балла\n\nНачало: 15:30 МСК",
    "field": [
     {
      "name": "Razvan Cionac",
@@ -39769,14 +39769,17 @@
      "time": "15:36",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 2,
+     "final": 2
     },
     {
      "name": "Bohdan Pomohaibo",
      "nation": "UKR",
      "time": "15:43",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "final": 1
     }
    ],
    "live": {
@@ -39788,18 +39791,44 @@
      "Razvan CIONAC": "Razvan Cionac",
      "Bohdan POMOHAIBO": "Bohdan Pomohaibo"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "gs_crystal-skate.json",
    "podium": [
     {
      "place": 1,
+     "name": "Bohdan Pomohaibo",
+     "nation": "UKR",
+     "points": "95.80"
+    },
+    {
+     "place": 2,
      "name": "Razvan Cionac",
      "nation": "ROU",
      "points": "71.28"
     }
    ],
-   "provisional": true
+   "total": [
+    {
+     "place": 1,
+     "name": "Bohdan Pomohaibo",
+     "nation": "UKR",
+     "points": "140.28"
+    },
+    {
+     "place": 2,
+     "name": "Razvan Cionac",
+     "nation": "ROU",
+     "points": "111.31"
+    }
+   ],
+   "facts": [
+    {
+     "who": "Bohdan Pomohaibo",
+     "text": "Отрыв от второго места — 28.97 балла",
+     "kind": "place"
+    }
+   ]
   },
   {
    "id": "gs:crystal-skate:men-senior-kp",
