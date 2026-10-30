@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T15:35:42+03:00",
- "checked": "2026-10-30T14:09:03.615709+00:00",
+ "checked": "2026-10-30T14:13:02.958936+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -39935,7 +39935,7 @@
     "Milana Mozeiko"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Ana Sofia Beschea — 44.80\n\nНачало: 16:55 МСК",
+   "desc": "Промежуточные итоги:\n1. Julia Sauter — 54.05\n2. Ana Sofia Beschea — 44.80\n\nНачало: 16:55 МСК",
    "field": [
     {
      "name": "Ana Sofia Beschea",
@@ -39943,14 +39943,15 @@
      "time": "17:01",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Julia Sauter",
      "nation": "ROU",
      "time": "17:08",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Ana Stratulat",
@@ -40008,6 +40009,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Julia Sauter",
+     "nation": "ROU",
+     "points": "54.05"
+    },
+    {
+     "place": 2,
      "name": "Ana Sofia Beschea",
      "nation": "ROU",
      "points": "44.80"
