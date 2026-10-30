@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-29T21:13:16+03:00",
- "checked": "2026-10-29T21:13:16+03:00",
+ "checked": "2026-10-30T06:02:03.904383+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -39062,14 +39062,15 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Россияне:\n• Екатерина Корчажникова — 10:06\n• Виктория Стрельцова — 10:13\n\nНачало: 07:45 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Екатерина Чувакина — 75.73\n\nРоссияне:\n• Екатерина Корчажникова — 10:06\n• Виктория Стрельцова — 10:13\n\nНачало: 07:45 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Екатерина Чувакина",
      "nation": "ХМА",
      "time": "07:52",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Дарья Антонова",
@@ -39218,7 +39219,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Екатерина Чувакина",
+     "nation": "ХМА",
+     "points": "75.73"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:men-junior-pp",
