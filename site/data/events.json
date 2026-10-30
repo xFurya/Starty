@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T15:35:42+03:00",
- "checked": "2026-10-30T13:17:03.202354+00:00",
+ "checked": "2026-10-30T13:29:02.902174+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -39850,14 +39850,15 @@
     "Tamir Kuperman"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Начало: 16:16 МСК",
+   "desc": "Промежуточные итоги:\n1. Tamir Kuperman — 79.45\n\nНачало: 16:16 МСК",
    "field": [
     {
      "name": "Tamir Kuperman",
      "nation": "ISR",
      "time": "16:22",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Filip Kaymakchiev",
@@ -39886,7 +39887,16 @@
     },
     "basis": null
    },
-   "proto": "gs_crystal-skate.json"
+   "proto": "gs_crystal-skate.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Tamir Kuperman",
+     "nation": "ISR",
+     "points": "79.45"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "gs:crystal-skate:women-senior-kp-women",
