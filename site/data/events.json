@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-29T21:13:16+03:00",
- "checked": "2026-10-30T11:31:49.267638+00:00",
+ "checked": "2026-10-30T12:13:02.708472+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -39638,11 +39638,12 @@
     "Yeva Shepeleva"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Начало: 15:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Alexandra-Catalina Stanescu — 41.85\n\nНачало: 15:00 МСК",
    "field": [
     {
      "name": "Alexandra-Catalina Stanescu",
-     "nation": "ROU"
+     "nation": "ROU",
+     "place": 1
     },
     {
      "name": "Antonia Riciu",
@@ -39675,7 +39676,16 @@
     },
     "basis": null
    },
-   "proto": "gs_crystal-skate.json"
+   "proto": "gs_crystal-skate.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Alexandra-Catalina Stanescu",
+     "nation": "ROU",
+     "points": "41.85"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "gs:crystal-skate:men-junior-pp",
