@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-29T21:13:16+03:00",
- "checked": "2026-10-30T12:29:02.907548+00:00",
+ "checked": "2026-10-30T12:37:02.704697+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -39638,31 +39638,37 @@
     "Yeva Shepeleva"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Antonia Riciu — 49.36\n2. Maria Amedeea Baban — 42.87\n3. Alexandra-Catalina Stanescu — 41.85\n\nНачало: 15:00 МСК",
+   "desc": "Итог:\n1. Nikol Gabuniia — 67.44\n2. Antonia Riciu — 49.36\n3. Maria Amedeea Baban — 42.87\n\nИтог турнира:\n1. Nikol Gabuniia — 105.68\n2. Antonia Riciu — 74.19\n3. Maria Amedeea Baban — 66.09\n\nПримечательное:\n• Nikol Gabuniia — Отрыв от второго места — 31.49 балла\n\nНачало: 15:00 МСК",
    "field": [
     {
      "name": "Alexandra-Catalina Stanescu",
      "nation": "ROU",
-     "place": 3
+     "place": 4,
+     "final": 4
     },
     {
      "name": "Antonia Riciu",
      "nation": "ROU",
-     "place": 1
+     "place": 2,
+     "final": 2
     },
     {
      "name": "Maria Amedeea Baban",
      "nation": "ROU",
-     "place": 2
+     "place": 3,
+     "final": 3
     },
     {
      "name": "Nikol Gabuniia",
-     "nation": "GEO"
+     "nation": "GEO",
+     "place": 1,
+     "final": 1
     },
     {
      "name": "Yeva Shepeleva",
      "nation": "UKR",
-     "place": 4
+     "place": 5,
+     "final": 5
     }
    ],
    "live": {
@@ -39677,30 +39683,56 @@
      "Alexandra-Catalina STANESCU": "Alexandra-Catalina Stanescu",
      "Yeva SHEPELEVA": "Yeva Shepeleva"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "gs_crystal-skate.json",
    "podium": [
     {
      "place": 1,
+     "name": "Nikol Gabuniia",
+     "nation": "GEO",
+     "points": "67.44"
+    },
+    {
+     "place": 2,
      "name": "Antonia Riciu",
      "nation": "ROU",
      "points": "49.36"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Maria Amedeea Baban",
      "nation": "ROU",
      "points": "42.87"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Nikol Gabuniia",
+     "nation": "GEO",
+     "points": "105.68"
+    },
+    {
+     "place": 2,
+     "name": "Antonia Riciu",
+     "nation": "ROU",
+     "points": "74.19"
     },
     {
      "place": 3,
-     "name": "Alexandra-Catalina Stanescu",
+     "name": "Maria Amedeea Baban",
      "nation": "ROU",
-     "points": "41.85"
+     "points": "66.09"
     }
    ],
-   "provisional": true
+   "facts": [
+    {
+     "who": "Nikol Gabuniia",
+     "text": "Отрыв от второго места — 31.49 балла",
+     "kind": "place"
+    }
+   ]
   },
   {
    "id": "gs:crystal-skate:men-junior-pp",
