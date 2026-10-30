@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-29T21:13:16+03:00",
- "checked": "2026-10-30T08:43:49.402600+00:00",
+ "checked": "2026-10-30T09:03:48.372137+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -39370,14 +39370,15 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 10:45 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Марк Титов — 106.17\n\nНачало: 10:45 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Марк Титов",
      "nation": "ТАТ",
      "time": "10:53",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Иван Теленков",
@@ -39526,7 +39527,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Марк Титов",
+     "nation": "ТАТ",
+     "points": "106.17"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "gs:crystal-skate:women-senior-pp-advanced-novice-women",
