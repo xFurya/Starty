@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-29T21:13:16+03:00",
- "checked": "2026-10-30T12:25:04.130334+00:00",
+ "checked": "2026-10-30T12:29:02.907548+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -39638,21 +39638,22 @@
     "Yeva Shepeleva"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Maria Amedeea Baban — 42.87\n2. Alexandra-Catalina Stanescu — 41.85\n3. Yeva Shepeleva — 33.61\n\nНачало: 15:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Antonia Riciu — 49.36\n2. Maria Amedeea Baban — 42.87\n3. Alexandra-Catalina Stanescu — 41.85\n\nНачало: 15:00 МСК",
    "field": [
     {
      "name": "Alexandra-Catalina Stanescu",
      "nation": "ROU",
-     "place": 2
+     "place": 3
     },
     {
      "name": "Antonia Riciu",
-     "nation": "ROU"
+     "nation": "ROU",
+     "place": 1
     },
     {
      "name": "Maria Amedeea Baban",
      "nation": "ROU",
-     "place": 1
+     "place": 2
     },
     {
      "name": "Nikol Gabuniia",
@@ -39661,7 +39662,7 @@
     {
      "name": "Yeva Shepeleva",
      "nation": "UKR",
-     "place": 3
+     "place": 4
     }
    ],
    "live": {
@@ -39682,21 +39683,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Antonia Riciu",
+     "nation": "ROU",
+     "points": "49.36"
+    },
+    {
+     "place": 2,
      "name": "Maria Amedeea Baban",
      "nation": "ROU",
      "points": "42.87"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Alexandra-Catalina Stanescu",
      "nation": "ROU",
      "points": "41.85"
-    },
-    {
-     "place": 3,
-     "name": "Yeva Shepeleva",
-     "nation": "UKR",
-     "points": "33.61"
     }
    ],
    "provisional": true
