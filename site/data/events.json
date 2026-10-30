@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T15:35:42+03:00",
- "checked": "2026-10-30T13:29:02.902174+00:00",
+ "checked": "2026-10-30T13:37:03.723161+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -39850,7 +39850,7 @@
     "Tamir Kuperman"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Tamir Kuperman — 79.45\n\nНачало: 16:16 МСК",
+   "desc": "Итог:\n1. Tamir Kuperman — 79.45\n2. Filip Kaymakchiev — 50.61\n\nПримечательное:\n• Filip Kaymakchiev — Личный рекорд за КП: 50.61 (был 47.61)\n\nНачало: 16:16 МСК",
    "field": [
     {
      "name": "Tamir Kuperman",
@@ -39865,7 +39865,8 @@
      "nation": "BUL",
      "time": "16:29",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Sylvain Ritchie",
@@ -39885,7 +39886,7 @@
      "Filip KAYMAKCHIEV": "Filip Kaymakchiev",
      "Sylvain RITCHIE": "Sylvain Ritchie"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "gs_crystal-skate.json",
    "podium": [
@@ -39894,9 +39895,21 @@
      "name": "Tamir Kuperman",
      "nation": "ISR",
      "points": "79.45"
+    },
+    {
+     "place": 2,
+     "name": "Filip Kaymakchiev",
+     "nation": "BUL",
+     "points": "50.61"
     }
    ],
-   "provisional": true
+   "facts": [
+    {
+     "who": "Filip Kaymakchiev",
+     "text": "Личный рекорд за КП: 50.61 (был 47.61)",
+     "kind": "score"
+    }
+   ]
   },
   {
    "id": "gs:crystal-skate:women-senior-kp-women",
