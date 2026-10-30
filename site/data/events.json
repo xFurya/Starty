@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T15:35:42+03:00",
- "checked": "2026-10-30T15:35:42+03:00",
+ "checked": "2026-10-30T13:09:03.503792+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -39761,14 +39761,15 @@
     "Razvan Cionac"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Начало: 15:30 МСК",
+   "desc": "Промежуточные итоги:\n1. Razvan Cionac — 71.28\n\nНачало: 15:30 МСК",
    "field": [
     {
      "name": "Razvan Cionac",
      "nation": "ROU",
      "time": "15:36",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Bohdan Pomohaibo",
@@ -39789,7 +39790,16 @@
     },
     "basis": null
    },
-   "proto": "gs_crystal-skate.json"
+   "proto": "gs_crystal-skate.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Razvan Cionac",
+     "nation": "ROU",
+     "points": "71.28"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "gs:crystal-skate:men-senior-kp",
