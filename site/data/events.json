@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T15:35:42+03:00",
- "checked": "2026-10-30T14:40:13.741162+00:00",
+ "checked": "2026-10-30T15:58:56.361085+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -39935,7 +39935,7 @@
     "Milana Mozeiko"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Ekaterina Kurakova — 60.60\n2. Julia Sauter — 54.05\n3. Ana Sofia Beschea — 44.80\n\nНачало: 16:55 МСК",
+   "desc": "Итог:\n1. Ekaterina Kurakova — 60.60\n2. Julia Sauter — 54.05\n3. Lilian Musgrave — 48.07\n\nНачало: 16:55 МСК",
    "field": [
     {
      "name": "Ana Sofia Beschea",
@@ -39943,7 +39943,7 @@
      "time": "17:01",
      "no": 1,
      "warmup": 1,
-     "place": 3
+     "place": 5
     },
     {
      "name": "Julia Sauter",
@@ -39959,7 +39959,7 @@
      "time": "17:14",
      "no": 3,
      "warmup": 1,
-     "place": 4
+     "place": 6
     },
     {
      "name": "Ekaterina Kurakova",
@@ -39975,21 +39975,23 @@
      "time": "17:34",
      "no": 5,
      "warmup": 2,
-     "place": 5
+     "place": 7
     },
     {
      "name": "Milana Mozeiko",
      "nation": "FRA",
      "time": "17:40",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4
     },
     {
      "name": "Lilian Musgrave",
      "nation": "GBR",
      "time": "17:47",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3
     }
    ],
    "live": {
@@ -40006,7 +40008,7 @@
      "Milana MOZEIKO": "Milana Mozeiko",
      "Lilian MUSGRAVE": "Lilian Musgrave"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "gs_crystal-skate.json",
    "podium": [
@@ -40024,12 +40026,11 @@
     },
     {
      "place": 3,
-     "name": "Ana Sofia Beschea",
-     "nation": "ROU",
-     "points": "44.80"
+     "name": "Lilian Musgrave",
+     "nation": "GBR",
+     "points": "48.07"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:men-senior-kp",
