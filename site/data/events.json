@@ -1,10 +1,10 @@
 {
- "generated": "2026-10-29T21:13:16+03:00",
- "checked": "2026-10-30T12:37:02.704697+00:00",
- "complete": true,
+ "generated": "2026-10-30T15:35:42+03:00",
+ "checked": "2026-10-30T15:35:42+03:00",
+ "complete": false,
  "facts_version": "7",
  "sources": {
-  "ФФККР": "ok",
+  "ФФККР": "fail",
   "ISU": "ok",
   "Golden Skate": "ok",
   "ФФКМ": "ok",
@@ -17922,7 +17922,7 @@
      "place": 4
     },
     {
-     "name": "Пётр Гуменник",
+     "name": "Петр Гуменник",
      "nation": "RUS",
      "no": 8,
      "warmup": null,
@@ -17946,7 +17946,7 @@
     "Владислав Дикиджи",
     "Георгий Козловский",
     "Глеб Лутфуллин",
-    "Пётр Гуменник"
+    "Петр Гуменник"
    ],
    "src": "https://www.denistenmemorial.kz/results/index.htm",
    "watch": [
@@ -17970,12 +17970,12 @@
     },
     {
      "place": 3,
-     "name": "Пётр Гуменник",
+     "name": "Петр Гуменник",
      "nation": "RUS",
      "points": "80.63"
     }
    ],
-   "desc": "Итог:\n1. Владислав Дикиджи — 107.31\n2. Глеб Лутфуллин — 95.79\n3. Пётр Гуменник — 80.63\n\nПримечательное:\n• Первые 4 места — россияне и белорусы\n• Владислав Дикиджи — Лучшая в мире оценка сезона за КП: 107.31\n• Владислав Дикиджи — Личный рекорд за КП: 107.31 (был 88.79)\n• Глеб Лутфуллин — Личный рекорд за КП: 95.79 (был 85.70)\n• Василий Бараховский — Личный рекорд за КП: 77.96 (был 69.51)\n• Алекс Лабович — Личный рекорд за КП: 61.26 (был 59.41)\n\nРоссияне:\n• Владислав Дикиджи — 3-й\n• Георгий Козловский — 4-й\n• Алекс Лабович — 6-й\n• Василий Бараховский — 7-й\n• Пётр Гуменник — 8-й\n• Глеб Лутфуллин — 9-й\n\nНачало: 18:00 МСК\nТрансляция: VK Видео",
+   "desc": "Итог:\n1. Владислав Дикиджи — 107.31\n2. Глеб Лутфуллин — 95.79\n3. Петр Гуменник — 80.63\n\nПримечательное:\n• Первые 4 места — россияне и белорусы\n• Владислав Дикиджи — Лучшая в мире оценка сезона за КП: 107.31\n• Владислав Дикиджи — Личный рекорд за КП: 107.31 (был 88.79)\n• Глеб Лутфуллин — Личный рекорд за КП: 95.79 (был 85.70)\n• Василий Бараховский — Личный рекорд за КП: 77.96 (был 69.51)\n• Алекс Лабович — Личный рекорд за КП: 61.26 (был 59.41)\n\nРоссияне:\n• Владислав Дикиджи — 3-й\n• Георгий Козловский — 4-й\n• Алекс Лабович — 6-й\n• Василий Бараховский — 7-й\n• Петр Гуменник — 8-й\n• Глеб Лутфуллин — 9-й\n\nНачало: 18:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Daniel Martynov",
@@ -18027,7 +18027,7 @@
      "place": 4
     },
     {
-     "name": "Пётр Гуменник",
+     "name": "Петр Гуменник",
      "nation": "RUS",
      "no": 8,
      "warmup": null,
@@ -18056,7 +18056,7 @@
     "names": {
      "Vladislav DIKIDZHI": "Владислав Дикиджи",
      "Gleb LUTFULLIN": "Глеб Лутфуллин",
-     "Petr GUMENNIK": "Пётр Гуменник",
+     "Petr GUMENNIK": "Петр Гуменник",
      "Vasil BARAKHOUSKI": "Василий Бараховский",
      "Daniel MARTYNOV": "Daniel Martynov",
      "Heorhi KAZLOUSKI": "Георгий Козловский",
@@ -21398,15 +21398,6 @@
    ],
    "ours": [
     {
-     "name": "Пётр Гуменник",
-     "nation": "RUS",
-     "no": 8,
-     "warmup": 2,
-     "place": 3,
-     "final": 3,
-     "time": "13:37"
-    },
-    {
      "name": "Глеб Лутфуллин",
      "nation": "RUS",
      "no": 9,
@@ -21447,6 +21438,14 @@
      "warmup": null,
      "place": 5,
      "final": 5
+    },
+    {
+     "name": "Петр Гуменник",
+     "nation": "RUS",
+     "no": 8,
+     "warmup": null,
+     "place": 3,
+     "final": 3
     }
    ],
    "athletes": [
@@ -21459,7 +21458,7 @@
     "Владислав Дикиджи",
     "Георгий Козловский",
     "Глеб Лутфуллин",
-    "Пётр Гуменник"
+    "Петр Гуменник"
    ],
    "src": "https://www.denistenmemorial.kz/results/index.htm",
    "watch": [
@@ -21483,7 +21482,7 @@
     },
     {
      "place": 3,
-     "name": "Пётр Гуменник",
+     "name": "Петр Гуменник",
      "nation": "RUS",
      "points": "181.13"
     }
@@ -21503,12 +21502,12 @@
     },
     {
      "place": 3,
-     "name": "Пётр Гуменник",
+     "name": "Петр Гуменник",
      "nation": "RUS",
      "points": "261.76"
     }
    ],
-   "desc": "Итог:\n1. Владислав Дикиджи — 205.48\n2. Глеб Лутфуллин — 181.44\n3. Пётр Гуменник — 181.13\n\nИтог турнира:\n1. Владислав Дикиджи — 312.79\n2. Глеб Лутфуллин — 277.23\n3. Пётр Гуменник — 261.76\n\nПримечательное:\n• Глеб Лутфуллин — Каскад 4T+3A+3A\n• Глеб Лутфуллин — 5 четверных в программе: 4F, 4Lo, 4T, 4S, 4S\n• Весь пьедестал — россияне\n• Владислав Дикиджи — Лучшая в мире оценка сезона за ПП: 205.48\n• Владислав Дикиджи — Личный рекорд за ПП: 205.48 (был 176.89)\n• Глеб Лутфуллин — Личный рекорд за ПП: 181.44 (был 165.76)\n• Василий Бараховский — Личный рекорд за ПП: 140.40 (был 129.81)\n• Алекс Лабович — Личный рекорд за ПП: 128.11 (был 99.03)\n• Владислав Дикиджи — Отрыв от второго места — 35.56 балла\n• Владислав Дикиджи — Лучшая в мире сумма сезона: 312.79\n• Владислав Дикиджи — Личный рекорд по сумме: 312.79 (был 265.68)\n• Глеб Лутфуллин — Личный рекорд по сумме: 277.23 (был 251.46)\n• Василий Бараховский — Личный рекорд по сумме: 218.36 (был 199.09)\n• Алекс Лабович — Личный рекорд по сумме: 189.37 (был 158.44)\n\nРоссияне:\n• Пётр Гуменник — 13:37\n• Глеб Лутфуллин — 13:45\n• Владислав Дикиджи — 13:53\n• Алекс Лабович — 2-й\n• Георгий Козловский — 5-й\n• Василий Бараховский — 7-й\n\nНачало: 12:30 МСК\nТрансляция: VK Видео",
+   "desc": "Итог:\n1. Владислав Дикиджи — 205.48\n2. Глеб Лутфуллин — 181.44\n3. Петр Гуменник — 181.13\n\nИтог турнира:\n1. Владислав Дикиджи — 312.79\n2. Глеб Лутфуллин — 277.23\n3. Петр Гуменник — 261.76\n\nПримечательное:\n• Глеб Лутфуллин — Каскад 4T+3A+3A\n• Глеб Лутфуллин — 5 четверных в программе: 4F, 4Lo, 4T, 4S, 4S\n• Весь пьедестал — россияне\n• Владислав Дикиджи — Лучшая в мире оценка сезона за ПП: 205.48\n• Владислав Дикиджи — Личный рекорд за ПП: 205.48 (был 176.89)\n• Глеб Лутфуллин — Личный рекорд за ПП: 181.44 (был 165.76)\n• Василий Бараховский — Личный рекорд за ПП: 140.40 (был 129.81)\n• Алекс Лабович — Личный рекорд за ПП: 128.11 (был 99.03)\n• Владислав Дикиджи — Отрыв от второго места — 35.56 балла\n• Владислав Дикиджи — Лучшая в мире сумма сезона: 312.79\n• Владислав Дикиджи — Личный рекорд по сумме: 312.79 (был 265.68)\n• Глеб Лутфуллин — Личный рекорд по сумме: 277.23 (был 251.46)\n• Василий Бараховский — Личный рекорд по сумме: 218.36 (был 199.09)\n• Алекс Лабович — Личный рекорд по сумме: 189.37 (был 158.44)\n\nРоссияне:\n• Глеб Лутфуллин — 13:45\n• Владислав Дикиджи — 13:53\n• Алекс Лабович — 2-й\n• Георгий Козловский — 5-й\n• Василий Бараховский — 7-й\n• Петр Гуменник — 8-й\n\nНачало: 12:30 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Douglas Gerber",
@@ -21567,13 +21566,12 @@
      "final": 5
     },
     {
-     "name": "Пётр Гуменник",
+     "name": "Петр Гуменник",
      "nation": "RUS",
      "no": 8,
-     "warmup": 2,
+     "warmup": null,
      "place": 3,
-     "final": 3,
-     "time": "13:37"
+     "final": 3
     },
     {
      "name": "Глеб Лутфуллин",
@@ -21602,7 +21600,7 @@
     "names": {
      "Vladislav DIKIDZHI": "Владислав Дикиджи",
      "Gleb LUTFULLIN": "Глеб Лутфуллин",
-     "Petr GUMENNIK": "Пётр Гуменник",
+     "Petr GUMENNIK": "Петр Гуменник",
      "Daniel MARTYNOV": "Daniel Martynov",
      "Vasil BARAKHOUSKI": "Василий Бараховский",
      "Yudong CHEN": "Yudong Chen",
@@ -39638,54 +39636,6 @@
     "Yeva Shepeleva"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Итог:\n1. Nikol Gabuniia — 67.44\n2. Antonia Riciu — 49.36\n3. Maria Amedeea Baban — 42.87\n\nИтог турнира:\n1. Nikol Gabuniia — 105.68\n2. Antonia Riciu — 74.19\n3. Maria Amedeea Baban — 66.09\n\nПримечательное:\n• Nikol Gabuniia — Отрыв от второго места — 31.49 балла\n\nНачало: 15:00 МСК",
-   "field": [
-    {
-     "name": "Alexandra-Catalina Stanescu",
-     "nation": "ROU",
-     "place": 4,
-     "final": 4
-    },
-    {
-     "name": "Antonia Riciu",
-     "nation": "ROU",
-     "place": 2,
-     "final": 2
-    },
-    {
-     "name": "Maria Amedeea Baban",
-     "nation": "ROU",
-     "place": 3,
-     "final": 3
-    },
-    {
-     "name": "Nikol Gabuniia",
-     "nation": "GEO",
-     "place": 1,
-     "final": 1
-    },
-    {
-     "name": "Yeva Shepeleva",
-     "nation": "UKR",
-     "place": 5,
-     "final": 5
-    }
-   ],
-   "live": {
-    "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
-    "seg": "https://www.frponline.ro/html2/cryro2026/SEG010.htm",
-    "cat": "https://www.frponline.ro/html2/cryro2026/CAT005RS.htm",
-    "first": "https://www.frponline.ro/html2/cryro2026/SEG009.htm",
-    "names": {
-     "Nikol GABUNIIA": "Nikol Gabuniia",
-     "Maria Amedeea BABAN": "Maria Amedeea Baban",
-     "Antonia RICIU": "Antonia Riciu",
-     "Alexandra-Catalina STANESCU": "Alexandra-Catalina Stanescu",
-     "Yeva SHEPELEVA": "Yeva Shepeleva"
-    },
-    "basis": "judges"
-   },
-   "proto": "gs_crystal-skate.json",
    "podium": [
     {
      "place": 1,
@@ -39726,13 +39676,71 @@
      "points": "66.09"
     }
    ],
+   "desc": "Итог:\n1. Nikol Gabuniia — 67.44\n2. Antonia Riciu — 49.36\n3. Maria Amedeea Baban — 42.87\n\nИтог турнира:\n1. Nikol Gabuniia — 105.68\n2. Antonia Riciu — 74.19\n3. Maria Amedeea Baban — 66.09\n\nПримечательное:\n• Nikol Gabuniia — Отрыв от второго места — 31.49 балла\n\nНачало: 15:00 МСК",
+   "field": [
+    {
+     "name": "Alexandra-Catalina Stanescu",
+     "nation": "ROU",
+     "no": 1,
+     "warmup": null,
+     "place": 4,
+     "final": 4
+    },
+    {
+     "name": "Yeva Shepeleva",
+     "nation": "UKR",
+     "no": 2,
+     "warmup": null,
+     "place": 5,
+     "final": 5
+    },
+    {
+     "name": "Maria Amedeea Baban",
+     "nation": "ROU",
+     "no": 3,
+     "warmup": null,
+     "place": 3,
+     "final": 3
+    },
+    {
+     "name": "Antonia Riciu",
+     "nation": "ROU",
+     "no": 4,
+     "warmup": null,
+     "place": 2,
+     "final": 2
+    },
+    {
+     "name": "Nikol Gabuniia",
+     "nation": "GEO",
+     "no": 5,
+     "warmup": null,
+     "place": 1,
+     "final": 1
+    }
+   ],
+   "live": {
+    "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
+    "seg": "https://www.frponline.ro/html2/cryro2026/SEG010.htm",
+    "cat": "https://www.frponline.ro/html2/cryro2026/CAT005RS.htm",
+    "first": "https://www.frponline.ro/html2/cryro2026/SEG009.htm",
+    "names": {
+     "Nikol GABUNIIA": "Nikol Gabuniia",
+     "Antonia RICIU": "Antonia Riciu",
+     "Maria Amedeea BABAN": "Maria Amedeea Baban",
+     "Alexandra-Catalina STANESCU": "Alexandra-Catalina Stanescu",
+     "Yeva SHEPELEVA": "Yeva Shepeleva"
+    },
+    "basis": "judges"
+   },
    "facts": [
     {
      "who": "Nikol Gabuniia",
      "text": "Отрыв от второго места — 31.49 балла",
      "kind": "place"
     }
-   ]
+   ],
+   "proto": "gs_crystal-skate.json"
   },
   {
    "id": "gs:crystal-skate:men-junior-pp",
@@ -39965,7 +39973,7 @@
     "Stephen Gogolev",
     "Wesley Chiu"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
+   "src": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -39975,55 +39983,112 @@
    "desc": "Начало: 04:00 МСК\nТрансляция: Okko",
    "field": [
     {
+     "name": "Wesley Chiu",
+     "nation": "CAN",
+     "time": "04:07",
+     "no": 1,
+     "warmup": 1
+    },
+    {
      "name": "David Bondar",
-     "nation": "CAN"
-    },
-    {
-     "name": "Genrikh Gartung",
-     "nation": "GER"
-    },
-    {
-     "name": "Georgii Reshtenko",
-     "nation": "CZE"
+     "nation": "CAN",
+     "time": "04:13",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Hyungyeom Kim",
-     "nation": "KOR"
-    },
-    {
-     "name": "Kazuki Tomono",
-     "nation": "JPN"
-    },
-    {
-     "name": "Kevin Aymoz",
-     "nation": "FRA"
-    },
-    {
-     "name": "Kyrylo Marsak",
-     "nation": "UKR"
+     "nation": "KOR",
+     "time": "04:20",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Liam Kapeikis",
-     "nation": "USA"
+     "nation": "USA",
+     "time": "04:26",
+     "no": 4,
+     "warmup": 1
     },
     {
-     "name": "Mihhail Selevko",
-     "nation": "EST"
+     "name": "Georgii Reshtenko",
+     "nation": "CZE",
+     "time": "04:32",
+     "no": 5,
+     "warmup": 1
     },
     {
-     "name": "Rio Nakata",
-     "nation": "JPN"
+     "name": "Kyrylo Marsak",
+     "nation": "UKR",
+     "time": "04:38",
+     "no": 6,
+     "warmup": 1
     },
     {
      "name": "Stephen Gogolev",
-     "nation": "CAN"
+     "nation": "CAN",
+     "time": "04:52",
+     "no": 7,
+     "warmup": 2
     },
     {
-     "name": "Wesley Chiu",
-     "nation": "CAN"
+     "name": "Genrikh Gartung",
+     "nation": "GER",
+     "time": "04:58",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Rio Nakata",
+     "nation": "JPN",
+     "time": "05:04",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "time": "05:11",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Kazuki Tomono",
+     "nation": "JPN",
+     "time": "05:17",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Kevin Aymoz",
+     "nation": "FRA",
+     "time": "05:23",
+     "no": 12,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Wesley CHIU": "Wesley Chiu",
+     "David BONDAR": "David Bondar",
+     "Hyungyeom KIM": "Hyungyeom Kim",
+     "Liam KAPEIKIS": "Liam Kapeikis",
+     "Georgii RESHTENKO": "Georgii Reshtenko",
+     "Kyrylo MARSAK": "Kyrylo Marsak",
+     "Stephen GOGOLEV": "Stephen Gogolev",
+     "Genrikh GARTUNG": "Genrikh Gartung",
+     "Rio NAKATA": "Rio Nakata",
+     "Mihhail SELEVKO": "Mihhail Selevko",
+     "Kazuki TOMONO": "Kazuki Tomono",
+     "Kevin AYMOZ": "Kevin Aymoz"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-canada-international-2026.json"
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:pairs-senior-kp",
@@ -40034,7 +40099,7 @@
    "seg": "КП",
    "title": "GP Skate Canada — пары КП",
    "start": "2026-10-31T06:15:00+03:00",
-   "end": "2026-10-31T07:25:00+03:00",
+   "end": "2026-10-31T07:22:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -40051,7 +40116,7 @@
     "Oxana Vouillamoz / Tom Bouvart",
     "Sofiia Holichenko / Artem Darenskyi"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
+   "src": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -40061,39 +40126,80 @@
    "desc": "Начало: 06:15 МСК\nТрансляция: Okko",
    "field": [
     {
-     "name": "Alisa Efimova / Misha Mitrofanov",
-     "nation": "USA"
-    },
-    {
-     "name": "Anna Valesi / Martin Bidar",
-     "nation": "CZE"
-    },
-    {
-     "name": "Ava Kemp / Yohnatan Elizarov",
-     "nation": "CAN"
-    },
-    {
-     "name": "Irma Caldara / Riccardo Maglio",
-     "nation": "ITA"
-    },
-    {
-     "name": "Lia Pereira / Trennt Michaud",
-     "nation": "CAN"
-    },
-    {
      "name": "Miyu Yunoki / Tristan Taylor",
-     "nation": "CAN"
-    },
-    {
-     "name": "Oxana Vouillamoz / Tom Bouvart",
-     "nation": "SUI"
+     "nation": "CAN",
+     "time": "06:22",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Sofiia Holichenko / Artem Darenskyi",
-     "nation": "UKR"
+     "nation": "UKR",
+     "time": "06:28",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Irma Caldara / Riccardo Maglio",
+     "nation": "ITA",
+     "time": "06:35",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Anna Valesi / Martin Bidar",
+     "nation": "CZE",
+     "time": "06:41",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Oxana Vouillamoz / Tom Bouvart",
+     "nation": "SUI",
+     "time": "06:55",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Ava Kemp / Yohnatan Elizarov",
+     "nation": "CAN",
+     "time": "07:01",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Lia Pereira / Trennt Michaud",
+     "nation": "CAN",
+     "time": "07:08",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Alisa Efimova / Misha Mitrofanov",
+     "nation": "USA",
+     "time": "07:14",
+     "no": 8,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG005.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Miyu YUNOKI / Tristan TAYLOR": "Miyu Yunoki / Tristan Taylor",
+     "Sofiia HOLICHENKO / Artem DARENSKYI": "Sofiia Holichenko / Artem Darenskyi",
+     "Irma CALDARA / Riccardo MAGLIO": "Irma Caldara / Riccardo Maglio",
+     "Anna VALESI / Martin BIDAR": "Anna Valesi / Martin Bidar",
+     "Oxana VOUILLAMOZ / Tom BOUVART": "Oxana Vouillamoz / Tom Bouvart",
+     "Ava KEMP / Yohnatan ELIZAROV": "Ava Kemp / Yohnatan Elizarov",
+     "Lia PEREIRA / Trennt MICHAUD": "Lia Pereira / Trennt Michaud",
+     "Alisa EFIMOVA / Misha MITROFANOV": "Alisa Efimova / Misha Mitrofanov"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-canada-international-2026.json"
   },
   {
    "id": "gs:crystal-skate:women-junior-pp",
@@ -40482,7 +40588,10 @@
    "ours": [
     {
      "name": "Виктория Сафонова",
-     "nation": "BLR"
+     "nation": "BLR",
+     "time": "22:43",
+     "no": 2,
+     "warmup": 1
     }
    ],
    "athletes": [
@@ -40499,65 +40608,122 @@
     "Yujae Kim",
     "Виктория Сафонова"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
+   "src": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
    "watch": [
     {
      "name": "Okko",
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Россияне:\n• Виктория Сафонова\n\nНачало: 22:30 МСК\nТрансляция: Okko",
+   "desc": "Россияне:\n• Виктория Сафонова — 22:43\n\nНачало: 22:30 МСК\nТрансляция: Okko",
    "field": [
     {
-     "name": "Anna Pezzetta",
-     "nation": "ITA"
-    },
-    {
-     "name": "Fee Ann Landry",
-     "nation": "CAN"
-    },
-    {
-     "name": "Isabeau Levito",
-     "nation": "USA"
-    },
-    {
-     "name": "Jia Shin",
-     "nation": "KOR"
-    },
-    {
-     "name": "Madeline Schizas",
-     "nation": "CAN"
-    },
-    {
-     "name": "Mao Shimada",
-     "nation": "JPN"
-    },
-    {
-     "name": "Niina Petrokina",
-     "nation": "EST"
-    },
-    {
      "name": "Saki Miyake",
-     "nation": "JPN"
-    },
-    {
-     "name": "Sara-Maude Dupuis",
-     "nation": "CAN"
-    },
-    {
-     "name": "Sofia Samodelkina",
-     "nation": "KAZ"
-    },
-    {
-     "name": "Yujae Kim",
-     "nation": "KOR"
+     "nation": "JPN",
+     "time": "22:37",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Виктория Сафонова",
-     "nation": "BLR"
+     "nation": "BLR",
+     "time": "22:43",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Fee Ann Landry",
+     "nation": "CAN",
+     "time": "22:50",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Sara-Maude Dupuis",
+     "nation": "CAN",
+     "time": "22:56",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Yujae Kim",
+     "nation": "KOR",
+     "time": "23:02",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Madeline Schizas",
+     "nation": "CAN",
+     "time": "23:08",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Anna Pezzetta",
+     "nation": "ITA",
+     "time": "23:22",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Mao Shimada",
+     "nation": "JPN",
+     "time": "23:28",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Sofia Samodelkina",
+     "nation": "KAZ",
+     "time": "23:34",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Jia Shin",
+     "nation": "KOR",
+     "time": "23:41",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Niina Petrokina",
+     "nation": "EST",
+     "time": "23:47",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Isabeau Levito",
+     "nation": "USA",
+     "time": "23:53",
+     "no": 12,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG003.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Saki MIYAKE": "Saki Miyake",
+     "Viktoriia SAFONOVA": "Виктория Сафонова",
+     "Fee Ann LANDRY": "Fee Ann Landry",
+     "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
+     "Yujae KIM": "Yujae Kim",
+     "Madeline SCHIZAS": "Madeline Schizas",
+     "Anna PEZZETTA": "Anna Pezzetta",
+     "Mao SHIMADA": "Mao Shimada",
+     "Sofia SAMODELKINA": "Sofia Samodelkina",
+     "Jia SHIN": "Jia Shin",
+     "Niina PETROKINA": "Niina Petrokina",
+     "Isabeau LEVITO": "Isabeau Levito"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-canada-international-2026.json"
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:dance-senior-rt",
@@ -40568,7 +40734,7 @@
    "seg": "РТ",
    "title": "GP Skate Canada — танцы РТ",
    "start": "2026-11-01T00:20:00+03:00",
-   "end": "2026-11-01T01:35:00+03:00",
+   "end": "2026-11-01T01:39:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -40583,11 +40749,11 @@
     "Katarina Wolfkostin / Dimitry Tsarevski",
     "Layla Veillon / Alexander Brandys",
     "Lilah Fear / Lewis Gibson",
-    "Marie-Jade Lauriault / Romain Le Gac",
+    "Marie-Jade Lauriault / Romain le Gac",
     "Noemi Maria Tali / Noah Lafornara",
     "Oona Brown / Gage Brown"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
+   "src": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -40598,46 +40764,95 @@
    "field": [
     {
      "name": "Alyssa Robinson / Jacob Portz",
-     "nation": "CAN"
-    },
-    {
-     "name": "Caroline Green / Michael Parsons",
-     "nation": "USA"
-    },
-    {
-     "name": "Evgeniia Lopareva / Geoffrey Brissaud",
-     "nation": "FRA"
-    },
-    {
-     "name": "Iryna Pidgaina / Artem Koval",
-     "nation": "UKR"
-    },
-    {
-     "name": "Katarina Wolfkostin / Dimitry Tsarevski",
-     "nation": "USA"
+     "nation": "CAN",
+     "time": "00:26",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Layla Veillon / Alexander Brandys",
-     "nation": "CAN"
-    },
-    {
-     "name": "Lilah Fear / Lewis Gibson",
-     "nation": "GBR"
-    },
-    {
-     "name": "Marie-Jade Lauriault / Romain Le Gac",
-     "nation": "CAN"
+     "nation": "CAN",
+     "time": "00:33",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Noemi Maria Tali / Noah Lafornara",
-     "nation": "ITA"
+     "nation": "ITA",
+     "time": "00:39",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Katarina Wolfkostin / Dimitry Tsarevski",
+     "nation": "USA",
+     "time": "00:46",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Iryna Pidgaina / Artem Koval",
+     "nation": "UKR",
+     "time": "00:52",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Marie-Jade Lauriault / Romain le Gac",
+     "nation": "CAN",
+     "time": "01:06",
+     "no": 6,
+     "warmup": 2
     },
     {
      "name": "Oona Brown / Gage Brown",
-     "nation": "USA"
+     "nation": "USA",
+     "time": "01:12",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Caroline Green / Michael Parsons",
+     "nation": "USA",
+     "time": "01:19",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Evgeniia Lopareva / Geoffrey Brissaud",
+     "nation": "FRA",
+     "time": "01:25",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Lilah Fear / Lewis Gibson",
+     "nation": "GBR",
+     "time": "01:32",
+     "no": 10,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG007.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Alyssa ROBINSON / Jacob PORTZ": "Alyssa Robinson / Jacob Portz",
+     "Layla VEILLON / Alexander BRANDYS": "Layla Veillon / Alexander Brandys",
+     "Noemi Maria TALI / Noah LAFORNARA": "Noemi Maria Tali / Noah Lafornara",
+     "Katarina WOLFKOSTIN / Dimitry TSAREVSKI": "Katarina Wolfkostin / Dimitry Tsarevski",
+     "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Artem Koval",
+     "Marie-Jade LAURIAULT / Romain le GAC": "Marie-Jade Lauriault / Romain le Gac",
+     "Oona BROWN / Gage BROWN": "Oona Brown / Gage Brown",
+     "Caroline GREEN / Michael PARSONS": "Caroline Green / Michael Parsons",
+     "Evgeniia LOPAREVA / Geoffrey BRISSAUD": "Evgeniia Lopareva / Geoffrey Brissaud",
+     "Lilah FEAR / Lewis GIBSON": "Lilah Fear / Lewis Gibson"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-canada-international-2026.json"
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:men-senior-pp",
@@ -40669,7 +40884,7 @@
     "Stephen Gogolev",
     "Wesley Chiu"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
+   "src": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -40727,7 +40942,28 @@
      "nation": "CAN"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG002.htm",
+    "cat": "https://results.isu.org/results/season2627/gpcan2026/CAT001RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpcan2026/SEG001.htm",
+    "names": {
+     "David BONDAR": "David Bondar",
+     "Wesley CHIU": "Wesley Chiu",
+     "Stephen GOGOLEV": "Stephen Gogolev",
+     "Georgii RESHTENKO": "Georgii Reshtenko",
+     "Mihhail SELEVKO": "Mihhail Selevko",
+     "Kevin AYMOZ": "Kevin Aymoz",
+     "Genrikh GARTUNG": "Genrikh Gartung",
+     "Rio NAKATA": "Rio Nakata",
+     "Kazuki TOMONO": "Kazuki Tomono",
+     "Hyungyeom KIM": "Hyungyeom Kim",
+     "Kyrylo MARSAK": "Kyrylo Marsak",
+     "Liam KAPEIKIS": "Liam Kapeikis"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-canada-international-2026.json"
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:pairs-senior-pp",
@@ -40755,7 +40991,7 @@
     "Oxana Vouillamoz / Tom Bouvart",
     "Sofiia Holichenko / Artem Darenskyi"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
+   "src": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -40797,7 +41033,24 @@
      "nation": "UKR"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG006.htm",
+    "cat": "https://results.isu.org/results/season2627/gpcan2026/CAT003RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpcan2026/SEG005.htm",
+    "names": {
+     "Ava KEMP / Yohnatan ELIZAROV": "Ava Kemp / Yohnatan Elizarov",
+     "Lia PEREIRA / Trennt MICHAUD": "Lia Pereira / Trennt Michaud",
+     "Miyu YUNOKI / Tristan TAYLOR": "Miyu Yunoki / Tristan Taylor",
+     "Anna VALESI / Martin BIDAR": "Anna Valesi / Martin Bidar",
+     "Irma CALDARA / Riccardo MAGLIO": "Irma Caldara / Riccardo Maglio",
+     "Oxana VOUILLAMOZ / Tom BOUVART": "Oxana Vouillamoz / Tom Bouvart",
+     "Sofiia HOLICHENKO / Artem DARENSKYI": "Sofiia Holichenko / Artem Darenskyi",
+     "Alisa EFIMOVA / Misha MITROFANOV": "Alisa Efimova / Misha Mitrofanov"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-canada-international-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:men-senior-pp",
@@ -40903,8 +41156,8 @@
    "level": "senior",
    "seg": "ПП",
    "title": "GP Skate Canada — женщины ПП",
-   "start": "2026-11-02T00:00:00+03:00",
-   "end": "2026-11-02T01:45:00+03:00",
+   "start": "2026-11-01T23:00:00+03:00",
+   "end": "2026-11-02T00:45:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -40930,14 +41183,14 @@
     "Yujae Kim",
     "Виктория Сафонова"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
+   "src": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
    "watch": [
     {
      "name": "Okko",
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Россияне:\n• Виктория Сафонова\n\nНачало: 00:00 МСК\nТрансляция: Okko",
+   "desc": "Россияне:\n• Виктория Сафонова\n\nНачало: 23:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Anna Pezzetta",
@@ -40988,7 +41241,28 @@
      "nation": "BLR"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG004.htm",
+    "cat": "https://results.isu.org/results/season2627/gpcan2026/CAT002RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpcan2026/SEG003.htm",
+    "names": {
+     "Viktoriia SAFONOVA": "Виктория Сафонова",
+     "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
+     "Fee Ann LANDRY": "Fee Ann Landry",
+     "Madeline SCHIZAS": "Madeline Schizas",
+     "Niina PETROKINA": "Niina Petrokina",
+     "Anna PEZZETTA": "Anna Pezzetta",
+     "Saki MIYAKE": "Saki Miyake",
+     "Mao SHIMADA": "Mao Shimada",
+     "Sofia SAMODELKINA": "Sofia Samodelkina",
+     "Yujae KIM": "Yujae Kim",
+     "Jia SHIN": "Jia Shin",
+     "Isabeau LEVITO": "Isabeau Levito"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-canada-international-2026.json"
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:dance-senior-pt",
@@ -40998,8 +41272,8 @@
    "level": "senior",
    "seg": "ПТ",
    "title": "GP Skate Canada — танцы ПТ",
-   "start": "2026-11-02T02:15:00+03:00",
-   "end": "2026-11-02T03:40:00+03:00",
+   "start": "2026-11-02T01:15:00+03:00",
+   "end": "2026-11-02T02:40:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -41014,18 +41288,18 @@
     "Katarina Wolfkostin / Dimitry Tsarevski",
     "Layla Veillon / Alexander Brandys",
     "Lilah Fear / Lewis Gibson",
-    "Marie-Jade Lauriault / Romain Le Gac",
+    "Marie-Jade Lauriault / Romain le Gac",
     "Noemi Maria Tali / Noah Lafornara",
     "Oona Brown / Gage Brown"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-canada-international-2026/",
+   "src": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
    "watch": [
     {
      "name": "Okko",
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 02:15 МСК\nТрансляция: Okko",
+   "desc": "Начало: 01:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Alyssa Robinson / Jacob Portz",
@@ -41056,7 +41330,7 @@
      "nation": "GBR"
     },
     {
-     "name": "Marie-Jade Lauriault / Romain Le Gac",
+     "name": "Marie-Jade Lauriault / Romain le Gac",
      "nation": "CAN"
     },
     {
@@ -41068,7 +41342,26 @@
      "nation": "USA"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG008.htm",
+    "cat": "https://results.isu.org/results/season2627/gpcan2026/CAT004RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpcan2026/SEG007.htm",
+    "names": {
+     "Marie-Jade LAURIAULT / Romain le GAC": "Marie-Jade Lauriault / Romain le Gac",
+     "Alyssa ROBINSON / Jacob PORTZ": "Alyssa Robinson / Jacob Portz",
+     "Layla VEILLON / Alexander BRANDYS": "Layla Veillon / Alexander Brandys",
+     "Evgeniia LOPAREVA / Geoffrey BRISSAUD": "Evgeniia Lopareva / Geoffrey Brissaud",
+     "Lilah FEAR / Lewis GIBSON": "Lilah Fear / Lewis Gibson",
+     "Noemi Maria TALI / Noah LAFORNARA": "Noemi Maria Tali / Noah Lafornara",
+     "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Artem Koval",
+     "Oona BROWN / Gage BROWN": "Oona Brown / Gage Brown",
+     "Caroline GREEN / Michael PARSONS": "Caroline Green / Michael Parsons",
+     "Katarina WOLFKOSTIN / Dimitry TSAREVSKI": "Katarina Wolfkostin / Dimitry Tsarevski"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-canada-international-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:dance-junior-rt",
@@ -44247,6 +44540,26 @@
  ],
  "upcoming": [
   {
+   "tid": "ffkm:mezhregionalnye-sorevnovaniya-kubok-mechty-a1583",
+   "name": "Межрегиональные соревнования «Кубок Мечты»",
+   "start": "2026-10-29",
+   "end": "2026-11-01",
+   "venue": "ЛД «Мечта», Москва",
+   "intl": false,
+   "tier": "regional",
+   "region": "Москва"
+  },
+  {
+   "tid": "ffkm:vserossiyskie-sorevnovaniya-kubok-mechty-a1581",
+   "name": "Всероссийские соревнования «Кубок Мечты»",
+   "start": "2026-10-29",
+   "end": "2026-11-01",
+   "venue": "ЛД «Мечта», Москва",
+   "intl": false,
+   "tier": "regional",
+   "region": "Москва"
+  },
+  {
    "tid": "ffkm:fizkulturnoe-meropriyatie-novoe-pokolenie-sredi-yuniorov-i-vzroslykh-1-etap-a1586",
    "name": "Физкультурное мероприятие «Новое поколение» среди юниоров и взрослых (1 этап)",
    "start": "2026-11-01",
@@ -44556,6 +44869,16 @@
    "intl": false
   },
   {
+   "tid": "ffkm:vserossiyskie-sorevnovaniya-na-prizy-zt-sssr-e-a-chaykovskoy-a1657",
+   "name": "Всероссийские соревнования «На призы ЗТ СССР Е.А. Чайковской»",
+   "start": "2027-01-28",
+   "end": "2027-01-29",
+   "venue": "ДС «Янтарь», Москва",
+   "intl": false,
+   "tier": "regional",
+   "region": "Москва"
+  },
+  {
    "tid": "fsr:na-prizy-chaikovskoi-2027-01-28",
    "name": "На призы Чайковской",
    "start": "2027-01-28",
@@ -44708,6 +45031,16 @@
    "intl": false
   },
   {
+   "tid": "ffkm:vserossiyskie-sorevnovaniya-pamyati-i-s-rusakova-a1684",
+   "name": "Всероссийские соревнования «Памяти И.С. Русакова»",
+   "start": "2027-03-01",
+   "end": "2027-03-03",
+   "venue": "ДС «Мегаспорт», Москва",
+   "intl": false,
+   "tier": "regional",
+   "region": "Москва"
+  },
+  {
    "tid": "fsr:pamiati-rusakova-2027-03-01",
    "name": "Памяти Русакова",
    "start": "2027-03-01",
@@ -44740,6 +45073,16 @@
    "intl": false
   },
   {
+   "tid": "ffkm:vserossiyskie-sorevnovaniya-kubok-dvukratnogo-och-e-v-plyushchenko-a1694",
+   "name": "Всероссийские соревнования «Кубок двукратного ОЧ Е.В. Плющенко»",
+   "start": "2027-03-12",
+   "end": "2027-03-14",
+   "venue": "АФК «Ангелы Плющенко», Москва",
+   "intl": false,
+   "tier": "regional",
+   "region": "Москва"
+  },
+  {
    "tid": "fsr:kubok-pervogo-kanala-2027-03-12",
    "name": "Кубок Первого канала",
    "start": "2027-03-12",
@@ -44754,16 +45097,6 @@
    "end": "2027-03-14",
    "venue": "Москва",
    "intl": false
-  },
-  {
-   "tid": "ffkm:vserossiyskie-sorevnovaniya-kubok-dvukratnogo-och-e-v-plyushchenko-a1694",
-   "name": "Всероссийские соревнования «Кубок двукратного ОЧ Е.В. Плющенко»",
-   "start": "2027-03-12",
-   "end": "2027-03-14",
-   "venue": "АФК «Ангелы Плющенко», Москва",
-   "intl": false,
-   "tier": "regional",
-   "region": "Москва"
   },
   {
    "tid": "fsr:pamiati-tiukova-2027-03-15",
@@ -44812,6 +45145,16 @@
    "end": "2027-04-05",
    "venue": "Казань",
    "intl": false
+  },
+  {
+   "tid": "ffkm:vserossiyskie-sorevnovaniya-na-prizy-ffkm-a1716",
+   "name": "Всероссийские соревнования «На призы ФФКМ»",
+   "start": "2027-04-06",
+   "end": "2027-04-09",
+   "venue": "ЛД «Мечта», Москва",
+   "intl": false,
+   "tier": "regional",
+   "region": "Москва"
   },
   {
    "tid": "fsr:na-prizy-ffkm-2027-04-06",
@@ -60318,11 +60661,6 @@
    "k": "M"
   },
   {
-   "n": "Александр Брегей",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Александр Васькович",
    "c": "RUS",
    "k": ""
@@ -60368,11 +60706,6 @@
    "k": "M"
   },
   {
-   "n": "Александра Бойкова",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Александра Бойкова / Дмитрий Козловский",
    "c": "RUS",
    "k": "p"
@@ -60396,11 +60729,6 @@
    "n": "Александра Зотова / Максим Абрамов",
    "c": "RUS",
    "k": "d"
-  },
-  {
-   "n": "Александра Игнатова",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Александра Марьина",
@@ -60458,11 +60786,6 @@
    "k": "d"
   },
   {
-   "n": "Алексей Белкин",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Алексей Брюханов",
    "c": "RUS",
    "k": ""
@@ -60481,11 +60804,6 @@
    "n": "Алексей Пычин",
    "c": "RUS",
    "k": "M"
-  },
-  {
-   "n": "Алексей Столяров",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Алексей Тотмин",
@@ -60613,11 +60931,6 @@
    "k": "W"
   },
   {
-   "n": "Альбина Камалдинова",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Альбина Камалдинова / Степан Маришин",
    "c": "RUS",
    "k": "P"
@@ -60711,11 +61024,6 @@
    "n": "Анастасия Мишина / Александр Галлямов",
    "c": "RUS",
    "k": "p"
-  },
-  {
-   "n": "Анастасия Мухортова",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Анастасия Мухортова / Дмитрий Евгеньев",
@@ -60833,11 +61141,6 @@
    "k": "W"
   },
   {
-   "n": "Анна Билибина",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Анна Билибина / Дмитрий Кашаев",
    "c": "RUS",
    "k": "D"
@@ -60901,11 +61204,6 @@
    "n": "Анна Смирнова / Ярослав Нечаев",
    "c": "RUS",
    "k": "D"
-  },
-  {
-   "n": "Анна Соболева",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Анна Соболева / Матвей Чураков",
@@ -61053,19 +61351,9 @@
    "k": "M"
   },
   {
-   "n": "Артем Валов",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Артем Ермолаев",
    "c": "RUS",
    "k": "M"
-  },
-  {
-   "n": "Артем Петров",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Артем Федотов",
@@ -61213,11 +61501,6 @@
    "k": "W"
   },
   {
-   "n": "Варвара Слуцкая",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Варвара Слуцкая / Глеб Гончаров",
    "c": "RUS",
    "k": "D"
@@ -61313,11 +61596,6 @@
    "k": "w"
   },
   {
-   "n": "Виктор Потапов",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Виктория Большакова / Глеб Большаков",
    "c": "RUS",
    "k": "d"
@@ -61326,11 +61604,6 @@
    "n": "Виктория Городецкая",
    "c": "RUS",
    "k": "W"
-  },
-  {
-   "n": "Виктория Двинина",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Виктория Двинина / Виктор Потапов",
@@ -61431,11 +61704,6 @@
    "n": "Владислав Левичев",
    "c": "RUS",
    "k": "M"
-  },
-  {
-   "n": "Владислав Михайлов",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Владислав Морозов",
@@ -61588,11 +61856,6 @@
    "k": "W"
   },
   {
-   "n": "Дарья Дрожжина",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Дарья Дрожжина / Иван Тельнов",
    "c": "RUS",
    "k": "D"
@@ -61693,16 +61956,6 @@
    "k": "M"
   },
   {
-   "n": "Дмитрий Кашаев",
-   "c": "RUS",
-   "k": ""
-  },
-  {
-   "n": "Дмитрий Козловский",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Дмитрий Кутовой",
    "c": "RUS",
    "k": "M"
@@ -61788,11 +62041,6 @@
    "k": "M"
   },
   {
-   "n": "Евгений Устенко",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Евгения Чеботарева",
    "c": "RUS",
    "k": "W"
@@ -61814,11 +62062,6 @@
   },
   {
    "n": "Егор Гончаров",
-   "c": "RUS",
-   "k": ""
-  },
-  {
-   "n": "Егор Карнаухов",
    "c": "RUS",
    "k": ""
   },
@@ -61868,19 +62111,9 @@
    "k": "W"
   },
   {
-   "n": "Екатерина Миронова",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Екатерина Миронова / Евгений Устенко",
    "c": "RUS",
    "k": "d"
-  },
-  {
-   "n": "Екатерина Рыбакова",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Екатерина Рыбакова / Иван Махноносов",
@@ -61906,11 +62139,6 @@
    "n": "Екатерина Ципухина",
    "c": "RUS",
    "k": "w"
-  },
-  {
-   "n": "Екатерина Чикмарёва",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Екатерина Чикмарёва / Матвей Янченков",
@@ -62078,11 +62306,6 @@
    "k": "P"
   },
   {
-   "n": "Зоя Пестова",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Зоя Пестова / Сергей Лагутов",
    "c": "RUS",
    "k": "D"
@@ -62108,19 +62331,9 @@
    "k": "M"
   },
   {
-   "n": "Иван Махноносов",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Иван Теленков",
    "c": "RUS",
    "k": "M"
-  },
-  {
-   "n": "Иван Тельнов",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Игорь Ефимчук",
@@ -62131,11 +62344,6 @@
    "n": "Илина Аскарова",
    "c": "RUS",
    "k": "W"
-  },
-  {
-   "n": "Илья Вегера",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Илья Княжук",
@@ -62276,11 +62484,6 @@
    "n": "Кира Гудаева",
    "c": "RUS",
    "k": "W"
-  },
-  {
-   "n": "Кира Доможирова",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Кира Доможирова / Илья Вегера",
@@ -62568,11 +62771,6 @@
    "k": "M"
   },
   {
-   "n": "Максим Некрасов",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Максим Осадчих",
    "c": "RUS",
    "k": "M"
@@ -62708,11 +62906,6 @@
    "k": "W"
   },
   {
-   "n": "Мария Фефелова",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Мария Фефелова / Артём Валов",
    "c": "RUS",
    "k": "D"
@@ -62768,19 +62961,9 @@
    "k": "d"
   },
   {
-   "n": "Матвей Богданов",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Матвей Ветлугин",
    "c": "RUS",
    "k": "m"
-  },
-  {
-   "n": "Матвей Лысов",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Матвей Самохин",
@@ -62788,19 +62971,9 @@
    "k": ""
   },
   {
-   "n": "Матвей Чураков",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Матвей Шнайдер",
    "c": "RUS",
    "k": "M"
-  },
-  {
-   "n": "Матвей Янченков",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Мелания Демиденко",
@@ -62811,11 +62984,6 @@
    "n": "Милана Горицкова",
    "c": "RUS",
    "k": "W"
-  },
-  {
-   "n": "Милана Жабина",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Милана Жабина / Вениамин Башуров",
@@ -62831,11 +62999,6 @@
    "n": "Милана Ишкина",
    "c": "RUS",
    "k": "W"
-  },
-  {
-   "n": "Милана Кузьмина",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Милана Кузьмина / Дмитрий Студеникин",
@@ -62983,11 +63146,6 @@
    "k": "D"
   },
   {
-   "n": "Ольга Сабада",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Ольга Сабада / Павел Астахов",
    "c": "RUS",
    "k": "P"
@@ -63043,6 +63201,11 @@
    "k": "M"
   },
   {
+   "n": "Петр Гуменник",
+   "c": "RUS",
+   "k": "m"
+  },
+  {
    "n": "Платон Каблуков",
    "c": "RUS",
    "k": "M"
@@ -63066,11 +63229,6 @@
    "n": "Полина Винкус",
    "c": "RUS",
    "k": "W"
-  },
-  {
-   "n": "Полина Жарова",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Полина Жарова / Алексей Столяров",
@@ -63128,11 +63286,6 @@
    "k": "D"
   },
   {
-   "n": "Полина Сажина",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Полина Сажина / Алексей Белкин",
    "c": "RUS",
    "k": "P"
@@ -63141,11 +63294,6 @@
    "n": "Полина Тимошенко",
    "c": "RUS",
    "k": "w"
-  },
-  {
-   "n": "Полина Тихонова",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Полина Тихонова / Матвей Лысов",
@@ -63158,11 +63306,6 @@
    "k": "w"
   },
   {
-   "n": "Полина Шешелева",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Полина Шешелева / Егор Карнаухов",
    "c": "RUS",
    "k": "P"
@@ -63171,11 +63314,6 @@
    "n": "Прохор Кухтенков",
    "c": "RUS",
    "k": "M"
-  },
-  {
-   "n": "Пётр Гуменник",
-   "c": "RUS",
-   "k": "m"
   },
   {
    "n": "Риана Ганиева",
@@ -63228,7 +63366,7 @@
    "k": "D"
   },
   {
-   "n": "Семен Соловьев",
+   "n": "Семён Соловьёв",
    "c": "RUS",
    "k": "m"
   },
@@ -63266,11 +63404,6 @@
    "n": "София Дзепка",
    "c": "RUS",
    "k": "W"
-  },
-  {
-   "n": "София Диана Касинс",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "София Диана Касинс / Александр Брегей",
@@ -63368,7 +63501,7 @@
    "k": "w"
   },
   {
-   "n": "Софья Муравьева",
+   "n": "Софья Муравьёва",
    "c": "RUS",
    "k": "w"
   },
@@ -63443,11 +63576,6 @@
    "k": "D"
   },
   {
-   "n": "Таисия Гусева",
-   "c": "RUS",
-   "k": ""
-  },
-  {
    "n": "Таисия Гусева / Даниил Овчинников",
    "c": "RUS",
    "k": "P"
@@ -63481,11 +63609,6 @@
    "n": "Таисия Шепталина / Дмитрий Пекин",
    "c": "RUS",
    "k": "D"
-  },
-  {
-   "n": "Таисия Щербинина",
-   "c": "RUS",
-   "k": ""
   },
   {
    "n": "Таисия Щербинина / Артём Петров",
@@ -63685,6 +63808,241 @@
   {
    "n": "Ярослава Князева",
    "c": "BLR",
+   "k": ""
+  },
+  {
+   "n": "Александр Брегей",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Александра Бойкова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Александра Игнатова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Алексей Белкин",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Алексей Столяров",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Альбина Камалдинова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Анастасия Мухортова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Анна Билибина",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Анна Соболева",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Артем Валов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Артем Петров",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Варвара Слуцкая",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Виктор Потапов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Виктория Двинина",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Владислав Михайлов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Дарья Дрожжина",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Дмитрий Кашаев",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Дмитрий Козловский",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Евгений Устенко",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Егор Карнаухов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Екатерина Миронова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Екатерина Рыбакова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Екатерина Чикмарёва",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Зоя Пестова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Иван Махноносов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Иван Тельнов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Илья Вегера",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Кира Доможирова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Максим Некрасов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Мария Фефелова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Матвей Богданов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Матвей Лысов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Матвей Чураков",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Матвей Янченков",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Милана Жабина",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Милана Кузьмина",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Ольга Сабада",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Полина Жарова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Полина Сажина",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Полина Тихонова",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Полина Шешелева",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Пётр Гуменник",
+   "c": "RUS",
+   "k": "m"
+  },
+  {
+   "n": "Семен Соловьев",
+   "c": "RUS",
+   "k": "m"
+  },
+  {
+   "n": "София Диана Касинс",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Софья Муравьева",
+   "c": "RUS",
+   "k": "w"
+  },
+  {
+   "n": "Таисия Гусева",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Таисия Щербинина",
+   "c": "RUS",
    "k": ""
   },
   {
@@ -65510,6 +65868,7 @@
   "Валерия Лукашова": "photos/b9268e15fbc00786.jpg",
   "Любовь Рубцова": "photos/3d03054a77c01ddf.jpg",
   "Adria Liliac": "photos/032ffdb83d3369a9.jpg",
-  "Elena Martinenghi": "photos/ae524e31a6484a35.jpg"
+  "Elena Martinenghi": "photos/ae524e31a6484a35.jpg",
+  "Петр Гуменник": "photos/cbdca26425d5004b.jpg"
  }
 }
