@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-31T09:57:20.576246+00:00",
+ "checked": "2026-10-31T10:05:20.309225+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40557,97 +40557,98 @@
     "Sonia Milik"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Lelle Agota Molnar — 76.42\n2. Maryia Luksha — 75.90\n3. Guan Ying Wang — 75.34\n\nНачало: 11:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Elena Martinenghi — 83.09\n2. Lelle Agota Molnar — 76.42\n3. Maryia Luksha — 75.90\n\nНачало: 11:00 МСК",
    "field": [
     {
      "name": "Sonia Milik",
      "nation": "ROU",
      "no": 1,
      "warmup": 1,
-     "place": 12
+     "place": 13
     },
     {
      "name": "Iris Victoria Ciurezu",
      "nation": "ROU",
      "no": 2,
      "warmup": 1,
-     "place": 11
+     "place": 12
     },
     {
      "name": "Anhelina Kapuka",
      "nation": "UKR",
      "no": 3,
      "warmup": 1,
-     "place": 10
+     "place": 11
     },
     {
      "name": "Guan Ying Wang",
      "nation": "TPE",
      "no": 4,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Rebecca Rusu",
      "nation": "GER",
      "no": 5,
      "warmup": 1,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Adria Liliac",
      "nation": "ROU",
      "no": 6,
      "warmup": 2,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Nikol Kuperman",
      "nation": "ISR",
      "no": 7,
      "warmup": 2,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Andreea Cristiana Maria Lazar",
      "nation": "ROU",
      "no": 8,
      "warmup": 2,
-     "place": 9
+     "place": 10
     },
     {
      "name": "Maria Sycova",
      "nation": "SVK",
      "no": 9,
      "warmup": 2,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Natalia Runcanu",
      "nation": "ROU",
      "no": 10,
      "warmup": 2,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Lelle Agota Molnar",
      "nation": "ROU",
      "no": 11,
      "warmup": 3,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Maryia Luksha",
      "nation": "POL",
      "no": 12,
      "warmup": 3,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Elena Martinenghi",
      "nation": "SUI",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "place": 1
     },
     {
      "name": "Simona Tkachman",
@@ -40690,21 +40691,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Elena Martinenghi",
+     "nation": "SUI",
+     "points": "83.09"
+    },
+    {
+     "place": 2,
      "name": "Lelle Agota Molnar",
      "nation": "ROU",
      "points": "76.42"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Maryia Luksha",
      "nation": "POL",
      "points": "75.90"
-    },
-    {
-     "place": 3,
-     "name": "Guan Ying Wang",
-     "nation": "TPE",
-     "points": "75.34"
     }
    ],
    "provisional": true
