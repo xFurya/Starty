@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-31T01:41:03.144633+00:00",
+ "checked": "2026-10-31T01:45:03.403148+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40060,7 +40060,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Hyungyeom Kim — 77.76\n2. David Bondar — 77.48\n3. Georgii Reshtenko — 76.43\n\nНачало: 04:00 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Kyrylo Marsak — 83.67\n2. Hyungyeom Kim — 77.76\n3. David Bondar — 77.48\n\nНачало: 04:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Wesley Chiu",
@@ -40068,7 +40068,7 @@
      "time": "04:07",
      "no": 1,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "David Bondar",
@@ -40076,7 +40076,7 @@
      "time": "04:13",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Hyungyeom Kim",
@@ -40084,7 +40084,7 @@
      "time": "04:20",
      "no": 3,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Liam Kapeikis",
@@ -40092,7 +40092,7 @@
      "time": "04:26",
      "no": 4,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Georgii Reshtenko",
@@ -40100,14 +40100,15 @@
      "time": "04:32",
      "no": 5,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Kyrylo Marsak",
      "nation": "UKR",
      "time": "04:38",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Stephen Gogolev",
@@ -40177,21 +40178,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Kyrylo Marsak",
+     "nation": "UKR",
+     "points": "83.67"
+    },
+    {
+     "place": 2,
      "name": "Hyungyeom Kim",
      "nation": "KOR",
      "points": "77.76"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "David Bondar",
      "nation": "CAN",
      "points": "77.48"
-    },
-    {
-     "place": 3,
-     "name": "Georgii Reshtenko",
-     "nation": "CZE",
-     "points": "76.43"
     }
    ],
    "provisional": true
