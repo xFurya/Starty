@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-31T09:17:20.442648+00:00",
+ "checked": "2026-10-31T09:21:20.730370+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40391,7 +40391,7 @@
      "time": "10:07",
      "no": 1,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Константин Сафонов",
@@ -40399,7 +40399,7 @@
      "time": "10:20",
      "no": 3,
      "warmup": 1,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Илья Неретин",
@@ -40407,7 +40407,7 @@
      "time": "10:26",
      "no": 4,
      "warmup": 1,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Роман Савосин",
@@ -40431,7 +40431,7 @@
      "time": "10:46",
      "no": 2,
      "warmup": 1,
-     "place": 9
+     "place": 10
     },
     {
      "name": "Алексей Тотмин",
@@ -40439,7 +40439,7 @@
      "time": "10:52",
      "no": 7,
      "warmup": 2,
-     "place": 10
+     "place": 11
     },
     {
      "name": "Пётр Гуменник",
@@ -40455,7 +40455,7 @@
      "time": "11:05",
      "no": 9,
      "warmup": 2,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Андрей Мозалёв",
@@ -40463,14 +40463,15 @@
      "time": "11:12",
      "no": 10,
      "warmup": 2,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Матвей Ветлугин",
      "nation": "СПБ",
      "time": "11:18",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4
     },
     {
      "name": "Николай Угожаев",
@@ -40556,28 +40557,28 @@
     "Sonia Milik"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Guan Ying Wang — 75.34\n2. Maria Sycova — 67.64\n3. Adria Liliac — 66.63\n\nНачало: 11:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Guan Ying Wang — 75.34\n2. Natalia Runcanu — 70.29\n3. Maria Sycova — 67.64\n\nНачало: 11:00 МСК",
    "field": [
     {
      "name": "Sonia Milik",
      "nation": "ROU",
      "no": 1,
      "warmup": 1,
-     "place": 9
+     "place": 10
     },
     {
      "name": "Iris Victoria Ciurezu",
      "nation": "ROU",
      "no": 2,
      "warmup": 1,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Anhelina Kapuka",
      "nation": "UKR",
      "no": 3,
      "warmup": 1,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Guan Ying Wang",
@@ -40591,41 +40592,42 @@
      "nation": "GER",
      "no": 5,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Adria Liliac",
      "nation": "ROU",
      "no": 6,
      "warmup": 2,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Nikol Kuperman",
      "nation": "ISR",
      "no": 7,
      "warmup": 2,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Andreea Cristiana Maria Lazar",
      "nation": "ROU",
      "no": 8,
      "warmup": 2,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Maria Sycova",
      "nation": "SVK",
      "no": 9,
      "warmup": 2,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Natalia Runcanu",
      "nation": "ROU",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2
     },
     {
      "name": "Lelle Agota Molnar",
@@ -40692,15 +40694,15 @@
     },
     {
      "place": 2,
-     "name": "Maria Sycova",
-     "nation": "SVK",
-     "points": "67.64"
+     "name": "Natalia Runcanu",
+     "nation": "ROU",
+     "points": "70.29"
     },
     {
      "place": 3,
-     "name": "Adria Liliac",
-     "nation": "ROU",
-     "points": "66.63"
+     "name": "Maria Sycova",
+     "nation": "SVK",
+     "points": "67.64"
     }
    ],
    "provisional": true
