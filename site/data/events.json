@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-31T02:29:03.469440+00:00",
+ "checked": "2026-10-31T03:32:04.016081+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40235,14 +40235,15 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 06:15 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Miyu Yunoki / Tristan Taylor — 55.78\n\nНачало: 06:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Miyu Yunoki / Tristan Taylor",
      "nation": "CAN",
      "time": "06:22",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Sofiia Holichenko / Artem Darenskyi",
@@ -40311,7 +40312,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json"
+   "proto": "isu_isu-gp-skate-canada-international-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Miyu Yunoki / Tristan Taylor",
+     "nation": "CAN",
+     "points": "55.78"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:men-senior-kp",
