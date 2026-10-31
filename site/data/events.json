@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-31T04:12:04.032559+00:00",
+ "checked": "2026-10-31T04:16:04.240203+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40235,7 +40235,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ava Kemp / Yohnatan Elizarov — 64.94\n2. Oxana Vouillamoz / Tom Bouvart — 61.46\n3. Anna Valesi / Martin Bidar — 60.44\n\nНачало: 06:15 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Lia Pereira / Trennt Michaud — 77.06\n2. Ava Kemp / Yohnatan Elizarov — 64.94\n3. Oxana Vouillamoz / Tom Bouvart — 61.46\n\nНачало: 06:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Miyu Yunoki / Tristan Taylor",
@@ -40243,7 +40243,7 @@
      "time": "06:22",
      "no": 1,
      "warmup": 1,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Sofiia Holichenko / Artem Darenskyi",
@@ -40251,7 +40251,7 @@
      "time": "06:28",
      "no": 2,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Irma Caldara / Riccardo Maglio",
@@ -40259,7 +40259,7 @@
      "time": "06:35",
      "no": 3,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Anna Valesi / Martin Bidar",
@@ -40267,7 +40267,7 @@
      "time": "06:41",
      "no": 4,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Oxana Vouillamoz / Tom Bouvart",
@@ -40275,7 +40275,7 @@
      "time": "06:55",
      "no": 5,
      "warmup": 2,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Ava Kemp / Yohnatan Elizarov",
@@ -40283,14 +40283,15 @@
      "time": "07:01",
      "no": 6,
      "warmup": 2,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Lia Pereira / Trennt Michaud",
      "nation": "CAN",
      "time": "07:08",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Alisa Efimova / Misha Mitrofanov",
@@ -40321,21 +40322,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Lia Pereira / Trennt Michaud",
+     "nation": "CAN",
+     "points": "77.06"
+    },
+    {
+     "place": 2,
      "name": "Ava Kemp / Yohnatan Elizarov",
      "nation": "CAN",
      "points": "64.94"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Oxana Vouillamoz / Tom Bouvart",
      "nation": "SUI",
      "points": "61.46"
-    },
-    {
-     "place": 3,
-     "name": "Anna Valesi / Martin Bidar",
-     "nation": "CZE",
-     "points": "60.44"
     }
    ],
    "provisional": true
