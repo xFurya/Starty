@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-31T15:01:50+03:00",
- "checked": "2026-10-31T13:45:21.947614+00:00",
+ "generated": "2026-10-31T19:59:58+03:00",
+ "checked": "2026-10-31T19:59:58+03:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40341,14 +40341,14 @@
    },
    "facts": [
     {
-     "who": "Lia Pereira / Trennt Michaud",
+     "kind": "score",
      "text": "Личный рекорд за КП: 77.06 (был 75.52)",
-     "kind": "score"
+     "who": "Lia Pereira / Trennt Michaud"
     },
     {
-     "who": "Ava Kemp / Yohnatan Elizarov",
+     "kind": "score",
      "text": "Личный рекорд за КП: 64.94 (был 64.21)",
-     "kind": "score"
+     "who": "Ava Kemp / Yohnatan Elizarov"
     }
    ],
    "proto": "isu_isu-gp-skate-canada-international-2026.json"
@@ -40964,9 +40964,9 @@
    },
    "facts": [
     {
-     "who": "Лидия Плескачева",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Лидия Плескачева"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json"
@@ -40980,7 +40980,7 @@
    "seg": "РТ",
    "title": "Гран-при России «Красноярье» — танцы РТ",
    "start": "2026-10-31T14:10:00+03:00",
-   "end": "2026-10-31T15:28:00+03:00",
+   "end": "2026-10-31T15:25:00+03:00",
    "venue": "Кристалл Арена, Красноярск",
    "intl": false,
    "broadcast": [
@@ -41011,109 +41011,6 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Итог:\n1. Елизавета Пасечник / Дарио Чиризано — 79.08\n2. Александра Степанова / Иван Букин — 76.98\n3. Екатерина Рыбакова / Иван Махноносов — 74.81\n\nНачало: 14:10 МСК\nТрансляция: Первый канал / YouTube",
-   "field": [
-    {
-     "name": "Анна Коломенская / Артем Фролов",
-     "nation": "МОБ",
-     "time": "14:16",
-     "no": 1,
-     "warmup": 1,
-     "place": 6
-    },
-    {
-     "name": "Таисия Линчевская / Дмитрий Щербаков",
-     "nation": "МОС",
-     "time": "14:29",
-     "no": 3,
-     "warmup": 1,
-     "place": 9
-    },
-    {
-     "name": "Анна Щербакова / Егор Гончаров",
-     "nation": "МОС",
-     "time": "14:36",
-     "no": 4,
-     "warmup": 1,
-     "place": 4
-    },
-    {
-     "name": "Варвара Жданова / Тимур Бабаев-Смирнов",
-     "nation": "МОС",
-     "time": "14:42",
-     "no": 5,
-     "warmup": 1,
-     "place": 8
-    },
-    {
-     "name": "Алиса Абдуллина / Егор Петров",
-     "nation": "СПБ",
-     "time": "14:49",
-     "no": 2,
-     "warmup": 1,
-     "place": 10
-    },
-    {
-     "name": "Александра Степанова / Иван Букин",
-     "nation": "МОС",
-     "time": "14:55",
-     "no": 6,
-     "warmup": 2,
-     "place": 2
-    },
-    {
-     "name": "Екатерина Рыбакова / Иван Махноносов",
-     "nation": "МОС",
-     "time": "15:01",
-     "no": 7,
-     "warmup": 2,
-     "place": 3
-    },
-    {
-     "name": "Софья Леонтьева / Даниил Горелкин",
-     "nation": "МОС",
-     "time": "15:08",
-     "no": 8,
-     "warmup": 2,
-     "place": 5
-    },
-    {
-     "name": "Елизавета Пасечник / Дарио Чиризано",
-     "nation": "МОС",
-     "time": "15:15",
-     "no": 9,
-     "warmup": 2,
-     "place": 1
-    },
-    {
-     "name": "Ирина Хавронина / Девид Нарижный",
-     "nation": "МОС",
-     "time": "15:21",
-     "no": 10,
-     "warmup": 2,
-     "place": 7
-    }
-   ],
-   "live": {
-    "idx": "https://fsrussia.ru/results/2627/3etap_sen/index.htm",
-    "seg": "https://fsrussia.ru/results/2627/3etap_sen/SEG005.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Анна КОЛОМЕНСКАЯ / Артем ФРОЛОВ": "Анна Коломенская / Артем Фролов",
-     "Алиса АБДУЛЛИНА / Егор ПЕТРОВ": "Алиса Абдуллина / Егор Петров",
-     "Таисия ЛИНЧЕВСКАЯ / Дмитрий ЩЕРБАКОВ": "Таисия Линчевская / Дмитрий Щербаков",
-     "Анна ЩЕРБАКОВА / Егор ГОНЧАРОВ": "Анна Щербакова / Егор Гончаров",
-     "Варвара ЖДАНОВА / Тимур БАБАЕВ-СМИРНОВ": "Варвара Жданова / Тимур Бабаев-Смирнов",
-     "Александра СТЕПАНОВА / Иван БУКИН": "Александра Степанова / Иван Букин",
-     "Екатерина РЫБАКОВА / Иван МАХНОНОСОВ": "Екатерина Рыбакова / Иван Махноносов",
-     "Софья ЛЕОНТЬЕВА / Даниил ГОРЕЛКИН": "Софья Леонтьева / Даниил Горелкин",
-     "Елизавета ПАСЕЧНИК / Дарио ЧИРИЗАНО": "Елизавета Пасечник / Дарио Чиризано",
-     "Ирина ХАВРОНИНА / Девид НАРИЖНЫЙ": "Ирина Хавронина / Девид Нарижный"
-    },
-    "basis": "judges"
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json",
    "podium": [
     {
      "place": 1,
@@ -41133,7 +41030,110 @@
      "nation": "МОС",
      "points": "74.81"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Елизавета Пасечник / Дарио Чиризано — 79.08\n2. Александра Степанова / Иван Букин — 76.98\n3. Екатерина Рыбакова / Иван Махноносов — 74.81\n\nНачало: 14:10 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Анна Коломенская / Артем Фролов",
+     "nation": "МОБ",
+     "no": 1,
+     "warmup": 1,
+     "place": 6,
+     "time": "14:16"
+    },
+    {
+     "name": "Алиса Абдуллина / Егор Петров",
+     "nation": "СПБ",
+     "no": 2,
+     "warmup": 1,
+     "place": 10,
+     "time": "14:49"
+    },
+    {
+     "name": "Таисия Линчевская / Дмитрий Щербаков",
+     "nation": "МОС",
+     "no": 3,
+     "warmup": 1,
+     "place": 9,
+     "time": "14:29"
+    },
+    {
+     "name": "Анна Щербакова / Егор Гончаров",
+     "nation": "МОС",
+     "no": 4,
+     "warmup": 1,
+     "place": 4,
+     "time": "14:36"
+    },
+    {
+     "name": "Варвара Жданова / Тимур Бабаев-Смирнов",
+     "nation": "МОС",
+     "no": 5,
+     "warmup": 1,
+     "place": 8,
+     "time": "14:42"
+    },
+    {
+     "name": "Александра Степанова / Иван Букин",
+     "nation": "МОС",
+     "no": 6,
+     "warmup": 2,
+     "place": 2,
+     "time": "14:55"
+    },
+    {
+     "name": "Екатерина Рыбакова / Иван Махноносов",
+     "nation": "МОС",
+     "no": 7,
+     "warmup": 2,
+     "place": 3,
+     "time": "15:01"
+    },
+    {
+     "name": "Софья Леонтьева / Даниил Горелкин",
+     "nation": "МОС",
+     "no": 8,
+     "warmup": 2,
+     "place": 5,
+     "time": "15:08"
+    },
+    {
+     "name": "Елизавета Пасечник / Дарио Чиризано",
+     "nation": "МОС",
+     "no": 9,
+     "warmup": 2,
+     "place": 1,
+     "time": "15:15"
+    },
+    {
+     "name": "Ирина Хавронина / Девид Нарижный",
+     "nation": "МОС",
+     "no": 10,
+     "warmup": 2,
+     "place": 7,
+     "time": "15:21"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/3etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/3etap_sen/SEG005.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Елизавета ПАСЕЧНИК / Дарио ЧИРИЗАНО": "Елизавета Пасечник / Дарио Чиризано",
+     "Александра СТЕПАНОВА / Иван БУКИН": "Александра Степанова / Иван Букин",
+     "Екатерина РЫБАКОВА / Иван МАХНОНОСОВ": "Екатерина Рыбакова / Иван Махноносов",
+     "Анна ЩЕРБАКОВА / Егор ГОНЧАРОВ": "Анна Щербакова / Егор Гончаров",
+     "Софья ЛЕОНТЬЕВА / Даниил ГОРЕЛКИН": "Софья Леонтьева / Даниил Горелкин",
+     "Анна КОЛОМЕНСКАЯ / Артем ФРОЛОВ": "Анна Коломенская / Артем Фролов",
+     "Ирина ХАВРОНИНА / Девид НАРИЖНЫЙ": "Ирина Хавронина / Девид Нарижный",
+     "Варвара ЖДАНОВА / Тимур БАБАЕВ-СМИРНОВ": "Варвара Жданова / Тимур Бабаев-Смирнов",
+     "Таисия ЛИНЧЕВСКАЯ / Дмитрий ЩЕРБАКОВ": "Таисия Линчевская / Дмитрий Щербаков",
+     "Алиса АБДУЛЛИНА / Егор ПЕТРОВ": "Алиса Абдуллина / Егор Петров"
+    },
+    "basis": "judges"
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json"
   },
   {
    "id": "gs:crystal-skate:men-senior-pp",
@@ -41154,37 +41154,6 @@
     "Tamir Kuperman"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Итог:\n1. Tamir Kuperman — 120.64\n2. Filip Kaymakchiev — 83.72\n\nИтог турнира:\n1. Tamir Kuperman — 200.09\n2. Filip Kaymakchiev — 134.33\n\nПримечательное:\n• Filip Kaymakchiev — Личный рекорд по сумме: 134.33 (был 132.73)\n• Tamir Kuperman — Отрыв от второго места — 65.76 балла\n\nНачало: 15:00 МСК",
-   "field": [
-    {
-     "name": "Filip Kaymakchiev",
-     "nation": "BUL",
-     "no": 1,
-     "warmup": 1,
-     "place": 2,
-     "final": 2
-    },
-    {
-     "name": "Tamir Kuperman",
-     "nation": "ISR",
-     "no": 2,
-     "warmup": 1,
-     "place": 1,
-     "final": 1
-    }
-   ],
-   "live": {
-    "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
-    "seg": "https://www.frponline.ro/html2/cryro2026/SEG002.htm",
-    "cat": "https://www.frponline.ro/html2/cryro2026/CAT001RS.htm",
-    "first": "https://www.frponline.ro/html2/cryro2026/SEG001.htm",
-    "names": {
-     "Filip KAYMAKCHIEV": "Filip Kaymakchiev",
-     "Tamir KUPERMAN": "Tamir Kuperman"
-    },
-    "basis": "judges"
-   },
-   "proto": "gs_crystal-skate.json",
    "podium": [
     {
      "place": 1,
@@ -41213,18 +41182,49 @@
      "points": "134.33"
     }
    ],
-   "facts": [
+   "desc": "Итог:\n1. Tamir Kuperman — 120.64\n2. Filip Kaymakchiev — 83.72\n\nИтог турнира:\n1. Tamir Kuperman — 200.09\n2. Filip Kaymakchiev — 134.33\n\nПримечательное:\n• Filip Kaymakchiev — Личный рекорд по сумме: 134.33 (был 132.73)\n• Tamir Kuperman — Отрыв от второго места — 65.76 балла\n\nНачало: 15:00 МСК",
+   "field": [
     {
-     "who": "Filip Kaymakchiev",
-     "text": "Личный рекорд по сумме: 134.33 (был 132.73)",
-     "kind": "score"
+     "name": "Filip Kaymakchiev",
+     "nation": "BUL",
+     "no": 1,
+     "warmup": 1,
+     "place": 2,
+     "final": 2
     },
     {
-     "who": "Tamir Kuperman",
-     "text": "Отрыв от второго места — 65.76 балла",
-     "kind": "place"
+     "name": "Tamir Kuperman",
+     "nation": "ISR",
+     "no": 2,
+     "warmup": 1,
+     "place": 1,
+     "final": 1
     }
-   ]
+   ],
+   "live": {
+    "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
+    "seg": "https://www.frponline.ro/html2/cryro2026/SEG002.htm",
+    "cat": "https://www.frponline.ro/html2/cryro2026/CAT001RS.htm",
+    "first": "https://www.frponline.ro/html2/cryro2026/SEG001.htm",
+    "names": {
+     "Tamir KUPERMAN": "Tamir Kuperman",
+     "Filip KAYMAKCHIEV": "Filip Kaymakchiev"
+    },
+    "basis": "judges"
+   },
+   "facts": [
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 134.33 (был 132.73)",
+     "who": "Filip Kaymakchiev"
+    },
+    {
+     "kind": "place",
+     "text": "Отрыв от второго места — 65.76 балла",
+     "who": "Tamir Kuperman"
+    }
+   ],
+   "proto": "gs_crystal-skate.json"
   },
   {
    "id": "gs:crystal-skate:women-senior-pp-women",
@@ -41250,6 +41250,46 @@
     "Milana Mozeiko"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Julia Sauter",
+     "nation": "ROU",
+     "points": "108.09"
+    },
+    {
+     "place": 2,
+     "name": "Ekaterina Kurakova",
+     "nation": "POL",
+     "points": "105.42"
+    },
+    {
+     "place": 3,
+     "name": "Lilian Musgrave",
+     "nation": "GBR",
+     "points": "96.94"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Ekaterina Kurakova",
+     "nation": "POL",
+     "points": "166.02"
+    },
+    {
+     "place": 2,
+     "name": "Julia Sauter",
+     "nation": "ROU",
+     "points": "162.14"
+    },
+    {
+     "place": 3,
+     "name": "Lilian Musgrave",
+     "nation": "GBR",
+     "points": "145.01"
+    }
+   ],
    "desc": "Итог:\n1. Julia Sauter — 108.09\n2. Ekaterina Kurakova — 105.42\n3. Lilian Musgrave — 96.94\n\nИтог турнира:\n1. Ekaterina Kurakova — 166.02\n2. Julia Sauter — 162.14\n3. Lilian Musgrave — 145.01\n\nНачало: 15:27 МСК",
    "field": [
     {
@@ -41315,57 +41355,17 @@
     "cat": "https://www.frponline.ro/html2/cryro2026/CAT002RS.htm",
     "first": "https://www.frponline.ro/html2/cryro2026/SEG003.htm",
     "names": {
-     "Maria SMARANDA": "Maria Smaranda",
+     "Julia SAUTER": "Julia Sauter",
+     "Ekaterina KURAKOVA": "Ekaterina Kurakova",
+     "Lilian MUSGRAVE": "Lilian Musgrave",
+     "Milana MOZEIKO": "Milana Mozeiko",
      "Ana STRATULAT": "Ana Stratulat",
      "Ana Sofia BESCHEA": "Ana Sofia Beschea",
-     "Milana MOZEIKO": "Milana Mozeiko",
-     "Lilian MUSGRAVE": "Lilian Musgrave",
-     "Julia SAUTER": "Julia Sauter",
-     "Ekaterina KURAKOVA": "Ekaterina Kurakova"
+     "Maria SMARANDA": "Maria Smaranda"
     },
     "basis": "judges"
    },
-   "proto": "gs_crystal-skate.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Julia Sauter",
-     "nation": "ROU",
-     "points": "108.09"
-    },
-    {
-     "place": 2,
-     "name": "Ekaterina Kurakova",
-     "nation": "POL",
-     "points": "105.42"
-    },
-    {
-     "place": 3,
-     "name": "Lilian Musgrave",
-     "nation": "GBR",
-     "points": "96.94"
-    }
-   ],
-   "total": [
-    {
-     "place": 1,
-     "name": "Ekaterina Kurakova",
-     "nation": "POL",
-     "points": "166.02"
-    },
-    {
-     "place": 2,
-     "name": "Julia Sauter",
-     "nation": "ROU",
-     "points": "162.14"
-    },
-    {
-     "place": 3,
-     "name": "Lilian Musgrave",
-     "nation": "GBR",
-     "points": "145.01"
-    }
-   ]
+   "proto": "gs_crystal-skate.json"
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:women-senior-kp",
@@ -42222,7 +42222,7 @@
    "seg": "ПТ",
    "title": "Гран-при России «Красноярье» — танцы ПТ",
    "start": "2026-11-01T13:20:00+03:00",
-   "end": "2026-11-01T14:45:00+03:00",
+   "end": "2026-11-01T14:49:00+03:00",
    "venue": "Кристалл Арена, Красноярск",
    "intl": false,
    "broadcast": [
@@ -42256,44 +42256,74 @@
    "desc": "Начало: 13:20 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
-     "name": "Александра Степанова / Иван Букин",
-     "nation": "МОС"
-    },
-    {
      "name": "Алиса Абдуллина / Егор Петров",
-     "nation": "СПБ"
-    },
-    {
-     "name": "Анна Коломенская / Артем Фролов",
-     "nation": "МОБ"
-    },
-    {
-     "name": "Анна Щербакова / Егор Гончаров",
-     "nation": "МОС"
+     "nation": "СПБ",
+     "time": "13:25",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Варвара Жданова / Тимур Бабаев-Смирнов",
-     "nation": "МОС"
-    },
-    {
-     "name": "Екатерина Рыбакова / Иван Махноносов",
-     "nation": "МОС"
-    },
-    {
-     "name": "Елизавета Пасечник / Дарио Чиризано",
-     "nation": "МОС"
+     "nation": "МОС",
+     "time": "13:41",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Ирина Хавронина / Девид Нарижный",
-     "nation": "МОС"
+     "nation": "МОС",
+     "time": "13:49",
+     "no": 4,
+     "warmup": 1
     },
     {
-     "name": "Софья Леонтьева / Даниил Горелкин",
-     "nation": "МОС"
+     "name": "Анна Коломенская / Артем Фролов",
+     "nation": "МОБ",
+     "time": "13:56",
+     "no": 5,
+     "warmup": 1
     },
     {
      "name": "Таисия Линчевская / Дмитрий Щербаков",
-     "nation": "МОС"
+     "nation": "МОС",
+     "time": "14:04",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Софья Леонтьева / Даниил Горелкин",
+     "nation": "МОС",
+     "time": "14:10",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Анна Щербакова / Егор Гончаров",
+     "nation": "МОС",
+     "time": "14:18",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Екатерина Рыбакова / Иван Махноносов",
+     "nation": "МОС",
+     "time": "14:25",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Александра Степанова / Иван Букин",
+     "nation": "МОС",
+     "time": "14:33",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Елизавета Пасечник / Дарио Чиризано",
+     "nation": "МОС",
+     "time": "14:41",
+     "no": 10,
+     "warmup": 2
     }
    ],
    "live": {
@@ -42303,15 +42333,15 @@
     "first": "https://fsrussia.ru/results/2627/3etap_sen/SEG005.htm",
     "names": {
      "Алиса АБДУЛЛИНА / Егор ПЕТРОВ": "Алиса Абдуллина / Егор Петров",
+     "Таисия ЛИНЧЕВСКАЯ / Дмитрий ЩЕРБАКОВ": "Таисия Линчевская / Дмитрий Щербаков",
      "Варвара ЖДАНОВА / Тимур БАБАЕВ-СМИРНОВ": "Варвара Жданова / Тимур Бабаев-Смирнов",
+     "Ирина ХАВРОНИНА / Девид НАРИЖНЫЙ": "Ирина Хавронина / Девид Нарижный",
      "Анна КОЛОМЕНСКАЯ / Артем ФРОЛОВ": "Анна Коломенская / Артем Фролов",
      "Софья ЛЕОНТЬЕВА / Даниил ГОРЕЛКИН": "Софья Леонтьева / Даниил Горелкин",
-     "Таисия ЛИНЧЕВСКАЯ / Дмитрий ЩЕРБАКОВ": "Таисия Линчевская / Дмитрий Щербаков",
-     "Елизавета ПАСЕЧНИК / Дарио ЧИРИЗАНО": "Елизавета Пасечник / Дарио Чиризано",
+     "Анна ЩЕРБАКОВА / Егор ГОНЧАРОВ": "Анна Щербакова / Егор Гончаров",
      "Екатерина РЫБАКОВА / Иван МАХНОНОСОВ": "Екатерина Рыбакова / Иван Махноносов",
      "Александра СТЕПАНОВА / Иван БУКИН": "Александра Степанова / Иван Букин",
-     "Ирина ХАВРОНИНА / Девид НАРИЖНЫЙ": "Ирина Хавронина / Девид Нарижный",
-     "Анна ЩЕРБАКОВА / Егор ГОНЧАРОВ": "Анна Щербакова / Егор Гончаров"
+     "Елизавета ПАСЕЧНИК / Дарио ЧИРИЗАНО": "Елизавета Пасечник / Дарио Чиризано"
     },
     "basis": null
    },
