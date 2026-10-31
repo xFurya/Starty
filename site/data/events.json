@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-31T08:21:04.166053+00:00",
+ "checked": "2026-10-31T08:25:21.294490+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40383,7 +40383,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Даниил Самсонов — 84.31\n2. Даниил Постарнаков — 59.35\n\nНачало: 10:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Даниил Самсонов — 84.31\n2. Константин Сафонов — 66.71\n3. Даниил Постарнаков — 59.35\n\nНачало: 10:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Даниил Самсонов",
@@ -40398,7 +40398,8 @@
      "nation": "ТУЛ",
      "time": "10:20",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Илья Неретин",
@@ -40427,7 +40428,7 @@
      "time": "10:46",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Алексей Тотмин",
@@ -40503,6 +40504,12 @@
     },
     {
      "place": 2,
+     "name": "Константин Сафонов",
+     "nation": "ТУЛ",
+     "points": "66.71"
+    },
+    {
+     "place": 3,
      "name": "Даниил Постарнаков",
      "nation": "СТА",
      "points": "59.35"
@@ -40542,20 +40549,21 @@
     "Sonia Milik"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Sonia Milik — 42.48\n\nНачало: 11:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Iris Victoria Ciurezu — 44.87\n2. Sonia Milik — 42.48\n\nНачало: 11:00 МСК",
    "field": [
     {
      "name": "Sonia Milik",
      "nation": "ROU",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Iris Victoria Ciurezu",
      "nation": "ROU",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Anhelina Kapuka",
@@ -40664,6 +40672,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Iris Victoria Ciurezu",
+     "nation": "ROU",
+     "points": "44.87"
+    },
+    {
+     "place": 2,
      "name": "Sonia Milik",
      "nation": "ROU",
      "points": "42.48"
