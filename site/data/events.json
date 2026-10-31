@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-10-31T21:45:05.015376+00:00",
+ "checked": "2026-10-31T21:53:04.860962+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41590,7 +41590,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Noemi Maria Tali / Noah Lafornara — 62.79\n2. Alyssa Robinson / Jacob Portz — 60.22\n3. Layla Veillon / Alexander Brandys — 59.72\n\nНачало: 00:20 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Katarina Wolfkostin / Dimitry Tsarevski — 71.40\n2. Noemi Maria Tali / Noah Lafornara — 62.79\n3. Alyssa Robinson / Jacob Portz — 60.22\n\nНачало: 00:20 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Alyssa Robinson / Jacob Portz",
@@ -41598,7 +41598,7 @@
      "time": "00:26",
      "no": 1,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Layla Veillon / Alexander Brandys",
@@ -41606,7 +41606,7 @@
      "time": "00:33",
      "no": 2,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Noemi Maria Tali / Noah Lafornara",
@@ -41614,14 +41614,15 @@
      "time": "00:39",
      "no": 3,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Katarina Wolfkostin / Dimitry Tsarevski",
      "nation": "USA",
      "time": "00:46",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Iryna Pidgaina / Artem Koval",
@@ -41689,21 +41690,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Katarina Wolfkostin / Dimitry Tsarevski",
+     "nation": "USA",
+     "points": "71.40"
+    },
+    {
+     "place": 2,
      "name": "Noemi Maria Tali / Noah Lafornara",
      "nation": "ITA",
      "points": "62.79"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Alyssa Robinson / Jacob Portz",
      "nation": "CAN",
      "points": "60.22"
-    },
-    {
-     "place": 3,
-     "name": "Layla Veillon / Alexander Brandys",
-     "nation": "CAN",
-     "points": "59.72"
     }
    ],
    "provisional": true
