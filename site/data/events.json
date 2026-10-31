@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-10-31T22:37:04.495940+00:00",
+ "checked": "2026-10-31T22:41:04.706534+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41590,7 +41590,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Lilah Fear / Lewis Gibson — 81.37\n2. Evgeniia Lopareva / Geoffrey Brissaud — 77.90\n3. Caroline Green / Michael Parsons — 74.24\n\nНачало: 00:20 МСК\nТрансляция: Okko",
+   "desc": "Итог:\n1. Lilah Fear / Lewis Gibson — 81.37\n2. Evgeniia Lopareva / Geoffrey Brissaud — 77.90\n3. Caroline Green / Michael Parsons — 74.24\n\nНачало: 00:20 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Alyssa Robinson / Jacob Portz",
@@ -41690,7 +41690,7 @@
      "Evgeniia LOPAREVA / Geoffrey BRISSAUD": "Evgeniia Lopareva / Geoffrey Brissaud",
      "Lilah FEAR / Lewis GIBSON": "Lilah Fear / Lewis Gibson"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-skate-canada-international-2026.json",
    "podium": [
@@ -41712,8 +41712,7 @@
      "nation": "USA",
      "points": "74.24"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:men-senior-pp",
