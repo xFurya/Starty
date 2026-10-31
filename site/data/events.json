@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-10-31T19:59:58+03:00",
+ "checked": "2026-10-31T19:47:02.175809+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41412,14 +41412,15 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Россияне:\n• Виктория Сафонова — 22:43\n\nНачало: 22:30 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Saki Miyake — 71.95\n\nРоссияне:\n• Виктория Сафонова — 22:43\n\nНачало: 22:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Saki Miyake",
      "nation": "JPN",
      "time": "22:37",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Виктория Сафонова",
@@ -41520,7 +41521,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json"
+   "proto": "isu_isu-gp-skate-canada-international-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Saki Miyake",
+     "nation": "JPN",
+     "points": "71.95"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:dance-senior-rt",
