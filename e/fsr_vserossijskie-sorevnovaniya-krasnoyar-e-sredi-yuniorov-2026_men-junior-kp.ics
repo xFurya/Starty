@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:men-jun
+ ior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261029T145000
+DTEND;TZID=Europe/Moscow:20261029T172500
+SUMMARY:ЮГП России «Красноярье» — юноши КП
+DESCRIPTION:Итог:\n1. Глеб Ковтун — 79.70\n2. Илья Ма
+ льков — 79.17\n3. Александр Чмиль — 77.15\n\nНач
+ ало: 14:50 МСК\nТрансляция: Первый канал / YouT
+ ube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
+ noyar-e-sredi-yuniorov-2026:men-junior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Красноярье» — юноши К
+ П
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

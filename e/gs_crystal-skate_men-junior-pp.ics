@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:crystal-skate:men-junior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261030T153000
+DTEND;TZID=Europe/Moscow:20261030T160000
+SUMMARY:Crystal Skate — юноши ПП
+DESCRIPTION:Итог:\n1. Bohdan Pomohaibo — 95.80\n2. Razvan Cionac — 
+ 71.28\n\nИтог турнира:\n1. Bohdan Pomohaibo — 140.28\n2. Razv
+ an Cionac — 111.31\n\nПримечательное:\n• Bohdan Pomohaib
+ o — Отрыв от второго места — 28.97 балла\n\nН
+ ачало: 15:30 МСК
+LOCATION:Cheile Gradistei\, Romania
+URL:https://xfurya.github.io/Starty/#e=gs:crystal-skate:men-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crystal Skate — юноши ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

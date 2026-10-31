@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-gp-cup-of-china-2026:pairs-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261107T134000
+DTEND;TZID=Europe/Moscow:20261107T150000
+SUMMARY:GP Cup of China — пары ПП
+DESCRIPTION:Россияне:\n• Анастасия Мишина / Але
+ ксандр Галлямов\n\nНачало: 13:40 МСК\nТрансл
+ яция: Okko
+LOCATION:Shenzhen\, China
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:pairs-s
+ enior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GP Cup of China — пары ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

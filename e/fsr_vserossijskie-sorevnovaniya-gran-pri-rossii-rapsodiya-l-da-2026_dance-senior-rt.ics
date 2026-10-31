@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:dan
+ ce-senior-rt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261017T182500
+DTEND;TZID=Europe/Moscow:20261017T193000
+SUMMARY:Гран-при России «Рапсодия льда» — та
+ нцы РТ
+DESCRIPTION:Итог:\n1. Софья Леонтьева / Даниил Го
+ релкин — 77.21\n2. Елизавета Пасечник / Дари
+ о Чиризано — 72.88\n3. Екатерина Рыбакова / И
+ ван Махноносов — 71.93\n\nНачало: 18:25 МСК\nТр
+ ансляция: Первый канал / YouTube
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-rapsodiya-l-da-2026:dance-senior-rt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Гран-при России «Рапсодия льда» — 
+ танцы РТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

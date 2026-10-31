@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:crystal-skate:women-junior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261031T110000
+DTEND;TZID=Europe/Moscow:20261031T133000
+SUMMARY:Crystal Skate — девушки ПП
+DESCRIPTION:Итог:\n1. Leyla Cetin — 113.70\n2. Simona Tkachman — 90
+ .17\n3. Elena Martinenghi — 83.09\n\nИтог турнира:\n1. Leyla 
+ Cetin — 173.42\n2. Simona Tkachman — 144.61\n3. Elena Martinenghi — 
+ 134.91\n\nПримечательное:\n• Leyla Cetin — Личный 
+ рекорд за ПП: 113.70 (был 103.44)\n• Elena Martinenghi — 
+ Тройной аксель\n• Leyla Cetin — Личный рекорд
+  по сумме: 173.42 (был 153.36)\n• Leyla Cetin — Отрыв 
+ от второго места — 28.81 балла\n\nНачало: 11:00
+  МСК
+LOCATION:Cheile Gradistei\, Romania
+URL:https://xfurya.github.io/Starty/#e=gs:crystal-skate:women-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crystal Skate — девушки ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

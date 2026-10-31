@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:dance-j
+ unior-pt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261029T080000
+DTEND;TZID=Europe/Moscow:20261029T102500
+SUMMARY:ЮГП России «Красноярье» — танцы ПТ
+DESCRIPTION:Итог:\n1. Дарья Дрожжина / Иван Тельн
+ ов — 98.43\n2. Зоя Пестова / Сергей Лагутов —
+  96.56\n3. Милана Жабина / Вениамин Башуров —
+  89.39\n\nИтог турнира:\n1. Зоя Пестова / Серге
+ й Лагутов — 163.01\n2. Дарья Дрожжина / Иван Т
+ ельнов — 155.09\n3. Полина Тихонова / Матвей 
+ Лысов — 152.42\n\nПримечательное:\n• Дарья Д
+ рожжина / Иван Тельнов — После ритм-танц
+ а — 6-е место\, в итоге — 2-е место\n\nНачало
+ : 08:00 МСК\nТрансляция: Первый канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
+ noyar-e-sredi-yuniorov-2026:dance-junior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Красноярье» — танцы П
+ Т
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

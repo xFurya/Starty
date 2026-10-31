@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-budapest-trophy:women-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261017T142500
+DTEND;TZID=Europe/Moscow:20261017T200000
+SUMMARY:CS Budapest Trophy — женщины КП
+DESCRIPTION:Итог:\n1. Алина Горбачёва — 73.02\n2. Maria
+  Eliise Kaljuvere — 66.36\n3. Julia Sauter — 65.53\n\nПримечат
+ ельное:\n• Maria Eliise Kaljuvere — Личный рекорд з
+ а КП: 66.36 (был 63.52)\n• Julia Sauter — Личный реко
+ рд за КП: 65.53 (был 64.03)\n\nРоссияне:\n• Алина 
+ Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансля
+ ция: HunSkate TV
+LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:women-sen
+ ior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Budapest Trophy — женщины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

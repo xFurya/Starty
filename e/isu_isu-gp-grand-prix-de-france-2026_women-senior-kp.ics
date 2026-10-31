@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-gp-grand-prix-de-france-2026:women-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261023T215000
+DTEND;TZID=Europe/Moscow:20261023T232000
+SUMMARY:GP de France — женщины КП
+DESCRIPTION:Итог:\n1. Yuna Aoki — 76.31\n2. Anastasiia Gubanova — 7
+ 2.63\n3. Ami Nakai — 70.66\n\nПримечательное:\n• Yuseong
+  Kim — Тройной аксель\n• Yuna Aoki — Личный ре
+ корд за КП: 76.31 (был 71.41)\n• Anastasiia Gubanova — Ли
+ чный рекорд за КП: 72.63 (был 71.77)\n\nНачало: 21:
+ 50 МСК\nТрансляция: Okko
+LOCATION:Angers\, France
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-grand-prix-de-france-2026
+ :women-senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GP de France — женщины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

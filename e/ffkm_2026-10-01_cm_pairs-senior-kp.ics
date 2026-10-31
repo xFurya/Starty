@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:ffkm:2026-10-01_cm:pairs-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261001T165000
+DTEND;TZID=Europe/Moscow:20261001T174000
+SUMMARY:Чемпионат Москвы — пары КП
+DESCRIPTION:Итог:\n1. Валерия Ходыкина / Даниил Б
+ утенко — 66.52\n2. Алена Кривоносова / Андре
+ й Анисимов — 63.06\n3. Екатерина Гейниш / Анд
+ рей Рудь — 61.37\n\nНачало: 16:50 МСК
+LOCATION:«Навка Арена»\, Москва
+URL:https://xfurya.github.io/Starty/#e=ffkm:2026-10-01_cm:pairs-senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Чемпионат Москвы — пары КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

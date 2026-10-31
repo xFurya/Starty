@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:men-
+ junior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261013T190500
+DTEND;TZID=Europe/Moscow:20261013T214000
+SUMMARY:ЮГП России «Рапсодия льда» — юноши К
+ П
+DESCRIPTION:Итог:\n1. Ильяс Халиуллин — 85.45\n2. Да
+ ниил Жолобов — 81.94\n3. Добромир Воронов — 
+ 81.23\n\nНачало: 19:05 МСК\nТрансляция: Первый к
+ анал / YouTube
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-raps
+ odiya-l-da-sredi-yuniorov-2026:men-junior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Рапсодия льда» — юнош
+ и КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

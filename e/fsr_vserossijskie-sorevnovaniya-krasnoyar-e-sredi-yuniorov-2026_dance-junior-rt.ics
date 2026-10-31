@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:dance-j
+ unior-rt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261028T123000
+DTEND;TZID=Europe/Moscow:20261028T144000
+SUMMARY:ЮГП России «Красноярье» — танцы РТ
+DESCRIPTION:Итог:\n1. Зоя Пестова / Сергей Лагуто
+ в — 66.45\n2. Полина Тихонова / Матвей Лысов 
+ — 63.71\n3. Елизавета Ростилова / Денис Ауро
+ в — 58.92\n\nНачало: 12:30 МСК\nТрансляция: Перв
+ ый канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
+ noyar-e-sredi-yuniorov-2026:dance-junior-rt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Красноярье» — танцы Р
+ Т
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

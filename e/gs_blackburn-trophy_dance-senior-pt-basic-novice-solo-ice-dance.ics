@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:blackburn-trophy:dance-senior-pt-basic-novice-solo-ice-dance@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261020T100000
+DTEND;TZID=Europe/Moscow:20261020T121000
+SUMMARY:Blackburn Trophy — танцы ПТ
+DESCRIPTION:Начало: 10:00 МСК
+LOCATION:Blackburn\, Great Britain
+URL:https://xfurya.github.io/Starty/#e=gs:blackburn-trophy:dance-senior-pt-
+ basic-novice-solo-ice-dance
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Blackburn Trophy — танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

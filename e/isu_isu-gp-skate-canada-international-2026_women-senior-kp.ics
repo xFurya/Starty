@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-gp-skate-canada-international-2026:women-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261031T223000
+DTEND;TZID=Europe/Moscow:20261101T000000
+SUMMARY:GP Skate Canada — женщины КП
+DESCRIPTION:Промежуточные итоги:\n1. Saki Miyake — 71.9
+ 5\n2. Виктория Сафонова — 56.89\n\nРоссияне:\n
+ • Виктория Сафонова — 22:43\n\nНачало: 22:30 М
+ СК\nТрансляция: Okko
+LOCATION:Kelowna\, Canada
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-skate-canada-internationa
+ l-2026:women-senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GP Skate Canada — женщины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

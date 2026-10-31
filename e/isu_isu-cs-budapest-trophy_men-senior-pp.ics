@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-budapest-trophy:men-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261018T125000
+DTEND;TZID=Europe/Moscow:20261018T172500
+SUMMARY:CS Budapest Trophy — мужчины ПП
+DESCRIPTION:Итог:\n1. Daniel Grassl — 171.70\n2. Patrick Blackwell 
+ — 164.49\n3. Lukas Britschgi — 159.96\n\nИтог турнира:\n1. 
+ Daniel Grassl — 268.84\n2. Patrick Blackwell — 242.93\n3. Lukas Britsc
+ hgi — 240.01\n\nПримечательное:\n• Patrick Blackwell —
+  Личный рекорд за ПП: 164.49 (был 152.14)\n• Patrick 
+ Blackwell — После короткой программы — 5-е ме
+ сто\, в итоге — 2-е место\n• Daniel Grassl — Отры
+ в от второго места — 25.91 балла\n• Patrick Blackw
+ ell — Личный рекорд по сумме: 242.93 (был 222.17)\
+ n\nНачало: 12:50 МСК\nТрансляция: HunSkate TV
+LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:men-senio
+ r-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Budapest Trophy — мужчины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

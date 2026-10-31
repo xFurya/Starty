@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pai
+ rs-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261018T171000
+DTEND;TZID=Europe/Moscow:20261018T183000
+SUMMARY:Гран-при России «Рапсодия льда» — па
+ ры ПП
+DESCRIPTION:Итог:\n1. Юлия Артемьева / Алексей Бр
+ юханов — 117.07\n2. Таисия Щербинина / Артём 
+ Петров — 115.30\n3. Алиса Блинникова / Алексе
+ й Карпов — 114.06\n\nИтог турнира:\n1. Юлия Арт
+ емьева / Алексей Брюханов — 187.50\n2. Таисия
+  Щербинина / Артём Петров — 184.06\n3. Анаста
+ сия Мухортова / Дмитрий Евгеньев — 177.52\n\n
+ Начало: 17:10 МСК\nТрансляция: Первый канал 
+ / YouTube
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-rapsodiya-l-da-2026:pairs-senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Гран-при России «Рапсодия льда» — 
+ пары ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

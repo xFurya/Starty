@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:golden-bear:women-senior-kp-advanced-novice-women@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261022T211000
+DTEND;TZID=Europe/Moscow:20261022T231500
+SUMMARY:Golden Bear — женщины КП
+DESCRIPTION:Итог:\n1. Valentina Beer — 41.25\n2. Adriana Shevtsova 
+ — 40.21\n3. Olivia Zoe Szili — 39.99\n\nНачало: 21:10 МСК
+LOCATION:Zagreb\, Croatia
+URL:https://xfurya.github.io/Starty/#e=gs:golden-bear:women-senior-kp-advan
+ ced-novice-women
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Golden Bear — женщины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

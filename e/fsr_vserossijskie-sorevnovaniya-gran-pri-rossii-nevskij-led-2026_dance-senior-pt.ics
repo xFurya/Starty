@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:dance-
+ senior-pt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261025T184500
+DTEND;TZID=Europe/Moscow:20261025T200500
+SUMMARY:Гран-при России «Невский лёд» — танц
+ ы ПТ
+DESCRIPTION:Итог:\n1. Василиса Кагановская / Мак
+ сим Некрасов — 121.55\n2. Екатерина Миронова
+  / Евгений Устенко — 109.27\n3. Василиса Григ
+ орьева / Евгений Артющенко — 108.83\n\nИтог т
+ урнира:\n1. Василиса Кагановская / Максим 
+ Некрасов — 203.03\n2. Елизавета Шичина / Паве
+ л Дрозд — 183.98\n3. Василиса Григорьева / Ев
+ гений Артющенко — 181.21\n\nПримечательное:\
+ n• Василиса Кагановская / Максим Некрасо
+ в — Отрыв от второго места — 19.05 балла\n\n
+ Начало: 18:45 МСК\nТрансляция: Первый канал 
+ / YouTube
+LOCATION:СК «Юбилейный»\, Санкт-Петербург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-nevskij-led-2026:dance-senior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Гран-при России «Невский лёд» — та
+ нцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

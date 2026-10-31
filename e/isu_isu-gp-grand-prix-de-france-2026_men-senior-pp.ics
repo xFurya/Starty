@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-gp-grand-prix-de-france-2026:men-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261025T151700
+DTEND;TZID=Europe/Moscow:20261025T165200
+SUMMARY:GP de France — мужчины ПП
+DESCRIPTION:Итог:\n1. Adam Siao Him Fa — 181.78\n2. Kao Miura — 175
+ .29\n3. Minkyu Seo — 161.07\n\nИтог турнира:\n1. Adam Siao Hi
+ m Fa — 284.24\n2. Kao Miura — 247.96\n3. Minkyu Seo — 244.90\n\nПр
+ имечательное:\n• Kao Miura — После короткой 
+ программы — 9-е место\, в итоге — 2-е место
+ \n• Adam Siao Him Fa — Отрыв от второго места — 3
+ 6.28 балла\n\nНачало: 15:17 МСК\nТрансляция: Okko
+LOCATION:Angers\, France
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-grand-prix-de-france-2026
+ :men-senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GP de France — мужчины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

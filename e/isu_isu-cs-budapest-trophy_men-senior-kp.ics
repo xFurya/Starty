@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-budapest-trophy:men-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261016T135000
+DTEND;TZID=Europe/Moscow:20261016T175500
+SUMMARY:CS Budapest Trophy — мужчины КП
+DESCRIPTION:Итог:\n1. Daniel Grassl — 97.14\n2. Genrikh Gartung — 8
+ 3.59\n3. Arlet Levandi — 81.50\n\nПримечательное:\n• Gen
+ rikh Gartung — Личный рекорд за КП: 83.59 (был 79.05)
+ \n• Arlet Levandi — Личный рекорд за КП: 81.50 (был
+  77.45)\n\nНачало: 13:50 МСК\nТрансляция: HunSkate TV
+LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:men-senio
+ r-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Budapest Trophy — мужчины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

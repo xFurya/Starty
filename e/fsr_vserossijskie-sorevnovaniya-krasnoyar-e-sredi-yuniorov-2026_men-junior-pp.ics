@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:men-jun
+ ior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261030T104500
+DTEND;TZID=Europe/Moscow:20261030T133500
+SUMMARY:ЮГП России «Красноярье» — юноши ПП
+DESCRIPTION:Итог:\n1. Макар Солодников — 150.83\n2. Э
+ дуард Камоев — 142.11\n3. Глеб Ковтун — 140.44\n\
+ nИтог турнира:\n1. Макар Солодников — 225.00\n
+ 2. Глеб Ковтун — 220.14\n3. Илья Мальков — 217.79
+ \n\nПримечательное:\n• Макар Солодников —
+  3 четверных в программе: 4T\, 4S\, 4S\n• Макар 
+ Солодников — После короткой программы 
+ — 5-е место\, в итоге — 1-е место\n\nНачало: 1
+ 0:45 МСК\nТрансляция: Первый канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
+ noyar-e-sredi-yuniorov-2026:men-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Красноярье» — юноши П
+ П
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-jgp-gdansk-2026:pairs-junior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261008T170000
+DTEND;TZID=Europe/Moscow:20261008T191500
+SUMMARY:JGP Gdansk — пары КП
+DESCRIPTION:Итог:\n1. Anita Mapelli / Noah Quesada Grau — 61.66\n2. 
+ Злата Камалова / Данил Панов — 61.05\n3. Rui Guo 
+ / Yiwen Zhang — 57.82\n\nНачало: 17:00 МСК\nТрансляци
+ я: Okko
+LOCATION:Gdansk\, Poland
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-gdansk-2026:pairs-junior
+ -kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JGP Gdansk — пары КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

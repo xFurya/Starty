@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:crystal-skate:men-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261030T161600
+DTEND;TZID=Europe/Moscow:20261030T164600
+SUMMARY:Crystal Skate — мужчины КП
+DESCRIPTION:Итог:\n1. Tamir Kuperman — 79.45\n2. Filip Kaymakchiev 
+ — 50.61\n\nПримечательное:\n• Filip Kaymakchiev — Ли
+ чный рекорд за КП: 50.61 (был 47.61)\n\nНачало: 16:
+ 16 МСК
+LOCATION:Cheile Gradistei\, Romania
+URL:https://xfurya.github.io/Starty/#e=gs:crystal-skate:men-senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crystal Skate — мужчины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

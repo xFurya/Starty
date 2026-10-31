@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-budapest-trophy:women-junior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261016T101000
+DTEND;TZID=Europe/Moscow:20261016T140000
+SUMMARY:CS Budapest Trophy — девушки КП
+DESCRIPTION:Итог:\n1. Амалия Насыбуллина — 62.69\n2.
+  Jiaying Ellyse Johnson — 62.50\n3. Mayuka Sueess — 60.69\n\nПрим
+ ечательное:\n• Jiaying Ellyse Johnson — Личный рек
+ орд за КП: 62.50 (был 47.51)\n\nНачало: 10:10 МСК\nТр
+ ансляция: HunSkate TV
+LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:women-jun
+ ior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Budapest Trophy — девушки КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

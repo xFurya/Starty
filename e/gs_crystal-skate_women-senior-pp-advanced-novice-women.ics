@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:crystal-skate:women-senior-pp-advanced-novice-women@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261030T150000
+DTEND;TZID=Europe/Moscow:20261030T154500
+SUMMARY:Crystal Skate — женщины ПП
+DESCRIPTION:Итог:\n1. Nikol Gabuniia — 67.44\n2. Antonia Riciu — 49
+ .36\n3. Maria Amedeea Baban — 42.87\n\nИтог турнира:\n1. Niko
+ l Gabuniia — 105.68\n2. Antonia Riciu — 74.19\n3. Maria Amedeea Baban 
+ — 66.09\n\nПримечательное:\n• Nikol Gabuniia — Отр
+ ыв от второго места — 31.49 балла\n\nНачало: 
+ 15:00 МСК
+LOCATION:Cheile Gradistei\, Romania
+URL:https://xfurya.github.io/Starty/#e=gs:crystal-skate:women-senior-pp-adv
+ anced-novice-women
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crystal Skate — женщины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

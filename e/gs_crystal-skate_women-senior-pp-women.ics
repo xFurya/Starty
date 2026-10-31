@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:crystal-skate:women-senior-pp-women@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261031T152700
+DTEND;TZID=Europe/Moscow:20261031T163200
+SUMMARY:Crystal Skate — женщины ПП
+DESCRIPTION:Итог:\n1. Julia Sauter — 108.09\n2. Ekaterina Kurakova 
+ — 105.42\n3. Lilian Musgrave — 96.94\n\nИтог турнира:\n1. E
+ katerina Kurakova — 166.02\n2. Julia Sauter — 162.14\n3. Lilian Musgra
+ ve — 145.01\n\nНачало: 15:27 МСК
+LOCATION:Cheile Gradistei\, Romania
+URL:https://xfurya.github.io/Starty/#e=gs:crystal-skate:women-senior-pp-wom
+ en
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crystal Skate — женщины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

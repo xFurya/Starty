@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:tayside-trophy:women-junior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261010T110500
+DTEND;TZID=Europe/Moscow:20261010T141000
+SUMMARY:Tayside Trophy — девушки КП
+DESCRIPTION:Итог:\n1. Mia Smith — 61.38\n2. Kaya Tiernan — 59.29\n3
+ . Lizbeth Tu — 58.45\n\nПримечательное:\n• Kaya Tiernan 
+ — Личный рекорд за КП: 59.29 (был 57.05)\n\nНача
+ ло: 11:05 МСК
+LOCATION:Dundee\, Great Britain
+URL:https://xfurya.github.io/Starty/#e=gs:tayside-trophy:women-junior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tayside Trophy — девушки КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

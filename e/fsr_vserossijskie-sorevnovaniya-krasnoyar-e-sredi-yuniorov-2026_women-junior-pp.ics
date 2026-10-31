@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:women-j
+ unior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261030T074500
+DTEND;TZID=Europe/Moscow:20261030T103500
+SUMMARY:ЮГП России «Красноярье» — девушки П
+ П
+DESCRIPTION:Итог:\n1. Виктория Стрельцова — 141.77\
+ n2. Екатерина Корчажникова — 132.45\n3. Полин
+ а Бершадская — 130.66\n\nИтог турнира:\n1. Вик
+ тория Стрельцова — 216.66\n2. Екатерина Корч
+ ажникова — 202.99\n3. Полина Бершадская — 195.
+ 83\n\nПримечательное:\n• Виктория Стрельцо
+ ва — Тройной аксель\n• Виктория Стрельц
+ ова — 2 четверных в программе: 4T\, 4S\n• Ека
+ терина Корчажникова — 2 четверных в прог
+ рамме: 4S\, 4S\n• Екатерина Стоцкая — Четве
+ рной сальхов\n\nРоссияне:\n• Екатерина Ко
+ рчажникова — 10:06\n• Виктория Стрельцова 
+ — 10:13\n\nНачало: 07:45 МСК\nТрансляция: Первы
+ й канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
+ noyar-e-sredi-yuniorov-2026:women-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Красноярье» — девушки
+  ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

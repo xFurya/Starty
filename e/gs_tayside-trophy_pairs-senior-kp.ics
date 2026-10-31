@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:tayside-trophy:pairs-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261010T162800
+DTEND;TZID=Europe/Moscow:20261010T174300
+SUMMARY:Tayside Trophy — пары КП
+DESCRIPTION:Итог:\n1. Ava Kemp / Yohnatan Elizarov — 64.68\n2. Camill
+ e Kovalev / Pavel Kovalev — 62.74\n3. Naomi Williams / Lachlan Lewer —
+  58.80\n\nПримечательное:\n• Ava Kemp / Yohnatan Elizarov 
+ — Личный рекорд за КП: 64.68 (был 64.21)\n\nНача
+ ло: 16:28 МСК
+LOCATION:Dundee\, Great Britain
+URL:https://xfurya.github.io/Starty/#e=gs:tayside-trophy:pairs-senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tayside Trophy — пары КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-jgp-batumi-2026:dance-junior-rt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260925T143000
+DTEND;TZID=Europe/Moscow:20260925T170500
+SUMMARY:JGP Batumi — танцы РТ
+DESCRIPTION:Итог:\n1. Ambre Perrier Gianesini / Samuel Blanc Klaperman 
+ — 62.27\n2. Xinyu Chen / Gordei Chitipakhovian — 61.70\n3. Darya Grimm
+  / Grigorii Rodin — 59.65\n\nНачало: 14:30 МСК\nТрансля
+ ция: Okko
+LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-batumi-2026:dance-junior
+ -rt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JGP Batumi — танцы РТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

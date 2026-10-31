@@ -1,0 +1,56 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:dance-senior-pt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261010T100000
+DTEND;TZID=Europe/Moscow:20261010T115500
+SUMMARY:CS Denis Ten Memorial — танцы ПТ
+DESCRIPTION:Итог:\n1. Juulia Turkkila / Matthias Versluis — 116.99\n2
+ . Василиса Кагановская / Максим Некрасов 
+ — 112.92\n3. Ирина Хавронина / Девид Нарижный
+  — 105.26\n\nИтог турнира:\n1. Juulia Turkkila / Matthias Ver
+ sluis — 191.32\n2. Василиса Кагановская / Макси
+ м Некрасов — 187.20\n3. Caroline Green / Michael Parsons — 18
+ 0.37\n\nПримечательное:\n• Василиса Каганов
+ ская / Максим Некрасов — Личный рекорд з
+ а ПТ: 112.92 (был 110.60)\n• Ирина Хавронина / Де
+ вид Нарижный — Личный рекорд за ПТ: 105.26 (
+ был 104.55)\n• Екатерина Андреева / Дмитрий 
+ Блинов — Личный рекорд за ПТ: 100.72 (был 97.91
+ )\n• Василиса Кагановская / Максим Некрас
+ ов — Личный рекорд по сумме: 187.20 (был 184.81)
+ \n• Ирина Хавронина / Девид Нарижный — Ли
+ чный рекорд по сумме: 179.04 (был 177.93)\n• Ека
+ терина Андреева / Дмитрий Блинов — Личны
+ й рекорд по сумме: 170.21 (был 165.65)\n\nРоссиян
+ е:\n• Анна Щербакова / Егор Гончаров — 11:05
+ \n• Ирина Хавронина / Девид Нарижный — 11:2
+ 6\n• Василиса Кагановская / Максим Некрас
+ ов — 11:34\n• Виктория Пласконная / Владисл
+ ав Сыцик — 1-й\n• Екатерина Андреева / Дми
+ трий Блинов — 7-й\n\nНачало: 10:00 МСК\nТрансл
+ яция: VK Видео
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:dance-
+ senior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Denis Ten Memorial — танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

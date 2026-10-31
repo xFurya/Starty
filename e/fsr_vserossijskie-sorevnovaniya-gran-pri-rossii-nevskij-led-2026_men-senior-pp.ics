@@ -1,0 +1,44 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:men-se
+ nior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261025T130000
+DTEND;TZID=Europe/Moscow:20261025T144500
+SUMMARY:Гран-при России «Невский лёд» — мужч
+ ины ПП
+DESCRIPTION:Итог:\n1. Владислав Дикиджи — 189.84\n2. 
+ Арсений Федотов — 188.13\n3. Пётр Гуменник —
+  185.50\n\nИтог турнира:\n1. Владислав Дикиджи 
+ — 297.67\n2. Пётр Гуменник — 293.99\n3. Арсений Ф
+ едотов — 283.48\n\nПримечательное:\n• Лев Ла
+ зарев — 5 четверных в программе: 4F\, 4Lz\, 4S\,
+  4Lz\, 4T\n• Глеб Лутфуллин — Каскад 4T+3A+3A\n• 
+ Глеб Лутфуллин — 5 четверных в программе
+ : 4F\, 4Lo\, 4T\, 4S\, 4S\n\nНачало: 13:00 МСК\nТрансляц
+ ия: Первый канал / YouTube
+LOCATION:СК «Юбилейный»\, Санкт-Петербург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-nevskij-led-2026:men-senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Гран-при России «Невский лёд» — му
+ жчины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

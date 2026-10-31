@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-budapest-trophy:women-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261018T172500
+DTEND;TZID=Europe/Moscow:20261018T233500
+SUMMARY:CS Budapest Trophy — женщины ПП
+DESCRIPTION:Итог:\n1. Алина Горбачёва — 130.33\n2. Kimm
+ y Repond — 116.13\n3. Mia Risa Gomez — 114.41\n\nИтог турнир
+ а:\n1. Алина Горбачёва — 203.35\n2. Julia Sauter — 179.
+ 92\n3. Kimmy Repond — 178.86\n\nПримечательное:\n• Sara-
+ Maude Dupuis — Тройной аксель\n• Sophie Joline von Felten
+  — Тройной аксель\n• Kimmy Repond — После коро
+ ткой программы — 6-е место\, в итоге — 3-е 
+ место\n• Алина Горбачёва — Отрыв от втор
+ ого места — 23.43 балла\n\nРоссияне:\n• Алин
+ а Горбачёва — 23:04\n\nНачало: 17:25 МСК\nТранс
+ ляция: HunSkate TV
+LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:women-sen
+ ior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Budapest Trophy — женщины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

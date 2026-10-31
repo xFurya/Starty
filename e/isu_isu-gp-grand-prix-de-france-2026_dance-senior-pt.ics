@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-gp-grand-prix-de-france-2026:dance-senior-pt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261024T162000
+DTEND;TZID=Europe/Moscow:20261024T174500
+SUMMARY:GP de France — танцы ПТ
+DESCRIPTION:Итог:\n1. Laurence Fournier Beaudry / Guillaume Cizeron —
+  125.01\n2. Diana Davis / Gleb Smolkin — 116.03\n3. Christina Carreira /
+  Anthony Ponomarenko — 111.53\n\nИтог турнира:\n1. Laurence F
+ ournier Beaudry / Guillaume Cizeron — 207.57\n2. Diana Davis / Gleb Smol
+ kin — 193.93\n3. Christina Carreira / Anthony Ponomarenko — 189.36\n\n
+ Примечательное:\n• Laurence Fournier Beaudry / Guillaume C
+ izeron — Лучшая в мире оценка сезона за ПТ: 1
+ 25.01\n• Laurence Fournier Beaudry / Guillaume Cizeron — Отрыв о
+ т второго места — 13.64 балла\n\nНачало: 16:20 
+ МСК\nТрансляция: Okko
+LOCATION:Angers\, France
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-grand-prix-de-france-2026
+ :dance-senior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GP de France — танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

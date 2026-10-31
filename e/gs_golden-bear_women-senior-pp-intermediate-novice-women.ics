@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:golden-bear:women-senior-pp-intermediate-novice-women@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261023T200500
+DTEND;TZID=Europe/Moscow:20261023T215000
+SUMMARY:Golden Bear — женщины ПП
+DESCRIPTION:Итог:\n1. Mija Hebar — 41.51\n2. Ema Gulin — 40.35\n3. 
+ Mila Jakovljevic — 39.13\n\nИтог турнира:\n1. Mija Hebar — 
+ 41.51\n2. Ema Gulin — 40.35\n3. Mila Jakovljevic — 39.13\n\nНачал
+ о: 20:05 МСК
+LOCATION:Zagreb\, Croatia
+URL:https://xfurya.github.io/Starty/#e=gs:golden-bear:women-senior-pp-inter
+ mediate-novice-women
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Golden Bear — женщины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gs:golden-bear:men-senior-kp-advanced-novice-men@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261022T203000
+DTEND;TZID=Europe/Moscow:20261022T210500
+SUMMARY:Golden Bear — мужчины КП
+DESCRIPTION:Итог:\n1. Alexandre Lirot — 40.50\n2. Gabin Telemaque —
+  36.60\n3. Rocco Malik Dietrich — 34.51\n\nНачало: 20:30 МСК
+LOCATION:Zagreb\, Croatia
+URL:https://xfurya.github.io/Starty/#e=gs:golden-bear:men-senior-kp-advance
+ d-novice-men
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Golden Bear — мужчины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

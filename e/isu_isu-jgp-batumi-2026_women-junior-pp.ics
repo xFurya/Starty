@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-jgp-batumi-2026:women-junior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260926T144000
+DTEND;TZID=Europe/Moscow:20260926T201500
+SUMMARY:JGP Batumi — девушки ПП
+DESCRIPTION:Итог:\n1. Sophia Shifrin — 129.62\n2. Yihan Wang — 128.
+ 44\n3. Stefania Gladki — 121.98\n\nИтог турнира:\n1. Yihan Wa
+ ng — 201.82\n2. Sophia Shifrin — 196.29\n3. Stefania Gladki — 189.92
+ \n\nПримечательное:\n• Arina Kalugina — Четверно
+ й сальхов\n\nНачало: 14:40 МСК\nТрансляция: Okk
+ o
+LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-batumi-2026:women-junior
+ -pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JGP Batumi — девушки ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

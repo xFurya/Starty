@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-jgp-ankara-2026:women-junior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260918T163000
+DTEND;TZID=Europe/Moscow:20260918T225500
+SUMMARY:JGP Ankara — девушки ПП
+DESCRIPTION:Итог:\n1. Mei Okada — 132.11\n2. Shuxian Jin — 126.39\n
+ 3. Stefania Gladki — 118.07\n\nИтог турнира:\n1. Mei Okada 
+ — 206.38\n2. Shuxian Jin — 194.50\n3. Stefania Gladki — 179.64\n\nП
+ римечательное:\n• Arina Kalugina — Четверной с
+ альхов\n• Stefania Gladki — После короткой прог
+ раммы — 7-е место\, в итоге — 3-е место\n\nНа
+ чало: 16:30 МСК\nТрансляция: Okko
+LOCATION:Ankara\, Türkiye
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-ankara-2026:women-junior
+ -pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JGP Ankara — девушки ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

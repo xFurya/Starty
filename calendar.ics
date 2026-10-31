@@ -1,0 +1,2297 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Фигурное катание · старты
+X-WR-CALDESC:Старты по фигурному катанию: росс
+ ийские и международные с россиянами. Вре
+ мя московское.
+X-WR-TIMEZONE:Europe/Moscow
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-john-nicks-pairs-international-2026:pairs-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260911T233300
+DTEND;TZID=Europe/Moscow:20260912T010300
+SUMMARY:CS John Nicks Pairs International — пары КП
+DESCRIPTION:Итог:\n1. Александра Бойкова / Дмитр
+ ий Козловский — 70.39\n2. Karina Akopova / Nikita Rakhmanin 
+ — 68.03\n3. Audrey Shin / Spencer Akira Howe — 67.25\n\nРоссиян
+ е:\n• Александра Бойкова / Дмитрий Козлов
+ ский — 1-й\n\nНачало: 23:33 МСК
+LOCATION:Norwood\, USA
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-john-nicks-pairs-internat
+ ional-2026:pairs-senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-john-nicks-pairs-international-2026:pairs-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260912T214000
+DTEND;TZID=Europe/Moscow:20260912T232000
+SUMMARY:CS John Nicks Pairs International — пары ПП
+DESCRIPTION:Итог:\n1. Александра Бойкова / Дмитр
+ ий Козловский — 128.27\n2. Audrey Shin / Spencer Akira Howe 
+ — 116.56\n3. Katie McBEATH / Balazs Nagy — 113.78\n\nИтог турн
+ ира:\n1. Александра Бойкова / Дмитрий Козл
+ овский — 198.66\n2. Audrey Shin / Spencer Akira Howe — 183.81\n3
+ . Katie McBEATH / Balazs Nagy — 180.95\n\nПримечательное:\
+ n• Александра Бойкова / Дмитрий Козловск
+ ий — Четверной выброс сальхов\n\nРоссиян
+ е:\n• Александра Бойкова / Дмитрий Козлов
+ ский — 11-й\n\nНачало: 21:40 МСК
+LOCATION:Norwood\, USA
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-john-nicks-pairs-internat
+ ional-2026:pairs-senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-jgp-ankara-2026:pairs-junior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260917T154500
+DTEND;TZID=Europe/Moscow:20260917T180500
+SUMMARY:JGP Ankara — пары КП
+DESCRIPTION:Итог:\n1. Таисия Гусева / Даниил Овчи
+ нников — 70.48\n2. Полина Шешелева / Егор Кар
+ наухов — 63.26\n3. Anita Mapelli / Noah Quesada Grau — 57.55\n\n
+ Россияне:\n• Таисия Гусева / Даниил Овчин
+ ников — 1-й\n• Полина Шешелева / Егор Карн
+ аухов — 10-й\n\nНачало: 15:45 МСК\nТрансляция: 
+ Okko
+LOCATION:Ankara\, Türkiye
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-ankara-2026:pairs-junior
+ -kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-jgp-ankara-2026:pairs-junior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260918T133000
+DTEND;TZID=Europe/Moscow:20260918T160500
+SUMMARY:JGP Ankara — пары ПП
+DESCRIPTION:Итог:\n1. Полина Шешелева / Егор Карн
+ аухов — 127.53\n2. Таисия Гусева / Даниил Овч
+ инников — 126.43\n3. Anita Mapelli / Noah Quesada Grau — 96.52\
+ n\nИтог турнира:\n1. Таисия Гусева / Даниил 
+ Овчинников — 196.91\n2. Полина Шешелева / Его
+ р Карнаухов — 190.79\n3. Anita Mapelli / Noah Quesada Grau —
+  154.07\n\nПримечательное:\n• Таисия Гусева / 
+ Даниил Овчинников — Четверная подкрутк
+ а\n\nРоссияне:\n• Полина Шешелева / Егор Ка
+ рнаухов — 14-й\n• Таисия Гусева / Даниил О
+ вчинников — 15-й\n\nНачало: 13:30 МСК\nТрансля
+ ция: Okko
+LOCATION:Ankara\, Türkiye
+URL:https://xfurya.github.io/Starty/#e=isu:isu-jgp-ankara-2026:pairs-junior
+ -pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-lombardia-trophy-2026:men-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260918T171500
+DTEND;TZID=Europe/Moscow:20260918T183500
+SUMMARY:CS Lombardia Trophy — мужчины КП
+DESCRIPTION:Итог:\n1. Mihhail Selevko — 91.09\n2. Матвей Вет
+ лугин — 90.02\n3. Corentin Spinar — 89.08\n\nРоссияне:\n
+ • Матвей Ветлугин — 2-й\n\nНачало: 17:15 МСК
+LOCATION:Bergamo\, Italy
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-lombardia-trophy-2026:men
+ -senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-lombardia-trophy-2026:men-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260920T143000
+DTEND;TZID=Europe/Moscow:20260920T160000
+SUMMARY:CS Lombardia Trophy — мужчины ПП
+DESCRIPTION:Итог:\n1. Mihhail Selevko — 169.78\n2. Матвей Ве
+ тлугин — 164.51\n3. Kyrylo Marsak — 159.37\n\nИтог турн
+ ира:\n1. Mihhail Selevko — 260.87\n2. Матвей Ветлугин 
+ — 254.53\n3. Corentin Spinar — 247.66\n\nРоссияне:\n• Мат
+ вей Ветлугин — 9-й\n\nНачало: 14:30 МСК
+LOCATION:Bergamo\, Italy
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-lombardia-trophy-2026:men
+ -senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:dance-ju
+ nior-rt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260925T123000
+DTEND;TZID=Europe/Moscow:20260925T144000
+SUMMARY:ЮГП России «Лёд Мечты» — танцы РТ
+DESCRIPTION:Итог:\n1. Мария Фефелова / Артём Вало
+ в — 72.64\n2. Полина Жарова / Алексей Столяро
+ в — 64.19\n3. Арина Новикова / Кирилл Лихачев
+  — 59.16\n\nНачало: 12:30 МСК\nТрансляция: Первы
+ й канал / YouTube
+LOCATION:Навка Арена\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-led-
+ mechty-sredi-yuniorov-2026:dance-junior-rt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:pairs-ju
+ nior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260925T145000
+DTEND;TZID=Europe/Moscow:20260925T155500
+SUMMARY:ЮГП России «Лёд Мечты» — пары КП
+DESCRIPTION:Итог:\n1. Полина Сажина / Алексей Бел
+ кин — 68.12\n2. Арина Парсегова / Матвей Богд
+ анов — 63.77\n3. Дарья Самохвалова / Роман Ро
+ манычев — 60.01\n\nНачало: 14:50 МСК\nТрансляци
+ я: Первый канал / YouTube
+LOCATION:Навка Арена\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-led-
+ mechty-sredi-yuniorov-2026:pairs-junior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:dance-ju
+ nior-pt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260926T080000
+DTEND;TZID=Europe/Moscow:20260926T102500
+SUMMARY:ЮГП России «Лёд Мечты» — танцы ПТ
+DESCRIPTION:Итог:\n1. Мария Фефелова / Артём Вало
+ в — 107.13\n2. Полина Жарова / Алексей Столяр
+ ов — 95.18\n3. Софья Грабчак / Максим Полтора
+ к — 89.77\n\nИтог турнира:\n1. Мария Фефелова /
+  Артём Валов — 179.77\n2. Полина Жарова / Алек
+ сей Столяров — 159.37\n3. Софья Грабчак / Мак
+ сим Полторак — 148.46\n\nПримечательное:\n• 
+ Мария Фефелова / Артём Валов — Отрыв от в
+ торого места — 20.40 балла\n\nНачало: 08:00 МСК
+ \nТрансляция: Первый канал / YouTube
+LOCATION:Навка Арена\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-led-
+ mechty-sredi-yuniorov-2026:dance-junior-pt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:pairs-ju
+ nior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260926T103500
+DTEND;TZID=Europe/Moscow:20260926T114500
+SUMMARY:ЮГП России «Лёд Мечты» — пары ПП
+DESCRIPTION:Итог:\n1. Арина Парсегова / Матвей Бо
+ гданов — 112.21\n2. Полина Сажина / Алексей Б
+ елкин — 107.16\n3. Дарья Самохвалова / Роман 
+ Романычев — 103.46\n\nИтог турнира:\n1. Арина 
+ Парсегова / Матвей Богданов — 175.98\n2. Поли
+ на Сажина / Алексей Белкин — 175.28\n3. Дарья 
+ Самохвалова / Роман Романычев — 163.47\n\nНа
+ чало: 10:35 МСК\nТрансляция: Первый канал / Yo
+ uTube
+LOCATION:Навка Арена\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-led-
+ mechty-sredi-yuniorov-2026:pairs-junior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:women-ju
+ nior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260926T115500
+DTEND;TZID=Europe/Moscow:20260926T143000
+SUMMARY:ЮГП России «Лёд Мечты» — девушки КП
+DESCRIPTION:Итог:\n1. Виктория Стрельцова — 72.73\n
+ 2. Диана Мильто — 70.00\n3. Софья Смагина — 69.
+ 05\n\nПримечательное:\n• Виктория Стрельцо
+ ва — Тройной аксель\n\nРоссияне:\n• Викто
+ рия Стрельцова — 5-й\n• Софья Смагина — 14
+ -й\n\nНачало: 11:55 МСК\nТрансляция: Первый ка
+ нал / YouTube
+LOCATION:Навка Арена\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-led-
+ mechty-sredi-yuniorov-2026:women-junior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:men-juni
+ or-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260926T143000
+DTEND;TZID=Europe/Moscow:20260926T170500
+SUMMARY:ЮГП России «Лёд Мечты» — юноши КП
+DESCRIPTION:Итог:\n1. Макар Солодников — 83.94\n2. Д
+ аниил Жолобов — 79.24\n3. Илья Малышев — 78.46\
+ n\nНачало: 14:30 МСК\nТрансляция: Первый кана
+ л / YouTube
+LOCATION:Навка Арена\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-led-
+ mechty-sredi-yuniorov-2026:men-junior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:women-ju
+ nior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260927T074500
+DTEND;TZID=Europe/Moscow:20260927T103500
+SUMMARY:ЮГП России «Лёд Мечты» — девушки ПП
+DESCRIPTION:Итог:\n1. Дарья Лебедева — 134.26\n2. Вик
+ тория Стрельцова — 129.00\n3. Диана Мильто —
+  128.16\n\nИтог турнира:\n1. Виктория Стрельцо
+ ва — 201.73\n2. Диана Мильто — 198.16\n3. Дарья Ле
+ бедева — 197.23\n\nПримечательное:\n• Дарья 
+ Лебедева — 2 четверных в программе: 4S\, 4T\n
+ • Виктория Стрельцова — Тройной аксель\
+ n• Виктория Стрельцова — 3 четверных в п
+ рограмме: 4S\, 4T\, 4S\n• Софья Смагина — Четв
+ ерной сальхов\n• Алена Болдырева — Четв
+ ерной тулуп\n• Дарья Лебедева — После ко
+ роткой программы — 10-е место\, в итоге — 3
+ -е место\n\nРоссияне:\n• Софья Смагина — 16-
+ й\n• Виктория Стрельцова — 18-й\n\nНачало: 0
+ 7:45 МСК\nТрансляция: Первый канал / YouTube
+LOCATION:Навка Арена\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-led-
+ mechty-sredi-yuniorov-2026:women-junior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:men-juni
+ or-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20260927T104500
+DTEND;TZID=Europe/Moscow:20260927T133500
+SUMMARY:ЮГП России «Лёд Мечты» — юноши ПП
+DESCRIPTION:Итог:\n1. Макар Солодников — 153.71\n2. М
+ ихаил Алексахин — 146.68\n3. Эдуард Камоев —
+  144.41\n\nИтог турнира:\n1. Макар Солодников 
+ — 237.65\n2. Эдуард Камоев — 221.20\n3. Илья Малы
+ шев — 220.15\n\nПримечательное:\n• Макар Сол
+ одников — 3 четверных в программе: 4T\, 4S\, 4
+ S\n• Михаил Алексахин — 3 четверных в про
+ грамме: 4T\, 4S\, 4T\n• Даниил Жолобов — 3 четв
+ ерных в программе: 4T\, 4Lo\, 4Lo\n• Эдуард Кам
+ оев — После короткой программы — 5-е мес
+ то\, в итоге — 2-е место\n• Макар Солодник
+ ов — Отрыв от второго места — 16.45 балла\n\
+ nНачало: 10:45 МСК\nТрансляция: Первый канал
+  / YouTube
+LOCATION:Навка Арена\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-led-
+ mechty-sredi-yuniorov-2026:men-junior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-trialeti-trophy:women-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261001T134500
+DTEND;TZID=Europe/Moscow:20261001T155000
+SUMMARY:CS Trialeti Trophy — женщины КП
+DESCRIPTION:Итог:\n1. Niina Petrokina — 74.69\n2. Анна Фроло
+ ва — 73.31\n3. Anastasiia Gubanova — 70.69\n\nРоссияне:\n•
+  Аделия Петросян — 7-й\n• Виктория Сафоно
+ ва — 8-й\n• Анна Фролова — 11-й\n\nНачало: 13:4
+ 5 МСК\nТрансляция: Okko
+LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-trialeti-trophy:women-sen
+ ior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-trialeti-trophy:dance-senior-rt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261001T164500
+DTEND;TZID=Europe/Moscow:20261001T192000
+SUMMARY:CS Trialeti Trophy — танцы РТ
+DESCRIPTION:Итог:\n1. Diana Davis / Gleb Smolkin — 85.23\n2. Елиз
+ авета Пасечник / Дарио Чиризано — 72.51\n3. Ma
+ riia Ignateva / Danijil Leonyidovics Szemko — 69.80\n\nРоссияне:
+ \n• Виктория Пласконная / Владислав Сыци
+ к — 2-й\n• Екатерина Рыбакова / Иван Махно
+ носов — 3-й\n• Елизавета Пасечник / Дарио 
+ Чиризано — 6-й\n• Екатерина Андреева / Дм
+ итрий Блинов — 8-й\n• Елизавета Шичина / П
+ авел Дрозд — 17-й\n\nНачало: 16:45 МСК\nТрансл
+ яция: Okko
+LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-trialeti-trophy:dance-sen
+ ior-rt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-trialeti-trophy:men-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261001T195000
+DTEND;TZID=Europe/Moscow:20261001T212000
+SUMMARY:CS Trialeti Trophy — мужчины КП
+DESCRIPTION:Итог:\n1. Nika Egadze — 93.80\n2. Mihhail Selevko — 87.
+ 87\n3. Николай Угожаев — 82.96\n\nРоссияне:\n• 
+ Алекс Лабович — 1-й\n• Николай Угожаев — 
+ 2-й\n• Матвей Ветлугин — 3-й\n• Василий Ба
+ раховский — 9-й\n\nНачало: 19:50 МСК\nТрансля
+ ция: Okko
+LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-trialeti-trophy:men-senio
+ r-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-trialeti-trophy:pairs-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261002T140000
+DTEND;TZID=Europe/Moscow:20261002T150500
+SUMMARY:CS Trialeti Trophy — пары КП
+DESCRIPTION:Итог:\n1. Anastasiia Metelkina / Luka Berulava — 80.01\n2
+ . Екатерина Чикмарёва / Матвей Янченков 
+ — 74.00\n3. Анастасия Мишина / Александр Гал
+ лямов — 73.48\n\nРоссияне:\n• Анастасия Мухо
+ ртова / Дмитрий Евгеньев — 3-й\n• Екатери
+ на Чикмарёва / Матвей Янченков — 4-й\n• Ан
+ астасия Мишина / Александр Галлямов — 6-й
+ \n\nНачало: 14:00 МСК\nТрансляция: Okko
+LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-trialeti-trophy:pairs-sen
+ ior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-trialeti-trophy:dance-senior-pt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261002T151500
+DTEND;TZID=Europe/Moscow:20261002T181000
+SUMMARY:CS Trialeti Trophy — танцы ПТ
+DESCRIPTION:Итог:\n1. Diana Davis / Gleb Smolkin — 123.44\n2. Ели
+ завета Пасечник / Дарио Чиризано — 106.02\n3.
+  Nadiia Bashynska / Noé Perron — 98.27\n\nИтог турнира:\n1. 
+ Diana Davis / Gleb Smolkin — 208.67\n2. Елизавета Пасечн
+ ик / Дарио Чиризано — 178.53\n3. Mariia Ignateva / Daniji
+ l Leonyidovics Szemko — 165.72\n\nПримечательное:\n• Dia
+ na Davis / Gleb Smolkin — Отрыв от второго места — 
+ 30.14 балла\n\nРоссияне:\n• Екатерина Рыбако
+ ва / Иван Махноносов — 2-й\n• Виктория Пла
+ сконная / Владислав Сыцик — 3-й\n• Елизав
+ ета Шичина / Павел Дрозд — 13-й\n• Екатери
+ на Андреева / Дмитрий Блинов — 15-й\n• Ели
+ завета Пасечник / Дарио Чиризано — 17-й\n\n
+ Начало: 15:15 МСК\nТрансляция: Okko
+LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-trialeti-trophy:dance-sen
+ ior-pt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-trialeti-trophy:men-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261002T193000
+DTEND;TZID=Europe/Moscow:20261002T211500
+SUMMARY:CS Trialeti Trophy — мужчины ПП
+DESCRIPTION:Итог:\n1. Nika Egadze — 168.85\n2. Николай Уго
+ жаев — 153.45\n3. Матвей Ветлугин — 145.98\n\nИто
+ г турнира:\n1. Nika Egadze — 262.65\n2. Николай Угож
+ аев — 236.41\n3. Mihhail Selevko — 227.74\n\nПримечатель
+ ное:\n• Nika Egadze — Отрыв от второго места —
+  26.24 балла\n\nРоссияне:\n• Алекс Лабович — 
+ 3-й\n• Василий Бараховский — 5-й\n• Матвей
+  Ветлугин — 9-й\n• Николай Угожаев — 10-й\n\
+ nНачало: 19:30 МСК\nТрансляция: Okko
+LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-trialeti-trophy:men-senio
+ r-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-trialeti-trophy:pairs-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261003T140000
+DTEND;TZID=Europe/Moscow:20261003T151000
+SUMMARY:CS Trialeti Trophy — пары ПП
+DESCRIPTION:Итог:\n1. Anastasiia Metelkina / Luka Berulava — 135.82\n
+ 2. Анастасия Мишина / Александр Галлямов 
+ — 132.83\n3. Екатерина Чикмарёва / Матвей Янч
+ енков — 122.63\n\nИтог турнира:\n1. Anastasiia Metelkina
+  / Luka Berulava — 215.83\n2. Анастасия Мишина / Алек
+ сандр Галлямов — 206.31\n3. Екатерина Чикмар
+ ёва / Матвей Янченков — 196.63\n\nРоссияне:\n
+ • Анастасия Мухортова / Дмитрий Евгенье
+ в — 4-й\n• Анастасия Мишина / Александр Га
+ ллямов — 5-й\n• Екатерина Чикмарёва / Мат
+ вей Янченков — 6-й\n\nНачало: 14:00 МСК\nТранс
+ ляция: Okko
+LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-trialeti-trophy:pairs-sen
+ ior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-trialeti-trophy:women-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261003T163000
+DTEND;TZID=Europe/Moscow:20261003T185000
+SUMMARY:CS Trialeti Trophy — женщины ПП
+DESCRIPTION:Итог:\n1. Аделия Петросян — 135.74\n2. Niin
+ a Petrokina — 131.25\n3. Анна Фролова — 129.90\n\nИтог 
+ турнира:\n1. Niina Petrokina — 205.94\n2. Аделия Петро
+ сян — 204.16\n3. Анна Фролова — 203.21\n\nРоссиян
+ е:\n• Виктория Сафонова — 9-й\n• Аделия Пе
+ тросян — 11-й\n• Анна Фролова — 13-й\n\nНача
+ ло: 16:30 МСК\nТрансляция: Okko
+LOCATION:Batumi\, Georgia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-trialeti-trophy:women-sen
+ ior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
+ 026:dance-junior-rt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261005T173000
+DTEND;TZID=Europe/Moscow:20261005T194000
+SUMMARY:ЮГП России «Мемориал Горшкова» — та
+ нцы РТ
+DESCRIPTION:Итог:\n1. Зоя Пестова / Сергей Лагуто
+ в — 63.17\n2. Анна Билибина / Дмитрий Кашаев 
+ — 60.89\n3. Анна Соболева / Матвей Чураков — 
+ 59.60\n\nНачало: 17:30 МСК\nТрансляция: Первый к
+ анал / YouTube
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-memo
+ rial-a-g-gorshkova-sredi-yuniorov-2026:dance-junior-rt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
+ 026:pairs-junior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261005T195000
+DTEND;TZID=Europe/Moscow:20261005T204000
+SUMMARY:ЮГП России «Мемориал Горшкова» — па
+ ры КП
+DESCRIPTION:Итог:\n1. Таисия Гусева / Даниил Овчи
+ нников — 71.27\n2. Полина Шешелева / Егор Кар
+ наухов — 70.89\n3. Анастасия Иванкевич / Гео
+ ргий Павловский — 58.67\n\nРоссияне:\n• Таис
+ ия Гусева / Даниил Овчинников — 2-й\n• Пол
+ ина Шешелева / Егор Карнаухов — 6-й\n\nНача
+ ло: 19:50 МСК\nТрансляция: Первый канал / YouTub
+ e
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-memo
+ rial-a-g-gorshkova-sredi-yuniorov-2026:pairs-junior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
+ 026:dance-junior-pt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261006T130000
+DTEND;TZID=Europe/Moscow:20261006T152500
+SUMMARY:ЮГП России «Мемориал Горшкова» — та
+ нцы ПТ
+DESCRIPTION:Итог:\n1. Анна Билибина / Дмитрий Каш
+ аев — 88.23\n2. Анна Соболева / Матвей Чурако
+ в — 86.86\n3. Софья Грабчак / Максим Полторак
+  — 85.43\n\nИтог турнира:\n1. Анна Билибина / Д
+ митрий Кашаев — 149.12\n2. Зоя Пестова / Серг
+ ей Лагутов — 148.28\n3. Анна Соболева / Матве
+ й Чураков — 146.46\n\nНачало: 13:00 МСК\nТрансля
+ ция: Первый канал / YouTube
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-memo
+ rial-a-g-gorshkova-sredi-yuniorov-2026:dance-junior-pt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
+ 026:pairs-junior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261006T153500
+DTEND;TZID=Europe/Moscow:20261006T163000
+SUMMARY:ЮГП России «Мемориал Горшкова» — па
+ ры ПП
+DESCRIPTION:Итог:\n1. Таисия Гусева / Даниил Овчи
+ нников — 127.66\n2. Полина Шешелева / Егор Ка
+ рнаухов — 124.19\n3. Дарья Самохвалова / Рома
+ н Романычев — 95.69\n\nИтог турнира:\n1. Таиси
+ я Гусева / Даниил Овчинников — 198.93\n2. Пол
+ ина Шешелева / Егор Карнаухов — 195.08\n3. Ан
+ астасия Иванкевич / Георгий Павловский 
+ — 154.22\n\nПримечательное:\n• Таисия Гусева
+  / Даниил Овчинников — Четверная подкрут
+ ка\n\nРоссияне:\n• Полина Шешелева / Егор К
+ арнаухов — 5-й\n• Таисия Гусева / Даниил О
+ вчинников — 6-й\n\nНачало: 15:35 МСК\nТрансля
+ ция: Первый канал / YouTube
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-memo
+ rial-a-g-gorshkova-sredi-yuniorov-2026:pairs-junior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
+ 026:women-junior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261006T164500
+DTEND;TZID=Europe/Moscow:20261006T192000
+SUMMARY:ЮГП России «Мемориал Горшкова» — де
+ вушки КП
+DESCRIPTION:Итог:\n1. Екатерина Корчажникова — 7
+ 2.02\n2. Анна Докукина — 70.86\n3. Софья Смагина
+  — 70.64\n\nПримечательное:\n• София Сарновс
+ кая — Тройной аксель\n\nРоссияне:\n• Софи
+ я Сарновская — 5-й\n• Софья Смагина — 12-й\
+ n• Анна Докукина — 13-й\n• Екатерина Корч
+ ажникова — 15-й\n\nНачало: 16:45 МСК\nТрансляц
+ ия: Первый канал / YouTube
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-memo
+ rial-a-g-gorshkova-sredi-yuniorov-2026:women-junior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
+ 026:men-junior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261006T192000
+DTEND;TZID=Europe/Moscow:20261006T215500
+SUMMARY:ЮГП России «Мемориал Горшкова» — юн
+ оши КП
+DESCRIPTION:Итог:\n1. Марк Лукин — 81.52\n2. Николай 
+ Колесников — 80.72\n3. Алдар Самбуев — 78.03\n\n
+ Россияне:\n• Алдар Самбуев — 2-й\n\nНачало:
+  19:20 МСК\nТрансляция: Первый канал / YouTube
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-memo
+ rial-a-g-gorshkova-sredi-yuniorov-2026:men-junior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
+ 026:women-junior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261007T124500
+DTEND;TZID=Europe/Moscow:20261007T153500
+SUMMARY:ЮГП России «Мемориал Горшкова» — де
+ вушки ПП
+DESCRIPTION:Итог:\n1. Софья Смагина — 145.39\n2. Екат
+ ерина Корчажникова — 142.47\n3. Анна Докукин
+ а — 137.58\n\nИтог турнира:\n1. Софья Смагина 
+ — 216.03\n2. Екатерина Корчажникова — 214.49\n3. 
+ Анна Докукина — 208.44\n\nПримечательное:\n•
+  Софья Смагина — 2 четверных в программе:
+  4S\, 4T\n• Екатерина Корчажникова — 2 четве
+ рных в программе: 4S\, 4S\n• Анна Докукина —
+  3 четверных в программе: 4S\, 4T\, 4T\n• София 
+ Сарновская — Тройной аксель\n\nРоссияне:\
+ n• София Сарновская — 15-й\n• Софья Смаги
+ на — 16-й\n• Анна Докукина — 17-й\n• Екатер
+ ина Корчажникова — 18-й\n\nНачало: 12:45 МСК\n
+ Трансляция: Первый канал / YouTube
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-memo
+ rial-a-g-gorshkova-sredi-yuniorov-2026:women-junior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2
+ 026:men-junior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261007T154500
+DTEND;TZID=Europe/Moscow:20261007T183500
+SUMMARY:ЮГП России «Мемориал Горшкова» — юн
+ оши ПП
+DESCRIPTION:Итог:\n1. Марк Лукин — 159.67\n2. Алдар С
+ амбуев — 152.79\n3. Никита Малютин — 149.03\n\nИт
+ ог турнира:\n1. Марк Лукин — 241.19\n2. Алдар С
+ амбуев — 230.82\n3. Никита Малютин — 224.15\n\nПр
+ имечательное:\n• Никита Малютин — 3 четв
+ ерных в программе: 4S\, 4T\, 4T\n\nРоссияне:\n• 
+ Алдар Самбуев — 16-й\n\nНачало: 15:45 МСК\nТра
+ нсляция: Первый канал / YouTube
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-memo
+ rial-a-g-gorshkova-sredi-yuniorov-2026:men-junior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:men-junior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261008T084500
+DTEND;TZID=Europe/Moscow:20261008T105000
+SUMMARY:CS Denis Ten Memorial — юноши КП
+DESCRIPTION:Итог:\n1. Арсений Федотов — 91.38\n2. Ал
+ ександр Чмиль — 74.01\n3. Глеб Ковтун — 73.18\n\
+ nПримечательное:\n• Арсений Федотов — Лу
+ чшая среди юниоров оценка сезона за КП: 91
+ .38\n• Весь пьедестал — россияне\n\nРоссия
+ не:\n• Арсений Федотов — 6-й\n• Александр 
+ Чмиль — 8-й\n• Глеб Ковтун — 10-й\n• Павел 
+ Гавдис — 11-й\n\nНачало: 08:45 МСК\nТрансляция
+ : VK Видео
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:men-ju
+ nior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:women-junior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261008T105500
+DTEND;TZID=Europe/Moscow:20261008T145000
+SUMMARY:CS Denis Ten Memorial — девушки КП
+DESCRIPTION:Итог:\n1. Виктория Стрельцова — 78.38\n
+ 2. Алёна Принёва — 73.82\n3. Hyewon Joo — 69.65\n\nПри
+ мечательное:\n• Виктория Стрельцова — Т
+ ройной аксель\n• Виктория Стрельцова — 
+ Лучшая среди юниоров оценка сезона за КП
+ : 78.38\n• Hyewon Joo — Личный рекорд за КП: 69.65 (б
+ ыл 59.99)\n• Алиса Заикина — Тройной аксель
+ \n• Варвара Стахович — Личный рекорд за 
+ КП: 69.18 (был 61.01)\n\nРоссияне:\n• Алёна Принё
+ ва — 1-й\n• Варвара Стахович — 16-й\n• Викт
+ ория Стрельцова — 18-й\n• Алиса Заикина —
+  20-й\n• Ярослава Князева — 23-й\n• Мария Ев
+ тухина — 25-й\n\nНачало: 10:55 МСК\nТрансляция
+ : VK Видео
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:women-
+ junior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:women-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261008T150500
+DTEND;TZID=Europe/Moscow:20261008T175000
+SUMMARY:CS Denis Ten Memorial — женщины КП
+DESCRIPTION:Итог:\n1. Александра Трусова — 77.39\n2.
+  Yujae Kim — 75.99\n3. Sofia Samodelkina — 69.45\n\nПримечате
+ льное:\n• Yujae Kim — Тройной аксель\n• Дина 
+ Хуснутдинова — Тройной аксель\n• Yujae Kim 
+ — Личный рекорд за КП: 75.99 (был 66.59)\n• Sofia S
+ amodelkina — Личный рекорд за КП: 69.45 (был 68.47)\n
+ • Виктория Сафонова — Личный рекорд за 
+ КП: 68.42 (был 66.67)\n\nРоссияне:\n• Виктория Са
+ фонова — 3-й\n• Мария Захарова — 4-й\n• Ал
+ ександра Трусова — 14-й\n• Дина Хуснутдин
+ ова — 16-й\n\nНачало: 15:05 МСК\nТрансляция: VK 
+ Видео
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:women-
+ senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:men-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261008T180000
+DTEND;TZID=Europe/Moscow:20261008T192000
+SUMMARY:CS Denis Ten Memorial — мужчины КП
+DESCRIPTION:Итог:\n1. Владислав Дикиджи — 107.31\n2. 
+ Глеб Лутфуллин — 95.79\n3. Пётр Гуменник — 80
+ .63\n\nПримечательное:\n• Первые 4 места — р
+ оссияне и белорусы\n• Владислав Дикиджи 
+ — Лучшая в мире оценка сезона за КП: 107.31\n
+ • Владислав Дикиджи — Личный рекорд за 
+ КП: 107.31 (был 88.79)\n• Глеб Лутфуллин — Личн
+ ый рекорд за КП: 95.79 (был 85.70)\n• Василий Ба
+ раховский — Личный рекорд за КП: 77.96 (был 
+ 69.51)\n• Алекс Лабович — Личный рекорд за 
+ КП: 61.26 (был 59.41)\n\nРоссияне:\n• Владислав Д
+ икиджи — 3-й\n• Георгий Козловский — 4-й\n
+ • Алекс Лабович — 6-й\n• Василий Барахов
+ ский — 7-й\n• Пётр Гуменник — 8-й\n• Глеб Л
+ утфуллин — 9-й\n\nНачало: 18:00 МСК\nТрансляц
+ ия: VK Видео
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:men-se
+ nior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:dance-junior-rt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261008T193500
+DTEND;TZID=Europe/Moscow:20261008T201500
+SUMMARY:CS Denis Ten Memorial — юниорские танцы РТ
+DESCRIPTION:Итог:\n1. Мария Фефелова / Артём Вало
+ в — 67.11\n2. Дарья Дрожжина / Иван Тельнов —
+  59.41\n3. Sofiia Beznosikova / Max Leleu — 57.90\n\nПримечате
+ льное:\n• Мария Фефелова / Артём Валов — 
+ Личный рекорд за РТ: 67.11 (был 65.33)\n\nРоссия
+ не:\n• Дарья Дрожжина / Иван Тельнов — 3-й\
+ n• Мария Фефелова / Артём Валов — 4-й\n\nНа
+ чало: 19:35 МСК\nТрансляция: VK Видео
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:dance-
+ junior-rt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:women-junior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261009T090000
+DTEND;TZID=Europe/Moscow:20261009T132000
+SUMMARY:CS Denis Ten Memorial — девушки ПП
+DESCRIPTION:Итог:\n1. Алиса Заикина — 136.72\n2. Варв
+ ара Стахович — 126.43\n3. Алёна Принёва — 124.7
+ 7\n\nИтог турнира:\n1. Алиса Заикина — 206.05\n2.
+  Виктория Стрельцова — 200.99\n3. Алёна Прин
+ ёва — 198.59\n\nПримечательное:\n• Алиса Заи
+ кина — Тройной аксель\n• Алиса Заикина 
+ — 2 четверных в программе: 4T\, 4T\n• Варвар
+ а Стахович — Личный рекорд за ПП: 126.43 (бы
+ л 122.34)\n• Виктория Стрельцова — Тройной 
+ аксель\n• Виктория Стрельцова — 2 четвер
+ ных в программе: 4S\, 4T\n• Первые 6 мест — р
+ оссияне и белорусы\n• Варвара Стахович 
+ — Личный рекорд по сумме: 195.61 (был 183.35)\n•
+  Алиса Заикина — После короткой програм
+ мы — 4-е место\, в итоге — 1-е место\n\nРосси
+ яне:\n• Алиса Заикина — 12:43\n• Алёна Прин
+ ёва — 12:58\n• Виктория Стрельцова — 13:05\n•
+  Мария Евтухина — 18-й\n• Ярослава Князев
+ а — 21-й\n• Варвара Стахович — 22-й\n\nНачал
+ о: 09:00 МСК\nТрансляция: VK Видео
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:women-
+ junior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:dance-junior-pt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261009T140000
+DTEND;TZID=Europe/Moscow:20261009T144500
+SUMMARY:CS Denis Ten Memorial — юниорские танцы ПТ
+DESCRIPTION:Итог:\n1. Мария Фефелова / Артём Вало
+ в — 97.45\n2. Дарья Дрожжина / Иван Тельнов —
+  94.46\n3. Sofiia Beznosikova / Max Leleu — 88.44\n\nИтог турни
+ ра:\n1. Мария Фефелова / Артём Валов — 164.56\n
+ 2. Дарья Дрожжина / Иван Тельнов — 153.87\n3. So
+ fiia Beznosikova / Max Leleu — 146.34\n\nПримечательное:\n
+ • Мария Фефелова / Артём Валов — Отрыв о
+ т второго места — 10.69 балла\n\nРоссияне:\n
+ • Дарья Дрожжина / Иван Тельнов — 14:27\n• 
+ Мария Фефелова / Артём Валов — 14:34\n\nНача
+ ло: 14:00 МСК\nТрансляция: VK Видео
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:dance-
+ junior-pt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:dance-senior-rt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261009T151500
+DTEND;TZID=Europe/Moscow:20261009T170000
+SUMMARY:CS Denis Ten Memorial — танцы РТ
+DESCRIPTION:Итог:\n1. Caroline Green / Michael Parsons — 78.64\n2. Ju
+ ulia Turkkila / Matthias Versluis — 74.33\n3. Василиса Кага
+ новская / Максим Некрасов — 74.28\n\nПримеча
+ тельное:\n• Василиса Кагановская / Макси
+ м Некрасов — Личный рекорд за РТ: 74.28 (был
+  74.21)\n• Ирина Хавронина / Девид Нарижный 
+ — Личный рекорд за РТ: 73.78 (был 73.38)\n• Ека
+ терина Андреева / Дмитрий Блинов — Личны
+ й рекорд за РТ: 69.49 (был 67.74)\n\nРоссияне:\n• 
+ Василиса Кагановская / Максим Некрасов 
+ — 15:20\n• Анна Щербакова / Егор Гончаров —
+  15:33\n• Ирина Хавронина / Девид Нарижный 
+ — 16:46\n• Виктория Пласконная / Владислав 
+ Сыцик — 6-й\n• Екатерина Андреева / Дмитр
+ ий Блинов — 9-й\n\nНачало: 15:15 МСК\nТрансляц
+ ия: VK Видео
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:dance-
+ senior-rt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:women-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261009T173000
+DTEND;TZID=Europe/Moscow:20261009T203500
+SUMMARY:CS Denis Ten Memorial — женщины ПП
+DESCRIPTION:Итог:\n1. Александра Трусова — 148.62\n2
+ . Sofia Samodelkina — 134.91\n3. Yujae Kim — 133.21\n\nИтог тур
+ нира:\n1. Александра Трусова — 226.01\n2. Yujae Kim
+  — 209.20\n3. Sofia Samodelkina — 204.36\n\nПримечательно
+ е:\n• Александра Трусова — Четверной лут
+ ц\n• Yujae Kim — Тройной аксель\n• Мария Заха
+ рова — Четверной тулуп\n• Дина Хуснутди
+ нова — Тройной аксель\n• Виктория Сафон
+ ова — Личный рекорд за ПП: 130.38 (был 128.27)\n
+ • Мария Захарова — Личный рекорд за ПП: 1
+ 29.48 (был 121.29)\n• Александра Трусова — Отр
+ ыв от второго места — 16.81 балла\n• Yujae Kim 
+ — Личный рекорд по сумме: 209.20 (был 199.86)\n•
+  Виктория Сафонова — Личный рекорд по су
+ мме: 198.80 (был 192.49)\n\nРоссияне:\n• Мария Зах
+ арова — 19:30\n• Дина Хуснутдинова — 20:00\n•
+  Александра Трусова — 20:32\n• Виктория Са
+ фонова — 16-й\n\nНачало: 17:30 МСК\nТрансляция
+ : VK Видео
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:women-
+ senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:men-junior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261010T073000
+DTEND;TZID=Europe/Moscow:20261010T095000
+SUMMARY:CS Denis Ten Memorial — юноши ПП
+DESCRIPTION:Итог:\n1. Арсений Федотов — 160.30\n2. Ал
+ ександр Чмиль — 130.09\n3. Глеб Ковтун — 128.35\
+ n\nИтог турнира:\n1. Арсений Федотов — 251.68\n
+ 2. Александр Чмиль — 204.10\n3. Глеб Ковтун — 
+ 201.53\n\nПримечательное:\n• Арсений Федотов
+  — 3 четверных в программе: 4S\, 4T\, 4T\n• Вес
+ ь пьедестал — россияне\n• Арсений Федот
+ ов — Отрыв от второго места — 47.58 балла\n\
+ nРоссияне:\n• Глеб Ковтун — 09:23\n• Алекса
+ ндр Чмиль — 09:30\n• Арсений Федотов — 09:37\n
+ • Павел Гавдис — 9-й\n\nНачало: 07:30 МСК\nТра
+ нсляция: VK Видео
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:men-ju
+ nior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:dance-senior-pt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261010T100000
+DTEND;TZID=Europe/Moscow:20261010T115500
+SUMMARY:CS Denis Ten Memorial — танцы ПТ
+DESCRIPTION:Итог:\n1. Juulia Turkkila / Matthias Versluis — 116.99\n2
+ . Василиса Кагановская / Максим Некрасов 
+ — 112.92\n3. Ирина Хавронина / Девид Нарижный
+  — 105.26\n\nИтог турнира:\n1. Juulia Turkkila / Matthias Ver
+ sluis — 191.32\n2. Василиса Кагановская / Макси
+ м Некрасов — 187.20\n3. Caroline Green / Michael Parsons — 18
+ 0.37\n\nПримечательное:\n• Василиса Каганов
+ ская / Максим Некрасов — Личный рекорд з
+ а ПТ: 112.92 (был 110.60)\n• Ирина Хавронина / Де
+ вид Нарижный — Личный рекорд за ПТ: 105.26 (
+ был 104.55)\n• Екатерина Андреева / Дмитрий 
+ Блинов — Личный рекорд за ПТ: 100.72 (был 97.91
+ )\n• Василиса Кагановская / Максим Некрас
+ ов — Личный рекорд по сумме: 187.20 (был 184.81)
+ \n• Ирина Хавронина / Девид Нарижный — Ли
+ чный рекорд по сумме: 179.04 (был 177.93)\n• Ека
+ терина Андреева / Дмитрий Блинов — Личны
+ й рекорд по сумме: 170.21 (был 165.65)\n\nРоссиян
+ е:\n• Анна Щербакова / Егор Гончаров — 11:05
+ \n• Ирина Хавронина / Девид Нарижный — 11:2
+ 6\n• Василиса Кагановская / Максим Некрас
+ ов — 11:34\n• Виктория Пласконная / Владисл
+ ав Сыцик — 1-й\n• Екатерина Андреева / Дми
+ трий Блинов — 7-й\n\nНачало: 10:00 МСК\nТрансл
+ яция: VK Видео
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:dance-
+ senior-pt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-denis-ten-memorial:men-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261010T123000
+DTEND;TZID=Europe/Moscow:20261010T140000
+SUMMARY:CS Denis Ten Memorial — мужчины ПП
+DESCRIPTION:Итог:\n1. Владислав Дикиджи — 205.48\n2. 
+ Глеб Лутфуллин — 181.44\n3. Пётр Гуменник — 1
+ 81.13\n\nИтог турнира:\n1. Владислав Дикиджи 
+ — 312.79\n2. Глеб Лутфуллин — 277.23\n3. Пётр Гум
+ енник — 261.76\n\nПримечательное:\n• Глеб Лу
+ тфуллин — Каскад 4T+3A+3A\n• Глеб Лутфуллин 
+ — 5 четверных в программе: 4F\, 4Lo\, 4T\, 4S\, 4S\n
+ • Весь пьедестал — россияне\n• Владисла
+ в Дикиджи — Лучшая в мире оценка сезона 
+ за ПП: 205.48\n• Владислав Дикиджи — Личный 
+ рекорд за ПП: 205.48 (был 176.89)\n• Глеб Лутфул
+ лин — Личный рекорд за ПП: 181.44 (был 165.76)\n
+ • Василий Бараховский — Личный рекорд з
+ а ПП: 140.40 (был 129.81)\n• Алекс Лабович — Лич
+ ный рекорд за ПП: 128.11 (был 99.03)\n• Владисла
+ в Дикиджи — Отрыв от второго места — 35.56 
+ балла\n• Владислав Дикиджи — Лучшая в ми
+ ре сумма сезона: 312.79\n• Владислав Дикидж
+ и — Личный рекорд по сумме: 312.79 (был 265.68)\n
+ • Глеб Лутфуллин — Личный рекорд по сум
+ ме: 277.23 (был 251.46)\n• Василий Бараховский 
+ — Личный рекорд по сумме: 218.36 (был 199.09)\n•
+  Алекс Лабович — Личный рекорд по сумме: 
+ 189.37 (был 158.44)\n\nРоссияне:\n• Глеб Лутфулли
+ н — 13:45\n• Владислав Дикиджи — 13:53\n• Але
+ кс Лабович — 2-й\n• Георгий Козловский — 
+ 5-й\n• Василий Бараховский — 7-й\n• Пётр Г
+ уменник — 8-й\n\nНачало: 12:30 МСК\nТрансляци
+ я: VK Видео
+LOCATION:Almaty\, Kazakhstan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-denis-ten-memorial:men-se
+ nior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:danc
+ e-junior-rt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261012T173000
+DTEND;TZID=Europe/Moscow:20261012T194000
+SUMMARY:ЮГП России «Рапсодия льда» — танцы Р
+ Т
+DESCRIPTION:Итог:\n1. Таисия Шепталина / Дмитрий 
+ Пекин — 67.26\n2. Варвара Слуцкая / Глеб Гонч
+ аров — 64.77\n3. Полина Жарова / Алексей Стол
+ яров — 60.79\n\nНачало: 17:30 МСК\nТрансляция: П
+ ервый канал / YouTube
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-raps
+ odiya-l-da-sredi-yuniorov-2026:dance-junior-rt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:pair
+ s-junior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261012T195000
+DTEND;TZID=Europe/Moscow:20261012T202000
+SUMMARY:ЮГП России «Рапсодия льда» — пары КП
+DESCRIPTION:Итог:\n1. Зоя Ковязина / Дмитрий Роди
+ онов — 69.18\n2. Софья Звездина / Дмитрий Шер
+ емет — 57.79\n3. Дарья Третьякова / Александ
+ р Саморуков — 52.50\n\nНачало: 19:50 МСК\nТранс
+ ляция: Первый канал / YouTube
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-raps
+ odiya-l-da-sredi-yuniorov-2026:pairs-junior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:danc
+ e-junior-pt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261013T130000
+DTEND;TZID=Europe/Moscow:20261013T152500
+SUMMARY:ЮГП России «Рапсодия льда» — танцы П
+ Т
+DESCRIPTION:Итог:\n1. Варвара Слуцкая / Глеб Гонч
+ аров — 97.74\n2. Полина Жарова / Алексей Стол
+ яров — 95.73\n3. Эвелина Валиева / Даниил Лав
+ риненко — 92.35\n\nИтог турнира:\n1. Варвара С
+ луцкая / Глеб Гончаров — 162.51\n2. Полина Жа
+ рова / Алексей Столяров — 156.52\n3. Эвелина 
+ Валиева / Даниил Лавриненко — 152.33\n\nНача
+ ло: 13:00 МСК\nТрансляция: Первый канал / YouTub
+ e
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-raps
+ odiya-l-da-sredi-yuniorov-2026:dance-junior-pt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:pair
+ s-junior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261013T153000
+DTEND;TZID=Europe/Moscow:20261013T160000
+SUMMARY:ЮГП России «Рапсодия льда» — пары ПП
+DESCRIPTION:Итог:\n1. Зоя Ковязина / Дмитрий Роди
+ онов — 103.03\n2. Софья Звездина / Дмитрий Ше
+ ремет — 92.62\n3. Дарья Третьякова / Алексан
+ др Саморуков — 86.53\n\nИтог турнира:\n1. Зоя 
+ Ковязина / Дмитрий Родионов — 172.21\n2. Софь
+ я Звездина / Дмитрий Шеремет — 150.41\n3. Дар
+ ья Третьякова / Александр Саморуков — 139.
+ 03\n\nПримечательное:\n• Зоя Ковязина / Дми
+ трий Родионов — Отрыв от второго места 
+ — 21.80 балла\n\nНачало: 15:30 МСК\nТрансляция: 
+ Первый канал / YouTube
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-raps
+ odiya-l-da-sredi-yuniorov-2026:pairs-junior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:wome
+ n-junior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261013T163000
+DTEND;TZID=Europe/Moscow:20261013T190500
+SUMMARY:ЮГП России «Рапсодия льда» — девушк
+ и КП
+DESCRIPTION:Итог:\n1. Алёна Принёва — 74.47\n2. Алис
+ а Заикина — 69.49\n3. Полина Мартыненко — 68.5
+ 1\n\nПримечательное:\n• Алиса Заикина — Тр
+ ойной аксель\n\nРоссияне:\n• Алиса Заикин
+ а — 17:30\n\nНачало: 16:30 МСК\nТрансляция: Перв
+ ый канал / YouTube
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-raps
+ odiya-l-da-sredi-yuniorov-2026:women-junior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:men-
+ junior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261013T190500
+DTEND;TZID=Europe/Moscow:20261013T214000
+SUMMARY:ЮГП России «Рапсодия льда» — юноши К
+ П
+DESCRIPTION:Итог:\n1. Ильяс Халиуллин — 85.45\n2. Да
+ ниил Жолобов — 81.94\n3. Добромир Воронов — 
+ 81.23\n\nНачало: 19:05 МСК\nТрансляция: Первый к
+ анал / YouTube
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-raps
+ odiya-l-da-sredi-yuniorov-2026:men-junior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:wome
+ n-junior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261014T124500
+DTEND;TZID=Europe/Moscow:20261014T153500
+SUMMARY:ЮГП России «Рапсодия льда» — девушк
+ и ПП
+DESCRIPTION:Итог:\n1. Алиса Заикина — 134.20\n2. Дарь
+ я Лебедева — 132.11\n3. Алёна Принёва — 131.93\n\
+ nИтог турнира:\n1. Алёна Принёва — 206.40\n2. А
+ лиса Заикина — 203.69\n3. Дарья Лебедева — 198
+ .92\n\nПримечательное:\n• Алиса Заикина — Т
+ ройной аксель\n• Алиса Заикина — 2 четве
+ рных в программе: 4T\, 4T\n• Дарья Лебедева 
+ — 2 четверных в программе: 4S\, 4T\n\nРоссиян
+ е:\n• Алиса Заикина — 15:06\n\nНачало: 12:45 МСК
+ \nТрансляция: Первый канал / YouTube
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-raps
+ odiya-l-da-sredi-yuniorov-2026:women-junior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:men-
+ junior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261014T154500
+DTEND;TZID=Europe/Moscow:20261014T183500
+SUMMARY:ЮГП России «Рапсодия льда» — юноши П
+ П
+DESCRIPTION:Итог:\n1. Даниил Жолобов — 168.98\n2. Ник
+ олай Колесников — 151.31\n3. Ильяс Халиуллин
+  — 150.51\n\nИтог турнира:\n1. Даниил Жолобов 
+ — 250.92\n2. Ильяс Халиуллин — 235.96\n3. Николай
+  Колесников — 220.09\n\nПримечательное:\n• Д
+ аниил Жолобов — 4 четверных в программе: 
+ 4T\, 4Lz\, 4Lo\, 4Lo\n• Николай Колесников — 3 чет
+ верных в программе: 4S\, 4T\, 4T\n• Ильяс Хали
+ уллин — 3 четверных в программе: 4Lz\, 4Lz\, 4S\
+ n• Михаил Алексахин — 3 четверных в прог
+ рамме: 4T\, 4S\, 4T\n• Николай Колесников — По
+ сле короткой программы — 12-е место\, в ит
+ оге — 3-е место\n\nНачало: 15:45 МСК\nТрансляц
+ ия: Первый канал / YouTube
+LOCATION:СК «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-raps
+ odiya-l-da-sredi-yuniorov-2026:men-junior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-budapest-trophy:men-junior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261016T090000
+DTEND;TZID=Europe/Moscow:20261016T100000
+SUMMARY:CS Budapest Trophy — юноши КП
+DESCRIPTION:Итог:\n1. Kirill Sheiko — 74.36\n2. Илья Малько
+ в — 70.92\n3. Gion Schmid — 68.24\n\nРоссияне:\n• Илья 
+ Мальков — 09:12\n\nНачало: 09:00 МСК\nТрансляци
+ я: HunSkate TV
+LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:men-junio
+ r-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-budapest-trophy:dance-senior-rt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261016T174500
+DTEND;TZID=Europe/Moscow:20261016T211000
+SUMMARY:CS Budapest Trophy — танцы РТ
+DESCRIPTION:Итог:\n1. Olivia Smart / Tim Dieck — 79.42\n2. Natalie Ta
+ schlerova / Filip Taschler — 76.25\n3. Loicia Demougeot / Theo le Mercie
+ r — 76.00\n\nРоссияне:\n• Милана Кузьмина / Дм
+ итрий Студеникин — 19:04\n• Василиса Григо
+ рьева / Евгений Артющенко — 20:48\n\nНачало: 
+ 17:45 МСК\nТрансляция: HunSkate TV
+LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:dance-sen
+ ior-rt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-budapest-trophy:men-junior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261017T130500
+DTEND;TZID=Europe/Moscow:20261017T141000
+SUMMARY:CS Budapest Trophy — юноши ПП
+DESCRIPTION:Итог:\n1. Илья Мальков — 134.38\n2. Kirill She
+ iko — 134.19\n3. Gion Schmid — 116.79\n\nИтог турнира:\n1. 
+ Kirill Sheiko — 208.55\n2. Илья Мальков — 205.30\n3. Gion S
+ chmid — 185.03\n\nПримечательное:\n• Илья Мальк
+ ов — 3 четверных в программе: 4T\, 4S\, 4S\n• Kir
+ ill Sheiko — Личный рекорд за ПП: 134.19 (был 123.13)
+ \n• Kirill Sheiko — Личный рекорд по сумме: 208.55 
+ (был 199.93)\n\nРоссияне:\n• Илья Мальков — 13:5
+ 1\n\nНачало: 13:05 МСК\nТрансляция: HunSkate TV
+LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:men-junio
+ r-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:wom
+ en-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261017T133000
+DTEND;TZID=Europe/Moscow:20261017T150000
+SUMMARY:Гран-при России «Рапсодия льда» — же
+ нщины КП
+DESCRIPTION:Итог:\n1. Анна Фролова — 74.70\n2. Камил
+ ла Нелюбова — 70.89\n3. Елизавета Куликова 
+ — 69.23\n\nПримечательное:\n• Камилла Нелюб
+ ова — Тройной аксель\n\nНачало: 13:30 МСК\nТр
+ ансляция: Первый канал / YouTube
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-rapsodiya-l-da-2026:women-senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-budapest-trophy:women-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261017T142500
+DTEND;TZID=Europe/Moscow:20261017T200000
+SUMMARY:CS Budapest Trophy — женщины КП
+DESCRIPTION:Итог:\n1. Алина Горбачёва — 73.02\n2. Maria
+  Eliise Kaljuvere — 66.36\n3. Julia Sauter — 65.53\n\nПримечат
+ ельное:\n• Maria Eliise Kaljuvere — Личный рекорд з
+ а КП: 66.36 (был 63.52)\n• Julia Sauter — Личный реко
+ рд за КП: 65.53 (был 64.03)\n\nРоссияне:\n• Алина 
+ Горбачёва — 19:13\n\nНачало: 14:25 МСК\nТрансля
+ ция: HunSkate TV
+LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:women-sen
+ ior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men
+ -senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261017T151500
+DTEND;TZID=Europe/Moscow:20261017T164000
+SUMMARY:Гран-при России «Рапсодия льда» — му
+ жчины КП
+DESCRIPTION:Итог:\n1. Евгений Семененко — 100.20\n2. 
+ Андрей Мозалёв — 98.13\n3. Даниил Самсонов 
+ — 91.60\n\nНачало: 15:15 МСК\nТрансляция: Первы
+ й канал / YouTube
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-rapsodiya-l-da-2026:men-senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pai
+ rs-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261017T165500
+DTEND;TZID=Europe/Moscow:20261017T180500
+SUMMARY:Гран-при России «Рапсодия льда» — па
+ ры КП
+DESCRIPTION:Итог:\n1. Юлия Артемьева / Алексей Бр
+ юханов — 70.43\n2. Таисия Щербинина / Артём П
+ етров — 68.76\n3. Анастасия Мухортова / Дмит
+ рий Евгеньев — 68.51\n\nНачало: 16:55 МСК\nТран
+ сляция: Первый канал / YouTube
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-rapsodiya-l-da-2026:pairs-senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:dan
+ ce-senior-rt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261017T182500
+DTEND;TZID=Europe/Moscow:20261017T193000
+SUMMARY:Гран-при России «Рапсодия льда» — та
+ нцы РТ
+DESCRIPTION:Итог:\n1. Софья Леонтьева / Даниил Го
+ релкин — 77.21\n2. Елизавета Пасечник / Дари
+ о Чиризано — 72.88\n3. Екатерина Рыбакова / И
+ ван Махноносов — 71.93\n\nНачало: 18:25 МСК\nТр
+ ансляция: Первый канал / YouTube
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-rapsodiya-l-da-2026:dance-senior-rt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-budapest-trophy:dance-senior-pt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261018T090000
+DTEND;TZID=Europe/Moscow:20261018T124500
+SUMMARY:CS Budapest Trophy — танцы ПТ
+DESCRIPTION:Итог:\n1. Natalie Taschlerova / Filip Taschler — 109.41\n
+ 2. Yuka Orihara / Juho Pirinen — 108.63\n3. Noemi Maria Tali / Noah Lafo
+ rnara — 106.08\n\nИтог турнира:\n1. Natalie Taschlerova / Fil
+ ip Taschler — 185.66\n2. Olivia Smart / Tim Dieck — 185.09\n3. Yuka Or
+ ihara / Juho Pirinen — 182.73\n\nРоссияне:\n• Милана К
+ узьмина / Дмитрий Студеникин — 10:34\n• Вас
+ илиса Григорьева / Евгений Артющенко — 10
+ :41\n\nНачало: 09:00 МСК\nТрансляция: HunSkate TV
+LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:dance-sen
+ ior-pt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:wom
+ en-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261018T130000
+DTEND;TZID=Europe/Moscow:20261018T144500
+SUMMARY:Гран-при России «Рапсодия льда» — же
+ нщины ПП
+DESCRIPTION:Итог:\n1. Камилла Нелюбова — 146.86\n2. К
+ сения Синицына — 136.95\n3. Анна Фролова — 133
+ .62\n\nИтог турнира:\n1. Камилла Нелюбова — 21
+ 7.75\n2. Анна Фролова — 208.32\n3. Ксения Синицы
+ на — 199.83\n\nПримечательное:\n• Камилла Не
+ любова — Тройной аксель\n• Ксения Синиц
+ ына — После короткой программы — 6-е мес
+ то\, в итоге — 3-е место\n\nНачало: 13:00 МСК\nТ
+ рансляция: Первый канал / YouTube
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-rapsodiya-l-da-2026:women-senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men
+ -senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261018T150500
+DTEND;TZID=Europe/Moscow:20261018T164000
+SUMMARY:Гран-при России «Рапсодия льда» — му
+ жчины ПП
+DESCRIPTION:Итог:\n1. Евгений Семененко — 195.93\n2. 
+ Артём Ковалёв — 166.32\n3. Роман Савосин — 155
+ .51\n\nИтог турнира:\n1. Евгений Семененко — 
+ 296.13\n2. Андрей Мозалёв — 252.16\n3. Артём Кова
+ лёв — 247.88\n\nПримечательное:\n• Артём Ков
+ алёв — После короткой программы — 6-е ме
+ сто\, в итоге — 3-е место\n• Евгений Семен
+ енко — Отрыв от второго места — 43.97 балл
+ а\n\nНачало: 15:05 МСК\nТрансляция: Первый ка
+ нал / YouTube
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-rapsodiya-l-da-2026:men-senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pai
+ rs-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261018T171000
+DTEND;TZID=Europe/Moscow:20261018T183000
+SUMMARY:Гран-при России «Рапсодия льда» — па
+ ры ПП
+DESCRIPTION:Итог:\n1. Юлия Артемьева / Алексей Бр
+ юханов — 117.07\n2. Таисия Щербинина / Артём 
+ Петров — 115.30\n3. Алиса Блинникова / Алексе
+ й Карпов — 114.06\n\nИтог турнира:\n1. Юлия Арт
+ емьева / Алексей Брюханов — 187.50\n2. Таисия
+  Щербинина / Артём Петров — 184.06\n3. Анаста
+ сия Мухортова / Дмитрий Евгеньев — 177.52\n\n
+ Начало: 17:10 МСК\nТрансляция: Первый канал 
+ / YouTube
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-rapsodiya-l-da-2026:pairs-senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-cs-budapest-trophy:women-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261018T172500
+DTEND;TZID=Europe/Moscow:20261018T233500
+SUMMARY:CS Budapest Trophy — женщины ПП
+DESCRIPTION:Итог:\n1. Алина Горбачёва — 130.33\n2. Kimm
+ y Repond — 116.13\n3. Mia Risa Gomez — 114.41\n\nИтог турнир
+ а:\n1. Алина Горбачёва — 203.35\n2. Julia Sauter — 179.
+ 92\n3. Kimmy Repond — 178.86\n\nПримечательное:\n• Sara-
+ Maude Dupuis — Тройной аксель\n• Sophie Joline von Felten
+  — Тройной аксель\n• Kimmy Repond — После коро
+ ткой программы — 6-е место\, в итоге — 3-е 
+ место\n• Алина Горбачёва — Отрыв от втор
+ ого места — 23.43 балла\n\nРоссияне:\n• Алин
+ а Горбачёва — 23:04\n\nНачало: 17:25 МСК\nТранс
+ ляция: HunSkate TV
+LOCATION:Budapest\, Hungary
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-budapest-trophy:women-sen
+ ior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:dan
+ ce-senior-pt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261018T184500
+DTEND;TZID=Europe/Moscow:20261018T195500
+SUMMARY:Гран-при России «Рапсодия льда» — та
+ нцы ПТ
+DESCRIPTION:Итог:\n1. Елизавета Пасечник / Дарио 
+ Чиризано — 111.52\n2. Софья Леонтьева / Дании
+ л Горелкин — 108.90\n3. Екатерина Рыбакова / 
+ Иван Махноносов — 107.10\n\nИтог турнира:\n1. 
+ Софья Леонтьева / Даниил Горелкин — 186.11\n
+ 2. Елизавета Пасечник / Дарио Чиризано — 1
+ 84.40\n3. Екатерина Рыбакова / Иван Махнонос
+ ов — 179.03\n\nНачало: 18:45 МСК\nТрансляция: Пе
+ рвый канал / YouTube
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-rapsodiya-l-da-2026:dance-senior-pt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:men-se
+ nior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261024T133000
+DTEND;TZID=Europe/Moscow:20261024T150000
+SUMMARY:Гран-при России «Невский лёд» — мужч
+ ины КП
+DESCRIPTION:Итог:\n1. Пётр Гуменник — 108.49\n2. Влад
+ ислав Дикиджи — 107.83\n3. Глеб Лутфуллин — 9
+ 8.44\n\nНачало: 13:30 МСК\nТрансляция: Первый к
+ анал / YouTube
+LOCATION:СК «Юбилейный»\, Санкт-Петербург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-nevskij-led-2026:men-senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:women-
+ senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261024T151500
+DTEND;TZID=Europe/Moscow:20261024T164500
+SUMMARY:Гран-при России «Невский лёд» — женщ
+ ины КП
+DESCRIPTION:Итог:\n1. Ксения Синицына — 74.29\n2. Ма
+ рия Захарова — 70.96\n3. Дина Хуснутдинова 
+ — 70.84\n\nПримечательное:\n• Дина Хуснутди
+ нова — Тройной аксель\n\nНачало: 15:15 МСК\nТ
+ рансляция: Первый канал / YouTube
+LOCATION:СК «Юбилейный»\, Санкт-Петербург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-nevskij-led-2026:women-senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:pairs-
+ senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261024T165500
+DTEND;TZID=Europe/Moscow:20261024T180000
+SUMMARY:Гран-при России «Невский лёд» — пары
+  КП
+DESCRIPTION:Итог:\n1. Екатерина Чикмарёва / Матв
+ ей Янченков — 79.43\n2. Анастасия Мишина / Ал
+ ександр Галлямов — 78.94\n3. Екатерина Гейн
+ иш / Андрей Рудь — 67.35\n\nНачало: 16:55 МСК\nТр
+ ансляция: Первый канал / YouTube
+LOCATION:СК «Юбилейный»\, Санкт-Петербург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-nevskij-led-2026:pairs-senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:dance-
+ senior-rt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261024T182500
+DTEND;TZID=Europe/Moscow:20261024T193500
+SUMMARY:Гран-при России «Невский лёд» — танц
+ ы РТ
+DESCRIPTION:Итог:\n1. Василиса Кагановская / Мак
+ сим Некрасов — 81.48\n2. Елизавета Шичина / П
+ авел Дрозд — 76.50\n3. Василиса Григорьева / 
+ Евгений Артющенко — 72.38\n\nНачало: 18:25 МСК\
+ nТрансляция: Первый канал / YouTube
+LOCATION:СК «Юбилейный»\, Санкт-Петербург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-nevskij-led-2026:dance-senior-rt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-grand-prix-de-france-2026:pairs-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261024T200000
+DTEND;TZID=Europe/Moscow:20261024T211000
+SUMMARY:GP de France — пары КП
+DESCRIPTION:Итог:\n1. Anastasiia Metelkina / Luka Berulava — 77.34\n2
+ . Александра Бойкова / Дмитрий Козловски
+ й — 75.85\n3. Annika Hocke / Robert Kunkel — 67.03\n\nРоссиян
+ е:\n• Александра Бойкова / Дмитрий Козлов
+ ский — 19:20\n\nНачало: 20:00 МСК\nТрансляция: Ok
+ ko
+LOCATION:Angers\, France
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-grand-prix-de-france-2026
+ :pairs-senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:men-se
+ nior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261025T130000
+DTEND;TZID=Europe/Moscow:20261025T144500
+SUMMARY:Гран-при России «Невский лёд» — мужч
+ ины ПП
+DESCRIPTION:Итог:\n1. Владислав Дикиджи — 189.84\n2. 
+ Арсений Федотов — 188.13\n3. Пётр Гуменник —
+  185.50\n\nИтог турнира:\n1. Владислав Дикиджи 
+ — 297.67\n2. Пётр Гуменник — 293.99\n3. Арсений Ф
+ едотов — 283.48\n\nПримечательное:\n• Лев Ла
+ зарев — 5 четверных в программе: 4F\, 4Lz\, 4S\,
+  4Lz\, 4T\n• Глеб Лутфуллин — Каскад 4T+3A+3A\n• 
+ Глеб Лутфуллин — 5 четверных в программе
+ : 4F\, 4Lo\, 4T\, 4S\, 4S\n\nНачало: 13:00 МСК\nТрансляц
+ ия: Первый канал / YouTube
+LOCATION:СК «Юбилейный»\, Санкт-Петербург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-nevskij-led-2026:men-senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-grand-prix-de-france-2026:pairs-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261025T133000
+DTEND;TZID=Europe/Moscow:20261025T145000
+SUMMARY:GP de France — пары ПП
+DESCRIPTION:Итог:\n1. Anastasiia Metelkina / Luka Berulava — 127.31\n
+ 2. Александра Бойкова / Дмитрий Козловски
+ й — 121.81\n3. Annika Hocke / Robert Kunkel — 112.71\n\nИтог ту
+ рнира:\n1. Anastasiia Metelkina / Luka Berulava — 204.65\n2. Але
+ ксандра Бойкова / Дмитрий Козловский — 19
+ 7.66\n3. Annika Hocke / Robert Kunkel — 179.74\n\nПримечатель
+ ное:\n• Александра Бойкова / Дмитрий Козл
+ овский — Четверной выброс сальхов\n\nРос
+ сияне:\n• Александра Бойкова / Дмитрий Ко
+ зловский — 13:32\n\nНачало: 13:30 МСК\nТрансляц
+ ия: Okko
+LOCATION:Angers\, France
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-grand-prix-de-france-2026
+ :pairs-senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:women-
+ senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261025T150500
+DTEND;TZID=Europe/Moscow:20261025T165000
+SUMMARY:Гран-при России «Невский лёд» — женщ
+ ины ПП
+DESCRIPTION:Итог:\n1. Вероника Яметова — 132.59\n2. К
+ сения Синицына — 131.05\n3. Арина Кудлай — 128
+ .79\n\nИтог турнира:\n1. Ксения Синицына — 205.
+ 34\n2. Вероника Яметова — 199.84\n3. Дина Хусну
+ тдинова — 197.05\n\nПримечательное:\n• Дина 
+ Хуснутдинова — Тройной аксель\n• Милана
+  Лебедева — Четверной сальхов\n• Мария З
+ ахарова — 2 четверных в программе: 4T\, 4T\n
+ • Вероника Яметова — После короткой про
+ граммы — 7-е место\, в итоге — 2-е место\n\nН
+ ачало: 15:05 МСК\nТрансляция: Первый канал / 
+ YouTube
+LOCATION:СК «Юбилейный»\, Санкт-Петербург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-nevskij-led-2026:women-senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:pairs-
+ senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261025T171000
+DTEND;TZID=Europe/Moscow:20261025T182000
+SUMMARY:Гран-при России «Невский лёд» — пары
+  ПП
+DESCRIPTION:Итог:\n1. Анастасия Мишина / Алексан
+ др Галлямов — 133.84\n2. Екатерина Чикмарёва
+  / Матвей Янченков — 132.10\n3. Екатерина Гей
+ ниш / Андрей Рудь — 122.04\n\nИтог турнира:\n1. 
+ Анастасия Мишина / Александр Галлямов — 
+ 212.78\n2. Екатерина Чикмарёва / Матвей Янчен
+ ков — 211.53\n3. Екатерина Гейниш / Андрей Ру
+ дь — 189.39\n\nНачало: 17:10 МСК\nТрансляция: Пе
+ рвый канал / YouTube
+LOCATION:СК «Юбилейный»\, Санкт-Петербург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-nevskij-led-2026:pairs-senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:dance-
+ senior-pt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261025T184500
+DTEND;TZID=Europe/Moscow:20261025T200500
+SUMMARY:Гран-при России «Невский лёд» — танц
+ ы ПТ
+DESCRIPTION:Итог:\n1. Василиса Кагановская / Мак
+ сим Некрасов — 121.55\n2. Екатерина Миронова
+  / Евгений Устенко — 109.27\n3. Василиса Григ
+ орьева / Евгений Артющенко — 108.83\n\nИтог т
+ урнира:\n1. Василиса Кагановская / Максим 
+ Некрасов — 203.03\n2. Елизавета Шичина / Паве
+ л Дрозд — 183.98\n3. Василиса Григорьева / Ев
+ гений Артющенко — 181.21\n\nПримечательное:\
+ n• Василиса Кагановская / Максим Некрасо
+ в — Отрыв от второго места — 19.05 балла\n\n
+ Начало: 18:45 МСК\nТрансляция: Первый канал 
+ / YouTube
+LOCATION:СК «Юбилейный»\, Санкт-Петербург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-nevskij-led-2026:dance-senior-pt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:dance-j
+ unior-rt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261028T123000
+DTEND;TZID=Europe/Moscow:20261028T144000
+SUMMARY:ЮГП России «Красноярье» — танцы РТ
+DESCRIPTION:Итог:\n1. Зоя Пестова / Сергей Лагуто
+ в — 66.45\n2. Полина Тихонова / Матвей Лысов 
+ — 63.71\n3. Елизавета Ростилова / Денис Ауро
+ в — 58.92\n\nНачало: 12:30 МСК\nТрансляция: Перв
+ ый канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
+ noyar-e-sredi-yuniorov-2026:dance-junior-rt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:pairs-j
+ unior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261028T145000
+DTEND;TZID=Europe/Moscow:20261028T153000
+SUMMARY:ЮГП России «Красноярье» — пары КП
+DESCRIPTION:Итог:\n1. Зоя Ковязина / Дмитрий Роди
+ онов — 68.12\n2. Арина Парсегова / Матвей Бог
+ данов — 63.12\n3. Анастасия Уткина / Артемий 
+ Мохов — 58.84\n\nНачало: 14:50 МСК\nТрансляция: 
+ Первый канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
+ noyar-e-sredi-yuniorov-2026:pairs-junior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:dance-j
+ unior-pt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261029T080000
+DTEND;TZID=Europe/Moscow:20261029T102500
+SUMMARY:ЮГП России «Красноярье» — танцы ПТ
+DESCRIPTION:Итог:\n1. Дарья Дрожжина / Иван Тельн
+ ов — 98.43\n2. Зоя Пестова / Сергей Лагутов —
+  96.56\n3. Милана Жабина / Вениамин Башуров —
+  89.39\n\nИтог турнира:\n1. Зоя Пестова / Серге
+ й Лагутов — 163.01\n2. Дарья Дрожжина / Иван Т
+ ельнов — 155.09\n3. Полина Тихонова / Матвей 
+ Лысов — 152.42\n\nПримечательное:\n• Дарья Д
+ рожжина / Иван Тельнов — После ритм-танц
+ а — 6-е место\, в итоге — 2-е место\n\nНачало
+ : 08:00 МСК\nТрансляция: Первый канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
+ noyar-e-sredi-yuniorov-2026:dance-junior-pt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:pairs-j
+ unior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261029T104000
+DTEND;TZID=Europe/Moscow:20261029T112500
+SUMMARY:ЮГП России «Красноярье» — пары ПП
+DESCRIPTION:Итог:\n1. Зоя Ковязина / Дмитрий Роди
+ онов — 111.25\n2. Арина Парсегова / Матвей Бо
+ гданов — 103.60\n3. Анастасия Уткина / Артеми
+ й Мохов — 99.78\n\nИтог турнира:\n1. Зоя Ковяз
+ ина / Дмитрий Родионов — 179.37\n2. Арина Пар
+ сегова / Матвей Богданов — 166.72\n3. Анастас
+ ия Уткина / Артемий Мохов — 158.62\n\nНачало: 
+ 10:40 МСК\nТрансляция: Первый канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
+ noyar-e-sredi-yuniorov-2026:pairs-junior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:women-j
+ unior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261029T121000
+DTEND;TZID=Europe/Moscow:20261029T144500
+SUMMARY:ЮГП России «Красноярье» — девушки К
+ П
+DESCRIPTION:Итог:\n1. Виктория Стрельцова — 74.89\n
+ 2. Екатерина Корчажникова — 70.54\n3. Екатер
+ ина Стоцкая — 65.63\n\nПримечательное:\n• Ви
+ ктория Стрельцова — Тройной аксель\n\nРо
+ ссияне:\n• Виктория Стрельцова — 13:57\n• Е
+ катерина Корчажникова — 14:03\n\nНачало: 12:10
+  МСК\nТрансляция: Первый канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
+ noyar-e-sredi-yuniorov-2026:women-junior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:men-jun
+ ior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261029T145000
+DTEND;TZID=Europe/Moscow:20261029T172500
+SUMMARY:ЮГП России «Красноярье» — юноши КП
+DESCRIPTION:Итог:\n1. Глеб Ковтун — 79.70\n2. Илья Ма
+ льков — 79.17\n3. Александр Чмиль — 77.15\n\nНач
+ ало: 14:50 МСК\nТрансляция: Первый канал / YouT
+ ube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
+ noyar-e-sredi-yuniorov-2026:men-junior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:women-j
+ unior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261030T074500
+DTEND;TZID=Europe/Moscow:20261030T103500
+SUMMARY:ЮГП России «Красноярье» — девушки П
+ П
+DESCRIPTION:Итог:\n1. Виктория Стрельцова — 141.77\
+ n2. Екатерина Корчажникова — 132.45\n3. Полин
+ а Бершадская — 130.66\n\nИтог турнира:\n1. Вик
+ тория Стрельцова — 216.66\n2. Екатерина Корч
+ ажникова — 202.99\n3. Полина Бершадская — 195.
+ 83\n\nПримечательное:\n• Виктория Стрельцо
+ ва — Тройной аксель\n• Виктория Стрельц
+ ова — 2 четверных в программе: 4T\, 4S\n• Ека
+ терина Корчажникова — 2 четверных в прог
+ рамме: 4S\, 4S\n• Екатерина Стоцкая — Четве
+ рной сальхов\n\nРоссияне:\n• Екатерина Ко
+ рчажникова — 10:06\n• Виктория Стрельцова 
+ — 10:13\n\nНачало: 07:45 МСК\nТрансляция: Первы
+ й канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
+ noyar-e-sredi-yuniorov-2026:women-junior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:men-jun
+ ior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261030T104500
+DTEND;TZID=Europe/Moscow:20261030T133500
+SUMMARY:ЮГП России «Красноярье» — юноши ПП
+DESCRIPTION:Итог:\n1. Макар Солодников — 150.83\n2. Э
+ дуард Камоев — 142.11\n3. Глеб Ковтун — 140.44\n\
+ nИтог турнира:\n1. Макар Солодников — 225.00\n
+ 2. Глеб Ковтун — 220.14\n3. Илья Мальков — 217.79
+ \n\nПримечательное:\n• Макар Солодников —
+  3 четверных в программе: 4T\, 4S\, 4S\n• Макар 
+ Солодников — После короткой программы 
+ — 5-е место\, в итоге — 1-е место\n\nНачало: 1
+ 0:45 МСК\nТрансляция: Первый канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-kras
+ noyar-e-sredi-yuniorov-2026:men-junior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:men-se
+ nior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261031T100000
+DTEND;TZID=Europe/Moscow:20261031T113000
+SUMMARY:Гран-при России «Красноярье» — мужч
+ ины КП
+DESCRIPTION:Итог:\n1. Пётр Гуменник — 104.16\n2. Нико
+ лай Угожаев — 94.89\n3. Артём Ковалёв — 92.43\n\
+ nНачало: 10:00 МСК\nТрансляция: Первый канал
+  / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-krasnoyar-e-2026:men-senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:women-
+ senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261031T122000
+DTEND;TZID=Europe/Moscow:20261031T135000
+SUMMARY:Гран-при России «Красноярье» — женщ
+ ины КП
+DESCRIPTION:Итог:\n1. Лидия Плескачева — 78.65\n2. А
+ нна Фролова — 75.78\n3. Вероника Яметова — 72
+ .13\n\nПримечательное:\n• Лидия Плескачева 
+ — Тройной аксель\n\nНачало: 12:20 МСК\nТранс
+ ляция: Первый канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-krasnoyar-e-2026:women-senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:dance-
+ senior-rt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261031T141000
+DTEND;TZID=Europe/Moscow:20261031T152500
+SUMMARY:Гран-при России «Красноярье» — танц
+ ы РТ
+DESCRIPTION:Итог:\n1. Елизавета Пасечник / Дарио 
+ Чиризано — 79.08\n2. Александра Степанова / 
+ Иван Букин — 76.98\n3. Екатерина Рыбакова / И
+ ван Махноносов — 74.81\n\nНачало: 14:10 МСК\nТр
+ ансляция: Первый канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-krasnoyar-e-2026:dance-senior-rt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-skate-canada-international-2026:women-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261031T223000
+DTEND;TZID=Europe/Moscow:20261101T000000
+SUMMARY:GP Skate Canada — женщины КП
+DESCRIPTION:Промежуточные итоги:\n1. Saki Miyake — 71.9
+ 5\n2. Виктория Сафонова — 56.89\n\nРоссияне:\n
+ • Виктория Сафонова — 22:43\n\nНачало: 22:30 М
+ СК\nТрансляция: Okko
+LOCATION:Kelowna\, Canada
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-skate-canada-internationa
+ l-2026:women-senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:men-se
+ nior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261101T090000
+DTEND;TZID=Europe/Moscow:20261101T104700
+SUMMARY:Гран-при России «Красноярье» — мужч
+ ины ПП
+DESCRIPTION:Начало: 09:00 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-krasnoyar-e-2026:men-senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:women-
+ senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261101T111000
+DTEND;TZID=Europe/Moscow:20261101T125700
+SUMMARY:Гран-при России «Красноярье» — женщ
+ ины ПП
+DESCRIPTION:Начало: 11:10 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-krasnoyar-e-2026:women-senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:dance-
+ senior-pt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261101T132000
+DTEND;TZID=Europe/Moscow:20261101T144900
+SUMMARY:Гран-при России «Красноярье» — танц
+ ы ПТ
+DESCRIPTION:Начало: 13:20 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-krasnoyar-e-2026:dance-senior-pt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-skate-canada-international-2026:women-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261101T230000
+DTEND;TZID=Europe/Moscow:20261102T004500
+SUMMARY:GP Skate Canada — женщины ПП
+DESCRIPTION:Россияне:\n• Виктория Сафонова\n\nН
+ ачало: 23:00 МСК\nТрансляция: Okko
+LOCATION:Kelowna\, Canada
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-skate-canada-internationa
+ l-2026:women-senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:dance-
+ junior-rt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261104T153000
+DTEND;TZID=Europe/Moscow:20261104T173000
+SUMMARY:ЮГП России «Золото Урала» — танцы РТ
+DESCRIPTION:Начало: 15:30 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-zolo
+ to-urala-sredi-yuniorov-2026:dance-junior-rt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:pairs-
+ junior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261104T174500
+DTEND;TZID=Europe/Moscow:20261104T184500
+SUMMARY:ЮГП России «Золото Урала» — пары КП
+DESCRIPTION:Начало: 17:45 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-zolo
+ to-urala-sredi-yuniorov-2026:pairs-junior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:dance-
+ junior-pt@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261105T110000
+DTEND;TZID=Europe/Moscow:20261105T131000
+SUMMARY:ЮГП России «Золото Урала» — танцы ПТ
+DESCRIPTION:Начало: 11:00 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-zolo
+ to-urala-sredi-yuniorov-2026:dance-junior-pt
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:pairs-
+ junior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261105T133000
+DTEND;TZID=Europe/Moscow:20261105T142000
+SUMMARY:ЮГП России «Золото Урала» — пары ПП
+DESCRIPTION:Начало: 13:30 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-zolo
+ to-urala-sredi-yuniorov-2026:pairs-junior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:women-
+ junior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261105T144000
+DTEND;TZID=Europe/Moscow:20261105T170000
+SUMMARY:ЮГП России «Золото Урала» — девушки 
+ КП
+DESCRIPTION:Начало: 14:40 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-zolo
+ to-urala-sredi-yuniorov-2026:women-junior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:men-ju
+ nior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261105T171500
+DTEND;TZID=Europe/Moscow:20261105T193000
+SUMMARY:ЮГП России «Золото Урала» — юноши КП
+DESCRIPTION:Начало: 17:15 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-zolo
+ to-urala-sredi-yuniorov-2026:men-junior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:women-
+ junior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261106T104500
+DTEND;TZID=Europe/Moscow:20261106T132000
+SUMMARY:ЮГП России «Золото Урала» — девушки 
+ ПП
+DESCRIPTION:Начало: 10:45 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-zolo
+ to-urala-sredi-yuniorov-2026:women-junior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-cup-of-china-2026:women-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261106T112500
+DTEND;TZID=Europe/Moscow:20261106T125500
+SUMMARY:GP Cup of China — женщины КП
+DESCRIPTION:Россияне:\n• Александра Трусова\n\n
+ Начало: 11:25 МСК\nТрансляция: Okko
+LOCATION:Shenzhen\, China
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:women-s
+ enior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:men-ju
+ nior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261106T134500
+DTEND;TZID=Europe/Moscow:20261106T161500
+SUMMARY:ЮГП России «Золото Урала» — юноши ПП
+DESCRIPTION:Начало: 13:45 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-zolo
+ to-urala-sredi-yuniorov-2026:men-junior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-cup-of-china-2026:pairs-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261106T140000
+DTEND;TZID=Europe/Moscow:20261106T151000
+SUMMARY:GP Cup of China — пары КП
+DESCRIPTION:Россияне:\n• Анастасия Мишина / Але
+ ксандр Галлямов\n\nНачало: 14:00 МСК\nТрансл
+ яция: Okko
+LOCATION:Shenzhen\, China
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:pairs-s
+ enior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-cup-of-china-2026:men-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261106T152500
+DTEND;TZID=Europe/Moscow:20261106T165500
+SUMMARY:GP Cup of China — мужчины КП
+DESCRIPTION:Россияне:\n• Владислав Дикиджи\n• 
+ Евгений Семененко\n\nНачало: 15:25 МСК\nТран
+ сляция: Okko
+LOCATION:Shenzhen\, China
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:men-sen
+ ior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-cup-of-china-2026:women-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261107T113000
+DTEND;TZID=Europe/Moscow:20261107T131500
+SUMMARY:GP Cup of China — женщины ПП
+DESCRIPTION:Россияне:\n• Александра Трусова\n\n
+ Начало: 11:30 МСК\nТрансляция: Okko
+LOCATION:Shenzhen\, China
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:women-s
+ enior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:men-s
+ enior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261107T123000
+DTEND;TZID=Europe/Moscow:20261107T140500
+SUMMARY:Гран-при России «Золото Урала» — муж
+ чины КП
+DESCRIPTION:Начало: 12:30 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-zoloto-urala-2026:men-senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-cup-of-china-2026:pairs-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261107T134000
+DTEND;TZID=Europe/Moscow:20261107T150000
+SUMMARY:GP Cup of China — пары ПП
+DESCRIPTION:Россияне:\n• Анастасия Мишина / Але
+ ксандр Галлямов\n\nНачало: 13:40 МСК\nТрансл
+ яция: Okko
+LOCATION:Shenzhen\, China
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:pairs-s
+ enior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:women
+ -senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261107T142500
+DTEND;TZID=Europe/Moscow:20261107T155500
+SUMMARY:Гран-при России «Золото Урала» — жен
+ щины КП
+DESCRIPTION:Начало: 14:25 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-zoloto-urala-2026:women-senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:pairs
+ -senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261107T164500
+DTEND;TZID=Europe/Moscow:20261107T175000
+SUMMARY:Гран-при России «Золото Урала» — пар
+ ы КП
+DESCRIPTION:Начало: 16:45 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-zoloto-urala-2026:pairs-senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-cup-of-china-2026:men-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261108T080000
+DTEND;TZID=Europe/Moscow:20261108T094500
+SUMMARY:GP Cup of China — мужчины ПП
+DESCRIPTION:Россияне:\n• Владислав Дикиджи\n• 
+ Евгений Семененко\n\nНачало: 08:00 МСК\nТран
+ сляция: Okko
+LOCATION:Shenzhen\, China
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:men-sen
+ ior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:men-s
+ enior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261108T120000
+DTEND;TZID=Europe/Moscow:20261108T134500
+SUMMARY:Гран-при России «Золото Урала» — муж
+ чины ПП
+DESCRIPTION:Начало: 12:00 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-zoloto-urala-2026:men-senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:women
+ -senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261108T141000
+DTEND;TZID=Europe/Moscow:20261108T155500
+SUMMARY:Гран-при России «Золото Урала» — жен
+ щины ПП
+DESCRIPTION:Начало: 14:10 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-zoloto-urala-2026:women-senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:pairs
+ -senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261108T162000
+DTEND;TZID=Europe/Moscow:20261108T173500
+SUMMARY:Гран-при России «Золото Урала» — пар
+ ы ПП
+DESCRIPTION:Начало: 16:20 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-zoloto-urala-2026:pairs-senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-skate-america-2026:women-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261115T024200
+DTEND;TZID=Europe/Moscow:20261115T041200
+SUMMARY:GP Skate America — женщины КП
+DESCRIPTION:Россияне:\n• Александра Трусова\n\n
+ Начало: 02:42 МСК\nТрансляция: Okko
+LOCATION:Everett\, USA
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-skate-america-2026:women-
+ senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-skate-america-2026:women-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261116T000500
+DTEND;TZID=Europe/Moscow:20261116T015000
+SUMMARY:GP Skate America — женщины ПП
+DESCRIPTION:Россияне:\n• Александра Трусова\n\n
+ Начало: 00:05 МСК\nТрансляция: Okko
+LOCATION:Everett\, USA
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-skate-america-2026:women-
+ senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-finlandia-trophy-2026:pairs-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261120T150000
+DTEND;TZID=Europe/Moscow:20261120T160500
+SUMMARY:GP Finlandia Trophy — пары КП
+DESCRIPTION:Россияне:\n• Александра Бойкова / Д
+ митрий Козловский\n• Екатерина Чикмарёв
+ а / Матвей Янченков\n\nНачало: 15:00 МСК\nТран
+ сляция: Okko
+LOCATION:Helsinki\, Finland
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-finlandia-trophy-2026:pai
+ rs-senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-finlandia-trophy-2026:men-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261120T182500
+DTEND;TZID=Europe/Moscow:20261120T195500
+SUMMARY:GP Finlandia Trophy — мужчины КП
+DESCRIPTION:Россияне:\n• Евгений Семененко\n\nН
+ ачало: 18:25 МСК\nТрансляция: Okko
+LOCATION:Helsinki\, Finland
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-finlandia-trophy-2026:men
+ -senior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-finlandia-trophy-2026:pairs-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261121T131500
+DTEND;TZID=Europe/Moscow:20261121T142500
+SUMMARY:GP Finlandia Trophy — пары ПП
+DESCRIPTION:Россияне:\n• Александра Бойкова / Д
+ митрий Козловский\n• Екатерина Чикмарёв
+ а / Матвей Янченков\n\nНачало: 13:15 МСК\nТран
+ сляция: Okko
+LOCATION:Helsinki\, Finland
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-finlandia-trophy-2026:pai
+ rs-senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-finlandia-trophy-2026:men-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261121T181500
+DTEND;TZID=Europe/Moscow:20261121T200000
+SUMMARY:GP Finlandia Trophy — мужчины ПП
+DESCRIPTION:Россияне:\n• Евгений Семененко\n\nН
+ ачало: 18:15 МСК\nТрансляция: Okko
+LOCATION:Helsinki\, Finland
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-finlandia-trophy-2026:men
+ -senior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-nhk-trophy-2026:women-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261127T101500
+DTEND;TZID=Europe/Moscow:20261127T114500
+SUMMARY:GP NHK Trophy — женщины КП
+DESCRIPTION:Россияне:\n• Аделия Петросян\n\nНач
+ ало: 10:15 МСК\nТрансляция: Okko
+LOCATION:Tokyo\, Japan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-nhk-trophy-2026:women-sen
+ ior-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-nhk-trophy-2026:men-senior-kp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261127T130000
+DTEND;TZID=Europe/Moscow:20261127T143000
+SUMMARY:GP NHK Trophy — мужчины КП
+DESCRIPTION:Россияне:\n• Владислав Дикиджи\n\nН
+ ачало: 13:00 МСК\nТрансляция: Okko
+LOCATION:Tokyo\, Japan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-nhk-trophy-2026:men-senio
+ r-kp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-nhk-trophy-2026:women-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261128T103000
+DTEND;TZID=Europe/Moscow:20261128T121500
+SUMMARY:GP NHK Trophy — женщины ПП
+DESCRIPTION:Россияне:\n• Аделия Петросян\n\nНач
+ ало: 10:30 МСК\nТрансляция: Okko
+LOCATION:Tokyo\, Japan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-nhk-trophy-2026:women-sen
+ ior-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:isu:isu-gp-nhk-trophy-2026:men-senior-pp@starty
+DTSTAMP:20261031T165958Z
+DTSTART;TZID=Europe/Moscow:20261128T133000
+DTEND;TZID=Europe/Moscow:20261128T151500
+SUMMARY:GP NHK Trophy — мужчины ПП
+DESCRIPTION:Россияне:\n• Владислав Дикиджи\n\nН
+ ачало: 13:30 МСК\nТрансляция: Okko
+LOCATION:Tokyo\, Japan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-nhk-trophy-2026:men-senio
+ r-pp
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
