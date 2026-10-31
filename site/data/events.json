@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-30T20:50:49+03:00",
+ "checked": "2026-10-31T01:17:03.294548+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40060,14 +40060,15 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 04:00 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Wesley Chiu — 73.87\n\nНачало: 04:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Wesley Chiu",
      "nation": "CAN",
      "time": "04:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "David Bondar",
@@ -40168,7 +40169,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json"
+   "proto": "isu_isu-gp-skate-canada-international-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Wesley Chiu",
+     "nation": "CAN",
+     "points": "73.87"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:pairs-senior-kp",
