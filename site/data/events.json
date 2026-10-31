@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-10-31T20:55:02.613105+00:00",
+ "checked": "2026-10-31T20:59:02.106478+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41389,7 +41389,7 @@
      "time": "22:43",
      "no": 2,
      "warmup": 1,
-     "place": 10
+     "place": 11
     }
    ],
    "athletes": [
@@ -41413,7 +41413,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Mao Shimada — 82.11\n2. Niina Petrokina — 77.24\n3. Saki Miyake — 71.95\n\nРоссияне:\n• Виктория Сафонова — 22:43\n\nНачало: 22:30 МСК\nТрансляция: Okko",
+   "desc": "Итог:\n1. Mao Shimada — 82.11\n2. Isabeau Levito — 78.50\n3. Niina Petrokina — 77.24\n\nРоссияне:\n• Виктория Сафонова — 22:43\n\nНачало: 22:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Saki Miyake",
@@ -41421,7 +41421,7 @@
      "time": "22:37",
      "no": 1,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Виктория Сафонова",
@@ -41429,7 +41429,7 @@
      "time": "22:43",
      "no": 2,
      "warmup": 1,
-     "place": 10
+     "place": 11
     },
     {
      "name": "Fee Ann Landry",
@@ -41437,7 +41437,7 @@
      "time": "22:50",
      "no": 3,
      "warmup": 1,
-     "place": 9
+     "place": 10
     },
     {
      "name": "Sara-Maude Dupuis",
@@ -41445,7 +41445,7 @@
      "time": "22:56",
      "no": 4,
      "warmup": 1,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Yujae Kim",
@@ -41453,7 +41453,7 @@
      "time": "23:02",
      "no": 5,
      "warmup": 1,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Madeline Schizas",
@@ -41461,7 +41461,7 @@
      "time": "23:08",
      "no": 6,
      "warmup": 1,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Anna Pezzetta",
@@ -41469,7 +41469,7 @@
      "time": "23:22",
      "no": 7,
      "warmup": 2,
-     "place": 11
+     "place": 12
     },
     {
      "name": "Mao Shimada",
@@ -41485,7 +41485,7 @@
      "time": "23:34",
      "no": 9,
      "warmup": 2,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Jia Shin",
@@ -41493,7 +41493,7 @@
      "time": "23:41",
      "no": 10,
      "warmup": 2,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Niina Petrokina",
@@ -41501,14 +41501,15 @@
      "time": "23:47",
      "no": 11,
      "warmup": 2,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Isabeau Levito",
      "nation": "USA",
      "time": "23:53",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2
     }
    ],
    "live": {
@@ -41530,7 +41531,7 @@
      "Niina PETROKINA": "Niina Petrokina",
      "Isabeau LEVITO": "Isabeau Levito"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-skate-canada-international-2026.json",
    "podium": [
@@ -41542,18 +41543,17 @@
     },
     {
      "place": 2,
-     "name": "Niina Petrokina",
-     "nation": "EST",
-     "points": "77.24"
+     "name": "Isabeau Levito",
+     "nation": "USA",
+     "points": "78.50"
     },
     {
      "place": 3,
-     "name": "Saki Miyake",
-     "nation": "JPN",
-     "points": "71.95"
+     "name": "Niina Petrokina",
+     "nation": "EST",
+     "points": "77.24"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:dance-senior-rt",
