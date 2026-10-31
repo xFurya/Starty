@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-31T04:24:04.014584+00:00",
+ "checked": "2026-10-31T08:17:04.756063+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40383,14 +40383,15 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 10:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Даниил Самсонов — 84.31\n\nНачало: 10:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Даниил Самсонов",
      "nation": "МОС",
      "time": "10:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Константин Сафонов",
@@ -40491,7 +40492,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Даниил Самсонов",
+     "nation": "МОС",
+     "points": "84.31"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "gs:crystal-skate:women-junior-pp",
@@ -40525,13 +40535,14 @@
     "Sonia Milik"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Начало: 11:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Sonia Milik — 42.48\n\nНачало: 11:00 МСК",
    "field": [
     {
      "name": "Sonia Milik",
      "nation": "ROU",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Iris Victoria Ciurezu",
@@ -40642,7 +40653,16 @@
     },
     "basis": null
    },
-   "proto": "gs_crystal-skate.json"
+   "proto": "gs_crystal-skate.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Sonia Milik",
+     "nation": "ROU",
+     "points": "42.48"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:women-senior-kp",
