@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-31T08:25:21.294490+00:00",
+ "checked": "2026-10-31T08:29:20.780017+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40549,27 +40549,28 @@
     "Sonia Milik"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Iris Victoria Ciurezu — 44.87\n2. Sonia Milik — 42.48\n\nНачало: 11:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Anhelina Kapuka — 50.66\n2. Iris Victoria Ciurezu — 44.87\n3. Sonia Milik — 42.48\n\nНачало: 11:00 МСК",
    "field": [
     {
      "name": "Sonia Milik",
      "nation": "ROU",
      "no": 1,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Iris Victoria Ciurezu",
      "nation": "ROU",
      "no": 2,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Anhelina Kapuka",
      "nation": "UKR",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Guan Ying Wang",
@@ -40672,12 +40673,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Anhelina Kapuka",
+     "nation": "UKR",
+     "points": "50.66"
+    },
+    {
+     "place": 2,
      "name": "Iris Victoria Ciurezu",
      "nation": "ROU",
      "points": "44.87"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Sonia Milik",
      "nation": "ROU",
      "points": "42.48"
