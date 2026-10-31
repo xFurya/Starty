@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T15:01:50+03:00",
- "checked": "2026-10-31T13:33:21.654254+00:00",
+ "checked": "2026-10-31T13:37:21.679087+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41250,48 +41250,49 @@
     "Milana Mozeiko"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Lilian Musgrave — 96.94\n2. Milana Mozeiko — 87.84\n3. Ana Stratulat — 79.97\n\nНачало: 15:27 МСК",
+   "desc": "Промежуточные итоги:\n1. Julia Sauter — 108.09\n2. Lilian Musgrave — 96.94\n3. Milana Mozeiko — 87.84\n\nНачало: 15:27 МСК",
    "field": [
     {
      "name": "Maria Smaranda",
      "nation": "ROU",
      "no": 1,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Ana Stratulat",
      "nation": "ROU",
      "no": 2,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Ana Sofia Beschea",
      "nation": "ROU",
      "no": 3,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Milana Mozeiko",
      "nation": "FRA",
      "no": 4,
      "warmup": 2,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Lilian Musgrave",
      "nation": "GBR",
      "no": 5,
      "warmup": 2,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Julia Sauter",
      "nation": "ROU",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Ekaterina Kurakova",
@@ -41320,21 +41321,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Julia Sauter",
+     "nation": "ROU",
+     "points": "108.09"
+    },
+    {
+     "place": 2,
      "name": "Lilian Musgrave",
      "nation": "GBR",
      "points": "96.94"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Milana Mozeiko",
      "nation": "FRA",
      "points": "87.84"
-    },
-    {
-     "place": 3,
-     "name": "Ana Stratulat",
-     "nation": "ROU",
-     "points": "79.97"
     }
    ],
    "provisional": true
