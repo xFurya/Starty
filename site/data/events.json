@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-10-31T22:01:04.803101+00:00",
+ "checked": "2026-10-31T22:13:04.214281+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41590,7 +41590,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Katarina Wolfkostin / Dimitry Tsarevski — 71.40\n2. Iryna Pidgaina / Artem Koval — 64.89\n3. Noemi Maria Tali / Noah Lafornara — 62.79\n\nНачало: 00:20 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Marie-Jade Lauriault / Romain le Gac — 72.10\n2. Katarina Wolfkostin / Dimitry Tsarevski — 71.40\n3. Iryna Pidgaina / Artem Koval — 64.89\n\nНачало: 00:20 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Alyssa Robinson / Jacob Portz",
@@ -41598,7 +41598,7 @@
      "time": "00:26",
      "no": 1,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Layla Veillon / Alexander Brandys",
@@ -41606,7 +41606,7 @@
      "time": "00:33",
      "no": 2,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Noemi Maria Tali / Noah Lafornara",
@@ -41614,7 +41614,7 @@
      "time": "00:39",
      "no": 3,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Katarina Wolfkostin / Dimitry Tsarevski",
@@ -41622,7 +41622,7 @@
      "time": "00:46",
      "no": 4,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Iryna Pidgaina / Artem Koval",
@@ -41630,14 +41630,15 @@
      "time": "00:52",
      "no": 5,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Marie-Jade Lauriault / Romain le Gac",
      "nation": "CAN",
      "time": "01:06",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Oona Brown / Gage Brown",
@@ -41691,21 +41692,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Marie-Jade Lauriault / Romain le Gac",
+     "nation": "CAN",
+     "points": "72.10"
+    },
+    {
+     "place": 2,
      "name": "Katarina Wolfkostin / Dimitry Tsarevski",
      "nation": "USA",
      "points": "71.40"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Iryna Pidgaina / Artem Koval",
      "nation": "UKR",
      "points": "64.89"
-    },
-    {
-     "place": 3,
-     "name": "Noemi Maria Tali / Noah Lafornara",
-     "nation": "ITA",
-     "points": "62.79"
     }
    ],
    "provisional": true
