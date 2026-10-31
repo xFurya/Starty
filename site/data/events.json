@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-31T11:49:20.584258+00:00",
+ "checked": "2026-10-31T12:17:20.764273+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41105,13 +41105,14 @@
     "Tamir Kuperman"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Начало: 15:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Filip Kaymakchiev — 83.72\n\nНачало: 15:00 МСК",
    "field": [
     {
      "name": "Filip Kaymakchiev",
      "nation": "BUL",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Tamir Kuperman",
@@ -41131,7 +41132,16 @@
     },
     "basis": null
    },
-   "proto": "gs_crystal-skate.json"
+   "proto": "gs_crystal-skate.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Filip Kaymakchiev",
+     "nation": "BUL",
+     "points": "83.72"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "gs:crystal-skate:women-senior-pp-women",
