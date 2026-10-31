@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-10-31T20:59:02.106478+00:00",
+ "checked": "2026-10-31T21:33:04.052738+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41590,14 +41590,15 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 00:20 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Alyssa Robinson / Jacob Portz — 60.22\n\nНачало: 00:20 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Alyssa Robinson / Jacob Portz",
      "nation": "CAN",
      "time": "00:26",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Layla Veillon / Alexander Brandys",
@@ -41682,7 +41683,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json"
+   "proto": "isu_isu-gp-skate-canada-international-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Alyssa Robinson / Jacob Portz",
+     "nation": "CAN",
+     "points": "60.22"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:men-senior-pp",
