@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-31T10:17:20.531686+00:00",
+ "checked": "2026-10-31T10:33:20.714760+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40810,14 +40810,15 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 12:20 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Любовь Рубцова — 64.03\n\nНачало: 12:20 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Любовь Рубцова",
      "nation": "МОБ",
      "time": "12:26",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Дарья Романенко",
@@ -40918,7 +40919,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Любовь Рубцова",
+     "nation": "МОБ",
+     "points": "64.03"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:dance-senior-rt",
