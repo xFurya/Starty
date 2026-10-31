@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-31T01:21:03.971475+00:00",
+ "checked": "2026-10-31T01:29:03.803114+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40060,7 +40060,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. David Bondar — 77.48\n2. Wesley Chiu — 73.87\n\nНачало: 04:00 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Hyungyeom Kim — 77.76\n2. David Bondar — 77.48\n3. Wesley Chiu — 73.87\n\nНачало: 04:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Wesley Chiu",
@@ -40068,7 +40068,7 @@
      "time": "04:07",
      "no": 1,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "David Bondar",
@@ -40076,14 +40076,15 @@
      "time": "04:13",
      "no": 2,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Hyungyeom Kim",
      "nation": "KOR",
      "time": "04:20",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Liam Kapeikis",
@@ -40174,12 +40175,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Hyungyeom Kim",
+     "nation": "KOR",
+     "points": "77.76"
+    },
+    {
+     "place": 2,
      "name": "David Bondar",
      "nation": "CAN",
      "points": "77.48"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Wesley Chiu",
      "nation": "CAN",
      "points": "73.87"
