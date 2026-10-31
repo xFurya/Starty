@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-31T02:05:03.475944+00:00",
+ "checked": "2026-10-31T02:13:03.591177+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40060,7 +40060,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Kyrylo Marsak — 83.67\n2. Hyungyeom Kim — 77.76\n3. David Bondar — 77.48\n\nНачало: 04:00 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Rio Nakata — 92.64\n2. Kyrylo Marsak — 83.67\n3. Hyungyeom Kim — 77.76\n\nНачало: 04:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Wesley Chiu",
@@ -40068,7 +40068,7 @@
      "time": "04:07",
      "no": 1,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "David Bondar",
@@ -40076,7 +40076,7 @@
      "time": "04:13",
      "no": 2,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Hyungyeom Kim",
@@ -40084,7 +40084,7 @@
      "time": "04:20",
      "no": 3,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Liam Kapeikis",
@@ -40092,7 +40092,7 @@
      "time": "04:26",
      "no": 4,
      "warmup": 1,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Georgii Reshtenko",
@@ -40100,7 +40100,7 @@
      "time": "04:32",
      "no": 5,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Kyrylo Marsak",
@@ -40108,7 +40108,7 @@
      "time": "04:38",
      "no": 6,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Stephen Gogolev",
@@ -40116,7 +40116,7 @@
      "time": "04:52",
      "no": 7,
      "warmup": 2,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Genrikh Gartung",
@@ -40124,14 +40124,15 @@
      "time": "04:58",
      "no": 8,
      "warmup": 2,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Rio Nakata",
      "nation": "JPN",
      "time": "05:04",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Mihhail Selevko",
@@ -40180,21 +40181,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Rio Nakata",
+     "nation": "JPN",
+     "points": "92.64"
+    },
+    {
+     "place": 2,
      "name": "Kyrylo Marsak",
      "nation": "UKR",
      "points": "83.67"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Hyungyeom Kim",
      "nation": "KOR",
      "points": "77.76"
-    },
-    {
-     "place": 3,
-     "name": "David Bondar",
-     "nation": "CAN",
-     "points": "77.48"
     }
    ],
    "provisional": true
