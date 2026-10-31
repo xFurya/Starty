@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T15:01:50+03:00",
- "checked": "2026-10-31T12:29:21.244978+00:00",
+ "checked": "2026-10-31T12:37:20.486825+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41011,7 +41011,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Анна Коломенская / Артем Фролов — 72.17\n2. Алиса Абдуллина / Егор Петров — 62.06\n\nНачало: 14:10 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Анна Коломенская / Артем Фролов — 72.17\n2. Таисия Линчевская / Дмитрий Щербаков — 62.27\n3. Алиса Абдуллина / Егор Петров — 62.06\n\nНачало: 14:10 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Анна Коломенская / Артем Фролов",
@@ -41026,7 +41026,8 @@
      "nation": "МОС",
      "time": "14:29",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Анна Щербакова / Егор Гончаров",
@@ -41048,7 +41049,7 @@
      "time": "14:49",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Александра Степанова / Иван Букин",
@@ -41115,6 +41116,12 @@
     },
     {
      "place": 2,
+     "name": "Таисия Линчевская / Дмитрий Щербаков",
+     "nation": "МОС",
+     "points": "62.27"
+    },
+    {
+     "place": 3,
      "name": "Алиса Абдуллина / Егор Петров",
      "nation": "СПБ",
      "points": "62.06"
@@ -41237,13 +41244,14 @@
     "Milana Mozeiko"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Начало: 15:27 МСК",
+   "desc": "Промежуточные итоги:\n1. Maria Smaranda — 52.68\n\nНачало: 15:27 МСК",
    "field": [
     {
      "name": "Maria Smaranda",
      "nation": "ROU",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Ana Stratulat",
@@ -41298,7 +41306,16 @@
     },
     "basis": null
    },
-   "proto": "gs_crystal-skate.json"
+   "proto": "gs_crystal-skate.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Maria Smaranda",
+     "nation": "ROU",
+     "points": "52.68"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:women-senior-kp",
