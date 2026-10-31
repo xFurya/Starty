@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-31T08:33:20.221892+00:00",
+ "checked": "2026-10-31T08:37:20.654061+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40383,7 +40383,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Даниил Самсонов — 84.31\n2. Илья Неретин — 69.58\n3. Константин Сафонов — 66.71\n\nНачало: 10:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Роман Савосин — 90.78\n2. Даниил Самсонов — 84.31\n3. Илья Неретин — 69.58\n\nНачало: 10:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Даниил Самсонов",
@@ -40391,7 +40391,7 @@
      "time": "10:07",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Константин Сафонов",
@@ -40399,7 +40399,7 @@
      "time": "10:20",
      "no": 3,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Илья Неретин",
@@ -40407,14 +40407,15 @@
      "time": "10:26",
      "no": 4,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Роман Савосин",
      "nation": "МОС",
      "time": "10:33",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Артём Ковалёв",
@@ -40429,7 +40430,7 @@
      "time": "10:46",
      "no": 2,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Алексей Тотмин",
@@ -40499,21 +40500,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Роман Савосин",
+     "nation": "МОС",
+     "points": "90.78"
+    },
+    {
+     "place": 2,
      "name": "Даниил Самсонов",
      "nation": "МОС",
      "points": "84.31"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Илья Неретин",
      "nation": "СПБ",
      "points": "69.58"
-    },
-    {
-     "place": 3,
-     "name": "Константин Сафонов",
-     "nation": "ТУЛ",
-     "points": "66.71"
     }
    ],
    "provisional": true
@@ -40550,34 +40551,35 @@
     "Sonia Milik"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Anhelina Kapuka — 50.66\n2. Iris Victoria Ciurezu — 44.87\n3. Sonia Milik — 42.48\n\nНачало: 11:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Guan Ying Wang — 75.34\n2. Anhelina Kapuka — 50.66\n3. Iris Victoria Ciurezu — 44.87\n\nНачало: 11:00 МСК",
    "field": [
     {
      "name": "Sonia Milik",
      "nation": "ROU",
      "no": 1,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Iris Victoria Ciurezu",
      "nation": "ROU",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Anhelina Kapuka",
      "nation": "UKR",
      "no": 3,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Guan Ying Wang",
      "nation": "TPE",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Rebecca Rusu",
@@ -40674,21 +40676,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Guan Ying Wang",
+     "nation": "TPE",
+     "points": "75.34"
+    },
+    {
+     "place": 2,
      "name": "Anhelina Kapuka",
      "nation": "UKR",
      "points": "50.66"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Iris Victoria Ciurezu",
      "nation": "ROU",
      "points": "44.87"
-    },
-    {
-     "place": 3,
-     "name": "Sonia Milik",
-     "nation": "ROU",
-     "points": "42.48"
     }
    ],
    "provisional": true
