@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-10-31T22:41:04.706534+00:00",
+ "checked": "2026-10-31T23:57:02.562575+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41751,14 +41751,15 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 02:40 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Stephen Gogolev — 165.99\n\nНачало: 02:40 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Stephen Gogolev",
      "nation": "CAN",
      "time": "02:47",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Genrikh Gartung",
@@ -41859,7 +41860,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json"
+   "proto": "isu_isu-gp-skate-canada-international-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Stephen Gogolev",
+     "nation": "CAN",
+     "points": "165.99"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:pairs-senior-pp",
