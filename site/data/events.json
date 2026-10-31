@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-31T03:44:04.154580+00:00",
+ "checked": "2026-10-31T03:48:04.250868+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40235,7 +40235,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sofiia Holichenko / Artem Darenskyi — 58.34\n2. Irma Caldara / Riccardo Maglio — 58.10\n3. Miyu Yunoki / Tristan Taylor — 55.78\n\nНачало: 06:15 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Anna Valesi / Martin Bidar — 60.44\n2. Sofiia Holichenko / Artem Darenskyi — 58.34\n3. Irma Caldara / Riccardo Maglio — 58.10\n\nНачало: 06:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Miyu Yunoki / Tristan Taylor",
@@ -40243,7 +40243,7 @@
      "time": "06:22",
      "no": 1,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Sofiia Holichenko / Artem Darenskyi",
@@ -40251,7 +40251,7 @@
      "time": "06:28",
      "no": 2,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Irma Caldara / Riccardo Maglio",
@@ -40259,14 +40259,15 @@
      "time": "06:35",
      "no": 3,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Anna Valesi / Martin Bidar",
      "nation": "CZE",
      "time": "06:41",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Oxana Vouillamoz / Tom Bouvart",
@@ -40318,21 +40319,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Anna Valesi / Martin Bidar",
+     "nation": "CZE",
+     "points": "60.44"
+    },
+    {
+     "place": 2,
      "name": "Sofiia Holichenko / Artem Darenskyi",
      "nation": "UKR",
      "points": "58.34"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Irma Caldara / Riccardo Maglio",
      "nation": "ITA",
      "points": "58.10"
-    },
-    {
-     "place": 3,
-     "name": "Miyu Yunoki / Tristan Taylor",
-     "nation": "CAN",
-     "points": "55.78"
     }
    ],
    "provisional": true
