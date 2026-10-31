@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-31T12:17:20.764273+00:00",
+ "generated": "2026-10-31T15:01:50+03:00",
+ "checked": "2026-10-31T15:01:50+03:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40060,127 +40060,6 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Итог:\n1. Rio Nakata — 92.64\n2. Kevin Aymoz — 90.26\n3. Kazuki Tomono — 85.31\n\nНачало: 04:00 МСК\nТрансляция: Okko",
-   "field": [
-    {
-     "name": "Wesley Chiu",
-     "nation": "CAN",
-     "time": "04:07",
-     "no": 1,
-     "warmup": 1,
-     "place": 9
-    },
-    {
-     "name": "David Bondar",
-     "nation": "CAN",
-     "time": "04:13",
-     "no": 2,
-     "warmup": 1,
-     "place": 7
-    },
-    {
-     "name": "Hyungyeom Kim",
-     "nation": "KOR",
-     "time": "04:20",
-     "no": 3,
-     "warmup": 1,
-     "place": 6
-    },
-    {
-     "name": "Liam Kapeikis",
-     "nation": "USA",
-     "time": "04:26",
-     "no": 4,
-     "warmup": 1,
-     "place": 10
-    },
-    {
-     "name": "Georgii Reshtenko",
-     "nation": "CZE",
-     "time": "04:32",
-     "no": 5,
-     "warmup": 1,
-     "place": 8
-    },
-    {
-     "name": "Kyrylo Marsak",
-     "nation": "UKR",
-     "time": "04:38",
-     "no": 6,
-     "warmup": 1,
-     "place": 4
-    },
-    {
-     "name": "Stephen Gogolev",
-     "nation": "CAN",
-     "time": "04:52",
-     "no": 7,
-     "warmup": 2,
-     "place": 12
-    },
-    {
-     "name": "Genrikh Gartung",
-     "nation": "GER",
-     "time": "04:58",
-     "no": 8,
-     "warmup": 2,
-     "place": 11
-    },
-    {
-     "name": "Rio Nakata",
-     "nation": "JPN",
-     "time": "05:04",
-     "no": 9,
-     "warmup": 2,
-     "place": 1
-    },
-    {
-     "name": "Mihhail Selevko",
-     "nation": "EST",
-     "time": "05:11",
-     "no": 10,
-     "warmup": 2,
-     "place": 5
-    },
-    {
-     "name": "Kazuki Tomono",
-     "nation": "JPN",
-     "time": "05:17",
-     "no": 11,
-     "warmup": 2,
-     "place": 3
-    },
-    {
-     "name": "Kevin Aymoz",
-     "nation": "FRA",
-     "time": "05:23",
-     "no": 12,
-     "warmup": 2,
-     "place": 2
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG001.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Wesley CHIU": "Wesley Chiu",
-     "David BONDAR": "David Bondar",
-     "Hyungyeom KIM": "Hyungyeom Kim",
-     "Liam KAPEIKIS": "Liam Kapeikis",
-     "Georgii RESHTENKO": "Georgii Reshtenko",
-     "Kyrylo MARSAK": "Kyrylo Marsak",
-     "Stephen GOGOLEV": "Stephen Gogolev",
-     "Genrikh GARTUNG": "Genrikh Gartung",
-     "Rio NAKATA": "Rio Nakata",
-     "Mihhail SELEVKO": "Mihhail Selevko",
-     "Kazuki TOMONO": "Kazuki Tomono",
-     "Kevin AYMOZ": "Kevin Aymoz"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json",
    "podium": [
     {
      "place": 1,
@@ -40200,7 +40079,128 @@
      "nation": "JPN",
      "points": "85.31"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Rio Nakata — 92.64\n2. Kevin Aymoz — 90.26\n3. Kazuki Tomono — 85.31\n\nНачало: 04:00 МСК\nТрансляция: Okko",
+   "field": [
+    {
+     "name": "Wesley Chiu",
+     "nation": "CAN",
+     "no": 1,
+     "warmup": 1,
+     "place": 9,
+     "time": "04:07"
+    },
+    {
+     "name": "David Bondar",
+     "nation": "CAN",
+     "no": 2,
+     "warmup": 1,
+     "place": 7,
+     "time": "04:13"
+    },
+    {
+     "name": "Hyungyeom Kim",
+     "nation": "KOR",
+     "no": 3,
+     "warmup": 1,
+     "place": 6,
+     "time": "04:20"
+    },
+    {
+     "name": "Liam Kapeikis",
+     "nation": "USA",
+     "no": 4,
+     "warmup": 1,
+     "place": 10,
+     "time": "04:26"
+    },
+    {
+     "name": "Georgii Reshtenko",
+     "nation": "CZE",
+     "no": 5,
+     "warmup": 1,
+     "place": 8,
+     "time": "04:32"
+    },
+    {
+     "name": "Kyrylo Marsak",
+     "nation": "UKR",
+     "no": 6,
+     "warmup": 1,
+     "place": 4,
+     "time": "04:38"
+    },
+    {
+     "name": "Stephen Gogolev",
+     "nation": "CAN",
+     "no": 7,
+     "warmup": 2,
+     "place": 12,
+     "time": "04:52"
+    },
+    {
+     "name": "Genrikh Gartung",
+     "nation": "GER",
+     "no": 8,
+     "warmup": 2,
+     "place": 11,
+     "time": "04:58"
+    },
+    {
+     "name": "Rio Nakata",
+     "nation": "JPN",
+     "no": 9,
+     "warmup": 2,
+     "place": 1,
+     "time": "05:04"
+    },
+    {
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "no": 10,
+     "warmup": 2,
+     "place": 5,
+     "time": "05:11"
+    },
+    {
+     "name": "Kazuki Tomono",
+     "nation": "JPN",
+     "no": 11,
+     "warmup": 2,
+     "place": 3,
+     "time": "05:17"
+    },
+    {
+     "name": "Kevin Aymoz",
+     "nation": "FRA",
+     "no": 12,
+     "warmup": 2,
+     "place": 2,
+     "time": "05:23"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Rio NAKATA": "Rio Nakata",
+     "Kevin AYMOZ": "Kevin Aymoz",
+     "Kazuki TOMONO": "Kazuki Tomono",
+     "Kyrylo MARSAK": "Kyrylo Marsak",
+     "Mihhail SELEVKO": "Mihhail Selevko",
+     "Hyungyeom KIM": "Hyungyeom Kim",
+     "David BONDAR": "David Bondar",
+     "Georgii RESHTENKO": "Georgii Reshtenko",
+     "Wesley CHIU": "Wesley Chiu",
+     "Liam KAPEIKIS": "Liam Kapeikis",
+     "Genrikh GARTUNG": "Genrikh Gartung",
+     "Stephen GOGOLEV": "Stephen Gogolev"
+    },
+    "basis": "judges"
+   },
+   "proto": "isu_isu-gp-skate-canada-international-2026.json"
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:pairs-senior-kp",
@@ -40211,7 +40211,7 @@
    "seg": "КП",
    "title": "GP Skate Canada — пары КП",
    "start": "2026-10-31T06:15:00+03:00",
-   "end": "2026-10-31T07:22:00+03:00",
+   "end": "2026-10-31T07:25:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -40235,91 +40235,6 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Итог:\n1. Lia Pereira / Trennt Michaud — 77.06\n2. Alisa Efimova / Misha Mitrofanov — 70.32\n3. Ava Kemp / Yohnatan Elizarov — 64.94\n\nНачало: 06:15 МСК\nТрансляция: Okko",
-   "field": [
-    {
-     "name": "Miyu Yunoki / Tristan Taylor",
-     "nation": "CAN",
-     "time": "06:22",
-     "no": 1,
-     "warmup": 1,
-     "place": 8
-    },
-    {
-     "name": "Sofiia Holichenko / Artem Darenskyi",
-     "nation": "UKR",
-     "time": "06:28",
-     "no": 2,
-     "warmup": 1,
-     "place": 6
-    },
-    {
-     "name": "Irma Caldara / Riccardo Maglio",
-     "nation": "ITA",
-     "time": "06:35",
-     "no": 3,
-     "warmup": 1,
-     "place": 7
-    },
-    {
-     "name": "Anna Valesi / Martin Bidar",
-     "nation": "CZE",
-     "time": "06:41",
-     "no": 4,
-     "warmup": 1,
-     "place": 5
-    },
-    {
-     "name": "Oxana Vouillamoz / Tom Bouvart",
-     "nation": "SUI",
-     "time": "06:55",
-     "no": 5,
-     "warmup": 2,
-     "place": 4
-    },
-    {
-     "name": "Ava Kemp / Yohnatan Elizarov",
-     "nation": "CAN",
-     "time": "07:01",
-     "no": 6,
-     "warmup": 2,
-     "place": 3
-    },
-    {
-     "name": "Lia Pereira / Trennt Michaud",
-     "nation": "CAN",
-     "time": "07:08",
-     "no": 7,
-     "warmup": 2,
-     "place": 1
-    },
-    {
-     "name": "Alisa Efimova / Misha Mitrofanov",
-     "nation": "USA",
-     "time": "07:14",
-     "no": 8,
-     "warmup": 2,
-     "place": 2
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG005.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Miyu YUNOKI / Tristan TAYLOR": "Miyu Yunoki / Tristan Taylor",
-     "Sofiia HOLICHENKO / Artem DARENSKYI": "Sofiia Holichenko / Artem Darenskyi",
-     "Irma CALDARA / Riccardo MAGLIO": "Irma Caldara / Riccardo Maglio",
-     "Anna VALESI / Martin BIDAR": "Anna Valesi / Martin Bidar",
-     "Oxana VOUILLAMOZ / Tom BOUVART": "Oxana Vouillamoz / Tom Bouvart",
-     "Ava KEMP / Yohnatan ELIZAROV": "Ava Kemp / Yohnatan Elizarov",
-     "Lia PEREIRA / Trennt MICHAUD": "Lia Pereira / Trennt Michaud",
-     "Alisa EFIMOVA / Misha MITROFANOV": "Alisa Efimova / Misha Mitrofanov"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json",
    "podium": [
     {
      "place": 1,
@@ -40339,7 +40254,104 @@
      "nation": "CAN",
      "points": "64.94"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Lia Pereira / Trennt Michaud — 77.06\n2. Alisa Efimova / Misha Mitrofanov — 70.32\n3. Ava Kemp / Yohnatan Elizarov — 64.94\n\nПримечательное:\n• Lia Pereira / Trennt Michaud — Личный рекорд за КП: 77.06 (был 75.52)\n• Ava Kemp / Yohnatan Elizarov — Личный рекорд за КП: 64.94 (был 64.21)\n\nНачало: 06:15 МСК\nТрансляция: Okko",
+   "field": [
+    {
+     "name": "Miyu Yunoki / Tristan Taylor",
+     "nation": "CAN",
+     "no": 1,
+     "warmup": 1,
+     "place": 8,
+     "time": "06:22"
+    },
+    {
+     "name": "Sofiia Holichenko / Artem Darenskyi",
+     "nation": "UKR",
+     "no": 2,
+     "warmup": 1,
+     "place": 6,
+     "time": "06:28"
+    },
+    {
+     "name": "Irma Caldara / Riccardo Maglio",
+     "nation": "ITA",
+     "no": 3,
+     "warmup": 1,
+     "place": 7,
+     "time": "06:35"
+    },
+    {
+     "name": "Anna Valesi / Martin Bidar",
+     "nation": "CZE",
+     "no": 4,
+     "warmup": 1,
+     "place": 5,
+     "time": "06:41"
+    },
+    {
+     "name": "Oxana Vouillamoz / Tom Bouvart",
+     "nation": "SUI",
+     "no": 5,
+     "warmup": 2,
+     "place": 4,
+     "time": "06:55"
+    },
+    {
+     "name": "Ava Kemp / Yohnatan Elizarov",
+     "nation": "CAN",
+     "no": 6,
+     "warmup": 2,
+     "place": 3,
+     "time": "07:01"
+    },
+    {
+     "name": "Lia Pereira / Trennt Michaud",
+     "nation": "CAN",
+     "no": 7,
+     "warmup": 2,
+     "place": 1,
+     "time": "07:08"
+    },
+    {
+     "name": "Alisa Efimova / Misha Mitrofanov",
+     "nation": "USA",
+     "no": 8,
+     "warmup": 2,
+     "place": 2,
+     "time": "07:14"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG005.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Lia PEREIRA / Trennt MICHAUD": "Lia Pereira / Trennt Michaud",
+     "Alisa EFIMOVA / Misha MITROFANOV": "Alisa Efimova / Misha Mitrofanov",
+     "Ava KEMP / Yohnatan ELIZAROV": "Ava Kemp / Yohnatan Elizarov",
+     "Oxana VOUILLAMOZ / Tom BOUVART": "Oxana Vouillamoz / Tom Bouvart",
+     "Anna VALESI / Martin BIDAR": "Anna Valesi / Martin Bidar",
+     "Sofiia HOLICHENKO / Artem DARENSKYI": "Sofiia Holichenko / Artem Darenskyi",
+     "Irma CALDARA / Riccardo MAGLIO": "Irma Caldara / Riccardo Maglio",
+     "Miyu YUNOKI / Tristan TAYLOR": "Miyu Yunoki / Tristan Taylor"
+    },
+    "basis": "judges"
+   },
+   "facts": [
+    {
+     "who": "Lia Pereira / Trennt Michaud",
+     "text": "Личный рекорд за КП: 77.06 (был 75.52)",
+     "kind": "score"
+    },
+    {
+     "who": "Ava Kemp / Yohnatan Elizarov",
+     "text": "Личный рекорд за КП: 64.94 (был 64.21)",
+     "kind": "score"
+    }
+   ],
+   "proto": "isu_isu-gp-skate-canada-international-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:men-senior-kp",
@@ -40350,7 +40362,7 @@
    "seg": "КП",
    "title": "Гран-при России «Красноярье» — мужчины КП",
    "start": "2026-10-31T10:00:00+03:00",
-   "end": "2026-10-31T11:32:00+03:00",
+   "end": "2026-10-31T11:30:00+03:00",
    "venue": "Кристалл Арена, Красноярск",
    "intl": false,
    "broadcast": [
@@ -40383,127 +40395,6 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Итог:\n1. Пётр Гуменник — 104.16\n2. Николай Угожаев — 94.89\n3. Артём Ковалёв — 92.43\n\nНачало: 10:00 МСК\nТрансляция: Первый канал / YouTube",
-   "field": [
-    {
-     "name": "Даниил Самсонов",
-     "nation": "МОС",
-     "time": "10:07",
-     "no": 1,
-     "warmup": 1,
-     "place": 6
-    },
-    {
-     "name": "Константин Сафонов",
-     "nation": "ТУЛ",
-     "time": "10:20",
-     "no": 3,
-     "warmup": 1,
-     "place": 10
-    },
-    {
-     "name": "Илья Неретин",
-     "nation": "СПБ",
-     "time": "10:26",
-     "no": 4,
-     "warmup": 1,
-     "place": 9
-    },
-    {
-     "name": "Роман Савосин",
-     "nation": "МОС",
-     "time": "10:33",
-     "no": 5,
-     "warmup": 1,
-     "place": 4
-    },
-    {
-     "name": "Артём Ковалёв",
-     "nation": "МОБ",
-     "time": "10:39",
-     "no": 6,
-     "warmup": 1,
-     "place": 3
-    },
-    {
-     "name": "Даниил Постарнаков",
-     "nation": "СТА",
-     "time": "10:46",
-     "no": 2,
-     "warmup": 1,
-     "place": 11
-    },
-    {
-     "name": "Алексей Тотмин",
-     "nation": "КРК",
-     "time": "10:52",
-     "no": 7,
-     "warmup": 2,
-     "place": 12
-    },
-    {
-     "name": "Пётр Гуменник",
-     "nation": "СПБ",
-     "time": "10:59",
-     "no": 8,
-     "warmup": 2,
-     "place": 1
-    },
-    {
-     "name": "Григорий Фёдоров",
-     "nation": "МОС",
-     "time": "11:05",
-     "no": 9,
-     "warmup": 2,
-     "place": 8
-    },
-    {
-     "name": "Андрей Мозалёв",
-     "nation": "МОС",
-     "time": "11:12",
-     "no": 10,
-     "warmup": 2,
-     "place": 7
-    },
-    {
-     "name": "Матвей Ветлугин",
-     "nation": "СПБ",
-     "time": "11:18",
-     "no": 11,
-     "warmup": 2,
-     "place": 5
-    },
-    {
-     "name": "Николай Угожаев",
-     "nation": "СПБ",
-     "time": "11:25",
-     "no": 12,
-     "warmup": 2,
-     "place": 2
-    }
-   ],
-   "live": {
-    "idx": "https://fsrussia.ru/results/2627/3etap_sen/index.htm",
-    "seg": "https://fsrussia.ru/results/2627/3etap_sen/SEG001.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Даниил САМСОНОВ": "Даниил Самсонов",
-     "Даниил ПОСТАРНАКОВ": "Даниил Постарнаков",
-     "Константин САФОНОВ": "Константин Сафонов",
-     "Илья НЕРЕТИН": "Илья Неретин",
-     "Роман САВОСИН": "Роман Савосин",
-     "Артём КОВАЛЁВ": "Артём Ковалёв",
-     "Алексей ТОТМИН": "Алексей Тотмин",
-     "Пётр ГУМЕННИК": "Пётр Гуменник",
-     "Григорий ФЁДОРОВ": "Григорий Фёдоров",
-     "Андрей МОЗАЛЁВ": "Андрей Мозалёв",
-     "Матвей ВЕТЛУГИН": "Матвей Ветлугин",
-     "Николай УГОЖАЕВ": "Николай Угожаев"
-    },
-    "basis": "judges"
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json",
    "podium": [
     {
      "place": 1,
@@ -40523,7 +40414,128 @@
      "nation": "МОБ",
      "points": "92.43"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Пётр Гуменник — 104.16\n2. Николай Угожаев — 94.89\n3. Артём Ковалёв — 92.43\n\nНачало: 10:00 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Даниил Самсонов",
+     "nation": "МОС",
+     "no": 1,
+     "warmup": 1,
+     "place": 6,
+     "time": "10:07"
+    },
+    {
+     "name": "Даниил Постарнаков",
+     "nation": "СТА",
+     "no": 2,
+     "warmup": 1,
+     "place": 11,
+     "time": "10:46"
+    },
+    {
+     "name": "Константин Сафонов",
+     "nation": "ТУЛ",
+     "no": 3,
+     "warmup": 1,
+     "place": 10,
+     "time": "10:20"
+    },
+    {
+     "name": "Илья Неретин",
+     "nation": "СПБ",
+     "no": 4,
+     "warmup": 1,
+     "place": 9,
+     "time": "10:26"
+    },
+    {
+     "name": "Роман Савосин",
+     "nation": "МОС",
+     "no": 5,
+     "warmup": 1,
+     "place": 4,
+     "time": "10:33"
+    },
+    {
+     "name": "Артём Ковалёв",
+     "nation": "МОБ",
+     "no": 6,
+     "warmup": 1,
+     "place": 3,
+     "time": "10:39"
+    },
+    {
+     "name": "Алексей Тотмин",
+     "nation": "КРК",
+     "no": 7,
+     "warmup": 2,
+     "place": 12,
+     "time": "10:52"
+    },
+    {
+     "name": "Пётр Гуменник",
+     "nation": "СПБ",
+     "no": 8,
+     "warmup": 2,
+     "place": 1,
+     "time": "10:59"
+    },
+    {
+     "name": "Григорий Фёдоров",
+     "nation": "МОС",
+     "no": 9,
+     "warmup": 2,
+     "place": 8,
+     "time": "11:05"
+    },
+    {
+     "name": "Андрей Мозалёв",
+     "nation": "МОС",
+     "no": 10,
+     "warmup": 2,
+     "place": 7,
+     "time": "11:12"
+    },
+    {
+     "name": "Матвей Ветлугин",
+     "nation": "СПБ",
+     "no": 11,
+     "warmup": 2,
+     "place": 5,
+     "time": "11:18"
+    },
+    {
+     "name": "Николай Угожаев",
+     "nation": "СПБ",
+     "no": 12,
+     "warmup": 2,
+     "place": 2,
+     "time": "11:25"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/3etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/3etap_sen/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Пётр ГУМЕННИК": "Пётр Гуменник",
+     "Николай УГОЖАЕВ": "Николай Угожаев",
+     "Артём КОВАЛЁВ": "Артём Ковалёв",
+     "Роман САВОСИН": "Роман Савосин",
+     "Матвей ВЕТЛУГИН": "Матвей Ветлугин",
+     "Даниил САМСОНОВ": "Даниил Самсонов",
+     "Андрей МОЗАЛЁВ": "Андрей Мозалёв",
+     "Григорий ФЁДОРОВ": "Григорий Фёдоров",
+     "Илья НЕРЕТИН": "Илья Неретин",
+     "Константин САФОНОВ": "Константин Сафонов",
+     "Даниил ПОСТАРНАКОВ": "Даниил Постарнаков",
+     "Алексей ТОТМИН": "Алексей Тотмин"
+    },
+    "basis": "judges"
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json"
   },
   {
    "id": "gs:crystal-skate:women-junior-pp",
@@ -40557,6 +40569,46 @@
     "Sonia Milik"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Leyla Cetin",
+     "nation": "TUR",
+     "points": "113.70"
+    },
+    {
+     "place": 2,
+     "name": "Simona Tkachman",
+     "nation": "ISR",
+     "points": "90.17"
+    },
+    {
+     "place": 3,
+     "name": "Elena Martinenghi",
+     "nation": "SUI",
+     "points": "83.09"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Leyla Cetin",
+     "nation": "TUR",
+     "points": "173.42"
+    },
+    {
+     "place": 2,
+     "name": "Simona Tkachman",
+     "nation": "ISR",
+     "points": "144.61"
+    },
+    {
+     "place": 3,
+     "name": "Elena Martinenghi",
+     "nation": "SUI",
+     "points": "134.91"
+    }
+   ],
    "desc": "Итог:\n1. Leyla Cetin — 113.70\n2. Simona Tkachman — 90.17\n3. Elena Martinenghi — 83.09\n\nИтог турнира:\n1. Leyla Cetin — 173.42\n2. Simona Tkachman — 144.61\n3. Elena Martinenghi — 134.91\n\nПримечательное:\n• Leyla Cetin — Личный рекорд за ПП: 113.70 (был 103.44)\n• Elena Martinenghi — Тройной аксель\n• Leyla Cetin — Личный рекорд по сумме: 173.42 (был 153.36)\n• Leyla Cetin — Отрыв от второго места — 28.81 балла\n\nНачало: 11:00 МСК",
    "field": [
     {
@@ -40686,87 +40738,47 @@
     "cat": "https://www.frponline.ro/html2/cryro2026/CAT004RS.htm",
     "first": "https://www.frponline.ro/html2/cryro2026/SEG007.htm",
     "names": {
-     "Sonia MILIK": "Sonia Milik",
-     "Iris Victoria CIUREZU": "Iris Victoria Ciurezu",
-     "Anhelina KAPUKA": "Anhelina Kapuka",
-     "Guan Ying WANG": "Guan Ying Wang",
-     "Rebecca RUSU": "Rebecca Rusu",
-     "Adria LILIAC": "Adria Liliac",
-     "Nikol KUPERMAN": "Nikol Kuperman",
-     "Andreea Cristiana Maria LAZAR": "Andreea Cristiana Maria Lazar",
-     "Maria SYCOVA": "Maria Sycova",
-     "Natalia RUNCANU": "Natalia Runcanu",
+     "Leyla CETIN": "Leyla Cetin",
+     "Simona TKACHMAN": "Simona Tkachman",
+     "Elena MARTINENGHI": "Elena Martinenghi",
      "Lelle Agota MOLNAR": "Lelle Agota Molnar",
      "Maryia LUKSHA": "Maryia Luksha",
-     "Elena MARTINENGHI": "Elena Martinenghi",
-     "Simona TKACHMAN": "Simona Tkachman",
-     "Leyla CETIN": "Leyla Cetin"
+     "Guan Ying WANG": "Guan Ying Wang",
+     "Natalia RUNCANU": "Natalia Runcanu",
+     "Maria SYCOVA": "Maria Sycova",
+     "Adria LILIAC": "Adria Liliac",
+     "Nikol KUPERMAN": "Nikol Kuperman",
+     "Rebecca RUSU": "Rebecca Rusu",
+     "Andreea Cristiana Maria LAZAR": "Andreea Cristiana Maria Lazar",
+     "Anhelina KAPUKA": "Anhelina Kapuka",
+     "Iris Victoria CIUREZU": "Iris Victoria Ciurezu",
+     "Sonia MILIK": "Sonia Milik"
     },
     "basis": "judges"
    },
-   "proto": "gs_crystal-skate.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Leyla Cetin",
-     "nation": "TUR",
-     "points": "113.70"
-    },
-    {
-     "place": 2,
-     "name": "Simona Tkachman",
-     "nation": "ISR",
-     "points": "90.17"
-    },
-    {
-     "place": 3,
-     "name": "Elena Martinenghi",
-     "nation": "SUI",
-     "points": "83.09"
-    }
-   ],
    "facts": [
     {
-     "who": "Leyla Cetin",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 113.70 (был 103.44)",
-     "kind": "score"
+     "who": "Leyla Cetin"
     },
     {
-     "who": "Elena Martinenghi",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Elena Martinenghi"
     },
     {
-     "who": "Leyla Cetin",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 173.42 (был 153.36)",
-     "kind": "score"
+     "who": "Leyla Cetin"
     },
     {
-     "who": "Leyla Cetin",
+     "kind": "place",
      "text": "Отрыв от второго места — 28.81 балла",
-     "kind": "place"
+     "who": "Leyla Cetin"
     }
    ],
-   "total": [
-    {
-     "place": 1,
-     "name": "Leyla Cetin",
-     "nation": "TUR",
-     "points": "173.42"
-    },
-    {
-     "place": 2,
-     "name": "Simona Tkachman",
-     "nation": "ISR",
-     "points": "144.61"
-    },
-    {
-     "place": 3,
-     "name": "Elena Martinenghi",
-     "nation": "SUI",
-     "points": "134.91"
-    }
-   ]
+   "proto": "gs_crystal-skate.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:women-senior-kp",
@@ -40777,7 +40789,7 @@
    "seg": "КП",
    "title": "Гран-при России «Красноярье» — женщины КП",
    "start": "2026-10-31T12:20:00+03:00",
-   "end": "2026-10-31T13:51:00+03:00",
+   "end": "2026-10-31T13:50:00+03:00",
    "venue": "Кристалл Арена, Красноярск",
    "intl": false,
    "broadcast": [
@@ -40810,127 +40822,6 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Итог:\n1. Лидия Плескачева — 78.65\n2. Анна Фролова — 75.78\n3. Вероника Яметова — 72.13\n\nНачало: 12:20 МСК\nТрансляция: Первый канал / YouTube",
-   "field": [
-    {
-     "name": "Любовь Рубцова",
-     "nation": "МОБ",
-     "time": "12:26",
-     "no": 1,
-     "warmup": 1,
-     "place": 6
-    },
-    {
-     "name": "Дарья Романенко",
-     "nation": "ЯАО",
-     "time": "12:39",
-     "no": 3,
-     "warmup": 1,
-     "place": 9
-    },
-    {
-     "name": "Елизавета Куликова",
-     "nation": "МОС",
-     "time": "12:46",
-     "no": 4,
-     "warmup": 1,
-     "place": 5
-    },
-    {
-     "name": "Елизавета Вахитова",
-     "nation": "ЧЕЛ",
-     "time": "12:52",
-     "no": 5,
-     "warmup": 1,
-     "place": 12
-    },
-    {
-     "name": "Вероника Яметова",
-     "nation": "МОБ",
-     "time": "12:59",
-     "no": 6,
-     "warmup": 1,
-     "place": 3
-    },
-    {
-     "name": "София Буза",
-     "nation": "ОМС",
-     "time": "13:05",
-     "no": 2,
-     "warmup": 1,
-     "place": 10
-    },
-    {
-     "name": "Елизавета Лабутина",
-     "nation": "СВЕ",
-     "time": "13:12",
-     "no": 7,
-     "warmup": 2,
-     "place": 11
-    },
-    {
-     "name": "Лидия Плескачева",
-     "nation": "МОС",
-     "time": "13:18",
-     "no": 8,
-     "warmup": 2,
-     "place": 1
-    },
-    {
-     "name": "Анна Фролова",
-     "nation": "СПБ",
-     "time": "13:25",
-     "no": 9,
-     "warmup": 2,
-     "place": 2
-    },
-    {
-     "name": "София Дзепка",
-     "nation": "МОС",
-     "time": "13:31",
-     "no": 10,
-     "warmup": 2,
-     "place": 8
-    },
-    {
-     "name": "Алина Горбачёва",
-     "nation": "СПБ",
-     "time": "13:38",
-     "no": 11,
-     "warmup": 2,
-     "place": 7
-    },
-    {
-     "name": "Алиса Двоеглазова",
-     "nation": "МОС",
-     "time": "13:44",
-     "no": 12,
-     "warmup": 2,
-     "place": 4
-    }
-   ],
-   "live": {
-    "idx": "https://fsrussia.ru/results/2627/3etap_sen/index.htm",
-    "seg": "https://fsrussia.ru/results/2627/3etap_sen/SEG003.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Любовь РУБЦОВА": "Любовь Рубцова",
-     "София БУЗА": "София Буза",
-     "Дарья РОМАНЕНКО": "Дарья Романенко",
-     "Елизавета КУЛИКОВА": "Елизавета Куликова",
-     "Елизавета ВАХИТОВА": "Елизавета Вахитова",
-     "Вероника ЯМЕТОВА": "Вероника Яметова",
-     "Елизавета ЛАБУТИНА": "Елизавета Лабутина",
-     "Лидия ПЛЕСКАЧЕВА": "Лидия Плескачева",
-     "Анна ФРОЛОВА": "Анна Фролова",
-     "София ДЗЕПКА": "София Дзепка",
-     "Алина ГОРБАЧЁВА": "Алина Горбачёва",
-     "Алиса ДВОЕГЛАЗОВА": "Алиса Двоеглазова"
-    },
-    "basis": "judges"
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json",
    "podium": [
     {
      "place": 1,
@@ -40950,7 +40841,135 @@
      "nation": "МОБ",
      "points": "72.13"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Лидия Плескачева — 78.65\n2. Анна Фролова — 75.78\n3. Вероника Яметова — 72.13\n\nПримечательное:\n• Лидия Плескачева — Тройной аксель\n\nНачало: 12:20 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Любовь Рубцова",
+     "nation": "МОБ",
+     "no": 1,
+     "warmup": 1,
+     "place": 6,
+     "time": "12:26"
+    },
+    {
+     "name": "София Буза",
+     "nation": "ОМС",
+     "no": 2,
+     "warmup": 1,
+     "place": 10,
+     "time": "13:05"
+    },
+    {
+     "name": "Дарья Романенко",
+     "nation": "ЯАО",
+     "no": 3,
+     "warmup": 1,
+     "place": 9,
+     "time": "12:39"
+    },
+    {
+     "name": "Елизавета Куликова",
+     "nation": "МОС",
+     "no": 4,
+     "warmup": 1,
+     "place": 5,
+     "time": "12:46"
+    },
+    {
+     "name": "Елизавета Вахитова",
+     "nation": "ЧЕЛ",
+     "no": 5,
+     "warmup": 1,
+     "place": 12,
+     "time": "12:52"
+    },
+    {
+     "name": "Вероника Яметова",
+     "nation": "МОБ",
+     "no": 6,
+     "warmup": 1,
+     "place": 3,
+     "time": "12:59"
+    },
+    {
+     "name": "Елизавета Лабутина",
+     "nation": "СВЕ",
+     "no": 7,
+     "warmup": 2,
+     "place": 11,
+     "time": "13:12"
+    },
+    {
+     "name": "Лидия Плескачева",
+     "nation": "МОС",
+     "no": 8,
+     "warmup": 2,
+     "place": 1,
+     "time": "13:18"
+    },
+    {
+     "name": "Анна Фролова",
+     "nation": "СПБ",
+     "no": 9,
+     "warmup": 2,
+     "place": 2,
+     "time": "13:25"
+    },
+    {
+     "name": "София Дзепка",
+     "nation": "МОС",
+     "no": 10,
+     "warmup": 2,
+     "place": 8,
+     "time": "13:31"
+    },
+    {
+     "name": "Алина Горбачёва",
+     "nation": "СПБ",
+     "no": 11,
+     "warmup": 2,
+     "place": 7,
+     "time": "13:38"
+    },
+    {
+     "name": "Алиса Двоеглазова",
+     "nation": "МОС",
+     "no": 12,
+     "warmup": 2,
+     "place": 4,
+     "time": "13:44"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/3etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/3etap_sen/SEG003.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Лидия ПЛЕСКАЧЕВА": "Лидия Плескачева",
+     "Анна ФРОЛОВА": "Анна Фролова",
+     "Вероника ЯМЕТОВА": "Вероника Яметова",
+     "Алиса ДВОЕГЛАЗОВА": "Алиса Двоеглазова",
+     "Елизавета КУЛИКОВА": "Елизавета Куликова",
+     "Любовь РУБЦОВА": "Любовь Рубцова",
+     "Алина ГОРБАЧЁВА": "Алина Горбачёва",
+     "София ДЗЕПКА": "София Дзепка",
+     "Дарья РОМАНЕНКО": "Дарья Романенко",
+     "София БУЗА": "София Буза",
+     "Елизавета ЛАБУТИНА": "Елизавета Лабутина",
+     "Елизавета ВАХИТОВА": "Елизавета Вахитова"
+    },
+    "basis": "judges"
+   },
+   "facts": [
+    {
+     "who": "Лидия Плескачева",
+     "text": "Тройной аксель",
+     "kind": "element"
+    }
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:dance-senior-rt",
@@ -41523,7 +41542,7 @@
    "seg": "ПП",
    "title": "GP Skate Canada — мужчины ПП",
    "start": "2026-11-01T02:40:00+03:00",
-   "end": "2026-11-01T04:25:00+03:00",
+   "end": "2026-11-01T04:27:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -41554,52 +41573,88 @@
    "desc": "Начало: 02:40 МСК\nТрансляция: Okko",
    "field": [
     {
-     "name": "David Bondar",
-     "nation": "CAN"
+     "name": "Stephen Gogolev",
+     "nation": "CAN",
+     "time": "02:47",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Genrikh Gartung",
-     "nation": "GER"
-    },
-    {
-     "name": "Georgii Reshtenko",
-     "nation": "CZE"
-    },
-    {
-     "name": "Hyungyeom Kim",
-     "nation": "KOR"
-    },
-    {
-     "name": "Kazuki Tomono",
-     "nation": "JPN"
-    },
-    {
-     "name": "Kevin Aymoz",
-     "nation": "FRA"
-    },
-    {
-     "name": "Kyrylo Marsak",
-     "nation": "UKR"
+     "nation": "GER",
+     "time": "02:55",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Liam Kapeikis",
-     "nation": "USA"
-    },
-    {
-     "name": "Mihhail Selevko",
-     "nation": "EST"
-    },
-    {
-     "name": "Rio Nakata",
-     "nation": "JPN"
-    },
-    {
-     "name": "Stephen Gogolev",
-     "nation": "CAN"
+     "nation": "USA",
+     "time": "03:03",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Wesley Chiu",
-     "nation": "CAN"
+     "nation": "CAN",
+     "time": "03:10",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Georgii Reshtenko",
+     "nation": "CZE",
+     "time": "03:18",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "David Bondar",
+     "nation": "CAN",
+     "time": "03:26",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Hyungyeom Kim",
+     "nation": "KOR",
+     "time": "03:41",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "time": "03:49",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Kyrylo Marsak",
+     "nation": "UKR",
+     "time": "03:56",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Kazuki Tomono",
+     "nation": "JPN",
+     "time": "04:04",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Kevin Aymoz",
+     "nation": "FRA",
+     "time": "04:12",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Rio Nakata",
+     "nation": "JPN",
+     "time": "04:19",
+     "no": 12,
+     "warmup": 2
     }
    ],
    "live": {
@@ -41608,18 +41663,18 @@
     "cat": "https://results.isu.org/results/season2627/gpcan2026/CAT001RS.htm",
     "first": "https://results.isu.org/results/season2627/gpcan2026/SEG001.htm",
     "names": {
-     "David BONDAR": "David Bondar",
-     "Wesley CHIU": "Wesley Chiu",
      "Stephen GOGOLEV": "Stephen Gogolev",
-     "Georgii RESHTENKO": "Georgii Reshtenko",
-     "Mihhail SELEVKO": "Mihhail Selevko",
-     "Kevin AYMOZ": "Kevin Aymoz",
      "Genrikh GARTUNG": "Genrikh Gartung",
-     "Rio NAKATA": "Rio Nakata",
-     "Kazuki TOMONO": "Kazuki Tomono",
+     "Liam KAPEIKIS": "Liam Kapeikis",
+     "Wesley CHIU": "Wesley Chiu",
+     "Georgii RESHTENKO": "Georgii Reshtenko",
+     "David BONDAR": "David Bondar",
      "Hyungyeom KIM": "Hyungyeom Kim",
+     "Mihhail SELEVKO": "Mihhail Selevko",
      "Kyrylo MARSAK": "Kyrylo Marsak",
-     "Liam KAPEIKIS": "Liam Kapeikis"
+     "Kazuki TOMONO": "Kazuki Tomono",
+     "Kevin AYMOZ": "Kevin Aymoz",
+     "Rio NAKATA": "Rio Nakata"
     },
     "basis": null
    },
@@ -41634,7 +41689,7 @@
    "seg": "ПП",
    "title": "GP Skate Canada — пары ПП",
    "start": "2026-11-01T04:45:00+03:00",
-   "end": "2026-11-01T06:05:00+03:00",
+   "end": "2026-11-01T06:03:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -41661,36 +41716,60 @@
    "desc": "Начало: 04:45 МСК\nТрансляция: Okko",
    "field": [
     {
-     "name": "Alisa Efimova / Misha Mitrofanov",
-     "nation": "USA"
-    },
-    {
-     "name": "Anna Valesi / Martin Bidar",
-     "nation": "CZE"
-    },
-    {
-     "name": "Ava Kemp / Yohnatan Elizarov",
-     "nation": "CAN"
+     "name": "Miyu Yunoki / Tristan Taylor",
+     "nation": "CAN",
+     "time": "04:52",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Irma Caldara / Riccardo Maglio",
-     "nation": "ITA"
-    },
-    {
-     "name": "Lia Pereira / Trennt Michaud",
-     "nation": "CAN"
-    },
-    {
-     "name": "Miyu Yunoki / Tristan Taylor",
-     "nation": "CAN"
-    },
-    {
-     "name": "Oxana Vouillamoz / Tom Bouvart",
-     "nation": "SUI"
+     "nation": "ITA",
+     "time": "05:00",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Sofiia Holichenko / Artem Darenskyi",
-     "nation": "UKR"
+     "nation": "UKR",
+     "time": "05:08",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Anna Valesi / Martin Bidar",
+     "nation": "CZE",
+     "time": "05:16",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Oxana Vouillamoz / Tom Bouvart",
+     "nation": "SUI",
+     "time": "05:31",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Ava Kemp / Yohnatan Elizarov",
+     "nation": "CAN",
+     "time": "05:39",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Alisa Efimova / Misha Mitrofanov",
+     "nation": "USA",
+     "time": "05:47",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Lia Pereira / Trennt Michaud",
+     "nation": "CAN",
+     "time": "05:54",
+     "no": 8,
+     "warmup": 2
     }
    ],
    "live": {
@@ -41699,14 +41778,14 @@
     "cat": "https://results.isu.org/results/season2627/gpcan2026/CAT003RS.htm",
     "first": "https://results.isu.org/results/season2627/gpcan2026/SEG005.htm",
     "names": {
-     "Ava KEMP / Yohnatan ELIZAROV": "Ava Kemp / Yohnatan Elizarov",
-     "Lia PEREIRA / Trennt MICHAUD": "Lia Pereira / Trennt Michaud",
      "Miyu YUNOKI / Tristan TAYLOR": "Miyu Yunoki / Tristan Taylor",
-     "Anna VALESI / Martin BIDAR": "Anna Valesi / Martin Bidar",
      "Irma CALDARA / Riccardo MAGLIO": "Irma Caldara / Riccardo Maglio",
-     "Oxana VOUILLAMOZ / Tom BOUVART": "Oxana Vouillamoz / Tom Bouvart",
      "Sofiia HOLICHENKO / Artem DARENSKYI": "Sofiia Holichenko / Artem Darenskyi",
-     "Alisa EFIMOVA / Misha MITROFANOV": "Alisa Efimova / Misha Mitrofanov"
+     "Anna VALESI / Martin BIDAR": "Anna Valesi / Martin Bidar",
+     "Oxana VOUILLAMOZ / Tom BOUVART": "Oxana Vouillamoz / Tom Bouvart",
+     "Ava KEMP / Yohnatan ELIZAROV": "Ava Kemp / Yohnatan Elizarov",
+     "Alisa EFIMOVA / Misha MITROFANOV": "Alisa Efimova / Misha Mitrofanov",
+     "Lia PEREIRA / Trennt MICHAUD": "Lia Pereira / Trennt Michaud"
     },
     "basis": null
    },
@@ -41721,7 +41800,7 @@
    "seg": "ПП",
    "title": "Гран-при России «Красноярье» — мужчины ПП",
    "start": "2026-11-01T09:00:00+03:00",
-   "end": "2026-11-01T10:45:00+03:00",
+   "end": "2026-11-01T10:47:00+03:00",
    "venue": "Кристалл Арена, Красноярск",
    "intl": false,
    "broadcast": [
@@ -41758,51 +41837,87 @@
    "field": [
     {
      "name": "Алексей Тотмин",
-     "nation": "КРК"
-    },
-    {
-     "name": "Андрей Мозалёв",
-     "nation": "МОС"
-    },
-    {
-     "name": "Артём Ковалёв",
-     "nation": "МОБ"
-    },
-    {
-     "name": "Григорий Фёдоров",
-     "nation": "МОС"
-    },
-    {
-     "name": "Даниил Постарнаков",
-     "nation": "СТА"
-    },
-    {
-     "name": "Даниил Самсонов",
-     "nation": "МОС"
-    },
-    {
-     "name": "Илья Неретин",
-     "nation": "СПБ"
+     "nation": "КРК",
+     "time": "09:06",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Константин Сафонов",
-     "nation": "ТУЛ"
+     "nation": "ТУЛ",
+     "time": "09:22",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Илья Неретин",
+     "nation": "СПБ",
+     "time": "09:30",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Григорий Фёдоров",
+     "nation": "МОС",
+     "time": "09:37",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Андрей Мозалёв",
+     "nation": "МОС",
+     "time": "09:45",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Даниил Постарнаков",
+     "nation": "СТА",
+     "time": "09:53",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Даниил Самсонов",
+     "nation": "МОС",
+     "time": "10:00",
+     "no": 7,
+     "warmup": 2
     },
     {
      "name": "Матвей Ветлугин",
-     "nation": "СПБ"
-    },
-    {
-     "name": "Николай Угожаев",
-     "nation": "СПБ"
-    },
-    {
-     "name": "Пётр Гуменник",
-     "nation": "СПБ"
+     "nation": "СПБ",
+     "time": "10:07",
+     "no": 8,
+     "warmup": 2
     },
     {
      "name": "Роман Савосин",
-     "nation": "МОС"
+     "nation": "МОС",
+     "time": "10:15",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Артём Ковалёв",
+     "nation": "МОБ",
+     "time": "10:23",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Николай Угожаев",
+     "nation": "СПБ",
+     "time": "10:31",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Пётр Гуменник",
+     "nation": "СПБ",
+     "time": "10:39",
+     "no": 12,
+     "warmup": 2
     }
    ],
    "live": {
@@ -41811,18 +41926,18 @@
     "cat": "https://fsrussia.ru/results/2627/3etap_sen/CAT001RS.htm",
     "first": "https://fsrussia.ru/results/2627/3etap_sen/SEG001.htm",
     "names": {
-     "Матвей ВЕТЛУГИН": "Матвей Ветлугин",
-     "Пётр ГУМЕННИК": "Пётр Гуменник",
-     "Артём КОВАЛЁВ": "Артём Ковалёв",
-     "Андрей МОЗАЛЁВ": "Андрей Мозалёв",
-     "Илья НЕРЕТИН": "Илья Неретин",
-     "Даниил ПОСТАРНАКОВ": "Даниил Постарнаков",
-     "Роман САВОСИН": "Роман Савосин",
-     "Даниил САМСОНОВ": "Даниил Самсонов",
-     "Константин САФОНОВ": "Константин Сафонов",
      "Алексей ТОТМИН": "Алексей Тотмин",
+     "Даниил ПОСТАРНАКОВ": "Даниил Постарнаков",
+     "Константин САФОНОВ": "Константин Сафонов",
+     "Илья НЕРЕТИН": "Илья Неретин",
+     "Григорий ФЁДОРОВ": "Григорий Фёдоров",
+     "Андрей МОЗАЛЁВ": "Андрей Мозалёв",
+     "Даниил САМСОНОВ": "Даниил Самсонов",
+     "Матвей ВЕТЛУГИН": "Матвей Ветлугин",
+     "Роман САВОСИН": "Роман Савосин",
+     "Артём КОВАЛЁВ": "Артём Ковалёв",
      "Николай УГОЖАЕВ": "Николай Угожаев",
-     "Григорий ФЁДОРОВ": "Григорий Фёдоров"
+     "Пётр ГУМЕННИК": "Пётр Гуменник"
     },
     "basis": null
    },
@@ -41837,7 +41952,7 @@
    "seg": "ПП",
    "title": "Гран-при России «Красноярье» — женщины ПП",
    "start": "2026-11-01T11:10:00+03:00",
-   "end": "2026-11-01T12:55:00+03:00",
+   "end": "2026-11-01T12:57:00+03:00",
    "venue": "Кристалл Арена, Красноярск",
    "intl": false,
    "broadcast": [
@@ -41873,52 +41988,88 @@
    "desc": "Начало: 11:10 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
-     "name": "Алина Горбачёва",
-     "nation": "СПБ"
-    },
-    {
-     "name": "Алиса Двоеглазова",
-     "nation": "МОС"
-    },
-    {
-     "name": "Анна Фролова",
-     "nation": "СПБ"
-    },
-    {
-     "name": "Вероника Яметова",
-     "nation": "МОБ"
-    },
-    {
-     "name": "Дарья Романенко",
-     "nation": "ЯАО"
-    },
-    {
      "name": "Елизавета Вахитова",
-     "nation": "ЧЕЛ"
-    },
-    {
-     "name": "Елизавета Куликова",
-     "nation": "МОС"
-    },
-    {
-     "name": "Елизавета Лабутина",
-     "nation": "СВЕ"
-    },
-    {
-     "name": "Лидия Плескачева",
-     "nation": "МОС"
-    },
-    {
-     "name": "Любовь Рубцова",
-     "nation": "МОБ"
+     "nation": "ЧЕЛ",
+     "time": "11:16",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "София Буза",
-     "nation": "ОМС"
+     "nation": "ОМС",
+     "time": "11:32",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Дарья Романенко",
+     "nation": "ЯАО",
+     "time": "11:40",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "София Дзепка",
-     "nation": "МОС"
+     "nation": "МОС",
+     "time": "11:47",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Алина Горбачёва",
+     "nation": "СПБ",
+     "time": "11:55",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Елизавета Лабутина",
+     "nation": "СВЕ",
+     "time": "12:03",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Любовь Рубцова",
+     "nation": "МОБ",
+     "time": "12:10",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Елизавета Куликова",
+     "nation": "МОС",
+     "time": "12:17",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Алиса Двоеглазова",
+     "nation": "МОС",
+     "time": "12:25",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Вероника Яметова",
+     "nation": "МОБ",
+     "time": "12:33",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Анна Фролова",
+     "nation": "СПБ",
+     "time": "12:41",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Лидия Плескачева",
+     "nation": "МОС",
+     "time": "12:49",
+     "no": 12,
+     "warmup": 2
     }
    ],
    "live": {
@@ -41927,18 +42078,18 @@
     "cat": "https://fsrussia.ru/results/2627/3etap_sen/CAT002RS.htm",
     "first": "https://fsrussia.ru/results/2627/3etap_sen/SEG003.htm",
     "names": {
-     "София БУЗА": "София Буза",
      "Елизавета ВАХИТОВА": "Елизавета Вахитова",
-     "Алина ГОРБАЧЁВА": "Алина Горбачёва",
-     "Алиса ДВОЕГЛАЗОВА": "Алиса Двоеглазова",
-     "София ДЗЕПКА": "София Дзепка",
-     "Елизавета КУЛИКОВА": "Елизавета Куликова",
      "Елизавета ЛАБУТИНА": "Елизавета Лабутина",
-     "Лидия ПЛЕСКАЧЕВА": "Лидия Плескачева",
+     "София БУЗА": "София Буза",
      "Дарья РОМАНЕНКО": "Дарья Романенко",
+     "София ДЗЕПКА": "София Дзепка",
+     "Алина ГОРБАЧЁВА": "Алина Горбачёва",
      "Любовь РУБЦОВА": "Любовь Рубцова",
+     "Елизавета КУЛИКОВА": "Елизавета Куликова",
+     "Алиса ДВОЕГЛАЗОВА": "Алиса Двоеглазова",
+     "Вероника ЯМЕТОВА": "Вероника Яметова",
      "Анна ФРОЛОВА": "Анна Фролова",
-     "Вероника ЯМЕТОВА": "Вероника Яметова"
+     "Лидия ПЛЕСКАЧЕВА": "Лидия Плескачева"
     },
     "basis": null
    },
