@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-10-31T19:59:01.988814+00:00",
+ "checked": "2026-10-31T20:03:02.222195+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41389,7 +41389,7 @@
      "time": "22:43",
      "no": 2,
      "warmup": 1,
-     "place": 3
+     "place": 4
     }
    ],
    "athletes": [
@@ -41413,7 +41413,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Saki Miyake — 71.95\n2. Fee Ann Landry — 57.27\n3. Виктория Сафонова — 56.89\n\nРоссияне:\n• Виктория Сафонова — 22:43\n\nНачало: 22:30 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Saki Miyake — 71.95\n2. Sara-Maude Dupuis — 64.58\n3. Fee Ann Landry — 57.27\n\nРоссияне:\n• Виктория Сафонова — 22:43\n\nНачало: 22:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Saki Miyake",
@@ -41429,7 +41429,7 @@
      "time": "22:43",
      "no": 2,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Fee Ann Landry",
@@ -41437,14 +41437,15 @@
      "time": "22:50",
      "no": 3,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Sara-Maude Dupuis",
      "nation": "CAN",
      "time": "22:56",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Yujae Kim",
@@ -41534,15 +41535,15 @@
     },
     {
      "place": 2,
-     "name": "Fee Ann Landry",
+     "name": "Sara-Maude Dupuis",
      "nation": "CAN",
-     "points": "57.27"
+     "points": "64.58"
     },
     {
      "place": 3,
-     "name": "Виктория Сафонова",
-     "nation": "BLR",
-     "points": "56.89"
+     "name": "Fee Ann Landry",
+     "nation": "CAN",
+     "points": "57.27"
     }
    ],
    "provisional": true
