@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T15:01:50+03:00",
- "checked": "2026-10-31T12:49:20.651244+00:00",
+ "checked": "2026-10-31T12:53:20.452873+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41246,14 +41246,14 @@
     "Milana Mozeiko"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Ana Stratulat — 79.97\n2. Maria Smaranda — 52.68\n\nНачало: 15:27 МСК",
+   "desc": "Промежуточные итоги:\n1. Ana Stratulat — 79.97\n2. Ana Sofia Beschea — 66.38\n3. Maria Smaranda — 52.68\n\nНачало: 15:27 МСК",
    "field": [
     {
      "name": "Maria Smaranda",
      "nation": "ROU",
      "no": 1,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Ana Stratulat",
@@ -41266,7 +41266,8 @@
      "name": "Ana Sofia Beschea",
      "nation": "ROU",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Milana Mozeiko",
@@ -41319,6 +41320,12 @@
     },
     {
      "place": 2,
+     "name": "Ana Sofia Beschea",
+     "nation": "ROU",
+     "points": "66.38"
+    },
+    {
+     "place": 3,
      "name": "Maria Smaranda",
      "nation": "ROU",
      "points": "52.68"
