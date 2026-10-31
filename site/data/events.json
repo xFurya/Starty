@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-30T20:50:49+03:00",
- "checked": "2026-10-31T08:45:21.002072+00:00",
+ "checked": "2026-10-31T08:57:20.421198+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -40438,7 +40438,8 @@
      "nation": "КРК",
      "time": "10:52",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     },
     {
      "name": "Пётр Гуменник",
@@ -40552,28 +40553,28 @@
     "Sonia Milik"
    ],
    "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Guan Ying Wang — 75.34\n2. Rebecca Rusu — 65.68\n3. Anhelina Kapuka — 50.66\n\nНачало: 11:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Guan Ying Wang — 75.34\n2. Adria Liliac — 66.63\n3. Rebecca Rusu — 65.68\n\nНачало: 11:00 МСК",
    "field": [
     {
      "name": "Sonia Milik",
      "nation": "ROU",
      "no": 1,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Iris Victoria Ciurezu",
      "nation": "ROU",
      "no": 2,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Anhelina Kapuka",
      "nation": "UKR",
      "no": 3,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Guan Ying Wang",
@@ -40587,13 +40588,14 @@
      "nation": "GER",
      "no": 5,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Adria Liliac",
      "nation": "ROU",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2
     },
     {
      "name": "Nikol Kuperman",
@@ -40684,15 +40686,15 @@
     },
     {
      "place": 2,
-     "name": "Rebecca Rusu",
-     "nation": "GER",
-     "points": "65.68"
+     "name": "Adria Liliac",
+     "nation": "ROU",
+     "points": "66.63"
     },
     {
      "place": 3,
-     "name": "Anhelina Kapuka",
-     "nation": "UKR",
-     "points": "50.66"
+     "name": "Rebecca Rusu",
+     "nation": "GER",
+     "points": "65.68"
     }
    ],
    "provisional": true
