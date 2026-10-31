@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-10-31T19:47:02.175809+00:00",
+ "checked": "2026-10-31T19:51:02.902799+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41388,7 +41388,8 @@
      "nation": "BLR",
      "time": "22:43",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     }
    ],
    "athletes": [
@@ -41412,7 +41413,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Saki Miyake — 71.95\n\nРоссияне:\n• Виктория Сафонова — 22:43\n\nНачало: 22:30 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Saki Miyake — 71.95\n2. Виктория Сафонова — 56.89\n\nРоссияне:\n• Виктория Сафонова — 22:43\n\nНачало: 22:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Saki Miyake",
@@ -41427,7 +41428,8 @@
      "nation": "BLR",
      "time": "22:43",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Fee Ann Landry",
@@ -41528,6 +41530,12 @@
      "name": "Saki Miyake",
      "nation": "JPN",
      "points": "71.95"
+    },
+    {
+     "place": 2,
+     "name": "Виктория Сафонова",
+     "nation": "BLR",
+     "points": "56.89"
     }
    ],
    "provisional": true
