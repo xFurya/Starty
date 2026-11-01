@@ -1,33 +1,11 @@
 {
- "version": "1.0.54",
- "code": 55,
- "notes": "Протоколы теперь обновляются на устройстве.",
- "at": "2026-11-01T13:24:09Z",
+ "version": "1.0.56",
+ "code": 57,
+ "notes": "Режим «Стандартный», убрана лишняя подпись.",
+ "at": "2026-11-01T13:44:04Z",
  "android": {
-  "file": "starty-1.0.54.apk",
-  "size": 23385847,
-  "sha256": "eb6939fd15d8187da5f24d2e7ee9dde452b5a21b8f3d1b23137203a2456c6879"
- },
- "windows": {
-  "code": 55,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.54/Starty-windows.zip",
-  "size": 14597709,
-  "sha256": "05c556cf3fe735f42d6f846947e4b9626d0c84df1a90834593cb356c4c306ec3",
-  "setup": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.54/starty-setup-1.0.54.exe",
-   "size": 12729977,
-   "sha256": "a51f5d25ee7112aa33a840dece4aaee2e735fc45fc029a744d0a67b8c91eb4c6"
-  }
- },
- "macos": {
-  "code": 55,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.54/Starty-macos.zip",
-  "size": 22138351,
-  "sha256": "1d39306e98d6ca6f49d3213fa409886a0ccf0492fe854cca77468f00e804abdf",
-  "dmg": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.54/Starty-macos.dmg",
-   "size": 25265025,
-   "sha256": "2aae5e8dcdfcb2950755e8fd1399c2b50ac8c9c8951f34f604e12e4f005da0d2"
-  }
+  "file": "starty-1.0.56.apk",
+  "size": 23451551,
+  "sha256": "be531b7885f2d91a7f104e4bba236ab22508e67f437e13046996f54a58ff4bb8"
  }
 }
