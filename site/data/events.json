@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-10-31T23:57:02.562575+00:00",
+ "checked": "2026-11-01T00:05:02.920352+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41751,7 +41751,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Stephen Gogolev — 165.99\n\nНачало: 02:40 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Stephen Gogolev — 165.99\n2. Genrikh Gartung — 149.03\n\nНачало: 02:40 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Stephen Gogolev",
@@ -41766,7 +41766,8 @@
      "nation": "GER",
      "time": "02:55",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Liam Kapeikis",
@@ -41867,6 +41868,12 @@
      "name": "Stephen Gogolev",
      "nation": "CAN",
      "points": "165.99"
+    },
+    {
+     "place": 2,
+     "name": "Genrikh Gartung",
+     "nation": "GER",
+     "points": "149.03"
     }
    ],
    "provisional": true
