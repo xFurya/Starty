@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-02T00:35:01+03:00",
- "checked": "2026-11-01T23:32:03.347550+00:00",
+ "checked": "2026-11-01T23:40:03.629165+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -43044,7 +43044,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Caroline Green / Michael Parsons — 111.78\n2. Oona Brown / Gage Brown — 111.03\n3. Marie-Jade Lauriault / Romain le Gac — 107.70\n\nНачало: 01:15 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Evgeniia Lopareva / Geoffrey Brissaud — 115.05\n2. Caroline Green / Michael Parsons — 111.78\n3. Oona Brown / Gage Brown — 111.03\n\nНачало: 01:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Layla Veillon / Alexander Brandys",
@@ -43052,7 +43052,7 @@
      "time": "01:21",
      "no": 1,
      "warmup": 1,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Alyssa Robinson / Jacob Portz",
@@ -43060,7 +43060,7 @@
      "time": "01:29",
      "no": 2,
      "warmup": 1,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Noemi Maria Tali / Noah Lafornara",
@@ -43068,7 +43068,7 @@
      "time": "01:37",
      "no": 3,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Iryna Pidgaina / Artem Koval",
@@ -43076,7 +43076,7 @@
      "time": "01:45",
      "no": 4,
      "warmup": 1,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Katarina Wolfkostin / Dimitry Tsarevski",
@@ -43084,7 +43084,7 @@
      "time": "01:53",
      "no": 5,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Marie-Jade Lauriault / Romain le Gac",
@@ -43092,7 +43092,7 @@
      "time": "02:07",
      "no": 6,
      "warmup": 2,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Oona Brown / Gage Brown",
@@ -43100,7 +43100,7 @@
      "time": "02:15",
      "no": 7,
      "warmup": 2,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Caroline Green / Michael Parsons",
@@ -43108,14 +43108,15 @@
      "time": "02:23",
      "no": 8,
      "warmup": 2,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Evgeniia Lopareva / Geoffrey Brissaud",
      "nation": "FRA",
      "time": "02:31",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Lilah Fear / Lewis Gibson",
@@ -43148,21 +43149,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Evgeniia Lopareva / Geoffrey Brissaud",
+     "nation": "FRA",
+     "points": "115.05"
+    },
+    {
+     "place": 2,
      "name": "Caroline Green / Michael Parsons",
      "nation": "USA",
      "points": "111.78"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Oona Brown / Gage Brown",
      "nation": "USA",
      "points": "111.03"
-    },
-    {
-     "place": 3,
-     "name": "Marie-Jade Lauriault / Romain le Gac",
-     "nation": "CAN",
-     "points": "107.70"
     }
    ],
    "provisional": true
