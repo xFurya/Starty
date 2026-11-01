@@ -199,6 +199,17 @@ class SettingsView extends StatelessWidget {
                   showValue: true,
                   onChanged: state.setLiveMode,
                 ),
+                const Hairline(),
+                _Row(
+                  icon: CupertinoIcons.arrow_2_circlepath,
+                  title: 'Частота обновления',
+                  subtitle: 'Для режима «Моментально», пока идёт турнир',
+                  trailing: _Value(liveEveryLabel(state.liveEvery)),
+                  onTap: () async {
+                    final v = await showLiveEverySheet(context, current: state.liveEvery);
+                    if (v != null && v != liveEveryAsSettings) state.setLiveEvery(v);
+                  },
+                ),
               ],
             ),
           ),

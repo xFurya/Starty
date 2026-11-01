@@ -120,6 +120,8 @@ class AppState extends ChangeNotifier {
       regional: regional,
       liveMode: liveMode,
       liveOverrides: liveOverrides,
+      liveEvery: liveEvery,
+      liveEveryOver: liveEveryOver,
     );
   }
 
@@ -155,6 +157,8 @@ class AppState extends ChangeNotifier {
       if (has('regional')) Prefs.setRegional(d.regional),
       if (has('liveMode')) Prefs.setLiveMode(d.liveMode),
       if (has('liveOverrides')) Prefs.setLiveOverrides(d.liveOverrides),
+      if (has('liveEvery')) Prefs.setLiveEvery(d.liveEvery),
+      if (has('liveEveryOver')) Prefs.setLiveEveryOver(d.liveEveryOver),
       if (has('theme')) Prefs.setTheme(d.theme),
     ];
     await Future.wait(writes);
@@ -202,6 +206,8 @@ class AppState extends ChangeNotifier {
     regional = Prefs.regional;
     liveMode = Prefs.liveMode;
     liveOverrides = Prefs.liveOverrides;
+    liveEvery = Prefs.liveEvery;
+    liveEveryOver = Prefs.liveEveryOver;
     theme = _mode(Prefs.theme);
     if (_raw != null) data = _apply(_raw!);
     if (liveChanged) _resetLiveSource();
@@ -463,6 +469,11 @@ class AppState extends ChangeNotifier {
   String liveMode = Prefs.liveMode;
   Map<String, String> liveOverrides = Prefs.liveOverrides;
 
+  /// Частота опроса табло, секунды: общая и по id старта (не меньше [liveEveryMin]).
+  int liveEvery = Prefs.liveEvery;
+  Map<String, int> liveEveryOver = Prefs.liveEveryOver;
+  int liveEveryOf(Start s) => effectiveLiveEvery(liveEvery, liveEveryOver, s.id);
+
   /// Действующий режим старта: своё переопределение или общий.
   String liveModeOf(Start s) => effectiveLiveMode(liveMode, liveOverrides, s.id);
 
@@ -610,6 +621,30 @@ class AppState extends ChangeNotifier {
     touchSync();
   }
 
+  Future<void> setLiveEvery(int sec) async {
+    liveEvery = validLiveEvery(sec) ?? liveEveryDefault;
+    await Prefs.setLiveEvery(liveEvery);
+    notifyListeners();
+    touchSync();
+    unawaited(pollLive(force: true));
+  }
+
+  /// Частота одного старта: null — как в настройках.
+  Future<void> setLiveEveryOver(String startId, int? sec) async {
+    final next = {...liveEveryOver};
+    final v = validLiveEvery(sec);
+    if (v == null) {
+      next.remove(startId);
+    } else {
+      next[startId] = v;
+    }
+    liveEveryOver = next;
+    await Prefs.setLiveEveryOver(next);
+    notifyListeners();
+    touchSync();
+    unawaited(pollLive(force: true));
+  }
+
   /// Итоги, прочитанные из другого источника, не должны остаться поверх нового режима.
   void _resetLiveSource() {
     // уже показанные итоги не стираем: новый источник заменит их, когда ответит, а до тех пор
@@ -662,6 +697,9 @@ class AppState extends ChangeNotifier {
 
   /// Когда в последний раз читали файл протокола для старта (режим «с опозданием» — не чаще раза в 5 минут).
   final Map<String, DateTime> _fileAt = {};
+
+  /// Когда в последний раз спрашивали табло по старту: срок следующего — по его частоте.
+  final Map<String, DateTime> _polledAt = {};
   static const _fileEvery = Duration(minutes: 5);
   Timer? _liveTimer;
   bool _polling = false;
@@ -688,8 +726,9 @@ class AppState extends ChangeNotifier {
   void startLive() {
     _liveTimer?.cancel();
     if (kIsWeb) return; // браузер не пустит на чужой сайт без разрешения сайта
-    _liveTimer = Timer.periodic(const Duration(minutes: 1), (_) => pollLive());
-    unawaited(pollLive());
+    // тик чаще самой короткой частоты; кому пора — решает pollLive по своим часам
+    _liveTimer = Timer.periodic(const Duration(seconds: 5), (_) => pollLive());
+    unawaited(pollLive(force: true));
   }
 
   void stopLive() {
@@ -713,19 +752,29 @@ class AppState extends ChangeNotifier {
     return items;
   }
 
-  Future<void> pollLive() async {
+  /// [force] — опросить сразу, не дожидаясь срока (старт приложения, смена настроек).
+  Future<void> pollLive({bool force = false}) async {
     if (_polling || data == null) return;
     final list = pollOrder(watching, now()).take(8).toList();
     if (list.isEmpty) return;
     _polling = true;
     try {
       // «моментально» — табло раз в минуту; «с опозданием» — табло не трогаем, файл протокола раз в 5 минут
-      final table = [for (final s in list) if (liveModeOf(s) == liveInstant) s];
       final now = DateTime.now();
+      final table = [
+        for (final s in list)
+          if (liveModeOf(s) == liveInstant &&
+              (force || now.difference(_polledAt[s.id] ?? _epoch) >= Duration(seconds: liveEveryOf(s) - 1)))
+            s,
+      ];
+      for (final s in table) {
+        _polledAt[s.id] = now;
+      }
       final file = [
         for (final s in list)
           if (liveModeOf(s) == liveDelayed && s.proto != null && now.difference(_fileAt[s.id] ?? _epoch) >= _fileEvery) s,
       ];
+      if (table.isEmpty && file.isEmpty) return;
       final gotTable = await Future.wait(table.map(Live.poll));
       final gotFile = await Future.wait(file.map(_fromFile));
       for (final s in file) {

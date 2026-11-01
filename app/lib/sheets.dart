@@ -4,6 +4,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/cupertino.dart' show CupertinoIcons;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show FilteringTextInputFormatter;
 
 import 'countries.dart';
 import 'data.dart';
@@ -1488,6 +1489,7 @@ class _LiveChip extends StatelessWidget {
   const _LiveChip({required this.state, required this.start});
 
   static const _asSettings = '';
+  static const _every = 'every';
 
   @override
   Widget build(BuildContext context) {
@@ -1504,8 +1506,25 @@ class _LiveChip extends StatelessWidget {
               chipContext,
               label: 'Живые места',
               selected: own ?? _asSettings,
-              items: const [(_asSettings, 'Как в настройках'), (liveInstant, 'Моментально'), (liveDelayed, 'С опозданием')],
+              items: [
+                (_asSettings, 'Как в настройках'),
+                (liveInstant, 'Моментально'),
+                (liveDelayed, 'С опозданием'),
+                // частота имеет смысл только для табло
+                if (mode == liveInstant) (_every, 'Частота: ${liveEveryLabel(state.liveEveryOf(start))}'),
+              ],
             );
+            if (v == _every) {
+              if (!chipContext.mounted) return;
+              final sec = await showLiveEverySheet(
+                chipContext,
+                current: state.liveEveryOf(start),
+                own: state.liveEveryOver.containsKey(start.id),
+                global: state.liveEvery,
+              );
+              if (sec != null) state.setLiveEveryOver(start.id, sec == liveEveryAsSettings ? null : sec);
+              return;
+            }
             if (v != null) state.setLiveOverride(start.id, v == _asSettings ? null : v);
           },
           // зона нажатия не меньше 44 pt, сам чип остаётся компактным
@@ -1990,4 +2009,137 @@ class AthleteCheckRow extends StatelessWidget {
     value: value,
     onTap: onTap,
   );
+}
+
+
+// ------------------------------------------------------------------ частота обновления
+
+/// Ответ листа частоты: «как в настройках» (только для старта).
+const liveEveryAsSettings = 0;
+
+/// Лист выбора частоты опроса табло: пресеты, своё значение и предупреждение о батарее.
+/// Возвращает секунды (не меньше [liveEveryMin]) или [liveEveryAsSettings]; закрыли — null.
+/// [global] не null — это лист старта: появляется пункт «Как в настройках».
+Future<int?> showLiveEverySheet(BuildContext context, {required int current, bool own = false, int? global}) {
+  return showModalBottomSheet<int>(
+    context: context,
+    isScrollControlled: true,
+    useSafeArea: true,
+    builder: (c) => Padding(
+      padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(c).bottom),
+      child: _LiveEverySheet(current: current, own: own, global: global),
+    ),
+  );
+}
+
+/// Предупреждение о батарее для частоты [sec]; null — предупреждать не о чем.
+String? liveEveryWarning(int sec) {
+  if (sec < 30) return 'Так часто телефон почти не спит: заряд батареи будет уходить заметно быстрее.';
+  if (sec < 120) return 'Частые обновления расходуют заряд батареи.';
+  return null;
+}
+
+class _LiveEverySheet extends StatefulWidget {
+  final int current;
+  final bool own;
+  final int? global;
+  const _LiveEverySheet({required this.current, required this.own, required this.global});
+  @override
+  State<_LiveEverySheet> createState() => _LiveEverySheetState();
+}
+
+class _LiveEverySheetState extends State<_LiveEverySheet> {
+  late final TextEditingController _c = TextEditingController(
+    text: liveEveryPresets.contains(widget.current) ? '' : '${widget.current}',
+  );
+
+  @override
+  void dispose() {
+    _c.dispose();
+    super.dispose();
+  }
+
+  /// Введённое: число секунд; пусто — null (не вводили); меньше минимума — отдельная ошибка.
+  int? get _typed => int.tryParse(_c.text.trim());
+  bool get _tooLow => _c.text.trim().isNotEmpty && (_typed == null || _typed! < liveEveryMin);
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final shown = _typed != null && !_tooLow ? _typed! : widget.current;
+    final warn = liveEveryWarning(shown);
+    Widget item(String text, int value, bool selected) => ListTile(
+      title: Text(text, style: TextStyle(fontSize: 16, color: p.ink)),
+      trailing: selected ? Icon(CupertinoIcons.checkmark, size: 18, color: p.ink) : null,
+      onTap: () => Navigator.of(context).pop(value),
+    );
+    return SafeArea(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(8, 18, 8, 16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 6),
+              child: Text(
+                'Как часто обновлять',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: p.ink),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+              child: Text(
+                'Пока идёт турнир, новые оценки и места появляются в приложении сами. Если нового нет, ничего не меняется.',
+                style: TextStyle(fontSize: 14, color: p.ink2, height: 1.3),
+              ),
+            ),
+            if (widget.global != null)
+              item('Как в настройках (${liveEveryLabel(widget.global!)})', liveEveryAsSettings, !widget.own),
+            for (final v in liveEveryPresets)
+              item(liveEveryLabel(v), v, (widget.global == null || widget.own) && widget.current == v),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 10, 16, 0),
+              child: TextField(
+                controller: _c,
+                keyboardType: TextInputType.number,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                onChanged: (_) => setState(() {}),
+                onSubmitted: (_) => _apply(),
+                style: TextStyle(fontSize: 15.5, color: p.ink),
+                decoration: InputDecoration(
+                  labelText: 'Своё значение, секунд',
+                  hintText: 'от $liveEveryMin',
+                  errorText: _tooLow ? 'Не чаще, чем раз в $liveEveryMin секунд' : null,
+                  suffixIcon: IconButton(
+                    tooltip: 'Применить',
+                    icon: const Icon(CupertinoIcons.checkmark_circle_fill),
+                    onPressed: _typed != null && !_tooLow ? _apply : null,
+                  ),
+                ),
+              ),
+            ),
+            if (warn != null)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(CupertinoIcons.battery_25, size: 18, color: p.ink2),
+                    const SizedBox(width: 8),
+                    Expanded(child: Text(warn, style: TextStyle(fontSize: 13.5, color: p.ink2, height: 1.3))),
+                  ],
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _apply() {
+    final v = _typed;
+    if (v == null || _tooLow) return;
+    Navigator.of(context).pop(v > liveEveryMax ? liveEveryMax : v);
+  }
 }

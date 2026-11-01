@@ -981,6 +981,32 @@ String? validLiveMode(Object? v) => v == liveInstant || v == liveDelayed ? v as 
 String effectiveLiveMode(String global, Map<String, String> overrides, String startId) =>
     overrides[startId] ?? global;
 
+/// Как часто телефон спрашивает табло, пока идёт турнир («моментально»): секунды.
+/// Меньше десяти не позволяем — запросы чаще только жгут батарею и не дают нового.
+const liveEveryMin = 10;
+const liveEveryDefault = 30;
+const liveEveryMax = 3600;
+
+/// Пресеты для выбора; остальное человек вводит сам.
+const liveEveryPresets = [30, 60, 120, 300, 600];
+
+/// Значение из хранилища или документа; не число или меньше минимума — null.
+int? validLiveEvery(Object? v) {
+  final n = v is num ? v.toInt() : (v is String ? int.tryParse(v.trim()) : null);
+  if (n == null || n < liveEveryMin) return null;
+  return n > liveEveryMax ? liveEveryMax : n;
+}
+
+/// Действующая частота старта: своя, если есть, иначе общая.
+int effectiveLiveEvery(int global, Map<String, int> overrides, String startId) => overrides[startId] ?? global;
+
+/// «30 сек», «1 мин», «2 мин 30 сек».
+String liveEveryLabel(int sec) {
+  if (sec < 60) return '$sec сек';
+  final m = sec ~/ 60, r = sec % 60;
+  return r == 0 ? '$m мин' : '$m мин $r сек';
+}
+
 /// Что отметил человек и какие фильтры выбрал — хранится на устройстве.
 class Prefs {
   static late SharedPreferences _p;
@@ -1053,6 +1079,33 @@ class Prefs {
     } catch (_) {
       return {};
     }
+  }
+
+  /// Частота опроса табло, секунды: общая и по id старта.
+  static int get liveEvery => validLiveEvery(_p.getInt('live.every')) ?? liveEveryDefault;
+  static Future<void> setLiveEvery(int v) => _p.setInt('live.every', validLiveEvery(v) ?? liveEveryDefault);
+
+  static Map<String, int> get liveEveryOver {
+    final s = _p.getString('live.everyover');
+    if (s == null) return {};
+    try {
+      final m = jsonDecode(s);
+      if (m is! Map) return {};
+      return {
+        for (final e in m.entries)
+          if (validLiveEvery(e.value) != null) '${e.key}': validLiveEvery(e.value)!,
+      };
+    } catch (_) {
+      return {};
+    }
+  }
+
+  static Future<void> setLiveEveryOver(Map<String, int> v) {
+    final clean = {
+      for (final e in v.entries)
+        if (validLiveEvery(e.value) != null) e.key: validLiveEvery(e.value)!,
+    };
+    return _p.setString('live.everyover', jsonEncode(clean));
   }
 
   static Future<void> setLiveOverrides(Map<String, String> v) {

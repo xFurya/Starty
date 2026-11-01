@@ -238,16 +238,21 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
   void initState() {
     super.initState();
     _reload();
-    // пока что-то в протоколе не окончательное — обновляем сами: «моментально» — раз в минуту
-    // прямо с табло, иначе — раз в пять минут из файла
-    _timer = Timer.periodic(const Duration(minutes: 1), (_) {
-      if (_busy || !mounted || _everyFinal) return;
-      _tick = (_tick + 1) % 5;
-      if (_instant || _tick == 0) _reload(auto: true);
-    });
+    _schedule();
   }
 
-  int _tick = 0;
+  /// Пока что-то в протоколе не окончательное — обновляем сами: «моментально» — с частотой старта
+  /// (настройки или старт) прямо с табло, иначе — раз в пять минут из файла. Срок читается каждый раз
+  /// заново: смена частоты действует сразу.
+  void _schedule() {
+    _timer?.cancel();
+    final every = _instant ? Duration(seconds: widget.state!.liveEveryOf(widget.start)) : const Duration(minutes: 5);
+    _timer = Timer(every, () async {
+      if (!mounted) return;
+      if (!_busy && !_everyFinal) await _reload(auto: true);
+      if (mounted) _schedule();
+    });
+  }
 
   @override
   void dispose() {

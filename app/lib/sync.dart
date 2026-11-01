@@ -10,6 +10,7 @@
 // одновременно — одна затирает другую; список отслеживаемых — тоже целиком.
 import 'dart:async';
 import 'dart:convert';
+import 'data.dart' show liveEveryDefault, validLiveEvery;
 import 'dart:math';
 
 import 'package:crypto/crypto.dart';
@@ -51,6 +52,10 @@ class SyncDoc {
   /// Переопределения режима по id старта; отсутствующий id — режим по умолчанию.
   final Map<String, String> liveOverrides;
 
+  /// Частота опроса табло, секунды: общая и по id старта.
+  final int liveEvery;
+  final Map<String, int> liveEveryOver;
+
   /// Поля, которых в документе нет или они испорчены (см. [fromJson]). Такие не применяются:
   /// на устройстве остаётся своя настройка, а не значение по умолчанию. Для документа, собранного
   /// здесь, пусто. Имена полей — как в JSON; у фильтров — «filters.kinds» и т. п.
@@ -71,6 +76,8 @@ class SyncDoc {
     this.regional = false,
     this.liveMode = 'instant',
     this.liveOverrides = const {},
+    this.liveEvery = liveEveryDefault,
+    this.liveEveryOver = const {},
     this.absent = const {},
   });
 
@@ -93,6 +100,8 @@ class SyncDoc {
     'regional': regional,
     'liveMode': liveMode,
     'liveOverrides': liveOverrides,
+    'liveEvery': liveEvery,
+    'liveEveryOver': liveEveryOver,
   };
 
   /// Разбор с защитой: битое поле — значение по умолчанию, а не падение.
@@ -122,6 +131,8 @@ class SyncDoc {
       if (j['regional'] is! bool) 'regional',
       if (!(j['liveMode'] is String && (j['liveMode'] == 'instant' || j['liveMode'] == 'delayed'))) 'liveMode',
       if (j['liveOverrides'] is! Map) 'liveOverrides',
+      if (validLiveEvery(j['liveEvery']) == null) 'liveEvery',
+      if (j['liveEveryOver'] is! Map) 'liveEveryOver',
     };
     return SyncDoc(
       updatedAt:
@@ -147,6 +158,12 @@ class SyncDoc {
         if (j['liveOverrides'] is Map)
           for (final e in (j['liveOverrides'] as Map).entries)
             if (e.value == 'instant' || e.value == 'delayed') '${e.key}': e.value as String,
+      },
+      liveEvery: validLiveEvery(j['liveEvery']) ?? liveEveryDefault,
+      liveEveryOver: {
+        if (j['liveEveryOver'] is Map)
+          for (final e in (j['liveEveryOver'] as Map).entries)
+            if (validLiveEvery(e.value) != null) '${e.key}': validLiveEvery(e.value)!,
       },
       absent: absent,
     );
@@ -187,6 +204,8 @@ class SyncDoc {
     regional: regional,
     liveMode: liveMode,
     liveOverrides: liveOverrides,
+    liveEvery: liveEvery,
+    liveEveryOver: liveEveryOver,
     absent: absent,
   );
 
