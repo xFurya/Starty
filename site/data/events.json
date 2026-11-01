@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-11-01T08:53:03.525224+00:00",
+ "checked": "2026-11-01T10:34:52.403804+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -42362,70 +42362,79 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 11:10 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Алиса Двоеглазова — 135.31\n2. Елизавета Куликова — 133.33\n3. Алина Горбачёва — 133.03\n\nНачало: 11:10 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Елизавета Вахитова",
      "nation": "ЧЕЛ",
      "time": "11:16",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 9
     },
     {
      "name": "София Буза",
      "nation": "ОМС",
      "time": "11:32",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 7
     },
     {
      "name": "Дарья Романенко",
      "nation": "ЯАО",
      "time": "11:40",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 8
     },
     {
      "name": "София Дзепка",
      "nation": "МОС",
      "time": "11:47",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5
     },
     {
      "name": "Алина Горбачёва",
      "nation": "СПБ",
      "time": "11:55",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Елизавета Лабутина",
      "nation": "СВЕ",
      "time": "12:03",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 6
     },
     {
      "name": "Любовь Рубцова",
      "nation": "МОБ",
      "time": "12:10",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4
     },
     {
      "name": "Елизавета Куликова",
      "nation": "МОС",
      "time": "12:17",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2
     },
     {
      "name": "Алиса Двоеглазова",
      "nation": "МОС",
      "time": "12:25",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Вероника Яметова",
@@ -42470,7 +42479,28 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Алиса Двоеглазова",
+     "nation": "МОС",
+     "points": "135.31"
+    },
+    {
+     "place": 2,
+     "name": "Елизавета Куликова",
+     "nation": "МОС",
+     "points": "133.33"
+    },
+    {
+     "place": 3,
+     "name": "Алина Горбачёва",
+     "nation": "СПБ",
+     "points": "133.03"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:dance-senior-pt",
