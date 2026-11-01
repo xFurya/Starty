@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-11-01T10:58:52.801778+00:00",
+ "checked": "2026-11-01T11:34:52.443172+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -42583,14 +42583,15 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 13:20 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Алиса Абдуллина / Егор Петров — 82.02\n\nНачало: 13:20 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Алиса Абдуллина / Егор Петров",
      "nation": "СПБ",
      "time": "13:25",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Варвара Жданова / Тимур Бабаев-Смирнов",
@@ -42675,7 +42676,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Алиса Абдуллина / Егор Петров",
+     "nation": "СПБ",
+     "points": "82.02"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:women-senior-pp",
