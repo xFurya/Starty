@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-11-01T00:13:02.603363+00:00",
+ "checked": "2026-11-01T00:21:03.289658+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41751,7 +41751,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Stephen Gogolev — 165.99\n2. Genrikh Gartung — 149.03\n3. Liam Kapeikis — 118.94\n\nНачало: 02:40 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Stephen Gogolev — 165.99\n2. Genrikh Gartung — 149.03\n3. Wesley Chiu — 127.07\n\nНачало: 02:40 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Stephen Gogolev",
@@ -41775,14 +41775,15 @@
      "time": "03:03",
      "no": 3,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Wesley Chiu",
      "nation": "CAN",
      "time": "03:10",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Georgii Reshtenko",
@@ -41878,9 +41879,9 @@
     },
     {
      "place": 3,
-     "name": "Liam Kapeikis",
-     "nation": "USA",
-     "points": "118.94"
+     "name": "Wesley Chiu",
+     "nation": "CAN",
+     "points": "127.07"
     }
    ],
    "provisional": true
