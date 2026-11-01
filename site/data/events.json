@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-01T20:45:44+03:00",
- "checked": "2026-11-01T20:25:02.872542+00:00",
+ "checked": "2026-11-01T20:33:01.932904+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -42793,7 +42793,7 @@
      "time": "23:15",
      "no": 2,
      "warmup": 1,
-     "place": 1
+     "place": 2
     }
    ],
    "athletes": [
@@ -42817,7 +42817,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Виктория Сафонова — 105.58\n2. Anna Pezzetta — 97.96\n\nРоссияне:\n• Виктория Сафонова — 23:15\n\nНачало: 23:00 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Fee Ann Landry — 113.91\n2. Виктория Сафонова — 105.58\n3. Anna Pezzetta — 97.96\n\nРоссияне:\n• Виктория Сафонова — 23:15\n\nНачало: 23:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Jia Shin",
@@ -42867,7 +42867,7 @@
      "time": "23:07",
      "no": 1,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Виктория Сафонова",
@@ -42875,14 +42875,15 @@
      "time": "23:15",
      "no": 2,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Fee Ann Landry",
      "nation": "CAN",
      "time": "23:23",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Madeline Schizas",
@@ -42931,12 +42932,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Fee Ann Landry",
+     "nation": "CAN",
+     "points": "113.91"
+    },
+    {
+     "place": 2,
      "name": "Виктория Сафонова",
      "nation": "BLR",
      "points": "105.58"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Anna Pezzetta",
      "nation": "ITA",
      "points": "97.96"
