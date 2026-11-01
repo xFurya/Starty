@@ -11,7 +11,7 @@ import 'package:starty/sheets.dart';
 import 'package:starty/state.dart';
 
 const _instantCaption = 'Моментально';
-const _delayedCaption = 'С опозданием';
+const _delayedCaption = 'Стандартный';
 
 Start _start() {
   final now = DateTime.now().toUtc();
@@ -69,8 +69,8 @@ void main() {
     // меню: два пункта, галочка у текущего
     expect(find.byIcon(CupertinoIcons.checkmark), findsOneWidget);
     expect(t.getSemantics(find.text('Моментально').last).getSemanticsData().flagsCollection.isSelected, Tristate.isTrue);
-    expect(t.getSemantics(find.text('С опозданием').last).getSemanticsData().flagsCollection.isSelected, Tristate.isFalse);
-    await t.tap(find.text('С опозданием'));
+    expect(t.getSemantics(find.text('Стандартный').last).getSemanticsData().flagsCollection.isSelected, Tristate.isFalse);
+    await t.tap(find.text('Стандартный'));
     await t.pumpAndSettle();
     expect(find.byIcon(CupertinoIcons.checkmark), findsNothing);
     expect(Prefs.liveMode, liveDelayed);
@@ -141,14 +141,14 @@ void main() {
     await t.tap(find.byTooltip('Живые места'));
     await t.pumpAndSettle();
     expect(find.byIcon(CupertinoIcons.checkmark), findsOneWidget); // «Как в настройках»
-    await t.tap(find.text('С опозданием').last);
+    await t.tap(find.text('Стандартный').last);
     await t.pumpAndSettle();
     expect(s.liveOverrides[st.id], liveDelayed);
     expect(Prefs.liveOverrides[st.id], liveDelayed);
 
     await t.tap(find.byTooltip('Живые места'));
     await t.pumpAndSettle();
-    expect(find.byIcon(CupertinoIcons.checkmark), findsOneWidget); // «С опозданием»
+    expect(find.byIcon(CupertinoIcons.checkmark), findsOneWidget); // «Стандартный»
     await t.tap(find.text('Как в настройках').last);
     await t.pumpAndSettle();
     expect(s.liveOverrides.containsKey(st.id), isFalse);

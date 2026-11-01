@@ -195,7 +195,7 @@ class SettingsView extends StatelessWidget {
                   icon: state.liveMode == liveDelayed ? CupertinoIcons.timer : CupertinoIcons.bolt,
                   title: 'Живые места',
                   value: state.liveMode,
-                  items: const [(liveInstant, 'Моментально'), (liveDelayed, 'С опозданием')],
+                  items: const [(liveInstant, 'Моментально'), (liveDelayed, 'Стандартный')],
                   showValue: true,
                   onChanged: state.setLiveMode,
                 ),

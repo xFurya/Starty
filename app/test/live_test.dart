@@ -216,7 +216,7 @@ void main() {
     });
   });
 
-  group('итоги из файла протокола (режим «с опозданием»)', () {
+  group('итоги из файла протокола (режим «стандартный»)', () {
     ProtocolDoc doc(String state, {String basis = 'judges', List<Map<String, Object?>>? rows}) => ProtocolDoc.fromJson({
       'v': 1,
       'tid': 'ffkm:2026-08-24_pm',

@@ -1478,9 +1478,9 @@ class SearchBox extends StatelessWidget {
 // ------------------------------------------------------------------ фильтр
 
 /// Подпись режима живых мест для строки и листа.
-String liveModeLabel(String mode) => mode == liveDelayed ? 'С опозданием' : 'Моментально';
+String liveModeLabel(String mode) => mode == liveDelayed ? 'Стандартный' : 'Моментально';
 
-/// Живые места в карточке старта: маленький чип рядом со временем. Молния — табло раз в минуту,
+/// Живые места в карточке старта: маленький чип рядом со временем. Молния — табло с заданной частотой,
 /// часы — файл протокола. По нажатию — меню из трёх пунктов.
 /// «Как в настройках» — переопределения для старта нет (Prefs.live.over без его id).
 class _LiveChip extends StatelessWidget {
@@ -1509,7 +1509,7 @@ class _LiveChip extends StatelessWidget {
               items: [
                 (_asSettings, 'Как в настройках'),
                 (liveInstant, 'Моментально'),
-                (liveDelayed, 'С опозданием'),
+                (liveDelayed, 'Стандартный'),
                 // частота имеет смысл только для табло
                 if (mode == liveInstant) (_every, 'Частота: ${liveEveryLabel(state.liveEveryOf(start))}'),
               ],

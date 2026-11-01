@@ -167,7 +167,7 @@ class _DetailsState extends State<Details> {
     if (r.components.isNotEmpty) {
       kids.add(_Head('Компоненты', null));
       kids.add(_Table(
-        header: const ['', 'Компонент', 'Коэф.', '', 'Оценка'],
+        header: const ['', '', 'Коэф.', '', 'Оценка'],
         rows: [
           for (var i = 0; i < r.components.length; i++)
             _TRow(

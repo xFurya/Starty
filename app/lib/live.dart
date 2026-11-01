@@ -278,7 +278,7 @@ String personKey(String name) => name
     })
     .join(' / ');
 
-/// Итоги старта из файла протокола (режим «с опозданием»): то же, что дал бы опрос табло.
+/// Итоги старта из файла протокола (режим «стандартный»): то же, что дал бы опрос табло.
 /// Имена берём как в расписании (events.json), если человек там есть; иначе — как в файле.
 LiveResult liveFromProtocol(Start s, ProtocolDoc doc) {
   final cat = doc.categoryFor(s.kind, s.level);

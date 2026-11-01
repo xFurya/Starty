@@ -46,7 +46,7 @@ class SyncDoc {
   final String icon; // classic, skate_teal, date_orange_… (см. app_icon.dart)
   final bool regional; // старты региональных федераций в ленте и уведомлениях
 
-  /// Режим живых мест по умолчанию: instant (табло раз в минуту) или delayed (файл протокола).
+  /// Режим живых мест по умолчанию: instant (табло с заданной частотой) или delayed (файл протокола).
   final String liveMode;
 
   /// Переопределения режима по id старта; отсутствующий id — режим по умолчанию.
