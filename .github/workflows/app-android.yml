@@ -126,7 +126,9 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A site/app tools/released.tsv
           git commit -q -m "Android: сборка $(grep '^version:' app/pubspec.yaml | sed 's/version: //')" || exit 0
-          for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 5; done
+          ok=0
+          for i in 1 2 3; do git pull -q --rebase && git push -q && { ok=1; break; }; git rebase --abort 2>/dev/null || true; sleep 5; done
+          [ "$ok" = 1 ] || { echo "коммит выпуска не отправлен (конфликт или сеть)" >&2; exit 1; }
           gh workflow run update.yml --ref main
           gh workflow run app-desktop.yml --ref main -f publish=true
 
