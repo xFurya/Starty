@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-02T00:35:01+03:00",
- "checked": "2026-11-01T21:53:02.098764+00:00",
+ "checked": "2026-11-01T22:32:02.895434+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -43044,14 +43044,15 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 01:15 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Layla Veillon / Alexander Brandys — 90.90\n\nНачало: 01:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Layla Veillon / Alexander Brandys",
      "nation": "CAN",
      "time": "01:21",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Alyssa Robinson / Jacob Portz",
@@ -43136,7 +43137,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json"
+   "proto": "isu_isu-gp-skate-canada-international-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Layla Veillon / Alexander Brandys",
+     "nation": "CAN",
+     "points": "90.90"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:dance-junior-rt",
