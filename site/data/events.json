@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-02T00:35:01+03:00",
- "checked": "2026-11-01T23:40:03.629165+00:00",
+ "checked": "2026-11-01T23:48:02.645537+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -43044,7 +43044,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Evgeniia Lopareva / Geoffrey Brissaud — 115.05\n2. Caroline Green / Michael Parsons — 111.78\n3. Oona Brown / Gage Brown — 111.03\n\nНачало: 01:15 МСК\nТрансляция: Okko",
+   "desc": "Итог:\n1. Lilah Fear / Lewis Gibson — 119.80\n2. Evgeniia Lopareva / Geoffrey Brissaud — 115.05\n3. Caroline Green / Michael Parsons — 111.78\n\nИтог турнира:\n1. Lilah Fear / Lewis Gibson — 201.17\n2. Evgeniia Lopareva / Geoffrey Brissaud — 192.95\n3. Caroline Green / Michael Parsons — 186.02\n\nПримечательное:\n• Lilah Fear / Lewis Gibson — Отрыв от второго места — 8.22 балла\n\nНачало: 01:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Layla Veillon / Alexander Brandys",
@@ -43052,7 +43052,8 @@
      "time": "01:21",
      "no": 1,
      "warmup": 1,
-     "place": 8
+     "place": 9,
+     "final": 9
     },
     {
      "name": "Alyssa Robinson / Jacob Portz",
@@ -43060,7 +43061,8 @@
      "time": "01:29",
      "no": 2,
      "warmup": 1,
-     "place": 9
+     "place": 10,
+     "final": 10
     },
     {
      "name": "Noemi Maria Tali / Noah Lafornara",
@@ -43068,7 +43070,8 @@
      "time": "01:37",
      "no": 3,
      "warmup": 1,
-     "place": 6
+     "place": 7,
+     "final": 7
     },
     {
      "name": "Iryna Pidgaina / Artem Koval",
@@ -43076,7 +43079,8 @@
      "time": "01:45",
      "no": 4,
      "warmup": 1,
-     "place": 7
+     "place": 8,
+     "final": 8
     },
     {
      "name": "Katarina Wolfkostin / Dimitry Tsarevski",
@@ -43084,7 +43088,8 @@
      "time": "01:53",
      "no": 5,
      "warmup": 1,
-     "place": 5
+     "place": 6,
+     "final": 6
     },
     {
      "name": "Marie-Jade Lauriault / Romain le Gac",
@@ -43092,7 +43097,8 @@
      "time": "02:07",
      "no": 6,
      "warmup": 2,
-     "place": 4
+     "place": 5,
+     "final": 5
     },
     {
      "name": "Oona Brown / Gage Brown",
@@ -43100,7 +43106,8 @@
      "time": "02:15",
      "no": 7,
      "warmup": 2,
-     "place": 3
+     "place": 4,
+     "final": 4
     },
     {
      "name": "Caroline Green / Michael Parsons",
@@ -43108,7 +43115,8 @@
      "time": "02:23",
      "no": 8,
      "warmup": 2,
-     "place": 2
+     "place": 3,
+     "final": 3
     },
     {
      "name": "Evgeniia Lopareva / Geoffrey Brissaud",
@@ -43116,14 +43124,17 @@
      "time": "02:31",
      "no": 9,
      "warmup": 2,
-     "place": 1
+     "place": 2,
+     "final": 2
     },
     {
      "name": "Lilah Fear / Lewis Gibson",
      "nation": "GBR",
      "time": "02:39",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "final": 1
     }
    ],
    "live": {
@@ -43143,30 +43154,56 @@
      "Evgeniia LOPAREVA / Geoffrey BRISSAUD": "Evgeniia Lopareva / Geoffrey Brissaud",
      "Lilah FEAR / Lewis GIBSON": "Lilah Fear / Lewis Gibson"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-skate-canada-international-2026.json",
    "podium": [
     {
      "place": 1,
+     "name": "Lilah Fear / Lewis Gibson",
+     "nation": "GBR",
+     "points": "119.80"
+    },
+    {
+     "place": 2,
      "name": "Evgeniia Lopareva / Geoffrey Brissaud",
      "nation": "FRA",
      "points": "115.05"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Caroline Green / Michael Parsons",
      "nation": "USA",
      "points": "111.78"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Lilah Fear / Lewis Gibson",
+     "nation": "GBR",
+     "points": "201.17"
+    },
+    {
+     "place": 2,
+     "name": "Evgeniia Lopareva / Geoffrey Brissaud",
+     "nation": "FRA",
+     "points": "192.95"
     },
     {
      "place": 3,
-     "name": "Oona Brown / Gage Brown",
+     "name": "Caroline Green / Michael Parsons",
      "nation": "USA",
-     "points": "111.03"
+     "points": "186.02"
     }
    ],
-   "provisional": true
+   "facts": [
+    {
+     "who": "Lilah Fear / Lewis Gibson",
+     "text": "Отрыв от второго места — 8.22 балла",
+     "kind": "place"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:dance-junior-rt",
