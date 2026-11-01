@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-01T20:45:44+03:00",
- "checked": "2026-11-01T20:45:44+03:00",
+ "checked": "2026-11-01T20:17:01.862007+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -42816,7 +42816,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Россияне:\n• Виктория Сафонова — 23:15\n\nНачало: 23:00 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Anna Pezzetta — 97.96\n\nРоссияне:\n• Виктория Сафонова — 23:15\n\nНачало: 23:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Jia Shin",
@@ -42865,7 +42865,8 @@
      "nation": "ITA",
      "time": "23:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Виктория Сафонова",
@@ -42924,7 +42925,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json"
+   "proto": "isu_isu-gp-skate-canada-international-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Anna Pezzetta",
+     "nation": "ITA",
+     "points": "97.96"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:dance-senior-pt",
