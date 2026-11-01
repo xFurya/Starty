@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-01T20:45:44+03:00",
- "checked": "2026-11-01T20:57:01.554196+00:00",
+ "checked": "2026-11-01T21:13:01.901427+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -42793,7 +42793,7 @@
      "time": "23:15",
      "no": 2,
      "warmup": 1,
-     "place": 4
+     "place": 5
     }
    ],
    "athletes": [
@@ -42817,14 +42817,15 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Madeline Schizas — 119.43\n2. Yujae Kim — 118.13\n3. Fee Ann Landry — 113.91\n\nРоссияне:\n• Виктория Сафонова — 23:15\n\nНачало: 23:00 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Jia Shin — 139.14\n2. Madeline Schizas — 119.43\n3. Yujae Kim — 118.13\n\nРоссияне:\n• Виктория Сафонова — 23:15\n\nНачало: 23:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Jia Shin",
      "nation": "KOR",
      "time": "00:02",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Sofia Samodelkina",
@@ -42867,7 +42868,7 @@
      "time": "23:07",
      "no": 1,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Виктория Сафонова",
@@ -42875,7 +42876,7 @@
      "time": "23:15",
      "no": 2,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Fee Ann Landry",
@@ -42883,7 +42884,7 @@
      "time": "23:23",
      "no": 3,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Madeline Schizas",
@@ -42891,7 +42892,7 @@
      "time": "23:31",
      "no": 4,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Yujae Kim",
@@ -42899,7 +42900,7 @@
      "time": "23:39",
      "no": 5,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Sara-Maude Dupuis",
@@ -42907,7 +42908,7 @@
      "time": "23:47",
      "no": 6,
      "warmup": 1,
-     "place": 6
+     "place": 7
     }
    ],
    "live": {
@@ -42935,21 +42936,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Jia Shin",
+     "nation": "KOR",
+     "points": "139.14"
+    },
+    {
+     "place": 2,
      "name": "Madeline Schizas",
      "nation": "CAN",
      "points": "119.43"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Yujae Kim",
      "nation": "KOR",
      "points": "118.13"
-    },
-    {
-     "place": 3,
-     "name": "Fee Ann Landry",
-     "nation": "CAN",
-     "points": "113.91"
     }
    ],
    "provisional": true
