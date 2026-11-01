@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-11-01T02:25:02.976846+00:00",
+ "checked": "2026-11-01T02:41:02.413555+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41958,7 +41958,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Anna Valesi / Martin Bidar — 106.22\n2. Sofiia Holichenko / Artem Darenskyi — 102.39\n3. Miyu Yunoki / Tristan Taylor — 96.63\n\nНачало: 04:45 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Oxana Vouillamoz / Tom Bouvart — 121.66\n2. Anna Valesi / Martin Bidar — 106.22\n3. Sofiia Holichenko / Artem Darenskyi — 102.39\n\nНачало: 04:45 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Miyu Yunoki / Tristan Taylor",
@@ -41966,7 +41966,7 @@
      "time": "04:52",
      "no": 1,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Irma Caldara / Riccardo Maglio",
@@ -41974,7 +41974,7 @@
      "time": "05:00",
      "no": 2,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Sofiia Holichenko / Artem Darenskyi",
@@ -41982,7 +41982,7 @@
      "time": "05:08",
      "no": 3,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Anna Valesi / Martin Bidar",
@@ -41990,14 +41990,15 @@
      "time": "05:16",
      "no": 4,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Oxana Vouillamoz / Tom Bouvart",
      "nation": "SUI",
      "time": "05:31",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Ava Kemp / Yohnatan Elizarov",
@@ -42042,21 +42043,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Oxana Vouillamoz / Tom Bouvart",
+     "nation": "SUI",
+     "points": "121.66"
+    },
+    {
+     "place": 2,
      "name": "Anna Valesi / Martin Bidar",
      "nation": "CZE",
      "points": "106.22"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Sofiia Holichenko / Artem Darenskyi",
      "nation": "UKR",
      "points": "102.39"
-    },
-    {
-     "place": 3,
-     "name": "Miyu Yunoki / Tristan Taylor",
-     "nation": "CAN",
-     "points": "96.63"
     }
    ],
    "provisional": true
