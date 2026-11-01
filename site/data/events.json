@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-01T20:45:44+03:00",
- "checked": "2026-11-01T21:25:03.415129+00:00",
+ "checked": "2026-11-01T21:33:01.497527+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -42793,7 +42793,7 @@
      "time": "23:15",
      "no": 2,
      "warmup": 1,
-     "place": 7
+     "place": 8
     }
    ],
    "athletes": [
@@ -42817,7 +42817,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Jia Shin — 139.14\n2. Saki Miyake — 138.14\n3. Sofia Samodelkina — 135.05\n\nРоссияне:\n• Виктория Сафонова — 23:15\n\nНачало: 23:00 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Niina Petrokina — 143.83\n2. Jia Shin — 139.14\n3. Saki Miyake — 138.14\n\nРоссияне:\n• Виктория Сафонова — 23:15\n\nНачало: 23:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Jia Shin",
@@ -42825,7 +42825,7 @@
      "time": "00:02",
      "no": 7,
      "warmup": 2,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Sofia Samodelkina",
@@ -42833,7 +42833,7 @@
      "time": "00:10",
      "no": 8,
      "warmup": 2,
-     "place": 3
+     "place": 4
     },
     {
      "name": "Saki Miyake",
@@ -42841,14 +42841,15 @@
      "time": "00:18",
      "no": 9,
      "warmup": 2,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Niina Petrokina",
      "nation": "EST",
      "time": "00:26",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Isabeau Levito",
@@ -42870,7 +42871,7 @@
      "time": "23:07",
      "no": 1,
      "warmup": 1,
-     "place": 8
+     "place": 9
     },
     {
      "name": "Виктория Сафонова",
@@ -42878,7 +42879,7 @@
      "time": "23:15",
      "no": 2,
      "warmup": 1,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Fee Ann Landry",
@@ -42886,7 +42887,7 @@
      "time": "23:23",
      "no": 3,
      "warmup": 1,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Madeline Schizas",
@@ -42894,7 +42895,7 @@
      "time": "23:31",
      "no": 4,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Yujae Kim",
@@ -42902,7 +42903,7 @@
      "time": "23:39",
      "no": 5,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Sara-Maude Dupuis",
@@ -42910,7 +42911,7 @@
      "time": "23:47",
      "no": 6,
      "warmup": 1,
-     "place": 9
+     "place": 10
     }
    ],
    "live": {
@@ -42938,21 +42939,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Niina Petrokina",
+     "nation": "EST",
+     "points": "143.83"
+    },
+    {
+     "place": 2,
      "name": "Jia Shin",
      "nation": "KOR",
      "points": "139.14"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Saki Miyake",
      "nation": "JPN",
      "points": "138.14"
-    },
-    {
-     "place": 3,
-     "name": "Sofia Samodelkina",
-     "nation": "KAZ",
-     "points": "135.05"
     }
    ],
    "provisional": true
