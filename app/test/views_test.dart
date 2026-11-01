@@ -286,7 +286,6 @@ void main() {
       expect(x.where((l) => l.trim() == '/'), isEmpty);
     }
     expect(nameVariants('Kaori SAKAMOTO', initial: true, full: false), [
-      ['K. Sakamoto'],
       ['Sakamoto'],
     ]);
   });

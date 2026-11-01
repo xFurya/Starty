@@ -761,3 +761,14 @@ class Guard(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class LacksDetailsTest(unittest.TestCase):
+    def test_final_without_details_is_reread(self):
+        seg = {"state": "final", "judges": "u.pdf", "rows": [{"place": 1}, {"place": 2}]}
+        self.assertTrue(P.lacks_details(seg))
+        seg["rows"][0]["els"] = [1]
+        self.assertFalse(P.lacks_details(seg))
+        self.assertFalse(P.lacks_details({"state": "final", "judges": None, "rows": [{"place": 1}]}))
+        self.assertFalse(P.lacks_details({"state": "provisional", "judges": "u", "rows": [{"place": 1}]}))
+        self.assertFalse(P.lacks_details(None))

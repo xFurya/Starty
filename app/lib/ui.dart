@@ -121,14 +121,8 @@ String initialOf(String name) {
   return s.isEmpty ? '' : s[0].toUpperCase();
 }
 
-/// Пары — фамилиями, одиночники — «А. Заикина».
-String initialName(String name) {
-  if (name.contains(' / ')) return surname(name);
-  final full = displayName(name).split(RegExp(r'\s+'));
-  final last = surname(name);
-  final first = full.firstWhere((w) => w != last, orElse: () => '');
-  return first.isEmpty ? last : '${first[0]}. $last';
-}
+/// Результаты — только фамилией, без имени и инициала: «Синицына», «Бойкова / Козловский».
+String initialName(String name) => surname(name);
 
 String placingName(Placing x) => initialName(x.name);
 

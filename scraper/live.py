@@ -223,7 +223,7 @@ def tournament_doc(idx, events, names, now, fetcher, prev):
                     end = dt.datetime.fromisoformat(prev_seg["end"]) if prev_seg.get("end") else None
                 elif s.get("start"):
                     start = s["start"]
-            if prev_seg and prev_seg["state"] == "final":
+            if prev_seg and prev_seg["state"] == "final" and not P.lacks_details(prev_seg):
                 recs.append(prev_seg)
                 continue
             page = None

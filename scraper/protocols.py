@@ -262,6 +262,13 @@ def details_for(seg, view, fetcher):
     return st.parse_judges_details(text)
 
 
+def lacks_details(seg):
+    """Окончательный сегмент записан без деталей оценок, хотя PDF с ними есть: детали не
+    прочитались в тот раз (сеть, бюджет) — перечитать, а не считать сегмент готовым навсегда."""
+    return bool(seg and seg.get("state") == "final" and seg.get("judges") and seg.get("rows")
+                and not any(r.get("els") for r in seg["rows"]))
+
+
 def _detail_of(row, details):
     """Детали спортсмена: совпадают место и имя (и стартовый номер, если он есть с обеих сторон)."""
     for d in details:

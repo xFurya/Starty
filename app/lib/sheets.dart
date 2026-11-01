@@ -720,7 +720,7 @@ class _TotalPlate extends StatelessWidget {
           final under = codeW > 0 &&
               !rows.every((x) => nameVariants(x.name, full: false, initial: true, lines: 2).any((v) => NameLines.fits(context, v, nameStyle, nameW(codeW))));
           if (under) codeW = 0;
-          // имена всегда сокращённые («В. Дикиджи»): полное у одного и короткое у другого выглядит странно
+          // имена в результатах — только фамилии
           return _rows(context, rows, pairs, scale, pointsStyle, codeW > 0 || under ? codes : null, codeW, points, codeStyle, under);
         },
       ),

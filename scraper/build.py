@@ -437,7 +437,8 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
         """Сегмент для файла протокола: с деталями оценок и бригадой, если они есть.
         Окончательный в прежнем файле и сейчас — берём прежний: PDF оценок второй раз не качаем."""
         prev = P.find_segment(prev_doc, category, seg)
-        if prev and prev["state"] == "final" and view["state"] == "final" and len(prev["rows"]) == len(view["rows"]):
+        if prev and prev["state"] == "final" and view["state"] == "final" and len(prev["rows"]) == len(view["rows"]) \
+                and not P.lacks_details(prev):
             return prev
         return P.make_segment(seg=s, code=seg, start=start, end=end, view=view, name_of=name_of,
                               fetcher=fetcher, prev=prev, log=log)
