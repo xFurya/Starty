@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-11-01T01:29:03.014024+00:00",
+ "checked": "2026-11-01T02:01:03.075977+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41958,14 +41958,15 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Начало: 04:45 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Miyu Yunoki / Tristan Taylor — 96.63\n\nНачало: 04:45 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Miyu Yunoki / Tristan Taylor",
      "nation": "CAN",
      "time": "04:52",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Irma Caldara / Riccardo Maglio",
@@ -42034,7 +42035,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json"
+   "proto": "isu_isu-gp-skate-canada-international-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Miyu Yunoki / Tristan Taylor",
+     "nation": "CAN",
+     "points": "96.63"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:men-senior-pp",
