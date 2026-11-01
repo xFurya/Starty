@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-11-01T00:49:02.353724+00:00",
+ "checked": "2026-11-01T00:57:02.771483+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41751,7 +41751,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Stephen Gogolev — 165.99\n2. Genrikh Gartung — 149.03\n3. Georgii Reshtenko — 140.51\n\nНачало: 02:40 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Mihhail Selevko — 169.08\n2. Stephen Gogolev — 165.99\n3. Genrikh Gartung — 149.03\n\nНачало: 02:40 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Stephen Gogolev",
@@ -41759,7 +41759,7 @@
      "time": "02:47",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Genrikh Gartung",
@@ -41767,7 +41767,7 @@
      "time": "02:55",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Liam Kapeikis",
@@ -41775,7 +41775,7 @@
      "time": "03:03",
      "no": 3,
      "warmup": 1,
-     "place": 7
+     "place": 8
     },
     {
      "name": "Wesley Chiu",
@@ -41783,7 +41783,7 @@
      "time": "03:10",
      "no": 4,
      "warmup": 1,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Georgii Reshtenko",
@@ -41791,7 +41791,7 @@
      "time": "03:18",
      "no": 5,
      "warmup": 1,
-     "place": 3
+     "place": 4
     },
     {
      "name": "David Bondar",
@@ -41799,7 +41799,7 @@
      "time": "03:26",
      "no": 6,
      "warmup": 1,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Hyungyeom Kim",
@@ -41807,14 +41807,15 @@
      "time": "03:41",
      "no": 7,
      "warmup": 2,
-     "place": 6
+     "place": 7
     },
     {
      "name": "Mihhail Selevko",
      "nation": "EST",
      "time": "03:49",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1
     },
     {
      "name": "Kyrylo Marsak",
@@ -41870,21 +41871,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "points": "169.08"
+    },
+    {
+     "place": 2,
      "name": "Stephen Gogolev",
      "nation": "CAN",
      "points": "165.99"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Genrikh Gartung",
      "nation": "GER",
      "points": "149.03"
-    },
-    {
-     "place": 3,
-     "name": "Georgii Reshtenko",
-     "nation": "CZE",
-     "points": "140.51"
     }
    ],
    "provisional": true
