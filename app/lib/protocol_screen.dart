@@ -717,7 +717,7 @@ class _ResultRow extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  surname(protocolName(row.name)),
+                  protocolName(row.name),
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.25, color: p.ink),
                 ),
                 if (sub.isNotEmpty)

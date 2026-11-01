@@ -201,7 +201,7 @@ void main() {
     testWidgets('окончательный — строки с местами и баллами, значок «Оригинал протокола» вместо кнопки', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(sample()));
       expect(find.text('Окончательный'), findsOneWidget);
-      expect(find.text('Билибина / Кашаев'), findsOneWidget);
+      expect(find.text('Анна Билибина / Дмитрий Кашаев'), findsOneWidget);
       expect(find.text('66.36'), findsOneWidget);
       expect(find.byTooltip('Оригинал протокола'), findsOneWidget);
       expect(find.text('Оригинал протокола'), findsNothing); // большой кнопки внизу нет
@@ -359,7 +359,7 @@ void main() {
         {'n': 'Zebra rule', 'v': -1.0},
       ];
       await pumpScreen(tester, s: start(), repo: repoWith(j));
-      await tester.tap(find.text('Билибина / Кашаев'));
+      await tester.tap(find.text('Анна Билибина / Дмитрий Кашаев'));
       await tester.pumpAndSettle();
       expect(find.text('Темп музыки'), findsOneWidget);
       expect(find.text('Лишний элемент'), findsOneWidget);
@@ -424,7 +424,7 @@ void main() {
     testWidgets('раскрытие показывает TES, PCS и снижение', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(sample()));
       expect(find.text('37.77'), findsNothing);
-      await tester.tap(find.text('Билибина / Кашаев'));
+      await tester.tap(find.text('Анна Билибина / Дмитрий Кашаев'));
       await tester.pumpAndSettle();
       expect(find.text('37.77'), findsOneWidget);
       expect(find.text('28.59'), findsOneWidget);
@@ -438,14 +438,14 @@ void main() {
       final r = (_seg(j)['rows'] as List).first as Map<String, dynamic>;
       r..remove('tes')..remove('pcs')..remove('ded');
       await pumpScreen(tester, s: start(), repo: repoWith(j));
-      await tester.tap(find.text('Билибина / Кашаев'));
+      await tester.tap(find.text('Анна Билибина / Дмитрий Кашаев'));
       await tester.pumpAndSettle();
       expect(find.text('ТЕХ'), findsNothing);
     });
 
     testWidgets('элементы, компоненты, сбавки и итоги из контракта', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(withDetails()));
-      await tester.tap(find.text('Билибина / Кашаев'));
+      await tester.tap(find.text('Анна Билибина / Дмитрий Кашаев'));
       await tester.pumpAndSettle();
       expect(find.text('Элементы'), findsOneWidget);
       expect(find.text('сумма баз 20.30'), findsOneWidget);
@@ -470,7 +470,7 @@ void main() {
       final els = ((_seg(j)['rows'] as List).first as Map<String, dynamic>)['els'] as List;
       (els.first as Map)['n'] = '3Lz+3T<';
       await pumpScreen(tester, s: start(), repo: repoWith(j));
-      await tester.tap(find.text('Билибина / Кашаев'));
+      await tester.tap(find.text('Анна Билибина / Дмитрий Кашаев'));
       await tester.pumpAndSettle();
       // «<» стоит один раз — у прыжка в названии (и ещё раз в расшифровке)
       final marks = find.byWidgetPredicate((w) => w is RichText && w.text.toPlainText().contains('3Lz+3T<'));
@@ -499,7 +499,7 @@ void main() {
 
     testWidgets('оценки судей по тапу на элемент; null — прочерк на своём месте', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(withDetails()));
-      await tester.tap(find.text('Билибина / Кашаев'));
+      await tester.tap(find.text('Анна Билибина / Дмитрий Кашаев'));
       await tester.pumpAndSettle();
       expect(find.text('С3'), findsNothing);
       await tester.tap(find.textContaining('3Lz+3T'));
@@ -517,7 +517,7 @@ void main() {
       final r = (_seg(j)['rows'] as List).first as Map<String, dynamic>;
       r..remove('ded')..remove('pcs');
       await pumpScreen(tester, s: start(), repo: repoWith(j));
-      await tester.tap(find.text('Билибина / Кашаев'));
+      await tester.tap(find.text('Анна Билибина / Дмитрий Кашаев'));
       await tester.pumpAndSettle();
       expect(find.text('Элементы'), findsNothing);
       expect(find.text('Компоненты'), findsNothing);
@@ -535,7 +535,7 @@ void main() {
       ];
       r.remove('ded');
       await pumpScreen(tester, s: start(), repo: repoWith(j));
-      await tester.tap(find.text('Билибина / Кашаев'));
+      await tester.tap(find.text('Анна Билибина / Дмитрий Кашаев'));
       await tester.pumpAndSettle();
       expect(find.text('StSq'), findsOneWidget);
       expect(find.text('—'), findsNWidgets(3));
@@ -617,7 +617,7 @@ void main() {
       _seg(swapped)['rows'] = rows;
       expect(first, hasLength(2));
       await pumpScreen(tester, s: start(), repo: repoWith(j, then: swapped));
-      await tester.tap(find.text('Билибина / Кашаев'));
+      await tester.tap(find.text('Анна Билибина / Дмитрий Кашаев'));
       await tester.pumpAndSettle();
       expect(find.text('ТЕХ'), findsOneWidget);
       await tester.tap(find.byTooltip('Обновить'));
@@ -681,7 +681,7 @@ void main() {
               scale: scale,
               brightness: b,
             );
-            await tester.tap(find.text('Билибина / Кашаев'));
+            await tester.tap(find.text('Анна Билибина / Дмитрий Кашаев'));
             await tester.pumpAndSettle();
             expectNoHorizontalScroll(tester);
             // оценки судей по элементу и компоненту раскрыты — тоже без переполнений
