@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-01T20:45:44+03:00",
- "checked": "2026-11-01T21:33:01.497527+00:00",
+ "generated": "2026-11-02T00:19:15+03:00",
+ "checked": "2026-11-02T00:19:15+03:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -42790,10 +42790,10 @@
     {
      "name": "Виктория Сафонова",
      "nation": "BLR",
+     "place": 6,
      "time": "23:15",
      "no": 2,
-     "warmup": 1,
-     "place": 8
+     "warmup": 1
     }
    ],
    "athletes": [
@@ -42817,125 +42817,6 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Niina Petrokina — 143.83\n2. Jia Shin — 139.14\n3. Saki Miyake — 138.14\n\nРоссияне:\n• Виктория Сафонова — 23:15\n\nНачало: 23:00 МСК\nТрансляция: Okko",
-   "field": [
-    {
-     "name": "Jia Shin",
-     "nation": "KOR",
-     "time": "00:02",
-     "no": 7,
-     "warmup": 2,
-     "place": 2
-    },
-    {
-     "name": "Sofia Samodelkina",
-     "nation": "KAZ",
-     "time": "00:10",
-     "no": 8,
-     "warmup": 2,
-     "place": 4
-    },
-    {
-     "name": "Saki Miyake",
-     "nation": "JPN",
-     "time": "00:18",
-     "no": 9,
-     "warmup": 2,
-     "place": 3
-    },
-    {
-     "name": "Niina Petrokina",
-     "nation": "EST",
-     "time": "00:26",
-     "no": 10,
-     "warmup": 2,
-     "place": 1
-    },
-    {
-     "name": "Isabeau Levito",
-     "nation": "USA",
-     "time": "00:35",
-     "no": 11,
-     "warmup": 2
-    },
-    {
-     "name": "Mao Shimada",
-     "nation": "JPN",
-     "time": "00:43",
-     "no": 12,
-     "warmup": 2
-    },
-    {
-     "name": "Anna Pezzetta",
-     "nation": "ITA",
-     "time": "23:07",
-     "no": 1,
-     "warmup": 1,
-     "place": 9
-    },
-    {
-     "name": "Виктория Сафонова",
-     "nation": "BLR",
-     "time": "23:15",
-     "no": 2,
-     "warmup": 1,
-     "place": 8
-    },
-    {
-     "name": "Fee Ann Landry",
-     "nation": "CAN",
-     "time": "23:23",
-     "no": 3,
-     "warmup": 1,
-     "place": 7
-    },
-    {
-     "name": "Madeline Schizas",
-     "nation": "CAN",
-     "time": "23:31",
-     "no": 4,
-     "warmup": 1,
-     "place": 5
-    },
-    {
-     "name": "Yujae Kim",
-     "nation": "KOR",
-     "time": "23:39",
-     "no": 5,
-     "warmup": 1,
-     "place": 6
-    },
-    {
-     "name": "Sara-Maude Dupuis",
-     "nation": "CAN",
-     "time": "23:47",
-     "no": 6,
-     "warmup": 1,
-     "place": 10
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG004.htm",
-    "cat": "https://results.isu.org/results/season2627/gpcan2026/CAT002RS.htm",
-    "first": "https://results.isu.org/results/season2627/gpcan2026/SEG003.htm",
-    "names": {
-     "Anna PEZZETTA": "Anna Pezzetta",
-     "Viktoriia SAFONOVA": "Виктория Сафонова",
-     "Fee Ann LANDRY": "Fee Ann Landry",
-     "Madeline SCHIZAS": "Madeline Schizas",
-     "Yujae KIM": "Yujae Kim",
-     "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
-     "Jia SHIN": "Jia Shin",
-     "Sofia SAMODELKINA": "Sofia Samodelkina",
-     "Saki MIYAKE": "Saki Miyake",
-     "Niina PETROKINA": "Niina Petrokina",
-     "Isabeau LEVITO": "Isabeau Levito",
-     "Mao SHIMADA": "Mao Shimada"
-    },
-    "basis": null
-   },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json",
    "podium": [
     {
      "place": 1,
@@ -42956,7 +42837,124 @@
      "points": "138.14"
     }
    ],
-   "provisional": true
+   "desc": "Промежуточные итоги:\n1. Jia Shin — 139.14\n2. Sofia Samodelkina — 135.05\n3. Madeline Schizas — 119.43\n\nРоссияне:\n• Виктория Сафонова — 23:15\n\nНачало: 23:00 МСК\nТрансляция: Okko",
+   "field": [
+    {
+     "name": "Anna Pezzetta",
+     "nation": "ITA",
+     "place": 7,
+     "time": "23:07",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Fee Ann Landry",
+     "nation": "CAN",
+     "place": 5,
+     "time": "23:23",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Isabeau Levito",
+     "nation": "USA",
+     "time": "00:35",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Jia Shin",
+     "nation": "KOR",
+     "place": 1,
+     "time": "00:02",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Madeline Schizas",
+     "nation": "CAN",
+     "place": 3,
+     "time": "23:31",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Mao Shimada",
+     "nation": "JPN",
+     "time": "00:43",
+     "no": 12,
+     "warmup": 2
+    },
+    {
+     "name": "Niina Petrokina",
+     "nation": "EST",
+     "time": "00:26",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Saki Miyake",
+     "nation": "JPN",
+     "time": "00:18",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Sara-Maude Dupuis",
+     "nation": "CAN",
+     "place": 8,
+     "time": "23:47",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Sofia Samodelkina",
+     "nation": "KAZ",
+     "place": 2,
+     "time": "00:10",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Yujae Kim",
+     "nation": "KOR",
+     "place": 4,
+     "time": "23:39",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Виктория Сафонова",
+     "nation": "BLR",
+     "place": 6,
+     "time": "23:15",
+     "no": 2,
+     "warmup": 1
+    }
+   ],
+   "provisional": true,
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG004.htm",
+    "cat": "https://results.isu.org/results/season2627/gpcan2026/CAT002RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpcan2026/SEG003.htm",
+    "names": {
+     "Sofia SAMODELKINA": "Sofia Samodelkina",
+     "Jia SHIN": "Jia Shin",
+     "Yujae KIM": "Yujae Kim",
+     "Madeline SCHIZAS": "Madeline Schizas",
+     "Fee Ann LANDRY": "Fee Ann Landry",
+     "Viktoriia SAFONOVA": "Виктория Сафонова",
+     "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
+     "Anna PEZZETTA": "Anna Pezzetta",
+     "Saki MIYAKE": "Saki Miyake",
+     "Niina PETROKINA": "Niina Petrokina",
+     "Isabeau LEVITO": "Isabeau Levito",
+     "Mao SHIMADA": "Mao Shimada"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-canada-international-2026.json"
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:dance-senior-pt",
@@ -46263,16 +46261,6 @@
   }
  ],
  "upcoming": [
-  {
-   "tid": "ffkm:fizkulturnoe-meropriyatie-novoe-pokolenie-sredi-yuniorov-i-vzroslykh-1-etap-a1586",
-   "name": "Физкультурное мероприятие «Новое поколение» среди юниоров и взрослых (1 этап)",
-   "start": "2026-11-01",
-   "end": "2026-11-01",
-   "venue": "ЛД «Мечта», Москва",
-   "intl": false,
-   "tier": "regional",
-   "region": "Москва"
-  },
   {
    "tid": "fsr:iugp-rossii-serdtse-sibiri-2026-11-10",
    "name": "ЮГП России «Сердце Сибири»",
