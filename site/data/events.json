@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-02T00:35:01+03:00",
- "checked": "2026-11-01T22:32:02.895434+00:00",
+ "checked": "2026-11-01T22:40:02.867102+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -43044,7 +43044,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Layla Veillon / Alexander Brandys — 90.90\n\nНачало: 01:15 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Layla Veillon / Alexander Brandys — 90.90\n2. Alyssa Robinson / Jacob Portz — 89.83\n\nНачало: 01:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Layla Veillon / Alexander Brandys",
@@ -43059,7 +43059,8 @@
      "nation": "CAN",
      "time": "01:29",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Noemi Maria Tali / Noah Lafornara",
@@ -43144,6 +43145,12 @@
      "name": "Layla Veillon / Alexander Brandys",
      "nation": "CAN",
      "points": "90.90"
+    },
+    {
+     "place": 2,
+     "name": "Alyssa Robinson / Jacob Portz",
+     "nation": "CAN",
+     "points": "89.83"
     }
    ],
    "provisional": true
