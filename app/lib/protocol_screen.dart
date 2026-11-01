@@ -1,3 +1,4 @@
+import 'dart:async';
 // Протокол турнира в приложении: категория → сегмент (короткая, произвольная, итог) → строки.
 // Данные — из файла протокола (protocol_model.dart); оригинал табло — значком в верхней панели, во встроенном браузере.
 // Честность: число показываем только если оно есть в файле, окончательность — только по судейским оценкам.
@@ -231,16 +232,52 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
 
   ProtocolRepo get _repo => widget.repo ?? ProtocolRepo.app;
 
+  Timer? _timer;
+
   @override
   void initState() {
     super.initState();
     _reload();
+    // пока что-то в протоколе не окончательное — обновляем сами: «моментально» — раз в минуту
+    // прямо с табло, иначе — раз в пять минут из файла
+    _timer = Timer.periodic(const Duration(minutes: 1), (_) {
+      if (_busy || !mounted || _everyFinal) return;
+      _tick = (_tick + 1) % 5;
+      if (_instant || _tick == 0) _reload(auto: true);
+    });
   }
 
-  Future<void> _reload() async {
+  int _tick = 0;
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  bool get _instant {
+    final st = widget.state;
+    return st != null && st.liveModeOf(widget.start) == liveInstant;
+  }
+
+  /// Всё в файле окончательное: обновлять нечего.
+  bool get _everyFinal {
+    final d = _doc;
+    if (d == null) return false;
+    return d.categories.every(
+      (c) => c.segments.every((x) => x.state == SegmentState.finalized || x.state == SegmentState.scheduled) &&
+          (c.total == null || c.total!.state == TotalState.finalized),
+    );
+  }
+
+  /// [manual] — нажата кнопка обновления: протокол собирается на устройстве с табло в любом режиме.
+  Future<void> _reload({bool manual = false, bool auto = false}) async {
     final proto = widget.start.proto;
-    setState(() => _busy = true);
-    final load = proto == null ? const ProtocolMissing() : await _repo.load(proto);
+    if (!auto) setState(() => _busy = true);
+    final device = widget.state != null && (manual || _instant);
+    final load = proto == null
+        ? const ProtocolMissing()
+        : await _repo.load(proto, start: widget.start, starts: widget.state?.data?.starts ?? const [], device: device);
     if (!mounted) return;
     // Нет ни свежего файла, ни сохранённого: наш экран показать нечего — открываем оригинал и уходим.
     if (load is! ProtocolOk && savedOf(load).$1 == null && widget.start.src.isNotEmpty) {
@@ -395,7 +432,7 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
           IconButton(
             tooltip: 'Обновить',
             icon: const Icon(Icons.refresh),
-            onPressed: _busy ? null : _reload,
+            onPressed: _busy ? null : () => _reload(manual: true),
           ),
         ],
       ),
@@ -478,7 +515,7 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
                 SheetButton(
                   neutral: true,
                   label: 'Повторить',
-                  onTap: _busy ? null : _reload,
+                  onTap: _busy ? null : () => _reload(manual: true),
                 ),
               ],
               if (seg != null && seg.panel.isNotEmpty) ...[

@@ -29,7 +29,6 @@ Future<void> _font(String family, List<String> files) async {
   await l.load();
 }
 
-const _pair = 'Анна Билибина / Дмитрий Кашаев';
 
 final _now = DateTime.utc(2026, 10, 15, 19, 0); // 22:00 по Москве
 

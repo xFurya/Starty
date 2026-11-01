@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'data.dart';
+import 'protocol_live.dart';
 import 'protocol_model.dart';
 
 /// Исход загрузки файла протокола.
@@ -61,8 +62,35 @@ class ProtocolRepo {
   static const _lru = 'protocol.lru';
   static String _key(String proto) => 'protocol.file.$proto';
 
-  /// Загрузка файла: сначала сеть (с минутной меткой, как расписание), при сбое — кэш.
-  Future<ProtocolLoad> load(String proto) async {
+  /// Загрузка протокола. Файл с сайта — основа (и запас, когда табло недоступно); при [device]
+  /// протокол ещё и собирается на устройстве прямо с табло турнира (protocol_live.dart) и
+  /// сливается с файлом: берётся то, что новее и полнее. Так протокол не зависит от нашего сервера.
+  Future<ProtocolLoad> load(String proto, {Start? start, Iterable<Start> starts = const [], bool device = false}) async {
+    final srv = await _loadServer(proto);
+    final idx = start?.live?.idx;
+    if (!device || start == null || idx == null || idx.isEmpty) return srv;
+    final base = (await _readCache(proto))?.raw;
+    final built = await ProtocolLive.build(
+      tid: start.tid,
+      tournament: start.tournament,
+      idx: idx,
+      starts: starts.where((x) => x.tid == start.tid),
+      cached: base,
+      now: _now(),
+    );
+    if (built == null) return srv;
+    try {
+      final (json, _) = base == null ? (built.json, false) : mergeJson(base, built.json);
+      final doc = ProtocolDoc.fromJson(json);
+      await _writeCache(proto, jsonEncode(json));
+      return ProtocolOk(doc, _now());
+    } on ProtocolFormatException {
+      return srv;
+    }
+  }
+
+  /// Файл с сайта: сначала сеть (с минутной меткой, как расписание), при сбое — кэш.
+  Future<ProtocolLoad> _loadServer(String proto) async {
     final url = protocolUrl(proto);
     if (url == null) return const ProtocolFormatError('имя файла');
     final cached = await _readCache(proto);

@@ -155,6 +155,21 @@ List<List<String>> _rows(String page) {
   ];
 }
 
+/// Строки таблиц для разбора протокола вне этого файла.
+List<List<String>> tabloRows(String page) => _rows(page);
+
+final _href = RegExp(r"""href\s*=\s*["']?([^"' >]+)""", caseSensitive: false);
+
+/// Строки таблиц вместе со ссылками строки (оглавление турнира: сегменты, итог, оценки судей).
+List<(List<String>, List<String>)> tabloRowsWithLinks(String page) {
+  page = page.replaceAll(_script, '');
+  page = page.replaceAllMapped(_caption, (m) => '<tr><td>${m[1]}</td></tr>');
+  return [
+    for (final r in _tr.allMatches(page))
+      ([for (final c in _td.allMatches(r[1]!)) _cellText(c[1]!)], [for (final h in _href.allMatches(r[1]!)) h[1]!]),
+  ];
+}
+
 const _resultHeads = {'Pl.', 'Pl', 'Мес.', 'Место', 'FPl.', 'FPl', 'Мест.', 'М.'};
 const _nameHeads = {'Name', 'Имя', 'Спортсмен', 'Участник'};
 const _nationHeads = {'Nation', 'Nat.', 'Регион', 'Страна', 'Нация'};
