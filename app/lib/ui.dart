@@ -1496,12 +1496,18 @@ class SideNav extends StatelessWidget {
       builder: (context, index, _) => Material(
         color: p.nav,
         child: Container(
-          width: 232,
+          width: 232 + MediaQuery.paddingOf(context).left,
           decoration: BoxDecoration(
             color: p.nav,
             border: Border(right: BorderSide(color: p.plateLine, width: 1)),
           ),
-          padding: const EdgeInsets.fromLTRB(14, 26, 14, 18),
+          // сверху ниже, чем раньше, и не под вырезом камеры/строкой состояния; слева — не под вырезом
+          padding: EdgeInsets.fromLTRB(
+            14 + MediaQuery.paddingOf(context).left,
+            44 + MediaQuery.paddingOf(context).top,
+            14,
+            18,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
