@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-02T00:35:01+03:00",
- "checked": "2026-11-01T22:40:02.867102+00:00",
+ "checked": "2026-11-01T22:48:02.746305+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -43044,7 +43044,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Layla Veillon / Alexander Brandys — 90.90\n2. Alyssa Robinson / Jacob Portz — 89.83\n\nНачало: 01:15 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Noemi Maria Tali / Noah Lafornara — 95.58\n2. Layla Veillon / Alexander Brandys — 90.90\n3. Alyssa Robinson / Jacob Portz — 89.83\n\nНачало: 01:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Layla Veillon / Alexander Brandys",
@@ -43052,7 +43052,7 @@
      "time": "01:21",
      "no": 1,
      "warmup": 1,
-     "place": 1
+     "place": 2
     },
     {
      "name": "Alyssa Robinson / Jacob Portz",
@@ -43060,14 +43060,15 @@
      "time": "01:29",
      "no": 2,
      "warmup": 1,
-     "place": 2
+     "place": 3
     },
     {
      "name": "Noemi Maria Tali / Noah Lafornara",
      "nation": "ITA",
      "time": "01:37",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Iryna Pidgaina / Artem Koval",
@@ -43142,12 +43143,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Noemi Maria Tali / Noah Lafornara",
+     "nation": "ITA",
+     "points": "95.58"
+    },
+    {
+     "place": 2,
      "name": "Layla Veillon / Alexander Brandys",
      "nation": "CAN",
      "points": "90.90"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Alyssa Robinson / Jacob Portz",
      "nation": "CAN",
      "points": "89.83"
