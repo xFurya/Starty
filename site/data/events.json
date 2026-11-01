@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-11-01T03:05:03.329802+00:00",
+ "checked": "2026-11-01T07:17:02.960405+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -42134,14 +42134,15 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 09:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Алексей Тотмин — 104.05\n\nНачало: 09:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Алексей Тотмин",
      "nation": "КРК",
      "time": "09:06",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Константин Сафонов",
@@ -42242,7 +42243,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Алексей Тотмин",
+     "nation": "КРК",
+     "points": "104.05"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:women-senior-pp",
