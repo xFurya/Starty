@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-31T19:59:58+03:00",
- "checked": "2026-11-01T02:01:03.075977+00:00",
+ "checked": "2026-11-01T02:09:02.676580+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -41958,7 +41958,7 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Miyu Yunoki / Tristan Taylor — 96.63\n\nНачало: 04:45 МСК\nТрансляция: Okko",
+   "desc": "Промежуточные итоги:\n1. Miyu Yunoki / Tristan Taylor — 96.63\n2. Irma Caldara / Riccardo Maglio — 88.47\n\nНачало: 04:45 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Miyu Yunoki / Tristan Taylor",
@@ -41973,7 +41973,8 @@
      "nation": "ITA",
      "time": "05:00",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Sofiia Holichenko / Artem Darenskyi",
@@ -42042,6 +42043,12 @@
      "name": "Miyu Yunoki / Tristan Taylor",
      "nation": "CAN",
      "points": "96.63"
+    },
+    {
+     "place": 2,
+     "name": "Irma Caldara / Riccardo Maglio",
+     "nation": "ITA",
+     "points": "88.47"
     }
    ],
    "provisional": true
