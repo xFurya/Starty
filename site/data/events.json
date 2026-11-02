@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-02T18:25:20+03:00",
- "checked": "2026-11-02T18:25:20+03:00",
+ "generated": "2026-11-03T00:31:11+03:00",
+ "checked": "2026-11-03T00:31:11+03:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
   "Golden Skate": "fail",
-  "ФФКМ": "календарь не открылся (https://ffkm.ru/season/competitions/calendar-of-sports-competitions/: <urlopen error [Errno -3] Temporary failure in name resolution>)",
-  "Самара": "статьи не открылись (http://skate63.ru/info/articles/: <urlopen error [Errno -3] Temporary failure in name resolution>)"
+  "ФФКМ": "календарь не открылся (https://ffkm.ru/season/competitions/calendar-of-sports-competitions/: <urlopen error timed out>)",
+  "Самара": "статьи не открылись (http://skate63.ru/info/articles/: <urlopen error timed out>)"
  },
  "events": [
   {
@@ -42992,19 +42992,19 @@
    },
    "facts": [
     {
-     "who": "Mao Shimada",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Mao Shimada"
     },
     {
-     "who": "Saki Miyake",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Saki Miyake"
     },
     {
-     "who": "Sara-Maude Dupuis",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Sara-Maude Dupuis"
     },
     {
      "kind": "score",
