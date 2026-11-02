@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-02T00:35:01+03:00",
- "checked": "2026-11-01T23:48:02.645537+00:00",
- "complete": true,
+ "generated": "2026-11-02T18:25:20+03:00",
+ "checked": "2026-11-02T18:25:20+03:00",
+ "complete": false,
  "facts_version": "7",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
-  "Golden Skate": "ok",
-  "ФФКМ": "ok",
-  "Самара": "ok"
+  "Golden Skate": "fail",
+  "ФФКМ": "календарь не открылся (https://ffkm.ru/season/competitions/calendar-of-sports-competitions/: <urlopen error [Errno -3] Temporary failure in name resolution>)",
+  "Самара": "статьи не открылись (http://skate63.ru/info/articles/: <urlopen error [Errno -3] Temporary failure in name resolution>)"
  },
  "events": [
   {
@@ -40031,8 +40031,8 @@
    "level": "senior",
    "seg": "КП",
    "title": "GP Skate Canada — мужчины КП",
-   "start": "2026-10-31T04:00:00+03:00",
-   "end": "2026-10-31T05:30:00+03:00",
+   "start": "2026-10-31T05:00:00+03:00",
+   "end": "2026-10-31T06:30:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -40080,7 +40080,7 @@
      "points": "85.31"
     }
    ],
-   "desc": "Итог:\n1. Rio Nakata — 92.64\n2. Kevin Aymoz — 90.26\n3. Kazuki Tomono — 85.31\n\nНачало: 04:00 МСК\nТрансляция: Okko",
+   "desc": "Итог:\n1. Rio Nakata — 92.64\n2. Kevin Aymoz — 90.26\n3. Kazuki Tomono — 85.31\n\nНачало: 05:00 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Wesley Chiu",
@@ -40210,8 +40210,8 @@
    "level": "senior",
    "seg": "КП",
    "title": "GP Skate Canada — пары КП",
-   "start": "2026-10-31T06:15:00+03:00",
-   "end": "2026-10-31T07:25:00+03:00",
+   "start": "2026-10-31T07:15:00+03:00",
+   "end": "2026-10-31T08:25:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -40255,7 +40255,7 @@
      "points": "64.94"
     }
    ],
-   "desc": "Итог:\n1. Lia Pereira / Trennt Michaud — 77.06\n2. Alisa Efimova / Misha Mitrofanov — 70.32\n3. Ava Kemp / Yohnatan Elizarov — 64.94\n\nПримечательное:\n• Lia Pereira / Trennt Michaud — Личный рекорд за КП: 77.06 (был 75.52)\n• Ava Kemp / Yohnatan Elizarov — Личный рекорд за КП: 64.94 (был 64.21)\n\nНачало: 06:15 МСК\nТрансляция: Okko",
+   "desc": "Итог:\n1. Lia Pereira / Trennt Michaud — 77.06\n2. Alisa Efimova / Misha Mitrofanov — 70.32\n3. Ava Kemp / Yohnatan Elizarov — 64.94\n\nПримечательное:\n• Lia Pereira / Trennt Michaud — Личный рекорд за КП: 77.06 (был 75.52)\n• Ava Kemp / Yohnatan Elizarov — Личный рекорд за КП: 64.94 (был 64.21)\n\nНачало: 07:15 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Miyu Yunoki / Tristan Taylor",
@@ -41375,8 +41375,8 @@
    "level": "senior",
    "seg": "КП",
    "title": "GP Skate Canada — женщины КП",
-   "start": "2026-10-31T22:30:00+03:00",
-   "end": "2026-11-01T00:00:00+03:00",
+   "start": "2026-10-31T23:30:00+03:00",
+   "end": "2026-11-01T01:00:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -41433,7 +41433,7 @@
      "points": "77.24"
     }
    ],
-   "desc": "Итог:\n1. Mao Shimada — 82.11\n2. Isabeau Levito — 78.50\n3. Niina Petrokina — 77.24\n\nПримечательное:\n• Mao Shimada — Тройной аксель\n• Mao Shimada — Лучшая в мире оценка сезона за КП: 82.11\n• Mao Shimada — Личный рекорд за КП: 82.11 (был 78.84)\n• Isabeau Levito — Личный рекорд за КП: 78.50 (был 73.73)\n• Niina Petrokina — Личный рекорд за КП: 77.24 (был 77.20)\n\nРоссияне:\n• Виктория Сафонова — 22:43\n\nНачало: 22:30 МСК\nТрансляция: Okko",
+   "desc": "Итог:\n1. Mao Shimada — 82.11\n2. Isabeau Levito — 78.50\n3. Niina Petrokina — 77.24\n\nПримечательное:\n• Mao Shimada — Тройной аксель\n• Mao Shimada — Лучшая в мире оценка сезона за КП: 82.11\n• Mao Shimada — Личный рекорд за КП: 82.11 (был 78.84)\n• Isabeau Levito — Личный рекорд за КП: 78.50 (был 73.73)\n• Niina Petrokina — Личный рекорд за КП: 77.24 (был 77.20)\n\nРоссияне:\n• Виктория Сафонова — 22:43\n\nНачало: 23:30 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Saki Miyake",
@@ -41590,8 +41590,8 @@
    "level": "senior",
    "seg": "РТ",
    "title": "GP Skate Canada — танцы РТ",
-   "start": "2026-11-01T00:20:00+03:00",
-   "end": "2026-11-01T01:35:00+03:00",
+   "start": "2026-11-01T01:20:00+03:00",
+   "end": "2026-11-01T02:35:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -41637,7 +41637,7 @@
      "points": "74.24"
     }
    ],
-   "desc": "Итог:\n1. Lilah Fear / Lewis Gibson — 81.37\n2. Evgeniia Lopareva / Geoffrey Brissaud — 77.90\n3. Caroline Green / Michael Parsons — 74.24\n\nНачало: 00:20 МСК\nТрансляция: Okko",
+   "desc": "Итог:\n1. Lilah Fear / Lewis Gibson — 81.37\n2. Evgeniia Lopareva / Geoffrey Brissaud — 77.90\n3. Caroline Green / Michael Parsons — 74.24\n\nНачало: 01:20 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Alyssa Robinson / Jacob Portz",
@@ -41749,8 +41749,8 @@
    "level": "senior",
    "seg": "ПП",
    "title": "GP Skate Canada — мужчины ПП",
-   "start": "2026-11-01T02:40:00+03:00",
-   "end": "2026-11-01T04:25:00+03:00",
+   "start": "2026-11-01T03:40:00+03:00",
+   "end": "2026-11-01T05:25:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -41818,7 +41818,7 @@
      "points": "248.66"
     }
    ],
-   "desc": "Итог:\n1. Mihhail Selevko — 169.08\n2. Kevin Aymoz — 168.17\n3. Stephen Gogolev — 165.99\n\nИтог турнира:\n1. Kevin Aymoz — 258.43\n2. Rio Nakata — 249.25\n3. Mihhail Selevko — 248.66\n\nНачало: 02:40 МСК\nТрансляция: Okko",
+   "desc": "Итог:\n1. Mihhail Selevko — 169.08\n2. Kevin Aymoz — 168.17\n3. Stephen Gogolev — 165.99\n\nИтог турнира:\n1. Kevin Aymoz — 258.43\n2. Rio Nakata — 249.25\n3. Mihhail Selevko — 248.66\n\nНачало: 03:40 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Stephen Gogolev",
@@ -41960,8 +41960,8 @@
    "level": "senior",
    "seg": "ПП",
    "title": "GP Skate Canada — пары ПП",
-   "start": "2026-11-01T04:45:00+03:00",
-   "end": "2026-11-01T06:05:00+03:00",
+   "start": "2026-11-01T05:45:00+03:00",
+   "end": "2026-11-01T07:05:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -42025,7 +42025,7 @@
      "points": "183.12"
     }
    ],
-   "desc": "Итог:\n1. Lia Pereira / Trennt Michaud — 125.11\n2. Oxana Vouillamoz / Tom Bouvart — 121.66\n3. Alisa Efimova / Misha Mitrofanov — 121.58\n\nИтог турнира:\n1. Lia Pereira / Trennt Michaud — 202.17\n2. Alisa Efimova / Misha Mitrofanov — 191.90\n3. Oxana Vouillamoz / Tom Bouvart — 183.12\n\nНачало: 04:45 МСК\nТрансляция: Okko",
+   "desc": "Итог:\n1. Lia Pereira / Trennt Michaud — 125.11\n2. Oxana Vouillamoz / Tom Bouvart — 121.66\n3. Alisa Efimova / Misha Mitrofanov — 121.58\n\nИтог турнира:\n1. Lia Pereira / Trennt Michaud — 202.17\n2. Alisa Efimova / Misha Mitrofanov — 191.90\n3. Oxana Vouillamoz / Tom Bouvart — 183.12\n\nНачало: 05:45 МСК\nТрансляция: Okko",
    "field": [
     {
      "name": "Miyu Yunoki / Tristan Taylor",
@@ -42779,8 +42779,8 @@
    "level": "senior",
    "seg": "ПП",
    "title": "GP Skate Canada — женщины ПП",
-   "start": "2026-11-01T23:00:00+03:00",
-   "end": "2026-11-02T00:51:00+03:00",
+   "start": "2026-11-02T00:00:00+03:00",
+   "end": "2026-11-02T01:45:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -42790,11 +42790,11 @@
     {
      "name": "Виктория Сафонова",
      "nation": "BLR",
-     "place": 10,
-     "time": "23:15",
      "no": 2,
      "warmup": 1,
-     "final": 10
+     "place": 10,
+     "final": 10,
+     "time": "23:15"
     }
    ],
    "athletes": [
@@ -42838,139 +42838,6 @@
      "points": "139.14"
     }
    ],
-   "desc": "Итог:\n1. Mao Shimada — 153.33\n2. Niina Petrokina — 143.83\n3. Jia Shin — 139.14\n\nИтог турнира:\n1. Mao Shimada — 235.44\n2. Niina Petrokina — 221.07\n3. Isabeau Levito — 212.22\n\nПримечательное:\n• Mao Shimada — Лучшая в мире сумма сезона: 235.44\n• Mao Shimada — Личный рекорд по сумме: 235.44 (был 231.32)\n• Niina Petrokina — Личный рекорд по сумме: 221.07 (был 216.14)\n\nРоссияне:\n• Виктория Сафонова — 23:15\n\nНачало: 23:00 МСК\nТрансляция: Okko",
-   "field": [
-    {
-     "name": "Anna Pezzetta",
-     "nation": "ITA",
-     "place": 11,
-     "time": "23:07",
-     "no": 1,
-     "warmup": 1,
-     "final": 12
-    },
-    {
-     "name": "Fee Ann Landry",
-     "nation": "CAN",
-     "place": 9,
-     "time": "23:23",
-     "no": 3,
-     "warmup": 1,
-     "final": 9
-    },
-    {
-     "name": "Isabeau Levito",
-     "nation": "USA",
-     "time": "00:35",
-     "no": 11,
-     "warmup": 2,
-     "place": 6,
-     "final": 3
-    },
-    {
-     "name": "Jia Shin",
-     "nation": "KOR",
-     "place": 3,
-     "time": "00:02",
-     "no": 7,
-     "warmup": 2,
-     "final": 6
-    },
-    {
-     "name": "Madeline Schizas",
-     "nation": "CAN",
-     "place": 7,
-     "time": "23:31",
-     "no": 4,
-     "warmup": 1,
-     "final": 8
-    },
-    {
-     "name": "Mao Shimada",
-     "nation": "JPN",
-     "time": "00:43",
-     "no": 12,
-     "warmup": 2,
-     "place": 1,
-     "final": 1
-    },
-    {
-     "name": "Niina Petrokina",
-     "nation": "EST",
-     "place": 2,
-     "time": "00:26",
-     "no": 10,
-     "warmup": 2,
-     "final": 2
-    },
-    {
-     "name": "Saki Miyake",
-     "nation": "JPN",
-     "place": 4,
-     "time": "00:18",
-     "no": 9,
-     "warmup": 2,
-     "final": 4
-    },
-    {
-     "name": "Sara-Maude Dupuis",
-     "nation": "CAN",
-     "place": 12,
-     "time": "23:47",
-     "no": 6,
-     "warmup": 1,
-     "final": 11
-    },
-    {
-     "name": "Sofia Samodelkina",
-     "nation": "KAZ",
-     "place": 5,
-     "time": "00:10",
-     "no": 8,
-     "warmup": 2,
-     "final": 5
-    },
-    {
-     "name": "Yujae Kim",
-     "nation": "KOR",
-     "place": 8,
-     "time": "23:39",
-     "no": 5,
-     "warmup": 1,
-     "final": 7
-    },
-    {
-     "name": "Виктория Сафонова",
-     "nation": "BLR",
-     "place": 10,
-     "time": "23:15",
-     "no": 2,
-     "warmup": 1,
-     "final": 10
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG004.htm",
-    "cat": "https://results.isu.org/results/season2627/gpcan2026/CAT002RS.htm",
-    "first": "https://results.isu.org/results/season2627/gpcan2026/SEG003.htm",
-    "names": {
-     "Niina PETROKINA": "Niina Petrokina",
-     "Saki MIYAKE": "Saki Miyake",
-     "Sofia SAMODELKINA": "Sofia Samodelkina",
-     "Jia SHIN": "Jia Shin",
-     "Yujae KIM": "Yujae Kim",
-     "Madeline SCHIZAS": "Madeline Schizas",
-     "Fee Ann LANDRY": "Fee Ann Landry",
-     "Viktoriia SAFONOVA": "Виктория Сафонова",
-     "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
-     "Anna PEZZETTA": "Anna Pezzetta",
-     "Isabeau LEVITO": "Isabeau Levito",
-     "Mao SHIMADA": "Mao Shimada"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json",
    "total": [
     {
      "place": 1,
@@ -42991,23 +42858,171 @@
      "points": "212.22"
     }
    ],
+   "desc": "Итог:\n1. Mao Shimada — 153.33\n2. Niina Petrokina — 143.83\n3. Jia Shin — 139.14\n\nИтог турнира:\n1. Mao Shimada — 235.44\n2. Niina Petrokina — 221.07\n3. Isabeau Levito — 212.22\n\nПримечательное:\n• Mao Shimada — Тройной аксель\n• Saki Miyake — Тройной аксель\n• Sara-Maude Dupuis — Тройной аксель\n• Mao Shimada — Лучшая в мире сумма сезона: 235.44\n• Mao Shimada — Личный рекорд по сумме: 235.44 (был 231.32)\n• Niina Petrokina — Личный рекорд по сумме: 221.07 (был 216.14)\n\nРоссияне:\n• Виктория Сафонова — 23:15\n\nНачало: 00:00 МСК\nТрансляция: Okko",
+   "field": [
+    {
+     "name": "Anna Pezzetta",
+     "nation": "ITA",
+     "no": 1,
+     "warmup": 1,
+     "place": 11,
+     "final": 12,
+     "time": "23:07"
+    },
+    {
+     "name": "Виктория Сафонова",
+     "nation": "BLR",
+     "no": 2,
+     "warmup": 1,
+     "place": 10,
+     "final": 10,
+     "time": "23:15"
+    },
+    {
+     "name": "Fee Ann Landry",
+     "nation": "CAN",
+     "no": 3,
+     "warmup": 1,
+     "place": 9,
+     "final": 9,
+     "time": "23:23"
+    },
+    {
+     "name": "Madeline Schizas",
+     "nation": "CAN",
+     "no": 4,
+     "warmup": 1,
+     "place": 7,
+     "final": 8,
+     "time": "23:31"
+    },
+    {
+     "name": "Yujae Kim",
+     "nation": "KOR",
+     "no": 5,
+     "warmup": 1,
+     "place": 8,
+     "final": 7,
+     "time": "23:39"
+    },
+    {
+     "name": "Sara-Maude Dupuis",
+     "nation": "CAN",
+     "no": 6,
+     "warmup": 1,
+     "place": 12,
+     "final": 11,
+     "time": "23:47"
+    },
+    {
+     "name": "Jia Shin",
+     "nation": "KOR",
+     "no": 7,
+     "warmup": 2,
+     "place": 3,
+     "final": 6,
+     "time": "00:02"
+    },
+    {
+     "name": "Sofia Samodelkina",
+     "nation": "KAZ",
+     "no": 8,
+     "warmup": 2,
+     "place": 5,
+     "final": 5,
+     "time": "00:10"
+    },
+    {
+     "name": "Saki Miyake",
+     "nation": "JPN",
+     "no": 9,
+     "warmup": 2,
+     "place": 4,
+     "final": 4,
+     "time": "00:18"
+    },
+    {
+     "name": "Niina Petrokina",
+     "nation": "EST",
+     "no": 10,
+     "warmup": 2,
+     "place": 2,
+     "final": 2,
+     "time": "00:26"
+    },
+    {
+     "name": "Isabeau Levito",
+     "nation": "USA",
+     "no": 11,
+     "warmup": 2,
+     "place": 6,
+     "final": 3,
+     "time": "00:35"
+    },
+    {
+     "name": "Mao Shimada",
+     "nation": "JPN",
+     "no": 12,
+     "warmup": 2,
+     "place": 1,
+     "final": 1,
+     "time": "00:43"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG004.htm",
+    "cat": "https://results.isu.org/results/season2627/gpcan2026/CAT002RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpcan2026/SEG003.htm",
+    "names": {
+     "Mao SHIMADA": "Mao Shimada",
+     "Niina PETROKINA": "Niina Petrokina",
+     "Jia SHIN": "Jia Shin",
+     "Saki MIYAKE": "Saki Miyake",
+     "Sofia SAMODELKINA": "Sofia Samodelkina",
+     "Isabeau LEVITO": "Isabeau Levito",
+     "Madeline SCHIZAS": "Madeline Schizas",
+     "Yujae KIM": "Yujae Kim",
+     "Fee Ann LANDRY": "Fee Ann Landry",
+     "Viktoriia SAFONOVA": "Виктория Сафонова",
+     "Anna PEZZETTA": "Anna Pezzetta",
+     "Sara-Maude DUPUIS": "Sara-Maude Dupuis"
+    },
+    "basis": "judges"
+   },
    "facts": [
     {
      "who": "Mao Shimada",
+     "text": "Тройной аксель",
+     "kind": "element"
+    },
+    {
+     "who": "Saki Miyake",
+     "text": "Тройной аксель",
+     "kind": "element"
+    },
+    {
+     "who": "Sara-Maude Dupuis",
+     "text": "Тройной аксель",
+     "kind": "element"
+    },
+    {
+     "kind": "score",
      "text": "Лучшая в мире сумма сезона: 235.44",
-     "kind": "score"
+     "who": "Mao Shimada"
     },
     {
-     "who": "Mao Shimada",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 235.44 (был 231.32)",
-     "kind": "score"
+     "who": "Mao Shimada"
     },
     {
-     "who": "Niina Petrokina",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 221.07 (был 216.14)",
-     "kind": "score"
+     "who": "Niina Petrokina"
     }
-   ]
+   ],
+   "proto": "isu_isu-gp-skate-canada-international-2026.json"
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:dance-senior-pt",
@@ -43017,8 +43032,8 @@
    "level": "senior",
    "seg": "ПТ",
    "title": "GP Skate Canada — танцы ПТ",
-   "start": "2026-11-02T01:15:00+03:00",
-   "end": "2026-11-02T02:47:00+03:00",
+   "start": "2026-11-02T02:15:00+03:00",
+   "end": "2026-11-02T03:40:00+03:00",
    "venue": "Kelowna, Canada",
    "intl": true,
    "broadcast": [
@@ -43044,119 +43059,6 @@
      "url": "https://okko.tv/"
     }
    ],
-   "desc": "Итог:\n1. Lilah Fear / Lewis Gibson — 119.80\n2. Evgeniia Lopareva / Geoffrey Brissaud — 115.05\n3. Caroline Green / Michael Parsons — 111.78\n\nИтог турнира:\n1. Lilah Fear / Lewis Gibson — 201.17\n2. Evgeniia Lopareva / Geoffrey Brissaud — 192.95\n3. Caroline Green / Michael Parsons — 186.02\n\nПримечательное:\n• Lilah Fear / Lewis Gibson — Отрыв от второго места — 8.22 балла\n\nНачало: 01:15 МСК\nТрансляция: Okko",
-   "field": [
-    {
-     "name": "Layla Veillon / Alexander Brandys",
-     "nation": "CAN",
-     "time": "01:21",
-     "no": 1,
-     "warmup": 1,
-     "place": 9,
-     "final": 9
-    },
-    {
-     "name": "Alyssa Robinson / Jacob Portz",
-     "nation": "CAN",
-     "time": "01:29",
-     "no": 2,
-     "warmup": 1,
-     "place": 10,
-     "final": 10
-    },
-    {
-     "name": "Noemi Maria Tali / Noah Lafornara",
-     "nation": "ITA",
-     "time": "01:37",
-     "no": 3,
-     "warmup": 1,
-     "place": 7,
-     "final": 7
-    },
-    {
-     "name": "Iryna Pidgaina / Artem Koval",
-     "nation": "UKR",
-     "time": "01:45",
-     "no": 4,
-     "warmup": 1,
-     "place": 8,
-     "final": 8
-    },
-    {
-     "name": "Katarina Wolfkostin / Dimitry Tsarevski",
-     "nation": "USA",
-     "time": "01:53",
-     "no": 5,
-     "warmup": 1,
-     "place": 6,
-     "final": 6
-    },
-    {
-     "name": "Marie-Jade Lauriault / Romain le Gac",
-     "nation": "CAN",
-     "time": "02:07",
-     "no": 6,
-     "warmup": 2,
-     "place": 5,
-     "final": 5
-    },
-    {
-     "name": "Oona Brown / Gage Brown",
-     "nation": "USA",
-     "time": "02:15",
-     "no": 7,
-     "warmup": 2,
-     "place": 4,
-     "final": 4
-    },
-    {
-     "name": "Caroline Green / Michael Parsons",
-     "nation": "USA",
-     "time": "02:23",
-     "no": 8,
-     "warmup": 2,
-     "place": 3,
-     "final": 3
-    },
-    {
-     "name": "Evgeniia Lopareva / Geoffrey Brissaud",
-     "nation": "FRA",
-     "time": "02:31",
-     "no": 9,
-     "warmup": 2,
-     "place": 2,
-     "final": 2
-    },
-    {
-     "name": "Lilah Fear / Lewis Gibson",
-     "nation": "GBR",
-     "time": "02:39",
-     "no": 10,
-     "warmup": 2,
-     "place": 1,
-     "final": 1
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG008.htm",
-    "cat": "https://results.isu.org/results/season2627/gpcan2026/CAT004RS.htm",
-    "first": "https://results.isu.org/results/season2627/gpcan2026/SEG007.htm",
-    "names": {
-     "Layla VEILLON / Alexander BRANDYS": "Layla Veillon / Alexander Brandys",
-     "Alyssa ROBINSON / Jacob PORTZ": "Alyssa Robinson / Jacob Portz",
-     "Noemi Maria TALI / Noah LAFORNARA": "Noemi Maria Tali / Noah Lafornara",
-     "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Artem Koval",
-     "Katarina WOLFKOSTIN / Dimitry TSAREVSKI": "Katarina Wolfkostin / Dimitry Tsarevski",
-     "Marie-Jade LAURIAULT / Romain le GAC": "Marie-Jade Lauriault / Romain le Gac",
-     "Oona BROWN / Gage BROWN": "Oona Brown / Gage Brown",
-     "Caroline GREEN / Michael PARSONS": "Caroline Green / Michael Parsons",
-     "Evgeniia LOPAREVA / Geoffrey BRISSAUD": "Evgeniia Lopareva / Geoffrey Brissaud",
-     "Lilah FEAR / Lewis GIBSON": "Lilah Fear / Lewis Gibson"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json",
    "podium": [
     {
      "place": 1,
@@ -43197,13 +43099,126 @@
      "points": "186.02"
     }
    ],
+   "desc": "Итог:\n1. Lilah Fear / Lewis Gibson — 119.80\n2. Evgeniia Lopareva / Geoffrey Brissaud — 115.05\n3. Caroline Green / Michael Parsons — 111.78\n\nИтог турнира:\n1. Lilah Fear / Lewis Gibson — 201.17\n2. Evgeniia Lopareva / Geoffrey Brissaud — 192.95\n3. Caroline Green / Michael Parsons — 186.02\n\nПримечательное:\n• Lilah Fear / Lewis Gibson — Отрыв от второго места — 8.22 балла\n\nНачало: 02:15 МСК\nТрансляция: Okko",
+   "field": [
+    {
+     "name": "Layla Veillon / Alexander Brandys",
+     "nation": "CAN",
+     "no": 1,
+     "warmup": 1,
+     "place": 9,
+     "final": 9,
+     "time": "01:21"
+    },
+    {
+     "name": "Alyssa Robinson / Jacob Portz",
+     "nation": "CAN",
+     "no": 2,
+     "warmup": 1,
+     "place": 10,
+     "final": 10,
+     "time": "01:29"
+    },
+    {
+     "name": "Noemi Maria Tali / Noah Lafornara",
+     "nation": "ITA",
+     "no": 3,
+     "warmup": 1,
+     "place": 7,
+     "final": 7,
+     "time": "01:37"
+    },
+    {
+     "name": "Iryna Pidgaina / Artem Koval",
+     "nation": "UKR",
+     "no": 4,
+     "warmup": 1,
+     "place": 8,
+     "final": 8,
+     "time": "01:45"
+    },
+    {
+     "name": "Katarina Wolfkostin / Dimitry Tsarevski",
+     "nation": "USA",
+     "no": 5,
+     "warmup": 1,
+     "place": 6,
+     "final": 6,
+     "time": "01:53"
+    },
+    {
+     "name": "Marie-Jade Lauriault / Romain le Gac",
+     "nation": "CAN",
+     "no": 6,
+     "warmup": 2,
+     "place": 5,
+     "final": 5,
+     "time": "02:07"
+    },
+    {
+     "name": "Oona Brown / Gage Brown",
+     "nation": "USA",
+     "no": 7,
+     "warmup": 2,
+     "place": 4,
+     "final": 4,
+     "time": "02:15"
+    },
+    {
+     "name": "Caroline Green / Michael Parsons",
+     "nation": "USA",
+     "no": 8,
+     "warmup": 2,
+     "place": 3,
+     "final": 3,
+     "time": "02:23"
+    },
+    {
+     "name": "Evgeniia Lopareva / Geoffrey Brissaud",
+     "nation": "FRA",
+     "no": 9,
+     "warmup": 2,
+     "place": 2,
+     "final": 2,
+     "time": "02:31"
+    },
+    {
+     "name": "Lilah Fear / Lewis Gibson",
+     "nation": "GBR",
+     "no": 10,
+     "warmup": 2,
+     "place": 1,
+     "final": 1,
+     "time": "02:39"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpcan2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpcan2026/SEG008.htm",
+    "cat": "https://results.isu.org/results/season2627/gpcan2026/CAT004RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpcan2026/SEG007.htm",
+    "names": {
+     "Lilah FEAR / Lewis GIBSON": "Lilah Fear / Lewis Gibson",
+     "Evgeniia LOPAREVA / Geoffrey BRISSAUD": "Evgeniia Lopareva / Geoffrey Brissaud",
+     "Caroline GREEN / Michael PARSONS": "Caroline Green / Michael Parsons",
+     "Oona BROWN / Gage BROWN": "Oona Brown / Gage Brown",
+     "Marie-Jade LAURIAULT / Romain le GAC": "Marie-Jade Lauriault / Romain le Gac",
+     "Katarina WOLFKOSTIN / Dimitry TSAREVSKI": "Katarina Wolfkostin / Dimitry Tsarevski",
+     "Noemi Maria TALI / Noah LAFORNARA": "Noemi Maria Tali / Noah Lafornara",
+     "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Artem Koval",
+     "Layla VEILLON / Alexander BRANDYS": "Layla Veillon / Alexander Brandys",
+     "Alyssa ROBINSON / Jacob PORTZ": "Alyssa Robinson / Jacob Portz"
+    },
+    "basis": "judges"
+   },
    "facts": [
     {
-     "who": "Lilah Fear / Lewis Gibson",
+     "kind": "place",
      "text": "Отрыв от второго места — 8.22 балла",
-     "kind": "place"
+     "who": "Lilah Fear / Lewis Gibson"
     }
-   ]
+   ],
+   "proto": "isu_isu-gp-skate-canada-international-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:dance-junior-rt",

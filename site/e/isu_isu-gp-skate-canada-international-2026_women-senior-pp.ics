@@ -14,19 +14,21 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-gp-skate-canada-international-2026:women-senior-pp@starty
-DTSTAMP:20261101T213501Z
-DTSTART;TZID=Europe/Moscow:20261101T230000
-DTEND;TZID=Europe/Moscow:20261102T005100
+DTSTAMP:20261102T152520Z
+DTSTART;TZID=Europe/Moscow:20261102T000000
+DTEND;TZID=Europe/Moscow:20261102T014500
 SUMMARY:GP Skate Canada — женщины ПП
 DESCRIPTION:Итог:\n1. Mao Shimada — 153.33\n2. Niina Petrokina — 14
  3.83\n3. Jia Shin — 139.14\n\nИтог турнира:\n1. Mao Shimada 
  — 235.44\n2. Niina Petrokina — 221.07\n3. Isabeau Levito — 212.22\n\
- nПримечательное:\n• Mao Shimada — Лучшая в мир
- е сумма сезона: 235.44\n• Mao Shimada — Личный ре
- корд по сумме: 235.44 (был 231.32)\n• Niina Petrokina — 
- Личный рекорд по сумме: 221.07 (был 216.14)\n\nРо
- ссияне:\n• Виктория Сафонова — 23:15\n\nНача
- ло: 23:00 МСК\nТрансляция: Okko
+ nПримечательное:\n• Mao Shimada — Тройной акс
+ ель\n• Saki Miyake — Тройной аксель\n• Sara-Maude Du
+ puis — Тройной аксель\n• Mao Shimada — Лучшая в 
+ мире сумма сезона: 235.44\n• Mao Shimada — Личный
+  рекорд по сумме: 235.44 (был 231.32)\n• Niina Petrokina
+  — Личный рекорд по сумме: 221.07 (был 216.14)\n\n
+ Россияне:\n• Виктория Сафонова — 23:15\n\nНа
+ чало: 00:00 МСК\nТрансляция: Okko
 LOCATION:Kelowna\, Canada
 URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-skate-canada-internationa
  l-2026:women-senior-pp
