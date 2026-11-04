@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-04T17:12:12+03:00",
- "checked": "2026-11-04T14:37:58.020841+00:00",
+ "checked": "2026-11-04T16:46:07.332794+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -43426,7 +43426,8 @@
      "nation": "МОС",
      "time": "19:52",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     }
    ],
    "athletes": [
@@ -43449,56 +43450,63 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Россияне:\n• Полина Шешелева / Егор Карнаухов — 19:52\n\nНачало: 19:45 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Полина Шешелева / Егор Карнаухов — 71.86\n2. Полина Сажина / Алексей Белкин — 71.33\n3. Кира Доможирова / Илья Вегера — 60.63\n\nРоссияне:\n• Полина Шешелева / Егор Карнаухов — 19:52\n\nНачало: 19:45 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Полина Шешелева / Егор Карнаухов",
      "nation": "МОС",
      "time": "19:52",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Кира Доможирова / Илья Вегера",
      "nation": "ПРМ",
      "time": "20:04",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3
     },
     {
      "name": "Ангелина Кулагина / Максим Ихсанов",
      "nation": "МОС",
      "time": "20:10",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5
     },
     {
      "name": "Полина Сажина / Алексей Белкин",
      "nation": "МОС",
      "time": "20:17",
      "no": 4,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2
     },
     {
      "name": "Альбина Камалдинова / Степан Маришин",
      "nation": "СПБ",
      "time": "20:23",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4
     },
     {
      "name": "Мария Карпанова / Артем Устинов",
      "nation": "МОБ",
      "time": "20:29",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     },
     {
      "name": "Дарья Кардаполова / Антон Рязанов",
      "nation": "СВЕ",
      "time": "20:35",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6
     }
    ],
    "live": {
@@ -43515,9 +43523,29 @@
      "Мария КАРПАНОВА / Артем УСТИНОВ": "Мария Карпанова / Артем Устинов",
      "Дарья КАРДАПОЛОВА / Антон РЯЗАНОВ": "Дарья Кардаполова / Антон Рязанов"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "МОС",
+     "points": "71.86"
+    },
+    {
+     "place": 2,
+     "name": "Полина Сажина / Алексей Белкин",
+     "nation": "МОС",
+     "points": "71.33"
+    },
+    {
+     "place": 3,
+     "name": "Кира Доможирова / Илья Вегера",
+     "nation": "ПРМ",
+     "points": "60.63"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:dance-junior-pt",
