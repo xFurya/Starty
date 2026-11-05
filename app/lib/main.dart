@@ -111,7 +111,7 @@ class _StartyAppState extends State<StartyApp> {
       scrollBehavior: const MaterialScrollBehavior().copyWith(dragDevices: PointerDeviceKind.values.toSet()),
       locale: const Locale('ru'),
       // крупный системный шрифт — до 130 %: дальше разметка теряет смысл
-      builder: (context, child) => MediaQuery.withClampedTextScaling(maxScaleFactor: 1.3, child: _Wide(nav: _nav, settingsDot: state.rules.on && state.allowed == false, child: child!)),
+      builder: (context, child) => MediaQuery.withClampedTextScaling(maxScaleFactor: 1.3, child: AppFrame(nav: _nav, settingsDot: state.rules.on && state.allowed == false, child: child!)),
       home: Home(state: state),
     ),
   );
@@ -240,7 +240,8 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
                   // вкладки листаются свайпом; в «Месяце» свайп по самому календарю листает месяцы
                   child: PageView(
                     controller: _pages,
-                    physics: isWideWindow(context) ? const NeverScrollableScrollPhysics() : const _FirmPaging(),
+                    // компьютер — разделы только панелью: мышь тянет страницу случайно
+                    physics: navPlace(context) == NavPlace.side ? const NeverScrollableScrollPhysics() : const _FirmPaging(),
                     onPageChanged: (i) => homeTab.value = i,
                     children: [
                       _Keep(FeedView(state: state)),
@@ -252,7 +253,7 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
               ),
             ],
           ),
-          bottomNavigationBar: isWideWindow(context) ? null : IceNav(
+          bottomNavigationBar: navPlace(context) != NavPlace.bottom ? null : IceNav(
             index: tab,
             onTap: (i) {
               homeTab.value = i;
@@ -267,39 +268,51 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
   }
 }
 
-/// Окно шире этого — компьютерная вёрстка: слева панель разделов, справа колонка с содержимым.
-const wideWindow = 820.0;
-bool isWideWindow(BuildContext context) => MediaQuery.sizeOf(context).width >= wideWindow;
-
-/// Широкое окно (компьютер): слева панель разделов вместо нижней, содержимое — колонкой по центру
-/// остального места, а не растянутое на всё окно.
-class _Wide extends StatelessWidget {
+/// Панель разделов слева, когда снизу ей не место: компьютер и планшет — широкая, телефон
+/// боком — узкая. Содержимое — колонкой по центру остального места, а не растянутое на всё окно.
+/// Дерево одно и то же при любой форме окна: поворот телефона не пересоздаёт навигатор —
+/// открытый протокол, лист и прокрутка остаются.
+class AppFrame extends StatelessWidget {
   final Widget child;
   final GlobalKey<NavigatorState> nav;
   final bool settingsDot;
-  const _Wide({required this.child, required this.nav, required this.settingsDot});
+  const AppFrame({super.key, required this.child, required this.nav, required this.settingsDot});
   @override
   Widget build(BuildContext context) {
-    if (!isWideWindow(context)) return child;
+    final place = navPlace(context);
+    final framed = place != NavPlace.bottom;
     final p = Palette.of(context);
+    void go(int i) {
+      nav.currentState?.popUntil((r) => r.isFirst);
+      homeTab.value = i;
+    }
+
     return ColoredBox(
       color: p.bg,
       child: Row(
         children: [
-          SideNav(
-            onTap: (i) {
-              nav.currentState?.popUntil((r) => r.isFirst);
-              homeTab.value = i;
-            },
-            settingsDot: settingsDot,
-          ),
+          switch (place) {
+            NavPlace.rail => RailNav(onTap: go, settingsDot: settingsDot),
+            NavPlace.side => SideNav(onTap: go, settingsDot: settingsDot),
+            NavPlace.bottom => const SizedBox.shrink(),
+          },
           Expanded(
             child: ColoredBox(
-              color: p.isDark ? p.bgTop : p.line.withValues(alpha: .5),
-              child: Center(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 720),
-                  child: ClipRect(child: child),
+              color: !framed ? p.bg : (p.isDark ? p.bgTop : p.line.withValues(alpha: .5)),
+              // слева вырез камеры обошла панель; справа его (и кнопки системы) обходит колонка
+              child: Padding(
+                padding: EdgeInsets.only(right: framed ? MediaQuery.paddingOf(context).right : 0),
+                child: MediaQuery.removePadding(
+                  context: context,
+                  removeLeft: framed,
+                  removeRight: framed,
+                  // телефон боком — во всю ширину: поля по краям отняли бы место, которого и так мало
+                  child: Center(
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(maxWidth: place == NavPlace.side ? 720 : double.infinity),
+                      child: ClipRect(child: child),
+                    ),
+                  ),
                 ),
               ),
             ),

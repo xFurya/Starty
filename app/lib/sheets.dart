@@ -79,6 +79,79 @@ class _StartSheet extends StatelessWidget {
     // живые места: режим для этого старта, если у него есть табло и файл протокола — компактный чип.
     // Итог окончательный (settled, как в watching) — опрашивать нечего, чипа нет совсем.
     final liveChip = s.live != null && s.proto != null && !s.settled ? _LiveChip(state: state, start: s) : null;
+    final short = isShortWindow(context);
+    final heading = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // название турнира есть только здесь — до двух строк, не обрезаем
+        Eyebrow(s.tournament, color: p.accent, maxLines: 2),
+        const SizedBox(height: 8),
+        Text(disc, style: display(p, 42)),
+        if (seg.isNotEmpty) ...[
+          const SizedBox(height: 2),
+          Text(
+            segNames[seg]!,
+            style: display(p, 25, italic: true, color: p.ink2, weight: FontWeight.w500),
+          ),
+        ],
+      ],
+    );
+    final time = Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        // время и так крупное: со шрифтом не растёт, место справа остаётся словам
+        Text(
+          hm(s.t0),
+          textScaler: TextScaler.noScaling,
+          style: clock(live ? p.live : (past ? p.ink2 : p.ink), short ? 48 : (narrow ? 44 : 54)),
+        ),
+        SizedBox(width: narrow ? 12 : 14),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (live)
+                const Padding(padding: EdgeInsets.only(bottom: 5), child: LivePill())
+              else if (past)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 3),
+                  child: Text(
+                    'Завершён',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: p.ink2),
+                  ),
+                )
+              else if (s.day == dayKey(t) || s.day == dayKey(t.add(const Duration(days: 1))))
+                // «через 1 ч 50 мин» одной строкой: не помещается — мельче, а не по буквам
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 3),
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      whenLabel(s, t),
+                      maxLines: 1,
+                      softWrap: false,
+                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: p.accent),
+                    ),
+                  ),
+                ),
+              Text(
+                date,
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink),
+              ),
+              const SizedBox(height: 3),
+              // затянувшийся сегмент идёт дольше расписания, а досрочно закончившийся уже не идёт:
+              // время из расписания не выдаём за настоящий конец
+              Text(
+                '${s.overrunAt(t) || (s.finishedAt(t) && t.isBefore(s.t1)) ? 'по расписанию ' : ''}до$nb${hm(s.t1)}$nbМСК',
+                style: TextStyle(fontSize: 13, color: p.ink2, fontFeatures: tnum),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
     return ConstrainedBox(
       constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * .92),
       child: SheetScroll(
@@ -87,35 +160,29 @@ class _StartSheet extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // шапка: лёд, турнир, вид и сегмент; растёт вместе со шрифтом
+            // шапка: лёд, турнир, вид и сегмент; растёт вместе со шрифтом.
+            // Телефон боком — время в шапке справа: высоты мало, ниже остаётся место делу
             Stack(
               children: [
                 Positioned.fill(child: IceBackdrop(fadeTo: p.sheet, fadeStart: .25, sparkles: -1)),
                 // искры — над подписью турнира, на текст не ложатся
                 const Positioned(top: 0, left: 0, right: 0, child: SheetSparkles()),
                 ConstrainedBox(
-                  constraints: const BoxConstraints(minHeight: 132, minWidth: double.infinity),
+                  constraints: BoxConstraints(minHeight: short ? 0 : 132, minWidth: double.infinity),
                   child: Align(
                     alignment: Alignment.bottomLeft,
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(22, 36, 22, 2),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          // название турнира есть только здесь — до двух строк, не обрезаем
-                          Eyebrow(s.tournament, color: p.accent, maxLines: 2),
-                          const SizedBox(height: 8),
-                          Text(disc, style: display(p, 42)),
-                          if (seg.isNotEmpty) ...[
-                            const SizedBox(height: 2),
-                            Text(
-                              segNames[seg]!,
-                              style: display(p, 25, italic: true, color: p.ink2, weight: FontWeight.w500),
-                            ),
-                          ],
-                        ],
-                      ),
+                      padding: EdgeInsets.fromLTRB(22, short ? 30 : 36, 22, 2),
+                      child: short
+                          ? Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Expanded(child: heading),
+                                const SizedBox(width: 16),
+                                Expanded(child: time),
+                              ],
+                            )
+                          : heading,
                     ),
                   ),
                 ),
@@ -123,64 +190,7 @@ class _StartSheet extends StatelessWidget {
             ),
             // время крупно слева; справа по строке: состояние, дата, конец по Москве.
             // У завершённого — то же, только время приглушено и вместо отсчёта «Завершён».
-            Padding(
-                padding: const EdgeInsets.fromLTRB(22, 16, 22, 0),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    // время и так крупное: со шрифтом не растёт, место справа остаётся словам
-                    Text(
-                      hm(s.t0),
-                      textScaler: TextScaler.noScaling,
-                      style: clock(live ? p.live : (past ? p.ink2 : p.ink), narrow ? 44 : 54),
-                    ),
-                    SizedBox(width: narrow ? 12 : 14),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          if (live)
-                            const Padding(padding: EdgeInsets.only(bottom: 5), child: LivePill())
-                          else if (past)
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 3),
-                              child: Text(
-                                'Завершён',
-                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: p.ink2),
-                              ),
-                            )
-                          else if (s.day == dayKey(t) || s.day == dayKey(t.add(const Duration(days: 1))))
-                            // «через 1 ч 50 мин» одной строкой: не помещается — мельче, а не по буквам
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 3),
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                alignment: Alignment.centerLeft,
-                                child: Text(
-                                  whenLabel(s, t),
-                                  maxLines: 1,
-                                  softWrap: false,
-                                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: p.accent),
-                                ),
-                              ),
-                            ),
-                          Text(
-                            date,
-                            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink),
-                          ),
-                          const SizedBox(height: 3),
-                          // затянувшийся сегмент идёт дольше расписания, а досрочно закончившийся уже не идёт:
-                          // время из расписания не выдаём за настоящий конец
-                          Text(
-                            '${s.overrunAt(t) || (s.finishedAt(t) && t.isBefore(s.t1)) ? 'по расписанию ' : ''}до$nb${hm(s.t1)}$nbМСК',
-                            style: TextStyle(fontSize: 13, color: p.ink2, fontFeatures: tnum),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            if (!short) Padding(padding: const EdgeInsets.fromLTRB(22, 16, 22, 0), child: time),
             // чип режима — под временем, слева, во всю ширину не растягивается
             if (liveChip != null) Padding(padding: const EdgeInsets.fromLTRB(22, 10, 22, 0), child: Align(alignment: Alignment.centerLeft, child: liveChip)),
             if (notify != null) Padding(padding: const EdgeInsets.only(top: 18), child: notify),

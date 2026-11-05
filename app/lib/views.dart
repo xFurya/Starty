@@ -1443,114 +1443,152 @@ class _MonthViewState extends State<MonthView> {
     final monthHasUnscheduled = [
       for (var d = 1; d <= days; d++) '${month.year}-${two(month.month)}-${two(d)}',
     ].any((k) => upcomingOn(state, k).isNotEmpty);
-    return CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
-          child: IceHero(
-            eyebrow: '${month.year}',
-            title: monthsNom[month.month - 1],
-            sparkles: 3,
-            actions: [
-              RoundButton(
-                icon: CupertinoIcons.chevron_left,
-                tooltip: 'Предыдущий месяц',
-                onTap: () => _go(-1),
-              ),
-              RoundButton(
-                icon: CupertinoIcons.chevron_right,
-                tooltip: 'Следующий месяц',
-                onTap: () => _go(1),
-              ),
-              if (state.data != null) FilterButton(state: state),
-            ],
-          ),
+    final hero = IceHero(
+      eyebrow: '${month.year}',
+      title: monthsNom[month.month - 1],
+      sparkles: 3,
+      actions: [
+        RoundButton(
+          icon: CupertinoIcons.chevron_left,
+          tooltip: 'Предыдущий месяц',
+          onTap: () => _go(-1),
         ),
-        if (state.data != null) SliverToBoxAdapter(child: NoticeLine(state: state)),
-        if (state.filters.any) SliverToBoxAdapter(child: FilterLine(state: state)),
-        SliverToBoxAdapter(
-          child: Plate(
-            margin: const EdgeInsets.fromLTRB(16, 10, 16, 0),
-            padding: const EdgeInsets.fromLTRB(6, 14, 6, 12),
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    for (var i = 0; i < 7; i++)
-                      Expanded(
-                        child: Center(
-                          child: Text(
-                            weekdaysShort[i].toUpperCase(),
-                            style: TextStyle(
-                              fontSize: 11,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 1,
-                              color: i > 4 ? p.accent : p.ink2,
-                            ),
-                          ),
-                        ),
+        RoundButton(
+          icon: CupertinoIcons.chevron_right,
+          tooltip: 'Следующий месяц',
+          onTap: () => _go(1),
+        ),
+        if (state.data != null) FilterButton(state: state),
+      ],
+    );
+    Widget calendar(bool split) => Plate(
+      margin: split ? const EdgeInsets.fromLTRB(16, 4, 6, 0) : const EdgeInsets.fromLTRB(16, 10, 16, 0),
+      padding: const EdgeInsets.fromLTRB(6, 14, 6, 12),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              for (var i = 0; i < 7; i++)
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      weekdaysShort[i].toUpperCase(),
+                      style: TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 1,
+                        color: i > 4 ? p.accent : p.ink2,
                       ),
-                  ],
-                ),
-                const SizedBox(height: 6),
-                // свайп по сетке листает месяцы (и не отдаёт жест перелистыванию вкладок)
-                GestureDetector(
-                  behavior: HitTestBehavior.opaque,
-                  onHorizontalDragStart: (_) => _drag = 0,
-                  onHorizontalDragUpdate: (d) => _drag += d.primaryDelta ?? 0,
-                  onHorizontalDragEnd: (d) {
-                    final v = d.primaryVelocity ?? 0;
-                    // протяжка на 90 пикселей или резкий взмах — не любое касание
-                    if (_drag.abs() > 90 || v.abs() > 900) _go((_drag != 0 ? _drag : v) < 0 ? 1 : -1);
-                  },
-                  child: AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 220),
-                    transitionBuilder: (child, a) => FadeTransition(
-                      opacity: a,
-                      child: SlideTransition(
-                        position: Tween(begin: Offset(.08 * _dir, 0), end: Offset.zero).animate(a),
-                        child: child,
-                      ),
-                    ),
-                    child: Column(
-                      key: ValueKey(month),
-                      children: [
-                        for (var r = 0; r < cells ~/ 7; r++)
-                          Row(children: [for (var c = 0; c < 7; c++) _cell(context, r * 7 + c - lead + 1, days, byDay, today)]),
-                      ],
                     ),
                   ),
                 ),
-                const SizedBox(height: 8),
-                Container(height: 1, margin: const EdgeInsets.symmetric(horizontal: 10), color: p.line),
-                const SizedBox(height: 10),
-                _Legend(unscheduled: monthHasUnscheduled),
-              ],
+            ],
+          ),
+          const SizedBox(height: 6),
+          // свайп по сетке листает месяцы (и не отдаёт жест перелистыванию вкладок)
+          GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onHorizontalDragStart: (_) => _drag = 0,
+            onHorizontalDragUpdate: (d) => _drag += d.primaryDelta ?? 0,
+            onHorizontalDragEnd: (d) {
+              final v = d.primaryVelocity ?? 0;
+              // протяжка на 90 пикселей или резкий взмах — не любое касание
+              if (_drag.abs() > 90 || v.abs() > 900) _go((_drag != 0 ? _drag : v) < 0 ? 1 : -1);
+            },
+            child: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 220),
+              transitionBuilder: (child, a) => FadeTransition(
+                opacity: a,
+                child: SlideTransition(
+                  position: Tween(begin: Offset(.08 * _dir, 0), end: Offset.zero).animate(a),
+                  child: child,
+                ),
+              ),
+              child: Column(
+                key: ValueKey(month),
+                children: [
+                  for (var r = 0; r < cells ~/ 7; r++)
+                    Row(children: [for (var c = 0; c < 7; c++) _cell(context, r * 7 + c - lead + 1, days, byDay, today, split ? 46 : 54)]),
+                ],
+              ),
             ),
           ),
-        ),
-        SliverToBoxAdapter(child: DayHeader(day: selected)),
-        SliverToBoxAdapter(
-          child: dayList.isEmpty && unscheduled.isEmpty
-              ? const EmptyPlate('Стартов нет')
-              : Column(
+          const SizedBox(height: 8),
+          Container(height: 1, margin: const EdgeInsets.symmetric(horizontal: 10), color: p.line),
+          const SizedBox(height: 10),
+          _Legend(unscheduled: monthHasUnscheduled),
+        ],
+      ),
+    );
+    final day = dayList.isEmpty && unscheduled.isEmpty
+        ? const EmptyPlate('Стартов нет')
+        : Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              if (dayList.isNotEmpty) DayPlate(starts: dayList, state: state),
+              if (dayList.isNotEmpty && unscheduled.isNotEmpty) const SizedBox(height: 12),
+              if (unscheduled.isNotEmpty) UnscheduledPlate(list: unscheduled, state: state),
+            ],
+          );
+    final top = [
+      if (state.data != null) SliverToBoxAdapter(child: NoticeLine(state: state)),
+      if (state.filters.any) SliverToBoxAdapter(child: FilterLine(state: state)),
+    ];
+    return LayoutBuilder(
+      builder: (context, c) {
+        // телефон боком: месяц и выбранный день рядом — иначе к стартам дня листать через весь месяц
+        if (isShortWindow(context) && c.maxWidth >= 600) {
+          return Column(
+            children: [
+              hero,
+              Expanded(
+                child: Row(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    if (dayList.isNotEmpty) DayPlate(starts: dayList, state: state),
-                    if (dayList.isNotEmpty && unscheduled.isNotEmpty) const SizedBox(height: 12),
-                    if (unscheduled.isNotEmpty) UnscheduledPlate(list: unscheduled, state: state),
+                    SizedBox(
+                      width: math.min(400.0, math.max(330.0, c.maxWidth * .5)),
+                      child: CustomScrollView(
+                        slivers: [
+                          ...top,
+                          SliverToBoxAdapter(child: calendar(true)),
+                          const SliverToBoxAdapter(child: SizedBox(height: 20)),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: CustomScrollView(
+                        slivers: [
+                          SliverToBoxAdapter(child: DayHeader(day: selected, top: 2)),
+                          SliverToBoxAdapter(child: day),
+                          const SliverToBoxAdapter(child: SizedBox(height: 32)),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
-        ),
-        const SliverToBoxAdapter(child: SizedBox(height: 32)),
-      ],
+              ),
+            ],
+          );
+        }
+        return CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(child: hero),
+            ...top,
+            SliverToBoxAdapter(child: calendar(false)),
+            SliverToBoxAdapter(child: DayHeader(day: selected)),
+            SliverToBoxAdapter(child: day),
+            const SliverToBoxAdapter(child: SizedBox(height: 32)),
+          ],
+        );
+      },
     );
   }
 
   static const _order = ['women', 'men', 'pairs', 'dance'];
 
-  Widget _cell(BuildContext context, int d, int days, Map<String, List<Start>> byDay, String today) {
+  Widget _cell(BuildContext context, int d, int days, Map<String, List<Start>> byDay, String today, double height) {
     final p = Palette.of(context);
-    if (d < 1 || d > days) return const Expanded(child: SizedBox(height: 54));
+    if (d < 1 || d > days) return Expanded(child: SizedBox(height: height));
     final key = '${month.year}-${two(month.month)}-${two(d)}';
     final list = byDay[key] ?? [];
     final sel = key == selected;
@@ -1572,14 +1610,14 @@ class _MonthViewState extends State<MonthView> {
           onTap: () => setState(() => selected = key),
           radius: 24,
           child: SizedBox(
-            height: 54,
+            height: height,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AnimatedContainer(
                   duration: const Duration(milliseconds: 160),
-                  width: 36,
-                  height: 36,
+                  width: height < 54 ? 34 : 36,
+                  height: height < 54 ? 34 : 36,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,

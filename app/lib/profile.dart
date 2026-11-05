@@ -538,6 +538,38 @@ class _ProfileHead extends StatelessWidget {
     final age = who.length == 1 ? ageOn(who.first.born, now()) : null;
     final rank = who.length == 1 ? who.first.rank : '';
     final narrow = MediaQuery.sizeOf(context).width < 360;
+    final short = isShortWindow(context);
+    final avatar = Avatar(name: person?.name ?? name, data: data, size: short ? 72 : (narrow ? 76 : 88), ring: p.plate, ringWidth: 3);
+    final details = <Widget>[
+      if (kinds.isNotEmpty)
+        Eyebrow(kinds, color: p.accent, maxLines: 2, padding: const EdgeInsets.only(bottom: 8)),
+      // пара — по партнёру на строку, имя целиком, без обрезки
+      Semantics(
+        header: true,
+        child: Text(
+          [for (var i = 0; i < parts.length; i++) i < parts.length - 1 ? '${parts[i]} /' : parts[i]]
+              .join('\n'),
+          style: display(p, parts.length > 1 ? 28 : 34),
+        ),
+      ),
+      if (nation.isNotEmpty || age != null || rank.isNotEmpty) ...[
+        const SizedBox(height: 10),
+        Wrap(
+          spacing: 12,
+          runSpacing: 6,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: [
+            if (nation.isNotEmpty) NationTag(nation, style: PlacingName.codeStyle(p, 15)),
+            if (age != null)
+              Text(
+                yearsWord(age),
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink2),
+              ),
+            if (rank.isNotEmpty) Tag(rank, strong: false),
+          ],
+        ),
+      ],
+    ];
     return Stack(
       children: [
         Positioned.fill(child: IceBackdrop(fadeTo: p.sheet, fadeStart: .3, sparkles: -1)),
@@ -545,42 +577,20 @@ class _ProfileHead extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(22, 40, 22, 4),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Avatar(name: person?.name ?? name, data: data, size: narrow ? 76 : 88, ring: p.plate, ringWidth: 3),
-                const SizedBox(height: 16),
-                if (kinds.isNotEmpty)
-                  Eyebrow(kinds, color: p.accent, maxLines: 2, padding: const EdgeInsets.only(bottom: 8)),
-                // пара — по партнёру на строку, имя целиком, без обрезки
-                Semantics(
-                  header: true,
-                  child: Text(
-                    [for (var i = 0; i < parts.length; i++) i < parts.length - 1 ? '${parts[i]} /' : parts[i]]
-                        .join('\n'),
-                    style: display(p, parts.length > 1 ? 28 : 34),
-                  ),
-                ),
-                if (nation.isNotEmpty || age != null || rank.isNotEmpty) ...[
-                  const SizedBox(height: 10),
-                  Wrap(
-                    spacing: 12,
-                    runSpacing: 6,
-                    crossAxisAlignment: WrapCrossAlignment.center,
+            padding: EdgeInsets.fromLTRB(22, short ? 32 : 40, 22, 4),
+            // телефон боком — фото слева от имени: высоты мало
+            child: short
+                ? Row(
                     children: [
-                      if (nation.isNotEmpty) NationTag(nation, style: PlacingName.codeStyle(p, 15)),
-                      if (age != null)
-                        Text(
-                          yearsWord(age),
-                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink2),
-                        ),
-                      if (rank.isNotEmpty) Tag(rank, strong: false),
+                      avatar,
+                      const SizedBox(width: 18),
+                      Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: details)),
                     ],
+                  )
+                : Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [avatar, const SizedBox(height: 16), ...details],
                   ),
-                ],
-              ],
-            ),
           ),
         ),
       ],

@@ -328,8 +328,32 @@ class Tag extends StatelessWidget {
 
 // ------------------------------------------------------------------ шапка с фотографией льда
 
+// ------------------------------------------------------------------ форма окна
+
+/// Окно шире этого — слева панель разделов, справа колонка с содержимым.
+const wideWindow = 820.0;
+
+/// Лёжащее окно ниже этого — телефон боком: панель разделов узкая слева, шапки в одну строку.
+const shortWindow = 520.0;
+
+/// Телефон боком: высоты мало, каждая строка на счету.
+bool isShortWindow(BuildContext context) {
+  final s = MediaQuery.sizeOf(context);
+  return s.width > s.height && s.height < shortWindow;
+}
+
+/// Где панель разделов: внизу (телефон стоя), узкая слева (телефон боком),
+/// широкая слева (компьютер, планшет).
+enum NavPlace { bottom, rail, side }
+
+NavPlace navPlace(BuildContext context) {
+  if (isShortWindow(context)) return NavPlace.rail;
+  return MediaQuery.sizeOf(context).width >= wideWindow ? NavPlace.side : NavPlace.bottom;
+}
+
 /// Шапка экрана: фото катка (светлое / ночное), фигуристка из иконки, заголовок антиквой.
 /// Высота — не меньше [height]: крупный шрифт шапку растягивает, а не обрезает.
+/// Телефон боком — шапка в одну строку: название, рядом подпись, кнопки справа.
 class IceHero extends StatelessWidget {
   final String eyebrow;
   final String title;
@@ -338,6 +362,9 @@ class IceHero extends StatelessWidget {
   final double height;
   final bool figure;
   final int sparkles;
+
+  /// Кнопка слева вверху («‹ Настройки»).
+  final Widget? leading;
   const IceHero({
     super.key,
     required this.eyebrow,
@@ -347,12 +374,14 @@ class IceHero extends StatelessWidget {
     this.height = 100,
     this.figure = false,
     this.sparkles = 0,
+    this.leading,
   });
 
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     final top = MediaQuery.paddingOf(context).top;
+    if (isShortWindow(context)) return _line(context, p, top);
     return Stack(
       children: [
         Positioned.fill(
@@ -401,6 +430,59 @@ class IceHero extends StatelessWidget {
             right: 10,
             child: Row(mainAxisSize: MainAxisSize.min, children: actions),
           ),
+        if (leading != null) Positioned(top: top + 12, left: 6, child: leading!),
+      ],
+    );
+  }
+
+  /// Одна строка: «Ноябрь 2026», «Фигурное катание  СЕЗОН 2026/27». Название — по базовой линии
+  /// с подписью; не помещается — строка целиком мельче, а не обрезана.
+  Widget _line(BuildContext context, Palette p, double top) {
+    final heading = FittedBox(
+      fit: BoxFit.scaleDown,
+      alignment: Alignment.centerLeft,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.baseline,
+        textBaseline: TextBaseline.alphabetic,
+        children: [
+          Text(title, maxLines: 1, style: display(p, titleSize * .72)),
+          if (eyebrow.isNotEmpty) ...[
+            const SizedBox(width: 12),
+            Eyebrow(eyebrow, color: p.isDark ? p.ink2 : p.accent),
+          ],
+        ],
+      ),
+    );
+    return Stack(
+      children: [
+        Positioned.fill(child: IceBackdrop(fadeTo: p.bg, sparkles: figure ? -1 : sparkles)),
+        if (figure)
+          Positioned(
+            right: 64,
+            top: top + 2,
+            bottom: 0,
+            child: Image.asset(
+              'assets/images/skater.png',
+              fit: BoxFit.contain,
+              alignment: Alignment.bottomRight,
+              color: p.isDark ? Colors.white.withValues(alpha: .13) : Palette.iceBlue.withValues(alpha: .16),
+              colorBlendMode: BlendMode.modulate,
+            ),
+          ),
+        Padding(
+          padding: EdgeInsets.fromLTRB(leading == null ? 20 : 6, top + 8, 10, 6),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 48),
+            child: Row(
+              children: [
+                if (leading != null) ...[leading!, const SizedBox(width: 4)],
+                Expanded(child: heading),
+                ...actions,
+              ],
+            ),
+          ),
+        ),
       ],
     );
   }
@@ -1393,7 +1475,130 @@ class Avatar extends StatelessWidget {
   }
 }
 
-// ------------------------------------------------------------------ нижняя панель
+// ------------------------------------------------------------------ панели разделов
+
+const _navItems = [
+  (CupertinoIcons.square_list, CupertinoIcons.square_list_fill, 'Лента'),
+  (CupertinoIcons.calendar, CupertinoIcons.calendar_today, 'Месяц'),
+  (CupertinoIcons.gear_alt, CupertinoIcons.gear_alt_fill, 'Настройки'),
+];
+
+/// Значок раздела; у «Настроек» — точка, если уведомления ждут разрешения.
+class _NavIcon extends StatelessWidget {
+  final int i;
+  final bool on;
+  final double size;
+  final bool dot;
+  const _NavIcon(this.i, {required this.on, required this.size, required this.dot});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        Icon(on ? _navItems[i].$2 : _navItems[i].$1, size: size, color: on ? p.accent : p.ink3),
+        if (i == tabSettings && dot)
+          Positioned(
+            right: -3,
+            top: -1,
+            child: Container(
+              width: 9,
+              height: 9,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: p.live,
+                border: Border.all(color: p.nav, width: 1.5),
+              ),
+            ),
+          ),
+      ],
+    );
+  }
+}
+
+/// Узкая панель разделов слева — телефон боком: нижняя отняла бы пятую часть высоты.
+/// Пункты по центру высоты — под большим пальцем; слева панель обходит вырез камеры.
+class RailNav extends StatelessWidget {
+  final ValueChanged<int> onTap;
+  final bool settingsDot;
+  const RailNav({super.key, required this.onTap, this.settingsDot = false});
+
+  static const width = 84.0;
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final pad = MediaQuery.paddingOf(context);
+    return ValueListenableBuilder<int>(
+      valueListenable: homeTab,
+      builder: (context, index, _) => Material(
+        color: p.nav,
+        child: Container(
+          width: width + pad.left,
+          decoration: BoxDecoration(
+            color: p.nav,
+            border: Border(right: BorderSide(color: p.plateLine, width: 1)),
+          ),
+          padding: EdgeInsets.fromLTRB(pad.left, pad.top, 0, pad.bottom),
+          child: LayoutBuilder(
+            builder: (context, c) => SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: c.maxHeight),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    for (var i = 0; i < _navItems.length; i++)
+                      Semantics(
+                        selected: i == index,
+                        button: true,
+                        child: InkWell(
+                          onTap: () => onTap(i),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(4, 8, 4, 8),
+                            child: Column(
+                              children: [
+                                AnimatedContainer(
+                                  duration: const Duration(milliseconds: 160),
+                                  width: 56,
+                                  height: 32,
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(16),
+                                    color: i == index
+                                        ? p.accent.withValues(alpha: p.isDark ? .18 : .12)
+                                        : Colors.transparent,
+                                  ),
+                                  child: _NavIcon(i, on: i == index, size: 22, dot: settingsDot),
+                                ),
+                                const SizedBox(height: 4),
+                                FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: Text(
+                                    _navItems[i].$3,
+                                    maxLines: 1,
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      letterSpacing: .2,
+                                      fontWeight: i == index ? FontWeight.w700 : FontWeight.w500,
+                                      color: i == index ? p.accent : p.ink2,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 class IceNav extends StatelessWidget {
   final int index;
@@ -1404,11 +1609,7 @@ class IceNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    const items = [
-      (CupertinoIcons.square_list, CupertinoIcons.square_list_fill, 'Лента'),
-      (CupertinoIcons.calendar, CupertinoIcons.calendar_today, 'Месяц'),
-      (CupertinoIcons.gear_alt, CupertinoIcons.gear_alt_fill, 'Настройки'),
-    ];
+    const items = _navItems;
     return Container(
       decoration: BoxDecoration(
         color: p.nav,
@@ -1432,26 +1633,7 @@ class IceNav extends StatelessWidget {
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Stack(
-                              clipBehavior: Clip.none,
-                              children: [
-                                Icon(i == index ? items[i].$2 : items[i].$1, size: 23, color: i == index ? p.accent : p.ink3),
-                                if (i == tabSettings && settingsDot)
-                                  Positioned(
-                                    right: -3,
-                                    top: -1,
-                                    child: Container(
-                                      width: 9,
-                                      height: 9,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: p.live,
-                                        border: Border.all(color: p.nav, width: 1.5),
-                                      ),
-                                    ),
-                                  ),
-                              ],
-                            ),
+                            _NavIcon(i, on: i == index, size: 23, dot: settingsDot),
                             const SizedBox(height: 4),
                             Text(
                               items[i].$3,
@@ -1486,11 +1668,7 @@ class SideNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    const items = [
-      (CupertinoIcons.square_list, CupertinoIcons.square_list_fill, 'Лента'),
-      (CupertinoIcons.calendar, CupertinoIcons.calendar_today, 'Месяц'),
-      (CupertinoIcons.gear_alt, CupertinoIcons.gear_alt_fill, 'Настройки'),
-    ];
+    const items = _navItems;
     return ValueListenableBuilder<int>(
       valueListenable: homeTab,
       builder: (context, index, _) => Material(
@@ -1562,33 +1740,7 @@ class SideNav extends StatelessWidget {
                           ),
                           child: Row(
                             children: [
-                              Stack(
-                                clipBehavior: Clip.none,
-                                children: [
-                                  Icon(
-                                    i == index ? items[i].$2 : items[i].$1,
-                                    size: 21,
-                                    color: i == index ? p.accent : p.ink3,
-                                  ),
-                                  if (i == tabSettings && settingsDot)
-                                    Positioned(
-                                      right: -3,
-                                      top: -1,
-                                      child: Container(
-                                        width: 9,
-                                        height: 9,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: p.live,
-                                          border: Border.all(
-                                            color: p.nav,
-                                            width: 1.5,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                ],
-                              ),
+                              _NavIcon(i, on: i == index, size: 21, dot: settingsDot),
                               const SizedBox(width: 13),
                               Text(
                                 items[i].$3,

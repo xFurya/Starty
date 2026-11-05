@@ -852,34 +852,30 @@ class _SettingsPage extends StatelessWidget {
                 child: CustomScrollView(
                   slivers: [
                     SliverToBoxAdapter(
-                      child: Stack(
-                        children: [
-                          IceHero(eyebrow: '', title: title, sparkles: 2),
-                          Positioned(
-                            top: 12,
-                            left: 6,
-                            child: TextButton.icon(
-                              onPressed: () => _leave(context),
-                              style: TextButton.styleFrom(
-                                foregroundColor: p.accent,
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 10,
-                                ),
-                              ),
-                              icon: const Icon(
-                                CupertinoIcons.chevron_back,
-                                size: 18,
-                              ),
-                              label: const Text(
-                                'Настройки',
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
+                      child: IceHero(
+                        eyebrow: '',
+                        title: title,
+                        sparkles: 2,
+                        leading: TextButton.icon(
+                          onPressed: () => _leave(context),
+                          style: TextButton.styleFrom(
+                            foregroundColor: p.accent,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 10,
                             ),
                           ),
-                        ],
+                          icon: const Icon(
+                            CupertinoIcons.chevron_back,
+                            size: 18,
+                          ),
+                          label: const Text(
+                            'Настройки',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                     ...slivers,
