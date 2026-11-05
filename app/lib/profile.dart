@@ -1,0 +1,914 @@
+// Профиль спортсмена: справка, титулы, личные рекорды, музыка и результаты. Файл профиля
+// (site/p/<ключ>.json) собирает сервер из биографий ISU и картотеки ФФККР (scraper/profiles.py);
+// чего в источниках нет, того нет и здесь — ни строки с догадкой.
+import 'dart:async';
+import 'dart:convert';
+
+import 'package:flutter/cupertino.dart' show CupertinoIcons;
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+import 'countries.dart';
+import 'data.dart';
+import 'flags.dart';
+import 'palette.dart';
+import 'sheets.dart' show SwipeSurface;
+import 'ui.dart';
+import 'views.dart' show PlacingName;
+
+// ------------------------------------------------------------------ данные
+
+class ProfileWho {
+  final String name, born, place, club, rank, region;
+  final int? height, since;
+  final List<String> former;
+  const ProfileWho({
+    required this.name,
+    this.born = '',
+    this.place = '',
+    this.club = '',
+    this.rank = '',
+    this.region = '',
+    this.height,
+    this.since,
+    this.former = const [],
+  });
+
+  factory ProfileWho.fromJson(Map j) => ProfileWho(
+    name: _s(j['n']),
+    born: _s(j['born']),
+    place: _s(j['place']),
+    club: _s(j['club']),
+    rank: _s(j['rank']),
+    region: _s(j['region']),
+    height: j['h'] is int ? j['h'] as int : null,
+    since: j['since'] is int ? j['since'] as int : null,
+    former: _list(j['former']),
+  );
+}
+
+/// Оценка: сумма или сегмент (s: total, sp, fs), баллы, дата и турнир.
+class ProfileScore {
+  final String seg, points, date, event;
+  const ProfileScore(this.seg, this.points, this.date, this.event);
+  factory ProfileScore.fromJson(Map j) => ProfileScore(_s(j['s']), _s(j['pts']), _s(j['d']), _s(j['ev']));
+}
+
+/// Пьедестал главного турнира.
+class ProfileTitle {
+  final String event, kind, season;
+  final int place;
+  const ProfileTitle(this.event, this.kind, this.place, this.season);
+}
+
+/// Результат на турнире: место числом или как у ISU («WD»).
+class ProfileResult {
+  final String event, kind, place;
+  const ProfileResult(this.event, this.kind, this.place);
+  int? get placeNumber => int.tryParse(place);
+}
+
+class ProfileGroup {
+  final String name;
+  final List<ProfileResult> rows;
+  const ProfileGroup(this.name, this.rows);
+}
+
+/// Старт сезона из картотеки ФФККР: место как там написано («8 (МС)»).
+class ProfileStart {
+  final String season, event, place;
+  const ProfileStart(this.season, this.event, this.place);
+}
+
+class Profile {
+  final String name;
+  final List<ProfileWho> who;
+  final List<String> coach, choreo, formerCoach;
+  final String musicSeason;
+  final List<String> musicShort, musicFree;
+  final List<ProfileScore> best, seasonBest;
+  final List<ProfileTitle> titles;
+  final List<ProfileGroup> results;
+  final List<ProfileStart> season;
+  final List<String> sources;
+
+  /// Когда сервер последний раз сверил справку с источниками: «2026-11-05».
+  final String checked;
+
+  const Profile({
+    required this.name,
+    this.who = const [],
+    this.coach = const [],
+    this.choreo = const [],
+    this.formerCoach = const [],
+    this.musicSeason = '',
+    this.musicShort = const [],
+    this.musicFree = const [],
+    this.best = const [],
+    this.seasonBest = const [],
+    this.titles = const [],
+    this.results = const [],
+    this.season = const [],
+    this.sources = const [],
+    this.checked = '',
+  });
+
+  factory Profile.fromJson(Map j) {
+    final music = j['music'] is Map ? j['music'] as Map : const {};
+    List<Map> maps(Object? v) => [
+      for (final x in (v is List ? v : const []))
+        if (x is Map) x,
+    ];
+    return Profile(
+      name: _s(j['n']),
+      who: [for (final w in maps(j['who'])) ProfileWho.fromJson(w)],
+      coach: _list(j['coach']),
+      choreo: _list(j['choreo']),
+      formerCoach: _list(j['fcoach']),
+      musicSeason: _s(music['season']),
+      musicShort: _list(music['sp']),
+      musicFree: _list(music['fs']),
+      best: [for (final x in maps(j['pb'])) ProfileScore.fromJson(x)],
+      seasonBest: [for (final x in maps(j['sb'])) ProfileScore.fromJson(x)],
+      titles: [
+        for (final x in maps(j['titles']))
+          if (x['pl'] is int) ProfileTitle(_s(x['ev']), _s(x['k']), x['pl'] as int, _s(x['y'])),
+      ],
+      results: [
+        for (final g in maps(j['res']))
+          ProfileGroup(_s(g['g']), [for (final r in maps(g['r'])) ProfileResult(_s(r['ev']), _s(r['k']), _s(r['pl']))]),
+      ],
+      season: [for (final x in maps(j['season'])) ProfileStart(_s(x['s']), _s(x['ev']), _s(x['pl']))],
+      sources: _list(j['src']),
+      checked: _s(j['at']),
+    );
+  }
+
+  /// Танцоры: сегменты называются ритм-танцем и произвольным танцем.
+  bool get dance =>
+      results.any((g) => g.rows.any((r) => r.kind.toLowerCase() == 'd')) ||
+      titles.any((t) => t.kind.toLowerCase() == 'd');
+}
+
+String _s(Object? v) => v == null ? '' : '$v'.trim();
+List<String> _list(Object? v) => [
+  for (final x in (v is List ? v : const []))
+    if (_s(x).isNotEmpty) _s(x),
+];
+
+// ------------------------------------------------------------------ загрузка
+
+String profileUrl(String key) => Uri.parse(dataUrl).resolve('../p/$key.json').toString();
+
+final _loaded = <String, Profile>{};
+
+/// Загрузка профиля по ключу: null — файла нет (404), ошибка сети — исключение. В памяти держится
+/// до конца работы приложения. В тестах подменяется.
+Future<Profile?> Function(String key) profileLoader = _load;
+
+Future<Profile?> _load(String key) async {
+  final hit = _loaded[key];
+  if (hit != null) return hit;
+  final r = await http.get(Uri.parse(profileUrl(key))).timeout(const Duration(seconds: 20));
+  if (r.statusCode == 404) return null;
+  if (r.statusCode != 200) throw http.ClientException('HTTP ${r.statusCode}');
+  final p = Profile.fromJson(jsonDecode(utf8.decode(r.bodyBytes)) as Map);
+  _loaded[key] = p;
+  return p;
+}
+
+// ------------------------------------------------------------------ слова
+
+const _monthsGen = [
+  'января',
+  'февраля',
+  'марта',
+  'апреля',
+  'мая',
+  'июня',
+  'июля',
+  'августа',
+  'сентября',
+  'октября',
+  'ноября',
+  'декабря',
+];
+
+/// «2007-06-05» → «5 июня 2007»; непонятное — как есть.
+String profileDate(String iso) {
+  final m = RegExp(r'^(\d{4})-(\d\d)-(\d\d)$').firstMatch(iso);
+  if (m == null) return iso;
+  return '${int.parse(m[3]!)}$nb${_monthsGen[int.parse(m[2]!) - 1]} ${m[1]}';
+}
+
+/// Полных лет на [at]; дата непонятна — null.
+int? ageOn(String born, DateTime at) {
+  final b = DateTime.tryParse(born);
+  if (b == null || born.length != 10) return null;
+  var a = at.year - b.year;
+  if (at.month < b.month || (at.month == b.month && at.day < b.day)) a--;
+  return a < 0 ? null : a;
+}
+
+String yearsWord(int n) => '$n$nb${plural(n, 'год', 'года', 'лет')}';
+
+String segLabel(String seg, {required bool dance}) => switch (seg) {
+  'total' => 'Сумма',
+  'sp' => dance ? 'Ритм-танец' : 'Короткая программа',
+  'fs' => dance ? 'Произвольный танец' : 'Произвольная программа',
+  _ => seg,
+};
+
+/// Сезон по дате оценки: с июля — новый. «2026-10-03» → «2026/27».
+String seasonOfDate(String iso) {
+  final d = DateTime.tryParse(iso);
+  if (d == null) return '';
+  final y = d.month >= 7 ? d.year : d.year - 1;
+  return '$y/${((y + 1) % 100).toString().padLeft(2, '0')}';
+}
+
+/// «8 (МС)» → (8, «МС»); без числа впереди — (null, как есть).
+(int?, String) splitPlace(String raw) {
+  final m = RegExp(r'^(\d+)\s*(?:\((.*)\))?\s*$').firstMatch(raw.trim());
+  if (m == null) return (null, raw.trim());
+  return (int.parse(m[1]!), (m[2] ?? '').trim());
+}
+
+/// Подпись вида у строки турнира — только когда вид не ясен: у человека несколько дисциплин
+/// ([multi]) или юниорский старт, в названии которого юниоры не названы.
+String kindNote(String event, String kind, {required bool multi}) {
+  final line = kindsLine(kind);
+  if (line.isEmpty) return '';
+  final junior = kind != kind.toLowerCase();
+  final said = RegExp(r'юниор|первенство|^jgp\b', caseSensitive: false).hasMatch(event);
+  if (!multi && (!junior || said)) return '';
+  return cap(line);
+}
+
+String _sourcesLine(List<String> src, String checked) {
+  final who = src.isEmpty
+      ? ''
+      : src.length == 1
+      ? src.first
+      : '${src.sublist(0, src.length - 1).join(', ')} и ${src.last}';
+  final when = checked.isEmpty ? '' : ' на ${profileDate(checked)}';
+  return who.isEmpty ? '' : 'По данным $who$when';
+}
+
+// ------------------------------------------------------------------ лист
+
+/// Профиль спортсмена листом поверх текущего экрана. [name] — как в данных (пара — одной записью).
+void showProfile(BuildContext context, String name, Schedule? data) {
+  showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,
+    useSafeArea: true,
+    enableDrag: false,
+    builder: (c) => SwipeSurface(
+      top: .92,
+      builder: (c, scroll) => ProfileSheet(name: name, data: data, scrollController: scroll),
+    ),
+  );
+}
+
+/// Спортсмен, которого можно открыть: он есть в справочнике сборщика.
+bool hasProfile(Schedule? data, String name) => data?.personOf(name) != null;
+
+/// Строка или фото спортсмена, по нажатию — его профиль. Человека нет в справочнике — как было,
+/// без пустого нажатия. Рябь рисуется поверх плашки, а не под её заливкой.
+class ProfileTap extends StatelessWidget {
+  final String name;
+  final Schedule? data;
+  final Widget child;
+  final BorderRadius? radius;
+
+  /// Что читать вслух: по умолчанию — имя и «профиль».
+  final String? label;
+  const ProfileTap({super.key, required this.name, required this.data, required this.child, this.radius, this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    if (!hasProfile(data, name)) return child;
+    return Semantics(
+      button: true,
+      label: label,
+      hint: 'открыть профиль',
+      child: Material(
+        type: MaterialType.transparency,
+        child: InkWell(onTap: () => showProfile(context, name, data), borderRadius: radius, child: child),
+      ),
+    );
+  }
+}
+
+class ProfileSheet extends StatefulWidget {
+  final String name;
+  final Schedule? data;
+  final ScrollController? scrollController;
+  const ProfileSheet({super.key, required this.name, required this.data, this.scrollController});
+  @override
+  State<ProfileSheet> createState() => _ProfileSheetState();
+}
+
+class _ProfileSheetState extends State<ProfileSheet> {
+  Future<Profile?>? _future;
+
+  Person? get _person => widget.data?.personOf(widget.name);
+
+  @override
+  void initState() {
+    super.initState();
+    _start();
+  }
+
+  void _start() {
+    final key = _person?.profile;
+    _future = key == null ? null : profileLoader(key);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return ConstrainedBox(
+      constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * .92),
+      child: SheetScroll(
+        controller: widget.scrollController,
+        child: FutureBuilder<Profile?>(
+          future: _future,
+          builder: (context, snap) {
+            final pr = snap.data;
+            return Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children:
+                  [
+                        _ProfileHead(name: widget.name, person: _person, data: widget.data, profile: pr),
+                        if (_future == null)
+                          _section(context, 'Справка', const _Note('Справки о спортсмене пока нет'))
+                        else if (snap.connectionState != ConnectionState.done)
+                          _section(context, 'Справка', const _Loading())
+                        else if (snap.hasError)
+                          _section(
+                            context,
+                            'Справка',
+                            _Note(
+                              'Справка не загрузилась: нет связи с сервером',
+                              action: 'Повторить',
+                              onAction: () => setState(_start),
+                            ),
+                          )
+                        else if (pr == null)
+                          _section(context, 'Справка', const _Note('Справки о спортсмене пока нет'))
+                        else
+                          ..._body(context, pr),
+                        SizedBox(height: 26 + MediaQuery.paddingOf(context).bottom),
+                      ]
+                      .map(
+                        (w) => w is SizedBox
+                            ? w
+                            : DefaultTextStyle.merge(
+                                style: TextStyle(color: p.ink),
+                                child: w,
+                              ),
+                      )
+                      .toList(),
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  List<Widget> _body(BuildContext context, Profile pr) {
+    final p = Palette.of(context);
+    final facts = _facts(pr);
+    // дисциплины без учёта возраста: больше одной — вид подписан у каждой строки
+    final multi =
+        ({
+          for (final g in pr.results)
+            for (final r in g.rows) r.kind.toLowerCase(),
+          for (final t in pr.titles) t.kind.toLowerCase(),
+        }..remove('')).length >
+        1;
+    final sbSeason = pr.seasonBest.isEmpty ? '' : seasonOfDate(pr.seasonBest.first.date);
+    final src = _sourcesLine(pr.sources, pr.checked);
+    return [
+      if (pr.titles.isNotEmpty)
+        _section(
+          context,
+          'Титулы',
+          _MedalList(
+            strong: true,
+            rows: [
+              for (final t in pr.titles)
+                (place: t.place, mark: '${t.place}', event: t.event, note: kindNote(t.event, t.kind, multi: multi)),
+            ],
+          ),
+        ),
+      if (pr.best.isNotEmpty) _section(context, 'Личные рекорды', _Scores(list: pr.best, dance: pr.dance)),
+      if (pr.seasonBest.isNotEmpty)
+        _section(
+          context,
+          sbSeason.isEmpty ? 'Лучшее в сезоне' : 'Лучшее в сезоне $sbSeason',
+          _Scores(list: pr.seasonBest, dance: pr.dance),
+        ),
+      if (facts.isNotEmpty) _section(context, 'Справка', Plate(child: Column(children: facts))),
+      if (pr.musicShort.isNotEmpty || pr.musicFree.isNotEmpty)
+        _section(
+          context,
+          pr.musicSeason.isEmpty ? 'Музыка' : 'Музыка сезона ${pr.musicSeason}',
+          Plate(
+            child: Column(
+              children: [
+                if (pr.musicShort.isNotEmpty)
+                  _Music(
+                    label: segLabel('sp', dance: pr.dance),
+                    lines: pr.musicShort,
+                  ),
+                if (pr.musicShort.isNotEmpty && pr.musicFree.isNotEmpty) const Hairline(),
+                if (pr.musicFree.isNotEmpty)
+                  _Music(
+                    label: segLabel('fs', dance: pr.dance),
+                    lines: pr.musicFree,
+                  ),
+              ],
+            ),
+          ),
+        ),
+      if (pr.season.isNotEmpty)
+        _section(
+          context,
+          pr.season.first.season.isEmpty ? 'Старты сезона' : 'Старты сезона ${pr.season.first.season}',
+          _Season(list: pr.season),
+        ),
+      for (var i = 0; i < pr.results.length; i++)
+        _section(
+          context,
+          pr.results[i].name,
+          _MedalList(
+            rows: [
+              for (final r in pr.results[i].rows)
+                (place: r.placeNumber, mark: r.place, event: r.event, note: kindNote(r.event, r.kind, multi: multi)),
+            ],
+          ),
+          top: i == 0 ? 24 : 18,
+        ),
+      if (pr.titles.isEmpty && pr.best.isEmpty && facts.isEmpty && pr.results.isEmpty && pr.season.isEmpty)
+        _section(context, 'Справка', const _Note('Справки о спортсмене пока нет')),
+      if (src.isNotEmpty)
+        Padding(
+          padding: const EdgeInsets.fromLTRB(22, 18, 22, 0),
+          child: Text(src, style: TextStyle(fontSize: 13, color: p.ink2, height: 1.35)),
+        ),
+    ];
+  }
+
+  /// Строки справки. У пары — по партнёру (имя подзаголовком), тренеры общие — ниже.
+  List<Widget> _facts(Profile pr) {
+    final out = <Widget>[];
+    void add(Widget w) {
+      if (out.isNotEmpty) out.add(const Hairline());
+      out.add(w);
+    }
+
+    final pair = pr.who.length > 1;
+    final today = now();
+    for (final w in pr.who) {
+      final rows = <Widget>[];
+      void row(String label, String value) {
+        if (value.isEmpty) return;
+        if (rows.isNotEmpty) rows.add(const Hairline());
+        rows.add(_Fact(label: label, lines: [value]));
+      }
+
+      final age = ageOn(w.born, today);
+      row('Дата рождения', w.born.isEmpty ? '' : '${profileDate(w.born)}${age == null ? '' : ', ${yearsWord(age)}'}');
+      row('Место рождения', w.place);
+      row('Рост', w.height == null ? '' : '${w.height}$nbсм');
+      row('Катается с', w.since == null ? '' : '${w.since}$nbгода');
+      row('Звание', w.rank);
+      row('Регион', w.region);
+      row('Клуб', w.club);
+      row(w.former.length > 1 ? 'Прежние партнёры' : 'Прежний партнёр', w.former.join(', '));
+      if (rows.isEmpty) continue;
+      if (pair) {
+        if (out.isNotEmpty) out.add(const Hairline());
+        out.add(_WhoHead(w.name));
+      } else if (out.isNotEmpty) {
+        out.add(const Hairline());
+      }
+      out.addAll(rows);
+    }
+    if (pr.coach.isNotEmpty) add(_Fact(label: pr.coach.length > 1 ? 'Тренеры' : 'Тренер', lines: pr.coach));
+    if (pr.choreo.isNotEmpty) add(_Fact(label: pr.choreo.length > 1 ? 'Хореографы' : 'Хореограф', lines: pr.choreo));
+    if (pr.formerCoach.isNotEmpty) add(_Fact(label: 'Прежние тренеры', lines: pr.formerCoach));
+    return out;
+  }
+
+  /// Раздел листа: подпись и плашка.
+  Widget _section(BuildContext context, String label, Widget child, {double top = 24}) => Padding(
+    padding: EdgeInsets.only(top: top),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Eyebrow(label, padding: const EdgeInsets.fromLTRB(22, 0, 22, 10)),
+        child,
+      ],
+    ),
+  );
+}
+
+/// Шапка: лёд, крупное фото, виды, имя антиквой, страна и возраст.
+class _ProfileHead extends StatelessWidget {
+  final String name;
+  final Person? person;
+  final Schedule? data;
+  final Profile? profile;
+  const _ProfileHead({required this.name, required this.person, required this.data, required this.profile});
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final shown = displayName(person?.name ?? name);
+    final parts = shown.split(' / ').map((x) => x.trim()).toList();
+    final kinds = kindsLine(person?.kinds ?? '');
+    final nation = person?.nation ?? '';
+    final who = profile?.who ?? const <ProfileWho>[];
+    // возраст — у одиночника и только по дате рождения из справки
+    final age = who.length == 1 ? ageOn(who.first.born, now()) : null;
+    final rank = who.length == 1 ? who.first.rank : '';
+    final narrow = MediaQuery.sizeOf(context).width < 360;
+    return Stack(
+      children: [
+        Positioned.fill(child: IceBackdrop(fadeTo: p.sheet, fadeStart: .3, sparkles: -1)),
+        const Positioned(top: 0, left: 0, right: 0, child: SheetSparkles()),
+        SizedBox(
+          width: double.infinity,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(22, 40, 22, 4),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Avatar(name: person?.name ?? name, data: data, size: narrow ? 76 : 88, ring: p.plate, ringWidth: 3),
+                const SizedBox(height: 16),
+                if (kinds.isNotEmpty)
+                  Eyebrow(kinds, color: p.accent, maxLines: 2, padding: const EdgeInsets.only(bottom: 8)),
+                // пара — по партнёру на строку, имя целиком, без обрезки
+                Semantics(
+                  header: true,
+                  child: Text(
+                    [for (var i = 0; i < parts.length; i++) i < parts.length - 1 ? '${parts[i]} /' : parts[i]]
+                        .join('\n'),
+                    style: display(p, parts.length > 1 ? 28 : 34),
+                  ),
+                ),
+                if (nation.isNotEmpty || age != null || rank.isNotEmpty) ...[
+                  const SizedBox(height: 10),
+                  Wrap(
+                    spacing: 12,
+                    runSpacing: 6,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      if (nation.isNotEmpty) NationTag(nation, style: PlacingName.codeStyle(p, 15)),
+                      if (age != null)
+                        Text(
+                          yearsWord(age),
+                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink2),
+                        ),
+                      if (rank.isNotEmpty) Tag(rank, strong: false),
+                    ],
+                  ),
+                ],
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// Строка справки: подпись слева, значение справа (у тренеров — по человеку на строку).
+class _Fact extends StatelessWidget {
+  final String label;
+  final List<String> lines;
+  const _Fact({required this.label, required this.lines});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return LayoutBuilder(
+      builder: (context, c) => Padding(
+        padding: const EdgeInsets.fromLTRB(16, 11, 16, 11),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.baseline,
+          textBaseline: TextBaseline.alphabetic,
+          children: [
+            SizedBox(
+              width: (c.maxWidth - 32 - 12) * .4,
+              child: Text(label, style: TextStyle(fontSize: 14, color: p.ink2, height: 1.35)),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  for (final l in lines)
+                    Text(
+                      l,
+                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink, height: 1.35),
+                    ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Музыка программы: подпись мелкими прописными, ниже — произведения по строке.
+class _Music extends StatelessWidget {
+  final String label;
+  final List<String> lines;
+  const _Music({required this.label, required this.lines});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
+      child: SizedBox(
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Eyebrow(label),
+            for (final l in lines)
+              Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: Text(
+                  l,
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: p.ink, height: 1.35),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Имя партнёра над его строками справки.
+class _WhoHead extends StatelessWidget {
+  final String name;
+  const _WhoHead(this.name);
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 14, 16, 0),
+      child: SizedBox(
+        width: double.infinity,
+        child: Text(displayName(name), style: display(p, 20)),
+      ),
+    );
+  }
+}
+
+/// Строка списка мест: место, турнир и, если нужно, вид.
+typedef _Placed = ({int? place, String mark, String event, String note});
+
+/// Список мест (титулы, результаты): медаль или номер места, турнир; длинный — первые шесть
+/// и «Ещё N», чтобы лист не уходил в бесконечную прокрутку.
+class _MedalList extends StatefulWidget {
+  final List<_Placed> rows;
+  final bool strong;
+  const _MedalList({required this.rows, this.strong = false});
+  @override
+  State<_MedalList> createState() => _MedalListState();
+}
+
+class _MedalListState extends State<_MedalList> {
+  static const _first = 6;
+  bool all = false;
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final rows = widget.rows;
+    // «Ещё 1» не прячет ничего: семь строк показываем целиком
+    final list = all || rows.length <= _first + 1 ? rows : rows.sublist(0, _first);
+    final more = rows.length - list.length;
+    return Plate(
+      child: Column(
+        children: [
+          for (var i = 0; i < list.length; i++) ...[
+            if (i > 0) const Hairline(indent: 54),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(14, 10, 16, 10),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 28,
+                    child: list[i].place != null
+                        ? Medal(list[i].place!, size: 28)
+                        : Text(
+                            list[i].mark.isEmpty ? '—' : list[i].mark,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: p.ink2),
+                          ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          list[i].event,
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: widget.strong ? FontWeight.w700 : FontWeight.w600,
+                            color: p.ink,
+                            height: 1.3,
+                          ),
+                        ),
+                        if (list[i].note.isNotEmpty)
+                          Text(list[i].note, style: TextStyle(fontSize: 13, color: p.ink2, height: 1.3)),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+          if (more > 0) ...[
+            const Hairline(indent: 54),
+            Semantics(
+              button: true,
+              child: InkWell(
+                onTap: () => setState(() => all = true),
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(minHeight: 48),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(54, 12, 16, 12),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'Ещё $more',
+                            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.accent),
+                          ),
+                        ),
+                        Icon(CupertinoIcons.chevron_down, size: 16, color: p.accent),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+/// Личные рекорды или лучшее в сезоне: сегмент и турнир слева, баллы крупно справа.
+class _Scores extends StatelessWidget {
+  final List<ProfileScore> list;
+  final bool dance;
+  const _Scores({required this.list, required this.dance});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Plate(
+      child: Column(
+        children: [
+          for (var i = 0; i < list.length; i++) ...[
+            if (i > 0) const Hairline(),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Eyebrow(segLabel(list[i].seg, dance: dance)),
+                        const SizedBox(height: 4),
+                        Text(list[i].event, style: TextStyle(fontSize: 14, color: p.ink, height: 1.3)),
+                        if (list[i].date.isNotEmpty)
+                          Text(profileDate(list[i].date), style: TextStyle(fontSize: 13, color: p.ink2, height: 1.3)),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Text(
+                    list[i].points,
+                    style: clock(
+                      list[i].seg == 'total' ? p.ink : p.ink2,
+                      list[i].seg == 'total' ? 26 : 22,
+                      weight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+/// Старты сезона из картотеки ФФККР: турнир, категория, место.
+class _Season extends StatelessWidget {
+  final List<ProfileStart> list;
+  const _Season({required this.list});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Plate(
+      child: Column(
+        children: [
+          for (var i = 0; i < list.length; i++) ...[
+            if (i > 0) const Hairline(),
+            Builder(
+              builder: (context) {
+                final (place, cat) = splitPlace(list[i].place);
+                return Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 11, 16, 11),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              list[i].event,
+                              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink, height: 1.3),
+                            ),
+                            if (place != null && cat.isNotEmpty)
+                              Text('категория $cat', style: TextStyle(fontSize: 13, color: p.ink2, height: 1.3)),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      if (place != null)
+                        Medal(place, size: 28)
+                      else
+                        Text(cat.isEmpty ? '—' : cat, style: TextStyle(fontSize: 13.5, color: p.ink2)),
+                    ],
+                  ),
+                );
+              },
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+class _Loading extends StatelessWidget {
+  const _Loading();
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Plate(
+      padding: const EdgeInsets.fromLTRB(18, 18, 18, 18),
+      child: Row(
+        children: [
+          SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2, color: p.accent)),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Text('Загружаю справку', style: TextStyle(fontSize: 15, color: p.ink2)),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _Note extends StatelessWidget {
+  final String text;
+  final String? action;
+  final VoidCallback? onAction;
+  const _Note(this.text, {this.action, this.onAction});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Plate(
+      padding: const EdgeInsets.fromLTRB(18, 18, 18, 18),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(text, style: TextStyle(fontSize: 15, color: p.ink2, height: 1.35)),
+          if (action != null) ...[
+            const SizedBox(height: 12),
+            SheetButton(label: action!, onTap: onAction, compact: true),
+          ],
+        ],
+      ),
+    );
+  }
+}

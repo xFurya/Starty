@@ -245,7 +245,7 @@ def source_url(url):
 REASONS = {}  # адрес → причина отбраковки в этом сборе (для photo_skip)
 
 
-def make2(site, url):
+def make2(site, url, strict=None):
     """(путь миниатюры относительно сайта или None, итог): ok; unsure — на снимке не понять, кто это
     (только Викисклад), такой адрес больше не пробуем; fail — сеть, битый файл или нечем обработать,
     адрес в порядке, повторим в следующий раз."""
@@ -260,8 +260,8 @@ def make2(site, url):
         return None, "fail"
     os.makedirs(os.path.dirname(dest), exist_ok=True)
     tmp = dest + ".tmp"
-    # не портрет (Викисклад) — только с найденным лицом, без кадра «по пропорциям»
-    strict = _wiki(url)
+    # не портрет (Викисклад, найденное вручную) — только с найденным лицом, без кадра «по пропорциям»
+    strict = _wiki(url) if strict is None else strict
     status = "fail"
     try:
         if _pil(raw, tmp, strict) or (not strict and _magick(raw, tmp)):
@@ -334,6 +334,28 @@ def save_book(path, book):
 SICK_AFTER = 6  # столько отказов подряд — сайт на этот сбор откладываем
 WIKI_PRIO = 3  # с этого приоритета — Викиданные/Викисклад: строгий контроль личности и портрета
 BOOT_PRIO = 3  # приоритет фото, о котором память ничего не знает
+# Найденное вручную в открытых источниках (data/photo_hand.json): ниже всех, поэтому фото из реестра
+# (картотека и сборная ФФККР, ISU) или из Викиданных заменяет его, как только появится. Проверка
+# портрета — как у Викисклада: одно лицо, крупно, без головного убора.
+HAND_PRIO = 9
+HAND = os.path.join(ROOT, "data", "photo_hand.json")
+
+
+def load_hand(path=None):
+    """[(имя, адрес)] из data/photo_hand.json: {«Имя Фамилия»: {"u": адрес или список адресов фото,
+    "src": страница, где нашли}}. Адресов несколько — строгая проверка портрета часть отбросит."""
+    try:
+        with open(path or HAND, encoding="utf-8") as f:
+            d = json.load(f)
+    except (OSError, ValueError):
+        return []
+    out = []
+    for n, v in sorted(d.items()):
+        urls = v.get("u") if isinstance(v, dict) else None
+        for u in [urls] if isinstance(urls, str) else urls or []:
+            if isinstance(u, str) and u.startswith("https://"):
+                out.append((n, u))
+    return out
 SKIP_V = "3|"  # версия правил отбраковки; «2|» — прежние (лиц несколько, мелкое) — всё ещё действуют
 SKIP_OLD = ("2|",)
 WHY = " # "  # адрес и причина в одной строке: «3|адрес # причина»
@@ -517,7 +539,7 @@ def collect(site, want, raw, prev_photos, names, book_path, skip_path, log=print
                 continue
             if usable(url) is False:  # None — проверить не удалось (429 на HEAD), сама загрузка решит
                 continue
-            rel, status = make2(site, url)
+            rel, status = make2(site, url, strict=prio >= WIKI_PRIO or _wiki(url))
             note(url, status != "fail")
             if status == "fail":
                 stats["net"] += 1
@@ -529,7 +551,7 @@ def collect(site, want, raw, prev_photos, names, book_path, skip_path, log=print
                 if url in REASONS:
                     reasons[url] = REASONS[url]
                 stats["unsure"] += 1
-            elif not entry and not _wiki(url):
+            elif not entry and prio < WIKI_PRIO and not _wiki(url):
                 got = (prio, url, url)  # миниатюру не собрать — пока адрес оригинала
                 break
         if got:

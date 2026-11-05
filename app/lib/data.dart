@@ -766,6 +766,16 @@ class Schedule {
   /// Все имена для поиска: справочник, список сборщика и следимые.
   Set<String> get searchable => {...people.keys, ...roster, ...watchlist};
 
+  /// Человек из справочника по имени как в протоколе: «Kaori SAKAMOTO» — это «Kaori Sakamoto».
+  Person? personOf(String name) {
+    final exact = people[name];
+    if (exact != null) return exact;
+    final byNorm = _byNorm ??= {for (final p in people.values) norm(p.name): p};
+    return byNorm[norm(name.trim())];
+  }
+
+  Map<String, Person>? _byNorm;
+
   String? photoOf(String name) {
     final p = photos[name];
     if (p == null || p.isEmpty) return null;
@@ -791,7 +801,13 @@ class Schedule {
       roster: List<String>.from(j['roster'] ?? const []),
       people: {
         for (final p in (j['people'] as List? ?? const []))
-          if (p is Map && p['n'] is String) '${p['n']}': Person('${p['n']}', '${p['c'] ?? ''}', '${p['k'] ?? ''}'),
+          if (p is Map && p['n'] is String)
+            '${p['n']}': Person(
+              '${p['n']}',
+              '${p['c'] ?? ''}',
+              '${p['k'] ?? ''}',
+              profile: p['p'] is String && (p['p'] as String).isNotEmpty ? p['p'] as String : null,
+            ),
       },
       epoch: j['epoch'] is int ? j['epoch'] as int : 0,
       factsVersion: j['facts_version'] == null ? null : '${j['facts_version']}',
@@ -807,7 +823,9 @@ class Schedule {
     'upcoming': [for (final u in upcoming) u.toJson()],
     'watchlist': watchlist,
     'roster': roster,
-    'people': [for (final p in people.values) {'n': p.name, 'c': p.nation, 'k': p.kinds}],
+    'people': [
+      for (final p in people.values) {'n': p.name, 'c': p.nation, 'k': p.kinds, if (p.profile != null) 'p': p.profile},
+    ],
     'photos': photos,
     if (epoch != 0) 'epoch': epoch,
     if (factsVersion != null) 'facts_version': factsVersion,
@@ -1193,7 +1211,10 @@ String norm(String s) => s.toLowerCase().replaceAll('ё', 'е');
 /// Спортсмен из справочника: страна (код ISU, у россиян RUS) и виды (w m p d).
 class Person {
   final String name, nation, kinds;
-  const Person(this.name, this.nation, this.kinds);
+
+  /// Ключ файла профиля на сайте (p/<ключ>.json); null — справки о человеке у сборщика нет.
+  final String? profile;
+  const Person(this.name, this.nation, this.kinds, {this.profile});
 }
 
 /// Есть ли [who] среди [names]: точное имя или один из пары («Метелкина» в «Метелкина / Берулава»).

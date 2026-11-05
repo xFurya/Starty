@@ -291,3 +291,64 @@ def team():
 def team_names():
     """Сборная: [(ФАМИЛИЯ, Имя)]."""
     return [(sur, giv) for sur, giv, _ in team()]
+
+
+# ---------------------------------------------------------------- картотека спортсменов
+
+# Картотека спортсменов ФФККР — официальный реестр: фото, дата рождения, вид, партнёр, клуб,
+# тренеры, звание или разряд, регион и результаты сезона. Список — по 20 на странице.
+CARDS = BASE + "/athlete/list/43.html?format=html&resetfilters=0&clearordering=0&clearfilters=0&limitstart43={}"
+CARD = BASE + "/athlete/details/43/{}.html"
+CARD_KINDS = {"женское одиночное": "w", "мужское одиночное": "m", "парное": "p", "танцы": "d"}
+_CARD_ROW = re.compile(r'href="/athlete/details/43/(\d+)\.html"\s*>\s*([^<]+?)\s*</a>')
+_CARD_FIELD = re.compile(r'(?s)id="ctl_athletes___(\w+?)_ro">(.*?)</div>')
+_CARD_RESULT = re.compile(r'(?s)<tr id="list_47[^"]*"[^>]*>(.*?)</tr>')
+_CARD_EMPTY = ("Пожалуйста, выберите", "{")
+
+
+def card_list(page):
+    """[(номер, «Фамилия Имя Отчество»)] со страницы списка картотеки и сколько всего (или None)."""
+    rows = [(int(a), _text(b)) for a, b in _CARD_ROW.findall(page)]
+    total = re.search(r"Всего:\s*(\d+)", page)
+    return rows, int(total.group(1)) if total else None
+
+
+def _items(v):
+    """Значения списком: клубы и тренеры — пунктами <li>, остальное — одно значение."""
+    parts = re.split(r"(?i)<li[^>]*>", v) if "<li" in v.lower() else [v]
+    out = []
+    for p in parts:
+        t = _text(p).strip()
+        if t and not t.startswith(_CARD_EMPTY) and t not in out:
+            out.append(t)
+    return out
+
+
+def card(page):
+    """Карточка спортсмена из картотеки: {photo, born, kind, partner, club, coach, choreo, rank, region,
+    bio, results: [{season, event, place}]}. Пустые поля — пустые строки и списки."""
+    f = dict(_CARD_FIELD.findall(page))
+    img = re.search(r'src="([^"]+)"', f.get("athlete_photo", ""))
+    photo = urljoin(BASE, html.unescape(img.group(1))) if img else ""
+    if photo and not re.search(r"/images/fabrik/athletes/[^/]+\.(?:jpe?g|png|webp)$", photo, re.I):
+        photo = ""  # заглушка «нет фото» или чужая картинка — не портрет из картотеки
+    born = ""
+    m = re.fullmatch(r"(\d{2})-(\d{2})-(\d{4})", _text(f.get("birthdate", "")).strip())
+    if m:
+        born = f"{m.group(3)}-{m.group(2)}-{m.group(1)}"
+    kind_text = _text(f.get("fs_kind", "")).lower()
+    kind = next((v for k, v in CARD_KINDS.items() if k in kind_text), "")
+    one = lambda k: (_items(f.get(k, "")) or [""])[0]
+    results = []
+    for r in _CARD_RESULT.findall(page):
+        cells = {c: _text(v) for c, v in re.findall(r'(?s)<td class="ctl_athlete_results___(\w+)[^"]*"[^>]*>(.*?)</td>', r)}
+        event, place = cells.get("id_competition", ""), cells.get("result", "")
+        if event:
+            results.append({"season": cells.get("season", ""), "event": event, "place": place})
+    return {
+        "photo": photo, "born": born, "kind": kind,
+        "partner": _items(f.get("partner", "")), "club": _items(f.get("club", "")),
+        "coach": _items(f.get("coach", "")), "choreo": _items(f.get("choreographer", "")),
+        "rank": one("sport_rank"), "region": one("region"), "bio": _text(f.get("biography", "")).strip(),
+        "results": results,
+    }

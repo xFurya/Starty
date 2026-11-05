@@ -96,10 +96,13 @@ class IntlWatchTest(unittest.TestCase):
         return b.make_event(tid="isu:x", tournament=name, kind=kind, level=level, seg=seg, mixed=False,
                             start=z, end=z, venue="", intl=True, broadcast=[], ours=[], athletes=[], src="")
 
-    def test_grand_prix_okko(self):
-        e = self.ev("GP Skate America")
-        self.assertEqual(e["watch"], [{"name": "Okko", "url": "https://okko.tv/"}])
-        self.assertEqual(e["broadcast"], ["Okko"])
+    def test_grand_prix_okko_and_isu(self):
+        # В России этапы показывает Okko, остальному миру — YouTube ISU (страница ISU «Where to watch»).
+        with mock.patch.object(b.net, "fetch", side_effect=b.net.FetchError("x")):
+            e = self.ev("GP Skate America")
+        self.assertEqual(e["watch"], [{"name": "Okko", "url": "https://okko.tv/"},
+                                      {"name": "YouTube ISU", "url": "https://www.youtube.com/@SkatingISU/live"}])
+        self.assertEqual(e["broadcast"], ["Okko", "YouTube ISU"])
 
     def test_final_has_both(self):
         with mock.patch.object(b.net, "fetch", side_effect=b.net.FetchError("x")):
@@ -148,3 +151,48 @@ class IntlWatchTest(unittest.TestCase):
     def test_rules_have_sources(self):
         for r in b.CFG["broadcast_rules"]:
             self.assertTrue(r.get("source", "").startswith("http"), r["match"])
+
+
+GP_RSS = '''<feed><entry><yt:videoId>SHENZHEN001</yt:videoId>
+<title>Men Short Program | ISU Figure Skating Grand Prix | Shenzhen 2026</title>
+<published>2026-11-03T07:45:00+00:00</published></entry>
+<entry><yt:videoId>KELOWNA0001</yt:videoId>
+<title>Men Short Program | ISU Figure Skating Grand Prix | Kelowna 2026</title>
+<published>2026-10-27T07:45:00+00:00</published></entry>
+<entry><yt:videoId>DANCESHENZH</yt:videoId>
+<title>Ice Dance Rhythm Dance | ISU Figure Skating Grand Prix | Shenzhen 2026</title>
+<published>2026-11-03T07:45:00+00:00</published></entry></feed>'''
+
+
+class GrandPrixStreamTest(unittest.TestCase):
+    """Эфир этапа Гран-при узнаётся по городу: ISU заводит эфиры за несколько дней до старта."""
+
+    def setUp(self):
+        b._YT.clear()
+        self.addCleanup(b._YT.clear)
+
+    def ev(self, venue, day, kind="men", seg="КП", name="GP Cup of China"):
+        import datetime as dt
+        z = dt.datetime(2026, 11, day, 6, tzinfo=dt.timezone.utc)
+        with mock.patch.object(b.net, "fetch", return_value=GP_RSS):
+            e = b.make_event(tid="isu:x", tournament=name, kind=kind, level="senior", seg=seg, mixed=False,
+                             start=z, end=z, venue=venue, intl=True, broadcast=[], ours=[], athletes=[], src="")
+        return {w["name"]: w["url"] for w in e["watch"]}
+
+    def test_stream_created_days_ahead_is_found_by_city(self):
+        w = self.ev("Shenzhen, China", 6)
+        self.assertEqual(w["YouTube ISU"], "https://www.youtube.com/watch?v=SHENZHEN001")
+        self.assertEqual(w["Okko"], "https://okko.tv/")
+        self.assertEqual(self.ev("Shenzhen, China", 7, kind="dance", seg="РТ")["YouTube ISU"],
+                         "https://www.youtube.com/watch?v=DANCESHENZH")
+
+    def test_other_city_or_old_stream_not_used(self):
+        self.assertEqual(self.ev("Everett, USA", 14, name="GP Skate America")["YouTube ISU"],
+                         "https://www.youtube.com/@SkatingISU/live")
+        # тот же город, но эфир заведён больше чем за 10 дней — это прошлый турнир
+        self.assertEqual(self.ev("Shenzhen, China", 20)["YouTube ISU"], "https://www.youtube.com/@SkatingISU/live")
+
+    def test_final_is_not_a_stage(self):
+        self.assertEqual(b.broadcast_for("Финал Гран-при"), ["Okko", "YouTube ISU"])
+        self.assertEqual(b._city("Shenzhen, China"), "Shenzhen")
+        self.assertIsNone(b._city("ЛД «Мечта», Москва"))

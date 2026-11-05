@@ -10,6 +10,7 @@ import 'countries.dart';
 import 'data.dart';
 import 'flags.dart';
 import 'main.dart';
+import 'profile.dart';
 import 'protocol.dart';
 import 'state.dart';
 import 'system.dart';
@@ -616,76 +617,81 @@ class _Step extends StatelessWidget {
         ),
       ],
     );
-    return Column(
-      children: [
-        Avatar(name: x.name, data: data, size: avatar, ring: c, ringWidth: 2.5),
-        const SizedBox(height: 8),
-        Stack(
-          alignment: Alignment.bottomCenter,
-          children: [
-            // невидимая подпись наибольшей высоты задаёт высоту у всех трёх
-            ExcludeSemantics(
-              child: Visibility(
-                visible: false,
-                maintainSize: true,
-                maintainAnimation: true,
-                maintainState: true,
-                child: caption(ghost: true),
+    return ProfileTap(
+      name: x.name,
+      data: data,
+      radius: const BorderRadius.vertical(top: Radius.circular(14)),
+      child: Column(
+        children: [
+          Avatar(name: x.name, data: data, size: avatar, ring: c, ringWidth: 2.5),
+          const SizedBox(height: 8),
+          Stack(
+            alignment: Alignment.bottomCenter,
+            children: [
+              // невидимая подпись наибольшей высоты задаёт высоту у всех трёх
+              ExcludeSemantics(
+                child: Visibility(
+                  visible: false,
+                  maintainSize: true,
+                  maintainAnimation: true,
+                  maintainState: true,
+                  child: caption(ghost: true),
+                ),
               ),
-            ),
-            caption(),
-          ],
-        ),
-        // ступень — прозрачный лёд с металлическим кантом
-        Container(
-          height: step,
-          width: double.infinity,
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(14)),
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: p.isDark
-                  ? [Color.lerp(const Color(0xFF1B3A5C), c, .10)!, const Color(0xFF0C1B2B)]
-                  : [Colors.white, Color.lerp(const Color(0xFFDCEAF7), c, .08)!],
-            ),
-            border: Border.all(color: p.plateLine),
-            boxShadow: [
-              BoxShadow(
-                color: (p.isDark ? Colors.black : Palette.deepBlue).withValues(alpha: p.isDark ? .25 : .06),
-                blurRadius: 10,
-                offset: const Offset(0, 4),
-              ),
+              caption(),
             ],
           ),
-          child: Stack(
-            fit: StackFit.expand,
-            children: [
-              Positioned(top: 0, left: 0, right: 0, height: 3, child: ColoredBox(color: c)),
-              if (first)
-                CustomPaint(
-                  painter: SparklePainter(p.isDark ? Colors.white : Palette.iceBlue, p.isDark ? .6 : .4, variant: 1),
+          // ступень — прозрачный лёд с металлическим кантом
+          Container(
+            height: step,
+            width: double.infinity,
+            clipBehavior: Clip.antiAlias,
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.vertical(top: Radius.circular(14)),
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: p.isDark
+                    ? [Color.lerp(const Color(0xFF1B3A5C), c, .10)!, const Color(0xFF0C1B2B)]
+                    : [Colors.white, Color.lerp(const Color(0xFFDCEAF7), c, .08)!],
+              ),
+              border: Border.all(color: p.plateLine),
+              boxShadow: [
+                BoxShadow(
+                  color: (p.isDark ? Colors.black : Palette.deepBlue).withValues(alpha: p.isDark ? .25 : .06),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
                 ),
-              Center(
-                child: Text(
-                  '${x.place}',
-                  textScaler: TextScaler.noScaling,
-                  style: TextStyle(
-                    fontFamily: serif,
-                    fontSize: first ? 46 : 36,
-                    fontWeight: FontWeight.w700,
-                    height: 1.0,
-                    // цифры «в строку»: без выносных элементов, цифра целиком на ступени
-                    fontFeatures: const [FontFeature.liningFigures()],
-                    color: numeral(x.place, p.isDark),
+              ],
+            ),
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                Positioned(top: 0, left: 0, right: 0, height: 3, child: ColoredBox(color: c)),
+                if (first)
+                  CustomPaint(
+                    painter: SparklePainter(p.isDark ? Colors.white : Palette.iceBlue, p.isDark ? .6 : .4, variant: 1),
+                  ),
+                Center(
+                  child: Text(
+                    '${x.place}',
+                    textScaler: TextScaler.noScaling,
+                    style: TextStyle(
+                      fontFamily: serif,
+                      fontSize: first ? 46 : 36,
+                      fontWeight: FontWeight.w700,
+                      height: 1.0,
+                      // цифры «в строку»: без выносных элементов, цифра целиком на ступени
+                      fontFeatures: const [FontFeature.liningFigures()],
+                      color: numeral(x.place, p.isDark),
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -752,56 +758,60 @@ class _TotalPlate extends StatelessWidget {
         for (var i = 0; i < rows.length; i++) ...[
           // линия — под именем: 14 + медаль 26 + 10 + аватар (у пар шире) + 10
           if (i > 0) Hairline(indent: 60 + (pairs ? Avatar.pairWidth(36) : 36)),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(14, 10, 16, 10),
-            child: Row(
-              children: [
-                Medal(rows[i].place, size: 26),
-                const SizedBox(width: 10),
-                Avatar(name: rows[i].name, data: data, size: 36, slot: pairs),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      PlacingName(
-                        x: rows[i],
-                        intl: intl,
-                        short: true,
-                        size: 15,
-                        weight: rows[i].place == 1 ? FontWeight.w700 : FontWeight.w600,
-                        withCode: false,
-                      ),
-                      if (under && codes![i].isNotEmpty)
-                        Padding(padding: const EdgeInsets.only(top: 2), child: NationTag(codes[i], style: codeStyle)),
-                    ],
-                  ),
-                ),
-                if (codes != null && !under) ...[
+          ProfileTap(
+            name: rows[i].name,
+            data: data,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(14, 10, 16, 10),
+              child: Row(
+                children: [
+                  Medal(rows[i].place, size: 26),
                   const SizedBox(width: 10),
-                  SizedBox(
-                    width: codeW + 1,
-                    child: Align(alignment: Alignment.centerLeft, child: NationTag(codes[i], style: codeStyle)),
-                  ),
-                ],
-                if (pointsW > 0) ...[
-                  const SizedBox(width: 12),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 8),
-                    child: SizedBox(
-                      width: pointsW + 9,
-                      child: Text(
-                        rows[i].points,
-                        textAlign: TextAlign.right,
-                        maxLines: 1,
-                        softWrap: false,
-                        textScaler: TextScaler.linear(scale),
-                        style: pointsStyle,
-                      ),
+                  Avatar(name: rows[i].name, data: data, size: 36, slot: pairs),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        PlacingName(
+                          x: rows[i],
+                          intl: intl,
+                          short: true,
+                          size: 15,
+                          weight: rows[i].place == 1 ? FontWeight.w700 : FontWeight.w600,
+                          withCode: false,
+                        ),
+                        if (under && codes![i].isNotEmpty)
+                          Padding(padding: const EdgeInsets.only(top: 2), child: NationTag(codes[i], style: codeStyle)),
+                      ],
                     ),
                   ),
+                  if (codes != null && !under) ...[
+                    const SizedBox(width: 10),
+                    SizedBox(
+                      width: codeW + 1,
+                      child: Align(alignment: Alignment.centerLeft, child: NationTag(codes[i], style: codeStyle)),
+                    ),
+                  ],
+                  if (pointsW > 0) ...[
+                    const SizedBox(width: 12),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: SizedBox(
+                        width: pointsW + 9,
+                        child: Text(
+                          rows[i].points,
+                          textAlign: TextAlign.right,
+                          maxLines: 1,
+                          softWrap: false,
+                          textScaler: TextScaler.linear(scale),
+                          style: pointsStyle,
+                        ),
+                      ),
+                    ),
+                  ],
                 ],
-              ],
+              ),
             ),
           ),
         ],
@@ -901,42 +911,46 @@ class _OurResult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(14, 10, 16, 10),
-      child: Row(
-        children: [
-          Avatar(name: o.name, data: data, size: 44, slot: slot),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // пара — по партнёру на строку или фамилиями; партнёр не теряется
-                NameLines(
-                  variants: nameVariants(o.name, full: full, lines: 2),
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink, height: 1.25),
-                  semantics: displayName(o.name),
-                ),
-                if (o.overall != null)
-                  Padding(
-                    padding: const EdgeInsets.only(top: 2),
-                    child: Text(
-                      'итог ${o.overall}',
-                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: p.accent),
-                    ),
+    return ProfileTap(
+      name: o.name,
+      data: data,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(14, 10, 16, 10),
+        child: Row(
+          children: [
+            Avatar(name: o.name, data: data, size: 44, slot: slot),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // пара — по партнёру на строку или фамилиями; партнёр не теряется
+                  NameLines(
+                    variants: nameVariants(o.name, full: full, lines: 2),
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink, height: 1.25),
+                    semantics: displayName(o.name),
                   ),
+                  if (o.overall != null)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 2),
+                      child: Text(
+                        'итог ${o.overall}',
+                        style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: p.accent),
+                      ),
+                    ),
+                ],
+              ),
+            ),
+            const SizedBox(width: 10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(o.place == null ? '—' : '${o.place}', style: _placeStyle.copyWith(color: p.ink)),
+                if (o.place != null) Eyebrow(caption(seg)),
               ],
             ),
-          ),
-          const SizedBox(width: 10),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Text(o.place == null ? '—' : '${o.place}', style: _placeStyle.copyWith(color: p.ink)),
-              if (o.place != null) Eyebrow(caption(seg)),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -996,46 +1010,50 @@ class _OurAhead extends StatelessWidget {
         state.rules.skaters && state.notifies(s) && state.allowed != false && alertAt != null && alertAt.isAfter(t)
         ? 'уведомление в$nb${hm(alertAt)}'
         : null;
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(14, 10, 16, 10),
-      child: Row(
-        children: [
-          Avatar(name: o.name, data: state.data, size: 44, slot: slot),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+    return ProfileTap(
+      name: o.name,
+      data: state.data,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(14, 10, 16, 10),
+        child: Row(
+          children: [
+            Avatar(name: o.name, data: state.data, size: 44, slot: slot),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  NameLines(
+                    variants: nameVariants(o.name, full: full, lines: 2),
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink, height: 1.25),
+                    semantics: displayName(o.name),
+                  ),
+                  if (meta != null)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 2),
+                      child: Text(meta, style: TextStyle(fontSize: 13, color: p.ink2, height: 1.35)),
+                    ),
+                  if (alert != null)
+                    Text(
+                      alert,
+                      style: TextStyle(fontSize: 13, color: p.accent, fontWeight: FontWeight.w600, height: 1.35),
+                    ),
+                ],
+              ),
+            ),
+            const SizedBox(width: 10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                NameLines(
-                  variants: nameVariants(o.name, full: full, lines: 2),
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink, height: 1.25),
-                  semantics: displayName(o.name),
-                ),
-                if (meta != null)
-                  Padding(
-                    padding: const EdgeInsets.only(top: 2),
-                    child: Text(meta, style: TextStyle(fontSize: 13, color: p.ink2, height: 1.35)),
-                  ),
-                if (alert != null)
-                  Text(
-                    alert,
-                    style: TextStyle(fontSize: 13, color: p.accent, fontWeight: FontWeight.w600, height: 1.35),
-                  ),
+                if (o.place != null)
+                  Text('${o.place}', style: _placeStyle.copyWith(color: p.ink2))
+                else if (o.time != null)
+                  Text(o.time!, style: _timeStyle(skated ? p.ink2 : p.ink)),
+                if (number != null && o.place == null) Padding(padding: const EdgeInsets.only(top: 3), child: Eyebrow(number)),
               ],
             ),
-          ),
-          const SizedBox(width: 10),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              if (o.place != null)
-                Text('${o.place}', style: _placeStyle.copyWith(color: p.ink2))
-              else if (o.time != null)
-                Text(o.time!, style: _timeStyle(skated ? p.ink2 : p.ink)),
-              if (number != null && o.place == null) Padding(padding: const EdgeInsets.only(top: 3), child: Eyebrow(number)),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -1665,7 +1683,7 @@ class _FilterSheetState extends State<_FilterSheet> {
     final action = filterAction(count, more);
 
     Widget athleteRow(String a) => _CheckRow(
-      leading: Avatar(name: a, data: data, size: 34, slot: true),
+      leading: _ProfileAvatar(name: a, data: data),
       title: displayName(a),
       nation: data.people[a]?.nation ?? '',
       subtitle: _personLine(data, a),
@@ -1943,7 +1961,8 @@ class _CheckRow extends StatelessWidget {
         child: ConstrainedBox(
           constraints: const BoxConstraints(minHeight: 52),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 6),
+            // фото с целью нажатия 44 — поля по 4, высота строки прежняя
+            padding: EdgeInsets.symmetric(vertical: leading != null ? 4 : 6),
             child: Row(
               children: [
                 if (leading != null) ...[leading!, const SizedBox(width: 12)],
@@ -1994,6 +2013,25 @@ class _CheckRow extends StatelessWidget {
 }
 
 
+/// Фото в строке с отметкой: нажатие на фото — профиль, на остальную строку — отметка.
+/// Цель нажатия — 44 точки в высоту, как у кнопок, хотя само фото меньше.
+class _ProfileAvatar extends StatelessWidget {
+  final String name;
+  final Schedule? data;
+  const _ProfileAvatar({required this.name, required this.data});
+  @override
+  Widget build(BuildContext context) => ProfileTap(
+    name: name,
+    data: data,
+    label: 'Профиль: ${displayName(name)}',
+    radius: BorderRadius.circular(12),
+    child: SizedBox(
+      height: 44,
+      child: Center(child: Avatar(name: name, data: data, size: 34, slot: true)),
+    ),
+  );
+}
+
 /// Строка спортсмена с фото, страной и видом и отметкой выбора.
 class AthleteCheckRow extends StatelessWidget {
   final String name;
@@ -2003,7 +2041,7 @@ class AthleteCheckRow extends StatelessWidget {
   const AthleteCheckRow({super.key, required this.name, required this.data, required this.value, required this.onTap});
   @override
   Widget build(BuildContext context) => _CheckRow(
-    leading: Avatar(name: name, data: data, size: 34, slot: true),
+    leading: _ProfileAvatar(name: name, data: data),
     title: displayName(name),
     nation: data?.people[name]?.nation ?? '',
     subtitle: data == null ? null : _personLine(data!, name),

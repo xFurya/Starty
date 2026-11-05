@@ -30,6 +30,7 @@ from . import fsr, goldenskate, ics, isu, net
 from . import keep as kp
 from . import protocols as P
 from . import photos as ph
+from . import profiles as pf
 from . import names as nm
 from . import people as pp
 from . import regional as rg
@@ -260,7 +261,7 @@ def make_event(*, tid, tournament, kind, level, seg, mixed, start, end, venue, i
         "venue": venue, "intl": intl, "broadcast": broadcast,
         "ours": ours, "athletes": sorted(set(athletes)), "src": src,
     }
-    w = watch_for(tournament, watch, (kind, level, seg, start.date()))
+    w = watch_for(tournament, watch, (kind, level, seg, start.date(), venue))
     if w:
         ev["watch"] = w
         for x in w:
@@ -358,10 +359,19 @@ SEG_PHRASE = {"КП": "short program", "ПП": "free skating", "РТ": "rhythm d
 KIND_PHRASE = {"men": "men", "women": "women", "pairs": "pairs", "dance": "ice dance"}
 
 
-def stream_url(cfg, kind, level, seg, day):
-    """Конкретный эфир по правилу stream: {rss, title, need?, by: day|segment}. День — «… День 2»
+def _city(venue):
+    """Город из места турнира ISU: «Shenzhen, China» → «Shenzhen». Нет латиницы — None."""
+    c = (venue or "").split(",")[0].strip()
+    return c if re.fullmatch(r"[A-Za-z][A-Za-z .'-]+", c) else None
+
+
+def stream_url(cfg, kind, level, seg, day, venue=""):
+    """Конкретный эфир по правилу stream: {rss, title, need?, by: day|segment, city?}. День — «… День 2»
     на всё соревнование (ФФКР); сегмент — отдельное видео «Men Short Program | …» в день старта
-    (±1 день: эфир заводят до начала). Не нашли — None (остаётся общая ссылка)."""
+    (±1 день: эфир заводят до начала). С city эфир узнаётся по городу турнира в названии
+    («… | Shenzhen 2026»): ISU заводит эфиры за несколько дней, поэтому дата — в пределах
+    10 дней до старта. Не нашли — None (остаётся общая ссылка)."""
+    city = _city(venue) if cfg.get("city") else None
     for vid, title, when in yt_streams(cfg["rss"]):
         if not re.search(cfg["title"], title, re.I) or (cfg.get("need") and not re.search(cfg["need"], title)):
             continue
@@ -369,7 +379,13 @@ def stream_url(cfg, kind, level, seg, day):
             low = " ".join(title.lower().split())
             if f"{KIND_PHRASE[kind]} {SEG_PHRASE[seg]}" not in low:
                 continue
-            if ("junior" in low) != (level == "junior") or abs((when - day).days) > 1:
+            if ("junior" in low) != (level == "junior"):
+                continue
+            if city:
+                if not re.search(r"(?<!\w)" + re.escape(city.lower()) + r"(?!\w)", low) or \
+                        not -1 <= (day - when).days <= 10:
+                    continue
+            elif abs((when - day).days) > 1:
                 continue
         elif when != day:
             continue
@@ -384,7 +400,7 @@ def _http_url(u):
 def watch_for(name, base=None, event=None):
     """Где смотреть: [{name, url}]. Ссылки со страницы турнира (base) важнее общих
     правил из config.json: правило не добавляет канал, который со страницы уже есть.
-    event = (kind, level, seg, день по Москве): правило со stream подменяет общую ссылку
+    event = (kind, level, seg, день по Москве[, место]): правило со stream подменяет общую ссылку
     конкретным эфиром, если он нашёлся в RSS."""
     out = [dict(w) for w in (base or []) if w.get("name") and _http_url(w.get("url"))]
     have = {w["name"] for w in out}
@@ -1345,6 +1361,21 @@ def main():
     roster = {n for n in roster if " / " not in n
               or len({nm.is_cyr(m) for m in n.split(" / ")}) == 1}
 
+    people = kp.merge_named(book["people"], prev.get("people"), "n", retract.get("people", ()))
+    # Профили: биографии ISU копятся и обновляются по очереди (выступившие — первыми), плюс картотека
+    try:
+        competed = {}
+        for e in events:
+            end = dt.datetime.fromisoformat(e["end"]).astimezone(dt.timezone.utc).isoformat()
+            if end <= now.astimezone(dt.timezone.utc).isoformat():
+                for n in e.get("athletes", []):
+                    if end > competed.get(nm.key(n), ""):
+                        competed[nm.key(n)] = end
+        pf.write(people, pf.refresh(book.get("bios") or {}, competed, log), book.get("cards"), log=log)
+    except Exception as e:  # профиль — дополнение: без него лента работает
+        log("!! профили:", e)
+        traceback.print_exc()
+
     all_ok = all(s == "ok" for s in report["sources"].values()) and not report["errors"]
     data = {
         "generated": now.isoformat(),
@@ -1356,7 +1387,7 @@ def main():
         "upcoming": upcoming,
         "watchlist": CFG["watchlist"],
         "roster": sorted(roster),
-        "people": kp.merge_named(book["people"], prev.get("people"), "n", retract.get("people", ())),
+        "people": people,
         "photos": withdraw_photos(kp.merge_map(collect_photos(events, upcoming, names, photos, prev.get("photos") or {},
                                                               [p["n"] for p in book["people"]]),
                                                prev.get("photos"), retract.get("photos", ())),

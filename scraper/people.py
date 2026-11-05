@@ -14,10 +14,12 @@
 Протоколы прошедших стартов не меняются, поэтому разобранное копится в
 data/people.json и в следующий раз не скачивается.
 """
+import datetime as dt
 import html
 import json
 import os
 import re
+import time
 
 from . import isu
 from . import names as nm
@@ -211,22 +213,23 @@ def _stat_rows(path):
                  for c in re.findall(r"(?s)<td[^>]*>(.*?)</td>", r)]
         nation = next((c for c in cells if re.fullmatch(r"[A-Z]{3}\d?", c)), "")
         level = "junior" if cells and cells[-1] == "J" else "senior"
-        out.append((html.unescape(m.group(2)).strip(), nation, level))
+        out.append((html.unescape(m.group(2)).strip(), nation, level, m.group(1)[5:]))
     return out
 
 
 def internationals(season_codes, log=print):
-    """[(имя латиницей как в протоколе, страна, вид, уровень)] — у всех есть оценка на турнире ISU.
-    Сезоны — от нового к старому: уровень берётся по последнему (вчерашняя юниорка уже взрослая)."""
+    """[(имя латиницей как в протоколе, страна, вид, уровень, номер биографии ISU)] — у всех есть
+    оценка на турнире ISU. Сезоны — от нового к старому: уровень берётся по последнему (вчерашняя
+    юниорка уже взрослая)."""
     out = {}
     for s in season_codes:
         season = f"20{s[:2]}-{s[2:]}"
         for k, kind in KINDS.items():
             for seg in ("to", "rd") if k == "d" else ("to", "sp"):
-                for name, nation, level in _stat_rows(f"sb{season}/sbts{k}{seg}.htm"):
-                    out.setdefault((name, kind), (nation, level))
+                for name, nation, level, bio in _stat_rows(f"sb{season}/sbts{k}{seg}.htm"):
+                    out.setdefault((name, kind), (nation, level, bio))
     log(f"  справочник: участников турниров ISU {len(out)}")
-    return [(n, st.nation_code(c), k, lv) for (n, k), (c, lv) in out.items()]
+    return [(n, st.nation_code(c), k, lv, b) for (n, k), (c, lv, b) in out.items()]
 
 
 # ---------------------------------------------------------------- фото
@@ -492,6 +495,89 @@ def wikidata_photos(log=print, covered=(), directory=None, births=None):
     return out, ok
 
 
+# ---------------------------------------------------------------- картотека ФФККР
+
+CARDS_CACHE = os.path.join(ROOT, "data", "cards.json")
+CARDS_LIST_EVERY = dt.timedelta(hours=20)  # список картотеки — раз в сутки
+CARDS_STALE = dt.timedelta(days=7)          # карточку — раз в неделю (фото, звание, результаты сезона)
+CARDS_BUDGET = 40                           # карточек за сбор: остальное доберётся в следующий раз
+
+
+def cards(log=print, path=None, budget=CARDS_BUDGET, now=None):
+    """{номер: карточка} официальной картотеки спортсменов ФФККР, с «fio» — «Фамилия Имя Отчество».
+    Копится в data/cards.json: сбой сети оставляет прежнее, человек, пропавший из списка, убирается
+    (картотека — реестр: нет в нём — нет и его карточки)."""
+    from . import fsr
+    path = path or CARDS_CACHE
+    now = now or dt.datetime.now(dt.timezone.utc)
+    try:
+        with open(path, encoding="utf-8") as f:
+            c = json.load(f)
+    except (OSError, ValueError):
+        c = {}
+    c.setdefault("list", [])
+    c.setdefault("cards", {})
+    listed_at = c.get("list_at")
+    if not listed_at or now - dt.datetime.fromisoformat(listed_at) >= CARDS_LIST_EVERY:
+        rows, total = {}, None
+        try:
+            for i in range(60):
+                got, total = fsr.card_list(net.fetch(fsr.CARDS.format(i * 20)))
+                new = [(a, b) for a, b in got if a not in rows]
+                rows.update(new)
+                if not new or (total and len(rows) >= total):
+                    break
+            if rows and (total is None or len(rows) >= total):
+                c["list"] = sorted([a, b] for a, b in rows.items())
+                c["list_at"] = now.isoformat()
+            else:
+                log(f"  ! картотека ФФККР: список неполный ({len(rows)} из {total})")
+        except net.FetchError as e:
+            log("  ! картотека ФФККР:", e)
+    ids = {str(a): fio for a, fio in c["list"]}
+    for k in list(c["cards"]):
+        if k not in ids:
+            del c["cards"][k]
+    # сначала новые, потом самые давние
+    order = sorted(ids, key=lambda k: c["cards"].get(k, {}).get("at", ""))
+    fetched = 0
+    for k in order:
+        old = c["cards"].get(k)
+        if old and now - dt.datetime.fromisoformat(old["at"]) < CARDS_STALE:
+            continue
+        if fetched >= budget:
+            break
+        fetched += 1
+        if fetched > 1:
+            time.sleep(1)  # официальный сайт: не чаще раза в секунду
+        try:
+            x = fsr.card(net.fetch(fsr.CARD.format(k)))
+        except net.FetchError as e:
+            log(f"  ! карточка {k}:", e)
+            continue
+        if not x["photo"] and old and old.get("photo"):
+            x["photo"] = old["photo"]  # фото не пропадает из-за пустого ответа
+        x["at"] = now.isoformat()
+        c["cards"][k] = x
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(c, f, ensure_ascii=False, indent=0, sort_keys=True)
+    out = {}
+    for k, fio in ids.items():
+        if k in c["cards"]:
+            out[k] = dict(c["cards"][k], fio=fio)
+    log(f"  картотека ФФККР: {len(ids)} человек, карточек {len(out)}, обновлено {fetched}")
+    return out
+
+
+def card_name(fio):
+    """«Фамилия Имя Отчество» → «Имя Фамилия» как в остальных данных."""
+    parts = fio.split()
+    if len(parts) < 2:
+        return ""
+    return nm.pretty_ru(f"{parts[1]} {parts[0]}")
+
+
 # ---------------------------------------------------------------- всё вместе
 
 def build(names, season_start, log=print):
@@ -530,6 +616,17 @@ def build(names, season_start, log=print):
             add(nm.pretty_ru(f"{giv} {sur}"), "RUS", None, None)
     except net.FetchError as e:
         log("  ! сборная ФФККР:", e)
+    # картотека ФФККР — официальный реестр (КМС и выше); вид из карточки без уровня не ставим:
+    # взрослый или юниор — скажут протоколы
+    try:
+        card = cards(log)
+    except Exception as e:  # картотека — дополнение: без неё справочник собирается как раньше
+        log("  ! картотека ФФККР:", e)
+        card = {}
+    for x in card.values():
+        n = card_name(x["fio"])
+        if n:
+            add(n, "RUS", None, None)
     try:
         ru = russians(cache, codes, log)
     except net.FetchError as e:
@@ -539,11 +636,15 @@ def build(names, season_start, log=print):
         for one in raw.split(" / "):
             names.add(one)
         add(names.to_ru(raw), "RUS", kind, level)
-    for raw, nation, kind, level in internationals(codes, log):
+    bios = {}  # ключ имени → номер биографии ISU (для профиля)
+    for raw, nation, kind, level, bio in internationals(codes, log):
         # по-русски — только россияне и белорусы: иначе похожая фамилия иностранца
         # («Koval» у украинца) превращается в чужого человека с чужим фото
         ours = nation in OURS
-        add(names.to_ru(raw) if ours else nm.pretty_latin(raw), nation, kind, level)
+        name = names.to_ru(raw) if ours else nm.pretty_latin(raw)
+        add(name, nation, kind, level)
+        if bio:
+            bios.setdefault(nm.key(name), bio)
     _save(cache)
 
     photos = []
@@ -554,15 +655,21 @@ def build(names, season_start, log=print):
                 photos.append((nm.pretty_ru(f"{giv} {sur}"), img, 0))
     except net.FetchError as e:
         log("  ! фото сборной ФФККР:", e)
+    for x in card.values():
+        if x.get("photo") and card_name(x["fio"]):
+            photos.append((card_name(x["fio"]), x["photo"], 0))
     for raw, url in isu_photos(log):
         photos.append((raw, url, 2))
     covered = {nm.key(raw) for raw, _, _ in photos}
     wiki, wiki_ok = wikidata_photos(log, covered=covered)
     for raw, url in wiki:
         photos.append((raw, url, 3))
+    # найденное вручную — ниже всех: любое фото из реестра или ISU заменяет его в следующем сборе
+    from . import photos as ph
+    photos.extend((n, u, ph.HAND_PRIO) for n, u in ph.load_hand())
     out = sorted(people.values(), key=lambda p: p["n"])
     # вид буквой: строчная — взрослые, заглавная — юниоры (W — девушки, M — юноши)
     letter = {"women": "w", "men": "m", "pairs": "p", "dance": "d"}
     for p in out:
         p["k"] = "".join(sorted(letter[k].upper() if lv == "junior" else letter[k] for k, lv in p["k"].items()))
-    return {"people": out, "photos": photos, "wiki_ok": wiki_ok}
+    return {"people": out, "photos": photos, "wiki_ok": wiki_ok, "cards": card, "bios": bios}

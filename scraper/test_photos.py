@@ -33,7 +33,7 @@ class Base(unittest.TestCase):
 
     def run_collect(self, want, raw, prev=None, names=None, is_image=lambda u: True, make=None, wiki_ok=True):
         names = names or _names(*[w for w in want if nm.is_cyr(w)])
-        with mock.patch.object(ph, "make2", make or (lambda s, u: (None, "fail"))), \
+        with mock.patch.object(ph, "make2", make or (lambda s, u, **k: (None, "fail"))), \
                 mock.patch.object(ph, "_polite", lambda u: None):
             return ph.collect(self.site, want, raw, prev or {}, names, self.book, self.skip,
                               log=lambda *a: None, is_image=is_image, wiki_ok=wiki_ok)
@@ -71,7 +71,7 @@ class KeepTest(Base):
         names = self.seed("Ксения Синицына", rel, 2)
         new = self.thumb("new.jpg")
         out = self.run_collect(["Ксения Синицына"], [("Kseniia SINITSYNA", "https://x/better", 0)],
-                               names=names, make=lambda s, u: (new, "ok"))
+                               names=names, make=lambda s, u, **k: (new, "ok"))
         self.assertEqual(out["Ксения Синицына"], new)
         self.assertEqual(ph.load_book(self.book)[nm.key("Ксения Синицына")]["p"], 0)
 
@@ -81,7 +81,7 @@ class KeepTest(Base):
         calls = []
         out = self.run_collect(["Ксения Синицына"], [("Kseniia SINITSYNA", "https://x/wiki", 3)], names=names,
                                is_image=lambda u: calls.append(u) or True,
-                               make=lambda s, u: calls.append(u) or ("photos/zzz.jpg", "ok"))
+                               make=lambda s, u, **k: calls.append(u) or ("photos/zzz.jpg", "ok"))
         self.assertEqual(out["Ксения Синицына"], rel)
         self.assertEqual(calls, [])
 
@@ -106,7 +106,7 @@ class KeepTest(Base):
         names = self.seed("Ксения Синицына", "photos/gone.jpg", 2)
         new = self.thumb("new.jpg")
         out = self.run_collect(["Ксения Синицына"], [("Kseniia SINITSYNA", "https://x/a", 2)], names=names,
-                               make=lambda s, u: (new, "ok"))
+                               make=lambda s, u, **k: (new, "ok"))
         self.assertEqual(out["Ксения Синицына"], new)
 
     def test_prune_called_the_old_way_spares_remembered_files(self):
@@ -148,12 +148,12 @@ class SkipTest(Base):
 
     def test_group_photo_goes_to_skip(self):
         self.run_collect(["Ксения Синицына"], [("Ksenia Sinitsyna", self.WIKI, 3)],
-                         make=lambda s, u: (None, "unsure"))
+                         make=lambda s, u, **k: (None, "unsure"))
         self.assertEqual(ph.load_skip(self.skip), {self.WIKI})
         # и больше не пробуется
         calls = []
         self.run_collect(["Ксения Синицына"], [("Ksenia Sinitsyna", self.WIKI, 3)],
-                         make=lambda s, u: calls.append(u) or (None, "unsure"))
+                         make=lambda s, u, **k: calls.append(u) or (None, "unsure"))
         self.assertEqual(calls, [])
 
     def test_old_unversioned_skip_entries_are_reconsidered(self):
@@ -192,7 +192,7 @@ class NameVariantsTest(Base):
         ]
         for ru, lat in cases:
             out = self.run_collect([ru], [(lat, "https://x/" + lat, 2)], names=_names(ru),
-                                   make=lambda s, u: ("photos/n.jpg", "ok"))
+                                   make=lambda s, u, **k: ("photos/n.jpg", "ok"))
             self.assertIn(ru, out, (ru, lat))
             os.unlink(self.book)
 
@@ -200,19 +200,19 @@ class NameVariantsTest(Base):
         for ru, lat in [("Ольга Фролова", "Olga ORLOVA"), ("Иван Иванов", "Ivan IVANOVA"),
                         ("Татьяна Козлова", "Tatiana KOZMAVA")]:
             out = self.run_collect([ru], [(lat, "https://x/a", 2)], names=_names(ru),
-                                   make=lambda s, u: ("photos/n.jpg", "ok"))
+                                   make=lambda s, u, **k: ("photos/n.jpg", "ok"))
             self.assertNotIn(ru, out, (ru, lat))
 
     def test_two_spellings_of_one_person_still_match(self):
         raw = [("Alexander VAKHNOV", "https://x/1", 2), ("Alexandr VAKHNOF", "https://x/2", 2)]
         out = self.run_collect(["Александр Вахнов"], raw, names=_names("Александр Вахнов"),
-                               make=lambda s, u: ("photos/n.jpg", "ok"))
+                               make=lambda s, u, **k: ("photos/n.jpg", "ok"))
         self.assertIn("Александр Вахнов", out)
 
     def test_exact_label_of_another_listed_person_is_not_stolen(self):
         names = _names("Ольга Фёдорова", "Ольга Федорова")
         out = self.run_collect(["Ольга Фёдорова"], [("Olga FEDOROVA", "https://x/1", 2)], names=names,
-                               make=lambda s, u: ("photos/n.jpg", "ok"))
+                               make=lambda s, u, **k: ("photos/n.jpg", "ok"))
         self.assertIn("Ольга Фёдорова", out)
 
 
@@ -337,3 +337,44 @@ class WithdrawTest(unittest.TestCase):
         bad = "https://commons.wikimedia.org/wiki/Special:FilePath/X.jpg?width=500"
         got = build.withdraw_photos({"А Б": ph.rel_path(bad), "В Г": "photos/ok.jpg"}, {bad, "person:в г"})
         self.assertEqual(got, {"А Б": "", "В Г": "photos/ok.jpg"})
+
+
+class HandTest(Base):
+    """Найденное вручную (data/photo_hand.json): ниже всех, официальное фото заменяет его сразу."""
+
+    def test_hand_photo_is_used_when_nothing_else(self):
+        new = self.thumb("hand.jpg")
+        strict = []
+        out = self.run_collect(["Ксения Синицына"], [("Ксения Синицына", "https://x/hand", ph.HAND_PRIO)],
+                               make=lambda s, u, **k: strict.append(k.get("strict")) or (new, "ok"))
+        self.assertEqual(out["Ксения Синицына"], new)
+        self.assertEqual(strict, [True])  # проверка портрета — строгая, как у Викисклада
+        e = ph.load_book(self.book)[nm.key("Ксения Синицына")]
+        self.assertEqual((e["p"], e["q"]), (ph.HAND_PRIO, ph.QUALITY_V))
+
+    def test_hand_photo_without_thumbnail_is_not_shown_as_original(self):
+        out = self.run_collect(["Ксения Синицына"], [("Ксения Синицына", "https://x/hand", ph.HAND_PRIO)])
+        self.assertNotIn("Ксения Синицына", out)
+
+    def test_official_photo_replaces_hand_photo_at_once(self):
+        hand = self.thumb("hand.jpg")
+        names = self.seed("Ксения Синицына", hand, ph.HAND_PRIO, url="https://x/hand")
+        official = self.thumb("official.jpg")
+        raw = [("Ксения Синицына", "https://x/hand", ph.HAND_PRIO), ("Ксения Синицына", "https://fsrussia.ru/a.jpg", 0)]
+        out = self.run_collect(["Ксения Синицына"], raw, names=names,
+                               make=lambda s, u, **k: (official, "ok") if "fsrussia" in u else (hand, "ok"))
+        self.assertEqual(out["Ксения Синицына"], official)
+        self.assertEqual(ph.load_book(self.book)[nm.key("Ксения Синицына")]["p"], 0)
+
+    def test_hand_never_replaces_official(self):
+        rel = self.thumb()
+        names = self.seed("Ксения Синицына", rel, 0)
+        out = self.run_collect(["Ксения Синицына"], [("Ксения Синицына", "https://x/hand", ph.HAND_PRIO)], names=names,
+                               make=lambda s, u, **k: ("photos/zzz.jpg", "ok"))
+        self.assertEqual(out["Ксения Синицына"], rel)
+
+    def test_load_hand_takes_only_https_entries(self):
+        p = os.path.join(self.tmp.name, "hand.json")
+        with open(p, "w", encoding="utf-8") as f:
+            json.dump({"А Б": {"u": "https://x/1.jpg", "src": "https://x/"}, "В Г": {"u": "http://x/2.jpg"}, "Д Е": "x", "Ж З": {"u": ["https://x/3.jpg", "ftp://x"]}}, f)
+        self.assertEqual(ph.load_hand(p), [("А Б", "https://x/1.jpg"), ("Ж З", "https://x/3.jpg")])
