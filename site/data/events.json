@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-05T18:57:04+03:00",
- "checked": "2026-11-05T18:57:04+03:00",
+ "checked": "2026-11-05T16:29:53.368024+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -44347,19 +44347,19 @@
     },
     {
      "place": 3,
-     "name": "Алексей Заводских",
-     "nation": "МОС",
-     "points": "74.61"
+     "name": "Добромир Воронов",
+     "nation": "СПБ",
+     "points": "76.59"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Герман Ленков — 81.40\n2. Михаил Клепацкий — 78.18\n3. Алексей Заводских — 74.61\n\nНачало: 17:15 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Герман Ленков — 81.40\n2. Михаил Клепацкий — 78.18\n3. Добромир Воронов — 76.59\n\nНачало: 17:15 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Дмитрий Железняк",
      "nation": "СВЕ",
      "no": 1,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "time": "19:22"
     },
     {
@@ -44367,7 +44367,7 @@
      "nation": "МОС",
      "no": 2,
      "warmup": 1,
-     "place": 10,
+     "place": 14,
      "time": "19:55"
     },
     {
@@ -44375,7 +44375,7 @@
      "nation": "МОС",
      "no": 3,
      "warmup": 1,
-     "place": 9,
+     "place": 13,
      "time": "20:51"
     },
     {
@@ -44383,7 +44383,7 @@
      "nation": "МОС",
      "no": 4,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "time": "19:39"
     },
     {
@@ -44391,7 +44391,7 @@
      "nation": "МОС",
      "no": 5,
      "warmup": 1,
-     "place": 12,
+     "place": 16,
      "time": "19:44"
     },
     {
@@ -44399,7 +44399,7 @@
      "nation": "СПБ",
      "no": 6,
      "warmup": 1,
-     "place": 8,
+     "place": 12,
      "time": "19:50"
     },
     {
@@ -44407,7 +44407,7 @@
      "nation": "СПБ",
      "no": 7,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "time": "20:03"
     },
     {
@@ -44415,7 +44415,7 @@
      "nation": "ЯАО",
      "no": 8,
      "warmup": 2,
-     "place": 11,
+     "place": 15,
      "time": "20:08"
     },
     {
@@ -44423,7 +44423,7 @@
      "nation": "ЛОБ",
      "no": 9,
      "warmup": 2,
-     "place": 13,
+     "place": 17,
      "time": "20:14"
     },
     {
@@ -44431,7 +44431,7 @@
      "nation": "МОС",
      "no": 10,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "time": "20:19"
     },
     {
@@ -44455,7 +44455,7 @@
      "nation": "МОС",
      "no": 13,
      "warmup": 3,
-     "place": 7,
+     "place": 10,
      "time": "20:58"
     },
     {
@@ -44464,14 +44464,15 @@
      "time": "21:04",
      "no": 14,
      "warmup": 3,
-     "place": 5
+     "place": 6
     },
     {
      "name": "Добромир Воронов",
      "nation": "СПБ",
      "time": "21:26",
      "no": 18,
-     "warmup": 3
+     "warmup": 3,
+     "place": 3
     },
     {
      "name": "Ильяс Халиуллин",
@@ -44479,24 +44480,25 @@
      "time": "21:09",
      "no": 15,
      "warmup": 3,
-     "place": 4
+     "place": 5
     },
     {
      "name": "Марк Титов",
      "nation": "ТАТ",
      "time": "21:20",
      "no": 17,
-     "warmup": 3
+     "warmup": 3,
+     "place": 18
     },
     {
      "name": "Серафим Макеев",
      "nation": "СПБ",
      "time": "21:15",
      "no": 16,
-     "warmup": 3
+     "warmup": 3,
+     "place": 11
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/5etap_jun/index.htm",
     "seg": "https://fsrussia.ru/results/2627/5etap_jun/SEG001.htm",
@@ -44522,7 +44524,7 @@
      "Марк ТИТОВ": "Марк Титов",
      "Добромир ВОРОНОВ": "Добромир Воронов"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json"
   },
