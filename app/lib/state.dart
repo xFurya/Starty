@@ -455,6 +455,10 @@ class AppState extends ChangeNotifier {
   /// Разрешены ли уведомления в системе; null — неизвестно (веб, ещё не проверено).
   bool? allowed;
 
+  /// Android, работа в фоне: 0 — без ограничений, 1 — экономия энергии, 2 — запрещена;
+  /// null — не Android или узнать нельзя.
+  int? background;
+
   /// Запланированные уведомления — ближайшие, как их видит система.
   List<Planned> planned = const [];
 
@@ -537,11 +541,16 @@ class AppState extends ChangeNotifier {
 
   Future<void> refreshPermission() async {
     final a = await Reminders.allowed();
-    if (a != allowed) {
+    final b = await Reminders.background();
+    if (a != allowed || b != background) {
       allowed = a;
+      background = b;
       notifyListeners();
     }
   }
+
+  /// Снять ограничение работы в фоне; ответ системы — при возвращении в приложение (refreshPermission).
+  Future<void> allowBackground() => Reminders.allowBackground();
 
   /// Попросить разрешение ещё раз (Android 13+ и iOS показывают системный вопрос,
   /// пока его не отклонили окончательно).
@@ -802,6 +811,8 @@ class AppState extends ChangeNotifier {
         data = _apply(_raw!);
         notifyListeners();
         unawaited(_saveLive());
+        // по табло старт мог закончиться или затянуться — уведомления следом, не дожидаясь сервера
+        unawaited(_sync());
       }
       // примечательное и окончательный итог считает сервер — забираем его чаще, пока что-то идёт
       if (DateTime.now().difference(_fetchedAt) > const Duration(minutes: 5)) unawaited(load());

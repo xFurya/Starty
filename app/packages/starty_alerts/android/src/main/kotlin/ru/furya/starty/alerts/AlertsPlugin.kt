@@ -26,7 +26,9 @@ class AlertsPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
         try {
             when (call.method) {
                 "sync" -> {
-                    val list = (call.arguments as List<*>).mapNotNull { m ->
+                    val args = call.arguments as? Map<*, *>
+                    val raw = (args?.get("entries") ?: call.arguments) as? List<*> ?: emptyList<Any?>()
+                    val list = raw.mapNotNull { m ->
                         @Suppress("UNCHECKED_CAST")
                         val x = m as? Map<String, Any?> ?: return@mapNotNull null
                         Entry(
@@ -46,13 +48,25 @@ class AlertsPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
                             // ARGB больше Int.MAX_VALUE приходит как Long: младшие 32 бита — тот же цвет
                             liveColor = (x["liveColor"] as? Number)?.toInt() ?: 0,
                             liveColorDark = (x["liveColorDark"] as? Number)?.toInt() ?: 0,
+                            start = x["start"] as? String ?: "",
+                            late = (x["late"] as? Number)?.toLong() ?: (x["end"] as Number).toLong(),
                         )
                     }
-                    Alerts.sync(c, list)
+                    val finished = HashMap<String, Long>()
+                    (args?.get("done") as? Map<*, *>)?.forEach { (k, v) ->
+                        if (k is String && v is Number) finished[k] = v.toLong()
+                    }
+                    Alerts.sync(c, list, args?.get("watch") as? String ?: "", finished)
                     result.success(null)
                 }
                 "clear" -> {
                     Alerts.clear(c)
+                    result.success(null)
+                }
+                // работа в фоне: 0 — без ограничений, 1 — экономия энергии (по умолчанию), 2 — запрещена
+                "background" -> result.success(Alerts.background(c))
+                "allowBackground" -> {
+                    Alerts.allowBackground(c)
                     result.success(null)
                 }
                 // звук, вибрация, всплывание и экран блокировки — настройки канала в системе

@@ -1111,12 +1111,34 @@ class _NotifyPageState extends State<_NotifyPage> {
           const SliverToBoxAdapter(child: _Head('Система')),
           SliverToBoxAdapter(
             child: Plate(
-              child: _Row(
-                icon: CupertinoIcons.speaker_2,
-                title: 'Звук и вибрация',
-                subtitle: 'всплывание, экран блокировки',
-                onTap: () => StartyAlerts.channelSettings().catchError((_) {}),
-                trailing: const _Chevron(external: true),
+              child: Column(
+                children: [
+                  _Row(
+                    icon: CupertinoIcons.speaker_2,
+                    title: 'Звук и вибрация',
+                    subtitle: 'всплывание, экран блокировки',
+                    onTap: () => StartyAlerts.channelSettings().catchError((_) {}),
+                    trailing: const _Chevron(external: true),
+                  ),
+                  // экономия энергии задерживает проверку конца старта и фоновое обновление, запрет —
+                  // и сами уведомления: говорим как есть, узнать нельзя — строки нет
+                  if (state.background case final b?) ...[
+                    const Hairline(),
+                    _Row(
+                      icon: CupertinoIcons.battery_25,
+                      iconColor: b == 2 ? p.live : null,
+                      title: 'Работа в фоне',
+                      subtitle: switch (b) {
+                        0 => 'без ограничений',
+                        2 => 'запрещена: уведомления могут не прийти',
+                        _ => 'экономия энергии: уведомления могут опаздывать',
+                      },
+                      subtitleColor: b == 2 ? p.live : null,
+                      action: b == 0 ? null : 'Снять',
+                      onAction: b == 0 ? null : state.allowBackground,
+                    ),
+                  ],
+                ],
               ),
             ),
           ),

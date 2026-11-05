@@ -278,6 +278,23 @@ class Reminders {
     return null;
   }
 
+  /// Android, работа в фоне: 0 — без ограничений, 1 — экономия энергии, 2 — запрещена; null — не Android.
+  static Future<int?> background() async {
+    if (!_android) return null;
+    try {
+      return await StartyAlerts.background();
+    } catch (_) {
+      return null;
+    }
+  }
+
+  static Future<void> allowBackground() async {
+    if (!_android) return;
+    try {
+      await StartyAlerts.allowBackground();
+    } catch (_) {}
+  }
+
   static int _id(String s) => s.hashCode & 0x7fffffff;
 
   /// iPhone и Mac: уведомления ставит общий плагин; значок на иконке никогда не меняется.
@@ -297,6 +314,10 @@ class Reminders {
 
   /// Сколько после времени выхода спортсмен заведомо откатал: программа до 4 мин и оценки.
   static const skated = Duration(minutes: 8);
+
+  /// Затянувшийся старт: уведомление о нём держится столько вперёд от каждого обновления данных
+  /// (и продлевается снова, пока табло говорит, что старт идёт), но не дольше Start.overrunLimit.
+  static const runAhead = Duration(minutes: 20);
 
 
   /// «юниорские танцы РТ» → («юниорские танцы», «ритм-танец»), как в карточке старта.
@@ -353,12 +374,19 @@ class Reminders {
 
   /// Уведомления, которые должны быть: время, тексты, до какого момента закреплено
   /// и когда убрать. Сюда попадают и уже показанные (старт идёт), чтобы их не убирали.
+  /// Закончившийся по факту старт выпадает сразу, а не в конец по расписанию; затянувшийся
+  /// (по расписанию кончился, а табло говорит, что идёт) остаётся.
   /// Ближайшие 60 — iOS держит не больше 64 запланированных.
   static List<Planned> plan(Schedule data, NotifyPlan p, DateTime now) {
     final out = <Planned>[];
     final lead = Duration(minutes: p.rules.lead);
     for (final s in data.starts) {
-      if (!p.wants(s) || !s.t1.isAfter(now)) continue;
+      if (!p.wants(s) || s.finishedAt(now)) continue;
+      final over = s.overrunAt(now);
+      if (!s.t1.isAfter(now) && !over) continue;
+      final cap = s.t1.add(Start.overrunLimit);
+      final ahead = now.add(runAhead);
+      final ends = over ? (ahead.isBefore(cap) ? ahead : cap) : s.t1;
       final at = s.t0.subtract(lead);
       // у кого время выхода известно, тот приходит отдельным уведомлением — в уведомлении о старте его нет
       final own = p.rules.skaters ? {for (final o in s.ours) if (s.skateAt(o) != null) o.name} : const <String>{};
@@ -366,8 +394,10 @@ class Reminders {
       out.add(Planned(
         key: 's:${s.id}',
         at: at,
-        hold: p.rules.pin ? s.t1 : at,
-        end: s.t1,
+        hold: p.rules.pin ? ends : at,
+        end: ends,
+        // пропущенное (старт добавили или сдвинули раньше, уведомления включили посреди старта) — показать, пока идёт
+        late: ends,
         title: t.title,
         liveAt: s.t0,
         liveTitle: t.live,
@@ -385,8 +415,8 @@ class Reminders {
         final at = skate.subtract(Duration(minutes: p.rules.skaterLead));
         // место в протоколе — уже откатал, раньше расчётного; закрепление снимается сразу
         final done = o.place != null ? now : skate.add(skated);
-        var end = p.rules.clear ? skate.add(Duration(minutes: p.rules.gone)) : s.t1;
-        if (end.isAfter(s.t1)) end = s.t1;
+        var end = p.rules.clear ? skate.add(Duration(minutes: p.rules.gone)) : ends;
+        if (end.isAfter(ends)) end = ends;
         if (!end.isAfter(now)) continue;
         final t = skaterText(s, o);
         out.add(Planned(
@@ -394,6 +424,8 @@ class Reminders {
           at: at,
           hold: !p.rules.pin ? at : (done.isBefore(end) ? done : end),
           end: end,
+          // пропущенное — только пока спортсмен не вышел: «выходит в 19:04» после выхода уже неправда
+          late: o.place != null ? now : skate,
           title: t.title,
           lines: t.lines,
           collapsed: t.collapsed,
@@ -408,6 +440,33 @@ class Reminders {
     return out.take(60).toList();
   }
 
+  /// Где фоновая проверка находит старты с уведомлениями: id → [начало, конец] в мс.
+  static const plannedKey = 'n.planned';
+
+  /// Запомнить старты с уведомлениями — по файлу состояния фоновая проверка увидит, что у них
+  /// сдвинулось время или старт закончился, и только тогда потянет всё расписание.
+  static Future<void> _remember(Schedule data, List<Planned> list) async {
+    final byId = {for (final s in data.starts) s.id: s};
+    final planned = <String, List<int>>{
+      for (final x in list)
+        if (byId[x.startId] case final s?) s.id: [s.t0.millisecondsSinceEpoch, s.t1.millisecondsSinceEpoch],
+    };
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(plannedKey, jsonEncode(planned));
+  }
+
+  /// Старты, закончившиеся по факту, — и до какого момента это помнить (пока они могли бы
+  /// считаться затянувшимися). Android по ним не вернёт уведомления, если позже придёт расписание
+  /// без итогов с табло, где старт ещё идёт.
+  static Map<String, DateTime> finished(Schedule data, DateTime now) => {
+    for (final s in data.starts)
+      if (s.finishedAt(now) && s.t1.add(Start.overrunLimit).isAfter(now)) s.id: s.t1.add(Start.overrunLimit),
+  };
+
+  /// Время показа прошло: показано ли уже. [had] — когда стояло прежде (мс): стояло на прошедшее —
+  /// система его показала (или показали мы сами).
+  static bool _delivered(Object? had, DateTime now) => had is int && had <= now.millisecondsSinceEpoch;
+
   /// Windows: тосты ставит сама система (работают и при закрытом приложении), но отменить
   /// поставленное без пакета MSIX нельзя. Поэтому помним, что уже поставлено, и ставим только новое
   /// или изменившееся — повторное открытие приложения не плодит дубликаты.
@@ -419,9 +478,29 @@ class Reminders {
     } catch (_) {
       have = {};
     }
+    // до этой версии прошедшее не помнили: при первом разе считаем его показанным, чтобы не повторить
+    final first = !prefs.containsKey('w.shown');
     final next = <String, dynamic>{};
+    int? atOf(Object? sig) => sig is String ? int.tryParse(sig.split('|').first) : null;
     for (final x in list) {
-      if (!x.at.isAfter(now)) continue;
+      // в центре уведомлений тосты одного турнира — под общей шапкой с его названием
+      final details = NotificationDetails(
+        windows: WindowsNotificationDetails(
+          header: WindowsHeader(id: x.group, title: x.groupTitle, arguments: x.startId),
+        ),
+      );
+      if (!x.at.isAfter(now)) {
+        final was = have[x.key];
+        if (first || _delivered(atOf(was), now)) {
+          next[x.key] = was ?? '${x.at.millisecondsSinceEpoch}|${x.title}|${x.text}';
+          continue;
+        }
+        // время прошло, а тост не ставили (старт добавили или сдвинули раньше) — показать сейчас, пока не поздно
+        if (!now.isBefore(x.late)) continue;
+        await _n.show(id: _id(x.key), title: x.titleAt(now), body: x.text, notificationDetails: details, payload: x.startId);
+        next[x.key] = '${now.millisecondsSinceEpoch}|${x.title}|${x.text}';
+        continue;
+      }
       final sig = '${x.at.millisecondsSinceEpoch}|${x.title}|${x.text}';
       next[x.key] = sig;
       if (have[x.key] == sig) continue;
@@ -430,12 +509,7 @@ class Reminders {
         scheduledDate: tz.TZDateTime.from(x.at, tz.UTC),
         title: x.title,
         body: x.text,
-        // в центре уведомлений тосты одного турнира — под общей шапкой с его названием
-        notificationDetails: NotificationDetails(
-          windows: WindowsNotificationDetails(
-            header: WindowsHeader(id: x.group, title: x.groupTitle, arguments: x.startId),
-          ),
-        ),
+        notificationDetails: details,
         androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
         payload: x.startId,
       );
@@ -448,6 +522,7 @@ class Reminders {
       } catch (_) {}
     }
     await prefs.setString('w.sched', jsonEncode(next));
+    await prefs.setBool('w.shown', true);
   }
 
   /// Один раз после перехода на свои уведомления: убрать то, что поставил общий плагин в 1.0.3 и раньше.
@@ -466,9 +541,10 @@ class Reminders {
     try {
       final now = DateTime.now();
       final list = plan(data, p, now);
+      await _remember(data, list);
       if (_android) {
         await _migrate();
-        await StartyAlerts.sync([
+        await StartyAlerts.sync(watch: nowUrl, done: finished(data, now), [
           for (final x in list)
             AlertEntry(
               key: x.key,
@@ -487,6 +563,8 @@ class Reminders {
               liveMark: liveMark,
               liveColor: Palette.light.live.toARGB32(),
               liveColorDark: Palette.dark.live.toARGB32(),
+              start: x.startId,
+              late: x.late,
             ),
         ]);
         return;
@@ -498,8 +576,36 @@ class Reminders {
       }
       // iPhone и Mac: убираем только запланированное, показанное остаётся
       await _n.cancelAllPendingNotifications();
+      final prefs = await SharedPreferences.getInstance();
+      // когда что стояло (мс): по нему видно, показала ли система то, чьё время прошло
+      Map<String, dynamic> had;
+      try {
+        had = Map<String, dynamic>.from(jsonDecode(prefs.getString('d.at') ?? '{}') as Map);
+      } catch (_) {
+        had = {};
+      }
+      // до этой версии не помнили: при первом разе прошедшее считаем показанным, чтобы не повторить
+      final first = !prefs.containsKey('d.at');
+      final next = <String, int>{};
       for (final x in list) {
-        if (!x.at.isAfter(now)) continue;
+        if (!x.at.isAfter(now)) {
+          final was = had[x.key];
+          if (first || _delivered(was, now)) {
+            next[x.key] = was is int ? was : x.at.millisecondsSinceEpoch;
+            continue;
+          }
+          // время прошло, а не ставили (старт добавили или сдвинули раньше) — показать сейчас, пока не поздно
+          if (!now.isBefore(x.late)) continue;
+          await _n.show(
+            id: _id(x.key),
+            title: x.titleAt(now),
+            body: x.body,
+            notificationDetails: _darwinDetails(x),
+            payload: x.startId,
+          );
+          next[x.key] = now.millisecondsSinceEpoch;
+          continue;
+        }
         await _n.zonedSchedule(
           id: _id(x.key),
           scheduledDate: tz.TZDateTime.from(x.at, tz.UTC),
@@ -509,7 +615,9 @@ class Reminders {
           androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
           payload: x.startId,
         );
+        next[x.key] = x.at.millisecondsSinceEpoch;
       }
+      await prefs.setString('d.at', jsonEncode(next));
     } catch (_) {
       // без уведомлений — молча: расписание всё равно работает
     }
@@ -520,6 +628,9 @@ class Reminders {
 class Planned {
   final String key;
   final DateTime at, hold, end;
+
+  /// Время показа прошло, а показано не было: показать сейчас, если раньше этого момента.
+  final DateTime late;
   final String title;
 
   /// Начало старта: с этого момента висящее уведомление — с [liveTitle] вместо [title].
@@ -546,6 +657,7 @@ class Planned {
     required this.at,
     required this.hold,
     required this.end,
+    required this.late,
     required this.title,
     required this.lines,
     required this.collapsed,

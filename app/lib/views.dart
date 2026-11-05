@@ -297,6 +297,8 @@ class NoticeLine extends StatelessWidget {
       text = 'Уведомления выключены';
     } else if (state.allowed == false) {
       text = 'Уведомления запрещены в системе';
+    } else if (state.background == 2) {
+      text = 'Работа в фоне запрещена';
     } else {
       return const SizedBox.shrink();
     }

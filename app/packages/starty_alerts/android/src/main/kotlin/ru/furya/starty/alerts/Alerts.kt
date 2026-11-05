@@ -19,6 +19,8 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import org.json.JSONArray
 import org.json.JSONObject
+import java.net.HttpURLConnection
+import java.net.URL
 
 /**
  * at — показать; hold — до этого момента не смахивается (0 — смахивается сразу); end — убрать.
@@ -27,6 +29,8 @@ import org.json.JSONObject
  * reminder — выход спортсмена (напоминание), иначе начало старта (событие).
  * liveAt — начало старта (0 — нет): с него заголовок — liveTitle, где часть liveMark («🔴 ИДЁТ») —
  * цветом liveColor (liveColorDark в тёмной теме), как метка на карточке старта в приложении.
+ * start — старт, к которому относится уведомление (по нему файл состояния говорит «закончился» и «затянулся»).
+ * late — время показа прошло, а показано не было: показать, пока сейчас раньше late.
  */
 class Entry(
     val key: String,
@@ -44,8 +48,16 @@ class Entry(
     val liveMark: String = "",
     val liveColor: Int = 0,
     val liveColorDark: Int = 0,
+    val start: String = "",
+    val late: Long = end,
 ) {
     val id: Int get() = key.hashCode() and 0x7fffffff
+
+    /** Тот же, но убрать позже: закреплённое до конца остаётся закреплённым до нового конца. */
+    fun until(newEnd: Long) = Entry(
+        key, at, if (hold >= end) newEnd else hold, newEnd, title, body, lines, group, groupTitle, reminder,
+        liveAt, liveTitle, liveMark, liveColor, liveColorDark, start, late,
+    )
 
     /** Старт уже идёт — в заголовке статус вместо времени начала. */
     fun isLive(now: Long) = liveTitle.isNotEmpty() && liveAt in 1..now
@@ -70,6 +82,12 @@ class Entry(
  *  • вид: свёрнутый — заголовок и одна строка, развёрнутый — построчно (InboxStyle);
  *  • в начало старта висящее уведомление о нём тихо меняет время в заголовке на статус «🔴 ИДЁТ»;
  *  • уведомления одного турнира складываются в стопку: при двух и больше висящих — сводное;
+ *  • время показа прошло, а показано не было (старт добавили или сдвинули раньше, уведомления включили
+ *    посреди старта) — показывается сразу, если ещё не поздно (late); старт перенесли на потом —
+ *    показанное снимается и придёт заново в новое время;
+ *  • пока висит уведомление о старте, раз в пару минут спрашиваем у сервера маленький файл
+ *    состояния (now.json): старт закончился — его уведомления снимаются сразу, а не в конец по расписанию;
+ *    затянулся (табло говорит, что идёт) — не снимаются в конец по расписанию;
  *  • полоса «Live Notifications» в шторке One UI — для музыки и живых карточек, обычному
  *    уведомлению туда хода нет (и не просимся): его место — первое среди обычных.
  * Расписание хранится здесь же и поднимается после перезагрузки и обновления.
@@ -82,8 +100,17 @@ object Alerts {
     private const val RELEASE = "ru.furya.starty.alerts.RELEASE"
     private const val TICK = "ru.furya.starty.alerts.TICK"
     private const val LIVE = "ru.furya.starty.alerts.LIVE"
+    private const val WATCH = "ru.furya.starty.alerts.WATCH"
     private const val TICK_EVERY = 5 * 60_000L
     private const val GRACE = 3_000L // удаление по таймеру приходит чуть раньше конца
+    private const val WATCH_EVERY = 2 * 60_000L
+    // показанное уведомление о том, что сдвинулось на потом больше чем на столько, — снять и показать заново в срок;
+    // меньший сдвиг (время выхода спортсмена уточнилось) — только поправить текст висящего
+    private const val REFIRE = 10 * 60_000L
+    // затянувшийся старт: сколько после расписания ещё верим табло (как Start.overrunLimit) и на сколько продлеваем за раз
+    private const val OVERRUN = 3 * 3_600_000L
+    private const val RUN_AHEAD = 20 * 60_000L
+    private const val RUN_MARGIN = 10 * 60_000L
 
     private fun prefs(c: Context) = c.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
     private fun nm(c: Context) = c.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -103,6 +130,7 @@ object Alerts {
                     o.getString("key"), o.getLong("at"), o.optLong("hold", end), end, o.optString("title"), o.optString("body"),
                     lines, o.optString("group"), o.optString("groupTitle"), o.optBoolean("reminder"),
                     o.optLong("liveAt"), o.optString("liveTitle"), o.optString("liveMark"), o.optInt("liveColor"), o.optInt("liveColorDark"),
+                    o.optString("start"), o.optLong("late", end),
                 )
                 out[e.key] = e
             }
@@ -118,6 +146,7 @@ object Alerts {
                     .put("lines", JSONArray(e.lines)).put("group", e.group).put("groupTitle", e.groupTitle).put("reminder", e.reminder)
                     .put("liveAt", e.liveAt).put("liveTitle", e.liveTitle).put("liveMark", e.liveMark)
                     .put("liveColor", e.liveColor).put("liveColorDark", e.liveColorDark)
+                    .put("start", e.start).put("late", e.late)
             )
         }
         prefs(c).edit().putString("plan", a.toString()).apply()
@@ -134,6 +163,55 @@ object Alerts {
 
     private fun saveFired(c: Context, s: Set<String>) {
         prefs(c).edit().putString("fired", JSONArray(s.toList()).toString()).apply()
+    }
+
+    /** Закончившиеся старты (по серверу или по данным приложения) → до какого момента помнить. */
+    private fun done(c: Context, now: Long): MutableMap<String, Long> {
+        val m = HashMap<String, Long>()
+        try {
+            val o = JSONObject(prefs(c).getString("done", "{}") ?: "{}")
+            for (k in o.keys()) {
+                val until = o.optLong(k)
+                if (until > now) m[k] = until
+            }
+        } catch (_: Exception) {}
+        return m
+    }
+
+    private fun saveDone(c: Context, m: Map<String, Long>) {
+        val o = JSONObject()
+        for ((k, v) in m) o.put(k, v)
+        prefs(c).edit().putString("done", o.toString()).apply()
+    }
+
+    // ---------------------------------------------------------------- работа в фоне
+
+    /**
+     * 0 — без ограничений; 1 — экономия энергии (так у всех приложений по умолчанию): точные
+     * будильники приходят, а проверка конца старта и фоновое обновление могут опаздывать;
+     * 2 — работа в фоне запрещена (в настройках батареи приложения): уведомления могут не прийти.
+     */
+    fun background(c: Context): Int {
+        if (Build.VERSION.SDK_INT >= 28) {
+            val am = c.getSystemService(Context.ACTIVITY_SERVICE) as android.app.ActivityManager
+            if (am.isBackgroundRestricted) return 2
+        }
+        val pm = c.getSystemService(Context.POWER_SERVICE) as android.os.PowerManager
+        return if (pm.isIgnoringBatteryOptimizations(c.packageName)) 0 else 1
+    }
+
+    /** Снять ограничение: системный вопрос, а если работа в фоне запрещена — сведения о приложении (там батарея). */
+    fun allowBackground(c: Context) {
+        val details = Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:${c.packageName}"))
+        val ask = Intent(android.provider.Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS, Uri.parse("package:${c.packageName}"))
+        val list = Intent(android.provider.Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS)
+        val order = if (background(c) == 2) listOf(details) else listOf(ask, list, details)
+        for (i in order) {
+            try {
+                c.startActivity(i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+                return
+            } catch (_: Exception) {}
+        }
     }
 
     // ---------------------------------------------------------------- канал
@@ -193,6 +271,21 @@ object Alerts {
         cancel(c, intent(c, LIVE, e.id))
     }
 
+    /**
+     * Спрашивать файл состояния, пока висит уведомление о старте (или о выходе спортсмена в нём):
+     * одно напоминание на все. Не точное — система вправе сдвинуть его в экономии энергии.
+     */
+    private fun scheduleWatch(c: Context) {
+        val now = System.currentTimeMillis()
+        val url = prefs(c).getString("watch", "") ?: ""
+        val f = fired(c)
+        // по списку показанных не проверяем: только что показанное доходит до системы не сразу
+        val need = url.isNotEmpty() && NotificationManagerCompat.from(c).areNotificationsEnabled() &&
+            load(c).values.any { it.start.isNotEmpty() && it.key in f && it.end > now }
+        val pi = intent(c, WATCH, null)
+        if (need) alarm(c, now + WATCH_EVERY, pi, exact = false) else cancel(c, pi)
+    }
+
     /** Освежать закреплённые, пока такие висят; одно напоминание на все. */
     private fun scheduleTick(c: Context) {
         val now = System.currentTimeMillis()
@@ -204,8 +297,11 @@ object Alerts {
 
     // ---------------------------------------------------------------- показ
 
-    private fun active(c: Context, e: Entry): Boolean =
+    private fun active(c: Context, e: Entry): Boolean = try {
         nm(c).activeNotifications.any { it.id == e.id && it.packageName == c.packageName }
+    } catch (_: Exception) {
+        false
+    }
 
     /**
      * quiet — без звука и всплывания (возврат смахнутого, после перезагрузки). Обновление
@@ -345,15 +441,23 @@ object Alerts {
 
     // ---------------------------------------------------------------- вызовы из Dart
 
+    /**
+     * Новое расписание. [watch] — адрес файла состояния стартов; [finished] — старты, которые по данным
+     * приложения уже закончились (до какого момента это помнить): их уведомления не возвращаются,
+     * даже если позже придёт расписание, где они ещё идут (фоновое обновление без итогов с табло).
+     */
     @Synchronized
-    fun sync(c: Context, list: List<Entry>) {
+    fun sync(c: Context, list: List<Entry>, watch: String = "", finished: Map<String, Long> = emptyMap()) {
         ensureChannel(c)
         val now = System.currentTimeMillis()
+        prefs(c).edit().putString("watch", watch).apply()
+        val done = done(c, now)
+        for ((k, v) in finished) if (v > now && v > (done[k] ?: 0L)) done[k] = v
+        saveDone(c, done)
         val old = load(c)
-        val fired = fired(c)
+        val f = fired(c)
         val next = LinkedHashMap<String, Entry>()
-        for (e in list) if (e.end > now) next[e.key] = e
-        val oldFired = fired
+        for (e in list) if (e.end > now && (e.start.isEmpty() || e.start !in done)) next[e.key] = e
         // сначала новое расписание — чтобы возврат смахнутого не поднял убранное
         save(c, next)
         val touched = HashSet<String>()
@@ -365,25 +469,48 @@ object Alerts {
             touched.add(o.group)
             gone.add(o.id)
         }
-        saveFired(c, fired.filter { it in next }.toSet())
+        f.retainAll(next.keys)
+        val loud = ArrayList<Entry>()
+        val quiet = ArrayList<Entry>()
         for (e in next.values) {
             val p = old[e.key]
-            if (e.at > now) {
-                setAlarm(c, e)
-                setRelease(c, e)
-                setLive(c, e)
-            } else if (e.key in oldFired) {
-                if (p == null || !p.sameText(e, now) || (p.hold > now) != (e.hold > now)) {
-                    // текст поменялся или спортсмен уже откатал, пока уведомление висит — обновить тихо
-                    if (active(c, e)) post(c, e, quiet = true)
+            if (e.key in f && e.at > now + REFIRE) {
+                // старт перенесли на потом — висящее о прежнем времени снимаем, придёт заново в новое
+                f.remove(e.key)
+                NotificationManagerCompat.from(c).cancel(e.id)
+                touched.add(e.group)
+                gone.add(e.id)
+            }
+            if (e.key in f) {
+                // показано: текст поменялся, спортсмен уже откатал или сдвинулся конец — обновить тихо
+                if (p == null || !p.sameText(e, now) || (p.hold > now) != (e.hold > now) || p.end != e.end) {
+                    if (active(c, e)) quiet.add(e)
                 }
+                cancel(c, intent(c, FIRE, e.id))
                 cancel(c, intent(c, RELEASE, e.id))
                 setRelease(c, e)
                 setLive(c, e)
+            } else if (e.at > now) {
+                setAlarm(c, e)
+                setRelease(c, e)
+                setLive(c, e)
+            } else if (now < e.late) {
+                // время показа прошло, а показано не было — показать сейчас, со звуком
+                cancel(c, intent(c, FIRE, e.id))
+                f.add(e.key)
+                loud.add(e)
+                setRelease(c, e)
+                setLive(c, e)
+            } else {
+                cancelAlarm(c, e)
             }
         }
+        saveFired(c, f)
         for (g in touched) regroup(c, g, gone = gone)
+        for (e in quiet) post(c, e, quiet = true)
+        for (e in loud) post(c, e, quiet = false)
         scheduleTick(c)
+        scheduleWatch(c)
     }
 
     @Synchronized
@@ -397,6 +524,7 @@ object Alerts {
             if (o.group.isNotEmpty()) NotificationManagerCompat.from(c).cancel(summaryId(o.group))
         }
         scheduleTick(c)
+        scheduleWatch(c)
     }
 
     // ---------------------------------------------------------------- из будильника и системы
@@ -405,11 +533,15 @@ object Alerts {
     fun fire(c: Context, id: Int) {
         val e = load(c).values.firstOrNull { it.id == id } ?: return
         val f = fired(c)
-        if (e.key in f || e.end <= System.currentTimeMillis()) return
+        val now = System.currentTimeMillis()
+        // будильник в экономии энергии мог прийти поздно: о том, что уже прошло, не сообщаем
+        if (e.key in f || e.end <= now || now >= e.late) return
+        if (e.start.isNotEmpty() && e.start in done(c, now)) return
         f.add(e.key)
         saveFired(c, f)
         post(c, e, quiet = false)
         scheduleTick(c)
+        scheduleWatch(c)
     }
 
     /** Смахнули закреплённое — вернуть. Убранное нами (нет в расписании) и откреплённое не возвращаем. */
@@ -435,6 +567,7 @@ object Alerts {
     fun live(c: Context, id: Int) {
         val e = load(c).values.firstOrNull { it.id == id } ?: return
         if (e.key in fired(c) && active(c, e)) post(c, e, quiet = true)
+        scheduleWatch(c)
     }
 
     /** Освежить закреплённые висящие — держать их значок в строке состояния. */
@@ -448,39 +581,150 @@ object Alerts {
         scheduleTick(c)
     }
 
-    /** После перезагрузки, обновления приложения, смены времени: будильники заново, пропущенное — показать. */
+    /**
+     * Спросить файл состояния и применить. Вызывается из будильника в отдельном потоке: сеть — вне
+     * блокировки, применение — под ней. Сеть недоступна (экономия энергии, нет связи) — до следующего раза.
+     */
+    fun watch(c: Context) {
+        val url = prefs(c).getString("watch", "") ?: ""
+        val starts = if (url.isEmpty()) null else fetchStarts(url)
+        if (starts != null) applyNow(c, starts)
+        synchronized(this) { scheduleWatch(c) }
+    }
+
+    private fun fetchStarts(url: String): JSONObject? {
+        var con: HttpURLConnection? = null
+        return try {
+            // минута в адресе — мимо кэша сети раздачи, как у загрузки расписания в приложении
+            val u = url + (if ('?' in url) "&" else "?") + "t=" + System.currentTimeMillis() / 60_000
+            con = (URL(u).openConnection() as HttpURLConnection).apply {
+                connectTimeout = 8_000
+                readTimeout = 8_000
+                useCaches = false
+            }
+            if (con.responseCode != 200) return null
+            val text = con.inputStream.bufferedReader().use { it.readText() }
+            JSONObject(text).optJSONObject("starts")
+        } catch (_: Exception) {
+            null
+        } finally {
+            con?.disconnect()
+        }
+    }
+
+    /**
+     * Старт закончился — все его уведомления снять сейчас и не возвращать. Затянулся (табло: места
+     * промежуточные, выступили не все) — продлить, чтобы не снялись в конец по расписанию; не дольше
+     * трёх часов после него, как и в приложении.
+     */
+    @Synchronized
+    fun applyNow(c: Context, starts: JSONObject) {
+        val now = System.currentTimeMillis()
+        val plan = load(c)
+        val f = fired(c)
+        val done = done(c, now)
+        val touched = HashSet<String>()
+        val gone = HashSet<Int>()
+        val repost = ArrayList<Entry>()
+        var changed = false
+        for (id in plan.values.map { it.start }.filter { it.isNotEmpty() }.toSet()) {
+            val s = starts.optJSONObject(id) ?: continue
+            val t1 = s.optLong("t1")
+            val mine = plan.values.filter { it.start == id }
+            if (s.optBoolean("done")) {
+                done[id] = maxOf(done[id] ?: 0L, if (t1 > 0) t1 + OVERRUN else now + OVERRUN)
+                for (e in mine) {
+                    plan.remove(e.key)
+                    f.remove(e.key)
+                    cancelAlarm(c, e)
+                    NotificationManagerCompat.from(c).cancel(e.id)
+                    touched.add(e.group)
+                    gone.add(e.id)
+                }
+                changed = true
+            } else if (s.optBoolean("run") && t1 > 0 && now < t1 + OVERRUN) {
+                // конец уведомления о старте; с ним кончаются и уведомления о выходе, у которых тот же конец
+                val startEnd = mine.filter { !it.reminder }.maxOfOrNull { it.end } ?: continue
+                if (startEnd > now + RUN_MARGIN) continue
+                val until = minOf(now + RUN_AHEAD, t1 + OVERRUN)
+                if (until <= startEnd) continue
+                for (e in mine) {
+                    if (e.end < startEnd) continue
+                    val x = e.until(until)
+                    plan[e.key] = x
+                    if (x.key in f && active(c, x)) repost.add(x)
+                }
+                changed = true
+            }
+        }
+        if (!changed) return
+        save(c, plan)
+        saveFired(c, f)
+        saveDone(c, done)
+        for (g in touched) regroup(c, g, gone = gone)
+        for (x in repost) {
+            post(c, x, quiet = true)
+            cancel(c, intent(c, RELEASE, x.id))
+            setRelease(c, x)
+        }
+        scheduleTick(c)
+    }
+
+    /** После перезагрузки, обновления приложения, смены времени: будильники заново, пропущенное — показать, если не поздно. */
     @Synchronized
     fun restore(c: Context) {
         ensureChannel(c)
         val now = System.currentTimeMillis()
         val plan = load(c)
         val f = fired(c)
+        val done = done(c, now)
         val keep = LinkedHashMap<String, Entry>()
         for (e in plan.values) {
-            if (e.end <= now) continue
+            if (e.end <= now || (e.start.isNotEmpty() && e.start in done)) continue
             keep[e.key] = e
-            if (e.at > now) {
+        }
+        save(c, keep)
+        f.retainAll(keep.keys)
+        val loud = ArrayList<Entry>()
+        val quiet = ArrayList<Entry>()
+        for (e in keep.values) {
+            if (e.key in f) {
+                // перезагрузка стёрла закреплённое — вернуть
+                if (!active(c, e) && e.hold > now) quiet.add(e)
+                setRelease(c, e)
+            } else if (e.at > now) {
                 setAlarm(c, e)
                 setRelease(c, e)
-            } else if (e.key !in f) {
+            } else if (now < e.late) {
                 f.add(e.key)
-                post(c, e, quiet = false)
-                setRelease(c, e)
-            } else if (!active(c, e) && e.hold > now) {
-                // перезагрузка стёрла закреплённое — вернуть
-                post(c, e, quiet = true)
+                loud.add(e)
                 setRelease(c, e)
             }
             setLive(c, e)
         }
-        save(c, keep)
-        saveFired(c, f.filter { it in keep }.toSet())
+        saveFired(c, f)
+        for (e in quiet) post(c, e, quiet = true)
+        for (e in loud) post(c, e, quiet = false)
         scheduleTick(c)
+        scheduleWatch(c)
     }
 }
 
 class AlertReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
+        if (intent.action == "ru.furya.starty.alerts.WATCH") {
+            // сеть — не в главном потоке; система ждёт окончания (goAsync)
+            val pending = goAsync()
+            Thread {
+                try {
+                    Alerts.watch(context.applicationContext)
+                } catch (_: Throwable) {
+                } finally {
+                    pending.finish()
+                }
+            }.start()
+            return
+        }
         val id = intent.data?.host?.toIntOrNull() ?: return
         when (intent.action) {
             "ru.furya.starty.alerts.FIRE" -> Alerts.fire(context, id)

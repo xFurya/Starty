@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- системный вопрос «не ограничивать работу в фоне» (настройки уведомлений) -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
     <application>
         <receiver android:name="ru.furya.starty.alerts.AlertReceiver" android:exported="false"/>
         <!-- будильники пропадают при перезагрузке, обновлении приложения и смене времени -->

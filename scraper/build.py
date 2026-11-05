@@ -41,6 +41,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "site")
 OUT_JSON = os.path.join(SITE, "data", "events.json")
 OUT_ICS = os.path.join(SITE, "calendar.ics")
+# короткий файл для телефона: идёт ли старт и закончился ли (см. now_doc)
+OUT_NOW = os.path.join(SITE, "data", "now.json")
 # файлы протоколов турниров: только на сайте (gh-pages), в main не коммитятся (.gitignore)
 PROTO_DIR = os.path.join(SITE, "data", "protocols")
 NAMES = os.path.join(ROOT, "data", "names.json")
@@ -195,6 +197,26 @@ def tz_for(city):
             return dt.timezone(dt.timedelta(hours=v))
     log(f"  ! нет часового пояса для «{city}», беру московский")
     return MSK
+
+
+def tz_known(city):
+    """Пояс российского города из config.json или None — город не знаем (тогда верим табло)."""
+    c = clean_city(city or "")
+    if not c:
+        return None
+    for k, v in CFG["ru_tz"].items():
+        if k.lower() in c.lower():
+            return dt.timezone(dt.timedelta(hours=v))
+    return None
+
+
+def iana(name):
+    """Пояс по имени IANA (из ISU) или None."""
+    from zoneinfo import ZoneInfo
+    try:
+        return ZoneInfo(name) if name else None
+    except Exception:
+        return None
 
 
 def slugify(s):
@@ -380,9 +402,10 @@ def watch_for(name, base=None, event=None):
 
 # ---------------------------------------------------------------- Swiss Timing → события
 
-def times_to_msk(seg_start, local_times, offset_min):
-    """{no: (h, m)} местного времени → {no: datetime MSK}; переход через полночь учтён."""
-    tz = dt.timezone(dt.timedelta(minutes=offset_min))
+def times_to_msk(seg_start, local_times, zone):
+    """{no: (h, m)} местного времени → {no: datetime MSK}; переход через полночь учтён.
+    zone — пояс табло (tzinfo); число — минуты от UTC."""
+    tz = dt.timezone(dt.timedelta(minutes=zone)) if isinstance(zone, int) else zone
     base = seg_start.astimezone(tz)
     out = {}
     for no, (h, m) in local_times.items():
@@ -497,7 +520,8 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                     local, warm = st.parse_times_pdf(s["times_pdf"])
                 except (net.FetchError, OSError) as e:
                     log("  ! PDF времени:", e)
-            msk_times = times_to_msk(start, local, idx["offset"]) if local and idx["offset"] is not None else {}
+            zone = idx.get("zone") or (dt.timezone(dt.timedelta(minutes=idx["offset"])) if idx["offset"] is not None else None)
+            msk_times = times_to_msk(start, local, zone) if local and zone is not None else {}
             last = max(msk_times.values()) if msk_times else None
             end = estimate_end(start, seg, kind, len(people), last)
             # состояние сегмента: сегмент прошёл только с подтверждёнными судейскими оценками
@@ -739,7 +763,8 @@ def do_fsr(names, report, failed, upcoming, photos):
                     pdf_starts[(kind, level, seg)] = (st_, en_)
             if page and page["results"]:
                 try:
-                    idx = st.parse_index(page["results"])
+                    # подпись пояса на табло ФФКР ненадёжна — время местное, пояс по городу
+                    idx = st.set_zone(st.parse_index(page["results"]), tz_known(place_city or c["city"]))
                 except net.FetchError as e:
                     log("  ! табло:", e)
                     idx = None
@@ -854,7 +879,8 @@ def do_ffkm(names, report, failed, upcoming, fed_pages, fed_cal=()):
         got = []
         if table:
             try:
-                idx = st.parse_index(table, default_offset=MSK_OFFSET)
+                # ФФКМ — московские старты: время по Москве, что бы ни было в подписи
+                idx = st.set_zone(st.parse_index(table, default_offset=MSK_OFFSET), MSK)
                 if idx["categories"]:
                     got = _tag_regional(from_swisstiming(
                         idx, protos=report.get("protos"), tid=tid, tournament=name, venue=venue, intl=False,
@@ -991,7 +1017,8 @@ def do_isu(names, report, failed, upcoming, photos):
             idx = None
             if idx_url:
                 try:
-                    idx = st.parse_index(idx_url)
+                    # пояс турнира из ISU (на дату каждого сегмента); нет — по стране и подписи табло
+                    idx = st.fix_zone(st.parse_index(idx_url), iana(e.get("tz")))
                 except net.FetchError as ex:
                     log("  ! табло ISU:", ex)
             sched = []
@@ -1095,7 +1122,7 @@ def do_goldenskate(names, report, failed, isu_ok):
         name = goldenskate.short_name(g["title"])
         tid = "gs:" + slugify(name)
         try:
-            idx = st.parse_index(url)
+            idx = st.fix_zone(st.parse_index(url))
             if not idx["categories"]:
                 continue
             venue = intl_venue(idx["city"] or g["city"], idx["nation"], g["country"])
@@ -1398,11 +1425,65 @@ def write_protocols(protos, events, now, proto_dir=None):
     return summary
 
 
-def write_site(data):
-    """events.json, общая лента calendar.ics и по файлу .ics на старт."""
+def finished(ev):
+    """Сегмент закончился: протокол окончательный (судейские оценки или по времени) или места
+    есть у всего состава — откатали все. То же правило — Start.finished в приложении.
+    Состав со стартового листа полный: пока сегмент идёт, на табло к результатам добавлен
+    оставшийся стартовый порядок (у них мест нет); снявшийся без места держит «не закончен»
+    до окончательного протокола."""
+    if not ev.get("podium"):
+        return False
+    live = ev.get("live") or {}
+    if "basis" in live:
+        if live["basis"] in ("judges", "time"):
+            return True
+    elif not ev.get("provisional"):
+        return True
+    field = ev.get("field") or []
+    return bool(field) and all(o.get("place") for o in field)
+
+
+def running(ev):
+    """Сегмент идёт по табло: места промежуточные, выступили не все. После конца по расписанию
+    это затянувшийся старт (Start.overrunAt в приложении) — уведомление о нём не снимается."""
+    field = ev.get("field") or []
+    return bool(ev.get("podium")) and bool(ev.get("provisional")) and bool(field) and \
+        any(not o.get("place") for o in field) and not finished(ev)
+
+
+NOW_BEFORE = dt.timedelta(hours=12)
+NOW_AFTER = dt.timedelta(hours=48)
+
+
+def now_doc(events, now):
+    """now.json: старты от полусуток назад до двух суток вперёд — начало и конец по расписанию
+    (миллисекунды от эпохи), done — сегмент уже закончился, run — идёт по табло. Телефон спрашивает его, пока
+    висит уведомление о старте, и снимает уведомление сразу после конца, не дожидаясь конца по
+    расписанию и не загружая всё расписание. Без отметки времени: файл меняется, только когда
+    меняются старты."""
+    out = {}
+    for e in sorted(events, key=lambda e: (e["start"], e["id"])):
+        t0 = dt.datetime.fromisoformat(e["start"])
+        t1 = dt.datetime.fromisoformat(e["end"])
+        if t1 < now - NOW_BEFORE or t0 > now + NOW_AFTER:
+            continue
+        item = {"t0": int(t0.timestamp() * 1000), "t1": int(t1.timestamp() * 1000)}
+        if finished(e):
+            item["done"] = True
+        elif running(e):
+            item["run"] = True
+        out[e["id"]] = item
+    return {"v": 1, "starts": out}
+
+
+def write_site(data, now=None):
+    """events.json, now.json, общая лента calendar.ics и по файлу .ics на старт."""
     os.makedirs(os.path.dirname(OUT_JSON), exist_ok=True)
     with open(OUT_JSON, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
+    with open(OUT_NOW, "w", encoding="utf-8") as f:
+        json.dump(now_doc(data["events"], now or dt.datetime.now(dt.timezone.utc)), f,
+                  ensure_ascii=False, separators=(",", ":"))
     gen = dt.datetime.fromisoformat(data["generated"])
     with open(OUT_ICS, "w", encoding="utf-8", newline="") as f:
         # общая лента календаря — как лента приложения по умолчанию: российские старты

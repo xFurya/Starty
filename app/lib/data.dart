@@ -6,6 +6,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 const dataUrl = String.fromEnvironment('DATA_URL', defaultValue: 'https://xfurya.github.io/Starty/data/events.json');
 
+/// Маленький файл состояния стартов рядом с расписанием (now.json): начало, конец, «закончился»,
+/// «идёт». Пока висит уведомление о старте, Android спрашивает его сам. Расписание лежит не в
+/// events.json — файла состояния нет, пусто.
+final nowUrl = dataUrl.endsWith('/events.json') ? '${dataUrl.substring(0, dataUrl.length - 'events.json'.length)}now.json' : '';
+
 /// Для скриншотов: подменить «сейчас».
 const _fakeNow = String.fromEnvironment('NOW');
 DateTime now() => _fakeNow.isEmpty ? DateTime.now() : DateTime.parse(_fakeNow);
@@ -416,8 +421,24 @@ class Start {
 
   /// «женщины ПП» — часть названия после турнира.
   String get segment => title.substring(tournament.length).replaceFirst(RegExp(r'^\s*—\s*'), '');
-  bool liveAt(DateTime t) => (!t.isBefore(t0) && t.isBefore(t1)) || overrunAt(t);
-  bool pastAt(DateTime t) => !t.isBefore(t1) && !overrunAt(t);
+
+  /// Сегмент закончился: протокол окончательный (судейские оценки или по времени) или места есть
+  /// у всего состава — откатали все. Конец по расписанию — оценка, а это — факт: уведомление
+  /// о старте снимается, карточка уходит в прошедшие. То же правило — finished в сборщике.
+  /// Состав со стартового листа полный; снявшийся без места держит «не закончен» до окончательного протокола.
+  bool get finished {
+    if (podium.isEmpty) return false;
+    final l = live;
+    // с табло окончательность — только судейские оценки или время; без табло — протокол не промежуточный
+    if (l == null ? !provisional : l.basis == 'judges' || l.basis == 'time') return true;
+    return field.isNotEmpty && field.every((x) => x.place != null);
+  }
+
+  /// Закончился к моменту [t]: до начала по расписанию места могут быть только чужие, из старого разбора.
+  bool finishedAt(DateTime t) => !t.isBefore(t0) && finished;
+
+  bool liveAt(DateTime t) => (!t.isBefore(t0) && t.isBefore(t1) && !finished) || overrunAt(t);
+  bool pastAt(DateTime t) => (!t.isBefore(t1) || finishedAt(t)) && !overrunAt(t);
 
   /// Сколько после расписания ещё верим табло, что сегмент идёт: дальше данные считаем застывшими.
   static const overrunLimit = Duration(hours: 3);
@@ -963,6 +984,23 @@ class Repo {
       final merged = Schedule.mergeKeepingRicher(old, fresh, now: now());
       await p.setString(_key, jsonEncode(merged.toJson()));
       return merged;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /// Файл состояния стартов (now.json): id → {t0, t1 (мс), done — закончился, run — идёт по табло}.
+  /// null — не получили (нет связи, нет файла).
+  static Future<Map<String, dynamic>?> fetchNow() async {
+    if (nowUrl.isEmpty) return null;
+    try {
+      final r = await client
+          .get(Uri.parse('$nowUrl?t=${DateTime.now().millisecondsSinceEpoch ~/ 60000}'))
+          .timeout(const Duration(seconds: 15));
+      if (r.statusCode != 200) return null;
+      final j = jsonDecode(utf8.decode(r.bodyBytes));
+      final s = j is Map ? j['starts'] : null;
+      return s is Map ? Map<String, dynamic>.from(s) : null;
     } catch (_) {
       return null;
     }

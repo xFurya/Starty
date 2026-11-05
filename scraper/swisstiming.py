@@ -195,7 +195,96 @@ def parse_index_page(page, url, default_offset=None):
                 sg["judges_shared"] = shared[sg["scores_pdf"]]
     marks = any(sg["marks"] for c in categories for sg in c["segments"])
     return {"url": url, "name": name, "city": city, "nation": nation, "venue": venue,
-            "offset": offset, "categories": categories, "marks": marks}
+            "offset": offset, "zone": tz, "categories": categories, "marks": marks}
+
+
+def set_zone(idx, zone):
+    """Пояс турнира известен точнее подписи табло: время расписания — местное, по стене, — читается
+    в нём. zone — tzinfo; у ZoneInfo смещение берётся на дату каждого сегмента (переход на зимнее
+    время между публикацией табло и стартом учтён).
+
+    Подпись «Local Time, UTC +03:00» ненадёжна: ФФКР ставит её от балды (Екатеринбург — «+03:00»,
+    Красноярск — «+08:00»), а ISU пишет смещение на момент выкладки страницы, и после перевода
+    часов прошедшие и будущие старты съезжают на час."""
+    if zone is None:
+        return idx
+    for c in idx["categories"]:
+        for s in c["segments"]:
+            if isinstance(s.get("start"), dt.datetime):
+                s["start"] = s["start"].replace(tzinfo=None).replace(tzinfo=zone)
+    idx["zone"] = zone
+    return idx
+
+
+# МОК → ISO 3166 для стран, где проходят турниры: по ISO — пояса страны из zone.tab
+IOC_ISO = {
+    "ARG": "AR", "ARM": "AM", "AUS": "AU", "AUT": "AT", "AZE": "AZ", "BEL": "BE", "BIH": "BA", "BLR": "BY",
+    "BRA": "BR", "BUL": "BG", "CAN": "CA", "CHI": "CL", "CHN": "CN", "CRO": "HR", "CYP": "CY", "CZE": "CZ",
+    "DEN": "DK", "ESP": "ES", "EST": "EE", "FIN": "FI", "FRA": "FR", "GBR": "GB", "GEO": "GE", "GER": "DE",
+    "GRE": "GR", "HKG": "HK", "HUN": "HU", "INA": "ID", "IND": "IN", "IRL": "IE", "ISL": "IS", "ISR": "IL",
+    "ITA": "IT", "JPN": "JP", "KAZ": "KZ", "KGZ": "KG", "KOR": "KR", "LAT": "LV", "LTU": "LT", "LUX": "LU",
+    "MAS": "MY", "MDA": "MD", "MEX": "MX", "MGL": "MN", "MKD": "MK", "MNE": "ME", "MON": "MC", "NED": "NL",
+    "NOR": "NO", "NZL": "NZ", "PHI": "PH", "POL": "PL", "POR": "PT", "PRK": "KP", "ROU": "RO", "RSA": "ZA",
+    "RUS": "RU", "SGP": "SG", "SLO": "SI", "SRB": "RS", "SUI": "CH", "SVK": "SK", "SWE": "SE", "THA": "TH",
+    "TPE": "TW", "TUR": "TR", "UAE": "AE", "UKR": "UA", "USA": "US", "UZB": "UZ", "VIE": "VN",
+}
+
+ZONE_TAB = "/usr/share/zoneinfo/zone.tab"
+
+
+def _country_zones(iso):
+    try:
+        with open(ZONE_TAB, encoding="utf-8") as f:
+            return [ln.rstrip("\n").split("\t")[2] for ln in f if ln.startswith(iso + "\t") and len(ln.split("\t")) > 2]
+    except OSError:
+        return []
+
+
+def zone_from_label(nation, offset, at, starts=()):
+    """Пояс по стране и подписи табло: подпись — смещение на момент выкладки страницы (at,
+    Last-Modified). Из поясов страны берутся те, у кого в at было это смещение; если на даты
+    всех стартов (starts — местное время без пояса) они дают одно и то же — это пояс турнира.
+    Не вышло (страна неизвестна, кандидаты расходятся) — None: остаётся подпись как есть."""
+    from zoneinfo import ZoneInfo
+    iso = IOC_ISO.get((nation or "").upper())
+    if not iso or offset is None or at is None:
+        return None
+    want = dt.timedelta(minutes=offset)
+    cands = []
+    for name in _country_zones(iso):
+        try:
+            z = ZoneInfo(name)
+        except Exception:
+            continue
+        if at.astimezone(z).utcoffset() == want:
+            cands.append(z)
+    if not cands:
+        return None
+    for wall in starts:
+        if len({wall.replace(tzinfo=z).utcoffset() for z in cands}) > 1:
+            return None
+    return cands[0]
+
+
+def page_time(url):
+    """Когда страница выложена (Last-Modified последней загрузки), иначе сейчас."""
+    from email.utils import parsedate_to_datetime
+    raw = net.LAST_MODIFIED.get(url)
+    if raw:
+        try:
+            return parsedate_to_datetime(raw)
+        except (TypeError, ValueError):
+            pass
+    return dt.datetime.now(dt.timezone.utc)
+
+
+def fix_zone(idx, zone=None):
+    """Пояс табло: известный (zone — tzinfo) или по стране и подписи на момент выкладки."""
+    if zone is None:
+        walls = [s["start"].replace(tzinfo=None) for c in idx["categories"] for s in c["segments"]
+                 if isinstance(s.get("start"), dt.datetime)]
+        zone = zone_from_label(idx.get("nation"), idx.get("offset"), page_time(idx["url"]), walls)
+    return set_zone(idx, zone)
 
 
 def _same(a, b):

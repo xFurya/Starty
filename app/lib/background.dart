@@ -1,8 +1,12 @@
-// Фоновое обновление (Android раз в 3 часа, iPhone — когда его будит система): раз в несколько часов подтянуть расписание и
-// переставить уведомления — новые старты, сдвиги времени и время выхода наших
-// появляются, когда приложение может быть закрыто.
+// Фоновое обновление (Android раз в 15 минут, iPhone — когда его будит система): подтянуть расписание и
+// переставить уведомления — новые старты, сдвиги времени, конец старта и время выхода наших
+// появляются, когда приложение может быть закрыто. Часто — только маленький файл состояния
+// (now.json); всё расписание — когда по нему что-то поменялось или прошло три часа.
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:workmanager/workmanager.dart';
 
 import 'data.dart';
@@ -14,16 +18,70 @@ Schedule remindersSchedule(Schedule raw, {required bool regional, required Follo
   return shown.withFollow(follow);
 }
 
+/// Всё расписание — не реже чем раз в столько, даже если файл состояния молчит (время выхода наших,
+/// составы, старты дальше двух суток).
+const fullEvery = Duration(hours: 3);
+
+/// Файл состояния говорит, что пора тянуть всё расписание: у старта с уведомлением ([planned]:
+/// id → [начало, конец] в мс, как в последнем расписании) сдвинулось время или он закончился,
+/// либо появился старт, которого в последнем расписании не было ([known]).
+bool nowChanged(Map<String, dynamic> now, Map<String, dynamic> planned, Set<String> known) {
+  for (final e in now.entries) {
+    final v = e.value;
+    if (v is! Map) continue;
+    if (!known.contains(e.key)) return true;
+    final p = planned[e.key];
+    if (p is! List || p.length < 2) continue;
+    if (v['done'] == true || v['t0'] != p[0] || v['t1'] != p[1]) return true;
+  }
+  return false;
+}
+
+/// Старты последнего расписания от суток назад до трёх суток вперёд — шире окна файла состояния,
+/// чтобы старт, въехавший в окно, не считался новым.
+List<String> knownIds(Schedule raw, DateTime t) => [
+  for (final s in raw.starts)
+    if (s.t1.isAfter(t.subtract(const Duration(hours: 24))) && s.t0.isBefore(t.add(const Duration(hours: 72)))) s.id,
+];
+
+Map<String, dynamic> _json(String? s) {
+  try {
+    final j = jsonDecode(s ?? '{}');
+    return j is Map ? Map<String, dynamic>.from(j) : {};
+  } catch (_) {
+    return {};
+  }
+}
+
+/// Пора ли тянуть всё расписание.
+Future<bool> _due(SharedPreferences p, DateTime t) async {
+  if (t.millisecondsSinceEpoch - (p.getInt('bg.full') ?? 0) >= fullEvery.inMilliseconds) return true;
+  final now = await Repo.fetchNow();
+  if (now == null) return false;
+  final known = {for (final x in (jsonDecode(p.getString('bg.known') ?? '[]') as List)) '$x'};
+  return nowChanged(now, _json(p.getString(Reminders.plannedKey)), known);
+}
+
 @pragma('vm:entry-point')
 void backgroundDispatcher() {
   Workmanager().executeTask((task, input) async {
     try {
       WidgetsFlutterBinding.ensureInitialized();
+      final p = await SharedPreferences.getInstance();
+      // приложение могло записать своё, пока этот движок спал
+      await p.reload();
+      final t = DateTime.now();
+      if (!await _due(p, t)) return true;
       await Prefs.init();
       await Reminders.init();
-      final raw = await Repo.fetch() ?? await Repo.cached();
+      final fresh = await Repo.fetch();
+      final raw = fresh ?? await Repo.cached();
       final data = raw == null ? null : remindersSchedule(raw, regional: Prefs.regional, follow: Prefs.followOr(raw.watchlist));
       await Reminders.sync(data, NotifyPlan(NotifyRules.fromJson(Prefs.rulesJson), Prefs.forcedOn, Prefs.forcedOff));
+      if (fresh != null) {
+        await p.setInt('bg.full', t.millisecondsSinceEpoch);
+        await p.setString('bg.known', jsonEncode(knownIds(fresh, t)));
+      }
     } catch (_) {}
     return true;
   });
@@ -34,12 +92,13 @@ Future<void> scheduleBackground() async {
   try {
     await Workmanager().initialize(backgroundDispatcher);
     if (defaultTargetPlatform == TargetPlatform.android) {
+      // update — у уже поставленной задачи сменится частота (раньше было раз в 3 часа), срок не сбрасывается
       await Workmanager().registerPeriodicTask(
         'refresh',
         'refresh',
-        frequency: const Duration(hours: 3),
+        frequency: const Duration(minutes: 15),
         constraints: Constraints(networkType: NetworkType.connected),
-        existingWorkPolicy: ExistingPeriodicWorkPolicy.keep,
+        existingWorkPolicy: ExistingPeriodicWorkPolicy.update,
       );
     } else if (defaultTargetPlatform == TargetPlatform.iOS) {
       // iOS запускает не чаще, чем сам решит (обычно несколько раз в сутки); идентификатор — как в Info.plist

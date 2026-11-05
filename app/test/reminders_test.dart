@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
@@ -197,14 +198,14 @@ void main() {
       final s = start(ours: two);
       final t = Reminders.startText(s);
       final p = Planned(
-        key: 's:b', at: s.t0, hold: s.t1, end: s.t1, title: t.title, lines: t.lines, collapsed: t.collapsed,
+        key: 's:b', at: s.t0, hold: s.t1, end: s.t1, late: s.t1, title: t.title, lines: t.lines, collapsed: t.collapsed,
         startId: s.id, group: s.tid, groupTitle: s.tournament, reminder: false,
       );
       expect(p.subtitle, 'CS Budapest Trophy');
       expect(p.body, '19:04 — Кузьмина / Студеникин\n20:48 — Григорьева / Артющенко');
       final none = Reminders.startText(start());
       final q = Planned(
-        key: 's:b', at: s.t0, hold: s.t1, end: s.t1, title: none.title, lines: none.lines, collapsed: none.collapsed,
+        key: 's:b', at: s.t0, hold: s.t1, end: s.t1, late: s.t1, title: none.title, lines: none.lines, collapsed: none.collapsed,
         startId: s.id, group: s.tid, groupTitle: s.tournament, reminder: false,
       );
       // без отслеживаемых текст не пустой: турнир в нём, а не в подзаголовке
@@ -227,6 +228,79 @@ void main() {
   test('прошедшее не планируется', () {
     final past = data.starts.firstWhere((e) => e.t1.isBefore(now));
     expect(Reminders.plan(data, plan(const NotifyRules(), {past.id}), now).any((x) => x.startId == past.id), isFalse);
+  });
+
+  group('конец по факту', () {
+    // идёт: на табло промежуточные места, выступили не все
+    Map<String, Object> seg({bool provisional = true, String? basis, bool allPlaced = false}) => {
+      'id': 'f', 'tid': 't', 'tournament': 'T', 'kind': 'women', 'level': 'senior', 'seg': 'КП',
+      'title': 'T — женщины КП', 'start': '2026-10-20T10:00:00+03:00', 'end': '2026-10-20T13:00:00+03:00',
+      'venue': '', 'intl': false,
+      'ours': [{'name': 'Алиса Заикина', 'time': '12:10', 'place': ?(allPlaced ? 2 : null)}],
+      'field': [
+        {'name': 'Алиса Заикина', 'time': '12:10', 'place': ?(allPlaced ? 2 : null)},
+        {'name': 'Мария Захарова', 'time': '10:05', 'place': 1},
+      ],
+      'podium': [{'place': 1, 'name': 'Мария Захарова', 'points': '70.00'}],
+      if (provisional) 'provisional': true,
+      'live': {'idx': 'i', 'seg': 's', 'names': <String, String>{}, 'basis': ?basis},
+    };
+    Schedule one(Map<String, Object> j) =>
+        Schedule.parse(jsonEncode({'generated': '2026-10-20T08:00:00+03:00', 'events': [j]})).withFollow(Follow(['Алиса Заикина']));
+    final r = const NotifyRules().copyWith(skaters: true);
+    final during = DateTime.parse('2026-10-20T11:00:00+03:00');
+
+    test('идёт — в плане; откатали все или протокол окончательный — уведомления снимаются сразу', () {
+      final going = Reminders.plan(one(seg()), plan(r), during);
+      expect(going.map((x) => x.key), containsAll(['s:f', 'k:f:Алиса Заикина']));
+      expect(going.firstWhere((x) => x.key == 's:f').end, DateTime.parse('2026-10-20T13:00:00+03:00'));
+      for (final d in [one(seg(allPlaced: true)), one(seg(provisional: false, basis: 'judges'))]) {
+        expect(d.starts.single.finished, isTrue);
+        expect(Reminders.plan(d, plan(r), during), isEmpty);
+        expect(Reminders.finished(d, during).keys, ['f']);
+        expect(Reminders.finished(d, during)['f'], d.starts.single.t1.add(Start.overrunLimit));
+      }
+      expect(Reminders.finished(one(seg()), during), isEmpty);
+    });
+
+    test('места из старого разбора до начала по расписанию — не конец', () {
+      final before = DateTime.parse('2026-10-20T09:50:00+03:00');
+      final d = one(seg(allPlaced: true));
+      expect(d.starts.single.finishedAt(before), isFalse);
+      expect(Reminders.plan(d, plan(r), before), isNotEmpty);
+    });
+
+    test('затянулся — уведомление держится вперёд от обновления, но не дольше трёх часов после расписания', () {
+      final d = one(seg());
+      final late = DateTime.parse('2026-10-20T13:30:00+03:00');
+      expect(d.starts.single.overrunAt(late), isTrue);
+      final x = Reminders.plan(d, plan(r), late).firstWhere((x) => x.key == 's:f');
+      expect(x.end, late.add(Reminders.runAhead));
+      expect(x.hold, x.end);
+      expect(x.late, x.end);
+      final edge = DateTime.parse('2026-10-20T15:50:00+03:00');
+      expect(Reminders.plan(d, plan(r), edge).firstWhere((x) => x.key == 's:f').end, d.starts.single.t1.add(Start.overrunLimit));
+      // табло молчит (мест нет) — после расписания старт не держим
+      final quiet = one({...seg(), 'podium': <Object>[], 'provisional': false});
+      expect(Reminders.plan(quiet, plan(r), late), isEmpty);
+    });
+
+    test('пропущенное: о старте — пока идёт, о выходе — пока спортсмен не вышел', () {
+      final p = Reminders.plan(one(seg()), plan(r), during);
+      final s = p.firstWhere((x) => x.key == 's:f');
+      expect(s.late, s.end);
+      final k = p.firstWhere((x) => x.key == 'k:f:Алиса Заикина');
+      expect(k.late, DateTime.parse('2026-10-20T12:10:00+03:00'));
+      // уже откатала (место есть), а сегмент ещё идёт — показывать поздно
+      final placed = seg();
+      placed['field'] = [
+        {'name': 'Алиса Заикина', 'time': '12:10', 'place': 2},
+        {'name': 'Мария Захарова', 'time': '10:05', 'place': 1},
+        {'name': 'Ещё одна', 'time': '12:30'},
+      ];
+      final q = Reminders.plan(one(placed), plan(r), during).firstWhere((x) => x.key == 'k:f:Алиса Заикина');
+      expect(q.late, during);
+    });
   });
 
   test('правила сохраняются и читаются, мусор — правила по умолчанию', () {

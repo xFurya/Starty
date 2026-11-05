@@ -559,5 +559,51 @@ class PagesMerge(unittest.TestCase):
         self.assertIsNone(items["t2"]["error"])
 
 
+class Finished(unittest.TestCase):
+    """now.json и признак «сегмент закончился» — по нему телефон снимает уведомление о старте."""
+
+    def ev(self, **kw):
+        e = {"id": "x:1", "start": "2026-11-05T16:40:00+03:00", "end": "2026-11-05T19:00:00+03:00",
+             "podium": [{"place": 1}], "provisional": True, "live": {"basis": None},
+             "field": [{"name": "А", "place": 1}, {"name": "Б", "place": 2}, {"name": "В"}]}
+        e.update(kw)
+        return e
+
+    def test_running_segment_is_not_finished(self):
+        self.assertFalse(b.finished(self.ev()))
+        self.assertFalse(b.finished(self.ev(podium=[])))
+
+    def test_all_placed_is_finished_before_judges(self):
+        e = self.ev(field=[{"name": "А", "place": 1}, {"name": "Б", "place": 2}])
+        self.assertTrue(b.finished(e))
+
+    def test_final_protocol_is_finished_even_with_withdrawn(self):
+        e = self.ev(provisional=False, live={"basis": "judges"})
+        self.assertTrue(b.finished(e))
+        # старые данные без basis — окончательность по provisional
+        self.assertTrue(b.finished(self.ev(provisional=False, live={})))
+
+    def test_running_only_with_unplaced_on_provisional_board(self):
+        self.assertTrue(b.running(self.ev()))
+        self.assertFalse(b.running(self.ev(podium=[])))
+        self.assertFalse(b.running(self.ev(provisional=False, live={"basis": "judges"})))
+        self.assertFalse(b.running(self.ev(field=[{"name": "А", "place": 1}])))
+
+    def test_now_doc_window_and_done(self):
+        now = dt.datetime(2026, 11, 5, 15, 0, tzinfo=dt.timezone.utc)
+        done = self.ev(id="a", provisional=False, live={"basis": "judges"})
+        going = self.ev(id="b")
+        old = self.ev(id="c", start="2026-11-03T10:00:00+03:00", end="2026-11-03T12:00:00+03:00")
+        far = self.ev(id="d", start="2026-11-09T10:00:00+03:00", end="2026-11-09T12:00:00+03:00")
+        doc = b.now_doc([done, going, old, far], now)
+        self.assertEqual(set(doc["starts"]), {"a", "b"})
+        self.assertTrue(doc["starts"]["a"]["done"])
+        self.assertNotIn("done", doc["starts"]["b"])
+        self.assertTrue(doc["starts"]["b"]["run"])
+        self.assertNotIn("run", doc["starts"]["a"])
+        self.assertEqual(doc["starts"]["b"]["t0"],
+                         int(dt.datetime(2026, 11, 5, 13, 40, tzinfo=dt.timezone.utc).timestamp() * 1000))
+
+
 if __name__ == "__main__":
     unittest.main()

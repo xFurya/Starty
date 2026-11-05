@@ -27,6 +27,8 @@ def _ua(url):
 
 
 _CACHE = os.environ.get("STARTY_CACHE")
+# адрес → заголовок Last-Modified последней загрузки (подпись пояса на табло — на этот момент)
+LAST_MODIFIED = {}
 
 
 class FetchError(Exception):
@@ -95,6 +97,8 @@ def fetch(url, data=None, headers=None, timeout=30, tries=3, binary=False):
             req = urllib.request.Request(ascii_url(url), data=body, headers=hdrs)
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 raw = r.read()
+                if r.headers.get("Last-Modified"):
+                    LAST_MODIFIED[url] = r.headers["Last-Modified"]
             if _CACHE:
                 os.makedirs(_CACHE, exist_ok=True)
                 with open(_cache_path(key), "wb") as f:
