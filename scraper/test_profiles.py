@@ -113,6 +113,42 @@ class ProfileTest(unittest.TestCase):
         self.assertEqual(p["season"], [{"s": "2025/26", "ev": "Чемпионат России", "pl": "1 (МС)"}])
         self.assertEqual(p["src"], ["ISU", "ФФККР"])
 
+    def test_card_behind_isu_takes_isu_coach_and_club(self):
+        # картотека ещё пишет прежних тренеров и их школу, а у ISU они уже в прежних
+        card = {"born": "2007-06-05", "rank": "МС", "region": "Москва", "club": ['МАФКК, школа "Хрустальный"'],
+                "coach": ["Тутберидзе Этери Георгиевна", "Дудаков Сергей Викторович"], "choreo": [], "results": [],
+                "at": "2026-11-05T15:00:00"}
+        store = {"at": "2026-11-05T15:30:00+00:00",
+                 "bio": {"who": [{"n": "Adeliia PETROSIAN", "h": 152, "club": "Moscow Academy of Figure Skating"}],
+                         "coach": ["Inna Goncharenko"], "fcoach": ["Eteri Tutberidze", "Sergei Dudako"],
+                         "choreo": ["Anjelika Krylova", "Someone Unknown"]},
+                 "cr": []}
+        staff = ["Тутберидзе Этери Георгиевна", "Дудаков Сергей Викторович", "Крылова Анжелика Алексеевна"]
+        p = pf.profile("Аделия Петросян", "RUS", store, card, staff=staff)
+        self.assertEqual(p["coach"], ["Гончаренко Инна"])
+        self.assertEqual(p["fcoach"], ["Тутберидзе Этери Георгиевна", "Дудаков Сергей Викторович"])
+        self.assertEqual(p["choreo"], ["Крылова Анжелика Алексеевна", "Someone Unknown"])  # не знаем — как в ISU
+        self.assertEqual(p["who"][0]["club"], "МАФКК")
+        self.assertEqual(p["who"][0]["rank"], "МС")  # остальное из картотеки остаётся
+
+    def test_card_behind_without_isu_club_leaves_dash(self):
+        card = {"club": ['школа "Хрустальный"'], "coach": ["Тутберидзе Этери Георгиевна"], "results": []}
+        store = {"bio": {"who": [{"n": "X Y"}], "coach": ["Inna Goncharenko"], "fcoach": ["Eteri Tutberidze"]}, "cr": []}
+        p = pf.profile("Аделия Петросян", "RUS", store, card)
+        self.assertNotIn("club", p["who"][0])
+
+    def test_card_not_behind_when_isu_still_lists_coach(self):
+        card = {"coach": ["Тутберидзе Этери Георгиевна"]}
+        self.assertFalse(pf.card_behind(card, {"coach": ["Eteri Tutberidze"], "fcoach": ["Eteri Tutberidze"]}))
+        self.assertFalse(pf.card_behind(card, {"coach": ["Inna Goncharenko"], "fcoach": ["Alexei Mishin"]}))
+        self.assertTrue(pf.card_behind(card, {"coach": ["Inna Goncharenko"], "fcoach": ["Etery Tutberidze"]}))
+
+    def test_staff_same_person_not_namesake(self):
+        self.assertTrue(pf._same_staff("Дудаков Сергей Викторович", "Sergei Dudako"))
+        self.assertTrue(pf._same_staff("Крылова Анжелика Алексеевна", "Anzhelika Krylova"))
+        self.assertFalse(pf._same_staff("Мишина Татьяна Николаевна", "Anastasia Mishina"))
+        self.assertFalse(pf._same_staff("Жулин Александр Вячеславович", "Andrei Zhulin"))
+
     def test_card_quotes(self):
         self.assertEqual(pf.ru_quotes('СК "Центр ФК Этери Тутберидзе"'), "СК «Центр ФК Этери Тутберидзе»")
         self.assertEqual(pf.ru_quotes('"Гран При России – Звезды Магнитки"'), "«Гран При России – Звезды Магнитки»")

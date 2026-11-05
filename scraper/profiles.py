@@ -333,10 +333,56 @@ def _card_who(card):
     return w
 
 
-def profile(name, nation, bio=None, card=None, cards_by_name=None):
+def _staff_split(n):
+    """(фамилия, имя) в грубой латинской свёртке. Картотека пишет «Фамилия Имя Отчество»,
+    ISU — «Имя Фамилия»."""
+    w = n.split()
+    if len(w) < 2:
+        return None
+    fam, giv = (w[0], w[1]) if nm.is_cyr(n) else (w[-1], w[0])
+    lat = (lambda s: nm.ru_to_lat(s)) if nm.is_cyr(n) else (lambda s: s)
+    return nm.fold(lat(fam)), nm.fold(lat(giv))
+
+
+def _same_staff(a, b):
+    """Один ли это человек: «Дудаков Сергей Викторович» и «Sergei Dudako» (ISU теряет букву) — да."""
+    x, y = _staff_split(a), _staff_split(b)
+    # имя — с точностью до пары букв: Anjelika и Анжелика транслитерируются по-разному
+    if not x or not y or x[1][:1] != y[1][:1] or (x[1][:3] != y[1][:3] and nm._lev(x[1], y[1]) > 2):
+        return False
+    return x[0] == y[0] or (min(len(x[0]), len(y[0])) >= 5 and nm._lev(x[0], y[0]) <= 1)
+
+
+def _config(key):
+    try:
+        with open(os.path.join(os.path.dirname(__file__), "config.json"), encoding="utf-8") as f:
+            return json.load(f).get(key) or {}
+    except (OSError, ValueError):
+        return {}
+
+
+def staff_ru(latin, known):
+    """Тренер или хореограф из ISU по-русски: из картотеки ([known] — все тренеры и хореографы
+    картотеки) или из config.json → staff_names; не знаем — латиницей, как в ISU (лучше так,
+    чем угаданное написание)."""
+    hit = [k for k in known if _same_staff(k, latin)]
+    if len(set(hit)) == 1:
+        return hit[0]
+    return _config("staff_names").get(latin, latin)
+
+
+def card_behind(card, isu):
+    """Картотека отстала от ISU: её тренеры у ISU уже в прежних. Тогда и тренеры, и клуб — из ISU."""
+    now, former = isu.get("coach") or [], isu.get("fcoach") or []
+    return any(any(_same_staff(c, f) for f in former) and not any(_same_staff(c, x) for x in now)
+               for c in card.get("coach") or [])
+
+
+def profile(name, nation, bio=None, card=None, cards_by_name=None, staff=()):
     """Профиль для телефона. name — как в приложении («Анна Билибина / Дмитрий Кашаев»),
     bio — запись кэша ISU или None, card — карточка картотеки одиночника или None;
-    cards_by_name — {имя: карточка} для партнёров пары."""
+    cards_by_name — {имя: карточка} для партнёров пары; staff — тренеры и хореографы картотеки
+    (по ним имена из ISU пишутся по-русски)."""
     out = {"n": name}
     parts = [p.strip() for p in name.split(" / ")]
     who = [{"n": p} for p in parts]
@@ -352,7 +398,11 @@ def profile(name, nation, bio=None, card=None, cards_by_name=None):
                         w[k] = [nm.pretty_latin(f) for f in x[k]] if k == "former" else x[k]
         for k in ("coach", "choreo", "fcoach", "music", "pb", "sb"):
             if b.get(k):
-                out[k] = b[k]
+                out[k] = [staff_ru(x, staff) for x in b[k]] if k in ("coach", "choreo", "fcoach") else b[k]
+        clubs = _config("isu_clubs")
+        for w in who:
+            if w.get("club") in clubs:
+                w["club"] = clubs[w["club"]]
         res = []
         for g in bio["cr"]:
             rows = []
@@ -372,8 +422,12 @@ def profile(name, nation, bio=None, card=None, cards_by_name=None):
         cd = card if (card and len(who) == 1) else cards_by_name.get(w["n"])
         if not cd:
             continue
-        w.update(_card_who(cd))
-        if len(who) == 1:
+        behind = bool(bio) and len(who) == 1 and card_behind(cd, bio["bio"])
+        cw = _card_who(cd)
+        if behind:
+            cw.pop("club", None)  # клуб картотеки — от прежних тренеров: остаётся клуб ISU или прочерк
+        w.update(cw)
+        if len(who) == 1 and not behind:
             for k, ck in (("coach", "coach"), ("choreo", "choreo")):
                 if cd.get(ck):
                     out[k] = cd[ck]
@@ -401,6 +455,7 @@ def write(people, store, cards, out_dir=None, log=print):
         if n:
             by_name[nm.key(n)] = cd
     cards_by_name = {}
+    staff = sorted({n for cd in (cards or {}).values() for k in ("coach", "choreo") for n in cd.get(k) or []})
     os.makedirs(out_dir, exist_ok=True)
     written = 0
     for p in people:
@@ -411,7 +466,7 @@ def write(people, store, cards, out_dir=None, log=print):
                 cards_by_name[x] = by_name[nm.key(x)]
         bio = cache.get(ids.get(nm.key(name), ""))
         card = by_name.get(nm.key(name)) if len(parts) == 1 else None
-        pr = profile(name, p.get("c", ""), bio, card, cards_by_name)
+        pr = profile(name, p.get("c", ""), bio, card, cards_by_name, staff)
         if not pr:
             p.pop("p", None)
             continue
