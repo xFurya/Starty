@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-04T22:32:03+03:00",
- "checked": "2026-11-05T12:31:03.470393+00:00",
+ "checked": "2026-11-05T13:41:03.913722+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -43982,7 +43982,8 @@
      "nation": "МОС",
      "time": "18:31",
      "no": 14,
-     "warmup": 3
+     "warmup": 3,
+     "place": 8
     }
    ],
    "athletes": [
@@ -44016,105 +44017,119 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Россияне:\n• Анна Докукина — 18:31\n\nНачало: 16:40 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Майя Сарафанова — 70.08\n2. Алёна Принёва — 68.48\n3. Екатерина Стоцкая — 68.24\n\nРоссияне:\n• Анна Докукина — 18:31\n\nНачало: 16:40 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Юлиана Черенева",
      "nation": "МОС",
      "time": "16:47",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 9
     },
     {
      "name": "Александра Гришина",
      "nation": "СВЕ",
      "time": "17:04",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 12
     },
     {
      "name": "Мария Жукова",
      "nation": "НИЖ",
      "time": "17:10",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 10
     },
     {
      "name": "Марьям Зялалова",
      "nation": "ТАТ",
      "time": "17:15",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 13
     },
     {
      "name": "Майя Сарафанова",
      "nation": "МОС",
      "time": "17:21",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1
     },
     {
      "name": "Кира Кузьмина",
      "nation": "СПБ",
      "time": "17:29",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     },
     {
      "name": "Алиса Мильто",
      "nation": "МОС",
      "time": "17:34",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5
     },
     {
      "name": "Арина Ореховская",
      "nation": "ОРЕ",
      "time": "17:40",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4
     },
     {
      "name": "Екатерина Стоцкая",
      "nation": "МОС",
      "time": "17:46",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3
     },
     {
      "name": "Ульяна Бессонова",
      "nation": "АСТ",
      "time": "17:51",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 14
     },
     {
      "name": "Виктория Михайлова",
      "nation": "МОС",
      "time": "17:57",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 11
     },
     {
      "name": "Алёна Принёва",
      "nation": "МОС",
      "time": "18:18",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2
     },
     {
      "name": "Риана Ганиева",
      "nation": "ТАТ",
      "time": "18:25",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "place": 6
     },
     {
      "name": "Анна Докукина",
      "nation": "МОС",
      "time": "18:31",
      "no": 14,
-     "warmup": 3
+     "warmup": 3,
+     "place": 8
     },
     {
      "name": "Варвара Авдеева",
@@ -44172,7 +44187,28 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Майя Сарафанова",
+     "nation": "МОС",
+     "points": "70.08"
+    },
+    {
+     "place": 2,
+     "name": "Алёна Принёва",
+     "nation": "МОС",
+     "points": "68.48"
+    },
+    {
+     "place": 3,
+     "name": "Екатерина Стоцкая",
+     "nation": "МОС",
+     "points": "68.24"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:men-junior-kp",
