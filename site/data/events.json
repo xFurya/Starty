@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-04T22:32:03+03:00",
- "checked": "2026-11-04T22:32:03+03:00",
+ "checked": "2026-11-05T10:01:02.754473+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -43597,91 +43597,103 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Анна Соболева / Матвей Чураков — 92.31\n2. София Загребаева / Иван Тертышников — 89.30\n3. Ирина Скопина / Дмитрий Симонов — 86.69\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Любовь Аникина / Степан Котельников",
      "nation": "НИЖ",
      "time": "13:06",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 11
     },
     {
      "name": "Капитолина Кряковцева / Арсений Ивлев",
      "nation": "САМ",
      "time": "13:26",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 12
     },
     {
      "name": "Ульяна Черных / Роман Федотов",
      "nation": "ПРМ",
      "time": "13:33",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 9
     },
     {
      "name": "Маргарита Сырова / Илья Павлинов",
      "nation": "СОА",
      "time": "13:39",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7
     },
     {
      "name": "Екатерина Богданова / Ярослав Черняев",
      "nation": "СПБ",
      "time": "13:46",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 8
     },
     {
      "name": "Анелия Солганова / Макар Петров",
      "nation": "САМ",
      "time": "13:53",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5
     },
     {
      "name": "Мария Казьмина / Никита Ворожейкин",
      "nation": "МОС",
      "time": "13:59",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6
     },
     {
      "name": "София Загребаева / Иван Тертышников",
      "nation": "МОС",
      "time": "14:06",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2
     },
     {
      "name": "Арина Кочурова / Иван Карелин",
      "nation": "КИР",
      "time": "14:28",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 10
     },
     {
      "name": "Милана Чегемова / Кирилл Евграфов",
      "nation": "СПБ",
      "time": "14:34",
      "no": 10,
-     "warmup": 3
+     "warmup": 3,
+     "place": 4
     },
     {
      "name": "Ирина Скопина / Дмитрий Симонов",
      "nation": "КИР",
      "time": "14:41",
      "no": 11,
-     "warmup": 3
+     "warmup": 3,
+     "place": 3
     },
     {
      "name": "Анна Соболева / Матвей Чураков",
      "nation": "ПРМ",
      "time": "14:47",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "place": 1
     },
     {
      "name": "Анна Билибина / Дмитрий Кашаев",
@@ -43721,7 +43733,28 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Анна Соболева / Матвей Чураков",
+     "nation": "ПРМ",
+     "points": "92.31"
+    },
+    {
+     "place": 2,
+     "name": "София Загребаева / Иван Тертышников",
+     "nation": "МОС",
+     "points": "89.30"
+    },
+    {
+     "place": 3,
+     "name": "Ирина Скопина / Дмитрий Симонов",
+     "nation": "КИР",
+     "points": "86.69"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:pairs-junior-pp",
