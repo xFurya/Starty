@@ -95,8 +95,8 @@ ProtocolView protocolView(
       return _noProtocol(hasField);
     case ProtocolNetError():
       return const ProtocolView('Нет связи с сервером', ProtocolTone.quiet, retry: true);
-    case ProtocolOk():
-      return _inFile(category, tab, hasField: hasField, built: built, fieldCount: fieldCount);
+    case ProtocolOk(:final board):
+      return _inFile(category, tab, hasField: hasField, built: built, fieldCount: fieldCount, board: board);
   }
 }
 
@@ -112,7 +112,7 @@ ProtocolView _noProtocol(bool hasField) => hasField
     ? const ProtocolView('Протокола пока нет', ProtocolTone.quiet, application: true, noFile: true)
     : const ProtocolView('Протокола и заявки пока нет', ProtocolTone.quiet, noFile: true);
 
-ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasField, DateTime? built, int fieldCount = 0}) {
+ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasField, DateTime? built, int fieldCount = 0, bool? board}) {
   if (category == null) return _noProtocol(hasField);
   if (tab == totalTab) {
     final t = category.total;
@@ -123,7 +123,7 @@ ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasF
     if (t.state == TotalState.finalized) {
       return ProtocolView('Окончательный', ProtocolTone.finalized, rows: t.rows);
     }
-    return ProtocolView(_updated(built), ProtocolTone.quiet, rows: t.rows);
+    return ProtocolView(_updated(built, board), ProtocolTone.quiet, rows: t.rows);
   }
   final seg = category.segmentOf(tab);
   if (seg == null) return _noProtocol(hasField);
@@ -139,11 +139,11 @@ ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasF
         ProtocolTone.live,
         rows: seg.rows,
         progress: _progress(seg.rows.length, fieldCount),
-        note: _updated(built),
+        note: _updated(built, board),
       );
     case SegmentState.provisional:
       if (seg.rows.isEmpty) return _noProtocol(hasField);
-      return ProtocolView(_updated(built), ProtocolTone.quiet, rows: seg.rows);
+      return ProtocolView(_updated(built, board), ProtocolTone.quiet, rows: seg.rows);
     case SegmentState.finalized:
       // окончательный без строк — нераспознанный файл, а не «протокол пуст»
       if (seg.rows.isEmpty) return const ProtocolView('Экран для этого протокола недоступен', ProtocolTone.quiet);
@@ -181,7 +181,16 @@ String statusLabel(String s) {
   return m[s.trim().toUpperCase()] ?? s;
 }
 
-String _updated(DateTime? built) => built == null ? 'Обновлено' : 'Обновлено ${hm(built)}';
+/// Когда обновлено и откуда: собрано на устройстве с табло — «С табло», табло не ответило — так и
+/// сказано, на экране файл сервера; иначе — «Обновлено» (файл сервера, с табло не собирали).
+String _updated(DateTime? built, [bool? board]) {
+  final at = built == null ? '' : ' ${hm(built)}';
+  return switch (board) {
+    true => 'С табло$at',
+    false => 'Табло не ответило, файл$at',
+    null => 'Обновлено$at',
+  };
+}
 
 String _dm(DateTime t) {
   final m = msk(t);

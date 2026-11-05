@@ -20,7 +20,11 @@ sealed class ProtocolLoad {
 final class ProtocolOk extends ProtocolLoad {
   final ProtocolDoc doc;
   final DateTime fetchedAt;
-  const ProtocolOk(this.doc, this.fetchedAt);
+
+  /// Протокол собран на устройстве прямо с табло (true) или с табло собрать не вышло — табло не
+  /// ответило или распознать было нечего, на экране файл сервера (false); null — с табло не собирали.
+  final bool? board;
+  const ProtocolOk(this.doc, this.fetchedAt, {this.board});
 }
 
 /// Сети нет, таймаут или ошибка сервера. [cached] — последний удачный файл, если он есть.
@@ -78,14 +82,16 @@ class ProtocolRepo {
       cached: base,
       now: _now(),
     );
-    if (built == null) return srv;
+    // с табло не вышло — файл сервера, но честно: экран скажет, что табло не ответило
+    ProtocolLoad noBoard() => srv is ProtocolOk ? ProtocolOk(srv.doc, srv.fetchedAt, board: false) : srv;
+    if (built == null) return noBoard();
     try {
       final (json, _) = base == null ? (built.json, false) : mergeJson(base, built.json);
       final doc = ProtocolDoc.fromJson(json);
       await _writeCache(proto, jsonEncode(json));
-      return ProtocolOk(doc, _now());
+      return ProtocolOk(doc, _now(), board: true);
     } on ProtocolFormatException {
-      return srv;
+      return noBoard();
     }
   }
 

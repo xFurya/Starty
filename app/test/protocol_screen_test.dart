@@ -145,6 +145,14 @@ class _NetDown implements Exception {
   const _NetDown();
 }
 
+/// Репозиторий, который отдаёт готовый исход: так проверяется, что экран честно называет источник.
+class _Fixed extends ProtocolRepo {
+  final ProtocolLoad r;
+  _Fixed(this.r) : super(now: () => _now);
+  @override
+  Future<ProtocolLoad> load(String proto, {Start? start, Iterable<Start> starts = const [], bool device = false}) async => r;
+}
+
 Future<void> pumpScreen(
   WidgetTester tester, {
   required Start s,
@@ -234,6 +242,21 @@ void main() {
       final n = ((_seg(withState('in_progress'))['rows']) as List).length;
       expect(find.text('Выступили $n из 5'), findsOneWidget);
       expect(find.text('Обновлено 21:56'), findsOneWidget);
+    });
+
+    testWidgets('собран на устройстве с табло — «С табло», а не «Обновлено»', (tester) async {
+      final doc = ProtocolDoc.fromJson(withState('in_progress'));
+      await pumpScreen(tester, s: start(), repo: _Fixed(ProtocolOk(doc, _now, board: true)), width: 360, scale: 1.3);
+      expect(find.text('С табло 21:56'), findsOneWidget);
+      expect(find.textContaining('Обновлено'), findsNothing);
+      expectNoHorizontalScroll(tester);
+    });
+
+    testWidgets('табло не ответило — так и сказано, показан файл', (tester) async {
+      final doc = ProtocolDoc.fromJson(withState('in_progress'));
+      await pumpScreen(tester, s: start(), repo: _Fixed(ProtocolOk(doc, _now, board: false)), width: 360, scale: 1.3);
+      expect(find.text('Табло не ответило, файл 21:56'), findsOneWidget);
+      expectNoHorizontalScroll(tester);
     });
 
     testWidgets('сегмент прошёл, оценок нет — без пометки статуса, только время обновления', (tester) async {

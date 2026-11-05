@@ -55,10 +55,32 @@ class _ProtocolPageState extends State<ProtocolPage> {
   int _progress = 0;
   bool _failed = false;
 
-  /// PDF встроенный браузер Android не показывает — открываем через просмотрщик.
-  static String _viewable(String url) => url.toLowerCase().endsWith('.pdf')
-      ? 'https://docs.google.com/viewer?embedded=true&url=${Uri.encodeComponent(url)}'
-      : url;
+  /// PDF встроенный браузер Android не показывает — открываем через просмотрщик. Просмотрщик
+  /// хранит файл у себя по адресу: метка времени в адресе заставляет его взять файл заново.
+  static String _viewable(String url) {
+    if (!url.toLowerCase().endsWith('.pdf')) return url;
+    final fresh = '$url${url.contains('?') ? '&' : '?'}t=${DateTime.now().millisecondsSinceEpoch}';
+    return 'https://docs.google.com/viewer?embedded=true&url=${Uri.encodeComponent(fresh)}';
+  }
+
+  /// Страница всегда с сайта, а не из памяти браузера: протокол на табло меняется каждую минуту.
+  static const _noCache = {'Cache-Control': 'no-cache', 'Pragma': 'no-cache'};
+
+  Future<void> _load(String url) async {
+    await _c.clearCache();
+    await _c.loadRequest(Uri.parse(url), headers: _noCache);
+  }
+
+  Future<void> _reload() async {
+    setState(() => _failed = false);
+    final now = Uri.tryParse(await _c.currentUrl() ?? '');
+    if (now == null || !now.hasScheme || now.scheme == 'about') return _load(_viewable(widget.url));
+    // файл в просмотрщике — заново и с новой меткой времени, иначе просмотрщик отдаст свою копию
+    final pdf = now.host == 'docs.google.com' ? now.queryParameters['url'] : null;
+    if (pdf != null) return _load(_viewable(pdf.replaceFirst(RegExp(r'[?&]t=\d+$'), '')));
+    await _c.clearCache();
+    await _c.reload();
+  }
 
   @override
   void initState() {
@@ -68,6 +90,8 @@ class _ProtocolPageState extends State<ProtocolPage> {
       ..enableZoom(true)
       ..setNavigationDelegate(NavigationDelegate(
         onProgress: (p) => mounted ? setState(() => _progress = p) : null,
+        // как только страница загружена — память браузера чистая: следующая ссылка и «назад» идут на сайт
+        onPageFinished: (_) => _c.clearCache(),
         onWebResourceError: (e) {
           if (e.isForMainFrame ?? true) setState(() => _failed = true);
         },
@@ -80,13 +104,13 @@ class _ProtocolPageState extends State<ProtocolPage> {
           }
           // ссылки на PDF внутри протокола — тоже через просмотрщик
           if (r.url.toLowerCase().endsWith('.pdf') && !r.url.contains('docs.google.com')) {
-            _c.loadRequest(Uri.parse(_viewable(r.url)));
+            _load(_viewable(r.url));
             return NavigationDecision.prevent;
           }
           return NavigationDecision.navigate;
         },
-      ))
-      ..loadRequest(Uri.parse(_viewable(widget.url)));
+      ));
+    _load(_viewable(widget.url));
   }
 
   @override
@@ -108,10 +132,7 @@ class _ProtocolPageState extends State<ProtocolPage> {
             IconButton(
               tooltip: 'Обновить',
               icon: const Icon(Icons.refresh),
-              onPressed: () {
-                setState(() => _failed = false);
-                _c.reload();
-              },
+              onPressed: _reload,
             ),
           ],
           bottom: _progress < 100
@@ -124,10 +145,7 @@ class _ProtocolPageState extends State<ProtocolPage> {
                   const Text('Протокол недоступен'),
                   const SizedBox(height: 12),
                   OutlinedButton(
-                    onPressed: () {
-                      setState(() => _failed = false);
-                      _c.reload();
-                    },
+                    onPressed: _reload,
                     child: const Text('Повторить'),
                   ),
                 ]),
