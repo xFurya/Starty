@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-05T19:30:18+03:00",
- "checked": "2026-11-05T19:30:18+03:00",
+ "generated": "2026-11-05T22:43:44+03:00",
+ "checked": "2026-11-05T22:43:44+03:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -43674,7 +43674,7 @@
     },
     {
      "name": "YouTube",
-     "url": "https://www.youtube.com/@ice_skating/live"
+     "url": "https://www.youtube.com/watch?v=riUZPdIDSuI"
     }
    ],
    "podium": [
@@ -43914,7 +43914,7 @@
     },
     {
      "name": "YouTube",
-     "url": "https://www.youtube.com/@ice_skating/live"
+     "url": "https://www.youtube.com/watch?v=riUZPdIDSuI"
     }
    ],
    "podium": [
@@ -44085,7 +44085,7 @@
     },
     {
      "name": "YouTube",
-     "url": "https://www.youtube.com/@ice_skating/live"
+     "url": "https://www.youtube.com/watch?v=riUZPdIDSuI"
     }
    ],
    "podium": [
@@ -44329,7 +44329,7 @@
     },
     {
      "name": "YouTube",
-     "url": "https://www.youtube.com/@ice_skating/live"
+     "url": "https://www.youtube.com/watch?v=riUZPdIDSuI"
     }
    ],
    "podium": [
@@ -46170,6 +46170,262 @@
     }
    ],
    "desc": "Начало: 16:20 МСК\nТрансляция: Первый канал / YouTube",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:dance-junior-rt",
+   "tid": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Сердце Сибири»",
+   "kind": "dance",
+   "level": "junior",
+   "seg": "РТ",
+   "title": "ЮГП России «Сердце Сибири» — танцы РТ",
+   "start": "2026-11-11T14:30:00+03:00",
+   "end": "2026-11-11T16:30:00+03:00",
+   "venue": "G-Drive Арена, Омск",
+   "intl": false,
+   "broadcast": [
+    "Первый канал",
+    "YouTube"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule.pdf",
+   "watch": [
+    {
+     "name": "Первый канал",
+     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+    },
+    {
+     "name": "YouTube",
+     "url": "https://www.youtube.com/@ice_skating/live"
+    }
+   ],
+   "desc": "Начало: 14:30 МСК\nТрансляция: Первый канал / YouTube",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:pairs-junior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Сердце Сибири»",
+   "kind": "pairs",
+   "level": "junior",
+   "seg": "КП",
+   "title": "ЮГП России «Сердце Сибири» — пары КП",
+   "start": "2026-11-11T16:45:00+03:00",
+   "end": "2026-11-11T17:45:00+03:00",
+   "venue": "G-Drive Арена, Омск",
+   "intl": false,
+   "broadcast": [
+    "Первый канал",
+    "YouTube"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule.pdf",
+   "watch": [
+    {
+     "name": "Первый канал",
+     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+    },
+    {
+     "name": "YouTube",
+     "url": "https://www.youtube.com/@ice_skating/live"
+    }
+   ],
+   "desc": "Начало: 16:45 МСК\nТрансляция: Первый канал / YouTube",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:dance-junior-pt",
+   "tid": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Сердце Сибири»",
+   "kind": "dance",
+   "level": "junior",
+   "seg": "ПТ",
+   "title": "ЮГП России «Сердце Сибири» — танцы ПТ",
+   "start": "2026-11-12T10:00:00+03:00",
+   "end": "2026-11-12T12:10:00+03:00",
+   "venue": "G-Drive Арена, Омск",
+   "intl": false,
+   "broadcast": [
+    "Первый канал",
+    "YouTube"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule.pdf",
+   "watch": [
+    {
+     "name": "Первый канал",
+     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+    },
+    {
+     "name": "YouTube",
+     "url": "https://www.youtube.com/@ice_skating/live"
+    }
+   ],
+   "desc": "Начало: 10:00 МСК\nТрансляция: Первый канал / YouTube",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:pairs-junior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Сердце Сибири»",
+   "kind": "pairs",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "ЮГП России «Сердце Сибири» — пары ПП",
+   "start": "2026-11-12T12:30:00+03:00",
+   "end": "2026-11-12T13:40:00+03:00",
+   "venue": "G-Drive Арена, Омск",
+   "intl": false,
+   "broadcast": [
+    "Первый канал",
+    "YouTube"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule.pdf",
+   "watch": [
+    {
+     "name": "Первый канал",
+     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+    },
+    {
+     "name": "YouTube",
+     "url": "https://www.youtube.com/@ice_skating/live"
+    }
+   ],
+   "desc": "Начало: 12:30 МСК\nТрансляция: Первый канал / YouTube",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:women-junior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Сердце Сибири»",
+   "kind": "women",
+   "level": "junior",
+   "seg": "КП",
+   "title": "ЮГП России «Сердце Сибири» — девушки КП",
+   "start": "2026-11-12T14:00:00+03:00",
+   "end": "2026-11-12T16:20:00+03:00",
+   "venue": "G-Drive Арена, Омск",
+   "intl": false,
+   "broadcast": [
+    "Первый канал",
+    "YouTube"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule.pdf",
+   "watch": [
+    {
+     "name": "Первый канал",
+     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+    },
+    {
+     "name": "YouTube",
+     "url": "https://www.youtube.com/@ice_skating/live"
+    }
+   ],
+   "desc": "Начало: 14:00 МСК\nТрансляция: Первый канал / YouTube",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:men-junior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Сердце Сибири»",
+   "kind": "men",
+   "level": "junior",
+   "seg": "КП",
+   "title": "ЮГП России «Сердце Сибири» — юноши КП",
+   "start": "2026-11-12T16:35:00+03:00",
+   "end": "2026-11-12T19:00:00+03:00",
+   "venue": "G-Drive Арена, Омск",
+   "intl": false,
+   "broadcast": [
+    "Первый канал",
+    "YouTube"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule.pdf",
+   "watch": [
+    {
+     "name": "Первый канал",
+     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+    },
+    {
+     "name": "YouTube",
+     "url": "https://www.youtube.com/@ice_skating/live"
+    }
+   ],
+   "desc": "Начало: 16:35 МСК\nТрансляция: Первый канал / YouTube",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:women-junior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Сердце Сибири»",
+   "kind": "women",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "ЮГП России «Сердце Сибири» — девушки ПП",
+   "start": "2026-11-13T09:45:00+03:00",
+   "end": "2026-11-13T12:20:00+03:00",
+   "venue": "G-Drive Арена, Омск",
+   "intl": false,
+   "broadcast": [
+    "Первый канал",
+    "YouTube"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule.pdf",
+   "watch": [
+    {
+     "name": "Первый канал",
+     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+    },
+    {
+     "name": "YouTube",
+     "url": "https://www.youtube.com/@ice_skating/live"
+    }
+   ],
+   "desc": "Начало: 09:45 МСК\nТрансляция: Первый канал / YouTube",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:men-junior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026",
+   "tournament": "ЮГП России «Сердце Сибири»",
+   "kind": "men",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "ЮГП России «Сердце Сибири» — юноши ПП",
+   "start": "2026-11-13T12:45:00+03:00",
+   "end": "2026-11-13T15:15:00+03:00",
+   "venue": "G-Drive Арена, Омск",
+   "intl": false,
+   "broadcast": [
+    "Первый канал",
+    "YouTube"
+   ],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule.pdf",
+   "watch": [
+    {
+     "name": "Первый канал",
+     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+    },
+    {
+     "name": "YouTube",
+     "url": "https://www.youtube.com/@ice_skating/live"
+    }
+   ],
+   "desc": "Начало: 12:45 МСК\nТрансляция: Первый канал / YouTube",
    "proto": null
   },
   {
@@ -48733,14 +48989,6 @@
  ],
  "upcoming": [
   {
-   "tid": "fsr:iugp-rossii-serdtse-sibiri-2026-11-10",
-   "name": "ЮГП России «Сердце Сибири»",
-   "start": "2026-11-10",
-   "end": "2026-11-13",
-   "venue": "G-Drive Арена, Омск",
-   "intl": false
-  },
-  {
    "tid": "fsr:gran-pri-rossii-serdtse-sibiri-2026-11-13",
    "name": "Гран-при России «Сердце Сибири»",
    "start": "2026-11-13",
@@ -48855,11 +49103,11 @@
    "watch": []
   },
   {
-   "tid": "fsr:na-prizy-klimova-2026-11-17",
+   "tid": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026",
    "name": "На призы Климова",
    "start": "2026-11-17",
    "end": "2026-11-19",
-   "venue": "ДС «Большой», Сириус",
+   "venue": "ДC «Большой» (демонстрационная арена), Сириус",
    "intl": false
   },
   {
