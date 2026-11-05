@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 import 'data.dart';
 import 'flags.dart';
-import 'live.dart' show LiveOk, personKey;
+import 'live.dart' show personKey;
 import 'palette.dart';
 import 'protocol_model.dart';
 import 'protocol_details.dart';
@@ -321,6 +321,26 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
     return null;
   }
 
+  /// Старты этого турнира из расписания, открытый — первым.
+  Iterable<Start> get _siblings sync* {
+    final s = widget.start;
+    yield s;
+    for (final x in widget.state?.data?.starts ?? const <Start>[]) {
+      if (x.tid == s.tid && x.id != s.id) yield x;
+    }
+  }
+
+  /// Старт выбранной категории и вкладки: состав по заявке, «выступили N из M» и табло — его, а не
+  /// того, с которого открыт экран. Файла нет (выбирать не из чего) — старт экрана; такого старта
+  /// в расписании нет — null, и заявки у вкладки нет.
+  Start? _startOf(ProtocolCategory? cat, String tab) {
+    if (cat == null) return widget.start;
+    for (final x in _siblings) {
+      if (x.kind == cat.kind && x.level == cat.level && x.seg == tab) return x;
+    }
+    return null;
+  }
+
   /// Выбор по умолчанию: категория и вкладка старта; уже выбранное сохраняем, если оно есть в файле.
   void _pickDefaults() {
     final s = widget.start;
@@ -381,32 +401,31 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
   @override
   Widget build(BuildContext context) {
     final state = widget.state;
-    if (state == null) return _build(context, null);
-    return ListenableBuilder(listenable: state, builder: (c, _) => _build(c, state.liveOf(widget.start.id)));
+    if (state == null) return _build(context);
+    return ListenableBuilder(listenable: state, builder: (c, _) => _build(c));
   }
 
-  Widget _build(BuildContext context, LiveOk? live) {
+  Widget _build(BuildContext context) {
     final s = widget.start;
     final doc = _doc;
     final cat = _category;
     final tab = _tab ?? totalTab;
     final seg = tab == totalTab ? null : cat?.segmentOf(tab);
-    final hasField = s.field.isNotEmpty;
+    // заявка выбранной категории и вкладки; у «Итога» и у вкладки без старта в расписании её нет
+    final here = _startOf(cat, tab);
+    final field = here?.field ?? const <Skater>[];
+    final live = here == null ? null : widget.state?.liveOf(here.id);
     final load = _load;
     var view = load == null
         ? const ProtocolView('Загружаем протокол…', ProtocolTone.quiet)
-        : protocolView(load, category: cat, tab: tab, hasField: hasField, built: doc?.built, fieldCount: s.field.length);
+        : protocolView(load, category: cat, tab: tab, hasField: field.isNotEmpty, built: doc?.built, fieldCount: field.length);
     // В файле строк нет, а табло уже показало итоги этого старта — показываем их, пока файл не обновится.
-    final onBoard = live != null &&
-        live.rows.isNotEmpty &&
-        view.noFile &&
-        tab == s.seg &&
-        (cat == null || (cat.kind == s.kind && cat.level == s.level));
+    final onBoard = live != null && live.rows.isNotEmpty && view.noFile;
     if (onBoard) {
       view = ProtocolView(
         'По табло',
         live.provisional ? ProtocolTone.live : ProtocolTone.quiet,
-        progress: _progress(live.rows.length, s.field.length),
+        progress: _progress(live.rows.length, field.length),
         rows: [
           for (var i = 0; i < live.rows.length; i++)
             ProtocolRow(i: i + 1, place: live.rows[i].place, name: live.rows[i].name, nation: live.rows[i].nation, points: live.rows[i].points),
@@ -420,7 +439,8 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
             for (final x in cat.segments) (x.code, _tabLabel[x.code] ?? x.name),
             (totalTab, 'Итог'),
           ];
-    final ours = {for (final o in s.ours) personKey(o.name)};
+    // отслеживаемые всего турнира: в другой категории выделяются её люди
+    final ours = {for (final x in _siblings) for (final o in x.ours) personKey(o.name)};
     final width = MediaQuery.sizeOf(context).width;
     final gutter = width < 360 ? 12.0 : 16.0;
 
@@ -496,19 +516,19 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
                   ),
                 ),
               ],
-              if (view.application && s.field.isNotEmpty) ...[
+              if (view.application && field.isNotEmpty) ...[
                 const Eyebrow('Состав по заявке', padding: EdgeInsets.fromLTRB(6, 18, 6, 8)),
                 Plate(
                   margin: EdgeInsets.zero,
                   child: Column(
                     children: [
-                      for (var i = 0; i < s.field.length; i++) ...[
+                      for (var i = 0; i < field.length; i++) ...[
                         if (i > 0) const Hairline(indent: 16),
                         _FieldRow(
-                          name: s.field[i].name,
-                          nation: s.field[i].nation,
-                          time: s.field[i].time,
-                          ours: ours.contains(personKey(s.field[i].name)),
+                          name: field[i].name,
+                          nation: field[i].nation,
+                          time: field[i].time,
+                          ours: ours.contains(personKey(field[i].name)),
                         ),
                       ],
                     ],

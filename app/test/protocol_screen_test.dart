@@ -282,6 +282,72 @@ void main() {
       expectNoHorizontalScroll(tester);
     });
 
+    testWidgets('состав по заявке — выбранной категории, а не той, с которой открыт экран', (tester) async {
+      // в файле две категории; у женщин КП ещё нет протокола, состав — свой
+      final j = withState('not_published');
+      (j['categories'] as List).add({
+        'kind': 'women',
+        'level': 'senior',
+        'name': 'Женщины',
+        'segments': [
+          {'code': 'КП', 'name': 'Короткая программа', 'table': 'results', 'state': 'not_published', 'rows': []},
+        ],
+      });
+      final dance = start(field: ['Анна Билибина / Дмитрий Кашаев'], ours: ['Анна Билибина / Дмитрий Кашаев']);
+      final women = Start.fromJson({
+        'id': 'ffkm:2026-08-24_pm:women-senior-kp',
+        'tid': dance.tid,
+        'tournament': dance.tournament,
+        'kind': 'women',
+        'level': 'senior',
+        'seg': 'КП',
+        'title': 'Первенство Москвы — женщины КП',
+        'venue': dance.venue,
+        'src': dance.src,
+        'start': '2026-08-24T19:00:00+03:00',
+        'end': '2026-08-24T21:00:00+03:00',
+        'proto': dance.proto,
+        'field': [
+          {'name': 'Мария Петрова', 'time': '19:00'},
+          {'name': 'Ольга Сидорова', 'time': '19:05'},
+        ],
+        'ours': [
+          {'name': 'Ольга Сидорова', 'time': '19:05'},
+        ],
+      });
+      final state = AppState()..data = Schedule([dance, women], _now, true, false);
+      await pumpScreen(tester, s: dance, repo: repoWith(j), state: state);
+      expect(find.text('Анна Билибина / Дмитрий Кашаев'), findsOneWidget);
+      expect(find.text('Мария Петрова'), findsNothing);
+
+      await tester.tap(find.text('Женщины'));
+      await tester.pumpAndSettle();
+      expect(find.text('Протокола пока нет'), findsOneWidget);
+      expect(find.text('Мария Петрова'), findsOneWidget);
+      expect(find.text('Ольга Сидорова'), findsOneWidget);
+      expect(find.text('Анна Билибина / Дмитрий Кашаев'), findsNothing);
+      expectNoHorizontalScroll(tester);
+    });
+
+    testWidgets('у выбранной категории старта в расписании нет — заявки нет, чужая не показывается', (tester) async {
+      final j = withState('not_published');
+      (j['categories'] as List).add({
+        'kind': 'men',
+        'level': 'senior',
+        'name': 'Мужчины',
+        'segments': [
+          {'code': 'КП', 'name': 'Короткая программа', 'table': 'results', 'state': 'not_published', 'rows': []},
+        ],
+      });
+      final dance = start(field: ['Анна Билибина / Дмитрий Кашаев']);
+      await pumpScreen(tester, s: dance, repo: repoWith(j), state: AppState()..data = Schedule([dance], _now, true, false));
+      await tester.tap(find.text('Мужчины'));
+      await tester.pumpAndSettle();
+      expect(find.text('Протокола и заявки пока нет'), findsOneWidget);
+      expect(find.text('СОСТАВ ПО ЗАЯВКЕ'), findsNothing);
+      expect(find.text('Анна Билибина / Дмитрий Кашаев'), findsNothing);
+    });
+
     testWidgets('в файле строк нет и живых итогов нет — как раньше', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(withState('not_published')), state: AppState());
       expect(find.text('Протокола и заявки пока нет'), findsOneWidget);

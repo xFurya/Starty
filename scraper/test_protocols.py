@@ -406,7 +406,8 @@ class FfkmSegments(unittest.TestCase):
     def test_women_kp_final_by_judges_rows_from_pdf(self):
         start = dt.datetime(2026, 8, 26, 14, 30, tzinfo=MSK)
         end = dt.datetime(2026, 8, 26, 16, 30, tzinfo=MSK)
-        v = self.view("SEG001.HTM", "КП", start, end, end + dt.timedelta(hours=1))
+        v = self.view("SEG001.HTM", "КП", start, end, end + dt.timedelta(hours=1),
+                      pdf=_pdf_text("ffkm", FFKM_PDF["women_kp"][0]))
         self.assertEqual((v["state"], v["basis"], v["table"], v["judges"]), ("final", "judges", "judges_pdf", "ok"))
         self.assertEqual(len(v["rows"]), 48)
         # results — все строки по местам (как parse_segment_results); тройку берёт top3
@@ -417,7 +418,8 @@ class FfkmSegments(unittest.TestCase):
     def test_women_kp_podium_off_keeps_state_without_podium(self):
         start = dt.datetime(2026, 8, 26, 14, 30, tzinfo=MSK)
         end = dt.datetime(2026, 8, 26, 16, 30, tzinfo=MSK)
-        v = self.view("SEG001.HTM", "КП", start, end, end + dt.timedelta(hours=1), podium=False)
+        v = self.view("SEG001.HTM", "КП", start, end, end + dt.timedelta(hours=1), podium=False,
+                      pdf=_pdf_text("ffkm", FFKM_PDF["women_kp"][0]))
         self.assertEqual(v["state"], "final")
         self.assertIsNone(v["results"])
 
@@ -425,7 +427,9 @@ class FfkmSegments(unittest.TestCase):
     def test_men_kp_shared_url_is_mismatch(self):
         start = dt.datetime(2026, 8, 27, 14, 0, tzinfo=MSK)
         end = dt.datetime(2026, 8, 27, 16, 0, tzinfo=MSK)
-        v = self.view("SEG003.HTM", "КП", start, end, end + dt.timedelta(hours=1))
+        # у юношей КП в оглавлении тот же PDF, что у девушек: в нём чужая категория
+        v = self.view("SEG003.HTM", "КП", start, end, end + dt.timedelta(hours=1),
+                      pdf=_pdf_text("ffkm", FFKM_PDF["men_kp"][0]))
         self.assertEqual((v["state"], v["judges"], v["rows"], v["results"]), ("judges_mismatch", "mismatch", [], None))
 
     @unittest.skipUnless(HAS_PDFTOTEXT, "нужен pdftotext")
