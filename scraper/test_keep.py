@@ -226,6 +226,15 @@ class TopLevelTest(unittest.TestCase):
         got = kp.merge_upcoming([], old, {"ISU": "ok"}, {"isu:*"}, "2026-10-16")
         self.assertEqual({u["tid"] for u in got}, {"isu:b", "isu:scheduled"})
 
+    def test_upcoming_keeps_found_watch(self):
+        # канал в этот раз не ответил — найденная прежде площадка не пропадает
+        old = [{"tid": "isu:t", "start": "2026-11-16", "end": "2026-11-22", "broadcast": ["Ice-Stars.TV"],
+                "watch": [{"name": "Ice-Stars.TV", "url": "https://ice-stars.tv/tallinntrophy", "note": "Платно"}]}]
+        new = [{"tid": "isu:t", "start": "2026-11-16", "end": "2026-11-22", "broadcast": [], "watch": []}]
+        got = kp.merge_upcoming(new, old, {"ISU": "ok"}, set(), "2026-10-16")
+        self.assertEqual(got[0]["watch"], old[0]["watch"])
+        self.assertEqual(got[0]["broadcast"], ["Ice-Stars.TV"])
+
 
 class UniqueIdTest(unittest.TestCase):
     def mk(self, eid, cat, start):

@@ -204,6 +204,14 @@ def merge_upcoming(new, old, sources, failed, today):
     турнир не закончился. sources — {источник: ok|причина}, failed — tid и «префикс:*»."""
     have = {u["tid"] for u in new}
     out = list(new)
+    prev = {u["tid"]: u for u in old or []}
+    for u in out:
+        # где смотреть: сбой канала в этот раз не стирает найденную прежде площадку
+        o = prev.get(u["tid"])
+        if o and o.get("watch"):
+            u["watch"] = merge_watch(u.get("watch"), o["watch"])
+            u["broadcast"] = list(u.get("broadcast") or []) + \
+                [w["name"] for w in u["watch"] if w["name"] not in (u.get("broadcast") or [])]
     for u in old or []:
         if u["tid"] in have or u["end"] < today:
             continue

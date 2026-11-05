@@ -1085,7 +1085,7 @@ class _InfoRow extends StatelessWidget {
           ),
           for (var i = 0; i < links.length; i++) ...[
             if (i > 0) const Hairline(indent: 52),
-            _WatchRow(link: links[i]),
+            WatchRow(link: links[i]),
           ],
         ],
       );
@@ -1116,28 +1116,42 @@ class _InfoRow extends StatelessWidget {
 }
 
 /// Один ресурс трансляции: вся строка нажимается и открывает его ссылку во внешнем приложении.
-/// Название переносится по словам; справа тихий значок акцентного цвета без заливки.
-class _WatchRow extends StatelessWidget {
+/// Название переносится по словам; под ним — где площадка доступна, если это известно;
+/// справа тихий значок акцентного цвета без заливки.
+class WatchRow extends StatelessWidget {
   final WatchLink link;
-  const _WatchRow({required this.link});
+
+  /// Отступы строки: в листе старта текст стоит под заголовком (16 + 21 значок + 15).
+  final EdgeInsets padding;
+  const WatchRow({super.key, required this.link, this.padding = const EdgeInsets.fromLTRB(52, 12, 16, 12)});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
+    final note = link.note;
     return Semantics(
       button: true,
-      label: 'Открыть трансляцию: ${link.name}',
+      label: 'Открыть трансляцию: ${link.name}${note == null ? '' : ', $note'}',
+      excludeSemantics: true,
       child: InkWell(
         key: ValueKey('watch:${link.name}'),
         onTap: () => watchOpener(context, link.url, link.name),
         child: ConstrainedBox(
           constraints: const BoxConstraints(minHeight: 44),
           child: Padding(
-            // отступ слева совпадает с текстом заголовка: 16 + 21 значок + 15
-            padding: const EdgeInsets.fromLTRB(52, 12, 16, 12),
+            padding: padding,
             child: Row(
               children: [
                 Expanded(
-                  child: Text(link.name, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(link.name, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink)),
+                      if (note != null) ...[
+                        const SizedBox(height: 2),
+                        Text(note, style: TextStyle(fontSize: 13, color: p.ink2, height: 1.3)),
+                      ],
+                    ],
+                  ),
                 ),
                 const SizedBox(width: 12),
                 Icon(CupertinoIcons.arrow_up_right, size: 16, color: p.accent),

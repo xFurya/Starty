@@ -397,22 +397,75 @@ def _http_url(u):
     return isinstance(u, str) and re.match(r"https?://[^\s/]+", u) is not None
 
 
-def watch_for(name, base=None, event=None):
-    """Где смотреть: [{name, url}]. Ссылки со страницы турнира (base) важнее общих
+SOLID_API = ("https://solidsport.com/api/play_v1/timeline_objects/collections/livestreams"
+             "?company={}&page=1&per_page=50&include_games_and_livestreams=true")
+_SOLID = {}  # канал Solidsport → [(день начала эфира по Москве, платный ли)]
+
+
+def _watch_fields(name, bcast, first, last, base=None):
+    """Трансляция турнира без расписания: где смотреть в его дни; названия площадок — и в broadcast."""
+    w = watch_for(name, base, days=(first, last))
+    return {"broadcast": list(bcast) + [x["name"] for x in w if x["name"] not in bcast], "watch": w}
+
+
+def solid_streams(company):
+    """Эфиры канала Solidsport (на нём Ice-Stars.TV): [(день по Москве, платно)]. Нет сети — пусто:
+    тогда нет и ссылки, а прежняя остаётся из прошлого сбора (keep.py)."""
+    if company not in _SOLID:
+        out = []
+        try:
+            raw = json.loads(net.fetch(SOLID_API.format(company)))
+            for s in raw if isinstance(raw, list) else []:
+                t = s.get("start_at") or s.get("live_start_at")
+                if isinstance(t, (int, float)) and not isinstance(t, bool):
+                    out.append((dt.datetime.fromtimestamp(t, MSK).date(), bool(s.get("price"))))
+        except Exception as ex:
+            log("  ! эфиры Solidsport:", company, ex)
+        _SOLID[company] = out
+    return _SOLID[company]
+
+
+def watch_for(name, base=None, event=None, days=None):
+    """Где смотреть: [{name, url, note?}]. Ссылки со страницы турнира (base) важнее общих
     правил из config.json: правило не добавляет канал, который со страницы уже есть.
     event = (kind, level, seg, день по Москве[, место]): правило со stream подменяет общую ссылку
-    конкретным эфиром, если он нашёлся в RSS."""
+    конкретным эфиром, если он нашёлся в RSS; с only_stream без найденного эфира ссылки нет.
+    days = (первый, последний день) турнира без расписания. Правило с solid даёт ссылку, только если
+    на канале Solidsport заведён эфир в дни турнира: прошлогодний канал без эфира не обещаем.
+    note — где доступна площадка (из правила) или «Платно» (у платного эфира Solidsport)."""
     out = [dict(w) for w in (base or []) if w.get("name") and _http_url(w.get("url"))]
     have = {w["name"] for w in out}
+    if event and days is None:
+        days = (event[3], event[3])
     for r in CFG["broadcast_rules"]:
         if re.search(r["match"], name):
             for w in r.get("watch", []):
-                if w["name"] not in have and _http_url(w["url"]):
-                    url = w["url"]
-                    if event and w.get("stream"):
-                        url = stream_url(w["stream"], *event) or url
-                    out.append({"name": w["name"], "url": url})
-                    have.add(w["name"])
+                if w["name"] in have:
+                    # ссылка со страницы турнира, а где доступна — из правила
+                    for x in out:
+                        if x["name"] == w["name"] and w.get("note") and not x.get("note"):
+                            x["note"] = w["note"]
+                    continue
+                if not _http_url(w["url"]):
+                    continue
+                url, note = w["url"], w.get("note")
+                if w.get("solid"):
+                    one = dt.timedelta(days=1)
+                    got = [paid for d, paid in solid_streams(w["solid"]) if days and days[0] - one <= d <= days[1] + one]
+                    if not got:
+                        continue
+                    if any(got) and not note:
+                        note = "Платно"
+                elif w.get("stream"):
+                    found = stream_url(w["stream"], *event) if event else None
+                    if w.get("only_stream") and not found:
+                        continue
+                    url = found or url
+                item = {"name": w["name"], "url": url}
+                if note:
+                    item["note"] = note
+                out.append(item)
+                have.add(w["name"])
     return out
 
 
@@ -808,7 +861,8 @@ def do_fsr(names, report, failed, upcoming, photos):
             log(f"  ФФККР {name}: {len(got)}")
         elif c["end"] >= today:
             upcoming.append({"tid": tid, "name": name, "start": c["start"].isoformat(),
-                             "end": c["end"].isoformat(), "venue": venue, "intl": False})
+                             "end": c["end"].isoformat(), "venue": venue, "intl": False,
+                             **_watch_fields(name, bcast, c["start"], c["end"], page["watch"] if page else None)})
     return events
 
 
@@ -1070,7 +1124,8 @@ def do_isu(names, report, failed, upcoming, photos):
                         "end": (to - dt.timedelta(hours=12)).astimezone(MSK).date().isoformat(),
                         "ours": sorted({n for n, _ in ours_all}), "ours_nation": dict(sorted(set(ours_all))),
                         "athletes": sorted(set(all_names)),
-                        "broadcast": bcast, "watch": watch_for(name)})
+                        **_watch_fields(name, bcast, fr.astimezone(MSK).date(),
+                                        (to - dt.timedelta(hours=12)).astimezone(MSK).date())})
         except Exception as ex:
             log(f"  ! {name}: {ex}")
             traceback.print_exc()

@@ -1,4 +1,6 @@
 """Где смотреть: ссылки со страницы турнира и правила из config.json (сеть не нужна)."""
+import datetime as dt
+import json
 import unittest
 from unittest import mock
 
@@ -22,20 +24,26 @@ class WatchTest(unittest.TestCase):
             {"name": "VK Видео", "url": "https://vk.com/video/@ruskating"}])
 
     def test_rule_jgp(self):
-        self.assertEqual(b.watch_for("JGP Gdansk"), [{"name": "Okko", "url": "https://okko.tv/"}])
-        self.assertEqual(b.broadcast_for("JGP Gdansk"), ["Okko"])
+        # ISU: Okko — Россия, Беларусь, Казахстан; остальной мир — YouTube ISU; у каждой площадки — где доступна
+        self.assertEqual(b.watch_for("JGP Gdansk"), [
+            {"name": "Okko", "url": "https://okko.tv/", "note": "Россия, Беларусь, Казахстан"},
+            {"name": "YouTube ISU", "url": "https://www.youtube.com/@SkatingISU/live", "note": "Кроме России, Беларуси и Казахстана"}])
+        self.assertEqual(b.broadcast_for("JGP Gdansk"), ["Okko", "YouTube ISU"])
+        self.assertEqual(b.watch_for("Финал юниорского Гран-при"), [{"name": "Okko", "url": "https://okko.tv/"}])
 
     def test_page_wins_over_rule(self):
         base = [{"name": "Okko", "url": "https://okko.tv/event/1"}, {"name": "x", "url": "ftp://bad"}]
-        self.assertEqual(b.watch_for("JGP Ankara", base), [{"name": "Okko", "url": "https://okko.tv/event/1"}])
+        w = b.watch_for("JGP Ankara", base)
+        self.assertEqual(w[0], {"name": "Okko", "url": "https://okko.tv/event/1", "note": "Россия, Беларусь, Казахстан"})
+        self.assertEqual([x["name"] for x in w], ["Okko", "YouTube ISU"])
 
     def test_event_field(self):
         import datetime as dt
         z = dt.datetime(2026, 9, 1, 12, tzinfo=dt.timezone.utc)
         ev = b.make_event(tid="t", tournament="JGP Ankara", kind="men", level="junior", seg="КП", mixed=False,
                           start=z, end=z, venue="", intl=True, broadcast=[], ours=[], athletes=[], src="")
-        self.assertEqual(ev["watch"], [{"name": "Okko", "url": "https://okko.tv/"}])
-        self.assertEqual(ev["broadcast"], ["Okko"])
+        self.assertEqual([w["name"] for w in ev["watch"]], ["Okko", "YouTube ISU"])
+        self.assertEqual(ev["broadcast"], ["Okko", "YouTube ISU"])
         ev = b.make_event(tid="t", tournament="Другой", kind="men", level="junior", seg="КП", mixed=False,
                           start=z, end=z, venue="", intl=True, broadcast=[], ours=[], athletes=[], src="")
         self.assertNotIn("watch", ev)
@@ -100,8 +108,9 @@ class IntlWatchTest(unittest.TestCase):
         # В России этапы показывает Okko, остальному миру — YouTube ISU (страница ISU «Where to watch»).
         with mock.patch.object(b.net, "fetch", side_effect=b.net.FetchError("x")):
             e = self.ev("GP Skate America")
-        self.assertEqual(e["watch"], [{"name": "Okko", "url": "https://okko.tv/"},
-                                      {"name": "YouTube ISU", "url": "https://www.youtube.com/@SkatingISU/live"}])
+        self.assertEqual(e["watch"], [{"name": "Okko", "url": "https://okko.tv/", "note": "Россия"},
+                                      {"name": "YouTube ISU", "url": "https://www.youtube.com/@SkatingISU/live",
+                                       "note": "Кроме России"}])
         self.assertEqual(e["broadcast"], ["Okko", "YouTube ISU"])
 
     def test_final_has_both(self):
@@ -109,6 +118,8 @@ class IntlWatchTest(unittest.TestCase):
             e = self.ev("Финал Гран-при")
         self.assertEqual([w["name"] for w in e["watch"]], ["Okko", "YouTube ISU"])
         self.assertEqual(e["watch"][1]["url"], "https://www.youtube.com/@SkatingISU/live")
+        # страны финала ISU отдельно не называл — подписи нет, а не догадка
+        self.assertFalse(any("note" in w for w in e["watch"]))
 
     def test_rss_match_by_segment(self):
         with mock.patch.object(b.net, "fetch", return_value=ISU_RSS):
@@ -196,3 +207,90 @@ class GrandPrixStreamTest(unittest.TestCase):
         self.assertEqual(b.broadcast_for("Финал Гран-при"), ["Okko", "YouTube ISU"])
         self.assertEqual(b._city("Shenzhen, China"), "Shenzhen")
         self.assertIsNone(b._city("ЛД «Мечта», Москва"))
+
+
+def _solid(*items):
+    return json.dumps([{"title": t, "start_at": ts, "price": price} for t, ts, price in items])
+
+
+TALLINN_DAY1 = 1794917700  # 2026-11-16, Ice-Stars.TV «ISU CS Tallinn Trophy 2026 | Day 1»
+
+
+class SolidsportTest(unittest.TestCase):
+    """Челленджер на Ice-Stars.TV: ссылка — только если эфир заведён в дни турнира."""
+
+    def setUp(self):
+        b._SOLID.clear()
+        self.addCleanup(b._SOLID.clear)
+
+    def test_stream_in_tournament_days(self):
+        feed = _solid(("ISU CS Tallinn Trophy 2026 | Day 1", TALLINN_DAY1, {"EUR": 9.99}))
+        with mock.patch.object(b.net, "fetch", return_value=feed) as f:
+            w = b.watch_for("CS Tallinn Trophy", days=(dt.date(2026, 11, 16), dt.date(2026, 11, 22)))
+        self.assertEqual(w, [{"name": "Ice-Stars.TV", "url": "https://ice-stars.tv/tallinntrophy", "note": "Платно"}])
+        self.assertIn("company=tallinntrophy", f.call_args[0][0])
+
+    def test_free_stream_has_no_note(self):
+        feed = _solid(("Day 1", TALLINN_DAY1, None))
+        with mock.patch.object(b.net, "fetch", return_value=feed):
+            w = b.watch_for("CS Tallinn Trophy", days=(dt.date(2026, 11, 16), dt.date(2026, 11, 16)))
+        self.assertEqual(w, [{"name": "Ice-Stars.TV", "url": "https://ice-stars.tv/tallinntrophy"}])
+
+    def test_last_year_channel_promises_nothing(self):
+        # на канале только прошлогодние эфиры — турнира этого года там нет
+        feed = _solid(("ISU CS Tallinn Trophy 2025 | Day 1", TALLINN_DAY1 - 365 * 86400, {"EUR": 9.99}))
+        with mock.patch.object(b.net, "fetch", return_value=feed):
+            self.assertEqual(b.watch_for("CS Tallinn Trophy", days=(dt.date(2026, 11, 16), dt.date(2026, 11, 22))), [])
+        b._SOLID.clear()
+        with mock.patch.object(b.net, "fetch", side_effect=b.net.FetchError("x")):
+            self.assertEqual(b.watch_for("CS Tallinn Trophy", days=(dt.date(2026, 11, 16), dt.date(2026, 11, 22))), [])
+
+    def test_event_day(self):
+        feed = _solid(("Golden Spin of Zagreb | Day 1", 1796284800, {"EUR": 9.99}))  # 2026-12-03 08:00 UTC
+        z = dt.datetime(2026, 12, 3, 10, tzinfo=dt.timezone.utc)
+        with mock.patch.object(b.net, "fetch", return_value=feed):
+            e = b.make_event(tid="isu:gs", tournament="CS Golden Spin of Zagreb", kind="men", level="senior", seg="КП",
+                             mixed=False, start=z, end=z, venue="Zagreb, Croatia", intl=True, broadcast=[], ours=[],
+                             athletes=[], src="")
+        self.assertEqual(e["watch"][0]["url"], "https://ice-stars.tv/golden-spin")
+        self.assertEqual(e["broadcast"], ["Ice-Stars.TV"])
+
+    def test_upcoming_fields(self):
+        feed = _solid(("Day 1", TALLINN_DAY1, {"EUR": 9.99}))
+        with mock.patch.object(b.net, "fetch", return_value=feed):
+            f = b._watch_fields("CS Tallinn Trophy", [], dt.date(2026, 11, 16), dt.date(2026, 11, 22))
+        self.assertEqual(f["broadcast"], ["Ice-Stars.TV"])
+        self.assertEqual(f["watch"][0]["name"], "Ice-Stars.TV")
+        page = [{"name": "Первый канал", "url": "https://www.1tv.ru/sport/x"}]
+        f = b._watch_fields("Гран-при России «Сердце Сибири»", ["Первый канал"], dt.date(2026, 11, 13),
+                            dt.date(2026, 11, 15), page)
+        self.assertEqual([w["name"] for w in f["watch"]], ["Первый канал", "YouTube"])
+        self.assertEqual(f["broadcast"], ["Первый канал", "YouTube"])
+
+
+PFSA_RSS = '''<feed><entry><yt:videoId>WARSAWDAY01</yt:videoId>
+<title>PGE Warsaw Cup 2026 - Day I</title>
+<published>2026-11-25T07:00:00+00:00</published></entry></feed>'''
+
+
+class OnlyStreamTest(unittest.TestCase):
+    """Варшава: канал федерации показывает много своих турниров — ссылка только на найденный эфир дня."""
+
+    def setUp(self):
+        b._YT.clear()
+        self.addCleanup(b._YT.clear)
+
+    def ev(self, day):
+        z = dt.datetime(2026, 11, day, 10, tzinfo=dt.timezone.utc)
+        with mock.patch.object(b.net, "fetch", return_value=PFSA_RSS):
+            return b.make_event(tid="isu:w", tournament="CS PGE Warsaw Cup", kind="men", level="senior", seg="КП",
+                                mixed=False, start=z, end=z, venue="Warsaw, Poland", intl=True, broadcast=[], ours=[],
+                                athletes=[], src="")
+
+    def test_found_day(self):
+        self.assertEqual(self.ev(25)["watch"], [{"name": "YouTube PFSA", "url": "https://www.youtube.com/watch?v=WARSAWDAY01"}])
+
+    def test_no_stream_no_link(self):
+        self.assertNotIn("watch", self.ev(26))
+        self.assertEqual(b.watch_for("CS PGE Warsaw Cup"), [])
+        self.assertEqual(b.broadcast_for("CS PGE Warsaw Cup"), [])

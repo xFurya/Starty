@@ -640,6 +640,10 @@ class Upcoming {
 
   /// Весь заявленный состав (у международных) — для поиска и отслеживаемых.
   final List<String> athletes;
+
+  /// Где смотреть турнир, у которого ещё нет расписания: только найденные площадки.
+  final List<String> broadcast;
+  final List<WatchLink> watch;
   Upcoming.fromJson(Map<String, dynamic> j)
     : tid = j['tid'] ?? '',
       name = j['name'] ?? '',
@@ -649,7 +653,9 @@ class Upcoming {
       end = ((j['end'] ?? j['start']) as String? ?? '').split('T').first,
       ours = List<String>.from(j['ours'] ?? const []),
       oursNation = {for (final e in (j['ours_nation'] as Map? ?? const {}).entries) '${e.key}': '${e.value}'},
-      athletes = List<String>.from(j['athletes'] ?? const []);
+      athletes = List<String>.from(j['athletes'] ?? const []),
+      broadcast = List<String>.from(j['broadcast'] ?? const []),
+      watch = WatchLink.parseAll(j['watch']);
 
   Map<String, dynamic> toJson() => {
     'tid': tid,
@@ -661,6 +667,8 @@ class Upcoming {
     'ours': ours,
     'ours_nation': oursNation,
     'athletes': athletes,
+    'broadcast': broadcast,
+    'watch': [for (final w in watch) w.toJson()],
   };
 
   /// Тот же турнир после новой загрузки: списки россиян и заявки не теряют прежних имён.
@@ -673,6 +681,8 @@ class Upcoming {
     athletes: pick(old.athletes, fresh.athletes),
     oursNation: {...old.oursNation, ...fresh.oursNation},
     venue: fresh.venue.isEmpty ? old.venue : fresh.venue,
+    broadcast: _mergeLists<String>(old.broadcast, fresh.broadcast, same: (a, b) => norm(a) == norm(b)),
+    watch: _mergeLists<WatchLink>(old.watch, fresh.watch, same: (a, b) => norm(a.name) == norm(b.name)),
     );
   }
 
@@ -682,6 +692,8 @@ class Upcoming {
     required this.athletes,
     required this.oursNation,
     required this.venue,
+    required this.broadcast,
+    required this.watch,
   }) : tid = u.tid,
        name = u.name,
        intl = u.intl,
@@ -696,7 +708,9 @@ class Upcoming {
       intl = u.intl,
       start = u.start,
       end = u.end,
-      athletes = u.athletes;
+      athletes = u.athletes,
+      broadcast = u.broadcast,
+      watch = u.watch;
 
   /// Россияне и белорусы из заявки (если их отслеживают) плюс отслеживаемые.
   Upcoming withFollow(Follow f) => Upcoming._(
@@ -1342,8 +1356,11 @@ class Filters {
 /// Трансляция: название и прямая ссылка.
 class WatchLink {
   final String name, url;
-  const WatchLink(this.name, this.url);
-  Map<String, dynamic> toJson() => {'name': name, 'url': url};
+
+  /// Где площадка доступна («Россия», «Кроме России») или «Платно» — как в данных; нет — не пишем.
+  final String? note;
+  const WatchLink(this.name, this.url, [this.note]);
+  Map<String, dynamic> toJson() => {'name': name, 'url': url, if (note != null) 'note': note};
 
   /// Мягкий разбор: битые записи и ссылки не http/https пропускаются.
   static List<WatchLink> parseAll(Object? raw) {
@@ -1356,7 +1373,8 @@ class WatchLink {
       final u = Uri.tryParse(url.trim());
       if (u == null || !(u.scheme == 'http' || u.scheme == 'https') || u.host.isEmpty) continue;
       if (out.any((w) => w.name == name.trim())) continue;
-      out.add(WatchLink(name.trim(), u.toString()));
+      final note = e['note'] is String && (e['note'] as String).trim().isNotEmpty ? (e['note'] as String).trim() : null;
+      out.add(WatchLink(name.trim(), u.toString(), note));
     }
     return out;
   }

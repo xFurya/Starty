@@ -1313,7 +1313,7 @@ class EmptyState extends StatelessWidget {
 }
 
 /// Турниры без расписания по сегментам: название, даты или «Время не объявлено», место,
-/// наши из заявки. Сегментов нет — открывать нечего, строки не нажимаются.
+/// где смотреть, наши из заявки. Сегментов нет — открывать нечего: нажимаются только площадки.
 class UnscheduledPlate extends StatelessWidget {
   final List<Upcoming> list;
   final AppState state;
@@ -1350,6 +1350,18 @@ class UnscheduledPlate extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(fontSize: 13.5, color: p.ink2, height: 1.3),
                     ),
+                  ],
+                  // где смотреть — только найденные площадки; нет их — нет и строки
+                  if (list[i].watch.isNotEmpty) ...[
+                    const SizedBox(height: 12),
+                    Row(
+                      children: [
+                        Icon(CupertinoIcons.tv, size: 15, color: p.accent),
+                        const SizedBox(width: 7),
+                        const Expanded(child: Eyebrow('Трансляция')),
+                      ],
+                    ),
+                    for (final w in list[i].watch) WatchRow(link: w, padding: const EdgeInsets.fromLTRB(0, 8, 2, 8)),
                   ],
                   if (list[i].ours.isNotEmpty) ...[
                     const SizedBox(height: 12),
