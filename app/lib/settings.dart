@@ -7,9 +7,11 @@ import 'package:starty_alerts/starty_alerts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'app_icon.dart';
+import 'billing.dart';
 import 'data.dart';
 import 'main.dart';
 import 'platform.dart';
+import 'protocol.dart' show openLink, openPayment;
 import 'reminders.dart';
 import 'sheets.dart';
 import 'state.dart';
@@ -19,6 +21,8 @@ import 'ui.dart';
 import 'update.dart';
 import 'updater.dart';
 import 'views.dart' show freshness;
+
+part 'billing_page.dart';
 
 const _ics = 'webcal://xfurya.github.io/Starty/calendar.ics';
 const _google = 'https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fxfurya.github.io%2FStarty%2Fcalendar.ics';
@@ -257,17 +261,32 @@ class SettingsView extends StatelessWidget {
         ),
 
         // ---------------------------------------------------------- аккаунт
-        if (syncConfigured) const SliverToBoxAdapter(child: _Head('Аккаунт')),
-        if (syncConfigured)
+        if (syncConfigured || state.billing.visible) const SliverToBoxAdapter(child: _Head('Аккаунт')),
+        if (syncConfigured || state.billing.visible)
           SliverToBoxAdapter(
             child: Plate(
-              child: _Row(
-                icon: CupertinoIcons.person_crop_circle,
-                title: 'Аккаунт',
-                subtitle: syncSummary(state),
-                subtitleColor: state.syncProblem != null ? p.live : null,
-                onTap: () => openAccount(context, state),
-                trailing: const _Chevron(),
+              child: Column(
+                children: [
+                  if (syncConfigured)
+                    _Row(
+                      icon: CupertinoIcons.person_crop_circle,
+                      title: 'Аккаунт',
+                      subtitle: syncSummary(state),
+                      subtitleColor: state.syncProblem != null ? p.live : null,
+                      onTap: () => openAccount(context, state),
+                      trailing: const _Chevron(),
+                    ),
+                  if (syncConfigured && state.billing.visible) const Hairline(),
+                  // подписка: только если она есть в сборке и сервер её продаёт (или куплена раньше)
+                  if (state.billing.visible)
+                    _Row(
+                      icon: CupertinoIcons.sparkles,
+                      title: 'Подписка',
+                      subtitle: billingSummary(state),
+                      onTap: () => openBilling(context, state),
+                      trailing: const _Chevron(),
+                    ),
+                ],
               ),
             ),
           ),

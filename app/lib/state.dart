@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app_icon.dart';
+import 'billing.dart';
 import 'data.dart';
 import 'live.dart';
 import 'protocol_repo.dart';
@@ -251,10 +252,12 @@ class AppState extends ChangeNotifier {
       if (!same) {
         codeLinked = null;
         codeLinkChecked = false;
+        await _forgetBilling();
       }
       await SyncLocal(Prefs.raw).setCode(null);
       await _keepSession(b, s);
       notifyListeners();
+      unawaited(refreshBilling());
       await sync.reconcile();
       return null;
     } on SyncError catch (e) {
@@ -271,10 +274,19 @@ class AppState extends ChangeNotifier {
     codeLinkChecked = false;
     if (sync.backend case final AccountBackend a) a.signOut();
     sync.backend = null;
+    await billing.clear();
     await _resetDevice();
   }
 
   /// Сброс настроек этого устройства к значениям по умолчанию (после отключения синхронизации).
+  /// Забыть подписку прошлого аккаунта. Была запланирована сводка дня — снять её из системы.
+  /// (Выход сюда не ходит: там _resetDevice и так пересобирает уведомления.)
+  Future<void> _forgetBilling() async {
+    final had = plan.digest;
+    await billing.clear();
+    if (had != null) unawaited(_sync());
+  }
+
   Future<void> _resetDevice() async {
     await Prefs.resetSynced();
     try {
@@ -315,6 +327,8 @@ class AppState extends ChangeNotifier {
       if (!create && !same) await sync.preferRemote();
       await SyncLocal(Prefs.raw).setAccount(null);
       await SyncLocal(Prefs.raw).setCode(code);
+      // подписка — у аккаунта, а не у кода
+      await _forgetBilling();
       notifyListeners();
       await sync.reconcile();
       return null;
@@ -348,6 +362,7 @@ class AppState extends ChangeNotifier {
       await _keepSession(b, s);
       codeLinked = true;
       notifyListeners();
+      unawaited(refreshBilling());
       await sync.reconcile();
       return null;
     } on SyncError catch (e) {
@@ -415,6 +430,7 @@ class AppState extends ChangeNotifier {
     await SyncLocal(Prefs.raw).setCode(null);
     if (sync.backend case final AccountBackend a) a.signOut();
     sync.backend = null;
+    await billing.clear();
     await _resetDevice();
   }
 
@@ -486,7 +502,8 @@ class AppState extends ChangeNotifier {
     for (final s in _raw?.starts ?? const <Start>[]) if (s.regional && s.region.isNotEmpty) s.region,
   }.toList()..sort();
 
-  NotifyPlan get plan => NotifyPlan(rules, forcedOn, forcedOff);
+  /// Правила, исключения и сводка дня (если подписка действует).
+  NotifyPlan get plan => NotifyPlan(rules, forcedOn, forcedOff, digest: billing.digestAt(now()));
 
   /// Придёт ли уведомление о начале старта (правила + исключения).
   bool notifies(Start s) => plan.wants(s);
@@ -531,6 +548,8 @@ class AppState extends ChangeNotifier {
     await _sync();
     // сверка с сервером — при каждом запуске и возврате в приложение (load() вызывается и там)
     unawaited(sync.reconcile());
+    // подписка — тогда же: после оплаты в браузере человек возвращается в приложение
+    unawaited(refreshBilling());
     // уведомления включены по умолчанию — разрешение спрашиваем один раз, при первом запуске
     if (rules.on && !Prefs.asked) {
       await Prefs.setAsked();
@@ -886,6 +905,141 @@ class AppState extends ChangeNotifier {
         else
           s,
     ]);
+  }
+
+  // ---------------------------------------------------------------- подписка (billing.dart)
+
+  late final BillingState billing = BillingState(Prefs.raw);
+
+  /// Вход по почте — через него идёт подписка. По коду или без входа — null.
+  AccountBackend? get account => switch (sync.backend) {
+    final AccountBackend a => a,
+    _ => null,
+  };
+
+  Future<void>? _billingRun;
+
+  /// Идёт ли сейчас обновление подписки.
+  bool get billingRefreshing => _billingRun != null;
+
+  /// Обновить подписку: что продаётся (и без входа), право и платежи (со входом). [history] — платежи
+  /// тоже, даже если их ещё не загружали. Без подписки в сборке — ничего. Ошибка не стирает известное:
+  /// право остаётся из кэша, а причина — в billing.problem, чтобы экран сказал, что данные могли устареть.
+  /// Одно обновление за раз: попросили во время другого — дождёмся его и сделаем ещё одно, свежее
+  /// (то могло начаться до оплаты или отказа).
+  Future<void> refreshBilling({bool history = false}) async {
+    if (!billingBuild || !_syncReady) return;
+    for (var busy = _billingRun; busy != null; busy = _billingRun) {
+      await busy;
+    }
+    final run = _refreshBilling(history);
+    _billingRun = run;
+    try {
+      await run;
+    } finally {
+      if (identical(_billingRun, run)) _billingRun = null;
+    }
+  }
+
+  Future<void> _refreshBilling(bool history) async {
+    final b = billing;
+    final digestWas = plan.digest;
+    String? problem;
+    try {
+      try {
+        b.offer = await BillingApi(account ?? _accountBackend()).offer();
+        b.offerChecked = true;
+      } on SyncError catch (e) {
+        problem = e.message;
+      }
+      final acc = account;
+      if (acc != null) {
+        try {
+          final api = BillingApi(acc);
+          final e = await api.mine(DateTime.now);
+          // вышли или сменили аккаунт, пока шёл ответ: чужое право не сохраняем
+          if (!identical(account, acc)) return;
+          await b.keep(e);
+          if (history || b.payments != null) b.payments = await api.payments();
+        } on SyncError catch (e) {
+          problem ??= e.message;
+        }
+      }
+      b.problem = problem;
+    } finally {
+      notifyListeners();
+    }
+    // план уведомлений пересчитывается сразу (в начале _sync), система — следом, не задерживая обновление
+    if (plan.digest != digestWas) unawaited(_sync());
+  }
+
+  /// Начать оплату: страница сервиса для встроенного браузера. Ошибка — SyncError с понятным текстом.
+  Future<BillingCheckout> startPayment(BillingPlan p, {required bool renew, String? consent}) async {
+    final acc = account;
+    if (acc == null) throw const SyncError('Нужен вход в аккаунт');
+    final offer = billing.offer;
+    if (offer == null) throw SyncError(billingErrors['billing_off']!);
+    return BillingApi(acc).checkout(plan: p.id, renew: renew, offerVersion: offer.version, consent: consent);
+  }
+
+  /// Ждать подтверждения оплаты от сервиса (оно приходит на сервер отдельно от возврата из браузера):
+  /// true — прошла, false — не прошла, null — за [limit] не подтвердили (подписка появится позже сама,
+  /// при следующем обновлении).
+  Future<bool?> awaitPayment(String id, {Duration limit = const Duration(seconds: 40), Duration every = const Duration(seconds: 2)}) async {
+    final acc = account;
+    if (acc == null) return null;
+    final api = BillingApi(acc);
+    final until = DateTime.now().add(limit);
+    while (true) {
+      try {
+        final x = (await api.payments()).where((p) => p.id == id).firstOrNull;
+        if (x != null && x.status != 'pending') {
+          await refreshBilling(history: true);
+          return x.status == 'succeeded';
+        }
+      } on SyncError {
+        // нет связи сейчас — пробуем ещё, пока не выйдет время
+      }
+      if (!DateTime.now().add(every).isBefore(until)) {
+        await refreshBilling(history: true);
+        return null;
+      }
+      await Future<void>.delayed(every);
+    }
+  }
+
+  /// Отключить продление. Возвращает причину, если не вышло.
+  Future<String?> cancelRenew() async {
+    final acc = account;
+    if (acc == null) return 'Нужен вход в аккаунт';
+    try {
+      await BillingApi(acc).cancelRenew();
+    } on SyncError catch (e) {
+      return e.message;
+    }
+    await refreshBilling(history: true);
+    return null;
+  }
+
+  /// Отказаться с возвратом за неиспользованные дни: подписка заканчивается сразу.
+  Future<(BillingRefund?, String?)> refundSubscription() async {
+    final acc = account;
+    if (acc == null) return (null, 'Нужен вход в аккаунт');
+    try {
+      final r = await BillingApi(acc).refund();
+      await refreshBilling(history: true);
+      return (r, null);
+    } on SyncError catch (e) {
+      await refreshBilling(history: true);
+      return (null, e.message);
+    }
+  }
+
+  /// Время сводки дня ([BillingState.digestOff] — выключена).
+  Future<void> setDigest(int minute) async {
+    await billing.setDigest(minute);
+    notifyListeners();
+    unawaited(_sync());
   }
 
   Future<void> _sync() async {

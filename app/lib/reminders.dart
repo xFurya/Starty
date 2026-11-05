@@ -16,7 +16,7 @@ import 'package:starty_alerts/starty_alerts.dart';
 import 'data.dart';
 import 'palette.dart';
 import 'platform.dart';
-import 'ui.dart' show cap, displayName, nb, segNames;
+import 'ui.dart' show cap, displayName, nb, plural, segNames;
 
 /// Правила: о каких стартах напоминать и за сколько минут.
 class NotifyRules {
@@ -197,7 +197,10 @@ class NotifyRules {
 class NotifyPlan {
   final NotifyRules rules;
   final Set<String> forcedOn, forcedOff;
-  const NotifyPlan(this.rules, this.forcedOn, this.forcedOff);
+
+  /// Сводка дня (подписка, billing.dart): минута московских суток; null — сводки нет.
+  final int? digest;
+  const NotifyPlan(this.rules, this.forcedOn, this.forcedOff, {this.digest});
 
   /// Будет ли уведомление о начале старта (если время ещё не прошло).
   bool wants(Start s) {
@@ -343,8 +346,7 @@ class Reminders {
   /// [own] — спортсмены со своим уведомлением о выходе: здесь их не повторяем, чтобы одно и то же
   /// не приходило дважды.
   static ({String title, String live, List<String> lines, String collapsed}) startText(Start s, {Set<String> own = const {}}) {
-    final (disc, seg) = discipline(s);
-    final what = seg.isEmpty ? cap(disc) : '${cap(disc)}, $seg';
+    final what = _what(s);
     final ours = [for (final o in s.ours) if (!own.contains(o.name)) o];
     String one(Skater o) => o.time == null ? _name(o) : '${_name(o)} в ${o.time}';
     final collapsed = ours.isEmpty
@@ -436,8 +438,56 @@ class Reminders {
         ));
       }
     }
+    if (p.rules.on && p.digest != null) out.addAll(digestPlan(data, p.digest!, now));
     out.sort((a, b) => a.at.compareTo(b.at));
     return out.take(60).toList();
+  }
+
+  /// Сводка дня: в выбранное время одно уведомление — старты этого дня, где выступают отслеживаемые.
+  ///  заголовок — «Сегодня у ваших 3 старта»; строки — «17:45 — Танцы, ритм-танец: Кузьмина / Студеникин»;
+  ///  свёрнутый вид — первая строка.
+  /// Сегодня (если время ещё впереди) и два следующих дня; день без своих — без сводки. Пропущенная не
+  /// показывается: сводка «на сегодня» в обед — уже не сводка. Висит до конца дня.
+  static List<Planned> digestPlan(Schedule data, int minute, DateTime now) {
+    final out = <Planned>[];
+    final m = msk(now);
+    for (var i = 0; i < 3; i++) {
+      // полночь по Москве — в настоящем времени
+      final midnight = DateTime.utc(m.year, m.month, m.day + i).subtract(const Duration(hours: 3));
+      final at = midnight.add(Duration(minutes: minute));
+      if (!at.isAfter(now)) continue;
+      final key = dayKey(at);
+      final day = [
+        for (final s in data.starts)
+          if (s.ours.isNotEmpty && dayKey(s.t0) == key && s.t1.isAfter(at)) s,
+      ]..sort((a, b) => a.t0.compareTo(b.t0));
+      if (day.isEmpty) continue;
+      final lines = [
+        for (final s in day) '${hm(s.t0)} — ${_what(s)}: ${s.ours.map(_name).join(', ')}',
+      ];
+      final n = day.length;
+      out.add(Planned(
+        key: 'd:$key',
+        at: at,
+        hold: at,
+        end: midnight.add(const Duration(days: 1)),
+        late: at,
+        title: 'Сегодня у ваших $n ${plural(n, 'старт', 'старта', 'стартов')}',
+        lines: lines,
+        collapsed: lines.first,
+        startId: '',
+        group: 'digest',
+        groupTitle: 'Сводка дня',
+        reminder: true,
+      ));
+    }
+    return out;
+  }
+
+  /// «Танцы, ритм-танец» — как в уведомлении о старте.
+  static String _what(Start s) {
+    final (disc, seg) = discipline(s);
+    return seg.isEmpty ? cap(disc) : '${cap(disc)}, $seg';
   }
 
   /// Где фоновая проверка находит старты с уведомлениями: id → [начало, конец] в мс.

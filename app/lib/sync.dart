@@ -28,6 +28,17 @@ const kConfirmMail = 'Письмо для подтверждения отпра�
 /// Схема на сервере старше приложения: нет функции привязки кода.
 const kOldSchema = 'Обновите схему сервера';
 
+/// Ответы сервера подписки (tools/billing/schema.sql и функции) — человеческими словами.
+const billingErrors = {
+  'billing_off': 'Подписка сейчас не продаётся',
+  'offer_changed': 'Условия подписки обновились — откройте её заново',
+  'no_plan': 'Такого варианта подписки больше нет',
+  'no_email': 'Подтвердите почту аккаунта: на неё придут чеки',
+  'already_active': 'Подписка уже действует',
+  'not_configured': 'Оплата на сервере ещё не настроена',
+  'provider': 'Платёжный сервис не ответил, попробуйте позже',
+};
+
 /// Документ настроек: всё, что человек меняет в приложении, кроме служебного состояния устройства
 /// (кэш расписания, разрешение ОС, заметки обновления и т. п. — см. ПРОЕКТ.md, раздел 2.4).
 /// Версия 2 — текущая; версию 1 читаем (см. [_followOf]). Лишние поля игнорируются.
@@ -386,6 +397,25 @@ class AccountBackend implements SyncBackend {
 
   void signOut() => session = null;
 
+  /// Запрос к серверу от имени вошедшего: функция базы (`rest/v1/rpc/…`) или функция сервера
+  /// (`functions/v1/…`) — так ходит подписка (billing.dart). [auth] = false — без входа, с ключом сборки.
+  /// Ответ — разобранный JSON (пустой ответ — null).
+  Future<Object?> post(String path, [Object? body, bool auth = true]) async {
+    if (auth) {
+      if (session == null) throw const SyncError('Нужен вход в аккаунт');
+      await refreshIfNeeded();
+    }
+    final r = await _send(
+      () => _http.post(
+        Uri.parse('$url/$path'),
+        headers: _headers(auth: auth),
+        body: jsonEncode(body ?? const <String, Object?>{}),
+      ),
+    );
+    final text = utf8.decode(r.bodyBytes);
+    return text.trim().isEmpty ? null : jsonDecode(text);
+  }
+
   /// Привязать код к этому аккаунту (rpc link_code, ПРОЕКТ.md 2.4). Сервер сливает документы и дальше
   /// ведёт один — аккаунта. Схема сервера без link_code отвечает 404: это не «нет кода», а устаревшая схема.
   Future<void> linkCode(String code) async {
@@ -473,14 +503,17 @@ class AccountBackend implements SyncBackend {
   }
 
   static String _explain(http.Response r) {
-    String msg = '', code = '';
+    String msg = '', code = '', error = '';
     try {
       final j = jsonDecode(utf8.decode(r.bodyBytes));
       if (j is Map) {
         msg = '${j['error_description'] ?? j['msg'] ?? j['message'] ?? ''}';
         code = '${j['error_code'] ?? ''}'.toLowerCase();
+        error = '${j['error'] ?? ''}';
       }
     } catch (_) {}
+    // подписка: функции базы и сервера отвечают стабильным идентификатором (tools/billing)
+    if (billingErrors[msg] ?? billingErrors[error] case final m?) return m;
     // ошибки привязки кода: сервер отвечает стабильным идентификатором (tools/sync/schema.sql, link_code)
     if (msg == 'code_taken') return 'Код уже привязан к другому аккаунту';
     if (msg == 'bad_code') return 'Код не подходит';

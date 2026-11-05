@@ -43,9 +43,27 @@ Future<void> openLink(BuildContext context, String url, String title, {bool pref
   if (context.mounted) await openOriginal(context, url, title);
 }
 
+/// Оплата подписки: страница сервиса во встроенном браузере. true — сервис вернул на [returnUrl],
+/// false — человек закрыл страницу сам. На Windows и в вебе встроенного браузера нет — браузер системы
+/// (оплата — исключение из правила «не выходить из приложения»); тогда null: итог узнаём у сервера.
+Future<bool?> openPayment(BuildContext context, String url, String returnUrl) async {
+  if (kIsWeb || defaultTargetPlatform == TargetPlatform.windows) {
+    await launchUrl(Uri.parse(url), webOnlyWindowName: '_blank', mode: LaunchMode.externalApplication);
+    return null;
+  }
+  final r = await Navigator.of(context).push<bool>(
+    MaterialPageRoute(builder: (_) => ProtocolPage(url: url, title: 'Оплата', until: returnUrl)),
+  );
+  return r ?? false;
+}
+
 class ProtocolPage extends StatefulWidget {
   final String url, title;
-  const ProtocolPage({super.key, required this.url, required this.title});
+
+  /// Оплата подписки (billing_page.dart): переход на адрес, начинающийся с [until], закрывает страницу
+  /// с результатом true — сервис вернул человека обратно. Закрыл сам — null.
+  final String? until;
+  const ProtocolPage({super.key, required this.url, required this.title, this.until});
   @override
   State<ProtocolPage> createState() => _ProtocolPageState();
 }
@@ -54,6 +72,18 @@ class _ProtocolPageState extends State<ProtocolPage> {
   late final WebViewController _c;
   int _progress = 0;
   bool _failed = false;
+  bool _done = false;
+
+  /// Дошли до адреса возврата — закрываемся один раз.
+  bool _back(String url) {
+    final until = widget.until;
+    if (until == null || !url.startsWith(until)) return false;
+    if (!_done && mounted) {
+      _done = true;
+      Navigator.of(context).pop(true);
+    }
+    return true;
+  }
 
   /// PDF встроенный браузер Android не показывает — открываем через просмотрщик. Просмотрщик
   /// хранит файл у себя по адресу: метка времени в адресе заставляет его взять файл заново.
@@ -90,12 +120,14 @@ class _ProtocolPageState extends State<ProtocolPage> {
       ..enableZoom(true)
       ..setNavigationDelegate(NavigationDelegate(
         onProgress: (p) => mounted ? setState(() => _progress = p) : null,
+        onPageStarted: _back,
         // как только страница загружена — память браузера чистая: следующая ссылка и «назад» идут на сайт
         onPageFinished: (_) => _c.clearCache(),
         onWebResourceError: (e) {
           if (e.isForMainFrame ?? true) setState(() => _failed = true);
         },
         onNavigationRequest: (r) {
+          if (_back(r.url)) return NavigationDecision.prevent;
           // ссылка страницы на приложение (intent:, okko:, vk:) — открываем его, если установлено
           final scheme = Uri.tryParse(r.url)?.scheme ?? '';
           if (scheme != 'http' && scheme != 'https' && scheme != 'about' && scheme != 'data' && scheme != 'blob') {
@@ -142,7 +174,7 @@ class _ProtocolPageState extends State<ProtocolPage> {
         body: _failed
             ? Center(
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
-                  const Text('Протокол недоступен'),
+                  Text(widget.until == null ? 'Протокол недоступен' : 'Страница оплаты недоступна'),
                   const SizedBox(height: 12),
                   OutlinedButton(
                     onPressed: _reload,

@@ -1,0 +1,15 @@
+# Функции подписки (supabase functions deploy --project-ref …, из папки tools/billing).
+# Оплату и возврат начинает вошедший человек — его токен проверяется. Уведомления сервисов и запуск
+# по расписанию приходят без токена Supabase: у них своя проверка (подпись сервиса, BILLING_CRON_SECRET).
+
+[functions.billing-checkout]
+verify_jwt = true
+
+[functions.billing-refund]
+verify_jwt = true
+
+[functions.billing-webhook]
+verify_jwt = false
+
+[functions.billing-renew]
+verify_jwt = false

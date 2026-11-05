@@ -9,6 +9,7 @@ import 'package:flutter/widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:workmanager/workmanager.dart';
 
+import 'billing.dart';
 import 'data.dart';
 import 'reminders.dart';
 
@@ -77,7 +78,15 @@ void backgroundDispatcher() {
       final fresh = await Repo.fetch();
       final raw = fresh ?? await Repo.cached();
       final data = raw == null ? null : remindersSchedule(raw, regional: Prefs.regional, follow: Prefs.followOr(raw.watchlist));
-      await Reminders.sync(data, NotifyPlan(NotifyRules.fromJson(Prefs.rulesJson), Prefs.forcedOn, Prefs.forcedOff));
+      await Reminders.sync(
+        data,
+        NotifyPlan(
+          NotifyRules.fromJson(Prefs.rulesJson),
+          Prefs.forcedOn,
+          Prefs.forcedOff,
+          digest: BillingState.digestFor(p, t),
+        ),
+      );
       if (fresh != null) {
         await p.setInt('bg.full', t.millisecondsSinceEpoch);
         await p.setString('bg.known', jsonEncode(knownIds(fresh, t)));
