@@ -87,12 +87,32 @@ class ProfileTest(unittest.TestCase):
         self.assertEqual([w["n"] for w in p["who"]], ["Minerva Fabienne Hase", "Nikita Volodin"])
         self.assertEqual(p["who"][0]["former"], ["Nolan Seegert"])
         self.assertEqual(p["src"], ["ISU"])
-        self.assertEqual([g["g"] for g in p["res"]], ["Олимпийские игры", "Чемпионаты мира", "Гран-при",
-                                                       "Национальные чемпионаты"])
+        # два раздела: всё, кроме национальных чемпионатов, — международные
+        self.assertEqual([g["g"] for g in p["res"]], ["Международные", "Внутренние"])
+        self.assertTrue(all(r["ev"].startswith("Чемпионат Германии") or "Национальный" in r["ev"]
+                            for r in p["res"][1]["r"]))
         # титулы — только пьедесталы главных турниров, Гран-при — не титул; внутри сезона — по весу
         self.assertEqual([(t["ev"], t["pl"], t["y"]) for t in p["titles"]],
                          [("Олимпийские игры 2026", 3, "2025/26"), ("Чемпионат мира 2026", 1, "2025/26"),
                           ("Чемпионат Германии 2026", 1, "2025/26")])
+
+    def test_two_groups(self):
+        out = pf.two_groups([
+            ("ISU Grand Prix", [{"ev": "GP Rostelecom Cup 2020"}]),
+            ("ISU Junior Grand Prix", [{"ev": "JGP Cup of Austria 2017"}]),
+            ("ISU Challenger Series", [{"ev": "CS Finlandia Trophy 2021"}, {"ev": "CS 34th Nepela Memorial 2026"}]),
+            ("International Competition", [{"ev": "Minsk Arena Ice Star 2020"}]),
+            ("National Championships", [{"ev": "Чемпионат России 2024"}, {"ev": "Чемпионат России 2026"}]),
+        ])
+        self.assertEqual([g["g"] for g in out], ["Международные", "Внутренние"])
+        # от новых к старым; при равном годе — как у ISU (Гран-при раньше приглашённых)
+        self.assertEqual([r["ev"] for r in out[0]["r"]],
+                         ["CS 34th Nepela Memorial 2026", "CS Finlandia Trophy 2021", "GP Rostelecom Cup 2020",
+                          "Minsk Arena Ice Star 2020", "JGP Cup of Austria 2017"])
+        self.assertEqual([r["ev"] for r in out[1]["r"]], ["Чемпионат России 2026", "Чемпионат России 2024"])
+        self.assertEqual(pf.two_groups([("National Championships", [{"ev": "Чемпионат России 2026"}])]),
+                         [{"g": "Внутренние", "r": [{"ev": "Чемпионат России 2026"}]}])
+        self.assertEqual(pf.two_groups([]), [])
 
     def test_partner_count_mismatch_keeps_only_names(self):
         p = pf.profile("Minerva Fabienne Hase", "GER", self.store())

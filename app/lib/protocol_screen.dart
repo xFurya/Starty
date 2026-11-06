@@ -156,6 +156,16 @@ ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasF
   }
 }
 
+/// Почему у строки сегмента есть итоги, а разбора по элементам нет. Элементы и оценки судей берутся
+/// только из опубликованного судейского протокола: пока его нет (сегмент идёт или итоги
+/// предварительные) — он появится; в окончательном — для этого участника его в файле нет.
+/// У «Итога» вида ([state] == null) разбора не бывает — молчим.
+String? missingDetails(SegmentState? state) => switch (state) {
+  SegmentState.inProgress || SegmentState.provisional => 'Элементы и оценки судей появятся, когда их опубликуют',
+  SegmentState.finalized => 'Элементов и оценок судей в протоколе нет',
+  _ => null,
+};
+
 /// Подписи колонок итога по-русски (КП, ПП, РТ, ПТ); незнакомая остаётся как в файле.
 String colLabel(String c) {
   final t = c.trim().toUpperCase();
@@ -512,6 +522,7 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
                         _ResultRow(
                           row: view.rows[i],
                           panel: seg?.panel ?? const [],
+                          missing: onBoard ? null : missingDetails(seg?.state),
                           ours: ours.contains(personKey(view.rows[i].name)),
                           total: tab == totalTab,
                           cols: tab == totalTab ? (cat?.total?.cols ?? const []) : const [],
@@ -804,9 +815,13 @@ class _ResultRow extends StatelessWidget {
   final List<String> cols;
   final List<ProtocolJudge> panel;
   final VoidCallback? onTap;
+
+  /// Почему в раскрытой строке нет разбора по элементам (см. [missingDetails]).
+  final String? missing;
   const _ResultRow({
     required this.row,
     required this.panel,
+    this.missing,
     required this.ours,
     required this.total,
     required this.cols,
@@ -904,7 +919,7 @@ class _ResultRow extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           InkWell(onTap: onTap, child: body),
-          if (open) Details(row: row, panel: panel),
+          if (open) Details(row: row, panel: panel, missing: missing),
         ],
       ),
     );

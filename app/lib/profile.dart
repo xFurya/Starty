@@ -151,15 +151,16 @@ class Profile {
 }
 
 /// Старты в два раздела: «Внутренние» — национальные чемпионаты (у любой страны), «Международные» —
-/// всё остальное: серии ISU и приглашённые турниры. Группы из профиля (scraper/profiles.py, GROUPS)
-/// здесь не различаются. Внутри раздела — новые турниры первыми; при равном годе — как пришло.
+/// всё остальное: серии ISU и приглашённые турниры. Сервер уже присылает эти два раздела
+/// (scraper/profiles.py, two_groups); прежние файлы — по группам ISU, их сводим здесь так же.
+/// Внутри раздела — новые турниры первыми; при равном годе — как пришло.
 List<ProfileGroup> twoResultGroups(List<ProfileGroup> groups) {
-  const domestic = 'Национальные чемпионаты';
+  const domestic = {'Внутренние', 'Национальные чемпионаты'};
   final intl = <(int, ProfileResult)>[], home = <(int, ProfileResult)>[];
   var n = 0;
   for (final g in groups) {
     for (final r in g.rows) {
-      (g.name == domestic ? home : intl).add((n++, r));
+      (domestic.contains(g.name) ? home : intl).add((n++, r));
     }
   }
   int year(ProfileResult r) => int.tryParse(RegExp(r'(\d{4})(?:/\d\d)?$').firstMatch(r.event)?.group(1) ?? '') ?? 0;

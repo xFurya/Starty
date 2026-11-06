@@ -145,6 +145,21 @@ void main() {
       expect(twoResultGroups(const []), isEmpty);
     });
 
+    test('старты: два раздела с сервера остаются как пришли', () {
+      const fromServer = [
+        ProfileGroup('Международные', [
+          ProfileResult('CS 34th Nepela Memorial 2026', 'm', '1'),
+          ProfileResult('GP Rostelecom Cup 2020', 'm', '6'),
+          ProfileResult('Minsk Arena Ice Star 2020', 'm', '3'),
+        ]),
+        ProfileGroup('Внутренние', [ProfileResult('Чемпионат России 2026', 'm', '2')]),
+      ];
+      final out = twoResultGroups(fromServer);
+      expect(out.map((g) => g.name), ['Международные', 'Внутренние']);
+      expect(out.first.rows.map((r) => r.event), fromServer.first.rows.map((r) => r.event));
+      expect(out.last.rows.map((r) => r.event), ['Чемпионат России 2026']);
+    });
+
     test('пустое и чужое не роняет разбор', () {
       final p = Profile.fromJson({
         'n': 'X',

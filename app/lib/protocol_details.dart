@@ -82,7 +82,10 @@ class Details extends StatefulWidget {
 
   /// Судьи сегмента: их номера подписывают оценки; пусто — J1, J2…
   final List<ProtocolJudge> panel;
-  const Details({super.key, required this.row, this.panel = const []});
+
+  /// Почему нет разбора, когда у строки есть итоги, а элементов и компонентов нет; null — молчим.
+  final String? missing;
+  const Details({super.key, required this.row, this.panel = const [], this.missing});
 
   @override
   State<Details> createState() => _DetailsState();
@@ -210,6 +213,14 @@ class _DetailsState extends State<Details> {
       if (r.ded != null) ('Сбавки', r.ded!),
       if (r.points != null) ('Сумма', r.points!),
     ];
+    // одни итоги без разбора выглядят как «больше ничего нет» — говорим, почему разбора нет
+    final why = widget.missing;
+    if (totals.isNotEmpty && why != null && r.elements.isEmpty && r.components.isEmpty) {
+      kids.add(Padding(
+        padding: const EdgeInsets.only(top: 8, bottom: 2),
+        child: Text(why, style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w500, color: p.ink2, height: 1.3)),
+      ));
+    }
     if (totals.isNotEmpty) {
       if (kids.isNotEmpty) kids.add(const SizedBox(height: 10));
       kids.add(Wrap(

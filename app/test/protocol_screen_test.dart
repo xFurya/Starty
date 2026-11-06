@@ -616,6 +616,42 @@ void main() {
       expect(find.text('0.00'), findsNothing);
     });
 
+    for (final st in ['in_progress', 'provisional']) {
+      testWidgets('$st: итоги без разбора — сказано, что разбор появится', (tester) async {
+        await pumpScreen(tester, s: start(), repo: repoWith(withState(st)));
+        await tester.tap(find.text('Анна Билибина / Дмитрий Кашаев'));
+        await tester.pumpAndSettle();
+        expect(find.text('ТЕХ'), findsOneWidget);
+        expect(find.text('Элементы и оценки судей появятся, когда их опубликуют'), findsOneWidget);
+        expectNoHorizontalScroll(tester);
+      });
+    }
+
+    testWidgets('окончательный без разбора у строки — так и сказано', (tester) async {
+      await pumpScreen(tester, s: start(), repo: repoWith(sample()));
+      await tester.tap(find.text('Анна Билибина / Дмитрий Кашаев'));
+      await tester.pumpAndSettle();
+      expect(find.text('Элементов и оценок судей в протоколе нет'), findsOneWidget);
+      expect(find.text('Элементы и оценки судей появятся, когда их опубликуют'), findsNothing);
+    });
+
+    testWidgets('разбор есть — пояснения нет', (tester) async {
+      await pumpScreen(tester, s: start(), repo: repoWith(withDetails()));
+      await tester.tap(find.text('Анна Билибина / Дмитрий Кашаев'));
+      await tester.pumpAndSettle();
+      expect(find.text('Элементы'), findsOneWidget);
+      expect(find.text('Элементов и оценок судей в протоколе нет'), findsNothing);
+      expect(find.text('Элементы и оценки судей появятся, когда их опубликуют'), findsNothing);
+    });
+
+    test('пояснение по состоянию сегмента; у итога вида — нет', () {
+      expect(missingDetails(SegmentState.inProgress), 'Элементы и оценки судей появятся, когда их опубликуют');
+      expect(missingDetails(SegmentState.provisional), 'Элементы и оценки судей появятся, когда их опубликуют');
+      expect(missingDetails(SegmentState.finalized), 'Элементов и оценок судей в протоколе нет');
+      expect(missingDetails(null), isNull);
+      expect(missingDetails(SegmentState.scheduled), isNull);
+    });
+
     testWidgets('элемент без базы, GOE и оценки — прочерки, не нули', (tester) async {
       final j = sample();
       final r = (_seg(j)['rows'] as List).first as Map<String, dynamic>;

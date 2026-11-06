@@ -223,6 +223,28 @@ def group_ru(g):
     return GROUPS.get(g.lower().strip(), g)
 
 
+# старты в профиле — два раздела (решение владельца): серии ISU, Челленджеры и приглашённые турниры
+# не разводятся по заголовкам
+INTL, HOME = "Международные", "Внутренние"
+_YEAR = re.compile(r"(\d{4})(?:/\d\d)?$")
+
+
+def two_groups(groups):
+    """[(группа ISU, строки)] → [{g, r}]: «Внутренние» — национальные чемпионаты любой страны,
+    «Международные» — всё остальное. Внутри раздела — по году в названии от новых к старым, при
+    равном годе — как у ISU. Тот же порядок у приложения (app/lib/profile.dart, twoResultGroups)."""
+    intl, home = [], []
+    for g, rows in groups:
+        (home if g.lower().strip() == "national championships" else intl).extend(rows)
+
+    def year(r):
+        m = _YEAR.search(r["ev"])
+        return int(m.group(1)) if m else 0
+
+    return [{"g": name, "r": sorted(rows, key=lambda r: -year(r))}
+            for name, rows in ((INTL, intl), (HOME, home)) if rows]
+
+
 # порядок титулов внутри сезона — по весу турнира
 _WEIGHT = ("Олимпийские игры", "Чемпионат мира 2", "Финал Гран-при", "Чемпионат Европы", "Чемпионат четырёх",
            "Чемпионат мира среди", "Финал юниорского", "Чемпионат ", "Первенство ", "Национальный")
@@ -403,13 +425,14 @@ def profile(name, nation, bio=None, card=None, cards_by_name=None, staff=()):
         for w in who:
             if w.get("club") in clubs:
                 w["club"] = clubs[w["club"]]
-        res = []
+        groups = []
         for g in bio["cr"]:
             rows = []
             for r in g["r"]:
                 ev = event_ru(r["ev"], r.get("c") or nation, r["k"])
                 rows.append({k: v for k, v in (("ev", ev), ("k", r["k"]), ("pl", r["pl"])) if v != ""})
-            res.append({"g": group_ru(g["g"]), "r": rows})
+            groups.append((g["g"], rows))
+        res = two_groups(groups)
         if res:
             out["res"] = res
             t = titles(res)
