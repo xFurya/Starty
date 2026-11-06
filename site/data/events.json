@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-06T10:08:03+03:00",
- "checked": "2026-11-06T11:22:23.246885+00:00",
+ "checked": "2026-11-06T11:26:23.102776+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -47221,7 +47221,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Марк Титов — 105.40\n2. Егор Васько — 104.66\n3. Илья Старков — 97.53\n\nНачало: 13:45 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Ярослав Хрулев — 130.59\n2. Марк Титов — 105.40\n3. Егор Васько — 104.66\n\nНачало: 13:45 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Марк Титов",
@@ -47229,7 +47229,7 @@
      "time": "13:52",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "105.40"
     },
     {
@@ -47238,7 +47238,7 @@
      "time": "14:11",
      "no": 4,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "88.66"
     },
     {
@@ -47246,7 +47246,9 @@
      "nation": "МОС",
      "time": "14:17",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "130.59"
     },
     {
      "name": "Леонтий Камзолов",
@@ -47261,7 +47263,7 @@
      "time": "14:30",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "97.53"
     },
     {
@@ -47312,7 +47314,7 @@
      "time": "15:31",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "104.66"
     },
     {
@@ -47389,21 +47391,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Ярослав Хрулев",
+     "nation": "МОС",
+     "points": "130.59"
+    },
+    {
+     "place": 2,
      "name": "Марк Титов",
      "nation": "ТАТ",
      "points": "105.40"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Егор Васько",
      "nation": "МОС",
      "points": "104.66"
-    },
-    {
-     "place": 3,
-     "name": "Илья Старков",
-     "nation": "ЛОБ",
-     "points": "97.53"
     }
    ],
    "provisional": true
@@ -47458,7 +47460,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Анастасия Мишина / Александр Галлямов — 74.69\n2. Chelsea Liu / Ryan Bedard — 62.71\n\nРоссияне:\n• Анастасия Мишина / Александр Галлямов — 14:07\n\nНачало: 14:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Анастасия Мишина / Александр Галлямов — 74.69\n2. Chelsea Liu / Ryan Bedard — 62.71\n3. Valentina Plazas / Maximiliano Fernandez — 59.48\n\nРоссияне:\n• Анастасия Мишина / Александр Галлямов — 14:07\n\nНачало: 14:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Анастасия Мишина / Александр Галлямов",
@@ -47483,7 +47485,9 @@
      "nation": "USA",
      "time": "14:20",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3,
+     "points": "59.48"
     },
     {
      "name": "Karina Akopova / Nikita Rakhmanin",
@@ -47551,6 +47555,12 @@
      "name": "Chelsea Liu / Ryan Bedard",
      "nation": "USA",
      "points": "62.71"
+    },
+    {
+     "place": 3,
+     "name": "Valentina Plazas / Maximiliano Fernandez",
+     "nation": "USA",
+     "points": "59.48"
     }
    ],
    "provisional": true
