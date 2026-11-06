@@ -58,6 +58,28 @@ class ParseTest(unittest.TestCase):
         self.assertEqual(cr[0]["r"], [{"ev": "Olympic Winter Games 2026 Figure Skating", "k": "p", "pl": 3, "c": "GER"}])
         self.assertEqual(cr[3]["r"][1], {"ev": "National Championships 2019", "k": "P", "pl": "WD"})
 
+    def test_cr_two_starts_in_one_row(self):
+        # ISU пишет взрослый чемпионат и юниорское первенство одной строкой — делим на две
+        page = """<table><tr><td>National Championships</td></tr>
+<tr><td></td><td>National Championships 2021</td><td><span>Men, Junior Men,&nbsp;</span></td>
+<td>11, 1,&nbsp;</td><td></td><td>RUS, RUS,&nbsp;</td></tr>
+<tr><td></td><td>National Championships 2020</td><td>Junior Men, Men,</td><td>3, 9,</td><td></td><td>RUS, RUS,</td></tr>
+<tr><td></td><td>National Championships 2019</td><td>Men, Junior Men,</td><td>4,</td><td></td><td>RUS,</td></tr>
+</table>"""
+        rows = pf.parse_cr(page)[0]["r"]
+        self.assertEqual(rows[:4], [
+            {"ev": "National Championships 2021", "k": "m", "pl": 11, "c": "RUS"},
+            {"ev": "National Championships 2021", "k": "M", "pl": 1, "c": "RUS"},
+            {"ev": "National Championships 2020", "k": "M", "pl": 3, "c": "RUS"},
+            {"ev": "National Championships 2020", "k": "m", "pl": 9, "c": "RUS"},
+        ])
+        # списки не сходятся — места нет, но и сырой строки «4,» нет
+        self.assertEqual(rows[4], {"ev": "National Championships 2019", "k": "", "pl": ""})
+        self.assertEqual(len(rows), 5)
+        self.assertFalse(pf.stale_cr(pf.parse_cr(page)))
+        self.assertTrue(pf.stale_cr([{"g": "National Championships", "r": [{"ev": "x", "k": "", "pl": "11, 1,"}]}]))
+        self.assertFalse(pf.stale_cr([{"g": "x", "r": [{"ev": "x", "k": "m", "pl": "WD"}]}]))
+
     def test_event_names(self):
         self.assertEqual(pf.event_ru("ISU GP Grand Prix de France 2024"), "GP de France 2024")
         self.assertEqual(pf.event_ru("ISU GP Skate Canada International 2025"), "GP Skate Canada 2025")
@@ -113,6 +135,20 @@ class ProfileTest(unittest.TestCase):
         self.assertEqual(pf.two_groups([("National Championships", [{"ev": "Чемпионат России 2026"}])]),
                          [{"g": "Внутренние", "r": [{"ev": "Чемпионат России 2026"}]}])
         self.assertEqual(pf.two_groups([]), [])
+
+    def test_two_starts_in_profile(self):
+        page = """<table><tr><td>National Championships</td></tr>
+<tr><td>National Championships 2021</td><td>Men, Junior Men,</td><td>11, 1,</td><td>RUS, RUS,</td></tr></table>"""
+        st = {"at": "2026-11-05T10:00:00+00:00", "bio": {}, "cr": pf.parse_cr(page)}
+        p = pf.profile("Евгений Семененко", "RUS", st)
+        self.assertEqual(p["res"], [{"g": "Внутренние", "r": [
+            {"ev": "Чемпионат России 2021", "k": "m", "pl": 11},
+            {"ev": "Первенство России 2021", "k": "M", "pl": 1}]}])
+        # старый кэш (до деления строк) — прочерк, а не «11, 1,»
+        old = {"at": "2026-11-05T10:00:00+00:00", "bio": {},
+               "cr": [{"g": "National Championships", "r": [{"ev": "National Championships 2021", "k": "", "pl": "11, 1,"}]}]}
+        p = pf.profile("Евгений Семененко", "RUS", old)
+        self.assertEqual(p["res"], [{"g": "Внутренние", "r": [{"ev": "Чемпионат России 2021"}]}])
 
     def test_partner_count_mismatch_keeps_only_names(self):
         p = pf.profile("Minerva Fabienne Hase", "GER", self.store())
@@ -211,6 +247,21 @@ class StoreTest(unittest.TestCase):
                 pf.refresh({}, {"b": "2026-11-03T00:00:00+00:00"}, log=lambda *a: None, path=path, budget=5,
                            now=pf.dt.datetime(2026, 11, 4, tzinfo=pf.dt.timezone.utc))
             self.assertEqual(got, [pf.BIO.format("2"), pf.CR.format("2")])  # «a» свежая, «b» выступил после проверки
+
+    def test_stale_cr_refetched_first(self):
+        with tempfile.TemporaryDirectory() as d:
+            path = os.path.join(d, "bios.json")
+            fresh = "2026-11-03T00:00:00+00:00"
+            old = [{"g": "National Championships", "r": [{"ev": "National Championships 2021", "k": "", "pl": "11, 1,"}]}]
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump({"ids": {"a": "1", "b": "2"},
+                           "bios": {"1": {"at": fresh, "bio": {}, "cr": []}, "2": {"at": fresh, "bio": {}, "cr": old}}}, f)
+            got = []
+            with mock.patch.object(pf.net, "fetch", side_effect=lambda u, **k: got.append(u) or (BIO if "_cr_" not in u else CR)):
+                s = pf.refresh({}, log=lambda *a: None, path=path, budget=5,
+                               now=pf.dt.datetime(2026, 11, 4, tzinfo=pf.dt.timezone.utc))
+            self.assertEqual(got, [pf.BIO.format("2"), pf.CR.format("2")])  # «1» свежая, у «2» неразделённая строка
+            self.assertFalse(pf.stale_cr(s["bios"]["2"]["cr"]))
 
 
 if __name__ == "__main__":

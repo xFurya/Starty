@@ -160,21 +160,47 @@ def parse_bio(page):
     return out
 
 
+def _list(cell):
+    """«Men, Junior Men,» → ["Men", "Junior Men"]: ячейка ISU со списком через запятую."""
+    return [x.strip() for x in cell.split(",") if x.strip()]
+
+
+# место, которое разобрать не удалось: в профиль не идёт — прочерк честнее сырой строки
+SPLIT_PL = re.compile(r"\d+\s*,")
+
+
 def parse_cr(page):
     """«Competition Results» ISU → [{g: группа, r: [{ev, k, pl, c}]}] в порядке страницы
-    (внутри группы — новые первыми). k — вид буквой, pl — место числом или как написано, c — страна."""
+    (внутри группы — новые первыми). k — вид буквой, pl — место числом или как написано, c — страна.
+
+    Одна строка ISU может нести два старта одного турнира: «National Championships 2021 |
+    Men, Junior Men, | 11, 1, | RUS, RUS,» — взрослый чемпионат и юниорское первенство. Такая строка
+    делится на две по порядку в списках; если списки не сходятся — места нет (прочерк), но не «11, 1,»."""
     groups = []
     for r in re.findall(r"(?s)<tr[^>]*>(.*?)</tr>", page):
         cells = [c for c in _cells("".join(re.findall(r"(?s)<td[^>]*>.*?</td>", r)))]
         if len(cells) == 1:
             groups.append({"g": cells[0], "r": []})
         elif len(cells) >= 3 and groups:
-            pl = cells[2]
-            row = {"ev": cells[0], "k": _kind(cells[1]), "pl": int(pl) if pl.isdigit() else pl}
-            if len(cells) >= 4 and re.fullmatch(r"[A-Z]{3}\d?", cells[3]):
-                row["c"] = cells[3]
-            groups[-1]["r"].append(row)
+            cats, pls = _list(cells[1]), _list(cells[2])
+            nats = _list(cells[3]) if len(cells) >= 4 else []
+            if len(cats) > 1 or len(pls) > 1:
+                if len(cats) != len(pls) or (nats and len(nats) != len(cats)):
+                    cats, pls, nats = [cells[1]], [""], []  # не сходится — без места
+            else:
+                cats, pls = [cells[1]], [cells[2]]
+            for j, (cat, pl) in enumerate(zip(cats, pls)):
+                row = {"ev": cells[0], "k": _kind(cat), "pl": int(pl) if pl.isdigit() else pl}
+                nat = nats[j] if j < len(nats) else ""
+                if re.fullmatch(r"[A-Z]{3}\d?", nat):
+                    row["c"] = nat
+                groups[-1]["r"].append(row)
     return [g for g in groups if g["r"]]
+
+
+def stale_cr(cr):
+    """В кэше строка, разобранная до деления («11, 1,» одним местом): биографию надо перечитать."""
+    return any(isinstance(r.get("pl"), str) and SPLIT_PL.search(r["pl"]) for g in cr or [] for r in g.get("r", []))
 
 
 # ---------------------------------------------------------------- названия по-русски
@@ -267,7 +293,7 @@ def titles(res):
     out = []
     for g in res:
         for r in g["r"]:
-            if isinstance(r["pl"], int) and 1 <= r["pl"] <= 3 and _TITLE.match(r["ev"]):
+            if isinstance(r.get("pl"), int) and 1 <= r["pl"] <= 3 and _TITLE.match(r["ev"]):
                 out.append({"ev": r["ev"], "k": r["k"], "pl": r["pl"], "y": season_of(r["ev"])})
     weight = lambda ev: next((i for i, w in enumerate(_WEIGHT) if ev.startswith(w)), len(_WEIGHT))
     out.sort(key=lambda t: (weight(t["ev"]), t["pl"]))
@@ -306,6 +332,8 @@ def refresh(ids, competed=None, log=print, path=None, budget=BUDGET, now=None):
         old = c.get(i)
         if not old:
             return (0, "")
+        if stale_cr(old.get("cr")):
+            return (0, old["at"])  # разобрано до деления строк ISU на старты — перечитать первым делом
         if competed_id.get(i, "") > old["at"]:
             return (1, old["at"])
         if now - dt.datetime.fromisoformat(old["at"]) >= STALE:
@@ -430,7 +458,10 @@ def profile(name, nation, bio=None, card=None, cards_by_name=None, staff=()):
             rows = []
             for r in g["r"]:
                 ev = event_ru(r["ev"], r.get("c") or nation, r["k"])
-                rows.append({k: v for k, v in (("ev", ev), ("k", r["k"]), ("pl", r["pl"])) if v != ""})
+                pl = r["pl"]
+                if isinstance(pl, str) and SPLIT_PL.search(pl):
+                    pl = ""  # старый кэш: «11, 1,» одним местом — прочерк, пока биографию не перечитали
+                rows.append({k: v for k, v in (("ev", ev), ("k", r["k"]), ("pl", pl)) if v != ""})
             groups.append((g["g"], rows))
         res = two_groups(groups)
         if res:
