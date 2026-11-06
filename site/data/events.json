@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-06T10:08:03+03:00",
- "checked": "2026-11-06T13:30:22.843173+00:00",
+ "checked": "2026-11-06T13:38:23.416726+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -47672,7 +47672,7 @@
      "time": "15:38",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "99.72"
     },
     {
@@ -47681,7 +47681,7 @@
      "time": "15:45",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "98.86"
     }
    ],
@@ -47712,7 +47712,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Евгений Семененко — 99.72\n2. Владислав Дикиджи — 98.86\n3. Vladimir Samoilov — 88.21\n\nРоссияне:\n• Евгений Семененко — 15:38\n• Владислав Дикиджи — 15:45\n\nНачало: 15:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Kao Miura — 102.90\n2. Евгений Семененко — 99.72\n3. Владислав Дикиджи — 98.86\n\nРоссияне:\n• Евгений Семененко — 15:38\n• Владислав Дикиджи — 15:45\n\nНачало: 15:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Zhiming Peng",
@@ -47720,7 +47720,7 @@
      "time": "15:32",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "87.65"
     },
     {
@@ -47729,7 +47729,7 @@
      "time": "15:38",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "99.72"
     },
     {
@@ -47738,7 +47738,7 @@
      "time": "15:45",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "98.86"
     },
     {
@@ -47747,7 +47747,7 @@
      "time": "15:51",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "80.74"
     },
     {
@@ -47756,7 +47756,7 @@
      "time": "15:57",
      "no": 5,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "63.16"
     },
     {
@@ -47765,7 +47765,7 @@
      "time": "16:03",
      "no": 6,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "88.21"
     },
     {
@@ -47774,7 +47774,7 @@
      "time": "16:17",
      "no": 7,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "79.45"
     },
     {
@@ -47783,7 +47783,7 @@
      "time": "16:23",
      "no": 8,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "79.77"
     },
     {
@@ -47791,7 +47791,9 @@
      "nation": "JPN",
      "time": "16:29",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "102.90"
     },
     {
      "name": "Nika Egadze",
@@ -47840,21 +47842,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Kao Miura",
+     "nation": "JPN",
+     "points": "102.90"
+    },
+    {
+     "place": 2,
      "name": "Евгений Семененко",
      "nation": "RUS",
      "points": "99.72"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Владислав Дикиджи",
      "nation": "RUS",
      "points": "98.86"
-    },
-    {
-     "place": 3,
-     "name": "Vladimir Samoilov",
-     "nation": "POL",
-     "points": "88.21"
     }
    ],
    "provisional": true
