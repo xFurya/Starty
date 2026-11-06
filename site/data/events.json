@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-06T10:08:03+03:00",
- "checked": "2026-11-06T07:54:03.626890+00:00",
+ "checked": "2026-11-06T08:02:03.635930+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -46530,7 +46530,7 @@
      "nation": "CHN",
      "no": 1,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "44.86",
      "time": "09:51"
     },
@@ -46539,7 +46539,7 @@
      "nation": "CHN",
      "no": 2,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "62.48",
      "time": "09:58"
     },
@@ -46548,7 +46548,7 @@
      "nation": "CHN",
      "no": 3,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "59.16",
      "time": "10:04"
     },
@@ -46567,7 +46567,7 @@
      "time": "10:11",
      "no": 4,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "65.04"
     },
     {
@@ -46576,7 +46576,7 @@
      "time": "10:17",
      "no": 5,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "64.84"
     },
     {
@@ -46609,7 +46609,9 @@
      "nation": "ESP",
      "time": "10:50",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "70.98"
     }
    ],
    "provisional": true,
@@ -46690,14 +46692,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Россияне:\n• Анна Докукина — 11:58\n\nНачало: 10:45 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Ульяна Бессонова — 86.42\n\nРоссияне:\n• Анна Докукина — 11:58\n\nНачало: 10:45 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Ульяна Бессонова",
      "nation": "АСТ",
      "time": "10:52",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "86.42"
     },
     {
      "name": "Елизавета Ширяева",
@@ -46846,7 +46850,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Ульяна Бессонова",
+     "nation": "АСТ",
+     "points": "86.42"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:women-senior-kp",
