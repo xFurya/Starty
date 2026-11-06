@@ -150,6 +150,33 @@ class Profile {
       titles.any((t) => t.kind.toLowerCase() == 'd');
 }
 
+/// Старты в два раздела: «Внутренние» — национальные чемпионаты (у любой страны), «Международные» —
+/// всё остальное: серии ISU и приглашённые турниры. Группы из профиля (scraper/profiles.py, GROUPS)
+/// здесь не различаются. Внутри раздела — новые турниры первыми; при равном годе — как пришло.
+List<ProfileGroup> twoResultGroups(List<ProfileGroup> groups) {
+  const domestic = 'Национальные чемпионаты';
+  final intl = <(int, ProfileResult)>[], home = <(int, ProfileResult)>[];
+  var n = 0;
+  for (final g in groups) {
+    for (final r in g.rows) {
+      (g.name == domestic ? home : intl).add((n++, r));
+    }
+  }
+  int year(ProfileResult r) => int.tryParse(RegExp(r'(\d{4})(?:/\d\d)?$').firstMatch(r.event)?.group(1) ?? '') ?? 0;
+  List<ProfileResult> newestFirst(List<(int, ProfileResult)> xs) {
+    final sorted = [...xs]..sort((a, b) {
+      final c = year(b.$2).compareTo(year(a.$2));
+      return c != 0 ? c : a.$1.compareTo(b.$1);
+    });
+    return [for (final x in sorted) x.$2];
+  }
+
+  return [
+    if (intl.isNotEmpty) ProfileGroup('Международные', newestFirst(intl)),
+    if (home.isNotEmpty) ProfileGroup('Внутренние', newestFirst(home)),
+  ];
+}
+
 String _s(Object? v) => v == null ? '' : '$v'.trim();
 List<String> _list(Object? v) => [
   for (final x in (v is List ? v : const []))
@@ -441,13 +468,13 @@ class _ProfileSheetState extends State<ProfileSheet> {
           pr.season.first.season.isEmpty ? 'Старты сезона' : 'Старты сезона ${pr.season.first.season}',
           _Season(list: pr.season),
         ),
-      for (var i = 0; i < pr.results.length; i++)
+      for (final (i, g) in twoResultGroups(pr.results).indexed)
         _section(
           context,
-          pr.results[i].name,
+          g.name,
           _MedalList(
             rows: [
-              for (final r in pr.results[i].rows)
+              for (final r in g.rows)
                 (place: r.placeNumber, mark: r.place, event: r.event, note: kindNote(r.event, r.kind, multi: multi)),
             ],
           ),

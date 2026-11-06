@@ -112,6 +112,39 @@ void main() {
       expect(p.dance, isFalse);
     });
 
+    test('старты: два раздела — внутренние (национальные) и международные, новые первыми', () {
+      final out = twoResultGroups(const [
+        ProfileGroup('Гран-при', [ProfileResult('GP Rostelecom Cup 2020', 'm', '6')]),
+        ProfileGroup('Юниорский Гран-при', [ProfileResult('JGP Cup of Austria 2017', 'm', '6')]),
+        ProfileGroup('Челленджеры', [
+          ProfileResult('CS Finlandia Trophy 2021', 'm', '5'),
+          ProfileResult('CS 34th Nepela Memorial 2026', 'm', '1'),
+        ]),
+        ProfileGroup('Международные турниры', [ProfileResult('Minsk Arena Ice Star 2020', 'm', '3')]),
+        ProfileGroup('Национальные чемпионаты', [
+          ProfileResult('Чемпионат России 2024', 'm', '1'),
+          ProfileResult('Чемпионат России 2026', 'm', '2'),
+        ]),
+      ]);
+      expect(out.map((g) => g.name), ['Международные', 'Внутренние']);
+      expect(out.first.rows.map((r) => r.event), [
+        'CS 34th Nepela Memorial 2026',
+        'CS Finlandia Trophy 2021',
+        'GP Rostelecom Cup 2020', // при равном годе — как шло: сначала из «Гран-при»
+        'Minsk Arena Ice Star 2020',
+        'JGP Cup of Austria 2017',
+      ]);
+      expect(out.last.rows.map((r) => r.event), ['Чемпионат России 2026', 'Чемпионат России 2024']);
+    });
+
+    test('старты: только национальные — один раздел «Внутренние»', () {
+      final out = twoResultGroups(const [
+        ProfileGroup('Национальные чемпионаты', [ProfileResult('Чемпионат России 2026', 'w', '1')]),
+      ]);
+      expect(out.map((g) => g.name), ['Внутренние']);
+      expect(twoResultGroups(const []), isEmpty);
+    });
+
     test('пустое и чужое не роняет разбор', () {
       final p = Profile.fromJson({
         'n': 'X',
@@ -191,7 +224,8 @@ void main() {
       expect(find.text('Nolan Seegert'), findsOneWidget);
       expect(find.text('Тренеры'), findsOneWidget);
       expect(find.text('МУЗЫКА СЕЗОНА 2026/27'), findsOneWidget);
-      expect(find.text('НАЦИОНАЛЬНЫЕ ЧЕМПИОНАТЫ'), findsOneWidget);
+      expect(find.text('МЕЖДУНАРОДНЫЕ'), findsOneWidget); // Олимпиада — международный раздел
+      expect(find.text('ВНУТРЕННИЕ'), findsOneWidget); // национальный чемпионат — внутренний
       expect(find.text('WD'), findsOneWidget);
       expect(find.text('По данным ISU на 5 ноября 2026'), findsOneWidget);
       expect(t.takeException(), isNull);
