@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-06T10:08:03+03:00",
- "checked": "2026-11-06T13:26:22.413914+00:00",
+ "checked": "2026-11-06T13:30:22.843173+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -47756,7 +47756,7 @@
      "time": "15:57",
      "no": 5,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "63.16"
     },
     {
@@ -47774,7 +47774,7 @@
      "time": "16:17",
      "no": 7,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "79.45"
     },
     {
@@ -47782,7 +47782,9 @@
      "nation": "KOR",
      "time": "16:23",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6,
+     "points": "79.77"
     },
     {
      "name": "Kao Miura",
