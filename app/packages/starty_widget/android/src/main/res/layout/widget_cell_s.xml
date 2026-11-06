@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- День, мелкий (MonthWidget.STEPS): то же, что widget_cell, помельче. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cell"
+    style="@style/WidgetCell"
+    android:background="@drawable/widget_press">
+
+    <TextView
+        android:id="@+id/num"
+        style="@style/WidgetNum.S" />
+
+    <LinearLayout style="@style/WidgetDots.S">
+
+        <ImageView android:id="@+id/d_women" style="@style/WidgetDot.S" android:src="@drawable/widget_dot_women" />
+        <ImageView android:id="@+id/d_men" style="@style/WidgetDot.S" android:src="@drawable/widget_dot_men" />
+        <ImageView android:id="@+id/d_pairs" style="@style/WidgetDot.S" android:src="@drawable/widget_dot_pairs" />
+        <ImageView android:id="@+id/d_dance" style="@style/WidgetDot.S" android:src="@drawable/widget_dot_dance" />
+        <ImageView android:id="@+id/d_other" style="@style/WidgetDot.S" android:src="@drawable/widget_dot_other" />
+        <ImageView android:id="@+id/d_ring" style="@style/WidgetDot.S" android:src="@drawable/widget_dot_ring" />
+    </LinearLayout>
+</LinearLayout>

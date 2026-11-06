@@ -6,7 +6,7 @@
     android:previewLayout="@layout/widget_preview"
     android:minHeight="250dp"
     android:minResizeWidth="220dp"
-    android:minResizeHeight="210dp"
+    android:minResizeHeight="220dp"
     android:resizeMode="horizontal|vertical"
     android:targetCellWidth="4"
     android:targetCellHeight="4"

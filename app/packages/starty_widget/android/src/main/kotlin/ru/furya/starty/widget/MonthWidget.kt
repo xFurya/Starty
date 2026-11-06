@@ -14,8 +14,12 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.StyleSpan
+import android.util.SizeF
+import android.util.TypedValue
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.RemoteViews
+import android.widget.TextView
 import org.json.JSONObject
 import java.util.Calendar
 import java.util.TimeZone
@@ -89,7 +93,21 @@ class MonthWidget : AppWidgetProvider() {
         val lockTitle: String,
         val lockText: String,
         val lockOpen: String,
+        /** Что откроет нажатие на закрытый виджет — строкой под причиной; пусто — нечего открывать. */
+        val lockAction: String,
     )
+
+    /** День в сетке: разметка (widget_cell, _m, _s, _xs) и сколько ему нужно места, dp — высота строки и ширина колонки. */
+    private class Cell(val layout: Int, val height: Float, val width: Float)
+
+    /** Шаг вниз, когда не влезает: день и сколько строк у сбоя и фильтра под шапкой. */
+    private class Step(val cell: Cell, val lines: Int)
+
+    /**
+     * Вид под размер виджета: шаг и размеры названия месяца и года, sp. [fits] — влезло; нет (размер
+     * меньше любого шага) — без кольца «сегодня»: срезанное кольцо выглядит сломанным, а сегодня видно и так.
+     */
+    private class Look(val step: Step, val month: Float, val year: Float, val fits: Boolean = true)
 
     companion object {
         private const val PREFS = "starty_widget"
@@ -124,6 +142,24 @@ class MonthWidget : AppWidgetProvider() {
             "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
             "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь",
         )
+        /**
+         * От богатого к скупому — берётся первый, что влезает целиком ([pick]): сначала мельче день; потом
+         * сбой и фильтр — по строке, с многоточием; и только потом день без точек (старты видны жирным).
+         * Внутри шага — шапка от крупной к мелкой.
+         */
+        private val STEPS by lazy {
+            val l = Cell(R.layout.widget_cell, 34f, 30f)
+            val m = Cell(R.layout.widget_cell_m, 28f, 26f)
+            val s = Cell(R.layout.widget_cell_s, 23f, 22f)
+            val xs = Cell(R.layout.widget_cell_xs, 17f, 18f)
+            arrayOf(Step(l, 2), Step(m, 2), Step(s, 2), Step(l, 1), Step(m, 1), Step(s, 1), Step(xs, 2), Step(xs, 1))
+        }
+        private val HEADS = arrayOf(28f to 13f, 24f to 12f, 21f to 11f, 18f to 11f)
+
+        /** Размер, если рабочий стол его не сказал: как в widget_month_info (minWidth, minHeight). */
+        private const val DEFAULT_W = 250f
+        private const val DEFAULT_H = 270f
+
         private val MONTHS_OF = arrayOf(
             "января", "февраля", "марта", "апреля", "мая", "июня",
             "июля", "августа", "сентября", "октября", "ноября", "декабря",
@@ -189,6 +225,7 @@ class MonthWidget : AppWidgetProvider() {
                     lockTitle = j.optString("lockTitle"),
                     lockText = j.optString("lockText"),
                     lockOpen = j.optString("lockOpen"),
+                    lockAction = j.optString("lockAction"),
                 )
             } catch (_: Exception) {
                 null
@@ -207,19 +244,97 @@ class MonthWidget : AppWidgetProvider() {
 
         private fun render(c: Context, m: AppWidgetManager, id: Int) {
             val views = try {
-                build(c, id)
+                views(c, m, id)
             } catch (_: Exception) {
-                message(c, "Месяц", "Не удалось показать. Откройте приложение", "")
+                message(c, "Месяц", "Не удалось показать. Откройте приложение", "", "")
             }
             try {
                 m.updateAppWidget(id, views)
             } catch (_: Exception) {}
         }
 
-        private fun build(c: Context, id: Int): RemoteViews {
-            val d = load(c) ?: return message(c, "Месяц", "Откройте приложение — расписание ещё не загружено", "")
+        /** Что показать на виджете [id]: месяц под каждый размер, в котором его покажет рабочий стол, или почему его нет. */
+        private fun views(c: Context, m: AppWidgetManager, id: Int): RemoteViews {
+            val d = load(c)
             val now = System.currentTimeMillis()
-            if (!active(d, now)) return message(c, d.lockTitle, d.lockText, d.lockOpen)
+            // причина от размера не зависит
+            if (d == null || !active(d, now)) return build(c, id, d, now, DEFAULT_W, DEFAULT_H)
+            return sized(m.getAppWidgetOptions(id)) { w, h -> build(c, id, d, now, w, h) }
+        }
+
+        /**
+         * Свой вид под каждый размер виджета: Android 12+ называет их все (портрет, альбом, раскладной
+         * экран), раньше — крайние: портрет узкий и высокий, альбом широкий и низкий.
+         */
+        private fun sized(o: Bundle, make: (Float, Float) -> RemoteViews): RemoteViews {
+            if (Build.VERSION.SDK_INT >= 31) {
+                val sizes = sizes(o)
+                if (sizes.isNotEmpty()) return RemoteViews(sizes.associateWith { make(it.width, it.height) })
+            }
+            val minW = o.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH)
+            val maxW = o.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_WIDTH)
+            val minH = o.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT)
+            val maxH = o.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT)
+            if (minW <= 0 || maxH <= 0) return make(DEFAULT_W, DEFAULT_H)
+            val portrait = make(minW.toFloat(), maxH.toFloat())
+            if (maxW <= 0 || minH <= 0 || (maxW == minW && minH == maxH)) return portrait
+            return RemoteViews(make(maxW.toFloat(), minH.toFloat()), portrait)
+        }
+
+        @Suppress("DEPRECATION")
+        private fun sizes(o: Bundle): List<SizeF> {
+            val list: List<SizeF>? = if (Build.VERSION.SDK_INT >= 33) {
+                o.getParcelableArrayList(AppWidgetManager.OPTION_APPWIDGET_SIZES, SizeF::class.java)
+            } else {
+                o.getParcelableArrayList(AppWidgetManager.OPTION_APPWIDGET_SIZES)
+            }
+            return list.orEmpty().filter { it.width > 0 && it.height > 0 }.distinct().take(4)
+        }
+
+        /**
+         * Вид под размер [w]×[h] dp: самый крупный день, при котором месяц влезает целиком, и самая крупная
+         * шапка, при которой название месяца и год не обрезаны. Меряется настоящая разметка тем же шрифтом
+         * и масштабом текста, что у рабочего стола, а не угадывается. Не влезает ничего — самый мелкий.
+         */
+        private fun pick(c: Context, w: Float, h: Float, month: String, year: String, alarm: String, filter: String, rows: Int): Look {
+            val dp = c.resources.displayMetrics.density
+            val v = LayoutInflater.from(c).inflate(R.layout.widget_month, null)
+            val m = v.findViewById<TextView>(R.id.month).also { it.text = month }
+            val y = v.findViewById<TextView>(R.id.year).also { it.text = year }
+            val notes = arrayOf(R.id.alarm to alarm, R.id.filter to filter).map { (line, text) ->
+                v.findViewById<TextView>(line).apply {
+                    this.text = text
+                    visibility = if (text.isEmpty()) View.GONE else View.VISIBLE
+                }
+            }
+            val grid = v.findViewById<View>(R.id.grid)
+            val ws = View.MeasureSpec.makeMeasureSpec((w * dp).toInt(), View.MeasureSpec.EXACTLY)
+            val hs = View.MeasureSpec.makeMeasureSpec((h * dp).toInt(), View.MeasureSpec.EXACTLY)
+            for (step in STEPS) {
+                for (t in notes) t.maxLines = step.lines
+                for ((ms, ys) in HEADS) {
+                    m.setTextSize(TypedValue.COMPLEX_UNIT_SP, ms)
+                    y.setTextSize(TypedValue.COMPLEX_UNIT_SP, ys)
+                    v.measure(ws, hs)
+                    // полдп на строку — незаметно; больше — точки и кольцо срезаны
+                    if (whole(m) && whole(y) &&
+                        grid.measuredHeight >= rows * (step.cell.height - 0.5f) * dp &&
+                        grid.measuredWidth >= 7 * step.cell.width * dp
+                    ) {
+                        return Look(step, ms, ys)
+                    }
+                }
+            }
+            return Look(STEPS.last(), HEADS.last().first, HEADS.last().second, fits = false)
+        }
+
+        /** Текст встал целиком, без обрезки. */
+        private fun whole(t: TextView) =
+            t.measuredWidth - t.totalPaddingLeft - t.totalPaddingRight + 1 >= t.paint.measureText(t.text.toString())
+
+        private fun build(c: Context, id: Int, d: Data?, now: Long, w: Float, h: Float): RemoteViews {
+            if (d == null) return message(c, "Месяц", "Откройте приложение — расписание ещё не загружено", "", "")
+            if (!active(d, now)) return message(c, d.lockTitle, d.lockText, d.lockOpen, d.lockAction)
             val cal = Calendar.getInstance(MSK).apply { timeInMillis = now }
             val today = key(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH))
             prefs(c).let { if (it.getString(DAY, null) == null) it.edit().putString(DAY, today).apply() }
@@ -231,14 +346,7 @@ class MonthWidget : AppWidgetProvider() {
             // понедельник — первый
             val lead = (cal.get(Calendar.DAY_OF_WEEK) + 5) % 7
 
-            val v = RemoteViews(c.packageName, R.layout.widget_month)
-            v.setTextViewText(R.id.month, MONTHS[month])
-            v.setTextViewText(R.id.year, "$year")
-            v.setOnClickPendingIntent(R.id.head, open(c, "month:%04d-%02d".format(year, month + 1), year * 100 + month + 1))
-            v.setOnClickPendingIntent(R.id.prev, step(c, id, ACTION_PREV))
-            v.setOnClickPendingIntent(R.id.next, step(c, id, ACTION_NEXT))
-
-            // честная строка: расписание старое или неполное — первым; фильтр — потом
+            // честные строки: расписание старое или неполное — тревожным цветом; фильтр — спокойным
             val alarm = when {
                 d.generated > 0 && now - d.generated > STALE_MS -> {
                     val g = Calendar.getInstance(MSK).apply { timeInMillis = d.generated }
@@ -246,30 +354,39 @@ class MonthWidget : AppWidgetProvider() {
                 }
                 else -> d.trouble
             }
-            val note = listOf(alarm, if (d.filter.isEmpty()) "" else "Фильтр: ${d.filter}").filter { it.isNotEmpty() }
-            if (note.isEmpty()) {
-                v.setViewVisibility(R.id.note, View.GONE)
-            } else {
-                v.setViewVisibility(R.id.note, View.VISIBLE)
-                v.setTextViewText(R.id.note, note.joinToString("\n"))
-                color(c, v, R.id.note, if (alarm.isNotEmpty()) R.color.widget_live else R.color.widget_ink2)
+            val filter = if (d.filter.isEmpty()) "" else "Фильтр: ${d.filter}"
+            val rows = (lead + days + 6) / 7
+            val look = pick(c, w, h, MONTHS[month], "$year", alarm, filter, rows)
+
+            val v = RemoteViews(c.packageName, R.layout.widget_month)
+            v.setTextViewText(R.id.month, MONTHS[month])
+            v.setTextViewTextSize(R.id.month, TypedValue.COMPLEX_UNIT_SP, look.month)
+            v.setTextViewText(R.id.year, "$year")
+            v.setTextViewTextSize(R.id.year, TypedValue.COMPLEX_UNIT_SP, look.year)
+            v.setOnClickPendingIntent(R.id.head, open(c, "month:%04d-%02d".format(year, month + 1), year * 100 + month + 1))
+            v.setOnClickPendingIntent(R.id.prev, step(c, id, ACTION_PREV))
+            v.setOnClickPendingIntent(R.id.next, step(c, id, ACTION_NEXT))
+
+            for ((line, text) in arrayOf(R.id.alarm to alarm, R.id.filter to filter)) {
+                v.setTextViewText(line, text)
+                v.setViewVisibility(line, if (text.isEmpty()) View.GONE else View.VISIBLE)
+                v.setInt(line, "setMaxLines", look.step.lines)
             }
 
             v.removeAllViews(R.id.grid)
-            val rows = (lead + days + 6) / 7
             for (r in 0 until rows) {
                 val row = RemoteViews(c.packageName, R.layout.widget_row)
                 for (col in 0 until 7) {
                     val n = r * 7 + col - lead + 1
-                    row.addView(R.id.row, cell(c, if (n in 1..days) n else 0, year, month, today, d.days))
+                    row.addView(R.id.row, cell(c, look, if (n in 1..days) n else 0, year, month, today, d.days))
                 }
                 v.addView(R.id.grid, row)
             }
             return v
         }
 
-        private fun cell(c: Context, n: Int, year: Int, month: Int, today: String, marks: Map<String, Int>): RemoteViews {
-            val v = RemoteViews(c.packageName, R.layout.widget_cell)
+        private fun cell(c: Context, look: Look, n: Int, year: Int, month: Int, today: String, marks: Map<String, Int>): RemoteViews {
+            val v = RemoteViews(c.packageName, look.step.cell.layout)
             if (n == 0) {
                 v.setTextViewText(R.id.num, "")
                 v.setInt(R.id.cell, "setBackgroundResource", 0)
@@ -292,7 +409,7 @@ class MonthWidget : AppWidgetProvider() {
                     else -> R.color.widget_ink3
                 },
             )
-            if (isToday) v.setInt(R.id.num, "setBackgroundResource", R.drawable.widget_today)
+            if (isToday && look.fits) v.setInt(R.id.num, "setBackgroundResource", R.drawable.widget_today)
             val dots = arrayOf(
                 WOMEN to R.id.d_women, MEN to R.id.d_men, PAIRS to R.id.d_pairs,
                 DANCE to R.id.d_dance, OTHER to R.id.d_other, HOLLOW to R.id.d_ring,
@@ -319,10 +436,14 @@ class MonthWidget : AppWidgetProvider() {
             }
         }
 
-        private fun message(c: Context, title: String, text: String, what: String): RemoteViews {
+        private fun message(c: Context, title: String, text: String, what: String, action: String): RemoteViews {
             val v = RemoteViews(c.packageName, R.layout.widget_message)
             v.setTextViewText(R.id.msg_title, title)
             v.setTextViewText(R.id.msg_text, text)
+            if (action.isNotEmpty()) {
+                v.setTextViewText(R.id.msg_action, action)
+                v.setViewVisibility(R.id.msg_action, View.VISIBLE)
+            }
             v.setOnClickPendingIntent(android.R.id.background, open(c, what, if (what.isEmpty()) 2 else 1))
             return v
         }

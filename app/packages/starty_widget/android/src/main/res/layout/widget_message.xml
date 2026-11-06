@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Вместо месяца — честная причина: подписки нет или расписание ещё не загружено. -->
+<!-- Вместо месяца — честная причина (подписки нет или расписание ещё не загружено) и что откроет нажатие. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@android:id/background"
     android:layout_width="match_parent"
@@ -27,4 +27,16 @@
         android:lineSpacingMultiplier="1.15"
         android:textColor="@color/widget_ink2"
         android:textSize="14sp" />
+
+    <!-- что откроется по нажатию; нечего открывать — строки нет -->
+    <TextView
+        android:id="@+id/msg_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/widget_manrope"
+        android:textColor="@color/widget_accent"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
 </LinearLayout>

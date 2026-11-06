@@ -96,9 +96,10 @@ void main() {
     expect(j['filter'], 'Женщины (девушки)');
     expect((j['days'] as Map)['2026-11-12'], widgetWomen);
     // кончится без приложения — закроется с понятной причиной и откроет подписку
-    expect(j['lockTitle'], 'Виджет «Месяц» входит в подписку');
+    expect(j['lockTitle'], 'Виджет «Месяц» входит в\u00a0подписку');
     expect(j['lockText'], 'Подписка закончилась 5 декабря');
     expect(j['lockOpen'], 'billing');
+    expect(j['lockAction'], 'Открыть подписку');
   });
 
   test('данные: всё в порядке — ни сбоя, ни фильтра; продление — виджет не утверждает, что кончилась', () {
@@ -130,6 +131,7 @@ void main() {
     expect(off['mode'], 'locked');
     expect(off['lockTitle'], 'Виджет «Месяц» недоступен');
     expect(off['lockOpen'], '');
+    expect(off['lockAction'], '');
   });
 
   test('цвета виджета — палитра приложения, светлая и тёмная', () {

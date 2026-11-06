@@ -11,6 +11,21 @@
         <item name="android:textColor">@color/widget_ink2</item>
     </style>
 
+    <!-- Строка под шапкой: сбой или фильтр. -->
+    <style name="WidgetNote">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:fontFamily">@font/widget_manrope</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">4dp</item>
+        <item name="android:textColor">@color/widget_ink2</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
     <!-- Строка сетки, день, число, точки: одни и те же в виджете (widget_row, widget_cell) и в образце
          для списка виджетов (widget_preview). -->
     <style name="WidgetRow">
@@ -44,6 +59,53 @@
         <item name="android:layout_height">4dp</item>
         <item name="android:layout_marginTop">2dp</item>
         <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- День помельче — когда крупный не помещается в размер виджета (MonthWidget.STEPS):
+         средний (widget_cell_m) и мелкий (widget_cell_s). -->
+    <style name="WidgetNum.M">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="WidgetNum.S">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- совсем мелкий (widget_cell_xs): только число — точек нет, старты видны жирным -->
+    <style name="WidgetNum.XS">
+        <item name="android:layout_width">17dp</item>
+        <item name="android:layout_height">17dp</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="WidgetDots.XS">
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="WidgetDots.M">
+        <item name="android:layout_height">3dp</item>
+        <item name="android:layout_marginTop">1dp</item>
+    </style>
+
+    <style name="WidgetDots.S">
+        <item name="android:layout_height">3dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+    </style>
+
+    <style name="WidgetDot.M">
+        <item name="android:layout_width">3dp</item>
+        <item name="android:layout_height">3dp</item>
+    </style>
+
+    <style name="WidgetDot.S">
+        <item name="android:layout_width">3dp</item>
+        <item name="android:layout_height">3dp</item>
+        <item name="android:layout_marginStart">0.5dp</item>
+        <item name="android:layout_marginEnd">0.5dp</item>
     </style>
 
     <style name="WidgetArrow">

@@ -68,19 +68,16 @@
             android:src="@drawable/widget_chevron_right" />
     </LinearLayout>
 
+    <!-- расписание устарело или источник не отвечает — тревожным цветом -->
     <TextView
-        android:id="@+id/note"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:ellipsize="end"
-        android:fontFamily="@font/widget_manrope"
-        android:maxLines="2"
-        android:paddingStart="8dp"
-        android:paddingEnd="4dp"
-        android:textColor="@color/widget_ink2"
-        android:textSize="12sp"
-        android:visibility="gone" />
+        android:id="@+id/alarm"
+        style="@style/WidgetNote"
+        android:textColor="@color/widget_live" />
+
+    <!-- фильтр — спокойным: это не сбой, а выбор человека -->
+    <TextView
+        android:id="@+id/filter"
+        style="@style/WidgetNote" />
 
     <LinearLayout
         android:layout_width="match_parent"

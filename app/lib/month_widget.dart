@@ -66,7 +66,7 @@ String widgetJson({required Schedule? data, required Filters filters, required E
     lockTitle = 'Виджет «Месяц» недоступен';
     lockText = 'В этой версии приложения подписки нет';
   } else {
-    lockTitle = 'Виджет «Месяц» входит в подписку';
+    lockTitle = 'Виджет «Месяц» входит в\u00a0подписку';
     final until = ent?.paidUntil;
     if (until == null) {
       lockText = 'Подписки нет';
@@ -91,6 +91,8 @@ String widgetJson({required Schedule? data, required Filters filters, required E
     'lockTitle': lockTitle,
     'lockText': lockText,
     'lockOpen': billingBuild ? 'billing' : '',
+    // что откроет нажатие — строкой под причиной
+    'lockAction': billingBuild ? 'Открыть подписку' : '',
   });
 }
 
