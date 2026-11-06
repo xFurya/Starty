@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-06T10:08:03+03:00",
- "checked": "2026-11-06T13:50:22.738625+00:00",
+ "checked": "2026-11-06T13:54:23.129165+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -47712,7 +47712,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Kao Miura — 102.90\n2. Shun Sato — 101.97\n3. Евгений Семененко — 99.72\n\nРоссияне:\n• Евгений Семененко — 15:38\n• Владислав Дикиджи — 15:45\n\nНачало: 15:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Kao Miura — 102.90\n2. Shun Sato — 101.97\n3. Евгений Семененко — 99.72\n\nРоссияне:\n• Евгений Семененко — 15:38\n• Владислав Дикиджи — 15:45\n\nНачало: 15:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Zhiming Peng",
@@ -47720,7 +47720,7 @@
      "time": "15:32",
      "no": 1,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "87.65"
     },
     {
@@ -47747,7 +47747,7 @@
      "time": "15:51",
      "no": 4,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "80.74"
     },
     {
@@ -47756,7 +47756,7 @@
      "time": "15:57",
      "no": 5,
      "warmup": 1,
-     "place": 11,
+     "place": 12,
      "points": "63.16"
     },
     {
@@ -47765,7 +47765,7 @@
      "time": "16:03",
      "no": 6,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "88.21"
     },
     {
@@ -47774,7 +47774,7 @@
      "time": "16:17",
      "no": 7,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "points": "79.45"
     },
     {
@@ -47783,7 +47783,7 @@
      "time": "16:23",
      "no": 8,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "79.77"
     },
     {
@@ -47801,7 +47801,7 @@
      "time": "16:36",
      "no": 10,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "87.67"
     },
     {
@@ -47818,7 +47818,9 @@
      "nation": "KAZ",
      "time": "16:48",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "94.87"
     }
    ],
    "live": {
@@ -47840,7 +47842,7 @@
      "Shun SATO": "Shun Sato",
      "Mikhail SHAIDOROV": "Mikhail Shaidorov"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-cup-of-china-2026.json",
    "podium": [
@@ -47862,8 +47864,7 @@
      "nation": "RUS",
      "points": "99.72"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:dance-senior-pt",
