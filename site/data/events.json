@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-06T10:08:03+03:00",
- "checked": "2026-11-06T11:10:23.241479+00:00",
+ "checked": "2026-11-06T11:14:22.518979+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -47428,7 +47428,9 @@
      "nation": "RUS",
      "time": "14:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "74.69"
     }
    ],
    "athletes": [
@@ -47454,14 +47456,16 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Россияне:\n• Анастасия Мишина / Александр Галлямов — 14:07\n\nНачало: 14:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Анастасия Мишина / Александр Галлямов — 74.69\n\nРоссияне:\n• Анастасия Мишина / Александр Галлямов — 14:07\n\nНачало: 14:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Анастасия Мишина / Александр Галлямов",
      "nation": "RUS",
      "time": "14:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "74.69"
     },
     {
      "name": "Chelsea Liu / Ryan Bedard",
@@ -47530,7 +47534,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-cup-of-china-2026.json"
+   "proto": "isu_isu-gp-cup-of-china-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "RUS",
+     "points": "74.69"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:men-senior-kp",
