@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-06T10:08:03+03:00",
- "checked": "2026-11-06T10:26:22.993345+00:00",
+ "checked": "2026-11-06T10:58:23.231469+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -47221,14 +47221,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 13:45 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Марк Титов — 105.40\n\nНачало: 13:45 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Марк Титов",
      "nation": "ТАТ",
      "time": "13:52",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "105.40"
     },
     {
      "name": "Богдан Шелапутин",
@@ -47377,7 +47379,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Марк Титов",
+     "nation": "ТАТ",
+     "points": "105.40"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:pairs-senior-kp",
