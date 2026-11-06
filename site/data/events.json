@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-06T09:50:05+03:00",
- "checked": "2026-11-06T09:50:05+03:00",
+ "checked": "2026-11-06T07:14:04.083833+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -46503,7 +46503,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Zixi Xiao / Linghao He — 62.48\n2. Yufei Lin / Zijian Gao — 44.86\n\nНачало: 09:45 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Zixi Xiao / Linghao He — 62.48\n2. Junfei Ren / Jianing Xing — 59.16\n3. Yufei Lin / Zijian Gao — 44.86\n\nНачало: 09:45 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Yufei Lin / Zijian Gao",
@@ -46511,7 +46511,7 @@
      "time": "09:51",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "44.86"
     },
     {
@@ -46528,7 +46528,9 @@
      "nation": "CHN",
      "time": "10:04",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "59.16"
     },
     {
      "name": "Emily Bratti / Ian Somerville",
@@ -46609,6 +46611,12 @@
     },
     {
      "place": 2,
+     "name": "Junfei Ren / Jianing Xing",
+     "nation": "CHN",
+     "points": "59.16"
+    },
+    {
+     "place": 3,
      "name": "Yufei Lin / Zijian Gao",
      "nation": "CHN",
      "points": "44.86"
