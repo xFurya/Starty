@@ -4,9 +4,11 @@ import 'dart:io' show exit;
 import 'package:flutter/gestures.dart' show PointerDeviceKind;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:starty_widget/starty_widget.dart';
 
 import 'background.dart';
 import 'data.dart';
+import 'month_widget.dart';
 import 'platform.dart';
 import 'reminders.dart';
 import 'settings.dart';
@@ -138,6 +140,16 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
   Timer? _tick, _refresh;
   UpdateInfo? update;
 
+  /// Виджет «Месяц» на рабочем столе (Android): расписание, фильтр и подписка — ему.
+  final _widget = MonthWidgetSync();
+  void _syncWidget() => _widget.update(state.data, state.filters, state.billing.entitlement);
+
+  /// Нажали на виджет: день, месяц или страница подписки.
+  void _fromWidget(String? what) {
+    if (what == null || !mounted) return;
+    openFromWidget(context, what, billing: () => openBilling(context, state));
+  }
+
   @override
   void initState() {
     super.initState();
@@ -152,6 +164,12 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
     Updates.instance.addListener(_onUpdates);
     homeTab.addListener(_syncPage);
     WidgetsBinding.instance.addPostFrameCallback((_) => _onUpdates());
+    if (isAndroid) {
+      state.addListener(_syncWidget);
+      _syncWidget();
+      MonthWidget.listen(_fromWidget);
+      MonthWidget.takeOpen().then(_fromWidget);
+    }
   }
 
   /// Однократные сообщения: «обновлено до …» и «вышла версия …».
@@ -209,6 +227,7 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
     _refresh?.cancel();
     Updates.instance.removeListener(_onUpdates);
     homeTab.removeListener(_syncPage);
+    state.removeListener(_syncWidget);
     _pages.dispose();
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();

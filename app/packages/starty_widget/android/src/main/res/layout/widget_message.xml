@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Вместо месяца — честная причина: подписки нет или расписание ещё не загружено. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_bg"
+    android:clipToOutline="true"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/msg_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/widget_cormorant"
+        android:textColor="@color/widget_ink"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/msg_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/widget_manrope"
+        android:lineSpacingMultiplier="1.15"
+        android:textColor="@color/widget_ink2"
+        android:textSize="14sp" />
+</LinearLayout>

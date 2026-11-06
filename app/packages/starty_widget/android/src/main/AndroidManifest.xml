@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <!-- Виджет «Месяц» входит в подписку: выключен, пока подписки нет, и в списке виджетов его
+             не видно. Включает приложение (WidgetPlugin.publish). Поставленный остаётся и после конца
+             подписки — тогда он честно пишет, что входит в подписку. -->
+        <receiver
+            android:name="ru.furya.starty.widget.MonthWidget"
+            android:enabled="false"
+            android:exported="true"
+            android:label="@string/widget_month_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <!-- «сегодня» по часам: сменили время или пояс — отметка дня переезжает -->
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_month_info"/>
+        </receiver>
+    </application>
+</manifest>

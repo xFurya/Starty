@@ -532,6 +532,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
+  starty_widget:
+    dependency: "direct main"
+    description:
+      path: "packages/starty_widget"
+      relative: true
+    source: path
+    version: "1.0.0"
   stream_channel:
     dependency: transitive
     description:

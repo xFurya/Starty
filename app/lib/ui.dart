@@ -12,7 +12,12 @@ import 'photo_cache.dart';
 /// Открытая вкладка: 0 — лента, 1 — месяц, 2 — настройки. Лист старта переключает
 /// её сам, когда ведёт в настройки.
 final homeTab = ValueNotifier<int>(0);
+const tabMonth = 1;
 const tabSettings = 2;
+
+/// Открыть во вкладке «Месяц»: «2026-11-12» — этот день, «2026-11» — этот месяц (нажатие на виджет
+/// рабочего стола). Вкладка берёт запрос и сбрасывает в null.
+final monthOpen = ValueNotifier<String?>(null);
 
 // ------------------------------------------------------------------ шрифты
 
@@ -61,6 +66,26 @@ String kindLabel(String kind, Set<String> levels) {
   if (y == null) return adult;
   if (senior && junior) return '$adult (${y.toLowerCase()})';
   return junior ? y : adult;
+}
+
+/// Условия фильтра словами, каждое отдельно: строка фильтра в ленте и подпись виджета «Месяц».
+List<String> filterNames(Filters f, List<Start> starts) => [
+  if (f.scope.length == 1) f.scope.first == 'intl' ? 'Международные' : 'Российские',
+  if (f.levels.length == 1) levelNames[f.levels.first]!,
+  ...f.kinds.map((k) => kindLabel(k, f.levels)),
+  ...f.athletes.map(surname),
+  if (f.tids.isNotEmpty)
+    f.tids.length == 1
+        ? tournamentNameIn(starts, f.tids.first)
+        : '${f.tids.length} ${plural(f.tids.length, 'турнир', 'турнира', 'турниров')}',
+];
+
+/// Название турнира по id — из стартов; не нашёлся — id.
+String tournamentNameIn(List<Start> starts, String tid) {
+  for (final x in starts) {
+    if (x.tid == tid) return x.tournament;
+  }
+  return tid;
 }
 
 const segNames = {'КП': 'короткая программа', 'ПП': 'произвольная программа', 'РТ': 'ритм-танец', 'ПТ': 'произвольный танец'};

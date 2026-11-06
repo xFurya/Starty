@@ -1,0 +1,8 @@
+<!-- как RoundButton в приложении: круг с тонкой обводкой, знак цветом текста -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android" android:color="@color/widget_frost">
+    <item>
+        <shape android:shape="oval">
+            <stroke android:width="1dp" android:color="@color/widget_plate_line"/>
+        </shape>
+    </item>
+</ripple>

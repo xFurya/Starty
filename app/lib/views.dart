@@ -317,17 +317,7 @@ class FilterLine extends StatelessWidget {
   const FilterLine({super.key, required this.state});
   @override
   Widget build(BuildContext context) {
-    final f = state.filters;
-    final names = <String>[
-      if (f.scope.length == 1) f.scope.first == 'intl' ? 'Международные' : 'Российские',
-      if (f.levels.length == 1) levelNames[f.levels.first]!,
-      ...f.kinds.map((k) => kindLabel(k, f.levels)),
-      ...f.athletes.map(surname),
-      if (f.tids.isNotEmpty)
-        f.tids.length == 1
-            ? tournamentName(state, f.tids.first)
-            : '${f.tids.length} ${plural(f.tids.length, 'турнир', 'турнира', 'турниров')}',
-    ];
+    final names = filterNames(state.filters, state.data?.starts ?? const []);
     // каждое условие фильтра — своей меткой
     return FrostLine(
       icon: CupertinoIcons.slider_horizontal_3,
@@ -337,13 +327,6 @@ class FilterLine extends StatelessWidget {
       child: Wrap(spacing: 6, runSpacing: 6, children: [for (final n in names) Tag(n)]),
     );
   }
-}
-
-String tournamentName(AppState s, String tid) {
-  for (final x in s.data?.starts ?? const <Start>[]) {
-    if (x.tid == tid) return x.tournament;
-  }
-  return tid;
 }
 
 /// Ширина колонки времени в строках; на узком экране — уже.
@@ -1423,6 +1406,33 @@ class _MonthViewState extends State<MonthView> {
     final m = msk(now());
     month = DateTime(m.year, m.month);
     selected = dayKey(now());
+    _take(monthOpen.value);
+    monthOpen.addListener(_open);
+  }
+
+  @override
+  void dispose() {
+    monthOpen.removeListener(_open);
+    super.dispose();
+  }
+
+  /// Запрос снаружи (виджет рабочего стола): день — месяц этого дня и сам день, месяц — только месяц.
+  void _open() {
+    if (monthOpen.value != null) setState(() => _take(monthOpen.value));
+  }
+
+  void _take(String? v) {
+    if (v == null) return;
+    // взят — сброс после кадра: слушатели не меняют значение, о котором их же оповещают
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (monthOpen.value == v) monthOpen.value = null;
+    });
+    final t = DateTime.tryParse(v.length == 7 ? '$v-01' : v);
+    if (t == null) return;
+    final m = DateTime(t.year, t.month);
+    _dir = m.isBefore(month) ? -1 : 1;
+    month = m;
+    if (v.length == 10) selected = v;
   }
 
   @override

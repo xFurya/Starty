@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:starty_alerts/starty_alerts.dart';
+import 'package:starty_widget/starty_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'app_icon.dart';

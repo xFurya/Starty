@@ -44,6 +44,8 @@ dependencies:
   workmanager: ^0.10.10
   starty_alerts:
     path: packages/starty_alerts
+  starty_widget:
+    path: packages/starty_widget
   path_provider: ^2.1.6
 
 dev_dependencies:

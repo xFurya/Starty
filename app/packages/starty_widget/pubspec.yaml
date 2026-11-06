@@ -1,0 +1,19 @@
+name: starty_widget
+description: Виджет «Месяц» на рабочий стол Android — старты месяца, как во вкладке «Месяц».
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.13.5
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: ru.furya.starty.widget
+        pluginClass: WidgetPlugin

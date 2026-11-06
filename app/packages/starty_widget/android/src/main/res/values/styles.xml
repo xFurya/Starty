@@ -1,0 +1,64 @@
+<resources>
+    <style name="WidgetWeekday">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/widget_manrope</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textColor">@color/widget_ink2</item>
+    </style>
+
+    <!-- Строка сетки, день, число, точки: одни и те же в виджете (widget_row, widget_cell) и в образце
+         для списка виджетов (widget_preview). -->
+    <style name="WidgetRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="WidgetCell">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="WidgetNum">
+        <item name="android:layout_width">28dp</item>
+        <item name="android:layout_height">28dp</item>
+        <item name="android:fontFamily">@font/widget_manrope</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/widget_ink3</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="WidgetDots">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">4dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="WidgetArrow">
+        <item name="android:layout_width">36dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:background">@drawable/widget_round</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="WidgetDot">
+        <item name="android:layout_width">4dp</item>
+        <item name="android:layout_height">4dp</item>
+        <item name="android:layout_marginStart">1dp</item>
+        <item name="android:layout_marginEnd">1dp</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+</resources>

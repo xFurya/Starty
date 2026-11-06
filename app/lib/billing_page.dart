@@ -34,6 +34,14 @@ String get _resultsText => isAndroid
     ? 'Место и баллы ваших после проката; пока выступают остальные, место обновляется'
     : 'Место и баллы ваших, когда выступят все';
 
+/// Виджет «Месяц»: ставится только на рабочий стол Android.
+String get _widgetText => isAndroid
+    ? 'Месяц со стартами на рабочем столе, как во вкладке «Месяц»'
+    : 'Только на Android: месяц со стартами на рабочем столе, как во вкладке «Месяц»';
+
+/// Как поставить виджет самому, если рабочий стол не умеет по просьбе приложения.
+const _widgetHand = 'Удержите палец на пустом месте рабочего стола, откройте «Виджеты» и найдите «Фигурное катание»';
+
 const _lineupText = 'Время выхода ваших после жеребьёвки, кто вошёл в состав и кто снялся';
 const _needsText = 'В протоколе: сколько баллов вашим нужно во втором сегменте на первое место и на пьедестал';
 
@@ -61,12 +69,45 @@ class _BillingPageState extends State<_BillingPage> {
   /// Итог отказа с возвратом — остаётся на странице, пока её не закрыли.
   String? _refunded;
 
+  /// Виджет «Месяц» (Android): сколько стоит на рабочем столе, умеет ли рабочий стол поставить его сам.
+  ({int placed, bool canPin})? _widget;
+
+  /// Рабочий стол не поставил виджет по просьбе — дальше только руками.
+  bool _pinFailed = false;
+
+  /// Вернулись из окна рабочего стола «Добавить виджет» — посмотреть, поставлен ли.
+  AppLifecycleListener? _life;
+
   AppState get st => widget.state;
 
   @override
   void initState() {
     super.initState();
     st.refreshBilling(history: true);
+    if (isAndroid) {
+      _widgetStatus();
+      _life = AppLifecycleListener(onResume: _widgetStatus);
+    }
+  }
+
+  @override
+  void dispose() {
+    _life?.dispose();
+    super.dispose();
+  }
+
+  Future<void> _widgetStatus() async {
+    final s = await MonthWidget.status();
+    if (mounted) setState(() => _widget = s);
+  }
+
+  /// Попросить рабочий стол поставить виджет; человек подтверждает в его окне.
+  Future<void> _pin() async {
+    final ok = await MonthWidget.pin();
+    if (!mounted) return;
+    if (!ok) setState(() => _pinFailed = true);
+    // рабочий стол может поставить виджет чуть позже возврата в приложение
+    Future.delayed(const Duration(seconds: 2), () => mounted ? _widgetStatus() : null);
   }
 
   BillingPlan? _plan(BillingOffer o) => o.plans.where((x) => x.id == _planId).firstOrNull ?? o.plans.first;
@@ -255,6 +296,8 @@ class _BillingPageState extends State<_BillingPage> {
             title: 'Сводка дня',
             subtitle: 'Одно уведомление утром: кто из ваших выступает сегодня и во сколько',
           ),
+          const Hairline(),
+          _Row(icon: CupertinoIcons.calendar, title: 'Виджет «Месяц»', subtitle: _widgetText),
           const Hairline(),
           const _Row(
             icon: CupertinoIcons.heart,
@@ -500,10 +543,26 @@ class _BillingPageState extends State<_BillingPage> {
             ],
             const Hairline(),
             const _Row(icon: CupertinoIcons.scope, title: 'Сколько нужно', subtitle: _needsText),
+            const Hairline(),
+            _widgetRow(),
           ],
         ),
       ),
     ];
+  }
+
+  /// Виджет «Месяц»: уже стоит, поставить отсюда или — если рабочий стол не умеет — как поставить самому.
+  Widget _widgetRow() {
+    const icon = CupertinoIcons.calendar, title = 'Виджет «Месяц»';
+    final w = _widget;
+    if (!isAndroid) return _Row(icon: icon, title: title, subtitle: _widgetText);
+    if (w != null && w.placed > 0) {
+      return _Row(icon: icon, title: title, subtitle: w.placed == 1 ? 'На рабочем столе' : 'На рабочем столе: ${w.placed}');
+    }
+    if (w != null && w.canPin && !_pinFailed) {
+      return _Row(icon: icon, title: title, subtitle: _widgetText, action: 'Добавить', onAction: _pin);
+    }
+    return _Row(icon: icon, title: title, subtitle: '$_widgetText\n$_widgetHand');
   }
 
   /// Итоги ваших: включены ли и — честно — придут ли. Отслеживаемые — и по имени, и «все россияне».

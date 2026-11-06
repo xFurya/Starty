@@ -1,0 +1,15 @@
+<resources>
+    <!-- Palette.light (lib/palette.dart). Меняется там — меняется и здесь: сверяет month_widget_test. -->
+    <color name="widget_plate">#FFFFFFFF</color>
+    <color name="widget_plate_line">#FFD6E3EF</color>
+    <color name="widget_frost">#FFE6F0FA</color>
+    <color name="widget_ink">#FF0B1A2A</color>
+    <color name="widget_ink2">#FF4A6077</color>
+    <color name="widget_ink3">#FF8396AA</color>
+    <color name="widget_accent">#FF1D63AD</color>
+    <color name="widget_live">#FFD5304A</color>
+    <color name="widget_women">#FFB9668A</color>
+    <color name="widget_men">#FF3D7CC0</color>
+    <color name="widget_pairs">#FF3A9294</color>
+    <color name="widget_dance">#FF8576C0</color>
+</resources>

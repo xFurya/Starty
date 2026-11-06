@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Виджет «Месяц»: шапка как во вкладке (месяц антиквой, год, стрелки), дни недели, сетка.
+     Строки сетки — widget_row, дни — widget_cell: их добавляет MonthWidget. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_bg"
+    android:clipToOutline="true"
+    android:orientation="vertical"
+    android:paddingStart="8dp"
+    android:paddingTop="10dp"
+    android:paddingEnd="10dp"
+    android:paddingBottom="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/head"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/widget_press_wide"
+            android:baselineAligned="true"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:id="@+id/month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/widget_cormorant"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/widget_ink"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/widget_manrope"
+                android:maxLines="1"
+                android:textColor="@color/widget_ink2"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/prev"
+            style="@style/WidgetArrow"
+            android:contentDescription="@string/widget_prev"
+            android:src="@drawable/widget_chevron_left" />
+
+        <ImageView
+            android:id="@+id/next"
+            style="@style/WidgetArrow"
+            android:layout_marginStart="8dp"
+            android:contentDescription="@string/widget_next"
+            android:src="@drawable/widget_chevron_right" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/widget_manrope"
+        android:maxLines="2"
+        android:paddingStart="8dp"
+        android:paddingEnd="4dp"
+        android:textColor="@color/widget_ink2"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <TextView style="@style/WidgetWeekday" android:text="ПН" />
+        <TextView style="@style/WidgetWeekday" android:text="ВТ" />
+        <TextView style="@style/WidgetWeekday" android:text="СР" />
+        <TextView style="@style/WidgetWeekday" android:text="ЧТ" />
+        <TextView style="@style/WidgetWeekday" android:text="ПТ" />
+        <TextView style="@style/WidgetWeekday" android:text="СБ" android:textColor="@color/widget_accent" />
+        <TextView style="@style/WidgetWeekday" android:text="ВС" android:textColor="@color/widget_accent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_weight="1"
+        android:orientation="vertical" />
+</LinearLayout>

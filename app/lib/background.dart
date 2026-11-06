@@ -13,6 +13,7 @@ import 'package:workmanager/workmanager.dart';
 import 'billing.dart';
 import 'data.dart';
 import 'lineup.dart';
+import 'month_widget.dart';
 import 'reminders.dart';
 
 /// Расписание для напоминаний: региональные старты — только если показ включён (как в ленте), затем под отслеживаемых.
@@ -146,6 +147,8 @@ void backgroundDispatcher() {
       if (fresh != null) {
         await p.setInt('bg.full', t.millisecondsSinceEpoch);
         await p.setString('bg.known', jsonEncode(knownIds(fresh, t)));
+        // виджет «Месяц» — новые старты и при закрытом приложении
+        if (data != null) await widgetFromBackground(p, data, t);
       }
     } catch (_) {}
     return true;
