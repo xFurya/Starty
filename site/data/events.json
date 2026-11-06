@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-06T10:08:03+03:00",
- "checked": "2026-11-06T13:06:22.900665+00:00",
+ "checked": "2026-11-06T13:10:23.133631+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -47659,7 +47659,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Евгений Семененко — 99.72\n2. Владислав Дикиджи — 98.86\n3. Zhiming Peng — 87.65\n\nРоссияне:\n• Евгений Семененко — 15:38\n• Владислав Дикиджи — 15:45\n\nНачало: 15:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Евгений Семененко — 99.72\n2. Владислав Дикиджи — 98.86\n3. Vladimir Samoilov — 88.21\n\nРоссияне:\n• Евгений Семененко — 15:38\n• Владислав Дикиджи — 15:45\n\nНачало: 15:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Zhiming Peng",
@@ -47667,7 +47667,7 @@
      "time": "15:32",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "87.65"
     },
     {
@@ -47694,7 +47694,7 @@
      "time": "15:51",
      "no": 4,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "80.74"
     },
     {
@@ -47703,7 +47703,7 @@
      "time": "15:57",
      "no": 5,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "63.16"
     },
     {
@@ -47711,7 +47711,9 @@
      "nation": "POL",
      "time": "16:03",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3,
+     "points": "88.21"
     },
     {
      "name": "Jacob Sanchez",
@@ -47793,9 +47795,9 @@
     },
     {
      "place": 3,
-     "name": "Zhiming Peng",
-     "nation": "CHN",
-     "points": "87.65"
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "points": "88.21"
     }
    ],
    "provisional": true
