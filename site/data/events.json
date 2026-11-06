@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-06T09:21:54+03:00",
- "checked": "2026-11-06T09:21:54+03:00",
+ "checked": "2026-11-06T07:02:04.039972+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -46503,14 +46503,16 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Начало: 09:45 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Yufei Lin / Zijian Gao — 44.86\n\nНачало: 09:45 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Yufei Lin / Zijian Gao",
      "nation": "CHN",
      "time": "09:51",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "44.86"
     },
     {
      "name": "Zixi Xiao / Linghao He",
@@ -46595,7 +46597,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-cup-of-china-2026.json"
+   "proto": "isu_isu-gp-cup-of-china-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Yufei Lin / Zijian Gao",
+     "nation": "CHN",
+     "points": "44.86"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:women-junior-pp",
