@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-06T10:08:03+03:00",
- "checked": "2026-11-06T07:30:04.434252+00:00",
+ "checked": "2026-11-06T07:42:04.044412+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -46506,31 +46506,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Loicia Demougeot / Theo le Mercier",
+     "nation": "FRA",
+     "points": "71.41"
+    },
+    {
+     "place": 2,
      "name": "Emily Bratti / Ian Somerville",
      "nation": "USA",
      "points": "65.04"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Eva Pate / Logan Bye",
      "nation": "USA",
      "points": "64.84"
-    },
-    {
-     "place": 3,
-     "name": "Zixi Xiao / Linghao He",
-     "nation": "CHN",
-     "points": "62.48"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Emily Bratti / Ian Somerville — 65.04\n2. Eva Pate / Logan Bye — 64.84\n3. Zixi Xiao / Linghao He — 62.48\n\nНачало: 09:45 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Loicia Demougeot / Theo le Mercier — 71.41\n2. Emily Bratti / Ian Somerville — 65.04\n3. Eva Pate / Logan Bye — 64.84\n\nНачало: 09:45 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Yufei Lin / Zijian Gao",
      "nation": "CHN",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "44.86",
      "time": "09:51"
     },
@@ -46539,7 +46539,7 @@
      "nation": "CHN",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "62.48",
      "time": "09:58"
     },
@@ -46548,7 +46548,7 @@
      "nation": "CHN",
      "no": 3,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "59.16",
      "time": "10:04"
     },
@@ -46565,7 +46565,7 @@
      "time": "10:11",
      "no": 4,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "65.04"
     },
     {
@@ -46574,7 +46574,7 @@
      "time": "10:17",
      "no": 5,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "64.84"
     },
     {
@@ -46589,7 +46589,9 @@
      "nation": "FRA",
      "time": "10:31",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "71.41"
     },
     {
      "name": "Natalie Taschlerova / Filip Taschler",
