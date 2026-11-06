@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-06T16:53:25+03:00",
- "checked": "2026-11-06T16:53:25+03:00",
+ "generated": "2026-11-06T17:12:27+03:00",
+ "checked": "2026-11-06T17:12:27+03:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -47173,24 +47173,24 @@
    },
    "facts": [
     {
-     "who": "Anastasiia Gubanova",
+     "kind": "score",
      "text": "Личный рекорд за КП: 75.05 (был 72.63)",
-     "kind": "score"
+     "who": "Anastasiia Gubanova"
     },
     {
-     "who": "Haein Lee",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Haein Lee"
     },
     {
-     "who": "Sophie Joline von Felten",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Sophie Joline von Felten"
     },
     {
-     "who": "Rinka Watanabe",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Rinka Watanabe"
     }
    ],
    "proto": "isu_isu-gp-cup-of-china-2026.json"
@@ -47888,9 +47888,9 @@
    },
    "facts": [
     {
-     "who": "Shun Sato",
+     "kind": "score",
      "text": "Личный рекорд за КП: 101.97 (был 99.20)",
-     "kind": "score"
+     "who": "Shun Sato"
     }
    ],
    "proto": "isu_isu-gp-cup-of-china-2026.json"
