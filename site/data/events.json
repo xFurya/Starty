@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-06T10:08:03+03:00",
- "checked": "2026-11-06T08:34:23.672412+00:00",
+ "checked": "2026-11-06T08:42:22.942606+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -46936,14 +46936,16 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Россияне:\n• Александра Трусова — 11:45\n\nНачало: 11:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Mako Yamashita — 69.17\n\nРоссияне:\n• Александра Трусова — 11:45\n\nНачало: 11:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Mako Yamashita",
      "nation": "JPN",
      "time": "11:32",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "69.17"
     },
     {
      "name": "Alina Bonillo",
@@ -47044,7 +47046,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-cup-of-china-2026.json"
+   "proto": "isu_isu-gp-cup-of-china-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Mako Yamashita",
+     "nation": "JPN",
+     "points": "69.17"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:men-junior-pp",
