@@ -468,10 +468,34 @@ class _BillingPageState extends State<_BillingPage> {
                 onChanged: st.setDigest,
               ),
             ],
+            const Hairline(),
+            _lineupRow(p),
           ],
         ),
       ),
     ];
+  }
+
+  /// Жеребьёвка и состав: включены ли и — честно — придут ли. Нужны отслеживаемые по имени:
+  /// «все россияне» сюда не входят.
+  Widget _lineupRow(Palette p) {
+    final on = st.billing.lineupSetting;
+    final why = [
+      if (on && !st.rules.on) 'Уведомления выключены — не придут',
+      if (on && st.rules.on && st.allowed == false) 'Уведомления запрещены в настройках телефона — не придут',
+      if (on && st.follow.names.isEmpty) 'Вы никого не отслеживаете по имени — не о ком сообщать',
+    ];
+    return _Row(
+      icon: CupertinoIcons.list_number,
+      title: 'Жеребьёвка и состав',
+      subtitle: [
+        ...why,
+        on ? 'Время выхода ваших после жеребьёвки, кто вошёл в состав и кто снялся' : 'Выключено',
+      ].join('\n'),
+      subtitleColor: why.isEmpty ? null : p.live,
+      onTap: () => st.setLineup(!on),
+      trailing: Switch(value: on, onChanged: st.setLineup),
+    );
   }
 
   List<Widget> _history(Palette p, List<BillingPayment> pays, DateTime t) => [

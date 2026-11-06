@@ -200,7 +200,10 @@ class NotifyPlan {
 
   /// Сводка дня (подписка, billing.dart): минута московских суток; null — сводки нет.
   final int? digest;
-  const NotifyPlan(this.rules, this.forcedOn, this.forcedOff, {this.digest});
+
+  /// Уведомления о составе (подписка, lineup.dart): жеребьёвка, «в составе», «больше не в составе».
+  final List<Planned> events;
+  const NotifyPlan(this.rules, this.forcedOn, this.forcedOff, {this.digest, this.events = const []});
 
   /// Будет ли уведомление о начале старта (если время ещё не прошло).
   bool wants(Start s) {
@@ -439,6 +442,14 @@ class Reminders {
       }
     }
     if (p.rules.on && p.digest != null) out.addAll(digestPlan(data, p.digest!, now));
+    if (p.rules.on && p.events.isNotEmpty) {
+      // только по турнирам, которые человек видит (региональные выключены — о них молчим)
+      final ids = {for (final s in data.starts) s.id};
+      final tids = {for (final s in data.starts) s.tid, for (final u in data.upcoming) u.tid};
+      for (final x in p.events) {
+        if (x.end.isAfter(now) && (x.startId.isEmpty ? tids.contains(x.group) : ids.contains(x.startId))) out.add(x);
+      }
+    }
     out.sort((a, b) => a.at.compareTo(b.at));
     return out.take(60).toList();
   }

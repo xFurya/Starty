@@ -10,6 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'app_icon.dart';
 import 'billing.dart';
 import 'data.dart';
+import 'lineup.dart';
 import 'live.dart';
 import 'protocol_repo.dart';
 import 'reminders.dart';
@@ -279,12 +280,12 @@ class AppState extends ChangeNotifier {
   }
 
   /// Сброс настроек этого устройства к значениям по умолчанию (после отключения синхронизации).
-  /// Забыть подписку прошлого аккаунта. Была запланирована сводка дня — снять её из системы.
+  /// Забыть подписку прошлого аккаунта. Были запланированы сводка дня или уведомления о составе — снять их из системы.
   /// (Выход сюда не ходит: там _resetDevice и так пересобирает уведомления.)
   Future<void> _forgetBilling() async {
-    final had = plan.digest;
+    final had = plan.digest != null || billing.lineupAt(now());
     await billing.clear();
-    if (had != null) unawaited(_sync());
+    if (had) unawaited(_sync());
   }
 
   Future<void> _resetDevice() async {
@@ -502,8 +503,17 @@ class AppState extends ChangeNotifier {
     for (final s in _raw?.starts ?? const <Start>[]) if (s.regional && s.region.isNotEmpty) s.region,
   }.toList()..sort();
 
-  /// Правила, исключения и сводка дня (если подписка действует).
-  NotifyPlan get plan => NotifyPlan(rules, forcedOn, forcedOff, digest: billing.digestAt(now()));
+  /// Уведомления о составе (подписка, lineup.dart): найденные при сверках и ещё не истёкшие.
+  List<LineupEvent> lineup = const [];
+
+  /// Правила, исключения, сводка дня и уведомления о составе (если подписка действует).
+  NotifyPlan get plan => NotifyPlan(
+    rules,
+    forcedOn,
+    forcedOff,
+    digest: billing.digestAt(now()),
+    events: billing.lineupAt(now()) ? [for (final e in lineup) e.planned()] : const [],
+  );
 
   /// Придёт ли уведомление о начале старта (правила + исключения).
   bool notifies(Start s) => plan.wants(s);
@@ -944,6 +954,7 @@ class AppState extends ChangeNotifier {
   Future<void> _refreshBilling(bool history) async {
     final b = billing;
     final digestWas = plan.digest;
+    final lineupWas = b.lineupAt(now());
     String? problem;
     try {
       try {
@@ -970,7 +981,7 @@ class AppState extends ChangeNotifier {
       notifyListeners();
     }
     // план уведомлений пересчитывается сразу (в начале _sync), система — следом, не задерживая обновление
-    if (plan.digest != digestWas) unawaited(_sync());
+    if (plan.digest != digestWas || b.lineupAt(now()) != lineupWas) unawaited(_sync());
   }
 
   /// Начать оплату: страница сервиса для встроенного браузера. Ошибка — SyncError с понятным текстом.
@@ -1042,7 +1053,16 @@ class AppState extends ChangeNotifier {
     unawaited(_sync());
   }
 
+  /// Включить или выключить уведомления о жеребьёвке и составе.
+  Future<void> setLineup(bool on) async {
+    await billing.setLineup(on);
+    notifyListeners();
+    unawaited(_sync());
+  }
+
   Future<void> _sync() async {
+    // состав сверяется со всем расписанием с сервера — до плана, чтобы найденное сразу в него попало
+    lineup = await Lineup.update(Prefs.raw, _raw, follow, now(), on: billing.lineupAt(now()));
     final d = data;
     planned = d == null ? const [] : Reminders.plan(d, plan, now());
     notifyListeners();

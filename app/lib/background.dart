@@ -11,6 +11,7 @@ import 'package:workmanager/workmanager.dart';
 
 import 'billing.dart';
 import 'data.dart';
+import 'lineup.dart';
 import 'reminders.dart';
 
 /// Расписание для напоминаний: региональные старты — только если показ включён (как в ленте), затем под отслеживаемых.
@@ -77,7 +78,10 @@ void backgroundDispatcher() {
       await Reminders.init();
       final fresh = await Repo.fetch();
       final raw = fresh ?? await Repo.cached();
-      final data = raw == null ? null : remindersSchedule(raw, regional: Prefs.regional, follow: Prefs.followOr(raw.watchlist));
+      final follow = Prefs.followOr(raw?.watchlist ?? const []);
+      final data = raw == null ? null : remindersSchedule(raw, regional: Prefs.regional, follow: follow);
+      // состав сверяется только со свежим расписанием; без него — уже найденное (иначе оно снимется)
+      final lineup = await Lineup.update(p, fresh, follow, t, on: BillingState.lineupFor(p, t));
       await Reminders.sync(
         data,
         NotifyPlan(
@@ -85,6 +89,7 @@ void backgroundDispatcher() {
           Prefs.forcedOn,
           Prefs.forcedOff,
           digest: BillingState.digestFor(p, t),
+          events: [for (final e in lineup) e.planned()],
         ),
       );
       if (fresh != null) {

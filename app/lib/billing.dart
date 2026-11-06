@@ -353,6 +353,24 @@ class BillingState {
 
   bool activeAt(DateTime now) => entitlement?.activeAt(now) ?? false;
 
+  /// Удобства подписки сейчас: сборка с подпиской и право действует.
+  bool perksAt(DateTime now) => billingBuild && activeAt(now);
+
+  /// То же для фоновой задачи: только из сохранённого, без сети.
+  static bool perksFor(SharedPreferences p, DateTime now) =>
+      billingBuild && (Entitlement.fromCache(p.getString(entKey))?.activeAt(now) ?? false);
+
+  /// Уведомления о жеребьёвке и составе (lineup.dart): включены ли человеком (по умолчанию — да).
+  static const lineupKey = 'b.lineup';
+  bool get lineupSetting => _p.getBool(lineupKey) ?? true;
+  Future<void> setLineup(bool on) => _p.setBool(lineupKey, on);
+
+  /// Следить за составом сейчас: подписка действует и человек не выключил.
+  bool lineupAt(DateTime now) => perksAt(now) && lineupSetting;
+
+  /// То же для фоновой задачи: только из сохранённого, без сети.
+  static bool lineupFor(SharedPreferences p, DateTime now) => perksFor(p, now) && (p.getBool(lineupKey) ?? true);
+
   /// Строка «Подписка» в настройках: продаётся — или куплена раньше (тогда ею можно управлять и вернуть деньги).
   bool get visible => billingBuild && (offer != null || (entitlement?.ever ?? false));
 

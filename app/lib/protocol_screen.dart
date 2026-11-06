@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 
 import 'data.dart';
 import 'flags.dart';
-import 'live.dart' show personKey;
+import 'live.dart' show LiveOk, personKey;
+import 'needs.dart';
 import 'palette.dart';
 import 'protocol_model.dart';
 import 'protocol_details.dart';
@@ -450,6 +451,7 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
           ];
     // отслеживаемые всего турнира: в другой категории выделяются её люди
     final ours = {for (final x in _siblings) for (final o in x.ours) personKey(o.name)};
+    final needs = _needsHere(cat, tab, view, here, onBoard ? live : null, ours);
     final width = MediaQuery.sizeOf(context).width;
     final gutter = width < 360 ? 12.0 : 16.0;
 
@@ -498,6 +500,7 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
                 ),
               const SizedBox(height: 12),
               _StatusLine(text: view.status, tone: view.tone, progress: view.progress, note: view.note),
+              if (needs.isNotEmpty && cat != null) _Needs(needs: needs, first: cat.segments.first.code, second: tab),
               if (view.rows.isNotEmpty) ...[
                 const SizedBox(height: 10),
                 Plate(
@@ -564,6 +567,27 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  /// «Сколько нужно» (подписка): на вкладке второго сегмента вида, пока он не закончен.
+  /// [board] — итоги с табло, когда на экране они, а не файл.
+  List<Need> _needsHere(ProtocolCategory? cat, String tab, ProtocolView view, Start? here, LiveOk? board, Set<String> ours) {
+    final st = widget.state;
+    if (cat == null || st == null || ours.isEmpty || !st.billing.perksAt(now())) return const [];
+    if (cat.segments.length != 2 || cat.segments.last.code != tab) return const [];
+    final second = cat.segments.last;
+    // второй сегмент закончен — порогов нет, всё уже в протоколе
+    final over = board != null
+        ? !board.provisional
+        : const {SegmentState.provisional, SegmentState.finalized, SegmentState.judgesMismatch, SegmentState.format}.contains(second.state);
+    if (over) return const [];
+    return needsOf(
+      first: cat.segments.first,
+      // строки файла (в том числе стартовый лист без баллов) и, пока файла нет, — табло
+      second: [...second.rows, if (board != null) ...view.rows],
+      lineup: {for (final f in here?.field ?? const <Skater>[]) personKey(f.name)},
+      ours: ours,
     );
   }
 
@@ -643,6 +667,104 @@ class _StatusLine extends StatelessWidget {
           },
         ),
       ),
+    );
+  }
+}
+
+/// «за произвольную», «перед произвольным танцем», «после короткой» — сегмент в нужном падеже.
+String _segAfter(String code) => switch (code) {
+  'КП' => 'после короткой',
+  'РТ' => 'после ритм-танца',
+  _ => 'после первого сегмента',
+};
+String _segFor(String code) => switch (code) {
+  'ПП' => 'за произвольную',
+  'ПТ' => 'за произвольный танец',
+  _ => 'за второй сегмент',
+};
+String _segBefore(String code) => switch (code) {
+  'ПП' => 'Перед произвольной',
+  'ПТ' => 'Перед произвольным танцем',
+  _ => 'Перед вторым сегментом',
+};
+
+/// «Сколько нужно» (подписка): по каждому отслеживаемому — место после первого сегмента и что ему
+/// нужно во втором при нынешних итогах; до второго сегмента — отставание от первого места.
+class _Needs extends StatelessWidget {
+  final List<Need> needs;
+  final String first, second;
+  const _Needs({required this.needs, required this.first, required this.second});
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final during = needs.first.during;
+    final label = TextStyle(fontSize: 14, fontWeight: FontWeight.w600, height: 1.3, color: p.ink2);
+    final value = TextStyle(fontSize: 15, fontWeight: FontWeight.w800, height: 1.3, color: p.ink, fontFeatures: tnum);
+    Widget line(String l, String v) => Padding(
+      padding: const EdgeInsets.only(top: 6),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.baseline,
+        textBaseline: TextBaseline.alphabetic,
+        children: [
+          Expanded(child: Text(l, style: label)),
+          const SizedBox(width: 12),
+          Text(v, style: value),
+        ],
+      ),
+    );
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        // заголовок не обрезается: без «за произвольную» непонятно, о каких баллах речь
+        Eyebrow(
+          during ? 'Сколько нужно ${_segFor(second)}' : _segBefore(second),
+          maxLines: 2,
+          padding: const EdgeInsets.fromLTRB(6, 16, 6, 8),
+        ),
+        Plate(
+          margin: EdgeInsets.zero,
+          child: Column(
+            children: [
+              for (var i = 0; i < needs.length; i++) ...[
+                if (i > 0) const Hairline(indent: 16),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 12, 16, 13),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(
+                        protocolName(needs[i].name),
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.25, color: p.ink),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 3),
+                        child: Text(
+                          '${needs[i].place}-е место ${_segAfter(first)}, ${pointsText(needs[i].first)}',
+                          style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w600, height: 1.3, color: p.ink2, fontFeatures: tnum),
+                        ),
+                      ),
+                      if (needs[i].win case final w?) line('Первое место', w.text),
+                      if (needs[i].podium case final t?) line('Пьедестал', t.text),
+                      if (!during && needs[i].behind != null) line('Отставание от первого места', pointsText(needs[i].behind!)),
+                      if (!during && needs[i].ahead != null) line('Отрыв от второго места', pointsText(needs[i].ahead!)),
+                    ],
+                  ),
+                ),
+              ],
+            ],
+          ),
+        ),
+        if (during)
+          Padding(
+            padding: const EdgeInsets.fromLTRB(6, 8, 6, 0),
+            child: Text(
+              'Считается по тем, кто уже откатал. С$nbкаждым новым прокатом может стать больше.',
+              style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w500, height: 1.35, color: p.ink2),
+            ),
+          ),
+        const SizedBox(height: 4),
+      ],
     );
   }
 }
