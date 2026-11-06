@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-06T10:08:03+03:00",
- "checked": "2026-11-06T09:42:22.962521+00:00",
+ "checked": "2026-11-06T09:50:23.001090+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -46703,7 +46703,7 @@
      "time": "10:52",
      "no": 1,
      "warmup": 1,
-     "place": 12,
+     "place": 13,
      "points": "86.42"
     },
     {
@@ -46712,7 +46712,7 @@
      "time": "11:12",
      "no": 4,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "103.18"
     },
     {
@@ -46721,7 +46721,7 @@
      "time": "11:18",
      "no": 5,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "107.75"
     },
     {
@@ -46730,7 +46730,7 @@
      "time": "11:25",
      "no": 6,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "108.17"
     },
     {
@@ -46739,7 +46739,7 @@
      "time": "11:31",
      "no": 2,
      "warmup": 1,
-     "place": 11,
+     "place": 12,
      "points": "92.75"
     },
     {
@@ -46748,7 +46748,7 @@
      "time": "11:39",
      "no": 7,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "111.02"
     },
     {
@@ -46757,7 +46757,7 @@
      "time": "11:45",
      "no": 8,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "111.35"
     },
     {
@@ -46766,7 +46766,7 @@
      "time": "11:52",
      "no": 9,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "114.34"
     },
     {
@@ -46802,7 +46802,7 @@
      "time": "12:33",
      "no": 3,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "points": "98.42"
     },
     {
@@ -46810,7 +46810,9 @@
      "nation": "МОС",
      "time": "12:40",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "place": 4,
+     "points": "119.10"
     },
     {
      "name": "Арина Ореховская",
@@ -46952,7 +46954,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Anastasiia Gubanova — 75.05\n2. Александра Трусова — 72.37\n3. Mako Yamashita — 69.17\n\nРоссияне:\n• Александра Трусова — 11:45\n\nНачало: 11:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Anastasiia Gubanova — 75.05\n2. Александра Трусова — 72.37\n3. Lara Naki Gutmann — 71.76\n\nРоссияне:\n• Александра Трусова — 11:45\n\nНачало: 11:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Mako Yamashita",
@@ -46960,7 +46962,7 @@
      "time": "11:32",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "69.17"
     },
     {
@@ -46969,7 +46971,7 @@
      "time": "11:38",
      "no": 2,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "59.30"
     },
     {
@@ -46987,7 +46989,7 @@
      "time": "11:51",
      "no": 4,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "61.20"
     },
     {
@@ -46996,7 +46998,7 @@
      "time": "11:57",
      "no": 5,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "64.58"
     },
     {
@@ -47005,7 +47007,7 @@
      "time": "12:03",
      "no": 6,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "60.19"
     },
     {
@@ -47014,7 +47016,7 @@
      "time": "12:17",
      "no": 7,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "points": "55.41"
     },
     {
@@ -47023,7 +47025,7 @@
      "time": "12:23",
      "no": 8,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "67.49"
     },
     {
@@ -47032,7 +47034,7 @@
      "time": "12:29",
      "no": 9,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "55.72"
     },
     {
@@ -47049,7 +47051,9 @@
      "nation": "ITA",
      "time": "12:42",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3,
+     "points": "71.76"
     },
     {
      "name": "Mone Chiba",
@@ -47096,9 +47100,9 @@
     },
     {
      "place": 3,
-     "name": "Mako Yamashita",
-     "nation": "JPN",
-     "points": "69.17"
+     "name": "Lara Naki Gutmann",
+     "nation": "ITA",
+     "points": "71.76"
     }
    ],
    "provisional": true
