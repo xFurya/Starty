@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-06T10:08:03+03:00",
- "checked": "2026-11-06T08:06:03.448857+00:00",
+ "checked": "2026-11-06T08:10:04.118432+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -46506,31 +46506,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Lilah Fear / Lewis Gibson",
+     "nation": "GBR",
+     "points": "80.00"
+    },
+    {
+     "place": 2,
      "name": "Diana Davis / Gleb Smolkin",
      "nation": "GEO",
      "points": "79.31"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Natalie Taschlerova / Filip Taschler",
      "nation": "CZE",
      "points": "73.10"
-    },
-    {
-     "place": 3,
-     "name": "Loicia Demougeot / Theo le Mercier",
-     "nation": "FRA",
-     "points": "71.41"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Diana Davis / Gleb Smolkin — 79.31\n2. Natalie Taschlerova / Filip Taschler — 73.10\n3. Loicia Demougeot / Theo le Mercier — 71.41\n\nНачало: 09:45 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Lilah Fear / Lewis Gibson — 80.00\n2. Diana Davis / Gleb Smolkin — 79.31\n3. Natalie Taschlerova / Filip Taschler — 73.10\n\nНачало: 09:45 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Yufei Lin / Zijian Gao",
      "nation": "CHN",
      "no": 1,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "44.86",
      "time": "09:51"
     },
@@ -46539,7 +46539,7 @@
      "nation": "CHN",
      "no": 2,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "62.48",
      "time": "09:58"
     },
@@ -46548,7 +46548,7 @@
      "nation": "CHN",
      "no": 3,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "59.16",
      "time": "10:04"
     },
@@ -46558,7 +46558,7 @@
      "time": "10:44",
      "no": 8,
      "warmup": 2,
-     "place": 1,
+     "place": 2,
      "points": "79.31"
     },
     {
@@ -46567,7 +46567,7 @@
      "time": "10:11",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "65.04"
     },
     {
@@ -46576,7 +46576,7 @@
      "time": "10:17",
      "no": 5,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "64.84"
     },
     {
@@ -46584,7 +46584,9 @@
      "nation": "GBR",
      "time": "10:57",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "80.00"
     },
     {
      "name": "Loicia Demougeot / Theo le Mercier",
@@ -46592,7 +46594,7 @@
      "time": "10:31",
      "no": 6,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "71.41"
     },
     {
@@ -46601,7 +46603,7 @@
      "time": "10:37",
      "no": 7,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "73.10"
     },
     {
@@ -46610,11 +46612,10 @@
      "time": "10:50",
      "no": 9,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "70.98"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpchn2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpchn2026/SEG007.htm",
@@ -46632,7 +46633,7 @@
      "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck",
      "Lilah FEAR / Lewis GIBSON": "Lilah Fear / Lewis Gibson"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-cup-of-china-2026.json"
   },
