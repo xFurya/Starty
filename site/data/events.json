@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-06T10:08:03+03:00",
- "checked": "2026-11-06T12:18:23.024216+00:00",
+ "checked": "2026-11-06T12:42:22.832654+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -47647,14 +47647,16 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Россияне:\n• Евгений Семененко — 15:38\n• Владислав Дикиджи — 15:45\n\nНачало: 15:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Zhiming Peng — 87.65\n\nРоссияне:\n• Евгений Семененко — 15:38\n• Владислав Дикиджи — 15:45\n\nНачало: 15:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Zhiming Peng",
      "nation": "CHN",
      "time": "15:32",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "87.65"
     },
     {
      "name": "Евгений Семененко",
@@ -47755,7 +47757,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-cup-of-china-2026.json"
+   "proto": "isu_isu-gp-cup-of-china-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Zhiming Peng",
+     "nation": "CHN",
+     "points": "87.65"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:dance-senior-pt",
