@@ -160,7 +160,7 @@ def parse_bio(page):
     return out
 
 
-def _list(cell):
+def _csv(cell):
     """«Men, Junior Men,» → ["Men", "Junior Men"]: ячейка ISU со списком через запятую."""
     return [x.strip() for x in cell.split(",") if x.strip()]
 
@@ -182,8 +182,8 @@ def parse_cr(page):
         if len(cells) == 1:
             groups.append({"g": cells[0], "r": []})
         elif len(cells) >= 3 and groups:
-            cats, pls = _list(cells[1]), _list(cells[2])
-            nats = _list(cells[3]) if len(cells) >= 4 else []
+            cats, pls = _csv(cells[1]), _csv(cells[2])
+            nats = _csv(cells[3]) if len(cells) >= 4 else []
             if len(cats) > 1 or len(pls) > 1:
                 if len(cats) != len(pls) or (nats and len(nats) != len(cats)):
                     cats, pls, nats = [cells[1]], [""], []  # не сходится — без места
@@ -201,6 +201,13 @@ def parse_cr(page):
 def stale_cr(cr):
     """В кэше строка, разобранная до деления («11, 1,» одним местом): биографию надо перечитать."""
     return any(isinstance(r.get("pl"), str) and SPLIT_PL.search(r["pl"]) for g in cr or [] for r in g.get("r", []))
+
+
+def stale_bio(bio):
+    """В кэше список имён, не разделённый по строкам («A | B» одним тренером) или с «-» вместо имени."""
+    names = [x for f in ("coach", "choreo", "fcoach") for x in (bio or {}).get(f, [])]
+    names += [x for w in (bio or {}).get("who", []) for x in w.get("former", [])]
+    return any(" | " in x or x.strip() in ("-", "—") for x in names)
 
 
 # ---------------------------------------------------------------- названия по-русски
@@ -332,8 +339,8 @@ def refresh(ids, competed=None, log=print, path=None, budget=BUDGET, now=None):
         old = c.get(i)
         if not old:
             return (0, "")
-        if stale_cr(old.get("cr")):
-            return (0, old["at"])  # разобрано до деления строк ISU на старты — перечитать первым делом
+        if stale_cr(old.get("cr")) or stale_bio(old.get("bio")):
+            return (0, old["at"])  # разобрано с ошибкой — перечитать первым делом
         if competed_id.get(i, "") > old["at"]:
             return (1, old["at"])
         if now - dt.datetime.fromisoformat(old["at"]) >= STALE:

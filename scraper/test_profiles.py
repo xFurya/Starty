@@ -263,6 +263,18 @@ class StoreTest(unittest.TestCase):
             self.assertEqual(got, [pf.BIO.format("2"), pf.CR.format("2")])  # «1» свежая, у «2» неразделённая строка
             self.assertFalse(pf.stale_cr(s["bios"]["2"]["cr"]))
 
+    def test_bio_lists_split_by_line(self):
+        page = ("<table><tr><td>Coach:</td><td>Inna Goncharenko<br>Artem Fedorchenko</td></tr>"
+                "<tr><td>Choreographer:</td><td>-</td></tr></table>")
+        self.assertEqual(pf.parse_bio(page), {"coach": ["Inna Goncharenko", "Artem Fedorchenko"]})
+
+    def test_stale_bio(self):
+        self.assertTrue(pf.stale_bio({"coach": ["Inna Goncharenko | Artem Fedorchenko"]}))
+        self.assertTrue(pf.stale_bio({"choreo": ["-"]}))
+        self.assertTrue(pf.stale_bio({"who": [{"n": "A", "former": ["B | C"]}]}))
+        self.assertFalse(pf.stale_bio({"coach": ["Inna Goncharenko", "Artem Fedorchenko"]}))
+        self.assertFalse(pf.stale_bio(None))
+
 
 if __name__ == "__main__":
     unittest.main()
