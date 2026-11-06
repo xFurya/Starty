@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-06T09:50:05+03:00",
- "checked": "2026-11-06T07:26:03.907196+00:00",
+ "generated": "2026-11-06T10:08:03+03:00",
+ "checked": "2026-11-06T10:08:03+03:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -46503,34 +46503,61 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Emily Bratti / Ian Somerville — 65.04\n2. Eva Pate / Logan Bye — 64.84\n3. Zixi Xiao / Linghao He — 62.48\n\nНачало: 09:45 МСК\nТрансляция: Okko / YouTube ISU",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Zixi Xiao / Linghao He",
+     "nation": "CHN",
+     "points": "62.48"
+    },
+    {
+     "place": 2,
+     "name": "Junfei Ren / Jianing Xing",
+     "nation": "CHN",
+     "points": "59.16"
+    },
+    {
+     "place": 3,
+     "name": "Yufei Lin / Zijian Gao",
+     "nation": "CHN",
+     "points": "44.86"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Zixi Xiao / Linghao He — 62.48\n2. Junfei Ren / Jianing Xing — 59.16\n3. Yufei Lin / Zijian Gao — 44.86\n\nНачало: 09:45 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Yufei Lin / Zijian Gao",
      "nation": "CHN",
-     "time": "09:51",
      "no": 1,
      "warmup": 1,
-     "place": 5,
-     "points": "44.86"
+     "place": 3,
+     "points": "44.86",
+     "time": "09:51"
     },
     {
      "name": "Zixi Xiao / Linghao He",
      "nation": "CHN",
-     "time": "09:58",
      "no": 2,
      "warmup": 1,
-     "place": 3,
-     "points": "62.48"
+     "place": 1,
+     "points": "62.48",
+     "time": "09:58"
     },
     {
      "name": "Junfei Ren / Jianing Xing",
      "nation": "CHN",
-     "time": "10:04",
      "no": 3,
      "warmup": 1,
-     "place": 4,
-     "points": "59.16"
+     "place": 2,
+     "points": "59.16",
+     "time": "10:04"
+    },
+    {
+     "name": "Diana Davis / Gleb Smolkin",
+     "nation": "GEO",
+     "time": "10:44",
+     "no": 8,
+     "warmup": 2
     },
     {
      "name": "Emily Bratti / Ian Somerville",
@@ -46551,6 +46578,13 @@
      "points": "64.84"
     },
     {
+     "name": "Lilah Fear / Lewis Gibson",
+     "nation": "GBR",
+     "time": "10:57",
+     "no": 10,
+     "warmup": 2
+    },
+    {
      "name": "Loicia Demougeot / Theo le Mercier",
      "nation": "FRA",
      "time": "10:31",
@@ -46565,36 +46599,23 @@
      "warmup": 2
     },
     {
-     "name": "Diana Davis / Gleb Smolkin",
-     "nation": "GEO",
-     "time": "10:44",
-     "no": 8,
-     "warmup": 2
-    },
-    {
      "name": "Olivia Smart / Tim Dieck",
      "nation": "ESP",
      "time": "10:50",
      "no": 9,
      "warmup": 2
-    },
-    {
-     "name": "Lilah Fear / Lewis Gibson",
-     "nation": "GBR",
-     "time": "10:57",
-     "no": 10,
-     "warmup": 2
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpchn2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpchn2026/SEG007.htm",
     "cat": null,
     "first": null,
     "names": {
-     "Yufei LIN / Zijian GAO": "Yufei Lin / Zijian Gao",
      "Zixi XIAO / Linghao HE": "Zixi Xiao / Linghao He",
      "Junfei REN / Jianing XING": "Junfei Ren / Jianing Xing",
+     "Yufei LIN / Zijian GAO": "Yufei Lin / Zijian Gao",
      "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
      "Eva PATE / Logan BYE": "Eva Pate / Logan Bye",
      "Loicia DEMOUGEOT / Theo le MERCIER": "Loicia Demougeot / Theo le Mercier",
@@ -46605,28 +46626,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-cup-of-china-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Emily Bratti / Ian Somerville",
-     "nation": "USA",
-     "points": "65.04"
-    },
-    {
-     "place": 2,
-     "name": "Eva Pate / Logan Bye",
-     "nation": "USA",
-     "points": "64.84"
-    },
-    {
-     "place": 3,
-     "name": "Zixi Xiao / Linghao He",
-     "nation": "CHN",
-     "points": "62.48"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-gp-cup-of-china-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:women-junior-pp",
