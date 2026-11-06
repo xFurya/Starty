@@ -1546,6 +1546,9 @@ class _ProfileCard extends StatelessWidget {
   final String status;
   final bool failed;
   final VoidCallback? onRetry;
+
+  /// Почта длинная, в одну строку и с многоточием; срок подписки обрезать нельзя — переносится.
+  final int titleLines;
   const _ProfileCard({
     required this.letter,
     required this.icon,
@@ -1553,6 +1556,7 @@ class _ProfileCard extends StatelessWidget {
     required this.status,
     this.failed = false,
     this.onRetry,
+    this.titleLines = 1,
   });
   @override
   Widget build(BuildContext context) {
@@ -1582,7 +1586,7 @@ class _ProfileCard extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    maxLines: 1,
+                    maxLines: titleLines,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: p.ink, height: 1.25),
                   ),

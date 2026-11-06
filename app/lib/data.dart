@@ -97,9 +97,19 @@ class Skater {
   final int? place; // место в сегменте, когда он прошёл
   final int? overall; // место в итоге вида — у события с итогом турнира
   final String nation; // код страны/команды из табло, нужен для подписи групп
-  Skater(this.name, this.time, this.no, this.warmup, [this.place, this.overall, this.nation = '']);
-  factory Skater.fromJson(Map o) =>
-      Skater(o['name'], o['time'], o['no'], o['warmup'], o['place'], o['final'], o['nation'] ?? '');
+  final String? points; // баллы за сегмент («72.45») — вместе с местом, без места их нет
+  Skater(this.name, this.time, this.no, this.warmup, [this.place, this.overall, this.nation = '', String? points])
+    : points = place == null ? null : points;
+  factory Skater.fromJson(Map o) => Skater(
+    o['name'],
+    o['time'],
+    o['no'],
+    o['warmup'],
+    o['place'],
+    o['final'],
+    o['nation'] ?? '',
+    o['points'] is String && (o['points'] as String).isNotEmpty ? o['points'] : null,
+  );
 
   Map<String, dynamic> toJson() => {
     'name': name,
@@ -109,9 +119,11 @@ class Skater {
     if (place != null) 'place': place,
     if (overall != null) 'final': overall,
     if (nation.isNotEmpty) 'nation': nation,
+    if (points != null) 'points': points,
   };
 
   /// Тот же человек с данными из [o]: что в [o] пусто, остаётся своё (см. [Start.mergeKeepingRicher]).
+  /// Баллы — вместе с местом: к другому месту прежние баллы не относятся.
   Skater filledBy(Skater o) => Skater(
     o.name,
     o.time ?? time,
@@ -120,6 +132,7 @@ class Skater {
     o.place ?? place,
     o.overall ?? overall,
     o.nation.isNotEmpty ? o.nation : nation,
+    o.place == null || o.place == place ? o.points ?? points : o.points,
   );
 
   /// В списке у пар — только фамилии.
@@ -357,11 +370,26 @@ class Start {
     required List<Placing> podium,
     required bool provisional,
     Map<String, int> places = const {},
+    Map<String, String> points = const {},
     List<Placing>? total,
     Map<String, int> finals = const {},
   }) {
-    Skater up(Skater o) =>
-        Skater(o.name, o.time, o.no, o.warmup, places[norm(o.name)] ?? o.place, finals[norm(o.name)] ?? o.overall, o.nation);
+    // баллы — вместе с местом: место с табло приходит со своими баллами
+    Skater up(Skater o) {
+      final k = norm(o.name);
+      final place = places[k];
+      final pts = points[k];
+      return Skater(
+        o.name,
+        o.time,
+        o.no,
+        o.warmup,
+        place ?? o.place,
+        finals[k] ?? o.overall,
+        o.nation,
+        place == null ? o.points : (pts == null || pts.isEmpty ? null : pts),
+      );
+    }
     // табло ответило не всем (пока выступили не все) — прежняя тройка, где мест больше, не заменяется
     final keepPodium = podium.length < this.podium.length;
     final newTotal = total != null && total.length >= this.total.length ? total : this.total;

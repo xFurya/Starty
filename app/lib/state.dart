@@ -280,10 +280,10 @@ class AppState extends ChangeNotifier {
   }
 
   /// Сброс настроек этого устройства к значениям по умолчанию (после отключения синхронизации).
-  /// Забыть подписку прошлого аккаунта. Были запланированы сводка дня или уведомления о составе — снять их из системы.
+  /// Забыть подписку прошлого аккаунта. Были в плане сводка дня, уведомления о составе или итоги — снять их из системы.
   /// (Выход сюда не ходит: там _resetDevice и так пересобирает уведомления.)
   Future<void> _forgetBilling() async {
-    final had = plan.digest != null || billing.lineupAt(now());
+    final had = plan.digest != null || billing.lineupAt(now()) || billing.resultsAt(now());
     await billing.clear();
     if (had) unawaited(_sync());
   }
@@ -506,13 +506,15 @@ class AppState extends ChangeNotifier {
   /// Уведомления о составе (подписка, lineup.dart): найденные при сверках и ещё не истёкшие.
   List<LineupEvent> lineup = const [];
 
-  /// Правила, исключения, сводка дня и уведомления о составе (если подписка действует).
+  /// Правила, исключения, сводка дня, уведомления о составе и итоги ваших (если подписка действует).
   NotifyPlan get plan => NotifyPlan(
     rules,
     forcedOn,
     forcedOff,
     digest: billing.digestAt(now()),
     events: billing.lineupAt(now()) ? [for (final e in lineup) e.planned()] : const [],
+    results: billing.resultsAt(now()),
+    updates: Reminders.updatesShown,
   );
 
   /// Придёт ли уведомление о начале старта (правила + исключения).
@@ -892,6 +894,8 @@ class AppState extends ChangeNotifier {
     for (final p in s.podium) '${p.place}${p.name}${p.points}',
     for (final p in s.total ?? const <Placing>[]) '${p.place}${p.name}${p.points}',
     for (final e in s.places.entries) '${e.key}${e.value}',
+    // баллы — в итогах ваших (уведомление)
+    for (final p in s.rows) '${p.name}${p.points}',
     for (final e in s.finals.entries) '${e.key}${e.value}',
   ].join('|');
 
@@ -909,6 +913,7 @@ class AppState extends ChangeNotifier {
             podium: l.podium,
             provisional: l.provisional,
             places: l.places,
+            points: {for (final r in l.rows) if (r.points.isNotEmpty) norm(r.name): r.points},
             total: l.total,
             finals: l.finals,
           )
@@ -955,6 +960,7 @@ class AppState extends ChangeNotifier {
     final b = billing;
     final digestWas = plan.digest;
     final lineupWas = b.lineupAt(now());
+    final resultsWas = b.resultsAt(now());
     String? problem;
     try {
       try {
@@ -981,7 +987,9 @@ class AppState extends ChangeNotifier {
       notifyListeners();
     }
     // план уведомлений пересчитывается сразу (в начале _sync), система — следом, не задерживая обновление
-    if (plan.digest != digestWas || b.lineupAt(now()) != lineupWas) unawaited(_sync());
+    if (plan.digest != digestWas || b.lineupAt(now()) != lineupWas || b.resultsAt(now()) != resultsWas) {
+      unawaited(_sync());
+    }
   }
 
   /// Начать оплату: страница сервиса для встроенного браузера. Ошибка — SyncError с понятным текстом.
@@ -1056,6 +1064,13 @@ class AppState extends ChangeNotifier {
   /// Включить или выключить уведомления о жеребьёвке и составе.
   Future<void> setLineup(bool on) async {
     await billing.setLineup(on);
+    notifyListeners();
+    unawaited(_sync());
+  }
+
+  /// Включить или выключить итоги ваших в уведомлении.
+  Future<void> setResults(bool on) async {
+    await billing.setResults(on);
     notifyListeners();
     unawaited(_sync());
   }

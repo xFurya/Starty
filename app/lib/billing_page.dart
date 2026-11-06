@@ -3,8 +3,10 @@ part of 'settings.dart';
 // ------------------------------------------------------------------ подписка (billing.dart)
 //
 // Строка «Подписка» в разделе «Аккаунт» и её страница. Строки нет, пока подписки нет в сборке и сервер её
-// не продаёт (BillingState.visible). Главное в приложении подпиской не закрывается: она добавляет «Сводку
-// дня» и помогает приложению жить — так и написано на странице, без обещаний того, чего нет.
+// не продаёт (BillingState.visible). Главное в приложении подпиской не закрывается: она добавляет итоги
+// ваших, жеребьёвку и состав, «Сколько нужно» в протоколе и сводку дня и помогает приложению жить — так и
+// написано на странице, без обещаний того, чего нет: где уведомление приходит позже или только при
+// открытом приложении, так и сказано.
 
 /// Строка в настройках: действует ли подписка и до какого числа.
 String billingSummary(AppState st) {
@@ -15,8 +17,25 @@ String billingSummary(AppState st) {
     return e.autoRenew ? 'До $until\nПродлится автоматически' : 'До $until\nБез продления';
   }
   if (e?.paidUntil case final ended?) return 'Закончилась ${billingDay(ended, t)}';
-  return 'Сводка дня и поддержка приложения';
+  return 'Итоги ваших, жеребьёвка, сводка дня и поддержка приложения';
 }
+
+/// Когда приходит то, что телефон узнаёт сам, при закрытом приложении: Android проверяет раз в [every],
+/// iPhone — когда система даст, компьютер — только пока приложение открыто.
+String _closed(String every) => isAndroid
+    ? 'При закрытом приложении — с задержкой до $every, в экономии энергии дольше'
+    : isIos
+    ? 'При закрытом приложении — когда iPhone даст ему обновиться'
+    : 'Пока приложение открыто';
+
+/// Итоги ваших: поправить показанное уведомление можно только на Android — там место обновляется,
+/// пока выступают остальные; на остальных итог приходит, когда выступили все.
+String get _resultsText => isAndroid
+    ? 'Место и баллы ваших после проката; пока выступают остальные, место обновляется'
+    : 'Место и баллы ваших, когда выступят все';
+
+const _lineupText = 'Время выхода ваших после жеребьёвки, кто вошёл в состав и кто снялся';
+const _needsText = 'В протоколе: сколько баллов вашим нужно во втором сегменте на первое место и на пьедестал';
 
 void openBilling(BuildContext context, AppState state) {
   Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => _BillingPage(state: state)));
@@ -183,6 +202,7 @@ class _BillingPageState extends State<_BillingPage> {
         letter: null,
         icon: CupertinoIcons.sparkles,
         title: 'Подписка до ${billingDay(e!.paidUntil!, t)}',
+        titleLines: 2,
         status: e.autoRenew ? 'Продлится автоматически' : 'Без продления',
       );
     }
@@ -221,16 +241,22 @@ class _BillingPageState extends State<_BillingPage> {
 
   List<Widget> _perks(Palette p) => [
     const _Head('Что даёт'),
-    const Plate(
+    Plate(
       child: Column(
         children: [
-          _Row(
+          _Row(icon: CupertinoIcons.rosette, title: 'Итоги ваших', subtitle: '$_resultsText\n${_closed('15 минут')}'),
+          const Hairline(),
+          _Row(icon: CupertinoIcons.list_number, title: 'Жеребьёвка и состав', subtitle: '$_lineupText\n${_closed('3 часов')}'),
+          const Hairline(),
+          const _Row(icon: CupertinoIcons.scope, title: 'Сколько нужно', subtitle: _needsText),
+          const Hairline(),
+          const _Row(
             icon: CupertinoIcons.sun_max,
             title: 'Сводка дня',
             subtitle: 'Одно уведомление утром: кто из ваших выступает сегодня и во сколько',
           ),
-          Hairline(),
-          _Row(
+          const Hairline(),
+          const _Row(
             icon: CupertinoIcons.heart,
             title: 'Поддержка приложения',
             subtitle: 'Расписание, протоколы, трансляции и уведомления о стартах остаются бесплатными для всех',
@@ -442,6 +468,10 @@ class _BillingPageState extends State<_BillingPage> {
       Plate(
         child: Column(
           children: [
+            _resultsRow(p),
+            const Hairline(),
+            _lineupRow(p),
+            const Hairline(),
             _Row(
               icon: CupertinoIcons.sun_max,
               title: 'Сводка дня',
@@ -469,11 +499,33 @@ class _BillingPageState extends State<_BillingPage> {
               ),
             ],
             const Hairline(),
-            _lineupRow(p),
+            const _Row(icon: CupertinoIcons.scope, title: 'Сколько нужно', subtitle: _needsText),
           ],
         ),
       ),
     ];
+  }
+
+  /// Итоги ваших: включены ли и — честно — придут ли. Отслеживаемые — и по имени, и «все россияне».
+  Widget _resultsRow(Palette p) {
+    final on = st.billing.resultsSetting;
+    final f = st.follow;
+    final why = [
+      if (on && !st.rules.on) 'Уведомления выключены — не придут',
+      if (on && st.rules.on && st.allowed == false) 'Уведомления запрещены в настройках телефона — не придут',
+      if (on && f.names.isEmpty && !f.russians && !f.belarusians) 'Вы никого не отслеживаете — не о ком сообщать',
+    ];
+    return _Row(
+      icon: CupertinoIcons.rosette,
+      title: 'Итоги ваших',
+      subtitle: [
+        ...why,
+        if (on) ...['$_resultsText — по стартам, о которых приходят уведомления', _closed('15 минут')] else 'Выключено',
+      ].join('\n'),
+      subtitleColor: why.isEmpty ? null : p.live,
+      onTap: () => st.setResults(!on),
+      trailing: Switch(value: on, onChanged: st.setResults),
+    );
   }
 
   /// Жеребьёвка и состав: включены ли и — честно — придут ли. Нужны отслеживаемые по имени:
@@ -490,7 +542,7 @@ class _BillingPageState extends State<_BillingPage> {
       title: 'Жеребьёвка и состав',
       subtitle: [
         ...why,
-        on ? 'Время выхода ваших после жеребьёвки, кто вошёл в состав и кто снялся' : 'Выключено',
+        if (on) ...[_lineupText, _closed('3 часов')] else 'Выключено',
       ].join('\n'),
       subtitleColor: why.isEmpty ? null : p.live,
       onTap: () => st.setLineup(!on),

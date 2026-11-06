@@ -97,6 +97,9 @@ def merge_people(new, old, keep_missing=False):
             for k in _CARRY:
                 if p.get(k) and not o.get(k):
                     o[k] = p[k]
+            # баллы — только к тому же месту: к другому они чужие
+            if p.get("points") and not o.get("points") and o.get("place") == p.get("place"):
+                o["points"] = p["points"]
         out.append(o)
         seen.add(o["name"])
     if keep_missing:

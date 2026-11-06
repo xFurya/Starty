@@ -203,7 +203,22 @@ class NotifyPlan {
 
   /// Уведомления о составе (подписка, lineup.dart): жеребьёвка, «в составе», «больше не в составе».
   final List<Planned> events;
-  const NotifyPlan(this.rules, this.forcedOn, this.forcedOff, {this.digest, this.events = const []});
+
+  /// Итоги ваших (подписка): место и баллы отслеживаемого, когда он выступил.
+  final bool results;
+
+  /// Система даёт тихо поправить показанное уведомление (Android). Где нет (iPhone, Mac, Windows),
+  /// промежуточное место так и осталось бы висеть неправдой — итог там приходит, когда сегмент закончился.
+  final bool updates;
+  const NotifyPlan(
+    this.rules,
+    this.forcedOn,
+    this.forcedOff, {
+    this.digest,
+    this.events = const [],
+    this.results = false,
+    this.updates = false,
+  });
 
   /// Будет ли уведомление о начале старта (если время ещё не прошло).
   bool wants(Start s) {
@@ -318,6 +333,9 @@ class Reminders {
 
   static bool get _android => !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
 
+  /// Показанное уведомление можно тихо поправить — только на Android (см. [NotifyPlan.updates]).
+  static bool get updatesShown => _android;
+
   /// Сколько после времени выхода спортсмен заведомо откатал: программа до 4 мин и оценки.
   static const skated = Duration(minutes: 8);
 
@@ -417,6 +435,8 @@ class Reminders {
       for (final o in s.ours) {
         final skate = s.skateAt(o);
         if (skate == null) continue;
+        // выступил, и итог пришёл — «выходит в 19:04» уже неправда, вместо него итог
+        if (_result(s, o, p, now)) continue;
         final at = skate.subtract(Duration(minutes: p.rules.skaterLead));
         // место в протоколе — уже откатал, раньше расчётного; закрепление снимается сразу
         final done = o.place != null ? now : skate.add(skated);
@@ -441,6 +461,7 @@ class Reminders {
         ));
       }
     }
+    if (p.results) out.addAll(resultPlan(data, p, now));
     if (p.rules.on && p.digest != null) out.addAll(digestPlan(data, p.digest!, now));
     if (p.rules.on && p.events.isNotEmpty) {
       // только по турнирам, которые человек видит (региональные выключены — о них молчим)
@@ -495,6 +516,71 @@ class Reminders {
     return out;
   }
 
+  /// Сколько висит итог после конца старта по расписанию.
+  static const resultKeep = Duration(hours: 6);
+
+  /// Будет ли итог отслеживаемого [o] в старте [s]: место есть и получено после начала (раньше —
+  /// чужое, из старого разбора); где показанное не поправить — только когда сегмент закончился.
+  static bool _result(Start s, Skater o, NotifyPlan p, DateTime now) =>
+      p.results &&
+      p.wants(s) &&
+      o.place != null &&
+      !now.isBefore(s.t0) &&
+      (p.updates || s.finishedAt(now)) &&
+      s.t1.add(resultKeep).isAfter(now);
+
+  /// Итоги ваших: по уведомлению на выступившего отслеживаемого.
+  ///  заголовок — «Аделия Петросян — 1-е место»;
+  ///  строки — «CS Budapest Trophy, женщины, короткая программа», «72.45 балла», затем
+  ///    «Выступили ещё не все — место может измениться», пока сегмент идёт, или
+  ///    «По сумме — 2-е место», когда известен итог вида;
+  ///  свёрнутый вид — баллы и то же «выступили ещё не все» или «по сумме».
+  /// Android поправляет висящее тихо, пока места меняются; приходит один раз — со звуком.
+  static List<Planned> resultPlan(Schedule data, NotifyPlan p, DateTime now) => [
+    for (final s in data.starts)
+      for (final o in s.ours)
+        if (_result(s, o, p, now)) _resultOf(s, o, now),
+  ];
+
+  static Planned _resultOf(Start s, Skater o, DateTime now) {
+    final t = resultText(s, o, done: s.finishedAt(now));
+    final end = s.t1.add(resultKeep);
+    return Planned(
+      key: 'r:${s.id}:${o.name}',
+      at: now,
+      hold: now,
+      end: end,
+      late: end,
+      title: t.title,
+      lines: t.lines,
+      collapsed: t.collapsed,
+      startId: s.id,
+      group: s.tid,
+      groupTitle: s.tournament,
+      reminder: false,
+      result: true,
+    );
+  }
+
+  /// Текст итога; [done] — сегмент закончился (место окончательное).
+  static ({String title, List<String> lines, String collapsed}) resultText(Start s, Skater o, {required bool done}) {
+    final (disc, seg) = discipline(s);
+    final where = [s.tournament, disc, if (seg.isNotEmpty) seg].join(', ');
+    final pts = o.points == null ? null : '${o.points} балла';
+    const open = 'Выступили ещё не все — место может измениться';
+    final overall = done && o.overall != null ? 'По сумме — ${o.overall}-е место' : null;
+    final note = done ? overall : open;
+    final short = [
+      ?pts,
+      if (!done) 'выступили ещё не все' else if (overall != null) 'по сумме — ${o.overall}-е место',
+    ];
+    return (
+      title: '${_name(o)} — ${o.place}-е место',
+      lines: [where, ?pts, ?note],
+      collapsed: short.isEmpty ? where : cap(short.join(', ')),
+    );
+  }
+
   /// «Танцы, ритм-танец» — как в уведомлении о старте.
   static String _what(Start s) {
     final (disc, seg) = discipline(s);
@@ -510,7 +596,9 @@ class Reminders {
     final byId = {for (final s in data.starts) s.id: s};
     final planned = <String, List<int>>{
       for (final x in list)
-        if (byId[x.startId] case final s?) s.id: [s.t0.millisecondsSinceEpoch, s.t1.millisecondsSinceEpoch],
+        // итог старта не держит: его старт может быть закончен, и файл состояния говорил бы «тяни всё» каждый раз
+        if (!x.result)
+          if (byId[x.startId] case final s?) s.id: [s.t0.millisecondsSinceEpoch, s.t1.millisecondsSinceEpoch],
     };
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(plannedKey, jsonEncode(planned));
@@ -624,7 +712,8 @@ class Reminders {
               liveMark: liveMark,
               liveColor: Palette.light.live.toARGB32(),
               liveColorDark: Palette.dark.live.toARGB32(),
-              start: x.startId,
+              // итог живёт и после конца старта: снимать его вместе со стартом нельзя
+              start: x.result ? '' : x.startId,
               late: x.late,
             ),
         ]);
@@ -713,6 +802,9 @@ class Planned {
   /// Выход спортсмена — напоминание; начало старта — событие.
   final bool reminder;
 
+  /// Итог спортсмена: живёт и после конца старта — не снимается вместе с ним.
+  final bool result;
+
   const Planned({
     required this.key,
     required this.at,
@@ -728,6 +820,7 @@ class Planned {
     required this.reminder,
     this.liveAt,
     this.liveTitle = '',
+    this.result = false,
   });
 
   /// Заголовок на момент [t]: старт уже идёт — со статусом, иначе — с временем начала.

@@ -79,6 +79,13 @@ class MergeTest(unittest.TestCase):
         got = kp.merge_people([{"name": "А", "no": 5}], old)
         self.assertNotIn("time", got[0])
 
+    def test_points_carry_only_with_the_same_place(self):
+        old = [{"name": "А", "place": 2, "points": "70.10"}]
+        self.assertEqual(kp.merge_people([{"name": "А"}], old)[0]["points"], "70.10")
+        self.assertEqual(kp.merge_people([{"name": "А", "place": 2}], old)[0]["points"], "70.10")
+        # место другое — прежние баллы к нему не относятся
+        self.assertNotIn("points", kp.merge_people([{"name": "А", "place": 1}], old)[0])
+
     def test_watch_rss_failure_keeps_concrete_link(self):
         old = [{"name": "YouTube ISU", "url": "https://www.youtube.com/watch?v=AAAAAAAAAAA"}]
         new = [{"name": "YouTube ISU", "url": "https://www.youtube.com/@SkatingISU/live"}]

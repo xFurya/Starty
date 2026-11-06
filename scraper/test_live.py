@@ -186,6 +186,8 @@ class DanceRtMarks(FfkmLive):
         live.refresh(ev, idx, self.names, self.after, P.Fetcher())
         self.assertEqual([(r["place"], r["points"]) for r in ev["podium"]], [(1, "99.55"), (2, "88.23")])
         self.assertEqual({o["name"]: o.get("place") for o in ev["field"]}, {"Ivan Semenov": 1, "Petr Petrov": None})
+        # баллы — вместе с местом; у неоценённого нет ни того, ни другого
+        self.assertEqual({o["name"]: o.get("points") for o in ev["field"]}, {"Ivan Semenov": "99.55", "Petr Petrov": None})
 
     def test_marks_false_is_final_by_time_only_with_flag(self):
         idx = self.index(scores=False)
@@ -603,6 +605,20 @@ class Finished(unittest.TestCase):
         self.assertNotIn("run", doc["starts"]["a"])
         self.assertEqual(doc["starts"]["b"]["t0"],
                          int(dt.datetime(2026, 11, 5, 13, 40, tzinfo=dt.timezone.utc).timestamp() * 1000))
+
+    def test_now_doc_places_of_running_start(self):
+        now = dt.datetime(2026, 11, 5, 15, 0, tzinfo=dt.timezone.utc)
+        going = self.ev(id="b", field=[{"name": "А", "place": 1, "points": "72.45"}, {"name": "Б", "place": 2},
+                                       {"name": "В"}])
+        done = self.ev(id="a", provisional=False, live={"basis": "judges"}, field=going["field"])
+        # места до начала по расписанию — чужие, из старого разбора
+        later = self.ev(id="c", start="2026-11-05T19:00:00+03:00", end="2026-11-05T21:00:00+03:00",
+                        field=going["field"])
+        doc = b.now_doc([going, done, later], now)
+        self.assertEqual(doc["starts"]["b"]["r"], {"А": [1, "72.45"], "Б": [2, ""]})
+        # у закончившегося места не нужны: телефон по done тянет всё расписание
+        self.assertNotIn("r", doc["starts"]["a"])
+        self.assertNotIn("r", doc["starts"]["c"])
 
 
 if __name__ == "__main__":

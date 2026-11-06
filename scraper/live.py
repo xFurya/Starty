@@ -145,14 +145,20 @@ def refresh(ev, idx, names, now, fetcher=None):
         b.log("  ! оценки сегмента сейчас не подтверждены, окончательный протокол оставляем:", ev["title"])
     done = basis is not None
     to_ru = lambda n: live.get("names", {}).get(n) or names.to_ru(n)
-    place = {nm.key(to_ru(r["name"])): r["place"] for r in results}
+    place = {nm.key(to_ru(r["name"])): r for r in results}
     for o in ev["ours"] + ev.get("field", []):
-        p = place.get(nm.key(o["name"]))
-        if p:
-            o["place"] = p
+        r = place.get(nm.key(o["name"]))
+        if r and r["place"]:
+            # баллы — вместе с местом: итог спортсмена в уведомлении (подписка)
+            o["place"] = r["place"]
+            if r.get("points"):
+                o["points"] = r["points"]
+            else:
+                o.pop("points", None)
         elif not prev_final:
             # табло не оценило ещё: прежнее место (чужое, из старого разбора) не оставляем
             o.pop("place", None)
+            o.pop("points", None)
     ev["podium"] = [{"place": r["place"], "name": to_ru(r["name"]), "nation": r["nation"],
                      "points": r["points"]} for r in results[:3]]
     live["basis"] = basis

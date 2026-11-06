@@ -1,7 +1,8 @@
 // Фоновое обновление (Android раз в 15 минут, iPhone — когда его будит система): подтянуть расписание и
 // переставить уведомления — новые старты, сдвиги времени, конец старта и время выхода наших
 // появляются, когда приложение может быть закрыто. Часто — только маленький файл состояния
-// (now.json); всё расписание — когда по нему что-то поменялось или прошло три часа.
+// (now.json); всё расписание — когда по нему что-то поменялось или прошло три часа. Места идущего
+// старта (итоги ваших, подписка) — из того же файла, без всего расписания.
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
@@ -39,6 +40,41 @@ bool nowChanged(Map<String, dynamic> now, Map<String, dynamic> planned, Set<Stri
   return false;
 }
 
+/// Места и баллы идущих стартов с уведомлениями — из файла состояния (r: имя → [место, баллы]),
+/// в каноническом виде: изменились — пора поправить итоги ваших. Пусто — мест нет.
+String resultsSig(Map<String, dynamic> now, Map<String, dynamic> planned) {
+  final out = <String, Object>{};
+  for (final id in planned.keys.toList()..sort()) {
+    final v = now[id];
+    final r = v is Map ? v['r'] : null;
+    if (r is! Map || r.isEmpty) continue;
+    out[id] = {for (final k in r.keys.map((k) => '$k').toList()..sort()) k: r[k]};
+  }
+  return out.isEmpty ? '' : jsonEncode(out);
+}
+
+/// Расписание с местами и баллами из файла состояния: у идущего старта — те, кто уже выступил.
+/// Остальное — как было (файл несёт только места).
+Schedule withNowResults(Schedule raw, Map<String, dynamic> now) {
+  Start patch(Start s) {
+    final v = now[s.id];
+    final r = v is Map ? v['r'] : null;
+    if (r is! Map || r.isEmpty) return s;
+    final places = <String, int>{};
+    final points = <String, String>{};
+    for (final e in r.entries) {
+      final x = e.value;
+      if (x is! List || x.isEmpty || x.first is! int) continue;
+      final k = norm('${e.key}');
+      places[k] = x.first as int;
+      if (x.length > 1 && x[1] is String && (x[1] as String).isNotEmpty) points[k] = x[1] as String;
+    }
+    return s.withResults(podium: s.podium, provisional: s.provisional, places: places, points: points);
+  }
+
+  return raw.withStarts([for (final s in raw.starts) patch(s)]);
+}
+
 /// Старты последнего расписания от суток назад до трёх суток вперёд — шире окна файла состояния,
 /// чтобы старт, въехавший в окно, не считался новым.
 List<String> knownIds(Schedule raw, DateTime t) => [
@@ -55,13 +91,22 @@ Map<String, dynamic> _json(String? s) {
   }
 }
 
-/// Пора ли тянуть всё расписание.
-Future<bool> _due(SharedPreferences p, DateTime t) async {
-  if (t.millisecondsSinceEpoch - (p.getInt('bg.full') ?? 0) >= fullEvery.inMilliseconds) return true;
+/// Где помним места идущих стартов, по которым уведомления уже переставлены (см. [resultsSig]).
+const resultsSeenKey = 'bg.res';
+
+/// Что делать: null — ничего; full — тянуть всё расписание; иначе — переставить уведомления по местам
+/// из файла состояния [now] (итоги ваших), не загружая расписание.
+Future<({bool full, Map<String, dynamic>? now})?> _due(SharedPreferences p, DateTime t) async {
+  if (t.millisecondsSinceEpoch - (p.getInt('bg.full') ?? 0) >= fullEvery.inMilliseconds) return (full: true, now: null);
   final now = await Repo.fetchNow();
-  if (now == null) return false;
+  if (now == null) return null;
   final known = {for (final x in (jsonDecode(p.getString('bg.known') ?? '[]') as List)) '$x'};
-  return nowChanged(now, _json(p.getString(Reminders.plannedKey)), known);
+  final planned = _json(p.getString(Reminders.plannedKey));
+  if (nowChanged(now, planned, known)) return (full: true, now: null);
+  if (BillingState.resultsFor(p, t) && resultsSig(now, planned) != (p.getString(resultsSeenKey) ?? '')) {
+    return (full: false, now: now);
+  }
+  return null;
 }
 
 @pragma('vm:entry-point')
@@ -73,11 +118,13 @@ void backgroundDispatcher() {
       // приложение могло записать своё, пока этот движок спал
       await p.reload();
       final t = DateTime.now();
-      if (!await _due(p, t)) return true;
+      final due = await _due(p, t);
+      if (due == null) return true;
       await Prefs.init();
       await Reminders.init();
-      final fresh = await Repo.fetch();
-      final raw = fresh ?? await Repo.cached();
+      final fresh = due.full ? await Repo.fetch() : null;
+      final cached = fresh ?? await Repo.cached();
+      final raw = cached == null || due.now == null ? cached : withNowResults(cached, due.now!);
       final follow = Prefs.followOr(raw?.watchlist ?? const []);
       final data = raw == null ? null : remindersSchedule(raw, regional: Prefs.regional, follow: follow);
       // состав сверяется только со свежим расписанием; без него — уже найденное (иначе оно снимется)
@@ -90,8 +137,12 @@ void backgroundDispatcher() {
           Prefs.forcedOff,
           digest: BillingState.digestFor(p, t),
           events: [for (final e in lineup) e.planned()],
+          results: BillingState.resultsFor(p, t),
+          updates: Reminders.updatesShown,
         ),
       );
+      // после sync: список стартов с уведомлениями уже новый
+      if (due.now != null) await p.setString(resultsSeenKey, resultsSig(due.now!, _json(p.getString(Reminders.plannedKey))));
       if (fresh != null) {
         await p.setInt('bg.full', t.millisecondsSinceEpoch);
         await p.setString('bg.known', jsonEncode(knownIds(fresh, t)));

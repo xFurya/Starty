@@ -617,6 +617,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
             results = [dict(r, name=fix(r["name"])) for r in view["results"] or []]
             started = bool(results) and start.astimezone(dt.timezone.utc) <= now
             place = {r["name"]: r["place"] for r in results} if started else {}
+            points = {r["name"]: r["points"] for r in results if r.get("points")} if started else {}
             if started and SEG_ORDER[seg] == 0:
                 first_places = place
             ours, field = [], []
@@ -631,6 +632,8 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                     o["warmup"] = p.get("warmup") or warm.get(no)
                 if place.get(p["name"]):
                     o["place"] = place[p["name"]]
+                    if points.get(p["name"]):
+                        o["points"] = points[p["name"]]
                 # field — весь состав: за кем следить, решает человек в приложении
                 field.append(o)
                 if ours_rule(p["name"], p.get("nation", "")):
@@ -1545,8 +1548,9 @@ def now_doc(events, now):
     """now.json: старты от полусуток назад до двух суток вперёд — начало и конец по расписанию
     (миллисекунды от эпохи), done — сегмент уже закончился, run — идёт по табло. Телефон спрашивает его, пока
     висит уведомление о старте, и снимает уведомление сразу после конца, не дожидаясь конца по
-    расписанию и не загружая всё расписание. Без отметки времени: файл меняется, только когда
-    меняются старты."""
+    расписанию и не загружая всё расписание. У идущего — r: места и баллы тех, кто уже выступил
+    (имя → [место, баллы]): по ним телефон обновляет итоги отслеживаемых, тоже без всего расписания.
+    Без отметки времени: файл меняется, только когда меняются старты или места."""
     out = {}
     for e in sorted(events, key=lambda e: (e["start"], e["id"])):
         t0 = dt.datetime.fromisoformat(e["start"])
@@ -1558,6 +1562,11 @@ def now_doc(events, now):
             item["done"] = True
         elif running(e):
             item["run"] = True
+            # до начала по расписанию места могут быть только чужие, из старого разбора
+            r = {o["name"]: [o["place"], o.get("points") or ""]
+                 for o in e.get("field") or [] if o.get("place")} if t0 <= now else {}
+            if r:
+                item["r"] = r
         out[e["id"]] = item
     return {"v": 1, "starts": out}
 
