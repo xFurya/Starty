@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-06T10:08:03+03:00",
- "checked": "2026-11-06T09:34:23.390184+00:00",
+ "checked": "2026-11-06T09:42:22.962521+00:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -46921,7 +46921,7 @@
      "time": "11:45",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "72.37"
     }
    ],
@@ -46952,7 +46952,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Александра Трусова — 72.37\n2. Mako Yamashita — 69.17\n3. Haein Lee — 67.49\n\nРоссияне:\n• Александра Трусова — 11:45\n\nНачало: 11:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Anastasiia Gubanova — 75.05\n2. Александра Трусова — 72.37\n3. Mako Yamashita — 69.17\n\nРоссияне:\n• Александра Трусова — 11:45\n\nНачало: 11:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Mako Yamashita",
@@ -46960,7 +46960,7 @@
      "time": "11:32",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "69.17"
     },
     {
@@ -46969,7 +46969,7 @@
      "time": "11:38",
      "no": 2,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "59.30"
     },
     {
@@ -46978,7 +46978,7 @@
      "time": "11:45",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "72.37"
     },
     {
@@ -46987,7 +46987,7 @@
      "time": "11:51",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "61.20"
     },
     {
@@ -46996,7 +46996,7 @@
      "time": "11:57",
      "no": 5,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "64.58"
     },
     {
@@ -47005,7 +47005,7 @@
      "time": "12:03",
      "no": 6,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "60.19"
     },
     {
@@ -47014,7 +47014,7 @@
      "time": "12:17",
      "no": 7,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "55.41"
     },
     {
@@ -47023,7 +47023,7 @@
      "time": "12:23",
      "no": 8,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "67.49"
     },
     {
@@ -47032,7 +47032,7 @@
      "time": "12:29",
      "no": 9,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "55.72"
     },
     {
@@ -47040,7 +47040,9 @@
      "nation": "GEO",
      "time": "12:36",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "75.05"
     },
     {
      "name": "Lara Naki Gutmann",
@@ -47082,21 +47084,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Anastasiia Gubanova",
+     "nation": "GEO",
+     "points": "75.05"
+    },
+    {
+     "place": 2,
      "name": "Александра Трусова",
      "nation": "RUS",
      "points": "72.37"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Mako Yamashita",
      "nation": "JPN",
      "points": "69.17"
-    },
-    {
-     "place": 3,
-     "name": "Haein Lee",
-     "nation": "KOR",
-     "points": "67.49"
     }
    ],
    "provisional": true
