@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-06T10:08:03+03:00",
- "checked": "2026-11-06T13:54:23.129165+00:00",
+ "generated": "2026-11-06T16:53:25+03:00",
+ "checked": "2026-11-06T16:53:25+03:00",
  "complete": false,
  "facts_version": "7",
  "sources": {
@@ -46470,7 +46470,7 @@
    "seg": "РТ",
    "title": "GP Cup of China — танцы РТ",
    "start": "2026-11-06T09:45:00+03:00",
-   "end": "2026-11-06T11:04:00+03:00",
+   "end": "2026-11-06T11:00:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
    "broadcast": [
@@ -46499,7 +46499,7 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live",
+     "url": "https://www.youtube.com/watch?v=aX6lnOJOPwg",
      "note": "Кроме России"
     }
    ],
@@ -46553,67 +46553,67 @@
      "time": "10:04"
     },
     {
-     "name": "Diana Davis / Gleb Smolkin",
-     "nation": "GEO",
-     "time": "10:44",
-     "no": 8,
-     "warmup": 2,
-     "place": 2,
-     "points": "79.31"
-    },
-    {
      "name": "Emily Bratti / Ian Somerville",
      "nation": "USA",
-     "time": "10:11",
      "no": 4,
      "warmup": 1,
      "place": 6,
-     "points": "65.04"
+     "points": "65.04",
+     "time": "10:11"
     },
     {
      "name": "Eva Pate / Logan Bye",
      "nation": "USA",
-     "time": "10:17",
      "no": 5,
      "warmup": 1,
      "place": 7,
-     "points": "64.84"
-    },
-    {
-     "name": "Lilah Fear / Lewis Gibson",
-     "nation": "GBR",
-     "time": "10:57",
-     "no": 10,
-     "warmup": 2,
-     "place": 1,
-     "points": "80.00"
+     "points": "64.84",
+     "time": "10:17"
     },
     {
      "name": "Loicia Demougeot / Theo le Mercier",
      "nation": "FRA",
-     "time": "10:31",
      "no": 6,
      "warmup": 2,
      "place": 4,
-     "points": "71.41"
+     "points": "71.41",
+     "time": "10:31"
     },
     {
      "name": "Natalie Taschlerova / Filip Taschler",
      "nation": "CZE",
-     "time": "10:37",
      "no": 7,
      "warmup": 2,
      "place": 3,
-     "points": "73.10"
+     "points": "73.10",
+     "time": "10:37"
+    },
+    {
+     "name": "Diana Davis / Gleb Smolkin",
+     "nation": "GEO",
+     "no": 8,
+     "warmup": 2,
+     "place": 2,
+     "points": "79.31",
+     "time": "10:44"
     },
     {
      "name": "Olivia Smart / Tim Dieck",
      "nation": "ESP",
-     "time": "10:50",
      "no": 9,
      "warmup": 2,
      "place": 5,
-     "points": "70.98"
+     "points": "70.98",
+     "time": "10:50"
+    },
+    {
+     "name": "Lilah Fear / Lewis Gibson",
+     "nation": "GBR",
+     "no": 10,
+     "warmup": 2,
+     "place": 1,
+     "points": "80.00",
+     "time": "10:57"
     }
    ],
    "live": {
@@ -46622,16 +46622,16 @@
     "cat": null,
     "first": null,
     "names": {
-     "Zixi XIAO / Linghao HE": "Zixi Xiao / Linghao He",
-     "Junfei REN / Jianing XING": "Junfei Ren / Jianing Xing",
-     "Yufei LIN / Zijian GAO": "Yufei Lin / Zijian Gao",
+     "Lilah FEAR / Lewis GIBSON": "Lilah Fear / Lewis Gibson",
+     "Diana DAVIS / Gleb SMOLKIN": "Diana Davis / Gleb Smolkin",
+     "Natalie TASCHLEROVA / Filip TASCHLER": "Natalie Taschlerova / Filip Taschler",
+     "Loicia DEMOUGEOT / Theo le MERCIER": "Loicia Demougeot / Theo le Mercier",
+     "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck",
      "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
      "Eva PATE / Logan BYE": "Eva Pate / Logan Bye",
-     "Loicia DEMOUGEOT / Theo le MERCIER": "Loicia Demougeot / Theo le Mercier",
-     "Natalie TASCHLEROVA / Filip TASCHLER": "Natalie Taschlerova / Filip Taschler",
-     "Diana DAVIS / Gleb SMOLKIN": "Diana Davis / Gleb Smolkin",
-     "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck",
-     "Lilah FEAR / Lewis GIBSON": "Lilah Fear / Lewis Gibson"
+     "Zixi XIAO / Linghao HE": "Zixi Xiao / Linghao He",
+     "Junfei REN / Jianing XING": "Junfei Ren / Jianing Xing",
+     "Yufei LIN / Zijian GAO": "Yufei Lin / Zijian Gao"
     },
     "basis": "judges"
    },
@@ -46646,7 +46646,7 @@
    "seg": "ПП",
    "title": "ЮГП России «Золото Урала» — девушки ПП",
    "start": "2026-11-06T10:45:00+03:00",
-   "end": "2026-11-06T13:21:00+03:00",
+   "end": "2026-11-06T13:35:00+03:00",
    "venue": "УГМК-Арена, Екатеринбург",
    "intl": false,
    "broadcast": [
@@ -46657,12 +46657,12 @@
     {
      "name": "Анна Докукина",
      "nation": "МОС",
-     "time": "11:58",
      "no": 10,
      "warmup": 2,
      "place": 7,
      "points": "122.83",
-     "final": 7
+     "final": 7,
+     "time": "11:58"
     }
    ],
    "athletes": [
@@ -46693,220 +46693,9 @@
     },
     {
      "name": "YouTube",
-     "url": "https://www.youtube.com/@ice_skating/live"
+     "url": "https://www.youtube.com/watch?v=lz20vGD0pvY"
     }
    ],
-   "desc": "Итог:\n1. Алёна Принёва — 133.73\n2. Дарья Царегородцева — 131.84\n3. Екатерина Стоцкая — 128.24\n\nИтог турнира:\n1. Алёна Принёва — 202.21\n2. Дарья Царегородцева — 200.33\n3. Майя Сарафанова — 197.87\n\nПримечательное:\n• Екатерина Стоцкая — Четверной сальхов\n• Анна Докукина — 2 четверных в программе: 4S, 4T\n• Юлиана Черенева — Четверной тулуп\n\nРоссияне:\n• Анна Докукина — 11:58\n\nНачало: 10:45 МСК\nТрансляция: Первый канал / YouTube",
-   "field": [
-    {
-     "name": "Ульяна Бессонова",
-     "nation": "АСТ",
-     "time": "10:52",
-     "no": 1,
-     "warmup": 1,
-     "place": 18,
-     "points": "86.42",
-     "final": 18
-    },
-    {
-     "name": "Елизавета Ширяева",
-     "nation": "МОБ",
-     "time": "11:12",
-     "no": 4,
-     "warmup": 1,
-     "place": 15,
-     "points": "103.18",
-     "final": 15
-    },
-    {
-     "name": "Александра Гришина",
-     "nation": "СВЕ",
-     "time": "11:18",
-     "no": 5,
-     "warmup": 1,
-     "place": 14,
-     "points": "107.75",
-     "final": 14
-    },
-    {
-     "name": "Виктория Михайлова",
-     "nation": "МОС",
-     "time": "11:25",
-     "no": 6,
-     "warmup": 1,
-     "place": 13,
-     "points": "108.17",
-     "final": 13
-    },
-    {
-     "name": "Дарья Шаронова",
-     "nation": "ВЛД",
-     "time": "11:31",
-     "no": 2,
-     "warmup": 1,
-     "place": 17,
-     "points": "92.75",
-     "final": 17
-    },
-    {
-     "name": "Мария Жукова",
-     "nation": "НИЖ",
-     "time": "11:39",
-     "no": 7,
-     "warmup": 2,
-     "place": 12,
-     "points": "111.02",
-     "final": 12
-    },
-    {
-     "name": "Варвара Авдеева",
-     "nation": "СВЕ",
-     "time": "11:45",
-     "no": 8,
-     "warmup": 2,
-     "place": 11,
-     "points": "111.35",
-     "final": 11
-    },
-    {
-     "name": "Юлиана Черенева",
-     "nation": "МОС",
-     "time": "11:52",
-     "no": 9,
-     "warmup": 2,
-     "place": 10,
-     "points": "114.34",
-     "final": 10
-    },
-    {
-     "name": "Анна Докукина",
-     "nation": "МОС",
-     "time": "11:58",
-     "no": 10,
-     "warmup": 2,
-     "place": 7,
-     "points": "122.83",
-     "final": 7
-    },
-    {
-     "name": "Кира Кузьмина",
-     "nation": "СПБ",
-     "time": "12:05",
-     "no": 11,
-     "warmup": 2,
-     "place": 8,
-     "points": "119.59",
-     "final": 9
-    },
-    {
-     "name": "Риана Ганиева",
-     "nation": "ТАТ",
-     "time": "12:11",
-     "no": 12,
-     "warmup": 2,
-     "place": 6,
-     "points": "123.66",
-     "final": 6
-    },
-    {
-     "name": "Марьям Зялалова",
-     "nation": "ТАТ",
-     "time": "12:33",
-     "no": 3,
-     "warmup": 1,
-     "place": 16,
-     "points": "98.42",
-     "final": 16
-    },
-    {
-     "name": "Алиса Мильто",
-     "nation": "МОС",
-     "time": "12:40",
-     "no": 13,
-     "warmup": 3,
-     "place": 9,
-     "points": "119.10",
-     "final": 8
-    },
-    {
-     "name": "Арина Ореховская",
-     "nation": "ОРЕ",
-     "time": "12:47",
-     "no": 14,
-     "warmup": 3,
-     "place": 5,
-     "points": "125.02",
-     "final": 5
-    },
-    {
-     "name": "Екатерина Стоцкая",
-     "nation": "МОС",
-     "time": "12:53",
-     "no": 15,
-     "warmup": 3,
-     "place": 3,
-     "points": "128.24",
-     "final": 4
-    },
-    {
-     "name": "Алёна Принёва",
-     "nation": "МОС",
-     "time": "13:00",
-     "no": 16,
-     "warmup": 3,
-     "place": 1,
-     "points": "133.73",
-     "final": 1
-    },
-    {
-     "name": "Дарья Царегородцева",
-     "nation": "СПБ",
-     "time": "13:06",
-     "no": 17,
-     "warmup": 3,
-     "place": 2,
-     "points": "131.84",
-     "final": 2
-    },
-    {
-     "name": "Майя Сарафанова",
-     "nation": "МОС",
-     "time": "13:13",
-     "no": 18,
-     "warmup": 3,
-     "place": 4,
-     "points": "127.79",
-     "final": 3
-    }
-   ],
-   "live": {
-    "idx": "https://fsrussia.ru/results/2627/5etap_jun/index.htm",
-    "seg": "https://fsrussia.ru/results/2627/5etap_jun/SEG004.htm",
-    "cat": "https://fsrussia.ru/results/2627/5etap_jun/CAT002RS.htm",
-    "first": "https://fsrussia.ru/results/2627/5etap_jun/SEG003.htm",
-    "names": {
-     "Ульяна БЕССОНОВА": "Ульяна Бессонова",
-     "Дарья ШАРОНОВА": "Дарья Шаронова",
-     "Марьям ЗЯЛАЛОВА": "Марьям Зялалова",
-     "Елизавета ШИРЯЕВА": "Елизавета Ширяева",
-     "Александра ГРИШИНА": "Александра Гришина",
-     "Виктория МИХАЙЛОВА": "Виктория Михайлова",
-     "Мария ЖУКОВА": "Мария Жукова",
-     "Варвара АВДЕЕВА": "Варвара Авдеева",
-     "Юлиана ЧЕРЕНЕВА": "Юлиана Черенева",
-     "Анна ДОКУКИНА": "Анна Докукина",
-     "Кира КУЗЬМИНА": "Кира Кузьмина",
-     "Риана ГАНИЕВА": "Риана Ганиева",
-     "Алиса МИЛЬТО": "Алиса Мильто",
-     "Арина ОРЕХОВСКАЯ": "Арина Ореховская",
-     "Екатерина СТОЦКАЯ": "Екатерина Стоцкая",
-     "Алёна ПРИНЁВА": "Алёна Принёва",
-     "Дарья ЦАРЕГОРОДЦЕВА": "Дарья Царегородцева",
-     "Майя САРАФАНОВА": "Майя Сарафанова"
-    },
-    "basis": "judges"
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json",
    "podium": [
     {
      "place": 1,
@@ -46925,23 +46714,6 @@
      "name": "Екатерина Стоцкая",
      "nation": "МОС",
      "points": "128.24"
-    }
-   ],
-   "facts": [
-    {
-     "who": "Екатерина Стоцкая",
-     "text": "Четверной сальхов",
-     "kind": "element"
-    },
-    {
-     "who": "Анна Докукина",
-     "text": "2 четверных в программе: 4S, 4T",
-     "kind": "element"
-    },
-    {
-     "who": "Юлиана Черенева",
-     "text": "Четверной тулуп",
-     "kind": "element"
     }
    ],
    "total": [
@@ -46963,7 +46735,235 @@
      "nation": "МОС",
      "points": "197.87"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Алёна Принёва — 133.73\n2. Дарья Царегородцева — 131.84\n3. Екатерина Стоцкая — 128.24\n\nИтог турнира:\n1. Алёна Принёва — 202.21\n2. Дарья Царегородцева — 200.33\n3. Майя Сарафанова — 197.87\n\nПримечательное:\n• Екатерина Стоцкая — Четверной сальхов\n• Анна Докукина — 2 четверных в программе: 4S, 4T\n• Юлиана Черенева — Четверной тулуп\n\nРоссияне:\n• Анна Докукина — 11:58\n\nНачало: 10:45 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Ульяна Бессонова",
+     "nation": "АСТ",
+     "no": 1,
+     "warmup": 1,
+     "place": 18,
+     "points": "86.42",
+     "final": 18,
+     "time": "10:52"
+    },
+    {
+     "name": "Дарья Шаронова",
+     "nation": "ВЛД",
+     "no": 2,
+     "warmup": 1,
+     "place": 17,
+     "points": "92.75",
+     "final": 17,
+     "time": "11:31"
+    },
+    {
+     "name": "Марьям Зялалова",
+     "nation": "ТАТ",
+     "no": 3,
+     "warmup": 1,
+     "place": 16,
+     "points": "98.42",
+     "final": 16,
+     "time": "12:33"
+    },
+    {
+     "name": "Елизавета Ширяева",
+     "nation": "МОБ",
+     "no": 4,
+     "warmup": 1,
+     "place": 15,
+     "points": "103.18",
+     "final": 15,
+     "time": "11:12"
+    },
+    {
+     "name": "Александра Гришина",
+     "nation": "СВЕ",
+     "no": 5,
+     "warmup": 1,
+     "place": 14,
+     "points": "107.75",
+     "final": 14,
+     "time": "11:18"
+    },
+    {
+     "name": "Виктория Михайлова",
+     "nation": "МОС",
+     "no": 6,
+     "warmup": 1,
+     "place": 13,
+     "points": "108.17",
+     "final": 13,
+     "time": "11:25"
+    },
+    {
+     "name": "Мария Жукова",
+     "nation": "НИЖ",
+     "no": 7,
+     "warmup": 2,
+     "place": 12,
+     "points": "111.02",
+     "final": 12,
+     "time": "11:39"
+    },
+    {
+     "name": "Варвара Авдеева",
+     "nation": "СВЕ",
+     "no": 8,
+     "warmup": 2,
+     "place": 11,
+     "points": "111.35",
+     "final": 11,
+     "time": "11:45"
+    },
+    {
+     "name": "Юлиана Черенева",
+     "nation": "МОС",
+     "no": 9,
+     "warmup": 2,
+     "place": 10,
+     "points": "114.34",
+     "final": 10,
+     "time": "11:52"
+    },
+    {
+     "name": "Анна Докукина",
+     "nation": "МОС",
+     "no": 10,
+     "warmup": 2,
+     "place": 7,
+     "points": "122.83",
+     "final": 7,
+     "time": "11:58"
+    },
+    {
+     "name": "Кира Кузьмина",
+     "nation": "СПБ",
+     "no": 11,
+     "warmup": 2,
+     "place": 8,
+     "points": "119.59",
+     "final": 9,
+     "time": "12:05"
+    },
+    {
+     "name": "Риана Ганиева",
+     "nation": "ТАТ",
+     "no": 12,
+     "warmup": 2,
+     "place": 6,
+     "points": "123.66",
+     "final": 6,
+     "time": "12:11"
+    },
+    {
+     "name": "Алиса Мильто",
+     "nation": "МОС",
+     "no": 13,
+     "warmup": 3,
+     "place": 9,
+     "points": "119.10",
+     "final": 8,
+     "time": "12:40"
+    },
+    {
+     "name": "Арина Ореховская",
+     "nation": "ОРЕ",
+     "no": 14,
+     "warmup": 3,
+     "place": 5,
+     "points": "125.02",
+     "final": 5,
+     "time": "12:47"
+    },
+    {
+     "name": "Екатерина Стоцкая",
+     "nation": "МОС",
+     "no": 15,
+     "warmup": 3,
+     "place": 3,
+     "points": "128.24",
+     "final": 4,
+     "time": "12:53"
+    },
+    {
+     "name": "Алёна Принёва",
+     "nation": "МОС",
+     "no": 16,
+     "warmup": 3,
+     "place": 1,
+     "points": "133.73",
+     "final": 1,
+     "time": "13:00"
+    },
+    {
+     "name": "Дарья Царегородцева",
+     "nation": "СПБ",
+     "no": 17,
+     "warmup": 3,
+     "place": 2,
+     "points": "131.84",
+     "final": 2,
+     "time": "13:06"
+    },
+    {
+     "name": "Майя Сарафанова",
+     "nation": "МОС",
+     "no": 18,
+     "warmup": 3,
+     "place": 4,
+     "points": "127.79",
+     "final": 3,
+     "time": "13:13"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/5etap_jun/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/5etap_jun/SEG004.htm",
+    "cat": "https://fsrussia.ru/results/2627/5etap_jun/CAT002RS.htm",
+    "first": "https://fsrussia.ru/results/2627/5etap_jun/SEG003.htm",
+    "names": {
+     "Алёна ПРИНЁВА": "Алёна Принёва",
+     "Дарья ЦАРЕГОРОДЦЕВА": "Дарья Царегородцева",
+     "Екатерина СТОЦКАЯ": "Екатерина Стоцкая",
+     "Майя САРАФАНОВА": "Майя Сарафанова",
+     "Арина ОРЕХОВСКАЯ": "Арина Ореховская",
+     "Риана ГАНИЕВА": "Риана Ганиева",
+     "Анна ДОКУКИНА": "Анна Докукина",
+     "Кира КУЗЬМИНА": "Кира Кузьмина",
+     "Алиса МИЛЬТО": "Алиса Мильто",
+     "Юлиана ЧЕРЕНЕВА": "Юлиана Черенева",
+     "Варвара АВДЕЕВА": "Варвара Авдеева",
+     "Мария ЖУКОВА": "Мария Жукова",
+     "Виктория МИХАЙЛОВА": "Виктория Михайлова",
+     "Александра ГРИШИНА": "Александра Гришина",
+     "Елизавета ШИРЯЕВА": "Елизавета Ширяева",
+     "Марьям ЗЯЛАЛОВА": "Марьям Зялалова",
+     "Дарья ШАРОНОВА": "Дарья Шаронова",
+     "Ульяна БЕССОНОВА": "Ульяна Бессонова"
+    },
+    "basis": "judges"
+   },
+   "facts": [
+    {
+     "kind": "element",
+     "text": "Четверной сальхов",
+     "who": "Екатерина Стоцкая"
+    },
+    {
+     "kind": "element",
+     "text": "2 четверных в программе: 4S, 4T",
+     "who": "Анна Докукина"
+    },
+    {
+     "kind": "element",
+     "text": "Четверной тулуп",
+     "who": "Юлиана Черенева"
+    }
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json"
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:women-senior-kp",
@@ -46985,11 +46985,11 @@
     {
      "name": "Александра Трусова",
      "nation": "RUS",
-     "time": "11:45",
      "no": 3,
      "warmup": 1,
      "place": 3,
-     "points": "72.37"
+     "points": "72.37",
+     "time": "11:45"
     }
    ],
    "athletes": [
@@ -47015,143 +47015,10 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live",
+     "url": "https://www.youtube.com/watch?v=LrEzBtKn2k4",
      "note": "Кроме России"
     }
    ],
-   "desc": "Итог:\n1. Mone Chiba — 76.08\n2. Anastasiia Gubanova — 75.05\n3. Александра Трусова — 72.37\n\nРоссияне:\n• Александра Трусова — 11:45\n\nНачало: 11:25 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
-    {
-     "name": "Mako Yamashita",
-     "nation": "JPN",
-     "time": "11:32",
-     "no": 1,
-     "warmup": 1,
-     "place": 5,
-     "points": "69.17"
-    },
-    {
-     "name": "Alina Bonillo",
-     "nation": "USA",
-     "time": "11:38",
-     "no": 2,
-     "warmup": 1,
-     "place": 10,
-     "points": "59.30"
-    },
-    {
-     "name": "Александра Трусова",
-     "nation": "RUS",
-     "time": "11:45",
-     "no": 3,
-     "warmup": 1,
-     "place": 3,
-     "points": "72.37"
-    },
-    {
-     "name": "Ruiyang Zhang",
-     "nation": "CHN",
-     "time": "11:51",
-     "no": 4,
-     "warmup": 1,
-     "place": 8,
-     "points": "61.20"
-    },
-    {
-     "name": "Yi Zhu",
-     "nation": "CHN",
-     "time": "11:57",
-     "no": 5,
-     "warmup": 1,
-     "place": 7,
-     "points": "64.58"
-    },
-    {
-     "name": "Sophie Joline von Felten",
-     "nation": "USA",
-     "time": "12:03",
-     "no": 6,
-     "warmup": 1,
-     "place": 9,
-     "points": "60.19"
-    },
-    {
-     "name": "Olga Mikutina",
-     "nation": "AUT",
-     "time": "12:17",
-     "no": 7,
-     "warmup": 2,
-     "place": 12,
-     "points": "55.41"
-    },
-    {
-     "name": "Haein Lee",
-     "nation": "KOR",
-     "time": "12:23",
-     "no": 8,
-     "warmup": 2,
-     "place": 6,
-     "points": "67.49"
-    },
-    {
-     "name": "Rinka Watanabe",
-     "nation": "JPN",
-     "time": "12:29",
-     "no": 9,
-     "warmup": 2,
-     "place": 11,
-     "points": "55.72"
-    },
-    {
-     "name": "Anastasiia Gubanova",
-     "nation": "GEO",
-     "time": "12:36",
-     "no": 10,
-     "warmup": 2,
-     "place": 2,
-     "points": "75.05"
-    },
-    {
-     "name": "Lara Naki Gutmann",
-     "nation": "ITA",
-     "time": "12:42",
-     "no": 11,
-     "warmup": 2,
-     "place": 4,
-     "points": "71.76"
-    },
-    {
-     "name": "Mone Chiba",
-     "nation": "JPN",
-     "time": "12:48",
-     "no": 12,
-     "warmup": 2,
-     "place": 1,
-     "points": "76.08"
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpchn2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpchn2026/SEG003.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Mako YAMASHITA": "Mako Yamashita",
-     "Alina BONILLO": "Alina Bonillo",
-     "Alexandra IGNATOVA": "Александра Трусова",
-     "Ruiyang ZHANG": "Ruiyang Zhang",
-     "Yi ZHU": "Yi Zhu",
-     "Sophie Joline von FELTEN": "Sophie Joline von Felten",
-     "Olga MIKUTINA": "Olga Mikutina",
-     "Haein LEE": "Haein Lee",
-     "Rinka WATANABE": "Rinka Watanabe",
-     "Anastasiia GUBANOVA": "Anastasiia Gubanova",
-     "Lara Naki GUTMANN": "Lara Naki Gutmann",
-     "Mone CHIBA": "Mone Chiba"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-cup-of-china-2026.json",
    "podium": [
     {
      "place": 1,
@@ -47171,7 +47038,162 @@
      "nation": "RUS",
      "points": "72.37"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Mone Chiba — 76.08\n2. Anastasiia Gubanova — 75.05\n3. Александра Трусова — 72.37\n\nПримечательное:\n• Anastasiia Gubanova — Личный рекорд за КП: 75.05 (был 72.63)\n• Haein Lee — Тройной аксель\n• Sophie Joline von Felten — Тройной аксель\n• Rinka Watanabe — Тройной аксель\n\nРоссияне:\n• Александра Трусова — 11:45\n\nНачало: 11:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Mako Yamashita",
+     "nation": "JPN",
+     "no": 1,
+     "warmup": 1,
+     "place": 5,
+     "points": "69.17",
+     "time": "11:32"
+    },
+    {
+     "name": "Alina Bonillo",
+     "nation": "USA",
+     "no": 2,
+     "warmup": 1,
+     "place": 10,
+     "points": "59.30",
+     "time": "11:38"
+    },
+    {
+     "name": "Александра Трусова",
+     "nation": "RUS",
+     "no": 3,
+     "warmup": 1,
+     "place": 3,
+     "points": "72.37",
+     "time": "11:45"
+    },
+    {
+     "name": "Ruiyang Zhang",
+     "nation": "CHN",
+     "no": 4,
+     "warmup": 1,
+     "place": 8,
+     "points": "61.20",
+     "time": "11:51"
+    },
+    {
+     "name": "Yi Zhu",
+     "nation": "CHN",
+     "no": 5,
+     "warmup": 1,
+     "place": 7,
+     "points": "64.58",
+     "time": "11:57"
+    },
+    {
+     "name": "Sophie Joline von Felten",
+     "nation": "USA",
+     "no": 6,
+     "warmup": 1,
+     "place": 9,
+     "points": "60.19",
+     "time": "12:03"
+    },
+    {
+     "name": "Olga Mikutina",
+     "nation": "AUT",
+     "no": 7,
+     "warmup": 2,
+     "place": 12,
+     "points": "55.41",
+     "time": "12:17"
+    },
+    {
+     "name": "Haein Lee",
+     "nation": "KOR",
+     "no": 8,
+     "warmup": 2,
+     "place": 6,
+     "points": "67.49",
+     "time": "12:23"
+    },
+    {
+     "name": "Rinka Watanabe",
+     "nation": "JPN",
+     "no": 9,
+     "warmup": 2,
+     "place": 11,
+     "points": "55.72",
+     "time": "12:29"
+    },
+    {
+     "name": "Anastasiia Gubanova",
+     "nation": "GEO",
+     "no": 10,
+     "warmup": 2,
+     "place": 2,
+     "points": "75.05",
+     "time": "12:36"
+    },
+    {
+     "name": "Lara Naki Gutmann",
+     "nation": "ITA",
+     "no": 11,
+     "warmup": 2,
+     "place": 4,
+     "points": "71.76",
+     "time": "12:42"
+    },
+    {
+     "name": "Mone Chiba",
+     "nation": "JPN",
+     "no": 12,
+     "warmup": 2,
+     "place": 1,
+     "points": "76.08",
+     "time": "12:48"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpchn2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpchn2026/SEG003.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Mone CHIBA": "Mone Chiba",
+     "Anastasiia GUBANOVA": "Anastasiia Gubanova",
+     "Alexandra IGNATOVA": "Александра Трусова",
+     "Lara Naki GUTMANN": "Lara Naki Gutmann",
+     "Mako YAMASHITA": "Mako Yamashita",
+     "Haein LEE": "Haein Lee",
+     "Yi ZHU": "Yi Zhu",
+     "Ruiyang ZHANG": "Ruiyang Zhang",
+     "Sophie Joline von FELTEN": "Sophie Joline von Felten",
+     "Alina BONILLO": "Alina Bonillo",
+     "Rinka WATANABE": "Rinka Watanabe",
+     "Olga MIKUTINA": "Olga Mikutina"
+    },
+    "basis": "judges"
+   },
+   "facts": [
+    {
+     "who": "Anastasiia Gubanova",
+     "text": "Личный рекорд за КП: 75.05 (был 72.63)",
+     "kind": "score"
+    },
+    {
+     "who": "Haein Lee",
+     "text": "Тройной аксель",
+     "kind": "element"
+    },
+    {
+     "who": "Sophie Joline von Felten",
+     "text": "Тройной аксель",
+     "kind": "element"
+    },
+    {
+     "who": "Rinka Watanabe",
+     "text": "Тройной аксель",
+     "kind": "element"
+    }
+   ],
+   "proto": "isu_isu-gp-cup-of-china-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:men-junior-pp",
@@ -47182,7 +47204,7 @@
    "seg": "ПП",
    "title": "ЮГП России «Золото Урала» — юноши ПП",
    "start": "2026-11-06T13:45:00+03:00",
-   "end": "2026-11-06T16:18:00+03:00",
+   "end": "2026-11-06T16:35:00+03:00",
    "venue": "УГМК-Арена, Екатеринбург",
    "intl": false,
    "broadcast": [
@@ -47218,220 +47240,9 @@
     },
     {
      "name": "YouTube",
-     "url": "https://www.youtube.com/@ice_skating/live"
+     "url": "https://www.youtube.com/watch?v=lz20vGD0pvY"
     }
    ],
-   "desc": "Итог:\n1. Ильяс Халиуллин — 162.38\n2. Герман Ленков — 155.10\n3. Вячеслав Касьяненко — 146.13\n\nИтог турнира:\n1. Герман Ленков — 236.50\n2. Ильяс Халиуллин — 236.38\n3. Вячеслав Касьяненко — 218.01\n\nПримечательное:\n• Ильяс Халиуллин — После короткой программы — 5-е место, в итоге — 2-е место\n• Вячеслав Касьяненко — После короткой программы — 6-е место, в итоге — 3-е место\n\nНачало: 13:45 МСК\nТрансляция: Первый канал / YouTube",
-   "field": [
-    {
-     "name": "Марк Титов",
-     "nation": "ТАТ",
-     "time": "13:52",
-     "no": 1,
-     "warmup": 1,
-     "place": 15,
-     "points": "105.40",
-     "final": 16
-    },
-    {
-     "name": "Богдан Шелапутин",
-     "nation": "ЯАО",
-     "time": "14:11",
-     "no": 4,
-     "warmup": 1,
-     "place": 18,
-     "points": "88.66",
-     "final": 17
-    },
-    {
-     "name": "Ярослав Хрулев",
-     "nation": "МОС",
-     "time": "14:17",
-     "no": 5,
-     "warmup": 1,
-     "place": 10,
-     "points": "130.59",
-     "final": 12
-    },
-    {
-     "name": "Леонтий Камзолов",
-     "nation": "МОС",
-     "time": "14:24",
-     "no": 6,
-     "warmup": 1,
-     "place": 14,
-     "points": "105.52",
-     "final": 14
-    },
-    {
-     "name": "Илья Старков",
-     "nation": "ЛОБ",
-     "time": "14:30",
-     "no": 2,
-     "warmup": 1,
-     "place": 17,
-     "points": "97.53",
-     "final": 18
-    },
-    {
-     "name": "Данил Колосков",
-     "nation": "СПБ",
-     "time": "14:38",
-     "no": 7,
-     "warmup": 2,
-     "place": 11,
-     "points": "128.60",
-     "final": 11
-    },
-    {
-     "name": "Серафим Макеев",
-     "nation": "СПБ",
-     "time": "14:44",
-     "no": 8,
-     "warmup": 2,
-     "place": 9,
-     "points": "133.17",
-     "final": 10
-    },
-    {
-     "name": "Илья Малышев",
-     "nation": "МОС",
-     "time": "14:50",
-     "no": 9,
-     "warmup": 2,
-     "place": 5,
-     "points": "141.61",
-     "final": 6
-    },
-    {
-     "name": "Никита Малютин",
-     "nation": "МОС",
-     "time": "14:57",
-     "no": 10,
-     "warmup": 2,
-     "place": 6,
-     "points": "138.21",
-     "final": 8
-    },
-    {
-     "name": "Александр Семков",
-     "nation": "СПБ",
-     "time": "15:03",
-     "no": 11,
-     "warmup": 2,
-     "place": 4,
-     "points": "145.93",
-     "final": 4
-    },
-    {
-     "name": "Дмитрий Железняк",
-     "nation": "СВЕ",
-     "time": "15:09",
-     "no": 12,
-     "warmup": 2,
-     "place": 13,
-     "points": "115.09",
-     "final": 13
-    },
-    {
-     "name": "Егор Васько",
-     "nation": "МОС",
-     "time": "15:31",
-     "no": 3,
-     "warmup": 1,
-     "place": 16,
-     "points": "104.66",
-     "final": 15
-    },
-    {
-     "name": "Вячеслав Касьяненко",
-     "nation": "СПБ",
-     "time": "15:38",
-     "no": 13,
-     "warmup": 3,
-     "place": 3,
-     "points": "146.13",
-     "final": 3
-    },
-    {
-     "name": "Ильяс Халиуллин",
-     "nation": "ТАТ",
-     "time": "15:44",
-     "no": 14,
-     "warmup": 3,
-     "place": 1,
-     "points": "162.38",
-     "final": 2
-    },
-    {
-     "name": "Алексей Заводских",
-     "nation": "МОС",
-     "time": "15:51",
-     "no": 15,
-     "warmup": 3,
-     "place": 8,
-     "points": "135.38",
-     "final": 7
-    },
-    {
-     "name": "Добромир Воронов",
-     "nation": "СПБ",
-     "time": "15:57",
-     "no": 16,
-     "warmup": 3,
-     "place": 7,
-     "points": "136.35",
-     "final": 5
-    },
-    {
-     "name": "Михаил Клепацкий",
-     "nation": "СПБ",
-     "time": "16:03",
-     "no": 17,
-     "warmup": 3,
-     "place": 12,
-     "points": "128.38",
-     "final": 9
-    },
-    {
-     "name": "Герман Ленков",
-     "nation": "СПБ",
-     "time": "16:10",
-     "no": 18,
-     "warmup": 3,
-     "place": 2,
-     "points": "155.10",
-     "final": 1
-    }
-   ],
-   "live": {
-    "idx": "https://fsrussia.ru/results/2627/5etap_jun/index.htm",
-    "seg": "https://fsrussia.ru/results/2627/5etap_jun/SEG002.htm",
-    "cat": "https://fsrussia.ru/results/2627/5etap_jun/CAT001RS.htm",
-    "first": "https://fsrussia.ru/results/2627/5etap_jun/SEG001.htm",
-    "names": {
-     "Марк ТИТОВ": "Марк Титов",
-     "Илья СТАРКОВ": "Илья Старков",
-     "Егор ВАСЬКО": "Егор Васько",
-     "Богдан ШЕЛАПУТИН": "Богдан Шелапутин",
-     "Ярослав ХРУЛЕВ": "Ярослав Хрулев",
-     "Леонтий КАМЗОЛОВ": "Леонтий Камзолов",
-     "Данил КОЛОСКОВ": "Данил Колосков",
-     "Серафим МАКЕЕВ": "Серафим Макеев",
-     "Илья МАЛЫШЕВ": "Илья Малышев",
-     "Никита МАЛЮТИН": "Никита Малютин",
-     "Александр СЕМКОВ": "Александр Семков",
-     "Дмитрий ЖЕЛЕЗНЯК": "Дмитрий Железняк",
-     "Вячеслав КАСЬЯНЕНКО": "Вячеслав Касьяненко",
-     "Ильяс ХАЛИУЛЛИН": "Ильяс Халиуллин",
-     "Алексей ЗАВОДСКИХ": "Алексей Заводских",
-     "Добромир ВОРОНОВ": "Добромир Воронов",
-     "Михаил КЛЕПАЦКИЙ": "Михаил Клепацкий",
-     "Герман ЛЕНКОВ": "Герман Ленков"
-    },
-    "basis": "judges"
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json",
    "podium": [
     {
      "place": 1,
@@ -47472,18 +47283,229 @@
      "points": "218.01"
     }
    ],
-   "facts": [
+   "desc": "Итог:\n1. Ильяс Халиуллин — 162.38\n2. Герман Ленков — 155.10\n3. Вячеслав Касьяненко — 146.13\n\nИтог турнира:\n1. Герман Ленков — 236.50\n2. Ильяс Халиуллин — 236.38\n3. Вячеслав Касьяненко — 218.01\n\nПримечательное:\n• Ильяс Халиуллин — После короткой программы — 5-е место, в итоге — 2-е место\n• Вячеслав Касьяненко — После короткой программы — 6-е место, в итоге — 3-е место\n\nНачало: 13:45 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
     {
-     "who": "Ильяс Халиуллин",
-     "text": "После короткой программы — 5-е место, в итоге — 2-е место",
-     "kind": "place"
+     "name": "Марк Титов",
+     "nation": "ТАТ",
+     "no": 1,
+     "warmup": 1,
+     "place": 15,
+     "points": "105.40",
+     "final": 16,
+     "time": "13:52"
     },
     {
-     "who": "Вячеслав Касьяненко",
-     "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "kind": "place"
+     "name": "Илья Старков",
+     "nation": "ЛОБ",
+     "no": 2,
+     "warmup": 1,
+     "place": 17,
+     "points": "97.53",
+     "final": 18,
+     "time": "14:30"
+    },
+    {
+     "name": "Егор Васько",
+     "nation": "МОС",
+     "no": 3,
+     "warmup": 1,
+     "place": 16,
+     "points": "104.66",
+     "final": 15,
+     "time": "15:31"
+    },
+    {
+     "name": "Богдан Шелапутин",
+     "nation": "ЯАО",
+     "no": 4,
+     "warmup": 1,
+     "place": 18,
+     "points": "88.66",
+     "final": 17,
+     "time": "14:11"
+    },
+    {
+     "name": "Ярослав Хрулев",
+     "nation": "МОС",
+     "no": 5,
+     "warmup": 1,
+     "place": 10,
+     "points": "130.59",
+     "final": 12,
+     "time": "14:17"
+    },
+    {
+     "name": "Леонтий Камзолов",
+     "nation": "МОС",
+     "no": 6,
+     "warmup": 1,
+     "place": 14,
+     "points": "105.52",
+     "final": 14,
+     "time": "14:24"
+    },
+    {
+     "name": "Данил Колосков",
+     "nation": "СПБ",
+     "no": 7,
+     "warmup": 2,
+     "place": 11,
+     "points": "128.60",
+     "final": 11,
+     "time": "14:38"
+    },
+    {
+     "name": "Серафим Макеев",
+     "nation": "СПБ",
+     "no": 8,
+     "warmup": 2,
+     "place": 9,
+     "points": "133.17",
+     "final": 10,
+     "time": "14:44"
+    },
+    {
+     "name": "Илья Малышев",
+     "nation": "МОС",
+     "no": 9,
+     "warmup": 2,
+     "place": 5,
+     "points": "141.61",
+     "final": 6,
+     "time": "14:50"
+    },
+    {
+     "name": "Никита Малютин",
+     "nation": "МОС",
+     "no": 10,
+     "warmup": 2,
+     "place": 6,
+     "points": "138.21",
+     "final": 8,
+     "time": "14:57"
+    },
+    {
+     "name": "Александр Семков",
+     "nation": "СПБ",
+     "no": 11,
+     "warmup": 2,
+     "place": 4,
+     "points": "145.93",
+     "final": 4,
+     "time": "15:03"
+    },
+    {
+     "name": "Дмитрий Железняк",
+     "nation": "СВЕ",
+     "no": 12,
+     "warmup": 2,
+     "place": 13,
+     "points": "115.09",
+     "final": 13,
+     "time": "15:09"
+    },
+    {
+     "name": "Вячеслав Касьяненко",
+     "nation": "СПБ",
+     "no": 13,
+     "warmup": 3,
+     "place": 3,
+     "points": "146.13",
+     "final": 3,
+     "time": "15:38"
+    },
+    {
+     "name": "Ильяс Халиуллин",
+     "nation": "ТАТ",
+     "no": 14,
+     "warmup": 3,
+     "place": 1,
+     "points": "162.38",
+     "final": 2,
+     "time": "15:44"
+    },
+    {
+     "name": "Алексей Заводских",
+     "nation": "МОС",
+     "no": 15,
+     "warmup": 3,
+     "place": 8,
+     "points": "135.38",
+     "final": 7,
+     "time": "15:51"
+    },
+    {
+     "name": "Добромир Воронов",
+     "nation": "СПБ",
+     "no": 16,
+     "warmup": 3,
+     "place": 7,
+     "points": "136.35",
+     "final": 5,
+     "time": "15:57"
+    },
+    {
+     "name": "Михаил Клепацкий",
+     "nation": "СПБ",
+     "no": 17,
+     "warmup": 3,
+     "place": 12,
+     "points": "128.38",
+     "final": 9,
+     "time": "16:03"
+    },
+    {
+     "name": "Герман Ленков",
+     "nation": "СПБ",
+     "no": 18,
+     "warmup": 3,
+     "place": 2,
+     "points": "155.10",
+     "final": 1,
+     "time": "16:10"
     }
-   ]
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/5etap_jun/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/5etap_jun/SEG002.htm",
+    "cat": "https://fsrussia.ru/results/2627/5etap_jun/CAT001RS.htm",
+    "first": "https://fsrussia.ru/results/2627/5etap_jun/SEG001.htm",
+    "names": {
+     "Ильяс ХАЛИУЛЛИН": "Ильяс Халиуллин",
+     "Герман ЛЕНКОВ": "Герман Ленков",
+     "Вячеслав КАСЬЯНЕНКО": "Вячеслав Касьяненко",
+     "Александр СЕМКОВ": "Александр Семков",
+     "Илья МАЛЫШЕВ": "Илья Малышев",
+     "Никита МАЛЮТИН": "Никита Малютин",
+     "Добромир ВОРОНОВ": "Добромир Воронов",
+     "Алексей ЗАВОДСКИХ": "Алексей Заводских",
+     "Серафим МАКЕЕВ": "Серафим Макеев",
+     "Ярослав ХРУЛЕВ": "Ярослав Хрулев",
+     "Данил КОЛОСКОВ": "Данил Колосков",
+     "Михаил КЛЕПАЦКИЙ": "Михаил Клепацкий",
+     "Дмитрий ЖЕЛЕЗНЯК": "Дмитрий Железняк",
+     "Леонтий КАМЗОЛОВ": "Леонтий Камзолов",
+     "Марк ТИТОВ": "Марк Титов",
+     "Егор ВАСЬКО": "Егор Васько",
+     "Илья СТАРКОВ": "Илья Старков",
+     "Богдан ШЕЛАПУТИН": "Богдан Шелапутин"
+    },
+    "basis": "judges"
+   },
+   "facts": [
+    {
+     "kind": "place",
+     "text": "После короткой программы — 5-е место, в итоге — 2-е место",
+     "who": "Ильяс Халиуллин"
+    },
+    {
+     "kind": "place",
+     "text": "После короткой программы — 6-е место, в итоге — 3-е место",
+     "who": "Вячеслав Касьяненко"
+    }
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json"
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:pairs-senior-kp",
@@ -47494,7 +47516,7 @@
    "seg": "КП",
    "title": "GP Cup of China — пары КП",
    "start": "2026-11-06T14:00:00+03:00",
-   "end": "2026-11-06T15:07:00+03:00",
+   "end": "2026-11-06T15:10:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
    "broadcast": [
@@ -47505,11 +47527,11 @@
     {
      "name": "Анастасия Мишина / Александр Галлямов",
      "nation": "RUS",
-     "time": "14:07",
      "no": 1,
      "warmup": 1,
      "place": 1,
-     "points": "74.69"
+     "points": "74.69",
+     "time": "14:07"
     }
    ],
    "athletes": [
@@ -47531,103 +47553,10 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live",
+     "url": "https://www.youtube.com/watch?v=8S94rHbj22k",
      "note": "Кроме России"
     }
    ],
-   "desc": "Итог:\n1. Анастасия Мишина / Александр Галлямов — 74.69\n2. Anastasiia Metelkina / Luka Berulava — 67.06\n3. Karina Akopova / Nikita Rakhmanin — 66.34\n\nРоссияне:\n• Анастасия Мишина / Александр Галлямов — 14:07\n\nНачало: 14:00 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
-    {
-     "name": "Анастасия Мишина / Александр Галлямов",
-     "nation": "RUS",
-     "time": "14:07",
-     "no": 1,
-     "warmup": 1,
-     "place": 1,
-     "points": "74.69"
-    },
-    {
-     "name": "Chelsea Liu / Ryan Bedard",
-     "nation": "USA",
-     "time": "14:13",
-     "no": 2,
-     "warmup": 1,
-     "place": 5,
-     "points": "62.71"
-    },
-    {
-     "name": "Valentina Plazas / Maximiliano Fernandez",
-     "nation": "USA",
-     "time": "14:20",
-     "no": 3,
-     "warmup": 1,
-     "place": 6,
-     "points": "59.48"
-    },
-    {
-     "name": "Karina Akopova / Nikita Rakhmanin",
-     "nation": "ARM",
-     "time": "14:26",
-     "no": 4,
-     "warmup": 1,
-     "place": 3,
-     "points": "66.34"
-    },
-    {
-     "name": "Jazmine Desrochers / Kieran Thrasher",
-     "nation": "CAN",
-     "time": "14:40",
-     "no": 5,
-     "warmup": 2,
-     "place": 7,
-     "points": "59.24"
-    },
-    {
-     "name": "Jiaxuan Zhang / Yihang Huang",
-     "nation": "CHN",
-     "time": "14:46",
-     "no": 6,
-     "warmup": 2,
-     "place": 8,
-     "points": "56.52"
-    },
-    {
-     "name": "Yuna Nagaoka / Sumitada Moriguchi",
-     "nation": "JPN",
-     "time": "14:53",
-     "no": 7,
-     "warmup": 2,
-     "place": 4,
-     "points": "63.06"
-    },
-    {
-     "name": "Anastasiia Metelkina / Luka Berulava",
-     "nation": "GEO",
-     "time": "14:59",
-     "no": 8,
-     "warmup": 2,
-     "place": 2,
-     "points": "67.06"
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpchn2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpchn2026/SEG005.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Anastasia MISHINA / Aleksandr GALLIAMOV": "Анастасия Мишина / Александр Галлямов",
-     "Chelsea LIU / Ryan BEDARD": "Chelsea Liu / Ryan Bedard",
-     "Valentina PLAZAS / Maximiliano FERNANDEZ": "Valentina Plazas / Maximiliano Fernandez",
-     "Karina AKOPOVA / Nikita RAKHMANIN": "Karina Akopova / Nikita Rakhmanin",
-     "Jazmine DESROCHERS / Kieran THRASHER": "Jazmine Desrochers / Kieran Thrasher",
-     "Jiaxuan ZHANG / Yihang HUANG": "Jiaxuan Zhang / Yihang Huang",
-     "Yuna NAGAOKA / Sumitada MORIGUCHI": "Yuna Nagaoka / Sumitada Moriguchi",
-     "Anastasiia METELKINA / Luka BERULAVA": "Anastasiia Metelkina / Luka Berulava"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-cup-of-china-2026.json",
    "podium": [
     {
      "place": 1,
@@ -47647,7 +47576,100 @@
      "nation": "ARM",
      "points": "66.34"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Анастасия Мишина / Александр Галлямов — 74.69\n2. Anastasiia Metelkina / Luka Berulava — 67.06\n3. Karina Akopova / Nikita Rakhmanin — 66.34\n\nРоссияне:\n• Анастасия Мишина / Александр Галлямов — 14:07\n\nНачало: 14:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "RUS",
+     "no": 1,
+     "warmup": 1,
+     "place": 1,
+     "points": "74.69",
+     "time": "14:07"
+    },
+    {
+     "name": "Chelsea Liu / Ryan Bedard",
+     "nation": "USA",
+     "no": 2,
+     "warmup": 1,
+     "place": 5,
+     "points": "62.71",
+     "time": "14:13"
+    },
+    {
+     "name": "Valentina Plazas / Maximiliano Fernandez",
+     "nation": "USA",
+     "no": 3,
+     "warmup": 1,
+     "place": 6,
+     "points": "59.48",
+     "time": "14:20"
+    },
+    {
+     "name": "Karina Akopova / Nikita Rakhmanin",
+     "nation": "ARM",
+     "no": 4,
+     "warmup": 1,
+     "place": 3,
+     "points": "66.34",
+     "time": "14:26"
+    },
+    {
+     "name": "Jazmine Desrochers / Kieran Thrasher",
+     "nation": "CAN",
+     "no": 5,
+     "warmup": 2,
+     "place": 7,
+     "points": "59.24",
+     "time": "14:40"
+    },
+    {
+     "name": "Jiaxuan Zhang / Yihang Huang",
+     "nation": "CHN",
+     "no": 6,
+     "warmup": 2,
+     "place": 8,
+     "points": "56.52",
+     "time": "14:46"
+    },
+    {
+     "name": "Yuna Nagaoka / Sumitada Moriguchi",
+     "nation": "JPN",
+     "no": 7,
+     "warmup": 2,
+     "place": 4,
+     "points": "63.06",
+     "time": "14:53"
+    },
+    {
+     "name": "Anastasiia Metelkina / Luka Berulava",
+     "nation": "GEO",
+     "no": 8,
+     "warmup": 2,
+     "place": 2,
+     "points": "67.06",
+     "time": "14:59"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpchn2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpchn2026/SEG005.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Anastasia MISHINA / Aleksandr GALLIAMOV": "Анастасия Мишина / Александр Галлямов",
+     "Anastasiia METELKINA / Luka BERULAVA": "Anastasiia Metelkina / Luka Berulava",
+     "Karina AKOPOVA / Nikita RAKHMANIN": "Karina Akopova / Nikita Rakhmanin",
+     "Yuna NAGAOKA / Sumitada MORIGUCHI": "Yuna Nagaoka / Sumitada Moriguchi",
+     "Chelsea LIU / Ryan BEDARD": "Chelsea Liu / Ryan Bedard",
+     "Valentina PLAZAS / Maximiliano FERNANDEZ": "Valentina Plazas / Maximiliano Fernandez",
+     "Jazmine DESROCHERS / Kieran THRASHER": "Jazmine Desrochers / Kieran Thrasher",
+     "Jiaxuan ZHANG / Yihang HUANG": "Jiaxuan Zhang / Yihang Huang"
+    },
+    "basis": "judges"
+   },
+   "proto": "isu_isu-gp-cup-of-china-2026.json"
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:men-senior-kp",
@@ -47669,20 +47691,20 @@
     {
      "name": "Евгений Семененко",
      "nation": "RUS",
-     "time": "15:38",
      "no": 2,
      "warmup": 1,
      "place": 3,
-     "points": "99.72"
+     "points": "99.72",
+     "time": "15:38"
     },
     {
      "name": "Владислав Дикиджи",
      "nation": "RUS",
-     "time": "15:45",
      "no": 3,
      "warmup": 1,
      "place": 4,
-     "points": "98.86"
+     "points": "98.86",
+     "time": "15:45"
     }
    ],
    "athletes": [
@@ -47708,143 +47730,10 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live",
+     "url": "https://www.youtube.com/watch?v=wo0-2FqyLmk",
      "note": "Кроме России"
     }
    ],
-   "desc": "Итог:\n1. Kao Miura — 102.90\n2. Shun Sato — 101.97\n3. Евгений Семененко — 99.72\n\nРоссияне:\n• Евгений Семененко — 15:38\n• Владислав Дикиджи — 15:45\n\nНачало: 15:25 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
-    {
-     "name": "Zhiming Peng",
-     "nation": "CHN",
-     "time": "15:32",
-     "no": 1,
-     "warmup": 1,
-     "place": 8,
-     "points": "87.65"
-    },
-    {
-     "name": "Евгений Семененко",
-     "nation": "RUS",
-     "time": "15:38",
-     "no": 2,
-     "warmup": 1,
-     "place": 3,
-     "points": "99.72"
-    },
-    {
-     "name": "Владислав Дикиджи",
-     "nation": "RUS",
-     "time": "15:45",
-     "no": 3,
-     "warmup": 1,
-     "place": 4,
-     "points": "98.86"
-    },
-    {
-     "name": "Yudong Chen",
-     "nation": "CHN",
-     "time": "15:51",
-     "no": 4,
-     "warmup": 1,
-     "place": 9,
-     "points": "80.74"
-    },
-    {
-     "name": "Lucius Kazanecki",
-     "nation": "USA",
-     "time": "15:57",
-     "no": 5,
-     "warmup": 1,
-     "place": 12,
-     "points": "63.16"
-    },
-    {
-     "name": "Vladimir Samoilov",
-     "nation": "POL",
-     "time": "16:03",
-     "no": 6,
-     "warmup": 1,
-     "place": 6,
-     "points": "88.21"
-    },
-    {
-     "name": "Jacob Sanchez",
-     "nation": "USA",
-     "time": "16:17",
-     "no": 7,
-     "warmup": 2,
-     "place": 11,
-     "points": "79.45"
-    },
-    {
-     "name": "Minkyu Seo",
-     "nation": "KOR",
-     "time": "16:23",
-     "no": 8,
-     "warmup": 2,
-     "place": 10,
-     "points": "79.77"
-    },
-    {
-     "name": "Kao Miura",
-     "nation": "JPN",
-     "time": "16:29",
-     "no": 9,
-     "warmup": 2,
-     "place": 1,
-     "points": "102.90"
-    },
-    {
-     "name": "Nika Egadze",
-     "nation": "GEO",
-     "time": "16:36",
-     "no": 10,
-     "warmup": 2,
-     "place": 7,
-     "points": "87.67"
-    },
-    {
-     "name": "Shun Sato",
-     "nation": "JPN",
-     "time": "16:42",
-     "no": 11,
-     "warmup": 2,
-     "place": 2,
-     "points": "101.97"
-    },
-    {
-     "name": "Mikhail Shaidorov",
-     "nation": "KAZ",
-     "time": "16:48",
-     "no": 12,
-     "warmup": 2,
-     "place": 5,
-     "points": "94.87"
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpchn2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpchn2026/SEG001.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Zhiming PENG": "Zhiming Peng",
-     "Evgeni SEMENENKO": "Евгений Семененко",
-     "Vladislav DIKIDZHI": "Владислав Дикиджи",
-     "Yudong CHEN": "Yudong Chen",
-     "Lucius KAZANECKI": "Lucius Kazanecki",
-     "Vladimir SAMOILOV": "Vladimir Samoilov",
-     "Jacob SANCHEZ": "Jacob Sanchez",
-     "Minkyu SEO": "Minkyu Seo",
-     "Kao MIURA": "Kao Miura",
-     "Nika EGADZE": "Nika Egadze",
-     "Shun SATO": "Shun Sato",
-     "Mikhail SHAIDOROV": "Mikhail Shaidorov"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-cup-of-china-2026.json",
    "podium": [
     {
      "place": 1,
@@ -47864,7 +47753,147 @@
      "nation": "RUS",
      "points": "99.72"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Kao Miura — 102.90\n2. Shun Sato — 101.97\n3. Евгений Семененко — 99.72\n\nПримечательное:\n• Shun Sato — Личный рекорд за КП: 101.97 (был 99.20)\n\nРоссияне:\n• Евгений Семененко — 15:38\n• Владислав Дикиджи — 15:45\n\nНачало: 15:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Zhiming Peng",
+     "nation": "CHN",
+     "no": 1,
+     "warmup": 1,
+     "place": 8,
+     "points": "87.65",
+     "time": "15:32"
+    },
+    {
+     "name": "Евгений Семененко",
+     "nation": "RUS",
+     "no": 2,
+     "warmup": 1,
+     "place": 3,
+     "points": "99.72",
+     "time": "15:38"
+    },
+    {
+     "name": "Владислав Дикиджи",
+     "nation": "RUS",
+     "no": 3,
+     "warmup": 1,
+     "place": 4,
+     "points": "98.86",
+     "time": "15:45"
+    },
+    {
+     "name": "Yudong Chen",
+     "nation": "CHN",
+     "no": 4,
+     "warmup": 1,
+     "place": 9,
+     "points": "80.74",
+     "time": "15:51"
+    },
+    {
+     "name": "Lucius Kazanecki",
+     "nation": "USA",
+     "no": 5,
+     "warmup": 1,
+     "place": 12,
+     "points": "63.16",
+     "time": "15:57"
+    },
+    {
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "no": 6,
+     "warmup": 1,
+     "place": 6,
+     "points": "88.21",
+     "time": "16:03"
+    },
+    {
+     "name": "Jacob Sanchez",
+     "nation": "USA",
+     "no": 7,
+     "warmup": 2,
+     "place": 11,
+     "points": "79.45",
+     "time": "16:17"
+    },
+    {
+     "name": "Minkyu Seo",
+     "nation": "KOR",
+     "no": 8,
+     "warmup": 2,
+     "place": 10,
+     "points": "79.77",
+     "time": "16:23"
+    },
+    {
+     "name": "Kao Miura",
+     "nation": "JPN",
+     "no": 9,
+     "warmup": 2,
+     "place": 1,
+     "points": "102.90",
+     "time": "16:29"
+    },
+    {
+     "name": "Nika Egadze",
+     "nation": "GEO",
+     "no": 10,
+     "warmup": 2,
+     "place": 7,
+     "points": "87.67",
+     "time": "16:36"
+    },
+    {
+     "name": "Shun Sato",
+     "nation": "JPN",
+     "no": 11,
+     "warmup": 2,
+     "place": 2,
+     "points": "101.97",
+     "time": "16:42"
+    },
+    {
+     "name": "Mikhail Shaidorov",
+     "nation": "KAZ",
+     "no": 12,
+     "warmup": 2,
+     "place": 5,
+     "points": "94.87",
+     "time": "16:48"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpchn2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpchn2026/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Kao MIURA": "Kao Miura",
+     "Shun SATO": "Shun Sato",
+     "Evgeni SEMENENKO": "Евгений Семененко",
+     "Vladislav DIKIDZHI": "Владислав Дикиджи",
+     "Mikhail SHAIDOROV": "Mikhail Shaidorov",
+     "Vladimir SAMOILOV": "Vladimir Samoilov",
+     "Nika EGADZE": "Nika Egadze",
+     "Zhiming PENG": "Zhiming Peng",
+     "Yudong CHEN": "Yudong Chen",
+     "Minkyu SEO": "Minkyu Seo",
+     "Jacob SANCHEZ": "Jacob Sanchez",
+     "Lucius KAZANECKI": "Lucius Kazanecki"
+    },
+    "basis": "judges"
+   },
+   "facts": [
+    {
+     "who": "Shun Sato",
+     "text": "Личный рекорд за КП: 101.97 (был 99.20)",
+     "kind": "score"
+    }
+   ],
+   "proto": "isu_isu-gp-cup-of-china-2026.json"
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:dance-senior-pt",
@@ -47875,7 +47904,7 @@
    "seg": "ПТ",
    "title": "GP Cup of China — танцы ПТ",
    "start": "2026-11-07T09:30:00+03:00",
-   "end": "2026-11-07T10:55:00+03:00",
+   "end": "2026-11-07T11:02:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
    "broadcast": [
@@ -47911,44 +47940,74 @@
    "desc": "Начало: 09:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Diana Davis / Gleb Smolkin",
-     "nation": "GEO"
-    },
-    {
-     "name": "Emily Bratti / Ian Somerville",
-     "nation": "USA"
-    },
-    {
-     "name": "Eva Pate / Logan Bye",
-     "nation": "USA"
+     "name": "Yufei Lin / Zijian Gao",
+     "nation": "CHN",
+     "time": "09:36",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Junfei Ren / Jianing Xing",
-     "nation": "CHN"
-    },
-    {
-     "name": "Lilah Fear / Lewis Gibson",
-     "nation": "GBR"
-    },
-    {
-     "name": "Loicia Demougeot / Theo le Mercier",
-     "nation": "FRA"
-    },
-    {
-     "name": "Natalie Taschlerova / Filip Taschler",
-     "nation": "CZE"
-    },
-    {
-     "name": "Olivia Smart / Tim Dieck",
-     "nation": "ESP"
-    },
-    {
-     "name": "Yufei Lin / Zijian Gao",
-     "nation": "CHN"
+     "nation": "CHN",
+     "time": "09:44",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Zixi Xiao / Linghao He",
-     "nation": "CHN"
+     "nation": "CHN",
+     "time": "09:52",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Eva Pate / Logan Bye",
+     "nation": "USA",
+     "time": "10:00",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Emily Bratti / Ian Somerville",
+     "nation": "USA",
+     "time": "10:08",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Olivia Smart / Tim Dieck",
+     "nation": "ESP",
+     "time": "10:22",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Loicia Demougeot / Theo le Mercier",
+     "nation": "FRA",
+     "time": "10:30",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Natalie Taschlerova / Filip Taschler",
+     "nation": "CZE",
+     "time": "10:38",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Diana Davis / Gleb Smolkin",
+     "nation": "GEO",
+     "time": "10:46",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Lilah Fear / Lewis Gibson",
+     "nation": "GBR",
+     "time": "10:54",
+     "no": 10,
+     "warmup": 2
     }
    ],
    "live": {
@@ -47960,13 +48019,13 @@
      "Yufei LIN / Zijian GAO": "Yufei Lin / Zijian Gao",
      "Junfei REN / Jianing XING": "Junfei Ren / Jianing Xing",
      "Zixi XIAO / Linghao HE": "Zixi Xiao / Linghao He",
-     "Natalie TASCHLEROVA / Filip TASCHLER": "Natalie Taschlerova / Filip Taschler",
+     "Eva PATE / Logan BYE": "Eva Pate / Logan Bye",
+     "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
      "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck",
      "Loicia DEMOUGEOT / Theo le MERCIER": "Loicia Demougeot / Theo le Mercier",
-     "Lilah FEAR / Lewis GIBSON": "Lilah Fear / Lewis Gibson",
+     "Natalie TASCHLEROVA / Filip TASCHLER": "Natalie Taschlerova / Filip Taschler",
      "Diana DAVIS / Gleb SMOLKIN": "Diana Davis / Gleb Smolkin",
-     "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
-     "Eva PATE / Logan BYE": "Eva Pate / Logan Bye"
+     "Lilah FEAR / Lewis GIBSON": "Lilah Fear / Lewis Gibson"
     },
     "basis": null
    },
@@ -47981,7 +48040,7 @@
    "seg": "ПП",
    "title": "GP Cup of China — женщины ПП",
    "start": "2026-11-07T11:30:00+03:00",
-   "end": "2026-11-07T13:15:00+03:00",
+   "end": "2026-11-07T13:17:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
    "broadcast": [
@@ -47991,7 +48050,10 @@
    "ours": [
     {
      "name": "Александра Трусова",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "12:54",
+     "no": 10,
+     "warmup": 2
     }
    ],
    "athletes": [
@@ -48021,55 +48083,91 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Россияне:\n• Александра Трусова\n\nНачало: 11:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Россияне:\n• Александра Трусова — 12:54\n\nНачало: 11:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Alina Bonillo",
-     "nation": "USA"
-    },
-    {
-     "name": "Anastasiia Gubanova",
-     "nation": "GEO"
-    },
-    {
-     "name": "Haein Lee",
-     "nation": "KOR"
-    },
-    {
-     "name": "Lara Naki Gutmann",
-     "nation": "ITA"
-    },
-    {
-     "name": "Mako Yamashita",
-     "nation": "JPN"
-    },
-    {
-     "name": "Mone Chiba",
-     "nation": "JPN"
-    },
-    {
      "name": "Olga Mikutina",
-     "nation": "AUT"
+     "nation": "AUT",
+     "time": "11:37",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Rinka Watanabe",
-     "nation": "JPN"
+     "nation": "JPN",
+     "time": "11:45",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Ruiyang Zhang",
-     "nation": "CHN"
+     "name": "Alina Bonillo",
+     "nation": "USA",
+     "time": "11:53",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Sophie Joline von Felten",
-     "nation": "USA"
+     "nation": "USA",
+     "time": "12:00",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Ruiyang Zhang",
+     "nation": "CHN",
+     "time": "12:08",
+     "no": 5,
+     "warmup": 1
     },
     {
      "name": "Yi Zhu",
-     "nation": "CHN"
+     "nation": "CHN",
+     "time": "12:16",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Haein Lee",
+     "nation": "KOR",
+     "time": "12:31",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Mako Yamashita",
+     "nation": "JPN",
+     "time": "12:39",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Lara Naki Gutmann",
+     "nation": "ITA",
+     "time": "12:46",
+     "no": 9,
+     "warmup": 2
     },
     {
      "name": "Александра Трусова",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "12:54",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Anastasiia Gubanova",
+     "nation": "GEO",
+     "time": "13:02",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Mone Chiba",
+     "nation": "JPN",
+     "time": "13:09",
+     "no": 12,
+     "warmup": 2
     }
    ],
    "live": {
@@ -48078,18 +48176,18 @@
     "cat": "https://results.isu.org/results/season2627/gpchn2026/CAT002RS.htm",
     "first": "https://results.isu.org/results/season2627/gpchn2026/SEG003.htm",
     "names": {
-     "Alexandra IGNATOVA": "Александра Трусова",
      "Olga MIKUTINA": "Olga Mikutina",
+     "Rinka WATANABE": "Rinka Watanabe",
+     "Alina BONILLO": "Alina Bonillo",
+     "Sophie Joline von FELTEN": "Sophie Joline von Felten",
      "Ruiyang ZHANG": "Ruiyang Zhang",
      "Yi ZHU": "Yi Zhu",
-     "Anastasiia GUBANOVA": "Anastasiia Gubanova",
-     "Lara Naki GUTMANN": "Lara Naki Gutmann",
-     "Mone CHIBA": "Mone Chiba",
-     "Rinka WATANABE": "Rinka Watanabe",
-     "Mako YAMASHITA": "Mako Yamashita",
      "Haein LEE": "Haein Lee",
-     "Alina BONILLO": "Alina Bonillo",
-     "Sophie Joline von FELTEN": "Sophie Joline von Felten"
+     "Mako YAMASHITA": "Mako Yamashita",
+     "Lara Naki GUTMANN": "Lara Naki Gutmann",
+     "Alexandra IGNATOVA": "Александра Трусова",
+     "Anastasiia GUBANOVA": "Anastasiia Gubanova",
+     "Mone CHIBA": "Mone Chiba"
     },
     "basis": null
    },
@@ -48104,7 +48202,7 @@
    "seg": "КП",
    "title": "Гран-при России «Золото Урала» — мужчины КП",
    "start": "2026-11-07T12:30:00+03:00",
-   "end": "2026-11-07T14:00:00+03:00",
+   "end": "2026-11-07T13:56:00+03:00",
    "venue": "УГМК-Арена, Екатеринбург",
    "intl": false,
    "broadcast": [
@@ -48112,12 +48210,24 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/4etap2627_competition_schedule_051126.pdf",
+   "athletes": [
+    "Александр Мельников",
+    "Вячеслав Проценко",
+    "Глеб Лутфуллин",
+    "Иван Конихин",
+    "Макар Игнатов",
+    "Марк Кондратюк",
+    "Михаил Терновский",
+    "Никита Сарновский",
+    "Семен Соловьев",
+    "Фёдор Зонов",
+    "Юрий Сидоров"
+   ],
+   "src": "https://fsrussia.ru/results/2627/4etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -48125,7 +48235,106 @@
     }
    ],
    "desc": "Начало: 12:30 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Семен Соловьев",
+     "nation": "СПБ",
+     "time": "12:37",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Юрий Сидоров",
+     "nation": "ОРЕ",
+     "time": "12:50",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Никита Сарновский",
+     "nation": "МОС",
+     "time": "12:56",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Михаил Терновский",
+     "nation": "СПБ",
+     "time": "13:03",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Александр Мельников",
+     "nation": "МОС",
+     "time": "13:09",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Макар Игнатов",
+     "nation": "МОС",
+     "time": "13:17",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Вячеслав Проценко",
+     "nation": "СПБ",
+     "time": "13:23",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Иван Конихин",
+     "nation": "МОС",
+     "time": "13:29",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Фёдор Зонов",
+     "nation": "СПБ",
+     "time": "13:36",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Глеб Лутфуллин",
+     "nation": "СПБ",
+     "time": "13:42",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Марк Кондратюк",
+     "nation": "МОС",
+     "time": "13:49",
+     "no": 11,
+     "warmup": 2
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/4etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/4etap_sen/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Семен СОЛОВЬЕВ": "Семен Соловьев",
+     "Александр МЕЛЬНИКОВ": "Александр Мельников",
+     "Юрий СИДОРОВ": "Юрий Сидоров",
+     "Никита САРНОВСКИЙ": "Никита Сарновский",
+     "Михаил ТЕРНОВСКИЙ": "Михаил Терновский",
+     "Макар ИГНАТОВ": "Макар Игнатов",
+     "Вячеслав ПРОЦЕНКО": "Вячеслав Проценко",
+     "Иван КОНИХИН": "Иван Конихин",
+     "Фёдор ЗОНОВ": "Фёдор Зонов",
+     "Глеб ЛУТФУЛЛИН": "Глеб Лутфуллин",
+     "Марк КОНДРАТЮК": "Марк Кондратюк"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:pairs-senior-pp",
@@ -48136,7 +48345,7 @@
    "seg": "ПП",
    "title": "GP Cup of China — пары ПП",
    "start": "2026-11-07T13:40:00+03:00",
-   "end": "2026-11-07T15:00:00+03:00",
+   "end": "2026-11-07T14:58:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
    "broadcast": [
@@ -48146,7 +48355,10 @@
    "ours": [
     {
      "name": "Анастасия Мишина / Александр Галлямов",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "14:49",
+     "no": 8,
+     "warmup": 2
     }
    ],
    "athletes": [
@@ -48172,39 +48384,63 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Россияне:\n• Анастасия Мишина / Александр Галлямов\n\nНачало: 13:40 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Россияне:\n• Анастасия Мишина / Александр Галлямов — 14:49\n\nНачало: 13:40 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Anastasiia Metelkina / Luka Berulava",
-     "nation": "GEO"
-    },
-    {
-     "name": "Chelsea Liu / Ryan Bedard",
-     "nation": "USA"
+     "name": "Jiaxuan Zhang / Yihang Huang",
+     "nation": "CHN",
+     "time": "13:47",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Jazmine Desrochers / Kieran Thrasher",
-     "nation": "CAN"
-    },
-    {
-     "name": "Jiaxuan Zhang / Yihang Huang",
-     "nation": "CHN"
-    },
-    {
-     "name": "Karina Akopova / Nikita Rakhmanin",
-     "nation": "ARM"
+     "nation": "CAN",
+     "time": "13:55",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Valentina Plazas / Maximiliano Fernandez",
-     "nation": "USA"
+     "nation": "USA",
+     "time": "14:03",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Chelsea Liu / Ryan Bedard",
+     "nation": "USA",
+     "time": "14:11",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Yuna Nagaoka / Sumitada Moriguchi",
-     "nation": "JPN"
+     "nation": "JPN",
+     "time": "14:26",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Karina Akopova / Nikita Rakhmanin",
+     "nation": "ARM",
+     "time": "14:34",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Anastasiia Metelkina / Luka Berulava",
+     "nation": "GEO",
+     "time": "14:42",
+     "no": 7,
+     "warmup": 2
     },
     {
      "name": "Анастасия Мишина / Александр Галлямов",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "14:49",
+     "no": 8,
+     "warmup": 2
     }
    ],
    "live": {
@@ -48213,14 +48449,14 @@
     "cat": "https://results.isu.org/results/season2627/gpchn2026/CAT003RS.htm",
     "first": "https://results.isu.org/results/season2627/gpchn2026/SEG005.htm",
     "names": {
-     "Anastasia MISHINA / Aleksandr GALLIAMOV": "Анастасия Мишина / Александр Галлямов",
-     "Karina AKOPOVA / Nikita RAKHMANIN": "Karina Akopova / Nikita Rakhmanin",
-     "Jazmine DESROCHERS / Kieran THRASHER": "Jazmine Desrochers / Kieran Thrasher",
      "Jiaxuan ZHANG / Yihang HUANG": "Jiaxuan Zhang / Yihang Huang",
-     "Anastasiia METELKINA / Luka BERULAVA": "Anastasiia Metelkina / Luka Berulava",
-     "Yuna NAGAOKA / Sumitada MORIGUCHI": "Yuna Nagaoka / Sumitada Moriguchi",
+     "Jazmine DESROCHERS / Kieran THRASHER": "Jazmine Desrochers / Kieran Thrasher",
+     "Valentina PLAZAS / Maximiliano FERNANDEZ": "Valentina Plazas / Maximiliano Fernandez",
      "Chelsea LIU / Ryan BEDARD": "Chelsea Liu / Ryan Bedard",
-     "Valentina PLAZAS / Maximiliano FERNANDEZ": "Valentina Plazas / Maximiliano Fernandez"
+     "Yuna NAGAOKA / Sumitada MORIGUCHI": "Yuna Nagaoka / Sumitada Moriguchi",
+     "Karina AKOPOVA / Nikita RAKHMANIN": "Karina Akopova / Nikita Rakhmanin",
+     "Anastasiia METELKINA / Luka BERULAVA": "Anastasiia Metelkina / Luka Berulava",
+     "Anastasia MISHINA / Aleksandr GALLIAMOV": "Анастасия Мишина / Александр Галлямов"
     },
     "basis": null
    },
@@ -48234,8 +48470,8 @@
    "level": "senior",
    "seg": "КП",
    "title": "Гран-при России «Золото Урала» — женщины КП",
-   "start": "2026-11-07T14:15:00+03:00",
-   "end": "2026-11-07T15:50:00+03:00",
+   "start": "2026-11-07T14:10:00+03:00",
+   "end": "2026-11-07T15:47:00+03:00",
    "venue": "УГМК-Арена, Екатеринбург",
    "intl": false,
    "broadcast": [
@@ -48243,20 +48479,140 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/4etap2627_competition_schedule_051126.pdf",
+   "athletes": [
+    "Агата Петрова",
+    "Аделия Петросян",
+    "Алиса Юрова",
+    "Арина Кудлай",
+    "Дарья Садкова",
+    "Дина Хуснутдинова",
+    "Елизавета Лабутина",
+    "Злата Буря",
+    "Камилла Нелюбова",
+    "Ксения Гущина",
+    "Мария Елисова",
+    "Милана Лебедева"
+   ],
+   "src": "https://fsrussia.ru/results/2627/4etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 14:15 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "desc": "Начало: 14:10 МСК\nТрансляция: Первый канал / YouTube",
+   "field": [
+    {
+     "name": "Алиса Юрова",
+     "nation": "ЛИП",
+     "time": "14:17",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Агата Петрова",
+     "nation": "СПБ",
+     "time": "14:31",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Арина Кудлай",
+     "nation": "СПБ",
+     "time": "14:38",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Елизавета Лабутина",
+     "nation": "СВЕ",
+     "time": "14:44",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Милана Лебедева",
+     "nation": "МОС",
+     "time": "14:51",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Мария Елисова",
+     "nation": "ТУЛ",
+     "time": "14:58",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Злата Буря",
+     "nation": "МОС",
+     "time": "15:06",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Ксения Гущина",
+     "nation": "СПБ",
+     "time": "15:12",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Камилла Нелюбова",
+     "nation": "ЧУВ",
+     "time": "15:19",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Аделия Петросян",
+     "nation": "МОС",
+     "time": "15:26",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Дарья Садкова",
+     "nation": "МОС",
+     "time": "15:33",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Дина Хуснутдинова",
+     "nation": "ТАТ",
+     "time": "15:40",
+     "no": 12,
+     "warmup": 2
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/4etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/4etap_sen/SEG003.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Алиса ЮРОВА": "Алиса Юрова",
+     "Мария ЕЛИСОВА": "Мария Елисова",
+     "Агата ПЕТРОВА": "Агата Петрова",
+     "Арина КУДЛАЙ": "Арина Кудлай",
+     "Елизавета ЛАБУТИНА": "Елизавета Лабутина",
+     "Милана ЛЕБЕДЕВА": "Милана Лебедева",
+     "Злата БУРЯ": "Злата Буря",
+     "Ксения ГУЩИНА": "Ксения Гущина",
+     "Камилла НЕЛЮБОВА": "Камилла Нелюбова",
+     "Аделия ПЕТРОСЯН": "Аделия Петросян",
+     "Дарья САДКОВА": "Дарья Садкова",
+     "Дина ХУСНУТДИНОВА": "Дина Хуснутдинова"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:pairs-senior-kp",
@@ -48267,7 +48623,7 @@
    "seg": "КП",
    "title": "Гран-при России «Золото Урала» — пары КП",
    "start": "2026-11-07T16:45:00+03:00",
-   "end": "2026-11-07T17:50:00+03:00",
+   "end": "2026-11-07T17:52:00+03:00",
    "venue": "УГМК-Арена, Екатеринбург",
    "intl": false,
    "broadcast": [
@@ -48275,12 +48631,21 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/4etap2627_competition_schedule_051126.pdf",
+   "athletes": [
+    "Алена Кривоносова / Андрей Анисимов",
+    "Анастасия Гиричева / Иван Долгодворов",
+    "Анна Ляшенко / Пётр Алексеенко",
+    "Валерия Ходыкина / Даниил Бутенко",
+    "Вероника Меренкова / Даниль Галимов",
+    "Екатерина Гейниш / Андрей Рудь",
+    "Екатерина Чикмарёва / Матвей Янченков",
+    "София Диана Касинс / Александр Брегей"
+   ],
+   "src": "https://fsrussia.ru/results/2627/4etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -48288,7 +48653,82 @@
     }
    ],
    "desc": "Начало: 16:45 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Анастасия Гиричева / Иван Долгодворов",
+     "nation": "МОС",
+     "time": "16:52",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Вероника Меренкова / Даниль Галимов",
+     "nation": "КРД",
+     "time": "17:05",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Валерия Ходыкина / Даниил Бутенко",
+     "nation": "МОС",
+     "time": "17:11",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Екатерина Гейниш / Андрей Рудь",
+     "nation": "МОС",
+     "time": "17:17",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Анна Ляшенко / Пётр Алексеенко",
+     "nation": "МОС",
+     "time": "17:25",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Алена Кривоносова / Андрей Анисимов",
+     "nation": "МОС",
+     "time": "17:31",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "nation": "ПРМ",
+     "time": "17:38",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "София Диана Касинс / Александр Брегей",
+     "nation": "СПБ",
+     "time": "17:44",
+     "no": 8,
+     "warmup": 2
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/4etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/4etap_sen/SEG005.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Анастасия ГИРИЧЕВА / Иван ДОЛГОДВОРОВ": "Анастасия Гиричева / Иван Долгодворов",
+     "Екатерина ГЕЙНИШ / Андрей РУДЬ": "Екатерина Гейниш / Андрей Рудь",
+     "Вероника МЕРЕНКОВА / Даниль ГАЛИМОВ": "Вероника Меренкова / Даниль Галимов",
+     "Валерия ХОДЫКИНА / Даниил БУТЕНКО": "Валерия Ходыкина / Даниил Бутенко",
+     "Анна ЛЯШЕНКО / Пётр АЛЕКСЕЕНКО": "Анна Ляшенко / Пётр Алексеенко",
+     "Алена КРИВОНОСОВА / Андрей АНИСИМОВ": "Алена Кривоносова / Андрей Анисимов",
+     "Екатерина ЧИКМАРЁВА / Матвей ЯНЧЕНКОВ": "Екатерина Чикмарёва / Матвей Янченков",
+     "София Диана КАСИНС / Александр БРЕГЕЙ": "София Диана Касинс / Александр Брегей"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:men-senior-pp",
@@ -48299,7 +48739,7 @@
    "seg": "ПП",
    "title": "GP Cup of China — мужчины ПП",
    "start": "2026-11-08T08:00:00+03:00",
-   "end": "2026-11-08T09:45:00+03:00",
+   "end": "2026-11-08T09:47:00+03:00",
    "venue": "Shenzhen, China",
    "intl": true,
    "broadcast": [
@@ -48309,11 +48749,17 @@
    "ours": [
     {
      "name": "Владислав Дикиджи",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "09:16",
+     "no": 9,
+     "warmup": 2
     },
     {
      "name": "Евгений Семененко",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "09:24",
+     "no": 10,
+     "warmup": 2
     }
    ],
    "athletes": [
@@ -48343,55 +48789,91 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Россияне:\n• Владислав Дикиджи\n• Евгений Семененко\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Россияне:\n• Владислав Дикиджи — 09:16\n• Евгений Семененко — 09:24\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Jacob Sanchez",
-     "nation": "USA"
-    },
-    {
-     "name": "Kao Miura",
-     "nation": "JPN"
-    },
-    {
      "name": "Lucius Kazanecki",
-     "nation": "USA"
+     "nation": "USA",
+     "time": "08:07",
+     "no": 1,
+     "warmup": 1
     },
     {
-     "name": "Mikhail Shaidorov",
-     "nation": "KAZ"
+     "name": "Jacob Sanchez",
+     "nation": "USA",
+     "time": "08:15",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Minkyu Seo",
-     "nation": "KOR"
-    },
-    {
-     "name": "Nika Egadze",
-     "nation": "GEO"
-    },
-    {
-     "name": "Shun Sato",
-     "nation": "JPN"
-    },
-    {
-     "name": "Vladimir Samoilov",
-     "nation": "POL"
+     "nation": "KOR",
+     "time": "08:23",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Yudong Chen",
-     "nation": "CHN"
+     "nation": "CHN",
+     "time": "08:30",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Zhiming Peng",
-     "nation": "CHN"
+     "nation": "CHN",
+     "time": "08:38",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Nika Egadze",
+     "nation": "GEO",
+     "time": "08:46",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "time": "09:01",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Mikhail Shaidorov",
+     "nation": "KAZ",
+     "time": "09:09",
+     "no": 8,
+     "warmup": 2
     },
     {
      "name": "Владислав Дикиджи",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "09:16",
+     "no": 9,
+     "warmup": 2
     },
     {
      "name": "Евгений Семененко",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "09:24",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Shun Sato",
+     "nation": "JPN",
+     "time": "09:32",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Kao Miura",
+     "nation": "JPN",
+     "time": "09:39",
+     "no": 12,
+     "warmup": 2
     }
    ],
    "live": {
@@ -48400,18 +48882,18 @@
     "cat": "https://results.isu.org/results/season2627/gpchn2026/CAT001RS.htm",
     "first": "https://results.isu.org/results/season2627/gpchn2026/SEG001.htm",
     "names": {
-     "Vladislav DIKIDZHI": "Владислав Дикиджи",
-     "Evgeni SEMENENKO": "Евгений Семененко",
+     "Lucius KAZANECKI": "Lucius Kazanecki",
+     "Jacob SANCHEZ": "Jacob Sanchez",
+     "Minkyu SEO": "Minkyu Seo",
      "Yudong CHEN": "Yudong Chen",
      "Zhiming PENG": "Zhiming Peng",
      "Nika EGADZE": "Nika Egadze",
-     "Kao MIURA": "Kao Miura",
-     "Shun SATO": "Shun Sato",
-     "Mikhail SHAIDOROV": "Mikhail Shaidorov",
-     "Minkyu SEO": "Minkyu Seo",
      "Vladimir SAMOILOV": "Vladimir Samoilov",
-     "Lucius KAZANECKI": "Lucius Kazanecki",
-     "Jacob SANCHEZ": "Jacob Sanchez"
+     "Mikhail SHAIDOROV": "Mikhail Shaidorov",
+     "Vladislav DIKIDZHI": "Владислав Дикиджи",
+     "Evgeni SEMENENKO": "Евгений Семененко",
+     "Shun SATO": "Shun Sato",
+     "Kao MIURA": "Kao Miura"
     },
     "basis": null
    },
@@ -48426,7 +48908,7 @@
    "seg": "ПП",
    "title": "Гран-при России «Золото Урала» — мужчины ПП",
    "start": "2026-11-08T12:00:00+03:00",
-   "end": "2026-11-08T13:45:00+03:00",
+   "end": "2026-11-08T13:35:00+03:00",
    "venue": "УГМК-Арена, Екатеринбург",
    "intl": false,
    "broadcast": [
@@ -48434,12 +48916,24 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/4etap2627_competition_schedule_051126.pdf",
+   "athletes": [
+    "Александр Мельников",
+    "Вячеслав Проценко",
+    "Глеб Лутфуллин",
+    "Иван Конихин",
+    "Макар Игнатов",
+    "Марк Кондратюк",
+    "Михаил Терновский",
+    "Никита Сарновский",
+    "Семен Соловьев",
+    "Фёдор Зонов",
+    "Юрий Сидоров"
+   ],
+   "src": "https://fsrussia.ru/results/2627/4etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -48447,7 +48941,73 @@
     }
    ],
    "desc": "Начало: 12:00 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Александр Мельников",
+     "nation": "МОС"
+    },
+    {
+     "name": "Вячеслав Проценко",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Глеб Лутфуллин",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Иван Конихин",
+     "nation": "МОС"
+    },
+    {
+     "name": "Макар Игнатов",
+     "nation": "МОС"
+    },
+    {
+     "name": "Марк Кондратюк",
+     "nation": "МОС"
+    },
+    {
+     "name": "Михаил Терновский",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Никита Сарновский",
+     "nation": "МОС"
+    },
+    {
+     "name": "Семен Соловьев",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Фёдор Зонов",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Юрий Сидоров",
+     "nation": "ОРЕ"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/4etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/4etap_sen/SEG002.htm",
+    "cat": "https://fsrussia.ru/results/2627/4etap_sen/CAT001RS.htm",
+    "first": "https://fsrussia.ru/results/2627/4etap_sen/SEG001.htm",
+    "names": {
+     "Фёдор ЗОНОВ": "Фёдор Зонов",
+     "Макар ИГНАТОВ": "Макар Игнатов",
+     "Марк КОНДРАТЮК": "Марк Кондратюк",
+     "Иван КОНИХИН": "Иван Конихин",
+     "Глеб ЛУТФУЛЛИН": "Глеб Лутфуллин",
+     "Александр МЕЛЬНИКОВ": "Александр Мельников",
+     "Вячеслав ПРОЦЕНКО": "Вячеслав Проценко",
+     "Никита САРНОВСКИЙ": "Никита Сарновский",
+     "Юрий СИДОРОВ": "Юрий Сидоров",
+     "Семен СОЛОВЬЕВ": "Семен Соловьев",
+     "Михаил ТЕРНОВСКИЙ": "Михаил Терновский"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:women-senior-pp",
@@ -48466,12 +49026,25 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/4etap2627_competition_schedule_051126.pdf",
+   "athletes": [
+    "Агата Петрова",
+    "Аделия Петросян",
+    "Алиса Юрова",
+    "Арина Кудлай",
+    "Дарья Садкова",
+    "Дина Хуснутдинова",
+    "Елизавета Лабутина",
+    "Злата Буря",
+    "Камилла Нелюбова",
+    "Ксения Гущина",
+    "Мария Елисова",
+    "Милана Лебедева"
+   ],
+   "src": "https://fsrussia.ru/results/2627/4etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -48479,7 +49052,78 @@
     }
    ],
    "desc": "Начало: 14:10 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Агата Петрова",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Аделия Петросян",
+     "nation": "МОС"
+    },
+    {
+     "name": "Алиса Юрова",
+     "nation": "ЛИП"
+    },
+    {
+     "name": "Арина Кудлай",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Дарья Садкова",
+     "nation": "МОС"
+    },
+    {
+     "name": "Дина Хуснутдинова",
+     "nation": "ТАТ"
+    },
+    {
+     "name": "Елизавета Лабутина",
+     "nation": "СВЕ"
+    },
+    {
+     "name": "Злата Буря",
+     "nation": "МОС"
+    },
+    {
+     "name": "Камилла Нелюбова",
+     "nation": "ЧУВ"
+    },
+    {
+     "name": "Ксения Гущина",
+     "nation": "СПБ"
+    },
+    {
+     "name": "Мария Елисова",
+     "nation": "ТУЛ"
+    },
+    {
+     "name": "Милана Лебедева",
+     "nation": "МОС"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/4etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/4etap_sen/SEG004.htm",
+    "cat": "https://fsrussia.ru/results/2627/4etap_sen/CAT002RS.htm",
+    "first": "https://fsrussia.ru/results/2627/4etap_sen/SEG003.htm",
+    "names": {
+     "Злата БУРЯ": "Злата Буря",
+     "Ксения ГУЩИНА": "Ксения Гущина",
+     "Мария ЕЛИСОВА": "Мария Елисова",
+     "Арина КУДЛАЙ": "Арина Кудлай",
+     "Елизавета ЛАБУТИНА": "Елизавета Лабутина",
+     "Милана ЛЕБЕДЕВА": "Милана Лебедева",
+     "Камилла НЕЛЮБОВА": "Камилла Нелюбова",
+     "Агата ПЕТРОВА": "Агата Петрова",
+     "Аделия ПЕТРОСЯН": "Аделия Петросян",
+     "Дарья САДКОВА": "Дарья Садкова",
+     "Дина ХУСНУТДИНОВА": "Дина Хуснутдинова",
+     "Алиса ЮРОВА": "Алиса Юрова"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:pairs-senior-pp",
@@ -48490,7 +49134,7 @@
    "seg": "ПП",
    "title": "Гран-при России «Золото Урала» — пары ПП",
    "start": "2026-11-08T16:20:00+03:00",
-   "end": "2026-11-08T17:35:00+03:00",
+   "end": "2026-11-08T17:40:00+03:00",
    "venue": "УГМК-Арена, Екатеринбург",
    "intl": false,
    "broadcast": [
@@ -48498,12 +49142,21 @@
     "YouTube"
    ],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/4etap2627_competition_schedule_051126.pdf",
+   "athletes": [
+    "Алена Кривоносова / Андрей Анисимов",
+    "Анастасия Гиричева / Иван Долгодворов",
+    "Анна Ляшенко / Пётр Алексеенко",
+    "Валерия Ходыкина / Даниил Бутенко",
+    "Вероника Меренкова / Даниль Галимов",
+    "Екатерина Гейниш / Андрей Рудь",
+    "Екатерина Чикмарёва / Матвей Янченков",
+    "София Диана Касинс / Александр Брегей"
+   ],
+   "src": "https://fsrussia.ru/results/2627/4etap_sen/index.htm",
    "watch": [
     {
      "name": "Первый канал",
-     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+     "url": "https://www.1tv.ru/sport/gran-pri-rossii-po-figurnomu-kataniyu-2026-27/"
     },
     {
      "name": "YouTube",
@@ -48511,7 +49164,58 @@
     }
    ],
    "desc": "Начало: 16:20 МСК\nТрансляция: Первый канал / YouTube",
-   "proto": null
+   "field": [
+    {
+     "name": "Алена Кривоносова / Андрей Анисимов",
+     "nation": "МОС"
+    },
+    {
+     "name": "Анастасия Гиричева / Иван Долгодворов",
+     "nation": "МОС"
+    },
+    {
+     "name": "Анна Ляшенко / Пётр Алексеенко",
+     "nation": "МОС"
+    },
+    {
+     "name": "Валерия Ходыкина / Даниил Бутенко",
+     "nation": "МОС"
+    },
+    {
+     "name": "Вероника Меренкова / Даниль Галимов",
+     "nation": "КРД"
+    },
+    {
+     "name": "Екатерина Гейниш / Андрей Рудь",
+     "nation": "МОС"
+    },
+    {
+     "name": "Екатерина Чикмарёва / Матвей Янченков",
+     "nation": "ПРМ"
+    },
+    {
+     "name": "София Диана Касинс / Александр Брегей",
+     "nation": "СПБ"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/4etap_sen/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/4etap_sen/SEG006.htm",
+    "cat": "https://fsrussia.ru/results/2627/4etap_sen/CAT003RS.htm",
+    "first": "https://fsrussia.ru/results/2627/4etap_sen/SEG005.htm",
+    "names": {
+     "Екатерина ГЕЙНИШ / Андрей РУДЬ": "Екатерина Гейниш / Андрей Рудь",
+     "Анастасия ГИРИЧЕВА / Иван ДОЛГОДВОРОВ": "Анастасия Гиричева / Иван Долгодворов",
+     "София Диана КАСИНС / Александр БРЕГЕЙ": "София Диана Касинс / Александр Брегей",
+     "Алена КРИВОНОСОВА / Андрей АНИСИМОВ": "Алена Кривоносова / Андрей Анисимов",
+     "Анна ЛЯШЕНКО / Пётр АЛЕКСЕЕНКО": "Анна Ляшенко / Пётр Алексеенко",
+     "Вероника МЕРЕНКОВА / Даниль ГАЛИМОВ": "Вероника Меренкова / Даниль Галимов",
+     "Валерия ХОДЫКИНА / Даниил БУТЕНКО": "Валерия Ходыкина / Даниил Бутенко",
+     "Екатерина ЧИКМАРЁВА / Матвей ЯНЧЕНКОВ": "Екатерина Чикмарёва / Матвей Янченков"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:dance-junior-rt",
@@ -51586,9 +52290,121 @@
    "venue": "Warsaw, Poland",
    "start": "2026-11-25",
    "end": "2026-11-29",
-   "ours": [],
-   "ours_nation": {},
-   "athletes": [],
+   "ours": [
+    "Анна Коломенская / Артем Фролов",
+    "Екатерина Миронова / Евгений Устенко"
+   ],
+   "ours_nation": {
+    "Анна Коломенская / Артем Фролов": "RUS",
+    "Екатерина Миронова / Евгений Устенко": "RUS"
+   },
+   "athletes": [
+    "Adelija Matjunina",
+    "Alexa Gasparotto",
+    "Alexander Zlatkov",
+    "Andrea Montesinos Cantu",
+    "Ariadna Gupta Espada",
+    "Arianna Sassi / Luca Morini",
+    "Aurelian Chervet",
+    "Barbora Vrankova",
+    "Beat Schuemperli",
+    "Celina Fradji / Jean-Hans Fourneaux",
+    "Charise Matthaei / Max Liebers",
+    "Corentin Spinar",
+    "Daniela Ivanitskiy / Matthew Sperry",
+    "Daniil Valanov",
+    "Davide Lewton Brain",
+    "Ean Weiler",
+    "Ekaterina Kurakova",
+    "Elizabet Gervits",
+    "Emese Csiszer / Mark Shapiro",
+    "Eva Pate / Logan Bye",
+    "Evelina Stavickyte",
+    "Evgeniia Lopareva / Geoffrey Brissaud",
+    "Georgii Reshtenko",
+    "Gioia Fiori",
+    "Giulia Isabella Paolino / Andrea Tuba",
+    "Hannah Kihyun Kim / Ye Quan",
+    "Isabella Flores / Linus Colmor Jepsen",
+    "Jacob Sanchez",
+    "Jakub Lofek",
+    "Janna Jyrkinen",
+    "Jedidiah Lincoln",
+    "Jolanda Vos",
+    "Jozef Curma",
+    "Julia Fennell",
+    "Julia Kasprzyk",
+    "Julia Van Dijk",
+    "Karolina Bialas",
+    "Katerina Hanusova",
+    "Katie Mcbeath / Balazs Nagy",
+    "Kornel Witkowski",
+    "Krista Georgieva",
+    "Kristina Lisovskaja",
+    "Kyrylo Marsak",
+    "Laura Gauch / Linus Mager",
+    "Laura Szczesna",
+    "Lev Vinokur",
+    "Linda Dzerve",
+    "Lucas Broussard",
+    "Lucius Kazanecki",
+    "Mahery Randrianarivony",
+    "Makar Suntsev",
+    "Maksim Varakin",
+    "Mariia Dmitrieva",
+    "Mark Gorodnitsky",
+    "Matias Lindfors",
+    "Matvii Yefymenko",
+    "Meda Variakojyte",
+    "Michaela Malkova",
+    "Mikayel Salazaryan",
+    "Milana Mozeiko",
+    "Milla Ruud Reitan / Nikolaj Majorov",
+    "Minja Peltonen",
+    "Natacha Lagouge / Arnaud Caffa",
+    "Nataly Langerbaur",
+    "Nikita Starostin",
+    "Nikolaj Memola",
+    "Nikolajs Krivoseja",
+    "Olesja Leonova",
+    "Olivia Josephine Shilling / Leo Baeten",
+    "Olivia Lengyelova",
+    "Oliwia Strokosz",
+    "Ophelie Clerc",
+    "Paula Belevica",
+    "Philomene Sabourin / Raul Bermejo",
+    "Polina Dzsumanyijazova",
+    "Rakhat Bralin",
+    "Samy Hammi",
+    "Sarah Nunez / Blake Eisenach",
+    "Sayra Bessire",
+    "Selma Valitalo",
+    "Shira Ichilov / Mikhail Nosovitskiy",
+    "Sofia Tridello / Alberto Tommasi",
+    "Sofia Val / Asaf Kazimov",
+    "Sofiia Ekzarkhova",
+    "Sofiia Hryhorenko",
+    "Sofiia Rymshyna",
+    "Starr Andrews / Daniil Parkman",
+    "Tadeas Vaclavik",
+    "Tamir Kuperman",
+    "Tobia Oellerer",
+    "Valtter Virtanen",
+    "Vanesa Selmekova",
+    "Xan Rols",
+    "Xuantong Li / Filip Bojanowski",
+    "Xuanyu Liu / Wenbao Han",
+    "Yanhao Li",
+    "Yelyzaveta Surova",
+    "Yu-Feng Tsai",
+    "Yu-Hsiang Li",
+    "Zhasmin Shlaga",
+    "Zoe Larson / Andrii Kapran",
+    "Zofia Grzegorzewska / Oleg Muratov",
+    "Анна Коломенская / Артем Фролов",
+    "Екатерина Миронова / Евгений Устенко",
+    "Макар Николаев"
+   ],
    "broadcast": [],
    "watch": []
   },
@@ -53069,7 +53885,6 @@
   "Fedor Orekhov",
   "Fedor Sanin",
   "Fedor Varlamov",
-  "Fedor Zonov",
   "Fee Ann Landry",
   "Felix Haoyu Zeng",
   "Felix Oberbacher",
@@ -55863,6 +56678,7 @@
   "Факел Ямал",
   "Федор Байкашев",
   "Фриволите",
+  "Фёдор Зонов",
   "Эвелина Валиева",
   "Эвелина Валиева / Александр Островский",
   "Эвелина Валиева / Даниил Лавриненко",
@@ -60634,11 +61450,6 @@
   },
   {
    "n": "Fedor Varlamov",
-   "c": "RUS",
-   "k": ""
-  },
-  {
-   "n": "Fedor Zonov",
    "c": "RUS",
    "k": ""
   },
@@ -72261,6 +73072,11 @@
    "k": "M"
   },
   {
+   "n": "Фёдор Зонов",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Эвелина Валиева / Александр Островский",
    "c": "RUS",
    "k": "D"
@@ -72406,6 +73222,11 @@
    "c": "RUS",
    "k": "",
    "p": "b87112a41735"
+  },
+  {
+   "n": "Fedor Zonov",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Dmitri Aliev",
