@@ -12,6 +12,10 @@ git init -q -b gh-pages
 git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 git add -A
+# метка публикации — по ней tools/pages-watch.sh видит, дошла ли выкладка до сайта; в site/ её нет,
+# только в коммите gh-pages
+stamp=$(printf '%s\n' "$(date +%s)" | git hash-object -w --stdin)
+git update-index --add --cacheinfo "100644,$stamp,pub.txt"
 git commit -q -m "Сайт: $(TZ=Europe/Moscow date '+%d.%m.%Y %H:%M') МСК"
 for i in 1 2 3; do
   head=$(git ls-remote --heads "$REPO_URL" gh-pages | cut -f1)

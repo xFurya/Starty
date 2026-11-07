@@ -19,6 +19,7 @@ on:
       - 'tools/live-loop.sh'
       - 'tools/pages-lock.sh'
       - 'tools/publish-pages.sh'
+      - 'tools/pages-watch.sh'
       - '.github/workflows/live.yml'
 
 permissions:
@@ -36,6 +37,15 @@ jobs:
       - uses: actions/checkout@v5
         with:
           ref: main
+
+      - name: Сайт выложен?
+        # GitHub Pages иногда срывает выкладку (10-минутный предел на шаге syncing_files), и сайт
+        # стоит прежним до следующей публикации — утром это часы. Сторож видит это по метке pub.txt
+        # и публикует ту же голову gh-pages заново; нет беды — две короткие проверки
+        continue-on-error: true
+        env:
+          REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: bash tools/pages-watch.sh
 
       - name: Есть ли что делать
         id: plan
