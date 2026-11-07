@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T15:47:26+03:00",
- "checked": "2026-11-07T15:47:26+03:00",
+ "checked": "2026-11-07T13:58:02.137147+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -49115,14 +49115,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 16:45 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Анастасия Гиричева / Иван Долгодворов — 57.60\n\nНачало: 16:45 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Анастасия Гиричева / Иван Долгодворов",
      "nation": "МОС",
      "time": "16:52",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "57.60"
     },
     {
      "name": "Вероника Меренкова / Даниль Галимов",
@@ -49191,7 +49193,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Анастасия Гиричева / Иван Долгодворов",
+     "nation": "МОС",
+     "points": "57.60"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:men-senior-pp",
