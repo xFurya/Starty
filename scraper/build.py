@@ -31,6 +31,7 @@ from . import keep as kp
 from . import protocols as P
 from . import photos as ph
 from . import feats as ft
+from . import teams as tm
 from . import profiles as pf
 from . import names as nm
 from . import people as pp
@@ -1453,7 +1454,13 @@ def main():
         except Exception as e:  # «Примечательное» — дополнение к профилю
             log("!! примечательное:", e)
             notable = None
-        pf.write(people, pf.refresh(book.get("bios") or {}, competed, log), book.get("cards"), log=log, book=notable)
+        try:
+            squads = tm.load(log=log)
+        except Exception as e:  # «Сборная» — дополнение к профилю
+            log("!! сборные:", e)
+            squads = None
+        pf.write(people, pf.refresh(book.get("bios") or {}, competed, log), book.get("cards"), log=log, book=notable,
+                 teams=squads)
     except Exception as e:  # профиль — дополнение: без него лента работает
         log("!! профили:", e)
         traceback.print_exc()

@@ -66,6 +66,7 @@ const _solo = {
   'who': [
     {'n': 'Аделия Петросян', 'born': '2007-06-05', 'rank': 'МС', 'region': 'Москва', 'club': 'МАФКК', 'h': 152},
   ],
+  'team': {'c': 'Россия', 't': 'основной состав', 'y': '2026/27'},
   'coach': ['Гончаренко Инна Валерьевна'],
   'season': [
     {'s': '2025/26', 'ev': 'Чемпионат России', 'pl': '1'},
@@ -272,6 +273,46 @@ void main() {
       expect(t.takeException(), isNull);
     });
 
+    testWidgets('пара в сборной: строка одна на двоих, над справкой партнёров', (t) async {
+      final pair = {
+        ..._pair,
+        'team': {'c': 'Япония', 't': 'особый состав', 'y': '2026/27'},
+        'src': ['ISU', 'федерации Японии'],
+      };
+      profileLoader = (k) async => k == _pairKey ? Profile.fromJson(pair) : null;
+      t.view.physicalSize = const Size(390 * 3, 6000 * 3);
+      t.view.devicePixelRatio = 3;
+      addTearDown(t.view.reset);
+      await t.pumpWidget(_app(ProfileSheet(name: 'Minerva Fabienne Hase / Nikita Volodin', data: _data())));
+      await t.pumpAndSettle();
+      expect(find.text('Сборная'), findsOneWidget);
+      expect(find.text('Япония, особый состав'), findsOneWidget);
+      expect(find.text('Сезон 2026/27'), findsOneWidget);
+      // над подзаголовком первого партнёра — чтобы не читалась как строка второго
+      expect(t.getTopLeft(find.text('Сборная')).dy, lessThan(t.getTopLeft(find.text('Minerva Fabienne Hase').last).dy));
+      expect(find.text('Сборная'), findsOneWidget);
+      expect(find.text('По данным ISU и федерации Японии на 5\u00a0ноября 2026'), findsOneWidget);
+      expect(t.takeException(), isNull);
+    });
+
+    testWidgets('сборной нет или строка неполная — строки нет', (t) async {
+      for (final team in [null, {'c': 'Япония', 'y': '2026/27'}, 'основной состав']) {
+        final pr = Profile.fromJson({..._solo, 'team': team});
+        expect(pr.team, isNull);
+      }
+      expect(const ProfileTeam('Канада', 'резерв NextGen', '').line, 'Канада, резерв NextGen');
+      expect(const ProfileTeam('Канада', 'резерв NextGen', '').note, '');
+      expect(const ProfileTeam('Канада', 'резерв NextGen', '2026/27').note, 'Сезон 2026/27');
+      profileLoader = (k) async => k == _soloKey ? Profile.fromJson({..._solo}..remove('team')) : null;
+      t.view.physicalSize = const Size(390 * 3, 3000 * 3);
+      t.view.devicePixelRatio = 3;
+      addTearDown(t.view.reset);
+      await t.pumpWidget(_app(ProfileSheet(name: 'Аделия Петросян', data: _data())));
+      await t.pumpAndSettle();
+      expect(find.text('Звание'), findsOneWidget);
+      expect(find.text('Сборная'), findsNothing);
+    });
+
     testWidgets('одиночница: возраст и звание в шапке, старты сезона по картотеке', (t) async {
       profileLoader = (k) async => k == _soloKey ? Profile.fromJson(_solo) : null;
       t.view.physicalSize = const Size(390 * 3, 3000 * 3);
@@ -285,6 +326,12 @@ void main() {
       expect(find.text('категория МС'), findsOneWidget);
       expect(find.text('Тренер'), findsOneWidget);
       expect(find.text('Звание'), findsOneWidget);
+      expect(find.text('Сборная'), findsOneWidget);
+      expect(find.text('Россия, основной состав'), findsOneWidget);
+      expect(find.text('Сезон 2026/27'), findsOneWidget);
+      // сборная — сразу под званием
+      expect(t.getTopLeft(find.text('Сборная')).dy, greaterThan(t.getTopLeft(find.text('Звание')).dy));
+      expect(t.getTopLeft(find.text('Сборная')).dy, lessThan(t.getTopLeft(find.text('Регион')).dy));
       expect(find.text('ТИТУЛЫ'), findsNothing); // нет пьедесталов — нет и раздела
       expect(find.text('По данным ISU и ФФККР на 5 ноября 2026'), findsOneWidget);
     });

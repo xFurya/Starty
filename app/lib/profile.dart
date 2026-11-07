@@ -65,6 +65,20 @@ class ProfileFeat {
       ProfileFeat(_s(j['t']), _s(j['ev']), date: _s(j['d']), points: _s(j['pts']), source: _s(j['src']), url: _s(j['u']));
 }
 
+/// Сборная на сезон — по официальному списку федерации (ФФККР, JSF, Skate Canada): страна, состав
+/// («основной состав», «резерв NextGen», «состав A»), сезон «2026/27». Списка нет или сезон кончился —
+/// сервер строки не присылает.
+class ProfileTeam {
+  final String country, squad, season;
+  const ProfileTeam(this.country, this.squad, this.season);
+
+  /// «Россия, основной состав».
+  String get line => [country, squad].where((x) => x.isNotEmpty).join(', ');
+
+  /// «Сезон 2026/27» — приглушённо под строкой; сезона нет — пусто.
+  String get note => season.isEmpty ? '' : 'Сезон $season';
+}
+
 /// Пьедестал главного турнира.
 class ProfileTitle {
   final String event, kind, season;
@@ -100,6 +114,7 @@ class Profile {
   final List<ProfileScore> best, seasonBest;
   final List<ProfileTitle> titles;
   final List<ProfileFeat> feats;
+  final ProfileTeam? team;
   final List<ProfileGroup> results;
   final List<ProfileStart> season;
   final List<String> sources;
@@ -120,6 +135,7 @@ class Profile {
     this.seasonBest = const [],
     this.titles = const [],
     this.feats = const [],
+    this.team,
     this.results = const [],
     this.season = const [],
     this.sources = const [],
@@ -128,6 +144,7 @@ class Profile {
 
   factory Profile.fromJson(Map j) {
     final music = j['music'] is Map ? j['music'] as Map : const {};
+    final team = j['team'] is Map ? j['team'] as Map : const {};
     List<Map> maps(Object? v) => [
       for (final x in (v is List ? v : const []))
         if (x is Map) x,
@@ -151,6 +168,9 @@ class Profile {
         for (final x in maps(j['feats']))
           if (_s(x['t']).isNotEmpty) ProfileFeat.fromJson(x),
       ],
+      team: _s(team['c']).isEmpty || _s(team['t']).isEmpty
+          ? null
+          : ProfileTeam(_s(team['c']), _s(team['t']), _s(team['y'])),
       results: [
         for (final g in maps(j['res']))
           ProfileGroup(_s(g['g']), [for (final r in maps(g['r'])) ProfileResult(_s(r['ev']), _s(r['k']), _s(r['pl']))]),
@@ -524,6 +544,9 @@ class _ProfileSheetState extends State<ProfileSheet> {
 
     final pair = pr.who.length > 1;
     final today = now();
+    // у пары сборная одна на двоих (сервер даёт её, только если в списке оба партнёра) — над справкой
+    // партнёров, чтобы не читалась как строка второго из них
+    if (pair && pr.team != null) out.add(_Fact(label: 'Сборная', lines: [pr.team!.line], note: pr.team!.note));
     for (final w in pr.who) {
       final rows = <Widget>[];
       void row(String label, String value) {
@@ -538,6 +561,10 @@ class _ProfileSheetState extends State<ProfileSheet> {
       row('Рост', w.height == null ? '' : '${w.height}$nbсм');
       row('Катается с', w.since == null ? '' : '${w.since}$nbгода');
       row('Звание', w.rank);
+      if (!pair && pr.team != null) {
+        if (rows.isNotEmpty) rows.add(const Hairline());
+        rows.add(_Fact(label: 'Сборная', lines: [pr.team!.line], note: pr.team!.note));
+      }
       row('Регион', w.region);
       row('Клуб', w.club);
       row(w.former.length > 1 ? 'Прежние партнёры' : 'Прежний партнёр', w.former.join(', '));
@@ -653,7 +680,10 @@ class _ProfileHead extends StatelessWidget {
 class _Fact extends StatelessWidget {
   final String label;
   final List<String> lines;
-  const _Fact({required this.label, required this.lines});
+
+  /// Пояснение под значением, приглушённо: «Сезон 2026/27».
+  final String note;
+  const _Fact({required this.label, required this.lines, this.note = ''});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -677,6 +707,11 @@ class _Fact extends StatelessWidget {
                     Text(
                       l,
                       style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink, height: 1.35),
+                    ),
+                  if (note.isNotEmpty)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 2),
+                      child: Text(note, style: TextStyle(fontSize: 14, color: p.ink2, height: 1.35)),
                     ),
                 ],
               ),

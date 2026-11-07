@@ -504,13 +504,16 @@ def profile(name, nation, bio=None, card=None, cards_by_name=None, staff=()):
     return out if src else None
 
 
-def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None):
+def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None, teams=None, today=None):
     """Записать профили и проставить людям ключ "p". people — справочник [{n, c, k}];
     store — кэш биографий из refresh; cards — {номер: карточка картотеки с fio};
     book — «Примечательное» из feats.load (нет — раздела нет); aliases — одно лицо под двумя
-    именами (config.json; по умолчанию оттуда же): карточка «Игнатова» — профилю «Трусова»."""
+    именами (config.json; по умолчанию оттуда же): карточка «Игнатова» — профилю «Трусова»;
+    teams — списки сборных из teams.load (нет — строки «Сборная» нет); today — дата для сезона списка."""
     from . import feats as ft
+    from . import teams as tm
     from .people import card_name
+    today = today or dt.datetime.now(dt.timezone.utc).date()
     out_dir = out_dir or OUT
     ids, cache = store.get("ids", {}), store.get("bios", {})
     aliases = nm.aliases() if aliases is None else aliases
@@ -541,6 +544,11 @@ def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None
         if fe:
             pr["feats"] = fe
             pr["src"] = pr["src"] + [x for x in dict.fromkeys(ft.source_names(fe)) if x not in pr["src"]]
+        team, team_src = tm.for_profile(name, p.get("c", ""), p.get("k", ""), teams, today, aliases) if teams else (None, "")
+        if team:
+            pr["team"] = team
+            if team_src and team_src not in pr["src"]:
+                pr["src"] = pr["src"] + [team_src]
         k = key(name)
         fn = os.path.join(out_dir, k + ".json")
         body = json.dumps(pr, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
