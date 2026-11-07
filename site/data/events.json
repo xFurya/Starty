@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-06T22:03:46+03:00",
- "checked": "2026-11-06T22:03:46+03:00",
- "complete": false,
+ "generated": "2026-11-07T08:20:57+03:00",
+ "checked": "2026-11-07T08:20:57+03:00",
+ "complete": true,
  "facts_version": "7",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
   "Golden Skate": "ok",
-  "ФФКМ": "календарь не открылся (https://ffkm.ru/season/competitions/calendar-of-sports-competitions/: <urlopen error timed out>)",
+  "ФФКМ": "ok",
   "Самара": "ok"
  },
  "events": [
@@ -79,168 +79,192 @@
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 23
+     "place": 23,
+     "points": "44.62"
     },
     {
      "name": "Софья Гончарова / Александр Синцов",
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 13
+     "place": 13,
+     "points": "54.31"
     },
     {
      "name": "Полина Ловыгина / Алексей Морозов",
      "nation": "",
      "no": 3,
      "warmup": null,
-     "place": 24
+     "place": 24,
+     "points": "40.37"
     },
     {
      "name": "Алиса Кремер / Илья Целковский",
      "nation": "",
      "no": 4,
      "warmup": null,
-     "place": 7
+     "place": 7,
+     "points": "59.34"
     },
     {
      "name": "Софья Грабчак / Максим Полторак",
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 8
+     "place": 8,
+     "points": "58.60"
     },
     {
      "name": "Анна Билибина / Дмитрий Кашаев",
      "nation": "",
      "no": 6,
      "warmup": null,
-     "place": 1
+     "place": 1,
+     "points": "66.36"
     },
     {
      "name": "Таиса Мусурова / Дмитрий Карбовский",
      "nation": "",
      "no": 7,
      "warmup": null,
-     "place": 20
+     "place": 20,
+     "points": "48.51"
     },
     {
      "name": "Елизавета Ростилова / Денис Ауров",
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 4
+     "place": 4,
+     "points": "61.01"
     },
     {
      "name": "Арина Власова / Денис Горбушин",
      "nation": "",
      "no": 9,
      "warmup": null,
-     "place": 15
+     "place": 15,
+     "points": "53.28"
     },
     {
      "name": "Влада Бердникова / Кирилл Алексеев",
      "nation": "",
      "no": 10,
      "warmup": null,
-     "place": 18
+     "place": 18,
+     "points": "50.47"
     },
     {
      "name": "Арина Новикова / Кирилл Лихачев",
      "nation": "",
      "no": 11,
      "warmup": null,
-     "place": 9
+     "place": 9,
+     "points": "57.91"
     },
     {
      "name": "Полина Жарова / Алексей Столяров",
      "nation": "",
      "no": 12,
      "warmup": null,
-     "place": 2
+     "place": 2,
+     "points": "65.28"
     },
     {
      "name": "Екатерина Старостина / Тимофей Столяренко",
      "nation": "",
      "no": 13,
      "warmup": null,
-     "place": 17
+     "place": 17,
+     "points": "52.60"
     },
     {
      "name": "Мария Казьмина / Никита Ворожейкин",
      "nation": "",
      "no": 14,
      "warmup": null,
-     "place": 21
+     "place": 21,
+     "points": "46.23"
     },
     {
      "name": "Александра Васенева / Максим Ситько",
      "nation": "",
      "no": 15,
      "warmup": null,
-     "place": 12
+     "place": 12,
+     "points": "54.93"
     },
     {
      "name": "Яна Писклякова / Марк Котов",
      "nation": "",
      "no": 16,
      "warmup": null,
-     "place": 19
+     "place": 19,
+     "points": "48.89"
     },
     {
      "name": "Устинья Смирнова / Матвей Шипилов",
      "nation": "",
      "no": 17,
      "warmup": null,
-     "place": 10
+     "place": 10,
+     "points": "57.75"
     },
     {
      "name": "София Варенова / Сергей Кузлякин",
      "nation": "",
      "no": 18,
      "warmup": null,
-     "place": 16
+     "place": 16,
+     "points": "52.78"
     },
     {
      "name": "София Загребаева / Иван Тертышников",
      "nation": "",
      "no": 19,
      "warmup": null,
-     "place": 6
+     "place": 6,
+     "points": "59.36"
     },
     {
      "name": "Сандра Давыденко / Игнат Пахомов",
      "nation": "",
      "no": 20,
      "warmup": null,
-     "place": 11
+     "place": 11,
+     "points": "56.70"
     },
     {
      "name": "Полина Пунегова / Дмитрий Кашубин",
      "nation": "",
      "no": 21,
      "warmup": null,
-     "place": 14
+     "place": 14,
+     "points": "53.38"
     },
     {
      "name": "Евдокия Тарибо / Николай Никитенко",
      "nation": "",
      "no": 22,
      "warmup": null,
-     "place": 22
+     "place": 22,
+     "points": "44.91"
     },
     {
      "name": "Эвелина Валиева / Даниил Лавриненко",
      "nation": "",
      "no": 23,
      "warmup": null,
-     "place": 5
+     "place": 5,
+     "points": "60.80"
     },
     {
      "name": "Евдокия Крючкова / Артем Мякишев",
      "nation": "",
      "no": 24,
      "warmup": null,
-     "place": 3
+     "place": 3,
+     "points": "62.45"
     }
    ],
    "live": {
@@ -369,6 +393,7 @@
      "no": 1,
      "warmup": null,
      "place": 23,
+     "points": "68.01",
      "final": 24
     },
     {
@@ -377,6 +402,7 @@
      "no": 2,
      "warmup": null,
      "place": 21,
+     "points": "71.46",
      "final": 22
     },
     {
@@ -385,6 +411,7 @@
      "no": 3,
      "warmup": null,
      "place": 24,
+     "points": "67.26",
      "final": 23
     },
     {
@@ -393,6 +420,7 @@
      "no": 4,
      "warmup": null,
      "place": 20,
+     "points": "74.33",
      "final": 21
     },
     {
@@ -401,6 +429,7 @@
      "no": 5,
      "warmup": null,
      "place": 19,
+     "points": "74.39",
      "final": 19
     },
     {
@@ -409,6 +438,7 @@
      "no": 6,
      "warmup": null,
      "place": 18,
+     "points": "75.25",
      "final": 18
     },
     {
@@ -417,6 +447,7 @@
      "no": 7,
      "warmup": null,
      "place": 13,
+     "points": "81.22",
      "final": 16
     },
     {
@@ -425,6 +456,7 @@
      "no": 8,
      "warmup": null,
      "place": 22,
+     "points": "69.96",
      "final": 20
     },
     {
@@ -433,6 +465,7 @@
      "no": 9,
      "warmup": null,
      "place": 10,
+     "points": "84.61",
      "final": 12
     },
     {
@@ -441,6 +474,7 @@
      "no": 10,
      "warmup": null,
      "place": 16,
+     "points": "78.36",
      "final": 17
     },
     {
@@ -449,6 +483,7 @@
      "no": 11,
      "warmup": null,
      "place": 11,
+     "points": "82.02",
      "final": 13
     },
     {
@@ -457,6 +492,7 @@
      "no": 12,
      "warmup": null,
      "place": 17,
+     "points": "78.36",
      "final": 15
     },
     {
@@ -465,6 +501,7 @@
      "no": 13,
      "warmup": null,
      "place": 15,
+     "points": "80.29",
      "final": 14
     },
     {
@@ -473,6 +510,7 @@
      "no": 14,
      "warmup": null,
      "place": 12,
+     "points": "81.42",
      "final": 11
     },
     {
@@ -481,6 +519,7 @@
      "no": 15,
      "warmup": null,
      "place": 9,
+     "points": "84.86",
      "final": 9
     },
     {
@@ -489,6 +528,7 @@
      "no": 16,
      "warmup": null,
      "place": 6,
+     "points": "87.66",
      "final": 8
     },
     {
@@ -497,6 +537,7 @@
      "no": 17,
      "warmup": null,
      "place": 7,
+     "points": "87.40",
      "final": 7
     },
     {
@@ -505,6 +546,7 @@
      "no": 18,
      "warmup": null,
      "place": 2,
+     "points": "92.08",
      "final": 4
     },
     {
@@ -513,6 +555,7 @@
      "no": 19,
      "warmup": null,
      "place": 5,
+     "points": "88.61",
      "final": 6
     },
     {
@@ -521,6 +564,7 @@
      "no": 20,
      "warmup": null,
      "place": 14,
+     "points": "80.61",
      "final": 10
     },
     {
@@ -529,6 +573,7 @@
      "no": 21,
      "warmup": null,
      "place": 4,
+     "points": "90.40",
      "final": 5
     },
     {
@@ -537,6 +582,7 @@
      "no": 22,
      "warmup": null,
      "place": 3,
+     "points": "91.88",
      "final": 2
     },
     {
@@ -545,6 +591,7 @@
      "no": 23,
      "warmup": null,
      "place": 1,
+     "points": "98.04",
      "final": 1
     },
     {
@@ -553,6 +600,7 @@
      "no": 24,
      "warmup": null,
      "place": 8,
+     "points": "85.27",
      "final": 3
     }
    ],
@@ -619,7 +667,8 @@
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 1
+     "place": 1,
+     "points": "71.49"
     }
    ],
    "athletes": [
@@ -660,56 +709,64 @@
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 2
+     "place": 2,
+     "points": "65.55"
     },
     {
      "name": "Ангелина Кулагина / Максим Ихсанов",
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 7
+     "place": 7,
+     "points": "43.88"
     },
     {
      "name": "Дарья Самохвалова / Роман Романычев",
      "nation": "",
      "no": 3,
      "warmup": null,
-     "place": 5
+     "place": 5,
+     "points": "53.58"
     },
     {
      "name": "Зоя Ковязина / Дмитрий Родионов",
      "nation": "",
      "no": 4,
      "warmup": null,
-     "place": 3
+     "place": 3,
+     "points": "63.24"
     },
     {
      "name": "Александра Уколова / Роман Орлов",
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 6
+     "place": 6,
+     "points": "45.45"
     },
     {
      "name": "Кира Маркова / Илья Ковальчук",
      "nation": "",
      "no": 6,
      "warmup": null,
-     "place": 8
+     "place": 8,
+     "points": "39.17"
     },
     {
      "name": "Арина Парсегова / Матвей Богданов",
      "nation": "",
      "no": 7,
      "warmup": null,
-     "place": 4
+     "place": 4,
+     "points": "61.02"
     },
     {
      "name": "Таисия Гусева / Даниил Овчинников",
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 1
+     "place": 1,
+     "points": "71.49"
     }
    ],
    "live": {
@@ -752,7 +809,8 @@
      "nation": "",
      "no": 38,
      "warmup": 7,
-     "place": 2
+     "place": 2,
+     "points": "68.03"
     }
    ],
    "athletes": [
@@ -833,336 +891,384 @@
      "nation": "",
      "no": 1,
      "warmup": 1,
-     "place": 35
+     "place": 35,
+     "points": "50.73"
     },
     {
      "name": "Елизавета Ильичева",
      "nation": "",
      "no": 2,
      "warmup": 1,
-     "place": 42
+     "place": 42,
+     "points": "44.75"
     },
     {
      "name": "Мелания Гришина",
      "nation": "",
      "no": 3,
      "warmup": 1,
-     "place": 47
+     "place": 47,
+     "points": "36.75"
     },
     {
      "name": "Виктория Сомова",
      "nation": "",
      "no": 4,
      "warmup": 1,
-     "place": 19
+     "place": 19,
+     "points": "56.50"
     },
     {
      "name": "Мария Галушкина",
      "nation": "",
      "no": 5,
      "warmup": 1,
-     "place": 18
+     "place": 18,
+     "points": "56.51"
     },
     {
      "name": "Яна Иванова",
      "nation": "",
      "no": 6,
      "warmup": 1,
-     "place": 24
+     "place": 24,
+     "points": "54.31"
     },
     {
      "name": "Екатерина Стоцкая",
      "nation": "",
      "no": 7,
      "warmup": 2,
-     "place": 13
+     "place": 13,
+     "points": "60.25"
     },
     {
      "name": "Полина Мартыненко",
      "nation": "",
      "no": 8,
      "warmup": 2,
-     "place": 6
+     "place": 6,
+     "points": "63.87"
     },
     {
      "name": "Наталья Старшова",
      "nation": "",
      "no": 9,
      "warmup": 2,
-     "place": 12
+     "place": 12,
+     "points": "60.54"
     },
     {
      "name": "Алиса Семина",
      "nation": "",
      "no": 10,
      "warmup": 2,
-     "place": 7
+     "place": 7,
+     "points": "63.16"
     },
     {
      "name": "Софья Лабуткина",
      "nation": "",
      "no": 11,
      "warmup": 2,
-     "place": 43
+     "place": 43,
+     "points": "43.60"
     },
     {
      "name": "Елизавета Андреева",
      "nation": "",
      "no": 12,
      "warmup": 2,
-     "place": 37
+     "place": 37,
+     "points": "49.68"
     },
     {
      "name": "Алина Воробьева",
      "nation": "",
      "no": 13,
      "warmup": 3,
-     "place": 33
+     "place": 33,
+     "points": "51.07"
     },
     {
      "name": "Ева Тарасенко",
      "nation": "",
      "no": 14,
      "warmup": 3,
-     "place": 26
+     "place": 26,
+     "points": "52.81"
     },
     {
      "name": "Елизавета Борисова",
      "nation": "",
      "no": 15,
      "warmup": 3,
-     "place": 20
+     "place": 20,
+     "points": "56.04"
     },
     {
      "name": "София Левшова",
      "nation": "",
      "no": 16,
      "warmup": 3,
-     "place": 40
+     "place": 40,
+     "points": "45.92"
     },
     {
      "name": "Ева Вачасова",
      "nation": "",
      "no": 17,
      "warmup": 3,
-     "place": 21
+     "place": 21,
+     "points": "55.82"
     },
     {
      "name": "Алиса Корнаухова",
      "nation": "",
      "no": 18,
      "warmup": 3,
-     "place": 25
+     "place": 25,
+     "points": "53.28"
     },
     {
      "name": "Анна Ильиных",
      "nation": "",
      "no": 19,
      "warmup": 4,
-     "place": 36
+     "place": 36,
+     "points": "50.12"
     },
     {
      "name": "Мария Капичникова",
      "nation": "",
      "no": 20,
      "warmup": 4,
-     "place": 34
+     "place": 34,
+     "points": "50.99"
     },
     {
      "name": "Ника Маскайкина",
      "nation": "",
      "no": 21,
      "warmup": 4,
-     "place": 10
+     "place": 10,
+     "points": "61.56"
     },
     {
      "name": "Майя Сарафанова",
      "nation": "",
      "no": 22,
      "warmup": 4,
-     "place": 5
+     "place": 5,
+     "points": "64.54"
     },
     {
      "name": "София Сокольская",
      "nation": "",
      "no": 23,
      "warmup": 4,
-     "place": 46
+     "place": 46,
+     "points": "37.50"
     },
     {
      "name": "Елизавета Самичева",
      "nation": "",
      "no": 24,
      "warmup": 4,
-     "place": 45
+     "place": 45,
+     "points": "40.77"
     },
     {
      "name": "Варвара Полуэктова",
      "nation": "",
      "no": 25,
      "warmup": 5,
-     "place": 44
+     "place": 44,
+     "points": "42.47"
     },
     {
      "name": "Юлиана Черенёва",
      "nation": "",
      "no": 26,
      "warmup": 5,
-     "place": 23
+     "place": 23,
+     "points": "54.60"
     },
     {
      "name": "Виктория Позднякова",
      "nation": "",
      "no": 27,
      "warmup": 5,
-     "place": 29
+     "place": 29,
+     "points": "51.35"
     },
     {
      "name": "Камила Назипова",
      "nation": "",
      "no": 28,
      "warmup": 5,
-     "place": 16
+     "place": 16,
+     "points": "57.00"
     },
     {
      "name": "Екатерина Титова",
      "nation": "",
      "no": 29,
      "warmup": 5,
-     "place": 30
+     "place": 30,
+     "points": "51.19"
     },
     {
      "name": "София Гречихина",
      "nation": "",
      "no": 30,
      "warmup": 5,
-     "place": 39
+     "place": 39,
+     "points": "47.17"
     },
     {
      "name": "Алиса Чистякова",
      "nation": "",
      "no": 31,
      "warmup": 6,
-     "place": 28
+     "place": 28,
+     "points": "51.88"
     },
     {
      "name": "Валерия Литвинчёва",
      "nation": "",
      "no": 32,
      "warmup": 6,
-     "place": 9
+     "place": 9,
+     "points": "62.54"
     },
     {
      "name": "Валерия Лукашова",
      "nation": "",
      "no": 33,
      "warmup": 6,
-     "place": 14
+     "place": 14,
+     "points": "58.83"
     },
     {
      "name": "Софья Федоркова",
      "nation": "",
      "no": 34,
      "warmup": 6,
-     "place": 48
+     "place": 48,
+     "points": "33.75"
     },
     {
      "name": "Елизавета Дубынина",
      "nation": "",
      "no": 35,
      "warmup": 6,
-     "place": 31
+     "place": 31,
+     "points": "51.16"
     },
     {
      "name": "Анастасия Чиннова",
      "nation": "",
      "no": 36,
      "warmup": 6,
-     "place": 27
+     "place": 27,
+     "points": "52.40"
     },
     {
      "name": "Алина Николаева",
      "nation": "",
      "no": 37,
      "warmup": 7,
-     "place": 38
+     "place": 38,
+     "points": "47.29"
     },
     {
      "name": "Софья Смагина",
      "nation": "",
      "no": 38,
      "warmup": 7,
-     "place": 2
+     "place": 2,
+     "points": "68.03"
     },
     {
      "name": "Елизавета Мельникова",
      "nation": "",
      "no": 39,
      "warmup": 7,
-     "place": 15
+     "place": 15,
+     "points": "58.46"
     },
     {
      "name": "Анастасия Трошкина",
      "nation": "",
      "no": 40,
      "warmup": 7,
-     "place": 41
+     "place": 41,
+     "points": "45.49"
     },
     {
      "name": "Дарья Лебедева",
      "nation": "",
      "no": 41,
      "warmup": 7,
-     "place": 3
+     "place": 3,
+     "points": "67.42"
     },
     {
      "name": "Диана Мильто",
      "nation": "",
      "no": 42,
      "warmup": 7,
-     "place": 1
+     "place": 1,
+     "points": "68.21"
     },
     {
      "name": "Полина Павликова",
      "nation": "",
      "no": 43,
      "warmup": 8,
-     "place": 4
+     "place": 4,
+     "points": "65.88"
     },
     {
      "name": "Полина Значкова",
      "nation": "",
      "no": 44,
      "warmup": 8,
-     "place": 22
+     "place": 22,
+     "points": "54.84"
     },
     {
      "name": "Алиса Мильто",
      "nation": "",
      "no": 45,
      "warmup": 8,
-     "place": 8
+     "place": 8,
+     "points": "62.98"
     },
     {
      "name": "Виктория Михайлова",
      "nation": "",
      "no": 46,
      "warmup": 8,
-     "place": 11
+     "place": 11,
+     "points": "60.73"
     },
     {
      "name": "Евдокия Макарова",
      "nation": "",
      "no": 47,
      "warmup": 8,
-     "place": 32
+     "place": 32,
+     "points": "51.11"
     },
     {
      "name": "Алиса Шатохина",
      "nation": "",
      "no": 48,
      "warmup": 8,
-     "place": 17
+     "place": 17,
+     "points": "56.64"
     }
    ],
    "live": {
@@ -11078,105 +11184,120 @@
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 9
+     "place": 9,
+     "points": "70.71"
     },
     {
      "name": "Роман Савосин",
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 3
+     "place": 3,
+     "points": "88.00"
     },
     {
      "name": "Георгий Терехов",
      "nation": "",
      "no": 3,
      "warmup": null,
-     "place": 14
+     "place": 14,
+     "points": "64.86"
     },
     {
      "name": "Иван Конихин",
      "nation": "",
      "no": 4,
      "warmup": null,
-     "place": 2
+     "place": 2,
+     "points": "89.89"
     },
     {
      "name": "Илья Молянов",
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 8
+     "place": 8,
+     "points": "70.89"
     },
     {
      "name": "Петр Дубовицкий",
      "nation": "",
      "no": 6,
      "warmup": null,
-     "place": 13
+     "place": 13,
+     "points": "65.55"
     },
     {
      "name": "Лев Лазарев",
      "nation": "",
      "no": 7,
      "warmup": null,
-     "place": 1
+     "place": 1,
+     "points": "98.35"
     },
     {
      "name": "Илья Мавлянов",
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 10
+     "place": 10,
+     "points": "68.73"
     },
     {
      "name": "Кирилл Кропылев",
      "nation": "",
      "no": 9,
      "warmup": null,
-     "place": 11
+     "place": 11,
+     "points": "68.37"
     },
     {
      "name": "Никита Сарновский",
      "nation": "",
      "no": 10,
      "warmup": null,
-     "place": 6
+     "place": 6,
+     "points": "75.31"
     },
     {
      "name": "Иван Макиев",
      "nation": "",
      "no": 11,
      "warmup": null,
-     "place": 15
+     "place": 15,
+     "points": "60.94"
     },
     {
      "name": "Даниил Самсонов",
      "nation": "",
      "no": 12,
      "warmup": null,
-     "place": 5
+     "place": 5,
+     "points": "81.05"
     },
     {
      "name": "Арсений Димитриев",
      "nation": "",
      "no": 13,
      "warmup": null,
-     "place": 7
+     "place": 7,
+     "points": "71.43"
     },
     {
      "name": "Алексей Заводских",
      "nation": "",
      "no": 14,
      "warmup": null,
-     "place": 12
+     "place": 12,
+     "points": "65.84"
     },
     {
      "name": "Артемий Маринин",
      "nation": "",
      "no": 15,
      "warmup": null,
-     "place": 4
+     "place": 4,
+     "points": "83.15"
     }
    ],
    "live": {
@@ -11897,42 +12018,48 @@
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 2
+     "place": 2,
+     "points": "63.06"
     },
     {
      "name": "Валерия Ходыкина / Даниил Бутенко",
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 1
+     "place": 1,
+     "points": "66.52"
     },
     {
      "name": "Анна Ляшенко / Петр Алексеенко",
      "nation": "",
      "no": 3,
      "warmup": null,
-     "place": 5
+     "place": 5,
+     "points": "55.85"
     },
     {
      "name": "Екатерина Гейниш / Андрей Рудь",
      "nation": "",
      "no": 4,
      "warmup": null,
-     "place": 3
+     "place": 3,
+     "points": "61.37"
     },
     {
      "name": "Мария Симонова / Денис Кирсанов",
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 6
+     "place": 6,
+     "points": "51.60"
     },
     {
      "name": "Анастасия Гиричева / Иван Долгодворов",
      "nation": "",
      "no": 6,
      "warmup": null,
-     "place": 4
+     "place": 4,
+     "points": "59.98"
     }
    ],
    "live": {
@@ -51878,6 +52005,76 @@
    "proto": null
   },
   {
+   "id": "isu:isu-grand-prix-final-2026:dance-junior-rt",
+   "tid": "isu:isu-grand-prix-final-2026",
+   "tournament": "Финал Гран-при",
+   "kind": "dance",
+   "level": "junior",
+   "seg": "РТ",
+   "title": "Финал Гран-при — юниорские танцы РТ",
+   "start": "2026-12-10T15:15:00+03:00",
+   "end": "2026-12-10T16:05:00+03:00",
+   "venue": "Chongqing, China",
+   "intl": true,
+   "broadcast": [
+    "Okko",
+    "YouTube ISU"
+   ],
+   "ours": [
+    {
+     "name": "Мария Фефелова / Артём Валов",
+     "nation": "RUS"
+    }
+   ],
+   "athletes": [
+    "Ambre Perrier Gianesini / Samuel Blanc Klaperman",
+    "Dania Mouaden / Theo Bigot",
+    "Darya Grimm / Grigorii Rodin",
+    "Hana Maria Aboian / Daniil Veselukhin",
+    "Zoe Bianchi / Daniel Basile",
+    "Мария Фефелова / Артём Валов"
+   ],
+   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-grand-prix-final-2026/",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    },
+    {
+     "name": "YouTube ISU",
+     "url": "https://www.youtube.com/@SkatingISU/live"
+    }
+   ],
+   "desc": "Россияне:\n• Мария Фефелова / Артём Валов\n\nНачало: 15:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Ambre Perrier Gianesini / Samuel Blanc Klaperman",
+     "nation": "FRA"
+    },
+    {
+     "name": "Dania Mouaden / Theo Bigot",
+     "nation": "FRA"
+    },
+    {
+     "name": "Darya Grimm / Grigorii Rodin",
+     "nation": "GER"
+    },
+    {
+     "name": "Hana Maria Aboian / Daniil Veselukhin",
+     "nation": "USA"
+    },
+    {
+     "name": "Zoe Bianchi / Daniel Basile",
+     "nation": "ITA"
+    },
+    {
+     "name": "Мария Фефелова / Артём Валов",
+     "nation": "RUS"
+    }
+   ],
+   "proto": null
+  },
+  {
    "id": "isu:isu-grand-prix-final-2026:pairs-junior-pp",
    "tid": "isu:isu-grand-prix-final-2026",
    "tournament": "Финал Гран-при",
@@ -51942,6 +52139,76 @@
     },
     {
      "name": "Полина Шешелева / Егор Карнаухов",
+     "nation": "RUS"
+    }
+   ],
+   "proto": null
+  },
+  {
+   "id": "isu:isu-grand-prix-final-2026:dance-junior-pt",
+   "tid": "isu:isu-grand-prix-final-2026",
+   "tournament": "Финал Гран-при",
+   "kind": "dance",
+   "level": "junior",
+   "seg": "ПТ",
+   "title": "Финал Гран-при — юниорские танцы ПТ",
+   "start": "2026-12-11T11:10:00+03:00",
+   "end": "2026-12-11T12:05:00+03:00",
+   "venue": "Chongqing, China",
+   "intl": true,
+   "broadcast": [
+    "Okko",
+    "YouTube ISU"
+   ],
+   "ours": [
+    {
+     "name": "Мария Фефелова / Артём Валов",
+     "nation": "RUS"
+    }
+   ],
+   "athletes": [
+    "Ambre Perrier Gianesini / Samuel Blanc Klaperman",
+    "Dania Mouaden / Theo Bigot",
+    "Darya Grimm / Grigorii Rodin",
+    "Hana Maria Aboian / Daniil Veselukhin",
+    "Zoe Bianchi / Daniel Basile",
+    "Мария Фефелова / Артём Валов"
+   ],
+   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-grand-prix-final-2026/",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.tv/"
+    },
+    {
+     "name": "YouTube ISU",
+     "url": "https://www.youtube.com/@SkatingISU/live"
+    }
+   ],
+   "desc": "Россияне:\n• Мария Фефелова / Артём Валов\n\nНачало: 11:10 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Ambre Perrier Gianesini / Samuel Blanc Klaperman",
+     "nation": "FRA"
+    },
+    {
+     "name": "Dania Mouaden / Theo Bigot",
+     "nation": "FRA"
+    },
+    {
+     "name": "Darya Grimm / Grigorii Rodin",
+     "nation": "GER"
+    },
+    {
+     "name": "Hana Maria Aboian / Daniil Veselukhin",
+     "nation": "USA"
+    },
+    {
+     "name": "Zoe Bianchi / Daniel Basile",
+     "nation": "ITA"
+    },
+    {
+     "name": "Мария Фефелова / Артём Валов",
      "nation": "RUS"
     }
    ],
@@ -73127,7 +73394,7 @@
    "p": "fb0724bebe09"
   },
   {
-   "n": "Юлиана Черенева",
+   "n": "Юлиана Черенёва",
    "c": "RUS",
    "k": "W"
   },
@@ -73232,6 +73499,11 @@
    "p": "b87112a41735"
   },
   {
+   "n": "Юлиана Черенева",
+   "c": "RUS",
+   "k": "W"
+  },
+  {
    "n": "Fedor Zonov",
    "c": "RUS",
    "k": ""
@@ -73257,11 +73529,6 @@
    "n": "Daria Shirokhova",
    "c": "RUS",
    "k": ""
-  },
-  {
-   "n": "Юлиана Черенёва",
-   "c": "RUS",
-   "k": "W"
   },
   {
    "n": "Артём Фролов",
