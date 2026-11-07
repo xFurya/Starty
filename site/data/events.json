@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T07:19:23.240970+00:00",
+ "checked": "2026-11-07T07:35:22.784106+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48064,7 +48064,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Emily Bratti / Ian Somerville — 102.93\n2. Eva Pate / Logan Bye — 96.20\n3. Junfei Ren / Jianing Xing — 91.56\n\nНачало: 09:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Olivia Smart / Tim Dieck — 107.32\n2. Emily Bratti / Ian Somerville — 102.93\n3. Eva Pate / Logan Bye — 96.20\n\nНачало: 09:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Yufei Lin / Zijian Gao",
@@ -48072,7 +48072,7 @@
      "time": "09:36",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "80.21"
     },
     {
@@ -48081,7 +48081,7 @@
      "time": "09:44",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "91.56"
     },
     {
@@ -48090,7 +48090,7 @@
      "time": "09:52",
      "no": 3,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "89.81"
     },
     {
@@ -48099,7 +48099,7 @@
      "time": "10:00",
      "no": 4,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "96.20"
     },
     {
@@ -48108,7 +48108,7 @@
      "time": "10:08",
      "no": 5,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "102.93"
     },
     {
@@ -48116,7 +48116,9 @@
      "nation": "ESP",
      "time": "10:22",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "107.32"
     },
     {
      "name": "Loicia Demougeot / Theo le Mercier",
@@ -48170,21 +48172,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Olivia Smart / Tim Dieck",
+     "nation": "ESP",
+     "points": "107.32"
+    },
+    {
+     "place": 2,
      "name": "Emily Bratti / Ian Somerville",
      "nation": "USA",
      "points": "102.93"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Eva Pate / Logan Bye",
      "nation": "USA",
      "points": "96.20"
-    },
-    {
-     "place": 3,
-     "name": "Junfei Ren / Jianing Xing",
-     "nation": "CHN",
-     "points": "91.56"
     }
    ],
    "provisional": true
