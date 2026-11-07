@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T08:11:22.379969+00:00",
+ "checked": "2026-11-07T08:47:23.056708+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48280,14 +48280,16 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Россияне:\n• Александра Трусова — 12:54\n\nНачало: 11:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Olga Mikutina — 102.45\n\nРоссияне:\n• Александра Трусова — 12:54\n\nНачало: 11:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Olga Mikutina",
      "nation": "AUT",
      "time": "11:37",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "102.45"
     },
     {
      "name": "Rinka Watanabe",
@@ -48388,7 +48390,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-cup-of-china-2026.json"
+   "proto": "isu_isu-gp-cup-of-china-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Olga Mikutina",
+     "nation": "AUT",
+     "points": "102.45"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:men-senior-kp",
