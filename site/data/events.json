@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-07T08:20:57+03:00",
- "checked": "2026-11-07T08:20:57+03:00",
+ "generated": "2026-11-07T08:39:44+03:00",
+ "checked": "2026-11-07T08:39:44+03:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -52805,6 +52805,23 @@
    "watch": []
   },
   {
+   "tid": "isu:isu-european-championships-2027",
+   "name": "Чемпионат Европы",
+   "intl": true,
+   "venue": "Lausanne, Switzerland",
+   "start": "2027-01-27",
+   "end": "2027-01-31",
+   "broadcast": [
+    "YouTube ISU"
+   ],
+   "watch": [
+    {
+     "name": "YouTube ISU",
+     "url": "https://www.youtube.com/@SkatingISU/live"
+    }
+   ]
+  },
+  {
    "tid": "fsr:na-prizy-chaikovskoi-2027-01-28",
    "name": "На призы Чайковской",
    "start": "2027-01-28",
@@ -52873,6 +52890,33 @@
    "intl": false,
    "broadcast": [],
    "watch": []
+  },
+  {
+   "tid": "isu:isu-cs-icechallenge",
+   "name": "CS Icechallenge",
+   "intl": true,
+   "venue": "Graz, Austria",
+   "start": "2027-02-10",
+   "end": "2027-02-13",
+   "broadcast": [],
+   "watch": []
+  },
+  {
+   "tid": "isu:isu-figure-skating-four-continents-championships",
+   "name": "Чемпионат четырёх континентов",
+   "intl": true,
+   "venue": "Almaty, Kazakhstan",
+   "start": "2027-02-10",
+   "end": "2027-02-14",
+   "broadcast": [
+    "YouTube ISU"
+   ],
+   "watch": [
+    {
+     "name": "YouTube ISU",
+     "url": "https://www.youtube.com/@SkatingISU/live"
+    }
+   ]
   },
   {
    "tid": "fsr:zimniaia-spartakiada-molodezhi-ii-etap-sfo-i-dfo-2027-02-11",
@@ -52975,6 +53019,23 @@
    "watch": []
   },
   {
+   "tid": "isu:isu-world-junior-championships-2027",
+   "name": "Чемпионат мира среди юниоров",
+   "intl": true,
+   "venue": "Sofia, Bulgaria",
+   "start": "2027-02-24",
+   "end": "2027-02-28",
+   "broadcast": [
+    "YouTube ISU"
+   ],
+   "watch": [
+    {
+     "name": "YouTube ISU",
+     "url": "https://www.youtube.com/@SkatingISU/live"
+    }
+   ]
+  },
+  {
    "tid": "fsr:final-gran-pri-rossii-2027-02-25",
    "name": "Финал Гран-при России",
    "start": "2027-02-25",
@@ -53065,6 +53126,23 @@
    "watch": []
   },
   {
+   "tid": "isu:isu-world-championships-2027",
+   "name": "Чемпионат мира",
+   "intl": true,
+   "venue": "Tampere, Finland",
+   "start": "2027-03-17",
+   "end": "2027-03-21",
+   "broadcast": [
+    "YouTube ISU"
+   ],
+   "watch": [
+    {
+     "name": "YouTube ISU",
+     "url": "https://www.youtube.com/@SkatingISU/live"
+    }
+   ]
+  },
+  {
    "tid": "fsr:serebrianoe-ozherele-rossii-2027-03-18",
    "name": "Серебряное ожерелье России",
    "start": "2027-03-18",
@@ -53123,6 +53201,23 @@
    "intl": false,
    "broadcast": [],
    "watch": []
+  },
+  {
+   "tid": "isu:isu-world-figure-skating-team-trophy",
+   "name": "Командный чемпионат мира",
+   "intl": true,
+   "venue": "Tokyo, Japan",
+   "start": "2027-04-07",
+   "end": "2027-04-11",
+   "broadcast": [
+    "YouTube ISU"
+   ],
+   "watch": [
+    {
+     "name": "YouTube ISU",
+     "url": "https://www.youtube.com/@SkatingISU/live"
+    }
+   ]
   },
   {
    "tid": "fsr:pamiati-serebrovskogo-2027-04-09",
@@ -69789,12 +69884,6 @@
    "k": "d"
   },
   {
-   "n": "Александра Игнатова",
-   "c": "RUS",
-   "k": "",
-   "p": "21bd930d64b2"
-  },
-  {
    "n": "Александра Марьина",
    "c": "RUS",
    "k": "W"
@@ -73497,6 +73586,11 @@
    "c": "RUS",
    "k": "",
    "p": "b87112a41735"
+  },
+  {
+   "n": "Александра Игнатова",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Юлиана Черенева",
