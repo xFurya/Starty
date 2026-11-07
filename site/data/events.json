@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T11:55:22.730554+00:00",
+ "checked": "2026-11-07T12:03:23.395063+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48683,7 +48683,10 @@
      "nation": "RUS",
      "time": "14:49",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "135.15",
+     "final": 1
     }
    ],
    "athletes": [
@@ -48709,7 +48712,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Anastasiia Metelkina / Luka Berulava — 131.21\n2. Yuna Nagaoka / Sumitada Moriguchi — 118.44\n3. Karina Akopova / Nikita Rakhmanin — 115.12\n\nРоссияне:\n• Анастасия Мишина / Александр Галлямов — 14:49\n\nНачало: 13:40 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Анастасия Мишина / Александр Галлямов — 135.15\n2. Anastasiia Metelkina / Luka Berulava — 131.21\n3. Yuna Nagaoka / Sumitada Moriguchi — 118.44\n\nИтог турнира:\n1. Анастасия Мишина / Александр Галлямов — 209.84\n2. Anastasiia Metelkina / Luka Berulava — 198.27\n3. Yuna Nagaoka / Sumitada Moriguchi — 181.50\n\nРоссияне:\n• Анастасия Мишина / Александр Галлямов — 14:49\n\nНачало: 13:40 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Jiaxuan Zhang / Yihang Huang",
@@ -48717,8 +48720,9 @@
      "time": "13:47",
      "no": 1,
      "warmup": 1,
-     "place": 5,
-     "points": "99.58"
+     "place": 6,
+     "points": "99.58",
+     "final": 7
     },
     {
      "name": "Jazmine Desrochers / Kieran Thrasher",
@@ -48726,8 +48730,9 @@
      "time": "13:55",
      "no": 2,
      "warmup": 1,
-     "place": 7,
-     "points": "93.84"
+     "place": 8,
+     "points": "93.84",
+     "final": 8
     },
     {
      "name": "Valentina Plazas / Maximiliano Fernandez",
@@ -48735,8 +48740,9 @@
      "time": "14:03",
      "no": 3,
      "warmup": 1,
-     "place": 6,
-     "points": "98.71"
+     "place": 7,
+     "points": "98.71",
+     "final": 6
     },
     {
      "name": "Chelsea Liu / Ryan Bedard",
@@ -48744,8 +48750,9 @@
      "time": "14:11",
      "no": 4,
      "warmup": 1,
-     "place": 4,
-     "points": "100.31"
+     "place": 5,
+     "points": "100.31",
+     "final": 5
     },
     {
      "name": "Yuna Nagaoka / Sumitada Moriguchi",
@@ -48753,8 +48760,9 @@
      "time": "14:26",
      "no": 5,
      "warmup": 2,
-     "place": 2,
-     "points": "118.44"
+     "place": 3,
+     "points": "118.44",
+     "final": 3
     },
     {
      "name": "Karina Akopova / Nikita Rakhmanin",
@@ -48762,8 +48770,9 @@
      "time": "14:34",
      "no": 6,
      "warmup": 2,
-     "place": 3,
-     "points": "115.12"
+     "place": 4,
+     "points": "115.12",
+     "final": 4
     },
     {
      "name": "Anastasiia Metelkina / Luka Berulava",
@@ -48771,15 +48780,19 @@
      "time": "14:42",
      "no": 7,
      "warmup": 2,
-     "place": 1,
-     "points": "131.21"
+     "place": 2,
+     "points": "131.21",
+     "final": 2
     },
     {
      "name": "Анастасия Мишина / Александр Галлямов",
      "nation": "RUS",
      "time": "14:49",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "135.15",
+     "final": 1
     }
    ],
    "live": {
@@ -48797,30 +48810,49 @@
      "Anastasiia METELKINA / Luka BERULAVA": "Anastasiia Metelkina / Luka Berulava",
      "Anastasia MISHINA / Aleksandr GALLIAMOV": "Анастасия Мишина / Александр Галлямов"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-cup-of-china-2026.json",
    "podium": [
     {
      "place": 1,
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "RUS",
+     "points": "135.15"
+    },
+    {
+     "place": 2,
      "name": "Anastasiia Metelkina / Luka Berulava",
      "nation": "GEO",
      "points": "131.21"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Yuna Nagaoka / Sumitada Moriguchi",
      "nation": "JPN",
      "points": "118.44"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Анастасия Мишина / Александр Галлямов",
+     "nation": "RUS",
+     "points": "209.84"
+    },
+    {
+     "place": 2,
+     "name": "Anastasiia Metelkina / Luka Berulava",
+     "nation": "GEO",
+     "points": "198.27"
     },
     {
      "place": 3,
-     "name": "Karina Akopova / Nikita Rakhmanin",
-     "nation": "ARM",
-     "points": "115.12"
+     "name": "Yuna Nagaoka / Sumitada Moriguchi",
+     "nation": "JPN",
+     "points": "181.50"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:women-senior-kp",
