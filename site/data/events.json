@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T11:11:23.443387+00:00",
+ "checked": "2026-11-07T11:19:22.298140+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48709,7 +48709,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Jiaxuan Zhang / Yihang Huang — 99.58\n2. Valentina Plazas / Maximiliano Fernandez — 98.71\n3. Jazmine Desrochers / Kieran Thrasher — 93.84\n\nРоссияне:\n• Анастасия Мишина / Александр Галлямов — 14:49\n\nНачало: 13:40 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Chelsea Liu / Ryan Bedard — 100.31\n2. Jiaxuan Zhang / Yihang Huang — 99.58\n3. Valentina Plazas / Maximiliano Fernandez — 98.71\n\nРоссияне:\n• Анастасия Мишина / Александр Галлямов — 14:49\n\nНачало: 13:40 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Jiaxuan Zhang / Yihang Huang",
@@ -48717,7 +48717,7 @@
      "time": "13:47",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "99.58"
     },
     {
@@ -48726,7 +48726,7 @@
      "time": "13:55",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "93.84"
     },
     {
@@ -48735,7 +48735,7 @@
      "time": "14:03",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "98.71"
     },
     {
@@ -48743,7 +48743,9 @@
      "nation": "USA",
      "time": "14:11",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "100.31"
     },
     {
      "name": "Yuna Nagaoka / Sumitada Moriguchi",
@@ -48795,21 +48797,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Chelsea Liu / Ryan Bedard",
+     "nation": "USA",
+     "points": "100.31"
+    },
+    {
+     "place": 2,
      "name": "Jiaxuan Zhang / Yihang Huang",
      "nation": "CHN",
      "points": "99.58"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Valentina Plazas / Maximiliano Fernandez",
      "nation": "USA",
      "points": "98.71"
-    },
-    {
-     "place": 3,
-     "name": "Jazmine Desrochers / Kieran Thrasher",
-     "nation": "CAN",
-     "points": "93.84"
     }
    ],
    "provisional": true
