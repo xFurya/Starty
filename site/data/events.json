@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T09:59:22.473526+00:00",
+ "checked": "2026-11-07T10:07:22.697064+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48250,7 +48250,9 @@
      "nation": "RUS",
      "time": "12:54",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "148.90"
     }
    ],
    "athletes": [
@@ -48280,7 +48282,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Haein Lee — 143.30\n2. Lara Naki Gutmann — 130.93\n3. Sophie Joline von Felten — 129.02\n\nРоссияне:\n• Александра Трусова — 12:54\n\nНачало: 11:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Александра Трусова — 148.90\n2. Haein Lee — 143.30\n3. Lara Naki Gutmann — 130.93\n\nРоссияне:\n• Александра Трусова — 12:54\n\nНачало: 11:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Olga Mikutina",
@@ -48288,7 +48290,7 @@
      "time": "11:37",
      "no": 1,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "102.45"
     },
     {
@@ -48297,7 +48299,7 @@
      "time": "11:45",
      "no": 2,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "99.14"
     },
     {
@@ -48306,7 +48308,7 @@
      "time": "11:53",
      "no": 3,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "91.02"
     },
     {
@@ -48315,7 +48317,7 @@
      "time": "12:00",
      "no": 4,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "129.02"
     },
     {
@@ -48324,7 +48326,7 @@
      "time": "12:08",
      "no": 5,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "105.52"
     },
     {
@@ -48333,7 +48335,7 @@
      "time": "12:16",
      "no": 6,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "115.89"
     },
     {
@@ -48342,7 +48344,7 @@
      "time": "12:31",
      "no": 7,
      "warmup": 2,
-     "place": 1,
+     "place": 2,
      "points": "143.30"
     },
     {
@@ -48351,7 +48353,7 @@
      "time": "12:39",
      "no": 8,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "124.15"
     },
     {
@@ -48360,7 +48362,7 @@
      "time": "12:46",
      "no": 9,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "130.93"
     },
     {
@@ -48368,7 +48370,9 @@
      "nation": "RUS",
      "time": "12:54",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "148.90"
     },
     {
      "name": "Anastasiia Gubanova",
@@ -48410,21 +48414,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Александра Трусова",
+     "nation": "RUS",
+     "points": "148.90"
+    },
+    {
+     "place": 2,
      "name": "Haein Lee",
      "nation": "KOR",
      "points": "143.30"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Lara Naki Gutmann",
      "nation": "ITA",
      "points": "130.93"
-    },
-    {
-     "place": 3,
-     "name": "Sophie Joline von Felten",
-     "nation": "USA",
-     "points": "129.02"
     }
    ],
    "provisional": true
