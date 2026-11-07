@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T10:55:22.668723+00:00",
+ "checked": "2026-11-07T11:03:22.909510+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48709,7 +48709,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Jiaxuan Zhang / Yihang Huang — 99.58\n\nРоссияне:\n• Анастасия Мишина / Александр Галлямов — 14:49\n\nНачало: 13:40 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Jiaxuan Zhang / Yihang Huang — 99.58\n2. Jazmine Desrochers / Kieran Thrasher — 93.84\n\nРоссияне:\n• Анастасия Мишина / Александр Галлямов — 14:49\n\nНачало: 13:40 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Jiaxuan Zhang / Yihang Huang",
@@ -48725,7 +48725,9 @@
      "nation": "CAN",
      "time": "13:55",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "93.84"
     },
     {
      "name": "Valentina Plazas / Maximiliano Fernandez",
@@ -48794,6 +48796,12 @@
      "name": "Jiaxuan Zhang / Yihang Huang",
      "nation": "CHN",
      "points": "99.58"
+    },
+    {
+     "place": 2,
+     "name": "Jazmine Desrochers / Kieran Thrasher",
+     "nation": "CAN",
+     "points": "93.84"
     }
    ],
    "provisional": true
