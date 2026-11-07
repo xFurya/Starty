@@ -10,6 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'app_icon.dart';
 import 'billing.dart';
 import 'data.dart';
+import 'feedback.dart';
 import 'main.dart';
 import 'platform.dart';
 import 'protocol.dart' show openLink, openPayment;
@@ -24,6 +25,7 @@ import 'updater.dart';
 import 'views.dart' show freshness;
 
 part 'billing_page.dart';
+part 'feedback_page.dart';
 
 const _ics = 'webcal://xfurya.github.io/Starty/calendar.ics';
 const _google = 'https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fxfurya.github.io%2FStarty%2Fcalendar.ics';
@@ -348,6 +350,38 @@ class SettingsView extends StatelessWidget {
                 _Row(icon: CupertinoIcons.doc_text, title: 'Источники', subtitle: _sources(state)),
               ],
             ),
+          ),
+        ),
+
+        // ---------------------------------------------------------- обратная связь
+        const SliverToBoxAdapter(child: _Head('Обратная связь')),
+        SliverToBoxAdapter(
+          child: Plate(
+            child: feedbackAvailable
+                ? Column(
+                    children: [
+                      _Row(
+                        icon: CupertinoIcons.ant,
+                        title: 'Сообщить об ошибке',
+                        subtitle: 'Что-то работает не так или показано неверно',
+                        onTap: () => openFeedback(context, back: 'Настройки'),
+                        trailing: const _Chevron(),
+                      ),
+                      const Hairline(),
+                      _Row(
+                        icon: CupertinoIcons.lightbulb,
+                        title: 'Предложить идею',
+                        subtitle: 'Чего не хватает, что сделать удобнее',
+                        onTap: () => openFeedback(context, kind: FeedbackKind.idea, back: 'Настройки'),
+                        trailing: const _Chevron(),
+                      ),
+                    ],
+                  )
+                : const _Row(
+                    icon: CupertinoIcons.ant,
+                    title: 'Обратная связь',
+                    subtitle: 'Недоступна в этой сборке',
+                  ),
           ),
         ),
         SliverToBoxAdapter(child: SizedBox(height: 32 + MediaQuery.paddingOf(context).bottom)),
@@ -836,11 +870,15 @@ class _SettingsPage extends StatelessWidget {
 
   /// Есть — внизу панель «Отменить / Сохранить»; нет — страница действует сразу (как «Аккаунт»).
   final Future<void> Function()? onSave;
+
+  /// Куда ведёт кнопка слева вверху: «Настройки» или, если страница открыта из карточки, «Назад».
+  final String back;
   const _SettingsPage({
     required this.title,
     required this.slivers,
     this.dirty = false,
     this.onSave,
+    this.back = 'Настройки',
   });
 
   Future<void> _leave(BuildContext context) async {
@@ -908,9 +946,9 @@ class _SettingsPage extends StatelessWidget {
                             CupertinoIcons.chevron_back,
                             size: 18,
                           ),
-                          label: const Text(
-                            'Настройки',
-                            style: TextStyle(
+                          label: Text(
+                            back,
+                            style: const TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.w600,
                             ),

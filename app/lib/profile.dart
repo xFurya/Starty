@@ -14,6 +14,7 @@ import 'data.dart';
 import 'flags.dart';
 import 'palette.dart';
 import 'protocol.dart' show openLink;
+import 'settings.dart' show FeedbackAbout, ReportLink;
 import 'sheets.dart' show SwipeSurface;
 import 'ui.dart';
 import 'views.dart' show PlacingName;
@@ -531,6 +532,16 @@ class _ProfileSheetState extends State<ProfileSheet> {
           padding: const EdgeInsets.fromLTRB(22, 18, 22, 0),
           child: Text(src, style: TextStyle(fontSize: 13, color: p.ink2, height: 1.35)),
         ),
+      // неверный тренер, фото, звание — сообщение сразу знает, о ком
+      ReportLink(
+        about: FeedbackAbout(
+          id: 'profile:${widget.name}',
+          icon: CupertinoIcons.person,
+          title: widget.name,
+          subtitle: 'Профиль спортсмена',
+        ),
+        padding: EdgeInsets.fromLTRB(12, src.isNotEmpty ? 6 : 14, 12, 0),
+      ),
     ];
   }
 

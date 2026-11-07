@@ -13,6 +13,7 @@ import 'main.dart';
 import 'platform.dart';
 import 'profile.dart';
 import 'protocol.dart';
+import 'settings.dart' show FeedbackAbout, ReportLink;
 import 'state.dart';
 import 'system.dart';
 import 'ui.dart';
@@ -228,6 +229,15 @@ class _StartSheet extends StatelessWidget {
                     _InfoRow(icon: CupertinoIcons.location, label: 'Место', value: s.venue.isEmpty ? '—' : s.venue),
                   ],
                 ),
+              ),
+            ),
+            // неверное время, нет трансляции, ошибка в итогах — сообщение сразу знает, о каком старте
+            ReportLink(
+              about: FeedbackAbout(
+                id: 'start:${s.id}',
+                icon: CupertinoIcons.calendar,
+                title: seg.isEmpty ? disc : '$disc, ${segNames[seg]}',
+                subtitle: '${s.tournament}\n$date',
               ),
             ),
             SizedBox(height: 26 + MediaQuery.paddingOf(context).bottom),
