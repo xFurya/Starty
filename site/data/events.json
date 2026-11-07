@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T10:47:23.096046+00:00",
+ "checked": "2026-11-07T10:55:22.668723+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48517,7 +48517,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Макар Игнатов — 95.41\n2. Александр Мельников — 94.82\n3. Глеб Лутфуллин — 91.63\n\nНачало: 12:30 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Макар Игнатов — 95.41\n2. Марк Кондратюк — 94.92\n3. Александр Мельников — 94.82\n\nНачало: 12:30 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Семен Соловьев",
@@ -48525,7 +48525,7 @@
      "time": "12:37",
      "no": 1,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "77.80"
     },
     {
@@ -48534,7 +48534,7 @@
      "time": "12:50",
      "no": 3,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "points": "64.01"
     },
     {
@@ -48543,7 +48543,7 @@
      "time": "12:56",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "77.89"
     },
     {
@@ -48552,7 +48552,7 @@
      "time": "13:03",
      "no": 5,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "67.23"
     },
     {
@@ -48561,7 +48561,7 @@
      "time": "13:09",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "94.82"
     },
     {
@@ -48579,7 +48579,7 @@
      "time": "13:23",
      "no": 7,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "68.14"
     },
     {
@@ -48588,7 +48588,7 @@
      "time": "13:29",
      "no": 8,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "80.23"
     },
     {
@@ -48597,7 +48597,7 @@
      "time": "13:36",
      "no": 9,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "67.64"
     },
     {
@@ -48606,7 +48606,7 @@
      "time": "13:42",
      "no": 10,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "91.63"
     },
     {
@@ -48614,7 +48614,9 @@
      "nation": "МОС",
      "time": "13:49",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "94.92"
     }
    ],
    "live": {
@@ -48635,7 +48637,7 @@
      "Глеб ЛУТФУЛЛИН": "Глеб Лутфуллин",
      "Марк КОНДРАТЮК": "Марк Кондратюк"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json",
    "podium": [
@@ -48647,18 +48649,17 @@
     },
     {
      "place": 2,
-     "name": "Александр Мельников",
+     "name": "Марк Кондратюк",
      "nation": "МОС",
-     "points": "94.82"
+     "points": "94.92"
     },
     {
      "place": 3,
-     "name": "Глеб Лутфуллин",
-     "nation": "СПБ",
-     "points": "91.63"
+     "name": "Александр Мельников",
+     "nation": "МОС",
+     "points": "94.82"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:pairs-senior-pp",
@@ -48708,14 +48709,16 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Россияне:\n• Анастасия Мишина / Александр Галлямов — 14:49\n\nНачало: 13:40 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Jiaxuan Zhang / Yihang Huang — 99.58\n\nРоссияне:\n• Анастасия Мишина / Александр Галлямов — 14:49\n\nНачало: 13:40 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Jiaxuan Zhang / Yihang Huang",
      "nation": "CHN",
      "time": "13:47",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "99.58"
     },
     {
      "name": "Jazmine Desrochers / Kieran Thrasher",
@@ -48784,7 +48787,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-cup-of-china-2026.json"
+   "proto": "isu_isu-gp-cup-of-china-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Jiaxuan Zhang / Yihang Huang",
+     "nation": "CHN",
+     "points": "99.58"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:women-senior-kp",
