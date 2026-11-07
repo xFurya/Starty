@@ -94,11 +94,42 @@ def is_cyr(s):
     return bool(re.search(r"[А-Яа-яЁё]", s))
 
 
+# латинские буквы, неотличимые от русских: источник набрал «Нетcев» с латинской «c» — человек
+# раздваивается в поиске
+_HOMOGLYPH = str.maketrans("aceopxyACEHKMOPTXB", "асеорхуАСЕНКМОРТХВ")
+
+
+def cyr_word(w):
+    """Слово кириллицей с латинскими двойниками русских букв внутри — целиком кириллицей."""
+    return w.translate(_HOMOGLYPH) if is_cyr(w) else w
+
+
 def pretty_ru(name):
     """«Екатерина КОРЧАЖНИКОВА» → «Екатерина Корчажникова»."""
     def cap(w):
         return "-".join(p[:1].upper() + p[1:].lower() for p in w.split("-"))
-    return " ".join(cap(w) if w.isupper() and len(w) > 1 else w for w in name.split())
+    return " ".join(cap(w) if w.isupper() and len(w) > 1 else w for w in map(cyr_word, name.split()))
+
+
+def spelling_rank(name):
+    """Чем меньше, тем лучше написание одного и того же имени: без смеси алфавитов, по-русски, с «ё»
+    («Пётр», не «Петр»: источник без «ё» её теряет, а лишней не добавляет), без фамилии капсом."""
+    mixed = any(is_cyr(w) and re.search(r"[A-Za-z]", w) for w in name.split())
+    shouty = bool(re.search(r"[A-ZА-ЯЁ]{3,}", name))
+    return (mixed, not is_cyr(name), -name.lower().count("ё"), shouty)
+
+
+def one_spelling(names, fresh=()):
+    """Одно написание на человека (ключ key): лучшее по spelling_rank, при равных — из нынешнего
+    сбора (fresh), затем по алфавиту. Иначе «Петр» и «Пётр», «Dmitri Aliev» и «Дмитрий Алиев» —
+    два человека в поиске."""
+    fresh = set(fresh)
+    best = {}
+    for n in names:
+        k = key(n)
+        if k not in best or (spelling_rank(n), n not in fresh, n) < (spelling_rank(best[k]), best[k] not in fresh, best[k]):
+            best[k] = n
+    return set(best.values())
 
 
 def split_given_family(name):
@@ -158,7 +189,10 @@ class Names:
         if len(parts) < 2 or not is_cyr(full_ru):
             return
         given, family = " ".join(parts[:-1]), parts[-1]
-        self.ru[(norm_lat(ru_to_lat(family)), norm_lat(ru_to_lat(given)))] = full_ru
+        k = (norm_lat(ru_to_lat(family)), norm_lat(ru_to_lat(given)))
+        # «Петр» из картотеки не вытесняет «Пётр» сборной: иначе имя скачет от сбора к сбору
+        if k not in self.ru or spelling_rank(full_ru) <= spelling_rank(self.ru[k]):
+            self.ru[k] = full_ru
 
     def add_fsr(self, surname, given):
         self.add(f"{given} {surname}")

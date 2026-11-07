@@ -214,6 +214,25 @@ class TopLevelTest(unittest.TestCase):
         self.assertEqual([p["n"] for p in kp.merge_named([], old, retract=["Б"])], ["А"])
         self.assertEqual(kp.merge_names({"А"}, ["Б"], retract=["А"]), {"Б"})
 
+    def test_people_one_person_one_record(self):
+        from . import names as nm
+        same = lambda p: (nm.key(p["n"]), p.get("c", ""))
+        old = [{"n": "Пётр Гуменник", "c": "RUS", "k": "m", "p": "old1"},
+               {"n": "Dmitri Aliev", "c": "RUS", "k": "", "p": "old2"},
+               {"n": "Sabina Alieva", "c": "AZE", "k": "W", "p": "old3"}]
+        new = [{"n": "Петр Гуменник", "c": "RUS", "k": "m"}, {"n": "Дмитрий Алиев", "c": "RUS", "k": "m"}]
+        got = kp.merge_named(new, old, same=same, rank=nm.spelling_rank)
+        # запись — свежая, написание — лучшее из двух («Пётр» прежнего сбора не теряется)
+        self.assertEqual(got, [{"n": "Пётр Гуменник", "c": "RUS", "k": "m"},
+                               {"n": "Дмитрий Алиев", "c": "RUS", "k": "m"},
+                               {"n": "Sabina Alieva", "c": "AZE", "k": "W", "p": "old3"}])
+        # тёзка из другой страны — другой человек
+        got = kp.merge_named([{"n": "Мария Петрова", "c": "RUS"}], [{"n": "Maria Petrova", "c": "BUL"}],
+                             same=same, rank=nm.spelling_rank)
+        self.assertEqual(len(got), 2)
+        # без same — как раньше
+        self.assertEqual(len(kp.merge_named(new, old)), 5)
+
     def test_upcoming(self):
         old = [{"tid": "fsr:a", "start": "2026-11-01", "end": "2026-11-03"},
                {"tid": "isu:b", "start": "2026-11-05", "end": "2026-11-07"},

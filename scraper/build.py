@@ -1423,23 +1423,26 @@ def main():
 
     # Справочник для фильтра по спортсменам копится между сборами: все, кого видел
     # сборщик, — российские старты (МС/КМС) и участники международных турниров.
-    roster.update(names.ru.values())
-    roster.update(CFG["watchlist"])
+    fresh = set(names.ru.values()) | set(CFG["watchlist"]) | {p["n"] for p in book["people"]}
     for e in events:
-        roster.update(e.get("athletes", []))
-        roster.update(o["name"] for o in e.get("ours", []))
-        roster.update(p["name"] for p in e.get("podium", []))
-        roster.update(p["name"] for p in e.get("total", []))
-        roster.update((e.get("live") or {}).get("names", {}).values())
-    roster.update(p["n"] for p in book["people"])
+        fresh.update(e.get("athletes", []))
+        fresh.update(o["name"] for o in e.get("ours", []))
+        fresh.update(p["name"] for p in e.get("podium", []))
+        fresh.update(p["name"] for p in e.get("total", []))
+        fresh.update((e.get("live") or {}).get("names", {}).values())
+    roster.update(fresh)
     roster = kp.merge_names(roster, prev.get("roster"), retract.get("roster", ()))
     # латинское написание того, кого уже знаем по-русски, в справочнике не держим: поиск не должен давать двойников
     roster = {n for n in roster if not names.known_latin(n)}
     # пара наполовину кириллицей, наполовину латиницей — иностранец, ошибочно принятый за нашего
     roster = {n for n in roster if " / " not in n
               or len({nm.is_cyr(m) for m in n.split(" / ")}) == 1}
+    # один человек — одно написание: «Петр» и «Пётр», «Dmitri Aliev» и «Дмитрий Алиев» копились
+    # в справочнике рядом и давали двойников в поиске
+    roster = nm.one_spelling(roster, fresh)
 
-    people = kp.merge_named(book["people"], prev.get("people"), "n", retract.get("people", ()))
+    people = kp.merge_named(book["people"], prev.get("people"), "n", retract.get("people", ()),
+                            same=lambda p: (nm.key(p["n"]), p.get("c", "")), rank=nm.spelling_rank)
     # Профили: биографии ISU копятся и обновляются по очереди (выступившие — первыми), плюс картотека
     try:
         competed = {}
@@ -1478,7 +1481,7 @@ def main():
         "roster": sorted(roster),
         "people": people,
         "photos": withdraw_photos(kp.merge_map(collect_photos(events, upcoming, names, photos, prev.get("photos") or {},
-                                                              [p["n"] for p in book["people"]]),
+                                                              [p["n"] for p in people]),
                                                prev.get("photos"), retract.get("photos", ())),
                                   ph.load_skip(PHOTO_SKIP)),
     }

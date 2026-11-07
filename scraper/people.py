@@ -597,8 +597,8 @@ def build(names, season_start, log=print):
         # первый — из самого нового сезона; без вида (сборная, протокола не нашли) — только страна
         if kind is not None:
             p["k"].setdefault(kind, level)
-        # русское написание важнее латинского
-        if nm.is_cyr(name) and not nm.is_cyr(p["n"]):
+        # русское написание важнее латинского, «Пётр» — чем «Петр» (nm.spelling_rank)
+        if nm.spelling_rank(name) < nm.spelling_rank(p["n"]):
             p["n"] = name
 
     # полный список ISU: все фигуристы с российским или белорусским гражданством (вид — по заявке ISU)

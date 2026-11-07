@@ -185,12 +185,25 @@ def merge_map(new, old, retract=()):
     return out
 
 
-def merge_named(new, old, key="n", retract=()):
-    """people: список словарей с ключом key. Прежние записи, которых нет в новом, остаются."""
-    out = list(new or [])
+def merge_named(new, old, key="n", retract=(), same=None, rank=None):
+    """people: список словарей с ключом key. Прежние записи, которых нет в новом, остаются.
+    same(запись) — человек: записи одного человека под разными написаниями («Петр»/«Пётр»,
+    «Dmitri Aliev»/«Дмитрий Алиев») сводятся в одну — свежую (из нового, если есть), с лучшим
+    написанием по rank(имя). Без этого прежнее написание живёт вечно вторым профилем."""
+    out = [p for p in new or [] if p.get(key) not in retract]
     have = {p.get(key) for p in out}
     out += [p for p in old or [] if p.get(key) not in have and p.get(key) not in retract]
-    return [p for p in out if p.get(key) not in retract]
+    if not same:
+        return out
+    groups = {}
+    for p in out:
+        groups.setdefault(same(p), []).append(p)
+    res = []
+    for g in groups.values():
+        rec = g[0]
+        best = min((p.get(key) for p in g), key=rank) if rank else rec.get(key)
+        res.append(rec if best == rec.get(key) else dict(rec, **{key: best}))
+    return res
 
 
 def merge_names(new, old, retract=()):
