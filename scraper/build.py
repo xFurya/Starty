@@ -1070,6 +1070,19 @@ def results_index(url):
     return u
 
 
+# турниры ISU дальше этого срока — только по календарю, без запросов заявки
+FAR = dt.timedelta(days=75)
+
+
+def far_upcoming(tid, name, venue, bcast, fr, to):
+    """Турнир ISU, до которого далеко: даты и место по календарю, состава нет (а не «никого»)."""
+    first = fr.astimezone(MSK).date()
+    last = (to - dt.timedelta(hours=12)).astimezone(MSK).date()
+    return {"tid": tid, "name": name, "intl": True, "venue": venue,
+            "start": first.isoformat(), "end": max(first, last).isoformat(),
+            **_watch_fields(name, bcast, first, max(first, last))}
+
+
 def do_isu(names, report, failed, upcoming, photos):
     events = []
     now = dt.datetime.now(dt.timezone.utc)
@@ -1079,12 +1092,17 @@ def do_isu(names, report, failed, upcoming, photos):
             to = dt.datetime.fromisoformat(e["to"].replace("Z", "+00:00"))
         except (TypeError, ValueError):
             continue
-        if to < now - dt.timedelta(days=30) or fr > now + dt.timedelta(days=75):
+        if to < now - dt.timedelta(days=30):
             continue
         name = isu.short_name(e)
         tid = "isu:" + e["slug"]
         venue = intl_venue(e["city"], e["country"], e["country_name"])
         bcast = broadcast_for(name)
+        if fr > now + FAR:
+            # до турнира далеко: заявки и расписания ещё нет, спрашивать ISU о составе рано. В «скоро» —
+            # по календарю сезона, как российские по календарю ФФККР; состав придёт ближе к старту
+            upcoming.append(far_upcoming(tid, name, venue, bcast, fr, to))
+            continue
         try:
             got = []
             idx_url = results_index(e["results_url"])

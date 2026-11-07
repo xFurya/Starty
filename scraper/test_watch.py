@@ -294,3 +294,42 @@ class OnlyStreamTest(unittest.TestCase):
         self.assertNotIn("watch", self.ev(26))
         self.assertEqual(b.watch_for("CS PGE Warsaw Cup"), [])
         self.assertEqual(b.broadcast_for("CS PGE Warsaw Cup"), [])
+
+
+class FarIsuTest(unittest.TestCase):
+    """Турниры ISU далеко впереди (чемпионаты Европы и мира) — в «скоро» по календарю сезона,
+    без запросов заявки; прошедшие давно — не берутся."""
+
+    def setUp(self):
+        b._YT.clear()
+        self.addCleanup(b._YT.clear)
+
+    def cal(self, slug, name, sub, days, length=5):
+        now = dt.datetime.now(dt.timezone.utc).replace(hour=8, minute=0, second=0, microsecond=0)
+        fr, to = now + dt.timedelta(days=days), now + dt.timedelta(days=days + length)
+        return {"event_id": "1", "slug": slug, "name": name, "sub": sub,
+                "from": fr.isoformat().replace("+00:00", "Z"), "to": to.isoformat().replace("+00:00", "Z"),
+                "tz": "", "city": "Tallinn", "country": "EST", "country_name": "Estonia",
+                "results_url": None, "where_to_watch": ""}
+
+    def test_far_events_only_by_calendar(self):
+        far = self.cal("isu-european-figure-skating-championships-2027", "ISU European Figure Skating Championships 2027",
+                       "European Championships", 120)
+        old = self.cal("isu-old", "ISU Challenger Series Old Cup", "ISU Challenger Series", -60)
+        up, failed, report = [], set(), {"errors": [], "protos": {}}
+        boom = mock.Mock(side_effect=AssertionError("о далёком турнире ISU не спрашиваем"))
+        with mock.patch.object(b.isu, "events", return_value=[far, old]), \
+                mock.patch.object(b.isu, "schedule", boom), mock.patch.object(b.isu, "categories", boom), \
+                mock.patch.object(b.net, "fetch", side_effect=b.net.FetchError("x")):
+            got = b.do_isu({}, report, failed, up, {"raw": []})
+        self.assertEqual(got, [])
+        self.assertEqual(failed, set())
+        self.assertEqual([u["tid"] for u in up], ["isu:isu-european-figure-skating-championships-2027"])
+        u = up[0]
+        self.assertEqual(u["name"], "Чемпионат Европы")
+        self.assertTrue(u["intl"])
+        self.assertLessEqual(u["start"], u["end"])
+        self.assertEqual(u["venue"], b.intl_venue("Tallinn", "EST", "Estonia"))
+        # состава ещё нет — и ключей нет, а не пустое «никого»
+        self.assertNotIn("ours", u)
+        self.assertNotIn("athletes", u)
