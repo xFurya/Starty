@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T08:55:22.343475+00:00",
+ "checked": "2026-11-07T09:03:22.684165+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48280,7 +48280,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Olga Mikutina — 102.45\n2. Rinka Watanabe — 99.14\n\nРоссияне:\n• Александра Трусова — 12:54\n\nНачало: 11:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Olga Mikutina — 102.45\n2. Rinka Watanabe — 99.14\n3. Alina Bonillo — 91.02\n\nРоссияне:\n• Александра Трусова — 12:54\n\nНачало: 11:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Olga Mikutina",
@@ -48305,7 +48305,9 @@
      "nation": "USA",
      "time": "11:53",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3,
+     "points": "91.02"
     },
     {
      "name": "Sophie Joline von Felten",
@@ -48405,6 +48407,12 @@
      "name": "Rinka Watanabe",
      "nation": "JPN",
      "points": "99.14"
+    },
+    {
+     "place": 3,
+     "name": "Alina Bonillo",
+     "nation": "USA",
+     "points": "91.02"
     }
    ],
    "provisional": true
