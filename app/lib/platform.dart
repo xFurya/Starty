@@ -6,3 +6,11 @@ bool get isMac => !kIsWeb && defaultTargetPlatform == TargetPlatform.macOS;
 bool get isDesktop => isWindows || isMac;
 bool get isIos => !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
 bool get isAndroid => !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
+
+/// Уведомления о стартах. В браузере их нет: напоминание в срок может прислать только свой сервер
+/// рассылки, а его нет. Значит и обещать их на вебе нечего — ни переключателей, ни «запланировано».
+bool get canNotify => !kIsWeb;
+
+/// Табло турниров — чужие сайты: браузер не пустит к ним страницу без их разрешения. На вебе живые
+/// места и протокол — только из файлов нашего сайта.
+bool get canReadBoards => !kIsWeb;

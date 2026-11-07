@@ -3,78 +3,143 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Фигурное катание</title>
-<meta name="description" content="Календарь стартов по фигурному катанию: российские турниры и международные с россиянами. Время московское.">
-<meta name="theme-color" content="#0A2342">
+<title>Фигурное катание — календарь стартов</title>
+<meta name="description" content="Российские турниры и международные с россиянами и белорусами: расписание, протоколы и трансляции. Для Android, iPhone, Windows, Mac и в браузере.">
+<meta name="theme-color" content="#F1F6FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#06101B" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Фигурное катание">
+<meta property="og:title" content="Фигурное катание — календарь стартов">
+<meta property="og:description" content="Расписание, протоколы и трансляции. Android, iPhone, Windows, Mac и браузер.">
+<meta property="og:url" content="https://xfurya.github.io/Starty/">
+<meta property="og:image" content="https://xfurya.github.io/Starty/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="app/icon-64.png">
 <link rel="apple-touch-icon" href="app/icon-180.png">
+<link rel="preload" href="assets/fonts/CormorantGaramond-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Manrope-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
 <style>
-  :root { --bg: #F3F6F9; --ink: #0D1925; --ink2: #55667A; --line: #E2E8EE; --accent: #1C5C9C; --card: #fff; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #09131D; --ink: #E9F0F6; --ink2: #9DAEBC; --line: #1B2A39; --accent: #72B4F2; --card: #111F2D; } }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 460px; margin: 0 auto; padding: calc(env(safe-area-inset-top) + 40px) 20px 40px; }
-  .head { display: flex; align-items: center; gap: 16px; }
-  .head img { width: 76px; height: 76px; border-radius: 18px; }
-  h1 { margin: 0; font-size: 30px; line-height: 1.1; letter-spacing: -.5px; }
-  .head p { margin: 2px 0 0; color: var(--ink2); }
-  .btn { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; margin-top: 28px;
-         border-radius: 14px; background: var(--accent); color: #fff; font-weight: 600; font-size: 17px; text-decoration: none; }
-  @media (prefers-color-scheme: dark) { .btn { color: #06121c; } }
-  .note { color: var(--ink2); font-size: 14px; margin: 10px 2px 0; }
-  section { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); }
-  h2 { margin: 0 0 10px; font-size: 19px; }
-  ol { margin: 0; padding-left: 22px; }
-  li { margin: 6px 0; }
-  a { color: var(--accent); }
-  code { font-size: 14px; background: var(--card); padding: 2px 6px; border-radius: 6px; word-break: break-all; }
-  .muted { color: var(--ink2); font-size: 14px; }
+  .hero { padding: calc(env(safe-area-inset-top) + 44px) 0 8px; }
+  .grid { display: block; }
+  .icon { display: block; width: 84px; height: 84px; border-radius: 20px; margin-bottom: 22px; box-shadow: 0 12px 30px rgba(10, 35, 66, .25); }
+  .cta { display: grid; gap: 10px; margin-top: 26px; }
+  .demo { display: none; }
+  .device {
+    width: 360px; height: 740px; padding: 11px; border-radius: 54px; background: #0B1A2A;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, .06) inset, 0 30px 60px rgba(10, 35, 66, .28), 0 8px 18px rgba(10, 35, 66, .18);
+  }
+  .device iframe { display: block; width: 100%; height: 100%; border: 0; border-radius: 44px; background: var(--bg); }
+  @media (prefers-color-scheme: dark) { .device { background: #10233A; box-shadow: 0 0 0 1px #2A4868 inset, 0 30px 60px rgba(0, 0, 0, .5); } }
+  .demo p { margin: 14px 0 0; text-align: center; font-size: 13.5px; color: var(--ink2); }
+  @media (min-width: 980px) {
+    .hero { padding-top: 72px; }
+    .grid { display: grid; grid-template-columns: minmax(0, 500px) 360px; justify-content: center; align-items: start; gap: 96px; max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    .grid > .wrap { padding: 0; margin: 0; }
+    .cta { grid-template-columns: auto auto; justify-content: start; }
+    .demo { display: block; position: sticky; top: 32px; }
+  }
 </style>
 </head>
 <body>
-<main>
-  <div class="head">
-    <img src="app/icon-180.png" alt="">
-    <div><h1>Фигурное катание</h1><p>Календарь стартов</p></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="i-down" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></g>
+    <g id="i-guide" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></g>
+    <g id="i-android" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.5 18.5h3"/></g>
+    <g id="i-iphone" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/><path d="M10.3 5.3h3.4"/></g>
+    <g id="i-windows" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12.5" rx="2"/><path d="M9 20.5h6M12 16.5v4"/></g>
+    <g id="i-mac" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="10" rx="1.6"/><path d="M2.8 18.6h18.4"/></g>
+    <g id="i-web" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6M12 3.2c2.4 2.4 3.6 5.3 3.6 8.8s-1.2 6.4-3.6 8.8M12 3.2C9.6 5.6 8.4 8.5 8.4 12s1.2 6.4 3.6 8.8"/></g>
+  </defs>
+</svg>
+
+<header class="ice hero">
+  <span class="spark" style="top: 34px; right: 12%;" aria-hidden="true">✦</span>
+  <span class="spark" style="top: 92px; right: 5%; font-size: 13px;" aria-hidden="true">✦</span>
+  <div class="grid">
+    <div class="wrap">
+      <img class="icon" src="app/icon-180.png" alt="">
+      <p class="kicker">Календарь стартов</p>
+      <h1 class="title">Фигурное катание</h1>
+      <p class="lead">Российские турниры и международные с россиянами и белорусами: расписание, протоколы, трансляции.</p>
+      <div class="cta" id="cta">
+        <a class="btn primary" href="web/"><svg viewBox="0 0 24 24"><use href="#i-web"/></svg>Открыть в браузере</a>
+      </div>
+      <p class="hint" id="hint"></p>
+      <h2 class="label">Все способы</h2>
+      <div class="plate platforms">
+        <a class="row" href="app/Starty.apk" download>
+          <span class="tile"><svg viewBox="0 0 24 24"><use href="#i-android"/></svg></span>
+          <span class="txt"><span class="t">Android</span><span class="s">APK, обновляется само</span></span>
+          <span class="act">Скачать</span>
+        </a>
+        <a class="row" href="iphone/">
+          <span class="tile"><svg viewBox="0 0 24 24"><use href="#i-iphone"/></svg></span>
+          <span class="txt"><span class="t">iPhone и iPad</span><span class="s">Через SideStore</span></span>
+          <span class="act">Инструкция</span>
+        </a>
+        <a class="row" href="https://github.com/xFurya/Starty/releases/latest/download/Starty-windows-setup.exe">
+          <span class="tile"><svg viewBox="0 0 24 24"><use href="#i-windows"/></svg></span>
+          <span class="txt"><span class="t">Windows</span><span class="s">Установщик, обновляется сам</span></span>
+          <span class="act">Скачать</span>
+        </a>
+        <a class="row" href="https://github.com/xFurya/Starty/releases/latest/download/Starty-macos.dmg">
+          <span class="tile"><svg viewBox="0 0 24 24"><use href="#i-mac"/></svg></span>
+          <span class="txt"><span class="t">Mac</span><span class="s">DMG, обновляется сам</span></span>
+          <span class="act">Скачать</span>
+        </a>
+        <a class="row" href="web/">
+          <span class="tile"><svg viewBox="0 0 24 24"><use href="#i-web"/></svg></span>
+          <span class="txt"><span class="t">В браузере</span><span class="s">Без установки и уведомлений</span></span>
+          <span class="act">Открыть</span>
+        </a>
+      </div>
+    </div>
+    <div class="demo" id="demo">
+      <div class="device" id="device"></div>
+      <p>Это веб-версия, её можно листать</p>
+    </div>
   </div>
+</header>
 
-  <a class="btn" id="apk" href="app/Starty.apk" download>Скачать для Android</a>
-  <p class="note">Установка из файла. Обновления — в приложении.</p>
-
-  <section id="ios">
-    <h2>iPhone</h2>
-    <p class="muted">Через SideStore с личным Apple ID.</p>
-    <ol>
-      <li>SideStore: <a href="https://sidestore.io" target="_blank" rel="noopener">sidestore.io</a> (один раз, нужен компьютер).</li>
-      <li>Sources → «+» → <code>https://xfurya.github.io/Starty/app/sidestore.json</code></li>
-      <li>«Фигурное катание» → установить. Подпись и обновления — автоматически.</li>
-    </ol>
-  </section>
-
-  <section id="pc">
-    <h2>Windows и Mac</h2>
-    <p class="muted">Обновления — в приложении, при закрытии.</p>
-    <ol>
-      <li><a href="https://github.com/xFurya/Starty/releases/latest/download/Starty-windows-setup.exe">Windows</a>: установщик, без прав администратора; ярлык — в «Пуске».</li>
-      <li><a href="https://github.com/xFurya/Starty/releases/latest/download/Starty-macos.dmg">Mac</a>: открыть образ, перетащить приложение в «Программы», при первом запуске разрешить в «Системные настройки» → «Конфиденциальность и безопасность» → «Всё равно открыть».</li>
-    </ol>
-  </section>
-
-  <section>
-    <h2>Подписка</h2>
-    <p class="muted">Лента стартов для системного календаря.</p>
-    <ol>
-      <li><a href="webcal://xfurya.github.io/Starty/calendar.ics">Календарь iPhone</a></li>
-      <li><a href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fxfurya.github.io%2FStarty%2Fcalendar.ics">Google Календарь</a></li>
-    </ol>
-  </section>
-</main>
 <script>
-  // на iPhone первой показываем инструкцию для iPhone
-  if (/iphone|ipad|ipod/i.test(navigator.userAgent)) {
-    var apk = document.getElementById('apk'); apk.style.display = 'none'; apk.nextElementSibling.style.display = 'none';
-    document.getElementById('ios').style.borderTop = '0';
+(function () {
+  var ua = navigator.userAgent, touchMac = /Macintosh/.test(ua) && navigator.maxTouchPoints > 1;
+  var p = /iPhone|iPod/.test(ua) ? 'iphone' : (/iPad/.test(ua) || touchMac) ? 'ipad'
+        : /Android/i.test(ua) ? 'android' : /Windows/.test(ua) ? 'windows' : /Macintosh|Mac OS X/.test(ua) ? 'mac' : 'web';
+  var web = { href: 'web/', icon: 'web', text: 'Открыть в браузере' };
+  var dl = 'https://github.com/xFurya/Starty/releases/latest/download/';
+  var plans = {
+    iphone:  [{ href: 'iphone/', icon: 'guide', text: 'Установить на iPhone' }, web, 'В браузере работает всё, кроме уведомлений.'],
+    ipad:    [{ href: 'iphone/', icon: 'guide', text: 'Установить на iPad' }, web, 'В браузере работает всё, кроме уведомлений.'],
+    android: [{ href: 'app/Starty.apk', icon: 'down', text: 'Скачать для Android', download: true }, web, 'Если телефон спросит, разрешите установку из браузера.'],
+    windows: [{ href: dl + 'Starty-windows-setup.exe', icon: 'down', text: 'Скачать для Windows' }, web, 'Установщик не просит прав администратора.'],
+    mac:     [{ href: dl + 'Starty-macos.dmg', icon: 'down', text: 'Скачать для Mac' }, web, 'Если Mac не откроет приложение: «Системные настройки», «Конфиденциальность и безопасность», «Всё равно открыть».'],
+    web:     [web, null, '']
+  }[p];
+  function btn(b, cls) {
+    var a = document.createElement('a');
+    a.className = 'btn ' + cls; a.href = b.href; if (b.download) a.setAttribute('download', '');
+    a.innerHTML = '<svg viewBox="0 0 24 24"><use href="#i-' + b.icon + '"/></svg>';
+    a.appendChild(document.createTextNode(b.text));
+    return a;
   }
+  var cta = document.getElementById('cta');
+  cta.textContent = '';
+  cta.appendChild(btn(plans[0], 'primary'));
+  if (plans[1]) cta.appendChild(btn(plans[1], 'secondary'));
+  document.getElementById('hint').textContent = plans[2];
+
+  // на широком экране — живая веб-версия в рамке телефона; на телефоне её не грузим
+  if (window.matchMedia && matchMedia('(min-width: 980px)').matches) {
+    var f = document.createElement('iframe');
+    f.src = 'web/'; f.title = 'Фигурное катание, веб-версия'; f.loading = 'lazy';
+    document.getElementById('device').appendChild(f);
+  }
+})();
 </script>
 </body>
 </html>

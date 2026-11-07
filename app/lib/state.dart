@@ -2,7 +2,7 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart' show kIsWeb, mapEquals, visibleForTesting;
+import 'package:flutter/foundation.dart' show mapEquals, visibleForTesting;
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,6 +13,7 @@ import 'data.dart';
 import 'lineup.dart';
 import 'live.dart';
 import 'protocol_repo.dart';
+import 'platform.dart';
 import 'reminders.dart';
 import 'sync.dart';
 
@@ -496,7 +497,8 @@ class AppState extends ChangeNotifier {
   int liveEveryOf(Start s) => effectiveLiveEvery(liveEvery, liveEveryOver, s.id);
 
   /// Действующий режим старта: своё переопределение или общий.
-  String liveModeOf(Start s) => effectiveLiveMode(liveMode, liveOverrides, s.id);
+  /// В браузере табло недоступно (canReadBoards) — всегда файл протокола с нашего сайта.
+  String liveModeOf(Start s) => canReadBoards ? effectiveLiveMode(liveMode, liveOverrides, s.id) : liveDelayed;
 
   /// Регионы, у которых есть старты в расписании — видно и при выключенном показе.
   List<String> get regionNames => {
@@ -765,7 +767,6 @@ class AppState extends ChangeNotifier {
   /// Приложение на экране: табло с заданной частотой. Свёрнуто — не опрашиваем.
   void startLive() {
     _liveTimer?.cancel();
-    if (kIsWeb) return; // браузер не пустит на чужой сайт без разрешения сайта
     // тик чаще самой короткой частоты; кому пора — решает pollLive по своим часам
     _liveTimer = Timer.periodic(const Duration(seconds: 5), (_) => pollLive());
     unawaited(pollLive(force: true));

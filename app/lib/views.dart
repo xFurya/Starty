@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'data.dart';
 import 'flags.dart';
 import 'main.dart';
+import 'platform.dart';
 import 'sheets.dart';
 import 'state.dart';
 import 'ui.dart';
@@ -47,7 +48,7 @@ String season(DateTime t) {
 /// О будущем старте уведомления не будет — по правилам или выключено вручную.
 /// Старты, до которых меньше «заранее», не считаются: уведомлять уже поздно, и правила тут ни при чём.
 bool silent(AppState st, Start s, DateTime t) =>
-    st.rules.on && s.t0.subtract(Duration(minutes: st.rules.lead)).isAfter(t) && !st.notifies(s);
+    canNotify && st.rules.on && s.t0.subtract(Duration(minutes: st.rules.lead)).isAfter(t) && !st.notifies(s);
 
 /// Старты, которые лента показала бы с этим фильтром: идущие, сегодняшние завершённые
 /// (если их показывать) и будущие на 60 дней вперёд.
@@ -293,7 +294,9 @@ class NoticeLine extends StatelessWidget {
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     final String text;
-    if (!state.rules.on) {
+    if (!canNotify) {
+      return const SizedBox.shrink();
+    } else if (!state.rules.on) {
       text = 'Уведомления выключены';
     } else if (state.allowed == false) {
       text = 'Уведомления запрещены в системе';

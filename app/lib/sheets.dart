@@ -10,6 +10,7 @@ import 'countries.dart';
 import 'data.dart';
 import 'flags.dart';
 import 'main.dart';
+import 'platform.dart';
 import 'profile.dart';
 import 'protocol.dart';
 import 'state.dart';
@@ -78,7 +79,7 @@ class _StartSheet extends StatelessWidget {
     final notify = _notifyRow(context, t);
     // живые места: режим для этого старта, если у него есть табло и файл протокола — компактный чип.
     // Итог окончательный (settled, как в watching) — опрашивать нечего, чипа нет совсем.
-    final liveChip = s.live != null && s.proto != null && !s.settled ? _LiveChip(state: state, start: s) : null;
+    final liveChip = canReadBoards && s.live != null && s.proto != null && !s.settled ? _LiveChip(state: state, start: s) : null;
     final short = isShortWindow(context);
     final heading = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -239,7 +240,7 @@ class _StartSheet extends StatelessWidget {
   /// Строка уведомления о начале. Старт начался — строки нет.
   Widget? _notifyRow(BuildContext context, DateTime t) {
     final p = Palette.of(context);
-    if (!s.t0.isAfter(t)) return null;
+    if (!canNotify || !s.t0.isAfter(t)) return null;
     if (!state.rules.on) {
       return _NotifyPlate(
         icon: CupertinoIcons.bell_slash,
@@ -1017,7 +1018,7 @@ class _OurAhead extends StatelessWidget {
     // отдельное уведомление о выходе — когда оно и правда стоит в плане и система его покажет
     final alertAt = skate?.subtract(Duration(minutes: state.rules.lead));
     final alert =
-        state.rules.skaters && state.notifies(s) && state.allowed != false && alertAt != null && alertAt.isAfter(t)
+        canNotify && state.rules.skaters && state.notifies(s) && state.allowed != false && alertAt != null && alertAt.isAfter(t)
         ? 'уведомление в$nb${hm(alertAt)}'
         : null;
     return ProfileTap(

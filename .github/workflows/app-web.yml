@@ -1,0 +1,77 @@
+name: Сборка веб-версии
+
+# Веб-версия приложения на сайте: site/web/ → https://xfurya.github.io/Starty/web/
+# Собирается тем же номером, что и выпуски (app/pubspec.yaml); номер выложенной лежит
+# в site/web/version.json (его пишет сам Flutter). Тот же номер — пропуск.
+# Из сборки выбрасываются отладочные .symbols и движки, которые сборке dart2js не нужны
+# (skwasm — только для wasm, wimp и webparagraph — только по отдельному флагу).
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['tools/release_note.txt', 'app/**', '.github/workflows/app-web.yml']
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: app-web
+  cancel-in-progress: false
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Номер версии
+        id: num
+        run: |
+          VER=$(grep '^version:' app/pubspec.yaml | sed 's/version: *//; s/+.*//')
+          BUILD=$(grep '^version:' app/pubspec.yaml | sed 's/.*+//')
+          HAVE=$(python3 -c "import json; print(json.load(open('site/web/version.json'))['build_number'])" 2>/dev/null || echo none)
+          if [ "$BUILD" = "$HAVE" ]; then echo "сборка $BUILD уже выложена"; echo "new=false" >> "$GITHUB_OUTPUT"; else echo "new=true" >> "$GITHUB_OUTPUT"; fi
+          echo "ver=$VER" >> "$GITHUB_OUTPUT"
+          echo "build=$BUILD" >> "$GITHUB_OUTPUT"
+
+      - uses: subosito/flutter-action@v2
+        if: steps.num.outputs.new == 'true'
+        with:
+          channel: stable
+          flutter-version: 3.47.7
+          cache: true
+
+      - name: Собрать
+        if: steps.num.outputs.new == 'true'
+        working-directory: app
+        run: |
+          flutter pub get
+          flutter build web --release --base-href /Starty/web/ --no-web-resources-cdn \
+            --dart-define=BUILD=${{ steps.num.outputs.build }} --dart-define=VERSION=${{ steps.num.outputs.ver }} --dart-define=SUPABASE_URL=https://klhzfgjzgdmsggbxcinj.supabase.co --dart-define=SUPABASE_ANON=sb_publishable_G4xs2LcAeyQyJoYcigvLAQ_lEx37rWu
+
+      - name: Выложить на сайт
+        if: steps.num.outputs.new == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          rm -rf site/web && mkdir -p site/web
+          (cd app/build/web && tar cf - --exclude='*.symbols' --exclude='./canvaskit/skwasm*' \
+            --exclude='./canvaskit/wimp*' --exclude='./canvaskit/webparagraph*' .) | (cd site/web && tar xf -)
+          test -s site/web/main.dart.js
+          test -s site/web/canvaskit/canvaskit.wasm
+          grep -q '"build_number":"${{ steps.num.outputs.build }}"' site/web/version.json
+          du -sh site/web
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A site/web
+          git commit -q -m "Веб: сборка ${{ steps.num.outputs.ver }}+${{ steps.num.outputs.build }}" || exit 0
+          for i in 1 2 3 4; do
+            if git pull -q --rebase && git push -q; then break; fi
+            git rebase --abort 2>/dev/null || true
+            [ "$i" = 4 ] && { echo "коммит веб-версии не отправлен" >&2; exit 1; }
+            sleep 5
+          done
+          gh workflow run update.yml --ref main

@@ -28,7 +28,11 @@ part 'billing_page.dart';
 const _ics = 'webcal://xfurya.github.io/Starty/calendar.ics';
 const _google = 'https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fxfurya.github.io%2FStarty%2Fcalendar.ics';
 
-bool get _ios => !kIsWeb && (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.macOS);
+// и в браузере на iPhone и Mac: webcal открывает подписку в системном Календаре
+bool get _ios => defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.macOS;
+
+/// Страница скачивания — из веб-версии, где уведомлений нет.
+const _download = 'https://xfurya.github.io/Starty/';
 
 /// Условия фильтра — каждое своей меткой: «2 вида», «1 турнир», «1 спортсмен»; пусто — все старты.
 List<String> filterTags(Filters f) {
@@ -107,6 +111,19 @@ class SettingsView extends StatelessWidget {
 
         // ---------------------------------------------------------- уведомления
         const SliverToBoxAdapter(child: _Head('Уведомления')),
+        if (!canNotify)
+          SliverToBoxAdapter(
+            child: Plate(
+              child: _Row(
+                icon: CupertinoIcons.bell_slash,
+                title: 'В браузере не приходят',
+                subtitle: 'Только в приложении для телефона и компьютера',
+                action: 'Скачать',
+                onAction: () => launchUrl(Uri.parse(_download), webOnlyWindowName: '_top'), // и из окошка на странице
+              ),
+            ),
+          )
+        else
         SliverToBoxAdapter(
           child: Plate(
             child: Column(
@@ -195,6 +212,8 @@ class SettingsView extends StatelessWidget {
                   value: state.regional,
                   onChanged: state.setRegional,
                 ),
+                // табло в браузере недоступно — выбирать нечего: живые места из файла сайта
+                if (canReadBoards) ...[
                 const Hairline(),
                 _ChoiceRow<String>(
                   icon: state.liveMode == liveDelayed ? CupertinoIcons.timer : CupertinoIcons.bolt,
@@ -215,6 +234,7 @@ class SettingsView extends StatelessWidget {
                     if (v != null && v != liveEveryAsSettings) state.setLiveEvery(v);
                   },
                 ),
+                ],
               ],
             ),
           ),

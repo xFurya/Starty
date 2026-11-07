@@ -4,6 +4,7 @@
 // Все операции с кэшем — в try/catch: без кэша экран работает.
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -54,6 +55,8 @@ class ProtocolRepo {
   /// Общий экземпляр приложения; в тестах — свой, с подменённым клиентом и часами.
   static ProtocolRepo app = ProtocolRepo();
 
+  static const _noCache = {'Cache-Control': 'no-cache'};
+
   final http.Client _client;
   final DateTime Function() _now;
 
@@ -103,7 +106,8 @@ class ProtocolRepo {
     final http.Response r;
     try {
       r = await _client
-          .get(Uri.parse('$url?t=${_now().millisecondsSinceEpoch ~/ 60000}'), headers: {'Cache-Control': 'no-cache'})
+          // свежесть даёт метка ?t=; в браузере лишний заголовок потребовал бы от сайта разрешения CORS
+          .get(Uri.parse('$url?t=${_now().millisecondsSinceEpoch ~/ 60000}'), headers: kIsWeb ? null : _noCache)
           .timeout(const Duration(seconds: 15));
     } catch (_) {
       return _netError(cached);

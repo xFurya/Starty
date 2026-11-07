@@ -240,6 +240,15 @@ def main_icon(src):
     big.resize((16, 16), Image.LANCZOS).save(os.path.join(web, "favicon.png"))
     for name, px in (("Icon-192.png", 192), ("Icon-512.png", 512), ("Icon-maskable-192.png", 192), ("Icon-maskable-512.png", 512)):
         big.resize((px, px), Image.LANCZOS).save(os.path.join(web, "icons", name), optimize=True)
+    site_icons(big)
+
+
+def site_icons(big):
+    """Страница скачивания и источник SideStore (iconURL) — тот же значок."""
+    site = os.path.join(APP, "..", "site", "app")
+    big.save(os.path.join(site, "icon.png"), optimize=True)
+    for px in (180, 64):
+        big.resize((px, px), Image.LANCZOS).save(os.path.join(site, f"icon-{px}.png"), optimize=True)
 
 
 def ios(src):

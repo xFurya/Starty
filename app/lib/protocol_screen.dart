@@ -10,6 +10,7 @@ import 'flags.dart';
 import 'live.dart' show LiveOk, personKey;
 import 'needs.dart';
 import 'palette.dart';
+import 'platform.dart';
 import 'protocol_model.dart';
 import 'protocol_details.dart';
 import 'protocol.dart' show openOriginal;
@@ -299,7 +300,8 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
   Future<void> _reload({bool manual = false, bool auto = false}) async {
     final proto = widget.start.proto;
     if (!auto) setState(() => _busy = true);
-    final device = widget.state != null && (manual || _instant);
+    // в браузере табло недоступно: только файл сайта, без ложного «табло не ответило»
+    final device = canReadBoards && widget.state != null && (manual || _instant);
     final load = proto == null
         ? const ProtocolMissing()
         : await _repo.load(proto, start: widget.start, starts: widget.state?.data?.starts ?? const [], device: device);
