@@ -504,9 +504,11 @@ def profile(name, nation, bio=None, card=None, cards_by_name=None, staff=()):
     return out if src else None
 
 
-def write(people, store, cards, out_dir=None, log=print):
+def write(people, store, cards, out_dir=None, log=print, book=None):
     """Записать профили и проставить людям ключ "p". people — справочник [{n, c, k}];
-    store — кэш биографий из refresh; cards — {номер: карточка картотеки с fio}."""
+    store — кэш биографий из refresh; cards — {номер: карточка картотеки с fio};
+    book — «Примечательное» из feats.load (нет — раздела нет)."""
+    from . import feats as ft
     from .people import card_name
     out_dir = out_dir or OUT
     ids, cache = store.get("ids", {}), store.get("bios", {})
@@ -533,6 +535,10 @@ def write(people, store, cards, out_dir=None, log=print):
             continue
         pr["at"] = max([bio["at"] if bio else ""] + [(card or {}).get("at", "")] +
                        [cards_by_name[x].get("at", "") for x in parts if x in cards_by_name])[:10]
+        fe = ft.for_profile(name, p.get("c", ""), ids.get(nm.key(name), ""), pr, book) if book else []
+        if fe:
+            pr["feats"] = fe
+            pr["src"] = pr["src"] + [x for x in dict.fromkeys(ft.source_names(fe)) if x not in pr["src"]]
         k = key(name)
         fn = os.path.join(out_dir, k + ".json")
         body = json.dumps(pr, ensure_ascii=False, separators=(",", ":"), sort_keys=True)

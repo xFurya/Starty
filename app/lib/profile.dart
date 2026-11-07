@@ -1,5 +1,6 @@
-// Профиль спортсмена: справка, титулы, личные рекорды, музыка и результаты. Файл профиля
-// (site/p/<ключ>.json) собирает сервер из биографий ISU и картотеки ФФККР (scraper/profiles.py);
+// Профиль спортсмена: справка, титулы, примечательное, личные рекорды, музыка и результаты. Файл
+// профиля (site/p/<ключ>.json) собирает сервер из биографий ISU и картотеки ФФККР (scraper/profiles.py),
+// мировые рекорды — из статистики ISU, первые в истории — из выверенного списка (scraper/feats.py);
 // чего в источниках нет, того нет и здесь — ни строки с догадкой.
 import 'dart:async';
 import 'dart:convert';
@@ -12,6 +13,7 @@ import 'countries.dart';
 import 'data.dart';
 import 'flags.dart';
 import 'palette.dart';
+import 'protocol.dart' show openLink;
 import 'sheets.dart' show SwipeSurface;
 import 'ui.dart';
 import 'views.dart' show PlacingName;
@@ -54,6 +56,15 @@ class ProfileScore {
   factory ProfileScore.fromJson(Map j) => ProfileScore(_s(j['s']), _s(j['pts']), _s(j['d']), _s(j['ev']));
 }
 
+/// Примечательное: мировой рекорд или первое в истории. [points] — только у рекорда; [url] —
+/// источник, по нему строка открывается во встроенном браузере.
+class ProfileFeat {
+  final String title, event, date, points, source, url;
+  const ProfileFeat(this.title, this.event, {this.date = '', this.points = '', this.source = '', this.url = ''});
+  factory ProfileFeat.fromJson(Map j) =>
+      ProfileFeat(_s(j['t']), _s(j['ev']), date: _s(j['d']), points: _s(j['pts']), source: _s(j['src']), url: _s(j['u']));
+}
+
 /// Пьедестал главного турнира.
 class ProfileTitle {
   final String event, kind, season;
@@ -88,6 +99,7 @@ class Profile {
   final List<String> musicShort, musicFree;
   final List<ProfileScore> best, seasonBest;
   final List<ProfileTitle> titles;
+  final List<ProfileFeat> feats;
   final List<ProfileGroup> results;
   final List<ProfileStart> season;
   final List<String> sources;
@@ -107,6 +119,7 @@ class Profile {
     this.best = const [],
     this.seasonBest = const [],
     this.titles = const [],
+    this.feats = const [],
     this.results = const [],
     this.season = const [],
     this.sources = const [],
@@ -133,6 +146,10 @@ class Profile {
       titles: [
         for (final x in maps(j['titles']))
           if (x['pl'] is int) ProfileTitle(_s(x['ev']), _s(x['k']), x['pl'] as int, _s(x['y'])),
+      ],
+      feats: [
+        for (final x in maps(j['feats']))
+          if (_s(x['t']).isNotEmpty) ProfileFeat.fromJson(x),
       ],
       results: [
         for (final g in maps(j['res']))
@@ -433,6 +450,7 @@ class _ProfileSheetState extends State<ProfileSheet> {
             ],
           ),
         ),
+      if (pr.feats.isNotEmpty) _section(context, 'Примечательное', _Feats(list: pr.feats)),
       if (pr.best.isNotEmpty) _section(context, 'Личные рекорды', _Scores(list: pr.best, dance: pr.dance)),
       if (pr.seasonBest.isNotEmpty)
         _section(
@@ -481,7 +499,12 @@ class _ProfileSheetState extends State<ProfileSheet> {
           ),
           top: i == 0 ? 24 : 18,
         ),
-      if (pr.titles.isEmpty && pr.best.isEmpty && facts.isEmpty && pr.results.isEmpty && pr.season.isEmpty)
+      if (pr.titles.isEmpty &&
+          pr.feats.isEmpty &&
+          pr.best.isEmpty &&
+          facts.isEmpty &&
+          pr.results.isEmpty &&
+          pr.season.isEmpty)
         _section(context, 'Справка', const _Note('Справки о спортсмене пока нет')),
       if (src.isNotEmpty)
         Padding(
@@ -853,6 +876,114 @@ class _Scores extends StatelessWidget {
             ),
           ],
         ],
+      ),
+    );
+  }
+}
+
+/// Примечательное: что сделано, где и когда; у рекорда — баллы справа. Строка ведёт к источнику
+/// (стрелка «наружу», но открывается внутри приложения). Длинный список — первые шесть и «Ещё N».
+class _Feats extends StatefulWidget {
+  final List<ProfileFeat> list;
+  const _Feats({required this.list});
+  @override
+  State<_Feats> createState() => _FeatsState();
+}
+
+class _FeatsState extends State<_Feats> {
+  static const _first = 6;
+  bool all = false;
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final rows = widget.list;
+    final list = all || rows.length <= _first + 1 ? rows : rows.sublist(0, _first);
+    final more = rows.length - list.length;
+    return Plate(
+      child: Column(
+        children: [
+          for (var i = 0; i < list.length; i++) ...[
+            if (i > 0) const Hairline(),
+            _FeatRow(list[i]),
+          ],
+          if (more > 0) ...[
+            const Hairline(),
+            Semantics(
+              button: true,
+              child: InkWell(
+                onTap: () => setState(() => all = true),
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(minHeight: 48),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'Ещё $more',
+                            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.accent),
+                          ),
+                        ),
+                        Icon(CupertinoIcons.chevron_down, size: 16, color: p.accent),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+class _FeatRow extends StatelessWidget {
+  final ProfileFeat f;
+  const _FeatRow(this.f);
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final row = Padding(
+      padding: const EdgeInsets.fromLTRB(16, 12, 14, 12),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(f.title, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: p.ink, height: 1.3)),
+                if (f.event.isNotEmpty) ...[
+                  const SizedBox(height: 3),
+                  Text(f.event, style: TextStyle(fontSize: 14, color: p.ink, height: 1.3)),
+                ],
+                if (f.date.isNotEmpty)
+                  Text(profileDate(f.date), style: TextStyle(fontSize: 13, color: p.ink2, height: 1.3)),
+              ],
+            ),
+          ),
+          if (f.points.isNotEmpty) ...[
+            const SizedBox(width: 12),
+            Text(f.points, style: clock(p.ink, 22, weight: FontWeight.w500)),
+          ],
+          if (f.url.isNotEmpty) ...[
+            const SizedBox(width: 10),
+            Padding(
+              padding: const EdgeInsets.only(top: 2),
+              child: Icon(CupertinoIcons.arrow_up_right, size: 15, color: p.ink3),
+            ),
+          ],
+        ],
+      ),
+    );
+    if (f.url.isEmpty) return row;
+    return Semantics(
+      button: true,
+      hint: f.source.isEmpty ? 'Открыть источник' : 'Открыть источник: ${f.source}',
+      child: InkWell(
+        onTap: () => openLink(context, f.url, f.source.isEmpty ? f.title : f.source),
+        child: row,
       ),
     );
   }

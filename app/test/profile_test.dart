@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart' show CupertinoIcons;
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
@@ -8,6 +9,7 @@ import 'package:starty/profile.dart';
 
 const _pairKey = 'aaaaaaaaaaaa';
 const _soloKey = 'bbbbbbbbbbbb';
+const _starKey = 'cccccccccccc';
 
 /// Профиль пары в том виде, в каком его пишет сборщик (scraper/profiles.py).
 const _pair = {
@@ -73,6 +75,29 @@ const _solo = {
   'at': '2026-11-05',
 };
 
+/// Профиль с «Примечательным»: семь первых в истории (из выверенного списка) и мировой рекорд ISU.
+Map<String, Object> _star() => {
+  'n': 'Александра Трусова',
+  'who': [
+    {'n': 'Александра Трусова', 'born': '2004-06-23'},
+  ],
+  'feats': [
+    for (var i = 1; i <= 7; i++)
+      {'t': 'Первое №$i', 'ev': 'Турнир $i', 'd': '2018-0$i-10', 'src': 'Википедия', 'u': 'https://ru.wikipedia.org/wiki/$i'},
+    {
+      't': 'Мировой рекорд в произвольной программе в 2019–2021 годах',
+      'ev': 'GP Skate Canada 2019',
+      'd': '2019-10-26',
+      'pts': '166.62',
+      'src': 'ISU',
+      'u': 'https://www.isuresults.com/isujsstat/phswfs.htm',
+    },
+    {'t': '', 'ev': 'пустая строка не показывается'},
+  ],
+  'src': ['ISU', 'Википедии'],
+  'at': '2026-11-05',
+};
+
 Schedule _data() => Schedule(
   const [],
   DateTime.utc(2026, 11, 5),
@@ -81,6 +106,7 @@ Schedule _data() => Schedule(
   people: const {
     'Minerva Fabienne Hase / Nikita Volodin': Person('Minerva Fabienne Hase / Nikita Volodin', 'GER', 'p', profile: _pairKey),
     'Аделия Петросян': Person('Аделия Петросян', 'AIN2', 'w', profile: _soloKey),
+    'Александра Трусова': Person('Александра Трусова', 'RUS', 'w', profile: _starKey),
     'Иван Иванов': Person('Иван Иванов', 'RUS', 'm'),
   },
 );
@@ -261,6 +287,32 @@ void main() {
       expect(find.text('Звание'), findsOneWidget);
       expect(find.text('ТИТУЛЫ'), findsNothing); // нет пьедесталов — нет и раздела
       expect(find.text('По данным ISU и ФФККР на 5 ноября 2026'), findsOneWidget);
+    });
+
+    testWidgets('примечательное: первые шесть и «Ещё», баллы у рекорда, строка ведёт к источнику', (t) async {
+      profileLoader = (k) async => k == _starKey ? Profile.fromJson(_star()) : null;
+      t.view.physicalSize = const Size(390 * 3, 3000 * 3);
+      t.view.devicePixelRatio = 3;
+      addTearDown(t.view.reset);
+      await t.pumpWidget(_app(ProfileSheet(name: 'Александра Трусова', data: _data())));
+      await t.pumpAndSettle();
+      expect(find.text('ПРИМЕЧАТЕЛЬНОЕ'), findsOneWidget);
+      expect(find.text('Первое №1'), findsOneWidget);
+      expect(find.text('Турнир 1'), findsOneWidget);
+      expect(find.text('10\u00a0января 2018'), findsOneWidget);
+      expect(find.text('Первое №7'), findsNothing);
+      expect(find.text('пустая строка не показывается'), findsNothing);
+      await t.tap(find.text('Ещё 2'));
+      await t.pumpAndSettle();
+      expect(find.text('Первое №7'), findsOneWidget);
+      expect(find.text('Мировой рекорд в произвольной программе в 2019–2021 годах'), findsOneWidget);
+      expect(find.text('166.62'), findsOneWidget);
+      expect(find.byIcon(CupertinoIcons.arrow_up_right), findsNWidgets(8));
+      bool hint(Widget w, String h) => w is Semantics && w.properties.button == true && w.properties.hint == h;
+      expect(find.byWidgetPredicate((w) => hint(w, 'Открыть источник: ISU')), findsOneWidget);
+      expect(find.byWidgetPredicate((w) => hint(w, 'Открыть источник: Википедия')), findsNWidgets(7));
+      expect(find.text('По данным ISU и Википедии на 5\u00a0ноября 2026'), findsOneWidget);
+      expect(t.takeException(), isNull);
     });
 
     testWidgets('файла нет — так и сказано', (t) async {

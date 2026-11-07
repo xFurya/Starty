@@ -30,6 +30,7 @@ from . import fsr, goldenskate, ics, isu, net
 from . import keep as kp
 from . import protocols as P
 from . import photos as ph
+from . import feats as ft
 from . import profiles as pf
 from . import names as nm
 from . import people as pp
@@ -1429,7 +1430,12 @@ def main():
                 for n in e.get("athletes", []):
                     if end > competed.get(nm.key(n), ""):
                         competed[nm.key(n)] = end
-        pf.write(people, pf.refresh(book.get("bios") or {}, competed, log), book.get("cards"), log=log)
+        try:
+            notable = ft.load(log=log)
+        except Exception as e:  # «Примечательное» — дополнение к профилю
+            log("!! примечательное:", e)
+            notable = None
+        pf.write(people, pf.refresh(book.get("bios") or {}, competed, log), book.get("cards"), log=log, book=notable)
     except Exception as e:  # профиль — дополнение: без него лента работает
         log("!! профили:", e)
         traceback.print_exc()
