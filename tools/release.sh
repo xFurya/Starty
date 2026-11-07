@@ -26,12 +26,21 @@ git diff --quiet && git diff --cached --quiet || fail "есть незакомм
 cut -f2 tools/released.tsv | grep -qx "$VER" && fail "версия $VER уже выпускалась"
 LAST=$(tail -n1 tools/released.tsv | cut -f1)
 BUILD=$((LAST + 1))
+# Адрес сервера синхронизации — ровно тот, с которым собирает CI (.github/workflows/app-android.yml).
+# Без него в приложении нет аккаунта и синхронизации: 1.0.61 так и вышла.
+SERVER=$(grep -o -- '--dart-define=SUPABASE_[A-Z]*=[^ ]*' .github/workflows/app-android.yml | sort -u)
+[[ $(grep -c . <<<"$SERVER") == 2 ]] || fail "не нашёл адрес сервера синхронизации в app-android.yml"
+HOST=$(sed -n 's|^--dart-define=SUPABASE_URL=https://||p' <<<"$SERVER")
 
 . /opt/sdk/env.sh 2>/dev/null || true
 sed -i "s/^version: .*/version: $VER+$BUILD/" app/pubspec.yaml
+# shellcheck disable=SC2086 # $SERVER — два --dart-define, без пробелов внутри
 (cd app && flutter build apk --release --target-platform android-arm64 \
-  --dart-define=BUILD="$BUILD" --dart-define=VERSION="$VER")
+  --dart-define=BUILD="$BUILD" --dart-define=VERSION="$VER" $SERVER)
 APK=app/build/app/outputs/flutter-apk/app-release.apk
+# grep -c, а не -q: -q выходит на первом совпадении, unzip падает на закрытом канале, и pipefail
+# считает сбоем удачную проверку
+[[ $(unzip -p "$APK" lib/arm64-v8a/libapp.so | grep -caF "$HOST") -gt 0 ]] || fail "в сборке нет адреса сервера синхронизации"
 
 # подпись прежняя — иначе обновление не встанет поверх
 TMP=$(mktemp -d); trap 'rm -rf "$TMP"' EXIT
