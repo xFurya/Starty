@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-gp-cup-of-china-2026:pairs-senior-pp@starty
+DTSTAMP:20261107T171358Z
+DTSTART;TZID=Europe/Moscow:20261107T134000
+DTEND;TZID=Europe/Moscow:20261107T150000
+SUMMARY:GP Cup of China — пары ПП
+DESCRIPTION:Итог:\n1. Анастасия Мишина / Алексан
+ др Галлямов — 135.15\n2. Anastasiia Metelkina / Luka Berulava 
+ — 131.21\n3. Yuna Nagaoka / Sumitada Moriguchi — 118.44\n\nИтог т
+ урнира:\n1. Анастасия Мишина / Александр Г
+ аллямов — 209.84\n2. Anastasiia Metelkina / Luka Berulava — 198
+ .27\n3. Yuna Nagaoka / Sumitada Moriguchi — 181.50\n\nРоссияне:\
+ n• Анастасия Мишина / Александр Галлямов
+  — 14:49\n\nНачало: 13:40 МСК\nТрансляция: Okko / You
+ Tube ISU
+LOCATION:Shenzhen\, China
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:pairs-s
+ enior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GP Cup of China — пары ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

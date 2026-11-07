@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-gp-skate-canada-international-2026:dance-senior-pt@starty
+DTSTAMP:20261107T171358Z
+DTSTART;TZID=Europe/Moscow:20261102T021500
+DTEND;TZID=Europe/Moscow:20261102T034000
+SUMMARY:GP Skate Canada — танцы ПТ
+DESCRIPTION:Итог:\n1. Lilah Fear / Lewis Gibson — 119.80\n2. Evgeniia
+  Lopareva / Geoffrey Brissaud — 115.05\n3. Caroline Green / Michael Pars
+ ons — 111.78\n\nИтог турнира:\n1. Lilah Fear / Lewis Gibson 
+ — 201.17\n2. Evgeniia Lopareva / Geoffrey Brissaud — 192.95\n3. Caroli
+ ne Green / Michael Parsons — 186.02\n\nПримечательное:\n
+ • Lilah Fear / Lewis Gibson — Отрыв от второго мест
+ а — 8.22 балла\n\nНачало: 02:15 МСК\nТрансляция
+ : Okko / YouTube ISU
+LOCATION:Kelowna\, Canada
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-skate-canada-internationa
+ l-2026:dance-senior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GP Skate Canada — танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

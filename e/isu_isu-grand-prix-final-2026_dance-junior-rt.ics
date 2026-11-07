@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-grand-prix-final-2026:dance-junior-rt@starty
+DTSTAMP:20261107T171358Z
+DTSTART;TZID=Europe/Moscow:20261210T151500
+DTEND;TZID=Europe/Moscow:20261210T160500
+SUMMARY:Финал Гран-при — юниорские танцы РТ
+DESCRIPTION:Россияне:\n• Мария Фефелова / Артём
+  Валов\n\nНачало: 15:15 МСК\nТрансляция: Okko / Yo
+ uTube ISU
+LOCATION:Chongqing\, China
+URL:https://xfurya.github.io/Starty/#e=isu:isu-grand-prix-final-2026:dance-
+ junior-rt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Финал Гран-при — юниорские танцы Р
+ Т
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

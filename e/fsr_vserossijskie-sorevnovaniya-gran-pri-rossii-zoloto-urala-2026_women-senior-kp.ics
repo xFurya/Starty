@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:women
+ -senior-kp@starty
+DTSTAMP:20261107T171358Z
+DTSTART;TZID=Europe/Moscow:20261107T141000
+DTEND;TZID=Europe/Moscow:20261107T154000
+SUMMARY:Гран-при России «Золото Урала» — жен
+ щины КП
+DESCRIPTION:Итог:\n1. Камилла Нелюбова — 78.67\n2. А
+ делия Петросян — 72.32\n3. Злата Буря — 71.14\n\
+ nПримечательное:\n• Камилла Нелюбова — Т
+ ройной аксель\n• Мария Елисова — Тройно
+ й аксель\n\nНачало: 14:10 МСК\nТрансляция: Пе
+ рвый канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-zoloto-urala-2026:women-senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Гран-при России «Золото Урала» — ж
+ енщины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

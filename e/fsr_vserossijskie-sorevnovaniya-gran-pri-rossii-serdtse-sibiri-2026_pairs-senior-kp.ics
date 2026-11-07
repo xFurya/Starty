@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:pai
+ rs-senior-kp@starty
+DTSTAMP:20261107T171358Z
+DTSTART;TZID=Europe/Moscow:20261114T161500
+DTEND;TZID=Europe/Moscow:20261114T172000
+SUMMARY:Гран-при России «Сердце Сибири» — па
+ ры КП
+DESCRIPTION:Начало: 16:15 МСК\nТрансляция: Первый 
+ канал / YouTube
+LOCATION:G-Drive Арена\, Омск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-serdtse-sibiri-2026:pairs-senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Гран-при России «Сердце Сибири» — 
+ пары КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

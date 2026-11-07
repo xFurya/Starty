@@ -1,0 +1,33 @@
+{
+ "version": "1.0.63",
+ "code": 64,
+ "notes": "Можно сообщить об ошибке или предложить идею.",
+ "at": "2026-11-07T17:05:24Z",
+ "android": {
+  "file": "starty-1.0.63.apk",
+  "size": 23741319,
+  "sha256": "c1487c3386c77fdb9b1e3862b9a4458ea53ce5726bf965d2e7af8006464ec2f4"
+ },
+ "windows": {
+  "code": 64,
+  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.63/Starty-windows.zip",
+  "size": 14709565,
+  "sha256": "53c2b2bc90ea7a3020ea04af717aa77f0ef156e44b31192c579e9d986f1606b7",
+  "setup": {
+   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.63/starty-setup-1.0.63.exe",
+   "size": 12808921,
+   "sha256": "5d4345f8b701dbbb64b583968deefd84f26149af4b3cf5b7f4fca6cefca158b2"
+  }
+ },
+ "macos": {
+  "code": 64,
+  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.63/Starty-macos.zip",
+  "size": 22366443,
+  "sha256": "25687ad37a92edf7a940aff70d03498be8414e1b41ff077033f96e52d2a3cb31",
+  "dmg": {
+   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.63/Starty-macos.dmg",
+   "size": 25532218,
+   "sha256": "16c410993ae254d1a49a0b07b209198f1e22c44e31ced9628eb51a80a877ebe8"
+  }
+ }
+}
