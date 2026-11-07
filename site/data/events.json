@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T11:31:23.184215+00:00",
+ "checked": "2026-11-07T11:35:22.371219+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48709,7 +48709,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Chelsea Liu / Ryan Bedard — 100.31\n2. Jiaxuan Zhang / Yihang Huang — 99.58\n3. Valentina Plazas / Maximiliano Fernandez — 98.71\n\nРоссияне:\n• Анастасия Мишина / Александр Галлямов — 14:49\n\nНачало: 13:40 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Yuna Nagaoka / Sumitada Moriguchi — 118.44\n2. Chelsea Liu / Ryan Bedard — 100.31\n3. Jiaxuan Zhang / Yihang Huang — 99.58\n\nРоссияне:\n• Анастасия Мишина / Александр Галлямов — 14:49\n\nНачало: 13:40 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Jiaxuan Zhang / Yihang Huang",
@@ -48717,7 +48717,7 @@
      "time": "13:47",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "99.58"
     },
     {
@@ -48726,7 +48726,7 @@
      "time": "13:55",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "93.84"
     },
     {
@@ -48735,7 +48735,7 @@
      "time": "14:03",
      "no": 3,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "98.71"
     },
     {
@@ -48744,7 +48744,7 @@
      "time": "14:11",
      "no": 4,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "100.31"
     },
     {
@@ -48752,7 +48752,9 @@
      "nation": "JPN",
      "time": "14:26",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "118.44"
     },
     {
      "name": "Karina Akopova / Nikita Rakhmanin",
@@ -48797,21 +48799,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Yuna Nagaoka / Sumitada Moriguchi",
+     "nation": "JPN",
+     "points": "118.44"
+    },
+    {
+     "place": 2,
      "name": "Chelsea Liu / Ryan Bedard",
      "nation": "USA",
      "points": "100.31"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Jiaxuan Zhang / Yihang Huang",
      "nation": "CHN",
      "points": "99.58"
-    },
-    {
-     "place": 3,
-     "name": "Valentina Plazas / Maximiliano Fernandez",
-     "nation": "USA",
-     "points": "98.71"
     }
    ],
    "provisional": true
