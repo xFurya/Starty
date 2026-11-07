@@ -278,3 +278,54 @@ class StoreTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class AliasTest(unittest.TestCase):
+    """Картотека пишет фамилию по мужу, а знают по прежней: карточка (звание, регион) — тому же профилю."""
+
+    def test_card_under_married_name_goes_to_known_profile(self):
+        card = {"fio": "Игнатова Александра Вячеславовна", "born": "2004-06-23", "rank": "ЗМС", "region": "Москва",
+                "club": [], "coach": [], "choreo": [], "partner": [], "results": [], "at": "2026-11-05T00:00:00+00:00"}
+        people = [{"n": "Александра Трусова", "c": "RUS", "k": "w"}]
+        with tempfile.TemporaryDirectory() as d:
+            pf.write(people, {"ids": {}, "bios": {}}, {"138": card}, out_dir=d, log=lambda *a: None,
+                     aliases={"Александра Игнатова": "Александра Трусова"})
+            with open(os.path.join(d, people[0]["p"] + ".json"), encoding="utf-8") as f:
+                who = json.load(f)["who"][0]
+        self.assertEqual((who["rank"], who["region"], who["born"]), ("ЗМС", "Москва", "2004-06-23"))
+
+    def test_config_alias_is_read(self):
+        from scraper import names as nm
+        self.assertEqual(nm.aliases().get("Александра Игнатова"), "Александра Трусова")
+
+    def test_people_from_card_use_alias(self):
+        from scraper import names as nm
+        from scraper import people as pp
+        names = nm.Names(None, {"Александра Игнатова": "Александра Трусова"})
+        card = {"138": {"fio": "Игнатова Александра Вячеславовна", "photo": ""}}
+        with mock.patch.object(pp, "_load", return_value={}), mock.patch.object(pp, "_save"), \
+                mock.patch.object(pp, "isu_russians", return_value=[]), mock.patch.object(pp, "cards", return_value=card), \
+                mock.patch.object(pp, "russians", return_value=[]), mock.patch.object(pp, "internationals", return_value=[]), \
+                mock.patch.object(pp, "isu_photos", return_value=[]), \
+                mock.patch.object(pp, "wikidata_photos", return_value=([], True)), \
+                mock.patch("scraper.fsr.team", return_value=[]), \
+                mock.patch("scraper.photos.load_hand", return_value=[]):
+            got = pp.build(names, "2026-07-01", log=lambda *a: None)
+        self.assertEqual([p["n"] for p in got["people"]], ["Александра Трусова"])
+
+
+class CleanupTest(unittest.TestCase):
+    def card(self, fio):
+        return {"fio": fio, "born": "2004-06-23", "rank": "МС", "region": "Москва", "club": [], "coach": [],
+                "choreo": [], "partner": [], "results": [], "at": "2026-11-05T00:00:00+00:00"}
+
+    def test_orphan_files_removed_but_not_after_partial_run(self):
+        cards = {str(i): self.card(f"Фамилия{i} Имя Отчество") for i in range(4)}
+        people = [{"n": f"Имя Фамилия{i}", "c": "RUS", "k": "w"} for i in range(4)]
+        with tempfile.TemporaryDirectory() as d:
+            open(os.path.join(d, "orphan000000.json"), "w").close()
+            pf.write(people, {"ids": {}, "bios": {}}, cards, out_dir=d, log=lambda *a: None, aliases={})
+            self.assertEqual(sorted(os.listdir(d)), sorted(p["p"] + ".json" for p in people))
+            # следующий сбор вернул одного человека из четырёх — источники сбоили: файлы остаются
+            pf.write(people[:1], {"ids": {}, "bios": {}}, cards, out_dir=d, log=lambda *a: None, aliases={})
+            self.assertEqual(len(os.listdir(d)), 4)

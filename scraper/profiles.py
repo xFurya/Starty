@@ -504,19 +504,21 @@ def profile(name, nation, bio=None, card=None, cards_by_name=None, staff=()):
     return out if src else None
 
 
-def write(people, store, cards, out_dir=None, log=print, book=None):
+def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None):
     """Записать профили и проставить людям ключ "p". people — справочник [{n, c, k}];
     store — кэш биографий из refresh; cards — {номер: карточка картотеки с fio};
-    book — «Примечательное» из feats.load (нет — раздела нет)."""
+    book — «Примечательное» из feats.load (нет — раздела нет); aliases — одно лицо под двумя
+    именами (config.json; по умолчанию оттуда же): карточка «Игнатова» — профилю «Трусова»."""
     from . import feats as ft
     from .people import card_name
     out_dir = out_dir or OUT
     ids, cache = store.get("ids", {}), store.get("bios", {})
+    aliases = nm.aliases() if aliases is None else aliases
     by_name = {}
     for cd in (cards or {}).values():
         n = card_name(cd.get("fio", ""))
         if n:
-            by_name[nm.key(n)] = cd
+            by_name[nm.key(aliases.get(n, n))] = cd
     cards_by_name = {}
     staff = sorted({n for cd in (cards or {}).values() for k in ("coach", "choreo") for n in cd.get(k) or []})
     os.makedirs(out_dir, exist_ok=True)
@@ -552,5 +554,14 @@ def write(people, store, cards, out_dir=None, log=print, book=None):
                 f.write(body)
             written += 1
         p["p"] = k
-    log(f"  профили: у {sum(1 for p in people if p.get('p'))} человек, переписано {written}")
+    # файлы тех, у кого профиля больше нет (имя слилось с другим, человек ушёл из справочника), — убрать;
+    # сбор, где профилей вдвое меньше прежнего, — сбой источников, а не уход людей: тогда не трогаем
+    keep = {p["p"] + ".json" for p in people if p.get("p")}
+    old = [fn for fn in os.listdir(out_dir) if fn.endswith(".json") and fn not in keep]
+    if old and len(keep) * 2 >= len(keep) + len(old):
+        for fn in old:
+            os.unlink(os.path.join(out_dir, fn))
+    elif old:
+        log(f"  ! профили: {len(keep)} против прежних {len(keep) + len(old)} — старые файлы не трогаю")
+    log(f"  профили: у {len(keep)} человек, переписано {written}, убрано {len(old) if len(keep) * 2 >= len(keep) + len(old) else 0}")
     return people

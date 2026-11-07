@@ -128,6 +128,15 @@ def _latin_names():
         return {}
 
 
+def aliases():
+    """Одно лицо под двумя именами (фамилия по мужу): имя → то, под которым его знают (config.json → aliases)."""
+    try:
+        with open(os.path.join(os.path.dirname(__file__), "config.json"), encoding="utf-8") as f:
+            return json.load(f).get("aliases") or {}
+    except (OSError, ValueError):
+        return {}
+
+
 class Names:
     def __init__(self, path=None, aliases=None):
         self.path = path

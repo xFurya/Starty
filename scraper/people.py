@@ -613,11 +613,12 @@ def build(names, season_start, log=print):
     try:
         from . import fsr
         for sur, giv, _ in fsr.team():
-            add(nm.pretty_ru(f"{giv} {sur}"), "RUS", None, None)
+            add(names.to_ru(nm.pretty_ru(f"{giv} {sur}")), "RUS", None, None)
     except net.FetchError as e:
         log("  ! сборная ФФККР:", e)
     # картотека ФФККР — официальный реестр (КМС и выше); вид из карточки без уровня не ставим:
-    # взрослый или юниор — скажут протоколы
+    # взрослый или юниор — скажут протоколы. Имя — через псевдонимы config.json: картотека пишет
+    # фамилию по мужу («Игнатова»), а знают её по прежней («Трусова») — человек один, профиль один
     try:
         card = cards(log)
     except Exception as e:  # картотека — дополнение: без неё справочник собирается как раньше
@@ -626,7 +627,7 @@ def build(names, season_start, log=print):
     for x in card.values():
         n = card_name(x["fio"])
         if n:
-            add(n, "RUS", None, None)
+            add(names.to_ru(n), "RUS", None, None)
     try:
         ru = russians(cache, codes, log)
     except net.FetchError as e:
@@ -652,12 +653,12 @@ def build(names, season_start, log=print):
         from . import fsr
         for sur, giv, img in fsr.team():
             if img:
-                photos.append((nm.pretty_ru(f"{giv} {sur}"), img, 0))
+                photos.append((names.to_ru(nm.pretty_ru(f"{giv} {sur}")), img, 0))
     except net.FetchError as e:
         log("  ! фото сборной ФФККР:", e)
     for x in card.values():
         if x.get("photo") and card_name(x["fio"]):
-            photos.append((card_name(x["fio"]), x["photo"], 0))
+            photos.append((names.to_ru(card_name(x["fio"])), x["photo"], 0))
     for raw, url in isu_photos(log):
         photos.append((raw, url, 2))
     covered = {nm.key(raw) for raw, _, _ in photos}
