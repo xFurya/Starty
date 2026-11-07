@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T10:15:22.694938+00:00",
+ "checked": "2026-11-07T10:23:22.430002+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48252,7 +48252,8 @@
      "no": 10,
      "warmup": 2,
      "place": 1,
-     "points": "148.90"
+     "points": "148.90",
+     "final": 2
     }
    ],
    "athletes": [
@@ -48282,7 +48283,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Александра Трусова — 148.90\n2. Haein Lee — 143.30\n3. Anastasiia Gubanova — 133.53\n\nРоссияне:\n• Александра Трусова — 12:54\n\nНачало: 11:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Александра Трусова — 148.90\n2. Mone Chiba — 148.40\n3. Haein Lee — 143.30\n\nИтог турнира:\n1. Mone Chiba — 224.48\n2. Александра Трусова — 221.27\n3. Haein Lee — 210.79\n\nПримечательное:\n• Haein Lee — После короткой программы — 6-е место, в итоге — 3-е место\n\nРоссияне:\n• Александра Трусова — 12:54\n\nНачало: 11:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Olga Mikutina",
@@ -48290,8 +48291,9 @@
      "time": "11:37",
      "no": 1,
      "warmup": 1,
-     "place": 9,
-     "points": "102.45"
+     "place": 10,
+     "points": "102.45",
+     "final": 10
     },
     {
      "name": "Rinka Watanabe",
@@ -48299,8 +48301,9 @@
      "time": "11:45",
      "no": 2,
      "warmup": 1,
-     "place": 10,
-     "points": "99.14"
+     "place": 11,
+     "points": "99.14",
+     "final": 11
     },
     {
      "name": "Alina Bonillo",
@@ -48308,8 +48311,9 @@
      "time": "11:53",
      "no": 3,
      "warmup": 1,
-     "place": 11,
-     "points": "91.02"
+     "place": 12,
+     "points": "91.02",
+     "final": 12
     },
     {
      "name": "Sophie Joline von Felten",
@@ -48317,8 +48321,9 @@
      "time": "12:00",
      "no": 4,
      "warmup": 1,
-     "place": 5,
-     "points": "129.02"
+     "place": 6,
+     "points": "129.02",
+     "final": 7
     },
     {
      "name": "Ruiyang Zhang",
@@ -48326,8 +48331,9 @@
      "time": "12:08",
      "no": 5,
      "warmup": 1,
-     "place": 8,
-     "points": "105.52"
+     "place": 9,
+     "points": "105.52",
+     "final": 9
     },
     {
      "name": "Yi Zhu",
@@ -48335,8 +48341,9 @@
      "time": "12:16",
      "no": 6,
      "warmup": 1,
-     "place": 7,
-     "points": "115.89"
+     "place": 8,
+     "points": "115.89",
+     "final": 8
     },
     {
      "name": "Haein Lee",
@@ -48344,8 +48351,9 @@
      "time": "12:31",
      "no": 7,
      "warmup": 2,
-     "place": 2,
-     "points": "143.30"
+     "place": 3,
+     "points": "143.30",
+     "final": 3
     },
     {
      "name": "Mako Yamashita",
@@ -48353,8 +48361,9 @@
      "time": "12:39",
      "no": 8,
      "warmup": 2,
-     "place": 6,
-     "points": "124.15"
+     "place": 7,
+     "points": "124.15",
+     "final": 6
     },
     {
      "name": "Lara Naki Gutmann",
@@ -48362,8 +48371,9 @@
      "time": "12:46",
      "no": 9,
      "warmup": 2,
-     "place": 4,
-     "points": "130.93"
+     "place": 5,
+     "points": "130.93",
+     "final": 5
     },
     {
      "name": "Александра Трусова",
@@ -48372,7 +48382,8 @@
      "no": 10,
      "warmup": 2,
      "place": 1,
-     "points": "148.90"
+     "points": "148.90",
+     "final": 2
     },
     {
      "name": "Anastasiia Gubanova",
@@ -48380,15 +48391,19 @@
      "time": "13:02",
      "no": 11,
      "warmup": 2,
-     "place": 3,
-     "points": "133.53"
+     "place": 4,
+     "points": "133.53",
+     "final": 4
     },
     {
      "name": "Mone Chiba",
      "nation": "JPN",
      "time": "13:09",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "148.40",
+     "final": 1
     }
    ],
    "live": {
@@ -48410,7 +48425,7 @@
      "Anastasiia GUBANOVA": "Anastasiia Gubanova",
      "Mone CHIBA": "Mone Chiba"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-cup-of-china-2026.json",
    "podium": [
@@ -48422,18 +48437,44 @@
     },
     {
      "place": 2,
-     "name": "Haein Lee",
-     "nation": "KOR",
-     "points": "143.30"
+     "name": "Mone Chiba",
+     "nation": "JPN",
+     "points": "148.40"
     },
     {
      "place": 3,
-     "name": "Anastasiia Gubanova",
-     "nation": "GEO",
-     "points": "133.53"
+     "name": "Haein Lee",
+     "nation": "KOR",
+     "points": "143.30"
     }
    ],
-   "provisional": true
+   "total": [
+    {
+     "place": 1,
+     "name": "Mone Chiba",
+     "nation": "JPN",
+     "points": "224.48"
+    },
+    {
+     "place": 2,
+     "name": "Александра Трусова",
+     "nation": "RUS",
+     "points": "221.27"
+    },
+    {
+     "place": 3,
+     "name": "Haein Lee",
+     "nation": "KOR",
+     "points": "210.79"
+    }
+   ],
+   "facts": [
+    {
+     "who": "Haein Lee",
+     "text": "После короткой программы — 6-е место, в итоге — 3-е место",
+     "kind": "place"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:men-senior-kp",
