@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T06:47:03.523555+00:00",
+ "checked": "2026-11-07T06:55:03.781792+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48064,7 +48064,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Yufei Lin / Zijian Gao — 80.21\n\nНачало: 09:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Junfei Ren / Jianing Xing — 91.56\n2. Yufei Lin / Zijian Gao — 80.21\n\nНачало: 09:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Yufei Lin / Zijian Gao",
@@ -48072,7 +48072,7 @@
      "time": "09:36",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "80.21"
     },
     {
@@ -48080,7 +48080,9 @@
      "nation": "CHN",
      "time": "09:44",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "91.56"
     },
     {
      "name": "Zixi Xiao / Linghao He",
@@ -48162,6 +48164,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Junfei Ren / Jianing Xing",
+     "nation": "CHN",
+     "points": "91.56"
+    },
+    {
+     "place": 2,
      "name": "Yufei Lin / Zijian Gao",
      "nation": "CHN",
      "points": "80.21"
