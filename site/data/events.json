@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T09:13:24+03:00",
+ "checked": "2026-11-07T06:47:03.523555+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48064,14 +48064,16 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Начало: 09:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Yufei Lin / Zijian Gao — 80.21\n\nНачало: 09:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Yufei Lin / Zijian Gao",
      "nation": "CHN",
      "time": "09:36",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "80.21"
     },
     {
      "name": "Junfei Ren / Jianing Xing",
@@ -48156,7 +48158,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-cup-of-china-2026.json"
+   "proto": "isu_isu-gp-cup-of-china-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Yufei Lin / Zijian Gao",
+     "nation": "CHN",
+     "points": "80.21"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:women-senior-pp",
