@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T10:23:22.430002+00:00",
+ "checked": "2026-11-07T10:39:23.845789+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48517,63 +48517,79 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 12:30 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Макар Игнатов — 95.41\n2. Александр Мельников — 94.82\n3. Иван Конихин — 80.23\n\nНачало: 12:30 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Семен Соловьев",
      "nation": "СПБ",
      "time": "12:37",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5,
+     "points": "77.80"
     },
     {
      "name": "Юрий Сидоров",
      "nation": "ОРЕ",
      "time": "12:50",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 8,
+     "points": "64.01"
     },
     {
      "name": "Никита Сарновский",
      "nation": "МОС",
      "time": "12:56",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4,
+     "points": "77.89"
     },
     {
      "name": "Михаил Терновский",
      "nation": "СПБ",
      "time": "13:03",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 7,
+     "points": "67.23"
     },
     {
      "name": "Александр Мельников",
      "nation": "МОС",
      "time": "13:09",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "94.82"
     },
     {
      "name": "Макар Игнатов",
      "nation": "МОС",
      "time": "13:17",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "95.41"
     },
     {
      "name": "Вячеслав Проценко",
      "nation": "СПБ",
      "time": "13:23",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6,
+     "points": "68.14"
     },
     {
      "name": "Иван Конихин",
      "nation": "МОС",
      "time": "13:29",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3,
+     "points": "80.23"
     },
     {
      "name": "Фёдор Зонов",
@@ -48617,7 +48633,28 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Макар Игнатов",
+     "nation": "МОС",
+     "points": "95.41"
+    },
+    {
+     "place": 2,
+     "name": "Александр Мельников",
+     "nation": "МОС",
+     "points": "94.82"
+    },
+    {
+     "place": 3,
+     "name": "Иван Конихин",
+     "nation": "МОС",
+     "points": "80.23"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:pairs-senior-pp",
