@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T12:35:23.492104+00:00",
+ "checked": "2026-11-07T12:39:22.831927+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48896,7 +48896,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Камилла Нелюбова — 78.67\n2. Аделия Петросян — 72.32\n3. Злата Буря — 71.14\n\nНачало: 14:10 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Камилла Нелюбова — 78.67\n2. Аделия Петросян — 72.32\n3. Злата Буря — 71.14\n\nНачало: 14:10 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Алиса Юрова",
@@ -48904,7 +48904,7 @@
      "time": "14:17",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "69.71"
     },
     {
@@ -48913,7 +48913,7 @@
      "time": "14:31",
      "no": 3,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "68.75"
     },
     {
@@ -48931,7 +48931,7 @@
      "time": "14:44",
      "no": 5,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "points": "63.14"
     },
     {
@@ -48940,7 +48940,7 @@
      "time": "14:51",
      "no": 6,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "64.52"
     },
     {
@@ -48949,7 +48949,7 @@
      "time": "14:58",
      "no": 2,
      "warmup": 1,
-     "place": 11,
+     "place": 12,
      "points": "61.74"
     },
     {
@@ -48967,7 +48967,7 @@
      "time": "15:12",
      "no": 8,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "64.17"
     },
     {
@@ -48994,7 +48994,7 @@
      "time": "15:33",
      "no": 11,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "66.93"
     },
     {
@@ -49002,7 +49002,9 @@
      "nation": "ТАТ",
      "time": "15:40",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "70.03"
     }
    ],
    "live": {
@@ -49024,7 +49026,7 @@
      "Дарья САДКОВА": "Дарья Садкова",
      "Дина ХУСНУТДИНОВА": "Дина Хуснутдинова"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json",
    "podium": [
@@ -49046,8 +49048,7 @@
      "nation": "МОС",
      "points": "71.14"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:pairs-senior-kp",
