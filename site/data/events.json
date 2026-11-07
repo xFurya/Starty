@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T08:03:22.459857+00:00",
+ "checked": "2026-11-07T08:11:22.379969+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48064,7 +48064,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Diana Davis / Gleb Smolkin — 114.23\n2. Olivia Smart / Tim Dieck — 107.32\n3. Loicia Demougeot / Theo le Mercier — 105.53\n\nНачало: 09:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Lilah Fear / Lewis Gibson — 114.93\n2. Diana Davis / Gleb Smolkin — 114.23\n3. Olivia Smart / Tim Dieck — 107.32\n\nИтог турнира:\n1. Lilah Fear / Lewis Gibson — 194.93\n2. Diana Davis / Gleb Smolkin — 193.54\n3. Olivia Smart / Tim Dieck — 178.30\n\nНачало: 09:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Yufei Lin / Zijian Gao",
@@ -48072,8 +48072,9 @@
      "time": "09:36",
      "no": 1,
      "warmup": 1,
-     "place": 9,
-     "points": "80.21"
+     "place": 10,
+     "points": "80.21",
+     "final": 10
     },
     {
      "name": "Junfei Ren / Jianing Xing",
@@ -48081,8 +48082,9 @@
      "time": "09:44",
      "no": 2,
      "warmup": 1,
-     "place": 7,
-     "points": "91.56"
+     "place": 8,
+     "points": "91.56",
+     "final": 9
     },
     {
      "name": "Zixi Xiao / Linghao He",
@@ -48090,8 +48092,9 @@
      "time": "09:52",
      "no": 3,
      "warmup": 1,
-     "place": 8,
-     "points": "89.81"
+     "place": 9,
+     "points": "89.81",
+     "final": 8
     },
     {
      "name": "Eva Pate / Logan Bye",
@@ -48099,8 +48102,9 @@
      "time": "10:00",
      "no": 4,
      "warmup": 1,
-     "place": 6,
-     "points": "96.20"
+     "place": 7,
+     "points": "96.20",
+     "final": 7
     },
     {
      "name": "Emily Bratti / Ian Somerville",
@@ -48108,8 +48112,9 @@
      "time": "10:08",
      "no": 5,
      "warmup": 1,
-     "place": 5,
-     "points": "102.93"
+     "place": 6,
+     "points": "102.93",
+     "final": 6
     },
     {
      "name": "Olivia Smart / Tim Dieck",
@@ -48117,8 +48122,9 @@
      "time": "10:22",
      "no": 6,
      "warmup": 2,
-     "place": 2,
-     "points": "107.32"
+     "place": 3,
+     "points": "107.32",
+     "final": 3
     },
     {
      "name": "Loicia Demougeot / Theo le Mercier",
@@ -48126,8 +48132,9 @@
      "time": "10:30",
      "no": 7,
      "warmup": 2,
-     "place": 3,
-     "points": "105.53"
+     "place": 4,
+     "points": "105.53",
+     "final": 5
     },
     {
      "name": "Natalie Taschlerova / Filip Taschler",
@@ -48135,8 +48142,9 @@
      "time": "10:38",
      "no": 8,
      "warmup": 2,
-     "place": 4,
-     "points": "105.11"
+     "place": 5,
+     "points": "105.11",
+     "final": 4
     },
     {
      "name": "Diana Davis / Gleb Smolkin",
@@ -48144,15 +48152,19 @@
      "time": "10:46",
      "no": 9,
      "warmup": 2,
-     "place": 1,
-     "points": "114.23"
+     "place": 2,
+     "points": "114.23",
+     "final": 2
     },
     {
      "name": "Lilah Fear / Lewis Gibson",
      "nation": "GBR",
      "time": "10:54",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "114.93",
+     "final": 1
     }
    ],
    "live": {
@@ -48172,30 +48184,49 @@
      "Diana DAVIS / Gleb SMOLKIN": "Diana Davis / Gleb Smolkin",
      "Lilah FEAR / Lewis GIBSON": "Lilah Fear / Lewis Gibson"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-cup-of-china-2026.json",
    "podium": [
     {
      "place": 1,
+     "name": "Lilah Fear / Lewis Gibson",
+     "nation": "GBR",
+     "points": "114.93"
+    },
+    {
+     "place": 2,
      "name": "Diana Davis / Gleb Smolkin",
      "nation": "GEO",
      "points": "114.23"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Olivia Smart / Tim Dieck",
      "nation": "ESP",
      "points": "107.32"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Lilah Fear / Lewis Gibson",
+     "nation": "GBR",
+     "points": "194.93"
+    },
+    {
+     "place": 2,
+     "name": "Diana Davis / Gleb Smolkin",
+     "nation": "GEO",
+     "points": "193.54"
     },
     {
      "place": 3,
-     "name": "Loicia Demougeot / Theo le Mercier",
-     "nation": "FRA",
-     "points": "105.53"
+     "name": "Olivia Smart / Tim Dieck",
+     "nation": "ESP",
+     "points": "178.30"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:women-senior-pp",
