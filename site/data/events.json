@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T09:19:22.365609+00:00",
+ "checked": "2026-11-07T09:27:22.550564+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48280,7 +48280,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sophie Joline von Felten — 129.02\n2. Ruiyang Zhang — 105.52\n3. Olga Mikutina — 102.45\n\nРоссияне:\n• Александра Трусова — 12:54\n\nНачало: 11:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Sophie Joline von Felten — 129.02\n2. Yi Zhu — 115.89\n3. Ruiyang Zhang — 105.52\n\nРоссияне:\n• Александра Трусова — 12:54\n\nНачало: 11:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Olga Mikutina",
@@ -48288,7 +48288,7 @@
      "time": "11:37",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "102.45"
     },
     {
@@ -48297,7 +48297,7 @@
      "time": "11:45",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "99.14"
     },
     {
@@ -48306,7 +48306,7 @@
      "time": "11:53",
      "no": 3,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "91.02"
     },
     {
@@ -48324,7 +48324,7 @@
      "time": "12:08",
      "no": 5,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "105.52"
     },
     {
@@ -48332,7 +48332,9 @@
      "nation": "CHN",
      "time": "12:16",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "115.89"
     },
     {
      "name": "Haein Lee",
@@ -48408,15 +48410,15 @@
     },
     {
      "place": 2,
-     "name": "Ruiyang Zhang",
+     "name": "Yi Zhu",
      "nation": "CHN",
-     "points": "105.52"
+     "points": "115.89"
     },
     {
      "place": 3,
-     "name": "Olga Mikutina",
-     "nation": "AUT",
-     "points": "102.45"
+     "name": "Ruiyang Zhang",
+     "nation": "CHN",
+     "points": "105.52"
     }
    ],
    "provisional": true
