@@ -24,7 +24,8 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    # 45 — сбор и публикация, ещё до 25 — дождаться, что выкладка дошла до сайта
+    timeout-minutes: 70
     steps:
       - uses: actions/checkout@v5
         with:
@@ -76,6 +77,7 @@ jobs:
           python3 -m scraper.pages_merge "$RUNNER_TEMP/fresh" site/data/protocols
 
       - name: Опубликовать сайт (gh-pages)
+        id: publish
         env:
           REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
         run: bash tools/publish-pages.sh
@@ -98,3 +100,16 @@ jobs:
             busy=$(gh run list --workflow live.yml --json status --jq '[.[] | select(.status=="in_progress" or .status=="queued")] | length')
             if [ "${busy:-0}" = 0 ]; then gh workflow run live.yml --ref main; fi
           fi
+
+      - name: Сайт выложен?
+        # GitHub Pages иногда срывает выкладку (10-минутный предел на шаге syncing_files), и сайт —
+        # с ним «Обновление» в приложении — стоит прежним до следующей публикации, а это часы. Ждём,
+        # пока сайт отдаст метку этой публикации; не отдал за 12 минут — публикуем ту же голову заново
+        if: steps.publish.outcome == 'success'
+        continue-on-error: true
+        timeout-minutes: 26
+        env:
+          REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          WATCH_AFTER: 720
+          WATCH_WAIT: 1500
+        run: bash tools/pages-watch.sh
