@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T11:19:22.298140+00:00",
+ "checked": "2026-11-07T11:27:23.021037+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48858,14 +48858,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 14:10 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Алиса Юрова — 69.71\n\nНачало: 14:10 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Алиса Юрова",
      "nation": "ЛИП",
      "time": "14:17",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "69.71"
     },
     {
      "name": "Агата Петрова",
@@ -48966,7 +48968,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Алиса Юрова",
+     "nation": "ЛИП",
+     "points": "69.71"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:pairs-senior-kp",
