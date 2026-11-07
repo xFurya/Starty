@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T07:03:03.354577+00:00",
+ "checked": "2026-11-07T07:11:03.418548+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48064,7 +48064,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Junfei Ren / Jianing Xing — 91.56\n2. Zixi Xiao / Linghao He — 89.81\n3. Yufei Lin / Zijian Gao — 80.21\n\nНачало: 09:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Eva Pate / Logan Bye — 96.20\n2. Junfei Ren / Jianing Xing — 91.56\n3. Zixi Xiao / Linghao He — 89.81\n\nНачало: 09:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Yufei Lin / Zijian Gao",
@@ -48072,7 +48072,7 @@
      "time": "09:36",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "80.21"
     },
     {
@@ -48081,7 +48081,7 @@
      "time": "09:44",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "91.56"
     },
     {
@@ -48090,7 +48090,7 @@
      "time": "09:52",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "89.81"
     },
     {
@@ -48098,7 +48098,9 @@
      "nation": "USA",
      "time": "10:00",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "96.20"
     },
     {
      "name": "Emily Bratti / Ian Somerville",
@@ -48166,21 +48168,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Eva Pate / Logan Bye",
+     "nation": "USA",
+     "points": "96.20"
+    },
+    {
+     "place": 2,
      "name": "Junfei Ren / Jianing Xing",
      "nation": "CHN",
      "points": "91.56"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Zixi Xiao / Linghao He",
      "nation": "CHN",
      "points": "89.81"
-    },
-    {
-     "place": 3,
-     "name": "Yufei Lin / Zijian Gao",
-     "nation": "CHN",
-     "points": "80.21"
     }
    ],
    "provisional": true
