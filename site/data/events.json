@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T11:39:22.382713+00:00",
+ "checked": "2026-11-07T11:43:22.933629+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48709,7 +48709,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Yuna Nagaoka / Sumitada Moriguchi — 118.44\n2. Chelsea Liu / Ryan Bedard — 100.31\n3. Jiaxuan Zhang / Yihang Huang — 99.58\n\nРоссияне:\n• Анастасия Мишина / Александр Галлямов — 14:49\n\nНачало: 13:40 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Yuna Nagaoka / Sumitada Moriguchi — 118.44\n2. Karina Akopova / Nikita Rakhmanin — 115.12\n3. Chelsea Liu / Ryan Bedard — 100.31\n\nРоссияне:\n• Анастасия Мишина / Александр Галлямов — 14:49\n\nНачало: 13:40 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Jiaxuan Zhang / Yihang Huang",
@@ -48717,7 +48717,7 @@
      "time": "13:47",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "99.58"
     },
     {
@@ -48726,7 +48726,7 @@
      "time": "13:55",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "93.84"
     },
     {
@@ -48735,7 +48735,7 @@
      "time": "14:03",
      "no": 3,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "98.71"
     },
     {
@@ -48744,7 +48744,7 @@
      "time": "14:11",
      "no": 4,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "100.31"
     },
     {
@@ -48761,7 +48761,9 @@
      "nation": "ARM",
      "time": "14:34",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "115.12"
     },
     {
      "name": "Anastasiia Metelkina / Luka Berulava",
@@ -48805,15 +48807,15 @@
     },
     {
      "place": 2,
-     "name": "Chelsea Liu / Ryan Bedard",
-     "nation": "USA",
-     "points": "100.31"
+     "name": "Karina Akopova / Nikita Rakhmanin",
+     "nation": "ARM",
+     "points": "115.12"
     },
     {
      "place": 3,
-     "name": "Jiaxuan Zhang / Yihang Huang",
-     "nation": "CHN",
-     "points": "99.58"
+     "name": "Chelsea Liu / Ryan Bedard",
+     "nation": "USA",
+     "points": "100.31"
     }
    ],
    "provisional": true
@@ -48860,7 +48862,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Алиса Юрова — 69.71\n2. Агата Петрова — 68.75\n3. Мария Елисова — 61.74\n\nНачало: 14:10 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Арина Кудлай — 70.07\n2. Алиса Юрова — 69.71\n3. Агата Петрова — 68.75\n\nНачало: 14:10 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Алиса Юрова",
@@ -48868,7 +48870,7 @@
      "time": "14:17",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "69.71"
     },
     {
@@ -48877,7 +48879,7 @@
      "time": "14:31",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "68.75"
     },
     {
@@ -48885,7 +48887,9 @@
      "nation": "СПБ",
      "time": "14:38",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "70.07"
     },
     {
      "name": "Елизавета Лабутина",
@@ -48907,7 +48911,7 @@
      "time": "14:58",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "61.74"
     },
     {
@@ -48978,21 +48982,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Арина Кудлай",
+     "nation": "СПБ",
+     "points": "70.07"
+    },
+    {
+     "place": 2,
      "name": "Алиса Юрова",
      "nation": "ЛИП",
      "points": "69.71"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Агата Петрова",
      "nation": "СПБ",
      "points": "68.75"
-    },
-    {
-     "place": 3,
-     "name": "Мария Елисова",
-     "nation": "ТУЛ",
-     "points": "61.74"
     }
    ],
    "provisional": true
