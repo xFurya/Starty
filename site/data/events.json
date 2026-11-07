@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T09:13:24+03:00",
- "checked": "2026-11-07T06:55:03.781792+00:00",
+ "checked": "2026-11-07T07:03:03.354577+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -48064,7 +48064,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Junfei Ren / Jianing Xing — 91.56\n2. Yufei Lin / Zijian Gao — 80.21\n\nНачало: 09:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Junfei Ren / Jianing Xing — 91.56\n2. Zixi Xiao / Linghao He — 89.81\n3. Yufei Lin / Zijian Gao — 80.21\n\nНачало: 09:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Yufei Lin / Zijian Gao",
@@ -48072,7 +48072,7 @@
      "time": "09:36",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "80.21"
     },
     {
@@ -48089,7 +48089,9 @@
      "nation": "CHN",
      "time": "09:52",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "89.81"
     },
     {
      "name": "Eva Pate / Logan Bye",
@@ -48170,6 +48172,12 @@
     },
     {
      "place": 2,
+     "name": "Zixi Xiao / Linghao He",
+     "nation": "CHN",
+     "points": "89.81"
+    },
+    {
+     "place": 3,
      "name": "Yufei Lin / Zijian Gao",
      "nation": "CHN",
      "points": "80.21"
