@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-08T11:53:43+03:00",
- "checked": "2026-11-08T10:41:04.156959+00:00",
+ "checked": "2026-11-08T11:27:02.591911+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -49686,14 +49686,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 14:10 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Мария Елисова — 108.52\n\nНачало: 14:10 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Мария Елисова",
      "nation": "ТУЛ",
      "time": "14:17",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "108.52"
     },
     {
      "name": "Ксения Гущина",
@@ -49794,7 +49796,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Мария Елисова",
+     "nation": "ТУЛ",
+     "points": "108.52"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:pairs-senior-pp",
