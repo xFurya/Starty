@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T20:36:29+03:00",
- "checked": "2026-11-08T06:41:02.839389+00:00",
+ "checked": "2026-11-08T06:49:02.134382+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -49252,8 +49252,9 @@
      "time": "09:16",
      "no": 9,
      "warmup": 2,
-     "place": 1,
-     "points": "183.58"
+     "place": 2,
+     "points": "183.58",
+     "final": 2
     },
     {
      "name": "Евгений Семененко",
@@ -49261,8 +49262,9 @@
      "time": "09:24",
      "no": 10,
      "warmup": 2,
-     "place": 2,
-     "points": "181.90"
+     "place": 3,
+     "points": "181.90",
+     "final": 3
     }
    ],
    "athletes": [
@@ -49292,7 +49294,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Владислав Дикиджи — 183.58\n2. Евгений Семененко — 181.90\n3. Shun Sato — 175.23\n\nРоссияне:\n• Владислав Дикиджи — 09:16\n• Евгений Семененко — 09:24\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Kao Miura — 190.35\n2. Владислав Дикиджи — 183.58\n3. Евгений Семененко — 181.90\n\nИтог турнира:\n1. Kao Miura — 293.25\n2. Владислав Дикиджи — 282.44\n3. Евгений Семененко — 281.62\n\nПримечательное:\n• Kao Miura — Личный рекорд по сумме: 293.25 (был 281.53)\n\nРоссияне:\n• Владислав Дикиджи — 09:16\n• Евгений Семененко — 09:24\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Lucius Kazanecki",
@@ -49300,8 +49302,9 @@
      "time": "08:07",
      "no": 1,
      "warmup": 1,
-     "place": 11,
-     "points": "120.95"
+     "place": 12,
+     "points": "120.95",
+     "final": 12
     },
     {
      "name": "Jacob Sanchez",
@@ -49309,8 +49312,9 @@
      "time": "08:15",
      "no": 2,
      "warmup": 1,
-     "place": 10,
-     "points": "124.94"
+     "place": 11,
+     "points": "124.94",
+     "final": 11
     },
     {
      "name": "Minkyu Seo",
@@ -49318,8 +49322,9 @@
      "time": "08:23",
      "no": 3,
      "warmup": 1,
-     "place": 4,
-     "points": "169.37"
+     "place": 5,
+     "points": "169.37",
+     "final": 7
     },
     {
      "name": "Yudong Chen",
@@ -49327,8 +49332,9 @@
      "time": "08:30",
      "no": 4,
      "warmup": 1,
-     "place": 8,
-     "points": "148.18"
+     "place": 9,
+     "points": "148.18",
+     "final": 9
     },
     {
      "name": "Zhiming Peng",
@@ -49336,8 +49342,9 @@
      "time": "08:38",
      "no": 5,
      "warmup": 1,
-     "place": 9,
-     "points": "132.75"
+     "place": 10,
+     "points": "132.75",
+     "final": 10
     },
     {
      "name": "Nika Egadze",
@@ -49345,8 +49352,9 @@
      "time": "08:46",
      "no": 6,
      "warmup": 1,
-     "place": 7,
-     "points": "158.94"
+     "place": 8,
+     "points": "158.94",
+     "final": 8
     },
     {
      "name": "Vladimir Samoilov",
@@ -49354,8 +49362,9 @@
      "time": "09:01",
      "no": 7,
      "warmup": 2,
-     "place": 6,
-     "points": "164.18"
+     "place": 7,
+     "points": "164.18",
+     "final": 6
     },
     {
      "name": "Mikhail Shaidorov",
@@ -49363,8 +49372,9 @@
      "time": "09:09",
      "no": 8,
      "warmup": 2,
-     "place": 5,
-     "points": "168.62"
+     "place": 6,
+     "points": "168.62",
+     "final": 5
     },
     {
      "name": "Владислав Дикиджи",
@@ -49372,8 +49382,9 @@
      "time": "09:16",
      "no": 9,
      "warmup": 2,
-     "place": 1,
-     "points": "183.58"
+     "place": 2,
+     "points": "183.58",
+     "final": 2
     },
     {
      "name": "Евгений Семененко",
@@ -49381,8 +49392,9 @@
      "time": "09:24",
      "no": 10,
      "warmup": 2,
-     "place": 2,
-     "points": "181.90"
+     "place": 3,
+     "points": "181.90",
+     "final": 3
     },
     {
      "name": "Shun Sato",
@@ -49390,15 +49402,19 @@
      "time": "09:32",
      "no": 11,
      "warmup": 2,
-     "place": 3,
-     "points": "175.23"
+     "place": 4,
+     "points": "175.23",
+     "final": 4
     },
     {
      "name": "Kao Miura",
      "nation": "JPN",
      "time": "09:39",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "190.35",
+     "final": 1
     }
    ],
    "live": {
@@ -49420,30 +49436,56 @@
      "Shun SATO": "Shun Sato",
      "Kao MIURA": "Kao Miura"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-cup-of-china-2026.json",
    "podium": [
     {
      "place": 1,
+     "name": "Kao Miura",
+     "nation": "JPN",
+     "points": "190.35"
+    },
+    {
+     "place": 2,
      "name": "Владислав Дикиджи",
      "nation": "RUS",
      "points": "183.58"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Евгений Семененко",
      "nation": "RUS",
      "points": "181.90"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Kao Miura",
+     "nation": "JPN",
+     "points": "293.25"
+    },
+    {
+     "place": 2,
+     "name": "Владислав Дикиджи",
+     "nation": "RUS",
+     "points": "282.44"
     },
     {
      "place": 3,
-     "name": "Shun Sato",
-     "nation": "JPN",
-     "points": "175.23"
+     "name": "Евгений Семененко",
+     "nation": "RUS",
+     "points": "281.62"
     }
    ],
-   "provisional": true
+   "facts": [
+    {
+     "who": "Kao Miura",
+     "text": "Личный рекорд по сумме: 293.25 (был 281.53)",
+     "kind": "score"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:men-senior-pp",
