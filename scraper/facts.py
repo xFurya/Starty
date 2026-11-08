@@ -93,7 +93,8 @@ def element_facts(sk, kind, level, seg):
             na = sum(1 for r, j in big if r == 3 and j == "A")
             if len(js) >= 2 and (nq >= 2 or (nq >= 1 and na >= 1) or na >= 2 or (nq >= 1 and len(big) >= 3)):
                 clean = "+".join(_plain(p) for p in code.split("+") if p not in ("SEQ", "COMBO", "REP"))
-                out.append(("element", f"Каскад {clean}"))
+                # +SEQ — секвенция (прыжки через подскок), не каскад
+                out.append(("element", f"{'Секвенция' if 'SEQ' in code.split('+') else 'Каскад'} {clean}"))
             continue
         m = THROW.match(code)
         if m and int(m.group(1)) >= 4 and _credited(4, m.group(3) + info):

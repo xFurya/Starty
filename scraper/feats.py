@@ -1,12 +1,12 @@
 """«Примечательное» в профиле спортсмена.
 
-Два источника:
-- первые в истории — выверенный вручную список data/feats.json; строка попадает в профиль, только если
-  совпали имя и дата рождения (у тёзки другая дата — ему не достанется);
+Два источника, оба — из данных, а не из списка, составленного руками:
 - мировые рекорды — таблицы ISU «Progression of Highest Scores» (isujsstat/phs*.htm). Верхняя строка —
   действующий рекорд, строка ниже — прежний, побитый тем, что над ним. Хозяин строки опознаётся по
   номеру биографии ISU в ссылке; если у профиля номера нет — по имени, стране и возрасту (взрослый
-  рекорд в 14 лет — значит, это тёзка).
+  рекорд в 14 лет — значит, это тёзка);
+- архив протоколов (scraper/archive.py): самый дорогой прыжковый элемент и больше всех четверных
+  с 2018 года, редкие элементы, единогласные +5 и десятки — у каждого, кто есть в протоколах.
 
 Таблицы сохраняются в data/records.json и перечитываются раз в сутки; ISU не ответила — берём
 сохранённые. Нет ни того, ни другого — рекордов в профиле нет (а не выдуманных).
@@ -17,12 +17,12 @@ import json
 import os
 import re
 
+from . import archive as ar
 from . import names as nm
 from . import net
 from .profiles import event_ru
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FEATS = os.path.join(ROOT, "data", "feats.json")
 CACHE = os.path.join(ROOT, "data", "records.json")
 STAT = "https://www.isuresults.com/isujsstat/"
 FRESH = dt.timedelta(hours=20)
@@ -33,8 +33,9 @@ SEG_RU = {"sp": "в короткой программе", "fs": "в произв
           "fd": "в произвольном танце", "to": "по сумме баллов"}
 PB_SEG = {"sp": "sp", "rd": "sp", "fs": "fs", "fd": "fs", "to": "total"}
 RUS = {"RUS", "AIN", "AIN1", "AIN2", "ANA", "OAR", "FSR", "ROC"}
-# имя источника в строке «По данным …»: «ISU и Википедии»
-OF = {"Википедия": "Википедии"}
+# имя источника в строке «По данным …»: ISU и федерации — как есть, протокол другого турнира — общим словом
+OWN = {"ISU", "ФФККР", "ФФКМ"}
+OTHER = "протоколов турниров"
 
 
 # ---------------------------------------------------------------- таблицы ISU
@@ -144,17 +145,13 @@ def record_title(rec):
 
 # ---------------------------------------------------------------- к профилю
 
-def load(path=FEATS, tbls=None, log=print):
-    """Всё, что нужно write(): {"feats": [...], "src": {...}, "records": [...]}."""
-    try:
-        with open(path, encoding="utf-8") as f:
-            cur = json.load(f)
-    except (OSError, ValueError) as e:
-        log("!! первые в истории: не прочитан data/feats.json:", e)
-        cur = {}
+def load(tbls=None, arc=None, log=print):
+    """Всё, что нужно write(): {"records": [...], "archive": archive.Index}."""
     if tbls is None:
         tbls = tables(log=log)
-    return {"feats": cur.get("feats") or [], "src": cur.get("src") or {}, "records": records(tbls or {})}
+    if arc is None:
+        arc = ar.load()
+    return {"records": records(tbls or {}), "archive": ar.Index(arc)}
 
 
 def _born(pr):
@@ -200,33 +197,20 @@ def owns(rec, name, nation, isu_id, pr):
 
 
 def for_profile(name, nation, isu_id, pr, book):
-    """Строки «Примечательного» для профиля: [{t, ev, d?, pts?, src, u}] по времени, от ранних к поздним."""
+    """Строки «Примечательного» для профиля: [{t, ev, d, pts?, src, u}]. Сначала мировые рекорды,
+    за ними рекорды архива, редкие элементы, четверные, +5 и десятки; внутри — от ранних к поздним."""
     out = []
-    born = _born(pr)
-    for f in book["feats"]:
-        if nm.key(f.get("n", "")) != nm.key(name) or not born or f.get("born") != born:
-            continue
-        src = book["src"].get(f.get("src"), {})
-        if not f.get("t") or not src.get("u"):
-            continue
-        x = {"t": f["t"], "ev": f.get("ev", ""), "src": src.get("n", ""), "u": src["u"]}
-        if f.get("d"):
-            x["d"] = f["d"]
-        out.append(x)
-    for rec in book["records"]:
+    for rec in book.get("records") or []:
         if owns(rec, name, nation, isu_id, pr):
             r = rec["row"]
             out.append({"t": record_title(rec), "ev": event_ru(r["ev"]), "d": r["d"], "pts": r["pts"],
-                        "src": "ISU", "u": f"{STAT}phs{rec['kind']}{rec['s']}.htm"})
-
-    def when(x):
-        if x.get("d"):
-            return x["d"]
-        m = re.search(r"(\d{4})(?:/\d\d)?", x["ev"])
-        return m.group(1) if m else "9999"
-
-    return sorted(out, key=when)
+                        "src": "ISU", "u": f"{STAT}phs{rec['kind']}{rec['s']}.htm", "g": 0})
+    out += ar.for_profile(name, nation, book.get("archive"))
+    out.sort(key=lambda x: (x["g"], x.get("d", "")))
+    for x in out:
+        del x["g"]
+    return out
 
 
 def source_names(feats):
-    return [OF.get(f["src"], f["src"]) for f in feats if f.get("src")]
+    return [f["src"] if f["src"] in OWN else OTHER for f in feats if f.get("src")]

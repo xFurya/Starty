@@ -2,10 +2,15 @@
 
 Примечательное считается один раз, когда протокол утверждён (есть судейские
 оценки), и запоминается в data/facts.json по адресу протокола.
+
+Тот же протокол пополняет архив элементов (data/archive.json, scraper/archive.py) — но только из
+полного сбора: он идёт по одному, а быстрый — параллельно с ним, и два писателя одного архива
+разошлись бы в номерах протоколов. Что быстрый сбор успел посчитать, полный дочитает в архив сам.
 """
 import json
 import os
 
+from . import archive as ar
 from . import facts as fx
 from . import keep
 from . import net
@@ -15,10 +20,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FACTS = os.path.join(ROOT, "data", "facts.json")
 
 _store = None
+_arc = None
+_arc_dirty = False
+ARCHIVE = ar.ARCHIVE
 
 # версия правил: при смене примечательное считается заново; оценочные факты (score/record) прежней
 # версии при этом переносятся — их не пересчитать, статистика ISU уже включает этот турнир
-VERSION = "7"
+VERSION = "8"
 
 
 def _load():
@@ -32,7 +40,24 @@ def _load():
     return _store
 
 
+def archive():
+    global _arc
+    if _arc is None:
+        _arc = ar.load(ARCHIVE)
+    return _arc
+
+
+def _to_archive(pdf, skaters, meta, kind, level, seg):
+    global _arc_dirty
+    if ar.ingest(archive(), skaters, dict(meta, u=pdf, kind=kind, level=level, seg=seg)):
+        _arc_dirty = True
+
+
 def save():
+    global _arc_dirty
+    if _arc is not None and _arc_dirty:
+        ar.save(_arc, ARCHIVE)
+        _arc_dirty = False
     if _store is None:
         return
     # записи прошлых версий правил нужны, пока по их адресу нет записи текущей версии:
@@ -93,12 +118,19 @@ def _ours(nation):
     return bool(side(nation))
 
 
-def segment_facts(pdf, *, kind, level, seg, intl, season, to_ru, log=print):
-    """Факты сегмента по судейским оценкам: [{who, text, kind}] (кэш — по адресу PDF)."""
+def segment_facts(pdf, *, kind, level, seg, intl, season, to_ru, log=print, meta=None):
+    """Факты сегмента по судейским оценкам: [{who, text, kind}] (кэш — по адресу PDF).
+    meta — {ev, d, src}: тогда протокол идёт и в архив элементов (только из полного сбора).
+    Факты посчитаны раньше, а в архиве протокола нет — он скачивается ещё раз, один."""
     store = _load()
     pdf_key = f"{VERSION}|{pdf}"
     if pdf_key in store:
         store[pdf_key] = _adopt(pdf, unique_facts(store[pdf_key]), to_ru)
+        if meta and (meta.get("d") or "") >= ar.FIRST_DAY and not ar.has(archive(), pdf):
+            try:
+                _to_archive(pdf, st.parse_judges(net.pdf_text(pdf)), meta, kind, level, seg)
+            except Exception as e:  # архив пополнится в следующий раз
+                log("  ! архив элементов:", pdf, e)
         return store[pdf_key]
     try:
         skaters = st.parse_judges(net.pdf_text(pdf))
@@ -108,6 +140,11 @@ def segment_facts(pdf, *, kind, level, seg, intl, season, to_ru, log=print):
     if not skaters:
         # не разобрали — не запоминаем, попробуем в следующий раз
         return []
+    if meta:
+        try:
+            _to_archive(pdf, skaters, meta, kind, level, seg)
+        except Exception as e:  # архив — дополнение к фактам
+            log("  ! архив элементов:", pdf, e)
     try:
         out = _segment(skaters, kind, level, seg, intl, season, to_ru)
     except Exception as e:  # в том числе fx.StatUnavailable: пустой расчёт в кэш не пишем

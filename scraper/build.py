@@ -27,6 +27,7 @@ import sys
 import traceback
 
 from . import fsr, goldenskate, ics, isu, net
+from . import archive as ar
 from . import keep as kp
 from . import protocols as P
 from . import photos as ph
@@ -677,7 +678,9 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
             }
             if done and s.get("judges_pdf"):
                 f = rs.segment_facts(s["judges_pdf"], kind=kind, level=level, seg=seg, intl=intl,
-                                     season=rs.season_of(CFG), to_ru=names.to_ru, log=log)
+                                     season=rs.season_of(CFG), to_ru=names.to_ru, log=log,
+                                     meta={"ev": tournament, "d": start.date().isoformat(),
+                                           "src": ar.source_of(s["judges_pdf"], tournament)})
                 if f:
                     ev["facts"] = f
             ev["desc"] = describe(ev)
@@ -1462,7 +1465,8 @@ def main():
                     if end > competed.get(nm.key(n), ""):
                         competed[nm.key(n)] = end
         try:
-            notable = ft.load(log=log)
+            # архив — вместе с тем, что этот сбор в него только что добавил (на диск он ляжет ниже)
+            notable = ft.load(arc=rs.archive(), log=log)
         except Exception as e:  # «Примечательное» — дополнение к профилю
             log("!! примечательное:", e)
             notable = None

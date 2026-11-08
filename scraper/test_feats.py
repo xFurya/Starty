@@ -4,6 +4,7 @@ import os
 import tempfile
 import unittest
 
+from scraper import archive as ar
 from scraper import feats as ft
 from scraper import net
 from scraper import profiles as pf
@@ -35,8 +36,19 @@ DFD = "<table>" + "".join([
 ]) + "</table>"
 
 
-def book(tables, feats=(), src=None):
-    return {"feats": list(feats), "src": src or {}, "records": ft.records(tables)}
+def book(tables, arc=None):
+    arc = arc or ar.empty()
+    arc["full"] = True
+    return {"records": ft.records(tables), "archive": ar.Index(arc)}
+
+
+def el(code, base, judges=(1, 1, 1), info="", score=None):
+    return {"code": code, "info": info, "base": base, "goe": 0.5, "judges": list(judges),
+            "score": score if score is not None else base + 0.5}
+
+
+def protocol(arc, u, ev, d, skaters, kind="men", seg="ПП", src="ISU"):
+    ar.ingest(arc, skaters, {"u": u, "ev": ev, "d": d, "kind": kind, "level": "senior", "seg": seg, "src": src})
 
 
 class ParseTest(unittest.TestCase):
@@ -124,40 +136,31 @@ class OwnerTest(unittest.TestCase):
         self.assertEqual(self.titles("Madison Chock / Evan Bates", "USA", "00013665", pr),
                          ["Действующий мировой рекорд в произвольном танце"])
 
-    def test_curated_needs_same_birthday_and_sorts_by_date(self):
-        src = {"w": {"n": "Википедия", "u": "https://ru.wikipedia.org/wiki/X"}}
-        feats = [
-            {"n": "Александра Трусова", "born": "2004-06-23", "src": "w", "t": "Флип", "ev": "Финал Гран-при 2019/20",
-             "d": "2019-12-07"},
-            {"n": "Alexandra Trusova", "born": "2004-06-23", "src": "w", "t": "Тулуп", "ev": "Чемпионат мира среди юниоров 2018",
-             "d": "2018-03-10"},
-            {"n": "Александра Трусова", "born": "2004-06-23", "src": "нет такого", "t": "Без источника", "ev": "X 2020"},
-        ]
-        b = book({"wfs": ft.parse(WFS)}, feats, src)
+    def test_world_records_go_first_then_archive(self):
+        arc = ar.empty()
+        protocol(arc, "https://results.isu.org/a.pdf", "Финал Гран-при", "2019-12-07",
+                 [{"name": "Alexandra TRUSOVA", "nation": "RUS",
+                   "elements": [el("4Lz+3T", 15.7), el("4S", 9.7), el("4T", 9.5)]}], kind="women")
+        protocol(arc, "https://results.isu.org/b.pdf", "Чемпионат мира", "2021-03-26",
+                 [{"name": "Kaori SAKAMOTO", "nation": "JPN", "elements": [el("3Lz+3T", 10.1)]}], kind="women")
+        b = book({"wfs": ft.parse(WFS)}, arc)
         pr = {"who": [{"n": "Александра Трусова", "born": "2004-06-23"}]}
         fe = ft.for_profile("Александра Трусова", "RUS", "00102760", pr, b)
-        self.assertEqual([x["t"] for x in fe],
-                         ["Тулуп", "Мировой рекорд в произвольной программе в 2019–2021 годах", "Флип"])
-        self.assertEqual(fe[0], {"t": "Тулуп", "ev": "Чемпионат мира среди юниоров 2018", "d": "2018-03-10",
-                                 "src": "Википедия", "u": "https://ru.wikipedia.org/wiki/X"})
-        self.assertEqual(ft.source_names(fe), ["Википедии", "ISU", "Википедии"])
-        # тёзка с другой датой рождения и профиль без даты — без чужих достижений
-        other = {"who": [{"n": "Александра Трусова", "born": "2011-01-01"}]}
-        self.assertEqual([x["t"] for x in ft.for_profile("Александра Трусова", "RUS", "", other, b)], [])
-        self.assertEqual(ft.for_profile("Александра Трусова", "RUS", "", {"who": [{"n": "x"}]}, b), [])
+        self.assertEqual([x["t"] for x in fe], [
+            "Мировой рекорд в произвольной программе в 2019–2021 годах",
+            "Самый дорогой прыжковый элемент с 2018 года: 4Lz+3T",
+            "3 четверных в одной программе — больше всех с 2018 года",
+            "Четверной сальхов", "Четверной тулуп"])
+        self.assertEqual(fe[1], {"t": "Самый дорогой прыжковый элемент с 2018 года: 4Lz+3T",
+                                 "ev": "Финал Гран-при, произвольная программа", "d": "2019-12-07", "pts": "15.70",
+                                 "src": "ISU", "u": "https://results.isu.org/a.pdf"})
+        self.assertEqual(ft.source_names(fe), ["ISU"] * 5)
+        # тёзка из другой страны архивных строк не получает
+        self.assertEqual(ft.for_profile("Александра Трусова", "KAZ", "", {"who": []}, b), [])
 
-    def test_curated_file_is_consistent(self):
-        with open(ft.FEATS, encoding="utf-8") as f:
-            cur = json.load(f)
-        for x in cur["feats"]:
-            self.assertIn(x["src"], cur["src"], x)
-            self.assertRegex(x["born"], r"^\d{4}-\d\d-\d\d$")
-            self.assertTrue(x["t"] and x["ev"], x)
-            if "d" in x:
-                self.assertRegex(x["d"], r"^\d{4}-\d\d-\d\d$")
-                self.assertIn(x["d"][:4], x["ev"], x)
-        for s in cur["src"].values():
-            self.assertTrue(s["n"] and s["u"].startswith("https://"), s)
+    def test_source_names(self):
+        self.assertEqual(ft.source_names([{"src": "ISU"}, {"src": "ФФККР"}, {"src": "CS Denis Ten Memorial"}, {}]),
+                         ["ISU", "ФФККР", "протоколов турниров"])
 
 
 class TablesTest(unittest.TestCase):
@@ -200,16 +203,19 @@ class WriteTest(unittest.TestCase):
                                                                                        "bio": bio, "cr": []}}}
         mfs = "<table>" + row(1, "Ilia MALININ", "USA", "ISU Grand Prix Final 2025", "06/12/2025", "238.24",
                               bio="00108049") + "</table>"
-        src = {"m": {"n": "Википедия", "u": "https://ru.wikipedia.org/wiki/M"}}
-        feats = [{"n": "Ilia Malinin", "born": "2004-12-02", "src": "m", "t": "Первым в истории исполнил четверной аксель",
-                  "ev": "CS U.S. International FS Classic 2022", "d": "2022-09-14"}]
+        arc = ar.empty()
+        protocol(arc, "https://example.org/fs.pdf", "CS U.S. International Classic", "2022-09-14",
+                 [{"name": "Ilia MALININ", "nation": "USA", "elements": [el("4A", 12.5)]},
+                  {"name": "Nathan CHEN", "nation": "USA", "elements": [el("4Lz", 11.5)]}],
+                 src="CS U.S. International Classic")
         with tempfile.TemporaryDirectory() as d:
-            pf.write(people, store, {}, out_dir=d, log=lambda *a: None, book=book({"mfs": ft.parse(mfs)}, feats, src))
+            pf.write(people, store, {}, out_dir=d, log=lambda *a: None, book=book({"mfs": ft.parse(mfs)}, arc))
             with open(os.path.join(d, pf.key("Ilia Malinin") + ".json"), encoding="utf-8") as f:
                 pr = json.load(f)
         self.assertEqual([x["t"] for x in pr["feats"]],
-                         ["Первым в истории исполнил четверной аксель", "Действующий мировой рекорд в произвольной программе"])
-        self.assertEqual(pr["src"], ["ISU", "Википедии"])
+                         ["Действующий мировой рекорд в произвольной программе",
+                          "Самый дорогой прыжковый элемент с 2018 года: 4A"])
+        self.assertEqual(pr["src"], ["ISU", "протоколов турниров"])
         # без «книги» раздела нет
         with tempfile.TemporaryDirectory() as d:
             pf.write(people, store, {}, out_dir=d, log=lambda *a: None)

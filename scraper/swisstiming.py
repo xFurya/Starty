@@ -712,15 +712,18 @@ def parse_judges(text):
 
 
 def _element(line):
-    """«   3    4T+3A+3A+SEQ      25.50    1.14   0 1 1 1 2 1 2     26.64» → элемент."""
+    """«   3    4T+3A+3A+SEQ      25.50    1.14   0 1 1 1 2 1 2     26.64» → элемент.
+    x — во второй половине программы: в base уже надбавка 10 %."""
     t = line.split()
     if len(t) < 5 or not re.fullmatch(r"\d{1,2}", t[0]):
         return None
     code = t[1]
     rest = t[2:]
     info = []
+    bonus = False
     while rest and not FLOAT.match(rest[0]):
         if rest[0] == "x":
+            bonus = True
             rest = rest[1:]
             continue
         info.append(rest[0])
@@ -728,6 +731,7 @@ def _element(line):
     nums = []
     for v in rest:
         if v == "x":
+            bonus = True
             continue
         if FLOAT.match(v) or re.fullmatch(r"-?\d", v) or v == "-":
             nums.append(v)
@@ -738,8 +742,10 @@ def _element(line):
         return None
     base, goe, score = float(nums[0]), float(nums[1]), float(nums[-1])
     judges = [int(v) for v in nums[2:-1] if re.fullmatch(r"-?\d", v)]
-    return {"code": code, "info": " ".join(info), "base": base, "goe": goe,
-            "judges": judges, "score": score}
+    el = {"code": code, "info": " ".join(info), "base": base, "goe": goe, "judges": judges, "score": score}
+    if bonus:
+        el["x"] = True
+    return el
 
 
 # ---------------------------------------------------------------- PDF оценок (ФФКМ «Scores»)
