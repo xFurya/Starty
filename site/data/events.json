@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T20:36:29+03:00",
- "checked": "2026-11-08T05:17:02.298313+00:00",
+ "checked": "2026-11-08T05:25:03.014844+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -49288,7 +49288,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Lucius Kazanecki — 120.95\n\nРоссияне:\n• Владислав Дикиджи — 09:16\n• Евгений Семененко — 09:24\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Jacob Sanchez — 124.94\n2. Lucius Kazanecki — 120.95\n\nРоссияне:\n• Владислав Дикиджи — 09:16\n• Евгений Семененко — 09:24\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Lucius Kazanecki",
@@ -49296,7 +49296,7 @@
      "time": "08:07",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "120.95"
     },
     {
@@ -49304,7 +49304,9 @@
      "nation": "USA",
      "time": "08:15",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "124.94"
     },
     {
      "name": "Minkyu Seo",
@@ -49402,6 +49404,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Jacob Sanchez",
+     "nation": "USA",
+     "points": "124.94"
+    },
+    {
+     "place": 2,
      "name": "Lucius Kazanecki",
      "nation": "USA",
      "points": "120.95"
