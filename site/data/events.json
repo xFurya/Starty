@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T20:36:29+03:00",
- "checked": "2026-11-08T06:17:02.700351+00:00",
+ "checked": "2026-11-08T06:25:02.902287+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -49251,7 +49251,9 @@
      "nation": "RUS",
      "time": "09:16",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "183.58"
     },
     {
      "name": "Евгений Семененко",
@@ -49288,7 +49290,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Minkyu Seo — 169.37\n2. Mikhail Shaidorov — 168.62\n3. Vladimir Samoilov — 164.18\n\nРоссияне:\n• Владислав Дикиджи — 09:16\n• Евгений Семененко — 09:24\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Владислав Дикиджи — 183.58\n2. Minkyu Seo — 169.37\n3. Mikhail Shaidorov — 168.62\n\nРоссияне:\n• Владислав Дикиджи — 09:16\n• Евгений Семененко — 09:24\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Lucius Kazanecki",
@@ -49296,7 +49298,7 @@
      "time": "08:07",
      "no": 1,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "120.95"
     },
     {
@@ -49305,7 +49307,7 @@
      "time": "08:15",
      "no": 2,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "124.94"
     },
     {
@@ -49314,7 +49316,7 @@
      "time": "08:23",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "169.37"
     },
     {
@@ -49323,7 +49325,7 @@
      "time": "08:30",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "148.18"
     },
     {
@@ -49332,7 +49334,7 @@
      "time": "08:38",
      "no": 5,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "132.75"
     },
     {
@@ -49341,7 +49343,7 @@
      "time": "08:46",
      "no": 6,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "158.94"
     },
     {
@@ -49350,7 +49352,7 @@
      "time": "09:01",
      "no": 7,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "164.18"
     },
     {
@@ -49359,7 +49361,7 @@
      "time": "09:09",
      "no": 8,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "168.62"
     },
     {
@@ -49367,7 +49369,9 @@
      "nation": "RUS",
      "time": "09:16",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "183.58"
     },
     {
      "name": "Евгений Семененко",
@@ -49416,21 +49420,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Владислав Дикиджи",
+     "nation": "RUS",
+     "points": "183.58"
+    },
+    {
+     "place": 2,
      "name": "Minkyu Seo",
      "nation": "KOR",
      "points": "169.37"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Mikhail Shaidorov",
      "nation": "KAZ",
      "points": "168.62"
-    },
-    {
-     "place": 3,
-     "name": "Vladimir Samoilov",
-     "nation": "POL",
-     "points": "164.18"
     }
    ],
    "provisional": true
