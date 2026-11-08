@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-08T11:53:43+03:00",
- "checked": "2026-11-08T12:51:02.949600+00:00",
+ "checked": "2026-11-08T12:59:02.892993+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -49686,7 +49686,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Арина Кудлай — 135.33\n2. Злата Буря — 134.03\n3. Аделия Петросян — 131.28\n\nНачало: 14:10 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Камилла Нелюбова — 138.39\n2. Арина Кудлай — 135.33\n3. Злата Буря — 134.03\n\nИтог турнира:\n1. Камилла Нелюбова — 217.06\n2. Арина Кудлай — 205.40\n3. Злата Буря — 205.17\n\nНачало: 14:10 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Мария Елисова",
@@ -49694,8 +49694,9 @@
      "time": "14:17",
      "no": 1,
      "warmup": 1,
-     "place": 10,
-     "points": "108.52"
+     "place": 11,
+     "points": "108.52",
+     "final": 11
     },
     {
      "name": "Ксения Гущина",
@@ -49703,8 +49704,9 @@
      "time": "14:32",
      "no": 3,
      "warmup": 1,
-     "place": 5,
-     "points": "126.13"
+     "place": 6,
+     "points": "126.13",
+     "final": 7
     },
     {
      "name": "Милана Лебедева",
@@ -49712,8 +49714,9 @@
      "time": "14:40",
      "no": 4,
      "warmup": 1,
-     "place": 8,
-     "points": "117.98"
+     "place": 9,
+     "points": "117.98",
+     "final": 9
     },
     {
      "name": "Дарья Садкова",
@@ -49721,8 +49724,9 @@
      "time": "14:47",
      "no": 5,
      "warmup": 1,
-     "place": 11,
-     "points": "99.54"
+     "place": 12,
+     "points": "99.54",
+     "final": 12
     },
     {
      "name": "Агата Петрова",
@@ -49730,8 +49734,9 @@
      "time": "14:55",
      "no": 6,
      "warmup": 1,
-     "place": 4,
-     "points": "129.66"
+     "place": 5,
+     "points": "129.66",
+     "final": 5
     },
     {
      "name": "Елизавета Лабутина",
@@ -49739,8 +49744,9 @@
      "time": "15:02",
      "no": 2,
      "warmup": 1,
-     "place": 7,
-     "points": "119.83"
+     "place": 8,
+     "points": "119.83",
+     "final": 8
     },
     {
      "name": "Алиса Юрова",
@@ -49748,8 +49754,9 @@
      "time": "15:10",
      "no": 7,
      "warmup": 2,
-     "place": 6,
-     "points": "122.64"
+     "place": 7,
+     "points": "122.64",
+     "final": 6
     },
     {
      "name": "Дина Хуснутдинова",
@@ -49757,8 +49764,9 @@
      "time": "15:17",
      "no": 8,
      "warmup": 2,
-     "place": 9,
-     "points": "112.12"
+     "place": 10,
+     "points": "112.12",
+     "final": 10
     },
     {
      "name": "Арина Кудлай",
@@ -49766,8 +49774,9 @@
      "time": "15:25",
      "no": 9,
      "warmup": 2,
-     "place": 1,
-     "points": "135.33"
+     "place": 2,
+     "points": "135.33",
+     "final": 2
     },
     {
      "name": "Злата Буря",
@@ -49775,8 +49784,9 @@
      "time": "15:32",
      "no": 10,
      "warmup": 2,
-     "place": 2,
-     "points": "134.03"
+     "place": 3,
+     "points": "134.03",
+     "final": 3
     },
     {
      "name": "Аделия Петросян",
@@ -49784,15 +49794,19 @@
      "time": "15:40",
      "no": 11,
      "warmup": 2,
-     "place": 3,
-     "points": "131.28"
+     "place": 4,
+     "points": "131.28",
+     "final": 4
     },
     {
      "name": "Камилла Нелюбова",
      "nation": "ЧУВ",
      "time": "15:47",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "138.39",
+     "final": 1
     }
    ],
    "live": {
@@ -49814,30 +49828,49 @@
      "Аделия ПЕТРОСЯН": "Аделия Петросян",
      "Камилла НЕЛЮБОВА": "Камилла Нелюбова"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json",
    "podium": [
     {
      "place": 1,
+     "name": "Камилла Нелюбова",
+     "nation": "ЧУВ",
+     "points": "138.39"
+    },
+    {
+     "place": 2,
      "name": "Арина Кудлай",
      "nation": "СПБ",
      "points": "135.33"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Злата Буря",
      "nation": "МОС",
      "points": "134.03"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Камилла Нелюбова",
+     "nation": "ЧУВ",
+     "points": "217.06"
+    },
+    {
+     "place": 2,
+     "name": "Арина Кудлай",
+     "nation": "СПБ",
+     "points": "205.40"
     },
     {
      "place": 3,
-     "name": "Аделия Петросян",
+     "name": "Злата Буря",
      "nation": "МОС",
-     "points": "131.28"
+     "points": "205.17"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:pairs-senior-pp",
