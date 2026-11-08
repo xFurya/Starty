@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T20:36:29+03:00",
- "checked": "2026-11-07T20:36:29+03:00",
+ "checked": "2026-11-08T05:17:02.298313+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -49288,14 +49288,16 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Россияне:\n• Владислав Дикиджи — 09:16\n• Евгений Семененко — 09:24\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Lucius Kazanecki — 120.95\n\nРоссияне:\n• Владислав Дикиджи — 09:16\n• Евгений Семененко — 09:24\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Lucius Kazanecki",
      "nation": "USA",
      "time": "08:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "120.95"
     },
     {
      "name": "Jacob Sanchez",
@@ -49396,7 +49398,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-cup-of-china-2026.json"
+   "proto": "isu_isu-gp-cup-of-china-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Lucius Kazanecki",
+     "nation": "USA",
+     "points": "120.95"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:men-senior-pp",
