@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-08T16:07:19+03:00",
- "checked": "2026-11-08T16:07:19+03:00",
+ "checked": "2026-11-08T14:32:57.342912+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -49924,56 +49924,70 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 16:20 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Екатерина Гейниш / Андрей Рудь — 115.96\n2. Анна Ляшенко / Пётр Алексеенко — 114.84\n3. София Диана Касинс / Александр Брегей — 112.14\n\nНачало: 16:20 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Анастасия Гиричева / Иван Долгодворов",
      "nation": "МОС",
      "time": "16:27",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 7,
+     "points": "88.84"
     },
     {
      "name": "Вероника Меренкова / Даниль Галимов",
      "nation": "КРД",
      "time": "16:42",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4,
+     "points": "107.86"
     },
     {
      "name": "Валерия Ходыкина / Даниил Бутенко",
      "nation": "МОС",
      "time": "16:50",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 6,
+     "points": "98.12"
     },
     {
      "name": "Анна Ляшенко / Пётр Алексеенко",
      "nation": "МОС",
      "time": "16:57",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "114.84"
     },
     {
      "name": "Екатерина Гейниш / Андрей Рудь",
      "nation": "МОС",
      "time": "17:05",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "115.96"
     },
     {
      "name": "Алена Кривоносова / Андрей Анисимов",
      "nation": "МОС",
      "time": "17:12",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "102.65"
     },
     {
      "name": "София Диана Касинс / Александр Брегей",
      "nation": "СПБ",
      "time": "17:20",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3,
+     "points": "112.14"
     },
     {
      "name": "Екатерина Чикмарёва / Матвей Янченков",
@@ -50000,7 +50014,28 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Екатерина Гейниш / Андрей Рудь",
+     "nation": "МОС",
+     "points": "115.96"
+    },
+    {
+     "place": 2,
+     "name": "Анна Ляшенко / Пётр Алексеенко",
+     "nation": "МОС",
+     "points": "114.84"
+    },
+    {
+     "place": 3,
+     "name": "София Диана Касинс / Александр Брегей",
+     "nation": "СПБ",
+     "points": "112.14"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:dance-junior-rt",
