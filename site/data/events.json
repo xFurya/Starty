@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-07T20:36:29+03:00",
- "checked": "2026-11-08T05:53:03.455143+00:00",
+ "checked": "2026-11-08T06:13:02.905667+00:00",
  "complete": true,
  "facts_version": "7",
  "sources": {
@@ -49288,7 +49288,7 @@
      "note": "Кроме России"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Minkyu Seo — 169.37\n2. Nika Egadze — 158.94\n3. Yudong Chen — 148.18\n\nРоссияне:\n• Владислав Дикиджи — 09:16\n• Евгений Семененко — 09:24\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Minkyu Seo — 169.37\n2. Vladimir Samoilov — 164.18\n3. Nika Egadze — 158.94\n\nРоссияне:\n• Владислав Дикиджи — 09:16\n• Евгений Семененко — 09:24\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Lucius Kazanecki",
@@ -49296,7 +49296,7 @@
      "time": "08:07",
      "no": 1,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "120.95"
     },
     {
@@ -49305,7 +49305,7 @@
      "time": "08:15",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "124.94"
     },
     {
@@ -49323,7 +49323,7 @@
      "time": "08:30",
      "no": 4,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "148.18"
     },
     {
@@ -49332,7 +49332,7 @@
      "time": "08:38",
      "no": 5,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "132.75"
     },
     {
@@ -49341,7 +49341,7 @@
      "time": "08:46",
      "no": 6,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "158.94"
     },
     {
@@ -49349,7 +49349,9 @@
      "nation": "POL",
      "time": "09:01",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "164.18"
     },
     {
      "name": "Mikhail Shaidorov",
@@ -49418,15 +49420,15 @@
     },
     {
      "place": 2,
-     "name": "Nika Egadze",
-     "nation": "GEO",
-     "points": "158.94"
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "points": "164.18"
     },
     {
      "place": 3,
-     "name": "Yudong Chen",
-     "nation": "CHN",
-     "points": "148.18"
+     "name": "Nika Egadze",
+     "nation": "GEO",
+     "points": "158.94"
     }
    ],
    "provisional": true
