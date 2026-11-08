@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-08T11:53:43+03:00",
- "checked": "2026-11-08T11:53:43+03:00",
+ "checked": "2026-11-08T09:17:03.668639+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -49469,14 +49469,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 12:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Юрий Сидоров — 118.95\n\nНачало: 12:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Юрий Сидоров",
      "nation": "ОРЕ",
      "time": "12:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "118.95"
     },
     {
      "name": "Фёдор Зонов",
@@ -49569,7 +49571,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Юрий Сидоров",
+     "nation": "ОРЕ",
+     "points": "118.95"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:women-senior-pp",
