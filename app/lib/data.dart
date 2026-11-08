@@ -1385,7 +1385,7 @@ class Filters {
 class WatchLink {
   final String name, url;
 
-  /// Где площадка доступна («Россия», «Кроме России») или «Платно» — как в данных; нет — не пишем.
+  /// Подпись площадки («Платно») — как в данных; нет — не пишем. Страны не подписываем.
   final String? note;
   const WatchLink(this.name, this.url, [this.note]);
   Map<String, dynamic> toJson() => {'name': name, 'url': url, if (note != null) 'note': note};

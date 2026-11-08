@@ -24,17 +24,27 @@ class WatchTest(unittest.TestCase):
             {"name": "VK Видео", "url": "https://vk.com/video/@ruskating"}])
 
     def test_rule_jgp(self):
-        # ISU: Okko — Россия, Беларусь, Казахстан; остальной мир — YouTube ISU; у каждой площадки — где доступна
+        # ISU: Okko и YouTube ISU; страны под площадкой не пишем (решение владельца)
         self.assertEqual(b.watch_for("JGP Gdansk"), [
-            {"name": "Okko", "url": "https://okko.tv/", "note": "Россия, Беларусь, Казахстан"},
-            {"name": "YouTube ISU", "url": "https://www.youtube.com/@SkatingISU/live", "note": "Кроме России, Беларуси и Казахстана"}])
+            {"name": "Okko", "url": "https://okko.tv/"},
+            {"name": "YouTube ISU", "url": "https://www.youtube.com/@SkatingISU/live"}])
         self.assertEqual(b.broadcast_for("JGP Gdansk"), ["Okko", "YouTube ISU"])
         self.assertEqual(b.watch_for("Финал юниорского Гран-при"), [{"name": "Okko", "url": "https://okko.tv/"}])
+
+    def test_prev_region_notes_dropped(self):
+        # прошлый сбор переносит прошедшие старты целиком: снятая из правил подпись у них тоже снимается
+        prev = {"events": [{"watch": [{"name": "Okko", "url": "https://okko.tv/", "note": "Россия"},
+                                      {"name": "Ice-Stars.TV", "url": "https://ice-stars.tv/x", "note": "Платно"}]}],
+                "upcoming": [{"watch": [{"name": "YouTube ISU", "url": "https://y", "note": "Кроме России"}]}]}
+        b.kp.strip_notes(prev, b.watch_notes())
+        self.assertEqual(prev["events"][0]["watch"], [{"name": "Okko", "url": "https://okko.tv/"},
+                                                      {"name": "Ice-Stars.TV", "url": "https://ice-stars.tv/x", "note": "Платно"}])
+        self.assertEqual(prev["upcoming"][0]["watch"], [{"name": "YouTube ISU", "url": "https://y"}])
 
     def test_page_wins_over_rule(self):
         base = [{"name": "Okko", "url": "https://okko.tv/event/1"}, {"name": "x", "url": "ftp://bad"}]
         w = b.watch_for("JGP Ankara", base)
-        self.assertEqual(w[0], {"name": "Okko", "url": "https://okko.tv/event/1", "note": "Россия, Беларусь, Казахстан"})
+        self.assertEqual(w[0], {"name": "Okko", "url": "https://okko.tv/event/1"})
         self.assertEqual([x["name"] for x in w], ["Okko", "YouTube ISU"])
 
     def test_event_field(self):
@@ -105,12 +115,11 @@ class IntlWatchTest(unittest.TestCase):
                             start=z, end=z, venue="", intl=True, broadcast=[], ours=[], athletes=[], src="")
 
     def test_grand_prix_okko_and_isu(self):
-        # В России этапы показывает Okko, остальному миру — YouTube ISU (страница ISU «Where to watch»).
+        # Этапы показывают Okko и YouTube ISU (страница ISU «Where to watch»); страны не подписываем.
         with mock.patch.object(b.net, "fetch", side_effect=b.net.FetchError("x")):
             e = self.ev("GP Skate America")
-        self.assertEqual(e["watch"], [{"name": "Okko", "url": "https://okko.tv/", "note": "Россия"},
-                                      {"name": "YouTube ISU", "url": "https://www.youtube.com/@SkatingISU/live",
-                                       "note": "Кроме России"}])
+        self.assertEqual(e["watch"], [{"name": "Okko", "url": "https://okko.tv/"},
+                                      {"name": "YouTube ISU", "url": "https://www.youtube.com/@SkatingISU/live"}])
         self.assertEqual(e["broadcast"], ["Okko", "YouTube ISU"])
 
     def test_final_has_both(self):
@@ -118,7 +127,6 @@ class IntlWatchTest(unittest.TestCase):
             e = self.ev("Финал Гран-при")
         self.assertEqual([w["name"] for w in e["watch"]], ["Okko", "YouTube ISU"])
         self.assertEqual(e["watch"][1]["url"], "https://www.youtube.com/@SkatingISU/live")
-        # страны финала ISU отдельно не называл — подписи нет, а не догадка
         self.assertFalse(any("note" in w for w in e["watch"]))
 
     def test_rss_match_by_segment(self):

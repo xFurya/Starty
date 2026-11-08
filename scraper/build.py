@@ -427,6 +427,9 @@ def solid_streams(company):
     return _SOLID[company]
 
 
+PAID = "Платно"
+
+
 def watch_for(name, base=None, event=None, days=None):
     """Где смотреть: [{name, url, note?}]. Ссылки со страницы турнира (base) важнее общих
     правил из config.json: правило не добавляет канал, который со страницы уже есть.
@@ -434,7 +437,8 @@ def watch_for(name, base=None, event=None, days=None):
     конкретным эфиром, если он нашёлся в RSS; с only_stream без найденного эфира ссылки нет.
     days = (первый, последний день) турнира без расписания. Правило с solid даёт ссылку, только если
     на канале Solidsport заведён эфир в дни турнира: прошлогодний канал без эфира не обещаем.
-    note — где доступна площадка (из правила) или «Платно» (у платного эфира Solidsport)."""
+    note — подпись из правила или «Платно» (у платного эфира Solidsport). Где площадка доступна
+    по странам, не пишем: решение владельца."""
     out = [dict(w) for w in (base or []) if w.get("name") and _http_url(w.get("url"))]
     have = {w["name"] for w in out}
     if event and days is None:
@@ -457,7 +461,7 @@ def watch_for(name, base=None, event=None, days=None):
                     if not got:
                         continue
                     if any(got) and not note:
-                        note = "Платно"
+                        note = PAID
                 elif w.get("stream"):
                     found = stream_url(w["stream"], *event) if event else None
                     if w.get("only_stream") and not found:
@@ -1288,10 +1292,15 @@ def _save_json(path, value):
         json.dump(value, f, ensure_ascii=False, indent=0)
 
 
+def watch_notes():
+    """Подписи площадок, которые сбор может поставить сейчас: из правил и «Платно»."""
+    return {PAID} | {w["note"] for r in CFG["broadcast_rules"] for w in r.get("watch", []) if w.get("note")}
+
+
 def load_prev():
     try:
         with open(OUT_JSON, encoding="utf-8") as f:
-            return json.load(f)
+            return kp.strip_notes(json.load(f), watch_notes())
     except (OSError, ValueError):
         return {}
 

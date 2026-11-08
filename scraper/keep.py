@@ -138,6 +138,17 @@ def merge_watch(new, old, retract=()):
     return out
 
 
+def strip_notes(doc, allowed):
+    """Снимает с прошлого сбора подписи площадок, которых нынешние правила уже не дают (на месте).
+    Прошедшие старты переносятся целиком, и без этого подпись, убранная из config.json,
+    осталась бы у них навсегда. allowed — подписи, которые сбор сейчас может поставить."""
+    for e in (doc.get("events") or []) + (doc.get("upcoming") or []):
+        for w in e.get("watch") or []:
+            if w.get("note") and w["note"] not in allowed:
+                del w["note"]
+    return doc
+
+
 def merge_event(new, old, *, same_rules, retract_facts=(), retract_urls=(), to_ru=None):
     """Дополняет новое событие new из прежнего old (на месте). → True, если что-то взято из old."""
     changed = False

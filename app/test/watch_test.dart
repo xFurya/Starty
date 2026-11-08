@@ -134,9 +134,9 @@ void main() {
         testWidgets('без переполнения: ширина $w, масштаб $sc, ${b.name}', (t) async {
           await open(t, _start(broadcast: ['Первый канал', 'Okko', 'VK Видео'], watch: [
             {'name': 'Первый канал', 'url': 'https://www.1tv.ru/live'},
-            {'name': 'Okko', 'url': 'https://okko.tv/', 'note': 'Россия, Беларусь, Казахстан'},
+            {'name': 'Okko', 'url': 'https://okko.tv/'},
             {'name': 'VK Видео', 'url': 'https://vk.com/video'},
-            {'name': 'YouTube ISU', 'url': 'https://www.youtube.com/@SkatingISU/live', 'note': 'Кроме России, Беларуси и Казахстана'},
+            {'name': 'YouTube ISU', 'url': 'https://www.youtube.com/@SkatingISU/live', 'note': 'Платно, нужна подписка на канал турнира'},
           ]), width: w, scale: sc, brightness: b);
           expect(t.takeException(), isNull);
           expect(find.byIcon(CupertinoIcons.arrow_up_right, skipOffstage: false), findsNWidgets(4));
@@ -145,31 +145,31 @@ void main() {
     }
   }
 
-  test('где доступна площадка — из данных; пустое и не строка не выдумываются', () {
+  test('подпись площадки — из данных; пустое и не строка не выдумываются', () {
     final w = WatchLink.parseAll([
-      {'name': 'Okko', 'url': 'https://okko.tv/', 'note': ' Россия '},
+      {'name': 'Ice-Stars.TV', 'url': 'https://ice-stars.tv/', 'note': ' Платно '},
       {'name': 'YouTube ISU', 'url': 'https://www.youtube.com/@SkatingISU/live', 'note': ''},
       {'name': 'VK Видео', 'url': 'https://vk.com/video', 'note': 5},
     ]);
-    expect(w.map((e) => e.note), ['Россия', null, null]);
-    expect(w.first.toJson(), {'name': 'Okko', 'url': 'https://okko.tv/', 'note': 'Россия'});
+    expect(w.map((e) => e.note), ['Платно', null, null]);
+    expect(w.first.toJson(), {'name': 'Ice-Stars.TV', 'url': 'https://ice-stars.tv/', 'note': 'Платно'});
     expect(w[1].toJson().containsKey('note'), isFalse);
   });
 
-  testWidgets('подпись «где доступна» — под названием и в имени для читалок', (t) async {
-    await open(t, _start(broadcast: ['Okko', 'YouTube ISU'], watch: [
-      {'name': 'Okko', 'url': 'https://okko.tv/', 'note': 'Россия'},
-      {'name': 'YouTube ISU', 'url': 'https://www.youtube.com/@SkatingISU/live', 'note': 'Кроме России'},
+  testWidgets('подпись площадки — под названием и в имени для читалок', (t) async {
+    await open(t, _start(broadcast: ['Ice-Stars.TV', 'YouTube ISU'], watch: [
+      {'name': 'Ice-Stars.TV', 'url': 'https://ice-stars.tv/', 'note': 'Платно'},
+      {'name': 'YouTube ISU', 'url': 'https://www.youtube.com/@SkatingISU/live', 'note': 'Платно на канале'},
       {'name': 'Первый канал', 'url': 'https://www.1tv.ru/live'},
     ]));
-    expect(find.text('Россия', skipOffstage: false), findsOneWidget);
-    expect(find.text('Кроме России', skipOffstage: false), findsOneWidget);
-    final name = t.getRect(find.text('Okko', skipOffstage: false));
-    final note = t.getRect(find.text('Россия', skipOffstage: false));
+    expect(find.text('Платно', skipOffstage: false), findsOneWidget);
+    expect(find.text('Платно на канале', skipOffstage: false), findsOneWidget);
+    final name = t.getRect(find.text('Ice-Stars.TV', skipOffstage: false));
+    final note = t.getRect(find.text('Платно', skipOffstage: false));
     expect(note.top, greaterThanOrEqualTo(name.bottom), reason: 'подпись — под названием');
     expect(note.left, name.left);
     expect(
-      find.byWidgetPredicate((w) => w is Semantics && w.properties.label == 'Открыть трансляцию: Okko, Россия', skipOffstage: false),
+      find.byWidgetPredicate((w) => w is Semantics && w.properties.label == 'Открыть трансляцию: Ice-Stars.TV, Платно', skipOffstage: false),
       findsOneWidget,
     );
     expect(
@@ -242,7 +242,7 @@ void main() {
       testWidgets('без переполнения: 360, масштаб 1.3, ${b.name}', (t) async {
         await plate(t, up(watch: [
           {'name': 'Первый канал', 'url': 'https://www.1tv.ru/live'},
-          {'name': 'YouTube ISU', 'url': 'https://www.youtube.com/@SkatingISU/live', 'note': 'Кроме России, Беларуси и Казахстана'},
+          {'name': 'YouTube ISU', 'url': 'https://www.youtube.com/@SkatingISU/live', 'note': 'Платно, нужна подписка на канал турнира'},
         ]), width: 360, scale: 1.3, brightness: b);
         expect(t.takeException(), isNull);
         expect(find.byIcon(CupertinoIcons.arrow_up_right), findsNWidgets(2));
