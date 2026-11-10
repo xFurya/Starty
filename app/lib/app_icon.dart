@@ -179,6 +179,10 @@ class AppIcons {
     if (v.band != null) draw(await _image('band_${v.band}'));
   }
 
+  /// Шрифт числа дня — тот же, которым отрисованы значки рабочего стола (tools/icons/render.js):
+  /// в файле только цифры.
+  static const iconDigits = 'Manrope';
+
   /// Число дня: полупрозрачная заливка и цветной контур со свечением (размеры — из render.js).
   static void paintNumber(Canvas c, Size s, int day, Color line) {
     final k = s.width / 1024;
@@ -188,7 +192,7 @@ class AppIcons {
     TextPainter tp(Paint fg) => TextPainter(
       text: TextSpan(
         text: t,
-        style: TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.w700, fontSize: size, letterSpacing: spacing, foreground: fg, height: 1),
+        style: TextStyle(fontFamily: iconDigits, fontWeight: FontWeight.w700, fontSize: size, letterSpacing: spacing, foreground: fg, height: 1),
       ),
       textDirection: TextDirection.ltr,
     )..layout();

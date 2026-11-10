@@ -136,8 +136,9 @@ def yo(s):
 def clean_ru_name(inner):
     s = inner
     s = re.sub(r"-20\d\d\b", "", s)
-    s = re.sub(r"\b(ЗТ СССР|ЗТР|ЗРФК|ЗМС)\s+", "", s)
-    s = re.sub(r"(первого русского |двукратного |двухкратного )?[Оо]лимпийского чемпиона\s+", "", s)
+    s = re.sub(r"\b(ЗТ СССР|ЗМС СССР|ЗТР|ЗРФК|ЗМС)\b,?\s+", "", s)
+    s = re.sub(r"(первого русского |первого отечественного |двукратного |двухкратного )?"
+               r"(?:[Оо]лимпийского чемпиона|чемпиона мира)\s+", "", s)
     s = re.sub(r"\b(?:[А-ЯЁ]\.\s?){1,2}(?=[А-ЯЁ][а-яё])", "", s)  # инициалы
     m = re.match(r"^(.+?)\s+памяти\s+.+$", s)
     if m and not s.lower().startswith("памяти"):
@@ -1425,7 +1426,11 @@ def main():
 
     # Справочник для поиска: россияне от КМС и выше, все участники турниров ISU за два сезона
     try:
-        book = pp.build(names, CFG["season_start"], log)
+        seen = [(n, e.get("kind"), e.get("level"))
+                for e in events if e.get("start", "") >= CFG["season_start"]
+                for n in [*e.get("athletes", []), *(o["name"] for o in e.get("field", [])),
+                          *(o["name"] for o in e.get("ours", []))]]
+        book = pp.build(names, CFG["season_start"], log, seen=seen, prev=prev.get("people"))
     except Exception as e:  # справочник — не расписание: без него лента работает
         log("!! справочник спортсменов:", e)
         traceback.print_exc()
@@ -1453,7 +1458,7 @@ def main():
     # в справочнике рядом и давали двойников в поиске
     roster = nm.one_spelling(roster, fresh)
 
-    people = kp.merge_named(book["people"], prev.get("people"), "n", retract.get("people", ()),
+    people = kp.merge_named(book["people"], pp.aged(prev.get("people"), book), "n", retract.get("people", ()),
                             same=lambda p: (nm.key(p["n"]), p.get("c", "")), rank=nm.spelling_rank)
     # Профили: биографии ISU копятся и обновляются по очереди (выступившие — первыми), плюс картотека
     try:
@@ -1465,8 +1470,8 @@ def main():
                     if end > competed.get(nm.key(n), ""):
                         competed[nm.key(n)] = end
         try:
-            # архив — вместе с тем, что этот сбор в него только что добавил (на диск он ляжет ниже)
-            notable = ft.load(arc=rs.archive(), log=log)
+            # прошлые сезоны и архив сбора — вместе с тем, что этот сбор только что добавил (на диск ляжет ниже)
+            notable = ft.load(arc=ar.combined(rs.archive()), log=log, season_start=CFG["season_start"])
         except Exception as e:  # «Примечательное» — дополнение к профилю
             log("!! примечательное:", e)
             notable = None

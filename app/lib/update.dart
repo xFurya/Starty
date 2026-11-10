@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 
 import 'main.dart';
+import 'ui.dart';
 
 /// Номер этой сборки; растёт с каждой выкладкой.
 const appBuild = int.fromEnvironment('BUILD', defaultValue: 1);
@@ -67,7 +68,7 @@ class UpdateBar extends StatelessWidget {
             onPressed: () => launchUrl(Uri.parse(info.url), mode: LaunchMode.externalApplication),
             style: TextButton.styleFrom(
               foregroundColor: p.accent,
-              textStyle: const TextStyle(fontFamily: 'Manrope', fontSize: 14.5, fontWeight: FontWeight.w700),
+              textStyle: const TextStyle(fontFamily: sans, fontSize: 14.5, fontWeight: FontWeight.w700),
             ),
             child: const Text('Обновить'),
           ),

@@ -7,26 +7,51 @@
 
 Запуск (повторяемый: сегменты, уже лежащие в архиве, не скачиваются заново):
     python3 -m scraper.backfill discover            # списки → isu.json, fsr.json
-    python3 -m scraper.backfill run [--src ISU|ФФККР] [--limit N]
+    python3 -m scraper.backfill run [--src ISU|ФФККР] [--limit N] [--out ПУТЬ] [--shard I/N] [--skip-in АРХИВ]
+    python3 -m scraper.backfill merge ЧАСТЬ1.json ЧАСТЬ2.json … [--out ПУТЬ] [--full] [--not-in АРХИВ]
 
-Папка списков — переменная BACKFILL_DIR или --dir.
+Прошлые сезоны лежат в своём файле (archive.PAST), а не в archive.ARCHIVE — его пишет сбор по CI.
+run кладёт в --out (по умолчанию PAST). Несколько процессов гоняют параллельно, каждый свою долю
+(--shard I/N берёт items[I::N], I с нуля) и свой --out; merge сливает части в один архив, --full
+ставит признак полноты (прошлые сезоны собраны целиком).
+
+Добор захватывает и начало нынешнего сезона — турниры, до которых сбор уже не дотягивается. Один
+протокол в обоих файлах удвоил бы счёт элементов (archive.merge), поэтому файлы не пересекаются:
+run --skip-in data/archive.json пропускает протоколы, которые уже взял сбор, merge --not-in
+data/archive.json отказывается писать, если пересечение всё же есть, а сбор не берёт то, что лежит
+в прошлых сезонах (results._in_past).
+
+В архив не идут любители, балеты на льду и синхронное катание (skip_event), а из российских табло —
+разряды и детские категории (people._SKIP_CAT).
+
+Старый формат табло (comnet: турниры ISU в Японии — NHK Trophy, wc2019, wc2023, wtt…, jgpjpn2023):
+в index.htm нет CATnnn/SEGnnn, файлы с постоянными именами dataNNNN.htm/.pdf. Его разбирает
+comnet_index; ссылка на PDF берётся из самой страницы. Страницу wtt2025 (Swiss Timing без CATnnn:
+категория и сегмент в каждой строке) он тоже понимает.
+
+Папка списков — переменная BACKFILL_DIR или --dir (иначе временная папка starty-backfill).
 """
 import argparse
 import datetime as dt
+import html
 import json
 import os
 import re
 import sys
+import tempfile
 import time
+from concurrent.futures import ThreadPoolExecutor
+from urllib.parse import urljoin
 
 from . import build, fsr, isu, net, profiles
+from . import people as pp
 from . import swisstiming as st
 
-DIR = os.environ.get("BACKFILL_DIR",
-                     "/tmp/claude-0/-home-user/5a88bd61-0bb3-5694-a928-6a6f6ae00e83/scratchpad/backfill")
+DIR = os.environ.get("BACKFILL_DIR") or os.path.join(tempfile.gettempdir(), "starty-backfill")
 FIRST_SEASON = 2018          # сезон 2018/2019
 SINCE = dt.date(2018, 7, 1)  # ФФККР: турниры не раньше
 ISU_RESULTS = "https://results.isu.org/results/"
+WORKERS = 3                  # потоков при чтении страниц турниров ФФККР
 PAUSE = 0.4                  # пауза между запросами, с
 SAVE_EVERY = 20              # сегментов между сохранениями архива
 FSR_LIST = [fsr.BASE + "/sorevnovaniya", fsr.BASE + "/sorevnovaniya/sorevnovaniya/page-{}"]
@@ -149,6 +174,7 @@ def display_name(e):
     elif kind == "gp":
         raw = re.sub(r"^(ISU )?Grand Prix (?!Final)", r"\1GP ", raw)
     ru = profiles.event_ru(raw)
+    ru = re.sub(r"^(J?GP) (\d{4}) (.+)$", r"\1 \3 \2", ru)  # «GP 2025 Saatva Skate America» — год в конец
     if kind == "gpf" and not ru.startswith("Финал"):
         a, b = e["_season"].split("/")
         ru = f"Финал Гран-при {a}/{b[2:]}"
@@ -171,6 +197,11 @@ def _probe(season, code, e):
         return None, "другие даты"
     try:
         if st.parse_index_page(page, url)["categories"]:
+            return url, "ok"
+    except Exception:
+        pass
+    try:
+        if any(seg.get("judges_pdf") for c in comnet_index(page, url)["categories"] for seg in c["segments"]):
             return url, "ok"
     except Exception:
         pass
@@ -262,15 +293,54 @@ def single_day(page):
         return None
 
 
-def is_synchro(slug_or_title):
-    return "синхрон" in slug_or_title.lower() or "sinhron" in slug_or_title.lower()
+# любители, балеты на льду, синхронное катание: слова в названии и латиницей в адресах страницы и табло
+SKIP_EVENT = re.compile(r"любител|балет|синхрон|l[yj]ubit|balet|ballet|adult|s[iy]n(?:kh|ch|h)", re.I)
+
+
+def skip_event(*texts):
+    """Турнир не для архива: любители, балеты на льду, синхронное катание."""
+    return bool(SKIP_EVENT.search(" ".join(t or "" for t in texts)))
 
 
 def is_jgp_title(title, results=""):
-    """Этап юниорского Гран-при России: в ссылке «…etapN_jun» либо в названии юниоры + «Гран-при»."""
+    """Этап юниорского Гран-при России: в ссылке «…etapN_jun» или «…Netap/jun» либо в названии
+    юниоры + «Гран-при»."""
     t = title.lower()
-    return bool(re.search(r"\d+etap\d*_jun", results or "")) or (
+    return bool(re.search(r"\d+etap\d*[_/]jun", results or "")) or (
         bool(re.search(r"юниор|первенств", t)) and bool(re.search(r"гран[ -]?при", t)))
+
+
+QUOTED = r'["«“]([^"«»“”]+)["»”]'
+
+
+def past_title(full, results):
+    """Название турнира ФФККР прошлых сезонов → как его показывает приложение. full — заголовок
+    страницы целиком (fsr.tournament()["full"]), results — адрес табло: на сайте чемпионат России
+    назван по спонсору («Ростелеком - Чемпионат России 2019»), этапы Кубка России — без номера, а у
+    этапов Гран-при 2023–2025 название города стоит после дефиса."""
+    t = re.sub(r"\s+", " ", full.replace("\xa0", " ")).strip()
+    first = t.split(" - ")[0].strip()
+    u = (results or "").lower()
+    if "/rusnat" in u:
+        return "Чемпионат России"
+    if "/junnat" in u:
+        return "Первенство России среди юниоров"
+    stage = re.search(r"/(\d)etap", u)
+    junior = bool(re.search(r"etap\d*[_/]jun", u))
+    if stage and not junior and re.search(r"Куб(?:ок|ка) России", t):
+        return f"{stage.group(1)} этап Кубка России"
+    gp = re.search(r'["«“](?:Ростелеком\s+)?Гран[ -]При России\s*[–—-]?\s*([^"«»“”]+)["»”]', t, re.I)
+    if gp and not first.startswith("Финал"):
+        return f"Гран-при России «{build.clean_ru_name(gp.group(1))}»"
+    m = re.match(r"^(?:Всероссийск\w+|Международн\w+)\s+(?:соревнования|физкультурное мероприятие|турнир)\s+"
+                 + QUOTED + r"$", first) or re.match(r"^ВС\s+" + QUOTED + r"$", first)
+    if m and not junior:
+        return build.clean_ru_name(m.group(1))
+    m = re.match(r"^Всероссийские соревнования\s+(памяти\s+.+)$", first)
+    if m:
+        name = build.clean_ru_name(m.group(1))
+        return name[:1].upper() + name[1:]
+    return build.fsr_title(first, junior or is_jgp_title(first, results))
 
 
 def season_of(d):
@@ -278,101 +348,227 @@ def season_of(d):
     return f"{y}/{y + 1}"
 
 
-def discover_fsr():
-    """([{src, season, ev, start, url, intl}], счётчики)."""
-    out, seen = [], set()
-    stat = {"pages": 0, "tournaments": 0, "synchro": 0, "old": 0, "no_date": 0, "no_results": 0, "errors": 0}
-    old_streak = dull = 0
-    for n in range(1, FSR_MAX_PAGES + 1):
-        url = FSR_LIST[0] if n == 1 else FSR_LIST[1].format(n)
-        pause()
+def load_tournament(u):
+    """Страница турнира → (причина отказа или None, запись списка или None).
+    Причины: skip (любители, балеты, синхронное), error, no_date, old, no_results."""
+    if skip_event(u):
+        return "skip", None
+    pause()
+    try:
+        t = fsr.tournament(u)
+    except net.FetchError as ex:
+        log("  ! страница:", ex)
+        return "error", None
+    full = t.get("full") or t["title"]
+    if skip_event(full, t["results"]):
+        return "skip", None
+    if not t["start"]:
         try:
-            links = list_links(net.fetch(url))
-        except net.FetchError as ex:
-            log("  конец списка:", ex)
-            break
-        if not links:
-            break
-        fresh = [u for u in links if u not in seen]
-        if not fresh:
-            # сайт каждые 10 страниц повторяет одну из прежних (page-11 = page-2): пропускаем,
-            # но три пустых подряд — конец списка
-            dull += 1
-            if dull >= 3:
-                break
-            continue
-        dull = 0
-        stat["pages"] += 1
-        seen.update(fresh)
-        recent = False
-        for u in fresh:
-            stat["tournaments"] += 1
-            if is_synchro(u):
-                stat["synchro"] += 1
-                continue
+            t["start"] = single_day(net.fetch(u))
+        except net.FetchError:
+            pass
+    if not t["start"]:
+        log("  ? нет дат:", u)
+        return "no_date", None
+    if t["start"] < SINCE:
+        return "old", None
+    idx = build.results_index(t["results"])
+    if not idx:
+        return "no_results", None
+    return None, {"src": "ФФККР", "season": season_of(t["start"]), "ev": past_title(full, idx),
+                  "start": t["start"].isoformat(), "url": idx, "intl": False, "page": u}
+
+
+def discover_fsr():
+    """([{src, season, ev, start, url, intl}], счётчики). Страницы турниров читаем в WORKERS потоков
+    (сайт отвечает по ~3 с); сам список — по одной странице."""
+    out, seen = [], set()
+    stat = {"pages": 0, "tournaments": 0, "skip": 0, "old": 0, "no_date": 0, "no_results": 0, "error": 0}
+    old_streak = dull = 0
+    with ThreadPoolExecutor(WORKERS) as pool:
+        for n in range(1, FSR_MAX_PAGES + 1):
+            url = FSR_LIST[0] if n == 1 else FSR_LIST[1].format(n)
             pause()
             try:
-                t = fsr.tournament(u)
+                links = list_links(net.fetch(url))
             except net.FetchError as ex:
-                stat["errors"] += 1
-                log("  ! страница:", ex)
+                log("  конец списка:", ex)
+                break
+            if not links:
+                break
+            fresh = [u for u in links if u not in seen]
+            if not fresh:
+                # сайт каждые 10 страниц повторяет одну из прежних (page-11 = page-2): пропускаем,
+                # но три пустых подряд — конец списка
+                dull += 1
+                if dull >= 3:
+                    break
                 continue
-            if is_synchro(t["title"]):
-                stat["synchro"] += 1
-                continue
-            if not t["start"]:
-                try:
-                    t["start"] = single_day(net.fetch(u))
-                except net.FetchError:
-                    pass
-            if not t["start"]:
-                stat["no_date"] += 1
-                log("  ? нет дат:", u)
-                recent = True  # дату не знаем — не считаем страницу старой
-                continue
-            if t["start"] < SINCE:
-                stat["old"] += 1
-                continue
-            recent = True
-            idx = build.results_index(t["results"])
-            if not idx:
-                stat["no_results"] += 1
-                continue
-            jgp = is_jgp_title(t["title"], idx)
-            out.append({"src": "ФФККР", "season": season_of(t["start"]),
-                        "ev": build.fsr_title(t["title"], jgp),
-                        "start": t["start"].isoformat(), "url": idx, "intl": False, "page": u})
-        log(f"  стр. {n}: всего {len(out)}")
-        old_streak = 0 if recent else old_streak + 1
-        if old_streak >= FSR_OLD_STREAK:
-            break
-        if n % 10 == 0:
-            _write("fsr.json", out)
+            dull = 0
+            stat["pages"] += 1
+            seen.update(fresh)
+            recent = False
+            for why, rec in pool.map(load_tournament, fresh):
+                stat["tournaments"] += 1
+                if why:
+                    stat[why] += 1
+                # дату не знаем (no_date) — страницу старой не считаем
+                recent = recent or why in (None, "no_date", "no_results")
+                if rec:
+                    out.append(rec)
+            log(f"  стр. {n}: всего {len(out)}")
+            old_streak = 0 if recent else old_streak + 1
+            if old_streak >= FSR_OLD_STREAK:
+                break
+            if n % 10 == 0:
+                _write("fsr.json", out)
     return out, stat
+
+
+# ---------------------------------------------------------------- старый формат табло (comnet)
+
+MONTHS = {m: i + 1 for i, m in enumerate("jan feb mar apr may jun jul aug sep oct nov dec".split())}
+DATE_EN = re.compile(r"(\d{1,2})\s+([A-Za-z]{3})[A-Za-z]*\.?\s+(\d{4})")
+DATE_DOT = re.compile(r"(\d{1,2})\.(\d{2})\.(\d{4})")
+TIME_RE = re.compile(r"^(\d{1,2}):(\d{2})(?::\d{2})?$")
+
+
+def _plain(s):
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"(?s)<[^>]+>", " ", s)).replace("\xa0", " ")).strip()
+
+
+def _cells(row):
+    """[(атрибуты, текст, [(href, текст ссылки)])] строки: ячейки td/th, регистр тегов не важен."""
+    out = []
+    for attrs, inner in re.findall(r"(?is)<t[dh]\b([^>]*)>(.*?)</t[dh]\s*>", row):
+        links = [(html.unescape(h).strip(), _plain(t)) for h, t in
+                 re.findall(r"""(?is)<a\b[^>]*?\bhref\s*=\s*["']?([^"'\s>]+)[^>]*>(.*?)</a\s*>""", inner)]
+        out.append((attrs, _plain(inner), links))
+    return out
+
+
+def _sched_date(text):
+    m = DATE_EN.search(text)
+    if m and m.group(2).lower() in MONTHS:
+        d, mon, y = int(m.group(1)), MONTHS[m.group(2).lower()], int(m.group(3))
+    else:
+        m = DATE_DOT.search(text)
+        if not m:
+            return None
+        d, mon, y = int(m.group(1)), int(m.group(2)), int(m.group(3))
+    try:
+        return dt.date(y, mon, d)
+    except ValueError:
+        return None
+
+
+def comnet_index(page, url):
+    """index.htm старого формата → {"categories": [{name, segments: [{name, url, judges_pdf, start}]}]}
+    (как parse_index_page в части, которую читает ingest_event). Строки режем по </tr>: в расписании
+    у comnet нет открывающих <TR>. Категория — ячейка с классом Header… ; сегмент — ячейка с rowspan и
+    без ссылки, PDF и страница сегмента — ссылки в её строке и следующих. Swiss Timing без CATnnn
+    (wtt2025): категория и сегмент в первых двух ячейках каждой строки. start — по расписанию в конце
+    страницы (дата с rowspan действует на следующие строки), без расписания None."""
+    cats, cat, seg = [], None, None
+    sched, cur_date, in_sched = {}, None, False
+
+    def add_seg(name, c):
+        nonlocal seg, cat
+        if cat is None or cat["name"] != c:
+            cat = {"name": c, "segments": []}
+            cats.append(cat)
+        seg = {"name": name, "url": "", "judges_pdf": None, "start": None}
+        cat["segments"].append(seg)
+
+    for row in re.split(r"(?i)</tr\s*>", page):
+        cells = _cells(row)
+        if not cells:
+            continue
+        texts = [t for _, t, _ in cells]
+        links = [(urljoin(url, h), t) for _, _, ls in cells for h, t in ls]
+        if [t.lower() for t in texts if t] == ["date", "time", "category", "segment"]:
+            in_sched = True
+            continue
+        if in_sched:
+            for t in texts:
+                d = _sched_date(t)
+                if d:
+                    cur_date = d
+            tm = next((TIME_RE.match(t) for t in texts if TIME_RE.match(t)), None)
+            target = next((h for h, _ in links if h.lower().split("?")[0].endswith(".htm")), None)
+            if tm and cur_date and target:
+                sched[target.lower()] = dt.datetime.combine(cur_date, dt.time(int(tm.group(1)), int(tm.group(2))))
+            continue
+        attrs0, text0, links0 = cells[0]
+        if re.search(r"(?i)class\s*=\s*[\"']?header", attrs0) and text0:
+            cat, seg = {"name": text0, "segments": []}, None
+            cats.append(cat)
+            continue
+        if re.search(r"(?i)rowspan", attrs0) and text0 and not links0 and cat is not None:
+            seg = {"name": text0, "url": "", "judges_pdf": None, "start": None}
+            cat["segments"].append(seg)
+        elif (len(cells) >= 2 and text0 and texts[1] and not links0
+              and any(re.search(r"(?i)SEG\d+\.htm$", h) for h, _ in links)):
+            add_seg(texts[1], text0)
+        if seg is None:
+            continue
+        for h, t in links:
+            low, tl = h.lower().split("?")[0], t.lower()
+            if low.endswith(".pdf") and "judge" in tl:
+                seg["judges_pdf"] = h
+            elif low.endswith(".htm") and ("starting order" in tl or "classification" in tl):
+                seg["url"] = h
+    for c in cats:
+        for s in c["segments"]:
+            s["start"] = sched.get(s["url"].lower()) if s["url"] else None
+    return {"categories": [c for c in cats if c["segments"]]}
 
 
 # ---------------------------------------------------------------- загрузка в архив
 
-def ingest_event(ar, arc, item, stats, saver=None):
-    """Один турнир: index → категории → сегменты с PDF судейских оценок → ar.ingest."""
+def ingest_event(ar, arc, item, stats, saver=None, skip=()):
+    """Один турнир: index → категории → сегменты с PDF судейских оценок → ar.ingest.
+    skip — адреса протоколов, которые уже взял сбор: их не берём (см. начало файла)."""
     url, intl = item["url"], item["intl"]
     try:
-        idx = st.parse_index(url)
+        page = net.fetch(url)
     except net.FetchError as ex:
         stats["index_errors"].append(f"{url}: {ex}")
         return
+    bad = None
+    try:
+        idx = st.parse_index_page(page, url)
+        extra = scores_links(page, url)
     except Exception as ex:  # старый формат табло: не роняем прогон
-        stats["index_errors"].append(f"{url}: разбор: {ex!r}")
+        idx, extra, bad = {"categories": []}, {}, ex
+    if not idx["categories"]:
+        try:
+            old = comnet_index(page, url)  # старый формат (comnet): файлы с постоянными именами
+        except Exception as ex:
+            old, bad = {"categories": []}, bad or ex
+        if old["categories"]:
+            idx, bad = old, None
+    if bad is not None:
+        stats["index_errors"].append(f"{url}: разбор: {bad!r}")
         return
     cats = build.categories_of(idx, intl)
+    if not cats and not intl and idx["categories"]:
+        cats = build.categories_of(idx, True)  # английская версия табло ФФККР (…/ENG/): названия по-английски
+    if not intl:
+        # разряды, дети, любительские классы: английская версия табло мимо fsr.low_level проходит
+        # название — и как есть, и с латинскими двойниками, переведёнными в кириллицу: «Дeвoчки» из
+        # смешанных букв ловится только после перевода, а «Basic Novice» — только до него
+        cats = [c for c in cats if not (pp._SKIP_CAT.search(c[0]["name"])
+                                        or pp._SKIP_CAT.search(c[0]["name"].translate(pp._HOMO)))]
     n_pdf = 0
     for c, kind, level in cats:
         for s in c["segments"]:
-            seg, pdf = build.seg_code(s["name"]), s.get("judges_pdf")
+            seg = build.seg_code(s["name"])
+            pdf = s.get("judges_pdf") or extra.get(s["url"].lower())
             if not seg or not pdf:
                 continue
             n_pdf += 1
-            if ar.has(arc, pdf):
+            if ar.has(arc, pdf) or pdf in skip:
                 stats["have"] += 1
                 continue
             pause()
@@ -400,20 +596,69 @@ def ingest_event(ar, arc, item, stats, saver=None):
         stats["no_pdf"].append(url)
 
 
+def scores_links(page, url):
+    """{адрес сегмента: PDF «…Scores.pdf»} с index.htm. У ISU 2018/19 и у ФФККР судейские оценки лежат
+    в «<имя>_Scores.pdf» (тот же «JUDGES DETAILS PER SKATER», что и JudgesDetailsperSkater), а
+    parse_index видит только JudgesDetails. Файл, на который ссылаются два сегмента, не берём:
+    чей он, по ссылке не понять."""
+    seg_of, count = {}, {}
+    for row in re.findall(r"(?is)<tr[^>]*>(.*?)</tr>", page):
+        seg = re.search(r'(?i)href=["\']?(SEG\d+\.htm)', row)
+        pdf = re.search(r'(?i)href=["\']?([^"\'\s>]*Scores\.pdf)', row)
+        if seg and pdf:
+            full = urljoin(url, pdf.group(1))
+            seg_of[urljoin(url, seg.group(1)).lower()] = full
+            count[full] = count.get(full, 0) + 1
+    return {k: v for k, v in seg_of.items() if count[v] == 1}
+
+
 def new_stats():
     return {"events": 0, "segments": 0, "skaters": 0, "have": 0, "empty": [],
             "index_errors": [], "pdf_errors": [], "no_pdf": []}
 
 
-def run(ar, items, limit=None):
-    arc = ar.load()
+def shard(items, spec):
+    """'I/N' → items[I::N] (I с нуля, 0 ≤ I < N)."""
+    try:
+        i, n = (int(x) for x in spec.split("/"))
+    except ValueError:
+        raise ValueError(f"доля должна быть вида I/N: {spec!r}")
+    if not 0 <= i < n:
+        raise ValueError(f"доля {spec!r}: нужно 0 ≤ I < N")
+    return items[i::n]
+
+
+def merge_parts(ar, files, out=None, full=False, not_in=None):
+    """Части run → один архив: пустой, затем ar.merge в порядке files; full ставит признак полноты.
+    not_in — файл архива сбора: общий с ним протокол — отказ (ValueError), ничего не пишется."""
+    dst = ar.empty()
+    for f in files:
+        ar.merge(dst, ar.load(f))
+    if not_in:
+        both = sorted(set(ar.urls(ar.load(not_in))) & set(ar.urls(dst)))
+        if both:
+            raise ValueError(f"протоколов и в частях, и в {not_in}: {len(both)}, первый {both[0]}")
+    if full:
+        dst["full"] = True
+    ar.save(dst, out or ar.PAST)
+    log(f"протоколов: {len(dst['segs'])}, спортсменов: {len(dst['ath'])}")
+    return dst
+
+
+def run(ar, items, limit=None, path=None, skip=()):
+    """Прошлые сезоны — в свой файл (по умолчанию ar.PAST), ARCHIVE не трогаем.
+    skip — адреса протоколов, которые уже взял сбор."""
+    path = path or ar.PAST
+    arc = ar.load(path)
     stats = new_stats()
-    saver = lambda: ar.save(arc)
+    saver = lambda: ar.save(arc, path)
     try:
         for it in items[:limit] if limit else items:
+            if skip_event(it.get("ev"), it.get("url"), it.get("page")):
+                continue
             stats["events"] += 1
             log(f"[{stats['events']}] {it['src']} {it['season']} {it['ev']}")
-            ingest_event(ar, arc, it, stats, saver)
+            ingest_event(ar, arc, it, stats, saver, skip)
             pause()
     finally:
         saver()
@@ -447,12 +692,20 @@ def _count(items):
 def main(argv=None):
     global DIR
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("cmd", choices=["discover", "run"])
+    ap.add_argument("cmd", choices=["discover", "run", "merge"])
+    ap.add_argument("files", nargs="*", help="merge: файлы частей")
     ap.add_argument("--src", choices=["ISU", "ФФККР"])
     ap.add_argument("--limit", type=int)
     ap.add_argument("--dir", default=DIR)
     ap.add_argument("--only", choices=["ISU", "ФФККР"], help="discover: только один источник")
+    ap.add_argument("--out", help="run, merge: файл архива (по умолчанию archive.PAST)")
+    ap.add_argument("--shard", help="run: доля I/N списка (items[I::N], I с нуля)")
+    ap.add_argument("--full", action="store_true", help="merge: отметить архив полным")
+    ap.add_argument("--skip-in", help="run: файл архива сбора — его протоколы не берём")
+    ap.add_argument("--not-in", help="merge: файл архива сбора — общий с ним протокол считается ошибкой")
     a = ap.parse_args(argv)
+    if a.cmd != "merge" and a.files:
+        ap.error("лишние аргументы: " + " ".join(a.files))
     DIR = a.dir
     if a.cmd == "discover":
         if a.only != "ФФККР":
@@ -467,11 +720,26 @@ def main(argv=None):
             log("ФФККР:", json.dumps(_count(found), ensure_ascii=False), stat)
         return 0
     from . import archive as ar
+    if a.cmd == "merge":
+        if not a.files:
+            ap.error("merge: укажите файлы частей")
+        try:
+            merge_parts(ar, a.files, a.out, a.full, a.not_in)
+        except ValueError as ex:
+            log("!", ex)
+            return 1
+        return 0
     items = []
     for name, src in (("isu.json", "ISU"), ("fsr.json", "ФФККР")):
         if a.src in (None, src):
             items += _read(name)
-    stats = run(ar, items, a.limit)
+    if a.shard:
+        try:
+            items = shard(items, a.shard)
+        except ValueError as ex:
+            ap.error(str(ex))
+    skip = set(ar.urls(ar.load(a.skip_in))) if a.skip_in else ()
+    stats = run(ar, items, a.limit, a.out, skip)
     log(json.dumps({k: (len(v) if isinstance(v, list) else v) for k, v in stats.items()}, ensure_ascii=False))
     for k in ("index_errors", "pdf_errors", "empty", "no_pdf"):
         for x in stats[k][:20]:

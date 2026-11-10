@@ -1,5 +1,6 @@
 """Сегменты в расписаниях ФФККР: полные слова и сокращения (КП, ПП, РП, ПТ)."""
 import unittest
+from unittest import mock
 
 from scraper import fsr
 
@@ -28,6 +29,18 @@ class SegmentTest(unittest.TestCase):
     def test_not_a_segment(self):
         for text in ("подготовка льда", "Церемония награждение", "жеребьевка участников МС"):
             self.assertIsNone(fsr.segment_of(text), text)
+
+
+class TournamentTest(unittest.TestCase):
+    """Заголовок страницы турнира: title — до « - », full — целиком, без хвоста сайта."""
+    PAGE = ('<html><head><title>Всероссийские соревнования "Гран При России" - 2 этап - '
+            'Федерация фигурного катания на коньках России</title></head><body></body></html>')
+
+    def test_full_and_short_title(self):
+        with mock.patch.object(fsr.net, "fetch", lambda u, **k: self.PAGE):
+            t = fsr.tournament("https://fsrussia.ru/sorevnovaniya/gpr-2-etap")
+        self.assertEqual(t["title"], 'Всероссийские соревнования "Гран При России"')
+        self.assertEqual(t["full"], 'Всероссийские соревнования "Гран При России" - 2 этап')
 
 
 if __name__ == "__main__":

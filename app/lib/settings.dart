@@ -796,7 +796,7 @@ class _TextAction extends StatelessWidget {
   /// Под названием строки: край надписи — по левому краю названия.
   final bool below;
   const _TextAction(this.label, {required this.onTap, this.below = false});
-  static const style = TextStyle(fontFamily: 'Manrope', fontSize: 14.5, fontWeight: FontWeight.w700);
+  static const style = TextStyle(fontFamily: sans, fontSize: 14.5, fontWeight: FontWeight.w700);
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -1420,7 +1420,7 @@ class _AccountPageState extends State<_AccountPage> {
       ..hideCurrentSnackBar()
       ..showSnackBar(
         SnackBar(
-          content: Text('Скопировано', style: TextStyle(fontFamily: 'Manrope', fontSize: 14.5, color: p.bg, height: 1.3)),
+          content: Text('Скопировано', style: TextStyle(fontFamily: sans, fontSize: 14.5, color: p.bg, height: 1.3)),
           behavior: SnackBarBehavior.floating,
           backgroundColor: p.ink,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:starty/countries.dart';
 import 'package:starty/data.dart';
@@ -29,6 +31,30 @@ void main() {
     expect(kindsLine('w'), 'женщины');
     expect(kindsLine('M'), 'юноши');
     expect(kindsLine('wP'), 'женщины, юниорские пары');
+  });
+
+  test('в этом сезоне человека нигде нет — вид называется вместе с сезоном, когда он был его', () {
+    expect(kindsLineOf('w'), 'женщины');
+    // нынешний вид известен — прошлый не дописывается
+    expect(kindsLineOf('p', was: 'w', wasSeason: '2025/26'), 'пары');
+    expect(kindsLineOf('', was: 'w', wasSeason: '2025/26'), 'женщины в сезоне 2025/26');
+    expect(kindsLineOf('', was: 'P'), 'юниорские пары в прошлых сезонах');
+    expect(kindsLineOf(''), '');
+  });
+
+  test('прошлый вид переживает кэш расписания на устройстве', () {
+    final j = {
+      'generated': '2026-11-10T00:00:00Z',
+      'events': const [],
+      'people': [
+        {'n': 'Софья Важнова', 'c': 'RUS', 'k': '', 'was': 'w', 'y': '2025/26'},
+        {'n': 'Аделия Петросян', 'c': 'RUS', 'k': 'w'},
+      ],
+    };
+    final again = Schedule.parse(jsonEncode(Schedule.parse(jsonEncode(j)).toJson()), fromCache: true);
+    final p = again.people['Софья Важнова']!;
+    expect((p.kinds, p.was, p.wasSeason), ('', 'w', '2025/26'));
+    expect(again.people['Аделия Петросян']!.was, '');
   });
 
   test('отслеживаемые: россияне на международном и выбранные иностранцы; на российском — только выбранные', () {

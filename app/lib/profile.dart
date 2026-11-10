@@ -15,9 +15,10 @@ import 'flags.dart';
 import 'palette.dart';
 import 'protocol.dart' show openLink;
 import 'settings.dart' show FeedbackAbout, ReportLink;
-import 'sheets.dart' show SwipeSurface;
+import 'sheets.dart' show SwipeSurface, showStart;
+import 'state.dart';
 import 'ui.dart';
-import 'views.dart' show PlacingName;
+import 'views.dart' show PlacingName, dateRange;
 
 // ------------------------------------------------------------------ данные
 
@@ -337,6 +338,84 @@ void showProfile(BuildContext context, String name, Schedule? data) {
   );
 }
 
+/// Состояние приложения: с ним в шапке профиля есть «Отслеживать». Ставит приложение при запуске;
+/// без него (лист отдельно от приложения) кнопки нет.
+AppState? profileState;
+
+/// Отслеживаемые после нажатия в профиле. Не было — добавляем, как в справочнике. Был — убираем
+/// его запись и записи партнёров, по которым пара считалась отслеживаемой: иначе кнопка
+/// осталась бы нажатой.
+Set<String> followToggled(Follow f, String name) {
+  if (!f.has(name)) return {...f.names, name};
+  final keys = {norm(name), for (final m in name.split(' / ')) norm(m.trim())};
+  return {for (final n in f.names) if (!keys.contains(norm(n))) n};
+}
+
+/// «Отслеживать» в шапке профиля: одно нажатие вместо настроек, сохраняется сразу.
+class FollowPill extends StatelessWidget {
+  final AppState state;
+
+  /// Имя как в справочнике (пара — одной записью).
+  final String name;
+  const FollowPill({super.key, required this.state, required this.name});
+
+  @override
+  Widget build(BuildContext context) => ListenableBuilder(
+    listenable: state,
+    builder: (context, _) {
+      final p = Palette.of(context);
+      final f = state.follow;
+      final on = f.has(name);
+      final fg = on ? p.onAccent : p.ink;
+      void flip() => unawaited(
+        state.setFollow(followToggled(f, name), russians: f.russians, belarusians: f.belarusians),
+      );
+      return Semantics(
+        button: true,
+        // состояние — отдельно от названия: «Отслеживать, включено», а не два раза об одном
+        toggled: on,
+        label: 'Отслеживать',
+        excludeSemantics: true,
+        // видимая кнопка 40 pt, зона нажатия 48
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: flip,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4),
+            child: Material(
+              color: on ? p.accent : p.plate,
+              shape: StadiumBorder(side: BorderSide(color: on ? p.accent : p.control, width: 1.2)),
+              clipBehavior: Clip.antiAlias,
+              // InkWell — ради клавиатуры на компьютере и в браузере: фокус и Enter
+              child: InkWell(
+                onTap: flip,
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(minHeight: 40),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(12, 8, 15, 8),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(on ? CupertinoIcons.checkmark_alt : CupertinoIcons.plus, size: 17, color: on ? fg : p.accent),
+                        const SizedBox(width: 6),
+                        Text(
+                          on ? 'Отслеживается' : 'Отслеживать',
+                          maxLines: 1,
+                          style: TextStyle(fontSize: 14.5, height: 1.2, fontWeight: FontWeight.w600, color: fg),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    },
+  );
+}
+
 /// Спортсмен, которого можно открыть: он есть в справочнике сборщика.
 bool hasProfile(Schedule? data, String name) => data?.personOf(name) != null;
 
@@ -392,6 +471,14 @@ class _ProfileSheetState extends State<ProfileSheet> {
     _future = key == null ? null : profileLoader(key);
   }
 
+  /// Где он выступает дальше — по заявкам в расписании; нигде не заявлен — раздела нет.
+  Widget? get _ahead {
+    final data = widget.data, person = _person;
+    if (data == null || person == null) return null;
+    final a = aheadOf(data, person.name, now());
+    return a.starts.isEmpty && a.tours.isEmpty ? null : _Ahead(starts: a.starts, tours: a.tours);
+  }
+
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -409,6 +496,8 @@ class _ProfileSheetState extends State<ProfileSheet> {
               children:
                   [
                         _ProfileHead(name: widget.name, person: _person, data: widget.data, profile: pr),
+                        // из расписания, а не из справки: видно сразу и у тех, о ком справки нет
+                        if (_ahead case final a?) _section(context, 'Ближайшие старты', a),
                         if (_future == null)
                           _section(context, 'Справка', const _Note('Справки о спортсмене пока нет'))
                         else if (snap.connectionState != ConnectionState.done)
@@ -607,6 +696,129 @@ class _ProfileSheetState extends State<ProfileSheet> {
   );
 }
 
+/// Ближайшие старты спортсмена: когда, турнир, вид и программа. Строка старта открывает его
+/// карточку (внутри приложения); у турнира без расписания открывать нечего — он строкой без нажатия.
+class _Ahead extends StatefulWidget {
+  final List<Start> starts;
+  final List<Upcoming> tours;
+  const _Ahead({required this.starts, required this.tours});
+  @override
+  State<_Ahead> createState() => _AheadState();
+}
+
+class _AheadState extends State<_Ahead> {
+  static const _first = 4;
+  bool all = false;
+
+  /// «Сегодня, 14:00», «Завтра, 14:00», «12 ноября, 14:00» — по Москве, как во всём приложении.
+  static String _when(Start s, DateTime t) {
+    if (s.day == dayKey(t)) return 'Сегодня, ${hm(s.t0)}';
+    if (s.day == dayKey(t.add(const Duration(days: 1)))) return 'Завтра, ${hm(s.t0)}';
+    return dateTime(s.t0);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final st = profileState;
+    final t = now();
+    final rows = <Widget>[
+      for (final s in widget.starts)
+        _AheadRow(
+          when: _when(s, t),
+          title: s.tournament,
+          note: [kindLabel(s.kind, {s.level}), ?segNames[s.seg]].join(', '),
+          onTap: st == null ? null : () => showStart(context, s, st),
+        ),
+      for (final u in widget.tours)
+        _AheadRow(when: dateRange(u.start, u.end), title: u.name, note: 'Расписания пока нет'),
+    ];
+    final list = all || rows.length <= _first + 1 ? rows : rows.sublist(0, _first);
+    final more = rows.length - list.length;
+    return Plate(
+      child: Column(
+        children: [
+          for (var i = 0; i < list.length; i++) ...[
+            if (i > 0) const Hairline(),
+            list[i],
+          ],
+          if (more > 0) ...[
+            const Hairline(),
+            Semantics(
+              button: true,
+              child: InkWell(
+                onTap: () => setState(() => all = true),
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(minHeight: 48),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'Ещё $more',
+                            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.accent),
+                          ),
+                        ),
+                        Icon(CupertinoIcons.chevron_down, size: 16, color: p.accent),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+class _AheadRow extends StatelessWidget {
+  final String when, title, note;
+  final VoidCallback? onTap;
+  const _AheadRow({required this.when, required this.title, required this.note, this.onTap});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final row = ConstrainedBox(
+      constraints: const BoxConstraints(minHeight: 48),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 12, 12, 12),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    when,
+                    style: TextStyle(fontSize: 13, height: 1.3, fontWeight: FontWeight.w700, color: p.accent, fontFeatures: tnum),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(title, style: TextStyle(fontSize: 15.5, height: 1.3, fontWeight: FontWeight.w600, color: p.ink)),
+                  if (note.isNotEmpty)
+                    Text(note, style: TextStyle(fontSize: 13.5, height: 1.35, color: p.ink2)),
+                ],
+              ),
+            ),
+            if (onTap != null) ...[
+              const SizedBox(width: 10),
+              Icon(CupertinoIcons.chevron_right, size: 16, color: p.control),
+            ],
+          ],
+        ),
+      ),
+    );
+    if (onTap == null) return row;
+    return Semantics(
+      button: true,
+      hint: 'открыть старт',
+      child: InkWell(onTap: onTap, child: row),
+    );
+  }
+}
+
 /// Шапка: лёд, крупное фото, виды, имя антиквой, страна и возраст.
 class _ProfileHead extends StatelessWidget {
   final String name;
@@ -620,7 +832,7 @@ class _ProfileHead extends StatelessWidget {
     final p = Palette.of(context);
     final shown = displayName(person?.name ?? name);
     final parts = shown.split(' / ').map((x) => x.trim()).toList();
-    final kinds = kindsLine(person?.kinds ?? '');
+    final kinds = kindsLineOf(person?.kinds ?? '', was: person?.was ?? '', wasSeason: person?.wasSeason ?? '');
     final nation = person?.nation ?? '';
     final who = profile?.who ?? const <ProfileWho>[];
     // возраст — у одиночника и только по дате рождения из справки
@@ -629,6 +841,13 @@ class _ProfileHead extends StatelessWidget {
     final narrow = MediaQuery.sizeOf(context).width < 360;
     final short = isShortWindow(context);
     final avatar = Avatar(name: person?.name ?? name, data: data, size: short ? 72 : (narrow ? 76 : 88), ring: p.plate, ringWidth: 3);
+    // отслеживать можно того, кто есть в справочнике: имя — как там, по нему его узнают старты
+    final st = profileState;
+    final follow = st == null || person == null
+        ? null
+        : Flexible(
+            child: FittedBox(fit: BoxFit.scaleDown, child: FollowPill(state: st, name: person!.name)),
+          );
     final details = <Widget>[
       if (kinds.isNotEmpty)
         Eyebrow(kinds, color: p.accent, maxLines: 2, padding: const EdgeInsets.only(bottom: 8)),
@@ -674,11 +893,21 @@ class _ProfileHead extends StatelessWidget {
                       avatar,
                       const SizedBox(width: 18),
                       Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: details)),
+                      if (follow != null) ...[const SizedBox(width: 12), follow],
                     ],
                   )
                 : Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [avatar, const SizedBox(height: 16), ...details],
+                    children: [
+                      // кнопка — на уровне низа фото, у правого края
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [avatar, if (follow != null) ...[const SizedBox(width: 12), follow]],
+                      ),
+                      const SizedBox(height: 16),
+                      ...details,
+                    ],
                   ),
           ),
         ),

@@ -1,6 +1,6 @@
 // Страница «Аккаунт»: состояния (почта + код, почта без кода, только код, не вошёл, ошибка статуса),
 // копирование кода, меню «Заменить код», выход, листы входа и матрица ширин/масштабов/тем без переполнений.
-// Сервер в памяти (как в sync_link_test), шрифт Manrope — настоящий, чтобы замеры были честными.
+// Сервер в памяти (как в sync_link_test), шрифт Golos Text — настоящий, чтобы замеры были честными.
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
@@ -92,8 +92,8 @@ class Srv {
 }
 
 Future<void> _manrope() async {
-  final l = FontLoader('Manrope');
-  for (final f in Directory('assets/fonts').listSync().whereType<File>().where((f) => f.path.contains('Manrope'))) {
+  final l = FontLoader('Golos Text');
+  for (final f in Directory('assets/fonts').listSync().whereType<File>().where((f) => f.path.contains('GolosText'))) {
     l.addFont(Future.value(ByteData.sublistView(f.readAsBytesSync())));
   }
   await l.load();
@@ -141,7 +141,7 @@ void main() {
     await t.pumpWidget(
       MaterialApp(
         key: UniqueKey(),
-        theme: ThemeData(brightness: b, fontFamily: 'Manrope'),
+        theme: ThemeData(brightness: b, fontFamily: 'Golos Text'),
         builder: (c, nav) => MediaQuery(
           data: MediaQuery.of(c).copyWith(textScaler: TextScaler.linear(scale)),
           child: nav!,

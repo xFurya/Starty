@@ -10,6 +10,7 @@ import 'background.dart';
 import 'data.dart';
 import 'month_widget.dart';
 import 'platform.dart';
+import 'profile.dart' show profileState;
 import 'reminders.dart';
 import 'settings.dart';
 import 'state.dart';
@@ -42,7 +43,7 @@ Future<void> main() async {
 
 ThemeData _theme(Brightness b) {
   final p = b == Brightness.dark ? Palette.dark : Palette.light;
-  final base = ThemeData(brightness: b, useMaterial3: true, colorSchemeSeed: Palette.iceBlue, fontFamily: 'Manrope');
+  final base = ThemeData(brightness: b, useMaterial3: true, colorSchemeSeed: Palette.iceBlue, fontFamily: sans);
   return base.copyWith(
     scaffoldBackgroundColor: p.bg,
     colorScheme: base.colorScheme.copyWith(
@@ -56,7 +57,7 @@ ThemeData _theme(Brightness b) {
     splashFactory: InkRipple.splashFactory,
     highlightColor: p.accent.withValues(alpha: .06),
     splashColor: p.accent.withValues(alpha: .08),
-    textTheme: base.textTheme.apply(bodyColor: p.ink, displayColor: p.ink, fontFamily: 'Manrope'),
+    textTheme: base.textTheme.apply(bodyColor: p.ink, displayColor: p.ink, fontFamily: sans),
     textSelectionTheme: TextSelectionThemeData(cursorColor: p.accent),
     bottomSheetTheme: BottomSheetThemeData(
       backgroundColor: p.sheet,
@@ -70,7 +71,7 @@ ThemeData _theme(Brightness b) {
       surfaceTintColor: Colors.transparent,
       foregroundColor: p.ink,
       elevation: 0,
-      titleTextStyle: TextStyle(fontFamily: 'Manrope', fontSize: 17, fontWeight: FontWeight.w600, color: p.ink),
+      titleTextStyle: TextStyle(fontFamily: sans, fontSize: 17, fontWeight: FontWeight.w600, color: p.ink),
     ),
     // включённый — белый бегунок на синем в обеих темах; в тёмной дорожка — синий из иконки
     switchTheme: SwitchThemeData(
@@ -84,7 +85,7 @@ ThemeData _theme(Brightness b) {
     progressIndicatorTheme: ProgressIndicatorThemeData(color: p.accent),
     tooltipTheme: TooltipThemeData(
       decoration: BoxDecoration(color: p.ink.withValues(alpha: .92), borderRadius: BorderRadius.circular(8)),
-      textStyle: TextStyle(fontFamily: 'Manrope', fontSize: 13, color: p.bg),
+      textStyle: TextStyle(fontFamily: sans, fontSize: 13, color: p.bg),
     ),
   );
 }
@@ -98,6 +99,19 @@ class StartyApp extends StatefulWidget {
 class _StartyAppState extends State<StartyApp> {
   final state = AppState();
   final _nav = GlobalKey<NavigatorState>();
+
+  @override
+  void initState() {
+    super.initState();
+    // профиль открывается откуда угодно — «Отслеживать» в его шапке работает с этим состоянием
+    profileState = state;
+  }
+
+  @override
+  void dispose() {
+    if (identical(profileState, state)) profileState = null;
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) => ListenableBuilder(
@@ -197,7 +211,7 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
     final p = Palette.of(context);
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(text, style: TextStyle(fontFamily: 'Manrope', fontSize: 14.5, color: p.bg, height: 1.3)),
+        content: Text(text, style: TextStyle(fontFamily: sans, fontSize: 14.5, color: p.bg, height: 1.3)),
         behavior: SnackBarBehavior.floating,
         backgroundColor: p.ink,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),

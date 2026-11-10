@@ -94,7 +94,7 @@ class _StartSheet extends StatelessWidget {
           const SizedBox(height: 2),
           Text(
             segNames[seg]!,
-            style: display(p, 25, italic: true, color: p.ink2, weight: FontWeight.w500),
+            style: display(p, 25, italic: true, color: p.ink2, weight: FontWeight.w400),
           ),
         ],
       ],
@@ -434,7 +434,7 @@ class _NotifyPlate extends StatelessWidget {
     this.toggled,
   });
 
-  static const _actionStyle = TextStyle(fontFamily: 'Manrope', fontSize: 14.5, fontWeight: FontWeight.w700);
+  static const _actionStyle = TextStyle(fontFamily: sans, fontSize: 14.5, fontWeight: FontWeight.w700);
 
   @override
   Widget build(BuildContext context) {
@@ -699,7 +699,7 @@ class _Step extends StatelessWidget {
                     textScaler: TextScaler.noScaling,
                     style: TextStyle(
                       fontFamily: serif,
-                      fontSize: first ? 46 : 36,
+                      fontSize: first ? 41 : 32,
                       fontWeight: FontWeight.w700,
                       height: 1.0,
                       // цифры «в строку»: без выносных элементов, цифра целиком на ступени
@@ -915,7 +915,7 @@ class _OurResult extends StatelessWidget {
 
   static const _placeStyle = TextStyle(
     fontFamily: serif,
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: FontWeight.w700,
     height: 1.0,
     fontFeatures: [FontFeature.liningFigures()],
@@ -998,7 +998,7 @@ class _OurAhead extends StatelessWidget {
 
   static const _placeStyle = TextStyle(
     fontFamily: serif,
-    fontSize: 30,
+    fontSize: 27,
     fontWeight: FontWeight.w700,
     height: 1,
     fontFeatures: [FontFeature.liningFigures()],
@@ -1189,19 +1189,24 @@ class WatchRow extends StatelessWidget {
 
 /// Лист настроек и выбора: тянется пальцем целиком, закрывается, только если его дотянули
 /// ниже середины и отпустили; иначе возвращается наверх. Закрытие свайпом — без сохранения.
-Future<T?> showSwipeSheet<T>(BuildContext context, Widget Function(BuildContext, ScrollController) builder) {
+Future<T?> showSwipeSheet<T>(
+  BuildContext context,
+  Widget Function(BuildContext, ScrollController) builder, {
+  double top = .94,
+}) {
   return showModalBottomSheet<T>(
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
     enableDrag: false,
-    builder: (c) => _SwipeSheet(builder: builder),
+    builder: (c) => _SwipeSheet(builder: builder, top: top),
   );
 }
 
 class _SwipeSheet extends StatefulWidget {
   final Widget Function(BuildContext, ScrollController) builder;
-  const _SwipeSheet({required this.builder});
+  final double top;
+  const _SwipeSheet({required this.builder, required this.top});
   @override
   State<_SwipeSheet> createState() => _SwipeSheetState();
 }
@@ -1212,7 +1217,7 @@ class _SwipeSheetState extends State<_SwipeSheet> {
     // клавиатура поиска не закрывает ни найденных, ни кнопок внизу
     return Padding(
       padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
-      child: SwipeSurface(top: .94, builder: widget.builder),
+      child: SwipeSurface(top: widget.top, builder: widget.builder),
     );
   }
 }
@@ -1320,7 +1325,11 @@ class _SwipeSurfaceState extends State<SwipeSurface> {
 class _FilterHeader extends StatelessWidget {
   final VoidCallback? onReset;
   final bool scrolled;
-  const _FilterHeader({required this.onReset, required this.scrolled});
+  final String title;
+
+  /// Закреплено под названием вместе с шапкой: строка поиска.
+  final Widget? below;
+  const _FilterHeader({required this.onReset, required this.scrolled, this.title = 'Фильтр', this.below});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -1339,12 +1348,15 @@ class _FilterHeader extends StatelessWidget {
               constraints: const BoxConstraints(minHeight: 44),
               child: Row(
                 children: [
-                  Expanded(child: Text('Фильтр', maxLines: 1, style: display(p, 28))),
+                  Expanded(
+                    child: Semantics(header: true, child: Text(title, maxLines: 1, style: display(p, 28))),
+                  ),
                   if (onReset != null) _TextAction('Сбросить', onReset!),
                 ],
               ),
             ),
           ),
+          ?below,
         ],
       ),
     );
@@ -1490,12 +1502,19 @@ class _Chip extends StatelessWidget {
 class SearchBox extends StatelessWidget {
   final TextEditingController controller;
   final ValueChanged<String> onChanged;
-  const SearchBox({super.key, required this.controller, required this.onChanged});
+
+  /// Лист открыли ради поиска — клавиатура сразу.
+  final bool autofocus;
+  final FocusNode? focusNode;
+  const SearchBox({super.key, required this.controller, required this.onChanged, this.autofocus = false, this.focusNode});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     return TextField(
       controller: controller,
+      focusNode: focusNode,
+      autofocus: autofocus,
+      autocorrect: false,
       style: TextStyle(fontSize: 15.5, color: p.ink),
       textInputAction: TextInputAction.search,
       decoration: InputDecoration(
@@ -1971,7 +1990,7 @@ Set<String> soonAthletes(Schedule data, DateTime t) => {
 String? _personLine(Schedule data, String name) {
   final p = data.people[name];
   if (p == null) return null;
-  final s = kindsLine(p.kinds);
+  final s = kindsLineOf(p.kinds, was: p.was, wasSeason: p.wasSeason);
   return s.isEmpty ? null : cap(s);
 }
 
@@ -1984,12 +2003,29 @@ class _CheckRow extends StatelessWidget {
 
   /// Код страны спортсмена: флаг с кодом сразу за именем.
   final String nation;
-  const _CheckRow({this.leading, required this.title, this.subtitle, required this.value, required this.onTap, this.nation = ''});
+
+  /// Строка-переход, а не отметка: это стоит справа вместо квадрата.
+  final Widget? trailing;
+
+  /// Что будет по нажатию — вслух, для строки-перехода: «открыть профиль».
+  final String? hint;
+  const _CheckRow({
+    this.leading,
+    required this.title,
+    this.subtitle,
+    this.value = false,
+    required this.onTap,
+    this.nation = '',
+    this.trailing,
+    this.hint,
+  });
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     return Semantics(
-      checked: value,
+      checked: trailing == null ? value : null,
+      button: trailing != null ? true : null,
+      hint: hint,
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
@@ -2037,7 +2073,7 @@ class _CheckRow extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 12),
-                SquareCheck(on: value),
+                trailing ?? SquareCheck(on: value),
               ],
             ),
           ),
@@ -2085,6 +2121,152 @@ class AthleteCheckRow extends StatelessWidget {
   );
 }
 
+
+// ------------------------------------------------------------------ поиск спортсмена
+
+/// Кто выступает на ближайших стартах, в порядке стартов: только те, у кого есть профиль.
+List<String> nextAthletes(Schedule data, DateTime t, {int limit = 12}) {
+  final starts = [for (final s in data.starts) if (!s.pastAt(t)) s]..sort((a, b) => a.t0.compareTo(b.t0));
+  final seen = <String>{};
+  final out = <String>[];
+  for (final s in starts) {
+    for (final a in [...s.ours.map((o) => o.name), ...s.athletes]) {
+      if (out.length >= limit) return out;
+      if (hasProfile(data, a) && seen.add(norm(a))) out.add(a);
+    }
+  }
+  return out;
+}
+
+/// Найденные по запросу, кого можно открыть: строка поиска ведёт в профиль, пустых нажатий нет.
+/// Те, о ком есть справка, — выше тех, о ком известны только имя и страна; внутри порядок поиска.
+List<String> searchProfiles(Schedule data, String query, DateTime t, {int limit = 30}) {
+  final found = [
+    for (final a in searchAthletes(data, query, soon: soonAthletes(data, t), limit: 200))
+      if (hasProfile(data, a)) a,
+  ];
+  bool rich(String a) => data.personOf(a)?.profile != null;
+  return [...found.where(rich), ...found.where((a) => !rich(a))].take(limit).toList();
+}
+
+/// Поиск спортсмена: нажатие на строку — его профиль. Пока запроса нет — отслеживаемые
+/// и те, кто на ближайших стартах.
+void showAthleteSearch(BuildContext context, AppState state) {
+  if (state.data == null) return;
+  // высота — как у профиля, который открывается поверх: тот закрывает лист целиком, без второй ручки над собой
+  showSwipeSheet<void>(context, (c, scroll) => _AthleteSearchSheet(state: state, scroll: scroll), top: .92);
+}
+
+class _AthleteSearchSheet extends StatefulWidget {
+  final AppState state;
+  final ScrollController scroll;
+  const _AthleteSearchSheet({required this.state, required this.scroll});
+  @override
+  State<_AthleteSearchSheet> createState() => _AthleteSearchSheetState();
+}
+
+class _AthleteSearchSheetState extends State<_AthleteSearchSheet> {
+  final _q = TextEditingController();
+  final _focus = FocusNode();
+  String q = '';
+  bool _scrolled = false;
+
+  @override
+  void dispose() {
+    _q.dispose();
+    _focus.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final data = widget.state.data!;
+    final t = now();
+    final found = q.isEmpty ? const <String>[] : searchProfiles(data, q, t);
+    final follow = q.isEmpty
+        ? ([for (final a in widget.state.follow.names) if (hasProfile(data, a)) a]..sort())
+        : const <String>[];
+    final followed = {for (final a in follow) norm(a)};
+    final next = q.isEmpty
+        ? [for (final a in nextAthletes(data, t, limit: 12 + follow.length)) if (!followed.contains(norm(a))) a].take(12).toList()
+        : const <String>[];
+
+    Widget row(String a) => _CheckRow(
+      leading: SizedBox(
+        height: 44,
+        child: Center(child: Avatar(name: a, data: data, size: 34, slot: true)),
+      ),
+      title: displayName(a),
+      nation: data.personOf(a)?.nation ?? '',
+      subtitle: _personLine(data, a),
+      // цвет рамок элементов управления: на фоне листа он различим, ink3 — уже нет
+      trailing: SizedBox(width: 22, child: Icon(CupertinoIcons.chevron_right, size: 16, color: p.control)),
+      hint: 'открыть профиль',
+      onTap: () {
+        // клавиатура не остаётся под профилем
+        _focus.unfocus();
+        showProfile(context, a, data);
+      },
+    );
+    Widget head(String label) => Padding(
+      padding: const EdgeInsets.only(top: 14, bottom: 4),
+      child: Semantics(header: true, child: Eyebrow(label)),
+    );
+
+    return Material(
+      color: p.sheet,
+      borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
+      clipBehavior: Clip.antiAlias,
+      child: NotificationListener<ScrollUpdateNotification>(
+        onNotification: (n) {
+          final on = n.metrics.pixels > 0.5;
+          if (on != _scrolled) setState(() => _scrolled = on);
+          return false;
+        },
+        child: CustomScrollView(
+          controller: widget.scroll,
+          slivers: [
+            PinnedHeaderSliver(
+              child: _FilterHeader(
+                title: 'Спортсмены',
+                onReset: null,
+                scrolled: _scrolled,
+                below: Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 2, 20, 10),
+                  child: SearchBox(
+                    controller: _q,
+                    focusNode: _focus,
+                    autofocus: true,
+                    onChanged: (v) => setState(() => q = v.trim()),
+                  ),
+                ),
+              ),
+            ),
+            SliverPadding(
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 24 + MediaQuery.paddingOf(context).bottom),
+              sliver: SliverList.list(
+                children: [
+                  if (q.isNotEmpty && found.isEmpty)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      child: Text(
+                        'Никого не нашлось. Проверьте фамилию.',
+                        style: TextStyle(color: p.ink2, fontSize: 15, height: 1.35),
+                      ),
+                    ),
+                  for (final a in found) row(a),
+                  if (follow.isNotEmpty) ...[head('Отслеживаемые'), for (final a in follow) row(a)],
+                  if (next.isNotEmpty) ...[head('На ближайших стартах'), for (final a in next) row(a)],
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 // ------------------------------------------------------------------ частота обновления
 

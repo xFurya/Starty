@@ -16,8 +16,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../app/icon-64.png">
 <link rel="apple-touch-icon" href="../app/icon-180.png">
-<link rel="preload" href="../assets/fonts/CormorantGaramond-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../assets/fonts/Manrope-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/Piazzolla-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/GolosText-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/site.css">
 <style>
   .hero { padding: calc(env(safe-area-inset-top) + 20px) 0 4px; }
@@ -71,13 +71,13 @@
   .tabs > input { position: absolute; opacity: 0; pointer-events: none; }
 
   .copy { display: flex; align-items: center; gap: 10px; margin-top: 10px; padding: 10px 10px 10px 14px; }
-  .copy code { flex: 1; min-width: 0; font: 600 13.5px/1.4 Manrope, system-ui, sans-serif; color: var(--ink); overflow-wrap: anywhere; }
-  .copy button { flex: none; border: 0; border-radius: 10px; padding: 9px 12px; background: var(--frost); color: var(--accent); font: 700 14px Manrope, system-ui, sans-serif; cursor: pointer; }
+  .copy code { flex: 1; min-width: 0; font: 600 13.5px/1.4 Golos, system-ui, sans-serif; color: var(--ink); overflow-wrap: anywhere; }
+  .copy button { flex: none; border: 0; border-radius: 10px; padding: 9px 12px; background: var(--frost); color: var(--accent); font: 700 14px Golos, system-ui, sans-serif; cursor: pointer; }
 
   .after .row { align-items: flex-start; }
   .after .row .s { font-size: 14.5px; margin-top: 4px; }
   .done { margin-top: 30px; padding: 18px 16px; text-align: center; }
-  .done .t { font: 600 26px/1.15 Cormorant, Georgia, serif; }
+  .done .t { font: 500 23px/1.2 Piazzolla, Georgia, serif; word-spacing: .07em; }
   .done p { margin: 6px 0 0; font-size: 14.5px; color: var(--ink2); }
 </style>
 </head>
@@ -97,8 +97,8 @@
 </svg>
 
 <header class="ice hero">
-  <span class="spark" style="top: 58px; right: 10%;" aria-hidden="true">✦</span>
-  <span class="spark" style="top: 112px; right: 4%; font-size: 13px;" aria-hidden="true">✦</span>
+  <svg class="spark" style="top: 58px; right: 10%;" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.4 4.6 11.4 12 12-7.4.6-11.4 4.6-12 12-.6-7.4-4.6-11.4-12-12C7.4 11.4 11.4 7.4 12 0z"/></svg>
+  <svg class="spark" style="top: 112px; right: 4%; width: 12px; height: 12px;" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.4 4.6 11.4 12 12-7.4.6-11.4 4.6-12 12-.6-7.4-4.6-11.4-12-12C7.4 11.4 11.4 7.4 12 0z"/></svg>
   <div class="wrap">
     <a class="back" href="../"><svg viewBox="0 0 24 24"><use href="#i-back"/></svg>Все способы</a>
     <p class="kicker">iPhone и iPad</p>

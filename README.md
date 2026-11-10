@@ -100,5 +100,5 @@
     python3 -m scraper.build           # данные в site/
     cd site && python3 -m http.server  # http://localhost:8000
 
-Шрифты приложения — Manrope и Cormorant Garamond (SIL Open Font License),
+Шрифты приложения — Golos Text и Piazzolla (SIL Open Font License),
 фото оформления — Unsplash (`app/assets/images/CREDITS.txt`).

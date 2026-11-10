@@ -76,8 +76,8 @@ class NationTag extends StatelessWidget {
 
   static double _flagH(TextStyle s) => (s.fontSize ?? 12) * 1.05;
 
-  /// Высота заглавных Manrope в долях кегля.
-  static const _capHeight = .72;
+  /// Высота заглавных Golos Text в долях кегля.
+  static const _capHeight = .70;
   static double _gap(TextStyle s) => (s.fontSize ?? 12) * .4;
 
   /// Ширина метки — чтобы место под неё учесть заранее (имя короче, колонка ровнее).

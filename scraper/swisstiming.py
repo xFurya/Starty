@@ -679,6 +679,21 @@ COMPONENTS = ("Composition", "Presentation", "Skating Skills", "Skating skills",
               "Композиция", "Представление", "Мастерство катания")
 
 
+_NATION_TAIL = re.compile(r"^(.*\S)\s+([A-ZА-ЯЁ]{2,4}\d?)$")
+_CAPS_WORD = re.compile(r"(?<![^\s/'’-])[A-ZА-ЯЁ]{2,}(?![^\s/'’-])")
+
+
+def split_nation(name):
+    """«Deanna STELLATO-DUDEK / Maxime DESCHAMPS CAN» → (имя, «CAN»): у длинной пары между именем и
+    страной в PDF один пробел, и строка читается без колонки страны. Хвост — страна, только если до
+    него у того же человека уже есть ФАМИЛИЯ заглавными: «Анна ЛИ» остаётся именем целиком."""
+    last = name.rsplit("/", 1)[-1]
+    m = _NATION_TAIL.match(last.strip())
+    if not m or not _CAPS_WORD.search(m.group(1)):
+        return name, ""
+    return name[:len(name.rstrip()) - len(m.group(2))].rstrip(), m.group(2)
+
+
 def parse_judges(text):
     """Судейские оценки по каждому (…JudgesDetailsperSkater.pdf, pdftotext -layout):
     [{rank, name, nation, tss, tes, pcs, ded,
@@ -694,6 +709,16 @@ def parse_judges(text):
                    "ded": float(m.group(8)), "elements": [], "components": []}
             out.append(cur)
             continue
+        # российские табло без колонки страны: школа — строкой ниже («1 Софья СМАГИНА   30   145.04 …»);
+        # и длинная пара, у которой до страны остался один пробел
+        m = JUDGES_PDF_ROW.match(line)
+        if m:
+            who, nation = split_nation(m.group(2).strip())
+            cur = {"rank": int(m.group(1)), "name": who, "nation": nation,
+                   "tss": float(m.group(4)), "tes": float(m.group(5)), "pcs": float(m.group(6)),
+                   "ded": float(m.group(7)), "elements": [], "components": []}
+            out.append(cur)
+            continue
         if cur is None:
             continue
         el = _element(line)
@@ -703,7 +728,8 @@ def parse_judges(text):
         stripped = line.strip()
         for c in COMPONENTS:
             if stripped.startswith(c):
-                nums = [float(t) for t in stripped[len(c):].split() if FLOAT.match(t)]
+                # российские табло пишут оценки судей через запятую: «7,75»
+                nums = [float(t) for t in stripped[len(c):].replace(",", ".").split() if FLOAT.match(t)]
                 # множитель, оценки судей, итог
                 if len(nums) >= 4:
                     cur["components"].append({"name": c, "judges": nums[1:-1]})
@@ -713,7 +739,8 @@ def parse_judges(text):
 
 def _element(line):
     """«   3    4T+3A+3A+SEQ      25.50    1.14   0 1 1 1 2 1 2     26.64» → элемент.
-    x — во второй половине программы: в base уже надбавка 10 %."""
+    x — во второй половине программы: в base уже надбавка 10 %. В протоколах турниров в Японии
+    (табло comnet) отметка заглавная: «10.45 X»."""
     t = line.split()
     if len(t) < 5 or not re.fullmatch(r"\d{1,2}", t[0]):
         return None
@@ -722,7 +749,7 @@ def _element(line):
     info = []
     bonus = False
     while rest and not FLOAT.match(rest[0]):
-        if rest[0] == "x":
+        if rest[0] in ("x", "X"):
             bonus = True
             rest = rest[1:]
             continue
@@ -730,7 +757,7 @@ def _element(line):
         rest = rest[1:]
     nums = []
     for v in rest:
-        if v == "x":
+        if v in ("x", "X"):
             bonus = True
             continue
         if FLOAT.match(v) or re.fullmatch(r"-?\d", v) or v == "-":
@@ -753,8 +780,9 @@ def _element(line):
 # «ДЕТАЛИЗАЦИЯ СУДЕЙСКИХ ОЦЕНОК» (ФФКМ): строка участника — место, имя, стартовый номер,
 # общая сумма за вид, элементы, компоненты, снижения. Строки элементов и компонентов сюда не
 # попадают: у них в конце нет четырёх чисел с точкой подряд.
+# «B» после суммы за элементы — отметка бонуса за прыжки (российские старты сезона 2020/21)
 JUDGES_PDF_ROW = re.compile(
-    r"^\s{0,12}(\d{1,2})\s+(\S.*?\S)\s+(\d{1,3})\s+(\d{1,3}\.\d{2})\s+(\d{1,3}\.\d{2})\s+"
+    r"^\s{0,12}(\d{1,2})\s+(\S.*?\S)\s+(\d{1,3})\s+(\d{1,3}\.\d{2})\s+(\d{1,3}\.\d{2})(?:\s+B)?\s+"
     r"(\d{1,3}\.\d{2})\s+(-?\d{1,3}\.\d{2})\s*$")
 
 
@@ -918,7 +946,8 @@ def parse_judges_details(text):
         else:
             m = JUDGES_PDF_ROW.match(line)
             if m:
-                row = {"place": int(m.group(1)), "name": m.group(2), "nation": "",
+                who, nation = split_nation(m.group(2))
+                row = {"place": int(m.group(1)), "name": who, "nation": nation,
                        "no": int(m.group(3)), "points": m.group(4)}
                 vals = [m.group(5), m.group(6), m.group(7)]
         if m:

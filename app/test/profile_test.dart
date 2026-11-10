@@ -4,8 +4,11 @@ import 'package:flutter/cupertino.dart' show CupertinoIcons;
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:starty/data.dart';
 import 'package:starty/profile.dart';
+import 'package:starty/sheets.dart' show SwipeSurface;
+import 'package:starty/state.dart';
 
 const _pairKey = 'aaaaaaaaaaaa';
 const _soloKey = 'bbbbbbbbbbbb';
@@ -426,5 +429,167 @@ void main() {
       expect(hasProfile(d, 'Аделия Петросян'), isTrue);
       expect(hasProfile(null, 'Аделия Петросян'), isFalse);
     });
+  });
+
+  group('отслеживать из профиля', () {
+    test('нажатие добавляет и убирает; у пары — вместе с партнёром, по которому она считалась', () {
+      final f = Follow(['Аделия Петросян', 'Nikita Volodin']);
+      expect(followToggled(f, 'Иван Иванов'), {'Аделия Петросян', 'Nikita Volodin', 'Иван Иванов'});
+      // написание в списке и в справочнике может разойтись регистром и «ё»
+      expect(followToggled(Follow(['аделия петросян']), 'Аделия Петросян'), isEmpty);
+      // пара отслеживается по партнёру — снять отметку значит убрать его
+      expect(f.has('Minerva Fabienne Hase / Nikita Volodin'), isTrue);
+      expect(followToggled(f, 'Minerva Fabienne Hase / Nikita Volodin'), {'Аделия Петросян'});
+    });
+
+    testWidgets('кнопка в шапке: нажали — отслеживается, ещё раз — снова нет', (t) async {
+      SharedPreferences.setMockInitialValues({});
+      await Prefs.init();
+      final s = AppState()
+        ..data = _data()
+        ..loading = false;
+      profileState = s;
+      addTearDown(() => profileState = null);
+      profileLoader = (k) async => Profile.fromJson(_solo);
+      await t.pumpWidget(_app(ProfileSheet(name: 'аделия петросян', data: _data())));
+      await t.pumpAndSettle();
+      expect(find.text('Отслеживать'), findsOneWidget);
+      await t.tap(find.text('Отслеживать'));
+      await t.pump(const Duration(milliseconds: 200));
+      expect(find.text('Отслеживается'), findsOneWidget);
+      // в список идёт имя из справочника, а не то, как его написали при открытии
+      expect(s.follow.names, {'Аделия Петросян'});
+      await t.tap(find.text('Отслеживается'));
+      await t.pump(const Duration(milliseconds: 200));
+      expect(find.text('Отслеживать'), findsOneWidget);
+      expect(s.follow.names, isEmpty);
+      // сохранение ждёт настройки уведомлений до 10 с
+      await t.pump(const Duration(seconds: 11));
+      expect(t.takeException(), isNull);
+    });
+
+    testWidgets('без приложения и у человека не из справочника кнопки нет', (t) async {
+      profileLoader = (k) async => null;
+      await t.pumpWidget(_app(ProfileSheet(name: 'Аделия Петросян', data: _data())));
+      await t.pumpAndSettle();
+      expect(find.byType(FollowPill), findsNothing);
+
+      SharedPreferences.setMockInitialValues({});
+      await Prefs.init();
+      profileState = AppState();
+      addTearDown(() => profileState = null);
+      await t.pumpWidget(_app(ProfileSheet(key: UniqueKey(), name: 'Неизвестный Человек', data: _data())));
+      await t.pumpAndSettle();
+      expect(find.byType(FollowPill), findsNothing);
+    });
+  });
+
+  group('ближайшие старты', () {
+    Map<String, dynamic> ev(String id, String tid, String tour, String seg, int inHours, List<String> names) {
+      final t0 = DateTime.now().add(Duration(hours: inHours));
+      return {
+        'id': id, 'tid': tid, 'tournament': tour, 'kind': 'women', 'level': 'senior', 'seg': seg,
+        'title': '$tour — женщины $seg', 'start': t0.toUtc().toIso8601String(),
+        'end': t0.add(const Duration(hours: 2)).toUtc().toIso8601String(), 'venue': '', 'intl': false, 'ours': [],
+        'athletes': names,
+      };
+    }
+
+    String day(int inDays) => DateTime.now().add(Duration(days: inDays)).toUtc().toIso8601String().split('T').first;
+
+    Schedule sched() => Schedule.parse(
+      jsonEncode({
+        'generated': DateTime.now().toUtc().toIso8601String(),
+        'events': [
+          ev('pp', 't1', 'Гран-при, этап 3', 'ПП', 72, ['Аделия Петросян', 'Анна Фролова']),
+          ev('kp', 't1', 'Гран-при, этап 3', 'КП', 48, ['Анна Фролова', 'Аделия Петросян']),
+          ev('was', 't0', 'Гран-при, этап 2', 'КП', -48, ['Аделия Петросян']),
+          ev('other', 't2', 'Чужой турнир', 'КП', 50, ['Анна Фролова']),
+        ],
+        'upcoming': [
+          // у этого турнира старты уже названы — второй раз строкой не идёт
+          {'tid': 't1', 'name': 'Гран-при, этап 3', 'start': day(2), 'end': day(4), 'athletes': ['Аделия Петросян']},
+          {'tid': 't3', 'name': 'Турнир без расписания', 'start': day(40), 'end': day(44), 'athletes': ['Аделия Петросян']},
+          {'tid': 't4', 'name': 'Без неё', 'start': day(50), 'end': day(52), 'athletes': ['Анна Фролова']},
+        ],
+        'people': [
+          {'n': 'Аделия Петросян', 'c': 'RUS', 'k': 'w', 'p': _soloKey},
+          {'n': 'Мария Никто', 'c': 'RUS', 'k': 'w'},
+        ],
+      }),
+    );
+
+    test('по времени, без прошедших и чужих; турнир без расписания — отдельно и один раз', () {
+      final a = aheadOf(sched(), 'Аделия Петросян', DateTime.now());
+      expect(a.starts.map((s) => s.id), ['kp', 'pp']);
+      expect(a.tours.map((u) => u.name), ['Турнир без расписания']);
+      final none = aheadOf(sched(), 'Мария Никто', DateTime.now());
+      expect(none.starts, isEmpty);
+      expect(none.tours, isEmpty);
+    });
+
+    testWidgets('раздел в профиле: когда, турнир, вид и программа; нигде не заявлен — раздела нет', (t) async {
+      profileLoader = (k) async => Profile.fromJson(_solo);
+      await t.pumpWidget(_app(ProfileSheet(name: 'Аделия Петросян', data: sched())));
+      await t.pumpAndSettle();
+      expect(find.text('БЛИЖАЙШИЕ СТАРТЫ'), findsOneWidget);
+      expect(find.text('Гран-при, этап 3'), findsNWidgets(2));
+      expect(find.text('Женщины, короткая программа'), findsOneWidget);
+      expect(find.text('Женщины, произвольная программа'), findsOneWidget);
+      expect(find.text('Турнир без расписания'), findsOneWidget);
+      expect(find.text('Расписания пока нет'), findsOneWidget);
+      expect(find.text('Чужой турнир'), findsNothing);
+      // без приложения карточку старта открыть нечем — строка без пустого нажатия
+      expect(find.ancestor(of: find.text('Женщины, короткая программа'), matching: find.byType(InkWell)), findsNothing);
+
+      await t.pumpWidget(_app(ProfileSheet(key: UniqueKey(), name: 'Мария Никто', data: sched())));
+      await t.pumpAndSettle();
+      expect(find.text('БЛИЖАЙШИЕ СТАРТЫ'), findsNothing);
+    });
+
+    testWidgets('в приложении строка старта открывает его карточку, турнир без расписания — нет', (t) async {
+      t.view.physicalSize = const Size(390 * 3, 844 * 3);
+      t.view.devicePixelRatio = 3;
+      addTearDown(t.view.reset);
+      SharedPreferences.setMockInitialValues({});
+      await Prefs.init();
+      final d = sched();
+      profileState = AppState()
+        ..data = d
+        ..loading = false;
+      addTearDown(() => profileState = null);
+      profileLoader = (k) async => Profile.fromJson(_solo);
+      await t.pumpWidget(_app(ProfileSheet(name: 'Аделия Петросян', data: d)));
+      await t.pumpAndSettle();
+      expect(find.byType(SwipeSurface), findsNothing);
+      expect(find.ancestor(of: find.text('Расписания пока нет'), matching: find.byType(InkWell)), findsNothing);
+      await t.tap(find.text('Женщины, короткая программа'));
+      await t.pumpAndSettle();
+      // карточка старта — лист поверх профиля, из приложения не выходим
+      expect(find.byType(SwipeSurface), findsOneWidget);
+      expect(t.takeException(), isNull);
+    });
+
+    for (final b in Brightness.values) {
+      testWidgets('узкий экран, крупный шрифт, $b — без переполнений', (t) async {
+        t.view.physicalSize = const Size(320 * 3, 640 * 3);
+        t.view.devicePixelRatio = 3;
+        addTearDown(t.view.reset);
+        profileLoader = (k) async => Profile.fromJson(_solo);
+        await t.pumpWidget(
+          MaterialApp(
+            theme: ThemeData(brightness: b, fontFamily: 'Golos Text'),
+            builder: (c, nav) => MediaQuery(
+              data: MediaQuery.of(c).copyWith(textScaler: const TextScaler.linear(1.3)),
+              child: nav!,
+            ),
+            home: Scaffold(body: ProfileSheet(name: 'Аделия Петросян', data: sched())),
+          ),
+        );
+        await t.pumpAndSettle();
+        expect(find.text('БЛИЖАЙШИЕ СТАРТЫ'), findsOneWidget);
+        expect(t.takeException(), isNull);
+      });
+    }
   });
 }

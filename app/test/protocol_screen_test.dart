@@ -1,6 +1,6 @@
 // Экран протокола: состояния из утверждённых макетов, ширины 360/390/430, масштаб текста 1.0 и 1.3,
 // светлая и тёмная темы; горизонтальной прокрутки и переполнений нет.
-// Шрифты — настоящие (Manrope, Cormorant), как в views_test.
+// Шрифты — настоящие (Golos Text, Piazzolla), как в views_test.
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
@@ -169,7 +169,7 @@ Future<void> pumpScreen(
   addTearDown(tester.view.resetDevicePixelRatio);
   await tester.pumpWidget(
     MaterialApp(
-      theme: ThemeData(brightness: brightness, fontFamily: 'Manrope'),
+      theme: ThemeData(brightness: brightness, fontFamily: 'Golos Text'),
       builder: (c, child) => MediaQuery(
         data: MediaQuery.of(c).copyWith(textScaler: TextScaler.linear(scale)),
         child: child!,
@@ -196,8 +196,8 @@ void expectNoHorizontalScroll(WidgetTester tester) {
 
 void main() {
   setUpAll(() async {
-    await _font('Manrope', ['Manrope-Light.ttf', 'Manrope-Regular.ttf', 'Manrope-Medium.ttf', 'Manrope-SemiBold.ttf', 'Manrope-Bold.ttf']);
-    await _font('Cormorant', ['CormorantGaramond-SemiBold.ttf', 'CormorantGaramond-Bold.ttf']);
+    await _font('Golos Text', ['GolosText-Regular.ttf', 'GolosText-Medium.ttf', 'GolosText-SemiBold.ttf', 'GolosText-Bold.ttf']);
+    await _font('Piazzolla', ['Piazzolla-Medium.ttf', 'Piazzolla-SemiBold.ttf', 'Piazzolla-Bold.ttf']);
   });
 
   setUp(() async {

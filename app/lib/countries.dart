@@ -30,3 +30,13 @@ const _kindWords = {
 /// Виды спортсмена словами: «девушки», «женщины, пары»; пусто — ничего не знаем.
 /// Страна в той же строке не пишется: она — флагом с кодом рядом с именем.
 String kindsLine(String kinds) => [for (final k in kinds.split('')) if (_kindWords[k] != null) _kindWords[k]!].join(', ');
+
+/// Виды для подписи у имени. В этом сезоне человека нигде нет — говорим, когда вид был его:
+/// «женщины в сезоне 2025/26»; сезон неизвестен — «женщины в прошлых сезонах».
+String kindsLineOf(String kinds, {String was = '', String wasSeason = ''}) {
+  final now = kindsLine(kinds);
+  if (now.isNotEmpty) return now;
+  final before = kindsLine(was);
+  if (before.isEmpty) return '';
+  return wasSeason.isEmpty ? '$before в прошлых сезонах' : '$before в сезоне $wasSeason';
+}

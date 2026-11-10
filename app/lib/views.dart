@@ -135,7 +135,7 @@ class FeedView extends StatelessWidget {
               eyebrow: season(now()),
               title: 'Фигурное катание',
               figure: true,
-              actions: [if (data != null) FilterButton(state: state)],
+              actions: [if (data != null) ...[SearchButton(state: state), FilterButton(state: state)]],
             ),
           ),
           if (data != null) SliverToBoxAdapter(child: NoticeLine(state: state)),
@@ -211,6 +211,18 @@ class FeedView extends StatelessWidget {
   }
 }
 
+/// Лупа в шапке ленты: найти спортсмена и открыть его профиль.
+class SearchButton extends StatelessWidget {
+  final AppState state;
+  const SearchButton({super.key, required this.state});
+  @override
+  Widget build(BuildContext context) => RoundButton(
+    icon: CupertinoIcons.search,
+    tooltip: 'Найти спортсмена',
+    onTap: () => showAthleteSearch(context, state),
+  );
+}
+
 class FilterButton extends StatelessWidget {
   final AppState state;
   const FilterButton({super.key, required this.state});
@@ -276,7 +288,7 @@ class FrostLine extends StatelessWidget {
             style: TextButton.styleFrom(
               foregroundColor: p.accent,
               minimumSize: const Size(44, 44),
-              textStyle: const TextStyle(fontFamily: 'Manrope', fontWeight: FontWeight.w700, fontSize: 14),
+              textStyle: const TextStyle(fontFamily: sans, fontWeight: FontWeight.w700, fontSize: 14),
             ),
             child: Text(action, maxLines: 1, softWrap: false),
           ),
@@ -908,7 +920,7 @@ class LiveCard extends StatelessWidget {
                     if (seg.isNotEmpty)
                       Text(
                         segNames[seg]!,
-                        style: display(Palette.light, 22, italic: true, color: dim, weight: FontWeight.w500),
+                        style: display(Palette.light, 22, italic: true, color: dim, weight: FontWeight.w400),
                       ),
                     if (s.broadcast.isNotEmpty) ...[
                       const SizedBox(height: 8),

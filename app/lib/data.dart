@@ -849,6 +849,8 @@ class Schedule {
               '${p['c'] ?? ''}',
               '${p['k'] ?? ''}',
               profile: p['p'] is String && (p['p'] as String).isNotEmpty ? p['p'] as String : null,
+              was: '${p['was'] ?? ''}',
+              wasSeason: '${p['y'] ?? ''}',
             ),
       },
       epoch: j['epoch'] is int ? j['epoch'] as int : 0,
@@ -866,7 +868,15 @@ class Schedule {
     'watchlist': watchlist,
     'roster': roster,
     'people': [
-      for (final p in people.values) {'n': p.name, 'c': p.nation, 'k': p.kinds, if (p.profile != null) 'p': p.profile},
+      for (final p in people.values)
+        {
+          'n': p.name,
+          'c': p.nation,
+          'k': p.kinds,
+          if (p.profile != null) 'p': p.profile,
+          if (p.was.isNotEmpty) 'was': p.was,
+          if (p.was.isNotEmpty) 'y': p.wasSeason,
+        },
     ],
     'photos': photos,
     if (epoch != 0) 'epoch': epoch,
@@ -1256,7 +1266,30 @@ class Person {
 
   /// Ключ файла профиля на сайте (p/<ключ>.json); null — справки о человеке у сборщика нет.
   final String? profile;
-  const Person(this.name, this.nation, this.kinds, {this.profile});
+
+  /// Виды прошлого сезона, когда в нынешнем человек ещё нигде не заявлен и не выступал: сейчас он
+  /// может быть уже в другом виде, и «женщины» без оговорки было бы утверждением, которого никто
+  /// не подтвердил. [wasSeason] — «2025/26»; пусто — сезон неизвестен.
+  final String was, wasSeason;
+  const Person(this.name, this.nation, this.kinds, {this.profile, this.was = '', this.wasSeason = ''});
+}
+
+/// Где спортсмен выступает дальше: старты с расписанием — по времени, и турниры, у которых
+/// расписания ещё нет (без тех, чьи старты уже названы). Только заявленные составы: кого в них
+/// нет, у того пусто, а не догадка.
+({List<Start> starts, List<Upcoming> tours}) aheadOf(Schedule data, String name, DateTime t) {
+  bool has(Iterable<String> names) => namesInclude(names, name);
+  final starts = [
+    for (final s in data.starts)
+      if (!s.pastAt(t) && has([...s.athletes, ...s.ours.map((o) => o.name), ...s.field.map((o) => o.name)])) s,
+  ]..sort((a, b) => a.t0.compareTo(b.t0));
+  final named = {for (final s in starts) s.tid};
+  final today = dayKey(t);
+  final tours = [
+    for (final u in data.upcoming)
+      if (u.end.compareTo(today) >= 0 && !named.contains(u.tid) && has([...u.ours, ...u.athletes])) u,
+  ]..sort((a, b) => a.start.compareTo(b.start));
+  return (starts: starts, tours: tours);
 }
 
 /// Есть ли [who] среди [names]: точное имя или один из пары («Метелкина» в «Метелкина / Берулава»).

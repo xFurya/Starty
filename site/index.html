@@ -18,14 +18,15 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="app/icon-64.png">
 <link rel="apple-touch-icon" href="app/icon-180.png">
-<link rel="preload" href="assets/fonts/CormorantGaramond-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/Manrope-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Piazzolla-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/GolosText-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
 <style>
   .hero { padding: calc(env(safe-area-inset-top) + 44px) 0 8px; }
   .grid { display: block; }
   .icon { display: block; width: 84px; height: 84px; border-radius: 20px; margin-bottom: 22px; box-shadow: 0 12px 30px rgba(10, 35, 66, .25); }
   .cta { display: grid; gap: 10px; margin-top: 26px; }
+  .feats { margin: 0; padding: 0; list-style: none; }
   .demo { display: none; }
   .device {
     width: 360px; height: 740px; padding: 11px; border-radius: 54px; background: #0B1A2A;
@@ -52,13 +53,17 @@
     <g id="i-iphone" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/><path d="M10.3 5.3h3.4"/></g>
     <g id="i-windows" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12.5" rx="2"/><path d="M9 20.5h6M12 16.5v4"/></g>
     <g id="i-mac" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="10" rx="1.6"/><path d="M2.8 18.6h18.4"/></g>
+    <g id="i-cal" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.6"/><path d="M3.5 9.8h17M8 3v3.6M16 3v3.6"/></g>
+    <g id="i-doc" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 3H8a2.5 2.5 0 0 0-2.5 2.5v13A2.5 2.5 0 0 0 8 21h8a2.5 2.5 0 0 0 2.5-2.5V8z"/><path d="M13.5 3v5h5M9 12.5h6M9 16h6"/></g>
+    <g id="i-person" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.2" r="3.9"/><path d="M4.6 20.2c.9-3.7 3.7-5.7 7.4-5.7s6.5 2 7.4 5.7"/></g>
+    <g id="i-bell" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15zM10 21h4"/></g>
     <g id="i-web" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6M12 3.2c2.4 2.4 3.6 5.3 3.6 8.8s-1.2 6.4-3.6 8.8M12 3.2C9.6 5.6 8.4 8.5 8.4 12s1.2 6.4 3.6 8.8"/></g>
   </defs>
 </svg>
 
 <header class="ice hero">
-  <span class="spark" style="top: 34px; right: 12%;" aria-hidden="true">✦</span>
-  <span class="spark" style="top: 92px; right: 5%; font-size: 13px;" aria-hidden="true">✦</span>
+  <svg class="spark" style="top: 34px; right: 12%;" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.4 4.6 11.4 12 12-7.4.6-11.4 4.6-12 12-.6-7.4-4.6-11.4-12-12C7.4 11.4 11.4 7.4 12 0z"/></svg>
+  <svg class="spark" style="top: 92px; right: 5%; width: 12px; height: 12px;" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.4 4.6 11.4 12 12-7.4.6-11.4 4.6-12 12-.6-7.4-4.6-11.4-12-12C7.4 11.4 11.4 7.4 12 0z"/></svg>
   <div class="grid">
     <div class="wrap">
       <img class="icon" src="app/icon-180.png" alt="">
@@ -72,31 +77,54 @@
       <h2 class="label">Все способы</h2>
       <div class="plate platforms">
         <a class="row" href="app/Starty.apk" download>
-          <span class="tile"><svg viewBox="0 0 24 24"><use href="#i-android"/></svg></span>
+          <span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-android"/></svg></span>
           <span class="txt"><span class="t">Android</span><span class="s">APK, обновляется само</span></span>
           <span class="act">Скачать</span>
         </a>
         <a class="row" href="iphone/">
-          <span class="tile"><svg viewBox="0 0 24 24"><use href="#i-iphone"/></svg></span>
+          <span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-iphone"/></svg></span>
           <span class="txt"><span class="t">iPhone и iPad</span><span class="s">Через SideStore</span></span>
           <span class="act">Инструкция</span>
         </a>
         <a class="row" href="https://github.com/xFurya/Starty/releases/latest/download/Starty-windows-setup.exe">
-          <span class="tile"><svg viewBox="0 0 24 24"><use href="#i-windows"/></svg></span>
+          <span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-windows"/></svg></span>
           <span class="txt"><span class="t">Windows</span><span class="s">Установщик, обновляется сам</span></span>
           <span class="act">Скачать</span>
         </a>
         <a class="row" href="https://github.com/xFurya/Starty/releases/latest/download/Starty-macos.dmg">
-          <span class="tile"><svg viewBox="0 0 24 24"><use href="#i-mac"/></svg></span>
+          <span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mac"/></svg></span>
           <span class="txt"><span class="t">Mac</span><span class="s">DMG, обновляется сам</span></span>
           <span class="act">Скачать</span>
         </a>
         <a class="row" href="web/">
-          <span class="tile"><svg viewBox="0 0 24 24"><use href="#i-web"/></svg></span>
+          <span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-web"/></svg></span>
           <span class="txt"><span class="t">В браузере</span><span class="s">Без установки и уведомлений</span></span>
           <span class="act">Открыть</span>
         </a>
       </div>
+      <h2 class="label">Что внутри</h2>
+      <ul class="plate feats" role="list">
+        <li class="row">
+          <span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cal"/></svg></span>
+          <span class="txt"><span class="t">Расписание и трансляции</span><span class="s">Время каждого старта, каналы и ссылки на эфир</span></span>
+        </li>
+        <li class="row">
+          <span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-doc"/></svg></span>
+          <span class="txt"><span class="t">Протоколы</span><span class="s">Итоги и оценки судей за каждый элемент</span></span>
+        </li>
+        <li class="row">
+          <span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-person"/></svg></span>
+          <span class="txt"><span class="t">Профили спортсменов</span><span class="s">Титулы, личные рекорды, редкие элементы</span></span>
+        </li>
+        <li class="row">
+          <span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bell"/></svg></span>
+          <span class="txt"><span class="t">Уведомления</span><span class="s">О начале старта и о выходе на лёд тех, кого вы отслеживаете</span></span>
+        </li>
+      </ul>
+      <footer class="foot">
+        <p id="ver" hidden></p>
+        <p>Расписание и протоколы собраны с сайтов ФФККР, ISU и региональных федераций.</p>
+      </footer>
     </div>
     <div class="demo" id="demo">
       <div class="device" id="device"></div>
@@ -132,6 +160,14 @@
   cta.appendChild(btn(plans[0], 'primary'));
   if (plans[1]) cta.appendChild(btn(plans[1], 'secondary'));
   document.getElementById('hint').textContent = plans[2];
+
+  // номер версии — из того же файла, по которому приложение узнаёт об обновлении; не ответил — строки нет
+  if (window.fetch) fetch('app/version.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+    var v = j && j.android && j.android.version;
+    if (!/^\d+(\.\d+){1,3}$/.test(v || '')) return;
+    var el = document.getElementById('ver');
+    el.textContent = 'Версия ' + v; el.hidden = false;
+  }).catch(function () {});
 
   // на широком экране — живая веб-версия в рамке телефона; на телефоне её не грузим
   if (window.matchMedia && matchMedia('(min-width: 980px)').matches) {

@@ -36,10 +36,10 @@ DFD = "<table>" + "".join([
 ]) + "</table>"
 
 
-def book(tables, arc=None):
+def book(tables, arc=None, pb=None, sb=None, season=""):
     arc = arc or ar.empty()
     arc["full"] = True
-    return {"records": ft.records(tables), "archive": ar.Index(arc)}
+    return {"records": ft.records(tables), "archive": ar.Index(arc), "pb": pb or {}, "sb": sb or {}, "season": season}
 
 
 def el(code, base, judges=(1, 1, 1), info="", score=None):
@@ -55,9 +55,10 @@ class ParseTest(unittest.TestCase):
     def test_rows_with_bio_number_and_iso_date(self):
         rows = ft.parse(WFS)
         self.assertEqual(len(rows), 8)
-        self.assertEqual(rows[0], {"id": "00090000", "n": "Kamila VALIEVA", "c": "RUS", "ev": "ISU GP Rostelecom Cup 2021",
+        self.assertEqual(rows[0], {"r": 1, "id": "00090000", "n": "Kamila VALIEVA", "c": "RUS", "ev": "ISU GP Rostelecom Cup 2021",
                                    "d": "2021-11-27", "pts": "185.29", "l": "S"})
         self.assertEqual(rows[6]["l"], "J")
+        self.assertEqual([r["r"] for r in rows], list(range(1, 9)))  # место — из первой колонки
 
     def test_total_table_takes_last_number(self):
         page = "<table>" + ("<tr><td>1</td><td>Wenjing SUI / Cong HAN</td><td>CHN</td><td>XXIV Olympic Winter Games 2022</td>"
@@ -150,11 +151,12 @@ class OwnerTest(unittest.TestCase):
             "Мировой рекорд в произвольной программе в 2019–2021 годах",
             "Самый дорогой прыжковый элемент с 2018 года: 4Lz+3T",
             "3 четверных в одной программе — больше всех с 2018 года",
-            "Четверной сальхов", "Четверной тулуп"])
+            "Четверной сальхов", "Четверной тулуп",
+            "Три разных четверных прыжка: тулуп, сальхов, лутц"])
         self.assertEqual(fe[1], {"t": "Самый дорогой прыжковый элемент с 2018 года: 4Lz+3T",
                                  "ev": "Финал Гран-при, произвольная программа", "d": "2019-12-07", "pts": "15.70",
                                  "src": "ISU", "u": "https://results.isu.org/a.pdf"})
-        self.assertEqual(ft.source_names(fe), ["ISU"] * 5)
+        self.assertEqual(ft.source_names(fe), ["ISU"] * 6)
         # тёзка из другой страны архивных строк не получает
         self.assertEqual(ft.for_profile("Александра Трусова", "KAZ", "", {"who": []}, b), [])
 
@@ -182,8 +184,8 @@ class TablesTest(unittest.TestCase):
             self.assertEqual(ft.tables(now, path, down, log=lambda *a: None), {})
             self.assertFalse(os.path.exists(path))
             got = ft.tables(now, path, ok, log=lambda *a: None)
-            self.assertEqual(len(got), len(ft.TABLES))
-            self.assertEqual(len(calls), 2 * len(ft.TABLES))
+            self.assertEqual(len(got), 2 * len(ft.TABLES))  # рекорды и личные рекорды
+            self.assertEqual(len(calls), 4 * len(ft.TABLES))
             # свежий кэш — без запросов
             calls.clear()
             self.assertEqual(ft.tables(now + dt.timedelta(hours=3), path, down, log=lambda *a: None), got)
@@ -191,7 +193,164 @@ class TablesTest(unittest.TestCase):
             # кэш устарел, ISU молчит — берём сохранённое
             later = now + dt.timedelta(days=2)
             self.assertEqual(ft.tables(later, path, down, log=lambda *a: None), got)
-            self.assertEqual(len(calls), len(ft.TABLES))
+            self.assertEqual(len(calls), 2 * len(ft.TABLES))
+
+
+def page(n):
+    return "<table>" + "".join(row(i, f"Skater {i}", "USA", "ISU Event 2026", "01/11/2026", f"{300 - i}.00")
+                               for i in range(1, n + 1)) + "</table>"
+
+
+class ExtraTablesTest(unittest.TestCase):
+    """Личные рекорды и лучшие результаты сезона: адреса, обрезка, смена сезона."""
+
+    NOW = dt.datetime(2026, 11, 6, 12, tzinfo=dt.timezone.utc)
+
+    def run_tables(self, path, now=None, season_start="2026-07-01", fetch=None):
+        calls = []
+
+        def ok(url):
+            calls.append(url)
+            return page(15)
+
+        got = ft.tables(now or self.NOW, path, fetch or ok, log=lambda *a: None, season_start=season_start)
+        return got, calls
+
+    def test_pb_and_sb_are_fetched_and_cut(self):
+        with tempfile.TemporaryDirectory() as d:
+            got, calls = self.run_tables(os.path.join(d, "r.json"))
+            self.assertIn(ft.STAT + "pbsdrd.htm", calls)
+            self.assertIn(ft.STAT + "sb2026-27/sbtswto.htm", calls)
+            self.assertEqual(len(got["wto"]), 15)  # рекорды — целиком
+            self.assertEqual(len(got["pb:wto"]), 10)
+            self.assertEqual(len(got["sb:wto"]), 3)
+            self.assertEqual(got["season:"], "2026/27")
+            self.assertEqual(len(calls), 3 * len(ft.TABLES))
+            with open(os.path.join(d, "r.json"), encoding="utf-8") as f:
+                self.assertEqual(json.load(f)["season"], "2026/27")
+
+    def test_without_season_start_no_season_tables(self):
+        with tempfile.TemporaryDirectory() as d:
+            got, calls = self.run_tables(os.path.join(d, "r.json"), season_start=None)
+            self.assertFalse([k for k in got if k.startswith("sb:")])
+            self.assertFalse([u for u in calls if "/sb" in u])
+
+    def test_old_season_is_dropped(self):
+        def down(url):
+            raise net.FetchError("сеть", kind="net")
+
+        with tempfile.TemporaryDirectory() as d:
+            path = os.path.join(d, "r.json")
+            self.run_tables(path)
+            # тот же сезон, ISU молчит — прежние лучшие результаты остаются
+            got, _ = self.run_tables(path, self.NOW + dt.timedelta(days=2), fetch=down)
+            self.assertEqual(len(got["sb:wto"]), 3)
+            # сезон сменился, ISU молчит — прошлогоднее выброшено, а не выдано за нынешнее
+            got, _ = self.run_tables(path, self.NOW + dt.timedelta(days=400), "2027-07-01", down)
+            self.assertFalse([k for k in got if k.startswith("sb:")])
+            self.assertIn("pb:wto", got)
+
+    def test_empty_page_keeps_saved(self):
+        pages = {"n": 15}
+
+        def fetch(url):
+            return page(pages["n"])
+
+        with tempfile.TemporaryDirectory() as d:
+            path = os.path.join(d, "r.json")
+            self.run_tables(path, fetch=fetch)
+            pages["n"] = 0
+            got, _ = self.run_tables(path, self.NOW + dt.timedelta(days=2), fetch=fetch)
+            self.assertEqual(len(got["pb:wto"]), 10)
+
+    def test_records_ignore_new_keys(self):
+        rows = ft.parse(WFS)
+        both = {"wfs": rows, "pb:wfs": rows, "sb:wfs": rows[:3], "season:": "2026/27"}
+        self.assertEqual(ft.records(both), ft.records({"wfs": rows}))
+        self.assertEqual(ft.records({"pb:wfs": rows, "sb:wfs": rows}), [])
+
+    def test_load_splits_tables(self):
+        tbls = {"wfs": ft.parse(WFS), "pb:wfs": ft.parse(WFS)[:2], "sb:wfs": ft.parse(WFS)[:1], "season:": "2026/27"}
+        got = ft.load(tbls, ar.empty(), season_start="2026-07-01")
+        self.assertEqual((sorted(got["pb"]), sorted(got["sb"]), got["season"]), (["wfs"], ["wfs"], "2026/27"))
+        self.assertEqual(len(got["records"]), 3)
+        self.assertEqual(ft.load(tbls, ar.empty())["sb"], {})
+
+
+def pbrow(place, name="Kamila VALIEVA", nat="RUS", pts="150.00", bio="00090000", ev="ISU GP Rostelecom Cup 2021",
+          date="27/11/2021"):
+    return ft.parse("<table>" + row(place, name, nat, ev, date, pts, bio=bio) + "</table>")
+
+
+class PlacesTest(unittest.TestCase):
+    PR = {"who": [{"n": "Камила Валиева", "born": "2006-04-26"}]}
+
+    def feats(self, pb=None, sb=None, arc=None, name="Камила Валиева", nation="RUS", isu_id="00090000"):
+        b = book({"wfs": ft.parse(WFS)}, arc, pb, sb, "2026/27")
+        return ft.for_profile(name, nation, isu_id, self.PR, b)
+
+    def test_places_two_to_ten_have_titles(self):
+        words = ["Второй", "Третий", "Четвёртый", "Пятый", "Шестой", "Седьмой", "Восьмой", "Девятый", "Десятый"]
+        for place, word in zip(range(2, 11), words):
+            with self.subTest(place=place):
+                fe = self.feats(pb={"wsp": pbrow(place, pts="80.00")})
+                self.assertEqual([x["t"] for x in fe][1:], [f"{word} личный рекорд в мире с 2018 года в короткой программе"])
+                self.assertEqual({k: fe[1][k] for k in ("ev", "d", "pts", "src", "u")},
+                                 {"ev": "GP Rostelecom Cup 2021", "d": "2021-11-27", "pts": "80.00", "src": "ISU",
+                                  "u": ft.STAT + "pbswsp.htm"})
+
+    def test_first_and_eleventh_place_are_not_shown(self):
+        fe = self.feats(pb={"wsp": pbrow(1), "wto": pbrow(11)})
+        self.assertEqual([x["t"] for x in fe], ["Действующий мировой рекорд в произвольной программе"])
+
+    def test_duplicate_of_world_record_is_not_shown(self):
+        # второе место в личных рекордах с теми же 185.29 — это тот же мировой рекорд
+        fe = self.feats(pb={"wfs": pbrow(2, pts="185.29"), "wsp": pbrow(3, pts="85.00")})
+        self.assertEqual([x["t"] for x in fe], ["Действующий мировой рекорд в произвольной программе",
+                                                "Третий личный рекорд в мире с 2018 года в короткой программе"])
+        # другие баллы того же отрезка — показываем
+        fe = self.feats(pb={"wfs": pbrow(2, pts="170.00")})
+        self.assertEqual(fe[1]["t"], "Второй личный рекорд в мире с 2018 года в произвольной программе")
+
+    def test_former_record_also_counts_as_duplicate(self):
+        pr = {"who": [{"n": "Александра Трусова", "born": "2004-06-23"}]}
+        b = book({"wfs": ft.parse(WFS)}, pb={"wfs": pbrow(2, "Alexandra IGNATOVA", pts="166.62", bio="00102760")})
+        self.assertEqual([x["t"] for x in ft.for_profile("Александра Трусова", "RUS", "00102760", pr, b)],
+                         ["Мировой рекорд в произвольной программе в 2019–2021 годах"])
+
+    def test_season_places_one_to_three_and_order(self):
+        sb = {"wfs": pbrow(3, pts="160.00"), "wsp": pbrow(1, pts="82.00"), "wto": pbrow(2, pts="240.00"),
+              "mto": pbrow(1, "Ilia MALININ", "USA", bio="00108049")}
+        fe = self.feats(sb=sb)
+        self.assertEqual([x["t"] for x in fe], [
+            "Действующий мировой рекорд в произвольной программе",
+            "Второе место в мире в сезоне по сумме баллов",
+            "Лучший результат сезона в мире в короткой программе",
+            "Третье место в мире в сезоне в произвольной программе"])
+        self.assertEqual(fe[1]["u"], ft.STAT + "sb2026-27/sbtswto.htm")
+        self.assertEqual(self.feats(sb={"wsp": pbrow(4)})[1:], [])  # четвёртое место сезона — не показываем
+
+    def test_group_order(self):
+        arc = ar.empty()
+        protocol(arc, "https://results.isu.org/v.pdf", "Чемпионат России", "2022-01-01",
+                 [{"name": "Kamila VALIEVA", "nation": "RUS", "elements": [el("4Lz", 11.5)]}], kind="women")
+        fe = self.feats(arc=arc, pb={"wto": pbrow(4, pts="230.00"), "wsp": pbrow(5, pts="80.00")},
+                        sb={"wto": pbrow(2, pts="240.00")})
+        self.assertEqual([x["t"] for x in fe], [
+            "Действующий мировой рекорд в произвольной программе",
+            "Четвёртый личный рекорд в мире с 2018 года по сумме баллов",
+            "Пятый личный рекорд в мире с 2018 года в короткой программе",
+            "Второе место в мире в сезоне по сумме баллов",
+            "Самый дорогой прыжковый элемент с 2018 года: 4Lz"])
+        self.assertTrue(all("g" not in x and "o" not in x for x in fe))
+
+    def test_other_holder_is_not_shown(self):
+        pb = {"wsp": pbrow(3, bio="00012345")}  # другой номер ISU
+        self.assertEqual(len(self.feats(pb=pb)), 1)
+        pb = {"wsp": pbrow(3, bio="")}  # номера у строки нет — по имени и стране
+        self.assertEqual(len(self.feats(pb=pb)), 2)
+        self.assertEqual(len(self.feats(pb=pb, nation="KAZ", isu_id="")), 0)  # тёзка из другой страны
+        self.assertEqual(len(self.feats(pb={"wsp": pbrow(3, nat="KAZ", bio="")}, isu_id="")), 1)
 
 
 class WriteTest(unittest.TestCase):

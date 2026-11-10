@@ -133,7 +133,11 @@ def tournament(url):
     text = _text(body)
     title = re.search(r'(?s)<h[12][^>]*itemprop="headline"[^>]*>(.*?)</h[12]>', page) or \
         re.search(r"(?s)<title>(.*?)</title>", page)
-    t = {"url": url, "title": _text(title.group(1)).split(" - ")[0] if title else "",
+    whole = _text(title.group(1)) if title else ""
+    # full — заголовок целиком, без имени сайта в конце: у прошлых сезонов в нём бывает то, что
+    # title обрезает («Ростелеком - Чемпионат России 2019», «…Гран При России - Идель-2024"»)
+    t = {"url": url, "title": whole.split(" - ")[0],
+         "full": re.sub(r"\s+-\s+Федерация фигурного катания[^-]*$", "", whole),
          "results": None, "schedule_pdf": None, "broadcast": [], "watch": [], "place": "", "start": None, "end": None}
     m = re.search(r"Сроки проведения:\s*\n?\s*(\d{1,2})\s*([а-я]+)?\s*[-–]\s*(\d{1,2})\s+([а-я]+)\s+(\d{4})", text)
     if m:

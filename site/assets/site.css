@@ -1,9 +1,9 @@
-/* Страницы сайта — в оформлении приложения: палитра «Лёд», Manrope и Cormorant Garamond, плашки как в настройках. */
-@font-face { font-family: Manrope; font-weight: 400; font-display: swap; src: url(fonts/Manrope-Regular.woff2) format("woff2"); }
-@font-face { font-family: Manrope; font-weight: 600; font-display: swap; src: url(fonts/Manrope-SemiBold.woff2) format("woff2"); }
-@font-face { font-family: Manrope; font-weight: 700; font-display: swap; src: url(fonts/Manrope-Bold.woff2) format("woff2"); }
-@font-face { font-family: Cormorant; font-weight: 600; font-display: swap; src: url(fonts/CormorantGaramond-SemiBold.woff2) format("woff2"); }
-@font-face { font-family: Cormorant; font-weight: 500; font-style: italic; font-display: swap; src: url(fonts/CormorantGaramond-MediumItalic.woff2) format("woff2"); }
+/* Страницы сайта — в оформлении приложения: палитра «Лёд», Golos Text и Piazzolla, плашки как в настройках. */
+@font-face { font-family: Golos; font-weight: 400; font-display: swap; src: url(fonts/GolosText-Regular.woff2) format("woff2"); }
+@font-face { font-family: Golos; font-weight: 600; font-display: swap; src: url(fonts/GolosText-SemiBold.woff2) format("woff2"); }
+@font-face { font-family: Golos; font-weight: 700; font-display: swap; src: url(fonts/GolosText-Bold.woff2) format("woff2"); }
+@font-face { font-family: Piazzolla; font-weight: 500; font-display: swap; src: url(fonts/Piazzolla-Medium.woff2) format("woff2"); }
+@font-face { font-family: Piazzolla; font-weight: 600; font-display: swap; src: url(fonts/Piazzolla-SemiBold.woff2) format("woff2"); }
 
 :root {
   --bg: #F1F6FB; --bg-top: #E2EEF9; --plate: #FFFFFF; --plate-line: #D6E3EF; --sep: #E4ECF4;
@@ -24,7 +24,7 @@
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
   margin: 0; background: var(--bg); color: var(--ink);
-  font: 400 16px/1.5 Manrope, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font: 400 16px/1.5 Golos, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased; overflow-x: hidden;
 }
 a { color: var(--accent); text-decoration: none; }
@@ -43,11 +43,11 @@ img { max-width: 100%; }
 @media (prefers-color-scheme: dark) {
   .ice::before { background: linear-gradient(to bottom, var(--ice-veil), var(--bg)), url(ice-dark.jpg) center top / cover no-repeat; }
 }
-.spark { position: absolute; z-index: -1; color: var(--accent); opacity: .55; font-size: 22px; line-height: 1; pointer-events: none; }
+.spark { position: absolute; z-index: -1; width: 22px; height: 22px; fill: var(--accent); opacity: .5; pointer-events: none; }
 
 .kicker { margin: 0; font-weight: 700; font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
-.title { margin: 6px 0 0; font: 600 clamp(42px, 11vw, 60px)/1 Cormorant, Georgia, serif; letter-spacing: -.01em; }
-.subtitle { margin: 4px 0 0; font: italic 500 22px/1.2 Cormorant, Georgia, serif; color: var(--ink2); }
+/* у антиквы в крупном кегле узкий пробел — добавляем, как в приложении */
+.title { margin: 8px 0 0; font: 500 clamp(36px, 9.6vw, 54px)/1.04 Piazzolla, Georgia, serif; letter-spacing: -.012em; word-spacing: .07em; }
 .lead { margin: 16px 0 0; color: var(--ink2); font-size: 16.5px; }
 
 /* кнопки */
@@ -88,7 +88,9 @@ a.row:hover .act { text-decoration: underline; text-underline-offset: 3px; }
 .row .s { font-size: 13.5px; line-height: 1.35; color: var(--ink2); margin-top: 2px; }
 .row .act { flex: none; font-weight: 700; font-size: 15px; color: var(--accent); }
 
-.foot { margin: 40px 0 0; padding: 0 4px calc(env(safe-area-inset-bottom) + 40px); font-size: 13px; color: var(--ink3); }
+.foot { margin: 40px 0 0; padding: 0 4px calc(env(safe-area-inset-bottom) + 40px); font-size: 13px; line-height: 1.5; color: var(--ink2); }
+.foot p { margin: 0; }
+.foot p + p { margin-top: 4px; }
 .foot a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 
 @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }

@@ -8,6 +8,11 @@
 - архив протоколов (scraper/archive.py): самый дорогой прыжковый элемент и больше всех четверных
   с 2018 года, редкие элементы, единогласные +5 и десятки — у каждого, кто есть в протоколах.
 
+Места в списках ISU — той же статистики: личные рекорды всех времён (pbs*.htm, с сезона 2018/19;
+берём места 2–10, первое — это и есть мировой рекорд) и лучшие результаты сезона (sbYYYY-YY/sbts*.htm,
+места 1–3). В обоих списках спортсмен стоит один раз, со своим лучшим результатом: место в списке —
+это место его личного рекорда среди чужих, а не «N-й результат в истории».
+
 Таблицы сохраняются в data/records.json и перечитываются раз в сутки; ISU не ответила — берём
 сохранённые. Нет ни того, ни другого — рекордов в профиле нет (а не выдуманных).
 """
@@ -29,6 +34,13 @@ FRESH = dt.timedelta(hours=20)
 
 # таблица → (вид, отрезок); танцы — свои отрезки
 TABLES = [(k, s) for k in "mwp" for s in ("sp", "fs", "to")] + [("d", s) for s in ("rd", "fd", "to")]
+PB_ROWS = 10  # личные рекорды: сколько первых мест хранить
+SB_ROWS = 3   # лучшие результаты сезона: сколько первых мест хранить
+ORD = {1: "Лучший", 2: "Второй", 3: "Третий", 4: "Четвёртый", 5: "Пятый", 6: "Шестой", 7: "Седьмой",
+       8: "Восьмой", 9: "Девятый", 10: "Десятый"}
+PLACE = {2: "Второе", 3: "Третье"}
+# порядок строк одной группы: сумма, короткая, произвольная
+SEG_ORDER = {"to": 0, "sp": 1, "rd": 1, "fs": 2, "fd": 2}
 SEG_RU = {"sp": "в короткой программе", "fs": "в произвольной программе", "rd": "в ритм-танце",
           "fd": "в произвольном танце", "to": "по сумме баллов"}
 PB_SEG = {"sp": "sp", "rd": "sp", "fs": "fs", "fd": "fs", "to": "total"}
@@ -41,7 +53,7 @@ OTHER = "протоколов турниров"
 # ---------------------------------------------------------------- таблицы ISU
 
 def parse(page):
-    """Строки таблицы по порядку мест: [{id, n, c, ev, d, pts, l}]. id — номер биографии ISU из ссылки."""
+    """Строки таблицы по порядку мест: [{r, id, n, c, ev, d, pts, l}]. r — место, id — номер биографии ISU из ссылки."""
     rows = []
     for r in re.findall(r"(?s)<tr[^>]*>(.*?)</tr>", page):
         raw = re.findall(r"(?s)<t[dh][^>]*>(.*?)</t[dh]>", r)
@@ -53,7 +65,7 @@ def parse(page):
         if not d or not nums or not cells[1]:
             continue
         m = re.search(r"isufs(\d+)\.htm", raw[1])
-        rows.append({"id": m.group(1) if m else "", "n": cells[1], "c": cells[2], "ev": cells[3],
+        rows.append({"r": int(cells[0]), "id": m.group(1) if m else "", "n": cells[1], "c": cells[2], "ev": cells[3],
                      "d": f"{d.group(3)}-{d.group(2)}-{d.group(1)}", "pts": nums[-1],
                      "l": cells[-1] if cells[-1] in ("S", "J") else ""})
     return rows
@@ -68,36 +80,66 @@ def _load_cache(path):
         return {}
 
 
-def tables(now=None, path=CACHE, fetch=None, log=print):
-    """{"msp": [...], …}: свежие таблицы ISU или сохранённые, если ISU не ответила."""
+def _season_of(season_start):
+    """«2026-07-01» → «2026/27»; нет даты — пусто."""
+    try:
+        y = int(season_start[:4])
+    except (TypeError, ValueError):
+        return ""
+    return f"{y}/{(y + 1) % 100:02d}"
+
+
+def tables(now=None, path=CACHE, fetch=None, log=print, season_start=None):
+    """{"msp": [...], "pb:mto": [...], "sb:mto": [...], …}: свежие таблицы ISU или сохранённые, если ISU
+    не ответила. Рекорды (ключи без «:») — целиком; личные рекорды (pb:) — первые PB_ROWS мест; лучшие
+    результаты сезона season_start (sb:) — первые SB_ROWS, без season_start их не тянем. Сезон sb-таблиц
+    лежит под ключом «season:» (например «2026/27»); при смене сезона прежние sb-таблицы выбрасываются."""
     now = now or dt.datetime.now(dt.timezone.utc)
     fetch = fetch or (lambda url: net.fetch(url, timeout=40))
     cache = _load_cache(path)
-    have = cache.get("tables") or {}
+    have = dict(cache.get("tables") or {})
+    season = _season_of(season_start)
+    folder = "sb" + season.replace("/", "-")
+    old_season = cache.get("season") or ""
+    if season and old_season != season:  # новый сезон: прошлогодние лучшие результаты не годятся
+        have = {k: v for k, v in have.items() if not k.startswith("sb:")}
+    want = [(k + s, f"phs{k}{s}.htm", 0) for k, s in TABLES]
+    want += [("pb:" + k + s, f"pbs{k}{s}.htm", PB_ROWS) for k, s in TABLES]
+    if season:
+        want += [("sb:" + k + s, f"{folder}/sbts{k}{s}.htm", SB_ROWS) for k, s in TABLES]
     try:
         fresh = now - dt.datetime.fromisoformat(cache["at"]) < FRESH
     except (KeyError, TypeError, ValueError):
         fresh = False
-    if fresh and all(k + s in have for k, s in TABLES):
-        return have
+    if fresh and all(key in have for key, _, _ in want):
+        return _with_season(have, season or old_season)
     got, failed = dict(have), 0
-    for k, s in TABLES:
+    for key, page, cut in want:
         try:
-            rows = parse(fetch(f"{STAT}phs{k}{s}.htm"))
+            rows = parse(fetch(STAT + page))
         except net.FetchError as e:
             failed += 1
-            log(f"  рекорды ISU: phs{k}{s} не ответила ({e})")
+            log(f"  рекорды ISU: {page} не ответила ({e})")
             continue
         if rows:  # пустая страница — сбой вёрстки, а не «рекордов нет»: держим прежнее
-            got[k + s] = rows
-    if failed < len(TABLES):  # хоть что-то ответило — отметка свежести; всё молчит — спросим в следующий раз
+            got[key] = rows[:cut] if cut else rows
+    if failed < len(want):  # хоть что-то ответило — отметка свежести; всё молчит — спросим в следующий раз
+        keep = season or old_season
         with open(path, "w", encoding="utf-8") as f:
-            f.write("{\"at\":" + json.dumps(now.isoformat()) + ",\"tables\":{\n")
+            f.write("{\"at\":" + json.dumps(now.isoformat()) + ",\"season\":" + json.dumps(keep) + ",\"tables\":{\n")
             f.write(",\n".join(json.dumps(k, ensure_ascii=False) + ":[\n" +
                                ",\n".join(json.dumps(r, ensure_ascii=False, sort_keys=True) for r in got[k]) + "]"
                                for k in sorted(got)))
             f.write("\n}}\n")
-    return got
+    return _with_season(got, season or old_season)
+
+
+def _with_season(tbls, season):
+    """Таблицы и под ключом «season:» сезон sb-таблиц (если они есть)."""
+    out = dict(tbls)
+    if season and any(k.startswith("sb:") for k in out):
+        out["season:"] = season
+    return out
 
 
 def _holder(r):
@@ -117,6 +159,8 @@ def records(tbls):
     перебил другой (у действующего пусто). Прежний рекорд — только если продержался до конца сезона."""
     out = []
     for code, rows in tbls.items():
+        if ":" in code:  # pb:, sb:, season: — не таблицы рекордов
+            continue
         s = code[1:]
         if s not in SEG_RU or not rows:
             continue
@@ -145,13 +189,19 @@ def record_title(rec):
 
 # ---------------------------------------------------------------- к профилю
 
-def load(tbls=None, arc=None, log=print):
-    """Всё, что нужно write(): {"records": [...], "archive": archive.Index}."""
+def load(tbls=None, arc=None, log=print, season_start=None):
+    """Всё, что нужно write(): {"records": [...], "archive": archive.Index, "pb": {код: строки},
+    "sb": {код: строки}, "season"}. arc — уже сводный архив (archive.combined); без него — сводный из
+    файлов. Лучшие результаты сезона (sb) — только если задан season_start."""
     if tbls is None:
-        tbls = tables(log=log)
+        tbls = tables(log=log, season_start=season_start)
     if arc is None:
-        arc = ar.load()
-    return {"records": records(tbls or {}), "archive": ar.Index(arc)}
+        arc = ar.combined()
+    tbls = tbls or {}
+    pb = {k[3:]: v for k, v in tbls.items() if k.startswith("pb:")}
+    sb = {k[3:]: v for k, v in tbls.items() if k.startswith("sb:")} if season_start else {}
+    return {"records": records(tbls), "archive": ar.Index(arc), "pb": pb, "sb": sb,
+            "season": tbls.get("season:") or _season_of(season_start) if sb else ""}
 
 
 def _born(pr):
@@ -186,29 +236,59 @@ def _pb_allows(pr, s, pts):
     return True
 
 
+def _match(r, name, nation, isu_id):
+    """Строка таблицы его? "id" — по номеру биографии ISU (есть и у профиля, и у строки), "name" — по имени
+    и стране, иначе пусто."""
+    if isu_id and r["id"]:
+        return "id" if r["id"] == isu_id else ""
+    return "name" if nm.key(r["n"]) == nm.key(name) and _same_nation(r["c"], nation) else ""
+
+
 def owns(rec, name, nation, isu_id, pr):
     r = rec["row"]
-    if isu_id and r["id"]:
-        if r["id"] != isu_id:
-            return False
-    elif nm.key(r["n"]) != nm.key(name) or not _same_nation(r["c"], nation) or not _adult_then(_born(pr), r["d"]):
+    how = _match(r, name, nation, isu_id)
+    if not how or (how == "name" and not _adult_then(_born(pr), r["d"])):
         return False
     return _pb_allows(pr, rec["s"], r["pts"])
 
 
 def for_profile(name, nation, isu_id, pr, book):
-    """Строки «Примечательного» для профиля: [{t, ev, d, pts?, src, u}]. Сначала мировые рекорды,
-    за ними рекорды архива, редкие элементы, четверные, +5 и десятки; внутри — от ранних к поздним."""
-    out = []
+    """Строки «Примечательного» для профиля: [{t, ev, d, pts?, src, u}]. Сначала мировые рекорды, за ними
+    места в личных рекордах мира и лучшие результаты сезона, потом рекорды архива, редкие элементы,
+    четверные, +5 и десятки; внутри группы — сумма, короткая, произвольная, затем от ранних к поздним."""
+    out, owned = [], set()
     for rec in book.get("records") or []:
         if owns(rec, name, nation, isu_id, pr):
             r = rec["row"]
+            owned.add((rec["s"], float(r["pts"])))
             out.append({"t": record_title(rec), "ev": event_ru(r["ev"]), "d": r["d"], "pts": r["pts"],
-                        "src": "ISU", "u": f"{STAT}phs{rec['kind']}{rec['s']}.htm", "g": 0})
-    out += ar.for_profile(name, nation, book.get("archive"))
-    out.sort(key=lambda x: (x["g"], x.get("d", "")))
+                        "src": "ISU", "u": f"{STAT}phs{rec['kind']}{rec['s']}.htm", "g": 0, "o": 0})
+    season = (book.get("season") or "").replace("/", "-")
+    for field, g, places, page in (("pb", 0.5, range(2, 11), lambda k, s: f"{STAT}pbs{k}{s}.htm"),
+                                   ("sb", 0.7, range(1, 4), lambda k, s: f"{STAT}sb{season}/sbts{k}{s}.htm")):
+        for code, rows in (book.get(field) or {}).items():
+            k, s = code[0], code[1:]
+            if s not in SEG_RU or (field == "sb" and not season):
+                continue
+            for r in rows:
+                if r.get("r") not in places or not _match(r, name, nation, isu_id):
+                    continue
+                if field == "pb" and (s, float(r["pts"])) in owned:  # это и есть его мировой рекорд
+                    continue
+                # списки ISU — по одной строке на спортсмена (его лучший результат), поэтому место в них —
+                # место личного рекорда, а не «N-й результат в истории»: у лидера выше может быть несколько
+                if field == "pb":
+                    t = f"{ORD[r['r']]} личный рекорд в мире {ar.SINCE} {SEG_RU[s]}"
+                elif r["r"] == 1:
+                    t = f"Лучший результат сезона в мире {SEG_RU[s]}"
+                else:
+                    t = f"{PLACE[r['r']]} место в мире в сезоне {SEG_RU[s]}"
+                out.append({"t": t, "ev": event_ru(r["ev"]), "d": r["d"], "pts": r["pts"], "src": "ISU",
+                            "u": page(k, s), "g": g, "o": SEG_ORDER[s]})
+    out += [dict(x, o=0) for x in ar.for_profile(name, nation, book.get("archive"))]
+    out.sort(key=lambda x: (x["g"], x["o"], x.get("d", "")))
     for x in out:
-        del x["g"]
+        del x["g"], x["o"]
     return out
 
 

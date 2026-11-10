@@ -1,6 +1,6 @@
 // Блок «Виды» на экране «Уведомления»: короткие подписи «Женщины», «Мужчины», «Пары», «Танцы»,
 // плитки ряда одной высоты (не ниже 48), без переполнений при 360/390/430, масштабе 1.0/1.3, светлой и тёмной.
-// Шрифт Manrope — настоящий, чтобы замеры были честными.
+// Шрифт Golos Text — настоящий, чтобы замеры были честными.
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -13,8 +13,8 @@ import 'package:starty/state.dart';
 import 'package:starty/ui.dart';
 
 Future<void> _manrope() async {
-  final l = FontLoader('Manrope');
-  for (final f in Directory('assets/fonts').listSync().whereType<File>().where((f) => f.path.contains('Manrope'))) {
+  final l = FontLoader('Golos Text');
+  for (final f in Directory('assets/fonts').listSync().whereType<File>().where((f) => f.path.contains('GolosText'))) {
     l.addFont(Future.value(ByteData.sublistView(f.readAsBytesSync())));
   }
   await l.load();
@@ -37,7 +37,7 @@ void main() {
     final s = AppState()..loading = false;
     await t.pumpWidget(
       MaterialApp(
-        theme: ThemeData(brightness: b, fontFamily: 'Manrope'),
+        theme: ThemeData(brightness: b, fontFamily: 'Golos Text'),
         builder: (c, nav) => MediaQuery(
           data: MediaQuery.of(c).copyWith(textScaler: TextScaler.linear(scale)),
           child: nav!,

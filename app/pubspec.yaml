@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.63+64
+version: 1.0.64+65
 
 environment:
   sdk: ^3.13.5
@@ -79,30 +79,36 @@ flutter:
     - assets/icon/variants.json
 
   fonts:
+    - family: Golos Text
+      fonts:
+        - asset: assets/fonts/GolosText-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/GolosText-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/GolosText-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/GolosText-Bold.ttf
+          weight: 700
+    # только цифры: число дня на значке приложения (app_icon.dart)
     - family: Manrope
       fonts:
-        - asset: assets/fonts/Manrope-ExtraLight.ttf
-          weight: 200
-        - asset: assets/fonts/Manrope-Light.ttf
-          weight: 300
-        - asset: assets/fonts/Manrope-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Manrope-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Manrope-SemiBold.ttf
-          weight: 600
         - asset: assets/fonts/Manrope-Bold.ttf
           weight: 700
-    - family: Cormorant
+    - family: Piazzolla
       fonts:
-        - asset: assets/fonts/CormorantGaramond-SemiBold.ttf
+        - asset: assets/fonts/Piazzolla-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Piazzolla-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/CormorantGaramond-Bold.ttf
+        - asset: assets/fonts/Piazzolla-Bold.ttf
           weight: 700
-        - asset: assets/fonts/CormorantGaramond-MediumItalic.ttf
+        - asset: assets/fonts/Piazzolla-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/Piazzolla-MediumItalic.ttf
           weight: 500
           style: italic
-        - asset: assets/fonts/CormorantGaramond-SemiBoldItalic.ttf
+        - asset: assets/fonts/Piazzolla-SemiBoldItalic.ttf
           weight: 600
           style: italic
 

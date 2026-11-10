@@ -544,7 +544,7 @@ def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None
         if fe:
             pr["feats"] = fe
             pr["src"] = pr["src"] + [x for x in dict.fromkeys(ft.source_names(fe)) if x not in pr["src"]]
-        team, team_src = tm.for_profile(name, p.get("c", ""), p.get("k", ""), teams, today, aliases) if teams else (None, "")
+        team, team_src = tm.for_profile(name, p.get("c", ""), p.get("k") or p.get("was", ""), teams, today, aliases) if teams else (None, "")
         if team:
             pr["team"] = team
             if team_src and team_src not in pr["src"]:

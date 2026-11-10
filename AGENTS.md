@@ -34,7 +34,7 @@
 - Проверки перед пушем: `cd app && flutter pub get && flutter analyze && flutter test` (около 570 тестов).
   Сборщик данных: `python3 -m scraper.build`.
 - Снимки экрана: виджет-тест с `matchesGoldenFile` и настоящими шрифтами из `app/assets/fonts`
-  (Manrope, Cormorant) плюс иконки Material и Cupertino; дата подменяется
+  (Golos Text, Piazzolla) плюс иконки Material и Cupertino; дата подменяется
   `--dart-define=NOW=2026-10-08T20:10:00+03:00`. Веб-стенд описан в `ПРОЕКТ.md` §9.
 - Данные расписания обновляет сам CI (`update.yml`, дважды в день и при старте турнира через `live.yml`),
   коммиты «Расписание на …» и «Итоги на …» делает он. Перед пушем делай `git pull --rebase`.

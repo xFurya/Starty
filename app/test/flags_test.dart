@@ -27,7 +27,7 @@ Future<void> _font(String family, List<String> files) async {
 
 Widget _app(Widget child, {Brightness b = Brightness.light, double scale = 1}) => MaterialApp(
   key: UniqueKey(),
-  theme: ThemeData(brightness: b, fontFamily: 'Manrope'),
+  theme: ThemeData(brightness: b, fontFamily: 'Golos Text'),
   builder: (c, nav) => MediaQuery(data: MediaQuery.of(c).copyWith(textScaler: TextScaler.linear(scale)), child: nav!),
   home: Scaffold(body: child),
 );
@@ -103,8 +103,8 @@ ProtocolRepo _repo(Object body) => ProtocolRepo(
 
 void main() {
   setUpAll(() async {
-    await _font('Manrope', ['Manrope-Regular.ttf', 'Manrope-Medium.ttf', 'Manrope-SemiBold.ttf', 'Manrope-Bold.ttf']);
-    await _font('Cormorant', ['CormorantGaramond-SemiBold.ttf', 'CormorantGaramond-Bold.ttf']);
+    await _font('Golos Text', ['GolosText-Regular.ttf', 'GolosText-Medium.ttf', 'GolosText-SemiBold.ttf', 'GolosText-Bold.ttf']);
+    await _font('Piazzolla', ['Piazzolla-Medium.ttf', 'Piazzolla-SemiBold.ttf', 'Piazzolla-Bold.ttf']);
   });
 
   setUp(() async {

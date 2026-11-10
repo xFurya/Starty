@@ -22,7 +22,9 @@ FACTS = os.path.join(ROOT, "data", "facts.json")
 _store = None
 _arc = None
 _arc_dirty = False
+_past = None
 ARCHIVE = ar.ARCHIVE
+PAST = ar.PAST
 
 # версия правил: при смене примечательное считается заново; оценочные факты (score/record) прежней
 # версии при этом переносятся — их не пересчитать, статистика ISU уже включает этот турнир
@@ -47,8 +49,19 @@ def archive():
     return _arc
 
 
+def _in_past(pdf):
+    """Протокол уже лежит в архиве прошлых сезонов: добор захватывает и начало нынешнего. Второй раз,
+    в архив сбора, его не кладём — при сведении счёт его элементов удвоился бы."""
+    global _past
+    if _past is None:
+        _past = set(ar.urls(ar.load(PAST)))
+    return pdf in _past
+
+
 def _to_archive(pdf, skaters, meta, kind, level, seg):
     global _arc_dirty
+    if _in_past(pdf):
+        return
     if ar.ingest(archive(), skaters, dict(meta, u=pdf, kind=kind, level=level, seg=seg)):
         _arc_dirty = True
 
@@ -126,7 +139,8 @@ def segment_facts(pdf, *, kind, level, seg, intl, season, to_ru, log=print, meta
     pdf_key = f"{VERSION}|{pdf}"
     if pdf_key in store:
         store[pdf_key] = _adopt(pdf, unique_facts(store[pdf_key]), to_ru)
-        if meta and (meta.get("d") or "") >= ar.FIRST_DAY and not ar.has(archive(), pdf):
+        if (meta and (meta.get("d") or "") >= ar.FIRST_DAY and not ar.has(archive(), pdf)
+                and not _in_past(pdf)):
             try:
                 _to_archive(pdf, st.parse_judges(net.pdf_text(pdf)), meta, kind, level, seg)
             except Exception as e:  # архив пополнится в следующий раз

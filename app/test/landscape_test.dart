@@ -27,14 +27,8 @@ void main() {
   late Schedule data;
 
   setUpAll(() async {
-    await _font('Manrope', [
-      'Manrope-Light.ttf',
-      'Manrope-Regular.ttf',
-      'Manrope-Medium.ttf',
-      'Manrope-SemiBold.ttf',
-      'Manrope-Bold.ttf',
-    ]);
-    await _font('Cormorant', ['CormorantGaramond-SemiBold.ttf', 'CormorantGaramond-Bold.ttf']);
+    await _font('Golos Text', ['GolosText-Regular.ttf', 'GolosText-Medium.ttf', 'GolosText-SemiBold.ttf', 'GolosText-Bold.ttf']);
+    await _font('Piazzolla', ['Piazzolla-Medium.ttf', 'Piazzolla-SemiBold.ttf', 'Piazzolla-Bold.ttf']);
   });
 
   setUp(() async {
@@ -52,7 +46,7 @@ void main() {
   // как в приложении: рамка с панелью разделов вокруг навигатора
   Widget app(Widget child, Brightness b, double scale) => MaterialApp(
     key: UniqueKey(),
-    theme: ThemeData(brightness: b, fontFamily: 'Manrope'),
+    theme: ThemeData(brightness: b, fontFamily: 'Golos Text'),
     builder: (c, nav) => MediaQuery(
       data: MediaQuery.of(c).copyWith(textScaler: TextScaler.linear(scale)),
       child: MediaQuery.withClampedTextScaling(

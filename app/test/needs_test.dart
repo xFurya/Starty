@@ -159,8 +159,8 @@ void main() {
 
   group('экран протокола', () {
     setUpAll(() async {
-      await _font('Manrope', ['Manrope-Light.ttf', 'Manrope-Regular.ttf', 'Manrope-Medium.ttf', 'Manrope-SemiBold.ttf', 'Manrope-Bold.ttf']);
-      await _font('Cormorant', ['CormorantGaramond-SemiBold.ttf', 'CormorantGaramond-Bold.ttf']);
+      await _font('Golos Text', ['GolosText-Regular.ttf', 'GolosText-Medium.ttf', 'GolosText-SemiBold.ttf', 'GolosText-Bold.ttf']);
+      await _font('Piazzolla', ['Piazzolla-Medium.ttf', 'Piazzolla-SemiBold.ttf', 'Piazzolla-Bold.ttf']);
     });
 
     setUp(() async {
@@ -252,7 +252,7 @@ void main() {
       }
       await t.pumpWidget(
         MaterialApp(
-          theme: ThemeData(fontFamily: 'Manrope'),
+          theme: ThemeData(fontFamily: 'Golos Text'),
           home: ProtocolScreen(start: s, repo: repo(j), state: st, opener: (_) async {}),
         ),
       );

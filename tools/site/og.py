@@ -30,8 +30,8 @@ img.paste(icon, (96, 197), round_mask)
 
 d = ImageDraw.Draw(img)
 x = 392
-d.text((x + 2, 214), "КАЛЕНДАРЬ СТАРТОВ", font=font("Manrope-Bold.ttf", 25), fill=ACCENT, spacing=0)
-d.text((x - 2, 246), "Фигурное", font=font("CormorantGaramond-SemiBold.ttf", 104), fill=INK)
-d.text((x - 2, 336), "катание", font=font("CormorantGaramond-SemiBold.ttf", 104), fill=INK)
-d.text((x + 2, 470), "Android, iPhone, Windows, Mac и браузер", font=font("Manrope-Medium.ttf", 29), fill=INK2)
+d.text((x + 2, 212), "КАЛЕНДАРЬ СТАРТОВ", font=font("GolosText-Bold.ttf", 25), fill=ACCENT, spacing=0)
+d.text((x - 2, 250), "Фигурное", font=font("Piazzolla-Medium.ttf", 94), fill=INK)
+d.text((x - 2, 342), "катание", font=font("Piazzolla-Medium.ttf", 94), fill=INK)
+d.text((x + 2, 474), "Android, iPhone, Windows, Mac и браузер", font=font("GolosText-Medium.ttf", 28), fill=INK2)
 img.convert("RGB").save(os.path.join(ROOT, "site", "assets", "og.jpg"), quality=86, optimize=True, progressive=True)

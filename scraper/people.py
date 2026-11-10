@@ -32,8 +32,21 @@ FSR = "https://fsrussia.ru"
 STAT = "https://www.isuresults.com/isujsstat/"
 OURS = {"RUS", "AIN2", "BLR", "AIN1", "AIN"}
 KINDS = {"w": "women", "m": "men", "p": "pairs", "d": "dance"}
+_SINGLES = {"men", "women"}
 # сколько страниц раздела «Соревнования» листать за сбор (по 10 турниров; конец — пустая страница)
 MAX_PAGES = 200
+# Страницу турнира ФФККР заводит задолго до старта, а ссылку на табло ставит к самому старту.
+# Страница, прочитанная без ссылки, перечитывается: за WAIT_BEFORE дней до начала и ещё WAIT_AFTER
+# после конца. Без этого турниры текущего сезона не попадали в справочник вовсе.
+WAIT_BEFORE = 3
+WAIT_AFTER = 45
+# у страниц, прочитанных раньше, дат в кэше нет: их перечитываем понемногу, свежие по адресу первыми
+RECHECK_BUDGET = 60
+# Вид спорта «открыт» в текущем сезоне, когда в нём уже выступает не меньше OPEN_MIN человек и не меньше
+# OPEN_SHARE от прошлогоднего числа: тогда отсутствие человека в нём что-то значит. Пока сезон в этом
+# классе (страна, вид, взрослые/юниоры) не раскачался, прошлогодний вид остаётся текущим.
+OPEN_MIN = 5
+OPEN_SHARE = 0.5
 # версия разбора протоколов: при смене разобранное считается заново
 RULES = 4
 
@@ -45,6 +58,7 @@ def _load():
     except (OSError, ValueError):
         c = {}
     c.setdefault("pages", {})    # страница турнира → адрес табло или ""
+    c.setdefault("dates", {})    # страница турнира → [начало, конец] (ГГГГ-ММ-ДД или "")
     c.setdefault("results", {})  # адрес табло → [[имя, вид]] (только закончившиеся)
     if c.get("v") != RULES:
         c["results"] = {}
@@ -108,32 +122,74 @@ def _tournament_links(page):
             if not re.search(r"/(page-\d+|rss|atom)$", x)]
 
 
-def russians(cache, season_codes, log=print):
-    """[(имя по-русски как в протоколе, вид, уровень, сезон)] со всех всероссийских стартов этих сезонов."""
+def _day(s):
+    try:
+        return dt.date.fromisoformat(s)
+    except (TypeError, ValueError):
+        return None
+
+
+def recheck(links, known, dates, today):
+    """Страницы турниров без табло, которые пора перечитать (см. WAIT_BEFORE). С известными датами —
+    в окне вокруг турнира; без дат — не больше RECHECK_BUDGET за сбор."""
+    due, blind = [], []
+    for l in links:
+        if known.get(l) != "" or _SKIP_TOUR.search(l.replace("-", " ")):
+            continue
+        d = dates.get(l)
+        if d is None:
+            blind.append(l)
+            continue
+        start, end = _day(d[0]), _day(d[1])
+        if start and end and start - dt.timedelta(days=WAIT_BEFORE) <= today <= end + dt.timedelta(days=WAIT_AFTER):
+            due.append(l)
+    blind.sort(key=lambda l: max(re.findall(r"20\d\d", l) or ["0"]), reverse=True)
+    return due + blind[:RECHECK_BUDGET]
+
+
+def _gone(e):
+    """Страницы нет и не будет (404, 410) — это не сбой связи, повторять незачем."""
+    return e.kind == "http" and e.status in (404, 410)
+
+
+def russians(cache, season_codes, log=print, today=None, miss=None):
+    """[(имя по-русски как в протоколе, вид, уровень, сезон)] со всех всероссийских стартов этих сезонов.
+    miss — сюда пишется [(что не прочиталось, сезон или None)]: с пропуском список сезона неполон,
+    и по нему нельзя судить, что человек в этом сезоне не выступал."""
     from . import fsr
-    oldest = min(season_codes)
-    known = cache["pages"]
-    fresh_pages = 0
+    today = today or dt.datetime.now(dt.timezone.utc).date()
+    miss = [] if miss is None else miss
+    known, dates = cache["pages"], cache.setdefault("dates", {})
+    listed = {}
     for n in range(MAX_PAGES):
         try:
             listing = net.fetch(f"{FSR}/sorevnovaniya?start={n * 10}")
         except net.FetchError as e:
             log("  ! список соревнований ФФККР:", e)
+            miss.append(("список соревнований", None))
             break
         links = _tournament_links(listing)
         if not links:
             break
         # листаем весь раздел: старые турниры на последних страницах, и порядок дат не гарантирован
-        for l in links:
-            if l in known:
-                continue
-            try:
-                res = fsr.tournament(FSR + l)["results"] or ""
-            except net.FetchError as e:
-                log("  ! страница турнира ФФККР:", FSR + l, e)
-                continue
-            known[l] = res
+        listed.update(dict.fromkeys(links))
+    fresh_pages = found = 0
+    again = recheck(listed, known, dates, today)
+    for l in [x for x in listed if x not in known] + again:
+        try:
+            t = fsr.tournament(FSR + l)
+        except net.FetchError as e:
+            log("  ! страница турнира ФФККР:", FSR + l, e)
+            if not _gone(e):
+                miss.append((l, None))
+            continue
+        res = t["results"] or ""
+        if l in known:
+            found += bool(res)
+        else:
             fresh_pages += 1
+        known[l] = res
+        dates[l] = [t["start"].isoformat() if t.get("start") else "", t["end"].isoformat() if t.get("end") else ""]
     out = []
     for page, res in known.items():  # noqa: E501
         if not res or _SKIP_TOUR.search(f"{page.replace('-', ' ')} {res}"):
@@ -141,33 +197,46 @@ def russians(cache, season_codes, log=print):
         m = re.search(r"/results/(\d{4})/", res)
         if not m or m.group(1) not in season_codes:
             continue
-        if res not in cache["results"]:
-            got = _results(res, log)
-            if got is None:
+        rows = cache["results"].get(res)
+        if rows is None:
+            try:
+                rows = _results(res, log)
+            except net.FetchError as e:
+                log("  ! табло:", res, e)
+                if not _gone(e):
+                    miss.append((res, m.group(1)))
                 continue
-            cache["results"][res] = got
-        out.extend((n, k, lv, m.group(1)) for n, k, lv in cache["results"][res])
+            if rows is None:
+                continue
+            # в кэш — только закончившийся турнир: до конца заявки ещё меняются
+            end = _day((dates.get(page) or ["", ""])[1])
+            if not end or today > end:
+                cache["results"][res] = rows
+        out.extend((n, k, lv, m.group(1)) for n, k, lv in rows)
     # новые сезоны первыми: уровень — по последнему
     out.sort(key=lambda x: x[3], reverse=True)
-    log(f"  справочник: россиян с протоколов {len({x[0] for x in out})}; новых страниц турниров {fresh_pages}")
+    log(f"  справочник: россиян с протоколов {len({x[0] for x in out})}; новых страниц турниров {fresh_pages}; "
+        f"перечитано без табло {len(again)}, табло появилось у {found}")
     return out
 
 
 def _results(idx_url, log):
-    """[[имя, вид]] по заявкам категорий КМС и выше; None — табло ещё не готово."""
+    """[[имя, вид, уровень]] по заявкам категорий КМС и выше; None — табло ещё не готово.
+    Не ответила страница категории — FetchError: неполный список в кэш не кладём."""
     try:
         idx = st.parse_index(idx_url)
-    except (net.FetchError, ValueError) as e:
+    except ValueError as e:
         log("  ! табло:", idx_url, e)
         return None
     if not idx.get("categories"):
         return None
     out = []
     for c in idx["categories"]:
-        name = (c.get("name") or "").translate(_HOMO)
+        raw = c.get("name") or ""
+        name = raw.translate(_HOMO)
         kind = kind_of_category(name)
         level = level_of_category(name)
-        if not kind or _SKIP_CAT.search(name):
+        if not kind or _SKIP_CAT.search(name) or _SKIP_CAT.search(raw):
             continue
         url = c.get("entries_url") or c.get("results_url")
         if not url:
@@ -175,6 +244,8 @@ def _results(idx_url, log):
         try:
             page = net.fetch(url)
         except net.FetchError as e:
+            if not _gone(e):
+                raise
             log("  ! протокол категории:", url, e)
             continue
         for cells, _ in st._rows(page):
@@ -199,10 +270,16 @@ def entry_name(raw):
 
 # ---------------------------------------------------------------- международные
 
-def _stat_rows(path):
+def _stat_rows(path, season=None, miss=None, log=print):
+    """Строки сезонной статистики ISU. Страницы сезона ещё нет (404, 410) — пустой список, не сбой;
+    любой другой сбой — в miss как (адрес, сезон), тоже пустой список."""
     try:
         page = net.fetch(STAT + path, timeout=40)
-    except net.FetchError:
+    except net.FetchError as e:
+        if not _gone(e):
+            log("  ! статистика ISU:", path, e)
+            if miss is not None:
+                miss.append((path, season))
         return []
     out = []
     for r in re.findall(r"(?s)<tr[^>]*>(.*?)</tr>", page):
@@ -217,19 +294,20 @@ def _stat_rows(path):
     return out
 
 
-def internationals(season_codes, log=print):
-    """[(имя латиницей как в протоколе, страна, вид, уровень, номер биографии ISU)] — у всех есть
-    оценка на турнире ISU. Сезоны — от нового к старому: уровень берётся по последнему (вчерашняя
-    юниорка уже взрослая)."""
+def internationals(season_codes, log=print, miss=None):
+    """[(имя латиницей как в протоколе, страна, вид, уровень, номер биографии ISU, сезон)] — у всех есть
+    оценка на турнире ISU; по строке на каждый сезон, где человек есть. Сезоны — от нового к старому:
+    уровень в каждом сезоне свой (вчерашняя юниорка уже взрослая). miss — [(страница, сезон)] тех,
+    что не прочитались: по такому списку нельзя судить, что человека в сезоне не было."""
     out = {}
     for s in season_codes:
         season = f"20{s[:2]}-{s[2:]}"
         for k, kind in KINDS.items():
             for seg in ("to", "rd") if k == "d" else ("to", "sp"):
-                for name, nation, level, bio in _stat_rows(f"sb{season}/sbts{k}{seg}.htm"):
-                    out.setdefault((name, kind), (nation, level, bio))
-    log(f"  справочник: участников турниров ISU {len(out)}")
-    return [(n, st.nation_code(c), k, lv, b) for (n, k), (c, lv, b) in out.items()]
+                for name, nation, level, bio in _stat_rows(f"sb{season}/sbts{k}{seg}.htm", s, miss, log):
+                    out.setdefault((name, kind, s), (nation, level, bio))
+    log(f"  справочник: участников турниров ISU {len({(n, k) for n, k, _ in out})}")
+    return [(n, st.nation_code(c), k, lv, b, s) for (n, k, s), (c, lv, b) in out.items()]
 
 
 # ---------------------------------------------------------------- фото
@@ -580,23 +658,80 @@ def card_name(fio):
 
 # ---------------------------------------------------------------- всё вместе
 
-def build(names, season_start, log=print):
-    """{"people": [{n, c, k}], "photos": [(имя, адрес, приоритет)]}.
-    n — имя как в остальных данных (наши — по-русски), c — страна, k — виды."""
+_LETTER = {"women": "w", "men": "m", "pairs": "p", "dance": "d"}
+
+
+def _letters(kinds):
+    """{вид: уровень} → «Wp»: строчная — взрослые, заглавная — юниоры."""
+    return "".join(sorted(_LETTER[k].upper() if lv == "junior" else _LETTER[k] for k, lv in kinds.items()))
+
+
+def _aged(old, ok):
+    """(k, was, y) для человека, о котором в двух сезонах ничего нет, по его прежней записи old.
+    Можно верить (ok): прежний вид уходит в «был» без сезона (y пуст — приложение скажет «в прошлых
+    сезонах»). Нельзя — прежнее как есть. У прежней записи вида нет — сохраняется её was/y."""
+    k = old.get("k") or ""
+    if k and ok:
+        return "", k, ""
+    return k, old.get("was") or "", old.get("y") or ""
+
+
+def _with(entry, k, was, y):
+    """Копия записи справочника с новыми k/was/y; was и y — только при непустом was."""
+    e = {a: b for a, b in entry.items() if a not in ("was", "y")}
+    e["k"] = k
+    if was:
+        e["was"] = was
+        e["y"] = y or ""
+    return e
+
+
+def _trusted(sure, c):
+    """Верим ли «нет в списке» для страны c: источники ответили целиком."""
+    return bool(sure["INT"] and (sure["RU"] or c not in OURS))
+
+
+def _pkey(p):
+    return (nm.key(p["n"]), p.get("c", ""))
+
+
+def aged(prev_people, book):
+    """Прежний справочник → тот же, но тем, кого нет в свежем book["people"], прежний вид уходит в
+    «был» (см. _aged). Без book["sure"] (сбор справочника упал) — как есть. Вход не меняется."""
+    sure = (book or {}).get("sure")
+    if not prev_people or not sure:
+        return prev_people
+    have = {_pkey(p) for p in book["people"]}
+    out = []
+    for e in prev_people:
+        if _pkey(e) in have:
+            out.append(dict(e))
+        else:
+            out.append(_with(e, *_aged(e, _trusted(sure, e.get("c", "")))))
+    return out
+
+
+def build(names, season_start, log=print, seen=(), prev=None):
+    """{"people": [{n, c, k, was?, y?}], "photos": [(имя, адрес, приоритет)], "sure": {...}}.
+    n — имя как в остальных данных (наши — по-русски), c — страна, k — виды сейчас, was и y — виды
+    прошлого сезона, которого в этом ещё нет (y — «2025/26» или пусто). seen — [(имя, вид, уровень)]
+    из событий текущего сбора: свидетельство текущего сезона. prev — прежний справочник: пока источник
+    сбоит, по нему не решаем, что человек пропал. sure — ответили ли источники целиком."""
     cache = _load()
     codes = seasons(season_start)
+    cur, last = codes
     people = {}
 
-    def add(name, nation, kind, level):
+    def add(name, nation, kind, level, season=None):
         key = nm.key(name)
         if not key:
             return
         p = people.setdefault(key, {"n": name, "c": nation, "k": {}})
         if not p["c"]:
             p["c"] = nation
-        # первый — из самого нового сезона; без вида (сборная, протокола не нашли) — только страна
+        # {вид: {сезон: уровень}}; в сезоне первый выигрывает. Без вида (сборная, протокола не нашли) — только страна
         if kind is not None:
-            p["k"].setdefault(kind, level)
+            p["k"].setdefault(kind, {}).setdefault(season, level)
         # русское написание важнее латинского, «Пётр» — чем «Петр» (nm.spelling_rank)
         if nm.spelling_rank(name) < nm.spelling_rank(p["n"]):
             p["n"] = name
@@ -628,24 +763,55 @@ def build(names, season_start, log=print):
         n = card_name(x["fio"])
         if n:
             add(names.to_ru(n), "RUS", None, None)
+    miss_ru, miss_int = [], []
     try:
-        ru = russians(cache, codes, log)
+        ru = russians(cache, codes, log, miss=miss_ru)
     except net.FetchError as e:
         log("  ! россияне:", e)
+        miss_ru.append(("россияне", None))
         ru = []
-    for raw, kind, level, _ in ru:
+    for raw, kind, level, season in ru:
         for one in raw.split(" / "):
             names.add(one)
-        add(names.to_ru(raw), "RUS", kind, level)
+        add(names.to_ru(raw), "RUS", kind, level, season)
     bios = {}  # ключ имени → номер биографии ISU (для профиля)
-    for raw, nation, kind, level, bio in internationals(codes, log):
+    try:
+        intl = internationals(codes, log, miss=miss_int)
+    except net.FetchError as e:
+        log("  ! международные:", e)
+        miss_int.append(("международные", None))
+        intl = []
+    for raw, nation, kind, level, bio, season in intl:
         # по-русски — только россияне и белорусы: иначе похожая фамилия иностранца
         # («Koval» у украинца) превращается в чужого человека с чужим фото
         ours = nation in OURS
         name = names.to_ru(raw) if ours else nm.pretty_latin(raw)
-        add(name, nation, kind, level)
+        add(name, nation, kind, level, season)
         if bio:
             bios.setdefault(nm.key(name), bio)
+    sure = {"RU": not miss_ru, "INT": not miss_int}
+    for what, lost in (("россиян", miss_ru), ("международных", miss_int)):
+        if lost:
+            log(f"  ! справочник: источник {what} ответил не целиком ({len(lost)}), «нет в списке» не считаем")
+    # события текущего сбора — свидетельство текущего сезона, но только для тех, кто уже есть
+    kinds = set(KINDS.values())
+    for name, kind, level in seen:
+        if kind not in kinds or level not in ("senior", "junior"):
+            continue
+        for who in dict.fromkeys([name] + name.split(" / ") if " / " in name else [name]):
+            p = people.get(nm.key(who))
+            # одиночник — либо мужчина, либо женщина: событие, где табло перепутало разряды, не делает
+            # его обоими сразу (что уже известно, сильнее)
+            if p and not (kind in _SINGLES and any(k in p["k"] for k in _SINGLES - {kind})):
+                p["k"].setdefault(kind, {}).setdefault(cur, level)
+    # участникам пары — вид пары (у кого есть своя сольная запись): в протоколе они «А / Б»
+    for p in [x for x in people.values() if " / " in x["n"]]:
+        for who in p["n"].split(" / "):
+            solo = people.get(nm.key(who))
+            if solo and solo is not p:
+                for kind, by_season in p["k"].items():
+                    for season, level in by_season.items():
+                        solo["k"].setdefault(kind, {}).setdefault(season, level)
     _save(cache)
 
     photos = []
@@ -669,8 +835,42 @@ def build(names, season_start, log=print):
     from . import photos as ph
     photos.extend((n, u, ph.HAND_PRIO) for n, u in ph.load_hand())
     out = sorted(people.values(), key=lambda p: p["n"])
-    # вид буквой: строчная — взрослые, заглавная — юниоры (W — девушки, M — юноши)
-    letter = {"women": "w", "men": "m", "pairs": "p", "dance": "d"}
+    # сколько людей в классе (наши ли, вид, уровень) выступало в каждом из двух сезонов
+    now_n, last_n = {}, {}
     for p in out:
-        p["k"] = "".join(sorted(letter[k].upper() if lv == "junior" else letter[k] for k, lv in p["k"].items()))
-    return {"people": out, "photos": photos, "wiki_ok": wiki_ok, "cards": card, "bios": bios}
+        for kind, by_season in p["k"].items():
+            for season, level in by_season.items():
+                cl = (p["c"] in OURS, kind, level)
+                if season == cur:
+                    now_n[cl] = now_n.get(cl, 0) + 1
+                elif season == last:
+                    last_n[cl] = last_n.get(cl, 0) + 1
+
+    def is_open(cl):
+        return now_n.get(cl, 0) >= max(OPEN_MIN, OPEN_SHARE * last_n.get(cl, 0))
+
+    before = {_pkey(e): e for e in prev or []}
+    for p in out:
+        by_kind = p.pop("k")
+        c = p["c"]
+        now = {k: s[cur] for k, s in by_kind.items() if cur in s}
+        old = {k: s[last] for k, s in by_kind.items() if cur not in s and last in s}
+        ok = _trusted(sure, c)
+        pe = before.get(_pkey(p))
+        k, was, y = "", "", ""
+        if now:
+            # найденному верим всегда; прошлогодние виды рядом с текущими не показываем
+            k = _letters(now)
+        elif not ok and pe:
+            k, was, y = pe.get("k") or "", pe.get("was") or "", pe.get("y") or ""
+        elif old:
+            if ok and all(is_open((c in OURS, kind, lv)) for kind, lv in old.items()):
+                was, y = _letters(old), f"20{last[:2]}/{last[2:]}"
+            else:
+                k = _letters(old)
+        elif pe:
+            k, was, y = _aged(pe, ok)
+        p["k"] = k
+        if was:
+            p["was"], p["y"] = was, y
+    return {"people": out, "photos": photos, "wiki_ok": wiki_ok, "cards": card, "bios": bios, "sure": sure}

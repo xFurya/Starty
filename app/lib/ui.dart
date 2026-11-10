@@ -21,22 +21,33 @@ final monthOpen = ValueNotifier<String?>(null);
 
 // ------------------------------------------------------------------ шрифты
 
-const serif = 'Cormorant';
+/// Гротеск для всего текста и антиква для заголовков. Оба — с кириллицей, нарисованной вместе с латиницей.
+const sans = 'Golos Text';
+const serif = 'Piazzolla';
 const tnum = [FontFeature.tabularFigures()];
+
+/// Антиква крупнее гротеска того же кегля (высокие строчные): размеры заголовков заданы «на глаз
+/// рядом с текстом», поэтому приводятся одним множителем.
+const serifScale = .88;
+
+/// Пробел у антиквы в крупном кегле узкий, как в книжной полосе: «Четверг, 12 ноября» слипается в
+/// «Четверг,12». Добавка к пробелу в долях кегля.
+const serifGap = .07;
 
 /// Заголовок экрана и крупные слова — антиква.
 TextStyle display(Palette p, double size, {bool italic = false, Color? color, FontWeight? weight}) => TextStyle(
   fontFamily: serif,
-  fontSize: size,
-  fontWeight: weight ?? FontWeight.w600,
+  fontSize: size * serifScale,
+  fontWeight: weight ?? FontWeight.w500,
   fontStyle: italic ? FontStyle.italic : FontStyle.normal,
   height: 1.05,
   letterSpacing: -.2,
+  wordSpacing: size * serifScale * serifGap,
   color: color ?? p.ink,
 );
 
 /// Время: цифры одинаковой ширины.
-TextStyle clock(Color color, double size, {FontWeight weight = FontWeight.w300}) =>
+TextStyle clock(Color color, double size, {FontWeight weight = FontWeight.w400}) =>
     TextStyle(fontSize: size, fontWeight: weight, height: 1.0, letterSpacing: -.6, color: color, fontFeatures: tnum);
 
 // ------------------------------------------------------------------ слова
@@ -414,7 +425,8 @@ class IceHero extends StatelessWidget {
         ),
         if (figure)
           Positioned(
-            right: 64,
+            // левее кнопок, сколько бы их ни было
+            right: 16 + 48.0 * (actions.isEmpty ? 1 : actions.length),
             top: top + 4,
             bottom: 0,
             child: Image.asset(
@@ -484,7 +496,7 @@ class IceHero extends StatelessWidget {
         Positioned.fill(child: IceBackdrop(fadeTo: p.bg, sparkles: figure ? -1 : sparkles)),
         if (figure)
           Positioned(
-            right: 64,
+            right: 16 + 48.0 * (actions.isEmpty ? 1 : actions.length),
             top: top + 2,
             bottom: 0,
             child: Image.asset(
@@ -1734,9 +1746,10 @@ class SideNav extends StatelessWidget {
                         maxLines: 2,
                         style: TextStyle(
                           fontFamily: serif,
-                          fontSize: 19,
+                          fontSize: 17.5,
+                          wordSpacing: 17.5 * serifGap,
                           height: 1.05,
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w600,
                           color: p.ink,
                         ),
                       ),
