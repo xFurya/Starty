@@ -51,9 +51,19 @@ void main() {
       expect(nowChanged({'c': {'t0': 1, 't1': 2}}, planned, known), isTrue);
     });
 
+    test('у старта появился состав, которого не было, — тянем; был — нет', () {
+      expect(nowChanged({'a': {'t0': t0, 't1': t1, 'n': 12}}, planned, known), isTrue);
+      expect(nowChanged({'a': {'t0': t0, 't1': t1, 'n': 12}}, planned, {...known, 'a$lineupMark'}), isFalse);
+      expect(nowChanged({'b': {'t0': 5, 't1': 6, 'n': 0}}, planned, known), isFalse);
+    });
+
     test('известные старты — на сутки назад и трое вперёд от проверки', () {
       final t = DateTime.parse('2026-08-24T12:00:00+03:00');
       expect(knownIds(raw, t), ['a', 'b']);
+      final listed = Schedule([
+        Start.fromJson({..._start('a').toJson(), 'field': [{'name': 'Анна Иванова', 'nation': 'RUS'}]}),
+      ], DateTime.utc(2026, 8, 1), true, false);
+      expect(knownIds(listed, t), ['a', 'a$lineupMark']);
       expect(knownIds(raw, t.add(const Duration(days: 2))), isEmpty);
       expect(knownIds(raw, t.subtract(const Duration(days: 4))), isEmpty);
     });

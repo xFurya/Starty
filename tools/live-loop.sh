@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 # Цикл живых итогов (live.yml). Пока есть идущие или недавние старты — каждые LIVE_INTERVAL секунд
-# (по умолчанию 240) один проход scraper.live; сам заканчивается, когда стартов нет или вышло
-# LIVE_MAX секунд (по умолчанию 21000 = 5 ч 50 мин: потолок задания GitHub — 6 ч). Следующий
-# запуск по расписанию подхватывает дальше. Раз в LIVE_COLD_EVERY секунд (900) вместо горячего
-# прохода идёт полный — с неокончательными итогами уже прошедших сегментов.
+# (по умолчанию 240) один проход scraper.live. Раз в LIVE_COLD_EVERY секунд (900) вместо горячего
+# прохода идёт полный — с неокончательными итогами уже прошедших сегментов; когда горячих нет, а
+# неокончательные есть, — раз в LIVE_COLD_REPEAT (3600).
+#
+# Сторож. Расписание cron у GitHub приходит с опозданием на часы или не приходит, поэтому, пока до
+# какого-нибудь старта меньше суток (scraper.live --plan), цикл не выходит, а ждёт; полный сбор
+# (update.yml) запускает сам, когда у близкого старта нет стартового листа или сбора давно не было
+# (scraper.live --due), не чаще раза в LIVE_REFULL секунд (3600). Через LIVE_MAX секунд (21000 =
+# 5 ч 50 мин: потолок задания GitHub — 6 ч) задание кончается и, если старты впереди, запускает
+# следующее: оно ждёт в очереди группы live и начинается сразу после этого.
 #
 # Что делает проход (под общей блокировкой tools/pages-lock.sh — короткий шаг, секунды):
 #   main → свежие протоколы с gh-pages → scraper.live → коммит в main → публикация gh-pages.
@@ -15,6 +21,8 @@ set -uo pipefail
 INTERVAL=${LIVE_INTERVAL:-240}
 MAX=${LIVE_MAX:-21000}
 COLD_EVERY=${LIVE_COLD_EVERY:-900}
+COLD_REPEAT=${LIVE_COLD_REPEAT:-3600}
+REFULL=${LIVE_REFULL:-3600}
 started=$(date +%s)
 export STARTY_URL="https://${GITHUB_REPOSITORY_OWNER,,}.github.io/${GITHUB_REPOSITORY#*/}/"
 git config user.name "github-actions[bot]"
@@ -56,14 +64,41 @@ pass() {  # $1 — режим scraper.live ("--hot" или пусто)
   release
 }
 
+# полный сбор, если пора и он не идёт: стартовые листы близких стартов, всё, что cron не принёс
+last_dispatch=0
+due_check() {
+  local now why busy
+  now=$(date +%s)
+  [ $(( now - last_dispatch )) -lt "$REFULL" ] && return 0
+  why=$(python3 -m scraper.live --due) || return 0
+  busy=$(gh run list --workflow update.yml --json status \
+    --jq '[.[] | select(.status != "completed")] | length' 2>/dev/null) || { echo "список запусков недоступен"; return 0; }
+  if [ "${busy:-0}" = 0 ]; then
+    echo "полный сбор: $why"
+    gh workflow run update.yml --ref main && last_dispatch=$now
+  fi
+}
+
+# задание кончается, а старты впереди: следующее ждёт в очереди группы live и подхватывает без разрыва
+again() {
+  local what
+  read -r what _ <<<"$(python3 -m scraper.live --plan)"
+  if [ "$what" != none ]; then
+    gh workflow run live.yml --ref main && echo "следующее задание запущено"
+  fi
+}
+
 first=1
 last_full=0
 while :; do
   loop_start=$(date +%s)
-  [ $(( loop_start - started )) -ge "$MAX" ] && { echo "время задания вышло"; exit 0; }
+  left=$(( MAX - (loop_start - started) ))
+  [ "$left" -le 0 ] && { echo "время задания вышло"; again; exit 0; }
   fresh_main || { echo "main недоступен"; sleep 30; continue; }
   read -r what secs <<<"$(python3 -m scraper.live --plan)"
   echo "$(date -u +%H:%M:%S) план: $what ${secs:-}"
+  [ "$what" = none ] && exit 0
+  due_check
   case "$what" in
     hot)
       # идущие старты — каждый проход, а старые неокончательные итоги (утренние сегменты, до
@@ -74,12 +109,16 @@ while :; do
       else
         pass --hot
       fi ;;
-    cold) if [ "$first" = 1 ]; then pass ""; fi; exit 0 ;;   # старые неокончательные итоги — раз за запуск
+    cold)
+      # горячих нет: старые неокончательные — при входе и раз в COLD_REPEAT, между ними ждём
+      if [ "$first" = 1 ] || [ $(( loop_start - last_full )) -ge "$COLD_REPEAT" ]; then
+        pass ""; last_full=$(date +%s)
+      fi
+      first=0; sleep $(( left < 300 ? left : 300 )); continue ;;
     wait)
-      # до начала старта: ждём, но не дольше, чем хватит задания, и не больше 5 минут за раз
-      if [ $(( loop_start - started + secs )) -ge "$MAX" ]; then echo "старт позже конца задания"; exit 0; fi
-      sleep $(( secs < 300 ? secs : 300 )); first=0; continue ;;
-    *) exit 0 ;;
+      # до начала старта: не больше 5 минут за раз и не дольше, чем осталось заданию
+      s=$(( secs < 300 ? secs : 300 ))
+      sleep $(( s < left ? s : left )); first=0; continue ;;
   esac
   first=0
   spent=$(( $(date +%s) - loop_start ))

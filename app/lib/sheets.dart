@@ -280,8 +280,13 @@ class _StartSheet extends StatelessWidget {
       icon: on ? CupertinoIcons.bell_fill : CupertinoIcons.bell_slash,
       iconColor: on ? p.accent : p.ink3,
       title: on ? 'Уведомление в\u00A0${hm(at)}' : 'Без уведомления',
-      // исключение — только когда оно и правда расходится с правилами
-      subtitle: state.notifies(s) != state.rules.matches(s) ? 'исключение из правил' : null,
+      // исключение — только когда оно и правда расходится с правилами. Выключено лишь потому, что
+      // состав неизвестен при «только с отслеживаемыми», — так и сказать: остальным правилам старт подходит
+      subtitle: state.notifies(s) != state.rules.matches(s)
+          ? 'исключение из правил'
+          : !on && state.rules.onlyFollowed && !s.compositionKnown && state.rules.copyWith(onlyFollowed: false).matches(s)
+              ? 'состав ещё не объявлен'
+              : null,
       onTap: () => state.toggleStart(s),
       trailing: ExcludeSemantics(
         child: Switch(value: on, onChanged: (_) => state.toggleStart(s)),

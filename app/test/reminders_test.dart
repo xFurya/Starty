@@ -356,15 +356,16 @@ void main() {
     expect(d.starts.any((e) => e.venue.contains('...')), isFalse);
   });
 
-  test('«только с отслеживаемыми»: старт с неопубликованным составом остаётся, с известным без них — нет', () {
+  test('«только с отслеживаемыми»: и неизвестный состав, и известный без них — без уведомления', () {
     Start start(Map<String, dynamic> extra) => Start.fromJson({
       'id': 'x', 'tid': 't', 'tournament': 'T', 'kind': 'women', 'level': 'senior', 'seg': 'КП',
       'title': 'T — женщины КП', 'start': '2026-10-20T10:00:00+03:00', 'end': '2026-10-20T13:00:00+03:00',
       'venue': '', 'intl': false, 'ours': [], ...extra,
     }).withFollow(Follow(const []));
     final rules = const NotifyRules().copyWith(onlyFollowed: true);
-    // состав неизвестен (расписание есть, стартового листа нет) — напомнить на всякий случай
-    expect(rules.matches(start({})), isTrue);
+    // состав неизвестен (расписание есть, стартового листа нет) — правило не выполнено: включится,
+    // когда состав появится и в нём будут отслеживаемые
+    expect(rules.matches(start({})), isFalse);
     expect(start({}).compositionKnown, isFalse);
     // состав известен, отслеживаемых нет — не напоминать
     final known = start({'field': [{'name': 'Алиса Заикина', 'nation': 'СПБ'}], 'athletes': ['Алиса Заикина']});

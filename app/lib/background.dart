@@ -26,14 +26,20 @@ Schedule remindersSchedule(Schedule raw, {required bool regional, required Follo
 /// составы, старты дальше двух суток).
 const fullEvery = Duration(hours: 3);
 
+/// Метка в [knownIds]: у старта в последнем расписании состав уже был.
+const lineupMark = '#состав';
+
 /// Файл состояния говорит, что пора тянуть всё расписание: у старта с уведомлением ([planned]:
 /// id → [начало, конец] в мс, как в последнем расписании) сдвинулось время или он закончился,
-/// либо появился старт, которого в последнем расписании не было ([known]).
+/// появился старт, которого в последнем расписании не было ([known]), или у старта появился
+/// состав (n), которого не было: уведомление «только с отслеживаемыми» решается по нему.
 bool nowChanged(Map<String, dynamic> now, Map<String, dynamic> planned, Set<String> known) {
   for (final e in now.entries) {
     final v = e.value;
     if (v is! Map) continue;
     if (!known.contains(e.key)) return true;
+    final n = v['n'];
+    if (n is int && n > 0 && !known.contains('${e.key}$lineupMark')) return true;
     final p = planned[e.key];
     if (p is! List || p.length < 2) continue;
     if (v['done'] == true || v['t0'] != p[0] || v['t1'] != p[1]) return true;
@@ -77,10 +83,13 @@ Schedule withNowResults(Schedule raw, Map<String, dynamic> now) {
 }
 
 /// Старты последнего расписания от суток назад до трёх суток вперёд — шире окна файла состояния,
-/// чтобы старт, въехавший в окно, не считался новым.
+/// чтобы старт, въехавший в окно, не считался новым; у кого состав уже был — ещё и с [lineupMark].
 List<String> knownIds(Schedule raw, DateTime t) => [
   for (final s in raw.starts)
-    if (s.t1.isAfter(t.subtract(const Duration(hours: 24))) && s.t0.isBefore(t.add(const Duration(hours: 72)))) s.id,
+    if (s.t1.isAfter(t.subtract(const Duration(hours: 24))) && s.t0.isBefore(t.add(const Duration(hours: 72)))) ...[
+      s.id,
+      if (s.compositionKnown) '${s.id}$lineupMark',
+    ],
 ];
 
 Map<String, dynamic> _json(String? s) {

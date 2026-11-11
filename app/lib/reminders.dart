@@ -70,8 +70,9 @@ class NotifyRules {
     if (s.intl ? !intl : !russian) return false;
     if (!night && msk(s.t0).hour < 8) return false;
     // ours — уже отслеживаемые (россияне и белорусы на международных — если их отслеживают).
-    // Состав ещё не опубликован — убрать нельзя: вдруг там как раз отслеживаемые.
-    if (onlyFollowed && s.ours.isEmpty && s.compositionKnown) return false;
+    // Состав ещё не объявлен — тоже нет: уведомление включится, когда в нём окажутся отслеживаемые
+    // (фон тянет расписание, как только состав появился в файле состояния).
+    if (onlyFollowed && s.ours.isEmpty) return false;
     // международный старт, где нет никого из отслеживаемых, — не о чем напоминать
     if (!s.shown) return false;
     return true;

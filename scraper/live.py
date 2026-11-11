@@ -4,10 +4,12 @@
     python3 -m scraper.live --hot    — то же, но только идущие и свежие старты (для цикла)
     python3 -m scraper.live --check  — есть ли что обновлять (код выхода 0 — есть)
     python3 -m scraper.live --plan   — что делать циклу: hot | cold | wait <секунд> | none
+    python3 -m scraper.live --due    — пора ли полный сбор (код выхода 0 и причина — пора)
 
-Полный сбор (build) идёт минуты и дважды в день; этот — секунды. Задание live.yml крутит его
-циклом (tools/live-loop.sh) каждые несколько минут, пока что-то идёт: промежуточные итоги,
-тройка, места наших, итог турнира и примечательное появляются, как только их выложили на табло.
+Полный сбор (build) идёт минуты; этот — секунды. Задание live.yml крутит его циклом
+(tools/live-loop.sh) каждые несколько минут, пока что-то идёт: промежуточные итоги, тройка,
+места наших, итог турнира и примечательное появляются, как только их выложили на табло. До
+старта цикл сторожит и запускает полный сбор, когда стартового листа нет (full_due).
 """
 import datetime as dt
 import json
@@ -25,12 +27,19 @@ from . import swisstiming as st
 BEFORE = dt.timedelta(minutes=15)
 AFTER = dt.timedelta(hours=24)
 # «Горячий» старт — идёт или закончился недавно: его опрашиваем в каждом проходе цикла. Остальные
-# несостоявшиеся итоги (оценки так и не выложили) — раз за запуск задания, то есть раз в час.
+# несостоявшиеся итоги (оценки так и не выложили) — реже, раз в час (tools/live-loop.sh).
 HOT_AFTER = dt.timedelta(minutes=90)
-# Старт, до которого меньше этого, цикл ждёт, не выходя: следующий запуск по расписанию может
-# опоздать (cron GitHub не точен: 29 октября запусков не было с 5:31 до 13:05 МСК, и утренние
-# сегменты остались без итогов), и начало старта было бы пропущено. Задание живёт до 5 ч 50 мин.
-HORIZON = dt.timedelta(hours=5)
+# Пока до какого-нибудь старта меньше этого, цикл не выходит, а ждёт и сторожит: расписание cron у
+# GitHub приходит с опозданием на часы или не приходит вовсе (29 октября запусков не было с 5:31 до
+# 13:05 МСК; 11 ноября полного сбора на 09:00 не было, живой «каждые 5 минут» приходил раз в 4–8
+# часов). Задание живёт до 5 ч 50 мин и, кончаясь, запускает следующее.
+KEEP = dt.timedelta(hours=24)
+# Стартовый лист (состав, порядок и время выхода) появляется на табло за часы до старта, а берёт
+# его только полный сбор. Старт ближе LINEUP_AHEAD без листа — повод запустить полный сбор, если
+# прошлый был не меньше REFULL назад; без повода — раз в STALE: cron мог не прийти.
+LINEUP_AHEAD = dt.timedelta(hours=8)
+REFULL = dt.timedelta(minutes=60)
+STALE = dt.timedelta(hours=8)
 # Запросов к табло за прогон (оглавления, страницы сегментов, PDF оценок, итоги, судьи) и
 # таймаут одного запроса: задание live — 10 минут. Не хватило бюджета — сегмент остаётся
 # как в прошлом файле, в журнал пишется, что пропущено. Полный проход (горячие и старые
@@ -63,18 +72,45 @@ def active(ev, now, hot=False):
 
 def plan(events, now):
     """Что делать циклу: ("hot", 0) — есть горячие, опрашиваем; ("cold", 0) — горячих нет, но есть
-    старые неокончательные (один проход и выход); ("wait", секунд) — скоро начнётся, ждём;
-    ("none", 0) — делать нечего."""
+    старые неокончательные; ("wait", секунд) — старт в пределах KEEP, ждём (секунд — до окна
+    опроса ближайшего старта с табло, иначе пять минут); ("none", 0) — делать нечего."""
     if any(active(e, now, hot=True) for e in events):
         return "hot", 0
     if any(active(e, now) for e in events):
         return "cold", 0
-    soon = [dt.datetime.fromisoformat(e["start"]) - BEFORE - now for e in events
-            if e.get("live") and not settled(e) and dt.datetime.fromisoformat(e["start"]) > now]
-    soon = [d for d in soon if d <= HORIZON]
-    if soon:
-        return "wait", max(1, int(min(soon).total_seconds()))
-    return "none", 0
+    ahead = [e for e in events if not settled(e)
+             and now < dt.datetime.fromisoformat(e["start"]) <= now + KEEP]
+    if not ahead:
+        return "none", 0
+    soon = [dt.datetime.fromisoformat(e["start"]) - BEFORE - now for e in ahead if e.get("live")]
+    soon = [d for d in soon if d.total_seconds() > 0]
+    return "wait", int(min(soon).total_seconds()) if soon else 300
+
+
+def lineup_missing(ev):
+    """Стартового листа нет: нет состава, а у российского старта и у международного с нашими —
+    ещё и порядка выхода (стартовых номеров)."""
+    field = ev.get("field") or []
+    if not field and not ev.get("athletes"):
+        return True
+    return (not ev.get("intl") or bool(ev.get("ours"))) and not any(o.get("no") for o in field)
+
+
+def full_due(data, now):
+    """Пора ли запускать полный сбор: причина или "" (не пора)."""
+    try:
+        age = now - dt.datetime.fromisoformat(data["generated"])
+    except (KeyError, TypeError, ValueError):
+        return "время прошлого сбора неизвестно"
+    if age >= STALE:
+        return f"полный сбор был {age.total_seconds() / 3600:.0f} ч назад"
+    if age < REFULL:
+        return ""
+    for e in sorted(data.get("events") or [], key=lambda e: e["start"]):
+        t0 = dt.datetime.fromisoformat(e["start"])
+        if now < t0 <= now + LINEUP_AHEAD and lineup_missing(e):
+            return f"нет стартового листа: {e.get('title') or e.get('id')}"
+    return ""
 
 
 def to_refresh(events, now, hot_only):
@@ -304,6 +340,11 @@ def main():
         what, secs = plan(data["events"], now)
         print(f"wait {secs}" if what == "wait" else what)
         return 0
+    if "--due" in sys.argv:
+        why = full_due(data, now)
+        if why:
+            print(why)
+        return 0 if why else 1
     hot_only = "--hot" in sys.argv
     todo = to_refresh(data["events"], now, hot_only)
     if "--check" in sys.argv:

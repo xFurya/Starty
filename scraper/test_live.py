@@ -426,14 +426,55 @@ class Plan(unittest.TestCase):
         self.assertEqual(live.plan([old], t), ("cold", 0))
         soon = self.ev(t + dt.timedelta(minutes=40), t + 2 * h)
         self.assertEqual(live.plan([soon], t), ("wait", 25 * 60))  # до начала окна опроса (старт минус 15 минут)
-        later = self.ev(t + 3 * h, t + 4 * h)  # в пределах горизонта: ждём, а не надеемся на cron
+        later = self.ev(t + 3 * h, t + 4 * h)  # в пределах суток: ждём, а не надеемся на cron
         self.assertEqual(live.plan([later], t), ("wait", 3 * 3600 - 15 * 60))
-        far = self.ev(t + live.HORIZON + 2 * h, t + live.HORIZON + 3 * h)
+        tomorrow = self.ev(t + 20 * h, t + 21 * h)
+        self.assertEqual(live.plan([tomorrow], t), ("wait", 20 * 3600 - 15 * 60))
+        # старт без табло (расписание из PDF): опрашивать нечего, но сторожим — пять минут
+        bare = {"start": (t + 2 * h).isoformat(), "end": (t + 3 * h).isoformat(), "podium": None}
+        self.assertEqual(live.plan([bare], t), ("wait", 300))
+        self.assertEqual(live.plan([bare, later], t), ("wait", 3 * 3600 - 15 * 60))
+        far = self.ev(t + live.KEEP + 2 * h, t + live.KEEP + 3 * h)
         self.assertEqual(live.plan([far], t), ("none", 0))
         done = self.ev(t - 10 * h, t - 8 * h, basis="judges")
         done["podium"] = [{"place": 1}]
         self.assertEqual(live.plan([done], t), ("none", 0))
         self.assertEqual(live.plan([{"start": t.isoformat(), "end": t.isoformat()}], t), ("none", 0))
+
+    def test_lineup_missing(self):
+        self.assertTrue(live.lineup_missing({"field": [], "athletes": []}))
+        listed = [{"name": "А", "no": 1}, {"name": "Б", "no": 2}]
+        entries = [{"name": "А"}, {"name": "Б"}]
+        self.assertFalse(live.lineup_missing({"field": listed}))
+        # заявка без порядка выхода: у российского старта — листа ещё нет
+        self.assertTrue(live.lineup_missing({"field": entries, "intl": False}))
+        # у международного — только если там наши
+        self.assertFalse(live.lineup_missing({"field": entries, "intl": True, "ours": []}))
+        self.assertTrue(live.lineup_missing({"field": entries, "intl": True, "ours": [{"name": "А"}]}))
+
+    def test_full_due(self):
+        t = dt.datetime(2026, 11, 11, 10, 15, tzinfo=MSK)
+        h = dt.timedelta(hours=1)
+
+        def data(age, *events):
+            return {"generated": (t - age).isoformat(), "events": list(events)}
+
+        def ev(start, **kw):
+            return dict({"id": "x", "title": "Танцы, ритм-танец", "start": start.isoformat(),
+                         "end": (start + h).isoformat(), "field": [], "athletes": []}, **kw)
+
+        bare = ev(t + 4 * h)  # «Сердце Сибири» 11 ноября: в 10:15 состава ещё нет, старт в 14:30
+        self.assertEqual(live.full_due(data(2 * h, bare), t), "нет стартового листа: Танцы, ритм-танец")
+        # прошлый сбор только что: подождать, лист мог не успеть выйти
+        self.assertEqual(live.full_due(data(dt.timedelta(minutes=20), bare), t), "")
+        # старт далеко — лист ещё не нужен; прошедший — уже не нужен
+        self.assertEqual(live.full_due(data(2 * h, ev(t + 10 * h)), t), "")
+        self.assertEqual(live.full_due(data(2 * h, ev(t - h)), t), "")
+        listed = ev(t + 4 * h, field=[{"name": "А", "no": 1}], athletes=["А"])
+        self.assertEqual(live.full_due(data(2 * h, listed), t), "")
+        # повода нет, но cron не пришёл: раз в STALE всё равно
+        self.assertTrue(live.full_due(data(live.STALE, listed), t))
+        self.assertTrue(live.full_due({"events": []}, t))
 
     def test_hot_flag_limits_active(self):
         t = dt.datetime(2026, 10, 16, 12, 0, tzinfo=MSK)
@@ -605,6 +646,19 @@ class Finished(unittest.TestCase):
         self.assertNotIn("run", doc["starts"]["a"])
         self.assertEqual(doc["starts"]["b"]["t0"],
                          int(dt.datetime(2026, 11, 5, 13, 40, tzinfo=dt.timezone.utc).timestamp() * 1000))
+
+    def test_now_doc_lineup_size(self):
+        now = dt.datetime(2026, 11, 5, 15, 0, tzinfo=dt.timezone.utc)
+        later = dict(start="2026-11-05T19:00:00+03:00", end="2026-11-05T21:00:00+03:00")
+        bare = self.ev(id="a", field=[], **later)
+        listed = self.ev(id="b", field=[{"name": "А"}, {"name": "Б"}], **later)
+        named = self.ev(id="c", athletes=["А", "Б", "В"], **later)
+        done = self.ev(id="d", provisional=False, live={"basis": "judges"}, field=[{"name": "А"}])
+        doc = b.now_doc([bare, listed, named, done], now)["starts"]
+        self.assertNotIn("n", doc["a"])
+        self.assertEqual(doc["b"]["n"], 2)
+        self.assertEqual(doc["c"]["n"], 3)
+        self.assertNotIn("n", doc["d"])
 
     def test_now_doc_places_of_running_start(self):
         now = dt.datetime(2026, 11, 5, 15, 0, tzinfo=dt.timezone.utc)
