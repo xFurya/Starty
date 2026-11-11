@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-11T00:00:42+03:00",
- "checked": "2026-11-11T00:00:42+03:00",
+ "generated": "2026-11-11T09:35:44+03:00",
+ "checked": "2026-11-11T09:35:44+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -32473,345 +32473,6 @@
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
   },
   {
-   "id": "gs:blackburn-trophy:dance-senior-pt-basic-novice-solo-ice-dance",
-   "tid": "gs:blackburn-trophy",
-   "tournament": "Blackburn Trophy",
-   "kind": "dance",
-   "level": "senior",
-   "seg": "ПТ",
-   "title": "Blackburn Trophy — танцы ПТ",
-   "start": "2026-10-20T10:00:00+03:00",
-   "end": "2026-10-20T12:10:00+03:00",
-   "venue": "Blackburn, Great Britain",
-   "intl": true,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Alba Irvine",
-    "Alice Nico",
-    "Beth Williams",
-    "Claire Bompain",
-    "Delia Zingone Giannone",
-    "Isabel Lovell",
-    "Juliet Mousley",
-    "Martha Bunkoczi",
-    "Nikola Sawicka",
-    "Piper Seedel",
-    "Ruby Morris",
-    "Sarah Tierney",
-    "Sofiia Khodorchuk"
-   ],
-   "src": "https://bisresults.co.uk/permits/2610bbsolo/index.htm",
-   "desc": "Начало: 10:00 МСК",
-   "field": [
-    {
-     "name": "Alba Irvine",
-     "nation": "GBR"
-    },
-    {
-     "name": "Alice Nico",
-     "nation": "FRA"
-    },
-    {
-     "name": "Beth Williams",
-     "nation": "GBR"
-    },
-    {
-     "name": "Claire Bompain",
-     "nation": "FRA"
-    },
-    {
-     "name": "Delia Zingone Giannone",
-     "nation": "GBR"
-    },
-    {
-     "name": "Isabel Lovell",
-     "nation": "GBR"
-    },
-    {
-     "name": "Juliet Mousley",
-     "nation": "GBR"
-    },
-    {
-     "name": "Martha Bunkoczi",
-     "nation": "GBR"
-    },
-    {
-     "name": "Nikola Sawicka",
-     "nation": "GBR"
-    },
-    {
-     "name": "Piper Seedel",
-     "nation": "GBR"
-    },
-    {
-     "name": "Ruby Morris",
-     "nation": "GBR"
-    },
-    {
-     "name": "Sarah Tierney",
-     "nation": "GBR"
-    },
-    {
-     "name": "Sofiia Khodorchuk",
-     "nation": "UKR"
-    }
-   ],
-   "live": {
-    "idx": "https://bisresults.co.uk/permits/2610bbsolo/index.htm",
-    "seg": "https://bisresults.co.uk/permits/2610bbsolo/SEG007.htm",
-    "cat": "https://bisresults.co.uk/permits/2610bbsolo/CAT005RS.htm",
-    "first": "https://bisresults.co.uk/permits/2610bbsolo/SEG001.htm",
-    "names": {
-     "Claire BOMPAIN": "Claire Bompain",
-     "Alice NICO": "Alice Nico",
-     "Martha BUNKOCZI": "Martha Bunkoczi",
-     "Alba IRVINE": "Alba Irvine",
-     "Isabel LOVELL": "Isabel Lovell",
-     "Ruby MORRIS": "Ruby Morris",
-     "Juliet MOUSLEY": "Juliet Mousley",
-     "Nikola SAWICKA": "Nikola Sawicka",
-     "Piper SEEDEL": "Piper Seedel",
-     "Sarah TIERNEY": "Sarah Tierney",
-     "Beth WILLIAMS": "Beth Williams",
-     "Delia ZINGONE GIANNONE": "Delia Zingone Giannone",
-     "Sofiia KHODORCHUK": "Sofiia Khodorchuk"
-    },
-    "basis": null
-   },
-   "proto": "gs_blackburn-trophy.json"
-  },
-  {
-   "id": "gs:blackburn-trophy:dance-senior-pt-intermediate-novice-solo-ice-dance",
-   "tid": "gs:blackburn-trophy",
-   "tournament": "Blackburn Trophy",
-   "kind": "dance",
-   "level": "senior",
-   "seg": "ПТ",
-   "title": "Blackburn Trophy — танцы ПТ",
-   "start": "2026-10-20T11:13:00+03:00",
-   "end": "2026-10-20T13:58:00+03:00",
-   "venue": "Blackburn, Great Britain",
-   "intl": true,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Amelia Galan",
-    "Amy Cable",
-    "Amy Hadfield",
-    "Blake Cairns",
-    "Briony Long",
-    "Chloe Radford",
-    "Daisy Gellatly",
-    "Elsie Blake Hughes",
-    "Emma Garcia Balade",
-    "Grace Ransford",
-    "Isis Evans",
-    "Jaime Cliffe",
-    "Kristi Hull",
-    "Lily Seal",
-    "Scarlett Kirkby",
-    "Serafina D'cruze",
-    "Seren Short"
-   ],
-   "src": "https://bisresults.co.uk/permits/2610bbsolo/index.htm",
-   "desc": "Начало: 11:13 МСК",
-   "field": [
-    {
-     "name": "Amelia Galan",
-     "nation": "GBR"
-    },
-    {
-     "name": "Amy Cable",
-     "nation": "GBR"
-    },
-    {
-     "name": "Amy Hadfield",
-     "nation": "GBR"
-    },
-    {
-     "name": "Blake Cairns",
-     "nation": "GBR"
-    },
-    {
-     "name": "Briony Long",
-     "nation": "GBR"
-    },
-    {
-     "name": "Chloe Radford",
-     "nation": "GBR"
-    },
-    {
-     "name": "Daisy Gellatly",
-     "nation": "GBR"
-    },
-    {
-     "name": "Elsie Blake Hughes",
-     "nation": "GBR"
-    },
-    {
-     "name": "Emma Garcia Balade",
-     "nation": "FRA"
-    },
-    {
-     "name": "Grace Ransford",
-     "nation": "GBR"
-    },
-    {
-     "name": "Isis Evans",
-     "nation": "GBR"
-    },
-    {
-     "name": "Jaime Cliffe",
-     "nation": "GBR"
-    },
-    {
-     "name": "Kristi Hull",
-     "nation": "GBR"
-    },
-    {
-     "name": "Lily Seal",
-     "nation": "GBR"
-    },
-    {
-     "name": "Scarlett Kirkby",
-     "nation": "GBR"
-    },
-    {
-     "name": "Serafina D'cruze",
-     "nation": "GBR"
-    },
-    {
-     "name": "Seren Short",
-     "nation": "GBR"
-    }
-   ],
-   "live": {
-    "idx": "https://bisresults.co.uk/permits/2610bbsolo/index.htm",
-    "seg": "https://bisresults.co.uk/permits/2610bbsolo/SEG013.htm",
-    "cat": "https://bisresults.co.uk/permits/2610bbsolo/CAT004RS.htm",
-    "first": "https://bisresults.co.uk/permits/2610bbsolo/SEG001.htm",
-    "names": {
-     "Emma GARCIA BALADE": "Emma Garcia Balade",
-     "Elsie BLAKE HUGHES": "Elsie Blake Hughes",
-     "Amy CABLE": "Amy Cable",
-     "Blake CAIRNS": "Blake Cairns",
-     "Jaime CLIFFE": "Jaime Cliffe",
-     "Serafina D'CRUZE": "Serafina D'cruze",
-     "Isis EVANS": "Isis Evans",
-     "Amelia GALAN": "Amelia Galan",
-     "Daisy GELLATLY": "Daisy Gellatly",
-     "Amy HADFIELD": "Amy Hadfield",
-     "Kristi HULL": "Kristi Hull",
-     "Scarlett KIRKBY": "Scarlett Kirkby",
-     "Briony LONG": "Briony Long",
-     "Chloe RADFORD": "Chloe Radford",
-     "Grace RANSFORD": "Grace Ransford",
-     "Lily SEAL": "Lily Seal",
-     "Seren SHORT": "Seren Short"
-    },
-    "basis": null
-   },
-   "proto": "gs_blackburn-trophy.json"
-  },
-  {
-   "id": "gs:blackburn-trophy:dance-senior-pt-advanced-novice-solo-ice-dance",
-   "tid": "gs:blackburn-trophy",
-   "tournament": "Blackburn Trophy",
-   "kind": "dance",
-   "level": "senior",
-   "seg": "ПТ",
-   "title": "Blackburn Trophy — танцы ПТ",
-   "start": "2026-10-20T12:50:00+03:00",
-   "end": "2026-10-20T14:45:00+03:00",
-   "venue": "Blackburn, Great Britain",
-   "intl": true,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Alexandra Aspinall",
-    "Amelia Bistrova",
-    "Amelia Kislitsyn",
-    "Darci Rowcroft",
-    "Daria Horoshko",
-    "Julie Bourdenx",
-    "Kiara Petrasovic",
-    "Liza Dawson",
-    "Nour Alami-chawfi",
-    "Sofia Palmares",
-    "Tess Denis-julien L'hermite"
-   ],
-   "src": "https://bisresults.co.uk/permits/2610bbsolo/index.htm",
-   "desc": "Начало: 12:50 МСК",
-   "field": [
-    {
-     "name": "Alexandra Aspinall",
-     "nation": "GBR"
-    },
-    {
-     "name": "Amelia Bistrova",
-     "nation": "LAT"
-    },
-    {
-     "name": "Amelia Kislitsyn",
-     "nation": "GBR"
-    },
-    {
-     "name": "Darci Rowcroft",
-     "nation": "GBR"
-    },
-    {
-     "name": "Daria Horoshko",
-     "nation": "UKR"
-    },
-    {
-     "name": "Julie Bourdenx",
-     "nation": "FRA"
-    },
-    {
-     "name": "Kiara Petrasovic",
-     "nation": "SVK"
-    },
-    {
-     "name": "Liza Dawson",
-     "nation": "GBR"
-    },
-    {
-     "name": "Nour Alami-chawfi",
-     "nation": "FRA"
-    },
-    {
-     "name": "Sofia Palmares",
-     "nation": "PHI"
-    },
-    {
-     "name": "Tess Denis-julien L'hermite",
-     "nation": "FRA"
-    }
-   ],
-   "live": {
-    "idx": "https://bisresults.co.uk/permits/2610bbsolo/index.htm",
-    "seg": "https://bisresults.co.uk/permits/2610bbsolo/SEG010.htm",
-    "cat": "https://bisresults.co.uk/permits/2610bbsolo/CAT003RS.htm",
-    "first": "https://bisresults.co.uk/permits/2610bbsolo/SEG001.htm",
-    "names": {
-     "Nour ALAMI-CHAWFI": "Nour Alami-chawfi",
-     "Julie BOURDENX": "Julie Bourdenx",
-     "Tess DENIS-JULIEN L'HERMITE": "Tess Denis-julien L'hermite",
-     "Alexandra ASPINALL": "Alexandra Aspinall",
-     "Liza DAWSON": "Liza Dawson",
-     "Amelia KISLITSYN": "Amelia Kislitsyn",
-     "Darci ROWCROFT": "Darci Rowcroft",
-     "Amelia BISTROVA": "Amelia Bistrova",
-     "Sofia PALMARES": "Sofia Palmares",
-     "KIARA PETRASOVIC": "Kiara Petrasovic",
-     "Daria HOROSHKO": "Daria Horoshko"
-    },
-    "basis": null
-   },
-   "proto": "gs_blackburn-trophy.json"
-  },
-  {
    "id": "gs:blackburn-trophy:dance-junior-rt",
    "tid": "gs:blackburn-trophy",
    "tournament": "Blackburn Trophy",
@@ -33325,840 +32986,6 @@
     "basis": null
    },
    "proto": "gs_blackburn-trophy.json"
-  },
-  {
-   "id": "gs:blackburn-trophy:dance-senior-pt-senior-solo-ice-dance",
-   "tid": "gs:blackburn-trophy",
-   "tournament": "Blackburn Trophy",
-   "kind": "dance",
-   "level": "senior",
-   "seg": "ПТ",
-   "title": "Blackburn Trophy — танцы ПТ",
-   "start": "2026-10-21T15:02:00+03:00",
-   "end": "2026-10-21T17:42:00+03:00",
-   "venue": "Blackburn, Great Britain",
-   "intl": true,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Agathe Tournadre",
-    "Alana Pang",
-    "Amy World",
-    "Anna-Maria Kislitsyn",
-    "Ebba Ahlin",
-    "Emma Kivioja",
-    "Hermine Erlandsson",
-    "Lavinia Casteller",
-    "Lilia Hallet",
-    "Lola Hesketh",
-    "Lou Terreaux",
-    "Megan Parnell-murphy",
-    "Michaela Georgalakis",
-    "Natasha Griffin",
-    "Ninon Pichard",
-    "Sofiia Holubenko"
-   ],
-   "src": "https://bisresults.co.uk/permits/2610bbsolo/index.htm",
-   "desc": "Начало: 15:02 МСК",
-   "field": [
-    {
-     "name": "Agathe Tournadre",
-     "nation": "FRA"
-    },
-    {
-     "name": "Alana Pang",
-     "nation": "GBR"
-    },
-    {
-     "name": "Amy World",
-     "nation": "GBR"
-    },
-    {
-     "name": "Anna-Maria Kislitsyn",
-     "nation": "GBR"
-    },
-    {
-     "name": "Ebba Ahlin",
-     "nation": "SWE"
-    },
-    {
-     "name": "Emma Kivioja",
-     "nation": "SWE"
-    },
-    {
-     "name": "Hermine Erlandsson",
-     "nation": "SWE"
-    },
-    {
-     "name": "Lavinia Casteller",
-     "nation": "ITA"
-    },
-    {
-     "name": "Lilia Hallet",
-     "nation": "FRA"
-    },
-    {
-     "name": "Lola Hesketh",
-     "nation": "GBR"
-    },
-    {
-     "name": "Lou Terreaux",
-     "nation": "FRA"
-    },
-    {
-     "name": "Megan Parnell-murphy",
-     "nation": "GBR"
-    },
-    {
-     "name": "Michaela Georgalakis",
-     "nation": "SVK"
-    },
-    {
-     "name": "Natasha Griffin",
-     "nation": "GBR"
-    },
-    {
-     "name": "Ninon Pichard",
-     "nation": "FRA"
-    },
-    {
-     "name": "Sofiia Holubenko",
-     "nation": "UKR"
-    }
-   ],
-   "live": {
-    "idx": "https://bisresults.co.uk/permits/2610bbsolo/index.htm",
-    "seg": "https://bisresults.co.uk/permits/2610bbsolo/SEG002.htm",
-    "cat": "https://bisresults.co.uk/permits/2610bbsolo/CAT001RS.htm",
-    "first": "https://bisresults.co.uk/permits/2610bbsolo/SEG001.htm",
-    "names": {
-     "Lilia HALLET": "Lilia Hallet",
-     "NINON PICHARD": "Ninon Pichard",
-     "Lou TERREAUX": "Lou Terreaux",
-     "Agathe TOURNADRE": "Agathe Tournadre",
-     "Natasha GRIFFIN": "Natasha Griffin",
-     "Lola HESKETH": "Lola Hesketh",
-     "Anna-Maria KISLITSYN": "Anna-Maria Kislitsyn",
-     "Alana PANG": "Alana Pang",
-     "Megan PARNELL-MURPHY": "Megan Parnell-murphy",
-     "Amy WORLD": "Amy World",
-     "Lavinia CASTELLER": "Lavinia Casteller",
-     "Michaela GEORGALAKIS": "Michaela Georgalakis",
-     "Ebba AHLIN": "Ebba Ahlin",
-     "Hermine ERLANDSSON": "Hermine Erlandsson",
-     "Emma KIVIOJA": "Emma Kivioja",
-     "Sofiia HOLUBENKO": "Sofiia Holubenko"
-    },
-    "basis": null
-   },
-   "proto": "gs_blackburn-trophy.json"
-  },
-  {
-   "id": "gs:golden-bear:women-senior-pp-chicks-girls",
-   "tid": "gs:golden-bear",
-   "tournament": "Golden Bear",
-   "kind": "women",
-   "level": "senior",
-   "seg": "ПП",
-   "title": "Golden Bear — женщины ПП",
-   "start": "2026-10-22T19:00:00+03:00",
-   "end": "2026-10-22T20:20:00+03:00",
-   "venue": "Zagreb, Croatia",
-   "intl": true,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Alessandro Liberatore",
-    "Arin Yorke",
-    "Corentin Spinar",
-    "David Sedej",
-    "Jan Valtera",
-    "Maxim Varakin",
-    "Oliver Praetorius",
-    "Vladimir Samoilov",
-    "Xan Rols"
-   ],
-   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "desc": "Начало: 19:00 МСК",
-   "field": [
-    {
-     "name": "Alessandro Liberatore",
-     "nation": "SLO"
-    },
-    {
-     "name": "Arin Yorke",
-     "nation": "GBR"
-    },
-    {
-     "name": "Corentin Spinar",
-     "nation": "FRA"
-    },
-    {
-     "name": "David Sedej",
-     "nation": "SLO"
-    },
-    {
-     "name": "Jan Valtera",
-     "nation": "CZE"
-    },
-    {
-     "name": "Maxim Varakin",
-     "nation": "CRO"
-    },
-    {
-     "name": "Oliver Praetorius",
-     "nation": "SWE"
-    },
-    {
-     "name": "Vladimir Samoilov",
-     "nation": "POL"
-    },
-    {
-     "name": "Xan Rols",
-     "nation": "FRA"
-    }
-   ],
-   "live": {
-    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG002.htm",
-    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT001RS.htm",
-    "first": null,
-    "names": {
-     "Maxim VARAKIN": "Maxim Varakin",
-     "Jan VALTERA": "Jan Valtera",
-     "Xan ROLS": "Xan Rols",
-     "Corentin SPINAR": "Corentin Spinar",
-     "Arin YORKE": "Arin Yorke",
-     "Vladimir SAMOILOV": "Vladimir Samoilov",
-     "Alessandro LIBERATORE": "Alessandro Liberatore",
-     "David SEDEJ": "David Sedej",
-     "Oliver PRAETORIUS": "Oliver Praetorius"
-    },
-    "basis": null
-   },
-   "proto": "gs_golden-bear.json"
-  },
-  {
-   "id": "gs:golden-bear:men-senior-kp-advanced-novice-men",
-   "tid": "gs:golden-bear",
-   "tournament": "Golden Bear",
-   "kind": "men",
-   "level": "senior",
-   "seg": "КП",
-   "title": "Golden Bear — мужчины КП",
-   "start": "2026-10-22T19:30:00+03:00",
-   "end": "2026-10-22T20:05:00+03:00",
-   "venue": "Zagreb, Croatia",
-   "intl": true,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Alexandre Lirot",
-    "Aron Horvath-berkes",
-    "Gabin Telemaque",
-    "Rocco Malik Dietrich"
-   ],
-   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Alexandre Lirot",
-     "nation": "FRA",
-     "points": "40.50"
-    },
-    {
-     "place": 2,
-     "name": "Gabin Telemaque",
-     "nation": "FRA",
-     "points": "36.60"
-    },
-    {
-     "place": 3,
-     "name": "Rocco Malik Dietrich",
-     "nation": "GER",
-     "points": "34.51"
-    }
-   ],
-   "desc": "Итог:\n1. Alexandre Lirot — 40.50\n2. Gabin Telemaque — 36.60\n3. Rocco Malik Dietrich — 34.51\n\nНачало: 19:30 МСК",
-   "field": [
-    {
-     "name": "Gabin Telemaque",
-     "nation": "FRA",
-     "no": 1,
-     "warmup": null,
-     "place": 2,
-     "points": "36.60"
-    },
-    {
-     "name": "Rocco Malik Dietrich",
-     "nation": "GER",
-     "no": 2,
-     "warmup": null,
-     "place": 3,
-     "points": "34.51"
-    },
-    {
-     "name": "Aron Horvath-berkes",
-     "nation": "GER",
-     "no": 3,
-     "warmup": null,
-     "place": 4,
-     "points": "29.97"
-    },
-    {
-     "name": "Alexandre Lirot",
-     "nation": "FRA",
-     "no": 4,
-     "warmup": null,
-     "place": 1,
-     "points": "40.50"
-    }
-   ],
-   "live": {
-    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG009.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Alexandre LIROT": "Alexandre Lirot",
-     "Gabin TELEMAQUE": "Gabin Telemaque",
-     "Rocco Malik DIETRICH": "Rocco Malik Dietrich",
-     "Aron HORVATH-BERKES": "Aron Horvath-berkes"
-    },
-    "basis": "judges"
-   },
-   "proto": "gs_golden-bear.json"
-  },
-  {
-   "id": "gs:golden-bear:women-senior-kp-advanced-novice-women",
-   "tid": "gs:golden-bear",
-   "tournament": "Golden Bear",
-   "kind": "women",
-   "level": "senior",
-   "seg": "КП",
-   "title": "Golden Bear — женщины КП",
-   "start": "2026-10-22T20:10:00+03:00",
-   "end": "2026-10-22T22:15:00+03:00",
-   "venue": "Zagreb, Croatia",
-   "intl": true,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Adriana Shevtsova",
-    "Alexa Riddoch",
-    "Anna Greta Varro",
-    "Anna Stepanchuk",
-    "Aria Lusa Kogovsek",
-    "Elisa Irsara",
-    "Hannah Gerard",
-    "Olivia Zoe Szili",
-    "Pia Cizmek",
-    "Polina Zeciri",
-    "Sara Klepetkova",
-    "Tara Besic",
-    "Tena Evelyn Skalicki",
-    "Valentina Beer"
-   ],
-   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Valentina Beer",
-     "nation": "GER",
-     "points": "41.25"
-    },
-    {
-     "place": 2,
-     "name": "Adriana Shevtsova",
-     "nation": "UKR",
-     "points": "40.21"
-    },
-    {
-     "place": 3,
-     "name": "Olivia Zoe Szili",
-     "nation": "HUN",
-     "points": "39.99"
-    }
-   ],
-   "desc": "Итог:\n1. Valentina Beer — 41.25\n2. Adriana Shevtsova — 40.21\n3. Olivia Zoe Szili — 39.99\n\nНачало: 20:10 МСК",
-   "field": [
-    {
-     "name": "Anna Stepanchuk",
-     "nation": "CRO",
-     "no": 1,
-     "warmup": null,
-     "place": 8,
-     "points": "27.26"
-    },
-    {
-     "name": "Anna Greta Varro",
-     "nation": "HUN",
-     "no": 2,
-     "warmup": null,
-     "place": 12,
-     "points": "24.07"
-    },
-    {
-     "name": "Aria Lusa Kogovsek",
-     "nation": "SLO",
-     "no": 3,
-     "warmup": null,
-     "place": 9,
-     "points": "25.70"
-    },
-    {
-     "name": "Elisa Irsara",
-     "nation": "ITA",
-     "no": 4,
-     "warmup": null,
-     "place": 4,
-     "points": "35.39"
-    },
-    {
-     "name": "Adriana Shevtsova",
-     "nation": "UKR",
-     "no": 5,
-     "warmup": null,
-     "place": 2,
-     "points": "40.21"
-    },
-    {
-     "name": "Valentina Beer",
-     "nation": "GER",
-     "no": 7,
-     "warmup": null,
-     "place": 1,
-     "points": "41.25"
-    },
-    {
-     "name": "Pia Cizmek",
-     "nation": "CRO",
-     "no": 8,
-     "warmup": null,
-     "place": 14,
-     "points": "20.56"
-    },
-    {
-     "name": "Sara Klepetkova",
-     "nation": "CZE",
-     "no": 9,
-     "warmup": null,
-     "place": 5,
-     "points": "28.42"
-    },
-    {
-     "name": "Tena Evelyn Skalicki",
-     "nation": "SLO",
-     "no": 10,
-     "warmup": null,
-     "place": 10,
-     "points": "25.57"
-    },
-    {
-     "name": "Tara Besic",
-     "nation": "CRO",
-     "no": 11,
-     "warmup": null,
-     "place": 13,
-     "points": "23.20"
-    },
-    {
-     "name": "Alexa Riddoch",
-     "nation": "GBR",
-     "no": 13,
-     "warmup": null,
-     "place": 6,
-     "points": "28.13"
-    },
-    {
-     "name": "Hannah Gerard",
-     "nation": "FRA",
-     "no": 14,
-     "warmup": null,
-     "place": 7,
-     "points": "27.35"
-    },
-    {
-     "name": "Polina Zeciri",
-     "nation": "AUT",
-     "no": 15,
-     "warmup": null,
-     "place": 11,
-     "points": "24.81"
-    },
-    {
-     "name": "Olivia Zoe Szili",
-     "nation": "HUN",
-     "no": 16,
-     "warmup": null,
-     "place": 3,
-     "points": "39.99"
-    }
-   ],
-   "live": {
-    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG011.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Valentina BEER": "Valentina Beer",
-     "Adriana SHEVTSOVA": "Adriana Shevtsova",
-     "Olivia Zoe SZILI": "Olivia Zoe Szili",
-     "Elisa IRSARA": "Elisa Irsara",
-     "Sara KLEPETKOVA": "Sara Klepetkova",
-     "Alexa RIDDOCH": "Alexa Riddoch",
-     "Hannah GERARD": "Hannah Gerard",
-     "Anna STEPANCHUK": "Anna Stepanchuk",
-     "Aria Lusa KOGOVSEK": "Aria Lusa Kogovsek",
-     "Tena Evelyn SKALICKI": "Tena Evelyn Skalicki",
-     "Polina ZECIRI": "Polina Zeciri",
-     "Anna Greta VARRO": "Anna Greta Varro",
-     "Tara BESIC": "Tara Besic",
-     "Pia CIZMEK": "Pia Cizmek"
-    },
-    "basis": "judges"
-   },
-   "proto": "gs_golden-bear.json"
-  },
-  {
-   "id": "gs:golden-bear:men-senior-pp-advanced-novice-men",
-   "tid": "gs:golden-bear",
-   "tournament": "Golden Bear",
-   "kind": "men",
-   "level": "senior",
-   "seg": "ПП",
-   "title": "Golden Bear — мужчины ПП",
-   "start": "2026-10-23T13:25:00+03:00",
-   "end": "2026-10-23T14:00:00+03:00",
-   "venue": "Zagreb, Croatia",
-   "intl": true,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Alexandre Lirot",
-    "Aron Horvath-berkes",
-    "Gabin Telemaque",
-    "Rocco Malik Dietrich"
-   ],
-   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Gabin Telemaque",
-     "nation": "FRA",
-     "points": "63.20"
-    },
-    {
-     "place": 2,
-     "name": "Rocco Malik Dietrich",
-     "nation": "GER",
-     "points": "60.86"
-    },
-    {
-     "place": 3,
-     "name": "Alexandre Lirot",
-     "nation": "FRA",
-     "points": "58.46"
-    }
-   ],
-   "total": [
-    {
-     "place": 1,
-     "name": "Gabin Telemaque",
-     "nation": "FRA",
-     "points": "99.80"
-    },
-    {
-     "place": 2,
-     "name": "Alexandre Lirot",
-     "nation": "FRA",
-     "points": "98.96"
-    },
-    {
-     "place": 3,
-     "name": "Rocco Malik Dietrich",
-     "nation": "GER",
-     "points": "95.37"
-    }
-   ],
-   "desc": "Итог:\n1. Gabin Telemaque — 63.20\n2. Rocco Malik Dietrich — 60.86\n3. Alexandre Lirot — 58.46\n\nИтог турнира:\n1. Gabin Telemaque — 99.80\n2. Alexandre Lirot — 98.96\n3. Rocco Malik Dietrich — 95.37\n\nНачало: 13:25 МСК",
-   "field": [
-    {
-     "name": "Aron Horvath-berkes",
-     "nation": "GER",
-     "no": 1,
-     "warmup": null,
-     "place": 4,
-     "points": "54.92",
-     "final": 4
-    },
-    {
-     "name": "Rocco Malik Dietrich",
-     "nation": "GER",
-     "no": 2,
-     "warmup": null,
-     "place": 2,
-     "points": "60.86",
-     "final": 3
-    },
-    {
-     "name": "Gabin Telemaque",
-     "nation": "FRA",
-     "no": 3,
-     "warmup": null,
-     "place": 1,
-     "points": "63.20",
-     "final": 1
-    },
-    {
-     "name": "Alexandre Lirot",
-     "nation": "FRA",
-     "no": 4,
-     "warmup": null,
-     "place": 3,
-     "points": "58.46",
-     "final": 2
-    }
-   ],
-   "live": {
-    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG010.htm",
-    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT005RS.htm",
-    "first": "https://www.croskate.hr/cscro2025/GB2026/SEG009.htm",
-    "names": {
-     "Gabin TELEMAQUE": "Gabin Telemaque",
-     "Rocco Malik DIETRICH": "Rocco Malik Dietrich",
-     "Alexandre LIROT": "Alexandre Lirot",
-     "Aron HORVATH-BERKES": "Aron Horvath-berkes"
-    },
-    "basis": "judges"
-   },
-   "proto": "gs_golden-bear.json"
-  },
-  {
-   "id": "gs:golden-bear:women-senior-pp-advanced-novice-women",
-   "tid": "gs:golden-bear",
-   "tournament": "Golden Bear",
-   "kind": "women",
-   "level": "senior",
-   "seg": "ПП",
-   "title": "Golden Bear — женщины ПП",
-   "start": "2026-10-23T13:55:00+03:00",
-   "end": "2026-10-23T16:15:00+03:00",
-   "venue": "Zagreb, Croatia",
-   "intl": true,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Adriana Shevtsova",
-    "Alexa Riddoch",
-    "Anna Greta Varro",
-    "Anna Stepanchuk",
-    "Aria Lusa Kogovsek",
-    "Elisa Irsara",
-    "Hannah Gerard",
-    "Olivia Zoe Szili",
-    "Pia Cizmek",
-    "Polina Zeciri",
-    "Sara Klepetkova",
-    "Tara Besic",
-    "Tena Evelyn Skalicki",
-    "Valentina Beer"
-   ],
-   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Adriana Shevtsova",
-     "nation": "UKR",
-     "points": "64.08"
-    },
-    {
-     "place": 2,
-     "name": "Alexa Riddoch",
-     "nation": "GBR",
-     "points": "64.07"
-    },
-    {
-     "place": 3,
-     "name": "Valentina Beer",
-     "nation": "GER",
-     "points": "63.34"
-    }
-   ],
-   "total": [
-    {
-     "place": 1,
-     "name": "Valentina Beer",
-     "nation": "GER",
-     "points": "104.59"
-    },
-    {
-     "place": 2,
-     "name": "Adriana Shevtsova",
-     "nation": "UKR",
-     "points": "104.29"
-    },
-    {
-     "place": 3,
-     "name": "Olivia Zoe Szili",
-     "nation": "HUN",
-     "points": "99.09"
-    }
-   ],
-   "desc": "Итог:\n1. Adriana Shevtsova — 64.08\n2. Alexa Riddoch — 64.07\n3. Valentina Beer — 63.34\n\nИтог турнира:\n1. Valentina Beer — 104.59\n2. Adriana Shevtsova — 104.29\n3. Olivia Zoe Szili — 99.09\n\nНачало: 13:55 МСК",
-   "field": [
-    {
-     "name": "Pia Cizmek",
-     "nation": "CRO",
-     "no": 1,
-     "warmup": null,
-     "place": 14,
-     "points": "34.47",
-     "final": 14
-    },
-    {
-     "name": "Tara Besic",
-     "nation": "CRO",
-     "no": 2,
-     "warmup": null,
-     "place": 13,
-     "points": "40.46",
-     "final": 13
-    },
-    {
-     "name": "Anna Greta Varro",
-     "nation": "HUN",
-     "no": 3,
-     "warmup": null,
-     "place": 10,
-     "points": "48.29",
-     "final": 11
-    },
-    {
-     "name": "Polina Zeciri",
-     "nation": "AUT",
-     "no": 4,
-     "warmup": null,
-     "place": 9,
-     "points": "48.71",
-     "final": 10
-    },
-    {
-     "name": "Tena Evelyn Skalicki",
-     "nation": "SLO",
-     "no": 5,
-     "warmup": null,
-     "place": 12,
-     "points": "43.65",
-     "final": 12
-    },
-    {
-     "name": "Aria Lusa Kogovsek",
-     "nation": "SLO",
-     "no": 6,
-     "warmup": null,
-     "place": 5,
-     "points": "52.48",
-     "final": 8
-    },
-    {
-     "name": "Anna Stepanchuk",
-     "nation": "CRO",
-     "no": 7,
-     "warmup": null,
-     "place": 8,
-     "points": "50.79",
-     "final": 9
-    },
-    {
-     "name": "Hannah Gerard",
-     "nation": "FRA",
-     "no": 8,
-     "warmup": null,
-     "place": 6,
-     "points": "52.47",
-     "final": 7
-    },
-    {
-     "name": "Alexa Riddoch",
-     "nation": "GBR",
-     "no": 9,
-     "warmup": null,
-     "place": 2,
-     "points": "64.07",
-     "final": 4
-    },
-    {
-     "name": "Sara Klepetkova",
-     "nation": "CZE",
-     "no": 10,
-     "warmup": null,
-     "place": 7,
-     "points": "52.28",
-     "final": 6
-    },
-    {
-     "name": "Elisa Irsara",
-     "nation": "ITA",
-     "no": 11,
-     "warmup": null,
-     "place": 11,
-     "points": "48.02",
-     "final": 5
-    },
-    {
-     "name": "Olivia Zoe Szili",
-     "nation": "HUN",
-     "no": 12,
-     "warmup": null,
-     "place": 4,
-     "points": "59.10",
-     "final": 3
-    },
-    {
-     "name": "Adriana Shevtsova",
-     "nation": "UKR",
-     "no": 13,
-     "warmup": null,
-     "place": 1,
-     "points": "64.08",
-     "final": 2
-    },
-    {
-     "name": "Valentina Beer",
-     "nation": "GER",
-     "no": 14,
-     "warmup": null,
-     "place": 3,
-     "points": "63.34",
-     "final": 1
-    }
-   ],
-   "live": {
-    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG012.htm",
-    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT006RS.htm",
-    "first": "https://www.croskate.hr/cscro2025/GB2026/SEG011.htm",
-    "names": {
-     "Adriana SHEVTSOVA": "Adriana Shevtsova",
-     "Alexa RIDDOCH": "Alexa Riddoch",
-     "Valentina BEER": "Valentina Beer",
-     "Olivia Zoe SZILI": "Olivia Zoe Szili",
-     "Aria Lusa KOGOVSEK": "Aria Lusa Kogovsek",
-     "Hannah GERARD": "Hannah Gerard",
-     "Sara KLEPETKOVA": "Sara Klepetkova",
-     "Anna STEPANCHUK": "Anna Stepanchuk",
-     "Polina ZECIRI": "Polina Zeciri",
-     "Anna Greta VARRO": "Anna Greta Varro",
-     "Elisa IRSARA": "Elisa Irsara",
-     "Tena Evelyn SKALICKI": "Tena Evelyn Skalicki",
-     "Tara BESIC": "Tara Besic",
-     "Pia CIZMEK": "Pia Cizmek"
-    },
-    "basis": "judges"
-   },
-   "proto": "gs_golden-bear.json"
   },
   {
    "id": "gs:golden-bear:men-junior-kp",
@@ -34689,209 +33516,6 @@
     "basis": "judges"
    },
    "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
-  },
-  {
-   "id": "gs:golden-bear:women-senior-pp-intermediate-novice-women",
-   "tid": "gs:golden-bear",
-   "tournament": "Golden Bear",
-   "kind": "women",
-   "level": "senior",
-   "seg": "ПП",
-   "title": "Golden Bear — женщины ПП",
-   "start": "2026-10-23T19:05:00+03:00",
-   "end": "2026-10-23T20:50:00+03:00",
-   "venue": "Zagreb, Croatia",
-   "intl": true,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Csilla Galhidi",
-    "Ema Gulin",
-    "Ema Viljusic",
-    "Eva Dobranic",
-    "Karla Ljubic",
-    "Lena Laudan",
-    "Mija Hebar",
-    "Mila Jakovljevic",
-    "Reka Kiss",
-    "Sofija Georgieva",
-    "Tinkara Poklic",
-    "Vanesa Novosel"
-   ],
-   "src": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Mija Hebar",
-     "nation": "SLO",
-     "points": "41.51"
-    },
-    {
-     "place": 2,
-     "name": "Ema Gulin",
-     "nation": "CRO",
-     "points": "40.35"
-    },
-    {
-     "place": 3,
-     "name": "Mila Jakovljevic",
-     "nation": "CRO",
-     "points": "39.13"
-    }
-   ],
-   "total": [
-    {
-     "place": 1,
-     "name": "Mija Hebar",
-     "nation": "SLO",
-     "points": "41.51"
-    },
-    {
-     "place": 2,
-     "name": "Ema Gulin",
-     "nation": "CRO",
-     "points": "40.35"
-    },
-    {
-     "place": 3,
-     "name": "Mila Jakovljevic",
-     "nation": "CRO",
-     "points": "39.13"
-    }
-   ],
-   "desc": "Итог:\n1. Mija Hebar — 41.51\n2. Ema Gulin — 40.35\n3. Mila Jakovljevic — 39.13\n\nИтог турнира:\n1. Mija Hebar — 41.51\n2. Ema Gulin — 40.35\n3. Mila Jakovljevic — 39.13\n\nНачало: 19:05 МСК",
-   "field": [
-    {
-     "name": "Karla Ljubic",
-     "nation": "CRO",
-     "no": 1,
-     "warmup": 1,
-     "place": 10,
-     "points": "24.25",
-     "final": 10
-    },
-    {
-     "name": "Lena Laudan",
-     "nation": "HUN",
-     "no": 2,
-     "warmup": 1,
-     "place": 11,
-     "points": "22.51",
-     "final": 11
-    },
-    {
-     "name": "Ema Gulin",
-     "nation": "CRO",
-     "no": 3,
-     "warmup": 1,
-     "place": 2,
-     "points": "40.35",
-     "final": 2
-    },
-    {
-     "name": "Csilla Galhidi",
-     "nation": "HUN",
-     "no": 4,
-     "warmup": 1,
-     "place": 5,
-     "points": "37.72",
-     "final": 5
-    },
-    {
-     "name": "Sofija Georgieva",
-     "nation": "CRO",
-     "no": 5,
-     "warmup": 1,
-     "place": 6,
-     "points": "33.80",
-     "final": 6
-    },
-    {
-     "name": "Tinkara Poklic",
-     "nation": "SLO",
-     "no": 6,
-     "warmup": 1,
-     "place": 8,
-     "points": "32.40",
-     "final": 8
-    },
-    {
-     "name": "Reka Kiss",
-     "nation": "HUN",
-     "no": 7,
-     "warmup": 2,
-     "place": 4,
-     "points": "38.04",
-     "final": 4
-    },
-    {
-     "name": "Eva Dobranic",
-     "nation": "CRO",
-     "no": 8,
-     "warmup": 2,
-     "place": 12,
-     "points": "18.59",
-     "final": 12
-    },
-    {
-     "name": "Vanesa Novosel",
-     "nation": "CRO",
-     "no": 9,
-     "warmup": 2,
-     "place": 9,
-     "points": "25.47",
-     "final": 9
-    },
-    {
-     "name": "Mija Hebar",
-     "nation": "SLO",
-     "no": 10,
-     "warmup": 2,
-     "place": 1,
-     "points": "41.51",
-     "final": 1
-    },
-    {
-     "name": "Mila Jakovljevic",
-     "nation": "CRO",
-     "no": 11,
-     "warmup": 2,
-     "place": 3,
-     "points": "39.13",
-     "final": 3
-    },
-    {
-     "name": "Ema Viljusic",
-     "nation": "CRO",
-     "no": 12,
-     "warmup": 2,
-     "place": 7,
-     "points": "33.05",
-     "final": 7
-    }
-   ],
-   "live": {
-    "idx": "https://www.croskate.hr/cscro2025/GB2026/index.htm",
-    "seg": "https://www.croskate.hr/cscro2025/GB2026/SEG013.htm",
-    "cat": "https://www.croskate.hr/cscro2025/GB2026/CAT007RS.htm",
-    "first": null,
-    "names": {
-     "Mija HEBAR": "Mija Hebar",
-     "Ema GULIN": "Ema Gulin",
-     "Mila JAKOVLJEVIC": "Mila Jakovljevic",
-     "Reka KISS": "Reka Kiss",
-     "Csilla GALHIDI": "Csilla Galhidi",
-     "Sofija GEORGIEVA": "Sofija Georgieva",
-     "Ema VILJUSIC": "Ema Viljusic",
-     "Tinkara POKLIC": "Tinkara Poklic",
-     "Vanesa NOVOSEL": "Vanesa Novosel",
-     "Karla LJUBIC": "Karla Ljubic",
-     "Lena LAUDAN": "Lena Laudan",
-     "Eva DOBRANIC": "Eva Dobranic"
-    },
-    "basis": "judges"
-   },
-   "proto": "gs_golden-bear.json"
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:women-senior-kp",
@@ -36342,7 +34966,7 @@
    "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
-   "id": "gs:golden-bear:men-senior-kp-men",
+   "id": "gs:golden-bear:men-senior-kp",
    "tid": "gs:golden-bear",
    "tournament": "Golden Bear",
    "kind": "men",
@@ -36611,7 +35235,7 @@
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
   },
   {
-   "id": "gs:golden-bear:women-senior-kp-women",
+   "id": "gs:golden-bear:women-senior-kp",
    "tid": "gs:golden-bear",
    "tournament": "Golden Bear",
    "kind": "women",
@@ -37371,7 +35995,7 @@
    "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
   },
   {
-   "id": "gs:golden-bear:men-senior-pp-men",
+   "id": "gs:golden-bear:men-senior-pp",
    "tid": "gs:golden-bear",
    "tournament": "Golden Bear",
    "kind": "men",
@@ -37764,7 +36388,7 @@
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
   },
   {
-   "id": "gs:golden-bear:women-senior-pp-women",
+   "id": "gs:golden-bear:women-senior-pp",
    "tid": "gs:golden-bear",
    "tournament": "Golden Bear",
    "kind": "women",
@@ -39792,112 +38416,6 @@
    "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
   },
   {
-   "id": "gs:crystal-skate:women-senior-kp-advanced-novice-women",
-   "tid": "gs:crystal-skate",
-   "tournament": "Crystal Skate",
-   "kind": "women",
-   "level": "senior",
-   "seg": "КП",
-   "title": "Crystal Skate — женщины КП",
-   "start": "2026-10-29T12:00:00+03:00",
-   "end": "2026-10-29T12:40:00+03:00",
-   "venue": "Cheile Gradistei, Romania",
-   "intl": true,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Alexandra-Catalina Stanescu",
-    "Antonia Riciu",
-    "Maria Amedeea Baban",
-    "Nikol Gabuniia",
-    "Yeva Shepeleva"
-   ],
-   "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Nikol Gabuniia",
-     "nation": "GEO",
-     "points": "38.24"
-    },
-    {
-     "place": 2,
-     "name": "Antonia Riciu",
-     "nation": "ROU",
-     "points": "24.83"
-    },
-    {
-     "place": 3,
-     "name": "Maria Amedeea Baban",
-     "nation": "ROU",
-     "points": "23.22"
-    }
-   ],
-   "desc": "Итог:\n1. Nikol Gabuniia — 38.24\n2. Antonia Riciu — 24.83\n3. Maria Amedeea Baban — 23.22\n\nНачало: 12:00 МСК",
-   "field": [
-    {
-     "name": "Alexandra-Catalina Stanescu",
-     "nation": "ROU",
-     "no": 1,
-     "warmup": 1,
-     "place": 5,
-     "points": "16.92",
-     "time": "12:04"
-    },
-    {
-     "name": "Maria Amedeea Baban",
-     "nation": "ROU",
-     "no": 2,
-     "warmup": 1,
-     "place": 3,
-     "points": "23.22",
-     "time": "12:09"
-    },
-    {
-     "name": "Yeva Shepeleva",
-     "nation": "UKR",
-     "no": 3,
-     "warmup": 1,
-     "place": 4,
-     "points": "21.29",
-     "time": "12:14"
-    },
-    {
-     "name": "Antonia Riciu",
-     "nation": "ROU",
-     "no": 4,
-     "warmup": 1,
-     "place": 2,
-     "points": "24.83",
-     "time": "12:19"
-    },
-    {
-     "name": "Nikol Gabuniia",
-     "nation": "GEO",
-     "no": 5,
-     "warmup": 1,
-     "place": 1,
-     "points": "38.24",
-     "time": "12:24"
-    }
-   ],
-   "live": {
-    "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
-    "seg": "https://www.frponline.ro/html2/cryro2026/SEG009.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Nikol GABUNIIA": "Nikol Gabuniia",
-     "Antonia RICIU": "Antonia Riciu",
-     "Maria Amedeea BABAN": "Maria Amedeea Baban",
-     "Yeva SHEPELEVA": "Yeva Shepeleva",
-     "Alexandra-Catalina STANESCU": "Alexandra-Catalina Stanescu"
-    },
-    "basis": "judges"
-   },
-   "proto": "gs_crystal-skate.json"
-  },
-  {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:women-junior-kp",
    "tid": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026",
    "tournament": "ЮГП России «Красноярье»",
@@ -41393,139 +39911,6 @@
    "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
   },
   {
-   "id": "gs:crystal-skate:women-senior-pp-advanced-novice-women",
-   "tid": "gs:crystal-skate",
-   "tournament": "Crystal Skate",
-   "kind": "women",
-   "level": "senior",
-   "seg": "ПП",
-   "title": "Crystal Skate — женщины ПП",
-   "start": "2026-10-30T15:00:00+03:00",
-   "end": "2026-10-30T15:45:00+03:00",
-   "venue": "Cheile Gradistei, Romania",
-   "intl": true,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Alexandra-Catalina Stanescu",
-    "Antonia Riciu",
-    "Maria Amedeea Baban",
-    "Nikol Gabuniia",
-    "Yeva Shepeleva"
-   ],
-   "src": "https://www.frponline.ro/html2/cryro2026/index.htm",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Nikol Gabuniia",
-     "nation": "GEO",
-     "points": "67.44"
-    },
-    {
-     "place": 2,
-     "name": "Antonia Riciu",
-     "nation": "ROU",
-     "points": "49.36"
-    },
-    {
-     "place": 3,
-     "name": "Maria Amedeea Baban",
-     "nation": "ROU",
-     "points": "42.87"
-    }
-   ],
-   "total": [
-    {
-     "place": 1,
-     "name": "Nikol Gabuniia",
-     "nation": "GEO",
-     "points": "105.68"
-    },
-    {
-     "place": 2,
-     "name": "Antonia Riciu",
-     "nation": "ROU",
-     "points": "74.19"
-    },
-    {
-     "place": 3,
-     "name": "Maria Amedeea Baban",
-     "nation": "ROU",
-     "points": "66.09"
-    }
-   ],
-   "desc": "Итог:\n1. Nikol Gabuniia — 67.44\n2. Antonia Riciu — 49.36\n3. Maria Amedeea Baban — 42.87\n\nИтог турнира:\n1. Nikol Gabuniia — 105.68\n2. Antonia Riciu — 74.19\n3. Maria Amedeea Baban — 66.09\n\nПримечательное:\n• Nikol Gabuniia — Отрыв от второго места — 31.49 балла\n\nНачало: 15:00 МСК",
-   "field": [
-    {
-     "name": "Alexandra-Catalina Stanescu",
-     "nation": "ROU",
-     "no": 1,
-     "warmup": null,
-     "place": 4,
-     "points": "41.85",
-     "final": 4
-    },
-    {
-     "name": "Yeva Shepeleva",
-     "nation": "UKR",
-     "no": 2,
-     "warmup": null,
-     "place": 5,
-     "points": "33.61",
-     "final": 5
-    },
-    {
-     "name": "Maria Amedeea Baban",
-     "nation": "ROU",
-     "no": 3,
-     "warmup": null,
-     "place": 3,
-     "points": "42.87",
-     "final": 3
-    },
-    {
-     "name": "Antonia Riciu",
-     "nation": "ROU",
-     "no": 4,
-     "warmup": null,
-     "place": 2,
-     "points": "49.36",
-     "final": 2
-    },
-    {
-     "name": "Nikol Gabuniia",
-     "nation": "GEO",
-     "no": 5,
-     "warmup": null,
-     "place": 1,
-     "points": "67.44",
-     "final": 1
-    }
-   ],
-   "live": {
-    "idx": "https://www.frponline.ro/html2/cryro2026/index.htm",
-    "seg": "https://www.frponline.ro/html2/cryro2026/SEG010.htm",
-    "cat": "https://www.frponline.ro/html2/cryro2026/CAT005RS.htm",
-    "first": "https://www.frponline.ro/html2/cryro2026/SEG009.htm",
-    "names": {
-     "Nikol GABUNIIA": "Nikol Gabuniia",
-     "Antonia RICIU": "Antonia Riciu",
-     "Maria Amedeea BABAN": "Maria Amedeea Baban",
-     "Alexandra-Catalina STANESCU": "Alexandra-Catalina Stanescu",
-     "Yeva SHEPELEVA": "Yeva Shepeleva"
-    },
-    "basis": "judges"
-   },
-   "facts": [
-    {
-     "kind": "place",
-     "text": "Отрыв от второго места — 31.49 балла",
-     "who": "Nikol Gabuniia"
-    }
-   ],
-   "proto": "gs_crystal-skate.json"
-  },
-  {
    "id": "gs:crystal-skate:men-junior-pp",
    "tid": "gs:crystal-skate",
    "tournament": "Crystal Skate",
@@ -41690,7 +40075,7 @@
    "proto": "gs_crystal-skate.json"
   },
   {
-   "id": "gs:crystal-skate:women-senior-kp-women",
+   "id": "gs:crystal-skate:women-senior-kp",
    "tid": "gs:crystal-skate",
    "tournament": "Crystal Skate",
    "kind": "women",
@@ -43102,7 +41487,7 @@
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json"
   },
   {
-   "id": "gs:crystal-skate:women-senior-pp-women",
+   "id": "gs:crystal-skate:women-senior-pp",
    "tid": "gs:crystal-skate",
    "tournament": "Crystal Skate",
    "kind": "women",
@@ -50091,7 +48476,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule_111126.pdf",
    "watch": [
     {
      "name": "Первый канал",
@@ -50123,7 +48508,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule_111126.pdf",
    "watch": [
     {
      "name": "Первый канал",
@@ -50146,7 +48531,7 @@
    "seg": "ПТ",
    "title": "ЮГП России «Сердце Сибири» — танцы ПТ",
    "start": "2026-11-12T10:00:00+03:00",
-   "end": "2026-11-12T12:10:00+03:00",
+   "end": "2026-11-12T12:00:00+03:00",
    "venue": "G-Drive Арена, Омск",
    "intl": false,
    "broadcast": [
@@ -50155,7 +48540,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule_111126.pdf",
    "watch": [
     {
      "name": "Первый канал",
@@ -50178,7 +48563,7 @@
    "seg": "ПП",
    "title": "ЮГП России «Сердце Сибири» — пары ПП",
    "start": "2026-11-12T12:30:00+03:00",
-   "end": "2026-11-12T13:40:00+03:00",
+   "end": "2026-11-12T13:20:00+03:00",
    "venue": "G-Drive Арена, Омск",
    "intl": false,
    "broadcast": [
@@ -50187,7 +48572,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule_111126.pdf",
    "watch": [
     {
      "name": "Первый канал",
@@ -50209,8 +48594,8 @@
    "level": "junior",
    "seg": "КП",
    "title": "ЮГП России «Сердце Сибири» — девушки КП",
-   "start": "2026-11-12T14:00:00+03:00",
-   "end": "2026-11-12T16:20:00+03:00",
+   "start": "2026-11-12T13:45:00+03:00",
+   "end": "2026-11-12T16:05:00+03:00",
    "venue": "G-Drive Арена, Омск",
    "intl": false,
    "broadcast": [
@@ -50219,7 +48604,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule_111126.pdf",
    "watch": [
     {
      "name": "Первый канал",
@@ -50230,7 +48615,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 14:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Начало: 13:45 МСК\nТрансляция: Первый канал / YouTube",
    "proto": null
   },
   {
@@ -50241,8 +48626,8 @@
    "level": "junior",
    "seg": "КП",
    "title": "ЮГП России «Сердце Сибири» — юноши КП",
-   "start": "2026-11-12T16:35:00+03:00",
-   "end": "2026-11-12T19:00:00+03:00",
+   "start": "2026-11-12T16:20:00+03:00",
+   "end": "2026-11-12T18:45:00+03:00",
    "venue": "G-Drive Арена, Омск",
    "intl": false,
    "broadcast": [
@@ -50251,7 +48636,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule_111126.pdf",
    "watch": [
     {
      "name": "Первый канал",
@@ -50262,7 +48647,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 16:35 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Начало: 16:20 МСК\nТрансляция: Первый канал / YouTube",
    "proto": null
   },
   {
@@ -50283,7 +48668,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule_111126.pdf",
    "watch": [
     {
      "name": "Первый канал",
@@ -50315,7 +48700,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/6etap2627_jun_competition_schedule_111126.pdf",
    "watch": [
     {
      "name": "Первый канал",
@@ -54241,7 +52626,6 @@
   "Adian Pitkeev",
   "Adria Liliac",
   "Adrian Jimenez De Baldomero",
-  "Adriana Shevtsova",
   "Agata Starykava",
   "Agathe Tournadre",
   "Ahsun Yun",
@@ -54252,7 +52636,6 @@
   "Akims Kirilovs",
   "Alana Pang",
   "Alayna Coats",
-  "Alba Irvine",
   "Albert Gharibyan",
   "Albin Samuelsson",
   "Albina Abdula",
@@ -54305,7 +52688,6 @@
   "Aletta Lanyi / Huba Gallai",
   "Aletta Lanyi / Ilya Laurenau",
   "Alexa Gasparotto",
-  "Alexa Riddoch",
   "Alexander Baidukov",
   "Alexander Bortzov",
   "Alexander Borzov",
@@ -54337,7 +52719,6 @@
   "Alexandr Kazakov",
   "Alexandra Amelkina",
   "Alexandra Andreeva",
-  "Alexandra Aspinall",
   "Alexandra Avstriyskaya",
   "Alexandra Balyan / Nikolai Balabardin",
   "Alexandra CHISTIAKOVA",
@@ -54357,8 +52738,6 @@
   "Alexandra Shumidub",
   "Alexandra Tetenko",
   "Alexandra VOLCHEK",
-  "Alexandra-Catalina Stanescu",
-  "Alexandre Lirot",
   "Alexei Kiselev",
   "Alexei Krivoruchko",
   "Alexei Menshikov",
@@ -54380,7 +52759,6 @@
   "Aliaksandra Malashka",
   "Aliaksei Mialionkhin",
   "Alica Lengyelova",
-  "Alice Nico",
   "Alice Smith",
   "Alicia Fabbri / Marko Jevgeni Gaidajenko",
   "Alicia Fabbri / Paul Ayer",
@@ -54436,9 +52814,6 @@
   "Amber Fu",
   "Amber Glenn",
   "Ambre Perrier Gianesini / Samuel Blanc Klaperman",
-  "Amelia Bistrova",
-  "Amelia Galan",
-  "Amelia Kislitsyn",
   "Ameliya Soldatova",
   "Ami Nakai",
   "Amina Alexeyeva",
@@ -54446,9 +52821,7 @@
   "Amina Dyenisovna",
   "Amina Yusubava",
   "Amira Irmatova",
-  "Amy Cable",
   "Amy Cui / Jonathan Rogers",
-  "Amy Hadfield",
   "Amy Ritchie / Mitchell Dunn",
   "Amy World",
   "Ana Belen Velez Burbano",
@@ -54586,7 +52959,6 @@
   "Anna Esaulenko",
   "Anna Galcheniuk",
   "Anna Gerke",
-  "Anna Greta Varro",
   "Anna Iakovleva",
   "Anna Kaverzina",
   "Anna Kublikova",
@@ -54612,7 +52984,6 @@
   "Anna Shershak",
   "Anna Shkurdai",
   "Anna Silaeva",
-  "Anna Stepanchuk",
   "Anna Streltsova",
   "Anna Tarusina",
   "Anna Valesi / Martin Bidar",
@@ -54644,14 +53015,12 @@
   "Anton Shulepov",
   "Anton Sikharulidze",
   "Anton Tokarev",
-  "Antonia Riciu",
   "Antonina Dubinina",
   "Antonio SOUZA KORDEIRU",
   "Anzhelika Abachkina",
   "Anzhelika Gayazova",
   "Apollinariia Gradilenko",
   "Apollinariia Panfilova",
-  "Aria Lusa Kogovsek",
   "Ariadna Gupta Espada",
   "Arianna Sassi / Luca Morini",
   "Arianna Soldati / Nicholas Tagliabue",
@@ -54672,7 +53041,6 @@
   "Arina Vorobeva",
   "Arkadi Sergeev",
   "Arlet Levandi",
-  "Aron Horvath-berkes",
   "Arseni MARKOV",
   "Artem Borodulin",
   "Artem Butaev",
@@ -54717,9 +53085,7 @@
   "Beatriz Juratovac",
   "Beau Callahan / Vladimir Furman",
   "Bella Aydin",
-  "Beth Williams",
   "Betina Popova",
-  "Blake Cairns",
   "Bo-Shun Wu",
   "Bogdana Lukashevich",
   "Bohdan Pomohaibo",
@@ -54730,7 +53096,6 @@
   "Bradie Tennell",
   "Breken Brezden",
   "Brianna Dion / Jacob Cote",
-  "Briony Long",
   "Brooke Gewalt",
   "Burak Demirboga",
   "Caleb Farrington",
@@ -54773,11 +53138,9 @@
   "Chloe Desiree Leung",
   "Chloe Levine",
   "Chloe Nguyen / Brendan Giang",
-  "Chloe Radford",
   "Chloe Xin Yao Ng",
   "Christina Carreira / Anthony Ponomarenko",
   "Christopher Konstantinos Manis",
-  "Claire Bompain",
   "Clara Fugate / Warren Fugate",
   "Claudia Amaro Letestu / Marco Amaro Letestu",
   "Clelia Liget-latus / Allan Daniel Fisher",
@@ -54786,8 +53149,6 @@
   "Colton Moness",
   "Corentin Spinar",
   "Corey Circelli",
-  "Csilla Galhidi",
-  "Daisy Gellatly",
   "Daiwei Dai",
   "Daiya Ebihara",
   "Dana-Syrine Crausaz",
@@ -54811,7 +53172,6 @@
   "Daniil Tataurov",
   "Daniil Valanov",
   "Daniil Zvorykin",
-  "Darci Rowcroft",
   "Daria Abdulova",
   "Daria Afanasyeva",
   "Daria Ambalova",
@@ -54827,7 +53187,6 @@
   "Daria Foka",
   "Daria Gubina",
   "Daria Gureeva",
-  "Daria Horoshko",
   "Daria Kazuchiz",
   "Daria Kiiasheva",
   "Daria Korobova",
@@ -54872,7 +53231,6 @@
   "Davide Tomas",
   "Deanna Stellato-dudek / Maxime Deschamps",
   "Debora Anna Cohen / Lukas Vochozka",
-  "Delia Zingone Giannone",
   "Deniels Van Lubeks",
   "Denis Bazdirev",
   "Denis Egorov",
@@ -55049,7 +53407,6 @@
   "Elin Katla Sveinbjornsdottir",
   "Elina Goidina",
   "Elina Tsirskikh",
-  "Elisa Irsara",
   "Elisabeth Dibbern",
   "Eliska Brezinova",
   "Eliska Kubanova",
@@ -55096,13 +53453,10 @@
   "Elliana Peal / Ethan Peal",
   "Ellie Kam / Danny O'shea",
   "Eloisa Merino-sola",
-  "Elsie Blake Hughes",
   "Elvina Bikmukhametova",
   "Elvira Kildeeva",
   "Elvira Matveeva",
   "Elyce Lin-gracey",
-  "Ema Gulin",
-  "Ema Viljusic",
   "Ema Vukovic",
   "Emese Csiszer / Mark Shapiro",
   "Emilea Zingas / Vadym Kolesnik",
@@ -55115,7 +53469,6 @@
   "Emily Chan / Spencer Akira Howe",
   "Emma Cerkalova",
   "Emma Chen",
-  "Emma Garcia Balade",
   "Emma Kivioja",
   "Emma Loubeyres",
   "Emma Lyons",
@@ -55126,7 +53479,6 @@
   "Ethan Luo",
   "Eugenia Tkachenka",
   "Euken Alberdi",
-  "Eva Dobranic",
   "Eva Dudic",
   "Eva Eremina",
   "Eva KHACHATURIAN",
@@ -55190,7 +53542,6 @@
   "Flora Marie Schaller",
   "Francois Pitot",
   "Furkan Emre Incel",
-  "Gabin Telemaque",
   "Gabriel Martinez",
   "Gabriela Palomeque / Tanner White",
   "Gabriele Frangipani",
@@ -55221,7 +53572,6 @@
   "Gordei Gorshkov",
   "Gordey Khubulov",
   "Grace Fischer / Luke Fischer",
-  "Grace Ransford",
   "Grayson Long",
   "Greta Norina Major",
   "Grigori Petrovski",
@@ -55243,7 +53593,6 @@
   "Hanna Paroshyna",
   "Hanna Yasmine Neila Semlali",
   "Hannah Frank",
-  "Hannah Gerard",
   "Hannah Gibbon",
   "Hannah Herrera / Ivan Khobta",
   "Hannah Kim",
@@ -55329,12 +53678,10 @@
   "Irmak Yucel / Danil Pak",
   "Iryna Pidgaina / Artem Koval",
   "Isabeau Levito",
-  "Isabel Lovell",
   "Isabella Flores / Linus Colmor Jepsen",
   "Isabella Gamez / Aleksandr Korovin",
   "Isabella Miel Hazelton",
   "Isabella Wang",
-  "Isis Evans",
   "Iuliia Afanaseva",
   "Iuliia Balbutskaia",
   "Iuliia Cherginets",
@@ -55360,7 +53707,6 @@
   "Jade Hovine",
   "Jaekeun Lee",
   "Jaewook Chung",
-  "Jaime Cliffe",
   "Jakhongir Abylkassymov",
   "Jakub Lofek",
   "Jakub Tykal",
@@ -55440,10 +53786,8 @@
   "Julia Zaluzhnaia",
   "Julianna Farrell",
   "Julianne Wong / Jared Mcpike",
-  "Julie Bourdenx",
   "Julie Straus Casini",
   "Juliet Meek / Devin Meek",
-  "Juliet Mousley",
   "Julija Lovrencic",
   "Julio Potapenko",
   "Junfei Ren / Jianing Xing",
@@ -55481,7 +53825,6 @@
   "Karina Shesterikova",
   "Karina Sidarenka",
   "Karine Zhuravleva",
-  "Karla Ljubic",
   "Karla Maria Karl / Kai Hoferichter",
   "Karoliine Raudsepp",
   "Karolina Bialas",
@@ -55513,7 +53856,6 @@
   "Ketsi Rypinskaya",
   "Kevin Aymoz",
   "Khrystyna Haliareta",
-  "Kiara Petrasovic",
   "Kiki Werlen",
   "Kimmy Repond",
   "Kincso Dorina Simon",
@@ -55543,7 +53885,6 @@
   "Kornelia Gareeva",
   "Krista Georgieva",
   "Kristen Spours",
-  "Kristi Hull",
   "Kristina Arkusha",
   "Kristina Astakhova",
   "Kristina Baklanova",
@@ -55620,7 +53961,6 @@
   "Leina You / Henrick Chan",
   "Lelle Agota Molnar",
   "Lena Kopytowska",
-  "Lena Laudan",
   "Lena Zerinvary-simon / Huba Gallai",
   "Lenny Olivier",
   "Leon Lo",
@@ -55657,7 +53997,6 @@
   "Lilou Remeysen",
   "Lily Bakhtiari",
   "Lily Hensen / Nathan Lickers",
-  "Lily Seal",
   "Lily Wilberforce / Mozes Jozsef Berei",
   "Lina Fedorova",
   "Lina Kudriavtseva",
@@ -55667,7 +54006,6 @@
   "Linzy Fitzpatrick / Keyton Bearinger",
   "Liubov ILYUSHECHKINA",
   "Livia Kaiser",
-  "Liza Dawson",
   "Lizaveta Kastsiuk",
   "Lizaveta Khlypauka",
   "Lizaveta Komar",
@@ -55755,7 +54093,6 @@
   "Marharyta Bohdan",
   "Marharyta Chachyk",
   "Marharyta Selivonik",
-  "Maria Amedeea Baban",
   "Maria Artemieva",
   "Maria Bakusheva",
   "Maria Butyrskaya",
@@ -55831,7 +54168,6 @@
   "Marketa Sukupova",
   "Marta Helena Prangel",
   "Martaliis Kuslap",
-  "Martha Bunkoczi",
   "Martina Lavazza / Raphael Raymond Meunier",
   "Martina Petra Major",
   "Maryia Dahil",
@@ -55892,7 +54228,6 @@
   "Michelle Edgina Axille",
   "Mihana Nakajima / Isak Bengt-Eric Grans",
   "Mihhail Selevko",
-  "Mija Hebar",
   "Mikalai Kamianchuk",
   "Mikalai Kazlou",
   "Mikayel Salazaryan",
@@ -55913,7 +54248,6 @@
   "Mikhail Stifunin",
   "Mikhail ZHIRNOV",
   "Mila Bertsch",
-  "Mila Jakovljevic",
   "Milada Kovar / Jared Mcpike",
   "Milana Matakaeva",
   "Milana Mozeiko",
@@ -56022,11 +54356,9 @@
   "Nikita VOLODIN",
   "Nikita Vitryanyuk",
   "Nikol Dvornikava",
-  "Nikol Gabuniia",
   "Nikol Gosviani",
   "Nikol Kuperman",
   "Nikola Fomchenkova",
-  "Nikola Sawicka",
   "Nikolai BABIN",
   "Nikolai Kamenchuk",
   "Nikolai Moroshkin",
@@ -56048,7 +54380,6 @@
   "Noemi Maria Tali / Noah Lafornara",
   "Nora Coppens",
   "Nora Sayed",
-  "Nour Alami-chawfi",
   "Nozomu Yoshioka",
   "Nuriya Suleimen",
   "Oksana Adskova",
@@ -56096,7 +54427,6 @@
   "Olivia Lengyelova",
   "Olivia Lisko",
   "Olivia Smart / Tim Dieck",
-  "Olivia Zoe Szili",
   "Oliviia Bazlova",
   "Oliviia Zherebko",
   "Oliwia Strokosz",
@@ -56130,10 +54460,8 @@
   "Phattaratida Kaneshige",
   "Phebe Bekker / James Hernandez",
   "Philomene Sabourin / Raul Bermejo",
-  "Pia Cizmek",
   "Pimmpida Lerdpraiwan",
   "Piper Gilles / Paul Poirier",
-  "Piper Seedel",
   "Polina Agafonova",
   "Polina Akhrakhadze",
   "Polina Aleksandrova",
@@ -56163,7 +54491,6 @@
   "Polina Vlasova",
   "Polina Yakobs",
   "Polina Zankova",
-  "Polina Zeciri",
   "Qihan Zhao",
   "Rachel Samiri",
   "Radzivon Iliutka",
@@ -56183,7 +54510,6 @@
   "Rebecca Rusu",
   "Reese Rose",
   "Regina Llado Fernandez Del Campo",
-  "Reka Kiss",
   "Rena Uezono",
   "Renata Khabibullina",
   "Renata Shavaleeva",
@@ -56198,7 +54524,6 @@
   "Rio Nakata",
   "Rion Sumiyoshi",
   "Robert Wildt",
-  "Rocco Malik Dietrich",
   "Roman Ignatchik",
   "Roman Kostomarov",
   "Roman Mylnikov",
@@ -56211,7 +54536,6 @@
   "Romy Reverchon / Victor Di-muzio-carlino",
   "Rosa Sheveleva",
   "Rose Anne Marie Bordet / Hugo Tomas",
-  "Ruby Morris",
   "Rui Guo / Yiwen Zhang",
   "Rui Qin",
   "Ruichen Tong",
@@ -56241,7 +54565,6 @@
   "Sara Bin Karam",
   "Sara Conti / Niccolo Macii",
   "Sara Franzi",
-  "Sara Klepetkova",
   "Sara Zofrea Bravo",
   "Sara-Maude Dupuis",
   "Sarah Abu Elseoud",
@@ -56249,11 +54572,9 @@
   "Sarah Marcilly Vazquez / Jolan Engel",
   "Sarah Marie Pesch",
   "Sarah Nunez / Blake Eisenach",
-  "Sarah Tierney",
   "Sarina Joos",
   "Saskia Oudejans",
   "Saveli Ugriumov",
-  "Scarlett Kirkby",
   "Selma Valitalo",
   "Selmasiri Bella Larsen",
   "Semen Daniliants",
@@ -56263,9 +54584,7 @@
   "Seojin Youn",
   "Seoyoung Kim",
   "Serafima Sakhanovich",
-  "Serafina D'cruze",
   "Seraina Tscharner / Laurin Wiederkehr",
-  "Seren Short",
   "Sergei Alexeev",
   "Sergei Bakhmat",
   "Sergei Davydov",
@@ -56330,7 +54649,6 @@
   "Sofia Nazarova",
   "Sofia Nekrassova",
   "Sofia Opaleva",
-  "Sofia Palmares",
   "Sofia Panevchik",
   "Sofia Polishchuk",
   "Sofia Riabicheva",
@@ -56352,14 +54670,12 @@
   "Sofiia Holubenko",
   "Sofiia Hryhorenko",
   "Sofiia Kachushkina",
-  "Sofiia Khodorchuk",
   "Sofiia Naumenko",
   "Sofiia Rymshyna",
   "Sofiia Shubina",
   "Sofiia Titanian",
   "Sofiia Trusova",
   "Sofiia Voinovskaia",
-  "Sofija Georgieva",
   "Sofiya Farafonova",
   "Sofiya Svetsiankova",
   "Sofja Stepcenko",
@@ -56431,7 +54747,6 @@
   "Tamir Kuperman",
   "Tania Anechkina",
   "Tao Macrae",
-  "Tara Besic",
   "Tara Plahutar",
   "Tara Prasad",
   "Tasha Shin Hui Lai / Gabriel Liu",
@@ -56458,11 +54773,9 @@
   "Tea Sajko",
   "Teimuraz Pulin",
   "Temirlan Yakiyaev",
-  "Tena Evelyn Skalicki",
   "Tera Gropp",
   "Terezia Pocsova",
   "Teryn Kim / Lazuli Lune",
-  "Tess Denis-julien L'hermite",
   "Tetiana Bielodonova / Ivan Kachur",
   "Thanapa Chumpolkoolvong",
   "Tharon Warasittichai",
@@ -56471,7 +54784,6 @@
   "Tim Nordin",
   "Timur Adylkhanov",
   "Timur Alaskhanov",
-  "Tinkara Poklic",
   "Tobia Oellerer",
   "Tomas Guarino Sabate",
   "Tomoki Hiwatashi",
@@ -56504,7 +54816,6 @@
   "Valentin Kuziaev",
   "Valentin Molotov",
   "Valentina Andrianova",
-  "Valentina Beer",
   "Valentina Plazas / Maximiliano Fernandez",
   "Valentina Razskazova",
   "Valeria Bulygina",
@@ -56535,7 +54846,6 @@
   "Valeryia Shedzka",
   "Valeryia Yanuchkouskaya",
   "Valtter Virtanen",
-  "Vanesa Novosel",
   "Vanesa Selmekova",
   "Varvara Abramkina",
   "Varvara Artemova",
@@ -56681,7 +54991,6 @@
   "Yeuk Kwan Zhu",
   "Yeva Alekhnovich / Stanislaw Borysewicz",
   "Yeva Markava",
-  "Yeva Shepeleva",
   "Yi Zhu",
   "Yihan Wang",
   "Yihe Sun",
@@ -56751,6 +55060,7 @@
   "Zofia Grzegorzewska / Oleg Muratov",
   "Zofia Kong",
   "Zsofia Szeplaki",
+  "Августина Устинова",
   "Аврора",
   "Агата Монаширова",
   "Агата Монаширова / Алексей Тамеев",
@@ -57366,6 +55676,7 @@
   "Елизавета Андреева",
   "Елизавета Банных",
   "Елизавета Борисова",
+  "Елизавета Бородихина",
   "Елизавета Вахитова",
   "Елизавета Дубынина",
   "Елизавета Емельяненко",
@@ -57509,6 +55820,7 @@
   "Кирилл Махов",
   "Кирилл Николаев",
   "Кирилл Ноздреватых",
+  "Кирилл Штурбабин",
   "Климентий Толчинский",
   "Константин Волков",
   "Константин Романов",
@@ -57550,6 +55862,7 @@
   "Лидия Голубова",
   "Лидия Плескачёва",
   "Лидия Рябцева",
+  "Лизавета Мельникова",
   "Лилия Галеева",
   "Лилия Литенко",
   "Лилия Литенко / Александр Рыженков",
@@ -57974,6 +56287,7 @@
   "Эльвира Елесина",
   "Эмиль Хисамов",
   "Эсмира Терегулова",
+  "Юлиана Новиченкова",
   "Юлиана Черенёва",
   "Юлия Александрова",
   "Юлия Артемьева",
@@ -58134,9 +56448,7 @@
   {
    "n": "Aisha Allakhverdieva",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26",
+   "k": "W",
    "p": "5f6eb80762ee"
   },
   {
@@ -65898,7 +64210,7 @@
   {
    "n": "Maksim Varakin",
    "c": "RUS",
-   "k": "w"
+   "k": "m"
   },
   {
    "n": "Maksim Yalenich",
@@ -71292,6 +69604,11 @@
    "p": "fd2ad1bd46d0"
   },
   {
+   "n": "Августина Устинова",
+   "c": "RUS",
+   "k": "w"
+  },
+  {
    "n": "Агата Монаширова / Алексей Тамеев",
    "c": "RUS",
    "k": "",
@@ -71301,9 +69618,7 @@
   {
    "n": "Агата Морозова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Агата Петрова",
@@ -71335,9 +69650,7 @@
   {
    "n": "Азалия Гимадиева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Аксинья Панасенко / Максим Вахрамеев",
@@ -71426,6 +69739,11 @@
    "p": "065befbfbad5"
   },
   {
+   "n": "Александр Щербаков",
+   "c": "RUS",
+   "k": "m"
+  },
+  {
    "n": "Александра Анушова",
    "c": "RUS",
    "k": "W"
@@ -71474,23 +69792,17 @@
   {
    "n": "Александра Марьина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Александра Матвеева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Александра Одинцова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Александра Прокопец",
@@ -71505,9 +69817,7 @@
   {
    "n": "Александра Редина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Александра Степанова",
@@ -71603,9 +69913,7 @@
   {
    "n": "Алеся Тиуртьева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Аливия Алиева / Владимир Вавилов",
@@ -71617,9 +69925,7 @@
   {
    "n": "Алина Белова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Алина Горбачёва",
@@ -71630,9 +69936,7 @@
   {
    "n": "Алина Королёва",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Алина Локтева",
@@ -71642,9 +69946,7 @@
   {
    "n": "Алина Побожная",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Алина Телегина",
@@ -71683,9 +69985,7 @@
   {
    "n": "Алиса Гориславская",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Алиса Двоеглазова",
@@ -71736,16 +70036,12 @@
   {
    "n": "Альбина Брустилова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Альбина Герасимова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Альбина Камалдинова",
@@ -71773,9 +70069,7 @@
   {
    "n": "Алёна Дронова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Алёна Клопова",
@@ -71826,16 +70120,12 @@
   {
    "n": "Анастасия Быкова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Анастасия Ваховская",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Анастасия Выровая",
@@ -71862,9 +70152,7 @@
   {
    "n": "Анастасия Докучаева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Анастасия Жуланова",
@@ -71938,9 +70226,7 @@
   {
    "n": "Анастасия Трощилова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Анастасия Уткина / Артемий Мохов",
@@ -71977,9 +70263,7 @@
   {
    "n": "Анастасия Шигина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ангелина Кулагина / Максим Ихсанов",
@@ -71989,9 +70273,7 @@
   {
    "n": "Ангелина Пеньковая",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ангелина Сенько / Вадим Кайзер",
@@ -72069,16 +70351,12 @@
   {
    "n": "Анжелика Гапотченко",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Анжелика Евтушенко",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Анжелика Любицкая / Владислав Глазунов",
@@ -72090,9 +70368,7 @@
   {
    "n": "Анисия Ефимова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Анна Билибина",
@@ -72109,9 +70385,7 @@
   {
    "n": "Анна Видилина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Анна Докукина",
@@ -72236,23 +70510,17 @@
   {
    "n": "Ариадна Митрофанова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Арина Бойцова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Арина Васильева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Арина Власова / Денис Горбушин",
@@ -72275,23 +70543,17 @@
   {
    "n": "Арина Данилова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Арина Дюмина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Арина Козырева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Арина Коршунова",
@@ -72342,7 +70604,7 @@
   {
    "n": "Арина Ореховская",
    "c": "RUS",
-   "k": "W",
+   "k": "w",
    "p": "189c6ccf3ac2"
   },
   {
@@ -72366,30 +70628,22 @@
   {
    "n": "Арина Пузанкова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Арина Теслина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Арина Трипутень",
    "c": "BLR",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Арина Чернобавская",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Арсений Артемьев",
@@ -72457,9 +70711,7 @@
   {
    "n": "Артём Бурнаев",
    "c": "RUS",
-   "k": "",
-   "was": "M",
-   "y": "2025/26"
+   "k": "m"
   },
   {
    "n": "Артём Грицаенко",
@@ -72535,9 +70787,7 @@
   {
    "n": "Валерия Мельникова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Валерия Ходыкина / Даниил Бутенко",
@@ -72552,9 +70802,7 @@
   {
    "n": "Валерия Шедько",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Варвара Авдеева",
@@ -72564,9 +70812,7 @@
   {
    "n": "Варвара Воронина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Варвара Гарибян",
@@ -72600,16 +70846,12 @@
   {
    "n": "Варвара Кравчина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Варвара Кузьминых",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Варвара Равгень / Михаил Прусенков",
@@ -72621,9 +70863,7 @@
   {
    "n": "Варвара Родина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Варвара Слуцкая",
@@ -72646,9 +70886,7 @@
   {
    "n": "Варвара Стерлядева / Владислав Мухин",
    "c": "RUS",
-   "k": "",
-   "was": "D",
-   "y": "2025/26"
+   "k": "d"
   },
   {
    "n": "Варвара Троицкая / Никита Максимов",
@@ -72678,16 +70916,12 @@
   {
    "n": "Василиса Абакумова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Василиса Будина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Василиса Григорьева",
@@ -72716,9 +70950,7 @@
   {
    "n": "Василиса Курлова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "w"
   },
   {
    "n": "Вениамин Башуров",
@@ -72746,9 +70978,7 @@
   {
    "n": "Вероника Пенькова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Вероника Яметова",
@@ -72772,9 +71002,7 @@
   {
    "n": "Виктория Городецкая",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Виктория Двинина",
@@ -72791,21 +71019,17 @@
   {
    "n": "Виктория Жаркова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Виктория Михайлова",
    "c": "RUS",
-   "k": "W"
+   "k": "w"
   },
   {
    "n": "Виктория Павлова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Виктория Пласконная / Владислав Сытик",
@@ -72829,9 +71053,7 @@
   {
    "n": "Виктория Сивкова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Виктория Стрельцова",
@@ -72974,7 +71196,7 @@
   {
    "n": "Герман Ленков",
    "c": "RUS",
-   "k": "M",
+   "k": "m",
    "p": "cbc11339f13a"
   },
   {
@@ -73023,9 +71245,7 @@
   {
    "n": "Дана Титова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Даниил Горелкин",
@@ -73065,7 +71285,7 @@
   {
    "n": "Данил Колосков",
    "c": "RUS",
-   "k": "M"
+   "k": "m"
   },
   {
    "n": "Данил Маркаров",
@@ -73109,9 +71329,7 @@
   {
    "n": "Дарья Автомонова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Дарья Андреева / Александр Акимов",
@@ -73150,14 +71368,12 @@
   {
    "n": "Дарья Кардаполова / Антон Рязанов",
    "c": "RUS",
-   "k": "P"
+   "k": "p"
   },
   {
    "n": "Дарья Кузнецова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Дарья Лебедева",
@@ -73234,9 +71450,7 @@
   {
    "n": "Денис Яшин",
    "c": "RUS",
-   "k": "",
-   "was": "M",
-   "y": "2025/26"
+   "k": "m"
   },
   {
    "n": "Диана Арнет / Ярослав Черняев",
@@ -73364,9 +71578,7 @@
   {
    "n": "Ева Жуковская",
    "c": "BLR",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ева Зубкова",
@@ -73378,9 +71590,7 @@
   {
    "n": "Ева Кварацхелия",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ева Тарасенко",
@@ -73395,9 +71605,7 @@
   {
    "n": "Евангелина Костарева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Евгений Артющенко",
@@ -73432,9 +71640,7 @@
   {
    "n": "Евгения Чеботарева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Евдокия Крючкова / Артём Мякишев",
@@ -73528,9 +71734,7 @@
   {
    "n": "Екатерина Комарова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Екатерина Корчажникова",
@@ -73583,9 +71787,7 @@
   {
    "n": "Екатерина Цаба",
    "c": "BLR",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Екатерина Ципухина",
@@ -73614,16 +71816,12 @@
   {
    "n": "Екатерина Щербина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Елена Костылева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26",
+   "k": "W",
    "p": "98178d26aff4"
   },
   {
@@ -73642,9 +71840,12 @@
   {
    "n": "Елизавета Банных",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
+  },
+  {
+   "n": "Елизавета Бородихина",
+   "c": "RUS",
+   "k": "w"
   },
   {
    "n": "Елизавета Вахитова",
@@ -73680,9 +71881,7 @@
   {
    "n": "Елизавета Кудряшова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Елизавета Куликова",
@@ -73720,9 +71919,7 @@
   {
    "n": "Елизавета Мулюкина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Елизавета Осокина",
@@ -73760,9 +71957,7 @@
   {
    "n": "Елизавета Степанова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Елизавета Ширяева",
@@ -73791,9 +71986,7 @@
   {
    "n": "Залина Капачева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Захар Колобов",
@@ -73900,9 +72093,7 @@
   {
    "n": "Илина Аскарова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Илья Вегера",
@@ -73972,7 +72163,7 @@
   {
    "n": "Илья Старков",
    "c": "RUS",
-   "k": "M"
+   "k": "m"
   },
   {
    "n": "Илья Строганов",
@@ -74037,9 +72228,7 @@
   {
    "n": "Ирина Щеглова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Искандер Амиров",
@@ -74077,14 +72266,12 @@
   {
    "n": "Капитолина Кряковцева / Арсений Ивлев",
    "c": "RUS",
-   "k": "D"
+   "k": "d"
   },
   {
    "n": "Карина Соболева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Каролина Красовская / Егор Трацевский",
@@ -74096,23 +72283,17 @@
   {
    "n": "Катерина Мясникова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Кира Булавкина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Кира Гудаева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Кира Доможирова",
@@ -74129,16 +72310,12 @@
   {
    "n": "Кира Кудрявцева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Кира Кузнецова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Кира Кузьмина",
@@ -74153,9 +72330,7 @@
   {
    "n": "Кира Пономарева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Кирилл Алексеев",
@@ -74190,7 +72365,7 @@
   {
    "n": "Кирилл Жураховский",
    "c": "RUS",
-   "k": "M"
+   "k": "m"
   },
   {
    "n": "Кирилл Кропылев",
@@ -74209,6 +72384,11 @@
    "c": "RUS",
    "k": "D",
    "p": "40864faff7bc"
+  },
+  {
+   "n": "Кирилл Штурбабин",
+   "c": "RUS",
+   "k": "m"
   },
   {
    "n": "Климентий Толчинский",
@@ -74255,9 +72435,7 @@
   {
    "n": "Кристина Тимофеева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Кристина Чернышева / Семен Фитерман",
@@ -74274,16 +72452,12 @@
   {
    "n": "Ксения Бородина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ксения Вагина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ксения Гущина",
@@ -74294,23 +72468,17 @@
   {
    "n": "Ксения Кислова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ксения Клепчукова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ксения Кубрина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ксения Кузьмина / Игорь Тихов",
@@ -74327,9 +72495,7 @@
   {
    "n": "Ксения Попова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ксения Синицына",
@@ -74339,9 +72505,7 @@
   {
    "n": "Ксения Теплоухова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ксения Фадеева",
@@ -74353,9 +72517,7 @@
   {
    "n": "Ксения Фёдорова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Лев Бобык",
@@ -74376,7 +72538,7 @@
   {
    "n": "Леонтий Камзолов",
    "c": "RUS",
-   "k": "M"
+   "k": "m"
   },
   {
    "n": "Лидия Голубова",
@@ -74390,11 +72552,14 @@
    "p": "7b8daba225e8"
   },
   {
+   "n": "Лизавета Мельникова",
+   "c": "RUS",
+   "k": "w"
+  },
+  {
    "n": "Лилия Галеева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Лилия Литенко / Глеб Солович",
@@ -74529,43 +72694,33 @@
   {
    "n": "Маргарита Базылюк",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26",
+   "k": "W",
    "p": "31e0396ca9de"
   },
   {
    "n": "Маргарита Игонова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Маргарита Котенёва",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "w"
   },
   {
    "n": "Маргарита Передельская",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Маргарита Сырова / Илья Павлинов",
    "c": "RUS",
-   "k": "D"
+   "k": "d"
   },
   {
    "n": "Маргарита Энкина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Марина Петрова",
@@ -74659,16 +72814,12 @@
   {
    "n": "Мария Михайлова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Мария Нардюжева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Мария Парамонова",
@@ -74721,9 +72872,7 @@
   {
    "n": "Мария Цыцылина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Мария Чередниченко / Эмиль Хисамов",
@@ -74847,16 +72996,12 @@
   {
    "n": "Мелания Демиденко",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "w"
   },
   {
    "n": "Милана Горицкова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Милана Жабина",
@@ -74873,9 +73018,7 @@
   {
    "n": "Милана Журавлева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Милана Ишкина",
@@ -74974,9 +73117,7 @@
   {
    "n": "Наталия Глотова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Наталья Хабибуллина",
@@ -74987,9 +73128,7 @@
   {
    "n": "Ника Губарева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ника Маскайкина",
@@ -75221,9 +73360,7 @@
   {
    "n": "Полина Винкус",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Полина Жарова",
@@ -75257,9 +73394,7 @@
   {
    "n": "Полина Малышева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Полина Мартыненко",
@@ -75319,9 +73454,7 @@
   {
    "n": "Полина Слободчикова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Полина Тимошенко",
@@ -75435,9 +73568,7 @@
   {
    "n": "Сабина Киселева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Сандра Давыденко / Игнат Пахомов",
@@ -75457,9 +73588,7 @@
   {
    "n": "Серафима Голубева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Сергей Лагутов",
@@ -75511,9 +73640,7 @@
   {
    "n": "София Ермолова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "София Загребаева",
@@ -75539,16 +73666,12 @@
   {
    "n": "София Поскребышева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "София Самуйлик",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "София Сарновская",
@@ -75579,9 +73702,7 @@
   {
    "n": "Софья Гайдукова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Софья Гончарова / Александр Синцов",
@@ -75601,9 +73722,7 @@
   {
    "n": "Софья Зубкова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Софья Каракан / Андрей Куваев",
@@ -75745,9 +73864,7 @@
   {
    "n": "Таисия Давыдова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Таисия Лепихина",
@@ -75823,30 +73940,22 @@
   {
    "n": "Ульяна Бобринева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ульяна Васильева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ульяна Голубева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ульяна Лукьянова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ульяна Третьякова",
@@ -75863,14 +73972,12 @@
   {
    "n": "Ульяна Черных / Роман Федотов",
    "c": "RUS",
-   "k": "D"
+   "k": "d"
   },
   {
    "n": "Ульяна Явная",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Устинья Смирнова / Матвей Шипилов",
@@ -75922,30 +74029,22 @@
   {
    "n": "Элина Арсенова Ибраева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Элина Ибраева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Эльвина Тугузбаева",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Эльвира Елесина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Эсмира Терегулова",
@@ -75954,9 +74053,14 @@
    "p": "fb0724bebe09"
   },
   {
+   "n": "Юлиана Новиченкова",
+   "c": "RUS",
+   "k": "w"
+  },
+  {
    "n": "Юлиана Черенёва",
    "c": "RUS",
-   "k": "W"
+   "k": "w"
   },
   {
    "n": "Юлия Артемьева",
@@ -75980,9 +74084,7 @@
   {
    "n": "Юлия Кулешова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Юлия Филимонова",
@@ -76012,16 +74114,12 @@
   {
    "n": "Яна Анашкина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Яна Асташенкова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Яна Иванова",
@@ -76031,16 +74129,12 @@
   {
    "n": "Яна Ларикова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Яна Яценко",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26"
+   "k": "W"
   },
   {
    "n": "Ярослав Крегель",
@@ -76050,14 +74144,12 @@
   {
    "n": "Ярослав Овчинников",
    "c": "RUS",
-   "k": "",
-   "was": "M",
-   "y": "2025/26"
+   "k": "m"
   },
   {
    "n": "Ярослав Хрулев",
    "c": "RUS",
-   "k": "M"
+   "k": "m"
   },
   {
    "n": "Ярослава Быстрова",

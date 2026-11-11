@@ -13,16 +13,15 @@ TZNAME:MSK
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:gs:golden-bear:men-senior-kp-advanced-novice-men@starty
-DTSTAMP:20261110T210042Z
-DTSTART;TZID=Europe/Moscow:20261022T193000
-DTEND;TZID=Europe/Moscow:20261022T200500
+UID:gs:golden-bear:men-senior-kp@starty
+DTSTAMP:20261111T063544Z
+DTSTART;TZID=Europe/Moscow:20261024T160500
+DTEND;TZID=Europe/Moscow:20261024T170500
 SUMMARY:Golden Bear — мужчины КП
-DESCRIPTION:Итог:\n1. Alexandre Lirot — 40.50\n2. Gabin Telemaque —
-  36.60\n3. Rocco Malik Dietrich — 34.51\n\nНачало: 19:30 МСК
+DESCRIPTION:Итог:\n1. Vladimir Samoilov — 72.31\n2. Maxim Varakin —
+  66.21\n3. Corentin Spinar — 64.12\n\nНачало: 16:05 МСК
 LOCATION:Zagreb\, Croatia
-URL:https://xfurya.github.io/Starty/#e=gs:golden-bear:men-senior-kp-advance
- d-novice-men
+URL:https://xfurya.github.io/Starty/#e=gs:golden-bear:men-senior-kp
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
