@@ -262,6 +262,70 @@ class TopLevelTest(unittest.TestCase):
         self.assertEqual(got[0]["broadcast"], ["Ice-Stars.TV"])
 
 
+class KidsCategoryTest(unittest.TestCase):
+    """Детские категории международного табло («Advanced Novice Women») — не взрослые «Женщины»."""
+
+    def test_cat_en(self):
+        from . import build as b
+        for name in ["Advanced Novice Women", "Intermediate Novice Women", "Basic Novice Solo Ice Dance",
+                     "Chicks Girls", "Cubs Boys", "Senior Solo Ice Dance", "Juvenile Girls", "Adult Women",
+                     "Masters Men", "Synchronized Skating"]:
+            self.assertIsNone(b.cat_en(name)[0], name)
+        for name, want in [("Women", ("women", "senior")), ("Men", ("men", "senior")),
+                           ("Junior Men", ("men", "junior")), ("Ladies", ("women", "senior")),
+                           ("Ice Dance", ("dance", "senior")), ("Junior Pairs", ("pairs", "junior"))]:
+            self.assertEqual(b.cat_en(name), want, name)
+
+    def test_categories_of(self):
+        from . import build as b
+        idx = {"categories": [{"name": n, "segments": []} for n in
+                              ("Chicks Girls", "Advanced Novice Men", "Men", "Junior Women")]}
+        self.assertEqual([(c["name"], k, lv) for c, k, lv in b.categories_of(idx, True)],
+                         [("Men", "men", "senior"), ("Junior Women", "women", "junior")])
+
+    def test_kids_event(self):
+        from . import build as b
+        for eid in ["gs:golden-bear:women-senior-pp-chicks-girls",
+                    "gs:golden-bear:men-senior-kp-advanced-novice-men",
+                    "gs:blackburn-trophy:dance-senior-pt-senior-solo-ice-dance"]:
+            self.assertTrue(b.kids_event({"id": eid, "intl": True}), eid)
+        for eid in ["gs:golden-bear:men-senior-kp-men", "isu:gp-finland:dance-junior-rt",
+                    "gs:t:dance-senior-pt-x"]:
+            self.assertFalse(b.kids_event({"id": eid, "intl": True}), eid)
+        # у российских слаг — транслит: «Мастера спорта» не «Masters»
+        self.assertFalse(b.kids_event({"id": "fsr:t:women-senior-kp-zhenschiny-mastera-sporta", "intl": False}))
+
+    def test_carry_ids_back_to_plain_id(self):
+        """Golden Bear: «Men» был «…:men-senior-kp-men» из-за «Advanced Novice Men»; новичков больше нет —
+        id снова «…:men-senior-kp», данные прежней записи переходят к нему, детские старты уходят."""
+        from . import build as b
+        t = "2026-10-24T16:05:00+03:00"
+        prev = [{"id": "gs:gb:men-senior-kp-men", "start": t, "facts": [1]},
+                {"id": "gs:gb:men-senior-kp-advanced-novice-men", "start": "2026-10-22T19:30:00+03:00"},
+                {"id": "gs:gb:women-senior-pp-chicks-girls", "start": "2026-10-22T19:00:00+03:00"},
+                {"id": "gs:gb:women-junior-kp", "start": "2026-10-23T16:45:00+03:00"},
+                {"id": "gs:gb:women-senior-kp-women", "start": "2026-10-24T17:15:00+03:00"}]
+        for o in prev:
+            o["intl"] = True
+        events = [{"id": "gs:gb:men-senior-kp", "start": t, "intl": True}]
+        by_id, rest, kids = b.carry_ids(events, prev)
+        self.assertIs(by_id["gs:gb:men-senior-kp"], prev[0])
+        # «-women» с другим временем — не двойник: его турнир не пересобирался, запись остаётся как была
+        self.assertEqual([o["id"] for o in rest], ["gs:gb:women-junior-kp", "gs:gb:women-senior-kp-women"])
+        self.assertEqual([o["id"] for o in kids], [prev[1]["id"], prev[2]["id"]])
+
+    def test_carry_ids_collision_still_works(self):
+        from . import build as b
+        prev = [{"id": "gs:t:dance-senior-pt", "start": "1"}, {"id": "gs:t:men-senior-pp", "start": "3"}]
+        events = [{"id": "gs:t:dance-senior-pt-solo-dance-u12", "_old_id": "gs:t:dance-senior-pt", "start": "1"},
+                  {"id": "gs:t:men-senior-pp", "start": "3"}]
+        by_id, rest, kids = b.carry_ids(events, prev)
+        self.assertIs(by_id["gs:t:dance-senior-pt-solo-dance-u12"], prev[0])
+        self.assertNotIn("_old_id", events[0])
+        self.assertEqual([o["id"] for o in rest], ["gs:t:men-senior-pp"])
+        self.assertEqual(kids, [])
+
+
 class UniqueIdTest(unittest.TestCase):
     def mk(self, eid, cat, start):
         return {"id": eid, "_cat": cat, "start": start}

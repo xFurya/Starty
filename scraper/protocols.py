@@ -37,6 +37,7 @@ import os
 import re
 
 from . import net
+from . import people as pp
 from . import swisstiming as st
 
 STATUS_FILE = "status.json"
@@ -419,7 +420,8 @@ def merge_prev(doc, prev):
             notes.append(f"{c['name']} итог: kept")
     names = {c["name"] for c in doc["categories"]}
     for pc in prev.get("categories", []):
-        if pc["name"] not in names:
+        # детские категории прежних файлов не держим: в событиях их больше нет (people.low_intl)
+        if pc["name"] not in names and not pp.low_intl(pc["name"]):
             doc["categories"].append(pc)
             notes.append(f"{pc['name']}: kept_missing")
     return notes

@@ -538,6 +538,78 @@ class ProfileTest(unittest.TestCase):
                          "Самый дорогой прыжковый элемент с 2018 года: 4T+3A+3A")
 
 
+GB = "https://www.croskate.hr/cscro2025/GB2026/"
+W = GB + "FSKWSINGLES-----------FNL-000100--_JudgesDetailsperSkater.pdf"
+WJ = GB + "FSKWSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf"
+KID = GB + "FSKWSINGLES-ADVNOV----FNL-000100--_JudgesDetailsperSkater.pdf"
+
+
+class KidsTest(unittest.TestCase):
+    """Детские категории (Advanced/Intermediate/Basic Novice) в архив не идут, а успевшие попасть
+    туда взрослыми убираются пересборкой: вычесть протокол из счёта нельзя."""
+
+    def protos(self):
+        return {W: [sk("Senior ONE", el("3A", 8.0))], KID: [sk("Kid TWO", el("3A", 8.0))],
+                WJ: [sk("Junior THREE", el("4T", 9.5))]}
+
+    def old(self):
+        """Архив, каким его собрали до фильтра: новичок записан взрослой женщиной."""
+        arc = ar.empty()
+        with mock.patch.object(ar, "kids", return_value=False):
+            for u, level in ((W, "senior"), (KID, "senior"), (WJ, "junior")):
+                ar.ingest(arc, self.protos()[u], meta(u, d="2026-10-25", kind="women", level=level))
+        arc["full"] = True
+        return arc
+
+    def test_kids_pdf(self):
+        self.assertTrue(ar.kids(KID))
+        self.assertTrue(ar.kids(GB + "FSKWSINGLES-INTNOV----FNL-000100--_JudgesDetailsperSkater.pdf"))
+        self.assertTrue(ar.kids(GB + "FSKMSINGLES-BASNOV----QUAL000100--_JudgesDetailsperSkater.pdf"))
+        for u in (W, WJ, TEN, "https://fsrussia.ru/results/x/KMCo_K_Scores.pdf",
+                  GB + "FSKXICEDANCE----------QUAL000100--_JudgesDetailsperSkater.pdf"):
+            self.assertFalse(ar.kids(u), u)
+
+    def test_ingest_refuses_kids(self):
+        arc = ar.empty()
+        self.assertFalse(ar.ingest(arc, [sk("Kid TWO", el("3A", 8.0))], meta(KID, d="2026-10-25", kind="women")))
+        self.assertEqual((arc["segs"], arc["ath"]), ([], {}))
+
+    def test_rebuild_drops_kids_keeps_order(self):
+        old = self.old()
+        self.assertIn(nm.key("Kid TWO"), old["_pop"]["women|senior"])
+        new = ar.rebuild(old, lambda u: self.protos()[u], log=lambda *a: None)
+        self.assertEqual([s[0] for s in new["segs"]], [W, WJ])
+        self.assertEqual(new["segs"][1][2:6], ["2026-10-25", "women", "junior", "ПП"])
+        self.assertNotIn(nm.key("Kid TWO"), new["ath"])
+        self.assertEqual(new["_pop"]["women|senior"], {nm.key("Senior ONE")})
+        self.assertEqual(new["ath"][nm.key("Junior THREE")]["el"]["4T"], [1, 1, 9.5, 1])  # номер протокола — новый
+        self.assertTrue(new["full"])
+
+    def test_rebuild_skips_unreadable_but_not_all(self):
+        def fetch(u):
+            if u == W:
+                raise OSError("нет")
+            return self.protos()[u]
+        new = ar.rebuild(self.old(), fetch, log=lambda *a: None)
+        self.assertEqual([s[0] for s in new["segs"]], [WJ])  # W сбор доберёт сам: его нет в архиве
+        with self.assertRaises(ValueError):
+            ar.rebuild(self.old(), mock.Mock(side_effect=OSError("сети нет")), log=lambda *a: None)
+
+    def test_results_rebuilds_on_load(self):
+        with tempfile.TemporaryDirectory() as d, \
+                mock.patch.object(rs, "ARCHIVE", os.path.join(d, "archive.json")), \
+                mock.patch.object(rs.net, "pdf_text", side_effect=lambda u: u), \
+                mock.patch.object(rs.st, "parse_judges", side_effect=lambda t: self.protos()[t]):
+            ar.save(self.old(), rs.ARCHIVE)
+            rs._arc, rs._arc_dirty = None, False
+            try:
+                self.assertEqual(ar.urls(rs.archive(log=lambda *a: None)), [W, WJ])
+                rs.save()
+            finally:
+                rs._arc, rs._arc_dirty = None, False
+            self.assertEqual(ar.urls(ar.load(rs.ARCHIVE)), [W, WJ])
+
+
 class HookTest(unittest.TestCase):
     """results.segment_facts пополняет архив, только когда ему дали meta (полный сбор)."""
 

@@ -539,7 +539,8 @@ def build_family(family, proto_dir, now=NOW, cfg=None):
     from . import names as nm
     from . import people as pp
     spec, fam = FAMILIES[family], FAMILY_BUILD[family]
-    with FixtureNet(family), mock.patch.dict(b.CFG, cfg or {}):
+    # архив элементов — пустой в памяти: сбор на фикстурах не читает и не трогает data/archive.json
+    with FixtureNet(family), mock.patch.dict(b.CFG, cfg or {}), mock.patch.object(b.rs, "_arc", b.ar.empty()):
         idx = st.parse_index_page(_read(os.path.join(FIX, family, "index.htm")), spec["src"], spec["offset"])
         protos = {}
         events = b.from_swisstiming(
@@ -761,6 +762,17 @@ class Guard(unittest.TestCase):
         self.assertEqual(len(doc["categories"][0]["segments"]), 1)
         self.assertEqual(doc["categories"][0]["total"]["state"], "final")
         self.assertTrue(notes)
+
+    def test_merge_drops_prev_kids_category(self):
+        """Детскую категорию прежнего файла не держим: в событиях её больше нет (people.low_intl)."""
+        prev = _doc()
+        kid = dict(prev["categories"][0], name="Advanced Novice Women")
+        senior = dict(prev["categories"][0], name="Women")
+        prev["categories"] = [kid, senior]
+        doc = _doc()
+        doc["categories"] = []
+        P.merge_prev(doc, prev)
+        self.assertEqual([c["name"] for c in doc["categories"]], ["Women"])
 
 
 if __name__ == "__main__":

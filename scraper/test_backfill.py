@@ -447,8 +447,8 @@ class IngestTest(unittest.TestCase):
         self.assertEqual([m["u"] for _, m in ar.rows], ["http://x/ms.pdf"])
 
     def test_english_low_category_not_archived(self):
-        """«Girls Basic Novice» в английской версии табло ФФККР — тоже не в архиве.
-        Сейчас падает: people._HOMO переводит латиницу в кириллицу раньше _SKIP_CAT, и «basic»/«novice» не находятся."""
+        """«Girls Basic Novice» в английской версии табло ФФККР — тоже не в архиве (имя проверяется
+        и до перевода латиницы в кириллицу people._HOMO, иначе «basic»/«novice» не нашлись бы)."""
         seg = {"name": "Short Program", "judges_pdf": "http://x/g.pdf", "start": None, "url": "http://x/SEG1.htm"}
         idx = {"categories": [{"name": "Girls Basic Novice", "segments": [seg]}]}
         ar = StubArchive()

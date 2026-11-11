@@ -112,6 +112,8 @@ def kind_label(kind, level, mixed):
 def cat_en(name):
     n = name.lower()
     level = "junior" if "junior" in n else "senior"
+    if pp.low_intl(n):  # «Advanced Novice Women» — дети, не «Женщины»
+        return None, level
     if "dance" in n:
         return "dance", level
     if "pair" in n:
@@ -740,6 +742,43 @@ def unique_ids(events):
     return events
 
 
+def kids_event(ev):
+    """Старт детской категории из прежних сборов, когда cat_en их ещё брал: у них в конце id — слаг
+    категории («…:women-senior-kp-advanced-novice-women»), без него id совпал бы со взрослыми.
+    Только международные: у российских слаг — транслит («mastera-sporta» — не «Masters»)."""
+    return bool(ev.get("intl")) and pp.low_intl(ev["id"].rsplit(":", 1)[-1].replace("-", " "))
+
+
+def carry_ids(events, prev_events):
+    """Прежние записи к нынешним событиям, когда id сменился. → ({id: прежняя запись}, прежние
+    события без перешедших и детских, детские прежние события).
+
+    Коллизия (unique_ids): у события появился слаг — данные берём у прежнего с тем же старым id и
+    временем, прежнюю запись под старым id убираем. И обратно: коллизии больше нет (Golden Bear:
+    «Men» был рядом с «Advanced Novice Men», а детские категории теперь не берём) — id снова без
+    слага, данные — у прежнего «…-men» с тем же временем. Детские старты прежних сборов уходят."""
+    prev_by_id = {e["id"]: e for e in prev_events}
+    migrated = {e["_old_id"] for e in events if "_old_id" in e}
+    for e in events:
+        old_id = e.pop("_old_id", None)
+        if old_id:
+            twin = next((o for o in prev_events
+                         if o["id"] in (old_id, e["id"]) and o["start"] == e["start"]), None)
+            if twin:
+                prev_by_id[e["id"]] = twin
+    for e in events:
+        if e["id"] in prev_by_id:
+            continue
+        twin = next((o for o in prev_events
+                     if o["id"].startswith(e["id"] + "-") and o["start"] == e["start"]), None)
+        if twin:
+            prev_by_id[e["id"]] = twin
+            migrated.add(twin["id"])
+    kids = [o for o in prev_events if kids_event(o)]
+    rest = [o for o in prev_events if o["id"] not in migrated and not kids_event(o)]
+    return prev_by_id, rest, kids
+
+
 # ---------------------------------------------------------------- ФФККР
 
 def watch_rule(watch_keys):
@@ -1365,18 +1404,7 @@ def main():
     # листа, источник мог не ответить, PDF не прочитаться — всё, что уже было опубликовано
     # и не изменено явно, остаётся. Время выхода и номера наших, итоги прошедших сегментов,
     # примечательное, ссылки трансляций, ссылки табло.
-    prev_by_id = {e["id"]: e for e in prev.get("events", [])}
-    # события, у которых id изменился из-за коллизии (unique_ids): данные берём у прежнего
-    # с тем же старым id и временем, прежние записи под старым id убираем
-    migrated = {e["_old_id"] for e in events if "_old_id" in e}
-    for e in events:
-        old_id = e.pop("_old_id", None)
-        if old_id:
-            twin = next((o for o in prev.get("events", [])
-                         if o["id"] in (old_id, e["id"]) and o["start"] == e["start"]), None)
-            if twin:
-                prev_by_id[e["id"]] = twin
-    prev["events"] = [o for o in prev.get("events", []) if o["id"] not in migrated]
+    prev_by_id, prev["events"], kids = carry_ids(events, prev.get("events", []))
     same_rules = prev.get("facts_version", rs.VERSION) == rs.VERSION
     retract = CFG.get("keep_retract") or {}
     for e in events:
@@ -1448,7 +1476,11 @@ def main():
         fresh.update(p["name"] for p in e.get("total", []))
         fresh.update((e.get("live") or {}).get("names", {}).values())
     roster.update(fresh)
-    roster = kp.merge_names(roster, prev.get("roster"), retract.get("roster", ()))
+    # кто попал в справочник только со старта детской категории — уходит вместе с этим стартом
+    kid_names = {n for o in kids for n in [*o.get("athletes", []), *(x["name"] for x in o.get("field", [])),
+                                          *(x["name"] for x in o.get("ours", [])),
+                                          *(o.get("live") or {}).get("names", {}).values()]} - fresh
+    roster = kp.merge_names(roster, prev.get("roster"), [*retract.get("roster", ()), *kid_names])
     # латинское написание того, кого уже знаем по-русски, в справочнике не держим: поиск не должен давать двойников
     roster = {n for n in roster if not names.known_latin(n)}
     # пара наполовину кириллицей, наполовину латиницей — иностранец, ошибочно принятый за нашего

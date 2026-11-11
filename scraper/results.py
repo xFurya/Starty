@@ -42,10 +42,17 @@ def _load():
     return _store
 
 
-def archive():
-    global _arc
+def archive(log=print):
+    global _arc, _arc_dirty
     if _arc is None:
         _arc = ar.load(ARCHIVE)
+        if any(ar.kids(s[0]) for s in _arc["segs"]):
+            try:
+                _arc = ar.rebuild(_arc, lambda u: st.parse_judges(net.pdf_text(u)), log)
+                _arc_dirty = True
+                log("  архив элементов пересобран без детских категорий")
+            except Exception as e:  # прежний архив остаётся, пересоберём в следующий раз
+                log("  ! архив элементов: пересборка без детских категорий:", e)
     return _arc
 
 

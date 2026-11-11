@@ -246,12 +246,47 @@ def _no_patronymic(raw):
     return " / ".join(p for p in parts if p)
 
 
+# Детские категории в имени протокола ISU: FSKWSINGLES-ADVNOV----…, -INTNOV, -BASNOV. Сбор их не берёт
+# (build.cat_en), но в архив сезона 2026/27 они успели попасть взрослыми — с ними «редкий у женщин»
+# считался бы и по новичкам
+_KIDS_PDF = re.compile(r"-(?:ADV|INT|BAS)NOV-", re.I)
+
+
+def kids(url):
+    return bool(_KIDS_PDF.search(url.rsplit("/", 1)[-1]))
+
+
+def rebuild(arc, fetch, log=print):
+    """Новый архив из протоколов arc без детских (kids), в прежнем порядке. Вычесть один протокол
+    нельзя (счёт и первый протокол элемента, pop), поэтому остальные читаются заново: fetch(адрес) →
+    разобранный протокол. Не прочёлся — пропускаем: сбор доберёт его сам (results.segment_facts),
+    как всё, чего нет в архиве. Не прочёлся ни один — исключение: похоже, сети нет, пусть
+    остаётся прежний архив."""
+    out = empty()
+    if arc.get("full"):
+        out["full"] = True
+    todo = [s for s in arc["segs"] if not kids(s[0])]
+    lost = 0
+    for u, ev, d, kind, level, seg, src in todo:
+        try:
+            skaters = fetch(u)
+        except Exception as e:
+            log("  ! архив элементов, пересборка:", u, e)
+            skaters = None
+        if not ingest(out, skaters, {"u": u, "ev": ev, "d": d, "kind": kind, "level": level, "seg": seg,
+                                     "src": src}):
+            lost += 1
+    if todo and lost == len(todo):
+        raise ValueError("ни один протокол не прочёлся")
+    return out
+
+
 def ingest(arc, skaters, meta):
     """Протокол сегмента в архив (на месте). meta: {u, ev, d, kind, level, seg, src}.
-    Тот же адрес второй раз не берётся; протоколы раньше 2018/19 не берутся. → взят ли."""
+    Тот же адрес второй раз не берётся; протоколы раньше 2018/19 и детские не берутся. → взят ли."""
     idx = _index(arc)
     u, kind, level = meta["u"], meta["kind"], meta.get("level") or "senior"
-    if u in idx or not skaters or (meta.get("d") or "") < FIRST_DAY:
+    if u in idx or not skaters or (meta.get("d") or "") < FIRST_DAY or kids(u):
         return False
     i = len(arc["segs"])
     arc["segs"].append([u, meta.get("ev", ""), meta["d"], kind, level, meta.get("seg", ""), meta.get("src", "")])

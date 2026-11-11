@@ -86,8 +86,17 @@ _SKIP_TOUR = re.compile(
     r"|lyubit|sinkhr|sinhr|synchr|balet|ballet|festival|mezhregion|mezhreg",
     re.I,
 )
+# Категории международного табло ниже юниоров и вне наших видов: Advanced/Intermediate/Basic Novice,
+# Chicks, Cubs, Juvenile — дети; Adult, Masters — любители; Solo Dance, Synchronized — другие виды.
+# Без этого «Advanced Novice Women» по слову «Women» становились взрослыми «Женщинами»
+_LOW_INTL = r"basic|novice|chick|\bcubs?\b|juvenil|intermediate|preliminar|adult|master|veteran|solo|synchro"
 # «Класс I–III», «Пре-бронза», «Молодежный класс» — любительские, в справочнике спортсменов им не место
-_SKIP_CAT = re.compile(r"разряд|юношеск|мальчик|девоч|синхрон|команд|любител|новичк|basic|novice|класс|бронз", re.I)
+_SKIP_CAT = re.compile(r"разряд|юношеск|мальчик|девоч|синхрон|команд|любител|новичк|класс|бронз|" + _LOW_INTL, re.I)
+
+
+def low_intl(name):
+    """Категория международного табло не для ленты, справочника и архива (см. _LOW_INTL)."""
+    return bool(re.search(_LOW_INTL, name, re.I))
 
 
 # латинские буквы, которыми на табло ФФККР бывают набраны русские слова («Mужчины», «Жeнщины»)
