@@ -442,6 +442,20 @@ void main() {
       expect(followToggled(f, 'Minerva Fabienne Hase / Nikita Volodin'), {'Аделия Петросян'});
     });
 
+    testWidgets('пара — «Отслеживаются»: их двое', (t) async {
+      SharedPreferences.setMockInitialValues({});
+      await Prefs.init();
+      final s = AppState()
+        ..data = _data()
+        ..loading = false;
+      await t.pumpWidget(_app(FollowPill(state: s, name: 'Minerva Fabienne Hase / Nikita Volodin')));
+      await t.tap(find.text('Отслеживать'));
+      await t.pump(const Duration(milliseconds: 200));
+      expect(find.text('Отслеживаются'), findsOneWidget);
+      expect(find.text('Отслеживается'), findsNothing);
+      await t.pump(const Duration(seconds: 11));
+    });
+
     testWidgets('кнопка в шапке: нажали — отслеживается, ещё раз — снова нет', (t) async {
       SharedPreferences.setMockInitialValues({});
       await Prefs.init();

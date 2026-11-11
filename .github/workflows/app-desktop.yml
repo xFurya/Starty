@@ -163,7 +163,11 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.publish == 'true')
     runs-on: ubuntu-latest
     steps:
+      # свежий main, а не коммит запуска: Android запускает эту сборку сразу после своего коммита с
+      # latest.json, и запуск бывает привязан к main за миг до него (так 1.0.65 не выложилась)
       - uses: actions/checkout@v5
+        with:
+          ref: main
       - uses: actions/download-artifact@v4
         with:
           path: dist
@@ -173,6 +177,8 @@ jobs:
           VER: ${{ needs.prep.outputs.version }}
           BUILD: ${{ needs.prep.outputs.build }}
         run: |
+          # сверка до выпуска на GitHub: иначе выпуск появляется, а latest.json о нём не знает
+          python3 -c "import json, os, sys; c = json.load(open('site/app/latest.json'))['code']; sys.exit(0 if c == int(os.environ['BUILD']) else f'latest.json относится к сборке {c}, а не {os.environ[\"BUILD\"]}')"
           TAG="app-v$VER"
           NOTES=$(python3 -c "import json; print(json.load(open('site/app/latest.json'))['notes'])")
           # постоянное имя установщика — для ссылки на сайте (releases/latest/download/Starty-windows-setup.exe)

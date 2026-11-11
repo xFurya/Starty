@@ -406,6 +406,34 @@ void main() {
       expect(find.text('сохранено 15.10, 22:00'), findsOneWidget);
       expect(find.text('66.36'), findsOneWidget);
       expect(find.text('Повторить'), findsOneWidget);
+      expect(find.text('Нет связи, протокол не обновился'), findsOneWidget);
+    });
+
+    // До старта и после окончательных итогов статус после нажатия тот же — без итога внизу
+    // нажатие выглядело пустым
+    testWidgets('ручное обновление: тот же файл — «Нового нет»', (tester) async {
+      await pumpScreen(tester, s: start(), repo: repoWith(sample(), then: sample()));
+      await tester.tap(find.byTooltip('Обновить'));
+      await tester.pumpAndSettle();
+      expect(find.text('Нового нет'), findsOneWidget);
+      expect(find.text('Протокол обновлён'), findsNothing);
+    });
+
+    testWidgets('ручное обновление: баллы изменились — «Протокол обновлён»', (tester) async {
+      final next = sample();
+      ((_seg(next)['rows'] as List).first as Map)['points'] = '67.01';
+      await pumpScreen(tester, s: start(), repo: repoWith(sample(), then: next));
+      await tester.tap(find.byTooltip('Обновить'));
+      await tester.pumpAndSettle();
+      expect(find.text('Протокол обновлён'), findsOneWidget);
+      expect(find.text('67.01'), findsOneWidget);
+    });
+
+    testWidgets('отпечаток протокола не зависит от времени сборки', (tester) async {
+      final a = sample(), b = sample()..['built'] = '2026-10-16T09:00:00Z';
+      expect(protocolSig(ProtocolDoc.fromJson(a)), protocolSig(ProtocolDoc.fromJson(b)));
+      ((_seg(b)['rows'] as List).first as Map)['place'] = 2;
+      expect(protocolSig(ProtocolDoc.fromJson(a)), isNot(protocolSig(ProtocolDoc.fromJson(b))));
     });
 
     testWidgets('итог вида не опубликован — честный текст, а не пустая таблица', (tester) async {

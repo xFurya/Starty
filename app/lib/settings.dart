@@ -328,12 +328,12 @@ class SettingsView extends StatelessWidget {
                 // то же правило, что у нижней строки ленты
                 Builder(
                   builder: (context) {
-                    final f = state.data == null ? null : freshness(state, short: true);
+                    final line = scheduleLine(state);
                     return _Row(
                       icon: CupertinoIcons.arrow_2_circlepath,
                       title: 'Расписание',
-                      subtitle: state.refreshing ? 'обновление…' : (f?.text ?? (state.loading ? 'загрузка' : 'нет связи')),
-                      subtitleColor: !state.refreshing && (f == null || f.alarm) ? p.live : null,
+                      subtitle: line.text,
+                      subtitleColor: line.alarm ? p.live : null,
                       // нажатие — обновить расписание сейчас
                       onTap: state.refreshing ? null : state.load,
                       trailing: state.refreshing
@@ -398,6 +398,23 @@ String _sources(AppState st) {
       if (e.value != 'ok') e.key,
   ];
   return failed.isEmpty ? all.join(', ') : '${all.join(', ')}\nНет ответа: ${failed.join(', ')}';
+}
+
+/// Подпись строки «Расписание». «Обновлено» — когда расписание собрал сервер, от нажатия оно не
+/// меняется; поэтому ниже — когда его в последний раз проверил телефон: нажатие видно сразу.
+/// [alarm] — первая строка тревожная (нет связи, источник молчит, расписание устарело).
+({String text, bool alarm}) scheduleLine(AppState state) {
+  if (state.data == null) {
+    return state.refreshing || state.loading ? (text: 'Загрузка…', alarm: false) : (text: 'Нет связи', alarm: true);
+  }
+  final f = freshness(state, short: true);
+  final at = state.offline ? null : state.fetchedAt;
+  final checked = state.refreshing
+      ? 'Проверка…'
+      : at == null
+          ? null
+          : 'Проверено ${dayKey(at) == dayKey(DateTime.now()) ? 'в$nb${hm(at)}' : dateTime(at).replaceAll(' ', nb).replaceFirst(',$nb', ', ')}';
+  return (text: [for (final l in f.text.split('\n')) cap(l), ?checked].join('\n'), alarm: !state.refreshing && f.alarm);
 }
 
 /// Версия и обновления — честное состояние самообновления (как у Дневника).

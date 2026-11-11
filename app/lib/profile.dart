@@ -399,7 +399,8 @@ class FollowPill extends StatelessWidget {
                         Icon(on ? CupertinoIcons.checkmark_alt : CupertinoIcons.plus, size: 17, color: on ? fg : p.accent),
                         const SizedBox(width: 6),
                         Text(
-                          on ? 'Отслеживается' : 'Отслеживать',
+                          // пара и танцы — двое: «отслеживаются»
+                          on ? (name.contains(' / ') ? 'Отслеживаются' : 'Отслеживается') : 'Отслеживать',
                           maxLines: 1,
                           style: TextStyle(fontSize: 14.5, height: 1.2, fontWeight: FontWeight.w600, color: fg),
                         ),

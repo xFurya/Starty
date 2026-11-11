@@ -110,6 +110,31 @@ ProtocolView protocolView(
   ProtocolOk() => (null, null),
 };
 
+/// Отпечаток того, что протокол показывает: состояния сегментов и итога, строки, баллы, элементы и
+/// судьи. Время сборки не входит — оно новое при каждом чтении табло, даже когда нового нет.
+String protocolSig(ProtocolDoc? d) {
+  if (d == null) return '';
+  String row(ProtocolRow r) =>
+      '${r.place}/${r.status}/${r.name}/${r.points}/${r.tes}/${r.pcs}/${r.ded}/${r.elements.length}/${r.components.length}/${r.parts?.join('|')}';
+  final b = StringBuffer();
+  for (final c in d.categories) {
+    b.write('${c.kind}|${c.level}[');
+    for (final s in c.segments) {
+      b.write('${s.code}:${s.state.wire}:${s.basis}:${s.skipped}:${s.panel.length}:${s.judges}(');
+      b.writeAll(s.rows.map(row), ',');
+      b.write(')');
+    }
+    final t = c.total;
+    if (t != null) {
+      b.write('T:${t.state.wire}:${t.skipped}(');
+      b.writeAll(t.rows.map(row), ',');
+      b.write(')');
+    }
+    b.write(']');
+  }
+  return b.toString();
+}
+
 ProtocolView _noProtocol(bool hasField) => hasField
     ? const ProtocolView('Протокола пока нет', ProtocolTone.quiet, application: true, noFile: true)
     : const ProtocolView('Протокола и заявки пока нет', ProtocolTone.quiet, noFile: true);
@@ -296,15 +321,24 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
     );
   }
 
-  /// [manual] — нажата кнопка обновления: протокол собирается на устройстве с табло в любом режиме.
+  /// [manual] — нажата кнопка обновления: протокол собирается на устройстве с табло в любом режиме,
+  /// заодно обновляется расписание (до старта новое — в составе и времени, а не в протоколе),
+  /// и внизу коротко сказано, что вышло.
   Future<void> _reload({bool manual = false, bool auto = false}) async {
     final proto = widget.start.proto;
     if (!auto) setState(() => _busy = true);
+    // состав сверяем у той же вкладки: переключение во время обновления — не «состав обновлён»
+    final cat = _category, tab = _tab ?? totalTab;
+    final docBefore = protocolSig(_doc), fieldBefore = _fieldSig(cat, tab);
+    final schedule = manual ? widget.state?.load() : null;
     // в браузере табло недоступно: только файл сайта, без ложного «табло не ответило»
     final device = canReadBoards && widget.state != null && (manual || _instant);
     final load = proto == null
         ? const ProtocolMissing()
         : await _repo.load(proto, start: widget.start, starts: widget.state?.data?.starts ?? const [], device: device);
+    try {
+      await schedule;
+    } catch (_) {}
     if (!mounted) return;
     // Нет ни свежего файла, ни сохранённого: наш экран показать нечего — открываем оригинал и уходим.
     if (load is! ProtocolOk && savedOf(load).$1 == null && widget.start.src.isNotEmpty) {
@@ -324,6 +358,38 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
       _busy = false;
       _pickDefaults();
     });
+    if (manual) _tell(load, docBefore, fieldBefore == _fieldSig(cat, tab));
+  }
+
+  /// Состав вкладки по заявке: номера, время, места.
+  String _fieldSig(ProtocolCategory? cat, String tab) => [
+    for (final x in _startOf(cat, tab)?.field ?? const <Skater>[])
+      '${x.name}/${x.no}/${x.time}/${x.place}/${x.points}',
+  ].join(',');
+
+  /// Итог ручного обновления: без него нажатие до старта и после окончательных итогов выглядит пустым.
+  void _tell(ProtocolLoad load, String docBefore, bool sameField) {
+    final text = protocolSig(_doc) != docBefore
+        ? 'Протокол обновлён'
+        : !sameField
+            ? 'Состав обновлён'
+            : switch (load) {
+                ProtocolNetError() => 'Нет связи, протокол не обновился',
+                ProtocolFormatError() => 'Протокол не обновился',
+                _ => 'Нового нет',
+              };
+    final p = Palette.of(context);
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        SnackBar(
+          content: Text(text, style: TextStyle(fontFamily: sans, fontSize: 14.5, color: p.bg, height: 1.3)),
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: p.ink,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+          duration: const Duration(seconds: 2),
+        ),
+      );
   }
 
   /// Файл протокола, который показываем: свежий или сохранённый (при сбое сети).
@@ -479,7 +545,10 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
             ),
           IconButton(
             tooltip: 'Обновить',
-            icon: const Icon(Icons.refresh),
+            // пока идёт обновление — круг вместо значка: нажатие видно сразу
+            icon: _busy
+                ? SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2, color: Palette.of(context).accent))
+                : const Icon(Icons.refresh),
             onPressed: _busy ? null : () => _reload(manual: true),
           ),
         ],

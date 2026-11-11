@@ -747,6 +747,9 @@ class AppState extends ChangeNotifier {
   bool _polling = false;
   DateTime _fetchedAt = DateTime.fromMillisecondsSinceEpoch(0);
 
+  /// Когда телефон в последний раз получил расписание с сервера; null — за этот запуск ни разу.
+  DateTime? get fetchedAt => _fetchedAt.millisecondsSinceEpoch == 0 ? null : _fetchedAt;
+
   /// Старты, итоги которых сейчас читаются с табло: идут, вот-вот начнутся или прошли,
   /// а окончательного протокола ещё нет.
   List<Start> get watching {
