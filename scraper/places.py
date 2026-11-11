@@ -28,7 +28,7 @@ API = "https://www.wikidata.org/w/api.php"
 RETRY = dt.timedelta(days=60)
 BUDGET = 150  # поисков за сбор (раз в секунду): остальное доберётся в следующий раз
 # правила выбора поменялись — поднять: узнанное раньше узнаётся заново
-VERSION = 3
+VERSION = 4
 FAMOUS = 2  # во сколько раз известнее (по числу статей в Википедиях) тёзка за границей, чтобы не угадывать
 
 # населённый пункт, административная единица
@@ -69,9 +69,18 @@ def split(place):
     s = re.sub(r"\s+[A-Z]{2}$", "", s).strip()
     out = [s] if s else []
     w = s.split()
-    if not comma and len(w) >= 2:
+    if " - " in s:  # «Donostia - San Sebastian»: два названия одного места
+        out.append(s.split(" - ")[0].strip())
+    elif not comma and len(w) >= 2:
         out.append(" ".join(w[:-1]))
     return out, code
+
+
+def variants(q):
+    """Другие написания, если по строке ISU не нашлось ничего: окончание «-ый/-ий» латиницей пишут
+    как придётся — «Nizhnyi», «Nizhniy», а в Викиданных «Nizhny»."""
+    alt = re.sub(r"(?i)(?<=[a-z])(?:yi|iy|ii|yy)\b", "y", q)
+    return [alt] if alt != q else []
 
 
 def region(place):
@@ -159,7 +168,8 @@ def choose(cands, facts, code, nation, fallback=False, region="", descs=None):
         return geo_in[0] if geo_in else None
     home = [q for q in geo if nation and nation in facts[q]["cc"]]
     if home:
-        pick = home[0]
+        # из тёзок дома — с русским названием: у «Hyogo» деревня без него и префектура Хиого
+        pick = ([q for q in home if _ru_name(facts[q]["ru"])] or home)[0]
         top = max(geo, key=lambda q: facts[q]["links"])
         # не угадываем, только когда куда известнее тёзка за границей; тёзки дома (город и кантон
         # Невшатель, несколько Карлтонов в Австралии) — одно и то же название, берём первое
@@ -169,7 +179,7 @@ def choose(cands, facts, code, nation, fallback=False, region="", descs=None):
     if fallback:
         return None
     if len({frozenset(facts[q]["cc"]) for q in geo}) == 1:
-        return geo[0]
+        return ([q for q in geo if _ru_name(facts[q]["ru"])] or geo)[0]
     top = max(geo, key=lambda q: facts[q]["links"])
     return top if _dominant(top, geo, facts) else None
 
@@ -224,7 +234,19 @@ def refresh(pairs, log=print, path=None, budget=BUDGET, today=None, search=None,
             spent += 1
             try:
                 hits = search(q)
-                found[q] = exact(q, hits)
+                ids, tried = exact(q, hits), True
+                for alt in ([] if ids else variants(q)):
+                    if spent >= budget:
+                        tried = False  # другое написание не проверено — не помечаем ненайденным
+                        break
+                    spent += 1
+                    more = search(alt)
+                    hits = hits + more
+                    ids = exact(alt, more)
+                    if ids:
+                        break
+                if ids or tried:
+                    found[q] = ids
                 descs.update((h[0], h[3]) for h in hits if len(h) > 3)
             except (net.FetchError, ValueError, KeyError) as e:
                 # Викиданные не отвечают или просят реже: остальное — в следующий сбор

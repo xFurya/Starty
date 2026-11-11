@@ -38,6 +38,13 @@ class SplitTest(unittest.TestCase):
         self.assertEqual(pl.split("Changchun Jilin"), (["Changchun Jilin", "Changchun"], ""))
         self.assertEqual(pl.split("Riazan"), (["Riazan"], ""))
         self.assertEqual(pl.split("Chicago USA"), (["Chicago"], "USA"))
+        # два названия через тире — второй запрос первое из них, а не обрубок «Donostia - San»
+        self.assertEqual(pl.split("Donostia - San Sebastian ESP"), (["Donostia - San Sebastian", "Donostia"], "ESP"))
+
+    def test_variants_of_russian_endings(self):
+        self.assertEqual(pl.variants("Nizhnyi Tagil"), ["Nizhny Tagil"])
+        self.assertEqual(pl.variants("Nizhniy Novgorod"), ["Nizhny Novgorod"])
+        self.assertEqual(pl.variants("Moscow"), [])
 
 
 class NormTest(unittest.TestCase):
@@ -82,6 +89,13 @@ class ChooseTest(unittest.TestCase):
         # а куда более известный тёзка за границей по-прежнему останавливает
         facts["X"] = {"ru": "Икс", "links": 1000, "cc": {"USA"}}
         self.assertIsNone(pl.choose(["C", "K", "X"], facts, "", "SUI"))
+
+    def test_home_namesake_with_russian_name_preferred(self):
+        # «Hyogo»: деревня без русского названия первой в поиске, префектура Хиого — второй
+        facts = {"V": {"ru": "", "links": 3, "cc": {"JPN"}},
+                 "P": {"ru": "Хиого", "links": 150, "cc": {"JPN"}}}
+        self.assertEqual(pl.choose(["V", "P"], facts, "", "JPN"), "P")
+        self.assertEqual(pl.choose(["V", "P"], facts, "", "RUS"), "P")  # одна страна, без дома
 
     def test_single_foreign_country_accepted_without_home(self):
         facts = {"K": {"ru": "Харьков", "links": 150, "cc": {"UKR"}}}
@@ -202,6 +216,30 @@ class RefreshTest(unittest.TestCase):
         self.assertEqual(self.calls, ["Riazan"])  # после первого отказа больше не спрашиваем
         self.assertEqual(cache, {})  # и ничего не помечаем ненайденным
 
+
+    def test_other_spelling_when_nothing_found(self):
+        hits = {"Nizhnyi Tagil": [], "Nizhnyi": [], "Nizhny": [],
+                "Nizhny Tagil": [("Q1", "Nizhny Tagil", "Nizhny Tagil", "city in Sverdlovsk Oblast, Russia")]}
+        rows = [row("Q1", "Нижний Тагил", 90, "ioc", "RUS")]
+
+        def search(q):
+            self.calls.append(q)
+            return hits[q]
+
+        cache = pl.refresh([("Nizhnyi Tagil RUS", "RUS")], log=lambda *a: None, path=self.path, today=TODAY,
+                           search=search, rows_of=lambda q: rows)
+        self.assertEqual(pl.ru("Nizhnyi Tagil RUS", "RUS", cache), "Нижний Тагил")
+        self.assertIn("Nizhny Tagil", self.calls)
+
+    def test_other_spelling_out_of_budget_is_not_marked_missing(self):
+        def search(q):
+            self.calls.append(q)
+            return []
+
+        cache = pl.refresh([("Nizhnyi", "RUS")], log=lambda *a: None, path=self.path, today=TODAY,
+                           search=search, rows_of=lambda q: [], budget=1)
+        self.assertEqual(self.calls, ["Nizhnyi"])
+        self.assertNotIn("Nizhnyi|RUS", cache)  # «Nizhny» не искали — в следующий сбор
 
     def test_new_rules_version_resolves_again(self):
         self.refresh(PAIRS)
