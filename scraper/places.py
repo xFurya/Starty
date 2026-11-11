@@ -28,7 +28,7 @@ API = "https://www.wikidata.org/w/api.php"
 RETRY = dt.timedelta(days=60)
 BUDGET = 150  # поисков за сбор (раз в секунду): остальное доберётся в следующий раз
 # правила выбора поменялись — поднять: узнанное раньше узнаётся заново
-VERSION = 2
+VERSION = 3
 FAMOUS = 2  # во сколько раз известнее (по числу статей в Википедиях) тёзка за границей, чтобы не угадывать
 
 # населённый пункт, административная единица
@@ -161,7 +161,9 @@ def choose(cands, facts, code, nation, fallback=False, region="", descs=None):
     if home:
         pick = home[0]
         top = max(geo, key=lambda q: facts[q]["links"])
-        if not sure and top != pick and _dominant(top, [pick], facts):
+        # не угадываем, только когда куда известнее тёзка за границей; тёзки дома (город и кантон
+        # Невшатель, несколько Карлтонов в Австралии) — одно и то же название, берём первое
+        if not sure and top not in home and _dominant(top, [pick], facts):
             return None
         return pick
     if fallback:

@@ -74,6 +74,15 @@ class ChooseTest(unittest.TestCase):
                  "R": {"ru": "Санкт-Петербург", "links": 273, "cc": {"RUS"}}}
         self.assertEqual(pl.choose(["R", "F"], facts, "", "USA"), "F")
 
+    def test_namesakes_at_home_do_not_block(self):
+        # «Neuchâtel» у швейцарца: город и кантон, оба в Швейцарии, кантон известнее
+        facts = {"C": {"ru": "Невшатель", "links": 90, "cc": {"SUI"}},
+                 "K": {"ru": "Невшатель (кантон)", "links": 120, "cc": {"SUI"}}}
+        self.assertEqual(pl.choose(["C", "K"], facts, "", "SUI"), "C")
+        # а куда более известный тёзка за границей по-прежнему останавливает
+        facts["X"] = {"ru": "Икс", "links": 1000, "cc": {"USA"}}
+        self.assertIsNone(pl.choose(["C", "K", "X"], facts, "", "SUI"))
+
     def test_single_foreign_country_accepted_without_home(self):
         facts = {"K": {"ru": "Харьков", "links": 150, "cc": {"UKR"}}}
         self.assertEqual(pl.choose(["K"], facts, "", "RUS"), "K")
