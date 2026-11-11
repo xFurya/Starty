@@ -77,8 +77,14 @@ class ChooseTest(unittest.TestCase):
     def test_single_foreign_country_accepted_without_home(self):
         facts = {"K": {"ru": "Харьков", "links": 150, "cc": {"UKR"}}}
         self.assertEqual(pl.choose(["K"], facts, "", "RUS"), "K")
-        facts["X"] = {"ru": "Икс", "links": 10, "cc": {"POL"}}
-        self.assertIsNone(pl.choose(["K", "X"], facts, "", "RUS"))
+        facts["X"] = {"ru": "Икс", "links": 100, "cc": {"POL"}}
+        self.assertIsNone(pl.choose(["K", "X"], facts, "", "RUS"))  # обе известны — не угадываем
+
+    def test_much_more_famous_place_abroad_wins_without_home(self):
+        # «Prague» у итальянки: Прага против Праги в Оклахоме
+        facts = {"P": {"ru": "Прага", "links": 270, "cc": {"CZE"}},
+                 "O": {"ru": "", "links": 37, "cc": {"USA"}}}
+        self.assertEqual(pl.choose(["P", "O"], facts, "", "ITA"), "P")
 
     def test_fallback_without_home_is_none(self):
         facts = {"K": {"ru": "Харьков", "links": 150, "cc": {"UKR"}}}
@@ -88,6 +94,29 @@ class ChooseTest(unittest.TestCase):
         facts = {"K": {"ru": "Харьков", "links": 150, "cc": {"UKR"}}}
         self.assertEqual(pl.choose(["Z", "K"], facts, "", "UKR"), "K")
         self.assertIsNone(pl.choose(["Z"], {}, "", "UKR"))
+
+
+class RegionTest(unittest.TestCase):
+    def test_region(self):
+        self.assertEqual(pl.region("London, Ontario"), "Ontario")
+        self.assertEqual(pl.region("Calgary, AB, CAN"), "AB")
+        self.assertEqual(pl.region("Toronto ON"), "ON")
+        self.assertEqual(pl.region("Mostoles (Madrid) ESP"), "Madrid")
+        self.assertEqual(pl.region("Moscow RUS"), "")
+        self.assertEqual(pl.region("Riazan"), "")
+
+    def test_region_in_description_beats_famous_namesake(self):
+        facts = {"L": {"ru": "Лондон", "links": 357, "cc": {"GBR"}},
+                 "O": {"ru": "Лондон", "links": 86, "cc": {"CAN"}}}
+        descs = {"L": "capital and largest city of the United Kingdom", "O": "city in Ontario, Canada"}
+        self.assertIsNone(pl.choose(["L", "O"], facts, "", "CAN"))
+        self.assertEqual(pl.choose(["L", "O"], facts, "", "CAN", region="Ontario", descs=descs), "O")
+        self.assertEqual(pl.choose(["L", "O"], facts, "", "CAN", region="ON", descs=descs), "O")
+        # уточнение называет другую страну: «Paris, France» у канадца — Париж, а не Париж в Онтарио
+        facts = {"F": {"ru": "Париж", "links": 350, "cc": {"FRA"}},
+                 "C": {"ru": "Пэрис", "links": 20, "cc": {"CAN"}}}
+        descs = {"F": "capital and largest city of France", "C": "community in Ontario, Canada"}
+        self.assertEqual(pl.choose(["F", "C"], facts, "", "CAN", region="France", descs=descs), "F")
 
 
 class NationCodeTest(unittest.TestCase):
@@ -142,6 +171,14 @@ class RefreshTest(unittest.TestCase):
         self.assertEqual(self.calls, ["Riazan"])
         self.assertIn("Riazan|RUS", cache)
         self.assertNotIn("Moscow|USA", cache)
+
+    def test_own_code_of_territory(self):
+        # «Hong Kong HKG»: страна по P17 — Китай, но у самого Гонконга код HKG
+        rows = [row("Q8646", "Гонконг", 304, "iso", "CHN"), row("Q8646", "Гонконг", 304, "sioc", "HKG")]
+        cache = pl.refresh([("Hong Kong HKG", "USA")], log=lambda *a: None, path=self.path, today=TODAY,
+                           search=lambda q: [("Q8646", "Hong Kong", "Hong Kong", "special administrative region")],
+                           rows_of=lambda q: rows)
+        self.assertEqual(pl.ru("Hong Kong HKG", "USA", cache), "Гонконг")
 
     def test_cyrillic_nation_shares_cache_key(self):
         cache = self.refresh([("Riazan", "AIN2")])

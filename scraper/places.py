@@ -28,7 +28,7 @@ API = "https://www.wikidata.org/w/api.php"
 RETRY = dt.timedelta(days=60)
 BUDGET = 150  # поисков за сбор (раз в секунду): остальное доберётся в следующий раз
 # правила выбора поменялись — поднять: узнанное раньше узнаётся заново
-VERSION = 1
+VERSION = 2
 FAMOUS = 2  # во сколько раз известнее (по числу статей в Википедиях) тёзка за границей, чтобы не угадывать
 
 # населённый пункт, административная единица
@@ -74,19 +74,31 @@ def split(place):
     return out, code
 
 
+def region(place):
+    """Уточнение после города: «Ontario» из «London, Ontario», «ON» из «Toronto ON», «Madrid» из
+    «Mostoles (Madrid)». Пусто, если его нет."""
+    s = re.sub(r",?\s+[A-Z]{3}$", "", " ".join(place.split()))
+    if "," in s:
+        return s.split(",", 1)[1].strip(" ,")
+    m = re.search(r"\(([^)]+)\)$", s) or re.search(r"\s([A-Z]{2})$", s)
+    return m.group(1).strip() if m else ""
+
+
 def _search(q):
-    """[(id, текст совпадения, подпись)] из поиска Викиданных по подписям и псевдонимам на всех языках."""
+    """[(id, текст совпадения, подпись, описание)] из поиска Викиданных по подписям и псевдонимам
+    на всех языках."""
     url = API + "?" + urlencode({"action": "wbsearchentities", "search": q, "language": "en",
                                  "type": "item", "limit": 12, "format": "json"})
     net._throttle(url, gap=1.0)
     d = json.loads(net.fetch(url, tries=2))
-    return [(x["id"], (x.get("match") or {}).get("text") or "", x.get("label") or "") for x in d.get("search") or []]
+    return [(x["id"], (x.get("match") or {}).get("text") or "", x.get("label") or "", x.get("description") or "")
+            for x in d.get("search") or []]
 
 
 def exact(q, hits):
     """id совпавших с запросом целиком (по тексту совпадения или по подписи), в порядке поиска."""
     n = _norm(q)
-    return [i for i, mt, lb in hits if n and (_norm(mt) == n or _norm(lb) == n)]
+    return [h[0] for h in hits if n and (_norm(h[1]) == n or _norm(h[2]) == n)]
 
 
 def _facts(ids, rows_of):
@@ -96,12 +108,14 @@ def _facts(ids, rows_of):
     ids = list(dict.fromkeys(ids))
     for i in range(0, len(ids), 120):
         chunk = " ".join("wd:" + x for x in ids[i:i + 120])
-        rows = rows_of(f"""SELECT ?item ?ru ?links ?ioc ?iso WHERE {{
+        rows = rows_of(f"""SELECT ?item ?ru ?links ?ioc ?iso ?sioc ?siso WHERE {{
   VALUES ?item {{ {chunk} }}
   ?item wdt:P625 ?coord ; wdt:P17 ?c ; wikibase:sitelinks ?links .
   FILTER EXISTS {{ VALUES ?t {{ {_PLACE_TYPES} }} ?item wdt:P31/wdt:P279* ?t }}
   OPTIONAL {{ ?c wdt:P984 ?ioc }}
   OPTIONAL {{ ?c wdt:P298 ?iso }}
+  OPTIONAL {{ ?item wdt:P984 ?sioc }}
+  OPTIONAL {{ ?item wdt:P298 ?siso }}
   OPTIONAL {{ ?item rdfs:label ?ru FILTER(LANG(?ru) = "ru") }}
 }}""")
         if rows is None:
@@ -112,19 +126,34 @@ def _facts(ids, rows_of):
             if r.get("ru"):
                 f["ru"] = r["ru"]["value"]
             f["links"] = max(f["links"], int(r["links"]["value"]))
-            for k in ("ioc", "iso"):
+            for k in ("ioc", "iso", "sioc", "siso"):  # страна, а у Гонконга и свой код
                 if r.get(k):
                     f["cc"].add(r[k]["value"])
     return out
 
 
-def choose(cands, facts, code, nation, fallback=False):
+def _dominant(top, rivals, facts):
+    """top известнее всех мест из rivals в других странах больше чем в FAMOUS раз."""
+    other = [facts[q]["links"] for q in rivals if not facts[q]["cc"] & facts[top]["cc"]]
+    return all(facts[top]["links"] > FAMOUS * max(n, 1) for n in other)
+
+
+def choose(cands, facts, code, nation, fallback=False, region="", descs=None):
     """Какое из совпавших мест (id в порядке поиска) — то самое, или None.
     code — код страны из строки ISU, nation — страна спортсмена (код МОК);
-    fallback — запрос без последнего слова: тогда только в известной стране."""
+    fallback — запрос без последнего слова: тогда только в известной стране;
+    region — уточнение из строки ISU, descs — {id: описание из поиска}: место, в описании которого
+    уточнение есть («Ontario» — «city in Ontario, Canada»), — то самое и без сравнения известности.
+    Двухбуквенное уточнение («ON», «VA») — область или штат страны спортсмена."""
     geo = [q for q in cands if q in facts]
     if not geo:
         return None
+    sure = bool(re.fullmatch(r"[A-Z]{2}", region or ""))
+    r = _norm(region or "")
+    if r and not sure and descs:
+        named = [q for q in geo if f" {r} " in f" {_norm(descs.get(q, ''))} "]
+        if named:
+            geo, sure = named, True
     if code:
         geo_in = [q for q in geo if code in facts[q]["cc"]]
         return geo_in[0] if geo_in else None
@@ -132,13 +161,15 @@ def choose(cands, facts, code, nation, fallback=False):
     if home:
         pick = home[0]
         top = max(geo, key=lambda q: facts[q]["links"])
-        if top != pick and not facts[top]["cc"] & facts[pick]["cc"] and facts[top]["links"] > FAMOUS * max(facts[pick]["links"], 1):
+        if not sure and top != pick and _dominant(top, [pick], facts):
             return None
         return pick
     if fallback:
         return None
-    countries = {frozenset(facts[q]["cc"]) for q in geo}
-    return geo[0] if len(countries) == 1 else None
+    if len({frozenset(facts[q]["cc"]) for q in geo}) == 1:
+        return geo[0]
+    top = max(geo, key=lambda q: facts[q]["links"])
+    return top if _dominant(top, geo, facts) else None
 
 
 def _ru_name(s):
@@ -183,14 +214,16 @@ def refresh(pairs, log=print, path=None, budget=BUDGET, today=None, search=None,
         todo.append((place, nation_code(nation), k))
     if not todo:
         return cache
-    found, spent = {}, 0
+    found, descs, spent = {}, {}, 0
     for place, _, _ in todo:
         for q in split(place)[0]:
             if q in found or spent >= budget:
                 continue
             spent += 1
             try:
-                found[q] = exact(q, search(q))
+                hits = search(q)
+                found[q] = exact(q, hits)
+                descs.update((h[0], h[3]) for h in hits if len(h) > 3)
             except (net.FetchError, ValueError, KeyError) as e:
                 # Викиданные не отвечают или просят реже: остальное — в следующий сбор
                 log("  ! места рождения, поиск:", q, e)
@@ -205,11 +238,12 @@ def refresh(pairs, log=print, path=None, budget=BUDGET, today=None, search=None,
         qs, code = split(place)
         if not qs or qs[0] not in found:
             continue  # не дошла очередь или поиск не ответил
-        pick = choose(found[qs[0]], facts, code, nation)
+        reg = region(place)
+        pick = choose(found[qs[0]], facts, code, nation, region=reg, descs=descs)
         if pick is None and len(qs) > 1:
             if qs[1] not in found:
                 continue  # второй запрос ещё не искали
-            pick = choose(found[qs[1]], facts, code, nation, fallback=True)
+            pick = choose(found[qs[1]], facts, code, nation, fallback=True, region=reg, descs=descs)
         ru = _ru_name(facts[pick]["ru"]) if pick else ""
         cache[k] = {"ru": ru, "q": pick or "", "at": today.isoformat(), "v": VERSION}
         done += 1
