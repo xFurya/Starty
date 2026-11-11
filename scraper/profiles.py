@@ -21,6 +21,7 @@ import re
 
 from . import names as nm
 from . import net
+from . import places as bp
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, "data", "bios.json")
@@ -435,11 +436,12 @@ def card_behind(card, isu):
                for c in card.get("coach") or [])
 
 
-def profile(name, nation, bio=None, card=None, cards_by_name=None, staff=()):
+def profile(name, nation, bio=None, card=None, cards_by_name=None, staff=(), places=None):
     """Профиль для телефона. name — как в приложении («Анна Билибина / Дмитрий Кашаев»),
     bio — запись кэша ISU или None, card — карточка картотеки одиночника или None;
     cards_by_name — {имя: карточка} для партнёров пары; staff — тренеры и хореографы картотеки
-    (по ним имена из ISU пишутся по-русски)."""
+    (по ним имена из ISU пишутся по-русски); places — кэш мест рождения по-русски (places.refresh):
+    узнанное место пишется по-русски, остальное — как у ISU."""
     out = {"n": name}
     parts = [p.strip() for p in name.split(" / ")]
     who = [{"n": p} for p in parts]
@@ -453,6 +455,8 @@ def profile(name, nation, bio=None, card=None, cards_by_name=None, staff=()):
                 for k in ("born", "place", "h", "since", "club", "former"):
                     if k in x:
                         w[k] = [nm.pretty_latin(f) for f in x[k]] if k == "former" else x[k]
+                if w.get("place") and places:
+                    w["place"] = bp.ru(w["place"], nation, places)
         for k in ("coach", "choreo", "fcoach", "music", "pb", "sb"):
             if b.get(k):
                 out[k] = [staff_ru(x, staff) for x in b[k]] if k in ("coach", "choreo", "fcoach") else b[k]
@@ -504,12 +508,25 @@ def profile(name, nation, bio=None, card=None, cards_by_name=None, staff=()):
     return out if src else None
 
 
-def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None, teams=None, today=None):
+def birth_places(people, store):
+    """[(место рождения как у ISU, страна спортсмена)] всех, у кого есть биография ISU."""
+    ids, cache = store.get("ids", {}), store.get("bios", {})
+    out = []
+    for p in people:
+        bio = cache.get(ids.get(nm.key(p["n"]), ""))
+        for w in (bio or {}).get("bio", {}).get("who") or []:
+            if w.get("place"):
+                out.append((w["place"], p.get("c", "")))
+    return list(dict.fromkeys(out))
+
+
+def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None, teams=None, today=None, places=None):
     """Записать профили и проставить людям ключ "p". people — справочник [{n, c, k}];
     store — кэш биографий из refresh; cards — {номер: карточка картотеки с fio};
     book — «Примечательное» из feats.load (нет — раздела нет); aliases — одно лицо под двумя
     именами (config.json; по умолчанию оттуда же): карточка «Игнатова» — профилю «Трусова»;
-    teams — списки сборных из teams.load (нет — строки «Сборная» нет); today — дата для сезона списка."""
+    teams — списки сборных из teams.load (нет — строки «Сборная» нет); today — дата для сезона списка;
+    places — места рождения по-русски из places.refresh (нет — как у ISU)."""
     from . import feats as ft
     from . import teams as tm
     from .people import card_name
@@ -534,7 +551,7 @@ def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None
                 cards_by_name[x] = by_name[nm.key(x)]
         bio = cache.get(ids.get(nm.key(name), ""))
         card = by_name.get(nm.key(name)) if len(parts) == 1 else None
-        pr = profile(name, p.get("c", ""), bio, card, cards_by_name, staff)
+        pr = profile(name, p.get("c", ""), bio, card, cards_by_name, staff, places)
         if not pr:
             p.pop("p", None)
             continue

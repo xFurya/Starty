@@ -31,6 +31,7 @@ from . import archive as ar
 from . import keep as kp
 from . import protocols as P
 from . import photos as ph
+from . import places as pl
 from . import feats as ft
 from . import teams as tm
 from . import profiles as pf
@@ -1512,8 +1513,13 @@ def main():
         except Exception as e:  # «Сборная» — дополнение к профилю
             log("!! сборные:", e)
             squads = None
-        pf.write(people, pf.refresh(book.get("bios") or {}, competed, log), book.get("cards"), log=log, book=notable,
-                 teams=squads)
+        store = pf.refresh(book.get("bios") or {}, competed, log)
+        try:
+            places = pl.refresh(pf.birth_places(people, store), log)
+        except Exception as e:  # место рождения по-русски — дополнение: иначе как у ISU
+            log("!! места рождения:", e)
+            places = pl.load()
+        pf.write(people, store, book.get("cards"), log=log, book=notable, teams=squads, places=places)
     except Exception as e:  # профиль — дополнение: без него лента работает
         log("!! профили:", e)
         traceback.print_exc()
