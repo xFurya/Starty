@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-12T10:17:57+03:00",
- "checked": "2026-11-12T07:45:25.528879+00:00",
+ "checked": "2026-11-12T08:17:24.789521+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -48697,14 +48697,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Россияне:\n• Таисия Гусева / Даниил Овчинников — 11:39\n\nНачало: 11:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Дарья Парфенова / Павел Николаев — 52.94\n\nРоссияне:\n• Таисия Гусева / Даниил Овчинников — 11:39\n\nНачало: 11:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Дарья Парфенова / Павел Николаев",
      "nation": "СПБ",
      "time": "11:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "52.94"
     },
     {
      "name": "Анастасия Уткина / Артемий Мохов",
@@ -48749,7 +48751,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Дарья Парфенова / Павел Николаев",
+     "nation": "СПБ",
+     "points": "52.94"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:women-junior-kp",
