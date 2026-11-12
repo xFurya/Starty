@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-12T16:58:47+03:00",
- "checked": "2026-11-12T16:05:50.533190+00:00",
+ "checked": "2026-11-12T16:29:48.386962+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -49621,14 +49621,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Россияне:\n• Таисия Гусева / Даниил Овчинников — 19:49\n\nНачало: 19:10 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Дарья Кардаполова / Антон Рязанов — 78.50\n\nРоссияне:\n• Таисия Гусева / Даниил Овчинников — 19:49\n\nНачало: 19:10 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Дарья Кардаполова / Антон Рязанов",
      "nation": "СВЕ",
      "time": "19:17",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "78.50"
     },
     {
      "name": "Дарья Парфенова / Павел Николаев",
@@ -49673,7 +49675,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Дарья Кардаполова / Антон Рязанов",
+     "nation": "СВЕ",
+     "points": "78.50"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:women-junior-pp",
