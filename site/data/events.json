@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-12T12:25:51+03:00",
- "checked": "2026-11-12T12:25:51+03:00",
+ "checked": "2026-11-12T09:41:24.985974+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -48893,7 +48893,7 @@
      "nation": "НСО",
      "no": 3,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "59.09",
      "time": "13:38"
     },
@@ -48988,7 +48988,9 @@
      "nation": "МАР",
      "time": "12:35",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 6,
+     "points": "42.89"
     },
     {
      "name": "Юлиана Новиченкова",
@@ -49002,7 +49004,9 @@
      "nation": "МОС",
      "time": "12:30",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4,
+     "points": "65.78"
     }
    ],
    "provisional": true,
