@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-12T11:21:58+03:00",
- "checked": "2026-11-12T08:45:24.849683+00:00",
+ "checked": "2026-11-12T09:17:26.754988+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -48846,14 +48846,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Россияне:\n• София Сарновская — 12:41\n• Алиса Заикина — 12:49\n\nНачало: 12:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Елизавета Крылова — 66.07\n\nРоссияне:\n• София Сарновская — 12:41\n• Алиса Заикина — 12:49\n\nНачало: 12:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Елизавета Крылова",
      "nation": "СПБ",
      "time": "12:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "66.07"
     },
     {
      "name": "Лизавета Мельникова",
@@ -49002,7 +49004,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Елизавета Крылова",
+     "nation": "СПБ",
+     "points": "66.07"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:men-junior-kp",
