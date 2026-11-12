@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-12T12:25:51+03:00",
- "checked": "2026-11-12T11:17:24.511804+00:00",
+ "checked": "2026-11-12T11:53:25.202808+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -49127,14 +49127,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Россияне:\n• Алдар Самбуев — 16:43\n\nНачало: 14:35 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Глеб Ковтун — 63.56\n\nРоссияне:\n• Алдар Самбуев — 16:43\n\nНачало: 14:35 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Глеб Ковтун",
      "nation": "СПБ",
      "time": "14:42",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "63.56"
     },
     {
      "name": "Александр Чмиль",
@@ -49283,7 +49285,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Глеб Ковтун",
+     "nation": "СПБ",
+     "points": "63.56"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:dance-junior-pt",
