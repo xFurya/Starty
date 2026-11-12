@@ -31,7 +31,9 @@
 ["https://fsrussia.ru/results/2627/6etap_jun/FSKXICEDANCEJUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf", "ЮГП России «Сердце Сибири»", "2026-11-12", "dance", "junior", "РТ", "ФФККР"],
 ["https://fsrussia.ru/results/2627/6etap_jun/FSKXPAIRS---JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf", "ЮГП России «Сердце Сибири»", "2026-11-12", "pairs", "junior", "КП", "ФФККР"],
 ["https://fsrussia.ru/results/2627/6etap_jun/FSKMSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf", "ЮГП России «Сердце Сибири»", "2026-11-12", "men", "junior", "КП", "ФФККР"],
-["https://fsrussia.ru/results/2627/6etap_jun/FSKWSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf", "ЮГП России «Сердце Сибири»", "2026-11-12", "women", "junior", "КП", "ФФККР"]
+["https://fsrussia.ru/results/2627/6etap_jun/FSKWSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf", "ЮГП России «Сердце Сибири»", "2026-11-12", "women", "junior", "КП", "ФФККР"],
+["https://fsrussia.ru/results/2627/6etap_jun/FSKXPAIRS---JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf", "ЮГП России «Сердце Сибири»", "2026-11-12", "pairs", "junior", "ПП", "ФФККР"],
+["https://fsrussia.ru/results/2627/6etap_jun/FSKXICEDANCEJUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf", "ЮГП России «Сердце Сибири»", "2026-11-12", "dance", "junior", "ПТ", "ФФККР"]
 ],
 "ath": {
 "aboian hana maria / danil veseluhin": {"c": ["USA"], "el": {"Kp4": [1, 10, null, null]}, "k": "dance", "n": "Hana Maria ABOIAN / Daniil VESELUKHIN"},
@@ -54,6 +56,7 @@
 "gartung genrih": {"c": ["GER"], "el": {"3A": [2, 0, 8.0, 0], "4F": [2, 0, 11.0, 1], "4F+3T": [1, 0, 15.2, 0], "4Lz": [2, 0, 11.5, 0], "4Lz+3T": [1, 1, 15.7, 1]}, "k": "men", "n": "Genrikh GARTUNG", "q": [2, 0, "4F 4Lz"]},
 "german lenkov": {"c": ["СПБ"], "el": {"3A": [1, 30, 8.0, 30]}, "k": "men", "n": "Герман ЛЕНКОВ"},
 "gion schmid": {"c": ["SUI"], "el": {"3A": [1, 6, 8.0, 6]}, "k": "men", "n": "Gion SCHMID"},
+"guseva taisia / danil ovchinikov": {"c": ["МОС"], "el": {"4Tw": [1, 32, null, null]}, "k": "pairs", "n": "Таисия ГУСЕВА / Даниил ОВЧИННИКОВ"},
 "hamzin roman": {"c": ["СПБ"], "el": {"3A": [1, 30, 8.0, 30]}, "k": "men", "n": "Роман ХАМЗИН"},
 "hrulev iaroslav": {"c": ["МОС"], "el": {"3A": [1, 30, 8.0, 30]}, "k": "men", "n": "Ярослав ХРУЛЕВ"},
 "ilia malkov": {"c": ["AIN2", "ТАТ"], "el": {"3A": [3, 6, 8.0, 6], "3A+1Eu+3S+2A+SEQ": [1, 7, 15.6, 7], "4S": [2, 7, 9.7, 7], "4S+2T": [1, 7, 11.0, 7], "4T": [1, 7, 9.5, 7]}, "k": "men", "n": "Илья МАЛЬКОВ", "q": [3, 7, "4T 4S 4S"]},
