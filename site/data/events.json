@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-12T12:25:51+03:00",
- "checked": "2026-11-12T11:09:25.028222+00:00",
+ "checked": "2026-11-12T11:17:24.511804+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -48870,7 +48870,7 @@
      "points": "68.34"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. София Сарновская — 71.29\n2. Валерия Лукашова — 68.95\n3. Арина Ореховская — 68.34\n\nРоссияне:\n• София Сарновская — 12:41\n• Алиса Заикина — 12:49\n\nНачало: 12:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. София Сарновская — 71.29\n2. Валерия Лукашова — 68.95\n3. Арина Ореховская — 68.34\n\nПримечательное:\n• София Сарновская — Тройной аксель\n\nРоссияне:\n• София Сарновская — 12:41\n• Алиса Заикина — 12:49\n\nНачало: 12:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Елизавета Крылова",
@@ -48994,7 +48994,9 @@
      "nation": "ОМС",
      "time": "14:13",
      "no": 18,
-     "warmup": 3
+     "warmup": 3,
+     "place": 17,
+     "points": "43.85"
     },
     {
      "name": "Кристина Двуреченская",
@@ -49011,7 +49013,7 @@
      "time": "12:35",
      "no": 6,
      "warmup": 1,
-     "place": 17,
+     "place": 18,
      "points": "42.89"
     },
     {
@@ -49033,7 +49035,6 @@
      "points": "65.78"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/6etap_jun/index.htm",
     "seg": "https://fsrussia.ru/results/2627/6etap_jun/SEG003.htm",
@@ -49059,9 +49060,16 @@
      "Варвара КОНДРАТЬЕВА": "Варвара Кондратьева",
      "Елизавета БОРОДИХИНА": "Елизавета Бородихина"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json",
+   "facts": [
+    {
+     "who": "София Сарновская",
+     "text": "Тройной аксель",
+     "kind": "element"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:men-junior-kp",
