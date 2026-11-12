@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-12T07:22:00+03:00",
- "checked": "2026-11-12T07:22:00+03:00",
+ "checked": "2026-11-12T06:13:05.690065+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -48500,14 +48500,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 09:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Капитолина Кряковцева / Арсений Ивлев — 47.08\n\nНачало: 09:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Капитолина Кряковцева / Арсений Ивлев",
      "nation": "САМ",
      "time": "09:06",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "47.08"
     },
     {
      "name": "Варвара Слуцкая / Глеб Гончаров",
@@ -48608,7 +48610,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Капитолина Кряковцева / Арсений Ивлев",
+     "nation": "САМ",
+     "points": "47.08"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:pairs-junior-kp",
