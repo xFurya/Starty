@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-12T09:13:31+03:00",
- "checked": "2026-11-12T09:13:31+03:00",
+ "checked": "2026-11-12T06:29:03.329272+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -48503,19 +48503,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Мария Фефелова / Артём Валов",
+     "nation": "МОБ",
+     "points": "72.31"
+    },
+    {
+     "place": 2,
+     "name": "Диана Сарвартинова / Игорь Зубцов",
+     "nation": "СПБ",
+     "points": "55.49"
+    },
+    {
+     "place": 3,
      "name": "Капитолина Кряковцева / Арсений Ивлев",
      "nation": "САМ",
      "points": "47.08"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Капитолина Кряковцева / Арсений Ивлев — 47.08\n\nНачало: 09:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Мария Фефелова / Артём Валов — 72.31\n2. Диана Сарвартинова / Игорь Зубцов — 55.49\n3. Капитолина Кряковцева / Арсений Ивлев — 47.08\n\nНачало: 09:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Капитолина Кряковцева / Арсений Ивлев",
      "nation": "САМ",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 3,
      "points": "47.08",
      "time": "09:06"
     },
@@ -48568,7 +48580,9 @@
      "nation": "МОБ",
      "time": "09:29",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "72.31"
     },
     {
      "name": "Милана Жабина / Вениамин Башуров",
@@ -48621,28 +48635,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Мария Фефелова / Артём Валов",
-     "nation": "МОБ",
-     "points": "72.31"
-    },
-    {
-     "place": 2,
-     "name": "Диана Сарвартинова / Игорь Зубцов",
-     "nation": "СПБ",
-     "points": "55.49"
-    },
-    {
-     "place": 3,
-     "name": "Капитолина Кряковцева / Арсений Ивлев",
-     "nation": "САМ",
-     "points": "47.08"
-    }
-   ],
-   "provisional": true
+   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:pairs-junior-kp",
