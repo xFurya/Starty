@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-12T12:25:51+03:00",
- "checked": "2026-11-12T13:49:48.105719+00:00",
+ "checked": "2026-11-12T13:53:48.107849+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -49094,7 +49094,7 @@
      "time": "16:43",
      "no": 17,
      "warmup": 3,
-     "place": 2,
+     "place": 3,
      "points": "82.56"
     }
    ],
@@ -49129,7 +49129,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Герман Ленков — 83.78\n2. Алдар Самбуев — 82.56\n3. Вадим Воронов — 78.69\n\nРоссияне:\n• Алдар Самбуев — 16:43\n\nНачало: 14:35 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Герман Ленков — 83.78\n2. Илья Мальков — 82.92\n3. Алдар Самбуев — 82.56\n\nРоссияне:\n• Алдар Самбуев — 16:43\n\nНачало: 14:35 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Глеб Ковтун",
@@ -49137,7 +49137,7 @@
      "time": "14:42",
      "no": 1,
      "warmup": 1,
-     "place": 11,
+     "place": 12,
      "points": "63.56"
     },
     {
@@ -49146,7 +49146,7 @@
      "time": "14:59",
      "no": 4,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "70.56"
     },
     {
@@ -49155,7 +49155,7 @@
      "time": "15:05",
      "no": 5,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "70.28"
     },
     {
@@ -49164,7 +49164,7 @@
      "time": "15:10",
      "no": 6,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "75.48"
     },
     {
@@ -49173,7 +49173,7 @@
      "time": "15:16",
      "no": 2,
      "warmup": 1,
-     "place": 14,
+     "place": 15,
      "points": "61.07"
     },
     {
@@ -49182,7 +49182,7 @@
      "time": "15:24",
      "no": 7,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "points": "64.63"
     },
     {
@@ -49191,7 +49191,7 @@
      "time": "15:29",
      "no": 8,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "67.67"
     },
     {
@@ -49200,7 +49200,7 @@
      "time": "15:35",
      "no": 9,
      "warmup": 2,
-     "place": 13,
+     "place": 14,
      "points": "61.80"
     },
     {
@@ -49209,7 +49209,7 @@
      "time": "15:41",
      "no": 10,
      "warmup": 2,
-     "place": 16,
+     "place": 17,
      "points": "55.50"
     },
     {
@@ -49227,7 +49227,7 @@
      "time": "15:52",
      "no": 12,
      "warmup": 2,
-     "place": 12,
+     "place": 13,
      "points": "62.08"
     },
     {
@@ -49236,7 +49236,7 @@
      "time": "16:13",
      "no": 3,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "78.69"
     },
     {
@@ -49245,7 +49245,7 @@
      "time": "16:20",
      "no": 13,
      "warmup": 3,
-     "place": 15,
+     "place": 16,
      "points": "59.53"
     },
     {
@@ -49254,7 +49254,7 @@
      "time": "16:26",
      "no": 14,
      "warmup": 3,
-     "place": 6,
+     "place": 7,
      "points": "73.62"
     },
     {
@@ -49263,7 +49263,7 @@
      "time": "16:31",
      "no": 15,
      "warmup": 3,
-     "place": 17,
+     "place": 18,
      "points": "54.14"
     },
     {
@@ -49272,7 +49272,7 @@
      "time": "16:37",
      "no": 16,
      "warmup": 3,
-     "place": 5,
+     "place": 6,
      "points": "74.98"
     },
     {
@@ -49281,7 +49281,7 @@
      "time": "16:43",
      "no": 17,
      "warmup": 3,
-     "place": 2,
+     "place": 3,
      "points": "82.56"
     },
     {
@@ -49289,7 +49289,9 @@
      "nation": "ТАТ",
      "time": "16:48",
      "no": 18,
-     "warmup": 3
+     "warmup": 3,
+     "place": 2,
+     "points": "82.92"
     }
    ],
    "live": {
@@ -49317,7 +49319,7 @@
      "Алдар САМБУЕВ": "Алдар Самбуев",
      "Илья МАЛЬКОВ": "Илья Мальков"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json",
    "podium": [
@@ -49329,18 +49331,17 @@
     },
     {
      "place": 2,
-     "name": "Алдар Самбуев",
-     "nation": "МОС",
-     "points": "82.56"
+     "name": "Илья Мальков",
+     "nation": "ТАТ",
+     "points": "82.92"
     },
     {
      "place": 3,
-     "name": "Вадим Воронов",
-     "nation": "СПБ",
-     "points": "78.69"
+     "name": "Алдар Самбуев",
+     "nation": "МОС",
+     "points": "82.56"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:dance-junior-pt",
