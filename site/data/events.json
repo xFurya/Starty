@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-13T06:08:22+03:00",
- "checked": "2026-11-13T09:22:04.595758+00:00",
+ "checked": "2026-11-13T10:02:04.601514+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -50129,14 +50129,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Россияне:\n• Алдар Самбуев — 14:57\n\nНачало: 12:45 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Денис Яшин — 102.38\n\nРоссияне:\n• Алдар Самбуев — 14:57\n\nНачало: 12:45 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Денис Яшин",
      "nation": "СВЕ",
      "time": "12:52",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "102.38"
     },
     {
      "name": "Кирилл Штурбабин",
@@ -50285,7 +50287,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Денис Яшин",
+     "nation": "СВЕ",
+     "points": "102.38"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-skate-america-2026:men-senior-kp",
