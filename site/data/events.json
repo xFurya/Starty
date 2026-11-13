@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-12T22:06:05+03:00",
- "checked": "2026-11-12T22:06:05+03:00",
+ "generated": "2026-11-13T06:08:22+03:00",
+ "checked": "2026-11-13T06:08:22+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -50211,7 +50211,7 @@
     "Sota Yamamoto",
     "Tamir Kuperman"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
+   "src": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -50226,54 +50226,111 @@
    "field": [
     {
      "name": "Aleksa Rakic",
-     "nation": "CAN"
-    },
-    {
-     "name": "Aleksandr Selevko",
-     "nation": "EST"
-    },
-    {
-     "name": "Daniel Grassl",
-     "nation": "ITA"
-    },
-    {
-     "name": "Daniel Martynov",
-     "nation": "USA"
+     "nation": "CAN",
+     "time": "06:10",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Donovan Carrillo",
-     "nation": "MEX"
+     "nation": "MEX",
+     "time": "06:16",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Daniel Martynov",
+     "nation": "USA",
+     "time": "06:23",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Georgii Reshtenko",
-     "nation": "CZE"
-    },
-    {
-     "name": "Ilia Malinin",
-     "nation": "USA"
-    },
-    {
-     "name": "Jason Brown",
-     "nation": "USA"
-    },
-    {
-     "name": "Lukas Britschgi",
-     "nation": "SUI"
-    },
-    {
-     "name": "Nikolaj Memola",
-     "nation": "ITA"
-    },
-    {
-     "name": "Sota Yamamoto",
-     "nation": "JPN"
+     "nation": "CZE",
+     "time": "06:29",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Tamir Kuperman",
-     "nation": "ISR"
+     "nation": "ISR",
+     "time": "06:35",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Jason Brown",
+     "nation": "USA",
+     "time": "06:41",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Nikolaj Memola",
+     "nation": "ITA",
+     "time": "06:55",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Sota Yamamoto",
+     "nation": "JPN",
+     "time": "07:01",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Lukas Britschgi",
+     "nation": "SUI",
+     "time": "07:07",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Aleksandr Selevko",
+     "nation": "EST",
+     "time": "07:14",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Daniel Grassl",
+     "nation": "ITA",
+     "time": "07:20",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Ilia Malinin",
+     "nation": "USA",
+     "time": "07:26",
+     "no": 12,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpusa2026/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Aleksa RAKIC": "Aleksa Rakic",
+     "Donovan CARRILLO": "Donovan Carrillo",
+     "Daniel MARTYNOV": "Daniel Martynov",
+     "Georgii RESHTENKO": "Georgii Reshtenko",
+     "Tamir KUPERMAN": "Tamir Kuperman",
+     "Jason BROWN": "Jason Brown",
+     "Nikolaj MEMOLA": "Nikolaj Memola",
+     "Sota YAMAMOTO": "Sota Yamamoto",
+     "Lukas BRITSCHGI": "Lukas Britschgi",
+     "Aleksandr SELEVKO": "Aleksandr Selevko",
+     "Daniel GRASSL": "Daniel Grassl",
+     "Ilia MALININ": "Ilia Malinin"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-america-2026.json"
   },
   {
    "id": "isu:isu-gp-skate-america-2026:pairs-senior-kp",
@@ -50284,7 +50341,7 @@
    "seg": "КП",
    "title": "GP Skate America — пары КП",
    "start": "2026-11-14T07:50:00+03:00",
-   "end": "2026-11-14T09:00:00+03:00",
+   "end": "2026-11-14T08:57:00+03:00",
    "venue": "Everett, USA",
    "intl": true,
    "broadcast": [
@@ -50297,12 +50354,12 @@
     "Audrey Shin / Spencer Akira Howe",
     "Aurelie Faula / Theo Belle",
     "Ava Kemp / Yohnatan Elizarov",
-    "Katie Mcbeath / Balazs Nagy",
+    "Katie McBEATH / Balazs Nagy",
     "Minerva Fabienne Hase / Nikita Volodin",
     "Oxana Vouillamoz / Tom Bouvart",
     "Sofiia Holichenko / Artem Darenskyi"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
+   "src": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -50316,39 +50373,80 @@
    "desc": "Начало: 07:50 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Alisa Efimova / Misha Mitrofanov",
-     "nation": "USA"
+     "name": "Katie McBEATH / Balazs Nagy",
+     "nation": "USA",
+     "time": "07:57",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Audrey Shin / Spencer Akira Howe",
-     "nation": "USA"
-    },
-    {
-     "name": "Aurelie Faula / Theo Belle",
-     "nation": "FRA"
-    },
-    {
-     "name": "Ava Kemp / Yohnatan Elizarov",
-     "nation": "CAN"
-    },
-    {
-     "name": "Katie Mcbeath / Balazs Nagy",
-     "nation": "USA"
-    },
-    {
-     "name": "Minerva Fabienne Hase / Nikita Volodin",
-     "nation": "GER"
-    },
-    {
-     "name": "Oxana Vouillamoz / Tom Bouvart",
-     "nation": "SUI"
+     "nation": "USA",
+     "time": "08:03",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Sofiia Holichenko / Artem Darenskyi",
-     "nation": "UKR"
+     "nation": "UKR",
+     "time": "08:10",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Aurelie Faula / Theo Belle",
+     "nation": "FRA",
+     "time": "08:16",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Ava Kemp / Yohnatan Elizarov",
+     "nation": "CAN",
+     "time": "08:30",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Oxana Vouillamoz / Tom Bouvart",
+     "nation": "SUI",
+     "time": "08:36",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Alisa Efimova / Misha Mitrofanov",
+     "nation": "USA",
+     "time": "08:43",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Minerva Fabienne Hase / Nikita Volodin",
+     "nation": "GER",
+     "time": "08:49",
+     "no": 8,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpusa2026/SEG005.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Katie McBEATH / Balazs NAGY": "Katie McBEATH / Balazs Nagy",
+     "Audrey SHIN / Spencer Akira HOWE": "Audrey Shin / Spencer Akira Howe",
+     "Sofiia HOLICHENKO / Artem DARENSKYI": "Sofiia Holichenko / Artem Darenskyi",
+     "Aurelie FAULA / Theo BELLE": "Aurelie Faula / Theo Belle",
+     "Ava KEMP / Yohnatan ELIZAROV": "Ava Kemp / Yohnatan Elizarov",
+     "Oxana VOUILLAMOZ / Tom BOUVART": "Oxana Vouillamoz / Tom Bouvart",
+     "Alisa EFIMOVA / Misha MITROFANOV": "Alisa Efimova / Misha Mitrofanov",
+     "Minerva Fabienne HASE / Nikita VOLODIN": "Minerva Fabienne Hase / Nikita Volodin"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-america-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:dance-senior-rt",
@@ -50487,7 +50585,7 @@
    "seg": "РТ",
    "title": "GP Skate America — танцы РТ",
    "start": "2026-11-15T01:03:00+03:00",
-   "end": "2026-11-15T02:18:00+03:00",
+   "end": "2026-11-15T02:22:00+03:00",
    "venue": "Everett, USA",
    "intl": true,
    "broadcast": [
@@ -50507,7 +50605,7 @@
     "Noemi Maria Tali / Noah Lafornara",
     "Sofia Val / Asaf Kazimov"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
+   "src": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -50521,47 +50619,96 @@
    "desc": "Начало: 01:03 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Emilea Zingas / Vadym Kolesnik",
-     "nation": "USA"
-    },
-    {
-     "name": "Evgeniia Lopareva / Geoffrey Brissaud",
-     "nation": "FRA"
-    },
-    {
-     "name": "Holly Harris / Jason Chan",
-     "nation": "AUS"
-    },
-    {
-     "name": "Iryna Pidgaina / Artem Koval",
-     "nation": "UKR"
-    },
-    {
-     "name": "Katarina Wolfkostin / Dimitry Tsarevski",
-     "nation": "USA"
-    },
-    {
-     "name": "Katerina Mrazkova / Daniel Mrazek",
-     "nation": "CZE"
-    },
-    {
-     "name": "Leah Neset / Artem Markelov",
-     "nation": "USA"
-    },
-    {
      "name": "Natacha Lagouge / Arnaud Caffa",
-     "nation": "FRA"
-    },
-    {
-     "name": "Noemi Maria Tali / Noah Lafornara",
-     "nation": "ITA"
+     "nation": "FRA",
+     "time": "01:09",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Sofia Val / Asaf Kazimov",
-     "nation": "ESP"
+     "nation": "ESP",
+     "time": "01:16",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Leah Neset / Artem Markelov",
+     "nation": "USA",
+     "time": "01:22",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Noemi Maria Tali / Noah Lafornara",
+     "nation": "ITA",
+     "time": "01:29",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Katarina Wolfkostin / Dimitry Tsarevski",
+     "nation": "USA",
+     "time": "01:35",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Iryna Pidgaina / Artem Koval",
+     "nation": "UKR",
+     "time": "01:49",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Holly Harris / Jason Chan",
+     "nation": "AUS",
+     "time": "01:55",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Katerina Mrazkova / Daniel Mrazek",
+     "nation": "CZE",
+     "time": "02:02",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Emilea Zingas / Vadym Kolesnik",
+     "nation": "USA",
+     "time": "02:08",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Evgeniia Lopareva / Geoffrey Brissaud",
+     "nation": "FRA",
+     "time": "02:15",
+     "no": 10,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpusa2026/SEG007.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Natacha LAGOUGE / Arnaud CAFFA": "Natacha Lagouge / Arnaud Caffa",
+     "Sofia VAL / Asaf KAZIMOV": "Sofia Val / Asaf Kazimov",
+     "Leah NESET / Artem MARKELOV": "Leah Neset / Artem Markelov",
+     "Noemi Maria TALI / Noah LAFORNARA": "Noemi Maria Tali / Noah Lafornara",
+     "Katarina WOLFKOSTIN / Dimitry TSAREVSKI": "Katarina Wolfkostin / Dimitry Tsarevski",
+     "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Artem Koval",
+     "Holly HARRIS / Jason CHAN": "Holly Harris / Jason Chan",
+     "Katerina MRAZKOVA / Daniel MRAZEK": "Katerina Mrazkova / Daniel Mrazek",
+     "Emilea ZINGAS / Vadym KOLESNIK": "Emilea Zingas / Vadym Kolesnik",
+     "Evgeniia LOPAREVA / Geoffrey BRISSAUD": "Evgeniia Lopareva / Geoffrey Brissaud"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-america-2026.json"
   },
   {
    "id": "isu:isu-gp-skate-america-2026:women-senior-kp",
@@ -50582,11 +50729,17 @@
    "ours": [
     {
      "name": "Аделия Петросян",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "03:08",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Александра Трусова",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "03:14",
+     "no": 5,
+     "warmup": 1
     }
    ],
    "athletes": [
@@ -50597,13 +50750,13 @@
     "Rino Matsuike",
     "Sara-Maude Dupuis",
     "Sofia Samodelkina",
-    "Sophie Joline Von Felten",
+    "Sophie Joline von Felten",
     "Young You",
     "Yujae Kim",
     "Аделия Петросян",
     "Александра Трусова"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
+   "src": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -50614,58 +50767,115 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Россияне:\n• Аделия Петросян\n• Александра Трусова\n\nНачало: 02:42 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Россияне:\n• Аделия Петросян — 03:08\n• Александра Трусова — 03:14\n\nНачало: 02:42 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Ahsun Yun",
-     "nation": "KOR"
-    },
-    {
      "name": "Alexa Gasparotto",
-     "nation": "USA"
-    },
-    {
-     "name": "Ami Nakai",
-     "nation": "JPN"
-    },
-    {
-     "name": "Logan Higase-chen",
-     "nation": "USA"
-    },
-    {
-     "name": "Rino Matsuike",
-     "nation": "JPN"
-    },
-    {
-     "name": "Sara-Maude Dupuis",
-     "nation": "CAN"
-    },
-    {
-     "name": "Sofia Samodelkina",
-     "nation": "KAZ"
-    },
-    {
-     "name": "Sophie Joline Von Felten",
-     "nation": "USA"
+     "nation": "USA",
+     "time": "02:49",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Young You",
-     "nation": "KOR"
+     "nation": "KOR",
+     "time": "02:55",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Yujae Kim",
-     "nation": "KOR"
+     "name": "Logan Higase-chen",
+     "nation": "USA",
+     "time": "03:02",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Аделия Петросян",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "03:08",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Александра Трусова",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "03:14",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Sara-Maude Dupuis",
+     "nation": "CAN",
+     "time": "03:20",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Sophie Joline von Felten",
+     "nation": "USA",
+     "time": "03:34",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Rino Matsuike",
+     "nation": "JPN",
+     "time": "03:40",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Yujae Kim",
+     "nation": "KOR",
+     "time": "03:46",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Ahsun Yun",
+     "nation": "KOR",
+     "time": "03:53",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Sofia Samodelkina",
+     "nation": "KAZ",
+     "time": "03:59",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Ami Nakai",
+     "nation": "JPN",
+     "time": "04:05",
+     "no": 12,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpusa2026/SEG003.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Alexa GASPAROTTO": "Alexa Gasparotto",
+     "Young YOU": "Young You",
+     "Logan HIGASE-CHEN": "Logan Higase-chen",
+     "Adeliia PETROSIAN": "Аделия Петросян",
+     "Alexandra IGNATOVA": "Александра Трусова",
+     "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
+     "Sophie Joline von FELTEN": "Sophie Joline von Felten",
+     "Rino MATSUIKE": "Rino Matsuike",
+     "Yujae KIM": "Yujae Kim",
+     "Ahsun YUN": "Ahsun Yun",
+     "Sofia SAMODELKINA": "Sofia Samodelkina",
+     "Ami NAKAI": "Ami Nakai"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-america-2026.json"
   },
   {
    "id": "isu:isu-gp-skate-america-2026:men-senior-pp",
@@ -50698,7 +50908,7 @@
     "Sota Yamamoto",
     "Tamir Kuperman"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
+   "src": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -50760,7 +50970,28 @@
      "nation": "ISR"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpusa2026/SEG002.htm",
+    "cat": "https://results.isu.org/results/season2627/gpusa2026/CAT001RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpusa2026/SEG001.htm",
+    "names": {
+     "Aleksa RAKIC": "Aleksa Rakic",
+     "Georgii RESHTENKO": "Georgii Reshtenko",
+     "Aleksandr SELEVKO": "Aleksandr Selevko",
+     "Tamir KUPERMAN": "Tamir Kuperman",
+     "Daniel GRASSL": "Daniel Grassl",
+     "Nikolaj MEMOLA": "Nikolaj Memola",
+     "Sota YAMAMOTO": "Sota Yamamoto",
+     "Donovan CARRILLO": "Donovan Carrillo",
+     "Lukas BRITSCHGI": "Lukas Britschgi",
+     "Jason BROWN": "Jason Brown",
+     "Ilia MALININ": "Ilia Malinin",
+     "Daniel MARTYNOV": "Daniel Martynov"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-america-2026.json"
   },
   {
    "id": "isu:isu-gp-skate-america-2026:pairs-senior-pp",
@@ -50784,12 +51015,12 @@
     "Audrey Shin / Spencer Akira Howe",
     "Aurelie Faula / Theo Belle",
     "Ava Kemp / Yohnatan Elizarov",
-    "Katie Mcbeath / Balazs Nagy",
+    "Katie McBEATH / Balazs Nagy",
     "Minerva Fabienne Hase / Nikita Volodin",
     "Oxana Vouillamoz / Tom Bouvart",
     "Sofiia Holichenko / Artem Darenskyi"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
+   "src": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -50819,7 +51050,7 @@
      "nation": "CAN"
     },
     {
-     "name": "Katie Mcbeath / Balazs Nagy",
+     "name": "Katie McBEATH / Balazs Nagy",
      "nation": "USA"
     },
     {
@@ -50835,7 +51066,24 @@
      "nation": "UKR"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpusa2026/SEG006.htm",
+    "cat": "https://results.isu.org/results/season2627/gpusa2026/CAT003RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpusa2026/SEG005.htm",
+    "names": {
+     "Ava KEMP / Yohnatan ELIZAROV": "Ava Kemp / Yohnatan Elizarov",
+     "Aurelie FAULA / Theo BELLE": "Aurelie Faula / Theo Belle",
+     "Minerva Fabienne HASE / Nikita VOLODIN": "Minerva Fabienne Hase / Nikita Volodin",
+     "Oxana VOUILLAMOZ / Tom BOUVART": "Oxana Vouillamoz / Tom Bouvart",
+     "Sofiia HOLICHENKO / Artem DARENSKYI": "Sofiia Holichenko / Artem Darenskyi",
+     "Alisa EFIMOVA / Misha MITROFANOV": "Alisa Efimova / Misha Mitrofanov",
+     "Katie McBEATH / Balazs NAGY": "Katie McBEATH / Balazs Nagy",
+     "Audrey SHIN / Spencer Akira HOWE": "Audrey Shin / Spencer Akira Howe"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-america-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:dance-senior-pt",
@@ -50994,7 +51242,7 @@
     "Noemi Maria Tali / Noah Lafornara",
     "Sofia Val / Asaf Kazimov"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
+   "src": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -51048,7 +51296,26 @@
      "nation": "ESP"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpusa2026/SEG008.htm",
+    "cat": "https://results.isu.org/results/season2627/gpusa2026/CAT004RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpusa2026/SEG007.htm",
+    "names": {
+     "Holly HARRIS / Jason CHAN": "Holly Harris / Jason Chan",
+     "Katerina MRAZKOVA / Daniel MRAZEK": "Katerina Mrazkova / Daniel Mrazek",
+     "Sofia VAL / Asaf KAZIMOV": "Sofia Val / Asaf Kazimov",
+     "Natacha LAGOUGE / Arnaud CAFFA": "Natacha Lagouge / Arnaud Caffa",
+     "Evgeniia LOPAREVA / Geoffrey BRISSAUD": "Evgeniia Lopareva / Geoffrey Brissaud",
+     "Noemi Maria TALI / Noah LAFORNARA": "Noemi Maria Tali / Noah Lafornara",
+     "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Artem Koval",
+     "Leah NESET / Artem MARKELOV": "Leah Neset / Artem Markelov",
+     "Katarina WOLFKOSTIN / Dimitry TSAREVSKI": "Katarina Wolfkostin / Dimitry Tsarevski",
+     "Emilea ZINGAS / Vadym KOLESNIK": "Emilea Zingas / Vadym Kolesnik"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-america-2026.json"
   },
   {
    "id": "isu:isu-gp-skate-america-2026:women-senior-pp",
@@ -51084,13 +51351,13 @@
     "Rino Matsuike",
     "Sara-Maude Dupuis",
     "Sofia Samodelkina",
-    "Sophie Joline Von Felten",
+    "Sophie Joline von Felten",
     "Young You",
     "Yujae Kim",
     "Аделия Петросян",
     "Александра Трусова"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-skate-america-2026/",
+   "src": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -51132,7 +51399,7 @@
      "nation": "KAZ"
     },
     {
-     "name": "Sophie Joline Von Felten",
+     "name": "Sophie Joline von Felten",
      "nation": "USA"
     },
     {
@@ -51152,7 +51419,28 @@
      "nation": "RUS"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpusa2026/SEG004.htm",
+    "cat": "https://results.isu.org/results/season2627/gpusa2026/CAT002RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpusa2026/SEG003.htm",
+    "names": {
+     "Alexandra IGNATOVA": "Александра Трусова",
+     "Adeliia PETROSIAN": "Аделия Петросян",
+     "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
+     "Rino MATSUIKE": "Rino Matsuike",
+     "Ami NAKAI": "Ami Nakai",
+     "Sofia SAMODELKINA": "Sofia Samodelkina",
+     "Yujae KIM": "Yujae Kim",
+     "Young YOU": "Young You",
+     "Ahsun YUN": "Ahsun Yun",
+     "Alexa GASPAROTTO": "Alexa Gasparotto",
+     "Logan HIGASE-CHEN": "Logan Higase-chen",
+     "Sophie Joline von FELTEN": "Sophie Joline von Felten"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-skate-america-2026.json"
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:pairs-senior-kp",
@@ -53596,6 +53884,9 @@
    "venue": "Lausanne, Switzerland",
    "start": "2027-01-27",
    "end": "2027-01-31",
+   "ours": [],
+   "ours_nation": {},
+   "athletes": [],
    "broadcast": [
     "YouTube ISU"
    ],
@@ -76272,7 +76563,7 @@
   "Alina Zagitova": "photos/2fc754476fa066cf.jpg",
   "Alisa EFIMOVA": "photos/f401d19eef2c7e6f.jpg",
   "Alisa Efimova": "photos/f401d19eef2c7e6f.jpg",
-  "Misha Mitrofanov": "photos/e18110e84888351c.jpg",
+  "Misha Mitrofanov": "photos/5a6e7f4bc01e5cd5.jpg",
   "Alisa Fedichkina": "photos/7750e79034a56578.jpg",
   "Alisa Lozko": "photos/7478f4e6dd0f4615.jpg",
   "Alisa Mitrofanova": "photos/398f739467a5c722.jpg",
@@ -77791,6 +78082,9 @@
   "Максим Савинский": "photos/a00bbc59a2863a16.jpg",
   "Артём Федотов": "photos/c9ec836020512e87.jpg",
   "Софья Муравьёва": "photos/038d0c0b2040ddfd.jpg",
-  "Елизавета Медведева": "photos/87de201d2554995f.jpg"
+  "Елизавета Медведева": "photos/87de201d2554995f.jpg",
+  "Katie McBEATH": "photos/beb8847a8b1d69f8.jpg",
+  "Dimitry Tsarevski": "photos/927c9a13a77588e1.jpg",
+  "Katie Mcbeath": "photos/beb8847a8b1d69f8.jpg"
  }
 }
