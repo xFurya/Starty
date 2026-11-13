@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-13T14:11:12+03:00",
- "checked": "2026-11-13T12:14:43.378339+00:00",
+ "checked": "2026-11-13T12:22:43.237554+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -50126,8 +50126,9 @@
      "time": "14:57",
      "no": 16,
      "warmup": 3,
-     "place": 4,
-     "points": "139.07"
+     "place": 5,
+     "points": "139.07",
+     "final": 4
     }
    ],
    "athletes": [
@@ -50164,24 +50165,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Герман Ленков",
+     "nation": "СПБ",
+     "points": "159.08"
+    },
+    {
+     "place": 2,
      "name": "Вадим Воронов",
      "nation": "СПБ",
      "points": "157.40"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Марк Лукин",
      "nation": "МОС",
      "points": "148.88"
-    },
-    {
-     "place": 3,
-     "name": "Александр Чмиль",
-     "nation": "СПБ",
-     "points": "148.81"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Вадим Воронов — 157.40\n2. Марк Лукин — 148.88\n3. Александр Чмиль — 148.81\n\nРоссияне:\n• Алдар Самбуев — 14:57\n\nНачало: 12:45 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Герман Ленков — 159.08\n2. Вадим Воронов — 157.40\n3. Марк Лукин — 148.88\n\nИтог турнира:\n1. Герман Ленков — 242.86\n2. Вадим Воронов — 236.09\n3. Марк Лукин — 223.86\n\nПримечательное:\n• Александр Чмиль — 3 четверных в программе: 4Lz, 4Lo, 4S\n• Марк Лукин — После короткой программы — 6-е место, в итоге — 3-е место\n\nРоссияне:\n• Алдар Самбуев — 14:57\n\nНачало: 12:45 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Алдар Самбуев",
@@ -50189,35 +50190,39 @@
      "time": "14:57",
      "no": 16,
      "warmup": 3,
-     "place": 4,
-     "points": "139.07"
+     "place": 5,
+     "points": "139.07",
+     "final": 4
     },
     {
      "name": "Александр Чмиль",
      "nation": "СПБ",
-     "place": 3,
+     "place": 4,
      "points": "148.81",
      "time": "14:03",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "final": 5
     },
     {
      "name": "Александр Щербаков",
      "nation": "МОС",
-     "place": 17,
+     "place": 18,
      "points": "97.41",
      "time": "13:17",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "final": 16
     },
     {
      "name": "Артём Бурнаев",
      "nation": "НИЖ",
-     "place": 13,
+     "place": 14,
      "points": "107.36",
      "time": "13:30",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 15
     },
     {
      "name": "Вадим Воронов",
@@ -50225,42 +50230,49 @@
      "time": "14:51",
      "no": 15,
      "warmup": 3,
-     "place": 1,
-     "points": "157.40"
+     "place": 2,
+     "points": "157.40",
+     "final": 2
     },
     {
      "name": "Герман Ленков",
      "nation": "СПБ",
      "time": "15:10",
      "no": 18,
-     "warmup": 3
+     "warmup": 3,
+     "place": 1,
+     "points": "159.08",
+     "final": 1
     },
     {
      "name": "Глеб Ковтун",
      "nation": "СПБ",
-     "place": 6,
+     "place": 7,
      "points": "137.45",
      "time": "13:38",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "final": 9
     },
     {
      "name": "Данил Колосков",
      "nation": "СПБ",
-     "place": 10,
+     "place": 11,
      "points": "128.68",
      "time": "13:57",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "final": 11
     },
     {
      "name": "Денис Яшин",
      "nation": "СВЕ",
-     "place": 15,
+     "place": 16,
      "points": "102.38",
      "time": "12:52",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 18
     },
     {
      "name": "Илья Мальков",
@@ -50268,44 +50280,49 @@
      "time": "15:03",
      "no": 17,
      "warmup": 3,
-     "place": 9,
-     "points": "130.77"
+     "place": 10,
+     "points": "130.77",
+     "final": 7
     },
     {
      "name": "Илья Старков",
      "nation": "ЛОБ",
-     "place": 14,
+     "place": 15,
      "points": "104.22",
      "time": "13:44",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "final": 13
     },
     {
      "name": "Кирилл Жураховский",
      "nation": "МОС",
-     "place": 7,
+     "place": 8,
      "points": "132.29",
      "time": "13:50",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "final": 10
     },
     {
      "name": "Кирилл Штурбабин",
      "nation": "КРГ",
-     "place": 16,
+     "place": 17,
      "points": "97.44",
      "time": "13:11",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 17
     },
     {
      "name": "Леонтий Камзолов",
      "nation": "МОС",
-     "place": 11,
+     "place": 12,
      "points": "123.12",
      "time": "13:24",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "final": 12
     },
     {
      "name": "Марк Лукин",
@@ -50313,8 +50330,9 @@
      "time": "14:38",
      "no": 13,
      "warmup": 3,
-     "place": 2,
-     "points": "148.88"
+     "place": 3,
+     "points": "148.88",
+     "final": 3
     },
     {
      "name": "Роман Хамзин",
@@ -50322,17 +50340,19 @@
      "time": "14:44",
      "no": 14,
      "warmup": 3,
-     "place": 5,
-     "points": "138.23"
+     "place": 6,
+     "points": "138.23",
+     "final": 6
     },
     {
      "name": "Ярослав Овчинников",
      "nation": "НСО",
-     "place": 12,
+     "place": 13,
      "points": "108.54",
      "time": "14:31",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 14
     },
     {
      "name": "Ярослав Хрулев",
@@ -50340,11 +50360,11 @@
      "time": "14:09",
      "no": 12,
      "warmup": 2,
-     "place": 8,
-     "points": "130.88"
+     "place": 9,
+     "points": "130.88",
+     "final": 8
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/6etap_jun/index.htm",
     "seg": "https://fsrussia.ru/results/2627/6etap_jun/SEG002.htm",
@@ -50370,9 +50390,41 @@
      "Илья МАЛЬКОВ": "Илья Мальков",
      "Герман ЛЕНКОВ": "Герман Ленков"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json",
+   "facts": [
+    {
+     "who": "Александр Чмиль",
+     "text": "3 четверных в программе: 4Lz, 4Lo, 4S",
+     "kind": "element"
+    },
+    {
+     "who": "Марк Лукин",
+     "text": "После короткой программы — 6-е место, в итоге — 3-е место",
+     "kind": "place"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Герман Ленков",
+     "nation": "СПБ",
+     "points": "242.86"
+    },
+    {
+     "place": 2,
+     "name": "Вадим Воронов",
+     "nation": "СПБ",
+     "points": "236.09"
+    },
+    {
+     "place": 3,
+     "name": "Марк Лукин",
+     "nation": "МОС",
+     "points": "223.86"
+    }
+   ]
   },
   {
    "id": "isu:isu-gp-skate-america-2026:men-senior-kp",
