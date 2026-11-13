@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-13T06:08:22+03:00",
- "checked": "2026-11-13T06:08:22+03:00",
+ "checked": "2026-11-13T07:10:03.680276+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -49808,14 +49808,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Россияне:\n• Алиса Заикина — 11:11\n• София Сарновская — 12:13\n\nНачало: 09:45 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Елизавета Бородихина — 82.48\n2. Маргарита Котенева — 65.01\n\nРоссияне:\n• Алиса Заикина — 11:11\n• София Сарновская — 12:13\n\nНачало: 09:45 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Маргарита Котенева",
      "nation": "МАР",
      "time": "09:52",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "65.01"
     },
     {
      "name": "Юлиана Новиченкова",
@@ -49843,7 +49845,9 @@
      "nation": "ОМС",
      "time": "10:31",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "82.48"
     },
     {
      "name": "Диана Сашина",
@@ -49964,7 +49968,22 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Елизавета Бородихина",
+     "nation": "ОМС",
+     "points": "82.48"
+    },
+    {
+     "place": 2,
+     "name": "Маргарита Котенева",
+     "nation": "МАР",
+     "points": "65.01"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:men-junior-pp",
