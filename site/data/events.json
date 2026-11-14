@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-14T05:48:16+03:00",
- "checked": "2026-11-14T03:44:06.492619+00:00",
+ "checked": "2026-11-14T03:52:07.058570+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -50468,7 +50468,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Donovan Carrillo — 86.49\n2. Daniel Martynov — 84.17\n3. Tamir Kuperman — 83.13\n\nНачало: 06:03 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Donovan Carrillo — 86.49\n2. Daniel Martynov — 84.17\n3. Jason Brown — 84.00\n\nНачало: 06:03 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Aleksa Rakic",
@@ -50476,7 +50476,7 @@
      "time": "06:10",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "68.92"
     },
     {
@@ -50503,7 +50503,7 @@
      "time": "06:29",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "65.77"
     },
     {
@@ -50512,7 +50512,7 @@
      "time": "06:35",
      "no": 5,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "83.13"
     },
     {
@@ -50520,7 +50520,9 @@
      "nation": "USA",
      "time": "06:41",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3,
+     "points": "84.00"
     },
     {
      "name": "Nikolaj Memola",
@@ -50602,9 +50604,9 @@
     },
     {
      "place": 3,
-     "name": "Tamir Kuperman",
-     "nation": "ISR",
-     "points": "83.13"
+     "name": "Jason Brown",
+     "nation": "USA",
+     "points": "84.00"
     }
    ],
    "provisional": true
