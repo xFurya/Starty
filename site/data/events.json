@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-14T05:48:16+03:00",
- "checked": "2026-11-14T03:24:06.139679+00:00",
+ "checked": "2026-11-14T03:32:11.086965+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -50468,7 +50468,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Donovan Carrillo — 86.49\n2. Aleksa Rakic — 68.92\n\nНачало: 06:03 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Donovan Carrillo — 86.49\n2. Daniel Martynov — 84.17\n3. Aleksa Rakic — 68.92\n\nНачало: 06:03 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Aleksa Rakic",
@@ -50476,7 +50476,7 @@
      "time": "06:10",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "68.92"
     },
     {
@@ -50493,7 +50493,9 @@
      "nation": "USA",
      "time": "06:23",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "84.17"
     },
     {
      "name": "Georgii Reshtenko",
@@ -50590,6 +50592,12 @@
     },
     {
      "place": 2,
+     "name": "Daniel Martynov",
+     "nation": "USA",
+     "points": "84.17"
+    },
+    {
+     "place": 3,
      "name": "Aleksa Rakic",
      "nation": "CAN",
      "points": "68.92"
