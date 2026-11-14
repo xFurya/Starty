@@ -225,6 +225,131 @@ delete from auth.users where id = '11111111-1111-1111-1111-111111111111';
 select pg_temp.check((select count(*) from public.billing_payments where user_id is null) >= 4, 'платежи остались для учёта');
 select pg_temp.check((select count(*) from public.subscriptions) = 0, 'подписка удалена вместе с аккаунтом');
 
+-- ---------------------------------------------------------------- подарочные коды и токен разработчика
+insert into auth.users values
+  ('33333333-3333-3333-3333-333333333333', 'c@example.com', now()),
+  ('44444444-4444-4444-4444-444444444444', 'd@example.com', now());
+create temp table codes (k text, code text);
+grant select on codes to authenticated, anon;
+insert into codes select 'gift', c from public.billing_codes_make('gift', 30, 2, 1, 'друзья', 30, null) c;
+insert into codes select 'dev', c from public.billing_codes_make('dev', null, 1, 1, 'разработчик', 7, null) c;
+select pg_temp.check((select count(*) from codes where k = 'gift') = 2, 'сделано два подарка');
+select pg_temp.check((select bool_and(code ~ '^[0-9A-F]{5}(-[0-9A-F]{5}){3}$') from codes), 'вид кода: 4 по 5 знаков');
+select pg_temp.check((select count(distinct code) from codes) = 3, 'коды разные');
+select pg_temp.check((select count(*) from public.billing_codes) = 3 and (select bool_and(hash ~ '^[0-9a-f]{64}$') from public.billing_codes),
+                     'в таблице только хэши');
+select pg_temp.check(not exists (select 1 from public.billing_codes b join codes c on b.hash = c.code), 'самих кодов в таблице нет');
+select pg_temp.check(public.billing_code_hash('abcde-12345') = public.billing_code_hash(' ABCDE 12345 '), 'регистр и разделители не важны');
+select pg_temp.fails($$select public.billing_codes_make('gift', 0, 1)$$, 'bad_days');
+select pg_temp.fails($$select public.billing_codes_make('vip', 1, 1)$$, 'bad_kind');
+select pg_temp.fails($$select public.billing_codes_make('gift', 30, 500)$$, 'bad_count');
+
+-- приложению недоступно: сделать коды, увидеть таблицы, ввести без входа
+set role anon;
+select pg_temp.fails($$select public.redeem_code('x')$$, null);
+select pg_temp.fails($$select * from public.billing_codes$$, null);
+reset role;
+set role authenticated;
+set request.jwt.claim.sub = '33333333-3333-3333-3333-333333333333';
+select pg_temp.fails($$select public.billing_codes_make('gift', 30, 1)$$, null);
+select pg_temp.fails($$select * from public.billing_codes$$, null);
+select pg_temp.fails($$select * from public.billing_redemptions$$, null);
+select pg_temp.fails($$select public.dev_make_gifts(30, 1)$$, 'not_dev');
+
+-- неверный код: ответ значением, промах записан
+select pg_temp.check(public.redeem_code('00000-00000-00000-00000') = '{"error": "bad_code"}'::jsonb, 'неверный код');
+reset role;
+reset request.jwt.claim.sub;
+select pg_temp.check((select count(*) from public.billing_events where kind = 'code_failed' and user_id = '33333333-3333-3333-3333-333333333333') = 1,
+                     'промах записан в журнал');
+
+-- подарок: срок с сегодняшнего дня, потом второй код поверх
+set role authenticated;
+set request.jwt.claim.sub = '33333333-3333-3333-3333-333333333333';
+select set_config('t.g1', public.redeem_code((select code from codes where k = 'gift' order by code limit 1))::text, false);
+select pg_temp.check(current_setting('t.g1')::jsonb->>'kind' = 'gift' and (current_setting('t.g1')::jsonb->>'days')::int = 30, 'подарок введён');
+select pg_temp.check((public.my_subscription()->>'paid_until')::timestamptz between now() + interval '29 days 23 hours' and now() + interval '30 days 1 hour',
+                     'срок — 30 дней от сегодня');
+select pg_temp.check((public.my_subscription()->>'dev')::boolean = false, 'подарок — не разработчик');
+select pg_temp.check((public.my_subscription()->>'refund_minor')::int = 0, 'за подарок возвращать нечего');
+reset role;
+reset request.jwt.claim.sub;
+select pg_temp.check((select uses_left from public.billing_codes b where b.hash = public.billing_code_hash((select code from codes where k = 'gift' order by code limit 1))) = 0,
+                     'код израсходован');
+
+-- тот же код: второй раз тем же человеком и другим человеком — нельзя
+set role authenticated;
+set request.jwt.claim.sub = '33333333-3333-3333-3333-333333333333';
+select pg_temp.check(public.redeem_code((select code from codes where k = 'gift' order by code limit 1)) = '{"error": "bad_code"}'::jsonb,
+                     'использованный код не вводится снова');
+reset role;
+reset request.jwt.claim.sub;
+set role authenticated;
+set request.jwt.claim.sub = '44444444-4444-4444-4444-444444444444';
+select pg_temp.check(public.redeem_code((select code from codes where k = 'gift' order by code limit 1)) = '{"error": "bad_code"}'::jsonb,
+                     'и другим человеком');
+-- второй подарок — другому; а продлевается срок уже оплаченный: ещё 30 дней сверху
+select pg_temp.check(public.redeem_code((select code from codes where k = 'gift' order by code desc limit 1))->>'kind' = 'gift', 'второй подарок');
+reset role;
+reset request.jwt.claim.sub;
+set role authenticated;
+set request.jwt.claim.sub = '33333333-3333-3333-3333-333333333333';
+-- подарок со многими вводами и срок действия
+reset role;
+reset request.jwt.claim.sub;
+insert into codes select 'many', c from public.billing_codes_make('gift', 10, 1, 2, 'двое', 30, null) c;
+set role authenticated;
+set request.jwt.claim.sub = '33333333-3333-3333-3333-333333333333';
+select public.redeem_code((select code from codes where k = 'many'));
+select pg_temp.check((public.my_subscription()->>'paid_until')::timestamptz between now() + interval '39 days 23 hours' and now() + interval '40 days 1 hour',
+                     'срок прибавляется к оплаченному: 30 + 10 дней');
+select pg_temp.check(public.redeem_code((select code from codes where k = 'many')) = '{"error": "already_redeemed"}'::jsonb, 'тот же человек — тот же код один раз');
+reset role;
+reset request.jwt.claim.sub;
+update public.billing_codes set expires_at = now() - interval '1 minute' where kind = 'gift' and uses_left > 0;
+set role authenticated;
+set request.jwt.claim.sub = '44444444-4444-4444-4444-444444444444';
+select pg_temp.check(public.redeem_code((select code from codes where k = 'many')) = '{"error": "bad_code"}'::jsonb, 'просроченный код не вводится');
+reset role;
+reset request.jwt.claim.sub;
+
+-- токен разработчика
+select pg_temp.check(not exists (select 1 from public.subscriptions where user_id = '44444444-4444-4444-4444-444444444444' and dev), 'пока не разработчик');
+update public.billing_config set enabled = false;
+set role authenticated;
+set request.jwt.claim.sub = '44444444-4444-4444-4444-444444444444';
+select pg_temp.check(public.billing_offer() is null, 'продажа выключена — обычному аккаунту условий нет');
+select pg_temp.fails($$select public.dev_make_gifts(7, 1)$$, 'not_dev');
+select pg_temp.check(public.redeem_code((select code from codes where k = 'dev'))->>'kind' = 'dev', 'токен введён');
+select pg_temp.check((public.my_subscription()->>'dev')::boolean, 'аккаунт — разработчик');
+select pg_temp.check(public.billing_offer() is not null and jsonb_array_length(public.billing_offer()->'plans') = 2,
+                     'разработчик видит условия и планы, даже пока продажа выключена');
+reset role;
+reset request.jwt.claim.sub;
+select pg_temp.check((select public.billing_start('44444444-4444-4444-4444-444444444444', 'month', false, 'v1', '', '', '') is not null),
+                     'разработчик начинает тестовую оплату при выключенной продаже');
+select pg_temp.fails($$select public.billing_start('33333333-3333-3333-3333-333333333333', 'month', false, 'v1', '', '', '')$$, 'billing_off');
+-- создание подарков разработчиком: лимиты
+set role authenticated;
+set request.jwt.claim.sub = '44444444-4444-4444-4444-444444444444';
+select pg_temp.check(jsonb_array_length(public.dev_make_gifts(14, 3, 'из приложения')) = 3, 'разработчик сделал три подарка');
+select pg_temp.fails($$select public.dev_make_gifts(14, 21)$$, 'bad_args');
+select pg_temp.fails($$select public.dev_make_gifts(400, 1)$$, 'bad_args');
+reset role;
+reset request.jwt.claim.sub;
+select pg_temp.check((select count(*) from public.billing_codes where made_by = '44444444-4444-4444-4444-444444444444' and days = 14) = 3, 'кто сделал — записано');
+-- токен разработчика — один на человека: чужой аккаунт им не станет
+insert into auth.users values ('55555555-5555-5555-5555-555555555555', 'e@example.com', now());
+set role authenticated;
+set request.jwt.claim.sub = '55555555-5555-5555-5555-555555555555';
+select pg_temp.check(public.redeem_code((select code from codes where k = 'dev')) = '{"error": "bad_code"}'::jsonb, 'токен одноразовый');
+-- подбор: больше десяти промахов за час — стоп
+select public.redeem_code('1111' || g) from generate_series(1, 9) g;
+select pg_temp.fails($$select public.redeem_code('2222')$$, 'too_many');
+reset role;
+reset request.jwt.claim.sub;
+select pg_temp.check((select count(*) from public.billing_events where kind in ('gift', 'dev')) >= 4, 'подарки и токен в журнале');
+
 \o
 \pset tuples_only on
 select 'schema_test: всё прошло';

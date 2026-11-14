@@ -40,6 +40,9 @@ class Billing {
   bool schema = true;
   DateTime? paidUntil;
   bool autoRenew = false;
+
+  /// Аккаунт разработчика (токен введён): сервер показывает условия при любой продаже и делает подарки.
+  bool dev = false;
   final pays = <Map<String, Object?>>[];
   final requests = <String>[];
   Map<String, dynamic>? lastCheckout;
@@ -54,12 +57,37 @@ class Billing {
     if (p.contains('save_settings')) return http.Response(jsonEncode('2026-01-01T00:00:00Z'), 200);
     if (!schema) return http.Response('{"code":"PGRST202"}', 404);
     if (p.endsWith('/rpc/billing_offer')) {
-      expect(r.headers['Authorization'], isNull, reason: 'что продаётся — без входа');
+      // разработчику условия видны и при выключенной продаже — для этого спрашиваем от его имени
+      if (r.headers['Authorization'] != null) return res(selling || dev ? offerJson : null);
+      expect(dev, isFalse, reason: 'у разработчика условия спрашиваются от его имени');
       return res(selling ? offerJson : null);
     }
     expect(r.headers['Authorization'], 'Bearer a', reason: p);
+    if (p.endsWith('/rpc/redeem_code')) {
+      switch ((jsonDecode(r.body) as Map)['_code']) {
+        case 'GIFT-30':
+          final from = paidUntil != null && paidUntil!.isAfter(DateTime.now()) ? paidUntil! : DateTime.now().toUtc();
+          paidUntil = from.add(const Duration(days: 30));
+          return res({'kind': 'gift', 'days': 30, 'paid_until': paidUntil!.toIso8601String()});
+        case 'DEV-TOKEN':
+          dev = true;
+          return res({'kind': 'dev'});
+        case 'USED':
+          return res({'error': 'already_redeemed'});
+        case 'LIMIT':
+          return http.Response(jsonEncode({'message': 'too_many'}), 400);
+        default:
+          return res({'error': 'bad_code'});
+      }
+    }
+    if (p.endsWith('/rpc/dev_make_gifts')) {
+      if (!dev) return http.Response(jsonEncode({'message': 'not_dev'}), 400);
+      final b = jsonDecode(r.body) as Map;
+      return res([for (var i = 0; i < (b['_count'] as int); i++) 'AAAAA-0000$i-BBBBB-CCCCC']);
+    }
     if (p.endsWith('/rpc/my_subscription')) {
       final now = DateTime.now().toUtc().toIso8601String();
+      if (dev) return res({'now': now, 'dev': true});
       return res(paidUntil == null
           ? {'now': now}
           : {
@@ -250,6 +278,89 @@ void main() {
     });
   });
 
+  group('коды: подарки и токен разработчика', () {
+    setUp(() => debugDefaultTargetPlatformOverride = TargetPlatform.linux);
+    tearDown(() => debugDefaultTargetPlatformOverride = null);
+
+    test('подарок прибавляет дни, и в сборке с подпиской он открывает функции; чужие ответы — словами', () async {
+      billingForce = true;
+      final srv = Billing();
+      final s = AppState()..syncClient = srv.client;
+      expect(await s.signInSync('a@b.ru', 'secret1'), isNull);
+      // без входа код не вводится — честно говорим почему
+      final guest = AppState()..syncClient = srv.client;
+      expect((await guest.redeemCode('GIFT-30')).$2, 'Чтобы ввести код, войдите по почте');
+
+      expect((await s.redeemCode('USED')).$2, 'Этот код вы уже вводили');
+      expect((await s.redeemCode('???')).$2, 'Код не подходит или уже использован');
+      expect((await s.redeemCode('LIMIT')).$2, 'Слишком много неверных кодов — попробуйте через час');
+      expect(s.billing.activeAt(DateTime.now()), isFalse);
+
+      final (r, err) = await s.redeemCode('GIFT-30');
+      expect(err, isNull);
+      expect((r!.days, r.dev, r.local), (30, false, false));
+      expect(s.billing.activeAt(DateTime.now()), isTrue);
+      expect(s.billing.perksAt(DateTime.now()), isTrue);
+      expect(s.billing.dev, isFalse);
+      // второй подарок — к тому, что уже оплачено
+      final first = s.billing.entitlement!.paidUntil!;
+      await s.redeemCode('GIFT-30');
+      expect(s.billing.entitlement!.paidUntil!.difference(first).inDays, 30);
+    });
+
+    test('в сборке без подписки подарок принят, но функций не открывает; текст говорит об этом', () async {
+      final srv = Billing();
+      final s = AppState()..syncClient = srv.client;
+      expect(await s.signInSync('a@b.ru', 'secret1'), isNull);
+      final (r, _) = await s.redeemCode('GIFT-30');
+      expect(s.billing.perksAt(DateTime.now()), isFalse);
+      expect(r!.days, 30);
+    });
+
+    test('токен разработчика: все функции без оплаты, условия видны при выключенной продаже, подарки делаются', () async {
+      billingForce = true;
+      final srv = Billing()..selling = false;
+      final s = AppState()..syncClient = srv.client;
+      expect(await s.signInSync('a@b.ru', 'secret1'), isNull);
+      await s.refreshBilling();
+      expect(s.billing.visible, isFalse);
+      expect(s.billing.offer, isNull);
+      expect((await s.makeGifts(30, 2)).$2, 'Это доступно только разработчику');
+
+      final (r, err) = await s.redeemCode('DEV-TOKEN');
+      expect(err, isNull);
+      expect(r!.dev, isTrue);
+      expect(s.billing.dev, isTrue);
+      expect(s.billing.perksAt(DateTime.now()), isTrue);
+      expect(BillingState.perksFor(Prefs.raw, DateTime.now()), isTrue, reason: 'и фоновая задача знает');
+      expect(BillingState.digestFor(Prefs.raw, DateTime.now()), BillingState.digestDefault);
+      expect(s.billing.visible, isTrue);
+      expect(s.billing.offer, isNotNull, reason: 'условия видны, хотя продажа выключена');
+      // обычное обновление права не теряет разработчика
+      await s.refreshBilling(history: true);
+      expect(s.billing.dev, isTrue);
+      expect(s.billing.offer, isNotNull);
+
+      final (codes, e2) = await s.makeGifts(30, 3);
+      expect(e2, isNull);
+      expect(codes, hasLength(3));
+      // выход из аккаунта забывает и токен
+      await s.signOutSync();
+      expect(s.billing.dev, isFalse);
+    });
+
+    test('код режима владельца работает без аккаунта и сервера', () async {
+      final srv = Billing();
+      final s = AppState()..syncClient = srv.client;
+      final file = Platform.environment['OWNER_CODE_FILE'];
+      if (file == null || !File(file).existsSync()) return;
+      final (r, err) = await s.redeemCode(File(file).readAsStringSync());
+      expect((r!.local, err), (true, null));
+      expect(s.billing.preview, isTrue);
+      expect(srv.requests, isEmpty);
+    });
+  });
+
   group('сводка дня', () {
     test('в выбранное время, только дни со своими и только впереди', () {
       final d = day('2026-10-20T10:00:00+03:00', '2026-10-20T13:00:00+03:00');
@@ -417,7 +528,7 @@ void main() {
 
   group('экран', () {
     Future<AppState> settings(WidgetTester t, Billing srv) async {
-      t.view.physicalSize = const Size(1080, 5800); // страница целиком: с «Статистикой» она стала длиннее
+      t.view.physicalSize = const Size(1080, 7600); // страница целиком: со «Статистикой» и вводом кода она длиннее
       t.view.devicePixelRatio = 3;
       addTearDown(t.view.reset);
       final s = AppState()
@@ -457,6 +568,48 @@ void main() {
       await t.tap(find.text('Год'));
       await t.pump();
       expect(find.textContaining('Оплатить 1${nb}290'), findsOneWidget);
+    });
+
+    testWidgets('ввод кода: подарок — слова о сроке; чужой код — ошибка; токен — карточка разработчика и подарки', (t) async {
+      billingForce = true;
+      final srv = Billing();
+      await settings(t, srv);
+      await t.tap(find.text('Подписка'));
+      await t.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 50)));
+      await t.pumpAndSettle();
+      expect(find.text('Аккаунт разработчика'), findsNothing);
+
+      Future<void> enter(String code) async {
+        await t.tap(find.text('Ввести код'));
+        await t.pumpAndSettle();
+        await t.enterText(find.byType(TextField), code);
+        await t.tap(find.text('Ввести'));
+        await t.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 80)));
+        await t.pumpAndSettle();
+      }
+
+      await enter('нет такого');
+      expect(find.text('Код не подходит или уже использован'), findsOneWidget);
+      await enter('GIFT-30');
+      expect(find.textContaining('Подарок принят: +30 дней'), findsOneWidget);
+      expect(find.textContaining('Подписка до'), findsWidgets);
+
+      await enter('DEV-TOKEN');
+      expect(find.textContaining('аккаунт стал аккаунтом разработчика'), findsOneWidget);
+      expect(find.text('Аккаунт разработчика'), findsOneWidget);
+      expect(find.text('Сделать подарочные коды'), findsOneWidget);
+
+      await t.tap(find.text('Сделать подарочные коды'));
+      await t.pumpAndSettle();
+      await t.tap(find.text('Сделать'));
+      await t.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 80)));
+      await t.pumpAndSettle();
+      expect(find.textContaining('AAAAA-00000-BBBBB-CCCCC'), findsOneWidget);
+      expect(find.text('Скопировать'), findsOneWidget);
+      await t.tap(find.text('Закрыть'));
+      await t.pumpAndSettle();
+      // отложенные записи состояния (после ввода кода) — отработать до конца теста
+      await t.pump(const Duration(seconds: 30));
     });
 
     testWidgets('подписка действует: срок, сводка, продление, возврат', (t) async {

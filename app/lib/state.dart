@@ -1168,6 +1168,8 @@ class AppState extends ChangeNotifier {
           // вышли или сменили аккаунт, пока шёл ответ: чужое право не сохраняем
           if (!identical(account, acc)) return;
           await b.keep(e);
+          // аккаунт разработчика видит условия и пока продажа выключена: спросим от его имени
+          if (e.dev && b.offer == null) b.offer = await api.offer(auth: true);
           if (history || b.payments != null) b.payments = await api.payments();
         } on SyncError catch (e) {
           problem ??= e.message;
@@ -1257,6 +1259,43 @@ class AppState extends ChangeNotifier {
     await billing.setLineup(on);
     notifyListeners();
     unawaited(_sync());
+  }
+
+  /// Ввести код. Код режима владельца ([BillingState.previewCodeOk]) включает его на этом устройстве без сервера;
+  /// остальные уходят на сервер: подарок прибавляет дни, токен разработчика открывает аккаунт. Право
+  /// обновляется сразу, независимо от того, есть ли подписка в этой сборке. (результат, ошибка).
+  Future<(CodeResult?, String?)> redeemCode(String code) async {
+    if (BillingState.previewCodeOk(code)) {
+      await setPreview(true);
+      return (const CodeResult(local: true), null);
+    }
+    final acc = account;
+    if (acc == null) return (null, 'Чтобы ввести код, войдите по почте');
+    final api = BillingApi(acc);
+    final CodeResult r;
+    try {
+      r = await api.redeem(code);
+      final e = await api.mine(DateTime.now);
+      if (!identical(account, acc)) return (r, null);
+      await billing.keep(e);
+      if (e.dev) billing.offer = await api.offer(auth: true);
+    } on SyncError catch (e) {
+      return (null, e.message);
+    }
+    notifyListeners();
+    unawaited(_sync());
+    return (r, null);
+  }
+
+  /// Разработчик делает подарочные коды: [days] дней, [count] штук. (коды, ошибка).
+  Future<(List<String>?, String?)> makeGifts(int days, int count, {String? note}) async {
+    final acc = account;
+    if (acc == null) return (null, 'Нужен вход в аккаунт');
+    try {
+      return (await BillingApi(acc).makeGifts(days, count, note: note), null);
+    } on SyncError catch (e) {
+      return (null, e.message);
+    }
   }
 
   /// Режим владельца (см. [BillingState.preview]): все функции подписки без оплаты на этом устройстве.

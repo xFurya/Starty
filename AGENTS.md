@@ -31,7 +31,7 @@
 
 - Ветка одна: `main` репозитория `xFurya/Starty`. Pull request не создавать без просьбы.
 - Сообщения коммитов по-русски, одной понятной строкой.
-- Проверки перед пушем: `cd app && flutter pub get && flutter analyze && flutter test` (около 830 тестов).
+- Проверки перед пушем: `cd app && flutter pub get && flutter analyze && flutter test` (около 835 тестов).
   Сборщик данных: `python3 -m scraper.build`; его тесты — `python3 -m unittest discover -t . -s scraper`.
 - Автоформаттер (`dart format`) по файлам приложения не запускать: строки длинные намеренно, он
   переписывает файл целиком.

@@ -120,6 +120,10 @@ class Entitlement {
   /// Часы сервера минус часы устройства: срок сверяем по серверу, а не по часам телефона.
   final Duration skew;
 
+  /// Аккаунт разработчика (токен, введённый в приложении): все функции открыты на всех устройствах аккаунта,
+  /// оплата проходит, даже пока продажа выключена, и можно делать подарочные коды. Срока у него нет.
+  final bool dev;
+
   /// Когда сервер это ответил (по часам устройства).
   final DateTime checkedAt;
 
@@ -134,6 +138,7 @@ class Entitlement {
     this.renewMinor,
     this.refundMinor = 0,
     this.skew = Duration.zero,
+    this.dev = false,
   });
 
   /// Ответ my_subscription; [at] — время устройства в момент ответа.
@@ -151,6 +156,7 @@ class Entitlement {
       renewMinor: _int(m['renew_minor']),
       refundMinor: _int(m['refund_minor']) ?? 0,
       skew: server == null ? Duration.zero : server.difference(at.toUtc()),
+      dev: m['dev'] == true,
     );
   }
 
@@ -171,6 +177,7 @@ class Entitlement {
     'refund_minor': refundMinor,
     'skew_ms': skew.inMilliseconds,
     'checked_at': checkedAt.toUtc().toIso8601String(),
+    'dev': dev,
   };
 
   static Entitlement? fromCache(String? s) {
@@ -191,6 +198,7 @@ class Entitlement {
         renewMinor: _int(m['renew_minor']),
         refundMinor: _int(m['refund_minor']) ?? 0,
         skew: Duration(milliseconds: _int(m['skew_ms']) ?? 0),
+        dev: m['dev'] == true,
       );
     } catch (_) {
       return null;
@@ -253,6 +261,15 @@ class BillingCheckout {
   const BillingCheckout(this.paymentId, this.url, this.returnUrl);
 }
 
+/// Что вышло из введённого кода: подарок ([days] дней, срок теперь [paidUntil]) или аккаунт разработчика.
+/// [local] — код режима владельца на этом устройстве (сервер не спрашивали).
+class CodeResult {
+  final bool dev, local;
+  final int days;
+  final DateTime? paidUntil;
+  const CodeResult({this.dev = false, this.days = 0, this.paidUntil, this.local = false});
+}
+
 /// Итог отказа с возвратом: сколько вернул сервис сразу и сколько вернёт продавец вручную.
 class BillingRefund {
   final int refunded, manual;
@@ -265,14 +282,33 @@ class BillingApi {
   BillingApi(this.backend);
   final AccountBackend backend;
 
-  /// Что продаётся; null — не продаётся (выключено, или на сервере нет схемы подписки — 404).
-  Future<BillingOffer?> offer() async {
+  /// Что продаётся; null — не продаётся (выключено, или на сервере нет схемы подписки — 404). [auth] — от имени
+  /// вошедшего: разработчику сервер показывает условия, даже пока продажа выключена.
+  Future<BillingOffer?> offer({bool auth = false}) async {
     try {
-      return BillingOffer.fromJson(await backend.post('rest/v1/rpc/billing_offer', null, false));
+      return BillingOffer.fromJson(await backend.post('rest/v1/rpc/billing_offer', null, auth));
     } on SyncError catch (e) {
       if (e.status == 404) return null;
       rethrow;
     }
+  }
+
+  /// Ввести код: подарок прибавляет дни подписки, токен разработчика открывает аккаунт разработчика.
+  Future<CodeResult> redeem(String code) async {
+    final j = await backend.post('rest/v1/rpc/redeem_code', {'_code': code.trim()});
+    final m = j is Map ? j : const {};
+    if (m['error'] case final String e) throw SyncError(codeErrors[e] ?? 'Код не подходит');
+    return CodeResult(
+      dev: m['kind'] == 'dev',
+      days: _int(m['days']) ?? 0,
+      paidUntil: _time(m['paid_until']),
+    );
+  }
+
+  /// Разработчик делает подарочные коды: [days] дней, [count] штук (до 20, до 365 дней).
+  Future<List<String>> makeGifts(int days, int count, {String? note}) async {
+    final j = await backend.post('rest/v1/rpc/dev_make_gifts', {'_days': days, '_count': count, '_note': ?note});
+    return [for (final x in (j is List ? j : const [])) ?(x is String ? x : null)];
   }
 
   Future<Entitlement> mine(DateTime Function() clock) async {
@@ -349,7 +385,7 @@ class BillingState {
   /// То же для фоновой задачи (background.dart): только из сохранённого, без сети.
   static int? digestFor(SharedPreferences p, DateTime now) {
     final e = Entitlement.fromCache(p.getString(entKey));
-    if (!previewOn(p) && (e == null || !e.activeAt(now))) return null;
+    if (!previewOn(p) && !(e?.dev ?? false) && (e == null || !e.activeAt(now))) return null;
     final m = p.getInt(digestKey) ?? digestDefault;
     return m < 0 || m >= 24 * 60 ? null : m;
   }
@@ -371,12 +407,19 @@ class BillingState {
     return sha256.convert(utf8.encode('furya.preview:$norm')).toString() == _previewHash;
   }
 
-  /// Удобства подписки сейчас: режим владельца, либо сборка с подпиской и право действует.
-  bool perksAt(DateTime now) => preview || (billingBuild && activeAt(now));
+  /// Аккаунт разработчика (токен): всё открыто на всех устройствах аккаунта, без оплаты.
+  bool get dev => entitlement?.dev ?? false;
+
+  /// Удобства подписки сейчас: режим владельца на этом устройстве, аккаунт разработчика, либо сборка с
+  /// подпиской и право действует.
+  bool perksAt(DateTime now) => preview || dev || (billingBuild && activeAt(now));
 
   /// То же для фоновой задачи: только из сохранённого, без сети.
-  static bool perksFor(SharedPreferences p, DateTime now) =>
-      previewOn(p) || (billingBuild && (Entitlement.fromCache(p.getString(entKey))?.activeAt(now) ?? false));
+  static bool perksFor(SharedPreferences p, DateTime now) {
+    if (previewOn(p)) return true;
+    final e = Entitlement.fromCache(p.getString(entKey));
+    return (e?.dev ?? false) || (billingBuild && (e?.activeAt(now) ?? false));
+  }
 
   /// Уведомления о жеребьёвке и составе (lineup.dart): включены ли человеком (по умолчанию — да).
   static const lineupKey = 'b.lineup';
@@ -401,7 +444,7 @@ class BillingState {
   static bool resultsFor(SharedPreferences p, DateTime now) => perksFor(p, now) && (p.getBool(resultsKey) ?? true);
 
   /// Строка «Подписка» в настройках: продаётся — или куплена раньше (тогда ею можно управлять и вернуть деньги).
-  bool get visible => preview || (billingBuild && (offer != null || (entitlement?.ever ?? false)));
+  bool get visible => preview || dev || (billingBuild && (offer != null || (entitlement?.ever ?? false)));
 
   Future<void> keep(Entitlement e) async {
     entitlement = e;

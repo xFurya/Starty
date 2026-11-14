@@ -13,6 +13,8 @@
 --   billing_payments  — каждый платёж (первый и продления), суммы, возвраты;
 --   billing_events    — журнал: согласие на продление, отказ от него, напоминания, списания, возвраты.
 --                       Закон требует уметь подтвердить согласие и отказ — здесь они с временем и текстом.
+--   billing_codes     — подарочные коды (дают срок подписки) и токены разработчика; в таблице только хэши;
+--   billing_redemptions — кто какой код ввёл (код вводится одним человеком один раз).
 -- Таблицы закрыты всем, кроме владельца функций и service_role. Человек видит своё только через функции
 -- my_subscription() и my_payments(), условия — через billing_offer(). Деньгами занимаются функции сервера
 -- (tools/billing/supabase/functions) с ключом service_role.
@@ -69,6 +71,10 @@ create table if not exists public.subscriptions (
   updated_at timestamptz not null default now()
 );
 
+-- токен разработчика (см. «коды» ниже) ставит этот флаг: аккаунт видит и покупает подписку, даже пока
+-- продажа выключена (тестовая оплата), и получает все функции без срока
+alter table public.subscriptions add column if not exists dev boolean not null default false;
+
 create table if not exists public.billing_payments (
   id uuid primary key default gen_random_uuid(),
   -- номер для сервисов, которым нужен целый номер счёта (Робокасса)
@@ -105,12 +111,43 @@ create table if not exists public.billing_events (
 );
 create index if not exists billing_events_user on public.billing_events (user_id, at desc);
 
+-- Коды. В таблице только хэш (billing_code_hash): по базе код не восстановить, а пока он не введён, его
+-- знает только тот, кому его выдали.
+--   gift — подарок: days дней подписки к уже оплаченному сроку (или с сегодняшнего дня); uses_left —
+--          сколько разных людей могут ввести (по умолчанию один);
+--   dev  — токен разработчика: ставит subscriptions.dev.
+create table if not exists public.billing_codes (
+  hash text primary key,
+  kind text not null check (kind in ('gift', 'dev')),
+  days int check (days is null or days between 1 and 3660),
+  uses_left int not null default 1 check (uses_left >= 0),
+  expires_at timestamptz,
+  note text,
+  made_by uuid references auth.users(id) on delete set null,
+  created_at timestamptz not null default now(),
+  check ((kind = 'gift') = (days is not null))
+);
+
+create table if not exists public.billing_redemptions (
+  id bigint generated always as identity primary key,
+  user_id uuid references auth.users(id) on delete set null,
+  hash text not null references public.billing_codes(hash),
+  kind text not null,
+  days int,
+  at timestamptz not null default clock_timestamp()
+);
+create unique index if not exists billing_redemptions_once on public.billing_redemptions (hash, user_id);
+
 alter table public.billing_config enable row level security;
 alter table public.billing_plans enable row level security;
 alter table public.subscriptions enable row level security;
 alter table public.billing_payments enable row level security;
 alter table public.billing_events enable row level security;
+alter table public.billing_codes enable row level security;
+alter table public.billing_redemptions enable row level security;
 
+revoke all on public.billing_codes from anon, authenticated;
+revoke all on public.billing_redemptions from anon, authenticated;
 revoke all on public.billing_config from anon, authenticated;
 revoke all on public.billing_plans from anon, authenticated;
 revoke all on public.subscriptions from anon, authenticated;
@@ -122,27 +159,41 @@ revoke all on public.billing_events from anon, authenticated;
 -- Условия и планы. null — подписка выключена или условия не опубликованы: приложение её не предлагает.
 create or replace function public.billing_offer()
 returns jsonb
-language sql
+language plpgsql
 security definer
 set search_path = public
 stable
 as $$
-  select case when c.enabled and c.offer_url is not null and c.offer_version is not null then
-    jsonb_build_object(
-      'offer_url', c.offer_url,
-      'offer_version', c.offer_version,
-      'seller', c.seller,
-      'notice_days', c.notice_days,
-      'plans', coalesce((
-        select jsonb_agg(jsonb_build_object(
-          'id', p.id, 'title', p.title, 'period_days', p.period_days,
-          'price_minor', p.price_minor, 'currency', p.currency
-        ) order by p.sort, p.id)
-        from public.billing_plans p where p.active
-      ), '[]'::jsonb)
-    )
-  end
-  from public.billing_config c;
+declare
+  c public.billing_config;
+  dev boolean := false;
+begin
+  select * into c from public.billing_config where id;
+  if not found then
+    return null;
+  end if;
+  -- токен разработчика: условия и планы видны (и оплата работает), даже пока продажа выключена
+  if auth.uid() is not null then
+    select coalesce(s.dev, false) into dev from public.subscriptions s where s.user_id = auth.uid();
+    dev := coalesce(dev, false);
+  end if;
+  if not (c.enabled or dev) or c.offer_url is null or c.offer_version is null then
+    return null;
+  end if;
+  return jsonb_build_object(
+    'offer_url', c.offer_url,
+    'offer_version', c.offer_version,
+    'seller', c.seller,
+    'notice_days', c.notice_days,
+    'plans', coalesce((
+      select jsonb_agg(jsonb_build_object(
+        'id', p.id, 'title', p.title, 'period_days', p.period_days,
+        'price_minor', p.price_minor, 'currency', p.currency
+      ) order by p.sort, p.id)
+      from public.billing_plans p where p.active
+    ), '[]'::jsonb)
+  );
+end;
 $$;
 
 -- Сколько вернуть сейчас: по каждому оплаченному сроку — доля его неиспользованных дней (ст. 32 ЗоЗПП:
@@ -202,7 +253,8 @@ begin
     -- сумма продления: та, что названа в напоминании, а до него — цена плана
     'renew_minor', case when s.auto_renew then coalesce(s.notice_minor, p.price_minor) end,
     'currency', p.currency,
-    'refund_minor', refund
+    'refund_minor', refund,
+    'dev', s.dev
   );
 end;
 $$;
@@ -258,6 +310,142 @@ begin
 end;
 $$;
 
+-- ---------------------------------------------------------------- коды
+
+-- Хэш кода: регистр и разделители не важны («abcd-1234» = «ABCD1234»).
+create or replace function public.billing_code_hash(_code text)
+returns text
+language sql
+immutable
+as $$
+  select encode(sha256(convert_to(
+    'furya.code:' || upper(regexp_replace(coalesce(_code, ''), '[^A-Za-z0-9]', '', 'g')), 'utf8')), 'hex')
+$$;
+
+-- Сделать коды (SQL Editor или функции сервера; приложению закрыто — для разработчика есть dev_make_gifts).
+-- _kind: gift (подарок на _days дней) или dev (токен разработчика). _uses — сколько разных людей могут ввести.
+-- Возвращает сами коды: 20 знаков по пять, 80 бит случайности (gen_random_uuid берёт CSPRNG сервера).
+-- Показываются один раз: в таблице остаётся только хэш.
+create or replace function public.billing_codes_make(
+  _kind text, _days int, _count int, _uses int default 1, _note text default null,
+  _expires_days int default null, _by uuid default null
+)
+returns setof text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  i int;
+  a text;
+  b text;
+  raw text;
+  code text;
+begin
+  if _kind not in ('gift', 'dev') then
+    raise exception 'bad_kind';
+  end if;
+  if _kind = 'gift' and (_days is null or _days < 1 or _days > 3660) then
+    raise exception 'bad_days';
+  end if;
+  if _count is null or _count < 1 or _count > 200 then
+    raise exception 'bad_count';
+  end if;
+  for i in 1.._count loop
+    a := replace(gen_random_uuid()::text, '-', '');
+    b := replace(gen_random_uuid()::text, '-', '');
+    -- без 13-й и 17-й цифр uuid (версия и вариант всегда одни и те же)
+    raw := upper(substr(a, 1, 12) || substr(b, 1, 8));
+    code := substr(raw, 1, 5) || '-' || substr(raw, 6, 5) || '-' || substr(raw, 11, 5) || '-' || substr(raw, 16, 5);
+    insert into public.billing_codes (hash, kind, days, uses_left, expires_at, note, made_by)
+    values (public.billing_code_hash(code), _kind, case when _kind = 'gift' then _days end, greatest(coalesce(_uses, 1), 1),
+            case when _expires_days is not null then clock_timestamp() + _expires_days * interval '1 day' end, _note, _by);
+    return next code;
+  end loop;
+end;
+$$;
+revoke all on function public.billing_codes_make(text, int, int, int, text, int, uuid) from public, anon, authenticated;
+
+-- Ввести код. Подарок — к оплаченному сроку добавляются дни (или с сегодняшнего дня, если срока нет);
+-- токен разработчика — флаг dev. Неверный, просроченный, использованный и уже введённый вами код
+-- отвечают одинаково ({"error": "bad_code"} / "already_redeemed") и считаются: больше десяти промахов
+-- за час — too_many (подбирать нечего: 80 бит, но и пробовать долго незачем). Ошибка идёт значением, а
+-- не исключением: иначе запись о промахе откатилась бы вместе с вызовом.
+create or replace function public.redeem_code(_code text)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  uid uuid := auth.uid();
+  t timestamptz := clock_timestamp();
+  h text;
+  c public.billing_codes;
+  s public.subscriptions;
+  fails int;
+  till timestamptz;
+begin
+  if uid is null then
+    raise exception 'not_signed_in';
+  end if;
+  perform pg_advisory_xact_lock(hashtext('starty-billing:' || uid::text));
+  select count(*) into fails from public.billing_events
+   where user_id = uid and kind = 'code_failed' and at > t - interval '1 hour';
+  if fails >= 10 then
+    raise exception 'too_many';
+  end if;
+  h := public.billing_code_hash(_code);
+  select * into c from public.billing_codes where hash = h for update;
+  if not found or c.uses_left < 1 or (c.expires_at is not null and c.expires_at <= t) then
+    insert into public.billing_events (user_id, kind) values (uid, 'code_failed');
+    return jsonb_build_object('error', 'bad_code');
+  end if;
+  if exists (select 1 from public.billing_redemptions r where r.hash = h and r.user_id = uid) then
+    return jsonb_build_object('error', 'already_redeemed');
+  end if;
+  insert into public.subscriptions (user_id) values (uid) on conflict (user_id) do nothing;
+  select * into s from public.subscriptions where user_id = uid for update;
+  update public.billing_codes set uses_left = uses_left - 1 where hash = h;
+  insert into public.billing_redemptions (user_id, hash, kind, days) values (uid, h, c.kind, c.days);
+  if c.kind = 'gift' then
+    till := greatest(coalesce(s.paid_until, t), t) + c.days * interval '1 day';
+    update public.subscriptions set paid_until = till, updated_at = t where user_id = uid;
+    insert into public.billing_events (user_id, kind, detail)
+    values (uid, 'gift', jsonb_build_object('days', c.days, 'code', left(h, 8), 'paid_until', till));
+    return jsonb_build_object('kind', 'gift', 'days', c.days, 'paid_until', till);
+  end if;
+  update public.subscriptions set dev = true, updated_at = t where user_id = uid;
+  insert into public.billing_events (user_id, kind, detail) values (uid, 'dev', jsonb_build_object('code', left(h, 8)));
+  return jsonb_build_object('kind', 'dev');
+end;
+$$;
+
+-- Разработчик (аккаунт с токеном) делает подарочные коды прямо в приложении: до 20 за раз, до 365 дней.
+create or replace function public.dev_make_gifts(_days int, _count int, _note text default null)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  uid uuid := auth.uid();
+  isdev boolean;
+begin
+  if uid is null then
+    raise exception 'not_signed_in';
+  end if;
+  select s.dev into isdev from public.subscriptions s where s.user_id = uid;
+  if not coalesce(isdev, false) then
+    raise exception 'not_dev';
+  end if;
+  if _days is null or _days < 1 or _days > 365 or _count is null or _count < 1 or _count > 20 then
+    raise exception 'bad_args';
+  end if;
+  return coalesce((select jsonb_agg(c) from public.billing_codes_make('gift', _days, _count, 1, _note, 365, uid) c), '[]'::jsonb);
+end;
+$$;
+
 -- ---------------------------------------------------------------- для функций сервера (service_role)
 
 -- Отключить продление: способ оплаты забыть, в журнал — отказ и причина (user, charge_failed, refund).
@@ -301,9 +489,13 @@ declare
   pid uuid;
   pseq bigint;
   detail jsonb;
+  isdev boolean;
 begin
+  select coalesce(x.dev, false) into isdev from public.subscriptions x where x.user_id = _uid;
+  isdev := coalesce(isdev, false);
   select * into c from public.billing_config where id;
-  if not found or not c.enabled or c.offer_url is null or c.offer_version is null then
+  -- токен разработчика: оплату можно пройти (с тестовыми ключами сервиса), пока продажа выключена
+  if not found or not (c.enabled or isdev) or c.offer_url is null or c.offer_version is null then
     raise exception 'billing_off';
   end if;
   if _offer_version is distinct from c.offer_version then
@@ -319,7 +511,7 @@ begin
   end if;
   perform pg_advisory_xact_lock(hashtext('starty-billing:' || _uid::text));
   select * into s from public.subscriptions where user_id = _uid;
-  if found and s.paid_until > clock_timestamp() then
+  if found and s.paid_until > clock_timestamp() and not isdev then
     raise exception 'already_active';
   end if;
   insert into public.billing_payments (user_id, plan_id, provider, kind, amount_minor, currency, save_method)
@@ -674,12 +866,20 @@ revoke execute on function public.billing_refund_begin(uuid) from public, anon, 
 revoke execute on function public.billing_notices_due(timestamptz) from public, anon, authenticated;
 revoke execute on function public.billing_noticed(uuid, timestamptz, int) from public, anon, authenticated;
 revoke execute on function public.billing_renewals_start(timestamptz) from public, anon, authenticated;
+revoke execute on function public.billing_code_hash(text) from public, anon, authenticated;
+revoke execute on function public.billing_codes_make(text, int, int, int, text, int, uuid) from public, anon, authenticated;
+revoke execute on function public.redeem_code(text) from public, anon;
+revoke execute on function public.dev_make_gifts(int, int, text) from public, anon;
 
 grant execute on function public.billing_offer() to anon, authenticated;
 grant execute on function public.my_subscription() to authenticated;
 grant execute on function public.my_payments() to authenticated;
 grant execute on function public.cancel_auto_renew() to authenticated;
+grant execute on function public.redeem_code(text) to authenticated;
+grant execute on function public.dev_make_gifts(int, int, text) to authenticated;
 
+grant execute on function public.billing_code_hash(text) to service_role;
+grant execute on function public.billing_codes_make(text, int, int, int, text, int, uuid) to service_role;
 grant execute on function public.billing_refund_quote(uuid, timestamptz) to service_role;
 grant execute on function public.billing_stop_renew(uuid, text) to service_role;
 grant execute on function public.billing_start(uuid, text, boolean, text, text, text, text) to service_role;

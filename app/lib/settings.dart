@@ -477,6 +477,54 @@ String _sources(AppState st) {
 }
 
 /// Версия и обновления — честное состояние самообновления (как у Дневника).
+/// Окно с одним или несколькими полями ввода: значения по порядку или null, если закрыли. [hints] — подсказки
+/// полей; [numbers] — цифровая клавиатура. Для кодов и небольших чисел: свой экран ради этого не нужен.
+Future<List<String>?> _askText(
+  BuildContext context, {
+  required String title,
+  String? text,
+  required List<String> hints,
+  List<String>? initial,
+  bool numbers = false,
+  bool caps = false,
+  String action = 'Готово',
+}) async {
+  final ctl = [for (var i = 0; i < hints.length; i++) TextEditingController(text: initial != null && i < initial.length ? initial[i] : '')];
+  final out = await showCupertinoDialog<List<String>>(
+    context: context,
+    builder: (c) => CupertinoAlertDialog(
+      title: Text(title),
+      content: Padding(
+        padding: const EdgeInsets.only(top: 10),
+        child: Material(
+          color: Colors.transparent,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (text != null) Padding(padding: const EdgeInsets.only(bottom: 8), child: Text(text)),
+              for (var i = 0; i < ctl.length; i++)
+                TextField(
+                  controller: ctl[i],
+                  autofocus: i == 0,
+                  keyboardType: numbers ? TextInputType.number : null,
+                  inputFormatters: numbers ? [FilteringTextInputFormatter.digitsOnly] : null,
+                  textCapitalization: caps ? TextCapitalization.characters : TextCapitalization.none,
+                  decoration: InputDecoration(hintText: hints[i]),
+                ),
+            ],
+          ),
+        ),
+      ),
+      actions: [
+        CupertinoDialogAction(onPressed: () => Navigator.pop(c), child: const Text('Отмена')),
+        CupertinoDialogAction(onPressed: () => Navigator.pop(c, [for (final x in ctl) x.text]), child: Text(action)),
+      ],
+    ),
+  );
+  // контроллеры не освобождаем: окно ещё закрывается и собирает поля; ресурсов системы они не держат
+  return out;
+}
+
 /// Строка «Версия»: семь нажатий подряд — окно режима владельца ([BillingState.preview]).
 class _VersionRow extends StatefulWidget {
   final String value;
@@ -530,7 +578,6 @@ class _VersionRowState extends State<_VersionRow> {
         ],
       ),
     );
-    ctl.dispose();
     if (code == null || !mounted) return;
     if (BillingState.previewCodeOk(code)) {
       await st.setPreview(true);

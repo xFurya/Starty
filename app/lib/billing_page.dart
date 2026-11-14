@@ -65,6 +65,9 @@ class _BillingPageState extends State<_BillingPage> {
   bool _renew = false;
   bool _busy = false;
   String? _error;
+
+  /// Что вышло из введённого кода (подарок, токен, режим владельца).
+  String? _codeNote;
   _Pay? _pay;
 
   /// Итог отказа с возвратом — остаётся на странице, пока её не закрыли.
@@ -223,10 +226,11 @@ class _BillingPageState extends State<_BillingPage> {
           slivers: [
             SliverToBoxAdapter(child: _card(p, e, active, signedIn, offer, t)),
             if (b.problem != null && (e != null || offer != null)) SliverToBoxAdapter(child: _stale(p, b.problem!, e)),
-            if (b.preview) SliverToBoxAdapter(child: _preview(p)),
+            if (b.preview || b.dev) SliverToBoxAdapter(child: _developer(p)),
+            SliverToBoxAdapter(child: _codeRow(p)),
             for (final w in [
-              if (b.preview && !active) ..._digest(p),
-              if (!active && offer != null && !b.preview) ..._perks(p),
+              if ((b.preview || b.dev) && !active) ..._digest(p),
+              if (!active && offer != null && !b.preview && !b.dev) ..._perks(p),
               if (!signedIn && !(b.preview && offer == null)) ..._signIn(p)
               else if (active) ..._active(p, e)
               else if (offer != null && signedIn) ..._buy(p, offer),
@@ -250,8 +254,13 @@ class _BillingPageState extends State<_BillingPage> {
         status: e.autoRenew ? 'Продлится автоматически' : 'Без продления',
       );
     }
-    if (st.billing.preview) {
-      return const _ProfileCard(letter: null, icon: CupertinoIcons.sparkles, title: 'Подписка', status: 'Режим владельца: всё включено');
+    if (st.billing.preview || st.billing.dev) {
+      return _ProfileCard(
+        letter: null,
+        icon: CupertinoIcons.sparkles,
+        title: 'Подписка',
+        status: st.billing.dev ? 'Аккаунт разработчика: всё включено' : 'Режим владельца: всё включено',
+      );
     }
     final String status;
     if (!signedIn) {
@@ -286,19 +295,141 @@ class _BillingPageState extends State<_BillingPage> {
     );
   }
 
-  /// Режим владельца: все функции включены на этом устройстве без оплаты — оценить до продажи.
-  Widget _preview(Palette p) => Padding(
+  /// Разработчик: аккаунт с токеном (на всех устройствах аккаунта) и/или режим владельца на этом устройстве.
+  Widget _developer(Palette p) {
+    final b = st.billing;
+    return Padding(
+      padding: const EdgeInsets.only(top: 14),
+      child: Plate(
+        child: Column(
+          children: [
+            if (b.dev)
+              _Row(
+                icon: CupertinoIcons.hammer,
+                title: 'Аккаунт разработчика',
+                subtitle: 'Все функции открыты на всех устройствах аккаунта. Оплата проходит, даже пока продажа выключена: '
+                    'так можно проверить её тестовыми ключами сервиса',
+              ),
+            if (b.dev) ...[
+              const Hairline(),
+              _Row(
+                icon: CupertinoIcons.gift,
+                title: 'Сделать подарочные коды',
+                subtitle: 'Дни и сколько штук: до 365 дней и до 20 кодов за раз. Каждый код вводится один раз',
+                onTap: _busy ? null : _makeGifts,
+                trailing: const _Chevron(),
+              ),
+            ],
+            if (b.preview) ...[
+              if (b.dev) const Hairline(),
+              _Row(
+                icon: CupertinoIcons.eye,
+                title: 'Режим владельца',
+                subtitle: 'Все функции подписки включены на этом устройстве без оплаты',
+                action: 'Выключить',
+                onAction: () => st.setPreview(false),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// Строка ввода кода: подарок, токен разработчика, код режима владельца.
+  Widget _codeRow(Palette p) => Padding(
     padding: const EdgeInsets.only(top: 14),
     child: Plate(
-      child: _Row(
-        icon: CupertinoIcons.eye,
-        title: 'Режим владельца',
-        subtitle: 'Все функции подписки включены на этом устройстве без оплаты. Остальным они недоступны',
-        action: 'Выключить',
-        onAction: () => st.setPreview(false),
+      child: Column(
+        children: [
+          _Row(
+            icon: CupertinoIcons.gift,
+            title: 'Ввести код',
+            subtitle: 'Подарочный код добавит дни подписки',
+            onTap: _busy ? null : _redeem,
+            trailing: const _Chevron(),
+          ),
+          if (_codeNote != null) ...[
+            const Hairline(),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 12, 16, 14),
+              child: Text(_codeNote!, style: TextStyle(fontSize: 14, color: p.ink, height: 1.35)),
+            ),
+          ],
+        ],
       ),
     ),
   );
+
+  Future<void> _redeem() async {
+    final v = await _askText(context, title: 'Код', hints: const ['XXXXX-XXXXX-XXXXX-XXXXX'], caps: true, action: 'Ввести');
+    final code = v?.first.trim() ?? '';
+    if (code.isEmpty || !mounted) return;
+    setState(() {
+      _busy = true;
+      _error = null;
+      _codeNote = null;
+    });
+    final (r, err) = await st.redeemCode(code);
+    if (!mounted) return;
+    setState(() {
+      _busy = false;
+      _error = err;
+      if (r != null) _codeNote = _codeText(r);
+    });
+  }
+
+  /// Что сказать человеку после кода: по факту — сколько дней и до какого числа, и работает ли это здесь.
+  static String _codeText(CodeResult r) {
+    if (r.local) return 'Режим владельца включён: все функции подписки открыты на этом устройстве';
+    if (r.dev) return 'Токен принят: аккаунт стал аккаунтом разработчика. Все функции открыты на всех ваших устройствах';
+    final until = r.paidUntil == null ? '' : ' Подписка до ${billingDay(r.paidUntil!, now())}.';
+    return 'Подарок принят: +${r.days} ${plural(r.days, 'день', 'дня', 'дней')}.$until'
+        '${billingBuild ? '' : ' Функции подписки откроются в версии приложения с подпиской.'}';
+  }
+
+  Future<void> _makeGifts() async {
+    final v = await _askText(
+      context,
+      title: 'Подарочные коды',
+      text: 'На сколько дней и сколько кодов сделать',
+      hints: const ['Дней (1–365)', 'Сколько кодов (1–20)'],
+      initial: const ['30', '1'],
+      numbers: true,
+      action: 'Сделать',
+    );
+    if (v == null || !mounted) return;
+    final days = int.tryParse(v[0]) ?? 0, count = int.tryParse(v[1]) ?? 0;
+    setState(() {
+      _busy = true;
+      _error = null;
+    });
+    final (codes, err) = await st.makeGifts(days, count);
+    if (!mounted) return;
+    setState(() {
+      _busy = false;
+      _error = err;
+    });
+    if (codes == null || codes.isEmpty) return;
+    final text = codes.join('\n');
+    await showCupertinoDialog<void>(
+      context: context,
+      builder: (c) => CupertinoAlertDialog(
+        title: Text('${codes.length} ${plural(codes.length, 'код', 'кода', 'кодов')} на $days ${plural(days, 'день', 'дня', 'дней')}'),
+        content: Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: Material(color: Colors.transparent, child: SelectableText(text, style: const TextStyle(fontSize: 15, height: 1.5))),
+        ),
+        actions: [
+          CupertinoDialogAction(
+            onPressed: () => Clipboard.setData(ClipboardData(text: text)),
+            child: const Text('Скопировать'),
+          ),
+          CupertinoDialogAction(onPressed: () => Navigator.pop(c), child: const Text('Закрыть')),
+        ],
+      ),
+    );
+  }
 
   List<Widget> _perks(Palette p) => [
     const _Head('Что даёт'),
