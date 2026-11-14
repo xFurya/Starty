@@ -1369,7 +1369,8 @@ def collect_photos(events, upcoming, names, photos, prev_photos, everyone=(), al
                     and nm.key(names.to_ru(lab)) == nm.key(names.to_ru(base))), None)
         if url:
             photos["raw"].append((pseudo, url, 2))
-            add(pseudo)
+            if pseudo not in want:
+                want.insert(0, pseudo)  # первыми: за сбор берётся не больше NEW_PER_RUN новых миниатюр
 
     # выбор источника, миниатюры и память о найденном («не пропадает») — в photos.collect
     return ph.collect(SITE, want, photos["raw"], prev_photos, names, ph.BOOK, PHOTO_SKIP, log,
