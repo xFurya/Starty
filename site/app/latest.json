@@ -11,23 +11,23 @@
  "windows": {
   "code": 71,
   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.70/Starty-windows.zip",
-  "size": 14867031,
-  "sha256": "a1381457689f12b9176d33c742a475ccc0c96252deaa42860f13fd76bc79b34a",
+  "size": 14867032,
+  "sha256": "ebe9644c0067a57458304c6a72789af0f4ea0d7203053c8a73c533aee005ed2c",
   "setup": {
    "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.70/starty-setup-1.0.70.exe",
-   "size": 12939520,
-   "sha256": "6459fde37740eda707640bb7ba11c8643fc4fa960ee12cfaf2acbd3803756199"
+   "size": 12938502,
+   "sha256": "7c2cf2da3d9e43ce08291261a265785ce928a915895eaf83e3d53d151b68b0ee"
   }
  },
  "macos": {
   "code": 71,
   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.70/Starty-macos.zip",
-  "size": 22746862,
-  "sha256": "84d8d853a4444b5bf5f2aff257be64771053af93bca8a63d1b618a6417283859",
+  "size": 22746867,
+  "sha256": "8b7681254b5f97d6fd9cf2cd313b5cdb7c173c185d08871846e5d4fafba3e79f",
   "dmg": {
    "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.70/Starty-macos.dmg",
-   "size": 25938097,
-   "sha256": "43259efa22e3a0a0bb96259a7078116d4f775987e220cf77c4a133999a4d8b7b"
+   "size": 25960447,
+   "sha256": "78ef9edce6f99acca3b06b5c131a0df6971b0f6430e9a6b4ab11ec3ea982d2e3"
   }
  }
 }
