@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-14T22:24:01.572933+00:00",
+ "checked": "2026-11-14T22:32:02.030533+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51542,7 +51542,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sofia Val / Asaf Kazimov — 65.79\n2. Natacha Lagouge / Arnaud Caffa — 59.92\n\nНачало: 01:03 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Leah Neset / Artem Markelov — 69.10\n2. Sofia Val / Asaf Kazimov — 65.79\n3. Natacha Lagouge / Arnaud Caffa — 59.92\n\nНачало: 01:03 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Natacha Lagouge / Arnaud Caffa",
@@ -51550,7 +51550,7 @@
      "time": "01:09",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "59.92"
     },
     {
@@ -51559,7 +51559,7 @@
      "time": "01:16",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "65.79"
     },
     {
@@ -51567,7 +51567,9 @@
      "nation": "USA",
      "time": "01:22",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "69.10"
     },
     {
      "name": "Noemi Maria Tali / Noah Lafornara",
@@ -51642,12 +51644,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Leah Neset / Artem Markelov",
+     "nation": "USA",
+     "points": "69.10"
+    },
+    {
+     "place": 2,
      "name": "Sofia Val / Asaf Kazimov",
      "nation": "ESP",
      "points": "65.79"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Natacha Lagouge / Arnaud Caffa",
      "nation": "FRA",
      "points": "59.92"
