@@ -365,6 +365,52 @@ void main() {
       expect(t.takeException(), isNull);
     });
 
+    testWidgets('рекорды российских стартов: первыми, если выше международных, и в «Примечательном»', (t) async {
+      final pr = {
+        ..._solo,
+        'pb': [
+          {'s': 'total', 'pts': '214.53', 'd': '2026-02-19', 'ev': 'Олимпийские игры 2026'},
+        ],
+        'pbru': [
+          {'s': 'total', 'pts': '262.92', 'd': '2024-12-21', 'ev': 'Чемпионат России', 'src': 'ФФККР'},
+          {'s': 'sp', 'pts': '86.52', 'd': '2025-12-19', 'ev': 'Чемпионат России', 'src': 'ФФККР'},
+        ],
+        'pbru_from': '2018/19',
+        'feats': [
+          {'t': 'Лучшая сумма на российских стартах — выше рекорда ISU', 'ev': 'Чемпионат России', 'd': '2024-12-21', 'pts': '262.92', 'src': 'ФФККР'},
+        ],
+      };
+      profileLoader = (k) async => k == _soloKey ? Profile.fromJson(pr) : null;
+      t.view.physicalSize = const Size(390 * 3, 4000 * 3);
+      t.view.devicePixelRatio = 3;
+      addTearDown(t.view.reset);
+      await t.pumpWidget(_app(ProfileSheet(name: 'Аделия Петросян', data: _data())));
+      await t.pumpAndSettle();
+      expect(find.text('Лучшая сумма на российских стартах — выше рекорда ISU'), findsOneWidget);
+      expect(find.text('262.92'), findsNWidgets(2)); // в «Примечательном» и в рекордах
+      final ru = find.text('ЛИЧНЫЕ РЕКОРДЫ НА РОССИЙСКИХ СТАРТАХ');
+      final isu = find.text('ЛИЧНЫЕ РЕКОРДЫ ISU');
+      expect(ru, findsOneWidget);
+      expect(isu, findsOneWidget);
+      expect(t.getTopLeft(ru).dy, lessThan(t.getTopLeft(isu).dy));
+      expect(find.text('По протоколам с сезона 2018/19'), findsOneWidget);
+      expect(find.text('214.53'), findsOneWidget);
+      // строка без адреса — без стрелки «к источнику» и без нажатия
+      expect(find.byIcon(CupertinoIcons.arrow_up_right), findsNothing);
+      expect(t.takeException(), isNull);
+    });
+
+    test('блоки рекордов: один — просто «Личные рекорды», выше международный — он первый', () {
+      ProfileScore tot(String pts) => ProfileScore('total', pts, '', '');
+      expect(recordBlocks(Profile(name: 'X', best: [tot('200.00')])).map((b) => b.$1), ['Личные рекорды']);
+      expect(recordBlocks(Profile(name: 'X', bestRu: [tot('200.00')])).map((b) => b.$1), ['Личные рекорды на российских стартах']);
+      expect(recordBlocks(Profile(name: 'X', best: [tot('240.00')], bestRu: [tot('230.00')])).map((b) => b.$1), [
+        'Личные рекорды ISU',
+        'Личные рекорды на российских стартах',
+      ]);
+      expect(recordBlocks(const Profile(name: 'X')), isEmpty);
+    });
+
     testWidgets('файла нет — так и сказано', (t) async {
       profileLoader = (k) async => null;
       await t.pumpWidget(_app(ProfileSheet(name: 'Аделия Петросян', data: _data())));

@@ -520,13 +520,41 @@ def birth_places(people, store):
     return list(dict.fromkeys(out))
 
 
-def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None, teams=None, today=None, places=None):
+def domestic(pr, mine, since="", fe=()):
+    """Рекорды российских стартов в профиль: pbru [{s, pts, ev, d, src}] и pbru_from (сезон, с которого
+    есть протоколы), а если лучшая сумма в России выше международного личного рекорда — строку
+    «Примечательного»: иначе профиль показывал бы только международный результат, а он у россиян
+    бывает куда ниже настоящего уровня. Международная сумма — из личных рекордов ISU и из строк
+    «Примечательного» по таблицам ISU (мировой рекорд, место в списке личных рекордов): у кого ISU
+    личных рекордов не присылает (Валиева), сумма мирового рекорда — та же мерка. Международной суммы
+    нет совсем — строки нет: блок «На российских стартах» и так её показывает, а «лучшее из своих» —
+    не примечательность."""
+    if not mine:
+        return []
+    pr["pbru"] = [dict(s=seg, **mine[seg]) for seg in ("total", "sp", "fs") if seg in mine]
+    if since:
+        pr["pbru_from"] = since
+    from . import feats as ft
+    pr["src"] = pr["src"] + [x for x in dict.fromkeys(ft.source_names(pr["pbru"])) if x not in pr["src"]]
+    tot = mine.get("total")
+    isu = [float(x["pts"]) for x in pr.get("pb") or [] if x.get("s") == "total" and re.fullmatch(r"\d+\.\d\d", x.get("pts", ""))]
+    isu += [float(x["pts"]) for x in fe if x.get("src") == "ISU" and re.search(r"isujsstat/.*to\.htm$", x.get("u", ""))
+            and re.fullmatch(r"\d+\.\d\d", x.get("pts") or "")]
+    if not tot or not isu or float(tot["pts"]) <= max(isu):
+        return []
+    return [{"t": "Лучшая сумма на российских стартах — выше рекорда ISU",
+             "ev": tot["ev"], "d": tot["d"], "pts": tot["pts"], "src": tot["src"]}]
+
+
+def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None, teams=None, today=None, places=None,
+          bests=None, bests_from=""):
     """Записать профили и проставить людям ключ "p". people — справочник [{n, c, k}];
     store — кэш биографий из refresh; cards — {номер: карточка картотеки с fio};
     book — «Примечательное» из feats.load (нет — раздела нет); aliases — одно лицо под двумя
     именами (config.json; по умолчанию оттуда же): карточка «Игнатова» — профилю «Трусова»;
     teams — списки сборных из teams.load (нет — строки «Сборная» нет); today — дата для сезона списка;
-    places — места рождения по-русски из places.refresh (нет — как у ISU)."""
+    places — места рождения по-русски из places.refresh (нет — как у ISU); bests — рекорды российских
+    стартов из history.domestic_bests и сезон, с которого есть протоколы (нет — блока нет)."""
     from . import feats as ft
     from . import teams as tm
     from .people import card_name
@@ -558,6 +586,11 @@ def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None
         pr["at"] = max([bio["at"] if bio else ""] + [(card or {}).get("at", "")] +
                        [cards_by_name[x].get("at", "") for x in parts if x in cards_by_name])[:10]
         fe = ft.for_profile(name, p.get("c", ""), ids.get(nm.key(name), ""), pr, book) if book else []
+        # рекорды российских стартов — сразу за мировыми, раньше редких элементов
+        ru = domestic(pr, (bests or {}).get(nm.key(name)), bests_from, fe)
+        if ru:
+            world = [x for x in fe if x.get("src") == "ISU" and x.get("u", "").startswith(ft.STAT + "phs")]
+            fe = world + ru + [x for x in fe if x not in world]
         if fe:
             pr["feats"] = fe
             pr["src"] = pr["src"] + [x for x in dict.fromkeys(ft.source_names(fe)) if x not in pr["src"]]

@@ -381,6 +381,46 @@ class WriteTest(unittest.TestCase):
             with open(os.path.join(d, pf.key("Ilia Malinin") + ".json"), encoding="utf-8") as f:
                 self.assertNotIn("feats", json.load(f))
 
+    def test_domestic_record_after_world_records(self):
+        # у россиянки лучшая сумма — на чемпионате России, а рекорд ISU ниже: «Примечательное» это
+        # называет, личные рекорды показывают обе стороны
+        people = [{"n": "Аделия Петросян", "c": "RUS", "k": "w"}]
+        bio = {"who": [{"n": "Аделия Петросян", "born": "2007-06-05"}],
+               "pb": [{"s": "total", "pts": "214.53", "d": "2026-02-19", "ev": "Олимпийские игры 2026"}]}
+        store = {"ids": {pf.nm.key("Аделия Петросян"): "1"}, "bios": {"1": {"at": "2026-11-05T00:00:00+00:00",
+                                                                          "bio": bio, "cr": []}}}
+        mine = {"total": {"pts": "262.92", "ev": "Чемпионат России", "d": "2024-12-21", "src": "ФФККР"},
+                "sp": {"pts": "86.52", "ev": "Чемпионат России", "d": "2025-12-19", "src": "ФФККР"}}
+        bests = {pf.nm.key("Аделия Петросян"): mine}
+        with tempfile.TemporaryDirectory() as d:
+            pf.write(people, store, {}, out_dir=d, log=lambda *a: None, book=book({}, ar.empty()), bests=bests,
+                     bests_from="2018/19")
+            with open(os.path.join(d, pf.key("Аделия Петросян") + ".json"), encoding="utf-8") as f:
+                pr = json.load(f)
+        self.assertEqual(pr["feats"], [{"t": "Лучшая сумма на российских стартах — выше рекорда ISU",
+                                        "ev": "Чемпионат России", "d": "2024-12-21", "pts": "262.92", "src": "ФФККР"}])
+        self.assertEqual([(x["s"], x["pts"]) for x in pr["pbru"]], [("total", "262.92"), ("sp", "86.52")])
+        self.assertEqual(pr["pbru_from"], "2018/19")
+        self.assertIn("ФФККР", pr["src"])
+        # рекорд ISU выше — строки в «Примечательном» нет, блок в личных рекордах остаётся
+        bio["pb"][0]["pts"] = "270.00"
+        with tempfile.TemporaryDirectory() as d:
+            pf.write(people, store, {}, out_dir=d, log=lambda *a: None, book=book({}, ar.empty()), bests=bests)
+            with open(os.path.join(d, pf.key("Аделия Петросян") + ".json"), encoding="utf-8") as f:
+                pr = json.load(f)
+        self.assertNotIn("feats", pr)
+        self.assertEqual(len(pr["pbru"]), 2)
+
+    def test_domestic_against_world_record_without_isu_pb(self):
+        # ISU личных рекордов не прислал, а мировой рекорд по сумме у неё есть — мерка он
+        pr = {"src": ["ISU"]}
+        wr = {"t": "Действующий мировой рекорд по сумме баллов", "ev": "GP Rostelecom Cup 2021", "d": "2021-11-27",
+              "pts": "272.71", "src": "ISU", "u": ft.STAT + "phswto.htm"}
+        mine = {"total": {"pts": "283.48", "ev": "Чемпионат России", "d": "2021-12-25", "src": "ФФККР"}}
+        self.assertEqual([x["pts"] for x in pf.domestic(pr, mine, "2018/19", [wr])], ["283.48"])
+        self.assertEqual(pf.domestic(dict(src=[]), mine, "", [dict(wr, pts="290.00")]), [])
+        self.assertEqual(pf.domestic(dict(src=[]), mine, "", []), [])  # мерки нет — строки нет
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1529,7 +1529,14 @@ def main():
         except Exception as e:  # место рождения по-русски — дополнение: иначе как у ISU
             log("!! места рождения:", e)
             places = pl.load()
-        pf.write(people, store, book.get("cards"), log=log, book=notable, teams=squads, places=places)
+        try:
+            # рекорды российских стартов — по протоколам архива и этого сезона (не только ISU)
+            bests, since = hs.domestic_bests()
+        except Exception as e:  # дополнение к профилю
+            log("!! рекорды российских стартов:", e)
+            bests, since = None, ""
+        pf.write(people, store, book.get("cards"), log=log, book=notable, teams=squads, places=places, bests=bests,
+                 bests_from=since)
     except Exception as e:  # профиль — дополнение: без него лента работает
         log("!! профили:", e)
         traceback.print_exc()

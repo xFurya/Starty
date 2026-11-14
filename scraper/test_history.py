@@ -179,6 +179,37 @@ class Athletes(unittest.TestCase):
             f = read(os.path.join(out, f"{h.bucket('Анна Иванова'):02x}.json"))
             self.assertTrue(f["a"]["Анна Иванова"].get("x"))
 
+    def test_domestic_bests(self):
+        # лучшее на российских стартах: сумма — только где был короткий сегмент; международные не в счёт
+        def two(tid, name, sp, fs, tot, day):
+            d = doc(tid, name, [row(1, "Анна Иванова", 1, sp)], start=f"{day}T14:00:00+03:00")
+            free = dict(d["categories"][0]["segments"][0], code="ПП", start=f"{day}T18:00:00+03:00",
+                        rows=[row(1, "Анна Иванова", 1, fs)])
+            d["categories"][0]["segments"].append(free)
+            d["categories"][0]["total"] = {"state": "final", "rows": [dict(row(1, "Анна Иванова", 1, tot), parts=["1", "1"])]}
+            return d
+        with tempfile.TemporaryDirectory() as d:
+            past, live = os.path.join(d, "past"), os.path.join(d, "live")
+            os.makedirs(past)
+            os.makedirs(live)
+            P._atomic_write(os.path.join(past, "fsr_a.json"), P.canonical(two("fsr:a", "Чемпионат России", "86.52", "176.40", "262.92", "2024-12-20")))
+            P._atomic_write(os.path.join(past, "ffkm_b.json"), P.canonical(two("ffkm:b", "Кубок Москвы", "88.00", "170.00", "258.00", "2019-10-05")))
+            only_free = doc("fsr:c", "Шоу-турнир", [row(1, "Анна Иванова", 1, "190.00")], code="ПП",
+                            total={"state": "final", "rows": [dict(row(1, "Анна Иванова", 1, "190.00"), parts=["1"])]})
+            P._atomic_write(os.path.join(live, "fsr_c.json"), P.canonical(only_free))
+            P._atomic_write(os.path.join(live, "isu_d.json"), P.canonical(two("isu:d", "Олимпийские игры", "90.00", "200.00", "290.00", "2026-02-17")))
+            # младший возраст: в итог входят ОФП и СФП — итог не сумма, в «сумму» не идёт
+            P._atomic_write(os.path.join(past, "fsr_e.json"), P.canonical(two("fsr:e", "Первенство (младший возраст)", "89.00", "150.00", "300.00", "2020-03-11")))
+            best, since = h.domestic_bests(past, live)
+            mine = best[h.nm.key("Анна Иванова")]
+            self.assertEqual(mine["total"], {"pts": "262.92", "ev": "Чемпионат России", "d": "2024-12-20", "src": "ФФККР"})
+            self.assertEqual((mine["sp"]["pts"], mine["sp"]["ev"]), ("89.00", "Первенство (младший возраст)"))
+            self.assertEqual(mine["fs"]["pts"], "190.00")  # произвольная — да, сумма из одной произвольной — нет
+            self.assertEqual(since, "2019/20")
+            os.remove(os.path.join(past, "fsr_e.json"))
+            best, _ = h.domestic_bests(past, live)
+            self.assertEqual(best[h.nm.key("Анна Иванова")]["sp"]["src"], "ФФКМ")
+
     def test_bucket_is_crc32_of_normalized_name(self):
         # тот же расчёт — в приложении (history.dart): менять только вместе
         self.assertEqual(h.bucket("Аделия Петросян"), h.bucket("аделия петросян"))

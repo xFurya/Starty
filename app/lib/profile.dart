@@ -115,6 +115,12 @@ class Profile {
   final String musicSeason;
   final List<String> musicShort, musicFree;
   final List<ProfileScore> best, seasonBest;
+
+  /// Личные рекорды на российских стартах (протоколы ФФККР и регионов): у россиян международный
+  /// рекорд бывает куда ниже настоящего уровня. [bestRuFrom] — сезон, с которого есть протоколы
+  /// («2018/19»): лучшее с него, а не за всю карьеру, и подпись так и говорит.
+  final List<ProfileScore> bestRu;
+  final String bestRuFrom;
   final List<ProfileTitle> titles;
   final List<ProfileFeat> feats;
   final ProfileTeam? team;
@@ -136,6 +142,8 @@ class Profile {
     this.musicFree = const [],
     this.best = const [],
     this.seasonBest = const [],
+    this.bestRu = const [],
+    this.bestRuFrom = '',
     this.titles = const [],
     this.feats = const [],
     this.team,
@@ -163,6 +171,8 @@ class Profile {
       musicFree: _list(music['fs']),
       best: [for (final x in maps(j['pb'])) ProfileScore.fromJson(x)],
       seasonBest: [for (final x in maps(j['sb'])) ProfileScore.fromJson(x)],
+      bestRu: [for (final x in maps(j['pbru'])) ProfileScore.fromJson(x)],
+      bestRuFrom: _s(j['pbru_from']),
       titles: [
         for (final x in maps(j['titles']))
           if (x['pl'] is int) ProfileTitle(_s(x['ev']), _s(x['k']), x['pl'] as int, _s(x['y'])),
@@ -279,6 +289,23 @@ int? ageOn(String born, DateTime at) {
 }
 
 String yearsWord(int n) => '$n$nb${plural(n, 'год', 'года', 'лет')}';
+
+/// Блоки личных рекордов: (заголовок, оценки, подпись). Международные (ISU) и российских стартов —
+/// отдельно, и первым тот, где сумма выше: у россиянки, чей лучший прокат на чемпионате России,
+/// профиль не должен начинаться с куда более скромного международного. Есть только один —
+/// «Личные рекорды» (у российских — с уточнением).
+List<(String, List<ProfileScore>, String)> recordBlocks(Profile pr) {
+  final ru = pr.bestRu;
+  final isu = pr.best;
+  final note = pr.bestRuFrom.isEmpty ? '' : 'По протоколам с сезона ${pr.bestRuFrom}';
+  if (ru.isEmpty) return [if (isu.isNotEmpty) ('Личные рекорды', isu, '')];
+  final ruBlock = ('Личные рекорды на российских стартах', ru, note);
+  if (isu.isEmpty) return [ruBlock];
+  double total(List<ProfileScore> l) =>
+      l.where((x) => x.seg == 'total').map((x) => double.tryParse(x.points) ?? 0).fold(0.0, (a, b) => a > b ? a : b);
+  final isuBlock = ('Личные рекорды ISU', isu, '');
+  return total(ru) > total(isu) ? [ruBlock, isuBlock] : [isuBlock, ruBlock];
+}
 
 String segLabel(String seg, {required bool dance}) => switch (seg) {
   'total' => 'Сумма',
@@ -572,7 +599,7 @@ class _ProfileSheetState extends State<ProfileSheet> {
           ),
         ),
       if (pr.feats.isNotEmpty) _section(context, 'Примечательное', _Feats(list: pr.feats)),
-      if (pr.best.isNotEmpty) _section(context, 'Личные рекорды', _Scores(list: pr.best, dance: pr.dance)),
+      for (final (title, list, note) in recordBlocks(pr)) _section(context, title, _Scores(list: list, dance: pr.dance, note: note)),
       if (pr.seasonBest.isNotEmpty)
         _section(
           context,
@@ -623,6 +650,7 @@ class _ProfileSheetState extends State<ProfileSheet> {
       if (pr.titles.isEmpty &&
           pr.feats.isEmpty &&
           pr.best.isEmpty &&
+          pr.bestRu.isEmpty &&
           facts.isEmpty &&
           pr.results.isEmpty &&
           pr.season.isEmpty)
@@ -1119,11 +1147,13 @@ class _MedalListState extends State<_MedalList> {
   }
 }
 
-/// Личные рекорды или лучшее в сезоне: сегмент и турнир слева, баллы крупно справа.
+/// Личные рекорды или лучшее в сезоне: сегмент и турнир слева, баллы крупно справа; [note] —
+/// приглушённая подпись под списком (откуда и с какого сезона).
 class _Scores extends StatelessWidget {
   final List<ProfileScore> list;
   final bool dance;
-  const _Scores({required this.list, required this.dance});
+  final String note;
+  const _Scores({required this.list, required this.dance, this.note = ''});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -1158,6 +1188,16 @@ class _Scores extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+            ),
+          ],
+          if (note.isNotEmpty) ...[
+            const Hairline(),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 10, 16, 12),
+              child: SizedBox(
+                width: double.infinity,
+                child: Text(note, style: TextStyle(fontSize: 13, color: p.ink2, height: 1.35)),
               ),
             ),
           ],

@@ -774,6 +774,75 @@ def athletes(past_proto=None, live_proto=None, h_dir=None):
     return {"athletes": len(who), "skates": sum(len(v) for v in who.values()), "twins": len(twins), "written": written}
 
 
+DOMESTIC = ("fsr:", "ffkm:", "samara:")
+DOMESTIC_SRC = {"fsr:": "ФФККР", "ffkm:": "ФФКМ"}  # прочие — «протоколы турниров» (feats.OTHER)
+SEG_PB = {"КП": "sp", "РТ": "sp", "ПП": "fs", "ПТ": "fs"}
+
+
+def domestic_bests(past_proto=None, live_proto=None):
+    """Лучшие результаты на российских стартах (протоколы ФФККР и регионов в архиве и в этом сезоне):
+    ({ключ имени (names.key): {"total"|"sp"|"fs": {pts, ev, d, src}}}, сезон самого раннего протокола «2018/19»).
+    Тёзки (двое с одним именем в одном сегменте) не считаются: чей результат — не различить. Только
+    окончательные сегменты. Сезон нужен приложению: раньше него протоколов нет, и лучшее «с него» —
+    не то же, что лучшее за всю карьеру."""
+    past_proto = past_proto or PROTO_DIR
+    live_proto = live_proto or build.PROTO_DIR
+    best, twins, seen_tids, first = {}, set(), set(), ""
+    bare = _bare_days(os.path.dirname(past_proto))
+    for folder in (past_proto, live_proto):
+        for path in sorted(glob.glob(os.path.join(folder, "*.json"))):
+            if os.path.basename(path) == P.STATUS_FILE:
+                continue
+            doc = P.load_doc(path)
+            if not doc or not doc["tid"].startswith(DOMESTIC) or doc["tid"] in seen_tids:
+                continue
+            seen_tids.add(doc["tid"])
+            src = DOMESTIC_SRC.get(doc["tid"].split(":")[0] + ":", "протоколы")
+            seen, whole = set(), {}
+
+            def put(name, seg, pts, day):
+                try:
+                    v = float(pts) if pts else None
+                except ValueError:
+                    return
+                mine = best.setdefault(nm.key(name), {})
+                if v is not None and (seg not in mine or v > float(mine[seg]["pts"])):
+                    mine[seg] = {"pts": f"{v:.2f}", "ev": doc["tournament"], "d": day, "src": src}
+
+            for name, rec in _skates(doc):
+                k = (name, rec["k"], rec["l"], rec["s"])
+                if k in seen:
+                    twins.add(nm.key(name))
+                seen.add(k)
+                day = rec["d"] or bare.get(doc["tid"], "")
+                if day and (not first or day < first):
+                    first = day
+                seg = SEG_PB.get(rec["s"])
+                if not seg:
+                    continue
+                put(name, seg, rec.get("pts"), day)
+                w = whole.setdefault((name, rec["k"], rec["l"]), {})
+                w[seg] = rec.get("pts")
+                if seg == "fs":
+                    w["tpts"], w["d"] = rec.get("tpts"), day
+            # сумма — только если она и есть короткая плюс произвольная этого турнира: в турнире из одной
+            # произвольной итог равен ей, а у младшего возраста в итог входят ещё ОФП и СФП
+            for (name, _, _), w in whole.items():
+                try:
+                    ok = abs(float(w["sp"]) + float(w["fs"]) - float(w["tpts"])) < 0.015
+                except (KeyError, TypeError, ValueError):
+                    ok = False
+                if ok:
+                    put(name, "total", w["tpts"], w["d"])
+    for k in twins:
+        best.pop(k, None)
+    since = ""
+    if first:
+        y = int(first[:4]) - (1 if int(first[5:7]) < 7 else 0)
+        since = f"{y}/{(y + 1) % 100:02d}"
+    return best, since
+
+
 def _bare_days(past_dir):
     """{турнир без времени сегментов: день начала} из файлов месяцев."""
     out = {}
