@@ -1,0 +1,27 @@
+# В репозитории — только то, чем он владеет; остальное подтягивается на время запуска и не коммитится
+/*
+!/.github
+!/.gitignore
+!/README.md
+!/data
+!/site
+!/tools
+/.github/*
+!/.github/workflows
+!/.github/actions
+/site/*
+!/site/data
+!/site/p
+!/site/h
+!/site/photos
+!/site/e
+!/site/app
+!/site/web
+!/site/calendar.ics
+/tools/*
+!/tools/released.tsv
+# протоколы живут только на gh-pages, перед сборкой их берёт tools/protocols-from-pages.sh
+site/data/protocols/
+.core/
+__pycache__/
+*.pyc

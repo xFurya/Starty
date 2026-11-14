@@ -1,0 +1,31 @@
+name: Исходники
+description: Подтягивает закрытый репозиторий с кодом и накладывает его на рабочую папку.
+inputs:
+  token:
+    description: Токен с правом читать закрытый репозиторий с кодом
+    required: true
+  repository:
+    description: Закрытый репозиторий с кодом
+    default: xFurya/starty-core
+  ref:
+    description: Ветка или коммит
+    default: main
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v5
+      with:
+        repository: ${{ inputs.repository }}
+        ref: ${{ inputs.ref }}
+        token: ${{ inputs.token }}
+        path: .core
+        persist-credentials: false
+    - shell: bash
+      run: |
+        py=
+        for c in python3 python py; do
+          if "$c" -c "" >/dev/null 2>&1; then py=$c; break; fi
+        done
+        [ -n "$py" ] || { echo "::error::нет Python для наложения исходников"; exit 1; }
+        "$py" .github/actions/core/overlay.py .core .
+        rm -rf .core

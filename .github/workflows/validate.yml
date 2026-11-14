@@ -1,0 +1,45 @@
+name: Проверки приложения и скрапера
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [validate]
+
+permissions:
+  contents: read
+
+jobs:
+  flutter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v5
+      - name: Исходники
+        uses: ./.github/actions/core
+        with:
+          token: ${{ secrets.SRC_PAT }}
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.47.7
+          cache: true
+      - name: Проверить анализатором
+        working-directory: app
+        run: |
+          flutter pub get
+          flutter analyze
+      - name: Тесты Flutter
+        working-directory: app
+        run: flutter test
+      - name: Проверить синтаксис скрапера
+        run: python3 -m compileall -q scraper
+      - name: Установить pdftotext
+        # без него тесты PDF оценок (ФФКМ) молча пропускаются
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+      - name: Тесты сборщика
+        run: |
+          set -o pipefail
+          python3 -m unittest -v scraper.test_swisstiming scraper.test_regional scraper.test_people \
+            scraper.test_fsr scraper.test_protocols scraper.test_live scraper.test_net scraper.test_history 2>&1 | tee tests.log
+          # пропуск теста (нет pdftotext и т. п.) — ошибка: проверка не должна молча слабеть
+          if grep -qE "skipped '|skipped=" tests.log; then echo "::error::тесты пропущены"; grep -E "skipped '|skipped=" tests.log; exit 1; fi

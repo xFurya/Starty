@@ -1,0 +1,116 @@
+name: Обновление расписания
+
+on:
+  # cron у GitHub опаздывает на часы, больше всего — к началу часа: не ровные минуты. Запасной путь —
+  # в дни стартов полный сбор запускает сторож живого сбора (tools/live-loop.sh)
+  schedule:
+    - cron: '37 5 * * *'    # 08:37 МСК
+    - cron: '37 11 * * *'   # 14:37 МСК
+  workflow_dispatch:
+  repository_dispatch:
+    types: [update]
+
+permissions:
+  contents: write
+  actions: write   # разбудить live.yml, если идут старты
+
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    # 45 — сбор и публикация, ещё до 25 — дождаться, что выкладка дошла до сайта
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - name: Исходники
+        uses: ./.github/actions/core
+        with:
+          token: ${{ secrets.SRC_PAT }}
+
+      - name: Установить pdftotext, Pillow и OpenCV
+        # OpenCV — найти лицо на фото спортсмена и обрезать по нему (scraper/photos.py)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils python3-pil
+          python3 -m pip install -q --break-system-packages opencv-python-headless
+
+      - name: Прежние протоколы с gh-pages
+        # протоколы в main не хранятся: без них сборщик не знает последних удачных файлов
+        env:
+          REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: bash tools/protocols-from-pages.sh
+
+      - name: Собрать расписание
+        run: |
+          export STARTY_URL="https://${GITHUB_REPOSITORY_OWNER,,}.github.io/${GITHUB_REPOSITORY#*/}/"
+          python3 -m scraper.build
+
+      - name: Блокировка публикации
+        # живой сбор (live.yml) работает параллельно и тоже публикует gh-pages; под замком — только
+        # короткий хвост: сохранить данные, слить свежие протоколы, опубликовать
+        env:
+          REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: bash tools/pages-lock.sh acquire
+
+      - name: Сохранить данные
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A site data
+          if git diff --cached --quiet; then
+            echo "Данные не изменились"
+          else
+            git commit -q -m "Расписание на $(TZ=Europe/Moscow date '+%d.%m.%Y %H:%M') МСК"
+            # пока шёл сбор, в main могли прийти другие коммиты: свои данные важнее
+            for i in 1 2 3; do git pull -q --rebase -X theirs origin main && git push -q && break; sleep 5; done
+          fi
+
+      - name: Свежие протоколы живого сбора
+        # пока шёл сбор, live.yml мог записать на gh-pages протоколы новее наших: берём более свежие
+        env:
+          REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: |
+          DEST=$RUNNER_TEMP/fresh bash tools/protocols-from-pages.sh
+          python3 -m scraper.pages_merge "$RUNNER_TEMP/fresh" site/data/protocols
+
+      - name: Опубликовать сайт (gh-pages)
+        id: publish
+        env:
+          REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: bash tools/publish-pages.sh
+
+      - name: Снять блокировку
+        if: always()
+        env:
+          REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: bash tools/pages-lock.sh release
+
+      - name: Разбудить живой сбор
+        # cron у GitHub не точен: если идут или скоро начнутся старты, а live.yml не работает, запускаем его
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          plan=$(python3 -m scraper.live --plan || echo none)
+          echo "план живого сбора: $plan"
+          if [ "$plan" != none ]; then
+            busy=$(gh run list --workflow live.yml --json status --jq '[.[] | select(.status=="in_progress" or .status=="queued")] | length')
+            if [ "${busy:-0}" = 0 ]; then gh workflow run live.yml --ref main; fi
+          fi
+
+      - name: Сайт выложен?
+        # GitHub Pages иногда срывает выкладку (10-минутный предел на шаге syncing_files), и сайт —
+        # с ним «Обновление» в приложении — стоит прежним до следующей публикации, а это часы. Ждём,
+        # пока сайт отдаст метку этой публикации; не отдал за 12 минут — публикуем ту же голову заново
+        if: steps.publish.outcome == 'success'
+        continue-on-error: true
+        timeout-minutes: 26
+        env:
+          REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          WATCH_AFTER: 720
+          WATCH_WAIT: 1500
+        run: bash tools/pages-watch.sh

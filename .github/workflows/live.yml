@@ -1,0 +1,72 @@
+name: Итоги во время стартов
+
+# Одно задание живёт до 5 ч 50 мин и само крутит цикл (tools/live-loop.sh): пока идёт старт — каждые
+# ~4 минуты собирает итоги и, если что-то изменилось, публикует. Пока до какого-нибудь старта меньше
+# суток — сторожит: запускает полный сбор (update.yml), когда у близкого старта нет стартового листа,
+# а кончаясь, запускает следующее задание. Нет стартов — выходит за секунды. Расписание cron у GitHub
+# неточное (запуски «каждые 5 минут» приходили раз в 4–8 часов), поэтому на него не рассчитываем:
+# cron — запасной, плюс кнопка, плюс пуск из update.yml, если старты близко, плюс пуск при правке
+# самого сборщика. Пока идёт прежнее задание, следующее ждёт в очереди и подхватывает без разрыва.
+# Публикация gh-pages — короткий шаг под общей блокировкой с update.yml (tools/pages-lock.sh),
+# своя группа concurrency: полный сбор не ждёт часами, а следующий запуск живого ждёт конца этого.
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+  repository_dispatch:
+    types: [live]
+
+permissions:
+  contents: write
+  actions: write   # сторож запускает полный сбор и следующее задание
+
+concurrency:
+  group: live
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - name: Исходники
+        uses: ./.github/actions/core
+        with:
+          token: ${{ secrets.SRC_PAT }}
+
+      - name: Сайт выложен?
+        # GitHub Pages иногда срывает выкладку (10-минутный предел на шаге syncing_files), и сайт
+        # стоит прежним до следующей публикации — утром это часы. Сторож видит это по метке pub.txt
+        # и публикует ту же голову gh-pages заново; нет беды — две короткие проверки
+        continue-on-error: true
+        env:
+          REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: bash tools/pages-watch.sh
+
+      - name: Есть ли что делать
+        id: plan
+        run: |
+          plan=$(python3 -m scraper.live --plan)
+          echo "план: $plan"
+          if [ "$plan" = none ]; then echo "go=false" >> "$GITHUB_OUTPUT"; else echo "go=true" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Установить pdftotext
+        if: steps.plan.outputs.go == 'true'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+
+      - name: Цикл итогов
+        if: steps.plan.outputs.go == 'true'
+        env:
+          REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: bash tools/live-loop.sh
+
+      - name: Снять блокировку, если задание оборвалось
+        if: always() && steps.plan.outputs.go == 'true'
+        env:
+          REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: bash tools/pages-lock.sh release

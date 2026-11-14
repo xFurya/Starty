@@ -1,0 +1,232 @@
+name: Сборка Windows и macOS
+
+# Windows — установщик starty-setup-<версия>.exe (Inno Setup, tools/windows/starty.iss) и zip с готовой
+# папкой; macOS — zip и .dmg с Starty.app (подпись ad-hoc, без Apple ID).
+# Файлы лежат во вкладке Releases, а их адрес, размер и sha256 — в site/app/latest.json:
+#   windows: url/size/sha256 — zip (по нему обновляются версии до установщика), setup — установщик;
+#   macos:   url/size/sha256 — zip (самообновление), dmg — образ для первой установки.
+# Сайт ссылается на постоянные имена Starty-windows-setup.exe и Starty-macos.dmg (releases/latest/download).
+# Номер выдаётся один раз (tools/released.tsv):
+# если в latest.json уже есть записи windows и macos для этого номера — ничего не пересобирается.
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'true — выложить сборки как выпуск'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: app-desktop
+  cancel-in-progress: false
+
+jobs:
+  prep:
+    runs-on: ubuntu-latest
+    outputs:
+      new: ${{ steps.num.outputs.new }}
+      version: ${{ steps.num.outputs.version }}
+      build: ${{ steps.num.outputs.build }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
+      - name: Исходники
+        uses: ./.github/actions/core
+        with:
+          token: ${{ secrets.SRC_PAT }}
+      - id: num
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          # выпуск = коммит, который менял latest.json; вручную запущенная сборка — пробная, ничего не выкладывает
+          TOUCHED=$(git diff --name-only HEAD~1 HEAD | grep -c '^site/app/latest.json$' || true)
+          export TOUCHED
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os, re
+          ver, build = re.search(r"^version:\s*(\S+)\+(\d+)", open("app/pubspec.yaml").read(), re.M).groups()
+          j = json.load(open("site/app/latest.json"))
+          # собираем, когда Android-выпуск этого номера вышел, а записей для компьютера ещё нет
+          new = j.get("code") == int(build) and not ("windows" in j and "macos" in j)
+          if os.environ["EVENT"] == "workflow_dispatch":
+              new = True
+          elif os.environ["TOUCHED"] == "0":
+              new = False
+          print(f"new={'true' if new else 'false'}")
+          print(f"version={ver}")
+          print(f"build={build}")
+          PY
+
+  windows:
+    needs: prep
+    if: needs.prep.outputs.new == 'true'
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - name: Исходники
+        uses: ./.github/actions/core
+        with:
+          token: ${{ secrets.SRC_PAT }}
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.47.7
+          cache: true
+      - name: Собрать
+        working-directory: app
+        run: |
+          flutter config --enable-windows-desktop
+          flutter pub get
+          flutter build windows --release --dart-define=BUILD=${{ needs.prep.outputs.build }} --dart-define=VERSION=${{ needs.prep.outputs.version }} --dart-define=SUPABASE_URL=https://klhzfgjzgdmsggbxcinj.supabase.co --dart-define=SUPABASE_ANON=sb_publishable_G4xs2LcAeyQyJoYcigvLAQ_lEx37rWu
+      - name: Упаковать
+        shell: pwsh
+        run: |
+          $rel = "app/build/windows/x64/runner/Release"
+          # библиотеки среды выполнения лежат рядом — ставить Visual C++ Redistributable не нужно
+          foreach ($d in 'msvcp140.dll', 'vcruntime140.dll', 'vcruntime140_1.dll') { Copy-Item "$env:WINDIR\System32\$d" $rel -Force }
+          Compress-Archive -Path "$rel/*" -DestinationPath Starty-windows.zip
+          Get-Item Starty-windows.zip | Select-Object Name, Length
+      - name: Установщик
+        shell: pwsh
+        env:
+          VER: ${{ needs.prep.outputs.version }}
+          BUILD: ${{ needs.prep.outputs.build }}
+        run: |
+          # Inno Setup есть на раннерах GitHub; если нет — поставить
+          function Find-Iscc {
+            $c = Get-Command iscc.exe -ErrorAction SilentlyContinue
+            if ($c) { return $c.Source }
+            Get-ChildItem "${env:ProgramFiles(x86)}\Inno Setup*\ISCC.exe", "$env:ProgramFiles\Inno Setup*\ISCC.exe" -ErrorAction SilentlyContinue |
+              Select-Object -First 1 -ExpandProperty FullName
+          }
+          $iscc = Find-Iscc
+          if (-not $iscc) { choco install innosetup -y --no-progress; $iscc = Find-Iscc }
+          if (-not $iscc) { throw 'ISCC.exe не найден' }
+          $rel = Resolve-Path "app/build/windows/x64/runner/Release"
+          & $iscc "/DAppVersion=$env:VER" "/DAppBuild=$env:BUILD" "/DBuildDir=$rel" "/O$PWD" tools\windows\starty.iss
+          if ($LASTEXITCODE -ne 0) { throw "ISCC: код $LASTEXITCODE" }
+          Get-Item "starty-setup-$env:VER.exe" | Select-Object Name, Length
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows
+          path: |
+            Starty-windows.zip
+            starty-setup-${{ needs.prep.outputs.version }}.exe
+          if-no-files-found: error
+
+  macos:
+    needs: prep
+    if: needs.prep.outputs.new == 'true'
+    runs-on: macos-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - name: Исходники
+        uses: ./.github/actions/core
+        with:
+          token: ${{ secrets.SRC_PAT }}
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.47.7
+          cache: true
+      - name: Собрать
+        working-directory: app
+        run: |
+          flutter config --enable-macos-desktop
+          flutter pub get
+          flutter build macos --release --dart-define=BUILD=${{ needs.prep.outputs.build }} --dart-define=VERSION=${{ needs.prep.outputs.version }} --dart-define=SUPABASE_URL=https://klhzfgjzgdmsggbxcinj.supabase.co --dart-define=SUPABASE_ANON=sb_publishable_G4xs2LcAeyQyJoYcigvLAQ_lEx37rWu
+      - name: Упаковать
+        run: |
+          APP=app/build/macos/Build/Products/Release/Starty.app
+          test -d "$APP"
+          codesign --verify --deep --strict "$APP" || codesign --force --deep --sign - "$APP"
+          ditto -c -k --sequesterRsrc --keepParent "$APP" Starty-macos.zip
+          # образ для первой установки: Starty.app и ярлык на «Программы» — перетащить одно в другое
+          STAGE=$(mktemp -d)
+          ditto "$APP" "$STAGE/Starty.app"
+          ln -s /Applications "$STAGE/Applications"
+          # hdiutil на раннерах иногда отвечает «Resource busy» — повторить
+          for i in 1 2 3 4 5; do
+            hdiutil create -volname "Фигурное катание" -srcfolder "$STAGE" -fs HFS+ -format UDZO -ov Starty-macos.dmg && break
+            rm -f Starty-macos.dmg; sleep 5
+          done
+          test -s Starty-macos.dmg
+          hdiutil verify Starty-macos.dmg
+          ls -la Starty-macos.zip Starty-macos.dmg
+      - uses: actions/upload-artifact@v4
+        with:
+          name: macos
+          path: |
+            Starty-macos.zip
+            Starty-macos.dmg
+          if-no-files-found: error
+
+  publish:
+    needs: [prep, windows, macos]
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.publish == 'true')
+    runs-on: ubuntu-latest
+    steps:
+      # свежий main, а не коммит запуска: Android запускает эту сборку сразу после своего коммита с
+      # latest.json, и запуск бывает привязан к main за миг до него (так 1.0.65 не выложилась)
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - name: Исходники
+        uses: ./.github/actions/core
+        with:
+          token: ${{ secrets.SRC_PAT }}
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+      - name: Выложить
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VER: ${{ needs.prep.outputs.version }}
+          BUILD: ${{ needs.prep.outputs.build }}
+        run: |
+          # сверка до выпуска на GitHub: иначе выпуск появляется, а latest.json о нём не знает
+          python3 -c "import json, os, sys; c = json.load(open('site/app/latest.json'))['code']; sys.exit(0 if c == int(os.environ['BUILD']) else f'latest.json относится к сборке {c}, а не {os.environ[\"BUILD\"]}')"
+          TAG="app-v$VER"
+          NOTES=$(python3 -c "import json; print(json.load(open('site/app/latest.json'))['notes'])")
+          # постоянное имя установщика — для ссылки на сайте (releases/latest/download/Starty-windows-setup.exe)
+          cp "dist/windows/starty-setup-$VER.exe" dist/windows/Starty-windows-setup.exe
+          FILES=(dist/windows/Starty-windows.zip "dist/windows/starty-setup-$VER.exe" dist/windows/Starty-windows-setup.exe
+                 dist/macos/Starty-macos.zip dist/macos/Starty-macos.dmg)
+          if ! gh release view "$TAG" >/dev/null 2>&1; then
+            gh release create "$TAG" "${FILES[@]}" --title "Фигурное катание $VER" --notes "$NOTES" --latest
+          else
+            # выпуск уже есть (повторный запуск) — заменить файлы, чтобы совпали с размерами и sha256 ниже
+            gh release upload "$TAG" "${FILES[@]}" --clobber
+          fi
+          python3 - <<'PY'
+          import hashlib, json, os
+          ver, build, repo = os.environ["VER"], int(os.environ["BUILD"]), os.environ["GITHUB_REPOSITORY"]
+          p = "site/app/latest.json"
+          j = json.load(open(p))
+          assert j["code"] == build, "latest.json относится к другому номеру"
+          def entry(f):
+              raw = open(f, "rb").read()
+              return {"url": f"https://github.com/{repo}/releases/download/app-v{ver}/{os.path.basename(f)}",
+                      "size": len(raw), "sha256": hashlib.sha256(raw).hexdigest()}
+          # url/size/sha256 — архивы: их читают все версии приложения, и старые тоже.
+          # setup — установщик Windows (самообновление новых версий), dmg — первая установка на Mac.
+          j["windows"] = {"code": build, **entry("dist/windows/Starty-windows.zip"),
+                          "setup": entry(f"dist/windows/starty-setup-{ver}.exe")}
+          j["macos"] = {"code": build, **entry("dist/macos/Starty-macos.zip"),
+                        "dmg": entry("dist/macos/Starty-macos.dmg")}
+          json.dump(j, open(p, "w"), ensure_ascii=False, indent=1)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/app/latest.json
+          git commit -q -m "Компьютер: сборки $VER ($BUILD)" || exit 0
+          ok=0
+          for i in 1 2 3; do git pull -q --rebase && git push -q && { ok=1; break; }; git rebase --abort 2>/dev/null || true; sleep 5; done
+          [ "$ok" = 1 ] || { echo "коммит выпуска не отправлен (конфликт или сеть)" >&2; exit 1; }
+          gh workflow run update.yml --ref main
