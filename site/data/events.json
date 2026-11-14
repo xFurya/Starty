@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-14T05:48:16+03:00",
- "checked": "2026-11-14T04:36:09.563540+00:00",
+ "checked": "2026-11-14T05:07:30.093136+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -50660,14 +50660,16 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Начало: 07:50 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Katie McBEATH / Balazs Nagy — 67.62\n\nНачало: 07:50 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Katie McBEATH / Balazs Nagy",
      "nation": "USA",
      "time": "07:57",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "67.62"
     },
     {
      "name": "Audrey Shin / Spencer Akira Howe",
@@ -50736,7 +50738,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-skate-america-2026.json"
+   "proto": "isu_isu-gp-skate-america-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Katie McBEATH / Balazs Nagy",
+     "nation": "USA",
+     "points": "67.62"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:dance-senior-rt",
