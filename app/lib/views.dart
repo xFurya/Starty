@@ -970,7 +970,8 @@ class LiveCard extends StatelessWidget {
                         const SizedBox(width: 10),
                         Flexible(
                           child: Text(
-                            '${hm(s.t0)}$nb–$nb${hm(s.t1)}',
+                            // конец перенесён по темпу — оценка: «≈»
+                            '${hm(s.t0)}$nb–$nb${s.endPaced ? '≈' : ''}${hm(s.t1)}',
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w600, color: dim, fontFeatures: tnum),
