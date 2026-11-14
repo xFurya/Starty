@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-14T15:29:37+03:00",
- "checked": "2026-11-14T12:58:27.985176+00:00",
+ "checked": "2026-11-14T13:26:27.968222+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51388,14 +51388,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 16:05 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Анна Карпук / Илья Миронов — 67.90\n\nНачало: 16:05 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Анна Карпук / Илья Миронов",
      "nation": "СПБ",
      "time": "16:12",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "67.90"
     },
     {
      "name": "Алена Кривоносова / Андрей Анисимов",
@@ -51464,7 +51466,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Анна Карпук / Илья Миронов",
+     "nation": "СПБ",
+     "points": "67.90"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-skate-america-2026:dance-senior-rt",
