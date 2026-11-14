@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-14T22:36:01.263554+00:00",
+ "checked": "2026-11-14T22:44:01.387748+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51542,7 +51542,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Leah Neset / Artem Markelov — 69.10\n2. Noemi Maria Tali / Noah Lafornara — 67.84\n3. Sofia Val / Asaf Kazimov — 65.79\n\nНачало: 01:03 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Katarina Wolfkostin / Dimitry Tsarevski — 69.62\n2. Leah Neset / Artem Markelov — 69.10\n3. Noemi Maria Tali / Noah Lafornara — 67.84\n\nНачало: 01:03 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Natacha Lagouge / Arnaud Caffa",
@@ -51550,7 +51550,7 @@
      "time": "01:09",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "59.92"
     },
     {
@@ -51559,7 +51559,7 @@
      "time": "01:16",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "65.79"
     },
     {
@@ -51568,7 +51568,7 @@
      "time": "01:22",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "69.10"
     },
     {
@@ -51577,7 +51577,7 @@
      "time": "01:29",
      "no": 4,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "67.84"
     },
     {
@@ -51585,7 +51585,9 @@
      "nation": "USA",
      "time": "01:35",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "69.62"
     },
     {
      "name": "Iryna Pidgaina / Artem Koval",
@@ -51646,21 +51648,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Katarina Wolfkostin / Dimitry Tsarevski",
+     "nation": "USA",
+     "points": "69.62"
+    },
+    {
+     "place": 2,
      "name": "Leah Neset / Artem Markelov",
      "nation": "USA",
      "points": "69.10"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Noemi Maria Tali / Noah Lafornara",
      "nation": "ITA",
      "points": "67.84"
-    },
-    {
-     "place": 3,
-     "name": "Sofia Val / Asaf Kazimov",
-     "nation": "ESP",
-     "points": "65.79"
     }
    ],
    "provisional": true
