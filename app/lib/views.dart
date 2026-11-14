@@ -534,7 +534,7 @@ class SegTitle extends StatelessWidget {
       TextSpan(
         children: [
           // командный турнир — тем же словом рядом с видом: в один день с личным стартом его не спутать
-          TextSpan(text: start.team ? 'Командный, ${disc.toLowerCase()}' : disc),
+          TextSpan(text: start.teamSub ? 'Командный, ${disc.toLowerCase()}' : disc),
           if (seg.isNotEmpty)
             TextSpan(
               text: '  $seg',
@@ -982,7 +982,7 @@ class LiveCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 12),
                     // турнир — надзаголовком над видом
-                    Eyebrow(s.team ? '${s.tournament} · командный турнир' : s.tournament, color: dim, maxLines: 2),
+                    Eyebrow(s.teamSub ? '${s.tournament} · командный турнир' : s.tournament, color: dim, maxLines: 2),
                     VenueLine(s.venue, color: dim),
                     const SizedBox(height: 4),
                     Text(disc, style: display(Palette.light, 36, color: white)),

@@ -67,7 +67,7 @@ class _StartSheet extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         // название турнира есть только здесь — до двух строк, не обрезаем
-        Eyebrow(s.team ? '${s.tournament} · командный турнир' : s.tournament, color: p.accent, maxLines: 2),
+        Eyebrow(s.teamSub ? '${s.tournament} · командный турнир' : s.tournament, color: p.accent, maxLines: 2),
         const SizedBox(height: 8),
         Text(disc, style: display(p, 42)),
         if (seg.isNotEmpty) ...[

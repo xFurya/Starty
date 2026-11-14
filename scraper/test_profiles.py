@@ -276,6 +276,50 @@ class StoreTest(unittest.TestCase):
         self.assertFalse(pf.stale_bio(None))
 
 
+class ArchiveProfiles(unittest.TestCase):
+    NAMES = type("N", (), {"to_ru": staticmethod(lambda n: {"Evgenia MEDVEDEVA": "Евгения Медведева",
+                                                            "Alina ZAGITOVA": "Alina Zagitova"}.get(n, n))})()
+    ROWS = [["Evgenia MEDVEDEVA", "RUS", "00014068", "w"], ["Alina ZAGITOVA", "RUS", "00101053", "w"],
+            ["Nathan CHEN", "USA", "00099999", "m"], ["Anna SHCHERBAKOVA", "RUS", "00103103", "w"]]
+
+    def test_ids_by_table_row(self):
+        people = [{"n": "Евгения Медведева", "c": "RUS", "k": "", "was": "w"},
+                  {"n": "Alina Zagitova", "c": "RUS", "was": "w"},
+                  {"n": "Nathan Chen", "c": "USA", "was": "m"},
+                  {"n": "Анна Щербакова", "c": "RUS", "k": "d"},      # танцовщица — одиночной таблицы ей не годится
+                  {"n": "Виктория Синицына", "c": "RUS", "was": "w"}]  # строки нет — ничего не угадываем
+        got = pf.archive_ids(people, self.ROWS, self.NAMES)
+        self.assertEqual(got, {pf.nm.key("Евгения Медведева"): "00014068", pf.nm.key("Alina Zagitova"): "00101053",
+                               pf.nm.key("Nathan Chen"): "00099999"})
+        # у кого номер уже есть — не трогаем
+        self.assertNotIn(pf.nm.key("Nathan Chen"), pf.archive_ids(people, self.ROWS, self.NAMES, {pf.nm.key("Nathan Chen")}))
+
+    def test_foreign_bio_does_not_fit_other_kind(self):
+        bio = {"cr": [{"k": "w"}, {"k": "W"}]}
+        self.assertTrue(pf.bio_fits(bio, {"w"}))
+        self.assertFalse(pf.bio_fits(bio, {"d"}))
+        self.assertTrue(pf.bio_fits({"cr": []}, {"d"}))   # видов у ISU нет — не отказываем
+        self.assertTrue(pf.bio_fits(bio, set()))
+
+    def test_profile_from_archive_when_there_is_no_bio(self):
+        people = [{"n": "Евгения Медведева", "c": "RUS", "k": "", "was": "w", "y": "2019/20"}]
+        intl = {pf.nm.key("Евгения Медведева"): {"total": {"pts": "225.76", "ev": "ЧЕ 2019", "d": "2019-01-25"},
+                                                "sp": {"pts": "76.93", "ev": "ЧЕ 2019", "d": "2019-01-23"}}}
+        with tempfile.TemporaryDirectory() as d:
+            pf.write(people, {"ids": {}, "bios": {}}, {}, out_dir=d, log=lambda *a: None, aliases={}, intl=intl,
+                     bests_from="2018/19")
+            self.assertTrue(people[0]["p"])
+            with open(os.path.join(d, people[0]["p"] + ".json"), encoding="utf-8") as f:
+                pr = json.load(f)
+        self.assertEqual([(x["s"], x["pts"]) for x in pr["pb"]], [("total", "225.76"), ("sp", "76.93")])
+        self.assertEqual((pr["pb_from"], pr["src"]), ("2018/19", ["ISU"]))
+        # нечего показать — профиля нет
+        nobody = [{"n": "Никто Неизвестный", "c": "RUS", "k": "", "was": "m"}]
+        with tempfile.TemporaryDirectory() as d:
+            pf.write(nobody, {"ids": {}, "bios": {}}, {}, out_dir=d, log=lambda *a: None, aliases={}, intl={})
+        self.assertNotIn("p", nobody[0])
+
+
 if __name__ == "__main__":
     unittest.main()
 

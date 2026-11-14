@@ -322,7 +322,7 @@ class SettingsView extends StatelessWidget {
               children: [
                 ListenableBuilder(
                   listenable: Updates.instance,
-                  builder: (context, _) => _Updates(Updates.instance),
+                  builder: (context, _) => _Updates(Updates.instance, state),
                 ),
                 const Hairline(),
                 // то же правило, что у нижней строки ленты
@@ -477,13 +477,86 @@ String _sources(AppState st) {
 }
 
 /// Версия и обновления — честное состояние самообновления (как у Дневника).
+/// Строка «Версия»: семь нажатий подряд — окно режима владельца ([BillingState.preview]).
+class _VersionRow extends StatefulWidget {
+  final String value;
+  final AppState state;
+  const _VersionRow(this.value, this.state);
+  @override
+  State<_VersionRow> createState() => _VersionRowState();
+}
+
+class _VersionRowState extends State<_VersionRow> {
+  int _taps = 0;
+  DateTime _last = DateTime.fromMillisecondsSinceEpoch(0);
+
+  Future<void> _tap() async {
+    final t = DateTime.now();
+    _taps = t.difference(_last) > const Duration(seconds: 2) ? 1 : _taps + 1;
+    _last = t;
+    if (_taps < 7) return;
+    _taps = 0;
+    final st = widget.state;
+    if (st.billing.preview) {
+      final off = await showCupertinoDialog<bool>(
+        context: context,
+        builder: (c) => CupertinoAlertDialog(
+          title: const Text('Режим владельца'),
+          content: const Padding(padding: EdgeInsets.only(top: 6), child: Text('Включён: все функции подписки открыты на этом устройстве.')),
+          actions: [
+            CupertinoDialogAction(onPressed: () => Navigator.pop(c, false), child: const Text('Оставить')),
+            CupertinoDialogAction(isDestructiveAction: true, onPressed: () => Navigator.pop(c, true), child: const Text('Выключить')),
+          ],
+        ),
+      );
+      if (off == true) await st.setPreview(false);
+      return;
+    }
+    final ctl = TextEditingController();
+    final code = await showCupertinoDialog<String>(
+      context: context,
+      builder: (c) => CupertinoAlertDialog(
+        title: const Text('Режим владельца'),
+        content: Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: Material(
+            color: Colors.transparent,
+            child: TextField(controller: ctl, autofocus: true, textCapitalization: TextCapitalization.characters, decoration: const InputDecoration(hintText: 'Код')),
+          ),
+        ),
+        actions: [
+          CupertinoDialogAction(onPressed: () => Navigator.pop(c), child: const Text('Отмена')),
+          CupertinoDialogAction(onPressed: () => Navigator.pop(c, ctl.text), child: const Text('Включить')),
+        ],
+      ),
+    );
+    ctl.dispose();
+    if (code == null || !mounted) return;
+    if (BillingState.previewCodeOk(code)) {
+      await st.setPreview(true);
+    } else if (mounted) {
+      await showCupertinoDialog<void>(
+        context: context,
+        builder: (c) => CupertinoAlertDialog(
+          title: const Text('Код не подошёл'),
+          actions: [CupertinoDialogAction(onPressed: () => Navigator.pop(c), child: const Text('Закрыть'))],
+        ),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) => _Row(icon: CupertinoIcons.info, title: 'Версия', trailing: _Value(widget.value), onTap: _tap);
+}
+
 class _Updates extends StatelessWidget {
   final Updates u;
-  const _Updates(this.u);
+  final AppState state;
+  const _Updates(this.u, this.state);
   @override
   Widget build(BuildContext context) {
     final s = u.state;
-    final version = _Row(icon: CupertinoIcons.info, title: 'Версия', trailing: _Value(s?.current ?? appVersion));
+    final version = _VersionRow(s?.current ?? appVersion, state);
     if (!Updates.managed) {
       if (kIsWeb) return version;
       // iPhone: ставит SideStore, приложение только говорит о новой версии

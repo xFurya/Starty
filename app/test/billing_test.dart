@@ -1,6 +1,7 @@
 // Подписка в приложении (billing.dart, billing_page.dart): выключена, пока её нет в сборке и сервер её не продаёт;
 // сводка дня — только при действующей подписке; разбор ответов сервера; оплата, отказ, возврат, выход из аккаунта.
 import 'dart:convert';
+import 'dart:io' show File, Platform;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ import 'package:http/testing.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:starty/billing.dart';
 import 'package:starty/data.dart';
+import 'package:starty/month_widget.dart' show widgetJson;
 import 'package:starty/reminders.dart';
 import 'package:starty/settings.dart';
 import 'package:starty/state.dart';
@@ -203,6 +205,48 @@ void main() {
         BillingApi(b).checkout(plan: 'month', renew: false, offerVersion: 'v1'),
         throwsA(isA<SyncError>().having((e) => e.message, 'message', 'Подписка уже действует')),
       );
+    });
+  });
+
+  group('режим владельца', () {
+    test('код: свой подходит в любой записи, чужой — нет', () {
+      final own = File(Platform.environment['OWNER_CODE_FILE'] ?? '');
+      // сам код в репозитории не лежит; проверяем только отказы и нормализацию пустого
+      expect(BillingState.previewCodeOk(''), isFalse);
+      expect(BillingState.previewCodeOk('AAAA-BBBB-CCCC-DDDD'), isFalse);
+      expect(BillingState.previewCodeOk('furya.preview'), isFalse);
+      if (own.path.isNotEmpty && own.existsSync()) {
+        final code = own.readAsStringSync().trim();
+        expect(BillingState.previewCodeOk(code), isTrue);
+        expect(BillingState.previewCodeOk(code.toLowerCase().replaceAll('-', ' ')), isTrue);
+      }
+    });
+
+    test('без режима и без подписки удобств нет; с режимом — все, и в фоне тоже', () async {
+      final now = DateTime.parse('2026-11-14T12:00:00+03:00');
+      final b = BillingState(Prefs.raw);
+      expect(b.perksAt(now), isFalse);
+      expect(BillingState.perksFor(Prefs.raw, now), isFalse);
+      expect(BillingState.digestFor(Prefs.raw, now), isNull);
+      expect(b.visible, isFalse);
+      await b.setPreview(true);
+      expect(b.perksAt(now), isTrue);
+      expect(b.lineupAt(now) && b.resultsAt(now), isTrue);
+      expect(BillingState.perksFor(Prefs.raw, now), isTrue);
+      expect(BillingState.lineupFor(Prefs.raw, now) && BillingState.resultsFor(Prefs.raw, now), isTrue);
+      expect(BillingState.digestFor(Prefs.raw, now), BillingState.digestDefault);
+      expect(b.visible, isTrue);
+      await b.setPreview(false);
+      expect(b.perksAt(now), isFalse);
+    });
+
+    test('виджет «Месяц» в режиме владельца открыт без подписки, срок — сутки', () {
+      final t = DateTime.parse('2026-11-14T12:00:00+03:00');
+      final j = jsonDecode(widgetJson(data: null, filters: Filters.none, ent: null, now: t, preview: true)) as Map;
+      expect(j['mode'], 'on');
+      expect(j['until'], t.add(const Duration(hours: 24)).millisecondsSinceEpoch);
+      final off = jsonDecode(widgetJson(data: null, filters: Filters.none, ent: null, now: t)) as Map;
+      expect(off['mode'], 'locked');
     });
   });
 

@@ -40,6 +40,10 @@ class Skate {
 
   /// Протокол лежит в архиве прошлых сезонов.
   final bool archived;
+
+  /// Прокат в командном турнире: тот же сегмент, что личный, — но другой старт (баллы и элементы
+  /// свои, место — среди выступавших за команды).
+  final bool team;
   const Skate({
     required this.day,
     required this.tid,
@@ -60,13 +64,14 @@ class Skate {
     this.totalPlace,
     this.totalPoints,
     this.archived = false,
+    this.team = false,
   });
 
   /// Короткая программа или ритм-танец (иначе — произвольная).
   bool get short => seg == 'КП' || seg == 'РТ';
 
   /// Ключ выступления: один турнир, вид, уровень и сегмент — один прокат.
-  String get key => '$tid|$kind|$level|$seg';
+  String get key => '$tid|$kind|$level|$seg${team ? '|team' : ''}';
 
   /// «2024/25» — сезон начинается в июле.
   String get season {
@@ -146,6 +151,7 @@ AthleteHistory parseHistory(String body, String name) {
         totalPoints: _num(r['tpts']),
         intl: tour.length > 1 && tour[1] == 1,
         archived: tour.length > 2 && tour[2] == 1,
+        team: r['tm'] == 1,
       ),
     );
   }
@@ -200,6 +206,7 @@ List<Skate> skatesFromSchedule(Schedule data, String name) {
           points: double.tryParse(o.points ?? ''),
           totalPlace: o.overall,
           intl: s.intl,
+          team: s.team,
         ),
       );
       break;

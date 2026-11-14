@@ -1494,6 +1494,17 @@ class Medal extends StatelessWidget {
 
 /// Круглое фото спортсмена (или буква фамилии); у пар — два круга внахлёст,
 /// у пары без обоих фото — один круг.
+/// Вид старта, внутри которого нажимают имя или рисуют фото (карточка старта, протокол, профиль): по нему
+/// из тёзок выбирается нужный человек и его фото ([Schedule.personFor], [Schedule.photoFor]). Вне
+/// старта — нет, и имя открывает человека справочника.
+class KindScope extends InheritedWidget {
+  final String kind;
+  const KindScope({super.key, required this.kind, required super.child});
+  static String? of(BuildContext context) => context.dependOnInheritedWidgetOfExactType<KindScope>()?.kind;
+  @override
+  bool updateShouldNotify(KindScope old) => old.kind != kind;
+}
+
 class Avatar extends StatelessWidget {
   final String name;
   final Schedule? data;
@@ -1542,7 +1553,7 @@ class Avatar extends StatelessWidget {
 
   Widget _one(BuildContext context, String n, double s, {bool pair = false}) {
     final p = Palette.of(context);
-    final url = pair ? null : data?.photoOf(n);
+    final url = pair ? null : data?.photoFor(n, KindScope.of(context));
     final ink = p.isDark ? p.ink2 : p.accent;
     // без фото — лёд и одна буква фамилии антиквой; у пары — значок пары
     final fallback = Container(

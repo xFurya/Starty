@@ -12,6 +12,7 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart' show visibleForTesting;
+import 'package:crypto/crypto.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'data.dart' show months, msk;
@@ -348,19 +349,34 @@ class BillingState {
   /// То же для фоновой задачи (background.dart): только из сохранённого, без сети.
   static int? digestFor(SharedPreferences p, DateTime now) {
     final e = Entitlement.fromCache(p.getString(entKey));
-    if (e == null || !e.activeAt(now)) return null;
+    if (!previewOn(p) && (e == null || !e.activeAt(now))) return null;
     final m = p.getInt(digestKey) ?? digestDefault;
     return m < 0 || m >= 24 * 60 ? null : m;
   }
 
   bool activeAt(DateTime now) => entitlement?.activeAt(now) ?? false;
 
-  /// Удобства подписки сейчас: сборка с подпиской и право действует.
-  bool perksAt(DateTime now) => billingBuild && activeAt(now);
+  /// Режим владельца: все функции подписки включены на этом устройстве без оплаты — чтобы оценить их
+  /// до продажи. Включается секретным кодом (см. [previewCodeOk]), у обычных людей его нет.
+  static const previewKey = 'b.preview';
+  static bool previewOn(SharedPreferences p) => p.getBool(previewKey) ?? false;
+  bool get preview => previewOn(_p);
+  Future<void> setPreview(bool on) => _p.setBool(previewKey, on);
+
+  /// Хэш кода режима владельца: сам код в приложении не лежит (SHA-256 от «furya.preview:» и кода
+  /// без разделителей, заглавными).
+  static const _previewHash = 'dbf098a1bb5a98607716c653a44912047db1e1a7d3f88c426997616697242c89';
+  static bool previewCodeOk(String code) {
+    final norm = code.toUpperCase().replaceAll(RegExp(r'[^A-Z0-9]'), '');
+    return sha256.convert(utf8.encode('furya.preview:$norm')).toString() == _previewHash;
+  }
+
+  /// Удобства подписки сейчас: режим владельца, либо сборка с подпиской и право действует.
+  bool perksAt(DateTime now) => preview || (billingBuild && activeAt(now));
 
   /// То же для фоновой задачи: только из сохранённого, без сети.
   static bool perksFor(SharedPreferences p, DateTime now) =>
-      billingBuild && (Entitlement.fromCache(p.getString(entKey))?.activeAt(now) ?? false);
+      previewOn(p) || (billingBuild && (Entitlement.fromCache(p.getString(entKey))?.activeAt(now) ?? false));
 
   /// Уведомления о жеребьёвке и составе (lineup.dart): включены ли человеком (по умолчанию — да).
   static const lineupKey = 'b.lineup';
@@ -385,7 +401,7 @@ class BillingState {
   static bool resultsFor(SharedPreferences p, DateTime now) => perksFor(p, now) && (p.getBool(resultsKey) ?? true);
 
   /// Строка «Подписка» в настройках: продаётся — или куплена раньше (тогда ею можно управлять и вернуть деньги).
-  bool get visible => billingBuild && (offer != null || (entitlement?.ever ?? false));
+  bool get visible => preview || (billingBuild && (offer != null || (entitlement?.ever ?? false)));
 
   Future<void> keep(Entitlement e) async {
     entitlement = e;

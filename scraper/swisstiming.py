@@ -85,27 +85,48 @@ TEAM_RE = re.compile(r"^\s*(Team Event|Командн)", re.I)
 
 
 def parse_team_standing(page):
-    """Командный зачёт (TEC001RS.htm): [{place, team, nation, points}] по порядку мест. Страна — во
-    вложенной таблице с флагом (её заменяем кодом), баллы — первая числовая ячейка после страны."""
-    flat = re.sub(r"(?is)<table>\s*(<tr[^>]*>.*?</tr>\s*)</table>",
-                  lambda m: " ".join(re.findall(r"(?i)<td>\s*([A-Z]{3})\s*</td>", m.group(1))), page)
-    out = []
+    """Командный зачёт: [{place, team, nation, points}] по порядку мест. Три вёрстки:
+      • Swiss Timing, страница TEC001RS.htm и блок «Team Result» на странице турнира: страна — во
+        вложенной таблице с флагом (подставляем её код), «Total Points» — сразу за страной; у не
+        вышедших в финал там «FNR» — тогда сумма баллов за короткие программы;
+      • comnet (Командный чемпионат мира 2019–2023): «Team Standing», строки с rowspan, «Total Points» —
+        последняя ячейка главной строки.
+    Строки-продолжения (баллы за вторых участников, комментарии) пропускаются: у них первая ячейка
+    не номер места."""
+    # флаг страны — крошечная таблица с картинкой внутри ячейки (внешнюю таблицу она не задевает)
+    nested = re.compile(r"(?is)<table[^>]*>\s*(<tr[^>]*>(?:(?!</?table).)*?<img(?:(?!</?table).)*?</tr>\s*)</table>")
+    flat = nested.sub(lambda m: " ".join(re.findall(r"(?i)<td[^>]*>\s*([A-Z]{3})\s*</td>", m.group(1))), page)
+    out, seen = [], set()
     for tr in re.findall(r"(?is)<tr[^>]*>(.*?)</tr>", flat):
-        cells = [_text(c) for c in re.findall(r"(?is)<td[^>]*>(.*?)</td>", tr)]
+        raw = re.findall(r"(?is)<td[^>]*>(.*?)</td>", tr)
+        cells = [_text(c) for c in raw]
         cells = [c for c in cells if c != ""]
-        if len(cells) < 4 or not cells[0].isdigit():
+        if len(cells) < 4 or not cells[0].isdigit() or cells[1].isdigit():
             continue
-        nation = next((c for c in cells[2:] if re.fullmatch(r"[A-Z]{3}", c)), "")
-        rest = cells[cells.index(nation, 2) + 1:] if nation else cells[2:]
+        place = int(cells[0])
+        if place in seen:
+            continue
         num = r"\d+(\.\d+)?"
-        # «Total Points»; у не вышедших в финал там «FNR» — тогда сумма баллов за короткие программы
-        if rest and re.fullmatch(num, rest[0]):
-            pts = rest[0]
+        by_flag = bool(nested.search(page))  # Swiss Timing: страна во вложенной таблице; comnet — без неё
+        if by_flag and re.fullmatch(num, cells[3]):
+            pts = cells[3]
+        elif by_flag:
+            got = [float(c) for c in cells[4:] if re.fullmatch(num, c)]
+            pts = f"{sum(got):g}" if got else ""
         else:
-            got = [float(c) for c in rest[1:] if re.fullmatch(num, c)]
-            pts = (f"{sum(got):g}" if got else "")
-        out.append({"place": int(cells[0]), "team": cells[1], "nation": nation, "points": pts})
+            # comnet: страна — отдельная ячейка, сумма — последняя
+            pts = cells[-1] if re.fullmatch(num, cells[-1]) else ""
+        nation = next((c for c in cells[2:4] if re.fullmatch(r"[A-Z]{3}", c)), "")
+        seen.add(place)
+        out.append({"place": place, "team": cells[1], "nation": nation, "points": pts})
     return out
+
+
+def is_team_tournament(name):
+    """Турнир целиком командный (World Team Trophy, «Командный чемпионат мира»), а не личный с «Team
+    Event» внутри (Олимпиада — его сегменты разбирает parse_index_page)."""
+    n = name or ""
+    return bool(re.search(r"(?i)team trophy|world team|командн", n)) and "Team Event" not in n
 
 
 def parse_index(url, default_offset=None):

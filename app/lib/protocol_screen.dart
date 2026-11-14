@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 
 import 'data.dart';
 import 'flags.dart';
-import 'profile.dart' show KindScope;
 import 'live.dart' show LiveOk, personKey;
 import 'needs.dart';
 import 'pace.dart';

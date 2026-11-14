@@ -474,12 +474,17 @@ class Start {
   /// «женщины ПП» — часть названия после турнира.
   String get segment => title.substring(tournament.length).replaceFirst(RegExp(r'^\s*—\s*'), '');
 
-  /// Сегмент командного турнира (Олимпиада): у сборщика id кончается на «-team», в названии —
+  /// Командный турнир внутри личного (Олимпиада): у сборщика id кончается на «-team», в названии —
   /// «командный турнир, женщины КП». Вид и уровень — как у личного.
-  bool get team => id.endsWith('-team');
+  bool get teamSub => id.endsWith('-team');
+
+  /// Сегмент командного турнира: вложенный (Олимпиада) или целиком командный (Командный чемпионат
+  /// мира, World Team Trophy) — у него зачёт команд вместо итога вида.
+  bool get team => teamSub || _teamName.hasMatch(tournament);
+  static final _teamName = RegExp(r'командн|team trophy|world team', caseSensitive: false);
 
   /// Вид и программа без пометки командного турнира: «женщины КП» (пометку показывают отдельно).
-  String get segmentPlain => team ? segment.replaceFirst(RegExp(r'^командный турнир,\s*'), '') : segment;
+  String get segmentPlain => teamSub ? segment.replaceFirst(RegExp(r'^командный турнир,\s*'), '') : segment;
 
   /// Поправка по темпу (pace.dart): кто выйдет когда на самом деле. null — не считали.
   Pace? get pace => _pace;
@@ -909,6 +914,13 @@ class Schedule {
 
   /// Человек по имени с учётом вида старта: у тёзок из разных видов (Анна Щербакова — одиночница и
   /// танцовщица) — тот, кто выступает в этом виде. [kind] — вид старта; null — как [personOf].
+  /// Фото с учётом вида: у тёзки из другого вида — своё (ключ в [Person.photoKey]); если у него фото нет —
+  /// null (буква), а не фото человека справочника с тем же именем.
+  String? photoFor(String name, String? kind) {
+    final k = personFor(name, kind)?.photoKey;
+    return k == null ? photoOf(name) : photoOf(k);
+  }
+
   Person? personFor(String name, String? kind) {
     final p = personOf(name);
     final f = kind == null ? '' : kindLetter(kind);
@@ -964,6 +976,7 @@ class Schedule {
                       profile: a['p'] is String && (a['p'] as String).isNotEmpty ? a['p'] as String : null,
                       was: '${a['was'] ?? ''}',
                       wasSeason: '${a['y'] ?? ''}',
+                      photoKey: a['ph'] is String && (a['ph'] as String).isNotEmpty ? a['ph'] as String : null,
                     ),
               ],
             ),
@@ -1394,7 +1407,11 @@ class Person {
   /// Тёзки из другого вида (одиночница с именем танцовщицы из справочника): у каждого свои виды и
   /// свой профиль. Кого показать — решает вид старта ([Schedule.personFor]).
   final List<Person> alts;
-  const Person(this.name, this.nation, this.kinds, {this.profile, this.was = '', this.wasSeason = '', this.alts = const []});
+
+  /// Под каким именем в photos лежит фото тёзки (у человека справочника — null: его фото по имени).
+  final String? photoKey;
+  const Person(this.name, this.nation, this.kinds,
+      {this.profile, this.was = '', this.wasSeason = '', this.alts = const [], this.photoKey});
 
   /// Выступает ли в этом виде (буква w, m, p, d — без уровня), по нынешним и прошлым видам.
   bool inKind(String letter) => '$kinds$was'.toLowerCase().contains(letter);

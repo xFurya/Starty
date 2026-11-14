@@ -1259,6 +1259,13 @@ class AppState extends ChangeNotifier {
     unawaited(_sync());
   }
 
+  /// Режим владельца (см. [BillingState.preview]): все функции подписки без оплаты на этом устройстве.
+  Future<void> setPreview(bool on) async {
+    await billing.setPreview(on);
+    notifyListeners();
+    unawaited(_sync());
+  }
+
   /// Включить или выключить итоги ваших в уведомлении.
   Future<void> setResults(bool on) async {
     await billing.setResults(on);

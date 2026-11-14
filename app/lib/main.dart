@@ -169,7 +169,7 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
 
   /// Виджет «Месяц» на рабочем столе (Android): расписание, фильтр и подписка — ему.
   final _widget = MonthWidgetSync();
-  void _syncWidget() => _widget.update(state.data, state.filters, state.billing.entitlement);
+  void _syncWidget() => _widget.update(state.data, state.filters, state.billing.entitlement, preview: state.billing.preview);
 
   /// Нажали на виджет: день, месяц или страница подписки.
   void _fromWidget(String? what) {

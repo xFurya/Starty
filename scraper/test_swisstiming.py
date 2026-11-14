@@ -296,5 +296,32 @@ class Disqualified(unittest.TestCase):
         self.assertEqual(v["bv"], 13.3)
 
 
+class WorldTeamTrophy(unittest.TestCase):
+    # Командный чемпионат мира: «Team Standing» прямо на странице турнира; две вёрстки
+    COMNET = ('<TABLE Class="Official"><TR Class="HeaderWhite"><TD ROWSPAN="2">Rank</TD><TD ROWSPAN="2">Team</TD>'
+              '<TD ROWSPAN="2">Nation</TD><TD COLSPAN="2">Men</TD><TD ROWSPAN="2">Total<BR>Points</TD></TR>'
+              '<TR Class="White1"><TD ROWSPAN="2">1</TD><TD ROWSPAN="2">Team United States of America</TD>'
+              '<TD ROWSPAN="2">USA</TD><TD>12</TD><TD>10</TD><TD ROWSPAN="2">120</TD></TR>'
+              '<TR Class="White1"><TD>9</TD><TD>8</TD></TR>'
+              '<TR Class="White0"><TD ROWSPAN="2">2</TD><TD ROWSPAN="2">Team Republic of Korea</TD>'
+              '<TD ROWSPAN="2">KOR</TD><TD>11</TD><TD>12</TD><TD ROWSPAN="2">95</TD></TR></TABLE>')
+    SWISS = ('<table width="100%"><tr class="TabHeadWhite"><th>Rank</th><th>Team</th><th>Nation</th><th>Total Points</th></tr>'
+             '<tr class="Line1White"><td>1</td><td class="CellLeft">Team Japan</td><td><table><tr><td><img src="x.GIF"></td>'
+             '<td></td><td>JPN</td></tr></table></td><td>110</td><td>9</td></tr>'
+             '<!--WTT--><tr class="Line1White"><td colspan="4"></td><td>8</td><td>8</td></tr></table>')
+
+    def test_both_layouts(self):
+        self.assertEqual([(r["place"], r["nation"], r["points"]) for r in st.parse_team_standing(self.COMNET)],
+                         [(1, "USA", "120"), (2, "KOR", "95")])
+        self.assertEqual([(r["place"], r["nation"], r["points"]) for r in st.parse_team_standing(self.SWISS)],
+                         [(1, "JPN", "110")])
+
+    def test_whole_team_tournament_by_name(self):
+        for n in ("ISU World Team Trophy in Figure Skating 2023", "Командный чемпионат мира 2019"):
+            self.assertTrue(st.is_team_tournament(n), n)
+        for n in ("Олимпийские игры 2022", "GP NHK Trophy 2024", "Командный турнир ОИ — Team Event"):
+            self.assertFalse(st.is_team_tournament(n), n)
+
+
 if __name__ == "__main__":
     unittest.main()

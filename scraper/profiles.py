@@ -546,6 +546,86 @@ def domestic(pr, mine, since="", fe=()):
              "ev": tot["ev"], "d": tot["d"], "pts": tot["pts"], "src": tot["src"]}]
 
 
+IDS = os.path.join(ROOT, "data", "isu_ids.json")
+IDS_TTL = dt.timedelta(days=7)
+
+
+def table_rows(path=None, now=None, fetch=None, log=print):
+    """[[имя ISU, страна, номер биографии, вид (m, w, p, d)]] — все строки таблиц личных рекордов ISU
+    (с 2018 года, тысячи человек): так находятся биографии тех, кто в списках двух последних сезонов
+    уже не значится (Медведева, Загитова, Кацалапов). Кэш data/isu_ids.json, раз в неделю."""
+    from . import feats as ft
+    path = path or IDS
+    now = now or dt.datetime.now(dt.timezone.utc)
+    fetch = fetch or (lambda url: net.fetch(url, timeout=40))
+    old = {}
+    try:
+        with open(path, encoding="utf-8") as f:
+            old = json.load(f)
+        if now - dt.datetime.fromisoformat(old["at"]) < IDS_TTL:
+            return old["rows"]
+    except (OSError, ValueError, KeyError, TypeError):
+        pass
+    rows, failed = [], 0
+    for k, sg in ft.TABLES:
+        try:
+            for r in ft.parse(fetch(ft.STAT + f"pbs{k}{sg}.htm")):
+                if r["id"] and [r["n"], r["c"], r["id"], k] not in rows:
+                    rows.append([r["n"], r["c"], r["id"], k])
+        except net.FetchError as e:
+            failed += 1
+            log(f"  ! таблица личных рекордов ISU pbs{k}{sg}: {e}")
+    if failed or not rows:
+        return old.get("rows") or rows  # не всё ответило — прежнее лучше неполного
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("{\"at\":" + json.dumps(now.isoformat()) + ",\"rows\":[\n" +
+                ",\n".join(json.dumps(r, ensure_ascii=False) for r in rows) + "]}\n")
+    log(f"  номера биографий ISU из таблиц: {len(rows)}")
+    return rows
+
+
+def archive_ids(people, rows, names, known=()):
+    """{ключ имени: номер биографии} для людей без номера (known — у кого он уже есть), по таблицам ISU
+    (table_rows). Совпало имя (точно или «мягко» у россиян: Victoria/Viktoria, ё/е) и страна, а вид
+    человека — вид таблицы; единственная такая строка — иначе не берём: чужая биография хуже пустой."""
+    from . import history as hs
+    from .people import OURS
+    idx = {}
+    for n, c, i, k in rows:
+        ours = c in OURS
+        name = names.to_ru(n) if ours else nm.pretty_latin(n)
+        idx.setdefault((hs.loose(name) if ours else nm.key(name), "RUS" if c in ("RUS", "AIN", "AIN2", "ROC") else
+                        "BLR" if c in ("BLR", "AIN1") else c, k), set()).add(i)
+    out = {}
+    for p in people:
+        key = nm.key(p["n"])
+        if key in known or key in out:
+            continue
+        c = p.get("c", "")
+        grp = "RUS" if c in ("RUS", "AIN", "AIN2", "ROC") else "BLR" if c in ("BLR", "AIN1") else c
+        kinds = _families((p.get("k") or "") + (p.get("was") or ""))
+        look = hs.loose(p["n"]) if c in OURS else key
+        hit = {i for k in kinds for i in idx.get((look, grp, k), ())}
+        if len(hit) == 1:
+            out[key] = hit.pop()
+    return out
+
+
+def bio_fits(bio, kinds):
+    """Биография годится человеку этих видов: виды его соревнований у ISU пересекаются с его видами.
+    Видов не знаем с одной из сторон — годится."""
+    got = _families("".join(r.get("k", "") for r in ((bio or {}).get("cr") or [])))
+    return not kinds or not got or bool(kinds & got)
+
+
+def archive_pb(bests):
+    """Личные рекорды из протоколов ISU (history.intl_bests, {сегмент: {pts, ev, d}}) → [{s, pts, d, ev}]
+    в том же виде, что у биографии ISU (pb)."""
+    return [{"s": seg, "pts": bests[seg]["pts"], "d": bests[seg]["d"], "ev": bests[seg]["ev"]}
+            for seg in ("total", "sp", "fs") if seg in (bests or {})]
+
+
 def _families(letters):
     """Буквы видов («wP», «d») → множество {w, m, p, d} без уровня."""
     return {c.lower() for c in letters or "" if c.lower() in "wmpd"}
@@ -578,14 +658,15 @@ def alt_ids(people, book):
 
 
 def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None, teams=None, today=None, places=None,
-          bests=None, bests_from=""):
+          bests=None, bests_from="", intl=None):
     """Записать профили и проставить людям ключ "p". people — справочник [{n, c, k}];
     store — кэш биографий из refresh; cards — {номер: карточка картотеки с fio};
     book — «Примечательное» из feats.load (нет — раздела нет); aliases — одно лицо под двумя
     именами (config.json; по умолчанию оттуда же): карточка «Игнатова» — профилю «Трусова»;
     teams — списки сборных из teams.load (нет — строки «Сборная» нет); today — дата для сезона списка;
     places — места рождения по-русски из places.refresh (нет — как у ISU); bests — рекорды российских
-    стартов из history.domestic_bests и сезон, с которого есть протоколы (нет — блока нет)."""
+    стартов из history.domestic_bests и сезон, с которого есть протоколы (нет — блока нет); intl — лучшие на
+    международных стартах из history.intl_bests: у кого нет биографии ISU, профиль строится из архива."""
     from . import feats as ft
     from . import teams as tm
     from .people import card_name
@@ -640,6 +721,9 @@ def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None
                 cards_by_name[x] = by_name[nm.key(x)]
         isu = ids.get(nm.key(name), "")
         bio = cache.get(isu)
+        own_kinds = _families((p.get("k") or "") + (p.get("was") or "")) if len(parts) == 1 else set()
+        if bio and own_kinds and not bio_fits(bio, own_kinds):
+            bio, isu = None, ""  # номер из таблицы оказался чужим (тёзка другого вида)
         card = by_name.get(nm.key(name)) if len(parts) == 1 else None
         # тёзки: справка ФФККР и биография ISU об одном имени, а даты рождения разные — это два человека
         # (Анна Щербакова — танцовщица 2006 г. р. в картотеке и одиночница 2004 г. р. у ISU). Человек
@@ -665,11 +749,23 @@ def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None
         kinds = own or None
         pr = profile(name, nation, bio, card, cards_by_name, staff, places)
         if not pr:
+            # ни биографии ISU, ни карточки ФФККР: профиль из архива протоколов — если в нём есть что показать
+            arch = archive_pb((intl or {}).get(nm.key(name)))
+            if arch or (bests or {}).get(nm.key(name)):
+                pr = {"n": name, "src": ["ISU"] if arch else []}
+                if arch:
+                    # рекорды по протоколам архива — с сезона, с которого они есть, а не за всю карьеру
+                    pr["pb"], pr["pb_from"] = arch, bests_from
+            else:
+                p.pop("p", None)
+                continue
+        pr["at"] = max([bio["at"] if bio else ""] + [(card or {}).get("at", "")] +
+                       [cards_by_name[x].get("at", "") for x in parts if x in cards_by_name] +
+                       [today.isoformat() if not (bio or card) else ""])[:10]
+        extras(name, nation, isu, pr, kinds or None)
+        if not pr.get("feats") and not pr.get("pbru") and not (bio or card) and not pr.get("pb"):
             p.pop("p", None)
             continue
-        pr["at"] = max([bio["at"] if bio else ""] + [(card or {}).get("at", "")] +
-                       [cards_by_name[x].get("at", "") for x in parts if x in cards_by_name])[:10]
-        extras(name, nation, isu, pr, kinds or None)
         team, team_src = tm.for_profile(name, nation, p.get("k") or p.get("was", ""), teams, today, aliases) if teams else (None, "")
         if team:
             pr["team"] = team
@@ -685,6 +781,9 @@ def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None
             apr["at"] = (alt["bio"] or {}).get("at", "")[:10] or today.isoformat()
             extras(name, nation, alt["isu"], apr, alt["kinds"])
             entry = {"was": "".join(sorted(alt["kinds"]))}
+            # своё фото тёзки: под этим именем в photos лежит снимок ISU (build.collect_photos), а не
+            # фото сборной ФФККР, которое по имени принадлежит человеку справочника
+            entry["ph"] = f"{name} ({entry['was']})"
             if apr.get("src") or apr.get("feats") or apr.get("pbru"):
                 ak = key(name + "|" + entry["was"])
                 save(ak, apr)

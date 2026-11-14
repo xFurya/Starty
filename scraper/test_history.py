@@ -230,6 +230,60 @@ class Athletes(unittest.TestCase):
         self.assertNotIn("field", ind)
         self.assertEqual(team["field"][0]["name"], "Анна Иванова")
 
+    def test_team_skate_is_not_a_twin_of_the_individual_one(self):
+        # на Олимпиаде у каждого два одинаковых по виду и сегменту прокатa: личный и командный
+        with tempfile.TemporaryDirectory() as d:
+            past, out = os.path.join(d, "past"), os.path.join(d, "h")
+            os.makedirs(past)
+            doc_ = doc("isu:o", "Олимпиада", [row(1, "Nathan Chen", 1, "113.97")])
+            team = {"kind": "women", "level": "senior", "name": "Team Event - Women", "team": True,
+                    "segments": [dict(doc_["categories"][0]["segments"][0], rows=[row(1, "Nathan Chen", 1, "111.71")])],
+                    "total": None}
+            doc_["categories"].append(team)
+            P._atomic_write(os.path.join(past, "isu_o.json"), P.canonical(doc_))
+            h.athletes(past, os.path.join(d, "none"), out)
+            f = read(os.path.join(out, f"{h.bucket('Nathan Chen'):02x}.json"))
+            a = f["a"]["Nathan Chen"]
+            self.assertNotIn("x", a)
+            self.assertEqual(sorted(bool(r.get("tm")) for r in a["r"]), [False, True])
+
+    def test_one_person_two_spellings_is_one_identity(self):
+        # «Victoria/Viktoria», ё/е, двойная согласная — россиянин; иностранцев это не касается
+        got = h.canonical({
+            "Victoria Sinitsina / Nikita Katsalapov": ("RUS", 10), "Виктория Синицина / Никита Кацалапов": ("RUS", 30),
+            "Петр Гуменник": ("RUS", 2), "Пётр Гуменник": ("RUS", 73),
+            "John Smith": ("USA", 1), "Jon Smith": ("USA", 2),
+            "Евгения Медведева": ("RUS", 40), "Evgenia Medvedeva": ("AIN2", 5)})
+        self.assertEqual(got, {"Victoria Sinitsina / Nikita Katsalapov": "Виктория Синицина / Никита Кацалапов",
+                               "Петр Гуменник": "Пётр Гуменник", "Evgenia Medvedeva": "Евгения Медведева"})
+
+    def test_roster_and_directory_merge(self):
+        # в архиве есть, а в справочнике нет (или он латиницей) — справочник пополняется, написание общее
+        with tempfile.TemporaryDirectory() as d:
+            rec = lambda t, k, lv, c, day="2021-12-25": {"d": day, "t": t, "k": k, "l": lv, "s": "ПП", "pl": 1, "of": 5,
+                                                            "pts": "150.00", "c": c}
+            files = {"00": {"v": 1, "t": {"isu:x": ["ЧЕ", 1, 1], "fsr:y": ["ЧР", 0, 1]}, "a": {
+                "Евгения Медведева": {"r": [rec("isu:x", "women", "senior", "RUS"), rec("fsr:y", "women", "senior", "МОС")]},
+                "Мальчик Региональный": {"r": [rec("fsr:y", "men", "junior", "МОС")]},
+                "Kaori Sakamoto": {"r": [rec("isu:x", "women", "senior", "JPN", "2026-02-19")]},
+                "Двое Тёзок": {"x": True, "r": [rec("fsr:y", "men", "senior", "МОС")]}}}}
+            for name, body in files.items():
+                with open(os.path.join(d, name + ".json"), "w", encoding="utf-8") as f:
+                    json.dump(body, f, ensure_ascii=False)
+            ros = h.roster(d)
+            self.assertEqual({r["n"] for r in ros}, {"Евгения Медведева", "Kaori Sakamoto"})
+            m = next(r for r in ros if r["n"] == "Евгения Медведева")
+            self.assertEqual((m["c"], m["k"], m["was"], m["y"]), ("RUS", "", "w", "2021/22"))
+            people = [{"n": "Evgenia Medvedeva", "c": "RUS", "k": "", "p": "abc"},
+                      {"n": "Kaori Sakamoto", "c": "JPN", "k": "w", "p": "def"}]
+            out, canon = h.with_roster(people, ros)
+            by = {p["n"]: p for p in out}
+            self.assertEqual(set(by), {"Евгения Медведева", "Kaori Sakamoto"})
+            self.assertEqual(by["Евгения Медведева"]["p"], "abc")  # профиль человека справочника сохранён
+            self.assertEqual(by["Евгения Медведева"]["was"], "w")   # виды прошлого сезона — из архива
+            self.assertEqual(by["Kaori Sakamoto"]["k"], "w")        # у нынешних свои виды не трогаются
+            self.assertEqual(canon, {"Evgenia Medvedeva": "Евгения Медведева"})
+
     def test_bucket_is_crc32_of_normalized_name(self):
         # тот же расчёт — в приложении (history.dart): менять только вместе
         self.assertEqual(h.bucket("Аделия Петросян"), h.bucket("аделия петросян"))

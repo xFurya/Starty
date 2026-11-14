@@ -223,11 +223,13 @@ class _BillingPageState extends State<_BillingPage> {
           slivers: [
             SliverToBoxAdapter(child: _card(p, e, active, signedIn, offer, t)),
             if (b.problem != null && (e != null || offer != null)) SliverToBoxAdapter(child: _stale(p, b.problem!, e)),
+            if (b.preview) SliverToBoxAdapter(child: _preview(p)),
             for (final w in [
-              if (!active && offer != null) ..._perks(p),
-              if (!signedIn) ..._signIn(p)
+              if (b.preview && !active) ..._digest(p),
+              if (!active && offer != null && !b.preview) ..._perks(p),
+              if (!signedIn && !(b.preview && offer == null)) ..._signIn(p)
               else if (active) ..._active(p, e)
-              else if (offer != null) ..._buy(p, offer),
+              else if (offer != null && signedIn) ..._buy(p, offer),
               if (signedIn && (b.payments?.isNotEmpty ?? false)) ..._history(p, b.payments!, t),
             ])
               SliverToBoxAdapter(child: w),
@@ -247,6 +249,9 @@ class _BillingPageState extends State<_BillingPage> {
         titleLines: 2,
         status: e.autoRenew ? 'Продлится автоматически' : 'Без продления',
       );
+    }
+    if (st.billing.preview) {
+      return const _ProfileCard(letter: null, icon: CupertinoIcons.sparkles, title: 'Подписка', status: 'Режим владельца: всё включено');
     }
     final String status;
     if (!signedIn) {
@@ -280,6 +285,20 @@ class _BillingPageState extends State<_BillingPage> {
       ),
     );
   }
+
+  /// Режим владельца: все функции включены на этом устройстве без оплаты — оценить до продажи.
+  Widget _preview(Palette p) => Padding(
+    padding: const EdgeInsets.only(top: 14),
+    child: Plate(
+      child: _Row(
+        icon: CupertinoIcons.eye,
+        title: 'Режим владельца',
+        subtitle: 'Все функции подписки включены на этом устройстве без оплаты. Остальным они недоступны',
+        action: 'Выключить',
+        onAction: () => st.setPreview(false),
+      ),
+    ),
+  );
 
   List<Widget> _perks(Palette p) => [
     const _Head('Что даёт'),

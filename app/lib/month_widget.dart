@@ -59,8 +59,15 @@ String widgetTrouble(Schedule d) {
 
 /// Данные виджета. Подписка действует — месяц ([data] обязателен); нет — чем закрыт виджет.
 /// С месяцем уходит и срок подписки по часам телефона (until): виджет закроется сам, без приложения.
-String widgetJson({required Schedule? data, required Filters filters, required Entitlement? ent, required DateTime now}) {
-  final on = billingBuild && (ent?.activeAt(now) ?? false);
+String widgetJson({
+  required Schedule? data,
+  required Filters filters,
+  required Entitlement? ent,
+  required DateTime now,
+  bool preview = false,
+}) {
+  // режим владельца: виджет работает без оплаты; срок — сутки вперёд, при каждой отправке продлевается
+  final on = preview || (billingBuild && (ent?.activeAt(now) ?? false));
   final String lockTitle, lockText;
   if (!billingBuild) {
     lockTitle = 'Виджет «Месяц» недоступен';
@@ -70,7 +77,7 @@ String widgetJson({required Schedule? data, required Filters filters, required E
     final until = ent?.paidUntil;
     if (until == null) {
       lockText = 'Подписки нет';
-    } else if (on && ent!.autoRenew) {
+    } else if (on && ent != null && ent.autoRenew) {
       // продление проходит на сервере: прошёл срок — виджет не знает, продлилось ли; знает приложение
       lockText = 'Оплачено до ${billingDay(until, now)}. Откройте приложение, чтобы проверить продление';
     } else {
@@ -80,7 +87,9 @@ String widgetJson({required Schedule? data, required Filters filters, required E
   return jsonEncode({
     'mode': on ? 'on' : 'locked',
     if (on) ...{
-      'until': ent!.paidUntil!.subtract(ent.skew).millisecondsSinceEpoch,
+      'until': preview && ent == null
+          ? now.add(const Duration(hours: 24)).millisecondsSinceEpoch
+          : ent!.paidUntil!.subtract(ent.skew).millisecondsSinceEpoch,
       if (data != null) ...{
         'days': widgetDays(data, filters),
         'generated': data.generated.millisecondsSinceEpoch,
@@ -99,20 +108,22 @@ String widgetJson({required Schedule? data, required Filters filters, required E
 /// Отдаёт виджету данные приложения, когда меняется то, что он показывает: расписание, фильтр, подписка.
 class MonthWidgetSync {
   Object? _data, _filters, _ent;
+  bool _preview = false;
   String? _last;
 
   /// [ent] — право из памяти устройства (billing.entitlement).
-  void update(Schedule? data, Filters filters, Entitlement? ent) {
+  void update(Schedule? data, Filters filters, Entitlement? ent, {bool preview = false}) {
     if (!isAndroid) return;
-    if (identical(data, _data) && identical(filters, _filters) && identical(ent, _ent)) return;
+    if (identical(data, _data) && identical(filters, _filters) && identical(ent, _ent) && preview == _preview) return;
     _data = data;
     _filters = filters;
     _ent = ent;
+    _preview = preview;
     final t = DateTime.now();
-    final on = billingBuild && (ent?.activeAt(t) ?? false);
+    final on = preview || (billingBuild && (ent?.activeAt(t) ?? false));
     // подписка есть, а расписания ещё нет — не стирать виджету прежний месяц пустым
     if (on && data == null) return;
-    final json = widgetJson(data: data, filters: filters, ent: ent, now: t);
+    final json = widgetJson(data: data, filters: filters, ent: ent, now: t, preview: preview);
     if (json == _last) return;
     _last = json;
     MonthWidget.publish(json);
@@ -125,7 +136,7 @@ Future<void> widgetFromBackground(SharedPreferences p, Schedule data, DateTime t
   if (!isAndroid) return;
   final f = Filters(Prefs.kinds, Prefs.tids, Prefs.athletes, levels: Prefs.levels, scope: Prefs.scope);
   final ent = Entitlement.fromCache(p.getString(BillingState.entKey));
-  await MonthWidget.publish(widgetJson(data: data, filters: f, ent: ent, now: t));
+  await MonthWidget.publish(widgetJson(data: data, filters: f, ent: ent, now: t, preview: BillingState.previewOn(p)));
 }
 
 /// Нажали на виджет: «day:2026-11-12» — вкладка «Месяц» на этом дне, «month:2026-11» — на этом

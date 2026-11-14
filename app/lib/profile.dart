@@ -121,6 +121,10 @@ class Profile {
   /// («2018/19»): лучшее с него, а не за всю карьеру, и подпись так и говорит.
   final List<ProfileScore> bestRu;
   final String bestRuFrom;
+
+  /// Сезон, с которого личные рекорды [best] посчитаны по протоколам ISU (у тех, у кого нет биографии
+  /// ISU): лучшее с него, а не за всю карьеру. Пусто — рекорды ISU целиком.
+  final String bestFrom;
   final List<ProfileTitle> titles;
   final List<ProfileFeat> feats;
   final ProfileTeam? team;
@@ -144,6 +148,7 @@ class Profile {
     this.seasonBest = const [],
     this.bestRu = const [],
     this.bestRuFrom = '',
+    this.bestFrom = '',
     this.titles = const [],
     this.feats = const [],
     this.team,
@@ -173,6 +178,7 @@ class Profile {
       seasonBest: [for (final x in maps(j['sb'])) ProfileScore.fromJson(x)],
       bestRu: [for (final x in maps(j['pbru'])) ProfileScore.fromJson(x)],
       bestRuFrom: _s(j['pbru_from']),
+      bestFrom: _s(j['pb_from']),
       titles: [
         for (final x in maps(j['titles']))
           if (x['pl'] is int) ProfileTitle(_s(x['ev']), _s(x['k']), x['pl'] as int, _s(x['y'])),
@@ -298,12 +304,13 @@ List<(String, List<ProfileScore>, String)> recordBlocks(Profile pr) {
   final ru = pr.bestRu;
   final isu = pr.best;
   final note = pr.bestRuFrom.isEmpty ? '' : 'По протоколам с сезона ${pr.bestRuFrom}';
-  if (ru.isEmpty) return [if (isu.isNotEmpty) ('Личные рекорды', isu, '')];
+  final isuNote = pr.bestFrom.isEmpty ? '' : 'По протоколам ISU с сезона ${pr.bestFrom}';
+  if (ru.isEmpty) return [if (isu.isNotEmpty) ('Личные рекорды', isu, isuNote)];
   final ruBlock = ('Личные рекорды на российских стартах', ru, note);
   if (isu.isEmpty) return [ruBlock];
   double total(List<ProfileScore> l) =>
       l.where((x) => x.seg == 'total').map((x) => double.tryParse(x.points) ?? 0).fold(0.0, (a, b) => a > b ? a : b);
-  final isuBlock = ('Личные рекорды ISU', isu, '');
+  final isuBlock = ('Личные рекорды ISU', isu, pr.bestFrom.isEmpty ? '' : 'По протоколам ISU с сезона ${pr.bestFrom}');
   return total(ru) > total(isu) ? [ruBlock, isuBlock] : [isuBlock, ruBlock];
 }
 
@@ -357,15 +364,6 @@ void showProfile(BuildContext context, String name, Schedule? data, {String? kin
   showSwipeSheet<void>(context, (c, scroll) => ProfileSheet(name: name, data: data, kind: kind, scrollController: scroll), top: .92);
 }
 
-/// Вид старта, внутри которого нажимают имя (карточка старта, протокол): по нему из тёзок выбирается
-/// нужный человек ([Schedule.personFor]). Вне старта — нет, и имя открывает человека справочника.
-class KindScope extends InheritedWidget {
-  final String kind;
-  const KindScope({super.key, required this.kind, required super.child});
-  static String? of(BuildContext context) => context.dependOnInheritedWidgetOfExactType<KindScope>()?.kind;
-  @override
-  bool updateShouldNotify(KindScope old) => old.kind != kind;
-}
 
 /// Состояние приложения: с ним в шапке профиля есть «Отслеживать». Ставит приложение при запуске;
 /// без него (лист отдельно от приложения) кнопки нет.
@@ -531,6 +529,11 @@ class _ProfileSheetState extends State<ProfileSheet> {
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
+    // фото в шапке — того, кого открыли (у тёзок из разных видов фото разные)
+    return KindScope(kind: widget.kind ?? '', child: _sheet(context, p));
+  }
+
+  Widget _sheet(BuildContext context, Palette p) {
     return ConstrainedBox(
       constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * .92),
       child: SheetScroll(

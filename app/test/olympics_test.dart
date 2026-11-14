@@ -8,6 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:starty/data.dart';
 import 'package:starty/flags.dart';
+import 'package:starty/history.dart' show Skate;
 import 'package:starty/profile.dart';
 import 'package:starty/protocol_model.dart';
 import 'package:starty/protocol_screen.dart' show statusLast, statusLabel;
@@ -155,6 +156,62 @@ void main() {
     expect(shown.last.elements.first.name, '3A');
     expect(shown.last.elements.first.goe, isNull);
     expect(statusLabel('DSQ'), 'дисквалифицирован');
+  });
+
+  test('фото тёзки: у одиночницы своё (или буква), у танцовщицы — по имени', () {
+    final d = Schedule.parse(
+      jsonEncode({
+        'generated': '2026-11-14T12:00:00+03:00',
+        'events': [],
+        'photos': {'Анна Щербакова': 'photos/dancer.jpg', 'Анна Щербакова (w)': 'photos/single.jpg'},
+        'people': [
+          {
+            'n': 'Анна Щербакова',
+            'c': 'RUS',
+            'k': 'd',
+            'alt': [
+              {'was': 'w', 'p': 'single', 'ph': 'Анна Щербакова (w)'},
+            ],
+          },
+          {
+            'n': 'Алёна Косторная',
+            'c': 'RUS',
+            'k': '',
+            'alt': [
+              {'was': 'm', 'p': 'x', 'ph': 'Алёна Косторная (m)'},  // фото не нашлось — не чужое, а буква
+            ],
+          },
+        ],
+      }),
+    );
+    expect(d.photoFor('Анна Щербакова', 'women'), endsWith('photos/single.jpg'));
+    expect(d.photoFor('Анна Щербакова', 'dance'), endsWith('photos/dancer.jpg'));
+    expect(d.photoFor('Анна Щербакова', null), endsWith('photos/dancer.jpg'));
+    expect(d.photoFor('Алёна Косторная', 'men'), isNull);
+  });
+
+  test('Командный чемпионат мира — командный турнир целиком, id прежние, зачёт команд в итоге', () {
+    final month = jsonDecode(File('../site/data/past/2023-04.json').readAsStringSync()) as Map<String, dynamic>;
+    final d = Schedule.parse(
+      jsonEncode({
+        'generated': '2026-11-14T12:00:00+03:00',
+        'events': [for (final e in month['events'] as List) if ((e as Map)['tid'] == 'isu:wtt2023') e],
+        'people': [],
+      }),
+    );
+    expect(d.starts, hasLength(8));
+    expect(d.starts.every((s) => s.team && !s.teamSub), isTrue);
+    expect(d.starts.every((s) => !s.id.endsWith('-team')), isTrue);
+    final last = d.starts.firstWhere((s) => s.total.isNotEmpty);
+    expect(totalLabel(last), 'Командный зачёт');
+    expect([for (final p in last.total) (p.place, p.name, p.points)], [(1, 'США', '120'), (2, 'Корея', '95'), (3, 'Япония', '94')]);
+    expect(last.segmentPlain, last.segment, reason: 'у целиком командного пометка «командный» не дописывается');
+  });
+
+  test('история: командный прокат — свой, ключ не совпадает с личным', () {
+    const a = Skate(day: '2022-02-15', tid: 't', tournament: 'T', kind: 'men', level: 'senior', seg: 'КП', place: 1, of: 30, intl: true);
+    const b = Skate(day: '2022-02-04', tid: 't', tournament: 'T', kind: 'men', level: 'senior', seg: 'КП', place: 1, of: 9, intl: true, team: true);
+    expect(a.key, isNot(b.key));
   });
 
   test('давно прошедший старт без итогов — «Итогов нет», без «пока»', () {

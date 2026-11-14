@@ -256,17 +256,19 @@ def estimate_end(start, seg, kind, n, last_start=None):
 # ---------------------------------------------------------------- событие
 
 def make_event(*, tid, tournament, kind, level, seg, mixed, start, end, venue, intl,
-               broadcast, ours, athletes, src, podium=None, total=None, watch=None, team=False):
-    """team — сегмент командного турнира (Олимпиада): свой id («…-team»), в названии «командный
-    турнир», поле team; вид и уровень — как у личного, чтобы фильтры и правила работали как обычно."""
+               broadcast, ours, athletes, src, podium=None, total=None, watch=None, team=False, sub=True):
+    """team — сегмент командного турнира; поле team, вид и уровень — как у личного, чтобы фильтры и
+    правила работали как обычно. sub — командный турнир внутри личного (Олимпиада): свой id («…-team») и
+    «командный турнир» в названии, иначе id совпал бы с личным; у целиком командного (Командный
+    чемпионат мира) id и название прежние."""
     label = kind_label(kind, level, mixed)
     start = start.astimezone(MSK)
     end = end.astimezone(MSK)
-    eid = f"{tid}:{kind}-{level}-{seg}" + ("-team" if team else "")
+    eid = f"{tid}:{kind}-{level}-{seg}" + ("-team" if team and sub else "")
     eid = re.sub(r"[^A-Za-z0-9:_\-]", "", nm.ru_to_lat(eid))
     ev = {
         "id": eid, "tid": tid, "tournament": tournament, "kind": kind, "level": level,
-        "seg": seg, "title": f"{tournament} — {'командный турнир, ' if team else ''}{label} {seg}",
+        "seg": seg, "title": f"{tournament} — {'командный турнир, ' if team and sub else ''}{label} {seg}",
         "start": start.isoformat(), "end": end.isoformat(),
         "venue": venue, "intl": intl, "broadcast": broadcast,
         "ours": ours, "athletes": sorted(set(athletes)), "src": src,
@@ -534,6 +536,12 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
     protos — словарь {tid: заготовка файла протокола}: сюда кладутся категории с сегментами
     (и сегменты без времени в расписании). now и proto_dir — для проверок на фикстурах."""
     fix = fix or (lambda s: s)
+    if st.is_team_tournament(tournament) or st.is_team_tournament(idx.get("name")):
+        # целиком командный турнир: все категории — командные, зачёт команд — на странице турнира
+        for c in idx["categories"]:
+            if not c.get("team"):
+                c.update(team=True, whole=True, disc=c["name"])
+                c.setdefault("standing_url", idx["url"])
     cats = categories_of(idx, intl)
     levels = {lv for _, _, lv in cats}
     mixed = len(levels) > 1
@@ -679,7 +687,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 tid=tid, tournament=tournament, kind=kind, level=level, seg=seg, mixed=mixed,
                 start=start, end=end, venue=venue, intl=intl, broadcast=broadcast,
                 watch=watch, ours=sort_ours(ours), athletes=athletes, src=idx["url"],
-                podium=podium, total=total, team=bool(c.get("team")))
+                podium=podium, total=total, team=bool(c.get("team")), sub=not c.get("whole"))
             ev["field"] = sort_ours(field)
             ev["_cat"] = c["name"]
             # протокол уже на табло, но судейских оценок ещё нет — промежуточные итоги
@@ -1331,7 +1339,7 @@ def withdraw_photos(photos, skip):
     return {k: ("" if v in bad else v) for k, v in photos.items()}
 
 
-def collect_photos(events, upcoming, names, photos, prev_photos, everyone=()):
+def collect_photos(events, upcoming, names, photos, prev_photos, everyone=(), alts=()):
     """{«Имя Фамилия» как в ours/podium/total/watchlist и справочнике: адрес фото}. Пары — по людям.
     Источники: сборная ФФККР, портреты ISU (заявки, общий список), Викиданные. Адрес берётся,
     только если он действительно отдаёт картинку."""
@@ -1355,6 +1363,13 @@ def collect_photos(events, upcoming, names, photos, prev_photos, everyone=()):
             add(n)
     for n in everyone:
         add(n)
+    # тёзки из другого вида (alt): снимок ISU под своим именем — фото сборной ФФККР принадлежит человеку справочника
+    for pseudo, base in alts:
+        url = next((u for lab, u, prio in photos["raw"] if prio == 2
+                    and nm.key(names.to_ru(lab)) == nm.key(names.to_ru(base))), None)
+        if url:
+            photos["raw"].append((pseudo, url, 2))
+            add(pseudo)
 
     # выбор источника, миниатюры и память о найденном («не пропадает») — в photos.collect
     return ph.collect(SITE, want, photos["raw"], prev_photos, names, ph.BOOK, PHOTO_SKIP, log,
@@ -1544,6 +1559,13 @@ def main():
 
     people = kp.merge_named(book["people"], pp.aged(prev.get("people"), book), "n", retract.get("people", ()),
                             same=lambda p: (nm.key(p["n"]), p.get("c", "")), rank=nm.spelling_rank)
+    try:
+        # все из архива (Медведева, Загитова, Кацалапов…): профиль и поиск не только у нынешних
+        people, canon = hs.with_roster(people)
+        roster = {canon.get(n, n) for n in roster}
+    except Exception as e:  # архив — дополнение к справочнику
+        log("!! справочник и архив:", e)
+        traceback.print_exc()
     # Профили: биографии ISU копятся и обновляются по очереди (выступившие — первыми), плюс картотека
     try:
         competed = {}
@@ -1565,7 +1587,14 @@ def main():
             log("!! сборные:", e)
             squads = None
         # биографии тёзок из другого вида (одиночница с именем танцовщицы) — тоже в очередь
-        store = pf.refresh({**(book.get("bios") or {}), **pf.alt_ids(people, notable)}, competed, log)
+        extra_ids = pf.alt_ids(people, notable)
+        try:
+            # и биографии тех, кого ISU уже не числит в списках сезона (Медведева, Загитова, Кацалапов): по таблицам
+            known = set(book.get("bios") or {}) | set(pf._load(pf.CACHE).get("ids") or {})
+            extra_ids = {**pf.archive_ids(people, pf.table_rows(log=log), names, known), **extra_ids}
+        except Exception as e:  # дополнение: без него профили — как были
+            log("!! номера биографий из таблиц ISU:", e)
+        store = pf.refresh({**(book.get("bios") or {}), **extra_ids}, competed, log)
         try:
             places = pl.refresh(pf.birth_places(people, store), log)
         except Exception as e:  # место рождения по-русски — дополнение: иначе как у ISU
@@ -1574,11 +1603,13 @@ def main():
         try:
             # рекорды российских стартов — по протоколам архива и этого сезона (не только ISU)
             bests, since = hs.domestic_bests()
+            # и международных — для тех, у кого нет биографии ISU: профиль строится из архива
+            intl_best, _ = hs.intl_bests()
         except Exception as e:  # дополнение к профилю
-            log("!! рекорды российских стартов:", e)
-            bests, since = None, ""
+            log("!! рекорды по протоколам:", e)
+            bests, since, intl_best = None, "", None
         pf.write(people, store, book.get("cards"), log=log, book=notable, teams=squads, places=places, bests=bests,
-                 bests_from=since)
+                 bests_from=since, intl=intl_best)
     except Exception as e:  # профиль — дополнение: без него лента работает
         log("!! профили:", e)
         traceback.print_exc()
@@ -1596,7 +1627,9 @@ def main():
         "roster": sorted(roster),
         "people": people,
         "photos": withdraw_photos(kp.merge_map(collect_photos(events, upcoming, names, photos, prev.get("photos") or {},
-                                                              [p["n"] for p in people]),
+                                                              [p["n"] for p in people],
+                                                              alts=[(a["ph"], p["n"]) for p in people
+                                                                    for a in p.get("alt") or [] if a.get("ph")]),
                                                prev.get("photos"), retract.get("photos", ())),
                                   ph.load_skip(PHOTO_SKIP)),
     }

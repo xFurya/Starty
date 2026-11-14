@@ -33,6 +33,7 @@
 """
 import argparse
 import datetime as dt
+import collections
 import glob
 import json
 import os
@@ -739,6 +740,38 @@ def fold(events, past_dir=None, now=None):
 
 # ---------------------------------------------------------------- история выступлений
 
+def loose(name):
+    """«Мягкий» ключ имени россиянина для склейки написаний одного человека: Victoria/Viktoria,
+    Данил/Даниил, Абдулина/Абдуллина, ё/е. Только для россиян и белорусов (см. canonical): у иностранцев
+    латиница одна. Слова отсортированы, как в nm.key; пары — по людям."""
+    parts = []
+    for one in name.split(" / "):
+        t = nm.key(one).replace("ck", "k").replace("ch", "#").replace("c", "k").replace("#", "ch")
+        t = t.replace("kh", "h").replace("y", "i").replace("j", "i").replace("iy", "i").replace("ie", "e")
+        parts.append(re.sub(r"(.)\1+", r"\1", t))
+    return " / ".join(sorted(parts))
+
+
+def canonical(names):
+    """{имя: страна} → {имя: общее написание} для россиян и белорусов, у которых одно лицо записано
+    по-разному (латиница ISU и кириллица ФФККР, «Пётр» и «Петр»). Общее — лучшее по nm.spelling_rank,
+    при равенстве — то, что встречается чаще (по числу записей, если names — {имя: (страна, записей)})."""
+    groups = {}
+    for n, v in names.items():
+        c, cnt = v if isinstance(v, tuple) else (v, 0)
+        if c in OURS:
+            groups.setdefault((loose(n), "BLR" if c in ("BLR", "AIN1") else "RUS"), []).append((n, cnt))
+    out = {}
+    for g in groups.values():
+        if len(g) < 2:
+            continue
+        best = min(g, key=lambda x: (nm.spelling_rank(x[0]), -x[1], x[0]))[0]
+        for n, _ in g:
+            if n != best:
+                out[n] = best
+    return out
+
+
 def bucket(name):
     """Номер файла истории по имени: тот же расчёт в приложении (history.dart)."""
     k = name.lower().replace("ё", "е").strip()
@@ -800,7 +833,7 @@ def athletes(past_proto=None, live_proto=None, h_dir=None):
             intl = not doc["tid"].startswith(("fsr:", "ffkm:", "samara:"))
             seen = set()
             for name, rec in _skates(doc):
-                k = (name, rec["k"], rec["l"], rec["s"])
+                k = (name, rec["k"], rec["l"], rec["s"], rec.get("tm", 0))  # командный старт — не тёзка личного
                 if k in seen:
                     twins.add(name)
                 seen.add(k)
@@ -808,10 +841,21 @@ def athletes(past_proto=None, live_proto=None, h_dir=None):
                     rec["d"] = bare.get(doc["tid"], "")
                 tours[doc["tid"]] = [doc["tournament"], int(intl), int(past)]
                 who.setdefault(name, []).append(rec)
-    files = {}
+    def nation(recs):
+        c = collections.Counter(r["c"] for r in recs if r.get("c") and r["t"].startswith("isu:")).most_common(1)
+        return c[0][0] if c else ("RUS" if any(not r["t"].startswith("isu:") for r in recs) else "")
+
+    # одно лицо под двумя написаниями — одной записью под лучшим написанием
+    canon = canonical({n: (nation(r), len(r)) for n, r in who.items()})
+    merged = {}
     for name, recs in who.items():
+        merged.setdefault(canon.get(name, name), []).extend(recs)
+    twins = {canon.get(n, n) for n in twins}
+    files = {}
+    for name, recs in merged.items():
         recs.sort(key=lambda r: (r["d"], r["s"] in ("ПП", "ПТ")))
         files.setdefault(bucket(name), {})[name] = {"r": recs, **({"x": True} if name in twins else {})}
+    who = merged
     written = 0
     for b in range(BUCKETS):
         people = files.get(b, {})
@@ -822,12 +866,24 @@ def athletes(past_proto=None, live_proto=None, h_dir=None):
 
 
 DOMESTIC = ("fsr:", "ffkm:", "samara:")
+INTL = ("isu:",)
 DOMESTIC_SRC = {"fsr:": "ФФККР", "ffkm:": "ФФКМ"}  # прочие — «протоколы турниров» (feats.OTHER)
 SEG_PB = {"КП": "sp", "РТ": "sp", "ПП": "fs", "ПТ": "fs"}
 
 
 def domestic_bests(past_proto=None, live_proto=None):
-    """Лучшие результаты на российских стартах (протоколы ФФККР и регионов в архиве и в этом сезоне):
+    """Лучшие результаты на российских стартах: archive_bests по протоколам ФФККР и регионов."""
+    return archive_bests(DOMESTIC, past_proto, live_proto)
+
+
+def intl_bests(past_proto=None, live_proto=None):
+    """Лучшие результаты на международных стартах (протоколы ISU в архиве и в этом сезоне) — для тех, у
+    кого нет биографии ISU со своими личными рекордами."""
+    return archive_bests(INTL, past_proto, live_proto)
+
+
+def archive_bests(prefixes, past_proto=None, live_proto=None):
+    """Лучшие результаты по протоколам с тидом на prefixes (архив и этот сезон):
     ({ключ имени (names.key): {"total"|"sp"|"fs": {pts, ev, d, src}}}, сезон самого раннего протокола «2018/19»).
     Тёзки (двое с одним именем в одном сегменте) не считаются: чей результат — не различить. Только
     окончательные сегменты. Сезон нужен приложению: раньше него протоколов нет, и лучшее «с него» —
@@ -841,10 +897,10 @@ def domestic_bests(past_proto=None, live_proto=None):
             if os.path.basename(path) == P.STATUS_FILE:
                 continue
             doc = P.load_doc(path)
-            if not doc or not doc["tid"].startswith(DOMESTIC) or doc["tid"] in seen_tids:
+            if not doc or not doc["tid"].startswith(prefixes) or doc["tid"] in seen_tids:
                 continue
             seen_tids.add(doc["tid"])
-            src = DOMESTIC_SRC.get(doc["tid"].split(":")[0] + ":", "протоколы")
+            src = DOMESTIC_SRC.get(doc["tid"].split(":")[0] + ":", "ISU" if doc["tid"].startswith("isu:") else "протоколы")
             seen, whole = set(), {}
 
             def put(name, seg, pts, day):
@@ -857,7 +913,7 @@ def domestic_bests(past_proto=None, live_proto=None):
                     mine[seg] = {"pts": f"{v:.2f}", "ev": doc["tournament"], "d": day, "src": src}
 
             for name, rec in _skates(doc):
-                k = (name, rec["k"], rec["l"], rec["s"])
+                k = (name, rec["k"], rec["l"], rec["s"], rec.get("tm", 0))
                 if k in seen:
                     twins.add(nm.key(name))
                 seen.add(k)
@@ -888,6 +944,67 @@ def domestic_bests(past_proto=None, live_proto=None):
         y = int(first[:4]) - (1 if int(first[5:7]) < 7 else 0)
         since = f"{y}/{(y + 1) % 100:02d}"
     return best, since
+
+
+KIND_LETTER = {"women": "w", "men": "m", "pairs": "p", "dance": "d"}
+
+
+def roster(h_dir=None):
+    """Все из истории выступлений, кого стоит держать в справочнике: выступавшие на международных стартах
+    ISU и взрослые российских стартов (детские и юношеские региональные — нет). → [{n, c, k, was, y}]:
+    k пусто (в этом сезоне архив о нём не знает), was — виды последнего сезона (заглавная — юниоры), y —
+    этот сезон («2021/22»), c — страна по международным стартам, у россиян без них — RUS. Тёзки (x) не
+    берутся: чей результат — не различить. Справочник сводит эти имена с прежними: русское написание
+    побеждает латинское, так что Медведева из справочника по ISU и из архива — один человек."""
+    h_dir = h_dir or H_DIR
+    out = []
+    for path in sorted(glob.glob(os.path.join(h_dir, "*.json"))):
+        try:
+            with open(path, encoding="utf-8") as f:
+                d = json.load(f)
+        except (OSError, ValueError):
+            continue
+        for name, a in (d.get("a") or {}).items():
+            rs = a.get("r") or []
+            if a.get("x") or not rs:
+                continue
+            isu = [r for r in rs if r["t"].startswith("isu:")]
+            if not isu and not any(r["l"] == "senior" for r in rs):
+                continue
+            nat = collections.Counter(r["c"] for r in isu if r.get("c")).most_common(1)
+            c = nat[0][0] if nat else ("RUS" if any(not r["t"].startswith("isu:") for r in rs) else "")
+            dated = [r for r in rs if r.get("d")]
+            if not dated:
+                continue
+            last = max(r["d"] for r in dated)
+            y = int(last[:4]) - (1 if int(last[5:7]) < 7 else 0)
+            season = f"{y}/{(y + 1) % 100:02d}"
+            letters = {KIND_LETTER[r["k"]].upper() if r["l"] == "junior" else KIND_LETTER[r["k"]]
+                       for r in dated if r.get("k") in KIND_LETTER and
+                       int(r["d"][:4]) - (1 if int(r["d"][5:7]) < 7 else 0) == y}
+            out.append({"n": name, "c": c, "k": "", "was": "".join(sorted(letters)), "y": season})
+    return out
+
+
+def with_roster(people, roster_names=None):
+    """Справочник + все из архива: (people, canon). Кто уже есть — остаётся как есть (виды, профиль), у него
+    только подтягиваются виды и сезон архива, если своих нет; новые добавляются (k пусто — в этом сезоне
+    не выступали). Написания одного человека сводятся к лучшему (canonical): «Evgenia Medvedeva» из
+    справочника ISU и «Евгения Медведева» из архива — один человек, и нажатие на её имя в старте архива
+    открывает профиль. canon — {прежнее имя: общее} для остального сборщика (поиск, фото)."""
+    from . import keep as kp
+    ros = roster() if roster_names is None else roster_names
+    canon = canonical({**{p["n"]: (p.get("c", ""), 0) for p in people}, **{r["n"]: (r["c"], 1) for r in ros}})
+    same = lambda p: (nm.key(p["n"]), p.get("c", ""))
+    ren = [dict(p, n=canon.get(p["n"], p["n"])) for p in people]
+    ros = [dict(r, n=canon.get(r["n"], r["n"])) for r in ros]
+    merged = kp.merge_named(ren, ros, "n", same=same, rank=nm.spelling_rank)
+    by = {same(r): r for r in ros}
+    for p in merged:
+        r = by.get(same(p))
+        if r and not p.get("k") and not p.get("was"):
+            p["was"], p["y"] = r["was"], r["y"]
+    return merged, canon
 
 
 def _bare_days(past_dir):
