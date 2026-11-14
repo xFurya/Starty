@@ -35,6 +35,9 @@ class NotifyRules {
   final bool pin;
   // Android: уведомление о выходе спортсмена убирается само вскоре после его проката
   final bool clear;
+  // Android: уведомление о старте — карточкой (вид и программа, отсчёт до начала, «идёт»,
+  // отслеживаемые со временем выхода), а не заголовком и строкой
+  final bool card;
 
   static const allKinds = ['women', 'men', 'pairs', 'dance'];
   static const allLevels = ['senior', 'junior'];
@@ -57,6 +60,7 @@ class NotifyRules {
     this.skaterLead = 15,
     this.pin = true,
     this.clear = true,
+    this.card = false,
   });
 
   static String segOf(Start s) => s.seg == 'ПП' || s.seg == 'ПТ' ? 'free' : 'short';
@@ -103,6 +107,7 @@ class NotifyRules {
     int? skaterLead,
     bool? pin,
     bool? clear,
+    bool? card,
   }) => NotifyRules(
     on: on ?? this.on,
     lead: lead ?? this.lead,
@@ -118,6 +123,7 @@ class NotifyRules {
     skaterLead: skaterLead ?? this.skaterLead,
     pin: pin ?? this.pin,
     clear: clear ?? this.clear,
+    card: card ?? this.card,
   );
 
   String toJson() => jsonEncode({
@@ -135,6 +141,7 @@ class NotifyRules {
     'skaterLead': skaterLead,
     'pin': pin,
     'clear': clear,
+    'card': card,
   });
 
   static NotifyRules fromJson(String? s) {
@@ -160,6 +167,7 @@ class NotifyRules {
         skaterLead: j['skaterLead'] is int && leads.contains(j['skaterLead']) ? j['skaterLead'] as int : lead,
         pin: j['pin'] is bool ? j['pin'] : d.pin,
         clear: j['clear'] is bool ? j['clear'] : d.clear,
+        card: j['card'] is bool ? j['card'] : d.card,
       );
     } catch (_) {
       return d;
@@ -384,6 +392,27 @@ class Reminders {
     );
   }
 
+  /// Карточка уведомления о старте (Android, вид «Карточка»): то же, что в тексте, но по местам —
+  /// вид и программа слева, отсчёт до начала или «идёт» посередине, время справа; в развёрнутом
+  /// виде — отслеживаемые со временем выхода и трансляция. Рисует её своя часть приложения
+  /// (starty_alerts, alert_card.xml); не нарисовалась — уведомление остаётся обычным.
+  static Map<String, Object> startCard(Start s, {Set<String> own = const {}}) {
+    final (disc, seg) = discipline(s);
+    final ours = [for (final o in s.ours) if (!own.contains(o.name)) o];
+    return {
+      'what': cap(disc),
+      'seg': seg,
+      'tour': s.tournament,
+      'time': hm(s.t0),
+      't0': s.t0.millisecondsSinceEpoch,
+      'rows': [
+        for (final o in ours.take(4)) [o.time ?? '', _name(o)],
+      ],
+      'more': ours.length > 4 ? ours.length - 4 : 0,
+      'watch': s.broadcast.join(', '),
+    };
+  }
+
   /// Уведомление о выходе спортсмена: «В 19:04 выходят Кузьмина / Студеникин» (время первым — длинное имя не обрежет его),
   /// строка — «CS Budapest Trophy, танцы, ритм-танец».
   static ({String title, List<String> lines, String collapsed}) skaterText(Start s, Skater o) {
@@ -431,6 +460,7 @@ class Reminders {
         group: s.tid,
         groupTitle: s.tournament,
         reminder: false,
+        card: p.rules.card ? startCard(s, own: own) : null,
       ));
       if (!p.rules.skaters) continue;
       for (final o in s.ours) {
@@ -716,6 +746,7 @@ class Reminders {
               // итог живёт и после конца старта: снимать его вместе со стартом нельзя
               start: x.result ? '' : x.startId,
               late: x.late,
+              card: x.card == null ? '' : jsonEncode(x.card),
             ),
         ]);
         return;
@@ -806,6 +837,9 @@ class Planned {
   /// Итог спортсмена: живёт и после конца старта — не снимается вместе с ним.
   final bool result;
 
+  /// Android: данные карточки (см. [Reminders.startCard]); null — обычное уведомление.
+  final Map<String, Object>? card;
+
   const Planned({
     required this.key,
     required this.at,
@@ -822,6 +856,7 @@ class Planned {
     this.liveAt,
     this.liveTitle = '',
     this.result = false,
+    this.card,
   });
 
   /// Заголовок на момент [t]: старт уже идёт — со статусом, иначе — с временем начала.

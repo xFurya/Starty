@@ -4,10 +4,12 @@ import 'dart:math' as math;
 import 'package:flutter/cupertino.dart' show CupertinoIcons;
 import 'package:flutter/material.dart';
 
+import 'archive.dart';
 import 'data.dart';
 import 'flags.dart';
 import 'main.dart';
 import 'platform.dart';
+import 'protocol.dart';
 import 'sheets.dart';
 import 'state.dart';
 import 'ui.dart';
@@ -18,8 +20,11 @@ String dayTitle(String key) {
   if (key == dayKey(t.add(const Duration(days: 1)))) return 'Завтра';
   if (key == dayKey(t.subtract(const Duration(days: 1)))) return 'Вчера';
   final d = DateTime.parse(key);
-  return '${cap(weekdays[d.weekday - 1])}, ${d.day}$nb${months[d.month - 1]}';
+  return '${cap(weekdays[d.weekday - 1])}, ${d.day}$nb${months[d.month - 1]}${otherYear(d)}';
 }
+
+/// « 2024» для дня не этого года (архив прошлых сезонов): без года «6 декабря» читалось бы нынешним.
+String otherYear(DateTime d) => d.year == msk(now()).year ? '' : '$nb${d.year}';
 
 /// Короткий заголовок дня, когда полный не помещается: «Пн, 12 октября».
 String dayTitleShort(String key) {
@@ -123,21 +128,62 @@ class FeedView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final data = state.data;
-    final sections = data == null ? <Widget>[] : _sections(context);
+    final (today, later) = data == null ? (<Widget>[], <Widget>[]) : _sections(context);
+    // одним списком между «сегодня» и следующими днями — тот же просвет, что между днями
+    final sections = [...today, if (today.isNotEmpty && later.isNotEmpty) const SizedBox(height: 16), ...later];
+    final hero = IceHero(
+      eyebrow: season(now()),
+      title: 'Фигурное катание',
+      figure: true,
+      actions: [if (data != null) ...[SearchButton(state: state), FilterButton(state: state)]],
+    );
+    return LayoutBuilder(
+      builder: (context, box) {
+        // компьютер: сегодняшнее слева, следующие дни справа — два списка рядом, а не одна
+        // телефонная колонка посреди окна; каждый список крутится своим колесом
+        if (hasKeys(context) && box.maxWidth >= 980 && today.isNotEmpty && later.isNotEmpty) {
+          return Column(
+            children: [
+              hero,
+              if (data != null) _wide(NoticeLine(state: state)),
+              if (state.filters.any) _wide(FilterLine(state: state)),
+              Expanded(
+                child: _wide(
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Expanded(child: ListView(padding: const EdgeInsets.only(bottom: 28), children: today)),
+                      Expanded(
+                        child: ListView(
+                          padding: const EdgeInsets.only(bottom: 28),
+                          children: [...later, if (data != null) _Freshness(state: state)],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          );
+        }
+        return _single(context, data, sections, hero);
+      },
+    );
+  }
+
+  /// Две колонки ленты и строки над ними — не шире 1240 и по центру окна.
+  static Widget _wide(Widget child) => Center(
+    child: ConstrainedBox(constraints: const BoxConstraints(maxWidth: 1240), child: child),
+  );
+
+  Widget _single(BuildContext context, Schedule? data, List<Widget> sections, Widget hero) {
     return RefreshIndicator(
       onRefresh: state.load,
       edgeOffset: MediaQuery.paddingOf(context).top,
       child: CustomScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
-        slivers: [
-          SliverToBoxAdapter(
-            child: IceHero(
-              eyebrow: season(now()),
-              title: 'Фигурное катание',
-              figure: true,
-              actions: [if (data != null) ...[SearchButton(state: state), FilterButton(state: state)]],
-            ),
-          ),
+        slivers: centeredSlivers([
+          SliverToBoxAdapter(child: hero),
           if (data != null) SliverToBoxAdapter(child: NoticeLine(state: state)),
           if (state.filters.any) SliverToBoxAdapter(child: FilterLine(state: state)),
           if (data == null && state.loading)
@@ -148,20 +194,35 @@ class FeedView extends StatelessWidget {
               child: EmptyState(text: 'Нет связи', action: 'Повторить', onAction: state.load),
             )
           else if (sections.isEmpty)
-            SliverFillRemaining(
-              hasScrollBody: false,
-              child: EmptyState(text: state.filters.any ? 'По фильтру стартов нет' : 'Стартов нет'),
-            )
+            SliverFillRemaining(hasScrollBody: false, child: _empty(data))
           else
             for (final w in sections) SliverToBoxAdapter(child: w),
           if (data != null) SliverToBoxAdapter(child: _Freshness(state: state)),
           const SliverToBoxAdapter(child: SizedBox(height: 28)),
-        ],
+        ]),
       ),
     );
   }
 
-  List<Widget> _sections(BuildContext context) {
+  /// Лента пуста. По фильтру впереди ничего, а прошедшие есть — так и сказано, и до них один шаг:
+  /// календарь на дне последнего такого старта.
+  Widget _empty(Schedule data) {
+    if (!state.filters.any) return const EmptyState(text: 'Стартов нет');
+    final day = lastPastMatch(data, state.filters, now());
+    if (day == null) return const EmptyState(text: 'По фильтру стартов нет');
+    return EmptyState(
+      text: 'Впереди по фильтру стартов нет',
+      action: 'Прошедшие в календаре',
+      onAction: () {
+        monthOpen.value = day;
+        homeTab.value = tabMonth;
+      },
+    );
+  }
+
+  /// Плашки ленты: сегодняшнее (идёт, предстоит, завершено) и всё, что дальше, — на компьютере
+  /// это две колонки, на телефоне — один список подряд.
+  (List<Widget>, List<Widget>) _sections(BuildContext context) {
     final t = now();
     final today = dayKey(t);
     final pool = feedPool(state, state.filters, t);
@@ -172,18 +233,19 @@ class FeedView extends StatelessWidget {
     final todayNext = next.where((s) => s.day == today).toList();
     // отсчёт — у ближайшего предстоящего, если он сегодня
     final soon = todayNext.isEmpty ? null : todayNext.first.id;
-    final out = <Widget>[];
+    final first = <Widget>[];
     if (live.isNotEmpty || todayNext.isNotEmpty || done.isNotEmpty) {
-      out.add(const DayHeader(day: null, top: 10));
+      first.add(const DayHeader(day: null, top: 10));
       for (final s in live) {
-        out.add(LiveCard(start: s, state: state));
+        first.add(LiveCard(start: s, state: state));
       }
-      if (todayNext.isNotEmpty) out.add(DayPlate(starts: todayNext, state: state, soon: soon));
+      if (todayNext.isNotEmpty) first.add(DayPlate(starts: todayNext, state: state, soon: soon));
       if (done.isNotEmpty) {
-        out.add(const Eyebrow('Завершено', padding: EdgeInsets.fromLTRB(20, 22, 20, 10)));
-        out.add(DayPlate(starts: done, state: state));
+        first.add(const Eyebrow('Завершено', padding: EdgeInsets.fromLTRB(20, 22, 20, 10)));
+        first.add(DayPlate(starts: done, state: state));
       }
     }
+    final out = <Widget>[];
     String? day;
     var rows = <Start>[];
     void flush() {
@@ -207,7 +269,7 @@ class FeedView extends StatelessWidget {
       out.add(DayHeader(day: null, title: 'Без расписания', top: out.isEmpty ? 10 : 26));
       out.add(UnscheduledPlate(list: unscheduled, state: state, dates: true));
     }
-    return out;
+    return (first, out);
   }
 }
 
@@ -218,7 +280,7 @@ class SearchButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) => RoundButton(
     icon: CupertinoIcons.search,
-    tooltip: 'Найти спортсмена',
+    tooltip: keyTip(context, 'Найти спортсмена', '/'),
     onTap: () => showAthleteSearch(context, state),
   );
 }
@@ -229,7 +291,7 @@ class FilterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) => RoundButton(
     icon: CupertinoIcons.slider_horizontal_3,
-    tooltip: 'Фильтр',
+    tooltip: keyTip(context, 'Фильтр', 'F'),
     badge: state.filters.count,
     onTap: () => showFilters(context, state),
   );
@@ -783,16 +845,21 @@ class OursLine extends StatelessWidget {
           if (times)
             SizedBox(
               width: MediaQuery.textScalerOf(context).scale(col),
-              child: Text(
-                left,
-                maxLines: 1,
-                softWrap: false,
-                overflow: TextOverflow.fade,
-                style: TextStyle(
-                  fontSize: o.time != null ? 14.5 : 13,
-                  fontWeight: o.time != null ? FontWeight.w700 : FontWeight.w500,
-                  color: o.time != null ? ink : ink2,
-                  fontFeatures: tnum,
+              // время, поправленное по темпу, — «≈19:42»: оценка, а не расписание; в колонку — мельче, не обрезаясь
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  blankTime || o.planned == null || o.time == null ? left : '≈${o.time}',
+                  maxLines: 1,
+                  softWrap: false,
+                  semanticsLabel: o.planned != null && o.time != null ? 'около ${o.time}' : null,
+                  style: TextStyle(
+                    fontSize: o.time != null ? 14.5 : 13,
+                    fontWeight: o.time != null ? FontWeight.w700 : FontWeight.w500,
+                    color: o.time != null ? ink : ink2,
+                    fontFeatures: tnum,
+                  ),
                 ),
               ),
             ),
@@ -1381,16 +1448,91 @@ class UnscheduledPlate extends StatelessWidget {
   }
 }
 
-/// Одна строка на плашке: «Стартов нет».
+/// Одна строка на плашке: «Стартов нет». С [action] — справа кнопка («Повторить»).
 class EmptyPlate extends StatelessWidget {
   final String text;
-  const EmptyPlate(this.text, {super.key});
+  final String? action;
+  final VoidCallback? onAction;
+  const EmptyPlate(this.text, {super.key, this.action, this.onAction});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final label = Text(text, style: TextStyle(fontSize: 15, color: p.ink2, height: 1.3));
+    if (action == null) return Plate(padding: const EdgeInsets.fromLTRB(18, 18, 18, 18), child: label);
+    return Plate(
+      padding: const EdgeInsets.fromLTRB(18, 6, 6, 6),
+      child: Row(
+        children: [
+          Expanded(child: label),
+          TextButton(
+            onPressed: onAction,
+            style: TextButton.styleFrom(
+              foregroundColor: p.accent,
+              minimumSize: const Size(44, 44),
+              textStyle: const TextStyle(fontFamily: sans, fontWeight: FontWeight.w700, fontSize: 14),
+            ),
+            child: Text(action!),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Турниры архива, у которых на табло нет времени сегментов: название, дни, место; нажатие
+/// открывает протокол с итогами.
+class PastTournamentsPlate extends StatelessWidget {
+  final List<PastTournament> list;
+  final AppState state;
+  const PastTournamentsPlate({super.key, required this.list, required this.state});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
     return Plate(
-      padding: const EdgeInsets.fromLTRB(18, 18, 18, 18),
-      child: Text(text, style: TextStyle(fontSize: 15, color: p.ink2)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          for (var i = 0; i < list.length; i++) ...[
+            if (i > 0) const Hairline(indent: 0),
+            Semantics(
+              button: list[i].proto != null,
+              child: InkWell(
+                onTap: list[i].proto == null ? null : () => openProtocol(context, list[i].asStart, state: state),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 14, 12, 14),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Eyebrow(list[i].name, color: p.accent, maxLines: 2),
+                            const SizedBox(height: 7),
+                            Text(
+                              '${dateRange(list[i].start, list[i].end)}${otherYear(DateTime.parse(list[i].end))}',
+                              style: TextStyle(fontSize: 15.5, fontWeight: FontWeight.w700, color: p.ink, height: 1.25),
+                            ),
+                            const SizedBox(height: 3),
+                            Text(
+                              list[i].venue.isEmpty ? 'На табло нет времени стартов' : '${list[i].venue}\nНа табло нет времени стартов',
+                              style: TextStyle(fontSize: 13.5, color: p.ink2, height: 1.3),
+                            ),
+                          ],
+                        ),
+                      ),
+                      if (list[i].proto != null) ...[
+                        const SizedBox(width: 10),
+                        Text('Итоги', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: p.accent)),
+                        Icon(CupertinoIcons.chevron_right, size: 16, color: p.accent),
+                      ],
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ],
+      ),
     );
   }
 }
@@ -1410,10 +1552,77 @@ class _MonthViewState extends State<MonthView> {
   double _dir = 1;
   double _drag = 0;
 
-  void _go(int delta) => setState(() {
-    _dir = delta.toDouble();
-    month = DateTime(month.year, month.month + delta);
-  });
+  void _go(int delta) => _show(DateTime(month.year, month.month + delta));
+
+  /// Показать месяц: прошлые сезоны подгружаются из архива, как только до них долистали.
+  void _show(DateTime m) {
+    if (m == month) return;
+    setState(() {
+      _dir = m.isBefore(month) ? -1 : 1;
+      month = m;
+    });
+    _need();
+  }
+
+  String get _ym => monthKey(month);
+
+  void _need() => widget.state.needPast(_ym);
+
+  /// День, чьи старты показаны под сеткой: выбранный, пока он в этом месяце; иначе первый день
+  /// месяца со стартами — листая месяцы, человек видит старты этого месяца, а не прежнего дня.
+  String _shownDay(Map<String, List<Start>> byDay, bool Function(String) hollow) {
+    if (selected.startsWith(_ym)) return selected;
+    final days = DateTime(month.year, month.month + 1, 0).day;
+    for (var d = 1; d <= days; d++) {
+      final k = '$_ym-${two(d)}';
+      if ((byDay[k]?.isNotEmpty ?? false) || hollow(k)) return k;
+    }
+    return '$_ym-01';
+  }
+
+  Future<void> _pick() async {
+    final st = widget.state;
+    await st.archive.loadIndex();
+    if (!mounted) return;
+    final m = msk(now());
+    final first = st.archive.index?.first;
+    final got = await showMonthPicker(
+      context,
+      current: month,
+      today: DateTime(m.year, m.month),
+      first: first == null ? null : DateTime(int.parse(first.substring(0, 4)), int.parse(first.substring(5, 7))),
+    );
+    if (got != null) _show(got);
+  }
+
+  /// Клавиши (main.dart): стрелки двигают выбранный день, PageUp и PageDown листают месяцы,
+  /// Home возвращает к сегодняшнему дню.
+  void _command() {
+    final c = monthCommand.value;
+    if (c == null || !mounted) return;
+    monthCommand.value = null;
+    final days = switch (c) {
+      'day-1' => -1,
+      'day+1' => 1,
+      'week-1' => -7,
+      'week+1' => 7,
+      _ => 0,
+    };
+    if (days != 0) {
+      final from = DateTime.parse(selected.startsWith(_ym) ? selected : '$_ym-01');
+      final to = DateTime(from.year, from.month, from.day + days);
+      setState(() => selected = '${to.year}-${two(to.month)}-${two(to.day)}');
+      _show(DateTime(to.year, to.month));
+    } else if (c == 'month-1' || c == 'month+1') {
+      _go(c == 'month-1' ? -1 : 1);
+    } else if (c == 'today') {
+      final m = msk(now());
+      setState(() => selected = dayKey(now()));
+      _show(DateTime(m.year, m.month));
+    } else if (c == 'pick') {
+      _pick();
+    }
+  }
 
   @override
   void initState() {
@@ -1423,11 +1632,14 @@ class _MonthViewState extends State<MonthView> {
     selected = dayKey(now());
     _take(monthOpen.value);
     monthOpen.addListener(_open);
+    monthCommand.addListener(_command);
+    WidgetsBinding.instance.addPostFrameCallback((_) => _need());
   }
 
   @override
   void dispose() {
     monthOpen.removeListener(_open);
+    monthCommand.removeListener(_command);
     super.dispose();
   }
 
@@ -1448,6 +1660,7 @@ class _MonthViewState extends State<MonthView> {
     _dir = m.isBefore(month) ? -1 : 1;
     month = m;
     if (v.length == 10) selected = v;
+    Future.microtask(() => mounted ? _need() : null);
   }
 
   @override
@@ -1455,39 +1668,58 @@ class _MonthViewState extends State<MonthView> {
     final p = Palette.of(context);
     final state = widget.state;
     final byDay = <String, List<Start>>{};
-    for (final s in state.data?.starts ?? <Start>[]) {
+    for (final s in state.data?.starts ?? const <Start>[]) {
       if (state.filters.pass(s)) (byDay[s.day] ??= []).add(s);
     }
+    // месяц архива, если до него долистали: фильтр один на прошлое и будущее, но международные
+    // старты прошлых лет видны и без россиян
+    for (final s in state.pastStarts(_ym)) {
+      if (state.filters.pass(s, all: true)) (byDay[s.day] ??= []).add(s);
+    }
+    for (final list in byDay.values) {
+      list.sort((a, b) => a.t0.compareTo(b.t0));
+    }
+    // турниры архива без времени сегментов: в сетке — полой точкой, в дне — строкой с итогами
+    final bare = [
+      for (final t in state.pastTournaments(_ym))
+        if (state.filters.passUpcoming(t.asUpcoming, all: true)) t,
+    ];
+    bool hollowOn(String k) => upcomingOn(state, k).isNotEmpty || bare.any((t) => t.covers(k));
     final first = DateTime(month.year, month.month, 1);
     final lead = first.weekday - 1;
     final days = DateTime(month.year, month.month + 1, 0).day;
     final cells = ((lead + days) / 7).ceil() * 7;
     final today = dayKey(now());
-    final dayList = byDay[selected] ?? [];
-    final unscheduled = upcomingOn(state, selected);
+    final shown = _shownDay(byDay, hollowOn);
+    final dayList = byDay[shown] ?? [];
+    final unscheduled = upcomingOn(state, shown);
+    final dayBare = [for (final t in bare) if (t.covers(shown)) t];
     final monthHasUnscheduled = [
       for (var d = 1; d <= days; d++) '${month.year}-${two(month.month)}-${two(d)}',
-    ].any((k) => upcomingOn(state, k).isNotEmpty);
+    ].any(hollowOn);
+    final desk = hasKeys(context);
     final hero = IceHero(
       eyebrow: '${month.year}',
       title: monthsNom[month.month - 1],
       sparkles: 3,
+      onTitle: _pick,
+      titleHint: 'Выбрать месяц',
       actions: [
         RoundButton(
           icon: CupertinoIcons.chevron_left,
-          tooltip: 'Предыдущий месяц',
+          tooltip: keyTip(context, 'Предыдущий месяц', 'PageUp'),
           onTap: () => _go(-1),
         ),
         RoundButton(
           icon: CupertinoIcons.chevron_right,
-          tooltip: 'Следующий месяц',
+          tooltip: keyTip(context, 'Следующий месяц', 'PageDown'),
           onTap: () => _go(1),
         ),
         if (state.data != null) FilterButton(state: state),
       ],
     );
     Widget calendar(bool split) => Plate(
-      margin: split ? const EdgeInsets.fromLTRB(16, 4, 6, 0) : const EdgeInsets.fromLTRB(16, 10, 16, 0),
+      margin: split ? EdgeInsets.fromLTRB(16, desk ? 10 : 4, 6, 0) : const EdgeInsets.fromLTRB(16, 10, 16, 0),
       padding: const EdgeInsets.fromLTRB(6, 14, 6, 12),
       child: Column(
         children: [
@@ -1533,7 +1765,12 @@ class _MonthViewState extends State<MonthView> {
                 key: ValueKey(month),
                 children: [
                   for (var r = 0; r < cells ~/ 7; r++)
-                    Row(children: [for (var c = 0; c < 7; c++) _cell(context, r * 7 + c - lead + 1, days, byDay, today, split ? 46 : 54)]),
+                    Row(
+                      children: [
+                        for (var c = 0; c < 7; c++)
+                          _cell(context, r * 7 + c - lead + 1, days, byDay, today, split && !desk ? 46 : 54, shown, hollowOn),
+                      ],
+                    ),
                 ],
               ),
             ),
@@ -1545,14 +1782,23 @@ class _MonthViewState extends State<MonthView> {
         ],
       ),
     );
-    final day = dayList.isEmpty && unscheduled.isEmpty
-        ? const EmptyPlate('Стартов нет')
+    final past = state.pastState(_ym);
+    final empty = dayList.isEmpty && unscheduled.isEmpty && dayBare.isEmpty;
+    final day = empty
+        ? switch (past) {
+            // пока месяц архива не пришёл, «стартов нет» было бы неправдой
+            PastState.loading => const EmptyPlate('Загружается архив'),
+            PastState.failed => EmptyPlate('Архив не загрузился', action: 'Повторить', onAction: _need),
+            _ => EmptyPlate(_emptyText(state)),
+          }
         : Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               if (dayList.isNotEmpty) DayPlate(starts: dayList, state: state),
               if (dayList.isNotEmpty && unscheduled.isNotEmpty) const SizedBox(height: 12),
               if (unscheduled.isNotEmpty) UnscheduledPlate(list: unscheduled, state: state),
+              if ((dayList.isNotEmpty || unscheduled.isNotEmpty) && dayBare.isNotEmpty) const SizedBox(height: 12),
+              if (dayBare.isNotEmpty) PastTournamentsPlate(list: dayBare, state: state),
             ],
           );
     final top = [
@@ -1561,17 +1807,20 @@ class _MonthViewState extends State<MonthView> {
     ];
     return LayoutBuilder(
       builder: (context, c) {
-        // телефон боком: месяц и выбранный день рядом — иначе к стартам дня листать через весь месяц
-        if (isShortWindow(context) && c.maxWidth >= 600) {
+        // телефон боком и компьютер: месяц и выбранный день рядом — иначе к стартам дня листать
+        // через весь месяц; на компьютере пара колонок стоит по центру окна
+        if ((isShortWindow(context) || desk) && c.maxWidth >= 600) {
           return Column(
             children: [
               hero,
               Expanded(
-                child: Row(
+                child: _deskCenter(
+                  desk,
+                  Row(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     SizedBox(
-                      width: math.min(400.0, math.max(330.0, c.maxWidth * .5)),
+                      width: desk ? math.min(460.0, c.maxWidth * .45) : math.min(400.0, math.max(330.0, c.maxWidth * .5)),
                       child: CustomScrollView(
                         slivers: [
                           ...top,
@@ -1583,13 +1832,14 @@ class _MonthViewState extends State<MonthView> {
                     Expanded(
                       child: CustomScrollView(
                         slivers: [
-                          SliverToBoxAdapter(child: DayHeader(day: selected, top: 2)),
+                          SliverToBoxAdapter(child: DayHeader(day: shown, top: desk ? 8 : 2)),
                           SliverToBoxAdapter(child: day),
                           const SliverToBoxAdapter(child: SizedBox(height: 32)),
                         ],
                       ),
                     ),
                   ],
+                  ),
                 ),
               ),
             ],
@@ -1600,7 +1850,7 @@ class _MonthViewState extends State<MonthView> {
             SliverToBoxAdapter(child: hero),
             ...top,
             SliverToBoxAdapter(child: calendar(false)),
-            SliverToBoxAdapter(child: DayHeader(day: selected)),
+            SliverToBoxAdapter(child: DayHeader(day: shown)),
             SliverToBoxAdapter(child: day),
             const SliverToBoxAdapter(child: SizedBox(height: 32)),
           ],
@@ -1611,12 +1861,35 @@ class _MonthViewState extends State<MonthView> {
 
   static const _order = ['women', 'men', 'pairs', 'dance'];
 
-  Widget _cell(BuildContext context, int d, int days, Map<String, List<Start>> byDay, String today, double height) {
+  /// На компьютере пара «месяц и день» — не шире 1180 и по центру окна; телефону боком нужна вся ширина.
+  static Widget _deskCenter(bool desk, Widget child) => !desk
+      ? child
+      : Center(child: ConstrainedBox(constraints: const BoxConstraints(maxWidth: 1180), child: child));
+
+  /// Почему под сеткой пусто: раньше начала архива — так и сказано, а не «стартов нет».
+  String _emptyText(AppState state) {
+    final first = state.archive.index?.first;
+    if (first != null && state.pastWanted(_ym) && _ym.compareTo(first) < 0) {
+      return 'Архив начинается с$nb${months[int.parse(first.substring(5, 7)) - 1]} ${first.substring(0, 4)}$nbгода';
+    }
+    return state.filters.any ? 'По фильтру стартов нет' : 'Стартов нет';
+  }
+
+  Widget _cell(
+    BuildContext context,
+    int d,
+    int days,
+    Map<String, List<Start>> byDay,
+    String today,
+    double height,
+    String shown,
+    bool Function(String) hollowOn,
+  ) {
     final p = Palette.of(context);
     if (d < 1 || d > days) return Expanded(child: SizedBox(height: height));
     final key = '${month.year}-${two(month.month)}-${two(d)}';
     final list = byDay[key] ?? [];
-    final sel = key == selected;
+    final sel = key == shown;
     final isToday = key == today;
     final past = key.compareTo(today) < 0;
     final kinds = [
@@ -1624,8 +1897,8 @@ class _MonthViewState extends State<MonthView> {
         if (list.any((s) => s.kind == k)) k,
     ];
     final other = list.any((s) => !_order.contains(s.kind));
-    // турнир идёт, а расписания по сегментам ещё нет — полая точка
-    final hollow = upcomingOn(widget.state, key).isNotEmpty;
+    // турнир идёт, а расписания по сегментам нет — полая точка
+    final hollow = hollowOn(key);
     return Expanded(
       child: Semantics(
         button: true,

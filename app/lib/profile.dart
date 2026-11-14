@@ -14,9 +14,10 @@ import 'data.dart';
 import 'flags.dart';
 import 'palette.dart';
 import 'protocol.dart' show openLink;
-import 'settings.dart' show FeedbackAbout, ReportLink;
-import 'sheets.dart' show SwipeSurface, showStart;
+import 'settings.dart' show FeedbackAbout, ReportLink, openBilling;
+import 'sheets.dart' show showStart, showSwipeSheet;
 import 'state.dart';
+import 'stats.dart';
 import 'ui.dart';
 import 'views.dart' show PlacingName, dateRange;
 
@@ -326,16 +327,7 @@ String _sourcesLine(List<String> src, String checked) {
 
 /// Профиль спортсмена листом поверх текущего экрана. [name] — как в данных (пара — одной записью).
 void showProfile(BuildContext context, String name, Schedule? data) {
-  showModalBottomSheet(
-    context: context,
-    isScrollControlled: true,
-    useSafeArea: true,
-    enableDrag: false,
-    builder: (c) => SwipeSurface(
-      top: .92,
-      builder: (c, scroll) => ProfileSheet(name: name, data: data, scrollController: scroll),
-    ),
-  );
+  showSwipeSheet<void>(context, (c, scroll) => ProfileSheet(name: name, data: data, scrollController: scroll), top: .92);
 }
 
 /// Состояние приложения: с ним в шапке профиля есть «Отслеживать». Ставит приложение при запуске;
@@ -480,6 +472,22 @@ class _ProfileSheetState extends State<ProfileSheet> {
     return a.starts.isEmpty && a.tours.isEmpty ? null : _Ahead(starts: a.starts, tours: a.tours);
   }
 
+  /// «Статистика»: с подпиской — числа; без неё — строка о том, что это в подписке; а если подписка
+  /// в этой сборке не продаётся, раздела нет вовсе — показывать закрытое, которое нельзя открыть, незачем.
+  Widget? _stats(BuildContext context) {
+    final st = profileState;
+    if (st == null) return null;
+    final open = st.billing.perksAt(now());
+    if (!open && !st.billing.visible) return null;
+    return StatsSection(
+      key: ValueKey('stats-${widget.name}-$open'),
+      name: widget.name,
+      data: widget.data,
+      open: open,
+      onSubscribe: () => openBilling(context, st),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -517,6 +525,8 @@ class _ProfileSheetState extends State<ProfileSheet> {
                           _section(context, 'Справка', const _Note('Справки о спортсмене пока нет'))
                         else
                           ..._body(context, pr),
+                        // подписка: баллы по стартам, прыжки, уровни — по протоколам, не по справке
+                        if (_stats(context) case final st?) _section(context, 'Статистика', st),
                         SizedBox(height: 26 + MediaQuery.paddingOf(context).bottom),
                       ]
                       .map(

@@ -407,4 +407,64 @@ void main() {
       expect(m.kinds, {'men'});
     });
   });
+
+  group('карточка уведомления о старте (Android)', () {
+    Start start({List<Map<String, Object?>> ours = const [], List<String> broadcast = const []}) => Start.fromJson({
+      'id': 'x:men-junior-pp',
+      'tid': 'x',
+      'tournament': 'ЮГП России «Сердце Сибири»',
+      'kind': 'men',
+      'level': 'junior',
+      'seg': 'ПП',
+      'title': 'ЮГП России «Сердце Сибири» — юноши ПП',
+      'start': '2026-11-13T12:45:00+03:00',
+      'end': '2026-11-13T14:30:00+03:00',
+      'venue': 'Омск',
+      'intl': false,
+      'broadcast': broadcast,
+      'ours': ours,
+    });
+
+    test('по местам: вид, программа, турнир, время, отслеживаемые со временем выхода, трансляция', () {
+      final c = Reminders.startCard(
+        start(
+          ours: [
+            for (var i = 1; i <= 6; i++) {'name': 'Иван Петров$i', 'time': '13:0$i'},
+          ],
+          broadcast: ['Первый канал', 'YouTube'],
+        ),
+      );
+      expect(c['what'], 'Юноши');
+      expect(c['seg'], 'произвольная программа');
+      expect(c['tour'], 'ЮГП России «Сердце Сибири»');
+      expect(c['time'], '12:45');
+      expect(c['t0'], DateTime.parse('2026-11-13T12:45:00+03:00').millisecondsSinceEpoch);
+      expect(c['rows'], hasLength(4), reason: 'в развёрнутом виде четыре строки');
+      expect((c['rows'] as List).first, ['13:01', 'Иван Петров1']);
+      expect(c['more'], 2);
+      expect(c['watch'], 'Первый канал, YouTube');
+    });
+
+    test('у кого своё уведомление о выходе — в карточке старта не повторяется', () {
+      final c = Reminders.startCard(
+        start(ours: [
+          {'name': 'Иван Петров', 'time': '13:01'},
+          {'name': 'Пётр Иванов', 'time': '13:08'},
+        ]),
+        own: {'Иван Петров'},
+      );
+      expect(c['rows'], [
+        ['13:08', 'Пётр Иванов'],
+      ]);
+      expect(c['more'], 0);
+    });
+
+    test('карточка — только когда включена в правилах; по умолчанию уведомление прежнее', () {
+      expect(const NotifyRules().card, isFalse);
+      final on = NotifyRules.fromJson(const NotifyRules().copyWith(card: true).toJson());
+      expect(on.card, isTrue);
+      // правила без поля (документ старой версии) — вид не меняют
+      expect(NotifyRules.fromJson('{"on":true,"lead":15}').card, isFalse);
+    });
+  });
 }

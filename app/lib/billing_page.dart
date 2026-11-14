@@ -17,7 +17,7 @@ String billingSummary(AppState st) {
     return e.autoRenew ? 'До $until\nПродлится автоматически' : 'До $until\nБез продления';
   }
   if (e?.paidUntil case final ended?) return 'Закончилась ${billingDay(ended, t)}';
-  return 'Итоги ваших, жеребьёвка, сводка дня и поддержка приложения';
+  return 'Итоги ваших, статистика, жеребьёвка, сводка дня и поддержка приложения';
 }
 
 /// Когда приходит то, что телефон узнаёт сам, при закрытом приложении: Android проверяет раз в [every],
@@ -44,6 +44,7 @@ const _widgetHand = 'Удержите палец на пустом месте р
 
 const _lineupText = 'Время выхода ваших после жеребьёвки, кто вошёл в состав и кто снялся';
 const _needsText = 'В протоколе: сколько баллов вашим нужно во втором сегменте на первое место и на пьедестал';
+const _statsText = 'В профиле спортсмена: баллы от старта к старту, какие прыжки исполняются чисто, уровни вращений и дорожек — по протоколам с 2018 года';
 
 void openBilling(BuildContext context, AppState state) {
   Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => _BillingPage(state: state)));
@@ -290,6 +291,8 @@ class _BillingPageState extends State<_BillingPage> {
           _Row(icon: CupertinoIcons.list_number, title: 'Жеребьёвка и состав', subtitle: '$_lineupText\n${_closed('3 часов')}'),
           const Hairline(),
           const _Row(icon: CupertinoIcons.scope, title: 'Сколько нужно', subtitle: _needsText),
+          const Hairline(),
+          const _Row(icon: CupertinoIcons.chart_bar, title: 'Статистика', subtitle: _statsText),
           const Hairline(),
           const _Row(
             icon: CupertinoIcons.sun_max,
@@ -543,6 +546,8 @@ class _BillingPageState extends State<_BillingPage> {
             ],
             const Hairline(),
             const _Row(icon: CupertinoIcons.scope, title: 'Сколько нужно', subtitle: _needsText),
+            const Hairline(),
+            const _Row(icon: CupertinoIcons.chart_bar, title: 'Статистика', subtitle: _statsText),
             const Hairline(),
             _widgetRow(),
           ],

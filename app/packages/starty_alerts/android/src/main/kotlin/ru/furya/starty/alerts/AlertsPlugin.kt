@@ -50,6 +50,7 @@ class AlertsPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
                             liveColorDark = (x["liveColorDark"] as? Number)?.toInt() ?: 0,
                             start = x["start"] as? String ?: "",
                             late = (x["late"] as? Number)?.toLong() ?: (x["end"] as Number).toLong(),
+                            card = x["card"] as? String ?: "",
                         )
                     }
                     val finished = HashMap<String, Long>()

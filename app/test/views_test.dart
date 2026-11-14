@@ -421,7 +421,18 @@ void main() {
     expect(upcomingAhead(s, t), isEmpty);
     expect(upcomingAhead(s, t, f), hasLength(1));
     expect(filterAction(0, 1), ('Показать 1 старт', null));
-    expect(filterAction(0, 0), ('Впереди стартов нет', null));
+    // впереди ничего: календарь покажет прошедшие; и их нет — просто «Применить» (в архиве прошлых
+    // сезонов совпадения могут быть в месяцах, которые ещё не загружены)
+    expect(filterAction(0, 0, 12), ('Показать 12 прошедших стартов', null));
+    expect(filterAction(0, 0, 1), ('Показать 1 прошедший старт', null));
+    expect(filterAction(0, 0, 3), ('Показать 3 прошедших старта', null));
+    expect(filterAction(2, 0, 12), ('Показать 2 старта', null));
+    expect(filterAction(0, 0), ('Применить', null));
+    // прошедшие по фильтру считаются по расписанию: их показывает календарь
+    final past = data.starts.where((x) => x.pastAt(t)).toList();
+    expect(pastMatches(data, Filters.none, t), past.where((x) => x.shown).length);
+    expect(lastPastMatch(data, Filters.none, t), past.lastWhere((x) => x.shown).day);
+    expect(lastPastMatch(data, const Filters({}, {'нет такого'}, {}), t), isNull);
     expect(filterAction(3, 0), ('Показать 3 старта', null));
     expect(filterAction(21, 15), ('Показать 36 стартов', null));
   });

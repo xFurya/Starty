@@ -4,6 +4,9 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'live.dart' show personKey;
+import 'pace.dart';
+
 const dataUrl = String.fromEnvironment('DATA_URL', defaultValue: 'https://xfurya.github.io/Starty/data/events.json');
 
 /// Маленький файл состояния стартов рядом с расписанием (now.json): начало, конец, «закончился»,
@@ -72,6 +75,9 @@ class Follow {
       _keys = {for (final n in list) norm(n)};
   static final none = Follow(const []);
 
+  /// Выбор одной строкой: по ней видно, что отслеживаемые не менялись (кэш архива в состоянии).
+  late final String signature = '${russians ? 1 : 0}${belarusians ? 1 : 0}|${(_keys.toList()..sort()).join('|')}';
+
   /// Код страны из табло — россиянин или белорус, которых человек отслеживает на международных.
   bool nation(String n) => (russians && isRussianNation(n)) || (belarusians && isBelarusianNation(n));
 
@@ -98,8 +104,14 @@ class Skater {
   final int? overall; // место в итоге вида — у события с итогом турнира
   final String nation; // код страны/команды из табло, нужен для подписи групп
   final String? points; // баллы за сегмент («72.45») — вместе с местом, без места их нет
-  Skater(this.name, this.time, this.no, this.warmup, [this.place, this.overall, this.nation = '', String? points])
+
+  /// Время по расписанию, когда [time] поправлено по темпу старта (pace.dart); null — не поправлено.
+  final String? planned;
+  Skater(this.name, this.time, this.no, this.warmup, [this.place, this.overall, this.nation = '', String? points, this.planned])
     : points = place == null ? null : points;
+
+  /// Тот же спортсмен с временем выхода, поправленным по темпу; прежнее время — в [planned].
+  Skater paced(String at) => Skater(name, at, no, warmup, place, overall, nation, points, planned ?? time);
   factory Skater.fromJson(Map o) => Skater(
     o['name'],
     o['time'],
@@ -450,6 +462,64 @@ class Start {
   /// «женщины ПП» — часть названия после турнира.
   String get segment => title.substring(tournament.length).replaceFirst(RegExp(r'^\s*—\s*'), '');
 
+  /// Поправка по темпу (pace.dart): кто выйдет когда на самом деле. null — не считали.
+  Pace? get pace => _pace;
+  Pace? _pace;
+
+  /// Тот же старт с временем выхода оставшихся, поправленным по темпу, и концом — если сегмент
+  /// затягивается (раньше расписания конец не переносим: окончание видно по протоколу).
+  Start withPace(Pace p) {
+    String? fix(Skater o) {
+      final at = p.at[personKey(o.name)];
+      if (at == null || o.time == null) return null;
+      final was = skateAt(o);
+      // меньше минуты — это и есть расписание
+      if (was != null && (at.difference(was).inSeconds).abs() < 60) return null;
+      return hm(at);
+    }
+
+    Skater one(Skater o) => switch (fix(o)) {
+      final String t => o.paced(t),
+      null => o,
+    };
+    final later = p.end != null && p.end!.isAfter(t1.add(const Duration(minutes: 1)));
+    final end = later ? p.end! : t1;
+    final out = Start._all(
+      id: id,
+      tid: tid,
+      tournament: tournament,
+      kind: kind,
+      level: level,
+      seg: seg,
+      title: title,
+      venue: venue,
+      src: src,
+      proto: proto,
+      t0: t0,
+      t1: end,
+      intl: intl,
+      regional: regional,
+      region: region,
+      broadcast: broadcast,
+      watch: watch,
+      athletes: athletes,
+      ours: [for (final o in ours) one(o)],
+      field: [for (final o in field) one(o)],
+      podium: podium,
+      total: total,
+      provisional: provisional,
+      facts: facts,
+      live: live,
+    );
+    out._pace = p;
+    out._endPaced = later;
+    return out;
+  }
+
+  /// Конец перенесён по темпу (старт затягивается): [t1] — оценка, а не расписание.
+  bool get endPaced => _endPaced;
+  bool _endPaced = false;
+
   /// Сегмент закончился: протокол окончательный (судейские оценки или по времени) или места есть
   /// у всего состава — откатали все. Конец по расписанию — оценка, а это — факт: уведомление
   /// о старте снимается, карточка уходит в прошедшие. То же правило — finished в сборщике.
@@ -482,10 +552,12 @@ class Start {
       field.any((x) => x.place == null);
   String get day => dayKey(t0);
 
-  /// Момент выхода нашего на лёд (время в списке — по Москве).
-  DateTime? skateAt(Skater s) {
-    if (s.time == null) return null;
-    final p = s.time!.split(':');
+  /// Момент выхода нашего на лёд (время в списке — по Москве). [planned] — по расписанию, даже
+  /// если время поправлено по темпу.
+  DateTime? skateAt(Skater s, {bool planned = false}) {
+    final time = planned ? (s.planned ?? s.time) : s.time;
+    if (time == null) return null;
+    final p = time.split(':');
     final m0 = msk(t0);
     var mins = (int.parse(p[0]) - m0.hour) * 60 + int.parse(p[1]) - m0.minute;
     if (mins < -120) mins += 24 * 60;
@@ -1092,11 +1164,11 @@ String effectiveLiveMode(String global, Map<String, String> overrides, String st
 /// Как часто телефон спрашивает табло, пока идёт турнир («моментально»): секунды.
 /// Меньше десяти не позволяем — запросы чаще только жгут батарею и не дают нового.
 const liveEveryMin = 10;
-const liveEveryDefault = 30;
+const liveEveryDefault = 15;
 const liveEveryMax = 3600;
 
 /// Пресеты для выбора; остальное человек вводит сам.
-const liveEveryPresets = [30, 60, 120, 300, 600];
+const liveEveryPresets = [15, 30, 60, 120, 300];
 
 /// Значение из хранилища или документа; не число или меньше минимума — null.
 int? validLiveEvery(Object? v) {
@@ -1252,10 +1324,14 @@ class Prefs {
 }
 
 /// Адрес файла протокола турнира на сайте: рядом с events.json, в каталоге protocols/.
-/// Имя файла — из events.json (поле proto); всё, что похоже на путь, отбрасываем.
+/// Имя файла — из events.json (поле proto); всё, что похоже на путь, отбрасываем. Приставка
+/// «past/» — протокол из архива прошлых сезонов (archive.dart): он лежит в past/protocols/.
 String? protocolUrl(String? proto) {
-  if (proto == null || !RegExp(r'^[A-Za-z0-9_.\-]+\.json$').hasMatch(proto)) return null;
-  return Uri.parse(dataUrl).resolve('protocols/$proto').toString();
+  if (proto == null) return null;
+  final past = proto.startsWith('past/');
+  final file = past ? proto.substring(5) : proto;
+  if (!RegExp(r'^[A-Za-z0-9_.\-]+\.json$').hasMatch(file)) return null;
+  return Uri.parse(dataUrl).resolve('${past ? 'past/' : ''}protocols/$file').toString();
 }
 
 String norm(String s) => s.toLowerCase().replaceAll('ё', 'е');
@@ -1395,8 +1471,10 @@ class Filters {
     return athletes.any((a) => namesInclude(list, a));
   }
 
-  bool pass(Start s) {
-    if (!explicit && !s.shown) return false;
+  /// [all] — старт из архива прошлых сезонов: там международные старты видны и без россиян
+  /// (чемпионат мира 2023 года иначе пропал бы из календаря), остальные условия те же.
+  bool pass(Start s, {bool all = false}) {
+    if (!all && !explicit && !s.shown) return false;
     if (!_scope(s.intl)) return false;
     if (levels.isNotEmpty && !levels.contains(s.level)) return false;
     if (kinds.isNotEmpty && !kinds.contains(s.kind)) return false;
@@ -1406,8 +1484,8 @@ class Filters {
   }
 
   /// Турнир без расписания: виды у него неизвестны — отсекают выбор турниров и заявка наших.
-  bool passUpcoming(Upcoming u) =>
-      (explicit || u.shown) &&
+  bool passUpcoming(Upcoming u, {bool all = false}) =>
+      (all || explicit || u.shown) &&
       _scope(u.intl) &&
       (tids.isEmpty || tids.contains(u.tid)) &&
       (athletes.isEmpty || _has([...u.ours, ...u.athletes]));

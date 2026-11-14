@@ -10,6 +10,7 @@ import 'countries.dart';
 import 'data.dart';
 import 'flags.dart';
 import 'main.dart';
+import 'pace.dart';
 import 'platform.dart';
 import 'profile.dart';
 import 'protocol.dart';
@@ -28,35 +29,13 @@ Future<void> Function(BuildContext context, String url, String title) watchOpene
 Future<void> _openWatch(BuildContext context, String url, String title) => openLink(context, url, title, preferApp: true);
 
 void showStart(BuildContext context, Start s, AppState state) {
-  showModalBottomSheet(
-    context: context,
-    isScrollControlled: true,
-    useSafeArea: true,
-    enableDrag: false,
-    builder: (c) => _StartSheetHost(s: s, state: state),
-  );
-}
-
-// Лист закрывается только когда палец отпущен: если к этому моменту его дотянули
-// до нижней границы — закрываем, иначе плавно возвращаем наверх. Пока палец держится,
-// окно ходит за ним и не исчезает.
-class _StartSheetHost extends StatefulWidget {
-  final Start s;
-  final AppState state;
-  const _StartSheetHost({required this.s, required this.state});
-
-  @override
-  State<_StartSheetHost> createState() => _StartSheetHostState();
-}
-
-class _StartSheetHostState extends State<_StartSheetHost> {
-  @override
-  Widget build(BuildContext context) => SwipeSurface(
-    top: .92,
-    builder: (sheetContext, scrollController) => ListenableBuilder(
-      listenable: widget.state,
-      builder: (c, _) => _StartSheet(s: widget.s, state: widget.state, scrollController: scrollController),
+  showSwipeSheet<void>(
+    context,
+    (c, scroll) => ListenableBuilder(
+      listenable: state,
+      builder: (c, _) => _StartSheet(s: s, state: state, scrollController: scroll),
     ),
+    top: .92,
   );
 }
 
@@ -75,7 +54,7 @@ class _StartSheet extends StatelessWidget {
     final d = msk(s.t0);
     final (disc, seg) = splitSegment(s.segment);
     // «9 октября» не разрывается
-    final date = '${cap(weekdays[d.weekday - 1])}, ${d.day}\u00A0${months[d.month - 1]}';
+    final date = '${cap(weekdays[d.weekday - 1])}, ${d.day}\u00A0${months[d.month - 1]}${otherYear(d)}';
     final narrow = MediaQuery.sizeOf(context).width < 360;
     final notify = _notifyRow(context, t);
     // живые места: режим для этого старта, если у него есть табло и файл протокола — компактный чип.
@@ -146,9 +125,15 @@ class _StartSheet extends StatelessWidget {
               // затянувшийся сегмент идёт дольше расписания, а досрочно закончившийся уже не идёт:
               // время из расписания не выдаём за настоящий конец
               Text(
-                '${s.overrunAt(t) || (s.finishedAt(t) && t.isBefore(s.t1)) ? 'по расписанию ' : ''}до$nb${hm(s.t1)}$nbМСК',
+                '${s.overrunAt(t) || (s.finishedAt(t) && t.isBefore(s.t1)) ? 'по расписанию ' : ''}до$nb${s.endPaced ? '≈' : ''}${hm(s.t1)}$nbМСК',
                 style: TextStyle(fontSize: 13, color: p.ink2, fontFeatures: tnum),
               ),
+              // темп: старт отстаёт или опережает — время выхода ниже уже с этой поправкой
+              if (paceShort(s.pace) case final pace? when !past)
+                Padding(
+                  padding: const EdgeInsets.only(top: 2),
+                  child: Text(pace, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: s.pace!.late ? p.live : p.ink2)),
+                ),
             ],
           ),
         ),
@@ -1194,11 +1179,15 @@ class WatchRow extends StatelessWidget {
 
 /// Лист настроек и выбора: тянется пальцем целиком, закрывается, только если его дотянули
 /// ниже середины и отпустили; иначе возвращается наверх. Закрытие свайпом — без сохранения.
+///
+/// На компьютере (панель разделов слева, окно широкое) вместо листа — панель справа: мышью лист
+/// не тянут, а панель закрывается крестиком, щелчком мимо и клавишей Esc.
 Future<T?> showSwipeSheet<T>(
   BuildContext context,
   Widget Function(BuildContext, ScrollController) builder, {
   double top = .94,
 }) {
+  if (navPlace(context) == NavPlace.side) return showSidePanel<T>(context, builder);
   return showModalBottomSheet<T>(
     context: context,
     isScrollControlled: true,
@@ -1206,6 +1195,81 @@ Future<T?> showSwipeSheet<T>(
     enableDrag: false,
     builder: (c) => _SwipeSheet(builder: builder, top: top),
   );
+}
+
+/// Панель справа поверх содержимого: то же, что лист на телефоне, для мыши и клавиатуры.
+Future<T?> showSidePanel<T>(
+  BuildContext context,
+  Widget Function(BuildContext, ScrollController) builder, {
+  double width = 580,
+}) {
+  return showGeneralDialog<T>(
+    context: context,
+    barrierDismissible: true,
+    barrierLabel: 'Закрыть',
+    barrierColor: const Color(0x4D0B1B2E),
+    transitionDuration: const Duration(milliseconds: 200),
+    pageBuilder: (c, a, b) => _SidePanel(builder: builder, width: width),
+    transitionBuilder: (c, a, b, child) {
+      final curved = CurvedAnimation(parent: a, curve: Curves.easeOutCubic, reverseCurve: Curves.easeIn);
+      return FadeTransition(
+        opacity: curved,
+        child: SlideTransition(position: Tween(begin: const Offset(.04, 0), end: Offset.zero).animate(curved), child: child),
+      );
+    },
+  );
+}
+
+class _SidePanel extends StatefulWidget {
+  final Widget Function(BuildContext, ScrollController) builder;
+  final double width;
+  const _SidePanel({required this.builder, required this.width});
+  @override
+  State<_SidePanel> createState() => _SidePanelState();
+}
+
+class _SidePanelState extends State<_SidePanel> {
+  final _scroll = ScrollController();
+
+  @override
+  void dispose() {
+    _scroll.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return SafeArea(
+      child: Align(
+        alignment: Alignment.centerRight,
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // крестик — снаружи панели: внутри у листов справа вверху свои кнопки
+              RoundButton(icon: CupertinoIcons.xmark, tooltip: 'Закрыть (Esc)', onTap: () => Navigator.of(context).maybePop()),
+              const SizedBox(width: 6),
+              ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: widget.width),
+                child: Material(
+                  color: p.sheet,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(26),
+                    side: BorderSide(color: p.plateLine),
+                  ),
+                  clipBehavior: Clip.antiAlias,
+                  child: PanelScope(child: widget.builder(context, _scroll)),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class _SwipeSheet extends StatefulWidget {
@@ -1673,6 +1737,9 @@ class _FilterSheetState extends State<_FilterSheet> {
   /// листа не запоминается: каждый раз по тому же правилу, отметки и настройки не трогает.
   late bool _followOpen = widget.state.filters.athletes.any(widget.state.follow.names.contains);
 
+  /// Прошедшие турниры свёрнуты, пока среди них нет отмеченного: список длинный, а нужен редко.
+  bool? _pastOpen;
+
   static Set<String> _full(Set<String> saved, Set<String> all) => saved.isEmpty ? {...all} : {...saved};
 
   /// Выбрано всё — это «без ограничения» (пустой набор).
@@ -1697,19 +1764,23 @@ class _FilterSheetState extends State<_FilterSheet> {
     final data = widget.state.data!;
     final t = now();
 
-    // турниры впереди: со стартами в расписании и без расписания; российские и международные отдельно
+    // турниры впереди: со стартами в расписании и без расписания; российские и международные отдельно.
+    // Прошедшие — отдельным свёрнутым списком: фильтр действует и на календарь, где они видны
     final tours = <String, ({String name, bool intl, String from, String to})>{};
+    final gone = <String, ({String name, bool intl, String from, String to})>{};
     for (final s in data.starts) {
-      if (s.pastAt(t)) continue;
+      final into = s.pastAt(t) ? gone : tours;
       final d = dayKey(s.t0);
-      final have = tours[s.tid];
-      tours[s.tid] = (
+      final have = into[s.tid];
+      into[s.tid] = (
         name: s.tournament,
         intl: s.intl,
         from: have == null || d.compareTo(have.from) < 0 ? d : have.from,
         to: have == null || d.compareTo(have.to) > 0 ? d : have.to,
       );
     }
+    // турнир, который ещё идёт, — в списке предстоящих, а не в обоих
+    gone.removeWhere((tid, _) => tours.containsKey(tid));
     final today = dayKey(t), horizon = dayKey(t.add(const Duration(days: 60)));
     for (final u in data.upcoming) {
       if (u.end.compareTo(today) < 0 || u.start.compareTo(horizon) >= 0) continue;
@@ -1720,8 +1791,14 @@ class _FilterSheetState extends State<_FilterSheet> {
         [for (final e in byDate) if (e.value.intl == intl && scope.contains(intl ? 'intl' : 'russian')) e];
     final groups = [for (final intl in [false, true]) if (group(intl).isNotEmpty) (intl, group(intl))];
 
-    // отмеченный турнир, которого в списке нет (прошёл или скрыт выбором стартов), ленту не сужает
-    final shownTids = {for (final g in groups) for (final e in g.$2) e.key};
+    // прошедшие — свежие сверху, с тем же выбором «российские / международные»
+    final past = [
+      for (final e in gone.entries.toList()..sort((a, b) => b.value.from.compareTo(a.value.from)))
+        if (scope.contains(e.value.intl ? 'intl' : 'russian')) e,
+    ];
+    final pastOpen = _pastOpen ?? past.any((e) => tids.contains(e.key));
+    // отмеченный турнир, которого в списке нет (скрыт выбором стартов), ленту не сужает
+    final shownTids = {for (final g in groups) for (final e in g.$2) e.key, for (final e in past) e.key};
     final pickedTids = tids.intersection(shownTids);
     final f = Filters(
       _save(kinds, _allKinds),
@@ -1739,7 +1816,9 @@ class _FilterSheetState extends State<_FilterSheet> {
 
     final count = feedPool(widget.state, f, t).length;
     final more = upcomingAhead(widget.state, t, f).length;
-    final action = filterAction(count, more);
+    // прошедшие по этому фильтру: их показывает календарь, даже когда впереди ничего нет
+    final behind = pastMatches(data, f, t);
+    final action = filterAction(count, more, behind);
 
     Widget athleteRow(String a) => _CheckRow(
       leading: _ProfileAvatar(name: a, data: data),
@@ -1869,7 +1948,7 @@ class _FilterSheetState extends State<_FilterSheet> {
                             ),
                           ],
                         ],
-                        if (groups.isNotEmpty) ...[
+                        if (groups.isNotEmpty || past.isNotEmpty) ...[
                           const SizedBox(height: 10),
                           head('Турниры', clear: pickedTids.isEmpty ? null : () => setState(tids.clear)),
                           note(pickedTids.isEmpty ? 'Показаны все. Отметьте, какие оставить.' : 'Показаны только отмеченные.'),
@@ -1883,6 +1962,29 @@ class _FilterSheetState extends State<_FilterSheet> {
                                 onTap: () => _flip(tids, e.key),
                               ),
                           ],
+                          if (past.isNotEmpty) ...[
+                            _FoldHead(
+                              label: 'Прошедшие',
+                              total: past.length,
+                              marked: past.where((e) => tids.contains(e.key)).length,
+                              open: pastOpen,
+                              onTap: () => setState(() => _pastOpen = !pastOpen),
+                            ),
+                            _Fold(
+                              open: pastOpen,
+                              child: Column(
+                                children: [
+                                  for (final e in past)
+                                    _CheckRow(
+                                      title: e.value.name,
+                                      subtitle: dateRange(e.value.from, e.value.to),
+                                      value: tids.contains(e.key),
+                                      onTap: () => _flip(tids, e.key),
+                                    ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ],
                       ],
                     ),
@@ -1891,14 +1993,14 @@ class _FilterSheetState extends State<_FilterSheet> {
               ),
             ),
           ),
+          // кнопка работает всегда: фильтр действует и на календарь с прошлыми сезонами, а там
+          // совпадения могут быть в месяцах, которые ещё не загружены
           _SheetBar(
             primary: action.$1,
-            onPrimary: count + more == 0
-                ? null
-                : () {
-                    widget.state.setFilters(f);
-                    Navigator.pop(context);
-                  },
+            onPrimary: () {
+              widget.state.setFilters(f);
+              Navigator.pop(context);
+            },
           ),
         ],
       ),
@@ -1977,11 +2079,24 @@ class _Fold extends StatelessWidget {
 }
 
 /// Главная кнопка листа фильтра: сколько стартов покажет лента — с расписанием и без него
-/// (у турнира без расписания один старт в ленте).
-(String, String?) filterAction(int starts, int unscheduled) {
+/// (у турнира без расписания один старт в ленте). Впереди ничего — сколько прошедших покажет
+/// календарь; и их нет — просто «Применить»: в архиве прошлых сезонов считать нечем.
+(String, String?) filterAction(int starts, int unscheduled, [int past = 0]) {
   final n = starts + unscheduled;
-  if (n == 0) return ('Впереди стартов нет', null);
-  return ('Показать $n ${plural(n, 'старт', 'старта', 'стартов')}', null);
+  if (n > 0) return ('Показать $n ${plural(n, 'старт', 'старта', 'стартов')}', null);
+  if (past > 0) return ('Показать $past ${plural(past, 'прошедший старт', 'прошедших старта', 'прошедших стартов')}', null);
+  return ('Применить', null);
+}
+
+/// Сколько прошедших стартов расписания подходит под фильтр (их показывает календарь).
+int pastMatches(Schedule data, Filters f, DateTime t) => data.starts.where((s) => s.pastAt(t) && f.pass(s)).length;
+
+/// День последнего прошедшего старта, подходящего под фильтр; null — таких нет.
+String? lastPastMatch(Schedule data, Filters f, DateTime t) {
+  for (final s in data.starts.reversed) {
+    if (s.pastAt(t) && f.pass(s)) return s.day;
+  }
+  return null;
 }
 
 /// Кто на стартах впереди — их в поиске выше.
@@ -2402,5 +2517,143 @@ class _LiveEverySheetState extends State<_LiveEverySheet> {
     final v = _typed;
     if (v == null || _tooLow) return;
     Navigator.of(context).pop(v > liveEveryMax ? liveEveryMax : v);
+  }
+}
+
+// ------------------------------------------------------------------ выбор месяца
+
+const _monthsShort = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
+
+/// Выбор месяца и года во вкладке «Месяц»: к декабрю 2024 года — в два нажатия, а не в двадцать три.
+/// [first] — с какого месяца есть архив: раньше него месяцы не нажимаются. Возвращает первый день месяца.
+Future<DateTime?> showMonthPicker(BuildContext context, {required DateTime current, required DateTime today, DateTime? first}) {
+  // компьютер — окно по центру, а не лист от нижнего края
+  if (navPlace(context) == NavPlace.side) {
+    return showDialog<DateTime>(
+      context: context,
+      barrierColor: const Color(0x4D0B1B2E),
+      builder: (c) => Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 420),
+          child: PanelScope(child: _MonthPicker(current: current, today: today, first: first)),
+        ),
+      ),
+    );
+  }
+  return showModalBottomSheet<DateTime>(
+    context: context,
+    isScrollControlled: true,
+    useSafeArea: true,
+    backgroundColor: Colors.transparent,
+    constraints: const BoxConstraints(maxWidth: 520),
+    builder: (c) => _MonthPicker(current: current, today: today, first: first),
+  );
+}
+
+class _MonthPicker extends StatefulWidget {
+  final DateTime current, today;
+  final DateTime? first;
+  const _MonthPicker({required this.current, required this.today, required this.first});
+  @override
+  State<_MonthPicker> createState() => _MonthPickerState();
+}
+
+class _MonthPickerState extends State<_MonthPicker> {
+  late int year = widget.current.year;
+
+  int get _minYear => math.min(widget.first?.year ?? widget.today.year, widget.today.year);
+  int get _maxYear => widget.today.year + 1;
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final first = widget.first;
+    Widget arrow(IconData icon, String tip, int delta) {
+      final ok = year + delta >= _minYear && year + delta <= _maxYear;
+      return IconButton(
+        tooltip: tip,
+        onPressed: ok ? () => setState(() => year += delta) : null,
+        icon: Icon(icon, size: 20, color: ok ? p.ink : p.ink3),
+      );
+    }
+
+    Widget cell(int m) {
+      final at = DateTime(year, m);
+      final off = first != null && at.isBefore(first);
+      final sel = at == DateTime(widget.current.year, widget.current.month);
+      final now = at == widget.today;
+      return Expanded(
+        child: Padding(
+          padding: const EdgeInsets.all(4),
+          child: Semantics(
+            button: true,
+            selected: sel,
+            enabled: !off,
+            label: '${monthsNom[m - 1]} $year',
+            excludeSemantics: true,
+            child: Material(
+              color: sel ? p.accent : Colors.transparent,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(14),
+                side: BorderSide(color: sel ? p.accent : (now ? p.accent : p.plateLine), width: now && !sel ? 1.4 : 1),
+              ),
+              clipBehavior: Clip.antiAlias,
+              child: InkWell(
+                onTap: off ? null : () => Navigator.pop(context, at),
+                child: SizedBox(
+                  height: 48,
+                  child: Center(
+                    child: Text(
+                      _monthsShort[m - 1],
+                      style: TextStyle(
+                        fontSize: 15.5,
+                        fontWeight: sel || now ? FontWeight.w700 : FontWeight.w500,
+                        color: sel ? p.onAccent : (off ? p.ink3 : (now ? p.accent : p.ink)),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    return Material(
+      color: p.sheet,
+      borderRadius: PanelScope.of(context) ? BorderRadius.circular(26) : const BorderRadius.vertical(top: Radius.circular(28)),
+      clipBehavior: Clip.antiAlias,
+      child: Padding(
+        padding: EdgeInsets.fromLTRB(16, 14, 16, 16 + MediaQuery.paddingOf(context).bottom),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              children: [
+                arrow(CupertinoIcons.chevron_left, 'Предыдущий год', -1),
+                SizedBox(
+                  width: 92,
+                  child: Center(child: Text('$year', style: display(p, 30))),
+                ),
+                arrow(CupertinoIcons.chevron_right, 'Следующий год', 1),
+                const Spacer(),
+                _TextAction('Сегодня', () => Navigator.pop(context, widget.today)),
+              ],
+            ),
+            const SizedBox(height: 8),
+            for (var r = 0; r < 3; r++) Row(children: [for (var c = 0; c < 4; c++) cell(r * 4 + c + 1)]),
+            // раньше архива листать некуда — об этом сказано, а не просто серые месяцы
+            if (first != null && year <= first.year) ...[
+              const SizedBox(height: 10),
+              Text(
+                'Архив начинается с$nb${months[first.month - 1]} ${first.year}$nbгода',
+                style: TextStyle(fontSize: 13.5, color: p.ink2, height: 1.3),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
   }
 }

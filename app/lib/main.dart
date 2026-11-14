@@ -13,6 +13,7 @@ import 'platform.dart';
 import 'profile.dart' show profileState;
 import 'reminders.dart';
 import 'settings.dart';
+import 'sheets.dart' show showAthleteSearch, showFilters;
 import 'state.dart';
 import 'ui.dart';
 import 'update.dart';
@@ -127,7 +128,14 @@ class _StartyAppState extends State<StartyApp> {
       scrollBehavior: const MaterialScrollBehavior().copyWith(dragDevices: PointerDeviceKind.values.toSet()),
       locale: const Locale('ru'),
       // крупный системный шрифт — до 130 %: дальше разметка теряет смысл
-      builder: (context, child) => MediaQuery.withClampedTextScaling(maxScaleFactor: 1.3, child: AppFrame(nav: _nav, settingsDot: state.rules.on && state.allowed == false, child: child!)),
+      builder: (context, child) => MediaQuery.withClampedTextScaling(
+        maxScaleFactor: 1.3,
+        child: AppKeys(
+          nav: _nav,
+          state: state,
+          child: AppFrame(nav: _nav, settingsDot: state.rules.on && state.allowed == false, child: child!),
+        ),
+      ),
       home: Home(state: state),
     ),
   );
@@ -247,9 +255,19 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
     super.dispose();
   }
 
+  /// Телефон боком: строка состояния и кнопки системы убраны (как на iPhone) — иначе сверху и сбоку
+  /// остаются пустые полосы, а высоты и так мало. Выходят свайпом от края; стоя — всё как обычно.
+  bool? _immersive;
+  void _systemBars(bool short) {
+    if (_immersive == short || !(isAndroid || isIos)) return;
+    _immersive = short;
+    SystemChrome.setEnabledSystemUIMode(short ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge);
+  }
+
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
+    _systemBars(isShortWindow(context));
     SystemChrome.setSystemUIOverlayStyle(
       p.isDark
           ? SystemUiOverlayStyle.light.copyWith(statusBarColor: Colors.transparent, systemNavigationBarColor: p.nav)
@@ -301,6 +319,84 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
   }
 }
 
+/// Клавиши компьютера (и браузера с клавиатурой). Работают на главных экранах, пока человек не
+/// печатает в поле: 1, 2, 3 — разделы; «/» и Ctrl+F — поиск спортсмена; F — фильтр; R и F5 —
+/// обновить расписание. В «Месяце»: стрелки — день, PageUp и PageDown — месяц, Home — сегодня,
+/// G — выбор месяца. Esc закрывает панель, лист и открытую страницу.
+/// Буквы берутся по месту клавиши, а не по раскладке: в русской «F» — это «А».
+class AppKeys extends StatelessWidget {
+  final GlobalKey<NavigatorState> nav;
+  final AppState state;
+  final Widget child;
+  const AppKeys({super.key, required this.nav, required this.state, required this.child});
+
+  KeyEventResult _onKey(FocusNode node, KeyEvent e) {
+    if (e is KeyUpEvent) return KeyEventResult.ignored;
+    final hk = HardwareKeyboard.instance;
+    if (hk.isAltPressed) return KeyEventResult.ignored;
+    final navigator = nav.currentState;
+    if (navigator == null) return KeyEventResult.ignored;
+    final home = !navigator.canPop();
+    final key = e.physicalKey;
+    if (e.logicalKey == LogicalKeyboardKey.escape) {
+      if (home || e is KeyRepeatEvent) return KeyEventResult.ignored;
+      navigator.maybePop();
+      return KeyEventResult.handled;
+    }
+    final focus = FocusManager.instance.primaryFocus?.context;
+    final typing = focus != null && (focus.widget is EditableText || focus.findAncestorWidgetOfExactType<EditableText>() != null);
+    if (!home || typing) return KeyEventResult.ignored;
+    final mod = hk.isControlPressed || hk.isMetaPressed;
+    final context = navigator.overlay?.context;
+    // стрелки с удержанием листают дальше; остальное — по одному нажатию
+    if (homeTab.value == tabMonth && !mod) {
+      final cmd = switch (e.logicalKey) {
+        LogicalKeyboardKey.arrowLeft => 'day-1',
+        LogicalKeyboardKey.arrowRight => 'day+1',
+        LogicalKeyboardKey.arrowUp => 'week-1',
+        LogicalKeyboardKey.arrowDown => 'week+1',
+        LogicalKeyboardKey.pageUp => 'month-1',
+        LogicalKeyboardKey.pageDown => 'month+1',
+        LogicalKeyboardKey.home => 'today',
+        _ => key == PhysicalKeyboardKey.keyG ? 'pick' : null,
+      };
+      if (cmd != null) {
+        monthCommand.value = cmd;
+        return KeyEventResult.handled;
+      }
+    }
+    if (e is KeyRepeatEvent) return KeyEventResult.ignored;
+    final tab = switch (key) {
+      PhysicalKeyboardKey.digit1 || PhysicalKeyboardKey.numpad1 => 0,
+      PhysicalKeyboardKey.digit2 || PhysicalKeyboardKey.numpad2 => tabMonth,
+      PhysicalKeyboardKey.digit3 || PhysicalKeyboardKey.numpad3 => tabSettings,
+      _ => null,
+    };
+    if (tab != null) {
+      homeTab.value = tab;
+      return KeyEventResult.handled;
+    }
+    if (context == null || state.data == null) return KeyEventResult.ignored;
+    if ((key == PhysicalKeyboardKey.keyF && mod) || (key == PhysicalKeyboardKey.slash && !mod)) {
+      showAthleteSearch(context, state);
+      return KeyEventResult.handled;
+    }
+    if (mod) return KeyEventResult.ignored;
+    if (key == PhysicalKeyboardKey.keyF) {
+      showFilters(context, state);
+      return KeyEventResult.handled;
+    }
+    if (key == PhysicalKeyboardKey.keyR || e.logicalKey == LogicalKeyboardKey.f5) {
+      state.load();
+      return KeyEventResult.handled;
+    }
+    return KeyEventResult.ignored;
+  }
+
+  @override
+  Widget build(BuildContext context) => Focus(canRequestFocus: false, skipTraversal: true, onKeyEvent: _onKey, child: child);
+}
+
 /// Панель разделов слева, когда снизу ей не место: компьютер и планшет — широкая, телефон
 /// боком — узкая. Содержимое — колонкой по центру остального места, а не растянутое на всё окно.
 /// Дерево одно и то же при любой форме окна: поворот телефона не пересоздаёт навигатор —
@@ -331,7 +427,9 @@ class AppFrame extends StatelessWidget {
           },
           Expanded(
             child: ColoredBox(
-              color: !framed ? p.bg : (p.isDark ? p.bgTop : p.line.withValues(alpha: .5)),
+              // один цвет на всё окно: ни место под кнопки системы у телефона боком, ни поля вокруг
+              // колонки на компьютере не выглядят отдельными полосами
+              color: p.bg,
               // слева вырез камеры обошла панель; справа его (и кнопки системы) обходит колонка
               child: Padding(
                 padding: EdgeInsets.only(right: framed ? MediaQuery.paddingOf(context).right : 0),
@@ -339,13 +437,9 @@ class AppFrame extends StatelessWidget {
                   context: context,
                   removeLeft: framed,
                   removeRight: framed,
-                  // телефон боком — во всю ширину: поля по краям отняли бы место, которого и так мало
-                  child: Center(
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(maxWidth: place == NavPlace.side ? 720 : double.infinity),
-                      child: ClipRect(child: child),
-                    ),
-                  ),
+                  // во всю ширину: телефону боком поля по краям ни к чему, а на компьютере шапка идёт
+                  // на всё окно — колонкой по центру экраны кладут только списки (centeredSlivers)
+                  child: ClipRect(child: child),
                 ),
               ),
             ),

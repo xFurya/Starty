@@ -7,6 +7,8 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
+import 'board_proxy.dart';
+
 import 'data.dart';
 import 'protocol_model.dart';
 
@@ -33,6 +35,16 @@ final class LiveOk extends LiveResult {
 
   /// Все строки сегмента (место, имя, страна, баллы), не только тройка.
   final List<Placing> rows;
+
+  /// Время самого табло: когда страница сегмента обновилась (Last-Modified или «Обновлено» внизу
+  /// страницы). null — табло его не пишет.
+  final DateTime? stamp;
+
+  /// Кто выступает следующим — табло во время старта пишет «Далее: …» («Next»); null — не пишет.
+  final String? next;
+
+  /// Разминка следующего ещё идёт.
+  final bool warmup;
   const LiveOk({
     required this.podium,
     required this.provisional,
@@ -40,6 +52,9 @@ final class LiveOk extends LiveResult {
     this.places = const {},
     this.total,
     this.finals = const {},
+    this.stamp,
+    this.next,
+    this.warmup = false,
   });
 
   /// На диск — чтобы итоги, уже показанные с табло, не пропадали при перезапуске без сети.
@@ -50,6 +65,7 @@ final class LiveOk extends LiveResult {
     'places': places,
     if (total != null) 'total': [for (final p in total!) p.toJson()],
     'finals': finals,
+    if (stamp != null) 'stamp': stamp!.toUtc().toIso8601String(),
   };
 
   /// Не разобралось — null (такая запись просто не восстанавливается).
@@ -65,6 +81,7 @@ final class LiveOk extends LiveResult {
         places: ints(j['places'] ?? const {}),
         total: j['total'] == null ? null : list(j['total']),
         finals: ints(j['finals'] ?? const {}),
+        stamp: j['stamp'] is String ? DateTime.tryParse(j['stamp'] as String) : null,
       );
     } catch (_) {
       return null;
@@ -72,9 +89,15 @@ final class LiveOk extends LiveResult {
   }
 }
 
-/// Прокатов ещё нет (стартовый лист, пустая таблица) — прошлое состояние не меняем.
+/// Прокатов ещё нет (стартовый лист, пустая таблица) — прошлое состояние не меняем. Табло уже
+/// может писать, кто выходит ([next]), и своё время ([stamp]).
 final class LiveNone extends LiveResult {
-  const LiveNone();
+  final String? next;
+  final DateTime? stamp;
+
+  /// Разминка следующего ещё идёт.
+  final bool warmup;
+  const LiveNone({this.next, this.stamp, this.warmup = false});
 }
 
 /// Сеть, таймаут или ошибка сервера табло — прошлое состояние не меняем.
@@ -89,6 +112,45 @@ final class LiveFormat extends LiveResult {
 
 /// Исход чтения одной страницы табло.
 enum LiveFetch { ok, none, net }
+
+final _footerStamp = RegExp(
+  r'(?:Last\s+Update|Обновлено)\s*:?\s*(\d{1,2})\.(\d{1,2})\.(\d{4})\s+(\d{1,2}):(\d{2})(?::(\d{2}))?\s*\(\s*UTC\s*([+\-−])\s*(\d{1,2}):?(\d{2})',
+  caseSensitive: false,
+);
+
+/// «Sun, 08 Nov 2026 06:47:52 GMT» (RFC 1123) — без dart:io, его нет в браузере.
+final _httpDate = RegExp(r'(\d{1,2}) ([A-Za-z]{3}) (\d{4}) (\d{2}):(\d{2}):(\d{2}) GMT');
+
+/// Когда табло обновило страницу. Swiss Timing пишет внизу «Last Update: 08.11.2026 14:48 (UTC +08:00)»
+/// или «Обновлено: …» — время и пояс машины табло, они согласованы между собой (пояс в оглавлении
+/// бывает чужим, а здесь — нет). Заголовок Last-Modified точнее (секунды) — он главнее, если есть.
+DateTime? boardStamp(String? page, {String? lastModified}) {
+  final lm = _httpDate.firstMatch(lastModified ?? '');
+  if (lm != null) {
+    final mon = const ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'].indexOf(lm[2]!.toLowerCase());
+    if (mon >= 0) return DateTime.utc(int.parse(lm[3]!), mon + 1, int.parse(lm[1]!), int.parse(lm[4]!), int.parse(lm[5]!), int.parse(lm[6]!));
+  }
+  if (page == null) return null;
+  final m = _footerStamp.firstMatch(_unescape(page.replaceAll(_tag, ' ')));
+  if (m == null) return null;
+  int g(int i) => int.parse(m[i]!);
+  final sign = m[7] == '+' ? 1 : -1;
+  final offset = Duration(hours: g(8), minutes: g(9)) * sign;
+  try {
+    final local = DateTime.utc(g(3), g(2), g(1), g(4), g(5), m[6] == null ? 0 : g(6));
+    return local.subtract(offset);
+  } catch (_) {
+    return null;
+  }
+}
+
+/// Адрес страницы табло для запроса: метка против кэша по пути (у ISU CDN держит страницу 10 с);
+/// в браузере — через наш прокси (board_proxy.dart), иначе табло не пускает чужой сайт.
+String boardUrl(String url) {
+  final u = Uri.parse(url);
+  final fresh = u.replace(queryParameters: {...u.queryParameters, '_': '${DateTime.now().millisecondsSinceEpoch ~/ 5000}'});
+  return BoardProxy.wrap(fresh.toString());
+}
 
 final _script = RegExp(r'<(script|style)[^>]*>.*?</\1>', dotAll: true, caseSensitive: false);
 final _nested = RegExp(
@@ -243,6 +305,41 @@ bool _hasComponents(List<String> header) => header.any((h) => h.trim().startsWit
   return (pick.$1, rows);
 }
 
+final _nextHead = RegExp(r'^(?:Далее|Следующ\w*|Next(?:\s+Skater)?|On\s+Ice|На\s+льду)\s*:?$', caseSensitive: false);
+
+final _warmRow = RegExp(r'Warm-?Up\s*Group|Разминка|Группа\s+разминки', caseSensitive: false);
+
+/// Кто выступает следующим: во время старта табло Swiss Timing показывает «Текущие результаты» и над
+/// оставшимся стартовым порядком — «Далее:» («Next:») и строку с именем и страной. [warmup] — его
+/// разминка ещё идёт: строка «Warm-Up Group N» стоит в оставшемся порядке перед ним (табло убирает
+/// её, когда разминка кончилась — с этого момента он и выходит на лёд). null — табло не пишет.
+({String name, bool warmup})? nextInfo(String page) {
+  final rows = _rows(page);
+  for (var i = 0; i + 1 < rows.length; i++) {
+    final head = rows[i].where((c) => c.isNotEmpty).toList();
+    if (head.length != 1 || !_nextHead.hasMatch(head.first)) continue;
+    final cells = rows[i + 1].where((c) => c.isNotEmpty).toList();
+    if (cells.isEmpty || _digits.hasMatch(cells.first)) return null;
+    final name = cells.first;
+    var warm = false;
+    for (var j = i + 2; j < rows.length; j++) {
+      final line = rows[j].join(' ');
+      if (_warmRow.hasMatch(line)) {
+        warm = true;
+      } else if (rows[j].contains(name)) {
+        return (name: name, warmup: warm);
+      } else if (rows[j].any((c) => c.isNotEmpty && _digits.hasMatch(c))) {
+        warm = false; // строка другого спортсмена: разминка над ним — не его
+      }
+    }
+    return (name: name, warmup: false);
+  }
+  return null;
+}
+
+/// Кто выступает следующим (см. [nextInfo]); null — табло не пишет.
+String? nextOnIce(String page) => nextInfo(page)?.name;
+
 /// Протокол сегмента по местам; null — прокатов ещё не было.
 List<LiveRow>? segmentResults(String page) =>
     _resultTable(page, {'TSS', 'Сумма', 'Points', 'Баллы'}, segment: true)?.$2;
@@ -314,17 +411,20 @@ class Live {
   /// Клиент — подменяется в тестах (MockClient).
   static http.Client client = http.Client();
 
-  /// Страница табло: 200 — текст, 404/410 — страницы нет, остальное (сеть, таймаут, 5xx) — net.
-  static Future<(LiveFetch, String?)> _get(String url) async {
+  /// Страница табло: 200 — текст и время табло, 404/410 — страницы нет, остальное (сеть, таймаут, 5xx) — net.
+  static Future<(LiveFetch, String?, DateTime?)> _get(String url) async {
     try {
       final r = await client
-          .get(Uri.parse(url), headers: {'Cache-Control': 'no-cache'})
+          .get(Uri.parse(boardUrl(url)), headers: BoardProxy.headers)
           .timeout(const Duration(seconds: 15));
-      if (r.statusCode == 404 || r.statusCode == 410) return (LiveFetch.none, null);
-      if (r.statusCode != 200) return (LiveFetch.net, null);
-      return (LiveFetch.ok, decodeTablo(r.bodyBytes));
+      BoardProxy.saw(r);
+      if (r.statusCode == 404 || r.statusCode == 410) return (LiveFetch.none, null, null);
+      if (r.statusCode != 200) return (LiveFetch.net, null, null);
+      final page = decodeTablo(r.bodyBytes);
+      return (LiveFetch.ok, page, boardStamp(page, lastModified: r.headers['last-modified']));
     } catch (_) {
-      return (LiveFetch.net, null);
+      BoardProxy.failed();
+      return (LiveFetch.net, null, null);
     }
   }
 
@@ -332,23 +432,26 @@ class Live {
   static Future<LiveResult> poll(Start s) async {
     final src = s.live;
     if (src == null || src.seg.isEmpty) return const LiveNone();
-    final (kind, page) = await _get(src.seg);
+    final (kind, page, stamp) = await _get(src.seg);
     if (kind == LiveFetch.net) return const LiveNet();
     if (kind == LiveFetch.none || page == null) return const LiveNone();
     if (!_table.hasMatch(page)) return const LiveFormat();
+    String ru(String latin) => src.names[latin] ?? titledName(latin);
+    final onIce = nextInfo(page);
+    final next = onIce == null ? null : ru(onIce.name);
+    final warm = onIce?.warmup ?? false;
     final rows = segmentResults(page);
-    if (rows == null || rows.isEmpty) return const LiveNone();
+    if (rows == null || rows.isEmpty) return LiveNone(next: next, stamp: stamp, warmup: warm);
     // судейские оценки (или время, если сборщик включил такой режим) — окончательно
     final basis = src.basis;
     final done = basis == 'judges' || basis == 'time';
-    String ru(String latin) => src.names[latin] ?? titledName(latin);
     final podium = [for (final r in rows.take(3)) Placing(r.place, ru(r.name), r.nation, r.points)];
     final places = {for (final r in rows) norm(ru(r.name)): r.place};
     List<Placing>? total;
     var finals = const <String, int>{};
     if (done && src.cat != null && s.total.isEmpty) {
       // итог вида — только при окончательном сегменте; сбой итога не понижает ничего
-      final (catKind, cat) = await _get(src.cat!);
+      final (catKind, cat, _) = await _get(src.cat!);
       if (catKind == LiveFetch.ok && cat != null) {
         final (all, complete) = categoryResults(cat);
         if (complete) {
@@ -358,6 +461,6 @@ class Live {
       }
     }
     final all = [for (final r in rows) Placing(r.place, ru(r.name), r.nation, r.points)];
-    return LiveOk(podium: podium, provisional: !done, rows: all, places: places, total: total, finals: finals);
+    return LiveOk(podium: podium, provisional: !done, rows: all, places: places, total: total, finals: finals, stamp: stamp, next: next, warmup: warm);
   }
 }

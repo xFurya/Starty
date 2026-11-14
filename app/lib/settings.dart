@@ -106,7 +106,7 @@ class SettingsView extends StatelessWidget {
     final planned = state.planned.where((x) => x.at.isAfter(t)).toList();
     final p = Palette.of(context);
     return CustomScrollView(
-      slivers: [
+      slivers: centeredSlivers([
         const SliverToBoxAdapter(
           child: IceHero(eyebrow: 'Фигурное катание', title: 'Настройки', sparkles: 2),
         ),
@@ -384,8 +384,67 @@ class SettingsView extends StatelessWidget {
                   ),
           ),
         ),
+        // ---------------------------------------------------------- клавиши (компьютер)
+        if (hasKeys(context)) ...[
+          const SliverToBoxAdapter(child: _Head('Клавиши')),
+          const SliverToBoxAdapter(child: KeysPlate()),
+        ],
         SliverToBoxAdapter(child: SizedBox(height: 32 + MediaQuery.paddingOf(context).bottom)),
-      ],
+      ]),
+    );
+  }
+}
+
+/// Какие клавиши работают на компьютере: слева клавиши, справа — что они делают.
+class KeysPlate extends StatelessWidget {
+  const KeysPlate({super.key});
+
+  static const keys = [
+    (['1', '2', '3'], 'Лента, месяц, настройки'),
+    (['/'], 'Найти спортсмена'),
+    (['F'], 'Фильтр'),
+    (['R'], 'Обновить расписание'),
+    (['←', '→', '↑', '↓'], 'В месяце: день и неделя'),
+    (['PageUp', 'PageDown'], 'В месяце: предыдущий и следующий месяц'),
+    (['Home'], 'В месяце: сегодня'),
+    (['G'], 'В месяце: выбрать месяц и год'),
+    (['Esc'], 'Закрыть панель или вернуться назад'),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    Widget cap(String k) => Container(
+      constraints: const BoxConstraints(minWidth: 30),
+      height: 28,
+      margin: const EdgeInsets.only(right: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: p.frost,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: p.plateLine),
+      ),
+      child: Text(k, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: p.ink, height: 1)),
+    );
+    return Plate(
+      padding: const EdgeInsets.symmetric(vertical: 6),
+      child: Column(
+        children: [
+          for (var i = 0; i < keys.length; i++) ...[
+            if (i > 0) const Hairline(indent: 16),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 9, 16, 9),
+              child: Row(
+                children: [
+                  SizedBox(width: 196, child: Row(children: [for (final k in keys[i].$1) cap(k)])),
+                  Expanded(child: Text(keys[i].$2, style: TextStyle(fontSize: 14.5, color: p.ink2, height: 1.3))),
+                ],
+              ),
+            ),
+          ],
+        ],
+      ),
     );
   }
 }
@@ -973,7 +1032,7 @@ class _SettingsPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    ...slivers,
+                    ...centeredSlivers(slivers, skip: 0),
                     const SliverToBoxAdapter(child: SizedBox(height: 24)),
                   ],
                 ),
@@ -1161,6 +1220,15 @@ class _NotifyPageState extends State<_NotifyPage> {
                     subtitle: r.skaters ? 'старт — до конца, спортсмен — до выхода на лёд' : 'до конца старта',
                     value: r.pin,
                     onChanged: (v) => _set(r.copyWith(pin: v)),
+                  ),
+                  const Hairline(),
+                  // новый вид уведомления о старте: своя раскладка вместо заголовка и строки
+                  _SwitchRow(
+                    icon: CupertinoIcons.rectangle_stack,
+                    title: 'Карточка старта',
+                    subtitle: 'отсчёт до начала, метка «идёт», отслеживаемые по строкам',
+                    value: r.card,
+                    onChanged: (v) => _set(r.copyWith(card: v)),
                   ),
                   if (r.skaters) ...[
                     const Hairline(),

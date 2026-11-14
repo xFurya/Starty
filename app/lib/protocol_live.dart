@@ -7,6 +7,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
+import 'board_proxy.dart';
 import 'data.dart';
 import 'live.dart';
 
@@ -207,12 +208,59 @@ List<_Cat> _parseIndex(String page, Uri base) {
   return cats;
 }
 
-String? _segCode(String name) => _segEn[name.trim().toLowerCase()];
+/// Код сегмента по названию — английскому (ISU) или русскому (ФФККР, ФФКМ: «Короткая программа»,
+/// «Ритм-танец», «Произвольный танец»), как у сборщика (build.seg_code, fsr.segment_of).
+String? _segCode(String name) {
+  final n = fixScript(name).trim().toLowerCase();
+  final en = _segEn[n];
+  if (en != null) return en;
+  if (RegExp(r'ритм|ритмическ').hasMatch(n)) return 'РТ';
+  if (RegExp(r'произвольн\w*\s+танец|произвольный\s+т').hasMatch(n)) return 'ПТ';
+  if (RegExp(r'коротк').hasMatch(n)) return 'КП';
+  if (RegExp(r'произвольн').hasMatch(n)) return 'ПП';
+  return null;
+}
 
-/// Вид и уровень по названию категории ISU; null — не наша категория.
+/// Латинские буквы, набранные вместо кириллицы (табло ФФКМ: «Oдинoчнoe», «KMC»): слово с кириллицей —
+/// целиком кириллицей; «MC»/«KMC» — «МС»/«КМС» (swisstiming.fix_script).
+String fixScript(String s) => s.replaceAllMapped(RegExp(r'\S+'), (m) {
+  final w = m[0]!;
+  final cyr = RegExp('[А-Яа-яЁё]').hasMatch(w), lat = RegExp('[A-Za-z]').hasMatch(w);
+  if ((cyr && lat) || RegExp(r'^K?MC[,.;:]?$').hasMatch(w)) {
+    const from = 'AaBEeKMHOoPpCcTXxy', to = 'АаВЕеКМНОоРрСсТХху';
+    return w.split('').map((ch) {
+      final i = from.indexOf(ch);
+      return i < 0 ? ch : to[i];
+    }).join();
+  }
+  return w;
+});
+
+/// Вид и уровень по названию категории — ISU по-английски или ФФККР по-русски («Мужчины - МС»,
+/// «Девушки - КМС», «Танцы на льду - МС»); null — не наша категория (разряды, дети, любители).
 (String, String)? _classify(String name) {
-  final n = name.toLowerCase();
+  final n = fixScript(name).toLowerCase();
+  if (RegExp('[а-яё]').hasMatch(n)) {
+    // ниже КМС в протокол не берём, как сборщик (fsr.low_level)
+    if (RegExp(r'разряд|девочк|мальчик|спецпрограмм|юношеск|любител|новичк').hasMatch(n)) return null;
+    final String kind;
+    if (n.contains('танц')) {
+      kind = 'dance';
+    } else if (n.contains('пар')) {
+      kind = 'pairs';
+    } else if (RegExp(r'девушк|юниорк|женщин').hasMatch(n)) {
+      kind = 'women';
+    } else if (RegExp(r'юнош|юниор|мужчин').hasMatch(n)) {
+      kind = 'men';
+    } else {
+      return null;
+    }
+    final junior = RegExp(r'(^|[^а-яё])кмс([^а-яё]|$)').hasMatch(n) || RegExp(r'девушк|юниорк|юнош|юниор').hasMatch(n);
+    final senior = RegExp(r'(^|[^а-яёк])мс([^а-яё]|$)').hasMatch(n) || RegExp(r'женщин|мужчин').hasMatch(n);
+    return (kind, senior || !junior ? 'senior' : 'junior');
+  }
   final level = n.contains('junior') ? 'junior' : 'senior';
+  if (RegExp(r'novice|basic|intermediate|advanced|adult|masters|cubs|chicks|juvenile|synchro|solo').hasMatch(n)) return null;
   if (n.contains('ice dance') || n.contains('dance')) return ('dance', level);
   if (n.contains('pair')) return ('pairs', level);
   if (n.contains('women') || n.contains('ladies') || n.contains('girls')) return ('women', level);
@@ -226,15 +274,21 @@ class ProtocolLive {
   /// Клиент — подменяется в тестах.
   static http.Client client = http.Client();
 
-  static Future<String?> _page(String url, void Function() fail) async {
+  /// Страница табло и её время (когда табло её обновило); не прочиталась — (null, null).
+  static Future<(String?, DateTime?)> _page(String url, void Function() fail) async {
     try {
-      final r = await client.get(Uri.parse(url), headers: {'Cache-Control': 'no-cache'}).timeout(const Duration(seconds: 15));
-      if (r.statusCode == 200) return decodeTablo(r.bodyBytes);
+      final r = await client.get(Uri.parse(boardUrl(url)), headers: BoardProxy.headers).timeout(const Duration(seconds: 15));
+      BoardProxy.saw(r);
+      if (r.statusCode == 200) {
+        final page = decodeTablo(r.bodyBytes);
+        return (page, boardStamp(page, lastModified: r.headers['last-modified']));
+      }
       if (r.statusCode != 404 && r.statusCode != 410) fail();
     } catch (_) {
+      BoardProxy.failed();
       fail();
     }
-    return null;
+    return (null, null);
   }
 
   /// Файл турнира со свежими страницами табло. [cached] — прежний файл (его детали оценок и имена
@@ -250,12 +304,13 @@ class ProtocolLive {
   }) async {
     var failed = 0;
     void fail() => failed++;
-    final page = await _page(idx, fail);
+    final (page, _) = await _page(idx, fail);
     if (page == null) return null;
     final cats = _parseIndex(page, Uri.parse(idx));
     if (cats.isEmpty) return null;
 
-    // время сегментов: из событий (kind|level|code → начало, конец)
+    // время сегментов: из событий (kind|level|code → начало, конец); конец — с поправкой на темп,
+    // если старт затянулся: иначе идущий сегмент назывался бы «промежуточным» посреди прокатов
     final times = <String, (DateTime, DateTime)>{
       for (final s in starts) '${s.kind}|${s.level}|${s.seg}': (s.t0, s.t1),
     };
@@ -286,11 +341,37 @@ class ProtocolLive {
     }
     String nameOf(String raw) => known[_norm(raw)] ?? titledName(raw);
 
-    final outCats = <Map<String, dynamic>>[];
     final marks = cats.any((c) => c.segs.any((s) => s.judges != null));
-    for (final c in cats) {
+    // все категории — разом: каждая лишняя секунда ожидания — секунда опоздания протокола
+    final built = await Future.wait([
+      for (final c in cats) _category(c, oldCats, times, now, nameOf, fail),
+    ]);
+    final outCats = [for (final c in built) ?c];
+    if (outCats.isEmpty) return null;
+    final doc = <String, dynamic>{
+      'v': cached?['v'] ?? 1,
+      'tid': tid,
+      'tournament': tournament,
+      'src': idx,
+      'built': now.toUtc().toIso8601String(),
+      'marks': marks,
+      'categories': outCats,
+    };
+    return LiveProtocol(doc, failed);
+  }
+
+  /// Категория турнира: сегменты (их страницы — разом) и итог вида; не наша категория — null.
+  static Future<Map<String, dynamic>?> _category(
+    _Cat c,
+    Map<String, Map<String, dynamic>> oldCats,
+    Map<String, (DateTime, DateTime)> times,
+    DateTime now,
+    String Function(String) nameOf,
+    void Function() fail,
+  ) async {
+    {
       final kl = _classify(c.name);
-      if (kl == null) continue;
+      if (kl == null) return null;
       final oc = oldCats['${kl.$1}|${kl.$2}'];
       final oldSegs = <String, Map<String, dynamic>>{
         for (final s in (oc?['segments'] as List? ?? const []))
@@ -311,22 +392,14 @@ class ProtocolLive {
       final started = recs.any((r) => r['state'] != 'scheduled');
       final totalDone = total != null && total['state'] == 'final';
       if (c.results != null && started && !totalDone) {
-        final t = await _page(c.results!, fail);
-        if (t != null) total = _total(t, lastFinal, nameOf) ?? total;
+        final (t, stamp) = await _page(c.results!, fail);
+        if (t != null) {
+          final fresh = _total(t, lastFinal, nameOf);
+          if (fresh != null) total = {...fresh, if (stamp != null) 'stamp': stamp.toUtc().toIso8601String()};
+        }
       }
-      outCats.add({'kind': kl.$1, 'level': kl.$2, 'name': c.name, 'segments': recs, 'total': total});
+      return {'kind': kl.$1, 'level': kl.$2, 'name': c.name, 'segments': recs, 'total': total};
     }
-    if (outCats.isEmpty) return null;
-    final doc = <String, dynamic>{
-      'v': cached?['v'] ?? 1,
-      'tid': tid,
-      'tournament': tournament,
-      'src': idx,
-      'built': now.toUtc().toIso8601String(),
-      'marks': marks,
-      'categories': outCats,
-    };
-    return LiveProtocol(doc, failed);
   }
 
   static Future<Map<String, dynamic>> _segment(
@@ -351,7 +424,7 @@ class ProtocolLive {
     if (start != null && now.isBefore(start)) {
       return _record(seg, code, start, end, 'empty', 'scheduled', null, const [], 0, old);
     }
-    final page = await _page(seg.url, fail);
+    final (page, stamp) = await _page(seg.url, fail);
     if (page == null) return keepOld('net');
     final p = _protocol(page, _segPoints, segment: true);
     final hasRows = p.rows.isNotEmpty;
@@ -372,10 +445,14 @@ class ProtocolLive {
     // страница временно пустая или хуже прежней — прежнее остаётся (как guard сборщика)
     if (old != null && old['state'] == 'final' && state != 'final') return old;
     if (old != null && !hasRows && oldRows.isNotEmpty) return old;
+    // прокатов ещё нет, а табло уже пишет, кто выходит, — сегмент идёт
+    if (!hasRows && state == 'not_published' && nextOnIce(page) != null) state = 'in_progress';
     final rows = [
       for (final r in p.rows) {...r, 'name': nameOf('${r['name']}')},
     ];
-    return _record(seg, code, start, end, p.table, state, basis, rows, p.skipped, old);
+    final onIce = state == 'final' ? null : nextInfo(page);
+    return _record(seg, code, start, end, p.table, state, basis, rows, p.skipped, old,
+        stamp: stamp, next: onIce == null ? null : nameOf(onIce.name), warmup: onIce?.warmup ?? false);
   }
 
   /// Запись сегмента; детали оценок и бригада судей — из прежнего файла, если человек тот же.
@@ -389,8 +466,11 @@ class ProtocolLive {
     String? basis,
     List<Map<String, dynamic>> rows,
     int skipped,
-    Map<String, dynamic>? old,
-  ) {
+    Map<String, dynamic>? old, {
+    DateTime? stamp,
+    String? next,
+    bool warmup = false,
+  }) {
     final oldByKey = <String, Map>{
       for (final r in (old?['rows'] as List? ?? const []))
         if (r is Map && r['els'] != null) '${r['place']}|${_norm('${r['name']}')}': r,
@@ -419,6 +499,11 @@ class ProtocolLive {
       'skipped': skipped,
       'rows': merged,
       if (old?['panel'] != null) 'panel': old!['panel'],
+      // время табло: когда страница сегмента обновилась — «Табло от 14:52» на экране протокола
+      if ((stamp?.toUtc().toIso8601String() ?? old?['stamp']) case final String st) 'stamp': st,
+      // кто выходит на лёд по табло («Далее: …»)
+      'next': ?next,
+      if (next != null && warmup) 'nextWarmup': true,
     };
   }
 

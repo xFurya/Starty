@@ -231,7 +231,7 @@ void main() {
       await pumpScreen(tester, s: start(), repo: repoWith(withState('in_progress')));
       // «Идёт» — меткой, время обновления — отдельно справа
       expect(find.text('ИДЁТ'), findsOneWidget);
-      expect(find.text('Обновлено 21:56'), findsOneWidget);
+      expect(find.textContaining(RegExp(r'^Обновлено .*21:56$')), findsOneWidget);
       expect(find.textContaining('ромежуточ'), findsNothing);
       expectNoHorizontalScroll(tester);
     });
@@ -241,27 +241,31 @@ void main() {
       await pumpScreen(tester, s: start(field: field), repo: repoWith(withState('in_progress')));
       final n = ((_seg(withState('in_progress'))['rows']) as List).length;
       expect(find.text('Выступили $n из 5'), findsOneWidget);
-      expect(find.text('Обновлено 21:56'), findsOneWidget);
+      expect(find.textContaining(RegExp(r'^Обновлено .*21:56$')), findsOneWidget);
     });
 
-    testWidgets('собран на устройстве с табло — «С табло», а не «Обновлено»', (tester) async {
-      final doc = ProtocolDoc.fromJson(withState('in_progress'));
+    testWidgets('время табло — «Табло от …» по времени самой страницы табло, а не сборки файла', (tester) async {
+      final j = withState('in_progress');
+      _seg(j)['stamp'] = '2026-10-15T18:52:00Z';
+      final doc = ProtocolDoc.fromJson(j);
       await pumpScreen(tester, s: start(), repo: _Fixed(ProtocolOk(doc, _now, board: true)), width: 360, scale: 1.3);
-      expect(find.text('С табло 21:56'), findsOneWidget);
+      expect(find.textContaining(RegExp(r'^Табло от .*21:52$')), findsOneWidget);
       expect(find.textContaining('Обновлено'), findsNothing);
       expectNoHorizontalScroll(tester);
     });
 
-    testWidgets('табло не ответило — так и сказано, показан файл', (tester) async {
+    testWidgets('с табло собрать не вышло — о сбое ни слова, только от какого времени файл', (tester) async {
       final doc = ProtocolDoc.fromJson(withState('in_progress'));
       await pumpScreen(tester, s: start(), repo: _Fixed(ProtocolOk(doc, _now, board: false)), width: 360, scale: 1.3);
-      expect(find.text('Табло не ответило, файл 21:56'), findsOneWidget);
+      expect(find.textContaining(RegExp(r'^Обновлено .*21:56$')), findsOneWidget);
+      expect(find.textContaining('не ответ'), findsNothing);
+      expect(find.textContaining('Нет связи'), findsNothing);
       expectNoHorizontalScroll(tester);
     });
 
     testWidgets('сегмент прошёл, оценок нет — без пометки статуса, только время обновления', (tester) async {
       await pumpScreen(tester, s: start(), repo: repoWith(withState('provisional', basis: null)));
-      expect(find.text('Обновлено 21:56'), findsOneWidget);
+      expect(find.textContaining(RegExp(r'^Обновлено .*21:56$')), findsOneWidget);
       expect(find.textContaining('ромежуточ'), findsNothing);
     });
 
@@ -272,7 +276,8 @@ void main() {
         repo: repoWith(withState('not_published')),
       );
       expect(find.text('Протокола пока нет'), findsOneWidget);
-      expect(find.text('СОСТАВ ПО ЗАЯВКЕ'), findsOneWidget);
+      // время выхода известно — стартовый порядок
+      expect(find.text('СТАРТОВЫЙ ПОРЯДОК'), findsOneWidget);
       expect(find.text('Полина Жарова / Алексей Столяров'), findsOneWidget);
       expect(find.textContaining('отслеживаем'), findsNothing); // отслеживаемые только выделены, без слов
       expectNoHorizontalScroll(tester);
@@ -297,10 +302,13 @@ void main() {
         repo: repoWith(withState('not_published')),
         state: state,
       );
-      expect(find.text('По табло'), findsOneWidget);
+      // строки с табло — как протокол идущего сегмента: метка «Идёт», сколько выступило, кто ещё выйдет
+      expect(find.text('ИДЁТ'), findsOneWidget);
       expect(find.text('Выступили 2 из 3'), findsOneWidget);
       expect(find.text('70.10'), findsOneWidget);
       expect(find.text('65.00'), findsOneWidget);
+      expect(find.text('ЕЩЁ ВЫСТУПЯТ'), findsOneWidget);
+      expect(find.text('Третья Пара / Партнёр'), findsOneWidget);
       expect(find.textContaining('Протокола пока нет'), findsNothing);
       expectNoHorizontalScroll(tester);
     });
@@ -368,6 +376,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text('Протокола и заявки пока нет'), findsOneWidget);
       expect(find.text('СОСТАВ ПО ЗАЯВКЕ'), findsNothing);
+      expect(find.text('СТАРТОВЫЙ ПОРЯДОК'), findsNothing);
       expect(find.text('Анна Билибина / Дмитрий Кашаев'), findsNothing);
     });
 
@@ -402,11 +411,12 @@ void main() {
       // первая загрузка — в кэш; перезагружаем: сети нет
       await tester.tap(find.byTooltip('Обновить'));
       await tester.pumpAndSettle();
-      expect(find.text('Нет связи'), findsOneWidget);
-      expect(find.text('сохранено 15.10, 22:00'), findsOneWidget);
+      // о сбоях не рассказываем: окончательный — окончательный, строки из кэша, «Повторить» остаётся
+      expect(find.text('Окончательный'), findsOneWidget);
+      expect(find.textContaining('Нет связи'), findsNothing);
       expect(find.text('66.36'), findsOneWidget);
       expect(find.text('Повторить'), findsOneWidget);
-      expect(find.text('Нет связи, протокол не обновился'), findsOneWidget);
+      expect(find.text('Нового нет'), findsOneWidget);
     });
 
     // До старта и после окончательных итогов статус после нажатия тот же — без итога внизу
@@ -748,10 +758,10 @@ void main() {
         await tester.tap(find.byTooltip('Обновить'));
         await tester.pumpAndSettle();
         expect(opened, isEmpty);
-        final net = c.$2 == null || c.$2 == 'timeout' || c.$2 == 500;
-        expect(find.text(net ? 'Нет связи' : 'Сохранённая версия'), findsOneWidget);
-        expect(find.text('сохранено 15.10, 22:00'), findsOneWidget);
-        expect(find.textContaining(net ? 'Сохранённая' : 'Нет связи'), findsNothing, reason: 'связь упоминается только при сетевом сбое');
+        // о сбое ни слова: окончательный сохранённый протокол — тот же окончательный
+        expect(find.text('Окончательный'), findsOneWidget);
+        expect(find.textContaining('Нет связи'), findsNothing);
+        expect(find.textContaining('Сохранённая'), findsNothing);
         expect(find.text('66.36'), findsOneWidget);
         expect(find.text('Повторить'), findsOneWidget);
         expectNoHorizontalScroll(tester);

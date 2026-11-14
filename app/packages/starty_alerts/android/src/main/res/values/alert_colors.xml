@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Цвета карточки уведомления (светлая тема): метка «через …» — лёд, «идёт» — красная, как в приложении. -->
+<resources>
+    <color name="alert_soon_bg">#1F1F66B5</color>
+    <color name="alert_soon_text">#FF1A56A0</color>
+    <color name="alert_live_bg">#FFD93A3A</color>
+    <color name="alert_live_text">#FFFFFFFF</color>
+</resources>

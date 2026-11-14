@@ -287,7 +287,9 @@ class Plate extends StatelessWidget {
           colors: p.isDark ? [const Color(0xFF0F2134), p.plate] : [p.plate, const Color(0xFFFAFCFE)],
         ),
       ),
-      child: child,
+      // компьютер: строка под мышью подсвечивается — для этого чернилам нужен свой слой поверх
+      // плашки (иначе они рисуются под её фоном и не видны); на телефоне всё как было
+      child: hasKeys(context) ? Material(type: MaterialType.transparency, child: child) : child,
     );
   }
 }
@@ -387,6 +389,31 @@ NavPlace navPlace(BuildContext context) {
   return MediaQuery.sizeOf(context).width >= wideWindow ? NavPlace.side : NavPlace.bottom;
 }
 
+/// Колонка содержимого на компьютере: шапка экрана идёт во всю ширину окна, а списки под ней —
+/// колонкой по центру, не шире [max]. Первые [skip] частей (шапка) не трогаем. На телефоне ширина
+/// меньше [max], и поля нулевые — раскладка та же.
+List<Widget> centeredSlivers(List<Widget> slivers, {double max = 720, int skip = 1}) => [
+  for (var i = 0; i < slivers.length; i++)
+    if (i < skip)
+      slivers[i]
+    else
+      SliverLayoutBuilder(
+        builder: (context, c) => SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: math.max(0, (c.crossAxisExtent - max) / 2)),
+          sliver: slivers[i],
+        ),
+      ),
+];
+
+/// Есть ли у окна клавиатура и мышь: компьютер или широкое окно браузера.
+bool hasKeys(BuildContext context) => navPlace(context) == NavPlace.side;
+
+/// Подсказка кнопки с клавишей: «Фильтр (F)» — только там, где клавиши есть.
+String keyTip(BuildContext context, String text, String key) => hasKeys(context) ? '$text ($key)' : text;
+
+/// Команда клавиатуры вкладке «Месяц»: day-1, day+1, week-1, week+1, month-1, month+1, today, pick.
+final monthCommand = ValueNotifier<String?>(null);
+
 /// Шапка экрана: фото катка (светлое / ночное), фигуристка из иконки, заголовок антиквой.
 /// Высота — не меньше [height]: крупный шрифт шапку растягивает, а не обрезает.
 /// Телефон боком — шапка в одну строку: название, рядом подпись, кнопки справа.
@@ -401,6 +428,12 @@ class IceHero extends StatelessWidget {
 
   /// Кнопка слева вверху («‹ Настройки»).
   final Widget? leading;
+
+  /// Название нажимается («Ноябрь» — выбрать месяц): рядом с ним стрелка вниз.
+  final VoidCallback? onTitle;
+
+  /// Что будет по нажатию на название — для диктора и подсказки мыши.
+  final String? titleHint;
   const IceHero({
     super.key,
     required this.eyebrow,
@@ -411,7 +444,39 @@ class IceHero extends StatelessWidget {
     this.figure = false,
     this.sparkles = 0,
     this.leading,
+    this.onTitle,
+    this.titleHint,
   });
+
+  /// Название; с [onTitle] — кнопкой со стрелкой.
+  Widget _title(Palette p, double size) {
+    final text = Text(title, maxLines: 1, style: display(p, size));
+    if (onTitle == null) return text;
+    return Tooltip(
+      message: titleHint ?? '',
+      child: Semantics(
+        button: true,
+        label: titleHint == null ? title : '$title, $titleHint',
+        excludeSemantics: true,
+        child: InkWell(
+          onTap: onTitle,
+          borderRadius: BorderRadius.circular(12),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              text,
+              SizedBox(width: size * .2),
+              Padding(
+                padding: EdgeInsets.only(top: size * .14),
+                child: Icon(CupertinoIcons.chevron_down, size: size * .42, color: p.ink2),
+              ),
+              const SizedBox(width: 4),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -454,7 +519,7 @@ class IceHero extends StatelessWidget {
                   FittedBox(
                     fit: BoxFit.scaleDown,
                     alignment: Alignment.centerLeft,
-                    child: Text(title, maxLines: 1, style: display(p, titleSize)),
+                    child: _title(p, titleSize),
                   ),
                 ],
               ),
@@ -483,7 +548,7 @@ class IceHero extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.baseline,
         textBaseline: TextBaseline.alphabetic,
         children: [
-          Text(title, maxLines: 1, style: display(p, titleSize * .72)),
+          _title(p, titleSize * .72),
           if (eyebrow.isNotEmpty) ...[
             const SizedBox(width: 12),
             Eyebrow(eyebrow, color: p.isDark ? p.ink2 : p.accent),
@@ -665,11 +730,21 @@ class SheetSparkles extends StatelessWidget {
 }
 
 /// Ручка листа: закреплена поверх содержимого, не уезжает при прокрутке.
+/// Содержимое показано панелью на компьютере, а не листом: ручки для пальца у панели нет.
+class PanelScope extends InheritedWidget {
+  const PanelScope({super.key, required super.child});
+  static bool of(BuildContext context) => context.getInheritedWidgetOfExactType<PanelScope>() != null;
+  @override
+  bool updateShouldNotify(PanelScope oldWidget) => false;
+}
+
 class SheetHandle extends StatelessWidget {
   const SheetHandle({super.key});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
+    // панель на компьютере не тянут — на месте ручки остаётся только её высота
+    if (PanelScope.of(context)) return const SizedBox(height: 14);
     return IgnorePointer(
       child: Center(
         child: Container(
@@ -1568,13 +1643,14 @@ class RailNav extends StatelessWidget {
     final pad = MediaQuery.paddingOf(context);
     return ValueListenableBuilder<int>(
       valueListenable: homeTab,
+      // цвет — как у страницы: панель и место под вырез камеры не выглядят отдельной белой полосой
       builder: (context, index, _) => Material(
-        color: p.nav,
+        color: p.bg,
         child: Container(
           width: width + pad.left,
           decoration: BoxDecoration(
-            color: p.nav,
-            border: Border(right: BorderSide(color: p.plateLine, width: 1)),
+            color: p.bg,
+            border: Border(right: BorderSide(color: p.line, width: 1)),
           ),
           padding: EdgeInsets.fromLTRB(pad.left, pad.top, 0, pad.bottom),
           child: LayoutBuilder(

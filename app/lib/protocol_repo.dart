@@ -73,22 +73,27 @@ class ProtocolRepo {
   /// протокол ещё и собирается на устройстве прямо с табло турнира (protocol_live.dart) и
   /// сливается с файлом: берётся то, что новее и полнее. Так протокол не зависит от нашего сервера.
   Future<ProtocolLoad> load(String proto, {Start? start, Iterable<Start> starts = const [], bool device = false}) async {
-    final srv = await _loadServer(proto);
     final idx = start?.live?.idx;
-    if (!device || start == null || idx == null || idx.isEmpty) return srv;
-    final base = (await _readCache(proto))?.raw;
-    final built = await ProtocolLive.build(
-      tid: start.tid,
-      tournament: start.tournament,
-      idx: idx,
-      starts: starts.where((x) => x.tid == start.tid),
-      cached: base,
-      now: _now(),
-    );
-    // с табло не вышло — файл сервера, но честно: экран скажет, что табло не ответило
+    if (!device || start == null || idx == null || idx.isEmpty) return _loadServer(proto);
+    // файл сайта и табло — разом: ждать одно, потом другое — лишние секунды опоздания протокола
+    final cachedBefore = (await _readCache(proto))?.raw;
+    final (srv, built) = await (
+      _loadServer(proto),
+      ProtocolLive.build(
+        tid: start.tid,
+        tournament: start.tournament,
+        idx: idx,
+        starts: starts.where((x) => x.tid == start.tid),
+        cached: cachedBefore,
+        now: _now(),
+      ),
+    ).wait;
+    // с табло не вышло — файл сайта; от какого он времени, экран скажет сам
     ProtocolLoad noBoard() => srv is ProtocolOk ? ProtocolOk(srv.doc, srv.fetchedAt, board: false) : srv;
     if (built == null) return noBoard();
     try {
+      // поверх того, что уже легло в кэш вместе с файлом сайта: из двух — что новее и полнее
+      final base = (await _readCache(proto))?.raw;
       final (json, _) = base == null ? (built.json, false) : mergeJson(base, built.json);
       final doc = ProtocolDoc.fromJson(json);
       await _writeCache(proto, jsonEncode(json));
@@ -157,6 +162,11 @@ class ProtocolRepo {
   static bool _oldRicher(Map old, Map fresh, Map<String, int> rank) {
     final o = rank[old['state']] ?? 0, f = rank[fresh['state']] ?? 0;
     if (o != f) return o > f;
+    // то же состояние и столько же строк, а табло прежней версии новее (сайт отстаёт от устройства)
+    if (f != rank['final'] && _rows(old) == _rows(fresh)) {
+      final os = DateTime.tryParse('${old['stamp']}'), fs = DateTime.tryParse('${fresh['stamp']}');
+      if (os != null && fs != null && os.isAfter(fs)) return true;
+    }
     return f != rank['final'] && _rows(old) > _rows(fresh);
   }
 

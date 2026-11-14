@@ -180,6 +180,15 @@ class ProtocolSegment {
   /// Судейская бригада сегмента; пусто — в файле её нет (блок не показываем).
   final List<ProtocolJudge> panel;
 
+  /// Время табло: когда страница сегмента обновилась (её время внизу или Last-Modified); null — неизвестно.
+  final DateTime? stamp;
+
+  /// Кто выходит на лёд по табло («Далее: …»), пока сегмент идёт; null — табло не пишет.
+  final String? next;
+
+  /// Разминка следующего ещё идёт.
+  final bool nextWarmup;
+
   const ProtocolSegment({
     required this.code,
     required this.name,
@@ -193,6 +202,9 @@ class ProtocolSegment {
     this.skipped = 0,
     this.rows = const [],
     this.panel = const [],
+    this.stamp,
+    this.next,
+    this.nextWarmup = false,
   });
 
   /// Сегмент с битыми полями: показываем только его состояние «формат», строк нет.
@@ -246,6 +258,9 @@ class ProtocolSegment {
       rows: parsed,
       // судья без номера и имени пропускается; битый список судей сегмент не ломает
       panel: _maps(j['panel'], ProtocolJudge.tryParse),
+      stamp: _date(j['stamp']),
+      next: j['next'] is String && (j['next'] as String).isNotEmpty ? j['next'] as String : null,
+      nextWarmup: j['nextWarmup'] == true,
     );
   }
 }
@@ -433,6 +448,9 @@ class ProtocolTotal {
   final List<ProtocolRow> rows;
   final int skipped;
 
+  /// Время табло: когда страница итога обновилась; null — неизвестно.
+  final DateTime? stamp;
+
   const ProtocolTotal({
     required this.state,
     required this.complete,
@@ -440,6 +458,7 @@ class ProtocolTotal {
     required this.colsKind,
     required this.rows,
     required this.skipped,
+    this.stamp,
   });
 
   /// Итог с битыми полями целиком становится format: строки не показываем.
@@ -481,6 +500,7 @@ class ProtocolTotal {
       colsKind: kind is String && const {'places', 'points'}.contains(kind) ? kind : 'unknown',
       rows: parsed,
       skipped: skipped is int && skipped > 0 ? skipped : 0,
+      stamp: _date(j['stamp']),
     );
   }
 }

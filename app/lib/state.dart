@@ -8,10 +8,13 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app_icon.dart';
+import 'archive.dart';
 import 'billing.dart';
 import 'data.dart';
 import 'lineup.dart';
 import 'live.dart';
+import 'pace.dart';
+import 'protocol_model.dart';
 import 'protocol_repo.dart';
 import 'platform.dart';
 import 'reminders.dart';
@@ -450,6 +453,54 @@ class AppState extends ChangeNotifier {
     await _sync();
   }
 
+  // ---------------------------------------------------------------- архив прошлых сезонов
+
+  /// Месяцы прошлых лет: подгружаются, когда до них долистали (archive.dart).
+  final Archive archive = Archive();
+
+  /// Месяц, с которого нынешнее расписание знает всё само: раньше него — архив.
+  String? get liveFrom {
+    final first = _raw?.starts.isEmpty ?? true ? null : _raw!.starts.first;
+    return first == null ? null : monthKey(msk(first.t0));
+  }
+
+  /// Нужен ли этому месяцу архив: он раньше или тот же, с которого начинается расписание.
+  bool pastWanted(String month) {
+    final from = liveFrom;
+    return from == null || month.compareTo(from) <= 0;
+  }
+
+  /// Что с месяцем архива: загружается, готов, не загрузился, нет в архиве.
+  PastState pastState(String month) => pastWanted(month) ? archive.stateOf(month) : PastState.none;
+
+  /// Долистали до месяца: взять его из архива, если он там есть.
+  Future<void> needPast(String month) async {
+    if (!pastWanted(month)) return;
+    final before = archive.stateOf(month);
+    final run = archive.load(month);
+    // «загружается» видно сразу, а не после ответа
+    if (archive.stateOf(month) != before) notifyListeners();
+    if (await run) notifyListeners();
+  }
+
+  /// Старты месяца из архива под выбор отслеживаемых; того, что уже есть в расписании, здесь нет.
+  List<Start> pastStarts(String month) {
+    final m = archive.month(month);
+    if (m == null) return const [];
+    final cached = _pastView[month];
+    final f = follow;
+    if (cached != null && identical(cached.$1, _raw) && cached.$2 == f.signature) return cached.$3;
+    final have = {for (final s in _raw?.starts ?? const <Start>[]) s.id};
+    final list = [for (final s in m.starts) if (!have.contains(s.id)) s.withFollow(f)];
+    _pastView[month] = (_raw, f.signature, list);
+    return list;
+  }
+
+  final Map<String, (Schedule?, String, List<Start>)> _pastView = {};
+
+  /// Турниры месяца из архива, у которых нет времени сегментов.
+  List<PastTournament> pastTournaments(String month) => archive.month(month)?.tournaments ?? const [];
+
   /// Только для тестов: расписание, как после загрузки (без сети), с отслеживаемыми по умолчанию.
   @visibleForTesting
   void adoptSchedule(Schedule raw) {
@@ -737,6 +788,77 @@ class AppState extends ChangeNotifier {
   /// Свежие итоги старта с табло (или из файла в режиме «стандартный»); null — опроса ещё не было.
   LiveOk? liveOf(String startId) => _live[startId];
 
+  /// Когда табло опубликовало оценку каждого выступившего: id старта → (personKey → момент). По ним
+  /// считается темп (pace.dart): от последней оценки, а не от бумажного расписания.
+  final Map<String, Map<String, DateTime>> _posted = {};
+
+  /// Записать, кто уже выступил по табло. Момент — время самого табло ([stamp]: страница обновилась,
+  /// когда появилась эта оценка), если оно правдоподобно; иначе — когда устройство увидело. Уже
+  /// записанных не трогаем: первое появление и есть публикация.
+  bool notePosted(String startId, Iterable<String> names, DateTime? stamp, {DateTime? seenAt}) {
+    final at = seenAt ?? DateTime.now();
+    final m = _posted.putIfAbsent(startId, () => {});
+    // время табло из будущего (часы табло спешат) или слишком давнее — не верим ему
+    final when = stamp != null && !stamp.isAfter(at.add(const Duration(minutes: 1))) && stamp.isAfter(at.subtract(const Duration(hours: 6)))
+        ? (stamp.isAfter(at) ? at : stamp)
+        : at;
+    var added = false;
+    for (final n in names) {
+      final k = personKey(n);
+      if (k.isEmpty || m.containsKey(k)) continue;
+      m[k] = when;
+      added = true;
+    }
+    if (stamp != null) _boardAt[startId] = stamp;
+    return added;
+  }
+
+  /// Время табло по старту: когда страница сегмента обновилась в последний раз.
+  final Map<String, DateTime> _boardAt = {};
+
+  /// Кто выступает следующим по табло («Далее: …»), с какого момента и идёт ли ещё его разминка:
+  /// id старта → (personKey, момент, разминка).
+  final Map<String, ({String key, DateTime since, bool warmup})> _onIce = {};
+
+  /// Табло назвало следующего: новое имя — с этого момента; у того же кончилась разминка — его выход
+  /// с этого момента (время табло, если правдоподобно).
+  bool noteOnIce(String startId, String? name, DateTime? stamp, {bool warmup = false, DateTime? seenAt}) {
+    if (name == null || name.isEmpty) return false;
+    final k = personKey(name);
+    final was = _onIce[startId];
+    if (was != null && was.key == k && (was.warmup == warmup || !was.warmup)) return false;
+    final at = seenAt ?? DateTime.now();
+    var since = stamp != null && !stamp.isAfter(at.add(const Duration(minutes: 1))) && stamp.isAfter(at.subtract(const Duration(hours: 1)))
+        ? (stamp.isAfter(at) ? at : stamp)
+        : at;
+    // время табло — до минуты: не раньше прошлого «Далее»
+    if (was != null && since.isBefore(was.since)) since = at;
+    _onIce[startId] = (key: k, since: since, warmup: warmup);
+    return true;
+  }
+
+  /// Протокол, собранный на устройстве (экран протокола): выступившие идущих сегментов — в темп.
+  void noteProtocol(Iterable<Start> starts, ProtocolDoc doc) {
+    var added = false;
+    for (final s in starts) {
+      final seg = doc.categoryFor(s.kind, s.level)?.segmentOf(s.seg);
+      if (seg == null || (seg.rows.isEmpty && seg.next == null)) continue;
+      if (seg.state != SegmentState.inProgress && seg.state != SegmentState.provisional) continue;
+      _posted.putIfAbsent(s.id, () => {});
+      added |= notePosted(s.id, [for (final r in seg.rows) if (r.place != null) r.name], seg.stamp);
+      added |= noteOnIce(s.id, seg.next, seg.stamp, warmup: seg.nextWarmup);
+    }
+    if (added && _raw != null) {
+      data = _apply(_raw!);
+      notifyListeners();
+      unawaited(_saveLive());
+    }
+  }
+
+  /// Минута, на которую посчитан темп: затянувшийся прокат сдвигает время оставшихся с каждой минутой.
+  int _paceMinute = -1;
+  String _paceSig = '';
+
   /// Когда в последний раз читали файл протокола для старта (режим «стандартный» — не чаще раза в 5 минут).
   final Map<String, DateTime> _fileAt = {};
 
@@ -799,6 +921,7 @@ class AppState extends ChangeNotifier {
   /// [force] — опросить сразу, не дожидаясь срока (старт приложения, смена настроек).
   Future<void> pollLive({bool force = false}) async {
     if (_polling || data == null) return;
+    _repace();
     final list = pollOrder(watching, now()).take(8).toList();
     if (list.isEmpty) return;
     _polling = true;
@@ -826,6 +949,15 @@ class AppState extends ChangeNotifier {
       }
       var changed = false;
       void take(Start s, LiveResult g) {
+        // табло ответило, а прокатов ещё нет: темп считаем и так — начало затянулось, если первому
+        // давно пора получить оценку, а её всё нет
+        if (g is LiveNone && table.contains(s)) {
+          if (!_posted.containsKey(s.id)) {
+            _posted[s.id] = {};
+            changed = true;
+          }
+          changed |= noteOnIce(s.id, g.next, g.stamp, warmup: g.warmup, seenAt: now);
+        }
         // сеть, пустое табло или чужая страница — прошлые итоги остаются как были
         if (g is! LiveOk) return;
         final prev = _live[s.id];
@@ -835,6 +967,11 @@ class AppState extends ChangeNotifier {
         if (prev != null && g.provisional == prev.provisional && g.rows.length < prev.rows.length) return;
         if (prev == null || _sig(g) != _sig(prev)) changed = true;
         _live[s.id] = g;
+        // кто выступил и когда — для темпа; итоги из файла сервера моменту публикации не свидетели
+        if (g.provisional && table.contains(s)) {
+          changed |= notePosted(s.id, [for (final r in g.rows) r.name], g.stamp, seenAt: now);
+          changed |= noteOnIce(s.id, g.next, g.stamp, warmup: g.warmup, seenAt: now);
+        }
       }
       for (var i = 0; i < table.length; i++) {
         take(table[i], gotTable[i]);
@@ -844,6 +981,7 @@ class AppState extends ChangeNotifier {
       }
       if (changed && _raw != null) {
         data = _apply(_raw!);
+        _paceSig = _paceSignature();
         notifyListeners();
         unawaited(_saveLive());
         // по табло старт мог закончиться или затянуться — уведомления следом, не дожидаясь сервера
@@ -858,13 +996,39 @@ class AppState extends ChangeNotifier {
 
   static final _epoch = DateTime.fromMillisecondsSinceEpoch(0);
 
+  /// Раз в минуту, пока что-то идёт, — темп заново: время оставшихся зависит от «сейчас». Поменялось
+  /// время чьего-то выхода — уведомления следом.
+  void _repace() {
+    final m = DateTime.now().millisecondsSinceEpoch ~/ 60000;
+    if (m == _paceMinute || _raw == null) return;
+    _paceMinute = m;
+    if (!(data?.starts.any((s) => s.pace != null) ?? false) && _posted.isEmpty) return;
+    data = _apply(_raw!);
+    final sig = _paceSignature();
+    notifyListeners();
+    if (sig != _paceSig) {
+      _paceSig = sig;
+      unawaited(_sync());
+    }
+  }
+
+  /// Время выхода всех, поправленное по темпу, одной строкой: по ней видно, что уведомления пора переставить.
+  String _paceSignature() => [
+    for (final s in data?.starts ?? const <Start>[])
+      if (s.pace != null) '${s.id}:${[for (final o in s.ours) '${o.name}@${o.time}'].join(',')}',
+  ].join('|');
+
   static const _liveKey = 'live.last';
+  static const _postedKey = 'live.posted';
 
   /// Итоги с табло — на диск: после перезапуска без сети карточка показывает то, что уже показывала.
   Future<void> _saveLive() async {
     try {
       final p = await SharedPreferences.getInstance();
       await p.setString(_liveKey, jsonEncode({for (final e in _live.entries) e.key: e.value.toJson()}));
+      await p.setString(_postedKey, jsonEncode({
+        for (final e in _posted.entries) e.key: {for (final x in e.value.entries) x.key: x.value.toUtc().toIso8601String()},
+      }));
     } catch (_) {}
   }
 
@@ -878,6 +1042,15 @@ class AppState extends ChangeNotifier {
       for (final e in (jsonDecode(s) as Map).entries) {
         final l = LiveOk.tryFromJson(e.value);
         if (l != null) _live['${e.key}'] = l;
+      }
+      final posted = p.getString(_postedKey);
+      if (posted != null) {
+        for (final e in (jsonDecode(posted) as Map).entries) {
+          _posted['${e.key}'] = {
+            for (final x in (e.value as Map).entries)
+              if (DateTime.tryParse('${x.value}') case final DateTime t) '${x.key}': t,
+          };
+        }
       }
     } catch (_) {}
   }
@@ -903,27 +1076,41 @@ class AppState extends ChangeNotifier {
     for (final e in s.finals.entries) '${e.key}${e.value}',
   ].join('|');
 
-  /// Расписание с сервера → под отслеживаемых и с итогами с табло. Сервер дошёл до окончательного — его и берём.
+  /// Расписание с сервера → под отслеживаемых, с итогами с табло и временем выхода по темпу.
+  /// Сервер дошёл до окончательного — его и берём.
   Schedule _apply(Schedule raw) {
     final shown = regional ? raw : raw.withStarts([for (final s in raw.starts) if (!s.regional) s]);
     final d = shown.withFollow(follow);
-    if (_live.isEmpty) return d;
     _live.removeWhere((id, _) => d.byId(id)?.settled ?? true);
-    if (_live.isEmpty) return d;
-    return d.withStarts([
-      for (final s in d.starts)
-        if (_live[s.id] case final l?)
-          s.withResults(
-            podium: l.podium,
-            provisional: l.provisional,
-            places: l.places,
-            points: {for (final r in l.rows) if (r.points.isNotEmpty) norm(r.name): r.points},
-            total: l.total,
-            finals: l.finals,
-          )
-        else
-          s,
-    ]);
+    // темп помним, пока старт не закончился и сутки после: дальше он никому не нужен
+    final t = now();
+    _posted.removeWhere((id, _) {
+      final s = d.byId(id);
+      return s == null || t.isAfter(s.t1.add(const Duration(hours: 24)));
+    });
+    _onIce.removeWhere((id, _) => !_posted.containsKey(id));
+    if (_live.isEmpty && _posted.isEmpty) return d;
+    return d.withStarts([for (final s in d.starts) _paced(_live[s.id] == null ? s : _withLive(s, _live[s.id]!), t)]);
+  }
+
+  Start _withLive(Start s, LiveOk l) => s.withResults(
+    podium: l.podium,
+    provisional: l.provisional,
+    places: l.places,
+    points: {for (final r in l.rows) if (r.points.isNotEmpty) norm(r.name): r.points},
+    total: l.total,
+    finals: l.finals,
+  );
+
+  /// Время выхода оставшихся — по темпу (pace.dart), пока сегмент идёт или вот-вот начнётся и
+  /// устройство читает его табло. Закончился — поправлять нечего.
+  Start _paced(Start s, DateTime t) {
+    if (s.live == null || s.finishedAt(t) || s.field.length < 2) return s;
+    if (t.isBefore(s.t0.subtract(const Duration(minutes: 30))) || t.isAfter(s.t1.add(const Duration(hours: 3)))) return s;
+    // табло этого старта устройство не видело — опереться не на что, остаётся расписание
+    if (!_live.containsKey(s.id) && !_posted.containsKey(s.id)) return s;
+    final p = paceOf(s, posted: _posted[s.id] ?? const {}, boardAt: _boardAt[s.id] ?? _live[s.id]?.stamp, onIce: _onIce[s.id], now: t);
+    return p == null ? s : s.withPace(p);
   }
 
   // ---------------------------------------------------------------- подписка (billing.dart)

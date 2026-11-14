@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Цвета карточки уведомления (тёмная тема). -->
+<resources>
+    <color name="alert_soon_bg">#2E7DB7F0</color>
+    <color name="alert_soon_text">#FF9CCBF5</color>
+    <color name="alert_live_bg">#FFE5534B</color>
+    <color name="alert_live_text">#FFFFFFFF</color>
+</resources>

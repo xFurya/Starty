@@ -25,6 +25,9 @@ class AlertEntry {
   /// Опоздало (время [at] прошло, а показано не было: старт добавили или сдвинули позже, телефон
   /// был выключен) — показать, если сейчас раньше [late]; позже — уже не о чем. null — до [end].
   final DateTime? late;
+  /// Данные карточки (JSON): вид, программа, турнир, время и момент начала, отслеживаемые,
+  /// трансляция. Пусто — обычное уведомление; не нарисовалась — тоже обычное.
+  final String card;
   const AlertEntry({
     required this.key,
     required this.at,
@@ -43,6 +46,7 @@ class AlertEntry {
     this.liveColorDark = 0,
     this.start = '',
     this.late,
+    this.card = '',
   });
 
   Map<String, Object> toMap() => {
@@ -63,6 +67,7 @@ class AlertEntry {
     'liveColorDark': liveColorDark,
     'start': start,
     'late': (late ?? end).millisecondsSinceEpoch,
+    'card': card,
   };
 }
 

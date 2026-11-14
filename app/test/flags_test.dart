@@ -205,7 +205,8 @@ void main() {
             ),
           );
           await t.pumpAndSettle();
-          expect(find.text('СОСТАВ ПО ЗАЯВКЕ'), findsOneWidget);
+          // время выхода известно — это уже стартовый порядок
+          expect(find.text('СТАРТОВЫЙ ПОРЯДОК'), findsOneWidget);
           expect(find.byType(Flag), findsNWidgets(2));
           expect(t.takeException(), isNull);
         });

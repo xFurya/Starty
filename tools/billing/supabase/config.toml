@@ -13,3 +13,7 @@ verify_jwt = false
 
 [functions.billing-renew]
 verify_jwt = false
+
+# Табло турниров для веб-версии (functions/board): читают без входа — проверка токена выключена.
+[functions.board]
+verify_jwt = false

@@ -9,6 +9,7 @@ import 'data.dart';
 import 'flags.dart';
 import 'live.dart' show LiveOk, personKey;
 import 'needs.dart';
+import 'pace.dart';
 import 'palette.dart';
 import 'platform.dart';
 import 'protocol_model.dart';
@@ -71,23 +72,23 @@ ProtocolView protocolView(
   required bool hasField,
   DateTime? built,
   int fieldCount = 0,
+  DateTime? stamp,
 }) {
   // Любой сбой при наличии сохранённого файла — сохранённая версия; без него — короткий текст
   // (экран в этом случае не открывается, сразу открывается оригинал, см. [ProtocolScreen]).
   final (cached, cachedAt) = savedOf(load);
   if (cached != null && cachedAt != null) {
-    final v = _inFile(category, tab, hasField: hasField, built: cached.built, fieldCount: fieldCount);
-    // сохранённая версия: строки есть, но статус — что связи нет и когда файл сохранён
-    // «Нет связи» — только для сетевого сбоя; при 404, битом файле и чужой версии связь ни при чём
-    final saved = '${_dm(cachedAt)}, ${hm(cachedAt)}';
+    final v = _inFile(category, tab, hasField: hasField, built: cached.built, fieldCount: fieldCount, stamp: stamp);
+    // сохранённая версия: о сбоях не рассказываем — только от какого времени то, что на экране
     return ProtocolView(
-      load is ProtocolNetError ? 'Нет связи' : 'Сохранённая версия',
-      ProtocolTone.quiet,
+      v.status,
+      v.tone,
       retry: true,
       rows: v.rows,
       application: v.application,
       noFile: v.noFile,
-      note: 'сохранено $saved',
+      progress: v.progress,
+      note: v.note.isNotEmpty || v.tone == ProtocolTone.finalized ? v.note : 'сохранено ${_dm(cachedAt)}, ${hm(cachedAt)}',
     );
   }
   switch (load) {
@@ -97,8 +98,8 @@ ProtocolView protocolView(
       return _noProtocol(hasField);
     case ProtocolNetError():
       return const ProtocolView('Нет связи с сервером', ProtocolTone.quiet, retry: true);
-    case ProtocolOk(:final board):
-      return _inFile(category, tab, hasField: hasField, built: built, fieldCount: fieldCount, board: board);
+    case ProtocolOk():
+      return _inFile(category, tab, hasField: hasField, built: built, fieldCount: fieldCount, stamp: stamp);
   }
 }
 
@@ -139,7 +140,7 @@ ProtocolView _noProtocol(bool hasField) => hasField
     ? const ProtocolView('Протокола пока нет', ProtocolTone.quiet, application: true, noFile: true)
     : const ProtocolView('Протокола и заявки пока нет', ProtocolTone.quiet, noFile: true);
 
-ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasField, DateTime? built, int fieldCount = 0, bool? board}) {
+ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasField, DateTime? built, int fieldCount = 0, DateTime? stamp}) {
   if (category == null) return _noProtocol(hasField);
   if (tab == totalTab) {
     final t = category.total;
@@ -150,7 +151,7 @@ ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasF
     if (t.state == TotalState.finalized) {
       return ProtocolView('Окончательный', ProtocolTone.finalized, rows: t.rows);
     }
-    return ProtocolView(_updated(built, board), ProtocolTone.quiet, rows: t.rows);
+    return ProtocolView(asOf(stamp, built), ProtocolTone.quiet, rows: t.rows);
   }
   final seg = category.segmentOf(tab);
   if (seg == null) return _noProtocol(hasField);
@@ -159,18 +160,23 @@ ProtocolView _inFile(ProtocolCategory? category, String tab, {required bool hasF
     case SegmentState.notPublished:
       return _noProtocol(hasField);
     case SegmentState.inProgress:
+      // оценок ещё нет, а табло уже пишет, кто выходит: сегмент идёт — метка «Идёт» и стартовый порядок
+      if (seg.rows.isEmpty && seg.next != null && hasField) {
+        return ProtocolView('', ProtocolTone.live, application: true, noFile: true, note: asOf(stamp, built));
+      }
       if (seg.rows.isEmpty) return _noProtocol(hasField);
       // «Идёт» — меткой; сколько выступило — строкой ниже; когда обновлено — справа
       return ProtocolView(
         '',
         ProtocolTone.live,
         rows: seg.rows,
-        progress: _progress(seg.rows.length, fieldCount),
-        note: _updated(built, board),
+        // снявшиеся (строка со статусом, без места) — не «выступили»
+        progress: _progress(seg.rows.where((r) => r.place != null).length, fieldCount),
+        note: asOf(stamp, built),
       );
     case SegmentState.provisional:
       if (seg.rows.isEmpty) return _noProtocol(hasField);
-      return ProtocolView(_updated(built, board), ProtocolTone.quiet, rows: seg.rows);
+      return ProtocolView(asOf(stamp, built), ProtocolTone.quiet, rows: seg.rows);
     case SegmentState.finalized:
       // окончательный без строк — нераспознанный файл, а не «протокол пуст»
       if (seg.rows.isEmpty) return const ProtocolView('Экран для этого протокола недоступен', ProtocolTone.quiet);
@@ -218,15 +224,13 @@ String statusLabel(String s) {
   return m[s.trim().toUpperCase()] ?? s;
 }
 
-/// Когда обновлено и откуда: собрано на устройстве с табло — «С табло», табло не ответило — так и
-/// сказано, на экране файл сервера; иначе — «Обновлено» (файл сервера, с табло не собирали).
-String _updated(DateTime? built, [bool? board]) {
-  final at = built == null ? '' : ' ${hm(built)}';
-  return switch (board) {
-    true => 'С табло$at',
-    false => 'Табло не ответило, файл$at',
-    null => 'Обновлено$at',
-  };
+/// От какого времени то, что на экране: «Табло от 14:52» — время самого табло (страница сегмента
+/// обновилась тогда), другой день — с датой. Табло своего времени не пишет — когда собран файл.
+/// Почему не свежее (сеть, табло молчит) — не рассказываем: человеку важно, от какого момента данные.
+String asOf(DateTime? stamp, DateTime? built) {
+  String when(DateTime t) => dayKey(t) == dayKey(now()) ? hm(t) : '${_dm(t)}, ${hm(t)}';
+  if (stamp != null) return 'Табло от ${when(stamp)}';
+  return built == null ? '' : 'Обновлено ${when(built)}';
 }
 
 String _dm(DateTime t) {
@@ -311,14 +315,16 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
     return st != null && st.liveModeOf(widget.start) == liveInstant;
   }
 
-  /// Всё в файле окончательное: обновлять нечего.
+  /// Всё в файле окончательное: обновлять нечего. Сегмент «по расписанию» окончательным не
+  /// считается, если он начнётся в ближайшие два часа или его время уже пришло: раньше экран,
+  /// открытый до начала, так и не обновлялся сам — протокол появлялся только по кнопке.
   bool get _everyFinal {
     final d = _doc;
     if (d == null) return false;
-    return d.categories.every(
-      (c) => c.segments.every((x) => x.state == SegmentState.finalized || x.state == SegmentState.scheduled) &&
-          (c.total == null || c.total!.state == TotalState.finalized),
-    );
+    final soon = now().add(const Duration(hours: 2));
+    bool quiet(ProtocolSegment x) =>
+        x.state == SegmentState.finalized || (x.state == SegmentState.scheduled && x.start != null && x.start!.isAfter(soon));
+    return d.categories.every((c) => c.segments.every(quiet) && (c.total == null || c.total!.state == TotalState.finalized));
   }
 
   /// [manual] — нажата кнопка обновления: протокол собирается на устройстве с табло в любом режиме,
@@ -358,6 +364,8 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
       _busy = false;
       _pickDefaults();
     });
+    // собрано с табло на устройстве: кто уже выступил — в темп (время выхода оставшихся)
+    if (device && load is ProtocolOk) widget.state?.noteProtocol(_siblings, load.doc);
     if (manual) _tell(load, docBefore, fieldBefore == _fieldSig(cat, tab));
   }
 
@@ -368,16 +376,16 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
   ].join(',');
 
   /// Итог ручного обновления: без него нажатие до старта и после окончательных итогов выглядит пустым.
+  /// Почему не обновилось, не рассказываем — только что вышло и от какого времени табло.
   void _tell(ProtocolLoad load, String docBefore, bool sameField) {
+    final tab = _tab ?? totalTab;
+    final stamp = tab == totalTab ? _category?.total?.stamp : _category?.segmentOf(tab)?.stamp;
+    final at = asOf(stamp, null);
     final text = protocolSig(_doc) != docBefore
         ? 'Протокол обновлён'
         : !sameField
             ? 'Состав обновлён'
-            : switch (load) {
-                ProtocolNetError() => 'Нет связи, протокол не обновился',
-                ProtocolFormatError() => 'Протокол не обновился',
-                _ => 'Нового нет',
-              };
+            : (at.isEmpty ? 'Нового нет' : 'Нового нет. $at');
     final p = Palette.of(context);
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
@@ -504,16 +512,18 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
     final field = here?.field ?? const <Skater>[];
     final live = here == null ? null : widget.state?.liveOf(here.id);
     final load = _load;
+    final stamp = tab == totalTab ? cat?.total?.stamp : seg?.stamp;
     var view = load == null
         ? const ProtocolView('Загружаем протокол…', ProtocolTone.quiet)
-        : protocolView(load, category: cat, tab: tab, hasField: field.isNotEmpty, built: doc?.built, fieldCount: field.length);
+        : protocolView(load, category: cat, tab: tab, hasField: field.isNotEmpty, built: doc?.built, fieldCount: field.length, stamp: stamp);
     // В файле строк нет, а табло уже показало итоги этого старта — показываем их, пока файл не обновится.
     final onBoard = live != null && live.rows.isNotEmpty && view.noFile;
     if (onBoard) {
       view = ProtocolView(
-        'По табло',
+        '',
         live.provisional ? ProtocolTone.live : ProtocolTone.quiet,
         progress: _progress(live.rows.length, field.length),
+        note: asOf(live.stamp, null),
         rows: [
           for (var i = 0; i < live.rows.length; i++)
             ProtocolRow(i: i + 1, place: live.rows[i].place, name: live.rows[i].name, nation: live.rows[i].nation, points: live.rows[i].points),
@@ -610,25 +620,49 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
                   ),
                 ),
               ],
-              if (view.application && field.isNotEmpty) ...[
-                const Eyebrow('Состав по заявке', padding: EdgeInsets.fromLTRB(6, 18, 6, 8)),
-                Plate(
-                  margin: EdgeInsets.zero,
-                  child: Column(
-                    children: [
-                      for (var i = 0; i < field.length; i++) ...[
-                        if (i > 0) const Hairline(indent: 16),
-                        _FieldRow(
-                          name: field[i].name,
-                          nation: field[i].nation,
-                          time: field[i].time,
-                          ours: ours.contains(personKey(field[i].name)),
-                        ),
-                      ],
-                    ],
-                  ),
-                ),
-              ],
+              // кто ещё выступит — по стартовому порядку, со временем выхода (с поправкой на темп);
+              // до начала — весь стартовый порядок, по ходу — после выступивших
+              if (here != null && tab != totalTab && (view.application || (view.rows.isNotEmpty && seg?.state != SegmentState.finalized)))
+                ...() {
+                  final left = waitingOf(here, view.rows);
+                  if (left.isEmpty) return const <Widget>[];
+                  return [
+                    // порядок известен (номера или время выхода) — стартовый порядок; иначе — просто заявка
+                    Eyebrow(
+                      view.rows.isNotEmpty
+                          ? 'Ещё выступят'
+                          : (left.any((o) => o.no != null || o.time != null) ? 'Стартовый порядок' : 'Состав по заявке'),
+                      padding: const EdgeInsets.fromLTRB(6, 18, 6, 8),
+                    ),
+                    if (paceLine(here.pace) case final line?)
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(6, 0, 6, 8),
+                        child: Text(line, style: TextStyle(fontSize: 13, height: 1.35, color: Palette.of(context).ink2)),
+                      ),
+                    Plate(
+                      margin: EdgeInsets.zero,
+                      child: Column(
+                        children: [
+                          for (var i = 0; i < left.length; i++) ...[
+                            if (i > 0 && left[i].warmup != null && left[i].warmup != left[i - 1].warmup)
+                              _WarmupHead(left[i].warmup!)
+                            else if (i == 0 && left.any((x) => x.warmup != null) && left.first.warmup != null)
+                              _WarmupHead(left.first.warmup!, first: true)
+                            else if (i > 0)
+                              const Hairline(indent: 16),
+                            _FieldRow(
+                              name: left[i].name,
+                              nation: left[i].nation,
+                              time: timeLabel(here, left[i]),
+                              live: isNext(here, left[i]),
+                              ours: ours.contains(personKey(left[i].name)),
+                            ),
+                          ],
+                        ],
+                      ),
+                    ),
+                  ];
+                }(),
               if (view.retry) ...[
                 const SizedBox(height: 14),
                 SheetButton(
@@ -998,12 +1032,58 @@ class _ResultRow extends StatelessWidget {
 }
 
 /// Состав по заявке: имя и время выхода — без мест и баллов.
+/// Кто ещё выступит в сегменте [s]: по стартовому порядку (номерам), без тех, у кого в строках
+/// протокола [done] уже место или статус, и без пропущенных — номер раньше последнего выступившего
+/// (снялись). До начала — весь порядок.
+List<Skater> waitingOf(Start s, List<ProtocolRow> done) {
+  final order = [...s.field];
+  if (order.every((o) => o.no != null)) order.sort((a, b) => a.no!.compareTo(b.no!));
+  final gone = {for (final r in done) if (r.place != null || r.status != null) personKey(r.name)};
+  final last = order.lastIndexWhere((o) => gone.contains(personKey(o.name)));
+  return [for (var i = last + 1; i < order.length; i++) if (!gone.contains(personKey(order[i].name))) order[i]];
+}
+
+/// Выходит следующим или уже на льду (по оценке темпа).
+bool isNext(Start s, Skater o) => s.pace?.next == personKey(o.name);
+
+/// Время в строке стартового порядка: следующий, чьё время по оценке уже пришло, — «сейчас»;
+/// поправленное по темпу — «≈15:22»; по расписанию — как есть; времени нет — номер.
+String timeLabel(Start s, Skater o, {DateTime? t}) {
+  final at = s.skateAt(o);
+  if (isNext(s, o) && at != null && !at.isAfter(t ?? now())) return 'сейчас';
+  if (o.time != null) return o.planned != null ? '≈${o.time}' : o.time!;
+  return o.no != null ? '№$nb${o.no}' : '—';
+}
+
+/// Подпись разминки в стартовом порядке: «Разминка 2».
+class _WarmupHead extends StatelessWidget {
+  final int group;
+  final bool first;
+  const _WarmupHead(this.group, {this.first = false});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.fromLTRB(16, first ? 10 : 12, 16, 6),
+      decoration: first ? null : BoxDecoration(border: Border(top: BorderSide(color: p.line))),
+      child: Text(
+        'Разминка $group',
+        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, letterSpacing: .4, color: p.ink2),
+      ),
+    );
+  }
+}
+
 class _FieldRow extends StatelessWidget {
   final String name;
   final String nation;
   final String? time;
   final bool ours;
-  const _FieldRow({required this.name, required this.time, required this.ours, this.nation = ''});
+
+  /// Выходит следующим или уже на льду — время цветом живого.
+  final bool live;
+  const _FieldRow({required this.name, required this.time, required this.ours, this.nation = '', this.live = false});
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
@@ -1029,7 +1109,7 @@ class _FieldRow extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 8),
-          Text(time ?? '—', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: p.ink2, fontFeatures: tnum)),
+          Text(time ?? '—', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: live ? p.live : p.ink2, fontFeatures: tnum)),
         ],
       ),
     );

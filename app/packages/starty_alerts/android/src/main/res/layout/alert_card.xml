@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Карточка уведомления о старте, свёрнутый вид: слева вид и программа над турниром, посередине
+     метка состояния (отсчёт до начала или «идёт»), справа время начала. Только то, что система
+     разрешает во встроенных видах уведомлений: LinearLayout, FrameLayout, TextView, Chronometer. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/alert_what"
+            style="@style/TextAppearance.Compat.Notification.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1" />
+
+        <TextView
+            android:id="@+id/alert_tour"
+            style="@style/TextAppearance.Compat.Notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp">
+
+        <LinearLayout
+            android:id="@+id/alert_soon"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:background="@drawable/alert_pill_soon"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="11dp"
+            android:paddingEnd="11dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="через"
+                android:textColor="@color/alert_soon_text"
+                android:textSize="13sp" />
+
+            <Chronometer
+                android:id="@+id/alert_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFeatureSettings="tnum"
+                android:textColor="@color/alert_soon_text"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/alert_live"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:background="@drawable/alert_pill_live"
+            android:gravity="center_vertical"
+            android:letterSpacing="0.06"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="ИДЁТ"
+            android:textColor="@color/alert_live_text"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/alert_time"
+        style="@style/TextAppearance.Compat.Notification.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFeatureSettings="tnum"
+        android:maxLines="1"
+        android:textSize="18sp" />
+</LinearLayout>

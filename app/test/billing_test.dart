@@ -373,7 +373,7 @@ void main() {
 
   group('экран', () {
     Future<AppState> settings(WidgetTester t, Billing srv) async {
-      t.view.physicalSize = const Size(1080, 5200);
+      t.view.physicalSize = const Size(1080, 5800); // страница целиком: с «Статистикой» она стала длиннее
       t.view.devicePixelRatio = 3;
       addTearDown(t.view.reset);
       final s = AppState()
@@ -398,7 +398,7 @@ void main() {
       final srv = Billing();
       await settings(t, srv);
       expect(find.text('Подписка', skipOffstage: false), findsOneWidget);
-      expect(find.text('Итоги ваших, жеребьёвка, сводка дня и поддержка приложения', skipOffstage: false), findsOneWidget);
+      expect(find.text('Итоги ваших, статистика, жеребьёвка, сводка дня и поддержка приложения', skipOffstage: false), findsOneWidget);
       await t.tap(find.text('Подписка'));
       await t.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 50)));
       await t.pumpAndSettle();

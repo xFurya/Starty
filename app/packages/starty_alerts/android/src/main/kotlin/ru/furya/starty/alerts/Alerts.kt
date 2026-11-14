@@ -11,10 +11,13 @@ import android.content.res.Configuration
 import android.graphics.Typeface
 import android.net.Uri
 import android.os.Build
+import android.os.SystemClock
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
+import android.view.View
+import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import org.json.JSONArray
@@ -50,13 +53,15 @@ class Entry(
     val liveColorDark: Int = 0,
     val start: String = "",
     val late: Long = end,
+    /** Данные карточки (JSON, см. Reminders.startCard в приложении); пусто — обычное уведомление. */
+    val card: String = "",
 ) {
     val id: Int get() = key.hashCode() and 0x7fffffff
 
     /** Тот же, но убрать позже: закреплённое до конца остаётся закреплённым до нового конца. */
     fun until(newEnd: Long) = Entry(
         key, at, if (hold >= end) newEnd else hold, newEnd, title, body, lines, group, groupTitle, reminder,
-        liveAt, liveTitle, liveMark, liveColor, liveColorDark, start, late,
+        liveAt, liveTitle, liveMark, liveColor, liveColorDark, start, late, card,
     )
 
     /** Старт уже идёт — в заголовке статус вместо времени начала. */
@@ -65,7 +70,8 @@ class Entry(
     fun titleAt(now: Long) = if (isLive(now)) liveTitle else title
 
     /** Тот же текст на момент now — обновлять висящее незачем. */
-    fun sameText(o: Entry, now: Long) = titleAt(now) == o.titleAt(now) && body == o.body && lines == o.lines
+    fun sameText(o: Entry, now: Long) =
+        titleAt(now) == o.titleAt(now) && body == o.body && lines == o.lines && card == o.card
 }
 
 /**
@@ -79,7 +85,9 @@ class Entry(
  *    по времени уведомления. Закреплённое поэтому раз в несколько минут обновляется на месте
  *    (без звука) — иначе любое свежее сообщение вытесняет его значок, и видно его только
  *    на экране блокировки, где значков без ограничения;
- *  • вид: свёрнутый — заголовок и одна строка, развёрнутый — построчно (InboxStyle);
+ *  • вид: свёрнутый — заголовок и одна строка, развёрнутый — построчно (InboxStyle); у старта с
+ *    данными карточки (card) — своя раскладка: вид и программа, метка «через 14:32» или «ИДЁТ»,
+ *    время начала, в развёрнутом — отслеживаемые и трансляция (alert_card.xml);
  *  • в начало старта висящее уведомление о нём тихо меняет время в заголовке на статус «🔴 ИДЁТ»;
  *  • уведомления одного турнира складываются в стопку: при двух и больше висящих — сводное;
  *  • время показа прошло, а показано не было (старт добавили или сдвинули раньше, уведомления включили
@@ -130,7 +138,7 @@ object Alerts {
                     o.getString("key"), o.getLong("at"), o.optLong("hold", end), end, o.optString("title"), o.optString("body"),
                     lines, o.optString("group"), o.optString("groupTitle"), o.optBoolean("reminder"),
                     o.optLong("liveAt"), o.optString("liveTitle"), o.optString("liveMark"), o.optInt("liveColor"), o.optInt("liveColorDark"),
-                    o.optString("start"), o.optLong("late", end),
+                    o.optString("start"), o.optLong("late", end), o.optString("card"),
                 )
                 out[e.key] = e
             }
@@ -146,7 +154,7 @@ object Alerts {
                     .put("lines", JSONArray(e.lines)).put("group", e.group).put("groupTitle", e.groupTitle).put("reminder", e.reminder)
                     .put("liveAt", e.liveAt).put("liveTitle", e.liveTitle).put("liveMark", e.liveMark)
                     .put("liveColor", e.liveColor).put("liveColorDark", e.liveColorDark)
-                    .put("start", e.start).put("late", e.late)
+                    .put("start", e.start).put("late", e.late).put("card", e.card)
             )
         }
         prefs(c).edit().putString("plan", a.toString()).apply()
@@ -337,6 +345,64 @@ object Alerts {
         return s
     }
 
+    /**
+     * Карточка уведомления о старте: свёрнутый и развёрнутый вид по данным e.card. Слева — вид и
+     * программа над турниром, посередине — метка: до начала «через 14:32» (отсчёт идёт сам, без
+     * обновлений), с начала — «ИДЁТ»; справа — время начала. В развёрнутом — отслеживаемые со
+     * временем выхода и трансляция. null — данных нет или их не разобрать: уведомление обычное.
+     */
+    private fun cardViews(c: Context, e: Entry, now: Long): Pair<RemoteViews, RemoteViews>? {
+        if (e.card.isEmpty() || e.reminder) return null
+        return try {
+            val o = JSONObject(e.card)
+            val what = listOf(o.optString("what"), o.optString("seg")).filter { it.isNotEmpty() }.joinToString(", ")
+            if (what.isEmpty()) return null
+            val t0 = o.optLong("t0")
+            val live = e.isLive(now) || t0 in 1..now
+            fun fill(v: RemoteViews) {
+                v.setTextViewText(R.id.alert_what, what)
+                v.setTextViewText(R.id.alert_tour, o.optString("tour"))
+                v.setTextViewText(R.id.alert_time, o.optString("time"))
+                v.setViewVisibility(R.id.alert_soon, if (live || t0 <= 0) View.GONE else View.VISIBLE)
+                v.setViewVisibility(R.id.alert_live, if (live) View.VISIBLE else View.GONE)
+                if (!live && t0 > 0) {
+                    v.setChronometerCountDown(R.id.alert_count, true)
+                    v.setChronometer(R.id.alert_count, SystemClock.elapsedRealtime() + (t0 - now), null, true)
+                }
+            }
+            val small = RemoteViews(c.packageName, R.layout.alert_card)
+            val big = RemoteViews(c.packageName, R.layout.alert_card_big)
+            fill(small)
+            fill(big)
+            val rows = o.optJSONArray("rows")
+            val ids = arrayOf(
+                intArrayOf(R.id.alert_row1, R.id.alert_row1_time, R.id.alert_row1_name),
+                intArrayOf(R.id.alert_row2, R.id.alert_row2_time, R.id.alert_row2_name),
+                intArrayOf(R.id.alert_row3, R.id.alert_row3_time, R.id.alert_row3_name),
+                intArrayOf(R.id.alert_row4, R.id.alert_row4_time, R.id.alert_row4_name),
+            )
+            for (i in ids.indices) {
+                val r = rows?.optJSONArray(i)
+                if (r == null || r.optString(1).isEmpty()) {
+                    big.setViewVisibility(ids[i][0], View.GONE)
+                    continue
+                }
+                big.setViewVisibility(ids[i][0], View.VISIBLE)
+                big.setTextViewText(ids[i][1], r.optString(0))
+                big.setTextViewText(ids[i][2], r.optString(1))
+            }
+            val more = o.optInt("more")
+            big.setViewVisibility(R.id.alert_more, if (more > 0) View.VISIBLE else View.GONE)
+            if (more > 0) big.setTextViewText(R.id.alert_more, "и ещё $more")
+            val watch = o.optString("watch")
+            big.setViewVisibility(R.id.alert_watch, if (watch.isNotEmpty()) View.VISIBLE else View.GONE)
+            if (watch.isNotEmpty()) big.setTextViewText(R.id.alert_watch, "Трансляция: $watch")
+            small to big
+        } catch (_: Exception) {
+            null
+        }
+    }
+
     private fun post(c: Context, e: Entry, quiet: Boolean) {
         val now = System.currentTimeMillis()
         if (e.end <= now) return
@@ -359,11 +425,14 @@ object Alerts {
         } else {
             NotificationCompat.BigTextStyle().bigText(e.lines.firstOrNull() ?: e.body)
         }
+        // карточка — своя раскладка в рамке системы; заголовок и строка остаются для часов,
+        // экрана блокировки со скрытым содержимым и сводки стопки
+        val card = cardViews(c, e, now)
         val b = NotificationCompat.Builder(c, CHANNEL)
             .setSmallIcon(icon(c))
             .setContentTitle(shownTitle(c, e, now))
             .setContentText(e.body)
-            .setStyle(style)
+            .setStyle(if (card != null) NotificationCompat.DecoratedCustomViewStyle() else style)
             .setCategory(if (e.reminder) NotificationCompat.CATEGORY_REMINDER else NotificationCompat.CATEGORY_EVENT)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setOngoing(pinned)
@@ -373,6 +442,7 @@ object Alerts {
             // среди свежих (см. выше про строку состояния)
             .setShowWhen(false)
             .setTimeoutAfter(e.end - now)
+        if (card != null) b.setCustomContentView(card.first).setCustomBigContentView(card.second)
         if (pinned) b.setDeleteIntent(del)
         // стопка турнира; внутри — по времени. Тихое звучит только «сводкой», а сводное
         // само не звучит никогда — значит, тихое молчит
