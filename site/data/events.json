@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-14T05:48:16+03:00",
- "checked": "2026-11-14T05:59:55.405523+00:00",
+ "checked": "2026-11-14T08:17:01.792134+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -50814,14 +50814,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 11:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Анна Коломенская / Артем Фролов — 72.59\n\nНачало: 11:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Анна Коломенская / Артем Фролов",
      "nation": "МОБ",
      "time": "11:06",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "72.59"
     },
     {
      "name": "Алиса Крайнюкова / Семен Нетсев",
@@ -50906,7 +50908,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Анна Коломенская / Артем Фролов",
+     "nation": "МОБ",
+     "points": "72.59"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:women-senior-kp",
