@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:dance-
+ junior-pt@starty
+DTSTAMP:20261114T183722Z
+DTSTART;TZID=Europe/Moscow:20261105T110000
+DTEND;TZID=Europe/Moscow:20261105T132000
+SUMMARY:ЮГП России «Золото Урала» — танцы ПТ
+DESCRIPTION:Итог:\n1. Дарья Дрожжина / Иван Тельн
+ ов — 103.63\n2. Анна Билибина / Дмитрий Кашае
+ в — 98.59\n3. Анна Соболева / Матвей Чураков 
+ — 92.31\n\nИтог турнира:\n1. Дарья Дрожжина / И
+ ван Тельнов — 171.55\n2. Анна Билибина / Дмит
+ рий Кашаев — 164.33\n3. Анна Соболева / Матве
+ й Чураков — 155.86\n\nНачало: 11:00 МСК\nТрансля
+ ция: Первый канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-zolo
+ to-urala-sredi-yuniorov-2026:dance-junior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Золото Урала» — танцы 
+ ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

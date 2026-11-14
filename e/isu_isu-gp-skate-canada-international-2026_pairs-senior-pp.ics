@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-gp-skate-canada-international-2026:pairs-senior-pp@starty
+DTSTAMP:20261114T183722Z
+DTSTART;TZID=Europe/Moscow:20261101T044500
+DTEND;TZID=Europe/Moscow:20261101T060500
+SUMMARY:GP Skate Canada — пары ПП
+DESCRIPTION:Итог:\n1. Lia Pereira / Trennt Michaud — 125.11\n2. Oxana
+  Vouillamoz / Tom Bouvart — 121.66\n3. Alisa Efimova / Misha Mitrofanov 
+ — 121.58\n\nИтог турнира:\n1. Lia Pereira / Trennt Michaud 
+ — 202.17\n2. Alisa Efimova / Misha Mitrofanov — 191.90\n3. Oxana Vouil
+ lamoz / Tom Bouvart — 183.12\n\nНачало: 04:45 МСК\nТрансл
+ яция: Okko / YouTube ISU
+LOCATION:Kelowna\, Canada
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-skate-canada-internationa
+ l-2026:pairs-senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GP Skate Canada — пары ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-gp-cup-of-china-2026:men-senior-pp@starty
+DTSTAMP:20261114T183722Z
+DTSTART;TZID=Europe/Moscow:20261108T080000
+DTEND;TZID=Europe/Moscow:20261108T094500
+SUMMARY:GP Cup of China — мужчины ПП
+DESCRIPTION:Итог:\n1. Kao Miura — 190.35\n2. Владислав Ди
+ киджи — 183.58\n3. Евгений Семененко — 181.90\n\n
+ Итог турнира:\n1. Kao Miura — 293.25\n2. Владислав 
+ Дикиджи — 282.44\n3. Евгений Семененко — 281.62
+ \n\nПримечательное:\n• Mikhail Shaidorov — Каскад 
+ 4T+Eu+4S\n• Kao Miura — Личный рекорд по сумме: 293
+ .25 (был 281.53)\n\nРоссияне:\n• Владислав Дики
+ джи — 09:16\n• Евгений Семененко — 09:24\n\nНа
+ чало: 08:00 МСК\nТрансляция: Okko / YouTube ISU
+LOCATION:Shenzhen\, China
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:men-sen
+ ior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GP Cup of China — мужчины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

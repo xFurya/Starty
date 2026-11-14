@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-gp-cup-of-china-2026:dance-senior-pt@starty
+DTSTAMP:20261114T183722Z
+DTSTART;TZID=Europe/Moscow:20261107T093000
+DTEND;TZID=Europe/Moscow:20261107T105500
+SUMMARY:GP Cup of China — танцы ПТ
+DESCRIPTION:Итог:\n1. Lilah Fear / Lewis Gibson — 114.93\n2. Diana Da
+ vis / Gleb Smolkin — 114.23\n3. Olivia Smart / Tim Dieck — 107.32\n\n
+ Итог турнира:\n1. Lilah Fear / Lewis Gibson — 194.93\n2. Dian
+ a Davis / Gleb Smolkin — 193.54\n3. Olivia Smart / Tim Dieck — 178.30\
+ n\nНачало: 09:30 МСК\nТрансляция: Okko / YouTube ISU
+LOCATION:Shenzhen\, China
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:dance-s
+ enior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GP Cup of China — танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

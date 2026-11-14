@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:pairs-
+ junior-pp@starty
+DTSTAMP:20261114T183722Z
+DTSTART;TZID=Europe/Moscow:20261105T133000
+DTEND;TZID=Europe/Moscow:20261105T142500
+SUMMARY:ЮГП России «Золото Урала» — пары ПП
+DESCRIPTION:Итог:\n1. Полина Шешелева / Егор Карн
+ аухов — 124.89\n2. Полина Сажина / Алексей Бе
+ лкин — 117.67\n3. Кира Доможирова / Илья Веге
+ ра — 104.23\n\nИтог турнира:\n1. Полина Шешеле
+ ва / Егор Карнаухов — 196.75\n2. Полина Сажин
+ а / Алексей Белкин — 189.00\n3. Кира Доможиро
+ ва / Илья Вегера — 164.86\n\nРоссияне:\n• Поли
+ на Шешелева / Егор Карнаухов — 16:23\n\nНача
+ ло: 13:30 МСК\nТрансляция: Первый канал / YouTub
+ e
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-zolo
+ to-urala-sredi-yuniorov-2026:pairs-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Золото Урала» — пары П
+ П
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

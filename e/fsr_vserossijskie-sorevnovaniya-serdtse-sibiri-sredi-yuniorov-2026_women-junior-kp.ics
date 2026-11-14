@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:wome
+ n-junior-kp@starty
+DTSTAMP:20261114T183722Z
+DTSTART;TZID=Europe/Moscow:20261112T120000
+DTEND;TZID=Europe/Moscow:20261112T143500
+SUMMARY:ЮГП России «Сердце Сибири» — девушк
+ и КП
+DESCRIPTION:Итог:\n1. София Сарновская — 71.29\n2. В
+ алерия Лукашова — 68.95\n3. Арина Ореховска
+ я — 68.34\n\nПримечательное:\n• София Сарнов
+ ская — Тройной аксель\n\nРоссияне:\n• Соф
+ ия Сарновская — 12:41\n• Алиса Заикина — 12:
+ 49\n\nНачало: 12:00 МСК\nТрансляция: Первый ка
+ нал / YouTube
+LOCATION:G-Drive Арена\, Омск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-serd
+ tse-sibiri-sredi-yuniorov-2026:women-junior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Сердце Сибири» — деву
+ шки КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,45 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:dance-
+ senior-pt@starty
+DTSTAMP:20261114T183722Z
+DTSTART;TZID=Europe/Moscow:20261101T142000
+DTEND;TZID=Europe/Moscow:20261101T154500
+SUMMARY:Гран-при России «Красноярье» — танц
+ ы ПТ
+DESCRIPTION:Итог:\n1. Александра Степанова / Ива
+ н Букин — 117.00\n2. Анна Щербакова / Егор Гон
+ чаров — 110.48\n3. Софья Леонтьева / Даниил Г
+ орелкин — 109.59\n\nИтог турнира:\n1. Александ
+ ра Степанова / Иван Букин — 193.98\n2. Екатер
+ ина Рыбакова / Иван Махноносов — 184.14\n3. А
+ нна Щербакова / Егор Гончаров — 183.69\n\nПри
+ мечательное:\n• Александра Степанова / И
+ ван Букин — Отрыв от второго места — 9.84 
+ балла\n\nНачало: 14:20 МСК\nТрансляция: Первы
+ й канал / YouTube
+LOCATION:Кристалл Арена\, Красноярск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-krasnoyar-e-2026:dance-senior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Гран-при России «Красноярье» — та
+ нцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

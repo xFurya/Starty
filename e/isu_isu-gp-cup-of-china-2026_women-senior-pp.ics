@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-gp-cup-of-china-2026:women-senior-pp@starty
+DTSTAMP:20261114T183722Z
+DTSTART;TZID=Europe/Moscow:20261107T113000
+DTEND;TZID=Europe/Moscow:20261107T131500
+SUMMARY:GP Cup of China — женщины ПП
+DESCRIPTION:Итог:\n1. Александра Трусова — 148.90\n2
+ . Mone Chiba — 148.40\n3. Haein Lee — 143.30\n\nИтог турнир
+ а:\n1. Mone Chiba — 224.48\n2. Александра Трусова — 
+ 221.27\n3. Haein Lee — 210.79\n\nПримечательное:\n• Ал
+ ександра Трусова — Четверной лутц\n• Haein
+  Lee — Тройной аксель\n• Sophie Joline von Felten — Т
+ ройной аксель\n• Haein Lee — После короткой 
+ программы — 6-е место\, в итоге — 3-е место
+ \n\nРоссияне:\n• Александра Трусова — 12:54\n
+ \nНачало: 11:30 МСК\nТрансляция: Okko / YouTube ISU
+LOCATION:Shenzhen\, China
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-cup-of-china-2026:women-s
+ enior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GP Cup of China — женщины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

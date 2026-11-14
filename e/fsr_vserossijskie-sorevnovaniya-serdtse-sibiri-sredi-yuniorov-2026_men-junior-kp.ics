@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:men-
+ junior-kp@starty
+DTSTAMP:20261114T183722Z
+DTSTART;TZID=Europe/Moscow:20261112T143500
+DTEND;TZID=Europe/Moscow:20261112T171000
+SUMMARY:ЮГП России «Сердце Сибири» — юноши К
+ П
+DESCRIPTION:Итог:\n1. Герман Ленков — 83.78\n2. Илья 
+ Мальков — 82.92\n3. Алдар Самбуев — 82.56\n\nРос
+ сияне:\n• Алдар Самбуев — 16:43\n\nНачало: 14:3
+ 5 МСК\nТрансляция: Первый канал / YouTube
+LOCATION:G-Drive Арена\, Омск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-serd
+ tse-sibiri-sredi-yuniorov-2026:men-junior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Сердце Сибири» — юнош
+ и КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

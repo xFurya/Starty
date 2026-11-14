@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:men-ju
+ nior-pp@starty
+DTSTAMP:20261114T183722Z
+DTSTART;TZID=Europe/Moscow:20261106T134500
+DTEND;TZID=Europe/Moscow:20261106T163500
+SUMMARY:ЮГП России «Золото Урала» — юноши ПП
+DESCRIPTION:Итог:\n1. Ильяс Халиуллин — 162.38\n2. Ге
+ рман Ленков — 155.10\n3. Вячеслав Касьяненко
+  — 146.13\n\nИтог турнира:\n1. Герман Ленков — 
+ 236.50\n2. Ильяс Халиуллин — 236.38\n3. Вячеслав 
+ Касьяненко — 218.01\n\nПримечательное:\n• Ил
+ ьяс Халиуллин — После короткой программ
+ ы — 5-е место\, в итоге — 2-е место\n• Вячес
+ лав Касьяненко — После короткой програм
+ мы — 6-е место\, в итоге — 3-е место\n\nНачал
+ о: 13:45 МСК\nТрансляция: Первый канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-zolo
+ to-urala-sredi-yuniorov-2026:men-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Золото Урала» — юноши 
+ ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

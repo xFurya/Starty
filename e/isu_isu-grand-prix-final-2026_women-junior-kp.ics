@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-grand-prix-final-2026:women-junior-kp@starty
+DTSTAMP:20261114T183722Z
+DTSTART;TZID=Europe/Moscow:20261210T111000
+DTEND;TZID=Europe/Moscow:20261210T115500
+SUMMARY:Финал Гран-при — девушки КП
+DESCRIPTION:Россияне:\n• София Дзепка\n\nНачало:
+  11:10 МСК\nТрансляция: Okko / YouTube ISU
+LOCATION:Chongqing\, China
+URL:https://xfurya.github.io/Starty/#e=isu:isu-grand-prix-final-2026:women-
+ junior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Финал Гран-при — девушки КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

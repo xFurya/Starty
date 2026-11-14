@@ -1,0 +1,45 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:women-
+ junior-pp@starty
+DTSTAMP:20261114T183722Z
+DTSTART;TZID=Europe/Moscow:20261106T104500
+DTEND;TZID=Europe/Moscow:20261106T133500
+SUMMARY:ЮГП России «Золото Урала» — девушки 
+ ПП
+DESCRIPTION:Итог:\n1. Алёна Принёва — 133.73\n2. Дарь
+ я Царегородцева — 131.84\n3. Екатерина Стоцк
+ ая — 128.24\n\nИтог турнира:\n1. Алёна Принёва 
+ — 202.21\n2. Дарья Царегородцева — 200.33\n3. Май
+ я Сарафанова — 197.87\n\nПримечательное:\n• 
+ Екатерина Стоцкая — Четверной сальхов\n
+ • Анна Докукина — 2 четверных в программ
+ е: 4S\, 4T\n• Юлиана Черенева — Четверной ту
+ луп\n\nРоссияне:\n• Анна Докукина — 11:58\n\nН
+ ачало: 10:45 МСК\nТрансляция: Первый канал / 
+ YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-zolo
+ to-urala-sredi-yuniorov-2026:women-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Золото Урала» — девуш
+ ки ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

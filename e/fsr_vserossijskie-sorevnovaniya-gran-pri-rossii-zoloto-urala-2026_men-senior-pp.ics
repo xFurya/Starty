@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:men-s
+ enior-pp@starty
+DTSTAMP:20261114T183722Z
+DTSTART;TZID=Europe/Moscow:20261108T120000
+DTEND;TZID=Europe/Moscow:20261108T133500
+SUMMARY:Гран-при России «Золото Урала» — муж
+ чины ПП
+DESCRIPTION:Итог:\n1. Марк Кондратюк — 184.99\n2. Гле
+ б Лутфуллин — 180.53\n3. Макар Игнатов — 161.58\
+ n\nИтог турнира:\n1. Марк Кондратюк — 279.91\n2.
+  Глеб Лутфуллин — 272.16\n3. Макар Игнатов — 
+ 256.99\n\nПримечательное:\n• Глеб Лутфуллин 
+ — Секвенция 4T+3A+3A\n\nНачало: 12:00 МСК\nТранс
+ ляция: Первый канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-zoloto-urala-2026:men-senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Гран-при России «Золото Урала» — м
+ ужчины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

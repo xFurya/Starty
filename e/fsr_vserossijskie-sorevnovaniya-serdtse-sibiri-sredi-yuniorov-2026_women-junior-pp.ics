@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:wome
+ n-junior-pp@starty
+DTSTAMP:20261114T183722Z
+DTSTART;TZID=Europe/Moscow:20261113T094500
+DTEND;TZID=Europe/Moscow:20261113T123500
+SUMMARY:ЮГП России «Сердце Сибири» — девушк
+ и ПП
+DESCRIPTION:Итог:\n1. София Сарновская — 136.26\n2. В
+ алерия Лукашова — 120.21\n3. Лизавета Мельни
+ кова — 118.28\n\nИтог турнира:\n1. София Сарно
+ вская — 207.55\n2. Валерия Лукашова — 189.16\n3. 
+ Лизавета Мельникова — 184.79\n\nПримечатель
+ ное:\n• София Сарновская — Тройной аксел
+ ь\n• Валерия Лукашова — Тройной аксель\n
+ • Лизавета Мельникова — Четверной лутц\
+ n• Юлиана Черенева — Четверной тулуп\n• 
+ Алиса Заикина — Тройной аксель\n• Алиса 
+ Заикина — 2 четверных в программе: 4T\, 4T\n
+ • София Сарновская — Отрыв от второго м
+ еста — 18.39 балла\n\nРоссияне:\n• Алиса Заи
+ кина — 11:11\n• София Сарновская — 12:13\n\nНа
+ чало: 09:45 МСК\nТрансляция: Первый канал / Yo
+ uTube
+LOCATION:G-Drive Арена\, Омск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-serd
+ tse-sibiri-sredi-yuniorov-2026:women-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Сердце Сибири» — деву
+ шки ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

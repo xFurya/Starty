@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:men-ju
+ nior-kp@starty
+DTSTAMP:20261114T183722Z
+DTSTART;TZID=Europe/Moscow:20261105T171500
+DTEND;TZID=Europe/Moscow:20261105T195000
+SUMMARY:ЮГП России «Золото Урала» — юноши КП
+DESCRIPTION:Итог:\n1. Герман Ленков — 81.40\n2. Миха
+ ил Клепацкий — 78.18\n3. Добромир Воронов — 
+ 76.59\n\nНачало: 17:15 МСК\nТрансляция: Первый к
+ анал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-zolo
+ to-urala-sredi-yuniorov-2026:men-junior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ЮГП России «Золото Урала» — юноши 
+ КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

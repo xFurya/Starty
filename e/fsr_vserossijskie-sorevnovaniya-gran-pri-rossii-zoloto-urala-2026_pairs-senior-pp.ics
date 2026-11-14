@@ -1,0 +1,45 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:pairs
+ -senior-pp@starty
+DTSTAMP:20261114T183722Z
+DTSTART;TZID=Europe/Moscow:20261108T162000
+DTEND;TZID=Europe/Moscow:20261108T174000
+SUMMARY:Гран-при России «Золото Урала» — пар
+ ы ПП
+DESCRIPTION:Итог:\n1. Екатерина Чикмарёва / Матв
+ ей Янченков — 134.90\n2. Екатерина Гейниш / А
+ ндрей Рудь — 115.96\n3. Анна Ляшенко / Пётр Ал
+ ексеенко — 114.84\n\nИтог турнира:\n1. Екатери
+ на Чикмарёва / Матвей Янченков — 214.84\n2. Е
+ катерина Гейниш / Андрей Рудь — 181.41\n3. Со
+ фия Диана Касинс / Александр Брегей — 181.3
+ 0\n\nПримечательное:\n• Екатерина Чикмарё
+ ва / Матвей Янченков — Отрыв от второго м
+ еста — 33.43 балла\n\nНачало: 16:20 МСК\nТрансл
+ яция: Первый канал / YouTube
+LOCATION:УГМК-Арена\, Екатеринбург
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-zoloto-urala-2026:pairs-senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Гран-при России «Золото Урала» — п
+ ары ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
