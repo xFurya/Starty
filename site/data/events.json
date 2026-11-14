@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-14T05:48:16+03:00",
- "checked": "2026-11-14T05:51:56.571679+00:00",
+ "checked": "2026-11-14T05:55:58.350513+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -50660,7 +50660,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Alisa Efimova / Misha Mitrofanov — 71.85\n2. Oxana Vouillamoz / Tom Bouvart — 70.63\n3. Ava Kemp / Yohnatan Elizarov — 67.73\n\nНачало: 07:50 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Minerva Fabienne Hase / Nikita Volodin — 72.71\n2. Alisa Efimova / Misha Mitrofanov — 71.85\n3. Oxana Vouillamoz / Tom Bouvart — 70.63\n\nНачало: 07:50 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Katie McBEATH / Balazs Nagy",
@@ -50668,7 +50668,7 @@
      "time": "07:57",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "67.62"
     },
     {
@@ -50677,7 +50677,7 @@
      "time": "08:03",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "64.86"
     },
     {
@@ -50686,7 +50686,7 @@
      "time": "08:10",
      "no": 3,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "58.54"
     },
     {
@@ -50695,7 +50695,7 @@
      "time": "08:16",
      "no": 4,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "54.91"
     },
     {
@@ -50704,7 +50704,7 @@
      "time": "08:30",
      "no": 5,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "67.73"
     },
     {
@@ -50713,7 +50713,7 @@
      "time": "08:36",
      "no": 6,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "70.63"
     },
     {
@@ -50722,7 +50722,7 @@
      "time": "08:43",
      "no": 7,
      "warmup": 2,
-     "place": 1,
+     "place": 2,
      "points": "71.85"
     },
     {
@@ -50730,7 +50730,9 @@
      "nation": "GER",
      "time": "08:49",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "72.71"
     }
    ],
    "live": {
@@ -50754,21 +50756,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Minerva Fabienne Hase / Nikita Volodin",
+     "nation": "GER",
+     "points": "72.71"
+    },
+    {
+     "place": 2,
      "name": "Alisa Efimova / Misha Mitrofanov",
      "nation": "USA",
      "points": "71.85"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Oxana Vouillamoz / Tom Bouvart",
      "nation": "SUI",
      "points": "70.63"
-    },
-    {
-     "place": 3,
-     "name": "Ava Kemp / Yohnatan Elizarov",
-     "nation": "CAN",
-     "points": "67.73"
     }
    ],
    "provisional": true
