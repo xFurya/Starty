@@ -332,6 +332,7 @@ def save_book(path, book):
 
 
 SICK_AFTER = 6  # столько отказов подряд — сайт на этот сбор откладываем
+NEW_PER_RUN = 300  # новых миниатюр за сбор: остальное доберётся в следующий (иначе сбор после пополнения справочника — часы)
 WIKI_PRIO = 3  # с этого приоритета — Викиданные/Викисклад: строгий контроль личности и портрета
 BOOT_PRIO = 3  # приоритет фото, о котором память ничего не знает
 # Найденное вручную в открытых источниках (data/photo_hand.json): ниже всех, поэтому фото из реестра
@@ -473,10 +474,11 @@ def collect(site, want, raw, prev_photos, names, book_path, skip_path, log=print
     src = Sources(raw, names, want)
     checked = {}
     out = {}
-    stats = {"kept": 0, "new": 0, "upgraded": 0, "unsure": 0, "net": 0, "dropped": 0}
+    stats = {"kept": 0, "new": 0, "upgraded": 0, "unsure": 0, "net": 0, "dropped": 0, "later": 0}
     reasons = {}
 
     sick = {}  # сайт → сколько подряд запросов не ответили
+    made = [0]  # сколько миниатюр сделали в этот сбор (NEW_PER_RUN)
 
     def host(url):
         return url.split("/")[2] if "://" in url else ""
@@ -537,8 +539,12 @@ def collect(site, want, raw, prev_photos, names, book_path, skip_path, log=print
             if down(url):
                 stats["net"] += 1
                 continue
+            if made[0] >= NEW_PER_RUN:
+                stats["later"] += 1
+                break  # лимит сбора: этот человек — в следующий раз
             if usable(url) is False:  # None — проверить не удалось (429 на HEAD), сама загрузка решит
                 continue
+            made[0] += 1
             rel, status = make2(site, url, strict=prio >= WIKI_PRIO or _wiki(url))
             note(url, status != "fail")
             if status == "fail":
@@ -573,5 +579,6 @@ def collect(site, want, raw, prev_photos, names, book_path, skip_path, log=print
     log(f"  фото: {len(out)} из {len(want)}, миниатюр {local}; новых {stats['new']}, заменено на лучшее "
         f"{stats['upgraded']}; не понять кто на снимке {stats['unsure']}; убрано по новым правилам {stats['dropped']}"
         + (f"; источник не ответил {stats['net']}" if stats["net"] else "")
+        + (f"; ждут следующего сбора {stats['later']}" if stats["later"] else "")
         + (f"; убрано лишних {gone}" if gone else ""))
     return out
