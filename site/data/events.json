@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-14T15:29:37+03:00",
- "checked": "2026-11-14T12:54:29.588453+00:00",
+ "checked": "2026-11-14T12:58:27.985176+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51221,19 +51221,19 @@
     },
     {
      "place": 3,
-     "name": "Александр Мельников",
+     "name": "Марк Кондратюк",
      "nation": "МОС",
-     "points": "96.33"
+     "points": "97.27"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Лев Лазарев — 98.73\n2. Николай Угожаев — 97.38\n3. Александр Мельников — 96.33\n\nНачало: 14:25 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Лев Лазарев — 98.73\n2. Николай Угожаев — 97.38\n3. Марк Кондратюк — 97.27\n\nНачало: 14:25 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Артемий Маринин",
      "nation": "МОС",
      "no": 1,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "75.71",
      "time": "14:32"
     },
@@ -51242,7 +51242,7 @@
      "nation": "МОС",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "78.42",
      "time": "15:07"
     },
@@ -51251,7 +51251,7 @@
      "nation": "СПБ",
      "no": 3,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "points": "67.67",
      "time": "14:44"
     },
@@ -51260,7 +51260,7 @@
      "nation": "МОС",
      "no": 4,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "96.33",
      "time": "14:50"
     },
@@ -51269,7 +51269,7 @@
      "nation": "СПБ",
      "no": 5,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "76.21",
      "time": "14:55"
     },
@@ -51278,7 +51278,7 @@
      "nation": "МОС",
      "no": 6,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "75.98",
      "time": "15:01"
     },
@@ -51288,7 +51288,7 @@
      "time": "15:20",
      "no": 8,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "77.71"
     },
     {
@@ -51297,7 +51297,7 @@
      "time": "15:15",
      "no": 7,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "91.66"
     },
     {
@@ -51314,7 +51314,9 @@
      "nation": "МОС",
      "time": "15:44",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3,
+     "points": "97.27"
     },
     {
      "name": "Николай Угожаев",
@@ -51326,7 +51328,6 @@
      "points": "97.38"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/5etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/5etap_sen/SEG001.htm",
@@ -51345,7 +51346,7 @@
      "Николай УГОЖАЕВ": "Николай Угожаев",
      "Марк КОНДРАТЮК": "Марк Кондратюк"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json"
   },
