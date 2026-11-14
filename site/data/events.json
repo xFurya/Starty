@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-14T23:12:01.595289+00:00",
+ "checked": "2026-11-14T23:16:01.729511+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51542,7 +51542,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Katerina Mrazkova / Daniel Mrazek — 76.32\n2. Holly Harris / Jason Chan — 71.20\n3. Katarina Wolfkostin / Dimitry Tsarevski — 69.62\n\nНачало: 01:03 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Emilea Zingas / Vadym Kolesnik — 82.52\n2. Katerina Mrazkova / Daniel Mrazek — 76.32\n3. Holly Harris / Jason Chan — 71.20\n\nНачало: 01:03 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Natacha Lagouge / Arnaud Caffa",
@@ -51550,7 +51550,7 @@
      "time": "01:09",
      "no": 1,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "59.92"
     },
     {
@@ -51559,7 +51559,7 @@
      "time": "01:16",
      "no": 2,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "65.79"
     },
     {
@@ -51568,7 +51568,7 @@
      "time": "01:22",
      "no": 3,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "69.10"
     },
     {
@@ -51577,7 +51577,7 @@
      "time": "01:29",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "67.84"
     },
     {
@@ -51586,7 +51586,7 @@
      "time": "01:35",
      "no": 5,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "69.62"
     },
     {
@@ -51595,7 +51595,7 @@
      "time": "01:49",
      "no": 6,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "64.78"
     },
     {
@@ -51604,7 +51604,7 @@
      "time": "01:55",
      "no": 7,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "71.20"
     },
     {
@@ -51613,7 +51613,7 @@
      "time": "02:02",
      "no": 8,
      "warmup": 2,
-     "place": 1,
+     "place": 2,
      "points": "76.32"
     },
     {
@@ -51621,7 +51621,9 @@
      "nation": "USA",
      "time": "02:08",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "82.52"
     },
     {
      "name": "Evgeniia Lopareva / Geoffrey Brissaud",
@@ -51654,21 +51656,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Emilea Zingas / Vadym Kolesnik",
+     "nation": "USA",
+     "points": "82.52"
+    },
+    {
+     "place": 2,
      "name": "Katerina Mrazkova / Daniel Mrazek",
      "nation": "CZE",
      "points": "76.32"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Holly Harris / Jason Chan",
      "nation": "AUS",
      "points": "71.20"
-    },
-    {
-     "place": 3,
-     "name": "Katarina Wolfkostin / Dimitry Tsarevski",
-     "nation": "USA",
-     "points": "69.62"
     }
    ],
    "provisional": true
