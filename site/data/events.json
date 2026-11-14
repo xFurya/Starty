@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-14T05:48:16+03:00",
- "checked": "2026-11-14T04:04:08.523578+00:00",
+ "checked": "2026-11-14T04:12:05.079574+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -50468,7 +50468,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Donovan Carrillo — 86.49\n2. Daniel Martynov — 84.17\n3. Jason Brown — 84.00\n\nНачало: 06:03 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Sota Yamamoto — 91.29\n2. Donovan Carrillo — 86.49\n3. Daniel Martynov — 84.17\n\nНачало: 06:03 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Aleksa Rakic",
@@ -50476,7 +50476,7 @@
      "time": "06:10",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "68.92"
     },
     {
@@ -50485,7 +50485,7 @@
      "time": "06:16",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "86.49"
     },
     {
@@ -50494,7 +50494,7 @@
      "time": "06:23",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "84.17"
     },
     {
@@ -50503,7 +50503,7 @@
      "time": "06:29",
      "no": 4,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "65.77"
     },
     {
@@ -50512,7 +50512,7 @@
      "time": "06:35",
      "no": 5,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "83.13"
     },
     {
@@ -50521,7 +50521,7 @@
      "time": "06:41",
      "no": 6,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "84.00"
     },
     {
@@ -50530,7 +50530,7 @@
      "time": "06:55",
      "no": 7,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "63.46"
     },
     {
@@ -50538,7 +50538,9 @@
      "nation": "JPN",
      "time": "07:01",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "91.29"
     },
     {
      "name": "Lukas Britschgi",
@@ -50594,21 +50596,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Sota Yamamoto",
+     "nation": "JPN",
+     "points": "91.29"
+    },
+    {
+     "place": 2,
      "name": "Donovan Carrillo",
      "nation": "MEX",
      "points": "86.49"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Daniel Martynov",
      "nation": "USA",
      "points": "84.17"
-    },
-    {
-     "place": 3,
-     "name": "Jason Brown",
-     "nation": "USA",
-     "points": "84.00"
     }
    ],
    "provisional": true
