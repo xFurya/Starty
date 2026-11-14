@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-14T05:48:16+03:00",
- "checked": "2026-11-14T05:48:16+03:00",
+ "checked": "2026-11-14T03:20:05.189641+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -50468,14 +50468,16 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Начало: 06:03 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Aleksa Rakic — 68.92\n\nНачало: 06:03 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Aleksa Rakic",
      "nation": "CAN",
      "time": "06:10",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "68.92"
     },
     {
      "name": "Donovan Carrillo",
@@ -50576,7 +50578,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-skate-america-2026.json"
+   "proto": "isu_isu-gp-skate-america-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Aleksa Rakic",
+     "nation": "CAN",
+     "points": "68.92"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-skate-america-2026:pairs-senior-kp",
