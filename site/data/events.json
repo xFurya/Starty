@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-15T00:51:08+03:00",
+ "checked": "2026-11-14T22:20:01.406319+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51542,14 +51542,16 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Начало: 01:03 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Natacha Lagouge / Arnaud Caffa — 59.92\n\nНачало: 01:03 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Natacha Lagouge / Arnaud Caffa",
      "nation": "FRA",
      "time": "01:09",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "59.92"
     },
     {
      "name": "Sofia Val / Asaf Kazimov",
@@ -51634,7 +51636,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-skate-america-2026.json"
+   "proto": "isu_isu-gp-skate-america-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Natacha Lagouge / Arnaud Caffa",
+     "nation": "FRA",
+     "points": "59.92"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-skate-america-2026:women-senior-kp",
