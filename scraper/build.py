@@ -1350,6 +1350,7 @@ def load_prev():
 
 
 def main():
+    from . import history as hs  # архив прошлых сезонов сам читает этот модуль — поэтому не в шапке
     now = dt.datetime.now(MSK).replace(microsecond=0)
     prev = load_prev()
     names = nm.Names(NAMES, CFG.get("aliases"))
@@ -1425,8 +1426,12 @@ def main():
     vanished = running_tids(prev.get("events", []), {e["tid"] for e in events}, now)
     if vanished:
         log("  идущие турниры пропали из источника, остаются прошлые старты:", ", ".join(sorted(vanished)))
+    gone = []
     for e in prev.get("events", []):
-        if e["id"] in have or e["start"] < season_start:
+        if e["id"] in have:
+            continue
+        if e["start"] < season_start:
+            gone.append(e)  # сезон сменился: прошлогодние старты уходят из расписания — в архив
             continue
         pref = e["tid"].split(":")[0] + ":*"
         past = dt.datetime.fromisoformat(e["end"]) < now
@@ -1435,6 +1440,11 @@ def main():
             kept += 1
     if kept:
         log(f"  из прошлого сбора: {kept}")
+    if gone:
+        try:
+            log(f"  в архив прошлых сезонов: {len(gone)} стартов, файлов записано: {hs.fold(gone)}")
+        except Exception as e:  # архив — дополнение: расписание важнее
+            log("!! архив прошлых сезонов:", e)
 
     # повтор одного и того же сегмента (два источника или два id) — оставляем более
     # подробный; один сегмент = то же время, тот же вид и сегмент, тот же город
@@ -1556,6 +1566,11 @@ def main():
         rs.save()
 
     report["protocols"] = write_protocols(report["protos"], data["events"], now)
+    try:
+        # история выступлений (site/h): протоколы архива и нынешнего сезона — для статистики в профиле
+        log("  история выступлений:", hs.athletes())
+    except Exception as e:  # дополнение к профилю: без него всё остальное работает
+        log("!! история выступлений:", e)
     write_site(data)
     log(f"готово: {len(data['events'])} стартов, {len(data['upcoming'])} турниров без расписания;"
         f" источники: {report['sources']}; протоколы: {report['protocols']}; ошибок: {len(report['errors'])}")

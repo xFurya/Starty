@@ -278,6 +278,36 @@ def page_time(url):
     return dt.datetime.now(dt.timezone.utc)
 
 
+_FOOTER_STAMP = re.compile(
+    r"(?:Last\s+Update|Обновлено)\s*:?\s*(\d{1,2})\.(\d{1,2})\.(\d{4})\s+(\d{1,2}):(\d{2})(?::(\d{2}))?\s*"
+    r"\(\s*UTC\s*([+\-−])\s*(\d{1,2}):?(\d{2})", re.I)
+
+
+def page_stamp(page, url=None):
+    """Когда табло обновило страницу: ISO-время с поясом или None. Заголовок Last-Modified (секунды)
+    главнее; иначе — строка внизу страницы «Last Update: 08.11.2026 14:48 (UTC +08:00)» / «Обновлено: …»:
+    время и пояс машины табло согласованы между собой, даже когда пояс в оглавлении чужой."""
+    from email.utils import parsedate_to_datetime
+    raw = net.LAST_MODIFIED.get(url) if url else None
+    if raw:
+        try:
+            return parsedate_to_datetime(raw).astimezone(dt.timezone.utc).isoformat()
+        except (TypeError, ValueError):
+            pass
+    if not page:
+        return None
+    m = _FOOTER_STAMP.search(_text(page))
+    if not m:
+        return None
+    g = [int(x) if x and x not in "+-−" else x for x in m.groups()]
+    sign = 1 if g[6] == "+" else -1
+    try:
+        tz = dt.timezone(sign * dt.timedelta(hours=g[7], minutes=g[8]))
+        return dt.datetime(g[2], g[1], g[0], g[3], g[4], g[5] or 0, tzinfo=tz).astimezone(dt.timezone.utc).isoformat()
+    except ValueError:
+        return None
+
+
 def fix_zone(idx, zone=None):
     """Пояс табло: известный (zone — tzinfo) или по стране и подписи на момент выкладки."""
     if zone is None:
@@ -650,23 +680,40 @@ PDF_LINE = re.compile(
     r"^\s*(\d{1,2}):(\d{2})(?::(\d{2}))?\s*-\s*\d{1,2}:\d{2}(?::\d{2})?\s+(\d{1,3})\s+(\S.*)$")
 
 
-def parse_times_pdf(url):
-    """PDF со временем выхода: {стартовый номер: (час, минута), ...} и разминки.
-    Время — местное, как в PDF."""
-    text = net.pdf_text(url)
+# строка разминки в расписании: «Warm-Up Group 2», «Разминка 2», «2-я разминка», «2 -я РАЗМИНКА», «2nd Warm-up»
+WARMUP_ANY = re.compile(
+    r"(?:Warm-?Up\s*Group|Разминка|Группа\s+разминки)\s*(\d+)|(\d+)\s*-?\s*(?:я|ая|st|nd|rd|th)?\s*(?:разминка|warm-?up)", re.I)
+# не спортсмен: подготовка льда, перерыв, церемония
+PDF_NOT_SKATER = re.compile(r"разминк|warm-?up|подготовк|resurfac|перерыв|break|церемон|ceremon", re.I)
+
+
+def parse_times_pdf_text(text):
+    """Текст PDF со временем выхода → ({стартовый номер: (час, минута)}, {номер: разминка}).
+    Строка разминки («18:07:30 - 18:14:30   2 -я РАЗМИНКА») — не спортсмен №2: её число — номер
+    разминки (раньше она затирала время второго по счёту)."""
     times = {}
     warm = {}
     group = None
     for line in text.splitlines():
-        w = WARMUP_RE.search(line)
+        w = WARMUP_ANY.search(line)
+        if w and PDF_NOT_SKATER.search(line):
+            group = int(w.group(1) or w.group(2))
+            continue
         m = PDF_LINE.match(line)
-        if m:
-            no = int(m.group(4))
-            times[no] = (int(m.group(1)), int(m.group(2)))
-            warm[no] = group
-        elif w:
-            group = int(w.group(1))
+        if not m or PDF_NOT_SKATER.search(m.group(5)) or not re.search(r"[A-Za-zА-Яа-яЁё]{2}", m.group(5)):
+            continue
+        no = int(m.group(4))
+        if no in times:
+            continue  # номер уже встречался: второе вхождение — не то
+        times[no] = (int(m.group(1)), int(m.group(2)))
+        warm[no] = group
     return times, warm
+
+
+def parse_times_pdf(url):
+    """PDF со временем выхода: {стартовый номер: (час, минута), ...} и разминки.
+    Время — местное, как в PDF."""
+    return parse_times_pdf_text(net.pdf_text(url))
 
 
 # ---------------------------------------------------------------- судейские оценки

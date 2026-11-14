@@ -188,5 +188,28 @@ class JudgesRow(unittest.TestCase):
         self.assertEqual(upper[0]["base"], 8.8)
 
 
+
+class TimesPdf(unittest.TestCase):
+    def test_warmup_line_is_not_skater_two(self):
+        # Гран-при России, Омск 2026: «2 -я РАЗМИНКА» затирала время второго по счёту (18:07 вместо 17:38)
+        text = """17:25:00 - 17:32:00        1 -я РАЗМИНКА
+17:32:30 - 17:38:20   1    Артемий МАРИНИН                                                      МОС
+17:38:20 - 17:44:10   2    Арсений ДИМИТРИЕВ                                                    МОС
+18:07:30 - 18:14:30        2 -я РАЗМИНКА
+18:15:00 - 18:20:50   7    Илья СТРОГАНОВ                                                       СПБ
+"""
+        times, warm = st.parse_times_pdf_text(text)
+        self.assertEqual(times, {1: (17, 32), 2: (17, 38), 7: (18, 15)})
+        self.assertEqual(warm, {1: 1, 2: 1, 7: 2})
+
+    def test_english_warmup_and_resurfacing(self):
+        text = """Warm-Up Group 3
+19:00:00 - 19:06:00   8    Kao MIURA   JPN
+19:06:00 - 19:20:00   9    Ice Resurfacing
+"""
+        times, warm = st.parse_times_pdf_text(text)
+        self.assertEqual(times, {8: (19, 0)})
+        self.assertEqual(warm, {8: 3})
+
 if __name__ == "__main__":
     unittest.main()

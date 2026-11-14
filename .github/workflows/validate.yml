@@ -42,6 +42,6 @@ jobs:
         run: |
           set -o pipefail
           python3 -m unittest -v scraper.test_swisstiming scraper.test_regional scraper.test_people \
-            scraper.test_fsr scraper.test_protocols scraper.test_live scraper.test_net 2>&1 | tee tests.log
+            scraper.test_fsr scraper.test_protocols scraper.test_live scraper.test_net scraper.test_history 2>&1 | tee tests.log
           # пропуск теста (нет pdftotext и т. п.) — ошибка: проверка не должна молча слабеть
           if grep -qE "skipped '|skipped=" tests.log; then echo "::error::тесты пропущены"; grep -E "skipped '|skipped=" tests.log; exit 1; fi

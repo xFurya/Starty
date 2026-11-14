@@ -234,7 +234,8 @@ def segment_view(*, seg, category, code, page, cat_url, now, start, end, marks, 
             rows, reason = [], f"pdf_{why}"
     state, basis = segment_state(now, start, end, table, bool(rows), marks, judges, final_by_time)
     return {"state": state, "basis": basis, "table": table, "rows": rows, "results": results,
-            "judges": judges, "reason": reason, "skipped": proto["skipped"]}
+            "judges": judges, "reason": reason, "skipped": proto["skipped"],
+            "stamp": st.page_stamp(page, seg.get("url")) if page is not None else None}
 
 
 # ---------------------------------------------------------------- файл протокола
@@ -305,6 +306,9 @@ def segment_record(*, seg, code, start, end, view, name_of, details=None, offici
     rec = {"code": code, "name": seg["name"], "start": _iso(start), "end": _iso(end), "page": seg["url"],
            "judges": seg.get("judges_pdf") or seg.get("scores_pdf"), "table": view["table"],
            "state": view["state"], "basis": view["basis"], "skipped": view["skipped"], "rows": rows}
+    # время табло: когда страница сегмента обновилась — в приложении «Табло от 14:52»
+    if view.get("stamp"):
+        rec["stamp"] = view["stamp"]
     if officials:
         rec["panel"] = officials
     return rec
@@ -346,8 +350,12 @@ def total_record(text, last_final, name_of):
         state = "not_published"
     else:
         state = "final" if t["complete"] and last_final else "provisional"
-    return {"state": state, "complete": t["complete"], "cols": [total_col_name(c) for c in t["cols"]],
-            "colsKind": t["colsKind"], "rows": rows, "skipped": t["skipped"]}
+    out = {"state": state, "complete": t["complete"], "cols": [total_col_name(c) for c in t["cols"]],
+           "colsKind": t["colsKind"], "rows": rows, "skipped": t["skipped"]}
+    stamp = st.page_stamp(text)
+    if stamp:
+        out["stamp"] = stamp
+    return out
 
 
 def category_record(kind, level, name, segments, total):
