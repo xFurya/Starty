@@ -252,13 +252,32 @@ def owns(rec, name, nation, isu_id, pr):
     return _pb_allows(pr, rec["s"], r["pts"])
 
 
-def for_profile(name, nation, isu_id, pr, book):
+def isu_ids(name, nation, book, kinds):
+    """Номера биографий ISU из таблиц (мировые рекорды, списки личных рекордов и сезона) у строк с этим
+    именем и страной в видах kinds ({w, m, p, d}): так находится биография тёзки из другого вида."""
+    out = []
+    rows = [rec["row"] for rec in book.get("records") or [] if (rec.get("kind") or "")[:1].lower() in kinds]
+    for field in ("pb", "sb"):
+        for code, rs_ in (book.get(field) or {}).items():
+            if code[:1].lower() in kinds:
+                rows += rs_
+    for r in rows:
+        if r.get("id") and nm.key(r["n"]) == nm.key(name) and _same_nation(r["c"], nation) and r["id"] not in out:
+            out.append(r["id"])
+    return out
+
+
+def for_profile(name, nation, isu_id, pr, book, kinds=None):
     """Строки «Примечательного» для профиля: [{t, ev, d, pts?, src, u}]. Сначала мировые рекорды, за ними
     места в личных рекордах мира и лучшие результаты сезона, потом рекорды архива, редкие элементы,
-    четверные, +5 и десятки; внутри группы — сумма, короткая, произвольная, затем от ранних к поздним."""
+    четверные, +5 и десятки; внутри группы — сумма, короткая, произвольная, затем от ранних к поздним.
+    kinds — буквы видов человека (w, m, p, d), если с ним путают тёзку из другого вида: чужие строки
+    (рекорды одиночницы у танцовщицы с тем же именем) не берём. None — все."""
+    def mine(letter):
+        return kinds is None or (letter or "").lower()[:1] in kinds
     out, owned = [], set()
     for rec in book.get("records") or []:
-        if owns(rec, name, nation, isu_id, pr):
+        if mine(rec.get("kind")) and owns(rec, name, nation, isu_id, pr):
             r = rec["row"]
             owned.add((rec["s"], float(r["pts"])))
             out.append({"t": record_title(rec), "ev": event_ru(r["ev"]), "d": r["d"], "pts": r["pts"],
@@ -268,7 +287,7 @@ def for_profile(name, nation, isu_id, pr, book):
                                    ("sb", 0.7, range(1, 4), lambda k, s: f"{STAT}sb{season}/sbts{k}{s}.htm")):
         for code, rows in (book.get(field) or {}).items():
             k, s = code[0], code[1:]
-            if s not in SEG_RU or (field == "sb" and not season):
+            if s not in SEG_RU or (field == "sb" and not season) or not mine(k):
                 continue
             for r in rows:
                 if r.get("r") not in places or not _match(r, name, nation, isu_id):
@@ -285,7 +304,7 @@ def for_profile(name, nation, isu_id, pr, book):
                     t = f"{PLACE[r['r']]} место в мире в сезоне {SEG_RU[s]}"
                 out.append({"t": t, "ev": event_ru(r["ev"]), "d": r["d"], "pts": r["pts"], "src": "ISU",
                             "u": page(k, s), "g": g, "o": SEG_ORDER[s]})
-    out += [dict(x, o=0) for x in ar.for_profile(name, nation, book.get("archive"))]
+    out += [dict(x, o=0) for x in ar.for_profile(name, nation, book.get("archive"), kinds=kinds)]
     out.sort(key=lambda x: (x["g"], x["o"], x.get("d", "")))
     for x in out:
         del x["g"], x["o"]

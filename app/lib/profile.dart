@@ -353,8 +353,18 @@ String _sourcesLine(List<String> src, String checked) {
 // ------------------------------------------------------------------ лист
 
 /// Профиль спортсмена листом поверх текущего экрана. [name] — как в данных (пара — одной записью).
-void showProfile(BuildContext context, String name, Schedule? data) {
-  showSwipeSheet<void>(context, (c, scroll) => ProfileSheet(name: name, data: data, scrollController: scroll), top: .92);
+void showProfile(BuildContext context, String name, Schedule? data, {String? kind}) {
+  showSwipeSheet<void>(context, (c, scroll) => ProfileSheet(name: name, data: data, kind: kind, scrollController: scroll), top: .92);
+}
+
+/// Вид старта, внутри которого нажимают имя (карточка старта, протокол): по нему из тёзок выбирается
+/// нужный человек ([Schedule.personFor]). Вне старта — нет, и имя открывает человека справочника.
+class KindScope extends InheritedWidget {
+  final String kind;
+  const KindScope({super.key, required this.kind, required super.child});
+  static String? of(BuildContext context) => context.dependOnInheritedWidgetOfExactType<KindScope>()?.kind;
+  @override
+  bool updateShouldNotify(KindScope old) => old.kind != kind;
 }
 
 /// Состояние приложения: с ним в шапке профиля есть «Отслеживать». Ставит приложение при запуске;
@@ -460,7 +470,7 @@ class ProfileTap extends StatelessWidget {
       hint: 'открыть профиль',
       child: Material(
         type: MaterialType.transparency,
-        child: InkWell(onTap: () => showProfile(context, name, data), borderRadius: radius, child: child),
+        child: InkWell(onTap: () => showProfile(context, name, data, kind: KindScope.of(context)), borderRadius: radius, child: child),
       ),
     );
   }
@@ -470,7 +480,10 @@ class ProfileSheet extends StatefulWidget {
   final String name;
   final Schedule? data;
   final ScrollController? scrollController;
-  const ProfileSheet({super.key, required this.name, required this.data, this.scrollController});
+
+  /// Вид старта, из которого открыли (см. [KindScope]): у тёзок — тот, кто в нём выступает.
+  final String? kind;
+  const ProfileSheet({super.key, required this.name, required this.data, this.scrollController, this.kind});
   @override
   State<ProfileSheet> createState() => _ProfileSheetState();
 }
@@ -478,7 +491,7 @@ class ProfileSheet extends StatefulWidget {
 class _ProfileSheetState extends State<ProfileSheet> {
   Future<Profile?>? _future;
 
-  Person? get _person => widget.data?.personOf(widget.name);
+  Person? get _person => widget.data?.personFor(widget.name, widget.kind);
 
   @override
   void initState() {

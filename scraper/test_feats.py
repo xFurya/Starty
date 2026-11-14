@@ -411,6 +411,32 @@ class WriteTest(unittest.TestCase):
         self.assertNotIn("feats", pr)
         self.assertEqual(len(pr["pbru"]), 2)
 
+    def test_namesake_from_other_discipline_gets_own_profile(self):
+        # Анна Щербакова в справочнике — танцовщица (её вид «d»), а в таблицах ISU по имени — одиночница:
+        # танцовщице чужие рекорды не достаются, у одиночницы свой профиль
+        people = [{"n": "Анна Щербакова", "c": "RUS", "k": "d"}]
+        card = {"fio": "Щербакова Анна Михайловна", "born": "2006-01-10", "kind": "d", "rank": "МС", "at": "2026-11-13"}
+        tot = "<table>" + row(2, "Anna SHCHERBAKOVA", "RUS", "XXIV Olympic Winter Games 2022", "17/02/2022", "255.95",
+                              bio="00103103") + "</table>"
+        b = book({}, ar.empty(), pb={"wto": ft.parse(tot)})
+        bests = {pf.nm.key("Анна Щербакова"): {"total": {"pts": "264.10", "ev": "Чемпионат России", "d": "2020-12-26", "src": "ФФККР"}}}
+        self.assertEqual(pf.alt_ids(people, b), {pf.nm.key("Анна Щербакова") + "|w": "00103103"})
+        with tempfile.TemporaryDirectory() as d:
+            pf.write(people, {"ids": {}, "bios": {}}, {"1304": card}, out_dir=d, log=lambda *a: None, book=b, bests=bests,
+                     aliases={})
+            p = people[0]
+            with open(os.path.join(d, p["p"] + ".json"), encoding="utf-8") as f:
+                main = json.load(f)
+            self.assertEqual(main["who"][0]["born"], "2006-01-10")
+            self.assertNotIn("feats", main)
+            self.assertNotIn("pbru", main)
+            self.assertEqual(p["alt"][0]["was"], "w")
+            with open(os.path.join(d, p["alt"][0]["p"] + ".json"), encoding="utf-8") as f:
+                alt = json.load(f)
+        self.assertEqual([x["t"] for x in alt["feats"]][:2],
+                         ["Лучшая сумма на российских стартах — выше рекорда ISU", "Второй личный рекорд в мире с 2018 года по сумме баллов"])
+        self.assertEqual(alt["pbru"][0]["pts"], "264.10")
+
     def test_domestic_against_world_record_without_isu_pb(self):
         # ISU личных рекордов не прислал, а мировой рекорд по сумме у неё есть — мерка он
         pr = {"src": ["ISU"]}

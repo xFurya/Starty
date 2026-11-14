@@ -305,7 +305,8 @@ def fill_fields(events, cats):
     for c in cats:
         final = {r["name"]: r["place"] for r in (c.get("total") or {}).get("rows") or [] if r.get("place")}
         for sg in c["segments"]:
-            cand = [e for e in events if (e["kind"], e["level"], e["seg"]) == (c["kind"], c["level"], sg["code"])]
+            cand = [e for e in events if (e["kind"], e["level"], e["seg"]) == (c["kind"], c["level"], sg["code"])
+                    and bool(e.get("team")) == bool(c.get("team"))]
             if len(cand) > 1:
                 slug = build.slugify(c["name"]) or "x"
                 cand = [e for e in cand if e["id"].endswith("-" + slug)] or cand[:1]
@@ -317,6 +318,8 @@ def fill_fields(events, cats):
                 for k in ("no", "place", "points"):
                     if r.get(k) is not None:
                         o[k] = r[k]
+                if r.get("status") == "DSQ":  # дисквалифицирован: места нет, но он выступал
+                    o["status"] = "DSQ"
                 if final.get(r["name"]):
                     o["final"] = final[r["name"]]
                 field.append(o)
@@ -324,12 +327,49 @@ def fill_fields(events, cats):
         # тройка турнира — у последнего сегмента вида; на табло comnet её читает только протокол
         t = c.get("total") or {}
         last = [e for e in events if (e["kind"], e["level"]) == (c["kind"], c["level"])
-                and build.SEG_ORDER.get(e["seg"]) == 1]
+                and build.SEG_ORDER.get(e["seg"]) == 1 and bool(e.get("team")) == bool(c.get("team"))]
         if len(last) == 1 and not last[0].get("total") and t.get("state") == "final" and t.get("complete"):
             top = sorted((r for r in t["rows"] if r.get("place")), key=lambda r: r["place"])[:3]
             if len(top) == 3:
                 last[0]["total"] = [{"place": r["place"], "name": r["name"], "nation": r.get("nation") or "",
                                      "points": r["points"]} for r in top]
+
+
+def unheld(events, cats):
+    """Старты, которых не было: на табло категория есть, а сегмент пустой (ни строки, ни мест), хотя в
+    других категориях турнира выступили — заявки не набралось. В архиве им места нет: «завершён, итогов
+    нет» о том, что не проходило, — неправда. → id таких стартов."""
+    if not any(sg.get("rows") for c in cats for sg in c["segments"]):
+        return set()
+    empty = {(c["kind"], c["level"], sg["code"], bool(c.get("team"))) for c in cats for sg in c["segments"]
+             if not sg.get("rows") and sg.get("state") != "final"}
+    return {e["id"] for e in events if (e["kind"], e["level"], e["seg"], bool(e.get("team"))) in empty
+            and not e.get("field") and not e.get("podium")}
+
+
+def prune_unheld(past_dir=None, proto_dir=None):
+    """Убрать из файлов месяцев старты, которых не было (unheld), по их файлам протокола. → сколько."""
+    past_dir = past_dir or PAST_DIR
+    proto_dir = proto_dir or PROTO_DIR
+    gone = 0
+    for path in sorted(glob.glob(os.path.join(past_dir, "[0-9][0-9][0-9][0-9]-[0-9][0-9].json"))):
+        month = os.path.basename(path)[:-5]
+        events, tours = load_month(month, past_dir)
+        drop = set()
+        for proto in {e.get("proto") for e in events if e.get("proto")}:
+            doc = P.load_doc(os.path.join(proto_dir, proto))
+            if doc:
+                drop |= unheld([e for e in events if e.get("proto") == proto], doc["categories"])
+        if not drop:
+            continue
+        keep = [e for e in events if e["id"] not in drop]
+        gone += len(events) - len(keep)
+        doc = {"v": V, "month": month, "events": keep}
+        if tours:
+            doc["tournaments"] = tours
+        write_json(path, doc)
+    write_index(past_dir)
+    return gone
 
 
 def tid_of(item):
@@ -413,8 +453,10 @@ def tournament(item, now=None):
     p = protos.get(out["tid"])
     if p and p["categories"]:
         fill_fields(events, p["categories"])
+        drop = unheld(events, p["categories"])
+        events = [e for e in events if e["id"] not in drop]
         doc = P.make_doc(tid=out["tid"], tournament=item["ev"], src=idx["url"], marks=p["marks"],
-                         categories=p["categories"], now=now)
+                         categories=p["categories"], now=now, team=p.get("team"))
         out["proto"] = slim_doc(doc)
         errs = [e for u, e in p["fetcher"].errors]
         if errs:
@@ -426,7 +468,7 @@ def tournament(item, now=None):
 def slim_event(ev):
     """Событие для архива: без полей нынешнего дня; состав — имя, страна, место, баллы, итоговое место."""
     out = {k: v for k, v in ev.items() if k not in DROP and not k.startswith("_")}
-    out["field"] = [{k: o[k] for k in ("name", "nation", "no", "place", "points", "final") if o.get(k) not in (None, "")}
+    out["field"] = [{k: o[k] for k in ("name", "nation", "no", "place", "points", "final", "status") if o.get(k) not in (None, "")}
                     for o in ev.get("field", [])]
     return out
 
@@ -520,6 +562,8 @@ def respell(rec, sp):
     for ev in rec["events"]:
         intl = ev["intl"]
         for key in ("field", "podium", "total"):
+            if key == "total" and ev.get("team"):
+                continue  # командный зачёт — страны, а не люди
             for o in ev.get(key) or []:
                 if o.get("nation") in ALSO_RUS:
                     o["nation"] = ALSO_RUS[o["nation"]]
@@ -713,6 +757,8 @@ def _skates(doc):
             for r in rows:
                 rec = {"d": day, "t": doc["tid"], "k": c["kind"], "l": c["level"], "s": sg["code"],
                        "pl": r["place"], "of": len(rows), "pts": r.get("points"), "c": r.get("nation") or ""}
+                if c.get("team"):
+                    rec["tm"] = 1  # командный турнир: тот же сегмент, что личный, — но другой старт
                 for k in ("tes", "pcs", "ded"):
                     if r.get(k) is not None:
                         rec[k] = r[k]
@@ -734,7 +780,8 @@ def athletes(past_proto=None, live_proto=None, h_dir=None):
     Файл: {v, t: {tid: [турнир, международный, в архиве]}, a: {имя: {r: [прокат, …], x?}}} — имя как
     в приложении, прокаты по дате. Прокат: d (день; пусто — на табло не было времени сегмента),
     t (турнир), k, l, s (вид, уровень, сегмент), pl (место), of (участников), pts, tes, pcs, ded,
-    bv (сумма баз), els [[код, отметки, GOE]], tp и tpts (место и баллы в итоге вида), c (страна).
+    bv (сумма баз), els [[код, отметки, GOE]], tp и tpts (место и баллы в итоге вида), c (страна),
+    tm (1 — командный турнир).
     День сегмента без времени на табло — день начала турнира из архива месяцев (dates).
     Двое с одним именем в одном сегменте — тёзки: у имени x: true, статистику по нему приложение
     не считает."""

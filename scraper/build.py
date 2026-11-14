@@ -35,6 +35,7 @@ from . import places as pl
 from . import feats as ft
 from . import teams as tm
 from . import profiles as pf
+from . import countries
 from . import names as nm
 from . import people as pp
 from . import regional as rg
@@ -255,15 +256,17 @@ def estimate_end(start, seg, kind, n, last_start=None):
 # ---------------------------------------------------------------- событие
 
 def make_event(*, tid, tournament, kind, level, seg, mixed, start, end, venue, intl,
-               broadcast, ours, athletes, src, podium=None, total=None, watch=None):
+               broadcast, ours, athletes, src, podium=None, total=None, watch=None, team=False):
+    """team — сегмент командного турнира (Олимпиада): свой id («…-team»), в названии «командный
+    турнир», поле team; вид и уровень — как у личного, чтобы фильтры и правила работали как обычно."""
     label = kind_label(kind, level, mixed)
     start = start.astimezone(MSK)
     end = end.astimezone(MSK)
-    eid = f"{tid}:{kind}-{level}-{seg}"
+    eid = f"{tid}:{kind}-{level}-{seg}" + ("-team" if team else "")
     eid = re.sub(r"[^A-Za-z0-9:_\-]", "", nm.ru_to_lat(eid))
     ev = {
         "id": eid, "tid": tid, "tournament": tournament, "kind": kind, "level": level,
-        "seg": seg, "title": f"{tournament} — {label} {seg}",
+        "seg": seg, "title": f"{tournament} — {'командный турнир, ' if team else ''}{label} {seg}",
         "start": start.isoformat(), "end": end.isoformat(),
         "venue": venue, "intl": intl, "broadcast": broadcast,
         "ours": ours, "athletes": sorted(set(athletes)), "src": src,
@@ -274,6 +277,8 @@ def make_event(*, tid, tournament, kind, level, seg, mixed, start, end, venue, i
         for x in w:
             if x["name"] not in ev["broadcast"]:
                 ev["broadcast"] = ev["broadcast"] + [x["name"]]
+    if team:
+        ev["team"] = True
     if podium:
         ev["podium"] = podium
     if total:
@@ -502,6 +507,12 @@ def categories_of(idx, intl):
     for c in idx["categories"]:
         if not intl and fsr.low_level(c["name"]):
             continue
+        if c.get("team"):
+            # командный турнир: вид — по сегменту («Men Single Skating»), уровень — взрослые
+            kind, _ = cat_en(c["disc"])
+            if kind:
+                cats.append((c, kind, "senior"))
+            continue
         kind, level = (cat_en(c["name"]) if intl else fsr.classify(c["name"]))
         if kind is None:
             continue
@@ -548,7 +559,8 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
 
     for c, kind, level in cats:
         try:
-            entries = [dict(p, name=fix(p["name"])) for p in st.parse_entries(c["entries_url"])]
+            entries = [dict(p, name=fix(p["name"])) for p in st.parse_entries(c["entries_url"])] \
+                if c.get("entries_url") else []
         except net.FetchError:
             entries = []
         for p in entries:
@@ -632,8 +644,11 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
             if started and SEG_ORDER[seg] == 0:
                 first_places = place
             ours, field = [], []
+            dsq = {r["name"] for r in view.get("rows") or [] if (r.get("status") or "").upper() == "DSQ"}
             for p in people:
                 o = {"name": names.to_ru(p["name"]), "nation": p.get("nation", "")}
+                if p["name"] in dsq:
+                    o["status"] = "DSQ"
                 no = p.get("no")
                 if no and no in msk_times and "rank" not in p:
                     o["time"] = msk_times[no].strftime("%H:%M")
@@ -664,7 +679,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 tid=tid, tournament=tournament, kind=kind, level=level, seg=seg, mixed=mixed,
                 start=start, end=end, venue=venue, intl=intl, broadcast=broadcast,
                 watch=watch, ours=sort_ours(ours), athletes=athletes, src=idx["url"],
-                podium=podium, total=total)
+                podium=podium, total=total, team=bool(c.get("team")))
             ev["field"] = sort_ours(field)
             ev["_cat"] = c["name"]
             # протокол уже на табло, но судейских оценок ещё нет — промежуточные итоги
@@ -698,7 +713,7 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                     total = P.total_record(fetcher.page(c["results_url"]), last_final, name_of)
                 except net.FetchError:
                     total = None
-            proto_cats.append(P.category_record(kind, level, c["name"], seg_records, total))
+            proto_cats.append(P.category_record(kind, level, c["name"], seg_records, total, team=bool(c.get("team"))))
         if cat_total and cat_events:
             # наши не прошли в последний сегмент — итог вида у их последнего старта
             ev = cat_events[-1]
@@ -714,7 +729,33 @@ def from_swisstiming(idx, *, tid, tournament, venue, intl, broadcast, names, our
                 if f:
                     ev["facts"] = rs.unique_facts((ev.get("facts") or []) + f)
             ev["desc"] = describe(ev)
+    team_total(idx, events, protos.get(tid) if protos is not None else None, fetcher)
     return unique_ids(events)
+
+
+def team_total(idx, events, proto, fetcher):
+    """Командный зачёт — тройкой стран у последнего по времени сегмента командного турнира, когда все
+    его сегменты окончательны (как итог турнира у личного), и целиком — в файл протокола (team)."""
+    team = [e for e in events if e.get("team")]
+    url = next((c.get("standing_url") for c in idx["categories"] if c.get("team") and c.get("standing_url")), None)
+    if not team or not url:
+        return
+    try:
+        rows = st.parse_team_standing(fetcher.page(url))
+    except net.FetchError:
+        return
+    if not rows:
+        return
+    # команда ОКР (ROC) — Россия, как у её спортсменов в приложении (AIN2, ROC → RUS)
+    rows = [{"place": r["place"], "name": countries.ru(r["nation"] or r["team"]),
+             "nation": countries.SAME.get(r["nation"], r["nation"]) if r["nation"] in ("ROC", "OAR", "FSR") else r["nation"],
+             "points": r["points"]} for r in rows]
+    if proto is not None:
+        proto["team"] = {"url": url, "rows": rows}
+    if all(e.get("podium") and not e.get("provisional") for e in team) and len(rows) >= 3:
+        last = max(team, key=lambda e: e["start"])
+        last["total"] = rows[:3]
+        last["desc"] = describe(last)
 
 
 def unique_ids(events):
@@ -1523,7 +1564,8 @@ def main():
         except Exception as e:  # «Сборная» — дополнение к профилю
             log("!! сборные:", e)
             squads = None
-        store = pf.refresh(book.get("bios") or {}, competed, log)
+        # биографии тёзок из другого вида (одиночница с именем танцовщицы) — тоже в очередь
+        store = pf.refresh({**(book.get("bios") or {}), **pf.alt_ids(people, notable)}, competed, log)
         try:
             places = pl.refresh(pf.birth_places(people, store), log)
         except Exception as e:  # место рождения по-русски — дополнение: иначе как у ISU
@@ -1611,7 +1653,7 @@ def write_protocols(protos, events, now, proto_dir=None):
     final_by_time = CFG.get("final_by_time", False)
     for tid, p in protos.items():
         doc = P.make_doc(tid=tid, tournament=p["tournament"], src=p["src"], marks=p["marks"],
-                         categories=p["categories"], now=now)
+                         categories=p["categories"], now=now, team=p.get("team"))
         for note in P.merge_prev(doc, P.load_doc(os.path.join(proto_dir, P.proto_name(tid)))):
             log(f"  протокол {tid}: {note}")
         if not doc["categories"]:

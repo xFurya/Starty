@@ -239,7 +239,7 @@ class ProtocolRepo {
     var kept = false;
     final cats = <ProtocolCategory>[];
     for (final c in fresh.categories) {
-      final oc = old.categoryFor(c.kind, c.level);
+      final oc = old.categoryFor(c.kind, c.level, team: c.team);
       if (oc == null) {
         cats.add(c);
         continue;
@@ -260,7 +260,7 @@ class ProtocolRepo {
         total = ot;
         kept = true;
       }
-      cats.add(ProtocolCategory(kind: c.kind, level: c.level, name: c.name, segments: segs, total: total));
+      cats.add(ProtocolCategory(kind: c.kind, level: c.level, name: c.name, segments: segs, total: total, team: c.team));
     }
     return (
       ProtocolDoc(

@@ -81,6 +81,33 @@ def _rows(page, flat=False):
     return out
 
 
+TEAM_RE = re.compile(r"^\s*(Team Event|Командн)", re.I)
+
+
+def parse_team_standing(page):
+    """Командный зачёт (TEC001RS.htm): [{place, team, nation, points}] по порядку мест. Страна — во
+    вложенной таблице с флагом (её заменяем кодом), баллы — первая числовая ячейка после страны."""
+    flat = re.sub(r"(?is)<table>\s*(<tr[^>]*>.*?</tr>\s*)</table>",
+                  lambda m: " ".join(re.findall(r"(?i)<td>\s*([A-Z]{3})\s*</td>", m.group(1))), page)
+    out = []
+    for tr in re.findall(r"(?is)<tr[^>]*>(.*?)</tr>", flat):
+        cells = [_text(c) for c in re.findall(r"(?is)<td[^>]*>(.*?)</td>", tr)]
+        cells = [c for c in cells if c != ""]
+        if len(cells) < 4 or not cells[0].isdigit():
+            continue
+        nation = next((c for c in cells[2:] if re.fullmatch(r"[A-Z]{3}", c)), "")
+        rest = cells[cells.index(nation, 2) + 1:] if nation else cells[2:]
+        num = r"\d+(\.\d+)?"
+        # «Total Points»; у не вышедших в финал там «FNR» — тогда сумма баллов за короткие программы
+        if rest and re.fullmatch(num, rest[0]):
+            pts = rest[0]
+        else:
+            got = [float(c) for c in rest[1:] if re.fullmatch(num, c)]
+            pts = (f"{sum(got):g}" if got else "")
+        out.append({"place": int(cells[0]), "team": cells[1], "nation": nation, "points": pts})
+    return out
+
+
 def parse_index(url, default_offset=None):
     """Возвращает описание турнира с табло:
     {
@@ -122,6 +149,7 @@ def parse_index_page(page, url, default_offset=None):
 
     categories = []
     cur = None
+    team = None  # командный турнир: {"standing": адрес командного зачёта}; его сегменты — со своим видом
     schedule = []  # (date, time, category, segment)
     cur_date = None
     in_schedule = False
@@ -131,13 +159,31 @@ def parse_index_page(page, url, default_offset=None):
             in_schedule = True
         cat_link = next((l for l in links if re.search(r"CAT\d+EN\.htm", l, re.I)), None)
         seg_link = next((l for l in links if re.fullmatch(r"SEG\d+\.htm", l, re.I)), None)
+        team_link = next((l for l in links if re.fullmatch(r"TEC\d+RS\.htm", l, re.I)), None)
+        first = fix_script(next((c for c in cells if c), ""))
         if cat_link and not in_schedule:
-            nm = fix_script(next((c for c in cells if c), ""))
+            nm = first
             res_link = next((l for l in links if re.search(r"CAT\d+RS\.htm", l, re.I)), None)
             cur = {"name": nm, "entries_url": urljoin(url, cat_link),
                    "results_url": urljoin(url, res_link) if res_link else None, "segments": []}
             categories.append(cur)
+            team = None
             continue
+        # «Team Event» (Олимпиада): строка со ссылкой на командный зачёт, ниже — сегменты, у каждого
+        # в первой колонке вид («Men Single Skating»), во второй — программа. По категории на вид.
+        if not in_schedule and not seg_link and (team_link or TEAM_RE.match(first)):
+            team = {"standing": urljoin(url, team_link) if team_link else None}
+            cur = None
+            continue
+        if seg_link and team is not None and not in_schedule:
+            vals = [fix_script(c) for c in cells if c]
+            disc, seg_name = vals[0], (vals[1] if len(vals) > 1 else "")
+            cur = next((c for c in categories if c.get("team") and _same(c["disc"], disc)), None)
+            if cur is None:
+                cur = {"name": f"Team Event - {disc}", "disc": disc, "team": True, "entries_url": None,
+                       "results_url": None, "standing_url": team["standing"], "segments": []}
+                categories.append(cur)
+            cells = [seg_name] + vals[2:]
         if seg_link and cur is not None and not in_schedule:
             seg_name = fix_script(next((c for c in cells if c), ""))
             pdf = next((l for l in links if "StartListwithTimes" in l), None)
@@ -177,10 +223,13 @@ def parse_index_page(page, url, default_offset=None):
         tt = TIME_RE.match(t)
         when = dt.datetime(int(dd.group(3)), int(dd.group(2)), int(dd.group(1)),
                            int(tt.group(1)), int(tt.group(2)), tzinfo=tz)
+        # командный: «Team Event» и «Short Program - Men Single Skating» — программа и вид
+        team_seg = TEAM_RE.match(cat) and " - " in seg
+        sname, disc = seg.split(" - ", 1) if team_seg else (seg, None)
         for c in categories:
-            if _same(c["name"], cat):
+            if (_same(c["disc"], disc) if team_seg and c.get("team") else _same(c["name"], cat)):
                 for s in c["segments"]:
-                    if _same(s["name"], seg) and "start" not in s:
+                    if _same(s["name"], sname) and "start" not in s:
                         s["start"] = when
                         break
     # сколько сегментов ссылаются на один файл оценок (ФФКМ: мужской и женский КП — один файл)
@@ -722,6 +771,8 @@ JUDGES_HEAD = re.compile(
     r"^\s*(\d{1,3})\s+(\S.*?)\s{2,}([A-ZА-ЯЁ]{2,4}\d?)\s+(\d{1,3})\s+"
     r"(-?\d+\.\d\d)\s+(-?\d+\.\d\d)\s+(-?\d+\.\d\d)\s+(-?\d+\.\d\d)\s*$")
 FLOAT = re.compile(r"^-?\d+\.\d\d$")
+# дисквалифицированный (снявшийся): вместо места — статус, вместо баллов — прочерки; элементы в PDF остаются
+JUDGES_VOID = re.compile(r"^\s*(DSQ|WD|DNF|RET)\s+(\S.*?)\s{2,}([A-ZА-ЯЁ]{2,4}\d?)\s+(\d{1,3})(?:\s+-)+\s*$")
 COMPONENTS = ("Composition", "Presentation", "Skating Skills", "Skating skills",
               "Композиция", "Представление", "Мастерство катания")
 
@@ -918,6 +969,14 @@ def _detail_element(line):
     if rest and rest[0].lower() == "x":
         x = True
         rest.pop(0)
+    if FLOAT.match(base) and rest and all(r == "-" for r in rest):
+        # результат аннулирован (дисквалификация): элемент и его база есть, оценок нет
+        el = {"no": no, "n": code, "b": _f(base), "g": None, "j": [], "s": None}
+        if info:
+            el["info"] = " ".join(info)
+        if x:
+            el["x"] = True
+        return el
     if len(rest) < 2 or not FLOAT.match(rest[0]) or not FLOAT.match(rest[-1]):
         return None
     goe, score, marks = rest[0], rest[-1], rest[1:-1]
@@ -986,6 +1045,14 @@ def parse_judges_details(text):
 
     for line in text.splitlines():
         m = JUDGES_HEAD.match(line)
+        v = None if m else JUDGES_VOID.match(line)
+        if v:
+            close()
+            cur, comps = {"place": None, "status": v.group(1), "name": v.group(2).strip(), "nation": v.group(3),
+                          "no": int(v.group(4)), "points": None, "tes": None, "pcs": None, "ded": None,
+                          "els": [], "comp": [], "deds": []}, []
+            out.append(cur)
+            continue
         if m:
             row = {"place": int(m.group(1)), "name": m.group(2).strip(), "nation": m.group(3),
                    "no": int(m.group(4)), "points": m.group(5)}

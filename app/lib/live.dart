@@ -378,7 +378,7 @@ String personKey(String name) => name
 /// Итоги старта из файла протокола (режим «стандартный»): то же, что дал бы опрос табло.
 /// Имена берём как в расписании (events.json), если человек там есть; иначе — как в файле.
 LiveResult liveFromProtocol(Start s, ProtocolDoc doc) {
-  final cat = doc.categoryFor(s.kind, s.level);
+  final cat = doc.categoryFor(s.kind, s.level, team: s.team);
   final seg = cat?.segmentOf(s.seg);
   if (seg == null || seg.rows.isEmpty) return const LiveNone();
   // сверка не сошлась или файл не распознан — итогов не показываем

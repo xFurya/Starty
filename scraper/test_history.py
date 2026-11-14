@@ -210,6 +210,26 @@ class Athletes(unittest.TestCase):
             best, _ = h.domestic_bests(past, live)
             self.assertEqual(best[h.nm.key("Анна Иванова")]["sp"]["src"], "ФФКМ")
 
+    def test_unheld_segment_is_dropped(self):
+        # «Самарочка»-2026: категория танцев МС на табло есть, а участников нет — остальные выступили
+        cats = [{"kind": "dance", "level": "senior", "segments": [{"code": "РТ", "rows": [], "state": "format"}]},
+                {"kind": "women", "level": "senior", "segments": [{"code": "КП", "rows": [{"place": 1}], "state": "final"}]}]
+        events = [{"id": "a", "kind": "dance", "level": "senior", "seg": "РТ"},
+                  {"id": "b", "kind": "women", "level": "senior", "seg": "КП", "field": [{"name": "X"}]}]
+        self.assertEqual(h.unheld(events, cats), {"a"})
+        # табло пустое целиком (ещё не выложено) — ничего не выбрасываем
+        self.assertEqual(h.unheld(events, [cats[0]]), set())
+
+    def test_team_category_fills_team_event_only(self):
+        rows = [row(1, "Анна Иванова", 1, "70.00")]
+        cats = [{"kind": "women", "level": "senior", "name": "Team Event - Women Single Skating", "team": True,
+                 "segments": [{"code": "КП", "rows": rows}], "total": None}]
+        ind = {"id": "t:women-senior-kp", "kind": "women", "level": "senior", "seg": "КП"}
+        team = {"id": "t:women-senior-kp-team", "kind": "women", "level": "senior", "seg": "КП", "team": True}
+        h.fill_fields([ind, team], cats)
+        self.assertNotIn("field", ind)
+        self.assertEqual(team["field"][0]["name"], "Анна Иванова")
+
     def test_bucket_is_crc32_of_normalized_name(self):
         # тот же расчёт — в приложении (history.dart): менять только вместе
         self.assertEqual(h.bucket("Аделия Петросян"), h.bucket("аделия петросян"))

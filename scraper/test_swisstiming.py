@@ -211,5 +211,90 @@ class TimesPdf(unittest.TestCase):
         self.assertEqual(times, {8: (19, 0)})
         self.assertEqual(warm, {8: 3})
 
+# Оглавление Олимпиады-2022 (results.isu.org/results/season2122/owg2022/index.htm), сокращённо: личная
+# категория, строка «Team Event» со ссылкой на командный зачёт и сегменты командного турнира, у каждого
+# в первой колонке вид; в расписании — «Short Program - Men Single Skating».
+OWG_INDEX = (
+    '<html><head><title>XXIV Olympic Winter Games 2022</title></head><body><table>'
+    '<tr><td>Beijing / CHN</td></tr><tr><td>Capital Indoor Stadium</td></tr><tr><td>27.01.2022 - 20.02.2022</td></tr>'
+    '<tr><td>Category</td><td>Segment</td><td>Reports</td></tr>'
+    '<tr><td class="CellLeft">Women Single Skating</td><td></td><td><a href=CAT002EN.htm>Entries</a></td>'
+    '<td><a href=CAT002RS.htm>Result</a></td></tr>'
+    '<tr><td></td><td class="CellLeft">Short Program</td><td><a href=SEG003OF.htm>Panel of Judges</a></td>'
+    '<td><a href=SEG003.htm> Starting Order / Detailed Classification </a></td>'
+    '<td><a href=FSKWSINGLES-----------QUAL000100--_JudgesDetailsperSkater.pdf> Judges Scores (pdf)</a></td></tr>'
+    '<tr class="Line1White"><td class="CellLeft">Team Event</td><td></td>'
+    '<td><a href=FSKXTEAM--------------------------_EntryListbyEvent.pdf> Team Entries (pdf)</a></td>'
+    '<td><a href=TEC001RS.htm> Team Standing </a></td><td>&nbsp;</td></tr>'
+    '<tr><td class="CellLeft">Men Single Skating</td><td class="CellLeft">Short Program</td>'
+    '<td><a href=SEG009OF.htm>Panel of Judges</a></td><td><a href=SEG009.htm> Starting Order / Detailed Classification </a></td>'
+    '<td><a href=FSKXTEAM--------------QUAL0001MN--_JudgesDetailsperSkater.pdf> Judges Scores (pdf)</a></td></tr>'
+    '<tr><td class="CellLeft">Men Single Skating</td><td class="CellLeft">Free Skating</td>'
+    '<td><a href=SEG010OF.htm>Panel of Judges</a></td><td><a href=SEG010.htm> Starting Order / Detailed Classification </a></td>'
+    '<td></td></tr>'
+    '<tr><td>Time Schedule</td></tr><tr><td>(Local Time, UTC +01:00)</td></tr>'
+    '<tr><td>Date</td><td>Time</td><td>Category</td><td>Segment</td></tr>'
+    '<tr><td>04.02.2022</td></tr><tr><td>9:55:00</td><td>Team Event</td><td>Short Program - Men Single Skating</td></tr>'
+    '<tr><td>06.02.2022</td></tr><tr><td>11:50:00</td><td>Team Event</td><td>Free Skating - Men Single Skating</td></tr>'
+    '<tr><td>15.02.2022</td></tr><tr><td>18:00:00</td><td>Women Single Skating</td><td>Short Program</td></tr>'
+    '</table></body></html>')
+
+# Командный зачёт (TEC001RS.htm): страна — во вложенной таблице с флагом; у не вышедших в финал вместо
+# суммы «FNR» — тогда сумма баллов за короткие.
+TEAM_STANDING = (
+    '<table width="100%"><tr class="TabHeadWhite"><th>Rank</th><th>Team</th><th>Nation</th><th>Total Points</th></tr>'
+    '<tr class="Line1White"><td>1</td><td class="CellLeft">United States of America</td>'
+    '<td><table><tr class="Line1White"><td><img src="../flags/USA.GIF"></td><td></td><td>USA</td></tr></table></td>'
+    '<td>65</td><td>10</td><td>8</td><td>Q</td></tr>'
+    '<tr class="Line2White"><td>3</td><td class="CellLeft">ROC</td>'
+    '<td><table><tr class="Line2White"><td><img src="../flags/ROC.GIF"></td><td></td><td>ROC</td></tr></table></td>'
+    '<td>54</td><td>8</td><td>9</td><td>Q</td></tr>'
+    '<tr class="Line2White"><td>6</td><td class="CellLeft">Georgia</td>'
+    '<td><table><tr class="Line2White"><td><img src="../flags/GEO.GIF"></td><td></td><td>GEO</td></tr></table></td>'
+    '<td>FNR</td><td>7</td><td>-</td><td>7</td><td>-</td><td>5</td><td>-</td><td>3</td><td>-</td><td></td></tr></table>')
+
+
+class TeamEvent(unittest.TestCase):
+    def test_team_segments_get_own_categories_and_times(self):
+        idx = st.parse_index_page(OWG_INDEX, "https://results.isu.org/results/season2122/owg2022/index.htm")
+        names = [c["name"] for c in idx["categories"]]
+        self.assertEqual(names, ["Women Single Skating", "Team Event - Men Single Skating"])
+        team = idx["categories"][1]
+        self.assertTrue(team["team"])
+        self.assertEqual(team["disc"], "Men Single Skating")
+        self.assertTrue(team["standing_url"].endswith("/TEC001RS.htm"))
+        self.assertEqual([s["name"] for s in team["segments"]], ["Short Program", "Free Skating"])
+        self.assertEqual(team["segments"][0]["start"].strftime("%d.%m %H:%M"), "04.02 09:55")
+        self.assertEqual(team["segments"][1]["start"].strftime("%d.%m %H:%M"), "06.02 11:50")
+        # личная категория — как была, командные сегменты к ней не прилипли
+        self.assertEqual([s["name"] for s in idx["categories"][0]["segments"]], ["Short Program"])
+        self.assertEqual(idx["categories"][0]["segments"][0]["start"].strftime("%d.%m %H:%M"), "15.02 18:00")
+
+    def test_team_standing(self):
+        self.assertEqual(st.parse_team_standing(TEAM_STANDING), [
+            {"place": 1, "team": "United States of America", "nation": "USA", "points": "65"},
+            {"place": 3, "team": "ROC", "nation": "ROC", "points": "54"},
+            {"place": 6, "team": "Georgia", "nation": "GEO", "points": "22"},
+        ])
+
+
+class Disqualified(unittest.TestCase):
+    # дисквалифицированная на Олимпиаде-2022: в PDF вместо места «DSQ», вместо оценок прочерки, элементы с базой
+    PDF = ("    1   SHCHERBAKOVA Anna        ROC     29     80.20     42.87     37.33      0.00\n"
+           "    1    2A                       3.30     0.99    3    3    3    3    2    3    3    3    3     4.29\n"
+           "        DSQ    VALIEVA Kamila                     ROC        26        -        -        -        -        -\n"
+           "    1    3A                       8.00      -       -        -        -           -      -           -        -           -        -       -\n"
+           "    2    3F                       5.30      -       -        -        -           -      -           -        -           -        -       -\n")
+
+    def test_void_row_keeps_elements_without_scores(self):
+        rows = st.parse_judges_details(self.PDF)
+        self.assertEqual([(r["place"], r.get("status"), r["name"]) for r in rows],
+                         [(1, None, "SHCHERBAKOVA Anna"), (None, "DSQ", "VALIEVA Kamila")])
+        v = rows[1]
+        self.assertEqual((v["points"], v["tes"], v["no"]), (None, None, 26))
+        self.assertEqual([(e["n"], e["b"], e["g"], e["s"]) for e in v["els"]], [("3A", 8.0, None, None), ("3F", 5.3, None, None)])
+        self.assertEqual(v["bv"], 13.3)
+
+
 if __name__ == "__main__":
     unittest.main()

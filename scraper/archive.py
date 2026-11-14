@@ -660,13 +660,16 @@ GROUP = {"record": 1, "rare": 2, "types": 3, "quads": 4, "plus5": 5, "ten": 6}
 _NUM_RU = {2: "Два", 3: "Три", 4: "Четыре", 5: "Пять", 6: "Шесть"}
 
 
-def for_profile(name, nation, index):
-    """Строки «Примечательного» из архива: [{t, ev, d, pts?, src, u, g}]; g — группа для порядка."""
+def for_profile(name, nation, index, kinds=None):
+    """Строки «Примечательного» из архива: [{t, ev, d, pts?, src, u, g}]; g — группа для порядка.
+    kinds — буквы видов человека (feats.for_profile): у тёзки из другого вида строк нет."""
     if index is None or not index.ready:
         return []
     key = nm.key(name)
     a = index.ath.get(key)
     if not a or not _same_nation(nation, a.get("c")):
+        return []
+    if kinds is not None and {"women": "w", "men": "m", "pairs": "p", "dance": "d"}.get(a.get("k"), (a.get("k") or "")[:1]) not in kinds:
         return []
     arc, kind = index.arc, a["k"]
     els = a.get("el", {})

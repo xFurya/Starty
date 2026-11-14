@@ -841,7 +841,7 @@ class AppState extends ChangeNotifier {
   void noteProtocol(Iterable<Start> starts, ProtocolDoc doc) {
     var added = false;
     for (final s in starts) {
-      final seg = doc.categoryFor(s.kind, s.level)?.segmentOf(s.seg);
+      final seg = doc.categoryFor(s.kind, s.level, team: s.team)?.segmentOf(s.seg);
       if (seg == null || (seg.rows.isEmpty && seg.next == null)) continue;
       if (seg.state != SegmentState.inProgress && seg.state != SegmentState.provisional) continue;
       _posted.putIfAbsent(s.id, () => {});

@@ -546,6 +546,37 @@ def domestic(pr, mine, since="", fe=()):
              "ev": tot["ev"], "d": tot["d"], "pts": tot["pts"], "src": tot["src"]}]
 
 
+def _families(letters):
+    """Буквы видов («wP», «d») → множество {w, m, p, d} без уровня."""
+    return {c.lower() for c in letters or "" if c.lower() in "wmpd"}
+
+
+def _born_of(bio):
+    who = ((bio or {}).get("bio") or {}).get("who") or []
+    return who[0].get("born") if len(who) == 1 else None
+
+
+def alt_ids(people, book):
+    """{ключ имени|вид: номер биографии ISU} тёзок из другого вида (см. write): refresh скачает их
+    биографии, и отдельный профиль тёзки получит справку ISU."""
+    from . import feats as ft
+    out = {}
+    if not book:
+        return out
+    for p in people:
+        if " / " in p["n"]:
+            continue
+        own = _families((p.get("k") or "") + (p.get("was") or ""))
+        if not own:
+            continue
+        for f in "wm":
+            if f not in own:
+                ids = ft.isu_ids(p["n"], p.get("c", ""), book, {f})
+                if ids:
+                    out[f"{nm.key(p['n'])}|{f}"] = ids[0]
+    return out
+
+
 def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None, teams=None, today=None, places=None,
           bests=None, bests_from=""):
     """Записать профили и проставить людям ключ "p". people — справочник [{n, c, k}];
@@ -571,35 +602,9 @@ def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None
     staff = sorted({n for cd in (cards or {}).values() for k in ("coach", "choreo") for n in cd.get(k) or []})
     os.makedirs(out_dir, exist_ok=True)
     written = 0
-    for p in people:
-        name = p["n"]
-        parts = [x.strip() for x in name.split(" / ")]
-        for x in parts:
-            if nm.key(x) in by_name:
-                cards_by_name[x] = by_name[nm.key(x)]
-        bio = cache.get(ids.get(nm.key(name), ""))
-        card = by_name.get(nm.key(name)) if len(parts) == 1 else None
-        pr = profile(name, p.get("c", ""), bio, card, cards_by_name, staff, places)
-        if not pr:
-            p.pop("p", None)
-            continue
-        pr["at"] = max([bio["at"] if bio else ""] + [(card or {}).get("at", "")] +
-                       [cards_by_name[x].get("at", "") for x in parts if x in cards_by_name])[:10]
-        fe = ft.for_profile(name, p.get("c", ""), ids.get(nm.key(name), ""), pr, book) if book else []
-        # рекорды российских стартов — сразу за мировыми, раньше редких элементов
-        ru = domestic(pr, (bests or {}).get(nm.key(name)), bests_from, fe)
-        if ru:
-            world = [x for x in fe if x.get("src") == "ISU" and x.get("u", "").startswith(ft.STAT + "phs")]
-            fe = world + ru + [x for x in fe if x not in world]
-        if fe:
-            pr["feats"] = fe
-            pr["src"] = pr["src"] + [x for x in dict.fromkeys(ft.source_names(fe)) if x not in pr["src"]]
-        team, team_src = tm.for_profile(name, p.get("c", ""), p.get("k") or p.get("was", ""), teams, today, aliases) if teams else (None, "")
-        if team:
-            pr["team"] = team
-            if team_src and team_src not in pr["src"]:
-                pr["src"] = pr["src"] + [team_src]
-        k = key(name)
+
+    def save(k, pr):
+        nonlocal written
         fn = os.path.join(out_dir, k + ".json")
         body = json.dumps(pr, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
         try:
@@ -611,10 +616,84 @@ def write(people, store, cards, out_dir=None, log=print, book=None, aliases=None
             with open(fn, "w", encoding="utf-8") as f:
                 f.write(body)
             written += 1
+
+    def extras(name, nation, isu, pr, kinds):
+        """«Примечательное» и рекорды российских стартов; kinds — только этих видов (тёзки)."""
+        fe = ft.for_profile(name, nation, isu, pr, book, kinds=kinds) if book else []
+        # рекорды российских стартов — по протоколам одиночных (у пары своё имя «А / Б»): у тёзки, который
+        # одиночником не выступал, их нет
+        mine = (bests or {}).get(nm.key(name)) if kinds is None or kinds & {"w", "m"} or " / " in name else None
+        ru = domestic(pr, mine, bests_from, fe)
+        if ru:
+            world = [x for x in fe if x.get("src") == "ISU" and x.get("u", "").startswith(ft.STAT + "phs")]
+            fe = world + ru + [x for x in fe if x not in world]
+        if fe:
+            pr["feats"] = fe
+            pr["src"] = pr["src"] + [x for x in dict.fromkeys(ft.source_names(fe)) if x not in pr["src"]]
+
+    for p in people:
+        name = p["n"]
+        nation = p.get("c", "")
+        parts = [x.strip() for x in name.split(" / ")]
+        for x in parts:
+            if nm.key(x) in by_name:
+                cards_by_name[x] = by_name[nm.key(x)]
+        isu = ids.get(nm.key(name), "")
+        bio = cache.get(isu)
+        card = by_name.get(nm.key(name)) if len(parts) == 1 else None
+        # тёзки: справка ФФККР и биография ISU об одном имени, а даты рождения разные — это два человека
+        # (Анна Щербакова — танцовщица 2006 г. р. в картотеке и одиночница 2004 г. р. у ISU). Человек
+        # справочника — тот, кого знает картотека (его вид в справочнике); биография ISU — второму,
+        # отдельным профилем (alt), и каждому — «Примечательное» только своего вида.
+        alt = None
+        p.pop("alt", None)
+        own = _families((p.get("k") or "") + (p.get("was") or "")) if len(parts) == 1 else set()
+        if len(parts) == 1 and bio and card and _born_of(bio) and card.get("born") and _born_of(bio) != card["born"]:
+            alt = {"bio": bio, "isu": isu, "kinds": _families("".join(r.get("k", "") for r in bio.get("cr") or []))}
+            bio, isu = None, ""
+        elif own and book:
+            # в таблицах ISU у этого имени есть строки вида, которого у человека нет (одиночница-олимпийская
+            # чемпионка и танцовщица-тёзка): это другой человек — отдельный профиль, со своей биографией ISU,
+            # если её номер есть в таблицах и биография уже скачана
+            other = {f for f in "wm" if f not in own and ft.isu_ids(name, nation, book, {f})}
+            if other:
+                aid = next((i for f in sorted(other) for i in ft.isu_ids(name, nation, book, {f}) if i in cache), "")
+                alt = {"bio": cache.get(aid), "isu": aid, "kinds": other}
+                if bio and isu == aid:
+                    bio, isu = None, ""
+        # вид человека известен — «Примечательное» только его вида: рекорды тёзки ему не достаются
+        kinds = own or None
+        pr = profile(name, nation, bio, card, cards_by_name, staff, places)
+        if not pr:
+            p.pop("p", None)
+            continue
+        pr["at"] = max([bio["at"] if bio else ""] + [(card or {}).get("at", "")] +
+                       [cards_by_name[x].get("at", "") for x in parts if x in cards_by_name])[:10]
+        extras(name, nation, isu, pr, kinds or None)
+        team, team_src = tm.for_profile(name, nation, p.get("k") or p.get("was", ""), teams, today, aliases) if teams else (None, "")
+        if team:
+            pr["team"] = team
+            if team_src and team_src not in pr["src"]:
+                pr["src"] = pr["src"] + [team_src]
+        k = key(name)
+        save(k, pr)
         p["p"] = k
+        if alt and alt["kinds"]:
+            # тёзка: биография ISU, если есть; без неё — профиль из «Примечательного» и рекордов
+            apr = profile(name, nation, alt["bio"], None, {}, staff, places) if alt["bio"] else None
+            apr = apr or {"n": name, "src": []}
+            apr["at"] = (alt["bio"] or {}).get("at", "")[:10] or today.isoformat()
+            extras(name, nation, alt["isu"], apr, alt["kinds"])
+            entry = {"was": "".join(sorted(alt["kinds"]))}
+            if apr.get("src") or apr.get("feats") or apr.get("pbru"):
+                ak = key(name + "|" + entry["was"])
+                save(ak, apr)
+                entry["p"] = ak
+            p["alt"] = [entry]
     # файлы тех, у кого профиля больше нет (имя слилось с другим, человек ушёл из справочника), — убрать;
     # сбор, где профилей вдвое меньше прежнего, — сбой источников, а не уход людей: тогда не трогаем
-    keep = {p["p"] + ".json" for p in people if p.get("p")}
+    keep = {p["p"] + ".json" for p in people if p.get("p")} | \
+        {a["p"] + ".json" for p in people for a in p.get("alt") or [] if a.get("p")}
     old = [fn for fn in os.listdir(out_dir) if fn.endswith(".json") and fn not in keep]
     if old and len(keep) * 2 >= len(keep) + len(old):
         for fn in old:

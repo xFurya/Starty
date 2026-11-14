@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import 'data.dart';
 import 'flags.dart';
+import 'profile.dart' show KindScope;
 import 'live.dart' show LiveOk, personKey;
 import 'needs.dart';
 import 'pace.dart';
@@ -209,12 +210,22 @@ String colLabel(String c) {
   return const {'КП', 'ПП', 'РТ', 'ПТ'}.contains(cyr) ? cyr : c;
 }
 
+/// Строки протокола: со статусом и без места (дисквалифицирован, снят) — после всех с местами. Табло
+/// ISU ставит дисквалифицированного первым (на его прежнее место), а место у него больше никакое.
+List<ProtocolRow> statusLast(List<ProtocolRow> rows) => [
+  for (final r in rows)
+    if (r.place != null || r.status == null) r,
+  for (final r in rows)
+    if (r.place == null && r.status != null) r,
+];
+
 /// Статус участника без места по-русски; незнакомый остаётся как в файле.
 String statusLabel(String s) {
   const m = {
     'WD': 'снят',
     'DNS': 'не вышел',
     'DQ': 'дисквалифицирован',
+    'DSQ': 'дисквалифицирован',
     'RET': 'прервал',
     'NQ': 'не допущен',
     'NQD': 'не прошёл',
@@ -240,7 +251,11 @@ String _dm(DateTime t) {
 
 /// Подпись категории для переключателя — одним названием: «Женщины», «Девушки»,
 /// «Юниорские пары»; незнакомый уровень — в скобках.
+/// Ключ категории для выбора: вид, уровень и командный ли турнир (у командного те же вид и уровень).
+String categoryKey(ProtocolCategory c) => '${c.kind}|${c.level}${c.team ? '|team' : ''}';
+
 String categoryLabel(ProtocolCategory c) {
+  if (c.team) return 'Командный, ${(kindNames[c.kind] ?? c.kind).toLowerCase()}';
   final kind = kindNames[c.kind] ?? c.kind;
   if (c.level == 'senior') return kind;
   if (c.level == 'junior') {
@@ -412,7 +427,7 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
   ProtocolCategory? get _category {
     final cats = _cats;
     for (final c in cats) {
-      if ('${c.kind}|${c.level}' == _catKey) return c;
+      if (categoryKey(c) == _catKey) return c;
     }
     return null;
   }
@@ -447,8 +462,8 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
       return;
     }
     if (_category == null) {
-      final match = _doc?.categoryFor(s.kind, s.level) ?? cats.first;
-      _catKey = '${match.kind}|${match.level}';
+      final match = _doc?.categoryFor(s.kind, s.level, team: s.team) ?? cats.first;
+      _catKey = categoryKey(match);
     }
     final c = _category!;
     if (_tab == null || (_tab != totalTab && c.segmentOf(_tab!) == null)) {
@@ -470,8 +485,8 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
                 padding: const EdgeInsets.only(bottom: 8),
                 child: ChoiceTile(
                   label: categoryLabel(cat),
-                  on: '${cat.kind}|${cat.level}' == _catKey,
-                  onTap: () => Navigator.of(c).pop('${cat.kind}|${cat.level}'),
+                  on: categoryKey(cat) == _catKey,
+                  onTap: () => Navigator.of(c).pop(categoryKey(cat)),
                 ),
               ),
           ],
@@ -497,8 +512,12 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
   @override
   Widget build(BuildContext context) {
     final state = widget.state;
-    if (state == null) return _build(context);
-    return ListenableBuilder(listenable: state, builder: (c, _) => _build(c));
+    // имя в протоколе открывает того, кто выступал в этом виде (тёзки — см. KindScope)
+    if (state == null) return KindScope(kind: widget.start.kind, child: Builder(builder: _build));
+    return KindScope(
+      kind: widget.start.kind,
+      child: ListenableBuilder(listenable: state, builder: (c, _) => _build(c)),
+    );
   }
 
   Widget _build(BuildContext context) {
@@ -572,7 +591,7 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
             children: [
               if (cats.length == 2)
                 Segmented<String>(
-                  items: [for (final c in cats) ('${c.kind}|${c.level}', categoryLabel(c))],
+                  items: [for (final c in cats) (categoryKey(c), categoryLabel(c))],
                   value: _catKey ?? '',
                   onChanged: (v) => setState(() {
                     _catKey = v;
@@ -598,19 +617,19 @@ class _ProtocolScreenState extends State<ProtocolScreen> {
                   margin: EdgeInsets.zero,
                   child: Column(
                     children: [
-                      for (var i = 0; i < view.rows.length; i++) ...[
+                      for (final (i, row) in statusLast(view.rows).indexed) ...[
                         if (i > 0) const Hairline(indent: 16),
                         _ResultRow(
-                          row: view.rows[i],
+                          row: row,
                           panel: seg?.panel ?? const [],
                           missing: onBoard ? null : missingDetails(seg?.state),
-                          ours: ours.contains(personKey(view.rows[i].name)),
+                          ours: ours.contains(personKey(row.name)),
                           total: tab == totalTab,
                           cols: tab == totalTab ? (cat?.total?.cols ?? const []) : const [],
-                          open: _open.contains(_rowKey(tab, view.rows[i])),
-                          onTap: _hasDetails(view.rows[i])
+                          open: _open.contains(_rowKey(tab, row)),
+                          onTap: _hasDetails(row)
                               ? () => setState(() {
-                                  final key = _rowKey(tab, view.rows[i]);
+                                  final key = _rowKey(tab, row);
                                   _open.contains(key) ? _open.remove(key) : _open.add(key);
                                 })
                               : null,

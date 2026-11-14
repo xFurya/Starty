@@ -33,7 +33,8 @@ void showStart(BuildContext context, Start s, AppState state) {
     context,
     (c, scroll) => ListenableBuilder(
       listenable: state,
-      builder: (c, _) => _StartSheet(s: s, state: state, scrollController: scroll),
+      // имя в карточке открывает того, кто выступал в этом виде (тёзки — см. KindScope)
+      builder: (c, _) => KindScope(kind: s.kind, child: _StartSheet(s: s, state: state, scrollController: scroll)),
     ),
     top: .92,
   );
@@ -52,7 +53,7 @@ class _StartSheet extends StatelessWidget {
     final live = s.liveAt(t);
     final past = s.pastAt(t);
     final d = msk(s.t0);
-    final (disc, seg) = splitSegment(s.segment);
+    final (disc, seg) = splitSegment(s.segmentPlain);
     // «9 октября» не разрывается
     final date = '${cap(weekdays[d.weekday - 1])}, ${d.day}\u00A0${months[d.month - 1]}${otherYear(d)}';
     final narrow = MediaQuery.sizeOf(context).width < 360;
@@ -66,7 +67,7 @@ class _StartSheet extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         // название турнира есть только здесь — до двух строк, не обрезаем
-        Eyebrow(s.tournament, color: p.accent, maxLines: 2),
+        Eyebrow(s.team ? '${s.tournament} · командный турнир' : s.tournament, color: p.accent, maxLines: 2),
         const SizedBox(height: 8),
         Text(disc, style: display(p, 42)),
         if (seg.isNotEmpty) ...[
@@ -294,7 +295,11 @@ class _StartSheet extends StatelessWidget {
     return [
       _podium(context),
       if (s.total.isNotEmpty)
-        _section(context, 'Итог турнира', _TotalPlate(list: s.total, data: state.data, intl: s.intl)),
+        _section(
+          context,
+          totalLabel(s),
+          s.team ? TeamTotalPlate(list: s.total) : _TotalPlate(list: s.total, data: state.data, intl: s.intl),
+        ),
       if (rest.isNotEmpty)
         _section(
           context,
@@ -308,7 +313,7 @@ class _StartSheet extends StatelessWidget {
                   children: [
                     for (var i = 0; i < rest.length; i++) ...[
                       if (i > 0) Hairline(indent: slot ? 92 : 70),
-                      _OurResult(o: rest[i], seg: s.seg, data: state.data, slot: slot, full: full),
+                      _OurResult(o: rest[i], seg: s.seg, data: state.data, slot: slot, full: full, intl: s.intl),
                     ],
                   ],
                 );
@@ -327,7 +332,7 @@ class _StartSheet extends StatelessWidget {
       podiumLabel(s),
       trailing: runningNote(s),
       top3.isEmpty
-          ? const EmptyPlate('Итогов пока нет')
+          ? EmptyPlate(noResultsText(s))
           : Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Podium(list: top3, data: state.data, intl: s.intl),
@@ -709,6 +714,52 @@ class _Step extends StatelessWidget {
 
 /// Итог турнира: медаль, фото, имя, страна, сумма. Страна (флаг с кодом) и сумма — колонками
 /// одной ширины: флаги и цифры стоят ровно друг под другом.
+/// Командный зачёт: место медалью, флаг и страна, баллы команды. Без аватаров — это страны, не люди.
+class TeamTotalPlate extends StatelessWidget {
+  final List<Placing> list;
+  const TeamTotalPlate({super.key, required this.list});
+  @override
+  Widget build(BuildContext context) {
+    final p = Palette.of(context);
+    final rows = [...list]..sort((a, b) => a.place.compareTo(b.place));
+    final k = MediaQuery.textScalerOf(context);
+    return Plate(
+      child: Column(
+        children: [
+          for (var i = 0; i < rows.length; i++) ...[
+            if (i > 0) const Hairline(indent: 54),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(14, 12, 16, 12),
+              child: Row(
+                children: [
+                  Medal(rows[i].place, size: 26),
+                  const SizedBox(width: 14),
+                  if (flagAsset(rows[i].nation) case final f?) ...[
+                    Flag(f, height: k.scale(18)),
+                    const SizedBox(width: 10),
+                  ],
+                  Expanded(
+                    child: Text(
+                      rows[i].name,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink, height: 1.25),
+                    ),
+                  ),
+                  if (rows[i].points.isNotEmpty) ...[
+                    const SizedBox(width: 12),
+                    Text(rows[i].points, style: clock(p.ink, 18, weight: FontWeight.w500)),
+                  ],
+                ],
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
 class _TotalPlate extends StatelessWidget {
   final List<Placing> list;
   final Schedule? data;
@@ -901,7 +952,10 @@ class _OurResult extends StatelessWidget {
 
   /// Полное имя (решается на весь список «Наши»).
   final bool full;
-  const _OurResult({required this.o, required this.seg, required this.data, required this.slot, this.full = true});
+
+  /// Международный старт: под именем — флаг и код страны (россиянин или белорус — видно сразу).
+  final bool intl;
+  const _OurResult({required this.o, required this.seg, required this.data, required this.slot, this.full = true, this.intl = false});
 
   static const _placeStyle = TextStyle(
     fontFamily: serif,
@@ -914,9 +968,12 @@ class _OurResult extends StatelessWidget {
   /// Подпись под местом: что это за место.
   static String caption(String seg) => seg.isEmpty ? 'место' : 'место в $seg';
 
+  /// Что крупно справа: место, «DSQ» у дисквалифицированного (результат аннулирован), иначе прочерк.
+  static String mark(Skater o) => o.place != null ? '${o.place}' : (o.disqualified ? 'DSQ' : '—');
+
   /// Ширина правой колонки: место крупно и подпись «место в ПП».
   static double right(BuildContext context, Skater o, String seg) => math.max(
-    textWidth(context, o.place == null ? '—' : '${o.place}', _placeStyle),
+    textWidth(context, mark(o), _placeStyle),
     o.place != null ? textWidth(context, caption(seg).toUpperCase(), Eyebrow.style(Colors.black)) : 0,
   );
   @override
@@ -941,12 +998,29 @@ class _OurResult extends StatelessWidget {
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink, height: 1.25),
                     semantics: displayName(o.name),
                   ),
-                  if (o.overall != null)
+                  if ((intl && o.nation.isNotEmpty) || o.overall != null)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 3),
+                      child: Wrap(
+                        spacing: 10,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          if (intl && o.nation.isNotEmpty) NationTag(o.nation, style: PlacingName.codeStyle(p, 13)),
+                          if (o.overall != null)
+                            Text(
+                              'итог ${o.overall}',
+                              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: p.accent),
+                            ),
+                        ],
+                      ),
+                    ),
+                  // результат аннулирован (дисквалификация): выступал, протокол есть, места нет
+                  if (o.disqualified)
                     Padding(
                       padding: const EdgeInsets.only(top: 2),
                       child: Text(
-                        'итог ${o.overall}',
-                        style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: p.accent),
+                        'дисквалификация, результат аннулирован',
+                        style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: p.live, height: 1.3),
                       ),
                     ),
                 ],
@@ -956,7 +1030,10 @@ class _OurResult extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(o.place == null ? '—' : '${o.place}', style: _placeStyle.copyWith(color: p.ink)),
+                Text(
+                  mark(o),
+                  style: _placeStyle.copyWith(color: o.disqualified && o.place == null ? p.live : p.ink),
+                ),
                 if (o.place != null) Eyebrow(caption(seg)),
               ],
             ),
@@ -1039,10 +1116,17 @@ class _OurAhead extends StatelessWidget {
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: p.ink, height: 1.25),
                     semantics: displayName(o.name),
                   ),
-                  if (meta != null)
+                  if ((s.intl && o.nation.isNotEmpty) || meta != null)
                     Padding(
-                      padding: const EdgeInsets.only(top: 2),
-                      child: Text(meta, style: TextStyle(fontSize: 13, color: p.ink2, height: 1.35)),
+                      padding: const EdgeInsets.only(top: 3),
+                      child: Wrap(
+                        spacing: 10,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          if (s.intl && o.nation.isNotEmpty) NationTag(o.nation, style: PlacingName.codeStyle(p, 13)),
+                          if (meta != null) Text(meta, style: TextStyle(fontSize: 13, color: p.ink2, height: 1.35)),
+                        ],
+                      ),
                     ),
                   if (alert != null)
                     Text(

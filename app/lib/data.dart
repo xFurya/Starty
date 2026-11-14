@@ -107,11 +107,16 @@ class Skater {
 
   /// Время по расписанию, когда [time] поправлено по темпу старта (pace.dart); null — не поправлено.
   final String? planned;
-  Skater(this.name, this.time, this.no, this.warmup, [this.place, this.overall, this.nation = '', String? points, this.planned])
+
+  /// «DSQ» — дисквалифицирован: выступал, но результат аннулирован, места нет; null — обычный.
+  final String? status;
+  Skater(this.name, this.time, this.no, this.warmup, [this.place, this.overall, this.nation = '', String? points, this.planned, this.status])
     : points = place == null ? null : points;
 
+  bool get disqualified => status == 'DSQ';
+
   /// Тот же спортсмен с временем выхода, поправленным по темпу; прежнее время — в [planned].
-  Skater paced(String at) => Skater(name, at, no, warmup, place, overall, nation, points, planned ?? time);
+  Skater paced(String at) => Skater(name, at, no, warmup, place, overall, nation, points, planned ?? time, status);
   factory Skater.fromJson(Map o) => Skater(
     o['name'],
     o['time'],
@@ -121,6 +126,8 @@ class Skater {
     o['final'],
     o['nation'] ?? '',
     o['points'] is String && (o['points'] as String).isNotEmpty ? o['points'] : null,
+    null,
+    o['status'] is String && (o['status'] as String).isNotEmpty ? o['status'] as String : null,
   );
 
   Map<String, dynamic> toJson() => {
@@ -132,6 +139,7 @@ class Skater {
     if (overall != null) 'final': overall,
     if (nation.isNotEmpty) 'nation': nation,
     if (points != null) 'points': points,
+    if (status != null) 'status': status,
   };
 
   /// Тот же человек с данными из [o]: что в [o] пусто, остаётся своё (см. [Start.mergeKeepingRicher]).
@@ -145,6 +153,8 @@ class Skater {
     o.overall ?? overall,
     o.nation.isNotEmpty ? o.nation : nation,
     o.place == null || o.place == place ? o.points ?? points : o.points,
+    null,
+    o.status ?? status,
   );
 
   /// В списке у пар — только фамилии.
@@ -400,6 +410,8 @@ class Start {
         finals[k] ?? o.overall,
         o.nation,
         place == null ? o.points : (pts == null || pts.isEmpty ? null : pts),
+        null,
+        o.status,
       );
     }
     // табло ответило не всем (пока выступили не все) — прежняя тройка, где мест больше, не заменяется
@@ -461,6 +473,13 @@ class Start {
 
   /// «женщины ПП» — часть названия после турнира.
   String get segment => title.substring(tournament.length).replaceFirst(RegExp(r'^\s*—\s*'), '');
+
+  /// Сегмент командного турнира (Олимпиада): у сборщика id кончается на «-team», в названии —
+  /// «командный турнир, женщины КП». Вид и уровень — как у личного.
+  bool get team => id.endsWith('-team');
+
+  /// Вид и программа без пометки командного турнира: «женщины КП» (пометку показывают отдельно).
+  String get segmentPlain => team ? segment.replaceFirst(RegExp(r'^командный турнир,\s*'), '') : segment;
 
   /// Поправка по темпу (pace.dart): кто выйдет когда на самом деле. null — не считали.
   Pace? get pace => _pace;
@@ -888,6 +907,18 @@ class Schedule {
     return byNorm[norm(name.trim())];
   }
 
+  /// Человек по имени с учётом вида старта: у тёзок из разных видов (Анна Щербакова — одиночница и
+  /// танцовщица) — тот, кто выступает в этом виде. [kind] — вид старта; null — как [personOf].
+  Person? personFor(String name, String? kind) {
+    final p = personOf(name);
+    final f = kind == null ? '' : kindLetter(kind);
+    if (p == null || f.isEmpty || p.alts.isEmpty || p.inKind(f)) return p;
+    for (final a in p.alts) {
+      if (a.inKind(f)) return a;
+    }
+    return p;
+  }
+
   Map<String, Person>? _byNorm;
 
   String? photoOf(String name) {
@@ -923,6 +954,18 @@ class Schedule {
               profile: p['p'] is String && (p['p'] as String).isNotEmpty ? p['p'] as String : null,
               was: '${p['was'] ?? ''}',
               wasSeason: '${p['y'] ?? ''}',
+              alts: [
+                for (final a in (p['alt'] is List ? p['alt'] as List : const []))
+                  if (a is Map)
+                    Person(
+                      '${p['n']}',
+                      '${a['c'] ?? p['c'] ?? ''}',
+                      '${a['k'] ?? ''}',
+                      profile: a['p'] is String && (a['p'] as String).isNotEmpty ? a['p'] as String : null,
+                      was: '${a['was'] ?? ''}',
+                      wasSeason: '${a['y'] ?? ''}',
+                    ),
+              ],
             ),
       },
       epoch: j['epoch'] is int ? j['epoch'] as int : 0,
@@ -1347,8 +1390,18 @@ class Person {
   /// может быть уже в другом виде, и «женщины» без оговорки было бы утверждением, которого никто
   /// не подтвердил. [wasSeason] — «2025/26»; пусто — сезон неизвестен.
   final String was, wasSeason;
-  const Person(this.name, this.nation, this.kinds, {this.profile, this.was = '', this.wasSeason = ''});
+
+  /// Тёзки из другого вида (одиночница с именем танцовщицы из справочника): у каждого свои виды и
+  /// свой профиль. Кого показать — решает вид старта ([Schedule.personFor]).
+  final List<Person> alts;
+  const Person(this.name, this.nation, this.kinds, {this.profile, this.was = '', this.wasSeason = '', this.alts = const []});
+
+  /// Выступает ли в этом виде (буква w, m, p, d — без уровня), по нынешним и прошлым видам.
+  bool inKind(String letter) => '$kinds$was'.toLowerCase().contains(letter);
 }
+
+/// Буква вида справочника по виду старта: women → w, men → m, pairs → p, dance → d.
+String kindLetter(String kind) => const {'women': 'w', 'men': 'm', 'pairs': 'p', 'dance': 'd'}[kind] ?? '';
 
 /// Где спортсмен выступает дальше: старты с расписанием — по времени, и турниры, у которых
 /// расписания ещё нет (без тех, чьи старты уже названы). Только заявленные составы: кого в них

@@ -529,11 +529,12 @@ class SegTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final p = Palette.of(context);
-    final (disc, seg) = splitSegment(start.segment);
+    final (disc, seg) = splitSegment(start.segmentPlain);
     return Text.rich(
       TextSpan(
         children: [
-          TextSpan(text: disc),
+          // командный турнир — тем же словом рядом с видом: в один день с личным стартом его не спутать
+          TextSpan(text: start.team ? 'Командный, ${disc.toLowerCase()}' : disc),
           if (seg.isNotEmpty)
             TextSpan(
               text: '  $seg',
@@ -925,7 +926,7 @@ class LiveCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = start;
     final t = now();
-    final (disc, seg) = splitSegment(s.segment);
+    final (disc, seg) = splitSegment(s.segmentPlain);
     final rest = notYetSkated(s, t);
     const white = Colors.white;
     final dim = Colors.white.withValues(alpha: .78);
@@ -981,7 +982,7 @@ class LiveCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 12),
                     // турнир — надзаголовком над видом
-                    Eyebrow(s.tournament, color: dim, maxLines: 2),
+                    Eyebrow(s.team ? '${s.tournament} · командный турнир' : s.tournament, color: dim, maxLines: 2),
                     VenueLine(s.venue, color: dim),
                     const SizedBox(height: 4),
                     Text(disc, style: display(Palette.light, 36, color: white)),
@@ -1044,7 +1045,15 @@ class LiveCard extends StatelessWidget {
 }
 
 /// Чья тройка: итог турнира, когда вид закончен, иначе — тройка сегмента.
-(String, List<Placing>) topOf(Start s) => s.total.isNotEmpty ? ('Итог турнира', s.total) : (podiumLabel(s), s.podium);
+(String, List<Placing>) topOf(Start s) => s.total.isNotEmpty ? (totalLabel(s), s.total) : (podiumLabel(s), s.podium);
+
+/// Итогов нет: «пока» — пока их ещё можно ждать (старт идёт или кончился меньше суток назад);
+/// давно прошедший без итогов — просто «Итогов нет», без обещания.
+String noResultsText(Start s) =>
+    now().isAfter(s.t1.add(const Duration(days: 1))) ? 'Итогов нет' : 'Итогов пока нет';
+
+/// Подпись итога: у личного — «Итог турнира» (тройка вида), у командного — «Командный зачёт» (страны).
+String totalLabel(Start s) => s.team ? 'Командный зачёт' : 'Итог турнира';
 
 /// Сегмент идёт и судейских оценок ещё нет: места по табло, промежуточные.
 bool segmentRunning(Start s) => s.provisional && s.podium.isNotEmpty && s.liveAt(now());
@@ -1126,7 +1135,7 @@ class PastTile extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: tight(context) ? 0 : timeColOf(context), top: 10),
               child: top.isEmpty
-                  ? Text('Итогов пока нет', style: TextStyle(fontSize: 13.5, color: p.ink2))
+                  ? Text(noResultsText(s), style: TextStyle(fontSize: 13.5, color: p.ink2))
                   : Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

@@ -775,6 +775,37 @@ class Guard(unittest.TestCase):
         self.assertEqual([c["name"] for c in doc["categories"]], ["Women"])
 
 
+
+class RerankDsq(unittest.TestCase):
+    def test_places_move_up_after_disqualification(self):
+        # Олимпиада-2022, женщины КП: табло ISU оставило Щербаковой 2-е место, итог вида — пересчитан
+        rows = [{"name": "VALIEVA Kamila", "place": None, "status": "DSQ"},
+                {"name": "SHCHERBAKOVA Anna", "place": 2}, {"name": "SAKAMOTO Kaori", "place": 3},
+                {"name": "A", "place": 5}, {"name": "B", "place": 5}, {"name": "C", "place": 7}]
+        P.rerank_dsq(rows)
+        self.assertEqual([r["place"] for r in rows], [None, 1, 2, 3, 3, 5])
+
+    def test_without_disqualification_nothing_changes(self):
+        rows = [{"name": "A", "place": 2}, {"name": "B", "place": 3}]
+        P.rerank_dsq(rows)
+        self.assertEqual([r["place"] for r in rows], [2, 3])
+        P.rerank_dsq(rows, force=True)  # тройка из таблицы результатов, где строки DSQ нет
+        self.assertEqual([r["place"] for r in rows], [1, 2])
+
+    def test_details_found_by_name_and_number_after_rerank(self):
+        details = [{"place": 2, "name": "SHCHERBAKOVA Anna", "no": 29}, {"place": None, "name": "VALIEVA Kamila", "no": 26}]
+        self.assertEqual(P._detail_of({"place": 1, "name": "SHCHERBAKOVA Anna", "no": 29}, details)["no"], 29)
+        self.assertEqual(P._detail_of({"place": None, "status": "DSQ", "name": "VALIEVA Kamila", "no": 26}, details)["no"], 26)
+
+    def test_void_elements_pass_validation_only_for_dsq(self):
+        el = {"n": "3A", "b": 8.0, "g": None, "j": [], "s": None}
+        errs = []
+        P._check_row({"name": "X", "status": "DSQ", "els": [el]}, "w", errs)
+        self.assertEqual(errs, [])
+        P._check_row({"name": "X", "place": 1, "points": "80.00", "els": [el]}, "w", errs)
+        self.assertEqual(errs, ["w: элемент"])
+
+
 if __name__ == "__main__":
     unittest.main()
 

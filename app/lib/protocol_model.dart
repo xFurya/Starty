@@ -114,10 +114,11 @@ class ProtocolDoc {
     );
   }
 
-  /// Категория под вид и уровень старта; null — в файле такой нет.
-  ProtocolCategory? categoryFor(String kind, String level) {
+  /// Категория под вид и уровень старта; null — в файле такой нет. [team] — командного турнира
+  /// (Олимпиада): у него свои категории с тем же видом и уровнем, что у личных.
+  ProtocolCategory? categoryFor(String kind, String level, {bool team = false}) {
     for (final c in categories) {
-      if (c.kind == kind && c.level == level) return c;
+      if (c.kind == kind && c.level == level && c.team == team) return c;
     }
     return null;
   }
@@ -129,12 +130,16 @@ class ProtocolCategory {
   final List<ProtocolSegment> segments;
   final ProtocolTotal? total;
 
+  /// Категория командного турнира: вид и уровень как у личной, отличает её этот флаг.
+  final bool team;
+
   const ProtocolCategory({
     required this.kind,
     required this.level,
     required this.name,
     required this.segments,
     this.total,
+    this.team = false,
   });
 
   /// Категория без обязательных полей — null (пропускается целиком).
@@ -150,6 +155,7 @@ class ProtocolCategory {
       name: name,
       segments: [for (final s in segs) if (s is Map) ProtocolSegment.tryParse(Map<String, dynamic>.from(s))],
       total: t is Map ? ProtocolTotal.parse(Map<String, dynamic>.from(t)) : null,
+      team: j['team'] == true,
     );
   }
 

@@ -233,6 +233,11 @@ def segment_view(*, seg, category, code, page, cat_url, now, start, end, marks, 
         else:
             rows, reason = [], f"pdf_{why}"
     state, basis = segment_state(now, start, end, table, bool(rows), marks, judges, final_by_time)
+    # дисквалифицированный из мест выбывает — и в протоколе, и в тройке (results — без его строки)
+    if any((r.get("status") or "").upper() == "DSQ" for r in rows):
+        rerank_dsq(rows)
+        if results:
+            rerank_dsq(results, force=True)
     return {"state": state, "basis": basis, "table": table, "rows": rows, "results": results,
             "judges": judges, "reason": reason, "skipped": proto["skipped"],
             "stamp": st.page_stamp(page, seg.get("url")) if page is not None else None}
@@ -271,13 +276,38 @@ def lacks_details(seg):
                 and not any(r.get("els") for r in seg["rows"]))
 
 
+def rerank_dsq(rows, force=False):
+    """Дисквалифицированный (DSQ) из мест выбывает, остальные поднимаются: табло ISU после
+    дисквалификации оставляет в сегменте прежние места (2, 3, …), а итог вида пересчитывает — у нас
+    и сегмент как итог. Равные места остаются равными. Строки меняются на месте; → rows.
+    force — строки без строки DSQ (тройка из таблицы результатов), а дисквалификация в сегменте была."""
+    if not force and not any((r.get("status") or "").upper() == "DSQ" for r in rows):
+        return rows
+    placed = sorted((r for r in rows if r.get("place")), key=lambda r: r["place"])
+    prev, rank = None, 0
+    for i, r in enumerate(placed, 1):
+        if r["place"] != prev:
+            rank = i
+        prev = r["place"]
+        r["place"] = rank
+    return rows
+
+
 def _detail_of(row, details):
-    """Детали спортсмена: совпадают место и имя (и стартовый номер, если он есть с обеих сторон)."""
-    for d in details:
-        if d["place"] == row.get("place") and key(d["name"]) == key(row["name"]):
-            if row.get("no") is None or d["no"] == row.get("no"):
-                return d
-    return None
+    """Детали спортсмена: совпадают место и имя (и стартовый номер, если он есть с обеих сторон).
+    У дисквалифицированного места нет — по имени и номеру."""
+    same = [d for d in details if key(d["name"]) == key(row["name"])]
+    if row.get("no") is not None:
+        by_no = [d for d in same if d.get("no") == row["no"]]
+        if len(by_no) == 1:
+            return by_no[0]
+        if by_no or any(d.get("no") is not None for d in same):
+            return None
+    by_place = [d for d in same if d["place"] == row.get("place")]
+    if len(by_place) == 1:
+        return by_place[0]
+    # места разошлись (после дисквалификации пересчитаны), а тёзки нет — тот же человек
+    return same[0] if len(same) == 1 else None
 
 
 def segment_record(*, seg, code, start, end, view, name_of, details=None, officials=None, log=None):
@@ -291,7 +321,7 @@ def segment_record(*, seg, code, start, end, view, name_of, details=None, offici
         for k in ("tes", "pcs", "ded"):  # строки NN.NN, как на табло (снижение — модуль)
             if r.get(k) is not None:
                 out[k] = r[k]
-        if details is not None and (r.get("place") is not None):
+        if details is not None and (r.get("place") is not None or r.get("status") == "DSQ"):
             d = _detail_of(r, details)
             if d is None:
                 if log:
@@ -299,7 +329,8 @@ def segment_record(*, seg, code, start, end, view, name_of, details=None, offici
             else:
                 out.update({"bv": d["bv"], "els": d["els"], "comp": d["comp"]})
                 for k in ("tes", "pcs", "ded"):  # колонки нет на табло — берём из PDF той же строкой
-                    out.setdefault(k, f"{abs(d[k]):.2f}")
+                    if d.get(k) is not None:
+                        out.setdefault(k, f"{abs(d[k]):.2f}")
                 if d["deds"]:
                     out["deds"] = d["deds"]
         rows.append(out)
@@ -358,13 +389,21 @@ def total_record(text, last_final, name_of):
     return out
 
 
-def category_record(kind, level, name, segments, total):
-    return {"kind": kind, "level": level, "name": name, "segments": segments, "total": total}
+def category_record(kind, level, name, segments, total, team=False):
+    """team — категория командного турнира: вид и уровень как у личной, отличает её этот флаг."""
+    rec = {"kind": kind, "level": level, "name": name, "segments": segments, "total": total}
+    if team:
+        rec["team"] = True
+    return rec
 
 
-def make_doc(*, tid, tournament, src, marks, categories, now):
-    return {"v": 1, "tid": tid, "tournament": tournament, "src": src, "built": now.isoformat(),
-            "marks": bool(marks), "categories": categories}
+def make_doc(*, tid, tournament, src, marks, categories, now, team=None):
+    """team — командный зачёт {url, rows: [{place, name, nation, points}]}, если был командный турнир."""
+    doc = {"v": 1, "tid": tid, "tournament": tournament, "src": src, "built": now.isoformat(),
+           "marks": bool(marks), "categories": categories}
+    if team:
+        doc["team"] = team
+    return doc
 
 
 def guard(new, prev):
@@ -466,8 +505,11 @@ def _check_row(r, where, errs, parts_len=None):
         if not isinstance(d.get("n"), str) or not _is_num(d.get("v")) or d["v"] > 0:
             errs.append(f"{where}: сбавка")
             break
+    void = r.get("status") == "DSQ"  # аннулированный результат: у элементов только база
     for e in r.get("els", []):
-        if not isinstance(e.get("n"), str) or not all(_is_num(e.get(k)) for k in ("b", "g", "s")) \
+        need = ("b",) if void else ("b", "g", "s")
+        if not isinstance(e.get("n"), str) or not all(_is_num(e.get(k)) for k in need) \
+                or any(e.get(k) is not None and not _is_num(e.get(k)) for k in ("g", "s")) \
                 or not all(j is None or _is_num(j) for j in e.get("j", [])):
             errs.append(f"{where}: элемент")
             break
