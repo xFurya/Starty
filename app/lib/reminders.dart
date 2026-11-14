@@ -35,8 +35,9 @@ class NotifyRules {
   final bool pin;
   // Android: уведомление о выходе спортсмена убирается само вскоре после его проката
   final bool clear;
-  // Android: уведомление о старте — карточкой (вид и программа, отсчёт до начала, «идёт»,
-  // отслеживаемые со временем выхода), а не заголовком и строкой
+  // Android: уведомление о старте — живое: до начала карточка с отсчётом, во время старта
+  // перерисовывается само по табло (полоса выступлений, на льду и далее, тройка, ваши; live_card.dart),
+  // а не заголовок и строка. По умолчанию включено
   final bool card;
 
   static const allKinds = ['women', 'men', 'pairs', 'dance'];
@@ -60,7 +61,7 @@ class NotifyRules {
     this.skaterLead = 15,
     this.pin = true,
     this.clear = true,
-    this.card = false,
+    this.card = true,
   });
 
   static String segOf(Start s) => s.seg == 'ПП' || s.seg == 'ПТ' ? 'free' : 'short';

@@ -8,6 +8,7 @@ import 'package:starty_widget/starty_widget.dart';
 
 import 'background.dart';
 import 'data.dart';
+import 'live_card.dart';
 import 'month_widget.dart';
 import 'platform.dart';
 import 'profile.dart' show profileState;
@@ -24,6 +25,10 @@ import 'palette.dart';
 import 'views.dart';
 
 export 'palette.dart';
+
+/// Служба живого уведомления (Android, starty_alerts LiveService) запускает этот вход в своём движке.
+@pragma('vm:entry-point')
+Future<void> liveCardMain() => runLiveCards();
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

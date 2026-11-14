@@ -459,12 +459,12 @@ void main() {
       expect(c['more'], 0);
     });
 
-    test('карточка — только когда включена в правилах; по умолчанию уведомление прежнее', () {
-      expect(const NotifyRules().card, isFalse);
-      final on = NotifyRules.fromJson(const NotifyRules().copyWith(card: true).toJson());
-      expect(on.card, isTrue);
-      // правила без поля (документ старой версии) — вид не меняют
-      expect(NotifyRules.fromJson('{"on":true,"lead":15}').card, isFalse);
+    test('живое уведомление включено по умолчанию; выключенное — помнится', () {
+      expect(const NotifyRules().card, isTrue);
+      final off = NotifyRules.fromJson(const NotifyRules().copyWith(card: false).toJson());
+      expect(off.card, isFalse);
+      // правила без поля (документ старой версии) — живое, как у всех
+      expect(NotifyRules.fromJson('{"on":true,"lead":15}').card, isTrue);
     });
   });
 }

@@ -5,4 +5,10 @@
     <color name="alert_soon_text">#FF1A56A0</color>
     <color name="alert_live_bg">#FFD93A3A</color>
     <color name="alert_live_text">#FFFFFFFF</color>
+    <!-- живое уведомление: медали тройки, линия между блоками -->
+    <color name="alert_medal_gold">#FFF2C94C</color>
+    <color name="alert_medal_silver">#FFCDD5DE</color>
+    <color name="alert_medal_bronze">#FFE3AC7E</color>
+    <color name="alert_medal_text">#FF2B2108</color>
+    <color name="alert_rule">#1F000000</color>
 </resources>

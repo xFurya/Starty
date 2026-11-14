@@ -1222,11 +1222,11 @@ class _NotifyPageState extends State<_NotifyPage> {
                     onChanged: (v) => _set(r.copyWith(pin: v)),
                   ),
                   const Hairline(),
-                  // новый вид уведомления о старте: своя раскладка вместо заголовка и строки
+                  // уведомление о старте меняется само по ходу старта (live_card.dart)
                   _SwitchRow(
-                    icon: CupertinoIcons.rectangle_stack,
-                    title: 'Карточка старта',
-                    subtitle: 'отсчёт до начала, метка «идёт», отслеживаемые по строкам',
+                    icon: CupertinoIcons.dot_radiowaves_left_right,
+                    title: 'Живое уведомление',
+                    subtitle: 'во время старта само меняется: кто на льду, лидеры с баллами, ваши и время выхода',
                     value: r.card,
                     onChanged: (v) => _set(r.copyWith(card: v)),
                   ),

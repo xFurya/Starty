@@ -8,6 +8,10 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.graphics.RectF
 import android.graphics.Typeface
 import android.net.Uri
 import android.os.Build
@@ -16,6 +20,7 @@ import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
+import android.util.TypedValue
 import android.view.View
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
@@ -97,7 +102,10 @@ class Entry(
  *    состояния (now.json): старт закончился — его уведомления снимаются сразу, а не в конец по расписанию;
  *    затянулся (табло говорит, что идёт) — не снимаются в конец по расписанию;
  *  • полоса «Live Notifications» в шторке One UI — для музыки и живых карточек, обычному
- *    уведомлению туда хода нет (и не просимся): его место — первое среди обычных.
+ *    уведомлению туда хода нет (и не просимся): его место — первое среди обычных;
+ *  • живое уведомление: пока старт с карточкой идёт, служба LiveService читает табло и присылает
+ *    данные (liveUpdate) — уведомление перерисовывается по ходу старта: полоса выступлений картинкой,
+ *    на льду и далее, тройка с баллами, ваши, время табло (alert_live.xml, alert_live_big.xml).
  * Расписание хранится здесь же и поднимается после перезагрузки и обновления.
  */
 object Alerts {
@@ -316,7 +324,7 @@ object Alerts {
      * висящего и так тихое — setOnlyAlertOnce. setSilent здесь не годится: он кладёт уведомление
      * в общую группу «silent», и такое оболочка может не показать значком в строке состояния.
      */
-    private fun icon(c: Context): Int =
+    fun icon(c: Context): Int =
         c.resources.getIdentifier("ic_notify", "drawable", c.packageName).takeIf { it != 0 } ?: c.applicationInfo.icon
 
     /** InboxStyle показывает не больше семи строк: лишнее — «и ещё N» в сводке стиля. */
@@ -404,8 +412,18 @@ object Alerts {
     }
 
     private fun post(c: Context, e: Entry, quiet: Boolean) {
+        val n = build(c, e, quiet) ?: return
+        try {
+            NotificationManagerCompat.from(c).notify(e.id, n)
+        } catch (_: SecurityException) {
+            // уведомления запрещены — молча: расписание остаётся
+        }
+        regroup(c, e.group, posted = e.id)
+    }
+
+    private fun build(c: Context, e: Entry, quiet: Boolean): android.app.Notification? {
         val now = System.currentTimeMillis()
-        if (e.end <= now) return
+        if (e.end <= now) return null
         val pinned = e.hold > now
         ensureChannel(c)
         val open = c.packageManager.getLaunchIntentForPackage(c.packageName)?.let {
@@ -427,11 +445,13 @@ object Alerts {
         }
         // карточка — своя раскладка в рамке системы; заголовок и строка остаются для часов,
         // экрана блокировки со скрытым содержимым и сводки стопки
-        val card = cardViews(c, e, now)
+        val live = livePayload(c, e, now)
+        val card = (if (live != null) liveViews(c, live) else null) ?: cardViews(c, e, now)
         val b = NotificationCompat.Builder(c, CHANNEL)
             .setSmallIcon(icon(c))
             .setContentTitle(shownTitle(c, e, now))
-            .setContentText(e.body)
+            // у живого — что сейчас происходит: это видят часы, экран блокировки и сводка стопки
+            .setContentText(live?.optString("line")?.takeIf { it.isNotEmpty() } ?: e.body)
             .setStyle(if (card != null) NotificationCompat.DecoratedCustomViewStyle() else style)
             .setCategory(if (e.reminder) NotificationCompat.CATEGORY_REMINDER else NotificationCompat.CATEGORY_EVENT)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -443,6 +463,8 @@ object Alerts {
             .setShowWhen(false)
             .setTimeoutAfter(e.end - now)
         if (card != null) b.setCustomContentView(card.first).setCustomBigContentView(card.second)
+        // турнир живого — в шапке уведомления, рядом с названием приложения: в карточке ему места нет
+        if (live != null) b.setSubText(e.groupTitle.ifEmpty { null })
         if (pinned) b.setDeleteIntent(del)
         // стопка турнира; внутри — по времени. Тихое звучит только «сводкой», а сводное
         // само не звучит никогда — значит, тихое молчит
@@ -450,12 +472,7 @@ object Alerts {
             .setSortKey(String.format(java.util.Locale.ROOT, "%015d", e.at))
             .setGroupAlertBehavior(if (quiet) NotificationCompat.GROUP_ALERT_SUMMARY else NotificationCompat.GROUP_ALERT_CHILDREN)
         if (open != null) b.setContentIntent(open)
-        try {
-            NotificationManagerCompat.from(c).notify(e.id, b.build())
-        } catch (_: SecurityException) {
-            // уведомления запрещены — молча: расписание остаётся
-        }
-        regroup(c, e.group, posted = e.id)
+        return b.build()
     }
 
     private fun summaryId(group: String) = "group:$group".hashCode() and 0x7fffffff
@@ -581,6 +598,8 @@ object Alerts {
         for (e in loud) post(c, e, quiet = false)
         scheduleTick(c)
         scheduleWatch(c)
+        // приложение на экране (или фоновое обновление): идущий старт — живое уведомление
+        LiveService.start(c)
     }
 
     @Synchronized
@@ -612,6 +631,8 @@ object Alerts {
         post(c, e, quiet = false)
         scheduleTick(c)
         scheduleWatch(c)
+        // показали посреди старта — сразу живое
+        if (e.isLive(now)) LiveService.start(c)
     }
 
     /** Смахнули закреплённое — вернуть. Убранное нами (нет в расписании) и откреплённое не возвращаем. */
@@ -638,6 +659,8 @@ object Alerts {
         val e = load(c).values.firstOrNull { it.id == id } ?: return
         if (e.key in fired(c) && active(c, e)) post(c, e, quiet = true)
         scheduleWatch(c)
+        // точный будильник в начало старта — система разрешает отсюда поднять службу живого уведомления
+        LiveService.start(c)
     }
 
     /** Освежить закреплённые висящие — держать их значок в строке состояния. */
@@ -649,6 +672,8 @@ object Alerts {
             if (e.key in f && e.hold > now && e.end > now && active(c, e)) post(c, e, quiet = true)
         }
         scheduleTick(c)
+        // служба могла остановиться (система, нехватка памяти) — поднять снова, если позволят
+        LiveService.start(c)
     }
 
     /**
@@ -777,6 +802,278 @@ object Alerts {
         for (e in loud) post(c, e, quiet = false)
         scheduleTick(c)
         scheduleWatch(c)
+        LiveService.start(c)
+    }
+
+    // ---------------------------------------------------------------- живое уведомление
+
+    /** Данные живых карточек: ключ уведомления → JSON из live_card.dart. */
+    private fun livePayloads(c: Context): MutableMap<String, String> {
+        val out = HashMap<String, String>()
+        try {
+            val o = JSONObject(prefs(c).getString("live", "{}") ?: "{}")
+            for (k in o.keys()) out[k] = o.getString(k)
+        } catch (_: Exception) {
+        }
+        return out
+    }
+
+    private fun saveLivePayloads(c: Context, m: Map<String, String>) {
+        val o = JSONObject()
+        for ((k, v) in m) o.put(k, v)
+        prefs(c).edit().putString("live", o.toString()).apply()
+    }
+
+    /** Старт идёт, уведомление о нём показано и с карточкой — у него живое уведомление. */
+    private fun isLiveCard(c: Context, e: Entry, f: Set<String>, done: Map<String, Long>, now: Long) =
+        e.card.isNotEmpty() && !e.reminder && e.start.isNotEmpty() && e.key in f && e.liveAt in 1..now &&
+            e.end > now && e.start !in done && (e.hold > now || active(c, e))
+
+    /** Старты, у которых сейчас живое уведомление: [{key, start, id}]. Данные ушедших — забыть. */
+    @Synchronized
+    fun liveEntries(c: Context): List<Map<String, String>> {
+        val now = System.currentTimeMillis()
+        val f = fired(c)
+        val done = done(c, now)
+        val list = load(c).values.filter { isLiveCard(c, it, f, done, now) }
+        val m = livePayloads(c)
+        if (m.keys.retainAll(list.map { it.key }.toSet())) saveLivePayloads(c, m)
+        return list.map { mapOf("key" to it.key, "start" to it.start, "id" to it.id.toString()) }
+    }
+
+    /** Новые данные живой карточки — перерисовать висящее, тихо. Те же данные — ничего. */
+    @Synchronized
+    fun liveUpdate(c: Context, key: String, card: String) {
+        val e = load(c)[key] ?: return
+        val now = System.currentTimeMillis()
+        if (!isLiveCard(c, e, fired(c), done(c, now), now)) return
+        val m = livePayloads(c)
+        if (m[key] == card) return
+        m[key] = card
+        saveLivePayloads(c, m)
+        post(c, e, quiet = true)
+    }
+
+    /** Уведомление для службы: первое живое (тот же номер, что у уведомления о старте). */
+    @Synchronized
+    fun liveForeground(c: Context): Pair<Int, android.app.Notification>? {
+        val now = System.currentTimeMillis()
+        val f = fired(c)
+        val done = done(c, now)
+        val e = load(c).values.firstOrNull { isLiveCard(c, it, f, done, now) } ?: return null
+        return build(c, e, quiet = true)?.let { e.id to it }
+    }
+
+    /** Уведомление с этим номером всё ещё в расписании и показано. */
+    @Synchronized
+    fun hasShown(c: Context, id: Int): Boolean {
+        val f = fired(c)
+        return load(c).values.any { it.id == id && it.key in f && it.end > System.currentTimeMillis() }
+    }
+
+    private fun livePayload(c: Context, e: Entry, now: Long): JSONObject? {
+        if (e.card.isEmpty() || e.reminder || !(e.liveAt in 1..now)) return null
+        val raw = livePayloads(c)[e.key] ?: return null
+        return try {
+            JSONObject(raw).takeIf { it.optInt("v") == 1 }
+        } catch (_: Exception) {
+            null
+        }
+    }
+
+    private fun dp(c: Context, v: Float) =
+        TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, v, c.resources.displayMetrics)
+
+    /**
+     * Полоса выступлений картинкой: по сегменту на выступающего в порядке выхода, промежуток шире
+     * между разминками. Выступил — цветом льда, на льду — красным, его разминка — бледно-красным,
+     * ещё нет — серой дорожкой, снялся — едва видно. Ваш — золотом: выступил — залит, впереди —
+     * обведён. [width] — ширина в пикселях (по ширине уведомления), высота — [heightDp].
+     */
+    private fun strip(c: Context, dots: String, width: Int, heightDp: Float): Bitmap? {
+        val cells = dots.filter { it != '|' }
+        if (cells.isEmpty() || width <= 0) return null
+        val h = dp(c, heightDp).toInt().coerceAtLeast(4)
+        val groups = dots.count { it == '|' }
+        var gap = dp(c, 2.5f)
+        var groupGap = dp(c, 7f)
+        var seg = (width - gap * (cells.length - 1) - (groupGap - gap) * groups) / cells.length
+        if (seg < dp(c, 3f)) {
+            gap = dp(c, 1f)
+            groupGap = dp(c, 3f)
+            seg = (width - gap * (cells.length - 1) - (groupGap - gap) * groups) / cells.length
+        }
+        if (seg <= 0) return null
+        val night = night(c)
+        val ice = if (night) 0xFF9CCBF5.toInt() else 0xFF1A56A0.toInt()
+        val live = if (night) 0xFFE5534B.toInt() else 0xFFD93A3A.toInt()
+        val gold = if (night) 0xFFF2C94C.toInt() else 0xFFD89B00.toInt()
+        val track = if (night) 0x38FFFFFF else 0x1F000000
+        val faint = if (night) 0x14FFFFFF else 0x0D000000
+        val bmp = Bitmap.createBitmap(width, h, Bitmap.Config.ARGB_8888)
+        val cv = Canvas(bmp)
+        val fill = Paint(Paint.ANTI_ALIAS_FLAG).apply { style = Paint.Style.FILL }
+        val ring = Paint(Paint.ANTI_ALIAS_FLAG).apply { style = Paint.Style.STROKE; strokeWidth = dp(c, 1.6f) }
+        val r = minOf(h / 2f, seg / 2f)
+        var x = 0f
+        for (ch in dots) {
+            if (ch == '|') {
+                x += groupGap - gap
+                continue
+            }
+            val own = ch.isUpperCase()
+            val rect = RectF(x, 0f, x + seg, h.toFloat())
+            when (ch.lowercaseChar()) {
+                'd' -> {
+                    fill.color = if (own) gold else ice
+                    cv.drawRoundRect(rect, r, r, fill)
+                }
+                'i' -> {
+                    fill.color = live
+                    cv.drawRoundRect(rect, r, r, fill)
+                    if (own) {
+                        ring.color = gold
+                        val w = ring.strokeWidth / 2
+                        cv.drawRoundRect(RectF(rect.left + w, rect.top + w, rect.right - w, rect.bottom - w), r, r, ring)
+                    }
+                }
+                'w' -> {
+                    fill.color = (live and 0x00FFFFFF) or 0x66000000
+                    cv.drawRoundRect(rect, r, r, fill)
+                    if (own) {
+                        ring.color = gold
+                        val w = ring.strokeWidth / 2
+                        cv.drawRoundRect(RectF(rect.left + w, rect.top + w, rect.right - w, rect.bottom - w), r, r, ring)
+                    }
+                }
+                'x' -> {
+                    fill.color = faint
+                    cv.drawRoundRect(rect, r, r, fill)
+                }
+                else -> {
+                    fill.color = track
+                    cv.drawRoundRect(rect, r, r, fill)
+                    if (own) {
+                        ring.color = gold
+                        val w = ring.strokeWidth / 2
+                        cv.drawRoundRect(RectF(rect.left + w, rect.top + w, rect.right - w, rect.bottom - w), r, r, ring)
+                    }
+                }
+            }
+            x += seg + gap
+        }
+        return bmp
+    }
+
+    /** Ширина содержимого уведомления: экран минус поля шторки и уведомления. */
+    private fun contentWidth(c: Context, minus: Float): Int =
+        (c.resources.displayMetrics.widthPixels - dp(c, 104f + minus)).toInt()
+
+    /**
+     * Живая карточка: свёрнутая — метка «ИДЁТ», что сейчас происходит и «5 из 12», под ними полоса;
+     * развёрнутая — вид и программа, полоса, на льду и далее со временем, тройка с баллами, ваши,
+     * время табло. Пустые строки скрыты. null — данные не разобрать: остаётся обычная карточка.
+     */
+    private fun liveViews(c: Context, o: JSONObject): Pair<RemoteViews, RemoteViews>? = try {
+        val final = o.optString("state") == "final"
+        val small = RemoteViews(c.packageName, R.layout.alert_live)
+        val big = RemoteViews(c.packageName, R.layout.alert_live_big)
+        val count = o.optString("count")
+        val dots = o.optString("dots")
+        for (v in listOf(small, big)) {
+            v.setViewVisibility(R.id.alert_live_pill, if (final) View.GONE else View.VISIBLE)
+            v.setViewVisibility(R.id.alert_final_pill, if (final) View.VISIBLE else View.GONE)
+            v.setTextViewText(R.id.alert_live_count, count)
+            v.setViewVisibility(R.id.alert_live_count, if (count.isEmpty()) View.GONE else View.VISIBLE)
+        }
+        small.setTextViewText(R.id.alert_live_line, o.optString("line"))
+        big.setTextViewText(R.id.alert_live_title, o.optString("title"))
+        val s1 = strip(c, dots, contentWidth(c, 0f), 7f)
+        val s2 = strip(c, dots, contentWidth(c, if (count.isEmpty()) 0f else 70f), 9f)
+        if (s1 != null) small.setImageViewBitmap(R.id.alert_live_strip, s1)
+        if (s2 != null) big.setImageViewBitmap(R.id.alert_live_strip, s2)
+        small.setViewVisibility(R.id.alert_live_strip, if (s1 != null) View.VISIBLE else View.GONE)
+        big.setViewVisibility(R.id.alert_live_strip, if (s2 != null) View.VISIBLE else View.GONE)
+
+        val accent = if (night(c)) 0xFF9CCBF5.toInt() else 0xFF1A56A0.toInt()
+        val rows = o.optJSONArray("rows")
+        val rowIds = arrayOf(
+            intArrayOf(R.id.alert_now1, R.id.alert_now1_label, R.id.alert_now1_name, R.id.alert_now1_at),
+            intArrayOf(R.id.alert_now2, R.id.alert_now2_label, R.id.alert_now2_name, R.id.alert_now2_at),
+        )
+        for (i in rowIds.indices) {
+            val r = rows?.optJSONArray(i)
+            val ids = rowIds[i]
+            if (r == null || r.optString(1).isEmpty()) {
+                big.setViewVisibility(ids[0], View.GONE)
+                continue
+            }
+            big.setViewVisibility(ids[0], View.VISIBLE)
+            big.setTextViewText(ids[1], r.optString(0))
+            big.setTextViewText(ids[2], r.optString(1))
+            big.setTextViewText(ids[3], r.optString(2))
+            // «НА ЛЬДУ» — красным, как метка «идёт»
+            val label = r.optString(0)
+            if (label == "НА ЛЬДУ") big.setTextColor(ids[1], if (night(c)) 0xFFE5534B.toInt() else 0xFFD93A3A.toInt())
+        }
+
+        val top = o.optJSONArray("top")
+        val topIds = arrayOf(
+            intArrayOf(R.id.alert_top1, R.id.alert_top1_place, R.id.alert_top1_name, R.id.alert_top1_pts),
+            intArrayOf(R.id.alert_top2, R.id.alert_top2_place, R.id.alert_top2_name, R.id.alert_top2_pts),
+            intArrayOf(R.id.alert_top3, R.id.alert_top3_place, R.id.alert_top3_name, R.id.alert_top3_pts),
+        )
+        var shownTop = 0
+        for (i in topIds.indices) {
+            val r = top?.optJSONArray(i)
+            val ids = topIds[i]
+            if (r == null || r.optString(1).isEmpty()) {
+                big.setViewVisibility(ids[0], View.GONE)
+                continue
+            }
+            shownTop++
+            big.setViewVisibility(ids[0], View.VISIBLE)
+            big.setTextViewText(ids[1], r.optString(0))
+            big.setTextViewText(ids[2], r.optString(1))
+            big.setTextViewText(ids[3], r.optString(2))
+            // медаль по месту, а не по строке: при равенстве двое вторых — оба серебро
+            big.setInt(ids[1], "setBackgroundResource", when (r.optString(0)) {
+                "1" -> R.drawable.alert_medal_gold
+                "2" -> R.drawable.alert_medal_silver
+                "3" -> R.drawable.alert_medal_bronze
+                else -> R.drawable.alert_medal_none
+            })
+            if (r.optString(3) == "1") big.setTextColor(ids[2], accent)
+        }
+        val mine = o.optJSONArray("mine")
+        val mineIds = arrayOf(
+            intArrayOf(R.id.alert_mine1, R.id.alert_mine1_mark, R.id.alert_mine1_name, R.id.alert_mine1_at),
+            intArrayOf(R.id.alert_mine2, R.id.alert_mine2_mark, R.id.alert_mine2_name, R.id.alert_mine2_at),
+            intArrayOf(R.id.alert_mine3, R.id.alert_mine3_mark, R.id.alert_mine3_name, R.id.alert_mine3_at),
+        )
+        // в развёрнутый вид система даёт ограниченную высоту: при полной тройке — не больше двух ваших
+        val fit = if (shownTop >= 3) 2 else 3
+        var shownMine = 0
+        for (i in mineIds.indices) {
+            val r = mine?.optJSONArray(i)
+            val ids = mineIds[i]
+            if (r == null || r.optString(1).isEmpty() || i >= fit) {
+                big.setViewVisibility(ids[0], View.GONE)
+                continue
+            }
+            shownMine++
+            big.setViewVisibility(ids[0], View.VISIBLE)
+            big.setTextViewText(ids[1], r.optString(0).ifEmpty { "★" })
+            big.setTextViewText(ids[2], r.optString(1))
+            big.setTextViewText(ids[3], r.optString(2))
+        }
+        big.setViewVisibility(R.id.alert_live_rule, if (shownTop + shownMine > 0) View.VISIBLE else View.GONE)
+        val foot = o.optString("foot")
+        big.setTextViewText(R.id.alert_live_foot, foot)
+        big.setViewVisibility(R.id.alert_live_foot, if (foot.isEmpty()) View.GONE else View.VISIBLE)
+        small to big
+    } catch (_: Exception) {
+        null
     }
 }
 
