@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-14T16:41:12+03:00",
- "checked": "2026-11-14T13:58:29.436397+00:00",
+ "checked": "2026-11-14T14:02:28.378774+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51433,7 +51433,7 @@
      "nation": "МОС",
      "no": 3,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "63.26",
      "time": "16:24"
     },
@@ -51452,7 +51452,7 @@
      "time": "16:44",
      "no": 5,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "55.28"
     },
     {
@@ -51474,7 +51474,9 @@
      "nation": "КРД",
      "time": "16:50",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "64.01"
     }
    ],
    "provisional": true,
