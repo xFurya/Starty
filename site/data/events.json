@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T10:11:30+03:00",
- "checked": "2026-11-15T10:11:30+03:00",
+ "checked": "2026-11-15T07:37:03.814105+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -52403,12 +52403,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Елизавета Шичина / Павел Дрозд",
+     "nation": "МОС",
+     "points": "103.50"
+    },
+    {
+     "place": 2,
+     "name": "Александра Прокопец / Александр Васькович",
+     "nation": "МОБ",
+     "points": "89.59"
+    },
+    {
+     "place": 3,
      "name": "Алиса Крайнюкова / Семен Нетсев",
      "nation": "СТА",
      "points": "83.25"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Алиса Крайнюкова / Семен Нетсев — 83.25\n\nНачало: 10:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Елизавета Шичина / Павел Дрозд — 103.50\n2. Александра Прокопец / Александр Васькович — 89.59\n3. Алиса Крайнюкова / Семен Нетсев — 83.25\n\nНачало: 10:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Александра Прокопец / Александр Васькович",
@@ -52429,7 +52441,7 @@
     {
      "name": "Алиса Крайнюкова / Семен Нетсев",
      "nation": "СТА",
-     "place": 1,
+     "place": 3,
      "points": "83.25",
      "time": "10:06",
      "no": 1,
@@ -52468,7 +52480,9 @@
      "nation": "МОС",
      "time": "10:21",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "103.50"
     },
     {
      "name": "Ирина Хавронина / Девид Нарижный",
@@ -52505,28 +52519,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Елизавета Шичина / Павел Дрозд",
-     "nation": "МОС",
-     "points": "103.50"
-    },
-    {
-     "place": 2,
-     "name": "Александра Прокопец / Александр Васькович",
-     "nation": "МОБ",
-     "points": "89.59"
-    },
-    {
-     "place": 3,
-     "name": "Алиса Крайнюкова / Семен Нетсев",
-     "nation": "СТА",
-     "points": "83.25"
-    }
-   ],
-   "provisional": true
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:women-senior-pp",
