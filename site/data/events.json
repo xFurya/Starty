@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-14T23:56:01.060730+00:00",
+ "checked": "2026-11-15T00:04:01.749704+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51733,7 +51733,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Alexa Gasparotto — 56.04\n\nРоссияне:\n• Аделия Петросян — 03:08\n• Александра Трусова — 03:14\n\nНачало: 02:42 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Young You — 65.60\n2. Alexa Gasparotto — 56.04\n\nРоссияне:\n• Аделия Петросян — 03:08\n• Александра Трусова — 03:14\n\nНачало: 02:42 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Alexa Gasparotto",
@@ -51741,7 +51741,7 @@
      "time": "02:49",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "56.04"
     },
     {
@@ -51749,7 +51749,9 @@
      "nation": "KOR",
      "time": "02:55",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "65.60"
     },
     {
      "name": "Logan Higase-chen",
@@ -51847,6 +51849,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Young You",
+     "nation": "KOR",
+     "points": "65.60"
+    },
+    {
+     "place": 2,
      "name": "Alexa Gasparotto",
      "nation": "USA",
      "points": "56.04"
