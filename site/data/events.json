@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-15T03:14:02.999352+00:00",
+ "checked": "2026-11-15T03:22:32.818494+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51933,7 +51933,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Lukas Britschgi — 150.71\n2. Aleksandr Selevko — 149.66\n3. Nikolaj Memola — 141.94\n\nНачало: 05:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Tamir Kuperman — 165.42\n2. Lukas Britschgi — 150.71\n3. Aleksandr Selevko — 149.66\n\nНачало: 05:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Nikolaj Memola",
@@ -51941,7 +51941,7 @@
      "time": "05:32",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "141.94"
     },
     {
@@ -51950,7 +51950,7 @@
      "time": "05:40",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "140.49"
     },
     {
@@ -51959,7 +51959,7 @@
      "time": "05:48",
      "no": 3,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "138.22"
     },
     {
@@ -51968,7 +51968,7 @@
      "time": "05:55",
      "no": 4,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "150.71"
     },
     {
@@ -51977,7 +51977,7 @@
      "time": "06:03",
      "no": 5,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "149.66"
     },
     {
@@ -51985,7 +51985,9 @@
      "nation": "ISR",
      "time": "06:11",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "165.42"
     },
     {
      "name": "Jason Brown",
@@ -52055,21 +52057,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Tamir Kuperman",
+     "nation": "ISR",
+     "points": "165.42"
+    },
+    {
+     "place": 2,
      "name": "Lukas Britschgi",
      "nation": "SUI",
      "points": "150.71"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Aleksandr Selevko",
      "nation": "EST",
      "points": "149.66"
-    },
-    {
-     "place": 3,
-     "name": "Nikolaj Memola",
-     "nation": "ITA",
-     "points": "141.94"
     }
    ],
    "provisional": true
