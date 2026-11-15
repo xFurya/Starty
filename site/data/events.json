@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T12:39:28+03:00",
- "checked": "2026-11-15T10:37:32.481913+00:00",
+ "checked": "2026-11-15T11:05:32.810584+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -52845,14 +52845,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 13:45 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Михаил Полянский — 133.09\n\nНачало: 13:45 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Михаил Полянский",
      "nation": "СПБ",
      "time": "13:52",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "133.09"
     },
     {
      "name": "Артемий Маринин",
@@ -52945,7 +52947,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Михаил Полянский",
+     "nation": "СПБ",
+     "points": "133.09"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:pairs-senior-pp",
