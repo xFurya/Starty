@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-15T01:12:01.247342+00:00",
+ "checked": "2026-11-15T02:42:02.192285+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51933,14 +51933,16 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Начало: 05:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Nikolaj Memola — 141.94\n\nНачало: 05:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Nikolaj Memola",
      "nation": "ITA",
      "time": "05:32",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "141.94"
     },
     {
      "name": "Georgii Reshtenko",
@@ -52041,7 +52043,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-skate-america-2026.json"
+   "proto": "isu_isu-gp-skate-america-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Nikolaj Memola",
+     "nation": "ITA",
+     "points": "141.94"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-skate-america-2026:pairs-senior-pp",
