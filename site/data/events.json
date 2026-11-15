@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-15T05:38:33.111363+00:00",
+ "checked": "2026-11-15T05:46:32.460353+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -52169,7 +52169,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Katie McBEATH / Balazs Nagy — 119.51\n2. Ava Kemp / Yohnatan Elizarov — 113.89\n3. Oxana Vouillamoz / Tom Bouvart — 112.93\n\nНачало: 07:34 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Alisa Efimova / Misha Mitrofanov — 119.94\n2. Katie McBEATH / Balazs Nagy — 119.51\n3. Ava Kemp / Yohnatan Elizarov — 113.89\n\nНачало: 07:34 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Aurelie Faula / Theo Belle",
@@ -52177,7 +52177,7 @@
      "time": "07:41",
      "no": 1,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "97.32"
     },
     {
@@ -52186,7 +52186,7 @@
      "time": "07:49",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "99.24"
     },
     {
@@ -52195,7 +52195,7 @@
      "time": "07:57",
      "no": 3,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "106.32"
     },
     {
@@ -52204,7 +52204,7 @@
      "time": "08:05",
      "no": 4,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "119.51"
     },
     {
@@ -52213,7 +52213,7 @@
      "time": "08:20",
      "no": 5,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "113.89"
     },
     {
@@ -52222,7 +52222,7 @@
      "time": "08:28",
      "no": 6,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "112.93"
     },
     {
@@ -52230,7 +52230,9 @@
      "nation": "USA",
      "time": "08:36",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "119.94"
     },
     {
      "name": "Minerva Fabienne Hase / Nikita Volodin",
@@ -52261,21 +52263,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Alisa Efimova / Misha Mitrofanov",
+     "nation": "USA",
+     "points": "119.94"
+    },
+    {
+     "place": 2,
      "name": "Katie McBEATH / Balazs Nagy",
      "nation": "USA",
      "points": "119.51"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Ava Kemp / Yohnatan Elizarov",
      "nation": "CAN",
      "points": "113.89"
-    },
-    {
-     "place": 3,
-     "name": "Oxana Vouillamoz / Tom Bouvart",
-     "nation": "SUI",
-     "points": "112.93"
     }
    ],
    "provisional": true
