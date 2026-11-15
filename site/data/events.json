@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-16T00:55:49+03:00",
- "checked": "2026-11-16T00:55:49+03:00",
+ "checked": "2026-11-15T22:14:30.171941+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -53492,14 +53492,12 @@
      "points": "122.09",
      "time": "00:51",
      "no": 6,
-     "warmup": 1,
-     "place": 4,
-     "points": "122.09"
+     "warmup": 1
     },
     {
      "name": "Alexa Gasparotto",
      "nation": "USA",
-     "place": 5,
+     "place": 6,
      "points": "96.73",
      "time": "00:12",
      "no": 1,
@@ -53515,7 +53513,7 @@
     {
      "name": "Logan Higase-chen",
      "nation": "USA",
-     "place": 6,
+     "place": 7,
      "points": "81.43",
      "time": "00:35",
      "no": 4,
@@ -53533,7 +53531,9 @@
      "nation": "CAN",
      "time": "01:06",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "119.33"
     },
     {
      "name": "Sofia Samodelkina",
