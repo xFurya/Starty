@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T14:46:34+03:00",
- "checked": "2026-11-15T12:25:32.439326+00:00",
+ "checked": "2026-11-15T12:29:32.774388+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -52865,7 +52865,7 @@
      "points": "174.33"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Лев Лазарев — 189.87\n2. Марк Кондратюк — 185.61\n3. Николай Угожаев — 174.33\n\nНачало: 13:45 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Итог:\n1. Лев Лазарев — 189.87\n2. Марк Кондратюк — 185.61\n3. Николай Угожаев — 174.33\n\nИтог турнира:\n1. Лев Лазарев — 288.60\n2. Марк Кондратюк — 282.88\n3. Николай Угожаев — 271.71\n\nПримечательное:\n• Лев Лазарев — 5 четверных в программе: 4F, 4Lz, 4S, 4Lz, 4T\n\nНачало: 13:45 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Александр Мельников",
@@ -52874,7 +52874,8 @@
      "no": 8,
      "warmup": 2,
      "place": 4,
-     "points": "165.21"
+     "points": "165.21",
+     "final": 4
     },
     {
      "name": "Арсений Димитриев",
@@ -52883,7 +52884,8 @@
      "points": "158.06",
      "time": "14:37",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "final": 7
     },
     {
      "name": "Артемий Маринин",
@@ -52892,7 +52894,8 @@
      "points": "149.72",
      "time": "14:00",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 8
     },
     {
      "name": "Илья Мавлянов",
@@ -52901,7 +52904,8 @@
      "points": "128.39",
      "time": "14:07",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 10
     },
     {
      "name": "Илья Неретин",
@@ -52910,7 +52914,8 @@
      "points": "161.72",
      "time": "14:22",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "final": 6
     },
     {
      "name": "Илья Строганов",
@@ -52919,7 +52924,8 @@
      "no": 7,
      "warmup": 2,
      "place": 5,
-     "points": "163.47"
+     "points": "163.47",
+     "final": 5
     },
     {
      "name": "Лев Лазарев",
@@ -52928,7 +52934,8 @@
      "no": 11,
      "warmup": 2,
      "place": 1,
-     "points": "189.87"
+     "points": "189.87",
+     "final": 1
     },
     {
      "name": "Марк Кондратюк",
@@ -52937,7 +52944,8 @@
      "no": 9,
      "warmup": 2,
      "place": 2,
-     "points": "185.61"
+     "points": "185.61",
+     "final": 2
     },
     {
      "name": "Михаил Полянский",
@@ -52946,7 +52954,8 @@
      "points": "133.09",
      "time": "13:52",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 11
     },
     {
      "name": "Николай Угожаев",
@@ -52955,7 +52964,8 @@
      "no": 10,
      "warmup": 2,
      "place": 3,
-     "points": "174.33"
+     "points": "174.33",
+     "final": 3
     },
     {
      "name": "Фёдор Зонов",
@@ -52964,10 +52974,10 @@
      "points": "140.71",
      "time": "14:15",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 9
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/5etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/5etap_sen/SEG002.htm",
@@ -52986,9 +52996,36 @@
      "Николай УГОЖАЕВ": "Николай Угожаев",
      "Лев ЛАЗАРЕВ": "Лев Лазарев"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json",
+   "facts": [
+    {
+     "who": "Лев Лазарев",
+     "text": "5 четверных в программе: 4F, 4Lz, 4S, 4Lz, 4T",
+     "kind": "element"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Лев Лазарев",
+     "nation": "МОС",
+     "points": "288.60"
+    },
+    {
+     "place": 2,
+     "name": "Марк Кондратюк",
+     "nation": "МОС",
+     "points": "282.88"
+    },
+    {
+     "place": 3,
+     "name": "Николай Угожаев",
+     "nation": "СПБ",
+     "points": "271.71"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:pairs-senior-pp",
