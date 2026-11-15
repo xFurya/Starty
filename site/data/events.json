@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-15T03:46:32.302202+00:00",
+ "checked": "2026-11-15T03:54:32.405011+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51933,7 +51933,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Tamir Kuperman — 165.42\n2. Jason Brown — 161.73\n3. Lukas Britschgi — 150.71\n\nНачало: 05:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Daniel Grassl — 188.25\n2. Tamir Kuperman — 165.42\n3. Jason Brown — 161.73\n\nНачало: 05:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Nikolaj Memola",
@@ -51941,7 +51941,7 @@
      "time": "05:32",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "141.94"
     },
     {
@@ -51950,7 +51950,7 @@
      "time": "05:40",
      "no": 2,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "140.49"
     },
     {
@@ -51959,7 +51959,7 @@
      "time": "05:48",
      "no": 3,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "138.22"
     },
     {
@@ -51968,7 +51968,7 @@
      "time": "05:55",
      "no": 4,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "150.71"
     },
     {
@@ -51977,7 +51977,7 @@
      "time": "06:03",
      "no": 5,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "149.66"
     },
     {
@@ -51986,7 +51986,7 @@
      "time": "06:11",
      "no": 6,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "165.42"
     },
     {
@@ -51995,7 +51995,7 @@
      "time": "06:26",
      "no": 7,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "161.73"
     },
     {
@@ -52004,7 +52004,7 @@
      "time": "06:34",
      "no": 8,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "136.79"
     },
     {
@@ -52012,7 +52012,9 @@
      "nation": "ITA",
      "time": "06:41",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "188.25"
     },
     {
      "name": "Donovan Carrillo",
@@ -52061,21 +52063,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Daniel Grassl",
+     "nation": "ITA",
+     "points": "188.25"
+    },
+    {
+     "place": 2,
      "name": "Tamir Kuperman",
      "nation": "ISR",
      "points": "165.42"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Jason Brown",
      "nation": "USA",
      "points": "161.73"
-    },
-    {
-     "place": 3,
-     "name": "Lukas Britschgi",
-     "nation": "SUI",
-     "points": "150.71"
     }
    ],
    "provisional": true
