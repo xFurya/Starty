@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-15T08:55:01+03:00",
- "checked": "2026-11-15T08:55:01+03:00",
+ "generated": "2026-11-15T09:17:22+03:00",
+ "checked": "2026-11-15T09:17:22+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51891,34 +51891,34 @@
    },
    "facts": [
     {
-     "who": "Ami Nakai",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Ami Nakai"
     },
     {
-     "who": "Ami Nakai",
+     "kind": "score",
      "text": "Лучшая в мире оценка сезона за КП: 82.20",
-     "kind": "score"
+     "who": "Ami Nakai"
     },
     {
-     "who": "Ami Nakai",
+     "kind": "score",
      "text": "Личный рекорд за КП: 82.20 (был 80.27)",
-     "kind": "score"
+     "who": "Ami Nakai"
     },
     {
-     "who": "Yujae Kim",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Yujae Kim"
     },
     {
-     "who": "Sophie Joline von Felten",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Sophie Joline von Felten"
     },
     {
-     "who": "Alexa Gasparotto",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Alexa Gasparotto"
     }
    ],
    "proto": "isu_isu-gp-skate-america-2026.json"
@@ -52151,9 +52151,9 @@
    },
    "facts": [
     {
-     "who": "Ilia Malinin",
+     "kind": "element",
      "text": "Секвенция 4Lz+3A+2A",
-     "kind": "element"
+     "who": "Ilia Malinin"
     },
     {
      "kind": "score",
@@ -52348,14 +52348,14 @@
    },
    "facts": [
     {
-     "who": "Katie McBEATH / Balazs Nagy",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 119.51 (был 113.78)",
-     "kind": "score"
+     "who": "Katie McBEATH / Balazs Nagy"
     },
     {
-     "who": "Katie McBEATH / Balazs Nagy",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 187.13 (был 180.95)",
-     "kind": "score"
+     "who": "Katie McBEATH / Balazs Nagy"
     }
    ],
    "proto": "isu_isu-gp-skate-america-2026.json"
