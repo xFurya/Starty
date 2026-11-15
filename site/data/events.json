@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-15T02:50:02.126478+00:00",
+ "checked": "2026-11-15T02:58:02.853401+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51933,7 +51933,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Nikolaj Memola — 141.94\n2. Georgii Reshtenko — 140.49\n\nНачало: 05:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Nikolaj Memola — 141.94\n2. Georgii Reshtenko — 140.49\n3. Aleksa Rakic — 138.22\n\nНачало: 05:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Nikolaj Memola",
@@ -51958,7 +51958,9 @@
      "nation": "CAN",
      "time": "05:48",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3,
+     "points": "138.22"
     },
     {
      "name": "Lukas Britschgi",
@@ -52058,6 +52060,12 @@
      "name": "Georgii Reshtenko",
      "nation": "CZE",
      "points": "140.49"
+    },
+    {
+     "place": 3,
+     "name": "Aleksa Rakic",
+     "nation": "CAN",
+     "points": "138.22"
     }
    ],
    "provisional": true
