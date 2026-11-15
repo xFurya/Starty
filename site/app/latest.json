@@ -1,33 +1,11 @@
 {
- "version": "1.0.70",
- "code": 71,
- "notes": "Подарочные коды и токен разработчика.",
- "at": "2026-11-14T19:02:09Z",
+ "version": "1.0.71",
+ "code": 72,
+ "notes": "Исправлен протокол: оценки судей больше не пропадают.",
+ "at": "2026-11-15T06:57:41Z",
  "android": {
-  "file": "starty-1.0.70.apk",
+  "file": "starty-1.0.71.apk",
   "size": 24193301,
-  "sha256": "2373b23b6f87bd1a36b2d7d20f523fd2750867cceeb1fa1c6a0c36efbda8c197"
- },
- "windows": {
-  "code": 71,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.70/Starty-windows.zip",
-  "size": 14867032,
-  "sha256": "ebe9644c0067a57458304c6a72789af0f4ea0d7203053c8a73c533aee005ed2c",
-  "setup": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.70/starty-setup-1.0.70.exe",
-   "size": 12938502,
-   "sha256": "7c2cf2da3d9e43ce08291261a265785ce928a915895eaf83e3d53d151b68b0ee"
-  }
- },
- "macos": {
-  "code": 71,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.70/Starty-macos.zip",
-  "size": 22746867,
-  "sha256": "8b7681254b5f97d6fd9cf2cd313b5cdb7c173c185d08871846e5d4fafba3e79f",
-  "dmg": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.70/Starty-macos.dmg",
-   "size": 25960447,
-   "sha256": "78ef9edce6f99acca3b06b5c131a0df6971b0f6430e9a6b4ab11ec3ea982d2e3"
-  }
+  "sha256": "9a962258516ca0fcc51d601067e416a8673241638180609126789e897df2f077"
  }
 }
