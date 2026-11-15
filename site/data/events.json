@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T20:58:01+03:00",
- "checked": "2026-11-15T19:51:02.633199+00:00",
+ "checked": "2026-11-15T19:59:02.384984+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -53235,7 +53235,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sofia Val / Asaf Kazimov — 98.12\n2. Noemi Maria Tali / Noah Lafornara — 94.84\n3. Iryna Pidgaina / Artem Koval — 94.53\n\nНачало: 22:10 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Leah Neset / Artem Markelov — 106.54\n2. Sofia Val / Asaf Kazimov — 98.12\n3. Noemi Maria Tali / Noah Lafornara — 94.84\n\nНачало: 22:10 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Natacha Lagouge / Arnaud Caffa",
@@ -53243,7 +53243,7 @@
      "time": "22:16",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "88.23"
     },
     {
@@ -53252,7 +53252,7 @@
      "time": "22:24",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "94.53"
     },
     {
@@ -53261,7 +53261,7 @@
      "time": "22:32",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "98.12"
     },
     {
@@ -53270,7 +53270,7 @@
      "time": "22:40",
      "no": 4,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "94.84"
     },
     {
@@ -53278,7 +53278,9 @@
      "nation": "USA",
      "time": "22:48",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "106.54"
     },
     {
      "name": "Katarina Wolfkostin / Dimitry Tsarevski",
@@ -53339,21 +53341,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Leah Neset / Artem Markelov",
+     "nation": "USA",
+     "points": "106.54"
+    },
+    {
+     "place": 2,
      "name": "Sofia Val / Asaf Kazimov",
      "nation": "ESP",
      "points": "98.12"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Noemi Maria Tali / Noah Lafornara",
      "nation": "ITA",
      "points": "94.84"
-    },
-    {
-     "place": 3,
-     "name": "Iryna Pidgaina / Artem Koval",
-     "nation": "UKR",
-     "points": "94.53"
     }
    ],
    "provisional": true
