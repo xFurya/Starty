@@ -46,7 +46,8 @@
 ["https://results.isu.org/results/season2627/gpusa2026/FSKWSINGLES-----------QUAL000100--_JudgesDetailsperSkater.pdf", "GP Skate America", "2026-11-14", "women", "senior", "КП", "ISU"],
 ["https://results.isu.org/results/season2627/gpusa2026/FSKXPAIRS-------------FNL-000100--_JudgesDetailsperSkater.pdf", "GP Skate America", "2026-11-14", "pairs", "senior", "ПП", "ISU"],
 ["https://results.isu.org/results/season2627/gpusa2026/FSKXICEDANCE----------QUAL000100--_JudgesDetailsperSkater.pdf", "GP Skate America", "2026-11-14", "dance", "senior", "РТ", "ISU"],
-["https://fsrussia.ru/results/2627/5etap_sen/FSKXICEDANCE----------FNL-000100--_JudgesDetailsperSkater.pdf", "Гран-при России «Сердце Сибири»", "2026-11-15", "dance", "senior", "ПТ", "ФФККР"]
+["https://fsrussia.ru/results/2627/5etap_sen/FSKXICEDANCE----------FNL-000100--_JudgesDetailsperSkater.pdf", "Гран-при России «Сердце Сибири»", "2026-11-15", "dance", "senior", "ПТ", "ФФККР"],
+["https://fsrussia.ru/results/2627/5etap_sen/FSKWSINGLES-----------FNL-000100--_JudgesDetailsperSkater.pdf", "Гран-при России «Сердце Сибири»", "2026-11-15", "women", "senior", "ПП", "ФФККР"]
 ],
 "ath": {
 "aboian hana maria / danil veseluhin": {"c": ["USA"], "el": {"Kp4": [1, 10, null, null]}, "k": "dance", "n": "Hana Maria ABOIAN / Daniil VESELUKHIN"},
@@ -104,10 +105,11 @@
 "kondratiuk mark": {"c": ["МОС"], "el": {"3A": [1, 40, 8.0, 40], "4Lz": [1, 40, 11.5, 40], "4S": [1, 40, null, null], "4S+3T": [1, 40, 13.9, 40]}, "k": "men", "n": "Марк КОНДРАТЮК", "q": [2, 40, "4Lz 4S"]},
 "kuperman tamir": {"c": ["ISR"], "el": {"3A": [4, 1, 8.0, 20], "3A+2T": [1, 1, 9.3, 1], "4Lz": [2, 1, 11.5, 1], "4S": [5, 0, 9.7, 1], "4S+3T": [2, 0, 13.9, 0], "4T": [4, 0, 9.5, 0], "4T+3T": [1, 37, 13.7, 37]}, "k": "men", "n": "Tamir KUPERMAN", "q": [4, 42, "4Lz 4S 4T 4T"]},
 "lazarev lev": {"c": ["МОС"], "el": {"3A": [1, 40, 8.0, 40], "4F": [1, 40, null, null], "4F+3T": [1, 40, 15.2, 40], "4Lz": [1, 40, 11.5, 40]}, "k": "men", "n": "Лев ЛАЗАРЕВ", "q": [2, 40, "4F 4Lz"]},
-"lidia pleskacheva": {"c": ["МОС"], "el": {"3A": [1, 39, 8.0, 39]}, "k": "women", "n": "Лидия ПЛЕСКАЧЕВА"},
+"lidia pleskacheva": {"c": ["МОС"], "el": {"3A": [2, 39, 8.0, 39]}, "k": "women", "n": "Лидия ПЛЕСКАЧЕВА"},
 "lizaveta melnikova": {"c": ["МОС"], "el": {"4Lz": [1, 34, 11.5, 34]}, "k": "women", "n": "Лизавета МЕЛЬНИКОВА"},
 "lukin mark": {"c": ["МОС"], "el": {"3A": [3, 30, 8.0, 30], "3A+2A+1Eu+3S+SEQ": [1, 35, 15.6, 35], "4S": [1, 35, 9.7, 35]}, "k": "men", "n": "Марк ЛУКИН"},
 "maksim varakin": {"c": ["CRO"], "el": {"3A": [3, 12, 8.0, 12], "3A+3T": [1, 13, 12.2, 13]}, "k": "men", "n": "Maxim VARAKIN"},
+"maria zaharova": {"c": ["МОС"], "el": {"4T": [1, 47, 9.5, 47]}, "k": "women", "n": "Мария ЗАХАРОВА"},
 "memola nikolai": {"c": ["ITA"], "el": {"3A": [2, 42, 8.0, 42], "3A+1Eu+3S+2A+SEQ": [1, 42, 15.6, 42]}, "k": "men", "n": "Nikolaj MEMOLA"},
 "mihail polianski": {"c": ["СПБ"], "el": {"3A": [1, 40, 8.0, 40]}, "k": "men", "n": "Михаил ПОЛЯНСКИЙ"},
 "nico stefen": {"c": ["SUI"], "el": {"3A": [1, 1, null, null], "3A+2T": [1, 1, 9.3, 1]}, "k": "men", "n": "Nico STEFFEN"},
