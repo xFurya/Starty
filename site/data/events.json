@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-15T04:14:32.626228+00:00",
+ "checked": "2026-11-15T04:18:33.186779+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51933,7 +51933,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Daniel Grassl — 188.25\n2. Ilia Malinin — 187.57\n3. Tamir Kuperman — 165.42\n\nНачало: 05:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Daniel Grassl — 188.25\n2. Ilia Malinin — 187.57\n3. Tamir Kuperman — 165.42\n\nИтог турнира:\n1. Ilia Malinin — 284.31\n2. Daniel Grassl — 274.73\n3. Tamir Kuperman — 248.55\n\nПримечательное:\n• Tamir Kuperman — Личный рекорд по сумме: 248.55 (был 230.17)\n• Tamir Kuperman — После короткой программы — 7-е место, в итоге — 3-е место\n\nНачало: 05:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Nikolaj Memola",
@@ -51942,7 +51942,8 @@
      "no": 1,
      "warmup": 1,
      "place": 8,
-     "points": "141.94"
+     "points": "141.94",
+     "final": 12
     },
     {
      "name": "Georgii Reshtenko",
@@ -51951,7 +51952,8 @@
      "no": 2,
      "warmup": 1,
      "place": 9,
-     "points": "140.49"
+     "points": "140.49",
+     "final": 11
     },
     {
      "name": "Aleksa Rakic",
@@ -51960,7 +51962,8 @@
      "no": 3,
      "warmup": 1,
      "place": 11,
-     "points": "138.22"
+     "points": "138.22",
+     "final": 10
     },
     {
      "name": "Lukas Britschgi",
@@ -51969,7 +51972,8 @@
      "no": 4,
      "warmup": 1,
      "place": 6,
-     "points": "150.71"
+     "points": "150.71",
+     "final": 6
     },
     {
      "name": "Aleksandr Selevko",
@@ -51978,7 +51982,8 @@
      "no": 5,
      "warmup": 1,
      "place": 7,
-     "points": "149.66"
+     "points": "149.66",
+     "final": 8
     },
     {
      "name": "Tamir Kuperman",
@@ -51987,7 +51992,8 @@
      "no": 6,
      "warmup": 1,
      "place": 3,
-     "points": "165.42"
+     "points": "165.42",
+     "final": 3
     },
     {
      "name": "Jason Brown",
@@ -51996,7 +52002,8 @@
      "no": 7,
      "warmup": 2,
      "place": 4,
-     "points": "161.73"
+     "points": "161.73",
+     "final": 4
     },
     {
      "name": "Daniel Martynov",
@@ -52005,7 +52012,8 @@
      "no": 8,
      "warmup": 2,
      "place": 12,
-     "points": "136.79"
+     "points": "136.79",
+     "final": 9
     },
     {
      "name": "Daniel Grassl",
@@ -52014,7 +52022,8 @@
      "no": 9,
      "warmup": 2,
      "place": 1,
-     "points": "188.25"
+     "points": "188.25",
+     "final": 2
     },
     {
      "name": "Donovan Carrillo",
@@ -52023,7 +52032,8 @@
      "no": 10,
      "warmup": 2,
      "place": 5,
-     "points": "153.89"
+     "points": "153.89",
+     "final": 5
     },
     {
      "name": "Sota Yamamoto",
@@ -52032,7 +52042,8 @@
      "no": 11,
      "warmup": 2,
      "place": 10,
-     "points": "140.05"
+     "points": "140.05",
+     "final": 7
     },
     {
      "name": "Ilia Malinin",
@@ -52041,7 +52052,8 @@
      "no": 12,
      "warmup": 2,
      "place": 2,
-     "points": "187.57"
+     "points": "187.57",
+     "final": 1
     }
    ],
    "live": {
@@ -52063,7 +52075,7 @@
      "Sota YAMAMOTO": "Sota Yamamoto",
      "Ilia MALININ": "Ilia Malinin"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-skate-america-2026.json",
    "podium": [
@@ -52086,7 +52098,38 @@
      "points": "165.42"
     }
    ],
-   "provisional": true
+   "total": [
+    {
+     "place": 1,
+     "name": "Ilia Malinin",
+     "nation": "USA",
+     "points": "284.31"
+    },
+    {
+     "place": 2,
+     "name": "Daniel Grassl",
+     "nation": "ITA",
+     "points": "274.73"
+    },
+    {
+     "place": 3,
+     "name": "Tamir Kuperman",
+     "nation": "ISR",
+     "points": "248.55"
+    }
+   ],
+   "facts": [
+    {
+     "who": "Tamir Kuperman",
+     "text": "Личный рекорд по сумме: 248.55 (был 230.17)",
+     "kind": "score"
+    },
+    {
+     "who": "Tamir Kuperman",
+     "text": "После короткой программы — 7-е место, в итоге — 3-е место",
+     "kind": "place"
+    }
+   ]
   },
   {
    "id": "isu:isu-gp-skate-america-2026:pairs-senior-pp",
