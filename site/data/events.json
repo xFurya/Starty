@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-16T00:55:49+03:00",
- "checked": "2026-11-15T22:14:30.171941+00:00",
+ "checked": "2026-11-15T22:22:29.326350+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -53466,29 +53466,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Rino Matsuike",
+     "nation": "JPN",
+     "points": "141.33"
+    },
+    {
+     "place": 2,
      "name": "Sofia Samodelkina",
      "nation": "KAZ",
      "points": "137.56"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Young You",
      "nation": "KOR",
      "points": "127.45"
-    },
-    {
-     "place": 3,
-     "name": "Sophie Joline von Felten",
-     "nation": "USA",
-     "points": "124.93"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sofia Samodelkina — 137.56\n2. Young You — 127.45\n3. Sophie Joline von Felten — 124.93\n\nРоссияне:\n• Аделия Петросян — 01:21\n• Александра Трусова — 01:37\n\nНачало: 00:05 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Rino Matsuike — 141.33\n2. Sofia Samodelkina — 137.56\n3. Young You — 127.45\n\nРоссияне:\n• Аделия Петросян — 01:21\n• Александра Трусова — 01:37\n\nНачало: 00:05 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Ahsun Yun",
      "nation": "KOR",
-     "place": 4,
+     "place": 5,
      "points": "122.09",
      "time": "00:51",
      "no": 6,
@@ -53497,7 +53497,7 @@
     {
      "name": "Alexa Gasparotto",
      "nation": "USA",
-     "place": 6,
+     "place": 7,
      "points": "96.73",
      "time": "00:12",
      "no": 1,
@@ -53513,7 +53513,7 @@
     {
      "name": "Logan Higase-chen",
      "nation": "USA",
-     "place": 7,
+     "place": 8,
      "points": "81.43",
      "time": "00:35",
      "no": 4,
@@ -53524,7 +53524,9 @@
      "nation": "JPN",
      "time": "01:14",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "141.33"
     },
     {
      "name": "Sara-Maude Dupuis",
@@ -53532,13 +53534,13 @@
      "time": "01:06",
      "no": 7,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "119.33"
     },
     {
      "name": "Sofia Samodelkina",
      "nation": "KAZ",
-     "place": 1,
+     "place": 2,
      "points": "137.56",
      "time": "00:20",
      "no": 2,
@@ -53547,7 +53549,7 @@
     {
      "name": "Sophie Joline von Felten",
      "nation": "USA",
-     "place": 3,
+     "place": 4,
      "points": "124.93",
      "time": "00:28",
      "no": 3,
@@ -53556,7 +53558,7 @@
     {
      "name": "Young You",
      "nation": "KOR",
-     "place": 2,
+     "place": 3,
      "points": "127.45",
      "time": "00:43",
      "no": 5,
