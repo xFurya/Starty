@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T14:46:34+03:00",
- "checked": "2026-11-15T12:29:32.774388+00:00",
+ "checked": "2026-11-15T13:05:32.815747+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -53065,7 +53065,7 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 15:45 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Алена Кривоносова / Андрей Анисимов — 102.28\n\nНачало: 15:45 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Анастасия Гиричева / Иван Долгодворов",
@@ -53079,7 +53079,9 @@
      "nation": "МОС",
      "time": "16:00",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "102.28"
     },
     {
      "name": "Юлия Филимонова / Андрей Шадерков",
@@ -53141,7 +53143,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Алена Кривоносова / Андрей Анисимов",
+     "nation": "МОС",
+     "points": "102.28"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-skate-america-2026:dance-senior-pt",
