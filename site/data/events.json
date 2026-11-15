@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-16T00:16:07+03:00",
- "checked": "2026-11-15T21:46:29.156143+00:00",
- "complete": false,
+ "generated": "2026-11-16T00:34:27+03:00",
+ "checked": "2026-11-16T00:34:27+03:00",
+ "complete": true,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
-  "Golden Skate": "fail",
+  "Golden Skate": "ok",
   "ФФКМ": "ok",
   "Самара": "ok"
  },
@@ -53534,15 +53534,17 @@
     {
      "name": "Sofia Samodelkina",
      "nation": "KAZ",
+     "place": 1,
+     "points": "137.56",
      "time": "00:20",
      "no": 2,
-     "warmup": 1,
-     "place": 1,
-     "points": "137.56"
+     "warmup": 1
     },
     {
      "name": "Sophie Joline von Felten",
      "nation": "USA",
+     "place": 2,
+     "points": "124.93",
      "time": "00:28",
      "no": 3,
      "warmup": 1,
@@ -53585,9 +53587,9 @@
     "cat": "https://results.isu.org/results/season2627/gpusa2026/CAT002RS.htm",
     "first": "https://results.isu.org/results/season2627/gpusa2026/SEG003.htm",
     "names": {
-     "Alexa GASPAROTTO": "Alexa Gasparotto",
      "Sofia SAMODELKINA": "Sofia Samodelkina",
      "Sophie Joline von FELTEN": "Sophie Joline von Felten",
+     "Alexa GASPAROTTO": "Alexa Gasparotto",
      "Logan HIGASE-CHEN": "Logan Higase-chen",
      "Young YOU": "Young You",
      "Ahsun YUN": "Ahsun Yun",
