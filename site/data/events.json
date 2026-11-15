@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-16T00:16:07+03:00",
- "checked": "2026-11-15T21:30:29.998965+00:00",
+ "checked": "2026-11-15T21:38:30.456599+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -53472,12 +53472,18 @@
     },
     {
      "place": 2,
+     "name": "Sophie Joline von Felten",
+     "nation": "USA",
+     "points": "124.93"
+    },
+    {
+     "place": 3,
      "name": "Alexa Gasparotto",
      "nation": "USA",
      "points": "96.73"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sofia Samodelkina — 137.56\n2. Alexa Gasparotto — 96.73\n\nРоссияне:\n• Аделия Петросян — 01:21\n• Александра Трусова — 01:37\n\nНачало: 00:05 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Sofia Samodelkina — 137.56\n2. Sophie Joline von Felten — 124.93\n3. Alexa Gasparotto — 96.73\n\nРоссияне:\n• Аделия Петросян — 01:21\n• Александра Трусова — 01:37\n\nНачало: 00:05 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Ahsun Yun",
@@ -53489,7 +53495,7 @@
     {
      "name": "Alexa Gasparotto",
      "nation": "USA",
-     "place": 2,
+     "place": 3,
      "points": "96.73",
      "time": "00:12",
      "no": 1,
@@ -53537,7 +53543,9 @@
      "nation": "USA",
      "time": "00:28",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "124.93"
     },
     {
      "name": "Young You",
