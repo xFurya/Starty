@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-15T23:59:17+03:00",
- "checked": "2026-11-15T21:22:29.716446+00:00",
+ "generated": "2026-11-16T00:16:07+03:00",
+ "checked": "2026-11-16T00:16:07+03:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -53463,16 +53463,61 @@
      "url": "https://www.youtube.com/watch?v=H_ACIowmT-o"
     }
    ],
+   "podium": [
+    {
+     "place": 1,
+     "name": "Alexa Gasparotto",
+     "nation": "USA",
+     "points": "96.73"
+    }
+   ],
    "desc": "Промежуточные итоги:\n1. Alexa Gasparotto — 96.73\n\nРоссияне:\n• Аделия Петросян — 01:21\n• Александра Трусова — 01:37\n\nНачало: 00:05 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
+     "name": "Ahsun Yun",
+     "nation": "KOR",
+     "time": "00:51",
+     "no": 6,
+     "warmup": 1
+    },
+    {
      "name": "Alexa Gasparotto",
      "nation": "USA",
+     "place": 1,
+     "points": "96.73",
      "time": "00:12",
      "no": 1,
      "warmup": 1,
      "place": 1,
      "points": "96.73"
+    },
+    {
+     "name": "Ami Nakai",
+     "nation": "JPN",
+     "time": "01:44",
+     "no": 12,
+     "warmup": 2
+    },
+    {
+     "name": "Logan Higase-chen",
+     "nation": "USA",
+     "time": "00:35",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Rino Matsuike",
+     "nation": "JPN",
+     "time": "01:14",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Sara-Maude Dupuis",
+     "nation": "CAN",
+     "time": "01:06",
+     "no": 7,
+     "warmup": 2
     },
     {
      "name": "Sofia Samodelkina",
@@ -53489,13 +53534,6 @@
      "warmup": 1
     },
     {
-     "name": "Logan Higase-chen",
-     "nation": "USA",
-     "time": "00:35",
-     "no": 4,
-     "warmup": 1
-    },
-    {
      "name": "Young You",
      "nation": "KOR",
      "time": "00:43",
@@ -53503,24 +53541,10 @@
      "warmup": 1
     },
     {
-     "name": "Ahsun Yun",
+     "name": "Yujae Kim",
      "nation": "KOR",
-     "time": "00:51",
-     "no": 6,
-     "warmup": 1
-    },
-    {
-     "name": "Sara-Maude Dupuis",
-     "nation": "CAN",
-     "time": "01:06",
-     "no": 7,
-     "warmup": 2
-    },
-    {
-     "name": "Rino Matsuike",
-     "nation": "JPN",
-     "time": "01:14",
-     "no": 8,
+     "time": "01:29",
+     "no": 10,
      "warmup": 2
     },
     {
@@ -53531,27 +53555,14 @@
      "warmup": 2
     },
     {
-     "name": "Yujae Kim",
-     "nation": "KOR",
-     "time": "01:29",
-     "no": 10,
-     "warmup": 2
-    },
-    {
      "name": "Александра Трусова",
      "nation": "RUS",
      "time": "01:37",
      "no": 11,
      "warmup": 2
-    },
-    {
-     "name": "Ami Nakai",
-     "nation": "JPN",
-     "time": "01:44",
-     "no": 12,
-     "warmup": 2
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpusa2026/SEG004.htm",
