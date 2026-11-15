@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T20:58:01+03:00",
- "checked": "2026-11-15T19:27:02.540610+00:00",
+ "checked": "2026-11-15T19:35:02.604963+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -53235,7 +53235,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Natacha Lagouge / Arnaud Caffa — 88.23\n\nНачало: 22:10 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Iryna Pidgaina / Artem Koval — 94.53\n2. Natacha Lagouge / Arnaud Caffa — 88.23\n\nНачало: 22:10 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Natacha Lagouge / Arnaud Caffa",
@@ -53243,7 +53243,7 @@
      "time": "22:16",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "88.23"
     },
     {
@@ -53251,7 +53251,9 @@
      "nation": "UKR",
      "time": "22:24",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "94.53"
     },
     {
      "name": "Sofia Val / Asaf Kazimov",
@@ -53333,6 +53335,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Iryna Pidgaina / Artem Koval",
+     "nation": "UKR",
+     "points": "94.53"
+    },
+    {
+     "place": 2,
      "name": "Natacha Lagouge / Arnaud Caffa",
      "nation": "FRA",
      "points": "88.23"
