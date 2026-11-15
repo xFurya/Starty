@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-16T00:16:07+03:00",
- "checked": "2026-11-16T00:16:07+03:00",
+ "checked": "2026-11-15T21:30:29.998965+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -53466,12 +53466,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Sofia Samodelkina",
+     "nation": "KAZ",
+     "points": "137.56"
+    },
+    {
+     "place": 2,
      "name": "Alexa Gasparotto",
      "nation": "USA",
      "points": "96.73"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Alexa Gasparotto — 96.73\n\nРоссияне:\n• Аделия Петросян — 01:21\n• Александра Трусова — 01:37\n\nНачало: 00:05 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Sofia Samodelkina — 137.56\n2. Alexa Gasparotto — 96.73\n\nРоссияне:\n• Аделия Петросян — 01:21\n• Александра Трусова — 01:37\n\nНачало: 00:05 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Ahsun Yun",
@@ -53483,13 +53489,11 @@
     {
      "name": "Alexa Gasparotto",
      "nation": "USA",
-     "place": 1,
+     "place": 2,
      "points": "96.73",
      "time": "00:12",
      "no": 1,
-     "warmup": 1,
-     "place": 1,
-     "points": "96.73"
+     "warmup": 1
     },
     {
      "name": "Ami Nakai",
@@ -53524,7 +53528,9 @@
      "nation": "KAZ",
      "time": "00:20",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "137.56"
     },
     {
      "name": "Sophie Joline von Felten",
@@ -53584,16 +53590,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-skate-america-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Alexa Gasparotto",
-     "nation": "USA",
-     "points": "96.73"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-gp-skate-america-2026.json"
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:pairs-senior-kp",
