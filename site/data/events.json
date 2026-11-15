@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-15T03:22:32.818494+00:00",
+ "checked": "2026-11-15T03:38:33.112164+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51933,7 +51933,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Tamir Kuperman — 165.42\n2. Lukas Britschgi — 150.71\n3. Aleksandr Selevko — 149.66\n\nНачало: 05:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Tamir Kuperman — 165.42\n2. Jason Brown — 161.73\n3. Lukas Britschgi — 150.71\n\nНачало: 05:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Nikolaj Memola",
@@ -51941,7 +51941,7 @@
      "time": "05:32",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "141.94"
     },
     {
@@ -51950,7 +51950,7 @@
      "time": "05:40",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "140.49"
     },
     {
@@ -51959,7 +51959,7 @@
      "time": "05:48",
      "no": 3,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "138.22"
     },
     {
@@ -51968,7 +51968,7 @@
      "time": "05:55",
      "no": 4,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "150.71"
     },
     {
@@ -51977,7 +51977,7 @@
      "time": "06:03",
      "no": 5,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "149.66"
     },
     {
@@ -51994,7 +51994,9 @@
      "nation": "USA",
      "time": "06:26",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "161.73"
     },
     {
      "name": "Daniel Martynov",
@@ -52063,15 +52065,15 @@
     },
     {
      "place": 2,
-     "name": "Lukas Britschgi",
-     "nation": "SUI",
-     "points": "150.71"
+     "name": "Jason Brown",
+     "nation": "USA",
+     "points": "161.73"
     },
     {
      "place": 3,
-     "name": "Aleksandr Selevko",
-     "nation": "EST",
-     "points": "149.66"
+     "name": "Lukas Britschgi",
+     "nation": "SUI",
+     "points": "150.71"
     }
    ],
    "provisional": true
