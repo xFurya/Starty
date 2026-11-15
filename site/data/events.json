@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-15T04:50:32.698159+00:00",
+ "checked": "2026-11-15T04:58:33.220192+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -52169,7 +52169,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Aurelie Faula / Theo Belle — 97.32\n\nНачало: 07:34 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Sofiia Holichenko / Artem Darenskyi — 99.24\n2. Aurelie Faula / Theo Belle — 97.32\n\nНачало: 07:34 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Aurelie Faula / Theo Belle",
@@ -52177,7 +52177,7 @@
      "time": "07:41",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "97.32"
     },
     {
@@ -52185,7 +52185,9 @@
      "nation": "UKR",
      "time": "07:49",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "99.24"
     },
     {
      "name": "Audrey Shin / Spencer Akira Howe",
@@ -52251,6 +52253,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Sofiia Holichenko / Artem Darenskyi",
+     "nation": "UKR",
+     "points": "99.24"
+    },
+    {
+     "place": 2,
      "name": "Aurelie Faula / Theo Belle",
      "nation": "FRA",
      "points": "97.32"
