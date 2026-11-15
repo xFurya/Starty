@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-15T00:08:01.569298+00:00",
+ "checked": "2026-11-15T00:16:01.661598+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51698,7 +51698,9 @@
      "nation": "RUS",
      "time": "03:08",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "71.47"
     },
     {
      "name": "Александра Трусова",
@@ -51733,7 +51735,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Young You — 65.60\n2. Logan Higase-chen — 63.29\n3. Alexa Gasparotto — 56.04\n\nРоссияне:\n• Аделия Петросян — 03:08\n• Александра Трусова — 03:14\n\nНачало: 02:42 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Аделия Петросян — 71.47\n2. Young You — 65.60\n3. Logan Higase-chen — 63.29\n\nРоссияне:\n• Аделия Петросян — 03:08\n• Александра Трусова — 03:14\n\nНачало: 02:42 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Alexa Gasparotto",
@@ -51741,7 +51743,7 @@
      "time": "02:49",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "56.04"
     },
     {
@@ -51750,7 +51752,7 @@
      "time": "02:55",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "65.60"
     },
     {
@@ -51759,7 +51761,7 @@
      "time": "03:02",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "63.29"
     },
     {
@@ -51767,7 +51769,9 @@
      "nation": "RUS",
      "time": "03:08",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "71.47"
     },
     {
      "name": "Александра Трусова",
@@ -51851,21 +51855,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Аделия Петросян",
+     "nation": "RUS",
+     "points": "71.47"
+    },
+    {
+     "place": 2,
      "name": "Young You",
      "nation": "KOR",
      "points": "65.60"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Logan Higase-chen",
      "nation": "USA",
      "points": "63.29"
-    },
-    {
-     "place": 3,
-     "name": "Alexa Gasparotto",
-     "nation": "USA",
-     "points": "56.04"
     }
    ],
    "provisional": true
