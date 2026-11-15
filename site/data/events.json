@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T20:58:01+03:00",
- "checked": "2026-11-15T20:11:02.610645+00:00",
+ "checked": "2026-11-15T20:19:02.235653+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -53235,7 +53235,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Katarina Wolfkostin / Dimitry Tsarevski — 107.41\n2. Leah Neset / Artem Markelov — 106.54\n3. Sofia Val / Asaf Kazimov — 98.12\n\nНачало: 22:10 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Katarina Wolfkostin / Dimitry Tsarevski — 107.41\n2. Leah Neset / Artem Markelov — 106.54\n3. Holly Harris / Jason Chan — 101.82\n\nНачало: 22:10 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Natacha Lagouge / Arnaud Caffa",
@@ -53243,7 +53243,7 @@
      "time": "22:16",
      "no": 1,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "88.23"
     },
     {
@@ -53252,7 +53252,7 @@
      "time": "22:24",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "94.53"
     },
     {
@@ -53261,7 +53261,7 @@
      "time": "22:32",
      "no": 3,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "98.12"
     },
     {
@@ -53270,7 +53270,7 @@
      "time": "22:40",
      "no": 4,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "94.84"
     },
     {
@@ -53296,7 +53296,9 @@
      "nation": "AUS",
      "time": "23:10",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3,
+     "points": "101.82"
     },
     {
      "name": "Katerina Mrazkova / Daniel Mrazek",
@@ -53355,9 +53357,9 @@
     },
     {
      "place": 3,
-     "name": "Sofia Val / Asaf Kazimov",
-     "nation": "ESP",
-     "points": "98.12"
+     "name": "Holly Harris / Jason Chan",
+     "nation": "AUS",
+     "points": "101.82"
     }
    ],
    "provisional": true
