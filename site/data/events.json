@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T09:52:38+03:00",
- "checked": "2026-11-15T09:52:38+03:00",
+ "checked": "2026-11-15T07:17:02.581980+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -52400,14 +52400,16 @@
      "url": "https://www.youtube.com/@ice_skating/live"
     }
    ],
-   "desc": "Начало: 10:00 МСК\nТрансляция: Первый канал / YouTube",
+   "desc": "Промежуточные итоги:\n1. Алиса Крайнюкова / Семен Нетсев — 83.25\n\nНачало: 10:00 МСК\nТрансляция: Первый канал / YouTube",
    "field": [
     {
      "name": "Алиса Крайнюкова / Семен Нетсев",
      "nation": "СТА",
      "time": "10:06",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "83.25"
     },
     {
      "name": "Александра Прокопец / Александр Васькович",
@@ -52492,7 +52494,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Алиса Крайнюкова / Семен Нетсев",
+     "nation": "СТА",
+     "points": "83.25"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:women-senior-pp",
