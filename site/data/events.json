@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-15T00:48:02.026842+00:00",
+ "checked": "2026-11-15T00:56:02.213929+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51699,7 +51699,7 @@
      "time": "03:08",
      "no": 4,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "71.47"
     },
     {
@@ -51737,7 +51737,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Александра Трусова — 74.24\n2. Аделия Петросян — 71.47\n3. Rino Matsuike — 70.30\n\nРоссияне:\n• Аделия Петросян — 03:08\n• Александра Трусова — 03:14\n\nНачало: 02:42 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Александра Трусова — 74.24\n2. Yujae Kim — 73.92\n3. Аделия Петросян — 71.47\n\nРоссияне:\n• Аделия Петросян — 03:08\n• Александра Трусова — 03:14\n\nНачало: 02:42 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Alexa Gasparotto",
@@ -51745,7 +51745,7 @@
      "time": "02:49",
      "no": 1,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "56.04"
     },
     {
@@ -51754,7 +51754,7 @@
      "time": "02:55",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "65.60"
     },
     {
@@ -51763,7 +51763,7 @@
      "time": "03:02",
      "no": 3,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "63.29"
     },
     {
@@ -51772,7 +51772,7 @@
      "time": "03:08",
      "no": 4,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "71.47"
     },
     {
@@ -51790,7 +51790,7 @@
      "time": "03:20",
      "no": 6,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "68.95"
     },
     {
@@ -51799,7 +51799,7 @@
      "time": "03:34",
      "no": 7,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "61.23"
     },
     {
@@ -51808,7 +51808,7 @@
      "time": "03:40",
      "no": 8,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "70.30"
     },
     {
@@ -51816,7 +51816,9 @@
      "nation": "KOR",
      "time": "03:46",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "73.92"
     },
     {
      "name": "Ahsun Yun",
@@ -51871,15 +51873,15 @@
     },
     {
      "place": 2,
-     "name": "Аделия Петросян",
-     "nation": "RUS",
-     "points": "71.47"
+     "name": "Yujae Kim",
+     "nation": "KOR",
+     "points": "73.92"
     },
     {
      "place": 3,
-     "name": "Rino Matsuike",
-     "nation": "JPN",
-     "points": "70.30"
+     "name": "Аделия Петросян",
+     "nation": "RUS",
+     "points": "71.47"
     }
    ],
    "provisional": true
