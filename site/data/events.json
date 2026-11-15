@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-15T20:58:01+03:00",
- "checked": "2026-11-15T20:43:02.931150+00:00",
- "complete": true,
+ "generated": "2026-11-15T23:59:17+03:00",
+ "checked": "2026-11-15T23:59:17+03:00",
+ "complete": false,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
-  "Golden Skate": "ok",
+  "Golden Skate": "fail",
   "ФФКМ": "ok",
   "Самара": "ok"
  },
@@ -51962,7 +51962,7 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=35weVw-uR40"
+     "url": "https://www.youtube.com/watch?v=H_ACIowmT-o"
     }
    ],
    "podium": [
@@ -53204,7 +53204,7 @@
    "seg": "ПТ",
    "title": "GP Skate America — танцы ПТ",
    "start": "2026-11-15T22:10:00+03:00",
-   "end": "2026-11-15T23:42:00+03:00",
+   "end": "2026-11-15T23:35:00+03:00",
    "venue": "Everett, USA",
    "intl": true,
    "broadcast": [
@@ -53232,132 +53232,9 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/watch?v=0TmnPSuhrwU"
     }
    ],
-   "desc": "Итог:\n1. Emilea Zingas / Vadym Kolesnik — 119.36\n2. Evgeniia Lopareva / Geoffrey Brissaud — 115.34\n3. Katerina Mrazkova / Daniel Mrazek — 114.56\n\nИтог турнира:\n1. Emilea Zingas / Vadym Kolesnik — 201.88\n2. Evgeniia Lopareva / Geoffrey Brissaud — 195.28\n3. Katerina Mrazkova / Daniel Mrazek — 190.88\n\nПримечательное:\n• Katerina Mrazkova / Daniel Mrazek — Личный рекорд по сумме: 190.88 (был 190.17)\n\nНачало: 22:10 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
-    {
-     "name": "Natacha Lagouge / Arnaud Caffa",
-     "nation": "FRA",
-     "time": "22:16",
-     "no": 1,
-     "warmup": 1,
-     "place": 10,
-     "points": "88.23",
-     "final": 10
-    },
-    {
-     "name": "Iryna Pidgaina / Artem Koval",
-     "nation": "UKR",
-     "time": "22:24",
-     "no": 2,
-     "warmup": 1,
-     "place": 9,
-     "points": "94.53",
-     "final": 9
-    },
-    {
-     "name": "Sofia Val / Asaf Kazimov",
-     "nation": "ESP",
-     "time": "22:32",
-     "no": 3,
-     "warmup": 1,
-     "place": 7,
-     "points": "98.12",
-     "final": 7
-    },
-    {
-     "name": "Noemi Maria Tali / Noah Lafornara",
-     "nation": "ITA",
-     "time": "22:40",
-     "no": 4,
-     "warmup": 1,
-     "place": 8,
-     "points": "94.84",
-     "final": 8
-    },
-    {
-     "name": "Leah Neset / Artem Markelov",
-     "nation": "USA",
-     "time": "22:48",
-     "no": 5,
-     "warmup": 1,
-     "place": 5,
-     "points": "106.54",
-     "final": 5
-    },
-    {
-     "name": "Katarina Wolfkostin / Dimitry Tsarevski",
-     "nation": "USA",
-     "time": "23:02",
-     "no": 6,
-     "warmup": 2,
-     "place": 4,
-     "points": "107.41",
-     "final": 4
-    },
-    {
-     "name": "Holly Harris / Jason Chan",
-     "nation": "AUS",
-     "time": "23:10",
-     "no": 7,
-     "warmup": 2,
-     "place": 6,
-     "points": "101.82",
-     "final": 6
-    },
-    {
-     "name": "Katerina Mrazkova / Daniel Mrazek",
-     "nation": "CZE",
-     "time": "23:18",
-     "no": 8,
-     "warmup": 2,
-     "place": 3,
-     "points": "114.56",
-     "final": 3
-    },
-    {
-     "name": "Evgeniia Lopareva / Geoffrey Brissaud",
-     "nation": "FRA",
-     "time": "23:26",
-     "no": 9,
-     "warmup": 2,
-     "place": 2,
-     "points": "115.34",
-     "final": 2
-    },
-    {
-     "name": "Emilea Zingas / Vadym Kolesnik",
-     "nation": "USA",
-     "time": "23:34",
-     "no": 10,
-     "warmup": 2,
-     "place": 1,
-     "points": "119.36",
-     "final": 1
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpusa2026/SEG008.htm",
-    "cat": "https://results.isu.org/results/season2627/gpusa2026/CAT004RS.htm",
-    "first": "https://results.isu.org/results/season2627/gpusa2026/SEG007.htm",
-    "names": {
-     "Natacha LAGOUGE / Arnaud CAFFA": "Natacha Lagouge / Arnaud Caffa",
-     "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Artem Koval",
-     "Sofia VAL / Asaf KAZIMOV": "Sofia Val / Asaf Kazimov",
-     "Noemi Maria TALI / Noah LAFORNARA": "Noemi Maria Tali / Noah Lafornara",
-     "Leah NESET / Artem MARKELOV": "Leah Neset / Artem Markelov",
-     "Katarina WOLFKOSTIN / Dimitry TSAREVSKI": "Katarina Wolfkostin / Dimitry Tsarevski",
-     "Holly HARRIS / Jason CHAN": "Holly Harris / Jason Chan",
-     "Katerina MRAZKOVA / Daniel MRAZEK": "Katerina Mrazkova / Daniel Mrazek",
-     "Evgeniia LOPAREVA / Geoffrey BRISSAUD": "Evgeniia Lopareva / Geoffrey Brissaud",
-     "Emilea ZINGAS / Vadym KOLESNIK": "Emilea Zingas / Vadym Kolesnik"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-skate-america-2026.json",
    "podium": [
     {
      "place": 1,
@@ -53398,13 +53275,136 @@
      "points": "190.88"
     }
    ],
+   "desc": "Итог:\n1. Emilea Zingas / Vadym Kolesnik — 119.36\n2. Evgeniia Lopareva / Geoffrey Brissaud — 115.34\n3. Katerina Mrazkova / Daniel Mrazek — 114.56\n\nИтог турнира:\n1. Emilea Zingas / Vadym Kolesnik — 201.88\n2. Evgeniia Lopareva / Geoffrey Brissaud — 195.28\n3. Katerina Mrazkova / Daniel Mrazek — 190.88\n\nПримечательное:\n• Katerina Mrazkova / Daniel Mrazek — Личный рекорд по сумме: 190.88 (был 190.17)\n\nНачало: 22:10 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Natacha Lagouge / Arnaud Caffa",
+     "nation": "FRA",
+     "no": 1,
+     "warmup": 1,
+     "place": 10,
+     "points": "88.23",
+     "final": 10,
+     "time": "22:16"
+    },
+    {
+     "name": "Iryna Pidgaina / Artem Koval",
+     "nation": "UKR",
+     "no": 2,
+     "warmup": 1,
+     "place": 9,
+     "points": "94.53",
+     "final": 9,
+     "time": "22:24"
+    },
+    {
+     "name": "Sofia Val / Asaf Kazimov",
+     "nation": "ESP",
+     "no": 3,
+     "warmup": 1,
+     "place": 7,
+     "points": "98.12",
+     "final": 7,
+     "time": "22:32"
+    },
+    {
+     "name": "Noemi Maria Tali / Noah Lafornara",
+     "nation": "ITA",
+     "no": 4,
+     "warmup": 1,
+     "place": 8,
+     "points": "94.84",
+     "final": 8,
+     "time": "22:40"
+    },
+    {
+     "name": "Leah Neset / Artem Markelov",
+     "nation": "USA",
+     "no": 5,
+     "warmup": 1,
+     "place": 5,
+     "points": "106.54",
+     "final": 5,
+     "time": "22:48"
+    },
+    {
+     "name": "Katarina Wolfkostin / Dimitry Tsarevski",
+     "nation": "USA",
+     "no": 6,
+     "warmup": 2,
+     "place": 4,
+     "points": "107.41",
+     "final": 4,
+     "time": "23:02"
+    },
+    {
+     "name": "Holly Harris / Jason Chan",
+     "nation": "AUS",
+     "no": 7,
+     "warmup": 2,
+     "place": 6,
+     "points": "101.82",
+     "final": 6,
+     "time": "23:10"
+    },
+    {
+     "name": "Katerina Mrazkova / Daniel Mrazek",
+     "nation": "CZE",
+     "no": 8,
+     "warmup": 2,
+     "place": 3,
+     "points": "114.56",
+     "final": 3,
+     "time": "23:18"
+    },
+    {
+     "name": "Evgeniia Lopareva / Geoffrey Brissaud",
+     "nation": "FRA",
+     "no": 9,
+     "warmup": 2,
+     "place": 2,
+     "points": "115.34",
+     "final": 2,
+     "time": "23:26"
+    },
+    {
+     "name": "Emilea Zingas / Vadym Kolesnik",
+     "nation": "USA",
+     "no": 10,
+     "warmup": 2,
+     "place": 1,
+     "points": "119.36",
+     "final": 1,
+     "time": "23:34"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpusa2026/SEG008.htm",
+    "cat": "https://results.isu.org/results/season2627/gpusa2026/CAT004RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpusa2026/SEG007.htm",
+    "names": {
+     "Emilea ZINGAS / Vadym KOLESNIK": "Emilea Zingas / Vadym Kolesnik",
+     "Evgeniia LOPAREVA / Geoffrey BRISSAUD": "Evgeniia Lopareva / Geoffrey Brissaud",
+     "Katerina MRAZKOVA / Daniel MRAZEK": "Katerina Mrazkova / Daniel Mrazek",
+     "Katarina WOLFKOSTIN / Dimitry TSAREVSKI": "Katarina Wolfkostin / Dimitry Tsarevski",
+     "Leah NESET / Artem MARKELOV": "Leah Neset / Artem Markelov",
+     "Holly HARRIS / Jason CHAN": "Holly Harris / Jason Chan",
+     "Sofia VAL / Asaf KAZIMOV": "Sofia Val / Asaf Kazimov",
+     "Noemi Maria TALI / Noah LAFORNARA": "Noemi Maria Tali / Noah Lafornara",
+     "Iryna PIDGAINA / Artem KOVAL": "Iryna Pidgaina / Artem Koval",
+     "Natacha LAGOUGE / Arnaud CAFFA": "Natacha Lagouge / Arnaud Caffa"
+    },
+    "basis": "judges"
+   },
    "facts": [
     {
-     "who": "Katerina Mrazkova / Daniel Mrazek",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 190.88 (был 190.17)",
-     "kind": "score"
+     "who": "Katerina Mrazkova / Daniel Mrazek"
     }
-   ]
+   ],
+   "proto": "isu_isu-gp-skate-america-2026.json"
   },
   {
    "id": "isu:isu-gp-skate-america-2026:women-senior-pp",
@@ -53460,7 +53460,7 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/watch?v=H_ACIowmT-o"
     }
    ],
    "desc": "Россияне:\n• Аделия Петросян — 01:21\n• Александра Трусова — 01:37\n\nНачало: 00:05 МСК\nТрансляция: Okko / YouTube ISU",
