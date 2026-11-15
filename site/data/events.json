@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-16T01:12:36+03:00",
- "checked": "2026-11-15T22:46:29.452615+00:00",
+ "checked": "2026-11-15T22:54:29.730116+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -53429,8 +53429,9 @@
      "time": "01:21",
      "no": 9,
      "warmup": 2,
-     "place": 6,
-     "points": "126.56"
+     "place": 7,
+     "points": "126.56",
+     "final": 6
     },
     {
      "name": "Александра Трусова",
@@ -53438,8 +53439,9 @@
      "time": "01:37",
      "no": 11,
      "warmup": 2,
-     "place": 2,
-     "points": "139.66"
+     "place": 3,
+     "points": "139.66",
+     "final": 2
     }
    ],
    "athletes": [
@@ -53470,58 +53472,64 @@
    "podium": [
     {
      "place": 1,
+     "name": "Ami Nakai",
+     "nation": "JPN",
+     "points": "154.61"
+    },
+    {
+     "place": 2,
      "name": "Rino Matsuike",
      "nation": "JPN",
      "points": "141.33"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Александра Трусова",
      "nation": "RUS",
      "points": "139.66"
-    },
-    {
-     "place": 3,
-     "name": "Sofia Samodelkina",
-     "nation": "KAZ",
-     "points": "137.56"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Rino Matsuike — 141.33\n2. Александра Трусова — 139.66\n3. Sofia Samodelkina — 137.56\n\nРоссияне:\n• Аделия Петросян — 01:21\n• Александра Трусова — 01:37\n\nНачало: 00:05 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Ami Nakai — 154.61\n2. Rino Matsuike — 141.33\n3. Александра Трусова — 139.66\n\nИтог турнира:\n1. Ami Nakai — 236.81\n2. Александра Трусова — 213.90\n3. Rino Matsuike — 211.63\n\nПримечательное:\n• Ami Nakai — Лучшая в мире сумма сезона: 236.81\n• Ami Nakai — Личный рекорд по сумме: 236.81 (был 227.08)\n• Rino Matsuike — Личный рекорд по сумме: 211.63 (был 202.21)\n• Ami Nakai — Отрыв от второго места — 22.91 балла\n\nРоссияне:\n• Аделия Петросян — 01:21\n• Александра Трусова — 01:37\n\nНачало: 00:05 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Ahsun Yun",
      "nation": "KOR",
-     "place": 8,
+     "place": 9,
      "points": "122.09",
      "time": "00:51",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "final": 8
     },
     {
      "name": "Alexa Gasparotto",
      "nation": "USA",
-     "place": 10,
+     "place": 11,
      "points": "96.73",
      "time": "00:12",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 11
     },
     {
      "name": "Ami Nakai",
      "nation": "JPN",
      "time": "01:44",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "154.61",
+     "final": 1
     },
     {
      "name": "Logan Higase-chen",
      "nation": "USA",
-     "place": 11,
+     "place": 12,
      "points": "81.43",
      "time": "00:35",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 12
     },
     {
      "name": "Rino Matsuike",
@@ -53529,44 +53537,49 @@
      "time": "01:14",
      "no": 8,
      "warmup": 2,
-     "place": 1,
-     "points": "141.33"
+     "place": 2,
+     "points": "141.33",
+     "final": 3
     },
     {
      "name": "Sara-Maude Dupuis",
      "nation": "CAN",
-     "place": 9,
+     "place": 10,
      "points": "119.33",
      "time": "01:06",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "final": 9
     },
     {
      "name": "Sofia Samodelkina",
      "nation": "KAZ",
-     "place": 3,
+     "place": 4,
      "points": "137.56",
      "time": "00:20",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 5
     },
     {
      "name": "Sophie Joline von Felten",
      "nation": "USA",
-     "place": 7,
+     "place": 8,
      "points": "124.93",
      "time": "00:28",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 10
     },
     {
      "name": "Young You",
      "nation": "KOR",
-     "place": 5,
+     "place": 6,
      "points": "127.45",
      "time": "00:43",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "final": 7
     },
     {
      "name": "Yujae Kim",
@@ -53574,8 +53587,9 @@
      "time": "01:29",
      "no": 10,
      "warmup": 2,
-     "place": 4,
-     "points": "130.36"
+     "place": 5,
+     "points": "130.36",
+     "final": 4
     },
     {
      "name": "Аделия Петросян",
@@ -53583,8 +53597,9 @@
      "time": "01:21",
      "no": 9,
      "warmup": 2,
-     "place": 6,
-     "points": "126.56"
+     "place": 7,
+     "points": "126.56",
+     "final": 6
     },
     {
      "name": "Александра Трусова",
@@ -53592,11 +53607,11 @@
      "time": "01:37",
      "no": 11,
      "warmup": 2,
-     "place": 2,
-     "points": "139.66"
+     "place": 3,
+     "points": "139.66",
+     "final": 2
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpusa2026/SEG004.htm",
@@ -53616,9 +53631,51 @@
      "Alexandra IGNATOVA": "Александра Трусова",
      "Ami NAKAI": "Ami Nakai"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-gp-skate-america-2026.json"
+   "proto": "isu_isu-gp-skate-america-2026.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Ami Nakai",
+     "nation": "JPN",
+     "points": "236.81"
+    },
+    {
+     "place": 2,
+     "name": "Александра Трусова",
+     "nation": "RUS",
+     "points": "213.90"
+    },
+    {
+     "place": 3,
+     "name": "Rino Matsuike",
+     "nation": "JPN",
+     "points": "211.63"
+    }
+   ],
+   "facts": [
+    {
+     "who": "Ami Nakai",
+     "text": "Лучшая в мире сумма сезона: 236.81",
+     "kind": "score"
+    },
+    {
+     "who": "Ami Nakai",
+     "text": "Личный рекорд по сумме: 236.81 (был 227.08)",
+     "kind": "score"
+    },
+    {
+     "who": "Rino Matsuike",
+     "text": "Личный рекорд по сумме: 211.63 (был 202.21)",
+     "kind": "score"
+    },
+    {
+     "who": "Ami Nakai",
+     "text": "Отрыв от второго места — 22.91 балла",
+     "kind": "place"
+    }
+   ]
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:pairs-senior-kp",
