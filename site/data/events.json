@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-16T00:16:07+03:00",
- "checked": "2026-11-15T21:38:30.456599+00:00",
+ "checked": "2026-11-15T21:46:29.156143+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -53513,7 +53513,9 @@
      "nation": "USA",
      "time": "00:35",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4,
+     "points": "81.43"
     },
     {
      "name": "Rino Matsuike",
