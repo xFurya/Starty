@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-15T05:46:32.460353+00:00",
+ "checked": "2026-11-15T05:54:34.891317+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -52169,7 +52169,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Alisa Efimova / Misha Mitrofanov — 119.94\n2. Katie McBEATH / Balazs Nagy — 119.51\n3. Ava Kemp / Yohnatan Elizarov — 113.89\n\nНачало: 07:34 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Minerva Fabienne Hase / Nikita Volodin — 128.08\n2. Alisa Efimova / Misha Mitrofanov — 119.94\n3. Katie McBEATH / Balazs Nagy — 119.51\n\nИтог турнира:\n1. Minerva Fabienne Hase / Nikita Volodin — 200.79\n2. Alisa Efimova / Misha Mitrofanov — 191.79\n3. Katie McBEATH / Balazs Nagy — 187.13\n\nПримечательное:\n• Katie McBEATH / Balazs Nagy — Личный рекорд по сумме: 187.13 (был 180.95)\n\nНачало: 07:34 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Aurelie Faula / Theo Belle",
@@ -52177,8 +52177,9 @@
      "time": "07:41",
      "no": 1,
      "warmup": 1,
-     "place": 7,
-     "points": "97.32"
+     "place": 8,
+     "points": "97.32",
+     "final": 8
     },
     {
      "name": "Sofiia Holichenko / Artem Darenskyi",
@@ -52186,8 +52187,9 @@
      "time": "07:49",
      "no": 2,
      "warmup": 1,
-     "place": 6,
-     "points": "99.24"
+     "place": 7,
+     "points": "99.24",
+     "final": 7
     },
     {
      "name": "Audrey Shin / Spencer Akira Howe",
@@ -52195,8 +52197,9 @@
      "time": "07:57",
      "no": 3,
      "warmup": 1,
-     "place": 5,
-     "points": "106.32"
+     "place": 6,
+     "points": "106.32",
+     "final": 6
     },
     {
      "name": "Katie McBEATH / Balazs Nagy",
@@ -52204,8 +52207,9 @@
      "time": "08:05",
      "no": 4,
      "warmup": 1,
-     "place": 2,
-     "points": "119.51"
+     "place": 3,
+     "points": "119.51",
+     "final": 3
     },
     {
      "name": "Ava Kemp / Yohnatan Elizarov",
@@ -52213,8 +52217,9 @@
      "time": "08:20",
      "no": 5,
      "warmup": 2,
-     "place": 3,
-     "points": "113.89"
+     "place": 4,
+     "points": "113.89",
+     "final": 5
     },
     {
      "name": "Oxana Vouillamoz / Tom Bouvart",
@@ -52222,8 +52227,9 @@
      "time": "08:28",
      "no": 6,
      "warmup": 2,
-     "place": 4,
-     "points": "112.93"
+     "place": 5,
+     "points": "112.93",
+     "final": 4
     },
     {
      "name": "Alisa Efimova / Misha Mitrofanov",
@@ -52231,15 +52237,19 @@
      "time": "08:36",
      "no": 7,
      "warmup": 2,
-     "place": 1,
-     "points": "119.94"
+     "place": 2,
+     "points": "119.94",
+     "final": 2
     },
     {
      "name": "Minerva Fabienne Hase / Nikita Volodin",
      "nation": "GER",
      "time": "08:43",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "128.08",
+     "final": 1
     }
    ],
    "live": {
@@ -52257,30 +52267,56 @@
      "Alisa EFIMOVA / Misha MITROFANOV": "Alisa Efimova / Misha Mitrofanov",
      "Minerva Fabienne HASE / Nikita VOLODIN": "Minerva Fabienne Hase / Nikita Volodin"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-skate-america-2026.json",
    "podium": [
     {
      "place": 1,
+     "name": "Minerva Fabienne Hase / Nikita Volodin",
+     "nation": "GER",
+     "points": "128.08"
+    },
+    {
+     "place": 2,
      "name": "Alisa Efimova / Misha Mitrofanov",
      "nation": "USA",
      "points": "119.94"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Katie McBEATH / Balazs Nagy",
      "nation": "USA",
      "points": "119.51"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Minerva Fabienne Hase / Nikita Volodin",
+     "nation": "GER",
+     "points": "200.79"
+    },
+    {
+     "place": 2,
+     "name": "Alisa Efimova / Misha Mitrofanov",
+     "nation": "USA",
+     "points": "191.79"
     },
     {
      "place": 3,
-     "name": "Ava Kemp / Yohnatan Elizarov",
-     "nation": "CAN",
-     "points": "113.89"
+     "name": "Katie McBEATH / Balazs Nagy",
+     "nation": "USA",
+     "points": "187.13"
     }
    ],
-   "provisional": true
+   "facts": [
+    {
+     "who": "Katie McBEATH / Balazs Nagy",
+     "text": "Личный рекорд по сумме: 187.13 (был 180.95)",
+     "kind": "score"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:dance-senior-pt",
