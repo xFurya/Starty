@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-15T04:58:33.220192+00:00",
+ "checked": "2026-11-15T05:06:32.823295+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -52169,7 +52169,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sofiia Holichenko / Artem Darenskyi — 99.24\n2. Aurelie Faula / Theo Belle — 97.32\n\nНачало: 07:34 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Audrey Shin / Spencer Akira Howe — 106.32\n2. Sofiia Holichenko / Artem Darenskyi — 99.24\n3. Aurelie Faula / Theo Belle — 97.32\n\nНачало: 07:34 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Aurelie Faula / Theo Belle",
@@ -52177,7 +52177,7 @@
      "time": "07:41",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "97.32"
     },
     {
@@ -52186,7 +52186,7 @@
      "time": "07:49",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "99.24"
     },
     {
@@ -52194,7 +52194,9 @@
      "nation": "USA",
      "time": "07:57",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "106.32"
     },
     {
      "name": "Katie McBEATH / Balazs Nagy",
@@ -52253,12 +52255,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Audrey Shin / Spencer Akira Howe",
+     "nation": "USA",
+     "points": "106.32"
+    },
+    {
+     "place": 2,
      "name": "Sofiia Holichenko / Artem Darenskyi",
      "nation": "UKR",
      "points": "99.24"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Aurelie Faula / Theo Belle",
      "nation": "FRA",
      "points": "97.32"
