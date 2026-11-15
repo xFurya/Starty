@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-15T00:51:08+03:00",
- "checked": "2026-11-15T02:42:02.192285+00:00",
+ "checked": "2026-11-15T02:50:02.126478+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -51933,7 +51933,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Nikolaj Memola — 141.94\n\nНачало: 05:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Nikolaj Memola — 141.94\n2. Georgii Reshtenko — 140.49\n\nНачало: 05:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Nikolaj Memola",
@@ -51949,7 +51949,9 @@
      "nation": "CZE",
      "time": "05:40",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "140.49"
     },
     {
      "name": "Aleksa Rakic",
@@ -52050,6 +52052,12 @@
      "name": "Nikolaj Memola",
      "nation": "ITA",
      "points": "141.94"
+    },
+    {
+     "place": 2,
+     "name": "Georgii Reshtenko",
+     "nation": "CZE",
+     "points": "140.49"
     }
    ],
    "provisional": true
