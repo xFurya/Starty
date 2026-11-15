@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-16T01:12:36+03:00",
- "checked": "2026-11-15T22:38:29.862243+00:00",
+ "checked": "2026-11-15T22:46:29.452615+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -53429,7 +53429,7 @@
      "time": "01:21",
      "no": 9,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "126.56"
     },
     {
@@ -53437,7 +53437,9 @@
      "nation": "RUS",
      "time": "01:37",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "139.66"
     }
    ],
    "athletes": [
@@ -53474,23 +53476,23 @@
     },
     {
      "place": 2,
-     "name": "Sofia Samodelkina",
-     "nation": "KAZ",
-     "points": "137.56"
+     "name": "Александра Трусова",
+     "nation": "RUS",
+     "points": "139.66"
     },
     {
      "place": 3,
-     "name": "Yujae Kim",
-     "nation": "KOR",
-     "points": "130.36"
+     "name": "Sofia Samodelkina",
+     "nation": "KAZ",
+     "points": "137.56"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Rino Matsuike — 141.33\n2. Sofia Samodelkina — 137.56\n3. Yujae Kim — 130.36\n\nРоссияне:\n• Аделия Петросян — 01:21\n• Александра Трусова — 01:37\n\nНачало: 00:05 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Rino Matsuike — 141.33\n2. Александра Трусова — 139.66\n3. Sofia Samodelkina — 137.56\n\nРоссияне:\n• Аделия Петросян — 01:21\n• Александра Трусова — 01:37\n\nНачало: 00:05 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Ahsun Yun",
      "nation": "KOR",
-     "place": 7,
+     "place": 8,
      "points": "122.09",
      "time": "00:51",
      "no": 6,
@@ -53499,7 +53501,7 @@
     {
      "name": "Alexa Gasparotto",
      "nation": "USA",
-     "place": 9,
+     "place": 10,
      "points": "96.73",
      "time": "00:12",
      "no": 1,
@@ -53515,7 +53517,7 @@
     {
      "name": "Logan Higase-chen",
      "nation": "USA",
-     "place": 10,
+     "place": 11,
      "points": "81.43",
      "time": "00:35",
      "no": 4,
@@ -53533,7 +53535,7 @@
     {
      "name": "Sara-Maude Dupuis",
      "nation": "CAN",
-     "place": 8,
+     "place": 9,
      "points": "119.33",
      "time": "01:06",
      "no": 7,
@@ -53542,7 +53544,7 @@
     {
      "name": "Sofia Samodelkina",
      "nation": "KAZ",
-     "place": 2,
+     "place": 3,
      "points": "137.56",
      "time": "00:20",
      "no": 2,
@@ -53551,7 +53553,7 @@
     {
      "name": "Sophie Joline von Felten",
      "nation": "USA",
-     "place": 6,
+     "place": 7,
      "points": "124.93",
      "time": "00:28",
      "no": 3,
@@ -53560,7 +53562,7 @@
     {
      "name": "Young You",
      "nation": "KOR",
-     "place": 4,
+     "place": 5,
      "points": "127.45",
      "time": "00:43",
      "no": 5,
@@ -53572,7 +53574,7 @@
      "time": "01:29",
      "no": 10,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "130.36"
     },
     {
@@ -53581,7 +53583,7 @@
      "time": "01:21",
      "no": 9,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "126.56"
     },
     {
@@ -53589,7 +53591,9 @@
      "nation": "RUS",
      "time": "01:37",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "139.66"
     }
    ],
    "provisional": true,
