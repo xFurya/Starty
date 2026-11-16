@@ -29929,7 +29929,7 @@ break A}if("windows"===r){s="Windows"
 break A}if("macos"===r){s="macOS"
 break A}if("web"===r){s="\u0431\u0440\u0430\u0443\u0437\u0435\u0440"
 break A}s=r
-break A}return"1.0.76, "+s},
+break A}return"1.0.77, "+s},
 aPk(a,b,c,d){var s=null,r=u.z,q=null,p="https://klhzfgjzgdmsggbxcinj.supabase.co"
 return A.blf(a,b,c,d)},
 blf(a7,a8,a9,b0){var s=0,r=A.w(t.T),q,p=2,o=[],n=[],m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6
@@ -29958,7 +29958,7 @@ b=a7.length===0?null:a7
 a=a3
 if(a==null)a=A.b2x()
 s=7
-return A.k(m.hV("POST",f,d,B.D.dX(A.aj(["kind",a9.b,"message",a5,"contact",c,"about",b,"app_version","1.0.76+77","platform",a],e,t.T),null),null).js(B.ew),$async$aPk)
+return A.k(m.hV("POST",f,d,B.D.dX(A.aj(["kind",a9.b,"message",a5,"contact",c,"about",b,"app_version","1.0.77+78","platform",a],e,t.T),null),null).js(B.ew),$async$aPk)
 case 7:l=b3
 if(l.b>=200&&l.b<300){q=null
 n=[1]
@@ -106110,7 +106110,7 @@ $0(){A.c1(this.a,!1).eB(null)
 return null},
 $S:0}
 A.AD.prototype={
-B(a){return new A.N3("1.0.76",this.d,null)}}
+B(a){return new A.N3("1.0.77",this.d,null)}}
 A.er.prototype={
 B(a){var s=null,r=this.d
 if(r.length===0)r=s
@@ -110639,7 +110639,7 @@ s=q}for(;;)switch(s){case 0:q=3
 s=6
 return A.k(A.ik(),$async$wY)
 case 6:n=b
-m="1.0.76"
+m="1.0.77"
 l=A.bi(n.a.h(0,"seenVersion"))
 s=!J.c(l,m)?7:8
 break
