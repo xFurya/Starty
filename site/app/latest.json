@@ -1,33 +1,11 @@
 {
- "version": "1.0.76",
- "code": 77,
- "notes": "Быстрый встроенный браузер и все старты в ленте.",
- "at": "2026-11-15T22:03:26Z",
+ "version": "1.0.77",
+ "code": 78,
+ "notes": "Исправлена кнопка «назад» во встроенном браузере.",
+ "at": "2026-11-16T12:11:00Z",
  "android": {
-  "file": "starty-1.0.76.apk",
-  "size": 24400517,
-  "sha256": "2295ce2463d682a08bbd99e42faad5cc803f92d1799d5d5ef68539275bf011ce"
- },
- "windows": {
-  "code": 77,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.76/Starty-windows.zip",
-  "size": 14903264,
-  "sha256": "2126e81a87765e99f846d7d32e2531677ffa8c9e12e8abf30f8fede5fb743340",
-  "setup": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.76/starty-setup-1.0.76.exe",
-   "size": 12963439,
-   "sha256": "850a5f534083a0c9ce748a6cf684b776c89b5c347481e12dbe5c3abff963ef79"
-  }
- },
- "macos": {
-  "code": 77,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.76/Starty-macos.zip",
-  "size": 22823728,
-  "sha256": "f3e0efa152e60fcfe9a6a4893e3079fd6a6546715c3954ef60b924f40db35f34",
-  "dmg": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.76/Starty-macos.dmg",
-   "size": 26044544,
-   "sha256": "1c8a3a8e74926f3291931baa7a19fd23094e03d10613bcc1a4e85d581600db11"
-  }
+  "file": "starty-1.0.77.apk",
+  "size": 24400521,
+  "sha256": "a68d61dca04c2c517c791e562feb7dc1f7a01309e5df33fd249fb3ee438feab6"
  }
 }
