@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-16T01:12:36+03:00",
- "checked": "2026-11-15T22:54:29.730116+00:00",
+ "generated": "2026-11-16T15:06:15+03:00",
+ "checked": "2026-11-16T15:06:15+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -53415,7 +53415,7 @@
    "seg": "ПП",
    "title": "GP Skate America — женщины ПП",
    "start": "2026-11-16T00:05:00+03:00",
-   "end": "2026-11-16T01:52:00+03:00",
+   "end": "2026-11-16T01:50:00+03:00",
    "venue": "Everett, USA",
    "intl": true,
    "broadcast": [
@@ -53426,22 +53426,22 @@
     {
      "name": "Аделия Петросян",
      "nation": "RUS",
-     "time": "01:21",
      "no": 9,
      "warmup": 2,
      "place": 7,
      "points": "126.56",
-     "final": 6
+     "final": 6,
+     "time": "01:21"
     },
     {
      "name": "Александра Трусова",
      "nation": "RUS",
-     "time": "01:37",
      "no": 11,
      "warmup": 2,
      "place": 3,
      "points": "139.66",
-     "final": 2
+     "final": 2,
+     "time": "01:37"
     }
    ],
    "athletes": [
@@ -53489,151 +53489,6 @@
      "points": "139.66"
     }
    ],
-   "desc": "Итог:\n1. Ami Nakai — 154.61\n2. Rino Matsuike — 141.33\n3. Александра Трусова — 139.66\n\nИтог турнира:\n1. Ami Nakai — 236.81\n2. Александра Трусова — 213.90\n3. Rino Matsuike — 211.63\n\nПримечательное:\n• Ami Nakai — Лучшая в мире сумма сезона: 236.81\n• Ami Nakai — Личный рекорд по сумме: 236.81 (был 227.08)\n• Rino Matsuike — Личный рекорд по сумме: 211.63 (был 202.21)\n• Ami Nakai — Отрыв от второго места — 22.91 балла\n\nРоссияне:\n• Аделия Петросян — 01:21\n• Александра Трусова — 01:37\n\nНачало: 00:05 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
-    {
-     "name": "Ahsun Yun",
-     "nation": "KOR",
-     "place": 9,
-     "points": "122.09",
-     "time": "00:51",
-     "no": 6,
-     "warmup": 1,
-     "final": 8
-    },
-    {
-     "name": "Alexa Gasparotto",
-     "nation": "USA",
-     "place": 11,
-     "points": "96.73",
-     "time": "00:12",
-     "no": 1,
-     "warmup": 1,
-     "final": 11
-    },
-    {
-     "name": "Ami Nakai",
-     "nation": "JPN",
-     "time": "01:44",
-     "no": 12,
-     "warmup": 2,
-     "place": 1,
-     "points": "154.61",
-     "final": 1
-    },
-    {
-     "name": "Logan Higase-chen",
-     "nation": "USA",
-     "place": 12,
-     "points": "81.43",
-     "time": "00:35",
-     "no": 4,
-     "warmup": 1,
-     "final": 12
-    },
-    {
-     "name": "Rino Matsuike",
-     "nation": "JPN",
-     "time": "01:14",
-     "no": 8,
-     "warmup": 2,
-     "place": 2,
-     "points": "141.33",
-     "final": 3
-    },
-    {
-     "name": "Sara-Maude Dupuis",
-     "nation": "CAN",
-     "place": 10,
-     "points": "119.33",
-     "time": "01:06",
-     "no": 7,
-     "warmup": 2,
-     "final": 9
-    },
-    {
-     "name": "Sofia Samodelkina",
-     "nation": "KAZ",
-     "place": 4,
-     "points": "137.56",
-     "time": "00:20",
-     "no": 2,
-     "warmup": 1,
-     "final": 5
-    },
-    {
-     "name": "Sophie Joline von Felten",
-     "nation": "USA",
-     "place": 8,
-     "points": "124.93",
-     "time": "00:28",
-     "no": 3,
-     "warmup": 1,
-     "final": 10
-    },
-    {
-     "name": "Young You",
-     "nation": "KOR",
-     "place": 6,
-     "points": "127.45",
-     "time": "00:43",
-     "no": 5,
-     "warmup": 1,
-     "final": 7
-    },
-    {
-     "name": "Yujae Kim",
-     "nation": "KOR",
-     "time": "01:29",
-     "no": 10,
-     "warmup": 2,
-     "place": 5,
-     "points": "130.36",
-     "final": 4
-    },
-    {
-     "name": "Аделия Петросян",
-     "nation": "RUS",
-     "time": "01:21",
-     "no": 9,
-     "warmup": 2,
-     "place": 7,
-     "points": "126.56",
-     "final": 6
-    },
-    {
-     "name": "Александра Трусова",
-     "nation": "RUS",
-     "time": "01:37",
-     "no": 11,
-     "warmup": 2,
-     "place": 3,
-     "points": "139.66",
-     "final": 2
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpusa2026/SEG004.htm",
-    "cat": "https://results.isu.org/results/season2627/gpusa2026/CAT002RS.htm",
-    "first": "https://results.isu.org/results/season2627/gpusa2026/SEG003.htm",
-    "names": {
-     "Sofia SAMODELKINA": "Sofia Samodelkina",
-     "Young YOU": "Young You",
-     "Ahsun YUN": "Ahsun Yun",
-     "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
-     "Sophie Joline von FELTEN": "Sophie Joline von Felten",
-     "Alexa GASPAROTTO": "Alexa Gasparotto",
-     "Logan HIGASE-CHEN": "Logan Higase-chen",
-     "Rino MATSUIKE": "Rino Matsuike",
-     "Adeliia PETROSIAN": "Аделия Петросян",
-     "Yujae KIM": "Yujae Kim",
-     "Alexandra IGNATOVA": "Александра Трусова",
-     "Ami NAKAI": "Ami Nakai"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-skate-america-2026.json",
    "total": [
     {
      "place": 1,
@@ -53654,28 +53509,203 @@
      "points": "211.63"
     }
    ],
+   "desc": "Итог:\n1. Ami Nakai — 154.61\n2. Rino Matsuike — 141.33\n3. Александра Трусова — 139.66\n\nИтог турнира:\n1. Ami Nakai — 236.81\n2. Александра Трусова — 213.90\n3. Rino Matsuike — 211.63\n\nПримечательное:\n• Ami Nakai — Тройной аксель\n• Александра Трусова — Четверной лутц\n• Sofia Samodelkina — Тройной аксель\n• Yujae Kim — Тройной аксель\n• Sophie Joline von Felten — Тройной аксель\n• Sara-Maude Dupuis — Тройной аксель\n• Ami Nakai — Лучшая в мире сумма сезона: 236.81\n• Ami Nakai — Личный рекорд по сумме: 236.81 (был 227.08)\n• Rino Matsuike — Личный рекорд по сумме: 211.63 (был 202.21)\n• Ami Nakai — Отрыв от второго места — 22.91 балла\n\nРоссияне:\n• Аделия Петросян — 01:21\n• Александра Трусова — 01:37\n\nНачало: 00:05 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Alexa Gasparotto",
+     "nation": "USA",
+     "no": 1,
+     "warmup": 1,
+     "place": 11,
+     "points": "96.73",
+     "final": 11,
+     "time": "00:12"
+    },
+    {
+     "name": "Sofia Samodelkina",
+     "nation": "KAZ",
+     "no": 2,
+     "warmup": 1,
+     "place": 4,
+     "points": "137.56",
+     "final": 5,
+     "time": "00:20"
+    },
+    {
+     "name": "Sophie Joline von Felten",
+     "nation": "USA",
+     "no": 3,
+     "warmup": 1,
+     "place": 8,
+     "points": "124.93",
+     "final": 10,
+     "time": "00:28"
+    },
+    {
+     "name": "Logan Higase-chen",
+     "nation": "USA",
+     "no": 4,
+     "warmup": 1,
+     "place": 12,
+     "points": "81.43",
+     "final": 12,
+     "time": "00:35"
+    },
+    {
+     "name": "Young You",
+     "nation": "KOR",
+     "no": 5,
+     "warmup": 1,
+     "place": 6,
+     "points": "127.45",
+     "final": 7,
+     "time": "00:43"
+    },
+    {
+     "name": "Ahsun Yun",
+     "nation": "KOR",
+     "no": 6,
+     "warmup": 1,
+     "place": 9,
+     "points": "122.09",
+     "final": 8,
+     "time": "00:51"
+    },
+    {
+     "name": "Sara-Maude Dupuis",
+     "nation": "CAN",
+     "no": 7,
+     "warmup": 2,
+     "place": 10,
+     "points": "119.33",
+     "final": 9,
+     "time": "01:06"
+    },
+    {
+     "name": "Rino Matsuike",
+     "nation": "JPN",
+     "no": 8,
+     "warmup": 2,
+     "place": 2,
+     "points": "141.33",
+     "final": 3,
+     "time": "01:14"
+    },
+    {
+     "name": "Аделия Петросян",
+     "nation": "RUS",
+     "no": 9,
+     "warmup": 2,
+     "place": 7,
+     "points": "126.56",
+     "final": 6,
+     "time": "01:21"
+    },
+    {
+     "name": "Yujae Kim",
+     "nation": "KOR",
+     "no": 10,
+     "warmup": 2,
+     "place": 5,
+     "points": "130.36",
+     "final": 4,
+     "time": "01:29"
+    },
+    {
+     "name": "Александра Трусова",
+     "nation": "RUS",
+     "no": 11,
+     "warmup": 2,
+     "place": 3,
+     "points": "139.66",
+     "final": 2,
+     "time": "01:37"
+    },
+    {
+     "name": "Ami Nakai",
+     "nation": "JPN",
+     "no": 12,
+     "warmup": 2,
+     "place": 1,
+     "points": "154.61",
+     "final": 1,
+     "time": "01:44"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpusa2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpusa2026/SEG004.htm",
+    "cat": "https://results.isu.org/results/season2627/gpusa2026/CAT002RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpusa2026/SEG003.htm",
+    "names": {
+     "Ami NAKAI": "Ami Nakai",
+     "Rino MATSUIKE": "Rino Matsuike",
+     "Alexandra IGNATOVA": "Александра Трусова",
+     "Sofia SAMODELKINA": "Sofia Samodelkina",
+     "Yujae KIM": "Yujae Kim",
+     "Young YOU": "Young You",
+     "Adeliia PETROSIAN": "Аделия Петросян",
+     "Sophie Joline von FELTEN": "Sophie Joline von Felten",
+     "Ahsun YUN": "Ahsun Yun",
+     "Sara-Maude DUPUIS": "Sara-Maude Dupuis",
+     "Alexa GASPAROTTO": "Alexa Gasparotto",
+     "Logan HIGASE-CHEN": "Logan Higase-chen"
+    },
+    "basis": "judges"
+   },
    "facts": [
     {
-     "who": "Ami Nakai",
+     "kind": "score",
      "text": "Лучшая в мире сумма сезона: 236.81",
-     "kind": "score"
+     "who": "Ami Nakai"
+    },
+    {
+     "who": "Александра Трусова",
+     "text": "Четверной лутц",
+     "kind": "element"
     },
     {
      "who": "Ami Nakai",
-     "text": "Личный рекорд по сумме: 236.81 (был 227.08)",
-     "kind": "score"
+     "text": "Тройной аксель",
+     "kind": "element"
     },
     {
-     "who": "Rino Matsuike",
-     "text": "Личный рекорд по сумме: 211.63 (был 202.21)",
-     "kind": "score"
+     "who": "Sofia Samodelkina",
+     "text": "Тройной аксель",
+     "kind": "element"
     },
     {
-     "who": "Ami Nakai",
+     "who": "Yujae Kim",
+     "text": "Тройной аксель",
+     "kind": "element"
+    },
+    {
+     "who": "Sophie Joline von Felten",
+     "text": "Тройной аксель",
+     "kind": "element"
+    },
+    {
+     "who": "Sara-Maude Dupuis",
+     "text": "Тройной аксель",
+     "kind": "element"
+    },
+    {
+     "kind": "place",
      "text": "Отрыв от второго места — 22.91 балла",
-     "kind": "place"
+     "who": "Ami Nakai"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 236.81 (был 227.08)",
+     "who": "Ami Nakai"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 211.63 (был 202.21)",
+     "who": "Rino Matsuike"
     }
-   ]
+   ],
+   "proto": "isu_isu-gp-skate-america-2026.json"
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:pairs-senior-kp",
@@ -55768,7 +55798,6 @@
     "Jimmy Ma",
     "Josefin Brovall",
     "Julia Brovall",
-    "Karla Maria Karl / Kai Hoferichter",
     "Karoliine Raudsepp",
     "Karolina Bialas",
     "Kristina Lisovskaja",
@@ -55927,7 +55956,6 @@
     "Ean Weiler",
     "Ekaterina Kurakova",
     "Emese Csiszer / Mark Shapiro",
-    "Eva Pate / Logan Bye",
     "Evelina Stavickyte",
     "Evgeniia Lopareva / Geoffrey Brissaud",
     "Georgii Reshtenko",
@@ -55944,7 +55972,6 @@
     "Julia Fennell",
     "Julia Kasprzyk",
     "Julia Van Dijk",
-    "Karla Maria Karl / Kai Hoferichter",
     "Karolina Bialas",
     "Katerina Hanusova",
     "Katie Mcbeath / Balazs Nagy",
