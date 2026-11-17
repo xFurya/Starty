@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-17T21:57:17+03:00",
- "checked": "2026-11-17T19:20:03.687841+00:00",
+ "checked": "2026-11-17T19:28:04.487294+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -54145,7 +54145,7 @@
      "points": "54.99"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sandro de Angelo — 66.23\n2. Matteo Marchioni — 64.81\n3. Albin Samuelsson — 54.99\n\nНачало: 21:15 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Sandro de Angelo — 66.23\n2. Matteo Marchioni — 64.81\n3. Albin Samuelsson — 54.99\n\nПримечательное:\n• Matteo Marchioni — Личный рекорд за КП: 64.81 (был 60.16)\n\nНачало: 21:15 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Sandro de Angelo",
@@ -54161,7 +54161,7 @@
      "nation": "LAT",
      "no": 2,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "47.03",
      "time": "21:27"
     },
@@ -54179,7 +54179,7 @@
      "nation": "FIN",
      "no": 4,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "49.02",
      "time": "21:39"
     },
@@ -54197,7 +54197,7 @@
      "nation": "KAZ",
      "no": 6,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "50.62",
      "time": "21:57"
     },
@@ -54207,7 +54207,7 @@
      "time": "22:03",
      "no": 8,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "50.21"
     },
     {
@@ -54215,7 +54215,9 @@
      "nation": "FIN",
      "time": "22:20",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "52.93"
     },
     {
      "name": "Ilya Nesterov",
@@ -54232,11 +54234,10 @@
      "time": "22:14",
      "no": 10,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "30.93"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG009.htm",
@@ -54254,9 +54255,16 @@
      "Tomas STRAZDS": "Tomas Strazds",
      "Anton ERKAMA": "Anton Erkama"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "facts": [
+    {
+     "who": "Matteo Marchioni",
+     "text": "Личный рекорд за КП: 64.81 (был 60.16)",
+     "kind": "score"
+    }
+   ]
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:women-junior-pp",
