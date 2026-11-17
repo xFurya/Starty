@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-17T21:57:17+03:00",
- "checked": "2026-11-17T21:57:17+03:00",
+ "checked": "2026-11-17T19:16:03.459122+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -54161,7 +54161,7 @@
      "nation": "LAT",
      "no": 2,
      "warmup": 1,
-     "place": 6,
+     "place": 8,
      "points": "47.03",
      "time": "21:27"
     },
@@ -54179,7 +54179,7 @@
      "nation": "FIN",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 7,
      "points": "49.02",
      "time": "21:39"
     },
@@ -54197,7 +54197,7 @@
      "nation": "KAZ",
      "no": 6,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "50.62",
      "time": "21:57"
     },
@@ -54206,7 +54206,9 @@
      "nation": "ITA",
      "time": "22:03",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6,
+     "points": "50.21"
     },
     {
      "name": "Anton Erkama",
@@ -54220,7 +54222,9 @@
      "nation": "EST",
      "time": "22:08",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "53.55"
     },
     {
      "name": "Tomas Strazds",
