@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-17T17:52:56+03:00",
- "checked": "2026-11-17T17:12:27.697863+00:00",
+ "checked": "2026-11-17T17:20:25.597769+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -53849,7 +53849,7 @@
      "nation": "ITA",
      "no": 8,
      "warmup": 40,
-     "place": 26,
+     "place": 27,
      "points": "29.19"
     },
     {
@@ -53885,7 +53885,7 @@
     {
      "name": "Alina Shavela",
      "nation": "EST",
-     "place": 27,
+     "place": 28,
      "points": "26.98"
     },
     {
@@ -53902,7 +53902,9 @@
     },
     {
      "name": "Hedda Hedstrom",
-     "nation": "SWE"
+     "nation": "SWE",
+     "place": 23,
+     "points": "36.80"
     },
     {
      "name": "Hsiang-YU Chan",
@@ -53939,7 +53941,7 @@
     {
      "name": "Milana Siniavskyte",
      "nation": "LTU",
-     "place": 24,
+     "place": 25,
      "points": "36.30"
     },
     {
@@ -53981,13 +53983,13 @@
     {
      "name": "Thea Marie Kochergina Ullereng",
      "nation": "NOR",
-     "place": 23,
+     "place": 24,
      "points": "36.41"
     },
     {
      "name": "Varvara Poder",
      "nation": "EST",
-     "place": 25,
+     "place": 26,
      "points": "32.54"
     },
     {
