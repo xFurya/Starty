@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-17T17:52:56+03:00",
- "checked": "2026-11-17T16:04:25.931033+00:00",
+ "checked": "2026-11-17T16:32:24.913244+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -53793,7 +53793,7 @@
      "nation": "ITA",
      "no": 1,
      "warmup": 0,
-     "place": 11,
+     "place": 12,
      "points": "43.85"
     },
     {
@@ -53801,7 +53801,7 @@
      "nation": "FIN",
      "no": 2,
      "warmup": 0,
-     "place": 6,
+     "place": 7,
      "points": "49.14"
     },
     {
@@ -53809,7 +53809,7 @@
      "nation": "CYP",
      "no": 3,
      "warmup": 0,
-     "place": 12,
+     "place": 13,
      "points": "41.95"
     },
     {
@@ -53833,7 +53833,7 @@
      "nation": "ITA",
      "no": 6,
      "warmup": 40,
-     "place": 17,
+     "place": 18,
      "points": "38.41"
     },
     {
@@ -53841,7 +53841,7 @@
      "nation": "USA",
      "no": 7,
      "warmup": 40,
-     "place": 15,
+     "place": 16,
      "points": "40.18"
     },
     {
@@ -53849,7 +53849,7 @@
      "nation": "ITA",
      "no": 8,
      "warmup": 40,
-     "place": 19,
+     "place": 20,
      "points": "29.19"
     },
     {
@@ -53857,7 +53857,7 @@
      "nation": "FIN",
      "no": 9,
      "warmup": 40,
-     "place": 14,
+     "place": 15,
      "points": "40.60"
     },
     {
@@ -53865,7 +53865,7 @@
      "nation": "EST",
      "no": 10,
      "warmup": 40,
-     "place": 7,
+     "place": 8,
      "points": "48.77"
     },
     {
@@ -53873,31 +53873,31 @@
      "nation": "EST",
      "no": 11,
      "warmup": 20,
-     "place": 13,
+     "place": 14,
      "points": "40.72"
     },
     {
      "name": "Alice Westling",
      "nation": "SWE",
-     "place": 9,
+     "place": 10,
      "points": "45.94"
     },
     {
      "name": "Alina Shavela",
      "nation": "EST",
-     "place": 20,
+     "place": 21,
      "points": "26.98"
     },
     {
      "name": "Ava Yu Tong Chen",
      "nation": "TPE",
-     "place": 16,
+     "place": 17,
      "points": "39.12"
     },
     {
      "name": "Eleonora Ciferri",
      "nation": "ITA",
-     "place": 8,
+     "place": 9,
      "points": "47.12"
     },
     {
@@ -53911,7 +53911,7 @@
     {
      "name": "Lidiia Tsukanova",
      "nation": "FIN",
-     "place": 10,
+     "place": 11,
      "points": "45.09"
     },
     {
@@ -53925,12 +53925,14 @@
     {
      "name": "Melania Valentina Blecic",
      "nation": "CRO",
-     "place": 18,
+     "place": 19,
      "points": "37.66"
     },
     {
      "name": "Mia Kasparovica",
-     "nation": "LAT"
+     "nation": "LAT",
+     "place": 6,
+     "points": "49.49"
     },
     {
      "name": "Milana Siniavskyte",
