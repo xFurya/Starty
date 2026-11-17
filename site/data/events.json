@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-17T21:57:17+03:00",
- "checked": "2026-11-17T19:16:03.459122+00:00",
+ "checked": "2026-11-17T19:20:03.687841+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -54231,7 +54231,9 @@
      "nation": "LAT",
      "time": "22:14",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 9,
+     "points": "30.93"
     }
    ],
    "provisional": true,
