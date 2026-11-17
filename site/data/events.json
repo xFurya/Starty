@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-17T20:54:57+03:00",
- "checked": "2026-11-17T19:12:03.609168+00:00",
+ "generated": "2026-11-17T21:57:17+03:00",
+ "checked": "2026-11-17T21:57:17+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -54077,14 +54077,14 @@
    },
    "facts": [
     {
-     "who": "Sofia Nekrassova",
+     "kind": "score",
      "text": "Личный рекорд за КП: 62.73 (был 53.49)",
-     "kind": "score"
+     "who": "Sofia Nekrassova"
     },
     {
-     "who": "Sophie Erhardt",
+     "kind": "score",
      "text": "Личный рекорд за КП: 56.33 (был 56.04)",
-     "kind": "score"
+     "who": "Sophie Erhardt"
     }
    ],
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
@@ -54113,7 +54113,6 @@
     "Ilya Nesterov",
     "Kenan Berdibayev",
     "Matteo Marchioni",
-    "Mehmet Uraz Ertas",
     "Romulus Peltonen",
     "Sandro de Angelo",
     "Tomas Strazds"
@@ -54126,121 +54125,6 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sandro de Angelo — 66.23\n2. Matteo Marchioni — 64.81\n3. Albin Samuelsson — 54.99\n\nНачало: 21:15 МСК\nТрансляция: Ice-Stars.TV",
-   "field": [
-    {
-     "name": "Alessandro Giuliano",
-     "nation": "ITA",
-     "time": "22:03",
-     "no": 8,
-     "warmup": 2,
-     "place": 5,
-     "points": "50.21"
-    },
-    {
-     "name": "Ilya Nesterov",
-     "nation": "EST",
-     "time": "22:08",
-     "no": 9,
-     "warmup": 2
-    },
-    {
-     "name": "Tomas Strazds",
-     "nation": "LAT",
-     "time": "22:14",
-     "no": 10,
-     "warmup": 2
-    },
-    {
-     "name": "Anton Erkama",
-     "nation": "FIN",
-     "time": "22:20",
-     "no": 11,
-     "warmup": 2
-    },
-    {
-     "name": "Sandro de Angelo",
-     "nation": "SUI",
-     "no": 1,
-     "warmup": 1,
-     "time": "21:21",
-     "place": 1,
-     "points": "66.23"
-    },
-    {
-     "name": "Akims Kirilovs",
-     "nation": "LAT",
-     "no": 2,
-     "warmup": 1,
-     "time": "21:27",
-     "place": 7,
-     "points": "47.03"
-    },
-    {
-     "name": "Matteo Marchioni",
-     "nation": "ITA",
-     "no": 3,
-     "warmup": 1,
-     "time": "21:33",
-     "place": 2,
-     "points": "64.81"
-    },
-    {
-     "name": "Romulus Peltonen",
-     "nation": "FIN",
-     "no": 4,
-     "warmup": 1,
-     "time": "21:39",
-     "place": 6,
-     "points": "49.02"
-    },
-    {
-     "name": "Albin Samuelsson",
-     "nation": "SWE",
-     "no": 5,
-     "warmup": 1,
-     "time": "21:44",
-     "place": 3,
-     "points": "54.99"
-    },
-    {
-     "name": "Kenan Berdibayev",
-     "nation": "KAZ",
-     "no": 6,
-     "warmup": 2,
-     "time": "21:57",
-     "place": 4,
-     "points": "50.62"
-    },
-    {
-     "name": "Mehmet Uraz Ertas",
-     "nation": "TUR",
-     "no": 7,
-     "warmup": 2,
-     "time": "22:03"
-    }
-   ],
-   "live": {
-    "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
-    "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG009.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Sandro de ANGELO": "Sandro de Angelo",
-     "Akims KIRILOVS": "Akims Kirilovs",
-     "Matteo MARCHIONI": "Matteo Marchioni",
-     "Romulus PELTONEN": "Romulus Peltonen",
-     "Albin SAMUELSSON": "Albin Samuelsson",
-     "Kenan BERDIBAYEV": "Kenan Berdibayev",
-     "Mehmet Uraz ERTAS": "Mehmet Uraz Ertas",
-     "Alessandro GIULIANO": "Alessandro Giuliano",
-     "Ilya NESTEROV": "Ilya Nesterov",
-     "Tomas STRAZDS": "Tomas Strazds",
-     "Anton ERKAMA": "Anton Erkama"
-    },
-    "basis": null
-   },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
    "podium": [
     {
      "place": 1,
@@ -54261,7 +54145,112 @@
      "points": "54.99"
     }
    ],
-   "provisional": true
+   "desc": "Промежуточные итоги:\n1. Sandro de Angelo — 66.23\n2. Matteo Marchioni — 64.81\n3. Albin Samuelsson — 54.99\n\nНачало: 21:15 МСК\nТрансляция: Ice-Stars.TV",
+   "field": [
+    {
+     "name": "Sandro de Angelo",
+     "nation": "SUI",
+     "no": 1,
+     "warmup": 1,
+     "place": 1,
+     "points": "66.23",
+     "time": "21:21"
+    },
+    {
+     "name": "Akims Kirilovs",
+     "nation": "LAT",
+     "no": 2,
+     "warmup": 1,
+     "place": 6,
+     "points": "47.03",
+     "time": "21:27"
+    },
+    {
+     "name": "Matteo Marchioni",
+     "nation": "ITA",
+     "no": 3,
+     "warmup": 1,
+     "place": 2,
+     "points": "64.81",
+     "time": "21:33"
+    },
+    {
+     "name": "Romulus Peltonen",
+     "nation": "FIN",
+     "no": 4,
+     "warmup": 1,
+     "place": 5,
+     "points": "49.02",
+     "time": "21:39"
+    },
+    {
+     "name": "Albin Samuelsson",
+     "nation": "SWE",
+     "no": 5,
+     "warmup": 1,
+     "place": 3,
+     "points": "54.99",
+     "time": "21:44"
+    },
+    {
+     "name": "Kenan Berdibayev",
+     "nation": "KAZ",
+     "no": 6,
+     "warmup": 2,
+     "place": 4,
+     "points": "50.62",
+     "time": "21:57"
+    },
+    {
+     "name": "Alessandro Giuliano",
+     "nation": "ITA",
+     "time": "22:03",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Anton Erkama",
+     "nation": "FIN",
+     "time": "22:20",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Ilya Nesterov",
+     "nation": "EST",
+     "time": "22:08",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Tomas Strazds",
+     "nation": "LAT",
+     "time": "22:14",
+     "no": 10,
+     "warmup": 2
+    }
+   ],
+   "provisional": true,
+   "live": {
+    "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
+    "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG009.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Sandro de ANGELO": "Sandro de Angelo",
+     "Matteo MARCHIONI": "Matteo Marchioni",
+     "Albin SAMUELSSON": "Albin Samuelsson",
+     "Kenan BERDIBAYEV": "Kenan Berdibayev",
+     "Romulus PELTONEN": "Romulus Peltonen",
+     "Akims KIRILOVS": "Akims Kirilovs",
+     "Alessandro GIULIANO": "Alessandro Giuliano",
+     "Ilya NESTEROV": "Ilya Nesterov",
+     "Tomas STRAZDS": "Tomas Strazds",
+     "Anton ERKAMA": "Anton Erkama"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:women-junior-pp",
@@ -94215,12 +94204,132 @@
    "y": "2026/27"
   },
   {
+   "n": "Melania Valentina Blecic",
+   "c": "CRO",
+   "k": "",
+   "was": "W",
+   "y": "2026/27",
+   "p": "facdf82b510d"
+  },
+  {
+   "n": "Martina Lucchi",
+   "c": "ITA",
+   "k": "",
+   "was": "W",
+   "y": "2026/27",
+   "p": "873de4f0d803"
+  },
+  {
+   "n": "Stefania Zagorovskaja",
+   "c": "EST",
+   "k": "",
+   "was": "W",
+   "y": "2026/27",
+   "p": "83035ea06d40"
+  },
+  {
    "n": "Veronika Zhilina",
    "c": "AZE",
    "k": "",
    "was": "w",
    "y": "2026/27",
    "p": "72fb55b016fa"
+  },
+  {
+   "n": "Vilena Ivannikova",
+   "c": "EST",
+   "k": "",
+   "was": "W",
+   "y": "2026/27",
+   "p": "5595ae3464b9"
+  },
+  {
+   "n": "Alice Westling",
+   "c": "SWE",
+   "k": "",
+   "was": "W",
+   "y": "2026/27",
+   "p": "f9b27aaec0e8"
+  },
+  {
+   "n": "Alina Shavela",
+   "c": "EST",
+   "k": "",
+   "was": "W",
+   "y": "2026/27",
+   "p": "69c249dcd531"
+  },
+  {
+   "n": "Eleonora Ciferri",
+   "c": "ITA",
+   "k": "",
+   "was": "W",
+   "y": "2026/27",
+   "p": "871cb28edd59"
+  },
+  {
+   "n": "Natalie Tieva",
+   "c": "FIN",
+   "k": "",
+   "was": "W",
+   "y": "2026/27",
+   "p": "2298a98de906"
+  },
+  {
+   "n": "Pinja Peltola",
+   "c": "FIN",
+   "k": "",
+   "was": "W",
+   "y": "2026/27",
+   "p": "5be1f127b474"
+  },
+  {
+   "n": "Sofia Gaddo",
+   "c": "ITA",
+   "k": "",
+   "was": "W",
+   "y": "2026/27",
+   "p": "33ad82b2a1ec"
+  },
+  {
+   "n": "Saaga Volkova",
+   "c": "FIN",
+   "k": "",
+   "was": "W",
+   "y": "2026/27",
+   "p": "811f8f02578c"
+  },
+  {
+   "n": "Annabel Jaamu",
+   "c": "EST",
+   "k": "",
+   "was": "W",
+   "y": "2026/27",
+   "p": "a49092ab6fc5"
+  },
+  {
+   "n": "Marina Sekulovski",
+   "c": "SUI",
+   "k": "",
+   "was": "W",
+   "y": "2026/27",
+   "p": "400077b737f7"
+  },
+  {
+   "n": "Nella Andelin",
+   "c": "FIN",
+   "k": "",
+   "was": "W",
+   "y": "2026/27",
+   "p": "22e2145b83e2"
+  },
+  {
+   "n": "Sophia Jonsson Zhou",
+   "c": "SWE",
+   "k": "",
+   "was": "W",
+   "y": "2026/27",
+   "p": "b14e1c315be3"
   }
  ],
  "photos": {
@@ -96916,6 +97025,13 @@
   "Hedda Hedstrom": "photos/ea796e580fe9f8d5.jpg",
   "Ginevra Antonina Volante": "photos/88956285e85e2954.jpg",
   "Nella Andelin": "photos/9009457f997bde3f.jpg",
-  "Pinja Peltola": "photos/e654a8938e7ac5f4.jpg"
+  "Pinja Peltola": "photos/e654a8938e7ac5f4.jpg",
+  "Sandro de Angelo": "photos/02ec369ae9f10878.jpg",
+  "Melania Valentina Blecic": "photos/a10a80a61aeede34.jpg",
+  "Stefania Zagorovskaja": "photos/92dfc54eb410fa62.jpg",
+  "Vilena Ivannikova": "photos/a93f2369a3f44f98.jpg",
+  "Alice Westling": "photos/e84c50a31710fdee.jpg",
+  "Natalie Tieva": "photos/468886aee5c54433.jpg",
+  "Saaga Volkova": "photos/98959748fe870fba.jpg"
  }
 }
