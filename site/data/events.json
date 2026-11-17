@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-17T17:52:56+03:00",
- "checked": "2026-11-17T17:40:25.903169+00:00",
+ "generated": "2026-11-17T20:54:57+03:00",
+ "checked": "2026-11-17T20:54:57+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -53716,7 +53716,7 @@
    "seg": "КП",
    "title": "CS Tallinn Trophy — девушки КП",
    "start": "2026-11-17T16:20:00+03:00",
-   "end": "2026-11-17T20:42:00+03:00",
+   "end": "2026-11-17T20:55:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -53731,7 +53731,6 @@
     "Eleonora Ciferri",
     "Elizabeth Nou",
     "Hedda Hedstrom",
-    "Hsiang-YU Chan",
     "Karina Shesterikova",
     "Lidiia Tsukanova",
     "Lilly Almgren-lidman",
@@ -53743,7 +53742,6 @@
     "Natalie Tieva",
     "Nella Andelin",
     "Nicole de Rosa",
-    "Noemi Joos",
     "Oliviia Bazlova",
     "Pinja Peltola",
     "Saaga Volkova",
@@ -53786,13 +53784,13 @@
      "points": "56.33"
     }
    ],
-   "desc": "Итог:\n1. Sofia Nekrassova — 62.73\n2. Pinja Peltola — 57.53\n3. Sophie Erhardt — 56.33\n\nНачало: 16:20 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Sofia Nekrassova — 62.73\n2. Pinja Peltola — 57.53\n3. Sophie Erhardt — 56.33\n\nПримечательное:\n• Sofia Nekrassova — Личный рекорд за КП: 62.73 (был 53.49)\n• Sophie Erhardt — Личный рекорд за КП: 56.33 (был 56.04)\n\nНачало: 16:20 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Nicole de Rosa",
      "nation": "ITA",
      "no": 1,
-     "warmup": 0,
+     "warmup": null,
      "place": 18,
      "points": "43.85"
     },
@@ -53800,7 +53798,7 @@
      "name": "Nella Andelin",
      "nation": "FIN",
      "no": 2,
-     "warmup": 0,
+     "warmup": null,
      "place": 9,
      "points": "49.14"
     },
@@ -53808,7 +53806,7 @@
      "name": "Vasilisa Bogomolova",
      "nation": "CYP",
      "no": 3,
-     "warmup": 0,
+     "warmup": null,
      "place": 19,
      "points": "41.95"
     },
@@ -53816,7 +53814,7 @@
      "name": "Elizabeth Nou",
      "nation": "EST",
      "no": 4,
-     "warmup": 0,
+     "warmup": null,
      "place": 5,
      "points": "51.13"
     },
@@ -53824,7 +53822,7 @@
      "name": "Sophia Jonsson Zhou",
      "nation": "SWE",
      "no": 5,
-     "warmup": 0,
+     "warmup": null,
      "place": 6,
      "points": "50.81"
     },
@@ -53877,132 +53875,164 @@
      "points": "40.72"
     },
     {
-     "name": "Alice Westling",
-     "nation": "SWE",
-     "place": 13,
-     "points": "45.94"
+     "name": "Sofia Nekrassova",
+     "nation": "EST",
+     "no": 13,
+     "warmup": null,
+     "place": 1,
+     "points": "62.73"
+    },
+    {
+     "name": "Vilena Ivannikova",
+     "nation": "EST",
+     "no": 14,
+     "warmup": null,
+     "place": 7,
+     "points": "49.60"
+    },
+    {
+     "name": "Melania Valentina Blecic",
+     "nation": "CRO",
+     "no": 15,
+     "warmup": null,
+     "place": 25,
+     "points": "37.66"
     },
     {
      "name": "Alina Shavela",
      "nation": "EST",
+     "no": 16,
+     "warmup": null,
      "place": 31,
      "points": "26.98"
     },
     {
      "name": "Ava Yu Tong Chen",
      "nation": "TPE",
+     "no": 17,
+     "warmup": null,
      "place": 23,
      "points": "39.12"
     },
     {
      "name": "Eleonora Ciferri",
      "nation": "ITA",
+     "no": 18,
+     "warmup": null,
      "place": 11,
      "points": "47.12"
     },
     {
-     "name": "Hedda Hedstrom",
-     "nation": "SWE",
-     "place": 26,
-     "points": "36.80"
-    },
-    {
-     "name": "Hsiang-YU Chan",
-     "nation": "TPE"
-    },
-    {
      "name": "Lidiia Tsukanova",
      "nation": "FIN",
+     "no": 19,
+     "warmup": null,
      "place": 14,
      "points": "45.09"
     },
     {
-     "name": "Lilly Almgren-lidman",
-     "nation": "SWE",
-     "place": 15,
-     "points": "44.95"
-    },
-    {
-     "name": "Marina Sekulovski",
-     "nation": "SUI",
-     "place": 17,
-     "points": "43.94"
-    },
-    {
-     "name": "Melania Valentina Blecic",
-     "nation": "CRO",
-     "place": 25,
-     "points": "37.66"
-    },
-    {
-     "name": "Mia Kasparovica",
-     "nation": "LAT",
-     "place": 8,
-     "points": "49.49"
-    },
-    {
-     "name": "Milana Siniavskyte",
-     "nation": "LTU",
-     "place": 28,
-     "points": "36.30"
-    },
-    {
-     "name": "Noemi Joos",
-     "nation": "ITA"
-    },
-    {
-     "name": "Oliviia Bazlova",
-     "nation": "CYP",
-     "place": 4,
-     "points": "54.22"
-    },
-    {
-     "name": "Pinja Peltola",
-     "nation": "FIN",
-     "place": 2,
-     "points": "57.53"
-    },
-    {
-     "name": "Saaga Volkova",
-     "nation": "FIN",
-     "place": 16,
-     "points": "44.59"
-    },
-    {
-     "name": "Sofia Nekrassova",
-     "nation": "EST",
-     "place": 1,
-     "points": "62.73"
-    },
-    {
      "name": "Sophie Erhardt",
      "nation": "GER",
+     "no": 20,
+     "warmup": null,
      "place": 3,
      "points": "56.33"
     },
     {
-     "name": "Stefania Zagorovskaja",
-     "nation": "EST",
-     "place": 12,
-     "points": "46.70"
+     "name": "Alice Westling",
+     "nation": "SWE",
+     "no": 21,
+     "warmup": null,
+     "place": 13,
+     "points": "45.94"
+    },
+    {
+     "name": "Mia Kasparovica",
+     "nation": "LAT",
+     "no": 22,
+     "warmup": null,
+     "place": 8,
+     "points": "49.49"
     },
     {
      "name": "Thea Marie Kochergina Ullereng",
      "nation": "NOR",
+     "no": 23,
+     "warmup": null,
      "place": 27,
      "points": "36.41"
     },
     {
+     "name": "Stefania Zagorovskaja",
+     "nation": "EST",
+     "no": 24,
+     "warmup": null,
+     "place": 12,
+     "points": "46.70"
+    },
+    {
+     "name": "Lilly Almgren-lidman",
+     "nation": "SWE",
+     "no": 25,
+     "warmup": null,
+     "place": 15,
+     "points": "44.95"
+    },
+    {
+     "name": "Milana Siniavskyte",
+     "nation": "LTU",
+     "no": 26,
+     "warmup": null,
+     "place": 28,
+     "points": "36.30"
+    },
+    {
      "name": "Varvara Poder",
      "nation": "EST",
+     "no": 27,
+     "warmup": null,
      "place": 29,
      "points": "32.54"
     },
     {
-     "name": "Vilena Ivannikova",
-     "nation": "EST",
-     "place": 7,
-     "points": "49.60"
+     "name": "Oliviia Bazlova",
+     "nation": "CYP",
+     "no": 28,
+     "warmup": null,
+     "place": 4,
+     "points": "54.22"
+    },
+    {
+     "name": "Hedda Hedstrom",
+     "nation": "SWE",
+     "no": 29,
+     "warmup": null,
+     "place": 26,
+     "points": "36.80"
+    },
+    {
+     "name": "Saaga Volkova",
+     "nation": "FIN",
+     "no": 31,
+     "warmup": null,
+     "place": 16,
+     "points": "44.59"
+    },
+    {
+     "name": "Pinja Peltola",
+     "nation": "FIN",
+     "no": 32,
+     "warmup": null,
+     "place": 2,
+     "points": "57.53"
+    },
+    {
+     "name": "Marina Sekulovski",
+     "nation": "SUI",
+     "no": 33,
+     "warmup": null,
+     "place": 17,
+     "points": "43.94"
     }
    ],
    "live": {
@@ -54011,42 +54041,52 @@
     "cat": null,
     "first": null,
     "names": {
+     "Sofia NEKRASSOVA": "Sofia Nekrassova",
+     "Pinja PELTOLA": "Pinja Peltola",
+     "Sophie ERHARDT": "Sophie Erhardt",
+     "Oliviia BAZLOVA": "Oliviia Bazlova",
      "Elizabeth NOU": "Elizabeth Nou",
      "Sophia JONSSON ZHOU": "Sophia Jonsson Zhou",
+     "Vilena IVANNIKOVA": "Vilena Ivannikova",
+     "Mia KASPAROVICA": "Mia Kasparovica",
      "Nella ANDELIN": "Nella Andelin",
      "Karina SHESTERIKOVA": "Karina Shesterikova",
+     "Eleonora CIFERRI": "Eleonora Ciferri",
+     "Stefania ZAGOROVSKAJA": "Stefania Zagorovskaja",
+     "Alice WESTLING": "Alice Westling",
+     "Lidiia TSUKANOVA": "Lidiia Tsukanova",
+     "Lilly ALMGREN-LIDMAN": "Lilly Almgren-lidman",
+     "Saaga VOLKOVA": "Saaga Volkova",
+     "Marina SEKULOVSKI": "Marina Sekulovski",
      "Nicole de ROSA": "Nicole de Rosa",
      "Vasilisa BOGOMOLOVA": "Vasilisa Bogomolova",
      "Annabel JAAMU": "Annabel Jaamu",
      "Natalie TIEVA": "Natalie Tieva",
      "Skylar LAUTOWA-PEGUERO": "Skylar Lautowa-peguero",
-     "Sofia GADDO": "Sofia Gaddo",
-     "Martina LUCCHI": "Martina Lucchi",
-     "Hsiang-YU CHAN": "Hsiang-YU Chan",
-     "Sofia NEKRASSOVA": "Sofia Nekrassova",
-     "Vilena IVANNIKOVA": "Vilena Ivannikova",
-     "Melania Valentina BLECIC": "Melania Valentina Blecic",
-     "Alina SHAVELA": "Alina Shavela",
      "Ava Yu Tong CHEN": "Ava Yu Tong Chen",
-     "Eleonora CIFERRI": "Eleonora Ciferri",
-     "Lidiia TSUKANOVA": "Lidiia Tsukanova",
-     "Sophie ERHARDT": "Sophie Erhardt",
-     "Alice WESTLING": "Alice Westling",
-     "Mia KASPAROVICA": "Mia Kasparovica",
+     "Sofia GADDO": "Sofia Gaddo",
+     "Melania Valentina BLECIC": "Melania Valentina Blecic",
+     "Hedda HEDSTROM": "Hedda Hedstrom",
      "Thea Marie Kochergina ULLERENG": "Thea Marie Kochergina Ullereng",
-     "Stefania ZAGOROVSKAJA": "Stefania Zagorovskaja",
-     "Lilly ALMGREN-LIDMAN": "Lilly Almgren-lidman",
      "Milana SINIAVSKYTE": "Milana Siniavskyte",
      "Varvara PODER": "Varvara Poder",
-     "Oliviia BAZLOVA": "Oliviia Bazlova",
-     "Hedda HEDSTROM": "Hedda Hedstrom",
-     "Noemi JOOS": "Noemi Joos",
-     "Saaga VOLKOVA": "Saaga Volkova",
-     "Pinja PELTOLA": "Pinja Peltola",
-     "Marina SEKULOVSKI": "Marina Sekulovski"
+     "Martina LUCCHI": "Martina Lucchi",
+     "Alina SHAVELA": "Alina Shavela"
     },
     "basis": "judges"
    },
+   "facts": [
+    {
+     "who": "Sofia Nekrassova",
+     "text": "Личный рекорд за КП: 62.73 (был 53.49)",
+     "kind": "score"
+    },
+    {
+     "who": "Sophie Erhardt",
+     "text": "Личный рекорд за КП: 56.33 (был 56.04)",
+     "kind": "score"
+    }
+   ],
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
@@ -54058,7 +54098,7 @@
    "seg": "КП",
    "title": "CS Tallinn Trophy — юноши КП",
    "start": "2026-11-17T21:15:00+03:00",
-   "end": "2026-11-17T22:33:00+03:00",
+   "end": "2026-11-17T22:27:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -54089,81 +54129,81 @@
    "desc": "Начало: 21:15 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
-     "name": "Sandro de Angelo",
-     "nation": "SUI",
-     "time": "21:21",
-     "no": 1,
-     "warmup": 1
-    },
-    {
-     "name": "Akims Kirilovs",
-     "nation": "LAT",
-     "time": "21:27",
-     "no": 2,
-     "warmup": 1
-    },
-    {
-     "name": "Matteo Marchioni",
-     "nation": "ITA",
-     "time": "21:33",
-     "no": 3,
-     "warmup": 1
-    },
-    {
-     "name": "Romulus Peltonen",
-     "nation": "FIN",
-     "time": "21:39",
-     "no": 4,
-     "warmup": 1
-    },
-    {
-     "name": "Albin Samuelsson",
-     "nation": "SWE",
-     "time": "21:44",
-     "no": 5,
-     "warmup": 1
-    },
-    {
-     "name": "Kenan Berdibayev",
-     "nation": "KAZ",
-     "time": "21:57",
-     "no": 6,
-     "warmup": 2
-    },
-    {
-     "name": "Mehmet Uraz Ertas",
-     "nation": "TUR",
-     "time": "22:03",
-     "no": 7,
-     "warmup": 2
-    },
-    {
      "name": "Alessandro Giuliano",
      "nation": "ITA",
-     "time": "22:08",
+     "time": "22:03",
      "no": 8,
      "warmup": 2
     },
     {
      "name": "Ilya Nesterov",
      "nation": "EST",
-     "time": "22:14",
+     "time": "22:08",
      "no": 9,
      "warmup": 2
     },
     {
      "name": "Tomas Strazds",
      "nation": "LAT",
-     "time": "22:20",
+     "time": "22:14",
      "no": 10,
      "warmup": 2
     },
     {
      "name": "Anton Erkama",
      "nation": "FIN",
-     "time": "22:26",
+     "time": "22:20",
      "no": 11,
      "warmup": 2
+    },
+    {
+     "name": "Sandro de Angelo",
+     "nation": "SUI",
+     "no": 1,
+     "warmup": 1,
+     "time": "21:21"
+    },
+    {
+     "name": "Akims Kirilovs",
+     "nation": "LAT",
+     "no": 2,
+     "warmup": 1,
+     "time": "21:27"
+    },
+    {
+     "name": "Matteo Marchioni",
+     "nation": "ITA",
+     "no": 3,
+     "warmup": 1,
+     "time": "21:33"
+    },
+    {
+     "name": "Romulus Peltonen",
+     "nation": "FIN",
+     "no": 4,
+     "warmup": 1,
+     "time": "21:39"
+    },
+    {
+     "name": "Albin Samuelsson",
+     "nation": "SWE",
+     "no": 5,
+     "warmup": 1,
+     "time": "21:44"
+    },
+    {
+     "name": "Kenan Berdibayev",
+     "nation": "KAZ",
+     "no": 6,
+     "warmup": 2,
+     "time": "21:57"
+    },
+    {
+     "name": "Mehmet Uraz Ertas",
+     "nation": "TUR",
+     "no": 7,
+     "warmup": 2,
+     "time": "22:03"
     }
    ],
    "live": {
@@ -96840,6 +96880,7 @@
   "Anna Ruis": "photos/658de612038a6400.jpg",
   "Hedda Hedstrom": "photos/ea796e580fe9f8d5.jpg",
   "Ginevra Antonina Volante": "photos/88956285e85e2954.jpg",
-  "Nella Andelin": "photos/9009457f997bde3f.jpg"
+  "Nella Andelin": "photos/9009457f997bde3f.jpg",
+  "Pinja Peltola": "photos/e654a8938e7ac5f4.jpg"
  }
 }
