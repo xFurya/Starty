@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-17T21:57:17+03:00",
- "checked": "2026-11-17T19:28:04.487294+00:00",
+ "generated": "2026-11-17T23:00:08+03:00",
+ "checked": "2026-11-17T23:00:08+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -54098,7 +54098,7 @@
    "seg": "КП",
    "title": "CS Tallinn Trophy — юноши КП",
    "start": "2026-11-17T21:15:00+03:00",
-   "end": "2026-11-17T22:27:00+03:00",
+   "end": "2026-11-17T22:35:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -54204,38 +54204,38 @@
     {
      "name": "Alessandro Giuliano",
      "nation": "ITA",
-     "time": "22:03",
      "no": 8,
      "warmup": 2,
      "place": 7,
-     "points": "50.21"
-    },
-    {
-     "name": "Anton Erkama",
-     "nation": "FIN",
-     "time": "22:20",
-     "no": 11,
-     "warmup": 2,
-     "place": 5,
-     "points": "52.93"
+     "points": "50.21",
+     "time": "22:03"
     },
     {
      "name": "Ilya Nesterov",
      "nation": "EST",
-     "time": "22:08",
      "no": 9,
      "warmup": 2,
      "place": 4,
-     "points": "53.55"
+     "points": "53.55",
+     "time": "22:08"
     },
     {
      "name": "Tomas Strazds",
      "nation": "LAT",
-     "time": "22:14",
      "no": 10,
      "warmup": 2,
      "place": 10,
-     "points": "30.93"
+     "points": "30.93",
+     "time": "22:14"
+    },
+    {
+     "name": "Anton Erkama",
+     "nation": "FIN",
+     "no": 11,
+     "warmup": 2,
+     "place": 5,
+     "points": "52.93",
+     "time": "22:20"
     }
    ],
    "live": {
@@ -54247,24 +54247,24 @@
      "Sandro de ANGELO": "Sandro de Angelo",
      "Matteo MARCHIONI": "Matteo Marchioni",
      "Albin SAMUELSSON": "Albin Samuelsson",
+     "Ilya NESTEROV": "Ilya Nesterov",
+     "Anton ERKAMA": "Anton Erkama",
      "Kenan BERDIBAYEV": "Kenan Berdibayev",
+     "Alessandro GIULIANO": "Alessandro Giuliano",
      "Romulus PELTONEN": "Romulus Peltonen",
      "Akims KIRILOVS": "Akims Kirilovs",
-     "Alessandro GIULIANO": "Alessandro Giuliano",
-     "Ilya NESTEROV": "Ilya Nesterov",
-     "Tomas STRAZDS": "Tomas Strazds",
-     "Anton ERKAMA": "Anton Erkama"
+     "Tomas STRAZDS": "Tomas Strazds"
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
    "facts": [
     {
-     "who": "Matteo Marchioni",
+     "kind": "score",
      "text": "Личный рекорд за КП: 64.81 (был 60.16)",
-     "kind": "score"
+     "who": "Matteo Marchioni"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:women-junior-pp",
@@ -54275,7 +54275,7 @@
    "seg": "ПП",
    "title": "CS Tallinn Trophy — девушки ПП",
    "start": "2026-11-18T11:45:00+03:00",
-   "end": "2026-11-18T17:05:00+03:00",
+   "end": "2026-11-18T16:32:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -54290,7 +54290,6 @@
     "Eleonora Ciferri",
     "Elizabeth Nou",
     "Hedda Hedstrom",
-    "Hsiang-YU Chan",
     "Karina Shesterikova",
     "Lidiia Tsukanova",
     "Lilly Almgren-lidman",
@@ -54302,7 +54301,6 @@
     "Natalie Tieva",
     "Nella Andelin",
     "Nicole de Rosa",
-    "Noemi Joos",
     "Oliviia Bazlova",
     "Pinja Peltola",
     "Saaga Volkova",
@@ -54328,136 +54326,221 @@
    "desc": "Начало: 11:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
-     "name": "Alice Westling",
-     "nation": "SWE"
-    },
-    {
      "name": "Alina Shavela",
-     "nation": "EST"
-    },
-    {
-     "name": "Annabel Jaamu",
-     "nation": "EST"
-    },
-    {
-     "name": "Ava Yu Tong Chen",
-     "nation": "TPE"
-    },
-    {
-     "name": "Eleonora Ciferri",
-     "nation": "ITA"
-    },
-    {
-     "name": "Elizabeth Nou",
-     "nation": "EST"
-    },
-    {
-     "name": "Hedda Hedstrom",
-     "nation": "SWE"
-    },
-    {
-     "name": "Hsiang-YU Chan",
-     "nation": "TPE"
-    },
-    {
-     "name": "Karina Shesterikova",
-     "nation": "EST"
-    },
-    {
-     "name": "Lidiia Tsukanova",
-     "nation": "FIN"
-    },
-    {
-     "name": "Lilly Almgren-lidman",
-     "nation": "SWE"
-    },
-    {
-     "name": "Marina Sekulovski",
-     "nation": "SUI"
+     "nation": "EST",
+     "time": "11:51",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Martina Lucchi",
-     "nation": "ITA"
-    },
-    {
-     "name": "Melania Valentina Blecic",
-     "nation": "CRO"
-    },
-    {
-     "name": "Mia Kasparovica",
-     "nation": "LAT"
-    },
-    {
-     "name": "Milana Siniavskyte",
-     "nation": "LTU"
-    },
-    {
-     "name": "Natalie Tieva",
-     "nation": "FIN"
-    },
-    {
-     "name": "Nella Andelin",
-     "nation": "FIN"
-    },
-    {
-     "name": "Nicole de Rosa",
-     "nation": "ITA"
-    },
-    {
-     "name": "Noemi Joos",
-     "nation": "ITA"
-    },
-    {
-     "name": "Oliviia Bazlova",
-     "nation": "CYP"
-    },
-    {
-     "name": "Pinja Peltola",
-     "nation": "FIN"
-    },
-    {
-     "name": "Saaga Volkova",
-     "nation": "FIN"
-    },
-    {
-     "name": "Skylar Lautowa-peguero",
-     "nation": "USA"
-    },
-    {
-     "name": "Sofia Gaddo",
-     "nation": "ITA"
-    },
-    {
-     "name": "Sofia Nekrassova",
-     "nation": "EST"
-    },
-    {
-     "name": "Sophia Jonsson Zhou",
-     "nation": "SWE"
-    },
-    {
-     "name": "Sophie Erhardt",
-     "nation": "GER"
-    },
-    {
-     "name": "Stefania Zagorovskaja",
-     "nation": "EST"
-    },
-    {
-     "name": "Thea Marie Kochergina Ullereng",
-     "nation": "NOR"
+     "nation": "ITA",
+     "time": "11:58",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Varvara Poder",
-     "nation": "EST"
+     "nation": "EST",
+     "time": "12:05",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Milana Siniavskyte",
+     "nation": "LTU",
+     "time": "12:12",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Thea Marie Kochergina Ullereng",
+     "nation": "NOR",
+     "time": "12:19",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Hedda Hedstrom",
+     "nation": "SWE",
+     "time": "12:33",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Melania Valentina Blecic",
+     "nation": "CRO",
+     "time": "12:40",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Sofia Gaddo",
+     "nation": "ITA",
+     "time": "12:47",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Ava Yu Tong Chen",
+     "nation": "TPE",
+     "time": "12:54",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Skylar Lautowa-peguero",
+     "nation": "USA",
+     "time": "13:01",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Natalie Tieva",
+     "nation": "FIN",
+     "time": "13:29",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Annabel Jaamu",
+     "nation": "EST",
+     "time": "13:36",
+     "no": 12,
+     "warmup": 3
     },
     {
      "name": "Vasilisa Bogomolova",
-     "nation": "CYP"
+     "nation": "CYP",
+     "time": "13:43",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Nicole de Rosa",
+     "nation": "ITA",
+     "time": "13:50",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Marina Sekulovski",
+     "nation": "SUI",
+     "time": "13:57",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Saaga Volkova",
+     "nation": "FIN",
+     "time": "14:11",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Lilly Almgren-lidman",
+     "nation": "SWE",
+     "time": "14:18",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Lidiia Tsukanova",
+     "nation": "FIN",
+     "time": "14:25",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Alice Westling",
+     "nation": "SWE",
+     "time": "14:32",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Stefania Zagorovskaja",
+     "nation": "EST",
+     "time": "14:39",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Eleonora Ciferri",
+     "nation": "ITA",
+     "time": "15:07",
+     "no": 21,
+     "warmup": 5
+    },
+    {
+     "name": "Karina Shesterikova",
+     "nation": "EST",
+     "time": "15:14",
+     "no": 22,
+     "warmup": 5
+    },
+    {
+     "name": "Nella Andelin",
+     "nation": "FIN",
+     "time": "15:21",
+     "no": 23,
+     "warmup": 5
+    },
+    {
+     "name": "Mia Kasparovica",
+     "nation": "LAT",
+     "time": "15:28",
+     "no": 24,
+     "warmup": 5
     },
     {
      "name": "Vilena Ivannikova",
-     "nation": "EST"
+     "nation": "EST",
+     "time": "15:35",
+     "no": 25,
+     "warmup": 5
+    },
+    {
+     "name": "Sophia Jonsson Zhou",
+     "nation": "SWE",
+     "time": "15:49",
+     "no": 26,
+     "warmup": 6
+    },
+    {
+     "name": "Elizabeth Nou",
+     "nation": "EST",
+     "time": "15:56",
+     "no": 27,
+     "warmup": 6
+    },
+    {
+     "name": "Oliviia Bazlova",
+     "nation": "CYP",
+     "time": "16:03",
+     "no": 28,
+     "warmup": 6
+    },
+    {
+     "name": "Sophie Erhardt",
+     "nation": "GER",
+     "time": "16:10",
+     "no": 29,
+     "warmup": 6
+    },
+    {
+     "name": "Pinja Peltola",
+     "nation": "FIN",
+     "time": "16:17",
+     "no": 30,
+     "warmup": 6
+    },
+    {
+     "name": "Sofia Nekrassova",
+     "nation": "EST",
+     "time": "16:24",
+     "no": 31,
+     "warmup": 6
     }
    ],
    "live": {
@@ -54466,39 +54549,37 @@
     "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT006RS.htm",
     "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG011.htm",
     "names": {
-     "Melania Valentina BLECIC": "Melania Valentina Blecic",
-     "Oliviia BAZLOVA": "Oliviia Bazlova",
-     "Vasilisa BOGOMOLOVA": "Vasilisa Bogomolova",
-     "Vilena IVANNIKOVA": "Vilena Ivannikova",
-     "Annabel JAAMU": "Annabel Jaamu",
-     "Sofia NEKRASSOVA": "Sofia Nekrassova",
-     "Elizabeth NOU": "Elizabeth Nou",
-     "Varvara PODER": "Varvara Poder",
      "Alina SHAVELA": "Alina Shavela",
-     "Karina SHESTERIKOVA": "Karina Shesterikova",
-     "Stefania ZAGOROVSKAJA": "Stefania Zagorovskaja",
-     "Nella ANDELIN": "Nella Andelin",
-     "Pinja PELTOLA": "Pinja Peltola",
-     "Natalie TIEVA": "Natalie Tieva",
-     "Lidiia TSUKANOVA": "Lidiia Tsukanova",
-     "Saaga VOLKOVA": "Saaga Volkova",
-     "Sophie ERHARDT": "Sophie Erhardt",
-     "Eleonora CIFERRI": "Eleonora Ciferri",
-     "Nicole de ROSA": "Nicole de Rosa",
-     "Sofia GADDO": "Sofia Gaddo",
-     "Noemi JOOS": "Noemi Joos",
      "Martina LUCCHI": "Martina Lucchi",
-     "Mia KASPAROVICA": "Mia Kasparovica",
+     "Varvara PODER": "Varvara Poder",
      "Milana SINIAVSKYTE": "Milana Siniavskyte",
      "Thea Marie Kochergina ULLERENG": "Thea Marie Kochergina Ullereng",
-     "Marina SEKULOVSKI": "Marina Sekulovski",
-     "Lilly ALMGREN-LIDMAN": "Lilly Almgren-lidman",
      "Hedda HEDSTROM": "Hedda Hedstrom",
-     "Sophia JONSSON ZHOU": "Sophia Jonsson Zhou",
-     "Alice WESTLING": "Alice Westling",
-     "Hsiang-YU CHAN": "Hsiang-YU Chan",
+     "Melania Valentina BLECIC": "Melania Valentina Blecic",
+     "Sofia GADDO": "Sofia Gaddo",
      "Ava Yu Tong CHEN": "Ava Yu Tong Chen",
-     "Skylar LAUTOWA-PEGUERO": "Skylar Lautowa-peguero"
+     "Skylar LAUTOWA-PEGUERO": "Skylar Lautowa-peguero",
+     "Natalie TIEVA": "Natalie Tieva",
+     "Annabel JAAMU": "Annabel Jaamu",
+     "Vasilisa BOGOMOLOVA": "Vasilisa Bogomolova",
+     "Nicole de ROSA": "Nicole de Rosa",
+     "Marina SEKULOVSKI": "Marina Sekulovski",
+     "Saaga VOLKOVA": "Saaga Volkova",
+     "Lilly ALMGREN-LIDMAN": "Lilly Almgren-lidman",
+     "Lidiia TSUKANOVA": "Lidiia Tsukanova",
+     "Alice WESTLING": "Alice Westling",
+     "Stefania ZAGOROVSKAJA": "Stefania Zagorovskaja",
+     "Eleonora CIFERRI": "Eleonora Ciferri",
+     "Karina SHESTERIKOVA": "Karina Shesterikova",
+     "Nella ANDELIN": "Nella Andelin",
+     "Mia KASPAROVICA": "Mia Kasparovica",
+     "Vilena IVANNIKOVA": "Vilena Ivannikova",
+     "Sophia JONSSON ZHOU": "Sophia Jonsson Zhou",
+     "Elizabeth NOU": "Elizabeth Nou",
+     "Oliviia BAZLOVA": "Oliviia Bazlova",
+     "Sophie ERHARDT": "Sophie Erhardt",
+     "Pinja PELTOLA": "Pinja Peltola",
+     "Sofia NEKRASSOVA": "Sofia Nekrassova"
     },
     "basis": null
    },
@@ -54513,7 +54594,7 @@
    "seg": "ПП",
    "title": "CS Tallinn Trophy — юноши ПП",
    "start": "2026-11-18T17:00:00+03:00",
-   "end": "2026-11-18T18:35:00+03:00",
+   "end": "2026-11-18T18:25:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -54528,7 +54609,6 @@
     "Ilya Nesterov",
     "Kenan Berdibayev",
     "Matteo Marchioni",
-    "Mehmet Uraz Ertas",
     "Romulus Peltonen",
     "Sandro de Angelo",
     "Tomas Strazds"
@@ -54544,48 +54624,74 @@
    "desc": "Начало: 17:00 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
+     "name": "Tomas Strazds",
+     "nation": "LAT",
+     "time": "17:06",
+     "no": 1,
+     "warmup": 1
+    },
+    {
      "name": "Akims Kirilovs",
-     "nation": "LAT"
-    },
-    {
-     "name": "Albin Samuelsson",
-     "nation": "SWE"
-    },
-    {
-     "name": "Alessandro Giuliano",
-     "nation": "ITA"
-    },
-    {
-     "name": "Anton Erkama",
-     "nation": "FIN"
-    },
-    {
-     "name": "Ilya Nesterov",
-     "nation": "EST"
-    },
-    {
-     "name": "Kenan Berdibayev",
-     "nation": "KAZ"
-    },
-    {
-     "name": "Matteo Marchioni",
-     "nation": "ITA"
-    },
-    {
-     "name": "Mehmet Uraz Ertas",
-     "nation": "TUR"
+     "nation": "LAT",
+     "time": "17:13",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Romulus Peltonen",
-     "nation": "FIN"
+     "nation": "FIN",
+     "time": "17:20",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Alessandro Giuliano",
+     "nation": "ITA",
+     "time": "17:28",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Kenan Berdibayev",
+     "nation": "KAZ",
+     "time": "17:35",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Anton Erkama",
+     "nation": "FIN",
+     "time": "17:48",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Ilya Nesterov",
+     "nation": "EST",
+     "time": "17:56",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Albin Samuelsson",
+     "nation": "SWE",
+     "time": "18:03",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Matteo Marchioni",
+     "nation": "ITA",
+     "time": "18:10",
+     "no": 9,
+     "warmup": 2
     },
     {
      "name": "Sandro de Angelo",
-     "nation": "SUI"
-    },
-    {
-     "name": "Tomas Strazds",
-     "nation": "LAT"
+     "nation": "SUI",
+     "time": "18:17",
+     "no": 10,
+     "warmup": 2
     }
    ],
    "live": {
@@ -54594,17 +54700,16 @@
     "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT005RS.htm",
     "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG009.htm",
     "names": {
-     "Ilya NESTEROV": "Ilya Nesterov",
-     "Anton ERKAMA": "Anton Erkama",
+     "Tomas STRAZDS": "Tomas Strazds",
+     "Akims KIRILOVS": "Akims Kirilovs",
      "Romulus PELTONEN": "Romulus Peltonen",
      "Alessandro GIULIANO": "Alessandro Giuliano",
-     "Matteo MARCHIONI": "Matteo Marchioni",
      "Kenan BERDIBAYEV": "Kenan Berdibayev",
-     "Akims KIRILOVS": "Akims Kirilovs",
-     "Tomas STRAZDS": "Tomas Strazds",
-     "Sandro de ANGELO": "Sandro de Angelo",
+     "Anton ERKAMA": "Anton Erkama",
+     "Ilya NESTEROV": "Ilya Nesterov",
      "Albin SAMUELSSON": "Albin Samuelsson",
-     "Mehmet Uraz ERTAS": "Mehmet Uraz Ertas"
+     "Matteo MARCHIONI": "Matteo Marchioni",
+     "Sandro de ANGELO": "Sandro de Angelo"
     },
     "basis": null
    },
@@ -56458,8 +56563,8 @@
    "level": "junior",
    "seg": "РТ",
    "title": "CS Tallinn Trophy — юниорские танцы РТ",
-   "start": "2026-11-21T15:30:00+03:00",
-   "end": "2026-11-21T18:15:00+03:00",
+   "start": "2026-11-21T15:45:00+03:00",
+   "end": "2026-11-21T18:30:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -56495,7 +56600,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Начало: 15:30 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Начало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Aletta Lanyi / Ilya Laurenau",
@@ -56712,8 +56817,8 @@
    "level": "senior",
    "seg": "РТ",
    "title": "CS Tallinn Trophy — танцы РТ",
-   "start": "2026-11-21T18:20:00+03:00",
-   "end": "2026-11-21T20:30:00+03:00",
+   "start": "2026-11-21T18:35:00+03:00",
+   "end": "2026-11-21T20:45:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -56745,7 +56850,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Начало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Начало: 18:35 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
@@ -56927,8 +57032,8 @@
    "level": "junior",
    "seg": "ПТ",
    "title": "CS Tallinn Trophy — юниорские танцы ПТ",
-   "start": "2026-11-22T13:00:00+03:00",
-   "end": "2026-11-22T16:00:00+03:00",
+   "start": "2026-11-22T13:10:00+03:00",
+   "end": "2026-11-22T16:10:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -56964,7 +57069,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Начало: 13:00 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Начало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Aletta Lanyi / Ilya Laurenau",
@@ -57081,8 +57186,8 @@
    "level": "senior",
    "seg": "ПТ",
    "title": "CS Tallinn Trophy — танцы ПТ",
-   "start": "2026-11-22T16:10:00+03:00",
-   "end": "2026-11-22T18:35:00+03:00",
+   "start": "2026-11-22T16:20:00+03:00",
+   "end": "2026-11-22T18:45:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -57114,7 +57219,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Начало: 16:10 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Начало: 16:20 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
@@ -94221,25 +94326,121 @@
    "n": "Melania Valentina Blecic",
    "c": "CRO",
    "k": "",
+   "p": "facdf82b510d",
    "was": "W",
-   "y": "2026/27",
-   "p": "facdf82b510d"
+   "y": "2026/27"
   },
   {
    "n": "Martina Lucchi",
    "c": "ITA",
    "k": "",
+   "p": "873de4f0d803",
    "was": "W",
-   "y": "2026/27",
-   "p": "873de4f0d803"
+   "y": "2026/27"
   },
   {
    "n": "Stefania Zagorovskaja",
    "c": "EST",
    "k": "",
+   "p": "83035ea06d40",
    "was": "W",
-   "y": "2026/27",
-   "p": "83035ea06d40"
+   "y": "2026/27"
+  },
+  {
+   "n": "Vilena Ivannikova",
+   "c": "EST",
+   "k": "",
+   "p": "5595ae3464b9",
+   "was": "W",
+   "y": "2026/27"
+  },
+  {
+   "n": "Alice Westling",
+   "c": "SWE",
+   "k": "",
+   "p": "f9b27aaec0e8",
+   "was": "W",
+   "y": "2026/27"
+  },
+  {
+   "n": "Alina Shavela",
+   "c": "EST",
+   "k": "",
+   "p": "69c249dcd531",
+   "was": "W",
+   "y": "2026/27"
+  },
+  {
+   "n": "Eleonora Ciferri",
+   "c": "ITA",
+   "k": "",
+   "p": "871cb28edd59",
+   "was": "W",
+   "y": "2026/27"
+  },
+  {
+   "n": "Natalie Tieva",
+   "c": "FIN",
+   "k": "",
+   "p": "2298a98de906",
+   "was": "W",
+   "y": "2026/27"
+  },
+  {
+   "n": "Pinja Peltola",
+   "c": "FIN",
+   "k": "",
+   "p": "5be1f127b474",
+   "was": "W",
+   "y": "2026/27"
+  },
+  {
+   "n": "Sofia Gaddo",
+   "c": "ITA",
+   "k": "",
+   "p": "33ad82b2a1ec",
+   "was": "W",
+   "y": "2026/27"
+  },
+  {
+   "n": "Saaga Volkova",
+   "c": "FIN",
+   "k": "",
+   "p": "811f8f02578c",
+   "was": "W",
+   "y": "2026/27"
+  },
+  {
+   "n": "Annabel Jaamu",
+   "c": "EST",
+   "k": "",
+   "p": "a49092ab6fc5",
+   "was": "W",
+   "y": "2026/27"
+  },
+  {
+   "n": "Marina Sekulovski",
+   "c": "SUI",
+   "k": "",
+   "p": "400077b737f7",
+   "was": "W",
+   "y": "2026/27"
+  },
+  {
+   "n": "Nella Andelin",
+   "c": "FIN",
+   "k": "",
+   "p": "22e2145b83e2",
+   "was": "W",
+   "y": "2026/27"
+  },
+  {
+   "n": "Sophia Jonsson Zhou",
+   "c": "SWE",
+   "k": "",
+   "p": "b14e1c315be3",
+   "was": "W",
+   "y": "2026/27"
   },
   {
    "n": "Veronika Zhilina",
@@ -94248,102 +94449,6 @@
    "was": "w",
    "y": "2026/27",
    "p": "72fb55b016fa"
-  },
-  {
-   "n": "Vilena Ivannikova",
-   "c": "EST",
-   "k": "",
-   "was": "W",
-   "y": "2026/27",
-   "p": "5595ae3464b9"
-  },
-  {
-   "n": "Alice Westling",
-   "c": "SWE",
-   "k": "",
-   "was": "W",
-   "y": "2026/27",
-   "p": "f9b27aaec0e8"
-  },
-  {
-   "n": "Alina Shavela",
-   "c": "EST",
-   "k": "",
-   "was": "W",
-   "y": "2026/27",
-   "p": "69c249dcd531"
-  },
-  {
-   "n": "Eleonora Ciferri",
-   "c": "ITA",
-   "k": "",
-   "was": "W",
-   "y": "2026/27",
-   "p": "871cb28edd59"
-  },
-  {
-   "n": "Natalie Tieva",
-   "c": "FIN",
-   "k": "",
-   "was": "W",
-   "y": "2026/27",
-   "p": "2298a98de906"
-  },
-  {
-   "n": "Pinja Peltola",
-   "c": "FIN",
-   "k": "",
-   "was": "W",
-   "y": "2026/27",
-   "p": "5be1f127b474"
-  },
-  {
-   "n": "Sofia Gaddo",
-   "c": "ITA",
-   "k": "",
-   "was": "W",
-   "y": "2026/27",
-   "p": "33ad82b2a1ec"
-  },
-  {
-   "n": "Saaga Volkova",
-   "c": "FIN",
-   "k": "",
-   "was": "W",
-   "y": "2026/27",
-   "p": "811f8f02578c"
-  },
-  {
-   "n": "Annabel Jaamu",
-   "c": "EST",
-   "k": "",
-   "was": "W",
-   "y": "2026/27",
-   "p": "a49092ab6fc5"
-  },
-  {
-   "n": "Marina Sekulovski",
-   "c": "SUI",
-   "k": "",
-   "was": "W",
-   "y": "2026/27",
-   "p": "400077b737f7"
-  },
-  {
-   "n": "Nella Andelin",
-   "c": "FIN",
-   "k": "",
-   "was": "W",
-   "y": "2026/27",
-   "p": "22e2145b83e2"
-  },
-  {
-   "n": "Sophia Jonsson Zhou",
-   "c": "SWE",
-   "k": "",
-   "was": "W",
-   "y": "2026/27",
-   "p": "b14e1c315be3"
   }
  ],
  "photos": {

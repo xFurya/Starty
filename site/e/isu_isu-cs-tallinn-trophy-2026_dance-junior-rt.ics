@@ -14,11 +14,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-tallinn-trophy-2026:dance-junior-rt@starty
-DTSTAMP:20261117T185717Z
-DTSTART;TZID=Europe/Moscow:20261121T153000
-DTEND;TZID=Europe/Moscow:20261121T181500
+DTSTAMP:20261117T200008Z
+DTSTART;TZID=Europe/Moscow:20261121T154500
+DTEND;TZID=Europe/Moscow:20261121T183000
 SUMMARY:CS Tallinn Trophy — юниорские танцы РТ
-DESCRIPTION:Начало: 15:30 МСК\nТрансляция: Ice-Stars.TV
+DESCRIPTION:Начало: 15:45 МСК\nТрансляция: Ice-Stars.TV
 LOCATION:Tallinn\, Estonia
 URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-tallinn-trophy-2026:dance
  -junior-rt
