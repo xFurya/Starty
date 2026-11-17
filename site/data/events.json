@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-17T17:52:56+03:00",
- "checked": "2026-11-17T16:56:25.470141+00:00",
+ "checked": "2026-11-17T17:00:27.126940+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -53849,7 +53849,7 @@
      "nation": "ITA",
      "no": 8,
      "warmup": 40,
-     "place": 24,
+     "place": 25,
      "points": "29.19"
     },
     {
@@ -53885,7 +53885,7 @@
     {
      "name": "Alina Shavela",
      "nation": "EST",
-     "place": 25,
+     "place": 26,
      "points": "26.98"
     },
     {
@@ -53984,7 +53984,9 @@
     },
     {
      "name": "Varvara Poder",
-     "nation": "EST"
+     "nation": "EST",
+     "place": 24,
+     "points": "32.54"
     },
     {
      "name": "Vilena Ivannikova",
