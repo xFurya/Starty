@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-17T17:52:56+03:00",
- "checked": "2026-11-17T17:52:56+03:00",
+ "checked": "2026-11-17T15:16:25.295602+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -53769,31 +53769,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Sofia Nekrassova",
+     "nation": "EST",
+     "points": "62.73"
+    },
+    {
+     "place": 2,
      "name": "Elizabeth Nou",
      "nation": "EST",
      "points": "51.13"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Sophia Jonsson Zhou",
      "nation": "SWE",
      "points": "50.81"
-    },
-    {
-     "place": 3,
-     "name": "Nella Andelin",
-     "nation": "FIN",
-     "points": "49.14"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Elizabeth Nou — 51.13\n2. Sophia Jonsson Zhou — 50.81\n3. Nella Andelin — 49.14\n\nНачало: 16:20 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Sofia Nekrassova — 62.73\n2. Elizabeth Nou — 51.13\n3. Sophia Jonsson Zhou — 50.81\n\nНачало: 16:20 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Nicole de Rosa",
      "nation": "ITA",
      "no": 1,
      "warmup": 0,
-     "place": 5,
+     "place": 7,
      "points": "43.85"
     },
     {
@@ -53801,7 +53801,7 @@
      "nation": "FIN",
      "no": 2,
      "warmup": 0,
-     "place": 3,
+     "place": 5,
      "points": "49.14"
     },
     {
@@ -53809,7 +53809,7 @@
      "nation": "CYP",
      "no": 3,
      "warmup": 0,
-     "place": 6,
+     "place": 8,
      "points": "41.95"
     },
     {
@@ -53817,7 +53817,7 @@
      "nation": "EST",
      "no": 4,
      "warmup": 0,
-     "place": 1,
+     "place": 2,
      "points": "51.13"
     },
     {
@@ -53825,7 +53825,7 @@
      "nation": "SWE",
      "no": 5,
      "warmup": 0,
-     "place": 2,
+     "place": 3,
      "points": "50.81"
     },
     {
@@ -53833,7 +53833,7 @@
      "nation": "ITA",
      "no": 6,
      "warmup": 40,
-     "place": 10,
+     "place": 12,
      "points": "38.41"
     },
     {
@@ -53841,7 +53841,7 @@
      "nation": "USA",
      "no": 7,
      "warmup": 40,
-     "place": 9,
+     "place": 11,
      "points": "40.18"
     },
     {
@@ -53849,7 +53849,7 @@
      "nation": "ITA",
      "no": 8,
      "warmup": 40,
-     "place": 11,
+     "place": 13,
      "points": "29.19"
     },
     {
@@ -53857,7 +53857,7 @@
      "nation": "FIN",
      "no": 9,
      "warmup": 40,
-     "place": 8,
+     "place": 10,
      "points": "40.60"
     },
     {
@@ -53865,7 +53865,7 @@
      "nation": "EST",
      "no": 10,
      "warmup": 40,
-     "place": 4,
+     "place": 6,
      "points": "48.77"
     },
     {
@@ -53873,7 +53873,7 @@
      "nation": "EST",
      "no": 11,
      "warmup": 20,
-     "place": 7,
+     "place": 9,
      "points": "40.72"
     },
     {
@@ -53942,7 +53942,9 @@
     },
     {
      "name": "Sofia Nekrassova",
-     "nation": "EST"
+     "nation": "EST",
+     "place": 1,
+     "points": "62.73"
     },
     {
      "name": "Sophie Erhardt",
@@ -53962,7 +53964,9 @@
     },
     {
      "name": "Vilena Ivannikova",
-     "nation": "EST"
+     "nation": "EST",
+     "place": 4,
+     "points": "49.60"
     }
    ],
    "provisional": true,
