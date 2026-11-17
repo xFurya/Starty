@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-17T20:54:57+03:00",
- "checked": "2026-11-17T18:32:03.348587+00:00",
+ "checked": "2026-11-17T18:36:03.350715+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -54126,7 +54126,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sandro de Angelo — 66.23\n\nНачало: 21:15 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Sandro de Angelo — 66.23\n2. Akims Kirilovs — 47.03\n\nНачало: 21:15 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Alessandro Giuliano",
@@ -54170,7 +54170,9 @@
      "nation": "LAT",
      "no": 2,
      "warmup": 1,
-     "time": "21:27"
+     "time": "21:27",
+     "place": 2,
+     "points": "47.03"
     },
     {
      "name": "Matteo Marchioni",
@@ -54235,6 +54237,12 @@
      "name": "Sandro de Angelo",
      "nation": "SUI",
      "points": "66.23"
+    },
+    {
+     "place": 2,
+     "name": "Akims Kirilovs",
+     "nation": "LAT",
+     "points": "47.03"
     }
    ],
    "provisional": true
