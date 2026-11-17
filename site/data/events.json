@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-17T20:54:57+03:00",
- "checked": "2026-11-17T18:48:03.488015+00:00",
+ "checked": "2026-11-17T18:52:03.329387+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -54126,7 +54126,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sandro de Angelo — 66.23\n2. Matteo Marchioni — 64.81\n3. Romulus Peltonen — 49.02\n\nНачало: 21:15 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Sandro de Angelo — 66.23\n2. Matteo Marchioni — 64.81\n3. Albin Samuelsson — 54.99\n\nНачало: 21:15 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Alessandro Giuliano",
@@ -54171,7 +54171,7 @@
      "no": 2,
      "warmup": 1,
      "time": "21:27",
-     "place": 4,
+     "place": 5,
      "points": "47.03"
     },
     {
@@ -54189,7 +54189,7 @@
      "no": 4,
      "warmup": 1,
      "time": "21:39",
-     "place": 3,
+     "place": 4,
      "points": "49.02"
     },
     {
@@ -54197,7 +54197,9 @@
      "nation": "SWE",
      "no": 5,
      "warmup": 1,
-     "time": "21:44"
+     "time": "21:44",
+     "place": 3,
+     "points": "54.99"
     },
     {
      "name": "Kenan Berdibayev",
@@ -54250,9 +54252,9 @@
     },
     {
      "place": 3,
-     "name": "Romulus Peltonen",
-     "nation": "FIN",
-     "points": "49.02"
+     "name": "Albin Samuelsson",
+     "nation": "SWE",
+     "points": "54.99"
     }
    ],
    "provisional": true
