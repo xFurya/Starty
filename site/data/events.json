@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-17T17:52:56+03:00",
- "checked": "2026-11-17T17:32:25.035932+00:00",
+ "checked": "2026-11-17T17:40:25.903169+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -53786,14 +53786,14 @@
      "points": "56.33"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sofia Nekrassova — 62.73\n2. Pinja Peltola — 57.53\n3. Sophie Erhardt — 56.33\n\nНачало: 16:20 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Sofia Nekrassova — 62.73\n2. Pinja Peltola — 57.53\n3. Sophie Erhardt — 56.33\n\nНачало: 16:20 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Nicole de Rosa",
      "nation": "ITA",
      "no": 1,
      "warmup": 0,
-     "place": 17,
+     "place": 18,
      "points": "43.85"
     },
     {
@@ -53809,7 +53809,7 @@
      "nation": "CYP",
      "no": 3,
      "warmup": 0,
-     "place": 18,
+     "place": 19,
      "points": "41.95"
     },
     {
@@ -53833,7 +53833,7 @@
      "nation": "ITA",
      "no": 6,
      "warmup": 40,
-     "place": 23,
+     "place": 24,
      "points": "38.41"
     },
     {
@@ -53841,7 +53841,7 @@
      "nation": "USA",
      "no": 7,
      "warmup": 40,
-     "place": 21,
+     "place": 22,
      "points": "40.18"
     },
     {
@@ -53849,7 +53849,7 @@
      "nation": "ITA",
      "no": 8,
      "warmup": 40,
-     "place": 29,
+     "place": 30,
      "points": "29.19"
     },
     {
@@ -53857,7 +53857,7 @@
      "nation": "FIN",
      "no": 9,
      "warmup": 40,
-     "place": 20,
+     "place": 21,
      "points": "40.60"
     },
     {
@@ -53873,7 +53873,7 @@
      "nation": "EST",
      "no": 11,
      "warmup": 20,
-     "place": 19,
+     "place": 20,
      "points": "40.72"
     },
     {
@@ -53885,13 +53885,13 @@
     {
      "name": "Alina Shavela",
      "nation": "EST",
-     "place": 30,
+     "place": 31,
      "points": "26.98"
     },
     {
      "name": "Ava Yu Tong Chen",
      "nation": "TPE",
-     "place": 22,
+     "place": 23,
      "points": "39.12"
     },
     {
@@ -53903,7 +53903,7 @@
     {
      "name": "Hedda Hedstrom",
      "nation": "SWE",
-     "place": 25,
+     "place": 26,
      "points": "36.80"
     },
     {
@@ -53924,12 +53924,14 @@
     },
     {
      "name": "Marina Sekulovski",
-     "nation": "SUI"
+     "nation": "SUI",
+     "place": 17,
+     "points": "43.94"
     },
     {
      "name": "Melania Valentina Blecic",
      "nation": "CRO",
-     "place": 24,
+     "place": 25,
      "points": "37.66"
     },
     {
@@ -53941,7 +53943,7 @@
     {
      "name": "Milana Siniavskyte",
      "nation": "LTU",
-     "place": 27,
+     "place": 28,
      "points": "36.30"
     },
     {
@@ -53987,13 +53989,13 @@
     {
      "name": "Thea Marie Kochergina Ullereng",
      "nation": "NOR",
-     "place": 26,
+     "place": 27,
      "points": "36.41"
     },
     {
      "name": "Varvara Poder",
      "nation": "EST",
-     "place": 28,
+     "place": 29,
      "points": "32.54"
     },
     {
@@ -54003,7 +54005,6 @@
      "points": "49.60"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG011.htm",
@@ -54044,7 +54045,7 @@
      "Pinja PELTOLA": "Pinja Peltola",
      "Marina SEKULOVSKI": "Marina Sekulovski"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
