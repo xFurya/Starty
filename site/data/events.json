@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-17T17:52:56+03:00",
- "checked": "2026-11-17T16:32:24.913244+00:00",
+ "checked": "2026-11-17T16:40:24.854654+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -53849,7 +53849,7 @@
      "nation": "ITA",
      "no": 8,
      "warmup": 40,
-     "place": 20,
+     "place": 21,
      "points": "29.19"
     },
     {
@@ -53885,7 +53885,7 @@
     {
      "name": "Alina Shavela",
      "nation": "EST",
-     "place": 21,
+     "place": 22,
      "points": "26.98"
     },
     {
@@ -53972,7 +53972,9 @@
     },
     {
      "name": "Thea Marie Kochergina Ullereng",
-     "nation": "NOR"
+     "nation": "NOR",
+     "place": 20,
+     "points": "36.41"
     },
     {
      "name": "Varvara Poder",
