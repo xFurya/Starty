@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T19:38:41+03:00",
- "checked": "2026-11-18T18:23:04.933306+00:00",
+ "checked": "2026-11-18T18:27:04.900047+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56011,7 +56011,9 @@
      "nation": "SWE",
      "time": "21:17",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 10,
+     "points": "49.87"
     },
     {
      "name": "Artur Smagulov",
@@ -100697,5 +100699,5 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  },
- "rev": "f7bd0962879991e8"
+ "rev": "d1bb4413b60115ae"
 }
