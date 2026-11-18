@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T19:38:41+03:00",
- "checked": "2026-11-18T18:27:04.900047+00:00",
+ "checked": "2026-11-18T18:35:04.926082+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55940,7 +55940,7 @@
      "time": "20:22",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "54.93"
     },
     {
@@ -55949,7 +55949,7 @@
      "time": "20:28",
      "no": 3,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "52.73"
     },
     {
@@ -55958,7 +55958,7 @@
      "time": "20:34",
      "no": 4,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "53.76"
     },
     {
@@ -55967,7 +55967,7 @@
      "time": "20:40",
      "no": 5,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "51.42"
     },
     {
@@ -55994,7 +55994,7 @@
      "time": "21:05",
      "no": 8,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "61.09"
     },
     {
@@ -56003,7 +56003,7 @@
      "time": "21:11",
      "no": 9,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "54.35"
     },
     {
@@ -56012,7 +56012,7 @@
      "time": "21:17",
      "no": 10,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "points": "49.87"
     },
     {
@@ -56020,7 +56020,9 @@
      "nation": "KAZ",
      "time": "21:23",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "61.09"
     },
     {
      "name": "Noah Bodenstein",
@@ -100699,5 +100701,5 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  },
- "rev": "d1bb4413b60115ae"
+ "rev": "cbc20d8915e4f457"
 }
