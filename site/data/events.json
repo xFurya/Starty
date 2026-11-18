@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T07:05:08+03:00",
- "checked": "2026-11-18T09:03:29.525378+00:00",
+ "checked": "2026-11-18T09:07:30.070388+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -54323,7 +54323,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Alina Shavela — 42.50\n\nНачало: 11:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Martina Lucchi — 59.15\n2. Alina Shavela — 42.50\n\nНачало: 11:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Alina Shavela",
@@ -54331,7 +54331,7 @@
      "time": "11:51",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "42.50"
     },
     {
@@ -54339,7 +54339,9 @@
      "nation": "ITA",
      "time": "11:58",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "59.15"
     },
     {
      "name": "Varvara Poder",
@@ -54589,6 +54591,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Martina Lucchi",
+     "nation": "ITA",
+     "points": "59.15"
+    },
+    {
+     "place": 2,
      "name": "Alina Shavela",
      "nation": "EST",
      "points": "42.50"
