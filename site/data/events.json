@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-18T15:08:09+03:00",
- "checked": "2026-11-18T13:11:29.871994+00:00",
- "complete": true,
+ "generated": "2026-11-18T15:56:44+03:00",
+ "checked": "2026-11-18T15:56:44+03:00",
+ "complete": false,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
   "Golden Skate": "ok",
-  "ФФКМ": "ok",
+  "ФФКМ": "календарь не открылся (https://ffkm.ru/season/competitions/calendar-of-sports-competitions/: <urlopen error timed out>)",
   "Самара": "ok"
  },
  "events": [
@@ -54337,18 +54337,24 @@
      "points": "105.17"
     },
     {
-     "place": 3,
+     "place": 2,
      "name": "Sophia Jonsson Zhou",
      "nation": "SWE",
      "points": "102.24"
+    },
+    {
+     "place": 3,
+     "name": "Mia Kasparovica",
+     "nation": "LAT",
+     "points": "90.15"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Oliviia Bazlova — 110.21\n2. Skylar Lautowa-peguero — 105.17\n3. Sophia Jonsson Zhou — 102.24\n\nНачало: 11:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Skylar Lautowa-peguero — 105.17\n2. Sophia Jonsson Zhou — 102.24\n3. Mia Kasparovica — 90.15\n\nНачало: 11:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Alice Westling",
      "nation": "SWE",
-     "place": 12,
+     "place": 11,
      "points": "84.82",
      "time": "14:32",
      "no": 19,
@@ -54357,7 +54363,7 @@
     {
      "name": "Alina Shavela",
      "nation": "EST",
-     "place": 28,
+     "place": 27,
      "points": "42.50",
      "time": "11:51",
      "no": 1,
@@ -54366,7 +54372,7 @@
     {
      "name": "Annabel Jaamu",
      "nation": "EST",
-     "place": 22,
+     "place": 21,
      "points": "71.42",
      "time": "13:36",
      "no": 12,
@@ -54375,7 +54381,7 @@
     {
      "name": "Ava Yu Tong Chen",
      "nation": "TPE",
-     "place": 25,
+     "place": 24,
      "points": "63.01",
      "time": "12:54",
      "no": 9,
@@ -54384,15 +54390,17 @@
     {
      "name": "Eleonora Ciferri",
      "nation": "ITA",
+     "place": 5,
+     "points": "87.35",
      "time": "15:07",
      "no": 21,
-     "warmup": 5,
-     "place": 6,
-     "points": "87.35"
+     "warmup": 5
     },
     {
      "name": "Elizabeth Nou",
      "nation": "EST",
+     "place": 10,
+     "points": "85.26",
      "time": "15:56",
      "no": 27,
      "warmup": 6,
@@ -54402,7 +54410,7 @@
     {
      "name": "Hedda Hedstrom",
      "nation": "SWE",
-     "place": 19,
+     "place": 18,
      "points": "74.27",
      "time": "12:33",
      "no": 6,
@@ -54411,16 +54419,16 @@
     {
      "name": "Karina Shesterikova",
      "nation": "EST",
+     "place": 4,
+     "points": "89.07",
      "time": "15:14",
      "no": 22,
-     "warmup": 5,
-     "place": 5,
-     "points": "89.07"
+     "warmup": 5
     },
     {
      "name": "Lidiia Tsukanova",
      "nation": "FIN",
-     "place": 7,
+     "place": 6,
      "points": "86.45",
      "time": "14:25",
      "no": 18,
@@ -54429,7 +54437,7 @@
     {
      "name": "Lilly Almgren-lidman",
      "nation": "SWE",
-     "place": 23,
+     "place": 22,
      "points": "71.27",
      "time": "14:18",
      "no": 17,
@@ -54438,7 +54446,7 @@
     {
      "name": "Marina Sekulovski",
      "nation": "SUI",
-     "place": 10,
+     "place": 9,
      "points": "85.45",
      "time": "13:57",
      "no": 15,
@@ -54447,7 +54455,7 @@
     {
      "name": "Martina Lucchi",
      "nation": "ITA",
-     "place": 26,
+     "place": 25,
      "points": "59.15",
      "time": "11:58",
      "no": 2,
@@ -54456,7 +54464,7 @@
     {
      "name": "Melania Valentina Blecic",
      "nation": "CRO",
-     "place": 20,
+     "place": 19,
      "points": "74.25",
      "time": "12:40",
      "no": 7,
@@ -54465,16 +54473,16 @@
     {
      "name": "Mia Kasparovica",
      "nation": "LAT",
+     "place": 3,
+     "points": "90.15",
      "time": "15:28",
      "no": 24,
-     "warmup": 5,
-     "place": 4,
-     "points": "90.15"
+     "warmup": 5
     },
     {
      "name": "Milana Siniavskyte",
      "nation": "LTU",
-     "place": 18,
+     "place": 17,
      "points": "74.63",
      "time": "12:12",
      "no": 4,
@@ -54483,7 +54491,7 @@
     {
      "name": "Natalie Tieva",
      "nation": "FIN",
-     "place": 24,
+     "place": 23,
      "points": "63.45",
      "time": "13:29",
      "no": 11,
@@ -54492,16 +54500,16 @@
     {
      "name": "Nella Andelin",
      "nation": "FIN",
+     "place": 12,
+     "points": "83.93",
      "time": "15:21",
      "no": 23,
-     "warmup": 5,
-     "place": 13,
-     "points": "83.93"
+     "warmup": 5
     },
     {
      "name": "Nicole de Rosa",
      "nation": "ITA",
-     "place": 16,
+     "place": 15,
      "points": "78.93",
      "time": "13:50",
      "no": 14,
@@ -54526,7 +54534,7 @@
     {
      "name": "Saaga Volkova",
      "nation": "FIN",
-     "place": 8,
+     "place": 7,
      "points": "85.84",
      "time": "14:11",
      "no": 16,
@@ -54544,7 +54552,7 @@
     {
      "name": "Sofia Gaddo",
      "nation": "ITA",
-     "place": 17,
+     "place": 16,
      "points": "76.37",
      "time": "12:47",
      "no": 8,
@@ -54560,6 +54568,8 @@
     {
      "name": "Sophia Jonsson Zhou",
      "nation": "SWE",
+     "place": 2,
+     "points": "102.24",
      "time": "15:49",
      "no": 26,
      "warmup": 6,
@@ -54576,7 +54586,7 @@
     {
      "name": "Stefania Zagorovskaja",
      "nation": "EST",
-     "place": 9,
+     "place": 8,
      "points": "85.58",
      "time": "14:39",
      "no": 20,
@@ -54585,7 +54595,7 @@
     {
      "name": "Thea Marie Kochergina Ullereng",
      "nation": "NOR",
-     "place": 21,
+     "place": 20,
      "points": "72.26",
      "time": "12:19",
      "no": 5,
@@ -54594,7 +54604,7 @@
     {
      "name": "Varvara Poder",
      "nation": "EST",
-     "place": 27,
+     "place": 26,
      "points": "57.35",
      "time": "12:05",
      "no": 3,
@@ -54603,7 +54613,7 @@
     {
      "name": "Vasilisa Bogomolova",
      "nation": "CYP",
-     "place": 14,
+     "place": 13,
      "points": "83.09",
      "time": "13:43",
      "no": 13,
@@ -54612,11 +54622,11 @@
     {
      "name": "Vilena Ivannikova",
      "nation": "EST",
+     "place": 14,
+     "points": "79.88",
      "time": "15:35",
      "no": 25,
-     "warmup": 5,
-     "place": 15,
-     "points": "79.88"
+     "warmup": 5
     }
    ],
    "provisional": true,
@@ -54626,11 +54636,18 @@
     "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT006RS.htm",
     "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG011.htm",
     "names": {
+     "Sophia JONSSON ZHOU": "Sophia Jonsson Zhou",
      "Skylar LAUTOWA-PEGUERO": "Skylar Lautowa-peguero",
+     "Mia KASPAROVICA": "Mia Kasparovica",
+     "Karina SHESTERIKOVA": "Karina Shesterikova",
+     "Elizabeth NOU": "Elizabeth Nou",
+     "Eleonora CIFERRI": "Eleonora Ciferri",
+     "Nella ANDELIN": "Nella Andelin",
      "Stefania ZAGOROVSKAJA": "Stefania Zagorovskaja",
      "Lidiia TSUKANOVA": "Lidiia Tsukanova",
      "Alice WESTLING": "Alice Westling",
      "Saaga VOLKOVA": "Saaga Volkova",
+     "Vilena IVANNIKOVA": "Vilena Ivannikova",
      "Marina SEKULOVSKI": "Marina Sekulovski",
      "Vasilisa BOGOMOLOVA": "Vasilisa Bogomolova",
      "Nicole de ROSA": "Nicole de Rosa",
@@ -54646,13 +54663,6 @@
      "Varvara PODER": "Varvara Poder",
      "Martina LUCCHI": "Martina Lucchi",
      "Alina SHAVELA": "Alina Shavela",
-     "Eleonora CIFERRI": "Eleonora Ciferri",
-     "Karina SHESTERIKOVA": "Karina Shesterikova",
-     "Nella ANDELIN": "Nella Andelin",
-     "Mia KASPAROVICA": "Mia Kasparovica",
-     "Vilena IVANNIKOVA": "Vilena Ivannikova",
-     "Sophia JONSSON ZHOU": "Sophia Jonsson Zhou",
-     "Elizabeth NOU": "Elizabeth Nou",
      "Oliviia BAZLOVA": "Oliviia Bazlova",
      "Sophie ERHARDT": "Sophie Erhardt",
      "Pinja PELTOLA": "Pinja Peltola",
@@ -55394,7 +55404,7 @@
    "seg": "КП",
    "title": "CS Tallinn Trophy — юниорские пары КП",
    "start": "2026-11-19T16:55:00+03:00",
-   "end": "2026-11-19T18:00:00+03:00",
+   "end": "2026-11-19T17:51:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -55421,32 +55431,53 @@
    "desc": "Начало: 16:55 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
-     "name": "Clelia Liget-latus / Allan Daniel Fisher",
-     "nation": "FRA"
-    },
-    {
-     "name": "Jolena Grohne / Manuel Rossi",
-     "nation": "ITA"
-    },
-    {
-     "name": "Laura Heckova / Alex Valky",
-     "nation": "SVK"
-    },
-    {
      "name": "Leontina Horcickova / Jindrich Klement",
-     "nation": "CZE"
-    },
-    {
-     "name": "Naomie Ismaili / Leo Rouvrais",
-     "nation": "FRA"
-    },
-    {
-     "name": "Romane Telemaque / Lucas Coulon",
-     "nation": "FRA"
+     "nation": "CZE",
+     "time": "17:01",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Злата Камалова / Данил Панов",
-     "nation": "GEO"
+     "nation": "GEO",
+     "time": "17:07",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Laura Heckova / Alex Valky",
+     "nation": "SVK",
+     "time": "17:13",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Romane Telemaque / Lucas Coulon",
+     "nation": "FRA",
+     "time": "17:25",
+     "no": 4,
+     "warmup": 2
+    },
+    {
+     "name": "Naomie Ismaili / Leo Rouvrais",
+     "nation": "FRA",
+     "time": "17:31",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Jolena Grohne / Manuel Rossi",
+     "nation": "ITA",
+     "time": "17:37",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Clelia Liget-latus / Allan Daniel Fisher",
+     "nation": "FRA",
+     "time": "17:43",
+     "no": 7,
+     "warmup": 2
     }
    ],
    "live": {
@@ -55456,12 +55487,12 @@
     "first": null,
     "names": {
      "Leontina HORCICKOVA / Jindrich KLEMENT": "Leontina Horcickova / Jindrich Klement",
-     "Naomie ISMAILI / Leo ROUVRAIS": "Naomie Ismaili / Leo Rouvrais",
-     "Clelia LIGET-LATUS / Allan Daniel FISHER": "Clelia Liget-latus / Allan Daniel Fisher",
-     "Romane TELEMAQUE / Lucas COULON": "Romane Telemaque / Lucas Coulon",
      "Zlata KAMALOVA / Danil PANOV": "Злата Камалова / Данил Панов",
+     "Laura HECKOVA / Alex VALKY": "Laura Heckova / Alex Valky",
+     "Romane TELEMAQUE / Lucas COULON": "Romane Telemaque / Lucas Coulon",
+     "Naomie ISMAILI / Leo ROUVRAIS": "Naomie Ismaili / Leo Rouvrais",
      "Jolena GROHNE / Manuel ROSSI": "Jolena Grohne / Manuel Rossi",
-     "Laura HECKOVA / Alex VALKY": "Laura Heckova / Alex Valky"
+     "Clelia LIGET-LATUS / Allan Daniel FISHER": "Clelia Liget-latus / Allan Daniel Fisher"
     },
     "basis": null
    },
@@ -55476,7 +55507,7 @@
    "seg": "КП",
    "title": "CS Tallinn Trophy — пары КП",
    "start": "2026-11-19T18:05:00+03:00",
-   "end": "2026-11-19T19:15:00+03:00",
+   "end": "2026-11-19T19:01:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -55487,7 +55518,6 @@
     "Debora Anna Cohen / Lukas Vochozka",
     "Irina Napolitano / Edoardo Comi",
     "Linzy Fitzpatrick / Keyton Bearinger",
-    "Megan Wessenberg / Denys Strekalin",
     "Miyu Yunoki / Tristan Taylor",
     "Olivia Flores / Mark Sadusky",
     "Reagan Moss / Jakub Galbavy",
@@ -55505,35 +55535,52 @@
    "field": [
     {
      "name": "Debora Anna Cohen / Lukas Vochozka",
-     "nation": "CZE"
-    },
-    {
-     "name": "Irina Napolitano / Edoardo Comi",
-     "nation": "ITA"
-    },
-    {
-     "name": "Linzy Fitzpatrick / Keyton Bearinger",
-     "nation": "USA"
-    },
-    {
-     "name": "Megan Wessenberg / Denys Strekalin",
-     "nation": "FRA"
+     "nation": "CZE",
+     "time": "18:11",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Miyu Yunoki / Tristan Taylor",
-     "nation": "CAN"
-    },
-    {
-     "name": "Olivia Flores / Mark Sadusky",
-     "nation": "USA"
+     "nation": "CAN",
+     "time": "18:17",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Reagan Moss / Jakub Galbavy",
-     "nation": "USA"
+     "nation": "USA",
+     "time": "18:23",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Xuanyu Liu / Wenbao Han",
-     "nation": "CHN"
+     "nation": "CHN",
+     "time": "18:35",
+     "no": 4,
+     "warmup": 2
+    },
+    {
+     "name": "Olivia Flores / Mark Sadusky",
+     "nation": "USA",
+     "time": "18:41",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Linzy Fitzpatrick / Keyton Bearinger",
+     "nation": "USA",
+     "time": "18:47",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Irina Napolitano / Edoardo Comi",
+     "nation": "ITA",
+     "time": "18:53",
+     "no": 7,
+     "warmup": 2
     }
    ],
    "live": {
@@ -55542,14 +55589,13 @@
     "cat": null,
     "first": null,
     "names": {
-     "Miyu YUNOKI / Tristan TAYLOR": "Miyu Yunoki / Tristan Taylor",
-     "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han",
      "Debora Anna COHEN / Lukas VOCHOZKA": "Debora Anna Cohen / Lukas Vochozka",
-     "Megan WESSENBERG / Denys STREKALIN": "Megan Wessenberg / Denys Strekalin",
-     "Irina NAPOLITANO / Edoardo COMI": "Irina Napolitano / Edoardo Comi",
-     "Linzy FITZPATRICK / Keyton BEARINGER": "Linzy Fitzpatrick / Keyton Bearinger",
+     "Miyu YUNOKI / Tristan TAYLOR": "Miyu Yunoki / Tristan Taylor",
+     "Reagan MOSS / Jakub GALBAVY": "Reagan Moss / Jakub Galbavy",
+     "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han",
      "Olivia FLORES / Mark SADUSKY": "Olivia Flores / Mark Sadusky",
-     "Reagan MOSS / Jakub GALBAVY": "Reagan Moss / Jakub Galbavy"
+     "Linzy FITZPATRICK / Keyton BEARINGER": "Linzy Fitzpatrick / Keyton Bearinger",
+     "Irina NAPOLITANO / Edoardo COMI": "Irina Napolitano / Edoardo Comi"
     },
     "basis": null
    },
@@ -56333,7 +56379,7 @@
    "seg": "ПП",
    "title": "CS Tallinn Trophy — пары ПП",
    "start": "2026-11-20T20:00:00+03:00",
-   "end": "2026-11-20T21:20:00+03:00",
+   "end": "2026-11-20T21:10:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -56344,7 +56390,6 @@
     "Debora Anna Cohen / Lukas Vochozka",
     "Irina Napolitano / Edoardo Comi",
     "Linzy Fitzpatrick / Keyton Bearinger",
-    "Megan Wessenberg / Denys Strekalin",
     "Miyu Yunoki / Tristan Taylor",
     "Olivia Flores / Mark Sadusky",
     "Reagan Moss / Jakub Galbavy",
@@ -56373,10 +56418,6 @@
      "nation": "USA"
     },
     {
-     "name": "Megan Wessenberg / Denys Strekalin",
-     "nation": "FRA"
-    },
-    {
      "name": "Miyu Yunoki / Tristan Taylor",
      "nation": "CAN"
     },
@@ -56402,7 +56443,6 @@
      "Miyu YUNOKI / Tristan TAYLOR": "Miyu Yunoki / Tristan Taylor",
      "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han",
      "Debora Anna COHEN / Lukas VOCHOZKA": "Debora Anna Cohen / Lukas Vochozka",
-     "Megan WESSENBERG / Denys STREKALIN": "Megan Wessenberg / Denys Strekalin",
      "Irina NAPOLITANO / Edoardo COMI": "Irina Napolitano / Edoardo Comi",
      "Linzy FITZPATRICK / Keyton BEARINGER": "Linzy Fitzpatrick / Keyton Bearinger",
      "Olivia FLORES / Mark SADUSKY": "Olivia Flores / Mark Sadusky",
@@ -97282,5 +97322,6 @@
   "Saaga Volkova": "photos/98959748fe870fba.jpg",
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
- }
+ },
+ "rev": "3c9e27359881c6b5"
 }
