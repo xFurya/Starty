@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-18T23:23:48+03:00",
- "checked": "2026-11-18T23:23:48+03:00",
+ "generated": "2026-11-19T00:26:38+03:00",
+ "checked": "2026-11-19T00:26:38+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -53757,13 +53757,6 @@
     "Vilena Ivannikova"
    ],
    "src": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
-   "watch": [
-    {
-     "name": "Ice-Stars.TV",
-     "url": "https://ice-stars.tv/tallinntrophy",
-     "note": "Платно"
-    }
-   ],
    "podium": [
     {
      "place": 1,
@@ -54087,6 +54080,13 @@
      "who": "Sophie Erhardt"
     }
    ],
+   "watch": [
+    {
+     "name": "Ice-Stars.TV",
+     "url": "https://ice-stars.tv/tallinntrophy",
+     "note": "Платно"
+    }
+   ],
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
@@ -54267,13 +54267,6 @@
     "Tomas Strazds"
    ],
    "src": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
-   "watch": [
-    {
-     "name": "Ice-Stars.TV",
-     "url": "https://ice-stars.tv/tallinntrophy",
-     "note": "Платно"
-    }
-   ],
    "podium": [
     {
      "place": 1,
@@ -54411,6 +54404,13 @@
      "kind": "score",
      "text": "Личный рекорд за КП: 64.81 (был 60.16)",
      "who": "Matteo Marchioni"
+    }
+   ],
+   "watch": [
+    {
+     "name": "Ice-Stars.TV",
+     "url": "https://ice-stars.tv/tallinntrophy",
+     "note": "Платно"
     }
    ],
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
@@ -57198,7 +57198,7 @@
    "seg": "ПП",
    "title": "CS Tallinn Trophy — мужчины ПП",
    "start": "2026-11-19T19:25:00+03:00",
-   "end": "2026-11-19T23:00:00+03:00",
+   "end": "2026-11-19T23:02:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -57243,138 +57243,161 @@
     {
      "name": "Larry Loupolover",
      "nation": "BUL",
+     "time": "19:31",
      "no": 1,
      "warmup": 1
     },
     {
      "name": "Noah Bodenstein",
      "nation": "SUI",
+     "time": "19:39",
      "no": 2,
      "warmup": 1
     },
     {
      "name": "Adrian Jimenez de Baldomero",
      "nation": "ESP",
+     "time": "19:46",
      "no": 3,
      "warmup": 1
     },
     {
      "name": "Hugo Bostedt",
      "nation": "SWE",
+     "time": "19:54",
      "no": 4,
      "warmup": 1
     },
     {
      "name": "Euken Alberdi",
      "nation": "ESP",
+     "time": "20:02",
      "no": 5,
      "warmup": 1
     },
     {
      "name": "Elias Sayed",
      "nation": "SWE",
+     "time": "20:16",
      "no": 6,
      "warmup": 2
     },
     {
      "name": "Ze Zeng Fang",
      "nation": "MAS",
+     "time": "20:24",
      "no": 7,
      "warmup": 2
     },
     {
      "name": "David Gouveia",
      "nation": "POR",
+     "time": "20:31",
      "no": 8,
      "warmup": 2
     },
     {
      "name": "Ian Vauclin",
      "nation": "FRA",
+     "time": "20:39",
      "no": 9,
      "warmup": 2
     },
     {
      "name": "Xavier Vauclin",
      "nation": "FRA",
+     "time": "20:47",
      "no": 10,
      "warmup": 2
     },
     {
      "name": "Douglas Gerber",
      "nation": "AUS",
+     "time": "20:54",
      "no": 11,
      "warmup": 2
     },
     {
      "name": "Jakub Lofek",
      "nation": "POL",
+     "time": "21:23",
      "no": 12,
      "warmup": 3
     },
     {
      "name": "Artur Smagulov",
      "nation": "KAZ",
+     "time": "21:31",
      "no": 13,
      "warmup": 3
     },
     {
      "name": "Francois Pitot",
      "nation": "FRA",
+     "time": "21:39",
      "no": 14,
      "warmup": 3
     },
     {
      "name": "Jimmy Ma",
      "nation": "USA",
+     "time": "21:46",
      "no": 15,
      "warmup": 3
     },
     {
      "name": "Matteo Nalbone",
      "nation": "ITA",
+     "time": "21:54",
      "no": 16,
      "warmup": 3
     },
     {
      "name": "Lukas Vaclavik",
      "nation": "SVK",
+     "time": "22:02",
      "no": 17,
      "warmup": 3
     },
     {
      "name": "Makar Suntsev",
      "nation": "FIN",
+     "time": "22:16",
      "no": 18,
      "warmup": 4
     },
     {
      "name": "Yu-Hsiang Li",
      "nation": "TPE",
+     "time": "22:24",
      "no": 19,
      "warmup": 4
     },
     {
      "name": "Anthony Paradis",
      "nation": "CAN",
+     "time": "22:31",
      "no": 20,
      "warmup": 4
     },
     {
      "name": "Vladimir Samoilov",
      "nation": "POL",
+     "time": "22:39",
      "no": 21,
      "warmup": 4
     },
     {
      "name": "Hyungyeom Kim",
      "nation": "KOR",
+     "time": "22:47",
      "no": 22,
      "warmup": 4
     },
     {
      "name": "Gabriele Frangipani",
      "nation": "ITA",
+     "time": "22:54",
      "no": 23,
      "warmup": 4
     }
@@ -59118,7 +59141,7 @@
    "seg": "РТ",
    "title": "CS Tallinn Trophy — юниорские танцы РТ",
    "start": "2026-11-21T15:45:00+03:00",
-   "end": "2026-11-21T18:30:00+03:00",
+   "end": "2026-11-21T18:15:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -59136,12 +59159,10 @@
     "Iris Lahti / Oskari Liedenpohja",
     "Kristyna Stanclova / Karel Kostron",
     "Lara Sundberg / Hector Gonzalez Elvira",
-    "Laura Finelli / Tommaso Barison",
     "Lea Hienne / Louis Varescon",
     "Lena Zerinvary-simon / Huba Gallai",
     "Lumia Sassi / Aarne Savola",
     "Maite van Mulders / Tudor Dominic Andrei",
-    "Mariia Teslia / Dmytro Teslia",
     "Martina Lavazza / Raphael Raymond Meunier",
     "Villo Mira Szilagyi / Istvan Jaracs",
     "Zoe Bianchi / Daniel Basile"
@@ -59197,10 +59218,6 @@
      "nation": "ESP"
     },
     {
-     "name": "Laura Finelli / Tommaso Barison",
-     "nation": "ITA"
-    },
-    {
      "name": "Lea Hienne / Louis Varescon",
      "nation": "FRA"
     },
@@ -59215,10 +59232,6 @@
     {
      "name": "Maite van Mulders / Tudor Dominic Andrei",
      "nation": "ROU"
-    },
-    {
-     "name": "Mariia Teslia / Dmytro Teslia",
-     "nation": "CZE"
     },
     {
      "name": "Martina Lavazza / Raphael Raymond Meunier",
@@ -59241,7 +59254,6 @@
     "names": {
      "Alexandra ROUSKOVA / Lukas TOMAN": "Alexandra Rouskova / Lukas Toman",
      "Kristyna STANCLOVA / Karel KOSTRON": "Kristyna Stanclova / Karel Kostron",
-     "Mariia TESLIA / Dmytro TESLIA": "Mariia Teslia / Dmytro Teslia",
      "Lara SUNDBERG / Hector GONZALEZ ELVIRA": "Lara Sundberg / Hector Gonzalez Elvira",
      "Iris LAHTI / Oskari LIEDENPOHJA": "Iris Lahti / Oskari Liedenpohja",
      "Lumia SASSI / Aarne SAVOLA": "Lumia Sassi / Aarne Savola",
@@ -59255,7 +59267,6 @@
      "Villo Mira SZILAGYI / Istvan JARACS": "Villo Mira Szilagyi / Istvan Jaracs",
      "Lena ZERINVARY-SIMON / Huba GALLAI": "Lena Zerinvary-simon / Huba Gallai",
      "Zoe BIANCHI / Daniel BASILE": "Zoe Bianchi / Daniel Basile",
-     "Laura FINELLI / Tommaso BARISON": "Laura Finelli / Tommaso Barison",
      "Martina LAVAZZA / Raphael Raymond MEUNIER": "Martina Lavazza / Raphael Raymond Meunier",
      "Maite van MULDERS / Tudor Dominic ANDREI": "Maite van Mulders / Tudor Dominic Andrei"
     },
@@ -60178,7 +60189,7 @@
    "seg": "ПТ",
    "title": "CS Tallinn Trophy — юниорские танцы ПТ",
    "start": "2026-11-22T13:10:00+03:00",
-   "end": "2026-11-22T16:10:00+03:00",
+   "end": "2026-11-22T15:55:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -60196,12 +60207,10 @@
     "Iris Lahti / Oskari Liedenpohja",
     "Kristyna Stanclova / Karel Kostron",
     "Lara Sundberg / Hector Gonzalez Elvira",
-    "Laura Finelli / Tommaso Barison",
     "Lea Hienne / Louis Varescon",
     "Lena Zerinvary-simon / Huba Gallai",
     "Lumia Sassi / Aarne Savola",
     "Maite van Mulders / Tudor Dominic Andrei",
-    "Mariia Teslia / Dmytro Teslia",
     "Martina Lavazza / Raphael Raymond Meunier",
     "Villo Mira Szilagyi / Istvan Jaracs",
     "Zoe Bianchi / Daniel Basile"
@@ -60257,10 +60266,6 @@
      "nation": "ESP"
     },
     {
-     "name": "Laura Finelli / Tommaso Barison",
-     "nation": "ITA"
-    },
-    {
      "name": "Lea Hienne / Louis Varescon",
      "nation": "FRA"
     },
@@ -60275,10 +60280,6 @@
     {
      "name": "Maite van Mulders / Tudor Dominic Andrei",
      "nation": "ROU"
-    },
-    {
-     "name": "Mariia Teslia / Dmytro Teslia",
-     "nation": "CZE"
     },
     {
      "name": "Martina Lavazza / Raphael Raymond Meunier",
@@ -60301,7 +60302,6 @@
     "names": {
      "Alexandra ROUSKOVA / Lukas TOMAN": "Alexandra Rouskova / Lukas Toman",
      "Kristyna STANCLOVA / Karel KOSTRON": "Kristyna Stanclova / Karel Kostron",
-     "Mariia TESLIA / Dmytro TESLIA": "Mariia Teslia / Dmytro Teslia",
      "Lara SUNDBERG / Hector GONZALEZ ELVIRA": "Lara Sundberg / Hector Gonzalez Elvira",
      "Iris LAHTI / Oskari LIEDENPOHJA": "Iris Lahti / Oskari Liedenpohja",
      "Lumia SASSI / Aarne SAVOLA": "Lumia Sassi / Aarne Savola",
@@ -60315,7 +60315,6 @@
      "Villo Mira SZILAGYI / Istvan JARACS": "Villo Mira Szilagyi / Istvan Jaracs",
      "Lena ZERINVARY-SIMON / Huba GALLAI": "Lena Zerinvary-simon / Huba Gallai",
      "Zoe BIANCHI / Daniel BASILE": "Zoe Bianchi / Daniel Basile",
-     "Laura FINELLI / Tommaso BARISON": "Laura Finelli / Tommaso Barison",
      "Martina LAVAZZA / Raphael Raymond MEUNIER": "Martina Lavazza / Raphael Raymond Meunier",
      "Maite van MULDERS / Tudor Dominic ANDREI": "Maite van Mulders / Tudor Dominic Andrei"
     },
@@ -100856,5 +100855,5 @@
   "Maxim Varakin": "photos/cebbaca1aac7632a.jpg",
   "Максим Варакин": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "4f19f0ffdd44e6af"
+ "rev": "a278c828a2dc135f"
 }
