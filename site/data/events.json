@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-17T23:00:08+03:00",
- "checked": "2026-11-17T23:00:08+03:00",
- "complete": true,
+ "generated": "2026-11-18T07:05:08+03:00",
+ "checked": "2026-11-18T07:05:08+03:00",
+ "complete": false,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
-  "Golden Skate": "ok",
+  "Golden Skate": "fail",
   "ФФКМ": "ok",
   "Самара": "ok"
  },
@@ -61262,6 +61262,7 @@
   "Polina Polushkina",
   "Polina Pozen",
   "Polina Tsurskaya",
+  "Polina Ustinkova",
   "Polina Velikanova",
   "Polina Vlasova",
   "Polina Yakobs",
@@ -73431,6 +73432,11 @@
    "was": "w",
    "y": "2018/19",
    "p": "80c9df0cd243"
+  },
+  {
+   "n": "Polina Ustinkova",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Polina Velikanova",
@@ -94449,6 +94455,22 @@
    "was": "w",
    "y": "2026/27",
    "p": "72fb55b016fa"
+  },
+  {
+   "n": "Alessandro Giuliano",
+   "c": "ITA",
+   "k": "",
+   "was": "M",
+   "y": "2026/27",
+   "p": "6196489188e5"
+  },
+  {
+   "n": "Tomas Strazds",
+   "c": "LAT",
+   "k": "",
+   "was": "M",
+   "y": "2026/27",
+   "p": "7ba178974b00"
   }
  ],
  "photos": {
@@ -97151,6 +97173,8 @@
   "Vilena Ivannikova": "photos/a93f2369a3f44f98.jpg",
   "Alice Westling": "photos/e84c50a31710fdee.jpg",
   "Natalie Tieva": "photos/468886aee5c54433.jpg",
-  "Saaga Volkova": "photos/98959748fe870fba.jpg"
+  "Saaga Volkova": "photos/98959748fe870fba.jpg",
+  "Caroline Toft": "photos/84b126242c70dc44.jpg",
+  "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  }
 }
