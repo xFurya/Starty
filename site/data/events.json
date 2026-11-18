@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T07:05:08+03:00",
- "checked": "2026-11-18T09:43:30.173927+00:00",
+ "checked": "2026-11-18T09:51:30.164171+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -54323,7 +54323,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Milana Siniavskyte — 74.63\n2. Hedda Hedstrom — 74.27\n3. Thea Marie Kochergina Ullereng — 72.26\n\nНачало: 11:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Milana Siniavskyte — 74.63\n2. Hedda Hedstrom — 74.27\n3. Melania Valentina Blecic — 74.25\n\nНачало: 11:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Alina Shavela",
@@ -54331,7 +54331,7 @@
      "time": "11:51",
      "no": 1,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "42.50"
     },
     {
@@ -54340,7 +54340,7 @@
      "time": "11:58",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "59.15"
     },
     {
@@ -54349,7 +54349,7 @@
      "time": "12:05",
      "no": 3,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "57.35"
     },
     {
@@ -54367,7 +54367,7 @@
      "time": "12:19",
      "no": 5,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "72.26"
     },
     {
@@ -54384,7 +54384,9 @@
      "nation": "CRO",
      "time": "12:40",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3,
+     "points": "74.25"
     },
     {
      "name": "Sofia Gaddo",
@@ -54611,9 +54613,9 @@
     },
     {
      "place": 3,
-     "name": "Thea Marie Kochergina Ullereng",
-     "nation": "NOR",
-     "points": "72.26"
+     "name": "Melania Valentina Blecic",
+     "nation": "CRO",
+     "points": "74.25"
     }
    ],
    "provisional": true
