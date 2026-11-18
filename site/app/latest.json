@@ -1,33 +1,11 @@
 {
- "version": "1.0.78",
- "code": 79,
- "notes": "Приложение экономнее расходует трафик и батарею.",
- "at": "2026-11-18T13:14:42Z",
+ "version": "1.0.79",
+ "code": 80,
+ "notes": "На планшете управление как на телефоне.",
+ "at": "2026-11-18T15:06:11Z",
  "android": {
-  "file": "starty-1.0.78.apk",
-  "size": 12877573,
-  "sha256": "1f3d6e69dc3374c201f3d270291b8f084275c2b22aac558b30ffdeb1183c6933"
- },
- "windows": {
-  "code": 79,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.78/Starty-windows.zip",
-  "size": 14917230,
-  "sha256": "3fb123f56687fa00b30c9f29c8e85d50d5042d2956183dcf30c53dd29c075d41",
-  "setup": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.78/starty-setup-1.0.78.exe",
-   "size": 12971708,
-   "sha256": "2646d579923328fd93eeee1140e89b9f00984cf0b5b3696c2e723718e1a9a3f6"
-  }
- },
- "macos": {
-  "code": 79,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.78/Starty-macos.zip",
-  "size": 22847645,
-  "sha256": "96023c16b2a1878a1318c2f7427c05495e4a6a6f546c4c5284f9c2df6730c1ef",
-  "dmg": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.78/Starty-macos.dmg",
-   "size": 26069596,
-   "sha256": "073d6a17a287deddb3adcf5d7530b4489d39b676bb337e900bf16dd034245153"
-  }
+  "file": "starty-1.0.79.apk",
+  "size": 12877717,
+  "sha256": "25a53d57362a80368468e611fa6d697ba4b51b733cb42529b7e96ec89bf7d5c9"
  }
 }
