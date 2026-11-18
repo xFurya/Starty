@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T19:38:41+03:00",
- "checked": "2026-11-18T17:31:03.341476+00:00",
+ "checked": "2026-11-18T17:39:03.767188+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55923,7 +55923,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Gabriele Frangipani — 80.96\n2. Ian Vauclin — 54.93\n\nНачало: 20:10 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Gabriele Frangipani — 80.96\n2. Ian Vauclin — 54.93\n3. Elias Sayed — 52.73\n\nНачало: 20:10 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Gabriele Frangipani",
@@ -55948,7 +55948,9 @@
      "nation": "SWE",
      "time": "20:28",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3,
+     "points": "52.73"
     },
     {
      "name": "Ze Zeng Fang",
@@ -56144,6 +56146,12 @@
      "name": "Ian Vauclin",
      "nation": "FRA",
      "points": "54.93"
+    },
+    {
+     "place": 3,
+     "name": "Elias Sayed",
+     "nation": "SWE",
+     "points": "52.73"
     }
    ],
    "provisional": true
@@ -100677,5 +100685,5 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  },
- "rev": "5822826d04a68ad2"
+ "rev": "2066449be3d4c6e8"
 }
