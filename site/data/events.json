@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T19:38:41+03:00",
- "checked": "2026-11-18T17:47:03.183732+00:00",
+ "checked": "2026-11-18T17:51:03.590019+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55966,7 +55966,9 @@
      "nation": "ESP",
      "time": "20:40",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5,
+     "points": "51.42"
     },
     {
      "name": "Jimmy Ma",
@@ -100687,5 +100689,5 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  },
- "rev": "2ad65447ec2d4cd9"
+ "rev": "3e4ce018388a5c26"
 }
