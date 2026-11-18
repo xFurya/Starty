@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-18T16:37:37+03:00",
- "checked": "2026-11-18T14:37:03.032644+00:00",
+ "generated": "2026-11-18T17:33:13+03:00",
+ "checked": "2026-11-18T17:33:13+03:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -54754,7 +54754,6 @@
     "Ilya Nesterov",
     "Kenan Berdibayev",
     "Matteo Marchioni",
-    "Romulus Peltonen",
     "Sandro de Angelo",
     "Tomas Strazds"
    ],
@@ -54766,107 +54765,6 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Kenan Berdibayev — 87.25\n2. Alessandro Giuliano — 83.65\n3. Akims Kirilovs — 81.61\n\nНачало: 17:00 МСК\nТрансляция: Ice-Stars.TV",
-   "field": [
-    {
-     "name": "Tomas Strazds",
-     "nation": "LAT",
-     "time": "17:06",
-     "no": 1,
-     "warmup": 1,
-     "place": 4,
-     "points": "50.10"
-    },
-    {
-     "name": "Akims Kirilovs",
-     "nation": "LAT",
-     "time": "17:13",
-     "no": 2,
-     "warmup": 1,
-     "place": 3,
-     "points": "81.61"
-    },
-    {
-     "name": "Romulus Peltonen",
-     "nation": "FIN",
-     "time": "17:20",
-     "no": 3,
-     "warmup": 1
-    },
-    {
-     "name": "Alessandro Giuliano",
-     "nation": "ITA",
-     "time": "17:28",
-     "no": 4,
-     "warmup": 1,
-     "place": 2,
-     "points": "83.65"
-    },
-    {
-     "name": "Kenan Berdibayev",
-     "nation": "KAZ",
-     "time": "17:35",
-     "no": 5,
-     "warmup": 1,
-     "place": 1,
-     "points": "87.25"
-    },
-    {
-     "name": "Anton Erkama",
-     "nation": "FIN",
-     "time": "17:48",
-     "no": 6,
-     "warmup": 2
-    },
-    {
-     "name": "Ilya Nesterov",
-     "nation": "EST",
-     "time": "17:56",
-     "no": 7,
-     "warmup": 2
-    },
-    {
-     "name": "Albin Samuelsson",
-     "nation": "SWE",
-     "time": "18:03",
-     "no": 8,
-     "warmup": 2
-    },
-    {
-     "name": "Matteo Marchioni",
-     "nation": "ITA",
-     "time": "18:10",
-     "no": 9,
-     "warmup": 2
-    },
-    {
-     "name": "Sandro de Angelo",
-     "nation": "SUI",
-     "time": "18:17",
-     "no": 10,
-     "warmup": 2
-    }
-   ],
-   "live": {
-    "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
-    "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG010.htm",
-    "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT005RS.htm",
-    "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG009.htm",
-    "names": {
-     "Tomas STRAZDS": "Tomas Strazds",
-     "Akims KIRILOVS": "Akims Kirilovs",
-     "Romulus PELTONEN": "Romulus Peltonen",
-     "Alessandro GIULIANO": "Alessandro Giuliano",
-     "Kenan BERDIBAYEV": "Kenan Berdibayev",
-     "Anton ERKAMA": "Anton Erkama",
-     "Ilya NESTEROV": "Ilya Nesterov",
-     "Albin SAMUELSSON": "Albin Samuelsson",
-     "Matteo MARCHIONI": "Matteo Marchioni",
-     "Sandro de ANGELO": "Sandro de Angelo"
-    },
-    "basis": null
-   },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
    "podium": [
     {
      "place": 1,
@@ -54887,7 +54785,102 @@
      "points": "81.61"
     }
    ],
-   "provisional": true
+   "desc": "Промежуточные итоги:\n1. Kenan Berdibayev — 87.25\n2. Alessandro Giuliano — 83.65\n3. Akims Kirilovs — 81.61\n\nНачало: 17:00 МСК\nТрансляция: Ice-Stars.TV",
+   "field": [
+    {
+     "name": "Akims Kirilovs",
+     "nation": "LAT",
+     "place": 3,
+     "points": "81.61",
+     "time": "17:13",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Albin Samuelsson",
+     "nation": "SWE",
+     "time": "18:03",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Alessandro Giuliano",
+     "nation": "ITA",
+     "place": 2,
+     "points": "83.65",
+     "time": "17:28",
+     "no": 4,
+     "warmup": 1,
+     "place": 2,
+     "points": "83.65"
+    },
+    {
+     "name": "Anton Erkama",
+     "nation": "FIN",
+     "time": "17:48",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Ilya Nesterov",
+     "nation": "EST",
+     "time": "17:56",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Kenan Berdibayev",
+     "nation": "KAZ",
+     "place": 1,
+     "points": "87.25",
+     "time": "17:35",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Matteo Marchioni",
+     "nation": "ITA",
+     "time": "18:10",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Sandro de Angelo",
+     "nation": "SUI",
+     "time": "18:17",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Tomas Strazds",
+     "nation": "LAT",
+     "place": 4,
+     "points": "50.10",
+     "time": "17:06",
+     "no": 1,
+     "warmup": 1
+    }
+   ],
+   "provisional": true,
+   "live": {
+    "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
+    "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG010.htm",
+    "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT005RS.htm",
+    "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG009.htm",
+    "names": {
+     "Kenan BERDIBAYEV": "Kenan Berdibayev",
+     "Alessandro GIULIANO": "Alessandro Giuliano",
+     "Akims KIRILOVS": "Akims Kirilovs",
+     "Tomas STRAZDS": "Tomas Strazds",
+     "Anton ERKAMA": "Anton Erkama",
+     "Ilya NESTEROV": "Ilya Nesterov",
+     "Albin SAMUELSSON": "Albin Samuelsson",
+     "Matteo MARCHIONI": "Matteo Marchioni",
+     "Sandro de ANGELO": "Sandro de Angelo"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:men-senior-kp",
@@ -97410,5 +97403,5 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  },
- "rev": "a44eb59dc6531e19"
+ "rev": "9b7cc3a02abbc095"
 }
