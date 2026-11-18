@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T19:38:41+03:00",
- "checked": "2026-11-18T17:51:03.590019+00:00",
+ "checked": "2026-11-18T17:59:03.125460+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55923,7 +55923,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Gabriele Frangipani — 80.96\n2. Ian Vauclin — 54.93\n3. Ze Zeng Fang — 53.76\n\nНачало: 20:10 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Gabriele Frangipani — 80.96\n2. Jimmy Ma — 64.64\n3. Ian Vauclin — 54.93\n\nНачало: 20:10 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Gabriele Frangipani",
@@ -55940,7 +55940,7 @@
      "time": "20:22",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "54.93"
     },
     {
@@ -55949,7 +55949,7 @@
      "time": "20:28",
      "no": 3,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "52.73"
     },
     {
@@ -55958,7 +55958,7 @@
      "time": "20:34",
      "no": 4,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "53.76"
     },
     {
@@ -55967,7 +55967,7 @@
      "time": "20:40",
      "no": 5,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "51.42"
     },
     {
@@ -55975,7 +55975,9 @@
      "nation": "USA",
      "time": "20:46",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "64.64"
     },
     {
      "name": "Hyungyeom Kim",
@@ -56147,15 +56149,15 @@
     },
     {
      "place": 2,
-     "name": "Ian Vauclin",
-     "nation": "FRA",
-     "points": "54.93"
+     "name": "Jimmy Ma",
+     "nation": "USA",
+     "points": "64.64"
     },
     {
      "place": 3,
-     "name": "Ze Zeng Fang",
-     "nation": "MAS",
-     "points": "53.76"
+     "name": "Ian Vauclin",
+     "nation": "FRA",
+     "points": "54.93"
     }
    ],
    "provisional": true
@@ -100689,5 +100691,5 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  },
- "rev": "3e4ce018388a5c26"
+ "rev": "0b1b9ffe02e3db64"
 }
