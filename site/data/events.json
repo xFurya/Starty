@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T07:05:08+03:00",
- "checked": "2026-11-18T09:51:30.164171+00:00",
+ "checked": "2026-11-18T09:59:29.362264+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -54323,7 +54323,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Milana Siniavskyte — 74.63\n2. Hedda Hedstrom — 74.27\n3. Melania Valentina Blecic — 74.25\n\nНачало: 11:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Sofia Gaddo — 76.37\n2. Milana Siniavskyte — 74.63\n3. Hedda Hedstrom — 74.27\n\nНачало: 11:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Alina Shavela",
@@ -54331,7 +54331,7 @@
      "time": "11:51",
      "no": 1,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "42.50"
     },
     {
@@ -54340,7 +54340,7 @@
      "time": "11:58",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "59.15"
     },
     {
@@ -54349,7 +54349,7 @@
      "time": "12:05",
      "no": 3,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "57.35"
     },
     {
@@ -54358,7 +54358,7 @@
      "time": "12:12",
      "no": 4,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "74.63"
     },
     {
@@ -54367,7 +54367,7 @@
      "time": "12:19",
      "no": 5,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "72.26"
     },
     {
@@ -54376,7 +54376,7 @@
      "time": "12:33",
      "no": 6,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "74.27"
     },
     {
@@ -54385,7 +54385,7 @@
      "time": "12:40",
      "no": 7,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "74.25"
     },
     {
@@ -54393,7 +54393,9 @@
      "nation": "ITA",
      "time": "12:47",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "76.37"
     },
     {
      "name": "Ava Yu Tong Chen",
@@ -54601,21 +54603,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Sofia Gaddo",
+     "nation": "ITA",
+     "points": "76.37"
+    },
+    {
+     "place": 2,
      "name": "Milana Siniavskyte",
      "nation": "LTU",
      "points": "74.63"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Hedda Hedstrom",
      "nation": "SWE",
      "points": "74.27"
-    },
-    {
-     "place": 3,
-     "name": "Melania Valentina Blecic",
-     "nation": "CRO",
-     "points": "74.25"
     }
    ],
    "provisional": true
