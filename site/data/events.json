@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T19:38:41+03:00",
- "checked": "2026-11-18T18:19:04.755201+00:00",
+ "checked": "2026-11-18T18:23:04.933306+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55949,7 +55949,7 @@
      "time": "20:28",
      "no": 3,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "52.73"
     },
     {
@@ -55958,7 +55958,7 @@
      "time": "20:34",
      "no": 4,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "53.76"
     },
     {
@@ -55967,7 +55967,7 @@
      "time": "20:40",
      "no": 5,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "51.42"
     },
     {
@@ -56002,7 +56002,9 @@
      "nation": "POR",
      "time": "21:11",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6,
+     "points": "54.35"
     },
     {
      "name": "Hugo Bostedt",
@@ -100695,5 +100697,5 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  },
- "rev": "9dcadfdcd0f9d844"
+ "rev": "f7bd0962879991e8"
 }
