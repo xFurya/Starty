@@ -41,22 +41,29 @@ jobs:
           echo "build=$BUILD" >> "$GITHUB_OUTPUT"
           echo "notes=$(head -n1 tools/release_note.txt)" >> "$GITHUB_OUTPUT"
 
-      - name: Ключ подписи из приватного репозитория
+      # Ключ — в закрытом репозитории проекта (starty-core, папка keystore/), он пришёл с исходниками и в
+      # коммиты витрины не попадает (.gitignore). Нет его там — запасная копия в xFurya/-VPN, как раньше.
+      - name: Ключ подписи из закрытого репозитория
         if: steps.num.outputs.new == 'true'
         env:
           VPN_PAT: ${{ secrets.VPN_PAT }}
         run: |
           set -euo pipefail
-          BASE="https://raw.githubusercontent.com/xFurya/-VPN/ccr-0ea504fd-67m7mq/starty/keystore"
-          fetch() {
-            local out="$1"; local url="$2"
-            for AUTH in "Bearer $VPN_PAT" "token $VPN_PAT"; do
-              if curl -fsSL -H "Authorization: $AUTH" -o "$out" "$url"; then return 0; fi
-            done
-            return 1
-          }
-          fetch app/android/starty-release.jks "$BASE/starty-release.jks"
-          fetch app/android/key.properties "$BASE/key.properties"
+          if [ -s keystore/starty-release.jks ] && grep -q '^keyAlias=' keystore/key.properties 2>/dev/null; then
+            cp keystore/starty-release.jks app/android/starty-release.jks
+            cp keystore/key.properties app/android/key.properties
+          else
+            BASE="https://raw.githubusercontent.com/xFurya/-VPN/ccr-0ea504fd-67m7mq/starty/keystore"
+            fetch() {
+              local out="$1"; local url="$2"
+              for AUTH in "Bearer $VPN_PAT" "token $VPN_PAT"; do
+                if curl -fsSL -H "Authorization: $AUTH" -o "$out" "$url"; then return 0; fi
+              done
+              return 1
+            }
+            fetch app/android/starty-release.jks "$BASE/starty-release.jks"
+            fetch app/android/key.properties "$BASE/key.properties"
+          fi
           sed -i "s|^storeFile=.*|storeFile=${PWD}/app/android/starty-release.jks|" app/android/key.properties
           test -s app/android/starty-release.jks
           grep -q '^keyAlias=' app/android/key.properties
