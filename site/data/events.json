@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T22:25:46+03:00",
- "checked": "2026-11-18T19:47:07.124349+00:00",
+ "checked": "2026-11-18T19:51:04.635005+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56117,7 +56117,9 @@
      "nation": "BUL",
      "time": "22:39",
      "no": 19,
-     "warmup": 4
+     "warmup": 4,
+     "place": 19,
+     "points": "36.51"
     },
     {
      "name": "Makar Suntsev",
@@ -100814,5 +100816,5 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  },
- "rev": "b2cc209c52795dd8"
+ "rev": "93f4c9c691fa9d90"
 }
