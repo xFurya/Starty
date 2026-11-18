@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T07:05:08+03:00",
- "checked": "2026-11-18T09:23:30.243104+00:00",
+ "checked": "2026-11-18T09:31:30.273665+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -54323,7 +54323,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Milana Siniavskyte — 74.63\n2. Martina Lucchi — 59.15\n3. Varvara Poder — 57.35\n\nНачало: 11:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Milana Siniavskyte — 74.63\n2. Thea Marie Kochergina Ullereng — 72.26\n3. Martina Lucchi — 59.15\n\nНачало: 11:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Alina Shavela",
@@ -54331,7 +54331,7 @@
      "time": "11:51",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "42.50"
     },
     {
@@ -54340,7 +54340,7 @@
      "time": "11:58",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "59.15"
     },
     {
@@ -54349,7 +54349,7 @@
      "time": "12:05",
      "no": 3,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "57.35"
     },
     {
@@ -54366,7 +54366,9 @@
      "nation": "NOR",
      "time": "12:19",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "72.26"
     },
     {
      "name": "Hedda Hedstrom",
@@ -54601,15 +54603,15 @@
     },
     {
      "place": 2,
-     "name": "Martina Lucchi",
-     "nation": "ITA",
-     "points": "59.15"
+     "name": "Thea Marie Kochergina Ullereng",
+     "nation": "NOR",
+     "points": "72.26"
     },
     {
      "place": 3,
-     "name": "Varvara Poder",
-     "nation": "EST",
-     "points": "57.35"
+     "name": "Martina Lucchi",
+     "nation": "ITA",
+     "points": "59.15"
     }
    ],
    "provisional": true
