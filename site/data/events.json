@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-18T15:56:44+03:00",
- "checked": "2026-11-18T13:31:30.260445+00:00",
- "complete": false,
+ "generated": "2026-11-18T16:17:07+03:00",
+ "checked": "2026-11-18T16:17:07+03:00",
+ "complete": true,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
   "Golden Skate": "ok",
-  "ФФКМ": "календарь не открылся (https://ffkm.ru/season/competitions/calendar-of-sports-competitions/: <urlopen error timed out>)",
+  "ФФКМ": "ok",
   "Самара": "ok"
  },
  "events": [
@@ -54341,14 +54341,20 @@
      "name": "Skylar Lautowa-peguero",
      "nation": "USA",
      "points": "105.17"
+    },
+    {
+     "place": 3,
+     "name": "Sophie Erhardt",
+     "nation": "GER",
+     "points": "105.10"
     }
    ],
-   "desc": "Итог:\n1. Sofia Nekrassova — 110.83\n2. Oliviia Bazlova — 110.21\n3. Skylar Lautowa-peguero — 105.17\n\nИтог турнира:\n1. Sofia Nekrassova — 173.56\n2. Oliviia Bazlova — 164.43\n3. Sophie Erhardt — 161.43\n\nПримечательное:\n• Sofia Nekrassova — Личный рекорд по сумме: 173.56 (был 168.83)\n• Sophie Erhardt — Личный рекорд по сумме: 161.43 (был 149.59)\n\nНачало: 11:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Oliviia Bazlova — 110.21\n2. Skylar Lautowa-peguero — 105.17\n3. Sophie Erhardt — 105.10\n\nНачало: 11:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Alice Westling",
      "nation": "SWE",
-     "place": 15,
+     "place": 14,
      "points": "84.82",
      "time": "14:32",
      "no": 19,
@@ -54358,7 +54364,7 @@
     {
      "name": "Alina Shavela",
      "nation": "EST",
-     "place": 31,
+     "place": 30,
      "points": "42.50",
      "time": "11:51",
      "no": 1,
@@ -54368,7 +54374,7 @@
     {
      "name": "Annabel Jaamu",
      "nation": "EST",
-     "place": 25,
+     "place": 24,
      "points": "71.42",
      "time": "13:36",
      "no": 12,
@@ -54378,7 +54384,7 @@
     {
      "name": "Ava Yu Tong Chen",
      "nation": "TPE",
-     "place": 28,
+     "place": 27,
      "points": "63.01",
      "time": "12:54",
      "no": 9,
@@ -54388,7 +54394,7 @@
     {
      "name": "Eleonora Ciferri",
      "nation": "ITA",
-     "place": 9,
+     "place": 8,
      "points": "87.35",
      "time": "15:07",
      "no": 21,
@@ -54398,17 +54404,16 @@
     {
      "name": "Elizabeth Nou",
      "nation": "EST",
-     "place": 14,
+     "place": 13,
      "points": "85.26",
      "time": "15:56",
      "no": 27,
-     "warmup": 6,
-     "final": 9
+     "warmup": 6
     },
     {
      "name": "Hedda Hedstrom",
      "nation": "SWE",
-     "place": 22,
+     "place": 21,
      "points": "74.27",
      "time": "12:33",
      "no": 6,
@@ -54418,7 +54423,7 @@
     {
      "name": "Karina Shesterikova",
      "nation": "EST",
-     "place": 8,
+     "place": 7,
      "points": "89.07",
      "time": "15:14",
      "no": 22,
@@ -54428,7 +54433,7 @@
     {
      "name": "Lidiia Tsukanova",
      "nation": "FIN",
-     "place": 10,
+     "place": 9,
      "points": "86.45",
      "time": "14:25",
      "no": 18,
@@ -54438,7 +54443,7 @@
     {
      "name": "Lilly Almgren-lidman",
      "nation": "SWE",
-     "place": 26,
+     "place": 25,
      "points": "71.27",
      "time": "14:18",
      "no": 17,
@@ -54448,7 +54453,7 @@
     {
      "name": "Marina Sekulovski",
      "nation": "SUI",
-     "place": 13,
+     "place": 12,
      "points": "85.45",
      "time": "13:57",
      "no": 15,
@@ -54458,7 +54463,7 @@
     {
      "name": "Martina Lucchi",
      "nation": "ITA",
-     "place": 29,
+     "place": 28,
      "points": "59.15",
      "time": "11:58",
      "no": 2,
@@ -54468,7 +54473,7 @@
     {
      "name": "Melania Valentina Blecic",
      "nation": "CRO",
-     "place": 23,
+     "place": 22,
      "points": "74.25",
      "time": "12:40",
      "no": 7,
@@ -54478,7 +54483,7 @@
     {
      "name": "Mia Kasparovica",
      "nation": "LAT",
-     "place": 7,
+     "place": 6,
      "points": "90.15",
      "time": "15:28",
      "no": 24,
@@ -54488,7 +54493,7 @@
     {
      "name": "Milana Siniavskyte",
      "nation": "LTU",
-     "place": 21,
+     "place": 20,
      "points": "74.63",
      "time": "12:12",
      "no": 4,
@@ -54498,7 +54503,7 @@
     {
      "name": "Natalie Tieva",
      "nation": "FIN",
-     "place": 27,
+     "place": 26,
      "points": "63.45",
      "time": "13:29",
      "no": 11,
@@ -54508,7 +54513,7 @@
     {
      "name": "Nella Andelin",
      "nation": "FIN",
-     "place": 16,
+     "place": 15,
      "points": "83.93",
      "time": "15:21",
      "no": 23,
@@ -54518,7 +54523,7 @@
     {
      "name": "Nicole de Rosa",
      "nation": "ITA",
-     "place": 19,
+     "place": 18,
      "points": "78.93",
      "time": "13:50",
      "no": 14,
@@ -54528,16 +54533,17 @@
     {
      "name": "Oliviia Bazlova",
      "nation": "CYP",
+     "place": 1,
+     "points": "110.21",
      "time": "16:03",
      "no": 28,
-     "warmup": 6,
-     "place": 2,
-     "points": "110.21",
-     "final": 2
+     "warmup": 6
     },
     {
      "name": "Pinja Peltola",
      "nation": "FIN",
+     "place": 5,
+     "points": "96.60",
      "time": "16:17",
      "no": 30,
      "warmup": 6,
@@ -54548,7 +54554,7 @@
     {
      "name": "Saaga Volkova",
      "nation": "FIN",
-     "place": 11,
+     "place": 10,
      "points": "85.84",
      "time": "14:11",
      "no": 16,
@@ -54568,7 +54574,7 @@
     {
      "name": "Sofia Gaddo",
      "nation": "ITA",
-     "place": 20,
+     "place": 19,
      "points": "76.37",
      "time": "12:47",
      "no": 8,
@@ -54588,16 +54594,17 @@
     {
      "name": "Sophia Jonsson Zhou",
      "nation": "SWE",
-     "place": 5,
+     "place": 4,
      "points": "102.24",
      "time": "15:49",
      "no": 26,
-     "warmup": 6,
-     "final": 5
+     "warmup": 6
     },
     {
      "name": "Sophie Erhardt",
      "nation": "GER",
+     "place": 3,
+     "points": "105.10",
      "time": "16:10",
      "no": 29,
      "warmup": 6,
@@ -54608,7 +54615,7 @@
     {
      "name": "Stefania Zagorovskaja",
      "nation": "EST",
-     "place": 12,
+     "place": 11,
      "points": "85.58",
      "time": "14:39",
      "no": 20,
@@ -54618,7 +54625,7 @@
     {
      "name": "Thea Marie Kochergina Ullereng",
      "nation": "NOR",
-     "place": 24,
+     "place": 23,
      "points": "72.26",
      "time": "12:19",
      "no": 5,
@@ -54628,7 +54635,7 @@
     {
      "name": "Varvara Poder",
      "nation": "EST",
-     "place": 30,
+     "place": 29,
      "points": "57.35",
      "time": "12:05",
      "no": 3,
@@ -54638,7 +54645,7 @@
     {
      "name": "Vasilisa Bogomolova",
      "nation": "CYP",
-     "place": 17,
+     "place": 16,
      "points": "83.09",
      "time": "13:43",
      "no": 13,
@@ -54648,7 +54655,7 @@
     {
      "name": "Vilena Ivannikova",
      "nation": "EST",
-     "place": 18,
+     "place": 17,
      "points": "79.88",
      "time": "15:35",
      "no": 25,
@@ -54662,6 +54669,9 @@
     "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT006RS.htm",
     "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG011.htm",
     "names": {
+     "Oliviia BAZLOVA": "Oliviia Bazlova",
+     "Sophie ERHARDT": "Sophie Erhardt",
+     "Pinja PELTOLA": "Pinja Peltola",
      "Sophia JONSSON ZHOU": "Sophia Jonsson Zhou",
      "Skylar LAUTOWA-PEGUERO": "Skylar Lautowa-peguero",
      "Mia KASPAROVICA": "Mia Kasparovica",
@@ -54689,9 +54699,6 @@
      "Varvara PODER": "Varvara Poder",
      "Martina LUCCHI": "Martina Lucchi",
      "Alina SHAVELA": "Alina Shavela",
-     "Oliviia BAZLOVA": "Oliviia Bazlova",
-     "Sophie ERHARDT": "Sophie Erhardt",
-     "Pinja PELTOLA": "Pinja Peltola",
      "Sofia NEKRASSOVA": "Sofia Nekrassova"
     },
     "basis": "judges"
@@ -97381,5 +97388,5 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  },
- "rev": "3c9e27359881c6b5"
+ "rev": "aeee2f54a31a1934"
 }
