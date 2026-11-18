@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T15:56:44+03:00",
- "checked": "2026-11-18T13:15:31.139978+00:00",
+ "checked": "2026-11-18T13:23:30.018214+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -54348,7 +54348,7 @@
     {
      "name": "Alice Westling",
      "nation": "SWE",
-     "place": 13,
+     "place": 14,
      "points": "84.82",
      "time": "14:32",
      "no": 19,
@@ -54357,7 +54357,7 @@
     {
      "name": "Alina Shavela",
      "nation": "EST",
-     "place": 29,
+     "place": 30,
      "points": "42.50",
      "time": "11:51",
      "no": 1,
@@ -54366,7 +54366,7 @@
     {
      "name": "Annabel Jaamu",
      "nation": "EST",
-     "place": 23,
+     "place": 24,
      "points": "71.42",
      "time": "13:36",
      "no": 12,
@@ -54375,7 +54375,7 @@
     {
      "name": "Ava Yu Tong Chen",
      "nation": "TPE",
-     "place": 26,
+     "place": 27,
      "points": "63.01",
      "time": "12:54",
      "no": 9,
@@ -54384,7 +54384,7 @@
     {
      "name": "Eleonora Ciferri",
      "nation": "ITA",
-     "place": 7,
+     "place": 8,
      "points": "87.35",
      "time": "15:07",
      "no": 21,
@@ -54393,7 +54393,7 @@
     {
      "name": "Elizabeth Nou",
      "nation": "EST",
-     "place": 12,
+     "place": 13,
      "points": "85.26",
      "time": "15:56",
      "no": 27,
@@ -54402,7 +54402,7 @@
     {
      "name": "Hedda Hedstrom",
      "nation": "SWE",
-     "place": 20,
+     "place": 21,
      "points": "74.27",
      "time": "12:33",
      "no": 6,
@@ -54411,7 +54411,7 @@
     {
      "name": "Karina Shesterikova",
      "nation": "EST",
-     "place": 6,
+     "place": 7,
      "points": "89.07",
      "time": "15:14",
      "no": 22,
@@ -54420,7 +54420,7 @@
     {
      "name": "Lidiia Tsukanova",
      "nation": "FIN",
-     "place": 8,
+     "place": 9,
      "points": "86.45",
      "time": "14:25",
      "no": 18,
@@ -54429,7 +54429,7 @@
     {
      "name": "Lilly Almgren-lidman",
      "nation": "SWE",
-     "place": 24,
+     "place": 25,
      "points": "71.27",
      "time": "14:18",
      "no": 17,
@@ -54438,7 +54438,7 @@
     {
      "name": "Marina Sekulovski",
      "nation": "SUI",
-     "place": 11,
+     "place": 12,
      "points": "85.45",
      "time": "13:57",
      "no": 15,
@@ -54447,7 +54447,7 @@
     {
      "name": "Martina Lucchi",
      "nation": "ITA",
-     "place": 27,
+     "place": 28,
      "points": "59.15",
      "time": "11:58",
      "no": 2,
@@ -54456,7 +54456,7 @@
     {
      "name": "Melania Valentina Blecic",
      "nation": "CRO",
-     "place": 21,
+     "place": 22,
      "points": "74.25",
      "time": "12:40",
      "no": 7,
@@ -54465,7 +54465,7 @@
     {
      "name": "Mia Kasparovica",
      "nation": "LAT",
-     "place": 5,
+     "place": 6,
      "points": "90.15",
      "time": "15:28",
      "no": 24,
@@ -54474,7 +54474,7 @@
     {
      "name": "Milana Siniavskyte",
      "nation": "LTU",
-     "place": 19,
+     "place": 20,
      "points": "74.63",
      "time": "12:12",
      "no": 4,
@@ -54483,7 +54483,7 @@
     {
      "name": "Natalie Tieva",
      "nation": "FIN",
-     "place": 25,
+     "place": 26,
      "points": "63.45",
      "time": "13:29",
      "no": 11,
@@ -54492,7 +54492,7 @@
     {
      "name": "Nella Andelin",
      "nation": "FIN",
-     "place": 14,
+     "place": 15,
      "points": "83.93",
      "time": "15:21",
      "no": 23,
@@ -54501,7 +54501,7 @@
     {
      "name": "Nicole de Rosa",
      "nation": "ITA",
-     "place": 17,
+     "place": 18,
      "points": "78.93",
      "time": "13:50",
      "no": 14,
@@ -54521,12 +54521,14 @@
      "nation": "FIN",
      "time": "16:17",
      "no": 30,
-     "warmup": 6
+     "warmup": 6,
+     "place": 5,
+     "points": "96.60"
     },
     {
      "name": "Saaga Volkova",
      "nation": "FIN",
-     "place": 9,
+     "place": 10,
      "points": "85.84",
      "time": "14:11",
      "no": 16,
@@ -54544,7 +54546,7 @@
     {
      "name": "Sofia Gaddo",
      "nation": "ITA",
-     "place": 18,
+     "place": 19,
      "points": "76.37",
      "time": "12:47",
      "no": 8,
@@ -54578,7 +54580,7 @@
     {
      "name": "Stefania Zagorovskaja",
      "nation": "EST",
-     "place": 10,
+     "place": 11,
      "points": "85.58",
      "time": "14:39",
      "no": 20,
@@ -54587,7 +54589,7 @@
     {
      "name": "Thea Marie Kochergina Ullereng",
      "nation": "NOR",
-     "place": 22,
+     "place": 23,
      "points": "72.26",
      "time": "12:19",
      "no": 5,
@@ -54596,7 +54598,7 @@
     {
      "name": "Varvara Poder",
      "nation": "EST",
-     "place": 28,
+     "place": 29,
      "points": "57.35",
      "time": "12:05",
      "no": 3,
@@ -54605,7 +54607,7 @@
     {
      "name": "Vasilisa Bogomolova",
      "nation": "CYP",
-     "place": 15,
+     "place": 16,
      "points": "83.09",
      "time": "13:43",
      "no": 13,
@@ -54614,7 +54616,7 @@
     {
      "name": "Vilena Ivannikova",
      "nation": "EST",
-     "place": 16,
+     "place": 17,
      "points": "79.88",
      "time": "15:35",
      "no": 25,
