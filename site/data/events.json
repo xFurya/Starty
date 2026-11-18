@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T19:38:41+03:00",
- "checked": "2026-11-18T18:35:04.926082+00:00",
+ "checked": "2026-11-18T18:43:04.488229+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56029,7 +56029,9 @@
      "nation": "SUI",
      "time": "21:29",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 12,
+     "points": "43.48"
     },
     {
      "name": "Francois Pitot",
@@ -100701,5 +100703,5 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  },
- "rev": "cbc20d8915e4f457"
+ "rev": "aff74daba05e16e0"
 }
