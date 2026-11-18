@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T22:45:47+03:00",
- "checked": "2026-11-18T20:03:04.307849+00:00",
+ "checked": "2026-11-18T20:07:04.603286+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55959,7 +55959,7 @@
      "nation": "FRA",
      "no": 2,
      "warmup": 1,
-     "place": 13,
+     "place": 14,
      "points": "54.93",
      "time": "20:22"
     },
@@ -55968,7 +55968,7 @@
      "nation": "SWE",
      "no": 3,
      "warmup": 1,
-     "place": 16,
+     "place": 17,
      "points": "52.73",
      "time": "20:28"
     },
@@ -55977,7 +55977,7 @@
      "nation": "MAS",
      "no": 4,
      "warmup": 1,
-     "place": 15,
+     "place": 16,
      "points": "53.76",
      "time": "20:34"
     },
@@ -55986,7 +55986,7 @@
      "nation": "ESP",
      "no": 5,
      "warmup": 1,
-     "place": 17,
+     "place": 18,
      "points": "51.42",
      "time": "20:40"
     },
@@ -56022,7 +56022,7 @@
      "nation": "POR",
      "no": 9,
      "warmup": 30,
-     "place": 14,
+     "place": 15,
      "points": "54.35",
      "time": "21:11"
     },
@@ -56031,7 +56031,7 @@
      "nation": "SWE",
      "no": 10,
      "warmup": 30,
-     "place": 18,
+     "place": 19,
      "points": "49.87",
      "time": "21:17"
     },
@@ -56049,7 +56049,7 @@
      "nation": "SUI",
      "no": 12,
      "warmup": 30,
-     "place": 19,
+     "place": 20,
      "points": "43.48",
      "time": "21:29"
     },
@@ -56112,7 +56112,7 @@
      "nation": "BUL",
      "no": 19,
      "warmup": 30,
-     "place": 20,
+     "place": 21,
      "points": "36.51",
      "time": "22:39"
     },
@@ -56151,7 +56151,9 @@
      "nation": "FRA",
      "time": "22:57",
      "no": 22,
-     "warmup": 4
+     "warmup": 4,
+     "place": 13,
+     "points": "55.08"
     }
    ],
    "provisional": true,
@@ -100818,5 +100820,5 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  },
- "rev": "23e03172f92fdf67"
+ "rev": "f99414b26509c7a0"
 }
