@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T17:33:13+03:00",
- "checked": "2026-11-18T17:33:13+03:00",
+ "checked": "2026-11-18T14:49:34.158684+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -54768,29 +54768,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Anton Erkama",
+     "nation": "FIN",
+     "points": "106.94"
+    },
+    {
+     "place": 2,
      "name": "Kenan Berdibayev",
      "nation": "KAZ",
      "points": "87.25"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Alessandro Giuliano",
      "nation": "ITA",
      "points": "83.65"
-    },
-    {
-     "place": 3,
-     "name": "Akims Kirilovs",
-     "nation": "LAT",
-     "points": "81.61"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Kenan Berdibayev — 87.25\n2. Alessandro Giuliano — 83.65\n3. Akims Kirilovs — 81.61\n\nНачало: 17:00 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Anton Erkama — 106.94\n2. Kenan Berdibayev — 87.25\n3. Alessandro Giuliano — 83.65\n\nНачало: 17:00 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Akims Kirilovs",
      "nation": "LAT",
-     "place": 3,
+     "place": 4,
      "points": "81.61",
      "time": "17:13",
      "no": 2,
@@ -54806,20 +54806,20 @@
     {
      "name": "Alessandro Giuliano",
      "nation": "ITA",
-     "place": 2,
+     "place": 3,
      "points": "83.65",
      "time": "17:28",
      "no": 4,
-     "warmup": 1,
-     "place": 2,
-     "points": "83.65"
+     "warmup": 1
     },
     {
      "name": "Anton Erkama",
      "nation": "FIN",
      "time": "17:48",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "106.94"
     },
     {
      "name": "Ilya Nesterov",
@@ -54831,7 +54831,7 @@
     {
      "name": "Kenan Berdibayev",
      "nation": "KAZ",
-     "place": 1,
+     "place": 2,
      "points": "87.25",
      "time": "17:35",
      "no": 5,
@@ -54854,7 +54854,7 @@
     {
      "name": "Tomas Strazds",
      "nation": "LAT",
-     "place": 4,
+     "place": 5,
      "points": "50.10",
      "time": "17:06",
      "no": 1,
@@ -97403,5 +97403,5 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  },
- "rev": "9b7cc3a02abbc095"
+ "rev": "3af6690d10cbf654"
 }
