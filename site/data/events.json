@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T19:38:41+03:00",
- "checked": "2026-11-18T19:23:04.350262+00:00",
+ "checked": "2026-11-18T19:31:05.049855+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55940,7 +55940,7 @@
      "time": "20:22",
      "no": 2,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "points": "54.93"
     },
     {
@@ -55949,7 +55949,7 @@
      "time": "20:28",
      "no": 3,
      "warmup": 1,
-     "place": 13,
+     "place": 14,
      "points": "52.73"
     },
     {
@@ -55958,7 +55958,7 @@
      "time": "20:34",
      "no": 4,
      "warmup": 1,
-     "place": 12,
+     "place": 13,
      "points": "53.76"
     },
     {
@@ -55967,7 +55967,7 @@
      "time": "20:40",
      "no": 5,
      "warmup": 1,
-     "place": 14,
+     "place": 15,
      "points": "51.42"
     },
     {
@@ -55976,7 +55976,7 @@
      "time": "20:46",
      "no": 6,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "64.64"
     },
     {
@@ -55994,7 +55994,7 @@
      "time": "21:05",
      "no": 8,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "61.09"
     },
     {
@@ -56003,7 +56003,7 @@
      "time": "21:11",
      "no": 9,
      "warmup": 2,
-     "place": 11,
+     "place": 12,
      "points": "54.35"
     },
     {
@@ -56012,7 +56012,7 @@
      "time": "21:17",
      "no": 10,
      "warmup": 2,
-     "place": 15,
+     "place": 16,
      "points": "49.87"
     },
     {
@@ -56021,7 +56021,7 @@
      "time": "21:23",
      "no": 11,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "61.09"
     },
     {
@@ -56030,7 +56030,7 @@
      "time": "21:29",
      "no": 12,
      "warmup": 2,
-     "place": 16,
+     "place": 17,
      "points": "43.48"
     },
     {
@@ -56039,7 +56039,7 @@
      "time": "21:56",
      "no": 13,
      "warmup": 3,
-     "place": 6,
+     "place": 7,
      "points": "62.46"
     },
     {
@@ -56048,7 +56048,7 @@
      "time": "22:02",
      "no": 14,
      "warmup": 3,
-     "place": 4,
+     "place": 5,
      "points": "66.26"
     },
     {
@@ -56066,7 +56066,7 @@
      "time": "22:14",
      "no": 16,
      "warmup": 3,
-     "place": 9,
+     "place": 10,
      "points": "56.73"
     },
     {
@@ -56074,7 +56074,9 @@
      "nation": "TPE",
      "time": "22:20",
      "no": 17,
-     "warmup": 3
+     "warmup": 3,
+     "place": 4,
+     "points": "72.07"
     },
     {
      "name": "Matteo Nalbone",
@@ -100711,5 +100713,5 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  },
- "rev": "16a6960b42176307"
+ "rev": "081a9dace7a6f069"
 }
