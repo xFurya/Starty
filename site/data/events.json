@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T16:37:37+03:00",
- "checked": "2026-11-18T16:37:37+03:00",
+ "checked": "2026-11-18T14:17:02.845462+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -54766,14 +54766,16 @@
      "note": "Платно"
     }
    ],
-   "desc": "Начало: 17:00 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Tomas Strazds — 50.10\n\nНачало: 17:00 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Tomas Strazds",
      "nation": "LAT",
      "time": "17:06",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "50.10"
     },
     {
      "name": "Akims Kirilovs",
@@ -54858,7 +54860,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Tomas Strazds",
+     "nation": "LAT",
+     "points": "50.10"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:men-senior-kp",
