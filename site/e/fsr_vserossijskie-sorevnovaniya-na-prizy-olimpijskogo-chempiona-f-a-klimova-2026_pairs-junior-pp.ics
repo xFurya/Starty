@@ -1,0 +1,45 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-kli
+ mova-2026:pairs-junior-pp@starty
+DTSTAMP:20261118T163841Z
+DTSTART;TZID=Europe/Moscow:20261118T174000
+DTEND;TZID=Europe/Moscow:20261118T190500
+SUMMARY:На призы Климова — юниорские пары ПП
+DESCRIPTION:Итог:\n1. Полина Павловна Шешелева / 
+ Егор Евгеньевич Карнаухов — 130.46\n2. Таиси
+ я Денисовна Гусева / Даниил Дмитриевич О
+ вчинников — 123.89\n3. Полина Ильинична Сажи
+ на / Алексей Андреевич Белкин — 121.80\n\nИто
+ г турнира:\n1. Таисия Денисовна Гусева / Да
+ ниил Дмитриевич Овчинников — 199.89\n2. Поли
+ на Павловна Шешелева / Егор Евгеньевич К
+ арнаухов — 199.67\n3. Полина Ильинична Сажин
+ а / Алексей Андреевич Белкин — 192.83\n\nНача
+ ло: 17:40 МСК\nТрансляция: Первый канал
+LOCATION:ДC «Большой» (демонстрационная арен
+ а)\, Сириус
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-na-p
+ rizy-olimpijskogo-chempiona-f-a-klimova-2026:pairs-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:На призы Климова — юниорские пары 
+ ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-senior-p
+ p@starty
+DTSTAMP:20261118T163841Z
+DTSTART;TZID=Europe/Moscow:20261126T093000
+DTEND;TZID=Europe/Moscow:20261126T121500
+SUMMARY:Тюменский меридиан — женщины ПП
+DESCRIPTION:Начало: 09:30 МСК\nТрансляция: Первый 
+ канал
+LOCATION:«Каток Прибой»\, Тюмень
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-tyum
+ enskij-meridian-2026:women-senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Тюменский меридиан — женщины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
