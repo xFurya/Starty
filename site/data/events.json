@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T07:05:08+03:00",
- "checked": "2026-11-18T07:05:08+03:00",
+ "checked": "2026-11-18T09:03:29.525378+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -54323,14 +54323,16 @@
      "note": "Платно"
     }
    ],
-   "desc": "Начало: 11:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Alina Shavela — 42.50\n\nНачало: 11:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Alina Shavela",
      "nation": "EST",
      "time": "11:51",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "42.50"
     },
     {
      "name": "Martina Lucchi",
@@ -54583,7 +54585,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Alina Shavela",
+     "nation": "EST",
+     "points": "42.50"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:men-junior-pp",
