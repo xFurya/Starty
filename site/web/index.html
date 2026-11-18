@@ -70,5 +70,9 @@
     })();
   </script>
   <script src="flutter_bootstrap.js" async></script>
+  <script>
+    // оболочка из своего кэша, пока сборка на сайте та же (см. sw.js)
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function () {});
+  </script>
 </body>
 </html>
