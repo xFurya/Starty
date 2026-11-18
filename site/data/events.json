@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-18T23:03:03+03:00",
- "checked": "2026-11-18T23:03:03+03:00",
+ "generated": "2026-11-18T23:23:48+03:00",
+ "checked": "2026-11-18T23:23:48+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55882,7 +55882,7 @@
    "seg": "КП",
    "title": "CS Tallinn Trophy — мужчины КП",
    "start": "2026-11-18T20:10:00+03:00",
-   "end": "2026-11-18T23:16:00+03:00",
+   "end": "2026-11-18T23:25:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -55958,7 +55958,7 @@
      "nation": "FRA",
      "no": 2,
      "warmup": 1,
-     "place": 14,
+     "place": 15,
      "points": "54.93",
      "time": "20:22"
     },
@@ -55967,7 +55967,7 @@
      "nation": "SWE",
      "no": 3,
      "warmup": 1,
-     "place": 17,
+     "place": 18,
      "points": "52.73",
      "time": "20:28"
     },
@@ -55976,7 +55976,7 @@
      "nation": "MAS",
      "no": 4,
      "warmup": 1,
-     "place": 16,
+     "place": 17,
      "points": "53.76",
      "time": "20:34"
     },
@@ -55985,7 +55985,7 @@
      "nation": "ESP",
      "no": 5,
      "warmup": 1,
-     "place": 18,
+     "place": 19,
      "points": "51.42",
      "time": "20:40"
     },
@@ -55994,7 +55994,7 @@
      "nation": "USA",
      "no": 6,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "64.64",
      "time": "20:46"
     },
@@ -56012,7 +56012,7 @@
      "nation": "POL",
      "no": 8,
      "warmup": 30,
-     "place": 11,
+     "place": 12,
      "points": "61.09",
      "time": "21:05"
     },
@@ -56021,7 +56021,7 @@
      "nation": "POR",
      "no": 9,
      "warmup": 30,
-     "place": 15,
+     "place": 16,
      "points": "54.35",
      "time": "21:11"
     },
@@ -56030,7 +56030,7 @@
      "nation": "SWE",
      "no": 10,
      "warmup": 30,
-     "place": 19,
+     "place": 20,
      "points": "49.87",
      "time": "21:17"
     },
@@ -56039,7 +56039,7 @@
      "nation": "KAZ",
      "no": 11,
      "warmup": 30,
-     "place": 10,
+     "place": 11,
      "points": "61.09",
      "time": "21:23"
     },
@@ -56048,7 +56048,7 @@
      "nation": "SUI",
      "no": 12,
      "warmup": 30,
-     "place": 20,
+     "place": 22,
      "points": "43.48",
      "time": "21:29"
     },
@@ -56057,7 +56057,7 @@
      "nation": "FRA",
      "no": 13,
      "warmup": 3,
-     "place": 9,
+     "place": 10,
      "points": "62.46",
      "time": "21:56"
     },
@@ -56084,7 +56084,7 @@
      "nation": "AUS",
      "no": 16,
      "warmup": 3,
-     "place": 12,
+     "place": 13,
      "points": "56.73",
      "time": "22:14"
     },
@@ -56102,7 +56102,7 @@
      "nation": "ITA",
      "no": 18,
      "warmup": 3,
-     "place": 7,
+     "place": 8,
      "points": "65.87",
      "time": "22:26"
     },
@@ -56111,7 +56111,7 @@
      "nation": "BUL",
      "no": 19,
      "warmup": 30,
-     "place": 21,
+     "place": 23,
      "points": "36.51",
      "time": "22:39"
     },
@@ -56120,7 +56120,7 @@
      "nation": "FIN",
      "no": 20,
      "warmup": 30,
-     "place": 5,
+     "place": 6,
      "points": "67.98",
      "time": "22:45"
     },
@@ -56129,25 +56129,27 @@
      "nation": "FRA",
      "no": 22,
      "warmup": 30,
-     "place": 13,
+     "place": 14,
      "points": "55.08",
      "time": "22:57"
     },
     {
+     "name": "Anthony Paradis",
+     "nation": "CAN",
+     "no": 23,
+     "warmup": 4,
+     "place": 4,
+     "points": "72.42",
+     "time": "23:03"
+    },
+    {
      "name": "Adrian Jimenez de Baldomero",
      "nation": "ESP",
-     "time": "23:09",
      "no": 24,
      "warmup": 4,
      "place": 21,
-     "points": "46.86"
-    },
-    {
-     "name": "Anthony Paradis",
-     "nation": "CAN",
-     "time": "23:03",
-     "no": 23,
-     "warmup": 4
+     "points": "46.86",
+     "time": "23:09"
     }
    ],
    "live": {
@@ -56159,6 +56161,7 @@
      "Gabriele FRANGIPANI": "Gabriele Frangipani",
      "Hyungyeom KIM": "Hyungyeom Kim",
      "Vladimir SAMOILOV": "Vladimir Samoilov",
+     "Anthony PARADIS": "Anthony Paradis",
      "Yu-Hsiang LI": "Yu-Hsiang Li",
      "Makar SUNTSEV": "Makar Suntsev",
      "Lukas VACLAVIK": "Lukas Vaclavik",
@@ -56175,10 +56178,9 @@
      "Elias SAYED": "Elias Sayed",
      "Euken ALBERDI": "Euken Alberdi",
      "Hugo BOSTEDT": "Hugo Bostedt",
+     "Adrian JIMENEZ de BALDOMERO": "Adrian Jimenez de Baldomero",
      "Noah BODENSTEIN": "Noah Bodenstein",
-     "Larry LOUPOLOVER": "Larry Loupolover",
-     "Anthony PARADIS": "Anthony Paradis",
-     "Adrian JIMENEZ de BALDOMERO": "Adrian Jimenez de Baldomero"
+     "Larry LOUPOLOVER": "Larry Loupolover"
     },
     "basis": "judges"
    },
@@ -57196,7 +57198,7 @@
    "seg": "ПП",
    "title": "CS Tallinn Trophy — мужчины ПП",
    "start": "2026-11-19T19:25:00+03:00",
-   "end": "2026-11-19T23:10:00+03:00",
+   "end": "2026-11-19T23:00:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -57222,7 +57224,6 @@
     "Lukas Vaclavik",
     "Makar Suntsev",
     "Matteo Nalbone",
-    "Nikita Krivosheyev",
     "Noah Bodenstein",
     "Vladimir Samoilov",
     "Xavier Vauclin",
@@ -57240,100 +57241,142 @@
    "desc": "Начало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
-     "name": "Adrian Jimenez de Baldomero",
-     "nation": "ESP"
-    },
-    {
-     "name": "Anthony Paradis",
-     "nation": "CAN"
-    },
-    {
-     "name": "Artur Smagulov",
-     "nation": "KAZ"
-    },
-    {
-     "name": "David Gouveia",
-     "nation": "POR"
-    },
-    {
-     "name": "Douglas Gerber",
-     "nation": "AUS"
-    },
-    {
-     "name": "Elias Sayed",
-     "nation": "SWE"
-    },
-    {
-     "name": "Euken Alberdi",
-     "nation": "ESP"
-    },
-    {
-     "name": "Francois Pitot",
-     "nation": "FRA"
-    },
-    {
-     "name": "Gabriele Frangipani",
-     "nation": "ITA"
-    },
-    {
-     "name": "Hugo Bostedt",
-     "nation": "SWE"
-    },
-    {
-     "name": "Hyungyeom Kim",
-     "nation": "KOR"
-    },
-    {
-     "name": "Ian Vauclin",
-     "nation": "FRA"
-    },
-    {
-     "name": "Jakub Lofek",
-     "nation": "POL"
-    },
-    {
-     "name": "Jimmy Ma",
-     "nation": "USA"
-    },
-    {
      "name": "Larry Loupolover",
-     "nation": "BUL"
-    },
-    {
-     "name": "Lukas Vaclavik",
-     "nation": "SVK"
-    },
-    {
-     "name": "Makar Suntsev",
-     "nation": "FIN"
-    },
-    {
-     "name": "Matteo Nalbone",
-     "nation": "ITA"
-    },
-    {
-     "name": "Nikita Krivosheyev",
-     "nation": "KAZ"
+     "nation": "BUL",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Noah Bodenstein",
-     "nation": "SUI"
+     "nation": "SUI",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Vladimir Samoilov",
-     "nation": "POL"
+     "name": "Adrian Jimenez de Baldomero",
+     "nation": "ESP",
+     "no": 3,
+     "warmup": 1
     },
     {
-     "name": "Xavier Vauclin",
-     "nation": "FRA"
+     "name": "Hugo Bostedt",
+     "nation": "SWE",
+     "no": 4,
+     "warmup": 1
     },
     {
-     "name": "Yu-Hsiang Li",
-     "nation": "TPE"
+     "name": "Euken Alberdi",
+     "nation": "ESP",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Elias Sayed",
+     "nation": "SWE",
+     "no": 6,
+     "warmup": 2
     },
     {
      "name": "Ze Zeng Fang",
-     "nation": "MAS"
+     "nation": "MAS",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "David Gouveia",
+     "nation": "POR",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Ian Vauclin",
+     "nation": "FRA",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Xavier Vauclin",
+     "nation": "FRA",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Douglas Gerber",
+     "nation": "AUS",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Jakub Lofek",
+     "nation": "POL",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Artur Smagulov",
+     "nation": "KAZ",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Francois Pitot",
+     "nation": "FRA",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Jimmy Ma",
+     "nation": "USA",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Matteo Nalbone",
+     "nation": "ITA",
+     "no": 16,
+     "warmup": 3
+    },
+    {
+     "name": "Lukas Vaclavik",
+     "nation": "SVK",
+     "no": 17,
+     "warmup": 3
+    },
+    {
+     "name": "Makar Suntsev",
+     "nation": "FIN",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Yu-Hsiang Li",
+     "nation": "TPE",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Anthony Paradis",
+     "nation": "CAN",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "no": 21,
+     "warmup": 4
+    },
+    {
+     "name": "Hyungyeom Kim",
+     "nation": "KOR",
+     "no": 22,
+     "warmup": 4
+    },
+    {
+     "name": "Gabriele Frangipani",
+     "nation": "ITA",
+     "no": 23,
+     "warmup": 4
     }
    ],
    "live": {
@@ -57342,30 +57385,29 @@
     "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT001RS.htm",
     "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG001.htm",
     "names": {
-     "Douglas GERBER": "Douglas Gerber",
      "Larry LOUPOLOVER": "Larry Loupolover",
-     "Anthony PARADIS": "Anthony Paradis",
-     "Euken ALBERDI": "Euken Alberdi",
+     "Noah BODENSTEIN": "Noah Bodenstein",
      "Adrian JIMENEZ de BALDOMERO": "Adrian Jimenez de Baldomero",
-     "Makar SUNTSEV": "Makar Suntsev",
-     "Francois PITOT": "Francois Pitot",
+     "Hugo BOSTEDT": "Hugo Bostedt",
+     "Euken ALBERDI": "Euken Alberdi",
+     "Elias SAYED": "Elias Sayed",
+     "Ze Zeng FANG": "Ze Zeng Fang",
+     "David GOUVEIA": "David Gouveia",
      "Ian VAUCLIN": "Ian Vauclin",
      "Xavier VAUCLIN": "Xavier Vauclin",
-     "Gabriele FRANGIPANI": "Gabriele Frangipani",
-     "Matteo NALBONE": "Matteo Nalbone",
-     "Nikita KRIVOSHEYEV": "Nikita Krivosheyev",
-     "Artur SMAGULOV": "Artur Smagulov",
-     "Hyungyeom KIM": "Hyungyeom Kim",
-     "Ze Zeng FANG": "Ze Zeng Fang",
+     "Douglas GERBER": "Douglas Gerber",
      "Jakub LOFEK": "Jakub Lofek",
-     "Vladimir SAMOILOV": "Vladimir Samoilov",
-     "David GOUVEIA": "David Gouveia",
-     "Noah BODENSTEIN": "Noah Bodenstein",
+     "Artur SMAGULOV": "Artur Smagulov",
+     "Francois PITOT": "Francois Pitot",
+     "Jimmy MA": "Jimmy Ma",
+     "Matteo NALBONE": "Matteo Nalbone",
      "Lukas VACLAVIK": "Lukas Vaclavik",
-     "Hugo BOSTEDT": "Hugo Bostedt",
-     "Elias SAYED": "Elias Sayed",
+     "Makar SUNTSEV": "Makar Suntsev",
      "Yu-Hsiang LI": "Yu-Hsiang Li",
-     "Jimmy MA": "Jimmy Ma"
+     "Anthony PARADIS": "Anthony Paradis",
+     "Vladimir SAMOILOV": "Vladimir Samoilov",
+     "Hyungyeom KIM": "Hyungyeom Kim",
+     "Gabriele FRANGIPANI": "Gabriele Frangipani"
     },
     "basis": null
    },
@@ -100814,5 +100856,5 @@
   "Maxim Varakin": "photos/cebbaca1aac7632a.jpg",
   "Максим Варакин": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "b5dc72509583f29d"
+ "rev": "4f19f0ffdd44e6af"
 }
