@@ -1,33 +1,11 @@
 {
- "version": "1.0.79",
- "code": 80,
- "notes": "На планшете управление как на телефоне.",
- "at": "2026-11-18T15:06:11Z",
+ "version": "1.0.80",
+ "code": 81,
+ "notes": "Обновление расписания работает надёжнее.",
+ "at": "2026-11-18T19:44:05Z",
  "android": {
-  "file": "starty-1.0.79.apk",
-  "size": 12877717,
-  "sha256": "25a53d57362a80368468e611fa6d697ba4b51b733cb42529b7e96ec89bf7d5c9"
- },
- "windows": {
-  "code": 80,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.79/Starty-windows.zip",
-  "size": 14917432,
-  "sha256": "d2c1be74741db763a9fe25ee4abdd5ab5fb6c44f9d7f21e596fc117003020122",
-  "setup": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.79/starty-setup-1.0.79.exe",
-   "size": 12970018,
-   "sha256": "5b034a970ba93536413b0c3351e94f52bca8ed583a4313aa745bcebb885fcfdc"
-  }
- },
- "macos": {
-  "code": 80,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.79/Starty-macos.zip",
-  "size": 22848201,
-  "sha256": "a675b9d0728cd3fbbe0b361d9c038c524a9d107b8ac0a29ff20e42dd20c20794",
-  "dmg": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.79/Starty-macos.dmg",
-   "size": 26079378,
-   "sha256": "b41a33c4c4802ab67f0eeb3cdf937e3e3f8d8c807876e001cd26d9bb379d343a"
-  }
+  "file": "starty-1.0.80.apk",
+  "size": 12877821,
+  "sha256": "e3bc73193916e803b58d06fc456e4f5aa79c806336d5e8e769638bb4f81f8ac3"
  }
 }
