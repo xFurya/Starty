@@ -54,7 +54,8 @@
 ["https://results.isu.org/results/season2627/gpusa2026/FSKWSINGLES-----------FNL-000100--_JudgesDetailsperSkater.pdf", "GP Skate America", "2026-11-15", "women", "senior", "ПП", "ISU"],
 ["https://results.fsresults.info/2026-2027/CSEST2026/FSKWSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf", "CS Tallinn Trophy", "2026-11-17", "women", "junior", "КП", "CS Tallinn Trophy"],
 ["https://results.fsresults.info/2026-2027/CSEST2026/FSKMSINGLES-JUNIOR----QUAL000100--_JudgesDetailsperSkater.pdf", "CS Tallinn Trophy", "2026-11-17", "men", "junior", "КП", "CS Tallinn Trophy"],
-["https://results.fsresults.info/2026-2027/CSEST2026/FSKWSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf", "CS Tallinn Trophy", "2026-11-18", "women", "junior", "ПП", "CS Tallinn Trophy"]
+["https://results.fsresults.info/2026-2027/CSEST2026/FSKWSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf", "CS Tallinn Trophy", "2026-11-18", "women", "junior", "ПП", "CS Tallinn Trophy"],
+["https://results.fsresults.info/2026-2027/CSEST2026/FSKMSINGLES-JUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf", "CS Tallinn Trophy", "2026-11-18", "men", "junior", "ПП", "CS Tallinn Trophy"]
 ],
 "ath": {
 "aboian hana maria / danil veseluhin": {"c": ["USA"], "el": {"Kp4": [1, 10, null, null]}, "k": "dance", "n": "Hana Maria ABOIAN / Daniil VESELUKHIN"},
@@ -70,12 +71,12 @@
 "alisa zaikina": {"c": ["МОС"], "el": {"3A": [1, 34, 8.0, 34], "4T": [1, 34, 9.5, 34]}, "k": "women", "n": "Алиса ЗАИКИНА"},
 "ami nakai": {"c": ["JPN"], "el": {"3A": [2, 43, 8.0, 43]}, "k": "women", "n": "Ami NAKAI"},
 "andreas nordeback": {"c": ["SWE"], "el": {"3A": [3, 0, 8.0, 0], "3A+3T": [1, 1, 12.2, 1]}, "k": "men", "n": "Andreas NORDEBACK"},
-"angelo de sandro": {"c": ["SUI"], "el": {"3A": [1, 53, 8.0, 53]}, "k": "men", "n": "Sandro de ANGELO"},
+"angelo de sandro": {"c": ["SUI"], "el": {"3A": [1, 53, 8.0, 53], "4S": [1, 55, 9.7, 55], "4T": [1, 55, 9.5, 55]}, "k": "men", "n": "Sandro de ANGELO", "q": [2, 55, "4S 4T"]},
 "arlet levandi": {"c": ["EST"], "el": {"3A": [2, 0, 8.0, 0], "3A+2T": [1, 1, 9.3, 1]}, "k": "men", "n": "Arlet LEVANDI"},
 "aron kim": {"c": ["KOR"], "el": {"3A": [2, 6, 8.0, 6], "3A+2A+SEQ": [1, 7, 11.3, 7]}, "k": "men", "n": "Aaron KIM"},
 "arseni dimitrev": {"c": ["МОС"], "el": {"3A": [2, 40, 8.0, 40], "3A+1Eu+3S+2A+SEQ": [1, 48, 15.6, 48], "4S": [2, 40, 9.7, 48], "4S+3T": [1, 40, 13.9, 40], "4T": [3, 40, 9.5, 40], "4T+3T": [1, 48, 13.7, 48]}, "k": "men", "n": "Арсений ДИМИТРИЕВ", "q": [3, 48, "4T 4S 4T"]},
 "artemi marinin": {"c": ["МОС"], "el": {"3A": [3, 40, 8.0, 40], "3A+3T": [1, 48, 12.2, 48]}, "k": "men", "n": "Артемий МАРИНИН"},
-"berdibaev kenan": {"c": ["KAZ"], "el": {"3A": [1, 53, 8.0, 53]}, "k": "men", "n": "Kenan BERDIBAYEV"},
+"berdibaev kenan": {"c": ["KAZ"], "el": {"3A": [2, 53, 8.0, 53]}, "k": "men", "n": "Kenan BERDIBAYEV"},
 "blackvel patrick": {"c": ["USA"], "el": {"3A": [3, 0, 8.0, 0], "3A+3T": [1, 1, 12.2, 1], "4S": [1, 1, 9.7, 1], "4T": [3, 0, 9.5, 0], "4T+1Eu+2S+2A+SEQ": [1, 1, 14.1, 1]}, "k": "men", "n": "Patrick BLACKWELL", "q": [3, 1, "4T 4S 4T"]},
 "brichgi lukas": {"c": ["SUI"], "el": {"3A": [3, 1, 8.0, 37], "3A+1Eu+2S+2A+SEQ": [2, 1, 12.6, 1], "4T": [5, 0, 9.5, 1], "4T+2T": [3, 0, 10.8, 0]}, "k": "men", "n": "Lukas BRITSCHGI", "q": [2, 1, "4T 4T"]},
 "carilo donovan": {"c": ["MEX"], "el": {"3A": [2, 37, 8.0, 37], "4S": [2, 37, null, null], "4S+3T": [2, 37, 13.9, 37]}, "k": "men", "n": "Donovan CARRILLO"},
