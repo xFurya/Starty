@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T22:45:47+03:00",
- "checked": "2026-11-18T20:11:04.646952+00:00",
+ "checked": "2026-11-18T20:19:04.241980+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55943,7 +55943,7 @@
      "points": "74.35"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Gabriele Frangipani — 80.96\n2. Hyungyeom Kim — 79.57\n3. Vladimir Samoilov — 74.35\n\nНачало: 20:10 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Gabriele Frangipani — 80.96\n2. Hyungyeom Kim — 79.57\n3. Vladimir Samoilov — 74.35\n\nНачало: 20:10 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Gabriele Frangipani",
@@ -56049,7 +56049,7 @@
      "nation": "SUI",
      "no": 12,
      "warmup": 30,
-     "place": 21,
+     "place": 22,
      "points": "43.48",
      "time": "21:29"
     },
@@ -56112,7 +56112,7 @@
      "nation": "BUL",
      "no": 19,
      "warmup": 30,
-     "place": 22,
+     "place": 23,
      "points": "36.51",
      "time": "22:39"
     },
@@ -56121,7 +56121,9 @@
      "nation": "ESP",
      "time": "23:09",
      "no": 24,
-     "warmup": 4
+     "warmup": 4,
+     "place": 21,
+     "points": "46.86"
     },
     {
      "name": "Anthony Paradis",
@@ -56158,7 +56160,6 @@
      "points": "55.08"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG001.htm",
@@ -56190,7 +56191,7 @@
      "Anthony PARADIS": "Anthony Paradis",
      "Adrian JIMENEZ de BALDOMERO": "Adrian Jimenez de Baldomero"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
@@ -100822,5 +100823,5 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  },
- "rev": "dc58542e467cf10a"
+ "rev": "64a94aa80e7e6b80"
 }
