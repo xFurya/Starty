@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T16:37:37+03:00",
- "checked": "2026-11-18T14:17:02.845462+00:00",
+ "checked": "2026-11-18T14:25:02.645007+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -54766,7 +54766,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Tomas Strazds — 50.10\n\nНачало: 17:00 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Akims Kirilovs — 81.61\n2. Tomas Strazds — 50.10\n\nНачало: 17:00 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Tomas Strazds",
@@ -54774,7 +54774,7 @@
      "time": "17:06",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "50.10"
     },
     {
@@ -54782,7 +54782,9 @@
      "nation": "LAT",
      "time": "17:13",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "81.61"
     },
     {
      "name": "Romulus Peltonen",
@@ -54864,6 +54866,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Akims Kirilovs",
+     "nation": "LAT",
+     "points": "81.61"
+    },
+    {
+     "place": 2,
      "name": "Tomas Strazds",
      "nation": "LAT",
      "points": "50.10"
