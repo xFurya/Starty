@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-18T22:45:47+03:00",
- "checked": "2026-11-18T20:19:04.241980+00:00",
+ "generated": "2026-11-18T23:03:03+03:00",
+ "checked": "2026-11-18T23:03:03+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55908,7 +55908,6 @@
     "Lukas Vaclavik",
     "Makar Suntsev",
     "Matteo Nalbone",
-    "Nikita Krivosheyev",
     "Noah Bodenstein",
     "Vladimir Samoilov",
     "Xavier Vauclin",
@@ -55959,7 +55958,7 @@
      "nation": "FRA",
      "no": 2,
      "warmup": 1,
-     "place": 15,
+     "place": 14,
      "points": "54.93",
      "time": "20:22"
     },
@@ -55968,7 +55967,7 @@
      "nation": "SWE",
      "no": 3,
      "warmup": 1,
-     "place": 18,
+     "place": 17,
      "points": "52.73",
      "time": "20:28"
     },
@@ -55977,7 +55976,7 @@
      "nation": "MAS",
      "no": 4,
      "warmup": 1,
-     "place": 17,
+     "place": 16,
      "points": "53.76",
      "time": "20:34"
     },
@@ -55986,7 +55985,7 @@
      "nation": "ESP",
      "no": 5,
      "warmup": 1,
-     "place": 19,
+     "place": 18,
      "points": "51.42",
      "time": "20:40"
     },
@@ -55995,7 +55994,7 @@
      "nation": "USA",
      "no": 6,
      "warmup": 1,
-     "place": 9,
+     "place": 8,
      "points": "64.64",
      "time": "20:46"
     },
@@ -56013,7 +56012,7 @@
      "nation": "POL",
      "no": 8,
      "warmup": 30,
-     "place": 12,
+     "place": 11,
      "points": "61.09",
      "time": "21:05"
     },
@@ -56022,7 +56021,7 @@
      "nation": "POR",
      "no": 9,
      "warmup": 30,
-     "place": 16,
+     "place": 15,
      "points": "54.35",
      "time": "21:11"
     },
@@ -56031,7 +56030,7 @@
      "nation": "SWE",
      "no": 10,
      "warmup": 30,
-     "place": 20,
+     "place": 19,
      "points": "49.87",
      "time": "21:17"
     },
@@ -56040,7 +56039,7 @@
      "nation": "KAZ",
      "no": 11,
      "warmup": 30,
-     "place": 11,
+     "place": 10,
      "points": "61.09",
      "time": "21:23"
     },
@@ -56049,7 +56048,7 @@
      "nation": "SUI",
      "no": 12,
      "warmup": 30,
-     "place": 22,
+     "place": 20,
      "points": "43.48",
      "time": "21:29"
     },
@@ -56058,7 +56057,7 @@
      "nation": "FRA",
      "no": 13,
      "warmup": 3,
-     "place": 10,
+     "place": 9,
      "points": "62.46",
      "time": "21:56"
     },
@@ -56085,7 +56084,7 @@
      "nation": "AUS",
      "no": 16,
      "warmup": 3,
-     "place": 13,
+     "place": 12,
      "points": "56.73",
      "time": "22:14"
     },
@@ -56103,7 +56102,7 @@
      "nation": "ITA",
      "no": 18,
      "warmup": 3,
-     "place": 8,
+     "place": 7,
      "points": "65.87",
      "time": "22:26"
     },
@@ -56112,9 +56111,27 @@
      "nation": "BUL",
      "no": 19,
      "warmup": 30,
-     "place": 23,
+     "place": 21,
      "points": "36.51",
      "time": "22:39"
+    },
+    {
+     "name": "Makar Suntsev",
+     "nation": "FIN",
+     "no": 20,
+     "warmup": 30,
+     "place": 5,
+     "points": "67.98",
+     "time": "22:45"
+    },
+    {
+     "name": "Xavier Vauclin",
+     "nation": "FRA",
+     "no": 22,
+     "warmup": 30,
+     "place": 13,
+     "points": "55.08",
+     "time": "22:57"
     },
     {
      "name": "Adrian Jimenez de Baldomero",
@@ -56130,34 +56147,7 @@
      "nation": "CAN",
      "time": "23:03",
      "no": 23,
-     "warmup": 4,
-     "place": 4,
-     "points": "72.42"
-    },
-    {
-     "name": "Makar Suntsev",
-     "nation": "FIN",
-     "time": "22:45",
-     "no": 20,
-     "warmup": 4,
-     "place": 6,
-     "points": "67.98"
-    },
-    {
-     "name": "Nikita Krivosheyev",
-     "nation": "KAZ",
-     "time": "22:51",
-     "no": 21,
      "warmup": 4
-    },
-    {
-     "name": "Xavier Vauclin",
-     "nation": "FRA",
-     "time": "22:57",
-     "no": 22,
-     "warmup": 4,
-     "place": 14,
-     "points": "55.08"
     }
    ],
    "live": {
@@ -56170,6 +56160,7 @@
      "Hyungyeom KIM": "Hyungyeom Kim",
      "Vladimir SAMOILOV": "Vladimir Samoilov",
      "Yu-Hsiang LI": "Yu-Hsiang Li",
+     "Makar SUNTSEV": "Makar Suntsev",
      "Lukas VACLAVIK": "Lukas Vaclavik",
      "Matteo NALBONE": "Matteo Nalbone",
      "Jimmy MA": "Jimmy Ma",
@@ -56177,6 +56168,7 @@
      "Artur SMAGULOV": "Artur Smagulov",
      "Jakub LOFEK": "Jakub Lofek",
      "Douglas GERBER": "Douglas Gerber",
+     "Xavier VAUCLIN": "Xavier Vauclin",
      "Ian VAUCLIN": "Ian Vauclin",
      "David GOUVEIA": "David Gouveia",
      "Ze Zeng FANG": "Ze Zeng Fang",
@@ -56185,9 +56177,6 @@
      "Hugo BOSTEDT": "Hugo Bostedt",
      "Noah BODENSTEIN": "Noah Bodenstein",
      "Larry LOUPOLOVER": "Larry Loupolover",
-     "Makar SUNTSEV": "Makar Suntsev",
-     "Nikita KRIVOSHEYEV": "Nikita Krivosheyev",
-     "Xavier VAUCLIN": "Xavier Vauclin",
      "Anthony PARADIS": "Anthony Paradis",
      "Adrian JIMENEZ de BALDOMERO": "Adrian Jimenez de Baldomero"
     },
@@ -100821,7 +100810,9 @@
   "Natalie Tieva": "photos/468886aee5c54433.jpg",
   "Saaga Volkova": "photos/98959748fe870fba.jpg",
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
-  "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
+  "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg",
+  "Maxim Varakin": "photos/cebbaca1aac7632a.jpg",
+  "Максим Варакин": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "64a94aa80e7e6b80"
+ "rev": "b5dc72509583f29d"
 }
