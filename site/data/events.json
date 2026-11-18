@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T15:08:09+03:00",
- "checked": "2026-11-18T12:55:29.154127+00:00",
+ "checked": "2026-11-18T13:03:29.807842+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -54348,7 +54348,7 @@
     {
      "name": "Alice Westling",
      "nation": "SWE",
-     "place": 10,
+     "place": 11,
      "points": "84.82",
      "time": "14:32",
      "no": 19,
@@ -54357,7 +54357,7 @@
     {
      "name": "Alina Shavela",
      "nation": "EST",
-     "place": 26,
+     "place": 27,
      "points": "42.50",
      "time": "11:51",
      "no": 1,
@@ -54366,7 +54366,7 @@
     {
      "name": "Annabel Jaamu",
      "nation": "EST",
-     "place": 20,
+     "place": 21,
      "points": "71.42",
      "time": "13:36",
      "no": 12,
@@ -54375,7 +54375,7 @@
     {
      "name": "Ava Yu Tong Chen",
      "nation": "TPE",
-     "place": 23,
+     "place": 24,
      "points": "63.01",
      "time": "12:54",
      "no": 9,
@@ -54395,12 +54395,14 @@
      "nation": "EST",
      "time": "15:56",
      "no": 27,
-     "warmup": 6
+     "warmup": 6,
+     "place": 10,
+     "points": "85.26"
     },
     {
      "name": "Hedda Hedstrom",
      "nation": "SWE",
-     "place": 17,
+     "place": 18,
      "points": "74.27",
      "time": "12:33",
      "no": 6,
@@ -54427,7 +54429,7 @@
     {
      "name": "Lilly Almgren-lidman",
      "nation": "SWE",
-     "place": 21,
+     "place": 22,
      "points": "71.27",
      "time": "14:18",
      "no": 17,
@@ -54445,7 +54447,7 @@
     {
      "name": "Martina Lucchi",
      "nation": "ITA",
-     "place": 24,
+     "place": 25,
      "points": "59.15",
      "time": "11:58",
      "no": 2,
@@ -54454,7 +54456,7 @@
     {
      "name": "Melania Valentina Blecic",
      "nation": "CRO",
-     "place": 18,
+     "place": 19,
      "points": "74.25",
      "time": "12:40",
      "no": 7,
@@ -54472,7 +54474,7 @@
     {
      "name": "Milana Siniavskyte",
      "nation": "LTU",
-     "place": 16,
+     "place": 17,
      "points": "74.63",
      "time": "12:12",
      "no": 4,
@@ -54481,7 +54483,7 @@
     {
      "name": "Natalie Tieva",
      "nation": "FIN",
-     "place": 22,
+     "place": 23,
      "points": "63.45",
      "time": "13:29",
      "no": 11,
@@ -54493,13 +54495,13 @@
      "time": "15:21",
      "no": 23,
      "warmup": 5,
-     "place": 11,
+     "place": 12,
      "points": "83.93"
     },
     {
      "name": "Nicole de Rosa",
      "nation": "ITA",
-     "place": 14,
+     "place": 15,
      "points": "78.93",
      "time": "13:50",
      "no": 14,
@@ -54540,7 +54542,7 @@
     {
      "name": "Sofia Gaddo",
      "nation": "ITA",
-     "place": 15,
+     "place": 16,
      "points": "76.37",
      "time": "12:47",
      "no": 8,
@@ -54581,7 +54583,7 @@
     {
      "name": "Thea Marie Kochergina Ullereng",
      "nation": "NOR",
-     "place": 19,
+     "place": 20,
      "points": "72.26",
      "time": "12:19",
      "no": 5,
@@ -54590,7 +54592,7 @@
     {
      "name": "Varvara Poder",
      "nation": "EST",
-     "place": 25,
+     "place": 26,
      "points": "57.35",
      "time": "12:05",
      "no": 3,
@@ -54599,7 +54601,7 @@
     {
      "name": "Vasilisa Bogomolova",
      "nation": "CYP",
-     "place": 12,
+     "place": 13,
      "points": "83.09",
      "time": "13:43",
      "no": 13,
@@ -54611,7 +54613,7 @@
      "time": "15:35",
      "no": 25,
      "warmup": 5,
-     "place": 13,
+     "place": 14,
      "points": "79.88"
     }
    ],
