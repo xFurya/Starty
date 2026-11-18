@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T19:38:41+03:00",
- "checked": "2026-11-18T19:38:41+03:00",
+ "checked": "2026-11-18T17:27:03.399728+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55923,14 +55923,16 @@
      "note": "Платно"
     }
    ],
-   "desc": "Начало: 20:10 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Gabriele Frangipani — 80.96\n\nНачало: 20:10 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Gabriele Frangipani",
      "nation": "ITA",
      "time": "20:16",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "80.96"
     },
     {
      "name": "Ian Vauclin",
@@ -56127,7 +56129,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Gabriele Frangipani",
+     "nation": "ITA",
+     "points": "80.96"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:women-senior-kp",
@@ -100658,5 +100669,5 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  },
- "rev": "394b57aebebf4a0f"
+ "rev": "0fa5224a26e19d1b"
 }
