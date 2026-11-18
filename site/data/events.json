@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-18T19:38:41+03:00",
- "checked": "2026-11-18T19:19:04.995332+00:00",
+ "checked": "2026-11-18T19:23:04.350262+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55940,7 +55940,7 @@
      "time": "20:22",
      "no": 2,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "54.93"
     },
     {
@@ -55949,7 +55949,7 @@
      "time": "20:28",
      "no": 3,
      "warmup": 1,
-     "place": 12,
+     "place": 13,
      "points": "52.73"
     },
     {
@@ -55958,7 +55958,7 @@
      "time": "20:34",
      "no": 4,
      "warmup": 1,
-     "place": 11,
+     "place": 12,
      "points": "53.76"
     },
     {
@@ -55967,7 +55967,7 @@
      "time": "20:40",
      "no": 5,
      "warmup": 1,
-     "place": 13,
+     "place": 14,
      "points": "51.42"
     },
     {
@@ -56003,7 +56003,7 @@
      "time": "21:11",
      "no": 9,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "points": "54.35"
     },
     {
@@ -56012,7 +56012,7 @@
      "time": "21:17",
      "no": 10,
      "warmup": 2,
-     "place": 14,
+     "place": 15,
      "points": "49.87"
     },
     {
@@ -56030,7 +56030,7 @@
      "time": "21:29",
      "no": 12,
      "warmup": 2,
-     "place": 15,
+     "place": 16,
      "points": "43.48"
     },
     {
@@ -56065,7 +56065,9 @@
      "nation": "AUS",
      "time": "22:14",
      "no": 16,
-     "warmup": 3
+     "warmup": 3,
+     "place": 9,
+     "points": "56.73"
     },
     {
      "name": "Yu-Hsiang Li",
@@ -100709,5 +100711,5 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg"
  },
- "rev": "86400d38bb15fcd9"
+ "rev": "16a6960b42176307"
 }
