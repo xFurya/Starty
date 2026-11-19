@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T19:48:59+03:00",
- "checked": "2026-11-19T17:08:32.805819+00:00",
+ "checked": "2026-11-19T17:20:31.722234+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57662,18 +57662,18 @@
     },
     {
      "place": 2,
-     "name": "Noah Bodenstein",
-     "nation": "SUI",
-     "points": "106.34"
+     "name": "Elias Sayed",
+     "nation": "SWE",
+     "points": "109.01"
     },
     {
      "place": 3,
-     "name": "Adrian Jimenez de Baldomero",
-     "nation": "ESP",
-     "points": "69.74"
+     "name": "Noah Bodenstein",
+     "nation": "SUI",
+     "points": "106.34"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Hugo Bostedt — 112.49\n2. Noah Bodenstein — 106.34\n3. Adrian Jimenez de Baldomero — 69.74\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Hugo Bostedt — 112.49\n2. Elias Sayed — 109.01\n3. Noah Bodenstein — 106.34\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Adrian Jimenez de Baldomero",
@@ -57681,7 +57681,7 @@
      "time": "19:46",
      "no": 3,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "69.74"
     },
     {
@@ -57717,7 +57717,9 @@
      "nation": "SWE",
      "time": "20:16",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "109.01"
     },
     {
      "name": "Francois Pitot",
@@ -57773,7 +57775,7 @@
     {
      "name": "Larry Loupolover",
      "nation": "BUL",
-     "place": 4,
+     "place": 5,
      "points": "57.02",
      "time": "19:31",
      "no": 1,
@@ -57803,7 +57805,7 @@
     {
      "name": "Noah Bodenstein",
      "nation": "SUI",
-     "place": 2,
+     "place": 3,
      "points": "106.34",
      "time": "19:39",
      "no": 2,
@@ -101771,5 +101773,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "172faf15a4185d9b"
+ "rev": "aa00cb592f328ee6"
 }
