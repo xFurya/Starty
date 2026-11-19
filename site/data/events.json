@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T09:42:51+03:00",
- "checked": "2026-11-19T09:48:03.516417+00:00",
+ "checked": "2026-11-19T09:52:03.396996+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56588,13 +56588,15 @@
      "url": "https://www.sport1tv.ru/figurnoe-katanie"
     }
    ],
-   "desc": "Начало: 12:35 МСК\nТрансляция: Первый канал",
+   "desc": "Промежуточные итоги:\n1. Артем Шевнин — 100.96\n\nНачало: 12:35 МСК\nТрансляция: Первый канал",
    "field": [
     {
      "name": "Артем Шевнин",
      "nation": "ИРК",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "100.96"
     },
     {
      "name": "Максим Тяпин",
@@ -56670,7 +56672,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Артем Шевнин",
+     "nation": "ИРК",
+     "points": "100.96"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:women-junior-pp",
@@ -100893,5 +100904,5 @@
   "Skylar Lautowa-peguero": "photos/793cd3db7aa70b54.jpg",
   "Jared Sedlis": "photos/6521e032ae88999b.jpg"
  },
- "rev": "1cbc48be92e3cc78"
+ "rev": "2a416414392fa300"
 }
