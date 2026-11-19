@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T22:37:45+03:00",
- "checked": "2026-11-19T22:37:45+03:00",
+ "checked": "2026-11-19T19:56:32.658307+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57701,17 +57701,17 @@
     },
     {
      "place": 3,
-     "name": "Jakub Lofek",
-     "nation": "POL",
-     "points": "129.39"
+     "name": "Hyungyeom Kim",
+     "nation": "KOR",
+     "points": "133.67"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Anthony Paradis — 141.91\n2. Matteo Nalbone — 136.42\n3. Jakub Lofek — 129.39\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Anthony Paradis — 141.91\n2. Matteo Nalbone — 136.42\n3. Hyungyeom Kim — 133.67\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Adrian Jimenez de Baldomero",
      "nation": "ESP",
-     "place": 18,
+     "place": 20,
      "points": "69.74",
      "time": "19:46",
      "no": 3,
@@ -57724,14 +57724,12 @@
      "points": "141.91",
      "time": "22:31",
      "no": 20,
-     "warmup": 4,
-     "place": 1,
-     "points": "141.91"
+     "warmup": 4
     },
     {
      "name": "Artur Smagulov",
      "nation": "KAZ",
-     "place": 10,
+     "place": 12,
      "points": "109.51",
      "time": "21:31",
      "no": 13,
@@ -57740,7 +57738,7 @@
     {
      "name": "David Gouveia",
      "nation": "POR",
-     "place": 16,
+     "place": 18,
      "points": "85.52",
      "time": "20:31",
      "no": 8,
@@ -57749,7 +57747,7 @@
     {
      "name": "Douglas Gerber",
      "nation": "AUS",
-     "place": 14,
+     "place": 16,
      "points": "99.12",
      "time": "20:54",
      "no": 11,
@@ -57758,7 +57756,7 @@
     {
      "name": "Elias Sayed",
      "nation": "SWE",
-     "place": 11,
+     "place": 13,
      "points": "109.01",
      "time": "20:16",
      "no": 6,
@@ -57767,7 +57765,7 @@
     {
      "name": "Francois Pitot",
      "nation": "FRA",
-     "place": 5,
+     "place": 7,
      "points": "125.84",
      "time": "21:39",
      "no": 14,
@@ -57783,7 +57781,7 @@
     {
      "name": "Hugo Bostedt",
      "nation": "SWE",
-     "place": 8,
+     "place": 10,
      "points": "112.49",
      "time": "19:54",
      "no": 4,
@@ -57794,12 +57792,14 @@
      "nation": "KOR",
      "time": "22:47",
      "no": 22,
-     "warmup": 4
+     "warmup": 4,
+     "place": 3,
+     "points": "133.67"
     },
     {
      "name": "Ian Vauclin",
      "nation": "FRA",
-     "place": 17,
+     "place": 19,
      "points": "84.55",
      "time": "20:39",
      "no": 9,
@@ -57808,7 +57808,7 @@
     {
      "name": "Jakub Lofek",
      "nation": "POL",
-     "place": 3,
+     "place": 4,
      "points": "129.39",
      "time": "21:23",
      "no": 12,
@@ -57817,7 +57817,7 @@
     {
      "name": "Jimmy Ma",
      "nation": "USA",
-     "place": 9,
+     "place": 11,
      "points": "109.81",
      "time": "21:46",
      "no": 15,
@@ -57826,7 +57826,7 @@
     {
      "name": "Larry Loupolover",
      "nation": "BUL",
-     "place": 19,
+     "place": 21,
      "points": "57.02",
      "time": "19:31",
      "no": 1,
@@ -57835,7 +57835,7 @@
     {
      "name": "Lukas Vaclavik",
      "nation": "SVK",
-     "place": 12,
+     "place": 14,
      "points": "107.04",
      "time": "22:02",
      "no": 17,
@@ -57844,7 +57844,7 @@
     {
      "name": "Makar Suntsev",
      "nation": "FIN",
-     "place": 4,
+     "place": 6,
      "points": "127.00",
      "time": "22:16",
      "no": 18,
@@ -57862,7 +57862,7 @@
     {
      "name": "Noah Bodenstein",
      "nation": "SUI",
-     "place": 13,
+     "place": 15,
      "points": "106.34",
      "time": "19:39",
      "no": 2,
@@ -57874,13 +57874,13 @@
      "time": "22:39",
      "no": 21,
      "warmup": 4,
-     "place": 4,
+     "place": 5,
      "points": "129.14"
     },
     {
      "name": "Xavier Vauclin",
      "nation": "FRA",
-     "place": 7,
+     "place": 9,
      "points": "121.04",
      "time": "20:47",
      "no": 10,
@@ -57889,7 +57889,7 @@
     {
      "name": "Yu-Hsiang Li",
      "nation": "TPE",
-     "place": 6,
+     "place": 8,
      "points": "125.31",
      "time": "22:24",
      "no": 19,
@@ -57898,7 +57898,7 @@
     {
      "name": "Ze Zeng Fang",
      "nation": "MAS",
-     "place": 15,
+     "place": 17,
      "points": "97.77",
      "time": "20:24",
      "no": 7,
@@ -101847,5 +101847,5 @@
   "Jessica Lin": "photos/04d2f63664776ce1.jpg",
   "Adrian Jimenez de Baldomero": "photos/751a9143e61e2724.jpg"
  },
- "rev": "d95ef3c34735fdeb"
+ "rev": "97dc64ead2e789e5"
 }
