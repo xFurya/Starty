@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T17:40:31+03:00",
- "checked": "2026-11-19T15:12:31.016397+00:00",
+ "checked": "2026-11-19T15:20:31.416566+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57373,29 +57373,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Таисия Лепихина",
+     "nation": "ВЛГ",
+     "points": "109.11"
+    },
+    {
+     "place": 2,
      "name": "София Ермолова",
      "nation": "ЛЕН",
      "points": "107.54"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Софья Лукина",
      "nation": "БАШ",
      "points": "99.63"
-    },
-    {
-     "place": 3,
-     "name": "Арина Данилова",
-     "nation": "ВОР",
-     "points": "98.11"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. София Ермолова — 107.54\n2. Софья Лукина — 99.63\n3. Арина Данилова — 98.11\n\nНачало: 17:05 МСК\nТрансляция: Первый канал",
+   "desc": "Промежуточные итоги:\n1. Таисия Лепихина — 109.11\n2. София Ермолова — 107.54\n3. Софья Лукина — 99.63\n\nНачало: 17:05 МСК\nТрансляция: Первый канал",
    "field": [
     {
      "name": "Анастасия Шарошкина",
      "nation": "МОС",
-     "place": 5,
+     "place": 6,
      "points": "88.20",
      "no": 3
     },
@@ -57403,20 +57403,20 @@
      "name": "Арина Данилова",
      "nation": "ВОР",
      "no": 4,
-     "place": 3,
+     "place": 4,
      "points": "98.11"
     },
     {
      "name": "Арина Комекова",
      "nation": "ККР",
-     "place": 4,
+     "place": 5,
      "points": "90.29",
      "no": 2
     },
     {
      "name": "Екатерина Гайдукова",
      "nation": "КУР",
-     "place": 6,
+     "place": 7,
      "points": "72.86",
      "no": 1
     },
@@ -57424,20 +57424,22 @@
      "name": "София Ермолова",
      "nation": "ЛЕН",
      "no": 5,
-     "place": 1,
+     "place": 2,
      "points": "107.54"
     },
     {
      "name": "Софья Лукина",
      "nation": "БАШ",
      "no": 6,
-     "place": 2,
+     "place": 3,
      "points": "99.63"
     },
     {
      "name": "Таисия Лепихина",
      "nation": "ВЛГ",
-     "no": 7
+     "no": 7,
+     "place": 1,
+     "points": "109.11"
     }
    ],
    "provisional": true,
@@ -57492,14 +57494,16 @@
      "note": "Платно"
     }
    ],
-   "desc": "Начало: 18:05 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Debora Anna Cohen / Lukas Vochozka — 50.93\n\nНачало: 18:05 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Debora Anna Cohen / Lukas Vochozka",
      "nation": "CZE",
      "time": "18:11",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "50.93"
     },
     {
      "name": "Miyu Yunoki / Tristan Taylor",
@@ -57560,7 +57564,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Debora Anna Cohen / Lukas Vochozka",
+     "nation": "CZE",
+     "points": "50.93"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:men-senior-pp",
@@ -101650,5 +101663,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "d72b3c147ac69aa7"
+ "rev": "3df8781ce0e1c318"
 }
