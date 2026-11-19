@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T16:44:29+03:00",
- "checked": "2026-11-19T14:48:32.027785+00:00",
+ "checked": "2026-11-19T14:52:31.489345+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57234,7 +57234,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Злата Камалова / Данил Панов — 60.73\n2. Jolena Grohne / Manuel Rossi — 55.80\n3. Laura Heckova / Alex Valky — 48.81\n\nНачало: 16:55 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Злата Камалова / Данил Панов — 60.73\n2. Jolena Grohne / Manuel Rossi — 55.80\n3. Laura Heckova / Alex Valky — 48.81\n\nНачало: 16:55 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Leontina Horcickova / Jindrich Klement",
@@ -57312,7 +57312,7 @@
      "Jolena GROHNE / Manuel ROSSI": "Jolena Grohne / Manuel Rossi",
      "Clelia LIGET-LATUS / Allan Daniel FISHER": "Clelia Liget-latus / Allan Daniel Fisher"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-cs-tallinn-trophy-2026.json",
    "podium": [
@@ -57334,8 +57334,7 @@
      "nation": "SVK",
      "points": "48.81"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:women-senior-pp",
@@ -101634,5 +101633,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "9a57754179b10879"
+ "rev": "6ac063fe018c8f34"
 }
