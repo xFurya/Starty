@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T17:40:31+03:00",
- "checked": "2026-11-19T16:00:31.235163+00:00",
+ "checked": "2026-11-19T16:04:30.801212+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57494,7 +57494,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Miyu Yunoki / Tristan Taylor — 54.67\n2. Linzy Fitzpatrick / Keyton Bearinger — 53.20\n3. Reagan Moss / Jakub Galbavy — 52.76\n\nНачало: 18:05 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Miyu Yunoki / Tristan Taylor — 54.67\n2. Linzy Fitzpatrick / Keyton Bearinger — 53.20\n3. Reagan Moss / Jakub Galbavy — 52.76\n\nНачало: 18:05 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Debora Anna Cohen / Lukas Vochozka",
@@ -57529,7 +57529,7 @@
      "time": "18:35",
      "no": 4,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "42.85"
     },
     {
@@ -57538,7 +57538,7 @@
      "time": "18:41",
      "no": 5,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "49.77"
     },
     {
@@ -57555,7 +57555,9 @@
      "nation": "ITA",
      "time": "18:53",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "50.76"
     }
    ],
    "live": {
@@ -57572,7 +57574,7 @@
      "Linzy FITZPATRICK / Keyton BEARINGER": "Linzy Fitzpatrick / Keyton Bearinger",
      "Irina NAPOLITANO / Edoardo COMI": "Irina Napolitano / Edoardo Comi"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-cs-tallinn-trophy-2026.json",
    "podium": [
@@ -57594,8 +57596,7 @@
      "nation": "USA",
      "points": "52.76"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:men-senior-pp",
@@ -101685,5 +101686,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "5254013412b6c821"
+ "rev": "7373546edce03e69"
 }
