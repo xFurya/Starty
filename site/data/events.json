@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-19T19:48:59+03:00",
- "checked": "2026-11-19T17:20:31.722234+00:00",
+ "generated": "2026-11-19T20:09:14+03:00",
+ "checked": "2026-11-19T20:09:14+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57678,11 +57678,11 @@
     {
      "name": "Adrian Jimenez de Baldomero",
      "nation": "ESP",
+     "place": 3,
+     "points": "69.74",
      "time": "19:46",
      "no": 3,
-     "warmup": 1,
-     "place": 4,
-     "points": "69.74"
+     "warmup": 1
     },
     {
      "name": "Anthony Paradis",
@@ -57738,11 +57738,11 @@
     {
      "name": "Hugo Bostedt",
      "nation": "SWE",
+     "place": 1,
+     "points": "112.49",
      "time": "19:54",
      "no": 4,
-     "warmup": 1,
-     "place": 1,
-     "points": "112.49"
+     "warmup": 1
     },
     {
      "name": "Hyungyeom Kim",
@@ -57847,10 +57847,10 @@
     "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT001RS.htm",
     "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG001.htm",
     "names": {
-     "Noah BODENSTEIN": "Noah Bodenstein",
-     "Larry LOUPOLOVER": "Larry Loupolover",
-     "Adrian JIMENEZ de BALDOMERO": "Adrian Jimenez de Baldomero",
      "Hugo BOSTEDT": "Hugo Bostedt",
+     "Noah BODENSTEIN": "Noah Bodenstein",
+     "Adrian JIMENEZ de BALDOMERO": "Adrian Jimenez de Baldomero",
+     "Larry LOUPOLOVER": "Larry Loupolover",
      "Elias SAYED": "Elias Sayed",
      "Ze Zeng FANG": "Ze Zeng Fang",
      "David GOUVEIA": "David Gouveia",
@@ -99026,28 +99026,36 @@
    "y": "2026/27"
   },
   {
+   "n": "Naomie Ismaili / Leo Rouvrais",
+   "c": "FRA",
+   "k": "",
+   "p": "25ec80dcd7c7",
+   "was": "P",
+   "y": "2026/27"
+  },
+  {
+   "n": "Jolena Grohne / Manuel Rossi",
+   "c": "ITA",
+   "k": "",
+   "p": "8987c7dcf620",
+   "was": "P",
+   "y": "2026/27"
+  },
+  {
+   "n": "Xuanyu Liu / Wenbao Han",
+   "c": "CHN",
+   "k": "",
+   "was": "p",
+   "y": "2026/27",
+   "p": "f106f535fcc0"
+  },
+  {
    "n": "Veronika Zhilina",
    "c": "AZE",
    "k": "",
    "was": "w",
    "y": "2026/27",
    "p": "72fb55b016fa"
-  },
-  {
-   "n": "Naomie Ismaili / Leo Rouvrais",
-   "c": "FRA",
-   "k": "",
-   "was": "P",
-   "y": "2026/27",
-   "p": "25ec80dcd7c7"
-  },
-  {
-   "n": "Jolena Grohne / Manuel Rossi",
-   "c": "ITA",
-   "k": "",
-   "was": "P",
-   "y": "2026/27",
-   "p": "8987c7dcf620"
   }
  ],
  "photos": {
@@ -101771,7 +101779,8 @@
   "Pooja Kalyan": "photos/a73e300001a47616.jpg",
   "Joseph Kang": "photos/645b0bfe6f1d0b81.jpg",
   "Angela Wang": "photos/0f719365b326830b.jpg",
-  "Jessica Lin": "photos/04d2f63664776ce1.jpg"
+  "Jessica Lin": "photos/04d2f63664776ce1.jpg",
+  "Adrian Jimenez de Baldomero": "photos/751a9143e61e2724.jpg"
  },
- "rev": "aa00cb592f328ee6"
+ "rev": "90ba0cddfe9dbf4b"
 }
