@@ -14,11 +14,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-tallinn-trophy-2026:dance-senior-rt@starty
-DTSTAMP:20261119T193745Z
-DTSTART;TZID=Europe/Moscow:20261121T183500
-DTEND;TZID=Europe/Moscow:20261121T204500
+DTSTAMP:20261119T204049Z
+DTSTART;TZID=Europe/Moscow:20261121T182000
+DTEND;TZID=Europe/Moscow:20261121T203000
 SUMMARY:CS Tallinn Trophy — танцы РТ
-DESCRIPTION:Начало: 18:35 МСК\nТрансляция: Ice-Stars.TV
+DESCRIPTION:Начало: 18:20 МСК\nТрансляция: Ice-Stars.TV
 LOCATION:Tallinn\, Estonia
 URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-tallinn-trophy-2026:dance
  -senior-rt
