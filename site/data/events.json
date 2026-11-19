@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T12:45:59+03:00",
- "checked": "2026-11-19T12:45:59+03:00",
+ "checked": "2026-11-19T10:12:02.971026+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56255,25 +56255,25 @@
     },
     {
      "place": 2,
-     "name": "Nela Snebergerova",
-     "nation": "CZE",
-     "points": "51.39"
+     "name": "Sara Franzi",
+     "nation": "SUI",
+     "points": "54.42"
     },
     {
      "place": 3,
-     "name": "Nikola Fomchenkova",
-     "nation": "LAT",
-     "points": "51.37"
+     "name": "Nela Snebergerova",
+     "nation": "CZE",
+     "points": "51.39"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Anita Ostlund — 55.70\n2. Nela Snebergerova — 51.39\n3. Nikola Fomchenkova — 51.37\n\nНачало: 12:15 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Anita Ostlund — 55.70\n2. Sara Franzi — 54.42\n3. Nela Snebergerova — 51.39\n\nНачало: 12:15 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Nela Snebergerova",
      "nation": "CZE",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "51.39",
      "time": "12:21"
     },
@@ -56282,7 +56282,7 @@
      "nation": "AUT",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "47.91",
      "time": "12:27"
     },
@@ -56300,7 +56300,7 @@
      "nation": "SWE",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 7,
      "points": "44.62",
      "time": "12:39"
     },
@@ -56309,7 +56309,7 @@
      "nation": "LAT",
      "no": 5,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "51.37",
      "time": "12:44"
     },
@@ -56360,7 +56360,9 @@
      "nation": "SUI",
      "time": "13:03",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6,
+     "points": "47.17"
     },
     {
      "name": "Gabrielle Daleman",
@@ -56479,7 +56481,9 @@
      "nation": "SUI",
      "time": "12:57",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "54.42"
     },
     {
      "name": "Sarina Joos",
@@ -56596,9 +56600,21 @@
      "name": "Артем Шевнин",
      "nation": "ИРК",
      "points": "100.96"
+    },
+    {
+     "place": 2,
+     "name": "Кирилл Агарков",
+     "nation": "СТВ",
+     "points": "94.61"
+    },
+    {
+     "place": 3,
+     "name": "Роман Майер",
+     "nation": "НИЖ",
+     "points": "92.55"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Артем Шевнин — 100.96\n\nНачало: 12:35 МСК\nТрансляция: Первый канал",
+   "desc": "Промежуточные итоги:\n1. Артем Шевнин — 100.96\n2. Кирилл Агарков — 94.61\n3. Роман Майер — 92.55\n\nНачало: 12:35 МСК\nТрансляция: Первый канал",
    "field": [
     {
      "name": "Андрей Вересов",
@@ -56635,12 +56651,16 @@
     {
      "name": "Кирилл Агарков",
      "nation": "СТВ",
-     "no": 4
+     "no": 4,
+     "place": 2,
+     "points": "94.61"
     },
     {
      "name": "Максим Тяпин",
      "nation": "РОБ",
-     "no": 2
+     "no": 2,
+     "place": 4,
+     "points": "81.78"
     },
     {
      "name": "Павел Шин",
@@ -56650,7 +56670,9 @@
     {
      "name": "Роман Майер",
      "nation": "НИЖ",
-     "no": 3
+     "no": 3,
+     "place": 3,
+     "points": "92.55"
     }
    ],
    "provisional": true,
@@ -56673,28 +56695,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Артем Шевнин",
-     "nation": "ИРК",
-     "points": "100.96"
-    },
-    {
-     "place": 2,
-     "name": "Роман Майер",
-     "nation": "НИЖ",
-     "points": "92.55"
-    },
-    {
-     "place": 3,
-     "name": "Максим Тяпин",
-     "nation": "РОБ",
-     "points": "81.78"
-    }
-   ],
-   "provisional": true
+   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:women-junior-pp",
@@ -101205,5 +101206,5 @@
   "Skylar Lautowa-peguero": "photos/793cd3db7aa70b54.jpg",
   "Jared Sedlis": "photos/6521e032ae88999b.jpg"
  },
- "rev": "28a902c061a1050f"
+ "rev": "747dceb5265c083b"
 }
