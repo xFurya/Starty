@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-19T08:27:26+03:00",
- "checked": "2026-11-19T08:27:26+03:00",
- "complete": true,
+ "generated": "2026-11-19T08:54:40+03:00",
+ "checked": "2026-11-19T08:54:40+03:00",
+ "complete": false,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
-  "Golden Skate": "ok",
+  "Golden Skate": "fail",
   "ФФКМ": "ok",
   "Самара": "ok"
  },
@@ -100855,5 +100855,5 @@
   "Maxim Varakin": "photos/cebbaca1aac7632a.jpg",
   "Максим Варакин": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "b82308194924c84a"
+ "rev": "2c444a6a5166fd9f"
 }
