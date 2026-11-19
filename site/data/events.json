@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-19T09:42:51+03:00",
- "checked": "2026-11-19T10:08:03.590704+00:00",
+ "generated": "2026-11-19T12:45:59+03:00",
+ "checked": "2026-11-19T12:45:59+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56246,137 +56246,78 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Anita Ostlund — 55.70\n2. Sara Franzi — 54.42\n3. Nela Snebergerova — 51.39\n\nНачало: 12:15 МСК\nТрансляция: Ice-Stars.TV",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Anita Ostlund",
+     "nation": "SWE",
+     "points": "55.70"
+    },
+    {
+     "place": 2,
+     "name": "Nela Snebergerova",
+     "nation": "CZE",
+     "points": "51.39"
+    },
+    {
+     "place": 3,
+     "name": "Nikola Fomchenkova",
+     "nation": "LAT",
+     "points": "51.37"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Anita Ostlund — 55.70\n2. Nela Snebergerova — 51.39\n3. Nikola Fomchenkova — 51.37\n\nНачало: 12:15 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Nela Snebergerova",
      "nation": "CZE",
-     "time": "12:21",
      "no": 1,
      "warmup": 1,
-     "place": 3,
-     "points": "51.39"
+     "place": 2,
+     "points": "51.39",
+     "time": "12:21"
     },
     {
      "name": "Flora Marie Schaller",
      "nation": "AUT",
-     "time": "12:27",
      "no": 2,
      "warmup": 1,
-     "place": 5,
-     "points": "47.91"
+     "place": 4,
+     "points": "47.91",
+     "time": "12:27"
     },
     {
      "name": "Anita Ostlund",
      "nation": "SWE",
-     "time": "12:33",
      "no": 3,
      "warmup": 1,
      "place": 1,
-     "points": "55.70"
+     "points": "55.70",
+     "time": "12:33"
     },
     {
      "name": "Julia Brovall",
      "nation": "SWE",
-     "time": "12:39",
      "no": 4,
      "warmup": 1,
-     "place": 6,
-     "points": "44.62"
+     "place": 5,
+     "points": "44.62",
+     "time": "12:39"
     },
     {
      "name": "Nikola Fomchenkova",
      "nation": "LAT",
-     "time": "12:44",
      "no": 5,
      "warmup": 1,
-     "place": 4,
-     "points": "51.37"
+     "place": 3,
+     "points": "51.37",
+     "time": "12:44"
     },
     {
-     "name": "Sara Franzi",
-     "nation": "SUI",
-     "time": "12:57",
-     "no": 6,
-     "warmup": 2,
-     "place": 2,
-     "points": "54.42"
-    },
-    {
-     "name": "Eugenia Sekulovski",
-     "nation": "SUI",
-     "time": "13:03",
-     "no": 7,
-     "warmup": 2
-    },
-    {
-     "name": "Michelle Dicicco",
-     "nation": "ARG",
-     "time": "13:08",
-     "no": 8,
-     "warmup": 2
-    },
-    {
-     "name": "Pernille With",
-     "nation": "NOR",
-     "time": "13:14",
-     "no": 9,
-     "warmup": 2
-    },
-    {
-     "name": "Zhasmin Shlaga",
-     "nation": "KGZ",
-     "time": "13:20",
-     "no": 10,
-     "warmup": 2
-    },
-    {
-     "name": "Yu-Feng Tsai",
-     "nation": "TPE",
-     "time": "13:45",
-     "no": 11,
-     "warmup": 3
-    },
-    {
-     "name": "Josefin Brovall",
-     "nation": "SWE",
-     "time": "13:51",
-     "no": 12,
-     "warmup": 3
-    },
-    {
-     "name": "Sarina Joos",
-     "nation": "ITA",
-     "time": "13:57",
-     "no": 13,
-     "warmup": 3
-    },
-    {
-     "name": "Kristina Lisovskaja",
-     "nation": "EST",
-     "time": "14:03",
-     "no": 14,
-     "warmup": 3
-    },
-    {
-     "name": "Lara Naki Gutmann",
-     "nation": "ITA",
-     "time": "14:09",
-     "no": 15,
-     "warmup": 3
-    },
-    {
-     "name": "Barbora Vrankova",
-     "nation": "CZE",
-     "time": "14:21",
-     "no": 16,
-     "warmup": 4
-    },
-    {
-     "name": "Livia Kaiser",
-     "nation": "SUI",
-     "time": "14:27",
-     "no": 17,
+     "name": "Afrina Diyanah",
+     "nation": "MAS",
+     "time": "14:44",
+     "no": 20,
      "warmup": 4
     },
     {
@@ -56387,74 +56328,11 @@
      "warmup": 4
     },
     {
-     "name": "Marta Helena Prangel",
-     "nation": "EST",
-     "time": "14:38",
-     "no": 19,
+     "name": "Barbora Vrankova",
+     "nation": "CZE",
+     "time": "14:21",
+     "no": 16,
      "warmup": 4
-    },
-    {
-     "name": "Afrina Diyanah",
-     "nation": "MAS",
-     "time": "14:44",
-     "no": 20,
-     "warmup": 4
-    },
-    {
-     "name": "Gabrielle Daleman",
-     "nation": "CAN",
-     "time": "14:50",
-     "no": 21,
-     "warmup": 4
-    },
-    {
-     "name": "Oona Ounasvuori",
-     "nation": "FIN",
-     "time": "15:15",
-     "no": 22,
-     "warmup": 5
-    },
-    {
-     "name": "Selma Valitalo",
-     "nation": "FIN",
-     "time": "15:21",
-     "no": 23,
-     "warmup": 5
-    },
-    {
-     "name": "Lotta Artimo",
-     "nation": "FIN",
-     "time": "15:27",
-     "no": 24,
-     "warmup": 5
-    },
-    {
-     "name": "Karoliine Raudsepp",
-     "nation": "EST",
-     "time": "15:33",
-     "no": 25,
-     "warmup": 5
-    },
-    {
-     "name": "Maria Eliise Kaljuvere",
-     "nation": "EST",
-     "time": "15:39",
-     "no": 26,
-     "warmup": 5
-    },
-    {
-     "name": "Karolina Bialas",
-     "nation": "POL",
-     "time": "15:45",
-     "no": 27,
-     "warmup": 5
-    },
-    {
-     "name": "Olesja Leonova",
-     "nation": "EST",
-     "time": "15:57",
-     "no": 28,
-     "warmup": 6
     },
     {
      "name": "Breken Brezden",
@@ -56471,13 +56349,6 @@
      "warmup": 6
     },
     {
-     "name": "Haruna Murakami",
-     "nation": "AUS",
-     "time": "16:14",
-     "no": 31,
-     "warmup": 6
-    },
-    {
      "name": "Emilija Ozola",
      "nation": "LAT",
      "time": "16:20",
@@ -56485,24 +56356,172 @@
      "warmup": 6
     },
     {
+     "name": "Eugenia Sekulovski",
+     "nation": "SUI",
+     "time": "13:03",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Gabrielle Daleman",
+     "nation": "CAN",
+     "time": "14:50",
+     "no": 21,
+     "warmup": 4
+    },
+    {
+     "name": "Haruna Murakami",
+     "nation": "AUS",
+     "time": "16:14",
+     "no": 31,
+     "warmup": 6
+    },
+    {
+     "name": "Josefin Brovall",
+     "nation": "SWE",
+     "time": "13:51",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Karoliine Raudsepp",
+     "nation": "EST",
+     "time": "15:33",
+     "no": 25,
+     "warmup": 5
+    },
+    {
+     "name": "Karolina Bialas",
+     "nation": "POL",
+     "time": "15:45",
+     "no": 27,
+     "warmup": 5
+    },
+    {
+     "name": "Kristina Lisovskaja",
+     "nation": "EST",
+     "time": "14:03",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Lara Naki Gutmann",
+     "nation": "ITA",
+     "time": "14:09",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Livia Kaiser",
+     "nation": "SUI",
+     "time": "14:27",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Lotta Artimo",
+     "nation": "FIN",
+     "time": "15:27",
+     "no": 24,
+     "warmup": 5
+    },
+    {
+     "name": "Maria Eliise Kaljuvere",
+     "nation": "EST",
+     "time": "15:39",
+     "no": 26,
+     "warmup": 5
+    },
+    {
+     "name": "Marta Helena Prangel",
+     "nation": "EST",
+     "time": "14:38",
+     "no": 19,
+     "warmup": 4
+    },
+    {
      "name": "Mia Risa Gomez",
      "nation": "NOR",
      "time": "16:26",
      "no": 33,
      "warmup": 6
+    },
+    {
+     "name": "Michelle Dicicco",
+     "nation": "ARG",
+     "time": "13:08",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Olesja Leonova",
+     "nation": "EST",
+     "time": "15:57",
+     "no": 28,
+     "warmup": 6
+    },
+    {
+     "name": "Oona Ounasvuori",
+     "nation": "FIN",
+     "time": "15:15",
+     "no": 22,
+     "warmup": 5
+    },
+    {
+     "name": "Pernille With",
+     "nation": "NOR",
+     "time": "13:14",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Sara Franzi",
+     "nation": "SUI",
+     "time": "12:57",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Sarina Joos",
+     "nation": "ITA",
+     "time": "13:57",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Selma Valitalo",
+     "nation": "FIN",
+     "time": "15:21",
+     "no": 23,
+     "warmup": 5
+    },
+    {
+     "name": "Yu-Feng Tsai",
+     "nation": "TPE",
+     "time": "13:45",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Zhasmin Shlaga",
+     "nation": "KGZ",
+     "time": "13:20",
+     "no": 10,
+     "warmup": 2
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG003.htm",
     "cat": null,
     "first": null,
     "names": {
-     "Nela SNEBERGEROVA": "Nela Snebergerova",
-     "Flora Marie SCHALLER": "Flora Marie Schaller",
      "Anita OSTLUND": "Anita Ostlund",
-     "Julia BROVALL": "Julia Brovall",
+     "Nela SNEBERGEROVA": "Nela Snebergerova",
      "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
+     "Flora Marie SCHALLER": "Flora Marie Schaller",
+     "Julia BROVALL": "Julia Brovall",
      "Sara FRANZI": "Sara Franzi",
      "Eugenia SEKULOVSKI": "Eugenia Sekulovski",
      "Michelle DICICCO": "Michelle Dicicco",
@@ -56534,28 +56553,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Anita Ostlund",
-     "nation": "SWE",
-     "points": "55.70"
-    },
-    {
-     "place": 2,
-     "name": "Sara Franzi",
-     "nation": "SUI",
-     "points": "54.42"
-    },
-    {
-     "place": 3,
-     "name": "Nela Snebergerova",
-     "nation": "CZE",
-     "points": "51.39"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:men-junior-pp",
@@ -56592,75 +56590,70 @@
      "url": "https://www.sport1tv.ru/figurnoe-katanie"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Артем Шевнин — 100.96\n2. Роман Майер — 92.55\n3. Максим Тяпин — 81.78\n\nНачало: 12:35 МСК\nТрансляция: Первый канал",
-   "field": [
+   "podium": [
     {
+     "place": 1,
      "name": "Артем Шевнин",
      "nation": "ИРК",
-     "no": 1,
-     "warmup": null,
-     "place": 1,
      "points": "100.96"
-    },
-    {
-     "name": "Максим Тяпин",
-     "nation": "РОБ",
-     "no": 2,
-     "warmup": null,
-     "place": 3,
-     "points": "81.78"
-    },
-    {
-     "name": "Роман Майер",
-     "nation": "НИЖ",
-     "no": 3,
-     "warmup": null,
-     "place": 2,
-     "points": "92.55"
-    },
-    {
-     "name": "Кирилл Агарков",
-     "nation": "СТВ",
-     "no": 4,
-     "warmup": null
-    },
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Артем Шевнин — 100.96\n\nНачало: 12:35 МСК\nТрансляция: Первый канал",
+   "field": [
     {
      "name": "Андрей Вересов",
      "nation": "КАЛ",
-     "no": 5,
-     "warmup": null
+     "no": 5
     },
     {
-     "name": "Захар Кяхба",
-     "nation": "ККР",
-     "no": 6,
-     "warmup": null
-    },
-    {
-     "name": "Павел Шин",
-     "nation": "МОС",
-     "no": 7,
-     "warmup": null
-    },
-    {
-     "name": "Георгий Шульц",
-     "nation": "КРМ",
-     "no": 8,
-     "warmup": null
+     "name": "Артем Шевнин",
+     "nation": "ИРК",
+     "place": 1,
+     "points": "100.96",
+     "no": 1
     },
     {
      "name": "Артём Кошутин",
      "nation": "ВЛГ",
-     "no": 9,
-     "warmup": null
+     "no": 9
+    },
+    {
+     "name": "Георгий Шульц",
+     "nation": "КРМ",
+     "no": 8
     },
     {
      "name": "Глеб Дудченко",
      "nation": "МОБ",
-     "no": 10,
-     "warmup": null
+     "no": 10
+    },
+    {
+     "name": "Захар Кяхба",
+     "nation": "ККР",
+     "no": 6
+    },
+    {
+     "name": "Кирилл Агарков",
+     "nation": "СТВ",
+     "no": 4
+    },
+    {
+     "name": "Максим Тяпин",
+     "nation": "РОБ",
+     "no": 2
+    },
+    {
+     "name": "Павел Шин",
+     "nation": "МОС",
+     "no": 7
+    },
+    {
+     "name": "Роман Майер",
+     "nation": "НИЖ",
+     "no": 3
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
     "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG010.HTM",
@@ -58049,7 +58042,7 @@
    "seg": "КП",
    "title": "GP Finlandia Trophy — пары КП",
    "start": "2026-11-20T15:00:00+03:00",
-   "end": "2026-11-20T16:10:00+03:00",
+   "end": "2026-11-20T16:07:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
    "broadcast": [
@@ -58062,12 +58055,12 @@
     "Audrey Shin / Spencer Akira Howe",
     "Hannah Herrera / Ivan Khobta",
     "Irma Caldara / Riccardo Maglio",
-    "Katie Mcbeath / Balazs Nagy",
+    "Katie McBEATH / Balazs Nagy",
     "Lia Pereira / Trennt Michaud",
     "Megan Wessenberg / Denys Strekalin",
     "Valentina Plazas / Maximiliano Fernandez"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
+   "src": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -58081,39 +58074,80 @@
    "desc": "Начало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Annika Hocke / Robert Kunkel",
-     "nation": "GER"
-    },
-    {
-     "name": "Audrey Shin / Spencer Akira Howe",
-     "nation": "USA"
+     "name": "Megan Wessenberg / Denys Strekalin",
+     "nation": "FRA",
+     "time": "15:07",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Hannah Herrera / Ivan Khobta",
-     "nation": "UKR"
+     "nation": "UKR",
+     "time": "15:13",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Irma Caldara / Riccardo Maglio",
-     "nation": "ITA"
+     "name": "Katie McBEATH / Balazs Nagy",
+     "nation": "USA",
+     "time": "15:20",
+     "no": 3,
+     "warmup": 1
     },
     {
-     "name": "Katie Mcbeath / Balazs Nagy",
-     "nation": "USA"
-    },
-    {
-     "name": "Lia Pereira / Trennt Michaud",
-     "nation": "CAN"
-    },
-    {
-     "name": "Megan Wessenberg / Denys Strekalin",
-     "nation": "FRA"
+     "name": "Audrey Shin / Spencer Akira Howe",
+     "nation": "USA",
+     "time": "15:26",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Valentina Plazas / Maximiliano Fernandez",
-     "nation": "USA"
+     "nation": "USA",
+     "time": "15:40",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Irma Caldara / Riccardo Maglio",
+     "nation": "ITA",
+     "time": "15:46",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Annika Hocke / Robert Kunkel",
+     "nation": "GER",
+     "time": "15:53",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Lia Pereira / Trennt Michaud",
+     "nation": "CAN",
+     "time": "15:59",
+     "no": 8,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG005.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Megan WESSENBERG / Denys STREKALIN": "Megan Wessenberg / Denys Strekalin",
+     "Hannah HERRERA / Ivan KHOBTA": "Hannah Herrera / Ivan Khobta",
+     "Katie McBEATH / Balazs NAGY": "Katie McBEATH / Balazs Nagy",
+     "Audrey SHIN / Spencer Akira HOWE": "Audrey Shin / Spencer Akira Howe",
+     "Valentina PLAZAS / Maximiliano FERNANDEZ": "Valentina Plazas / Maximiliano Fernandez",
+     "Irma CALDARA / Riccardo MAGLIO": "Irma Caldara / Riccardo Maglio",
+     "Annika HOCKE / Robert KUNKEL": "Annika Hocke / Robert Kunkel",
+     "Lia PEREIRA / Trennt MICHAUD": "Lia Pereira / Trennt Michaud"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:women-senior-kp",
@@ -58146,7 +58180,7 @@
     "Seoyoung Kim",
     "Yuseong Kim"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
+   "src": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -58160,55 +58194,112 @@
    "desc": "Начало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Anna Pezzetta",
-     "nation": "ITA"
-    },
-    {
-     "name": "Haein Lee",
-     "nation": "KOR"
-    },
-    {
-     "name": "Iida Karhunen",
-     "nation": "FIN"
-    },
-    {
-     "name": "Isabeau Levito",
-     "nation": "USA"
-    },
-    {
      "name": "Janna Jyrkinen",
-     "nation": "FIN"
-    },
-    {
-     "name": "Mao Shimada",
-     "nation": "JPN"
+     "nation": "FIN",
+     "time": "16:37",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Minja Peltonen",
-     "nation": "FIN"
-    },
-    {
-     "name": "Niina Petrokina",
-     "nation": "EST"
-    },
-    {
-     "name": "Rinka Watanabe",
-     "nation": "JPN"
-    },
-    {
-     "name": "Rion Sumiyoshi",
-     "nation": "JPN"
+     "nation": "FIN",
+     "time": "16:43",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Seoyoung Kim",
-     "nation": "KOR"
+     "nation": "KOR",
+     "time": "16:50",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Rion Sumiyoshi",
+     "nation": "JPN",
+     "time": "16:56",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Iida Karhunen",
+     "nation": "FIN",
+     "time": "17:02",
+     "no": 5,
+     "warmup": 1
     },
     {
      "name": "Yuseong Kim",
-     "nation": "KOR"
+     "nation": "KOR",
+     "time": "17:08",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Rinka Watanabe",
+     "nation": "JPN",
+     "time": "17:22",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Anna Pezzetta",
+     "nation": "ITA",
+     "time": "17:28",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Haein Lee",
+     "nation": "KOR",
+     "time": "17:34",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Mao Shimada",
+     "nation": "JPN",
+     "time": "17:41",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Niina Petrokina",
+     "nation": "EST",
+     "time": "17:47",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Isabeau Levito",
+     "nation": "USA",
+     "time": "17:53",
+     "no": 12,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG003.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Janna JYRKINEN": "Janna Jyrkinen",
+     "Minja PELTONEN": "Minja Peltonen",
+     "Seoyoung KIM": "Seoyoung Kim",
+     "Rion SUMIYOSHI": "Rion Sumiyoshi",
+     "Iida KARHUNEN": "Iida Karhunen",
+     "Yuseong KIM": "Yuseong Kim",
+     "Rinka WATANABE": "Rinka Watanabe",
+     "Anna PEZZETTA": "Anna Pezzetta",
+     "Haein LEE": "Haein Lee",
+     "Mao SHIMADA": "Mao Shimada",
+     "Niina PETROKINA": "Niina Petrokina",
+     "Isabeau LEVITO": "Isabeau Levito"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:men-junior-kp",
@@ -58405,7 +58496,7 @@
     "Tamir Kuperman",
     "Yudong Chen"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
+   "src": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -58419,55 +58510,112 @@
    "desc": "Начало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Adam Siao Him Fa",
-     "nation": "FRA"
-    },
-    {
-     "name": "Andreas Nordeback",
-     "nation": "SWE"
-    },
-    {
-     "name": "Arlet Levandi",
-     "nation": "EST"
-    },
-    {
-     "name": "Genrikh Gartung",
-     "nation": "GER"
-    },
-    {
-     "name": "Kazuki Tomono",
-     "nation": "JPN"
-    },
-    {
-     "name": "Kyrylo Marsak",
-     "nation": "UKR"
-    },
-    {
      "name": "Matias Lindfors",
-     "nation": "FIN"
-    },
-    {
-     "name": "Mihhail Selevko",
-     "nation": "EST"
-    },
-    {
-     "name": "Nika Egadze",
-     "nation": "GEO"
-    },
-    {
-     "name": "Stephen Gogolev",
-     "nation": "CAN"
-    },
-    {
-     "name": "Tamir Kuperman",
-     "nation": "ISR"
+     "nation": "FIN",
+     "time": "18:32",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Yudong Chen",
-     "nation": "CHN"
+     "nation": "CHN",
+     "time": "18:38",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Andreas Nordeback",
+     "nation": "SWE",
+     "time": "18:45",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Arlet Levandi",
+     "nation": "EST",
+     "time": "18:51",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Kyrylo Marsak",
+     "nation": "UKR",
+     "time": "18:57",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Tamir Kuperman",
+     "nation": "ISR",
+     "time": "19:03",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Genrikh Gartung",
+     "nation": "GER",
+     "time": "19:17",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Stephen Gogolev",
+     "nation": "CAN",
+     "time": "19:23",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "time": "19:29",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Kazuki Tomono",
+     "nation": "JPN",
+     "time": "19:36",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Nika Egadze",
+     "nation": "GEO",
+     "time": "19:42",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Adam Siao Him Fa",
+     "nation": "FRA",
+     "time": "19:48",
+     "no": 12,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Matias LINDFORS": "Matias Lindfors",
+     "Yudong CHEN": "Yudong Chen",
+     "Andreas NORDEBACK": "Andreas Nordeback",
+     "Arlet LEVANDI": "Arlet Levandi",
+     "Kyrylo MARSAK": "Kyrylo Marsak",
+     "Tamir KUPERMAN": "Tamir Kuperman",
+     "Genrikh GARTUNG": "Genrikh Gartung",
+     "Stephen GOGOLEV": "Stephen Gogolev",
+     "Mihhail SELEVKO": "Mihhail Selevko",
+     "Kazuki TOMONO": "Kazuki Tomono",
+     "Nika EGADZE": "Nika Egadze",
+     "Adam SIAO HIM FA": "Adam Siao Him Fa"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-junior-pp",
@@ -58642,7 +58790,7 @@
    "seg": "РТ",
    "title": "GP Finlandia Trophy — танцы РТ",
    "start": "2026-11-20T20:20:00+03:00",
-   "end": "2026-11-20T21:35:00+03:00",
+   "end": "2026-11-20T21:39:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
    "broadcast": [
@@ -58655,14 +58803,14 @@
     "Emily Bratti / Ian Somerville",
     "Juulia Turkkila / Matthias Versluis",
     "Laurence Fournier Beaudry / Guillaume Cizeron",
-    "Marie-Jade Lauriault / Romain Le Gac",
+    "Marie-Jade Lauriault / Romain le Gac",
     "Marjorie Lajoie / Jean-Luc Baker",
     "Milla Ruud Reitan / Nikolaj Majorov",
     "Natalie Taschlerova / Filip Taschler",
     "Oona Brown / Gage Brown",
     "Yuka Orihara / Juho Pirinen"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
+   "src": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -58676,47 +58824,96 @@
    "desc": "Начало: 20:20 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Caroline Green / Michael Parsons",
-     "nation": "USA"
-    },
-    {
-     "name": "Emily Bratti / Ian Somerville",
-     "nation": "USA"
-    },
-    {
-     "name": "Juulia Turkkila / Matthias Versluis",
-     "nation": "FIN"
-    },
-    {
-     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
-     "nation": "FRA"
-    },
-    {
-     "name": "Marie-Jade Lauriault / Romain Le Gac",
-     "nation": "CAN"
-    },
-    {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
-     "nation": "CAN"
+     "nation": "CAN",
+     "time": "20:26",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
-     "nation": "SWE"
+     "nation": "SWE",
+     "time": "20:33",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Natalie Taschlerova / Filip Taschler",
-     "nation": "CZE"
+     "name": "Emily Bratti / Ian Somerville",
+     "nation": "USA",
+     "time": "20:39",
+     "no": 3,
+     "warmup": 1
     },
     {
-     "name": "Oona Brown / Gage Brown",
-     "nation": "USA"
+     "name": "Juulia Turkkila / Matthias Versluis",
+     "nation": "FIN",
+     "time": "20:46",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Yuka Orihara / Juho Pirinen",
-     "nation": "FIN"
+     "nation": "FIN",
+     "time": "20:52",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Marie-Jade Lauriault / Romain le Gac",
+     "nation": "CAN",
+     "time": "21:06",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Oona Brown / Gage Brown",
+     "nation": "USA",
+     "time": "21:12",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Natalie Taschlerova / Filip Taschler",
+     "nation": "CZE",
+     "time": "21:19",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "nation": "FRA",
+     "time": "21:25",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Caroline Green / Michael Parsons",
+     "nation": "USA",
+     "time": "21:32",
+     "no": 10,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG007.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Marjorie LAJOIE / Jean-Luc BAKER": "Marjorie Lajoie / Jean-Luc Baker",
+     "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov",
+     "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
+     "Juulia TURKKILA / Matthias VERSLUIS": "Juulia Turkkila / Matthias Versluis",
+     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
+     "Marie-Jade LAURIAULT / Romain le GAC": "Marie-Jade Lauriault / Romain le Gac",
+     "Oona BROWN / Gage BROWN": "Oona Brown / Gage Brown",
+     "Natalie TASCHLEROVA / Filip TASCHLER": "Natalie Taschlerova / Filip Taschler",
+     "Laurence FOURNIER BEAUDRY / Guillaume CIZERON": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "Caroline GREEN / Michael PARSONS": "Caroline Green / Michael Parsons"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:women-junior-pp",
@@ -59045,12 +59242,12 @@
     "Audrey Shin / Spencer Akira Howe",
     "Hannah Herrera / Ivan Khobta",
     "Irma Caldara / Riccardo Maglio",
-    "Katie Mcbeath / Balazs Nagy",
+    "Katie McBEATH / Balazs Nagy",
     "Lia Pereira / Trennt Michaud",
     "Megan Wessenberg / Denys Strekalin",
     "Valentina Plazas / Maximiliano Fernandez"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
+   "src": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -59080,7 +59277,7 @@
      "nation": "ITA"
     },
     {
-     "name": "Katie Mcbeath / Balazs Nagy",
+     "name": "Katie McBEATH / Balazs Nagy",
      "nation": "USA"
     },
     {
@@ -59096,7 +59293,24 @@
      "nation": "USA"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG006.htm",
+    "cat": "https://results.isu.org/results/season2627/gpfin2026/CAT003RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpfin2026/SEG005.htm",
+    "names": {
+     "Lia PEREIRA / Trennt MICHAUD": "Lia Pereira / Trennt Michaud",
+     "Megan WESSENBERG / Denys STREKALIN": "Megan Wessenberg / Denys Strekalin",
+     "Annika HOCKE / Robert KUNKEL": "Annika Hocke / Robert Kunkel",
+     "Irma CALDARA / Riccardo MAGLIO": "Irma Caldara / Riccardo Maglio",
+     "Hannah HERRERA / Ivan KHOBTA": "Hannah Herrera / Ivan Khobta",
+     "Katie McBEATH / Balazs NAGY": "Katie McBEATH / Balazs Nagy",
+     "Valentina PLAZAS / Maximiliano FERNANDEZ": "Valentina Plazas / Maximiliano Fernandez",
+     "Audrey SHIN / Spencer Akira HOWE": "Audrey Shin / Spencer Akira Howe"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:women-senior-pp",
@@ -59129,7 +59343,7 @@
     "Seoyoung Kim",
     "Yuseong Kim"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
+   "src": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -59191,7 +59405,28 @@
      "nation": "KOR"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG004.htm",
+    "cat": "https://results.isu.org/results/season2627/gpfin2026/CAT002RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpfin2026/SEG003.htm",
+    "names": {
+     "Niina PETROKINA": "Niina Petrokina",
+     "Janna JYRKINEN": "Janna Jyrkinen",
+     "Iida KARHUNEN": "Iida Karhunen",
+     "Minja PELTONEN": "Minja Peltonen",
+     "Anna PEZZETTA": "Anna Pezzetta",
+     "Mao SHIMADA": "Mao Shimada",
+     "Rion SUMIYOSHI": "Rion Sumiyoshi",
+     "Rinka WATANABE": "Rinka Watanabe",
+     "Seoyoung KIM": "Seoyoung Kim",
+     "Yuseong KIM": "Yuseong Kim",
+     "Haein LEE": "Haein Lee",
+     "Isabeau LEVITO": "Isabeau Levito"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:dance-junior-rt",
@@ -59530,7 +59765,7 @@
     "Tamir Kuperman",
     "Yudong Chen"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
+   "src": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -59592,7 +59827,28 @@
      "nation": "CHN"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG002.htm",
+    "cat": "https://results.isu.org/results/season2627/gpfin2026/CAT001RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpfin2026/SEG001.htm",
+    "names": {
+     "Stephen GOGOLEV": "Stephen Gogolev",
+     "Yudong CHEN": "Yudong Chen",
+     "Arlet LEVANDI": "Arlet Levandi",
+     "Mihhail SELEVKO": "Mihhail Selevko",
+     "Matias LINDFORS": "Matias Lindfors",
+     "Adam SIAO HIM FA": "Adam Siao Him Fa",
+     "Nika EGADZE": "Nika Egadze",
+     "Genrikh GARTUNG": "Genrikh Gartung",
+     "Tamir KUPERMAN": "Tamir Kuperman",
+     "Kazuki TOMONO": "Kazuki Tomono",
+     "Andreas NORDEBACK": "Andreas Nordeback",
+     "Kyrylo MARSAK": "Kyrylo Marsak"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:dance-senior-rt",
@@ -59910,14 +60166,14 @@
     "Emily Bratti / Ian Somerville",
     "Juulia Turkkila / Matthias Versluis",
     "Laurence Fournier Beaudry / Guillaume Cizeron",
-    "Marie-Jade Lauriault / Romain Le Gac",
+    "Marie-Jade Lauriault / Romain le Gac",
     "Marjorie Lajoie / Jean-Luc Baker",
     "Milla Ruud Reitan / Nikolaj Majorov",
     "Natalie Taschlerova / Filip Taschler",
     "Oona Brown / Gage Brown",
     "Yuka Orihara / Juho Pirinen"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-finlandia-trophy-2026/",
+   "src": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -59947,7 +60203,7 @@
      "nation": "FRA"
     },
     {
-     "name": "Marie-Jade Lauriault / Romain Le Gac",
+     "name": "Marie-Jade Lauriault / Romain le Gac",
      "nation": "CAN"
     },
     {
@@ -59971,7 +60227,26 @@
      "nation": "FIN"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG008.htm",
+    "cat": "https://results.isu.org/results/season2627/gpfin2026/CAT004RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpfin2026/SEG007.htm",
+    "names": {
+     "Marjorie LAJOIE / Jean-Luc BAKER": "Marjorie Lajoie / Jean-Luc Baker",
+     "Marie-Jade LAURIAULT / Romain le GAC": "Marie-Jade Lauriault / Romain le Gac",
+     "Natalie TASCHLEROVA / Filip TASCHLER": "Natalie Taschlerova / Filip Taschler",
+     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
+     "Juulia TURKKILA / Matthias VERSLUIS": "Juulia Turkkila / Matthias Versluis",
+     "Laurence FOURNIER BEAUDRY / Guillaume CIZERON": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov",
+     "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
+     "Oona BROWN / Gage BROWN": "Oona Brown / Gage Brown",
+     "Caroline GREEN / Michael PARSONS": "Caroline Green / Michael Parsons"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:men-senior-kp",
@@ -63286,6 +63561,7 @@
   "Arina KLIMOVA",
   "Arina Kalugina",
   "Arina Martinova",
+  "Arina Medrish",
   "Arina Naklonskaia",
   "Arina Pogodina",
   "Arina Riabicheva",
@@ -69012,6 +69288,11 @@
   },
   {
    "n": "Arina Martinova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Arina Medrish",
    "c": "RUS",
    "k": ""
   },
@@ -100924,5 +101205,5 @@
   "Skylar Lautowa-peguero": "photos/793cd3db7aa70b54.jpg",
   "Jared Sedlis": "photos/6521e032ae88999b.jpg"
  },
- "rev": "e6353b240213029c"
+ "rev": "28a902c061a1050f"
 }
