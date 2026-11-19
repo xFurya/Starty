@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T13:46:49+03:00",
- "checked": "2026-11-19T11:40:03.099619+00:00",
+ "checked": "2026-11-19T11:44:03.425798+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56281,7 +56281,7 @@
      "nation": "AUT",
      "no": 2,
      "warmup": 1,
-     "place": 12,
+     "place": 13,
      "points": "47.91",
      "time": "12:27"
     },
@@ -56299,7 +56299,7 @@
      "nation": "SWE",
      "no": 4,
      "warmup": 1,
-     "place": 15,
+     "place": 16,
      "points": "44.62",
      "time": "12:39"
     },
@@ -56326,7 +56326,7 @@
      "nation": "SUI",
      "no": 7,
      "warmup": 40,
-     "place": 14,
+     "place": 15,
      "points": "47.17",
      "time": "13:03"
     },
@@ -56335,7 +56335,7 @@
      "nation": "ARG",
      "no": 8,
      "warmup": 40,
-     "place": 17,
+     "place": 18,
      "points": "20.34",
      "time": "13:08"
     },
@@ -56344,7 +56344,7 @@
      "nation": "NOR",
      "no": 9,
      "warmup": 40,
-     "place": 13,
+     "place": 14,
      "points": "47.19",
      "time": "13:14"
     },
@@ -56353,7 +56353,7 @@
      "nation": "KGZ",
      "no": 10,
      "warmup": 40,
-     "place": 16,
+     "place": 17,
      "points": "44.39",
      "time": "13:20"
     },
@@ -56378,7 +56378,9 @@
      "nation": "LAT",
      "time": "14:33",
      "no": 18,
-     "warmup": 4
+     "warmup": 4,
+     "place": 12,
+     "points": "48.20"
     },
     {
      "name": "Barbora Vrankova",
@@ -101296,5 +101298,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "b0dae0e93293515d"
+ "rev": "8000986112f7bbee"
 }
