@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-19T14:48:54+03:00",
- "checked": "2026-11-19T13:36:02.926836+00:00",
- "complete": false,
+ "generated": "2026-11-19T16:44:29+03:00",
+ "checked": "2026-11-19T16:44:29+03:00",
+ "complete": true,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
-  "Golden Skate": "fail",
+  "Golden Skate": "ok",
   "ФФКМ": "ok",
   "Самара": "ok"
  },
@@ -56195,7 +56195,7 @@
    "seg": "КП",
    "title": "CS Tallinn Trophy — женщины КП",
    "start": "2026-11-19T12:15:00+03:00",
-   "end": "2026-11-19T16:33:00+03:00",
+   "end": "2026-11-19T17:00:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -56448,121 +56448,121 @@
      "time": "14:44"
     },
     {
-     "name": "Breken Brezden",
-     "nation": "CAN",
-     "time": "16:03",
-     "no": 29,
-     "warmup": 6,
-     "place": 5,
-     "points": "62.00"
-    },
-    {
-     "name": "Carlotta Maria Gardini",
-     "nation": "ITA",
-     "time": "16:09",
-     "no": 30,
-     "warmup": 6,
-     "place": 7,
-     "points": "57.94"
-    },
-    {
-     "name": "Emilija Ozola",
-     "nation": "LAT",
-     "time": "16:20",
-     "no": 32,
-     "warmup": 6,
-     "place": 30,
-     "points": "34.46"
-    },
-    {
      "name": "Gabrielle Daleman",
      "nation": "CAN",
-     "time": "14:50",
      "no": 21,
      "warmup": 4,
      "place": 27,
-     "points": "41.45"
-    },
-    {
-     "name": "Haruna Murakami",
-     "nation": "AUS",
-     "time": "16:14",
-     "no": 31,
-     "warmup": 6,
-     "place": 29,
-     "points": "36.36"
-    },
-    {
-     "name": "Karoliine Raudsepp",
-     "nation": "EST",
-     "time": "15:33",
-     "no": 25,
-     "warmup": 5,
-     "place": 31,
-     "points": "30.16"
-    },
-    {
-     "name": "Karolina Bialas",
-     "nation": "POL",
-     "time": "15:45",
-     "no": 27,
-     "warmup": 5,
-     "place": 25,
-     "points": "44.54"
-    },
-    {
-     "name": "Lotta Artimo",
-     "nation": "FIN",
-     "time": "15:27",
-     "no": 24,
-     "warmup": 5,
-     "place": 14,
-     "points": "53.06"
-    },
-    {
-     "name": "Maria Eliise Kaljuvere",
-     "nation": "EST",
-     "time": "15:39",
-     "no": 26,
-     "warmup": 5,
-     "place": 2,
-     "points": "69.20"
-    },
-    {
-     "name": "Mia Risa Gomez",
-     "nation": "NOR",
-     "time": "16:26",
-     "no": 33,
-     "warmup": 6,
-     "place": 6,
-     "points": "61.92"
-    },
-    {
-     "name": "Olesja Leonova",
-     "nation": "EST",
-     "time": "15:57",
-     "no": 28,
-     "warmup": 6,
-     "place": 28,
-     "points": "40.69"
+     "points": "41.45",
+     "time": "14:50"
     },
     {
      "name": "Oona Ounasvuori",
      "nation": "FIN",
-     "time": "15:15",
      "no": 22,
      "warmup": 5,
      "place": 8,
-     "points": "56.34"
+     "points": "56.34",
+     "time": "15:15"
     },
     {
      "name": "Selma Valitalo",
      "nation": "FIN",
-     "time": "15:21",
      "no": 23,
      "warmup": 5,
      "place": 9,
-     "points": "56.32"
+     "points": "56.32",
+     "time": "15:21"
+    },
+    {
+     "name": "Lotta Artimo",
+     "nation": "FIN",
+     "no": 24,
+     "warmup": 5,
+     "place": 14,
+     "points": "53.06",
+     "time": "15:27"
+    },
+    {
+     "name": "Karoliine Raudsepp",
+     "nation": "EST",
+     "no": 25,
+     "warmup": 5,
+     "place": 31,
+     "points": "30.16",
+     "time": "15:33"
+    },
+    {
+     "name": "Maria Eliise Kaljuvere",
+     "nation": "EST",
+     "no": 26,
+     "warmup": 5,
+     "place": 2,
+     "points": "69.20",
+     "time": "15:39"
+    },
+    {
+     "name": "Karolina Bialas",
+     "nation": "POL",
+     "no": 27,
+     "warmup": 5,
+     "place": 25,
+     "points": "44.54",
+     "time": "15:45"
+    },
+    {
+     "name": "Olesja Leonova",
+     "nation": "EST",
+     "no": 28,
+     "warmup": 6,
+     "place": 28,
+     "points": "40.69",
+     "time": "15:57"
+    },
+    {
+     "name": "Breken Brezden",
+     "nation": "CAN",
+     "no": 29,
+     "warmup": 6,
+     "place": 5,
+     "points": "62.00",
+     "time": "16:03"
+    },
+    {
+     "name": "Carlotta Maria Gardini",
+     "nation": "ITA",
+     "no": 30,
+     "warmup": 6,
+     "place": 7,
+     "points": "57.94",
+     "time": "16:09"
+    },
+    {
+     "name": "Haruna Murakami",
+     "nation": "AUS",
+     "no": 31,
+     "warmup": 6,
+     "place": 29,
+     "points": "36.36",
+     "time": "16:14"
+    },
+    {
+     "name": "Emilija Ozola",
+     "nation": "LAT",
+     "no": 32,
+     "warmup": 6,
+     "place": 30,
+     "points": "34.46",
+     "time": "16:20"
+    },
+    {
+     "name": "Mia Risa Gomez",
+     "nation": "NOR",
+     "no": 33,
+     "warmup": 6,
+     "place": 6,
+     "points": "61.92",
+     "time": "16:26"
     }
    ],
    "live": {
@@ -56572,12 +56572,19 @@
     "first": null,
     "names": {
      "Lara Naki GUTMANN": "Lara Naki Gutmann",
+     "Maria Eliise KALJUVERE": "Maria Eliise Kaljuvere",
      "Livia KAISER": "Livia Kaiser",
      "Sarina JOOS": "Sarina Joos",
+     "Breken BREZDEN": "Breken Brezden",
+     "Mia RISA GOMEZ": "Mia Risa Gomez",
+     "Carlotta Maria GARDINI": "Carlotta Maria Gardini",
+     "Oona OUNASVUORI": "Oona Ounasvuori",
+     "Selma VALITALO": "Selma Valitalo",
      "Anita OSTLUND": "Anita Ostlund",
      "Sara FRANZI": "Sara Franzi",
      "Barbora VRANKOVA": "Barbora Vrankova",
      "Marta Helena PRANGEL": "Marta Helena Prangel",
+     "Lotta ARTIMO": "Lotta Artimo",
      "Yu-Feng TSAI": "Yu-Feng Tsai",
      "Nela SNEBERGEROVA": "Nela Snebergerova",
      "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
@@ -56588,33 +56595,26 @@
      "Pernille WITH": "Pernille With",
      "Eugenia SEKULOVSKI": "Eugenia Sekulovski",
      "Julia BROVALL": "Julia Brovall",
-     "Zhasmin SHLAGA": "Zhasmin Shlaga",
-     "Afrina DIYANAH": "Afrina Diyanah",
-     "Michelle DICICCO": "Michelle Dicicco",
-     "Gabrielle DALEMAN": "Gabrielle Daleman",
-     "Oona OUNASVUORI": "Oona Ounasvuori",
-     "Selma VALITALO": "Selma Valitalo",
-     "Lotta ARTIMO": "Lotta Artimo",
-     "Karoliine RAUDSEPP": "Karoliine Raudsepp",
-     "Maria Eliise KALJUVERE": "Maria Eliise Kaljuvere",
      "Karolina BIALAS": "Karolina Bialas",
+     "Zhasmin SHLAGA": "Zhasmin Shlaga",
+     "Gabrielle DALEMAN": "Gabrielle Daleman",
      "Olesja LEONOVA": "Olesja Leonova",
-     "Breken BREZDEN": "Breken Brezden",
-     "Carlotta Maria GARDINI": "Carlotta Maria Gardini",
      "Haruna MURAKAMI": "Haruna Murakami",
      "Emilija OZOLA": "Emilija Ozola",
-     "Mia RISA GOMEZ": "Mia Risa Gomez"
+     "Karoliine RAUDSEPP": "Karoliine Raudsepp",
+     "Afrina DIYANAH": "Afrina Diyanah",
+     "Michelle DICICCO": "Michelle Dicicco"
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
    "facts": [
     {
-     "who": "Maria Eliise Kaljuvere",
+     "kind": "score",
      "text": "Личный рекорд за КП: 69.20 (был 66.36)",
-     "kind": "score"
+     "who": "Maria Eliise Kaljuvere"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:men-junior-pp",
@@ -56868,181 +56868,6 @@
      "points": "112.09"
     }
    ],
-   "desc": "Итог:\n1. Мария Нардюжева — 119.96\n2. Алена Болдырева — 113.05\n3. Арина Васильева — 112.09\n\nИтог турнира:\n1. Мария Нардюжева — 180.74\n2. Алена Болдырева — 178.47\n3. Арина Васильева — 170.31\n\nНачало: 14:05 МСК\nТрансляция: Первый канал",
-   "field": [
-    {
-     "name": "Алена Болдырева",
-     "nation": "ЯРЛ",
-     "no": 18,
-     "place": 2,
-     "points": "113.05",
-     "final": 2
-    },
-    {
-     "name": "Анна Новикова",
-     "nation": "СРД",
-     "no": 9,
-     "place": 12,
-     "points": "80.68",
-     "final": 11
-    },
-    {
-     "name": "Ариана Айвазян",
-     "nation": "ККР",
-     "no": 14,
-     "place": 9,
-     "points": "85.42",
-     "final": 7
-    },
-    {
-     "name": "Арина Васильева",
-     "nation": "ЛИП",
-     "no": 15,
-     "place": 3,
-     "points": "112.09",
-     "final": 3
-    },
-    {
-     "name": "Варвара Алексеева",
-     "nation": "КРМ",
-     "place": 17,
-     "points": "57.21",
-     "no": 2,
-     "final": 17
-    },
-    {
-     "name": "Варвара Варенцова",
-     "nation": "НИЖ",
-     "place": 16,
-     "points": "62.86",
-     "no": 4,
-     "final": 16
-    },
-    {
-     "name": "Вероника Кабалалиева",
-     "nation": "СТВ",
-     "place": 18,
-     "points": "56.77",
-     "no": 1,
-     "final": 18
-    },
-    {
-     "name": "Виктория Губарева",
-     "nation": "КУР",
-     "no": 7,
-     "place": 6,
-     "points": "90.05",
-     "final": 9
-    },
-    {
-     "name": "Дарья Легкая",
-     "nation": "ККР",
-     "no": 17,
-     "place": 7,
-     "points": "89.23",
-     "final": 5
-    },
-    {
-     "name": "Илина Аскарова",
-     "nation": "МОС",
-     "no": 11,
-     "place": 5,
-     "points": "92.97",
-     "final": 6
-    },
-    {
-     "name": "Ксения Логачева",
-     "nation": "ККР",
-     "no": 12,
-     "place": 8,
-     "points": "88.55",
-     "final": 8
-    },
-    {
-     "name": "Мария Кудряшова",
-     "nation": "ТМБ",
-     "no": 13,
-     "place": 4,
-     "points": "103.54",
-     "final": 4
-    },
-    {
-     "name": "Мария Нардюжева",
-     "nation": "РОБ",
-     "no": 16,
-     "place": 1,
-     "points": "119.96",
-     "final": 1
-    },
-    {
-     "name": "Мария Тихонова",
-     "nation": "ВОЛ",
-     "place": 10,
-     "points": "84.78",
-     "no": 6,
-     "final": 12
-    },
-    {
-     "name": "Милана Журавлева",
-     "nation": "САМ",
-     "no": 8,
-     "place": 14,
-     "points": "77.16",
-     "final": 13
-    },
-    {
-     "name": "Милана Иванникова",
-     "nation": "ВОР",
-     "no": 10,
-     "place": 11,
-     "points": "83.20",
-     "final": 10
-    },
-    {
-     "name": "Софья Смирнова",
-     "nation": "ВЛГ",
-     "place": 13,
-     "points": "78.89",
-     "no": 3,
-     "final": 14
-    },
-    {
-     "name": "Ульяна Бессонова",
-     "nation": "АСТ",
-     "place": 15,
-     "points": "74.24",
-     "no": 5,
-     "final": 15
-    }
-   ],
-   "live": {
-    "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
-    "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG008.HTM",
-    "cat": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/CAT004RS.HTM",
-    "first": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG007.HTM",
-    "names": {
-     "Мария Антоновна ТИХОНОВА": "Мария Тихонова",
-     "Софья Андреевна СМИРНОВА": "Софья Смирнова",
-     "Ульяна Сергеевна БЕССОНОВА": "Ульяна Бессонова",
-     "Варвара Владимировна ВАРЕНЦОВА": "Варвара Варенцова",
-     "Варвара Александровна АЛЕКСЕЕВА": "Варвара Алексеева",
-     "Вероника Георгиевна КАБАЛАЛИЕВА": "Вероника Кабалалиева",
-     "Виктория Александровна ГУБАРЕВА": "Виктория Губарева",
-     "Милана Игоревна ЖУРАВЛЕВА": "Милана Журавлева",
-     "Анна Дмитриевна НОВИКОВА": "Анна Новикова",
-     "Милана Романовна ИВАННИКОВА": "Милана Иванникова",
-     "Илина Ильшатовна АСКАРОВА": "Илина Аскарова",
-     "Ксения Дмитриевна ЛОГАЧЕВА": "Ксения Логачева",
-     "Мария Александровна КУДРЯШОВА": "Мария Кудряшова",
-     "Ариана Андраниковна АЙВАЗЯН": "Ариана Айвазян",
-     "Арина Андреевна ВАСИЛЬЕВА": "Арина Васильева",
-     "Мария Павловна НАРДЮЖЕВА": "Мария Нардюжева",
-     "Дарья Васильевна ЛЕГКАЯ": "Дарья Легкая",
-     "Алена Евгеньевна БОЛДЫРЕВА": "Алена Болдырева"
-    },
-    "basis": "judges"
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json",
    "total": [
     {
      "place": 1,
@@ -57062,7 +56887,200 @@
      "nation": "ЛИП",
      "points": "170.31"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Мария Нардюжева — 119.96\n2. Алена Болдырева — 113.05\n3. Арина Васильева — 112.09\n\nИтог турнира:\n1. Мария Нардюжева — 180.74\n2. Алена Болдырева — 178.47\n3. Арина Васильева — 170.31\n\nНачало: 14:05 МСК\nТрансляция: Первый канал",
+   "field": [
+    {
+     "name": "Вероника Кабалалиева",
+     "nation": "СТВ",
+     "no": 1,
+     "warmup": null,
+     "place": 18,
+     "points": "56.77",
+     "final": 18
+    },
+    {
+     "name": "Варвара Алексеева",
+     "nation": "КРМ",
+     "no": 2,
+     "warmup": null,
+     "place": 17,
+     "points": "57.21",
+     "final": 17
+    },
+    {
+     "name": "Софья Смирнова",
+     "nation": "ВЛГ",
+     "no": 3,
+     "warmup": null,
+     "place": 13,
+     "points": "78.89",
+     "final": 14
+    },
+    {
+     "name": "Варвара Варенцова",
+     "nation": "НИЖ",
+     "no": 4,
+     "warmup": null,
+     "place": 16,
+     "points": "62.86",
+     "final": 16
+    },
+    {
+     "name": "Ульяна Бессонова",
+     "nation": "АСТ",
+     "no": 5,
+     "warmup": null,
+     "place": 15,
+     "points": "74.24",
+     "final": 15
+    },
+    {
+     "name": "Мария Тихонова",
+     "nation": "ВОЛ",
+     "no": 6,
+     "warmup": null,
+     "place": 10,
+     "points": "84.78",
+     "final": 12
+    },
+    {
+     "name": "Виктория Губарева",
+     "nation": "КУР",
+     "no": 7,
+     "warmup": null,
+     "place": 6,
+     "points": "90.05",
+     "final": 9
+    },
+    {
+     "name": "Милана Журавлева",
+     "nation": "САМ",
+     "no": 8,
+     "warmup": null,
+     "place": 14,
+     "points": "77.16",
+     "final": 13
+    },
+    {
+     "name": "Анна Новикова",
+     "nation": "СРД",
+     "no": 9,
+     "warmup": null,
+     "place": 12,
+     "points": "80.68",
+     "final": 11
+    },
+    {
+     "name": "Милана Иванникова",
+     "nation": "ВОР",
+     "no": 10,
+     "warmup": null,
+     "place": 11,
+     "points": "83.20",
+     "final": 10
+    },
+    {
+     "name": "Илина Аскарова",
+     "nation": "МОС",
+     "no": 11,
+     "warmup": null,
+     "place": 5,
+     "points": "92.97",
+     "final": 6
+    },
+    {
+     "name": "Ксения Логачева",
+     "nation": "ККР",
+     "no": 12,
+     "warmup": null,
+     "place": 8,
+     "points": "88.55",
+     "final": 8
+    },
+    {
+     "name": "Мария Кудряшова",
+     "nation": "ТМБ",
+     "no": 13,
+     "warmup": null,
+     "place": 4,
+     "points": "103.54",
+     "final": 4
+    },
+    {
+     "name": "Ариана Айвазян",
+     "nation": "ККР",
+     "no": 14,
+     "warmup": null,
+     "place": 9,
+     "points": "85.42",
+     "final": 7
+    },
+    {
+     "name": "Арина Васильева",
+     "nation": "ЛИП",
+     "no": 15,
+     "warmup": null,
+     "place": 3,
+     "points": "112.09",
+     "final": 3
+    },
+    {
+     "name": "Мария Нардюжева",
+     "nation": "РОБ",
+     "no": 16,
+     "warmup": null,
+     "place": 1,
+     "points": "119.96",
+     "final": 1
+    },
+    {
+     "name": "Дарья Легкая",
+     "nation": "ККР",
+     "no": 17,
+     "warmup": null,
+     "place": 7,
+     "points": "89.23",
+     "final": 5
+    },
+    {
+     "name": "Алена Болдырева",
+     "nation": "ЯРЛ",
+     "no": 18,
+     "warmup": null,
+     "place": 2,
+     "points": "113.05",
+     "final": 2
+    }
+   ],
+   "live": {
+    "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
+    "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG008.HTM",
+    "cat": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/CAT004RS.HTM",
+    "first": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG007.HTM",
+    "names": {
+     "Мария Павловна НАРДЮЖЕВА": "Мария Нардюжева",
+     "Алена Евгеньевна БОЛДЫРЕВА": "Алена Болдырева",
+     "Арина Андреевна ВАСИЛЬЕВА": "Арина Васильева",
+     "Мария Александровна КУДРЯШОВА": "Мария Кудряшова",
+     "Илина Ильшатовна АСКАРОВА": "Илина Аскарова",
+     "Виктория Александровна ГУБАРЕВА": "Виктория Губарева",
+     "Дарья Васильевна ЛЕГКАЯ": "Дарья Легкая",
+     "Ксения Дмитриевна ЛОГАЧЕВА": "Ксения Логачева",
+     "Ариана Андраниковна АЙВАЗЯН": "Ариана Айвазян",
+     "Мария Антоновна ТИХОНОВА": "Мария Тихонова",
+     "Милана Романовна ИВАННИКОВА": "Милана Иванникова",
+     "Анна Дмитриевна НОВИКОВА": "Анна Новикова",
+     "Софья Андреевна СМИРНОВА": "Софья Смирнова",
+     "Милана Игоревна ЖУРАВЛЕВА": "Милана Журавлева",
+     "Ульяна Сергеевна БЕССОНОВА": "Ульяна Бессонова",
+     "Варвара Владимировна ВАРЕНЦОВА": "Варвара Варенцова",
+     "Варвара Александровна АЛЕКСЕЕВА": "Варвара Алексеева",
+     "Вероника Георгиевна КАБАЛАЛИЕВА": "Вероника Кабалалиева"
+    },
+    "basis": "judges"
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:men-senior-pp",
@@ -57684,7 +57702,7 @@
    "seg": "ПП",
    "title": "CS Tallinn Trophy — женщины ПП",
    "start": "2026-11-20T12:30:00+03:00",
-   "end": "2026-11-20T17:50:00+03:00",
+   "end": "2026-11-20T17:55:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -57737,136 +57755,235 @@
    "desc": "Начало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
+     "name": "Michelle Dicicco",
+     "nation": "ARG",
+     "time": "12:36",
+     "no": 1,
+     "warmup": 1
+    },
+    {
      "name": "Afrina Diyanah",
-     "nation": "MAS"
-    },
-    {
-     "name": "Anastasija Konga",
-     "nation": "LAT"
-    },
-    {
-     "name": "Anita Ostlund",
-     "nation": "SWE"
-    },
-    {
-     "name": "Barbora Vrankova",
-     "nation": "CZE"
-    },
-    {
-     "name": "Breken Brezden",
-     "nation": "CAN"
-    },
-    {
-     "name": "Carlotta Maria Gardini",
-     "nation": "ITA"
-    },
-    {
-     "name": "Emilija Ozola",
-     "nation": "LAT"
-    },
-    {
-     "name": "Eugenia Sekulovski",
-     "nation": "SUI"
-    },
-    {
-     "name": "Flora Marie Schaller",
-     "nation": "AUT"
-    },
-    {
-     "name": "Gabrielle Daleman",
-     "nation": "CAN"
-    },
-    {
-     "name": "Haruna Murakami",
-     "nation": "AUS"
-    },
-    {
-     "name": "Josefin Brovall",
-     "nation": "SWE"
-    },
-    {
-     "name": "Julia Brovall",
-     "nation": "SWE"
+     "nation": "MAS",
+     "time": "12:44",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Karoliine Raudsepp",
-     "nation": "EST"
+     "nation": "EST",
+     "time": "12:52",
+     "no": 3,
+     "warmup": 1
     },
     {
-     "name": "Karolina Bialas",
-     "nation": "POL"
+     "name": "Emilija Ozola",
+     "nation": "LAT",
+     "time": "12:59",
+     "no": 4,
+     "warmup": 1
     },
     {
-     "name": "Kristina Lisovskaja",
-     "nation": "EST"
-    },
-    {
-     "name": "Lara Naki Gutmann",
-     "nation": "ITA"
-    },
-    {
-     "name": "Livia Kaiser",
-     "nation": "SUI"
-    },
-    {
-     "name": "Lotta Artimo",
-     "nation": "FIN"
-    },
-    {
-     "name": "Maria Eliise Kaljuvere",
-     "nation": "EST"
-    },
-    {
-     "name": "Marta Helena Prangel",
-     "nation": "EST"
-    },
-    {
-     "name": "Mia Risa Gomez",
-     "nation": "NOR"
-    },
-    {
-     "name": "Michelle Dicicco",
-     "nation": "ARG"
-    },
-    {
-     "name": "Nela Snebergerova",
-     "nation": "CZE"
-    },
-    {
-     "name": "Nikola Fomchenkova",
-     "nation": "LAT"
+     "name": "Haruna Murakami",
+     "nation": "AUS",
+     "time": "13:07",
+     "no": 5,
+     "warmup": 1
     },
     {
      "name": "Olesja Leonova",
-     "nation": "EST"
+     "nation": "EST",
+     "time": "13:21",
+     "no": 6,
+     "warmup": 2
     },
     {
-     "name": "Oona Ounasvuori",
-     "nation": "FIN"
-    },
-    {
-     "name": "Pernille With",
-     "nation": "NOR"
-    },
-    {
-     "name": "Sara Franzi",
-     "nation": "SUI"
-    },
-    {
-     "name": "Sarina Joos",
-     "nation": "ITA"
-    },
-    {
-     "name": "Selma Valitalo",
-     "nation": "FIN"
-    },
-    {
-     "name": "Yu-Feng Tsai",
-     "nation": "TPE"
+     "name": "Gabrielle Daleman",
+     "nation": "CAN",
+     "time": "13:29",
+     "no": 7,
+     "warmup": 2
     },
     {
      "name": "Zhasmin Shlaga",
-     "nation": "KGZ"
+     "nation": "KGZ",
+     "time": "13:37",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Karolina Bialas",
+     "nation": "POL",
+     "time": "13:45",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Julia Brovall",
+     "nation": "SWE",
+     "time": "13:52",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Eugenia Sekulovski",
+     "nation": "SUI",
+     "time": "14:22",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Pernille With",
+     "nation": "NOR",
+     "time": "14:29",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Flora Marie Schaller",
+     "nation": "AUT",
+     "time": "14:37",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Anastasija Konga",
+     "nation": "LAT",
+     "time": "14:45",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Josefin Brovall",
+     "nation": "SWE",
+     "time": "14:53",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Kristina Lisovskaja",
+     "nation": "EST",
+     "time": "15:07",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Nikola Fomchenkova",
+     "nation": "LAT",
+     "time": "15:15",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Nela Snebergerova",
+     "nation": "CZE",
+     "time": "15:22",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Yu-Feng Tsai",
+     "nation": "TPE",
+     "time": "15:30",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Lotta Artimo",
+     "nation": "FIN",
+     "time": "15:38",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Marta Helena Prangel",
+     "nation": "EST",
+     "time": "15:46",
+     "no": 21,
+     "warmup": 4
+    },
+    {
+     "name": "Barbora Vrankova",
+     "nation": "CZE",
+     "time": "16:15",
+     "no": 22,
+     "warmup": 5
+    },
+    {
+     "name": "Sara Franzi",
+     "nation": "SUI",
+     "time": "16:23",
+     "no": 23,
+     "warmup": 5
+    },
+    {
+     "name": "Anita Ostlund",
+     "nation": "SWE",
+     "time": "16:31",
+     "no": 24,
+     "warmup": 5
+    },
+    {
+     "name": "Selma Valitalo",
+     "nation": "FIN",
+     "time": "16:38",
+     "no": 25,
+     "warmup": 5
+    },
+    {
+     "name": "Oona Ounasvuori",
+     "nation": "FIN",
+     "time": "16:46",
+     "no": 26,
+     "warmup": 5
+    },
+    {
+     "name": "Carlotta Maria Gardini",
+     "nation": "ITA",
+     "time": "16:54",
+     "no": 27,
+     "warmup": 5
+    },
+    {
+     "name": "Mia Risa Gomez",
+     "nation": "NOR",
+     "time": "17:08",
+     "no": 28,
+     "warmup": 6
+    },
+    {
+     "name": "Breken Brezden",
+     "nation": "CAN",
+     "time": "17:16",
+     "no": 29,
+     "warmup": 6
+    },
+    {
+     "name": "Sarina Joos",
+     "nation": "ITA",
+     "time": "17:24",
+     "no": 30,
+     "warmup": 6
+    },
+    {
+     "name": "Livia Kaiser",
+     "nation": "SUI",
+     "time": "17:31",
+     "no": 31,
+     "warmup": 6
+    },
+    {
+     "name": "Maria Eliise Kaljuvere",
+     "nation": "EST",
+     "time": "17:39",
+     "no": 32,
+     "warmup": 6
+    },
+    {
+     "name": "Lara Naki Gutmann",
+     "nation": "ITA",
+     "time": "17:47",
+     "no": 33,
+     "warmup": 6
     }
    ],
    "live": {
@@ -57876,38 +57993,38 @@
     "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG003.htm",
     "names": {
      "Michelle DICICCO": "Michelle Dicicco",
-     "Haruna MURAKAMI": "Haruna Murakami",
-     "Flora Marie SCHALLER": "Flora Marie Schaller",
-     "Breken BREZDEN": "Breken Brezden",
-     "Gabrielle DALEMAN": "Gabrielle Daleman",
-     "Nela SNEBERGEROVA": "Nela Snebergerova",
-     "Barbora VRANKOVA": "Barbora Vrankova",
-     "Maria Eliise KALJUVERE": "Maria Eliise Kaljuvere",
-     "Olesja LEONOVA": "Olesja Leonova",
-     "Kristina LISOVSKAJA": "Kristina Lisovskaja",
-     "Marta Helena PRANGEL": "Marta Helena Prangel",
-     "Karoliine RAUDSEPP": "Karoliine Raudsepp",
-     "Lotta ARTIMO": "Lotta Artimo",
-     "Oona OUNASVUORI": "Oona Ounasvuori",
-     "Selma VALITALO": "Selma Valitalo",
-     "Carlotta Maria GARDINI": "Carlotta Maria Gardini",
-     "Lara Naki GUTMANN": "Lara Naki Gutmann",
-     "Sarina JOOS": "Sarina Joos",
-     "Zhasmin SHLAGA": "Zhasmin Shlaga",
-     "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
-     "Anastasija KONGA": "Anastasija Konga",
-     "Emilija OZOLA": "Emilija Ozola",
      "Afrina DIYANAH": "Afrina Diyanah",
-     "Mia RISA GOMEZ": "Mia Risa Gomez",
-     "Pernille WITH": "Pernille With",
+     "Karoliine RAUDSEPP": "Karoliine Raudsepp",
+     "Emilija OZOLA": "Emilija Ozola",
+     "Haruna MURAKAMI": "Haruna Murakami",
+     "Olesja LEONOVA": "Olesja Leonova",
+     "Gabrielle DALEMAN": "Gabrielle Daleman",
+     "Zhasmin SHLAGA": "Zhasmin Shlaga",
      "Karolina BIALAS": "Karolina Bialas",
-     "Sara FRANZI": "Sara Franzi",
-     "Livia KAISER": "Livia Kaiser",
-     "Eugenia SEKULOVSKI": "Eugenia Sekulovski",
-     "Josefin BROVALL": "Josefin Brovall",
      "Julia BROVALL": "Julia Brovall",
+     "Eugenia SEKULOVSKI": "Eugenia Sekulovski",
+     "Pernille WITH": "Pernille With",
+     "Flora Marie SCHALLER": "Flora Marie Schaller",
+     "Anastasija KONGA": "Anastasija Konga",
+     "Josefin BROVALL": "Josefin Brovall",
+     "Kristina LISOVSKAJA": "Kristina Lisovskaja",
+     "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
+     "Nela SNEBERGEROVA": "Nela Snebergerova",
+     "Yu-Feng TSAI": "Yu-Feng Tsai",
+     "Lotta ARTIMO": "Lotta Artimo",
+     "Marta Helena PRANGEL": "Marta Helena Prangel",
+     "Barbora VRANKOVA": "Barbora Vrankova",
+     "Sara FRANZI": "Sara Franzi",
      "Anita OSTLUND": "Anita Ostlund",
-     "Yu-Feng TSAI": "Yu-Feng Tsai"
+     "Selma VALITALO": "Selma Valitalo",
+     "Oona OUNASVUORI": "Oona Ounasvuori",
+     "Carlotta Maria GARDINI": "Carlotta Maria Gardini",
+     "Mia RISA GOMEZ": "Mia Risa Gomez",
+     "Breken BREZDEN": "Breken Brezden",
+     "Sarina JOOS": "Sarina Joos",
+     "Livia KAISER": "Livia Kaiser",
+     "Maria Eliise KALJUVERE": "Maria Eliise Kaljuvere",
+     "Lara Naki GUTMANN": "Lara Naki Gutmann"
     },
     "basis": null
    },
@@ -62775,14 +62892,21 @@
    "watch": []
   },
   {
-   "tid": "fsr:mordovskie-uzory-2026-12-11",
+   "tid": "fsr:vserossijskie-sorevnovaniya-mordovskie-uzory-2026",
    "name": "Мордовские узоры",
    "start": "2026-12-11",
    "end": "2026-12-13",
    "venue": "Саранск",
    "intl": false,
-   "broadcast": [],
-   "watch": []
+   "broadcast": [
+    "Первый канал"
+   ],
+   "watch": [
+    {
+     "name": "Первый канал",
+     "url": "https://www.sport1tv.ru/figurnoe-katanie"
+    }
+   ]
   },
   {
    "tid": "fsr:chempionat-rossii-2026-12-16",
@@ -101394,5 +101518,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "16f3b10677f1a83b"
+ "rev": "171c4b70fb612da8"
 }
