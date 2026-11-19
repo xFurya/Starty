@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T18:45:00+03:00",
- "checked": "2026-11-19T16:56:31.255675+00:00",
+ "checked": "2026-11-19T17:04:32.094410+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57654,7 +57654,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Noah Bodenstein — 106.34\n2. Adrian Jimenez de Baldomero — 69.74\n3. Larry Loupolover — 57.02\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Hugo Bostedt — 112.49\n2. Noah Bodenstein — 106.34\n3. Adrian Jimenez de Baldomero — 69.74\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Larry Loupolover",
@@ -57662,7 +57662,7 @@
      "time": "19:31",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "57.02"
     },
     {
@@ -57671,7 +57671,7 @@
      "time": "19:39",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "106.34"
     },
     {
@@ -57680,7 +57680,7 @@
      "time": "19:46",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "69.74"
     },
     {
@@ -57688,7 +57688,9 @@
      "nation": "SWE",
      "time": "19:54",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "112.49"
     },
     {
      "name": "Euken Alberdi",
@@ -57860,21 +57862,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Hugo Bostedt",
+     "nation": "SWE",
+     "points": "112.49"
+    },
+    {
+     "place": 2,
      "name": "Noah Bodenstein",
      "nation": "SUI",
      "points": "106.34"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Adrian Jimenez de Baldomero",
      "nation": "ESP",
      "points": "69.74"
-    },
-    {
-     "place": 3,
-     "name": "Larry Loupolover",
-     "nation": "BUL",
-     "points": "57.02"
     }
    ],
    "provisional": true
@@ -101741,5 +101743,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "7440e5d98e1cd18f"
+ "rev": "9cd3be2df77cd565"
 }
