@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-19T13:27:34+03:00",
- "checked": "2026-11-19T11:00:03.581648+00:00",
+ "generated": "2026-11-19T13:46:49+03:00",
+ "checked": "2026-11-19T13:46:49+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56281,7 +56281,7 @@
      "nation": "AUT",
      "no": 2,
      "warmup": 1,
-     "place": 7,
+     "place": 6,
      "points": "47.91",
      "time": "12:27"
     },
@@ -56299,7 +56299,7 @@
      "nation": "SWE",
      "no": 4,
      "warmup": 1,
-     "place": 10,
+     "place": 9,
      "points": "44.62",
      "time": "12:39"
     },
@@ -56326,7 +56326,7 @@
      "nation": "SUI",
      "no": 7,
      "warmup": 40,
-     "place": 9,
+     "place": 8,
      "points": "47.17",
      "time": "13:03"
     },
@@ -56335,7 +56335,7 @@
      "nation": "ARG",
      "no": 8,
      "warmup": 40,
-     "place": 12,
+     "place": 11,
      "points": "20.34",
      "time": "13:08"
     },
@@ -56344,7 +56344,7 @@
      "nation": "NOR",
      "no": 9,
      "warmup": 40,
-     "place": 8,
+     "place": 7,
      "points": "47.19",
      "time": "13:14"
     },
@@ -56353,9 +56353,18 @@
      "nation": "KGZ",
      "no": 10,
      "warmup": 40,
-     "place": 11,
+     "place": 10,
      "points": "44.39",
      "time": "13:20"
+    },
+    {
+     "name": "Yu-Feng Tsai",
+     "nation": "TPE",
+     "no": 11,
+     "warmup": 10,
+     "place": 3,
+     "points": "51.77",
+     "time": "13:45"
     },
     {
      "name": "Afrina Diyanah",
@@ -56512,15 +56521,6 @@
      "time": "15:21",
      "no": 23,
      "warmup": 5
-    },
-    {
-     "name": "Yu-Feng Tsai",
-     "nation": "TPE",
-     "time": "13:45",
-     "no": 11,
-     "warmup": 3,
-     "place": 3,
-     "points": "51.77"
     }
    ],
    "provisional": true,
@@ -56532,6 +56532,7 @@
     "names": {
      "Anita OSTLUND": "Anita Ostlund",
      "Sara FRANZI": "Sara Franzi",
+     "Yu-Feng TSAI": "Yu-Feng Tsai",
      "Nela SNEBERGEROVA": "Nela Snebergerova",
      "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
      "Flora Marie SCHALLER": "Flora Marie Schaller",
@@ -56540,7 +56541,6 @@
      "Julia BROVALL": "Julia Brovall",
      "Zhasmin SHLAGA": "Zhasmin Shlaga",
      "Michelle DICICCO": "Michelle Dicicco",
-     "Yu-Feng TSAI": "Yu-Feng Tsai",
      "Josefin BROVALL": "Josefin Brovall",
      "Sarina JOOS": "Sarina Joos",
      "Kristina LISOVSKAJA": "Kristina Lisovskaja",
@@ -56606,29 +56606,29 @@
    "podium": [
     {
      "place": 1,
-     "name": "Глеб Дудченко",
-     "nation": "МОБ",
-     "points": "135.06"
-    },
-    {
-     "place": 2,
      "name": "Павел Шин",
      "nation": "МОС",
      "points": "132.68"
     },
     {
-     "place": 3,
+     "place": 2,
      "name": "Артём Кошутин",
      "nation": "ВЛГ",
      "points": "121.15"
+    },
+    {
+     "place": 3,
+     "name": "Захар Кяхба",
+     "nation": "ККР",
+     "points": "108.66"
     }
    ],
-   "desc": "Итог:\n1. Глеб Дудченко — 135.06\n2. Павел Шин — 132.68\n3. Артём Кошутин — 121.15\n\nИтог турнира:\n1. Глеб Дудченко — 208.16\n2. Павел Шин — 194.07\n3. Артём Кошутин — 184.83\n\nНачало: 12:35 МСК\nТрансляция: Первый канал",
+   "desc": "Промежуточные итоги:\n1. Павел Шин — 132.68\n2. Артём Кошутин — 121.15\n3. Захар Кяхба — 108.66\n\nНачало: 12:35 МСК\nТрансляция: Первый канал",
    "field": [
     {
      "name": "Андрей Вересов",
      "nation": "КАЛ",
-     "place": 6,
+     "place": 5,
      "points": "101.45",
      "no": 5,
      "final": 6
@@ -56636,7 +56636,7 @@
     {
      "name": "Артем Шевнин",
      "nation": "ИРК",
-     "place": 7,
+     "place": 6,
      "points": "100.96",
      "no": 1,
      "final": 7
@@ -56644,18 +56644,16 @@
     {
      "name": "Артём Кошутин",
      "nation": "ВЛГ",
-     "no": 9,
-     "place": 3,
+     "place": 2,
      "points": "121.15",
-     "final": 3
+     "no": 9
     },
     {
      "name": "Георгий Шульц",
      "nation": "КРМ",
-     "no": 8,
-     "place": 5,
+     "place": 4,
      "points": "107.49",
-     "final": 4
+     "no": 8
     },
     {
      "name": "Глеб Дудченко",
@@ -56668,7 +56666,7 @@
     {
      "name": "Захар Кяхба",
      "nation": "ККР",
-     "place": 4,
+     "place": 3,
      "points": "108.66",
      "no": 6,
      "final": 5
@@ -56676,7 +56674,7 @@
     {
      "name": "Кирилл Агарков",
      "nation": "СТВ",
-     "place": 8,
+     "place": 7,
      "points": "94.61",
      "no": 4,
      "final": 8
@@ -56684,7 +56682,7 @@
     {
      "name": "Максим Тяпин",
      "nation": "РОБ",
-     "place": 10,
+     "place": 9,
      "points": "81.78",
      "no": 2,
      "final": 10
@@ -56692,15 +56690,14 @@
     {
      "name": "Павел Шин",
      "nation": "МОС",
-     "no": 7,
-     "place": 2,
+     "place": 1,
      "points": "132.68",
-     "final": 2
+     "no": 7
     },
     {
      "name": "Роман Майер",
      "nation": "НИЖ",
-     "place": 9,
+     "place": 8,
      "points": "92.55",
      "no": 3,
      "final": 9
@@ -56712,15 +56709,15 @@
     "cat": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/CAT005RS.HTM",
     "first": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG009.HTM",
     "names": {
+     "Павел Константинович ШИН": "Павел Шин",
+     "Артём Михайлович КОШУТИН": "Артём Кошутин",
+     "Георгий Владимирович ШУЛЬЦ": "Георгий Шульц",
      "Захар Бесланович КЯХБА": "Захар Кяхба",
      "Андрей Вадимович ВЕРЕСОВ": "Андрей Вересов",
      "Артем Игоревич ШЕВНИН": "Артем Шевнин",
      "Кирилл Юрьевич АГАРКОВ": "Кирилл Агарков",
      "Роман Витальевич МАЙЕР": "Роман Майер",
      "Максим Денисович ТЯПИН": "Максим Тяпин",
-     "Павел Константинович ШИН": "Павел Шин",
-     "Георгий Владимирович ШУЛЬЦ": "Георгий Шульц",
-     "Артём Михайлович КОШУТИН": "Артём Кошутин",
      "Глеб Юрьевич ДУДЧЕНКО": "Глеб Дудченко"
     },
     "basis": "judges"
@@ -101260,5 +101257,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "7f01becf1f72cb8f"
+ "rev": "6c250e2599819691"
 }
