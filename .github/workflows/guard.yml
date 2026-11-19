@@ -1,0 +1,46 @@
+name: Сценарии не копят место
+
+# Артефакты — только для передачи файлов между шагами одного запуска и не дольше суток. У старой
+# витрины (теперь закрытая starty-old) артефакты сборок за 90 дней заняли 3,9 ГБ — 90% общей квоты
+# хранилища Actions закрытых репозиториев. Выпуски лежат в Releases и на сайте, не в артефактах.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/**']
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: .github/workflows
+      - name: upload-artifact — только с retention-days не больше 1
+        run: |
+          python3 - <<'PY'
+          import glob, re, sys
+          bad = []
+          for f in sorted(glob.glob('.github/workflows/*.yml') + glob.glob('.github/workflows/*.yaml')):
+              lines = open(f, encoding='utf-8').read().split('\n')
+              for i, l in enumerate(lines):
+                  if not re.search(r'uses:\s*actions/upload-artifact@', l):
+                      continue
+                  own = len(l) - len(l.lstrip())
+                  block = []
+                  for nxt in lines[i + 1:]:
+                      if nxt.strip() and len(nxt) - len(nxt.lstrip()) <= own:
+                          break
+                      block.append(nxt)
+                  m = re.search(r'retention-days:\s*(\d+)', '\n'.join(block))
+                  if not m or int(m.group(1)) > 1:
+                      bad.append(f'{f}:{i + 1}')
+          if bad:
+              print('артефакты без retention-days: 1 —', ', '.join(bad))
+              sys.exit(1)
+          print('артефакты: все не дольше суток')
+          PY
