@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T13:46:49+03:00",
- "checked": "2026-11-19T11:56:02.793157+00:00",
+ "checked": "2026-11-19T12:00:03.073576+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56335,7 +56335,7 @@
      "nation": "ARG",
      "no": 8,
      "warmup": 40,
-     "place": 20,
+     "place": 21,
      "points": "20.34",
      "time": "13:08"
     },
@@ -56372,7 +56372,7 @@
      "time": "14:44",
      "no": 20,
      "warmup": 4,
-     "place": 19,
+     "place": 20,
      "points": "28.00"
     },
     {
@@ -56419,7 +56419,9 @@
      "nation": "CAN",
      "time": "14:50",
      "no": 21,
-     "warmup": 4
+     "warmup": 4,
+     "place": 19,
+     "points": "41.45"
     },
     {
      "name": "Haruna Murakami",
@@ -101306,5 +101308,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "edc6dfb9c105333d"
+ "rev": "17825c8f166b5744"
 }
