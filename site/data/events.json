@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T17:40:31+03:00",
- "checked": "2026-11-19T15:20:31.416566+00:00",
+ "checked": "2026-11-19T15:24:31.135869+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57494,7 +57494,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Debora Anna Cohen / Lukas Vochozka — 50.93\n\nНачало: 18:05 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Miyu Yunoki / Tristan Taylor — 54.67\n2. Debora Anna Cohen / Lukas Vochozka — 50.93\n\nНачало: 18:05 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Debora Anna Cohen / Lukas Vochozka",
@@ -57502,7 +57502,7 @@
      "time": "18:11",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "50.93"
     },
     {
@@ -57510,7 +57510,9 @@
      "nation": "CAN",
      "time": "18:17",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "54.67"
     },
     {
      "name": "Reagan Moss / Jakub Galbavy",
@@ -57568,6 +57570,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Miyu Yunoki / Tristan Taylor",
+     "nation": "CAN",
+     "points": "54.67"
+    },
+    {
+     "place": 2,
      "name": "Debora Anna Cohen / Lukas Vochozka",
      "nation": "CZE",
      "points": "50.93"
@@ -101663,5 +101671,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "3df8781ce0e1c318"
+ "rev": "6c675401fb84967c"
 }
