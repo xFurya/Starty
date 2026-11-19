@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T12:45:59+03:00",
- "checked": "2026-11-19T10:20:03.406311+00:00",
+ "checked": "2026-11-19T10:24:03.572044+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56300,7 +56300,7 @@
      "nation": "SWE",
      "no": 4,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "44.62",
      "time": "12:39"
     },
@@ -56361,7 +56361,7 @@
      "time": "13:03",
      "no": 7,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "47.17"
     },
     {
@@ -56454,7 +56454,7 @@
      "time": "13:08",
      "no": 8,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "20.34"
     },
     {
@@ -56476,7 +56476,9 @@
      "nation": "NOR",
      "time": "13:14",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6,
+     "points": "47.19"
     },
     {
      "name": "Sara Franzi",
@@ -101210,5 +101212,5 @@
   "Skylar Lautowa-peguero": "photos/793cd3db7aa70b54.jpg",
   "Jared Sedlis": "photos/6521e032ae88999b.jpg"
  },
- "rev": "d31096a49eb619f5"
+ "rev": "3bf980db33b6c1c7"
 }
