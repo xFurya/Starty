@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T14:48:54+03:00",
- "checked": "2026-11-19T13:24:03.259494+00:00",
+ "checked": "2026-11-19T13:28:02.609334+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -56335,7 +56335,7 @@
      "nation": "ARG",
      "no": 8,
      "warmup": 40,
-     "place": 31,
+     "place": 32,
      "points": "20.34",
      "time": "13:08"
     },
@@ -56443,7 +56443,7 @@
      "nation": "MAS",
      "no": 20,
      "warmup": 50,
-     "place": 30,
+     "place": 31,
      "points": "28.00",
      "time": "14:44"
     },
@@ -56470,7 +56470,9 @@
      "nation": "LAT",
      "time": "16:20",
      "no": 32,
-     "warmup": 6
+     "warmup": 6,
+     "place": 29,
+     "points": "34.46"
     },
     {
      "name": "Gabrielle Daleman",
@@ -56496,7 +56498,7 @@
      "time": "15:33",
      "no": 25,
      "warmup": 5,
-     "place": 29,
+     "place": 30,
      "points": "30.16"
     },
     {
@@ -56869,14 +56871,14 @@
      "name": "Анна Новикова",
      "nation": "СРД",
      "no": 9,
-     "place": 10,
+     "place": 11,
      "points": "80.68"
     },
     {
      "name": "Ариана Айвазян",
      "nation": "ККР",
      "no": 14,
-     "place": 7,
+     "place": 8,
      "points": "85.42"
     },
     {
@@ -56889,21 +56891,21 @@
     {
      "name": "Варвара Алексеева",
      "nation": "КРМ",
-     "place": 15,
+     "place": 16,
      "points": "57.21",
      "no": 2
     },
     {
      "name": "Варвара Варенцова",
      "nation": "НИЖ",
-     "place": 14,
+     "place": 15,
      "points": "62.86",
      "no": 4
     },
     {
      "name": "Вероника Кабалалиева",
      "nation": "СТВ",
-     "place": 16,
+     "place": 17,
      "points": "56.77",
      "no": 1
     },
@@ -56917,7 +56919,9 @@
     {
      "name": "Дарья Легкая",
      "nation": "ККР",
-     "no": 17
+     "no": 17,
+     "place": 6,
+     "points": "89.23"
     },
     {
      "name": "Илина Аскарова",
@@ -56930,7 +56934,7 @@
      "name": "Ксения Логачева",
      "nation": "ККР",
      "no": 12,
-     "place": 6,
+     "place": 7,
      "points": "88.55"
     },
     {
@@ -56950,7 +56954,7 @@
     {
      "name": "Мария Тихонова",
      "nation": "ВОЛ",
-     "place": 8,
+     "place": 9,
      "points": "84.78",
      "no": 6
     },
@@ -56958,27 +56962,27 @@
      "name": "Милана Журавлева",
      "nation": "САМ",
      "no": 8,
-     "place": 12,
+     "place": 13,
      "points": "77.16"
     },
     {
      "name": "Милана Иванникова",
      "nation": "ВОР",
      "no": 10,
-     "place": 9,
+     "place": 10,
      "points": "83.20"
     },
     {
      "name": "Софья Смирнова",
      "nation": "ВЛГ",
-     "place": 11,
+     "place": 12,
      "points": "78.89",
      "no": 3
     },
     {
      "name": "Ульяна Бессонова",
      "nation": "АСТ",
-     "place": 13,
+     "place": 14,
      "points": "74.24",
      "no": 5
     }
@@ -101343,5 +101347,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "0ec4ab5357cd66f6"
+ "rev": "950cbbe760b22a54"
 }
