@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T13:46:49+03:00",
- "checked": "2026-11-19T11:48:05.953713+00:00",
+ "checked": "2026-11-19T11:52:02.448967+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56801,14 +56801,14 @@
      "url": "https://www.sport1tv.ru/figurnoe-katanie"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Софья Смирнова — 78.89\n2. Ульяна Бессонова — 74.24\n3. Варвара Варенцова — 62.86\n\nНачало: 14:05 МСК\nТрансляция: Первый канал",
+   "desc": "Промежуточные итоги:\n1. Мария Тихонова — 84.78\n2. Софья Смирнова — 78.89\n3. Ульяна Бессонова — 74.24\n\nНачало: 14:05 МСК\nТрансляция: Первый канал",
    "field": [
     {
      "name": "Вероника Кабалалиева",
      "nation": "СТВ",
      "no": 1,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "56.77"
     },
     {
@@ -56816,7 +56816,7 @@
      "nation": "КРМ",
      "no": 2,
      "warmup": null,
-     "place": 4,
+     "place": 5,
      "points": "57.21"
     },
     {
@@ -56824,7 +56824,7 @@
      "nation": "ВЛГ",
      "no": 3,
      "warmup": null,
-     "place": 1,
+     "place": 2,
      "points": "78.89"
     },
     {
@@ -56832,7 +56832,7 @@
      "nation": "НИЖ",
      "no": 4,
      "warmup": null,
-     "place": 3,
+     "place": 4,
      "points": "62.86"
     },
     {
@@ -56840,14 +56840,16 @@
      "nation": "АСТ",
      "no": 5,
      "warmup": null,
-     "place": 2,
+     "place": 3,
      "points": "74.24"
     },
     {
      "name": "Мария Тихонова",
      "nation": "ВОЛ",
      "no": 6,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "84.78"
     },
     {
      "name": "Виктория Губарева",
@@ -56953,21 +56955,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Мария Тихонова",
+     "nation": "ВОЛ",
+     "points": "84.78"
+    },
+    {
+     "place": 2,
      "name": "Софья Смирнова",
      "nation": "ВЛГ",
      "points": "78.89"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Ульяна Бессонова",
      "nation": "АСТ",
      "points": "74.24"
-    },
-    {
-     "place": 3,
-     "name": "Варвара Варенцова",
-     "nation": "НИЖ",
-     "points": "62.86"
     }
    ],
    "provisional": true
@@ -101302,5 +101304,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "d06edd2fc7b0d455"
+ "rev": "d2ad5f40690bae9c"
 }
