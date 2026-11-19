@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T13:46:49+03:00",
- "checked": "2026-11-19T13:46:49+03:00",
+ "checked": "2026-11-19T11:08:03.034624+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56248,31 +56248,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Sarina Joos",
+     "nation": "ITA",
+     "points": "63.48"
+    },
+    {
+     "place": 2,
      "name": "Anita Ostlund",
      "nation": "SWE",
      "points": "55.70"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Sara Franzi",
      "nation": "SUI",
      "points": "54.42"
-    },
-    {
-     "place": 3,
-     "name": "Yu-Feng Tsai",
-     "nation": "TPE",
-     "points": "51.77"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Anita Ostlund — 55.70\n2. Sara Franzi — 54.42\n3. Yu-Feng Tsai — 51.77\n\nНачало: 12:15 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Sarina Joos — 63.48\n2. Anita Ostlund — 55.70\n3. Sara Franzi — 54.42\n\nНачало: 12:15 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Nela Snebergerova",
      "nation": "CZE",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "51.39",
      "time": "12:21"
     },
@@ -56281,7 +56281,7 @@
      "nation": "AUT",
      "no": 2,
      "warmup": 1,
-     "place": 6,
+     "place": 8,
      "points": "47.91",
      "time": "12:27"
     },
@@ -56290,7 +56290,7 @@
      "nation": "SWE",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "55.70",
      "time": "12:33"
     },
@@ -56299,7 +56299,7 @@
      "nation": "SWE",
      "no": 4,
      "warmup": 1,
-     "place": 9,
+     "place": 11,
      "points": "44.62",
      "time": "12:39"
     },
@@ -56308,7 +56308,7 @@
      "nation": "LAT",
      "no": 5,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "51.37",
      "time": "12:44"
     },
@@ -56317,7 +56317,7 @@
      "nation": "SUI",
      "no": 6,
      "warmup": 40,
-     "place": 2,
+     "place": 3,
      "points": "54.42",
      "time": "12:57"
     },
@@ -56326,7 +56326,7 @@
      "nation": "SUI",
      "no": 7,
      "warmup": 40,
-     "place": 8,
+     "place": 10,
      "points": "47.17",
      "time": "13:03"
     },
@@ -56335,7 +56335,7 @@
      "nation": "ARG",
      "no": 8,
      "warmup": 40,
-     "place": 11,
+     "place": 13,
      "points": "20.34",
      "time": "13:08"
     },
@@ -56344,7 +56344,7 @@
      "nation": "NOR",
      "no": 9,
      "warmup": 40,
-     "place": 7,
+     "place": 9,
      "points": "47.19",
      "time": "13:14"
     },
@@ -56353,7 +56353,7 @@
      "nation": "KGZ",
      "no": 10,
      "warmup": 40,
-     "place": 10,
+     "place": 12,
      "points": "44.39",
      "time": "13:20"
     },
@@ -56362,7 +56362,7 @@
      "nation": "TPE",
      "no": 11,
      "warmup": 10,
-     "place": 3,
+     "place": 4,
      "points": "51.77",
      "time": "13:45"
     },
@@ -56428,7 +56428,7 @@
      "time": "13:51",
      "no": 12,
      "warmup": 3,
-     "place": 6,
+     "place": 7,
      "points": "49.76"
     },
     {
@@ -56513,7 +56513,9 @@
      "nation": "ITA",
      "time": "13:57",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "place": 1,
+     "points": "63.48"
     },
     {
      "name": "Selma Valitalo",
@@ -101257,5 +101259,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "6c250e2599819691"
+ "rev": "3420762946ba0f17"
 }
