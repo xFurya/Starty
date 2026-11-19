@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T16:44:29+03:00",
- "checked": "2026-11-19T14:44:30.764727+00:00",
+ "checked": "2026-11-19T14:48:32.027785+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57234,7 +57234,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Злата Камалова / Данил Панов — 60.73\n2. Laura Heckova / Alex Valky — 48.81\n3. Leontina Horcickova / Jindrich Klement — 44.30\n\nНачало: 16:55 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Злата Камалова / Данил Панов — 60.73\n2. Jolena Grohne / Manuel Rossi — 55.80\n3. Laura Heckova / Alex Valky — 48.81\n\nНачало: 16:55 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Leontina Horcickova / Jindrich Klement",
@@ -57242,7 +57242,7 @@
      "time": "17:01",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "44.30"
     },
     {
@@ -57260,7 +57260,7 @@
      "time": "17:13",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "48.81"
     },
     {
@@ -57269,7 +57269,7 @@
      "time": "17:25",
      "no": 4,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "42.91"
     },
     {
@@ -57278,7 +57278,7 @@
      "time": "17:31",
      "no": 5,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "29.35"
     },
     {
@@ -57286,7 +57286,9 @@
      "nation": "ITA",
      "time": "17:37",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "55.80"
     },
     {
      "name": "Clelia Liget-latus / Allan Daniel Fisher",
@@ -57322,15 +57324,15 @@
     },
     {
      "place": 2,
-     "name": "Laura Heckova / Alex Valky",
-     "nation": "SVK",
-     "points": "48.81"
+     "name": "Jolena Grohne / Manuel Rossi",
+     "nation": "ITA",
+     "points": "55.80"
     },
     {
      "place": 3,
-     "name": "Leontina Horcickova / Jindrich Klement",
-     "nation": "CZE",
-     "points": "44.30"
+     "name": "Laura Heckova / Alex Valky",
+     "nation": "SVK",
+     "points": "48.81"
     }
    ],
    "provisional": true
@@ -101632,5 +101634,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "f6021a4a719f440e"
+ "rev": "9a57754179b10879"
 }
