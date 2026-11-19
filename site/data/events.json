@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T13:46:49+03:00",
- "checked": "2026-11-19T11:08:03.034624+00:00",
+ "checked": "2026-11-19T11:12:03.238283+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56281,7 +56281,7 @@
      "nation": "AUT",
      "no": 2,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "47.91",
      "time": "12:27"
     },
@@ -56299,7 +56299,7 @@
      "nation": "SWE",
      "no": 4,
      "warmup": 1,
-     "place": 11,
+     "place": 12,
      "points": "44.62",
      "time": "12:39"
     },
@@ -56326,7 +56326,7 @@
      "nation": "SUI",
      "no": 7,
      "warmup": 40,
-     "place": 10,
+     "place": 11,
      "points": "47.17",
      "time": "13:03"
     },
@@ -56335,7 +56335,7 @@
      "nation": "ARG",
      "no": 8,
      "warmup": 40,
-     "place": 13,
+     "place": 14,
      "points": "20.34",
      "time": "13:08"
     },
@@ -56344,7 +56344,7 @@
      "nation": "NOR",
      "no": 9,
      "warmup": 40,
-     "place": 9,
+     "place": 10,
      "points": "47.19",
      "time": "13:14"
     },
@@ -56353,7 +56353,7 @@
      "nation": "KGZ",
      "no": 10,
      "warmup": 40,
-     "place": 12,
+     "place": 13,
      "points": "44.39",
      "time": "13:20"
     },
@@ -56428,7 +56428,7 @@
      "time": "13:51",
      "no": 12,
      "warmup": 3,
-     "place": 7,
+     "place": 8,
      "points": "49.76"
     },
     {
@@ -56450,7 +56450,9 @@
      "nation": "EST",
      "time": "14:03",
      "no": 14,
-     "warmup": 3
+     "warmup": 3,
+     "place": 7,
+     "points": "49.87"
     },
     {
      "name": "Lara Naki Gutmann",
@@ -101259,5 +101261,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "3420762946ba0f17"
+ "rev": "6045c107c43bb192"
 }
