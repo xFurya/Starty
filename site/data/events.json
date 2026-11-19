@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T09:42:51+03:00",
- "checked": "2026-11-19T09:42:51+03:00",
+ "checked": "2026-11-19T09:32:03.447983+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56246,14 +56246,16 @@
      "note": "Платно"
     }
    ],
-   "desc": "Начало: 12:15 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Nela Snebergerova — 51.39\n\nНачало: 12:15 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Nela Snebergerova",
      "nation": "CZE",
      "time": "12:21",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "51.39"
     },
     {
      "name": "Flora Marie Schaller",
@@ -56522,7 +56524,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Nela Snebergerova",
+     "nation": "CZE",
+     "points": "51.39"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:men-junior-pp",
@@ -100864,5 +100875,5 @@
   "Skylar Lautowa-peguero": "photos/793cd3db7aa70b54.jpg",
   "Jared Sedlis": "photos/6521e032ae88999b.jpg"
  },
- "rev": "a7e9cce86c42a0d6"
+ "rev": "efdac8918ab26d2e"
 }
