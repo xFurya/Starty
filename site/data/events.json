@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T17:40:31+03:00",
- "checked": "2026-11-19T15:32:31.238757+00:00",
+ "checked": "2026-11-19T15:44:34.657962+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57528,7 +57528,9 @@
      "nation": "CHN",
      "time": "18:35",
      "no": 4,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "42.85"
     },
     {
      "name": "Olivia Flores / Mark Sadusky",
@@ -101679,5 +101681,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "00f39423a9a0f5bb"
+ "rev": "bebeeeeb14cc2e2f"
 }
