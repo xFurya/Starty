@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T14:48:54+03:00",
- "checked": "2026-11-19T14:48:54+03:00",
+ "checked": "2026-11-19T12:04:03.419665+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -56335,7 +56335,7 @@
      "nation": "ARG",
      "no": 8,
      "warmup": 40,
-     "place": 20,
+     "place": 21,
      "points": "20.34",
      "time": "13:08"
     },
@@ -56443,7 +56443,7 @@
      "nation": "MAS",
      "no": 20,
      "warmup": 50,
-     "place": 19,
+     "place": 20,
      "points": "28.00",
      "time": "14:44"
     },
@@ -101303,5 +101303,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "9fc4c4fd20f62c0e"
+ "rev": "d893391d04dfeb55"
 }
