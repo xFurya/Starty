@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T20:09:14+03:00",
- "checked": "2026-11-19T18:44:31.618678+00:00",
+ "checked": "2026-11-19T18:48:32.374643+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57688,23 +57688,23 @@
     },
     {
      "place": 2,
-     "name": "Xavier Vauclin",
+     "name": "Francois Pitot",
      "nation": "FRA",
-     "points": "121.04"
+     "points": "125.84"
     },
     {
      "place": 3,
-     "name": "Hugo Bostedt",
-     "nation": "SWE",
-     "points": "112.49"
+     "name": "Xavier Vauclin",
+     "nation": "FRA",
+     "points": "121.04"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Jakub Lofek — 129.39\n2. Xavier Vauclin — 121.04\n3. Hugo Bostedt — 112.49\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Jakub Lofek — 129.39\n2. Francois Pitot — 125.84\n3. Xavier Vauclin — 121.04\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Adrian Jimenez de Baldomero",
      "nation": "ESP",
-     "place": 11,
+     "place": 12,
      "points": "69.74",
      "time": "19:46",
      "no": 3,
@@ -57723,7 +57723,7 @@
      "time": "21:31",
      "no": 13,
      "warmup": 3,
-     "place": 4,
+     "place": 5,
      "points": "109.51"
     },
     {
@@ -57732,7 +57732,7 @@
      "time": "20:31",
      "no": 8,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "85.52"
     },
     {
@@ -57741,7 +57741,7 @@
      "time": "20:54",
      "no": 11,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "99.12"
     },
     {
@@ -57750,7 +57750,7 @@
      "time": "20:16",
      "no": 6,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "109.01"
     },
     {
@@ -57758,7 +57758,9 @@
      "nation": "FRA",
      "time": "21:39",
      "no": 14,
-     "warmup": 3
+     "warmup": 3,
+     "place": 2,
+     "points": "125.84"
     },
     {
      "name": "Gabriele Frangipani",
@@ -57770,7 +57772,7 @@
     {
      "name": "Hugo Bostedt",
      "nation": "SWE",
-     "place": 3,
+     "place": 4,
      "points": "112.49",
      "time": "19:54",
      "no": 4,
@@ -57789,7 +57791,7 @@
      "time": "20:39",
      "no": 9,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "points": "84.55"
     },
     {
@@ -57811,7 +57813,7 @@
     {
      "name": "Larry Loupolover",
      "nation": "BUL",
-     "place": 12,
+     "place": 13,
      "points": "57.02",
      "time": "19:31",
      "no": 1,
@@ -57841,7 +57843,7 @@
     {
      "name": "Noah Bodenstein",
      "nation": "SUI",
-     "place": 6,
+     "place": 7,
      "points": "106.34",
      "time": "19:39",
      "no": 2,
@@ -57860,7 +57862,7 @@
      "time": "20:47",
      "no": 10,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "121.04"
     },
     {
@@ -57876,7 +57878,7 @@
      "time": "20:24",
      "no": 7,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "97.77"
     }
    ],
@@ -101822,5 +101824,5 @@
   "Jessica Lin": "photos/04d2f63664776ce1.jpg",
   "Adrian Jimenez de Baldomero": "photos/751a9143e61e2724.jpg"
  },
- "rev": "a76204b2972cf45d"
+ "rev": "a82a1dbacd3a8a22"
 }
