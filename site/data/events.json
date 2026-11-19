@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T20:09:14+03:00",
- "checked": "2026-11-19T19:04:31.994160+00:00",
+ "checked": "2026-11-19T19:12:32.091282+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57704,7 +57704,7 @@
     {
      "name": "Adrian Jimenez de Baldomero",
      "nation": "ESP",
-     "place": 14,
+     "place": 15,
      "points": "69.74",
      "time": "19:46",
      "no": 3,
@@ -57732,7 +57732,7 @@
      "time": "20:31",
      "no": 8,
      "warmup": 2,
-     "place": 12,
+     "place": 13,
      "points": "85.52"
     },
     {
@@ -57741,7 +57741,7 @@
      "time": "20:54",
      "no": 11,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "points": "99.12"
     },
     {
@@ -57791,7 +57791,7 @@
      "time": "20:39",
      "no": 9,
      "warmup": 2,
-     "place": 13,
+     "place": 14,
      "points": "84.55"
     },
     {
@@ -57815,7 +57815,7 @@
     {
      "name": "Larry Loupolover",
      "nation": "BUL",
-     "place": 15,
+     "place": 16,
      "points": "57.02",
      "time": "19:31",
      "no": 1,
@@ -57826,7 +57826,9 @@
      "nation": "SVK",
      "time": "22:02",
      "no": 17,
-     "warmup": 3
+     "warmup": 3,
+     "place": 9,
+     "points": "107.04"
     },
     {
      "name": "Makar Suntsev",
@@ -57847,7 +57849,7 @@
     {
      "name": "Noah Bodenstein",
      "nation": "SUI",
-     "place": 9,
+     "place": 10,
      "points": "106.34",
      "time": "19:39",
      "no": 2,
@@ -57882,7 +57884,7 @@
      "time": "20:24",
      "no": 7,
      "warmup": 2,
-     "place": 11,
+     "place": 12,
      "points": "97.77"
     }
    ],
@@ -101828,5 +101830,5 @@
   "Jessica Lin": "photos/04d2f63664776ce1.jpg",
   "Adrian Jimenez de Baldomero": "photos/751a9143e61e2724.jpg"
  },
- "rev": "179888397648495a"
+ "rev": "4e15f99037f5ab07"
 }
