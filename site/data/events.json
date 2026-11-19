@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-19T09:13:56+03:00",
- "checked": "2026-11-19T09:13:56+03:00",
+ "generated": "2026-11-19T09:42:51+03:00",
+ "checked": "2026-11-19T09:42:51+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55418,7 +55418,7 @@
      "points": "58.30"
     }
    ],
-   "desc": "Итог:\n1. Таисия Лепихина — 62.27\n2. Софья Лукина — 61.23\n3. София Ермолова — 58.30\n\nНачало: 16:05 МСК\nТрансляция: Первый канал",
+   "desc": "Промежуточные итоги:\n1. Таисия Лепихина — 62.27\n2. Софья Лукина — 61.23\n3. София Ермолова — 58.30\n\nНачало: 16:05 МСК\nТрансляция: Первый канал",
    "field": [
     {
      "name": "Таисия Лепихина",
@@ -55477,6 +55477,7 @@
      "points": "61.23"
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
     "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG013.HTM",
@@ -100859,7 +100860,9 @@
   "Валерия Литвинчёва": "photos/8e782c489361b3b5.jpg",
   "Елизавета Лабутина": "photos/89ab5ef1bdbdcd24.jpg",
   "София Касинс": "photos/00a4dcf4e8aeac13.jpg",
-  "Яна Анашкина": "photos/80331e08bc525d04.jpg"
+  "Яна Анашкина": "photos/80331e08bc525d04.jpg",
+  "Skylar Lautowa-peguero": "photos/793cd3db7aa70b54.jpg",
+  "Jared Sedlis": "photos/6521e032ae88999b.jpg"
  },
- "rev": "a1a8dcdc65d86ffe"
+ "rev": "a7e9cce86c42a0d6"
 }
