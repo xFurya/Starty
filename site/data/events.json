@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T17:40:31+03:00",
- "checked": "2026-11-19T15:44:34.657962+00:00",
+ "checked": "2026-11-19T15:52:31.604226+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57529,7 +57529,7 @@
      "time": "18:35",
      "no": 4,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "42.85"
     },
     {
@@ -57537,7 +57537,9 @@
      "nation": "USA",
      "time": "18:41",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "49.77"
     },
     {
      "name": "Linzy Fitzpatrick / Keyton Bearinger",
@@ -101681,5 +101683,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "bebeeeeb14cc2e2f"
+ "rev": "ee5e5ae102314b7b"
 }
