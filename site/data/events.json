@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-19T20:09:14+03:00",
- "checked": "2026-11-19T19:48:31.825819+00:00",
+ "generated": "2026-11-19T22:37:45+03:00",
+ "checked": "2026-11-19T22:37:45+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57390,82 +57390,6 @@
      "points": "99.63"
     }
    ],
-   "desc": "Итог:\n1. Таисия Лепихина — 109.11\n2. София Ермолова — 107.54\n3. Софья Лукина — 99.63\n\nИтог турнира:\n1. Таисия Лепихина — 171.38\n2. София Ермолова — 165.84\n3. Софья Лукина — 160.86\n\nНачало: 17:05 МСК\nТрансляция: Первый канал",
-   "field": [
-    {
-     "name": "Анастасия Шарошкина",
-     "nation": "МОС",
-     "place": 6,
-     "points": "88.20",
-     "no": 3,
-     "final": 5
-    },
-    {
-     "name": "Арина Данилова",
-     "nation": "ВОР",
-     "place": 4,
-     "points": "98.11",
-     "no": 4,
-     "final": 4
-    },
-    {
-     "name": "Арина Комекова",
-     "nation": "ККР",
-     "place": 5,
-     "points": "90.29",
-     "no": 2,
-     "final": 6
-    },
-    {
-     "name": "Екатерина Гайдукова",
-     "nation": "КУР",
-     "place": 7,
-     "points": "72.86",
-     "no": 1,
-     "final": 7
-    },
-    {
-     "name": "София Ермолова",
-     "nation": "ЛЕН",
-     "place": 2,
-     "points": "107.54",
-     "no": 5,
-     "final": 2
-    },
-    {
-     "name": "Софья Лукина",
-     "nation": "БАШ",
-     "place": 3,
-     "points": "99.63",
-     "no": 6,
-     "final": 3
-    },
-    {
-     "name": "Таисия Лепихина",
-     "nation": "ВЛГ",
-     "place": 1,
-     "points": "109.11",
-     "no": 7,
-     "final": 1
-    }
-   ],
-   "live": {
-    "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
-    "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG014.HTM",
-    "cat": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/CAT007RS.HTM",
-    "first": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG013.HTM",
-    "names": {
-     "Таисия Андреевна ЛЕПИХИНА": "Таисия Лепихина",
-     "София Николаевна ЕРМОЛОВА": "София Ермолова",
-     "Софья Андреевна ЛУКИНА": "Софья Лукина",
-     "Арина Александровна ДАНИЛОВА": "Арина Данилова",
-     "Анастасия Васильевна ШАРОШКИНА": "Анастасия Шарошкина",
-     "Арина Романовна КОМЕКОВА": "Арина Комекова",
-     "Екатерина Олеговна ГАЙДУКОВА": "Екатерина Гайдукова"
-    },
-    "basis": "judges"
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json",
    "total": [
     {
      "place": 1,
@@ -57485,7 +57409,90 @@
      "nation": "БАШ",
      "points": "160.86"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Таисия Лепихина — 109.11\n2. София Ермолова — 107.54\n3. Софья Лукина — 99.63\n\nИтог турнира:\n1. Таисия Лепихина — 171.38\n2. София Ермолова — 165.84\n3. Софья Лукина — 160.86\n\nНачало: 17:05 МСК\nТрансляция: Первый канал",
+   "field": [
+    {
+     "name": "Екатерина Гайдукова",
+     "nation": "КУР",
+     "no": 1,
+     "warmup": null,
+     "place": 7,
+     "points": "72.86",
+     "final": 7
+    },
+    {
+     "name": "Арина Комекова",
+     "nation": "ККР",
+     "no": 2,
+     "warmup": null,
+     "place": 5,
+     "points": "90.29",
+     "final": 6
+    },
+    {
+     "name": "Анастасия Шарошкина",
+     "nation": "МОС",
+     "no": 3,
+     "warmup": null,
+     "place": 6,
+     "points": "88.20",
+     "final": 5
+    },
+    {
+     "name": "Арина Данилова",
+     "nation": "ВОР",
+     "no": 4,
+     "warmup": null,
+     "place": 4,
+     "points": "98.11",
+     "final": 4
+    },
+    {
+     "name": "София Ермолова",
+     "nation": "ЛЕН",
+     "no": 5,
+     "warmup": null,
+     "place": 2,
+     "points": "107.54",
+     "final": 2
+    },
+    {
+     "name": "Софья Лукина",
+     "nation": "БАШ",
+     "no": 6,
+     "warmup": null,
+     "place": 3,
+     "points": "99.63",
+     "final": 3
+    },
+    {
+     "name": "Таисия Лепихина",
+     "nation": "ВЛГ",
+     "no": 7,
+     "warmup": null,
+     "place": 1,
+     "points": "109.11",
+     "final": 1
+    }
+   ],
+   "live": {
+    "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
+    "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG014.HTM",
+    "cat": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/CAT007RS.HTM",
+    "first": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG013.HTM",
+    "names": {
+     "Таисия Андреевна ЛЕПИХИНА": "Таисия Лепихина",
+     "София Николаевна ЕРМОЛОВА": "София Ермолова",
+     "Софья Андреевна ЛУКИНА": "Софья Лукина",
+     "Арина Александровна ДАНИЛОВА": "Арина Данилова",
+     "Арина Романовна КОМЕКОВА": "Арина Комекова",
+     "Анастасия Васильевна ШАРОШКИНА": "Анастасия Шарошкина",
+     "Екатерина Олеговна ГАЙДУКОВА": "Екатерина Гайдукова"
+    },
+    "basis": "judges"
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-senior-kp",
@@ -57704,7 +57711,7 @@
     {
      "name": "Adrian Jimenez de Baldomero",
      "nation": "ESP",
-     "place": 19,
+     "place": 18,
      "points": "69.74",
      "time": "19:46",
      "no": 3,
@@ -57713,6 +57720,8 @@
     {
      "name": "Anthony Paradis",
      "nation": "CAN",
+     "place": 1,
+     "points": "141.91",
      "time": "22:31",
      "no": 20,
      "warmup": 4,
@@ -57722,47 +57731,47 @@
     {
      "name": "Artur Smagulov",
      "nation": "KAZ",
+     "place": 10,
+     "points": "109.51",
      "time": "21:31",
      "no": 13,
-     "warmup": 3,
-     "place": 11,
-     "points": "109.51"
+     "warmup": 3
     },
     {
      "name": "David Gouveia",
      "nation": "POR",
+     "place": 16,
+     "points": "85.52",
      "time": "20:31",
      "no": 8,
-     "warmup": 2,
-     "place": 17,
-     "points": "85.52"
+     "warmup": 2
     },
     {
      "name": "Douglas Gerber",
      "nation": "AUS",
+     "place": 14,
+     "points": "99.12",
      "time": "20:54",
      "no": 11,
-     "warmup": 2,
-     "place": 15,
-     "points": "99.12"
+     "warmup": 2
     },
     {
      "name": "Elias Sayed",
      "nation": "SWE",
+     "place": 11,
+     "points": "109.01",
      "time": "20:16",
      "no": 6,
-     "warmup": 2,
-     "place": 12,
-     "points": "109.01"
+     "warmup": 2
     },
     {
      "name": "Francois Pitot",
      "nation": "FRA",
+     "place": 5,
+     "points": "125.84",
      "time": "21:39",
      "no": 14,
-     "warmup": 3,
-     "place": 6,
-     "points": "125.84"
+     "warmup": 3
     },
     {
      "name": "Gabriele Frangipani",
@@ -57774,7 +57783,7 @@
     {
      "name": "Hugo Bostedt",
      "nation": "SWE",
-     "place": 9,
+     "place": 8,
      "points": "112.49",
      "time": "19:54",
      "no": 4,
@@ -57790,34 +57799,34 @@
     {
      "name": "Ian Vauclin",
      "nation": "FRA",
+     "place": 17,
+     "points": "84.55",
      "time": "20:39",
      "no": 9,
-     "warmup": 2,
-     "place": 18,
-     "points": "84.55"
+     "warmup": 2
     },
     {
      "name": "Jakub Lofek",
      "nation": "POL",
+     "place": 3,
+     "points": "129.39",
      "time": "21:23",
      "no": 12,
-     "warmup": 3,
-     "place": 3,
-     "points": "129.39"
+     "warmup": 3
     },
     {
      "name": "Jimmy Ma",
      "nation": "USA",
+     "place": 9,
+     "points": "109.81",
      "time": "21:46",
      "no": 15,
-     "warmup": 3,
-     "place": 10,
-     "points": "109.81"
+     "warmup": 3
     },
     {
      "name": "Larry Loupolover",
      "nation": "BUL",
-     "place": 20,
+     "place": 19,
      "points": "57.02",
      "time": "19:31",
      "no": 1,
@@ -57826,34 +57835,34 @@
     {
      "name": "Lukas Vaclavik",
      "nation": "SVK",
+     "place": 12,
+     "points": "107.04",
      "time": "22:02",
      "no": 17,
-     "warmup": 3,
-     "place": 13,
-     "points": "107.04"
+     "warmup": 3
     },
     {
      "name": "Makar Suntsev",
      "nation": "FIN",
+     "place": 4,
+     "points": "127.00",
      "time": "22:16",
      "no": 18,
-     "warmup": 4,
-     "place": 5,
-     "points": "127.00"
+     "warmup": 4
     },
     {
      "name": "Matteo Nalbone",
      "nation": "ITA",
+     "place": 2,
+     "points": "136.42",
      "time": "21:54",
      "no": 16,
-     "warmup": 3,
-     "place": 2,
-     "points": "136.42"
+     "warmup": 3
     },
     {
      "name": "Noah Bodenstein",
      "nation": "SUI",
-     "place": 14,
+     "place": 13,
      "points": "106.34",
      "time": "19:39",
      "no": 2,
@@ -57871,29 +57880,29 @@
     {
      "name": "Xavier Vauclin",
      "nation": "FRA",
+     "place": 7,
+     "points": "121.04",
      "time": "20:47",
      "no": 10,
-     "warmup": 2,
-     "place": 8,
-     "points": "121.04"
+     "warmup": 2
     },
     {
      "name": "Yu-Hsiang Li",
      "nation": "TPE",
+     "place": 6,
+     "points": "125.31",
      "time": "22:24",
      "no": 19,
-     "warmup": 4,
-     "place": 7,
-     "points": "125.31"
+     "warmup": 4
     },
     {
      "name": "Ze Zeng Fang",
      "nation": "MAS",
+     "place": 15,
+     "points": "97.77",
      "time": "20:24",
      "no": 7,
-     "warmup": 2,
-     "place": 16,
-     "points": "97.77"
+     "warmup": 2
     }
    ],
    "provisional": true,
@@ -57903,25 +57912,25 @@
     "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT001RS.htm",
     "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG001.htm",
     "names": {
+     "Anthony PARADIS": "Anthony Paradis",
+     "Matteo NALBONE": "Matteo Nalbone",
+     "Yu-Hsiang LI": "Yu-Hsiang Li",
+     "Makar SUNTSEV": "Makar Suntsev",
+     "Jakub LOFEK": "Jakub Lofek",
+     "Francois PITOT": "Francois Pitot",
+     "Xavier VAUCLIN": "Xavier Vauclin",
+     "Jimmy MA": "Jimmy Ma",
+     "Lukas VACLAVIK": "Lukas Vaclavik",
+     "Artur SMAGULOV": "Artur Smagulov",
      "Hugo BOSTEDT": "Hugo Bostedt",
-     "Noah BODENSTEIN": "Noah Bodenstein",
-     "Adrian JIMENEZ de BALDOMERO": "Adrian Jimenez de Baldomero",
-     "Larry LOUPOLOVER": "Larry Loupolover",
      "Elias SAYED": "Elias Sayed",
+     "Douglas GERBER": "Douglas Gerber",
      "Ze Zeng FANG": "Ze Zeng Fang",
+     "Noah BODENSTEIN": "Noah Bodenstein",
      "David GOUVEIA": "David Gouveia",
      "Ian VAUCLIN": "Ian Vauclin",
-     "Xavier VAUCLIN": "Xavier Vauclin",
-     "Douglas GERBER": "Douglas Gerber",
-     "Jakub LOFEK": "Jakub Lofek",
-     "Artur SMAGULOV": "Artur Smagulov",
-     "Francois PITOT": "Francois Pitot",
-     "Jimmy MA": "Jimmy Ma",
-     "Matteo NALBONE": "Matteo Nalbone",
-     "Lukas VACLAVIK": "Lukas Vaclavik",
-     "Makar SUNTSEV": "Makar Suntsev",
-     "Yu-Hsiang LI": "Yu-Hsiang Li",
-     "Anthony PARADIS": "Anthony Paradis",
+     "Adrian JIMENEZ de BALDOMERO": "Adrian Jimenez de Baldomero",
+     "Larry LOUPOLOVER": "Larry Loupolover",
      "Vladimir SAMOILOV": "Vladimir Samoilov",
      "Hyungyeom KIM": "Hyungyeom Kim",
      "Gabriele FRANGIPANI": "Gabriele Frangipani"
@@ -99101,9 +99110,9 @@
    "n": "Xuanyu Liu / Wenbao Han",
    "c": "CHN",
    "k": "",
+   "p": "f106f535fcc0",
    "was": "p",
-   "y": "2026/27",
-   "p": "f106f535fcc0"
+   "y": "2026/27"
   },
   {
    "n": "Veronika Zhilina",
@@ -101838,5 +101847,5 @@
   "Jessica Lin": "photos/04d2f63664776ce1.jpg",
   "Adrian Jimenez de Baldomero": "photos/751a9143e61e2724.jpg"
  },
- "rev": "d4282cf181d8d7be"
+ "rev": "d95ef3c34735fdeb"
 }
