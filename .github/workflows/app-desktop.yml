@@ -118,6 +118,8 @@ jobs:
             Starty-windows.zip
             starty-setup-${{ needs.prep.outputs.version }}.exe
           if-no-files-found: error
+          # нужны только шагу publish этого же запуска; дольше они лишь занимают место Actions
+          retention-days: 1
 
   macos:
     needs: prep
@@ -166,6 +168,8 @@ jobs:
             Starty-macos.zip
             Starty-macos.dmg
           if-no-files-found: error
+          # нужны только шагу publish этого же запуска; дольше они лишь занимают место Actions
+          retention-days: 1
 
   publish:
     needs: [prep, windows, macos]
