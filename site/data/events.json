@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-19T18:45:00+03:00",
- "checked": "2026-11-19T17:04:32.094410+00:00",
+ "generated": "2026-11-19T19:48:59+03:00",
+ "checked": "2026-11-19T19:48:59+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57470,7 +57470,7 @@
    "seg": "КП",
    "title": "CS Tallinn Trophy — пары КП",
    "start": "2026-11-19T18:05:00+03:00",
-   "end": "2026-11-19T19:01:00+03:00",
+   "end": "2026-11-19T19:10:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -57562,22 +57562,22 @@
      "time": "18:41"
     },
     {
-     "name": "Irina Napolitano / Edoardo Comi",
-     "nation": "ITA",
-     "time": "18:53",
-     "no": 7,
-     "warmup": 2,
-     "place": 5,
-     "points": "50.76"
-    },
-    {
      "name": "Linzy Fitzpatrick / Keyton Bearinger",
      "nation": "USA",
-     "time": "18:47",
      "no": 6,
      "warmup": 2,
      "place": 2,
-     "points": "53.20"
+     "points": "53.20",
+     "time": "18:47"
+    },
+    {
+     "name": "Irina Napolitano / Edoardo Comi",
+     "nation": "ITA",
+     "no": 7,
+     "warmup": 2,
+     "place": 5,
+     "points": "50.76",
+     "time": "18:53"
     }
    ],
    "live": {
@@ -57587,23 +57587,23 @@
     "first": null,
     "names": {
      "Miyu YUNOKI / Tristan TAYLOR": "Miyu Yunoki / Tristan Taylor",
+     "Linzy FITZPATRICK / Keyton BEARINGER": "Linzy Fitzpatrick / Keyton Bearinger",
      "Reagan MOSS / Jakub GALBAVY": "Reagan Moss / Jakub Galbavy",
      "Debora Anna COHEN / Lukas VOCHOZKA": "Debora Anna Cohen / Lukas Vochozka",
+     "Irina NAPOLITANO / Edoardo COMI": "Irina Napolitano / Edoardo Comi",
      "Olivia FLORES / Mark SADUSKY": "Olivia Flores / Mark Sadusky",
-     "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han",
-     "Linzy FITZPATRICK / Keyton BEARINGER": "Linzy Fitzpatrick / Keyton Bearinger",
-     "Irina NAPOLITANO / Edoardo COMI": "Irina Napolitano / Edoardo Comi"
+     "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han"
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
    "facts": [
     {
-     "who": "Linzy Fitzpatrick / Keyton Bearinger",
+     "kind": "score",
      "text": "Личный рекорд за КП: 53.20 (был 45.75)",
-     "kind": "score"
+     "who": "Linzy Fitzpatrick / Keyton Bearinger"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:men-senior-pp",
@@ -57628,7 +57628,6 @@
     "David Gouveia",
     "Douglas Gerber",
     "Elias Sayed",
-    "Euken Alberdi",
     "Francois Pitot",
     "Gabriele Frangipani",
     "Hugo Bostedt",
@@ -57654,26 +57653,22 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Hugo Bostedt — 112.49\n2. Noah Bodenstein — 106.34\n3. Adrian Jimenez de Baldomero — 69.74\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
-   "field": [
+   "podium": [
     {
-     "name": "Larry Loupolover",
-     "nation": "BUL",
-     "time": "19:31",
-     "no": 1,
-     "warmup": 1,
-     "place": 4,
-     "points": "57.02"
-    },
-    {
+     "place": 1,
      "name": "Noah Bodenstein",
      "nation": "SUI",
-     "time": "19:39",
-     "no": 2,
-     "warmup": 1,
-     "place": 2,
      "points": "106.34"
     },
+    {
+     "place": 2,
+     "name": "Larry Loupolover",
+     "nation": "BUL",
+     "points": "57.02"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Noah Bodenstein — 106.34\n2. Larry Loupolover — 57.02\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
+   "field": [
     {
      "name": "Adrian Jimenez de Baldomero",
      "nation": "ESP",
@@ -57684,54 +57679,24 @@
      "points": "69.74"
     },
     {
-     "name": "Hugo Bostedt",
-     "nation": "SWE",
-     "time": "19:54",
-     "no": 4,
-     "warmup": 1,
-     "place": 1,
-     "points": "112.49"
+     "name": "Anthony Paradis",
+     "nation": "CAN",
+     "time": "22:31",
+     "no": 20,
+     "warmup": 4
     },
     {
-     "name": "Euken Alberdi",
-     "nation": "ESP",
-     "time": "20:02",
-     "no": 5,
-     "warmup": 1
-    },
-    {
-     "name": "Elias Sayed",
-     "nation": "SWE",
-     "time": "20:16",
-     "no": 6,
-     "warmup": 2
-    },
-    {
-     "name": "Ze Zeng Fang",
-     "nation": "MAS",
-     "time": "20:24",
-     "no": 7,
-     "warmup": 2
+     "name": "Artur Smagulov",
+     "nation": "KAZ",
+     "time": "21:31",
+     "no": 13,
+     "warmup": 3
     },
     {
      "name": "David Gouveia",
      "nation": "POR",
      "time": "20:31",
      "no": 8,
-     "warmup": 2
-    },
-    {
-     "name": "Ian Vauclin",
-     "nation": "FRA",
-     "time": "20:39",
-     "no": 9,
-     "warmup": 2
-    },
-    {
-     "name": "Xavier Vauclin",
-     "nation": "FRA",
-     "time": "20:47",
-     "no": 10,
      "warmup": 2
     },
     {
@@ -57742,24 +57707,52 @@
      "warmup": 2
     },
     {
-     "name": "Jakub Lofek",
-     "nation": "POL",
-     "time": "21:23",
-     "no": 12,
-     "warmup": 3
-    },
-    {
-     "name": "Artur Smagulov",
-     "nation": "KAZ",
-     "time": "21:31",
-     "no": 13,
-     "warmup": 3
+     "name": "Elias Sayed",
+     "nation": "SWE",
+     "time": "20:16",
+     "no": 6,
+     "warmup": 2
     },
     {
      "name": "Francois Pitot",
      "nation": "FRA",
      "time": "21:39",
      "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Gabriele Frangipani",
+     "nation": "ITA",
+     "time": "22:54",
+     "no": 23,
+     "warmup": 4
+    },
+    {
+     "name": "Hugo Bostedt",
+     "nation": "SWE",
+     "time": "19:54",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Hyungyeom Kim",
+     "nation": "KOR",
+     "time": "22:47",
+     "no": 22,
+     "warmup": 4
+    },
+    {
+     "name": "Ian Vauclin",
+     "nation": "FRA",
+     "time": "20:39",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Jakub Lofek",
+     "nation": "POL",
+     "time": "21:23",
+     "no": 12,
      "warmup": 3
     },
     {
@@ -57770,11 +57763,13 @@
      "warmup": 3
     },
     {
-     "name": "Matteo Nalbone",
-     "nation": "ITA",
-     "time": "21:54",
-     "no": 16,
-     "warmup": 3
+     "name": "Larry Loupolover",
+     "nation": "BUL",
+     "place": 2,
+     "points": "57.02",
+     "time": "19:31",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Lukas Vaclavik",
@@ -57791,18 +57786,20 @@
      "warmup": 4
     },
     {
-     "name": "Yu-Hsiang Li",
-     "nation": "TPE",
-     "time": "22:24",
-     "no": 19,
-     "warmup": 4
+     "name": "Matteo Nalbone",
+     "nation": "ITA",
+     "time": "21:54",
+     "no": 16,
+     "warmup": 3
     },
     {
-     "name": "Anthony Paradis",
-     "nation": "CAN",
-     "time": "22:31",
-     "no": 20,
-     "warmup": 4
+     "name": "Noah Bodenstein",
+     "nation": "SUI",
+     "place": 1,
+     "points": "106.34",
+     "time": "19:39",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Vladimir Samoilov",
@@ -57812,31 +57809,38 @@
      "warmup": 4
     },
     {
-     "name": "Hyungyeom Kim",
-     "nation": "KOR",
-     "time": "22:47",
-     "no": 22,
+     "name": "Xavier Vauclin",
+     "nation": "FRA",
+     "time": "20:47",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Yu-Hsiang Li",
+     "nation": "TPE",
+     "time": "22:24",
+     "no": 19,
      "warmup": 4
     },
     {
-     "name": "Gabriele Frangipani",
-     "nation": "ITA",
-     "time": "22:54",
-     "no": 23,
-     "warmup": 4
+     "name": "Ze Zeng Fang",
+     "nation": "MAS",
+     "time": "20:24",
+     "no": 7,
+     "warmup": 2
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG002.htm",
     "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT001RS.htm",
     "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG001.htm",
     "names": {
-     "Larry LOUPOLOVER": "Larry Loupolover",
      "Noah BODENSTEIN": "Noah Bodenstein",
+     "Larry LOUPOLOVER": "Larry Loupolover",
      "Adrian JIMENEZ de BALDOMERO": "Adrian Jimenez de Baldomero",
      "Hugo BOSTEDT": "Hugo Bostedt",
-     "Euken ALBERDI": "Euken Alberdi",
      "Elias SAYED": "Elias Sayed",
      "Ze Zeng FANG": "Ze Zeng Fang",
      "David GOUVEIA": "David Gouveia",
@@ -57858,28 +57862,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Hugo Bostedt",
-     "nation": "SWE",
-     "points": "112.49"
-    },
-    {
-     "place": 2,
-     "name": "Noah Bodenstein",
-     "nation": "SUI",
-     "points": "106.34"
-    },
-    {
-     "place": 3,
-     "name": "Adrian Jimenez de Baldomero",
-     "nation": "ESP",
-     "points": "69.74"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:women-senior-pp",
@@ -59219,7 +59202,7 @@
    "seg": "ПП",
    "title": "CS Tallinn Trophy — пары ПП",
    "start": "2026-11-20T20:00:00+03:00",
-   "end": "2026-11-20T21:10:00+03:00",
+   "end": "2026-11-20T21:07:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -59246,32 +59229,53 @@
    "desc": "Начало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
-     "name": "Debora Anna Cohen / Lukas Vochozka",
-     "nation": "CZE"
-    },
-    {
-     "name": "Irina Napolitano / Edoardo Comi",
-     "nation": "ITA"
-    },
-    {
-     "name": "Linzy Fitzpatrick / Keyton Bearinger",
-     "nation": "USA"
-    },
-    {
-     "name": "Miyu Yunoki / Tristan Taylor",
-     "nation": "CAN"
+     "name": "Xuanyu Liu / Wenbao Han",
+     "nation": "CHN",
+     "time": "20:06",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Olivia Flores / Mark Sadusky",
-     "nation": "USA"
+     "nation": "USA",
+     "time": "20:14",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Irina Napolitano / Edoardo Comi",
+     "nation": "ITA",
+     "time": "20:21",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Debora Anna Cohen / Lukas Vochozka",
+     "nation": "CZE",
+     "time": "20:35",
+     "no": 4,
+     "warmup": 2
     },
     {
      "name": "Reagan Moss / Jakub Galbavy",
-     "nation": "USA"
+     "nation": "USA",
+     "time": "20:43",
+     "no": 5,
+     "warmup": 2
     },
     {
-     "name": "Xuanyu Liu / Wenbao Han",
-     "nation": "CHN"
+     "name": "Linzy Fitzpatrick / Keyton Bearinger",
+     "nation": "USA",
+     "time": "20:50",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Miyu Yunoki / Tristan Taylor",
+     "nation": "CAN",
+     "time": "20:58",
+     "no": 7,
+     "warmup": 2
     }
    ],
    "live": {
@@ -59280,13 +59284,13 @@
     "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT003RS.htm",
     "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG005.htm",
     "names": {
-     "Miyu YUNOKI / Tristan TAYLOR": "Miyu Yunoki / Tristan Taylor",
      "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han",
-     "Debora Anna COHEN / Lukas VOCHOZKA": "Debora Anna Cohen / Lukas Vochozka",
-     "Irina NAPOLITANO / Edoardo COMI": "Irina Napolitano / Edoardo Comi",
-     "Linzy FITZPATRICK / Keyton BEARINGER": "Linzy Fitzpatrick / Keyton Bearinger",
      "Olivia FLORES / Mark SADUSKY": "Olivia Flores / Mark Sadusky",
-     "Reagan MOSS / Jakub GALBAVY": "Reagan Moss / Jakub Galbavy"
+     "Irina NAPOLITANO / Edoardo COMI": "Irina Napolitano / Edoardo Comi",
+     "Debora Anna COHEN / Lukas VOCHOZKA": "Debora Anna Cohen / Lukas Vochozka",
+     "Reagan MOSS / Jakub GALBAVY": "Reagan Moss / Jakub Galbavy",
+     "Linzy FITZPATRICK / Keyton BEARINGER": "Linzy Fitzpatrick / Keyton Bearinger",
+     "Miyu YUNOKI / Tristan TAYLOR": "Miyu Yunoki / Tristan Taylor"
     },
     "basis": null
    },
@@ -99018,6 +99022,22 @@
    "was": "w",
    "y": "2026/27",
    "p": "72fb55b016fa"
+  },
+  {
+   "n": "Naomie Ismaili / Leo Rouvrais",
+   "c": "FRA",
+   "k": "",
+   "was": "P",
+   "y": "2026/27",
+   "p": "25ec80dcd7c7"
+  },
+  {
+   "n": "Jolena Grohne / Manuel Rossi",
+   "c": "ITA",
+   "k": "",
+   "was": "P",
+   "y": "2026/27",
+   "p": "8987c7dcf620"
   }
  ],
  "photos": {
@@ -101743,5 +101763,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "9cd3be2df77cd565"
+ "rev": "73ed2d0966371d4a"
 }
