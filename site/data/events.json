@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T22:37:45+03:00",
- "checked": "2026-11-19T19:56:32.658307+00:00",
+ "checked": "2026-11-19T20:05:00.669986+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57701,21 +57701,22 @@
     },
     {
      "place": 3,
-     "name": "Hyungyeom Kim",
-     "nation": "KOR",
-     "points": "133.67"
+     "name": "Gabriele Frangipani",
+     "nation": "ITA",
+     "points": "134.23"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Anthony Paradis — 141.91\n2. Matteo Nalbone — 136.42\n3. Hyungyeom Kim — 133.67\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Anthony Paradis — 141.91\n2. Matteo Nalbone — 136.42\n3. Gabriele Frangipani — 134.23\n\nИтог турнира:\n1. Gabriele Frangipani — 215.19\n2. Anthony Paradis — 214.33\n3. Hyungyeom Kim — 213.24\n\nПримечательное:\n• Anthony Paradis — Личный рекорд за ПП: 141.91 (был 130.42)\n• Matteo Nalbone — Личный рекорд за ПП: 136.42 (был 123.67)\n• Anthony Paradis — Личный рекорд по сумме: 214.33 (был 193.61)\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Adrian Jimenez de Baldomero",
      "nation": "ESP",
-     "place": 20,
+     "place": 21,
      "points": "69.74",
      "time": "19:46",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 21
     },
     {
      "name": "Anthony Paradis",
@@ -57724,68 +57725,78 @@
      "points": "141.91",
      "time": "22:31",
      "no": 20,
-     "warmup": 4
+     "warmup": 4,
+     "final": 2
     },
     {
      "name": "Artur Smagulov",
      "nation": "KAZ",
-     "place": 12,
+     "place": 13,
      "points": "109.51",
      "time": "21:31",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "final": 13
     },
     {
      "name": "David Gouveia",
      "nation": "POR",
-     "place": 18,
+     "place": 19,
      "points": "85.52",
      "time": "20:31",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "final": 19
     },
     {
      "name": "Douglas Gerber",
      "nation": "AUS",
-     "place": 16,
+     "place": 17,
      "points": "99.12",
      "time": "20:54",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "final": 16
     },
     {
      "name": "Elias Sayed",
      "nation": "SWE",
-     "place": 13,
+     "place": 14,
      "points": "109.01",
      "time": "20:16",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "final": 15
     },
     {
      "name": "Francois Pitot",
      "nation": "FRA",
-     "place": 7,
+     "place": 8,
      "points": "125.84",
      "time": "21:39",
      "no": 14,
-     "warmup": 3
+     "warmup": 3,
+     "final": 9
     },
     {
      "name": "Gabriele Frangipani",
      "nation": "ITA",
      "time": "22:54",
      "no": 23,
-     "warmup": 4
+     "warmup": 4,
+     "place": 3,
+     "points": "134.23",
+     "final": 1
     },
     {
      "name": "Hugo Bostedt",
      "nation": "SWE",
-     "place": 10,
+     "place": 11,
      "points": "112.49",
      "time": "19:54",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 14
     },
     {
      "name": "Hyungyeom Kim",
@@ -57793,62 +57804,69 @@
      "time": "22:47",
      "no": 22,
      "warmup": 4,
-     "place": 3,
-     "points": "133.67"
+     "place": 4,
+     "points": "133.67",
+     "final": 3
     },
     {
      "name": "Ian Vauclin",
      "nation": "FRA",
-     "place": 19,
+     "place": 20,
      "points": "84.55",
      "time": "20:39",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "final": 20
     },
     {
      "name": "Jakub Lofek",
      "nation": "POL",
-     "place": 4,
+     "place": 5,
      "points": "129.39",
      "time": "21:23",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "final": 8
     },
     {
      "name": "Jimmy Ma",
      "nation": "USA",
-     "place": 11,
+     "place": 12,
      "points": "109.81",
      "time": "21:46",
      "no": 15,
-     "warmup": 3
+     "warmup": 3,
+     "final": 11
     },
     {
      "name": "Larry Loupolover",
      "nation": "BUL",
-     "place": 21,
+     "place": 22,
      "points": "57.02",
      "time": "19:31",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 22
     },
     {
      "name": "Lukas Vaclavik",
      "nation": "SVK",
-     "place": 14,
+     "place": 15,
      "points": "107.04",
      "time": "22:02",
      "no": 17,
-     "warmup": 3
+     "warmup": 3,
+     "final": 12
     },
     {
      "name": "Makar Suntsev",
      "nation": "FIN",
-     "place": 6,
+     "place": 7,
      "points": "127.00",
      "time": "22:16",
      "no": 18,
-     "warmup": 4
+     "warmup": 4,
+     "final": 7
     },
     {
      "name": "Matteo Nalbone",
@@ -57857,16 +57875,18 @@
      "points": "136.42",
      "time": "21:54",
      "no": 16,
-     "warmup": 3
+     "warmup": 3,
+     "final": 5
     },
     {
      "name": "Noah Bodenstein",
      "nation": "SUI",
-     "place": 15,
+     "place": 16,
      "points": "106.34",
      "time": "19:39",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 18
     },
     {
      "name": "Vladimir Samoilov",
@@ -57874,38 +57894,41 @@
      "time": "22:39",
      "no": 21,
      "warmup": 4,
-     "place": 5,
-     "points": "129.14"
+     "place": 6,
+     "points": "129.14",
+     "final": 4
     },
     {
      "name": "Xavier Vauclin",
      "nation": "FRA",
-     "place": 9,
+     "place": 10,
      "points": "121.04",
      "time": "20:47",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "final": 10
     },
     {
      "name": "Yu-Hsiang Li",
      "nation": "TPE",
-     "place": 8,
+     "place": 9,
      "points": "125.31",
      "time": "22:24",
      "no": 19,
-     "warmup": 4
+     "warmup": 4,
+     "final": 6
     },
     {
      "name": "Ze Zeng Fang",
      "nation": "MAS",
-     "place": 17,
+     "place": 18,
      "points": "97.77",
      "time": "20:24",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "final": 17
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG002.htm",
@@ -57935,9 +57958,46 @@
      "Hyungyeom KIM": "Hyungyeom Kim",
      "Gabriele FRANGIPANI": "Gabriele Frangipani"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "facts": [
+    {
+     "who": "Anthony Paradis",
+     "text": "Личный рекорд за ПП: 141.91 (был 130.42)",
+     "kind": "score"
+    },
+    {
+     "who": "Matteo Nalbone",
+     "text": "Личный рекорд за ПП: 136.42 (был 123.67)",
+     "kind": "score"
+    },
+    {
+     "who": "Anthony Paradis",
+     "text": "Личный рекорд по сумме: 214.33 (был 193.61)",
+     "kind": "score"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Gabriele Frangipani",
+     "nation": "ITA",
+     "points": "215.19"
+    },
+    {
+     "place": 2,
+     "name": "Anthony Paradis",
+     "nation": "CAN",
+     "points": "214.33"
+    },
+    {
+     "place": 3,
+     "name": "Hyungyeom Kim",
+     "nation": "KOR",
+     "points": "213.24"
+    }
+   ]
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:women-senior-pp",
@@ -101847,5 +101907,5 @@
   "Jessica Lin": "photos/04d2f63664776ce1.jpg",
   "Adrian Jimenez de Baldomero": "photos/751a9143e61e2724.jpg"
  },
- "rev": "97dc64ead2e789e5"
+ "rev": "b050b8570f205665"
 }
