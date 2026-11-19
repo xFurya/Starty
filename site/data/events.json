@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T16:44:29+03:00",
- "checked": "2026-11-19T14:24:31.145027+00:00",
+ "checked": "2026-11-19T14:28:30.949951+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57363,13 +57363,15 @@
      "url": "https://www.sport1tv.ru/figurnoe-katanie"
     }
    ],
-   "desc": "Начало: 17:05 МСК\nТрансляция: Первый канал",
+   "desc": "Промежуточные итоги:\n1. Екатерина Гайдукова — 72.86\n\nНачало: 17:05 МСК\nТрансляция: Первый канал",
    "field": [
     {
      "name": "Екатерина Гайдукова",
      "nation": "КУР",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "72.86"
     },
     {
      "name": "Арина Комекова",
@@ -57424,7 +57426,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Екатерина Гайдукова",
+     "nation": "КУР",
+     "points": "72.86"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-senior-kp",
@@ -101601,5 +101612,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "a6ce754c8e12d57a"
+ "rev": "bc54d22abf244f4d"
 }
