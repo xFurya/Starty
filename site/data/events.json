@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T20:09:14+03:00",
- "checked": "2026-11-19T17:44:31.681765+00:00",
+ "checked": "2026-11-19T17:52:31.812287+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57682,29 +57682,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Xavier Vauclin",
+     "nation": "FRA",
+     "points": "121.04"
+    },
+    {
+     "place": 2,
      "name": "Hugo Bostedt",
      "nation": "SWE",
      "points": "112.49"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Elias Sayed",
      "nation": "SWE",
      "points": "109.01"
-    },
-    {
-     "place": 3,
-     "name": "Noah Bodenstein",
-     "nation": "SUI",
-     "points": "106.34"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Hugo Bostedt — 112.49\n2. Elias Sayed — 109.01\n3. Noah Bodenstein — 106.34\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Xavier Vauclin — 121.04\n2. Hugo Bostedt — 112.49\n3. Elias Sayed — 109.01\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Adrian Jimenez de Baldomero",
      "nation": "ESP",
-     "place": 7,
+     "place": 8,
      "points": "69.74",
      "time": "19:46",
      "no": 3,
@@ -57730,7 +57730,7 @@
      "time": "20:31",
      "no": 8,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "85.52"
     },
     {
@@ -57746,7 +57746,7 @@
      "time": "20:16",
      "no": 6,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "109.01"
     },
     {
@@ -57766,7 +57766,7 @@
     {
      "name": "Hugo Bostedt",
      "nation": "SWE",
-     "place": 1,
+     "place": 2,
      "points": "112.49",
      "time": "19:54",
      "no": 4,
@@ -57785,7 +57785,7 @@
      "time": "20:39",
      "no": 9,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "84.55"
     },
     {
@@ -57805,7 +57805,7 @@
     {
      "name": "Larry Loupolover",
      "nation": "BUL",
-     "place": 8,
+     "place": 9,
      "points": "57.02",
      "time": "19:31",
      "no": 1,
@@ -57835,7 +57835,7 @@
     {
      "name": "Noah Bodenstein",
      "nation": "SUI",
-     "place": 3,
+     "place": 4,
      "points": "106.34",
      "time": "19:39",
      "no": 2,
@@ -57853,7 +57853,9 @@
      "nation": "FRA",
      "time": "20:47",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "121.04"
     },
     {
      "name": "Yu-Hsiang Li",
@@ -57868,7 +57870,7 @@
      "time": "20:24",
      "no": 7,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "97.77"
     }
    ],
@@ -101814,5 +101816,5 @@
   "Jessica Lin": "photos/04d2f63664776ce1.jpg",
   "Adrian Jimenez de Baldomero": "photos/751a9143e61e2724.jpg"
  },
- "rev": "77169f9edca1998f"
+ "rev": "44b305bdc3071b65"
 }
