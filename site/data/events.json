@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T09:42:51+03:00",
- "checked": "2026-11-19T09:40:03.506980+00:00",
+ "checked": "2026-11-19T09:48:03.516417+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56280,7 +56280,9 @@
      "nation": "SWE",
      "time": "12:39",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4,
+     "points": "44.62"
     },
     {
      "name": "Nikola Fomchenkova",
@@ -100891,5 +100893,5 @@
   "Skylar Lautowa-peguero": "photos/793cd3db7aa70b54.jpg",
   "Jared Sedlis": "photos/6521e032ae88999b.jpg"
  },
- "rev": "9ef346f37df9b48b"
+ "rev": "1cbc48be92e3cc78"
 }
