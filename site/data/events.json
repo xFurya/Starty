@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T18:45:00+03:00",
- "checked": "2026-11-19T16:40:30.835519+00:00",
+ "checked": "2026-11-19T16:48:33.049985+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57654,7 +57654,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Larry Loupolover — 57.02\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Noah Bodenstein — 106.34\n2. Larry Loupolover — 57.02\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Larry Loupolover",
@@ -57662,7 +57662,7 @@
      "time": "19:31",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "57.02"
     },
     {
@@ -57670,7 +57670,9 @@
      "nation": "SUI",
      "time": "19:39",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "106.34"
     },
     {
      "name": "Adrian Jimenez de Baldomero",
@@ -57856,6 +57858,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Noah Bodenstein",
+     "nation": "SUI",
+     "points": "106.34"
+    },
+    {
+     "place": 2,
      "name": "Larry Loupolover",
      "nation": "BUL",
      "points": "57.02"
@@ -101725,5 +101733,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "0bb3e9f61daf3c0f"
+ "rev": "9b8bc01d2c6a49d9"
 }
