@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T09:42:51+03:00",
- "checked": "2026-11-19T10:04:02.969297+00:00",
+ "checked": "2026-11-19T10:08:03.590704+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56246,7 +56246,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Anita Ostlund — 55.70\n2. Nela Snebergerova — 51.39\n3. Nikola Fomchenkova — 51.37\n\nНачало: 12:15 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Anita Ostlund — 55.70\n2. Sara Franzi — 54.42\n3. Nela Snebergerova — 51.39\n\nНачало: 12:15 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Nela Snebergerova",
@@ -56254,7 +56254,7 @@
      "time": "12:21",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "51.39"
     },
     {
@@ -56263,7 +56263,7 @@
      "time": "12:27",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "47.91"
     },
     {
@@ -56281,7 +56281,7 @@
      "time": "12:39",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "44.62"
     },
     {
@@ -56290,7 +56290,7 @@
      "time": "12:44",
      "no": 5,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "51.37"
     },
     {
@@ -56298,7 +56298,9 @@
      "nation": "SUI",
      "time": "12:57",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "54.42"
     },
     {
      "name": "Eugenia Sekulovski",
@@ -56542,15 +56544,15 @@
     },
     {
      "place": 2,
-     "name": "Nela Snebergerova",
-     "nation": "CZE",
-     "points": "51.39"
+     "name": "Sara Franzi",
+     "nation": "SUI",
+     "points": "54.42"
     },
     {
      "place": 3,
-     "name": "Nikola Fomchenkova",
-     "nation": "LAT",
-     "points": "51.37"
+     "name": "Nela Snebergerova",
+     "nation": "CZE",
+     "points": "51.39"
     }
    ],
    "provisional": true
@@ -100922,5 +100924,5 @@
   "Skylar Lautowa-peguero": "photos/793cd3db7aa70b54.jpg",
   "Jared Sedlis": "photos/6521e032ae88999b.jpg"
  },
- "rev": "1487f8d8fddc2f04"
+ "rev": "e6353b240213029c"
 }
