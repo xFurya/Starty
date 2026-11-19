@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T18:45:00+03:00",
- "checked": "2026-11-19T16:08:31.331764+00:00",
+ "checked": "2026-11-19T16:40:30.835519+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57654,14 +57654,16 @@
      "note": "Платно"
     }
    ],
-   "desc": "Начало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Larry Loupolover — 57.02\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Larry Loupolover",
      "nation": "BUL",
      "time": "19:31",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "57.02"
     },
     {
      "name": "Noah Bodenstein",
@@ -57850,7 +57852,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Larry Loupolover",
+     "nation": "BUL",
+     "points": "57.02"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:women-senior-pp",
@@ -101714,5 +101725,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "f799d35cf26d8770"
+ "rev": "0bb3e9f61daf3c0f"
 }
