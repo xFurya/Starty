@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T13:27:34+03:00",
- "checked": "2026-11-19T10:52:03.299101+00:00",
+ "checked": "2026-11-19T11:00:03.581648+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56281,7 +56281,7 @@
      "nation": "AUT",
      "no": 2,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "47.91",
      "time": "12:27"
     },
@@ -56299,7 +56299,7 @@
      "nation": "SWE",
      "no": 4,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "44.62",
      "time": "12:39"
     },
@@ -56326,7 +56326,7 @@
      "nation": "SUI",
      "no": 7,
      "warmup": 40,
-     "place": 8,
+     "place": 9,
      "points": "47.17",
      "time": "13:03"
     },
@@ -56335,7 +56335,7 @@
      "nation": "ARG",
      "no": 8,
      "warmup": 40,
-     "place": 11,
+     "place": 12,
      "points": "20.34",
      "time": "13:08"
     },
@@ -56344,7 +56344,7 @@
      "nation": "NOR",
      "no": 9,
      "warmup": 40,
-     "place": 7,
+     "place": 8,
      "points": "47.19",
      "time": "13:14"
     },
@@ -56353,7 +56353,7 @@
      "nation": "KGZ",
      "no": 10,
      "warmup": 40,
-     "place": 10,
+     "place": 11,
      "points": "44.39",
      "time": "13:20"
     },
@@ -56418,7 +56418,9 @@
      "nation": "SWE",
      "time": "13:51",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "place": 6,
+     "points": "49.76"
     },
     {
      "name": "Karoliine Raudsepp",
@@ -101258,5 +101260,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "78a6f2f6ff6e5cd4"
+ "rev": "7f01becf1f72cb8f"
 }
