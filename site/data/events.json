@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T13:46:49+03:00",
- "checked": "2026-11-19T11:28:03.262467+00:00",
+ "checked": "2026-11-19T11:32:03.097465+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56272,7 +56272,7 @@
      "nation": "CZE",
      "no": 1,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "51.39",
      "time": "12:21"
     },
@@ -56281,7 +56281,7 @@
      "nation": "AUT",
      "no": 2,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "points": "47.91",
      "time": "12:27"
     },
@@ -56299,7 +56299,7 @@
      "nation": "SWE",
      "no": 4,
      "warmup": 1,
-     "place": 13,
+     "place": 14,
      "points": "44.62",
      "time": "12:39"
     },
@@ -56308,7 +56308,7 @@
      "nation": "LAT",
      "no": 5,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "51.37",
      "time": "12:44"
     },
@@ -56326,7 +56326,7 @@
      "nation": "SUI",
      "no": 7,
      "warmup": 40,
-     "place": 12,
+     "place": 13,
      "points": "47.17",
      "time": "13:03"
     },
@@ -56335,7 +56335,7 @@
      "nation": "ARG",
      "no": 8,
      "warmup": 40,
-     "place": 15,
+     "place": 16,
      "points": "20.34",
      "time": "13:08"
     },
@@ -56344,7 +56344,7 @@
      "nation": "NOR",
      "no": 9,
      "warmup": 40,
-     "place": 11,
+     "place": 12,
      "points": "47.19",
      "time": "13:14"
     },
@@ -56353,7 +56353,7 @@
      "nation": "KGZ",
      "no": 10,
      "warmup": 40,
-     "place": 14,
+     "place": 15,
      "points": "44.39",
      "time": "13:20"
     },
@@ -56362,7 +56362,7 @@
      "nation": "TPE",
      "no": 11,
      "warmup": 10,
-     "place": 5,
+     "place": 6,
      "points": "51.77",
      "time": "13:45"
     },
@@ -56385,7 +56385,9 @@
      "nation": "CZE",
      "time": "14:21",
      "no": 16,
-     "warmup": 4
+     "warmup": 4,
+     "place": 5,
+     "points": "54.40"
     },
     {
      "name": "Breken Brezden",
@@ -56428,7 +56430,7 @@
      "time": "13:51",
      "no": 12,
      "warmup": 3,
-     "place": 9,
+     "place": 10,
      "points": "49.76"
     },
     {
@@ -56451,7 +56453,7 @@
      "time": "14:03",
      "no": 14,
      "warmup": 3,
-     "place": 8,
+     "place": 9,
      "points": "49.87"
     },
     {
@@ -101282,5 +101284,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "2827d1390712f131"
+ "rev": "4fca634d1a0d5516"
 }
