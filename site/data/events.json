@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-19T13:10:07+03:00",
- "checked": "2026-11-19T10:44:03.336467+00:00",
+ "generated": "2026-11-19T13:27:34+03:00",
+ "checked": "2026-11-19T13:27:34+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56331,6 +56331,33 @@
      "time": "13:03"
     },
     {
+     "name": "Michelle Dicicco",
+     "nation": "ARG",
+     "no": 8,
+     "warmup": 40,
+     "place": 10,
+     "points": "20.34",
+     "time": "13:08"
+    },
+    {
+     "name": "Pernille With",
+     "nation": "NOR",
+     "no": 9,
+     "warmup": 40,
+     "place": 6,
+     "points": "47.19",
+     "time": "13:14"
+    },
+    {
+     "name": "Zhasmin Shlaga",
+     "nation": "KGZ",
+     "no": 10,
+     "warmup": 40,
+     "place": 9,
+     "points": "44.39",
+     "time": "13:20"
+    },
+    {
      "name": "Afrina Diyanah",
      "nation": "MAS",
      "time": "14:44",
@@ -56457,15 +56484,6 @@
      "warmup": 6
     },
     {
-     "name": "Michelle Dicicco",
-     "nation": "ARG",
-     "time": "13:08",
-     "no": 8,
-     "warmup": 2,
-     "place": 10,
-     "points": "20.34"
-    },
-    {
      "name": "Olesja Leonova",
      "nation": "EST",
      "time": "15:57",
@@ -56478,15 +56496,6 @@
      "time": "15:15",
      "no": 22,
      "warmup": 5
-    },
-    {
-     "name": "Pernille With",
-     "nation": "NOR",
-     "time": "13:14",
-     "no": 9,
-     "warmup": 2,
-     "place": 6,
-     "points": "47.19"
     },
     {
      "name": "Sarina Joos",
@@ -56508,15 +56517,6 @@
      "time": "13:45",
      "no": 11,
      "warmup": 3
-    },
-    {
-     "name": "Zhasmin Shlaga",
-     "nation": "KGZ",
-     "time": "13:20",
-     "no": 10,
-     "warmup": 2,
-     "place": 9,
-     "points": "44.39"
     }
    ],
    "provisional": true,
@@ -56531,11 +56531,11 @@
      "Nela SNEBERGEROVA": "Nela Snebergerova",
      "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
      "Flora Marie SCHALLER": "Flora Marie Schaller",
+     "Pernille WITH": "Pernille With",
      "Eugenia SEKULOVSKI": "Eugenia Sekulovski",
      "Julia BROVALL": "Julia Brovall",
-     "Michelle DICICCO": "Michelle Dicicco",
-     "Pernille WITH": "Pernille With",
      "Zhasmin SHLAGA": "Zhasmin Shlaga",
+     "Michelle DICICCO": "Michelle Dicicco",
      "Yu-Feng TSAI": "Yu-Feng Tsai",
      "Josefin BROVALL": "Josefin Brovall",
      "Sarina JOOS": "Sarina Joos",
@@ -56602,36 +56602,36 @@
    "podium": [
     {
      "place": 1,
-     "name": "Павел Шин",
-     "nation": "МОС",
-     "points": "132.68"
-    },
-    {
-     "place": 2,
      "name": "Захар Кяхба",
      "nation": "ККР",
      "points": "108.66"
     },
     {
+     "place": 2,
+     "name": "Андрей Вересов",
+     "nation": "КАЛ",
+     "points": "101.45"
+    },
+    {
      "place": 3,
-     "name": "Георгий Шульц",
-     "nation": "КРМ",
-     "points": "107.49"
+     "name": "Артем Шевнин",
+     "nation": "ИРК",
+     "points": "100.96"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Павел Шин — 132.68\n2. Захар Кяхба — 108.66\n3. Георгий Шульц — 107.49\n\nНачало: 12:35 МСК\nТрансляция: Первый канал",
+   "desc": "Промежуточные итоги:\n1. Захар Кяхба — 108.66\n2. Андрей Вересов — 101.45\n3. Артем Шевнин — 100.96\n\nНачало: 12:35 МСК\nТрансляция: Первый канал",
    "field": [
     {
      "name": "Андрей Вересов",
      "nation": "КАЛ",
-     "no": 5,
-     "place": 4,
-     "points": "101.45"
+     "place": 2,
+     "points": "101.45",
+     "no": 5
     },
     {
      "name": "Артем Шевнин",
      "nation": "ИРК",
-     "place": 5,
+     "place": 3,
      "points": "100.96",
      "no": 1
     },
@@ -56655,21 +56655,21 @@
     {
      "name": "Захар Кяхба",
      "nation": "ККР",
-     "no": 6,
-     "place": 2,
-     "points": "108.66"
+     "place": 1,
+     "points": "108.66",
+     "no": 6
     },
     {
      "name": "Кирилл Агарков",
      "nation": "СТВ",
-     "place": 6,
+     "place": 4,
      "points": "94.61",
      "no": 4
     },
     {
      "name": "Максим Тяпин",
      "nation": "РОБ",
-     "place": 8,
+     "place": 6,
      "points": "81.78",
      "no": 2
     },
@@ -56683,7 +56683,7 @@
     {
      "name": "Роман Майер",
      "nation": "НИЖ",
-     "place": 7,
+     "place": 5,
      "points": "92.55",
      "no": 3
     }
@@ -56695,12 +56695,12 @@
     "cat": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/CAT005RS.HTM",
     "first": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG009.HTM",
     "names": {
+     "Захар Бесланович КЯХБА": "Захар Кяхба",
+     "Андрей Вадимович ВЕРЕСОВ": "Андрей Вересов",
      "Артем Игоревич ШЕВНИН": "Артем Шевнин",
      "Кирилл Юрьевич АГАРКОВ": "Кирилл Агарков",
      "Роман Витальевич МАЙЕР": "Роман Майер",
      "Максим Денисович ТЯПИН": "Максим Тяпин",
-     "Андрей Вадимович ВЕРЕСОВ": "Андрей Вересов",
-     "Захар Бесланович КЯХБА": "Захар Кяхба",
      "Павел Константинович ШИН": "Павел Шин",
      "Георгий Владимирович ШУЛЬЦ": "Георгий Шульц",
      "Артём Михайлович КОШУТИН": "Артём Кошутин",
@@ -62429,16 +62429,6 @@
  ],
  "upcoming": [
   {
-   "tid": "samara:vfm-vozrozhdenie-2026-",
-   "name": "ВФМ \"Возрождение\" 2026",
-   "start": "2026-11-19",
-   "end": "2026-11-20",
-   "venue": "",
-   "intl": false,
-   "tier": "regional",
-   "region": "Самарская область"
-  },
-  {
    "tid": "ffkm:rn89063",
    "name": "Кубок Москвы (Финал)",
    "start": "2026-11-23",
@@ -67124,7 +67114,8 @@
   {
    "n": "Agata Starykava",
    "c": "BLR",
-   "k": ""
+   "k": "",
+   "p": "12c93a2f5934"
   },
   {
    "n": "Ahsun Yun",
@@ -67481,7 +67472,8 @@
   {
    "n": "Alexander Enbert",
    "c": "RUS",
-   "k": ""
+   "k": "",
+   "p": "dceb2a112ec4"
   },
   {
    "n": "Alexander Evmenov",
@@ -79350,7 +79342,8 @@
   {
    "n": "Varvara Kurnosenko",
    "c": "RUS",
-   "k": ""
+   "k": "",
+   "p": "4092a6786597"
   },
   {
    "n": "Varvara Rauhen / Mikhail Prusiankou",
@@ -101230,5 +101223,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "7e140b6f33ded3f2"
+ "rev": "3a2a114fafff9e77"
 }
