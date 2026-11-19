@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T14:48:54+03:00",
- "checked": "2026-11-19T13:04:02.519204+00:00",
+ "checked": "2026-11-19T13:08:02.957993+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -56335,7 +56335,7 @@
      "nation": "ARG",
      "no": 8,
      "warmup": 40,
-     "place": 27,
+     "place": 28,
      "points": "20.34",
      "time": "13:08"
     },
@@ -56443,7 +56443,7 @@
      "nation": "MAS",
      "no": 20,
      "warmup": 50,
-     "place": 26,
+     "place": 27,
      "points": "28.00",
      "time": "14:44"
     },
@@ -56490,7 +56490,7 @@
      "time": "15:33",
      "no": 25,
      "warmup": 5,
-     "place": 25,
+     "place": 26,
      "points": "30.16"
     },
     {
@@ -56532,7 +56532,9 @@
      "nation": "EST",
      "time": "15:57",
      "no": 28,
-     "warmup": 6
+     "warmup": 6,
+     "place": 25,
+     "points": "40.69"
     },
     {
      "name": "Oona Ounasvuori",
@@ -101329,5 +101331,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "ae6e50fa821dc33d"
+ "rev": "0a279afcee014352"
 }
