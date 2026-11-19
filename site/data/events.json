@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-19T08:54:40+03:00",
- "checked": "2026-11-19T08:54:40+03:00",
- "complete": false,
+ "generated": "2026-11-19T09:13:56+03:00",
+ "checked": "2026-11-19T09:13:56+03:00",
+ "complete": true,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
-  "Golden Skate": "fail",
+  "Golden Skate": "ok",
   "ФФКМ": "ok",
   "Самара": "ok"
  },
@@ -66744,7 +66744,8 @@
   {
    "n": "Adelina Sotnikova",
    "c": "RUS",
-   "k": ""
+   "k": "",
+   "p": "a865d2779412"
   },
   {
    "n": "Adelina Voroteliak",
@@ -66760,7 +66761,8 @@
   {
    "n": "Adian Pitkeev",
    "c": "RUS",
-   "k": ""
+   "k": "",
+   "p": "b28d7a694cde"
   },
   {
    "n": "Adrian Jimenez De Baldomero",
@@ -100853,7 +100855,11 @@
   "Caroline Toft": "photos/84b126242c70dc44.jpg",
   "Polina Ustinkova": "photos/cdfcd40e8bcaed5f.jpg",
   "Maxim Varakin": "photos/cebbaca1aac7632a.jpg",
-  "Максим Варакин": "photos/cebbaca1aac7632a.jpg"
+  "Максим Варакин": "photos/cebbaca1aac7632a.jpg",
+  "Валерия Литвинчёва": "photos/8e782c489361b3b5.jpg",
+  "Елизавета Лабутина": "photos/89ab5ef1bdbdcd24.jpg",
+  "София Касинс": "photos/00a4dcf4e8aeac13.jpg",
+  "Яна Анашкина": "photos/80331e08bc525d04.jpg"
  },
- "rev": "2c444a6a5166fd9f"
+ "rev": "a1a8dcdc65d86ffe"
 }
