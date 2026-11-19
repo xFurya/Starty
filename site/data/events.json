@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T09:42:51+03:00",
- "checked": "2026-11-19T09:36:03.473505+00:00",
+ "checked": "2026-11-19T09:40:03.506980+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -56246,7 +56246,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Nela Snebergerova — 51.39\n2. Flora Marie Schaller — 47.91\n\nНачало: 12:15 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Anita Ostlund — 55.70\n2. Nela Snebergerova — 51.39\n3. Flora Marie Schaller — 47.91\n\nНачало: 12:15 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Nela Snebergerova",
@@ -56254,7 +56254,7 @@
      "time": "12:21",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "51.39"
     },
     {
@@ -56263,7 +56263,7 @@
      "time": "12:27",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "47.91"
     },
     {
@@ -56271,7 +56271,9 @@
      "nation": "SWE",
      "time": "12:33",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "55.70"
     },
     {
      "name": "Julia Brovall",
@@ -56530,12 +56532,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Anita Ostlund",
+     "nation": "SWE",
+     "points": "55.70"
+    },
+    {
+     "place": 2,
      "name": "Nela Snebergerova",
      "nation": "CZE",
      "points": "51.39"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Flora Marie Schaller",
      "nation": "AUT",
      "points": "47.91"
@@ -100883,5 +100891,5 @@
   "Skylar Lautowa-peguero": "photos/793cd3db7aa70b54.jpg",
   "Jared Sedlis": "photos/6521e032ae88999b.jpg"
  },
- "rev": "85550a9dbd5e44c2"
+ "rev": "9ef346f37df9b48b"
 }
