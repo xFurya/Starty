@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T20:09:14+03:00",
- "checked": "2026-11-19T17:28:32.592924+00:00",
+ "checked": "2026-11-19T17:36:31.779227+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57390,59 +57390,65 @@
      "points": "99.63"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Таисия Лепихина — 109.11\n2. София Ермолова — 107.54\n3. Софья Лукина — 99.63\n\nНачало: 17:05 МСК\nТрансляция: Первый канал",
+   "desc": "Итог:\n1. Таисия Лепихина — 109.11\n2. София Ермолова — 107.54\n3. Софья Лукина — 99.63\n\nИтог турнира:\n1. Таисия Лепихина — 171.38\n2. София Ермолова — 165.84\n3. Софья Лукина — 160.86\n\nНачало: 17:05 МСК\nТрансляция: Первый канал",
    "field": [
     {
      "name": "Анастасия Шарошкина",
      "nation": "МОС",
      "place": 6,
      "points": "88.20",
-     "no": 3
+     "no": 3,
+     "final": 5
     },
     {
      "name": "Арина Данилова",
      "nation": "ВОР",
      "place": 4,
      "points": "98.11",
-     "no": 4
+     "no": 4,
+     "final": 4
     },
     {
      "name": "Арина Комекова",
      "nation": "ККР",
      "place": 5,
      "points": "90.29",
-     "no": 2
+     "no": 2,
+     "final": 6
     },
     {
      "name": "Екатерина Гайдукова",
      "nation": "КУР",
      "place": 7,
      "points": "72.86",
-     "no": 1
+     "no": 1,
+     "final": 7
     },
     {
      "name": "София Ермолова",
      "nation": "ЛЕН",
      "place": 2,
      "points": "107.54",
-     "no": 5
+     "no": 5,
+     "final": 2
     },
     {
      "name": "Софья Лукина",
      "nation": "БАШ",
      "place": 3,
      "points": "99.63",
-     "no": 6
+     "no": 6,
+     "final": 3
     },
     {
      "name": "Таисия Лепихина",
      "nation": "ВЛГ",
      "place": 1,
      "points": "109.11",
-     "no": 7
+     "no": 7,
+     "final": 1
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
     "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG014.HTM",
@@ -57457,9 +57463,29 @@
      "Арина Романовна КОМЕКОВА": "Арина Комекова",
      "Екатерина Олеговна ГАЙДУКОВА": "Екатерина Гайдукова"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Таисия Лепихина",
+     "nation": "ВЛГ",
+     "points": "171.38"
+    },
+    {
+     "place": 2,
+     "name": "София Ермолова",
+     "nation": "ЛЕН",
+     "points": "165.84"
+    },
+    {
+     "place": 3,
+     "name": "Софья Лукина",
+     "nation": "БАШ",
+     "points": "160.86"
+    }
+   ]
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-senior-kp",
@@ -57678,7 +57704,7 @@
     {
      "name": "Adrian Jimenez de Baldomero",
      "nation": "ESP",
-     "place": 5,
+     "place": 6,
      "points": "69.74",
      "time": "19:46",
      "no": 3,
@@ -57703,7 +57729,9 @@
      "nation": "POR",
      "time": "20:31",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "85.52"
     },
     {
      "name": "Douglas Gerber",
@@ -57775,7 +57803,7 @@
     {
      "name": "Larry Loupolover",
      "nation": "BUL",
-     "place": 6,
+     "place": 7,
      "points": "57.02",
      "time": "19:31",
      "no": 1,
@@ -101784,5 +101812,5 @@
   "Jessica Lin": "photos/04d2f63664776ce1.jpg",
   "Adrian Jimenez de Baldomero": "photos/751a9143e61e2724.jpg"
  },
- "rev": "a0b7c925a21d84a3"
+ "rev": "3134d5f8cbb6df07"
 }
