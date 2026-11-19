@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T16:44:29+03:00",
- "checked": "2026-11-19T14:28:30.949951+00:00",
+ "checked": "2026-11-19T14:36:31.174319+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57268,7 +57268,9 @@
      "nation": "FRA",
      "time": "17:25",
      "no": 4,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "42.91"
     },
     {
      "name": "Naomie Ismaili / Leo Rouvrais",
@@ -57363,21 +57365,23 @@
      "url": "https://www.sport1tv.ru/figurnoe-katanie"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Екатерина Гайдукова — 72.86\n\nНачало: 17:05 МСК\nТрансляция: Первый канал",
+   "desc": "Промежуточные итоги:\n1. Арина Комекова — 90.29\n2. Екатерина Гайдукова — 72.86\n\nНачало: 17:05 МСК\nТрансляция: Первый канал",
    "field": [
     {
      "name": "Екатерина Гайдукова",
      "nation": "КУР",
      "no": 1,
      "warmup": null,
-     "place": 1,
+     "place": 2,
      "points": "72.86"
     },
     {
      "name": "Арина Комекова",
      "nation": "ККР",
      "no": 2,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "90.29"
     },
     {
      "name": "Анастасия Шарошкина",
@@ -57430,6 +57434,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Арина Комекова",
+     "nation": "ККР",
+     "points": "90.29"
+    },
+    {
+     "place": 2,
      "name": "Екатерина Гайдукова",
      "nation": "КУР",
      "points": "72.86"
@@ -101612,5 +101622,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "bc54d22abf244f4d"
+ "rev": "b0309d4554f2a1e4"
 }
