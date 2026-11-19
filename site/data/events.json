@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-19T13:46:49+03:00",
- "checked": "2026-11-19T12:00:03.073576+00:00",
- "complete": true,
+ "generated": "2026-11-19T14:48:54+03:00",
+ "checked": "2026-11-19T14:48:54+03:00",
+ "complete": false,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
-  "Golden Skate": "ok",
+  "Golden Skate": "fail",
   "ФФКМ": "ok",
   "Самара": "ok"
  },
@@ -56335,7 +56335,7 @@
      "nation": "ARG",
      "no": 8,
      "warmup": 40,
-     "place": 21,
+     "place": 20,
      "points": "20.34",
      "time": "13:08"
     },
@@ -56367,31 +56367,85 @@
      "time": "13:45"
     },
     {
-     "name": "Afrina Diyanah",
-     "nation": "MAS",
-     "time": "14:44",
-     "no": 20,
-     "warmup": 4,
-     "place": 20,
-     "points": "28.00"
+     "name": "Josefin Brovall",
+     "nation": "SWE",
+     "no": 12,
+     "warmup": 10,
+     "place": 12,
+     "points": "49.76",
+     "time": "13:51"
     },
     {
-     "name": "Anastasija Konga",
-     "nation": "LAT",
-     "time": "14:33",
-     "no": 18,
-     "warmup": 4,
-     "place": 13,
-     "points": "48.20"
+     "name": "Sarina Joos",
+     "nation": "ITA",
+     "no": 13,
+     "warmup": 10,
+     "place": 3,
+     "points": "63.48",
+     "time": "13:57"
+    },
+    {
+     "name": "Kristina Lisovskaja",
+     "nation": "EST",
+     "no": 14,
+     "warmup": 10,
+     "place": 11,
+     "points": "49.87",
+     "time": "14:03"
+    },
+    {
+     "name": "Lara Naki Gutmann",
+     "nation": "ITA",
+     "no": 15,
+     "warmup": 10,
+     "place": 1,
+     "points": "70.25",
+     "time": "14:09"
     },
     {
      "name": "Barbora Vrankova",
      "nation": "CZE",
-     "time": "14:21",
      "no": 16,
-     "warmup": 4,
+     "warmup": 50,
      "place": 6,
-     "points": "54.40"
+     "points": "54.40",
+     "time": "14:21"
+    },
+    {
+     "name": "Livia Kaiser",
+     "nation": "SUI",
+     "no": 17,
+     "warmup": 50,
+     "place": 2,
+     "points": "63.87",
+     "time": "14:27"
+    },
+    {
+     "name": "Anastasija Konga",
+     "nation": "LAT",
+     "no": 18,
+     "warmup": 50,
+     "place": 13,
+     "points": "48.20",
+     "time": "14:33"
+    },
+    {
+     "name": "Marta Helena Prangel",
+     "nation": "EST",
+     "no": 19,
+     "warmup": 50,
+     "place": 7,
+     "points": "53.45",
+     "time": "14:38"
+    },
+    {
+     "name": "Afrina Diyanah",
+     "nation": "MAS",
+     "no": 20,
+     "warmup": 50,
+     "place": 19,
+     "points": "28.00",
+     "time": "14:44"
     },
     {
      "name": "Breken Brezden",
@@ -56431,15 +56485,6 @@
      "warmup": 6
     },
     {
-     "name": "Josefin Brovall",
-     "nation": "SWE",
-     "time": "13:51",
-     "no": 12,
-     "warmup": 3,
-     "place": 12,
-     "points": "49.76"
-    },
-    {
      "name": "Karoliine Raudsepp",
      "nation": "EST",
      "time": "15:33",
@@ -56454,33 +56499,6 @@
      "warmup": 5
     },
     {
-     "name": "Kristina Lisovskaja",
-     "nation": "EST",
-     "time": "14:03",
-     "no": 14,
-     "warmup": 3,
-     "place": 11,
-     "points": "49.87"
-    },
-    {
-     "name": "Lara Naki Gutmann",
-     "nation": "ITA",
-     "time": "14:09",
-     "no": 15,
-     "warmup": 3,
-     "place": 1,
-     "points": "70.25"
-    },
-    {
-     "name": "Livia Kaiser",
-     "nation": "SUI",
-     "time": "14:27",
-     "no": 17,
-     "warmup": 4,
-     "place": 2,
-     "points": "63.87"
-    },
-    {
      "name": "Lotta Artimo",
      "nation": "FIN",
      "time": "15:27",
@@ -56493,15 +56511,6 @@
      "time": "15:39",
      "no": 26,
      "warmup": 5
-    },
-    {
-     "name": "Marta Helena Prangel",
-     "nation": "EST",
-     "time": "14:38",
-     "no": 19,
-     "warmup": 4,
-     "place": 7,
-     "points": "53.45"
     },
     {
      "name": "Mia Risa Gomez",
@@ -56525,15 +56534,6 @@
      "warmup": 5
     },
     {
-     "name": "Sarina Joos",
-     "nation": "ITA",
-     "time": "13:57",
-     "no": 13,
-     "warmup": 3,
-     "place": 3,
-     "points": "63.48"
-    },
-    {
      "name": "Selma Valitalo",
      "nation": "FIN",
      "time": "15:21",
@@ -56548,26 +56548,26 @@
     "cat": null,
     "first": null,
     "names": {
+     "Lara Naki GUTMANN": "Lara Naki Gutmann",
+     "Livia KAISER": "Livia Kaiser",
+     "Sarina JOOS": "Sarina Joos",
      "Anita OSTLUND": "Anita Ostlund",
      "Sara FRANZI": "Sara Franzi",
+     "Barbora VRANKOVA": "Barbora Vrankova",
+     "Marta Helena PRANGEL": "Marta Helena Prangel",
      "Yu-Feng TSAI": "Yu-Feng Tsai",
      "Nela SNEBERGEROVA": "Nela Snebergerova",
      "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
+     "Kristina LISOVSKAJA": "Kristina Lisovskaja",
+     "Josefin BROVALL": "Josefin Brovall",
+     "Anastasija KONGA": "Anastasija Konga",
      "Flora Marie SCHALLER": "Flora Marie Schaller",
      "Pernille WITH": "Pernille With",
      "Eugenia SEKULOVSKI": "Eugenia Sekulovski",
      "Julia BROVALL": "Julia Brovall",
      "Zhasmin SHLAGA": "Zhasmin Shlaga",
-     "Michelle DICICCO": "Michelle Dicicco",
-     "Josefin BROVALL": "Josefin Brovall",
-     "Sarina JOOS": "Sarina Joos",
-     "Kristina LISOVSKAJA": "Kristina Lisovskaja",
-     "Lara Naki GUTMANN": "Lara Naki Gutmann",
-     "Barbora VRANKOVA": "Barbora Vrankova",
-     "Livia KAISER": "Livia Kaiser",
-     "Anastasija KONGA": "Anastasija Konga",
-     "Marta Helena PRANGEL": "Marta Helena Prangel",
      "Afrina DIYANAH": "Afrina Diyanah",
+     "Michelle DICICCO": "Michelle Dicicco",
      "Gabrielle DALEMAN": "Gabrielle Daleman",
      "Oona OUNASVUORI": "Oona Ounasvuori",
      "Selma VALITALO": "Selma Valitalo",
@@ -56624,123 +56624,23 @@
    "podium": [
     {
      "place": 1,
+     "name": "Глеб Дудченко",
+     "nation": "МОБ",
+     "points": "135.06"
+    },
+    {
+     "place": 2,
      "name": "Павел Шин",
      "nation": "МОС",
      "points": "132.68"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Артём Кошутин",
      "nation": "ВЛГ",
      "points": "121.15"
-    },
-    {
-     "place": 3,
-     "name": "Захар Кяхба",
-     "nation": "ККР",
-     "points": "108.66"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Павел Шин — 132.68\n2. Артём Кошутин — 121.15\n3. Захар Кяхба — 108.66\n\nНачало: 12:35 МСК\nТрансляция: Первый канал",
-   "field": [
-    {
-     "name": "Андрей Вересов",
-     "nation": "КАЛ",
-     "place": 5,
-     "points": "101.45",
-     "no": 5,
-     "final": 6
-    },
-    {
-     "name": "Артем Шевнин",
-     "nation": "ИРК",
-     "place": 6,
-     "points": "100.96",
-     "no": 1,
-     "final": 7
-    },
-    {
-     "name": "Артём Кошутин",
-     "nation": "ВЛГ",
-     "place": 2,
-     "points": "121.15",
-     "no": 9
-    },
-    {
-     "name": "Георгий Шульц",
-     "nation": "КРМ",
-     "place": 4,
-     "points": "107.49",
-     "no": 8
-    },
-    {
-     "name": "Глеб Дудченко",
-     "nation": "МОБ",
-     "no": 10,
-     "place": 1,
-     "points": "135.06",
-     "final": 1
-    },
-    {
-     "name": "Захар Кяхба",
-     "nation": "ККР",
-     "place": 3,
-     "points": "108.66",
-     "no": 6,
-     "final": 5
-    },
-    {
-     "name": "Кирилл Агарков",
-     "nation": "СТВ",
-     "place": 7,
-     "points": "94.61",
-     "no": 4,
-     "final": 8
-    },
-    {
-     "name": "Максим Тяпин",
-     "nation": "РОБ",
-     "place": 9,
-     "points": "81.78",
-     "no": 2,
-     "final": 10
-    },
-    {
-     "name": "Павел Шин",
-     "nation": "МОС",
-     "place": 1,
-     "points": "132.68",
-     "no": 7
-    },
-    {
-     "name": "Роман Майер",
-     "nation": "НИЖ",
-     "place": 8,
-     "points": "92.55",
-     "no": 3,
-     "final": 9
-    }
-   ],
-   "live": {
-    "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
-    "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG010.HTM",
-    "cat": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/CAT005RS.HTM",
-    "first": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG009.HTM",
-    "names": {
-     "Павел Константинович ШИН": "Павел Шин",
-     "Артём Михайлович КОШУТИН": "Артём Кошутин",
-     "Георгий Владимирович ШУЛЬЦ": "Георгий Шульц",
-     "Захар Бесланович КЯХБА": "Захар Кяхба",
-     "Андрей Вадимович ВЕРЕСОВ": "Андрей Вересов",
-     "Артем Игоревич ШЕВНИН": "Артем Шевнин",
-     "Кирилл Юрьевич АГАРКОВ": "Кирилл Агарков",
-     "Роман Витальевич МАЙЕР": "Роман Майер",
-     "Максим Денисович ТЯПИН": "Максим Тяпин",
-     "Глеб Юрьевич ДУДЧЕНКО": "Глеб Дудченко"
-    },
-    "basis": "judges"
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json",
    "total": [
     {
      "place": 1,
@@ -56760,7 +56660,120 @@
      "nation": "ВЛГ",
      "points": "184.83"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Глеб Дудченко — 135.06\n2. Павел Шин — 132.68\n3. Артём Кошутин — 121.15\n\nИтог турнира:\n1. Глеб Дудченко — 208.16\n2. Павел Шин — 194.07\n3. Артём Кошутин — 184.83\n\nНачало: 12:35 МСК\nТрансляция: Первый канал",
+   "field": [
+    {
+     "name": "Артем Шевнин",
+     "nation": "ИРК",
+     "no": 1,
+     "warmup": null,
+     "place": 7,
+     "points": "100.96",
+     "final": 7
+    },
+    {
+     "name": "Максим Тяпин",
+     "nation": "РОБ",
+     "no": 2,
+     "warmup": null,
+     "place": 10,
+     "points": "81.78",
+     "final": 10
+    },
+    {
+     "name": "Роман Майер",
+     "nation": "НИЖ",
+     "no": 3,
+     "warmup": null,
+     "place": 9,
+     "points": "92.55",
+     "final": 9
+    },
+    {
+     "name": "Кирилл Агарков",
+     "nation": "СТВ",
+     "no": 4,
+     "warmup": null,
+     "place": 8,
+     "points": "94.61",
+     "final": 8
+    },
+    {
+     "name": "Андрей Вересов",
+     "nation": "КАЛ",
+     "no": 5,
+     "warmup": null,
+     "place": 6,
+     "points": "101.45",
+     "final": 6
+    },
+    {
+     "name": "Захар Кяхба",
+     "nation": "ККР",
+     "no": 6,
+     "warmup": null,
+     "place": 4,
+     "points": "108.66",
+     "final": 5
+    },
+    {
+     "name": "Павел Шин",
+     "nation": "МОС",
+     "no": 7,
+     "warmup": null,
+     "place": 2,
+     "points": "132.68",
+     "final": 2
+    },
+    {
+     "name": "Георгий Шульц",
+     "nation": "КРМ",
+     "no": 8,
+     "warmup": null,
+     "place": 5,
+     "points": "107.49",
+     "final": 4
+    },
+    {
+     "name": "Артём Кошутин",
+     "nation": "ВЛГ",
+     "no": 9,
+     "warmup": null,
+     "place": 3,
+     "points": "121.15",
+     "final": 3
+    },
+    {
+     "name": "Глеб Дудченко",
+     "nation": "МОБ",
+     "no": 10,
+     "warmup": null,
+     "place": 1,
+     "points": "135.06",
+     "final": 1
+    }
+   ],
+   "live": {
+    "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
+    "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG010.HTM",
+    "cat": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/CAT005RS.HTM",
+    "first": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG009.HTM",
+    "names": {
+     "Глеб Юрьевич ДУДЧЕНКО": "Глеб Дудченко",
+     "Павел Константинович ШИН": "Павел Шин",
+     "Артём Михайлович КОШУТИН": "Артём Кошутин",
+     "Захар Бесланович КЯХБА": "Захар Кяхба",
+     "Георгий Владимирович ШУЛЬЦ": "Георгий Шульц",
+     "Андрей Вадимович ВЕРЕСОВ": "Андрей Вересов",
+     "Артем Игоревич ШЕВНИН": "Артем Шевнин",
+     "Кирилл Юрьевич АГАРКОВ": "Кирилл Агарков",
+     "Роман Витальевич МАЙЕР": "Роман Майер",
+     "Максим Денисович ТЯПИН": "Максим Тяпин"
+    },
+    "basis": "judges"
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:women-junior-pp",
@@ -56805,157 +56818,6 @@
      "url": "https://www.sport1tv.ru/figurnoe-katanie"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Мария Тихонова — 84.78\n2. Софья Смирнова — 78.89\n3. Ульяна Бессонова — 74.24\n\nНачало: 14:05 МСК\nТрансляция: Первый канал",
-   "field": [
-    {
-     "name": "Вероника Кабалалиева",
-     "nation": "СТВ",
-     "no": 1,
-     "warmup": null,
-     "place": 6,
-     "points": "56.77"
-    },
-    {
-     "name": "Варвара Алексеева",
-     "nation": "КРМ",
-     "no": 2,
-     "warmup": null,
-     "place": 5,
-     "points": "57.21"
-    },
-    {
-     "name": "Софья Смирнова",
-     "nation": "ВЛГ",
-     "no": 3,
-     "warmup": null,
-     "place": 2,
-     "points": "78.89"
-    },
-    {
-     "name": "Варвара Варенцова",
-     "nation": "НИЖ",
-     "no": 4,
-     "warmup": null,
-     "place": 4,
-     "points": "62.86"
-    },
-    {
-     "name": "Ульяна Бессонова",
-     "nation": "АСТ",
-     "no": 5,
-     "warmup": null,
-     "place": 3,
-     "points": "74.24"
-    },
-    {
-     "name": "Мария Тихонова",
-     "nation": "ВОЛ",
-     "no": 6,
-     "warmup": null,
-     "place": 1,
-     "points": "84.78"
-    },
-    {
-     "name": "Виктория Губарева",
-     "nation": "КУР",
-     "no": 7,
-     "warmup": null
-    },
-    {
-     "name": "Милана Журавлева",
-     "nation": "САМ",
-     "no": 8,
-     "warmup": null
-    },
-    {
-     "name": "Анна Новикова",
-     "nation": "СРД",
-     "no": 9,
-     "warmup": null
-    },
-    {
-     "name": "Милана Иванникова",
-     "nation": "ВОР",
-     "no": 10,
-     "warmup": null
-    },
-    {
-     "name": "Илина Аскарова",
-     "nation": "МОС",
-     "no": 11,
-     "warmup": null
-    },
-    {
-     "name": "Ксения Логачева",
-     "nation": "ККР",
-     "no": 12,
-     "warmup": null
-    },
-    {
-     "name": "Мария Кудряшова",
-     "nation": "ТМБ",
-     "no": 13,
-     "warmup": null
-    },
-    {
-     "name": "Ариана Айвазян",
-     "nation": "ККР",
-     "no": 14,
-     "warmup": null
-    },
-    {
-     "name": "Арина Васильева",
-     "nation": "ЛИП",
-     "no": 15,
-     "warmup": null
-    },
-    {
-     "name": "Мария Нардюжева",
-     "nation": "РОБ",
-     "no": 16,
-     "warmup": null
-    },
-    {
-     "name": "Дарья Легкая",
-     "nation": "ККР",
-     "no": 17,
-     "warmup": null
-    },
-    {
-     "name": "Алена Болдырева",
-     "nation": "ЯРЛ",
-     "no": 18,
-     "warmup": null
-    }
-   ],
-   "live": {
-    "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
-    "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG008.HTM",
-    "cat": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/CAT004RS.HTM",
-    "first": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG007.HTM",
-    "names": {
-     "Вероника Георгиевна КАБАЛАЛИЕВА": "Вероника Кабалалиева",
-     "Варвара Александровна АЛЕКСЕЕВА": "Варвара Алексеева",
-     "Софья Андреевна СМИРНОВА": "Софья Смирнова",
-     "Варвара Владимировна ВАРЕНЦОВА": "Варвара Варенцова",
-     "Ульяна Сергеевна БЕССОНОВА": "Ульяна Бессонова",
-     "Мария Антоновна ТИХОНОВА": "Мария Тихонова",
-     "Виктория Александровна ГУБАРЕВА": "Виктория Губарева",
-     "Милана Игоревна ЖУРАВЛЕВА": "Милана Журавлева",
-     "Анна Дмитриевна НОВИКОВА": "Анна Новикова",
-     "Милана Романовна ИВАННИКОВА": "Милана Иванникова",
-     "Илина Ильшатовна АСКАРОВА": "Илина Аскарова",
-     "Ксения Дмитриевна ЛОГАЧЕВА": "Ксения Логачева",
-     "Мария Александровна КУДРЯШОВА": "Мария Кудряшова",
-     "Ариана Андраниковна АЙВАЗЯН": "Ариана Айвазян",
-     "Арина Андреевна ВАСИЛЬЕВА": "Арина Васильева",
-     "Мария Павловна НАРДЮЖЕВА": "Мария Нардюжева",
-     "Дарья Васильевна ЛЕГКАЯ": "Дарья Легкая",
-     "Алена Евгеньевна БОЛДЫРЕВА": "Алена Болдырева"
-    },
-    "basis": null
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json",
    "podium": [
     {
      "place": 1,
@@ -56976,7 +56838,140 @@
      "points": "74.24"
     }
    ],
-   "provisional": true
+   "desc": "Промежуточные итоги:\n1. Мария Тихонова — 84.78\n2. Софья Смирнова — 78.89\n3. Ульяна Бессонова — 74.24\n\nНачало: 14:05 МСК\nТрансляция: Первый канал",
+   "field": [
+    {
+     "name": "Алена Болдырева",
+     "nation": "ЯРЛ",
+     "no": 18
+    },
+    {
+     "name": "Анна Новикова",
+     "nation": "СРД",
+     "no": 9
+    },
+    {
+     "name": "Ариана Айвазян",
+     "nation": "ККР",
+     "no": 14
+    },
+    {
+     "name": "Арина Васильева",
+     "nation": "ЛИП",
+     "no": 15
+    },
+    {
+     "name": "Варвара Алексеева",
+     "nation": "КРМ",
+     "place": 5,
+     "points": "57.21",
+     "no": 2
+    },
+    {
+     "name": "Варвара Варенцова",
+     "nation": "НИЖ",
+     "place": 4,
+     "points": "62.86",
+     "no": 4
+    },
+    {
+     "name": "Вероника Кабалалиева",
+     "nation": "СТВ",
+     "place": 6,
+     "points": "56.77",
+     "no": 1
+    },
+    {
+     "name": "Виктория Губарева",
+     "nation": "КУР",
+     "no": 7
+    },
+    {
+     "name": "Дарья Легкая",
+     "nation": "ККР",
+     "no": 17
+    },
+    {
+     "name": "Илина Аскарова",
+     "nation": "МОС",
+     "no": 11
+    },
+    {
+     "name": "Ксения Логачева",
+     "nation": "ККР",
+     "no": 12
+    },
+    {
+     "name": "Мария Кудряшова",
+     "nation": "ТМБ",
+     "no": 13
+    },
+    {
+     "name": "Мария Нардюжева",
+     "nation": "РОБ",
+     "no": 16
+    },
+    {
+     "name": "Мария Тихонова",
+     "nation": "ВОЛ",
+     "place": 1,
+     "points": "84.78",
+     "no": 6
+    },
+    {
+     "name": "Милана Журавлева",
+     "nation": "САМ",
+     "no": 8
+    },
+    {
+     "name": "Милана Иванникова",
+     "nation": "ВОР",
+     "no": 10
+    },
+    {
+     "name": "Софья Смирнова",
+     "nation": "ВЛГ",
+     "place": 2,
+     "points": "78.89",
+     "no": 3
+    },
+    {
+     "name": "Ульяна Бессонова",
+     "nation": "АСТ",
+     "place": 3,
+     "points": "74.24",
+     "no": 5
+    }
+   ],
+   "provisional": true,
+   "live": {
+    "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
+    "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG008.HTM",
+    "cat": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/CAT004RS.HTM",
+    "first": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG007.HTM",
+    "names": {
+     "Мария Антоновна ТИХОНОВА": "Мария Тихонова",
+     "Софья Андреевна СМИРНОВА": "Софья Смирнова",
+     "Ульяна Сергеевна БЕССОНОВА": "Ульяна Бессонова",
+     "Варвара Владимировна ВАРЕНЦОВА": "Варвара Варенцова",
+     "Варвара Александровна АЛЕКСЕЕВА": "Варвара Алексеева",
+     "Вероника Георгиевна КАБАЛАЛИЕВА": "Вероника Кабалалиева",
+     "Виктория Александровна ГУБАРЕВА": "Виктория Губарева",
+     "Милана Игоревна ЖУРАВЛЕВА": "Милана Журавлева",
+     "Анна Дмитриевна НОВИКОВА": "Анна Новикова",
+     "Милана Романовна ИВАННИКОВА": "Милана Иванникова",
+     "Илина Ильшатовна АСКАРОВА": "Илина Аскарова",
+     "Ксения Дмитриевна ЛОГАЧЕВА": "Ксения Логачева",
+     "Мария Александровна КУДРЯШОВА": "Мария Кудряшова",
+     "Ариана Андраниковна АЙВАЗЯН": "Ариана Айвазян",
+     "Арина Андреевна ВАСИЛЬЕВА": "Арина Васильева",
+     "Мария Павловна НАРДЮЖЕВА": "Мария Нардюжева",
+     "Дарья Васильевна ЛЕГКАЯ": "Дарья Легкая",
+     "Алена Евгеньевна БОЛДЫРЕВА": "Алена Болдырева"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:men-senior-pp",
@@ -101308,5 +101303,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "17825c8f166b5744"
+ "rev": "9fc4c4fd20f62c0e"
 }
