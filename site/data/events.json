@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T17:40:31+03:00",
- "checked": "2026-11-19T17:40:31+03:00",
+ "checked": "2026-11-19T15:00:31.604448+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57249,19 +57249,19 @@
     },
     {
      "place": 3,
-     "name": "Laura Heckova / Alex Valky",
-     "nation": "SVK",
-     "points": "48.81"
+     "name": "Clelia Liget-latus / Allan Daniel Fisher",
+     "nation": "FRA",
+     "points": "49.49"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Злата Камалова / Данил Панов — 60.73\n2. Laura Heckova / Alex Valky — 48.81\n3. Leontina Horcickova / Jindrich Klement — 44.30\n\nНачало: 16:55 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Злата Камалова / Данил Панов — 60.73\n2. Jolena Grohne / Manuel Rossi — 55.80\n3. Clelia Liget-latus / Allan Daniel Fisher — 49.49\n\nНачало: 16:55 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Leontina Horcickova / Jindrich Klement",
      "nation": "CZE",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 5,
      "points": "44.30",
      "time": "17:01"
     },
@@ -57279,7 +57279,7 @@
      "nation": "SVK",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 4,
      "points": "48.81",
      "time": "17:13"
     },
@@ -57288,7 +57288,7 @@
      "nation": "FRA",
      "no": 4,
      "warmup": 2,
-     "place": 4,
+     "place": 6,
      "points": "42.91",
      "time": "17:25"
     },
@@ -57297,7 +57297,7 @@
      "nation": "FRA",
      "no": 5,
      "warmup": 2,
-     "place": 5,
+     "place": 7,
      "points": "29.35",
      "time": "17:31"
     },
@@ -57306,17 +57306,20 @@
      "nation": "FRA",
      "time": "17:43",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3,
+     "points": "49.49"
     },
     {
      "name": "Jolena Grohne / Manuel Rossi",
      "nation": "ITA",
      "time": "17:37",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "55.80"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG013.htm",
@@ -57331,7 +57334,7 @@
      "Jolena GROHNE / Manuel ROSSI": "Jolena Grohne / Manuel Rossi",
      "Clelia LIGET-LATUS / Allan Daniel FISHER": "Clelia Liget-latus / Allan Daniel Fisher"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
@@ -57381,43 +57384,39 @@
      "points": "90.29"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Анастасия Шарошкина",
      "nation": "МОС",
      "points": "88.20"
-    },
-    {
-     "place": 3,
-     "name": "Екатерина Гайдукова",
-     "nation": "КУР",
-     "points": "72.86"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Арина Комекова — 90.29\n2. Анастасия Шарошкина — 88.20\n3. Екатерина Гайдукова — 72.86\n\nНачало: 17:05 МСК\nТрансляция: Первый канал",
+   "desc": "Промежуточные итоги:\n1. Арина Данилова — 98.11\n2. Арина Комекова — 90.29\n3. Анастасия Шарошкина — 88.20\n\nНачало: 17:05 МСК\nТрансляция: Первый канал",
    "field": [
     {
      "name": "Анастасия Шарошкина",
      "nation": "МОС",
-     "place": 2,
+     "place": 3,
      "points": "88.20",
      "no": 3
     },
     {
      "name": "Арина Данилова",
      "nation": "ВОР",
-     "no": 4
+     "no": 4,
+     "place": 1,
+     "points": "98.11"
     },
     {
      "name": "Арина Комекова",
      "nation": "ККР",
-     "place": 1,
+     "place": 2,
      "points": "90.29",
      "no": 2
     },
     {
      "name": "Екатерина Гайдукова",
      "nation": "КУР",
-     "place": 3,
+     "place": 4,
      "points": "72.86",
      "no": 1
     },
@@ -101647,5 +101646,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "4725b22ba2f9c4aa"
+ "rev": "8cca336eb5026e8e"
 }
