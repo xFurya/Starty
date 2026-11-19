@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-19T12:45:59+03:00",
- "checked": "2026-11-19T10:24:03.572044+00:00",
+ "generated": "2026-11-19T13:10:07+03:00",
+ "checked": "2026-11-19T13:10:07+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55418,7 +55418,7 @@
      "points": "58.30"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Таисия Лепихина — 62.27\n2. Софья Лукина — 61.23\n3. София Ермолова — 58.30\n\nНачало: 16:05 МСК\nТрансляция: Первый канал",
+   "desc": "Итог:\n1. Таисия Лепихина — 62.27\n2. Софья Лукина — 61.23\n3. София Ермолова — 58.30\n\nНачало: 16:05 МСК\nТрансляция: Первый канал",
    "field": [
     {
      "name": "Таисия Лепихина",
@@ -55477,7 +55477,6 @@
      "points": "61.23"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
     "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG013.HTM",
@@ -56300,7 +56299,7 @@
      "nation": "SWE",
      "no": 4,
      "warmup": 1,
-     "place": 8,
+     "place": 7,
      "points": "44.62",
      "time": "12:39"
     },
@@ -56312,6 +56311,24 @@
      "place": 4,
      "points": "51.37",
      "time": "12:44"
+    },
+    {
+     "name": "Sara Franzi",
+     "nation": "SUI",
+     "no": 6,
+     "warmup": 40,
+     "place": 2,
+     "points": "54.42",
+     "time": "12:57"
+    },
+    {
+     "name": "Eugenia Sekulovski",
+     "nation": "SUI",
+     "no": 7,
+     "warmup": 40,
+     "place": 6,
+     "points": "47.17",
+     "time": "13:03"
     },
     {
      "name": "Afrina Diyanah",
@@ -56354,15 +56371,6 @@
      "time": "16:20",
      "no": 32,
      "warmup": 6
-    },
-    {
-     "name": "Eugenia Sekulovski",
-     "nation": "SUI",
-     "time": "13:03",
-     "no": 7,
-     "warmup": 2,
-     "place": 7,
-     "points": "47.17"
     },
     {
      "name": "Gabrielle Daleman",
@@ -56481,15 +56489,6 @@
      "points": "47.19"
     },
     {
-     "name": "Sara Franzi",
-     "nation": "SUI",
-     "time": "12:57",
-     "no": 6,
-     "warmup": 2,
-     "place": 2,
-     "points": "54.42"
-    },
-    {
      "name": "Sarina Joos",
      "nation": "ITA",
      "time": "13:57",
@@ -56526,12 +56525,12 @@
     "first": null,
     "names": {
      "Anita OSTLUND": "Anita Ostlund",
+     "Sara FRANZI": "Sara Franzi",
      "Nela SNEBERGEROVA": "Nela Snebergerova",
      "Nikola FOMCHENKOVA": "Nikola Fomchenkova",
      "Flora Marie SCHALLER": "Flora Marie Schaller",
-     "Julia BROVALL": "Julia Brovall",
-     "Sara FRANZI": "Sara Franzi",
      "Eugenia SEKULOVSKI": "Eugenia Sekulovski",
+     "Julia BROVALL": "Julia Brovall",
      "Michelle DICICCO": "Michelle Dicicco",
      "Pernille WITH": "Pernille With",
      "Zhasmin SHLAGA": "Zhasmin Shlaga",
@@ -56612,13 +56611,19 @@
      "points": "100.96"
     },
     {
-     "place": 3,
+     "place": 2,
      "name": "Кирилл Агарков",
      "nation": "СТВ",
      "points": "94.61"
+    },
+    {
+     "place": 3,
+     "name": "Роман Майер",
+     "nation": "НИЖ",
+     "points": "92.55"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Андрей Вересов — 101.45\n2. Артем Шевнин — 100.96\n3. Кирилл Агарков — 94.61\n\nНачало: 12:35 МСК\nТрансляция: Первый канал",
+   "desc": "Промежуточные итоги:\n1. Артем Шевнин — 100.96\n2. Кирилл Агарков — 94.61\n3. Роман Майер — 92.55\n\nНачало: 12:35 МСК\nТрансляция: Первый канал",
    "field": [
     {
      "name": "Андрей Вересов",
@@ -56657,16 +56662,16 @@
     {
      "name": "Кирилл Агарков",
      "nation": "СТВ",
-     "no": 4,
-     "place": 3,
-     "points": "94.61"
+     "place": 2,
+     "points": "94.61",
+     "no": 4
     },
     {
      "name": "Максим Тяпин",
      "nation": "РОБ",
-     "no": 2,
-     "place": 5,
-     "points": "81.78"
+     "place": 4,
+     "points": "81.78",
+     "no": 2
     },
     {
      "name": "Павел Шин",
@@ -56676,9 +56681,9 @@
     {
      "name": "Роман Майер",
      "nation": "НИЖ",
-     "no": 3,
-     "place": 4,
-     "points": "92.55"
+     "place": 3,
+     "points": "92.55",
+     "no": 3
     }
    ],
    "provisional": true,
@@ -56689,9 +56694,9 @@
     "first": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG009.HTM",
     "names": {
      "Артем Игоревич ШЕВНИН": "Артем Шевнин",
-     "Максим Денисович ТЯПИН": "Максим Тяпин",
-     "Роман Витальевич МАЙЕР": "Роман Майер",
      "Кирилл Юрьевич АГАРКОВ": "Кирилл Агарков",
+     "Роман Витальевич МАЙЕР": "Роман Майер",
+     "Максим Денисович ТЯПИН": "Максим Тяпин",
      "Андрей Вадимович ВЕРЕСОВ": "Андрей Вересов",
      "Захар Бесланович КЯХБА": "Захар Кяхба",
      "Павел Константинович ШИН": "Павел Шин",
@@ -101210,7 +101215,18 @@
   "София Касинс": "photos/00a4dcf4e8aeac13.jpg",
   "Яна Анашкина": "photos/80331e08bc525d04.jpg",
   "Skylar Lautowa-peguero": "photos/793cd3db7aa70b54.jpg",
-  "Jared Sedlis": "photos/6521e032ae88999b.jpg"
+  "Jared Sedlis": "photos/6521e032ae88999b.jpg",
+  "Michael Xie": "photos/572b3d582d8c98a8.jpg",
+  "Ryan Dunk": "photos/794ab580b1075cd6.jpg",
+  "Calista Choi": "photos/10249b50663ef518.jpg",
+  "Dinh Tran": "photos/7e20106dedd5f734.jpg",
+  "Mia Kalin": "photos/0f4771fd14a30f1a.jpg",
+  "Nicholas Hsieh": "photos/8f05a6c4efc56fd4.jpg",
+  "Sarah Jung": "photos/c437a3489c9f3e10.jpg",
+  "Pooja Kalyan": "photos/a73e300001a47616.jpg",
+  "Joseph Kang": "photos/645b0bfe6f1d0b81.jpg",
+  "Angela Wang": "photos/0f719365b326830b.jpg",
+  "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "3bf980db33b6c1c7"
+ "rev": "972d2175f51b7e65"
 }
