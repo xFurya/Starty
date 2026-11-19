@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T14:48:54+03:00",
- "checked": "2026-11-19T12:40:02.735106+00:00",
+ "checked": "2026-11-19T12:44:02.908450+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -56335,7 +56335,7 @@
      "nation": "ARG",
      "no": 8,
      "warmup": 40,
-     "place": 24,
+     "place": 25,
      "points": "20.34",
      "time": "13:08"
     },
@@ -56443,7 +56443,7 @@
      "nation": "MAS",
      "no": 20,
      "warmup": 50,
-     "place": 23,
+     "place": 24,
      "points": "28.00",
      "time": "14:44"
     },
@@ -56489,7 +56489,9 @@
      "nation": "EST",
      "time": "15:33",
      "no": 25,
-     "warmup": 5
+     "warmup": 5,
+     "place": 23,
+     "points": "30.16"
     },
     {
      "name": "Karolina Bialas",
@@ -101321,5 +101323,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "f81539374dac54ec"
+ "rev": "731a26c2525ae619"
 }
