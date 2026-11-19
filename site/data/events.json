@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-19T16:44:29+03:00",
- "checked": "2026-11-19T14:56:32.384497+00:00",
+ "generated": "2026-11-19T17:40:31+03:00",
+ "checked": "2026-11-19T17:40:31+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57110,49 +57110,6 @@
      "url": "https://www.sport1tv.ru/figurnoe-katanie"
     }
    ],
-   "desc": "Итог:\n1. Арсений Димитриев — 145.88\n2. Ярослав Овчинников — 115.42\n3. Даниил Постарнаков — 106.86\n\nИтог турнира:\n1. Арсений Димитриев — 233.82\n2. Даниил Постарнаков — 174.13\n3. Ярослав Овчинников — 162.46\n\nПримечательное:\n• Арсений Димитриев — Отрыв от второго места — 59.69 балла\n\nНачало: 16:40 МСК\nТрансляция: Первый канал",
-   "field": [
-    {
-     "name": "Ярослав Овчинников",
-     "nation": "НОВ",
-     "no": 1,
-     "warmup": null,
-     "place": 2,
-     "points": "115.42",
-     "final": 3
-    },
-    {
-     "name": "Даниил Постарнаков",
-     "nation": "СТВ",
-     "no": 2,
-     "warmup": null,
-     "place": 3,
-     "points": "106.86",
-     "final": 2
-    },
-    {
-     "name": "Арсений Димитриев",
-     "nation": "МОС",
-     "no": 3,
-     "warmup": null,
-     "place": 1,
-     "points": "145.88",
-     "final": 1
-    }
-   ],
-   "live": {
-    "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
-    "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG016.HTM",
-    "cat": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/CAT008RS.HTM",
-    "first": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG015.HTM",
-    "names": {
-     "Ярослав Евгеньевич ОВЧИННИКОВ": "Ярослав Овчинников",
-     "Даниил Романович ПОСТАРНАКОВ": "Даниил Постарнаков",
-     "Арсений Игоревич ДИМИТРИЕВ": "Арсений Димитриев"
-    },
-    "basis": "judges"
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json",
    "podium": [
     {
      "place": 1,
@@ -57193,13 +57150,56 @@
      "points": "162.46"
     }
    ],
+   "desc": "Итог:\n1. Арсений Димитриев — 145.88\n2. Ярослав Овчинников — 115.42\n3. Даниил Постарнаков — 106.86\n\nИтог турнира:\n1. Арсений Димитриев — 233.82\n2. Даниил Постарнаков — 174.13\n3. Ярослав Овчинников — 162.46\n\nПримечательное:\n• Арсений Димитриев — Отрыв от второго места — 59.69 балла\n\nНачало: 16:40 МСК\nТрансляция: Первый канал",
+   "field": [
+    {
+     "name": "Ярослав Овчинников",
+     "nation": "НОВ",
+     "no": 1,
+     "warmup": null,
+     "place": 2,
+     "points": "115.42",
+     "final": 3
+    },
+    {
+     "name": "Даниил Постарнаков",
+     "nation": "СТВ",
+     "no": 2,
+     "warmup": null,
+     "place": 3,
+     "points": "106.86",
+     "final": 2
+    },
+    {
+     "name": "Арсений Димитриев",
+     "nation": "МОС",
+     "no": 3,
+     "warmup": null,
+     "place": 1,
+     "points": "145.88",
+     "final": 1
+    }
+   ],
+   "live": {
+    "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
+    "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG016.HTM",
+    "cat": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/CAT008RS.HTM",
+    "first": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG015.HTM",
+    "names": {
+     "Арсений Игоревич ДИМИТРИЕВ": "Арсений Димитриев",
+     "Ярослав Евгеньевич ОВЧИННИКОВ": "Ярослав Овчинников",
+     "Даниил Романович ПОСТАРНАКОВ": "Даниил Постарнаков"
+    },
+    "basis": "judges"
+   },
    "facts": [
     {
-     "who": "Арсений Димитриев",
+     "kind": "place",
      "text": "Отрыв от второго места — 59.69 балла",
-     "kind": "place"
+     "who": "Арсений Димитриев"
     }
-   ]
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-junior-kp",
@@ -57234,87 +57234,6 @@
      "note": "Платно"
     }
    ],
-   "desc": "Итог:\n1. Злата Камалова / Данил Панов — 60.73\n2. Jolena Grohne / Manuel Rossi — 55.80\n3. Laura Heckova / Alex Valky — 48.81\n\nНачало: 16:55 МСК\nТрансляция: Ice-Stars.TV",
-   "field": [
-    {
-     "name": "Leontina Horcickova / Jindrich Klement",
-     "nation": "CZE",
-     "time": "17:01",
-     "no": 1,
-     "warmup": 1,
-     "place": 4,
-     "points": "44.30"
-    },
-    {
-     "name": "Злата Камалова / Данил Панов",
-     "nation": "GEO",
-     "time": "17:07",
-     "no": 2,
-     "warmup": 1,
-     "place": 1,
-     "points": "60.73"
-    },
-    {
-     "name": "Laura Heckova / Alex Valky",
-     "nation": "SVK",
-     "time": "17:13",
-     "no": 3,
-     "warmup": 1,
-     "place": 3,
-     "points": "48.81"
-    },
-    {
-     "name": "Romane Telemaque / Lucas Coulon",
-     "nation": "FRA",
-     "time": "17:25",
-     "no": 4,
-     "warmup": 2,
-     "place": 5,
-     "points": "42.91"
-    },
-    {
-     "name": "Naomie Ismaili / Leo Rouvrais",
-     "nation": "FRA",
-     "time": "17:31",
-     "no": 5,
-     "warmup": 2,
-     "place": 6,
-     "points": "29.35"
-    },
-    {
-     "name": "Jolena Grohne / Manuel Rossi",
-     "nation": "ITA",
-     "time": "17:37",
-     "no": 6,
-     "warmup": 2,
-     "place": 2,
-     "points": "55.80"
-    },
-    {
-     "name": "Clelia Liget-latus / Allan Daniel Fisher",
-     "nation": "FRA",
-     "time": "17:43",
-     "no": 7,
-     "warmup": 2
-    }
-   ],
-   "live": {
-    "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
-    "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG013.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Leontina HORCICKOVA / Jindrich KLEMENT": "Leontina Horcickova / Jindrich Klement",
-     "Zlata KAMALOVA / Danil PANOV": "Злата Камалова / Данил Панов",
-     "Laura HECKOVA / Alex VALKY": "Laura Heckova / Alex Valky",
-     "Romane TELEMAQUE / Lucas COULON": "Romane Telemaque / Lucas Coulon",
-     "Naomie ISMAILI / Leo ROUVRAIS": "Naomie Ismaili / Leo Rouvrais",
-     "Jolena GROHNE / Manuel ROSSI": "Jolena Grohne / Manuel Rossi",
-     "Clelia LIGET-LATUS / Allan Daniel FISHER": "Clelia Liget-latus / Allan Daniel Fisher"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
    "podium": [
     {
      "place": 1,
@@ -57334,7 +57253,87 @@
      "nation": "SVK",
      "points": "48.81"
     }
-   ]
+   ],
+   "desc": "Промежуточные итоги:\n1. Злата Камалова / Данил Панов — 60.73\n2. Laura Heckova / Alex Valky — 48.81\n3. Leontina Horcickova / Jindrich Klement — 44.30\n\nНачало: 16:55 МСК\nТрансляция: Ice-Stars.TV",
+   "field": [
+    {
+     "name": "Leontina Horcickova / Jindrich Klement",
+     "nation": "CZE",
+     "no": 1,
+     "warmup": 1,
+     "place": 3,
+     "points": "44.30",
+     "time": "17:01"
+    },
+    {
+     "name": "Злата Камалова / Данил Панов",
+     "nation": "GEO",
+     "no": 2,
+     "warmup": 1,
+     "place": 1,
+     "points": "60.73",
+     "time": "17:07"
+    },
+    {
+     "name": "Laura Heckova / Alex Valky",
+     "nation": "SVK",
+     "no": 3,
+     "warmup": 1,
+     "place": 2,
+     "points": "48.81",
+     "time": "17:13"
+    },
+    {
+     "name": "Romane Telemaque / Lucas Coulon",
+     "nation": "FRA",
+     "no": 4,
+     "warmup": 2,
+     "place": 4,
+     "points": "42.91",
+     "time": "17:25"
+    },
+    {
+     "name": "Naomie Ismaili / Leo Rouvrais",
+     "nation": "FRA",
+     "no": 5,
+     "warmup": 2,
+     "place": 5,
+     "points": "29.35",
+     "time": "17:31"
+    },
+    {
+     "name": "Clelia Liget-latus / Allan Daniel Fisher",
+     "nation": "FRA",
+     "time": "17:43",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Jolena Grohne / Manuel Rossi",
+     "nation": "ITA",
+     "time": "17:37",
+     "no": 6,
+     "warmup": 2
+    }
+   ],
+   "provisional": true,
+   "live": {
+    "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
+    "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG013.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Zlata KAMALOVA / Danil PANOV": "Злата Камалова / Данил Панов",
+     "Laura HECKOVA / Alex VALKY": "Laura Heckova / Alex Valky",
+     "Leontina HORCICKOVA / Jindrich KLEMENT": "Leontina Horcickova / Jindrich Klement",
+     "Romane TELEMAQUE / Lucas COULON": "Romane Telemaque / Lucas Coulon",
+     "Naomie ISMAILI / Leo ROUVRAIS": "Naomie Ismaili / Leo Rouvrais",
+     "Jolena GROHNE / Manuel ROSSI": "Jolena Grohne / Manuel Rossi",
+     "Clelia LIGET-LATUS / Allan Daniel FISHER": "Clelia Liget-latus / Allan Daniel Fisher"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:women-senior-pp",
@@ -57368,76 +57367,6 @@
      "url": "https://www.sport1tv.ru/figurnoe-katanie"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Арина Данилова — 98.11\n2. Арина Комекова — 90.29\n3. Анастасия Шарошкина — 88.20\n\nНачало: 17:05 МСК\nТрансляция: Первый канал",
-   "field": [
-    {
-     "name": "Екатерина Гайдукова",
-     "nation": "КУР",
-     "no": 1,
-     "warmup": null,
-     "place": 4,
-     "points": "72.86"
-    },
-    {
-     "name": "Арина Комекова",
-     "nation": "ККР",
-     "no": 2,
-     "warmup": null,
-     "place": 2,
-     "points": "90.29"
-    },
-    {
-     "name": "Анастасия Шарошкина",
-     "nation": "МОС",
-     "no": 3,
-     "warmup": null,
-     "place": 3,
-     "points": "88.20"
-    },
-    {
-     "name": "Арина Данилова",
-     "nation": "ВОР",
-     "no": 4,
-     "warmup": null,
-     "place": 1,
-     "points": "98.11"
-    },
-    {
-     "name": "София Ермолова",
-     "nation": "ЛЕН",
-     "no": 5,
-     "warmup": null
-    },
-    {
-     "name": "Софья Лукина",
-     "nation": "БАШ",
-     "no": 6,
-     "warmup": null
-    },
-    {
-     "name": "Таисия Лепихина",
-     "nation": "ВЛГ",
-     "no": 7,
-     "warmup": null
-    }
-   ],
-   "live": {
-    "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
-    "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG014.HTM",
-    "cat": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/CAT007RS.HTM",
-    "first": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG013.HTM",
-    "names": {
-     "Екатерина Олеговна ГАЙДУКОВА": "Екатерина Гайдукова",
-     "Арина Романовна КОМЕКОВА": "Арина Комекова",
-     "Анастасия Васильевна ШАРОШКИНА": "Анастасия Шарошкина",
-     "Арина Александровна ДАНИЛОВА": "Арина Данилова",
-     "София Николаевна ЕРМОЛОВА": "София Ермолова",
-     "Софья Андреевна ЛУКИНА": "Софья Лукина",
-     "Таисия Андреевна ЛЕПИХИНА": "Таисия Лепихина"
-    },
-    "basis": null
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json",
    "podium": [
     {
      "place": 1,
@@ -57452,13 +57381,80 @@
      "points": "90.29"
     },
     {
-     "place": 3,
+     "place": 2,
      "name": "Анастасия Шарошкина",
      "nation": "МОС",
      "points": "88.20"
+    },
+    {
+     "place": 3,
+     "name": "Екатерина Гайдукова",
+     "nation": "КУР",
+     "points": "72.86"
     }
    ],
-   "provisional": true
+   "desc": "Промежуточные итоги:\n1. Арина Комекова — 90.29\n2. Анастасия Шарошкина — 88.20\n3. Екатерина Гайдукова — 72.86\n\nНачало: 17:05 МСК\nТрансляция: Первый канал",
+   "field": [
+    {
+     "name": "Анастасия Шарошкина",
+     "nation": "МОС",
+     "place": 2,
+     "points": "88.20",
+     "no": 3
+    },
+    {
+     "name": "Арина Данилова",
+     "nation": "ВОР",
+     "no": 4
+    },
+    {
+     "name": "Арина Комекова",
+     "nation": "ККР",
+     "place": 1,
+     "points": "90.29",
+     "no": 2
+    },
+    {
+     "name": "Екатерина Гайдукова",
+     "nation": "КУР",
+     "place": 3,
+     "points": "72.86",
+     "no": 1
+    },
+    {
+     "name": "София Ермолова",
+     "nation": "ЛЕН",
+     "no": 5
+    },
+    {
+     "name": "Софья Лукина",
+     "nation": "БАШ",
+     "no": 6
+    },
+    {
+     "name": "Таисия Лепихина",
+     "nation": "ВЛГ",
+     "no": 7
+    }
+   ],
+   "provisional": true,
+   "live": {
+    "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
+    "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG014.HTM",
+    "cat": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/CAT007RS.HTM",
+    "first": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG013.HTM",
+    "names": {
+     "Анастасия Васильевна ШАРОШКИНА": "Анастасия Шарошкина",
+     "Арина Романовна КОМЕКОВА": "Арина Комекова",
+     "Екатерина Олеговна ГАЙДУКОВА": "Екатерина Гайдукова",
+     "Арина Александровна ДАНИЛОВА": "Арина Данилова",
+     "София Николаевна ЕРМОЛОВА": "София Ермолова",
+     "Софья Андреевна ЛУКИНА": "Софья Лукина",
+     "Таисия Андреевна ЛЕПИХИНА": "Таисия Лепихина"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-senior-kp",
@@ -98910,6 +98906,22 @@
    "was": "w",
    "y": "2026/27",
    "p": "72fb55b016fa"
+  },
+  {
+   "n": "Carlotta Maria Gardini",
+   "c": "ITA",
+   "k": "",
+   "was": "w",
+   "y": "2026/27",
+   "p": "749235a6bc29"
+  },
+  {
+   "n": "Emilija Ozola",
+   "c": "LAT",
+   "k": "",
+   "was": "w",
+   "y": "2026/27",
+   "p": "84c40a6b90f6"
   }
  ],
  "photos": {
@@ -101635,5 +101647,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "1b507a919e89609c"
+ "rev": "4725b22ba2f9c4aa"
 }
