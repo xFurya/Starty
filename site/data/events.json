@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T14:48:54+03:00",
- "checked": "2026-11-19T12:48:02.957275+00:00",
+ "checked": "2026-11-19T12:52:03.155905+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -56335,7 +56335,7 @@
      "nation": "ARG",
      "no": 8,
      "warmup": 40,
-     "place": 26,
+     "place": 27,
      "points": "20.34",
      "time": "13:08"
     },
@@ -56353,7 +56353,7 @@
      "nation": "KGZ",
      "no": 10,
      "warmup": 40,
-     "place": 22,
+     "place": 23,
      "points": "44.39",
      "time": "13:20"
     },
@@ -56443,7 +56443,7 @@
      "nation": "MAS",
      "no": 20,
      "warmup": 50,
-     "place": 25,
+     "place": 26,
      "points": "28.00",
      "time": "14:44"
     },
@@ -56474,7 +56474,7 @@
      "time": "14:50",
      "no": 21,
      "warmup": 4,
-     "place": 23,
+     "place": 24,
      "points": "41.45"
     },
     {
@@ -56490,7 +56490,7 @@
      "time": "15:33",
      "no": 25,
      "warmup": 5,
-     "place": 24,
+     "place": 25,
      "points": "30.16"
     },
     {
@@ -56498,7 +56498,9 @@
      "nation": "POL",
      "time": "15:45",
      "no": 27,
-     "warmup": 5
+     "warmup": 5,
+     "place": 22,
+     "points": "44.54"
     },
     {
      "name": "Lotta Artimo",
@@ -101325,5 +101327,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "950eac07344094ab"
+ "rev": "867da7181c87adb4"
 }
