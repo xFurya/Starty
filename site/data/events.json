@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T16:44:29+03:00",
- "checked": "2026-11-19T14:20:31.299588+00:00",
+ "checked": "2026-11-19T14:24:31.145027+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57234,7 +57234,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Злата Камалова / Данил Панов — 60.73\n2. Leontina Horcickova / Jindrich Klement — 44.30\n\nНачало: 16:55 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Злата Камалова / Данил Панов — 60.73\n2. Laura Heckova / Alex Valky — 48.81\n3. Leontina Horcickova / Jindrich Klement — 44.30\n\nНачало: 16:55 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Leontina Horcickova / Jindrich Klement",
@@ -57242,7 +57242,7 @@
      "time": "17:01",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "44.30"
     },
     {
@@ -57259,7 +57259,9 @@
      "nation": "SVK",
      "time": "17:13",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "48.81"
     },
     {
      "name": "Romane Telemaque / Lucas Coulon",
@@ -57316,6 +57318,12 @@
     },
     {
      "place": 2,
+     "name": "Laura Heckova / Alex Valky",
+     "nation": "SVK",
+     "points": "48.81"
+    },
+    {
+     "place": 3,
      "name": "Leontina Horcickova / Jindrich Klement",
      "nation": "CZE",
      "points": "44.30"
@@ -101593,5 +101601,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "adefcf3922f5370c"
+ "rev": "a6ce754c8e12d57a"
 }
