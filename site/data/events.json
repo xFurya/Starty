@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T18:45:00+03:00",
- "checked": "2026-11-19T18:45:00+03:00",
+ "checked": "2026-11-19T16:08:31.331764+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57514,14 +57514,14 @@
      "points": "52.76"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Miyu Yunoki / Tristan Taylor — 54.67\n2. Reagan Moss / Jakub Galbavy — 52.76\n3. Debora Anna Cohen / Lukas Vochozka — 50.93\n\nНачало: 18:05 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Miyu Yunoki / Tristan Taylor — 54.67\n2. Linzy Fitzpatrick / Keyton Bearinger — 53.20\n3. Reagan Moss / Jakub Galbavy — 52.76\n\nПримечательное:\n• Linzy Fitzpatrick / Keyton Bearinger — Личный рекорд за КП: 53.20 (был 45.75)\n\nНачало: 18:05 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Debora Anna Cohen / Lukas Vochozka",
      "nation": "CZE",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "50.93",
      "time": "18:11"
     },
@@ -57539,7 +57539,7 @@
      "nation": "USA",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "52.76",
      "time": "18:23"
     },
@@ -57548,7 +57548,7 @@
      "nation": "CHN",
      "no": 4,
      "warmup": 2,
-     "place": 5,
+     "place": 7,
      "points": "42.85",
      "time": "18:35"
     },
@@ -57557,7 +57557,7 @@
      "nation": "USA",
      "no": 5,
      "warmup": 2,
-     "place": 4,
+     "place": 6,
      "points": "49.77",
      "time": "18:41"
     },
@@ -57566,17 +57566,20 @@
      "nation": "ITA",
      "time": "18:53",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "50.76"
     },
     {
      "name": "Linzy Fitzpatrick / Keyton Bearinger",
      "nation": "USA",
      "time": "18:47",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "53.20"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG005.htm",
@@ -57591,9 +57594,16 @@
      "Linzy FITZPATRICK / Keyton BEARINGER": "Linzy Fitzpatrick / Keyton Bearinger",
      "Irina NAPOLITANO / Edoardo COMI": "Irina Napolitano / Edoardo Comi"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "facts": [
+    {
+     "who": "Linzy Fitzpatrick / Keyton Bearinger",
+     "text": "Личный рекорд за КП: 53.20 (был 45.75)",
+     "kind": "score"
+    }
+   ]
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:men-senior-pp",
@@ -101704,5 +101714,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "bd805d0177607d2f"
+ "rev": "f799d35cf26d8770"
 }
