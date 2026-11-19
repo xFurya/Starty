@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T17:40:31+03:00",
- "checked": "2026-11-19T15:52:31.604226+00:00",
+ "checked": "2026-11-19T16:00:31.235163+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57494,7 +57494,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Miyu Yunoki / Tristan Taylor — 54.67\n2. Reagan Moss / Jakub Galbavy — 52.76\n3. Debora Anna Cohen / Lukas Vochozka — 50.93\n\nНачало: 18:05 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Miyu Yunoki / Tristan Taylor — 54.67\n2. Linzy Fitzpatrick / Keyton Bearinger — 53.20\n3. Reagan Moss / Jakub Galbavy — 52.76\n\nНачало: 18:05 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Debora Anna Cohen / Lukas Vochozka",
@@ -57502,7 +57502,7 @@
      "time": "18:11",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "50.93"
     },
     {
@@ -57520,7 +57520,7 @@
      "time": "18:23",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "52.76"
     },
     {
@@ -57529,7 +57529,7 @@
      "time": "18:35",
      "no": 4,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "42.85"
     },
     {
@@ -57538,7 +57538,7 @@
      "time": "18:41",
      "no": 5,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "49.77"
     },
     {
@@ -57546,7 +57546,9 @@
      "nation": "USA",
      "time": "18:47",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "53.20"
     },
     {
      "name": "Irina Napolitano / Edoardo Comi",
@@ -57582,15 +57584,15 @@
     },
     {
      "place": 2,
-     "name": "Reagan Moss / Jakub Galbavy",
+     "name": "Linzy Fitzpatrick / Keyton Bearinger",
      "nation": "USA",
-     "points": "52.76"
+     "points": "53.20"
     },
     {
      "place": 3,
-     "name": "Debora Anna Cohen / Lukas Vochozka",
-     "nation": "CZE",
-     "points": "50.93"
+     "name": "Reagan Moss / Jakub Galbavy",
+     "nation": "USA",
+     "points": "52.76"
     }
    ],
    "provisional": true
@@ -101683,5 +101685,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "ee5e5ae102314b7b"
+ "rev": "5254013412b6c821"
 }
