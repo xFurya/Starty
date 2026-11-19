@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T16:44:29+03:00",
- "checked": "2026-11-19T16:44:29+03:00",
+ "checked": "2026-11-19T14:04:03.332948+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57110,13 +57110,15 @@
      "url": "https://www.sport1tv.ru/figurnoe-katanie"
     }
    ],
-   "desc": "Начало: 16:40 МСК\nТрансляция: Первый канал",
+   "desc": "Промежуточные итоги:\n1. Ярослав Овчинников — 115.42\n\nНачало: 16:40 МСК\nТрансляция: Первый канал",
    "field": [
     {
      "name": "Ярослав Овчинников",
      "nation": "НОВ",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "115.42"
     },
     {
      "name": "Даниил Постарнаков",
@@ -57143,7 +57145,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Ярослав Овчинников",
+     "nation": "НОВ",
+     "points": "115.42"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-junior-kp",
@@ -101518,5 +101529,5 @@
   "Angela Wang": "photos/0f719365b326830b.jpg",
   "Jessica Lin": "photos/04d2f63664776ce1.jpg"
  },
- "rev": "171c4b70fb612da8"
+ "rev": "adec78304e8110da"
 }
