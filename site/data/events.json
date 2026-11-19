@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-19T20:09:14+03:00",
- "checked": "2026-11-19T20:09:14+03:00",
+ "checked": "2026-11-19T17:28:32.592924+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -57678,7 +57678,7 @@
     {
      "name": "Adrian Jimenez de Baldomero",
      "nation": "ESP",
-     "place": 3,
+     "place": 5,
      "points": "69.74",
      "time": "19:46",
      "no": 3,
@@ -57775,7 +57775,7 @@
     {
      "name": "Larry Loupolover",
      "nation": "BUL",
-     "place": 5,
+     "place": 6,
      "points": "57.02",
      "time": "19:31",
      "no": 1,
@@ -57837,7 +57837,9 @@
      "nation": "MAS",
      "time": "20:24",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "97.77"
     }
    ],
    "provisional": true,
@@ -101782,5 +101784,5 @@
   "Jessica Lin": "photos/04d2f63664776ce1.jpg",
   "Adrian Jimenez de Baldomero": "photos/751a9143e61e2724.jpg"
  },
- "rev": "90ba0cddfe9dbf4b"
+ "rev": "a0b7c925a21d84a3"
 }
