@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T16:19:32+03:00",
- "checked": "2026-11-20T13:43:28.216763+00:00",
+ "checked": "2026-11-20T13:47:28.162269+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58083,7 +58083,7 @@
     {
      "name": "Afrina Diyanah",
      "nation": "MAS",
-     "place": 23,
+     "place": 24,
      "points": "51.30",
      "time": "12:44",
      "no": 2,
@@ -58133,7 +58133,7 @@
     {
      "name": "Emilija Ozola",
      "nation": "LAT",
-     "place": 22,
+     "place": 23,
      "points": "54.86",
      "time": "12:59",
      "no": 4,
@@ -58187,7 +58187,7 @@
     {
      "name": "Julia Brovall",
      "nation": "SWE",
-     "place": 19,
+     "place": 20,
      "points": "83.97",
      "time": "13:52",
      "no": 10,
@@ -58196,7 +58196,7 @@
     {
      "name": "Karoliine Raudsepp",
      "nation": "EST",
-     "place": 21,
+     "place": 22,
      "points": "64.69",
      "time": "12:52",
      "no": 3,
@@ -58269,7 +58269,7 @@
     {
      "name": "Michelle Dicicco",
      "nation": "ARG",
-     "place": 24,
+     "place": 25,
      "points": "41.51",
      "time": "12:36",
      "no": 1,
@@ -58296,7 +58296,7 @@
     {
      "name": "Olesja Leonova",
      "nation": "EST",
-     "place": 20,
+     "place": 21,
      "points": "74.95",
      "time": "13:21",
      "no": 6,
@@ -58339,7 +58339,9 @@
      "nation": "FIN",
      "time": "16:38",
      "no": 25,
-     "warmup": 5
+     "warmup": 5,
+     "place": 19,
+     "points": "84.81"
     },
     {
      "name": "Yu-Feng Tsai",
@@ -58537,7 +58539,7 @@
      "nation": "МАР",
      "no": 3,
      "warmup": 1,
-     "place": 28,
+     "place": 29,
      "points": "38.32",
      "time": "13:15"
     },
@@ -58564,7 +58566,7 @@
      "nation": "ВЛГ",
      "no": 6,
      "warmup": 2,
-     "place": 27,
+     "place": 28,
      "points": "38.41",
      "time": "13:36"
     },
@@ -58573,7 +58575,7 @@
      "nation": "ПЕН",
      "no": 7,
      "warmup": 2,
-     "place": 29,
+     "place": 30,
      "points": "38.27",
      "time": "13:41"
     },
@@ -58636,7 +58638,7 @@
      "nation": "СТА",
      "no": 14,
      "warmup": 3,
-     "place": 26,
+     "place": 27,
      "points": "40.34",
      "time": "14:20"
     },
@@ -58645,7 +58647,7 @@
      "nation": "МРД",
      "no": 15,
      "warmup": 3,
-     "place": 30,
+     "place": 31,
      "points": "37.56",
      "time": "14:24"
     },
@@ -58777,7 +58779,7 @@
      "time": "16:15",
      "no": 28,
      "warmup": 6,
-     "place": 25,
+     "place": 26,
      "points": "41.09"
     },
     {
@@ -58785,7 +58787,9 @@
      "nation": "КИР",
      "time": "16:29",
      "no": 31,
-     "warmup": 6
+     "warmup": 6,
+     "place": 25,
+     "points": "41.37"
     },
     {
      "name": "Маргарита Игонова",
@@ -59097,14 +59101,16 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Начало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Janna Jyrkinen — 59.74\n\nНачало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Janna Jyrkinen",
      "nation": "FIN",
      "time": "16:37",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "59.74"
     },
     {
      "name": "Minja Peltonen",
@@ -59205,7 +59211,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Janna Jyrkinen",
+     "nation": "FIN",
+     "points": "59.74"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:men-junior-kp",
@@ -102576,5 +102591,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "5d63f7f79de8abb5"
+ "rev": "e9105ded2ac8a495"
 }
