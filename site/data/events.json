@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T20:32:22+03:00",
- "checked": "2026-11-20T18:27:28.723675+00:00",
+ "checked": "2026-11-20T18:35:31.886903+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60273,31 +60273,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "nation": "FRA",
+     "points": "85.78"
+    },
+    {
+     "place": 2,
      "name": "Juulia Turkkila / Matthias Versluis",
      "nation": "FIN",
      "points": "77.58"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Natalie Taschlerova / Filip Taschler",
      "nation": "CZE",
      "points": "76.65"
-    },
-    {
-     "place": 3,
-     "name": "Oona Brown / Gage Brown",
-     "nation": "USA",
-     "points": "76.22"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Juulia Turkkila / Matthias Versluis — 77.58\n2. Natalie Taschlerova / Filip Taschler — 76.65\n3. Oona Brown / Gage Brown — 76.22\n\nНачало: 20:20 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Laurence Fournier Beaudry / Guillaume Cizeron — 85.78\n2. Juulia Turkkila / Matthias Versluis — 77.58\n3. Natalie Taschlerova / Filip Taschler — 76.65\n\nНачало: 20:20 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
      "no": 1,
      "warmup": 15,
-     "place": 7,
+     "place": 8,
      "points": "68.00",
      "time": "20:26"
     },
@@ -60314,7 +60314,7 @@
      "time": "20:39",
      "no": 3,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "70.55"
     },
     {
@@ -60323,7 +60323,7 @@
      "time": "20:46",
      "no": 4,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "77.58"
     },
     {
@@ -60331,7 +60331,9 @@
      "nation": "FRA",
      "time": "21:25",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "85.78"
     },
     {
      "name": "Marie-Jade Lauriault / Romain le Gac",
@@ -60339,7 +60341,7 @@
      "time": "21:06",
      "no": 6,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "73.16"
     },
     {
@@ -60348,7 +60350,7 @@
      "time": "20:33",
      "no": 2,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "60.96"
     },
     {
@@ -60357,7 +60359,7 @@
      "time": "21:19",
      "no": 8,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "76.65"
     },
     {
@@ -60366,7 +60368,7 @@
      "time": "21:12",
      "no": 7,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "76.22"
     },
     {
@@ -60375,7 +60377,7 @@
      "time": "20:52",
      "no": 5,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "70.74"
     }
    ],
@@ -103508,5 +103510,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "64cc2c8c320f1599"
+ "rev": "199d70ed65e09f6c"
 }
