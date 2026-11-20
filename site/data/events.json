@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T18:23:59+03:00",
- "checked": "2026-11-20T15:59:28.870924+00:00",
+ "checked": "2026-11-20T16:07:29.568883+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59721,7 +59721,9 @@
      "nation": "UKR",
      "time": "18:57",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5,
+     "points": "72.10"
     },
     {
      "name": "Tamir Kuperman",
@@ -59850,7 +59852,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Naomie Ismaili / Leo Rouvrais — 54.21\n\nНачало: 18:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Romane Telemaque / Lucas Coulon — 75.19\n2. Naomie Ismaili / Leo Rouvrais — 54.21\n\nНачало: 18:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Naomie Ismaili / Leo Rouvrais",
@@ -59858,7 +59860,7 @@
      "time": "18:51",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "54.21"
     },
     {
@@ -59866,7 +59868,9 @@
      "nation": "FRA",
      "time": "18:58",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "75.19"
     },
     {
      "name": "Leontina Horcickova / Jindrich Klement",
@@ -59924,6 +59928,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Romane Telemaque / Lucas Coulon",
+     "nation": "FRA",
+     "points": "75.19"
+    },
+    {
+     "place": 2,
      "name": "Naomie Ismaili / Leo Rouvrais",
      "nation": "FRA",
      "points": "54.21"
@@ -102998,5 +103008,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "5c5d911b5ba49bf1"
+ "rev": "a1c8916925ed8aa0"
 }
