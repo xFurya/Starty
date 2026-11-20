@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T11:32:31+03:00",
- "checked": "2026-11-20T11:32:31+03:00",
+ "checked": "2026-11-20T09:47:01.884286+00:00",
  "complete": false,
  "facts_version": "8",
  "sources": {
@@ -58058,14 +58058,16 @@
      "note": "Платно"
     }
    ],
-   "desc": "Начало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Michelle Dicicco — 41.51\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Michelle Dicicco",
      "nation": "ARG",
      "time": "12:36",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "41.51"
     },
     {
      "name": "Afrina Diyanah",
@@ -58334,7 +58336,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Michelle Dicicco",
+     "nation": "ARG",
+     "points": "41.51"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:women-junior-kp",
@@ -102040,5 +102051,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "2d8814c3b3a7764c"
+ "rev": "c2a6d913f3e75a1d"
 }
