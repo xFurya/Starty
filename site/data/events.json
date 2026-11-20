@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T14:43:33+03:00",
- "checked": "2026-11-20T12:43:02.428538+00:00",
+ "checked": "2026-11-20T12:47:01.609528+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58083,7 +58083,7 @@
     {
      "name": "Afrina Diyanah",
      "nation": "MAS",
-     "place": 18,
+     "place": 19,
      "points": "51.30",
      "time": "12:44",
      "no": 2,
@@ -58129,7 +58129,7 @@
     {
      "name": "Emilija Ozola",
      "nation": "LAT",
-     "place": 17,
+     "place": 18,
      "points": "54.86",
      "time": "12:59",
      "no": 4,
@@ -58165,7 +58165,7 @@
     {
      "name": "Haruna Murakami",
      "nation": "AUS",
-     "place": 13,
+     "place": 14,
      "points": "85.57",
      "time": "13:07",
      "no": 5,
@@ -58183,7 +58183,7 @@
     {
      "name": "Julia Brovall",
      "nation": "SWE",
-     "place": 14,
+     "place": 15,
      "points": "83.97",
      "time": "13:52",
      "no": 10,
@@ -58192,7 +58192,7 @@
     {
      "name": "Karoliine Raudsepp",
      "nation": "EST",
-     "place": 16,
+     "place": 17,
      "points": "64.69",
      "time": "12:52",
      "no": 3,
@@ -58235,7 +58235,9 @@
      "nation": "FIN",
      "time": "15:38",
      "no": 20,
-     "warmup": 4
+     "warmup": 4,
+     "place": 11,
+     "points": "89.12"
     },
     {
      "name": "Maria Eliise Kaljuvere",
@@ -58261,7 +58263,7 @@
     {
      "name": "Michelle Dicicco",
      "nation": "ARG",
-     "place": 19,
+     "place": 20,
      "points": "41.51",
      "time": "12:36",
      "no": 1,
@@ -58273,7 +58275,7 @@
      "time": "15:22",
      "no": 18,
      "warmup": 4,
-     "place": 12,
+     "place": 13,
      "points": "86.20"
     },
     {
@@ -58288,7 +58290,7 @@
     {
      "name": "Olesja Leonova",
      "nation": "EST",
-     "place": 15,
+     "place": 16,
      "points": "74.95",
      "time": "13:21",
      "no": 6,
@@ -58343,7 +58345,7 @@
     {
      "name": "Zhasmin Shlaga",
      "nation": "KGZ",
-     "place": 11,
+     "place": 12,
      "points": "87.11",
      "time": "13:37",
      "no": 8,
@@ -102408,5 +102410,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "c047a461230c5a2f"
+ "rev": "b6ebed245763a885"
 }
