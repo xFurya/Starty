@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T17:20:46+03:00",
- "checked": "2026-11-20T15:23:31.227474+00:00",
+ "checked": "2026-11-20T15:31:29.349654+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59422,7 +59422,7 @@
      "time": "17:42",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "52.23"
     },
     {
@@ -59457,7 +59457,9 @@
      "nation": "ЧЕЛ",
      "time": "18:08",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "55.94"
     },
     {
      "name": "Лев Бобык",
@@ -102756,5 +102758,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "bd0d1b6ffbd71847"
+ "rev": "86af90b76fb76ae0"
 }
