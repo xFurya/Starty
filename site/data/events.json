@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T14:43:33+03:00",
- "checked": "2026-11-20T12:55:01.707169+00:00",
+ "checked": "2026-11-20T13:03:01.776320+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58531,7 +58531,7 @@
      "nation": "МАР",
      "no": 3,
      "warmup": 1,
-     "place": 20,
+     "place": 22,
      "points": "38.32",
      "time": "13:15"
     },
@@ -58558,7 +58558,7 @@
      "nation": "ВЛГ",
      "no": 6,
      "warmup": 2,
-     "place": 19,
+     "place": 21,
      "points": "38.41",
      "time": "13:36"
     },
@@ -58567,7 +58567,7 @@
      "nation": "ПЕН",
      "no": 7,
      "warmup": 2,
-     "place": 21,
+     "place": 23,
      "points": "38.27",
      "time": "13:41"
     },
@@ -58576,7 +58576,7 @@
      "nation": "ЛИП",
      "no": 8,
      "warmup": 2,
-     "place": 17,
+     "place": 18,
      "points": "47.25",
      "time": "13:45"
     },
@@ -58594,7 +58594,7 @@
      "nation": "СВЕ",
      "no": 10,
      "warmup": 2,
-     "place": 12,
+     "place": 13,
      "points": "55.06",
      "time": "13:55"
     },
@@ -58603,7 +58603,7 @@
      "nation": "ТАТ",
      "no": 11,
      "warmup": 3,
-     "place": 16,
+     "place": 17,
      "points": "49.37",
      "time": "14:06"
     },
@@ -58612,7 +58612,7 @@
      "nation": "ОМС",
      "no": 12,
      "warmup": 3,
-     "place": 14,
+     "place": 15,
      "points": "53.33",
      "time": "14:10"
     },
@@ -58630,7 +58630,7 @@
      "nation": "СТА",
      "no": 14,
      "warmup": 3,
-     "place": 18,
+     "place": 20,
      "points": "40.34",
      "time": "14:20"
     },
@@ -58662,7 +58662,9 @@
      "nation": "ЧУВ",
      "time": "15:34",
      "no": 24,
-     "warmup": 5
+     "warmup": 5,
+     "place": 12,
+     "points": "55.76"
     },
     {
      "name": "Арина Чернобавская",
@@ -58677,7 +58679,7 @@
      "time": "14:51",
      "no": 16,
      "warmup": 4,
-     "place": 15,
+     "place": 16,
      "points": "52.20"
     },
     {
@@ -58686,7 +58688,7 @@
      "time": "14:24",
      "no": 15,
      "warmup": 3,
-     "place": 22,
+     "place": 24,
      "points": "37.56"
     },
     {
@@ -58717,7 +58719,9 @@
      "nation": "КОС",
      "time": "15:30",
      "no": 23,
-     "warmup": 5
+     "warmup": 5,
+     "place": 19,
+     "points": "46.73"
     },
     {
      "name": "Кира Васильева",
@@ -58815,7 +58819,7 @@
      "time": "14:55",
      "no": 17,
      "warmup": 4,
-     "place": 13,
+     "place": 14,
      "points": "53.49"
     }
    ],
@@ -58907,7 +58911,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Katie McBEATH / Balazs Nagy — 70.81\n2. Audrey Shin / Spencer Akira Howe — 67.26\n3. Valentina Plazas / Maximiliano Fernandez — 60.87\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Annika Hocke / Robert Kunkel — 72.63\n2. Katie McBEATH / Balazs Nagy — 70.81\n3. Audrey Shin / Spencer Akira Howe — 67.26\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Megan Wessenberg / Denys Strekalin",
@@ -58915,7 +58919,7 @@
      "time": "15:07",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "60.71"
     },
     {
@@ -58924,7 +58928,7 @@
      "time": "15:13",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "55.63"
     },
     {
@@ -58933,7 +58937,7 @@
      "time": "15:20",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "70.81"
     },
     {
@@ -58942,7 +58946,7 @@
      "time": "15:26",
      "no": 4,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "67.26"
     },
     {
@@ -58951,7 +58955,7 @@
      "time": "15:40",
      "no": 5,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "60.87"
     },
     {
@@ -58960,7 +58964,7 @@
      "time": "15:46",
      "no": 6,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "54.27"
     },
     {
@@ -58968,7 +58972,9 @@
      "nation": "GER",
      "time": "15:53",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "72.63"
     },
     {
      "name": "Lia Pereira / Trennt Michaud",
@@ -58999,21 +59005,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Annika Hocke / Robert Kunkel",
+     "nation": "GER",
+     "points": "72.63"
+    },
+    {
+     "place": 2,
      "name": "Katie McBEATH / Balazs Nagy",
      "nation": "USA",
      "points": "70.81"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Audrey Shin / Spencer Akira Howe",
      "nation": "USA",
      "points": "67.26"
-    },
-    {
-     "place": 3,
-     "name": "Valentina Plazas / Maximiliano Fernandez",
-     "nation": "USA",
-     "points": "60.87"
     }
    ],
    "provisional": true
@@ -102422,5 +102428,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "ccf49c166f0d1d07"
+ "rev": "e757d5188181e368"
 }
