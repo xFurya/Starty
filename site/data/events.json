@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-20T20:32:22+03:00",
- "checked": "2026-11-20T18:43:29.049108+00:00",
- "complete": true,
+ "generated": "2026-11-20T21:36:15+03:00",
+ "checked": "2026-11-20T21:36:15+03:00",
+ "complete": false,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
   "Golden Skate": "ok",
-  "ФФКМ": "ok",
+  "ФФКМ": "календарь не открылся (https://ffkm.ru/season/competitions/calendar-of-sports-competitions/: <urlopen error timed out>)",
   "Самара": "ok"
  },
  "events": [
@@ -56238,13 +56238,6 @@
     "Zhasmin Shlaga"
    ],
    "src": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
-   "watch": [
-    {
-     "name": "Ice-Stars.TV",
-     "url": "https://ice-stars.tv/tallinntrophy",
-     "note": "Платно"
-    }
-   ],
    "podium": [
     {
      "place": 1,
@@ -56612,6 +56605,13 @@
      "kind": "score",
      "text": "Личный рекорд за КП: 69.20 (был 66.36)",
      "who": "Maria Eliise Kaljuvere"
+    }
+   ],
+   "watch": [
+    {
+     "name": "Ice-Stars.TV",
+     "url": "https://ice-stars.tv/tallinntrophy",
+     "note": "Платно"
     }
    ],
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
@@ -57227,13 +57227,6 @@
     "Злата Камалова / Данил Панов"
    ],
    "src": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
-   "watch": [
-    {
-     "name": "Ice-Stars.TV",
-     "url": "https://ice-stars.tv/tallinntrophy",
-     "note": "Платно"
-    }
-   ],
    "podium": [
     {
      "place": 1,
@@ -57336,6 +57329,13 @@
     },
     "basis": "judges"
    },
+   "watch": [
+    {
+     "name": "Ice-Stars.TV",
+     "url": "https://ice-stars.tv/tallinntrophy",
+     "note": "Платно"
+    }
+   ],
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
@@ -57520,13 +57520,6 @@
     "Xuanyu Liu / Wenbao Han"
    ],
    "src": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
-   "watch": [
-    {
-     "name": "Ice-Stars.TV",
-     "url": "https://ice-stars.tv/tallinntrophy",
-     "note": "Платно"
-    }
-   ],
    "podium": [
     {
      "place": 1,
@@ -57636,6 +57629,13 @@
      "who": "Linzy Fitzpatrick / Keyton Bearinger"
     }
    ],
+   "watch": [
+    {
+     "name": "Ice-Stars.TV",
+     "url": "https://ice-stars.tv/tallinntrophy",
+     "note": "Платно"
+    }
+   ],
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
@@ -57679,13 +57679,6 @@
     "Ze Zeng Fang"
    ],
    "src": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
-   "watch": [
-    {
-     "name": "Ice-Stars.TV",
-     "url": "https://ice-stars.tv/tallinntrophy",
-     "note": "Платно"
-    }
-   ],
    "podium": [
     {
      "place": 1,
@@ -57995,6 +57988,13 @@
      "kind": "score",
      "text": "Личный рекорд по сумме: 214.33 (был 193.61)",
      "who": "Anthony Paradis"
+    }
+   ],
+   "watch": [
+    {
+     "name": "Ice-Stars.TV",
+     "url": "https://ice-stars.tv/tallinntrophy",
+     "note": "Платно"
     }
    ],
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
@@ -59851,14 +59851,14 @@
    },
    "facts": [
     {
-     "who": "Yudong Chen",
+     "kind": "score",
      "text": "Личный рекорд за КП: 82.88 (был 80.74)",
-     "kind": "score"
+     "who": "Yudong Chen"
     },
     {
-     "who": "Andreas Nordeback",
+     "kind": "score",
      "text": "Личный рекорд за КП: 82.08 (был 79.89)",
-     "kind": "score"
+     "who": "Andreas Nordeback"
     }
    ],
    "proto": "isu_isu-gp-finlandia-trophy-2026.json"
@@ -60032,9 +60032,9 @@
      "who": "Злата Камалова / Данил Панов"
     },
     {
-     "who": "Leontina Horcickova / Jindrich Klement",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 76.54 (был 75.97)",
-     "kind": "score"
+     "who": "Leontina Horcickova / Jindrich Klement"
     }
    ],
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
@@ -60048,7 +60048,7 @@
    "seg": "ПП",
    "title": "CS Tallinn Trophy — пары ПП",
    "start": "2026-11-20T20:00:00+03:00",
-   "end": "2026-11-20T21:07:00+03:00",
+   "end": "2026-11-20T21:10:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -60092,123 +60092,6 @@
      "points": "94.19"
     }
    ],
-   "desc": "Итог:\n1. Linzy Fitzpatrick / Keyton Bearinger — 103.07\n2. Miyu Yunoki / Tristan Taylor — 98.48\n3. Reagan Moss / Jakub Galbavy — 94.19\n\nИтог турнира:\n1. Linzy Fitzpatrick / Keyton Bearinger — 156.27\n2. Miyu Yunoki / Tristan Taylor — 153.15\n3. Reagan Moss / Jakub Galbavy — 146.95\n\nПримечательное:\n• Linzy Fitzpatrick / Keyton Bearinger — Личный рекорд за ПП: 103.07 (был 89.11)\n• Miyu Yunoki / Tristan Taylor — Личный рекорд за ПП: 98.48 (был 96.63)\n• Reagan Moss / Jakub Galbavy — Личный рекорд за ПП: 94.19 (был 92.65)\n• Linzy Fitzpatrick / Keyton Bearinger — Личный рекорд по сумме: 156.27 (был 134.86)\n• Reagan Moss / Jakub Galbavy — Личный рекорд по сумме: 146.95 (был 146.74)\n\nНачало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
-   "field": [
-    {
-     "name": "Debora Anna Cohen / Lukas Vochozka",
-     "nation": "CZE",
-     "time": "20:35",
-     "no": 4,
-     "warmup": 2,
-     "place": 5,
-     "points": "89.97",
-     "final": 5
-    },
-    {
-     "name": "Irina Napolitano / Edoardo Comi",
-     "nation": "ITA",
-     "time": "20:21",
-     "no": 3,
-     "warmup": 1,
-     "place": 4,
-     "points": "91.97",
-     "final": 4
-    },
-    {
-     "name": "Linzy Fitzpatrick / Keyton Bearinger",
-     "nation": "USA",
-     "time": "20:50",
-     "no": 6,
-     "warmup": 2,
-     "place": 1,
-     "points": "103.07",
-     "final": 1
-    },
-    {
-     "name": "Miyu Yunoki / Tristan Taylor",
-     "nation": "CAN",
-     "time": "20:58",
-     "no": 7,
-     "warmup": 2,
-     "place": 2,
-     "points": "98.48",
-     "final": 2
-    },
-    {
-     "name": "Olivia Flores / Mark Sadusky",
-     "nation": "USA",
-     "place": 6,
-     "points": "84.35",
-     "time": "20:14",
-     "no": 2,
-     "warmup": 1,
-     "final": 6
-    },
-    {
-     "name": "Reagan Moss / Jakub Galbavy",
-     "nation": "USA",
-     "time": "20:43",
-     "no": 5,
-     "warmup": 2,
-     "place": 3,
-     "points": "94.19",
-     "final": 3
-    },
-    {
-     "name": "Xuanyu Liu / Wenbao Han",
-     "nation": "CHN",
-     "place": 7,
-     "points": "73.60",
-     "time": "20:06",
-     "no": 1,
-     "warmup": 1,
-     "final": 7
-    }
-   ],
-   "live": {
-    "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
-    "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG006.htm",
-    "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT003RS.htm",
-    "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG005.htm",
-    "names": {
-     "Olivia FLORES / Mark SADUSKY": "Olivia Flores / Mark Sadusky",
-     "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han",
-     "Irina NAPOLITANO / Edoardo COMI": "Irina Napolitano / Edoardo Comi",
-     "Debora Anna COHEN / Lukas VOCHOZKA": "Debora Anna Cohen / Lukas Vochozka",
-     "Reagan MOSS / Jakub GALBAVY": "Reagan Moss / Jakub Galbavy",
-     "Linzy FITZPATRICK / Keyton BEARINGER": "Linzy Fitzpatrick / Keyton Bearinger",
-     "Miyu YUNOKI / Tristan TAYLOR": "Miyu Yunoki / Tristan Taylor"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
-   "facts": [
-    {
-     "who": "Linzy Fitzpatrick / Keyton Bearinger",
-     "text": "Личный рекорд за ПП: 103.07 (был 89.11)",
-     "kind": "score"
-    },
-    {
-     "who": "Miyu Yunoki / Tristan Taylor",
-     "text": "Личный рекорд за ПП: 98.48 (был 96.63)",
-     "kind": "score"
-    },
-    {
-     "who": "Reagan Moss / Jakub Galbavy",
-     "text": "Личный рекорд за ПП: 94.19 (был 92.65)",
-     "kind": "score"
-    },
-    {
-     "who": "Linzy Fitzpatrick / Keyton Bearinger",
-     "text": "Личный рекорд по сумме: 156.27 (был 134.86)",
-     "kind": "score"
-    },
-    {
-     "who": "Reagan Moss / Jakub Galbavy",
-     "text": "Личный рекорд по сумме: 146.95 (был 146.74)",
-     "kind": "score"
-    }
-   ],
    "total": [
     {
      "place": 1,
@@ -60228,7 +60111,124 @@
      "nation": "USA",
      "points": "146.95"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Linzy Fitzpatrick / Keyton Bearinger — 103.07\n2. Miyu Yunoki / Tristan Taylor — 98.48\n3. Reagan Moss / Jakub Galbavy — 94.19\n\nИтог турнира:\n1. Linzy Fitzpatrick / Keyton Bearinger — 156.27\n2. Miyu Yunoki / Tristan Taylor — 153.15\n3. Reagan Moss / Jakub Galbavy — 146.95\n\nПримечательное:\n• Linzy Fitzpatrick / Keyton Bearinger — Личный рекорд за ПП: 103.07 (был 89.11)\n• Miyu Yunoki / Tristan Taylor — Личный рекорд за ПП: 98.48 (был 96.63)\n• Reagan Moss / Jakub Galbavy — Личный рекорд за ПП: 94.19 (был 92.65)\n• Linzy Fitzpatrick / Keyton Bearinger — Личный рекорд по сумме: 156.27 (был 134.86)\n• Reagan Moss / Jakub Galbavy — Личный рекорд по сумме: 146.95 (был 146.74)\n\nНачало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
+   "field": [
+    {
+     "name": "Xuanyu Liu / Wenbao Han",
+     "nation": "CHN",
+     "no": 1,
+     "warmup": 1,
+     "place": 7,
+     "points": "73.60",
+     "final": 7,
+     "time": "20:06"
+    },
+    {
+     "name": "Olivia Flores / Mark Sadusky",
+     "nation": "USA",
+     "no": 2,
+     "warmup": 1,
+     "place": 6,
+     "points": "84.35",
+     "final": 6,
+     "time": "20:14"
+    },
+    {
+     "name": "Irina Napolitano / Edoardo Comi",
+     "nation": "ITA",
+     "no": 3,
+     "warmup": 1,
+     "place": 4,
+     "points": "91.97",
+     "final": 4,
+     "time": "20:21"
+    },
+    {
+     "name": "Debora Anna Cohen / Lukas Vochozka",
+     "nation": "CZE",
+     "no": 4,
+     "warmup": 2,
+     "place": 5,
+     "points": "89.97",
+     "final": 5,
+     "time": "20:35"
+    },
+    {
+     "name": "Reagan Moss / Jakub Galbavy",
+     "nation": "USA",
+     "no": 5,
+     "warmup": 2,
+     "place": 3,
+     "points": "94.19",
+     "final": 3,
+     "time": "20:43"
+    },
+    {
+     "name": "Linzy Fitzpatrick / Keyton Bearinger",
+     "nation": "USA",
+     "no": 6,
+     "warmup": 2,
+     "place": 1,
+     "points": "103.07",
+     "final": 1,
+     "time": "20:50"
+    },
+    {
+     "name": "Miyu Yunoki / Tristan Taylor",
+     "nation": "CAN",
+     "no": 7,
+     "warmup": 2,
+     "place": 2,
+     "points": "98.48",
+     "final": 2,
+     "time": "20:58"
+    }
+   ],
+   "live": {
+    "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
+    "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG006.htm",
+    "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT003RS.htm",
+    "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG005.htm",
+    "names": {
+     "Linzy FITZPATRICK / Keyton BEARINGER": "Linzy Fitzpatrick / Keyton Bearinger",
+     "Miyu YUNOKI / Tristan TAYLOR": "Miyu Yunoki / Tristan Taylor",
+     "Reagan MOSS / Jakub GALBAVY": "Reagan Moss / Jakub Galbavy",
+     "Irina NAPOLITANO / Edoardo COMI": "Irina Napolitano / Edoardo Comi",
+     "Debora Anna COHEN / Lukas VOCHOZKA": "Debora Anna Cohen / Lukas Vochozka",
+     "Olivia FLORES / Mark SADUSKY": "Olivia Flores / Mark Sadusky",
+     "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han"
+    },
+    "basis": "judges"
+   },
+   "facts": [
+    {
+     "kind": "score",
+     "text": "Личный рекорд за ПП: 103.07 (был 89.11)",
+     "who": "Linzy Fitzpatrick / Keyton Bearinger"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за ПП: 98.48 (был 96.63)",
+     "who": "Miyu Yunoki / Tristan Taylor"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за ПП: 94.19 (был 92.65)",
+     "who": "Reagan Moss / Jakub Galbavy"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 156.27 (был 134.86)",
+     "who": "Linzy Fitzpatrick / Keyton Bearinger"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 146.95 (был 146.74)",
+     "who": "Reagan Moss / Jakub Galbavy"
+    }
+   ],
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:dance-senior-rt",
@@ -60239,7 +60239,7 @@
    "seg": "РТ",
    "title": "GP Finlandia Trophy — танцы РТ",
    "start": "2026-11-20T20:20:00+03:00",
-   "end": "2026-11-20T21:39:00+03:00",
+   "end": "2026-11-20T21:35:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
    "broadcast": [
@@ -60290,7 +60290,7 @@
      "points": "76.65"
     }
    ],
-   "desc": "Итог:\n1. Laurence Fournier Beaudry / Guillaume Cizeron — 85.78\n2. Juulia Turkkila / Matthias Versluis — 77.58\n3. Natalie Taschlerova / Filip Taschler — 76.65\n\nНачало: 20:20 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Laurence Fournier Beaudry / Guillaume Cizeron — 85.78\n2. Juulia Turkkila / Matthias Versluis — 77.58\n3. Natalie Taschlerova / Filip Taschler — 76.65\n\nПримечательное:\n• Laurence Fournier Beaudry / Guillaume Cizeron — Лучшая в мире оценка сезона за РТ: 85.78\n\nНачало: 20:20 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
@@ -60302,85 +60302,85 @@
      "time": "20:26"
     },
     {
-     "name": "Caroline Green / Michael Parsons",
-     "nation": "USA",
-     "time": "21:32",
-     "no": 10,
-     "warmup": 2,
-     "place": 5,
-     "points": "75.21"
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "no": 2,
+     "warmup": 1,
+     "place": 10,
+     "points": "60.96",
+     "time": "20:33"
     },
     {
      "name": "Emily Bratti / Ian Somerville",
      "nation": "USA",
-     "time": "20:39",
      "no": 3,
      "warmup": 1,
      "place": 8,
-     "points": "70.55"
+     "points": "70.55",
+     "time": "20:39"
     },
     {
      "name": "Juulia Turkkila / Matthias Versluis",
      "nation": "FIN",
-     "time": "20:46",
      "no": 4,
      "warmup": 1,
      "place": 2,
-     "points": "77.58"
-    },
-    {
-     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
-     "nation": "FRA",
-     "time": "21:25",
-     "no": 9,
-     "warmup": 2,
-     "place": 1,
-     "points": "85.78"
-    },
-    {
-     "name": "Marie-Jade Lauriault / Romain le Gac",
-     "nation": "CAN",
-     "time": "21:06",
-     "no": 6,
-     "warmup": 2,
-     "place": 6,
-     "points": "73.16"
-    },
-    {
-     "name": "Milla Ruud Reitan / Nikolaj Majorov",
-     "nation": "SWE",
-     "time": "20:33",
-     "no": 2,
-     "warmup": 1,
-     "place": 10,
-     "points": "60.96"
-    },
-    {
-     "name": "Natalie Taschlerova / Filip Taschler",
-     "nation": "CZE",
-     "time": "21:19",
-     "no": 8,
-     "warmup": 2,
-     "place": 3,
-     "points": "76.65"
-    },
-    {
-     "name": "Oona Brown / Gage Brown",
-     "nation": "USA",
-     "time": "21:12",
-     "no": 7,
-     "warmup": 2,
-     "place": 4,
-     "points": "76.22"
+     "points": "77.58",
+     "time": "20:46"
     },
     {
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN",
-     "time": "20:52",
      "no": 5,
      "warmup": 1,
      "place": 7,
-     "points": "70.74"
+     "points": "70.74",
+     "time": "20:52"
+    },
+    {
+     "name": "Marie-Jade Lauriault / Romain le Gac",
+     "nation": "CAN",
+     "no": 6,
+     "warmup": 2,
+     "place": 6,
+     "points": "73.16",
+     "time": "21:06"
+    },
+    {
+     "name": "Oona Brown / Gage Brown",
+     "nation": "USA",
+     "no": 7,
+     "warmup": 2,
+     "place": 4,
+     "points": "76.22",
+     "time": "21:12"
+    },
+    {
+     "name": "Natalie Taschlerova / Filip Taschler",
+     "nation": "CZE",
+     "no": 8,
+     "warmup": 2,
+     "place": 3,
+     "points": "76.65",
+     "time": "21:19"
+    },
+    {
+     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "nation": "FRA",
+     "no": 9,
+     "warmup": 2,
+     "place": 1,
+     "points": "85.78",
+     "time": "21:25"
+    },
+    {
+     "name": "Caroline Green / Michael Parsons",
+     "nation": "USA",
+     "no": 10,
+     "warmup": 2,
+     "place": 5,
+     "points": "75.21",
+     "time": "21:32"
     }
    ],
    "live": {
@@ -60389,19 +60389,26 @@
     "cat": null,
     "first": null,
     "names": {
-     "Marjorie LAJOIE / Jean-Luc BAKER": "Marjorie Lajoie / Jean-Luc Baker",
-     "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov",
-     "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
-     "Juulia TURKKILA / Matthias VERSLUIS": "Juulia Turkkila / Matthias Versluis",
-     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
-     "Marie-Jade LAURIAULT / Romain le GAC": "Marie-Jade Lauriault / Romain le Gac",
-     "Oona BROWN / Gage BROWN": "Oona Brown / Gage Brown",
-     "Natalie TASCHLEROVA / Filip TASCHLER": "Natalie Taschlerova / Filip Taschler",
      "Laurence FOURNIER BEAUDRY / Guillaume CIZERON": "Laurence Fournier Beaudry / Guillaume Cizeron",
-     "Caroline GREEN / Michael PARSONS": "Caroline Green / Michael Parsons"
+     "Juulia TURKKILA / Matthias VERSLUIS": "Juulia Turkkila / Matthias Versluis",
+     "Natalie TASCHLEROVA / Filip TASCHLER": "Natalie Taschlerova / Filip Taschler",
+     "Oona BROWN / Gage BROWN": "Oona Brown / Gage Brown",
+     "Caroline GREEN / Michael PARSONS": "Caroline Green / Michael Parsons",
+     "Marie-Jade LAURIAULT / Romain le GAC": "Marie-Jade Lauriault / Romain le Gac",
+     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
+     "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
+     "Marjorie LAJOIE / Jean-Luc BAKER": "Marjorie Lajoie / Jean-Luc Baker",
+     "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov"
     },
     "basis": "judges"
    },
+   "facts": [
+    {
+     "who": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "text": "Лучшая в мире оценка сезона за РТ: 85.78",
+     "kind": "score"
+    }
+   ],
    "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
   {
@@ -61972,7 +61979,7 @@
    "seg": "ПТ",
    "title": "GP Finlandia Trophy — танцы ПТ",
    "start": "2026-11-21T20:25:00+03:00",
-   "end": "2026-11-21T21:50:00+03:00",
+   "end": "2026-11-21T21:57:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
    "broadcast": [
@@ -62006,44 +62013,74 @@
    "desc": "Начало: 20:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Caroline Green / Michael Parsons",
-     "nation": "USA"
-    },
-    {
-     "name": "Emily Bratti / Ian Somerville",
-     "nation": "USA"
-    },
-    {
-     "name": "Juulia Turkkila / Matthias Versluis",
-     "nation": "FIN"
-    },
-    {
-     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
-     "nation": "FRA"
-    },
-    {
-     "name": "Marie-Jade Lauriault / Romain le Gac",
-     "nation": "CAN"
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "time": "20:31",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
-     "nation": "CAN"
+     "nation": "CAN",
+     "time": "20:39",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Milla Ruud Reitan / Nikolaj Majorov",
-     "nation": "SWE"
-    },
-    {
-     "name": "Natalie Taschlerova / Filip Taschler",
-     "nation": "CZE"
-    },
-    {
-     "name": "Oona Brown / Gage Brown",
-     "nation": "USA"
+     "name": "Emily Bratti / Ian Somerville",
+     "nation": "USA",
+     "time": "20:47",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Yuka Orihara / Juho Pirinen",
-     "nation": "FIN"
+     "nation": "FIN",
+     "time": "20:55",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Marie-Jade Lauriault / Romain le Gac",
+     "nation": "CAN",
+     "time": "21:03",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Caroline Green / Michael Parsons",
+     "nation": "USA",
+     "time": "21:17",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Oona Brown / Gage Brown",
+     "nation": "USA",
+     "time": "21:25",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Natalie Taschlerova / Filip Taschler",
+     "nation": "CZE",
+     "time": "21:33",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Juulia Turkkila / Matthias Versluis",
+     "nation": "FIN",
+     "time": "21:41",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "nation": "FRA",
+     "time": "21:49",
+     "no": 10,
+     "warmup": 2
     }
    ],
    "live": {
@@ -62052,16 +62089,16 @@
     "cat": "https://results.isu.org/results/season2627/gpfin2026/CAT004RS.htm",
     "first": "https://results.isu.org/results/season2627/gpfin2026/SEG007.htm",
     "names": {
-     "Marjorie LAJOIE / Jean-Luc BAKER": "Marjorie Lajoie / Jean-Luc Baker",
-     "Marie-Jade LAURIAULT / Romain le GAC": "Marie-Jade Lauriault / Romain le Gac",
-     "Natalie TASCHLEROVA / Filip TASCHLER": "Natalie Taschlerova / Filip Taschler",
-     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
-     "Juulia TURKKILA / Matthias VERSLUIS": "Juulia Turkkila / Matthias Versluis",
-     "Laurence FOURNIER BEAUDRY / Guillaume CIZERON": "Laurence Fournier Beaudry / Guillaume Cizeron",
      "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov",
+     "Marjorie LAJOIE / Jean-Luc BAKER": "Marjorie Lajoie / Jean-Luc Baker",
      "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
+     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
+     "Marie-Jade LAURIAULT / Romain le GAC": "Marie-Jade Lauriault / Romain le Gac",
+     "Caroline GREEN / Michael PARSONS": "Caroline Green / Michael Parsons",
      "Oona BROWN / Gage BROWN": "Oona Brown / Gage Brown",
-     "Caroline GREEN / Michael PARSONS": "Caroline Green / Michael Parsons"
+     "Natalie TASCHLEROVA / Filip TASCHLER": "Natalie Taschlerova / Filip Taschler",
+     "Juulia TURKKILA / Matthias VERSLUIS": "Juulia Turkkila / Matthias Versluis",
+     "Laurence FOURNIER BEAUDRY / Guillaume CIZERON": "Laurence Fournier Beaudry / Guillaume Cizeron"
     },
     "basis": null
    },
@@ -103511,5 +103548,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "8d8d52722982c9e3"
+ "rev": "e63468e057ba11e1"
 }
