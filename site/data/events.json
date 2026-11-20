@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-20T13:39:32+03:00",
- "checked": "2026-11-20T12:03:02.244745+00:00",
+ "generated": "2026-11-20T14:43:33+03:00",
+ "checked": "2026-11-20T14:43:33+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58083,7 +58083,7 @@
     {
      "name": "Afrina Diyanah",
      "nation": "MAS",
-     "place": 14,
+     "place": 12,
      "points": "51.30",
      "time": "12:44",
      "no": 2,
@@ -58129,7 +58129,7 @@
     {
      "name": "Emilija Ozola",
      "nation": "LAT",
-     "place": 13,
+     "place": 11,
      "points": "54.86",
      "time": "12:59",
      "no": 4,
@@ -58138,15 +58138,17 @@
     {
      "name": "Eugenia Sekulovski",
      "nation": "SUI",
+     "place": 1,
+     "points": "100.11",
      "time": "14:22",
      "no": 11,
-     "warmup": 3,
-     "place": 1,
-     "points": "100.11"
+     "warmup": 3
     },
     {
      "name": "Flora Marie Schaller",
      "nation": "AUT",
+     "place": 2,
+     "points": "99.63",
      "time": "14:37",
      "no": 13,
      "warmup": 3,
@@ -58165,7 +58167,7 @@
     {
      "name": "Haruna Murakami",
      "nation": "AUS",
-     "place": 9,
+     "place": 7,
      "points": "85.57",
      "time": "13:07",
      "no": 5,
@@ -58183,16 +58185,16 @@
     {
      "name": "Julia Brovall",
      "nation": "SWE",
+     "place": 8,
+     "points": "83.97",
      "time": "13:52",
      "no": 10,
-     "warmup": 2,
-     "place": 10,
-     "points": "83.97"
+     "warmup": 2
     },
     {
      "name": "Karoliine Raudsepp",
      "nation": "EST",
-     "place": 12,
+     "place": 10,
      "points": "64.69",
      "time": "12:52",
      "no": 3,
@@ -58201,11 +58203,11 @@
     {
      "name": "Karolina Bialas",
      "nation": "POL",
+     "place": 4,
+     "points": "95.65",
      "time": "13:45",
      "no": 9,
-     "warmup": 2,
-     "place": 4,
-     "points": "95.65"
+     "warmup": 2
     },
     {
      "name": "Kristina Lisovskaja",
@@ -58259,7 +58261,7 @@
     {
      "name": "Michelle Dicicco",
      "nation": "ARG",
-     "place": 15,
+     "place": 13,
      "points": "41.51",
      "time": "12:36",
      "no": 1,
@@ -58282,7 +58284,7 @@
     {
      "name": "Olesja Leonova",
      "nation": "EST",
-     "place": 11,
+     "place": 9,
      "points": "74.95",
      "time": "13:21",
      "no": 6,
@@ -58298,11 +58300,11 @@
     {
      "name": "Pernille With",
      "nation": "NOR",
+     "place": 5,
+     "points": "90.10",
      "time": "14:29",
      "no": 12,
-     "warmup": 3,
-     "place": 7,
-     "points": "90.10"
+     "warmup": 3
     },
     {
      "name": "Sara Franzi",
@@ -58335,11 +58337,11 @@
     {
      "name": "Zhasmin Shlaga",
      "nation": "KGZ",
+     "place": 6,
+     "points": "87.11",
      "time": "13:37",
      "no": 8,
-     "warmup": 2,
-     "place": 8,
-     "points": "87.11"
+     "warmup": 2
     }
    ],
    "provisional": true,
@@ -58349,19 +58351,19 @@
     "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT002RS.htm",
     "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG003.htm",
     "names": {
+     "Flora Marie SCHALLER": "Flora Marie Schaller",
+     "Eugenia SEKULOVSKI": "Eugenia Sekulovski",
+     "Karolina BIALAS": "Karolina Bialas",
      "Gabrielle DALEMAN": "Gabrielle Daleman",
+     "Pernille WITH": "Pernille With",
+     "Zhasmin SHLAGA": "Zhasmin Shlaga",
+     "Julia BROVALL": "Julia Brovall",
      "Haruna MURAKAMI": "Haruna Murakami",
      "Olesja LEONOVA": "Olesja Leonova",
      "Karoliine RAUDSEPP": "Karoliine Raudsepp",
      "Emilija OZOLA": "Emilija Ozola",
      "Afrina DIYANAH": "Afrina Diyanah",
      "Michelle DICICCO": "Michelle Dicicco",
-     "Zhasmin SHLAGA": "Zhasmin Shlaga",
-     "Karolina BIALAS": "Karolina Bialas",
-     "Julia BROVALL": "Julia Brovall",
-     "Eugenia SEKULOVSKI": "Eugenia Sekulovski",
-     "Pernille WITH": "Pernille With",
-     "Flora Marie SCHALLER": "Flora Marie Schaller",
      "Anastasija KONGA": "Anastasija Konga",
      "Josefin BROVALL": "Josefin Brovall",
      "Kristina LISOVSKAJA": "Kristina Lisovskaja",
@@ -58538,6 +58540,87 @@
      "time": "13:25"
     },
     {
+     "name": "Арина Теслина",
+     "nation": "ВЛГ",
+     "no": 6,
+     "warmup": 2,
+     "place": 12,
+     "points": "38.41",
+     "time": "13:36"
+    },
+    {
+     "name": "Сабина Киселева",
+     "nation": "ПЕН",
+     "no": 7,
+     "warmup": 2,
+     "place": 14,
+     "points": "38.27",
+     "time": "13:41"
+    },
+    {
+     "name": "Дарья Хришкова",
+     "nation": "ЛИП",
+     "no": 8,
+     "warmup": 2,
+     "place": 10,
+     "points": "47.25",
+     "time": "13:45"
+    },
+    {
+     "name": "Риана Ганиева",
+     "nation": "ТАТ",
+     "no": 9,
+     "warmup": 2,
+     "place": 1,
+     "points": "70.10",
+     "time": "13:50"
+    },
+    {
+     "name": "Александра Гришина",
+     "nation": "СВЕ",
+     "no": 10,
+     "warmup": 2,
+     "place": 7,
+     "points": "55.06",
+     "time": "13:55"
+    },
+    {
+     "name": "Мадина Абзипарова",
+     "nation": "ТАТ",
+     "no": 11,
+     "warmup": 3,
+     "place": 9,
+     "points": "49.37",
+     "time": "14:06"
+    },
+    {
+     "name": "Ярослава Быстрова",
+     "nation": "ОМС",
+     "no": 12,
+     "warmup": 3,
+     "place": 8,
+     "points": "53.33",
+     "time": "14:10"
+    },
+    {
+     "name": "Аделина Камалова",
+     "nation": "ТАТ",
+     "no": 13,
+     "warmup": 3,
+     "place": 2,
+     "points": "68.93",
+     "time": "14:15"
+    },
+    {
+     "name": "София Самуйлик",
+     "nation": "СТА",
+     "no": 14,
+     "warmup": 3,
+     "place": 11,
+     "points": "40.34",
+     "time": "14:20"
+    },
+    {
      "name": "Авелина Бердоносова",
      "nation": "ПРМ",
      "time": "16:10",
@@ -58545,29 +58628,11 @@
      "warmup": 6
     },
     {
-     "name": "Аделина Камалова",
-     "nation": "ТАТ",
-     "time": "14:15",
-     "no": 13,
-     "warmup": 3,
-     "place": 2,
-     "points": "68.93"
-    },
-    {
      "name": "Александра Анушова",
      "nation": "МОБ",
      "time": "16:54",
      "no": 35,
      "warmup": 7
-    },
-    {
-     "name": "Александра Гришина",
-     "nation": "СВЕ",
-     "time": "13:55",
-     "no": 10,
-     "warmup": 2,
-     "place": 7,
-     "points": "55.06"
     },
     {
      "name": "Анастасия Выровая",
@@ -58582,15 +58647,6 @@
      "time": "15:34",
      "no": 24,
      "warmup": 5
-    },
-    {
-     "name": "Арина Теслина",
-     "nation": "ВЛГ",
-     "time": "13:36",
-     "no": 6,
-     "warmup": 2,
-     "place": 12,
-     "points": "38.41"
     },
     {
      "name": "Арина Чернобавская",
@@ -58630,15 +58686,6 @@
      "warmup": 6
     },
     {
-     "name": "Дарья Хришкова",
-     "nation": "ЛИП",
-     "time": "13:45",
-     "no": 8,
-     "warmup": 2,
-     "place": 10,
-     "points": "47.25"
-    },
-    {
      "name": "Дарья Царькова",
      "nation": "БАШ",
      "time": "15:44",
@@ -58665,15 +58712,6 @@
      "time": "15:25",
      "no": 22,
      "warmup": 5
-    },
-    {
-     "name": "Мадина Абзипарова",
-     "nation": "ТАТ",
-     "time": "14:06",
-     "no": 11,
-     "warmup": 3,
-     "place": 9,
-     "points": "49.37"
     },
     {
      "name": "Маргарита Игонова",
@@ -58725,38 +58763,11 @@
      "warmup": 6
     },
     {
-     "name": "Риана Ганиева",
-     "nation": "ТАТ",
-     "time": "13:50",
-     "no": 9,
-     "warmup": 2,
-     "place": 1,
-     "points": "70.10"
-    },
-    {
-     "name": "Сабина Киселева",
-     "nation": "ПЕН",
-     "time": "13:41",
-     "no": 7,
-     "warmup": 2,
-     "place": 14,
-     "points": "38.27"
-    },
-    {
      "name": "София Нуреева",
      "nation": "ЧЕЛ",
      "time": "16:49",
      "no": 34,
      "warmup": 7
-    },
-    {
-     "name": "София Самуйлик",
-     "nation": "СТА",
-     "time": "14:20",
-     "no": 14,
-     "warmup": 3,
-     "place": 11,
-     "points": "40.34"
     },
     {
      "name": "Софья Смагина",
@@ -58778,15 +58789,6 @@
      "time": "14:55",
      "no": 17,
      "warmup": 4
-    },
-    {
-     "name": "Ярослава Быстрова",
-     "nation": "ОМС",
-     "time": "14:10",
-     "no": 12,
-     "warmup": 3,
-     "place": 8,
-     "points": "53.33"
     }
    ],
    "provisional": true,
@@ -58796,20 +58798,20 @@
     "cat": null,
     "first": null,
     "names": {
+     "Риана ГАНИЕВА": "Риана Ганиева",
+     "Аделина КАМАЛОВА": "Аделина Камалова",
      "Ксения БОРОДИНА": "Ксения Бородина",
      "Аделина УСМАНОВА": "Аделина Усманова",
      "Агния ХАЗОВА": "Агния Хазова",
      "Вероника ПЕНЬКОВА": "Вероника Пенькова",
-     "Маргарита КОТЕНЕВА": "Маргарита Котенева",
-     "Арина ТЕСЛИНА": "Арина Теслина",
-     "Сабина КИСЕЛЕВА": "Сабина Киселева",
-     "Дарья ХРИШКОВА": "Дарья Хришкова",
-     "Риана ГАНИЕВА": "Риана Ганиева",
      "Александра ГРИШИНА": "Александра Гришина",
-     "Мадина АБЗИПАРОВА": "Мадина Абзипарова",
      "Ярослава БЫСТРОВА": "Ярослава Быстрова",
-     "Аделина КАМАЛОВА": "Аделина Камалова",
+     "Мадина АБЗИПАРОВА": "Мадина Абзипарова",
+     "Дарья ХРИШКОВА": "Дарья Хришкова",
      "София САМУЙЛИК": "София Самуйлик",
+     "Арина ТЕСЛИНА": "Арина Теслина",
+     "Маргарита КОТЕНЕВА": "Маргарита Котенева",
+     "Сабина КИСЕЛЕВА": "Сабина Киселева",
      "Вероника ШИЛЕНКОВА": "Вероника Шиленкова",
      "Валерия ИОРДАНОВА": "Валерия Иорданова",
      "Ярослава БАРИНОВА": "Ярослава Баринова",
@@ -59116,7 +59118,7 @@
    "seg": "КП",
    "title": "Идель — юноши КП",
    "start": "2026-11-20T17:30:00+03:00",
-   "end": "2026-11-20T20:15:00+03:00",
+   "end": "2026-11-20T19:46:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -59125,7 +59127,7 @@
    ],
    "ours": [],
    "athletes": [
-    "Владимир Гудэенко",
+    "Владимир Гудзенко",
     "Владислав Виниченко",
     "Данил Золотарев",
     "Денис Никитин",
@@ -59159,80 +59161,137 @@
    "desc": "Начало: 17:30 МСК\nТрансляция: Первый канал / VK Видео",
    "field": [
     {
-     "name": "Владимир Гудэенко",
-     "nation": "КОС"
-    },
-    {
-     "name": "Владислав Виниченко",
-     "nation": "РОС"
+     "name": "Ильяс Халиуллин",
+     "nation": "ТАТ",
+     "time": "17:37",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Данил Золотарев",
-     "nation": "ТАТ"
-    },
-    {
-     "name": "Денис Никитин",
-     "nation": "УДМ"
-    },
-    {
-     "name": "Егор Никитин",
-     "nation": "ИВА"
-    },
-    {
-     "name": "Иван Теленков",
-     "nation": "МОБ"
-    },
-    {
-     "name": "Илья Старков",
-     "nation": "ЛОБ"
-    },
-    {
-     "name": "Ильяс Халиуллин",
-     "nation": "ТАТ"
-    },
-    {
-     "name": "Искандер Амиров",
-     "nation": "ТАТ"
-    },
-    {
-     "name": "Кирилл Былинин",
-     "nation": "ЧЕЛ"
-    },
-    {
-     "name": "Лев Бобык",
-     "nation": "НИЖ"
-    },
-    {
-     "name": "Леонид Новожилов",
-     "nation": "ТУЛ"
-    },
-    {
-     "name": "Макар Ушаков",
-     "nation": "ПРМ"
-    },
-    {
-     "name": "Максим Галкин",
-     "nation": "СВЕ"
-    },
-    {
-     "name": "Марк Аникиенко",
-     "nation": "ЧЕЛ"
-    },
-    {
-     "name": "Марк Титов",
-     "nation": "ТАТ"
-    },
-    {
-     "name": "Михаил Голояд",
-     "nation": "БЕЛ"
+     "nation": "ТАТ",
+     "time": "17:42",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Роман Чирков",
-     "nation": "ТВЕ"
+     "nation": "ТВЕ",
+     "time": "17:46",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Леонид Новожилов",
+     "nation": "ТУЛ",
+     "time": "17:51",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Максим Галкин",
+     "nation": "СВЕ",
+     "time": "18:03",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Марк Аникиенко",
+     "nation": "ЧЕЛ",
+     "time": "18:08",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Лев Бобык",
+     "nation": "НИЖ",
+     "time": "18:13",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Марк Титов",
+     "nation": "ТАТ",
+     "time": "18:17",
+     "no": 8,
+     "warmup": 2
     },
     {
      "name": "Степан Юров",
-     "nation": "МОС"
+     "nation": "МОС",
+     "time": "18:22",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Михаил Голояд",
+     "nation": "БЕЛ",
+     "time": "18:49",
+     "no": 10,
+     "warmup": 3
+    },
+    {
+     "name": "Иван Теленков",
+     "nation": "МОБ",
+     "time": "18:54",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Егор Никитин",
+     "nation": "ИВА",
+     "time": "18:58",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Искандер Амиров",
+     "nation": "ТАТ",
+     "time": "19:03",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Илья Старков",
+     "nation": "ЛОБ",
+     "time": "19:08",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Макар Ушаков",
+     "nation": "ПРМ",
+     "time": "19:20",
+     "no": 15,
+     "warmup": 4
+    },
+    {
+     "name": "Владимир Гудзенко",
+     "nation": "КОС",
+     "time": "19:25",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Денис Никитин",
+     "nation": "УДМ",
+     "time": "19:29",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Владислав Виниченко",
+     "nation": "РОС",
+     "time": "19:34",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Кирилл Былинин",
+     "nation": "ЧЕЛ",
+     "time": "19:39",
+     "no": 19,
+     "warmup": 4
     }
    ],
    "live": {
@@ -59241,25 +59300,25 @@
     "cat": null,
     "first": null,
     "names": {
-     "Искандер АМИРОВ": "Искандер Амиров",
+     "Ильяс ХАЛИУЛЛИН": "Ильяс Халиуллин",
+     "Данил ЗОЛОТАРЕВ": "Данил Золотарев",
+     "Роман ЧИРКОВ": "Роман Чирков",
+     "Леонид НОВОЖИЛОВ": "Леонид Новожилов",
+     "Максим ГАЛКИН": "Максим Галкин",
      "Марк АНИКИЕНКО": "Марк Аникиенко",
      "Лев БОБЫК": "Лев Бобык",
-     "Кирилл БЫЛИНИН": "Кирилл Былинин",
-     "Владислав ВИНИЧЕНКО": "Владислав Виниченко",
-     "Максим ГАЛКИН": "Максим Галкин",
-     "Михаил ГОЛОЯД": "Михаил Голояд",
-     "Владимир ГУДЭЕНКО": "Владимир Гудэенко",
-     "Данил ЗОЛОТАРЕВ": "Данил Золотарев",
-     "Денис НИКИТИН": "Денис Никитин",
-     "Егор НИКИТИН": "Егор Никитин",
-     "Леонид НОВОЖИЛОВ": "Леонид Новожилов",
-     "Илья СТАРКОВ": "Илья Старков",
-     "Иван ТЕЛЕНКОВ": "Иван Теленков",
      "Марк ТИТОВ": "Марк Титов",
+     "Степан ЮРОВ": "Степан Юров",
+     "Михаил ГОЛОЯД": "Михаил Голояд",
+     "Иван ТЕЛЕНКОВ": "Иван Теленков",
+     "Егор НИКИТИН": "Егор Никитин",
+     "Искандер АМИРОВ": "Искандер Амиров",
+     "Илья СТАРКОВ": "Илья Старков",
      "Макар УШАКОВ": "Макар Ушаков",
-     "Ильяс ХАЛИУЛЛИН": "Ильяс Халиуллин",
-     "Роман ЧИРКОВ": "Роман Чирков",
-     "Степан ЮРОВ": "Степан Юров"
+     "Владимир ГУДЗЕНКО": "Владимир Гудзенко",
+     "Денис НИКИТИН": "Денис Никитин",
+     "Владислав ВИНИЧЕНКО": "Владислав Виниченко",
+     "Кирилл БЫЛИНИН": "Кирилл Былинин"
     },
     "basis": null
    },
@@ -60400,7 +60459,7 @@
    ],
    "ours": [],
    "athletes": [
-    "Владимир Гудэенко",
+    "Владимир Гудзенко",
     "Владислав Виниченко",
     "Данил Золотарев",
     "Денис Никитин",
@@ -60434,7 +60493,7 @@
    "desc": "Начало: 16:00 МСК\nТрансляция: Первый канал / VK Видео",
    "field": [
     {
-     "name": "Владимир Гудэенко",
+     "name": "Владимир Гудзенко",
      "nation": "КОС"
     },
     {
@@ -60523,7 +60582,7 @@
      "Владислав ВИНИЧЕНКО": "Владислав Виниченко",
      "Максим ГАЛКИН": "Максим Галкин",
      "Михаил ГОЛОЯД": "Михаил Голояд",
-     "Владимир ГУДЭЕНКО": "Владимир Гудэенко",
+     "Владимир ГУДЗЕНКО": "Владимир Гудзенко",
      "Данил ЗОЛОТАРЕВ": "Данил Золотарев",
      "Денис НИКИТИН": "Денис Никитин",
      "Егор НИКИТИН": "Егор Никитин",
@@ -63434,9 +63493,95 @@
    "venue": "Zagreb, Croatia",
    "start": "2026-12-02",
    "end": "2026-12-05",
-   "ours": [],
-   "ours_nation": {},
-   "athletes": [],
+   "ours": [
+    "Анна Фролова",
+    "Анна Щербакова / Егор Гончаров",
+    "Виктория Пласконная / Владислав Сыцик",
+    "Елизавета Шичина / Павел Дрозд",
+    "Камилла Нелюбова",
+    "Милана Кузьмина / Дмитрий Студеникин",
+    "Николай Угожаев"
+   ],
+   "ours_nation": {
+    "Анна Фролова": "RUS",
+    "Анна Щербакова / Егор Гончаров": "RUS",
+    "Виктория Пласконная / Владислав Сыцик": "BLR",
+    "Елизавета Шичина / Павел Дрозд": "RUS",
+    "Камилла Нелюбова": "RUS",
+    "Милана Кузьмина / Дмитрий Студеникин": "RUS",
+    "Николай Угожаев": "RUS"
+   },
+   "athletes": [
+    "Arlet Levandi",
+    "Artur Smagulov",
+    "Barbora Vrankova",
+    "Christina Carreira / Anthony Ponomarenko",
+    "Corey Circelli",
+    "Davide Lewton Brain",
+    "Elena Agostinelli",
+    "Eugenia Sekulovski",
+    "Euken Alberdi",
+    "Flora Marie Schaller",
+    "Gabriel Martinez",
+    "Gabriela Palomeque / Tanner White",
+    "Gioia Fiori",
+    "Guiu Oliver",
+    "Hannah Frank",
+    "Iida Karhunen",
+    "Isabeau Levito",
+    "Jolanda Vos",
+    "Katerina Mrazkova / Daniel Mrazek",
+    "Kristina Dobroserdova / Ярослав Нечаев",
+    "Leah Neset / Artem Markelov",
+    "Lev Vinokur",
+    "Livia Kaiser",
+    "Lucas Broussard",
+    "Lucia Jackova",
+    "Lukas Britschgi",
+    "Maksim Varakin",
+    "Marie-Jade Lauriault / Romain Le Gac",
+    "Marietta Atkins",
+    "Mariia Arutiunian",
+    "Mariia Ignateva / Danijil Leonyidovics Szemko",
+    "Mariia Kryzhova",
+    "Maxine Bautista",
+    "Michelle Dicicco",
+    "Michelle Edgina Axille",
+    "Mikayel Salazaryan",
+    "Milla Ruud Reitan / Nikolaj Majorov",
+    "Nataly Langerbaur",
+    "Nico Steffen",
+    "Nikolaj Memola",
+    "Noah Bodenstein",
+    "Oleg Melnikov",
+    "Olga Mikutina",
+    "Oliver Praetorius",
+    "Olivia Lengyelova",
+    "Oliwia Strokosz",
+    "Oona Brown / Gage Brown",
+    "Oona Ounasvuori",
+    "Pablo Garcia",
+    "Patrick Blackwell",
+    "Raffaele Francesco Zich",
+    "Sara Franzi",
+    "Sarah Everhardt",
+    "Sarina Joos",
+    "Selma Valitalo",
+    "Sofia Val / Asaf Kazimov",
+    "Sofiia Hryhorenko",
+    "Ula Zadnikar",
+    "Xavier Vauclin",
+    "Yelyzaveta Babenko",
+    "Zala Grum",
+    "Анна Фролова",
+    "Анна Щербакова / Егор Гончаров",
+    "Виктория Пласконная / Владислав Сыцик",
+    "Елизавета Шичина / Павел Дрозд",
+    "Камилла Нелюбова",
+    "Макар Николаев",
+    "Милана Кузьмина / Дмитрий Студеникин",
+    "Николай Угожаев"
+   ],
    "broadcast": [
     "Ice-Stars.TV"
    ],
@@ -66912,6 +67057,7 @@
   "Влада Ершова",
   "Владимир Вавилов",
   "Владимир Гилев",
+  "Владимир Гудзенко",
   "Владимир Гудэенко",
   "Владимир Кузнецов",
   "Владимир Онищук",
@@ -81204,9 +81350,10 @@
    "p": "c7334ba71cfa"
   },
   {
-   "n": "Владимир Гудэенко",
+   "n": "Владимир Гудзенко",
    "c": "RUS",
-   "k": "M"
+   "k": "M",
+   "p": "a154ff8e3b78"
   },
   {
    "n": "Владимир Кузнецов",
@@ -84763,6 +84910,13 @@
    "c": "RUS",
    "k": "",
    "p": "b87112a41735"
+  },
+  {
+   "n": "Владимир Гудэенко",
+   "c": "RUS",
+   "k": "",
+   "was": "M",
+   "y": ""
   },
   {
    "n": "Александра Кузнецова",
@@ -102207,5 +102361,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "442d782742a52f5a"
+ "rev": "e95e6f7e4bd01849"
 }
