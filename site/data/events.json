@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T16:19:32+03:00",
- "checked": "2026-11-20T14:31:28.148707+00:00",
+ "checked": "2026-11-20T14:35:29.481774+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59141,7 +59141,7 @@
      "time": "16:43",
      "no": 2,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "49.35"
     },
     {
@@ -59186,7 +59186,7 @@
      "time": "17:22",
      "no": 7,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "50.68"
     },
     {
@@ -59194,7 +59194,9 @@
      "nation": "ITA",
      "time": "17:28",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6,
+     "points": "57.71"
     },
     {
      "name": "Haein Lee",
@@ -102638,5 +102640,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "fc4239d3fd4bfdb4"
+ "rev": "c2cb71d8f4b80d70"
 }
