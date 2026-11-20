@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-20T18:23:59+03:00",
- "checked": "2026-11-20T16:47:28.951939+00:00",
+ "generated": "2026-11-20T19:28:25+03:00",
+ "checked": "2026-11-20T19:28:25+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55418,7 +55418,7 @@
      "points": "58.30"
     }
    ],
-   "desc": "Итог:\n1. Таисия Лепихина — 62.27\n2. Софья Лукина — 61.23\n3. София Ермолова — 58.30\n\nНачало: 16:05 МСК\nТрансляция: Первый канал",
+   "desc": "Промежуточные итоги:\n1. Таисия Лепихина — 62.27\n2. Софья Лукина — 61.23\n3. София Ермолова — 58.30\n\nНачало: 16:05 МСК\nТрансляция: Первый канал",
    "field": [
     {
      "name": "Таисия Лепихина",
@@ -55477,6 +55477,7 @@
      "points": "61.23"
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
     "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG013.HTM",
@@ -58998,9 +58999,9 @@
    },
    "facts": [
     {
-     "who": "Виктория Стрельцова",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Виктория Стрельцова"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
@@ -59365,19 +59366,19 @@
    },
    "facts": [
     {
-     "who": "Mao Shimada",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Mao Shimada"
     },
     {
-     "who": "Yuseong Kim",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Yuseong Kim"
     },
     {
-     "who": "Seoyoung Kim",
+     "kind": "score",
      "text": "Личный рекорд за КП: 69.03 (был 68.75)",
-     "kind": "score"
+     "who": "Seoyoung Kim"
     }
    ],
    "proto": "isu_isu-gp-finlandia-trophy-2026.json"
@@ -59467,7 +59468,7 @@
      "nation": "ТАТ",
      "no": 2,
      "warmup": 1,
-     "place": 15,
+     "place": 14,
      "points": "52.23",
      "time": "17:42"
     },
@@ -59499,6 +59500,87 @@
      "time": "18:03"
     },
     {
+     "name": "Марк Аникиенко",
+     "nation": "ЧЕЛ",
+     "no": 6,
+     "warmup": 2,
+     "place": 12,
+     "points": "55.94",
+     "time": "18:08"
+    },
+    {
+     "name": "Лев Бобык",
+     "nation": "НИЖ",
+     "no": 7,
+     "warmup": 2,
+     "place": 2,
+     "points": "70.51",
+     "time": "18:13"
+    },
+    {
+     "name": "Марк Титов",
+     "nation": "ТАТ",
+     "no": 8,
+     "warmup": 2,
+     "place": 13,
+     "points": "54.46",
+     "time": "18:17"
+    },
+    {
+     "name": "Степан Юров",
+     "nation": "МОС",
+     "no": 9,
+     "warmup": 2,
+     "place": 4,
+     "points": "62.90",
+     "time": "18:22"
+    },
+    {
+     "name": "Михаил Голояд",
+     "nation": "БЕЛ",
+     "no": 10,
+     "warmup": 3,
+     "place": 8,
+     "points": "60.08",
+     "time": "18:49"
+    },
+    {
+     "name": "Иван Теленков",
+     "nation": "МОБ",
+     "no": 11,
+     "warmup": 3,
+     "place": 7,
+     "points": "60.21",
+     "time": "18:54"
+    },
+    {
+     "name": "Егор Никитин",
+     "nation": "ИВА",
+     "no": 12,
+     "warmup": 3,
+     "place": 11,
+     "points": "56.68",
+     "time": "18:58"
+    },
+    {
+     "name": "Искандер Амиров",
+     "nation": "ТАТ",
+     "no": 13,
+     "warmup": 3,
+     "place": 6,
+     "points": "60.38",
+     "time": "19:03"
+    },
+    {
+     "name": "Илья Старков",
+     "nation": "ЛОБ",
+     "no": 14,
+     "warmup": 3,
+     "place": 3,
+     "points": "70.43",
+     "time": "19:08"
+    },
+    {
      "name": "Владимир Гудзенко",
      "nation": "КОС",
      "time": "19:25",
@@ -59522,42 +59604,6 @@
      "warmup": 4
     },
     {
-     "name": "Егор Никитин",
-     "nation": "ИВА",
-     "time": "18:58",
-     "no": 12,
-     "warmup": 3,
-     "place": 12,
-     "points": "56.68"
-    },
-    {
-     "name": "Иван Теленков",
-     "nation": "МОБ",
-     "time": "18:54",
-     "no": 11,
-     "warmup": 3,
-     "place": 7,
-     "points": "60.21"
-    },
-    {
-     "name": "Илья Старков",
-     "nation": "ЛОБ",
-     "time": "19:08",
-     "no": 14,
-     "warmup": 3,
-     "place": 3,
-     "points": "70.43"
-    },
-    {
-     "name": "Искандер Амиров",
-     "nation": "ТАТ",
-     "time": "19:03",
-     "no": 13,
-     "warmup": 3,
-     "place": 6,
-     "points": "60.38"
-    },
-    {
      "name": "Кирилл Былинин",
      "nation": "ЧЕЛ",
      "time": "19:39",
@@ -59565,58 +59611,11 @@
      "warmup": 4
     },
     {
-     "name": "Лев Бобык",
-     "nation": "НИЖ",
-     "time": "18:13",
-     "no": 7,
-     "warmup": 2,
-     "place": 2,
-     "points": "70.51"
-    },
-    {
      "name": "Макар Ушаков",
      "nation": "ПРМ",
      "time": "19:20",
      "no": 15,
-     "warmup": 4,
-     "place": 16,
-     "points": "46.48"
-    },
-    {
-     "name": "Марк Аникиенко",
-     "nation": "ЧЕЛ",
-     "time": "18:08",
-     "no": 6,
-     "warmup": 2,
-     "place": 13,
-     "points": "55.94"
-    },
-    {
-     "name": "Марк Титов",
-     "nation": "ТАТ",
-     "time": "18:17",
-     "no": 8,
-     "warmup": 2,
-     "place": 14,
-     "points": "54.46"
-    },
-    {
-     "name": "Михаил Голояд",
-     "nation": "БЕЛ",
-     "time": "18:49",
-     "no": 10,
-     "warmup": 3,
-     "place": 8,
-     "points": "60.08"
-    },
-    {
-     "name": "Степан Юров",
-     "nation": "МОС",
-     "time": "18:22",
-     "no": 9,
-     "warmup": 2,
-     "place": 4,
-     "points": "62.90"
+     "warmup": 4
     }
    ],
    "provisional": true,
@@ -59627,19 +59626,19 @@
     "first": null,
     "names": {
      "Ильяс ХАЛИУЛЛИН": "Ильяс Халиуллин",
+     "Лев БОБЫК": "Лев Бобык",
+     "Илья СТАРКОВ": "Илья Старков",
+     "Степан ЮРОВ": "Степан Юров",
      "Леонид НОВОЖИЛОВ": "Леонид Новожилов",
+     "Искандер АМИРОВ": "Искандер Амиров",
+     "Иван ТЕЛЕНКОВ": "Иван Теленков",
+     "Михаил ГОЛОЯД": "Михаил Голояд",
      "Максим ГАЛКИН": "Максим Галкин",
      "Роман ЧИРКОВ": "Роман Чирков",
-     "Данил ЗОЛОТАРЕВ": "Данил Золотарев",
-     "Марк АНИКИЕНКО": "Марк Аникиенко",
-     "Лев БОБЫК": "Лев Бобык",
-     "Марк ТИТОВ": "Марк Титов",
-     "Степан ЮРОВ": "Степан Юров",
-     "Михаил ГОЛОЯД": "Михаил Голояд",
-     "Иван ТЕЛЕНКОВ": "Иван Теленков",
      "Егор НИКИТИН": "Егор Никитин",
-     "Искандер АМИРОВ": "Искандер Амиров",
-     "Илья СТАРКОВ": "Илья Старков",
+     "Марк АНИКИЕНКО": "Марк Аникиенко",
+     "Марк ТИТОВ": "Марк Титов",
+     "Данил ЗОЛОТАРЕВ": "Данил Золотарев",
      "Макар УШАКОВ": "Макар Ушаков",
      "Владимир ГУДЗЕНКО": "Владимир Гудзенко",
      "Денис НИКИТИН": "Денис Никитин",
@@ -59692,135 +59691,6 @@
      "url": "https://www.youtube.com/watch?v=q-UDEDFe0L4"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Mihhail Selevko — 85.01\n2. Yudong Chen — 82.88\n3. Andreas Nordeback — 82.08\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
-    {
-     "name": "Matias Lindfors",
-     "nation": "FIN",
-     "time": "18:32",
-     "no": 1,
-     "warmup": 1,
-     "place": 7,
-     "points": "76.74"
-    },
-    {
-     "name": "Yudong Chen",
-     "nation": "CHN",
-     "time": "18:38",
-     "no": 2,
-     "warmup": 1,
-     "place": 2,
-     "points": "82.88"
-    },
-    {
-     "name": "Andreas Nordeback",
-     "nation": "SWE",
-     "time": "18:45",
-     "no": 3,
-     "warmup": 1,
-     "place": 3,
-     "points": "82.08"
-    },
-    {
-     "name": "Arlet Levandi",
-     "nation": "EST",
-     "time": "18:51",
-     "no": 4,
-     "warmup": 1,
-     "place": 5,
-     "points": "78.48"
-    },
-    {
-     "name": "Kyrylo Marsak",
-     "nation": "UKR",
-     "time": "18:57",
-     "no": 5,
-     "warmup": 1,
-     "place": 10,
-     "points": "72.10"
-    },
-    {
-     "name": "Tamir Kuperman",
-     "nation": "ISR",
-     "time": "19:03",
-     "no": 6,
-     "warmup": 1,
-     "place": 8,
-     "points": "75.82"
-    },
-    {
-     "name": "Genrikh Gartung",
-     "nation": "GER",
-     "time": "19:17",
-     "no": 7,
-     "warmup": 2,
-     "place": 9,
-     "points": "72.19"
-    },
-    {
-     "name": "Stephen Gogolev",
-     "nation": "CAN",
-     "time": "19:23",
-     "no": 8,
-     "warmup": 2,
-     "place": 6,
-     "points": "76.88"
-    },
-    {
-     "name": "Mihhail Selevko",
-     "nation": "EST",
-     "time": "19:29",
-     "no": 9,
-     "warmup": 2,
-     "place": 1,
-     "points": "85.01"
-    },
-    {
-     "name": "Kazuki Tomono",
-     "nation": "JPN",
-     "time": "19:36",
-     "no": 10,
-     "warmup": 2,
-     "place": 4,
-     "points": "79.45"
-    },
-    {
-     "name": "Nika Egadze",
-     "nation": "GEO",
-     "time": "19:42",
-     "no": 11,
-     "warmup": 2
-    },
-    {
-     "name": "Adam Siao Him Fa",
-     "nation": "FRA",
-     "time": "19:48",
-     "no": 12,
-     "warmup": 2
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG001.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Matias LINDFORS": "Matias Lindfors",
-     "Yudong CHEN": "Yudong Chen",
-     "Andreas NORDEBACK": "Andreas Nordeback",
-     "Arlet LEVANDI": "Arlet Levandi",
-     "Kyrylo MARSAK": "Kyrylo Marsak",
-     "Tamir KUPERMAN": "Tamir Kuperman",
-     "Genrikh GARTUNG": "Genrikh Gartung",
-     "Stephen GOGOLEV": "Stephen Gogolev",
-     "Mihhail SELEVKO": "Mihhail Selevko",
-     "Kazuki TOMONO": "Kazuki Tomono",
-     "Nika EGADZE": "Nika Egadze",
-     "Adam SIAO HIM FA": "Adam Siao Him Fa"
-    },
-    "basis": null
-   },
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json",
    "podium": [
     {
      "place": 1,
@@ -59841,7 +59711,132 @@
      "points": "82.08"
     }
    ],
-   "provisional": true
+   "desc": "Промежуточные итоги:\n1. Yudong Chen — 82.88\n2. Andreas Nordeback — 82.08\n3. Arlet Levandi — 78.48\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Matias Lindfors",
+     "nation": "FIN",
+     "no": 1,
+     "warmup": 15,
+     "place": 5,
+     "points": "76.74",
+     "time": "18:32"
+    },
+    {
+     "name": "Yudong Chen",
+     "nation": "CHN",
+     "no": 2,
+     "warmup": 15,
+     "place": 1,
+     "points": "82.88",
+     "time": "18:38"
+    },
+    {
+     "name": "Andreas Nordeback",
+     "nation": "SWE",
+     "no": 3,
+     "warmup": 15,
+     "place": 2,
+     "points": "82.08",
+     "time": "18:45"
+    },
+    {
+     "name": "Arlet Levandi",
+     "nation": "EST",
+     "no": 4,
+     "warmup": 15,
+     "place": 3,
+     "points": "78.48",
+     "time": "18:51"
+    },
+    {
+     "name": "Kyrylo Marsak",
+     "nation": "UKR",
+     "no": 5,
+     "warmup": 15,
+     "place": 8,
+     "points": "72.10",
+     "time": "18:57"
+    },
+    {
+     "name": "Tamir Kuperman",
+     "nation": "ISR",
+     "no": 6,
+     "warmup": 15,
+     "place": 6,
+     "points": "75.82",
+     "time": "19:03"
+    },
+    {
+     "name": "Genrikh Gartung",
+     "nation": "GER",
+     "no": 7,
+     "warmup": 2,
+     "place": 7,
+     "points": "72.19",
+     "time": "19:17"
+    },
+    {
+     "name": "Stephen Gogolev",
+     "nation": "CAN",
+     "no": 8,
+     "warmup": 2,
+     "place": 4,
+     "points": "76.88",
+     "time": "19:23"
+    },
+    {
+     "name": "Adam Siao Him Fa",
+     "nation": "FRA",
+     "time": "19:48",
+     "no": 12,
+     "warmup": 2
+    },
+    {
+     "name": "Kazuki Tomono",
+     "nation": "JPN",
+     "time": "19:36",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "time": "19:29",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Nika Egadze",
+     "nation": "GEO",
+     "time": "19:42",
+     "no": 11,
+     "warmup": 2
+    }
+   ],
+   "provisional": true,
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Yudong CHEN": "Yudong Chen",
+     "Andreas NORDEBACK": "Andreas Nordeback",
+     "Arlet LEVANDI": "Arlet Levandi",
+     "Stephen GOGOLEV": "Stephen Gogolev",
+     "Matias LINDFORS": "Matias Lindfors",
+     "Tamir KUPERMAN": "Tamir Kuperman",
+     "Genrikh GARTUNG": "Genrikh Gartung",
+     "Kyrylo MARSAK": "Kyrylo Marsak",
+     "Mihhail SELEVKO": "Mihhail Selevko",
+     "Kazuki TOMONO": "Kazuki Tomono",
+     "Nika EGADZE": "Nika Egadze",
+     "Adam SIAO HIM FA": "Adam Siao Him Fa"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-junior-pp",
@@ -59876,87 +59871,6 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Jolena Grohne / Manuel Rossi — 80.13\n2. Leontina Horcickova / Jindrich Klement — 76.54\n3. Romane Telemaque / Lucas Coulon — 75.19\n\nНачало: 18:45 МСК\nТрансляция: Ice-Stars.TV",
-   "field": [
-    {
-     "name": "Naomie Ismaili / Leo Rouvrais",
-     "nation": "FRA",
-     "time": "18:51",
-     "no": 1,
-     "warmup": 1,
-     "place": 6,
-     "points": "54.21"
-    },
-    {
-     "name": "Romane Telemaque / Lucas Coulon",
-     "nation": "FRA",
-     "time": "18:58",
-     "no": 2,
-     "warmup": 1,
-     "place": 3,
-     "points": "75.19"
-    },
-    {
-     "name": "Leontina Horcickova / Jindrich Klement",
-     "nation": "CZE",
-     "time": "19:05",
-     "no": 3,
-     "warmup": 1,
-     "place": 2,
-     "points": "76.54"
-    },
-    {
-     "name": "Laura Heckova / Alex Valky",
-     "nation": "SVK",
-     "time": "19:19",
-     "no": 4,
-     "warmup": 2,
-     "place": 4,
-     "points": "73.67"
-    },
-    {
-     "name": "Clelia Liget-latus / Allan Daniel Fisher",
-     "nation": "FRA",
-     "time": "19:26",
-     "no": 5,
-     "warmup": 2,
-     "place": 5,
-     "points": "68.67"
-    },
-    {
-     "name": "Jolena Grohne / Manuel Rossi",
-     "nation": "ITA",
-     "time": "19:33",
-     "no": 6,
-     "warmup": 2,
-     "place": 1,
-     "points": "80.13"
-    },
-    {
-     "name": "Злата Камалова / Данил Панов",
-     "nation": "GEO",
-     "time": "19:40",
-     "no": 7,
-     "warmup": 2
-    }
-   ],
-   "live": {
-    "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
-    "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG014.htm",
-    "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT007RS.htm",
-    "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG013.htm",
-    "names": {
-     "Naomie ISMAILI / Leo ROUVRAIS": "Naomie Ismaili / Leo Rouvrais",
-     "Romane TELEMAQUE / Lucas COULON": "Romane Telemaque / Lucas Coulon",
-     "Leontina HORCICKOVA / Jindrich KLEMENT": "Leontina Horcickova / Jindrich Klement",
-     "Laura HECKOVA / Alex VALKY": "Laura Heckova / Alex Valky",
-     "Clelia LIGET-LATUS / Allan Daniel FISHER": "Clelia Liget-latus / Allan Daniel Fisher",
-     "Jolena GROHNE / Manuel ROSSI": "Jolena Grohne / Manuel Rossi",
-     "Zlata KAMALOVA / Danil PANOV": "Злата Камалова / Данил Панов"
-    },
-    "basis": null
-   },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
    "podium": [
     {
      "place": 1,
@@ -59975,9 +59889,94 @@
      "name": "Romane Telemaque / Lucas Coulon",
      "nation": "FRA",
      "points": "75.19"
+    },
+    {
+     "place": 3,
+     "name": "Laura Heckova / Alex Valky",
+     "nation": "SVK",
+     "points": "73.67"
     }
    ],
-   "provisional": true
+   "desc": "Промежуточные итоги:\n1. Leontina Horcickova / Jindrich Klement — 76.54\n2. Romane Telemaque / Lucas Coulon — 75.19\n3. Laura Heckova / Alex Valky — 73.67\n\nНачало: 18:45 МСК\nТрансляция: Ice-Stars.TV",
+   "field": [
+    {
+     "name": "Clelia Liget-latus / Allan Daniel Fisher",
+     "nation": "FRA",
+     "place": 4,
+     "points": "68.67",
+     "time": "19:26",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Jolena Grohne / Manuel Rossi",
+     "nation": "ITA",
+     "time": "19:33",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Laura Heckova / Alex Valky",
+     "nation": "SVK",
+     "place": 3,
+     "points": "73.67",
+     "time": "19:19",
+     "no": 4,
+     "warmup": 2
+    },
+    {
+     "name": "Leontina Horcickova / Jindrich Klement",
+     "nation": "CZE",
+     "place": 1,
+     "points": "76.54",
+     "time": "19:05",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Naomie Ismaili / Leo Rouvrais",
+     "nation": "FRA",
+     "place": 5,
+     "points": "54.21",
+     "time": "18:51",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Romane Telemaque / Lucas Coulon",
+     "nation": "FRA",
+     "place": 2,
+     "points": "75.19",
+     "time": "18:58",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Злата Камалова / Данил Панов",
+     "nation": "GEO",
+     "time": "19:40",
+     "no": 7,
+     "warmup": 2
+    }
+   ],
+   "provisional": true,
+   "live": {
+    "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
+    "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG014.htm",
+    "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT007RS.htm",
+    "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG013.htm",
+    "names": {
+     "Laura HECKOVA / Alex VALKY": "Laura Heckova / Alex Valky",
+     "Leontina HORCICKOVA / Jindrich KLEMENT": "Leontina Horcickova / Jindrich Klement",
+     "Clelia LIGET-LATUS / Allan Daniel FISHER": "Clelia Liget-latus / Allan Daniel Fisher",
+     "Romane TELEMAQUE / Lucas COULON": "Romane Telemaque / Lucas Coulon",
+     "Naomie ISMAILI / Leo ROUVRAIS": "Naomie Ismaili / Leo Rouvrais",
+     "Jolena GROHNE / Manuel ROSSI": "Jolena Grohne / Manuel Rossi",
+     "Zlata KAMALOVA / Danil PANOV": "Злата Камалова / Данил Панов"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-senior-pp",
@@ -103046,5 +103045,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "677fbbe2338e56e9"
+ "rev": "7bd3e24946eb32cf"
 }
