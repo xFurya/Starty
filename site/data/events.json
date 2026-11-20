@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-20T12:35:29+03:00",
- "checked": "2026-11-20T10:55:01.896234+00:00",
+ "generated": "2026-11-20T13:39:32+03:00",
+ "checked": "2026-11-20T13:39:32+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58058,16 +58058,36 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Gabrielle Daleman — 98.02\n2. Karolina Bialas — 95.65\n3. Zhasmin Shlaga — 87.11\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Gabrielle Daleman",
+     "nation": "CAN",
+     "points": "98.02"
+    },
+    {
+     "place": 2,
+     "name": "Haruna Murakami",
+     "nation": "AUS",
+     "points": "85.57"
+    },
+    {
+     "place": 3,
+     "name": "Olesja Leonova",
+     "nation": "EST",
+     "points": "74.95"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Gabrielle Daleman — 98.02\n2. Haruna Murakami — 85.57\n3. Olesja Leonova — 74.95\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Afrina Diyanah",
      "nation": "MAS",
+     "place": 6,
+     "points": "51.30",
      "time": "12:44",
      "no": 2,
-     "warmup": 1,
-     "place": 8,
-     "points": "51.30"
+     "warmup": 1
     },
     {
      "name": "Anastasija Konga",
@@ -58107,11 +58127,11 @@
     {
      "name": "Emilija Ozola",
      "nation": "LAT",
+     "place": 5,
+     "points": "54.86",
      "time": "12:59",
      "no": 4,
-     "warmup": 1,
-     "place": 7,
-     "points": "54.86"
+     "warmup": 1
     },
     {
      "name": "Eugenia Sekulovski",
@@ -58130,6 +58150,8 @@
     {
      "name": "Gabrielle Daleman",
      "nation": "CAN",
+     "place": 1,
+     "points": "98.02",
      "time": "13:29",
      "no": 7,
      "warmup": 2,
@@ -58139,11 +58161,11 @@
     {
      "name": "Haruna Murakami",
      "nation": "AUS",
+     "place": 2,
+     "points": "85.57",
      "time": "13:07",
      "no": 5,
-     "warmup": 1,
-     "place": 4,
-     "points": "85.57"
+     "warmup": 1
     },
     {
      "name": "Josefin Brovall",
@@ -58162,11 +58184,11 @@
     {
      "name": "Karoliine Raudsepp",
      "nation": "EST",
+     "place": 4,
+     "points": "64.69",
      "time": "12:52",
      "no": 3,
-     "warmup": 1,
-     "place": 6,
-     "points": "64.69"
+     "warmup": 1
     },
     {
      "name": "Karolina Bialas",
@@ -58229,11 +58251,11 @@
     {
      "name": "Michelle Dicicco",
      "nation": "ARG",
+     "place": 7,
+     "points": "41.51",
      "time": "12:36",
      "no": 1,
-     "warmup": 1,
-     "place": 9,
-     "points": "41.51"
+     "warmup": 1
     },
     {
      "name": "Nela Snebergerova",
@@ -58252,11 +58274,11 @@
     {
      "name": "Olesja Leonova",
      "nation": "EST",
+     "place": 3,
+     "points": "74.95",
      "time": "13:21",
      "no": 6,
-     "warmup": 2,
-     "place": 5,
-     "points": "74.95"
+     "warmup": 2
     },
     {
      "name": "Oona Ounasvuori",
@@ -58310,19 +58332,20 @@
      "points": "87.11"
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG004.htm",
     "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT002RS.htm",
     "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG003.htm",
     "names": {
-     "Michelle DICICCO": "Michelle Dicicco",
-     "Afrina DIYANAH": "Afrina Diyanah",
-     "Karoliine RAUDSEPP": "Karoliine Raudsepp",
-     "Emilija OZOLA": "Emilija Ozola",
+     "Gabrielle DALEMAN": "Gabrielle Daleman",
      "Haruna MURAKAMI": "Haruna Murakami",
      "Olesja LEONOVA": "Olesja Leonova",
-     "Gabrielle DALEMAN": "Gabrielle Daleman",
+     "Karoliine RAUDSEPP": "Karoliine Raudsepp",
+     "Emilija OZOLA": "Emilija Ozola",
+     "Afrina DIYANAH": "Afrina Diyanah",
+     "Michelle DICICCO": "Michelle Dicicco",
      "Zhasmin SHLAGA": "Zhasmin Shlaga",
      "Karolina BIALAS": "Karolina Bialas",
      "Julia BROVALL": "Julia Brovall",
@@ -58352,28 +58375,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Gabrielle Daleman",
-     "nation": "CAN",
-     "points": "98.02"
-    },
-    {
-     "place": 2,
-     "name": "Karolina Bialas",
-     "nation": "POL",
-     "points": "95.65"
-    },
-    {
-     "place": 3,
-     "name": "Zhasmin Shlaga",
-     "nation": "KGZ",
-     "points": "87.11"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:women-junior-kp",
@@ -58458,105 +58460,79 @@
      "url": "https://vkvideo.ru/live-38558219_456239877"
     }
    ],
+   "podium": [
+    {
+     "place": 1,
+     "name": "Ксения Бородина",
+     "nation": "УДМ",
+     "points": "59.47"
+    },
+    {
+     "place": 2,
+     "name": "Аделина Усманова",
+     "nation": "ТАТ",
+     "points": "58.59"
+    },
+    {
+     "place": 3,
+     "name": "Агния Хазова",
+     "nation": "ТВЕ",
+     "points": "57.26"
+    }
+   ],
    "desc": "Промежуточные итоги:\n1. Ксения Бородина — 59.47\n2. Аделина Усманова — 58.59\n3. Агния Хазова — 57.26\n\nРоссияне:\n• Виктория Стрельцова — 15:05\n• Софья Смагина — 15:20\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / VK Видео",
    "field": [
     {
      "name": "Ксения Бородина",
      "nation": "УДМ",
-     "time": "13:06",
      "no": 1,
      "warmup": 1,
      "place": 1,
-     "points": "59.47"
+     "points": "59.47",
+     "time": "13:06"
     },
     {
      "name": "Вероника Пенькова",
      "nation": "ЯРО",
-     "time": "13:11",
      "no": 2,
      "warmup": 1,
      "place": 4,
-     "points": "55.99"
+     "points": "55.99",
+     "time": "13:11"
     },
     {
      "name": "Маргарита Котенева",
      "nation": "МАР",
-     "time": "13:15",
      "no": 3,
      "warmup": 1,
-     "place": 6,
-     "points": "38.32"
+     "place": 5,
+     "points": "38.32",
+     "time": "13:15"
     },
     {
      "name": "Агния Хазова",
      "nation": "ТВЕ",
-     "time": "13:20",
      "no": 4,
      "warmup": 1,
      "place": 3,
-     "points": "57.26"
+     "points": "57.26",
+     "time": "13:20"
     },
     {
      "name": "Аделина Усманова",
      "nation": "ТАТ",
-     "time": "13:25",
      "no": 5,
      "warmup": 1,
      "place": 2,
-     "points": "58.59"
+     "points": "58.59",
+     "time": "13:25"
     },
     {
-     "name": "Арина Теслина",
-     "nation": "ВЛГ",
-     "time": "13:36",
-     "no": 6,
-     "warmup": 2,
-     "place": 5,
-     "points": "38.41"
-    },
-    {
-     "name": "Сабина Киселева",
-     "nation": "ПЕН",
-     "time": "13:41",
-     "no": 7,
-     "warmup": 2,
-     "place": 7,
-     "points": "38.27"
-    },
-    {
-     "name": "Дарья Хришкова",
-     "nation": "ЛИП",
-     "time": "13:45",
-     "no": 8,
-     "warmup": 2
-    },
-    {
-     "name": "Риана Ганиева",
-     "nation": "ТАТ",
-     "time": "13:50",
-     "no": 9,
-     "warmup": 2
-    },
-    {
-     "name": "Александра Гришина",
-     "nation": "СВЕ",
-     "time": "13:55",
-     "no": 10,
-     "warmup": 2
-    },
-    {
-     "name": "Мадина Абзипарова",
-     "nation": "ТАТ",
-     "time": "14:06",
-     "no": 11,
-     "warmup": 3
-    },
-    {
-     "name": "Ярослава Быстрова",
-     "nation": "ОМС",
-     "time": "14:10",
-     "no": 12,
-     "warmup": 3
+     "name": "Авелина Бердоносова",
+     "nation": "ПРМ",
+     "time": "16:10",
+     "no": 27,
+     "warmup": 6
     },
     {
      "name": "Аделина Камалова",
@@ -58566,46 +58542,18 @@
      "warmup": 3
     },
     {
-     "name": "София Самуйлик",
-     "nation": "СТА",
-     "time": "14:20",
-     "no": 14,
-     "warmup": 3
+     "name": "Александра Анушова",
+     "nation": "МОБ",
+     "time": "16:54",
+     "no": 35,
+     "warmup": 7
     },
     {
-     "name": "Вероника Шиленкова",
-     "nation": "МРД",
-     "time": "14:24",
-     "no": 15,
-     "warmup": 3
-    },
-    {
-     "name": "Валерия Иорданова",
-     "nation": "СМО",
-     "time": "14:51",
-     "no": 16,
-     "warmup": 4
-    },
-    {
-     "name": "Ярослава Баринова",
-     "nation": "ТАТ",
-     "time": "14:55",
-     "no": 17,
-     "warmup": 4
-    },
-    {
-     "name": "Милана Ишкина",
-     "nation": "САМ",
-     "time": "15:00",
-     "no": 18,
-     "warmup": 4
-    },
-    {
-     "name": "Виктория Стрельцова",
-     "nation": "МОС",
-     "time": "15:05",
-     "no": 19,
-     "warmup": 4
+     "name": "Александра Гришина",
+     "nation": "СВЕ",
+     "time": "13:55",
+     "no": 10,
+     "warmup": 2
     },
     {
      "name": "Анастасия Выровая",
@@ -58615,17 +58563,66 @@
      "warmup": 4
     },
     {
-     "name": "Софья Смагина",
-     "nation": "МОС",
-     "time": "15:20",
-     "no": 21,
+     "name": "Анастасия Кондык",
+     "nation": "ЧУВ",
+     "time": "15:34",
+     "no": 24,
      "warmup": 5
     },
     {
-     "name": "Кира Кузнецова",
-     "nation": "ТАТ",
-     "time": "15:25",
-     "no": 22,
+     "name": "Арина Теслина",
+     "nation": "ВЛГ",
+     "time": "13:36",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Арина Чернобавская",
+     "nation": "ИВА",
+     "time": "16:44",
+     "no": 33,
+     "warmup": 7
+    },
+    {
+     "name": "Валерия Иорданова",
+     "nation": "СМО",
+     "time": "14:51",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Вероника Шиленкова",
+     "nation": "МРД",
+     "time": "14:24",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Виктория Стрельцова",
+     "nation": "МОС",
+     "time": "15:05",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Дана Титова",
+     "nation": "ТУЛ",
+     "time": "16:15",
+     "no": 28,
+     "warmup": 6
+    },
+    {
+     "name": "Дарья Хришкова",
+     "nation": "ЛИП",
+     "time": "13:45",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Дарья Царькова",
+     "nation": "БАШ",
+     "time": "15:44",
+     "no": 26,
      "warmup": 5
     },
     {
@@ -58636,55 +58633,6 @@
      "warmup": 5
     },
     {
-     "name": "Анастасия Кондык",
-     "nation": "ЧУВ",
-     "time": "15:34",
-     "no": 24,
-     "warmup": 5
-    },
-    {
-     "name": "Марьям Зялалова",
-     "nation": "ТАТ",
-     "time": "15:39",
-     "no": 25,
-     "warmup": 5
-    },
-    {
-     "name": "Дарья Царькова",
-     "nation": "БАШ",
-     "time": "15:44",
-     "no": 26,
-     "warmup": 5
-    },
-    {
-     "name": "Авелина Бердоносова",
-     "nation": "ПРМ",
-     "time": "16:10",
-     "no": 27,
-     "warmup": 6
-    },
-    {
-     "name": "Дана Титова",
-     "nation": "ТУЛ",
-     "time": "16:15",
-     "no": 28,
-     "warmup": 6
-    },
-    {
-     "name": "Полина Шишкина",
-     "nation": "ВЛД",
-     "time": "16:19",
-     "no": 29,
-     "warmup": 6
-    },
-    {
-     "name": "Мария Жукова",
-     "nation": "НИЖ",
-     "time": "16:24",
-     "no": 30,
-     "warmup": 6
-    },
-    {
      "name": "Кира Васильева",
      "nation": "КИР",
      "time": "16:29",
@@ -58692,39 +58640,18 @@
      "warmup": 6
     },
     {
-     "name": "Эмилия Марданова",
+     "name": "Кира Кузнецова",
      "nation": "ТАТ",
-     "time": "16:33",
-     "no": 32,
-     "warmup": 6
+     "time": "15:25",
+     "no": 22,
+     "warmup": 5
     },
     {
-     "name": "Арина Чернобавская",
-     "nation": "ИВА",
-     "time": "16:44",
-     "no": 33,
-     "warmup": 7
-    },
-    {
-     "name": "София Нуреева",
-     "nation": "ЧЕЛ",
-     "time": "16:49",
-     "no": 34,
-     "warmup": 7
-    },
-    {
-     "name": "Александра Анушова",
-     "nation": "МОБ",
-     "time": "16:54",
-     "no": 35,
-     "warmup": 7
-    },
-    {
-     "name": "Милада Кожевникова",
+     "name": "Мадина Абзипарова",
      "nation": "ТАТ",
-     "time": "16:58",
-     "no": 36,
-     "warmup": 7
+     "time": "14:06",
+     "no": 11,
+     "warmup": 3
     },
     {
      "name": "Маргарита Игонова",
@@ -58734,13 +58661,105 @@
      "warmup": 7
     },
     {
+     "name": "Мария Жукова",
+     "nation": "НИЖ",
+     "time": "16:24",
+     "no": 30,
+     "warmup": 6
+    },
+    {
      "name": "Мария Лагутченко",
      "nation": "ТАТ",
      "time": "17:08",
      "no": 38,
      "warmup": 7
+    },
+    {
+     "name": "Марьям Зялалова",
+     "nation": "ТАТ",
+     "time": "15:39",
+     "no": 25,
+     "warmup": 5
+    },
+    {
+     "name": "Милада Кожевникова",
+     "nation": "ТАТ",
+     "time": "16:58",
+     "no": 36,
+     "warmup": 7
+    },
+    {
+     "name": "Милана Ишкина",
+     "nation": "САМ",
+     "time": "15:00",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Полина Шишкина",
+     "nation": "ВЛД",
+     "time": "16:19",
+     "no": 29,
+     "warmup": 6
+    },
+    {
+     "name": "Риана Ганиева",
+     "nation": "ТАТ",
+     "time": "13:50",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Сабина Киселева",
+     "nation": "ПЕН",
+     "time": "13:41",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "София Нуреева",
+     "nation": "ЧЕЛ",
+     "time": "16:49",
+     "no": 34,
+     "warmup": 7
+    },
+    {
+     "name": "София Самуйлик",
+     "nation": "СТА",
+     "time": "14:20",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Софья Смагина",
+     "nation": "МОС",
+     "time": "15:20",
+     "no": 21,
+     "warmup": 5
+    },
+    {
+     "name": "Эмилия Марданова",
+     "nation": "ТАТ",
+     "time": "16:33",
+     "no": 32,
+     "warmup": 6
+    },
+    {
+     "name": "Ярослава Баринова",
+     "nation": "ТАТ",
+     "time": "14:55",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Ярослава Быстрова",
+     "nation": "ОМС",
+     "time": "14:10",
+     "no": 12,
+     "warmup": 3
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/idel_2026/index.htm",
     "seg": "https://fsrussia.ru/results/2627/idel_2026/SEG007.htm",
@@ -58748,10 +58767,10 @@
     "first": null,
     "names": {
      "Ксения БОРОДИНА": "Ксения Бородина",
+     "Аделина УСМАНОВА": "Аделина Усманова",
+     "Агния ХАЗОВА": "Агния Хазова",
      "Вероника ПЕНЬКОВА": "Вероника Пенькова",
      "Маргарита КОТЕНЕВА": "Маргарита Котенева",
-     "Агния ХАЗОВА": "Агния Хазова",
-     "Аделина УСМАНОВА": "Аделина Усманова",
      "Арина ТЕСЛИНА": "Арина Теслина",
      "Сабина КИСЕЛЕВА": "Сабина Киселева",
      "Дарья ХРИШКОВА": "Дарья Хришкова",
@@ -58788,28 +58807,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Ксения Бородина",
-     "nation": "УДМ",
-     "points": "59.47"
-    },
-    {
-     "place": 2,
-     "name": "Аделина Усманова",
-     "nation": "ТАТ",
-     "points": "58.59"
-    },
-    {
-     "place": 3,
-     "name": "Агния Хазова",
-     "nation": "ТВЕ",
-     "points": "57.26"
-    }
-   ],
-   "provisional": true
+   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:pairs-senior-kp",
@@ -63301,7 +63299,6 @@
     "Ekaterina Kurakova",
     "Emese Csiszer / Mark Shapiro",
     "Evelina Stavickyte",
-    "Evgeniia Lopareva / Geoffrey Brissaud",
     "Georgii Reshtenko",
     "Gioia Fiori",
     "Giulia Isabella Paolino / Andrea Tuba",
@@ -63334,7 +63331,6 @@
     "Matvii Yefymenko",
     "Meda Variakojyte",
     "Michaela Malkova",
-    "Mikayel Salazaryan",
     "Milana Mozeiko",
     "Milla Ruud Reitan / Nikolaj Majorov",
     "Minja Peltonen",
@@ -63351,7 +63347,6 @@
     "Paula Belevica",
     "Philomene Sabourin / Raul Bermejo",
     "Polina Dzsumanyijazova",
-    "Rakhat Bralin",
     "Samy Hammi",
     "Sarah Nunez / Blake Eisenach",
     "Sayra Bessire",
@@ -102182,5 +102177,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "2778f8a79c2e8fa4"
+ "rev": "271893161c7470be"
 }
