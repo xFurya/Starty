@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T12:35:29+03:00",
- "checked": "2026-11-20T09:55:01.704426+00:00",
+ "checked": "2026-11-20T10:03:02.159176+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58058,7 +58058,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Afrina Diyanah — 51.30\n2. Michelle Dicicco — 41.51\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Karoliine Raudsepp — 64.69\n2. Afrina Diyanah — 51.30\n3. Michelle Dicicco — 41.51\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Afrina Diyanah",
@@ -58066,7 +58066,7 @@
      "time": "12:44",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "51.30"
     },
     {
@@ -58158,7 +58158,9 @@
      "nation": "EST",
      "time": "12:52",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "64.69"
     },
     {
      "name": "Karolina Bialas",
@@ -58222,7 +58224,7 @@
      "time": "12:36",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "41.51"
     },
     {
@@ -58342,12 +58344,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Karoliine Raudsepp",
+     "nation": "EST",
+     "points": "64.69"
+    },
+    {
+     "place": 2,
      "name": "Afrina Diyanah",
      "nation": "MAS",
      "points": "51.30"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Michelle Dicicco",
      "nation": "ARG",
      "points": "41.51"
@@ -102127,5 +102135,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "47a73dc50d264df4"
+ "rev": "1334eb44821c1b40"
 }
