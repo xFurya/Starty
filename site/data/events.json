@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-20T09:22:39+03:00",
- "checked": "2026-11-20T09:22:39+03:00",
+ "generated": "2026-11-20T10:27:42+03:00",
+ "checked": "2026-11-20T10:27:42+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61547,7 +61547,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/tyumenskiy_meridian2026_competition_schedule.pdf",
+   "src": "https://бильман.рф/Events2627/TM2026/index.htm",
    "watch": [
     {
      "name": "Первый канал",
@@ -61555,7 +61555,16 @@
     }
    ],
    "desc": "Начало: 14:30 МСК\nТрансляция: Первый канал",
-   "proto": null
+   "field": [],
+   "live": {
+    "idx": "https://бильман.рф/Events2627/TM2026/index.htm",
+    "seg": "https://бильман.рф/Events2627/TM2026/SEG005.HTM",
+    "cat": null,
+    "first": null,
+    "names": {},
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:men-senior-kp",
@@ -61566,7 +61575,7 @@
    "seg": "КП",
    "title": "Тюменский меридиан — мужчины КП",
    "start": "2026-11-24T16:45:00+03:00",
-   "end": "2026-11-24T17:25:00+03:00",
+   "end": "2026-11-24T18:45:00+03:00",
    "venue": "«Каток Прибой», Тюмень",
    "intl": false,
    "broadcast": [
@@ -61574,7 +61583,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/tyumenskiy_meridian2026_competition_schedule.pdf",
+   "src": "https://бильман.рф/Events2627/TM2026/index.htm",
    "watch": [
     {
      "name": "Первый канал",
@@ -61582,7 +61591,16 @@
     }
    ],
    "desc": "Начало: 16:45 МСК\nТрансляция: Первый канал",
-   "proto": null
+   "field": [],
+   "live": {
+    "idx": "https://бильман.рф/Events2627/TM2026/index.htm",
+    "seg": "https://бильман.рф/Events2627/TM2026/SEG009.HTM",
+    "cat": null,
+    "first": null,
+    "names": {},
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-junior-kp",
@@ -61593,7 +61611,7 @@
    "seg": "КП",
    "title": "Тюменский меридиан — девушки КП",
    "start": "2026-11-25T07:30:00+03:00",
-   "end": "2026-11-25T12:00:00+03:00",
+   "end": "2026-11-25T09:30:00+03:00",
    "venue": "«Каток Прибой», Тюмень",
    "intl": false,
    "broadcast": [
@@ -61601,7 +61619,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/tyumenskiy_meridian2026_competition_schedule.pdf",
+   "src": "https://бильман.рф/Events2627/TM2026/index.htm",
    "watch": [
     {
      "name": "Первый канал",
@@ -61609,7 +61627,16 @@
     }
    ],
    "desc": "Начало: 07:30 МСК\nТрансляция: Первый канал",
-   "proto": null
+   "field": [],
+   "live": {
+    "idx": "https://бильман.рф/Events2627/TM2026/index.htm",
+    "seg": "https://бильман.рф/Events2627/TM2026/SEG007.HTM",
+    "cat": null,
+    "first": null,
+    "names": {},
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-senior-kp",
@@ -61620,7 +61647,7 @@
    "seg": "КП",
    "title": "Тюменский меридиан — женщины КП",
    "start": "2026-11-25T12:15:00+03:00",
-   "end": "2026-11-25T14:30:00+03:00",
+   "end": "2026-11-25T14:15:00+03:00",
    "venue": "«Каток Прибой», Тюмень",
    "intl": false,
    "broadcast": [
@@ -61628,7 +61655,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/tyumenskiy_meridian2026_competition_schedule.pdf",
+   "src": "https://бильман.рф/Events2627/TM2026/index.htm",
    "watch": [
     {
      "name": "Первый канал",
@@ -61636,7 +61663,16 @@
     }
    ],
    "desc": "Начало: 12:15 МСК\nТрансляция: Первый канал",
-   "proto": null
+   "field": [],
+   "live": {
+    "idx": "https://бильман.рф/Events2627/TM2026/index.htm",
+    "seg": "https://бильман.рф/Events2627/TM2026/SEG011.HTM",
+    "cat": null,
+    "first": null,
+    "names": {},
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:men-junior-pp",
@@ -61655,7 +61691,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/tyumenskiy_meridian2026_competition_schedule.pdf",
+   "src": "https://бильман.рф/Events2627/TM2026/index.htm",
    "watch": [
     {
      "name": "Первый канал",
@@ -61663,7 +61699,16 @@
     }
    ],
    "desc": "Начало: 14:45 МСК\nТрансляция: Первый канал",
-   "proto": null
+   "field": [],
+   "live": {
+    "idx": "https://бильман.рф/Events2627/TM2026/index.htm",
+    "seg": "https://бильман.рф/Events2627/TM2026/SEG006.HTM",
+    "cat": "https://бильман.рф/Events2627/TM2026/CAT003RS.HTM",
+    "first": "https://бильман.рф/Events2627/TM2026/SEG005.HTM",
+    "names": {},
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:men-senior-pp",
@@ -61674,7 +61719,7 @@
    "seg": "ПП",
    "title": "Тюменский меридиан — мужчины ПП",
    "start": "2026-11-25T17:30:00+03:00",
-   "end": "2026-11-25T18:20:00+03:00",
+   "end": "2026-11-25T20:00:00+03:00",
    "venue": "«Каток Прибой», Тюмень",
    "intl": false,
    "broadcast": [
@@ -61682,7 +61727,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/tyumenskiy_meridian2026_competition_schedule.pdf",
+   "src": "https://бильман.рф/Events2627/TM2026/index.htm",
    "watch": [
     {
      "name": "Первый канал",
@@ -61690,7 +61735,16 @@
     }
    ],
    "desc": "Начало: 17:30 МСК\nТрансляция: Первый канал",
-   "proto": null
+   "field": [],
+   "live": {
+    "idx": "https://бильман.рф/Events2627/TM2026/index.htm",
+    "seg": "https://бильман.рф/Events2627/TM2026/SEG010.HTM",
+    "cat": "https://бильман.рф/Events2627/TM2026/CAT005RS.HTM",
+    "first": "https://бильман.рф/Events2627/TM2026/SEG009.HTM",
+    "names": {},
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-senior-pp",
@@ -61701,7 +61755,7 @@
    "seg": "ПП",
    "title": "Тюменский меридиан — женщины ПП",
    "start": "2026-11-26T09:30:00+03:00",
-   "end": "2026-11-26T12:15:00+03:00",
+   "end": "2026-11-26T12:00:00+03:00",
    "venue": "«Каток Прибой», Тюмень",
    "intl": false,
    "broadcast": [
@@ -61709,7 +61763,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/tyumenskiy_meridian2026_competition_schedule.pdf",
+   "src": "https://бильман.рф/Events2627/TM2026/index.htm",
    "watch": [
     {
      "name": "Первый канал",
@@ -61717,7 +61771,16 @@
     }
    ],
    "desc": "Начало: 09:30 МСК\nТрансляция: Первый канал",
-   "proto": null
+   "field": [],
+   "live": {
+    "idx": "https://бильман.рф/Events2627/TM2026/index.htm",
+    "seg": "https://бильман.рф/Events2627/TM2026/SEG012.HTM",
+    "cat": "https://бильман.рф/Events2627/TM2026/CAT006RS.HTM",
+    "first": "https://бильман.рф/Events2627/TM2026/SEG011.HTM",
+    "names": {},
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-junior-pp",
@@ -61728,7 +61791,7 @@
    "seg": "ПП",
    "title": "Тюменский меридиан — девушки ПП",
    "start": "2026-11-26T16:00:00+03:00",
-   "end": "2026-11-26T19:15:00+03:00",
+   "end": "2026-11-26T18:30:00+03:00",
    "venue": "«Каток Прибой», Тюмень",
    "intl": false,
    "broadcast": [
@@ -61736,7 +61799,7 @@
    ],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/tyumenskiy_meridian2026_competition_schedule.pdf",
+   "src": "https://бильман.рф/Events2627/TM2026/index.htm",
    "watch": [
     {
      "name": "Первый канал",
@@ -61744,7 +61807,16 @@
     }
    ],
    "desc": "Начало: 16:00 МСК\nТрансляция: Первый канал",
-   "proto": null
+   "field": [],
+   "live": {
+    "idx": "https://бильман.рф/Events2627/TM2026/index.htm",
+    "seg": "https://бильман.рф/Events2627/TM2026/SEG008.HTM",
+    "cat": "https://бильман.рф/Events2627/TM2026/CAT004RS.HTM",
+    "first": "https://бильман.рф/Events2627/TM2026/SEG007.HTM",
+    "names": {},
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:dance-senior-rt",
@@ -101968,5 +102040,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "2312a385d5080234"
+ "rev": "93688a33da17e1cc"
 }
