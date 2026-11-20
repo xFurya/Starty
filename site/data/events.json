@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T16:19:32+03:00",
- "checked": "2026-11-20T13:47:28.162269+00:00",
+ "checked": "2026-11-20T13:51:28.626630+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58539,7 +58539,7 @@
      "nation": "МАР",
      "no": 3,
      "warmup": 1,
-     "place": 29,
+     "place": 30,
      "points": "38.32",
      "time": "13:15"
     },
@@ -58566,7 +58566,7 @@
      "nation": "ВЛГ",
      "no": 6,
      "warmup": 2,
-     "place": 28,
+     "place": 29,
      "points": "38.41",
      "time": "13:36"
     },
@@ -58575,7 +58575,7 @@
      "nation": "ПЕН",
      "no": 7,
      "warmup": 2,
-     "place": 30,
+     "place": 31,
      "points": "38.27",
      "time": "13:41"
     },
@@ -58584,7 +58584,7 @@
      "nation": "ЛИП",
      "no": 8,
      "warmup": 2,
-     "place": 22,
+     "place": 23,
      "points": "47.25",
      "time": "13:45"
     },
@@ -58611,7 +58611,7 @@
      "nation": "ТАТ",
      "no": 11,
      "warmup": 3,
-     "place": 20,
+     "place": 21,
      "points": "49.37",
      "time": "14:06"
     },
@@ -58620,7 +58620,7 @@
      "nation": "ОМС",
      "no": 12,
      "warmup": 3,
-     "place": 18,
+     "place": 19,
      "points": "53.33",
      "time": "14:10"
     },
@@ -58638,7 +58638,7 @@
      "nation": "СТА",
      "no": 14,
      "warmup": 3,
-     "place": 27,
+     "place": 28,
      "points": "40.34",
      "time": "14:20"
     },
@@ -58647,7 +58647,7 @@
      "nation": "МРД",
      "no": 15,
      "warmup": 3,
-     "place": 31,
+     "place": 32,
      "points": "37.56",
      "time": "14:24"
     },
@@ -58656,7 +58656,7 @@
      "nation": "СМО",
      "no": 16,
      "warmup": 4,
-     "place": 19,
+     "place": 20,
      "points": "52.20",
      "time": "14:51"
     },
@@ -58665,7 +58665,7 @@
      "nation": "ТАТ",
      "no": 17,
      "warmup": 4,
-     "place": 17,
+     "place": 18,
      "points": "53.49",
      "time": "14:55"
     },
@@ -58719,7 +58719,7 @@
      "nation": "КОС",
      "no": 23,
      "warmup": 5,
-     "place": 23,
+     "place": 24,
      "points": "46.73",
      "time": "15:30"
     },
@@ -58756,7 +58756,7 @@
      "time": "16:10",
      "no": 27,
      "warmup": 6,
-     "place": 21,
+     "place": 22,
      "points": "48.85"
     },
     {
@@ -58779,7 +58779,7 @@
      "time": "16:15",
      "no": 28,
      "warmup": 6,
-     "place": 26,
+     "place": 27,
      "points": "41.09"
     },
     {
@@ -58788,7 +58788,7 @@
      "time": "16:29",
      "no": 31,
      "warmup": 6,
-     "place": 25,
+     "place": 26,
      "points": "41.37"
     },
     {
@@ -58827,7 +58827,7 @@
      "time": "16:19",
      "no": 29,
      "warmup": 6,
-     "place": 24,
+     "place": 25,
      "points": "45.64"
     },
     {
@@ -58842,7 +58842,9 @@
      "nation": "ТАТ",
      "time": "16:33",
      "no": 32,
-     "warmup": 6
+     "warmup": 6,
+     "place": 17,
+     "points": "54.30"
     }
    ],
    "provisional": true,
@@ -59101,7 +59103,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Janna Jyrkinen — 59.74\n\nНачало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Janna Jyrkinen — 59.74\n2. Minja Peltonen — 49.35\n\nНачало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Janna Jyrkinen",
@@ -59117,7 +59119,9 @@
      "nation": "FIN",
      "time": "16:43",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "49.35"
     },
     {
      "name": "Seoyoung Kim",
@@ -59218,6 +59222,12 @@
      "name": "Janna Jyrkinen",
      "nation": "FIN",
      "points": "59.74"
+    },
+    {
+     "place": 2,
+     "name": "Minja Peltonen",
+     "nation": "FIN",
+     "points": "49.35"
     }
    ],
    "provisional": true
@@ -102591,5 +102601,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "e9105ded2ac8a495"
+ "rev": "a580b5f3ae8de694"
 }
