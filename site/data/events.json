@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T12:35:29+03:00",
- "checked": "2026-11-20T10:03:02.159176+00:00",
+ "checked": "2026-11-20T10:11:02.005281+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58058,7 +58058,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Karoliine Raudsepp — 64.69\n2. Afrina Diyanah — 51.30\n3. Michelle Dicicco — 41.51\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Karoliine Raudsepp — 64.69\n2. Emilija Ozola — 54.86\n3. Afrina Diyanah — 51.30\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Afrina Diyanah",
@@ -58066,7 +58066,7 @@
      "time": "12:44",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "51.30"
     },
     {
@@ -58109,7 +58109,9 @@
      "nation": "LAT",
      "time": "12:59",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "54.86"
     },
     {
      "name": "Eugenia Sekulovski",
@@ -58224,7 +58226,7 @@
      "time": "12:36",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "41.51"
     },
     {
@@ -58350,15 +58352,15 @@
     },
     {
      "place": 2,
-     "name": "Afrina Diyanah",
-     "nation": "MAS",
-     "points": "51.30"
+     "name": "Emilija Ozola",
+     "nation": "LAT",
+     "points": "54.86"
     },
     {
      "place": 3,
-     "name": "Michelle Dicicco",
-     "nation": "ARG",
-     "points": "41.51"
+     "name": "Afrina Diyanah",
+     "nation": "MAS",
+     "points": "51.30"
     }
    ],
    "provisional": true
@@ -102135,5 +102137,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "1334eb44821c1b40"
+ "rev": "9c29284070ceb5bf"
 }
