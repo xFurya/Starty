@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-20T19:28:25+03:00",
- "checked": "2026-11-20T17:47:28.833408+00:00",
+ "generated": "2026-11-20T20:32:22+03:00",
+ "checked": "2026-11-20T20:32:22+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55418,7 +55418,7 @@
      "points": "58.30"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Таисия Лепихина — 62.27\n2. Софья Лукина — 61.23\n3. София Ермолова — 58.30\n\nНачало: 16:05 МСК\nТрансляция: Первый канал",
+   "desc": "Итог:\n1. Таисия Лепихина — 62.27\n2. Софья Лукина — 61.23\n3. София Ермолова — 58.30\n\nНачало: 16:05 МСК\nТрансляция: Первый канал",
    "field": [
     {
      "name": "Таисия Лепихина",
@@ -55477,7 +55477,6 @@
      "points": "61.23"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
     "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG013.HTM",
@@ -59392,7 +59391,7 @@
    "seg": "КП",
    "title": "Идель — юноши КП",
    "start": "2026-11-20T17:30:00+03:00",
-   "end": "2026-11-20T19:46:00+03:00",
+   "end": "2026-11-20T20:15:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -59581,49 +59580,49 @@
      "time": "19:08"
     },
     {
+     "name": "Макар Ушаков",
+     "nation": "ПРМ",
+     "no": 15,
+     "warmup": 4,
+     "place": 18,
+     "points": "46.48",
+     "time": "19:20"
+    },
+    {
      "name": "Владимир Гудзенко",
      "nation": "КОС",
-     "time": "19:25",
      "no": 16,
      "warmup": 4,
      "place": 12,
-     "points": "57.56"
-    },
-    {
-     "name": "Владислав Виниченко",
-     "nation": "РОС",
-     "time": "19:34",
-     "no": 18,
-     "warmup": 4,
-     "place": 4,
-     "points": "65.47"
+     "points": "57.56",
+     "time": "19:25"
     },
     {
      "name": "Денис Никитин",
      "nation": "УДМ",
-     "time": "19:29",
      "no": 17,
      "warmup": 4,
      "place": 19,
-     "points": "44.88"
+     "points": "44.88",
+     "time": "19:29"
+    },
+    {
+     "name": "Владислав Виниченко",
+     "nation": "РОС",
+     "no": 18,
+     "warmup": 4,
+     "place": 4,
+     "points": "65.47",
+     "time": "19:34"
     },
     {
      "name": "Кирилл Былинин",
      "nation": "ЧЕЛ",
-     "time": "19:39",
      "no": 19,
      "warmup": 4,
      "place": 15,
-     "points": "55.43"
-    },
-    {
-     "name": "Макар Ушаков",
-     "nation": "ПРМ",
-     "time": "19:20",
-     "no": 15,
-     "warmup": 4,
-     "place": 18,
-     "points": "46.48"
+     "points": "55.43",
+     "time": "19:39"
     }
    ],
    "live": {
@@ -59635,6 +59634,7 @@
      "Ильяс ХАЛИУЛЛИН": "Ильяс Халиуллин",
      "Лев БОБЫК": "Лев Бобык",
      "Илья СТАРКОВ": "Илья Старков",
+     "Владислав ВИНИЧЕНКО": "Владислав Виниченко",
      "Степан ЮРОВ": "Степан Юров",
      "Леонид НОВОЖИЛОВ": "Леонид Новожилов",
      "Искандер АМИРОВ": "Искандер Амиров",
@@ -59642,15 +59642,14 @@
      "Михаил ГОЛОЯД": "Михаил Голояд",
      "Максим ГАЛКИН": "Максим Галкин",
      "Роман ЧИРКОВ": "Роман Чирков",
+     "Владимир ГУДЗЕНКО": "Владимир Гудзенко",
      "Егор НИКИТИН": "Егор Никитин",
      "Марк АНИКИЕНКО": "Марк Аникиенко",
+     "Кирилл БЫЛИНИН": "Кирилл Былинин",
      "Марк ТИТОВ": "Марк Титов",
      "Данил ЗОЛОТАРЕВ": "Данил Золотарев",
      "Макар УШАКОВ": "Макар Ушаков",
-     "Владимир ГУДЗЕНКО": "Владимир Гудзенко",
-     "Денис НИКИТИН": "Денис Никитин",
-     "Владислав ВИНИЧЕНКО": "Владислав Виниченко",
-     "Кирилл БЫЛИНИН": "Кирилл Былинин"
+     "Денис НИКИТИН": "Денис Никитин"
     },
     "basis": "judges"
    },
@@ -59718,7 +59717,7 @@
      "points": "82.08"
     }
    ],
-   "desc": "Итог:\n1. Mihhail Selevko — 85.01\n2. Yudong Chen — 82.88\n3. Andreas Nordeback — 82.08\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Mihhail Selevko — 85.01\n2. Yudong Chen — 82.88\n3. Andreas Nordeback — 82.08\n\nПримечательное:\n• Yudong Chen — Личный рекорд за КП: 82.88 (был 80.74)\n• Andreas Nordeback — Личный рекорд за КП: 82.08 (был 79.89)\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Matias Lindfors",
@@ -59793,40 +59792,40 @@
      "time": "19:23"
     },
     {
-     "name": "Adam Siao Him Fa",
-     "nation": "FRA",
-     "time": "19:48",
-     "no": 12,
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "no": 9,
      "warmup": 2,
-     "place": 12,
-     "points": "71.63"
+     "place": 1,
+     "points": "85.01",
+     "time": "19:29"
     },
     {
      "name": "Kazuki Tomono",
      "nation": "JPN",
-     "time": "19:36",
      "no": 10,
      "warmup": 2,
      "place": 5,
-     "points": "79.45"
-    },
-    {
-     "name": "Mihhail Selevko",
-     "nation": "EST",
-     "time": "19:29",
-     "no": 9,
-     "warmup": 2,
-     "place": 1,
-     "points": "85.01"
+     "points": "79.45",
+     "time": "19:36"
     },
     {
      "name": "Nika Egadze",
      "nation": "GEO",
-     "time": "19:42",
      "no": 11,
      "warmup": 2,
      "place": 4,
-     "points": "79.45"
+     "points": "79.45",
+     "time": "19:42"
+    },
+    {
+     "name": "Adam Siao Him Fa",
+     "nation": "FRA",
+     "no": 12,
+     "warmup": 2,
+     "place": 12,
+     "points": "71.63",
+     "time": "19:48"
     }
    ],
    "live": {
@@ -59835,21 +59834,33 @@
     "cat": null,
     "first": null,
     "names": {
+     "Mihhail SELEVKO": "Mihhail Selevko",
      "Yudong CHEN": "Yudong Chen",
      "Andreas NORDEBACK": "Andreas Nordeback",
+     "Nika EGADZE": "Nika Egadze",
+     "Kazuki TOMONO": "Kazuki Tomono",
      "Arlet LEVANDI": "Arlet Levandi",
      "Stephen GOGOLEV": "Stephen Gogolev",
      "Matias LINDFORS": "Matias Lindfors",
      "Tamir KUPERMAN": "Tamir Kuperman",
      "Genrikh GARTUNG": "Genrikh Gartung",
      "Kyrylo MARSAK": "Kyrylo Marsak",
-     "Mihhail SELEVKO": "Mihhail Selevko",
-     "Kazuki TOMONO": "Kazuki Tomono",
-     "Nika EGADZE": "Nika Egadze",
      "Adam SIAO HIM FA": "Adam Siao Him Fa"
     },
     "basis": "judges"
    },
+   "facts": [
+    {
+     "who": "Yudong Chen",
+     "text": "Личный рекорд за КП: 82.88 (был 80.74)",
+     "kind": "score"
+    },
+    {
+     "who": "Andreas Nordeback",
+     "text": "Личный рекорд за КП: 82.08 (был 79.89)",
+     "kind": "score"
+    }
+   ],
    "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
   {
@@ -59861,7 +59872,7 @@
    "seg": "ПП",
    "title": "CS Tallinn Trophy — юниорские пары ПП",
    "start": "2026-11-20T18:45:00+03:00",
-   "end": "2026-11-20T19:49:00+03:00",
+   "end": "2026-11-20T19:55:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -59905,96 +59916,6 @@
      "points": "76.54"
     }
    ],
-   "desc": "Итог:\n1. Злата Камалова / Данил Панов — 95.05\n2. Jolena Grohne / Manuel Rossi — 80.13\n3. Leontina Horcickova / Jindrich Klement — 76.54\n\nИтог турнира:\n1. Злата Камалова / Данил Панов — 155.78\n2. Jolena Grohne / Manuel Rossi — 135.93\n3. Laura Heckova / Alex Valky — 122.48\n\nПримечательное:\n• Злата Камалова / Данил Панов — Отрыв от второго места — 19.85 балла\n\nНачало: 18:45 МСК\nТрансляция: Ice-Stars.TV",
-   "field": [
-    {
-     "name": "Clelia Liget-latus / Allan Daniel Fisher",
-     "nation": "FRA",
-     "place": 6,
-     "points": "68.67",
-     "time": "19:26",
-     "no": 5,
-     "warmup": 2,
-     "final": 5
-    },
-    {
-     "name": "Jolena Grohne / Manuel Rossi",
-     "nation": "ITA",
-     "time": "19:33",
-     "no": 6,
-     "warmup": 2,
-     "place": 2,
-     "points": "80.13",
-     "final": 2
-    },
-    {
-     "name": "Laura Heckova / Alex Valky",
-     "nation": "SVK",
-     "place": 5,
-     "points": "73.67",
-     "time": "19:19",
-     "no": 4,
-     "warmup": 2,
-     "final": 3
-    },
-    {
-     "name": "Leontina Horcickova / Jindrich Klement",
-     "nation": "CZE",
-     "place": 3,
-     "points": "76.54",
-     "time": "19:05",
-     "no": 3,
-     "warmup": 1,
-     "final": 4
-    },
-    {
-     "name": "Naomie Ismaili / Leo Rouvrais",
-     "nation": "FRA",
-     "place": 7,
-     "points": "54.21",
-     "time": "18:51",
-     "no": 1,
-     "warmup": 1,
-     "final": 7
-    },
-    {
-     "name": "Romane Telemaque / Lucas Coulon",
-     "nation": "FRA",
-     "place": 4,
-     "points": "75.19",
-     "time": "18:58",
-     "no": 2,
-     "warmup": 1,
-     "final": 6
-    },
-    {
-     "name": "Злата Камалова / Данил Панов",
-     "nation": "GEO",
-     "time": "19:40",
-     "no": 7,
-     "warmup": 2,
-     "place": 1,
-     "points": "95.05",
-     "final": 1
-    }
-   ],
-   "live": {
-    "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
-    "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG014.htm",
-    "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT007RS.htm",
-    "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG013.htm",
-    "names": {
-     "Laura HECKOVA / Alex VALKY": "Laura Heckova / Alex Valky",
-     "Leontina HORCICKOVA / Jindrich KLEMENT": "Leontina Horcickova / Jindrich Klement",
-     "Clelia LIGET-LATUS / Allan Daniel FISHER": "Clelia Liget-latus / Allan Daniel Fisher",
-     "Romane TELEMAQUE / Lucas COULON": "Romane Telemaque / Lucas Coulon",
-     "Naomie ISMAILI / Leo ROUVRAIS": "Naomie Ismaili / Leo Rouvrais",
-     "Jolena GROHNE / Manuel ROSSI": "Jolena Grohne / Manuel Rossi",
-     "Zlata KAMALOVA / Danil PANOV": "Злата Камалова / Данил Панов"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
    "total": [
     {
      "place": 1,
@@ -60015,13 +59936,108 @@
      "points": "122.48"
     }
    ],
+   "desc": "Итог:\n1. Злата Камалова / Данил Панов — 95.05\n2. Jolena Grohne / Manuel Rossi — 80.13\n3. Leontina Horcickova / Jindrich Klement — 76.54\n\nИтог турнира:\n1. Злата Камалова / Данил Панов — 155.78\n2. Jolena Grohne / Manuel Rossi — 135.93\n3. Laura Heckova / Alex Valky — 122.48\n\nПримечательное:\n• Leontina Horcickova / Jindrich Klement — Личный рекорд за ПП: 76.54 (был 75.97)\n• Злата Камалова / Данил Панов — Отрыв от второго места — 19.85 балла\n\nНачало: 18:45 МСК\nТрансляция: Ice-Stars.TV",
+   "field": [
+    {
+     "name": "Naomie Ismaili / Leo Rouvrais",
+     "nation": "FRA",
+     "no": 1,
+     "warmup": 1,
+     "place": 7,
+     "points": "54.21",
+     "final": 7,
+     "time": "18:51"
+    },
+    {
+     "name": "Romane Telemaque / Lucas Coulon",
+     "nation": "FRA",
+     "no": 2,
+     "warmup": 1,
+     "place": 4,
+     "points": "75.19",
+     "final": 6,
+     "time": "18:58"
+    },
+    {
+     "name": "Leontina Horcickova / Jindrich Klement",
+     "nation": "CZE",
+     "no": 3,
+     "warmup": 1,
+     "place": 3,
+     "points": "76.54",
+     "final": 4,
+     "time": "19:05"
+    },
+    {
+     "name": "Laura Heckova / Alex Valky",
+     "nation": "SVK",
+     "no": 4,
+     "warmup": 2,
+     "place": 5,
+     "points": "73.67",
+     "final": 3,
+     "time": "19:19"
+    },
+    {
+     "name": "Clelia Liget-latus / Allan Daniel Fisher",
+     "nation": "FRA",
+     "no": 5,
+     "warmup": 2,
+     "place": 6,
+     "points": "68.67",
+     "final": 5,
+     "time": "19:26"
+    },
+    {
+     "name": "Jolena Grohne / Manuel Rossi",
+     "nation": "ITA",
+     "no": 6,
+     "warmup": 2,
+     "place": 2,
+     "points": "80.13",
+     "final": 2,
+     "time": "19:33"
+    },
+    {
+     "name": "Злата Камалова / Данил Панов",
+     "nation": "GEO",
+     "no": 7,
+     "warmup": 2,
+     "place": 1,
+     "points": "95.05",
+     "final": 1,
+     "time": "19:40"
+    }
+   ],
+   "live": {
+    "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
+    "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG014.htm",
+    "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT007RS.htm",
+    "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG013.htm",
+    "names": {
+     "Zlata KAMALOVA / Danil PANOV": "Злата Камалова / Данил Панов",
+     "Jolena GROHNE / Manuel ROSSI": "Jolena Grohne / Manuel Rossi",
+     "Leontina HORCICKOVA / Jindrich KLEMENT": "Leontina Horcickova / Jindrich Klement",
+     "Romane TELEMAQUE / Lucas COULON": "Romane Telemaque / Lucas Coulon",
+     "Laura HECKOVA / Alex VALKY": "Laura Heckova / Alex Valky",
+     "Clelia LIGET-LATUS / Allan Daniel FISHER": "Clelia Liget-latus / Allan Daniel Fisher",
+     "Naomie ISMAILI / Leo ROUVRAIS": "Naomie Ismaili / Leo Rouvrais"
+    },
+    "basis": "judges"
+   },
    "facts": [
     {
-     "who": "Злата Камалова / Данил Панов",
+     "kind": "place",
      "text": "Отрыв от второго места — 19.85 балла",
-     "kind": "place"
+     "who": "Злата Камалова / Данил Панов"
+    },
+    {
+     "who": "Leontina Horcickova / Jindrich Klement",
+     "text": "Личный рекорд за ПП: 76.54 (был 75.97)",
+     "kind": "score"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-senior-pp",
@@ -60056,35 +60072,22 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Irina Napolitano / Edoardo Comi — 91.97\n2. Olivia Flores / Mark Sadusky — 84.35\n3. Xuanyu Liu / Wenbao Han — 73.60\n\nНачало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
-   "field": [
+   "podium": [
     {
-     "name": "Xuanyu Liu / Wenbao Han",
-     "nation": "CHN",
-     "time": "20:06",
-     "no": 1,
-     "warmup": 1,
-     "place": 3,
-     "points": "73.60"
-    },
-    {
+     "place": 1,
      "name": "Olivia Flores / Mark Sadusky",
      "nation": "USA",
-     "time": "20:14",
-     "no": 2,
-     "warmup": 1,
-     "place": 2,
      "points": "84.35"
     },
     {
-     "name": "Irina Napolitano / Edoardo Comi",
-     "nation": "ITA",
-     "time": "20:21",
-     "no": 3,
-     "warmup": 1,
-     "place": 1,
-     "points": "91.97"
-    },
+     "place": 2,
+     "name": "Xuanyu Liu / Wenbao Han",
+     "nation": "CHN",
+     "points": "73.60"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Olivia Flores / Mark Sadusky — 84.35\n2. Xuanyu Liu / Wenbao Han — 73.60\n\nНачало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
+   "field": [
     {
      "name": "Debora Anna Cohen / Lukas Vochozka",
      "nation": "CZE",
@@ -60093,11 +60096,11 @@
      "warmup": 2
     },
     {
-     "name": "Reagan Moss / Jakub Galbavy",
-     "nation": "USA",
-     "time": "20:43",
-     "no": 5,
-     "warmup": 2
+     "name": "Irina Napolitano / Edoardo Comi",
+     "nation": "ITA",
+     "time": "20:21",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Linzy Fitzpatrick / Keyton Bearinger",
@@ -60112,16 +60115,42 @@
      "time": "20:58",
      "no": 7,
      "warmup": 2
+    },
+    {
+     "name": "Olivia Flores / Mark Sadusky",
+     "nation": "USA",
+     "place": 1,
+     "points": "84.35",
+     "time": "20:14",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Reagan Moss / Jakub Galbavy",
+     "nation": "USA",
+     "time": "20:43",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Xuanyu Liu / Wenbao Han",
+     "nation": "CHN",
+     "place": 2,
+     "points": "73.60",
+     "time": "20:06",
+     "no": 1,
+     "warmup": 1
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG006.htm",
     "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT003RS.htm",
     "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG005.htm",
     "names": {
-     "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han",
      "Olivia FLORES / Mark SADUSKY": "Olivia Flores / Mark Sadusky",
+     "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han",
      "Irina NAPOLITANO / Edoardo COMI": "Irina Napolitano / Edoardo Comi",
      "Debora Anna COHEN / Lukas VOCHOZKA": "Debora Anna Cohen / Lukas Vochozka",
      "Reagan MOSS / Jakub GALBAVY": "Reagan Moss / Jakub Galbavy",
@@ -60130,28 +60159,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Irina Napolitano / Edoardo Comi",
-     "nation": "ITA",
-     "points": "91.97"
-    },
-    {
-     "place": 2,
-     "name": "Olivia Flores / Mark Sadusky",
-     "nation": "USA",
-     "points": "84.35"
-    },
-    {
-     "place": 3,
-     "name": "Xuanyu Liu / Wenbao Han",
-     "nation": "CHN",
-     "points": "73.60"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:dance-senior-rt",
@@ -60190,28 +60198,34 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/watch?v=yjWJReRLTzE"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Emily Bratti / Ian Somerville — 70.55\n2. Marjorie Lajoie / Jean-Luc Baker — 68.00\n3. Milla Ruud Reitan / Nikolaj Majorov — 60.96\n\nНачало: 20:20 МСК\nТрансляция: Okko / YouTube ISU",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Marjorie Lajoie / Jean-Luc Baker",
+     "nation": "CAN",
+     "points": "68.00"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Marjorie Lajoie / Jean-Luc Baker — 68.00\n\nНачало: 20:20 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
-     "time": "20:26",
      "no": 1,
-     "warmup": 1,
-     "place": 2,
-     "points": "68.00"
+     "warmup": 15,
+     "place": 1,
+     "points": "68.00",
+     "time": "20:26"
     },
     {
-     "name": "Milla Ruud Reitan / Nikolaj Majorov",
-     "nation": "SWE",
-     "time": "20:33",
-     "no": 2,
-     "warmup": 1,
-     "place": 3,
-     "points": "60.96"
+     "name": "Caroline Green / Michael Parsons",
+     "nation": "USA",
+     "time": "21:32",
+     "no": 10,
+     "warmup": 2
     },
     {
      "name": "Emily Bratti / Ian Somerville",
@@ -60230,17 +60244,31 @@
      "warmup": 1
     },
     {
-     "name": "Yuka Orihara / Juho Pirinen",
-     "nation": "FIN",
-     "time": "20:52",
-     "no": 5,
-     "warmup": 1
+     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "nation": "FRA",
+     "time": "21:25",
+     "no": 9,
+     "warmup": 2
     },
     {
      "name": "Marie-Jade Lauriault / Romain le Gac",
      "nation": "CAN",
      "time": "21:06",
      "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "time": "20:33",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Natalie Taschlerova / Filip Taschler",
+     "nation": "CZE",
+     "time": "21:19",
+     "no": 8,
      "warmup": 2
     },
     {
@@ -60251,27 +60279,14 @@
      "warmup": 2
     },
     {
-     "name": "Natalie Taschlerova / Filip Taschler",
-     "nation": "CZE",
-     "time": "21:19",
-     "no": 8,
-     "warmup": 2
-    },
-    {
-     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
-     "nation": "FRA",
-     "time": "21:25",
-     "no": 9,
-     "warmup": 2
-    },
-    {
-     "name": "Caroline Green / Michael Parsons",
-     "nation": "USA",
-     "time": "21:32",
-     "no": 10,
-     "warmup": 2
+     "name": "Yuka Orihara / Juho Pirinen",
+     "nation": "FIN",
+     "time": "20:52",
+     "no": 5,
+     "warmup": 1
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG007.htm",
@@ -61176,7 +61191,7 @@
    "seg": "ПП",
    "title": "Идель — юноши ПП",
    "start": "2026-11-21T16:00:00+03:00",
-   "end": "2026-11-21T19:05:00+03:00",
+   "end": "2026-11-21T18:32:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -61219,80 +61234,137 @@
    "desc": "Начало: 16:00 МСК\nТрансляция: Первый канал / VK Видео",
    "field": [
     {
-     "name": "Владимир Гудзенко",
-     "nation": "КОС"
-    },
-    {
-     "name": "Владислав Виниченко",
-     "nation": "РОС"
-    },
-    {
-     "name": "Данил Золотарев",
-     "nation": "ТАТ"
-    },
-    {
      "name": "Денис Никитин",
-     "nation": "УДМ"
-    },
-    {
-     "name": "Егор Никитин",
-     "nation": "ИВА"
-    },
-    {
-     "name": "Иван Теленков",
-     "nation": "МОБ"
-    },
-    {
-     "name": "Илья Старков",
-     "nation": "ЛОБ"
-    },
-    {
-     "name": "Ильяс Халиуллин",
-     "nation": "ТАТ"
-    },
-    {
-     "name": "Искандер Амиров",
-     "nation": "ТАТ"
-    },
-    {
-     "name": "Кирилл Былинин",
-     "nation": "ЧЕЛ"
-    },
-    {
-     "name": "Лев Бобык",
-     "nation": "НИЖ"
-    },
-    {
-     "name": "Леонид Новожилов",
-     "nation": "ТУЛ"
+     "nation": "УДМ",
+     "time": "16:07",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Макар Ушаков",
-     "nation": "ПРМ"
+     "nation": "ПРМ",
+     "time": "16:13",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Максим Галкин",
-     "nation": "СВЕ"
-    },
-    {
-     "name": "Марк Аникиенко",
-     "nation": "ЧЕЛ"
+     "name": "Данил Золотарев",
+     "nation": "ТАТ",
+     "time": "16:18",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Марк Титов",
-     "nation": "ТАТ"
+     "nation": "ТАТ",
+     "time": "16:24",
+     "no": 4,
+     "warmup": 1
     },
     {
-     "name": "Михаил Голояд",
-     "nation": "БЕЛ"
+     "name": "Кирилл Былинин",
+     "nation": "ЧЕЛ",
+     "time": "16:37",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Марк Аникиенко",
+     "nation": "ЧЕЛ",
+     "time": "16:42",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Егор Никитин",
+     "nation": "ИВА",
+     "time": "16:48",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Владимир Гудзенко",
+     "nation": "КОС",
+     "time": "16:53",
+     "no": 8,
+     "warmup": 2
     },
     {
      "name": "Роман Чирков",
-     "nation": "ТВЕ"
+     "nation": "ТВЕ",
+     "time": "16:59",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Максим Галкин",
+     "nation": "СВЕ",
+     "time": "17:27",
+     "no": 10,
+     "warmup": 3
+    },
+    {
+     "name": "Михаил Голояд",
+     "nation": "БЕЛ",
+     "time": "17:32",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Иван Теленков",
+     "nation": "МОБ",
+     "time": "17:38",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Искандер Амиров",
+     "nation": "ТАТ",
+     "time": "17:43",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Леонид Новожилов",
+     "nation": "ТУЛ",
+     "time": "17:49",
+     "no": 14,
+     "warmup": 3
     },
     {
      "name": "Степан Юров",
-     "nation": "МОС"
+     "nation": "МОС",
+     "time": "18:02",
+     "no": 15,
+     "warmup": 4
+    },
+    {
+     "name": "Владислав Виниченко",
+     "nation": "РОС",
+     "time": "18:07",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Илья Старков",
+     "nation": "ЛОБ",
+     "time": "18:13",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Лев Бобык",
+     "nation": "НИЖ",
+     "time": "18:18",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Ильяс Халиуллин",
+     "nation": "ТАТ",
+     "time": "18:24",
+     "no": 19,
+     "warmup": 4
     }
    ],
    "live": {
@@ -61301,25 +61373,25 @@
     "cat": "https://fsrussia.ru/results/2627/idel_2026/CAT003RS.htm",
     "first": "https://fsrussia.ru/results/2627/idel_2026/SEG005.htm",
     "names": {
-     "Искандер АМИРОВ": "Искандер Амиров",
-     "Марк АНИКИЕНКО": "Марк Аникиенко",
-     "Лев БОБЫК": "Лев Бобык",
+     "Денис НИКИТИН": "Денис Никитин",
+     "Макар УШАКОВ": "Макар Ушаков",
+     "Данил ЗОЛОТАРЕВ": "Данил Золотарев",
+     "Марк ТИТОВ": "Марк Титов",
      "Кирилл БЫЛИНИН": "Кирилл Былинин",
-     "Владислав ВИНИЧЕНКО": "Владислав Виниченко",
+     "Марк АНИКИЕНКО": "Марк Аникиенко",
+     "Егор НИКИТИН": "Егор Никитин",
+     "Владимир ГУДЗЕНКО": "Владимир Гудзенко",
+     "Роман ЧИРКОВ": "Роман Чирков",
      "Максим ГАЛКИН": "Максим Галкин",
      "Михаил ГОЛОЯД": "Михаил Голояд",
-     "Владимир ГУДЗЕНКО": "Владимир Гудзенко",
-     "Данил ЗОЛОТАРЕВ": "Данил Золотарев",
-     "Денис НИКИТИН": "Денис Никитин",
-     "Егор НИКИТИН": "Егор Никитин",
-     "Леонид НОВОЖИЛОВ": "Леонид Новожилов",
-     "Илья СТАРКОВ": "Илья Старков",
      "Иван ТЕЛЕНКОВ": "Иван Теленков",
-     "Марк ТИТОВ": "Марк Титов",
-     "Макар УШАКОВ": "Макар Ушаков",
-     "Ильяс ХАЛИУЛЛИН": "Ильяс Халиуллин",
-     "Роман ЧИРКОВ": "Роман Чирков",
-     "Степан ЮРОВ": "Степан Юров"
+     "Искандер АМИРОВ": "Искандер Амиров",
+     "Леонид НОВОЖИЛОВ": "Леонид Новожилов",
+     "Степан ЮРОВ": "Степан Юров",
+     "Владислав ВИНИЧЕНКО": "Владислав Виниченко",
+     "Илья СТАРКОВ": "Илья Старков",
+     "Лев БОБЫК": "Лев Бобык",
+     "Ильяс ХАЛИУЛЛИН": "Ильяс Халиуллин"
     },
     "basis": null
    },
@@ -61334,7 +61406,7 @@
    "seg": "ПП",
    "title": "GP Finlandia Trophy — мужчины ПП",
    "start": "2026-11-21T18:15:00+03:00",
-   "end": "2026-11-21T20:00:00+03:00",
+   "end": "2026-11-21T20:02:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
    "broadcast": [
@@ -61371,51 +61443,87 @@
    "field": [
     {
      "name": "Adam Siao Him Fa",
-     "nation": "FRA"
-    },
-    {
-     "name": "Andreas Nordeback",
-     "nation": "SWE"
-    },
-    {
-     "name": "Arlet Levandi",
-     "nation": "EST"
-    },
-    {
-     "name": "Genrikh Gartung",
-     "nation": "GER"
-    },
-    {
-     "name": "Kazuki Tomono",
-     "nation": "JPN"
+     "nation": "FRA",
+     "time": "18:22",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Kyrylo Marsak",
-     "nation": "UKR"
+     "nation": "UKR",
+     "time": "18:30",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Matias Lindfors",
-     "nation": "FIN"
-    },
-    {
-     "name": "Mihhail Selevko",
-     "nation": "EST"
-    },
-    {
-     "name": "Nika Egadze",
-     "nation": "GEO"
-    },
-    {
-     "name": "Stephen Gogolev",
-     "nation": "CAN"
+     "name": "Genrikh Gartung",
+     "nation": "GER",
+     "time": "18:38",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Tamir Kuperman",
-     "nation": "ISR"
+     "nation": "ISR",
+     "time": "18:45",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Matias Lindfors",
+     "nation": "FIN",
+     "time": "18:53",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Stephen Gogolev",
+     "nation": "CAN",
+     "time": "19:01",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Arlet Levandi",
+     "nation": "EST",
+     "time": "19:16",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Kazuki Tomono",
+     "nation": "JPN",
+     "time": "19:24",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Nika Egadze",
+     "nation": "GEO",
+     "time": "19:31",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Andreas Nordeback",
+     "nation": "SWE",
+     "time": "19:39",
+     "no": 10,
+     "warmup": 2
     },
     {
      "name": "Yudong Chen",
-     "nation": "CHN"
+     "nation": "CHN",
+     "time": "19:47",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "time": "19:54",
+     "no": 12,
+     "warmup": 2
     }
    ],
    "live": {
@@ -61424,18 +61532,18 @@
     "cat": "https://results.isu.org/results/season2627/gpfin2026/CAT001RS.htm",
     "first": "https://results.isu.org/results/season2627/gpfin2026/SEG001.htm",
     "names": {
-     "Stephen GOGOLEV": "Stephen Gogolev",
-     "Yudong CHEN": "Yudong Chen",
-     "Arlet LEVANDI": "Arlet Levandi",
-     "Mihhail SELEVKO": "Mihhail Selevko",
-     "Matias LINDFORS": "Matias Lindfors",
      "Adam SIAO HIM FA": "Adam Siao Him Fa",
-     "Nika EGADZE": "Nika Egadze",
+     "Kyrylo MARSAK": "Kyrylo Marsak",
      "Genrikh GARTUNG": "Genrikh Gartung",
      "Tamir KUPERMAN": "Tamir Kuperman",
+     "Matias LINDFORS": "Matias Lindfors",
+     "Stephen GOGOLEV": "Stephen Gogolev",
+     "Arlet LEVANDI": "Arlet Levandi",
      "Kazuki TOMONO": "Kazuki Tomono",
+     "Nika EGADZE": "Nika Egadze",
      "Andreas NORDEBACK": "Andreas Nordeback",
-     "Kyrylo MARSAK": "Kyrylo Marsak"
+     "Yudong CHEN": "Yudong Chen",
+     "Mihhail SELEVKO": "Mihhail Selevko"
     },
     "basis": null
    },
@@ -64943,6 +65051,7 @@
   "Adelia Kamaletdinova",
   "Adelija Matjunina",
   "Adelina Akhmetkhanova",
+  "Adelina Shtukert",
   "Adelina Sotnikova",
   "Adelina Voroteliak",
   "Adelina ZVEZDOVA",
@@ -65117,6 +65226,7 @@
   "Alisa Mitrofanova",
   "Alisa OVSIANKINA",
   "Alisa Ovsiankina / Maximilien Rahier",
+  "Alisa Seliverstova",
   "Alisa Suchkova",
   "Alisa Turchina",
   "Alissa De Carbonnel",
@@ -65280,6 +65390,7 @@
   "Anna Mazinskaia",
   "Anna Motovilova",
   "Anna Neverova",
+  "Anna Nikolaeva",
   "Anna Obrien / Drake Tong",
   "Anna Pezzetta",
   "Anna Pogorilaya",
@@ -65300,6 +65411,7 @@
   "Anna Vatletsova",
   "Anna YANOVSKAYA",
   "Anna Zakharova",
+  "Anna Zatevakhina",
   "Anna-Maria Kislitsyn",
   "Annabel Jaamu",
   "Annabel Mann / Jack Hammond",
@@ -65327,6 +65439,7 @@
   "Anton Tokarev",
   "Anton Uhlianitsa",
   "Antonina Dubinina",
+  "Antonina Zaitseva",
   "Antonio SOUZA KORDEIRU",
   "Anzhelika Abachkina",
   "Anzhelika Gayazova",
@@ -65342,6 +65455,7 @@
   "Arina Gall-savalskaya",
   "Arina KLIMOVA",
   "Arina Kalugina",
+  "Arina Lisenkova",
   "Arina Martinova",
   "Arina Medrish",
   "Arina Naklonskaia",
@@ -65351,6 +65465,7 @@
   "Arina Vakulenko",
   "Arina Voevodina",
   "Arina Vorobeva",
+  "Arina Zhukova",
   "Arkadi Sergeev",
   "Arlet Levandi",
   "Arseni MARKOV",
@@ -65489,6 +65604,7 @@
   "Daria Bogatyrenko",
   "Daria Borisova",
   "Daria Busygina",
+  "Daria Chubchikova",
   "Daria Chupikova",
   "Daria Chuvikova",
   "Daria Danchina",
@@ -65499,6 +65615,8 @@
   "Daria Gureeva",
   "Daria Kazuchiz",
   "Daria Kiiasheva",
+  "Daria Kopan",
+  "Daria Korobitsyna",
   "Daria Korobova",
   "Daria Kostromina",
   "Daria Krashevskaia",
@@ -65519,6 +65637,7 @@
   "Daria Shirokhova",
   "Daria Teterina",
   "Daria Tomasheva",
+  "Daria Tsiupa",
   "Dario CIRISANO",
   "Darja BEKLEMISCSEVA",
   "Darja Trubitson",
@@ -65649,6 +65768,7 @@
   "Ekaterina Denisova",
   "Ekaterina Fedorenko",
   "Ekaterina Gladkova",
+  "Ekaterina Govenko",
   "Ekaterina Gvozdkova",
   "Ekaterina Iurova",
   "Ekaterina Katashinskaia",
@@ -65664,6 +65784,7 @@
   "Ekaterina Kuznetcova",
   "Ekaterina Luchina",
   "Ekaterina Mefodeva",
+  "Ekaterina Miagkikh",
   "Ekaterina Petaikina",
   "Ekaterina Petushkova",
   "Ekaterina Pushkash",
@@ -65725,6 +65846,7 @@
   "Elizaveta Andrianova",
   "Elizaveta Avsiukevich",
   "Elizaveta Bolbukh",
+  "Elizaveta Cherkasova",
   "Elizaveta Eremina",
   "Elizaveta Glushkova",
   "Elizaveta Godun",
@@ -65795,6 +65917,7 @@
   "Evdokiia Stankevich",
   "Eve Dubecq",
   "Evelina Alfer",
+  "Evelina Saitova",
   "Evelina Stavickyte",
   "Evelina Tatarnikova",
   "Evgeni Kapitoulec",
@@ -66223,10 +66346,12 @@
   "Ksenia Sipunova / Miron Korjagin",
   "Ksenia Stolbova",
   "Kseniia Akhanteva",
+  "Kseniia Chigaeva",
   "Kseniia Iushkova",
   "Kseniia Kasimova",
   "Kseniia Kolotygina",
   "Kseniia Melkumova",
+  "Kseniia Zvereva",
   "Ksenija Heimane",
   "Kseniya Smirnova",
   "Kseniya Zayats",
@@ -66410,6 +66535,7 @@
   "Maria Orlova",
   "Maria Paliakova",
   "Maria Pavlova / Alexei Sviatchenko",
+  "Maria Poluyan",
   "Maria Smaranda",
   "Maria Sotskova",
   "Maria Stavitskaia",
@@ -66447,6 +66573,7 @@
   "Mariia Smirnova",
   "Mariia Teslia / Dmytro Teslia",
   "Mariia Tsyganok",
+  "Mariia Vysotskaia",
   "Marilena Kitromilis",
   "Marina ANISSINA",
   "Marina Antipova",
@@ -66551,6 +66678,8 @@
   "Mikhail ZHIRNOV",
   "Mila Bertsch",
   "Milada Kovar / Jared Mcpike",
+  "Milana Airapetova",
+  "Milana Ivanova",
   "Milana Matakaeva",
   "Milana Mozeiko",
   "Milana Mustafaeva",
@@ -66574,6 +66703,7 @@
   "Minkyu Seo",
   "Minsong Kim",
   "Miriama Sosina",
+  "Miroslava Morozova",
   "Miroslava Oreshkin / Vladimir Furman",
   "Misheel Otgonbaatar",
   "Miyu Yunoki / Tristan Taylor",
@@ -66783,6 +66913,7 @@
   "Polina Kochetova",
   "Polina Korobeynikova",
   "Polina Kostiukovich",
+  "Polina Kuravkova",
   "Polina Meleshchenko",
   "Polina Mut",
   "Polina Novokupova",
@@ -66792,6 +66923,7 @@
   "Polina Polman / Gabriel Renoldi",
   "Polina Polushkina",
   "Polina Pozen",
+  "Polina Teslenko",
   "Polina Tsurskaya",
   "Polina Ustinkova",
   "Polina Velikanova",
@@ -67159,11 +67291,13 @@
   "Varvara Abramkina",
   "Varvara Artemova",
   "Varvara Bogomolova",
+  "Varvara Bulatova",
   "Varvara Chigidina",
   "Varvara Degtiareva",
   "Varvara Klimava",
   "Varvara Korotkova",
   "Varvara Kurnosenko",
+  "Varvara Navarenko",
   "Varvara Poder",
   "Varvara Rauhen / Mikhail Prusiankou",
   "Varvara Romashova",
@@ -67172,9 +67306,11 @@
   "Varvara Skorynina",
   "Varvara Stankevich",
   "Vasilina Krous",
+  "Vasilina Tkachenko",
   "Vasilisa Bogomolova",
   "Vasilisa Davankova",
   "Vasilisa Metliuk",
+  "Vasilisa Rak",
   "Vassilianna Shelestova / Abay Sadykov",
   "Vazgen AZROJAN",
   "Venla Sinisalo",
@@ -67187,6 +67323,7 @@
   "Veronika Kropotina",
   "Veronika Morozova",
   "Veronika Shinkevich",
+  "Veronika Solonenko",
   "Veronika Taubeova",
   "Veronkia Stepchenkova",
   "Vianna Shen-Rou Linke",
@@ -67217,6 +67354,7 @@
   "Viktoriia Kutepova",
   "Viktoriia Pripa",
   "Viktoriia Puzyreva",
+  "Viktoriia Tishkevich",
   "Viktoriia Zbarazhskaia",
   "Viktoriya Druganova",
   "Viktoriya Vagapova",
@@ -68862,6 +69000,11 @@
    "k": ""
   },
   {
+   "n": "Adelina Shtukert",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Adelina Sotnikova",
    "c": "RUS",
    "k": "",
@@ -69571,6 +69714,11 @@
    "c": "FRA",
    "k": "d",
    "p": "04cbeeb945f4"
+  },
+  {
+   "n": "Alisa Seliverstova",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Alisa Turchina",
@@ -70331,6 +70479,11 @@
    "p": "09db63953757"
   },
   {
+   "n": "Anna Nikolaeva",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Anna Obrien / Drake Tong",
    "c": "AZE",
    "k": "D",
@@ -70425,6 +70578,11 @@
   },
   {
    "n": "Anna Zakharova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Anna Zatevakhina",
    "c": "RUS",
    "k": ""
   },
@@ -70535,6 +70693,11 @@
    "p": "369489785dd7"
   },
   {
+   "n": "Antonina Zaitseva",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Antonio SOUZA KORDEIRU",
    "c": "RUS",
    "k": ""
@@ -70611,6 +70774,11 @@
    "p": "bb82c3c102bd"
   },
   {
+   "n": "Arina Lisenkova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Arina Martinova",
    "c": "RUS",
    "k": ""
@@ -70646,6 +70814,11 @@
    "c": "RUS",
    "k": "W",
    "p": "dd9a4723d032"
+  },
+  {
+   "n": "Arina Zhukova",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Arkadi Sergeev",
@@ -71428,6 +71601,11 @@
    "k": ""
   },
   {
+   "n": "Daria Chubchikova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Daria Chuvikova",
    "c": "RUS",
    "k": ""
@@ -71452,6 +71630,16 @@
   },
   {
    "n": "Daria Kiiasheva",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Daria Kopan",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Daria Korobitsyna",
    "c": "RUS",
    "k": ""
   },
@@ -71536,6 +71724,11 @@
   },
   {
    "n": "Daria Tomasheva",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Daria Tsiupa",
    "c": "RUS",
    "k": ""
   },
@@ -72086,6 +72279,11 @@
    "k": ""
   },
   {
+   "n": "Ekaterina Govenko",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Ekaterina Katashinskaia",
    "c": "RUS",
    "k": ""
@@ -72138,6 +72336,11 @@
   },
   {
    "n": "Ekaterina Mefodeva",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Ekaterina Miagkikh",
    "c": "RUS",
    "k": ""
   },
@@ -72399,6 +72602,11 @@
   },
   {
    "n": "Elizaveta Bolbukh",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Elizaveta Cherkasova",
    "c": "RUS",
    "k": ""
   },
@@ -72731,6 +72939,11 @@
   },
   {
    "n": "Evelina Alfer",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Evelina Saitova",
    "c": "RUS",
    "k": ""
   },
@@ -74858,6 +75071,11 @@
    "k": ""
   },
   {
+   "n": "Kseniia Chigaeva",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Kseniia Iushkova",
    "c": "RUS",
    "k": ""
@@ -74875,6 +75093,11 @@
   },
   {
    "n": "Kseniia Melkumova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Kseniia Zvereva",
    "c": "RUS",
    "k": ""
   },
@@ -75808,6 +76031,11 @@
    "p": "8843b67779d8"
   },
   {
+   "n": "Maria Poluyan",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Maria Sotskova",
    "c": "RUS",
    "k": "",
@@ -75998,6 +76226,11 @@
   },
   {
    "n": "Mariia Tsyganok",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Mariia Vysotskaia",
    "c": "RUS",
    "k": ""
   },
@@ -76488,6 +76721,16 @@
    "p": "87387ac9c214"
   },
   {
+   "n": "Milana Airapetova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Milana Ivanova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Milana Mozeiko",
    "c": "FRA",
    "k": "w",
@@ -76606,6 +76849,12 @@
    "was": "W",
    "y": "2025/26",
    "p": "b442abbf0c20"
+  },
+  {
+   "n": "Miroslava Morozova",
+   "c": "RUS",
+   "k": "",
+   "p": "a8627c9115a8"
   },
   {
    "n": "Miroslava Oreshkin / Vladimir Furman",
@@ -77542,6 +77791,11 @@
    "k": ""
   },
   {
+   "n": "Polina Kuravkova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Polina Meleshchenko",
    "c": "RUS",
    "k": ""
@@ -77579,6 +77833,11 @@
   },
   {
    "n": "Polina Pozen",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Polina Teslenko",
    "c": "RUS",
    "k": ""
   },
@@ -79337,6 +79596,11 @@
    "k": ""
   },
   {
+   "n": "Varvara Bulatova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Varvara Chigidina",
    "c": "RUS",
    "k": ""
@@ -79370,6 +79634,11 @@
    "c": "RUS",
    "k": "",
    "p": "4092a6786597"
+  },
+  {
+   "n": "Varvara Navarenko",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Varvara Rauhen / Mikhail Prusiankou",
@@ -79408,6 +79677,11 @@
    "k": ""
   },
   {
+   "n": "Vasilina Tkachenko",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Vasilisa Bogomolova",
    "c": "RUS",
    "k": "W",
@@ -79420,6 +79694,11 @@
   },
   {
    "n": "Vasilisa Metliuk",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Vasilisa Rak",
    "c": "RUS",
    "k": ""
   },
@@ -79489,6 +79768,11 @@
    "was": "w",
    "y": "2023/24",
    "p": "bb0a309bf828"
+  },
+  {
+   "n": "Veronika Solonenko",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Veronika Taubeova",
@@ -79627,6 +79911,11 @@
   },
   {
    "n": "Viktoriia Puzyreva",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Viktoriia Tishkevich",
    "c": "RUS",
    "k": ""
   },
@@ -82527,7 +82816,8 @@
   {
    "n": "Денис Никитин",
    "c": "RUS",
-   "k": "M"
+   "k": "M",
+   "p": "5226984b4a10"
   },
   {
    "n": "Денис Яшин",
@@ -83929,7 +84219,8 @@
   {
    "n": "Макар Ушаков",
    "c": "RUS",
-   "k": "M"
+   "k": "M",
+   "p": "feb8300236f7"
   },
   {
    "n": "Максим Бадави",
@@ -84950,7 +85241,8 @@
   {
    "n": "Роман Чирков",
    "c": "RUS",
-   "k": "M"
+   "k": "M",
+   "p": "1dec7e2b9275"
   },
   {
    "n": "Роман Шереметьев",
@@ -103144,5 +103436,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "0eecb19299c27b03"
+ "rev": "488568d6199d6e55"
 }
