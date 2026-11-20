@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T18:23:59+03:00",
- "checked": "2026-11-20T16:15:28.997874+00:00",
+ "checked": "2026-11-20T16:23:28.898088+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59467,7 +59467,7 @@
      "nation": "ТАТ",
      "no": 2,
      "warmup": 1,
-     "place": 11,
+     "place": 12,
      "points": "52.23",
      "time": "17:42"
     },
@@ -59524,7 +59524,9 @@
      "nation": "ИВА",
      "time": "18:58",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "place": 9,
+     "points": "56.68"
     },
     {
      "name": "Иван Теленков",
@@ -59578,7 +59580,7 @@
      "time": "18:08",
      "no": 6,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "55.94"
     },
     {
@@ -59587,7 +59589,7 @@
      "time": "18:17",
      "no": 8,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "points": "54.46"
     },
     {
@@ -103022,5 +103024,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "508c00aea8e2d8ea"
+ "rev": "f7a5a7e105e093ef"
 }
