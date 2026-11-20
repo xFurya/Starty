@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T13:39:32+03:00",
- "checked": "2026-11-20T10:59:02.457318+00:00",
+ "checked": "2026-11-20T11:03:01.390376+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58083,7 +58083,7 @@
     {
      "name": "Afrina Diyanah",
      "nation": "MAS",
-     "place": 8,
+     "place": 9,
      "points": "51.30",
      "time": "12:44",
      "no": 2,
@@ -58127,7 +58127,7 @@
     {
      "name": "Emilija Ozola",
      "nation": "LAT",
-     "place": 7,
+     "place": 8,
      "points": "54.86",
      "time": "12:59",
      "no": 4,
@@ -58177,12 +58177,14 @@
      "nation": "SWE",
      "time": "13:52",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "83.97"
     },
     {
      "name": "Karoliine Raudsepp",
      "nation": "EST",
-     "place": 6,
+     "place": 7,
      "points": "64.69",
      "time": "12:52",
      "no": 3,
@@ -58249,7 +58251,7 @@
     {
      "name": "Michelle Dicicco",
      "nation": "ARG",
-     "place": 9,
+     "place": 10,
      "points": "41.51",
      "time": "12:36",
      "no": 1,
@@ -58272,7 +58274,7 @@
     {
      "name": "Olesja Leonova",
      "nation": "EST",
-     "place": 5,
+     "place": 6,
      "points": "74.95",
      "time": "13:21",
      "no": 6,
@@ -58461,31 +58463,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Риана Ганиева",
+     "nation": "ТАТ",
+     "points": "70.10"
+    },
+    {
+     "place": 2,
      "name": "Ксения Бородина",
      "nation": "УДМ",
      "points": "59.47"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Аделина Усманова",
      "nation": "ТАТ",
      "points": "58.59"
-    },
-    {
-     "place": 3,
-     "name": "Агния Хазова",
-     "nation": "ТВЕ",
-     "points": "57.26"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ксения Бородина — 59.47\n2. Аделина Усманова — 58.59\n3. Агния Хазова — 57.26\n\nРоссияне:\n• Виктория Стрельцова — 15:05\n• Софья Смагина — 15:20\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / VK Видео",
+   "desc": "Промежуточные итоги:\n1. Риана Ганиева — 70.10\n2. Ксения Бородина — 59.47\n3. Аделина Усманова — 58.59\n\nРоссияне:\n• Виктория Стрельцова — 15:05\n• Софья Смагина — 15:20\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / VK Видео",
    "field": [
     {
      "name": "Ксения Бородина",
      "nation": "УДМ",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "59.47",
      "time": "13:06"
     },
@@ -58494,7 +58496,7 @@
      "nation": "ЯРО",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "55.99",
      "time": "13:11"
     },
@@ -58503,7 +58505,7 @@
      "nation": "МАР",
      "no": 3,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "38.32",
      "time": "13:15"
     },
@@ -58512,7 +58514,7 @@
      "nation": "ТВЕ",
      "no": 4,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "57.26",
      "time": "13:20"
     },
@@ -58521,7 +58523,7 @@
      "nation": "ТАТ",
      "no": 5,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "58.59",
      "time": "13:25"
     },
@@ -58573,7 +58575,7 @@
      "time": "13:36",
      "no": 6,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "38.41"
     },
     {
@@ -58617,7 +58619,7 @@
      "time": "13:45",
      "no": 8,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "47.25"
     },
     {
@@ -58709,7 +58711,9 @@
      "nation": "ТАТ",
      "time": "13:50",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "70.10"
     },
     {
      "name": "Сабина Киселева",
@@ -58717,7 +58721,7 @@
      "time": "13:41",
      "no": 7,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "38.27"
     },
     {
@@ -102181,5 +102185,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "edabfc81d3d6b7d3"
+ "rev": "1ca43f37789acfe5"
 }
