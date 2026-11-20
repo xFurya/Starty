@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T12:35:29+03:00",
- "checked": "2026-11-20T10:19:01.605609+00:00",
+ "checked": "2026-11-20T10:31:02.246720+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58450,35 +58450,43 @@
      "url": "https://vkvideo.ru/live-38558219_456239877"
     }
    ],
-   "desc": "Россияне:\n• Виктория Стрельцова — 15:05\n• Софья Смагина — 15:20\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / VK Видео",
+   "desc": "Промежуточные итоги:\n1. Ксения Бородина — 59.47\n2. Агния Хазова — 57.26\n3. Вероника Пенькова — 55.99\n\nРоссияне:\n• Виктория Стрельцова — 15:05\n• Софья Смагина — 15:20\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / VK Видео",
    "field": [
     {
      "name": "Ксения Бородина",
      "nation": "УДМ",
      "time": "13:06",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "59.47"
     },
     {
      "name": "Вероника Пенькова",
      "nation": "ЯРО",
      "time": "13:11",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3,
+     "points": "55.99"
     },
     {
      "name": "Маргарита Котенева",
      "nation": "МАР",
      "time": "13:15",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4,
+     "points": "38.32"
     },
     {
      "name": "Агния Хазова",
      "nation": "ТВЕ",
      "time": "13:20",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "57.26"
     },
     {
      "name": "Аделина Усманова",
@@ -58766,7 +58774,28 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Ксения Бородина",
+     "nation": "УДМ",
+     "points": "59.47"
+    },
+    {
+     "place": 2,
+     "name": "Агния Хазова",
+     "nation": "ТВЕ",
+     "points": "57.26"
+    },
+    {
+     "place": 3,
+     "name": "Вероника Пенькова",
+     "nation": "ЯРО",
+     "points": "55.99"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:pairs-senior-kp",
@@ -102139,5 +102168,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "4454cdb5a350f853"
+ "rev": "4253a2b3ec9364ae"
 }
