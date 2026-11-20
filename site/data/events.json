@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T14:43:33+03:00",
- "checked": "2026-11-20T12:47:01.609528+00:00",
+ "checked": "2026-11-20T12:51:02.050609+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58420,7 +58420,7 @@
      "time": "15:05",
      "no": 19,
      "warmup": 4,
-     "place": 1,
+     "place": 2,
      "points": "72.16"
     },
     {
@@ -58428,7 +58428,9 @@
      "nation": "МОС",
      "time": "15:20",
      "no": 21,
-     "warmup": 5
+     "warmup": 5,
+     "place": 1,
+     "points": "73.79"
     }
    ],
    "athletes": [
@@ -58485,31 +58487,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Софья Смагина",
+     "nation": "МОС",
+     "points": "73.79"
+    },
+    {
+     "place": 2,
      "name": "Виктория Стрельцова",
      "nation": "МОС",
      "points": "72.16"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Риана Ганиева",
      "nation": "ТАТ",
      "points": "70.10"
-    },
-    {
-     "place": 3,
-     "name": "Аделина Камалова",
-     "nation": "ТАТ",
-     "points": "68.93"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Виктория Стрельцова — 72.16\n2. Риана Ганиева — 70.10\n3. Аделина Камалова — 68.93\n\nРоссияне:\n• Виктория Стрельцова — 15:05\n• Софья Смагина — 15:20\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / VK Видео",
+   "desc": "Промежуточные итоги:\n1. Софья Смагина — 73.79\n2. Виктория Стрельцова — 72.16\n3. Риана Ганиева — 70.10\n\nРоссияне:\n• Виктория Стрельцова — 15:05\n• Софья Смагина — 15:20\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / VK Видео",
    "field": [
     {
      "name": "Ксения Бородина",
      "nation": "УДМ",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "59.47",
      "time": "13:06"
     },
@@ -58518,7 +58520,7 @@
      "nation": "ЯРО",
      "no": 2,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "55.99",
      "time": "13:11"
     },
@@ -58527,7 +58529,7 @@
      "nation": "МАР",
      "no": 3,
      "warmup": 1,
-     "place": 18,
+     "place": 19,
      "points": "38.32",
      "time": "13:15"
     },
@@ -58536,7 +58538,7 @@
      "nation": "ТВЕ",
      "no": 4,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "57.26",
      "time": "13:20"
     },
@@ -58545,7 +58547,7 @@
      "nation": "ТАТ",
      "no": 5,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "58.59",
      "time": "13:25"
     },
@@ -58554,7 +58556,7 @@
      "nation": "ВЛГ",
      "no": 6,
      "warmup": 2,
-     "place": 17,
+     "place": 18,
      "points": "38.41",
      "time": "13:36"
     },
@@ -58563,7 +58565,7 @@
      "nation": "ПЕН",
      "no": 7,
      "warmup": 2,
-     "place": 19,
+     "place": 20,
      "points": "38.27",
      "time": "13:41"
     },
@@ -58572,7 +58574,7 @@
      "nation": "ЛИП",
      "no": 8,
      "warmup": 2,
-     "place": 15,
+     "place": 16,
      "points": "47.25",
      "time": "13:45"
     },
@@ -58581,7 +58583,7 @@
      "nation": "ТАТ",
      "no": 9,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "70.10",
      "time": "13:50"
     },
@@ -58590,7 +58592,7 @@
      "nation": "СВЕ",
      "no": 10,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "points": "55.06",
      "time": "13:55"
     },
@@ -58599,7 +58601,7 @@
      "nation": "ТАТ",
      "no": 11,
      "warmup": 3,
-     "place": 14,
+     "place": 15,
      "points": "49.37",
      "time": "14:06"
     },
@@ -58608,7 +58610,7 @@
      "nation": "ОМС",
      "no": 12,
      "warmup": 3,
-     "place": 12,
+     "place": 13,
      "points": "53.33",
      "time": "14:10"
     },
@@ -58617,7 +58619,7 @@
      "nation": "ТАТ",
      "no": 13,
      "warmup": 3,
-     "place": 3,
+     "place": 4,
      "points": "68.93",
      "time": "14:15"
     },
@@ -58626,7 +58628,7 @@
      "nation": "СТА",
      "no": 14,
      "warmup": 3,
-     "place": 16,
+     "place": 17,
      "points": "40.34",
      "time": "14:20"
     },
@@ -58650,7 +58652,7 @@
      "time": "15:09",
      "no": 20,
      "warmup": 4,
-     "place": 4,
+     "place": 5,
      "points": "65.78"
     },
     {
@@ -58673,7 +58675,7 @@
      "time": "14:51",
      "no": 16,
      "warmup": 4,
-     "place": 13,
+     "place": 14,
      "points": "52.20"
     },
     {
@@ -58682,7 +58684,7 @@
      "time": "14:24",
      "no": 15,
      "warmup": 3,
-     "place": 20,
+     "place": 21,
      "points": "37.56"
     },
     {
@@ -58691,7 +58693,7 @@
      "time": "15:05",
      "no": 19,
      "warmup": 4,
-     "place": 1,
+     "place": 2,
      "points": "72.16"
     },
     {
@@ -58770,7 +58772,7 @@
      "time": "15:00",
      "no": 18,
      "warmup": 4,
-     "place": 6,
+     "place": 7,
      "points": "59.10"
     },
     {
@@ -58792,7 +58794,9 @@
      "nation": "МОС",
      "time": "15:20",
      "no": 21,
-     "warmup": 5
+     "warmup": 5,
+     "place": 1,
+     "points": "73.79"
     },
     {
      "name": "Эмилия Марданова",
@@ -58807,7 +58811,7 @@
      "time": "14:55",
      "no": 17,
      "warmup": 4,
-     "place": 11,
+     "place": 12,
      "points": "53.49"
     }
    ],
@@ -58899,7 +58903,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Katie McBEATH / Balazs Nagy — 70.81\n2. Audrey Shin / Spencer Akira Howe — 67.26\n3. Megan Wessenberg / Denys Strekalin — 60.71\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Katie McBEATH / Balazs Nagy — 70.81\n2. Audrey Shin / Spencer Akira Howe — 67.26\n3. Valentina Plazas / Maximiliano Fernandez — 60.87\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Megan Wessenberg / Denys Strekalin",
@@ -58907,7 +58911,7 @@
      "time": "15:07",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "60.71"
     },
     {
@@ -58916,7 +58920,7 @@
      "time": "15:13",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "55.63"
     },
     {
@@ -58942,7 +58946,9 @@
      "nation": "USA",
      "time": "15:40",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3,
+     "points": "60.87"
     },
     {
      "name": "Irma Caldara / Riccardo Maglio",
@@ -58999,9 +59005,9 @@
     },
     {
      "place": 3,
-     "name": "Megan Wessenberg / Denys Strekalin",
-     "nation": "FRA",
-     "points": "60.71"
+     "name": "Valentina Plazas / Maximiliano Fernandez",
+     "nation": "USA",
+     "points": "60.87"
     }
    ],
    "provisional": true
@@ -102410,5 +102416,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "b6ebed245763a885"
+ "rev": "b913f03300607a33"
 }
