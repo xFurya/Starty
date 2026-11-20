@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T13:39:32+03:00",
- "checked": "2026-11-20T11:11:01.898935+00:00",
+ "checked": "2026-11-20T11:31:02.084101+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58061,29 +58061,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Eugenia Sekulovski",
+     "nation": "SUI",
+     "points": "100.11"
+    },
+    {
+     "place": 2,
      "name": "Gabrielle Daleman",
      "nation": "CAN",
      "points": "98.02"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Karolina Bialas",
      "nation": "POL",
      "points": "95.65"
-    },
-    {
-     "place": 3,
-     "name": "Zhasmin Shlaga",
-     "nation": "KGZ",
-     "points": "87.11"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Gabrielle Daleman — 98.02\n2. Karolina Bialas — 95.65\n3. Zhasmin Shlaga — 87.11\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Eugenia Sekulovski — 100.11\n2. Gabrielle Daleman — 98.02\n3. Karolina Bialas — 95.65\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Afrina Diyanah",
      "nation": "MAS",
-     "place": 9,
+     "place": 10,
      "points": "51.30",
      "time": "12:44",
      "no": 2,
@@ -58127,7 +58127,7 @@
     {
      "name": "Emilija Ozola",
      "nation": "LAT",
-     "place": 8,
+     "place": 9,
      "points": "54.86",
      "time": "12:59",
      "no": 4,
@@ -58138,7 +58138,9 @@
      "nation": "SUI",
      "time": "14:22",
      "no": 11,
-     "warmup": 3
+     "warmup": 3,
+     "place": 1,
+     "points": "100.11"
     },
     {
      "name": "Flora Marie Schaller",
@@ -58150,7 +58152,7 @@
     {
      "name": "Gabrielle Daleman",
      "nation": "CAN",
-     "place": 1,
+     "place": 2,
      "points": "98.02",
      "time": "13:29",
      "no": 7,
@@ -58159,7 +58161,7 @@
     {
      "name": "Haruna Murakami",
      "nation": "AUS",
-     "place": 4,
+     "place": 5,
      "points": "85.57",
      "time": "13:07",
      "no": 5,
@@ -58178,13 +58180,13 @@
      "time": "13:52",
      "no": 10,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "83.97"
     },
     {
      "name": "Karoliine Raudsepp",
      "nation": "EST",
-     "place": 7,
+     "place": 8,
      "points": "64.69",
      "time": "12:52",
      "no": 3,
@@ -58196,7 +58198,7 @@
      "time": "13:45",
      "no": 9,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "95.65"
     },
     {
@@ -58251,7 +58253,7 @@
     {
      "name": "Michelle Dicicco",
      "nation": "ARG",
-     "place": 10,
+     "place": 11,
      "points": "41.51",
      "time": "12:36",
      "no": 1,
@@ -58274,7 +58276,7 @@
     {
      "name": "Olesja Leonova",
      "nation": "EST",
-     "place": 6,
+     "place": 7,
      "points": "74.95",
      "time": "13:21",
      "no": 6,
@@ -58328,7 +58330,7 @@
      "time": "13:37",
      "no": 8,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "87.11"
     }
    ],
@@ -102187,5 +102189,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "01acd26eb4ce5f98"
+ "rev": "49f801db0ea0fe00"
 }
