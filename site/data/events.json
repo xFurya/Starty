@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T20:32:22+03:00",
- "checked": "2026-11-20T17:51:29.456779+00:00",
+ "checked": "2026-11-20T17:55:28.851984+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60081,25 +60081,27 @@
     },
     {
      "place": 2,
-     "name": "Olivia Flores / Mark Sadusky",
-     "nation": "USA",
-     "points": "84.35"
+     "name": "Debora Anna Cohen / Lukas Vochozka",
+     "nation": "CZE",
+     "points": "89.97"
     },
     {
      "place": 3,
-     "name": "Xuanyu Liu / Wenbao Han",
-     "nation": "CHN",
-     "points": "73.60"
+     "name": "Olivia Flores / Mark Sadusky",
+     "nation": "USA",
+     "points": "84.35"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Irina Napolitano / Edoardo Comi — 91.97\n2. Olivia Flores / Mark Sadusky — 84.35\n3. Xuanyu Liu / Wenbao Han — 73.60\n\nНачало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Irina Napolitano / Edoardo Comi — 91.97\n2. Debora Anna Cohen / Lukas Vochozka — 89.97\n3. Olivia Flores / Mark Sadusky — 84.35\n\nНачало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Debora Anna Cohen / Lukas Vochozka",
      "nation": "CZE",
      "time": "20:35",
      "no": 4,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "89.97"
     },
     {
      "name": "Irina Napolitano / Edoardo Comi",
@@ -60127,7 +60129,7 @@
     {
      "name": "Olivia Flores / Mark Sadusky",
      "nation": "USA",
-     "place": 2,
+     "place": 3,
      "points": "84.35",
      "time": "20:14",
      "no": 2,
@@ -60143,7 +60145,7 @@
     {
      "name": "Xuanyu Liu / Wenbao Han",
      "nation": "CHN",
-     "place": 3,
+     "place": 4,
      "points": "73.60",
      "time": "20:06",
      "no": 1,
@@ -60212,31 +60214,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Juulia Turkkila / Matthias Versluis",
+     "nation": "FIN",
+     "points": "77.58"
+    },
+    {
+     "place": 2,
      "name": "Emily Bratti / Ian Somerville",
      "nation": "USA",
      "points": "70.55"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
      "points": "68.00"
-    },
-    {
-     "place": 3,
-     "name": "Milla Ruud Reitan / Nikolaj Majorov",
-     "nation": "SWE",
-     "points": "60.96"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Emily Bratti / Ian Somerville — 70.55\n2. Marjorie Lajoie / Jean-Luc Baker — 68.00\n3. Milla Ruud Reitan / Nikolaj Majorov — 60.96\n\nНачало: 20:20 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Juulia Turkkila / Matthias Versluis — 77.58\n2. Emily Bratti / Ian Somerville — 70.55\n3. Marjorie Lajoie / Jean-Luc Baker — 68.00\n\nНачало: 20:20 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
      "no": 1,
      "warmup": 15,
-     "place": 2,
+     "place": 3,
      "points": "68.00",
      "time": "20:26"
     },
@@ -60253,7 +60255,7 @@
      "time": "20:39",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "70.55"
     },
     {
@@ -60261,7 +60263,9 @@
      "nation": "FIN",
      "time": "20:46",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "77.58"
     },
     {
      "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
@@ -60283,7 +60287,7 @@
      "time": "20:33",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "60.96"
     },
     {
@@ -103437,5 +103441,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "a3cf46d9a7a1b711"
+ "rev": "e3197c945df1485f"
 }
