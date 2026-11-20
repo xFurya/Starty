@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T14:43:33+03:00",
- "checked": "2026-11-20T13:27:02.055170+00:00",
+ "checked": "2026-11-20T13:31:02.181321+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58533,7 +58533,7 @@
      "nation": "МАР",
      "no": 3,
      "warmup": 1,
-     "place": 25,
+     "place": 26,
      "points": "38.32",
      "time": "13:15"
     },
@@ -58560,7 +58560,7 @@
      "nation": "ВЛГ",
      "no": 6,
      "warmup": 2,
-     "place": 24,
+     "place": 25,
      "points": "38.41",
      "time": "13:36"
     },
@@ -58569,7 +58569,7 @@
      "nation": "ПЕН",
      "no": 7,
      "warmup": 2,
-     "place": 26,
+     "place": 27,
      "points": "38.27",
      "time": "13:41"
     },
@@ -58632,7 +58632,7 @@
      "nation": "СТА",
      "no": 14,
      "warmup": 3,
-     "place": 23,
+     "place": 24,
      "points": "40.34",
      "time": "14:20"
     },
@@ -58692,7 +58692,7 @@
      "time": "14:24",
      "no": 15,
      "warmup": 3,
-     "place": 27,
+     "place": 28,
      "points": "37.56"
     },
     {
@@ -58709,7 +58709,9 @@
      "nation": "ТУЛ",
      "time": "16:15",
      "no": 28,
-     "warmup": 6
+     "warmup": 6,
+     "place": 23,
+     "points": "41.09"
     },
     {
      "name": "Дарья Царькова",
@@ -102437,5 +102439,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "bb3357226ed802e2"
+ "rev": "475fdefc0957f19e"
 }
