@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T18:23:59+03:00",
- "checked": "2026-11-20T16:43:29.257305+00:00",
+ "checked": "2026-11-20T16:47:28.951939+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59467,7 +59467,7 @@
      "nation": "ТАТ",
      "no": 2,
      "warmup": 1,
-     "place": 14,
+     "place": 15,
      "points": "52.23",
      "time": "17:42"
     },
@@ -59503,7 +59503,9 @@
      "nation": "КОС",
      "time": "19:25",
      "no": 16,
-     "warmup": 4
+     "warmup": 4,
+     "place": 11,
+     "points": "57.56"
     },
     {
      "name": "Владислав Виниченко",
@@ -59525,7 +59527,7 @@
      "time": "18:58",
      "no": 12,
      "warmup": 3,
-     "place": 11,
+     "place": 12,
      "points": "56.68"
     },
     {
@@ -59576,7 +59578,9 @@
      "nation": "ПРМ",
      "time": "19:20",
      "no": 15,
-     "warmup": 4
+     "warmup": 4,
+     "place": 16,
+     "points": "46.48"
     },
     {
      "name": "Марк Аникиенко",
@@ -59584,7 +59588,7 @@
      "time": "18:08",
      "no": 6,
      "warmup": 2,
-     "place": 12,
+     "place": 13,
      "points": "55.94"
     },
     {
@@ -59593,7 +59597,7 @@
      "time": "18:17",
      "no": 8,
      "warmup": 2,
-     "place": 13,
+     "place": 14,
      "points": "54.46"
     },
     {
@@ -59696,7 +59700,7 @@
      "time": "18:32",
      "no": 1,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "76.74"
     },
     {
@@ -59723,7 +59727,7 @@
      "time": "18:51",
      "no": 4,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "78.48"
     },
     {
@@ -59732,7 +59736,7 @@
      "time": "18:57",
      "no": 5,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "72.10"
     },
     {
@@ -59741,7 +59745,7 @@
      "time": "19:03",
      "no": 6,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "75.82"
     },
     {
@@ -59750,7 +59754,7 @@
      "time": "19:17",
      "no": 7,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "72.19"
     },
     {
@@ -59759,7 +59763,7 @@
      "time": "19:23",
      "no": 8,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "76.88"
     },
     {
@@ -59776,7 +59780,9 @@
      "nation": "JPN",
      "time": "19:36",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "79.45"
     },
     {
      "name": "Nika Egadze",
@@ -103040,5 +103046,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "9e8131813a46d302"
+ "rev": "677fbbe2338e56e9"
 }
