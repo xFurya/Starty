@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T13:39:32+03:00",
- "checked": "2026-11-20T11:51:02.013745+00:00",
+ "checked": "2026-11-20T11:55:02.022037+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58083,7 +58083,7 @@
     {
      "name": "Afrina Diyanah",
      "nation": "MAS",
-     "place": 12,
+     "place": 13,
      "points": "51.30",
      "time": "12:44",
      "no": 2,
@@ -58094,7 +58094,9 @@
      "nation": "LAT",
      "time": "14:45",
      "no": 14,
-     "warmup": 3
+     "warmup": 3,
+     "place": 5,
+     "points": "91.90"
     },
     {
      "name": "Anita Ostlund",
@@ -58127,7 +58129,7 @@
     {
      "name": "Emilija Ozola",
      "nation": "LAT",
-     "place": 11,
+     "place": 12,
      "points": "54.86",
      "time": "12:59",
      "no": 4,
@@ -58163,7 +58165,7 @@
     {
      "name": "Haruna Murakami",
      "nation": "AUS",
-     "place": 7,
+     "place": 8,
      "points": "85.57",
      "time": "13:07",
      "no": 5,
@@ -58182,13 +58184,13 @@
      "time": "13:52",
      "no": 10,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "83.97"
     },
     {
      "name": "Karoliine Raudsepp",
      "nation": "EST",
-     "place": 10,
+     "place": 11,
      "points": "64.69",
      "time": "12:52",
      "no": 3,
@@ -58255,7 +58257,7 @@
     {
      "name": "Michelle Dicicco",
      "nation": "ARG",
-     "place": 13,
+     "place": 14,
      "points": "41.51",
      "time": "12:36",
      "no": 1,
@@ -58278,7 +58280,7 @@
     {
      "name": "Olesja Leonova",
      "nation": "EST",
-     "place": 9,
+     "place": 10,
      "points": "74.95",
      "time": "13:21",
      "no": 6,
@@ -58297,7 +58299,7 @@
      "time": "14:29",
      "no": 12,
      "warmup": 3,
-     "place": 5,
+     "place": 6,
      "points": "90.10"
     },
     {
@@ -58334,7 +58336,7 @@
      "time": "13:37",
      "no": 8,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "87.11"
     }
    ],
@@ -102203,5 +102205,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "2c290fc46713bd19"
+ "rev": "79a672cbd2d5d861"
 }
