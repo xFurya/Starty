@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T16:19:32+03:00",
- "checked": "2026-11-20T13:51:28.626630+00:00",
+ "checked": "2026-11-20T13:55:28.273529+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58083,7 +58083,7 @@
     {
      "name": "Afrina Diyanah",
      "nation": "MAS",
-     "place": 24,
+     "place": 25,
      "points": "51.30",
      "time": "12:44",
      "no": 2,
@@ -58133,7 +58133,7 @@
     {
      "name": "Emilija Ozola",
      "nation": "LAT",
-     "place": 23,
+     "place": 24,
      "points": "54.86",
      "time": "12:59",
      "no": 4,
@@ -58169,7 +58169,7 @@
     {
      "name": "Haruna Murakami",
      "nation": "AUS",
-     "place": 18,
+     "place": 19,
      "points": "85.57",
      "time": "13:07",
      "no": 5,
@@ -58187,7 +58187,7 @@
     {
      "name": "Julia Brovall",
      "nation": "SWE",
-     "place": 20,
+     "place": 21,
      "points": "83.97",
      "time": "13:52",
      "no": 10,
@@ -58196,7 +58196,7 @@
     {
      "name": "Karoliine Raudsepp",
      "nation": "EST",
-     "place": 22,
+     "place": 23,
      "points": "64.69",
      "time": "12:52",
      "no": 3,
@@ -58237,7 +58237,7 @@
     {
      "name": "Lotta Artimo",
      "nation": "FIN",
-     "place": 15,
+     "place": 16,
      "points": "89.12",
      "time": "15:38",
      "no": 20,
@@ -58269,7 +58269,7 @@
     {
      "name": "Michelle Dicicco",
      "nation": "ARG",
-     "place": 25,
+     "place": 26,
      "points": "41.51",
      "time": "12:36",
      "no": 1,
@@ -58278,7 +58278,7 @@
     {
      "name": "Nela Snebergerova",
      "nation": "CZE",
-     "place": 17,
+     "place": 18,
      "points": "86.20",
      "time": "15:22",
      "no": 18,
@@ -58296,7 +58296,7 @@
     {
      "name": "Olesja Leonova",
      "nation": "EST",
-     "place": 21,
+     "place": 22,
      "points": "74.95",
      "time": "13:21",
      "no": 6,
@@ -58307,7 +58307,9 @@
      "nation": "FIN",
      "time": "16:46",
      "no": 26,
-     "warmup": 5
+     "warmup": 5,
+     "place": 14,
+     "points": "89.63"
     },
     {
      "name": "Pernille With",
@@ -58340,13 +58342,13 @@
      "time": "16:38",
      "no": 25,
      "warmup": 5,
-     "place": 19,
+     "place": 20,
      "points": "84.81"
     },
     {
      "name": "Yu-Feng Tsai",
      "nation": "TPE",
-     "place": 14,
+     "place": 15,
      "points": "89.34",
      "time": "15:30",
      "no": 19,
@@ -58355,7 +58357,7 @@
     {
      "name": "Zhasmin Shlaga",
      "nation": "KGZ",
-     "place": 16,
+     "place": 17,
      "points": "87.11",
      "time": "13:37",
      "no": 8,
@@ -102601,5 +102603,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "a580b5f3ae8de694"
+ "rev": "1939df4eb5c33856"
 }
