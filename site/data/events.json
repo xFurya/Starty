@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T17:20:46+03:00",
- "checked": "2026-11-20T14:59:27.356315+00:00",
+ "checked": "2026-11-20T15:03:27.490691+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59222,7 +59222,7 @@
      "points": "69.03"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Mao Shimada — 79.06\n2. Niina Petrokina — 69.08\n3. Seoyoung Kim — 69.03\n\nНачало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Mao Shimada — 79.06\n2. Niina Petrokina — 69.08\n3. Seoyoung Kim — 69.03\n\nНачало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Janna Jyrkinen",
@@ -59333,7 +59333,6 @@
      "points": "50.68"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG003.htm",
@@ -59353,7 +59352,7 @@
      "Niina PETROKINA": "Niina Petrokina",
      "Isabeau LEVITO": "Isabeau Levito"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
@@ -59406,7 +59405,7 @@
      "url": "https://vkvideo.ru/live-38558219_456239877"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ильяс Халиуллин — 86.75\n2. Данил Золотарев — 52.23\n\nНачало: 17:30 МСК\nТрансляция: Первый канал / VK Видео",
+   "desc": "Промежуточные итоги:\n1. Ильяс Халиуллин — 86.75\n2. Роман Чирков — 57.74\n3. Данил Золотарев — 52.23\n\nНачало: 17:30 МСК\nТрансляция: Первый канал / VK Видео",
    "field": [
     {
      "name": "Ильяс Халиуллин",
@@ -59423,7 +59422,7 @@
      "time": "17:42",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "52.23"
     },
     {
@@ -59431,7 +59430,9 @@
      "nation": "ТВЕ",
      "time": "17:46",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "57.74"
     },
     {
      "name": "Леонид Новожилов",
@@ -59584,6 +59585,12 @@
     },
     {
      "place": 2,
+     "name": "Роман Чирков",
+     "nation": "ТВЕ",
+     "points": "57.74"
+    },
+    {
+     "place": 3,
      "name": "Данил Золотарев",
      "nation": "ТАТ",
      "points": "52.23"
@@ -102745,5 +102752,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "6fbf779e401f91f2"
+ "rev": "a7787c998d520093"
 }
