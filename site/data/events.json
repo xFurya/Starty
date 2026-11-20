@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T13:39:32+03:00",
- "checked": "2026-11-20T11:47:01.957596+00:00",
+ "checked": "2026-11-20T11:51:02.013745+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58511,7 +58511,7 @@
      "nation": "МАР",
      "no": 3,
      "warmup": 1,
-     "place": 12,
+     "place": 13,
      "points": "38.32",
      "time": "13:15"
     },
@@ -58585,7 +58585,7 @@
      "time": "13:36",
      "no": 6,
      "warmup": 2,
-     "place": 11,
+     "place": 12,
      "points": "38.41"
     },
     {
@@ -58607,7 +58607,9 @@
      "nation": "МРД",
      "time": "14:24",
      "no": 15,
-     "warmup": 3
+     "warmup": 3,
+     "place": 15,
+     "points": "37.56"
     },
     {
      "name": "Виктория Стрельцова",
@@ -58733,7 +58735,7 @@
      "time": "13:41",
      "no": 7,
      "warmup": 2,
-     "place": 13,
+     "place": 14,
      "points": "38.27"
     },
     {
@@ -58748,7 +58750,9 @@
      "nation": "СТА",
      "time": "14:20",
      "no": 14,
-     "warmup": 3
+     "warmup": 3,
+     "place": 11,
+     "points": "40.34"
     },
     {
      "name": "Софья Смагина",
@@ -102199,5 +102203,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "9a73db2a7e8fac11"
+ "rev": "2c290fc46713bd19"
 }
