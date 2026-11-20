@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T17:20:46+03:00",
- "checked": "2026-11-20T15:35:28.621720+00:00",
+ "checked": "2026-11-20T15:39:28.817784+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59422,7 +59422,7 @@
      "time": "17:42",
      "no": 2,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "52.23"
     },
     {
@@ -59475,7 +59475,9 @@
      "nation": "ТАТ",
      "time": "18:17",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7,
+     "points": "54.46"
     },
     {
      "name": "Степан Юров",
@@ -59648,14 +59650,16 @@
      "url": "https://www.youtube.com/watch?v=UTsHtoFos6k"
     }
    ],
-   "desc": "Начало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Matias Lindfors — 76.74\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Matias Lindfors",
      "nation": "FIN",
      "time": "18:32",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "76.74"
     },
     {
      "name": "Yudong Chen",
@@ -59756,7 +59760,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Matias Lindfors",
+     "nation": "FIN",
+     "points": "76.74"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-junior-pp",
@@ -102760,5 +102773,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "5241a80e8b8be0d3"
+ "rev": "4bbeb67563c346c3"
 }
