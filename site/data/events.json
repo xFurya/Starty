@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T16:19:32+03:00",
- "checked": "2026-11-20T16:19:32+03:00",
+ "checked": "2026-11-20T13:39:28.412538+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58061,29 +58061,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Anita Ostlund",
+     "nation": "SWE",
+     "points": "114.68"
+    },
+    {
+     "place": 2,
      "name": "Barbora Vrankova",
      "nation": "CZE",
      "points": "110.84"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Nikola Fomchenkova",
      "nation": "LAT",
      "points": "103.83"
-    },
-    {
-     "place": 3,
-     "name": "Eugenia Sekulovski",
-     "nation": "SUI",
-     "points": "100.11"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Barbora Vrankova — 110.84\n2. Nikola Fomchenkova — 103.83\n3. Eugenia Sekulovski — 100.11\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Anita Ostlund — 114.68\n2. Barbora Vrankova — 110.84\n3. Nikola Fomchenkova — 103.83\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Afrina Diyanah",
      "nation": "MAS",
-     "place": 21,
+     "place": 23,
      "points": "51.30",
      "time": "12:44",
      "no": 2,
@@ -58092,7 +58092,7 @@
     {
      "name": "Anastasija Konga",
      "nation": "LAT",
-     "place": 9,
+     "place": 11,
      "points": "91.90",
      "time": "14:45",
      "no": 14,
@@ -58103,18 +58103,18 @@
      "nation": "SWE",
      "time": "16:31",
      "no": 24,
-     "warmup": 5
+     "warmup": 5,
+     "place": 1,
+     "points": "114.68"
     },
     {
      "name": "Barbora Vrankova",
      "nation": "CZE",
-     "place": 1,
+     "place": 2,
      "points": "110.84",
      "time": "16:15",
      "no": 22,
-     "warmup": 5,
-     "place": 1,
-     "points": "110.84"
+     "warmup": 5
     },
     {
      "name": "Breken Brezden",
@@ -58133,7 +58133,7 @@
     {
      "name": "Emilija Ozola",
      "nation": "LAT",
-     "place": 20,
+     "place": 22,
      "points": "54.86",
      "time": "12:59",
      "no": 4,
@@ -58142,7 +58142,7 @@
     {
      "name": "Eugenia Sekulovski",
      "nation": "SUI",
-     "place": 3,
+     "place": 5,
      "points": "100.11",
      "time": "14:22",
      "no": 11,
@@ -58151,7 +58151,7 @@
     {
      "name": "Flora Marie Schaller",
      "nation": "AUT",
-     "place": 4,
+     "place": 6,
      "points": "99.63",
      "time": "14:37",
      "no": 13,
@@ -58160,7 +58160,7 @@
     {
      "name": "Gabrielle Daleman",
      "nation": "CAN",
-     "place": 6,
+     "place": 8,
      "points": "98.02",
      "time": "13:29",
      "no": 7,
@@ -58169,7 +58169,7 @@
     {
      "name": "Haruna Murakami",
      "nation": "AUS",
-     "place": 16,
+     "place": 18,
      "points": "85.57",
      "time": "13:07",
      "no": 5,
@@ -58178,7 +58178,7 @@
     {
      "name": "Josefin Brovall",
      "nation": "SWE",
-     "place": 8,
+     "place": 10,
      "points": "94.01",
      "time": "14:53",
      "no": 15,
@@ -58187,7 +58187,7 @@
     {
      "name": "Julia Brovall",
      "nation": "SWE",
-     "place": 17,
+     "place": 19,
      "points": "83.97",
      "time": "13:52",
      "no": 10,
@@ -58196,7 +58196,7 @@
     {
      "name": "Karoliine Raudsepp",
      "nation": "EST",
-     "place": 19,
+     "place": 21,
      "points": "64.69",
      "time": "12:52",
      "no": 3,
@@ -58205,7 +58205,7 @@
     {
      "name": "Karolina Bialas",
      "nation": "POL",
-     "place": 7,
+     "place": 9,
      "points": "95.65",
      "time": "13:45",
      "no": 9,
@@ -58214,7 +58214,7 @@
     {
      "name": "Kristina Lisovskaja",
      "nation": "EST",
-     "place": 5,
+     "place": 7,
      "points": "99.56",
      "time": "15:07",
      "no": 16,
@@ -58237,7 +58237,7 @@
     {
      "name": "Lotta Artimo",
      "nation": "FIN",
-     "place": 13,
+     "place": 15,
      "points": "89.12",
      "time": "15:38",
      "no": 20,
@@ -58253,7 +58253,7 @@
     {
      "name": "Marta Helena Prangel",
      "nation": "EST",
-     "place": 10,
+     "place": 12,
      "points": "91.49",
      "time": "15:46",
      "no": 21,
@@ -58269,7 +58269,7 @@
     {
      "name": "Michelle Dicicco",
      "nation": "ARG",
-     "place": 22,
+     "place": 24,
      "points": "41.51",
      "time": "12:36",
      "no": 1,
@@ -58278,7 +58278,7 @@
     {
      "name": "Nela Snebergerova",
      "nation": "CZE",
-     "place": 15,
+     "place": 17,
      "points": "86.20",
      "time": "15:22",
      "no": 18,
@@ -58287,7 +58287,7 @@
     {
      "name": "Nikola Fomchenkova",
      "nation": "LAT",
-     "place": 2,
+     "place": 3,
      "points": "103.83",
      "time": "15:15",
      "no": 17,
@@ -58296,7 +58296,7 @@
     {
      "name": "Olesja Leonova",
      "nation": "EST",
-     "place": 18,
+     "place": 20,
      "points": "74.95",
      "time": "13:21",
      "no": 6,
@@ -58312,7 +58312,7 @@
     {
      "name": "Pernille With",
      "nation": "NOR",
-     "place": 11,
+     "place": 13,
      "points": "90.10",
      "time": "14:29",
      "no": 12,
@@ -58324,7 +58324,7 @@
      "time": "16:23",
      "no": 23,
      "warmup": 5,
-     "place": 3,
+     "place": 4,
      "points": "103.50"
     },
     {
@@ -58344,7 +58344,7 @@
     {
      "name": "Yu-Feng Tsai",
      "nation": "TPE",
-     "place": 12,
+     "place": 14,
      "points": "89.34",
      "time": "15:30",
      "no": 19,
@@ -58353,7 +58353,7 @@
     {
      "name": "Zhasmin Shlaga",
      "nation": "KGZ",
-     "place": 14,
+     "place": 16,
      "points": "87.11",
      "time": "13:37",
      "no": 8,
@@ -58645,7 +58645,7 @@
      "nation": "МРД",
      "no": 15,
      "warmup": 3,
-     "place": 26,
+     "place": 29,
      "points": "37.56",
      "time": "14:24"
     },
@@ -58717,7 +58717,7 @@
      "nation": "КОС",
      "no": 23,
      "warmup": 5,
-     "place": 21,
+     "place": 22,
      "points": "46.73",
      "time": "15:30"
     },
@@ -102574,5 +102574,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "b5221344e0c375d1"
+ "rev": "00e948148f6094ce"
 }
