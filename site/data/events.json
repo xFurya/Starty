@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T13:39:32+03:00",
- "checked": "2026-11-20T11:03:01.390376+00:00",
+ "checked": "2026-11-20T11:11:01.898935+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58505,7 +58505,7 @@
      "nation": "МАР",
      "no": 3,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "38.32",
      "time": "13:15"
     },
@@ -58553,7 +58553,9 @@
      "nation": "СВЕ",
      "time": "13:55",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6,
+     "points": "55.06"
     },
     {
      "name": "Анастасия Выровая",
@@ -58575,7 +58577,7 @@
      "time": "13:36",
      "no": 6,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "38.41"
     },
     {
@@ -58619,7 +58621,7 @@
      "time": "13:45",
      "no": 8,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "47.25"
     },
     {
@@ -58721,7 +58723,7 @@
      "time": "13:41",
      "no": 7,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "38.27"
     },
     {
@@ -102185,5 +102187,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "1ca43f37789acfe5"
+ "rev": "01acd26eb4ce5f98"
 }
