@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T18:23:59+03:00",
- "checked": "2026-11-20T16:35:28.716915+00:00",
+ "checked": "2026-11-20T16:39:28.414147+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59688,7 +59688,7 @@
      "url": "https://www.youtube.com/watch?v=q-UDEDFe0L4"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Yudong Chen — 82.88\n2. Andreas Nordeback — 82.08\n3. Arlet Levandi — 78.48\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Mihhail Selevko — 85.01\n2. Yudong Chen — 82.88\n3. Andreas Nordeback — 82.08\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Matias Lindfors",
@@ -59696,7 +59696,7 @@
      "time": "18:32",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "76.74"
     },
     {
@@ -59705,7 +59705,7 @@
      "time": "18:38",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "82.88"
     },
     {
@@ -59714,7 +59714,7 @@
      "time": "18:45",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "82.08"
     },
     {
@@ -59723,7 +59723,7 @@
      "time": "18:51",
      "no": 4,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "78.48"
     },
     {
@@ -59732,7 +59732,7 @@
      "time": "18:57",
      "no": 5,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "72.10"
     },
     {
@@ -59741,7 +59741,7 @@
      "time": "19:03",
      "no": 6,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "75.82"
     },
     {
@@ -59750,7 +59750,7 @@
      "time": "19:17",
      "no": 7,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "72.19"
     },
     {
@@ -59759,7 +59759,7 @@
      "time": "19:23",
      "no": 8,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "76.88"
     },
     {
@@ -59767,7 +59767,9 @@
      "nation": "EST",
      "time": "19:29",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "85.01"
     },
     {
      "name": "Kazuki Tomono",
@@ -59816,21 +59818,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "points": "85.01"
+    },
+    {
+     "place": 2,
      "name": "Yudong Chen",
      "nation": "CHN",
      "points": "82.88"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Andreas Nordeback",
      "nation": "SWE",
      "points": "82.08"
-    },
-    {
-     "place": 3,
-     "name": "Arlet Levandi",
-     "nation": "EST",
-     "points": "78.48"
     }
    ],
    "provisional": true
@@ -103036,5 +103038,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "e3070e0ff618603e"
+ "rev": "d22b4faa4b78d838"
 }
