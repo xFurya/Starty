@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T18:23:59+03:00",
- "checked": "2026-11-20T15:47:29.509805+00:00",
+ "checked": "2026-11-20T15:55:28.853193+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59678,7 +59678,7 @@
      "url": "https://www.youtube.com/watch?v=q-UDEDFe0L4"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Yudong Chen — 82.88\n2. Matias Lindfors — 76.74\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Yudong Chen — 82.88\n2. Andreas Nordeback — 82.08\n3. Matias Lindfors — 76.74\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Matias Lindfors",
@@ -59686,7 +59686,7 @@
      "time": "18:32",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "76.74"
     },
     {
@@ -59703,7 +59703,9 @@
      "nation": "SWE",
      "time": "18:45",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "82.08"
     },
     {
      "name": "Arlet Levandi",
@@ -59800,6 +59802,12 @@
     },
     {
      "place": 2,
+     "name": "Andreas Nordeback",
+     "nation": "SWE",
+     "points": "82.08"
+    },
+    {
+     "place": 3,
      "name": "Matias Lindfors",
      "nation": "FIN",
      "points": "76.74"
@@ -102977,5 +102985,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "588cfc16c09bcffc"
+ "rev": "5bee1e867423b84c"
 }
