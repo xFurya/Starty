@@ -14,13 +14,13 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:ffkm:2026-10-01_cm:men-senior-kp@starty
-DTSTAMP:20261120T192738Z
+DTSTAMP:20261120T203850Z
 DTSTART;TZID=Europe/Moscow:20261001T140000
 DTEND;TZID=Europe/Moscow:20261001T161500
 SUMMARY:Чемпионат Москвы — мужчины КП
 DESCRIPTION:Итог:\n1. Лев Лазарев — 98.35\n2. Иван Ко
  нихин — 89.89\n3. Роман Савосин — 88.00\n\nНачал
- о: 14:00 МСК
+ о: 14:00 МСК\nТрансляция: Okko
 LOCATION:«Навка Арена»\, Москва
 URL:https://xfurya.github.io/Starty/#e=ffkm:2026-10-01_cm:men-senior-kp
 TRANSP:TRANSPARENT
