@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T18:23:59+03:00",
- "checked": "2026-11-20T16:11:30.247637+00:00",
+ "checked": "2026-11-20T16:15:28.997874+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59467,7 +59467,7 @@
      "nation": "ТАТ",
      "no": 2,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "points": "52.23",
      "time": "17:42"
     },
@@ -59476,7 +59476,7 @@
      "nation": "ТВЕ",
      "no": 3,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "57.74",
      "time": "17:46"
     },
@@ -59494,7 +59494,7 @@
      "nation": "СВЕ",
      "no": 5,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "58.79",
      "time": "18:03"
     },
@@ -59531,7 +59531,9 @@
      "nation": "МОБ",
      "time": "18:54",
      "no": 11,
-     "warmup": 3
+     "warmup": 3,
+     "place": 5,
+     "points": "60.21"
     },
     {
      "name": "Илья Старков",
@@ -59576,7 +59578,7 @@
      "time": "18:08",
      "no": 6,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "55.94"
     },
     {
@@ -59585,7 +59587,7 @@
      "time": "18:17",
      "no": 8,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "54.46"
     },
     {
@@ -59594,7 +59596,7 @@
      "time": "18:49",
      "no": 10,
      "warmup": 3,
-     "place": 5,
+     "place": 6,
      "points": "60.08"
     },
     {
@@ -59856,7 +59858,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Romane Telemaque / Lucas Coulon — 75.19\n2. Naomie Ismaili / Leo Rouvrais — 54.21\n\nНачало: 18:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Leontina Horcickova / Jindrich Klement — 76.54\n2. Romane Telemaque / Lucas Coulon — 75.19\n3. Naomie Ismaili / Leo Rouvrais — 54.21\n\nНачало: 18:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Naomie Ismaili / Leo Rouvrais",
@@ -59864,7 +59866,7 @@
      "time": "18:51",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "54.21"
     },
     {
@@ -59873,7 +59875,7 @@
      "time": "18:58",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "75.19"
     },
     {
@@ -59881,7 +59883,9 @@
      "nation": "CZE",
      "time": "19:05",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "76.54"
     },
     {
      "name": "Laura Heckova / Alex Valky",
@@ -59932,12 +59936,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Leontina Horcickova / Jindrich Klement",
+     "nation": "CZE",
+     "points": "76.54"
+    },
+    {
+     "place": 2,
      "name": "Romane Telemaque / Lucas Coulon",
      "nation": "FRA",
      "points": "75.19"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Naomie Ismaili / Leo Rouvrais",
      "nation": "FRA",
      "points": "54.21"
@@ -103012,5 +103022,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "3ccf197cf91384a8"
+ "rev": "508c00aea8e2d8ea"
 }
