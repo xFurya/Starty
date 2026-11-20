@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T18:23:59+03:00",
- "checked": "2026-11-20T15:55:28.853193+00:00",
+ "checked": "2026-11-20T15:59:28.870924+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59678,7 +59678,7 @@
      "url": "https://www.youtube.com/watch?v=q-UDEDFe0L4"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Yudong Chen — 82.88\n2. Andreas Nordeback — 82.08\n3. Matias Lindfors — 76.74\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Yudong Chen — 82.88\n2. Andreas Nordeback — 82.08\n3. Arlet Levandi — 78.48\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Matias Lindfors",
@@ -59686,7 +59686,7 @@
      "time": "18:32",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "76.74"
     },
     {
@@ -59712,7 +59712,9 @@
      "nation": "EST",
      "time": "18:51",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3,
+     "points": "78.48"
     },
     {
      "name": "Kyrylo Marsak",
@@ -59808,9 +59810,9 @@
     },
     {
      "place": 3,
-     "name": "Matias Lindfors",
-     "nation": "FIN",
-     "points": "76.74"
+     "name": "Arlet Levandi",
+     "nation": "EST",
+     "points": "78.48"
     }
    ],
    "provisional": true
@@ -59848,14 +59850,16 @@
      "note": "Платно"
     }
    ],
-   "desc": "Начало: 18:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Naomie Ismaili / Leo Rouvrais — 54.21\n\nНачало: 18:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Naomie Ismaili / Leo Rouvrais",
      "nation": "FRA",
      "time": "18:51",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "54.21"
     },
     {
      "name": "Romane Telemaque / Lucas Coulon",
@@ -59916,7 +59920,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Naomie Ismaili / Leo Rouvrais",
+     "nation": "FRA",
+     "points": "54.21"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-senior-pp",
@@ -102985,5 +102998,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "5bee1e867423b84c"
+ "rev": "5c5d911b5ba49bf1"
 }
