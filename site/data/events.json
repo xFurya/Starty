@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T14:43:33+03:00",
- "checked": "2026-11-20T14:43:33+03:00",
+ "checked": "2026-11-20T12:07:02.083474+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58083,7 +58083,7 @@
     {
      "name": "Afrina Diyanah",
      "nation": "MAS",
-     "place": 12,
+     "place": 14,
      "points": "51.30",
      "time": "12:44",
      "no": 2,
@@ -58129,7 +58129,7 @@
     {
      "name": "Emilija Ozola",
      "nation": "LAT",
-     "place": 11,
+     "place": 13,
      "points": "54.86",
      "time": "12:59",
      "no": 4,
@@ -58151,9 +58151,7 @@
      "points": "99.63",
      "time": "14:37",
      "no": 13,
-     "warmup": 3,
-     "place": 2,
-     "points": "99.63"
+     "warmup": 3
     },
     {
      "name": "Gabrielle Daleman",
@@ -58167,7 +58165,7 @@
     {
      "name": "Haruna Murakami",
      "nation": "AUS",
-     "place": 7,
+     "place": 9,
      "points": "85.57",
      "time": "13:07",
      "no": 5,
@@ -58185,7 +58183,7 @@
     {
      "name": "Julia Brovall",
      "nation": "SWE",
-     "place": 8,
+     "place": 10,
      "points": "83.97",
      "time": "13:52",
      "no": 10,
@@ -58194,7 +58192,7 @@
     {
      "name": "Karoliine Raudsepp",
      "nation": "EST",
-     "place": 10,
+     "place": 12,
      "points": "64.69",
      "time": "12:52",
      "no": 3,
@@ -58261,7 +58259,7 @@
     {
      "name": "Michelle Dicicco",
      "nation": "ARG",
-     "place": 13,
+     "place": 15,
      "points": "41.51",
      "time": "12:36",
      "no": 1,
@@ -58284,7 +58282,7 @@
     {
      "name": "Olesja Leonova",
      "nation": "EST",
-     "place": 9,
+     "place": 11,
      "points": "74.95",
      "time": "13:21",
      "no": 6,
@@ -58300,7 +58298,7 @@
     {
      "name": "Pernille With",
      "nation": "NOR",
-     "place": 5,
+     "place": 7,
      "points": "90.10",
      "time": "14:29",
      "no": 12,
@@ -58337,7 +58335,7 @@
     {
      "name": "Zhasmin Shlaga",
      "nation": "KGZ",
-     "place": 6,
+     "place": 8,
      "points": "87.11",
      "time": "13:37",
      "no": 8,
@@ -58517,7 +58515,7 @@
      "nation": "МАР",
      "no": 3,
      "warmup": 1,
-     "place": 13,
+     "place": 14,
      "points": "38.32",
      "time": "13:15"
     },
@@ -58544,7 +58542,7 @@
      "nation": "ВЛГ",
      "no": 6,
      "warmup": 2,
-     "place": 12,
+     "place": 13,
      "points": "38.41",
      "time": "13:36"
     },
@@ -58553,7 +58551,7 @@
      "nation": "ПЕН",
      "no": 7,
      "warmup": 2,
-     "place": 14,
+     "place": 15,
      "points": "38.27",
      "time": "13:41"
     },
@@ -58562,7 +58560,7 @@
      "nation": "ЛИП",
      "no": 8,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "points": "47.25",
      "time": "13:45"
     },
@@ -58589,7 +58587,7 @@
      "nation": "ТАТ",
      "no": 11,
      "warmup": 3,
-     "place": 9,
+     "place": 10,
      "points": "49.37",
      "time": "14:06"
     },
@@ -58616,7 +58614,7 @@
      "nation": "СТА",
      "no": 14,
      "warmup": 3,
-     "place": 11,
+     "place": 12,
      "points": "40.34",
      "time": "14:20"
     },
@@ -58660,7 +58658,9 @@
      "nation": "СМО",
      "time": "14:51",
      "no": 16,
-     "warmup": 4
+     "warmup": 4,
+     "place": 9,
+     "points": "52.20"
     },
     {
      "name": "Вероника Шиленкова",
@@ -58668,7 +58668,7 @@
      "time": "14:24",
      "no": 15,
      "warmup": 3,
-     "place": 15,
+     "place": 16,
      "points": "37.56"
     },
     {
@@ -102361,5 +102361,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "e95e6f7e4bd01849"
+ "rev": "796cfa7c544f1513"
 }
