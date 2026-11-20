@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T16:19:32+03:00",
- "checked": "2026-11-20T13:55:28.273529+00:00",
+ "checked": "2026-11-20T13:59:28.373428+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59105,7 +59105,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Janna Jyrkinen — 59.74\n2. Minja Peltonen — 49.35\n\nНачало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Seoyoung Kim — 69.03\n2. Janna Jyrkinen — 59.74\n3. Minja Peltonen — 49.35\n\nНачало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Janna Jyrkinen",
@@ -59113,7 +59113,7 @@
      "time": "16:37",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "59.74"
     },
     {
@@ -59122,7 +59122,7 @@
      "time": "16:43",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "49.35"
     },
     {
@@ -59130,7 +59130,9 @@
      "nation": "KOR",
      "time": "16:50",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "69.03"
     },
     {
      "name": "Rion Sumiyoshi",
@@ -59221,12 +59223,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Seoyoung Kim",
+     "nation": "KOR",
+     "points": "69.03"
+    },
+    {
+     "place": 2,
      "name": "Janna Jyrkinen",
      "nation": "FIN",
      "points": "59.74"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Minja Peltonen",
      "nation": "FIN",
      "points": "49.35"
@@ -102603,5 +102611,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "1939df4eb5c33856"
+ "rev": "495ccdc83c96291b"
 }
