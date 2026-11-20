@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T14:43:33+03:00",
- "checked": "2026-11-20T12:51:02.050609+00:00",
+ "checked": "2026-11-20T12:55:01.707169+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58083,7 +58083,7 @@
     {
      "name": "Afrina Diyanah",
      "nation": "MAS",
-     "place": 19,
+     "place": 20,
      "points": "51.30",
      "time": "12:44",
      "no": 2,
@@ -58129,7 +58129,7 @@
     {
      "name": "Emilija Ozola",
      "nation": "LAT",
-     "place": 18,
+     "place": 19,
      "points": "54.86",
      "time": "12:59",
      "no": 4,
@@ -58165,7 +58165,7 @@
     {
      "name": "Haruna Murakami",
      "nation": "AUS",
-     "place": 14,
+     "place": 15,
      "points": "85.57",
      "time": "13:07",
      "no": 5,
@@ -58183,7 +58183,7 @@
     {
      "name": "Julia Brovall",
      "nation": "SWE",
-     "place": 15,
+     "place": 16,
      "points": "83.97",
      "time": "13:52",
      "no": 10,
@@ -58192,7 +58192,7 @@
     {
      "name": "Karoliine Raudsepp",
      "nation": "EST",
-     "place": 17,
+     "place": 18,
      "points": "64.69",
      "time": "12:52",
      "no": 3,
@@ -58236,7 +58236,7 @@
      "time": "15:38",
      "no": 20,
      "warmup": 4,
-     "place": 11,
+     "place": 12,
      "points": "89.12"
     },
     {
@@ -58251,7 +58251,9 @@
      "nation": "EST",
      "time": "15:46",
      "no": 21,
-     "warmup": 4
+     "warmup": 4,
+     "place": 9,
+     "points": "91.49"
     },
     {
      "name": "Mia Risa Gomez",
@@ -58263,7 +58265,7 @@
     {
      "name": "Michelle Dicicco",
      "nation": "ARG",
-     "place": 20,
+     "place": 21,
      "points": "41.51",
      "time": "12:36",
      "no": 1,
@@ -58275,7 +58277,7 @@
      "time": "15:22",
      "no": 18,
      "warmup": 4,
-     "place": 13,
+     "place": 14,
      "points": "86.20"
     },
     {
@@ -58290,7 +58292,7 @@
     {
      "name": "Olesja Leonova",
      "nation": "EST",
-     "place": 16,
+     "place": 17,
      "points": "74.95",
      "time": "13:21",
      "no": 6,
@@ -58306,7 +58308,7 @@
     {
      "name": "Pernille With",
      "nation": "NOR",
-     "place": 9,
+     "place": 10,
      "points": "90.10",
      "time": "14:29",
      "no": 12,
@@ -58339,13 +58341,13 @@
      "time": "15:30",
      "no": 19,
      "warmup": 4,
-     "place": 10,
+     "place": 11,
      "points": "89.34"
     },
     {
      "name": "Zhasmin Shlaga",
      "nation": "KGZ",
-     "place": 12,
+     "place": 13,
      "points": "87.11",
      "time": "13:37",
      "no": 8,
@@ -58520,7 +58522,7 @@
      "nation": "ЯРО",
      "no": 2,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "points": "55.99",
      "time": "13:11"
     },
@@ -58529,7 +58531,7 @@
      "nation": "МАР",
      "no": 3,
      "warmup": 1,
-     "place": 19,
+     "place": 20,
      "points": "38.32",
      "time": "13:15"
     },
@@ -58538,7 +58540,7 @@
      "nation": "ТВЕ",
      "no": 4,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "57.26",
      "time": "13:20"
     },
@@ -58556,7 +58558,7 @@
      "nation": "ВЛГ",
      "no": 6,
      "warmup": 2,
-     "place": 18,
+     "place": 19,
      "points": "38.41",
      "time": "13:36"
     },
@@ -58565,7 +58567,7 @@
      "nation": "ПЕН",
      "no": 7,
      "warmup": 2,
-     "place": 20,
+     "place": 21,
      "points": "38.27",
      "time": "13:41"
     },
@@ -58574,7 +58576,7 @@
      "nation": "ЛИП",
      "no": 8,
      "warmup": 2,
-     "place": 16,
+     "place": 17,
      "points": "47.25",
      "time": "13:45"
     },
@@ -58592,7 +58594,7 @@
      "nation": "СВЕ",
      "no": 10,
      "warmup": 2,
-     "place": 11,
+     "place": 12,
      "points": "55.06",
      "time": "13:55"
     },
@@ -58601,7 +58603,7 @@
      "nation": "ТАТ",
      "no": 11,
      "warmup": 3,
-     "place": 15,
+     "place": 16,
      "points": "49.37",
      "time": "14:06"
     },
@@ -58610,7 +58612,7 @@
      "nation": "ОМС",
      "no": 12,
      "warmup": 3,
-     "place": 13,
+     "place": 14,
      "points": "53.33",
      "time": "14:10"
     },
@@ -58628,7 +58630,7 @@
      "nation": "СТА",
      "no": 14,
      "warmup": 3,
-     "place": 17,
+     "place": 18,
      "points": "40.34",
      "time": "14:20"
     },
@@ -58675,7 +58677,7 @@
      "time": "14:51",
      "no": 16,
      "warmup": 4,
-     "place": 14,
+     "place": 15,
      "points": "52.20"
     },
     {
@@ -58684,7 +58686,7 @@
      "time": "14:24",
      "no": 15,
      "warmup": 3,
-     "place": 21,
+     "place": 22,
      "points": "37.56"
     },
     {
@@ -58729,7 +58731,9 @@
      "nation": "ТАТ",
      "time": "15:25",
      "no": 22,
-     "warmup": 5
+     "warmup": 5,
+     "place": 9,
+     "points": "57.74"
     },
     {
      "name": "Маргарита Игонова",
@@ -58811,7 +58815,7 @@
      "time": "14:55",
      "no": 17,
      "warmup": 4,
-     "place": 12,
+     "place": 13,
      "points": "53.49"
     }
    ],
@@ -58955,7 +58959,9 @@
      "nation": "ITA",
      "time": "15:46",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6,
+     "points": "54.27"
     },
     {
      "name": "Annika Hocke / Robert Kunkel",
@@ -102416,5 +102422,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "b913f03300607a33"
+ "rev": "ccf49c166f0d1d07"
 }
