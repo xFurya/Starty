@@ -38,6 +38,20 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils python3-pil
           python3 -m pip install -q --break-system-packages opencv-python-headless
 
+      # Браузер — для страниц, которые обычным запросом не отдаются (раздел Okko: JS-проверка на бота,
+      # scraper/browser.py). Без него сбор не падает: Okko и «где смотреть» берутся из кэша data/.
+      # Версия закреплена; браузер в кэше Actions (витрина открытая — кэш здесь разрешён).
+      - name: Кэш браузера
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-1.63.0-shell-${{ runner.os }}
+      - name: Установить браузер
+        continue-on-error: true
+        run: |
+          python3 -m pip install -q --break-system-packages playwright==1.63.0
+          python3 -m playwright install --with-deps --only-shell chromium
+
       - name: Прежние протоколы с gh-pages
         # протоколы в main не хранятся: без них сборщик не знает последних удачных файлов
         env:
