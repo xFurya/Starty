@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T16:19:32+03:00",
- "checked": "2026-11-20T14:03:28.139133+00:00",
+ "checked": "2026-11-20T14:11:28.220678+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58543,7 +58543,7 @@
      "nation": "МАР",
      "no": 3,
      "warmup": 1,
-     "place": 31,
+     "place": 32,
      "points": "38.32",
      "time": "13:15"
     },
@@ -58570,7 +58570,7 @@
      "nation": "ВЛГ",
      "no": 6,
      "warmup": 2,
-     "place": 30,
+     "place": 31,
      "points": "38.41",
      "time": "13:36"
     },
@@ -58579,7 +58579,7 @@
      "nation": "ПЕН",
      "no": 7,
      "warmup": 2,
-     "place": 32,
+     "place": 33,
      "points": "38.27",
      "time": "13:41"
     },
@@ -58642,7 +58642,7 @@
      "nation": "СТА",
      "no": 14,
      "warmup": 3,
-     "place": 29,
+     "place": 30,
      "points": "40.34",
      "time": "14:20"
     },
@@ -58651,7 +58651,7 @@
      "nation": "МРД",
      "no": 15,
      "warmup": 3,
-     "place": 33,
+     "place": 34,
      "points": "37.56",
      "time": "14:24"
     },
@@ -58776,7 +58776,7 @@
      "time": "16:44",
      "no": 33,
      "warmup": 7,
-     "place": 26,
+     "place": 27,
      "points": "42.73"
     },
     {
@@ -58785,7 +58785,7 @@
      "time": "16:15",
      "no": 28,
      "warmup": 6,
-     "place": 28,
+     "place": 29,
      "points": "41.09"
     },
     {
@@ -58794,7 +58794,7 @@
      "time": "16:29",
      "no": 31,
      "warmup": 6,
-     "place": 27,
+     "place": 28,
      "points": "41.37"
     },
     {
@@ -58841,7 +58841,9 @@
      "nation": "ЧЕЛ",
      "time": "16:49",
      "no": 34,
-     "warmup": 7
+     "warmup": 7,
+     "place": 26,
+     "points": "44.34"
     },
     {
      "name": "Эмилия Марданова",
@@ -59109,7 +59111,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Seoyoung Kim — 69.03\n2. Rion Sumiyoshi — 64.06\n3. Janna Jyrkinen — 59.74\n\nНачало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Seoyoung Kim — 69.03\n2. Iida Karhunen — 66.24\n3. Rion Sumiyoshi — 64.06\n\nНачало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Janna Jyrkinen",
@@ -59117,7 +59119,7 @@
      "time": "16:37",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "59.74"
     },
     {
@@ -59126,7 +59128,7 @@
      "time": "16:43",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "49.35"
     },
     {
@@ -59144,7 +59146,7 @@
      "time": "16:56",
      "no": 4,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "64.06"
     },
     {
@@ -59152,7 +59154,9 @@
      "nation": "FIN",
      "time": "17:02",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "66.24"
     },
     {
      "name": "Yuseong Kim",
@@ -59235,15 +59239,15 @@
     },
     {
      "place": 2,
-     "name": "Rion Sumiyoshi",
-     "nation": "JPN",
-     "points": "64.06"
+     "name": "Iida Karhunen",
+     "nation": "FIN",
+     "points": "66.24"
     },
     {
      "place": 3,
-     "name": "Janna Jyrkinen",
-     "nation": "FIN",
-     "points": "59.74"
+     "name": "Rion Sumiyoshi",
+     "nation": "JPN",
+     "points": "64.06"
     }
    ],
    "provisional": true
@@ -102617,5 +102621,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "f2b3f27434cdeecf"
+ "rev": "d39e14a0781fad04"
 }
