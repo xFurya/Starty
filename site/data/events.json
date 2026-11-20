@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T19:28:25+03:00",
- "checked": "2026-11-20T19:28:25+03:00",
+ "checked": "2026-11-20T16:51:29.759744+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59468,7 +59468,7 @@
      "nation": "ТАТ",
      "no": 2,
      "warmup": 1,
-     "place": 14,
+     "place": 15,
      "points": "52.23",
      "time": "17:42"
     },
@@ -59504,7 +59504,7 @@
      "nation": "ЧЕЛ",
      "no": 6,
      "warmup": 2,
-     "place": 12,
+     "place": 13,
      "points": "55.94",
      "time": "18:08"
     },
@@ -59522,7 +59522,7 @@
      "nation": "ТАТ",
      "no": 8,
      "warmup": 2,
-     "place": 13,
+     "place": 14,
      "points": "54.46",
      "time": "18:17"
     },
@@ -59558,7 +59558,7 @@
      "nation": "ИВА",
      "no": 12,
      "warmup": 3,
-     "place": 11,
+     "place": 12,
      "points": "56.68",
      "time": "18:58"
     },
@@ -59615,7 +59615,9 @@
      "nation": "ПРМ",
      "time": "19:20",
      "no": 15,
-     "warmup": 4
+     "warmup": 4,
+     "place": 16,
+     "points": "46.48"
     }
    ],
    "provisional": true,
@@ -59711,14 +59713,14 @@
      "points": "82.08"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Yudong Chen — 82.88\n2. Andreas Nordeback — 82.08\n3. Arlet Levandi — 78.48\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Mihhail Selevko — 85.01\n2. Yudong Chen — 82.88\n3. Andreas Nordeback — 82.08\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Matias Lindfors",
      "nation": "FIN",
      "no": 1,
      "warmup": 15,
-     "place": 5,
+     "place": 8,
      "points": "76.74",
      "time": "18:32"
     },
@@ -59727,7 +59729,7 @@
      "nation": "CHN",
      "no": 2,
      "warmup": 15,
-     "place": 1,
+     "place": 2,
      "points": "82.88",
      "time": "18:38"
     },
@@ -59736,7 +59738,7 @@
      "nation": "SWE",
      "no": 3,
      "warmup": 15,
-     "place": 2,
+     "place": 3,
      "points": "82.08",
      "time": "18:45"
     },
@@ -59745,7 +59747,7 @@
      "nation": "EST",
      "no": 4,
      "warmup": 15,
-     "place": 3,
+     "place": 6,
      "points": "78.48",
      "time": "18:51"
     },
@@ -59754,7 +59756,7 @@
      "nation": "UKR",
      "no": 5,
      "warmup": 15,
-     "place": 8,
+     "place": 11,
      "points": "72.10",
      "time": "18:57"
     },
@@ -59763,7 +59765,7 @@
      "nation": "ISR",
      "no": 6,
      "warmup": 15,
-     "place": 6,
+     "place": 9,
      "points": "75.82",
      "time": "19:03"
     },
@@ -59772,7 +59774,7 @@
      "nation": "GER",
      "no": 7,
      "warmup": 2,
-     "place": 7,
+     "place": 10,
      "points": "72.19",
      "time": "19:17"
     },
@@ -59781,7 +59783,7 @@
      "nation": "CAN",
      "no": 8,
      "warmup": 2,
-     "place": 4,
+     "place": 7,
      "points": "76.88",
      "time": "19:23"
     },
@@ -59797,21 +59799,27 @@
      "nation": "JPN",
      "time": "19:36",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "79.45"
     },
     {
      "name": "Mihhail Selevko",
      "nation": "EST",
      "time": "19:29",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "85.01"
     },
     {
      "name": "Nika Egadze",
      "nation": "GEO",
      "time": "19:42",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "79.45"
     }
    ],
    "provisional": true,
@@ -59874,92 +59882,96 @@
    "podium": [
     {
      "place": 1,
+     "name": "Злата Камалова / Данил Панов",
+     "nation": "GEO",
+     "points": "95.05"
+    },
+    {
+     "place": 2,
      "name": "Jolena Grohne / Manuel Rossi",
      "nation": "ITA",
      "points": "80.13"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Leontina Horcickova / Jindrich Klement",
      "nation": "CZE",
      "points": "76.54"
-    },
-    {
-     "place": 3,
-     "name": "Romane Telemaque / Lucas Coulon",
-     "nation": "FRA",
-     "points": "75.19"
-    },
-    {
-     "place": 3,
-     "name": "Laura Heckova / Alex Valky",
-     "nation": "SVK",
-     "points": "73.67"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Leontina Horcickova / Jindrich Klement — 76.54\n2. Romane Telemaque / Lucas Coulon — 75.19\n3. Laura Heckova / Alex Valky — 73.67\n\nНачало: 18:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Злата Камалова / Данил Панов — 95.05\n2. Jolena Grohne / Manuel Rossi — 80.13\n3. Leontina Horcickova / Jindrich Klement — 76.54\n\nИтог турнира:\n1. Злата Камалова / Данил Панов — 155.78\n2. Jolena Grohne / Manuel Rossi — 135.93\n3. Laura Heckova / Alex Valky — 122.48\n\nПримечательное:\n• Злата Камалова / Данил Панов — Отрыв от второго места — 19.85 балла\n\nНачало: 18:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Clelia Liget-latus / Allan Daniel Fisher",
      "nation": "FRA",
-     "place": 4,
+     "place": 6,
      "points": "68.67",
      "time": "19:26",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "final": 5
     },
     {
      "name": "Jolena Grohne / Manuel Rossi",
      "nation": "ITA",
      "time": "19:33",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "80.13",
+     "final": 2
     },
     {
      "name": "Laura Heckova / Alex Valky",
      "nation": "SVK",
-     "place": 3,
+     "place": 5,
      "points": "73.67",
      "time": "19:19",
      "no": 4,
-     "warmup": 2
+     "warmup": 2,
+     "final": 3
     },
     {
      "name": "Leontina Horcickova / Jindrich Klement",
      "nation": "CZE",
-     "place": 1,
+     "place": 3,
      "points": "76.54",
      "time": "19:05",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 4
     },
     {
      "name": "Naomie Ismaili / Leo Rouvrais",
      "nation": "FRA",
-     "place": 5,
+     "place": 7,
      "points": "54.21",
      "time": "18:51",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 7
     },
     {
      "name": "Romane Telemaque / Lucas Coulon",
      "nation": "FRA",
-     "place": 2,
+     "place": 4,
      "points": "75.19",
      "time": "18:58",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 6
     },
     {
      "name": "Злата Камалова / Данил Панов",
      "nation": "GEO",
      "time": "19:40",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "95.05",
+     "final": 1
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG014.htm",
@@ -59974,9 +59986,36 @@
      "Jolena GROHNE / Manuel ROSSI": "Jolena Grohne / Manuel Rossi",
      "Zlata KAMALOVA / Danil PANOV": "Злата Камалова / Данил Панов"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Злата Камалова / Данил Панов",
+     "nation": "GEO",
+     "points": "155.78"
+    },
+    {
+     "place": 2,
+     "name": "Jolena Grohne / Manuel Rossi",
+     "nation": "ITA",
+     "points": "135.93"
+    },
+    {
+     "place": 3,
+     "name": "Laura Heckova / Alex Valky",
+     "nation": "SVK",
+     "points": "122.48"
+    }
+   ],
+   "facts": [
+    {
+     "who": "Злата Камалова / Данил Панов",
+     "text": "Отрыв от второго места — 19.85 балла",
+     "kind": "place"
+    }
+   ]
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-senior-pp",
@@ -103045,5 +103084,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "7bd3e24946eb32cf"
+ "rev": "cd0e086f580cf433"
 }
