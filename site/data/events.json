@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-20T21:36:15+03:00",
- "checked": "2026-11-20T21:36:15+03:00",
- "complete": false,
+ "generated": "2026-11-20T22:27:38+03:00",
+ "checked": "2026-11-20T22:27:38+03:00",
+ "complete": true,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
   "Golden Skate": "ok",
-  "ФФКМ": "календарь не открылся (https://ffkm.ru/season/competitions/calendar-of-sports-competitions/: <urlopen error timed out>)",
+  "ФФКМ": "ok",
   "Самара": "ok"
  },
  "events": [
@@ -60404,9 +60404,9 @@
    },
    "facts": [
     {
-     "who": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "kind": "score",
      "text": "Лучшая в мире оценка сезона за РТ: 85.78",
-     "kind": "score"
+     "who": "Laurence Fournier Beaudry / Guillaume Cizeron"
     }
    ],
    "proto": "isu_isu-gp-finlandia-trophy-2026.json"
@@ -100795,6 +100795,14 @@
    "was": "w",
    "y": "2026/27",
    "p": "72fb55b016fa"
+  },
+  {
+   "n": "Marjorie Lajoie / Jean-Luc Baker",
+   "c": "CAN",
+   "k": "",
+   "was": "d",
+   "y": "2026/27",
+   "p": "9e0171c91aaa"
   }
  ],
  "photos": {
@@ -103548,5 +103556,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "e63468e057ba11e1"
+ "rev": "7b0d4ff3056c7b1a"
 }
