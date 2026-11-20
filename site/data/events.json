@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T19:28:25+03:00",
- "checked": "2026-11-20T17:31:32.229803+00:00",
+ "checked": "2026-11-20T17:35:28.753172+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60185,14 +60185,16 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Начало: 20:20 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Marjorie Lajoie / Jean-Luc Baker — 68.00\n\nНачало: 20:20 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
      "time": "20:26",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "68.00"
     },
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
@@ -60277,7 +60279,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Marjorie Lajoie / Jean-Luc Baker",
+     "nation": "CAN",
+     "points": "68.00"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:women-junior-pp",
@@ -103109,5 +103120,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "5e4f7fa90605dde7"
+ "rev": "ccf9aa1ce876dbde"
 }
