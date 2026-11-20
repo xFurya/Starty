@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T14:43:33+03:00",
- "checked": "2026-11-20T12:07:02.083474+00:00",
+ "checked": "2026-11-20T12:15:01.476880+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58073,17 +58073,17 @@
     },
     {
      "place": 3,
-     "name": "Gabrielle Daleman",
-     "nation": "CAN",
-     "points": "98.02"
+     "name": "Kristina Lisovskaja",
+     "nation": "EST",
+     "points": "99.56"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Eugenia Sekulovski — 100.11\n2. Flora Marie Schaller — 99.63\n3. Gabrielle Daleman — 98.02\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Eugenia Sekulovski — 100.11\n2. Flora Marie Schaller — 99.63\n3. Kristina Lisovskaja — 99.56\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Afrina Diyanah",
      "nation": "MAS",
-     "place": 14,
+     "place": 15,
      "points": "51.30",
      "time": "12:44",
      "no": 2,
@@ -58095,7 +58095,7 @@
      "time": "14:45",
      "no": 14,
      "warmup": 3,
-     "place": 6,
+     "place": 7,
      "points": "91.90"
     },
     {
@@ -58129,7 +58129,7 @@
     {
      "name": "Emilija Ozola",
      "nation": "LAT",
-     "place": 13,
+     "place": 14,
      "points": "54.86",
      "time": "12:59",
      "no": 4,
@@ -58156,7 +58156,7 @@
     {
      "name": "Gabrielle Daleman",
      "nation": "CAN",
-     "place": 3,
+     "place": 4,
      "points": "98.02",
      "time": "13:29",
      "no": 7,
@@ -58165,7 +58165,7 @@
     {
      "name": "Haruna Murakami",
      "nation": "AUS",
-     "place": 9,
+     "place": 10,
      "points": "85.57",
      "time": "13:07",
      "no": 5,
@@ -58177,13 +58177,13 @@
      "time": "14:53",
      "no": 15,
      "warmup": 3,
-     "place": 5,
+     "place": 6,
      "points": "94.01"
     },
     {
      "name": "Julia Brovall",
      "nation": "SWE",
-     "place": 10,
+     "place": 11,
      "points": "83.97",
      "time": "13:52",
      "no": 10,
@@ -58192,7 +58192,7 @@
     {
      "name": "Karoliine Raudsepp",
      "nation": "EST",
-     "place": 12,
+     "place": 13,
      "points": "64.69",
      "time": "12:52",
      "no": 3,
@@ -58201,7 +58201,7 @@
     {
      "name": "Karolina Bialas",
      "nation": "POL",
-     "place": 4,
+     "place": 5,
      "points": "95.65",
      "time": "13:45",
      "no": 9,
@@ -58212,7 +58212,9 @@
      "nation": "EST",
      "time": "15:07",
      "no": 16,
-     "warmup": 4
+     "warmup": 4,
+     "place": 3,
+     "points": "99.56"
     },
     {
      "name": "Lara Naki Gutmann",
@@ -58259,7 +58261,7 @@
     {
      "name": "Michelle Dicicco",
      "nation": "ARG",
-     "place": 15,
+     "place": 16,
      "points": "41.51",
      "time": "12:36",
      "no": 1,
@@ -58282,7 +58284,7 @@
     {
      "name": "Olesja Leonova",
      "nation": "EST",
-     "place": 11,
+     "place": 12,
      "points": "74.95",
      "time": "13:21",
      "no": 6,
@@ -58298,7 +58300,7 @@
     {
      "name": "Pernille With",
      "nation": "NOR",
-     "place": 7,
+     "place": 8,
      "points": "90.10",
      "time": "14:29",
      "no": 12,
@@ -58335,7 +58337,7 @@
     {
      "name": "Zhasmin Shlaga",
      "nation": "KGZ",
-     "place": 8,
+     "place": 9,
      "points": "87.11",
      "time": "13:37",
      "no": 8,
@@ -58506,7 +58508,7 @@
      "nation": "ЯРО",
      "no": 2,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "55.99",
      "time": "13:11"
     },
@@ -58515,7 +58517,7 @@
      "nation": "МАР",
      "no": 3,
      "warmup": 1,
-     "place": 14,
+     "place": 16,
      "points": "38.32",
      "time": "13:15"
     },
@@ -58524,7 +58526,7 @@
      "nation": "ТВЕ",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "57.26",
      "time": "13:20"
     },
@@ -58533,7 +58535,7 @@
      "nation": "ТАТ",
      "no": 5,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "58.59",
      "time": "13:25"
     },
@@ -58542,7 +58544,7 @@
      "nation": "ВЛГ",
      "no": 6,
      "warmup": 2,
-     "place": 13,
+     "place": 15,
      "points": "38.41",
      "time": "13:36"
     },
@@ -58551,7 +58553,7 @@
      "nation": "ПЕН",
      "no": 7,
      "warmup": 2,
-     "place": 15,
+     "place": 17,
      "points": "38.27",
      "time": "13:41"
     },
@@ -58560,7 +58562,7 @@
      "nation": "ЛИП",
      "no": 8,
      "warmup": 2,
-     "place": 11,
+     "place": 13,
      "points": "47.25",
      "time": "13:45"
     },
@@ -58578,7 +58580,7 @@
      "nation": "СВЕ",
      "no": 10,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "55.06",
      "time": "13:55"
     },
@@ -58587,7 +58589,7 @@
      "nation": "ТАТ",
      "no": 11,
      "warmup": 3,
-     "place": 10,
+     "place": 12,
      "points": "49.37",
      "time": "14:06"
     },
@@ -58596,7 +58598,7 @@
      "nation": "ОМС",
      "no": 12,
      "warmup": 3,
-     "place": 8,
+     "place": 10,
      "points": "53.33",
      "time": "14:10"
     },
@@ -58614,7 +58616,7 @@
      "nation": "СТА",
      "no": 14,
      "warmup": 3,
-     "place": 12,
+     "place": 14,
      "points": "40.34",
      "time": "14:20"
     },
@@ -58659,7 +58661,7 @@
      "time": "14:51",
      "no": 16,
      "warmup": 4,
-     "place": 9,
+     "place": 11,
      "points": "52.20"
     },
     {
@@ -58668,7 +58670,7 @@
      "time": "14:24",
      "no": 15,
      "warmup": 3,
-     "place": 16,
+     "place": 18,
      "points": "37.56"
     },
     {
@@ -58753,7 +58755,9 @@
      "nation": "САМ",
      "time": "15:00",
      "no": 18,
-     "warmup": 4
+     "warmup": 4,
+     "place": 4,
+     "points": "59.10"
     },
     {
      "name": "Полина Шишкина",
@@ -58788,7 +58792,9 @@
      "nation": "ТАТ",
      "time": "14:55",
      "no": 17,
-     "warmup": 4
+     "warmup": 4,
+     "place": 9,
+     "points": "53.49"
     }
    ],
    "provisional": true,
@@ -58879,14 +58885,16 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Начало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Megan Wessenberg / Denys Strekalin — 60.71\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Megan Wessenberg / Denys Strekalin",
      "nation": "FRA",
      "time": "15:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "60.71"
     },
     {
      "name": "Hannah Herrera / Ivan Khobta",
@@ -58955,7 +58963,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Megan Wessenberg / Denys Strekalin",
+     "nation": "FRA",
+     "points": "60.71"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:women-senior-kp",
@@ -102361,5 +102378,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "796cfa7c544f1513"
+ "rev": "165ddb9b1c947b64"
 }
