@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T18:23:59+03:00",
- "checked": "2026-11-20T16:23:28.898088+00:00",
+ "checked": "2026-11-20T16:27:31.581468+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59467,7 +59467,7 @@
      "nation": "ТАТ",
      "no": 2,
      "warmup": 1,
-     "place": 12,
+     "place": 13,
      "points": "52.23",
      "time": "17:42"
     },
@@ -59476,7 +59476,7 @@
      "nation": "ТВЕ",
      "no": 3,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "57.74",
      "time": "17:46"
     },
@@ -59494,7 +59494,7 @@
      "nation": "СВЕ",
      "no": 5,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "58.79",
      "time": "18:03"
     },
@@ -59525,7 +59525,7 @@
      "time": "18:58",
      "no": 12,
      "warmup": 3,
-     "place": 9,
+     "place": 10,
      "points": "56.68"
     },
     {
@@ -59534,7 +59534,7 @@
      "time": "18:54",
      "no": 11,
      "warmup": 3,
-     "place": 5,
+     "place": 6,
      "points": "60.21"
     },
     {
@@ -59549,7 +59549,9 @@
      "nation": "ТАТ",
      "time": "19:03",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "place": 5,
+     "points": "60.38"
     },
     {
      "name": "Кирилл Былинин",
@@ -59580,7 +59582,7 @@
      "time": "18:08",
      "no": 6,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "points": "55.94"
     },
     {
@@ -59589,7 +59591,7 @@
      "time": "18:17",
      "no": 8,
      "warmup": 2,
-     "place": 11,
+     "place": 12,
      "points": "54.46"
     },
     {
@@ -59598,7 +59600,7 @@
      "time": "18:49",
      "no": 10,
      "warmup": 3,
-     "place": 6,
+     "place": 7,
      "points": "60.08"
     },
     {
@@ -59728,7 +59730,7 @@
      "time": "18:57",
      "no": 5,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "72.10"
     },
     {
@@ -59745,7 +59747,9 @@
      "nation": "GER",
      "time": "19:17",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6,
+     "points": "72.19"
     },
     {
      "name": "Stephen Gogolev",
@@ -59860,7 +59864,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Leontina Horcickova / Jindrich Klement — 76.54\n2. Romane Telemaque / Lucas Coulon — 75.19\n3. Naomie Ismaili / Leo Rouvrais — 54.21\n\nНачало: 18:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Leontina Horcickova / Jindrich Klement — 76.54\n2. Romane Telemaque / Lucas Coulon — 75.19\n3. Laura Heckova / Alex Valky — 73.67\n\nНачало: 18:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Naomie Ismaili / Leo Rouvrais",
@@ -59868,7 +59872,7 @@
      "time": "18:51",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "54.21"
     },
     {
@@ -59894,7 +59898,9 @@
      "nation": "SVK",
      "time": "19:19",
      "no": 4,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3,
+     "points": "73.67"
     },
     {
      "name": "Clelia Liget-latus / Allan Daniel Fisher",
@@ -59950,9 +59956,9 @@
     },
     {
      "place": 3,
-     "name": "Naomie Ismaili / Leo Rouvrais",
-     "nation": "FRA",
-     "points": "54.21"
+     "name": "Laura Heckova / Alex Valky",
+     "nation": "SVK",
+     "points": "73.67"
     }
    ],
    "provisional": true
@@ -103024,5 +103030,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "f7a5a7e105e093ef"
+ "rev": "41b882b201bc0de4"
 }
