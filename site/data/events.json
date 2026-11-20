@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T14:43:33+03:00",
- "checked": "2026-11-20T12:27:01.882720+00:00",
+ "checked": "2026-11-20T12:35:01.800305+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58083,7 +58083,7 @@
     {
      "name": "Afrina Diyanah",
      "nation": "MAS",
-     "place": 16,
+     "place": 17,
      "points": "51.30",
      "time": "12:44",
      "no": 2,
@@ -58129,7 +58129,7 @@
     {
      "name": "Emilija Ozola",
      "nation": "LAT",
-     "place": 15,
+     "place": 16,
      "points": "54.86",
      "time": "12:59",
      "no": 4,
@@ -58165,7 +58165,7 @@
     {
      "name": "Haruna Murakami",
      "nation": "AUS",
-     "place": 11,
+     "place": 12,
      "points": "85.57",
      "time": "13:07",
      "no": 5,
@@ -58183,7 +58183,7 @@
     {
      "name": "Julia Brovall",
      "nation": "SWE",
-     "place": 12,
+     "place": 13,
      "points": "83.97",
      "time": "13:52",
      "no": 10,
@@ -58192,7 +58192,7 @@
     {
      "name": "Karoliine Raudsepp",
      "nation": "EST",
-     "place": 14,
+     "place": 15,
      "points": "64.69",
      "time": "12:52",
      "no": 3,
@@ -58261,7 +58261,7 @@
     {
      "name": "Michelle Dicicco",
      "nation": "ARG",
-     "place": 17,
+     "place": 18,
      "points": "41.51",
      "time": "12:36",
      "no": 1,
@@ -58272,7 +58272,9 @@
      "nation": "CZE",
      "time": "15:22",
      "no": 18,
-     "warmup": 4
+     "warmup": 4,
+     "place": 11,
+     "points": "86.20"
     },
     {
      "name": "Nikola Fomchenkova",
@@ -58286,7 +58288,7 @@
     {
      "name": "Olesja Leonova",
      "nation": "EST",
-     "place": 13,
+     "place": 14,
      "points": "74.95",
      "time": "13:21",
      "no": 6,
@@ -58893,7 +58895,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Katie McBEATH / Balazs Nagy — 70.81\n2. Megan Wessenberg / Denys Strekalin — 60.71\n3. Hannah Herrera / Ivan Khobta — 55.63\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Katie McBEATH / Balazs Nagy — 70.81\n2. Audrey Shin / Spencer Akira Howe — 67.26\n3. Megan Wessenberg / Denys Strekalin — 60.71\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Megan Wessenberg / Denys Strekalin",
@@ -58901,7 +58903,7 @@
      "time": "15:07",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "60.71"
     },
     {
@@ -58910,7 +58912,7 @@
      "time": "15:13",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "55.63"
     },
     {
@@ -58927,7 +58929,9 @@
      "nation": "USA",
      "time": "15:26",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "67.26"
     },
     {
      "name": "Valentina Plazas / Maximiliano Fernandez",
@@ -58985,15 +58989,15 @@
     },
     {
      "place": 2,
-     "name": "Megan Wessenberg / Denys Strekalin",
-     "nation": "FRA",
-     "points": "60.71"
+     "name": "Audrey Shin / Spencer Akira Howe",
+     "nation": "USA",
+     "points": "67.26"
     },
     {
      "place": 3,
-     "name": "Hannah Herrera / Ivan Khobta",
-     "nation": "UKR",
-     "points": "55.63"
+     "name": "Megan Wessenberg / Denys Strekalin",
+     "nation": "FRA",
+     "points": "60.71"
     }
    ],
    "provisional": true
@@ -102402,5 +102406,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "191724a87de54d0a"
+ "rev": "db3842d704cf7bac"
 }
