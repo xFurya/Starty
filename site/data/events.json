@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-20T10:27:42+03:00",
- "checked": "2026-11-20T10:27:42+03:00",
- "complete": true,
+ "generated": "2026-11-20T11:32:31+03:00",
+ "checked": "2026-11-20T11:32:31+03:00",
+ "complete": false,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
-  "Golden Skate": "ok",
+  "Golden Skate": "fail",
   "ФФКМ": "ok",
   "Самара": "ok"
  },
@@ -102040,5 +102040,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "93688a33da17e1cc"
+ "rev": "2d8814c3b3a7764c"
 }
