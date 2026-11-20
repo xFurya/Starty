@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T12:35:29+03:00",
- "checked": "2026-11-20T10:31:02.246720+00:00",
+ "checked": "2026-11-20T10:35:02.735920+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58058,7 +58058,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Haruna Murakami — 85.57\n2. Karoliine Raudsepp — 64.69\n3. Emilija Ozola — 54.86\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Haruna Murakami — 85.57\n2. Olesja Leonova — 74.95\n3. Karoliine Raudsepp — 64.69\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Afrina Diyanah",
@@ -58066,7 +58066,7 @@
      "time": "12:44",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "51.30"
     },
     {
@@ -58110,7 +58110,7 @@
      "time": "12:59",
      "no": 4,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "54.86"
     },
     {
@@ -58163,7 +58163,7 @@
      "time": "12:52",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "64.69"
     },
     {
@@ -58228,7 +58228,7 @@
      "time": "12:36",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "41.51"
     },
     {
@@ -58250,7 +58250,9 @@
      "nation": "EST",
      "time": "13:21",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "74.95"
     },
     {
      "name": "Oona Ounasvuori",
@@ -58354,15 +58356,15 @@
     },
     {
      "place": 2,
-     "name": "Karoliine Raudsepp",
+     "name": "Olesja Leonova",
      "nation": "EST",
-     "points": "64.69"
+     "points": "74.95"
     },
     {
      "place": 3,
-     "name": "Emilija Ozola",
-     "nation": "LAT",
-     "points": "54.86"
+     "name": "Karoliine Raudsepp",
+     "nation": "EST",
+     "points": "64.69"
     }
    ],
    "provisional": true
@@ -58450,7 +58452,7 @@
      "url": "https://vkvideo.ru/live-38558219_456239877"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ксения Бородина — 59.47\n2. Агния Хазова — 57.26\n3. Вероника Пенькова — 55.99\n\nРоссияне:\n• Виктория Стрельцова — 15:05\n• Софья Смагина — 15:20\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / VK Видео",
+   "desc": "Промежуточные итоги:\n1. Ксения Бородина — 59.47\n2. Аделина Усманова — 58.59\n3. Агния Хазова — 57.26\n\nРоссияне:\n• Виктория Стрельцова — 15:05\n• Софья Смагина — 15:20\n\nНачало: 13:00 МСК\nТрансляция: Первый канал / VK Видео",
    "field": [
     {
      "name": "Ксения Бородина",
@@ -58467,7 +58469,7 @@
      "time": "13:11",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "55.99"
     },
     {
@@ -58476,7 +58478,7 @@
      "time": "13:15",
      "no": 3,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "38.32"
     },
     {
@@ -58485,7 +58487,7 @@
      "time": "13:20",
      "no": 4,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "57.26"
     },
     {
@@ -58493,7 +58495,9 @@
      "nation": "ТАТ",
      "time": "13:25",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "58.59"
     },
     {
      "name": "Арина Теслина",
@@ -58784,15 +58788,15 @@
     },
     {
      "place": 2,
-     "name": "Агния Хазова",
-     "nation": "ТВЕ",
-     "points": "57.26"
+     "name": "Аделина Усманова",
+     "nation": "ТАТ",
+     "points": "58.59"
     },
     {
      "place": 3,
-     "name": "Вероника Пенькова",
-     "nation": "ЯРО",
-     "points": "55.99"
+     "name": "Агния Хазова",
+     "nation": "ТВЕ",
+     "points": "57.26"
     }
    ],
    "provisional": true
@@ -102168,5 +102172,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "4253a2b3ec9364ae"
+ "rev": "979ed07ecbb056b2"
 }
