@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T17:20:46+03:00",
- "checked": "2026-11-20T14:43:28.123014+00:00",
+ "checked": "2026-11-20T14:47:28.567138+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58061,29 +58061,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Maria Eliise Kaljuvere",
+     "nation": "EST",
+     "points": "134.05"
+    },
+    {
+     "place": 2,
      "name": "Breken Brezden",
      "nation": "CAN",
      "points": "117.91"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Mia Risa Gomez",
      "nation": "NOR",
      "points": "115.63"
-    },
-    {
-     "place": 3,
-     "name": "Anita Ostlund",
-     "nation": "SWE",
-     "points": "114.68"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Breken Brezden — 117.91\n2. Mia Risa Gomez — 115.63\n3. Anita Ostlund — 114.68\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Maria Eliise Kaljuvere — 134.05\n2. Breken Brezden — 117.91\n3. Mia Risa Gomez — 115.63\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Afrina Diyanah",
      "nation": "MAS",
-     "place": 30,
+     "place": 31,
      "points": "51.30",
      "time": "12:44",
      "no": 2,
@@ -58092,7 +58092,7 @@
     {
      "name": "Anastasija Konga",
      "nation": "LAT",
-     "place": 16,
+     "place": 17,
      "points": "91.90",
      "time": "14:45",
      "no": 14,
@@ -58101,7 +58101,7 @@
     {
      "name": "Anita Ostlund",
      "nation": "SWE",
-     "place": 3,
+     "place": 4,
      "points": "114.68",
      "time": "16:31",
      "no": 24,
@@ -58110,7 +58110,7 @@
     {
      "name": "Barbora Vrankova",
      "nation": "CZE",
-     "place": 5,
+     "place": 6,
      "points": "110.84",
      "time": "16:15",
      "no": 22,
@@ -58119,7 +58119,7 @@
     {
      "name": "Breken Brezden",
      "nation": "CAN",
-     "place": 1,
+     "place": 2,
      "points": "117.91",
      "time": "17:16",
      "no": 29,
@@ -58128,7 +58128,7 @@
     {
      "name": "Carlotta Maria Gardini",
      "nation": "ITA",
-     "place": 7,
+     "place": 8,
      "points": "105.84",
      "time": "16:54",
      "no": 27,
@@ -58137,7 +58137,7 @@
     {
      "name": "Emilija Ozola",
      "nation": "LAT",
-     "place": 29,
+     "place": 30,
      "points": "54.86",
      "time": "12:59",
      "no": 4,
@@ -58146,7 +58146,7 @@
     {
      "name": "Eugenia Sekulovski",
      "nation": "SUI",
-     "place": 10,
+     "place": 11,
      "points": "100.11",
      "time": "14:22",
      "no": 11,
@@ -58155,7 +58155,7 @@
     {
      "name": "Flora Marie Schaller",
      "nation": "AUT",
-     "place": 11,
+     "place": 12,
      "points": "99.63",
      "time": "14:37",
      "no": 13,
@@ -58164,7 +58164,7 @@
     {
      "name": "Gabrielle Daleman",
      "nation": "CAN",
-     "place": 13,
+     "place": 14,
      "points": "98.02",
      "time": "13:29",
      "no": 7,
@@ -58173,7 +58173,7 @@
     {
      "name": "Haruna Murakami",
      "nation": "AUS",
-     "place": 24,
+     "place": 25,
      "points": "85.57",
      "time": "13:07",
      "no": 5,
@@ -58182,7 +58182,7 @@
     {
      "name": "Josefin Brovall",
      "nation": "SWE",
-     "place": 15,
+     "place": 16,
      "points": "94.01",
      "time": "14:53",
      "no": 15,
@@ -58191,7 +58191,7 @@
     {
      "name": "Julia Brovall",
      "nation": "SWE",
-     "place": 26,
+     "place": 27,
      "points": "83.97",
      "time": "13:52",
      "no": 10,
@@ -58200,7 +58200,7 @@
     {
      "name": "Karoliine Raudsepp",
      "nation": "EST",
-     "place": 28,
+     "place": 29,
      "points": "64.69",
      "time": "12:52",
      "no": 3,
@@ -58209,7 +58209,7 @@
     {
      "name": "Karolina Bialas",
      "nation": "POL",
-     "place": 14,
+     "place": 15,
      "points": "95.65",
      "time": "13:45",
      "no": 9,
@@ -58218,7 +58218,7 @@
     {
      "name": "Kristina Lisovskaja",
      "nation": "EST",
-     "place": 12,
+     "place": 13,
      "points": "99.56",
      "time": "15:07",
      "no": 16,
@@ -58237,13 +58237,13 @@
      "time": "17:31",
      "no": 31,
      "warmup": 6,
-     "place": 6,
+     "place": 7,
      "points": "110.23"
     },
     {
      "name": "Lotta Artimo",
      "nation": "FIN",
-     "place": 21,
+     "place": 22,
      "points": "89.12",
      "time": "15:38",
      "no": 20,
@@ -58254,12 +58254,14 @@
      "nation": "EST",
      "time": "17:39",
      "no": 32,
-     "warmup": 6
+     "warmup": 6,
+     "place": 1,
+     "points": "134.05"
     },
     {
      "name": "Marta Helena Prangel",
      "nation": "EST",
-     "place": 17,
+     "place": 18,
      "points": "91.49",
      "time": "15:46",
      "no": 21,
@@ -58268,7 +58270,7 @@
     {
      "name": "Mia Risa Gomez",
      "nation": "NOR",
-     "place": 2,
+     "place": 3,
      "points": "115.63",
      "time": "17:08",
      "no": 28,
@@ -58277,7 +58279,7 @@
     {
      "name": "Michelle Dicicco",
      "nation": "ARG",
-     "place": 31,
+     "place": 32,
      "points": "41.51",
      "time": "12:36",
      "no": 1,
@@ -58286,7 +58288,7 @@
     {
      "name": "Nela Snebergerova",
      "nation": "CZE",
-     "place": 23,
+     "place": 24,
      "points": "86.20",
      "time": "15:22",
      "no": 18,
@@ -58295,7 +58297,7 @@
     {
      "name": "Nikola Fomchenkova",
      "nation": "LAT",
-     "place": 8,
+     "place": 9,
      "points": "103.83",
      "time": "15:15",
      "no": 17,
@@ -58304,7 +58306,7 @@
     {
      "name": "Olesja Leonova",
      "nation": "EST",
-     "place": 27,
+     "place": 28,
      "points": "74.95",
      "time": "13:21",
      "no": 6,
@@ -58313,7 +58315,7 @@
     {
      "name": "Oona Ounasvuori",
      "nation": "FIN",
-     "place": 19,
+     "place": 20,
      "points": "89.63",
      "time": "16:46",
      "no": 26,
@@ -58322,7 +58324,7 @@
     {
      "name": "Pernille With",
      "nation": "NOR",
-     "place": 18,
+     "place": 19,
      "points": "90.10",
      "time": "14:29",
      "no": 12,
@@ -58331,7 +58333,7 @@
     {
      "name": "Sara Franzi",
      "nation": "SUI",
-     "place": 9,
+     "place": 10,
      "points": "103.50",
      "time": "16:23",
      "no": 23,
@@ -58343,13 +58345,13 @@
      "time": "17:24",
      "no": 30,
      "warmup": 6,
-     "place": 4,
+     "place": 5,
      "points": "111.97"
     },
     {
      "name": "Selma Valitalo",
      "nation": "FIN",
-     "place": 25,
+     "place": 26,
      "points": "84.81",
      "time": "16:38",
      "no": 25,
@@ -58358,7 +58360,7 @@
     {
      "name": "Yu-Feng Tsai",
      "nation": "TPE",
-     "place": 20,
+     "place": 21,
      "points": "89.34",
      "time": "15:30",
      "no": 19,
@@ -58367,7 +58369,7 @@
     {
      "name": "Zhasmin Shlaga",
      "nation": "KGZ",
-     "place": 22,
+     "place": 23,
      "points": "87.11",
      "time": "13:37",
      "no": 8,
@@ -59127,31 +59129,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Mao Shimada",
+     "nation": "JPN",
+     "points": "79.06"
+    },
+    {
+     "place": 2,
      "name": "Seoyoung Kim",
      "nation": "KOR",
      "points": "69.03"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Yuseong Kim",
      "nation": "KOR",
      "points": "68.38"
-    },
-    {
-     "place": 3,
-     "name": "Haein Lee",
-     "nation": "KOR",
-     "points": "67.76"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Seoyoung Kim — 69.03\n2. Yuseong Kim — 68.38\n3. Haein Lee — 67.76\n\nНачало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Mao Shimada — 79.06\n2. Seoyoung Kim — 69.03\n3. Yuseong Kim — 68.38\n\nНачало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Janna Jyrkinen",
      "nation": "FIN",
      "no": 1,
      "warmup": 15,
-     "place": 6,
+     "place": 7,
      "points": "59.74",
      "time": "16:37"
     },
@@ -59160,7 +59162,7 @@
      "nation": "FIN",
      "no": 2,
      "warmup": 15,
-     "place": 9,
+     "place": 10,
      "points": "49.35",
      "time": "16:43"
     },
@@ -59169,7 +59171,7 @@
      "nation": "KOR",
      "no": 3,
      "warmup": 15,
-     "place": 1,
+     "place": 2,
      "points": "69.03",
      "time": "16:50"
     },
@@ -59178,7 +59180,7 @@
      "nation": "JPN",
      "no": 4,
      "warmup": 15,
-     "place": 5,
+     "place": 6,
      "points": "64.06",
      "time": "16:56"
     },
@@ -59187,7 +59189,7 @@
      "nation": "FIN",
      "no": 5,
      "warmup": 15,
-     "place": 4,
+     "place": 5,
      "points": "66.24",
      "time": "17:02"
     },
@@ -59196,7 +59198,7 @@
      "nation": "KOR",
      "no": 6,
      "warmup": 15,
-     "place": 2,
+     "place": 3,
      "points": "68.38",
      "time": "17:08"
     },
@@ -59206,7 +59208,7 @@
      "time": "17:28",
      "no": 8,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "57.71"
     },
     {
@@ -59215,7 +59217,7 @@
      "time": "17:34",
      "no": 9,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "67.76"
     },
     {
@@ -59230,7 +59232,9 @@
      "nation": "JPN",
      "time": "17:41",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "79.06"
     },
     {
      "name": "Niina Petrokina",
@@ -59245,7 +59249,7 @@
      "time": "17:22",
      "no": 7,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "50.68"
     }
    ],
@@ -102642,5 +102646,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "cf7673e096dd433b"
+ "rev": "bdc4397b4839a2bb"
 }
