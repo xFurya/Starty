@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T18:23:59+03:00",
- "checked": "2026-11-20T15:43:29.561266+00:00",
+ "checked": "2026-11-20T15:47:29.509805+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59446,12 +59446,12 @@
     },
     {
      "place": 3,
-     "name": "Леонид Новожилов",
-     "nation": "ТУЛ",
-     "points": "62.00"
+     "name": "Степан Юров",
+     "nation": "МОС",
+     "points": "62.90"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ильяс Халиуллин — 86.75\n2. Лев Бобык — 70.51\n3. Леонид Новожилов — 62.00\n\nНачало: 17:30 МСК\nТрансляция: Первый канал / VK Видео",
+   "desc": "Промежуточные итоги:\n1. Ильяс Халиуллин — 86.75\n2. Лев Бобык — 70.51\n3. Степан Юров — 62.90\n\nНачало: 17:30 МСК\nТрансляция: Первый канал / VK Видео",
    "field": [
     {
      "name": "Ильяс Халиуллин",
@@ -59467,7 +59467,7 @@
      "nation": "ТАТ",
      "no": 2,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "52.23",
      "time": "17:42"
     },
@@ -59476,7 +59476,7 @@
      "nation": "ТВЕ",
      "no": 3,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "57.74",
      "time": "17:46"
     },
@@ -59485,7 +59485,7 @@
      "nation": "ТУЛ",
      "no": 4,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "62.00",
      "time": "17:51"
     },
@@ -59494,7 +59494,7 @@
      "nation": "СВЕ",
      "no": 5,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "58.79",
      "time": "18:03"
     },
@@ -59576,7 +59576,7 @@
      "time": "18:08",
      "no": 6,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "55.94"
     },
     {
@@ -59585,7 +59585,7 @@
      "time": "18:17",
      "no": 8,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "54.46"
     },
     {
@@ -59600,7 +59600,9 @@
      "nation": "МОС",
      "time": "18:22",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3,
+     "points": "62.90"
     }
    ],
    "provisional": true,
@@ -59676,7 +59678,7 @@
      "url": "https://www.youtube.com/watch?v=q-UDEDFe0L4"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Matias Lindfors — 76.74\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Yudong Chen — 82.88\n2. Matias Lindfors — 76.74\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Matias Lindfors",
@@ -59684,7 +59686,7 @@
      "time": "18:32",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "76.74"
     },
     {
@@ -59692,7 +59694,9 @@
      "nation": "CHN",
      "time": "18:38",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "82.88"
     },
     {
      "name": "Andreas Nordeback",
@@ -59790,6 +59794,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Yudong Chen",
+     "nation": "CHN",
+     "points": "82.88"
+    },
+    {
+     "place": 2,
      "name": "Matias Lindfors",
      "nation": "FIN",
      "points": "76.74"
@@ -102967,5 +102977,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "b7f4ddda2530cc89"
+ "rev": "588cfc16c09bcffc"
 }
