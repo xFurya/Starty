@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T17:20:46+03:00",
- "checked": "2026-11-20T17:20:46+03:00",
+ "checked": "2026-11-20T14:43:28.123014+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -58083,7 +58083,7 @@
     {
      "name": "Afrina Diyanah",
      "nation": "MAS",
-     "place": 28,
+     "place": 30,
      "points": "51.30",
      "time": "12:44",
      "no": 2,
@@ -58092,7 +58092,7 @@
     {
      "name": "Anastasija Konga",
      "nation": "LAT",
-     "place": 14,
+     "place": 16,
      "points": "91.90",
      "time": "14:45",
      "no": 14,
@@ -58110,7 +58110,7 @@
     {
      "name": "Barbora Vrankova",
      "nation": "CZE",
-     "place": 4,
+     "place": 5,
      "points": "110.84",
      "time": "16:15",
      "no": 22,
@@ -58123,14 +58123,12 @@
      "points": "117.91",
      "time": "17:16",
      "no": 29,
-     "warmup": 6,
-     "place": 1,
-     "points": "117.91"
+     "warmup": 6
     },
     {
      "name": "Carlotta Maria Gardini",
      "nation": "ITA",
-     "place": 5,
+     "place": 7,
      "points": "105.84",
      "time": "16:54",
      "no": 27,
@@ -58139,7 +58137,7 @@
     {
      "name": "Emilija Ozola",
      "nation": "LAT",
-     "place": 27,
+     "place": 29,
      "points": "54.86",
      "time": "12:59",
      "no": 4,
@@ -58148,7 +58146,7 @@
     {
      "name": "Eugenia Sekulovski",
      "nation": "SUI",
-     "place": 8,
+     "place": 10,
      "points": "100.11",
      "time": "14:22",
      "no": 11,
@@ -58157,7 +58155,7 @@
     {
      "name": "Flora Marie Schaller",
      "nation": "AUT",
-     "place": 9,
+     "place": 11,
      "points": "99.63",
      "time": "14:37",
      "no": 13,
@@ -58166,7 +58164,7 @@
     {
      "name": "Gabrielle Daleman",
      "nation": "CAN",
-     "place": 11,
+     "place": 13,
      "points": "98.02",
      "time": "13:29",
      "no": 7,
@@ -58175,7 +58173,7 @@
     {
      "name": "Haruna Murakami",
      "nation": "AUS",
-     "place": 22,
+     "place": 24,
      "points": "85.57",
      "time": "13:07",
      "no": 5,
@@ -58184,7 +58182,7 @@
     {
      "name": "Josefin Brovall",
      "nation": "SWE",
-     "place": 13,
+     "place": 15,
      "points": "94.01",
      "time": "14:53",
      "no": 15,
@@ -58193,7 +58191,7 @@
     {
      "name": "Julia Brovall",
      "nation": "SWE",
-     "place": 24,
+     "place": 26,
      "points": "83.97",
      "time": "13:52",
      "no": 10,
@@ -58202,7 +58200,7 @@
     {
      "name": "Karoliine Raudsepp",
      "nation": "EST",
-     "place": 26,
+     "place": 28,
      "points": "64.69",
      "time": "12:52",
      "no": 3,
@@ -58211,7 +58209,7 @@
     {
      "name": "Karolina Bialas",
      "nation": "POL",
-     "place": 12,
+     "place": 14,
      "points": "95.65",
      "time": "13:45",
      "no": 9,
@@ -58220,7 +58218,7 @@
     {
      "name": "Kristina Lisovskaja",
      "nation": "EST",
-     "place": 10,
+     "place": 12,
      "points": "99.56",
      "time": "15:07",
      "no": 16,
@@ -58245,7 +58243,7 @@
     {
      "name": "Lotta Artimo",
      "nation": "FIN",
-     "place": 19,
+     "place": 21,
      "points": "89.12",
      "time": "15:38",
      "no": 20,
@@ -58261,7 +58259,7 @@
     {
      "name": "Marta Helena Prangel",
      "nation": "EST",
-     "place": 15,
+     "place": 17,
      "points": "91.49",
      "time": "15:46",
      "no": 21,
@@ -58279,7 +58277,7 @@
     {
      "name": "Michelle Dicicco",
      "nation": "ARG",
-     "place": 29,
+     "place": 31,
      "points": "41.51",
      "time": "12:36",
      "no": 1,
@@ -58288,7 +58286,7 @@
     {
      "name": "Nela Snebergerova",
      "nation": "CZE",
-     "place": 21,
+     "place": 23,
      "points": "86.20",
      "time": "15:22",
      "no": 18,
@@ -58297,7 +58295,7 @@
     {
      "name": "Nikola Fomchenkova",
      "nation": "LAT",
-     "place": 6,
+     "place": 8,
      "points": "103.83",
      "time": "15:15",
      "no": 17,
@@ -58306,7 +58304,7 @@
     {
      "name": "Olesja Leonova",
      "nation": "EST",
-     "place": 25,
+     "place": 27,
      "points": "74.95",
      "time": "13:21",
      "no": 6,
@@ -58315,7 +58313,7 @@
     {
      "name": "Oona Ounasvuori",
      "nation": "FIN",
-     "place": 17,
+     "place": 19,
      "points": "89.63",
      "time": "16:46",
      "no": 26,
@@ -58324,7 +58322,7 @@
     {
      "name": "Pernille With",
      "nation": "NOR",
-     "place": 16,
+     "place": 18,
      "points": "90.10",
      "time": "14:29",
      "no": 12,
@@ -58333,7 +58331,7 @@
     {
      "name": "Sara Franzi",
      "nation": "SUI",
-     "place": 7,
+     "place": 9,
      "points": "103.50",
      "time": "16:23",
      "no": 23,
@@ -58351,7 +58349,7 @@
     {
      "name": "Selma Valitalo",
      "nation": "FIN",
-     "place": 23,
+     "place": 25,
      "points": "84.81",
      "time": "16:38",
      "no": 25,
@@ -58360,7 +58358,7 @@
     {
      "name": "Yu-Feng Tsai",
      "nation": "TPE",
-     "place": 18,
+     "place": 20,
      "points": "89.34",
      "time": "15:30",
      "no": 19,
@@ -58369,7 +58367,7 @@
     {
      "name": "Zhasmin Shlaga",
      "nation": "KGZ",
-     "place": 20,
+     "place": 22,
      "points": "87.11",
      "time": "13:37",
      "no": 8,
@@ -59141,19 +59139,19 @@
     },
     {
      "place": 3,
-     "name": "Iida Karhunen",
-     "nation": "FIN",
-     "points": "66.24"
+     "name": "Haein Lee",
+     "nation": "KOR",
+     "points": "67.76"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Seoyoung Kim — 69.03\n2. Yuseong Kim — 68.38\n3. Iida Karhunen — 66.24\n\nНачало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Seoyoung Kim — 69.03\n2. Yuseong Kim — 68.38\n3. Haein Lee — 67.76\n\nНачало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Janna Jyrkinen",
      "nation": "FIN",
      "no": 1,
      "warmup": 15,
-     "place": 5,
+     "place": 6,
      "points": "59.74",
      "time": "16:37"
     },
@@ -59162,7 +59160,7 @@
      "nation": "FIN",
      "no": 2,
      "warmup": 15,
-     "place": 6,
+     "place": 9,
      "points": "49.35",
      "time": "16:43"
     },
@@ -59180,7 +59178,7 @@
      "nation": "JPN",
      "no": 4,
      "warmup": 15,
-     "place": 4,
+     "place": 5,
      "points": "64.06",
      "time": "16:56"
     },
@@ -59189,7 +59187,7 @@
      "nation": "FIN",
      "no": 5,
      "warmup": 15,
-     "place": 3,
+     "place": 4,
      "points": "66.24",
      "time": "17:02"
     },
@@ -59207,14 +59205,18 @@
      "nation": "ITA",
      "time": "17:28",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7,
+     "points": "57.71"
     },
     {
      "name": "Haein Lee",
      "nation": "KOR",
      "time": "17:34",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3,
+     "points": "67.76"
     },
     {
      "name": "Isabeau Levito",
@@ -59242,7 +59244,9 @@
      "nation": "JPN",
      "time": "17:22",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 8,
+     "points": "50.68"
     }
    ],
    "provisional": true,
@@ -102638,5 +102642,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "259516e3bafacc0d"
+ "rev": "cf7673e096dd433b"
 }
