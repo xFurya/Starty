@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T20:32:22+03:00",
- "checked": "2026-11-20T18:15:29.021004+00:00",
+ "checked": "2026-11-20T18:19:28.817195+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60081,18 +60081,18 @@
     },
     {
      "place": 2,
-     "name": "Reagan Moss / Jakub Galbavy",
-     "nation": "USA",
-     "points": "94.19"
+     "name": "Miyu Yunoki / Tristan Taylor",
+     "nation": "CAN",
+     "points": "98.48"
     },
     {
      "place": 3,
-     "name": "Irina Napolitano / Edoardo Comi",
-     "nation": "ITA",
-     "points": "91.97"
+     "name": "Reagan Moss / Jakub Galbavy",
+     "nation": "USA",
+     "points": "94.19"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Linzy Fitzpatrick / Keyton Bearinger — 103.07\n2. Reagan Moss / Jakub Galbavy — 94.19\n3. Irina Napolitano / Edoardo Comi — 91.97\n\nНачало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Linzy Fitzpatrick / Keyton Bearinger — 103.07\n2. Miyu Yunoki / Tristan Taylor — 98.48\n3. Reagan Moss / Jakub Galbavy — 94.19\n\nИтог турнира:\n1. Linzy Fitzpatrick / Keyton Bearinger — 156.27\n2. Miyu Yunoki / Tristan Taylor — 153.15\n3. Reagan Moss / Jakub Galbavy — 146.95\n\nПримечательное:\n• Linzy Fitzpatrick / Keyton Bearinger — Личный рекорд за ПП: 103.07 (был 89.11)\n• Miyu Yunoki / Tristan Taylor — Личный рекорд за ПП: 98.48 (был 96.63)\n• Reagan Moss / Jakub Galbavy — Личный рекорд за ПП: 94.19 (был 92.65)\n• Linzy Fitzpatrick / Keyton Bearinger — Личный рекорд по сумме: 156.27 (был 134.86)\n• Reagan Moss / Jakub Galbavy — Личный рекорд по сумме: 146.95 (был 146.74)\n\nНачало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Debora Anna Cohen / Lukas Vochozka",
@@ -60100,8 +60100,9 @@
      "time": "20:35",
      "no": 4,
      "warmup": 2,
-     "place": 4,
-     "points": "89.97"
+     "place": 5,
+     "points": "89.97",
+     "final": 5
     },
     {
      "name": "Irina Napolitano / Edoardo Comi",
@@ -60109,8 +60110,9 @@
      "time": "20:21",
      "no": 3,
      "warmup": 1,
-     "place": 3,
-     "points": "91.97"
+     "place": 4,
+     "points": "91.97",
+     "final": 4
     },
     {
      "name": "Linzy Fitzpatrick / Keyton Bearinger",
@@ -60119,23 +60121,28 @@
      "no": 6,
      "warmup": 2,
      "place": 1,
-     "points": "103.07"
+     "points": "103.07",
+     "final": 1
     },
     {
      "name": "Miyu Yunoki / Tristan Taylor",
      "nation": "CAN",
      "time": "20:58",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "98.48",
+     "final": 2
     },
     {
      "name": "Olivia Flores / Mark Sadusky",
      "nation": "USA",
-     "place": 5,
+     "place": 6,
      "points": "84.35",
      "time": "20:14",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 6
     },
     {
      "name": "Reagan Moss / Jakub Galbavy",
@@ -60143,20 +60150,21 @@
      "time": "20:43",
      "no": 5,
      "warmup": 2,
-     "place": 2,
-     "points": "94.19"
+     "place": 3,
+     "points": "94.19",
+     "final": 3
     },
     {
      "name": "Xuanyu Liu / Wenbao Han",
      "nation": "CHN",
-     "place": 6,
+     "place": 7,
      "points": "73.60",
      "time": "20:06",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 7
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG006.htm",
@@ -60171,9 +60179,56 @@
      "Linzy FITZPATRICK / Keyton BEARINGER": "Linzy Fitzpatrick / Keyton Bearinger",
      "Miyu YUNOKI / Tristan TAYLOR": "Miyu Yunoki / Tristan Taylor"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "facts": [
+    {
+     "who": "Linzy Fitzpatrick / Keyton Bearinger",
+     "text": "Личный рекорд за ПП: 103.07 (был 89.11)",
+     "kind": "score"
+    },
+    {
+     "who": "Miyu Yunoki / Tristan Taylor",
+     "text": "Личный рекорд за ПП: 98.48 (был 96.63)",
+     "kind": "score"
+    },
+    {
+     "who": "Reagan Moss / Jakub Galbavy",
+     "text": "Личный рекорд за ПП: 94.19 (был 92.65)",
+     "kind": "score"
+    },
+    {
+     "who": "Linzy Fitzpatrick / Keyton Bearinger",
+     "text": "Личный рекорд по сумме: 156.27 (был 134.86)",
+     "kind": "score"
+    },
+    {
+     "who": "Reagan Moss / Jakub Galbavy",
+     "text": "Личный рекорд по сумме: 146.95 (был 146.74)",
+     "kind": "score"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Linzy Fitzpatrick / Keyton Bearinger",
+     "nation": "USA",
+     "points": "156.27"
+    },
+    {
+     "place": 2,
+     "name": "Miyu Yunoki / Tristan Taylor",
+     "nation": "CAN",
+     "points": "153.15"
+    },
+    {
+     "place": 3,
+     "name": "Reagan Moss / Jakub Galbavy",
+     "nation": "USA",
+     "points": "146.95"
+    }
+   ]
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:dance-senior-rt",
@@ -103449,5 +103504,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "9548de040cf69535"
+ "rev": "c9b781b1b4ae5fff"
 }
