@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T19:28:25+03:00",
- "checked": "2026-11-20T17:23:29.389792+00:00",
+ "checked": "2026-11-20T17:31:32.229803+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60056,7 +60056,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Xuanyu Liu / Wenbao Han — 73.60\n\nНачало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Olivia Flores / Mark Sadusky — 84.35\n2. Xuanyu Liu / Wenbao Han — 73.60\n\nНачало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Xuanyu Liu / Wenbao Han",
@@ -60064,7 +60064,7 @@
      "time": "20:06",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "73.60"
     },
     {
@@ -60072,7 +60072,9 @@
      "nation": "USA",
      "time": "20:14",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "84.35"
     },
     {
      "name": "Irina Napolitano / Edoardo Comi",
@@ -60130,6 +60132,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Olivia Flores / Mark Sadusky",
+     "nation": "USA",
+     "points": "84.35"
+    },
+    {
+     "place": 2,
      "name": "Xuanyu Liu / Wenbao Han",
      "nation": "CHN",
      "points": "73.60"
@@ -103101,5 +103109,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "287485f1fb1673b1"
+ "rev": "5e4f7fa90605dde7"
 }
