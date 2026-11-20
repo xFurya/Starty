@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T18:23:59+03:00",
- "checked": "2026-11-20T16:07:29.568883+00:00",
+ "checked": "2026-11-20T16:11:30.247637+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59467,7 +59467,7 @@
      "nation": "ТАТ",
      "no": 2,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "52.23",
      "time": "17:42"
     },
@@ -59476,7 +59476,7 @@
      "nation": "ТВЕ",
      "no": 3,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "57.74",
      "time": "17:46"
     },
@@ -59494,7 +59494,7 @@
      "nation": "СВЕ",
      "no": 5,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "58.79",
      "time": "18:03"
     },
@@ -59576,7 +59576,7 @@
      "time": "18:08",
      "no": 6,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "55.94"
     },
     {
@@ -59585,7 +59585,7 @@
      "time": "18:17",
      "no": 8,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "54.46"
     },
     {
@@ -59593,7 +59593,9 @@
      "nation": "БЕЛ",
      "time": "18:49",
      "no": 10,
-     "warmup": 3
+     "warmup": 3,
+     "place": 5,
+     "points": "60.08"
     },
     {
      "name": "Степан Юров",
@@ -59722,7 +59724,7 @@
      "time": "18:57",
      "no": 5,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "72.10"
     },
     {
@@ -59730,7 +59732,9 @@
      "nation": "ISR",
      "time": "19:03",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5,
+     "points": "75.82"
     },
     {
      "name": "Genrikh Gartung",
@@ -103008,5 +103012,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "a1c8916925ed8aa0"
+ "rev": "3ccf197cf91384a8"
 }
