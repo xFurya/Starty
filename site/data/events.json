@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T19:28:25+03:00",
- "checked": "2026-11-20T16:55:28.660953+00:00",
+ "checked": "2026-11-20T16:59:28.532851+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59468,7 +59468,7 @@
      "nation": "ТАТ",
      "no": 2,
      "warmup": 1,
-     "place": 15,
+     "place": 16,
      "points": "52.23",
      "time": "17:42"
     },
@@ -59477,7 +59477,7 @@
      "nation": "ТВЕ",
      "no": 3,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "points": "57.74",
      "time": "17:46"
     },
@@ -59486,7 +59486,7 @@
      "nation": "ТУЛ",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "62.00",
      "time": "17:51"
     },
@@ -59495,7 +59495,7 @@
      "nation": "СВЕ",
      "no": 5,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "58.79",
      "time": "18:03"
     },
@@ -59504,7 +59504,7 @@
      "nation": "ЧЕЛ",
      "no": 6,
      "warmup": 2,
-     "place": 13,
+     "place": 14,
      "points": "55.94",
      "time": "18:08"
     },
@@ -59522,7 +59522,7 @@
      "nation": "ТАТ",
      "no": 8,
      "warmup": 2,
-     "place": 14,
+     "place": 15,
      "points": "54.46",
      "time": "18:17"
     },
@@ -59531,7 +59531,7 @@
      "nation": "МОС",
      "no": 9,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "62.90",
      "time": "18:22"
     },
@@ -59540,7 +59540,7 @@
      "nation": "БЕЛ",
      "no": 10,
      "warmup": 3,
-     "place": 8,
+     "place": 9,
      "points": "60.08",
      "time": "18:49"
     },
@@ -59549,7 +59549,7 @@
      "nation": "МОБ",
      "no": 11,
      "warmup": 3,
-     "place": 7,
+     "place": 8,
      "points": "60.21",
      "time": "18:54"
     },
@@ -59558,7 +59558,7 @@
      "nation": "ИВА",
      "no": 12,
      "warmup": 3,
-     "place": 12,
+     "place": 13,
      "points": "56.68",
      "time": "18:58"
     },
@@ -59567,7 +59567,7 @@
      "nation": "ТАТ",
      "no": 13,
      "warmup": 3,
-     "place": 6,
+     "place": 7,
      "points": "60.38",
      "time": "19:03"
     },
@@ -59586,7 +59586,7 @@
      "time": "19:25",
      "no": 16,
      "warmup": 4,
-     "place": 11,
+     "place": 12,
      "points": "57.56"
     },
     {
@@ -59594,7 +59594,9 @@
      "nation": "РОС",
      "time": "19:34",
      "no": 18,
-     "warmup": 4
+     "warmup": 4,
+     "place": 4,
+     "points": "65.47"
     },
     {
      "name": "Денис Никитин",
@@ -59602,7 +59604,7 @@
      "time": "19:29",
      "no": 17,
      "warmup": 4,
-     "place": 17,
+     "place": 18,
      "points": "44.88"
     },
     {
@@ -59618,7 +59620,7 @@
      "time": "19:20",
      "no": 15,
      "warmup": 4,
-     "place": 16,
+     "place": 17,
      "points": "46.48"
     }
    ],
@@ -59715,7 +59717,7 @@
      "points": "82.08"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Mihhail Selevko — 85.01\n2. Yudong Chen — 82.88\n3. Andreas Nordeback — 82.08\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Mihhail Selevko — 85.01\n2. Yudong Chen — 82.88\n3. Andreas Nordeback — 82.08\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Matias Lindfors",
@@ -59794,7 +59796,9 @@
      "nation": "FRA",
      "time": "19:48",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 12,
+     "points": "71.63"
     },
     {
      "name": "Kazuki Tomono",
@@ -59824,7 +59828,6 @@
      "points": "79.45"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG001.htm",
@@ -59844,7 +59847,7 @@
      "Nika EGADZE": "Nika Egadze",
      "Adam SIAO HIM FA": "Adam Siao Him Fa"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
@@ -103086,5 +103089,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "87369e3153fb661c"
+ "rev": "63ec005d61b7fa27"
 }
