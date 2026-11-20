@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T19:28:25+03:00",
- "checked": "2026-11-20T17:07:28.793521+00:00",
+ "checked": "2026-11-20T17:23:29.389792+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60056,14 +60056,16 @@
      "note": "Платно"
     }
    ],
-   "desc": "Начало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Xuanyu Liu / Wenbao Han — 73.60\n\nНачало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Xuanyu Liu / Wenbao Han",
      "nation": "CHN",
      "time": "20:06",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "73.60"
     },
     {
      "name": "Olivia Flores / Mark Sadusky",
@@ -60124,7 +60126,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Xuanyu Liu / Wenbao Han",
+     "nation": "CHN",
+     "points": "73.60"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:dance-senior-rt",
@@ -103090,5 +103101,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "f52d2a3fbaabd8f4"
+ "rev": "287485f1fb1673b1"
 }
