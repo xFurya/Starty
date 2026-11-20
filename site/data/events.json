@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T20:32:22+03:00",
- "checked": "2026-11-20T18:03:29.354965+00:00",
+ "checked": "2026-11-20T18:11:28.540973+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60075,24 +60075,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Linzy Fitzpatrick / Keyton Bearinger",
+     "nation": "USA",
+     "points": "103.07"
+    },
+    {
+     "place": 2,
      "name": "Reagan Moss / Jakub Galbavy",
      "nation": "USA",
      "points": "94.19"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Irina Napolitano / Edoardo Comi",
      "nation": "ITA",
      "points": "91.97"
-    },
-    {
-     "place": 3,
-     "name": "Debora Anna Cohen / Lukas Vochozka",
-     "nation": "CZE",
-     "points": "89.97"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Reagan Moss / Jakub Galbavy — 94.19\n2. Irina Napolitano / Edoardo Comi — 91.97\n3. Debora Anna Cohen / Lukas Vochozka — 89.97\n\nНачало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Linzy Fitzpatrick / Keyton Bearinger — 103.07\n2. Reagan Moss / Jakub Galbavy — 94.19\n3. Irina Napolitano / Edoardo Comi — 91.97\n\nНачало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Debora Anna Cohen / Lukas Vochozka",
@@ -60100,7 +60100,7 @@
      "time": "20:35",
      "no": 4,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "89.97"
     },
     {
@@ -60109,7 +60109,7 @@
      "time": "20:21",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "91.97"
     },
     {
@@ -60117,7 +60117,9 @@
      "nation": "USA",
      "time": "20:50",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "103.07"
     },
     {
      "name": "Miyu Yunoki / Tristan Taylor",
@@ -60129,7 +60131,7 @@
     {
      "name": "Olivia Flores / Mark Sadusky",
      "nation": "USA",
-     "place": 4,
+     "place": 5,
      "points": "84.35",
      "time": "20:14",
      "no": 2,
@@ -60141,13 +60143,13 @@
      "time": "20:43",
      "no": 5,
      "warmup": 2,
-     "place": 1,
+     "place": 2,
      "points": "94.19"
     },
     {
      "name": "Xuanyu Liu / Wenbao Han",
      "nation": "CHN",
-     "place": 5,
+     "place": 6,
      "points": "73.60",
      "time": "20:06",
      "no": 1,
@@ -103445,5 +103447,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "a78e48c7d7be193c"
+ "rev": "99b43fc6ca052ad5"
 }
