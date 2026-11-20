@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T20:32:22+03:00",
- "checked": "2026-11-20T18:35:31.886903+00:00",
+ "checked": "2026-11-20T18:43:29.049108+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60290,14 +60290,14 @@
      "points": "76.65"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Laurence Fournier Beaudry / Guillaume Cizeron — 85.78\n2. Juulia Turkkila / Matthias Versluis — 77.58\n3. Natalie Taschlerova / Filip Taschler — 76.65\n\nНачало: 20:20 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Laurence Fournier Beaudry / Guillaume Cizeron — 85.78\n2. Juulia Turkkila / Matthias Versluis — 77.58\n3. Natalie Taschlerova / Filip Taschler — 76.65\n\nНачало: 20:20 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
      "no": 1,
      "warmup": 15,
-     "place": 8,
+     "place": 9,
      "points": "68.00",
      "time": "20:26"
     },
@@ -60306,7 +60306,9 @@
      "nation": "USA",
      "time": "21:32",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "75.21"
     },
     {
      "name": "Emily Bratti / Ian Somerville",
@@ -60314,7 +60316,7 @@
      "time": "20:39",
      "no": 3,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "70.55"
     },
     {
@@ -60341,7 +60343,7 @@
      "time": "21:06",
      "no": 6,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "73.16"
     },
     {
@@ -60350,7 +60352,7 @@
      "time": "20:33",
      "no": 2,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "60.96"
     },
     {
@@ -60377,11 +60379,10 @@
      "time": "20:52",
      "no": 5,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "70.74"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG007.htm",
@@ -60399,7 +60400,7 @@
      "Laurence FOURNIER BEAUDRY / Guillaume CIZERON": "Laurence Fournier Beaudry / Guillaume Cizeron",
      "Caroline GREEN / Michael PARSONS": "Caroline Green / Michael Parsons"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
@@ -103510,5 +103511,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "199d70ed65e09f6c"
+ "rev": "8d8d52722982c9e3"
 }
