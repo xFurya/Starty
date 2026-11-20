@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-20T19:28:25+03:00",
- "checked": "2026-11-20T16:59:28.532851+00:00",
+ "checked": "2026-11-20T17:07:28.793521+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -59452,7 +59452,7 @@
      "points": "70.43"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ильяс Халиуллин — 86.75\n2. Лев Бобык — 70.51\n3. Илья Старков — 70.43\n\nНачало: 17:30 МСК\nТрансляция: Первый канал / VK Видео",
+   "desc": "Итог:\n1. Ильяс Халиуллин — 86.75\n2. Лев Бобык — 70.51\n3. Илья Старков — 70.43\n\nНачало: 17:30 МСК\nТрансляция: Первый канал / VK Видео",
    "field": [
     {
      "name": "Ильяс Халиуллин",
@@ -59468,7 +59468,7 @@
      "nation": "ТАТ",
      "no": 2,
      "warmup": 1,
-     "place": 16,
+     "place": 17,
      "points": "52.23",
      "time": "17:42"
     },
@@ -59522,7 +59522,7 @@
      "nation": "ТАТ",
      "no": 8,
      "warmup": 2,
-     "place": 15,
+     "place": 16,
      "points": "54.46",
      "time": "18:17"
     },
@@ -59604,7 +59604,7 @@
      "time": "19:29",
      "no": 17,
      "warmup": 4,
-     "place": 18,
+     "place": 19,
      "points": "44.88"
     },
     {
@@ -59612,7 +59612,9 @@
      "nation": "ЧЕЛ",
      "time": "19:39",
      "no": 19,
-     "warmup": 4
+     "warmup": 4,
+     "place": 15,
+     "points": "55.43"
     },
     {
      "name": "Макар Ушаков",
@@ -59620,11 +59622,10 @@
      "time": "19:20",
      "no": 15,
      "warmup": 4,
-     "place": 17,
+     "place": 18,
      "points": "46.48"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/idel_2026/index.htm",
     "seg": "https://fsrussia.ru/results/2627/idel_2026/SEG005.htm",
@@ -59651,7 +59652,7 @@
      "Владислав ВИНИЧЕНКО": "Владислав Виниченко",
      "Кирилл БЫЛИНИН": "Кирилл Былинин"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
   },
@@ -103089,5 +103090,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "63ec005d61b7fa27"
+ "rev": "f52d2a3fbaabd8f4"
 }
