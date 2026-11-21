@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T15:01:45+03:00",
- "checked": "2026-11-21T12:21:05.154642+00:00",
+ "checked": "2026-11-21T12:25:04.594538+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61052,7 +61052,7 @@
      "url": "https://www.youtube.com/watch?v=3lVqLrXDbd0"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Minja Peltonen — 96.36\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Rinka Watanabe — 112.12\n2. Minja Peltonen — 96.36\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Anna Pezzetta",
@@ -61102,7 +61102,7 @@
      "time": "15:07",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "96.36"
     },
     {
@@ -61117,7 +61117,9 @@
      "nation": "JPN",
      "time": "15:15",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "112.12"
     },
     {
      "name": "Rion Sumiyoshi",
@@ -61166,6 +61168,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Rinka Watanabe",
+     "nation": "JPN",
+     "points": "112.12"
+    },
+    {
+     "place": 2,
      "name": "Minja Peltonen",
      "nation": "FIN",
      "points": "96.36"
@@ -105020,5 +105028,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "3179fa0a60c24756"
+ "rev": "ec5209771d4a6045"
 }
