@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T16:42:40+03:00",
- "checked": "2026-11-21T14:17:28.502627+00:00",
+ "checked": "2026-11-21T14:21:28.444169+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61410,7 +61410,7 @@
      "nation": "FRA",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "46.88",
      "time": "15:56"
     },
@@ -61419,7 +61419,7 @@
      "nation": "HUN",
      "no": 3,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "41.44",
      "time": "16:02"
     },
@@ -61464,7 +61464,7 @@
      "nation": "CZE",
      "no": 8,
      "warmup": 10,
-     "place": 7,
+     "place": 8,
      "points": "45.75",
      "time": "16:39"
     },
@@ -61481,7 +61481,7 @@
      "time": "17:05",
      "no": 9,
      "warmup": 3,
-     "place": 6,
+     "place": 7,
      "points": "45.81"
     },
     {
@@ -61510,7 +61510,9 @@
      "nation": "ROU",
      "time": "17:11",
      "no": 10,
-     "warmup": 3
+     "warmup": 3,
+     "place": 5,
+     "points": "47.36"
     },
     {
      "name": "Villo Mira Szilagyi / Istvan Jaracs",
@@ -105254,5 +105256,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "4acc51eb15fd948a"
+ "rev": "33b37de9c98d1cde"
 }
