@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T16:10:09+03:00",
- "checked": "2026-11-21T13:33:29.131167+00:00",
+ "checked": "2026-11-21T13:37:29.186545+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61345,25 +61345,25 @@
     },
     {
      "place": 2,
-     "name": "Eleonore Gabet / Raphael Duclusaud",
-     "nation": "FRA",
-     "points": "52.01"
+     "name": "Kristyna Stanclova / Karel Kostron",
+     "nation": "CZE",
+     "points": "52.73"
     },
     {
      "place": 3,
-     "name": "Martina Lavazza / Raphael Raymond Meunier",
-     "nation": "ITA",
-     "points": "51.16"
+     "name": "Eleonore Gabet / Raphael Duclusaud",
+     "nation": "FRA",
+     "points": "52.01"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Lea Hienne / Louis Varescon — 58.81\n2. Eleonore Gabet / Raphael Duclusaud — 52.01\n3. Martina Lavazza / Raphael Raymond Meunier — 51.16\n\nНачало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Lea Hienne / Louis Varescon — 58.81\n2. Kristyna Stanclova / Karel Kostron — 52.73\n3. Eleonore Gabet / Raphael Duclusaud — 52.01\n\nНачало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Angelina Cucherat / Leopold Dacquin",
      "nation": "FRA",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "46.88",
      "time": "15:56"
     },
@@ -61372,7 +61372,7 @@
      "nation": "HUN",
      "no": 3,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "41.44",
      "time": "16:02"
     },
@@ -61381,7 +61381,7 @@
      "nation": "FRA",
      "no": 4,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "52.01",
      "time": "16:09"
     },
@@ -61425,7 +61425,9 @@
      "nation": "CZE",
      "time": "16:33",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "52.73"
     },
     {
      "name": "Lea Hienne / Louis Varescon",
@@ -61456,7 +61458,7 @@
      "time": "16:26",
      "no": 6,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "51.16"
     },
     {
@@ -61545,7 +61547,7 @@
      "url": "https://vkvideo.ru/live-38558219_456239878"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Денис Никитин — 86.29\n\nНачало: 16:00 МСК\nТрансляция: VK Видео",
+   "desc": "Промежуточные итоги:\n1. Макар Ушаков — 87.14\n2. Денис Никитин — 86.29\n\nНачало: 16:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Денис Никитин",
@@ -61553,7 +61555,7 @@
      "time": "16:07",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "86.29"
     },
     {
@@ -61561,7 +61563,9 @@
      "nation": "ПРМ",
      "time": "16:13",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "87.14"
     },
     {
      "name": "Данил Золотарев",
@@ -61715,6 +61719,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Макар Ушаков",
+     "nation": "ПРМ",
+     "points": "87.14"
+    },
+    {
+     "place": 2,
      "name": "Денис Никитин",
      "nation": "УДМ",
      "points": "86.29"
@@ -105175,5 +105185,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "4e26acb6a79e5324"
+ "rev": "6ecda3936174670e"
 }
