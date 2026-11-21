@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T18:50:12+03:00",
- "checked": "2026-11-21T18:50:12+03:00",
+ "checked": "2026-11-21T16:13:29.654212+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61969,7 +61969,7 @@
      "points": "139.73"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Adam Siao Him Fa — 158.91\n2. Kyrylo Marsak — 147.95\n3. Genrikh Gartung — 139.45\n\nНачало: 18:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Adam Siao Him Fa — 158.91\n2. Kyrylo Marsak — 147.95\n3. Stephen Gogolev — 139.73\n\nНачало: 18:15 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Adam Siao Him Fa",
@@ -61997,7 +61997,7 @@
     {
      "name": "Genrikh Gartung",
      "nation": "GER",
-     "place": 3,
+     "place": 4,
      "points": "139.45",
      "time": "18:38",
      "no": 3,
@@ -62024,7 +62024,9 @@
      "nation": "FIN",
      "time": "18:53",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5,
+     "points": "138.93"
     },
     {
      "name": "Mihhail Selevko",
@@ -62045,12 +62047,14 @@
      "nation": "CAN",
      "time": "19:01",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3,
+     "points": "139.73"
     },
     {
      "name": "Tamir Kuperman",
      "nation": "ISR",
-     "place": 4,
+     "place": 6,
      "points": "136.57",
      "time": "18:45",
      "no": 4,
@@ -62328,14 +62332,16 @@
      "url": "https://vkvideo.ru/live-38558219_456239878"
     }
    ],
-   "desc": "Начало: 18:45 МСК\nТрансляция: VK Видео",
+   "desc": "Промежуточные итоги:\n1. Мария Котова — 50.78\n\nНачало: 18:45 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Мария Котова",
      "nation": "ТАТ",
      "time": "18:52",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "50.78"
     },
     {
      "name": "Влада Ершова",
@@ -62500,7 +62506,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Мария Котова",
+     "nation": "ТАТ",
+     "points": "50.78"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:dance-senior-pt",
@@ -105362,5 +105377,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "8513e0e6e93a8e67"
+ "rev": "37552bdba48651f0"
 }
