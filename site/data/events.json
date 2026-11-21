@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T21:19:23+03:00",
- "checked": "2026-11-21T19:02:14.114658+00:00",
+ "checked": "2026-11-21T19:06:13.560118+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62920,7 +62920,7 @@
      "time": "21:12",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "48.57"
     },
     {
@@ -62946,7 +62946,9 @@
      "nation": "ОРЕ",
      "time": "21:25",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4,
+     "points": "49.95"
     },
     {
      "name": "Роман Попов",
@@ -105631,5 +105633,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "2040723d812ee62d"
+ "rev": "bdc08f5b363cdf70"
 }
