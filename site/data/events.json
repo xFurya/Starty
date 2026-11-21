@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-21T18:50:12+03:00",
- "checked": "2026-11-21T17:13:28.656795+00:00",
+ "generated": "2026-11-21T19:54:17+03:00",
+ "checked": "2026-11-21T19:54:17+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55394,7 +55394,7 @@
      "points": "58.30"
     }
    ],
-   "desc": "Итог:\n1. Таисия Лепихина — 62.27\n2. Софья Лукина — 61.23\n3. София Ермолова — 58.30\n\nНачало: 16:05 МСК",
+   "desc": "Промежуточные итоги:\n1. Таисия Лепихина — 62.27\n2. Софья Лукина — 61.23\n3. София Ермолова — 58.30\n\nНачало: 16:05 МСК",
    "field": [
     {
      "name": "Таисия Лепихина",
@@ -55453,6 +55453,7 @@
      "points": "61.23"
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
     "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG013.HTM",
@@ -56631,27 +56632,7 @@
      "points": "121.15"
     }
    ],
-   "total": [
-    {
-     "place": 1,
-     "name": "Глеб Дудченко",
-     "nation": "МОБ",
-     "points": "208.16"
-    },
-    {
-     "place": 2,
-     "name": "Павел Шин",
-     "nation": "МОС",
-     "points": "194.07"
-    },
-    {
-     "place": 3,
-     "name": "Артём Кошутин",
-     "nation": "ВЛГ",
-     "points": "184.83"
-    }
-   ],
-   "desc": "Итог:\n1. Глеб Дудченко — 135.06\n2. Павел Шин — 132.68\n3. Артём Кошутин — 121.15\n\nИтог турнира:\n1. Глеб Дудченко — 208.16\n2. Павел Шин — 194.07\n3. Артём Кошутин — 184.83\n\nНачало: 12:35 МСК",
+   "desc": "Промежуточные итоги:\n1. Глеб Дудченко — 135.06\n2. Павел Шин — 132.68\n3. Артём Кошутин — 121.15\n\nИтог турнира:\n1. Глеб Дудченко — 208.16\n2. Павел Шин — 194.07\n3. Артём Кошутин — 184.83\n\nНачало: 12:35 МСК",
    "field": [
     {
      "name": "Артем Шевнин",
@@ -56744,6 +56725,7 @@
      "final": 1
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
     "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG010.HTM",
@@ -56763,6 +56745,26 @@
     },
     "basis": "judges"
    },
+   "total": [
+    {
+     "place": 1,
+     "name": "Глеб Дудченко",
+     "nation": "МОБ",
+     "points": "208.16"
+    },
+    {
+     "place": 2,
+     "name": "Павел Шин",
+     "nation": "МОС",
+     "points": "194.07"
+    },
+    {
+     "place": 3,
+     "name": "Артём Кошутин",
+     "nation": "ВЛГ",
+     "points": "184.83"
+    }
+   ],
    "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
   },
   {
@@ -61581,9 +61583,9 @@
    },
    "facts": [
     {
-     "who": "Alexia Kruk / Jan Eisenhaber",
+     "kind": "score",
      "text": "Личный рекорд за РТ: 57.78 (был 56.50)",
-     "kind": "score"
+     "who": "Alexia Kruk / Jan Eisenhaber"
     }
    ],
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
@@ -61895,14 +61897,14 @@
    },
    "facts": [
     {
-     "who": "Ильяс Халиуллин",
+     "kind": "element",
      "text": "3 четверных в программе: 4Lz, 4T, 4S",
-     "kind": "element"
+     "who": "Ильяс Халиуллин"
     },
     {
-     "who": "Ильяс Халиуллин",
+     "kind": "place",
      "text": "Отрыв от второго места — 49.10 балла",
-     "kind": "place"
+     "who": "Ильяс Халиуллин"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
@@ -61916,7 +61918,7 @@
    "seg": "ПП",
    "title": "GP Finlandia Trophy — мужчины ПП",
    "start": "2026-11-21T18:15:00+03:00",
-   "end": "2026-11-21T20:02:00+03:00",
+   "end": "2026-11-21T20:00:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
    "broadcast": [
@@ -61969,151 +61971,6 @@
      "points": "158.86"
     }
    ],
-   "desc": "Итог:\n1. Mihhail Selevko — 169.98\n2. Adam Siao Him Fa — 158.91\n3. Andreas Nordeback — 158.86\n\nИтог турнира:\n1. Mihhail Selevko — 254.99\n2. Andreas Nordeback — 240.94\n3. Kazuki Tomono — 237.75\n\nПримечательное:\n• Andreas Nordeback — Личный рекорд по сумме: 240.94 (был 230.37)\n\nНачало: 18:15 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
-    {
-     "name": "Adam Siao Him Fa",
-     "nation": "FRA",
-     "place": 2,
-     "points": "158.91",
-     "time": "18:22",
-     "no": 1,
-     "warmup": 1,
-     "final": 4
-    },
-    {
-     "name": "Andreas Nordeback",
-     "nation": "SWE",
-     "time": "19:39",
-     "no": 10,
-     "warmup": 2,
-     "place": 3,
-     "points": "158.86",
-     "final": 2
-    },
-    {
-     "name": "Arlet Levandi",
-     "nation": "EST",
-     "time": "19:16",
-     "no": 7,
-     "warmup": 2,
-     "place": 5,
-     "points": "149.89",
-     "final": 6
-    },
-    {
-     "name": "Genrikh Gartung",
-     "nation": "GER",
-     "place": 9,
-     "points": "139.45",
-     "time": "18:38",
-     "no": 3,
-     "warmup": 1,
-     "final": 11
-    },
-    {
-     "name": "Kazuki Tomono",
-     "nation": "JPN",
-     "time": "19:24",
-     "no": 8,
-     "warmup": 2,
-     "place": 4,
-     "points": "158.30",
-     "final": 3
-    },
-    {
-     "name": "Kyrylo Marsak",
-     "nation": "UKR",
-     "place": 7,
-     "points": "147.95",
-     "time": "18:30",
-     "no": 2,
-     "warmup": 1,
-     "final": 7
-    },
-    {
-     "name": "Matias Lindfors",
-     "nation": "FIN",
-     "time": "18:53",
-     "no": 5,
-     "warmup": 1,
-     "place": 10,
-     "points": "138.93",
-     "final": 9
-    },
-    {
-     "name": "Mihhail Selevko",
-     "nation": "EST",
-     "time": "19:54",
-     "no": 12,
-     "warmup": 2,
-     "place": 1,
-     "points": "169.98",
-     "final": 1
-    },
-    {
-     "name": "Nika Egadze",
-     "nation": "GEO",
-     "time": "19:31",
-     "no": 9,
-     "warmup": 2,
-     "place": 6,
-     "points": "149.55",
-     "final": 5
-    },
-    {
-     "name": "Stephen Gogolev",
-     "nation": "CAN",
-     "time": "19:01",
-     "no": 6,
-     "warmup": 1,
-     "place": 8,
-     "points": "139.73",
-     "final": 8
-    },
-    {
-     "name": "Tamir Kuperman",
-     "nation": "ISR",
-     "place": 11,
-     "points": "136.57",
-     "time": "18:45",
-     "no": 4,
-     "warmup": 1,
-     "final": 10
-    },
-    {
-     "name": "Yudong Chen",
-     "nation": "CHN",
-     "time": "19:47",
-     "no": 11,
-     "warmup": 2,
-     "place": 12,
-     "points": "118.16",
-     "final": 12
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG002.htm",
-    "cat": "https://results.isu.org/results/season2627/gpfin2026/CAT001RS.htm",
-    "first": "https://results.isu.org/results/season2627/gpfin2026/SEG001.htm",
-    "names": {
-     "Adam SIAO HIM FA": "Adam Siao Him Fa",
-     "Kyrylo MARSAK": "Kyrylo Marsak",
-     "Tamir KUPERMAN": "Tamir Kuperman",
-     "Genrikh GARTUNG": "Genrikh Gartung",
-     "Matias LINDFORS": "Matias Lindfors",
-     "Stephen GOGOLEV": "Stephen Gogolev",
-     "Arlet LEVANDI": "Arlet Levandi",
-     "Kazuki TOMONO": "Kazuki Tomono",
-     "Nika EGADZE": "Nika Egadze",
-     "Andreas NORDEBACK": "Andreas Nordeback",
-     "Yudong CHEN": "Yudong Chen",
-     "Mihhail SELEVKO": "Mihhail Selevko"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json",
    "total": [
     {
      "place": 1,
@@ -62134,13 +61991,158 @@
      "points": "237.75"
     }
    ],
+   "desc": "Итог:\n1. Mihhail Selevko — 169.98\n2. Adam Siao Him Fa — 158.91\n3. Andreas Nordeback — 158.86\n\nИтог турнира:\n1. Mihhail Selevko — 254.99\n2. Andreas Nordeback — 240.94\n3. Kazuki Tomono — 237.75\n\nПримечательное:\n• Andreas Nordeback — Личный рекорд по сумме: 240.94 (был 230.37)\n\nНачало: 18:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Adam Siao Him Fa",
+     "nation": "FRA",
+     "no": 1,
+     "warmup": 1,
+     "place": 2,
+     "points": "158.91",
+     "final": 4,
+     "time": "18:22"
+    },
+    {
+     "name": "Kyrylo Marsak",
+     "nation": "UKR",
+     "no": 2,
+     "warmup": 1,
+     "place": 7,
+     "points": "147.95",
+     "final": 7,
+     "time": "18:30"
+    },
+    {
+     "name": "Genrikh Gartung",
+     "nation": "GER",
+     "no": 3,
+     "warmup": 1,
+     "place": 9,
+     "points": "139.45",
+     "final": 11,
+     "time": "18:38"
+    },
+    {
+     "name": "Tamir Kuperman",
+     "nation": "ISR",
+     "no": 4,
+     "warmup": 1,
+     "place": 11,
+     "points": "136.57",
+     "final": 10,
+     "time": "18:45"
+    },
+    {
+     "name": "Matias Lindfors",
+     "nation": "FIN",
+     "no": 5,
+     "warmup": 1,
+     "place": 10,
+     "points": "138.93",
+     "final": 9,
+     "time": "18:53"
+    },
+    {
+     "name": "Stephen Gogolev",
+     "nation": "CAN",
+     "no": 6,
+     "warmup": 1,
+     "place": 8,
+     "points": "139.73",
+     "final": 8,
+     "time": "19:01"
+    },
+    {
+     "name": "Arlet Levandi",
+     "nation": "EST",
+     "no": 7,
+     "warmup": 2,
+     "place": 5,
+     "points": "149.89",
+     "final": 6,
+     "time": "19:16"
+    },
+    {
+     "name": "Kazuki Tomono",
+     "nation": "JPN",
+     "no": 8,
+     "warmup": 2,
+     "place": 4,
+     "points": "158.30",
+     "final": 3,
+     "time": "19:24"
+    },
+    {
+     "name": "Nika Egadze",
+     "nation": "GEO",
+     "no": 9,
+     "warmup": 2,
+     "place": 6,
+     "points": "149.55",
+     "final": 5,
+     "time": "19:31"
+    },
+    {
+     "name": "Andreas Nordeback",
+     "nation": "SWE",
+     "no": 10,
+     "warmup": 2,
+     "place": 3,
+     "points": "158.86",
+     "final": 2,
+     "time": "19:39"
+    },
+    {
+     "name": "Yudong Chen",
+     "nation": "CHN",
+     "no": 11,
+     "warmup": 2,
+     "place": 12,
+     "points": "118.16",
+     "final": 12,
+     "time": "19:47"
+    },
+    {
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "no": 12,
+     "warmup": 2,
+     "place": 1,
+     "points": "169.98",
+     "final": 1,
+     "time": "19:54"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG002.htm",
+    "cat": "https://results.isu.org/results/season2627/gpfin2026/CAT001RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpfin2026/SEG001.htm",
+    "names": {
+     "Mihhail SELEVKO": "Mihhail Selevko",
+     "Adam SIAO HIM FA": "Adam Siao Him Fa",
+     "Andreas NORDEBACK": "Andreas Nordeback",
+     "Kazuki TOMONO": "Kazuki Tomono",
+     "Arlet LEVANDI": "Arlet Levandi",
+     "Nika EGADZE": "Nika Egadze",
+     "Kyrylo MARSAK": "Kyrylo Marsak",
+     "Stephen GOGOLEV": "Stephen Gogolev",
+     "Genrikh GARTUNG": "Genrikh Gartung",
+     "Matias LINDFORS": "Matias Lindfors",
+     "Tamir KUPERMAN": "Tamir Kuperman",
+     "Yudong CHEN": "Yudong Chen"
+    },
+    "basis": "judges"
+   },
    "facts": [
     {
      "who": "Andreas Nordeback",
      "text": "Личный рекорд по сумме: 240.94 (был 230.37)",
      "kind": "score"
     }
-   ]
+   ],
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:dance-senior-rt",
@@ -62197,12 +62199,12 @@
     },
     {
      "place": 3,
-     "name": "Sandrine Gauthier / Paul Ayer",
-     "nation": "CAN",
-     "points": "69.31"
+     "name": "Carolina Portesi Peroni / Pietro Papetti",
+     "nation": "ITA",
+     "points": "67.29"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Holly Harris / Jason Chan — 74.17\n2. Alicia Fabbri / Marko Jevgeni Gaidajenko — 73.79\n3. Sandrine Gauthier / Paul Ayer — 69.31\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Holly Harris / Jason Chan — 74.17\n2. Alicia Fabbri / Marko Jevgeni Gaidajenko — 73.79\n3. Carolina Portesi Peroni / Pietro Papetti — 67.29\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Holly Harris / Jason Chan",
@@ -62218,7 +62220,7 @@
      "nation": "NED",
      "no": 2,
      "warmup": 1,
-     "place": 8,
+     "place": 7,
      "points": "60.38",
      "time": "18:31"
     },
@@ -62227,7 +62229,7 @@
      "nation": "FRA",
      "no": 4,
      "warmup": 1,
-     "place": 10,
+     "place": 9,
      "points": "55.50",
      "time": "18:44"
     },
@@ -62236,18 +62238,63 @@
      "nation": "FRA",
      "no": 5,
      "warmup": 1,
-     "place": 7,
+     "place": 6,
      "points": "64.02",
      "time": "18:50"
     },
     {
+     "name": "Natalia Pallu-neves / Jayin Panesar",
+     "nation": "BRA",
+     "no": 6,
+     "warmup": 20,
+     "place": 8,
+     "points": "56.15",
+     "time": "19:16"
+    },
+    {
+     "name": "Mariia Ignateva / Danijil Leonyidovics Szemko",
+     "nation": "HUN",
+     "no": 7,
+     "warmup": 20,
+     "place": 4,
+     "points": "64.74",
+     "time": "19:23"
+    },
+    {
+     "name": "Carolina Portesi Peroni / Pietro Papetti",
+     "nation": "ITA",
+     "no": 8,
+     "warmup": 20,
+     "place": 3,
+     "points": "67.29",
+     "time": "19:29"
+    },
+    {
+     "name": "Olympia Kalaganis / Emile Deveau",
+     "nation": "GRE",
+     "no": 9,
+     "warmup": 20,
+     "place": 10,
+     "points": "52.91",
+     "time": "19:35"
+    },
+    {
+     "name": "Celina Fradji / Jean-Hans Fourneaux",
+     "nation": "FRA",
+     "no": 10,
+     "warmup": 20,
+     "place": 5,
+     "points": "64.68",
+     "time": "19:41"
+    },
+    {
      "name": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
      "nation": "CAN",
-     "time": "19:53",
      "no": 11,
-     "warmup": 3,
+     "warmup": 40,
      "place": 2,
-     "points": "73.79"
+     "points": "73.79",
+     "time": "19:53"
     },
     {
      "name": "Amy Cui / Jonathan Rogers",
@@ -62255,24 +62302,6 @@
      "time": "20:17",
      "no": 15,
      "warmup": 3
-    },
-    {
-     "name": "Carolina Portesi Peroni / Pietro Papetti",
-     "nation": "ITA",
-     "time": "19:29",
-     "no": 8,
-     "warmup": 2,
-     "place": 4,
-     "points": "67.29"
-    },
-    {
-     "name": "Celina Fradji / Jean-Hans Fourneaux",
-     "nation": "FRA",
-     "time": "19:41",
-     "no": 10,
-     "warmup": 2,
-     "place": 6,
-     "points": "64.68"
     },
     {
      "name": "Daniela Ivanitskiy / Matthew Sperry",
@@ -62289,33 +62318,6 @@
      "time": "20:11",
      "no": 14,
      "warmup": 3
-    },
-    {
-     "name": "Mariia Ignateva / Danijil Leonyidovics Szemko",
-     "nation": "HUN",
-     "time": "19:23",
-     "no": 7,
-     "warmup": 2,
-     "place": 5,
-     "points": "64.74"
-    },
-    {
-     "name": "Natalia Pallu-neves / Jayin Panesar",
-     "nation": "BRA",
-     "time": "19:16",
-     "no": 6,
-     "warmup": 2,
-     "place": 9,
-     "points": "56.15"
-    },
-    {
-     "name": "Olympia Kalaganis / Emile Deveau",
-     "nation": "GRE",
-     "time": "19:35",
-     "no": 9,
-     "warmup": 2,
-     "place": 12,
-     "points": "52.91"
     },
     {
      "name": "Sandrine Gauthier / Paul Ayer",
@@ -62335,15 +62337,15 @@
     "first": null,
     "names": {
      "Holly HARRIS / Jason CHAN": "Holly Harris / Jason Chan",
+     "Alicia FABBRI / Marko Jevgeni GAIDAJENKO": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
+     "Carolina PORTESI PERONI / Pietro PAPETTI": "Carolina Portesi Peroni / Pietro Papetti",
+     "Mariia IGNATEVA / Danijil Leonyidovics SZEMKO": "Mariia Ignateva / Danijil Leonyidovics Szemko",
+     "Celina FRADJI / Jean-Hans FOURNEAUX": "Celina Fradji / Jean-Hans Fourneaux",
      "Louise BORDET / Martin CHARDAIN": "Louise Bordet / Martin Chardain",
      "Chelsea VERHAEGH / Sherim van GEFFEN": "Chelsea Verhaegh / Sherim van Geffen",
-     "Alisa OVSIANKINA / Maximilien RAHIER": "Alisa Ovsiankina / Maximilien Rahier",
      "Natalia PALLU-NEVES / Jayin PANESAR": "Natalia Pallu-neves / Jayin Panesar",
-     "Mariia IGNATEVA / Danijil Leonyidovics SZEMKO": "Mariia Ignateva / Danijil Leonyidovics Szemko",
-     "Carolina PORTESI PERONI / Pietro PAPETTI": "Carolina Portesi Peroni / Pietro Papetti",
+     "Alisa OVSIANKINA / Maximilien RAHIER": "Alisa Ovsiankina / Maximilien Rahier",
      "Olympia KALAGANIS / Emile DEVEAU": "Olympia Kalaganis / Emile Deveau",
-     "Celina FRADJI / Jean-Hans FOURNEAUX": "Celina Fradji / Jean-Hans Fourneaux",
-     "Alicia FABBRI / Marko Jevgeni GAIDAJENKO": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
      "Sandrine GAUTHIER / Paul AYER": "Sandrine Gauthier / Paul Ayer",
      "Daniela IVANITSKIY / Matthew SPERRY": "Daniela Ivanitskiy / Matthew Sperry",
      "Elliana PEAL / Ethan PEAL": "Elliana Peal / Ethan Peal",
@@ -62398,199 +62400,6 @@
      "url": "https://vkvideo.ru/live-38558219_456239878"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Екатерина Кольцова — 64.20\n2. Софья Лукина — 64.20\n3. Наталия Глотова — 63.85\n\nНачало: 18:45 МСК\nТрансляция: VK Видео",
-   "field": [
-    {
-     "name": "Мария Котова",
-     "nation": "ТАТ",
-     "time": "18:52",
-     "no": 1,
-     "warmup": 1,
-     "place": 8,
-     "points": "51.78"
-    },
-    {
-     "name": "Влада Ершова",
-     "nation": "ОМС",
-     "time": "18:56",
-     "no": 2,
-     "warmup": 1,
-     "place": 6,
-     "points": "54.66"
-    },
-    {
-     "name": "Екатерина Кольцова",
-     "nation": "КОС",
-     "time": "19:00",
-     "no": 3,
-     "warmup": 1,
-     "place": 1,
-     "points": "64.20"
-    },
-    {
-     "name": "Виктория Ушакова",
-     "nation": "РОС",
-     "time": "19:05",
-     "no": 4,
-     "warmup": 1,
-     "place": 10,
-     "points": "41.12"
-    },
-    {
-     "name": "Наталия Глотова",
-     "nation": "ТУЛ",
-     "time": "19:09",
-     "no": 5,
-     "warmup": 1,
-     "place": 3,
-     "points": "63.85"
-    },
-    {
-     "name": "Алина Телегина",
-     "nation": "ИВА",
-     "time": "19:20",
-     "no": 6,
-     "warmup": 2,
-     "place": 9,
-     "points": "51.34"
-    },
-    {
-     "name": "Софья Лукина",
-     "nation": "БАШ",
-     "time": "19:25",
-     "no": 7,
-     "warmup": 2,
-     "place": 2,
-     "points": "64.20"
-    },
-    {
-     "name": "Юлия Радионова",
-     "nation": "МОС",
-     "time": "19:29",
-     "no": 8,
-     "warmup": 2,
-     "place": 4,
-     "points": "61.90"
-    },
-    {
-     "name": "Софья Рудь",
-     "nation": "МУР",
-     "time": "19:33",
-     "no": 9,
-     "warmup": 2,
-     "place": 7,
-     "points": "53.59"
-    },
-    {
-     "name": "Василиса Абакумова",
-     "nation": "СВЕ",
-     "time": "19:37",
-     "no": 10,
-     "warmup": 2,
-     "place": 5,
-     "points": "57.50"
-    },
-    {
-     "name": "Анна Казакевич",
-     "nation": "ЯРО",
-     "time": "20:04",
-     "no": 11,
-     "warmup": 3
-    },
-    {
-     "name": "Анна Замятина",
-     "nation": "ЧЕЛ",
-     "time": "20:08",
-     "no": 12,
-     "warmup": 3
-    },
-    {
-     "name": "Ксения Вагина",
-     "nation": "ХМА",
-     "time": "20:12",
-     "no": 13,
-     "warmup": 3
-    },
-    {
-     "name": "Анастасия Артемова",
-     "nation": "ВОР",
-     "time": "20:16",
-     "no": 14,
-     "warmup": 3
-    },
-    {
-     "name": "Алиса Юрова",
-     "nation": "ЛИП",
-     "time": "20:20",
-     "no": 15,
-     "warmup": 3
-    },
-    {
-     "name": "Анна Рябова",
-     "nation": "РЯЗ",
-     "time": "20:32",
-     "no": 16,
-     "warmup": 4
-    },
-    {
-     "name": "Яна Асташенкова",
-     "nation": "МОБ",
-     "time": "20:36",
-     "no": 17,
-     "warmup": 4
-    },
-    {
-     "name": "Анастасия Фурсова",
-     "nation": "БЕЛ",
-     "time": "20:40",
-     "no": 18,
-     "warmup": 4
-    },
-    {
-     "name": "Риана Кадырова",
-     "nation": "ТАТ",
-     "time": "20:45",
-     "no": 19,
-     "warmup": 4
-    },
-    {
-     "name": "Олеся Козлова",
-     "nation": "САМ",
-     "time": "20:49",
-     "no": 20,
-     "warmup": 4
-    }
-   ],
-   "live": {
-    "idx": "https://fsrussia.ru/results/2627/idel_2026/index.htm",
-    "seg": "https://fsrussia.ru/results/2627/idel_2026/SEG003.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Мария КОТОВА": "Мария Котова",
-     "Влада ЕРШОВА": "Влада Ершова",
-     "Екатерина КОЛЬЦОВА": "Екатерина Кольцова",
-     "Виктория УШАКОВА": "Виктория Ушакова",
-     "Наталия ГЛОТОВА": "Наталия Глотова",
-     "Алина ТЕЛЕГИНА": "Алина Телегина",
-     "Софья ЛУКИНА": "Софья Лукина",
-     "Юлия РАДИОНОВА": "Юлия Радионова",
-     "Софья РУДЬ": "Софья Рудь",
-     "Василиса АБАКУМОВА": "Василиса Абакумова",
-     "Анна КАЗАКЕВИЧ": "Анна Казакевич",
-     "Анна ЗАМЯТИНА": "Анна Замятина",
-     "Ксения ВАГИНА": "Ксения Вагина",
-     "Анастасия АРТЕМОВА": "Анастасия Артемова",
-     "Алиса ЮРОВА": "Алиса Юрова",
-     "Анна РЯБОВА": "Анна Рябова",
-     "Яна АСТАШЕНКОВА": "Яна Асташенкова",
-     "Анастасия ФУРСОВА": "Анастасия Фурсова",
-     "Риана КАДЫРОВА": "Риана Кадырова",
-     "Олеся КОЗЛОВА": "Олеся Козлова"
-    },
-    "basis": null
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json",
    "podium": [
     {
      "place": 1,
@@ -62611,7 +62420,200 @@
      "points": "63.85"
     }
    ],
-   "provisional": true
+   "desc": "Промежуточные итоги:\n1. Екатерина Кольцова — 64.20\n2. Софья Лукина — 64.20\n3. Наталия Глотова — 63.85\n\nНачало: 18:45 МСК\nТрансляция: VK Видео",
+   "field": [
+    {
+     "name": "Мария Котова",
+     "nation": "ТАТ",
+     "no": 1,
+     "warmup": 1,
+     "place": 8,
+     "points": "51.78",
+     "time": "18:52"
+    },
+    {
+     "name": "Влада Ершова",
+     "nation": "ОМС",
+     "no": 2,
+     "warmup": 1,
+     "place": 6,
+     "points": "54.66",
+     "time": "18:56"
+    },
+    {
+     "name": "Екатерина Кольцова",
+     "nation": "КОС",
+     "no": 3,
+     "warmup": 1,
+     "place": 1,
+     "points": "64.20",
+     "time": "19:00"
+    },
+    {
+     "name": "Виктория Ушакова",
+     "nation": "РОС",
+     "no": 4,
+     "warmup": 1,
+     "place": 10,
+     "points": "41.12",
+     "time": "19:05"
+    },
+    {
+     "name": "Наталия Глотова",
+     "nation": "ТУЛ",
+     "no": 5,
+     "warmup": 1,
+     "place": 3,
+     "points": "63.85",
+     "time": "19:09"
+    },
+    {
+     "name": "Алина Телегина",
+     "nation": "ИВА",
+     "no": 6,
+     "warmup": 2,
+     "place": 9,
+     "points": "51.34",
+     "time": "19:20"
+    },
+    {
+     "name": "Софья Лукина",
+     "nation": "БАШ",
+     "no": 7,
+     "warmup": 2,
+     "place": 2,
+     "points": "64.20",
+     "time": "19:25"
+    },
+    {
+     "name": "Юлия Радионова",
+     "nation": "МОС",
+     "no": 8,
+     "warmup": 2,
+     "place": 4,
+     "points": "61.90",
+     "time": "19:29"
+    },
+    {
+     "name": "Софья Рудь",
+     "nation": "МУР",
+     "no": 9,
+     "warmup": 2,
+     "place": 7,
+     "points": "53.59",
+     "time": "19:33"
+    },
+    {
+     "name": "Василиса Абакумова",
+     "nation": "СВЕ",
+     "no": 10,
+     "warmup": 2,
+     "place": 5,
+     "points": "57.50",
+     "time": "19:37"
+    },
+    {
+     "name": "Алиса Юрова",
+     "nation": "ЛИП",
+     "time": "20:20",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Анастасия Артемова",
+     "nation": "ВОР",
+     "time": "20:16",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Анастасия Фурсова",
+     "nation": "БЕЛ",
+     "time": "20:40",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Анна Замятина",
+     "nation": "ЧЕЛ",
+     "time": "20:08",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Анна Казакевич",
+     "nation": "ЯРО",
+     "time": "20:04",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Анна Рябова",
+     "nation": "РЯЗ",
+     "time": "20:32",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Ксения Вагина",
+     "nation": "ХМА",
+     "time": "20:12",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Олеся Козлова",
+     "nation": "САМ",
+     "time": "20:49",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Риана Кадырова",
+     "nation": "ТАТ",
+     "time": "20:45",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Яна Асташенкова",
+     "nation": "МОБ",
+     "time": "20:36",
+     "no": 17,
+     "warmup": 4
+    }
+   ],
+   "provisional": true,
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/idel_2026/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/idel_2026/SEG003.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Екатерина КОЛЬЦОВА": "Екатерина Кольцова",
+     "Софья ЛУКИНА": "Софья Лукина",
+     "Наталия ГЛОТОВА": "Наталия Глотова",
+     "Юлия РАДИОНОВА": "Юлия Радионова",
+     "Василиса АБАКУМОВА": "Василиса Абакумова",
+     "Влада ЕРШОВА": "Влада Ершова",
+     "Софья РУДЬ": "Софья Рудь",
+     "Мария КОТОВА": "Мария Котова",
+     "Алина ТЕЛЕГИНА": "Алина Телегина",
+     "Виктория УШАКОВА": "Виктория Ушакова",
+     "Анна КАЗАКЕВИЧ": "Анна Казакевич",
+     "Анна ЗАМЯТИНА": "Анна Замятина",
+     "Ксения ВАГИНА": "Ксения Вагина",
+     "Анастасия АРТЕМОВА": "Анастасия Артемова",
+     "Алиса ЮРОВА": "Алиса Юрова",
+     "Анна РЯБОВА": "Анна Рябова",
+     "Яна АСТАШЕНКОВА": "Яна Асташенкова",
+     "Анастасия ФУРСОВА": "Анастасия Фурсова",
+     "Риана КАДЫРОВА": "Риана Кадырова",
+     "Олеся КОЗЛОВА": "Олеся Козлова"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:dance-senior-pt",
@@ -105473,5 +105475,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "e83a64f04261463f"
+ "rev": "481496e712ad9c48"
 }
