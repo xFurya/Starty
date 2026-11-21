@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T15:01:45+03:00",
- "checked": "2026-11-21T13:21:28.479370+00:00",
+ "checked": "2026-11-21T13:25:29.213383+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61127,7 +61127,7 @@
      "url": "https://www.youtube.com/watch?v=3lVqLrXDbd0"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Isabeau Levito — 140.17\n2. Haein Lee — 124.87\n3. Iida Karhunen — 120.23\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Isabeau Levito — 140.17\n2. Yuseong Kim — 136.48\n3. Haein Lee — 124.87\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Anna Pezzetta",
@@ -61135,7 +61135,7 @@
      "time": "15:23",
      "no": 3,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "118.94"
     },
     {
@@ -61144,7 +61144,7 @@
      "time": "16:09",
      "no": 8,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "124.87"
     },
     {
@@ -61153,7 +61153,7 @@
      "time": "15:46",
      "no": 6,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "120.23"
     },
     {
@@ -61171,7 +61171,7 @@
      "time": "15:30",
      "no": 4,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "96.66"
     },
     {
@@ -61187,7 +61187,7 @@
      "time": "15:07",
      "no": 1,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "96.36"
     },
     {
@@ -61203,7 +61203,7 @@
      "time": "15:15",
      "no": 2,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "112.12"
     },
     {
@@ -61212,7 +61212,7 @@
      "time": "15:38",
      "no": 5,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "115.81"
     },
     {
@@ -61227,7 +61227,9 @@
      "nation": "KOR",
      "time": "16:16",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "136.48"
     }
    ],
    "live": {
@@ -61261,15 +61263,15 @@
     },
     {
      "place": 2,
-     "name": "Haein Lee",
+     "name": "Yuseong Kim",
      "nation": "KOR",
-     "points": "124.87"
+     "points": "136.48"
     },
     {
      "place": 3,
-     "name": "Iida Karhunen",
-     "nation": "FIN",
-     "points": "120.23"
+     "name": "Haein Lee",
+     "nation": "KOR",
+     "points": "124.87"
     }
    ],
    "provisional": true
@@ -61316,7 +61318,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Eleonore Gabet / Raphael Duclusaud — 52.01\n2. Angelina Cucherat / Leopold Dacquin — 46.88\n3. Lena Zerinvary-simon / Huba Gallai — 41.44\n\nНачало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Lea Hienne / Louis Varescon — 58.81\n2. Eleonore Gabet / Raphael Duclusaud — 52.01\n3. Angelina Cucherat / Leopold Dacquin — 46.88\n\nНачало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Aletta Lanyi / Ilya Laurenau",
@@ -61331,7 +61333,7 @@
      "time": "15:56",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "46.88"
     },
     {
@@ -61340,7 +61342,7 @@
      "time": "16:02",
      "no": 3,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "41.44"
     },
     {
@@ -61349,7 +61351,7 @@
      "time": "16:09",
      "no": 4,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "52.01"
     },
     {
@@ -61357,7 +61359,9 @@
      "nation": "FRA",
      "time": "16:20",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "58.81"
     },
     {
      "name": "Martina Lavazza / Raphael Raymond Meunier",
@@ -61466,21 +61470,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Lea Hienne / Louis Varescon",
+     "nation": "FRA",
+     "points": "58.81"
+    },
+    {
+     "place": 2,
      "name": "Eleonore Gabet / Raphael Duclusaud",
      "nation": "FRA",
      "points": "52.01"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Angelina Cucherat / Leopold Dacquin",
      "nation": "FRA",
      "points": "46.88"
-    },
-    {
-     "place": 3,
-     "name": "Lena Zerinvary-simon / Huba Gallai",
-     "nation": "HUN",
-     "points": "41.44"
     }
    ],
    "provisional": true
@@ -105148,5 +105152,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "d6cef653b173aafd"
+ "rev": "e19f4b49c56d5108"
 }
