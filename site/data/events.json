@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T18:50:12+03:00",
- "checked": "2026-11-21T16:57:29.413573+00:00",
+ "checked": "2026-11-21T17:01:29.108357+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62151,18 +62151,18 @@
     },
     {
      "place": 2,
-     "name": "Carolina Portesi Peroni / Pietro Papetti",
-     "nation": "ITA",
-     "points": "67.29"
+     "name": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
+     "nation": "CAN",
+     "points": "73.79"
     },
     {
      "place": 3,
-     "name": "Mariia Ignateva / Danijil Leonyidovics Szemko",
-     "nation": "HUN",
-     "points": "64.74"
+     "name": "Carolina Portesi Peroni / Pietro Papetti",
+     "nation": "ITA",
+     "points": "67.29"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Holly Harris / Jason Chan — 74.17\n2. Carolina Portesi Peroni / Pietro Papetti — 67.29\n3. Mariia Ignateva / Danijil Leonyidovics Szemko — 64.74\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Holly Harris / Jason Chan — 74.17\n2. Alicia Fabbri / Marko Jevgeni Gaidajenko — 73.79\n3. Carolina Portesi Peroni / Pietro Papetti — 67.29\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Holly Harris / Jason Chan",
@@ -62178,7 +62178,7 @@
      "nation": "NED",
      "no": 2,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "60.38",
      "time": "18:31"
     },
@@ -62187,7 +62187,7 @@
      "nation": "FRA",
      "no": 4,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "55.50",
      "time": "18:44"
     },
@@ -62196,7 +62196,7 @@
      "nation": "FRA",
      "no": 5,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "64.02",
      "time": "18:50"
     },
@@ -62205,7 +62205,9 @@
      "nation": "CAN",
      "time": "19:53",
      "no": 11,
-     "warmup": 3
+     "warmup": 3,
+     "place": 2,
+     "points": "73.79"
     },
     {
      "name": "Amy Cui / Jonathan Rogers",
@@ -62220,7 +62222,7 @@
      "time": "19:29",
      "no": 8,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "67.29"
     },
     {
@@ -62229,7 +62231,7 @@
      "time": "19:41",
      "no": 10,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "64.68"
     },
     {
@@ -62252,7 +62254,7 @@
      "time": "19:23",
      "no": 7,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "64.74"
     },
     {
@@ -62261,7 +62263,7 @@
      "time": "19:16",
      "no": 6,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "56.15"
     },
     {
@@ -62270,7 +62272,7 @@
      "time": "19:35",
      "no": 9,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "52.91"
     },
     {
@@ -62360,7 +62362,7 @@
      "time": "18:52",
      "no": 1,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "51.78"
     },
     {
@@ -62387,7 +62389,7 @@
      "time": "19:05",
      "no": 4,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "41.12"
     },
     {
@@ -62405,7 +62407,7 @@
      "time": "19:20",
      "no": 6,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "51.34"
     },
     {
@@ -62431,7 +62433,9 @@
      "nation": "МУР",
      "time": "19:33",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6,
+     "points": "53.59"
     },
     {
      "name": "Василиса Абакумова",
@@ -105423,5 +105427,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "0250308b2aff3aad"
+ "rev": "dcafbc169e4ed9be"
 }
