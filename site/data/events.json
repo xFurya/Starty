@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T20:58:09+03:00",
- "checked": "2026-11-21T18:21:29.653765+00:00",
+ "checked": "2026-11-21T18:25:28.585787+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62438,15 +62438,13 @@
      "points": "66.47"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Риана Кадырова — 72.18\n2. Олеся Козлова — 66.75\n3. Алиса Юрова — 66.47\n\nНачало: 18:45 МСК\nТрансляция: VK Видео",
+   "desc": "Итог:\n1. Риана Кадырова — 72.18\n2. Олеся Козлова — 66.75\n3. Алиса Юрова — 66.47\n\nНачало: 18:45 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Мария Котова",
      "nation": "ТАТ",
      "no": 1,
      "warmup": 1,
-     "place": 15,
-     "points": "51.78",
      "time": "18:52"
     },
     {
@@ -62472,7 +62470,7 @@
      "nation": "РОС",
      "no": 4,
      "warmup": 1,
-     "place": 20,
+     "place": 19,
      "points": "41.12",
      "time": "19:05"
     },
@@ -62490,7 +62488,7 @@
      "nation": "ИВА",
      "no": 6,
      "warmup": 2,
-     "place": 16,
+     "place": 15,
      "points": "51.34",
      "time": "19:20"
     },
@@ -62544,7 +62542,7 @@
      "nation": "ЧЕЛ",
      "no": 12,
      "warmup": 3,
-     "place": 17,
+     "place": 16,
      "points": "49.97",
      "time": "20:08"
     },
@@ -62553,7 +62551,7 @@
      "nation": "ХМА",
      "no": 13,
      "warmup": 3,
-     "place": 19,
+     "place": 18,
      "points": "47.00",
      "time": "20:12"
     },
@@ -62562,7 +62560,7 @@
      "nation": "ВОР",
      "no": 14,
      "warmup": 3,
-     "place": 18,
+     "place": 17,
      "points": "48.52",
      "time": "20:16"
     },
@@ -62621,7 +62619,6 @@
      "points": "63.43"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/idel_2026/index.htm",
     "seg": "https://fsrussia.ru/results/2627/idel_2026/SEG003.htm",
@@ -62649,7 +62646,7 @@
      "Риана КАДЫРОВА": "Риана Кадырова",
      "Олеся КОЗЛОВА": "Олеся Козлова"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
   },
@@ -105544,5 +105541,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "c13de674124e8af7"
+ "rev": "16dd59792b456b1e"
 }
