@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T17:46:19+03:00",
- "checked": "2026-11-21T15:29:28.841508+00:00",
+ "checked": "2026-11-21T15:33:29.275588+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61884,14 +61884,16 @@
      "url": "https://www.youtube.com/watch?v=3lVqLrXDbd0"
     }
    ],
-   "desc": "Начало: 18:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Adam Siao Him Fa — 158.91\n\nНачало: 18:15 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Adam Siao Him Fa",
      "nation": "FRA",
      "time": "18:22",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "158.91"
     },
     {
      "name": "Kyrylo Marsak",
@@ -61992,7 +61994,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Adam Siao Him Fa",
+     "nation": "FRA",
+     "points": "158.91"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:dance-senior-rt",
@@ -62035,14 +62046,16 @@
      "note": "Платно"
     }
    ],
-   "desc": "Начало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Holly Harris / Jason Chan — 74.17\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Holly Harris / Jason Chan",
      "nation": "AUS",
      "time": "18:25",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "74.17"
     },
     {
      "name": "Chelsea Verhaegh / Sherim van Geffen",
@@ -62167,7 +62180,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Holly Harris / Jason Chan",
+     "nation": "AUS",
+     "points": "74.17"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:women-senior-kp",
@@ -105295,5 +105317,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "835f2675d901e999"
+ "rev": "5a2df9535e29b72e"
 }
