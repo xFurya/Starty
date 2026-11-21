@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T17:46:19+03:00",
- "checked": "2026-11-21T15:45:28.584998+00:00",
+ "checked": "2026-11-21T15:49:30.995531+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61626,33 +61626,34 @@
    "podium": [
     {
      "place": 1,
+     "name": "Ильяс Халиуллин",
+     "nation": "ТАТ",
+     "points": "166.42"
+    },
+    {
+     "place": 2,
      "name": "Лев Бобык",
      "nation": "НИЖ",
      "points": "133.56"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Кирилл Былинин",
      "nation": "ЧЕЛ",
      "points": "123.15"
-    },
-    {
-     "place": 3,
-     "name": "Искандер Амиров",
-     "nation": "ТАТ",
-     "points": "122.90"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Лев Бобык — 133.56\n2. Кирилл Былинин — 123.15\n3. Искандер Амиров — 122.90\n\nНачало: 16:00 МСК\nТрансляция: VK Видео",
+   "desc": "Итог:\n1. Ильяс Халиуллин — 166.42\n2. Лев Бобык — 133.56\n3. Кирилл Былинин — 123.15\n\nИтог турнира:\n1. Ильяс Халиуллин — 253.17\n2. Лев Бобык — 204.07\n3. Владислав Виниченко — 187.37\n\nПримечательное:\n• Ильяс Халиуллин — 3 четверных в программе: 4Lz, 4T, 4S\n• Ильяс Халиуллин — Отрыв от второго места — 49.10 балла\n\nНачало: 16:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Владимир Гудзенко",
      "nation": "КОС",
-     "place": 11,
+     "place": 12,
      "points": "105.09",
      "time": "16:53",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "final": 12
     },
     {
      "name": "Владислав Виниченко",
@@ -61660,35 +61661,39 @@
      "time": "18:07",
      "no": 16,
      "warmup": 4,
-     "place": 5,
-     "points": "121.90"
+     "place": 6,
+     "points": "121.90",
+     "final": 3
     },
     {
      "name": "Данил Золотарев",
      "nation": "ТАТ",
-     "place": 13,
+     "place": 14,
      "points": "97.49",
      "time": "16:18",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 16
     },
     {
      "name": "Денис Никитин",
      "nation": "УДМ",
-     "place": 18,
+     "place": 19,
      "points": "86.29",
      "time": "16:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 19
     },
     {
      "name": "Егор Никитин",
      "nation": "ИВА",
-     "place": 16,
+     "place": 17,
      "points": "90.37",
      "time": "16:48",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "final": 17
     },
     {
      "name": "Иван Теленков",
@@ -61696,8 +61701,9 @@
      "time": "17:38",
      "no": 12,
      "warmup": 3,
-     "place": 9,
-     "points": "109.60"
+     "place": 10,
+     "points": "109.60",
+     "final": 10
     },
     {
      "name": "Илья Старков",
@@ -61705,15 +61711,19 @@
      "time": "18:13",
      "no": 17,
      "warmup": 4,
-     "place": 10,
-     "points": "108.40"
+     "place": 11,
+     "points": "108.40",
+     "final": 6
     },
     {
      "name": "Ильяс Халиуллин",
      "nation": "ТАТ",
      "time": "18:24",
      "no": 19,
-     "warmup": 4
+     "warmup": 4,
+     "place": 1,
+     "points": "166.42",
+     "final": 1
     },
     {
      "name": "Искандер Амиров",
@@ -61721,17 +61731,19 @@
      "time": "17:43",
      "no": 13,
      "warmup": 3,
-     "place": 3,
-     "points": "122.90"
+     "place": 4,
+     "points": "122.90",
+     "final": 4
     },
     {
      "name": "Кирилл Былинин",
      "nation": "ЧЕЛ",
-     "place": 2,
+     "place": 3,
      "points": "123.15",
      "time": "16:37",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "final": 7
     },
     {
      "name": "Лев Бобык",
@@ -61739,8 +61751,9 @@
      "time": "18:18",
      "no": 18,
      "warmup": 4,
-     "place": 1,
-     "points": "133.56"
+     "place": 2,
+     "points": "133.56",
+     "final": 2
     },
     {
      "name": "Леонид Новожилов",
@@ -61748,62 +61761,69 @@
      "time": "17:49",
      "no": 14,
      "warmup": 3,
-     "place": 15,
-     "points": "95.35"
+     "place": 16,
+     "points": "95.35",
+     "final": 13
     },
     {
      "name": "Макар Ушаков",
      "nation": "ПРМ",
-     "place": 17,
+     "place": 18,
      "points": "87.14",
      "time": "16:13",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 18
     },
     {
      "name": "Максим Галкин",
      "nation": "СВЕ",
-     "place": 4,
+     "place": 5,
      "points": "122.06",
      "time": "17:27",
      "no": 10,
-     "warmup": 3
+     "warmup": 3,
+     "final": 5
     },
     {
      "name": "Марк Аникиенко",
      "nation": "ЧЕЛ",
-     "place": 14,
+     "place": 15,
      "points": "95.63",
      "time": "16:42",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "final": 15
     },
     {
      "name": "Марк Титов",
      "nation": "ТАТ",
-     "place": 12,
+     "place": 13,
      "points": "101.27",
      "time": "16:24",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 14
     },
     {
      "name": "Михаил Голояд",
      "nation": "БЕЛ",
-     "place": 7,
+     "place": 8,
      "points": "111.80",
      "time": "17:32",
      "no": 11,
-     "warmup": 3
+     "warmup": 3,
+     "final": 9
     },
     {
      "name": "Роман Чирков",
      "nation": "ТВЕ",
-     "place": 8,
+     "place": 9,
      "points": "110.24",
      "time": "16:59",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "final": 11
     },
     {
      "name": "Степан Юров",
@@ -61811,11 +61831,11 @@
      "time": "18:02",
      "no": 15,
      "warmup": 4,
-     "place": 6,
-     "points": "113.26"
+     "place": 7,
+     "points": "113.26",
+     "final": 8
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/idel_2026/index.htm",
     "seg": "https://fsrussia.ru/results/2627/idel_2026/SEG006.htm",
@@ -61842,9 +61862,41 @@
      "Лев БОБЫК": "Лев Бобык",
      "Ильяс ХАЛИУЛЛИН": "Ильяс Халиуллин"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json",
+   "facts": [
+    {
+     "who": "Ильяс Халиуллин",
+     "text": "3 четверных в программе: 4Lz, 4T, 4S",
+     "kind": "element"
+    },
+    {
+     "who": "Ильяс Халиуллин",
+     "text": "Отрыв от второго места — 49.10 балла",
+     "kind": "place"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Ильяс Халиуллин",
+     "nation": "ТАТ",
+     "points": "253.17"
+    },
+    {
+     "place": 2,
+     "name": "Лев Бобык",
+     "nation": "НИЖ",
+     "points": "204.07"
+    },
+    {
+     "place": 3,
+     "name": "Владислав Виниченко",
+     "nation": "РОС",
+     "points": "187.37"
+    }
+   ]
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:men-senior-pp",
@@ -62066,7 +62118,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Holly Harris / Jason Chan — 74.17\n2. Chelsea Verhaegh / Sherim van Geffen — 60.38\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Holly Harris / Jason Chan — 74.17\n2. Chelsea Verhaegh / Sherim van Geffen — 60.38\n3. Alisa Ovsiankina / Maximilien Rahier — 55.50\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Holly Harris / Jason Chan",
@@ -62098,7 +62150,9 @@
      "nation": "FRA",
      "time": "18:44",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3,
+     "points": "55.50"
     },
     {
      "name": "Louise Bordet / Martin Chardain",
@@ -62215,6 +62269,12 @@
      "name": "Chelsea Verhaegh / Sherim van Geffen",
      "nation": "NED",
      "points": "60.38"
+    },
+    {
+     "place": 3,
+     "name": "Alisa Ovsiankina / Maximilien Rahier",
+     "nation": "FRA",
+     "points": "55.50"
     }
    ],
    "provisional": true
@@ -105345,5 +105405,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "f8c3abfab151c6f3"
+ "rev": "d74d868296017c73"
 }
