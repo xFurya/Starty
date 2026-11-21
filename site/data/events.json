@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T18:50:12+03:00",
- "checked": "2026-11-21T17:01:29.108357+00:00",
+ "checked": "2026-11-21T17:05:28.603971+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61952,33 +61952,34 @@
    "podium": [
     {
      "place": 1,
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "points": "169.98"
+    },
+    {
+     "place": 2,
      "name": "Adam Siao Him Fa",
      "nation": "FRA",
      "points": "158.91"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Andreas Nordeback",
      "nation": "SWE",
      "points": "158.86"
-    },
-    {
-     "place": 3,
-     "name": "Kazuki Tomono",
-     "nation": "JPN",
-     "points": "158.30"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Adam Siao Him Fa — 158.91\n2. Andreas Nordeback — 158.86\n3. Kazuki Tomono — 158.30\n\nНачало: 18:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Mihhail Selevko — 169.98\n2. Adam Siao Him Fa — 158.91\n3. Andreas Nordeback — 158.86\n\nИтог турнира:\n1. Mihhail Selevko — 254.99\n2. Andreas Nordeback — 240.94\n3. Kazuki Tomono — 237.75\n\nПримечательное:\n• Andreas Nordeback — Личный рекорд по сумме: 240.94 (был 230.37)\n\nНачало: 18:15 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Adam Siao Him Fa",
      "nation": "FRA",
-     "place": 1,
+     "place": 2,
      "points": "158.91",
      "time": "18:22",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 4
     },
     {
      "name": "Andreas Nordeback",
@@ -61986,8 +61987,9 @@
      "time": "19:39",
      "no": 10,
      "warmup": 2,
-     "place": 2,
-     "points": "158.86"
+     "place": 3,
+     "points": "158.86",
+     "final": 2
     },
     {
      "name": "Arlet Levandi",
@@ -61995,17 +61997,19 @@
      "time": "19:16",
      "no": 7,
      "warmup": 2,
-     "place": 4,
-     "points": "149.89"
+     "place": 5,
+     "points": "149.89",
+     "final": 6
     },
     {
      "name": "Genrikh Gartung",
      "nation": "GER",
-     "place": 8,
+     "place": 9,
      "points": "139.45",
      "time": "18:38",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 11
     },
     {
      "name": "Kazuki Tomono",
@@ -62013,17 +62017,19 @@
      "time": "19:24",
      "no": 8,
      "warmup": 2,
-     "place": 3,
-     "points": "158.30"
+     "place": 4,
+     "points": "158.30",
+     "final": 3
     },
     {
      "name": "Kyrylo Marsak",
      "nation": "UKR",
-     "place": 6,
+     "place": 7,
      "points": "147.95",
      "time": "18:30",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 7
     },
     {
      "name": "Matias Lindfors",
@@ -62031,15 +62037,19 @@
      "time": "18:53",
      "no": 5,
      "warmup": 1,
-     "place": 9,
-     "points": "138.93"
+     "place": 10,
+     "points": "138.93",
+     "final": 9
     },
     {
      "name": "Mihhail Selevko",
      "nation": "EST",
      "time": "19:54",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "169.98",
+     "final": 1
     },
     {
      "name": "Nika Egadze",
@@ -62047,8 +62057,9 @@
      "time": "19:31",
      "no": 9,
      "warmup": 2,
-     "place": 5,
-     "points": "149.55"
+     "place": 6,
+     "points": "149.55",
+     "final": 5
     },
     {
      "name": "Stephen Gogolev",
@@ -62056,17 +62067,19 @@
      "time": "19:01",
      "no": 6,
      "warmup": 1,
-     "place": 7,
-     "points": "139.73"
+     "place": 8,
+     "points": "139.73",
+     "final": 8
     },
     {
      "name": "Tamir Kuperman",
      "nation": "ISR",
-     "place": 10,
+     "place": 11,
      "points": "136.57",
      "time": "18:45",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 10
     },
     {
      "name": "Yudong Chen",
@@ -62074,11 +62087,11 @@
      "time": "19:47",
      "no": 11,
      "warmup": 2,
-     "place": 11,
-     "points": "118.16"
+     "place": 12,
+     "points": "118.16",
+     "final": 12
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG002.htm",
@@ -62098,9 +62111,36 @@
      "Yudong CHEN": "Yudong Chen",
      "Mihhail SELEVKO": "Mihhail Selevko"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Mihhail Selevko",
+     "nation": "EST",
+     "points": "254.99"
+    },
+    {
+     "place": 2,
+     "name": "Andreas Nordeback",
+     "nation": "SWE",
+     "points": "240.94"
+    },
+    {
+     "place": 3,
+     "name": "Kazuki Tomono",
+     "nation": "JPN",
+     "points": "237.75"
+    }
+   ],
+   "facts": [
+    {
+     "who": "Andreas Nordeback",
+     "text": "Личный рекорд по сумме: 240.94 (был 230.37)",
+     "kind": "score"
+    }
+   ]
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:dance-senior-rt",
@@ -62362,7 +62402,7 @@
      "time": "18:52",
      "no": 1,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "51.78"
     },
     {
@@ -62371,7 +62411,7 @@
      "time": "18:56",
      "no": 2,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "54.66"
     },
     {
@@ -62389,7 +62429,7 @@
      "time": "19:05",
      "no": 4,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "41.12"
     },
     {
@@ -62407,7 +62447,7 @@
      "time": "19:20",
      "no": 6,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "51.34"
     },
     {
@@ -62434,7 +62474,7 @@
      "time": "19:33",
      "no": 9,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "53.59"
     },
     {
@@ -62442,7 +62482,9 @@
      "nation": "СВЕ",
      "time": "19:37",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "57.50"
     },
     {
      "name": "Анна Казакевич",
@@ -105427,5 +105469,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "dcafbc169e4ed9be"
+ "rev": "9fc879d949ebcb7d"
 }
