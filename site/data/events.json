@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T18:50:12+03:00",
- "checked": "2026-11-21T17:09:29.488679+00:00",
+ "checked": "2026-11-21T17:13:28.656795+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62279,7 +62279,9 @@
      "nation": "FIN",
      "time": "20:05",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "place": 11,
+     "points": "53.24"
     },
     {
      "name": "Elliana Peal / Ethan Peal",
@@ -62312,7 +62314,7 @@
      "time": "19:35",
      "no": 9,
      "warmup": 2,
-     "place": 11,
+     "place": 12,
      "points": "52.91"
     },
     {
@@ -105471,5 +105473,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "b804ef5c16f853da"
+ "rev": "e83a64f04261463f"
 }
