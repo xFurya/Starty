@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T18:50:12+03:00",
- "checked": "2026-11-21T17:05:28.603971+00:00",
+ "checked": "2026-11-21T17:09:29.488679+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62197,12 +62197,12 @@
     },
     {
      "place": 3,
-     "name": "Carolina Portesi Peroni / Pietro Papetti",
-     "nation": "ITA",
-     "points": "67.29"
+     "name": "Sandrine Gauthier / Paul Ayer",
+     "nation": "CAN",
+     "points": "69.31"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Holly Harris / Jason Chan — 74.17\n2. Alicia Fabbri / Marko Jevgeni Gaidajenko — 73.79\n3. Carolina Portesi Peroni / Pietro Papetti — 67.29\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Holly Harris / Jason Chan — 74.17\n2. Alicia Fabbri / Marko Jevgeni Gaidajenko — 73.79\n3. Sandrine Gauthier / Paul Ayer — 69.31\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Holly Harris / Jason Chan",
@@ -62218,7 +62218,7 @@
      "nation": "NED",
      "no": 2,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "60.38",
      "time": "18:31"
     },
@@ -62227,7 +62227,7 @@
      "nation": "FRA",
      "no": 4,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "55.50",
      "time": "18:44"
     },
@@ -62236,7 +62236,7 @@
      "nation": "FRA",
      "no": 5,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "64.02",
      "time": "18:50"
     },
@@ -62262,7 +62262,7 @@
      "time": "19:29",
      "no": 8,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "67.29"
     },
     {
@@ -62271,7 +62271,7 @@
      "time": "19:41",
      "no": 10,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "64.68"
     },
     {
@@ -62294,7 +62294,7 @@
      "time": "19:23",
      "no": 7,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "64.74"
     },
     {
@@ -62303,7 +62303,7 @@
      "time": "19:16",
      "no": 6,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "56.15"
     },
     {
@@ -62312,7 +62312,7 @@
      "time": "19:35",
      "no": 9,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "points": "52.91"
     },
     {
@@ -62320,7 +62320,9 @@
      "nation": "CAN",
      "time": "19:59",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "place": 3,
+     "points": "69.31"
     }
    ],
    "provisional": true,
@@ -105469,5 +105471,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "9fc879d949ebcb7d"
+ "rev": "b804ef5c16f853da"
 }
