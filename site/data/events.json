@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T18:50:12+03:00",
- "checked": "2026-11-21T16:37:28.779010+00:00",
+ "checked": "2026-11-21T16:41:29.149185+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61999,7 +61999,7 @@
     {
      "name": "Genrikh Gartung",
      "nation": "GER",
-     "place": 6,
+     "place": 7,
      "points": "139.45",
      "time": "18:38",
      "no": 3,
@@ -62017,7 +62017,7 @@
     {
      "name": "Kyrylo Marsak",
      "nation": "UKR",
-     "place": 4,
+     "place": 5,
      "points": "147.95",
      "time": "18:30",
      "no": 2,
@@ -62029,7 +62029,7 @@
      "time": "18:53",
      "no": 5,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "138.93"
     },
     {
@@ -62044,7 +62044,9 @@
      "nation": "GEO",
      "time": "19:31",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "149.55"
     },
     {
      "name": "Stephen Gogolev",
@@ -62052,13 +62054,13 @@
      "time": "19:01",
      "no": 6,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "139.73"
     },
     {
      "name": "Tamir Kuperman",
      "nation": "ISR",
-     "place": 8,
+     "place": 9,
      "points": "136.57",
      "time": "18:45",
      "no": 4,
@@ -62351,7 +62353,7 @@
      "no": 1,
      "warmup": 1,
      "place": 4,
-     "points": "50.78"
+     "points": "51.78"
     },
     {
      "name": "Влада Ершова",
@@ -105407,5 +105409,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "8b93888b03066e81"
+ "rev": "1c56ce9a66c2633f"
 }
