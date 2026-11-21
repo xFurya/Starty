@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T21:19:23+03:00",
- "checked": "2026-11-21T18:41:29.596610+00:00",
+ "checked": "2026-11-21T18:45:29.359368+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62726,7 +62726,7 @@
     {
      "name": "Emily Bratti / Ian Somerville",
      "nation": "USA",
-     "place": 6,
+     "place": 7,
      "points": "96.87",
      "time": "20:47",
      "no": 3,
@@ -62758,7 +62758,7 @@
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
-     "place": 5,
+     "place": 6,
      "points": "99.71",
      "time": "20:39",
      "no": 2,
@@ -62767,7 +62767,7 @@
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
      "nation": "SWE",
-     "place": 7,
+     "place": 8,
      "points": "93.17",
      "time": "20:31",
      "no": 1,
@@ -62778,7 +62778,9 @@
      "nation": "CZE",
      "time": "21:33",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "101.93"
     },
     {
      "name": "Oona Brown / Gage Brown",
@@ -62856,14 +62858,16 @@
      "url": "https://vkvideo.ru/live-38558219_456239878"
     }
    ],
-   "desc": "Начало: 21:00 МСК\nТрансляция: VK Видео",
+   "desc": "Промежуточные итоги:\n1. Станислав Гунтасов — 50.36\n\nНачало: 21:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Станислав Гунтасов",
      "nation": "НИЖ",
      "time": "21:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "50.36"
     },
     {
      "name": "Василий Пономарев",
@@ -62948,7 +62952,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Станислав Гунтасов",
+     "nation": "НИЖ",
+     "points": "50.36"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:women-senior-pp",
@@ -105555,5 +105568,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "a370d7b6080134bc"
+ "rev": "c10299db0523320f"
 }
