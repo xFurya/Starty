@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T19:54:17+03:00",
- "checked": "2026-11-21T17:37:28.887278+00:00",
+ "checked": "2026-11-21T17:41:28.656875+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62457,7 +62457,7 @@
      "nation": "РОС",
      "no": 4,
      "warmup": 1,
-     "place": 12,
+     "place": 13,
      "points": "41.12",
      "time": "19:05"
     },
@@ -62566,7 +62566,9 @@
      "nation": "ХМА",
      "time": "20:12",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "place": 12,
+     "points": "47.00"
     },
     {
      "name": "Олеся Козлова",
@@ -62662,14 +62664,16 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Начало: 20:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Milla Ruud Reitan / Nikolaj Majorov — 93.17\n\nНачало: 20:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
      "nation": "SWE",
      "time": "20:31",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "93.17"
     },
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
@@ -62754,7 +62758,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "points": "93.17"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:men-senior-kp",
@@ -105482,5 +105495,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "34d4e4c2c9bcbbf5"
+ "rev": "fbdf08b098578e02"
 }
