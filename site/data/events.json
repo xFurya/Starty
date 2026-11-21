@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T16:42:40+03:00",
- "checked": "2026-11-21T14:25:29.483556+00:00",
+ "checked": "2026-11-21T14:33:29.426599+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61398,19 +61398,19 @@
     },
     {
      "place": 3,
-     "name": "Kristyna Stanclova / Karel Kostron",
-     "nation": "CZE",
-     "points": "52.73"
+     "name": "Iris Lahti / Oskari Liedenpohja",
+     "nation": "FIN",
+     "points": "55.61"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Lea Hienne / Louis Varescon — 58.81\n2. Alexia Kruk / Jan Eisenhaber — 57.78\n3. Kristyna Stanclova / Karel Kostron — 52.73\n\nНачало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Lea Hienne / Louis Varescon — 58.81\n2. Alexia Kruk / Jan Eisenhaber — 57.78\n3. Iris Lahti / Oskari Liedenpohja — 55.61\n\nНачало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Angelina Cucherat / Leopold Dacquin",
      "nation": "FRA",
      "no": 2,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "46.88",
      "time": "15:56"
     },
@@ -61419,7 +61419,7 @@
      "nation": "HUN",
      "no": 3,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "points": "41.44",
      "time": "16:02"
     },
@@ -61428,7 +61428,7 @@
      "nation": "FRA",
      "no": 4,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "52.01",
      "time": "16:09"
     },
@@ -61446,7 +61446,7 @@
      "nation": "ITA",
      "no": 6,
      "warmup": 10,
-     "place": 5,
+     "place": 6,
      "points": "51.16",
      "time": "16:26"
     },
@@ -61455,7 +61455,7 @@
      "nation": "CZE",
      "no": 7,
      "warmup": 10,
-     "place": 3,
+     "place": 4,
      "points": "52.73",
      "time": "16:33"
     },
@@ -61464,7 +61464,7 @@
      "nation": "CZE",
      "no": 8,
      "warmup": 10,
-     "place": 9,
+     "place": 10,
      "points": "45.75",
      "time": "16:39"
     },
@@ -61483,7 +61483,7 @@
      "time": "17:05",
      "no": 9,
      "warmup": 3,
-     "place": 8,
+     "place": 9,
      "points": "45.81"
     },
     {
@@ -61498,7 +61498,9 @@
      "nation": "FIN",
      "time": "17:24",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "place": 3,
+     "points": "55.61"
     },
     {
      "name": "Lumia Sassi / Aarne Savola",
@@ -61513,7 +61515,7 @@
      "time": "17:11",
      "no": 10,
      "warmup": 3,
-     "place": 6,
+     "place": 7,
      "points": "47.36"
     },
     {
@@ -105260,5 +105262,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "c2a36622f4f27cb0"
+ "rev": "16caef228a127c78"
 }
