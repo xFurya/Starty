@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T17:46:19+03:00",
- "checked": "2026-11-21T15:53:28.708997+00:00",
+ "checked": "2026-11-21T15:57:28.557233+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62120,7 +62120,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Holly Harris / Jason Chan — 74.17\n2. Chelsea Verhaegh / Sherim van Geffen — 60.38\n3. Alisa Ovsiankina / Maximilien Rahier — 55.50\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Holly Harris / Jason Chan — 74.17\n2. Louise Bordet / Martin Chardain — 64.02\n3. Chelsea Verhaegh / Sherim van Geffen — 60.38\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Holly Harris / Jason Chan",
@@ -62137,7 +62137,7 @@
      "time": "18:31",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "60.38"
     },
     {
@@ -62153,7 +62153,7 @@
      "time": "18:44",
      "no": 4,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "55.50"
     },
     {
@@ -62161,7 +62161,9 @@
      "nation": "FRA",
      "time": "18:50",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "64.02"
     },
     {
      "name": "Natalia Pallu-neves / Jayin Panesar",
@@ -62268,15 +62270,15 @@
     },
     {
      "place": 2,
-     "name": "Chelsea Verhaegh / Sherim van Geffen",
-     "nation": "NED",
-     "points": "60.38"
+     "name": "Louise Bordet / Martin Chardain",
+     "nation": "FRA",
+     "points": "64.02"
     },
     {
      "place": 3,
-     "name": "Alisa Ovsiankina / Maximilien Rahier",
-     "nation": "FRA",
-     "points": "55.50"
+     "name": "Chelsea Verhaegh / Sherim van Geffen",
+     "nation": "NED",
+     "points": "60.38"
     }
    ],
    "provisional": true
@@ -105407,5 +105409,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "83b25e19f9a88a0f"
+ "rev": "d25712964d08f3f8"
 }
