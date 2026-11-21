@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T18:50:12+03:00",
- "checked": "2026-11-21T16:33:28.837809+00:00",
+ "checked": "2026-11-21T16:37:28.779010+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62145,18 +62145,18 @@
     },
     {
      "place": 2,
-     "name": "Mariia Ignateva / Danijil Leonyidovics Szemko",
-     "nation": "HUN",
-     "points": "64.74"
+     "name": "Carolina Portesi Peroni / Pietro Papetti",
+     "nation": "ITA",
+     "points": "67.29"
     },
     {
      "place": 3,
-     "name": "Louise Bordet / Martin Chardain",
-     "nation": "FRA",
-     "points": "64.02"
+     "name": "Mariia Ignateva / Danijil Leonyidovics Szemko",
+     "nation": "HUN",
+     "points": "64.74"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Holly Harris / Jason Chan — 74.17\n2. Mariia Ignateva / Danijil Leonyidovics Szemko — 64.74\n3. Louise Bordet / Martin Chardain — 64.02\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Holly Harris / Jason Chan — 74.17\n2. Carolina Portesi Peroni / Pietro Papetti — 67.29\n3. Mariia Ignateva / Danijil Leonyidovics Szemko — 64.74\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Holly Harris / Jason Chan",
@@ -62172,7 +62172,7 @@
      "nation": "NED",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "60.38",
      "time": "18:31"
     },
@@ -62181,7 +62181,7 @@
      "nation": "FRA",
      "no": 4,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "55.50",
      "time": "18:44"
     },
@@ -62190,7 +62190,7 @@
      "nation": "FRA",
      "no": 5,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "64.02",
      "time": "18:50"
     },
@@ -62213,7 +62213,9 @@
      "nation": "ITA",
      "time": "19:29",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "67.29"
     },
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
@@ -62242,7 +62244,7 @@
      "time": "19:23",
      "no": 7,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "64.74"
     },
     {
@@ -62251,7 +62253,7 @@
      "time": "19:16",
      "no": 6,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "56.15"
     },
     {
@@ -105405,5 +105407,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "cbf518a19d615e6d"
+ "rev": "8b93888b03066e81"
 }
