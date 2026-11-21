@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T16:10:09+03:00",
- "checked": "2026-11-21T13:41:29.376703+00:00",
+ "checked": "2026-11-21T13:49:28.598353+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61147,33 +61147,34 @@
    "podium": [
     {
      "place": 1,
+     "name": "Mao Shimada",
+     "nation": "JPN",
+     "points": "150.43"
+    },
+    {
+     "place": 2,
      "name": "Niina Petrokina",
      "nation": "EST",
      "points": "144.98"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Isabeau Levito",
      "nation": "USA",
      "points": "140.17"
-    },
-    {
-     "place": 3,
-     "name": "Yuseong Kim",
-     "nation": "KOR",
-     "points": "136.48"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Niina Petrokina — 144.98\n2. Isabeau Levito — 140.17\n3. Yuseong Kim — 136.48\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Mao Shimada — 150.43\n2. Niina Petrokina — 144.98\n3. Isabeau Levito — 140.17\n\nИтог турнира:\n1. Mao Shimada — 229.49\n2. Niina Petrokina — 214.06\n3. Isabeau Levito — 207.19\n\nПримечательное:\n• Isabeau Levito — После короткой программы — 6-е место, в итоге — 3-е место\n• Mao Shimada — Отрыв от второго места — 15.43 балла\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Anna Pezzetta",
      "nation": "ITA",
-     "place": 6,
+     "place": 7,
      "points": "118.94",
      "time": "15:23",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 9
     },
     {
      "name": "Haein Lee",
@@ -61181,51 +61182,59 @@
      "time": "16:09",
      "no": 8,
      "warmup": 2,
-     "place": 4,
-     "points": "124.87"
+     "place": 5,
+     "points": "124.87",
+     "final": 5
     },
     {
      "name": "Iida Karhunen",
      "nation": "FIN",
-     "place": 5,
+     "place": 6,
      "points": "120.23",
      "time": "15:46",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "final": 6
     },
     {
      "name": "Isabeau Levito",
      "nation": "USA",
-     "place": 2,
+     "place": 3,
      "points": "140.17",
      "time": "16:01",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "final": 3
     },
     {
      "name": "Janna Jyrkinen",
      "nation": "FIN",
-     "place": 10,
+     "place": 11,
      "points": "96.66",
      "time": "15:30",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 11
     },
     {
      "name": "Mao Shimada",
      "nation": "JPN",
      "time": "16:39",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "150.43",
+     "final": 1
     },
     {
      "name": "Minja Peltonen",
      "nation": "FIN",
-     "place": 11,
+     "place": 12,
      "points": "96.36",
      "time": "15:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 12
     },
     {
      "name": "Niina Petrokina",
@@ -61233,26 +61242,29 @@
      "time": "16:32",
      "no": 11,
      "warmup": 2,
-     "place": 1,
-     "points": "144.98"
+     "place": 2,
+     "points": "144.98",
+     "final": 2
     },
     {
      "name": "Rinka Watanabe",
      "nation": "JPN",
-     "place": 8,
+     "place": 9,
      "points": "112.12",
      "time": "15:15",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 10
     },
     {
      "name": "Rion Sumiyoshi",
      "nation": "JPN",
-     "place": 7,
+     "place": 8,
      "points": "115.81",
      "time": "15:38",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "final": 7
     },
     {
      "name": "Seoyoung Kim",
@@ -61260,8 +61272,9 @@
      "time": "16:24",
      "no": 10,
      "warmup": 2,
-     "place": 9,
-     "points": "108.50"
+     "place": 10,
+     "points": "108.50",
+     "final": 8
     },
     {
      "name": "Yuseong Kim",
@@ -61269,11 +61282,11 @@
      "time": "16:16",
      "no": 9,
      "warmup": 2,
-     "place": 3,
-     "points": "136.48"
+     "place": 4,
+     "points": "136.48",
+     "final": 4
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG004.htm",
@@ -61293,9 +61306,41 @@
      "Niina PETROKINA": "Niina Petrokina",
      "Mao SHIMADA": "Mao Shimada"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Mao Shimada",
+     "nation": "JPN",
+     "points": "229.49"
+    },
+    {
+     "place": 2,
+     "name": "Niina Petrokina",
+     "nation": "EST",
+     "points": "214.06"
+    },
+    {
+     "place": 3,
+     "name": "Isabeau Levito",
+     "nation": "USA",
+     "points": "207.19"
+    }
+   ],
+   "facts": [
+    {
+     "who": "Isabeau Levito",
+     "text": "После короткой программы — 6-е место, в итоге — 3-е место",
+     "kind": "place"
+    },
+    {
+     "who": "Mao Shimada",
+     "text": "Отрыв от второго места — 15.43 балла",
+     "kind": "place"
+    }
+   ]
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:dance-junior-rt",
@@ -61551,7 +61596,7 @@
      "url": "https://vkvideo.ru/live-38558219_456239878"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Данил Золотарев — 97.49\n2. Макар Ушаков — 87.14\n3. Денис Никитин — 86.29\n\nНачало: 16:00 МСК\nТрансляция: VK Видео",
+   "desc": "Промежуточные итоги:\n1. Марк Титов — 101.27\n2. Данил Золотарев — 97.49\n3. Макар Ушаков — 87.14\n\nНачало: 16:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Денис Никитин",
@@ -61559,7 +61604,7 @@
      "time": "16:07",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "86.29"
     },
     {
@@ -61568,7 +61613,7 @@
      "time": "16:13",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "87.14"
     },
     {
@@ -61577,7 +61622,7 @@
      "time": "16:18",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "97.49"
     },
     {
@@ -61585,7 +61630,9 @@
      "nation": "ТАТ",
      "time": "16:24",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "101.27"
     },
     {
      "name": "Кирилл Былинин",
@@ -61725,21 +61772,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Марк Титов",
+     "nation": "ТАТ",
+     "points": "101.27"
+    },
+    {
+     "place": 2,
      "name": "Данил Золотарев",
      "nation": "ТАТ",
      "points": "97.49"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Макар Ушаков",
      "nation": "ПРМ",
      "points": "87.14"
-    },
-    {
-     "place": 3,
-     "name": "Денис Никитин",
-     "nation": "УДМ",
-     "points": "86.29"
     }
    ],
    "provisional": true
@@ -105197,5 +105244,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "88963517f345beb3"
+ "rev": "b25a4cdbea8e5b2c"
 }
