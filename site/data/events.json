@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T17:46:19+03:00",
- "checked": "2026-11-21T15:49:30.995531+00:00",
+ "checked": "2026-11-21T15:53:28.708997+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61974,7 +61974,9 @@
      "nation": "ISR",
      "time": "18:45",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4,
+     "points": "136.57"
     },
     {
      "name": "Matias Lindfors",
@@ -105405,5 +105407,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "d74d868296017c73"
+ "rev": "83b25e19f9a88a0f"
 }
