@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-21T22:47:24+03:00",
- "checked": "2026-11-21T22:47:24+03:00",
+ "generated": "2026-11-21T23:18:10+03:00",
+ "checked": "2026-11-21T23:18:10+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -56907,7 +56907,27 @@
      "points": "99.63"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Таисия Лепихина — 109.11\n2. София Ермолова — 107.54\n3. Софья Лукина — 99.63\n\nИтог турнира:\n1. Таисия Лепихина — 171.38\n2. София Ермолова — 165.84\n3. Софья Лукина — 160.86\n\nНачало: 17:05 МСК",
+   "total": [
+    {
+     "place": 1,
+     "name": "Таисия Лепихина",
+     "nation": "ВЛГ",
+     "points": "171.38"
+    },
+    {
+     "place": 2,
+     "name": "София Ермолова",
+     "nation": "ЛЕН",
+     "points": "165.84"
+    },
+    {
+     "place": 3,
+     "name": "Софья Лукина",
+     "nation": "БАШ",
+     "points": "160.86"
+    }
+   ],
+   "desc": "Итог:\n1. Таисия Лепихина — 109.11\n2. София Ермолова — 107.54\n3. Софья Лукина — 99.63\n\nИтог турнира:\n1. Таисия Лепихина — 171.38\n2. София Ермолова — 165.84\n3. Софья Лукина — 160.86\n\nНачало: 17:05 МСК",
    "field": [
     {
      "name": "Екатерина Гайдукова",
@@ -56973,7 +56993,6 @@
      "final": 1
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
     "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG014.HTM",
@@ -56990,26 +57009,6 @@
     },
     "basis": "judges"
    },
-   "total": [
-    {
-     "place": 1,
-     "name": "Таисия Лепихина",
-     "nation": "ВЛГ",
-     "points": "171.38"
-    },
-    {
-     "place": 2,
-     "name": "София Ермолова",
-     "nation": "ЛЕН",
-     "points": "165.84"
-    },
-    {
-     "place": 3,
-     "name": "Софья Лукина",
-     "nation": "БАШ",
-     "points": "160.86"
-    }
-   ],
    "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
   },
   {
@@ -75247,7 +75246,9 @@
   {
    "n": "Hanna Kalinka",
    "c": "BLR",
-   "k": ""
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
   },
   {
    "n": "Hanna Laura Viranyi",
@@ -89961,7 +89962,8 @@
   {
    "n": "Екатерина Серова",
    "c": "RUS",
-   "k": ""
+   "k": "",
+   "p": "749bc565ba73"
   },
   {
    "n": "Ксения Глушкова",
@@ -102654,9 +102656,9 @@
    "n": "Ramona Andreea Voicu",
    "c": "ROU",
    "k": "",
+   "p": "4e868cb892e3",
    "was": "W",
-   "y": "2019/20",
-   "p": "4e868cb892e3"
+   "y": "2019/20"
   },
   {
    "n": "Samuel Mindra",
@@ -102872,9 +102874,9 @@
    "n": "Marusa Udrih",
    "c": "SLO",
    "k": "",
+   "p": "5a2dcf46a33c",
    "was": "w",
-   "y": "2018/19",
-   "p": "5a2dcf46a33c"
+   "y": "2018/19"
   },
   {
    "n": "Noemie Tali / Stefano Frasca",
@@ -102936,9 +102938,9 @@
    "n": "Daniel Albert Naurits",
    "c": "EST",
    "k": "",
+   "p": "74297c3d5689",
    "was": "m",
-   "y": "2019/20",
-   "p": "74297c3d5689"
+   "y": "2019/20"
   },
   {
    "n": "Daniela Muntean / Artem Rotar",
@@ -103154,9 +103156,9 @@
    "n": "Emma Kivioja / Erik Pellnor",
    "c": "SWE",
    "k": "",
+   "p": "1fc168c8e70f",
    "was": "d",
-   "y": "2023/24",
-   "p": "1fc168c8e70f"
+   "y": "2023/24"
   },
   {
    "n": "Fruzsina Medgyesi",
@@ -103197,9 +103199,9 @@
    "n": "Nayra Rosalia Junco Metzger",
    "c": "PER",
    "k": "",
+   "p": "6370784f7f73",
    "was": "w",
-   "y": "2021/22",
-   "p": "6370784f7f73"
+   "y": "2021/22"
   },
   {
    "n": "Polina Khomyakova / Mark Shapiro",
@@ -103457,9 +103459,9 @@
    "n": "Alessandro Fadini",
    "c": "ITA",
    "k": "",
+   "p": "08aecdca1096",
    "was": "m",
-   "y": "2021/22",
-   "p": "08aecdca1096"
+   "y": "2021/22"
   },
   {
    "n": "Alexandra Duriсоvб",
@@ -103486,17 +103488,17 @@
    "n": "Roos Van Der Pas",
    "c": "NED",
    "k": "",
+   "p": "827390a32938",
    "was": "W",
-   "y": "2021/22",
-   "p": "827390a32938"
+   "y": "2021/22"
   },
   {
    "n": "Shaline Ruegger",
    "c": "SUI",
    "k": "",
+   "p": "95165317b3b2",
    "was": "w",
-   "y": "2021/22",
-   "p": "95165317b3b2"
+   "y": "2021/22"
   },
   {
    "n": "Vanessa Pham / Anton Spiridonov",
@@ -103509,9 +103511,9 @@
    "n": "Victoria Velarde",
    "c": "PER",
    "k": "",
+   "p": "a053ee46b12c",
    "was": "w",
-   "y": "2021/22",
-   "p": "a053ee46b12c"
+   "y": "2021/22"
   },
   {
    "n": "Zlata Omelchenko",
@@ -103622,9 +103624,9 @@
    "n": "Злата Мурашова",
    "c": "RUS",
    "k": "",
+   "p": "cbad6224b0e2",
    "was": "w",
-   "y": "2026/27",
-   "p": "cbad6224b0e2"
+   "y": "2026/27"
   },
   {
    "n": "Alice Orru",
@@ -103637,9 +103639,9 @@
    "n": "Ester Schwarz",
    "c": "ITA",
    "k": "",
+   "p": "7f4155fe93d5",
    "was": "w",
-   "y": "2022/23",
-   "p": "7f4155fe93d5"
+   "y": "2022/23"
   },
   {
    "n": "Kwang Hyon Pak",
@@ -103701,17 +103703,17 @@
    "n": "Meng Ju Lee",
    "c": "TPE",
    "k": "",
+   "p": "f5b4fc5dbcc2",
    "was": "m",
-   "y": "2019/20",
-   "p": "f5b4fc5dbcc2"
+   "y": "2019/20"
   },
   {
    "n": "Thomas Stoll",
    "c": "GER",
    "k": "",
+   "p": "f84156d4def4",
    "was": "m",
-   "y": "2021/22",
-   "p": "f84156d4def4"
+   "y": "2021/22"
   },
   {
    "n": "Angelina Sanfilippo",
@@ -103761,14 +103763,6 @@
    "k": "",
    "was": "W",
    "y": "2022/23"
-  },
-  {
-   "n": "Daniil Murzin",
-   "c": "USA",
-   "k": "",
-   "was": "m",
-   "y": "2023/24",
-   "p": "fb6de0ae6217"
   },
   {
    "n": "Laura Finelli / Matteo Libasse Pedesini",
@@ -104054,17 +104048,17 @@
    "n": "Анастасия Ломаева / Артём Крылов",
    "c": "RUS",
    "k": "",
+   "p": "33d2169e7750",
    "was": "D",
-   "y": "2019/20",
-   "p": "33d2169e7750"
+   "y": "2019/20"
   },
   {
    "n": "Ника Рябинина / Степан Николаев",
    "c": "RUS",
    "k": "",
+   "p": "c11cfb0b3db7",
    "was": "D",
-   "y": "2021/22",
-   "p": "c11cfb0b3db7"
+   "y": "2021/22"
   },
   {
    "n": "Aleksandar Kachamakov",
@@ -104217,9 +104211,9 @@
    "n": "Matthew Samuels",
    "c": "RSA",
    "k": "",
+   "p": "146181bb7979",
    "was": "m",
-   "y": "2021/22",
-   "p": "146181bb7979"
+   "y": "2021/22"
   },
   {
    "n": "Rebecca Breest",
@@ -104379,9 +104373,9 @@
    "n": "Bennet Toman",
    "c": "CAN",
    "k": "",
+   "p": "4ec7ea10fb27",
    "was": "m",
-   "y": "2019/20",
-   "p": "4ec7ea10fb27"
+   "y": "2019/20"
   },
   {
    "n": "Emilia Due Borch",
@@ -104513,9 +104507,9 @@
    "n": "Greta Morkyte",
    "c": "LTU",
    "k": "",
+   "p": "f04b7815ab76",
    "was": "w",
-   "y": "2020/21",
-   "p": "f04b7815ab76"
+   "y": "2020/21"
   },
   {
    "n": "Jane Iskov",
@@ -104549,9 +104543,9 @@
    "n": "Maxim Varakin",
    "c": "CRO",
    "k": "",
+   "p": "f166f693506d",
    "was": "m",
-   "y": "2026/27",
-   "p": "f166f693506d"
+   "y": "2026/27"
   },
   {
    "n": "Sofiia Pohrebna",
@@ -104585,9 +104579,9 @@
    "n": "Laura Finelli / Matteo Stefano Pedesini",
    "c": "ITA",
    "k": "",
+   "p": "38ece31ce1cc",
    "was": "D",
-   "y": "2022/23",
-   "p": "38ece31ce1cc"
+   "y": "2022/23"
   },
   {
    "n": "Serena Joy Roblin",
@@ -104719,9 +104713,9 @@
    "n": "Aleksandra Samersova / Kevin Ojala",
    "c": "EST",
    "k": "",
+   "p": "31d85f208a82",
    "was": "d",
-   "y": "2021/22",
-   "p": "31d85f208a82"
+   "y": "2021/22"
   },
   {
    "n": "Irma Angela Sofia Caldara / Riccardo Maria Maglio",
@@ -104741,9 +104735,9 @@
    "n": "Nica Digerness / Mark Sadusky",
    "c": "USA",
    "k": "",
+   "p": "b205e4796200",
    "was": "p",
-   "y": "2024/25",
-   "p": "b205e4796200"
+   "y": "2024/25"
   },
   {
    "n": "Selina Wilhelm",
@@ -104819,9 +104813,9 @@
    "n": "Sara Hong",
    "c": "KOR",
    "k": "",
+   "p": "e459bec9cd52",
    "was": "w",
-   "y": "2019/20",
-   "p": "e459bec9cd52"
+   "y": "2019/20"
   },
   {
    "n": "Antonia Moarcas",
@@ -104869,9 +104863,9 @@
    "n": "Logan Higase-Chen",
    "c": "",
    "k": "",
+   "p": "da61d5d441e1",
    "was": "w",
-   "y": "2025/26",
-   "p": "da61d5d441e1"
+   "y": "2025/26"
   },
   {
    "n": "Simona Коlеnбкоvб",
@@ -104923,20 +104917,12 @@
    "y": "2020/21"
   },
   {
-   "n": "Veronika Zhilina",
-   "c": "AZE",
-   "k": "",
-   "was": "w",
-   "y": "2026/27",
-   "p": "72fb55b016fa"
-  },
-  {
    "n": "Yaroslav Paniot",
    "c": "USA",
    "k": "",
+   "p": "acedf79c6ce3",
    "was": "m",
-   "y": "2024/25",
-   "p": "acedf79c6ce3"
+   "y": "2024/25"
   },
   {
    "n": "Aleksandra Veneva",
@@ -104991,9 +104977,9 @@
    "n": "Yasmin Tekik",
    "c": "KAZ",
    "k": "",
+   "p": "172873bba23e",
    "was": "w",
-   "y": "2021/22",
-   "p": "172873bba23e"
+   "y": "2021/22"
   },
   {
    "n": "Alexandra Michaela Filсоvб",
@@ -105020,17 +105006,17 @@
    "n": "Maria Chernyshova / Harley Windsor",
    "c": "AUS",
    "k": "",
+   "p": "1d92058994cc",
    "was": "p",
-   "y": "2021/22",
-   "p": "1d92058994cc"
+   "y": "2021/22"
   },
   {
    "n": "Shira Ichilov / Dmytriy Kravchenko",
    "c": "ISR",
    "k": "",
+   "p": "8a1a6f0ab229",
    "was": "d",
-   "y": "2023/24",
-   "p": "8a1a6f0ab229"
+   "y": "2023/24"
   },
   {
    "n": "Tuuli Manttari",
@@ -105141,9 +105127,9 @@
    "n": "Алена Канышева / Андрей Пылин",
    "c": "RUS",
    "k": "",
+   "p": "5b8b16e520d9",
    "was": "D",
-   "y": "2021/22",
-   "p": "5b8b16e520d9"
+   "y": "2021/22"
   },
   {
    "n": "Anna Zuravljov",
@@ -105198,9 +105184,9 @@
    "n": "Natalie Klotz",
    "c": "AUT",
    "k": "",
+   "p": "944b8295de81",
    "was": "w",
-   "y": "2025/26",
-   "p": "944b8295de81"
+   "y": "2025/26"
   },
   {
    "n": "Sarah Cullen",
@@ -105304,9 +105290,9 @@
    "n": "Gerli Liinamäe",
    "c": "EST",
    "k": "",
+   "p": "69a776af2043",
    "was": "w",
-   "y": "2022/23",
-   "p": "69a776af2043"
+   "y": "2022/23"
   },
   {
    "n": "Marika Ciok-makander",
@@ -105396,9 +105382,9 @@
    "n": "Наталья Лагутова / Николай Дубинин",
    "c": "RUS",
    "k": "",
+   "p": "3ffe8a496bfe",
    "was": "d",
-   "y": "2026/27",
-   "p": "3ffe8a496bfe"
+   "y": "2026/27"
   },
   {
    "n": "Aniela Zielinska",
@@ -105481,9 +105467,9 @@
    "n": "Philip Warren",
    "c": "FRA",
    "k": "",
+   "p": "40300109ddb3",
    "was": "m",
-   "y": "2019/20",
-   "p": "40300109ddb3"
+   "y": "2019/20"
   },
   {
    "n": "Anna Iushchenkova",
@@ -105552,9 +105538,9 @@
    "n": "Viktoriia Lopusova / Asaf Kazimov",
    "c": "GER",
    "k": "",
+   "p": "a065919f9789",
    "was": "d",
-   "y": "2021/22",
-   "p": "a065919f9789"
+   "y": "2021/22"
   },
   {
    "n": "Alberto Vanz",
@@ -105602,9 +105588,9 @@
    "n": "Максим Автушенко",
    "c": "RUS",
    "k": "",
+   "p": "3d9eaadc62e4",
    "was": "M",
-   "y": "2023/24",
-   "p": "3d9eaadc62e4"
+   "y": "2023/24"
   },
   {
    "n": "Marie Kolly",
@@ -105666,9 +105652,9 @@
    "n": "Wren Warne-jacobsen",
    "c": "USA",
    "k": "",
+   "p": "37c3c2f28a14",
    "was": "w",
-   "y": "2023/24",
-   "p": "37c3c2f28a14"
+   "y": "2023/24"
   },
   {
    "n": "Yuan Camillo Yusti",
@@ -105737,9 +105723,9 @@
    "n": "Yulia Lebedeva-bitadze / Mikhail Kaygorodtsev",
    "c": "GEO",
    "k": "",
+   "p": "f6d3548fdf67",
    "was": "d",
-   "y": "2019/20",
-   "p": "f6d3548fdf67"
+   "y": "2019/20"
   },
   {
    "n": "Anna Zielinska",
@@ -105773,9 +105759,9 @@
    "n": "Anna Hernik / Michal Wozniak",
    "c": "POL",
    "k": "",
+   "p": "7b6b12ec2820",
    "was": "p",
-   "y": "2021/22",
-   "p": "7b6b12ec2820"
+   "y": "2021/22"
   },
   {
    "n": "Elettra Olivotto",
@@ -105858,17 +105844,17 @@
    "n": "Jenna Hertenstein / Damian Binkowski",
    "c": "POL",
    "k": "",
+   "p": "389b572bab7a",
    "was": "d",
-   "y": "2022/23",
-   "p": "389b572bab7a"
+   "y": "2022/23"
   },
   {
    "n": "Leia Dozzi / Michael Albert Valdez",
    "c": "HUN",
    "k": "",
+   "p": "e19144c0289d",
    "was": "d",
-   "y": "2019/20",
-   "p": "e19144c0289d"
+   "y": "2019/20"
   },
   {
    "n": "Lопs Libregts",
@@ -105958,9 +105944,9 @@
    "n": "Lutricia Bock",
    "c": "GER",
    "k": "",
+   "p": "e0525032a6b2",
    "was": "w",
-   "y": "2019/20",
-   "p": "e0525032a6b2"
+   "y": "2019/20"
   },
   {
    "n": "Mia Smith",
@@ -106022,9 +106008,9 @@
    "n": "Yamato Rowe",
    "c": "PHI",
    "k": "",
+   "p": "a45be20125b5",
    "was": "m",
-   "y": "2019/20",
-   "p": "a45be20125b5"
+   "y": "2019/20"
   },
   {
    "n": "Ada Demir",
@@ -106058,9 +106044,9 @@
    "n": "Tetiana Firsova",
    "c": "UKR",
    "k": "",
+   "p": "4d3d07e25338",
    "was": "W",
-   "y": "2022/23",
-   "p": "4d3d07e25338"
+   "y": "2022/23"
   },
   {
    "n": "Ali Efe Gьnеs",
@@ -106080,9 +106066,9 @@
    "n": "Henry Privett-mendoza",
    "c": "GBR",
    "k": "",
+   "p": "4632a22b3026",
    "was": "m",
-   "y": "2023/24",
-   "p": "4632a22b3026"
+   "y": "2023/24"
   },
   {
    "n": "Isabella Laverty",
@@ -106144,9 +106130,9 @@
    "n": "Heung Lai Jarke Zhao",
    "c": "HKG",
    "k": "",
+   "p": "523f311eeaed",
    "was": "m",
-   "y": "2024/25",
-   "p": "523f311eeaed"
+   "y": "2024/25"
   },
   {
    "n": "Marta Lavina",
@@ -106229,9 +106215,9 @@
    "n": "Даниил Шевцов",
    "c": "RUS",
    "k": "",
+   "p": "7aa3c89c1e79",
    "was": "M",
-   "y": "2021/22",
-   "p": "7aa3c89c1e79"
+   "y": "2021/22"
   },
   {
    "n": "Alie Vigneault / Emerick Rasoanaivo",
@@ -106321,9 +106307,9 @@
    "n": "Elyce Lin-Gracey",
    "c": "",
    "k": "",
+   "p": "fb76ab1cbb5e",
    "was": "w",
-   "y": "2025/26",
-   "p": "fb76ab1cbb5e"
+   "y": "2025/26"
   },
   {
    "n": "Jasmine Tessari / Stйрhаnе Walker",
@@ -106441,9 +106427,9 @@
    "n": "Adonis Wai Chung Wong",
    "c": "HKG",
    "k": "",
+   "p": "c679799f68df",
    "was": "m",
-   "y": "2023/24",
-   "p": "c679799f68df"
+   "y": "2023/24"
   },
   {
    "n": "Angelina Cucherat / Leopold Hernandez-dacquin",
@@ -106631,9 +106617,9 @@
    "n": "Marina Nikolova",
    "c": "BUL",
    "k": "",
+   "p": "4bbc1ff36cec",
    "was": "W",
-   "y": "2022/23",
-   "p": "4bbc1ff36cec"
+   "y": "2022/23"
   },
   {
    "n": "Olivia Boys-eddy / Livio Mayr",
@@ -106709,9 +106695,9 @@
    "n": "Анастасия Костюк / Дмитрий Чигирев",
    "c": "RUS",
    "k": "",
+   "p": "43429f2cffc5",
    "was": "P",
-   "y": "2021/22",
-   "p": "43429f2cffc5"
+   "y": "2021/22"
   },
   {
    "n": "Alisa Efimova / Alexander Korovin",
@@ -106801,17 +106787,17 @@
    "n": "Alina Iushchenkova",
    "c": "ISR",
    "k": "",
+   "p": "bf3ed54983c8",
    "was": "w",
-   "y": "2020/21",
-   "p": "bf3ed54983c8"
+   "y": "2020/21"
   },
   {
    "n": "Coline Keriven / Tom Bouvart",
    "c": "FRA",
    "k": "",
+   "p": "5674573fd0d3",
    "was": "p",
-   "y": "2022/23",
-   "p": "5674573fd0d3"
+   "y": "2022/23"
   },
   {
    "n": "Sara Boschiroli",
@@ -106936,9 +106922,9 @@
    "n": "Tasya Putri",
    "c": "INA",
    "k": "",
+   "p": "3d283c947cf9",
    "was": "w",
-   "y": "2024/25",
-   "p": "3d283c947cf9"
+   "y": "2024/25"
   },
   {
    "n": "Alice Marini",
@@ -107084,17 +107070,17 @@
    "n": "Daria Zsirnov",
    "c": "HUN",
    "k": "",
+   "p": "72be96eea6d7",
    "was": "w",
-   "y": "2023/24",
-   "p": "72be96eea6d7"
+   "y": "2023/24"
   },
   {
    "n": "Elisabetta Leccardi / Mattia Dalla Torre",
    "c": "ITA",
    "k": "",
+   "p": "625803f341c9",
    "was": "d",
-   "y": "2022/23",
-   "p": "625803f341c9"
+   "y": "2022/23"
   },
   {
    "n": "Ethan Luo",
@@ -107107,17 +107093,17 @@
    "n": "Frida Berge",
    "c": "NOR",
    "k": "",
+   "p": "a3815909d546",
    "was": "w",
-   "y": "2022/23",
-   "p": "a3815909d546"
+   "y": "2022/23"
   },
   {
    "n": "Karly Robertson",
    "c": "GBR",
    "k": "",
+   "p": "7bc275c1a560",
    "was": "w",
-   "y": "2021/22",
-   "p": "7bc275c1a560"
+   "y": "2021/22"
   },
   {
    "n": "Roos Harkema",
@@ -107137,9 +107123,9 @@
    "n": "Ангелина Зимина / Александр Гнедин",
    "c": "RUS",
    "k": "",
+   "p": "2c82f69fdd87",
    "was": "D",
-   "y": "2020/21",
-   "p": "2c82f69fdd87"
+   "y": "2020/21"
   },
   {
    "n": "Adelia Esentaeva",
@@ -107257,9 +107243,9 @@
    "n": "Alexander Maszljanko",
    "c": "HUN",
    "k": "",
+   "p": "cb6918a34596",
    "was": "m",
-   "y": "2019/20",
-   "p": "cb6918a34596"
+   "y": "2019/20"
   },
   {
    "n": "Viola Fois",
@@ -107447,9 +107433,9 @@
    "n": "Lara Luft / Maximillian Pfisterer",
    "c": "GER",
    "k": "",
+   "p": "bcfc00dd8c42",
    "was": "d",
-   "y": "2021/22",
-   "p": "bcfc00dd8c42"
+   "y": "2021/22"
   },
   {
    "n": "Nazomi van Bergen Bravenboer",
@@ -107462,9 +107448,9 @@
    "n": "София Качушкина / Егор Гончаров",
    "c": "RUS",
    "k": "",
+   "p": "aea144570ca8",
    "was": "D",
-   "y": "2019/20",
-   "p": "aea144570ca8"
+   "y": "2019/20"
   },
   {
    "n": "Leon Kraiczyk",
@@ -107533,9 +107519,9 @@
    "n": "Emmy Bronsard / Jacob Richmond",
    "c": "CAN",
    "k": "",
+   "p": "2c9c45d9b015",
    "was": "d",
-   "y": "2023/24",
-   "p": "2c9c45d9b015"
+   "y": "2023/24"
   },
   {
    "n": "Joshua Snyder",
@@ -107548,9 +107534,9 @@
    "n": "Maral-Erdene Gansukh",
    "c": "MGL",
    "k": "",
+   "p": "d442db9e8295",
    "was": "w",
-   "y": "2021/22",
-   "p": "d442db9e8295"
+   "y": "2021/22"
   },
   {
    "n": "Taisa Khan",
@@ -107570,9 +107556,9 @@
    "n": "Andriy Kokura",
    "c": "UKR",
    "k": "",
+   "p": "81a8cd6ca67a",
    "was": "m",
-   "y": "2022/23",
-   "p": "81a8cd6ca67a"
+   "y": "2022/23"
   },
   {
    "n": "Anna Bergström",
@@ -107753,9 +107739,9 @@
    "n": "Natalia Lerka",
    "c": "POL",
    "k": "",
+   "p": "7790093d9fac",
    "was": "w",
-   "y": "2021/22",
-   "p": "7790093d9fac"
+   "y": "2021/22"
   },
   {
    "n": "Polina Kapustina / Mykhailo Kliuiev",
@@ -107782,9 +107768,9 @@
    "n": "Miranda Lundgren",
    "c": "SWE",
    "k": "",
+   "p": "cd4f5c7d520c",
    "was": "W",
-   "y": "2023/24",
-   "p": "cd4f5c7d520c"
+   "y": "2023/24"
   },
   {
    "n": "Takeru Kataise",
@@ -107822,14 +107808,6 @@
    "y": "2023/24"
   },
   {
-   "n": "Mariia Kryzhova",
-   "c": "SRB",
-   "k": "",
-   "was": "w",
-   "y": "2025/26",
-   "p": "3ea10b7e2e8c"
-  },
-  {
    "n": "Rachele Marcon",
    "c": "ITA",
    "k": "",
@@ -107840,9 +107818,9 @@
    "n": "Campbell Young / Lachlan Lewer",
    "c": "AUS",
    "k": "",
+   "p": "46cea2589bc5",
    "was": "p",
-   "y": "2021/22",
-   "p": "46cea2589bc5"
+   "y": "2021/22"
   },
   {
    "n": "Diana Barabash",
@@ -107911,9 +107889,9 @@
    "n": "Алиса Абдуллина / Максим Нуралиев",
    "c": "RUS",
    "k": "",
+   "p": "f2c2898df2bb",
    "was": "D",
-   "y": "2020/21",
-   "p": "f2c2898df2bb"
+   "y": "2020/21"
   },
   {
    "n": "Despina Katsarou",
@@ -111260,6 +111238,1112 @@
    "k": "",
    "was": "W",
    "y": "2021/22"
+  },
+  {
+   "n": "Daniel-Albert Naurits",
+   "c": "EST",
+   "k": "",
+   "was": "m",
+   "y": "2019/20"
+  },
+  {
+   "n": "Davide Lewton-brain",
+   "c": "MON",
+   "k": "",
+   "was": "m",
+   "y": "2021/22"
+  },
+  {
+   "n": "Lana Omovsek",
+   "c": "SLO",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Minea Montonen",
+   "c": "FIN",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Anna Sheniuk",
+   "c": "ISR",
+   "k": "",
+   "was": "W",
+   "y": "2023/24"
+  },
+  {
+   "n": "Kerryn Yee",
+   "c": "SGP",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Sergio San Roman",
+   "c": "ESP",
+   "k": "",
+   "was": "M",
+   "y": "2021/22"
+  },
+  {
+   "n": "Ulutas Defne",
+   "c": "TUR",
+   "k": "",
+   "was": "W",
+   "y": "2022/23"
+  },
+  {
+   "n": "Vianna Linke",
+   "c": "SGP",
+   "k": "",
+   "was": "W",
+   "y": "2022/23"
+  },
+  {
+   "n": "Anita Kepferer",
+   "c": "AUT",
+   "k": "",
+   "was": "w",
+   "y": "2021/22"
+  },
+  {
+   "n": "Mina Zdravkova / Christopher Martin Davis",
+   "c": "BUL",
+   "k": "",
+   "was": "d",
+   "y": "2019/20"
+  },
+  {
+   "n": "Minerva Hase / Nolan Seegert",
+   "c": "GER",
+   "k": "",
+   "was": "p",
+   "y": "2020/21"
+  },
+  {
+   "n": "Tessa Hobday",
+   "c": "NSW",
+   "k": "",
+   "was": "W",
+   "y": "2018/19"
+  },
+  {
+   "n": "Hena Uzunovic",
+   "c": "BIH",
+   "k": "",
+   "was": "W",
+   "y": "2022/23"
+  },
+  {
+   "n": "Nikolaj Kozlov",
+   "c": "BLR",
+   "k": "",
+   "was": "m",
+   "y": "2020/21"
+  },
+  {
+   "n": "Oleksii Bychenko",
+   "c": "ISR",
+   "k": "",
+   "was": "m",
+   "y": "2019/20"
+  },
+  {
+   "n": "Ruxandra Rotundu",
+   "c": "ROU",
+   "k": "",
+   "was": "W",
+   "y": "2022/23"
+  },
+  {
+   "n": "Anna Dea Gulbiani Schmidt",
+   "c": "GEO",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Nil Ozek",
+   "c": "TUR",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Oceane Piegad / Remi Belmonte",
+   "c": "FRA",
+   "k": "",
+   "was": "p",
+   "y": "2021/22"
+  },
+  {
+   "n": "Brooke Cathro",
+   "c": "NZL",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Diego Saldana",
+   "c": "MEX",
+   "k": "",
+   "was": "m",
+   "y": "2018/19"
+  },
+  {
+   "n": "Isabelle Guise / Ethan Alday",
+   "c": "NZL",
+   "k": "",
+   "was": "d",
+   "y": "2022/23"
+  },
+  {
+   "n": "Nika Ozek Bela",
+   "c": "SLO",
+   "k": "",
+   "was": "W",
+   "y": "2023/24"
+  },
+  {
+   "n": "Daniil Murzin",
+   "c": "USA",
+   "k": "",
+   "was": "m",
+   "y": "2023/24"
+  },
+  {
+   "n": "Angel Li",
+   "c": "CHN",
+   "k": "",
+   "was": "w",
+   "y": "2020/21"
+  },
+  {
+   "n": "Ava Valentina Aversano Martinez / Christian Bennett",
+   "c": "MEX",
+   "k": "",
+   "was": "d",
+   "y": "2024/25"
+  },
+  {
+   "n": "Daniel Basile",
+   "c": "ITA",
+   "k": "",
+   "was": "M",
+   "y": "2021/22"
+  },
+  {
+   "n": "Fang-Yu Hsing",
+   "c": "TPE",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Katie McBeath / Daniil Parkman",
+   "c": "",
+   "k": "",
+   "was": "p",
+   "y": "2025/26"
+  },
+  {
+   "n": "Saskia Zainchkovskaya",
+   "c": "GBR",
+   "k": "",
+   "was": "w",
+   "y": "2025/26"
+  },
+  {
+   "n": "Sophia Bushell / Antonio Pena",
+   "c": "GBR",
+   "k": "",
+   "was": "d",
+   "y": "2025/26"
+  },
+  {
+   "n": "Vladmir Furman",
+   "c": "CAN",
+   "k": "",
+   "was": "M",
+   "y": "2022/23"
+  },
+  {
+   "n": "Ava Burns",
+   "c": "AUS",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Bridget Tai",
+   "c": "MAS",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Iaana Shershunovich",
+   "c": "BLR",
+   "k": "",
+   "was": "w",
+   "y": "2019/20"
+  },
+  {
+   "n": "Marco Klepoch",
+   "c": "SVK",
+   "k": "",
+   "was": "m",
+   "y": "2019/20"
+  },
+  {
+   "n": "Patricia Skopancic",
+   "c": "CRO",
+   "k": "",
+   "was": "w",
+   "y": "2024/25"
+  },
+  {
+   "n": "Sharlote Jekabsone",
+   "c": "LAT",
+   "k": "",
+   "was": "w",
+   "y": "2021/22"
+  },
+  {
+   "n": "Sofija Guljakina",
+   "c": "EST",
+   "k": "",
+   "was": "W",
+   "y": "2022/23"
+  },
+  {
+   "n": "Valerie Ang",
+   "c": "SGP",
+   "k": "",
+   "was": "W",
+   "y": "2022/23"
+  },
+  {
+   "n": "Valeriya Ovcharenko",
+   "c": "UKR",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Adriana Segui Jimenez",
+   "c": "ESP",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Anastasia Vaipan Law / Luke Digby",
+   "c": "GBR",
+   "k": "",
+   "was": "p",
+   "y": "2021/22"
+  },
+  {
+   "n": "Anastasiia Sammel / Danylo Yefremenko",
+   "c": "UKR",
+   "k": "",
+   "was": "d",
+   "y": "2021/22"
+  },
+  {
+   "n": "Emese Сsiszйr",
+   "c": "HUN",
+   "k": "",
+   "was": "W",
+   "y": "2019/20"
+  },
+  {
+   "n": "Janne Salatzki",
+   "c": "GER",
+   "k": "",
+   "was": "W",
+   "y": "2019/20"
+  },
+  {
+   "n": "Livvy Shilling / Leo Baeten",
+   "c": "BEL",
+   "k": "",
+   "was": "d",
+   "y": "2023/24"
+  },
+  {
+   "n": "Maria Dorlova",
+   "c": "EST",
+   "k": "",
+   "was": "W",
+   "y": "2024/25"
+  },
+  {
+   "n": "Wandi Xu",
+   "c": "CHN",
+   "k": "",
+   "was": "w",
+   "y": "2025/26"
+  },
+  {
+   "n": "Anita Odesski",
+   "c": "ISR",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Frederique Koning",
+   "c": "NED",
+   "k": "",
+   "was": "w",
+   "y": "2021/22"
+  },
+  {
+   "n": "Nicola Adamczyk",
+   "c": "POL",
+   "k": "",
+   "was": "w",
+   "y": "2025/26"
+  },
+  {
+   "n": "Amanda Peterson / Maximilian Pfisterer",
+   "c": "GER",
+   "k": "",
+   "was": "d",
+   "y": "2019/20"
+  },
+  {
+   "n": "Eleanor Hirst / Anthomy Currie",
+   "c": "GBR",
+   "k": "",
+   "was": "d",
+   "y": "2021/22"
+  },
+  {
+   "n": "Elissa Eddaoui Eriksson",
+   "c": "SWE",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Milena Milojevic",
+   "c": "MKD",
+   "k": "",
+   "was": "W",
+   "y": "2022/23"
+  },
+  {
+   "n": "Sara Bordiga",
+   "c": "ITA",
+   "k": "",
+   "was": "w",
+   "y": "2022/23"
+  },
+  {
+   "n": "Simone Aubrecht",
+   "c": "AUS",
+   "k": "",
+   "was": "w",
+   "y": "2022/23"
+  },
+  {
+   "n": "Veronika Zhilina",
+   "c": "AZE",
+   "k": "",
+   "was": "w",
+   "y": "2026/27"
+  },
+  {
+   "n": "Daniel Kockers",
+   "c": "LAT",
+   "k": "",
+   "was": "M",
+   "y": "2020/21"
+  },
+  {
+   "n": "Fie Egan Magnussen",
+   "c": "DEN",
+   "k": "",
+   "was": "W",
+   "y": "2024/25"
+  },
+  {
+   "n": "Katerina Aleksova",
+   "c": "BUL",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Laura Finelli / Matteo Pedesini",
+   "c": "ITA",
+   "k": "",
+   "was": "D",
+   "y": "2021/22"
+  },
+  {
+   "n": "Soi Shim",
+   "c": "KOR",
+   "k": "",
+   "was": "W",
+   "y": "2019/20"
+  },
+  {
+   "n": "Zlata Amelyaniuk",
+   "c": "BLR",
+   "k": "",
+   "was": "w",
+   "y": "2019/20"
+  },
+  {
+   "n": "Laura Virбnуi",
+   "c": "HUN",
+   "k": "",
+   "was": "w",
+   "y": "2021/22"
+  },
+  {
+   "n": "Loris Kraiczyk",
+   "c": "GER",
+   "k": "",
+   "was": "M",
+   "y": "2021/22"
+  },
+  {
+   "n": "Madelaine Ann Breau / Kurtis Che",
+   "c": "CAN",
+   "k": "",
+   "was": "D",
+   "y": "2025/26"
+  },
+  {
+   "n": "Taneya Nuesch / Maxim Kobelt",
+   "c": "SUI",
+   "k": "",
+   "was": "D",
+   "y": "2021/22"
+  },
+  {
+   "n": "Viktorija Michalovska",
+   "c": "LTU",
+   "k": "",
+   "was": "W",
+   "y": "2023/24"
+  },
+  {
+   "n": "Chiara Calderone / Pietro Papetti",
+   "c": "ITA",
+   "k": "",
+   "was": "d",
+   "y": "2019/20"
+  },
+  {
+   "n": "Gulia Todeschini",
+   "c": "ITA",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Ivett Тутн",
+   "c": "HUN",
+   "k": "",
+   "was": "w",
+   "y": "2020/21"
+  },
+  {
+   "n": "Luisa Seifert",
+   "c": "GER",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Serena Roblin",
+   "c": "ITA",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Zsьliеtt Csombok",
+   "c": "HUN",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Emma Hiezl",
+   "c": "HUN",
+   "k": "",
+   "was": "w",
+   "y": "2021/22"
+  },
+  {
+   "n": "Henrik Wessel Grande-brostroem",
+   "c": "NOR",
+   "k": "",
+   "was": "M",
+   "y": "2025/26"
+  },
+  {
+   "n": "Mozes Jуzsеf Berei",
+   "c": "HUN",
+   "k": "",
+   "was": "M",
+   "y": "2021/22"
+  },
+  {
+   "n": "Sofia Lexi Frank",
+   "c": "PHI",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Arturo Alonso Fernandez",
+   "c": "ESP",
+   "k": "",
+   "was": "M",
+   "y": "2025/26"
+  },
+  {
+   "n": "Jonathan Wilson",
+   "c": "RSA",
+   "k": "",
+   "was": "M",
+   "y": "2023/24"
+  },
+  {
+   "n": "Mia Milinkovic",
+   "c": "SRB",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Elisabetta Leccardi",
+   "c": "ITA",
+   "k": "",
+   "was": "w",
+   "y": "2019/20"
+  },
+  {
+   "n": "Jбzmin Gede",
+   "c": "HUN",
+   "k": "",
+   "was": "W",
+   "y": "2019/20"
+  },
+  {
+   "n": "Mate Borocz",
+   "c": "HUN",
+   "k": "",
+   "was": "m",
+   "y": "2021/22"
+  },
+  {
+   "n": "Micol Panepucci",
+   "c": "ITA",
+   "k": "",
+   "was": "w",
+   "y": "2023/24"
+  },
+  {
+   "n": "Mirai Nagasu",
+   "c": "USA",
+   "k": "",
+   "was": "w",
+   "y": "2022/23"
+  },
+  {
+   "n": "Alyssa Balaria",
+   "c": "CZE",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Andzelika Drygala",
+   "c": "POL",
+   "k": "",
+   "was": "W",
+   "y": "2023/24"
+  },
+  {
+   "n": "Friederike Jьяеn",
+   "c": "GER",
+   "k": "",
+   "was": "W",
+   "y": "2019/20"
+  },
+  {
+   "n": "Lauren Gavala",
+   "c": "GRE",
+   "k": "",
+   "was": "W",
+   "y": "2019/20"
+  },
+  {
+   "n": "Lou Terreaux / Nой Perron",
+   "c": "FRA",
+   "k": "",
+   "was": "d",
+   "y": "2021/22"
+  },
+  {
+   "n": "Marta-Maria Johannsdottir",
+   "c": "ISL",
+   "k": "",
+   "was": "W",
+   "y": "2019/20"
+  },
+  {
+   "n": "Patrick Chau",
+   "c": "GER",
+   "k": "",
+   "was": "M",
+   "y": "2025/26"
+  },
+  {
+   "n": "Vira Fedorova",
+   "c": "POL",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Mariia Kryzhova",
+   "c": "SRB",
+   "k": "",
+   "was": "w",
+   "y": "2025/26"
+  },
+  {
+   "n": "Dбriа Zsirnov",
+   "c": "HUN",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Micha Steffen",
+   "c": "SUI",
+   "k": "",
+   "was": "m",
+   "y": "2023/24"
+  },
+  {
+   "n": "Natalia Jansson",
+   "c": "SWE",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Tiffany Klaunig",
+   "c": "GER",
+   "k": "",
+   "was": "W",
+   "y": "2019/20"
+  },
+  {
+   "n": "Daria Popova / Vlodymyr Byelikolov",
+   "c": "UKR",
+   "k": "",
+   "was": "d",
+   "y": "2019/20"
+  },
+  {
+   "n": "Irina Napolitano",
+   "c": "ITA",
+   "k": "",
+   "was": "W",
+   "y": "2022/23"
+  },
+  {
+   "n": "Lina Hammou Ahabchane",
+   "c": "MAR",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Taisiia Mysko",
+   "c": "UKR",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Tsvetelina Panova",
+   "c": "BUL",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Uliana Emarkova / Artem Krylov",
+   "c": "RUS",
+   "k": "",
+   "was": "D",
+   "y": "2019/20"
+  },
+  {
+   "n": "Yae-Mia Neira",
+   "c": "CHI",
+   "k": "",
+   "was": "w",
+   "y": "2023/24"
+  },
+  {
+   "n": "Zoja Zupancic Prevolsek",
+   "c": "SLO",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Aleida Landon-lane",
+   "c": "NZL",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Beau Callahan / Christophe Roch",
+   "c": "CAN",
+   "k": "",
+   "was": "P",
+   "y": "2023/24"
+  },
+  {
+   "n": "Lotfi Sereir",
+   "c": "GER",
+   "k": "",
+   "was": "m",
+   "y": "2021/22"
+  },
+  {
+   "n": "Radostina Vasileva",
+   "c": "BUL",
+   "k": "",
+   "was": "W",
+   "y": "2024/25"
+  },
+  {
+   "n": "Rina Taniguchi",
+   "c": "ITA",
+   "k": "",
+   "was": "W",
+   "y": "2023/24"
+  },
+  {
+   "n": "Silja Sivu",
+   "c": "FIN",
+   "k": "",
+   "was": "W",
+   "y": "2023/24"
+  },
+  {
+   "n": "Aino Silchenko",
+   "c": "FIN",
+   "k": "",
+   "was": "W",
+   "y": "2024/25"
+  },
+  {
+   "n": "Ceyda Saglam",
+   "c": "TUR",
+   "k": "",
+   "was": "w",
+   "y": "2025/26"
+  },
+  {
+   "n": "Elisabetta Incardona / Rafael Marc Drozd Musil",
+   "c": "DEN",
+   "k": "",
+   "was": "d",
+   "y": "2023/24"
+  },
+  {
+   "n": "Lila-Maya Seclet-monchot / Martin Chardain",
+   "c": "FRA",
+   "k": "",
+   "was": "D",
+   "y": "2021/22"
+  },
+  {
+   "n": "Lise Trulsson",
+   "c": "SWE",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Lukas Luft",
+   "c": "GER",
+   "k": "",
+   "was": "M",
+   "y": "2022/23"
+  },
+  {
+   "n": "Sophia Gover / Billy Wilson-french",
+   "c": "CAN",
+   "k": "",
+   "was": "D",
+   "y": "2023/24"
+  },
+  {
+   "n": "Varvara Morozova",
+   "c": "EST",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Rйkа Вйrеs",
+   "c": "HUN",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Yelyzaveta Beichuk",
+   "c": "UKR",
+   "k": "",
+   "was": "W",
+   "y": "2023/24"
+  },
+  {
+   "n": "Daniela Nikolova",
+   "c": "BUL",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Elizabeth Gjaere",
+   "c": "NOR",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Esther Elvira Perez Dalum",
+   "c": "DEN",
+   "k": "",
+   "was": "W",
+   "y": "2019/20"
+  },
+  {
+   "n": "Matilda Malgarise",
+   "c": "ITA",
+   "k": "",
+   "was": "W",
+   "y": "2023/24"
+  },
+  {
+   "n": "Olga Patek",
+   "c": "POL",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Sofia Anna Palmqvist",
+   "c": "SWE",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Тimоthйе Manand",
+   "c": "AND",
+   "k": "",
+   "was": "m",
+   "y": "2019/20"
+  },
+  {
+   "n": "Amanda Eskelin",
+   "c": "FIN",
+   "k": "",
+   "was": "W",
+   "y": "2022/23"
+  },
+  {
+   "n": "Elizaveta Novik / Olexander Kuharevskij",
+   "c": "BLR",
+   "k": "",
+   "was": "D",
+   "y": "2021/22"
+  },
+  {
+   "n": "Lilianna Murray / Jordan Gillette",
+   "c": "USA",
+   "k": "",
+   "was": "P",
+   "y": "2022/23"
+  },
+  {
+   "n": "Linda Varesco",
+   "c": "ITA",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Maissane Chine / Morgan Laliberte Laurent",
+   "c": "FRA",
+   "k": "",
+   "was": "D",
+   "y": "2025/26"
+  },
+  {
+   "n": "Matilda Koppel",
+   "c": "EST",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Sofia Vutova",
+   "c": "BUL",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Aaliyah Medina",
+   "c": "AUS",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Elina Jarvinen",
+   "c": "FIN",
+   "k": "",
+   "was": "W",
+   "y": "2024/25"
+  },
+  {
+   "n": "Lara Messinger",
+   "c": "GER",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Anna Flora Colmor Jepsen",
+   "c": "DEN",
+   "k": "",
+   "was": "W",
+   "y": "2022/23"
+  },
+  {
+   "n": "Enja Ruokonen",
+   "c": "FIN",
+   "k": "",
+   "was": "W",
+   "y": "2019/20"
+  },
+  {
+   "n": "Josefin Таljеgеrd",
+   "c": "SWE",
+   "k": "",
+   "was": "w",
+   "y": "2021/22"
+  },
+  {
+   "n": "Lorna Mackova",
+   "c": "SVK",
+   "k": "",
+   "was": "W",
+   "y": "2024/25"
+  },
+  {
+   "n": "Mariya Borissova",
+   "c": "KAZ",
+   "k": "",
+   "was": "W",
+   "y": "2024/25"
+  },
+  {
+   "n": "Natalia Peeva",
+   "c": "BUL",
+   "k": "",
+   "was": "w",
+   "y": "2024/25"
+  },
+  {
+   "n": "Neda Vasileva",
+   "c": "BUL",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Polina Katsman",
+   "c": "UKR",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Fiona Bombardier",
+   "c": "CAN",
+   "k": "",
+   "was": "w",
+   "y": "2023/24"
+  },
+  {
+   "n": "Kamilla Aaby",
+   "c": "NOR",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Keva Emond",
+   "c": "RSA",
+   "k": "",
+   "was": "W",
+   "y": "2021/22"
+  },
+  {
+   "n": "Mille Stenberg Stensheim",
+   "c": "NOR",
+   "k": "",
+   "was": "W",
+   "y": "2025/26"
+  },
+  {
+   "n": "Evgenia Mitropoulou",
+   "c": "GRE",
+   "k": "",
+   "was": "W",
+   "y": "2024/25"
+  },
+  {
+   "n": "Ginerva Lavina Negrello",
+   "c": "ITA",
+   "k": "",
+   "was": "W",
+   "y": "2019/20"
+  },
+  {
+   "n": "Margarita Svistunova / Dimitry Studenikin",
+   "c": "RUS",
+   "k": "",
+   "was": "D",
+   "y": "2019/20"
   }
  ],
  "photos": {
@@ -114232,7 +115316,30 @@
   "Jack Donovan": "photos/9db6c5be67618eab.jpg",
   "Chiara Schoell": "photos/d03f1340c910cad8.jpg",
   "Adrien Tesson": "photos/9f87a357aff3b346.jpg",
-  "Sze Chyi Chew": "photos/5b2ce16888bc544d.jpg"
+  "Sze Chyi Chew": "photos/5b2ce16888bc544d.jpg",
+  "Minea Montonen": "photos/5ae3360f4a750d78.jpg",
+  "Anna Sheniuk": "photos/8f1fb520b59458b8.jpg",
+  "Fang-Yu Hsing": "photos/2db3932066308183.jpg",
+  "Katie McBeath": "photos/beb8847a8b1d69f8.jpg",
+  "Saskia Zainchkovskaya": "photos/4a62ca469cdbef79.jpg",
+  "Ava Burns": "photos/36f0764e20fa1f22.jpg",
+  "Bridget Tai": "photos/35769565ea9e995f.jpg",
+  "Adriana Segui Jimenez": "photos/be3675930c1f1fa8.jpg",
+  "Wandi Xu": "photos/44b6869c1e688ec1.jpg",
+  "Fie Egan Magnussen": "photos/2918faedc0f783e7.jpg",
+  "Maxim Kobelt": "photos/23b9a0d80a885c2e.jpg",
+  "Chiara Calderone": "photos/6d8a038dc26bcf69.jpg",
+  "Mia Milinkovic": "photos/b230fe2d1a8a9b17.jpg",
+  "Mirai Nagasu": "photos/03846b0e7c62e79f.jpg",
+  "Alyssa Balaria": "photos/c377c0c6c5999655.jpg",
+  "Micha Steffen": "photos/3da0e06f4dd3ab33.jpg",
+  "Yae-Mia Neira": "photos/0c56ef75cae339ff.jpg",
+  "Christophe Roch": "photos/82e306b72b70ac65.jpg",
+  "Rina Taniguchi": "photos/4b8612ba75b5bd7a.jpg",
+  "Rafael Marc Drozd Musil": "photos/f5658043a9a0e0a3.jpg",
+  "Aaliyah Medina": "photos/734806df12b84a02.jpg",
+  "Natalia Peeva": "photos/1afad52642fd3f0c.jpg",
+  "Fiona Bombardier": "photos/4d81e3a2ade13d61.jpg"
  },
- "rev": "72d177d71d652e8c"
+ "rev": "bf9875e78701a2b4"
 }
