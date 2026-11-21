@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T13:57:41+03:00",
- "checked": "2026-11-21T11:21:04.827802+00:00",
+ "checked": "2026-11-21T11:25:04.847597+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60440,7 +60440,7 @@
     {
      "name": "Авелина Бердоносова",
      "nation": "ПРМ",
-     "place": 12,
+     "place": 13,
      "points": "90.96",
      "time": "12:26",
      "no": 13,
@@ -60451,7 +60451,9 @@
      "nation": "ТВЕ",
      "time": "14:00",
      "no": 25,
-     "warmup": 5
+     "warmup": 5,
+     "place": 10,
+     "points": "100.30"
     },
     {
      "name": "Аделина Камалова",
@@ -60504,7 +60506,7 @@
     {
      "name": "Арина Теслина",
      "nation": "ВЛГ",
-     "place": 22,
+     "place": 23,
      "points": "69.03",
      "time": "11:23",
      "no": 4,
@@ -60513,7 +60515,7 @@
     {
      "name": "Арина Чернобавская",
      "nation": "ИВА",
-     "place": 23,
+     "place": 24,
      "points": "67.36",
      "time": "11:52",
      "no": 8,
@@ -60540,7 +60542,7 @@
     {
      "name": "Вероника Шиленкова",
      "nation": "МРД",
-     "place": 20,
+     "place": 21,
      "points": "78.05",
      "time": "11:07",
      "no": 1,
@@ -60556,7 +60558,7 @@
     {
      "name": "Дана Титова",
      "nation": "ТУЛ",
-     "place": 11,
+     "place": 12,
      "points": "90.96",
      "time": "11:41",
      "no": 6,
@@ -60565,7 +60567,7 @@
     {
      "name": "Дарья Хришкова",
      "nation": "ЛИП",
-     "place": 16,
+     "place": 17,
      "points": "82.69",
      "time": "12:21",
      "no": 12,
@@ -60581,7 +60583,7 @@
     {
      "name": "Екатерина Смирнова",
      "nation": "КОС",
-     "place": 13,
+     "place": 14,
      "points": "89.10",
      "time": "12:15",
      "no": 11,
@@ -60590,7 +60592,7 @@
     {
      "name": "Кира Васильева",
      "nation": "КИР",
-     "place": 19,
+     "place": 20,
      "points": "78.38",
      "time": "11:47",
      "no": 7,
@@ -60613,7 +60615,7 @@
     {
      "name": "Мадина Абзипарова",
      "nation": "ТАТ",
-     "place": 10,
+     "place": 11,
      "points": "90.96",
      "time": "12:31",
      "no": 14,
@@ -60631,7 +60633,7 @@
     {
      "name": "Маргарита Котенева",
      "nation": "МАР",
-     "place": 24,
+     "place": 25,
      "points": "67.03",
      "time": "11:18",
      "no": 3,
@@ -60677,7 +60679,7 @@
     {
      "name": "Полина Шишкина",
      "nation": "ВЛД",
-     "place": 21,
+     "place": 22,
      "points": "77.08",
      "time": "12:03",
      "no": 10,
@@ -60693,7 +60695,7 @@
     {
      "name": "Сабина Киселева",
      "nation": "ПЕН",
-     "place": 18,
+     "place": 19,
      "points": "81.08",
      "time": "11:12",
      "no": 2,
@@ -60702,7 +60704,7 @@
     {
      "name": "София Нуреева",
      "nation": "ЧЕЛ",
-     "place": 14,
+     "place": 15,
      "points": "85.25",
      "time": "11:57",
      "no": 9,
@@ -60711,7 +60713,7 @@
     {
      "name": "София Самуйлик",
      "nation": "СТА",
-     "place": 17,
+     "place": 18,
      "points": "82.23",
      "time": "11:28",
      "no": 5,
@@ -60745,7 +60747,7 @@
     {
      "name": "Ярослава Быстрова",
      "nation": "ОМС",
-     "place": 15,
+     "place": 16,
      "points": "84.62",
      "time": "13:10",
      "no": 17,
@@ -60849,25 +60851,27 @@
     },
     {
      "place": 2,
-     "name": "Katie McBEATH / Balazs Nagy",
-     "nation": "USA",
-     "points": "120.44"
+     "name": "Annika Hocke / Robert Kunkel",
+     "nation": "GER",
+     "points": "123.77"
     },
     {
      "place": 3,
-     "name": "Megan Wessenberg / Denys Strekalin",
-     "nation": "FRA",
-     "points": "101.32"
+     "name": "Katie McBEATH / Balazs Nagy",
+     "nation": "USA",
+     "points": "120.44"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Audrey Shin / Spencer Akira Howe — 125.92\n2. Katie McBEATH / Balazs Nagy — 120.44\n3. Megan Wessenberg / Denys Strekalin — 101.32\n\nНачало: 13:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Audrey Shin / Spencer Akira Howe — 125.92\n2. Annika Hocke / Robert Kunkel — 123.77\n3. Katie McBEATH / Balazs Nagy — 120.44\n\nНачало: 13:15 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Annika Hocke / Robert Kunkel",
      "nation": "GER",
      "time": "14:17",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "123.77"
     },
     {
      "name": "Audrey Shin / Spencer Akira Howe",
@@ -60881,7 +60885,7 @@
     {
      "name": "Hannah Herrera / Ivan Khobta",
      "nation": "UKR",
-     "place": 6,
+     "place": 7,
      "points": "86.93",
      "time": "13:30",
      "no": 2,
@@ -60890,7 +60894,7 @@
     {
      "name": "Irma Caldara / Riccardo Maglio",
      "nation": "ITA",
-     "place": 5,
+     "place": 6,
      "points": "90.77",
      "time": "13:22",
      "no": 1,
@@ -60902,7 +60906,7 @@
      "time": "14:09",
      "no": 6,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "120.44"
     },
     {
@@ -60915,7 +60919,7 @@
     {
      "name": "Megan Wessenberg / Denys Strekalin",
      "nation": "FRA",
-     "place": 3,
+     "place": 4,
      "points": "101.32",
      "time": "13:38",
      "no": 3,
@@ -60924,7 +60928,7 @@
     {
      "name": "Valentina Plazas / Maximiliano Fernandez",
      "nation": "USA",
-     "place": 4,
+     "place": 5,
      "points": "93.11",
      "time": "13:46",
      "no": 4,
@@ -104920,5 +104924,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "a4fbe6bf265ee54b"
+ "rev": "85b332d027b332e6"
 }
