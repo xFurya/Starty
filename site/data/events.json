@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T12:53:52+03:00",
- "checked": "2026-11-21T10:29:04.655585+00:00",
+ "checked": "2026-11-21T10:33:04.800175+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60498,7 +60498,7 @@
     {
      "name": "Арина Теслина",
      "nation": "ВЛГ",
-     "place": 14,
+     "place": 15,
      "points": "69.03",
      "time": "11:23",
      "no": 4,
@@ -60507,7 +60507,7 @@
     {
      "name": "Арина Чернобавская",
      "nation": "ИВА",
-     "place": 15,
+     "place": 16,
      "points": "67.36",
      "time": "11:52",
      "no": 8,
@@ -60532,7 +60532,7 @@
     {
      "name": "Вероника Шиленкова",
      "nation": "МРД",
-     "place": 12,
+     "place": 13,
      "points": "78.05",
      "time": "11:07",
      "no": 1,
@@ -60557,7 +60557,7 @@
     {
      "name": "Дарья Хришкова",
      "nation": "ЛИП",
-     "place": 8,
+     "place": 9,
      "points": "82.69",
      "time": "12:21",
      "no": 12,
@@ -60582,7 +60582,7 @@
     {
      "name": "Кира Васильева",
      "nation": "КИР",
-     "place": 11,
+     "place": 12,
      "points": "78.38",
      "time": "11:47",
      "no": 7,
@@ -60621,7 +60621,7 @@
     {
      "name": "Маргарита Котенева",
      "nation": "МАР",
-     "place": 16,
+     "place": 17,
      "points": "67.03",
      "time": "11:18",
      "no": 3,
@@ -60667,7 +60667,7 @@
     {
      "name": "Полина Шишкина",
      "nation": "ВЛД",
-     "place": 13,
+     "place": 14,
      "points": "77.08",
      "time": "12:03",
      "no": 10,
@@ -60683,7 +60683,7 @@
     {
      "name": "Сабина Киселева",
      "nation": "ПЕН",
-     "place": 10,
+     "place": 11,
      "points": "81.08",
      "time": "11:12",
      "no": 2,
@@ -60701,7 +60701,7 @@
     {
      "name": "София Самуйлик",
      "nation": "СТА",
-     "place": 9,
+     "place": 10,
      "points": "82.23",
      "time": "11:28",
      "no": 5,
@@ -60733,7 +60733,9 @@
      "nation": "ОМС",
      "time": "13:10",
      "no": 17,
-     "warmup": 4
+     "warmup": 4,
+     "place": 8,
+     "points": "84.62"
     }
    ],
    "provisional": true,
@@ -60824,14 +60826,16 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Начало: 13:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Irma Caldara / Riccardo Maglio — 90.77\n\nНачало: 13:15 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Irma Caldara / Riccardo Maglio",
      "nation": "ITA",
      "time": "13:22",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "90.77"
     },
     {
      "name": "Hannah Herrera / Ivan Khobta",
@@ -60900,7 +60904,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Irma Caldara / Riccardo Maglio",
+     "nation": "ITA",
+     "points": "90.77"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:women-senior-pp",
@@ -104811,5 +104824,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "4513c029a344416f"
+ "rev": "0204891ee11261b7"
 }
