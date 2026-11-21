@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T15:01:45+03:00",
- "checked": "2026-11-21T13:05:29.558080+00:00",
+ "checked": "2026-11-21T13:13:28.698441+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61127,7 +61127,7 @@
      "url": "https://www.youtube.com/watch?v=3lVqLrXDbd0"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Iida Karhunen — 120.23\n2. Anna Pezzetta — 118.94\n3. Rion Sumiyoshi — 115.81\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Isabeau Levito — 140.17\n2. Iida Karhunen — 120.23\n3. Anna Pezzetta — 118.94\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Anna Pezzetta",
@@ -61135,7 +61135,7 @@
      "time": "15:23",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "118.94"
     },
     {
@@ -61151,7 +61151,7 @@
      "time": "15:46",
      "no": 6,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "120.23"
     },
     {
@@ -61159,7 +61159,9 @@
      "nation": "USA",
      "time": "16:01",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "140.17"
     },
     {
      "name": "Janna Jyrkinen",
@@ -61167,7 +61169,7 @@
      "time": "15:30",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "96.66"
     },
     {
@@ -61183,7 +61185,7 @@
      "time": "15:07",
      "no": 1,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "96.36"
     },
     {
@@ -61199,7 +61201,7 @@
      "time": "15:15",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "112.12"
     },
     {
@@ -61208,7 +61210,7 @@
      "time": "15:38",
      "no": 5,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "115.81"
     },
     {
@@ -61251,21 +61253,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Isabeau Levito",
+     "nation": "USA",
+     "points": "140.17"
+    },
+    {
+     "place": 2,
      "name": "Iida Karhunen",
      "nation": "FIN",
      "points": "120.23"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Anna Pezzetta",
      "nation": "ITA",
      "points": "118.94"
-    },
-    {
-     "place": 3,
-     "name": "Rion Sumiyoshi",
-     "nation": "JPN",
-     "points": "115.81"
     }
    ],
    "provisional": true
@@ -61312,7 +61314,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Angelina Cucherat / Leopold Dacquin — 46.88\n2. Lena Zerinvary-simon / Huba Gallai — 41.44\n\nНачало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Eleonore Gabet / Raphael Duclusaud — 52.01\n2. Angelina Cucherat / Leopold Dacquin — 46.88\n3. Lena Zerinvary-simon / Huba Gallai — 41.44\n\nНачало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Aletta Lanyi / Ilya Laurenau",
@@ -61327,7 +61329,7 @@
      "time": "15:56",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "46.88"
     },
     {
@@ -61336,7 +61338,7 @@
      "time": "16:02",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "41.44"
     },
     {
@@ -61344,7 +61346,9 @@
      "nation": "FRA",
      "time": "16:09",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "52.01"
     },
     {
      "name": "Lea Hienne / Louis Varescon",
@@ -61460,12 +61464,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Eleonore Gabet / Raphael Duclusaud",
+     "nation": "FRA",
+     "points": "52.01"
+    },
+    {
+     "place": 2,
      "name": "Angelina Cucherat / Leopold Dacquin",
      "nation": "FRA",
      "points": "46.88"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Lena Zerinvary-simon / Huba Gallai",
      "nation": "HUN",
      "points": "41.44"
@@ -105136,5 +105146,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "afc71a91bf19e9db"
+ "rev": "ded240fc631fcdfe"
 }
