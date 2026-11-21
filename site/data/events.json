@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T20:58:09+03:00",
- "checked": "2026-11-21T20:58:09+03:00",
+ "checked": "2026-11-21T18:21:29.653765+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62427,31 +62427,25 @@
     },
     {
      "place": 2,
-     "name": "Алиса Юрова",
-     "nation": "ЛИП",
-     "points": "66.47"
-    },
-    {
-     "place": 2,
-     "name": "Анна Рябова",
-     "nation": "РЯЗ",
-     "points": "64.72"
+     "name": "Олеся Козлова",
+     "nation": "САМ",
+     "points": "66.75"
     },
     {
      "place": 3,
-     "name": "Екатерина Кольцова",
-     "nation": "КОС",
-     "points": "64.20"
+     "name": "Алиса Юрова",
+     "nation": "ЛИП",
+     "points": "66.47"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Алиса Юрова — 66.47\n2. Анна Рябова — 64.72\n3. Екатерина Кольцова — 64.20\n\nНачало: 18:45 МСК\nТрансляция: VK Видео",
+   "desc": "Промежуточные итоги:\n1. Риана Кадырова — 72.18\n2. Олеся Козлова — 66.75\n3. Алиса Юрова — 66.47\n\nНачало: 18:45 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Мария Котова",
      "nation": "ТАТ",
      "no": 1,
      "warmup": 1,
-     "place": 11,
+     "place": 15,
      "points": "51.78",
      "time": "18:52"
     },
@@ -62460,7 +62454,7 @@
      "nation": "ОМС",
      "no": 2,
      "warmup": 1,
-     "place": 9,
+     "place": 13,
      "points": "54.66",
      "time": "18:56"
     },
@@ -62469,7 +62463,7 @@
      "nation": "КОС",
      "no": 3,
      "warmup": 1,
-     "place": 3,
+     "place": 6,
      "points": "64.20",
      "time": "19:00"
     },
@@ -62478,7 +62472,7 @@
      "nation": "РОС",
      "no": 4,
      "warmup": 1,
-     "place": 16,
+     "place": 20,
      "points": "41.12",
      "time": "19:05"
     },
@@ -62487,7 +62481,7 @@
      "nation": "ТУЛ",
      "no": 5,
      "warmup": 1,
-     "place": 5,
+     "place": 8,
      "points": "63.85",
      "time": "19:09"
     },
@@ -62496,7 +62490,7 @@
      "nation": "ИВА",
      "no": 6,
      "warmup": 2,
-     "place": 12,
+     "place": 16,
      "points": "51.34",
      "time": "19:20"
     },
@@ -62505,7 +62499,7 @@
      "nation": "БАШ",
      "no": 7,
      "warmup": 2,
-     "place": 4,
+     "place": 7,
      "points": "64.20",
      "time": "19:25"
     },
@@ -62514,7 +62508,7 @@
      "nation": "МОС",
      "no": 8,
      "warmup": 2,
-     "place": 6,
+     "place": 10,
      "points": "61.90",
      "time": "19:29"
     },
@@ -62523,7 +62517,7 @@
      "nation": "МУР",
      "no": 9,
      "warmup": 2,
-     "place": 10,
+     "place": 14,
      "points": "53.59",
      "time": "19:33"
     },
@@ -62532,7 +62526,7 @@
      "nation": "СВЕ",
      "no": 10,
      "warmup": 2,
-     "place": 7,
+     "place": 11,
      "points": "57.50",
      "time": "19:37"
     },
@@ -62541,7 +62535,7 @@
      "nation": "ЯРО",
      "no": 11,
      "warmup": 3,
-     "place": 8,
+     "place": 12,
      "points": "54.76",
      "time": "20:04"
     },
@@ -62550,7 +62544,7 @@
      "nation": "ЧЕЛ",
      "no": 12,
      "warmup": 3,
-     "place": 13,
+     "place": 17,
      "points": "49.97",
      "time": "20:08"
     },
@@ -62559,7 +62553,7 @@
      "nation": "ХМА",
      "no": 13,
      "warmup": 3,
-     "place": 15,
+     "place": 19,
      "points": "47.00",
      "time": "20:12"
     },
@@ -62568,7 +62562,7 @@
      "nation": "ВОР",
      "no": 14,
      "warmup": 3,
-     "place": 14,
+     "place": 18,
      "points": "48.52",
      "time": "20:16"
     },
@@ -62577,7 +62571,7 @@
      "nation": "ЛИП",
      "no": 15,
      "warmup": 3,
-     "place": 1,
+     "place": 3,
      "points": "66.47",
      "time": "20:20"
     },
@@ -62586,7 +62580,7 @@
      "nation": "РЯЗ",
      "no": 16,
      "warmup": 4,
-     "place": 2,
+     "place": 4,
      "points": "64.72",
      "time": "20:32"
     },
@@ -62596,7 +62590,7 @@
      "time": "20:40",
      "no": 18,
      "warmup": 4,
-     "place": 4,
+     "place": 5,
      "points": "64.48"
     },
     {
@@ -62604,7 +62598,9 @@
      "nation": "САМ",
      "time": "20:49",
      "no": 20,
-     "warmup": 4
+     "warmup": 4,
+     "place": 2,
+     "points": "66.75"
     },
     {
      "name": "Риана Кадырова",
@@ -62621,7 +62617,7 @@
      "time": "20:36",
      "no": 17,
      "warmup": 4,
-     "place": 8,
+     "place": 9,
      "points": "63.43"
     }
    ],
@@ -62700,24 +62696,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Marie-Jade Lauriault / Romain le Gac",
+     "nation": "CAN",
+     "points": "107.92"
+    },
+    {
+     "place": 2,
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN",
      "points": "106.34"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
      "points": "99.71"
-    },
-    {
-     "place": 3,
-     "name": "Emily Bratti / Ian Somerville",
-     "nation": "USA",
-     "points": "96.87"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Yuka Orihara / Juho Pirinen — 106.34\n2. Marjorie Lajoie / Jean-Luc Baker — 99.71\n3. Emily Bratti / Ian Somerville — 96.87\n\nНачало: 20:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Marie-Jade Lauriault / Romain le Gac — 107.92\n2. Yuka Orihara / Juho Pirinen — 106.34\n3. Marjorie Lajoie / Jean-Luc Baker — 99.71\n\nНачало: 20:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Caroline Green / Michael Parsons",
@@ -62729,7 +62725,7 @@
     {
      "name": "Emily Bratti / Ian Somerville",
      "nation": "USA",
-     "place": 3,
+     "place": 4,
      "points": "96.87",
      "time": "20:47",
      "no": 3,
@@ -62754,12 +62750,14 @@
      "nation": "CAN",
      "time": "21:03",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "107.92"
     },
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
-     "place": 2,
+     "place": 3,
      "points": "99.71",
      "time": "20:39",
      "no": 2,
@@ -62768,7 +62766,7 @@
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
      "nation": "SWE",
-     "place": 4,
+     "place": 5,
      "points": "93.17",
      "time": "20:31",
      "no": 1,
@@ -62791,7 +62789,7 @@
     {
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN",
-     "place": 1,
+     "place": 2,
      "points": "106.34",
      "time": "20:55",
      "no": 4,
@@ -105546,5 +105544,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "b66f0da791d074de"
+ "rev": "c13de674124e8af7"
 }
