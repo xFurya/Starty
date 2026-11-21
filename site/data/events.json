@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T18:50:12+03:00",
- "checked": "2026-11-21T16:41:29.149185+00:00",
+ "checked": "2026-11-21T16:45:28.796211+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62263,7 +62263,9 @@
      "nation": "GRE",
      "time": "19:35",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 8,
+     "points": "52.91"
     },
     {
      "name": "Sandrine Gauthier / Paul Ayer",
@@ -62379,7 +62381,7 @@
      "time": "19:05",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "41.12"
     },
     {
@@ -62396,7 +62398,9 @@
      "nation": "ИВА",
      "time": "19:20",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "51.34"
     },
     {
      "name": "Софья Лукина",
@@ -105409,5 +105413,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "1c56ce9a66c2633f"
+ "rev": "90ee502ddb510a5b"
 }
