@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T19:54:17+03:00",
- "checked": "2026-11-21T17:29:29.129167+00:00",
+ "checked": "2026-11-21T17:37:28.887278+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62457,7 +62457,7 @@
      "nation": "РОС",
      "no": 4,
      "warmup": 1,
-     "place": 11,
+     "place": 12,
      "points": "41.12",
      "time": "19:05"
     },
@@ -62541,7 +62541,9 @@
      "nation": "ЧЕЛ",
      "time": "20:08",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "place": 11,
+     "points": "49.97"
     },
     {
      "name": "Анна Казакевич",
@@ -105480,5 +105482,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "95a440764001707d"
+ "rev": "34d4e4c2c9bcbbf5"
 }
