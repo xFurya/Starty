@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T12:53:52+03:00",
- "checked": "2026-11-21T10:49:04.341714+00:00",
+ "checked": "2026-11-21T10:57:07.473217+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60832,7 +60832,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Megan Wessenberg / Denys Strekalin — 101.32\n2. Irma Caldara / Riccardo Maglio — 90.77\n3. Hannah Herrera / Ivan Khobta — 86.93\n\nНачало: 13:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Megan Wessenberg / Denys Strekalin — 101.32\n2. Valentina Plazas / Maximiliano Fernandez — 93.11\n3. Irma Caldara / Riccardo Maglio — 90.77\n\nНачало: 13:15 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Irma Caldara / Riccardo Maglio",
@@ -60840,7 +60840,7 @@
      "time": "13:22",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "90.77"
     },
     {
@@ -60849,7 +60849,7 @@
      "time": "13:30",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "86.93"
     },
     {
@@ -60866,7 +60866,9 @@
      "nation": "USA",
      "time": "13:46",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "93.11"
     },
     {
      "name": "Audrey Shin / Spencer Akira Howe",
@@ -60924,15 +60926,15 @@
     },
     {
      "place": 2,
-     "name": "Irma Caldara / Riccardo Maglio",
-     "nation": "ITA",
-     "points": "90.77"
+     "name": "Valentina Plazas / Maximiliano Fernandez",
+     "nation": "USA",
+     "points": "93.11"
     },
     {
      "place": 3,
-     "name": "Hannah Herrera / Ivan Khobta",
-     "nation": "UKR",
-     "points": "86.93"
+     "name": "Irma Caldara / Riccardo Maglio",
+     "nation": "ITA",
+     "points": "90.77"
     }
    ],
    "provisional": true
@@ -104846,5 +104848,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "d4bf7e009e38d7fb"
+ "rev": "d1257b54c72e5432"
 }
