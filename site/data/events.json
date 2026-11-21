@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T15:01:45+03:00",
- "checked": "2026-11-21T13:01:29.461997+00:00",
+ "checked": "2026-11-21T13:05:29.558080+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60360,14 +60360,18 @@
      "no": 37,
      "warmup": 7,
      "place": 1,
-     "points": "146.09"
+     "points": "146.09",
+     "final": 1
     },
     {
      "name": "Софья Смагина",
      "nation": "МОС",
      "time": "15:39",
      "no": 38,
-     "warmup": 7
+     "warmup": 7,
+     "place": 2,
+     "points": "133.66",
+     "final": 2
     }
    ],
    "athletes": [
@@ -60426,36 +60430,38 @@
     },
     {
      "place": 2,
-     "name": "Риана Ганиева",
-     "nation": "ТАТ",
-     "points": "131.24"
+     "name": "Софья Смагина",
+     "nation": "МОС",
+     "points": "133.66"
     },
     {
      "place": 3,
-     "name": "Аделина Камалова",
+     "name": "Риана Ганиева",
      "nation": "ТАТ",
-     "points": "127.41"
+     "points": "131.24"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Виктория Стрельцова — 146.09\n2. Риана Ганиева — 131.24\n3. Аделина Камалова — 127.41\n\nРоссияне:\n• Виктория Стрельцова — 15:34\n• Софья Смагина — 15:39\n\nНачало: 11:00 МСК\nТрансляция: VK Видео",
+   "desc": "Итог:\n1. Виктория Стрельцова — 146.09\n2. Софья Смагина — 133.66\n3. Риана Ганиева — 131.24\n\nИтог турнира:\n1. Виктория Стрельцова — 218.25\n2. Софья Смагина — 207.45\n3. Риана Ганиева — 201.34\n\nРоссияне:\n• Виктория Стрельцова — 15:34\n• Софья Смагина — 15:39\n\nНачало: 11:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Авелина Бердоносова",
      "nation": "ПРМ",
-     "place": 25,
+     "place": 26,
      "points": "90.96",
      "time": "12:26",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "final": 25
     },
     {
      "name": "Агния Хазова",
      "nation": "ТВЕ",
-     "place": 21,
+     "place": 22,
      "points": "100.30",
      "time": "14:00",
      "no": 25,
-     "warmup": 5
+     "warmup": 5,
+     "final": 20
     },
     {
      "name": "Аделина Камалова",
@@ -60463,35 +60469,39 @@
      "time": "15:23",
      "no": 35,
      "warmup": 7,
-     "place": 3,
-     "points": "127.41"
+     "place": 4,
+     "points": "127.41",
+     "final": 4
     },
     {
      "name": "Аделина Усманова",
      "nation": "ТАТ",
-     "place": 12,
+     "place": 13,
      "points": "110.83",
      "time": "14:33",
      "no": 27,
-     "warmup": 6
+     "warmup": 6,
+     "final": 12
     },
     {
      "name": "Александра Анушова",
      "nation": "МОБ",
-     "place": 19,
+     "place": 20,
      "points": "102.08",
      "time": "13:39",
      "no": 21,
-     "warmup": 5
+     "warmup": 5,
+     "final": 21
     },
     {
      "name": "Александра Гришина",
      "nation": "СВЕ",
-     "place": 13,
+     "place": 14,
      "points": "108.51",
      "time": "13:26",
      "no": 20,
-     "warmup": 4
+     "warmup": 4,
+     "final": 16
     },
     {
      "name": "Анастасия Выровая",
@@ -60499,62 +60509,69 @@
      "time": "15:13",
      "no": 33,
      "warmup": 7,
-     "place": 4,
-     "points": "123.50"
+     "place": 5,
+     "points": "123.50",
+     "final": 5
     },
     {
      "name": "Анастасия Кондык",
      "nation": "ЧУВ",
-     "place": 16,
+     "place": 17,
      "points": "107.71",
      "time": "13:44",
      "no": 22,
-     "warmup": 5
+     "warmup": 5,
+     "final": 17
     },
     {
      "name": "Арина Теслина",
      "nation": "ВЛГ",
-     "place": 35,
+     "place": 36,
      "points": "69.03",
      "time": "11:23",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 37
     },
     {
      "name": "Арина Чернобавская",
      "nation": "ИВА",
-     "place": 36,
+     "place": 37,
      "points": "67.36",
      "time": "11:52",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "final": 36
     },
     {
      "name": "Валерия Иорданова",
      "nation": "СМО",
-     "place": 15,
+     "place": 16,
      "points": "107.75",
      "time": "13:05",
      "no": 16,
-     "warmup": 4
+     "warmup": 4,
+     "final": 18
     },
     {
      "name": "Вероника Пенькова",
      "nation": "ЯРО",
-     "place": 9,
+     "place": 10,
      "points": "115.04",
      "time": "13:49",
      "no": 23,
-     "warmup": 5
+     "warmup": 5,
+     "final": 10
     },
     {
      "name": "Вероника Шиленкова",
      "nation": "МРД",
-     "place": 33,
+     "place": 34,
      "points": "78.05",
      "time": "11:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 35
     },
     {
      "name": "Виктория Стрельцова",
@@ -60563,25 +60580,28 @@
      "no": 37,
      "warmup": 7,
      "place": 1,
-     "points": "146.09"
+     "points": "146.09",
+     "final": 1
     },
     {
      "name": "Дана Титова",
      "nation": "ТУЛ",
-     "place": 24,
+     "place": 25,
      "points": "90.96",
      "time": "11:41",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "final": 28
     },
     {
      "name": "Дарья Хришкова",
      "nation": "ЛИП",
-     "place": 29,
+     "place": 30,
      "points": "82.69",
      "time": "12:21",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "final": 29
     },
     {
      "name": "Дарья Царькова",
@@ -60589,35 +60609,39 @@
      "time": "14:55",
      "no": 31,
      "warmup": 6,
-     "place": 5,
-     "points": "121.31"
+     "place": 6,
+     "points": "121.31",
+     "final": 7
     },
     {
      "name": "Екатерина Смирнова",
      "nation": "КОС",
-     "place": 26,
+     "place": 27,
      "points": "89.10",
      "time": "12:15",
      "no": 11,
-     "warmup": 3
+     "warmup": 3,
+     "final": 27
     },
     {
      "name": "Кира Васильева",
      "nation": "КИР",
-     "place": 32,
+     "place": 33,
      "points": "78.38",
      "time": "11:47",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "final": 33
     },
     {
      "name": "Кира Кузнецова",
      "nation": "ТАТ",
-     "place": 8,
+     "place": 9,
      "points": "117.96",
      "time": "14:05",
      "no": 26,
-     "warmup": 5
+     "warmup": 5,
+     "final": 9
     },
     {
      "name": "Ксения Бородина",
@@ -60625,35 +60649,39 @@
      "time": "14:49",
      "no": 30,
      "warmup": 6,
-     "place": 17,
-     "points": "107.48"
+     "place": 18,
+     "points": "107.48",
+     "final": 14
     },
     {
      "name": "Мадина Абзипарова",
      "nation": "ТАТ",
-     "place": 23,
+     "place": 24,
      "points": "90.96",
      "time": "12:31",
      "no": 14,
-     "warmup": 3
+     "warmup": 3,
+     "final": 24
     },
     {
      "name": "Маргарита Игонова",
      "nation": "ТАТ",
-     "place": 14,
+     "place": 15,
      "points": "107.95",
      "time": "13:55",
      "no": 24,
-     "warmup": 5
+     "warmup": 5,
+     "final": 15
     },
     {
      "name": "Маргарита Котенева",
      "nation": "МАР",
-     "place": 37,
+     "place": 38,
      "points": "67.03",
      "time": "11:18",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 38
     },
     {
      "name": "Мария Жукова",
@@ -60661,26 +60689,29 @@
      "time": "15:18",
      "no": 34,
      "warmup": 7,
-     "place": 6,
-     "points": "120.54"
+     "place": 7,
+     "points": "120.54",
+     "final": 6
     },
     {
      "name": "Мария Лагутченко",
      "nation": "ТАТ",
-     "place": 18,
+     "place": 19,
      "points": "107.17",
      "time": "12:37",
      "no": 15,
-     "warmup": 3
+     "warmup": 3,
+     "final": 19
     },
     {
      "name": "Марьям Зялалова",
      "nation": "ТАТ",
-     "place": 11,
+     "place": 12,
      "points": "110.95",
      "time": "14:44",
      "no": 29,
-     "warmup": 6
+     "warmup": 6,
+     "final": 11
     },
     {
      "name": "Милада Кожевникова",
@@ -60688,26 +60719,29 @@
      "time": "15:00",
      "no": 32,
      "warmup": 6,
-     "place": 7,
-     "points": "118.12"
+     "place": 8,
+     "points": "118.12",
+     "final": 8
     },
     {
      "name": "Милана Ишкина",
      "nation": "САМ",
-     "place": 22,
+     "place": 23,
      "points": "97.78",
      "time": "14:39",
      "no": 28,
-     "warmup": 6
+     "warmup": 6,
+     "final": 22
     },
     {
      "name": "Полина Шишкина",
      "nation": "ВЛД",
-     "place": 34,
+     "place": 35,
      "points": "77.08",
      "time": "12:03",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "final": 31
     },
     {
      "name": "Риана Ганиева",
@@ -60715,72 +60749,81 @@
      "time": "15:29",
      "no": 36,
      "warmup": 7,
-     "place": 2,
-     "points": "131.24"
+     "place": 3,
+     "points": "131.24",
+     "final": 3
     },
     {
      "name": "Сабина Киселева",
      "nation": "ПЕН",
-     "place": 31,
+     "place": 32,
      "points": "81.08",
      "time": "11:12",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 34
     },
     {
      "name": "София Нуреева",
      "nation": "ЧЕЛ",
-     "place": 27,
+     "place": 28,
      "points": "85.25",
      "time": "11:57",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "final": 30
     },
     {
      "name": "София Самуйлик",
      "nation": "СТА",
-     "place": 30,
+     "place": 31,
      "points": "82.23",
      "time": "11:28",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "final": 32
     },
     {
      "name": "Софья Смагина",
      "nation": "МОС",
      "time": "15:39",
      "no": 38,
-     "warmup": 7
+     "warmup": 7,
+     "place": 2,
+     "points": "133.66",
+     "final": 2
     },
     {
      "name": "Эмилия Марданова",
      "nation": "ТАТ",
-     "place": 20,
+     "place": 21,
      "points": "101.56",
      "time": "13:21",
      "no": 19,
-     "warmup": 4
+     "warmup": 4,
+     "final": 23
     },
     {
      "name": "Ярослава Баринова",
      "nation": "ТАТ",
-     "place": 10,
+     "place": 11,
      "points": "113.81",
      "time": "13:15",
      "no": 18,
-     "warmup": 4
+     "warmup": 4,
+     "final": 13
     },
     {
      "name": "Ярослава Быстрова",
      "nation": "ОМС",
-     "place": 28,
+     "place": 29,
      "points": "84.62",
      "time": "13:10",
      "no": 17,
-     "warmup": 4
+     "warmup": 4,
+     "final": 26
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/idel_2026/index.htm",
     "seg": "https://fsrussia.ru/results/2627/idel_2026/SEG008.htm",
@@ -60826,9 +60869,29 @@
      "Виктория СТРЕЛЬЦОВА": "Виктория Стрельцова",
      "Софья СМАГИНА": "Софья Смагина"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Виктория Стрельцова",
+     "nation": "МОС",
+     "points": "218.25"
+    },
+    {
+     "place": 2,
+     "name": "Софья Смагина",
+     "nation": "МОС",
+     "points": "207.45"
+    },
+    {
+     "place": 3,
+     "name": "Риана Ганиева",
+     "nation": "ТАТ",
+     "points": "201.34"
+    }
+   ]
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:pairs-senior-pp",
@@ -61249,7 +61312,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Angelina Cucherat / Leopold Dacquin — 46.88\n\nНачало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Angelina Cucherat / Leopold Dacquin — 46.88\n2. Lena Zerinvary-simon / Huba Gallai — 41.44\n\nНачало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Aletta Lanyi / Ilya Laurenau",
@@ -61272,7 +61335,9 @@
      "nation": "HUN",
      "time": "16:02",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "41.44"
     },
     {
      "name": "Eleonore Gabet / Raphael Duclusaud",
@@ -61398,6 +61463,12 @@
      "name": "Angelina Cucherat / Leopold Dacquin",
      "nation": "FRA",
      "points": "46.88"
+    },
+    {
+     "place": 2,
+     "name": "Lena Zerinvary-simon / Huba Gallai",
+     "nation": "HUN",
+     "points": "41.44"
     }
    ],
    "provisional": true
@@ -105065,5 +105136,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "cca0623a88b9c678"
+ "rev": "afc71a91bf19e9db"
 }
