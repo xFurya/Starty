@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T10:45:45+03:00",
- "checked": "2026-11-21T10:45:45+03:00",
+ "checked": "2026-11-21T08:17:04.787793+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60415,14 +60415,16 @@
      "url": "https://vkvideo.ru/live-38558219_456239878"
     }
    ],
-   "desc": "Россияне:\n• Виктория Стрельцова — 15:34\n• Софья Смагина — 15:39\n\nНачало: 11:00 МСК\nТрансляция: VK Видео",
+   "desc": "Промежуточные итоги:\n1. Вероника Шиленкова — 78.05\n\nРоссияне:\n• Виктория Стрельцова — 15:34\n• Софья Смагина — 15:39\n\nНачало: 11:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Вероника Шиленкова",
      "nation": "МРД",
      "time": "11:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "78.05"
     },
     {
      "name": "Сабина Киселева",
@@ -60731,7 +60733,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Вероника Шиленкова",
+     "nation": "МРД",
+     "points": "78.05"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:pairs-senior-pp",
@@ -104758,5 +104769,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "ca3bb5a63313d737"
+ "rev": "b54f3e10fdff38d3"
 }
