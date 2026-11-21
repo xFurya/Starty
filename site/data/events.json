@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T21:19:23+03:00",
- "checked": "2026-11-21T19:30:13.233915+00:00",
+ "checked": "2026-11-21T19:34:14.538058+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62911,7 +62911,7 @@
      "time": "21:07",
      "no": 1,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "50.36"
     },
     {
@@ -62920,7 +62920,7 @@
      "time": "21:12",
      "no": 2,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "48.57"
     },
     {
@@ -62947,7 +62947,7 @@
      "time": "21:25",
      "no": 5,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "49.95"
     },
     {
@@ -62982,7 +62982,9 @@
      "nation": "РОС",
      "time": "21:51",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6,
+     "points": "60.71"
     },
     {
      "name": "Андрей Шилин",
@@ -105639,5 +105641,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "9807a73e2383cae9"
+ "rev": "b76bfa9b683750d1"
 }
