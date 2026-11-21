@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T17:46:19+03:00",
- "checked": "2026-11-21T15:41:29.225101+00:00",
+ "checked": "2026-11-21T15:45:28.584998+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61888,7 +61888,7 @@
      "url": "https://www.youtube.com/watch?v=3lVqLrXDbd0"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Adam Siao Him Fa — 158.91\n2. Kyrylo Marsak — 147.95\n\nНачало: 18:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Adam Siao Him Fa — 158.91\n2. Kyrylo Marsak — 147.95\n3. Genrikh Gartung — 139.45\n\nНачало: 18:15 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Adam Siao Him Fa",
@@ -61913,7 +61913,9 @@
      "nation": "GER",
      "time": "18:38",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3,
+     "points": "139.45"
     },
     {
      "name": "Tamir Kuperman",
@@ -62013,6 +62015,12 @@
      "name": "Kyrylo Marsak",
      "nation": "UKR",
      "points": "147.95"
+    },
+    {
+     "place": 3,
+     "name": "Genrikh Gartung",
+     "nation": "GER",
+     "points": "139.45"
     }
    ],
    "provisional": true
@@ -105337,5 +105345,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "6f9920b5a5ca2807"
+ "rev": "f8c3abfab151c6f3"
 }
