@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T12:53:52+03:00",
- "checked": "2026-11-21T10:37:05.325793+00:00",
+ "checked": "2026-11-21T10:41:04.762628+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60828,7 +60828,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Irma Caldara / Riccardo Maglio — 90.77\n\nНачало: 13:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Irma Caldara / Riccardo Maglio — 90.77\n2. Hannah Herrera / Ivan Khobta — 86.93\n\nНачало: 13:15 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Irma Caldara / Riccardo Maglio",
@@ -60844,7 +60844,9 @@
      "nation": "UKR",
      "time": "13:30",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "86.93"
     },
     {
      "name": "Megan Wessenberg / Denys Strekalin",
@@ -60913,6 +60915,12 @@
      "name": "Irma Caldara / Riccardo Maglio",
      "nation": "ITA",
      "points": "90.77"
+    },
+    {
+     "place": 2,
+     "name": "Hannah Herrera / Ivan Khobta",
+     "nation": "UKR",
+     "points": "86.93"
     }
    ],
    "provisional": true
@@ -104826,5 +104834,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "d9418b10ea2f9339"
+ "rev": "5e8c9d4bc64d9b5e"
 }
