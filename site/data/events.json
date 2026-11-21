@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T15:01:45+03:00",
- "checked": "2026-11-21T12:53:04.529197+00:00",
+ "checked": "2026-11-21T12:57:04.588476+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61060,7 +61060,7 @@
      "url": "https://www.youtube.com/watch?v=3lVqLrXDbd0"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Anna Pezzetta — 118.94\n2. Rion Sumiyoshi — 115.81\n3. Rinka Watanabe — 112.12\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Iida Karhunen — 120.23\n2. Anna Pezzetta — 118.94\n3. Rion Sumiyoshi — 115.81\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Anna Pezzetta",
@@ -61068,7 +61068,7 @@
      "time": "15:23",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "118.94"
     },
     {
@@ -61083,7 +61083,9 @@
      "nation": "FIN",
      "time": "15:46",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "120.23"
     },
     {
      "name": "Isabeau Levito",
@@ -61098,7 +61100,7 @@
      "time": "15:30",
      "no": 4,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "96.66"
     },
     {
@@ -61114,7 +61116,7 @@
      "time": "15:07",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "96.36"
     },
     {
@@ -61130,7 +61132,7 @@
      "time": "15:15",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "112.12"
     },
     {
@@ -61139,7 +61141,7 @@
      "time": "15:38",
      "no": 5,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "115.81"
     },
     {
@@ -61182,21 +61184,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Iida Karhunen",
+     "nation": "FIN",
+     "points": "120.23"
+    },
+    {
+     "place": 2,
      "name": "Anna Pezzetta",
      "nation": "ITA",
      "points": "118.94"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Rion Sumiyoshi",
      "nation": "JPN",
      "points": "115.81"
-    },
-    {
-     "place": 3,
-     "name": "Rinka Watanabe",
-     "nation": "JPN",
-     "points": "112.12"
     }
    ],
    "provisional": true
@@ -105048,5 +105050,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "87dec716cfae31dc"
+ "rev": "441aff8c065fe1a3"
 }
