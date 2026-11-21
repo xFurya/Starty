@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T21:19:23+03:00",
- "checked": "2026-11-21T18:49:30.007732+00:00",
+ "checked": "2026-11-21T18:54:14.334053+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62695,24 +62695,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Juulia Turkkila / Matthias Versluis",
+     "nation": "FIN",
+     "points": "113.30"
+    },
+    {
+     "place": 2,
      "name": "Oona Brown / Gage Brown",
      "nation": "USA",
      "points": "111.75"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Caroline Green / Michael Parsons",
      "nation": "USA",
      "points": "109.40"
-    },
-    {
-     "place": 3,
-     "name": "Marie-Jade Lauriault / Romain le Gac",
-     "nation": "CAN",
-     "points": "107.92"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Oona Brown / Gage Brown — 111.75\n2. Caroline Green / Michael Parsons — 109.40\n3. Marie-Jade Lauriault / Romain le Gac — 107.92\n\nНачало: 20:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Juulia Turkkila / Matthias Versluis — 113.30\n2. Oona Brown / Gage Brown — 111.75\n3. Caroline Green / Michael Parsons — 109.40\n\nНачало: 20:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Caroline Green / Michael Parsons",
@@ -62720,13 +62720,13 @@
      "time": "21:17",
      "no": 6,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "109.40"
     },
     {
      "name": "Emily Bratti / Ian Somerville",
      "nation": "USA",
-     "place": 7,
+     "place": 8,
      "points": "96.87",
      "time": "20:47",
      "no": 3,
@@ -62737,7 +62737,9 @@
      "nation": "FIN",
      "time": "21:41",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "113.30"
     },
     {
      "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
@@ -62749,7 +62751,7 @@
     {
      "name": "Marie-Jade Lauriault / Romain le Gac",
      "nation": "CAN",
-     "place": 3,
+     "place": 4,
      "points": "107.92",
      "time": "21:03",
      "no": 5,
@@ -62758,7 +62760,7 @@
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
-     "place": 6,
+     "place": 7,
      "points": "99.71",
      "time": "20:39",
      "no": 2,
@@ -62767,7 +62769,7 @@
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
      "nation": "SWE",
-     "place": 8,
+     "place": 9,
      "points": "93.17",
      "time": "20:31",
      "no": 1,
@@ -62779,7 +62781,7 @@
      "time": "21:33",
      "no": 8,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "101.93"
     },
     {
@@ -62788,13 +62790,13 @@
      "time": "21:25",
      "no": 7,
      "warmup": 2,
-     "place": 1,
+     "place": 2,
      "points": "111.75"
     },
     {
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN",
-     "place": 4,
+     "place": 5,
      "points": "106.34",
      "time": "20:55",
      "no": 4,
@@ -105576,5 +105578,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "34b27a4ea4c1dd83"
+ "rev": "94b30ec760737af8"
 }
