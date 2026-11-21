@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T16:10:09+03:00",
- "checked": "2026-11-21T16:10:09+03:00",
+ "checked": "2026-11-21T13:33:29.131167+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61153,23 +61153,23 @@
     },
     {
      "place": 2,
-     "name": "Iida Karhunen",
-     "nation": "FIN",
-     "points": "120.23"
+     "name": "Yuseong Kim",
+     "nation": "KOR",
+     "points": "136.48"
     },
     {
      "place": 3,
-     "name": "Anna Pezzetta",
-     "nation": "ITA",
-     "points": "118.94"
+     "name": "Haein Lee",
+     "nation": "KOR",
+     "points": "124.87"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Isabeau Levito — 140.17\n2. Iida Karhunen — 120.23\n3. Anna Pezzetta — 118.94\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Isabeau Levito — 140.17\n2. Yuseong Kim — 136.48\n3. Haein Lee — 124.87\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Anna Pezzetta",
      "nation": "ITA",
-     "place": 3,
+     "place": 5,
      "points": "118.94",
      "time": "15:23",
      "no": 3,
@@ -61187,7 +61187,7 @@
     {
      "name": "Iida Karhunen",
      "nation": "FIN",
-     "place": 2,
+     "place": 4,
      "points": "120.23",
      "time": "15:46",
      "no": 6,
@@ -61200,14 +61200,12 @@
      "points": "140.17",
      "time": "16:01",
      "no": 7,
-     "warmup": 2,
-     "place": 1,
-     "points": "140.17"
+     "warmup": 2
     },
     {
      "name": "Janna Jyrkinen",
      "nation": "FIN",
-     "place": 6,
+     "place": 9,
      "points": "96.66",
      "time": "15:30",
      "no": 4,
@@ -61223,7 +61221,7 @@
     {
      "name": "Minja Peltonen",
      "nation": "FIN",
-     "place": 7,
+     "place": 10,
      "points": "96.36",
      "time": "15:07",
      "no": 1,
@@ -61239,7 +61237,7 @@
     {
      "name": "Rinka Watanabe",
      "nation": "JPN",
-     "place": 5,
+     "place": 7,
      "points": "112.12",
      "time": "15:15",
      "no": 2,
@@ -61248,7 +61246,7 @@
     {
      "name": "Rion Sumiyoshi",
      "nation": "JPN",
-     "place": 4,
+     "place": 6,
      "points": "115.81",
      "time": "15:38",
      "no": 5,
@@ -61259,7 +61257,9 @@
      "nation": "KOR",
      "time": "16:24",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 8,
+     "points": "108.50"
     },
     {
      "name": "Yuseong Kim",
@@ -61339,31 +61339,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Lea Hienne / Louis Varescon",
+     "nation": "FRA",
+     "points": "58.81"
+    },
+    {
+     "place": 2,
      "name": "Eleonore Gabet / Raphael Duclusaud",
      "nation": "FRA",
      "points": "52.01"
     },
     {
-     "place": 2,
-     "name": "Angelina Cucherat / Leopold Dacquin",
-     "nation": "FRA",
-     "points": "46.88"
-    },
-    {
      "place": 3,
-     "name": "Lena Zerinvary-simon / Huba Gallai",
-     "nation": "HUN",
-     "points": "41.44"
+     "name": "Martina Lavazza / Raphael Raymond Meunier",
+     "nation": "ITA",
+     "points": "51.16"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Eleonore Gabet / Raphael Duclusaud — 52.01\n2. Angelina Cucherat / Leopold Dacquin — 46.88\n3. Lena Zerinvary-simon / Huba Gallai — 41.44\n\nНачало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Lea Hienne / Louis Varescon — 58.81\n2. Eleonore Gabet / Raphael Duclusaud — 52.01\n3. Martina Lavazza / Raphael Raymond Meunier — 51.16\n\nНачало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Angelina Cucherat / Leopold Dacquin",
      "nation": "FRA",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 4,
      "points": "46.88",
      "time": "15:56"
     },
@@ -61372,7 +61372,7 @@
      "nation": "HUN",
      "no": 3,
      "warmup": 1,
-     "place": 3,
+     "place": 5,
      "points": "41.44",
      "time": "16:02"
     },
@@ -61381,7 +61381,7 @@
      "nation": "FRA",
      "no": 4,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "52.01",
      "time": "16:09"
     },
@@ -61432,7 +61432,9 @@
      "nation": "FRA",
      "time": "16:20",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "58.81"
     },
     {
      "name": "Lumia Sassi / Aarne Savola",
@@ -61453,7 +61455,9 @@
      "nation": "ITA",
      "time": "16:26",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3,
+     "points": "51.16"
     },
     {
      "name": "Villo Mira Szilagyi / Istvan Jaracs",
@@ -105171,5 +105175,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "2036d7230c1d6d10"
+ "rev": "4e26acb6a79e5324"
 }
