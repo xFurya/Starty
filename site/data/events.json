@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T17:46:19+03:00",
- "checked": "2026-11-21T15:37:28.233102+00:00",
+ "checked": "2026-11-21T15:41:29.225101+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61626,29 +61626,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Лев Бобык",
+     "nation": "НИЖ",
+     "points": "133.56"
+    },
+    {
+     "place": 2,
      "name": "Кирилл Былинин",
      "nation": "ЧЕЛ",
      "points": "123.15"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Искандер Амиров",
      "nation": "ТАТ",
      "points": "122.90"
-    },
-    {
-     "place": 3,
-     "name": "Максим Галкин",
-     "nation": "СВЕ",
-     "points": "122.06"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Кирилл Былинин — 123.15\n2. Искандер Амиров — 122.90\n3. Максим Галкин — 122.06\n\nНачало: 16:00 МСК\nТрансляция: VK Видео",
+   "desc": "Промежуточные итоги:\n1. Лев Бобык — 133.56\n2. Кирилл Былинин — 123.15\n3. Искандер Амиров — 122.90\n\nНачало: 16:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Владимир Гудзенко",
      "nation": "КОС",
-     "place": 10,
+     "place": 11,
      "points": "105.09",
      "time": "16:53",
      "no": 8,
@@ -61660,13 +61660,13 @@
      "time": "18:07",
      "no": 16,
      "warmup": 4,
-     "place": 4,
+     "place": 5,
      "points": "121.90"
     },
     {
      "name": "Данил Золотарев",
      "nation": "ТАТ",
-     "place": 12,
+     "place": 13,
      "points": "97.49",
      "time": "16:18",
      "no": 3,
@@ -61675,7 +61675,7 @@
     {
      "name": "Денис Никитин",
      "nation": "УДМ",
-     "place": 17,
+     "place": 18,
      "points": "86.29",
      "time": "16:07",
      "no": 1,
@@ -61684,7 +61684,7 @@
     {
      "name": "Егор Никитин",
      "nation": "ИВА",
-     "place": 15,
+     "place": 16,
      "points": "90.37",
      "time": "16:48",
      "no": 7,
@@ -61696,7 +61696,7 @@
      "time": "17:38",
      "no": 12,
      "warmup": 3,
-     "place": 8,
+     "place": 9,
      "points": "109.60"
     },
     {
@@ -61705,7 +61705,7 @@
      "time": "18:13",
      "no": 17,
      "warmup": 4,
-     "place": 9,
+     "place": 10,
      "points": "108.40"
     },
     {
@@ -61721,13 +61721,13 @@
      "time": "17:43",
      "no": 13,
      "warmup": 3,
-     "place": 2,
+     "place": 3,
      "points": "122.90"
     },
     {
      "name": "Кирилл Былинин",
      "nation": "ЧЕЛ",
-     "place": 1,
+     "place": 2,
      "points": "123.15",
      "time": "16:37",
      "no": 5,
@@ -61738,7 +61738,9 @@
      "nation": "НИЖ",
      "time": "18:18",
      "no": 18,
-     "warmup": 4
+     "warmup": 4,
+     "place": 1,
+     "points": "133.56"
     },
     {
      "name": "Леонид Новожилов",
@@ -61746,13 +61748,13 @@
      "time": "17:49",
      "no": 14,
      "warmup": 3,
-     "place": 14,
+     "place": 15,
      "points": "95.35"
     },
     {
      "name": "Макар Ушаков",
      "nation": "ПРМ",
-     "place": 16,
+     "place": 17,
      "points": "87.14",
      "time": "16:13",
      "no": 2,
@@ -61761,7 +61763,7 @@
     {
      "name": "Максим Галкин",
      "nation": "СВЕ",
-     "place": 3,
+     "place": 4,
      "points": "122.06",
      "time": "17:27",
      "no": 10,
@@ -61770,7 +61772,7 @@
     {
      "name": "Марк Аникиенко",
      "nation": "ЧЕЛ",
-     "place": 13,
+     "place": 14,
      "points": "95.63",
      "time": "16:42",
      "no": 6,
@@ -61779,7 +61781,7 @@
     {
      "name": "Марк Титов",
      "nation": "ТАТ",
-     "place": 11,
+     "place": 12,
      "points": "101.27",
      "time": "16:24",
      "no": 4,
@@ -61788,7 +61790,7 @@
     {
      "name": "Михаил Голояд",
      "nation": "БЕЛ",
-     "place": 6,
+     "place": 7,
      "points": "111.80",
      "time": "17:32",
      "no": 11,
@@ -61797,7 +61799,7 @@
     {
      "name": "Роман Чирков",
      "nation": "ТВЕ",
-     "place": 7,
+     "place": 8,
      "points": "110.24",
      "time": "16:59",
      "no": 9,
@@ -61809,7 +61811,7 @@
      "time": "18:02",
      "no": 15,
      "warmup": 4,
-     "place": 5,
+     "place": 6,
      "points": "113.26"
     }
    ],
@@ -61886,7 +61888,7 @@
      "url": "https://www.youtube.com/watch?v=3lVqLrXDbd0"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Adam Siao Him Fa — 158.91\n\nНачало: 18:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Adam Siao Him Fa — 158.91\n2. Kyrylo Marsak — 147.95\n\nНачало: 18:15 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Adam Siao Him Fa",
@@ -61902,7 +61904,9 @@
      "nation": "UKR",
      "time": "18:30",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "147.95"
     },
     {
      "name": "Genrikh Gartung",
@@ -62003,6 +62007,12 @@
      "name": "Adam Siao Him Fa",
      "nation": "FRA",
      "points": "158.91"
+    },
+    {
+     "place": 2,
+     "name": "Kyrylo Marsak",
+     "nation": "UKR",
+     "points": "147.95"
     }
    ],
    "provisional": true
@@ -62048,7 +62058,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Holly Harris / Jason Chan — 74.17\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Holly Harris / Jason Chan — 74.17\n2. Chelsea Verhaegh / Sherim van Geffen — 60.38\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Holly Harris / Jason Chan",
@@ -62064,7 +62074,9 @@
      "nation": "NED",
      "time": "18:31",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "60.38"
     },
     {
      "name": "Arianna Sassi / Luca Morini",
@@ -62189,6 +62201,12 @@
      "name": "Holly Harris / Jason Chan",
      "nation": "AUS",
      "points": "74.17"
+    },
+    {
+     "place": 2,
+     "name": "Chelsea Verhaegh / Sherim van Geffen",
+     "nation": "NED",
+     "points": "60.38"
     }
    ],
    "provisional": true
@@ -105319,5 +105337,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "343d3a2f58f88bad"
+ "rev": "6f9920b5a5ca2807"
 }
