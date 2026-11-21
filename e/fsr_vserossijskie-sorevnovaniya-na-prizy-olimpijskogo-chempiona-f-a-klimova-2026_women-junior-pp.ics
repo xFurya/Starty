@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-kli
+ mova-2026:women-junior-pp@starty
+DTSTAMP:20261121T144619Z
+DTSTART;TZID=Europe/Moscow:20261119T140500
+DTEND;TZID=Europe/Moscow:20261119T165500
+SUMMARY:На призы Климова — девушки ПП
+DESCRIPTION:Итог:\n1. Мария Нардюжева — 119.96\n2. Ал
+ ена Болдырева — 113.05\n3. Арина Васильева —
+  112.09\n\nИтог турнира:\n1. Мария Нардюжева — 
+ 180.74\n2. Алена Болдырева — 178.47\n3. Арина Вас
+ ильева — 170.31\n\nНачало: 14:05 МСК
+LOCATION:ДC «Большой» (демонстрационная арен
+ а)\, Сириус
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-na-p
+ rizy-olimpijskogo-chempiona-f-a-klimova-2026:women-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:На призы Климова — девушки ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

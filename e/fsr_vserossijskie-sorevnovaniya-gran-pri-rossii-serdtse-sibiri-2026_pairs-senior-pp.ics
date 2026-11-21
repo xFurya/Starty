@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:pai
+ rs-senior-pp@starty
+DTSTAMP:20261121T144619Z
+DTSTART;TZID=Europe/Moscow:20261115T154500
+DTEND;TZID=Europe/Moscow:20261115T165500
+SUMMARY:Гран-при России «Сердце Сибири» — па
+ ры ПП
+DESCRIPTION:Итог:\n1. Таисия Щербинина / Артём Пе
+ тров — 127.92\n2. Юлия Артемьева / Алексей Бр
+ юханов — 119.78\n3. Анна Карпук / Илья Мироно
+ в — 118.67\n\nИтог турнира:\n1. Таисия Щербини
+ на / Артём Петров — 198.10\n2. Юлия Артемьева 
+ / Алексей Брюханов — 187.62\n3. Анна Карпук / 
+ Илья Миронов — 186.57\n\nНачало: 15:45 МСК\nТран
+ сляция: Первый канал / YouTube
+LOCATION:G-Drive Арена\, Омск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-serdtse-sibiri-2026:pairs-senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Гран-при России «Сердце Сибири» — 
+ пары ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

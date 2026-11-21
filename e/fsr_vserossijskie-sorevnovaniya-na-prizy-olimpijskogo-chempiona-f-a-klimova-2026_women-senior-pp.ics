@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-kli
+ mova-2026:women-senior-pp@starty
+DTSTAMP:20261121T144619Z
+DTSTART;TZID=Europe/Moscow:20261119T170500
+DTEND;TZID=Europe/Moscow:20261119T181000
+SUMMARY:На призы Климова — женщины ПП
+DESCRIPTION:Итог:\n1. Таисия Лепихина — 109.11\n2. Со
+ фия Ермолова — 107.54\n3. Софья Лукина — 99.63\n
+ \nИтог турнира:\n1. Таисия Лепихина — 171.38\n2
+ . София Ермолова — 165.84\n3. Софья Лукина — 1
+ 60.86\n\nНачало: 17:05 МСК
+LOCATION:ДC «Большой» (демонстрационная арен
+ а)\, Сириус
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-na-p
+ rizy-olimpijskogo-chempiona-f-a-klimova-2026:women-senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:На призы Климова — женщины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

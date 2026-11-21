@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-tallinn-trophy-2026:women-junior-pp@starty
+DTSTAMP:20261121T144619Z
+DTSTART;TZID=Europe/Moscow:20261118T114500
+DTEND;TZID=Europe/Moscow:20261118T165000
+SUMMARY:CS Tallinn Trophy — девушки ПП
+DESCRIPTION:Итог:\n1. Sofia Nekrassova — 110.83\n2. Oliviia Bazlova 
+ — 110.21\n3. Skylar Lautowa-peguero — 105.17\n\nИтог турнир
+ а:\n1. Sofia Nekrassova — 173.56\n2. Oliviia Bazlova — 164.43\n3. Sop
+ hie Erhardt — 161.43\n\nПримечательное:\n• Sofia Nekrass
+ ova — Личный рекорд по сумме: 173.56 (был 168.83)\
+ n• Sophie Erhardt — Личный рекорд по сумме: 161.43 
+ (был 149.59)\n\nНачало: 11:45 МСК\nТрансляция: Ice-S
+ tars.TV
+LOCATION:Tallinn\, Estonia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-tallinn-trophy-2026:women
+ -junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Tallinn Trophy — девушки ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

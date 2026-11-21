@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-gp-finlandia-trophy-2026:women-senior-kp@starty
+DTSTAMP:20261121T144619Z
+DTSTART;TZID=Europe/Moscow:20261120T163000
+DTEND;TZID=Europe/Moscow:20261120T180000
+SUMMARY:GP Finlandia Trophy — женщины КП
+DESCRIPTION:Итог:\n1. Mao Shimada — 79.06\n2. Niina Petrokina — 69.
+ 08\n3. Seoyoung Kim — 69.03\n\nПримечательное:\n• Mao Sh
+ imada — Тройной аксель\n• Seoyoung Kim — Личный 
+ рекорд за КП: 69.03 (был 68.75)\n• Yuseong Kim — Трой
+ ной аксель\n\nНачало: 16:30 МСК\nТрансляция: O
+ kko / YouTube ISU
+LOCATION:Helsinki\, Finland
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-finlandia-trophy-2026:wom
+ en-senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GP Finlandia Trophy — женщины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

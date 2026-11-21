@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-tallinn-trophy-2026:dance-senior-rt@starty
+DTSTAMP:20261121T144619Z
+DTSTART;TZID=Europe/Moscow:20261121T182000
+DTEND;TZID=Europe/Moscow:20261121T202400
+SUMMARY:CS Tallinn Trophy — танцы РТ
+DESCRIPTION:Промежуточные итоги:\n1. Holly Harris / Jason
+  Chan — 74.17\n2. Louise Bordet / Martin Chardain — 64.02\n3. Chelsea 
+ Verhaegh / Sherim van Geffen — 60.38\n\nНачало: 18:20 МСК\nТр
+ ансляция: Ice-Stars.TV
+LOCATION:Tallinn\, Estonia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-tallinn-trophy-2026:dance
+ -senior-rt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Tallinn Trophy — танцы РТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

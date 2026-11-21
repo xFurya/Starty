@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-tallinn-trophy-2026:women-senior-kp@starty
+DTSTAMP:20261121T144619Z
+DTSTART;TZID=Europe/Moscow:20261119T121500
+DTEND;TZID=Europe/Moscow:20261119T170000
+SUMMARY:CS Tallinn Trophy — женщины КП
+DESCRIPTION:Итог:\n1. Lara Naki Gutmann — 70.25\n2. Maria Eliise Kalj
+ uvere — 69.20\n3. Livia Kaiser — 63.87\n\nПримечательное
+ :\n• Maria Eliise Kaljuvere — Личный рекорд за КП: 69.
+ 20 (был 66.36)\n\nНачало: 12:15 МСК\nТрансляция: Ice
+ -Stars.TV
+LOCATION:Tallinn\, Estonia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-tallinn-trophy-2026:women
+ -senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Tallinn Trophy — женщины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

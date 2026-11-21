@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-kli
+ mova-2026:men-junior-pp@starty
+DTSTAMP:20261121T144619Z
+DTSTART;TZID=Europe/Moscow:20261119T123500
+DTEND;TZID=Europe/Moscow:20261119T140500
+SUMMARY:На призы Климова — юноши ПП
+DESCRIPTION:Итог:\n1. Глеб Дудченко — 135.06\n2. Паве
+ л Шин — 132.68\n3. Артём Кошутин — 121.15\n\nИтог 
+ турнира:\n1. Глеб Дудченко — 208.16\n2. Павел Ш
+ ин — 194.07\n3. Артём Кошутин — 184.83\n\nНачало: 
+ 12:35 МСК
+LOCATION:ДC «Большой» (демонстрационная арен
+ а)\, Сириус
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-na-p
+ rizy-olimpijskogo-chempiona-f-a-klimova-2026:men-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:На призы Климова — юноши ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

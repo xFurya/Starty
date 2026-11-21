@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-tallinn-trophy-2026:men-senior-pp@starty
+DTSTAMP:20261121T144619Z
+DTSTART;TZID=Europe/Moscow:20261119T192500
+DTEND;TZID=Europe/Moscow:20261119T225500
+SUMMARY:CS Tallinn Trophy — мужчины ПП
+DESCRIPTION:Итог:\n1. Anthony Paradis — 141.91\n2. Matteo Nalbone —
+  136.42\n3. Gabriele Frangipani — 134.23\n\nИтог турнира:\n1.
+  Gabriele Frangipani — 215.19\n2. Anthony Paradis — 214.33\n3. Hyungye
+ om Kim — 213.24\n\nПримечательное:\n• Anthony Paradis 
+ — Личный рекорд за ПП: 141.91 (был 130.42)\n• Matte
+ o Nalbone — Личный рекорд за ПП: 136.42 (был 123.67)\
+ n• Anthony Paradis — Личный рекорд по сумме: 214.33
+  (был 193.61)\n\nНачало: 19:25 МСК\nТрансляция: Ice-
+ Stars.TV
+LOCATION:Tallinn\, Estonia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-tallinn-trophy-2026:men-s
+ enior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Tallinn Trophy — мужчины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

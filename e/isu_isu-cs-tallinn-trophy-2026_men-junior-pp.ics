@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-tallinn-trophy-2026:men-junior-pp@starty
+DTSTAMP:20261121T144619Z
+DTSTART;TZID=Europe/Moscow:20261118T170000
+DTEND;TZID=Europe/Moscow:20261118T182000
+SUMMARY:CS Tallinn Trophy — юноши ПП
+DESCRIPTION:Итог:\n1. Ilya Nesterov — 128.07\n2. Sandro de Angelo —
+  109.88\n3. Anton Erkama — 106.94\n\nИтог турнира:\n1. Ilya N
+ esterov — 181.62\n2. Sandro de Angelo — 176.11\n3. Matteo Marchioni 
+ — 171.36\n\nПримечательное:\n• Matteo Marchioni — Ли
+ чный рекорд по сумме: 171.36 (был 167.49)\n• Ilya Ne
+ sterov — После короткой программы — 4-е мес
+ то\, в итоге — 1-е место\n\nНачало: 17:00 МСК\nТ
+ рансляция: Ice-Stars.TV
+LOCATION:Tallinn\, Estonia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-tallinn-trophy-2026:men-j
+ unior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Tallinn Trophy — юноши ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

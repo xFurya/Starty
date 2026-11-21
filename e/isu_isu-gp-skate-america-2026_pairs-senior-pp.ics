@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-gp-skate-america-2026:pairs-senior-pp@starty
+DTSTAMP:20261121T144619Z
+DTSTART;TZID=Europe/Moscow:20261115T073400
+DTEND;TZID=Europe/Moscow:20261115T085400
+SUMMARY:GP Skate America — пары ПП
+DESCRIPTION:Итог:\n1. Minerva Fabienne Hase / Nikita Volodin — 128.08
+ \n2. Alisa Efimova / Misha Mitrofanov — 119.94\n3. Katie McBEATH / Balaz
+ s Nagy — 119.51\n\nИтог турнира:\n1. Minerva Fabienne Hase / 
+ Nikita Volodin — 200.79\n2. Alisa Efimova / Misha Mitrofanov — 191.79\
+ n3. Katie McBEATH / Balazs Nagy — 187.13\n\nПримечательное
+ :\n• Katie McBEATH / Balazs Nagy — Личный рекорд за ПП
+ : 119.51 (был 113.78)\n• Katie McBEATH / Balazs Nagy — Личный
+  рекорд по сумме: 187.13 (был 180.95)\n\nНачало: 07:
+ 34 МСК\nТрансляция: Okko / YouTube ISU
+LOCATION:Everett\, USA
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-skate-america-2026:pairs-
+ senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GP Skate America — пары ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
