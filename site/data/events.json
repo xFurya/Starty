@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T18:50:12+03:00",
- "checked": "2026-11-21T16:49:28.989972+00:00",
+ "checked": "2026-11-21T16:53:30.790117+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62358,7 +62358,7 @@
      "time": "18:52",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "51.78"
     },
     {
@@ -62367,7 +62367,7 @@
      "time": "18:56",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "54.66"
     },
     {
@@ -62385,7 +62385,7 @@
      "time": "19:05",
      "no": 4,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "41.12"
     },
     {
@@ -62403,7 +62403,7 @@
      "time": "19:20",
      "no": 6,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "51.34"
     },
     {
@@ -62420,7 +62420,9 @@
      "nation": "МОС",
      "time": "19:29",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "61.90"
     },
     {
      "name": "Софья Рудь",
@@ -105419,5 +105421,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "6232d1c626f7bb79"
+ "rev": "42300bfd4ce64467"
 }
