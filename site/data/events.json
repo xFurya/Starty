@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T21:19:23+03:00",
- "checked": "2026-11-21T18:58:14.364480+00:00",
+ "checked": "2026-11-21T19:02:14.114658+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62695,24 +62695,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "nation": "FRA",
+     "points": "127.13"
+    },
+    {
+     "place": 2,
      "name": "Juulia Turkkila / Matthias Versluis",
      "nation": "FIN",
      "points": "113.30"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Oona Brown / Gage Brown",
      "nation": "USA",
      "points": "111.75"
-    },
-    {
-     "place": 3,
-     "name": "Caroline Green / Michael Parsons",
-     "nation": "USA",
-     "points": "109.40"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Juulia Turkkila / Matthias Versluis — 113.30\n2. Oona Brown / Gage Brown — 111.75\n3. Caroline Green / Michael Parsons — 109.40\n\nНачало: 20:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Laurence Fournier Beaudry / Guillaume Cizeron — 127.13\n2. Juulia Turkkila / Matthias Versluis — 113.30\n3. Oona Brown / Gage Brown — 111.75\n\nИтог турнира:\n1. Laurence Fournier Beaudry / Guillaume Cizeron — 212.91\n2. Juulia Turkkila / Matthias Versluis — 190.88\n3. Oona Brown / Gage Brown — 187.97\n\nПримечательное:\n• Laurence Fournier Beaudry / Guillaume Cizeron — Лучшая в мире сумма сезона: 212.91\n• Laurence Fournier Beaudry / Guillaume Cizeron — Отрыв от второго места — 22.03 балла\n\nНачало: 20:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Caroline Green / Michael Parsons",
@@ -62720,17 +62720,19 @@
      "time": "21:17",
      "no": 6,
      "warmup": 2,
-     "place": 3,
-     "points": "109.40"
+     "place": 4,
+     "points": "109.40",
+     "final": 4
     },
     {
      "name": "Emily Bratti / Ian Somerville",
      "nation": "USA",
-     "place": 8,
+     "place": 9,
      "points": "96.87",
      "time": "20:47",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 9
     },
     {
      "name": "Juulia Turkkila / Matthias Versluis",
@@ -62738,42 +62740,49 @@
      "time": "21:41",
      "no": 9,
      "warmup": 2,
-     "place": 1,
-     "points": "113.30"
+     "place": 2,
+     "points": "113.30",
+     "final": 2
     },
     {
      "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
      "nation": "FRA",
      "time": "21:49",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "127.13",
+     "final": 1
     },
     {
      "name": "Marie-Jade Lauriault / Romain le Gac",
      "nation": "CAN",
-     "place": 4,
+     "place": 5,
      "points": "107.92",
      "time": "21:03",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "final": 5
     },
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
-     "place": 7,
+     "place": 8,
      "points": "99.71",
      "time": "20:39",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 8
     },
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
      "nation": "SWE",
-     "place": 9,
+     "place": 10,
      "points": "93.17",
      "time": "20:31",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 10
     },
     {
      "name": "Natalie Taschlerova / Filip Taschler",
@@ -62781,8 +62790,9 @@
      "time": "21:33",
      "no": 8,
      "warmup": 2,
-     "place": 6,
-     "points": "101.93"
+     "place": 7,
+     "points": "101.93",
+     "final": 6
     },
     {
      "name": "Oona Brown / Gage Brown",
@@ -62790,20 +62800,21 @@
      "time": "21:25",
      "no": 7,
      "warmup": 2,
-     "place": 2,
-     "points": "111.75"
+     "place": 3,
+     "points": "111.75",
+     "final": 3
     },
     {
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN",
-     "place": 5,
+     "place": 6,
      "points": "106.34",
      "time": "20:55",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 7
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG008.htm",
@@ -62821,9 +62832,41 @@
      "Juulia TURKKILA / Matthias VERSLUIS": "Juulia Turkkila / Matthias Versluis",
      "Laurence FOURNIER BEAUDRY / Guillaume CIZERON": "Laurence Fournier Beaudry / Guillaume Cizeron"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "nation": "FRA",
+     "points": "212.91"
+    },
+    {
+     "place": 2,
+     "name": "Juulia Turkkila / Matthias Versluis",
+     "nation": "FIN",
+     "points": "190.88"
+    },
+    {
+     "place": 3,
+     "name": "Oona Brown / Gage Brown",
+     "nation": "USA",
+     "points": "187.97"
+    }
+   ],
+   "facts": [
+    {
+     "who": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "text": "Лучшая в мире сумма сезона: 212.91",
+     "kind": "score"
+    },
+    {
+     "who": "Laurence Fournier Beaudry / Guillaume Cizeron",
+     "text": "Отрыв от второго места — 22.03 балла",
+     "kind": "place"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:men-senior-kp",
@@ -62860,7 +62903,7 @@
      "url": "https://vkvideo.ru/live-38558219_456239878"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Константин Сафонов — 73.73\n2. Станислав Гунтасов — 50.36\n3. Василий Пономарев — 48.57\n\nНачало: 21:00 МСК\nТрансляция: VK Видео",
+   "desc": "Промежуточные итоги:\n1. Константин Сафонов — 73.73\n2. Владислав Дворников — 73.70\n3. Станислав Гунтасов — 50.36\n\nНачало: 21:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Станислав Гунтасов",
@@ -62868,7 +62911,7 @@
      "time": "21:07",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "50.36"
     },
     {
@@ -62877,7 +62920,7 @@
      "time": "21:12",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "48.57"
     },
     {
@@ -62894,7 +62937,9 @@
      "nation": "МОБ",
      "time": "21:21",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "73.70"
     },
     {
      "name": "Юрий Сидоров",
@@ -62968,15 +63013,15 @@
     },
     {
      "place": 2,
-     "name": "Станислав Гунтасов",
-     "nation": "НИЖ",
-     "points": "50.36"
+     "name": "Владислав Дворников",
+     "nation": "МОБ",
+     "points": "73.70"
     },
     {
      "place": 3,
-     "name": "Василий Пономарев",
-     "nation": "СВЕ",
-     "points": "48.57"
+     "name": "Станислав Гунтасов",
+     "nation": "НИЖ",
+     "points": "50.36"
     }
    ],
    "provisional": true
@@ -105586,5 +105631,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "c47954e160193493"
+ "rev": "2040723d812ee62d"
 }
