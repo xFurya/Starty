@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T18:50:12+03:00",
- "checked": "2026-11-21T16:53:30.790117+00:00",
+ "checked": "2026-11-21T16:57:29.413573+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62073,7 +62073,9 @@
      "nation": "CHN",
      "time": "19:47",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 11,
+     "points": "118.16"
     }
    ],
    "provisional": true,
@@ -105421,5 +105423,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "42300bfd4ce64467"
+ "rev": "0250308b2aff3aad"
 }
