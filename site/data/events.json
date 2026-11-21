@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T19:54:17+03:00",
- "checked": "2026-11-21T17:49:28.557710+00:00",
+ "checked": "2026-11-21T17:57:31.139544+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62668,7 +62668,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Marjorie Lajoie / Jean-Luc Baker — 99.71\n2. Milla Ruud Reitan / Nikolaj Majorov — 93.17\n\nНачало: 20:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Marjorie Lajoie / Jean-Luc Baker — 99.71\n2. Emily Bratti / Ian Somerville — 96.87\n3. Milla Ruud Reitan / Nikolaj Majorov — 93.17\n\nНачало: 20:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
@@ -62676,7 +62676,7 @@
      "time": "20:31",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "93.17"
     },
     {
@@ -62693,7 +62693,9 @@
      "nation": "USA",
      "time": "20:47",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "96.87"
     },
     {
      "name": "Yuka Orihara / Juho Pirinen",
@@ -62774,6 +62776,12 @@
     },
     {
      "place": 2,
+     "name": "Emily Bratti / Ian Somerville",
+     "nation": "USA",
+     "points": "96.87"
+    },
+    {
+     "place": 3,
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
      "nation": "SWE",
      "points": "93.17"
@@ -105507,5 +105515,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "11659214090f63aa"
+ "rev": "42a00f38ed735842"
 }
