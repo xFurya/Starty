@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T16:42:40+03:00",
- "checked": "2026-11-21T14:05:29.190146+00:00",
+ "checked": "2026-11-21T14:13:28.759790+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61419,7 +61419,7 @@
      "nation": "HUN",
      "no": 3,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "41.44",
      "time": "16:02"
     },
@@ -61464,7 +61464,7 @@
      "nation": "CZE",
      "no": 8,
      "warmup": 10,
-     "place": 6,
+     "place": 7,
      "points": "45.75",
      "time": "16:39"
     },
@@ -61480,7 +61480,9 @@
      "nation": "GBR",
      "time": "17:05",
      "no": 9,
-     "warmup": 3
+     "warmup": 3,
+     "place": 6,
+     "points": "45.81"
     },
     {
      "name": "Diane Gallix / Elod Egyed-zsigmond",
@@ -61644,7 +61646,7 @@
     {
      "name": "Денис Никитин",
      "nation": "УДМ",
-     "place": 6,
+     "place": 7,
      "points": "86.29",
      "time": "16:07",
      "no": 1,
@@ -61655,7 +61657,9 @@
      "nation": "ИВА",
      "time": "16:48",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "90.37"
     },
     {
      "name": "Иван Теленков",
@@ -61711,7 +61715,7 @@
     {
      "name": "Макар Ушаков",
      "nation": "ПРМ",
-     "place": 5,
+     "place": 6,
      "points": "87.14",
      "time": "16:13",
      "no": 2,
@@ -105248,5 +105252,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "89bf10f672c4efe5"
+ "rev": "78ddc4c73a490bb1"
 }
