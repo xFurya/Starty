@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T16:42:40+03:00",
- "checked": "2026-11-21T14:57:28.515401+00:00",
+ "checked": "2026-11-21T15:01:28.449572+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61403,7 +61403,7 @@
      "points": "56.61"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Lea Hienne / Louis Varescon — 58.81\n2. Alexia Kruk / Jan Eisenhaber — 57.78\n3. Zoe Bianchi / Daniel Basile — 56.61\n\nНачало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Lea Hienne / Louis Varescon — 58.81\n2. Alexia Kruk / Jan Eisenhaber — 57.78\n3. Zoe Bianchi / Daniel Basile — 56.61\n\nНачало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Angelina Cucherat / Leopold Dacquin",
@@ -61419,7 +61419,7 @@
      "nation": "HUN",
      "no": 3,
      "warmup": 1,
-     "place": 12,
+     "place": 13,
      "points": "41.44",
      "time": "16:02"
     },
@@ -61491,7 +61491,9 @@
      "nation": "HUN",
      "time": "17:54",
      "no": 16,
-     "warmup": 4
+     "warmup": 4,
+     "place": 12,
+     "points": "44.98"
     },
     {
      "name": "Iris Lahti / Oskari Liedenpohja",
@@ -61508,7 +61510,7 @@
      "time": "17:41",
      "no": 14,
      "warmup": 4,
-     "place": 13,
+     "place": 14,
      "points": "34.23"
     },
     {
@@ -61537,7 +61539,6 @@
      "points": "56.61"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG015.htm",
@@ -61560,7 +61561,7 @@
      "Villo Mira SZILAGYI / Istvan JARACS": "Villo Mira Szilagyi / Istvan Jaracs",
      "Diane GALLIX / Elod EGYED-ZSIGMOND": "Diane Gallix / Elod Egyed-zsigmond"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
@@ -105272,5 +105273,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "6c011617fc1e6f55"
+ "rev": "c1f4f4b4725b70db"
 }
