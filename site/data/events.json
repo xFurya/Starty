@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T20:58:09+03:00",
- "checked": "2026-11-21T18:25:28.585787+00:00",
+ "checked": "2026-11-21T18:29:28.536861+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62693,36 +62693,38 @@
    "podium": [
     {
      "place": 1,
+     "name": "Caroline Green / Michael Parsons",
+     "nation": "USA",
+     "points": "109.40"
+    },
+    {
+     "place": 2,
      "name": "Marie-Jade Lauriault / Romain le Gac",
      "nation": "CAN",
      "points": "107.92"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN",
      "points": "106.34"
-    },
-    {
-     "place": 3,
-     "name": "Marjorie Lajoie / Jean-Luc Baker",
-     "nation": "CAN",
-     "points": "99.71"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Marie-Jade Lauriault / Romain le Gac — 107.92\n2. Yuka Orihara / Juho Pirinen — 106.34\n3. Marjorie Lajoie / Jean-Luc Baker — 99.71\n\nНачало: 20:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Caroline Green / Michael Parsons — 109.40\n2. Marie-Jade Lauriault / Romain le Gac — 107.92\n3. Yuka Orihara / Juho Pirinen — 106.34\n\nНачало: 20:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Caroline Green / Michael Parsons",
      "nation": "USA",
      "time": "21:17",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "109.40"
     },
     {
      "name": "Emily Bratti / Ian Somerville",
      "nation": "USA",
-     "place": 4,
+     "place": 5,
      "points": "96.87",
      "time": "20:47",
      "no": 3,
@@ -62748,13 +62750,13 @@
      "time": "21:03",
      "no": 5,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "107.92"
     },
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
-     "place": 3,
+     "place": 4,
      "points": "99.71",
      "time": "20:39",
      "no": 2,
@@ -62763,7 +62765,7 @@
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
      "nation": "SWE",
-     "place": 5,
+     "place": 6,
      "points": "93.17",
      "time": "20:31",
      "no": 1,
@@ -62786,7 +62788,7 @@
     {
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN",
-     "place": 2,
+     "place": 3,
      "points": "106.34",
      "time": "20:55",
      "no": 4,
@@ -105541,5 +105543,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "16dd59792b456b1e"
+ "rev": "bbf5db2a00eb4916"
 }
