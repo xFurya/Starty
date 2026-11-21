@@ -1,33 +1,11 @@
 {
- "version": "1.0.81",
- "code": 82,
- "notes": "Звёздочки больше не закрывают текст.",
- "at": "2026-11-19T10:29:27Z",
+ "version": "1.0.82",
+ "code": 83,
+ "notes": "Полнее статистика, точнее ссылки на эфир и порядок выступлений.",
+ "at": "2026-11-21T19:46:22Z",
  "android": {
-  "file": "starty-1.0.81.apk",
-  "size": 12877193,
-  "sha256": "03175b73d208503f0ab015fef0ca80b63dc468127c2d8b0e04816d7a98ba3e8e"
- },
- "windows": {
-  "code": 82,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.81/Starty-windows.zip",
-  "size": 14921070,
-  "sha256": "c07d90970141f97389371727f7f0c39f197b2d410874dd203195a58857b16814",
-  "setup": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.81/starty-setup-1.0.81.exe",
-   "size": 12971474,
-   "sha256": "4f0648c308c556fb3ae5bef567058a8447ecd74b40f5107686f49fcee7d24de2"
-  }
- },
- "macos": {
-  "code": 82,
-  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.81/Starty-macos.zip",
-  "size": 22851752,
-  "sha256": "dee616c3cf9bd68c2a3ae1886084556d8e2367fabb29a9bbeb31fea8091ca050",
-  "dmg": {
-   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.81/Starty-macos.dmg",
-   "size": 26061618,
-   "sha256": "df28e7858c234bec625c14c601c7b7eff9f51e818f36d9d63c136ba671346f59"
-  }
+  "file": "starty-1.0.82.apk",
+  "size": 12879729,
+  "sha256": "13997a1e1c9012a5a7c0a1726ad1f2d1372a65a161b87bc396db6e66aa46466f"
  }
 }
