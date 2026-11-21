@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-21T19:54:17+03:00",
- "checked": "2026-11-21T18:17:29.107573+00:00",
+ "generated": "2026-11-21T20:58:09+03:00",
+ "checked": "2026-11-21T20:58:09+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -55394,7 +55394,7 @@
      "points": "58.30"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Таисия Лепихина — 62.27\n2. Софья Лукина — 61.23\n3. София Ермолова — 58.30\n\nНачало: 16:05 МСК",
+   "desc": "Итог:\n1. Таисия Лепихина — 62.27\n2. Софья Лукина — 61.23\n3. София Ермолова — 58.30\n\nНачало: 16:05 МСК",
    "field": [
     {
      "name": "Таисия Лепихина",
@@ -55453,7 +55453,6 @@
      "points": "61.23"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
     "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG013.HTM",
@@ -56632,7 +56631,27 @@
      "points": "121.15"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Глеб Дудченко — 135.06\n2. Павел Шин — 132.68\n3. Артём Кошутин — 121.15\n\nИтог турнира:\n1. Глеб Дудченко — 208.16\n2. Павел Шин — 194.07\n3. Артём Кошутин — 184.83\n\nНачало: 12:35 МСК",
+   "total": [
+    {
+     "place": 1,
+     "name": "Глеб Дудченко",
+     "nation": "МОБ",
+     "points": "208.16"
+    },
+    {
+     "place": 2,
+     "name": "Павел Шин",
+     "nation": "МОС",
+     "points": "194.07"
+    },
+    {
+     "place": 3,
+     "name": "Артём Кошутин",
+     "nation": "ВЛГ",
+     "points": "184.83"
+    }
+   ],
+   "desc": "Итог:\n1. Глеб Дудченко — 135.06\n2. Павел Шин — 132.68\n3. Артём Кошутин — 121.15\n\nИтог турнира:\n1. Глеб Дудченко — 208.16\n2. Павел Шин — 194.07\n3. Артём Кошутин — 184.83\n\nНачало: 12:35 МСК",
    "field": [
     {
      "name": "Артем Шевнин",
@@ -56725,7 +56744,6 @@
      "final": 1
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/index.htm",
     "seg": "https://figureskatingresults.ru/F.A.Klimov-Trophy.17-19.11.2026/SEG010.HTM",
@@ -56745,26 +56763,6 @@
     },
     "basis": "judges"
    },
-   "total": [
-    {
-     "place": 1,
-     "name": "Глеб Дудченко",
-     "nation": "МОБ",
-     "points": "208.16"
-    },
-    {
-     "place": 2,
-     "name": "Павел Шин",
-     "nation": "МОС",
-     "points": "194.07"
-    },
-    {
-     "place": 3,
-     "name": "Артём Кошутин",
-     "nation": "ВЛГ",
-     "points": "184.83"
-    }
-   ],
    "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
   },
   {
@@ -57989,13 +57987,6 @@
     "Zhasmin Shlaga"
    ],
    "src": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
-   "watch": [
-    {
-     "name": "Ice-Stars.TV",
-     "url": "https://ice-stars.tv/tallinntrophy",
-     "note": "Платно"
-    }
-   ],
    "podium": [
     {
      "place": 1,
@@ -58431,6 +58422,13 @@
      "kind": "score",
      "text": "Личный рекорд по сумме: 179.91 (был 160.36)",
      "who": "Breken Brezden"
+    }
+   ],
+   "watch": [
+    {
+     "name": "Ice-Stars.TV",
+     "url": "https://ice-stars.tv/tallinntrophy",
+     "note": "Платно"
     }
    ],
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
@@ -59817,13 +59815,6 @@
     "Злата Камалова / Данил Панов"
    ],
    "src": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
-   "watch": [
-    {
-     "name": "Ice-Stars.TV",
-     "url": "https://ice-stars.tv/tallinntrophy",
-     "note": "Платно"
-    }
-   ],
    "podium": [
     {
      "place": 1,
@@ -59965,6 +59956,13 @@
      "who": "Leontina Horcickova / Jindrich Klement"
     }
    ],
+   "watch": [
+    {
+     "name": "Ice-Stars.TV",
+     "url": "https://ice-stars.tv/tallinntrophy",
+     "note": "Платно"
+    }
+   ],
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
@@ -59993,13 +59991,6 @@
     "Xuanyu Liu / Wenbao Han"
    ],
    "src": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
-   "watch": [
-    {
-     "name": "Ice-Stars.TV",
-     "url": "https://ice-stars.tv/tallinntrophy",
-     "note": "Платно"
-    }
-   ],
    "podium": [
     {
      "place": 1,
@@ -60154,6 +60145,13 @@
      "kind": "score",
      "text": "Личный рекорд по сумме: 146.95 (был 146.74)",
      "who": "Reagan Moss / Jakub Galbavy"
+    }
+   ],
+   "watch": [
+    {
+     "name": "Ice-Stars.TV",
+     "url": "https://ice-stars.tv/tallinntrophy",
+     "note": "Платно"
     }
    ],
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
@@ -62137,9 +62135,9 @@
    },
    "facts": [
     {
-     "who": "Andreas Nordeback",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 240.94 (был 230.37)",
-     "kind": "score"
+     "who": "Andreas Nordeback"
     }
    ],
    "proto": "isu_isu-gp-finlandia-trophy-2026.json"
@@ -62153,7 +62151,7 @@
    "seg": "РТ",
    "title": "CS Tallinn Trophy — танцы РТ",
    "start": "2026-11-21T18:20:00+03:00",
-   "end": "2026-11-21T20:24:00+03:00",
+   "end": "2026-11-21T20:25:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -62204,7 +62202,7 @@
      "points": "71.21"
     }
    ],
-   "desc": "Итог:\n1. Holly Harris / Jason Chan — 74.17\n2. Alicia Fabbri / Marko Jevgeni Gaidajenko — 73.79\n3. Amy Cui / Jonathan Rogers — 71.21\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Holly Harris / Jason Chan — 74.17\n2. Alicia Fabbri / Marko Jevgeni Gaidajenko — 73.79\n3. Amy Cui / Jonathan Rogers — 71.21\n\nПримечательное:\n• Holly Harris / Jason Chan — Личный рекорд за РТ: 74.17 (был 73.35)\n• Alicia Fabbri / Marko Jevgeni Gaidajenko — Личный рекорд за РТ: 73.79 (был 72.08)\n• Amy Cui / Jonathan Rogers — Личный рекорд за РТ: 71.21 (был 68.50)\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Holly Harris / Jason Chan",
@@ -62297,40 +62295,40 @@
      "time": "19:53"
     },
     {
-     "name": "Amy Cui / Jonathan Rogers",
-     "nation": "USA",
-     "time": "20:17",
-     "no": 15,
+     "name": "Sandrine Gauthier / Paul Ayer",
+     "nation": "CAN",
+     "no": 12,
      "warmup": 3,
-     "place": 3,
-     "points": "71.21"
+     "place": 4,
+     "points": "69.31",
+     "time": "19:59"
     },
     {
      "name": "Daniela Ivanitskiy / Matthew Sperry",
      "nation": "FIN",
-     "time": "20:05",
      "no": 13,
      "warmup": 3,
      "place": 13,
-     "points": "53.24"
+     "points": "53.24",
+     "time": "20:05"
     },
     {
      "name": "Elliana Peal / Ethan Peal",
      "nation": "USA",
-     "time": "20:11",
      "no": 14,
      "warmup": 3,
      "place": 6,
-     "points": "67.26"
+     "points": "67.26",
+     "time": "20:11"
     },
     {
-     "name": "Sandrine Gauthier / Paul Ayer",
-     "nation": "CAN",
-     "time": "19:59",
-     "no": 12,
+     "name": "Amy Cui / Jonathan Rogers",
+     "nation": "USA",
+     "no": 15,
      "warmup": 3,
-     "place": 4,
-     "points": "69.31"
+     "place": 3,
+     "points": "71.21",
+     "time": "20:17"
     }
    ],
    "live": {
@@ -62341,21 +62339,38 @@
     "names": {
      "Holly HARRIS / Jason CHAN": "Holly Harris / Jason Chan",
      "Alicia FABBRI / Marko Jevgeni GAIDAJENKO": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
+     "Amy CUI / Jonathan ROGERS": "Amy Cui / Jonathan Rogers",
+     "Sandrine GAUTHIER / Paul AYER": "Sandrine Gauthier / Paul Ayer",
      "Carolina PORTESI PERONI / Pietro PAPETTI": "Carolina Portesi Peroni / Pietro Papetti",
+     "Elliana PEAL / Ethan PEAL": "Elliana Peal / Ethan Peal",
      "Mariia IGNATEVA / Danijil Leonyidovics SZEMKO": "Mariia Ignateva / Danijil Leonyidovics Szemko",
      "Celina FRADJI / Jean-Hans FOURNEAUX": "Celina Fradji / Jean-Hans Fourneaux",
      "Louise BORDET / Martin CHARDAIN": "Louise Bordet / Martin Chardain",
      "Chelsea VERHAEGH / Sherim van GEFFEN": "Chelsea Verhaegh / Sherim van Geffen",
      "Natalia PALLU-NEVES / Jayin PANESAR": "Natalia Pallu-neves / Jayin Panesar",
      "Alisa OVSIANKINA / Maximilien RAHIER": "Alisa Ovsiankina / Maximilien Rahier",
-     "Olympia KALAGANIS / Emile DEVEAU": "Olympia Kalaganis / Emile Deveau",
-     "Sandrine GAUTHIER / Paul AYER": "Sandrine Gauthier / Paul Ayer",
      "Daniela IVANITSKIY / Matthew SPERRY": "Daniela Ivanitskiy / Matthew Sperry",
-     "Elliana PEAL / Ethan PEAL": "Elliana Peal / Ethan Peal",
-     "Amy CUI / Jonathan ROGERS": "Amy Cui / Jonathan Rogers"
+     "Olympia KALAGANIS / Emile DEVEAU": "Olympia Kalaganis / Emile Deveau"
     },
     "basis": "judges"
    },
+   "facts": [
+    {
+     "who": "Holly Harris / Jason Chan",
+     "text": "Личный рекорд за РТ: 74.17 (был 73.35)",
+     "kind": "score"
+    },
+    {
+     "who": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
+     "text": "Личный рекорд за РТ: 73.79 (был 72.08)",
+     "kind": "score"
+    },
+    {
+     "who": "Amy Cui / Jonathan Rogers",
+     "text": "Личный рекорд за РТ: 71.21 (был 68.50)",
+     "kind": "score"
+    }
+   ],
    "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
@@ -62417,20 +62432,26 @@
      "points": "66.47"
     },
     {
-     "place": 3,
+     "place": 2,
      "name": "Анна Рябова",
      "nation": "РЯЗ",
      "points": "64.72"
+    },
+    {
+     "place": 3,
+     "name": "Екатерина Кольцова",
+     "nation": "КОС",
+     "points": "64.20"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Риана Кадырова — 72.18\n2. Алиса Юрова — 66.47\n3. Анна Рябова — 64.72\n\nНачало: 18:45 МСК\nТрансляция: VK Видео",
+   "desc": "Промежуточные итоги:\n1. Алиса Юрова — 66.47\n2. Анна Рябова — 64.72\n3. Екатерина Кольцова — 64.20\n\nНачало: 18:45 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Мария Котова",
      "nation": "ТАТ",
      "no": 1,
      "warmup": 1,
-     "place": 14,
+     "place": 11,
      "points": "51.78",
      "time": "18:52"
     },
@@ -62439,7 +62460,7 @@
      "nation": "ОМС",
      "no": 2,
      "warmup": 1,
-     "place": 12,
+     "place": 9,
      "points": "54.66",
      "time": "18:56"
     },
@@ -62448,7 +62469,7 @@
      "nation": "КОС",
      "no": 3,
      "warmup": 1,
-     "place": 5,
+     "place": 3,
      "points": "64.20",
      "time": "19:00"
     },
@@ -62457,7 +62478,7 @@
      "nation": "РОС",
      "no": 4,
      "warmup": 1,
-     "place": 19,
+     "place": 16,
      "points": "41.12",
      "time": "19:05"
     },
@@ -62466,7 +62487,7 @@
      "nation": "ТУЛ",
      "no": 5,
      "warmup": 1,
-     "place": 7,
+     "place": 5,
      "points": "63.85",
      "time": "19:09"
     },
@@ -62475,7 +62496,7 @@
      "nation": "ИВА",
      "no": 6,
      "warmup": 2,
-     "place": 15,
+     "place": 12,
      "points": "51.34",
      "time": "19:20"
     },
@@ -62484,7 +62505,7 @@
      "nation": "БАШ",
      "no": 7,
      "warmup": 2,
-     "place": 6,
+     "place": 4,
      "points": "64.20",
      "time": "19:25"
     },
@@ -62493,7 +62514,7 @@
      "nation": "МОС",
      "no": 8,
      "warmup": 2,
-     "place": 9,
+     "place": 6,
      "points": "61.90",
      "time": "19:29"
     },
@@ -62502,7 +62523,7 @@
      "nation": "МУР",
      "no": 9,
      "warmup": 2,
-     "place": 13,
+     "place": 10,
      "points": "53.59",
      "time": "19:33"
     },
@@ -62511,27 +62532,63 @@
      "nation": "СВЕ",
      "no": 10,
      "warmup": 2,
-     "place": 10,
+     "place": 7,
      "points": "57.50",
      "time": "19:37"
     },
     {
-     "name": "Алиса Юрова",
-     "nation": "ЛИП",
-     "time": "20:20",
-     "no": 15,
+     "name": "Анна Казакевич",
+     "nation": "ЯРО",
+     "no": 11,
      "warmup": 3,
-     "place": 2,
-     "points": "66.47"
+     "place": 8,
+     "points": "54.76",
+     "time": "20:04"
+    },
+    {
+     "name": "Анна Замятина",
+     "nation": "ЧЕЛ",
+     "no": 12,
+     "warmup": 3,
+     "place": 13,
+     "points": "49.97",
+     "time": "20:08"
+    },
+    {
+     "name": "Ксения Вагина",
+     "nation": "ХМА",
+     "no": 13,
+     "warmup": 3,
+     "place": 15,
+     "points": "47.00",
+     "time": "20:12"
     },
     {
      "name": "Анастасия Артемова",
      "nation": "ВОР",
-     "time": "20:16",
      "no": 14,
      "warmup": 3,
-     "place": 17,
-     "points": "48.52"
+     "place": 14,
+     "points": "48.52",
+     "time": "20:16"
+    },
+    {
+     "name": "Алиса Юрова",
+     "nation": "ЛИП",
+     "no": 15,
+     "warmup": 3,
+     "place": 1,
+     "points": "66.47",
+     "time": "20:20"
+    },
+    {
+     "name": "Анна Рябова",
+     "nation": "РЯЗ",
+     "no": 16,
+     "warmup": 4,
+     "place": 2,
+     "points": "64.72",
+     "time": "20:32"
     },
     {
      "name": "Анастасия Фурсова",
@@ -62541,42 +62598,6 @@
      "warmup": 4,
      "place": 4,
      "points": "64.48"
-    },
-    {
-     "name": "Анна Замятина",
-     "nation": "ЧЕЛ",
-     "time": "20:08",
-     "no": 12,
-     "warmup": 3,
-     "place": 16,
-     "points": "49.97"
-    },
-    {
-     "name": "Анна Казакевич",
-     "nation": "ЯРО",
-     "time": "20:04",
-     "no": 11,
-     "warmup": 3,
-     "place": 11,
-     "points": "54.76"
-    },
-    {
-     "name": "Анна Рябова",
-     "nation": "РЯЗ",
-     "time": "20:32",
-     "no": 16,
-     "warmup": 4,
-     "place": 3,
-     "points": "64.72"
-    },
-    {
-     "name": "Ксения Вагина",
-     "nation": "ХМА",
-     "time": "20:12",
-     "no": 13,
-     "warmup": 3,
-     "place": 18,
-     "points": "47.00"
     },
     {
      "name": "Олеся Козлова",
@@ -62611,22 +62632,22 @@
     "cat": null,
     "first": null,
     "names": {
+     "Алиса ЮРОВА": "Алиса Юрова",
+     "Анна РЯБОВА": "Анна Рябова",
      "Екатерина КОЛЬЦОВА": "Екатерина Кольцова",
      "Софья ЛУКИНА": "Софья Лукина",
      "Наталия ГЛОТОВА": "Наталия Глотова",
      "Юлия РАДИОНОВА": "Юлия Радионова",
      "Василиса АБАКУМОВА": "Василиса Абакумова",
+     "Анна КАЗАКЕВИЧ": "Анна Казакевич",
      "Влада ЕРШОВА": "Влада Ершова",
      "Софья РУДЬ": "Софья Рудь",
      "Мария КОТОВА": "Мария Котова",
      "Алина ТЕЛЕГИНА": "Алина Телегина",
-     "Виктория УШАКОВА": "Виктория Ушакова",
-     "Анна КАЗАКЕВИЧ": "Анна Казакевич",
      "Анна ЗАМЯТИНА": "Анна Замятина",
-     "Ксения ВАГИНА": "Ксения Вагина",
      "Анастасия АРТЕМОВА": "Анастасия Артемова",
-     "Алиса ЮРОВА": "Алиса Юрова",
-     "Анна РЯБОВА": "Анна Рябова",
+     "Ксения ВАГИНА": "Ксения Вагина",
+     "Виктория УШАКОВА": "Виктория Ушакова",
      "Яна АСТАШЕНКОВА": "Яна Асташенкова",
      "Анастасия ФУРСОВА": "Анастасия Фурсова",
      "Риана КАДЫРОВА": "Риана Кадырова",
@@ -62673,56 +62694,31 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/watch?v=K8UPt8A7Z3Y"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Marie-Jade Lauriault / Romain le Gac — 107.92\n2. Yuka Orihara / Juho Pirinen — 106.34\n3. Marjorie Lajoie / Jean-Luc Baker — 99.71\n\nНачало: 20:25 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
+   "podium": [
     {
-     "name": "Milla Ruud Reitan / Nikolaj Majorov",
-     "nation": "SWE",
-     "time": "20:31",
-     "no": 1,
-     "warmup": 1,
-     "place": 5,
-     "points": "93.17"
-    },
-    {
-     "name": "Marjorie Lajoie / Jean-Luc Baker",
-     "nation": "CAN",
-     "time": "20:39",
-     "no": 2,
-     "warmup": 1,
-     "place": 3,
-     "points": "99.71"
-    },
-    {
-     "name": "Emily Bratti / Ian Somerville",
-     "nation": "USA",
-     "time": "20:47",
-     "no": 3,
-     "warmup": 1,
-     "place": 4,
-     "points": "96.87"
-    },
-    {
+     "place": 1,
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN",
-     "time": "20:55",
-     "no": 4,
-     "warmup": 1,
-     "place": 2,
      "points": "106.34"
     },
     {
-     "name": "Marie-Jade Lauriault / Romain le Gac",
+     "place": 2,
+     "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
-     "time": "21:03",
-     "no": 5,
-     "warmup": 1,
-     "place": 1,
-     "points": "107.92"
+     "points": "99.71"
     },
+    {
+     "place": 3,
+     "name": "Emily Bratti / Ian Somerville",
+     "nation": "USA",
+     "points": "96.87"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Yuka Orihara / Juho Pirinen — 106.34\n2. Marjorie Lajoie / Jean-Luc Baker — 99.71\n3. Emily Bratti / Ian Somerville — 96.87\n\nНачало: 20:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
     {
      "name": "Caroline Green / Michael Parsons",
      "nation": "USA",
@@ -62731,18 +62727,13 @@
      "warmup": 2
     },
     {
-     "name": "Oona Brown / Gage Brown",
+     "name": "Emily Bratti / Ian Somerville",
      "nation": "USA",
-     "time": "21:25",
-     "no": 7,
-     "warmup": 2
-    },
-    {
-     "name": "Natalie Taschlerova / Filip Taschler",
-     "nation": "CZE",
-     "time": "21:33",
-     "no": 8,
-     "warmup": 2
+     "place": 3,
+     "points": "96.87",
+     "time": "20:47",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Juulia Turkkila / Matthias Versluis",
@@ -62757,18 +62748,67 @@
      "time": "21:49",
      "no": 10,
      "warmup": 2
+    },
+    {
+     "name": "Marie-Jade Lauriault / Romain le Gac",
+     "nation": "CAN",
+     "time": "21:03",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Marjorie Lajoie / Jean-Luc Baker",
+     "nation": "CAN",
+     "place": 2,
+     "points": "99.71",
+     "time": "20:39",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "place": 4,
+     "points": "93.17",
+     "time": "20:31",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Natalie Taschlerova / Filip Taschler",
+     "nation": "CZE",
+     "time": "21:33",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Oona Brown / Gage Brown",
+     "nation": "USA",
+     "time": "21:25",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Yuka Orihara / Juho Pirinen",
+     "nation": "FIN",
+     "place": 1,
+     "points": "106.34",
+     "time": "20:55",
+     "no": 4,
+     "warmup": 1
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG008.htm",
     "cat": "https://results.isu.org/results/season2627/gpfin2026/CAT004RS.htm",
     "first": "https://results.isu.org/results/season2627/gpfin2026/SEG007.htm",
     "names": {
-     "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov",
+     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
      "Marjorie LAJOIE / Jean-Luc BAKER": "Marjorie Lajoie / Jean-Luc Baker",
      "Emily BRATTI / Ian SOMERVILLE": "Emily Bratti / Ian Somerville",
-     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
+     "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov",
      "Marie-Jade LAURIAULT / Romain le GAC": "Marie-Jade Lauriault / Romain le Gac",
      "Caroline GREEN / Michael PARSONS": "Caroline Green / Michael Parsons",
      "Oona BROWN / Gage BROWN": "Oona Brown / Gage Brown",
@@ -62778,28 +62818,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Marie-Jade Lauriault / Romain le Gac",
-     "nation": "CAN",
-     "points": "107.92"
-    },
-    {
-     "place": 2,
-     "name": "Yuka Orihara / Juho Pirinen",
-     "nation": "FIN",
-     "points": "106.34"
-    },
-    {
-     "place": 3,
-     "name": "Marjorie Lajoie / Jean-Luc Baker",
-     "nation": "CAN",
-     "points": "99.71"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:men-senior-kp",
@@ -63098,7 +63117,7 @@
    "seg": "ПТ",
    "title": "CS Tallinn Trophy — юниорские танцы ПТ",
    "start": "2026-11-22T13:10:00+03:00",
-   "end": "2026-11-22T15:50:00+03:00",
+   "end": "2026-11-22T15:23:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -105527,5 +105546,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "134bad42333c39e5"
+ "rev": "b66f0da791d074de"
 }
