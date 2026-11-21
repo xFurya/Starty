@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T17:46:19+03:00",
- "checked": "2026-11-21T15:09:29.499500+00:00",
+ "checked": "2026-11-21T15:13:29.047631+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61673,7 +61673,7 @@
     {
      "name": "Денис Никитин",
      "nation": "УДМ",
-     "place": 13,
+     "place": 14,
      "points": "86.29",
      "time": "16:07",
      "no": 1,
@@ -61682,7 +61682,7 @@
     {
      "name": "Егор Никитин",
      "nation": "ИВА",
-     "place": 11,
+     "place": 12,
      "points": "90.37",
      "time": "16:48",
      "no": 7,
@@ -61741,12 +61741,14 @@
      "nation": "ТУЛ",
      "time": "17:49",
      "no": 14,
-     "warmup": 3
+     "warmup": 3,
+     "place": 11,
+     "points": "95.35"
     },
     {
      "name": "Макар Ушаков",
      "nation": "ПРМ",
-     "place": 12,
+     "place": 13,
      "points": "87.14",
      "time": "16:13",
      "no": 2,
@@ -105289,5 +105291,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "c8de3118d6d9074c"
+ "rev": "75b630af11e787b9"
 }
