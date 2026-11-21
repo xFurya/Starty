@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-21T12:53:52+03:00",
- "checked": "2026-11-21T11:17:04.138788+00:00",
+ "generated": "2026-11-21T13:57:41+03:00",
+ "checked": "2026-11-21T13:57:41+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60440,7 +60440,7 @@
     {
      "name": "Авелина Бердоносова",
      "nation": "ПРМ",
-     "place": 11,
+     "place": 9,
      "points": "90.96",
      "time": "12:26",
      "no": 13,
@@ -60470,6 +60470,8 @@
     {
      "name": "Александра Анушова",
      "nation": "МОБ",
+     "place": 5,
+     "points": "102.08",
      "time": "13:39",
      "no": 21,
      "warmup": 5,
@@ -60479,11 +60481,11 @@
     {
      "name": "Александра Гришина",
      "nation": "СВЕ",
+     "place": 2,
+     "points": "108.51",
      "time": "13:26",
      "no": 20,
-     "warmup": 4,
-     "place": 3,
-     "points": "108.51"
+     "warmup": 4
     },
     {
      "name": "Анастасия Выровая",
@@ -60504,7 +60506,7 @@
     {
      "name": "Арина Теслина",
      "nation": "ВЛГ",
-     "place": 21,
+     "place": 19,
      "points": "69.03",
      "time": "11:23",
      "no": 4,
@@ -60513,7 +60515,7 @@
     {
      "name": "Арина Чернобавская",
      "nation": "ИВА",
-     "place": 22,
+     "place": 20,
      "points": "67.36",
      "time": "11:52",
      "no": 8,
@@ -60522,11 +60524,11 @@
     {
      "name": "Валерия Иорданова",
      "nation": "СМО",
+     "place": 3,
+     "points": "107.75",
      "time": "13:05",
      "no": 16,
-     "warmup": 4,
-     "place": 4,
-     "points": "107.75"
+     "warmup": 4
     },
     {
      "name": "Вероника Пенькова",
@@ -60540,7 +60542,7 @@
     {
      "name": "Вероника Шиленкова",
      "nation": "МРД",
-     "place": 19,
+     "place": 17,
      "points": "78.05",
      "time": "11:07",
      "no": 1,
@@ -60556,7 +60558,7 @@
     {
      "name": "Дана Титова",
      "nation": "ТУЛ",
-     "place": 10,
+     "place": 8,
      "points": "90.96",
      "time": "11:41",
      "no": 6,
@@ -60565,7 +60567,7 @@
     {
      "name": "Дарья Хришкова",
      "nation": "ЛИП",
-     "place": 15,
+     "place": 13,
      "points": "82.69",
      "time": "12:21",
      "no": 12,
@@ -60581,7 +60583,7 @@
     {
      "name": "Екатерина Смирнова",
      "nation": "КОС",
-     "place": 12,
+     "place": 10,
      "points": "89.10",
      "time": "12:15",
      "no": 11,
@@ -60590,7 +60592,7 @@
     {
      "name": "Кира Васильева",
      "nation": "КИР",
-     "place": 18,
+     "place": 16,
      "points": "78.38",
      "time": "11:47",
      "no": 7,
@@ -60613,7 +60615,7 @@
     {
      "name": "Мадина Абзипарова",
      "nation": "ТАТ",
-     "place": 9,
+     "place": 7,
      "points": "90.96",
      "time": "12:31",
      "no": 14,
@@ -60629,7 +60631,7 @@
     {
      "name": "Маргарита Котенева",
      "nation": "МАР",
-     "place": 23,
+     "place": 21,
      "points": "67.03",
      "time": "11:18",
      "no": 3,
@@ -60645,11 +60647,11 @@
     {
      "name": "Мария Лагутченко",
      "nation": "ТАТ",
+     "place": 4,
+     "points": "107.17",
      "time": "12:37",
      "no": 15,
-     "warmup": 3,
-     "place": 6,
-     "points": "107.17"
+     "warmup": 3
     },
     {
      "name": "Марьям Зялалова",
@@ -60675,7 +60677,7 @@
     {
      "name": "Полина Шишкина",
      "nation": "ВЛД",
-     "place": 20,
+     "place": 18,
      "points": "77.08",
      "time": "12:03",
      "no": 10,
@@ -60691,7 +60693,7 @@
     {
      "name": "Сабина Киселева",
      "nation": "ПЕН",
-     "place": 17,
+     "place": 15,
      "points": "81.08",
      "time": "11:12",
      "no": 2,
@@ -60700,7 +60702,7 @@
     {
      "name": "София Нуреева",
      "nation": "ЧЕЛ",
-     "place": 13,
+     "place": 11,
      "points": "85.25",
      "time": "11:57",
      "no": 9,
@@ -60709,7 +60711,7 @@
     {
      "name": "София Самуйлик",
      "nation": "СТА",
-     "place": 16,
+     "place": 14,
      "points": "82.23",
      "time": "11:28",
      "no": 5,
@@ -60725,29 +60727,29 @@
     {
      "name": "Эмилия Марданова",
      "nation": "ТАТ",
+     "place": 6,
+     "points": "101.56",
      "time": "13:21",
      "no": 19,
-     "warmup": 4,
-     "place": 8,
-     "points": "101.56"
+     "warmup": 4
     },
     {
      "name": "Ярослава Баринова",
      "nation": "ТАТ",
+     "place": 1,
+     "points": "113.81",
      "time": "13:15",
      "no": 18,
-     "warmup": 4,
-     "place": 2,
-     "points": "113.81"
+     "warmup": 4
     },
     {
      "name": "Ярослава Быстрова",
      "nation": "ОМС",
+     "place": 12,
+     "points": "84.62",
      "time": "13:10",
      "no": 17,
-     "warmup": 4,
-     "place": 14,
-     "points": "84.62"
+     "warmup": 4
     }
    ],
    "provisional": true,
@@ -60757,12 +60759,19 @@
     "cat": "https://fsrussia.ru/results/2627/idel_2026/CAT004RS.htm",
     "first": "https://fsrussia.ru/results/2627/idel_2026/SEG007.htm",
     "names": {
-     "Авелина БЕРДОНОСОВА": "Авелина Бердоносова",
+     "Ярослава БАРИНОВА": "Ярослава Баринова",
+     "Александра ГРИШИНА": "Александра Гришина",
+     "Валерия ИОРДАНОВА": "Валерия Иорданова",
+     "Мария ЛАГУТЧЕНКО": "Мария Лагутченко",
+     "Александра АНУШОВА": "Александра Анушова",
+     "Эмилия МАРДАНОВА": "Эмилия Марданова",
      "Мадина АБЗИПАРОВА": "Мадина Абзипарова",
+     "Авелина БЕРДОНОСОВА": "Авелина Бердоносова",
+     "Ярослава БЫСТРОВА": "Ярослава Быстрова",
      "Екатерина СМИРНОВА": "Екатерина Смирнова",
      "Дана ТИТОВА": "Дана Титова",
-     "София НУРЕЕВА": "София Нуреева",
      "Дарья ХРИШКОВА": "Дарья Хришкова",
+     "София НУРЕЕВА": "София Нуреева",
      "Полина ШИШКИНА": "Полина Шишкина",
      "София САМУЙЛИК": "София Самуйлик",
      "Кира ВАСИЛЬЕВА": "Кира Васильева",
@@ -60771,13 +60780,6 @@
      "Арина ЧЕРНОБАВСКАЯ": "Арина Чернобавская",
      "Арина ТЕСЛИНА": "Арина Теслина",
      "Маргарита КОТЕНЕВА": "Маргарита Котенева",
-     "Мария ЛАГУТЧЕНКО": "Мария Лагутченко",
-     "Валерия ИОРДАНОВА": "Валерия Иорданова",
-     "Ярослава БЫСТРОВА": "Ярослава Быстрова",
-     "Ярослава БАРИНОВА": "Ярослава Баринова",
-     "Эмилия МАРДАНОВА": "Эмилия Марданова",
-     "Александра ГРИШИНА": "Александра Гришина",
-     "Александра АНУШОВА": "Александра Анушова",
      "Анастасия КОНДЫК": "Анастасия Кондык",
      "Вероника ПЕНЬКОВА": "Вероника Пенькова",
      "Маргарита ИГОНОВА": "Маргарита Игонова",
@@ -60835,98 +60837,9 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/watch?v=ffrrZxRSaZ4"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Audrey Shin / Spencer Akira Howe — 125.92\n2. Katie McBEATH / Balazs Nagy — 120.44\n3. Megan Wessenberg / Denys Strekalin — 101.32\n\nНачало: 13:15 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
-    {
-     "name": "Irma Caldara / Riccardo Maglio",
-     "nation": "ITA",
-     "time": "13:22",
-     "no": 1,
-     "warmup": 1,
-     "place": 5,
-     "points": "90.77"
-    },
-    {
-     "name": "Hannah Herrera / Ivan Khobta",
-     "nation": "UKR",
-     "time": "13:30",
-     "no": 2,
-     "warmup": 1,
-     "place": 6,
-     "points": "86.93"
-    },
-    {
-     "name": "Megan Wessenberg / Denys Strekalin",
-     "nation": "FRA",
-     "time": "13:38",
-     "no": 3,
-     "warmup": 1,
-     "place": 3,
-     "points": "101.32"
-    },
-    {
-     "name": "Valentina Plazas / Maximiliano Fernandez",
-     "nation": "USA",
-     "time": "13:46",
-     "no": 4,
-     "warmup": 1,
-     "place": 4,
-     "points": "93.11"
-    },
-    {
-     "name": "Audrey Shin / Spencer Akira Howe",
-     "nation": "USA",
-     "time": "14:01",
-     "no": 5,
-     "warmup": 2,
-     "place": 1,
-     "points": "125.92"
-    },
-    {
-     "name": "Katie McBEATH / Balazs Nagy",
-     "nation": "USA",
-     "time": "14:09",
-     "no": 6,
-     "warmup": 2,
-     "place": 2,
-     "points": "120.44"
-    },
-    {
-     "name": "Annika Hocke / Robert Kunkel",
-     "nation": "GER",
-     "time": "14:17",
-     "no": 7,
-     "warmup": 2
-    },
-    {
-     "name": "Lia Pereira / Trennt Michaud",
-     "nation": "CAN",
-     "time": "14:24",
-     "no": 8,
-     "warmup": 2
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG006.htm",
-    "cat": "https://results.isu.org/results/season2627/gpfin2026/CAT003RS.htm",
-    "first": "https://results.isu.org/results/season2627/gpfin2026/SEG005.htm",
-    "names": {
-     "Irma CALDARA / Riccardo MAGLIO": "Irma Caldara / Riccardo Maglio",
-     "Hannah HERRERA / Ivan KHOBTA": "Hannah Herrera / Ivan Khobta",
-     "Megan WESSENBERG / Denys STREKALIN": "Megan Wessenberg / Denys Strekalin",
-     "Valentina PLAZAS / Maximiliano FERNANDEZ": "Valentina Plazas / Maximiliano Fernandez",
-     "Audrey SHIN / Spencer Akira HOWE": "Audrey Shin / Spencer Akira Howe",
-     "Katie McBEATH / Balazs NAGY": "Katie McBEATH / Balazs Nagy",
-     "Annika HOCKE / Robert KUNKEL": "Annika Hocke / Robert Kunkel",
-     "Lia PEREIRA / Trennt MICHAUD": "Lia Pereira / Trennt Michaud"
-    },
-    "basis": null
-   },
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json",
    "podium": [
     {
      "place": 1,
@@ -60936,18 +60849,103 @@
     },
     {
      "place": 2,
-     "name": "Katie McBEATH / Balazs Nagy",
+     "name": "Valentina Plazas / Maximiliano Fernandez",
      "nation": "USA",
-     "points": "120.44"
+     "points": "93.11"
     },
     {
      "place": 3,
-     "name": "Megan Wessenberg / Denys Strekalin",
-     "nation": "FRA",
-     "points": "101.32"
+     "name": "Irma Caldara / Riccardo Maglio",
+     "nation": "ITA",
+     "points": "90.77"
     }
    ],
-   "provisional": true
+   "desc": "Промежуточные итоги:\n1. Megan Wessenberg / Denys Strekalin — 101.32\n2. Valentina Plazas / Maximiliano Fernandez — 93.11\n3. Irma Caldara / Riccardo Maglio — 90.77\n\nНачало: 13:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Annika Hocke / Robert Kunkel",
+     "nation": "GER",
+     "time": "14:17",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Audrey Shin / Spencer Akira Howe",
+     "nation": "USA",
+     "time": "14:01",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Hannah Herrera / Ivan Khobta",
+     "nation": "UKR",
+     "place": 4,
+     "points": "86.93",
+     "time": "13:30",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Irma Caldara / Riccardo Maglio",
+     "nation": "ITA",
+     "place": 3,
+     "points": "90.77",
+     "time": "13:22",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Katie McBEATH / Balazs Nagy",
+     "nation": "USA",
+     "time": "14:09",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Lia Pereira / Trennt Michaud",
+     "nation": "CAN",
+     "time": "14:24",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Megan Wessenberg / Denys Strekalin",
+     "nation": "FRA",
+     "place": 1,
+     "points": "101.32",
+     "time": "13:38",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Valentina Plazas / Maximiliano Fernandez",
+     "nation": "USA",
+     "place": 2,
+     "points": "93.11",
+     "time": "13:46",
+     "no": 4,
+     "warmup": 1
+    }
+   ],
+   "provisional": true,
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG006.htm",
+    "cat": "https://results.isu.org/results/season2627/gpfin2026/CAT003RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpfin2026/SEG005.htm",
+    "names": {
+     "Megan WESSENBERG / Denys STREKALIN": "Megan Wessenberg / Denys Strekalin",
+     "Valentina PLAZAS / Maximiliano FERNANDEZ": "Valentina Plazas / Maximiliano Fernandez",
+     "Irma CALDARA / Riccardo MAGLIO": "Irma Caldara / Riccardo Maglio",
+     "Hannah HERRERA / Ivan KHOBTA": "Hannah Herrera / Ivan Khobta",
+     "Audrey SHIN / Spencer Akira HOWE": "Audrey Shin / Spencer Akira Howe",
+     "Katie McBEATH / Balazs NAGY": "Katie McBEATH / Balazs Nagy",
+     "Annika HOCKE / Robert KUNKEL": "Annika Hocke / Robert Kunkel",
+     "Lia PEREIRA / Trennt MICHAUD": "Lia Pereira / Trennt Michaud"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:women-senior-pp",
@@ -61831,7 +61829,7 @@
    "seg": "КП",
    "title": "Идель — женщины КП",
    "start": "2026-11-21T18:45:00+03:00",
-   "end": "2026-11-21T21:40:00+03:00",
+   "end": "2026-11-21T20:56:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -61870,84 +61868,144 @@
    "desc": "Начало: 18:45 МСК\nТрансляция: VK Видео",
    "field": [
     {
-     "name": "Алина Телегина",
-     "nation": "ИВА"
-    },
-    {
-     "name": "Алиса Юрова",
-     "nation": "ЛИП"
-    },
-    {
-     "name": "Анастасия Артемова",
-     "nation": "ВОР"
-    },
-    {
-     "name": "Анастасия Фурсова",
-     "nation": "БЕЛ"
-    },
-    {
-     "name": "Анна Замятина",
-     "nation": "ЧЕЛ"
-    },
-    {
-     "name": "Анна Казакевич",
-     "nation": "ЯРО"
-    },
-    {
-     "name": "Анна Рябова",
-     "nation": "РЯЗ"
-    },
-    {
-     "name": "Василиса Абакумова",
-     "nation": "СВЕ"
-    },
-    {
-     "name": "Виктория Ушакова",
-     "nation": "РОС"
+     "name": "Мария Котова",
+     "nation": "ТАТ",
+     "time": "18:52",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Влада Ершова",
-     "nation": "ОМС"
+     "nation": "ОМС",
+     "time": "18:56",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Екатерина Кольцова",
-     "nation": "КОС"
+     "nation": "КОС",
+     "time": "19:00",
+     "no": 3,
+     "warmup": 1
     },
     {
-     "name": "Ксения Вагина",
-     "nation": "ХМА"
-    },
-    {
-     "name": "Мария Котова",
-     "nation": "ТАТ"
+     "name": "Виктория Ушакова",
+     "nation": "РОС",
+     "time": "19:05",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Наталия Глотова",
-     "nation": "ТУЛ"
+     "nation": "ТУЛ",
+     "time": "19:09",
+     "no": 5,
+     "warmup": 1
     },
     {
-     "name": "Олеся Козлова",
-     "nation": "САМ"
-    },
-    {
-     "name": "Риана Кадырова",
-     "nation": "ТАТ"
+     "name": "Алина Телегина",
+     "nation": "ИВА",
+     "time": "19:20",
+     "no": 6,
+     "warmup": 2
     },
     {
      "name": "Софья Лукина",
-     "nation": "БАШ"
-    },
-    {
-     "name": "Софья Рудь",
-     "nation": "МУР"
+     "nation": "БАШ",
+     "time": "19:25",
+     "no": 7,
+     "warmup": 2
     },
     {
      "name": "Юлия Радионова",
-     "nation": "МОС"
+     "nation": "МОС",
+     "time": "19:29",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Софья Рудь",
+     "nation": "МУР",
+     "time": "19:33",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Василиса Абакумова",
+     "nation": "СВЕ",
+     "time": "19:37",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Анна Казакевич",
+     "nation": "ЯРО",
+     "time": "20:04",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Анна Замятина",
+     "nation": "ЧЕЛ",
+     "time": "20:08",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Ксения Вагина",
+     "nation": "ХМА",
+     "time": "20:12",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Анастасия Артемова",
+     "nation": "ВОР",
+     "time": "20:16",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Алиса Юрова",
+     "nation": "ЛИП",
+     "time": "20:20",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Анна Рябова",
+     "nation": "РЯЗ",
+     "time": "20:32",
+     "no": 16,
+     "warmup": 4
     },
     {
      "name": "Яна Асташенкова",
-     "nation": "МОБ"
+     "nation": "МОБ",
+     "time": "20:36",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Анастасия Фурсова",
+     "nation": "БЕЛ",
+     "time": "20:40",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Риана Кадырова",
+     "nation": "ТАТ",
+     "time": "20:45",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Олеся Козлова",
+     "nation": "САМ",
+     "time": "20:49",
+     "no": 20,
+     "warmup": 4
     }
    ],
    "live": {
@@ -61956,26 +62014,26 @@
     "cat": null,
     "first": null,
     "names": {
-     "Василиса АБАКУМОВА": "Василиса Абакумова",
-     "Анастасия АРТЕМОВА": "Анастасия Артемова",
-     "Яна АСТАШЕНКОВА": "Яна Асташенкова",
-     "Ксения ВАГИНА": "Ксения Вагина",
-     "Наталия ГЛОТОВА": "Наталия Глотова",
-     "Влада ЕРШОВА": "Влада Ершова",
-     "Анна ЗАМЯТИНА": "Анна Замятина",
-     "Риана КАДЫРОВА": "Риана Кадырова",
-     "Анна КАЗАКЕВИЧ": "Анна Казакевич",
-     "Олеся КОЗЛОВА": "Олеся Козлова",
-     "Екатерина КОЛЬЦОВА": "Екатерина Кольцова",
      "Мария КОТОВА": "Мария Котова",
+     "Влада ЕРШОВА": "Влада Ершова",
+     "Екатерина КОЛЬЦОВА": "Екатерина Кольцова",
+     "Виктория УШАКОВА": "Виктория Ушакова",
+     "Наталия ГЛОТОВА": "Наталия Глотова",
+     "Алина ТЕЛЕГИНА": "Алина Телегина",
      "Софья ЛУКИНА": "Софья Лукина",
      "Юлия РАДИОНОВА": "Юлия Радионова",
      "Софья РУДЬ": "Софья Рудь",
+     "Василиса АБАКУМОВА": "Василиса Абакумова",
+     "Анна КАЗАКЕВИЧ": "Анна Казакевич",
+     "Анна ЗАМЯТИНА": "Анна Замятина",
+     "Ксения ВАГИНА": "Ксения Вагина",
+     "Анастасия АРТЕМОВА": "Анастасия Артемова",
+     "Алиса ЮРОВА": "Алиса Юрова",
      "Анна РЯБОВА": "Анна Рябова",
-     "Алина ТЕЛЕГИНА": "Алина Телегина",
-     "Виктория УШАКОВА": "Виктория Ушакова",
+     "Яна АСТАШЕНКОВА": "Яна Асташенкова",
      "Анастасия ФУРСОВА": "Анастасия Фурсова",
-     "Алиса ЮРОВА": "Алиса Юрова"
+     "Риана КАДЫРОВА": "Риана Кадырова",
+     "Олеся КОЗЛОВА": "Олеся Козлова"
     },
     "basis": null
    },
@@ -104858,5 +104916,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "a2e098d9ef1a7e2a"
+ "rev": "abd395f5e23ab9ae"
 }
