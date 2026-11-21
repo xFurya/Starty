@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T19:54:17+03:00",
- "checked": "2026-11-21T17:41:28.656875+00:00",
+ "checked": "2026-11-21T17:45:28.790593+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62457,7 +62457,7 @@
      "nation": "РОС",
      "no": 4,
      "warmup": 1,
-     "place": 13,
+     "place": 14,
      "points": "41.12",
      "time": "19:05"
     },
@@ -62527,7 +62527,9 @@
      "nation": "ВОР",
      "time": "20:16",
      "no": 14,
-     "warmup": 3
+     "warmup": 3,
+     "place": 12,
+     "points": "48.52"
     },
     {
      "name": "Анастасия Фурсова",
@@ -62567,7 +62569,7 @@
      "time": "20:12",
      "no": 13,
      "warmup": 3,
-     "place": 12,
+     "place": 13,
      "points": "47.00"
     },
     {
@@ -105495,5 +105497,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "fbdf08b098578e02"
+ "rev": "3e2c42b48e9cd202"
 }
