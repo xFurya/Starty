@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T19:54:17+03:00",
- "checked": "2026-11-21T18:05:28.692744+00:00",
+ "checked": "2026-11-21T18:09:28.445173+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62430,7 +62430,7 @@
      "nation": "ТАТ",
      "no": 1,
      "warmup": 1,
-     "place": 11,
+     "place": 12,
      "points": "51.78",
      "time": "18:52"
     },
@@ -62439,7 +62439,7 @@
      "nation": "ОМС",
      "no": 2,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "54.66",
      "time": "18:56"
     },
@@ -62457,7 +62457,7 @@
      "nation": "РОС",
      "no": 4,
      "warmup": 1,
-     "place": 16,
+     "place": 17,
      "points": "41.12",
      "time": "19:05"
     },
@@ -62475,7 +62475,7 @@
      "nation": "ИВА",
      "no": 6,
      "warmup": 2,
-     "place": 12,
+     "place": 13,
      "points": "51.34",
      "time": "19:20"
     },
@@ -62493,7 +62493,7 @@
      "nation": "МОС",
      "no": 8,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "61.90",
      "time": "19:29"
     },
@@ -62502,7 +62502,7 @@
      "nation": "МУР",
      "no": 9,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "points": "53.59",
      "time": "19:33"
     },
@@ -62511,7 +62511,7 @@
      "nation": "СВЕ",
      "no": 10,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "57.50",
      "time": "19:37"
     },
@@ -62530,7 +62530,7 @@
      "time": "20:16",
      "no": 14,
      "warmup": 3,
-     "place": 14,
+     "place": 15,
      "points": "48.52"
     },
     {
@@ -62546,7 +62546,7 @@
      "time": "20:08",
      "no": 12,
      "warmup": 3,
-     "place": 13,
+     "place": 14,
      "points": "49.97"
     },
     {
@@ -62555,7 +62555,7 @@
      "time": "20:04",
      "no": 11,
      "warmup": 3,
-     "place": 8,
+     "place": 9,
      "points": "54.76"
     },
     {
@@ -62573,7 +62573,7 @@
      "time": "20:12",
      "no": 13,
      "warmup": 3,
-     "place": 15,
+     "place": 16,
      "points": "47.00"
     },
     {
@@ -62595,7 +62595,9 @@
      "nation": "МОБ",
      "time": "20:36",
      "no": 17,
-     "warmup": 4
+     "warmup": 4,
+     "place": 6,
+     "points": "63.43"
     }
    ],
    "provisional": true,
@@ -105519,5 +105521,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "4537fb589cfe2e8a"
+ "rev": "dd918a5ded93536a"
 }
