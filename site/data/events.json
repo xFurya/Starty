@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-21T16:42:40+03:00",
- "checked": "2026-11-21T15:05:28.818179+00:00",
+ "generated": "2026-11-21T17:46:19+03:00",
+ "checked": "2026-11-21T17:46:19+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61184,7 +61184,7 @@
      "points": "207.19"
     }
    ],
-   "desc": "Итог:\n1. Mao Shimada — 150.43\n2. Niina Petrokina — 144.98\n3. Isabeau Levito — 140.17\n\nИтог турнира:\n1. Mao Shimada — 229.49\n2. Niina Petrokina — 214.06\n3. Isabeau Levito — 207.19\n\nПримечательное:\n• Isabeau Levito — После короткой программы — 6-е место, в итоге — 3-е место\n• Mao Shimada — Отрыв от второго места — 15.43 балла\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Mao Shimada — 150.43\n2. Niina Petrokina — 144.98\n3. Isabeau Levito — 140.17\n\nИтог турнира:\n1. Mao Shimada — 229.49\n2. Niina Petrokina — 214.06\n3. Isabeau Levito — 207.19\n\nПримечательное:\n• Mao Shimada — Тройной аксель\n• Mao Shimada — Четверной тулуп\n• Mao Shimada — Все судьи — +5 за CCoSp4\n• Yuseong Kim — Тройной аксель\n• Haein Lee — Тройной аксель\n• Isabeau Levito — После короткой программы — 6-е место, в итоге — 3-е место\n• Mao Shimada — Отрыв от второго места — 15.43 балла\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Minja Peltonen",
@@ -61330,14 +61330,39 @@
    },
    "facts": [
     {
-     "who": "Isabeau Levito",
-     "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "kind": "place"
+     "who": "Mao Shimada",
+     "text": "Все судьи — +5 за CCoSp4",
+     "kind": "element"
     },
     {
      "who": "Mao Shimada",
+     "text": "Четверной тулуп",
+     "kind": "element"
+    },
+    {
+     "who": "Mao Shimada",
+     "text": "Тройной аксель",
+     "kind": "element"
+    },
+    {
+     "who": "Yuseong Kim",
+     "text": "Тройной аксель",
+     "kind": "element"
+    },
+    {
+     "who": "Haein Lee",
+     "text": "Тройной аксель",
+     "kind": "element"
+    },
+    {
+     "kind": "place",
+     "text": "После короткой программы — 6-е место, в итоге — 3-е место",
+     "who": "Isabeau Levito"
+    },
+    {
+     "kind": "place",
      "text": "Отрыв от второго места — 15.43 балла",
-     "kind": "place"
+     "who": "Mao Shimada"
     }
    ],
    "proto": "isu_isu-gp-finlandia-trophy-2026.json"
@@ -61372,7 +61397,6 @@
     "Lumia Sassi / Aarne Savola",
     "Maite van Mulders / Tudor Dominic Andrei",
     "Martina Lavazza / Raphael Raymond Meunier",
-    "Villo Mira Szilagyi / Istvan Jaracs",
     "Zoe Bianchi / Daniel Basile"
    ],
    "src": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
@@ -61403,7 +61427,7 @@
      "points": "56.61"
     }
    ],
-   "desc": "Итог:\n1. Lea Hienne / Louis Varescon — 58.81\n2. Alexia Kruk / Jan Eisenhaber — 57.78\n3. Zoe Bianchi / Daniel Basile — 56.61\n\nНачало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Lea Hienne / Louis Varescon — 58.81\n2. Alexia Kruk / Jan Eisenhaber — 57.78\n3. Zoe Bianchi / Daniel Basile — 56.61\n\nНачало: 15:45 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Angelina Cucherat / Leopold Dacquin",
@@ -61419,7 +61443,7 @@
      "nation": "HUN",
      "no": 3,
      "warmup": 1,
-     "place": 13,
+     "place": 12,
      "points": "41.44",
      "time": "16:02"
     },
@@ -61469,74 +61493,65 @@
      "time": "16:39"
     },
     {
-     "name": "Alexia Kruk / Jan Eisenhaber",
-     "nation": "GER",
-     "time": "17:17",
-     "no": 11,
-     "warmup": 3,
-     "place": 2,
-     "points": "57.78"
-    },
-    {
      "name": "Annabel Mann / Jack Hammond",
      "nation": "GBR",
-     "time": "17:05",
      "no": 9,
      "warmup": 3,
      "place": 10,
-     "points": "45.81"
+     "points": "45.81",
+     "time": "17:05"
+    },
+    {
+     "name": "Maite van Mulders / Tudor Dominic Andrei",
+     "nation": "ROU",
+     "no": 10,
+     "warmup": 3,
+     "place": 8,
+     "points": "47.36",
+     "time": "17:11"
+    },
+    {
+     "name": "Alexia Kruk / Jan Eisenhaber",
+     "nation": "GER",
+     "no": 11,
+     "warmup": 3,
+     "place": 2,
+     "points": "57.78",
+     "time": "17:17"
+    },
+    {
+     "name": "Iris Lahti / Oskari Liedenpohja",
+     "nation": "FIN",
+     "no": 12,
+     "warmup": 3,
+     "place": 4,
+     "points": "55.61",
+     "time": "17:24"
+    },
+    {
+     "name": "Zoe Bianchi / Daniel Basile",
+     "nation": "ITA",
+     "no": 13,
+     "warmup": 10,
+     "place": 3,
+     "points": "56.61",
+     "time": "17:35"
+    },
+    {
+     "name": "Lumia Sassi / Aarne Savola",
+     "nation": "FIN",
+     "no": 14,
+     "warmup": 10,
+     "place": 13,
+     "points": "34.23",
+     "time": "17:41"
     },
     {
      "name": "Diane Gallix / Elod Egyed-zsigmond",
      "nation": "HUN",
      "time": "17:54",
      "no": 16,
-     "warmup": 4,
-     "place": 12,
-     "points": "44.98"
-    },
-    {
-     "name": "Iris Lahti / Oskari Liedenpohja",
-     "nation": "FIN",
-     "time": "17:24",
-     "no": 12,
-     "warmup": 3,
-     "place": 4,
-     "points": "55.61"
-    },
-    {
-     "name": "Lumia Sassi / Aarne Savola",
-     "nation": "FIN",
-     "time": "17:41",
-     "no": 14,
-     "warmup": 4,
-     "place": 14,
-     "points": "34.23"
-    },
-    {
-     "name": "Maite van Mulders / Tudor Dominic Andrei",
-     "nation": "ROU",
-     "time": "17:11",
-     "no": 10,
-     "warmup": 3,
-     "place": 8,
-     "points": "47.36"
-    },
-    {
-     "name": "Villo Mira Szilagyi / Istvan Jaracs",
-     "nation": "HUN",
-     "time": "17:48",
-     "no": 15,
      "warmup": 4
-    },
-    {
-     "name": "Zoe Bianchi / Daniel Basile",
-     "nation": "ITA",
-     "time": "17:35",
-     "no": 13,
-     "warmup": 4,
-     "place": 3,
-     "points": "56.61"
     }
    ],
    "live": {
@@ -61546,19 +61561,18 @@
     "first": null,
     "names": {
      "Lea HIENNE / Louis VARESCON": "Lea Hienne / Louis Varescon",
+     "Alexia KRUK / Jan EISENHABER": "Alexia Kruk / Jan Eisenhaber",
+     "Zoe BIANCHI / Daniel BASILE": "Zoe Bianchi / Daniel Basile",
+     "Iris LAHTI / Oskari LIEDENPOHJA": "Iris Lahti / Oskari Liedenpohja",
      "Kristyna STANCLOVA / Karel KOSTRON": "Kristyna Stanclova / Karel Kostron",
      "Eleonore GABET / Raphael DUCLUSAUD": "Eleonore Gabet / Raphael Duclusaud",
      "Martina LAVAZZA / Raphael Raymond MEUNIER": "Martina Lavazza / Raphael Raymond Meunier",
+     "Maite van MULDERS / Tudor Dominic ANDREI": "Maite van Mulders / Tudor Dominic Andrei",
      "Angelina CUCHERAT / Leopold DACQUIN": "Angelina Cucherat / Leopold Dacquin",
+     "Annabel MANN / Jack HAMMOND": "Annabel Mann / Jack Hammond",
      "Alexandra ROUSKOVA / Lukas TOMAN": "Alexandra Rouskova / Lukas Toman",
      "Lena ZERINVARY-SIMON / Huba GALLAI": "Lena Zerinvary-simon / Huba Gallai",
-     "Annabel MANN / Jack HAMMOND": "Annabel Mann / Jack Hammond",
-     "Maite van MULDERS / Tudor Dominic ANDREI": "Maite van Mulders / Tudor Dominic Andrei",
-     "Alexia KRUK / Jan EISENHABER": "Alexia Kruk / Jan Eisenhaber",
-     "Iris LAHTI / Oskari LIEDENPOHJA": "Iris Lahti / Oskari Liedenpohja",
-     "Zoe BIANCHI / Daniel BASILE": "Zoe Bianchi / Daniel Basile",
      "Lumia SASSI / Aarne SAVOLA": "Lumia Sassi / Aarne Savola",
-     "Villo Mira SZILAGYI / Istvan JARACS": "Villo Mira Szilagyi / Istvan Jaracs",
      "Diane GALLIX / Elod EGYED-ZSIGMOND": "Diane Gallix / Elod Egyed-zsigmond"
     },
     "basis": "judges"
@@ -61618,27 +61632,27 @@
     },
     {
      "place": 2,
-     "name": "Искандер Амиров",
-     "nation": "ТАТ",
-     "points": "122.90"
-    },
-    {
-     "place": 3,
      "name": "Максим Галкин",
      "nation": "СВЕ",
      "points": "122.06"
+    },
+    {
+     "place": 3,
+     "name": "Михаил Голояд",
+     "nation": "БЕЛ",
+     "points": "111.80"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Кирилл Былинин — 123.15\n2. Искандер Амиров — 122.90\n3. Максим Галкин — 122.06\n\nНачало: 16:00 МСК\nТрансляция: VK Видео",
+   "desc": "Промежуточные итоги:\n1. Кирилл Былинин — 123.15\n2. Максим Галкин — 122.06\n3. Михаил Голояд — 111.80\n\nНачало: 16:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Владимир Гудзенко",
      "nation": "КОС",
+     "place": 5,
+     "points": "105.09",
      "time": "16:53",
      "no": 8,
-     "warmup": 2,
-     "place": 7,
-     "points": "105.09"
+     "warmup": 2
     },
     {
      "name": "Владислав Виниченко",
@@ -61650,7 +61664,7 @@
     {
      "name": "Данил Золотарев",
      "nation": "ТАТ",
-     "place": 9,
+     "place": 7,
      "points": "97.49",
      "time": "16:18",
      "no": 3,
@@ -61659,7 +61673,7 @@
     {
      "name": "Денис Никитин",
      "nation": "УДМ",
-     "place": 13,
+     "place": 11,
      "points": "86.29",
      "time": "16:07",
      "no": 1,
@@ -61668,11 +61682,11 @@
     {
      "name": "Егор Никитин",
      "nation": "ИВА",
+     "place": 9,
+     "points": "90.37",
      "time": "16:48",
      "no": 7,
-     "warmup": 2,
-     "place": 11,
-     "points": "90.37"
+     "warmup": 2
     },
     {
      "name": "Иван Теленков",
@@ -61709,11 +61723,11 @@
     {
      "name": "Кирилл Былинин",
      "nation": "ЧЕЛ",
+     "place": 1,
+     "points": "123.15",
      "time": "16:37",
      "no": 5,
-     "warmup": 2,
-     "place": 1,
-     "points": "123.15"
+     "warmup": 2
     },
     {
      "name": "Лев Бобык",
@@ -61732,7 +61746,7 @@
     {
      "name": "Макар Ушаков",
      "nation": "ПРМ",
-     "place": 12,
+     "place": 10,
      "points": "87.14",
      "time": "16:13",
      "no": 2,
@@ -61741,6 +61755,8 @@
     {
      "name": "Максим Галкин",
      "nation": "СВЕ",
+     "place": 2,
+     "points": "122.06",
      "time": "17:27",
      "no": 10,
      "warmup": 3,
@@ -61750,24 +61766,26 @@
     {
      "name": "Марк Аникиенко",
      "nation": "ЧЕЛ",
+     "place": 8,
+     "points": "95.63",
      "time": "16:42",
      "no": 6,
-     "warmup": 2,
-     "place": 10,
-     "points": "95.63"
+     "warmup": 2
     },
     {
      "name": "Марк Титов",
      "nation": "ТАТ",
+     "place": 6,
+     "points": "101.27",
      "time": "16:24",
      "no": 4,
-     "warmup": 1,
-     "place": 8,
-     "points": "101.27"
+     "warmup": 1
     },
     {
      "name": "Михаил Голояд",
      "nation": "БЕЛ",
+     "place": 3,
+     "points": "111.80",
      "time": "17:32",
      "no": 11,
      "warmup": 3,
@@ -61777,11 +61795,11 @@
     {
      "name": "Роман Чирков",
      "nation": "ТВЕ",
+     "place": 4,
+     "points": "110.24",
      "time": "16:59",
      "no": 9,
-     "warmup": 2,
-     "place": 5,
-     "points": "110.24"
+     "warmup": 2
     },
     {
      "name": "Степан Юров",
@@ -61798,17 +61816,17 @@
     "cat": "https://fsrussia.ru/results/2627/idel_2026/CAT003RS.htm",
     "first": "https://fsrussia.ru/results/2627/idel_2026/SEG005.htm",
     "names": {
+     "Максим ГАЛКИН": "Максим Галкин",
+     "Кирилл БЫЛИНИН": "Кирилл Былинин",
+     "Михаил ГОЛОЯД": "Михаил Голояд",
+     "Роман ЧИРКОВ": "Роман Чирков",
+     "Владимир ГУДЗЕНКО": "Владимир Гудзенко",
+     "Марк ТИТОВ": "Марк Титов",
+     "Марк АНИКИЕНКО": "Марк Аникиенко",
      "Данил ЗОЛОТАРЕВ": "Данил Золотарев",
+     "Егор НИКИТИН": "Егор Никитин",
      "Макар УШАКОВ": "Макар Ушаков",
      "Денис НИКИТИН": "Денис Никитин",
-     "Марк ТИТОВ": "Марк Титов",
-     "Кирилл БЫЛИНИН": "Кирилл Былинин",
-     "Марк АНИКИЕНКО": "Марк Аникиенко",
-     "Егор НИКИТИН": "Егор Никитин",
-     "Владимир ГУДЗЕНКО": "Владимир Гудзенко",
-     "Роман ЧИРКОВ": "Роман Чирков",
-     "Максим ГАЛКИН": "Максим Галкин",
-     "Михаил ГОЛОЯД": "Михаил Голояд",
      "Иван ТЕЛЕНКОВ": "Иван Теленков",
      "Искандер АМИРОВ": "Искандер Амиров",
      "Леонид НОВОЖИЛОВ": "Леонид Новожилов",
@@ -105275,5 +105293,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "3e8eeda9f298f3a7"
+ "rev": "a621582ccceba595"
 }
