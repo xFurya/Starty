@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-21T16:10:09+03:00",
- "checked": "2026-11-21T14:01:29.009102+00:00",
+ "generated": "2026-11-21T16:42:40+03:00",
+ "checked": "2026-11-21T16:42:40+03:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60893,19 +60893,19 @@
    },
    "facts": [
     {
-     "who": "Виктория Стрельцова",
+     "kind": "element",
      "text": "3 четверных в программе: 4T, 4S, 4S",
-     "kind": "element"
+     "who": "Виктория Стрельцова"
     },
     {
-     "who": "Софья Смагина",
+     "kind": "element",
      "text": "2 четверных в программе: 4S, 4T",
-     "kind": "element"
+     "who": "Софья Смагина"
     },
     {
-     "who": "Виктория Стрельцова",
+     "kind": "element",
      "text": "Тройной аксель",
-     "kind": "element"
+     "who": "Виктория Стрельцова"
     }
    ],
    "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
@@ -61111,7 +61111,7 @@
    "seg": "ПП",
    "title": "GP Finlandia Trophy — женщины ПП",
    "start": "2026-11-21T15:00:00+03:00",
-   "end": "2026-11-21T16:47:00+03:00",
+   "end": "2026-11-21T16:45:00+03:00",
    "venue": "Helsinki, Finland",
    "intl": true,
    "broadcast": [
@@ -61164,151 +61164,6 @@
      "points": "140.17"
     }
    ],
-   "desc": "Итог:\n1. Mao Shimada — 150.43\n2. Niina Petrokina — 144.98\n3. Isabeau Levito — 140.17\n\nИтог турнира:\n1. Mao Shimada — 229.49\n2. Niina Petrokina — 214.06\n3. Isabeau Levito — 207.19\n\nПримечательное:\n• Isabeau Levito — После короткой программы — 6-е место, в итоге — 3-е место\n• Mao Shimada — Отрыв от второго места — 15.43 балла\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
-    {
-     "name": "Anna Pezzetta",
-     "nation": "ITA",
-     "place": 7,
-     "points": "118.94",
-     "time": "15:23",
-     "no": 3,
-     "warmup": 1,
-     "final": 9
-    },
-    {
-     "name": "Haein Lee",
-     "nation": "KOR",
-     "time": "16:09",
-     "no": 8,
-     "warmup": 2,
-     "place": 5,
-     "points": "124.87",
-     "final": 5
-    },
-    {
-     "name": "Iida Karhunen",
-     "nation": "FIN",
-     "place": 6,
-     "points": "120.23",
-     "time": "15:46",
-     "no": 6,
-     "warmup": 1,
-     "final": 6
-    },
-    {
-     "name": "Isabeau Levito",
-     "nation": "USA",
-     "place": 3,
-     "points": "140.17",
-     "time": "16:01",
-     "no": 7,
-     "warmup": 2,
-     "final": 3
-    },
-    {
-     "name": "Janna Jyrkinen",
-     "nation": "FIN",
-     "place": 11,
-     "points": "96.66",
-     "time": "15:30",
-     "no": 4,
-     "warmup": 1,
-     "final": 11
-    },
-    {
-     "name": "Mao Shimada",
-     "nation": "JPN",
-     "time": "16:39",
-     "no": 12,
-     "warmup": 2,
-     "place": 1,
-     "points": "150.43",
-     "final": 1
-    },
-    {
-     "name": "Minja Peltonen",
-     "nation": "FIN",
-     "place": 12,
-     "points": "96.36",
-     "time": "15:07",
-     "no": 1,
-     "warmup": 1,
-     "final": 12
-    },
-    {
-     "name": "Niina Petrokina",
-     "nation": "EST",
-     "time": "16:32",
-     "no": 11,
-     "warmup": 2,
-     "place": 2,
-     "points": "144.98",
-     "final": 2
-    },
-    {
-     "name": "Rinka Watanabe",
-     "nation": "JPN",
-     "place": 9,
-     "points": "112.12",
-     "time": "15:15",
-     "no": 2,
-     "warmup": 1,
-     "final": 10
-    },
-    {
-     "name": "Rion Sumiyoshi",
-     "nation": "JPN",
-     "place": 8,
-     "points": "115.81",
-     "time": "15:38",
-     "no": 5,
-     "warmup": 1,
-     "final": 7
-    },
-    {
-     "name": "Seoyoung Kim",
-     "nation": "KOR",
-     "time": "16:24",
-     "no": 10,
-     "warmup": 2,
-     "place": 10,
-     "points": "108.50",
-     "final": 8
-    },
-    {
-     "name": "Yuseong Kim",
-     "nation": "KOR",
-     "time": "16:16",
-     "no": 9,
-     "warmup": 2,
-     "place": 4,
-     "points": "136.48",
-     "final": 4
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG004.htm",
-    "cat": "https://results.isu.org/results/season2627/gpfin2026/CAT002RS.htm",
-    "first": "https://results.isu.org/results/season2627/gpfin2026/SEG003.htm",
-    "names": {
-     "Isabeau LEVITO": "Isabeau Levito",
-     "Iida KARHUNEN": "Iida Karhunen",
-     "Rion SUMIYOSHI": "Rion Sumiyoshi",
-     "Anna PEZZETTA": "Anna Pezzetta",
-     "Rinka WATANABE": "Rinka Watanabe",
-     "Janna JYRKINEN": "Janna Jyrkinen",
-     "Minja PELTONEN": "Minja Peltonen",
-     "Haein LEE": "Haein Lee",
-     "Yuseong KIM": "Yuseong Kim",
-     "Seoyoung KIM": "Seoyoung Kim",
-     "Niina PETROKINA": "Niina Petrokina",
-     "Mao SHIMADA": "Mao Shimada"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json",
    "total": [
     {
      "place": 1,
@@ -61329,6 +61184,150 @@
      "points": "207.19"
     }
    ],
+   "desc": "Итог:\n1. Mao Shimada — 150.43\n2. Niina Petrokina — 144.98\n3. Isabeau Levito — 140.17\n\nИтог турнира:\n1. Mao Shimada — 229.49\n2. Niina Petrokina — 214.06\n3. Isabeau Levito — 207.19\n\nПримечательное:\n• Isabeau Levito — После короткой программы — 6-е место, в итоге — 3-е место\n• Mao Shimada — Отрыв от второго места — 15.43 балла\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Minja Peltonen",
+     "nation": "FIN",
+     "no": 1,
+     "warmup": 1,
+     "place": 12,
+     "points": "96.36",
+     "final": 12,
+     "time": "15:07"
+    },
+    {
+     "name": "Rinka Watanabe",
+     "nation": "JPN",
+     "no": 2,
+     "warmup": 1,
+     "place": 9,
+     "points": "112.12",
+     "final": 10,
+     "time": "15:15"
+    },
+    {
+     "name": "Anna Pezzetta",
+     "nation": "ITA",
+     "no": 3,
+     "warmup": 1,
+     "place": 7,
+     "points": "118.94",
+     "final": 9,
+     "time": "15:23"
+    },
+    {
+     "name": "Janna Jyrkinen",
+     "nation": "FIN",
+     "no": 4,
+     "warmup": 1,
+     "place": 11,
+     "points": "96.66",
+     "final": 11,
+     "time": "15:30"
+    },
+    {
+     "name": "Rion Sumiyoshi",
+     "nation": "JPN",
+     "no": 5,
+     "warmup": 1,
+     "place": 8,
+     "points": "115.81",
+     "final": 7,
+     "time": "15:38"
+    },
+    {
+     "name": "Iida Karhunen",
+     "nation": "FIN",
+     "no": 6,
+     "warmup": 1,
+     "place": 6,
+     "points": "120.23",
+     "final": 6,
+     "time": "15:46"
+    },
+    {
+     "name": "Isabeau Levito",
+     "nation": "USA",
+     "no": 7,
+     "warmup": 2,
+     "place": 3,
+     "points": "140.17",
+     "final": 3,
+     "time": "16:01"
+    },
+    {
+     "name": "Haein Lee",
+     "nation": "KOR",
+     "no": 8,
+     "warmup": 2,
+     "place": 5,
+     "points": "124.87",
+     "final": 5,
+     "time": "16:09"
+    },
+    {
+     "name": "Yuseong Kim",
+     "nation": "KOR",
+     "no": 9,
+     "warmup": 2,
+     "place": 4,
+     "points": "136.48",
+     "final": 4,
+     "time": "16:16"
+    },
+    {
+     "name": "Seoyoung Kim",
+     "nation": "KOR",
+     "no": 10,
+     "warmup": 2,
+     "place": 10,
+     "points": "108.50",
+     "final": 8,
+     "time": "16:24"
+    },
+    {
+     "name": "Niina Petrokina",
+     "nation": "EST",
+     "no": 11,
+     "warmup": 2,
+     "place": 2,
+     "points": "144.98",
+     "final": 2,
+     "time": "16:32"
+    },
+    {
+     "name": "Mao Shimada",
+     "nation": "JPN",
+     "no": 12,
+     "warmup": 2,
+     "place": 1,
+     "points": "150.43",
+     "final": 1,
+     "time": "16:39"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpfin2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpfin2026/SEG004.htm",
+    "cat": "https://results.isu.org/results/season2627/gpfin2026/CAT002RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpfin2026/SEG003.htm",
+    "names": {
+     "Mao SHIMADA": "Mao Shimada",
+     "Niina PETROKINA": "Niina Petrokina",
+     "Isabeau LEVITO": "Isabeau Levito",
+     "Yuseong KIM": "Yuseong Kim",
+     "Haein LEE": "Haein Lee",
+     "Iida KARHUNEN": "Iida Karhunen",
+     "Anna PEZZETTA": "Anna Pezzetta",
+     "Rion SUMIYOSHI": "Rion Sumiyoshi",
+     "Rinka WATANABE": "Rinka Watanabe",
+     "Seoyoung KIM": "Seoyoung Kim",
+     "Janna JYRKINEN": "Janna Jyrkinen",
+     "Minja PELTONEN": "Minja Peltonen"
+    },
+    "basis": "judges"
+   },
    "facts": [
     {
      "who": "Isabeau Levito",
@@ -61340,7 +61339,8 @@
      "text": "Отрыв от второго места — 15.43 балла",
      "kind": "place"
     }
-   ]
+   ],
+   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:dance-junior-rt",
@@ -61433,13 +61433,40 @@
      "time": "16:09"
     },
     {
+     "name": "Lea Hienne / Louis Varescon",
+     "nation": "FRA",
+     "no": 5,
+     "warmup": 10,
+     "place": 1,
+     "points": "58.81",
+     "time": "16:20"
+    },
+    {
+     "name": "Martina Lavazza / Raphael Raymond Meunier",
+     "nation": "ITA",
+     "no": 6,
+     "warmup": 10,
+     "place": 4,
+     "points": "51.16",
+     "time": "16:26"
+    },
+    {
+     "name": "Kristyna Stanclova / Karel Kostron",
+     "nation": "CZE",
+     "no": 7,
+     "warmup": 10,
+     "place": 2,
+     "points": "52.73",
+     "time": "16:33"
+    },
+    {
      "name": "Alexandra Rouskova / Lukas Toman",
      "nation": "CZE",
-     "time": "16:39",
      "no": 8,
-     "warmup": 2,
+     "warmup": 10,
      "place": 6,
-     "points": "45.75"
+     "points": "45.75",
+     "time": "16:39"
     },
     {
      "name": "Alexia Kruk / Jan Eisenhaber",
@@ -61470,24 +61497,6 @@
      "warmup": 3
     },
     {
-     "name": "Kristyna Stanclova / Karel Kostron",
-     "nation": "CZE",
-     "time": "16:33",
-     "no": 7,
-     "warmup": 2,
-     "place": 2,
-     "points": "52.73"
-    },
-    {
-     "name": "Lea Hienne / Louis Varescon",
-     "nation": "FRA",
-     "time": "16:20",
-     "no": 5,
-     "warmup": 2,
-     "place": 1,
-     "points": "58.81"
-    },
-    {
      "name": "Lumia Sassi / Aarne Savola",
      "nation": "FIN",
      "time": "17:41",
@@ -61500,15 +61509,6 @@
      "time": "17:11",
      "no": 10,
      "warmup": 3
-    },
-    {
-     "name": "Martina Lavazza / Raphael Raymond Meunier",
-     "nation": "ITA",
-     "time": "16:26",
-     "no": 6,
-     "warmup": 2,
-     "place": 4,
-     "points": "51.16"
     },
     {
      "name": "Villo Mira Szilagyi / Istvan Jaracs",
@@ -61532,13 +61532,13 @@
     "cat": null,
     "first": null,
     "names": {
-     "Eleonore GABET / Raphael DUCLUSAUD": "Eleonore Gabet / Raphael Duclusaud",
-     "Angelina CUCHERAT / Leopold DACQUIN": "Angelina Cucherat / Leopold Dacquin",
-     "Lena ZERINVARY-SIMON / Huba GALLAI": "Lena Zerinvary-simon / Huba Gallai",
      "Lea HIENNE / Louis VARESCON": "Lea Hienne / Louis Varescon",
-     "Martina LAVAZZA / Raphael Raymond MEUNIER": "Martina Lavazza / Raphael Raymond Meunier",
      "Kristyna STANCLOVA / Karel KOSTRON": "Kristyna Stanclova / Karel Kostron",
+     "Eleonore GABET / Raphael DUCLUSAUD": "Eleonore Gabet / Raphael Duclusaud",
+     "Martina LAVAZZA / Raphael Raymond MEUNIER": "Martina Lavazza / Raphael Raymond Meunier",
+     "Angelina CUCHERAT / Leopold DACQUIN": "Angelina Cucherat / Leopold Dacquin",
      "Alexandra ROUSKOVA / Lukas TOMAN": "Alexandra Rouskova / Lukas Toman",
+     "Lena ZERINVARY-SIMON / Huba GALLAI": "Lena Zerinvary-simon / Huba Gallai",
      "Annabel MANN / Jack HAMMOND": "Annabel Mann / Jack Hammond",
      "Maite van MULDERS / Tudor Dominic ANDREI": "Maite van Mulders / Tudor Dominic Andrei",
      "Alexia KRUK / Jan EISENHABER": "Alexia Kruk / Jan Eisenhaber",
@@ -61596,181 +61596,6 @@
      "url": "https://vkvideo.ru/live-38558219_456239878"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Кирилл Былинин — 123.15\n2. Марк Титов — 101.27\n3. Данил Золотарев — 97.49\n\nНачало: 16:00 МСК\nТрансляция: VK Видео",
-   "field": [
-    {
-     "name": "Денис Никитин",
-     "nation": "УДМ",
-     "time": "16:07",
-     "no": 1,
-     "warmup": 1,
-     "place": 5,
-     "points": "86.29"
-    },
-    {
-     "name": "Макар Ушаков",
-     "nation": "ПРМ",
-     "time": "16:13",
-     "no": 2,
-     "warmup": 1,
-     "place": 4,
-     "points": "87.14"
-    },
-    {
-     "name": "Данил Золотарев",
-     "nation": "ТАТ",
-     "time": "16:18",
-     "no": 3,
-     "warmup": 1,
-     "place": 3,
-     "points": "97.49"
-    },
-    {
-     "name": "Марк Титов",
-     "nation": "ТАТ",
-     "time": "16:24",
-     "no": 4,
-     "warmup": 1,
-     "place": 2,
-     "points": "101.27"
-    },
-    {
-     "name": "Кирилл Былинин",
-     "nation": "ЧЕЛ",
-     "time": "16:37",
-     "no": 5,
-     "warmup": 2,
-     "place": 1,
-     "points": "123.15"
-    },
-    {
-     "name": "Марк Аникиенко",
-     "nation": "ЧЕЛ",
-     "time": "16:42",
-     "no": 6,
-     "warmup": 2
-    },
-    {
-     "name": "Егор Никитин",
-     "nation": "ИВА",
-     "time": "16:48",
-     "no": 7,
-     "warmup": 2
-    },
-    {
-     "name": "Владимир Гудзенко",
-     "nation": "КОС",
-     "time": "16:53",
-     "no": 8,
-     "warmup": 2
-    },
-    {
-     "name": "Роман Чирков",
-     "nation": "ТВЕ",
-     "time": "16:59",
-     "no": 9,
-     "warmup": 2
-    },
-    {
-     "name": "Максим Галкин",
-     "nation": "СВЕ",
-     "time": "17:27",
-     "no": 10,
-     "warmup": 3
-    },
-    {
-     "name": "Михаил Голояд",
-     "nation": "БЕЛ",
-     "time": "17:32",
-     "no": 11,
-     "warmup": 3
-    },
-    {
-     "name": "Иван Теленков",
-     "nation": "МОБ",
-     "time": "17:38",
-     "no": 12,
-     "warmup": 3
-    },
-    {
-     "name": "Искандер Амиров",
-     "nation": "ТАТ",
-     "time": "17:43",
-     "no": 13,
-     "warmup": 3
-    },
-    {
-     "name": "Леонид Новожилов",
-     "nation": "ТУЛ",
-     "time": "17:49",
-     "no": 14,
-     "warmup": 3
-    },
-    {
-     "name": "Степан Юров",
-     "nation": "МОС",
-     "time": "18:02",
-     "no": 15,
-     "warmup": 4
-    },
-    {
-     "name": "Владислав Виниченко",
-     "nation": "РОС",
-     "time": "18:07",
-     "no": 16,
-     "warmup": 4
-    },
-    {
-     "name": "Илья Старков",
-     "nation": "ЛОБ",
-     "time": "18:13",
-     "no": 17,
-     "warmup": 4
-    },
-    {
-     "name": "Лев Бобык",
-     "nation": "НИЖ",
-     "time": "18:18",
-     "no": 18,
-     "warmup": 4
-    },
-    {
-     "name": "Ильяс Халиуллин",
-     "nation": "ТАТ",
-     "time": "18:24",
-     "no": 19,
-     "warmup": 4
-    }
-   ],
-   "live": {
-    "idx": "https://fsrussia.ru/results/2627/idel_2026/index.htm",
-    "seg": "https://fsrussia.ru/results/2627/idel_2026/SEG006.htm",
-    "cat": "https://fsrussia.ru/results/2627/idel_2026/CAT003RS.htm",
-    "first": "https://fsrussia.ru/results/2627/idel_2026/SEG005.htm",
-    "names": {
-     "Денис НИКИТИН": "Денис Никитин",
-     "Макар УШАКОВ": "Макар Ушаков",
-     "Данил ЗОЛОТАРЕВ": "Данил Золотарев",
-     "Марк ТИТОВ": "Марк Титов",
-     "Кирилл БЫЛИНИН": "Кирилл Былинин",
-     "Марк АНИКИЕНКО": "Марк Аникиенко",
-     "Егор НИКИТИН": "Егор Никитин",
-     "Владимир ГУДЗЕНКО": "Владимир Гудзенко",
-     "Роман ЧИРКОВ": "Роман Чирков",
-     "Максим ГАЛКИН": "Максим Галкин",
-     "Михаил ГОЛОЯД": "Михаил Голояд",
-     "Иван ТЕЛЕНКОВ": "Иван Теленков",
-     "Искандер АМИРОВ": "Искандер Амиров",
-     "Леонид НОВОЖИЛОВ": "Леонид Новожилов",
-     "Степан ЮРОВ": "Степан Юров",
-     "Владислав ВИНИЧЕНКО": "Владислав Виниченко",
-     "Илья СТАРКОВ": "Илья Старков",
-     "Лев БОБЫК": "Лев Бобык",
-     "Ильяс ХАЛИУЛЛИН": "Ильяс Халиуллин"
-    },
-    "basis": null
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json",
    "podium": [
     {
      "place": 1,
@@ -61791,7 +61616,178 @@
      "points": "97.49"
     }
    ],
-   "provisional": true
+   "desc": "Промежуточные итоги:\n1. Данил Золотарев — 97.49\n2. Макар Ушаков — 87.14\n3. Денис Никитин — 86.29\n\nНачало: 16:00 МСК\nТрансляция: VK Видео",
+   "field": [
+    {
+     "name": "Владимир Гудзенко",
+     "nation": "КОС",
+     "time": "16:53",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Владислав Виниченко",
+     "nation": "РОС",
+     "time": "18:07",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Данил Золотарев",
+     "nation": "ТАТ",
+     "place": 1,
+     "points": "97.49",
+     "time": "16:18",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Денис Никитин",
+     "nation": "УДМ",
+     "place": 3,
+     "points": "86.29",
+     "time": "16:07",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Егор Никитин",
+     "nation": "ИВА",
+     "time": "16:48",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Иван Теленков",
+     "nation": "МОБ",
+     "time": "17:38",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Илья Старков",
+     "nation": "ЛОБ",
+     "time": "18:13",
+     "no": 17,
+     "warmup": 4
+    },
+    {
+     "name": "Ильяс Халиуллин",
+     "nation": "ТАТ",
+     "time": "18:24",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Искандер Амиров",
+     "nation": "ТАТ",
+     "time": "17:43",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Кирилл Былинин",
+     "nation": "ЧЕЛ",
+     "time": "16:37",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Лев Бобык",
+     "nation": "НИЖ",
+     "time": "18:18",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Леонид Новожилов",
+     "nation": "ТУЛ",
+     "time": "17:49",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Макар Ушаков",
+     "nation": "ПРМ",
+     "place": 2,
+     "points": "87.14",
+     "time": "16:13",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Максим Галкин",
+     "nation": "СВЕ",
+     "time": "17:27",
+     "no": 10,
+     "warmup": 3
+    },
+    {
+     "name": "Марк Аникиенко",
+     "nation": "ЧЕЛ",
+     "time": "16:42",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Марк Титов",
+     "nation": "ТАТ",
+     "time": "16:24",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Михаил Голояд",
+     "nation": "БЕЛ",
+     "time": "17:32",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Роман Чирков",
+     "nation": "ТВЕ",
+     "time": "16:59",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Степан Юров",
+     "nation": "МОС",
+     "time": "18:02",
+     "no": 15,
+     "warmup": 4
+    }
+   ],
+   "provisional": true,
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/idel_2026/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/idel_2026/SEG006.htm",
+    "cat": "https://fsrussia.ru/results/2627/idel_2026/CAT003RS.htm",
+    "first": "https://fsrussia.ru/results/2627/idel_2026/SEG005.htm",
+    "names": {
+     "Данил ЗОЛОТАРЕВ": "Данил Золотарев",
+     "Макар УШАКОВ": "Макар Ушаков",
+     "Денис НИКИТИН": "Денис Никитин",
+     "Марк ТИТОВ": "Марк Титов",
+     "Кирилл БЫЛИНИН": "Кирилл Былинин",
+     "Марк АНИКИЕНКО": "Марк Аникиенко",
+     "Егор НИКИТИН": "Егор Никитин",
+     "Владимир ГУДЗЕНКО": "Владимир Гудзенко",
+     "Роман ЧИРКОВ": "Роман Чирков",
+     "Максим ГАЛКИН": "Максим Галкин",
+     "Михаил ГОЛОЯД": "Михаил Голояд",
+     "Иван ТЕЛЕНКОВ": "Иван Теленков",
+     "Искандер АМИРОВ": "Искандер Амиров",
+     "Леонид НОВОЖИЛОВ": "Леонид Новожилов",
+     "Степан ЮРОВ": "Степан Юров",
+     "Владислав ВИНИЧЕНКО": "Владислав Виниченко",
+     "Илья СТАРКОВ": "Илья Старков",
+     "Лев БОБЫК": "Лев Бобык",
+     "Ильяс ХАЛИУЛЛИН": "Ильяс Халиуллин"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:men-senior-pp",
@@ -105246,5 +105242,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "b9ecd2e608da6931"
+ "rev": "a94f005cf9b66f85"
 }
