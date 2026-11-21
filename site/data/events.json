@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T12:53:52+03:00",
- "checked": "2026-11-21T10:45:05.008760+00:00",
+ "checked": "2026-11-21T10:49:04.341714+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -60424,23 +60424,23 @@
     },
     {
      "place": 2,
-     "name": "Валерия Иорданова",
-     "nation": "СМО",
-     "points": "107.75"
+     "name": "Александра Гришина",
+     "nation": "СВЕ",
+     "points": "108.51"
     },
     {
      "place": 3,
-     "name": "Мария Лагутченко",
-     "nation": "ТАТ",
-     "points": "107.17"
+     "name": "Валерия Иорданова",
+     "nation": "СМО",
+     "points": "107.75"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ярослава Баринова — 113.81\n2. Валерия Иорданова — 107.75\n3. Мария Лагутченко — 107.17\n\nРоссияне:\n• Виктория Стрельцова — 15:34\n• Софья Смагина — 15:39\n\nНачало: 11:00 МСК\nТрансляция: VK Видео",
+   "desc": "Промежуточные итоги:\n1. Ярослава Баринова — 113.81\n2. Александра Гришина — 108.51\n3. Валерия Иорданова — 107.75\n\nРоссияне:\n• Виктория Стрельцова — 15:34\n• Софья Смагина — 15:39\n\nНачало: 11:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Авелина Бердоносова",
      "nation": "ПРМ",
-     "place": 7,
+     "place": 8,
      "points": "90.96",
      "time": "12:26",
      "no": 13,
@@ -60479,7 +60479,9 @@
      "nation": "СВЕ",
      "time": "13:26",
      "no": 20,
-     "warmup": 4
+     "warmup": 4,
+     "place": 2,
+     "points": "108.51"
     },
     {
      "name": "Анастасия Выровая",
@@ -60498,7 +60500,7 @@
     {
      "name": "Арина Теслина",
      "nation": "ВЛГ",
-     "place": 17,
+     "place": 18,
      "points": "69.03",
      "time": "11:23",
      "no": 4,
@@ -60507,7 +60509,7 @@
     {
      "name": "Арина Чернобавская",
      "nation": "ИВА",
-     "place": 18,
+     "place": 19,
      "points": "67.36",
      "time": "11:52",
      "no": 8,
@@ -60519,7 +60521,7 @@
      "time": "13:05",
      "no": 16,
      "warmup": 4,
-     "place": 2,
+     "place": 3,
      "points": "107.75"
     },
     {
@@ -60532,7 +60534,7 @@
     {
      "name": "Вероника Шиленкова",
      "nation": "МРД",
-     "place": 15,
+     "place": 16,
      "points": "78.05",
      "time": "11:07",
      "no": 1,
@@ -60548,7 +60550,7 @@
     {
      "name": "Дана Титова",
      "nation": "ТУЛ",
-     "place": 6,
+     "place": 7,
      "points": "90.96",
      "time": "11:41",
      "no": 6,
@@ -60557,7 +60559,7 @@
     {
      "name": "Дарья Хришкова",
      "nation": "ЛИП",
-     "place": 11,
+     "place": 12,
      "points": "82.69",
      "time": "12:21",
      "no": 12,
@@ -60573,7 +60575,7 @@
     {
      "name": "Екатерина Смирнова",
      "nation": "КОС",
-     "place": 8,
+     "place": 9,
      "points": "89.10",
      "time": "12:15",
      "no": 11,
@@ -60582,7 +60584,7 @@
     {
      "name": "Кира Васильева",
      "nation": "КИР",
-     "place": 14,
+     "place": 15,
      "points": "78.38",
      "time": "11:47",
      "no": 7,
@@ -60605,7 +60607,7 @@
     {
      "name": "Мадина Абзипарова",
      "nation": "ТАТ",
-     "place": 5,
+     "place": 6,
      "points": "90.96",
      "time": "12:31",
      "no": 14,
@@ -60621,7 +60623,7 @@
     {
      "name": "Маргарита Котенева",
      "nation": "МАР",
-     "place": 19,
+     "place": 20,
      "points": "67.03",
      "time": "11:18",
      "no": 3,
@@ -60640,7 +60642,7 @@
      "time": "12:37",
      "no": 15,
      "warmup": 3,
-     "place": 3,
+     "place": 4,
      "points": "107.17"
     },
     {
@@ -60667,7 +60669,7 @@
     {
      "name": "Полина Шишкина",
      "nation": "ВЛД",
-     "place": 16,
+     "place": 17,
      "points": "77.08",
      "time": "12:03",
      "no": 10,
@@ -60683,7 +60685,7 @@
     {
      "name": "Сабина Киселева",
      "nation": "ПЕН",
-     "place": 13,
+     "place": 14,
      "points": "81.08",
      "time": "11:12",
      "no": 2,
@@ -60692,7 +60694,7 @@
     {
      "name": "София Нуреева",
      "nation": "ЧЕЛ",
-     "place": 9,
+     "place": 10,
      "points": "85.25",
      "time": "11:57",
      "no": 9,
@@ -60701,7 +60703,7 @@
     {
      "name": "София Самуйлик",
      "nation": "СТА",
-     "place": 12,
+     "place": 13,
      "points": "82.23",
      "time": "11:28",
      "no": 5,
@@ -60720,7 +60722,7 @@
      "time": "13:21",
      "no": 19,
      "warmup": 4,
-     "place": 4,
+     "place": 5,
      "points": "101.56"
     },
     {
@@ -60738,7 +60740,7 @@
      "time": "13:10",
      "no": 17,
      "warmup": 4,
-     "place": 10,
+     "place": 11,
      "points": "84.62"
     }
    ],
@@ -60830,7 +60832,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Irma Caldara / Riccardo Maglio — 90.77\n2. Hannah Herrera / Ivan Khobta — 86.93\n\nНачало: 13:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Megan Wessenberg / Denys Strekalin — 101.32\n2. Irma Caldara / Riccardo Maglio — 90.77\n3. Hannah Herrera / Ivan Khobta — 86.93\n\nНачало: 13:15 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Irma Caldara / Riccardo Maglio",
@@ -60838,7 +60840,7 @@
      "time": "13:22",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "90.77"
     },
     {
@@ -60847,7 +60849,7 @@
      "time": "13:30",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "86.93"
     },
     {
@@ -60855,7 +60857,9 @@
      "nation": "FRA",
      "time": "13:38",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "101.32"
     },
     {
      "name": "Valentina Plazas / Maximiliano Fernandez",
@@ -60914,12 +60918,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Megan Wessenberg / Denys Strekalin",
+     "nation": "FRA",
+     "points": "101.32"
+    },
+    {
+     "place": 2,
      "name": "Irma Caldara / Riccardo Maglio",
      "nation": "ITA",
      "points": "90.77"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Hannah Herrera / Ivan Khobta",
      "nation": "UKR",
      "points": "86.93"
@@ -104836,5 +104846,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "73f89cc01b76c479"
+ "rev": "d4bf7e009e38d7fb"
 }
