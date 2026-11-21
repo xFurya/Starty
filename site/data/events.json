@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T16:10:09+03:00",
- "checked": "2026-11-21T13:37:29.186545+00:00",
+ "checked": "2026-11-21T13:41:29.376703+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -61147,29 +61147,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Niina Petrokina",
+     "nation": "EST",
+     "points": "144.98"
+    },
+    {
+     "place": 2,
      "name": "Isabeau Levito",
      "nation": "USA",
      "points": "140.17"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Yuseong Kim",
      "nation": "KOR",
      "points": "136.48"
-    },
-    {
-     "place": 3,
-     "name": "Haein Lee",
-     "nation": "KOR",
-     "points": "124.87"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Isabeau Levito — 140.17\n2. Yuseong Kim — 136.48\n3. Haein Lee — 124.87\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Niina Petrokina — 144.98\n2. Isabeau Levito — 140.17\n3. Yuseong Kim — 136.48\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Anna Pezzetta",
      "nation": "ITA",
-     "place": 5,
+     "place": 6,
      "points": "118.94",
      "time": "15:23",
      "no": 3,
@@ -61181,13 +61181,13 @@
      "time": "16:09",
      "no": 8,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "124.87"
     },
     {
      "name": "Iida Karhunen",
      "nation": "FIN",
-     "place": 4,
+     "place": 5,
      "points": "120.23",
      "time": "15:46",
      "no": 6,
@@ -61196,7 +61196,7 @@
     {
      "name": "Isabeau Levito",
      "nation": "USA",
-     "place": 1,
+     "place": 2,
      "points": "140.17",
      "time": "16:01",
      "no": 7,
@@ -61205,7 +61205,7 @@
     {
      "name": "Janna Jyrkinen",
      "nation": "FIN",
-     "place": 9,
+     "place": 10,
      "points": "96.66",
      "time": "15:30",
      "no": 4,
@@ -61221,7 +61221,7 @@
     {
      "name": "Minja Peltonen",
      "nation": "FIN",
-     "place": 10,
+     "place": 11,
      "points": "96.36",
      "time": "15:07",
      "no": 1,
@@ -61232,12 +61232,14 @@
      "nation": "EST",
      "time": "16:32",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "144.98"
     },
     {
      "name": "Rinka Watanabe",
      "nation": "JPN",
-     "place": 7,
+     "place": 8,
      "points": "112.12",
      "time": "15:15",
      "no": 2,
@@ -61246,7 +61248,7 @@
     {
      "name": "Rion Sumiyoshi",
      "nation": "JPN",
-     "place": 6,
+     "place": 7,
      "points": "115.81",
      "time": "15:38",
      "no": 5,
@@ -61258,7 +61260,7 @@
      "time": "16:24",
      "no": 10,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "108.50"
     },
     {
@@ -61267,7 +61269,7 @@
      "time": "16:16",
      "no": 9,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "136.48"
     }
    ],
@@ -61372,7 +61374,7 @@
      "nation": "HUN",
      "no": 3,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "41.44",
      "time": "16:02"
     },
@@ -61390,7 +61392,9 @@
      "nation": "CZE",
      "time": "16:39",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6,
+     "points": "45.75"
     },
     {
      "name": "Alexia Kruk / Jan Eisenhaber",
@@ -61547,7 +61551,7 @@
      "url": "https://vkvideo.ru/live-38558219_456239878"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Макар Ушаков — 87.14\n2. Денис Никитин — 86.29\n\nНачало: 16:00 МСК\nТрансляция: VK Видео",
+   "desc": "Промежуточные итоги:\n1. Данил Золотарев — 97.49\n2. Макар Ушаков — 87.14\n3. Денис Никитин — 86.29\n\nНачало: 16:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Денис Никитин",
@@ -61555,7 +61559,7 @@
      "time": "16:07",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "86.29"
     },
     {
@@ -61564,7 +61568,7 @@
      "time": "16:13",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "87.14"
     },
     {
@@ -61572,7 +61576,9 @@
      "nation": "ТАТ",
      "time": "16:18",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "97.49"
     },
     {
      "name": "Марк Титов",
@@ -61719,12 +61725,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Данил Золотарев",
+     "nation": "ТАТ",
+     "points": "97.49"
+    },
+    {
+     "place": 2,
      "name": "Макар Ушаков",
      "nation": "ПРМ",
      "points": "87.14"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Денис Никитин",
      "nation": "УДМ",
      "points": "86.29"
@@ -105185,5 +105197,5 @@
   "Ольга Грабовская": "photos/f5985eb42d016f2e.jpg",
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg"
  },
- "rev": "6ecda3936174670e"
+ "rev": "88963517f345beb3"
 }
