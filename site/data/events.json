@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-21T21:19:23+03:00",
- "checked": "2026-11-21T19:22:18.495441+00:00",
+ "checked": "2026-11-21T19:30:13.233915+00:00",
  "complete": true,
  "facts_version": "8",
  "sources": {
@@ -62911,7 +62911,7 @@
      "time": "21:07",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "50.36"
     },
     {
@@ -62920,7 +62920,7 @@
      "time": "21:12",
      "no": 2,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "48.57"
     },
     {
@@ -62947,7 +62947,7 @@
      "time": "21:25",
      "no": 5,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "49.95"
     },
     {
@@ -62973,7 +62973,9 @@
      "nation": "МОС",
      "time": "21:46",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "70.37"
     },
     {
      "name": "Никита Волин",
@@ -105637,5 +105639,5 @@
   "Yaraslau Sytsik": "photos/e9921237607f9ebc.jpg",
   "Sherim van Geffen": "photos/cf8b97bcf35967a4.jpg"
  },
- "rev": "af944982d45b545f"
+ "rev": "9807a73e2383cae9"
 }
