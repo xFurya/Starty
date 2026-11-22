@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T14:57:39+03:00",
- "checked": "2026-11-22T13:05:38.822366+00:00",
+ "checked": "2026-11-22T13:13:39.004542+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63861,7 +63861,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Daniela Ivanitskiy / Matthew Sperry — 80.14\n2. Olympia Kalaganis / Emile Deveau — 69.08\n\nНачало: 15:40 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Alisa Ovsiankina / Maximilien Rahier — 92.21\n2. Daniela Ivanitskiy / Matthew Sperry — 80.14\n3. Olympia Kalaganis / Emile Deveau — 69.08\n\nНачало: 15:40 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Olympia Kalaganis / Emile Deveau",
@@ -63869,7 +63869,7 @@
      "time": "15:45",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "69.08"
     },
     {
@@ -63878,7 +63878,7 @@
      "time": "15:53",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "80.14"
     },
     {
@@ -63886,7 +63886,9 @@
      "nation": "FRA",
      "time": "16:01",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "92.21"
     },
     {
      "name": "Natalia Pallu-neves / Jayin Panesar",
@@ -63993,12 +63995,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Alisa Ovsiankina / Maximilien Rahier",
+     "nation": "FRA",
+     "points": "92.21"
+    },
+    {
+     "place": 2,
      "name": "Daniela Ivanitskiy / Matthew Sperry",
      "nation": "FIN",
      "points": "80.14"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Olympia Kalaganis / Emile Deveau",
      "nation": "GRE",
      "points": "69.08"
@@ -116710,5 +116718,5 @@
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg",
   "Maite van Mulders": "photos/1a065c6ba6053ced.jpg"
  },
- "rev": "48cbb5102fdfa106"
+ "rev": "ed7036435e589f28"
 }
