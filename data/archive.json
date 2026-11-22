@@ -81,7 +81,8 @@
 ["https://results.isu.org/results/season2627/gpfin2026/FSKXICEDANCE----------FNL-000100--_JudgesDetailsperSkater.pdf", "GP Finlandia Trophy", "2026-11-21", "dance", "senior", "ПТ", "ISU"],
 ["https://fsrussia.ru/results/2627/idel_2026/FSKMSINGLES-----------QUAL000100--_JudgesDetailsperSkater.pdf", "Идель", "2026-11-21", "men", "senior", "КП", "ФФККР"],
 ["https://fsrussia.ru/results/2627/idel_2026/FSKWSINGLES-----------FNL-000100--_JudgesDetailsperSkater.pdf", "Идель", "2026-11-22", "women", "senior", "ПП", "ФФККР"],
-["https://results.fsresults.info/2026-2027/CSEST2026/FSKXICEDANCEJUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf", "CS Tallinn Trophy", "2026-11-22", "dance", "junior", "ПТ", "CS Tallinn Trophy"]
+["https://results.fsresults.info/2026-2027/CSEST2026/FSKXICEDANCEJUNIOR----FNL-000100--_JudgesDetailsperSkater.pdf", "CS Tallinn Trophy", "2026-11-22", "dance", "junior", "ПТ", "CS Tallinn Trophy"],
+["https://fsrussia.ru/results/2627/idel_2026/FSKMSINGLES-----------FNL-000100--_JudgesDetailsperSkater.pdf", "Идель", "2026-11-22", "men", "senior", "ПП", "ФФККР"]
 ],
 "ath": {
 "aboian hana maria / danil veseluhin": {"c": ["USA"], "el": {"Kp4": [1, 10, null, null]}, "k": "dance", "n": "Hana Maria ABOIAN / Daniil VESELUKHIN"},
@@ -119,7 +120,7 @@
 "danel grasl": {"c": ["ITA"], "el": {"3A": [6, 0, 8.0, 0], "3A+1Eu+3S+2A+SEQ": [2, 1, 15.6, 1], "3A+3T": [2, 1, 12.2, 1], "4F": [2, 1, 11.0, 1], "4Lo": [3, 0, 10.5, 0], "4Lz": [3, 0, 11.5, 1], "4Lz+3T": [1, 0, 15.7, 0]}, "k": "men", "n": "Daniel GRASSL", "q": [3, 1, "4Lz 4F 4Lo"]},
 "danel martinov": {"c": ["USA"], "el": {"3A": [2, 37, 8.0, 37], "4T": [2, 37, 9.5, 37]}, "k": "men", "n": "Daniel MARTYNOV"},
 "dupuis saramaude": {"c": ["CAN"], "el": {"3A": [2, 3, 8.0, 3]}, "k": "women", "n": "Sara-Maude DUPUIS"},
-"dvornikov vladislav": {"c": ["МОБ"], "el": {"3A": [1, 79, 8.0, 79]}, "k": "men", "n": "Владислав ДВОРНИКОВ"},
+"dvornikov vladislav": {"c": ["МОБ"], "el": {"3A": [3, 79, 8.0, 79], "3A+2T": [1, 82, 9.3, 82]}, "k": "men", "n": "Владислав ДВОРНИКОВ"},
 "egadze nika": {"c": ["GEO"], "el": {"3A": [2, 67, 8.0, 67], "4S": [2, 76, null, null], "4S+1Eu+3S+2A+SEQ": [1, 76, 17.3, 76], "4S+3T": [1, 76, 13.9, 76], "4T": [1, 67, null, null], "4T+2T": [1, 67, 10.8, 67]}, "k": "men", "n": "Nika EGADZE", "q": [2, 76, "4S 4S"]},
 "egor nikitin": {"c": ["ИВА"], "el": {"3A": [1, 65, 8.0, 65]}, "k": "men", "n": "Егор НИКИТИН"},
 "elias saed": {"c": ["SWE"], "el": {"3A": [4, 0, 8.0, 0], "3A+1Eu+2S+2A+SEQ": [1, 60, 12.6, 60], "3A+1Eu+3S+2A+SEQ": [1, 1, 15.6, 1]}, "k": "men", "n": "Elias SAYED"},
@@ -153,7 +154,7 @@
 "ilia stroganov": {"c": ["СПБ"], "el": {"3A": [2, 40, 8.0, 40], "3A+2A+1Eu+3S+SEQ": [1, 48, 15.6, 48], "4Lo": [3, 40, 10.5, 40], "4Lo+3T": [1, 48, 14.7, 48], "4Lz": [2, 40, 11.5, 48], "4Lz+3T": [1, 40, 15.7, 40]}, "k": "men", "n": "Илья СТРОГАНОВ", "q": [3, 48, "4Lz 4Lo 4Lo"]},
 "iohn kim": {"c": ["CAN"], "el": {"3A": [3, 0, 8.0, 0], "3A+2T": [1, 1, 9.3, 1], "4S": [1, 1, 9.7, 1], "4T": [1, 0, 9.5, 0]}, "k": "men", "n": "John KIM"},
 "iuiae kim": {"c": ["KOR"], "el": {"3A": [2, 43, 8.0, 43]}, "k": "women", "n": "Yujae KIM"},
-"iuri sidorov": {"c": ["ОРЕ"], "el": {"4T": [1, 79, 9.5, 79]}, "k": "men", "n": "Юрий СИДОРОВ"},
+"iuri sidorov": {"c": ["ОРЕ"], "el": {"4S": [1, 82, 9.7, 82], "4T": [3, 79, 9.5, 79], "4T+2T": [1, 82, 10.8, 82]}, "k": "men", "n": "Юрий СИДОРОВ", "q": [3, 82, "4S 4T 4T"]},
 "iuseong kim": {"c": ["KOR"], "el": {"3A": [2, 64, 8.0, 64]}, "k": "women", "n": "Yuseong KIM"},
 "ivan makev": {"c": ["МОС"], "el": {"3A": [1, 79, 8.0, 79]}, "k": "men", "n": "Иван МАКИЕВ"},
 "kazuki tomono": {"c": ["JPN"], "el": {"3A": [3, 67, 8.0, 67], "3A+1Eu+2S+2A+SEQ": [1, 76, 12.6, 76], "3A+2T": [1, 76, 9.3, 76], "4S": [1, 76, 9.7, 76], "4T": [1, 67, 9.5, 67]}, "k": "men", "n": "Kazuki TOMONO"},
@@ -162,7 +163,7 @@
 "kiril zhurahovski": {"c": ["МОС"], "el": {"3A": [1, 35, null, null], "3A+3T": [1, 35, 12.2, 35]}, "k": "men", "n": "Кирилл ЖУРАХОВСКИЙ"},
 "kirilo marsak": {"c": ["UKR"], "el": {"3A": [2, 67, 8.0, 67], "4Lz": [1, 76, 11.5, 76]}, "k": "men", "n": "Kyrylo MARSAK"},
 "kondratiuk mark": {"c": ["МОС"], "el": {"3A": [2, 40, 8.0, 40], "4Lz": [2, 40, 11.5, 40], "4S": [3, 40, 9.7, 48], "4S+2A+1Eu+3S+SEQ": [1, 48, 17.3, 48], "4S+3T": [1, 40, 13.9, 40], "4T": [1, 48, 9.5, 48]}, "k": "men", "n": "Марк КОНДРАТЮК", "q": [4, 48, "4Lz 4T 4S 4S"]},
-"konstantin safonov": {"c": ["ТУЛ"], "el": {"3A": [1, 79, 8.0, 79]}, "k": "men", "n": "Константин САФОНОВ"},
+"konstantin safonov": {"c": ["ТУЛ"], "el": {"3A": [2, 79, 8.0, 79]}, "k": "men", "n": "Константин САФОНОВ"},
 "ksaver vauclin": {"c": ["FRA"], "el": {"3A": [1, 60, 8.0, 60]}, "k": "men", "n": "Xavier VAUCLIN"},
 "kuperman tamir": {"c": ["ISR"], "el": {"3A": [5, 1, 8.0, 20], "3A+2T": [1, 1, 9.3, 1], "4Lz": [2, 1, 11.5, 1], "4S": [6, 0, 9.7, 1], "4S+3T": [2, 0, 13.9, 0], "4T": [5, 0, 9.5, 0], "4T+3T": [1, 37, 13.7, 37]}, "k": "men", "n": "Tamir KUPERMAN", "q": [4, 42, "4Lz 4S 4T 4T"]},
 "lazarev lev": {"c": ["МОС"], "el": {"3A": [1, 40, 8.0, 40], "4F": [2, 40, 11.0, 48], "4F+3T": [1, 40, 15.2, 40], "4Lz": [3, 40, 11.5, 40], "4Lz+1Eu+3S+2A+SEQ": [1, 48, 19.1, 48], "4S": [1, 48, 9.7, 48], "4T": [1, 48, null, null], "4T+3T": [1, 48, 13.7, 48]}, "k": "men", "n": "Лев ЛАЗАРЕВ", "q": [5, 48, "4F 4Lz 4S 4Lz 4T"]},
