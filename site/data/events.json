@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T11:19:40+03:00",
- "checked": "2026-11-22T10:45:02.945803+00:00",
+ "checked": "2026-11-22T11:13:03.005083+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63397,7 +63397,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Diane Gallix / Elod Egyed-zsigmond — 68.46\n2. Alexandra Rouskova / Lukas Toman — 65.12\n3. Lena Zerinvary-simon / Huba Gallai — 61.38\n\nНачало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Annabel Mann / Jack Hammond — 72.92\n2. Diane Gallix / Elod Egyed-zsigmond — 68.46\n3. Alexandra Rouskova / Lukas Toman — 65.12\n\nНачало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Lumia Sassi / Aarne Savola",
@@ -63405,7 +63405,7 @@
      "time": "13:15",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "55.94"
     },
     {
@@ -63414,7 +63414,7 @@
      "time": "13:22",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "61.38"
     },
     {
@@ -63423,7 +63423,7 @@
      "time": "13:29",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "68.46"
     },
     {
@@ -63432,7 +63432,7 @@
      "time": "13:37",
      "no": 4,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "65.12"
     },
     {
@@ -63440,7 +63440,9 @@
      "nation": "GBR",
      "time": "14:05",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "72.92"
     },
     {
      "name": "Angelina Cucherat / Leopold Dacquin",
@@ -63533,21 +63535,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Annabel Mann / Jack Hammond",
+     "nation": "GBR",
+     "points": "72.92"
+    },
+    {
+     "place": 2,
      "name": "Diane Gallix / Elod Egyed-zsigmond",
      "nation": "HUN",
      "points": "68.46"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Alexandra Rouskova / Lukas Toman",
      "nation": "CZE",
      "points": "65.12"
-    },
-    {
-     "place": 3,
-     "name": "Lena Zerinvary-simon / Huba Gallai",
-     "nation": "HUN",
-     "points": "61.38"
     }
    ],
    "provisional": true
@@ -63587,14 +63589,16 @@
      "url": "https://vkvideo.ru/live-38558219_456239879"
     }
    ],
-   "desc": "Начало: 14:00 МСК\nТрансляция: VK Видео",
+   "desc": "Промежуточные итоги:\n1. Василий Пономарев — 113.79\n\nНачало: 14:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Василий Пономарев",
      "nation": "СВЕ",
      "time": "14:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "113.79"
     },
     {
      "name": "Юрий Сидоров",
@@ -63679,7 +63683,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Василий Пономарев",
+     "nation": "СВЕ",
+     "points": "113.79"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:dance-senior-pt",
@@ -116550,5 +116563,5 @@
   "Emily Zhang": "photos/fcd1a5a126d15038.jpg",
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg"
  },
- "rev": "e4ce34c37dd7f9a1"
+ "rev": "adb0d0a4d316729e"
 }
