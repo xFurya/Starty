@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T07:20:41+03:00",
- "checked": "2026-11-22T07:20:41+03:00",
+ "checked": "2026-11-22T08:13:02.889554+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -62667,14 +62667,16 @@
      "url": "https://vkvideo.ru/live-38558219_456239879"
     }
    ],
-   "desc": "Начало: 11:00 МСК\nТрансляция: VK Видео",
+   "desc": "Промежуточные итоги:\n1. Виктория Ушакова — 93.58\n\nНачало: 11:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Виктория Ушакова",
      "nation": "РОС",
      "time": "11:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "93.58"
     },
     {
      "name": "Ксения Вагина",
@@ -62831,7 +62833,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Виктория Ушакова",
+     "nation": "РОС",
+     "points": "93.58"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:dance-junior-pt",
@@ -115353,5 +115364,5 @@
   "Mia Barghout": "photos/b3cdb8a5dba60d10.jpg",
   "Samuel Mindra": "photos/5f3782862e95c676.jpg"
  },
- "rev": "b4dc48792bd4d87c"
+ "rev": "9a8c55d1ab62b454"
 }
