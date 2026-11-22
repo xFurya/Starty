@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T11:19:40+03:00",
- "checked": "2026-11-22T11:19:40+03:00",
+ "checked": "2026-11-22T08:45:03.025321+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63114,7 +63114,9 @@
      "nation": "ИВА",
      "time": "11:39",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "91.57"
     },
     {
      "name": "Алиса Юрова",
@@ -63130,9 +63132,7 @@
      "points": "97.00",
      "time": "11:19",
      "no": 3,
-     "warmup": 1,
-     "place": 2,
-     "points": "97.00"
+     "warmup": 1
     },
     {
      "name": "Анастасия Фурсова",
@@ -63147,7 +63147,7 @@
      "time": "11:25",
      "no": 4,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "88.55"
     },
     {
@@ -116448,5 +116448,5 @@
   "Emily Zhang": "photos/fcd1a5a126d15038.jpg",
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg"
  },
- "rev": "90c112d6d09722ad"
+ "rev": "08390aab63fd5e6f"
 }
