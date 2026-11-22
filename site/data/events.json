@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T11:19:40+03:00",
- "checked": "2026-11-22T08:49:02.995783+00:00",
+ "checked": "2026-11-22T08:57:03.929754+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63185,7 +63185,9 @@
      "nation": "ОМС",
      "time": "11:51",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7,
+     "points": "81.10"
     },
     {
      "name": "Екатерина Кольцова",
@@ -116450,5 +116452,5 @@
   "Emily Zhang": "photos/fcd1a5a126d15038.jpg",
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg"
  },
- "rev": "05c91cae1da48b72"
+ "rev": "86e4f8162dc02bc0"
 }
