@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-22T14:57:39+03:00",
- "checked": "2026-11-22T13:21:39.478658+00:00",
+ "generated": "2026-11-22T16:02:13+03:00",
+ "checked": "2026-11-22T16:02:13+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63366,7 +63366,7 @@
    "seg": "ПТ",
    "title": "CS Tallinn Trophy — юниорские танцы ПТ",
    "start": "2026-11-22T13:10:00+03:00",
-   "end": "2026-11-22T15:23:00+03:00",
+   "end": "2026-11-22T15:30:00+03:00",
    "venue": "Tallinn, Estonia",
    "intl": true,
    "broadcast": [
@@ -63417,190 +63417,6 @@
      "points": "79.57"
     }
    ],
-   "desc": "Итог:\n1. Zoe Bianchi / Daniel Basile — 93.77\n2. Lea Hienne / Louis Varescon — 90.45\n3. Kristyna Stanclova / Karel Kostron — 79.57\n\nИтог турнира:\n1. Zoe Bianchi / Daniel Basile — 150.38\n2. Lea Hienne / Louis Varescon — 149.26\n3. Alexia Kruk / Jan Eisenhaber — 137.29\n\nПримечательное:\n• Lea Hienne / Louis Varescon — Личный рекорд за ПТ: 90.45 (был 89.45)\n• Kristyna Stanclova / Karel Kostron — Личный рекорд за ПТ: 79.57 (был 78.19)\n• Lea Hienne / Louis Varescon — Личный рекорд по сумме: 149.26 (был 149.03)\n\nНачало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
-   "field": [
-    {
-     "name": "Alexandra Rouskova / Lukas Toman",
-     "nation": "CZE",
-     "place": 12,
-     "points": "65.12",
-     "time": "13:37",
-     "no": 4,
-     "warmup": 1,
-     "final": 12
-    },
-    {
-     "name": "Alexia Kruk / Jan Eisenhaber",
-     "nation": "GER",
-     "time": "15:08",
-     "no": 13,
-     "warmup": 3,
-     "place": 4,
-     "points": "79.51",
-     "final": 3
-    },
-    {
-     "name": "Angelina Cucherat / Leopold Dacquin",
-     "nation": "FRA",
-     "place": 5,
-     "points": "79.02",
-     "time": "14:12",
-     "no": 6,
-     "warmup": 2,
-     "final": 8
-    },
-    {
-     "name": "Annabel Mann / Jack Hammond",
-     "nation": "GBR",
-     "place": 10,
-     "points": "72.92",
-     "time": "14:05",
-     "no": 5,
-     "warmup": 2,
-     "final": 10
-    },
-    {
-     "name": "Diane Gallix / Elod Egyed-zsigmond",
-     "nation": "HUN",
-     "place": 11,
-     "points": "68.46",
-     "time": "13:29",
-     "no": 3,
-     "warmup": 1,
-     "final": 11
-    },
-    {
-     "name": "Eleonore Gabet / Raphael Duclusaud",
-     "nation": "FRA",
-     "place": 8,
-     "points": "77.41",
-     "time": "14:34",
-     "no": 9,
-     "warmup": 2,
-     "final": 6
-    },
-    {
-     "name": "Iris Lahti / Oskari Liedenpohja",
-     "nation": "FIN",
-     "place": 7,
-     "points": "78.26",
-     "time": "14:53",
-     "no": 11,
-     "warmup": 3,
-     "final": 4
-    },
-    {
-     "name": "Kristyna Stanclova / Karel Kostron",
-     "nation": "CZE",
-     "place": 3,
-     "points": "79.57",
-     "time": "14:46",
-     "no": 10,
-     "warmup": 3,
-     "final": 5
-    },
-    {
-     "name": "Lea Hienne / Louis Varescon",
-     "nation": "FRA",
-     "time": "15:15",
-     "no": 14,
-     "warmup": 3,
-     "place": 2,
-     "points": "90.45",
-     "final": 2
-    },
-    {
-     "name": "Lena Zerinvary-simon / Huba Gallai",
-     "nation": "HUN",
-     "place": 13,
-     "points": "61.38",
-     "time": "13:22",
-     "no": 2,
-     "warmup": 1,
-     "final": 13
-    },
-    {
-     "name": "Lumia Sassi / Aarne Savola",
-     "nation": "FIN",
-     "place": 14,
-     "points": "55.94",
-     "time": "13:15",
-     "no": 1,
-     "warmup": 1,
-     "final": 14
-    },
-    {
-     "name": "Maite van Mulders / Tudor Dominic Andrei",
-     "nation": "ROU",
-     "place": 6,
-     "points": "78.93",
-     "time": "14:19",
-     "no": 7,
-     "warmup": 2,
-     "final": 7
-    },
-    {
-     "name": "Martina Lavazza / Raphael Raymond Meunier",
-     "nation": "ITA",
-     "place": 9,
-     "points": "74.21",
-     "time": "14:26",
-     "no": 8,
-     "warmup": 2,
-     "final": 9
-    },
-    {
-     "name": "Zoe Bianchi / Daniel Basile",
-     "nation": "ITA",
-     "time": "15:01",
-     "no": 12,
-     "warmup": 3,
-     "place": 1,
-     "points": "93.77",
-     "final": 1
-    }
-   ],
-   "live": {
-    "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
-    "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG016.htm",
-    "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT008RS.htm",
-    "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG015.htm",
-    "names": {
-     "Iris LAHTI / Oskari LIEDENPOHJA": "Iris Lahti / Oskari Liedenpohja",
-     "Kristyna STANCLOVA / Karel KOSTRON": "Kristyna Stanclova / Karel Kostron",
-     "Eleonore GABET / Raphael DUCLUSAUD": "Eleonore Gabet / Raphael Duclusaud",
-     "Maite van MULDERS / Tudor Dominic ANDREI": "Maite van Mulders / Tudor Dominic Andrei",
-     "Angelina CUCHERAT / Leopold DACQUIN": "Angelina Cucherat / Leopold Dacquin",
-     "Martina LAVAZZA / Raphael Raymond MEUNIER": "Martina Lavazza / Raphael Raymond Meunier",
-     "Annabel MANN / Jack HAMMOND": "Annabel Mann / Jack Hammond",
-     "Diane GALLIX / Elod EGYED-ZSIGMOND": "Diane Gallix / Elod Egyed-zsigmond",
-     "Alexandra ROUSKOVA / Lukas TOMAN": "Alexandra Rouskova / Lukas Toman",
-     "Lena ZERINVARY-SIMON / Huba GALLAI": "Lena Zerinvary-simon / Huba Gallai",
-     "Lumia SASSI / Aarne SAVOLA": "Lumia Sassi / Aarne Savola",
-     "Zoe BIANCHI / Daniel BASILE": "Zoe Bianchi / Daniel Basile",
-     "Alexia KRUK / Jan EISENHABER": "Alexia Kruk / Jan Eisenhaber",
-     "Lea HIENNE / Louis VARESCON": "Lea Hienne / Louis Varescon"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
-   "facts": [
-    {
-     "who": "Lea Hienne / Louis Varescon",
-     "text": "Личный рекорд за ПТ: 90.45 (был 89.45)",
-     "kind": "score"
-    },
-    {
-     "who": "Kristyna Stanclova / Karel Kostron",
-     "text": "Личный рекорд за ПТ: 79.57 (был 78.19)",
-     "kind": "score"
-    },
-    {
-     "who": "Lea Hienne / Louis Varescon",
-     "text": "Личный рекорд по сумме: 149.26 (был 149.03)",
-     "kind": "score"
-    }
-   ],
    "total": [
     {
      "place": 1,
@@ -63620,7 +63436,191 @@
      "nation": "GER",
      "points": "137.29"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Zoe Bianchi / Daniel Basile — 93.77\n2. Lea Hienne / Louis Varescon — 90.45\n3. Kristyna Stanclova / Karel Kostron — 79.57\n\nИтог турнира:\n1. Zoe Bianchi / Daniel Basile — 150.38\n2. Lea Hienne / Louis Varescon — 149.26\n3. Alexia Kruk / Jan Eisenhaber — 137.29\n\nПримечательное:\n• Lea Hienne / Louis Varescon — Личный рекорд за ПТ: 90.45 (был 89.45)\n• Kristyna Stanclova / Karel Kostron — Личный рекорд за ПТ: 79.57 (был 78.19)\n• Lea Hienne / Louis Varescon — Личный рекорд по сумме: 149.26 (был 149.03)\n\nНачало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
+   "field": [
+    {
+     "name": "Lumia Sassi / Aarne Savola",
+     "nation": "FIN",
+     "no": 1,
+     "warmup": 1,
+     "place": 14,
+     "points": "55.94",
+     "final": 14,
+     "time": "13:15"
+    },
+    {
+     "name": "Lena Zerinvary-simon / Huba Gallai",
+     "nation": "HUN",
+     "no": 2,
+     "warmup": 1,
+     "place": 13,
+     "points": "61.38",
+     "final": 13,
+     "time": "13:22"
+    },
+    {
+     "name": "Diane Gallix / Elod Egyed-zsigmond",
+     "nation": "HUN",
+     "no": 3,
+     "warmup": 1,
+     "place": 11,
+     "points": "68.46",
+     "final": 11,
+     "time": "13:29"
+    },
+    {
+     "name": "Alexandra Rouskova / Lukas Toman",
+     "nation": "CZE",
+     "no": 4,
+     "warmup": 1,
+     "place": 12,
+     "points": "65.12",
+     "final": 12,
+     "time": "13:37"
+    },
+    {
+     "name": "Annabel Mann / Jack Hammond",
+     "nation": "GBR",
+     "no": 5,
+     "warmup": 2,
+     "place": 10,
+     "points": "72.92",
+     "final": 10,
+     "time": "14:05"
+    },
+    {
+     "name": "Angelina Cucherat / Leopold Dacquin",
+     "nation": "FRA",
+     "no": 6,
+     "warmup": 2,
+     "place": 5,
+     "points": "79.02",
+     "final": 8,
+     "time": "14:12"
+    },
+    {
+     "name": "Maite van Mulders / Tudor Dominic Andrei",
+     "nation": "ROU",
+     "no": 7,
+     "warmup": 2,
+     "place": 6,
+     "points": "78.93",
+     "final": 7,
+     "time": "14:19"
+    },
+    {
+     "name": "Martina Lavazza / Raphael Raymond Meunier",
+     "nation": "ITA",
+     "no": 8,
+     "warmup": 2,
+     "place": 9,
+     "points": "74.21",
+     "final": 9,
+     "time": "14:26"
+    },
+    {
+     "name": "Eleonore Gabet / Raphael Duclusaud",
+     "nation": "FRA",
+     "no": 9,
+     "warmup": 2,
+     "place": 8,
+     "points": "77.41",
+     "final": 6,
+     "time": "14:34"
+    },
+    {
+     "name": "Kristyna Stanclova / Karel Kostron",
+     "nation": "CZE",
+     "no": 10,
+     "warmup": 3,
+     "place": 3,
+     "points": "79.57",
+     "final": 5,
+     "time": "14:46"
+    },
+    {
+     "name": "Iris Lahti / Oskari Liedenpohja",
+     "nation": "FIN",
+     "no": 11,
+     "warmup": 3,
+     "place": 7,
+     "points": "78.26",
+     "final": 4,
+     "time": "14:53"
+    },
+    {
+     "name": "Zoe Bianchi / Daniel Basile",
+     "nation": "ITA",
+     "no": 12,
+     "warmup": 3,
+     "place": 1,
+     "points": "93.77",
+     "final": 1,
+     "time": "15:01"
+    },
+    {
+     "name": "Alexia Kruk / Jan Eisenhaber",
+     "nation": "GER",
+     "no": 13,
+     "warmup": 3,
+     "place": 4,
+     "points": "79.51",
+     "final": 3,
+     "time": "15:08"
+    },
+    {
+     "name": "Lea Hienne / Louis Varescon",
+     "nation": "FRA",
+     "no": 14,
+     "warmup": 3,
+     "place": 2,
+     "points": "90.45",
+     "final": 2,
+     "time": "15:15"
+    }
+   ],
+   "live": {
+    "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
+    "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG016.htm",
+    "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT008RS.htm",
+    "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG015.htm",
+    "names": {
+     "Zoe BIANCHI / Daniel BASILE": "Zoe Bianchi / Daniel Basile",
+     "Lea HIENNE / Louis VARESCON": "Lea Hienne / Louis Varescon",
+     "Kristyna STANCLOVA / Karel KOSTRON": "Kristyna Stanclova / Karel Kostron",
+     "Alexia KRUK / Jan EISENHABER": "Alexia Kruk / Jan Eisenhaber",
+     "Angelina CUCHERAT / Leopold DACQUIN": "Angelina Cucherat / Leopold Dacquin",
+     "Maite van MULDERS / Tudor Dominic ANDREI": "Maite van Mulders / Tudor Dominic Andrei",
+     "Iris LAHTI / Oskari LIEDENPOHJA": "Iris Lahti / Oskari Liedenpohja",
+     "Eleonore GABET / Raphael DUCLUSAUD": "Eleonore Gabet / Raphael Duclusaud",
+     "Martina LAVAZZA / Raphael Raymond MEUNIER": "Martina Lavazza / Raphael Raymond Meunier",
+     "Annabel MANN / Jack HAMMOND": "Annabel Mann / Jack Hammond",
+     "Diane GALLIX / Elod EGYED-ZSIGMOND": "Diane Gallix / Elod Egyed-zsigmond",
+     "Alexandra ROUSKOVA / Lukas TOMAN": "Alexandra Rouskova / Lukas Toman",
+     "Lena ZERINVARY-SIMON / Huba GALLAI": "Lena Zerinvary-simon / Huba Gallai",
+     "Lumia SASSI / Aarne SAVOLA": "Lumia Sassi / Aarne Savola"
+    },
+    "basis": "judges"
+   },
+   "facts": [
+    {
+     "kind": "score",
+     "text": "Личный рекорд за ПТ: 90.45 (был 89.45)",
+     "who": "Lea Hienne / Louis Varescon"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд за ПТ: 79.57 (был 78.19)",
+     "who": "Kristyna Stanclova / Karel Kostron"
+    },
+    {
+     "kind": "score",
+     "text": "Личный рекорд по сумме: 149.26 (был 149.03)",
+     "who": "Lea Hienne / Louis Varescon"
+    }
+   ],
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:men-senior-pp",
@@ -63631,7 +63631,7 @@
    "seg": "ПП",
    "title": "Идель — мужчины ПП",
    "start": "2026-11-22T14:00:00+03:00",
-   "end": "2026-11-22T15:17:00+03:00",
+   "end": "2026-11-22T15:30:00+03:00",
    "venue": "Дворец спорта, Казань",
    "intl": false,
    "broadcast": [
@@ -63677,129 +63677,6 @@
      "points": "137.20"
     }
    ],
-   "desc": "Итог:\n1. Константин Сафонов — 141.44\n2. Георгий Терехов — 138.10\n3. Роман Попов — 137.20\n\nИтог турнира:\n1. Иван Макиев — 217.96\n2. Константин Сафонов — 215.17\n3. Роман Попов — 208.85\n\nНачало: 14:00 МСК\nТрансляция: VK Видео",
-   "field": [
-    {
-     "name": "Андрей Шилин",
-     "nation": "МОБ",
-     "place": 8,
-     "points": "118.54",
-     "time": "14:31",
-     "no": 5,
-     "warmup": 1,
-     "final": 7
-    },
-    {
-     "name": "Василий Пономарев",
-     "nation": "СВЕ",
-     "place": 9,
-     "points": "113.79",
-     "time": "14:07",
-     "no": 1,
-     "warmup": 1,
-     "final": 9
-    },
-    {
-     "name": "Владислав Дворников",
-     "nation": "МОБ",
-     "time": "14:57",
-     "no": 8,
-     "warmup": 2,
-     "place": 5,
-     "points": "133.14",
-     "final": 5
-    },
-    {
-     "name": "Георгий Терехов",
-     "nation": "МОС",
-     "place": 2,
-     "points": "138.10",
-     "time": "14:45",
-     "no": 6,
-     "warmup": 2,
-     "final": 4
-    },
-    {
-     "name": "Иван Макиев",
-     "nation": "МОС",
-     "time": "15:09",
-     "no": 10,
-     "warmup": 2,
-     "place": 4,
-     "points": "135.75",
-     "final": 1
-    },
-    {
-     "name": "Константин Сафонов",
-     "nation": "ТУЛ",
-     "time": "15:03",
-     "no": 9,
-     "warmup": 2,
-     "place": 1,
-     "points": "141.44",
-     "final": 2
-    },
-    {
-     "name": "Никита Волин",
-     "nation": "РОС",
-     "place": 6,
-     "points": "129.26",
-     "time": "14:25",
-     "no": 4,
-     "warmup": 1,
-     "final": 6
-    },
-    {
-     "name": "Роман Попов",
-     "nation": "СВЕ",
-     "place": 3,
-     "points": "137.20",
-     "time": "14:51",
-     "no": 7,
-     "warmup": 2,
-     "final": 3
-    },
-    {
-     "name": "Станислав Гунтасов",
-     "nation": "НИЖ",
-     "place": 10,
-     "points": "97.27",
-     "time": "14:19",
-     "no": 3,
-     "warmup": 1,
-     "final": 10
-    },
-    {
-     "name": "Юрий Сидоров",
-     "nation": "ОРЕ",
-     "place": 7,
-     "points": "124.60",
-     "time": "14:13",
-     "no": 2,
-     "warmup": 1,
-     "final": 8
-    }
-   ],
-   "live": {
-    "idx": "https://fsrussia.ru/results/2627/idel_2026/index.htm",
-    "seg": "https://fsrussia.ru/results/2627/idel_2026/SEG002.htm",
-    "cat": "https://fsrussia.ru/results/2627/idel_2026/CAT001RS.htm",
-    "first": "https://fsrussia.ru/results/2627/idel_2026/SEG001.htm",
-    "names": {
-     "Роман ПОПОВ": "Роман Попов",
-     "Георгий ТЕРЕХОВ": "Георгий Терехов",
-     "Никита ВОЛИН": "Никита Волин",
-     "Андрей ШИЛИН": "Андрей Шилин",
-     "Юрий СИДОРОВ": "Юрий Сидоров",
-     "Василий ПОНОМАРЕВ": "Василий Пономарев",
-     "Станислав ГУНТАСОВ": "Станислав Гунтасов",
-     "Владислав ДВОРНИКОВ": "Владислав Дворников",
-     "Константин САФОНОВ": "Константин Сафонов",
-     "Иван МАКИЕВ": "Иван Макиев"
-    },
-    "basis": "judges"
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json",
    "total": [
     {
      "place": 1,
@@ -63819,7 +63696,130 @@
      "nation": "СВЕ",
      "points": "208.85"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Константин Сафонов — 141.44\n2. Георгий Терехов — 138.10\n3. Роман Попов — 137.20\n\nИтог турнира:\n1. Иван Макиев — 217.96\n2. Константин Сафонов — 215.17\n3. Роман Попов — 208.85\n\nНачало: 14:00 МСК\nТрансляция: VK Видео",
+   "field": [
+    {
+     "name": "Василий Пономарев",
+     "nation": "СВЕ",
+     "no": 1,
+     "warmup": 1,
+     "place": 9,
+     "points": "113.79",
+     "final": 9,
+     "time": "14:07"
+    },
+    {
+     "name": "Юрий Сидоров",
+     "nation": "ОРЕ",
+     "no": 2,
+     "warmup": 1,
+     "place": 7,
+     "points": "124.60",
+     "final": 8,
+     "time": "14:13"
+    },
+    {
+     "name": "Станислав Гунтасов",
+     "nation": "НИЖ",
+     "no": 3,
+     "warmup": 1,
+     "place": 10,
+     "points": "97.27",
+     "final": 10,
+     "time": "14:19"
+    },
+    {
+     "name": "Никита Волин",
+     "nation": "РОС",
+     "no": 4,
+     "warmup": 1,
+     "place": 6,
+     "points": "129.26",
+     "final": 6,
+     "time": "14:25"
+    },
+    {
+     "name": "Андрей Шилин",
+     "nation": "МОБ",
+     "no": 5,
+     "warmup": 1,
+     "place": 8,
+     "points": "118.54",
+     "final": 7,
+     "time": "14:31"
+    },
+    {
+     "name": "Георгий Терехов",
+     "nation": "МОС",
+     "no": 6,
+     "warmup": 2,
+     "place": 2,
+     "points": "138.10",
+     "final": 4,
+     "time": "14:45"
+    },
+    {
+     "name": "Роман Попов",
+     "nation": "СВЕ",
+     "no": 7,
+     "warmup": 2,
+     "place": 3,
+     "points": "137.20",
+     "final": 3,
+     "time": "14:51"
+    },
+    {
+     "name": "Владислав Дворников",
+     "nation": "МОБ",
+     "no": 8,
+     "warmup": 2,
+     "place": 5,
+     "points": "133.14",
+     "final": 5,
+     "time": "14:57"
+    },
+    {
+     "name": "Константин Сафонов",
+     "nation": "ТУЛ",
+     "no": 9,
+     "warmup": 2,
+     "place": 1,
+     "points": "141.44",
+     "final": 2,
+     "time": "15:03"
+    },
+    {
+     "name": "Иван Макиев",
+     "nation": "МОС",
+     "no": 10,
+     "warmup": 2,
+     "place": 4,
+     "points": "135.75",
+     "final": 1,
+     "time": "15:09"
+    }
+   ],
+   "live": {
+    "idx": "https://fsrussia.ru/results/2627/idel_2026/index.htm",
+    "seg": "https://fsrussia.ru/results/2627/idel_2026/SEG002.htm",
+    "cat": "https://fsrussia.ru/results/2627/idel_2026/CAT001RS.htm",
+    "first": "https://fsrussia.ru/results/2627/idel_2026/SEG001.htm",
+    "names": {
+     "Константин САФОНОВ": "Константин Сафонов",
+     "Георгий ТЕРЕХОВ": "Георгий Терехов",
+     "Роман ПОПОВ": "Роман Попов",
+     "Иван МАКИЕВ": "Иван Макиев",
+     "Владислав ДВОРНИКОВ": "Владислав Дворников",
+     "Никита ВОЛИН": "Никита Волин",
+     "Юрий СИДОРОВ": "Юрий Сидоров",
+     "Андрей ШИЛИН": "Андрей Шилин",
+     "Василий ПОНОМАРЕВ": "Василий Пономарев",
+     "Станислав ГУНТАСОВ": "Станислав Гунтасов"
+    },
+    "basis": "judges"
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:dance-senior-pt",
@@ -63861,25 +63861,28 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Alisa Ovsiankina / Maximilien Rahier — 92.21\n2. Natalia Pallu-neves / Jayin Panesar — 83.88\n3. Daniela Ivanitskiy / Matthew Sperry — 80.14\n\nНачало: 15:40 МСК\nТрансляция: Ice-Stars.TV",
-   "field": [
+   "podium": [
     {
-     "name": "Olympia Kalaganis / Emile Deveau",
-     "nation": "GRE",
-     "time": "15:45",
-     "no": 1,
-     "warmup": 1,
-     "place": 4,
-     "points": "69.08"
-    },
-    {
+     "place": 1,
      "name": "Daniela Ivanitskiy / Matthew Sperry",
      "nation": "FIN",
-     "time": "15:53",
-     "no": 2,
-     "warmup": 1,
-     "place": 3,
      "points": "80.14"
+    },
+    {
+     "place": 2,
+     "name": "Olympia Kalaganis / Emile Deveau",
+     "nation": "GRE",
+     "points": "69.08"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Daniela Ivanitskiy / Matthew Sperry — 80.14\n2. Olympia Kalaganis / Emile Deveau — 69.08\n\nНачало: 15:40 МСК\nТрансляция: Ice-Stars.TV",
+   "field": [
+    {
+     "name": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
+     "nation": "CAN",
+     "time": "17:45",
+     "no": 13,
+     "warmup": 3
     },
     {
      "name": "Alisa Ovsiankina / Maximilien Rahier",
@@ -63891,13 +63894,25 @@
      "points": "92.21"
     },
     {
-     "name": "Natalia Pallu-neves / Jayin Panesar",
-     "nation": "BRA",
-     "time": "16:09",
-     "no": 4,
-     "warmup": 1,
-     "place": 2,
-     "points": "83.88"
+     "name": "Amy Cui / Jonathan Rogers",
+     "nation": "USA",
+     "time": "17:37",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Carolina Portesi Peroni / Pietro Papetti",
+     "nation": "ITA",
+     "time": "17:22",
+     "no": 10,
+     "warmup": 3
+    },
+    {
+     "name": "Celina Fradji / Jean-Hans Fourneaux",
+     "nation": "FRA",
+     "time": "16:53",
+     "no": 7,
+     "warmup": 2
     },
     {
      "name": "Chelsea Verhaegh / Sherim van Geffen",
@@ -63907,17 +63922,33 @@
      "warmup": 2
     },
     {
+     "name": "Daniela Ivanitskiy / Matthew Sperry",
+     "nation": "FIN",
+     "place": 1,
+     "points": "80.14",
+     "time": "15:53",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Elliana Peal / Ethan Peal",
+     "nation": "USA",
+     "time": "17:08",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Holly Harris / Jason Chan",
+     "nation": "AUS",
+     "time": "17:53",
+     "no": 14,
+     "warmup": 3
+    },
+    {
      "name": "Louise Bordet / Martin Chardain",
      "nation": "FRA",
      "time": "16:45",
      "no": 6,
-     "warmup": 2
-    },
-    {
-     "name": "Celina Fradji / Jean-Hans Fourneaux",
-     "nation": "FRA",
-     "time": "16:53",
-     "no": 7,
      "warmup": 2
     },
     {
@@ -63928,18 +63959,20 @@
      "warmup": 2
     },
     {
-     "name": "Elliana Peal / Ethan Peal",
-     "nation": "USA",
-     "time": "17:08",
-     "no": 9,
-     "warmup": 2
+     "name": "Natalia Pallu-neves / Jayin Panesar",
+     "nation": "BRA",
+     "time": "16:09",
+     "no": 4,
+     "warmup": 1
     },
     {
-     "name": "Carolina Portesi Peroni / Pietro Papetti",
-     "nation": "ITA",
-     "time": "17:22",
-     "no": 10,
-     "warmup": 3
+     "name": "Olympia Kalaganis / Emile Deveau",
+     "nation": "GRE",
+     "place": 2,
+     "points": "69.08",
+     "time": "15:45",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Sandrine Gauthier / Paul Ayer",
@@ -63947,37 +63980,17 @@
      "time": "17:29",
      "no": 11,
      "warmup": 3
-    },
-    {
-     "name": "Amy Cui / Jonathan Rogers",
-     "nation": "USA",
-     "time": "17:37",
-     "no": 12,
-     "warmup": 3
-    },
-    {
-     "name": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
-     "nation": "CAN",
-     "time": "17:45",
-     "no": 13,
-     "warmup": 3
-    },
-    {
-     "name": "Holly Harris / Jason Chan",
-     "nation": "AUS",
-     "time": "17:53",
-     "no": 14,
-     "warmup": 3
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG008.htm",
     "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT004RS.htm",
     "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG007.htm",
     "names": {
-     "Olympia KALAGANIS / Emile DEVEAU": "Olympia Kalaganis / Emile Deveau",
      "Daniela IVANITSKIY / Matthew SPERRY": "Daniela Ivanitskiy / Matthew Sperry",
+     "Olympia KALAGANIS / Emile DEVEAU": "Olympia Kalaganis / Emile Deveau",
      "Alisa OVSIANKINA / Maximilien RAHIER": "Alisa Ovsiankina / Maximilien Rahier",
      "Natalia PALLU-NEVES / Jayin PANESAR": "Natalia Pallu-neves / Jayin Panesar",
      "Chelsea VERHAEGH / Sherim van GEFFEN": "Chelsea Verhaegh / Sherim van Geffen",
@@ -63993,28 +64006,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Alisa Ovsiankina / Maximilien Rahier",
-     "nation": "FRA",
-     "points": "92.21"
-    },
-    {
-     "place": 2,
-     "name": "Natalia Pallu-neves / Jayin Panesar",
-     "nation": "BRA",
-     "points": "83.88"
-    },
-    {
-     "place": 3,
-     "name": "Daniela Ivanitskiy / Matthew Sperry",
-     "nation": "FIN",
-     "points": "80.14"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:men-junior-kp",
@@ -116720,5 +116712,5 @@
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg",
   "Maite van Mulders": "photos/1a065c6ba6053ced.jpg"
  },
- "rev": "793b01260b34a8d4"
+ "rev": "77ae8b4082f4491c"
 }
