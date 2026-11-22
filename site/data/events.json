@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T11:19:40+03:00",
- "checked": "2026-11-22T10:33:02.792658+00:00",
+ "checked": "2026-11-22T10:37:03.286923+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63115,7 +63115,7 @@
      "time": "11:39",
      "no": 5,
      "warmup": 2,
-     "place": 13,
+     "place": 14,
      "points": "91.57"
     },
     {
@@ -63130,7 +63130,7 @@
     {
      "name": "Анастасия Артемова",
      "nation": "ВОР",
-     "place": 11,
+     "place": 12,
      "points": "97.00",
      "time": "11:19",
      "no": 3,
@@ -63142,7 +63142,7 @@
      "time": "13:09",
      "no": 15,
      "warmup": 4,
-     "place": 7,
+     "place": 8,
      "points": "116.32"
     },
     {
@@ -63151,7 +63151,7 @@
      "time": "11:25",
      "no": 4,
      "warmup": 1,
-     "place": 15,
+     "place": 16,
      "points": "88.55"
     },
     {
@@ -63160,7 +63160,7 @@
      "time": "11:57",
      "no": 8,
      "warmup": 2,
-     "place": 14,
+     "place": 15,
      "points": "89.41"
     },
     {
@@ -63178,13 +63178,13 @@
      "time": "12:03",
      "no": 9,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "106.51"
     },
     {
      "name": "Виктория Ушакова",
      "nation": "РОС",
-     "place": 12,
+     "place": 13,
      "points": "93.58",
      "time": "11:07",
      "no": 1,
@@ -63196,7 +63196,7 @@
      "time": "11:51",
      "no": 7,
      "warmup": 2,
-     "place": 17,
+     "place": 18,
      "points": "81.10"
     },
     {
@@ -63211,7 +63211,7 @@
     {
      "name": "Ксения Вагина",
      "nation": "ХМА",
-     "place": 10,
+     "place": 11,
      "points": "97.04",
      "time": "11:13",
      "no": 2,
@@ -63223,7 +63223,7 @@
      "time": "12:43",
      "no": 12,
      "warmup": 3,
-     "place": 6,
+     "place": 7,
      "points": "117.69"
     },
     {
@@ -63231,7 +63231,9 @@
      "nation": "САМ",
      "time": "13:27",
      "no": 18,
-     "warmup": 4
+     "warmup": 4,
+     "place": 4,
+     "points": "124.90"
     },
     {
      "name": "Риана Кадырова",
@@ -63246,7 +63248,7 @@
      "time": "12:49",
      "no": 13,
      "warmup": 3,
-     "place": 4,
+     "place": 5,
      "points": "120.92"
     },
     {
@@ -63255,7 +63257,7 @@
      "time": "11:45",
      "no": 6,
      "warmup": 2,
-     "place": 16,
+     "place": 17,
      "points": "85.94"
     },
     {
@@ -63264,7 +63266,7 @@
      "time": "12:31",
      "no": 10,
      "warmup": 3,
-     "place": 8,
+     "place": 9,
      "points": "115.41"
     },
     {
@@ -63273,7 +63275,7 @@
      "time": "12:37",
      "no": 11,
      "warmup": 3,
-     "place": 5,
+     "place": 6,
      "points": "119.63"
     }
    ],
@@ -116491,5 +116493,5 @@
   "Emily Zhang": "photos/fcd1a5a126d15038.jpg",
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg"
  },
- "rev": "edb31487d2552958"
+ "rev": "a2ef5358be8ae1be"
 }
