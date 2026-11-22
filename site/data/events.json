@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T16:35:54+03:00",
- "checked": "2026-11-22T14:53:39.847527+00:00",
+ "checked": "2026-11-22T15:01:40.129680+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63864,36 +63864,38 @@
    "podium": [
     {
      "place": 1,
+     "name": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
+     "nation": "CAN",
+     "points": "105.77"
+    },
+    {
+     "place": 2,
      "name": "Amy Cui / Jonathan Rogers",
      "nation": "USA",
      "points": "104.55"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Sandrine Gauthier / Paul Ayer",
      "nation": "CAN",
      "points": "100.05"
-    },
-    {
-     "place": 3,
-     "name": "Elliana Peal / Ethan Peal",
-     "nation": "USA",
-     "points": "97.47"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Amy Cui / Jonathan Rogers — 104.55\n2. Sandrine Gauthier / Paul Ayer — 100.05\n3. Elliana Peal / Ethan Peal — 97.47\n\nНачало: 15:40 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Alicia Fabbri / Marko Jevgeni Gaidajenko — 105.77\n2. Amy Cui / Jonathan Rogers — 104.55\n3. Sandrine Gauthier / Paul Ayer — 100.05\n\nНачало: 15:40 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
      "nation": "CAN",
      "time": "17:45",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "place": 1,
+     "points": "105.77"
     },
     {
      "name": "Alisa Ovsiankina / Maximilien Rahier",
      "nation": "FRA",
-     "place": 8,
+     "place": 9,
      "points": "92.21",
      "time": "16:01",
      "no": 3,
@@ -63905,7 +63907,7 @@
      "time": "17:37",
      "no": 12,
      "warmup": 3,
-     "place": 1,
+     "place": 2,
      "points": "104.55"
     },
     {
@@ -63914,7 +63916,7 @@
      "time": "17:22",
      "no": 10,
      "warmup": 3,
-     "place": 6,
+     "place": 7,
      "points": "94.49"
     },
     {
@@ -63923,7 +63925,7 @@
      "time": "16:53",
      "no": 7,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "96.94"
     },
     {
@@ -63932,13 +63934,13 @@
      "time": "16:37",
      "no": 5,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "89.40"
     },
     {
      "name": "Daniela Ivanitskiy / Matthew Sperry",
      "nation": "FIN",
-     "place": 11,
+     "place": 12,
      "points": "80.14",
      "time": "15:53",
      "no": 2,
@@ -63950,7 +63952,7 @@
      "time": "17:08",
      "no": 9,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "97.47"
     },
     {
@@ -63966,7 +63968,7 @@
      "time": "16:45",
      "no": 6,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "92.33"
     },
     {
@@ -63975,13 +63977,13 @@
      "time": "17:00",
      "no": 8,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "94.58"
     },
     {
      "name": "Natalia Pallu-neves / Jayin Panesar",
      "nation": "BRA",
-     "place": 10,
+     "place": 11,
      "points": "83.88",
      "time": "16:09",
      "no": 4,
@@ -63990,7 +63992,7 @@
     {
      "name": "Olympia Kalaganis / Emile Deveau",
      "nation": "GRE",
-     "place": 12,
+     "place": 13,
      "points": "69.08",
      "time": "15:45",
      "no": 1,
@@ -64002,7 +64004,7 @@
      "time": "17:29",
      "no": 11,
      "warmup": 3,
-     "place": 2,
+     "place": 3,
      "points": "100.05"
     }
    ],
@@ -116736,5 +116738,5 @@
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg",
   "Maite van Mulders": "photos/1a065c6ba6053ced.jpg"
  },
- "rev": "68b32e789e2ba16b"
+ "rev": "f54cc95ca773e94e"
 }
