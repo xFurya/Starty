@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T11:19:40+03:00",
- "checked": "2026-11-22T10:05:03.041874+00:00",
+ "checked": "2026-11-22T10:17:02.868799+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63115,7 +63115,7 @@
      "time": "11:39",
      "no": 5,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "points": "91.57"
     },
     {
@@ -63128,7 +63128,7 @@
     {
      "name": "Анастасия Артемова",
      "nation": "ВОР",
-     "place": 8,
+     "place": 9,
      "points": "97.00",
      "time": "11:19",
      "no": 3,
@@ -63139,7 +63139,9 @@
      "nation": "БЕЛ",
      "time": "13:09",
      "no": 15,
-     "warmup": 4
+     "warmup": 4,
+     "place": 5,
+     "points": "116.32"
     },
     {
      "name": "Анна Замятина",
@@ -63147,7 +63149,7 @@
      "time": "11:25",
      "no": 4,
      "warmup": 1,
-     "place": 12,
+     "place": 13,
      "points": "88.55"
     },
     {
@@ -63156,7 +63158,7 @@
      "time": "11:57",
      "no": 8,
      "warmup": 2,
-     "place": 11,
+     "place": 12,
      "points": "89.41"
     },
     {
@@ -63172,13 +63174,13 @@
      "time": "12:03",
      "no": 9,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "106.51"
     },
     {
      "name": "Виктория Ушакова",
      "nation": "РОС",
-     "place": 9,
+     "place": 10,
      "points": "93.58",
      "time": "11:07",
      "no": 1,
@@ -63190,7 +63192,7 @@
      "time": "11:51",
      "no": 7,
      "warmup": 2,
-     "place": 14,
+     "place": 15,
      "points": "81.10"
     },
     {
@@ -63205,7 +63207,7 @@
     {
      "name": "Ксения Вагина",
      "nation": "ХМА",
-     "place": 7,
+     "place": 8,
      "points": "97.04",
      "time": "11:13",
      "no": 2,
@@ -63249,7 +63251,7 @@
      "time": "11:45",
      "no": 6,
      "warmup": 2,
-     "place": 13,
+     "place": 14,
      "points": "85.94"
     },
     {
@@ -63258,7 +63260,7 @@
      "time": "12:31",
      "no": 10,
      "warmup": 3,
-     "place": 5,
+     "place": 6,
      "points": "115.41"
     },
     {
@@ -116466,5 +116468,5 @@
   "Emily Zhang": "photos/fcd1a5a126d15038.jpg",
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg"
  },
- "rev": "ab45882c9be93b84"
+ "rev": "72fe69f6ff014caa"
 }
