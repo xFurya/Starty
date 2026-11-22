@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T16:35:54+03:00",
- "checked": "2026-11-22T14:33:39.529690+00:00",
+ "checked": "2026-11-22T14:41:39.445160+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63864,24 +63864,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Sandrine Gauthier / Paul Ayer",
+     "nation": "CAN",
+     "points": "100.05"
+    },
+    {
+     "place": 2,
      "name": "Elliana Peal / Ethan Peal",
      "nation": "USA",
      "points": "97.47"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Celina Fradji / Jean-Hans Fourneaux",
      "nation": "FRA",
      "points": "96.94"
-    },
-    {
-     "place": 3,
-     "name": "Mariia Ignateva / Danijil Leonyidovics Szemko",
-     "nation": "HUN",
-     "points": "94.58"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Elliana Peal / Ethan Peal — 97.47\n2. Celina Fradji / Jean-Hans Fourneaux — 96.94\n3. Mariia Ignateva / Danijil Leonyidovics Szemko — 94.58\n\nНачало: 15:40 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Sandrine Gauthier / Paul Ayer — 100.05\n2. Elliana Peal / Ethan Peal — 97.47\n3. Celina Fradji / Jean-Hans Fourneaux — 96.94\n\nНачало: 15:40 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
@@ -63893,7 +63893,7 @@
     {
      "name": "Alisa Ovsiankina / Maximilien Rahier",
      "nation": "FRA",
-     "place": 6,
+     "place": 7,
      "points": "92.21",
      "time": "16:01",
      "no": 3,
@@ -63912,7 +63912,7 @@
      "time": "17:22",
      "no": 10,
      "warmup": 3,
-     "place": 4,
+     "place": 5,
      "points": "94.49"
     },
     {
@@ -63921,7 +63921,7 @@
      "time": "16:53",
      "no": 7,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "96.94"
     },
     {
@@ -63930,13 +63930,13 @@
      "time": "16:37",
      "no": 5,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "89.40"
     },
     {
      "name": "Daniela Ivanitskiy / Matthew Sperry",
      "nation": "FIN",
-     "place": 9,
+     "place": 10,
      "points": "80.14",
      "time": "15:53",
      "no": 2,
@@ -63948,7 +63948,7 @@
      "time": "17:08",
      "no": 9,
      "warmup": 2,
-     "place": 1,
+     "place": 2,
      "points": "97.47"
     },
     {
@@ -63964,7 +63964,7 @@
      "time": "16:45",
      "no": 6,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "92.33"
     },
     {
@@ -63973,13 +63973,13 @@
      "time": "17:00",
      "no": 8,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "94.58"
     },
     {
      "name": "Natalia Pallu-neves / Jayin Panesar",
      "nation": "BRA",
-     "place": 8,
+     "place": 9,
      "points": "83.88",
      "time": "16:09",
      "no": 4,
@@ -63988,7 +63988,7 @@
     {
      "name": "Olympia Kalaganis / Emile Deveau",
      "nation": "GRE",
-     "place": 10,
+     "place": 11,
      "points": "69.08",
      "time": "15:45",
      "no": 1,
@@ -63999,7 +63999,9 @@
      "nation": "CAN",
      "time": "17:29",
      "no": 11,
-     "warmup": 3
+     "warmup": 3,
+     "place": 1,
+     "points": "100.05"
     }
    ],
    "provisional": true,
@@ -116732,5 +116734,5 @@
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg",
   "Maite van Mulders": "photos/1a065c6ba6053ced.jpg"
  },
- "rev": "7adcbd4b2b222fa3"
+ "rev": "8edae825599a7dfe"
 }
