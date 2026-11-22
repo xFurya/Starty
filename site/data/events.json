@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T11:19:40+03:00",
- "checked": "2026-11-22T10:17:02.868799+00:00",
+ "checked": "2026-11-22T10:25:02.963192+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63096,18 +63096,18 @@
     },
     {
      "place": 2,
-     "name": "Софья Лукина",
-     "nation": "БАШ",
-     "points": "120.92"
+     "name": "Анна Рябова",
+     "nation": "РЯЗ",
+     "points": "126.59"
     },
     {
      "place": 3,
-     "name": "Яна Асташенкова",
-     "nation": "МОБ",
-     "points": "119.63"
+     "name": "Софья Лукина",
+     "nation": "БАШ",
+     "points": "120.92"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Екатерина Кольцова — 128.39\n2. Софья Лукина — 120.92\n3. Яна Асташенкова — 119.63\n\nНачало: 11:00 МСК\nТрансляция: VK Видео",
+   "desc": "Промежуточные итоги:\n1. Екатерина Кольцова — 128.39\n2. Анна Рябова — 126.59\n3. Софья Лукина — 120.92\n\nНачало: 11:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Алина Телегина",
@@ -63115,7 +63115,7 @@
      "time": "11:39",
      "no": 5,
      "warmup": 2,
-     "place": 11,
+     "place": 12,
      "points": "91.57"
     },
     {
@@ -63128,7 +63128,7 @@
     {
      "name": "Анастасия Артемова",
      "nation": "ВОР",
-     "place": 9,
+     "place": 10,
      "points": "97.00",
      "time": "11:19",
      "no": 3,
@@ -63140,7 +63140,7 @@
      "time": "13:09",
      "no": 15,
      "warmup": 4,
-     "place": 5,
+     "place": 6,
      "points": "116.32"
     },
     {
@@ -63149,7 +63149,7 @@
      "time": "11:25",
      "no": 4,
      "warmup": 1,
-     "place": 13,
+     "place": 14,
      "points": "88.55"
     },
     {
@@ -63158,7 +63158,7 @@
      "time": "11:57",
      "no": 8,
      "warmup": 2,
-     "place": 12,
+     "place": 13,
      "points": "89.41"
     },
     {
@@ -63166,7 +63166,9 @@
      "nation": "РЯЗ",
      "time": "13:15",
      "no": 16,
-     "warmup": 4
+     "warmup": 4,
+     "place": 2,
+     "points": "126.59"
     },
     {
      "name": "Василиса Абакумова",
@@ -63174,13 +63176,13 @@
      "time": "12:03",
      "no": 9,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "106.51"
     },
     {
      "name": "Виктория Ушакова",
      "nation": "РОС",
-     "place": 10,
+     "place": 11,
      "points": "93.58",
      "time": "11:07",
      "no": 1,
@@ -63192,7 +63194,7 @@
      "time": "11:51",
      "no": 7,
      "warmup": 2,
-     "place": 15,
+     "place": 16,
      "points": "81.10"
     },
     {
@@ -63207,7 +63209,7 @@
     {
      "name": "Ксения Вагина",
      "nation": "ХМА",
-     "place": 8,
+     "place": 9,
      "points": "97.04",
      "time": "11:13",
      "no": 2,
@@ -63219,7 +63221,7 @@
      "time": "12:43",
      "no": 12,
      "warmup": 3,
-     "place": 4,
+     "place": 5,
      "points": "117.69"
     },
     {
@@ -63242,7 +63244,7 @@
      "time": "12:49",
      "no": 13,
      "warmup": 3,
-     "place": 2,
+     "place": 3,
      "points": "120.92"
     },
     {
@@ -63251,7 +63253,7 @@
      "time": "11:45",
      "no": 6,
      "warmup": 2,
-     "place": 14,
+     "place": 15,
      "points": "85.94"
     },
     {
@@ -63260,7 +63262,7 @@
      "time": "12:31",
      "no": 10,
      "warmup": 3,
-     "place": 6,
+     "place": 7,
      "points": "115.41"
     },
     {
@@ -63269,7 +63271,7 @@
      "time": "12:37",
      "no": 11,
      "warmup": 3,
-     "place": 3,
+     "place": 4,
      "points": "119.63"
     }
    ],
@@ -63344,14 +63346,16 @@
      "note": "Платно"
     }
    ],
-   "desc": "Начало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Lumia Sassi / Aarne Savola — 55.94\n\nНачало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Lumia Sassi / Aarne Savola",
      "nation": "FIN",
      "time": "13:15",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "55.94"
     },
     {
      "name": "Lena Zerinvary-simon / Huba Gallai",
@@ -63468,7 +63472,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Lumia Sassi / Aarne Savola",
+     "nation": "FIN",
+     "points": "55.94"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:men-senior-pp",
@@ -116468,5 +116481,5 @@
   "Emily Zhang": "photos/fcd1a5a126d15038.jpg",
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg"
  },
- "rev": "72fe69f6ff014caa"
+ "rev": "9632430fcbbeb924"
 }
