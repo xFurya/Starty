@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T11:19:40+03:00",
- "checked": "2026-11-22T11:17:02.609055+00:00",
+ "checked": "2026-11-22T11:21:03.241081+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63397,7 +63397,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Annabel Mann / Jack Hammond — 72.92\n2. Diane Gallix / Elod Egyed-zsigmond — 68.46\n3. Alexandra Rouskova / Lukas Toman — 65.12\n\nНачало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Angelina Cucherat / Leopold Dacquin — 79.02\n2. Annabel Mann / Jack Hammond — 72.92\n3. Diane Gallix / Elod Egyed-zsigmond — 68.46\n\nНачало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Lumia Sassi / Aarne Savola",
@@ -63405,7 +63405,7 @@
      "time": "13:15",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "55.94"
     },
     {
@@ -63414,7 +63414,7 @@
      "time": "13:22",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "61.38"
     },
     {
@@ -63423,7 +63423,7 @@
      "time": "13:29",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "68.46"
     },
     {
@@ -63432,7 +63432,7 @@
      "time": "13:37",
      "no": 4,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "65.12"
     },
     {
@@ -63441,7 +63441,7 @@
      "time": "14:05",
      "no": 5,
      "warmup": 2,
-     "place": 1,
+     "place": 2,
      "points": "72.92"
     },
     {
@@ -63449,7 +63449,9 @@
      "nation": "FRA",
      "time": "14:12",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "79.02"
     },
     {
      "name": "Maite van Mulders / Tudor Dominic Andrei",
@@ -63535,21 +63537,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Angelina Cucherat / Leopold Dacquin",
+     "nation": "FRA",
+     "points": "79.02"
+    },
+    {
+     "place": 2,
      "name": "Annabel Mann / Jack Hammond",
      "nation": "GBR",
      "points": "72.92"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Diane Gallix / Elod Egyed-zsigmond",
      "nation": "HUN",
      "points": "68.46"
-    },
-    {
-     "place": 3,
-     "name": "Alexandra Rouskova / Lukas Toman",
-     "nation": "CZE",
-     "points": "65.12"
     }
    ],
    "provisional": true
@@ -116571,5 +116573,5 @@
   "Emily Zhang": "photos/fcd1a5a126d15038.jpg",
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg"
  },
- "rev": "05c01574cd3ca164"
+ "rev": "02ca7e230844a678"
 }
