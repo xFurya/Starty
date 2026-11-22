@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T13:53:40+03:00",
- "checked": "2026-11-22T11:25:03.800208+00:00",
+ "checked": "2026-11-22T11:29:03.128016+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63406,23 +63406,23 @@
     },
     {
      "place": 2,
-     "name": "Annabel Mann / Jack Hammond",
-     "nation": "GBR",
-     "points": "72.92"
+     "name": "Maite van Mulders / Tudor Dominic Andrei",
+     "nation": "ROU",
+     "points": "78.93"
     },
     {
      "place": 3,
-     "name": "Diane Gallix / Elod Egyed-zsigmond",
-     "nation": "HUN",
-     "points": "68.46"
+     "name": "Annabel Mann / Jack Hammond",
+     "nation": "GBR",
+     "points": "72.92"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Angelina Cucherat / Leopold Dacquin — 79.02\n2. Annabel Mann / Jack Hammond — 72.92\n3. Diane Gallix / Elod Egyed-zsigmond — 68.46\n\nНачало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Angelina Cucherat / Leopold Dacquin — 79.02\n2. Maite van Mulders / Tudor Dominic Andrei — 78.93\n3. Annabel Mann / Jack Hammond — 72.92\n\nНачало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Alexandra Rouskova / Lukas Toman",
      "nation": "CZE",
-     "place": 4,
+     "place": 5,
      "points": "65.12",
      "time": "13:37",
      "no": 4,
@@ -63450,13 +63450,13 @@
      "time": "14:05",
      "no": 5,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "72.92"
     },
     {
      "name": "Diane Gallix / Elod Egyed-zsigmond",
      "nation": "HUN",
-     "place": 3,
+     "place": 4,
      "points": "68.46",
      "time": "13:29",
      "no": 3,
@@ -63493,7 +63493,7 @@
     {
      "name": "Lena Zerinvary-simon / Huba Gallai",
      "nation": "HUN",
-     "place": 5,
+     "place": 6,
      "points": "61.38",
      "time": "13:22",
      "no": 2,
@@ -63502,7 +63502,7 @@
     {
      "name": "Lumia Sassi / Aarne Savola",
      "nation": "FIN",
-     "place": 6,
+     "place": 7,
      "points": "55.94",
      "time": "13:15",
      "no": 1,
@@ -63513,7 +63513,9 @@
      "nation": "ROU",
      "time": "14:19",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "78.93"
     },
     {
      "name": "Martina Lavazza / Raphael Raymond Meunier",
@@ -116581,5 +116583,5 @@
   "Emily Zhang": "photos/fcd1a5a126d15038.jpg",
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg"
  },
- "rev": "0d147270aab0f0fe"
+ "rev": "ab743c21e4faf7d1"
 }
