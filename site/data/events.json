@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T11:19:40+03:00",
- "checked": "2026-11-22T10:41:03.255019+00:00",
+ "checked": "2026-11-22T10:45:02.945803+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63096,18 +63096,18 @@
     },
     {
      "place": 2,
-     "name": "Екатерина Кольцова",
-     "nation": "КОС",
-     "points": "128.39"
+     "name": "Риана Кадырова",
+     "nation": "ТАТ",
+     "points": "134.04"
     },
     {
      "place": 3,
-     "name": "Анна Рябова",
-     "nation": "РЯЗ",
-     "points": "126.59"
+     "name": "Екатерина Кольцова",
+     "nation": "КОС",
+     "points": "128.39"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Алиса Юрова — 137.32\n2. Екатерина Кольцова — 128.39\n3. Анна Рябова — 126.59\n\nНачало: 11:00 МСК\nТрансляция: VK Видео",
+   "desc": "Итог:\n1. Алиса Юрова — 137.32\n2. Риана Кадырова — 134.04\n3. Екатерина Кольцова — 128.39\n\nИтог турнира:\n1. Риана Кадырова — 206.22\n2. Алиса Юрова — 203.79\n3. Екатерина Кольцова — 192.59\n\nПримечательное:\n• Екатерина Кольцова — После короткой программы — 6-е место, в итоге — 3-е место\n\nНачало: 11:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Алина Телегина",
@@ -63115,8 +63115,9 @@
      "time": "11:39",
      "no": 5,
      "warmup": 2,
-     "place": 14,
-     "points": "91.57"
+     "place": 15,
+     "points": "91.57",
+     "final": 15
     },
     {
      "name": "Алиса Юрова",
@@ -63125,16 +63126,18 @@
      "no": 17,
      "warmup": 4,
      "place": 1,
-     "points": "137.32"
+     "points": "137.32",
+     "final": 2
     },
     {
      "name": "Анастасия Артемова",
      "nation": "ВОР",
-     "place": 12,
+     "place": 13,
      "points": "97.00",
      "time": "11:19",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 12
     },
     {
      "name": "Анастасия Фурсова",
@@ -63142,8 +63145,9 @@
      "time": "13:09",
      "no": 15,
      "warmup": 4,
-     "place": 8,
-     "points": "116.32"
+     "place": 9,
+     "points": "116.32",
+     "final": 9
     },
     {
      "name": "Анна Замятина",
@@ -63151,8 +63155,9 @@
      "time": "11:25",
      "no": 4,
      "warmup": 1,
-     "place": 16,
-     "points": "88.55"
+     "place": 17,
+     "points": "88.55",
+     "final": 17
     },
     {
      "name": "Анна Казакевич",
@@ -63160,8 +63165,9 @@
      "time": "11:57",
      "no": 8,
      "warmup": 2,
-     "place": 15,
-     "points": "89.41"
+     "place": 16,
+     "points": "89.41",
+     "final": 13
     },
     {
      "name": "Анна Рябова",
@@ -63169,8 +63175,9 @@
      "time": "13:15",
      "no": 16,
      "warmup": 4,
-     "place": 3,
-     "points": "126.59"
+     "place": 4,
+     "points": "126.59",
+     "final": 5
     },
     {
      "name": "Василиса Абакумова",
@@ -63178,17 +63185,19 @@
      "time": "12:03",
      "no": 9,
      "warmup": 2,
-     "place": 10,
-     "points": "106.51"
+     "place": 11,
+     "points": "106.51",
+     "final": 11
     },
     {
      "name": "Виктория Ушакова",
      "nation": "РОС",
-     "place": 13,
+     "place": 14,
      "points": "93.58",
      "time": "11:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 19
     },
     {
      "name": "Влада Ершова",
@@ -63196,8 +63205,9 @@
      "time": "11:51",
      "no": 7,
      "warmup": 2,
-     "place": 18,
-     "points": "81.10"
+     "place": 19,
+     "points": "81.10",
+     "final": 18
     },
     {
      "name": "Екатерина Кольцова",
@@ -63205,17 +63215,19 @@
      "time": "12:55",
      "no": 14,
      "warmup": 3,
-     "place": 2,
-     "points": "128.39"
+     "place": 3,
+     "points": "128.39",
+     "final": 3
     },
     {
      "name": "Ксения Вагина",
      "nation": "ХМА",
-     "place": 11,
+     "place": 12,
      "points": "97.04",
      "time": "11:13",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 14
     },
     {
      "name": "Наталия Глотова",
@@ -63223,8 +63235,9 @@
      "time": "12:43",
      "no": 12,
      "warmup": 3,
-     "place": 7,
-     "points": "117.69"
+     "place": 8,
+     "points": "117.69",
+     "final": 8
     },
     {
      "name": "Олеся Козлова",
@@ -63232,15 +63245,19 @@
      "time": "13:27",
      "no": 18,
      "warmup": 4,
-     "place": 4,
-     "points": "124.90"
+     "place": 5,
+     "points": "124.90",
+     "final": 4
     },
     {
      "name": "Риана Кадырова",
      "nation": "ТАТ",
      "time": "13:33",
      "no": 19,
-     "warmup": 4
+     "warmup": 4,
+     "place": 2,
+     "points": "134.04",
+     "final": 1
     },
     {
      "name": "Софья Лукина",
@@ -63248,8 +63265,9 @@
      "time": "12:49",
      "no": 13,
      "warmup": 3,
-     "place": 5,
-     "points": "120.92"
+     "place": 6,
+     "points": "120.92",
+     "final": 6
     },
     {
      "name": "Софья Рудь",
@@ -63257,8 +63275,9 @@
      "time": "11:45",
      "no": 6,
      "warmup": 2,
-     "place": 17,
-     "points": "85.94"
+     "place": 18,
+     "points": "85.94",
+     "final": 16
     },
     {
      "name": "Юлия Радионова",
@@ -63266,8 +63285,9 @@
      "time": "12:31",
      "no": 10,
      "warmup": 3,
-     "place": 9,
-     "points": "115.41"
+     "place": 10,
+     "points": "115.41",
+     "final": 10
     },
     {
      "name": "Яна Асташенкова",
@@ -63275,11 +63295,11 @@
      "time": "12:37",
      "no": 11,
      "warmup": 3,
-     "place": 6,
-     "points": "119.63"
+     "place": 7,
+     "points": "119.63",
+     "final": 7
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://fsrussia.ru/results/2627/idel_2026/index.htm",
     "seg": "https://fsrussia.ru/results/2627/idel_2026/SEG004.htm",
@@ -63306,9 +63326,36 @@
      "Олеся КОЗЛОВА": "Олеся Козлова",
      "Риана КАДЫРОВА": "Риана Кадырова"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Риана Кадырова",
+     "nation": "ТАТ",
+     "points": "206.22"
+    },
+    {
+     "place": 2,
+     "name": "Алиса Юрова",
+     "nation": "ЛИП",
+     "points": "203.79"
+    },
+    {
+     "place": 3,
+     "name": "Екатерина Кольцова",
+     "nation": "КОС",
+     "points": "192.59"
+    }
+   ],
+   "facts": [
+    {
+     "who": "Екатерина Кольцова",
+     "text": "После короткой программы — 6-е место, в итоге — 3-е место",
+     "kind": "place"
+    }
+   ]
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:dance-junior-pt",
@@ -63350,7 +63397,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Diane Gallix / Elod Egyed-zsigmond — 68.46\n2. Lena Zerinvary-simon / Huba Gallai — 61.38\n3. Lumia Sassi / Aarne Savola — 55.94\n\nНачало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Diane Gallix / Elod Egyed-zsigmond — 68.46\n2. Alexandra Rouskova / Lukas Toman — 65.12\n3. Lena Zerinvary-simon / Huba Gallai — 61.38\n\nНачало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Lumia Sassi / Aarne Savola",
@@ -63358,7 +63405,7 @@
      "time": "13:15",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "55.94"
     },
     {
@@ -63367,7 +63414,7 @@
      "time": "13:22",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "61.38"
     },
     {
@@ -63384,7 +63431,9 @@
      "nation": "CZE",
      "time": "13:37",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "65.12"
     },
     {
      "name": "Annabel Mann / Jack Hammond",
@@ -63490,15 +63539,15 @@
     },
     {
      "place": 2,
-     "name": "Lena Zerinvary-simon / Huba Gallai",
-     "nation": "HUN",
-     "points": "61.38"
+     "name": "Alexandra Rouskova / Lukas Toman",
+     "nation": "CZE",
+     "points": "65.12"
     },
     {
      "place": 3,
-     "name": "Lumia Sassi / Aarne Savola",
-     "nation": "FIN",
-     "points": "55.94"
+     "name": "Lena Zerinvary-simon / Huba Gallai",
+     "nation": "HUN",
+     "points": "61.38"
     }
    ],
    "provisional": true
@@ -116501,5 +116550,5 @@
   "Emily Zhang": "photos/fcd1a5a126d15038.jpg",
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg"
  },
- "rev": "e5c1b00e57990a8b"
+ "rev": "e4ce34c37dd7f9a1"
 }
