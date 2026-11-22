@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-22T16:02:13+03:00",
- "checked": "2026-11-22T13:53:39.512117+00:00",
+ "generated": "2026-11-22T16:35:54+03:00",
+ "checked": "2026-11-22T16:35:54+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63893,11 +63893,11 @@
     {
      "name": "Alisa Ovsiankina / Maximilien Rahier",
      "nation": "FRA",
+     "place": 1,
+     "points": "92.21",
      "time": "16:01",
      "no": 3,
-     "warmup": 1,
-     "place": 2,
-     "points": "92.21"
+     "warmup": 1
     },
     {
      "name": "Amy Cui / Jonathan Rogers",
@@ -63971,11 +63971,11 @@
     {
      "name": "Natalia Pallu-neves / Jayin Panesar",
      "nation": "BRA",
+     "place": 2,
+     "points": "83.88",
      "time": "16:09",
      "no": 4,
-     "warmup": 1,
-     "place": 4,
-     "points": "83.88"
+     "warmup": 1
     },
     {
      "name": "Olympia Kalaganis / Emile Deveau",
@@ -64001,10 +64001,10 @@
     "cat": "https://results.fsresults.info/2026-2027/CSEST2026/CAT004RS.htm",
     "first": "https://results.fsresults.info/2026-2027/CSEST2026/SEG007.htm",
     "names": {
-     "Daniela IVANITSKIY / Matthew SPERRY": "Daniela Ivanitskiy / Matthew Sperry",
-     "Olympia KALAGANIS / Emile DEVEAU": "Olympia Kalaganis / Emile Deveau",
      "Alisa OVSIANKINA / Maximilien RAHIER": "Alisa Ovsiankina / Maximilien Rahier",
      "Natalia PALLU-NEVES / Jayin PANESAR": "Natalia Pallu-neves / Jayin Panesar",
+     "Daniela IVANITSKIY / Matthew SPERRY": "Daniela Ivanitskiy / Matthew Sperry",
+     "Olympia KALAGANIS / Emile DEVEAU": "Olympia Kalaganis / Emile Deveau",
      "Chelsea VERHAEGH / Sherim van GEFFEN": "Chelsea Verhaegh / Sherim van Geffen",
      "Louise BORDET / Martin CHARDAIN": "Louise Bordet / Martin Chardain",
      "Celina FRADJI / Jean-Hans FOURNEAUX": "Celina Fradji / Jean-Hans Fourneaux",
@@ -116724,5 +116724,5 @@
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg",
   "Maite van Mulders": "photos/1a065c6ba6053ced.jpg"
  },
- "rev": "4b12b41b30ea73f7"
+ "rev": "ca3ce19e9abbca8d"
 }
