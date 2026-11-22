@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T13:53:40+03:00",
- "checked": "2026-11-22T12:05:02.937948+00:00",
+ "checked": "2026-11-22T12:09:03.021417+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63400,29 +63400,29 @@
    "podium": [
     {
      "place": 1,
+     "name": "Zoe Bianchi / Daniel Basile",
+     "nation": "ITA",
+     "points": "93.77"
+    },
+    {
+     "place": 2,
      "name": "Kristyna Stanclova / Karel Kostron",
      "nation": "CZE",
      "points": "79.57"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Angelina Cucherat / Leopold Dacquin",
      "nation": "FRA",
      "points": "79.02"
-    },
-    {
-     "place": 3,
-     "name": "Maite van Mulders / Tudor Dominic Andrei",
-     "nation": "ROU",
-     "points": "78.93"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Kristyna Stanclova / Karel Kostron — 79.57\n2. Angelina Cucherat / Leopold Dacquin — 79.02\n3. Maite van Mulders / Tudor Dominic Andrei — 78.93\n\nНачало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Zoe Bianchi / Daniel Basile — 93.77\n2. Kristyna Stanclova / Karel Kostron — 79.57\n3. Angelina Cucherat / Leopold Dacquin — 79.02\n\nНачало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Alexandra Rouskova / Lukas Toman",
      "nation": "CZE",
-     "place": 9,
+     "place": 10,
      "points": "65.12",
      "time": "13:37",
      "no": 4,
@@ -63441,7 +63441,7 @@
      "time": "14:12",
      "no": 6,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "79.02"
     },
     {
@@ -63450,13 +63450,13 @@
      "time": "14:05",
      "no": 5,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "72.92"
     },
     {
      "name": "Diane Gallix / Elod Egyed-zsigmond",
      "nation": "HUN",
-     "place": 8,
+     "place": 9,
      "points": "68.46",
      "time": "13:29",
      "no": 3,
@@ -63468,7 +63468,7 @@
      "time": "14:34",
      "no": 9,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "77.41"
     },
     {
@@ -63477,7 +63477,7 @@
      "time": "14:53",
      "no": 11,
      "warmup": 3,
-     "place": 4,
+     "place": 5,
      "points": "78.26"
     },
     {
@@ -63486,7 +63486,7 @@
      "time": "14:46",
      "no": 10,
      "warmup": 3,
-     "place": 1,
+     "place": 2,
      "points": "79.57"
     },
     {
@@ -63499,7 +63499,7 @@
     {
      "name": "Lena Zerinvary-simon / Huba Gallai",
      "nation": "HUN",
-     "place": 10,
+     "place": 11,
      "points": "61.38",
      "time": "13:22",
      "no": 2,
@@ -63508,7 +63508,7 @@
     {
      "name": "Lumia Sassi / Aarne Savola",
      "nation": "FIN",
-     "place": 11,
+     "place": 12,
      "points": "55.94",
      "time": "13:15",
      "no": 1,
@@ -63520,7 +63520,7 @@
      "time": "14:19",
      "no": 7,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "78.93"
     },
     {
@@ -63529,7 +63529,7 @@
      "time": "14:26",
      "no": 8,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "74.21"
     },
     {
@@ -63537,7 +63537,9 @@
      "nation": "ITA",
      "time": "15:01",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "place": 1,
+     "points": "93.77"
     }
    ],
    "provisional": true,
@@ -116601,5 +116603,5 @@
   "Emily Zhang": "photos/fcd1a5a126d15038.jpg",
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg"
  },
- "rev": "72b533d52b2d5526"
+ "rev": "df82b606ae10c78f"
 }
