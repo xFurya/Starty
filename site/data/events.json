@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T11:19:40+03:00",
- "checked": "2026-11-22T08:57:03.929754+00:00",
+ "checked": "2026-11-22T09:05:02.611780+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63147,7 +63147,7 @@
      "time": "11:25",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "88.55"
     },
     {
@@ -63155,7 +63155,9 @@
      "nation": "ЯРО",
      "time": "11:57",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "89.41"
     },
     {
      "name": "Анна Рябова",
@@ -63186,7 +63188,7 @@
      "time": "11:51",
      "no": 7,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "81.10"
     },
     {
@@ -63239,7 +63241,7 @@
      "time": "11:45",
      "no": 6,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "85.94"
     },
     {
@@ -116452,5 +116454,5 @@
   "Emily Zhang": "photos/fcd1a5a126d15038.jpg",
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg"
  },
- "rev": "86e4f8162dc02bc0"
+ "rev": "7c700d68ac6e497b"
 }
