@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T11:19:40+03:00",
- "checked": "2026-11-22T10:37:03.286923+00:00",
+ "checked": "2026-11-22T10:41:03.255019+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63350,7 +63350,7 @@
      "note": "Платно"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Lena Zerinvary-simon / Huba Gallai — 61.38\n2. Lumia Sassi / Aarne Savola — 55.94\n\nНачало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Промежуточные итоги:\n1. Diane Gallix / Elod Egyed-zsigmond — 68.46\n2. Lena Zerinvary-simon / Huba Gallai — 61.38\n3. Lumia Sassi / Aarne Savola — 55.94\n\nНачало: 13:10 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Lumia Sassi / Aarne Savola",
@@ -63358,7 +63358,7 @@
      "time": "13:15",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "55.94"
     },
     {
@@ -63367,7 +63367,7 @@
      "time": "13:22",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "61.38"
     },
     {
@@ -63375,7 +63375,9 @@
      "nation": "HUN",
      "time": "13:29",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "68.46"
     },
     {
      "name": "Alexandra Rouskova / Lukas Toman",
@@ -63482,12 +63484,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Diane Gallix / Elod Egyed-zsigmond",
+     "nation": "HUN",
+     "points": "68.46"
+    },
+    {
+     "place": 2,
      "name": "Lena Zerinvary-simon / Huba Gallai",
      "nation": "HUN",
      "points": "61.38"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Lumia Sassi / Aarne Savola",
      "nation": "FIN",
      "points": "55.94"
@@ -116493,5 +116501,5 @@
   "Emily Zhang": "photos/fcd1a5a126d15038.jpg",
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg"
  },
- "rev": "a2ef5358be8ae1be"
+ "rev": "e5c1b00e57990a8b"
 }
