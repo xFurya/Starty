@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T16:35:54+03:00",
- "checked": "2026-11-22T14:21:40.118365+00:00",
+ "checked": "2026-11-22T14:33:39.529690+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63893,7 +63893,7 @@
     {
      "name": "Alisa Ovsiankina / Maximilien Rahier",
      "nation": "FRA",
-     "place": 5,
+     "place": 6,
      "points": "92.21",
      "time": "16:01",
      "no": 3,
@@ -63911,7 +63911,9 @@
      "nation": "ITA",
      "time": "17:22",
      "no": 10,
-     "warmup": 3
+     "warmup": 3,
+     "place": 4,
+     "points": "94.49"
     },
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
@@ -63928,13 +63930,13 @@
      "time": "16:37",
      "no": 5,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "89.40"
     },
     {
      "name": "Daniela Ivanitskiy / Matthew Sperry",
      "nation": "FIN",
-     "place": 8,
+     "place": 9,
      "points": "80.14",
      "time": "15:53",
      "no": 2,
@@ -63962,7 +63964,7 @@
      "time": "16:45",
      "no": 6,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "92.33"
     },
     {
@@ -63977,7 +63979,7 @@
     {
      "name": "Natalia Pallu-neves / Jayin Panesar",
      "nation": "BRA",
-     "place": 7,
+     "place": 8,
      "points": "83.88",
      "time": "16:09",
      "no": 4,
@@ -63986,7 +63988,7 @@
     {
      "name": "Olympia Kalaganis / Emile Deveau",
      "nation": "GRE",
-     "place": 9,
+     "place": 10,
      "points": "69.08",
      "time": "15:45",
      "no": 1,
@@ -116730,5 +116732,5 @@
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg",
   "Maite van Mulders": "photos/1a065c6ba6053ced.jpg"
  },
- "rev": "9e8aff86298803c4"
+ "rev": "7adcbd4b2b222fa3"
 }
