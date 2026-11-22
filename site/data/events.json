@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T11:19:40+03:00",
- "checked": "2026-11-22T08:45:03.025321+00:00",
+ "checked": "2026-11-22T08:49:02.995783+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63236,7 +63236,9 @@
      "nation": "МУР",
      "time": "11:45",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6,
+     "points": "85.94"
     },
     {
      "name": "Юлия Радионова",
@@ -116448,5 +116450,5 @@
   "Emily Zhang": "photos/fcd1a5a126d15038.jpg",
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg"
  },
- "rev": "08390aab63fd5e6f"
+ "rev": "05c91cae1da48b72"
 }
