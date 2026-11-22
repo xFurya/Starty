@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-22T16:35:54+03:00",
- "checked": "2026-11-22T15:01:40.129680+00:00",
+ "checked": "2026-11-22T15:09:39.244388+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -63864,24 +63864,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Holly Harris / Jason Chan",
+     "nation": "AUS",
+     "points": "111.65"
+    },
+    {
+     "place": 2,
      "name": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
      "nation": "CAN",
      "points": "105.77"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Amy Cui / Jonathan Rogers",
      "nation": "USA",
      "points": "104.55"
-    },
-    {
-     "place": 3,
-     "name": "Sandrine Gauthier / Paul Ayer",
-     "nation": "CAN",
-     "points": "100.05"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Alicia Fabbri / Marko Jevgeni Gaidajenko — 105.77\n2. Amy Cui / Jonathan Rogers — 104.55\n3. Sandrine Gauthier / Paul Ayer — 100.05\n\nНачало: 15:40 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Holly Harris / Jason Chan — 111.65\n2. Alicia Fabbri / Marko Jevgeni Gaidajenko — 105.77\n3. Amy Cui / Jonathan Rogers — 104.55\n\nИтог турнира:\n1. Holly Harris / Jason Chan — 185.82\n2. Alicia Fabbri / Marko Jevgeni Gaidajenko — 179.56\n3. Amy Cui / Jonathan Rogers — 175.76\n\nПримечательное:\n• Holly Harris / Jason Chan — Личный рекорд по сумме: 185.82 (был 183.50)\n• Alicia Fabbri / Marko Jevgeni Gaidajenko — Личный рекорд по сумме: 179.56 (был 175.08)\n• Amy Cui / Jonathan Rogers — Личный рекорд по сумме: 175.76 (был 174.09)\n\nНачало: 15:40 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
@@ -63889,17 +63889,19 @@
      "time": "17:45",
      "no": 13,
      "warmup": 3,
-     "place": 1,
-     "points": "105.77"
+     "place": 2,
+     "points": "105.77",
+     "final": 2
     },
     {
      "name": "Alisa Ovsiankina / Maximilien Rahier",
      "nation": "FRA",
-     "place": 9,
+     "place": 10,
      "points": "92.21",
      "time": "16:01",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 11
     },
     {
      "name": "Amy Cui / Jonathan Rogers",
@@ -63907,8 +63909,9 @@
      "time": "17:37",
      "no": 12,
      "warmup": 3,
-     "place": 2,
-     "points": "104.55"
+     "place": 3,
+     "points": "104.55",
+     "final": 3
     },
     {
      "name": "Carolina Portesi Peroni / Pietro Papetti",
@@ -63916,8 +63919,9 @@
      "time": "17:22",
      "no": 10,
      "warmup": 3,
-     "place": 7,
-     "points": "94.49"
+     "place": 8,
+     "points": "94.49",
+     "final": 6
     },
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
@@ -63925,8 +63929,9 @@
      "time": "16:53",
      "no": 7,
      "warmup": 2,
-     "place": 5,
-     "points": "96.94"
+     "place": 6,
+     "points": "96.94",
+     "final": 7
     },
     {
      "name": "Chelsea Verhaegh / Sherim van Geffen",
@@ -63934,17 +63939,19 @@
      "time": "16:37",
      "no": 5,
      "warmup": 2,
-     "place": 10,
-     "points": "89.40"
+     "place": 11,
+     "points": "89.40",
+     "final": 10
     },
     {
      "name": "Daniela Ivanitskiy / Matthew Sperry",
      "nation": "FIN",
-     "place": 12,
+     "place": 13,
      "points": "80.14",
      "time": "15:53",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 13
     },
     {
      "name": "Elliana Peal / Ethan Peal",
@@ -63952,15 +63959,19 @@
      "time": "17:08",
      "no": 9,
      "warmup": 2,
-     "place": 4,
-     "points": "97.47"
+     "place": 5,
+     "points": "97.47",
+     "final": 5
     },
     {
      "name": "Holly Harris / Jason Chan",
      "nation": "AUS",
      "time": "17:53",
      "no": 14,
-     "warmup": 3
+     "warmup": 3,
+     "place": 1,
+     "points": "111.65",
+     "final": 1
     },
     {
      "name": "Louise Bordet / Martin Chardain",
@@ -63968,8 +63979,9 @@
      "time": "16:45",
      "no": 6,
      "warmup": 2,
-     "place": 8,
-     "points": "92.33"
+     "place": 9,
+     "points": "92.33",
+     "final": 9
     },
     {
      "name": "Mariia Ignateva / Danijil Leonyidovics Szemko",
@@ -63977,26 +63989,29 @@
      "time": "17:00",
      "no": 8,
      "warmup": 2,
-     "place": 6,
-     "points": "94.58"
+     "place": 7,
+     "points": "94.58",
+     "final": 8
     },
     {
      "name": "Natalia Pallu-neves / Jayin Panesar",
      "nation": "BRA",
-     "place": 11,
+     "place": 12,
      "points": "83.88",
      "time": "16:09",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 12
     },
     {
      "name": "Olympia Kalaganis / Emile Deveau",
      "nation": "GRE",
-     "place": 13,
+     "place": 14,
      "points": "69.08",
      "time": "15:45",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 14
     },
     {
      "name": "Sandrine Gauthier / Paul Ayer",
@@ -64004,11 +64019,11 @@
      "time": "17:29",
      "no": 11,
      "warmup": 3,
-     "place": 3,
-     "points": "100.05"
+     "place": 4,
+     "points": "100.05",
+     "final": 4
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG008.htm",
@@ -64030,9 +64045,46 @@
      "Alicia FABBRI / Marko Jevgeni GAIDAJENKO": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
      "Holly HARRIS / Jason CHAN": "Holly Harris / Jason Chan"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": "isu_isu-cs-tallinn-trophy-2026.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Holly Harris / Jason Chan",
+     "nation": "AUS",
+     "points": "185.82"
+    },
+    {
+     "place": 2,
+     "name": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
+     "nation": "CAN",
+     "points": "179.56"
+    },
+    {
+     "place": 3,
+     "name": "Amy Cui / Jonathan Rogers",
+     "nation": "USA",
+     "points": "175.76"
+    }
+   ],
+   "facts": [
+    {
+     "who": "Holly Harris / Jason Chan",
+     "text": "Личный рекорд по сумме: 185.82 (был 183.50)",
+     "kind": "score"
+    },
+    {
+     "who": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
+     "text": "Личный рекорд по сумме: 179.56 (был 175.08)",
+     "kind": "score"
+    },
+    {
+     "who": "Amy Cui / Jonathan Rogers",
+     "text": "Личный рекорд по сумме: 175.76 (был 174.09)",
+     "kind": "score"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:men-junior-kp",
@@ -116738,5 +116790,5 @@
   "Daniil Murzin": "photos/3b4e8f255c4d3dfa.jpg",
   "Maite van Mulders": "photos/1a065c6ba6053ced.jpg"
  },
- "rev": "f54cc95ca773e94e"
+ "rev": "e5d18116df49321f"
 }
