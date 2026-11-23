@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-23T19:30:02+03:00",
- "checked": "2026-11-23T19:30:02+03:00",
+ "generated": "2026-11-24T01:54:21+03:00",
+ "checked": "2026-11-24T01:54:21+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -64843,6 +64843,114 @@
    "proto": null
   },
   {
+   "id": "isu:isu-gp-nhk-trophy-2026:women-senior-pp",
+   "tid": "isu:isu-gp-nhk-trophy-2026",
+   "tournament": "GP NHK Trophy",
+   "kind": "women",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "GP NHK Trophy — женщины ПП",
+   "start": "2026-11-28T10:30:00+03:00",
+   "end": "2026-11-28T12:15:00+03:00",
+   "venue": "Tokyo, Japan",
+   "intl": true,
+   "broadcast": [
+    "Okko",
+    "YouTube ISU"
+   ],
+   "ours": [
+    {
+     "name": "Аделия Петросян",
+     "nation": "RUS"
+    },
+    {
+     "name": "Алина Горбачёва",
+     "nation": "RUS"
+    },
+    {
+     "name": "Виктория Сафонова",
+     "nation": "BLR"
+    }
+   ],
+   "athletes": [
+    "Jia Shin",
+    "Julia Sauter",
+    "Kimmy Repond",
+    "Madeline Schizas",
+    "Mako Yamashita",
+    "Mone Chiba",
+    "Sarah Everhardt",
+    "Young You",
+    "Yuna Aoki",
+    "Аделия Петросян",
+    "Алина Горбачёва",
+    "Виктория Сафонова"
+   ],
+   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
+   "watch": [
+    {
+     "name": "Okko",
+     "url": "https://okko.sport/sport_collection/nhk-trophy-2026"
+    },
+    {
+     "name": "YouTube ISU",
+     "url": "https://www.youtube.com/@SkatingISU/live"
+    }
+   ],
+   "desc": "Россияне:\n• Аделия Петросян\n• Алина Горбачёва\n• Виктория Сафонова\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Jia Shin",
+     "nation": "KOR"
+    },
+    {
+     "name": "Julia Sauter",
+     "nation": "ROU"
+    },
+    {
+     "name": "Kimmy Repond",
+     "nation": "SUI"
+    },
+    {
+     "name": "Madeline Schizas",
+     "nation": "CAN"
+    },
+    {
+     "name": "Mako Yamashita",
+     "nation": "JPN"
+    },
+    {
+     "name": "Mone Chiba",
+     "nation": "JPN"
+    },
+    {
+     "name": "Sarah Everhardt",
+     "nation": "USA"
+    },
+    {
+     "name": "Young You",
+     "nation": "KOR"
+    },
+    {
+     "name": "Yuna Aoki",
+     "nation": "JPN"
+    },
+    {
+     "name": "Аделия Петросян",
+     "nation": "RUS"
+    },
+    {
+     "name": "Алина Горбачёва",
+     "nation": "RUS"
+    },
+    {
+     "name": "Виктория Сафонова",
+     "nation": "BLR"
+    }
+   ],
+   "proto": null
+  },
+  {
    "id": "gs:skate-celje:women-junior-kp",
    "tid": "gs:skate-celje",
    "tournament": "Skate Celje",
@@ -64850,8 +64958,8 @@
    "level": "junior",
    "seg": "КП",
    "title": "Skate Celje — девушки КП",
-   "start": "2026-11-28T10:00:00+03:00",
-   "end": "2026-11-28T17:55:00+03:00",
+   "start": "2026-11-28T10:30:00+03:00",
+   "end": "2026-11-28T18:25:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -64918,7 +65026,7 @@
     "Алиса Заикина"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Алиса Заикина\n\nНачало: 10:00 МСК",
+   "desc": "Россияне:\n• Алиса Заикина\n\nНачало: 10:30 МСК",
    "field": [
     {
      "name": "Ajda Preskar",
@@ -65203,114 +65311,6 @@
    "proto": "gs_skate-celje.json"
   },
   {
-   "id": "isu:isu-gp-nhk-trophy-2026:women-senior-pp",
-   "tid": "isu:isu-gp-nhk-trophy-2026",
-   "tournament": "GP NHK Trophy",
-   "kind": "women",
-   "level": "senior",
-   "seg": "ПП",
-   "title": "GP NHK Trophy — женщины ПП",
-   "start": "2026-11-28T10:30:00+03:00",
-   "end": "2026-11-28T12:15:00+03:00",
-   "venue": "Tokyo, Japan",
-   "intl": true,
-   "broadcast": [
-    "Okko",
-    "YouTube ISU"
-   ],
-   "ours": [
-    {
-     "name": "Аделия Петросян",
-     "nation": "RUS"
-    },
-    {
-     "name": "Алина Горбачёва",
-     "nation": "RUS"
-    },
-    {
-     "name": "Виктория Сафонова",
-     "nation": "BLR"
-    }
-   ],
-   "athletes": [
-    "Jia Shin",
-    "Julia Sauter",
-    "Kimmy Repond",
-    "Madeline Schizas",
-    "Mako Yamashita",
-    "Mone Chiba",
-    "Sarah Everhardt",
-    "Young You",
-    "Yuna Aoki",
-    "Аделия Петросян",
-    "Алина Горбачёва",
-    "Виктория Сафонова"
-   ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
-   "watch": [
-    {
-     "name": "Okko",
-     "url": "https://okko.sport/sport_collection/nhk-trophy-2026"
-    },
-    {
-     "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
-    }
-   ],
-   "desc": "Россияне:\n• Аделия Петросян\n• Алина Горбачёва\n• Виктория Сафонова\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
-    {
-     "name": "Jia Shin",
-     "nation": "KOR"
-    },
-    {
-     "name": "Julia Sauter",
-     "nation": "ROU"
-    },
-    {
-     "name": "Kimmy Repond",
-     "nation": "SUI"
-    },
-    {
-     "name": "Madeline Schizas",
-     "nation": "CAN"
-    },
-    {
-     "name": "Mako Yamashita",
-     "nation": "JPN"
-    },
-    {
-     "name": "Mone Chiba",
-     "nation": "JPN"
-    },
-    {
-     "name": "Sarah Everhardt",
-     "nation": "USA"
-    },
-    {
-     "name": "Young You",
-     "nation": "KOR"
-    },
-    {
-     "name": "Yuna Aoki",
-     "nation": "JPN"
-    },
-    {
-     "name": "Аделия Петросян",
-     "nation": "RUS"
-    },
-    {
-     "name": "Алина Горбачёва",
-     "nation": "RUS"
-    },
-    {
-     "name": "Виктория Сафонова",
-     "nation": "BLR"
-    }
-   ],
-   "proto": null
-  },
-  {
    "id": "isu:isu-gp-nhk-trophy-2026:men-senior-pp",
    "tid": "isu:isu-gp-nhk-trophy-2026",
    "tournament": "GP NHK Trophy",
@@ -65422,8 +65422,8 @@
    "level": "junior",
    "seg": "КП",
    "title": "Skate Celje — юноши КП",
-   "start": "2026-11-28T16:33:00+03:00",
-   "end": "2026-11-28T17:13:00+03:00",
+   "start": "2026-11-28T17:03:00+03:00",
+   "end": "2026-11-28T17:43:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -65436,7 +65436,7 @@
     "Marian Klus"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Начало: 16:33 МСК",
+   "desc": "Начало: 17:03 МСК",
    "field": [
     {
      "name": "Igor Gyula Kind",
@@ -65483,8 +65483,8 @@
    "level": "senior",
    "seg": "КП",
    "title": "Skate Celje — женщины КП",
-   "start": "2026-11-28T20:55:00+03:00",
-   "end": "2026-11-28T23:00:00+03:00",
+   "start": "2026-11-28T21:20:00+03:00",
+   "end": "2026-11-28T23:25:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -65511,7 +65511,7 @@
     "Камилла Нелюбова"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Камилла Нелюбова\n\nНачало: 20:55 МСК",
+   "desc": "Россияне:\n• Камилла Нелюбова\n\nНачало: 21:20 МСК",
    "field": [
     {
      "name": "Alexandra Feigin",
@@ -65603,8 +65603,8 @@
    "level": "senior",
    "seg": "КП",
    "title": "Skate Celje — мужчины КП",
-   "start": "2026-11-28T22:38:00+03:00",
-   "end": "2026-11-28T23:43:00+03:00",
+   "start": "2026-11-28T23:04:00+03:00",
+   "end": "2026-11-29T00:09:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -65625,7 +65625,7 @@
     "Макар Николаев"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 22:38 МСК",
+   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 23:04 МСК",
    "field": [
     {
      "name": "Alessandro Liberatore",
@@ -65687,8 +65687,8 @@
    "level": "junior",
    "seg": "ПП",
    "title": "Skate Celje — девушки ПП",
-   "start": "2026-11-29T10:00:00+03:00",
-   "end": "2026-11-29T18:50:00+03:00",
+   "start": "2026-11-29T10:30:00+03:00",
+   "end": "2026-11-29T19:20:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -65755,7 +65755,7 @@
     "Алиса Заикина"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Алиса Заикина\n\nНачало: 10:00 МСК",
+   "desc": "Россияне:\n• Алиса Заикина\n\nНачало: 10:30 МСК",
    "field": [
     {
      "name": "Ajda Preskar",
@@ -66047,8 +66047,8 @@
    "level": "junior",
    "seg": "ПП",
    "title": "Skate Celje — юноши ПП",
-   "start": "2026-11-29T14:55:00+03:00",
-   "end": "2026-11-29T15:40:00+03:00",
+   "start": "2026-11-29T15:25:00+03:00",
+   "end": "2026-11-29T16:10:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -66061,7 +66061,7 @@
     "Marian Klus"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Начало: 14:55 МСК",
+   "desc": "Начало: 15:25 МСК",
    "field": [
     {
      "name": "Igor Gyula Kind",
@@ -66108,8 +66108,8 @@
    "level": "senior",
    "seg": "ПП",
    "title": "Skate Celje — женщины ПП",
-   "start": "2026-11-29T15:45:00+03:00",
-   "end": "2026-11-29T18:05:00+03:00",
+   "start": "2026-11-29T16:15:00+03:00",
+   "end": "2026-11-29T18:35:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -66136,7 +66136,7 @@
     "Камилла Нелюбова"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Камилла Нелюбова\n\nНачало: 15:45 МСК",
+   "desc": "Россияне:\n• Камилла Нелюбова\n\nНачало: 16:15 МСК",
    "field": [
     {
      "name": "Alexandra Feigin",
@@ -66228,8 +66228,8 @@
    "level": "senior",
    "seg": "ПП",
    "title": "Skate Celje — мужчины ПП",
-   "start": "2026-11-29T17:47:00+03:00",
-   "end": "2026-11-29T19:02:00+03:00",
+   "start": "2026-11-29T18:17:00+03:00",
+   "end": "2026-11-29T19:32:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -66250,7 +66250,7 @@
     "Макар Николаев"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 17:47 МСК",
+   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 18:17 МСК",
    "field": [
     {
      "name": "Alessandro Liberatore",
@@ -116707,5 +116707,5 @@
   "Ulla Nieminen": "photos/4163823092e290ce.jpg",
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg"
  },
- "rev": "dcc4b66d3c4ea5bb"
+ "rev": "1d7940cc3804208c"
 }
