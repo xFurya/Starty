@@ -14,12 +14,12 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:gs:skate-celje:women-senior-pp@starty
-DTSTAMP:20261122T194940Z
-DTSTART;TZID=Europe/Moscow:20261129T160000
-DTEND;TZID=Europe/Moscow:20261129T184500
+DTSTAMP:20261123T163002Z
+DTSTART;TZID=Europe/Moscow:20261129T154500
+DTEND;TZID=Europe/Moscow:20261129T180500
 SUMMARY:Skate Celje — женщины ПП
 DESCRIPTION:Россияне:\n• Камилла Нелюбова\n\nНа
- чало: 16:00 МСК
+ чало: 15:45 МСК
 LOCATION:Celje\, Slovenia
 URL:https://xfurya.github.io/Starty/#e=gs:skate-celje:women-senior-pp
 TRANSP:TRANSPARENT

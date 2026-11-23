@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-22T22:49:40+03:00",
- "checked": "2026-11-22T22:49:40+03:00",
+ "generated": "2026-11-23T19:30:02+03:00",
+ "checked": "2026-11-23T19:30:02+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -64851,7 +64851,7 @@
    "seg": "КП",
    "title": "Skate Celje — девушки КП",
    "start": "2026-11-28T10:00:00+03:00",
-   "end": "2026-11-28T18:15:00+03:00",
+   "end": "2026-11-28T17:55:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -64878,7 +64878,6 @@
     "Eles Namazalieva",
     "Emma Cerkalova",
     "Enja Sivic",
-    "Gabriele Juskaite",
     "Hana Operckal",
     "Hanna Elteto",
     "Isabella Niederleitner",
@@ -64908,7 +64907,6 @@
     "Teresa Naia Eder",
     "Tereza Havrankova",
     "Tiana Kaligaro",
-    "Tsvetelina Panova",
     "Varvara Abramkina",
     "Varvara Poder",
     "Veronika Taubeova",
@@ -64985,10 +64983,6 @@
     {
      "name": "Enja Sivic",
      "nation": "SLO"
-    },
-    {
-     "name": "Gabriele Juskaite",
-     "nation": "LTU"
     },
     {
      "name": "Hana Operckal",
@@ -65107,10 +65101,6 @@
      "nation": "SLO"
     },
     {
-     "name": "Tsvetelina Panova",
-     "nation": "BUL"
-    },
-    {
      "name": "Varvara Abramkina",
      "nation": "BUL"
     },
@@ -65172,7 +65162,6 @@
      "Tereza HAVRANKOVA": "Tereza Havrankova",
      "Jazlynn HÖPPENER": "Jazlynn Höppener",
      "Aleksandra JANIKOWSKA": "Aleksandra Janikowska",
-     "Gabriele JUSKAITE": "Gabriele Juskaite",
      "Tiana KALIGARO": "Tiana Kaligaro",
      "Vita KAS": "Vita Kas",
      "Zala KAS": "Zala Kas",
@@ -65189,7 +65178,6 @@
      "Djurdja NIKOLIC": "Djurdja Nikolic",
      "Hana OPERCKAL": "Hana Operckal",
      "Angelica ORSI": "Angelica Orsi",
-     "Tsvetelina PANOVA": "Tsvetelina Panova",
      "Tara PLAHUTAR": "Tara Plahutar",
      "Varvara PODER": "Varvara Poder",
      "Ajda PRESKAR": "Ajda Preskar",
@@ -65434,8 +65422,8 @@
    "level": "junior",
    "seg": "КП",
    "title": "Skate Celje — юноши КП",
-   "start": "2026-11-28T17:00:00+03:00",
-   "end": "2026-11-28T17:40:00+03:00",
+   "start": "2026-11-28T16:33:00+03:00",
+   "end": "2026-11-28T17:13:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -65448,7 +65436,7 @@
     "Marian Klus"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Начало: 17:00 МСК",
+   "desc": "Начало: 16:33 МСК",
    "field": [
     {
      "name": "Igor Gyula Kind",
@@ -65495,8 +65483,8 @@
    "level": "senior",
    "seg": "КП",
    "title": "Skate Celje — женщины КП",
-   "start": "2026-11-28T21:00:00+03:00",
-   "end": "2026-11-28T23:25:00+03:00",
+   "start": "2026-11-28T20:55:00+03:00",
+   "end": "2026-11-28T23:00:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -65514,19 +65502,16 @@
     "Andrea Montesinos Cantu",
     "Barbora Tykalova",
     "Dunja Tresnjic",
-    "Eve Dubecq",
     "Hannah Frank",
-    "Ines Belot",
     "Julija Lovrencic",
     "Mariia Kryzhova",
     "Melisa Basturk",
-    "Michaela Vrastakova",
     "Ula Zadnikar",
     "Ulla Nieminen",
     "Камилла Нелюбова"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Камилла Нелюбова\n\nНачало: 21:00 МСК",
+   "desc": "Россияне:\n• Камилла Нелюбова\n\nНачало: 20:55 МСК",
    "field": [
     {
      "name": "Alexandra Feigin",
@@ -65557,16 +65542,8 @@
      "nation": "SRB"
     },
     {
-     "name": "Eve Dubecq",
-     "nation": "FRA"
-    },
-    {
      "name": "Hannah Frank",
      "nation": "AUT"
-    },
-    {
-     "name": "Ines Belot",
-     "nation": "FRA"
     },
     {
      "name": "Julija Lovrencic",
@@ -65579,10 +65556,6 @@
     {
      "name": "Melisa Basturk",
      "nation": "TUR"
-    },
-    {
-     "name": "Michaela Vrastakova",
-     "nation": "CZE"
     },
     {
      "name": "Ula Zadnikar",
@@ -65605,9 +65578,7 @@
     "names": {
      "Andrea BACOVA": "Andrea Bacova",
      "Melisa BASTURK": "Melisa Basturk",
-     "Ines BELOT": "Ines Belot",
      "Ana Sofia BESCHEA": "Ana Sofia Beschea",
-     "Eve DUBECQ": "Eve Dubecq",
      "Alexandra FEIGIN": "Alexandra Feigin",
      "Hannah FRANK": "Hannah Frank",
      "Mariia KRYZHOVA": "Mariia Kryzhova",
@@ -65618,7 +65589,6 @@
      "Ana SCEPANOVIC": "Ana Scepanovic",
      "Dunja TRESNJIC": "Dunja Tresnjic",
      "Barbora TYKALOVA": "Barbora Tykalova",
-     "Michaela VRASTAKOVA": "Michaela Vrastakova",
      "Ula ZADNIKAR": "Ula Zadnikar"
     },
     "basis": null
@@ -65633,8 +65603,8 @@
    "level": "senior",
    "seg": "КП",
    "title": "Skate Celje — мужчины КП",
-   "start": "2026-11-28T23:10:00+03:00",
-   "end": "2026-11-29T00:15:00+03:00",
+   "start": "2026-11-28T22:38:00+03:00",
+   "end": "2026-11-28T23:43:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -65655,7 +65625,7 @@
     "Макар Николаев"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 23:10 МСК",
+   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 22:38 МСК",
    "field": [
     {
      "name": "Alessandro Liberatore",
@@ -65718,7 +65688,7 @@
    "seg": "ПП",
    "title": "Skate Celje — девушки ПП",
    "start": "2026-11-29T10:00:00+03:00",
-   "end": "2026-11-29T19:10:00+03:00",
+   "end": "2026-11-29T18:50:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -65745,7 +65715,6 @@
     "Eles Namazalieva",
     "Emma Cerkalova",
     "Enja Sivic",
-    "Gabriele Juskaite",
     "Hana Operckal",
     "Hanna Elteto",
     "Isabella Niederleitner",
@@ -65775,7 +65744,6 @@
     "Teresa Naia Eder",
     "Tereza Havrankova",
     "Tiana Kaligaro",
-    "Tsvetelina Panova",
     "Varvara Abramkina",
     "Varvara Poder",
     "Veronika Taubeova",
@@ -65852,10 +65820,6 @@
     {
      "name": "Enja Sivic",
      "nation": "SLO"
-    },
-    {
-     "name": "Gabriele Juskaite",
-     "nation": "LTU"
     },
     {
      "name": "Hana Operckal",
@@ -65974,10 +65938,6 @@
      "nation": "SLO"
     },
     {
-     "name": "Tsvetelina Panova",
-     "nation": "BUL"
-    },
-    {
      "name": "Varvara Abramkina",
      "nation": "BUL"
     },
@@ -66039,7 +65999,6 @@
      "Tereza HAVRANKOVA": "Tereza Havrankova",
      "Jazlynn HÖPPENER": "Jazlynn Höppener",
      "Aleksandra JANIKOWSKA": "Aleksandra Janikowska",
-     "Gabriele JUSKAITE": "Gabriele Juskaite",
      "Tiana KALIGARO": "Tiana Kaligaro",
      "Vita KAS": "Vita Kas",
      "Zala KAS": "Zala Kas",
@@ -66056,7 +66015,6 @@
      "Djurdja NIKOLIC": "Djurdja Nikolic",
      "Hana OPERCKAL": "Hana Operckal",
      "Angelica ORSI": "Angelica Orsi",
-     "Tsvetelina PANOVA": "Tsvetelina Panova",
      "Tara PLAHUTAR": "Tara Plahutar",
      "Varvara PODER": "Varvara Poder",
      "Ajda PRESKAR": "Ajda Preskar",
@@ -66089,8 +66047,8 @@
    "level": "junior",
    "seg": "ПП",
    "title": "Skate Celje — юноши ПП",
-   "start": "2026-11-29T15:10:00+03:00",
-   "end": "2026-11-29T15:55:00+03:00",
+   "start": "2026-11-29T14:55:00+03:00",
+   "end": "2026-11-29T15:40:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -66103,7 +66061,7 @@
     "Marian Klus"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Начало: 15:10 МСК",
+   "desc": "Начало: 14:55 МСК",
    "field": [
     {
      "name": "Igor Gyula Kind",
@@ -66150,8 +66108,8 @@
    "level": "senior",
    "seg": "ПП",
    "title": "Skate Celje — женщины ПП",
-   "start": "2026-11-29T16:00:00+03:00",
-   "end": "2026-11-29T18:45:00+03:00",
+   "start": "2026-11-29T15:45:00+03:00",
+   "end": "2026-11-29T18:05:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -66169,19 +66127,16 @@
     "Andrea Montesinos Cantu",
     "Barbora Tykalova",
     "Dunja Tresnjic",
-    "Eve Dubecq",
     "Hannah Frank",
-    "Ines Belot",
     "Julija Lovrencic",
     "Mariia Kryzhova",
     "Melisa Basturk",
-    "Michaela Vrastakova",
     "Ula Zadnikar",
     "Ulla Nieminen",
     "Камилла Нелюбова"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Камилла Нелюбова\n\nНачало: 16:00 МСК",
+   "desc": "Россияне:\n• Камилла Нелюбова\n\nНачало: 15:45 МСК",
    "field": [
     {
      "name": "Alexandra Feigin",
@@ -66212,16 +66167,8 @@
      "nation": "SRB"
     },
     {
-     "name": "Eve Dubecq",
-     "nation": "FRA"
-    },
-    {
      "name": "Hannah Frank",
      "nation": "AUT"
-    },
-    {
-     "name": "Ines Belot",
-     "nation": "FRA"
     },
     {
      "name": "Julija Lovrencic",
@@ -66234,10 +66181,6 @@
     {
      "name": "Melisa Basturk",
      "nation": "TUR"
-    },
-    {
-     "name": "Michaela Vrastakova",
-     "nation": "CZE"
     },
     {
      "name": "Ula Zadnikar",
@@ -66260,9 +66203,7 @@
     "names": {
      "Andrea BACOVA": "Andrea Bacova",
      "Melisa BASTURK": "Melisa Basturk",
-     "Ines BELOT": "Ines Belot",
      "Ana Sofia BESCHEA": "Ana Sofia Beschea",
-     "Eve DUBECQ": "Eve Dubecq",
      "Alexandra FEIGIN": "Alexandra Feigin",
      "Hannah FRANK": "Hannah Frank",
      "Mariia KRYZHOVA": "Mariia Kryzhova",
@@ -66273,7 +66214,6 @@
      "Ana SCEPANOVIC": "Ana Scepanovic",
      "Dunja TRESNJIC": "Dunja Tresnjic",
      "Barbora TYKALOVA": "Barbora Tykalova",
-     "Michaela VRASTAKOVA": "Michaela Vrastakova",
      "Ula ZADNIKAR": "Ula Zadnikar"
     },
     "basis": null
@@ -66288,8 +66228,8 @@
    "level": "senior",
    "seg": "ПП",
    "title": "Skate Celje — мужчины ПП",
-   "start": "2026-11-29T19:00:00+03:00",
-   "end": "2026-11-29T20:15:00+03:00",
+   "start": "2026-11-29T17:47:00+03:00",
+   "end": "2026-11-29T19:02:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -66310,7 +66250,7 @@
     "Макар Николаев"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 19:00 МСК",
+   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 17:47 МСК",
    "field": [
     {
      "name": "Alessandro Liberatore",
@@ -66927,23 +66867,14 @@
  ],
  "upcoming": [
   {
-   "tid": "ffkm:rn89063",
+   "tid": "ffkm:2026-11-23_kubok",
    "name": "Кубок Москвы (Финал)",
    "start": "2026-11-23",
    "end": "2026-11-27",
    "venue": "ЛД «Медведково», Москва",
    "intl": false,
    "tier": "regional",
-   "region": "Москва",
-   "broadcast": [
-    "vk.ru"
-   ],
-   "watch": [
-    {
-     "name": "vk.ru",
-     "url": "https://vk.ru/live-44553412_456239449"
-    }
-   ]
+   "region": "Москва"
   },
   {
    "tid": "isu:isu-cs-pge-warsaw-cup-2026",
@@ -66952,17 +66883,10 @@
    "venue": "Warsaw, Poland",
    "start": "2026-11-25",
    "end": "2026-11-29",
-   "ours": [
-    "Анна Коломенская / Артём Фролов",
-    "Екатерина Миронова / Евгений Устенко"
-   ],
-   "ours_nation": {
-    "Анна Коломенская / Артём Фролов": "RUS",
-    "Екатерина Миронова / Евгений Устенко": "RUS"
-   },
+   "ours": [],
+   "ours_nation": {},
    "athletes": [
     "Adelija Matjunina",
-    "Alexa Gasparotto",
     "Andrea Montesinos Cantu",
     "Ariadna Gupta Espada",
     "Arianna Sassi / Luca Morini",
@@ -67036,7 +66960,6 @@
     "Sofiia Ekzarkhova",
     "Sofiia Hryhorenko",
     "Sofiia Rymshyna",
-    "Starr Andrews / Daniil Parkman",
     "Tadeas Vaclavik",
     "Tobia Oellerer",
     "Valtter Virtanen",
@@ -67049,9 +66972,7 @@
     "Yu-Hsiang Li",
     "Zhasmin Shlaga",
     "Zoe Larson / Andrii Kapran",
-    "Zofia Grzegorzewska / Oleg Muratov",
-    "Анна Коломенская / Артём Фролов",
-    "Екатерина Миронова / Евгений Устенко"
+    "Zofia Grzegorzewska / Oleg Muratov"
    ],
    "broadcast": [],
    "watch": []
@@ -67103,7 +67024,6 @@
    },
    "athletes": [
     "Arlet Levandi",
-    "Artur Smagulov",
     "Barbora Vrankova",
     "Christina Carreira / Anthony Ponomarenko",
     "Corey Circelli",
@@ -71771,6 +71691,12 @@
    "p": "a7336de50c9a"
   },
   {
+   "n": "Afrina Diyanah",
+   "c": "MAS",
+   "k": "w",
+   "p": "7b887ffa9916"
+  },
+  {
    "n": "Agata Starykava",
    "c": "BLR",
    "k": "",
@@ -73938,6 +73864,12 @@
    "p": "1e1de6b6e8b5"
   },
   {
+   "n": "Carlotta Maria Gardini",
+   "c": "ITA",
+   "k": "w",
+   "p": "749235a6bc29"
+  },
+  {
    "n": "Carolane Soucisse / Shane Firus",
    "c": "IRL",
    "k": "",
@@ -75565,6 +75497,12 @@
    "k": ""
   },
   {
+   "n": "Emilija Ozola",
+   "c": "LAT",
+   "k": "w",
+   "p": "84c40a6b90f6"
+  },
+  {
    "n": "Emiliya Hramyka",
    "c": "BLR",
    "k": ""
@@ -75617,6 +75555,12 @@
    "c": "USA",
    "k": "w",
    "p": "b7c146712df6"
+  },
+  {
+   "n": "Eugenia Sekulovski",
+   "c": "SUI",
+   "k": "w",
+   "p": "255136ab5a09"
   },
   {
    "n": "Eugenia Tkachenka",
@@ -76296,6 +76240,12 @@
    "p": "e3279ae6f601"
   },
   {
+   "n": "Ian Vauclin",
+   "c": "FRA",
+   "k": "m",
+   "p": "f309e2d17ce8"
+  },
+  {
    "n": "Iana Brusilo",
    "c": "RUS",
    "k": ""
@@ -76514,7 +76464,7 @@
   {
    "n": "Irina Napolitano / Edoardo Comi",
    "c": "ITA",
-   "k": "P",
+   "k": "p",
    "p": "4eee98fae5cf"
   },
   {
@@ -76975,6 +76925,12 @@
    "k": ""
   },
   {
+   "n": "Josefin Brovall",
+   "c": "SWE",
+   "k": "w",
+   "p": "d60f2d854872"
+  },
+  {
    "n": "Josefin Taljegard",
    "c": "SWE",
    "k": "",
@@ -77022,6 +76978,12 @@
    "n": "Julia Antipova",
    "c": "RUS",
    "k": ""
+  },
+  {
+   "n": "Julia Brovall",
+   "c": "SWE",
+   "k": "w",
+   "p": "8e377f8ed4aa"
   },
   {
    "n": "Julia Epps / Blake Gilman",
@@ -77922,6 +77884,12 @@
    "c": "TKM",
    "k": "W",
    "p": "3710d00a89b6"
+  },
+  {
+   "n": "Larry Loupolover",
+   "c": "BUL",
+   "k": "m",
+   "p": "abe18b69ee68"
   },
   {
    "n": "Latifakhon Shoisaeva",
@@ -79164,6 +79132,12 @@
    "p": "1b58319d5eea"
   },
   {
+   "n": "Matteo Nalbone",
+   "c": "ITA",
+   "k": "m",
+   "p": "e6f3cb5d0c73"
+  },
+  {
    "n": "Matteo Rizzo",
    "c": "ITA",
    "k": "",
@@ -80319,7 +80293,7 @@
   },
   {
    "n": "Olympia Kalaganis / Emile Deveau",
-   "c": "CAN",
+   "c": "GRE",
    "k": "d",
    "p": "9bd2bf64ed87"
   },
@@ -80704,7 +80678,7 @@
   {
    "n": "Reagan Moss / Jakub Galbavy",
    "c": "USA",
-   "k": "P",
+   "k": "p",
    "p": "aff70483fbfd"
   },
   {
@@ -80996,6 +80970,12 @@
    "c": "FRA",
    "k": "m",
    "p": "a5cb30f567ac"
+  },
+  {
+   "n": "Sandrine Gauthier / Paul Ayer",
+   "c": "CAN",
+   "k": "d",
+   "p": "684a5f92ebcc"
   },
   {
    "n": "Sandro De Angelo",
@@ -82940,6 +82920,12 @@
    "was": "P",
    "y": "2025/26",
    "p": "1104cd60cede"
+  },
+  {
+   "n": "Xuanyu Liu / Wenbao Han",
+   "c": "CHN",
+   "k": "p",
+   "p": "f106f535fcc0"
   },
   {
    "n": "Yahor Maistrov",
@@ -92619,14 +92605,6 @@
    "y": "2023/24"
   },
   {
-   "n": "Josefin Brovall",
-   "c": "SWE",
-   "k": "",
-   "p": "d60f2d854872",
-   "was": "W",
-   "y": "2023/24"
-  },
-  {
    "n": "Михаил Зотов",
    "c": "RUS",
    "k": "",
@@ -93129,14 +93107,6 @@
    "p": "f3b7e3f23d45",
    "was": "Dd",
    "y": "2018/19"
-  },
-  {
-   "n": "Ian Vauclin",
-   "c": "FRA",
-   "k": "",
-   "p": "f309e2d17ce8",
-   "was": "M",
-   "y": "2022/23"
   },
   {
    "n": "Rosa Reponen",
@@ -93849,14 +93819,6 @@
    "p": "3aa7a8809b46",
    "was": "W",
    "y": "2018/19"
-  },
-  {
-   "n": "Eugenia Sekulovski",
-   "c": "SUI",
-   "k": "",
-   "p": "255136ab5a09",
-   "was": "W",
-   "y": "2023/24"
   },
   {
    "n": "Gaizka Madejon Cambra",
@@ -94608,14 +94570,6 @@
    "k": "",
    "p": "a8a258fd6fd0",
    "was": "D",
-   "y": "2022/23"
-  },
-  {
-   "n": "Larry Loupolover",
-   "c": "BUL",
-   "k": "",
-   "p": "abe18b69ee68",
-   "was": "m",
    "y": "2022/23"
   },
   {
@@ -98579,14 +98533,6 @@
    "y": "2022/23"
   },
   {
-   "n": "Afrina Diyanah",
-   "c": "MAS",
-   "k": "",
-   "p": "7b887ffa9916",
-   "was": "W",
-   "y": "2022/23"
-  },
-  {
    "n": "Anna Ivanchenko",
    "c": "UKR",
    "k": "",
@@ -101563,14 +101509,6 @@
    "y": "2022/23"
   },
   {
-   "n": "Matteo Nalbone",
-   "c": "ITA",
-   "k": "",
-   "p": "e6f3cb5d0c73",
-   "was": "M",
-   "y": "2023/24"
-  },
-  {
    "n": "Natasha Mckay",
    "c": "GBR",
    "k": "",
@@ -102850,14 +102788,6 @@
    "y": "2018/19"
   },
   {
-   "n": "Julia Brovall",
-   "c": "SWE",
-   "k": "",
-   "p": "8e377f8ed4aa",
-   "was": "W",
-   "y": "2022/23"
-  },
-  {
    "n": "Siyang Zhang / Yongchao Yang",
    "c": "CHN",
    "k": "",
@@ -103390,22 +103320,6 @@
    "y": "2026/27"
   },
   {
-   "n": "Carlotta Maria Gardini",
-   "c": "ITA",
-   "k": "",
-   "p": "749235a6bc29",
-   "was": "w",
-   "y": "2026/27"
-  },
-  {
-   "n": "Emilija Ozola",
-   "c": "LAT",
-   "k": "",
-   "p": "84c40a6b90f6",
-   "was": "w",
-   "y": "2026/27"
-  },
-  {
    "n": "Naomie Ismaili / Leo Rouvrais",
    "c": "FRA",
    "k": "",
@@ -103419,14 +103333,6 @@
    "k": "",
    "p": "8987c7dcf620",
    "was": "P",
-   "y": "2026/27"
-  },
-  {
-   "n": "Xuanyu Liu / Wenbao Han",
-   "c": "CHN",
-   "k": "",
-   "p": "f106f535fcc0",
-   "was": "p",
    "y": "2026/27"
   },
   {
@@ -103451,14 +103357,6 @@
    "k": "",
    "p": "20d5067d3680",
    "was": "w",
-   "y": "2026/27"
-  },
-  {
-   "n": "Sandrine Gauthier / Paul Ayer",
-   "c": "CAN",
-   "k": "",
-   "p": "684a5f92ebcc",
-   "was": "d",
    "y": "2026/27"
   },
   {
@@ -116809,5 +116707,5 @@
   "Ulla Nieminen": "photos/4163823092e290ce.jpg",
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg"
  },
- "rev": "d60f53d1f6891118"
+ "rev": "dcc4b66d3c4ea5bb"
 }
