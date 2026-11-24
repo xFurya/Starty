@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-24T13:09:30+03:00",
- "checked": "2026-11-24T14:10:03.539133+00:00",
+ "checked": "2026-11-24T14:14:04.354199+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -64328,7 +64328,7 @@
     "Ярослав Овчинников"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Роман Попов — 70.60\n2. Александр Бородин — 68.55\n3. Никита Сенцов — 62.30\n\nНачало: 16:45 МСК",
+   "desc": "Итог:\n1. Роман Попов — 70.60\n2. Александр Бородин — 68.55\n3. Никита Сенцов — 62.30\n\nНачало: 16:45 МСК",
    "field": [
     {
      "name": "Александр Бородин",
@@ -64358,7 +64358,9 @@
      "name": "Ярослав Овчинников",
      "nation": "НВС",
      "no": 4,
-     "warmup": null
+     "warmup": null,
+     "place": 4,
+     "points": "61.25"
     }
    ],
    "live": {
@@ -64372,7 +64374,7 @@
      "Никита Евгеньевич СЕНЦОВ": "Никита Сенцов",
      "Ярослав Евгеньевич ОВЧИННИКОВ": "Ярослав Овчинников"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json",
    "podium": [
@@ -64394,8 +64396,7 @@
      "nation": "МОС",
      "points": "62.30"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-junior-kp",
@@ -118807,5 +118808,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "ce76d2b1eb610ae9"
+ "rev": "fc846b347616ad64"
 }
