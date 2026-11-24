@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-24T13:09:30+03:00",
- "checked": "2026-11-24T13:09:30+03:00",
+ "checked": "2026-11-24T11:47:04.236466+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -64120,13 +64120,15 @@
     "Ярослав Крегель"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
-   "desc": "Начало: 14:30 МСК",
+   "desc": "Промежуточные итоги:\n1. Иван Гришановский — 55.52\n\nНачало: 14:30 МСК",
    "field": [
     {
      "name": "Иван Гришановский",
      "nation": "МОС",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "55.52"
     },
     {
      "name": "Андрей Шилин",
@@ -64251,7 +64253,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Иван Гришановский",
+     "nation": "МОС",
+     "points": "55.52"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:men-senior-kp",
@@ -118726,5 +118737,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "821ab01a659eb24e"
+ "rev": "8460c9604f5f93eb"
 }
