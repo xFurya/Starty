@@ -1,9 +1,17 @@
 {
  "v": 1,
- "at": "2026-11-24T19:22:15+03:00",
+ "at": "2026-11-25T00:29:31+03:00",
  "ok": false,
  "season": "2026-07-01",
  "problems": [
+  {
+   "kind": "no_starts",
+   "source": "Самара",
+   "where": "1 этап Кубка России, ВС и ВФМ \"Самарочка\", ВФМ \"Новое поколение\" (II этап)",
+   "detail": "турнир начинается завтра, а стартов у него нет",
+   "key": "no_starts:samara:1-etap-kubka-rossii-vs-i-vfm-samarochka-vfm-novoe-pokolenie-ii-etap-",
+   "since": "2026-11-25T00:29:31+03:00"
+  },
   {
    "kind": "no_starts",
    "source": "ФФКМ",

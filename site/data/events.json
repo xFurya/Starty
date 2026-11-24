@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-24T19:22:15+03:00",
- "checked": "2026-11-24T19:22:15+03:00",
+ "generated": "2026-11-25T00:29:31+03:00",
+ "checked": "2026-11-25T00:29:31+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -65067,8 +65067,8 @@
    "level": "senior",
    "seg": "ПП",
    "title": "Тюменский меридиан — мужчины ПП",
-   "start": "2026-11-25T17:30:00+03:00",
-   "end": "2026-11-25T18:05:00+03:00",
+   "start": "2026-11-25T17:15:00+03:00",
+   "end": "2026-11-25T17:50:00+03:00",
    "venue": "«Каток Прибой», Тюмень",
    "intl": false,
    "broadcast": [],
@@ -65080,7 +65080,7 @@
     "Ярослав Овчинников"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
-   "desc": "Начало: 17:30 МСК",
+   "desc": "Начало: 17:15 МСК",
    "field": [
     {
      "name": "Ярослав Овчинников",
@@ -65131,7 +65131,7 @@
    "seg": "РТ",
    "title": "CS PGE Warsaw Cup — танцы РТ",
    "start": "2026-11-25T20:35:00+03:00",
-   "end": "2026-11-25T23:00:00+03:00",
+   "end": "2026-11-25T23:09:00+03:00",
    "venue": "Warsaw, Poland",
    "intl": true,
    "broadcast": [],
@@ -65158,68 +65158,116 @@
    "desc": "Начало: 20:35 МСК",
    "field": [
     {
-     "name": "Arianna Sassi / Luca Morini",
-     "nation": "SUI"
-    },
-    {
-     "name": "Celina Fradji / Jean-Hans Fourneaux",
-     "nation": "FRA"
-    },
-    {
      "name": "Charise Matthaei / Max Liebers",
-     "nation": "GER"
-    },
-    {
-     "name": "Daniela Ivanitskiy / Matthew Sperry",
-     "nation": "FIN"
-    },
-    {
-     "name": "Emese Csiszer / Mark Shapiro",
-     "nation": "HUN"
+     "nation": "GER",
+     "time": "20:42",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Giulia Isabella Paolino / Andrea Tuba",
-     "nation": "ITA"
-    },
-    {
-     "name": "Isabella Flores / Linus Colmor Jepsen",
-     "nation": "USA"
-    },
-    {
-     "name": "Milla Ruud Reitan / Nikolaj Majorov",
-     "nation": "SWE"
-    },
-    {
-     "name": "Natacha Lagouge / Arnaud Caffa",
-     "nation": "FRA"
+     "nation": "ITA",
+     "time": "20:49",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Olivia Josephine Shilling / Leo Baeten",
-     "nation": "BEL"
+     "nation": "BEL",
+     "time": "20:56",
+     "no": 3,
+     "warmup": 1
     },
     {
-     "name": "Philomene Sabourin / Raul Bermejo",
-     "nation": "ESP"
-    },
-    {
-     "name": "Shira Ichilov / Mikhail Nosovitskiy",
-     "nation": "ISR"
-    },
-    {
-     "name": "Sofia Val / Asaf Kazimov",
-     "nation": "ESP"
+     "name": "Natacha Lagouge / Arnaud Caffa",
+     "nation": "FRA",
+     "time": "21:03",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Xuantong Li / Filip Bojanowski",
-     "nation": "POL"
+     "nation": "POL",
+     "time": "21:17",
+     "no": 5,
+     "warmup": 2
     },
     {
-     "name": "Zoe Larson / Andrii Kapran",
-     "nation": "UKR"
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "time": "21:24",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Sofia Val / Asaf Kazimov",
+     "nation": "ESP",
+     "time": "21:31",
+     "no": 7,
+     "warmup": 2
     },
     {
      "name": "Zofia Grzegorzewska / Oleg Muratov",
-     "nation": "POL"
+     "nation": "POL",
+     "time": "21:37",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Isabella Flores / Linus Colmor Jepsen",
+     "nation": "USA",
+     "time": "22:07",
+     "no": 9,
+     "warmup": 3
+    },
+    {
+     "name": "Shira Ichilov / Mikhail Nosovitskiy",
+     "nation": "ISR",
+     "time": "22:14",
+     "no": 10,
+     "warmup": 3
+    },
+    {
+     "name": "Emese Csiszer / Mark Shapiro",
+     "nation": "HUN",
+     "time": "22:20",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Arianna Sassi / Luca Morini",
+     "nation": "SUI",
+     "time": "22:27",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Philomene Sabourin / Raul Bermejo",
+     "nation": "ESP",
+     "time": "22:42",
+     "no": 13,
+     "warmup": 4
+    },
+    {
+     "name": "Daniela Ivanitskiy / Matthew Sperry",
+     "nation": "FIN",
+     "time": "22:48",
+     "no": 14,
+     "warmup": 4
+    },
+    {
+     "name": "Celina Fradji / Jean-Hans Fourneaux",
+     "nation": "FRA",
+     "time": "22:55",
+     "no": 15,
+     "warmup": 4
+    },
+    {
+     "name": "Zoe Larson / Andrii Kapran",
+     "nation": "UKR",
+     "time": "23:02",
+     "no": 16,
+     "warmup": 4
     }
    ],
    "live": {
@@ -65228,22 +65276,22 @@
     "cat": null,
     "first": null,
     "names": {
+     "Charise MATTHAEI / Max LIEBERS": "Charise Matthaei / Max Liebers",
+     "Giulia Isabella PAOLINO / Andrea TUBA": "Giulia Isabella Paolino / Andrea Tuba",
      "Olivia Josephine SHILLING / Leo BAETEN": "Olivia Josephine Shilling / Leo Baeten",
-     "Philomene SABOURIN / Raul BERMEJO": "Philomene Sabourin / Raul Bermejo",
+     "Natacha LAGOUGE / Arnaud CAFFA": "Natacha Lagouge / Arnaud Caffa",
+     "Xuantong LI / Filip BOJANOWSKI": "Xuantong Li / Filip Bojanowski",
+     "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov",
      "Sofia VAL / Asaf KAZIMOV": "Sofia Val / Asaf Kazimov",
+     "Zofia GRZEGORZEWSKA / Oleg MURATOV": "Zofia Grzegorzewska / Oleg Muratov",
+     "Isabella FLORES / Linus Colmor JEPSEN": "Isabella Flores / Linus Colmor Jepsen",
+     "Shira ICHILOV / Mikhail NOSOVITSKIY": "Shira Ichilov / Mikhail Nosovitskiy",
+     "Emese CSISZER / Mark SHAPIRO": "Emese Csiszer / Mark Shapiro",
+     "Arianna SASSI / Luca MORINI": "Arianna Sassi / Luca Morini",
+     "Philomene SABOURIN / Raul BERMEJO": "Philomene Sabourin / Raul Bermejo",
      "Daniela IVANITSKIY / Matthew SPERRY": "Daniela Ivanitskiy / Matthew Sperry",
      "Celina FRADJI / Jean-Hans FOURNEAUX": "Celina Fradji / Jean-Hans Fourneaux",
-     "Natacha LAGOUGE / Arnaud CAFFA": "Natacha Lagouge / Arnaud Caffa",
-     "Charise MATTHAEI / Max LIEBERS": "Charise Matthaei / Max Liebers",
-     "Emese CSISZER / Mark SHAPIRO": "Emese Csiszer / Mark Shapiro",
-     "Shira ICHILOV / Mikhail NOSOVITSKIY": "Shira Ichilov / Mikhail Nosovitskiy",
-     "Giulia Isabella PAOLINO / Andrea TUBA": "Giulia Isabella Paolino / Andrea Tuba",
-     "Zofia GRZEGORZEWSKA / Oleg MURATOV": "Zofia Grzegorzewska / Oleg Muratov",
-     "Xuantong LI / Filip BOJANOWSKI": "Xuantong Li / Filip Bojanowski",
-     "Arianna SASSI / Luca MORINI": "Arianna Sassi / Luca Morini",
-     "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov",
-     "Zoe LARSON / Andrii KAPRAN": "Zoe Larson / Andrii Kapran",
-     "Isabella FLORES / Linus Colmor JEPSEN": "Isabella Flores / Linus Colmor Jepsen"
+     "Zoe LARSON / Andrii KAPRAN": "Zoe Larson / Andrii Kapran"
     },
     "basis": null
    },
@@ -66582,7 +66630,6 @@
     "Diana Marjanovic",
     "Djurdja Nikolic",
     "Ekaterina Balaganskaia",
-    "Eles Namazalieva",
     "Emma Cerkalova",
     "Enja Sivic",
     "Hana Operckal",
@@ -66617,6 +66664,7 @@
     "Varvara Abramkina",
     "Varvara Poder",
     "Veronika Taubeova",
+    "Victoria Yonemori",
     "Vita Kas",
     "Zala Grum",
     "Zala Kas",
@@ -66678,10 +66726,6 @@
     {
      "name": "Ekaterina Balaganskaia",
      "nation": "SRB"
-    },
-    {
-     "name": "Eles Namazalieva",
-     "nation": "AUT"
     },
     {
      "name": "Emma Cerkalova",
@@ -66820,6 +66864,10 @@
      "nation": "CZE"
     },
     {
+     "name": "Victoria Yonemori",
+     "nation": "AUT"
+    },
+    {
      "name": "Vita Kas",
      "nation": "SLO"
     },
@@ -66880,7 +66928,6 @@
      "Diana MARJANOVIC": "Diana Marjanovic",
      "Minea MONTONEN": "Minea Montonen",
      "Lajla MUCIC": "Lajla Mucic",
-     "Eles NAMAZALIEVA": "Eles Namazalieva",
      "Isabella NIEDERLEITNER": "Isabella Niederleitner",
      "Djurdja NIKOLIC": "Djurdja Nikolic",
      "Hana OPERCKAL": "Hana Operckal",
@@ -66903,6 +66950,7 @@
      "Julia VAHA-RUOHOLA": "Julia Vaha-ruohola",
      "Milena VELCHEVA": "Milena Velcheva",
      "Summer WIJKHUIZEN": "Summer Wijkhuizen",
+     "Victoria YONEMORI": "Victoria Yonemori",
      "Alisa ZAIKINA": "Алиса Заикина"
     },
     "basis": null
@@ -67336,7 +67384,7 @@
    "seg": "КП",
    "title": "Skate Celje — женщины КП",
    "start": "2026-11-28T21:20:00+03:00",
-   "end": "2026-11-28T23:25:00+03:00",
+   "end": "2026-11-28T23:20:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -67354,7 +67402,6 @@
     "Andrea Montesinos Cantu",
     "Barbora Tykalova",
     "Dunja Tresnjic",
-    "Hannah Frank",
     "Julija Lovrencic",
     "Mariia Kryzhova",
     "Melisa Basturk",
@@ -67394,10 +67441,6 @@
      "nation": "SRB"
     },
     {
-     "name": "Hannah Frank",
-     "nation": "AUT"
-    },
-    {
      "name": "Julija Lovrencic",
      "nation": "SLO"
     },
@@ -67432,7 +67475,6 @@
      "Melisa BASTURK": "Melisa Basturk",
      "Ana Sofia BESCHEA": "Ana Sofia Beschea",
      "Alexandra FEIGIN": "Alexandra Feigin",
-     "Hannah FRANK": "Hannah Frank",
      "Mariia KRYZHOVA": "Mariia Kryzhova",
      "Julija LOVRENCIC": "Julija Lovrencic",
      "Andrea MONTESINOS CANTU": "Andrea Montesinos Cantu",
@@ -67510,8 +67552,8 @@
    "level": "senior",
    "seg": "КП",
    "title": "Skate Celje — мужчины КП",
-   "start": "2026-11-28T23:04:00+03:00",
-   "end": "2026-11-29T00:09:00+03:00",
+   "start": "2026-11-28T22:58:00+03:00",
+   "end": "2026-11-29T00:03:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -67532,7 +67574,7 @@
     "Макар Николаев"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 23:04 МСК",
+   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 22:58 МСК",
    "field": [
     {
      "name": "Alessandro Liberatore",
@@ -67619,7 +67661,6 @@
     "Diana Marjanovic",
     "Djurdja Nikolic",
     "Ekaterina Balaganskaia",
-    "Eles Namazalieva",
     "Emma Cerkalova",
     "Enja Sivic",
     "Hana Operckal",
@@ -67654,6 +67695,7 @@
     "Varvara Abramkina",
     "Varvara Poder",
     "Veronika Taubeova",
+    "Victoria Yonemori",
     "Vita Kas",
     "Zala Grum",
     "Zala Kas",
@@ -67715,10 +67757,6 @@
     {
      "name": "Ekaterina Balaganskaia",
      "nation": "SRB"
-    },
-    {
-     "name": "Eles Namazalieva",
-     "nation": "AUT"
     },
     {
      "name": "Emma Cerkalova",
@@ -67857,6 +67895,10 @@
      "nation": "CZE"
     },
     {
+     "name": "Victoria Yonemori",
+     "nation": "AUT"
+    },
+    {
      "name": "Vita Kas",
      "nation": "SLO"
     },
@@ -67917,7 +67959,6 @@
      "Diana MARJANOVIC": "Diana Marjanovic",
      "Minea MONTONEN": "Minea Montonen",
      "Lajla MUCIC": "Lajla Mucic",
-     "Eles NAMAZALIEVA": "Eles Namazalieva",
      "Isabella NIEDERLEITNER": "Isabella Niederleitner",
      "Djurdja NIKOLIC": "Djurdja Nikolic",
      "Hana OPERCKAL": "Hana Operckal",
@@ -67940,6 +67981,7 @@
      "Julia VAHA-RUOHOLA": "Julia Vaha-ruohola",
      "Milena VELCHEVA": "Milena Velcheva",
      "Summer WIJKHUIZEN": "Summer Wijkhuizen",
+     "Victoria YONEMORI": "Victoria Yonemori",
      "Alisa ZAIKINA": "Алиса Заикина"
     },
     "basis": null
@@ -68269,7 +68311,7 @@
    "seg": "ПП",
    "title": "Skate Celje — женщины ПП",
    "start": "2026-11-29T16:15:00+03:00",
-   "end": "2026-11-29T18:35:00+03:00",
+   "end": "2026-11-29T18:30:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -68287,7 +68329,6 @@
     "Andrea Montesinos Cantu",
     "Barbora Tykalova",
     "Dunja Tresnjic",
-    "Hannah Frank",
     "Julija Lovrencic",
     "Mariia Kryzhova",
     "Melisa Basturk",
@@ -68327,10 +68368,6 @@
      "nation": "SRB"
     },
     {
-     "name": "Hannah Frank",
-     "nation": "AUT"
-    },
-    {
      "name": "Julija Lovrencic",
      "nation": "SLO"
     },
@@ -68365,7 +68402,6 @@
      "Melisa BASTURK": "Melisa Basturk",
      "Ana Sofia BESCHEA": "Ana Sofia Beschea",
      "Alexandra FEIGIN": "Alexandra Feigin",
-     "Hannah FRANK": "Hannah Frank",
      "Mariia KRYZHOVA": "Mariia Kryzhova",
      "Julija LOVRENCIC": "Julija Lovrencic",
      "Andrea MONTESINOS CANTU": "Andrea Montesinos Cantu",
@@ -68388,8 +68424,8 @@
    "level": "senior",
    "seg": "ПП",
    "title": "Skate Celje — мужчины ПП",
-   "start": "2026-11-29T18:17:00+03:00",
-   "end": "2026-11-29T19:32:00+03:00",
+   "start": "2026-11-29T18:10:00+03:00",
+   "end": "2026-11-29T19:25:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -68410,7 +68446,7 @@
     "Макар Николаев"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 18:17 МСК",
+   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 18:10 МСК",
    "field": [
     {
      "name": "Alessandro Liberatore",
@@ -69884,6 +69920,7 @@
   "Afrina Diyanah",
   "Agata Starykava",
   "Agathe Tournadre",
+  "Aglaia Kapinos",
   "Ahsun Yun",
   "Aida Aleskerova",
   "Aiden Yin Fan Loo",
@@ -69913,6 +69950,7 @@
   "Aleksandr Vdovin",
   "Aleksandr Vlasenko",
   "Aleksandra Anufrieva",
+  "Aleksandra Bulygina",
   "Aleksandra Fridrikh",
   "Aleksandra Golovkina-dolinske",
   "Aleksandra Janikowska",
@@ -69930,6 +69968,7 @@
   "Alena Dyachkova",
   "Alena Karzova",
   "Alena Kerr / Sam Herbert",
+  "Alena Kotova",
   "Alena Maltseva",
   "Alena Ponomareva",
   "Alena Tiurina",
@@ -70045,6 +70084,7 @@
   "Alisa Eren",
   "Alisa Fedichkina",
   "Alisa Kurtsenkovskaia",
+  "Alisa Logova",
   "Alisa Lozko",
   "Alisa Mitrofanova",
   "Alisa OVSIANKINA",
@@ -70100,6 +70140,7 @@
   "Anastasia Lomaeva",
   "Anastasia Lukinskaya",
   "Anastasia Martiusheva",
+  "Anastasia Natalenko",
   "Anastasia Ortikova",
   "Anastasia Platonova",
   "Anastasia Poluianova",
@@ -70127,6 +70168,7 @@
   "Anastasiia Metelkina / Luka Berulava",
   "Anastasiia Popkova",
   "Anastasiia Romanova",
+  "Anastasiia Sadovnikova",
   "Anastasiia Shchekina",
   "Anastasiia Shirokova",
   "Anastasiia Slavnaia",
@@ -70292,6 +70334,7 @@
   "Arina Vakulenko",
   "Arina Voevodina",
   "Arina Vorobeva",
+  "Arina Voznesenskaia",
   "Arina Zhukova",
   "Arkadi Sergeev",
   "Arlet Levandi",
@@ -70443,11 +70486,13 @@
   "Daria Gureeva",
   "Daria Kazuchiz",
   "Daria Kiiasheva",
+  "Daria Klimova",
   "Daria Kopan",
   "Daria Korobitsyna",
   "Daria Korobova",
   "Daria Kostromina",
   "Daria Krashevskaia",
+  "Daria Kulikova",
   "Daria Kvartalova",
   "Daria Malaeva",
   "Daria Malova",
@@ -70463,6 +70508,7 @@
   "Daria Rumiantseva",
   "Daria Semenikhina",
   "Daria Shirokhova",
+  "Daria Statsenko",
   "Daria Teterina",
   "Daria Tomasheva",
   "Daria Tsiupa",
@@ -70513,6 +70559,7 @@
   "Diana Brodneva",
   "Diana DAVIS",
   "Diana Davis / Gleb Smolkin",
+  "Diana Garbuzova",
   "Diana Kalashnikova",
   "Diana Kniazeva",
   "Diana Korovina",
@@ -70616,6 +70663,7 @@
   "Ekaterina Luchina",
   "Ekaterina Mefodeva",
   "Ekaterina Miagkikh",
+  "Ekaterina Nechai",
   "Ekaterina Petaikina",
   "Ekaterina Petushkova",
   "Ekaterina Pushkash",
@@ -70679,6 +70727,7 @@
   "Elizaveta Bolbukh",
   "Elizaveta Cherkasova",
   "Elizaveta Eremina",
+  "Elizaveta Glazkova",
   "Elizaveta Glushkova",
   "Elizaveta Godun",
   "Elizaveta Grashchenkova",
@@ -70690,6 +70739,8 @@
   "Elizaveta Korostina",
   "Elizaveta Krivova",
   "Elizaveta Levshina",
+  "Elizaveta Loginova",
+  "Elizaveta Nikitina",
   "Elizaveta Novik",
   "Elizaveta Obukhouskaya",
   "Elizaveta Ponomarenko",
@@ -70733,6 +70784,7 @@
   "Enja Sivic",
   "Erica Machida",
   "Esme Ashcroft",
+  "Ester Aradovskaya",
   "Ethan Luo",
   "Eugenia Sekulovski",
   "Eugenia Tkachenka",
@@ -70745,6 +70797,7 @@
   "Eva Rozhnova / Platon Zubkov",
   "Eva Shelaeva / Ivan Solovyev",
   "Eva Suznjevic",
+  "Evangelina Matveeva",
   "Evdokiia Stankevich",
   "Eve Dubecq",
   "Evelina Alfer",
@@ -70946,6 +70999,7 @@
   "Iuliia Cherginets",
   "Iuliia Maksimenko",
   "Iuliia Malysheva",
+  "Iuliia Samsonova",
   "Iuliia Useinova",
   "Ivan Balchenko",
   "Ivan Bich",
@@ -71092,6 +71146,7 @@
   "Karla Maria Karl / Kai Hoferichter",
   "Karoliine Raudsepp",
   "Karolina Bialas",
+  "Karolina Moskovkina",
   "Karolina Parshina",
   "Katarina Fedorova Coelho",
   "Katarina Gerboldt",
@@ -71189,6 +71244,7 @@
   "Kseniia Kasimova",
   "Kseniia Kolotygina",
   "Kseniia Melkumova",
+  "Kseniia Vinokurova",
   "Kseniia Zvereva",
   "Ksenija Heimane",
   "Kseniya Smirnova",
@@ -71350,6 +71406,7 @@
   "Manjesh Tiwari",
   "Mantas Gryba",
   "Mao Shimada",
+  "Margarita Arakelian",
   "Margarita Ashcheulova",
   "Margarita Bartnovskaya",
   "Margarita Morozova",
@@ -71396,6 +71453,7 @@
   "Marie-Maude Pomerleau",
   "Marietta Atkins",
   "Mariia Arutiunian",
+  "Mariia Babiian",
   "Mariia Bukvichki",
   "Mariia Dmitrieva",
   "Mariia Gasnikova",
@@ -71533,6 +71591,7 @@
   "Milana Panagushina",
   "Milana Ramashova",
   "Milana Siniavskyte",
+  "Milana Sorokina",
   "Milana Trubacheva",
   "Milena Brukvina",
   "Milena Frolova",
@@ -71587,6 +71646,7 @@
   "Natalia Mitina",
   "Natalia Pallu-neves / Jayin Panesar",
   "Natalia Romaniuta",
+  "Natalia Rubleva",
   "Natalia Runcanu",
   "Natalia Shestakova",
   "Natalia Zabiiako",
@@ -71641,6 +71701,7 @@
   "Nikol Dvornikava",
   "Nikol Gosviani",
   "Nikol Kuperman",
+  "Nikol Malkhosian",
   "Nikola Fomchenkova",
   "Nikolai BABIN",
   "Nikolai Kamenchuk",
@@ -71960,6 +72021,7 @@
   "Sofiia Holubenko",
   "Sofiia Hryhorenko",
   "Sofiia Kachushkina",
+  "Sofiia Kashinskaia",
   "Sofiia Naumenko",
   "Sofiia Rymshyna",
   "Sofiia Shubina",
@@ -72094,9 +72156,11 @@
   "Uladzislau Palkhouski",
   "Uladzislau Saprykin",
   "Uladzislava Hanchar",
+  "Uliana Artysiuk",
   "Uliana Emarkova",
   "Uliana Ionkina",
   "Uliana Shiryaeva",
+  "Uliana Sivusheva",
   "Uliana Titushkina",
   "Uliana Torbenkova",
   "Ulla Nieminen",
@@ -72173,12 +72237,14 @@
   "Venla Sinisalo",
   "Vera Bazarova",
   "Veronika Bykonia",
+  "Veronika Ilinskaya",
   "Veronika Islamova",
   "Veronika Kim",
   "Veronika Kovalenko",
   "Veronika Kriuchkova / Denys Fediankin",
   "Veronika Kropotina",
   "Veronika Morozova",
+  "Veronika Sheludchenko",
   "Veronika Shinkevich",
   "Veronika Solonenko",
   "Veronika Taubeova",
@@ -72199,6 +72265,7 @@
   "Victoria Moroz",
   "Victoria Sinitsina",
   "Victoria Sutton Hop",
+  "Victoria Yonemori",
   "Viktor ADONIEV",
   "Viktoria Borzenkova",
   "Viktoria Ilina",
@@ -72207,6 +72274,7 @@
   "Viktoria Shliakhova",
   "Viktoria Volchkova",
   "Viktoriia Eltsova",
+  "Viktoriia Kaliuk",
   "Viktoriia Kulkamanova",
   "Viktoriia Kutepova",
   "Viktoriia Pripa",
@@ -72282,6 +72350,7 @@
   "Yana BUGA",
   "Yana Lapkes",
   "Yanhao Li",
+  "Yaroslava Derkach",
   "Yauhenii Puzanau",
   "Yauheniya Kudzian",
   "Yauheniya Simaniuk",
@@ -72343,6 +72412,7 @@
   "Ze Zeng Fang",
   "Zere Sarbalina",
   "Zhan Bush",
+  "Zhanna Agurbash",
   "Zhasmin Shlaga",
   "Zhiming Peng",
   "Zhixuan Li / Quanshuo Ge",
@@ -74014,6 +74084,11 @@
    "p": "12c93a2f5934"
   },
   {
+   "n": "Aglaia Kapinos",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Ahsun Yun",
    "c": "KOR",
    "k": "w",
@@ -74145,6 +74220,11 @@
    "p": "42f376e46d48"
   },
   {
+   "n": "Aleksandra Bulygina",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Aleksandra Golovkina-dolinske",
    "c": "LTU",
    "k": "",
@@ -74220,6 +74300,11 @@
    "was": "w",
    "y": "2021/22",
    "p": "ca3a9c7f3f73"
+  },
+  {
+   "n": "Alena Kotova",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Алёна Леонова",
@@ -74669,6 +74754,11 @@
    "k": ""
   },
   {
+   "n": "Alisa Logova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Alisa Lozko",
    "c": "RUS",
    "k": ""
@@ -74945,6 +75035,11 @@
    "k": ""
   },
   {
+   "n": "Anastasia Natalenko",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Anastasia Platonova",
    "c": "RUS",
    "k": ""
@@ -75082,6 +75177,11 @@
    "c": "RUS",
    "k": "",
    "p": "6426c3d54e15"
+  },
+  {
+   "n": "Anastasiia Sadovnikova",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Anastasiia Shchekina",
@@ -75795,6 +75895,11 @@
    "c": "RUS",
    "k": "W",
    "p": "dd9a4723d032"
+  },
+  {
+   "n": "Arina Voznesenskaia",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Arina Zhukova",
@@ -76617,6 +76722,11 @@
    "k": ""
   },
   {
+   "n": "Daria Klimova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Daria Kopan",
    "c": "RUS",
    "k": ""
@@ -76640,6 +76750,14 @@
    "n": "Daria Krashevskaia",
    "c": "RUS",
    "k": ""
+  },
+  {
+   "n": "Дарья Куликова",
+   "c": "RUS",
+   "k": "",
+   "was": "w",
+   "y": "2019/20",
+   "p": "3d729760f2f8"
   },
   {
    "n": "Daria Kvartalova",
@@ -76696,6 +76814,11 @@
   },
   {
    "n": "Daria Semenikhina",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Daria Statsenko",
    "c": "RUS",
    "k": ""
   },
@@ -76924,6 +77047,11 @@
    "c": "GEO",
    "k": "d",
    "p": "2ff29722ce76"
+  },
+  {
+   "n": "Diana Garbuzova",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Diana Kalashnikova",
@@ -77330,6 +77458,11 @@
    "k": ""
   },
   {
+   "n": "Ekaterina Nechai",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Ekaterina Petaikina",
    "c": "RUS",
    "k": ""
@@ -77601,6 +77734,11 @@
    "k": ""
   },
   {
+   "n": "Elizaveta Glazkova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Elizaveta Glushkova",
    "c": "RUS",
    "k": "",
@@ -77650,6 +77788,16 @@
   },
   {
    "n": "Elizaveta Levshina",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Elizaveta Loginova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Elizaveta Nikitina",
    "c": "RUS",
    "k": ""
   },
@@ -77858,6 +78006,11 @@
    "p": "b7c146712df6"
   },
   {
+   "n": "Ester Aradovskaya",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Eugenia Sekulovski",
    "c": "SUI",
    "k": "w",
@@ -77922,6 +78075,11 @@
    "was": "w",
    "y": "2023/24",
    "p": "8add8f7821c4"
+  },
+  {
+   "n": "Evangelina Matveeva",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Evdokiia Stankevich",
@@ -78873,6 +79031,11 @@
    "k": ""
   },
   {
+   "n": "Iuliia Samsonova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Iuliia Useinova",
    "c": "RUS",
    "k": ""
@@ -79622,6 +79785,11 @@
    "p": "b990bc9e3d62"
   },
   {
+   "n": "Karolina Moskovkina",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Katarina Fedorova Coelho",
    "c": "POR",
    "k": "W",
@@ -80111,6 +80279,11 @@
   },
   {
    "n": "Kseniia Melkumova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Kseniia Vinokurova",
    "c": "RUS",
    "k": ""
   },
@@ -80935,6 +81108,11 @@
    "p": "5206e721695a"
   },
   {
+   "n": "Margarita Arakelian",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Margarita Ashcheulova",
    "c": "RUS",
    "k": ""
@@ -81140,6 +81318,11 @@
    "c": "RUS",
    "k": "w",
    "p": "479d91d2ef91"
+  },
+  {
+   "n": "Mariia Babiian",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Mariia Bukvichki",
@@ -81802,6 +81985,11 @@
    "p": "713ec4200adb"
   },
   {
+   "n": "Milana Sorokina",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Milana Trubacheva",
    "c": "RUS",
    "k": ""
@@ -82066,6 +82254,11 @@
    "k": ""
   },
   {
+   "n": "Natalia Rubleva",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Natalia Runcanu",
    "c": "ROU",
    "k": "W",
@@ -82289,6 +82482,11 @@
    "c": "ISR",
    "k": "W",
    "p": "1bc56899d428"
+  },
+  {
+   "n": "Nikol Malkhosian",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Nikola Fomchenkova",
@@ -83817,6 +84015,11 @@
    "k": ""
   },
   {
+   "n": "Sofiia Kashinskaia",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Sofiia Naumenko",
    "c": "RUS",
    "k": "",
@@ -84430,6 +84633,11 @@
    "k": ""
   },
   {
+   "n": "Uliana Artysiuk",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Uliana Ionkina",
    "c": "RUS",
    "k": ""
@@ -84439,6 +84647,11 @@
    "c": "RUS",
    "k": "w",
    "p": "6ad039088059"
+  },
+  {
+   "n": "Uliana Sivusheva",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Uliana Titushkina",
@@ -84773,6 +84986,11 @@
    "k": ""
   },
   {
+   "n": "Veronika Ilinskaya",
+   "c": "RUS",
+   "k": ""
+  },
+  {
    "n": "Veronika Islamova",
    "c": "RUS",
    "k": ""
@@ -84806,6 +85024,11 @@
   },
   {
    "n": "Veronika Morozova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Veronika Sheludchenko",
    "c": "RUS",
    "k": ""
   },
@@ -84939,6 +85162,11 @@
   },
   {
    "n": "Viktoria Volchkova",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Viktoriia Kaliuk",
    "c": "RUS",
    "k": ""
   },
@@ -85251,6 +85479,11 @@
    "c": "NZL",
    "k": "M",
    "p": "30f2e74819be"
+  },
+  {
+   "n": "Yaroslava Derkach",
+   "c": "RUS",
+   "k": ""
   },
   {
    "n": "Yauhenii Puzanau",
@@ -85574,6 +85807,11 @@
   },
   {
    "n": "Zhan Bush",
+   "c": "RUS",
+   "k": ""
+  },
+  {
+   "n": "Zhanna Agurbash",
    "c": "RUS",
    "k": ""
   },
@@ -97245,14 +97483,6 @@
    "p": "a06553b11a8e",
    "was": "M",
    "y": "2023/24"
-  },
-  {
-   "n": "Дарья Куликова",
-   "c": "RUS",
-   "k": "",
-   "p": "3d729760f2f8",
-   "was": "w",
-   "y": "2019/20"
   },
   {
    "n": "Ксения Брагина",
@@ -118982,5 +119212,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "074c72457cf28275"
+ "rev": "61269d83dceb94fd"
 }
