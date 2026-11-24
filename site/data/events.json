@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-24T13:09:30+03:00",
- "checked": "2026-11-24T13:19:04.418469+00:00",
+ "checked": "2026-11-24T13:23:03.626698+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -64120,14 +64120,14 @@
     "Ярослав Крегель"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Ярослав Крегель — 70.55\n2. Илья Старков — 67.76\n3. Владислав Левичев — 66.58\n\nНачало: 14:30 МСК",
+   "desc": "Итог:\n1. Ярослав Крегель — 70.55\n2. Илья Старков — 67.76\n3. Владислав Левичев — 66.58\n\nНачало: 14:30 МСК",
    "field": [
     {
      "name": "Иван Гришановский",
      "nation": "МОС",
      "no": 1,
      "warmup": null,
-     "place": 11,
+     "place": 12,
      "points": "55.52"
     },
     {
@@ -64135,7 +64135,7 @@
      "nation": "МОБ",
      "no": 2,
      "warmup": null,
-     "place": 10,
+     "place": 11,
      "points": "56.17"
     },
     {
@@ -64143,7 +64143,7 @@
      "nation": "ПРМ",
      "no": 3,
      "warmup": null,
-     "place": 14,
+     "place": 15,
      "points": "51.89"
     },
     {
@@ -64151,7 +64151,7 @@
      "nation": "СВЕ",
      "no": 4,
      "warmup": null,
-     "place": 15,
+     "place": 16,
      "points": "49.85"
     },
     {
@@ -64191,7 +64191,7 @@
      "nation": "СВЕ",
      "no": 9,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "63.05"
     },
     {
@@ -64199,7 +64199,7 @@
      "nation": "БАШ",
      "no": 10,
      "warmup": null,
-     "place": 16,
+     "place": 17,
      "points": "47.33"
     },
     {
@@ -64207,7 +64207,7 @@
      "nation": "МОС",
      "no": 11,
      "warmup": null,
-     "place": 13,
+     "place": 14,
      "points": "53.33"
     },
     {
@@ -64215,7 +64215,7 @@
      "nation": "КЯР",
      "no": 12,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "58.07"
     },
     {
@@ -64223,7 +64223,7 @@
      "nation": "ЯНА",
      "no": 13,
      "warmup": null,
-     "place": 12,
+     "place": 13,
      "points": "53.39"
     },
     {
@@ -64239,7 +64239,7 @@
      "nation": "МОС",
      "no": 15,
      "warmup": null,
-     "place": 9,
+     "place": 10,
      "points": "57.10"
     },
     {
@@ -64247,14 +64247,16 @@
      "nation": "КРГ",
      "no": 16,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "61.74"
     },
     {
      "name": "Егор Иванов",
      "nation": "КРГ",
      "no": 17,
-     "warmup": null
+     "warmup": null,
+     "place": 6,
+     "points": "63.22"
     }
    ],
    "live": {
@@ -64281,7 +64283,7 @@
      "Кирилл Сергеевич ШТУРБАБИН": "Кирилл Штурбабин",
      "Егор Эдуардович ИВАНОВ": "Егор Иванов"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json",
    "podium": [
@@ -64303,8 +64305,7 @@
      "nation": "ОРН",
      "points": "66.58"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:men-senior-kp",
@@ -118779,5 +118780,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "2bd65d28927a264d"
+ "rev": "3d05a7d30b67a8f6"
 }
