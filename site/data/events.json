@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-25T01:08:34+03:00",
- "checked": "2026-11-25T01:08:34+03:00",
+ "generated": "2026-11-25T01:28:26+03:00",
+ "checked": "2026-11-25T01:28:26+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -65746,9 +65746,9 @@
    },
    "facts": [
     {
-     "who": "Зоя Пестова / Сергей Лагутов",
+     "kind": "place",
      "text": "Отрыв от второго места — 9.66 балла",
-     "kind": "place"
+     "who": "Зоя Пестова / Сергей Лагутов"
     }
    ],
    "tier": "regional",
@@ -69131,7 +69131,7 @@
    "seg": "КП",
    "title": "Skate Celje — девушки КП",
    "start": "2026-11-28T10:30:00+03:00",
-   "end": "2026-11-28T18:25:00+03:00",
+   "end": "2026-11-28T18:20:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -69150,7 +69150,6 @@
     "Angelica Orsi",
     "Anna Sannikova",
     "Arina Gertsog",
-    "Clara Toniolo",
     "Darja Leetberg",
     "Diana Marjanovic",
     "Djurdja Nikolic",
@@ -69231,10 +69230,6 @@
     {
      "name": "Arina Gertsog",
      "nation": "GER"
-    },
-    {
-     "name": "Clara Toniolo",
-     "nation": "SWE"
     },
     {
      "name": "Darja Leetberg",
@@ -69470,7 +69465,6 @@
      "Julia SUBOCZ": "Julia Subocz",
      "Zsofia SZEPLAKI": "Zsofia Szeplaki",
      "Veronika TAUBEOVA": "Veronika Taubeova",
-     "Clara TONIOLO": "Clara Toniolo",
      "Leyla TOSUN": "Leyla Tosun",
      "Julia VAHA-RUOHOLA": "Julia Vaha-ruohola",
      "Milena VELCHEVA": "Milena Velcheva",
@@ -70162,7 +70156,7 @@
    "seg": "ПП",
    "title": "Skate Celje — девушки ПП",
    "start": "2026-11-29T10:30:00+03:00",
-   "end": "2026-11-29T19:20:00+03:00",
+   "end": "2026-11-29T19:10:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -70181,7 +70175,6 @@
     "Angelica Orsi",
     "Anna Sannikova",
     "Arina Gertsog",
-    "Clara Toniolo",
     "Darja Leetberg",
     "Diana Marjanovic",
     "Djurdja Nikolic",
@@ -70262,10 +70255,6 @@
     {
      "name": "Arina Gertsog",
      "nation": "GER"
-    },
-    {
-     "name": "Clara Toniolo",
-     "nation": "SWE"
     },
     {
      "name": "Darja Leetberg",
@@ -70501,7 +70490,6 @@
      "Julia SUBOCZ": "Julia Subocz",
      "Zsofia SZEPLAKI": "Zsofia Szeplaki",
      "Veronika TAUBEOVA": "Veronika Taubeova",
-     "Clara TONIOLO": "Clara Toniolo",
      "Leyla TOSUN": "Leyla Tosun",
      "Julia VAHA-RUOHOLA": "Julia Vaha-ruohola",
      "Milena VELCHEVA": "Milena Velcheva",
@@ -121728,5 +121716,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "f2680e37d6d57c54"
+ "rev": "66123b8a7955e3ab"
 }
