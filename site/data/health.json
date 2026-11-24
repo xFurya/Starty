@@ -1,17 +1,9 @@
 {
  "v": 1,
- "at": "2026-11-24T09:54:50+03:00",
+ "at": "2026-11-24T10:59:11+03:00",
  "ok": false,
  "season": "2026-07-01",
  "problems": [
-  {
-   "kind": "no_starts",
-   "source": "ISU",
-   "where": "CS PGE Warsaw Cup",
-   "detail": "турнир начинается завтра, а стартов у него нет",
-   "key": "no_starts:isu:isu-cs-pge-warsaw-cup-2026",
-   "since": "2026-11-24T01:54:21+03:00"
-  },
   {
    "kind": "no_starts",
    "source": "ФФКМ",
@@ -31,7 +23,7 @@
  ],
  "counts": {
   "Golden Skate": 39,
-  "ISU": 148,
+  "ISU": 156,
   "ФФККР": 110,
   "ФФКМ": 7
  },
@@ -44,7 +36,7 @@
  },
  "ref": {
   "Golden Skate": 39,
-  "ISU": 148,
+  "ISU": 156,
   "ФФККР": 110,
   "ФФКМ": 7
  },
