@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-24T13:09:30+03:00",
- "checked": "2026-11-24T13:23:03.626698+00:00",
+ "checked": "2026-11-24T13:58:03.887767+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -64328,13 +64328,15 @@
     "Ярослав Овчинников"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
-   "desc": "Начало: 16:45 МСК",
+   "desc": "Промежуточные итоги:\n1. Александр Бородин — 68.55\n\nНачало: 16:45 МСК",
    "field": [
     {
      "name": "Александр Бородин",
      "nation": "СВЕ",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "68.55"
     },
     {
      "name": "Роман Попов",
@@ -64368,7 +64370,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Александр Бородин",
+     "nation": "СВЕ",
+     "points": "68.55"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-junior-kp",
@@ -118780,5 +118791,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "3d05a7d30b67a8f6"
+ "rev": "21454c5c693b285c"
 }
