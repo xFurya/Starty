@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-24T13:09:30+03:00",
- "checked": "2026-11-24T12:39:04.319309+00:00",
+ "checked": "2026-11-24T12:47:04.032917+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -64143,7 +64143,7 @@
      "nation": "ПРМ",
      "no": 3,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "51.89"
     },
     {
@@ -64151,7 +64151,7 @@
      "nation": "СВЕ",
      "no": 4,
      "warmup": null,
-     "place": 9,
+     "place": 10,
      "points": "49.85"
     },
     {
@@ -64199,14 +64199,16 @@
      "nation": "БАШ",
      "no": 10,
      "warmup": null,
-     "place": 10,
+     "place": 11,
      "points": "47.33"
     },
     {
      "name": "Владислав Объездчиков",
      "nation": "МОС",
      "no": 11,
-     "warmup": null
+     "warmup": null,
+     "place": 8,
+     "points": "53.33"
     },
     {
      "name": "Роман Шереметьев",
@@ -118767,5 +118769,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "7ad12f8e2ffe7560"
+ "rev": "31c4f662420e51d4"
 }
