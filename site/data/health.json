@@ -1,6 +1,6 @@
 {
  "v": 1,
- "at": "2026-11-25T00:29:31+03:00",
+ "at": "2026-11-25T01:08:34+03:00",
  "ok": false,
  "season": "2026-07-01",
  "problems": [
@@ -11,29 +11,13 @@
    "detail": "турнир начинается завтра, а стартов у него нет",
    "key": "no_starts:samara:1-etap-kubka-rossii-vs-i-vfm-samarochka-vfm-novoe-pokolenie-ii-etap-",
    "since": "2026-11-25T00:29:31+03:00"
-  },
-  {
-   "kind": "no_starts",
-   "source": "ФФКМ",
-   "where": "Кубок Москвы (Финал)",
-   "detail": "турнир идёт, а стартов у него нет",
-   "key": "no_starts:ffkm:2026-11-23_kubok",
-   "since": "2026-11-23T19:30:02+03:00"
-  },
-  {
-   "kind": "table_unparsed",
-   "source": "ФФКМ",
-   "where": "Кубок Москвы (Финал) (https://ffkm.ru/results/2026-2027/2026-11-23_kubok/index.htm)",
-   "detail": "табло найдено, разобрано категорий: 0",
-   "key": "table_unparsed:ffkm:2026-11-23_kubok",
-   "since": "2026-11-23T19:30:02+03:00"
   }
  ],
  "counts": {
   "Golden Skate": 39,
   "ISU": 156,
   "ФФККР": 118,
-  "ФФКМ": 7
+  "ФФКМ": 18
  },
  "fails": {
   "Golden Skate": 0,
@@ -46,7 +30,7 @@
   "Golden Skate": 39,
   "ISU": 156,
   "ФФККР": 118,
-  "ФФКМ": 7
+  "ФФКМ": 18
  },
  "accepted": {}
 }

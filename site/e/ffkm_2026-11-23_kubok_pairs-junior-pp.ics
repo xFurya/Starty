@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:ffkm:2026-11-23_kubok:pairs-junior-pp@starty
+DTSTAMP:20261124T220834Z
+DTSTART;TZID=Europe/Moscow:20261124T185000
+DTEND;TZID=Europe/Moscow:20261124T194500
+SUMMARY:Кубок Москвы (Финал) — пары ПП
+DESCRIPTION:Итог:\n1. Арина Парсегова / Матвей Бо
+ гданов — 115.85\n2. Зоя Ковязина / Дмитрий Ро
+ дионов — 112.01\n3. Дарья Самохвалова / Роман
+  Романычев — 100.78\n\nИтог турнира:\n1. Арина 
+ Парсегова / Матвей Богданов — 181.36\n2. Зоя 
+ Ковязина / Дмитрий Родионов — 177.54\n3. Дарь
+ я Самохвалова / Роман Романычев — 162.08\n\nН
+ ачало: 18:50 МСК
+LOCATION:ЛД «Медведково»\, Москва
+URL:https://xfurya.github.io/Starty/#e=ffkm:2026-11-23_kubok:pairs-junior-p
+ p
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Кубок Москвы (Финал) — пары ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

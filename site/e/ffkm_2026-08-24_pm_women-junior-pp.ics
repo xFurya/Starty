@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:ffkm:2026-08-24_pm:women-junior-pp@starty
+DTSTAMP:20261124T220834Z
+DTSTART;TZID=Europe/Moscow:20260828T140000
+DTEND;TZID=Europe/Moscow:20260828T214000
+SUMMARY:Первенство Москвы — девушки ПП
+DESCRIPTION:Итог:\n1. Дарья Лебедева — 138.01\n2. Соф
+ ья Смагина — 132.18\n3. Валерия Лукашова — 122
+ .82\n\nИтог турнира:\n1. Дарья Лебедева — 205.43
+ \n2. Софья Смагина — 200.21\n3. Диана Мильто — 
+ 190.87\n\nРоссияне:\n• Софья Смагина\n\nНачало
+ : 14:00 МСК
+LOCATION:ЛД «Мечта»\, Москва
+URL:https://xfurya.github.io/Starty/#e=ffkm:2026-08-24_pm:women-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Первенство Москвы — девушки ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

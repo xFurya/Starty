@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:ffkm:2026-11-23_kubok:women-junior-kp@starty
+DTSTAMP:20261124T220834Z
+DTSTART;TZID=Europe/Moscow:20261125T162000
+DTEND;TZID=Europe/Moscow:20261125T212000
+SUMMARY:Кубок Москвы (Финал) — девушки КП
+DESCRIPTION:Россияне:\n• Алиса Заикина\n• Анна 
+ Докукина\n• Софья Смагина\n\nНачало: 16:20 М
+ СК
+LOCATION:ЛД «Медведково»\, Москва
+URL:https://xfurya.github.io/Starty/#e=ffkm:2026-11-23_kubok:women-junior-k
+ p
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Кубок Москвы (Финал) — девушки КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
