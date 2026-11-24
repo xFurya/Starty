@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-24T13:09:30+03:00",
- "checked": "2026-11-24T12:59:03.808759+00:00",
+ "checked": "2026-11-24T13:03:04.209784+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -64143,7 +64143,7 @@
      "nation": "ПРМ",
      "no": 3,
      "warmup": null,
-     "place": 10,
+     "place": 11,
      "points": "51.89"
     },
     {
@@ -64151,7 +64151,7 @@
      "nation": "СВЕ",
      "no": 4,
      "warmup": null,
-     "place": 11,
+     "place": 12,
      "points": "49.85"
     },
     {
@@ -64199,7 +64199,7 @@
      "nation": "БАШ",
      "no": 10,
      "warmup": null,
-     "place": 12,
+     "place": 13,
      "points": "47.33"
     },
     {
@@ -64207,7 +64207,7 @@
      "nation": "МОС",
      "no": 11,
      "warmup": null,
-     "place": 9,
+     "place": 10,
      "points": "53.33"
     },
     {
@@ -64222,7 +64222,9 @@
      "name": "Александр Болсуновский",
      "nation": "ЯНА",
      "no": 13,
-     "warmup": null
+     "warmup": null,
+     "place": 9,
+     "points": "53.39"
     },
     {
      "name": "Богдан Шелапутин",
@@ -118771,5 +118773,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "0975c7da07920f75"
+ "rev": "4c6e03a8f13a3f4c"
 }
