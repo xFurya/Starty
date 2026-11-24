@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-24T13:09:30+03:00",
- "checked": "2026-11-24T12:31:04.510653+00:00",
+ "checked": "2026-11-24T12:35:03.943185+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -64127,7 +64127,7 @@
      "nation": "МОС",
      "no": 1,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "55.52"
     },
     {
@@ -64135,7 +64135,7 @@
      "nation": "МОБ",
      "no": 2,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "56.17"
     },
     {
@@ -64143,7 +64143,7 @@
      "nation": "ПРМ",
      "no": 3,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "51.89"
     },
     {
@@ -64151,7 +64151,7 @@
      "nation": "СВЕ",
      "no": 4,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "49.85"
     },
     {
@@ -64190,7 +64190,9 @@
      "name": "Егор Седов",
      "nation": "СВЕ",
      "no": 9,
-     "warmup": null
+     "warmup": null,
+     "place": 5,
+     "points": "63.05"
     },
     {
      "name": "Владимир Гилев",
@@ -118763,5 +118765,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "9d4befb799c684f3"
+ "rev": "b174995584a54cd2"
 }
