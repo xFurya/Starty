@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-25T12:29:02+03:00",
- "checked": "2026-11-25T10:52:32.738238+00:00",
+ "generated": "2026-11-25T13:33:10+03:00",
+ "checked": "2026-11-25T13:33:10+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66469,65 +66469,86 @@
      "points": "61.36"
     },
     {
-     "name": "Александра Андреева",
-     "nation": "ВОР",
-     "no": 14,
-     "place": 14,
-     "points": "33.77"
-    },
-    {
-     "name": "Александра Пискотина",
-     "nation": "ПРМ",
-     "no": 7,
-     "place": 13,
-     "points": "46.29"
-    },
-    {
      "name": "Варвара Рачева",
      "nation": "НВС",
      "no": 3,
-     "place": 8,
+     "warmup": null,
+     "place": 7,
      "points": "55.44"
     },
     {
      "name": "Влада Ершова",
      "nation": "ОМС",
      "no": 4,
-     "place": 11,
-     "points": "48.74"
-    },
-    {
-     "name": "Екатерина Милютина",
-     "nation": "НВС",
-     "no": 10,
+     "warmup": null,
      "place": 9,
-     "points": "52.18"
-    },
-    {
-     "name": "Елизавета Вахитова",
-     "nation": "ЧЕЛ",
-     "no": 17
-    },
-    {
-     "name": "Елизавета Лабутина",
-     "nation": "СВЕ",
-     "no": 8,
-     "place": 1,
-     "points": "66.99"
+     "points": "48.74"
     },
     {
      "name": "Залина Капачева",
      "nation": "ЯНА",
      "no": 5,
-     "place": 5,
+     "warmup": null,
+     "place": 4,
      "points": "59.23"
+    },
+    {
+     "name": "Ника Губарева",
+     "nation": "ОРН",
+     "no": 6,
+     "warmup": null,
+     "place": 2,
+     "points": "61.83"
+    },
+    {
+     "name": "Александра Пискотина",
+     "nation": "ПРМ",
+     "no": 7,
+     "warmup": null,
+     "place": 11,
+     "points": "46.29"
+    },
+    {
+     "name": "Елизавета Лабутина",
+     "nation": "СВЕ",
+     "no": 8,
+     "warmup": null,
+     "place": 1,
+     "points": "66.99"
+    },
+    {
+     "name": "София Буза",
+     "nation": "ОМС",
+     "no": 9,
+     "warmup": null,
+     "place": 5,
+     "points": "58.01"
+    },
+    {
+     "name": "Екатерина Милютина",
+     "nation": "НВС",
+     "no": 10,
+     "warmup": null,
+     "place": 8,
+     "points": "52.18"
     },
     {
      "name": "Мария Ганина",
      "nation": "ОМС",
      "no": 11,
-     "place": 12,
+     "warmup": null,
+     "place": 10,
      "points": "47.79"
+    },
+    {
+     "name": "Александра Андреева",
+     "nation": "ВОР",
+     "no": 14
+    },
+    {
+     "name": "Елизавета Вахитова",
+     "nation": "ЧЕЛ",
+     "no": 17
     },
     {
      "name": "Мария Лабутина",
@@ -66542,23 +66563,9 @@
      "points": "61.77"
     },
     {
-     "name": "Ника Губарева",
-     "nation": "ОРН",
-     "no": 6,
-     "place": 2,
-     "points": "61.83"
-    },
-    {
      "name": "Полина Бусыгина",
      "nation": "СВЕ",
      "no": 15
-    },
-    {
-     "name": "София Буза",
-     "nation": "ОМС",
-     "no": 9,
-     "place": 6,
-     "points": "58.01"
     },
     {
      "name": "Юлия Клевакина",
@@ -66575,17 +66582,17 @@
     "cat": null,
     "first": null,
     "names": {
+     "Елизавета Владимировна ЛАБУТИНА": "Елизавета Лабутина",
+     "Ника Алексеевна ГУБАРЕВА": "Ника Губарева",
      "Виктория Юрьевна ФЕДЯНИНА": "Виктория Федянина",
+     "Залина Рашидхановна КАПАЧЕВА": "Залина Капачева",
+     "София Геннадьевна БУЗА": "София Буза",
      "Мария Александровна ВОЛЧЕНКО": "Мария Волченко",
      "Варвара Антоновна РАЧЕВА": "Варвара Рачева",
-     "Влада Вячеславовна ЕРШОВА": "Влада Ершова",
-     "Залина Рашидхановна КАПАЧЕВА": "Залина Капачева",
-     "Ника Алексеевна ГУБАРЕВА": "Ника Губарева",
-     "Александра Дмитриевна ПИСКОТИНА": "Александра Пискотина",
-     "Елизавета Владимировна ЛАБУТИНА": "Елизавета Лабутина",
-     "София Геннадьевна БУЗА": "София Буза",
      "Екатерина Александровна МИЛЮТИНА": "Екатерина Милютина",
+     "Влада Вячеславовна ЕРШОВА": "Влада Ершова",
      "Мария Евгеньевна ГАНИНА": "Мария Ганина",
+     "Александра Дмитриевна ПИСКОТИНА": "Александра Пискотина",
      "Милана Андреевна АРХИПОВА": "Милана Архипова",
      "Юлия Андреевна КЛЕВАКИНА": "Юлия Клевакина",
      "Александра Александровна АНДРЕЕВА": "Александра Андреева",
@@ -66780,15 +66787,21 @@
    "ours": [
     {
      "name": "Алиса Заикина",
-     "nation": ""
-    },
-    {
-     "name": "Анна Докукина",
-     "nation": ""
+     "nation": "",
+     "no": 6,
+     "warmup": null
     },
     {
      "name": "Софья Смагина",
-     "nation": ""
+     "nation": "",
+     "no": 17,
+     "warmup": null
+    },
+    {
+     "name": "Анна Докукина",
+     "nation": "",
+     "no": 22,
+     "warmup": null
     }
    ],
    "athletes": [
@@ -66796,7 +66809,6 @@
     "Алиса Заикина",
     "Алиса Корнаухова",
     "Алиса Мильто",
-    "Алиса Семина",
     "Алиса Чистякова",
     "Анастасия Чиннова",
     "Анна Докукина",
@@ -66823,153 +66835,224 @@
     "Полина Павликова",
     "София Левшова",
     "София Третьякова",
+    "Софья Лабуткина",
     "Софья Смагина",
     "Софья Хардыкина",
     "Юлиана Черенева",
     "Яна Иванова"
    ],
    "src": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/index.htm",
-   "desc": "Россияне:\n• Алиса Заикина\n• Анна Докукина\n• Софья Смагина\n\nНачало: 16:20 МСК",
+   "desc": "Россияне:\n• Алиса Заикина — 6-й\n• Софья Смагина — 17-й\n• Анна Докукина — 22-й\n\nНачало: 16:20 МСК",
    "field": [
     {
-     "name": "Алена Принева",
-     "nation": ""
-    },
-    {
-     "name": "Алиса Заикина",
-     "nation": ""
-    },
-    {
-     "name": "Алиса Корнаухова",
-     "nation": ""
-    },
-    {
-     "name": "Алиса Мильто",
-     "nation": ""
-    },
-    {
-     "name": "Алиса Семина",
-     "nation": ""
-    },
-    {
-     "name": "Алиса Чистякова",
-     "nation": ""
-    },
-    {
-     "name": "Анастасия Чиннова",
-     "nation": ""
-    },
-    {
-     "name": "Анна Докукина",
-     "nation": ""
-    },
-    {
-     "name": "Валерия Литвинчёва",
-     "nation": ""
-    },
-    {
-     "name": "Валерия Лукашова",
-     "nation": ""
-    },
-    {
-     "name": "Виктория Позднякова",
-     "nation": ""
-    },
-    {
-     "name": "Виктория Сомова",
-     "nation": ""
-    },
-    {
-     "name": "Дарья Лебедева",
-     "nation": ""
-    },
-    {
-     "name": "Диана Мильто",
-     "nation": ""
-    },
-    {
-     "name": "Ева Вачасова",
-     "nation": ""
-    },
-    {
      "name": "Евгения Чеботарева",
-     "nation": ""
-    },
-    {
-     "name": "Евдокия Макарова",
-     "nation": ""
-    },
-    {
-     "name": "Екатерина Титова",
-     "nation": ""
-    },
-    {
-     "name": "Елизавета Борисова",
-     "nation": ""
-    },
-    {
-     "name": "Елизавета Дубынина",
-     "nation": ""
-    },
-    {
-     "name": "Илина Аскарова",
-     "nation": ""
-    },
-    {
-     "name": "Камила Назипова",
-     "nation": ""
-    },
-    {
-     "name": "Лизавета Мельникова",
-     "nation": ""
-    },
-    {
-     "name": "Майя Сарафанова",
-     "nation": ""
-    },
-    {
-     "name": "Мария Галушкина",
-     "nation": ""
-    },
-    {
-     "name": "Мелания Гришина",
-     "nation": ""
-    },
-    {
-     "name": "Ника Маскайкина",
-     "nation": ""
-    },
-    {
-     "name": "Полина Значкова",
-     "nation": ""
-    },
-    {
-     "name": "Полина Павликова",
-     "nation": ""
-    },
-    {
-     "name": "София Левшова",
-     "nation": ""
+     "nation": "",
+     "no": 1,
+     "warmup": null
     },
     {
      "name": "София Третьякова",
-     "nation": ""
+     "nation": "",
+     "no": 2,
+     "warmup": null
     },
     {
-     "name": "Софья Смагина",
-     "nation": ""
+     "name": "Алиса Корнаухова",
+     "nation": "",
+     "no": 3,
+     "warmup": null
     },
     {
-     "name": "Софья Хардыкина",
-     "nation": ""
+     "name": "София Левшова",
+     "nation": "",
+     "no": 4,
+     "warmup": null
     },
     {
-     "name": "Юлиана Черенева",
-     "nation": ""
+     "name": "Лизавета Мельникова",
+     "nation": "",
+     "no": 5,
+     "warmup": null
+    },
+    {
+     "name": "Алиса Заикина",
+     "nation": "",
+     "no": 6,
+     "warmup": null
+    },
+    {
+     "name": "Софья Лабуткина",
+     "nation": "",
+     "no": 7,
+     "warmup": null
+    },
+    {
+     "name": "Камила Назипова",
+     "nation": "",
+     "no": 8,
+     "warmup": null
     },
     {
      "name": "Яна Иванова",
-     "nation": ""
+     "nation": "",
+     "no": 9,
+     "warmup": null
+    },
+    {
+     "name": "Евдокия Макарова",
+     "nation": "",
+     "no": 10,
+     "warmup": null
+    },
+    {
+     "name": "Полина Павликова",
+     "nation": "",
+     "no": 11,
+     "warmup": null
+    },
+    {
+     "name": "Елизавета Дубынина",
+     "nation": "",
+     "no": 12,
+     "warmup": null
+    },
+    {
+     "name": "Майя Сарафанова",
+     "nation": "",
+     "no": 13,
+     "warmup": null
+    },
+    {
+     "name": "Алиса Мильто",
+     "nation": "",
+     "no": 14,
+     "warmup": null
+    },
+    {
+     "name": "Алиса Чистякова",
+     "nation": "",
+     "no": 15,
+     "warmup": null
+    },
+    {
+     "name": "Елизавета Борисова",
+     "nation": "",
+     "no": 16,
+     "warmup": null
+    },
+    {
+     "name": "Софья Смагина",
+     "nation": "",
+     "no": 17,
+     "warmup": null
+    },
+    {
+     "name": "Илина Аскарова",
+     "nation": "",
+     "no": 18,
+     "warmup": null
+    },
+    {
+     "name": "Виктория Позднякова",
+     "nation": "",
+     "no": 19,
+     "warmup": null
+    },
+    {
+     "name": "Алена Принева",
+     "nation": "",
+     "no": 20,
+     "warmup": null
+    },
+    {
+     "name": "Дарья Лебедева",
+     "nation": "",
+     "no": 21,
+     "warmup": null
+    },
+    {
+     "name": "Анна Докукина",
+     "nation": "",
+     "no": 22,
+     "warmup": null
+    },
+    {
+     "name": "Анастасия Чиннова",
+     "nation": "",
+     "no": 23,
+     "warmup": null
+    },
+    {
+     "name": "Валерия Лукашова",
+     "nation": "",
+     "no": 24,
+     "warmup": null
+    },
+    {
+     "name": "Екатерина Титова",
+     "nation": "",
+     "no": 25,
+     "warmup": null
+    },
+    {
+     "name": "Полина Значкова",
+     "nation": "",
+     "no": 26,
+     "warmup": null
+    },
+    {
+     "name": "Мелания Гришина",
+     "nation": "",
+     "no": 27,
+     "warmup": null
+    },
+    {
+     "name": "Диана Мильто",
+     "nation": "",
+     "no": 28,
+     "warmup": null
+    },
+    {
+     "name": "Ника Маскайкина",
+     "nation": "",
+     "no": 29,
+     "warmup": null
+    },
+    {
+     "name": "Валерия Литвинчёва",
+     "nation": "",
+     "no": 30,
+     "warmup": null
+    },
+    {
+     "name": "Софья Хардыкина",
+     "nation": "",
+     "no": 31,
+     "warmup": null
+    },
+    {
+     "name": "Виктория Сомова",
+     "nation": "",
+     "no": 32,
+     "warmup": null
+    },
+    {
+     "name": "Юлиана Черенева",
+     "nation": "",
+     "no": 33,
+     "warmup": null
+    },
+    {
+     "name": "Ева Вачасова",
+     "nation": "",
+     "no": 34,
+     "warmup": null
+    },
+    {
+     "name": "Мария Галушкина",
+     "nation": "",
+     "no": 35,
+     "warmup": null
     }
    ],
    "live": {
@@ -66978,41 +67061,41 @@
     "cat": null,
     "first": null,
     "names": {
-     "Илина АСКАРОВА": "Илина Аскарова",
-     "Елизавета БОРИСОВА": "Елизавета Борисова",
-     "Ева ВАЧАСОВА": "Ева Вачасова",
-     "Мария ГАЛУШКИНА": "Мария Галушкина",
-     "Мелания ГРИШИНА": "Мелания Гришина",
-     "Анна ДОКУКИНА": "Анна Докукина",
-     "Елизавета ДУБЫНИНА": "Елизавета Дубынина",
-     "Алиса ЗАИКИНА": "Алиса Заикина",
-     "Полина ЗНАЧКОВА": "Полина Значкова",
-     "Яна ИВАНОВА": "Яна Иванова",
+     "Евгения ЧЕБОТАРЕВА": "Евгения Чеботарева",
+     "София ТРЕТЬЯКОВА": "София Третьякова",
      "Алиса КОРНАУХОВА": "Алиса Корнаухова",
-     "Дарья ЛЕБЕДЕВА": "Дарья Лебедева",
      "София ЛЕВШОВА": "София Левшова",
-     "Валерия ЛИТВИНЧЁВА": "Валерия Литвинчёва",
-     "Валерия ЛУКАШОВА": "Валерия Лукашова",
-     "Евдокия МАКАРОВА": "Евдокия Макарова",
-     "Ника МАСКАЙКИНА": "Ника Маскайкина",
      "Лизавета МЕЛЬНИКОВА": "Лизавета Мельникова",
-     "Алиса МИЛЬТО": "Алиса Мильто",
-     "Диана МИЛЬТО": "Диана Мильто",
+     "Алиса ЗАИКИНА": "Алиса Заикина",
+     "Софья ЛАБУТКИНА": "Софья Лабуткина",
      "Камила НАЗИПОВА": "Камила Назипова",
+     "Яна ИВАНОВА": "Яна Иванова",
+     "Евдокия МАКАРОВА": "Евдокия Макарова",
      "Полина ПАВЛИКОВА": "Полина Павликова",
+     "Елизавета ДУБЫНИНА": "Елизавета Дубынина",
+     "Майя САРАФАНОВА": "Майя Сарафанова",
+     "Алиса МИЛЬТО": "Алиса Мильто",
+     "Алиса ЧИСТЯКОВА": "Алиса Чистякова",
+     "Елизавета БОРИСОВА": "Елизавета Борисова",
+     "Софья СМАГИНА": "Софья Смагина",
+     "Илина АСКАРОВА": "Илина Аскарова",
      "Виктория ПОЗДНЯКОВА": "Виктория Позднякова",
      "Алена ПРИНЕВА": "Алена Принева",
-     "Майя САРАФАНОВА": "Майя Сарафанова",
-     "Алиса СЕМИНА": "Алиса Семина",
-     "Софья СМАГИНА": "Софья Смагина",
-     "Виктория СОМОВА": "Виктория Сомова",
-     "Екатерина ТИТОВА": "Екатерина Титова",
-     "София ТРЕТЬЯКОВА": "София Третьякова",
-     "Софья ХАРДЫКИНА": "Софья Хардыкина",
-     "Евгения ЧЕБОТАРЕВА": "Евгения Чеботарева",
-     "Юлиана ЧЕРЕНЕВА": "Юлиана Черенева",
+     "Дарья ЛЕБЕДЕВА": "Дарья Лебедева",
+     "Анна ДОКУКИНА": "Анна Докукина",
      "Анастасия ЧИННОВА": "Анастасия Чиннова",
-     "Алиса ЧИСТЯКОВА": "Алиса Чистякова"
+     "Валерия ЛУКАШОВА": "Валерия Лукашова",
+     "Екатерина ТИТОВА": "Екатерина Титова",
+     "Полина ЗНАЧКОВА": "Полина Значкова",
+     "Мелания ГРИШИНА": "Мелания Гришина",
+     "Диана МИЛЬТО": "Диана Мильто",
+     "Ника МАСКАЙКИНА": "Ника Маскайкина",
+     "Валерия ЛИТВИНЧЁВА": "Валерия Литвинчёва",
+     "Софья ХАРДЫКИНА": "Софья Хардыкина",
+     "Виктория СОМОВА": "Виктория Сомова",
+     "Юлиана ЧЕРЕНЕВА": "Юлиана Черенева",
+     "Ева ВАЧАСОВА": "Ева Вачасова",
+     "Мария ГАЛУШКИНА": "Мария Галушкина"
     },
     "basis": null
    },
@@ -68441,7 +68524,7 @@
    "seg": "ПП",
    "title": "Кубок Москвы (Финал) — девушки ПП",
    "start": "2026-11-27T13:00:00+03:00",
-   "end": "2026-11-27T18:35:00+03:00",
+   "end": "2026-11-27T18:45:00+03:00",
    "venue": "ЛД «Медведково», Москва",
    "intl": false,
    "broadcast": [],
@@ -68491,6 +68574,7 @@
     "Полина Павликова",
     "София Левшова",
     "София Третьякова",
+    "Софья Лабуткина",
     "Софья Смагина",
     "Софья Хардыкина",
     "Юлиана Черенева",
@@ -68624,6 +68708,10 @@
      "nation": ""
     },
     {
+     "name": "Софья Лабуткина",
+     "nation": ""
+    },
+    {
      "name": "Софья Смагина",
      "nation": ""
     },
@@ -68657,6 +68745,7 @@
      "Полина ЗНАЧКОВА": "Полина Значкова",
      "Яна ИВАНОВА": "Яна Иванова",
      "Алиса КОРНАУХОВА": "Алиса Корнаухова",
+     "Софья ЛАБУТКИНА": "Софья Лабуткина",
      "Дарья ЛЕБЕДЕВА": "Дарья Лебедева",
      "София ЛЕВШОВА": "София Левшова",
      "Валерия ЛИТВИНЧЁВА": "Валерия Литвинчёва",
@@ -69444,7 +69533,7 @@
    "seg": "КП",
    "title": "Skate Celje — девушки КП",
    "start": "2026-11-28T10:30:00+03:00",
-   "end": "2026-11-28T18:20:00+03:00",
+   "end": "2026-11-28T18:10:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -69463,7 +69552,6 @@
     "Angelica Orsi",
     "Anna Sannikova",
     "Arina Gertsog",
-    "Darja Leetberg",
     "Diana Marjanovic",
     "Djurdja Nikolic",
     "Ekaterina Balaganskaia",
@@ -69543,10 +69631,6 @@
     {
      "name": "Arina Gertsog",
      "nation": "GER"
-    },
-    {
-     "name": "Darja Leetberg",
-     "nation": "EST"
     },
     {
      "name": "Diana Marjanovic",
@@ -69754,7 +69838,6 @@
      "Vita KAS": "Vita Kas",
      "Zala KAS": "Zala Kas",
      "Andreea Cristiana Maria LAZAR": "Andreea Cristiana Maria Lazar",
-     "Darja LEETBERG": "Darja Leetberg",
      "Alica LENGYELOVA": "Alica Lengyelova",
      "Neza LUSIC": "Neza Lusic",
      "Ketevan MAKHARADZE": "Ketevan Makharadze",
@@ -69892,6 +69975,67 @@
     }
    ],
    "proto": null
+  },
+  {
+   "id": "gs:skate-celje:men-junior-kp",
+   "tid": "gs:skate-celje",
+   "tournament": "Skate Celje",
+   "kind": "men",
+   "level": "junior",
+   "seg": "КП",
+   "title": "Skate Celje — юноши КП",
+   "start": "2026-11-28T16:53:00+03:00",
+   "end": "2026-11-28T17:33:00+03:00",
+   "venue": "Celje, Slovenia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Igor Gyula Kind",
+    "Indi Tej Accetto Korosec",
+    "Jakub Tykal",
+    "Jan Vrsek",
+    "Marian Klus"
+   ],
+   "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
+   "desc": "Начало: 16:53 МСК",
+   "field": [
+    {
+     "name": "Igor Gyula Kind",
+     "nation": "HUN"
+    },
+    {
+     "name": "Indi Tej Accetto Korosec",
+     "nation": "SLO"
+    },
+    {
+     "name": "Jakub Tykal",
+     "nation": "CZE"
+    },
+    {
+     "name": "Jan Vrsek",
+     "nation": "CZE"
+    },
+    {
+     "name": "Marian Klus",
+     "nation": "CZE"
+    }
+   ],
+   "live": {
+    "idx": "https://dev.mbit.si/EC/skcel2026/index.htm",
+    "seg": "https://dev.mbit.si/EC/skcel2026/SEG005.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Indi Tej ACCETTO KOROSEC": "Indi Tej Accetto Korosec",
+     "Igor Gyula KIND": "Igor Gyula Kind",
+     "Marian KLUS": "Marian Klus",
+     "Jakub TYKAL": "Jakub Tykal",
+     "Jan VRSEK": "Jan Vrsek"
+    },
+    "basis": null
+   },
+   "proto": "gs_skate-celje.json"
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:women-senior-kp",
@@ -70147,67 +70291,6 @@
    "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
   },
   {
-   "id": "gs:skate-celje:men-junior-kp",
-   "tid": "gs:skate-celje",
-   "tournament": "Skate Celje",
-   "kind": "men",
-   "level": "junior",
-   "seg": "КП",
-   "title": "Skate Celje — юноши КП",
-   "start": "2026-11-28T17:03:00+03:00",
-   "end": "2026-11-28T17:43:00+03:00",
-   "venue": "Celje, Slovenia",
-   "intl": true,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Igor Gyula Kind",
-    "Indi Tej Accetto Korosec",
-    "Jakub Tykal",
-    "Jan Vrsek",
-    "Marian Klus"
-   ],
-   "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Начало: 17:03 МСК",
-   "field": [
-    {
-     "name": "Igor Gyula Kind",
-     "nation": "HUN"
-    },
-    {
-     "name": "Indi Tej Accetto Korosec",
-     "nation": "SLO"
-    },
-    {
-     "name": "Jakub Tykal",
-     "nation": "CZE"
-    },
-    {
-     "name": "Jan Vrsek",
-     "nation": "CZE"
-    },
-    {
-     "name": "Marian Klus",
-     "nation": "CZE"
-    }
-   ],
-   "live": {
-    "idx": "https://dev.mbit.si/EC/skcel2026/index.htm",
-    "seg": "https://dev.mbit.si/EC/skcel2026/SEG005.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Indi Tej ACCETTO KOROSEC": "Indi Tej Accetto Korosec",
-     "Igor Gyula KIND": "Igor Gyula Kind",
-     "Marian KLUS": "Marian Klus",
-     "Jakub TYKAL": "Jakub Tykal",
-     "Jan VRSEK": "Jan Vrsek"
-    },
-    "basis": null
-   },
-   "proto": "gs_skate-celje.json"
-  },
-  {
    "id": "gs:skate-celje:women-senior-kp",
    "tid": "gs:skate-celje",
    "tournament": "Skate Celje",
@@ -70216,7 +70299,7 @@
    "seg": "КП",
    "title": "Skate Celje — женщины КП",
    "start": "2026-11-28T21:20:00+03:00",
-   "end": "2026-11-28T23:20:00+03:00",
+   "end": "2026-11-28T22:50:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -70230,7 +70313,6 @@
     "Alexandra Feigin",
     "Ana Scepanovic",
     "Ana Sofia Beschea",
-    "Andrea Bacova",
     "Andrea Montesinos Cantu",
     "Barbora Tykalova",
     "Dunja Tresnjic",
@@ -70255,10 +70337,6 @@
     {
      "name": "Ana Sofia Beschea",
      "nation": "ROU"
-    },
-    {
-     "name": "Andrea Bacova",
-     "nation": "SVK"
     },
     {
      "name": "Andrea Montesinos Cantu",
@@ -70303,7 +70381,6 @@
     "cat": null,
     "first": null,
     "names": {
-     "Andrea BACOVA": "Andrea Bacova",
      "Melisa BASTURK": "Melisa Basturk",
      "Ana Sofia BESCHEA": "Ana Sofia Beschea",
      "Alexandra FEIGIN": "Alexandra Feigin",
@@ -70384,8 +70461,8 @@
    "level": "senior",
    "seg": "КП",
    "title": "Skate Celje — мужчины КП",
-   "start": "2026-11-28T22:58:00+03:00",
-   "end": "2026-11-29T00:03:00+03:00",
+   "start": "2026-11-28T22:48:00+03:00",
+   "end": "2026-11-28T23:53:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -70406,7 +70483,7 @@
     "Макар Николаев"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 22:58 МСК",
+   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 22:48 МСК",
    "field": [
     {
      "name": "Alessandro Liberatore",
@@ -70469,7 +70546,7 @@
    "seg": "ПП",
    "title": "Skate Celje — девушки ПП",
    "start": "2026-11-29T10:30:00+03:00",
-   "end": "2026-11-29T19:10:00+03:00",
+   "end": "2026-11-29T19:05:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -70488,7 +70565,6 @@
     "Angelica Orsi",
     "Anna Sannikova",
     "Arina Gertsog",
-    "Darja Leetberg",
     "Diana Marjanovic",
     "Djurdja Nikolic",
     "Ekaterina Balaganskaia",
@@ -70568,10 +70644,6 @@
     {
      "name": "Arina Gertsog",
      "nation": "GER"
-    },
-    {
-     "name": "Darja Leetberg",
-     "nation": "EST"
     },
     {
      "name": "Diana Marjanovic",
@@ -70779,7 +70851,6 @@
      "Vita KAS": "Vita Kas",
      "Zala KAS": "Zala Kas",
      "Andreea Cristiana Maria LAZAR": "Andreea Cristiana Maria Lazar",
-     "Darja LEETBERG": "Darja Leetberg",
      "Alica LENGYELOVA": "Alica Lengyelova",
      "Neza LUSIC": "Neza Lusic",
      "Ketevan MAKHARADZE": "Ketevan Makharadze",
@@ -71137,7 +71208,7 @@
    "seg": "ПП",
    "title": "Skate Celje — женщины ПП",
    "start": "2026-11-29T16:15:00+03:00",
-   "end": "2026-11-29T18:30:00+03:00",
+   "end": "2026-11-29T18:00:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -71151,7 +71222,6 @@
     "Alexandra Feigin",
     "Ana Scepanovic",
     "Ana Sofia Beschea",
-    "Andrea Bacova",
     "Andrea Montesinos Cantu",
     "Barbora Tykalova",
     "Dunja Tresnjic",
@@ -71176,10 +71246,6 @@
     {
      "name": "Ana Sofia Beschea",
      "nation": "ROU"
-    },
-    {
-     "name": "Andrea Bacova",
-     "nation": "SVK"
     },
     {
      "name": "Andrea Montesinos Cantu",
@@ -71224,7 +71290,6 @@
     "cat": "https://dev.mbit.si/EC/skcel2026/CAT002RS.htm",
     "first": "https://dev.mbit.si/EC/skcel2026/SEG003.htm",
     "names": {
-     "Andrea BACOVA": "Andrea Bacova",
      "Melisa BASTURK": "Melisa Basturk",
      "Ana Sofia BESCHEA": "Ana Sofia Beschea",
      "Alexandra FEIGIN": "Alexandra Feigin",
@@ -71250,8 +71315,8 @@
    "level": "senior",
    "seg": "ПП",
    "title": "Skate Celje — мужчины ПП",
-   "start": "2026-11-29T18:10:00+03:00",
-   "end": "2026-11-29T19:25:00+03:00",
+   "start": "2026-11-29T18:00:00+03:00",
+   "end": "2026-11-29T19:15:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -71272,7 +71337,7 @@
     "Макар Николаев"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 18:10 МСК",
+   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 18:00 МСК",
    "field": [
     {
      "name": "Alessandro Liberatore",
@@ -71901,7 +71966,7 @@
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/rusnat2627_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/rusnat2627_competition_schedule_revised.pdf",
    "desc": "Начало: 12:30 МСК",
    "proto": null
   },
@@ -71920,7 +71985,7 @@
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/rusnat2627_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/rusnat2627_competition_schedule_revised.pdf",
    "desc": "Начало: 15:30 МСК",
    "proto": null
   },
@@ -71939,7 +72004,7 @@
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/rusnat2627_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/rusnat2627_competition_schedule_revised.pdf",
    "desc": "Начало: 15:00 МСК",
    "proto": null
   },
@@ -71958,7 +72023,7 @@
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/rusnat2627_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/rusnat2627_competition_schedule_revised.pdf",
    "desc": "Начало: 17:45 МСК",
    "proto": null
   },
@@ -71977,7 +72042,7 @@
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/rusnat2627_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/rusnat2627_competition_schedule_revised.pdf",
    "desc": "Начало: 12:30 МСК",
    "proto": null
   },
@@ -71996,7 +72061,7 @@
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/rusnat2627_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/rusnat2627_competition_schedule_revised.pdf",
    "desc": "Начало: 15:00 МСК",
    "proto": null
   },
@@ -72015,7 +72080,7 @@
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/rusnat2627_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/rusnat2627_competition_schedule_revised.pdf",
    "desc": "Начало: 17:45 МСК",
    "proto": null
   },
@@ -72034,7 +72099,7 @@
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/rusnat2627_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/rusnat2627_competition_schedule_revised.pdf",
    "desc": "Начало: 12:30 МСК",
    "proto": null
   }
@@ -122030,5 +122095,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "177df58eed3f5a77"
+ "rev": "4d1742f9ce21029f"
 }

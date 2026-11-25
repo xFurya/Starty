@@ -14,12 +14,12 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:gs:skate-celje:men-senior-pp@starty
-DTSTAMP:20261125T092902Z
-DTSTART;TZID=Europe/Moscow:20261129T181000
-DTEND;TZID=Europe/Moscow:20261129T192500
+DTSTAMP:20261125T103310Z
+DTSTART;TZID=Europe/Moscow:20261129T180000
+DTEND;TZID=Europe/Moscow:20261129T191500
 SUMMARY:Skate Celje — мужчины ПП
 DESCRIPTION:Россияне:\n• Лев Лазарев\n\nНачало: 1
- 8:10 МСК
+ 8:00 МСК
 LOCATION:Celje\, Slovenia
 URL:https://xfurya.github.io/Starty/#e=gs:skate-celje:men-senior-pp
 TRANSP:TRANSPARENT
