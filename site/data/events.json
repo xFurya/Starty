@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T21:38:39+03:00",
- "checked": "2026-11-25T19:45:56.855095+00:00",
+ "checked": "2026-11-25T19:49:56.402199+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67521,7 +67521,7 @@
      "nation": "POL",
      "no": 5,
      "warmup": 50,
-     "place": 13,
+     "place": 14,
      "points": "49.33",
      "time": "21:17"
     },
@@ -67548,7 +67548,7 @@
      "nation": "POL",
      "no": 8,
      "warmup": 50,
-     "place": 10,
+     "place": 11,
      "points": "56.86",
      "time": "21:37"
     },
@@ -67558,7 +67558,7 @@
      "time": "22:27",
      "no": 12,
      "warmup": 3,
-     "place": 12,
+     "place": 13,
      "points": "54.36"
     },
     {
@@ -67573,7 +67573,9 @@
      "nation": "FIN",
      "time": "22:48",
      "no": 14,
-     "warmup": 4
+     "warmup": 4,
+     "place": 10,
+     "points": "57.14"
     },
     {
      "name": "Emese Csiszer / Mark Shapiro",
@@ -67581,7 +67583,7 @@
      "time": "22:20",
      "no": 11,
      "warmup": 3,
-     "place": 11,
+     "place": 12,
      "points": "55.53"
     },
     {
@@ -122818,5 +122820,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "abb31116db5cd07b"
+ "rev": "552c88bd2e51250e"
 }
