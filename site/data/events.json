@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T13:33:10+03:00",
- "checked": "2026-11-25T10:56:33.263079+00:00",
+ "checked": "2026-11-25T11:00:33.425099+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66457,7 +66457,7 @@
      "nation": "ЧЕЛ",
      "no": 1,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "57.61"
     },
     {
@@ -66473,7 +66473,7 @@
      "nation": "НВС",
      "no": 3,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "55.44"
     },
     {
@@ -66481,7 +66481,7 @@
      "nation": "ОМС",
      "no": 4,
      "warmup": null,
-     "place": 11,
+     "place": 12,
      "points": "48.74"
     },
     {
@@ -66505,7 +66505,7 @@
      "nation": "ПРМ",
      "no": 7,
      "warmup": null,
-     "place": 13,
+     "place": 14,
      "points": "46.29"
     },
     {
@@ -66521,7 +66521,7 @@
      "nation": "ОМС",
      "no": 9,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "58.01"
     },
     {
@@ -66529,7 +66529,7 @@
      "nation": "НВС",
      "no": 10,
      "warmup": null,
-     "place": 9,
+     "place": 10,
      "points": "52.18"
     },
     {
@@ -66537,14 +66537,14 @@
      "nation": "ОМС",
      "no": 11,
      "warmup": null,
-     "place": 12,
+     "place": 13,
      "points": "47.79"
     },
     {
      "name": "Александра Андреева",
      "nation": "ВОР",
      "no": 14,
-     "place": 14,
+     "place": 15,
      "points": "33.77"
     },
     {
@@ -66567,13 +66567,15 @@
     {
      "name": "Полина Бусыгина",
      "nation": "СВЕ",
-     "no": 15
+     "no": 15,
+     "place": 6,
+     "points": "58.33"
     },
     {
      "name": "Юлия Клевакина",
      "nation": "СВЕ",
      "no": 13,
-     "place": 10,
+     "place": 11,
      "points": "52.17"
     }
    ],
@@ -122097,5 +122099,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "177caac43fc0a6bb"
+ "rev": "3bb9373da93aa9b3"
 }
