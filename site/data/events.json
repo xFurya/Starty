@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T14:50:45+03:00",
- "checked": "2026-11-25T14:18:03.262673+00:00",
+ "checked": "2026-11-25T14:26:02.859338+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66955,7 +66955,7 @@
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "45.57"
     },
     {
@@ -66963,7 +66963,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "51.23"
     },
     {
@@ -67010,7 +67010,9 @@
      "name": "Камила Назипова",
      "nation": "",
      "no": 8,
-     "warmup": null
+     "warmup": null,
+     "place": 6,
+     "points": "57.53"
     },
     {
      "name": "Яна Иванова",
@@ -122631,5 +122633,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "61bd28e101a4ca7a"
+ "rev": "02fcdce259496492"
 }
