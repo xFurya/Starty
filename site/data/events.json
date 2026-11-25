@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T20:34:33+03:00",
- "checked": "2026-11-25T18:37:58.571108+00:00",
+ "checked": "2026-11-25T18:41:55.741945+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67502,7 +67502,7 @@
      "time": "21:17",
      "no": 5,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "49.33"
     },
     {
@@ -67528,7 +67528,9 @@
      "nation": "POL",
      "time": "21:37",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7,
+     "points": "56.86"
     },
     {
      "name": "Isabella Flores / Linus Colmor Jepsen",
@@ -122806,5 +122808,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "6f22be90341b646d"
+ "rev": "ff35faddad52e8f6"
 }
