@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T14:50:45+03:00",
- "checked": "2026-11-25T13:06:03.370744+00:00",
+ "checked": "2026-11-25T13:10:02.905970+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66658,7 +66658,7 @@
      "nation": "БАШ",
      "no": 1,
      "warmup": null,
-     "place": 10,
+     "place": 11,
      "points": "94.95"
     },
     {
@@ -66666,7 +66666,7 @@
      "nation": "СВЕ",
      "no": 2,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "103.06"
     },
     {
@@ -66698,7 +66698,7 @@
      "nation": "МОС",
      "no": 6,
      "warmup": null,
-     "place": 9,
+     "place": 10,
      "points": "102.56"
     },
     {
@@ -66730,14 +66730,16 @@
      "nation": "КРГ",
      "no": 10,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "105.49"
     },
     {
      "name": "Егор Седов",
      "nation": "СВЕ",
      "no": 11,
-     "warmup": null
+     "warmup": null,
+     "place": 7,
+     "points": "107.36"
     },
     {
      "name": "Егор Иванов",
@@ -122544,5 +122546,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "713c488abbb8d29b"
+ "rev": "b382702a321fc647"
 }
