@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T14:50:45+03:00",
- "checked": "2026-11-25T15:02:02.843279+00:00",
+ "checked": "2026-11-25T15:06:03.709871+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66894,7 +66894,7 @@
      "nation": "",
      "no": 6,
      "warmup": null,
-     "place": 1,
+     "place": 2,
      "points": "69.35"
     },
     {
@@ -66948,14 +66948,14 @@
     "Яна Иванова"
    ],
    "src": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/index.htm",
-   "desc": "Промежуточные итоги:\n1. Алиса Заикина — 69.35\n2. Евдокия Макарова — 65.13\n3. Лизавета Мельникова — 62.87\n\nРоссияне:\n• Алиса Заикина — 6-й\n• Софья Смагина — 17-й\n• Анна Докукина — 22-й\n\nНачало: 16:20 МСК",
+   "desc": "Промежуточные итоги:\n1. Майя Сарафанова — 69.56\n2. Алиса Заикина — 69.35\n3. Евдокия Макарова — 65.13\n\nРоссияне:\n• Алиса Заикина — 6-й\n• Софья Смагина — 17-й\n• Анна Докукина — 22-й\n\nНачало: 16:20 МСК",
    "field": [
     {
      "name": "Евгения Чеботарева",
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 12,
+     "place": 13,
      "points": "45.57"
     },
     {
@@ -66963,7 +66963,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 11,
+     "place": 12,
      "points": "51.23"
     },
     {
@@ -66971,7 +66971,7 @@
      "nation": "",
      "no": 3,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "57.77"
     },
     {
@@ -66979,7 +66979,7 @@
      "nation": "",
      "no": 4,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "61.68"
     },
     {
@@ -66987,7 +66987,7 @@
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 3,
+     "place": 4,
      "points": "62.87"
     },
     {
@@ -66995,7 +66995,7 @@
      "nation": "",
      "no": 6,
      "warmup": null,
-     "place": 1,
+     "place": 2,
      "points": "69.35"
     },
     {
@@ -67003,7 +67003,7 @@
      "nation": "",
      "no": 7,
      "warmup": null,
-     "place": 4,
+     "place": 5,
      "points": "62.36"
     },
     {
@@ -67011,7 +67011,7 @@
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "57.53"
     },
     {
@@ -67019,7 +67019,7 @@
      "nation": "",
      "no": 9,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "58.22"
     },
     {
@@ -67027,7 +67027,7 @@
      "nation": "",
      "no": 10,
      "warmup": null,
-     "place": 2,
+     "place": 3,
      "points": "65.13"
     },
     {
@@ -67035,7 +67035,7 @@
      "nation": "",
      "no": 11,
      "warmup": null,
-     "place": 10,
+     "place": 11,
      "points": "55.19"
     },
     {
@@ -67043,14 +67043,16 @@
      "nation": "",
      "no": 12,
      "warmup": null,
-     "place": 9,
+     "place": 10,
      "points": "55.87"
     },
     {
      "name": "Майя Сарафанова",
      "nation": "",
      "no": 13,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "69.56"
     },
     {
      "name": "Алиса Мильто",
@@ -67235,21 +67237,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Майя Сарафанова",
+     "nation": "",
+     "points": "69.56"
+    },
+    {
+     "place": 2,
      "name": "Алиса Заикина",
      "nation": "",
      "points": "69.35"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Евдокия Макарова",
      "nation": "",
      "points": "65.13"
-    },
-    {
-     "place": 3,
-     "name": "Лизавета Мельникова",
-     "nation": "",
-     "points": "62.87"
     }
    ],
    "provisional": true
@@ -122700,5 +122702,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "24dbecfdb328cccf"
+ "rev": "45656738921bcb80"
 }
