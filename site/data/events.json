@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T21:38:39+03:00",
- "checked": "2026-11-25T19:25:55.857996+00:00",
+ "checked": "2026-11-25T19:33:56.107258+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67521,7 +67521,7 @@
      "nation": "POL",
      "no": 5,
      "warmup": 50,
-     "place": 11,
+     "place": 12,
      "points": "49.33",
      "time": "21:17"
     },
@@ -67557,7 +67557,9 @@
      "nation": "SUI",
      "time": "22:27",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "place": 11,
+     "points": "54.36"
     },
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
@@ -122814,5 +122816,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "011aa372e2203dea"
+ "rev": "7c92519819a1fe4d"
 }
