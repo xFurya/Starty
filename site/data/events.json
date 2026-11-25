@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T14:50:45+03:00",
- "checked": "2026-11-25T12:30:03.312769+00:00",
+ "checked": "2026-11-25T12:38:02.613332+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66658,7 +66658,7 @@
      "nation": "БАШ",
      "no": 1,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "94.95"
     },
     {
@@ -66697,7 +66697,9 @@
      "name": "Иван Гришановский",
      "nation": "МОС",
      "no": 6,
-     "warmup": null
+     "warmup": null,
+     "place": 5,
+     "points": "102.56"
     },
     {
      "name": "Андрей Шилин",
@@ -122534,5 +122536,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "9dacde8eec7537b7"
+ "rev": "3f9c6615036075a1"
 }
