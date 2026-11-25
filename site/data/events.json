@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T14:50:45+03:00",
- "checked": "2026-11-25T14:26:02.859338+00:00",
+ "checked": "2026-11-25T14:30:04.918647+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66955,7 +66955,7 @@
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "45.57"
     },
     {
@@ -66963,7 +66963,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "51.23"
     },
     {
@@ -66971,7 +66971,7 @@
      "nation": "",
      "no": 3,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "57.77"
     },
     {
@@ -67011,14 +67011,16 @@
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "57.53"
     },
     {
      "name": "Яна Иванова",
      "nation": "",
      "no": 9,
-     "warmup": null
+     "warmup": null,
+     "place": 5,
+     "points": "58.22"
     },
     {
      "name": "Евдокия Макарова",
@@ -67267,13 +67269,15 @@
     "Ярослав Овчинников"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
-   "desc": "Начало: 17:15 МСК",
+   "desc": "Промежуточные итоги:\n1. Ярослав Овчинников — 121.81\n\nНачало: 17:15 МСК",
    "field": [
     {
      "name": "Ярослав Овчинников",
      "nation": "НВС",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "121.81"
     },
     {
      "name": "Никита Сенцов",
@@ -67307,7 +67311,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Ярослав Овчинников",
+     "nation": "НВС",
+     "points": "121.81"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:dance-senior-rt",
@@ -122633,5 +122646,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "02fcdce259496492"
+ "rev": "b0b56e85231417b4"
 }
