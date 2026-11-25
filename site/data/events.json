@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T09:27:08+03:00",
- "checked": "2026-11-25T06:54:30.981468+00:00",
+ "checked": "2026-11-25T06:58:30.638208+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66121,7 +66121,7 @@
      "nation": "ТЮМ",
      "no": 8,
      "warmup": null,
-     "place": 18,
+     "place": 19,
      "points": "43.47"
     },
     {
@@ -66137,7 +66137,7 @@
      "nation": "ВЛА",
      "no": 10,
      "warmup": null,
-     "place": 19,
+     "place": 20,
      "points": "42.64"
     },
     {
@@ -66177,7 +66177,7 @@
      "nation": "НВС",
      "no": 15,
      "warmup": null,
-     "place": 17,
+     "place": 18,
      "points": "43.63"
     },
     {
@@ -66185,7 +66185,7 @@
      "nation": "ПРМ",
      "no": 16,
      "warmup": null,
-     "place": 16,
+     "place": 17,
      "points": "46.22"
     },
     {
@@ -66209,7 +66209,7 @@
      "nation": "ЧЕЛ",
      "no": 20,
      "warmup": null,
-     "place": 20,
+     "place": 21,
      "points": "35.07"
     },
     {
@@ -66270,7 +66270,9 @@
     {
      "name": "Елизавета Поспелова",
      "nation": "ОМС",
-     "no": 22
+     "no": 22,
+     "place": 16,
+     "points": "46.81"
     },
     {
      "name": "Елизавета Ширяева",
@@ -121752,5 +121754,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "37cefd919f8ed31c"
+ "rev": "94f0a639c4532dde"
 }
