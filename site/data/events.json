@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T11:25:38+03:00",
- "checked": "2026-11-25T11:25:38+03:00",
+ "checked": "2026-11-25T09:28:05.079672+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66430,13 +66430,15 @@
     "Юлия Клевакина"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
-   "desc": "Начало: 12:15 МСК",
+   "desc": "Промежуточные итоги:\n1. Мария Волченко — 57.61\n\nНачало: 12:15 МСК",
    "field": [
     {
      "name": "Мария Волченко",
      "nation": "ЧЕЛ",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "57.61"
     },
     {
      "name": "Виктория Федянина",
@@ -66561,7 +66563,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Мария Волченко",
+     "nation": "ЧЕЛ",
+     "points": "57.61"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:men-junior-pp",
@@ -121995,5 +122006,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "424890a808c31880"
+ "rev": "aae35f85983a03f5"
 }
