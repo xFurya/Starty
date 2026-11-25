@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T01:28:26+03:00",
- "checked": "2026-11-25T05:26:30.914106+00:00",
+ "checked": "2026-11-25T05:30:31.024328+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66086,7 +66086,7 @@
      "nation": "БАШ",
      "no": 6,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "47.77"
     },
     {
@@ -66102,14 +66102,16 @@
      "nation": "ТЮМ",
      "no": 8,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "43.47"
     },
     {
      "name": "Анна Лещенко",
      "nation": "НВС",
      "no": 9,
-     "warmup": null
+     "warmup": null,
+     "place": 7,
+     "points": "48.13"
     },
     {
      "name": "Софья Карпова",
@@ -121753,5 +121755,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "28476d6926daef67"
+ "rev": "7055960b69fb1a4c"
 }
