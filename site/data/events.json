@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T14:50:45+03:00",
- "checked": "2026-11-25T13:42:03.039565+00:00",
+ "checked": "2026-11-25T13:46:03.232034+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66902,13 +66902,15 @@
     "Яна Иванова"
    ],
    "src": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/index.htm",
-   "desc": "Россияне:\n• Алиса Заикина — 6-й\n• Софья Смагина — 17-й\n• Анна Докукина — 22-й\n\nНачало: 16:20 МСК",
+   "desc": "Промежуточные итоги:\n1. Евгения Чеботарева — 45.57\n\nРоссияне:\n• Алиса Заикина — 6-й\n• Софья Смагина — 17-й\n• Анна Докукина — 22-й\n\nНачало: 16:20 МСК",
    "field": [
     {
      "name": "Евгения Чеботарева",
      "nation": "",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "45.57"
     },
     {
      "name": "София Третьякова",
@@ -67161,7 +67163,16 @@
    },
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-11-23_kubok.json"
+   "proto": "ffkm_2026-11-23_kubok.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Евгения Чеботарева",
+     "nation": "",
+     "points": "45.57"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:men-senior-pp",
@@ -122550,5 +122561,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "9d1f5596ddc9a3fb"
+ "rev": "127a9308ed6d9746"
 }
