@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T20:34:33+03:00",
- "checked": "2026-11-25T18:09:56.467562+00:00",
+ "checked": "2026-11-25T18:21:56.451695+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67501,7 +67501,9 @@
      "nation": "POL",
      "time": "21:17",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "49.33"
     },
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
@@ -122800,5 +122802,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "f2e63bd33cb61faf"
+ "rev": "e4bc457edb7fd1da"
 }
