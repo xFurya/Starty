@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T21:38:39+03:00",
- "checked": "2026-11-25T19:13:56.223627+00:00",
+ "checked": "2026-11-25T19:17:56.801805+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67485,7 +67485,7 @@
      "nation": "GER",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "64.81",
      "time": "20:42"
     },
@@ -67503,7 +67503,7 @@
      "nation": "BEL",
      "no": 3,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "58.86",
      "time": "20:56"
     },
@@ -67512,7 +67512,7 @@
      "nation": "FRA",
      "no": 4,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "64.26",
      "time": "21:03"
     },
@@ -67521,7 +67521,7 @@
      "nation": "POL",
      "no": 5,
      "warmup": 50,
-     "place": 9,
+     "place": 10,
      "points": "49.33",
      "time": "21:17"
     },
@@ -67548,7 +67548,7 @@
      "nation": "POL",
      "no": 8,
      "warmup": 50,
-     "place": 8,
+     "place": 9,
      "points": "56.86",
      "time": "21:37"
     },
@@ -67601,7 +67601,9 @@
      "nation": "ISR",
      "time": "22:14",
      "no": 10,
-     "warmup": 3
+     "warmup": 3,
+     "place": 5,
+     "points": "65.20"
     },
     {
      "name": "Zoe Larson / Andrii Kapran",
@@ -122810,5 +122812,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "f75d1dc7926ad29c"
+ "rev": "14ac4799c74b6851"
 }
