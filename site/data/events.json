@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T20:34:33+03:00",
- "checked": "2026-11-25T18:21:56.451695+00:00",
+ "checked": "2026-11-25T18:29:55.986378+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67458,7 +67458,7 @@
     "Zofia Grzegorzewska / Oleg Muratov"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Giulia Isabella Paolino / Andrea Tuba — 69.16\n2. Charise Matthaei / Max Liebers — 64.81\n3. Natacha Lagouge / Arnaud Caffa — 64.26\n\nНачало: 20:35 МСК",
+   "desc": "Промежуточные итоги:\n1. Giulia Isabella Paolino / Andrea Tuba — 69.16\n2. Milla Ruud Reitan / Nikolaj Majorov — 69.05\n3. Charise Matthaei / Max Liebers — 64.81\n\nНачало: 20:35 МСК",
    "field": [
     {
      "name": "Charise Matthaei / Max Liebers",
@@ -67466,7 +67466,7 @@
      "time": "20:42",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "64.81"
     },
     {
@@ -67484,7 +67484,7 @@
      "time": "20:56",
      "no": 3,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "58.86"
     },
     {
@@ -67493,7 +67493,7 @@
      "time": "21:03",
      "no": 4,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "64.26"
     },
     {
@@ -67502,7 +67502,7 @@
      "time": "21:17",
      "no": 5,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "49.33"
     },
     {
@@ -67510,7 +67510,9 @@
      "nation": "SWE",
      "time": "21:24",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "69.05"
     },
     {
      "name": "Sofia Val / Asaf Kazimov",
@@ -67618,15 +67620,15 @@
     },
     {
      "place": 2,
-     "name": "Charise Matthaei / Max Liebers",
-     "nation": "GER",
-     "points": "64.81"
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "points": "69.05"
     },
     {
      "place": 3,
-     "name": "Natacha Lagouge / Arnaud Caffa",
-     "nation": "FRA",
-     "points": "64.26"
+     "name": "Charise Matthaei / Max Liebers",
+     "nation": "GER",
+     "points": "64.81"
     }
    ],
    "provisional": true
@@ -122802,5 +122804,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "e4bc457edb7fd1da"
+ "rev": "960de7e969d65e92"
 }
