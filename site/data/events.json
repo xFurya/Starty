@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T10:51:09+03:00",
- "checked": "2026-11-25T08:10:31.192182+00:00",
+ "checked": "2026-11-25T08:14:31.033938+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66137,7 +66137,7 @@
      "nation": "ВЛА",
      "no": 10,
      "warmup": null,
-     "place": 32,
+     "place": 33,
      "points": "42.64"
     },
     {
@@ -66209,7 +66209,7 @@
      "nation": "ЧЕЛ",
      "no": 20,
      "warmup": null,
-     "place": 33,
+     "place": 34,
      "points": "35.07"
     },
     {
@@ -66334,7 +66334,9 @@
     {
      "name": "Елизавета Ширяева",
      "nation": "МОБ",
-     "no": 35
+     "no": 35,
+     "place": 32,
+     "points": "42.81"
     }
    ],
    "provisional": true,
@@ -121789,5 +121791,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "ea1d8384d6544fae"
+ "rev": "fc900f7eae5f5d29"
 }
