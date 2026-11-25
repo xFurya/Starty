@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T01:28:26+03:00",
- "checked": "2026-11-25T01:28:26+03:00",
+ "checked": "2026-11-25T04:47:03.358283+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66039,13 +66039,15 @@
     "Юлиана Новиченкова"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
-   "desc": "Начало: 07:30 МСК",
+   "desc": "Промежуточные итоги:\n1. Дарья Нестерова — 50.08\n\nНачало: 07:30 МСК",
    "field": [
     {
      "name": "Дарья Нестерова",
      "nation": "СВЕ",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "50.08"
     },
     {
      "name": "Юлиана Новиченкова",
@@ -66310,7 +66312,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Дарья Нестерова",
+     "nation": "СВЕ",
+     "points": "50.08"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-senior-kp",
@@ -121716,5 +121727,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "66123b8a7955e3ab"
+ "rev": "ca8546a3dceed98a"
 }
