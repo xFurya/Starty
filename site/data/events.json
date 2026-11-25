@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T09:48:18+03:00",
- "checked": "2026-11-25T07:50:33.379337+00:00",
+ "checked": "2026-11-25T07:58:30.907065+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66041,31 +66041,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Арина Ореховская",
+     "nation": "ОРН",
+     "points": "64.12"
+    },
+    {
+     "place": 2,
      "name": "Мария Драчёва",
      "nation": "ТЮМ",
      "points": "57.13"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Алина Локтева",
      "nation": "КЯР",
      "points": "56.47"
-    },
-    {
-     "place": 3,
-     "name": "Полина Малышева",
-     "nation": "ЧЕЛ",
-     "points": "55.81"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Мария Драчёва — 57.13\n2. Алина Локтева — 56.47\n3. Полина Малышева — 55.81\n\nНачало: 07:30 МСК",
+   "desc": "Промежуточные итоги:\n1. Арина Ореховская — 64.12\n2. Мария Драчёва — 57.13\n3. Алина Локтева — 56.47\n\nНачало: 07:30 МСК",
    "field": [
     {
      "name": "Дарья Нестерова",
      "nation": "СВЕ",
      "no": 1,
      "warmup": null,
-     "place": 12,
+     "place": 13,
      "points": "50.08"
     },
     {
@@ -66073,7 +66073,7 @@
      "nation": "ПРМ",
      "no": 2,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "53.61"
     },
     {
@@ -66081,7 +66081,7 @@
      "nation": "ВЛА",
      "no": 3,
      "warmup": null,
-     "place": 15,
+     "place": 16,
      "points": "49.03"
     },
     {
@@ -66089,7 +66089,7 @@
      "nation": "СВЕ",
      "no": 4,
      "warmup": null,
-     "place": 10,
+     "place": 11,
      "points": "50.72"
     },
     {
@@ -66097,7 +66097,7 @@
      "nation": "КЯР",
      "no": 5,
      "warmup": null,
-     "place": 2,
+     "place": 3,
      "points": "56.47"
     },
     {
@@ -66105,7 +66105,7 @@
      "nation": "БАШ",
      "no": 6,
      "warmup": null,
-     "place": 18,
+     "place": 19,
      "points": "47.77"
     },
     {
@@ -66113,7 +66113,7 @@
      "nation": "ВОЛ",
      "no": 7,
      "warmup": null,
-     "place": 13,
+     "place": 14,
      "points": "49.56"
     },
     {
@@ -66121,7 +66121,7 @@
      "nation": "ТЮМ",
      "no": 8,
      "warmup": null,
-     "place": 28,
+     "place": 29,
      "points": "43.47"
     },
     {
@@ -66129,7 +66129,7 @@
      "nation": "НВС",
      "no": 9,
      "warmup": null,
-     "place": 17,
+     "place": 18,
      "points": "48.13"
     },
     {
@@ -66137,7 +66137,7 @@
      "nation": "ВЛА",
      "no": 10,
      "warmup": null,
-     "place": 29,
+     "place": 30,
      "points": "42.64"
     },
     {
@@ -66145,7 +66145,7 @@
      "nation": "БАШ",
      "no": 11,
      "warmup": null,
-     "place": 21,
+     "place": 22,
      "points": "47.45"
     },
     {
@@ -66153,7 +66153,7 @@
      "nation": "СВЕ",
      "no": 12,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "54.78"
     },
     {
@@ -66161,7 +66161,7 @@
      "nation": "ОМС",
      "no": 13,
      "warmup": null,
-     "place": 22,
+     "place": 23,
      "points": "47.28"
     },
     {
@@ -66169,7 +66169,7 @@
      "nation": "ХМА",
      "no": 14,
      "warmup": null,
-     "place": 16,
+     "place": 17,
      "points": "48.73"
     },
     {
@@ -66177,7 +66177,7 @@
      "nation": "НВС",
      "no": 15,
      "warmup": null,
-     "place": 27,
+     "place": 28,
      "points": "43.63"
     },
     {
@@ -66185,7 +66185,7 @@
      "nation": "ПРМ",
      "no": 16,
      "warmup": null,
-     "place": 25,
+     "place": 26,
      "points": "46.22"
     },
     {
@@ -66193,7 +66193,7 @@
      "nation": "ТЮМ",
      "no": 17,
      "warmup": null,
-     "place": 19,
+     "place": 20,
      "points": "47.76"
     },
     {
@@ -66201,7 +66201,7 @@
      "nation": "ЧЕЛ",
      "no": 19,
      "warmup": null,
-     "place": 3,
+     "place": 4,
      "points": "55.81"
     },
     {
@@ -66209,34 +66209,36 @@
      "nation": "ЧЕЛ",
      "no": 20,
      "warmup": null,
-     "place": 30,
+     "place": 31,
      "points": "35.07"
     },
     {
      "name": "Александра Баскова",
      "nation": "КЯР",
      "no": 31,
-     "place": 6,
+     "place": 7,
      "points": "54.46"
     },
     {
      "name": "Анастасия Жуланова",
      "nation": "ПРМ",
      "no": 27,
-     "place": 9,
+     "place": 10,
      "points": "53.41"
     },
     {
      "name": "Арина Марусич",
      "nation": "ОРН",
      "no": 28,
-     "place": 4,
+     "place": 5,
      "points": "55.78"
     },
     {
      "name": "Арина Ореховская",
      "nation": "ОРН",
-     "no": 32
+     "no": 32,
+     "place": 1,
+     "points": "64.12"
     },
     {
      "name": "Валерия Булдакова",
@@ -66247,7 +66249,7 @@
      "name": "Варвара Кузьминых",
      "nation": "ТЮМ",
      "no": 24,
-     "place": 24,
+     "place": 25,
      "points": "46.78"
     },
     {
@@ -66259,14 +66261,14 @@
      "name": "Виктория Сивкова",
      "nation": "КРГ",
      "no": 26,
-     "place": 11,
+     "place": 12,
      "points": "50.60"
     },
     {
      "name": "Владислава Прокофьева",
      "nation": "ТЮМ",
      "no": 30,
-     "place": 26,
+     "place": 27,
      "points": "44.42"
     },
     {
@@ -66283,7 +66285,7 @@
      "name": "Елизавета Поспелова",
      "nation": "ОМС",
      "no": 22,
-     "place": 23,
+     "place": 24,
      "points": "46.81"
     },
     {
@@ -66295,28 +66297,28 @@
      "name": "Мария Драчёва",
      "nation": "ТЮМ",
      "no": 29,
-     "place": 1,
+     "place": 2,
      "points": "57.13"
     },
     {
      "name": "Милана Соколова",
      "nation": "ХМА",
      "no": 25,
-     "place": 20,
+     "place": 21,
      "points": "47.59"
     },
     {
      "name": "Нелли Жилякова",
      "nation": "КРГ",
      "no": 21,
-     "place": 14,
+     "place": 15,
      "points": "49.39"
     },
     {
      "name": "Тамара Антонова",
      "nation": "ЛЕН",
      "no": 23,
-     "place": 8,
+     "place": 9,
      "points": "53.54"
     }
    ],
@@ -121772,5 +121774,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "a270281b622977e5"
+ "rev": "6039677907d146a3"
 }
