@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T09:48:18+03:00",
- "checked": "2026-11-25T07:38:30.710006+00:00",
+ "checked": "2026-11-25T07:42:31.064485+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66121,7 +66121,7 @@
      "nation": "ТЮМ",
      "no": 8,
      "warmup": null,
-     "place": 26,
+     "place": 27,
      "points": "43.47"
     },
     {
@@ -66137,7 +66137,7 @@
      "nation": "ВЛА",
      "no": 10,
      "warmup": null,
-     "place": 27,
+     "place": 28,
      "points": "42.64"
     },
     {
@@ -66177,7 +66177,7 @@
      "nation": "НВС",
      "no": 15,
      "warmup": null,
-     "place": 25,
+     "place": 26,
      "points": "43.63"
     },
     {
@@ -66209,7 +66209,7 @@
      "nation": "ЧЕЛ",
      "no": 20,
      "warmup": null,
-     "place": 28,
+     "place": 29,
      "points": "35.07"
     },
     {
@@ -66263,7 +66263,9 @@
     {
      "name": "Владислава Прокофьева",
      "nation": "ТЮМ",
-     "no": 30
+     "no": 30,
+     "place": 25,
+     "points": "44.42"
     },
     {
      "name": "Евгения Ермакова",
@@ -121768,5 +121770,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "7c520efde9894ae6"
+ "rev": "7f8e5cc7aaa60ace"
 }
