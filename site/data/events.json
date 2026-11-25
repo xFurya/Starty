@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T19:28:39+03:00",
- "checked": "2026-11-25T17:49:55.974053+00:00",
+ "checked": "2026-11-25T17:53:56.777341+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67378,7 +67378,7 @@
     "Zofia Grzegorzewska / Oleg Muratov"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Charise Matthaei / Max Liebers — 64.81\n\nНачало: 20:35 МСК",
+   "desc": "Промежуточные итоги:\n1. Giulia Isabella Paolino / Andrea Tuba — 69.16\n2. Charise Matthaei / Max Liebers — 64.81\n\nНачало: 20:35 МСК",
    "field": [
     {
      "name": "Charise Matthaei / Max Liebers",
@@ -67386,7 +67386,7 @@
      "time": "20:42",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "64.81"
     },
     {
@@ -67394,7 +67394,9 @@
      "nation": "ITA",
      "time": "20:49",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "69.16"
     },
     {
      "name": "Olivia Josephine Shilling / Leo Baeten",
@@ -67524,6 +67526,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Giulia Isabella Paolino / Andrea Tuba",
+     "nation": "ITA",
+     "points": "69.16"
+    },
+    {
+     "place": 2,
      "name": "Charise Matthaei / Max Liebers",
      "nation": "GER",
      "points": "64.81"
@@ -122720,5 +122728,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "f61d7977f431ea86"
+ "rev": "8248f2333a233a1c"
 }
