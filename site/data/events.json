@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T14:50:45+03:00",
- "checked": "2026-11-25T14:02:03.130964+00:00",
+ "checked": "2026-11-25T14:06:03.550908+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66651,14 +66651,14 @@
     "Ярослав Крегель"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Илья Старков — 126.79\n2. Андрей Шилин — 126.44\n3. Владислав Левичев — 124.34\n\nНачало: 14:45 МСК",
+   "desc": "Итог:\n1. Ярослав Крегель — 133.13\n2. Илья Старков — 126.79\n3. Андрей Шилин — 126.44\n\nНачало: 14:45 МСК",
    "field": [
     {
      "name": "Владимир Гилев",
      "nation": "БАШ",
      "no": 1,
      "warmup": null,
-     "place": 16,
+     "place": 17,
      "points": "94.95"
     },
     {
@@ -66666,7 +66666,7 @@
      "nation": "СВЕ",
      "no": 2,
      "warmup": null,
-     "place": 14,
+     "place": 15,
      "points": "103.06"
     },
     {
@@ -66674,7 +66674,7 @@
      "nation": "ПРМ",
      "no": 3,
      "warmup": null,
-     "place": 10,
+     "place": 11,
      "points": "109.87"
     },
     {
@@ -66682,7 +66682,7 @@
      "nation": "МОС",
      "no": 4,
      "warmup": null,
-     "place": 11,
+     "place": 12,
      "points": "107.71"
     },
     {
@@ -66690,7 +66690,7 @@
      "nation": "ЯНА",
      "no": 5,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "113.00"
     },
     {
@@ -66698,7 +66698,7 @@
      "nation": "МОС",
      "no": 6,
      "warmup": null,
-     "place": 15,
+     "place": 16,
      "points": "102.56"
     },
     {
@@ -66706,7 +66706,7 @@
      "nation": "МОБ",
      "no": 7,
      "warmup": null,
-     "place": 2,
+     "place": 3,
      "points": "126.44"
     },
     {
@@ -66714,7 +66714,7 @@
      "nation": "МОС",
      "no": 8,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "122.78"
     },
     {
@@ -66722,7 +66722,7 @@
      "nation": "КЯР",
      "no": 9,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "114.17"
     },
     {
@@ -66730,7 +66730,7 @@
      "nation": "КРГ",
      "no": 10,
      "warmup": null,
-     "place": 13,
+     "place": 14,
      "points": "105.49"
     },
     {
@@ -66738,7 +66738,7 @@
      "nation": "СВЕ",
      "no": 11,
      "warmup": null,
-     "place": 12,
+     "place": 13,
      "points": "107.36"
     },
     {
@@ -66746,7 +66746,7 @@
      "nation": "КРГ",
      "no": 12,
      "warmup": null,
-     "place": 4,
+     "place": 5,
      "points": "123.61"
     },
     {
@@ -66754,7 +66754,7 @@
      "nation": "ЯНА",
      "no": 13,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "117.91"
     },
     {
@@ -66762,7 +66762,7 @@
      "nation": "КИР",
      "no": 14,
      "warmup": null,
-     "place": 9,
+     "place": 10,
      "points": "110.99"
     },
     {
@@ -66770,7 +66770,7 @@
      "nation": "ОРН",
      "no": 15,
      "warmup": null,
-     "place": 3,
+     "place": 4,
      "points": "124.34"
     },
     {
@@ -66778,14 +66778,16 @@
      "nation": "ЛЕН",
      "no": 16,
      "warmup": null,
-     "place": 1,
+     "place": 2,
      "points": "126.79"
     },
     {
      "name": "Ярослав Крегель",
      "nation": "СВЕ",
      "no": 17,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "133.13"
     }
    ],
    "live": {
@@ -66812,30 +66814,29 @@
      "Илья Денисович СТАРКОВ": "Илья Старков",
      "Ярослав Андреевич КРЕГЕЛЬ": "Ярослав Крегель"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json",
    "podium": [
     {
      "place": 1,
+     "name": "Ярослав Крегель",
+     "nation": "СВЕ",
+     "points": "133.13"
+    },
+    {
+     "place": 2,
      "name": "Илья Старков",
      "nation": "ЛЕН",
      "points": "126.79"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Андрей Шилин",
      "nation": "МОБ",
      "points": "126.44"
-    },
-    {
-     "place": 3,
-     "name": "Владислав Левичев",
-     "nation": "ОРН",
-     "points": "124.34"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "ffkm:2026-11-23_kubok:women-junior-kp",
@@ -122587,5 +122588,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "9338b9f7cf386630"
+ "rev": "1007d9abfb02a267"
 }
