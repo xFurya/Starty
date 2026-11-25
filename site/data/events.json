@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T09:48:18+03:00",
- "checked": "2026-11-25T09:48:18+03:00",
+ "checked": "2026-11-25T07:10:31.586023+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66121,7 +66121,7 @@
      "nation": "ТЮМ",
      "no": 8,
      "warmup": null,
-     "place": 20,
+     "place": 21,
      "points": "43.47"
     },
     {
@@ -66137,7 +66137,7 @@
      "nation": "ВЛА",
      "no": 10,
      "warmup": null,
-     "place": 21,
+     "place": 22,
      "points": "42.64"
     },
     {
@@ -66177,7 +66177,7 @@
      "nation": "НВС",
      "no": 15,
      "warmup": null,
-     "place": 19,
+     "place": 20,
      "points": "43.63"
     },
     {
@@ -66185,7 +66185,7 @@
      "nation": "ПРМ",
      "no": 16,
      "warmup": null,
-     "place": 18,
+     "place": 19,
      "points": "46.22"
     },
     {
@@ -66209,7 +66209,7 @@
      "nation": "ЧЕЛ",
      "no": 20,
      "warmup": null,
-     "place": 22,
+     "place": 23,
      "points": "35.07"
     },
     {
@@ -66240,7 +66240,9 @@
     {
      "name": "Варвара Кузьминых",
      "nation": "ТЮМ",
-     "no": 24
+     "no": 24,
+     "place": 18,
+     "points": "46.78"
     },
     {
      "name": "Вероника Хвесько",
@@ -121756,5 +121758,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "0799411fca2cfbe9"
+ "rev": "17285a6114ac6703"
 }
