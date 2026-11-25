@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T13:33:10+03:00",
- "checked": "2026-11-25T11:12:32.471097+00:00",
+ "checked": "2026-11-25T12:06:03.231946+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66645,13 +66645,15 @@
     "Ярослав Крегель"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
-   "desc": "Начало: 14:45 МСК",
+   "desc": "Промежуточные итоги:\n1. Владимир Гилев — 94.95\n\nНачало: 14:45 МСК",
    "field": [
     {
      "name": "Владимир Гилев",
      "nation": "БАШ",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "94.95"
     },
     {
      "name": "Тимофей Таловиков",
@@ -66776,7 +66778,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Владимир Гилев",
+     "nation": "БАШ",
+     "points": "94.95"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "ffkm:2026-11-23_kubok:women-junior-kp",
@@ -122102,5 +122113,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "931690deeeb39d18"
+ "rev": "8db6ae260a21d9a4"
 }
