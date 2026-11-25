@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T12:29:02+03:00",
- "checked": "2026-11-25T12:29:02+03:00",
+ "checked": "2026-11-25T09:52:33.958865+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66439,19 +66439,25 @@
     },
     {
      "place": 2,
+     "name": "Залина Капачева",
+     "nation": "ЯНА",
+     "points": "59.23"
+    },
+    {
+     "place": 3,
      "name": "Мария Волченко",
      "nation": "ЧЕЛ",
      "points": "57.61"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Виктория Федянина — 61.36\n2. Мария Волченко — 57.61\n\nНачало: 12:15 МСК",
+   "desc": "Промежуточные итоги:\n1. Виктория Федянина — 61.36\n2. Залина Капачева — 59.23\n3. Мария Волченко — 57.61\n\nНачало: 12:15 МСК",
    "field": [
     {
      "name": "Мария Волченко",
      "nation": "ЧЕЛ",
      "no": 1,
      "warmup": null,
-     "place": 2,
+     "place": 3,
      "points": "57.61"
     },
     {
@@ -66475,12 +66481,16 @@
     {
      "name": "Варвара Рачева",
      "nation": "НВС",
-     "no": 3
+     "no": 3,
+     "place": 4,
+     "points": "55.44"
     },
     {
      "name": "Влада Ершова",
      "nation": "ОМС",
-     "no": 4
+     "no": 4,
+     "place": 5,
+     "points": "48.74"
     },
     {
      "name": "Екатерина Милютина",
@@ -66500,7 +66510,9 @@
     {
      "name": "Залина Капачева",
      "nation": "ЯНА",
-     "no": 5
+     "no": 5,
+     "place": 2,
+     "points": "59.23"
     },
     {
      "name": "Мария Ганина",
@@ -66565,28 +66577,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Виктория Федянина",
-     "nation": "ПРМ",
-     "points": "61.36"
-    },
-    {
-     "place": 2,
-     "name": "Мария Волченко",
-     "nation": "ЧЕЛ",
-     "points": "57.61"
-    },
-    {
-     "place": 3,
-     "name": "Варвара Рачева",
-     "nation": "НВС",
-     "points": "55.44"
-    }
-   ],
-   "provisional": true
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:men-junior-pp",
@@ -122021,5 +122012,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "9aa9018677a19d74"
+ "rev": "14bd1dd20a41cf73"
 }
