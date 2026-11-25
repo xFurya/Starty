@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-25T13:33:10+03:00",
- "checked": "2026-11-25T12:10:03.614633+00:00",
+ "generated": "2026-11-25T14:50:45+03:00",
+ "checked": "2026-11-25T14:50:45+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66541,46 +66541,52 @@
      "points": "47.79"
     },
     {
-     "name": "Александра Андреева",
-     "nation": "ВОР",
-     "no": 14,
-     "place": 17,
-     "points": "33.77"
-    },
-    {
-     "name": "Елизавета Вахитова",
-     "nation": "ЧЕЛ",
-     "no": 17,
-     "place": 10,
-     "points": "57.16"
-    },
-    {
-     "name": "Мария Лабутина",
-     "nation": "ВОЛ",
-     "no": 16,
-     "place": 2,
-     "points": "65.98"
-    },
-    {
      "name": "Милана Архипова",
      "nation": "ПРМ",
      "no": 12,
+     "warmup": null,
      "place": 4,
      "points": "61.77"
-    },
-    {
-     "name": "Полина Бусыгина",
-     "nation": "СВЕ",
-     "no": 15,
-     "place": 7,
-     "points": "58.33"
     },
     {
      "name": "Юлия Клевакина",
      "nation": "СВЕ",
      "no": 13,
+     "warmup": null,
      "place": 13,
      "points": "52.17"
+    },
+    {
+     "name": "Александра Андреева",
+     "nation": "ВОР",
+     "no": 14,
+     "warmup": null,
+     "place": 17,
+     "points": "33.77"
+    },
+    {
+     "name": "Полина Бусыгина",
+     "nation": "СВЕ",
+     "no": 15,
+     "warmup": null,
+     "place": 7,
+     "points": "58.33"
+    },
+    {
+     "name": "Мария Лабутина",
+     "nation": "ВОЛ",
+     "no": 16,
+     "warmup": null,
+     "place": 2,
+     "points": "65.98"
+    },
+    {
+     "name": "Елизавета Вахитова",
+     "nation": "ЧЕЛ",
+     "no": 17,
+     "warmup": null,
+     "place": 10,
+     "points": "57.16"
     }
    ],
    "live": {
@@ -66590,22 +66596,22 @@
     "first": null,
     "names": {
      "Елизавета Владимировна ЛАБУТИНА": "Елизавета Лабутина",
+     "Мария Антоновна ЛАБУТИНА": "Мария Лабутина",
      "Ника Алексеевна ГУБАРЕВА": "Ника Губарева",
+     "Милана Андреевна АРХИПОВА": "Милана Архипова",
      "Виктория Юрьевна ФЕДЯНИНА": "Виктория Федянина",
      "Залина Рашидхановна КАПАЧЕВА": "Залина Капачева",
+     "Полина Сергеевна БУСЫГИНА": "Полина Бусыгина",
      "София Геннадьевна БУЗА": "София Буза",
      "Мария Александровна ВОЛЧЕНКО": "Мария Волченко",
+     "Елизавета Игоревна ВАХИТОВА": "Елизавета Вахитова",
      "Варвара Антоновна РАЧЕВА": "Варвара Рачева",
      "Екатерина Александровна МИЛЮТИНА": "Екатерина Милютина",
+     "Юлия Андреевна КЛЕВАКИНА": "Юлия Клевакина",
      "Влада Вячеславовна ЕРШОВА": "Влада Ершова",
      "Мария Евгеньевна ГАНИНА": "Мария Ганина",
      "Александра Дмитриевна ПИСКОТИНА": "Александра Пискотина",
-     "Милана Андреевна АРХИПОВА": "Милана Архипова",
-     "Юлия Андреевна КЛЕВАКИНА": "Юлия Клевакина",
-     "Александра Александровна АНДРЕЕВА": "Александра Андреева",
-     "Полина Сергеевна БУСЫГИНА": "Полина Бусыгина",
-     "Мария Антоновна ЛАБУТИНА": "Мария Лабутина",
-     "Елизавета Игоревна ВАХИТОВА": "Елизавета Вахитова"
+     "Александра Александровна АНДРЕЕВА": "Александра Андреева"
     },
     "basis": "judges"
    },
@@ -67376,21 +67382,160 @@
    "seg": "ПП",
    "title": "Тюменский меридиан — женщины ПП",
    "start": "2026-11-26T09:30:00+03:00",
-   "end": "2026-11-26T12:00:00+03:00",
+   "end": "2026-11-26T12:15:00+03:00",
    "venue": "«Каток Прибой», Тюмень",
    "intl": false,
    "broadcast": [],
    "ours": [],
-   "athletes": [],
+   "athletes": [
+    "Александра Андреева",
+    "Александра Пискотина",
+    "Варвара Рачева",
+    "Виктория Федянина",
+    "Влада Ершова",
+    "Екатерина Милютина",
+    "Елизавета Вахитова",
+    "Елизавета Лабутина",
+    "Залина Капачева",
+    "Мария Волченко",
+    "Мария Ганина",
+    "Мария Лабутина",
+    "Милана Архипова",
+    "Ника Губарева",
+    "Полина Бусыгина",
+    "София Буза",
+    "Юлия Клевакина"
+   ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
    "desc": "Начало: 09:30 МСК",
-   "field": [],
+   "field": [
+    {
+     "name": "Александра Андреева",
+     "nation": "ВОР",
+     "no": 1,
+     "warmup": null
+    },
+    {
+     "name": "Александра Пискотина",
+     "nation": "ПРМ",
+     "no": 2,
+     "warmup": null
+    },
+    {
+     "name": "Мария Ганина",
+     "nation": "ОМС",
+     "no": 3,
+     "warmup": null
+    },
+    {
+     "name": "Влада Ершова",
+     "nation": "ОМС",
+     "no": 4,
+     "warmup": null
+    },
+    {
+     "name": "Юлия Клевакина",
+     "nation": "СВЕ",
+     "no": 5,
+     "warmup": null
+    },
+    {
+     "name": "Екатерина Милютина",
+     "nation": "НВС",
+     "no": 6,
+     "warmup": null
+    },
+    {
+     "name": "Варвара Рачева",
+     "nation": "НВС",
+     "no": 7,
+     "warmup": null
+    },
+    {
+     "name": "Елизавета Вахитова",
+     "nation": "ЧЕЛ",
+     "no": 8,
+     "warmup": null
+    },
+    {
+     "name": "Мария Волченко",
+     "nation": "ЧЕЛ",
+     "no": 9,
+     "warmup": null
+    },
+    {
+     "name": "София Буза",
+     "nation": "ОМС",
+     "no": 10,
+     "warmup": null
+    },
+    {
+     "name": "Полина Бусыгина",
+     "nation": "СВЕ",
+     "no": 11,
+     "warmup": null
+    },
+    {
+     "name": "Залина Капачева",
+     "nation": "ЯНА",
+     "no": 12,
+     "warmup": null
+    },
+    {
+     "name": "Виктория Федянина",
+     "nation": "ПРМ",
+     "no": 13,
+     "warmup": null
+    },
+    {
+     "name": "Милана Архипова",
+     "nation": "ПРМ",
+     "no": 14,
+     "warmup": null
+    },
+    {
+     "name": "Ника Губарева",
+     "nation": "ОРН",
+     "no": 15,
+     "warmup": null
+    },
+    {
+     "name": "Мария Лабутина",
+     "nation": "ВОЛ",
+     "no": 16,
+     "warmup": null
+    },
+    {
+     "name": "Елизавета Лабутина",
+     "nation": "СВЕ",
+     "no": 17,
+     "warmup": null
+    }
+   ],
    "live": {
     "idx": "https://бильман.рф/Events2627/TM2026/index.htm",
     "seg": "https://бильман.рф/Events2627/TM2026/SEG012.HTM",
     "cat": "https://бильман.рф/Events2627/TM2026/CAT006RS.HTM",
     "first": "https://бильман.рф/Events2627/TM2026/SEG011.HTM",
-    "names": {},
+    "names": {
+     "Александра Александровна АНДРЕЕВА": "Александра Андреева",
+     "Александра Дмитриевна ПИСКОТИНА": "Александра Пискотина",
+     "Мария Евгеньевна ГАНИНА": "Мария Ганина",
+     "Влада Вячеславовна ЕРШОВА": "Влада Ершова",
+     "Юлия Андреевна КЛЕВАКИНА": "Юлия Клевакина",
+     "Екатерина Александровна МИЛЮТИНА": "Екатерина Милютина",
+     "Варвара Антоновна РАЧЕВА": "Варвара Рачева",
+     "Елизавета Игоревна ВАХИТОВА": "Елизавета Вахитова",
+     "Мария Александровна ВОЛЧЕНКО": "Мария Волченко",
+     "София Геннадьевна БУЗА": "София Буза",
+     "Полина Сергеевна БУСЫГИНА": "Полина Бусыгина",
+     "Залина Рашидхановна КАПАЧЕВА": "Залина Капачева",
+     "Виктория Юрьевна ФЕДЯНИНА": "Виктория Федянина",
+     "Милана Андреевна АРХИПОВА": "Милана Архипова",
+     "Ника Алексеевна ГУБАРЕВА": "Ника Губарева",
+     "Мария Антоновна ЛАБУТИНА": "Мария Лабутина",
+     "Елизавета Владимировна ЛАБУТИНА": "Елизавета Лабутина"
+    },
     "basis": null
    },
    "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
@@ -70003,6 +70148,44 @@
    "proto": null
   },
   {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:dance-junior-rt",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "dance",
+   "level": "junior",
+   "seg": "РТ",
+   "title": "Посвященные государственности Удмуртии — юниорские танцы РТ",
+   "start": "2026-11-28T13:45:00+03:00",
+   "end": "2026-11-28T16:20:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "desc": "Начало: 13:45 МСК",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:dance-senior-rt",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "dance",
+   "level": "senior",
+   "seg": "РТ",
+   "title": "Посвященные государственности Удмуртии — танцы РТ",
+   "start": "2026-11-28T16:35:00+03:00",
+   "end": "2026-11-28T17:40:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "desc": "Начало: 16:35 МСК",
+   "proto": null
+  },
+  {
    "id": "gs:skate-celje:men-junior-kp",
    "tid": "gs:skate-celje",
    "tournament": "Skate Celje",
@@ -70315,6 +70498,63 @@
     "basis": null
    },
    "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:pairs-senior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "pairs",
+   "level": "senior",
+   "seg": "КП",
+   "title": "Посвященные государственности Удмуртии — пары КП",
+   "start": "2026-11-28T17:55:00+03:00",
+   "end": "2026-11-28T18:20:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "desc": "Начало: 17:55 МСК",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:women-senior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "women",
+   "level": "senior",
+   "seg": "КП",
+   "title": "Посвященные государственности Удмуртии — женщины КП",
+   "start": "2026-11-28T18:35:00+03:00",
+   "end": "2026-11-28T20:30:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "desc": "Начало: 18:35 МСК",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:men-senior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "men",
+   "level": "senior",
+   "seg": "КП",
+   "title": "Посвященные государственности Удмуртии — мужчины КП",
+   "start": "2026-11-28T20:45:00+03:00",
+   "end": "2026-11-28T21:20:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "desc": "Начало: 20:45 МСК",
+   "proto": null
   },
   {
    "id": "gs:skate-celje:women-senior-kp",
@@ -71165,6 +71405,25 @@
    "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
   },
   {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:dance-junior-pt",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "dance",
+   "level": "junior",
+   "seg": "ПТ",
+   "title": "Посвященные государственности Удмуртии — юниорские танцы ПТ",
+   "start": "2026-11-29T13:30:00+03:00",
+   "end": "2026-11-29T16:25:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "desc": "Начало: 13:30 МСК",
+   "proto": null
+  },
+  {
    "id": "gs:skate-celje:men-junior-pp",
    "tid": "gs:skate-celje",
    "tournament": "Skate Celje",
@@ -71334,6 +71593,25 @@
    "proto": "gs_skate-celje.json"
   },
   {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:dance-senior-pt",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "dance",
+   "level": "senior",
+   "seg": "ПТ",
+   "title": "Посвященные государственности Удмуртии — танцы ПТ",
+   "start": "2026-11-29T16:40:00+03:00",
+   "end": "2026-11-29T17:55:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "desc": "Начало: 16:40 МСК",
+   "proto": null
+  },
+  {
    "id": "gs:skate-celje:men-senior-pp",
    "tid": "gs:skate-celje",
    "tournament": "Skate Celje",
@@ -71416,6 +71694,139 @@
     "basis": null
    },
    "proto": "gs_skate-celje.json"
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:pairs-senior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "pairs",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Посвященные государственности Удмуртии — пары ПП",
+   "start": "2026-11-29T18:10:00+03:00",
+   "end": "2026-11-29T18:40:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "desc": "Начало: 18:10 МСК",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:women-senior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "women",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Посвященные государственности Удмуртии — женщины ПП",
+   "start": "2026-11-29T18:55:00+03:00",
+   "end": "2026-11-29T21:05:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "desc": "Начало: 18:55 МСК",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:men-senior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "men",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Посвященные государственности Удмуртии — мужчины ПП",
+   "start": "2026-11-29T21:20:00+03:00",
+   "end": "2026-11-29T21:55:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "desc": "Начало: 21:20 МСК",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:women-junior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "women",
+   "level": "junior",
+   "seg": "КП",
+   "title": "Посвященные государственности Удмуртии — девушки КП",
+   "start": "2026-11-30T12:00:00+03:00",
+   "end": "2026-11-30T15:45:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "desc": "Начало: 12:00 МСК",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:men-junior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "men",
+   "level": "junior",
+   "seg": "КП",
+   "title": "Посвященные государственности Удмуртии — юноши КП",
+   "start": "2026-11-30T16:00:00+03:00",
+   "end": "2026-11-30T17:30:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "desc": "Начало: 16:00 МСК",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:women-junior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "women",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "Посвященные государственности Удмуртии — девушки ПП",
+   "start": "2026-12-01T12:30:00+03:00",
+   "end": "2026-12-01T15:10:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "desc": "Начало: 12:30 МСК",
+   "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:men-junior-pp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "men",
+   "level": "junior",
+   "seg": "ПП",
+   "title": "Посвященные государственности Удмуртии — юноши ПП",
+   "start": "2026-12-01T15:25:00+03:00",
+   "end": "2026-12-01T17:10:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [],
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "desc": "Начало: 15:25 МСК",
+   "proto": null
   },
   {
    "id": "isu:isu-grand-prix-final-2026:pairs-junior-kp",
@@ -72140,16 +72551,6 @@
    "intl": false,
    "tier": "regional",
    "region": "Самарская область"
-  },
-  {
-   "tid": "fsr:posviashchennye-gosudarstvennosti-udmurtii-2026-11-28",
-   "name": "Посвященные государственности Удмуртии",
-   "start": "2026-11-28",
-   "end": "2026-12-01",
-   "venue": "Ижевск",
-   "intl": false,
-   "broadcast": [],
-   "watch": []
   },
   {
    "tid": "isu:isu-cs-golden-spin-of-zagreb",
@@ -122121,5 +122522,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "1ba936a956a42974"
+ "rev": "cba169be3306556d"
 }

@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmur
+ tii-2026:dance-junior-pt@starty
+DTSTAMP:20261125T115045Z
+DTSTART;TZID=Europe/Moscow:20261129T133000
+DTEND;TZID=Europe/Moscow:20261129T162500
+SUMMARY:Посвященные государственности Удму
+ ртии — юниорские танцы ПТ
+DESCRIPTION:Начало: 13:30 МСК
+LOCATION:г. Глазов\, СКК «Прогресс» «Глазов Ар
+ ена»\, Удмуртская Республика
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-posv
+ yashchennye-gosudarstvennosti-udmurtii-2026:dance-junior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Посвященные государственности Уд
+ муртии — юниорские танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
