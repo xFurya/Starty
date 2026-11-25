@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T19:28:39+03:00",
- "checked": "2026-11-25T17:21:56.282170+00:00",
+ "checked": "2026-11-25T17:49:55.974053+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67378,14 +67378,16 @@
     "Zofia Grzegorzewska / Oleg Muratov"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Начало: 20:35 МСК",
+   "desc": "Промежуточные итоги:\n1. Charise Matthaei / Max Liebers — 64.81\n\nНачало: 20:35 МСК",
    "field": [
     {
      "name": "Charise Matthaei / Max Liebers",
      "nation": "GER",
      "time": "20:42",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "64.81"
     },
     {
      "name": "Giulia Isabella Paolino / Andrea Tuba",
@@ -67518,7 +67520,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Charise Matthaei / Max Liebers",
+     "nation": "GER",
+     "points": "64.81"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-senior-pp",
@@ -122709,5 +122720,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "c7698ad9a46f392f"
+ "rev": "f61d7977f431ea86"
 }
