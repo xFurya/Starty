@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T01:28:26+03:00",
- "checked": "2026-11-25T05:06:30.583421+00:00",
+ "checked": "2026-11-25T05:18:31.205925+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66085,7 +66085,9 @@
      "name": "Милана Дьякова",
      "nation": "БАШ",
      "no": 6,
-     "warmup": null
+     "warmup": null,
+     "place": 6,
+     "points": "47.77"
     },
     {
      "name": "Дарина Тихомирова",
@@ -121747,5 +121749,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "676f541d8e4dad84"
+ "rev": "817df51bddcf9c20"
 }
