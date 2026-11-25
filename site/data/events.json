@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-25T13:33:10+03:00",
- "checked": "2026-11-25T11:04:33.020943+00:00",
+ "checked": "2026-11-25T11:08:32.625085+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -66473,7 +66473,7 @@
      "nation": "НВС",
      "no": 3,
      "warmup": null,
-     "place": 10,
+     "place": 11,
      "points": "55.44"
     },
     {
@@ -66481,7 +66481,7 @@
      "nation": "ОМС",
      "no": 4,
      "warmup": null,
-     "place": 13,
+     "place": 14,
      "points": "48.74"
     },
     {
@@ -66505,7 +66505,7 @@
      "nation": "ПРМ",
      "no": 7,
      "warmup": null,
-     "place": 15,
+     "place": 16,
      "points": "46.29"
     },
     {
@@ -66529,7 +66529,7 @@
      "nation": "НВС",
      "no": 10,
      "warmup": null,
-     "place": 11,
+     "place": 12,
      "points": "52.18"
     },
     {
@@ -66537,20 +66537,22 @@
      "nation": "ОМС",
      "no": 11,
      "warmup": null,
-     "place": 14,
+     "place": 15,
      "points": "47.79"
     },
     {
      "name": "Александра Андреева",
      "nation": "ВОР",
      "no": 14,
-     "place": 16,
+     "place": 17,
      "points": "33.77"
     },
     {
      "name": "Елизавета Вахитова",
      "nation": "ЧЕЛ",
-     "no": 17
+     "no": 17,
+     "place": 10,
+     "points": "57.16"
     },
     {
      "name": "Мария Лабутина",
@@ -66577,7 +66579,7 @@
      "name": "Юлия Клевакина",
      "nation": "СВЕ",
      "no": 13,
-     "place": 12,
+     "place": 13,
      "points": "52.17"
     }
    ],
@@ -122101,5 +122103,5 @@
   "Vivi Nurmi": "photos/3f82f57ccd1de96d.jpg",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg"
  },
- "rev": "34e27285b08e8861"
+ "rev": "d3f8805a7e6cea3e"
 }
