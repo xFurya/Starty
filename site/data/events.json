@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T15:37:33.696858+00:00",
+ "checked": "2026-11-26T15:41:33.526042+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67943,7 +67943,7 @@
      "nation": "ОМС",
      "no": 1,
      "warmup": null,
-     "place": 20,
+     "place": 21,
      "points": "75.26"
     },
     {
@@ -67951,7 +67951,7 @@
      "nation": "БАШ",
      "no": 2,
      "warmup": null,
-     "place": 21,
+     "place": 22,
      "points": "75.23"
     },
     {
@@ -67967,7 +67967,7 @@
      "nation": "ТЮМ",
      "no": 4,
      "warmup": null,
-     "place": 18,
+     "place": 19,
      "points": "78.20"
     },
     {
@@ -67983,7 +67983,7 @@
      "nation": "НВС",
      "no": 6,
      "warmup": null,
-     "place": 19,
+     "place": 20,
      "points": "76.31"
     },
     {
@@ -67991,7 +67991,7 @@
      "nation": "ХМА",
      "no": 7,
      "warmup": null,
-     "place": 22,
+     "place": 23,
      "points": "74.33"
     },
     {
@@ -68007,7 +68007,7 @@
      "nation": "КРГ",
      "no": 9,
      "warmup": null,
-     "place": 17,
+     "place": 18,
      "points": "81.21"
     },
     {
@@ -68015,7 +68015,7 @@
      "nation": "ВОЛ",
      "no": 10,
      "warmup": null,
-     "place": 15,
+     "place": 16,
      "points": "83.69"
     },
     {
@@ -68047,7 +68047,7 @@
      "nation": "СВЕ",
      "no": 14,
      "warmup": null,
-     "place": 16,
+     "place": 17,
      "points": "81.56"
     },
     {
@@ -68118,7 +68118,9 @@
      "name": "Мария Драчёва",
      "nation": "ТЮМ",
      "no": 23,
-     "warmup": null
+     "warmup": null,
+     "place": 15,
+     "points": "86.90"
     },
     {
      "name": "Арина Ореховская",
@@ -123544,5 +123546,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "d6b02f6120ebba35"
+ "rev": "cd6864562eba7cc8"
 }
