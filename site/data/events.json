@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T19:58:14+03:00",
- "checked": "2026-11-26T18:17:33.818947+00:00",
+ "checked": "2026-11-26T18:21:33.819354+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68990,7 +68990,7 @@
     "Zofia Grzegorzewska / Oleg Muratov"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Arianna Sassi / Luca Morini — 78.00\n2. Xuantong Li / Filip Bojanowski — 66.05\n\nНачало: 20:50 МСК",
+   "desc": "Промежуточные итоги:\n1. Emese Csiszer / Mark Shapiro — 83.27\n2. Arianna Sassi / Luca Morini — 78.00\n3. Xuantong Li / Filip Bojanowski — 66.05\n\nНачало: 20:50 МСК",
    "field": [
     {
      "name": "Xuantong Li / Filip Bojanowski",
@@ -68998,7 +68998,7 @@
      "time": "20:56",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "66.05"
     },
     {
@@ -69007,7 +69007,7 @@
      "time": "21:04",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "78.00"
     },
     {
@@ -69015,7 +69015,9 @@
      "nation": "HUN",
      "time": "21:12",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "83.27"
     },
     {
      "name": "Zofia Grzegorzewska / Oleg Muratov",
@@ -69138,12 +69140,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Emese Csiszer / Mark Shapiro",
+     "nation": "HUN",
+     "points": "83.27"
+    },
+    {
+     "place": 2,
      "name": "Arianna Sassi / Luca Morini",
      "nation": "SUI",
      "points": "78.00"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Xuantong Li / Filip Bojanowski",
      "nation": "POL",
      "points": "66.05"
@@ -123694,5 +123702,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "eb5134bb28c0d1cf"
+ "rev": "5be12618dcbb0e7a"
 }
