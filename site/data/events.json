@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T13:25:03.594133+00:00",
+ "checked": "2026-11-26T13:33:03.767088+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67943,7 +67943,7 @@
      "nation": "ОМС",
      "no": 1,
      "warmup": null,
-     "place": 4,
+     "place": 5,
      "points": "75.26"
     },
     {
@@ -67951,7 +67951,7 @@
      "nation": "БАШ",
      "no": 2,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "75.23"
     },
     {
@@ -67982,7 +67982,9 @@
      "name": "Анна Лещенко",
      "nation": "НВС",
      "no": 6,
-     "warmup": null
+     "warmup": null,
+     "place": 4,
+     "points": "76.31"
     },
     {
      "name": "Екатерина Чувакина",
@@ -68453,14 +68455,16 @@
     "Yu-Hsiang Li"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Начало: 16:20 МСК",
+   "desc": "Промежуточные итоги:\n1. Maksim Varakin — 68.66\n\nНачало: 16:20 МСК",
    "field": [
     {
      "name": "Maksim Varakin",
      "nation": "CRO",
      "time": "16:28",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "68.66"
     },
     {
      "name": "Jakub Lofek",
@@ -68705,7 +68709,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Maksim Varakin",
+     "nation": "CRO",
+     "points": "68.66"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:dance-senior-pt",
@@ -123404,5 +123417,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "8cbced771c3af4a4"
+ "rev": "f3c0208843db5430"
 }
