@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T14:21:03.806527+00:00",
+ "checked": "2026-11-26T14:25:03.705120+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68498,7 +68498,7 @@
     "Yu-Hsiang Li"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Samy Hammi — 77.50\n2. Yanhao Li — 76.92\n3. Maksim Varakin — 68.66\n\nНачало: 16:20 МСК",
+   "desc": "Промежуточные итоги:\n1. Samy Hammi — 77.50\n2. Yanhao Li — 76.92\n3. Kyrylo Marsak — 71.17\n\nНачало: 16:20 МСК",
    "field": [
     {
      "name": "Maksim Varakin",
@@ -68506,7 +68506,7 @@
      "time": "16:28",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "68.66"
     },
     {
@@ -68515,7 +68515,7 @@
      "time": "16:34",
      "no": 2,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "54.93"
     },
     {
@@ -68533,7 +68533,7 @@
      "time": "16:46",
      "no": 4,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "52.22"
     },
     {
@@ -68542,7 +68542,7 @@
      "time": "16:52",
      "no": 5,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "58.70"
     },
     {
@@ -68560,7 +68560,7 @@
      "time": "17:12",
      "no": 7,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "59.36"
     },
     {
@@ -68568,7 +68568,9 @@
      "nation": "UKR",
      "time": "17:18",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3,
+     "points": "71.17"
     },
     {
      "name": "Ean Weiler",
@@ -68780,9 +68782,9 @@
     },
     {
      "place": 3,
-     "name": "Maksim Varakin",
-     "nation": "CRO",
-     "points": "68.66"
+     "name": "Kyrylo Marsak",
+     "nation": "UKR",
+     "points": "71.17"
     }
    ],
    "provisional": true
@@ -123484,5 +123486,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "16c7e2070df348b2"
+ "rev": "2d067201e4207b6f"
 }
