@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-26T19:58:14+03:00",
- "checked": "2026-11-26T18:21:33.819354+00:00",
+ "generated": "2026-11-26T21:02:12+03:00",
+ "checked": "2026-11-26T21:02:12+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68584,7 +68584,7 @@
    "seg": "КП",
    "title": "CS PGE Warsaw Cup — мужчины КП",
    "start": "2026-11-26T16:20:00+03:00",
-   "end": "2026-11-26T20:31:00+03:00",
+   "end": "2026-11-26T20:35:00+03:00",
    "venue": "Warsaw, Poland",
    "intl": true,
    "broadcast": [],
@@ -68869,40 +68869,40 @@
      "time": "20:00"
     },
     {
-     "name": "Jozef Curma",
-     "nation": "SVK",
-     "time": "20:24",
-     "no": 30,
+     "name": "Lucius Kazanecki",
+     "nation": "USA",
+     "no": 27,
      "warmup": 5,
-     "place": 29,
-     "points": "41.96"
+     "place": 3,
+     "points": "82.63",
+     "time": "20:06"
     },
     {
      "name": "Kornel Witkowski",
      "nation": "POL",
-     "time": "20:12",
      "no": 28,
      "warmup": 5,
      "place": 5,
-     "points": "79.07"
-    },
-    {
-     "name": "Lucius Kazanecki",
-     "nation": "USA",
-     "time": "20:06",
-     "no": 27,
-     "warmup": 5,
-     "place": 3,
-     "points": "82.63"
+     "points": "79.07",
+     "time": "20:12"
     },
     {
      "name": "Mark Gorodnitsky",
      "nation": "ISR",
-     "time": "20:18",
      "no": 29,
      "warmup": 5,
      "place": 4,
-     "points": "79.55"
+     "points": "79.55",
+     "time": "20:18"
+    },
+    {
+     "name": "Jozef Curma",
+     "nation": "SVK",
+     "no": 30,
+     "warmup": 5,
+     "place": 29,
+     "points": "41.96",
+     "time": "20:24"
     }
    ],
    "live": {
@@ -68913,6 +68913,9 @@
     "names": {
      "Lucas BROUSSARD": "Lucas Broussard",
      "Nikolaj MEMOLA": "Nikolaj Memola",
+     "Lucius KAZANECKI": "Lucius Kazanecki",
+     "Mark GORODNITSKY": "Mark Gorodnitsky",
+     "Kornel WITKOWSKI": "Kornel Witkowski",
      "Samy HAMMI": "Samy Hammi",
      "Georgii RESHTENKO": "Georgii Reshtenko",
      "Yanhao LI": "Yanhao Li",
@@ -68936,26 +68939,23 @@
      "Jedidiah LINCOLN": "Jedidiah Lincoln",
      "Xan ROLS": "Xan Rols",
      "Lev VINOKUR": "Lev Vinokur",
-     "Lucius KAZANECKI": "Lucius Kazanecki",
-     "Kornel WITKOWSKI": "Kornel Witkowski",
-     "Mark GORODNITSKY": "Mark Gorodnitsky",
      "Jozef CURMA": "Jozef Curma"
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json",
    "facts": [
     {
-     "who": "Lucas Broussard",
+     "kind": "score",
      "text": "Личный рекорд за КП: 90.16 (был 85.77)",
-     "kind": "score"
+     "who": "Lucas Broussard"
     },
     {
-     "who": "Lucius Kazanecki",
+     "kind": "score",
      "text": "Личный рекорд за КП: 82.63 (был 74.89)",
-     "kind": "score"
+     "who": "Lucius Kazanecki"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:dance-senior-pt",
@@ -68990,17 +68990,16 @@
     "Zofia Grzegorzewska / Oleg Muratov"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Emese Csiszer / Mark Shapiro — 83.27\n2. Arianna Sassi / Luca Morini — 78.00\n3. Xuantong Li / Filip Bojanowski — 66.05\n\nНачало: 20:50 МСК",
-   "field": [
+   "podium": [
     {
+     "place": 1,
      "name": "Xuantong Li / Filip Bojanowski",
      "nation": "POL",
-     "time": "20:56",
-     "no": 1,
-     "warmup": 1,
-     "place": 3,
      "points": "66.05"
-    },
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Xuantong Li / Filip Bojanowski — 66.05\n\nНачало: 20:50 МСК",
+   "field": [
     {
      "name": "Arianna Sassi / Luca Morini",
      "nation": "SUI",
@@ -69009,6 +69008,27 @@
      "warmup": 1,
      "place": 2,
      "points": "78.00"
+    },
+    {
+     "name": "Celina Fradji / Jean-Hans Fourneaux",
+     "nation": "FRA",
+     "time": "21:59",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Charise Matthaei / Max Liebers",
+     "nation": "GER",
+     "time": "22:36",
+     "no": 10,
+     "warmup": 3
+    },
+    {
+     "name": "Daniela Ivanitskiy / Matthew Sperry",
+     "nation": "FIN",
+     "time": "21:35",
+     "no": 5,
+     "warmup": 2
     },
     {
      "name": "Emese Csiszer / Mark Shapiro",
@@ -69020,17 +69040,38 @@
      "points": "83.27"
     },
     {
-     "name": "Zofia Grzegorzewska / Oleg Muratov",
-     "nation": "POL",
-     "time": "21:20",
-     "no": 4,
-     "warmup": 1
+     "name": "Giulia Isabella Paolino / Andrea Tuba",
+     "nation": "ITA",
+     "time": "23:23",
+     "no": 15,
+     "warmup": 4
     },
     {
-     "name": "Daniela Ivanitskiy / Matthew Sperry",
-     "nation": "FIN",
-     "time": "21:35",
-     "no": 5,
+     "name": "Isabella Flores / Linus Colmor Jepsen",
+     "nation": "USA",
+     "time": "22:52",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "time": "23:15",
+     "no": 14,
+     "warmup": 4
+    },
+    {
+     "name": "Natacha Lagouge / Arnaud Caffa",
+     "nation": "FRA",
+     "time": "22:28",
+     "no": 9,
+     "warmup": 3
+    },
+    {
+     "name": "Olivia Josephine Shilling / Leo Baeten",
+     "nation": "BEL",
+     "time": "21:51",
+     "no": 7,
      "warmup": 2
     },
     {
@@ -69041,34 +69082,6 @@
      "warmup": 2
     },
     {
-     "name": "Olivia Josephine Shilling / Leo Baeten",
-     "nation": "BEL",
-     "time": "21:51",
-     "no": 7,
-     "warmup": 2
-    },
-    {
-     "name": "Celina Fradji / Jean-Hans Fourneaux",
-     "nation": "FRA",
-     "time": "21:59",
-     "no": 8,
-     "warmup": 2
-    },
-    {
-     "name": "Natacha Lagouge / Arnaud Caffa",
-     "nation": "FRA",
-     "time": "22:28",
-     "no": 9,
-     "warmup": 3
-    },
-    {
-     "name": "Charise Matthaei / Max Liebers",
-     "nation": "GER",
-     "time": "22:36",
-     "no": 10,
-     "warmup": 3
-    },
-    {
      "name": "Shira Ichilov / Mikhail Nosovitskiy",
      "nation": "ISR",
      "time": "22:44",
@@ -69076,11 +69089,20 @@
      "warmup": 3
     },
     {
-     "name": "Isabella Flores / Linus Colmor Jepsen",
-     "nation": "USA",
-     "time": "22:52",
-     "no": 12,
-     "warmup": 3
+     "name": "Sofia Val / Asaf Kazimov",
+     "nation": "ESP",
+     "time": "23:31",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Xuantong Li / Filip Bojanowski",
+     "nation": "POL",
+     "place": 1,
+     "points": "66.05",
+     "time": "20:56",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Zoe Larson / Andrii Kapran",
@@ -69090,27 +69112,14 @@
      "warmup": 4
     },
     {
-     "name": "Milla Ruud Reitan / Nikolaj Majorov",
-     "nation": "SWE",
-     "time": "23:15",
-     "no": 14,
-     "warmup": 4
-    },
-    {
-     "name": "Giulia Isabella Paolino / Andrea Tuba",
-     "nation": "ITA",
-     "time": "23:23",
-     "no": 15,
-     "warmup": 4
-    },
-    {
-     "name": "Sofia Val / Asaf Kazimov",
-     "nation": "ESP",
-     "time": "23:31",
-     "no": 16,
-     "warmup": 4
+     "name": "Zofia Grzegorzewska / Oleg Muratov",
+     "nation": "POL",
+     "time": "21:20",
+     "no": 4,
+     "warmup": 1
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
     "seg": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG008.htm",
@@ -70042,116 +70051,172 @@
    "desc": "Начало: 16:10 МСК",
    "field": [
     {
-     "name": "Александр Щербаков",
-     "nation": ""
-    },
-    {
-     "name": "Алексей Ефременко",
-     "nation": ""
-    },
-    {
-     "name": "Алексей Заводских",
-     "nation": ""
-    },
-    {
-     "name": "Артем Федотов",
-     "nation": ""
-    },
-    {
-     "name": "Георгий Терехов",
-     "nation": ""
-    },
-    {
-     "name": "Григорий Хорохордин",
-     "nation": ""
-    },
-    {
-     "name": "Даниил Жолобов",
-     "nation": ""
-    },
-    {
-     "name": "Илья Малышев",
-     "nation": ""
-    },
-    {
-     "name": "Кирилл Жураховский",
-     "nation": ""
-    },
-    {
      "name": "Кирилл Лутошкин",
-     "nation": ""
-    },
-    {
-     "name": "Леонтий Камзолов",
-     "nation": ""
-    },
-    {
-     "name": "Максим Брагин",
-     "nation": ""
-    },
-    {
-     "name": "Максим Стрелков",
-     "nation": ""
-    },
-    {
-     "name": "Марк Соколов",
-     "nation": ""
-    },
-    {
-     "name": "Мирон Андреанов",
-     "nation": ""
-    },
-    {
-     "name": "Наиль Сагадулин",
-     "nation": ""
-    },
-    {
-     "name": "Никита Малютин",
-     "nation": ""
-    },
-    {
-     "name": "Николай Колесников",
-     "nation": ""
-    },
-    {
-     "name": "Павел Грибуля",
-     "nation": ""
-    },
-    {
-     "name": "Павел Шин",
-     "nation": ""
-    },
-    {
-     "name": "Платон Жильцов",
-     "nation": ""
-    },
-    {
-     "name": "Степан Федоров",
-     "nation": ""
-    },
-    {
-     "name": "Степан Юров",
-     "nation": ""
-    },
-    {
-     "name": "Тагар Самбуев",
-     "nation": ""
-    },
-    {
-     "name": "Тимофей Бочков",
-     "nation": ""
-    },
-    {
-     "name": "Тимофей Жданов",
-     "nation": ""
+     "nation": "",
+     "no": 1,
+     "warmup": null
     },
     {
      "name": "Яромир Фураев",
-     "nation": ""
+     "nation": "",
+     "no": 2,
+     "warmup": null
+    },
+    {
+     "name": "Степан Федоров",
+     "nation": "",
+     "no": 3,
+     "warmup": null
+    },
+    {
+     "name": "Леонтий Камзолов",
+     "nation": "",
+     "no": 4,
+     "warmup": null
+    },
+    {
+     "name": "Мирон Андреанов",
+     "nation": "",
+     "no": 5,
+     "warmup": null
+    },
+    {
+     "name": "Степан Юров",
+     "nation": "",
+     "no": 6,
+     "warmup": null
+    },
+    {
+     "name": "Тимофей Жданов",
+     "nation": "",
+     "no": 7,
+     "warmup": null
+    },
+    {
+     "name": "Павел Грибуля",
+     "nation": "",
+     "no": 8,
+     "warmup": null
+    },
+    {
+     "name": "Тагар Самбуев",
+     "nation": "",
+     "no": 9,
+     "warmup": null
+    },
+    {
+     "name": "Максим Стрелков",
+     "nation": "",
+     "no": 10,
+     "warmup": null
+    },
+    {
+     "name": "Александр Щербаков",
+     "nation": "",
+     "no": 11,
+     "warmup": null
+    },
+    {
+     "name": "Максим Брагин",
+     "nation": "",
+     "no": 12,
+     "warmup": null
+    },
+    {
+     "name": "Павел Шин",
+     "nation": "",
+     "no": 13,
+     "warmup": null
+    },
+    {
+     "name": "Платон Жильцов",
+     "nation": "",
+     "no": 14,
+     "warmup": null
+    },
+    {
+     "name": "Наиль Сагадулин",
+     "nation": "",
+     "no": 15,
+     "warmup": null
+    },
+    {
+     "name": "Георгий Терехов",
+     "nation": "",
+     "no": 16,
+     "warmup": null
+    },
+    {
+     "name": "Артем Федотов",
+     "nation": "",
+     "no": 17,
+     "warmup": null
+    },
+    {
+     "name": "Алексей Ефременко",
+     "nation": "",
+     "no": 18,
+     "warmup": null
+    },
+    {
+     "name": "Кирилл Жураховский",
+     "nation": "",
+     "no": 19,
+     "warmup": null
+    },
+    {
+     "name": "Григорий Хорохордин",
+     "nation": "",
+     "no": 20,
+     "warmup": null
+    },
+    {
+     "name": "Алексей Заводских",
+     "nation": "",
+     "no": 21,
+     "warmup": null
+    },
+    {
+     "name": "Тимофей Бочков",
+     "nation": "",
+     "no": 22,
+     "warmup": null
     },
     {
      "name": "Ярослав Хрулев",
-     "nation": ""
+     "nation": "",
+     "no": 23,
+     "warmup": null
+    },
+    {
+     "name": "Марк Соколов",
+     "nation": "",
+     "no": 24,
+     "warmup": null
+    },
+    {
+     "name": "Даниил Жолобов",
+     "nation": "",
+     "no": 25,
+     "warmup": null
+    },
+    {
+     "name": "Никита Малютин",
+     "nation": "",
+     "no": 26,
+     "warmup": null
+    },
+    {
+     "name": "Илья Малышев",
+     "nation": "",
+     "no": 27,
+     "warmup": null
+    },
+    {
+     "name": "Николай Колесников",
+     "nation": "",
+     "no": 28,
+     "warmup": null
     }
    ],
    "live": {
@@ -70160,34 +70225,34 @@
     "cat": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/CAT004RS.HTM",
     "first": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/SEG007.HTM",
     "names": {
-     "Мирон АНДРЕАНОВ": "Мирон Андреанов",
-     "Тимофей БОЧКОВ": "Тимофей Бочков",
-     "Максим БРАГИН": "Максим Брагин",
-     "Павел ГРИБУЛЯ": "Павел Грибуля",
-     "Алексей ЕФРЕМЕНКО": "Алексей Ефременко",
-     "Тимофей ЖДАНОВ": "Тимофей Жданов",
-     "Платон ЖИЛЬЦОВ": "Платон Жильцов",
-     "Даниил ЖОЛОБОВ": "Даниил Жолобов",
-     "Кирилл ЖУРАХОВСКИЙ": "Кирилл Жураховский",
-     "Алексей ЗАВОДСКИХ": "Алексей Заводских",
-     "Леонтий КАМЗОЛОВ": "Леонтий Камзолов",
-     "Николай КОЛЕСНИКОВ": "Николай Колесников",
      "Кирилл ЛУТОШКИН": "Кирилл Лутошкин",
-     "Илья МАЛЫШЕВ": "Илья Малышев",
-     "Никита МАЛЮТИН": "Никита Малютин",
-     "Наиль САГАДУЛИН": "Наиль Сагадулин",
-     "Тагар САМБУЕВ": "Тагар Самбуев",
-     "Марк СОКОЛОВ": "Марк Соколов",
-     "Максим СТРЕЛКОВ": "Максим Стрелков",
-     "Георгий ТЕРЕХОВ": "Георгий Терехов",
-     "Степан ФЕДОРОВ": "Степан Федоров",
-     "Артем ФЕДОТОВ": "Артем Федотов",
      "Яромир ФУРАЕВ": "Яромир Фураев",
-     "Григорий ХОРОХОРДИН": "Григорий Хорохордин",
-     "Ярослав ХРУЛЕВ": "Ярослав Хрулев",
-     "Павел ШИН": "Павел Шин",
+     "Степан ФЕДОРОВ": "Степан Федоров",
+     "Леонтий КАМЗОЛОВ": "Леонтий Камзолов",
+     "Мирон АНДРЕАНОВ": "Мирон Андреанов",
+     "Степан ЮРОВ": "Степан Юров",
+     "Тимофей ЖДАНОВ": "Тимофей Жданов",
+     "Павел ГРИБУЛЯ": "Павел Грибуля",
+     "Тагар САМБУЕВ": "Тагар Самбуев",
+     "Максим СТРЕЛКОВ": "Максим Стрелков",
      "Александр ЩЕРБАКОВ": "Александр Щербаков",
-     "Степан ЮРОВ": "Степан Юров"
+     "Максим БРАГИН": "Максим Брагин",
+     "Павел ШИН": "Павел Шин",
+     "Платон ЖИЛЬЦОВ": "Платон Жильцов",
+     "Наиль САГАДУЛИН": "Наиль Сагадулин",
+     "Георгий ТЕРЕХОВ": "Георгий Терехов",
+     "Артем ФЕДОТОВ": "Артем Федотов",
+     "Алексей ЕФРЕМЕНКО": "Алексей Ефременко",
+     "Кирилл ЖУРАХОВСКИЙ": "Кирилл Жураховский",
+     "Григорий ХОРОХОРДИН": "Григорий Хорохордин",
+     "Алексей ЗАВОДСКИХ": "Алексей Заводских",
+     "Тимофей БОЧКОВ": "Тимофей Бочков",
+     "Ярослав ХРУЛЕВ": "Ярослав Хрулев",
+     "Марк СОКОЛОВ": "Марк Соколов",
+     "Даниил ЖОЛОБОВ": "Даниил Жолобов",
+     "Никита МАЛЮТИН": "Никита Малютин",
+     "Илья МАЛЫШЕВ": "Илья Малышев",
+     "Николай КОЛЕСНИКОВ": "Николай Колесников"
     },
     "basis": null
    },
@@ -70271,7 +70336,7 @@
    "seg": "ПП",
    "title": "CS PGE Warsaw Cup — мужчины ПП",
    "start": "2026-11-27T19:20:00+03:00",
-   "end": "2026-11-28T00:10:00+03:00",
+   "end": "2026-11-28T00:17:00+03:00",
    "venue": "Warsaw, Poland",
    "intl": true,
    "broadcast": [],
@@ -70295,7 +70360,6 @@
     "Makar Suntsev",
     "Maksim Varakin",
     "Mark Gorodnitsky",
-    "Matias Lindfors",
     "Matvii Yefymenko",
     "Nikita Starostin",
     "Nikolaj Memola",
@@ -70312,124 +70376,207 @@
    "desc": "Начало: 19:20 МСК",
    "field": [
     {
-     "name": "Aurelian Chervet",
-     "nation": "SUI"
-    },
-    {
-     "name": "Corentin Spinar",
-     "nation": "FRA"
-    },
-    {
-     "name": "Daniil Valanov",
-     "nation": "NOR"
-    },
-    {
-     "name": "Davide Lewton Brain",
-     "nation": "MON"
-    },
-    {
-     "name": "Ean Weiler",
-     "nation": "SUI"
-    },
-    {
-     "name": "Georgii Reshtenko",
-     "nation": "CZE"
-    },
-    {
-     "name": "Jakub Lofek",
-     "nation": "POL"
-    },
-    {
-     "name": "Jedidiah Lincoln",
-     "nation": "GBR"
-    },
-    {
-     "name": "Jozef Curma",
-     "nation": "SVK"
-    },
-    {
-     "name": "Kornel Witkowski",
-     "nation": "POL"
-    },
-    {
-     "name": "Kyrylo Marsak",
-     "nation": "UKR"
-    },
-    {
-     "name": "Lev Vinokur",
-     "nation": "ISR"
+     "name": "Nikolaj Memola",
+     "nation": "ITA",
+     "time": "00:01",
+     "no": 28,
+     "warmup": 5
     },
     {
      "name": "Lucas Broussard",
-     "nation": "USA"
+     "nation": "USA",
+     "time": "00:09",
+     "no": 29,
+     "warmup": 5
     },
     {
-     "name": "Lucius Kazanecki",
-     "nation": "USA"
+     "name": "Jozef Curma",
+     "nation": "SVK",
+     "time": "19:28",
+     "no": 1,
+     "warmup": 1
     },
     {
-     "name": "Mahery Randrianarivony",
-     "nation": "ESP"
-    },
-    {
-     "name": "Makar Suntsev",
-     "nation": "FIN"
-    },
-    {
-     "name": "Maksim Varakin",
-     "nation": "CRO"
-    },
-    {
-     "name": "Mark Gorodnitsky",
-     "nation": "ISR"
-    },
-    {
-     "name": "Matias Lindfors",
-     "nation": "FIN"
-    },
-    {
-     "name": "Matvii Yefymenko",
-     "nation": "POL"
-    },
-    {
-     "name": "Nikita Starostin",
-     "nation": "GER"
-    },
-    {
-     "name": "Nikolaj Memola",
-     "nation": "ITA"
-    },
-    {
-     "name": "Nikolajs Krivoseja",
-     "nation": "LAT"
-    },
-    {
-     "name": "Samy Hammi",
-     "nation": "FRA"
-    },
-    {
-     "name": "Tadeas Vaclavik",
-     "nation": "CZE"
-    },
-    {
-     "name": "Tobia Oellerer",
-     "nation": "AUT"
-    },
-    {
-     "name": "Valtter Virtanen",
-     "nation": "FIN"
+     "name": "Lev Vinokur",
+     "nation": "ISR",
+     "time": "19:35",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Xan Rols",
-     "nation": "FRA"
+     "nation": "FRA",
+     "time": "19:43",
+     "no": 3,
+     "warmup": 1
     },
     {
-     "name": "Yanhao Li",
-     "nation": "NZL"
+     "name": "Jedidiah Lincoln",
+     "nation": "GBR",
+     "time": "19:51",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Tadeas Vaclavik",
+     "nation": "CZE",
+     "time": "19:59",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Nikolajs Krivoseja",
+     "nation": "LAT",
+     "time": "20:15",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Aurelian Chervet",
+     "nation": "SUI",
+     "time": "20:23",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Jakub Lofek",
+     "nation": "POL",
+     "time": "20:30",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Matvii Yefymenko",
+     "nation": "POL",
+     "time": "20:38",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Valtter Virtanen",
+     "nation": "FIN",
+     "time": "20:46",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Mahery Randrianarivony",
+     "nation": "ESP",
+     "time": "20:54",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Daniil Valanov",
+     "nation": "NOR",
+     "time": "21:25",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Makar Suntsev",
+     "nation": "FIN",
+     "time": "21:33",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Davide Lewton Brain",
+     "nation": "MON",
+     "time": "21:40",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Corentin Spinar",
+     "nation": "FRA",
+     "time": "21:48",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Tobia Oellerer",
+     "nation": "AUT",
+     "time": "21:56",
+     "no": 16,
+     "warmup": 3
+    },
+    {
+     "name": "Nikita Starostin",
+     "nation": "GER",
+     "time": "22:04",
+     "no": 17,
+     "warmup": 3
+    },
+    {
+     "name": "Maksim Varakin",
+     "nation": "CRO",
+     "time": "22:20",
+     "no": 18,
+     "warmup": 4
     },
     {
      "name": "Yu-Hsiang Li",
-     "nation": "TPE"
+     "nation": "TPE",
+     "time": "22:28",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Kyrylo Marsak",
+     "nation": "UKR",
+     "time": "22:35",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Ean Weiler",
+     "nation": "SUI",
+     "time": "22:43",
+     "no": 21,
+     "warmup": 4
+    },
+    {
+     "name": "Yanhao Li",
+     "nation": "NZL",
+     "time": "22:51",
+     "no": 22,
+     "warmup": 4
+    },
+    {
+     "name": "Georgii Reshtenko",
+     "nation": "CZE",
+     "time": "22:59",
+     "no": 23,
+     "warmup": 4
+    },
+    {
+     "name": "Samy Hammi",
+     "nation": "FRA",
+     "time": "23:30",
+     "no": 24,
+     "warmup": 5
+    },
+    {
+     "name": "Kornel Witkowski",
+     "nation": "POL",
+     "time": "23:38",
+     "no": 25,
+     "warmup": 5
+    },
+    {
+     "name": "Mark Gorodnitsky",
+     "nation": "ISR",
+     "time": "23:45",
+     "no": 26,
+     "warmup": 5
+    },
+    {
+     "name": "Lucius Kazanecki",
+     "nation": "USA",
+     "time": "23:53",
+     "no": 27,
+     "warmup": 5
     }
    ],
    "live": {
@@ -70438,36 +70585,35 @@
     "cat": "https://pzlf-wyniki.pl/2627/CSPOL2026/CAT001RS.htm",
     "first": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG001.htm",
     "names": {
-     "Tobia OELLERER": "Tobia Oellerer",
-     "Maksim VARAKIN": "Maksim Varakin",
-     "Georgii RESHTENKO": "Georgii Reshtenko",
-     "Tadeas VACLAVIK": "Tadeas Vaclavik",
-     "Mahery RANDRIANARIVONY": "Mahery Randrianarivony",
-     "Matias LINDFORS": "Matias Lindfors",
-     "Makar SUNTSEV": "Makar Suntsev",
-     "Valtter VIRTANEN": "Valtter Virtanen",
-     "Samy HAMMI": "Samy Hammi",
-     "Xan ROLS": "Xan Rols",
-     "Corentin SPINAR": "Corentin Spinar",
-     "Jedidiah LINCOLN": "Jedidiah Lincoln",
-     "Nikita STAROSTIN": "Nikita Starostin",
-     "Mark GORODNITSKY": "Mark Gorodnitsky",
-     "Lev VINOKUR": "Lev Vinokur",
-     "Nikolaj MEMOLA": "Nikolaj Memola",
-     "Nikolajs KRIVOSEJA": "Nikolajs Krivoseja",
-     "Davide LEWTON BRAIN": "Davide Lewton Brain",
-     "Daniil VALANOV": "Daniil Valanov",
-     "Yanhao LI": "Yanhao Li",
-     "Jakub LOFEK": "Jakub Lofek",
-     "Kornel WITKOWSKI": "Kornel Witkowski",
-     "Matvii YEFYMENKO": "Matvii Yefymenko",
-     "Aurelian CHERVET": "Aurelian Chervet",
-     "Ean WEILER": "Ean Weiler",
      "Jozef CURMA": "Jozef Curma",
+     "Lev VINOKUR": "Lev Vinokur",
+     "Xan ROLS": "Xan Rols",
+     "Jedidiah LINCOLN": "Jedidiah Lincoln",
+     "Tadeas VACLAVIK": "Tadeas Vaclavik",
+     "Nikolajs KRIVOSEJA": "Nikolajs Krivoseja",
+     "Aurelian CHERVET": "Aurelian Chervet",
+     "Jakub LOFEK": "Jakub Lofek",
+     "Matvii YEFYMENKO": "Matvii Yefymenko",
+     "Valtter VIRTANEN": "Valtter Virtanen",
+     "Mahery RANDRIANARIVONY": "Mahery Randrianarivony",
+     "Daniil VALANOV": "Daniil Valanov",
+     "Makar SUNTSEV": "Makar Suntsev",
+     "Davide LEWTON BRAIN": "Davide Lewton Brain",
+     "Corentin SPINAR": "Corentin Spinar",
+     "Tobia OELLERER": "Tobia Oellerer",
+     "Nikita STAROSTIN": "Nikita Starostin",
+     "Maksim VARAKIN": "Maksim Varakin",
      "Yu-Hsiang LI": "Yu-Hsiang Li",
      "Kyrylo MARSAK": "Kyrylo Marsak",
-     "Lucas BROUSSARD": "Lucas Broussard",
-     "Lucius KAZANECKI": "Lucius Kazanecki"
+     "Ean WEILER": "Ean Weiler",
+     "Yanhao LI": "Yanhao Li",
+     "Georgii RESHTENKO": "Georgii Reshtenko",
+     "Samy HAMMI": "Samy Hammi",
+     "Kornel WITKOWSKI": "Kornel Witkowski",
+     "Mark GORODNITSKY": "Mark Gorodnitsky",
+     "Lucius KAZANECKI": "Lucius Kazanecki",
+     "Nikolaj MEMOLA": "Nikolaj Memola",
+     "Lucas BROUSSARD": "Lucas Broussard"
     },
     "basis": null
    },
@@ -73675,14 +73821,14 @@
    "intl": false,
    "tier": "regional",
    "region": "Самарская область",
-   "broadcast": [
-    "VK Видео"
-   ],
    "watch": [
     {
      "name": "VK Видео",
      "url": "https://vkvideo.ru/live-171234363_456239688"
     }
+   ],
+   "broadcast": [
+    "VK Видео"
    ]
   },
   {
@@ -123702,5 +123848,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "5be12618dcbb0e7a"
+ "rev": "8f7e605dd18045dc"
 }
