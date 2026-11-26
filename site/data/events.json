@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T14:25:03.705120+00:00",
+ "checked": "2026-11-26T14:29:03.416159+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68208,7 +68208,7 @@
     "Ярослав Хрулев"
    ],
    "src": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/index.htm",
-   "desc": "Промежуточные итоги:\n1. Никита Малютин — 80.08\n2. Даниил Жолобов — 79.73\n3. Наиль Сагадулин — 67.04\n\nНачало: 16:15 МСК",
+   "desc": "Промежуточные итоги:\n1. Никита Малютин — 80.08\n2. Даниил Жолобов — 79.73\n3. Алексей Ефременко — 69.75\n\nНачало: 16:15 МСК",
    "field": [
     {
      "name": "Даниил Жолобов",
@@ -68223,7 +68223,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "59.54"
     },
     {
@@ -68239,7 +68239,7 @@
      "nation": "",
      "no": 4,
      "warmup": null,
-     "place": 3,
+     "place": 4,
      "points": "67.04"
     },
     {
@@ -68247,14 +68247,16 @@
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 4,
+     "place": 5,
      "points": "60.92"
     },
     {
      "name": "Алексей Ефременко",
      "nation": "",
      "no": 6,
-     "warmup": null
+     "warmup": null,
+     "place": 3,
+     "points": "69.75"
     },
     {
      "name": "Кирилл Жураховский",
@@ -68444,9 +68446,9 @@
     },
     {
      "place": 3,
-     "name": "Наиль Сагадулин",
+     "name": "Алексей Ефременко",
      "nation": "",
-     "points": "67.04"
+     "points": "69.75"
     }
    ],
    "provisional": true
@@ -68498,7 +68500,7 @@
     "Yu-Hsiang Li"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Samy Hammi — 77.50\n2. Yanhao Li — 76.92\n3. Kyrylo Marsak — 71.17\n\nНачало: 16:20 МСК",
+   "desc": "Промежуточные итоги:\n1. Samy Hammi — 77.50\n2. Yanhao Li — 76.92\n3. Ean Weiler — 71.70\n\nНачало: 16:20 МСК",
    "field": [
     {
      "name": "Maksim Varakin",
@@ -68506,7 +68508,7 @@
      "time": "16:28",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "68.66"
     },
     {
@@ -68515,7 +68517,7 @@
      "time": "16:34",
      "no": 2,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "54.93"
     },
     {
@@ -68533,7 +68535,7 @@
      "time": "16:46",
      "no": 4,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "52.22"
     },
     {
@@ -68542,7 +68544,7 @@
      "time": "16:52",
      "no": 5,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "58.70"
     },
     {
@@ -68560,7 +68562,7 @@
      "time": "17:12",
      "no": 7,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "59.36"
     },
     {
@@ -68569,7 +68571,7 @@
      "time": "17:18",
      "no": 8,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "71.17"
     },
     {
@@ -68577,7 +68579,9 @@
      "nation": "SUI",
      "time": "17:24",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 3,
+     "points": "71.70"
     },
     {
      "name": "Makar Suntsev",
@@ -68782,9 +68786,9 @@
     },
     {
      "place": 3,
-     "name": "Kyrylo Marsak",
-     "nation": "UKR",
-     "points": "71.17"
+     "name": "Ean Weiler",
+     "nation": "SUI",
+     "points": "71.70"
     }
    ],
    "provisional": true
@@ -123486,5 +123490,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "2d067201e4207b6f"
+ "rev": "ecd6b76771eca091"
 }
