@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T15:41:33.526042+00:00",
+ "checked": "2026-11-26T15:45:33.856685+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68693,7 +68693,9 @@
      "nation": "FRA",
      "time": "18:35",
      "no": 17,
-     "warmup": 3
+     "warmup": 3,
+     "place": 17,
+     "points": "47.95"
     },
     {
      "name": "Matias Lindfors",
@@ -123546,5 +123548,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "cd6864562eba7cc8"
+ "rev": "7d251391b660cf72"
 }
