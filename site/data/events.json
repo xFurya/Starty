@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T14:45:03.753971+00:00",
+ "checked": "2026-11-26T14:49:03.659744+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67936,14 +67936,14 @@
     "Юлиана Новиченкова"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Дарья Шаронова — 105.00\n2. Дарья Нестерова — 98.86\n3. Виктория Сивкова — 95.18\n\nНачало: 16:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Дарья Шаронова — 105.00\n2. Дарья Нестерова — 98.86\n3. Анастасия Жуланова — 96.29\n\nНачало: 16:00 МСК",
    "field": [
     {
      "name": "Александра Гончаровская",
      "nation": "ОМС",
      "no": 1,
      "warmup": null,
-     "place": 12,
+     "place": 13,
      "points": "75.26"
     },
     {
@@ -67951,7 +67951,7 @@
      "nation": "БАШ",
      "no": 2,
      "warmup": null,
-     "place": 13,
+     "place": 14,
      "points": "75.23"
     },
     {
@@ -67959,7 +67959,7 @@
      "nation": "ХМА",
      "no": 3,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "89.03"
     },
     {
@@ -67967,7 +67967,7 @@
      "nation": "ТЮМ",
      "no": 4,
      "warmup": null,
-     "place": 10,
+     "place": 11,
      "points": "78.20"
     },
     {
@@ -67975,7 +67975,7 @@
      "nation": "БАШ",
      "no": 5,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "90.05"
     },
     {
@@ -67983,7 +67983,7 @@
      "nation": "НВС",
      "no": 6,
      "warmup": null,
-     "place": 11,
+     "place": 12,
      "points": "76.31"
     },
     {
@@ -67991,7 +67991,7 @@
      "nation": "ХМА",
      "no": 7,
      "warmup": null,
-     "place": 14,
+     "place": 15,
      "points": "74.33"
     },
     {
@@ -68007,7 +68007,7 @@
      "nation": "КРГ",
      "no": 9,
      "warmup": null,
-     "place": 9,
+     "place": 10,
      "points": "81.21"
     },
     {
@@ -68015,7 +68015,7 @@
      "nation": "ВОЛ",
      "no": 10,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "83.69"
     },
     {
@@ -68023,7 +68023,7 @@
      "nation": "ТЮМ",
      "no": 11,
      "warmup": null,
-     "place": 4,
+     "place": 5,
      "points": "94.83"
     },
     {
@@ -68039,7 +68039,7 @@
      "nation": "КРГ",
      "no": 13,
      "warmup": null,
-     "place": 3,
+     "place": 4,
      "points": "95.18"
     },
     {
@@ -68047,14 +68047,16 @@
      "nation": "СВЕ",
      "no": 14,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "81.56"
     },
     {
      "name": "Анастасия Жуланова",
      "nation": "ПРМ",
      "no": 15,
-     "warmup": null
+     "warmup": null,
+     "place": 3,
+     "points": "96.29"
     },
     {
      "name": "Тамара Антонова",
@@ -68160,9 +68162,9 @@
     },
     {
      "place": 3,
-     "name": "Виктория Сивкова",
-     "nation": "КРГ",
-     "points": "95.18"
+     "name": "Анастасия Жуланова",
+     "nation": "ПРМ",
+     "points": "96.29"
     }
    ],
    "provisional": true
@@ -68545,7 +68547,7 @@
      "time": "16:46",
      "no": 4,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "points": "52.22"
     },
     {
@@ -68608,7 +68610,7 @@
      "time": "17:36",
      "no": 11,
      "warmup": 2,
-     "place": 11,
+     "place": 12,
      "points": "50.73"
     },
     {
@@ -68616,7 +68618,9 @@
      "nation": "SUI",
      "time": "17:42",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 10,
+     "points": "54.02"
     },
     {
      "name": "Nikolajs Krivoseja",
@@ -123504,5 +123508,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "e47d298393a1dbe0"
+ "rev": "7042966f8c8a482d"
 }
