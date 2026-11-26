@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-25T23:48:00+03:00",
- "checked": "2026-11-25T23:48:00+03:00",
+ "generated": "2026-11-26T07:49:02+03:00",
+ "checked": "2026-11-26T07:49:02+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67827,8 +67827,8 @@
    "level": "junior",
    "seg": "ПП",
    "title": "Тюменский меридиан — девушки ПП",
-   "start": "2026-11-26T16:00:00+03:00",
-   "end": "2026-11-26T19:45:00+03:00",
+   "start": "2026-11-26T15:45:00+03:00",
+   "end": "2026-11-26T19:30:00+03:00",
    "venue": "«Каток Прибой», Тюмень",
    "intl": false,
    "broadcast": [],
@@ -67860,7 +67860,7 @@
     "Юлиана Новиченкова"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
-   "desc": "Начало: 16:00 МСК",
+   "desc": "Начало: 15:45 МСК",
    "field": [
     {
      "name": "Александра Гончаровская",
@@ -68740,7 +68740,7 @@
    "seg": "РТ",
    "title": "GP NHK Trophy — танцы РТ",
    "start": "2026-11-27T06:35:00+03:00",
-   "end": "2026-11-27T07:50:00+03:00",
+   "end": "2026-11-27T07:54:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
    "broadcast": [
@@ -68753,14 +68753,14 @@
     "Emilea Zingas / Vadym Kolesnik",
     "Ikura Kushida / Koshiro Shimada",
     "Juulia Turkkila / Matthias Versluis",
-    "Loicia Demougeot / Theo Le Mercier",
+    "Loicia Demougeot / Theo le Mercier",
     "Marjorie Lajoie / Jean-Luc Baker",
     "Olivia Smart / Tim Dieck",
     "Rika Kihira / Shingo Nishiyama",
     "Utana Yoshida / Masaya Morita",
     "Yuka Orihara / Juho Pirinen"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
+   "src": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -68774,47 +68774,96 @@
    "desc": "Начало: 06:35 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Christina Carreira / Anthony Ponomarenko",
-     "nation": "USA"
-    },
-    {
-     "name": "Emilea Zingas / Vadym Kolesnik",
-     "nation": "USA"
+     "name": "Rika Kihira / Shingo Nishiyama",
+     "nation": "JPN",
+     "time": "06:42",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Ikura Kushida / Koshiro Shimada",
-     "nation": "JPN"
-    },
-    {
-     "name": "Juulia Turkkila / Matthias Versluis",
-     "nation": "FIN"
-    },
-    {
-     "name": "Loicia Demougeot / Theo Le Mercier",
-     "nation": "FRA"
+     "nation": "JPN",
+     "time": "06:48",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
-     "nation": "CAN"
-    },
-    {
-     "name": "Olivia Smart / Tim Dieck",
-     "nation": "ESP"
-    },
-    {
-     "name": "Rika Kihira / Shingo Nishiyama",
-     "nation": "JPN"
+     "nation": "CAN",
+     "time": "06:55",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Utana Yoshida / Masaya Morita",
-     "nation": "JPN"
+     "nation": "JPN",
+     "time": "07:01",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Yuka Orihara / Juho Pirinen",
-     "nation": "FIN"
+     "nation": "FIN",
+     "time": "07:08",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Loicia Demougeot / Theo le Mercier",
+     "nation": "FRA",
+     "time": "07:21",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Juulia Turkkila / Matthias Versluis",
+     "nation": "FIN",
+     "time": "07:28",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Christina Carreira / Anthony Ponomarenko",
+     "nation": "USA",
+     "time": "07:34",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Emilea Zingas / Vadym Kolesnik",
+     "nation": "USA",
+     "time": "07:41",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Olivia Smart / Tim Dieck",
+     "nation": "ESP",
+     "time": "07:47",
+     "no": 10,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG007.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Rika KIHIRA / Shingo NISHIYAMA": "Rika Kihira / Shingo Nishiyama",
+     "Ikura KUSHIDA / Koshiro SHIMADA": "Ikura Kushida / Koshiro Shimada",
+     "Marjorie LAJOIE / Jean-Luc BAKER": "Marjorie Lajoie / Jean-Luc Baker",
+     "Utana YOSHIDA / Masaya MORITA": "Utana Yoshida / Masaya Morita",
+     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
+     "Loicia DEMOUGEOT / Theo le MERCIER": "Loicia Demougeot / Theo le Mercier",
+     "Juulia TURKKILA / Matthias VERSLUIS": "Juulia Turkkila / Matthias Versluis",
+     "Christina CARREIRA / Anthony PONOMARENKO": "Christina Carreira / Anthony Ponomarenko",
+     "Emilea ZINGAS / Vadym KOLESNIK": "Emilea Zingas / Vadym Kolesnik",
+     "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:pairs-senior-kp",
@@ -68825,7 +68874,7 @@
    "seg": "КП",
    "title": "GP NHK Trophy — пары КП",
    "start": "2026-11-27T08:35:00+03:00",
-   "end": "2026-11-27T09:45:00+03:00",
+   "end": "2026-11-27T09:42:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
    "broadcast": [
@@ -68843,7 +68892,7 @@
     "Naomi Williams / Lachlan Lewer",
     "Yuna Nagaoka / Sumitada Moriguchi"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
+   "src": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -68857,39 +68906,80 @@
    "desc": "Начало: 08:35 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Anna Valesi / Martin Bidar",
-     "nation": "CZE"
-    },
-    {
-     "name": "Camille Kovalev / Pavel Kovalev",
-     "nation": "FRA"
+     "name": "Naomi Williams / Lachlan Lewer",
+     "nation": "USA",
+     "time": "08:42",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Chelsea Liu / Ryan Bedard",
-     "nation": "USA"
+     "nation": "USA",
+     "time": "08:48",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Anna Valesi / Martin Bidar",
+     "nation": "CZE",
+     "time": "08:55",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Jazmine Desrochers / Kieran Thrasher",
-     "nation": "CAN"
+     "nation": "CAN",
+     "time": "09:01",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Camille Kovalev / Pavel Kovalev",
+     "nation": "FRA",
+     "time": "09:15",
+     "no": 5,
+     "warmup": 2
     },
     {
      "name": "Karina Akopova / Nikita Rakhmanin",
-     "nation": "ARM"
-    },
-    {
-     "name": "Minerva Fabienne Hase / Nikita Volodin",
-     "nation": "GER"
-    },
-    {
-     "name": "Naomi Williams / Lachlan Lewer",
-     "nation": "USA"
+     "nation": "ARM",
+     "time": "09:21",
+     "no": 6,
+     "warmup": 2
     },
     {
      "name": "Yuna Nagaoka / Sumitada Moriguchi",
-     "nation": "JPN"
+     "nation": "JPN",
+     "time": "09:28",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Minerva Fabienne Hase / Nikita Volodin",
+     "nation": "GER",
+     "time": "09:34",
+     "no": 8,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG005.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Naomi WILLIAMS / Lachlan LEWER": "Naomi Williams / Lachlan Lewer",
+     "Chelsea LIU / Ryan BEDARD": "Chelsea Liu / Ryan Bedard",
+     "Anna VALESI / Martin BIDAR": "Anna Valesi / Martin Bidar",
+     "Jazmine DESROCHERS / Kieran THRASHER": "Jazmine Desrochers / Kieran Thrasher",
+     "Camille KOVALEV / Pavel KOVALEV": "Camille Kovalev / Pavel Kovalev",
+     "Karina AKOPOVA / Nikita RAKHMANIN": "Karina Akopova / Nikita Rakhmanin",
+     "Yuna NAGAOKA / Sumitada MORIGUCHI": "Yuna Nagaoka / Sumitada Moriguchi",
+     "Minerva Fabienne HASE / Nikita VOLODIN": "Minerva Fabienne Hase / Nikita Volodin"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:women-senior-kp",
@@ -68909,16 +68999,25 @@
    ],
    "ours": [
     {
-     "name": "Аделия Петросян",
-     "nation": "RUS"
-    },
-    {
      "name": "Алина Горбачёва",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "10:23",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Виктория Сафонова",
-     "nation": "BLR"
+     "nation": "BLR",
+     "time": "10:29",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Аделия Петросян",
+     "nation": "RUS",
+     "time": "10:47",
+     "no": 5,
+     "warmup": 1
     }
    ],
    "athletes": [
@@ -68935,7 +69034,7 @@
     "Алина Горбачёва",
     "Виктория Сафонова"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
+   "src": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -68946,58 +69045,115 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Россияне:\n• Аделия Петросян\n• Алина Горбачёва\n• Виктория Сафонова\n\nНачало: 10:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Россияне:\n• Алина Горбачёва — 10:23\n• Виктория Сафонова — 10:29\n• Аделия Петросян — 10:47\n\nНачало: 10:15 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Jia Shin",
-     "nation": "KOR"
-    },
-    {
-     "name": "Julia Sauter",
-     "nation": "ROU"
-    },
-    {
-     "name": "Kimmy Repond",
-     "nation": "SUI"
-    },
-    {
-     "name": "Madeline Schizas",
-     "nation": "CAN"
-    },
-    {
-     "name": "Mako Yamashita",
-     "nation": "JPN"
-    },
-    {
-     "name": "Mone Chiba",
-     "nation": "JPN"
-    },
-    {
-     "name": "Sarah Everhardt",
-     "nation": "USA"
-    },
-    {
-     "name": "Young You",
-     "nation": "KOR"
-    },
-    {
-     "name": "Yuna Aoki",
-     "nation": "JPN"
-    },
-    {
-     "name": "Аделия Петросян",
-     "nation": "RUS"
-    },
-    {
      "name": "Алина Горбачёва",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "10:23",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Виктория Сафонова",
-     "nation": "BLR"
+     "nation": "BLR",
+     "time": "10:29",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Young You",
+     "nation": "KOR",
+     "time": "10:35",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Mako Yamashita",
+     "nation": "JPN",
+     "time": "10:41",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Аделия Петросян",
+     "nation": "RUS",
+     "time": "10:47",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Julia Sauter",
+     "nation": "ROU",
+     "time": "10:53",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Kimmy Repond",
+     "nation": "SUI",
+     "time": "11:08",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Madeline Schizas",
+     "nation": "CAN",
+     "time": "11:14",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Yuna Aoki",
+     "nation": "JPN",
+     "time": "11:20",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Jia Shin",
+     "nation": "KOR",
+     "time": "11:26",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Sarah Everhardt",
+     "nation": "USA",
+     "time": "11:32",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Mone Chiba",
+     "nation": "JPN",
+     "time": "11:38",
+     "no": 12,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG003.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Alina GORBACHEVA": "Алина Горбачёва",
+     "Viktoriia SAFONOVA": "Виктория Сафонова",
+     "Young YOU": "Young You",
+     "Mako YAMASHITA": "Mako Yamashita",
+     "Adeliia PETROSIAN": "Аделия Петросян",
+     "Julia SAUTER": "Julia Sauter",
+     "Kimmy REPOND": "Kimmy Repond",
+     "Madeline SCHIZAS": "Madeline Schizas",
+     "Yuna AOKI": "Yuna Aoki",
+     "Jia SHIN": "Jia Shin",
+     "Sarah EVERHARDT": "Sarah Everhardt",
+     "Mone CHIBA": "Mone Chiba"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:men-senior-kp",
@@ -69018,11 +69174,17 @@
    "ours": [
     {
      "name": "Владислав Дикиджи",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "13:14",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Пётр Гуменник",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "13:20",
+     "no": 3,
+     "warmup": 1
     }
    ],
    "athletes": [
@@ -69039,7 +69201,7 @@
     "Владислав Дикиджи",
     "Пётр Гуменник"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
+   "src": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -69050,58 +69212,115 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Россияне:\n• Владислав Дикиджи\n• Пётр Гуменник\n\nНачало: 13:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Россияне:\n• Владислав Дикиджи — 13:14\n• Пётр Гуменник — 13:20\n\nНачало: 13:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Daniel Grassl",
-     "nation": "ITA"
-    },
-    {
-     "name": "Francois Pitot",
-     "nation": "FRA"
-    },
-    {
-     "name": "Ilia Malinin",
-     "nation": "USA"
-    },
-    {
-     "name": "Jason Brown",
-     "nation": "USA"
-    },
-    {
-     "name": "Kevin Aymoz",
-     "nation": "FRA"
-    },
-    {
-     "name": "Lukas Britschgi",
-     "nation": "SUI"
-    },
-    {
      "name": "Nozomu Yoshioka",
-     "nation": "JPN"
-    },
-    {
-     "name": "Rio Nakata",
-     "nation": "JPN"
-    },
-    {
-     "name": "Shun Sato",
-     "nation": "JPN"
-    },
-    {
-     "name": "Vladimir Samoilov",
-     "nation": "POL"
+     "nation": "JPN",
+     "time": "13:08",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Владислав Дикиджи",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "13:14",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Пётр Гуменник",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "13:20",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Francois Pitot",
+     "nation": "FRA",
+     "time": "13:26",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "time": "13:32",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Jason Brown",
+     "nation": "USA",
+     "time": "13:38",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Rio Nakata",
+     "nation": "JPN",
+     "time": "13:53",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Lukas Britschgi",
+     "nation": "SUI",
+     "time": "13:59",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Kevin Aymoz",
+     "nation": "FRA",
+     "time": "14:05",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Daniel Grassl",
+     "nation": "ITA",
+     "time": "14:11",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Shun Sato",
+     "nation": "JPN",
+     "time": "14:17",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Ilia Malinin",
+     "nation": "USA",
+     "time": "14:23",
+     "no": 12,
+     "warmup": 2
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Nozomu YOSHIOKA": "Nozomu Yoshioka",
+     "Vladislav DIKIDZHI": "Владислав Дикиджи",
+     "Petr GUMENNIK": "Пётр Гуменник",
+     "Francois PITOT": "Francois Pitot",
+     "Vladimir SAMOILOV": "Vladimir Samoilov",
+     "Jason BROWN": "Jason Brown",
+     "Rio NAKATA": "Rio Nakata",
+     "Lukas BRITSCHGI": "Lukas Britschgi",
+     "Kevin AYMOZ": "Kevin Aymoz",
+     "Daniel GRASSL": "Daniel Grassl",
+     "Shun SATO": "Shun Sato",
+     "Ilia MALININ": "Ilia Malinin"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "ffkm:2026-11-23_kubok:women-junior-pp",
@@ -69848,14 +70067,14 @@
     "Emilea Zingas / Vadym Kolesnik",
     "Ikura Kushida / Koshiro Shimada",
     "Juulia Turkkila / Matthias Versluis",
-    "Loicia Demougeot / Theo Le Mercier",
+    "Loicia Demougeot / Theo le Mercier",
     "Marjorie Lajoie / Jean-Luc Baker",
     "Olivia Smart / Tim Dieck",
     "Rika Kihira / Shingo Nishiyama",
     "Utana Yoshida / Masaya Morita",
     "Yuka Orihara / Juho Pirinen"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
+   "src": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -69885,7 +70104,7 @@
      "nation": "FIN"
     },
     {
-     "name": "Loicia Demougeot / Theo Le Mercier",
+     "name": "Loicia Demougeot / Theo le Mercier",
      "nation": "FRA"
     },
     {
@@ -69909,7 +70128,26 @@
      "nation": "FIN"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG008.htm",
+    "cat": "https://results.isu.org/results/season2627/gpjpn2026/CAT004RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpjpn2026/SEG007.htm",
+    "names": {
+     "Marjorie LAJOIE / Jean-Luc BAKER": "Marjorie Lajoie / Jean-Luc Baker",
+     "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck",
+     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
+     "Juulia TURKKILA / Matthias VERSLUIS": "Juulia Turkkila / Matthias Versluis",
+     "Loicia DEMOUGEOT / Theo le MERCIER": "Loicia Demougeot / Theo le Mercier",
+     "Rika KIHIRA / Shingo NISHIYAMA": "Rika Kihira / Shingo Nishiyama",
+     "Ikura KUSHIDA / Koshiro SHIMADA": "Ikura Kushida / Koshiro Shimada",
+     "Utana YOSHIDA / Masaya MORITA": "Utana Yoshida / Masaya Morita",
+     "Christina CARREIRA / Anthony PONOMARENKO": "Christina Carreira / Anthony Ponomarenko",
+     "Emilea ZINGAS / Vadym KOLESNIK": "Emilea Zingas / Vadym Kolesnik"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:pairs-senior-pp",
@@ -69938,7 +70176,7 @@
     "Naomi Williams / Lachlan Lewer",
     "Yuna Nagaoka / Sumitada Moriguchi"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
+   "src": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -69984,7 +70222,24 @@
      "nation": "JPN"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG006.htm",
+    "cat": "https://results.isu.org/results/season2627/gpjpn2026/CAT003RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpjpn2026/SEG005.htm",
+    "names": {
+     "Karina AKOPOVA / Nikita RAKHMANIN": "Karina Akopova / Nikita Rakhmanin",
+     "Jazmine DESROCHERS / Kieran THRASHER": "Jazmine Desrochers / Kieran Thrasher",
+     "Anna VALESI / Martin BIDAR": "Anna Valesi / Martin Bidar",
+     "Camille KOVALEV / Pavel KOVALEV": "Camille Kovalev / Pavel Kovalev",
+     "Minerva Fabienne HASE / Nikita VOLODIN": "Minerva Fabienne Hase / Nikita Volodin",
+     "Yuna NAGAOKA / Sumitada MORIGUCHI": "Yuna Nagaoka / Sumitada Moriguchi",
+     "Chelsea LIU / Ryan BEDARD": "Chelsea Liu / Ryan Bedard",
+     "Naomi WILLIAMS / Lachlan LEWER": "Naomi Williams / Lachlan Lewer"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:women-senior-pp",
@@ -70030,7 +70285,7 @@
     "Алина Горбачёва",
     "Виктория Сафонова"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
+   "src": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -70092,7 +70347,28 @@
      "nation": "BLR"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG004.htm",
+    "cat": "https://results.isu.org/results/season2627/gpjpn2026/CAT002RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpjpn2026/SEG003.htm",
+    "names": {
+     "Alina GORBACHEVA": "Алина Горбачёва",
+     "Adeliia PETROSIAN": "Аделия Петросян",
+     "Viktoriia SAFONOVA": "Виктория Сафонова",
+     "Madeline SCHIZAS": "Madeline Schizas",
+     "Yuna AOKI": "Yuna Aoki",
+     "Mone CHIBA": "Mone Chiba",
+     "Mako YAMASHITA": "Mako Yamashita",
+     "Jia SHIN": "Jia Shin",
+     "Young YOU": "Young You",
+     "Julia SAUTER": "Julia Sauter",
+     "Kimmy REPOND": "Kimmy Repond",
+     "Sarah EVERHARDT": "Sarah Everhardt"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "gs:skate-celje:women-junior-kp",
@@ -70482,7 +70758,7 @@
     "Владислав Дикиджи",
     "Пётр Гуменник"
    ],
-   "src": "https://isu-skating.com/en/figure-skating/events/eventdetail/isu-gp-nhk-trophy-2026/",
+   "src": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
    "watch": [
     {
      "name": "Okko",
@@ -70544,7 +70820,28 @@
      "nation": "RUS"
     }
    ],
-   "proto": null
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG002.htm",
+    "cat": "https://results.isu.org/results/season2627/gpjpn2026/CAT001RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpjpn2026/SEG001.htm",
+    "names": {
+     "Vladislav DIKIDZHI": "Владислав Дикиджи",
+     "Petr GUMENNIK": "Пётр Гуменник",
+     "Kevin AYMOZ": "Kevin Aymoz",
+     "Francois PITOT": "Francois Pitot",
+     "Daniel GRASSL": "Daniel Grassl",
+     "Rio NAKATA": "Rio Nakata",
+     "Shun SATO": "Shun Sato",
+     "Nozomu YOSHIOKA": "Nozomu Yoshioka",
+     "Vladimir SAMOILOV": "Vladimir Samoilov",
+     "Lukas BRITSCHGI": "Lukas Britschgi",
+     "Jason BROWN": "Jason Brown",
+     "Ilia MALININ": "Ilia Malinin"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:dance-junior-rt",
@@ -119893,6 +120190,13 @@
    "y": "2026/27"
   },
   {
+   "n": "Xuantong Li / Filip Bojanowski",
+   "c": "POL",
+   "k": "",
+   "was": "d",
+   "y": "2026/27"
+  },
+  {
    "n": "Salma Agamova",
    "c": "TUR",
    "k": "",
@@ -119932,13 +120236,6 @@
    "c": "CAN",
    "k": "",
    "was": "w",
-   "y": "2026/27"
-  },
-  {
-   "n": "Xuantong Li / Filip Bojanowski",
-   "c": "POL",
-   "k": "",
-   "was": "d",
    "y": "2026/27"
   }
  ],
@@ -122968,5 +123265,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "f8ccc459dee06b49"
+ "rev": "07166d882efc1e1f"
 }
