@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T21:02:12+03:00",
- "checked": "2026-11-26T19:37:34.637176+00:00",
+ "checked": "2026-11-26T19:49:35.355067+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69018,7 +69018,7 @@
      "time": "21:04",
      "no": 2,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "78.00"
     },
     {
@@ -69035,7 +69035,9 @@
      "nation": "GER",
      "time": "22:36",
      "no": 10,
-     "warmup": 3
+     "warmup": 3,
+     "place": 4,
+     "points": "92.81"
     },
     {
      "name": "Daniela Ivanitskiy / Matthew Sperry",
@@ -69043,7 +69045,7 @@
      "time": "21:35",
      "no": 5,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "82.57"
     },
     {
@@ -69052,7 +69054,7 @@
      "time": "21:12",
      "no": 3,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "83.27"
     },
     {
@@ -69091,7 +69093,7 @@
      "time": "21:51",
      "no": 7,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "86.69"
     },
     {
@@ -69120,7 +69122,7 @@
     {
      "name": "Xuantong Li / Filip Bojanowski",
      "nation": "POL",
-     "place": 9,
+     "place": 10,
      "points": "66.05",
      "time": "20:56",
      "no": 1,
@@ -69139,7 +69141,7 @@
      "time": "21:20",
      "no": 4,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "82.71"
     }
    ],
@@ -123851,5 +123853,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "be20859bbad72243"
+ "rev": "e21d0e293fad7e3d"
 }
