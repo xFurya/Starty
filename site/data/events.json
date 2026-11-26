@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T14:37:03.754511+00:00",
+ "checked": "2026-11-26T14:41:03.106887+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67943,7 +67943,7 @@
      "nation": "ОМС",
      "no": 1,
      "warmup": null,
-     "place": 11,
+     "place": 12,
      "points": "75.26"
     },
     {
@@ -67951,7 +67951,7 @@
      "nation": "БАШ",
      "no": 2,
      "warmup": null,
-     "place": 12,
+     "place": 13,
      "points": "75.23"
     },
     {
@@ -67967,7 +67967,7 @@
      "nation": "ТЮМ",
      "no": 4,
      "warmup": null,
-     "place": 9,
+     "place": 10,
      "points": "78.20"
     },
     {
@@ -67983,7 +67983,7 @@
      "nation": "НВС",
      "no": 6,
      "warmup": null,
-     "place": 10,
+     "place": 11,
      "points": "76.31"
     },
     {
@@ -67991,7 +67991,7 @@
      "nation": "ХМА",
      "no": 7,
      "warmup": null,
-     "place": 13,
+     "place": 14,
      "points": "74.33"
     },
     {
@@ -68007,7 +68007,7 @@
      "nation": "КРГ",
      "no": 9,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "81.21"
     },
     {
@@ -68046,7 +68046,9 @@
      "name": "Мария Зырянова",
      "nation": "СВЕ",
      "no": 14,
-     "warmup": null
+     "warmup": null,
+     "place": 8,
+     "points": "81.56"
     },
     {
      "name": "Анастасия Жуланова",
@@ -68272,7 +68274,9 @@
      "name": "Кирилл Лутошкин",
      "nation": "",
      "no": 8,
-     "warmup": null
+     "warmup": null,
+     "place": 8,
+     "points": "57.80"
     },
     {
      "name": "Платон Жильцов",
@@ -123496,5 +123500,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "bf921fdd41aac4bc"
+ "rev": "94c570b16dea8a41"
 }
