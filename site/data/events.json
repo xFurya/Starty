@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T15:05:03.770555+00:00",
+ "checked": "2026-11-26T15:09:34.254497+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68235,7 +68235,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 10,
+     "place": 11,
      "points": "59.54"
     },
     {
@@ -68251,7 +68251,7 @@
      "nation": "",
      "no": 4,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "67.04"
     },
     {
@@ -68259,7 +68259,7 @@
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 9,
+     "place": 10,
      "points": "60.92"
     },
     {
@@ -68283,7 +68283,7 @@
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 11,
+     "place": 12,
      "points": "57.80"
     },
     {
@@ -68291,7 +68291,7 @@
      "nation": "",
      "no": 9,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "66.66"
     },
     {
@@ -68299,7 +68299,7 @@
      "nation": "",
      "no": 10,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "64.55"
     },
     {
@@ -68307,14 +68307,16 @@
      "nation": "",
      "no": 11,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "62.74"
     },
     {
      "name": "Георгий Терехов",
      "nation": "",
      "no": 12,
-     "warmup": null
+     "warmup": null,
+     "place": 5,
+     "points": "68.45"
     },
     {
      "name": "Степан Федоров",
@@ -123518,5 +123520,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "5f0b8d63e6bfa481"
+ "rev": "0318e16b1fc24895"
 }
