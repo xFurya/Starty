@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T15:49:33.653312+00:00",
+ "checked": "2026-11-26T15:53:34.046628+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68302,7 +68302,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 15,
+     "place": 16,
      "points": "59.54"
     },
     {
@@ -68326,7 +68326,7 @@
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 13,
+     "place": 14,
      "points": "60.92"
     },
     {
@@ -68350,7 +68350,7 @@
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 16,
+     "place": 17,
      "points": "57.80"
     },
     {
@@ -68374,7 +68374,7 @@
      "nation": "",
      "no": 11,
      "warmup": null,
-     "place": 11,
+     "place": 12,
      "points": "62.74"
     },
     {
@@ -68390,7 +68390,7 @@
      "nation": "",
      "no": 13,
      "warmup": null,
-     "place": 14,
+     "place": 15,
      "points": "59.89"
     },
     {
@@ -68398,7 +68398,7 @@
      "nation": "",
      "no": 14,
      "warmup": null,
-     "place": 12,
+     "place": 13,
      "points": "61.10"
     },
     {
@@ -68421,7 +68421,9 @@
      "name": "Максим Стрелков",
      "nation": "",
      "no": 17,
-     "warmup": null
+     "warmup": null,
+     "place": 11,
+     "points": "64.15"
     },
     {
      "name": "Павел Шин",
@@ -123605,5 +123607,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "a9d46f72ff16f5c3"
+ "rev": "4351cc1f419c2678"
 }
