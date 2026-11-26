@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-26T23:31:04+03:00",
- "checked": "2026-11-26T23:31:04+03:00",
- "complete": false,
+ "generated": "2026-11-27T00:35:54+03:00",
+ "checked": "2026-11-27T00:35:54+03:00",
+ "complete": true,
  "epoch": 1,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
-  "Golden Skate": "fail",
+  "Golden Skate": "ok",
   "ФФКМ": "ok",
   "Самара": "ok"
  },
@@ -68966,7 +68966,7 @@
    "seg": "ПТ",
    "title": "CS PGE Warsaw Cup — танцы ПТ",
    "start": "2026-11-26T20:50:00+03:00",
-   "end": "2026-11-26T23:39:00+03:00",
+   "end": "2026-11-26T23:30:00+03:00",
    "venue": "Warsaw, Poland",
    "intl": true,
    "broadcast": [],
@@ -69005,189 +69005,11 @@
     },
     {
      "place": 3,
-     "name": "Giulia Isabella Paolino / Andrea Tuba",
-     "nation": "ITA",
-     "points": "98.34"
-    }
-   ],
-   "desc": "Промежуточные итоги:\n1. Milla Ruud Reitan / Nikolaj Majorov — 104.21\n2. Shira Ichilov / Mikhail Nosovitskiy — 98.56\n3. Giulia Isabella Paolino / Andrea Tuba — 98.34\n\nНачало: 20:50 МСК",
-   "field": [
-    {
-     "name": "Arianna Sassi / Luca Morini",
-     "nation": "SUI",
-     "place": 14,
-     "points": "78.00",
-     "time": "21:04",
-     "no": 2,
-     "warmup": 1
-    },
-    {
-     "name": "Celina Fradji / Jean-Hans Fourneaux",
-     "nation": "FRA",
-     "place": 7,
-     "points": "93.03",
-     "time": "21:59",
-     "no": 8,
-     "warmup": 2
-    },
-    {
-     "name": "Charise Matthaei / Max Liebers",
-     "nation": "GER",
-     "place": 9,
-     "points": "92.81",
-     "time": "22:36",
-     "no": 10,
-     "warmup": 3
-    },
-    {
-     "name": "Daniela Ivanitskiy / Matthew Sperry",
-     "nation": "FIN",
-     "place": 13,
-     "points": "82.57",
-     "time": "21:35",
-     "no": 5,
-     "warmup": 2
-    },
-    {
-     "name": "Emese Csiszer / Mark Shapiro",
-     "nation": "HUN",
-     "place": 11,
-     "points": "83.27",
-     "time": "21:12",
-     "no": 3,
-     "warmup": 1
-    },
-    {
-     "name": "Giulia Isabella Paolino / Andrea Tuba",
-     "nation": "ITA",
-     "place": 3,
-     "points": "98.34",
-     "time": "23:23",
-     "no": 15,
-     "warmup": 4,
-     "place": 4,
-     "points": "98.34",
-     "final": 3
-    },
-    {
-     "name": "Isabella Flores / Linus Colmor Jepsen",
-     "nation": "USA",
-     "place": 4,
-     "points": "98.22",
-     "time": "22:52",
-     "no": 12,
-     "warmup": 3
-    },
-    {
-     "name": "Milla Ruud Reitan / Nikolaj Majorov",
-     "nation": "SWE",
-     "place": 1,
-     "points": "104.21",
-     "time": "23:15",
-     "no": 14,
-     "warmup": 4
-    },
-    {
-     "name": "Natacha Lagouge / Arnaud Caffa",
-     "nation": "FRA",
-     "place": 6,
-     "points": "93.45",
-     "time": "22:28",
-     "no": 9,
-     "warmup": 3
-    },
-    {
-     "name": "Olivia Josephine Shilling / Leo Baeten",
-     "nation": "BEL",
-     "place": 10,
-     "points": "86.69",
-     "time": "21:51",
-     "no": 7,
-     "warmup": 2
-    },
-    {
-     "name": "Philomene Sabourin / Raul Bermejo",
-     "nation": "ESP",
-     "place": 5,
-     "points": "94.63",
-     "time": "21:43",
-     "no": 6,
-     "warmup": 2
-    },
-    {
      "name": "Shira Ichilov / Mikhail Nosovitskiy",
      "nation": "ISR",
-     "place": 2,
-     "points": "98.56",
-     "time": "22:44",
-     "no": 11,
-     "warmup": 3
-    },
-    {
-     "name": "Sofia Val / Asaf Kazimov",
-     "nation": "ESP",
-     "time": "23:31",
-     "no": 16,
-     "warmup": 4,
-     "place": 2,
-     "points": "100.40",
-     "final": 2
-    },
-    {
-     "name": "Xuantong Li / Filip Bojanowski",
-     "nation": "POL",
-     "place": 15,
-     "points": "66.05",
-     "time": "20:56",
-     "no": 1,
-     "warmup": 1,
-     "final": 16
-    },
-    {
-     "name": "Zoe Larson / Andrii Kapran",
-     "nation": "UKR",
-     "place": 8,
-     "points": "92.97",
-     "time": "23:07",
-     "no": 13,
-     "warmup": 4
-    },
-    {
-     "name": "Zofia Grzegorzewska / Oleg Muratov",
-     "nation": "POL",
-     "place": 12,
-     "points": "82.71",
-     "time": "21:20",
-     "no": 4,
-     "warmup": 1
+     "points": "98.56"
     }
    ],
-   "live": {
-    "idx": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-    "seg": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG008.htm",
-    "cat": "https://pzlf-wyniki.pl/2627/CSPOL2026/CAT004RS.htm",
-    "first": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG007.htm",
-    "names": {
-     "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov",
-     "Giulia Isabella PAOLINO / Andrea TUBA": "Giulia Isabella Paolino / Andrea Tuba",
-     "Shira ICHILOV / Mikhail NOSOVITSKIY": "Shira Ichilov / Mikhail Nosovitskiy",
-     "Isabella FLORES / Linus Colmor JEPSEN": "Isabella Flores / Linus Colmor Jepsen",
-     "Zoe LARSON / Andrii KAPRAN": "Zoe Larson / Andrii Kapran",
-     "Natacha LAGOUGE / Arnaud CAFFA": "Natacha Lagouge / Arnaud Caffa",
-     "Charise MATTHAEI / Max LIEBERS": "Charise Matthaei / Max Liebers",
-     "Celina FRADJI / Jean-Hans FOURNEAUX": "Celina Fradji / Jean-Hans Fourneaux",
-     "Philomene SABOURIN / Raul BERMEJO": "Philomene Sabourin / Raul Bermejo",
-     "Olivia Josephine SHILLING / Leo BAETEN": "Olivia Josephine Shilling / Leo Baeten",
-     "Daniela IVANITSKIY / Matthew SPERRY": "Daniela Ivanitskiy / Matthew Sperry",
-     "Zofia GRZEGORZEWSKA / Oleg MURATOV": "Zofia Grzegorzewska / Oleg Muratov",
-     "Emese CSISZER / Mark SHAPIRO": "Emese Csiszer / Mark Shapiro",
-     "Arianna SASSI / Luca MORINI": "Arianna Sassi / Luca Morini",
-     "Xuantong LI / Filip BOJANOWSKI": "Xuantong Li / Filip Bojanowski",
-     "Sofia VAL / Asaf KAZIMOV": "Sofia Val / Asaf Kazimov"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json",
    "total": [
     {
      "place": 1,
@@ -69207,7 +69029,196 @@
      "nation": "ITA",
      "points": "167.50"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Milla Ruud Reitan / Nikolaj Majorov — 104.21\n2. Sofia Val / Asaf Kazimov — 100.40\n3. Shira Ichilov / Mikhail Nosovitskiy — 98.56\n\nИтог турнира:\n1. Milla Ruud Reitan / Nikolaj Majorov — 173.26\n2. Sofia Val / Asaf Kazimov — 170.21\n3. Giulia Isabella Paolino / Andrea Tuba — 167.50\n\nНачало: 20:50 МСК",
+   "field": [
+    {
+     "name": "Xuantong Li / Filip Bojanowski",
+     "nation": "POL",
+     "no": 1,
+     "warmup": 1,
+     "place": 16,
+     "points": "66.05",
+     "final": 16,
+     "time": "20:56"
+    },
+    {
+     "name": "Arianna Sassi / Luca Morini",
+     "nation": "SUI",
+     "no": 2,
+     "warmup": 1,
+     "place": 15,
+     "points": "78.00",
+     "final": 15,
+     "time": "21:04"
+    },
+    {
+     "name": "Emese Csiszer / Mark Shapiro",
+     "nation": "HUN",
+     "no": 3,
+     "warmup": 1,
+     "place": 12,
+     "points": "83.27",
+     "final": 14,
+     "time": "21:12"
+    },
+    {
+     "name": "Zofia Grzegorzewska / Oleg Muratov",
+     "nation": "POL",
+     "no": 4,
+     "warmup": 1,
+     "place": 13,
+     "points": "82.71",
+     "final": 13,
+     "time": "21:20"
+    },
+    {
+     "name": "Daniela Ivanitskiy / Matthew Sperry",
+     "nation": "FIN",
+     "no": 5,
+     "warmup": 2,
+     "place": 14,
+     "points": "82.57",
+     "final": 12,
+     "time": "21:35"
+    },
+    {
+     "name": "Philomene Sabourin / Raul Bermejo",
+     "nation": "ESP",
+     "no": 6,
+     "warmup": 2,
+     "place": 6,
+     "points": "94.63",
+     "final": 10,
+     "time": "21:43"
+    },
+    {
+     "name": "Olivia Josephine Shilling / Leo Baeten",
+     "nation": "BEL",
+     "no": 7,
+     "warmup": 2,
+     "place": 11,
+     "points": "86.69",
+     "final": 11,
+     "time": "21:51"
+    },
+    {
+     "name": "Celina Fradji / Jean-Hans Fourneaux",
+     "nation": "FRA",
+     "no": 8,
+     "warmup": 2,
+     "place": 8,
+     "points": "93.03",
+     "final": 9,
+     "time": "21:59"
+    },
+    {
+     "name": "Natacha Lagouge / Arnaud Caffa",
+     "nation": "FRA",
+     "no": 9,
+     "warmup": 3,
+     "place": 7,
+     "points": "93.45",
+     "final": 7,
+     "time": "22:28"
+    },
+    {
+     "name": "Charise Matthaei / Max Liebers",
+     "nation": "GER",
+     "no": 10,
+     "warmup": 3,
+     "place": 10,
+     "points": "92.81",
+     "final": 8,
+     "time": "22:36"
+    },
+    {
+     "name": "Shira Ichilov / Mikhail Nosovitskiy",
+     "nation": "ISR",
+     "no": 11,
+     "warmup": 3,
+     "place": 3,
+     "points": "98.56",
+     "final": 4,
+     "time": "22:44"
+    },
+    {
+     "name": "Isabella Flores / Linus Colmor Jepsen",
+     "nation": "USA",
+     "no": 12,
+     "warmup": 3,
+     "place": 5,
+     "points": "98.22",
+     "final": 5,
+     "time": "22:52"
+    },
+    {
+     "name": "Zoe Larson / Andrii Kapran",
+     "nation": "UKR",
+     "no": 13,
+     "warmup": 4,
+     "place": 9,
+     "points": "92.97",
+     "final": 6,
+     "time": "23:07"
+    },
+    {
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "no": 14,
+     "warmup": 4,
+     "place": 1,
+     "points": "104.21",
+     "final": 1,
+     "time": "23:15"
+    },
+    {
+     "name": "Giulia Isabella Paolino / Andrea Tuba",
+     "nation": "ITA",
+     "no": 15,
+     "warmup": 4,
+     "place": 4,
+     "points": "98.34",
+     "final": 3,
+     "time": "23:23"
+    },
+    {
+     "name": "Sofia Val / Asaf Kazimov",
+     "nation": "ESP",
+     "no": 16,
+     "warmup": 4,
+     "place": 2,
+     "points": "100.40",
+     "final": 2,
+     "time": "23:31"
+    }
+   ],
+   "live": {
+    "idx": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
+    "seg": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG008.htm",
+    "cat": "https://pzlf-wyniki.pl/2627/CSPOL2026/CAT004RS.htm",
+    "first": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG007.htm",
+    "names": {
+     "Milla Ruud REITAN / Nikolaj MAJOROV": "Milla Ruud Reitan / Nikolaj Majorov",
+     "Sofia VAL / Asaf KAZIMOV": "Sofia Val / Asaf Kazimov",
+     "Shira ICHILOV / Mikhail NOSOVITSKIY": "Shira Ichilov / Mikhail Nosovitskiy",
+     "Giulia Isabella PAOLINO / Andrea TUBA": "Giulia Isabella Paolino / Andrea Tuba",
+     "Isabella FLORES / Linus Colmor JEPSEN": "Isabella Flores / Linus Colmor Jepsen",
+     "Philomene SABOURIN / Raul BERMEJO": "Philomene Sabourin / Raul Bermejo",
+     "Natacha LAGOUGE / Arnaud CAFFA": "Natacha Lagouge / Arnaud Caffa",
+     "Celina FRADJI / Jean-Hans FOURNEAUX": "Celina Fradji / Jean-Hans Fourneaux",
+     "Zoe LARSON / Andrii KAPRAN": "Zoe Larson / Andrii Kapran",
+     "Charise MATTHAEI / Max LIEBERS": "Charise Matthaei / Max Liebers",
+     "Olivia Josephine SHILLING / Leo BAETEN": "Olivia Josephine Shilling / Leo Baeten",
+     "Emese CSISZER / Mark SHAPIRO": "Emese Csiszer / Mark Shapiro",
+     "Zofia GRZEGORZEWSKA / Oleg MURATOV": "Zofia Grzegorzewska / Oleg Muratov",
+     "Daniela IVANITSKIY / Matthew SPERRY": "Daniela Ivanitskiy / Matthew Sperry",
+     "Arianna SASSI / Luca MORINI": "Arianna Sassi / Luca Morini",
+     "Xuantong LI / Filip BOJANOWSKI": "Xuantong Li / Filip Bojanowski"
+    },
+    "basis": "judges"
+   },
+   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:dance-senior-rt",
@@ -70994,7 +71005,7 @@
    "seg": "КП",
    "title": "Skate Celje — девушки КП",
    "start": "2026-11-28T10:30:00+03:00",
-   "end": "2026-11-28T18:10:00+03:00",
+   "end": "2026-11-28T18:25:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -71030,6 +71041,7 @@
     "Lara Achermann",
     "Leyla Tosun",
     "Liana Smrekar",
+    "Lija Kroselj",
     "Lucca Dijkhuizen",
     "Luna Rozman",
     "Mariia Sannikova",
@@ -71039,6 +71051,7 @@
     "Neea Haapala",
     "Neza Lusic",
     "Nika Sajko",
+    "Nina Lazarevic",
     "Polina Bykova",
     "Roos Harkema",
     "Summer Wijkhuizen",
@@ -71054,7 +71067,7 @@
     "Vita Kas",
     "Zala Grum",
     "Zala Kas",
-    "Ziva Aupic",
+    "Zoja Zupancic Prevolsek",
     "Zsofia Szeplaki",
     "Алиса Заикина"
    ],
@@ -71162,6 +71175,10 @@
      "nation": "SLO"
     },
     {
+     "name": "Lija Kroselj",
+     "nation": "SLO"
+    },
+    {
      "name": "Lucca Dijkhuizen",
      "nation": "NED"
     },
@@ -71196,6 +71213,10 @@
     {
      "name": "Nika Sajko",
      "nation": "CRO"
+    },
+    {
+     "name": "Nina Lazarevic",
+     "nation": "SLO"
     },
     {
      "name": "Polina Bykova",
@@ -71258,7 +71279,7 @@
      "nation": "SLO"
     },
     {
-     "name": "Ziva Aupic",
+     "name": "Zoja Zupancic Prevolsek",
      "nation": "SLO"
     },
     {
@@ -71278,7 +71299,6 @@
     "names": {
      "Varvara ABRAMKINA": "Varvara Abramkina",
      "Lara ACHERMANN": "Lara Achermann",
-     "Ziva AUPIC": "Ziva Aupic",
      "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
      "Polina BYKOVA": "Polina Bykova",
      "Emma CERKALOVA": "Emma Cerkalova",
@@ -71298,7 +71318,9 @@
      "Tiana KALIGARO": "Tiana Kaligaro",
      "Vita KAS": "Vita Kas",
      "Zala KAS": "Zala Kas",
+     "Lija KROSELJ": "Lija Kroselj",
      "Andreea Cristiana Maria LAZAR": "Andreea Cristiana Maria Lazar",
+     "Nina LAZAREVIC": "Nina Lazarevic",
      "Alica LENGYELOVA": "Alica Lengyelova",
      "Neza LUSIC": "Neza Lusic",
      "Ketevan MAKHARADZE": "Ketevan Makharadze",
@@ -71327,7 +71349,8 @@
      "Milena VELCHEVA": "Milena Velcheva",
      "Summer WIJKHUIZEN": "Summer Wijkhuizen",
      "Victoria YONEMORI": "Victoria Yonemori",
-     "Alisa ZAIKINA": "Алиса Заикина"
+     "Alisa ZAIKINA": "Алиса Заикина",
+     "Zoja ZUPANCIC PREVOLSEK": "Zoja Zupancic Prevolsek"
     },
     "basis": null
    },
@@ -72039,7 +72062,7 @@
    "seg": "КП",
    "title": "Skate Celje — мужчины КП",
    "start": "2026-11-28T22:48:00+03:00",
-   "end": "2026-11-28T23:53:00+03:00",
+   "end": "2026-11-28T23:48:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -72052,7 +72075,6 @@
    "athletes": [
     "Alessandro Liberatore",
     "Anton Skoficz",
-    "Chiu Hei Cheung",
     "David Sedej",
     "Furkan Emre Incel",
     "Mikayel Salazaryan",
@@ -72069,10 +72091,6 @@
     {
      "name": "Anton Skoficz",
      "nation": "AUT"
-    },
-    {
-     "name": "Chiu Hei Cheung",
-     "nation": "HKG"
     },
     {
      "name": "David Sedej",
@@ -72101,7 +72119,6 @@
     "cat": null,
     "first": null,
     "names": {
-     "Chiu Hei CHEUNG": "Chiu Hei Cheung",
      "Furkan Emre INCEL": "Furkan Emre Incel",
      "Lev LAZAREV": "Лев Лазарев",
      "Alessandro LIBERATORE": "Alessandro Liberatore",
@@ -72123,7 +72140,7 @@
    "seg": "ПП",
    "title": "Skate Celje — девушки ПП",
    "start": "2026-11-29T10:30:00+03:00",
-   "end": "2026-11-29T19:05:00+03:00",
+   "end": "2026-11-29T19:20:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -72159,6 +72176,7 @@
     "Lara Achermann",
     "Leyla Tosun",
     "Liana Smrekar",
+    "Lija Kroselj",
     "Lucca Dijkhuizen",
     "Luna Rozman",
     "Mariia Sannikova",
@@ -72168,6 +72186,7 @@
     "Neea Haapala",
     "Neza Lusic",
     "Nika Sajko",
+    "Nina Lazarevic",
     "Polina Bykova",
     "Roos Harkema",
     "Summer Wijkhuizen",
@@ -72183,7 +72202,7 @@
     "Vita Kas",
     "Zala Grum",
     "Zala Kas",
-    "Ziva Aupic",
+    "Zoja Zupancic Prevolsek",
     "Zsofia Szeplaki",
     "Алиса Заикина"
    ],
@@ -72291,6 +72310,10 @@
      "nation": "SLO"
     },
     {
+     "name": "Lija Kroselj",
+     "nation": "SLO"
+    },
+    {
      "name": "Lucca Dijkhuizen",
      "nation": "NED"
     },
@@ -72325,6 +72348,10 @@
     {
      "name": "Nika Sajko",
      "nation": "CRO"
+    },
+    {
+     "name": "Nina Lazarevic",
+     "nation": "SLO"
     },
     {
      "name": "Polina Bykova",
@@ -72387,7 +72414,7 @@
      "nation": "SLO"
     },
     {
-     "name": "Ziva Aupic",
+     "name": "Zoja Zupancic Prevolsek",
      "nation": "SLO"
     },
     {
@@ -72407,7 +72434,6 @@
     "names": {
      "Varvara ABRAMKINA": "Varvara Abramkina",
      "Lara ACHERMANN": "Lara Achermann",
-     "Ziva AUPIC": "Ziva Aupic",
      "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
      "Polina BYKOVA": "Polina Bykova",
      "Emma CERKALOVA": "Emma Cerkalova",
@@ -72427,7 +72453,9 @@
      "Tiana KALIGARO": "Tiana Kaligaro",
      "Vita KAS": "Vita Kas",
      "Zala KAS": "Zala Kas",
+     "Lija KROSELJ": "Lija Kroselj",
      "Andreea Cristiana Maria LAZAR": "Andreea Cristiana Maria Lazar",
+     "Nina LAZAREVIC": "Nina Lazarevic",
      "Alica LENGYELOVA": "Alica Lengyelova",
      "Neza LUSIC": "Neza Lusic",
      "Ketevan MAKHARADZE": "Ketevan Makharadze",
@@ -72456,7 +72484,8 @@
      "Milena VELCHEVA": "Milena Velcheva",
      "Summer WIJKHUIZEN": "Summer Wijkhuizen",
      "Victoria YONEMORI": "Victoria Yonemori",
-     "Alisa ZAIKINA": "Алиса Заикина"
+     "Alisa ZAIKINA": "Алиса Заикина",
+     "Zoja ZUPANCIC PREVOLSEK": "Zoja Zupancic Prevolsek"
     },
     "basis": null
    },
@@ -72931,7 +72960,7 @@
    "seg": "ПП",
    "title": "Skate Celje — мужчины ПП",
    "start": "2026-11-29T18:00:00+03:00",
-   "end": "2026-11-29T19:15:00+03:00",
+   "end": "2026-11-29T19:05:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -72944,7 +72973,6 @@
    "athletes": [
     "Alessandro Liberatore",
     "Anton Skoficz",
-    "Chiu Hei Cheung",
     "David Sedej",
     "Furkan Emre Incel",
     "Mikayel Salazaryan",
@@ -72961,10 +72989,6 @@
     {
      "name": "Anton Skoficz",
      "nation": "AUT"
-    },
-    {
-     "name": "Chiu Hei Cheung",
-     "nation": "HKG"
     },
     {
      "name": "David Sedej",
@@ -72993,7 +73017,6 @@
     "cat": "https://dev.mbit.si/EC/skcel2026/CAT001RS.htm",
     "first": "https://dev.mbit.si/EC/skcel2026/SEG001.htm",
     "names": {
-     "Chiu Hei CHEUNG": "Chiu Hei Cheung",
      "Furkan Emre INCEL": "Furkan Emre Incel",
      "Lev LAZAREV": "Лев Лазарев",
      "Alessandro LIBERATORE": "Alessandro Liberatore",
@@ -73868,7 +73891,7 @@
    "watch": [
     {
      "name": "VK Видео",
-     "url": "https://vkvideo.ru/live-171234363_456239688"
+     "url": "https://vkvideo.ru/live-171234363_456239689"
     }
    ]
   },
@@ -81093,7 +81116,9 @@
   {
    "n": "Chiu Hei Cheung",
    "c": "HKG",
-   "k": "m",
+   "k": "",
+   "was": "m",
+   "y": "2025/26",
    "p": "94945a61ef07"
   },
   {
@@ -123889,5 +123914,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "d4ce718492c9eca9"
+ "rev": "c15a84f2bdfe2db1"
 }
