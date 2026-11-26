@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T14:49:03.659744+00:00",
+ "checked": "2026-11-26T14:53:03.566375+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67943,7 +67943,7 @@
      "nation": "ОМС",
      "no": 1,
      "warmup": null,
-     "place": 13,
+     "place": 14,
      "points": "75.26"
     },
     {
@@ -67951,7 +67951,7 @@
      "nation": "БАШ",
      "no": 2,
      "warmup": null,
-     "place": 14,
+     "place": 15,
      "points": "75.23"
     },
     {
@@ -67959,7 +67959,7 @@
      "nation": "ХМА",
      "no": 3,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "89.03"
     },
     {
@@ -67967,7 +67967,7 @@
      "nation": "ТЮМ",
      "no": 4,
      "warmup": null,
-     "place": 11,
+     "place": 12,
      "points": "78.20"
     },
     {
@@ -67975,7 +67975,7 @@
      "nation": "БАШ",
      "no": 5,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "90.05"
     },
     {
@@ -67983,7 +67983,7 @@
      "nation": "НВС",
      "no": 6,
      "warmup": null,
-     "place": 12,
+     "place": 13,
      "points": "76.31"
     },
     {
@@ -67991,7 +67991,7 @@
      "nation": "ХМА",
      "no": 7,
      "warmup": null,
-     "place": 15,
+     "place": 16,
      "points": "74.33"
     },
     {
@@ -68007,7 +68007,7 @@
      "nation": "КРГ",
      "no": 9,
      "warmup": null,
-     "place": 10,
+     "place": 11,
      "points": "81.21"
     },
     {
@@ -68015,7 +68015,7 @@
      "nation": "ВОЛ",
      "no": 10,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "83.69"
     },
     {
@@ -68047,7 +68047,7 @@
      "nation": "СВЕ",
      "no": 14,
      "warmup": null,
-     "place": 9,
+     "place": 10,
      "points": "81.56"
     },
     {
@@ -68062,7 +68062,9 @@
      "name": "Тамара Антонова",
      "nation": "ЛЕН",
      "no": 16,
-     "warmup": null
+     "warmup": null,
+     "place": 6,
+     "points": "92.79"
     },
     {
      "name": "Юлиана Новиченкова",
@@ -68229,7 +68231,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "59.54"
     },
     {
@@ -68253,7 +68255,7 @@
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "60.92"
     },
     {
@@ -68277,7 +68279,7 @@
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 9,
+     "place": 10,
      "points": "57.80"
     },
     {
@@ -68292,7 +68294,9 @@
      "name": "Максим Брагин",
      "nation": "",
      "no": 10,
-     "warmup": null
+     "warmup": null,
+     "place": 7,
+     "points": "64.55"
     },
     {
      "name": "Тагар Самбуев",
@@ -123508,5 +123512,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "7042966f8c8a482d"
+ "rev": "4935c1116aa6ed49"
 }
