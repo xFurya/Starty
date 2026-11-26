@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T11:27:55+03:00",
- "checked": "2026-11-26T08:55:05.235697+00:00",
+ "checked": "2026-11-26T08:59:05.346986+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67712,122 +67712,137 @@
      "points": "112.48"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Елизавета Лабутина — 124.54\n2. Мария Лабутина — 122.73\n3. София Буза — 112.48\n\nНачало: 09:30 МСК",
+   "desc": "Итог:\n1. Елизавета Лабутина — 124.54\n2. Мария Лабутина — 122.73\n3. София Буза — 112.48\n\nИтог турнира:\n1. Елизавета Лабутина — 191.53\n2. Мария Лабутина — 188.71\n3. Виктория Федянина — 172.25\n\nНачало: 09:30 МСК",
    "field": [
     {
      "name": "Александра Андреева",
      "nation": "ВОР",
      "place": 16,
      "points": "77.25",
-     "no": 1
+     "no": 1,
+     "final": 16
     },
     {
      "name": "Александра Пискотина",
      "nation": "ПРМ",
      "place": 12,
      "points": "92.70",
-     "no": 2
+     "no": 2,
+     "final": 15
     },
     {
      "name": "Виктория Федянина",
      "nation": "ПРМ",
      "place": 4,
      "points": "110.89",
-     "no": 13
+     "no": 13,
+     "final": 3
     },
     {
      "name": "Влада Ершова",
      "nation": "ОМС",
      "place": 10,
      "points": "95.37",
-     "no": 4
+     "no": 4,
+     "final": 12
     },
     {
      "name": "Екатерина Милютина",
      "nation": "НВС",
      "place": 14,
      "points": "91.10",
-     "no": 6
+     "no": 6,
+     "final": 13
     },
     {
      "name": "Елизавета Вахитова",
      "nation": "ЧЕЛ",
      "place": 5,
      "points": "109.00",
-     "no": 8
+     "no": 8,
+     "final": 6
     },
     {
      "name": "Елизавета Лабутина",
      "nation": "СВЕ",
      "no": 17,
      "place": 1,
-     "points": "124.54"
+     "points": "124.54",
+     "final": 1
     },
     {
      "name": "Залина Капачева",
      "nation": "ЯНА",
      "place": 8,
      "points": "106.61",
-     "no": 12
+     "no": 12,
+     "final": 7
     },
     {
      "name": "Мария Волченко",
      "nation": "ЧЕЛ",
      "place": 15,
      "points": "83.11",
-     "no": 9
+     "no": 9,
+     "final": 14
     },
     {
      "name": "Мария Ганина",
      "nation": "ОМС",
      "place": 7,
      "points": "107.00",
-     "no": 3
+     "no": 3,
+     "final": 10
     },
     {
      "name": "Мария Лабутина",
      "nation": "ВОЛ",
      "no": 16,
      "place": 2,
-     "points": "122.73"
+     "points": "122.73",
+     "final": 2
     },
     {
      "name": "Милана Архипова",
      "nation": "ПРМ",
      "place": 11,
      "points": "93.83",
-     "no": 14
+     "no": 14,
+     "final": 9
     },
     {
      "name": "Ника Губарева",
      "nation": "ОРН",
      "no": 15,
      "place": 6,
-     "points": "107.59"
+     "points": "107.59",
+     "final": 5
     },
     {
      "name": "Полина Бусыгина",
      "nation": "СВЕ",
      "place": 13,
      "points": "92.51",
-     "no": 11
+     "no": 11,
+     "final": 11
     },
     {
      "name": "София Буза",
      "nation": "ОМС",
      "place": 3,
      "points": "112.48",
-     "no": 10
+     "no": 10,
+     "final": 4
     },
     {
      "name": "Юлия Клевакина",
      "nation": "СВЕ",
      "place": 9,
      "points": "106.56",
-     "no": 5
+     "no": 5,
+     "final": 8
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://бильман.рф/Events2627/TM2026/index.htm",
     "seg": "https://бильман.рф/Events2627/TM2026/SEG012.HTM",
@@ -67851,9 +67866,29 @@
      "Мария Антоновна ЛАБУТИНА": "Мария Лабутина",
      "Елизавета Владимировна ЛАБУТИНА": "Елизавета Лабутина"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Елизавета Лабутина",
+     "nation": "СВЕ",
+     "points": "191.53"
+    },
+    {
+     "place": 2,
+     "name": "Мария Лабутина",
+     "nation": "ВОЛ",
+     "points": "188.71"
+    },
+    {
+     "place": 3,
+     "name": "Виктория Федянина",
+     "nation": "ПРМ",
+     "points": "172.25"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-junior-pp",
@@ -123301,5 +123336,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "b2a2f49b0d0e4980"
+ "rev": "e0df3cdd6c26832f"
 }
