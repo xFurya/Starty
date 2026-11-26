@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T13:49:02.794659+00:00",
+ "checked": "2026-11-26T13:53:02.873513+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67943,7 +67943,7 @@
      "nation": "ОМС",
      "no": 1,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "75.26"
     },
     {
@@ -67951,7 +67951,7 @@
      "nation": "БАШ",
      "no": 2,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "75.23"
     },
     {
@@ -67967,7 +67967,7 @@
      "nation": "ТЮМ",
      "no": 4,
      "warmup": null,
-     "place": 4,
+     "place": 5,
      "points": "78.20"
     },
     {
@@ -67983,7 +67983,7 @@
      "nation": "НВС",
      "no": 6,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "76.31"
     },
     {
@@ -67991,7 +67991,7 @@
      "nation": "ХМА",
      "no": 7,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "74.33"
     },
     {
@@ -68006,7 +68006,9 @@
      "name": "Нелли Жилякова",
      "nation": "КРГ",
      "no": 9,
-     "warmup": null
+     "warmup": null,
+     "place": 4,
+     "points": "81.21"
     },
     {
      "name": "Дарина Тихомирова",
@@ -68493,7 +68495,9 @@
      "nation": "CZE",
      "time": "16:46",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4,
+     "points": "52.22"
     },
     {
      "name": "Valtter Virtanen",
@@ -123437,5 +123441,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "8c154c93289a15dd"
+ "rev": "fb27a63c85c9b704"
 }
