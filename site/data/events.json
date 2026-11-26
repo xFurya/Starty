@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T14:01:03.692972+00:00",
+ "checked": "2026-11-26T14:05:03.630942+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67936,14 +67936,14 @@
     "Юлиана Новиченкова"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Дарья Шаронова — 105.00\n2. Милана Дьякова — 90.05\n3. Милана Соколова — 89.03\n\nНачало: 16:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Дарья Шаронова — 105.00\n2. Валерия Булдакова — 94.83\n3. Милана Дьякова — 90.05\n\nНачало: 16:00 МСК",
    "field": [
     {
      "name": "Александра Гончаровская",
      "nation": "ОМС",
      "no": 1,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "75.26"
     },
     {
@@ -67951,7 +67951,7 @@
      "nation": "БАШ",
      "no": 2,
      "warmup": null,
-     "place": 9,
+     "place": 10,
      "points": "75.23"
     },
     {
@@ -67959,7 +67959,7 @@
      "nation": "ХМА",
      "no": 3,
      "warmup": null,
-     "place": 3,
+     "place": 4,
      "points": "89.03"
     },
     {
@@ -67967,7 +67967,7 @@
      "nation": "ТЮМ",
      "no": 4,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "78.20"
     },
     {
@@ -67975,7 +67975,7 @@
      "nation": "БАШ",
      "no": 5,
      "warmup": null,
-     "place": 2,
+     "place": 3,
      "points": "90.05"
     },
     {
@@ -67983,7 +67983,7 @@
      "nation": "НВС",
      "no": 6,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "76.31"
     },
     {
@@ -67991,7 +67991,7 @@
      "nation": "ХМА",
      "no": 7,
      "warmup": null,
-     "place": 10,
+     "place": 11,
      "points": "74.33"
     },
     {
@@ -68007,7 +68007,7 @@
      "nation": "КРГ",
      "no": 9,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "81.21"
     },
     {
@@ -68015,14 +68015,16 @@
      "nation": "ВОЛ",
      "no": 10,
      "warmup": null,
-     "place": 4,
+     "place": 5,
      "points": "83.69"
     },
     {
      "name": "Валерия Булдакова",
      "nation": "ТЮМ",
      "no": 11,
-     "warmup": null
+     "warmup": null,
+     "place": 2,
+     "points": "94.83"
     },
     {
      "name": "Дарья Нестерова",
@@ -68146,15 +68148,15 @@
     },
     {
      "place": 2,
-     "name": "Милана Дьякова",
-     "nation": "БАШ",
-     "points": "90.05"
+     "name": "Валерия Булдакова",
+     "nation": "ТЮМ",
+     "points": "94.83"
     },
     {
      "place": 3,
-     "name": "Милана Соколова",
-     "nation": "ХМА",
-     "points": "89.03"
+     "name": "Милана Дьякова",
+     "nation": "БАШ",
+     "points": "90.05"
     }
    ],
    "provisional": true
@@ -68204,14 +68206,14 @@
     "Ярослав Хрулев"
    ],
    "src": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/index.htm",
-   "desc": "Промежуточные итоги:\n1. Даниил Жолобов — 79.73\n2. Яромир Фураев — 59.54\n\nНачало: 16:15 МСК",
+   "desc": "Промежуточные итоги:\n1. Никита Малютин — 80.08\n2. Даниил Жолобов — 79.73\n3. Яромир Фураев — 59.54\n\nНачало: 16:15 МСК",
    "field": [
     {
      "name": "Даниил Жолобов",
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 1,
+     "place": 2,
      "points": "79.73"
     },
     {
@@ -68219,14 +68221,16 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 2,
+     "place": 3,
      "points": "59.54"
     },
     {
      "name": "Никита Малютин",
      "nation": "",
      "no": 3,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "80.08"
     },
     {
      "name": "Наиль Сагадулин",
@@ -68422,12 +68426,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Никита Малютин",
+     "nation": "",
+     "points": "80.08"
+    },
+    {
+     "place": 2,
      "name": "Даниил Жолобов",
      "nation": "",
      "points": "79.73"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Яромир Фураев",
      "nation": "",
      "points": "59.54"
@@ -68482,7 +68492,7 @@
     "Yu-Hsiang Li"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Samy Hammi — 77.50\n2. Maksim Varakin — 68.66\n3. Valtter Virtanen — 58.70\n\nНачало: 16:20 МСК",
+   "desc": "Промежуточные итоги:\n1. Samy Hammi — 77.50\n2. Yanhao Li — 76.92\n3. Maksim Varakin — 68.66\n\nНачало: 16:20 МСК",
    "field": [
     {
      "name": "Maksim Varakin",
@@ -68490,7 +68500,7 @@
      "time": "16:28",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "68.66"
     },
     {
@@ -68499,7 +68509,7 @@
      "time": "16:34",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "54.93"
     },
     {
@@ -68517,7 +68527,7 @@
      "time": "16:46",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "52.22"
     },
     {
@@ -68526,7 +68536,7 @@
      "time": "16:52",
      "no": 5,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "58.70"
     },
     {
@@ -68534,7 +68544,9 @@
      "nation": "NZL",
      "time": "16:58",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "76.92"
     },
     {
      "name": "Daniil Valanov",
@@ -68754,15 +68766,15 @@
     },
     {
      "place": 2,
-     "name": "Maksim Varakin",
-     "nation": "CRO",
-     "points": "68.66"
+     "name": "Yanhao Li",
+     "nation": "NZL",
+     "points": "76.92"
     },
     {
      "place": 3,
-     "name": "Valtter Virtanen",
-     "nation": "FIN",
-     "points": "58.70"
+     "name": "Maksim Varakin",
+     "nation": "CRO",
+     "points": "68.66"
     }
    ],
    "provisional": true
@@ -123464,5 +123476,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "3b66e19b0b81c441"
+ "rev": "0ead2e4cba856c96"
 }
