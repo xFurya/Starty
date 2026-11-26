@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T08:54:03+03:00",
- "checked": "2026-11-26T08:54:03+03:00",
+ "checked": "2026-11-26T06:47:03.990401+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67686,13 +67686,15 @@
     "Юлия Клевакина"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
-   "desc": "Начало: 09:30 МСК",
+   "desc": "Промежуточные итоги:\n1. Александра Андреева — 77.25\n\nНачало: 09:30 МСК",
    "field": [
     {
      "name": "Александра Андреева",
      "nation": "ВОР",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "77.25"
     },
     {
      "name": "Александра Пискотина",
@@ -67817,7 +67819,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Александра Андреева",
+     "nation": "ВОР",
+     "points": "77.25"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-junior-pp",
@@ -123265,5 +123276,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "a9cdef0fcf098880"
+ "rev": "25716763cb40d3ae"
 }
