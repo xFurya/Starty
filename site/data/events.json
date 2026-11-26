@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T21:02:12+03:00",
- "checked": "2026-11-26T20:17:35.717398+00:00",
+ "checked": "2026-11-26T20:29:35.455947+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68993,24 +68993,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "points": "104.21"
+    },
+    {
+     "place": 2,
      "name": "Shira Ichilov / Mikhail Nosovitskiy",
      "nation": "ISR",
      "points": "98.56"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Isabella Flores / Linus Colmor Jepsen",
      "nation": "USA",
      "points": "98.22"
-    },
-    {
-     "place": 3,
-     "name": "Philomene Sabourin / Raul Bermejo",
-     "nation": "ESP",
-     "points": "94.63"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Shira Ichilov / Mikhail Nosovitskiy — 98.56\n2. Isabella Flores / Linus Colmor Jepsen — 98.22\n3. Philomene Sabourin / Raul Bermejo — 94.63\n\nНачало: 20:50 МСК",
+   "desc": "Промежуточные итоги:\n1. Milla Ruud Reitan / Nikolaj Majorov — 104.21\n2. Shira Ichilov / Mikhail Nosovitskiy — 98.56\n3. Isabella Flores / Linus Colmor Jepsen — 98.22\n\nНачало: 20:50 МСК",
    "field": [
     {
      "name": "Arianna Sassi / Luca Morini",
@@ -69018,7 +69018,7 @@
      "time": "21:04",
      "no": 2,
      "warmup": 1,
-     "place": 12,
+     "place": 13,
      "points": "78.00"
     },
     {
@@ -69027,7 +69027,7 @@
      "time": "21:59",
      "no": 8,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "93.03"
     },
     {
@@ -69036,7 +69036,7 @@
      "time": "22:36",
      "no": 10,
      "warmup": 3,
-     "place": 7,
+     "place": 8,
      "points": "92.81"
     },
     {
@@ -69045,7 +69045,7 @@
      "time": "21:35",
      "no": 5,
      "warmup": 2,
-     "place": 11,
+     "place": 12,
      "points": "82.57"
     },
     {
@@ -69054,7 +69054,7 @@
      "time": "21:12",
      "no": 3,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "83.27"
     },
     {
@@ -69070,7 +69070,7 @@
      "time": "22:52",
      "no": 12,
      "warmup": 3,
-     "place": 2,
+     "place": 3,
      "points": "98.22"
     },
     {
@@ -69078,7 +69078,9 @@
      "nation": "SWE",
      "time": "23:15",
      "no": 14,
-     "warmup": 4
+     "warmup": 4,
+     "place": 1,
+     "points": "104.21"
     },
     {
      "name": "Natacha Lagouge / Arnaud Caffa",
@@ -69086,7 +69088,7 @@
      "time": "22:28",
      "no": 9,
      "warmup": 3,
-     "place": 4,
+     "place": 5,
      "points": "93.45"
     },
     {
@@ -69095,7 +69097,7 @@
      "time": "21:51",
      "no": 7,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "86.69"
     },
     {
@@ -69104,7 +69106,7 @@
      "time": "21:43",
      "no": 6,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "94.63"
     },
     {
@@ -69113,7 +69115,7 @@
      "time": "22:44",
      "no": 11,
      "warmup": 3,
-     "place": 1,
+     "place": 2,
      "points": "98.56"
     },
     {
@@ -69126,7 +69128,7 @@
     {
      "name": "Xuantong Li / Filip Bojanowski",
      "nation": "POL",
-     "place": 13,
+     "place": 14,
      "points": "66.05",
      "time": "20:56",
      "no": 1,
@@ -69138,7 +69140,7 @@
      "time": "23:07",
      "no": 13,
      "warmup": 4,
-     "place": 6,
+     "place": 7,
      "points": "92.97"
     },
     {
@@ -69147,7 +69149,7 @@
      "time": "21:20",
      "no": 4,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "points": "82.71"
     }
    ],
@@ -123859,5 +123861,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "8cf468ee40a6e967"
+ "rev": "5cd3126318b52b90"
 }
