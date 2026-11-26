@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T19:58:14+03:00",
- "checked": "2026-11-26T17:33:33.746121+00:00",
+ "checked": "2026-11-26T18:05:33.419999+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68990,14 +68990,16 @@
     "Zofia Grzegorzewska / Oleg Muratov"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Начало: 20:50 МСК",
+   "desc": "Промежуточные итоги:\n1. Xuantong Li / Filip Bojanowski — 66.05\n\nНачало: 20:50 МСК",
    "field": [
     {
      "name": "Xuantong Li / Filip Bojanowski",
      "nation": "POL",
      "time": "20:56",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "66.05"
     },
     {
      "name": "Arianna Sassi / Luca Morini",
@@ -69130,7 +69132,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Xuantong Li / Filip Bojanowski",
+     "nation": "POL",
+     "points": "66.05"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:dance-senior-rt",
@@ -123675,5 +123686,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "e18c6c5fa40aff4a"
+ "rev": "8491c6d5cfd14a12"
 }
