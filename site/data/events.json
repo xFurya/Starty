@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T15:29:33.911336+00:00",
+ "checked": "2026-11-26T15:33:34.348165+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68538,7 +68538,7 @@
     "Yu-Hsiang Li"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Samy Hammi — 77.50\n2. Yanhao Li — 76.92\n3. Ean Weiler — 71.70\n\nНачало: 16:20 МСК",
+   "desc": "Промежуточные итоги:\n1. Samy Hammi — 77.50\n2. Georgii Reshtenko — 77.45\n3. Yanhao Li — 76.92\n\nНачало: 16:20 МСК",
    "field": [
     {
      "name": "Maksim Varakin",
@@ -68546,7 +68546,7 @@
      "time": "16:28",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "68.66"
     },
     {
@@ -68555,7 +68555,7 @@
      "time": "16:34",
      "no": 2,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "points": "54.93"
     },
     {
@@ -68573,7 +68573,7 @@
      "time": "16:46",
      "no": 4,
      "warmup": 1,
-     "place": 13,
+     "place": 14,
      "points": "52.22"
     },
     {
@@ -68582,7 +68582,7 @@
      "time": "16:52",
      "no": 5,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "58.70"
     },
     {
@@ -68591,7 +68591,7 @@
      "time": "16:58",
      "no": 6,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "76.92"
     },
     {
@@ -68600,7 +68600,7 @@
      "time": "17:12",
      "no": 7,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "59.36"
     },
     {
@@ -68609,7 +68609,7 @@
      "time": "17:18",
      "no": 8,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "71.17"
     },
     {
@@ -68618,7 +68618,7 @@
      "time": "17:24",
      "no": 9,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "71.70"
     },
     {
@@ -68627,7 +68627,7 @@
      "time": "17:30",
      "no": 10,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "63.16"
     },
     {
@@ -68636,7 +68636,7 @@
      "time": "17:36",
      "no": 11,
      "warmup": 2,
-     "place": 14,
+     "place": 15,
      "points": "50.73"
     },
     {
@@ -68645,7 +68645,7 @@
      "time": "17:42",
      "no": 12,
      "warmup": 2,
-     "place": 11,
+     "place": 12,
      "points": "54.02"
     },
     {
@@ -68654,7 +68654,7 @@
      "time": "18:11",
      "no": 13,
      "warmup": 3,
-     "place": 12,
+     "place": 13,
      "points": "53.97"
     },
     {
@@ -68663,7 +68663,7 @@
      "time": "18:17",
      "no": 14,
      "warmup": 3,
-     "place": 6,
+     "place": 7,
      "points": "64.62"
     },
     {
@@ -68671,7 +68671,9 @@
      "nation": "CZE",
      "time": "18:23",
      "no": 15,
-     "warmup": 3
+     "warmup": 3,
+     "place": 2,
+     "points": "77.45"
     },
     {
      "name": "Nikolaj Memola",
@@ -68828,15 +68830,15 @@
     },
     {
      "place": 2,
-     "name": "Yanhao Li",
-     "nation": "NZL",
-     "points": "76.92"
+     "name": "Georgii Reshtenko",
+     "nation": "CZE",
+     "points": "77.45"
     },
     {
      "place": 3,
-     "name": "Ean Weiler",
-     "nation": "SUI",
-     "points": "71.70"
+     "name": "Yanhao Li",
+     "nation": "NZL",
+     "points": "76.92"
     }
    ],
    "provisional": true
@@ -123538,5 +123540,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "2f1f0558784fd2c6"
+ "rev": "acf15e823c7c2253"
 }
