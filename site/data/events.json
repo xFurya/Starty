@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T12:29:15+03:00",
+ "checked": "2026-11-26T13:01:03.130722+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67936,13 +67936,15 @@
     "Юлиана Новиченкова"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
-   "desc": "Начало: 16:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Александра Гончаровская — 75.26\n\nНачало: 16:00 МСК",
    "field": [
     {
      "name": "Александра Гончаровская",
      "nation": "ОМС",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "75.26"
     },
     {
      "name": "Виталия Павлова",
@@ -68116,7 +68118,16 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Александра Гончаровская",
+     "nation": "ОМС",
+     "points": "75.26"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "ffkm:2026-11-23_kubok:men-junior-kp",
@@ -123373,5 +123384,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "054e31e50f1f124a"
+ "rev": "3dce69c10bcb9736"
 }
