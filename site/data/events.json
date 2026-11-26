@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T18:45:18+03:00",
- "checked": "2026-11-26T16:25:33.448495+00:00",
+ "checked": "2026-11-26T16:29:34.038741+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68715,7 +68715,9 @@
      "nation": "ISR",
      "time": "19:25",
      "no": 24,
-     "warmup": 4
+     "warmup": 4,
+     "place": 23,
+     "points": "44.07"
     },
     {
      "name": "Lucas Broussard",
@@ -123541,5 +123543,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "ae61ff02cf55c6e0"
+ "rev": "815aa9d0e6235f9c"
 }
