@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T21:02:12+03:00",
- "checked": "2026-11-26T18:49:34.119906+00:00",
+ "checked": "2026-11-26T18:53:33.740948+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68993,24 +68993,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Philomene Sabourin / Raul Bermejo",
+     "nation": "ESP",
+     "points": "94.63"
+    },
+    {
+     "place": 2,
      "name": "Emese Csiszer / Mark Shapiro",
      "nation": "HUN",
      "points": "83.27"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Zofia Grzegorzewska / Oleg Muratov",
      "nation": "POL",
      "points": "82.71"
-    },
-    {
-     "place": 3,
-     "name": "Daniela Ivanitskiy / Matthew Sperry",
-     "nation": "FIN",
-     "points": "82.57"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Emese Csiszer / Mark Shapiro — 83.27\n2. Zofia Grzegorzewska / Oleg Muratov — 82.71\n3. Daniela Ivanitskiy / Matthew Sperry — 82.57\n\nНачало: 20:50 МСК",
+   "desc": "Промежуточные итоги:\n1. Philomene Sabourin / Raul Bermejo — 94.63\n2. Emese Csiszer / Mark Shapiro — 83.27\n3. Zofia Grzegorzewska / Oleg Muratov — 82.71\n\nНачало: 20:50 МСК",
    "field": [
     {
      "name": "Arianna Sassi / Luca Morini",
@@ -69018,7 +69018,7 @@
      "time": "21:04",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "78.00"
     },
     {
@@ -69041,7 +69041,7 @@
      "time": "21:35",
      "no": 5,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "82.57"
     },
     {
@@ -69050,7 +69050,7 @@
      "time": "21:12",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "83.27"
     },
     {
@@ -69093,7 +69093,9 @@
      "nation": "ESP",
      "time": "21:43",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "94.63"
     },
     {
      "name": "Shira Ichilov / Mikhail Nosovitskiy",
@@ -69112,7 +69114,7 @@
     {
      "name": "Xuantong Li / Filip Bojanowski",
      "nation": "POL",
-     "place": 5,
+     "place": 6,
      "points": "66.05",
      "time": "20:56",
      "no": 1,
@@ -69131,7 +69133,7 @@
      "time": "21:20",
      "no": 4,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "82.71"
     }
    ],
@@ -123843,5 +123845,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "4b59455928a1dec5"
+ "rev": "8344fdfa465c89ef"
 }
