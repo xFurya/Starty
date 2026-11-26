@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T14:41:03.106887+00:00",
+ "checked": "2026-11-26T14:45:03.753971+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68227,7 +68227,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "59.54"
     },
     {
@@ -68251,7 +68251,7 @@
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "60.92"
     },
     {
@@ -68275,14 +68275,16 @@
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "57.80"
     },
     {
      "name": "Платон Жильцов",
      "nation": "",
      "no": 9,
-     "warmup": null
+     "warmup": null,
+     "place": 6,
+     "points": "66.66"
     },
     {
      "name": "Максим Брагин",
@@ -68605,7 +68607,9 @@
      "nation": "GBR",
      "time": "17:36",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 11,
+     "points": "50.73"
     },
     {
      "name": "Aurelian Chervet",
@@ -123500,5 +123504,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "94c570b16dea8a41"
+ "rev": "e47d298393a1dbe0"
 }
