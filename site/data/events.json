@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T13:41:02.886428+00:00",
+ "checked": "2026-11-26T13:49:02.794659+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67936,14 +67936,14 @@
     "Юлиана Новиченкова"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Милана Дьякова — 90.05\n2. Милана Соколова — 89.03\n3. Мирослава Лозовцева — 78.20\n\nНачало: 16:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Дарья Шаронова — 105.00\n2. Милана Дьякова — 90.05\n3. Милана Соколова — 89.03\n\nНачало: 16:00 МСК",
    "field": [
     {
      "name": "Александра Гончаровская",
      "nation": "ОМС",
      "no": 1,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "75.26"
     },
     {
@@ -67951,7 +67951,7 @@
      "nation": "БАШ",
      "no": 2,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "75.23"
     },
     {
@@ -67959,7 +67959,7 @@
      "nation": "ХМА",
      "no": 3,
      "warmup": null,
-     "place": 2,
+     "place": 3,
      "points": "89.03"
     },
     {
@@ -67967,7 +67967,7 @@
      "nation": "ТЮМ",
      "no": 4,
      "warmup": null,
-     "place": 3,
+     "place": 4,
      "points": "78.20"
     },
     {
@@ -67975,7 +67975,7 @@
      "nation": "БАШ",
      "no": 5,
      "warmup": null,
-     "place": 1,
+     "place": 2,
      "points": "90.05"
     },
     {
@@ -67983,7 +67983,7 @@
      "nation": "НВС",
      "no": 6,
      "warmup": null,
-     "place": 4,
+     "place": 5,
      "points": "76.31"
     },
     {
@@ -67991,14 +67991,16 @@
      "nation": "ХМА",
      "no": 7,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "74.33"
     },
     {
      "name": "Дарья Шаронова",
      "nation": "ВЛА",
      "no": 8,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "105.00"
     },
     {
      "name": "Нелли Жилякова",
@@ -68134,21 +68136,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Дарья Шаронова",
+     "nation": "ВЛА",
+     "points": "105.00"
+    },
+    {
+     "place": 2,
      "name": "Милана Дьякова",
      "nation": "БАШ",
      "points": "90.05"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Милана Соколова",
      "nation": "ХМА",
      "points": "89.03"
-    },
-    {
-     "place": 3,
-     "name": "Мирослава Лозовцева",
-     "nation": "ТЮМ",
-     "points": "78.20"
     }
    ],
    "provisional": true
@@ -68457,7 +68459,7 @@
     "Yu-Hsiang Li"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Maksim Varakin — 68.66\n2. Jakub Lofek — 54.93\n\nНачало: 16:20 МСК",
+   "desc": "Промежуточные итоги:\n1. Samy Hammi — 77.50\n2. Maksim Varakin — 68.66\n3. Jakub Lofek — 54.93\n\nНачало: 16:20 МСК",
    "field": [
     {
      "name": "Maksim Varakin",
@@ -68465,7 +68467,7 @@
      "time": "16:28",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "68.66"
     },
     {
@@ -68474,7 +68476,7 @@
      "time": "16:34",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "54.93"
     },
     {
@@ -68482,7 +68484,9 @@
      "nation": "FRA",
      "time": "16:40",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "77.50"
     },
     {
      "name": "Tadeas Vaclavik",
@@ -68717,12 +68721,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Samy Hammi",
+     "nation": "FRA",
+     "points": "77.50"
+    },
+    {
+     "place": 2,
      "name": "Maksim Varakin",
      "nation": "CRO",
      "points": "68.66"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Jakub Lofek",
      "nation": "POL",
      "points": "54.93"
@@ -123427,5 +123437,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "359dc4ab34160076"
+ "rev": "8c154c93289a15dd"
 }
