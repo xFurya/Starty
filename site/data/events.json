@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T13:33:03.767088+00:00",
+ "checked": "2026-11-26T13:41:02.886428+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67990,7 +67990,9 @@
      "name": "Екатерина Чувакина",
      "nation": "ХМА",
      "no": 7,
-     "warmup": null
+     "warmup": null,
+     "place": 7,
+     "points": "74.33"
     },
     {
      "name": "Дарья Шаронова",
@@ -68455,7 +68457,7 @@
     "Yu-Hsiang Li"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Maksim Varakin — 68.66\n\nНачало: 16:20 МСК",
+   "desc": "Промежуточные итоги:\n1. Maksim Varakin — 68.66\n2. Jakub Lofek — 54.93\n\nНачало: 16:20 МСК",
    "field": [
     {
      "name": "Maksim Varakin",
@@ -68471,7 +68473,9 @@
      "nation": "POL",
      "time": "16:34",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "54.93"
     },
     {
      "name": "Samy Hammi",
@@ -68716,6 +68720,12 @@
      "name": "Maksim Varakin",
      "nation": "CRO",
      "points": "68.66"
+    },
+    {
+     "place": 2,
+     "name": "Jakub Lofek",
+     "nation": "POL",
+     "points": "54.93"
     }
    ],
    "provisional": true
@@ -123417,5 +123427,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "f3c0208843db5430"
+ "rev": "359dc4ab34160076"
 }
