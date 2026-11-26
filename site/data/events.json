@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T13:53:02.873513+00:00",
+ "checked": "2026-11-26T13:57:03.706614+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68202,13 +68202,15 @@
     "Ярослав Хрулев"
    ],
    "src": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/index.htm",
-   "desc": "Начало: 16:15 МСК",
+   "desc": "Промежуточные итоги:\n1. Даниил Жолобов — 79.73\n\nНачало: 16:15 МСК",
    "field": [
     {
      "name": "Даниил Жолобов",
      "nation": "",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "79.73"
     },
     {
      "name": "Яромир Фураев",
@@ -68412,7 +68414,16 @@
    },
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-11-23_kubok.json"
+   "proto": "ffkm_2026-11-23_kubok.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Даниил Жолобов",
+     "nation": "",
+     "points": "79.73"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:men-senior-kp",
@@ -68461,7 +68472,7 @@
     "Yu-Hsiang Li"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Samy Hammi — 77.50\n2. Maksim Varakin — 68.66\n3. Jakub Lofek — 54.93\n\nНачало: 16:20 МСК",
+   "desc": "Промежуточные итоги:\n1. Samy Hammi — 77.50\n2. Maksim Varakin — 68.66\n3. Valtter Virtanen — 58.70\n\nНачало: 16:20 МСК",
    "field": [
     {
      "name": "Maksim Varakin",
@@ -68478,7 +68489,7 @@
      "time": "16:34",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "54.93"
     },
     {
@@ -68496,7 +68507,7 @@
      "time": "16:46",
      "no": 4,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "52.22"
     },
     {
@@ -68504,7 +68515,9 @@
      "nation": "FIN",
      "time": "16:52",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3,
+     "points": "58.70"
     },
     {
      "name": "Yanhao Li",
@@ -68737,9 +68750,9 @@
     },
     {
      "place": 3,
-     "name": "Jakub Lofek",
-     "nation": "POL",
-     "points": "54.93"
+     "name": "Valtter Virtanen",
+     "nation": "FIN",
+     "points": "58.70"
     }
    ],
    "provisional": true
@@ -123441,5 +123454,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "fb27a63c85c9b704"
+ "rev": "50bd5fc0aa445258"
 }
