@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T21:02:12+03:00",
- "checked": "2026-11-26T21:02:12+03:00",
+ "checked": "2026-11-26T18:25:34.436466+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68993,12 +68993,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Emese Csiszer / Mark Shapiro",
+     "nation": "HUN",
+     "points": "83.27"
+    },
+    {
+     "place": 2,
+     "name": "Arianna Sassi / Luca Morini",
+     "nation": "SUI",
+     "points": "78.00"
+    },
+    {
+     "place": 3,
      "name": "Xuantong Li / Filip Bojanowski",
      "nation": "POL",
      "points": "66.05"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Xuantong Li / Filip Bojanowski — 66.05\n\nНачало: 20:50 МСК",
+   "desc": "Промежуточные итоги:\n1. Emese Csiszer / Mark Shapiro — 83.27\n2. Arianna Sassi / Luca Morini — 78.00\n3. Xuantong Li / Filip Bojanowski — 66.05\n\nНачало: 20:50 МСК",
    "field": [
     {
      "name": "Arianna Sassi / Luca Morini",
@@ -69098,7 +69110,7 @@
     {
      "name": "Xuantong Li / Filip Bojanowski",
      "nation": "POL",
-     "place": 1,
+     "place": 3,
      "points": "66.05",
      "time": "20:56",
      "no": 1,
@@ -69145,28 +69157,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Emese Csiszer / Mark Shapiro",
-     "nation": "HUN",
-     "points": "83.27"
-    },
-    {
-     "place": 2,
-     "name": "Arianna Sassi / Luca Morini",
-     "nation": "SUI",
-     "points": "78.00"
-    },
-    {
-     "place": 3,
-     "name": "Xuantong Li / Filip Bojanowski",
-     "nation": "POL",
-     "points": "66.05"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:dance-senior-rt",
@@ -123848,5 +123839,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "8f7e605dd18045dc"
+ "rev": "e36e243de9b23a26"
 }
