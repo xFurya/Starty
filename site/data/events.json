@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T19:58:14+03:00",
- "checked": "2026-11-26T17:25:33.357722+00:00",
+ "checked": "2026-11-26T17:33:33.746121+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68641,7 +68641,7 @@
      "points": "82.63"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Lucas Broussard — 90.16\n2. Nikolaj Memola — 84.93\n3. Lucius Kazanecki — 82.63\n\nНачало: 16:20 МСК",
+   "desc": "Итог:\n1. Lucas Broussard — 90.16\n2. Nikolaj Memola — 84.93\n3. Lucius Kazanecki — 82.63\n\nПримечательное:\n• Lucas Broussard — Личный рекорд за КП: 90.16 (был 85.77)\n• Lucius Kazanecki — Личный рекорд за КП: 82.63 (был 74.89)\n\nНачало: 16:20 МСК",
    "field": [
     {
      "name": "Maksim Varakin",
@@ -68873,7 +68873,9 @@
      "nation": "SVK",
      "time": "20:24",
      "no": 30,
-     "warmup": 5
+     "warmup": 5,
+     "place": 29,
+     "points": "41.96"
     },
     {
      "name": "Kornel Witkowski",
@@ -68903,7 +68905,6 @@
      "points": "79.55"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
     "seg": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG001.htm",
@@ -68940,9 +68941,21 @@
      "Mark GORODNITSKY": "Mark Gorodnitsky",
      "Jozef CURMA": "Jozef Curma"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json",
+   "facts": [
+    {
+     "who": "Lucas Broussard",
+     "text": "Личный рекорд за КП: 90.16 (был 85.77)",
+     "kind": "score"
+    },
+    {
+     "who": "Lucius Kazanecki",
+     "text": "Личный рекорд за КП: 82.63 (был 74.89)",
+     "kind": "score"
+    }
+   ]
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:dance-senior-pt",
@@ -123662,5 +123675,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "9808acceee47e8aa"
+ "rev": "e18c6c5fa40aff4a"
 }
