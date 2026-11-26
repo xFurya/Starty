@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T21:02:12+03:00",
- "checked": "2026-11-26T20:37:34.642415+00:00",
+ "checked": "2026-11-26T20:45:34.746783+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68999,18 +68999,18 @@
     },
     {
      "place": 2,
-     "name": "Shira Ichilov / Mikhail Nosovitskiy",
-     "nation": "ISR",
-     "points": "98.56"
+     "name": "Sofia Val / Asaf Kazimov",
+     "nation": "ESP",
+     "points": "100.40"
     },
     {
      "place": 3,
-     "name": "Giulia Isabella Paolino / Andrea Tuba",
-     "nation": "ITA",
-     "points": "98.34"
+     "name": "Shira Ichilov / Mikhail Nosovitskiy",
+     "nation": "ISR",
+     "points": "98.56"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Milla Ruud Reitan / Nikolaj Majorov — 104.21\n2. Shira Ichilov / Mikhail Nosovitskiy — 98.56\n3. Giulia Isabella Paolino / Andrea Tuba — 98.34\n\nНачало: 20:50 МСК",
+   "desc": "Итог:\n1. Milla Ruud Reitan / Nikolaj Majorov — 104.21\n2. Sofia Val / Asaf Kazimov — 100.40\n3. Shira Ichilov / Mikhail Nosovitskiy — 98.56\n\nИтог турнира:\n1. Milla Ruud Reitan / Nikolaj Majorov — 173.26\n2. Sofia Val / Asaf Kazimov — 170.21\n3. Giulia Isabella Paolino / Andrea Tuba — 167.50\n\nНачало: 20:50 МСК",
    "field": [
     {
      "name": "Arianna Sassi / Luca Morini",
@@ -69018,8 +69018,9 @@
      "time": "21:04",
      "no": 2,
      "warmup": 1,
-     "place": 14,
-     "points": "78.00"
+     "place": 15,
+     "points": "78.00",
+     "final": 15
     },
     {
      "name": "Celina Fradji / Jean-Hans Fourneaux",
@@ -69027,8 +69028,9 @@
      "time": "21:59",
      "no": 8,
      "warmup": 2,
-     "place": 7,
-     "points": "93.03"
+     "place": 8,
+     "points": "93.03",
+     "final": 9
     },
     {
      "name": "Charise Matthaei / Max Liebers",
@@ -69036,8 +69038,9 @@
      "time": "22:36",
      "no": 10,
      "warmup": 3,
-     "place": 9,
-     "points": "92.81"
+     "place": 10,
+     "points": "92.81",
+     "final": 8
     },
     {
      "name": "Daniela Ivanitskiy / Matthew Sperry",
@@ -69045,8 +69048,9 @@
      "time": "21:35",
      "no": 5,
      "warmup": 2,
-     "place": 13,
-     "points": "82.57"
+     "place": 14,
+     "points": "82.57",
+     "final": 12
     },
     {
      "name": "Emese Csiszer / Mark Shapiro",
@@ -69054,8 +69058,9 @@
      "time": "21:12",
      "no": 3,
      "warmup": 1,
-     "place": 11,
-     "points": "83.27"
+     "place": 12,
+     "points": "83.27",
+     "final": 14
     },
     {
      "name": "Giulia Isabella Paolino / Andrea Tuba",
@@ -69063,8 +69068,9 @@
      "time": "23:23",
      "no": 15,
      "warmup": 4,
-     "place": 3,
-     "points": "98.34"
+     "place": 4,
+     "points": "98.34",
+     "final": 3
     },
     {
      "name": "Isabella Flores / Linus Colmor Jepsen",
@@ -69072,8 +69078,9 @@
      "time": "22:52",
      "no": 12,
      "warmup": 3,
-     "place": 4,
-     "points": "98.22"
+     "place": 5,
+     "points": "98.22",
+     "final": 5
     },
     {
      "name": "Milla Ruud Reitan / Nikolaj Majorov",
@@ -69082,7 +69089,8 @@
      "no": 14,
      "warmup": 4,
      "place": 1,
-     "points": "104.21"
+     "points": "104.21",
+     "final": 1
     },
     {
      "name": "Natacha Lagouge / Arnaud Caffa",
@@ -69090,8 +69098,9 @@
      "time": "22:28",
      "no": 9,
      "warmup": 3,
-     "place": 6,
-     "points": "93.45"
+     "place": 7,
+     "points": "93.45",
+     "final": 7
     },
     {
      "name": "Olivia Josephine Shilling / Leo Baeten",
@@ -69099,8 +69108,9 @@
      "time": "21:51",
      "no": 7,
      "warmup": 2,
-     "place": 10,
-     "points": "86.69"
+     "place": 11,
+     "points": "86.69",
+     "final": 11
     },
     {
      "name": "Philomene Sabourin / Raul Bermejo",
@@ -69108,8 +69118,9 @@
      "time": "21:43",
      "no": 6,
      "warmup": 2,
-     "place": 5,
-     "points": "94.63"
+     "place": 6,
+     "points": "94.63",
+     "final": 10
     },
     {
      "name": "Shira Ichilov / Mikhail Nosovitskiy",
@@ -69117,24 +69128,29 @@
      "time": "22:44",
      "no": 11,
      "warmup": 3,
-     "place": 2,
-     "points": "98.56"
+     "place": 3,
+     "points": "98.56",
+     "final": 4
     },
     {
      "name": "Sofia Val / Asaf Kazimov",
      "nation": "ESP",
      "time": "23:31",
      "no": 16,
-     "warmup": 4
+     "warmup": 4,
+     "place": 2,
+     "points": "100.40",
+     "final": 2
     },
     {
      "name": "Xuantong Li / Filip Bojanowski",
      "nation": "POL",
-     "place": 15,
+     "place": 16,
      "points": "66.05",
      "time": "20:56",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 16
     },
     {
      "name": "Zoe Larson / Andrii Kapran",
@@ -69142,8 +69158,9 @@
      "time": "23:07",
      "no": 13,
      "warmup": 4,
-     "place": 8,
-     "points": "92.97"
+     "place": 9,
+     "points": "92.97",
+     "final": 6
     },
     {
      "name": "Zofia Grzegorzewska / Oleg Muratov",
@@ -69151,11 +69168,11 @@
      "time": "21:20",
      "no": 4,
      "warmup": 1,
-     "place": 12,
-     "points": "82.71"
+     "place": 13,
+     "points": "82.71",
+     "final": 13
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
     "seg": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG008.htm",
@@ -69179,9 +69196,29 @@
      "Giulia Isabella PAOLINO / Andrea TUBA": "Giulia Isabella Paolino / Andrea Tuba",
      "Sofia VAL / Asaf KAZIMOV": "Sofia Val / Asaf Kazimov"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Milla Ruud Reitan / Nikolaj Majorov",
+     "nation": "SWE",
+     "points": "173.26"
+    },
+    {
+     "place": 2,
+     "name": "Sofia Val / Asaf Kazimov",
+     "nation": "ESP",
+     "points": "170.21"
+    },
+    {
+     "place": 3,
+     "name": "Giulia Isabella Paolino / Andrea Tuba",
+     "nation": "ITA",
+     "points": "167.50"
+    }
+   ]
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:dance-senior-rt",
@@ -123863,5 +123900,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "9112dccc31aac5f7"
+ "rev": "099c3283f5bd93aa"
 }
