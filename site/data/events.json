@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T16:01:34.159073+00:00",
+ "generated": "2026-11-26T18:45:18+03:00",
+ "checked": "2026-11-26T18:45:18+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67936,6 +67936,46 @@
     "Юлиана Новиченкова"
    ],
    "src": "https://бильман.рф/Events2627/TM2026/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Арина Ореховская",
+     "nation": "ОРН",
+     "points": "127.18"
+    },
+    {
+     "place": 2,
+     "name": "Мария Кулакова",
+     "nation": "СВЕ",
+     "points": "114.33"
+    },
+    {
+     "place": 3,
+     "name": "Алина Локтева",
+     "nation": "КЯР",
+     "points": "111.46"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Арина Ореховская",
+     "nation": "ОРН",
+     "points": "191.30"
+    },
+    {
+     "place": 2,
+     "name": "Мария Кулакова",
+     "nation": "СВЕ",
+     "points": "169.11"
+    },
+    {
+     "place": 3,
+     "name": "Алина Локтева",
+     "nation": "КЯР",
+     "points": "167.93"
+    }
+   ],
    "desc": "Итог:\n1. Арина Ореховская — 127.18\n2. Мария Кулакова — 114.33\n3. Алина Локтева — 111.46\n\nИтог турнира:\n1. Арина Ореховская — 191.30\n2. Мария Кулакова — 169.11\n3. Алина Локтева — 167.93\n\nПримечательное:\n• Мария Кулакова — После короткой программы — 6-е место, в итоге — 2-е место\n• Арина Ореховская — Отрыв от второго места — 22.19 балла\n\nНачало: 16:00 МСК",
    "field": [
     {
@@ -68161,74 +68201,33 @@
     "cat": "https://бильман.рф/Events2627/TM2026/CAT004RS.HTM",
     "first": "https://бильман.рф/Events2627/TM2026/SEG007.HTM",
     "names": {
+     "Арина Дмитриевна ОРЕХОВСКАЯ": "Арина Ореховская",
+     "Мария Ивановна КУЛАКОВА": "Мария Кулакова",
+     "Алина Сергеевна ЛОКТЕВА": "Алина Локтева",
+     "Полина Алексеевна МАЛЫШЕВА": "Полина Малышева",
+     "Дарья Сергеевна ШАРОНОВА": "Дарья Шаронова",
+     "Арина Евгеньевна МАРУСИЧ": "Арина Марусич",
+     "Дарья Денисовна НЕСТЕРОВА": "Дарья Нестерова",
+     "Юлиана Валерьевна НОВИЧЕНКОВА": "Юлиана Новиченкова",
+     "Анастасия Юрьевна ЖУЛАНОВА": "Анастасия Жуланова",
+     "Виктория Александровна СИВКОВА": "Виктория Сивкова",
+     "Валерия Александровна БУЛДАКОВА": "Валерия Булдакова",
+     "Тамара Александровна АНТОНОВА": "Тамара Антонова",
+     "Александра Андреевна БАСКОВА": "Александра Баскова",
+     "Милана Алексеевна ДЬЯКОВА": "Милана Дьякова",
+     "Милана Максимовна СОКОЛОВА": "Милана Соколова",
+     "Мария Дмитриевна ДРАЧЁВА": "Мария Драчёва",
+     "Дарина Данииловна ТИХОМИРОВА": "Дарина Тихомирова",
+     "Мария Алексеевна ЗЫРЯНОВА": "Мария Зырянова",
+     "Нелли Руслановна ЖИЛЯКОВА": "Нелли Жилякова",
+     "Мирослава Дмитриевна ЛОЗОВЦЕВА": "Мирослава Лозовцева",
+     "Анна Александровна ЛЕЩЕНКО": "Анна Лещенко",
      "Александра Игоревна ГОНЧАРОВСКАЯ": "Александра Гончаровская",
      "Виталия Александровна ПАВЛОВА": "Виталия Павлова",
-     "Милана Максимовна СОКОЛОВА": "Милана Соколова",
-     "Мирослава Дмитриевна ЛОЗОВЦЕВА": "Мирослава Лозовцева",
-     "Милана Алексеевна ДЬЯКОВА": "Милана Дьякова",
-     "Анна Александровна ЛЕЩЕНКО": "Анна Лещенко",
-     "Екатерина Максимовна ЧУВАКИНА": "Екатерина Чувакина",
-     "Дарья Сергеевна ШАРОНОВА": "Дарья Шаронова",
-     "Нелли Руслановна ЖИЛЯКОВА": "Нелли Жилякова",
-     "Дарина Данииловна ТИХОМИРОВА": "Дарина Тихомирова",
-     "Валерия Александровна БУЛДАКОВА": "Валерия Булдакова",
-     "Дарья Денисовна НЕСТЕРОВА": "Дарья Нестерова",
-     "Виктория Александровна СИВКОВА": "Виктория Сивкова",
-     "Мария Алексеевна ЗЫРЯНОВА": "Мария Зырянова",
-     "Анастасия Юрьевна ЖУЛАНОВА": "Анастасия Жуланова",
-     "Тамара Александровна АНТОНОВА": "Тамара Антонова",
-     "Юлиана Валерьевна НОВИЧЕНКОВА": "Юлиана Новиченкова",
-     "Александра Андреевна БАСКОВА": "Александра Баскова",
-     "Мария Ивановна КУЛАКОВА": "Мария Кулакова",
-     "Арина Евгеньевна МАРУСИЧ": "Арина Марусич",
-     "Полина Алексеевна МАЛЫШЕВА": "Полина Малышева",
-     "Алина Сергеевна ЛОКТЕВА": "Алина Локтева",
-     "Мария Дмитриевна ДРАЧЁВА": "Мария Драчёва",
-     "Арина Дмитриевна ОРЕХОВСКАЯ": "Арина Ореховская"
+     "Екатерина Максимовна ЧУВАКИНА": "Екатерина Чувакина"
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Арина Ореховская",
-     "nation": "ОРН",
-     "points": "127.18"
-    },
-    {
-     "place": 2,
-     "name": "Мария Кулакова",
-     "nation": "СВЕ",
-     "points": "114.33"
-    },
-    {
-     "place": 3,
-     "name": "Алина Локтева",
-     "nation": "КЯР",
-     "points": "111.46"
-    }
-   ],
-   "total": [
-    {
-     "place": 1,
-     "name": "Арина Ореховская",
-     "nation": "ОРН",
-     "points": "191.30"
-    },
-    {
-     "place": 2,
-     "name": "Мария Кулакова",
-     "nation": "СВЕ",
-     "points": "169.11"
-    },
-    {
-     "place": 3,
-     "name": "Алина Локтева",
-     "nation": "КЯР",
-     "points": "167.93"
-    }
-   ],
    "facts": [
     {
      "who": "Мария Кулакова",
@@ -68240,7 +68239,8 @@
      "text": "Отрыв от второго места — 22.19 балла",
      "kind": "place"
     }
-   ]
+   ],
+   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
   },
   {
    "id": "ffkm:2026-11-23_kubok:men-junior-kp",
@@ -68251,42 +68251,51 @@
    "seg": "КП",
    "title": "Кубок Москвы (Финал) — юноши КП",
    "start": "2026-11-26T16:15:00+03:00",
-   "end": "2026-11-26T20:20:00+03:00",
+   "end": "2026-11-26T18:40:00+03:00",
    "venue": "ЛД «Медведково», Москва",
    "intl": false,
    "broadcast": [],
    "ours": [],
    "athletes": [
-    "Александр Щербаков",
     "Алексей Ефременко",
-    "Алексей Заводских",
-    "Артем Федотов",
     "Георгий Терехов",
     "Григорий Хорохордин",
     "Даниил Жолобов",
-    "Илья Малышев",
     "Кирилл Жураховский",
     "Кирилл Лутошкин",
-    "Леонтий Камзолов",
     "Максим Брагин",
     "Максим Стрелков",
-    "Марк Соколов",
     "Мирон Андреанов",
     "Наиль Сагадулин",
     "Никита Малютин",
-    "Николай Колесников",
-    "Павел Грибуля",
-    "Павел Шин",
     "Платон Жильцов",
     "Степан Федоров",
-    "Степан Юров",
     "Тагар Самбуев",
-    "Тимофей Бочков",
     "Тимофей Жданов",
     "Яромир Фураев",
     "Ярослав Хрулев"
    ],
    "src": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/index.htm",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Никита Малютин",
+     "nation": "",
+     "points": "80.08"
+    },
+    {
+     "place": 2,
+     "name": "Даниил Жолобов",
+     "nation": "",
+     "points": "79.73"
+    },
+    {
+     "place": 3,
+     "name": "Ярослав Хрулев",
+     "nation": "",
+     "points": "76.56"
+    }
+   ],
    "desc": "Промежуточные итоги:\n1. Никита Малютин — 80.08\n2. Даниил Жолобов — 79.73\n3. Ярослав Хрулев — 76.56\n\nНачало: 16:15 МСК",
    "field": [
     {
@@ -68302,7 +68311,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 17,
+     "place": 16,
      "points": "59.54"
     },
     {
@@ -68326,7 +68335,7 @@
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 15,
+     "place": 14,
      "points": "60.92"
     },
     {
@@ -68350,7 +68359,7 @@
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 18,
+     "place": 17,
      "points": "57.80"
     },
     {
@@ -68374,7 +68383,7 @@
      "nation": "",
      "no": 11,
      "warmup": null,
-     "place": 13,
+     "place": 12,
      "points": "62.74"
     },
     {
@@ -68390,7 +68399,7 @@
      "nation": "",
      "no": 13,
      "warmup": null,
-     "place": 16,
+     "place": 15,
      "points": "59.89"
     },
     {
@@ -68398,7 +68407,7 @@
      "nation": "",
      "no": 14,
      "warmup": null,
-     "place": 14,
+     "place": 13,
      "points": "61.10"
     },
     {
@@ -68422,139 +68431,40 @@
      "nation": "",
      "no": 17,
      "warmup": null,
-     "place": 12,
+     "place": 11,
      "points": "64.15"
-    },
-    {
-     "name": "Павел Шин",
-     "nation": "",
-     "no": 18,
-     "warmup": null,
-     "place": 10,
-     "points": "64.59"
-    },
-    {
-     "name": "Александр Щербаков",
-     "nation": "",
-     "no": 19,
-     "warmup": null
-    },
-    {
-     "name": "Илья Малышев",
-     "nation": "",
-     "no": 20,
-     "warmup": null
-    },
-    {
-     "name": "Степан Юров",
-     "nation": "",
-     "no": 21,
-     "warmup": null
-    },
-    {
-     "name": "Марк Соколов",
-     "nation": "",
-     "no": 22,
-     "warmup": null
-    },
-    {
-     "name": "Тимофей Бочков",
-     "nation": "",
-     "no": 23,
-     "warmup": null
-    },
-    {
-     "name": "Леонтий Камзолов",
-     "nation": "",
-     "no": 24,
-     "warmup": null
-    },
-    {
-     "name": "Артем Федотов",
-     "nation": "",
-     "no": 25,
-     "warmup": null
-    },
-    {
-     "name": "Николай Колесников",
-     "nation": "",
-     "no": 26,
-     "warmup": null
-    },
-    {
-     "name": "Алексей Заводских",
-     "nation": "",
-     "no": 27,
-     "warmup": null
-    },
-    {
-     "name": "Павел Грибуля",
-     "nation": "",
-     "no": 28,
-     "warmup": null
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/index.htm",
     "seg": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/SEG007.HTM",
     "cat": null,
     "first": null,
     "names": {
-     "Даниил ЖОЛОБОВ": "Даниил Жолобов",
-     "Яромир ФУРАЕВ": "Яромир Фураев",
      "Никита МАЛЮТИН": "Никита Малютин",
-     "Наиль САГАДУЛИН": "Наиль Сагадулин",
-     "Мирон АНДРЕАНОВ": "Мирон Андреанов",
-     "Алексей ЕФРЕМЕНКО": "Алексей Ефременко",
-     "Кирилл ЖУРАХОВСКИЙ": "Кирилл Жураховский",
-     "Кирилл ЛУТОШКИН": "Кирилл Лутошкин",
-     "Платон ЖИЛЬЦОВ": "Платон Жильцов",
-     "Максим БРАГИН": "Максим Брагин",
-     "Тагар САМБУЕВ": "Тагар Самбуев",
-     "Георгий ТЕРЕХОВ": "Георгий Терехов",
-     "Степан ФЕДОРОВ": "Степан Федоров",
-     "Тимофей ЖДАНОВ": "Тимофей Жданов",
+     "Даниил ЖОЛОБОВ": "Даниил Жолобов",
      "Ярослав ХРУЛЕВ": "Ярослав Хрулев",
      "Григорий ХОРОХОРДИН": "Григорий Хорохордин",
+     "Кирилл ЖУРАХОВСКИЙ": "Кирилл Жураховский",
+     "Алексей ЕФРЕМЕНКО": "Алексей Ефременко",
+     "Георгий ТЕРЕХОВ": "Георгий Терехов",
+     "Наиль САГАДУЛИН": "Наиль Сагадулин",
+     "Платон ЖИЛЬЦОВ": "Платон Жильцов",
+     "Максим БРАГИН": "Максим Брагин",
      "Максим СТРЕЛКОВ": "Максим Стрелков",
-     "Павел ШИН": "Павел Шин",
-     "Александр ЩЕРБАКОВ": "Александр Щербаков",
-     "Илья МАЛЫШЕВ": "Илья Малышев",
-     "Степан ЮРОВ": "Степан Юров",
-     "Марк СОКОЛОВ": "Марк Соколов",
-     "Тимофей БОЧКОВ": "Тимофей Бочков",
-     "Леонтий КАМЗОЛОВ": "Леонтий Камзолов",
-     "Артем ФЕДОТОВ": "Артем Федотов",
-     "Николай КОЛЕСНИКОВ": "Николай Колесников",
-     "Алексей ЗАВОДСКИХ": "Алексей Заводских",
-     "Павел ГРИБУЛЯ": "Павел Грибуля"
+     "Тагар САМБУЕВ": "Тагар Самбуев",
+     "Тимофей ЖДАНОВ": "Тимофей Жданов",
+     "Мирон АНДРЕАНОВ": "Мирон Андреанов",
+     "Степан ФЕДОРОВ": "Степан Федоров",
+     "Яромир ФУРАЕВ": "Яромир Фураев",
+     "Кирилл ЛУТОШКИН": "Кирилл Лутошкин"
     },
     "basis": null
    },
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-11-23_kubok.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Никита Малютин",
-     "nation": "",
-     "points": "80.08"
-    },
-    {
-     "place": 2,
-     "name": "Даниил Жолобов",
-     "nation": "",
-     "points": "79.73"
-    },
-    {
-     "place": 3,
-     "name": "Ярослав Хрулев",
-     "nation": "",
-     "points": "76.56"
-    }
-   ],
-   "provisional": true
+   "proto": "ffkm_2026-11-23_kubok.json"
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:men-senior-kp",
@@ -68589,7 +68499,6 @@
     "Makar Suntsev",
     "Maksim Varakin",
     "Mark Gorodnitsky",
-    "Matias Lindfors",
     "Matvii Yefymenko",
     "Nikita Starostin",
     "Nikolaj Memola",
@@ -68603,295 +68512,6 @@
     "Yu-Hsiang Li"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Nikolaj Memola — 84.93\n2. Samy Hammi — 77.50\n3. Georgii Reshtenko — 77.45\n\nНачало: 16:20 МСК",
-   "field": [
-    {
-     "name": "Maksim Varakin",
-     "nation": "CRO",
-     "time": "16:28",
-     "no": 1,
-     "warmup": 1,
-     "place": 7,
-     "points": "68.66"
-    },
-    {
-     "name": "Jakub Lofek",
-     "nation": "POL",
-     "time": "16:34",
-     "no": 2,
-     "warmup": 1,
-     "place": 13,
-     "points": "54.93"
-    },
-    {
-     "name": "Samy Hammi",
-     "nation": "FRA",
-     "time": "16:40",
-     "no": 3,
-     "warmup": 1,
-     "place": 2,
-     "points": "77.50"
-    },
-    {
-     "name": "Tadeas Vaclavik",
-     "nation": "CZE",
-     "time": "16:46",
-     "no": 4,
-     "warmup": 1,
-     "place": 16,
-     "points": "52.22"
-    },
-    {
-     "name": "Valtter Virtanen",
-     "nation": "FIN",
-     "time": "16:52",
-     "no": 5,
-     "warmup": 1,
-     "place": 12,
-     "points": "58.70"
-    },
-    {
-     "name": "Yanhao Li",
-     "nation": "NZL",
-     "time": "16:58",
-     "no": 6,
-     "warmup": 1,
-     "place": 4,
-     "points": "76.92"
-    },
-    {
-     "name": "Daniil Valanov",
-     "nation": "NOR",
-     "time": "17:12",
-     "no": 7,
-     "warmup": 2,
-     "place": 11,
-     "points": "59.36"
-    },
-    {
-     "name": "Kyrylo Marsak",
-     "nation": "UKR",
-     "time": "17:18",
-     "no": 8,
-     "warmup": 2,
-     "place": 6,
-     "points": "71.17"
-    },
-    {
-     "name": "Ean Weiler",
-     "nation": "SUI",
-     "time": "17:24",
-     "no": 9,
-     "warmup": 2,
-     "place": 5,
-     "points": "71.70"
-    },
-    {
-     "name": "Makar Suntsev",
-     "nation": "FIN",
-     "time": "17:30",
-     "no": 10,
-     "warmup": 2,
-     "place": 10,
-     "points": "63.16"
-    },
-    {
-     "name": "Jedidiah Lincoln",
-     "nation": "GBR",
-     "time": "17:36",
-     "no": 11,
-     "warmup": 2,
-     "place": 17,
-     "points": "50.73"
-    },
-    {
-     "name": "Aurelian Chervet",
-     "nation": "SUI",
-     "time": "17:42",
-     "no": 12,
-     "warmup": 2,
-     "place": 14,
-     "points": "54.02"
-    },
-    {
-     "name": "Nikolajs Krivoseja",
-     "nation": "LAT",
-     "time": "18:11",
-     "no": 13,
-     "warmup": 3,
-     "place": 15,
-     "points": "53.97"
-    },
-    {
-     "name": "Corentin Spinar",
-     "nation": "FRA",
-     "time": "18:17",
-     "no": 14,
-     "warmup": 3,
-     "place": 9,
-     "points": "64.62"
-    },
-    {
-     "name": "Georgii Reshtenko",
-     "nation": "CZE",
-     "time": "18:23",
-     "no": 15,
-     "warmup": 3,
-     "place": 3,
-     "points": "77.45"
-    },
-    {
-     "name": "Nikolaj Memola",
-     "nation": "ITA",
-     "time": "18:29",
-     "no": 16,
-     "warmup": 3,
-     "place": 1,
-     "points": "84.93"
-    },
-    {
-     "name": "Xan Rols",
-     "nation": "FRA",
-     "time": "18:35",
-     "no": 17,
-     "warmup": 3,
-     "place": 18,
-     "points": "47.95"
-    },
-    {
-     "name": "Matias Lindfors",
-     "nation": "FIN",
-     "time": "18:41",
-     "no": 18,
-     "warmup": 3
-    },
-    {
-     "name": "Nikita Starostin",
-     "nation": "GER",
-     "time": "18:55",
-     "no": 19,
-     "warmup": 4,
-     "place": 8,
-     "points": "68.09"
-    },
-    {
-     "name": "Matvii Yefymenko",
-     "nation": "POL",
-     "time": "19:01",
-     "no": 20,
-     "warmup": 4
-    },
-    {
-     "name": "Davide Lewton Brain",
-     "nation": "MON",
-     "time": "19:07",
-     "no": 21,
-     "warmup": 4
-    },
-    {
-     "name": "Tobia Oellerer",
-     "nation": "AUT",
-     "time": "19:13",
-     "no": 22,
-     "warmup": 4
-    },
-    {
-     "name": "Lucas Broussard",
-     "nation": "USA",
-     "time": "19:19",
-     "no": 23,
-     "warmup": 4
-    },
-    {
-     "name": "Lev Vinokur",
-     "nation": "ISR",
-     "time": "19:25",
-     "no": 24,
-     "warmup": 4
-    },
-    {
-     "name": "Yu-Hsiang Li",
-     "nation": "TPE",
-     "time": "19:54",
-     "no": 25,
-     "warmup": 5
-    },
-    {
-     "name": "Mahery Randrianarivony",
-     "nation": "ESP",
-     "time": "20:00",
-     "no": 26,
-     "warmup": 5
-    },
-    {
-     "name": "Lucius Kazanecki",
-     "nation": "USA",
-     "time": "20:06",
-     "no": 27,
-     "warmup": 5
-    },
-    {
-     "name": "Kornel Witkowski",
-     "nation": "POL",
-     "time": "20:12",
-     "no": 28,
-     "warmup": 5
-    },
-    {
-     "name": "Mark Gorodnitsky",
-     "nation": "ISR",
-     "time": "20:18",
-     "no": 29,
-     "warmup": 5
-    },
-    {
-     "name": "Jozef Curma",
-     "nation": "SVK",
-     "time": "20:24",
-     "no": 30,
-     "warmup": 5
-    }
-   ],
-   "live": {
-    "idx": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-    "seg": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG001.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Maksim VARAKIN": "Maksim Varakin",
-     "Jakub LOFEK": "Jakub Lofek",
-     "Samy HAMMI": "Samy Hammi",
-     "Tadeas VACLAVIK": "Tadeas Vaclavik",
-     "Valtter VIRTANEN": "Valtter Virtanen",
-     "Yanhao LI": "Yanhao Li",
-     "Daniil VALANOV": "Daniil Valanov",
-     "Kyrylo MARSAK": "Kyrylo Marsak",
-     "Ean WEILER": "Ean Weiler",
-     "Makar SUNTSEV": "Makar Suntsev",
-     "Jedidiah LINCOLN": "Jedidiah Lincoln",
-     "Aurelian CHERVET": "Aurelian Chervet",
-     "Nikolajs KRIVOSEJA": "Nikolajs Krivoseja",
-     "Corentin SPINAR": "Corentin Spinar",
-     "Georgii RESHTENKO": "Georgii Reshtenko",
-     "Nikolaj MEMOLA": "Nikolaj Memola",
-     "Xan ROLS": "Xan Rols",
-     "Matias LINDFORS": "Matias Lindfors",
-     "Nikita STAROSTIN": "Nikita Starostin",
-     "Matvii YEFYMENKO": "Matvii Yefymenko",
-     "Davide LEWTON BRAIN": "Davide Lewton Brain",
-     "Tobia OELLERER": "Tobia Oellerer",
-     "Lucas BROUSSARD": "Lucas Broussard",
-     "Lev VINOKUR": "Lev Vinokur",
-     "Yu-Hsiang LI": "Yu-Hsiang Li",
-     "Mahery RANDRIANARIVONY": "Mahery Randrianarivony",
-     "Lucius KAZANECKI": "Lucius Kazanecki",
-     "Kornel WITKOWSKI": "Kornel Witkowski",
-     "Mark GORODNITSKY": "Mark Gorodnitsky",
-     "Jozef CURMA": "Jozef Curma"
-    },
-    "basis": null
-   },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json",
    "podium": [
     {
      "place": 1,
@@ -68912,7 +68532,286 @@
      "points": "77.45"
     }
    ],
-   "provisional": true
+   "desc": "Промежуточные итоги:\n1. Nikolaj Memola — 84.93\n2. Samy Hammi — 77.50\n3. Georgii Reshtenko — 77.45\n\nНачало: 16:20 МСК",
+   "field": [
+    {
+     "name": "Maksim Varakin",
+     "nation": "CRO",
+     "no": 1,
+     "warmup": 30,
+     "place": 7,
+     "points": "68.66",
+     "time": "16:28"
+    },
+    {
+     "name": "Jakub Lofek",
+     "nation": "POL",
+     "no": 2,
+     "warmup": 30,
+     "place": 12,
+     "points": "54.93",
+     "time": "16:34"
+    },
+    {
+     "name": "Samy Hammi",
+     "nation": "FRA",
+     "no": 3,
+     "warmup": 30,
+     "place": 2,
+     "points": "77.50",
+     "time": "16:40"
+    },
+    {
+     "name": "Tadeas Vaclavik",
+     "nation": "CZE",
+     "no": 4,
+     "warmup": 30,
+     "place": 15,
+     "points": "52.22",
+     "time": "16:46"
+    },
+    {
+     "name": "Valtter Virtanen",
+     "nation": "FIN",
+     "no": 5,
+     "warmup": 30,
+     "place": 11,
+     "points": "58.70",
+     "time": "16:52"
+    },
+    {
+     "name": "Yanhao Li",
+     "nation": "NZL",
+     "no": 6,
+     "warmup": 30,
+     "place": 4,
+     "points": "76.92",
+     "time": "16:58"
+    },
+    {
+     "name": "Daniil Valanov",
+     "nation": "NOR",
+     "no": 7,
+     "warmup": 30,
+     "place": 10,
+     "points": "59.36",
+     "time": "17:12"
+    },
+    {
+     "name": "Kyrylo Marsak",
+     "nation": "UKR",
+     "no": 8,
+     "warmup": 30,
+     "place": 6,
+     "points": "71.17",
+     "time": "17:18"
+    },
+    {
+     "name": "Ean Weiler",
+     "nation": "SUI",
+     "no": 9,
+     "warmup": 30,
+     "place": 5,
+     "points": "71.70",
+     "time": "17:24"
+    },
+    {
+     "name": "Makar Suntsev",
+     "nation": "FIN",
+     "no": 10,
+     "warmup": 30,
+     "place": 9,
+     "points": "63.16",
+     "time": "17:30"
+    },
+    {
+     "name": "Jedidiah Lincoln",
+     "nation": "GBR",
+     "no": 11,
+     "warmup": 30,
+     "place": 16,
+     "points": "50.73",
+     "time": "17:36"
+    },
+    {
+     "name": "Aurelian Chervet",
+     "nation": "SUI",
+     "no": 12,
+     "warmup": 30,
+     "place": 13,
+     "points": "54.02",
+     "time": "17:42"
+    },
+    {
+     "name": "Nikolajs Krivoseja",
+     "nation": "LAT",
+     "no": 13,
+     "warmup": 30,
+     "place": 14,
+     "points": "53.97",
+     "time": "18:11"
+    },
+    {
+     "name": "Corentin Spinar",
+     "nation": "FRA",
+     "no": 14,
+     "warmup": 30,
+     "place": 8,
+     "points": "64.62",
+     "time": "18:17"
+    },
+    {
+     "name": "Georgii Reshtenko",
+     "nation": "CZE",
+     "no": 15,
+     "warmup": 30,
+     "place": 3,
+     "points": "77.45",
+     "time": "18:23"
+    },
+    {
+     "name": "Nikolaj Memola",
+     "nation": "ITA",
+     "no": 16,
+     "warmup": 30,
+     "place": 1,
+     "points": "84.93",
+     "time": "18:29"
+    },
+    {
+     "name": "Xan Rols",
+     "nation": "FRA",
+     "no": 17,
+     "warmup": 30,
+     "place": 17,
+     "points": "47.95",
+     "time": "18:35"
+    },
+    {
+     "name": "Davide Lewton Brain",
+     "nation": "MON",
+     "time": "19:07",
+     "no": 21,
+     "warmup": 4
+    },
+    {
+     "name": "Jozef Curma",
+     "nation": "SVK",
+     "time": "20:24",
+     "no": 30,
+     "warmup": 5
+    },
+    {
+     "name": "Kornel Witkowski",
+     "nation": "POL",
+     "time": "20:12",
+     "no": 28,
+     "warmup": 5
+    },
+    {
+     "name": "Lev Vinokur",
+     "nation": "ISR",
+     "time": "19:25",
+     "no": 24,
+     "warmup": 4
+    },
+    {
+     "name": "Lucas Broussard",
+     "nation": "USA",
+     "time": "19:19",
+     "no": 23,
+     "warmup": 4
+    },
+    {
+     "name": "Lucius Kazanecki",
+     "nation": "USA",
+     "time": "20:06",
+     "no": 27,
+     "warmup": 5
+    },
+    {
+     "name": "Mahery Randrianarivony",
+     "nation": "ESP",
+     "time": "20:00",
+     "no": 26,
+     "warmup": 5
+    },
+    {
+     "name": "Mark Gorodnitsky",
+     "nation": "ISR",
+     "time": "20:18",
+     "no": 29,
+     "warmup": 5
+    },
+    {
+     "name": "Matvii Yefymenko",
+     "nation": "POL",
+     "time": "19:01",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Nikita Starostin",
+     "nation": "GER",
+     "time": "18:55",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Tobia Oellerer",
+     "nation": "AUT",
+     "time": "19:13",
+     "no": 22,
+     "warmup": 4
+    },
+    {
+     "name": "Yu-Hsiang Li",
+     "nation": "TPE",
+     "time": "19:54",
+     "no": 25,
+     "warmup": 5
+    }
+   ],
+   "provisional": true,
+   "live": {
+    "idx": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
+    "seg": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Nikolaj MEMOLA": "Nikolaj Memola",
+     "Samy HAMMI": "Samy Hammi",
+     "Georgii RESHTENKO": "Georgii Reshtenko",
+     "Yanhao LI": "Yanhao Li",
+     "Ean WEILER": "Ean Weiler",
+     "Kyrylo MARSAK": "Kyrylo Marsak",
+     "Maksim VARAKIN": "Maksim Varakin",
+     "Corentin SPINAR": "Corentin Spinar",
+     "Makar SUNTSEV": "Makar Suntsev",
+     "Daniil VALANOV": "Daniil Valanov",
+     "Valtter VIRTANEN": "Valtter Virtanen",
+     "Jakub LOFEK": "Jakub Lofek",
+     "Aurelian CHERVET": "Aurelian Chervet",
+     "Nikolajs KRIVOSEJA": "Nikolajs Krivoseja",
+     "Tadeas VACLAVIK": "Tadeas Vaclavik",
+     "Jedidiah LINCOLN": "Jedidiah Lincoln",
+     "Xan ROLS": "Xan Rols",
+     "Nikita STAROSTIN": "Nikita Starostin",
+     "Matvii YEFYMENKO": "Matvii Yefymenko",
+     "Davide LEWTON BRAIN": "Davide Lewton Brain",
+     "Tobia OELLERER": "Tobia Oellerer",
+     "Lucas BROUSSARD": "Lucas Broussard",
+     "Lev VINOKUR": "Lev Vinokur",
+     "Yu-Hsiang LI": "Yu-Hsiang Li",
+     "Mahery RANDRIANARIVONY": "Mahery Randrianarivony",
+     "Lucius KAZANECKI": "Lucius Kazanecki",
+     "Kornel WITKOWSKI": "Kornel Witkowski",
+     "Mark GORODNITSKY": "Mark Gorodnitsky",
+     "Jozef CURMA": "Jozef Curma"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:dance-senior-pt",
@@ -70087,7 +69986,7 @@
    "live": {
     "idx": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/index.htm",
     "seg": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/SEG008.HTM",
-    "cat": null,
+    "cat": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/CAT004RS.HTM",
     "first": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/SEG007.HTM",
     "names": {
      "Мирон АНДРЕАНОВ": "Мирон Андреанов",
@@ -70134,7 +70033,7 @@
    "seg": "КП",
    "title": "CS PGE Warsaw Cup — пары КП",
    "start": "2026-11-27T18:25:00+03:00",
-   "end": "2026-11-27T19:00:00+03:00",
+   "end": "2026-11-27T18:59:00+03:00",
    "venue": "Warsaw, Poland",
    "intl": true,
    "broadcast": [],
@@ -70150,19 +70049,31 @@
    "field": [
     {
      "name": "Laura Gauch / Linus Mager",
-     "nation": "SUI"
+     "nation": "SUI",
+     "time": "18:32",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Sarah Nunez / Blake Eisenach",
-     "nation": "USA"
+     "nation": "USA",
+     "time": "18:38",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Sofia Tridello / Alberto Tommasi",
-     "nation": "ITA"
+     "nation": "ITA",
+     "time": "18:44",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Xuanyu Liu / Wenbao Han",
-     "nation": "CHN"
+     "nation": "CHN",
+     "time": "18:51",
+     "no": 4,
+     "warmup": 1
     }
    ],
    "live": {
@@ -70171,10 +70082,10 @@
     "cat": null,
     "first": null,
     "names": {
-     "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han",
-     "Sofia TRIDELLO / Alberto TOMMASI": "Sofia Tridello / Alberto Tommasi",
      "Laura GAUCH / Linus MAGER": "Laura Gauch / Linus Mager",
-     "Sarah NUNEZ / Blake EISENACH": "Sarah Nunez / Blake Eisenach"
+     "Sarah NUNEZ / Blake EISENACH": "Sarah Nunez / Blake Eisenach",
+     "Sofia TRIDELLO / Alberto TOMMASI": "Sofia Tridello / Alberto Tommasi",
+     "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han"
     },
     "basis": null
    },
@@ -73592,7 +73503,16 @@
    "venue": "",
    "intl": false,
    "tier": "regional",
-   "region": "Самарская область"
+   "region": "Самарская область",
+   "broadcast": [
+    "VK Видео"
+   ],
+   "watch": [
+    {
+     "name": "VK Видео",
+     "url": "https://vkvideo.ru/live-171234363_456239688"
+    }
+   ]
   },
   {
    "tid": "isu:isu-cs-golden-spin-of-zagreb",
@@ -123611,5 +123531,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "3328b5810574255d"
+ "rev": "d494d47b3e3f8b02"
 }

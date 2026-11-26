@@ -7,6 +7,13 @@
    "season": "2026/2027",
    "stages": [
     {
+     "n": 6,
+     "final": false,
+     "city": "Токио",
+     "country": "Япония",
+     "url": "https://okko.sport/sport_collection/nhk-trophy-2026"
+    },
+    {
      "n": 5,
      "final": false,
      "city": "Хельсинки",
@@ -40,13 +47,6 @@
      "city": "Анже",
      "country": "Франция",
      "url": "https://okko.sport/sport_collection/grand-prix-de-france-2026"
-    },
-    {
-     "n": 6,
-     "final": false,
-     "city": "Токио",
-     "country": "Япония",
-     "url": "https://okko.sport/sport_collection/nhk-trophy-2026"
     }
    ]
   },
@@ -257,5 +257,5 @@
    "url": "https://okko.sport/tournament/1tv-cup"
   }
  ],
- "fetched": "2026-11-19"
+ "fetched": "2026-11-26"
 }
