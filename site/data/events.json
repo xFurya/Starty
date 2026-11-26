@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-26T12:29:15+03:00",
- "checked": "2026-11-26T15:09:34.254497+00:00",
+ "checked": "2026-11-26T15:13:33.920933+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -68235,7 +68235,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 11,
+     "place": 12,
      "points": "59.54"
     },
     {
@@ -68283,7 +68283,7 @@
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 12,
+     "place": 13,
      "points": "57.80"
     },
     {
@@ -68322,7 +68322,9 @@
      "name": "Степан Федоров",
      "nation": "",
      "no": 13,
-     "warmup": null
+     "warmup": null,
+     "place": 11,
+     "points": "59.89"
     },
     {
      "name": "Тимофей Жданов",
@@ -123520,5 +123522,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "0318e16b1fc24895"
+ "rev": "fe79d24ab9eae092"
 }
