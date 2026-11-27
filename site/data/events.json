@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T16:09:40+03:00",
- "checked": "2026-11-27T14:01:02.106752+00:00",
+ "checked": "2026-11-27T14:09:02.534182+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -70437,7 +70437,7 @@
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "102.63"
     },
     {
@@ -70453,7 +70453,7 @@
      "nation": "",
      "no": 3,
      "warmup": null,
-     "place": 4,
+     "place": 5,
      "points": "111.79"
     },
     {
@@ -70476,7 +70476,9 @@
      "name": "Максим Стрелков",
      "nation": "",
      "no": 6,
-     "warmup": null
+     "warmup": null,
+     "place": 4,
+     "points": "116.45"
     },
     {
      "name": "Александр Щербаков",
@@ -124374,5 +124376,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "3004a40d30bb73e3"
+ "rev": "d2e17f86fb137acb"
 }
