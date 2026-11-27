@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T08:07:58+03:00",
- "checked": "2026-11-27T06:40:02.190435+00:00",
+ "checked": "2026-11-27T06:44:01.509428+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69410,7 +69410,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Yuna Nagaoka / Sumitada Moriguchi — 69.78\n2. Karina Akopova / Nikita Rakhmanin — 66.95\n3. Anna Valesi / Martin Bidar — 59.77\n\nНачало: 08:35 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Minerva Fabienne Hase / Nikita Volodin — 75.21\n2. Yuna Nagaoka / Sumitada Moriguchi — 69.78\n3. Karina Akopova / Nikita Rakhmanin — 66.95\n\nНачало: 08:35 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Naomi Williams / Lachlan Lewer",
@@ -69418,7 +69418,7 @@
      "time": "08:42",
      "no": 1,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "49.50"
     },
     {
@@ -69427,7 +69427,7 @@
      "time": "08:48",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "59.71"
     },
     {
@@ -69436,7 +69436,7 @@
      "time": "08:55",
      "no": 3,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "59.77"
     },
     {
@@ -69445,7 +69445,7 @@
      "time": "09:01",
      "no": 4,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "55.27"
     },
     {
@@ -69454,7 +69454,7 @@
      "time": "09:15",
      "no": 5,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "52.07"
     },
     {
@@ -69463,7 +69463,7 @@
      "time": "09:21",
      "no": 6,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "66.95"
     },
     {
@@ -69472,7 +69472,7 @@
      "time": "09:28",
      "no": 7,
      "warmup": 2,
-     "place": 1,
+     "place": 2,
      "points": "69.78"
     },
     {
@@ -69480,7 +69480,9 @@
      "nation": "GER",
      "time": "09:34",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "75.21"
     }
    ],
    "live": {
@@ -69498,30 +69500,29 @@
      "Yuna NAGAOKA / Sumitada MORIGUCHI": "Yuna Nagaoka / Sumitada Moriguchi",
      "Minerva Fabienne HASE / Nikita VOLODIN": "Minerva Fabienne Hase / Nikita Volodin"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-nhk-trophy-2026.json",
    "podium": [
     {
      "place": 1,
+     "name": "Minerva Fabienne Hase / Nikita Volodin",
+     "nation": "GER",
+     "points": "75.21"
+    },
+    {
+     "place": 2,
      "name": "Yuna Nagaoka / Sumitada Moriguchi",
      "nation": "JPN",
      "points": "69.78"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Karina Akopova / Nikita Rakhmanin",
      "nation": "ARM",
      "points": "66.95"
-    },
-    {
-     "place": 3,
-     "name": "Anna Valesi / Martin Bidar",
-     "nation": "CZE",
-     "points": "59.77"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:women-senior-kp",
@@ -123982,5 +123983,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "fdb0961c7a442a7c"
+ "rev": "a533bf04ecfe2888"
 }
