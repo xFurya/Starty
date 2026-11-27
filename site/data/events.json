@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T09:53:41+03:00",
- "checked": "2026-11-27T08:44:29.625636+00:00",
+ "checked": "2026-11-27T08:48:29.189257+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -69590,7 +69590,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Mone Chiba — 77.12\n2. Jia Shin — 75.31\n3. Алина Горбачёва — 71.48\n\nРоссияне:\n• Алина Горбачёва — 10:23\n• Виктория Сафонова — 10:29\n• Аделия Петросян — 10:47\n\nНачало: 10:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Mone Chiba — 77.12\n2. Jia Shin — 75.31\n3. Алина Горбачёва — 71.48\n\nПримечательное:\n• Jia Shin — Личный рекорд за КП: 75.31 (был 74.93)\n\nРоссияне:\n• Алина Горбачёва — 10:23\n• Виктория Сафонова — 10:29\n• Аделия Петросян — 10:47\n\nНачало: 10:15 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Алина Горбачёва",
@@ -69720,7 +69720,7 @@
      "Sarah EVERHARDT": "Sarah Everhardt",
      "Mone CHIBA": "Mone Chiba"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-nhk-trophy-2026.json",
    "podium": [
@@ -69743,7 +69743,13 @@
      "points": "71.48"
     }
    ],
-   "provisional": true
+   "facts": [
+    {
+     "who": "Jia Shin",
+     "text": "Личный рекорд за КП: 75.31 (был 74.93)",
+     "kind": "score"
+    }
+   ]
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:men-senior-kp",
@@ -124023,5 +124029,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "82c5e6aa2398f098"
+ "rev": "ec1ed4acd0439580"
 }
