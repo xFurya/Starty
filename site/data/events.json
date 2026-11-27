@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T08:07:58+03:00",
- "checked": "2026-11-27T08:07:58+03:00",
+ "checked": "2026-11-27T05:52:02.074386+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69410,14 +69410,16 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Начало: 08:35 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Naomi Williams / Lachlan Lewer — 49.50\n\nНачало: 08:35 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Naomi Williams / Lachlan Lewer",
      "nation": "USA",
      "time": "08:42",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "49.50"
     },
     {
      "name": "Chelsea Liu / Ryan Bedard",
@@ -69486,7 +69488,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json"
+   "proto": "isu_isu-gp-nhk-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Naomi Williams / Lachlan Lewer",
+     "nation": "USA",
+     "points": "49.50"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:women-senior-kp",
@@ -123947,5 +123958,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "69233d0eed636831"
+ "rev": "86bf19369af6fdb8"
 }
