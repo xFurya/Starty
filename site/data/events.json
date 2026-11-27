@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T00:35:54+03:00",
- "checked": "2026-11-27T04:40:01.585972+00:00",
+ "checked": "2026-11-27T04:48:01.727861+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69260,7 +69260,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Emilea Zingas / Vadym Kolesnik — 83.16\n2. Christina Carreira / Anthony Ponomarenko — 80.82\n3. Juulia Turkkila / Matthias Versluis — 77.01\n\nНачало: 06:35 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Emilea Zingas / Vadym Kolesnik — 83.16\n2. Christina Carreira / Anthony Ponomarenko — 80.82\n3. Juulia Turkkila / Matthias Versluis — 77.01\n\nНачало: 06:35 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Rika Kihira / Shingo Nishiyama",
@@ -69268,7 +69268,7 @@
      "time": "06:42",
      "no": 1,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "62.71"
     },
     {
@@ -69277,7 +69277,7 @@
      "time": "06:48",
      "no": 2,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "63.77"
     },
     {
@@ -69286,7 +69286,7 @@
      "time": "06:55",
      "no": 3,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "70.57"
     },
     {
@@ -69302,7 +69302,7 @@
      "time": "07:08",
      "no": 5,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "71.93"
     },
     {
@@ -69344,7 +69344,9 @@
      "nation": "ESP",
      "time": "07:47",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "75.71"
     }
    ],
    "live": {
@@ -69364,7 +69366,7 @@
      "Emilea ZINGAS / Vadym KOLESNIK": "Emilea Zingas / Vadym Kolesnik",
      "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-nhk-trophy-2026.json",
    "podium": [
@@ -69386,8 +69388,7 @@
      "nation": "FIN",
      "points": "77.01"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:pairs-senior-kp",
@@ -123949,5 +123950,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "2c87f9e6b4618904"
+ "rev": "db87ef9badcd13f8"
 }
