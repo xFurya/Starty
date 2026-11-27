@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T16:09:40+03:00",
- "checked": "2026-11-27T14:25:02.196150+00:00",
+ "checked": "2026-11-27T14:33:01.516909+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -70430,14 +70430,14 @@
     "Ярослав Хрулев"
    ],
    "src": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/index.htm",
-   "desc": "Промежуточные итоги:\n1. Максим Брагин — 124.35\n2. Александр Щербаков — 120.57\n3. Степан Юров — 117.64\n\nНачало: 16:10 МСК",
+   "desc": "Промежуточные итоги:\n1. Павел Шин — 125.83\n2. Максим Брагин — 124.35\n3. Александр Щербаков — 120.57\n\nНачало: 16:10 МСК",
    "field": [
     {
      "name": "Мирон Андреанов",
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "102.63"
     },
     {
@@ -70445,7 +70445,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 3,
+     "place": 4,
      "points": "117.64"
     },
     {
@@ -70453,7 +70453,7 @@
      "nation": "",
      "no": 3,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "111.79"
     },
     {
@@ -70461,7 +70461,7 @@
      "nation": "",
      "no": 4,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "117.26"
     },
     {
@@ -70469,7 +70469,7 @@
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 4,
+     "place": 5,
      "points": "117.38"
     },
     {
@@ -70477,7 +70477,7 @@
      "nation": "",
      "no": 6,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "116.45"
     },
     {
@@ -70485,7 +70485,7 @@
      "nation": "",
      "no": 7,
      "warmup": null,
-     "place": 2,
+     "place": 3,
      "points": "120.57"
     },
     {
@@ -70493,14 +70493,16 @@
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 1,
+     "place": 2,
      "points": "124.35"
     },
     {
      "name": "Павел Шин",
      "nation": "",
      "no": 9,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "125.83"
     },
     {
      "name": "Платон Жильцов",
@@ -70632,21 +70634,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Павел Шин",
+     "nation": "",
+     "points": "125.83"
+    },
+    {
+     "place": 2,
      "name": "Максим Брагин",
      "nation": "",
      "points": "124.35"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Александр Щербаков",
      "nation": "",
      "points": "120.57"
-    },
-    {
-     "place": 3,
-     "name": "Степан Юров",
-     "nation": "",
-     "points": "117.64"
     }
    ],
    "provisional": true
@@ -124380,5 +124382,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "d6adccf5fb667d30"
+ "rev": "976d37435e3e041a"
 }
