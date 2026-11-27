@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T18:34:10+03:00",
- "checked": "2026-11-27T16:29:58.094569+00:00",
+ "checked": "2026-11-27T16:37:58.598689+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -70755,7 +70755,7 @@
     "Yu-Hsiang Li"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Начало: 19:20 МСК",
+   "desc": "Промежуточные итоги:\n1. Jozef Curma — 85.42\n\nНачало: 19:20 МСК",
    "field": [
     {
      "name": "Nikolaj Memola",
@@ -70776,7 +70776,9 @@
      "nation": "SVK",
      "time": "19:28",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "85.42"
     },
     {
      "name": "Lev Vinokur",
@@ -70999,7 +71001,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Jozef Curma",
+     "nation": "SVK",
+     "points": "85.42"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:dance-senior-pt",
@@ -124333,5 +124344,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "b8d9a2d7d1cb0cb9"
+ "rev": "bee93fb7c03644f1"
 }
