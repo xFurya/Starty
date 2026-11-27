@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T18:34:10+03:00",
- "checked": "2026-11-27T16:45:58.861528+00:00",
+ "checked": "2026-11-27T16:53:58.322470+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -70755,7 +70755,7 @@
     "Yu-Hsiang Li"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Lev Vinokur — 114.49\n2. Jozef Curma — 85.42\n\nНачало: 19:20 МСК",
+   "desc": "Промежуточные итоги:\n1. Lev Vinokur — 114.49\n2. Xan Rols — 100.23\n3. Jozef Curma — 85.42\n\nНачало: 19:20 МСК",
    "field": [
     {
      "name": "Nikolaj Memola",
@@ -70777,7 +70777,7 @@
      "time": "19:28",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "85.42"
     },
     {
@@ -70794,7 +70794,9 @@
      "nation": "FRA",
      "time": "19:43",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "100.23"
     },
     {
      "name": "Jedidiah Lincoln",
@@ -71013,6 +71015,12 @@
     },
     {
      "place": 2,
+     "name": "Xan Rols",
+     "nation": "FRA",
+     "points": "100.23"
+    },
+    {
+     "place": 3,
      "name": "Jozef Curma",
      "nation": "SVK",
      "points": "85.42"
@@ -124352,5 +124360,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "b48024d758e1ce8c"
+ "rev": "b33cb1af43a22115"
 }
