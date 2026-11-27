@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T17:13:45+03:00",
- "checked": "2026-11-27T15:37:58.829051+00:00",
+ "checked": "2026-11-27T15:41:58.082548+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -70544,14 +70544,16 @@
     "Xuanyu Liu / Wenbao Han"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Начало: 18:25 МСК",
+   "desc": "Промежуточные итоги:\n1. Laura Gauch / Linus Mager — 39.13\n\nНачало: 18:25 МСК",
    "field": [
     {
      "name": "Laura Gauch / Linus Mager",
      "nation": "SUI",
      "time": "18:32",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "39.13"
     },
     {
      "name": "Sarah Nunez / Blake Eisenach",
@@ -70588,7 +70590,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Laura Gauch / Linus Mager",
+     "nation": "SUI",
+     "points": "39.13"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:men-senior-pp",
@@ -124252,5 +124263,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "c81a8671ac9de930"
+ "rev": "ed7802b3cbe7e353"
 }
