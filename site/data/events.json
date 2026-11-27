@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T09:53:41+03:00",
- "checked": "2026-11-27T08:32:02.612443+00:00",
+ "checked": "2026-11-27T08:40:02.806710+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -69687,7 +69687,9 @@
      "nation": "USA",
      "time": "11:32",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 11,
+     "points": "59.05"
     },
     {
      "name": "Mone Chiba",
@@ -124019,5 +124021,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "85f5e03587f2a704"
+ "rev": "fc3afb206c696f31"
 }
