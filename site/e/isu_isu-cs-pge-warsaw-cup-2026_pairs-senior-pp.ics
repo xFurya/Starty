@@ -14,11 +14,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-pge-warsaw-cup-2026:pairs-senior-pp@starty
-DTSTAMP:20261127T201718Z
-DTSTART;TZID=Europe/Moscow:20261128T223000
+DTSTAMP:20261127T212815Z
+DTSTART;TZID=Europe/Moscow:20261128T224000
 DTEND;TZID=Europe/Moscow:20261128T232000
 SUMMARY:CS PGE Warsaw Cup — пары ПП
-DESCRIPTION:Начало: 22:30 МСК
+DESCRIPTION:Начало: 22:40 МСК
 LOCATION:Warsaw\, Poland
 URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-pge-warsaw-cup-2026:pairs
  -senior-pp

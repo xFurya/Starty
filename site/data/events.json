@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-27T23:17:18+03:00",
- "checked": "2026-11-27T21:18:35.463391+00:00",
+ "generated": "2026-11-28T00:28:15+03:00",
+ "checked": "2026-11-28T00:28:15+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -70778,14 +70778,14 @@
    },
    "facts": [
     {
-     "who": "Xuanyu Liu / Wenbao Han",
+     "kind": "score",
      "text": "Личный рекорд за КП: 50.97 (был 42.85)",
-     "kind": "score"
+     "who": "Xuanyu Liu / Wenbao Han"
     },
     {
-     "who": "Sarah Nunez / Blake Eisenach",
+     "kind": "score",
      "text": "Личный рекорд за КП: 50.84 (был 46.25)",
-     "kind": "score"
+     "who": "Sarah Nunez / Blake Eisenach"
     }
    ],
    "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
@@ -70799,7 +70799,7 @@
    "seg": "ПП",
    "title": "CS PGE Warsaw Cup — мужчины ПП",
    "start": "2026-11-27T19:20:00+03:00",
-   "end": "2026-11-28T00:17:00+03:00",
+   "end": "2026-11-28T00:05:00+03:00",
    "venue": "Warsaw, Poland",
    "intl": true,
    "broadcast": [],
@@ -70856,338 +70856,6 @@
      "points": "146.94"
     }
    ],
-   "desc": "Итог:\n1. Nikolaj Memola — 160.02\n2. Lucas Broussard — 156.54\n3. Mark Gorodnitsky — 146.94\n\nИтог турнира:\n1. Lucas Broussard — 246.70\n2. Nikolaj Memola — 244.95\n3. Mark Gorodnitsky — 226.49\n\nПримечательное:\n• Lucas Broussard — Личный рекорд по сумме: 246.70 (был 246.48)\n\nНачало: 19:20 МСК",
-   "field": [
-    {
-     "name": "Aurelian Chervet",
-     "nation": "SUI",
-     "place": 27,
-     "points": "96.14",
-     "time": "20:23",
-     "no": 7,
-     "warmup": 2,
-     "final": 26
-    },
-    {
-     "name": "Corentin Spinar",
-     "nation": "FRA",
-     "place": 4,
-     "points": "143.79",
-     "time": "21:48",
-     "no": 15,
-     "warmup": 3,
-     "final": 7
-    },
-    {
-     "name": "Daniil Valanov",
-     "nation": "NOR",
-     "place": 21,
-     "points": "107.23",
-     "time": "21:25",
-     "no": 12,
-     "warmup": 3,
-     "final": 21
-    },
-    {
-     "name": "Davide Lewton Brain",
-     "nation": "MON",
-     "place": 19,
-     "points": "112.04",
-     "time": "21:40",
-     "no": 14,
-     "warmup": 3,
-     "final": 16
-    },
-    {
-     "name": "Ean Weiler",
-     "nation": "SUI",
-     "place": 14,
-     "points": "117.18",
-     "time": "22:43",
-     "no": 21,
-     "warmup": 4,
-     "final": 15
-    },
-    {
-     "name": "Georgii Reshtenko",
-     "nation": "CZE",
-     "place": 13,
-     "points": "122.11",
-     "time": "22:59",
-     "no": 23,
-     "warmup": 4,
-     "final": 10
-    },
-    {
-     "name": "Jakub Lofek",
-     "nation": "POL",
-     "place": 16,
-     "points": "114.75",
-     "time": "20:30",
-     "no": 8,
-     "warmup": 2,
-     "final": 18
-    },
-    {
-     "name": "Jedidiah Lincoln",
-     "nation": "GBR",
-     "place": 24,
-     "points": "101.11",
-     "time": "19:51",
-     "no": 4,
-     "warmup": 1,
-     "final": 24
-    },
-    {
-     "name": "Jozef Curma",
-     "nation": "SVK",
-     "place": 28,
-     "points": "85.42",
-     "time": "19:28",
-     "no": 1,
-     "warmup": 1,
-     "final": 29
-    },
-    {
-     "name": "Kornel Witkowski",
-     "nation": "POL",
-     "time": "23:38",
-     "no": 25,
-     "warmup": 5,
-     "place": 7,
-     "points": "137.36",
-     "final": 5
-    },
-    {
-     "name": "Kyrylo Marsak",
-     "nation": "UKR",
-     "place": 5,
-     "points": "142.52",
-     "time": "22:35",
-     "no": 20,
-     "warmup": 4,
-     "final": 6
-    },
-    {
-     "name": "Lev Vinokur",
-     "nation": "ISR",
-     "place": 17,
-     "points": "114.49",
-     "time": "19:35",
-     "no": 2,
-     "warmup": 1,
-     "final": 23
-    },
-    {
-     "name": "Lucas Broussard",
-     "nation": "USA",
-     "time": "00:09",
-     "no": 29,
-     "warmup": 5,
-     "place": 2,
-     "points": "156.54",
-     "final": 1
-    },
-    {
-     "name": "Lucius Kazanecki",
-     "nation": "USA",
-     "time": "23:53",
-     "no": 27,
-     "warmup": 5,
-     "place": 6,
-     "points": "142.11",
-     "final": 4
-    },
-    {
-     "name": "Mahery Randrianarivony",
-     "nation": "ESP",
-     "place": 22,
-     "points": "102.44",
-     "time": "20:54",
-     "no": 11,
-     "warmup": 2,
-     "final": 22
-    },
-    {
-     "name": "Makar Suntsev",
-     "nation": "FIN",
-     "place": 9,
-     "points": "130.57",
-     "time": "21:33",
-     "no": 13,
-     "warmup": 3,
-     "final": 14
-    },
-    {
-     "name": "Maksim Varakin",
-     "nation": "CRO",
-     "place": 8,
-     "points": "134.23",
-     "time": "22:20",
-     "no": 18,
-     "warmup": 4,
-     "final": 8
-    },
-    {
-     "name": "Mark Gorodnitsky",
-     "nation": "ISR",
-     "time": "23:45",
-     "no": 26,
-     "warmup": 5,
-     "place": 3,
-     "points": "146.94",
-     "final": 3
-    },
-    {
-     "name": "Matvii Yefymenko",
-     "nation": "POL",
-     "place": 18,
-     "points": "114.40",
-     "time": "20:38",
-     "no": 9,
-     "warmup": 2,
-     "final": 17
-    },
-    {
-     "name": "Nikita Starostin",
-     "nation": "GER",
-     "place": 11,
-     "points": "127.16",
-     "time": "22:04",
-     "no": 17,
-     "warmup": 3,
-     "final": 12
-    },
-    {
-     "name": "Nikolaj Memola",
-     "nation": "ITA",
-     "time": "00:01",
-     "no": 28,
-     "warmup": 5,
-     "place": 1,
-     "points": "160.02",
-     "final": 2
-    },
-    {
-     "name": "Nikolajs Krivoseja",
-     "nation": "LAT",
-     "place": 29,
-     "points": "83.06",
-     "time": "20:15",
-     "no": 6,
-     "warmup": 2,
-     "final": 28
-    },
-    {
-     "name": "Samy Hammi",
-     "nation": "FRA",
-     "time": "23:30",
-     "no": 24,
-     "warmup": 5,
-     "place": 12,
-     "points": "123.58",
-     "final": 9
-    },
-    {
-     "name": "Tadeas Vaclavik",
-     "nation": "CZE",
-     "place": 26,
-     "points": "98.83",
-     "time": "19:59",
-     "no": 5,
-     "warmup": 1,
-     "final": 25
-    },
-    {
-     "name": "Tobia Oellerer",
-     "nation": "AUT",
-     "place": 23,
-     "points": "102.21",
-     "time": "21:56",
-     "no": 16,
-     "warmup": 3,
-     "final": 19
-    },
-    {
-     "name": "Valtter Virtanen",
-     "nation": "FIN",
-     "place": 20,
-     "points": "109.43",
-     "time": "20:46",
-     "no": 10,
-     "warmup": 2,
-     "final": 20
-    },
-    {
-     "name": "Xan Rols",
-     "nation": "FRA",
-     "place": 25,
-     "points": "100.23",
-     "time": "19:43",
-     "no": 3,
-     "warmup": 1,
-     "final": 27
-    },
-    {
-     "name": "Yanhao Li",
-     "nation": "NZL",
-     "place": 15,
-     "points": "117.13",
-     "time": "22:51",
-     "no": 22,
-     "warmup": 4,
-     "final": 13
-    },
-    {
-     "name": "Yu-Hsiang Li",
-     "nation": "TPE",
-     "place": 10,
-     "points": "129.02",
-     "time": "22:28",
-     "no": 19,
-     "warmup": 4,
-     "final": 11
-    }
-   ],
-   "live": {
-    "idx": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-    "seg": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG002.htm",
-    "cat": "https://pzlf-wyniki.pl/2627/CSPOL2026/CAT001RS.htm",
-    "first": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG001.htm",
-    "names": {
-     "Kyrylo MARSAK": "Kyrylo Marsak",
-     "Corentin SPINAR": "Corentin Spinar",
-     "Maksim VARAKIN": "Maksim Varakin",
-     "Georgii RESHTENKO": "Georgii Reshtenko",
-     "Yu-Hsiang LI": "Yu-Hsiang Li",
-     "Nikita STAROSTIN": "Nikita Starostin",
-     "Yanhao LI": "Yanhao Li",
-     "Makar SUNTSEV": "Makar Suntsev",
-     "Ean WEILER": "Ean Weiler",
-     "Davide LEWTON BRAIN": "Davide Lewton Brain",
-     "Matvii YEFYMENKO": "Matvii Yefymenko",
-     "Jakub LOFEK": "Jakub Lofek",
-     "Tobia OELLERER": "Tobia Oellerer",
-     "Valtter VIRTANEN": "Valtter Virtanen",
-     "Daniil VALANOV": "Daniil Valanov",
-     "Mahery RANDRIANARIVONY": "Mahery Randrianarivony",
-     "Lev VINOKUR": "Lev Vinokur",
-     "Jedidiah LINCOLN": "Jedidiah Lincoln",
-     "Tadeas VACLAVIK": "Tadeas Vaclavik",
-     "Aurelian CHERVET": "Aurelian Chervet",
-     "Xan ROLS": "Xan Rols",
-     "Nikolajs KRIVOSEJA": "Nikolajs Krivoseja",
-     "Jozef CURMA": "Jozef Curma",
-     "Samy HAMMI": "Samy Hammi",
-     "Kornel WITKOWSKI": "Kornel Witkowski",
-     "Mark GORODNITSKY": "Mark Gorodnitsky",
-     "Lucius KAZANECKI": "Lucius Kazanecki",
-     "Nikolaj MEMOLA": "Nikolaj Memola",
-     "Lucas BROUSSARD": "Lucas Broussard"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json",
    "total": [
     {
      "place": 1,
@@ -71208,13 +70876,345 @@
      "points": "226.49"
     }
    ],
+   "desc": "Итог:\n1. Nikolaj Memola — 160.02\n2. Lucas Broussard — 156.54\n3. Mark Gorodnitsky — 146.94\n\nИтог турнира:\n1. Lucas Broussard — 246.70\n2. Nikolaj Memola — 244.95\n3. Mark Gorodnitsky — 226.49\n\nПримечательное:\n• Lucas Broussard — Личный рекорд по сумме: 246.70 (был 246.48)\n\nНачало: 19:20 МСК",
+   "field": [
+    {
+     "name": "Jozef Curma",
+     "nation": "SVK",
+     "no": 1,
+     "warmup": 1,
+     "place": 28,
+     "points": "85.42",
+     "final": 29,
+     "time": "19:28"
+    },
+    {
+     "name": "Lev Vinokur",
+     "nation": "ISR",
+     "no": 2,
+     "warmup": 1,
+     "place": 17,
+     "points": "114.49",
+     "final": 23,
+     "time": "19:35"
+    },
+    {
+     "name": "Xan Rols",
+     "nation": "FRA",
+     "no": 3,
+     "warmup": 1,
+     "place": 25,
+     "points": "100.23",
+     "final": 27,
+     "time": "19:43"
+    },
+    {
+     "name": "Jedidiah Lincoln",
+     "nation": "GBR",
+     "no": 4,
+     "warmup": 1,
+     "place": 24,
+     "points": "101.11",
+     "final": 24,
+     "time": "19:51"
+    },
+    {
+     "name": "Tadeas Vaclavik",
+     "nation": "CZE",
+     "no": 5,
+     "warmup": 1,
+     "place": 26,
+     "points": "98.83",
+     "final": 25,
+     "time": "19:59"
+    },
+    {
+     "name": "Nikolajs Krivoseja",
+     "nation": "LAT",
+     "no": 6,
+     "warmup": 2,
+     "place": 29,
+     "points": "83.06",
+     "final": 28,
+     "time": "20:15"
+    },
+    {
+     "name": "Aurelian Chervet",
+     "nation": "SUI",
+     "no": 7,
+     "warmup": 2,
+     "place": 27,
+     "points": "96.14",
+     "final": 26,
+     "time": "20:23"
+    },
+    {
+     "name": "Jakub Lofek",
+     "nation": "POL",
+     "no": 8,
+     "warmup": 2,
+     "place": 16,
+     "points": "114.75",
+     "final": 18,
+     "time": "20:30"
+    },
+    {
+     "name": "Matvii Yefymenko",
+     "nation": "POL",
+     "no": 9,
+     "warmup": 2,
+     "place": 18,
+     "points": "114.40",
+     "final": 17,
+     "time": "20:38"
+    },
+    {
+     "name": "Valtter Virtanen",
+     "nation": "FIN",
+     "no": 10,
+     "warmup": 2,
+     "place": 20,
+     "points": "109.43",
+     "final": 20,
+     "time": "20:46"
+    },
+    {
+     "name": "Mahery Randrianarivony",
+     "nation": "ESP",
+     "no": 11,
+     "warmup": 2,
+     "place": 22,
+     "points": "102.44",
+     "final": 22,
+     "time": "20:54"
+    },
+    {
+     "name": "Daniil Valanov",
+     "nation": "NOR",
+     "no": 12,
+     "warmup": 3,
+     "place": 21,
+     "points": "107.23",
+     "final": 21,
+     "time": "21:25"
+    },
+    {
+     "name": "Makar Suntsev",
+     "nation": "FIN",
+     "no": 13,
+     "warmup": 3,
+     "place": 9,
+     "points": "130.57",
+     "final": 14,
+     "time": "21:33"
+    },
+    {
+     "name": "Davide Lewton Brain",
+     "nation": "MON",
+     "no": 14,
+     "warmup": 3,
+     "place": 19,
+     "points": "112.04",
+     "final": 16,
+     "time": "21:40"
+    },
+    {
+     "name": "Corentin Spinar",
+     "nation": "FRA",
+     "no": 15,
+     "warmup": 3,
+     "place": 4,
+     "points": "143.79",
+     "final": 7,
+     "time": "21:48"
+    },
+    {
+     "name": "Tobia Oellerer",
+     "nation": "AUT",
+     "no": 16,
+     "warmup": 3,
+     "place": 23,
+     "points": "102.21",
+     "final": 19,
+     "time": "21:56"
+    },
+    {
+     "name": "Nikita Starostin",
+     "nation": "GER",
+     "no": 17,
+     "warmup": 3,
+     "place": 11,
+     "points": "127.16",
+     "final": 12,
+     "time": "22:04"
+    },
+    {
+     "name": "Maksim Varakin",
+     "nation": "CRO",
+     "no": 18,
+     "warmup": 4,
+     "place": 8,
+     "points": "134.23",
+     "final": 8,
+     "time": "22:20"
+    },
+    {
+     "name": "Yu-Hsiang Li",
+     "nation": "TPE",
+     "no": 19,
+     "warmup": 4,
+     "place": 10,
+     "points": "129.02",
+     "final": 11,
+     "time": "22:28"
+    },
+    {
+     "name": "Kyrylo Marsak",
+     "nation": "UKR",
+     "no": 20,
+     "warmup": 4,
+     "place": 5,
+     "points": "142.52",
+     "final": 6,
+     "time": "22:35"
+    },
+    {
+     "name": "Ean Weiler",
+     "nation": "SUI",
+     "no": 21,
+     "warmup": 4,
+     "place": 14,
+     "points": "117.18",
+     "final": 15,
+     "time": "22:43"
+    },
+    {
+     "name": "Yanhao Li",
+     "nation": "NZL",
+     "no": 22,
+     "warmup": 4,
+     "place": 15,
+     "points": "117.13",
+     "final": 13,
+     "time": "22:51"
+    },
+    {
+     "name": "Georgii Reshtenko",
+     "nation": "CZE",
+     "no": 23,
+     "warmup": 4,
+     "place": 13,
+     "points": "122.11",
+     "final": 10,
+     "time": "22:59"
+    },
+    {
+     "name": "Samy Hammi",
+     "nation": "FRA",
+     "no": 24,
+     "warmup": 5,
+     "place": 12,
+     "points": "123.58",
+     "final": 9,
+     "time": "23:30"
+    },
+    {
+     "name": "Kornel Witkowski",
+     "nation": "POL",
+     "no": 25,
+     "warmup": 5,
+     "place": 7,
+     "points": "137.36",
+     "final": 5,
+     "time": "23:38"
+    },
+    {
+     "name": "Mark Gorodnitsky",
+     "nation": "ISR",
+     "no": 26,
+     "warmup": 5,
+     "place": 3,
+     "points": "146.94",
+     "final": 3,
+     "time": "23:45"
+    },
+    {
+     "name": "Lucius Kazanecki",
+     "nation": "USA",
+     "no": 27,
+     "warmup": 5,
+     "place": 6,
+     "points": "142.11",
+     "final": 4,
+     "time": "23:53"
+    },
+    {
+     "name": "Nikolaj Memola",
+     "nation": "ITA",
+     "no": 28,
+     "warmup": 5,
+     "place": 1,
+     "points": "160.02",
+     "final": 2,
+     "time": "00:01"
+    },
+    {
+     "name": "Lucas Broussard",
+     "nation": "USA",
+     "no": 29,
+     "warmup": 5,
+     "place": 2,
+     "points": "156.54",
+     "final": 1,
+     "time": "00:09"
+    }
+   ],
+   "live": {
+    "idx": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
+    "seg": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG002.htm",
+    "cat": "https://pzlf-wyniki.pl/2627/CSPOL2026/CAT001RS.htm",
+    "first": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG001.htm",
+    "names": {
+     "Nikolaj MEMOLA": "Nikolaj Memola",
+     "Lucas BROUSSARD": "Lucas Broussard",
+     "Mark GORODNITSKY": "Mark Gorodnitsky",
+     "Corentin SPINAR": "Corentin Spinar",
+     "Kyrylo MARSAK": "Kyrylo Marsak",
+     "Lucius KAZANECKI": "Lucius Kazanecki",
+     "Kornel WITKOWSKI": "Kornel Witkowski",
+     "Maksim VARAKIN": "Maksim Varakin",
+     "Makar SUNTSEV": "Makar Suntsev",
+     "Yu-Hsiang LI": "Yu-Hsiang Li",
+     "Nikita STAROSTIN": "Nikita Starostin",
+     "Samy HAMMI": "Samy Hammi",
+     "Georgii RESHTENKO": "Georgii Reshtenko",
+     "Ean WEILER": "Ean Weiler",
+     "Yanhao LI": "Yanhao Li",
+     "Jakub LOFEK": "Jakub Lofek",
+     "Lev VINOKUR": "Lev Vinokur",
+     "Matvii YEFYMENKO": "Matvii Yefymenko",
+     "Davide LEWTON BRAIN": "Davide Lewton Brain",
+     "Valtter VIRTANEN": "Valtter Virtanen",
+     "Daniil VALANOV": "Daniil Valanov",
+     "Mahery RANDRIANARIVONY": "Mahery Randrianarivony",
+     "Tobia OELLERER": "Tobia Oellerer",
+     "Jedidiah LINCOLN": "Jedidiah Lincoln",
+     "Xan ROLS": "Xan Rols",
+     "Tadeas VACLAVIK": "Tadeas Vaclavik",
+     "Aurelian CHERVET": "Aurelian Chervet",
+     "Jozef CURMA": "Jozef Curma",
+     "Nikolajs KRIVOSEJA": "Nikolajs Krivoseja"
+    },
+    "basis": "judges"
+   },
    "facts": [
     {
-     "who": "Lucas Broussard",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 246.70 (был 246.48)",
-     "kind": "score"
+     "who": "Lucas Broussard"
     }
-   ]
+   ],
+   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:dance-senior-pt",
@@ -72819,8 +72819,8 @@
    "level": "senior",
    "seg": "КП",
    "title": "Skate Celje — женщины КП",
-   "start": "2026-11-28T21:20:00+03:00",
-   "end": "2026-11-28T22:38:00+03:00",
+   "start": "2026-11-28T21:15:00+03:00",
+   "end": "2026-11-28T22:33:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -72828,7 +72828,7 @@
     {
      "name": "Камилла Нелюбова",
      "nation": "RUS",
-     "time": "22:14",
+     "time": "22:09",
      "no": 9,
      "warmup": 2
     }
@@ -72848,89 +72848,89 @@
     "Камилла Нелюбова"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Камилла Нелюбова — 22:14\n\nНачало: 21:20 МСК",
+   "desc": "Россияне:\n• Камилла Нелюбова — 22:09\n\nНачало: 21:15 МСК",
    "field": [
     {
      "name": "Barbora Tykalova",
      "nation": "CZE",
-     "time": "21:26",
+     "time": "21:21",
      "no": 1,
      "warmup": 1
     },
     {
      "name": "Mariia Kryzhova",
      "nation": "SRB",
-     "time": "21:32",
+     "time": "21:27",
      "no": 2,
      "warmup": 1
     },
     {
      "name": "Andrea Montesinos Cantu",
      "nation": "MEX",
-     "time": "21:37",
+     "time": "21:32",
      "no": 3,
      "warmup": 1
     },
     {
      "name": "Ulla Nieminen",
      "nation": "FIN",
-     "time": "21:43",
+     "time": "21:38",
      "no": 4,
      "warmup": 1
     },
     {
      "name": "Dunja Tresnjic",
      "nation": "SRB",
-     "time": "21:48",
+     "time": "21:43",
      "no": 5,
      "warmup": 1
     },
     {
      "name": "Julija Lovrencic",
      "nation": "SLO",
-     "time": "21:54",
+     "time": "21:49",
      "no": 6,
      "warmup": 1
     },
     {
      "name": "Alexandra Feigin",
      "nation": "BUL",
-     "time": "22:03",
+     "time": "21:58",
      "no": 7,
      "warmup": 2
     },
     {
      "name": "Ana Scepanovic",
      "nation": "SRB",
-     "time": "22:09",
+     "time": "22:04",
      "no": 8,
      "warmup": 2
     },
     {
      "name": "Камилла Нелюбова",
      "nation": "RUS",
-     "time": "22:14",
+     "time": "22:09",
      "no": 9,
      "warmup": 2
     },
     {
      "name": "Ana Sofia Beschea",
      "nation": "ROU",
-     "time": "22:20",
+     "time": "22:15",
      "no": 10,
      "warmup": 2
     },
     {
      "name": "Melisa Basturk",
      "nation": "TUR",
-     "time": "22:25",
+     "time": "22:20",
      "no": 11,
      "warmup": 2
     },
     {
      "name": "Ula Zadnikar",
      "nation": "SLO",
-     "time": "22:31",
+     "time": "22:26",
      "no": 12,
      "warmup": 2
     }
@@ -72966,7 +72966,7 @@
    "level": "senior",
    "seg": "ПП",
    "title": "CS PGE Warsaw Cup — пары ПП",
-   "start": "2026-11-28T22:30:00+03:00",
+   "start": "2026-11-28T22:40:00+03:00",
    "end": "2026-11-28T23:20:00+03:00",
    "venue": "Warsaw, Poland",
    "intl": true,
@@ -72979,7 +72979,7 @@
     "Xuanyu Liu / Wenbao Han"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Начало: 22:30 МСК",
+   "desc": "Начало: 22:40 МСК",
    "field": [
     {
      "name": "Laura Gauch / Linus Mager",
@@ -73033,8 +73033,8 @@
    "level": "senior",
    "seg": "КП",
    "title": "Skate Celje — мужчины КП",
-   "start": "2026-11-28T22:48:00+03:00",
-   "end": "2026-11-28T23:38:00+03:00",
+   "start": "2026-11-28T22:45:00+03:00",
+   "end": "2026-11-28T23:35:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -73042,7 +73042,7 @@
     {
      "name": "Лев Лазарев",
      "nation": "RUS",
-     "time": "23:20",
+     "time": "23:17",
      "no": 5,
      "warmup": 2
     }
@@ -73057,54 +73057,54 @@
     "Макар Николаев"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Лев Лазарев — 23:20\n\nНачало: 22:48 МСК",
+   "desc": "Россияне:\n• Лев Лазарев — 23:17\n\nНачало: 22:45 МСК",
    "field": [
     {
      "name": "Furkan Emre Incel",
      "nation": "TUR",
-     "time": "22:54",
+     "time": "22:51",
      "no": 1,
      "warmup": 1
     },
     {
      "name": "Макар Николаев",
      "nation": "GEO",
-     "time": "23:00",
+     "time": "22:57",
      "no": 2,
      "warmup": 1
     },
     {
      "name": "Mikayel Salazaryan",
      "nation": "ARM",
-     "time": "23:05",
+     "time": "23:02",
      "no": 3,
      "warmup": 1
     },
     {
      "name": "Anton Skoficz",
      "nation": "AUT",
-     "time": "23:15",
+     "time": "23:12",
      "no": 4,
      "warmup": 2
     },
     {
      "name": "Лев Лазарев",
      "nation": "RUS",
-     "time": "23:20",
+     "time": "23:17",
      "no": 5,
      "warmup": 2
     },
     {
      "name": "Alessandro Liberatore",
      "nation": "SLO",
-     "time": "23:26",
+     "time": "23:23",
      "no": 6,
      "warmup": 2
     },
     {
      "name": "David Sedej",
      "nation": "SLO",
-     "time": "23:31",
+     "time": "23:28",
      "no": 7,
      "warmup": 2
     }
@@ -74856,7 +74856,7 @@
    "watch": [
     {
      "name": "VK Видео",
-     "url": "https://vkvideo.ru/live-171234363_456239689"
+     "url": "https://vkvideo.ru/live-171234363_456239690"
     }
    ]
   },
@@ -110970,9 +110970,9 @@
    "n": "Sofia Tridello / Alberto Tommasi",
    "c": "RUS",
    "k": "",
+   "p": "1ad50adc5965",
    "was": "p",
-   "y": "2026/27",
-   "p": "1ad50adc5965"
+   "y": "2026/27"
   },
   {
    "n": "Oliwia Strokosz",
@@ -124888,5 +124888,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "9d7e7567b251d308"
+ "rev": "d17450d6f57c3bda"
 }
