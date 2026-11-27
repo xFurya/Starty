@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T08:07:58+03:00",
- "checked": "2026-11-27T06:32:01.854731+00:00",
+ "checked": "2026-11-27T06:40:02.190435+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69410,7 +69410,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Karina Akopova / Nikita Rakhmanin — 66.95\n2. Anna Valesi / Martin Bidar — 59.77\n3. Chelsea Liu / Ryan Bedard — 59.71\n\nНачало: 08:35 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Yuna Nagaoka / Sumitada Moriguchi — 69.78\n2. Karina Akopova / Nikita Rakhmanin — 66.95\n3. Anna Valesi / Martin Bidar — 59.77\n\nНачало: 08:35 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Naomi Williams / Lachlan Lewer",
@@ -69418,7 +69418,7 @@
      "time": "08:42",
      "no": 1,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "49.50"
     },
     {
@@ -69427,7 +69427,7 @@
      "time": "08:48",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "59.71"
     },
     {
@@ -69436,7 +69436,7 @@
      "time": "08:55",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "59.77"
     },
     {
@@ -69445,7 +69445,7 @@
      "time": "09:01",
      "no": 4,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "55.27"
     },
     {
@@ -69454,7 +69454,7 @@
      "time": "09:15",
      "no": 5,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "52.07"
     },
     {
@@ -69463,7 +69463,7 @@
      "time": "09:21",
      "no": 6,
      "warmup": 2,
-     "place": 1,
+     "place": 2,
      "points": "66.95"
     },
     {
@@ -69471,7 +69471,9 @@
      "nation": "JPN",
      "time": "09:28",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "69.78"
     },
     {
      "name": "Minerva Fabienne Hase / Nikita Volodin",
@@ -69502,21 +69504,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Yuna Nagaoka / Sumitada Moriguchi",
+     "nation": "JPN",
+     "points": "69.78"
+    },
+    {
+     "place": 2,
      "name": "Karina Akopova / Nikita Rakhmanin",
      "nation": "ARM",
      "points": "66.95"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Anna Valesi / Martin Bidar",
      "nation": "CZE",
      "points": "59.77"
-    },
-    {
-     "place": 3,
-     "name": "Chelsea Liu / Ryan Bedard",
-     "nation": "USA",
-     "points": "59.71"
     }
    ],
    "provisional": true
@@ -123980,5 +123982,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "a8cb68dbceffe97d"
+ "rev": "fdb0961c7a442a7c"
 }
