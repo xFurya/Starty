@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T18:34:10+03:00",
- "checked": "2026-11-27T18:01:57.821138+00:00",
+ "checked": "2026-11-27T18:33:58.190939+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -70777,7 +70777,7 @@
      "time": "19:28",
      "no": 1,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "points": "85.42"
     },
     {
@@ -70795,7 +70795,7 @@
      "time": "19:43",
      "no": 3,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "100.23"
     },
     {
@@ -70804,7 +70804,7 @@
      "time": "19:51",
      "no": 4,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "101.11"
     },
     {
@@ -70813,7 +70813,7 @@
      "time": "19:59",
      "no": 5,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "98.83"
     },
     {
@@ -70822,7 +70822,7 @@
      "time": "20:15",
      "no": 6,
      "warmup": 2,
-     "place": 11,
+     "place": 12,
      "points": "83.06"
     },
     {
@@ -70831,7 +70831,7 @@
      "time": "20:23",
      "no": 7,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "96.14"
     },
     {
@@ -70867,7 +70867,7 @@
      "time": "20:54",
      "no": 11,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "102.44"
     },
     {
@@ -70875,7 +70875,9 @@
      "nation": "NOR",
      "time": "21:25",
      "no": 12,
-     "warmup": 3
+     "warmup": 3,
+     "place": 5,
+     "points": "107.23"
     },
     {
      "name": "Makar Suntsev",
@@ -124376,5 +124378,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "629aaea34d604b22"
+ "rev": "086d39d14855e625"
 }
