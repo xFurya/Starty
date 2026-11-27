@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T17:13:45+03:00",
- "checked": "2026-11-27T15:53:58.804848+00:00",
+ "checked": "2026-11-27T15:57:58.464513+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -70441,7 +70441,7 @@
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 18,
+     "place": 19,
      "points": "102.63"
     },
     {
@@ -70449,7 +70449,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 12,
+     "place": 13,
      "points": "117.64"
     },
     {
@@ -70457,7 +70457,7 @@
      "nation": "",
      "no": 3,
      "warmup": null,
-     "place": 17,
+     "place": 18,
      "points": "111.79"
     },
     {
@@ -70465,7 +70465,7 @@
      "nation": "",
      "no": 4,
      "warmup": null,
-     "place": 14,
+     "place": 15,
      "points": "117.26"
     },
     {
@@ -70473,7 +70473,7 @@
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 13,
+     "place": 14,
      "points": "117.38"
     },
     {
@@ -70481,7 +70481,7 @@
      "nation": "",
      "no": 6,
      "warmup": null,
-     "place": 15,
+     "place": 16,
      "points": "116.45"
     },
     {
@@ -70489,7 +70489,7 @@
      "nation": "",
      "no": 7,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "120.57"
     },
     {
@@ -70497,7 +70497,7 @@
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "124.35"
     }
    ],
@@ -70544,7 +70544,7 @@
     "Xuanyu Liu / Wenbao Han"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Sofia Tridello / Alberto Tommasi — 53.73\n2. Sarah Nunez / Blake Eisenach — 50.84\n3. Laura Gauch / Linus Mager — 39.13\n\nНачало: 18:25 МСК",
+   "desc": "Итог:\n1. Sofia Tridello / Alberto Tommasi — 53.73\n2. Xuanyu Liu / Wenbao Han — 50.97\n3. Sarah Nunez / Blake Eisenach — 50.84\n\nНачало: 18:25 МСК",
    "field": [
     {
      "name": "Laura Gauch / Linus Mager",
@@ -70552,7 +70552,7 @@
      "time": "18:32",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "39.13"
     },
     {
@@ -70561,7 +70561,7 @@
      "time": "18:38",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "50.84"
     },
     {
@@ -70578,7 +70578,9 @@
      "nation": "CHN",
      "time": "18:51",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "50.97"
     }
    ],
    "live": {
@@ -70592,7 +70594,7 @@
      "Sofia TRIDELLO / Alberto TOMMASI": "Sofia Tridello / Alberto Tommasi",
      "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-cs-pge-warsaw-cup-2026.json",
    "podium": [
@@ -70604,18 +70606,17 @@
     },
     {
      "place": 2,
-     "name": "Sarah Nunez / Blake Eisenach",
-     "nation": "USA",
-     "points": "50.84"
+     "name": "Xuanyu Liu / Wenbao Han",
+     "nation": "CHN",
+     "points": "50.97"
     },
     {
      "place": 3,
-     "name": "Laura Gauch / Linus Mager",
-     "nation": "SUI",
-     "points": "39.13"
+     "name": "Sarah Nunez / Blake Eisenach",
+     "nation": "USA",
+     "points": "50.84"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:men-senior-pp",
@@ -124279,5 +124280,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "b2d1ac4f33d30e4b"
+ "rev": "a4e263f04de0a555"
 }
