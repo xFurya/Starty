@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T00:35:54+03:00",
- "checked": "2026-11-27T00:35:54+03:00",
+ "checked": "2026-11-27T03:48:01.879831+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69260,14 +69260,16 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Начало: 06:35 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Rika Kihira / Shingo Nishiyama — 62.71\n\nНачало: 06:35 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Rika Kihira / Shingo Nishiyama",
      "nation": "JPN",
      "time": "06:42",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "62.71"
     },
     {
      "name": "Ikura Kushida / Koshiro Shimada",
@@ -69352,7 +69354,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json"
+   "proto": "isu_isu-gp-nhk-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Rika Kihira / Shingo Nishiyama",
+     "nation": "JPN",
+     "points": "62.71"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:pairs-senior-kp",
@@ -123914,5 +123925,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "c15a84f2bdfe2db1"
+ "rev": "2edea52ad5d38e87"
 }
