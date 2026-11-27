@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T09:53:41+03:00",
- "checked": "2026-11-27T09:53:41+03:00",
+ "checked": "2026-11-27T07:32:02.366670+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -69542,7 +69542,9 @@
      "nation": "RUS",
      "time": "10:23",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "71.48"
     },
     {
      "name": "Виктория Сафонова",
@@ -69584,14 +69586,16 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Россияне:\n• Алина Горбачёва — 10:23\n• Виктория Сафонова — 10:29\n• Аделия Петросян — 10:47\n\nНачало: 10:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Алина Горбачёва — 71.48\n\nРоссияне:\n• Алина Горбачёва — 10:23\n• Виктория Сафонова — 10:29\n• Аделия Петросян — 10:47\n\nНачало: 10:15 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Алина Горбачёва",
      "nation": "RUS",
      "time": "10:23",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "71.48"
     },
     {
      "name": "Виктория Сафонова",
@@ -69692,7 +69696,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json"
+   "proto": "isu_isu-gp-nhk-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Алина Горбачёва",
+     "nation": "RUS",
+     "points": "71.48"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:men-senior-kp",
@@ -123972,5 +123985,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "18fc573f838d9ef1"
+ "rev": "abb490c027a35a0b"
 }
