@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T08:07:58+03:00",
- "checked": "2026-11-27T06:04:01.639240+00:00",
+ "checked": "2026-11-27T06:08:01.523407+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69410,7 +69410,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Anna Valesi / Martin Bidar — 59.77\n2. Chelsea Liu / Ryan Bedard — 59.71\n3. Naomi Williams / Lachlan Lewer — 49.50\n\nНачало: 08:35 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Anna Valesi / Martin Bidar — 59.77\n2. Chelsea Liu / Ryan Bedard — 59.71\n3. Jazmine Desrochers / Kieran Thrasher — 55.27\n\nНачало: 08:35 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Naomi Williams / Lachlan Lewer",
@@ -69418,7 +69418,7 @@
      "time": "08:42",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "49.50"
     },
     {
@@ -69444,7 +69444,9 @@
      "nation": "CAN",
      "time": "09:01",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3,
+     "points": "55.27"
     },
     {
      "name": "Camille Kovalev / Pavel Kovalev",
@@ -69508,9 +69510,9 @@
     },
     {
      "place": 3,
-     "name": "Naomi Williams / Lachlan Lewer",
-     "nation": "USA",
-     "points": "49.50"
+     "name": "Jazmine Desrochers / Kieran Thrasher",
+     "nation": "CAN",
+     "points": "55.27"
     }
    ],
    "provisional": true
@@ -123974,5 +123976,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "f4a26d888ea2de2c"
+ "rev": "d737d59c3148c8be"
 }
