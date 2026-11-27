@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T17:13:45+03:00",
- "checked": "2026-11-27T15:45:58.807809+00:00",
+ "checked": "2026-11-27T15:53:58.804848+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -70544,7 +70544,7 @@
     "Xuanyu Liu / Wenbao Han"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Sarah Nunez / Blake Eisenach — 50.84\n2. Laura Gauch / Linus Mager — 39.13\n\nНачало: 18:25 МСК",
+   "desc": "Промежуточные итоги:\n1. Sofia Tridello / Alberto Tommasi — 53.73\n2. Sarah Nunez / Blake Eisenach — 50.84\n3. Laura Gauch / Linus Mager — 39.13\n\nНачало: 18:25 МСК",
    "field": [
     {
      "name": "Laura Gauch / Linus Mager",
@@ -70552,7 +70552,7 @@
      "time": "18:32",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "39.13"
     },
     {
@@ -70561,7 +70561,7 @@
      "time": "18:38",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "50.84"
     },
     {
@@ -70569,7 +70569,9 @@
      "nation": "ITA",
      "time": "18:44",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "53.73"
     },
     {
      "name": "Xuanyu Liu / Wenbao Han",
@@ -70596,12 +70598,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Sofia Tridello / Alberto Tommasi",
+     "nation": "ITA",
+     "points": "53.73"
+    },
+    {
+     "place": 2,
      "name": "Sarah Nunez / Blake Eisenach",
      "nation": "USA",
      "points": "50.84"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Laura Gauch / Linus Mager",
      "nation": "SUI",
      "points": "39.13"
@@ -124271,5 +124279,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "4a4cba607e7e5198"
+ "rev": "b2d1ac4f33d30e4b"
 }
