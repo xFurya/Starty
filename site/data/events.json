@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T18:34:10+03:00",
- "checked": "2026-11-27T17:21:58.405383+00:00",
+ "checked": "2026-11-27T17:33:58.070386+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -70777,7 +70777,7 @@
      "time": "19:28",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "85.42"
     },
     {
@@ -70822,7 +70822,7 @@
      "time": "20:15",
      "no": 6,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "83.06"
     },
     {
@@ -70830,7 +70830,9 @@
      "nation": "SUI",
      "time": "20:23",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 5,
+     "points": "96.14"
     },
     {
      "name": "Jakub Lofek",
@@ -124366,5 +124368,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "ae08d0cff4efa489"
+ "rev": "a65a814a7a60de15"
 }
