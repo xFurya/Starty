@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T17:13:45+03:00",
- "checked": "2026-11-27T15:41:58.082548+00:00",
+ "checked": "2026-11-27T15:45:58.807809+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -70417,31 +70417,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Тимофей Бочков",
+     "nation": "",
+     "points": "138.87"
+    },
+    {
+     "place": 2,
      "name": "Алексей Заводских",
      "nation": "",
      "points": "137.94"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Артем Федотов",
      "nation": "",
      "points": "136.65"
-    },
-    {
-     "place": 3,
-     "name": "Кирилл Жураховский",
-     "nation": "",
-     "points": "135.94"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Алексей Заводских — 137.94\n2. Артем Федотов — 136.65\n3. Кирилл Жураховский — 135.94\n\nНачало: 16:10 МСК",
+   "desc": "Промежуточные итоги:\n1. Тимофей Бочков — 138.87\n2. Алексей Заводских — 137.94\n3. Артем Федотов — 136.65\n\nНачало: 16:10 МСК",
    "field": [
     {
      "name": "Мирон Андреанов",
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 17,
+     "place": 18,
      "points": "102.63"
     },
     {
@@ -70449,7 +70449,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 11,
+     "place": 12,
      "points": "117.64"
     },
     {
@@ -70457,7 +70457,7 @@
      "nation": "",
      "no": 3,
      "warmup": null,
-     "place": 16,
+     "place": 17,
      "points": "111.79"
     },
     {
@@ -70465,7 +70465,7 @@
      "nation": "",
      "no": 4,
      "warmup": null,
-     "place": 13,
+     "place": 14,
      "points": "117.26"
     },
     {
@@ -70473,7 +70473,7 @@
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 12,
+     "place": 13,
      "points": "117.38"
     },
     {
@@ -70481,7 +70481,7 @@
      "nation": "",
      "no": 6,
      "warmup": null,
-     "place": 14,
+     "place": 15,
      "points": "116.45"
     },
     {
@@ -70489,7 +70489,7 @@
      "nation": "",
      "no": 7,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "120.57"
     },
     {
@@ -70497,7 +70497,7 @@
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "124.35"
     }
    ],
@@ -70544,7 +70544,7 @@
     "Xuanyu Liu / Wenbao Han"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Laura Gauch / Linus Mager — 39.13\n\nНачало: 18:25 МСК",
+   "desc": "Промежуточные итоги:\n1. Sarah Nunez / Blake Eisenach — 50.84\n2. Laura Gauch / Linus Mager — 39.13\n\nНачало: 18:25 МСК",
    "field": [
     {
      "name": "Laura Gauch / Linus Mager",
@@ -70552,7 +70552,7 @@
      "time": "18:32",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "39.13"
     },
     {
@@ -70560,7 +70560,9 @@
      "nation": "USA",
      "time": "18:38",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "50.84"
     },
     {
      "name": "Sofia Tridello / Alberto Tommasi",
@@ -70594,6 +70596,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Sarah Nunez / Blake Eisenach",
+     "nation": "USA",
+     "points": "50.84"
+    },
+    {
+     "place": 2,
      "name": "Laura Gauch / Linus Mager",
      "nation": "SUI",
      "points": "39.13"
@@ -124263,5 +124271,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "ed7802b3cbe7e353"
+ "rev": "4a4cba607e7e5198"
 }
