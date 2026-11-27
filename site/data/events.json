@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T18:34:10+03:00",
- "checked": "2026-11-27T16:09:58.222216+00:00",
+ "checked": "2026-11-27T16:17:57.984162+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -70426,31 +70426,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Никита Малютин",
+     "nation": "",
+     "points": "154.35"
+    },
+    {
+     "place": 2,
      "name": "Даниил Жолобов",
      "nation": "",
      "points": "148.56"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Тимофей Бочков",
      "nation": "",
      "points": "138.87"
-    },
-    {
-     "place": 3,
-     "name": "Алексей Заводских",
-     "nation": "",
-     "points": "137.94"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Даниил Жолобов — 148.56\n2. Тимофей Бочков — 138.87\n3. Алексей Заводских — 137.94\n\nНачало: 16:10 МСК",
+   "desc": "Промежуточные итоги:\n1. Никита Малютин — 154.35\n2. Даниил Жолобов — 148.56\n3. Тимофей Бочков — 138.87\n\nНачало: 16:10 МСК",
    "field": [
     {
      "name": "Мирон Андреанов",
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 21,
+     "place": 22,
      "points": "102.63"
     },
     {
@@ -70458,7 +70458,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 15,
+     "place": 16,
      "points": "117.64"
     },
     {
@@ -70466,7 +70466,7 @@
      "nation": "",
      "no": 3,
      "warmup": null,
-     "place": 20,
+     "place": 21,
      "points": "111.79"
     },
     {
@@ -70474,7 +70474,7 @@
      "nation": "",
      "no": 4,
      "warmup": null,
-     "place": 17,
+     "place": 18,
      "points": "117.26"
     },
     {
@@ -70482,7 +70482,7 @@
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 16,
+     "place": 17,
      "points": "117.38"
     },
     {
@@ -70490,7 +70490,7 @@
      "nation": "",
      "no": 6,
      "warmup": null,
-     "place": 18,
+     "place": 19,
      "points": "116.45"
     },
     {
@@ -70498,7 +70498,7 @@
      "nation": "",
      "no": 7,
      "warmup": null,
-     "place": 10,
+     "place": 11,
      "points": "120.57"
     },
     {
@@ -70506,7 +70506,7 @@
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 9,
+     "place": 10,
      "points": "124.35"
     },
     {
@@ -70514,7 +70514,7 @@
      "nation": "",
      "no": 9,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "125.83"
     },
     {
@@ -70522,7 +70522,7 @@
      "nation": "",
      "no": 10,
      "warmup": null,
-     "place": 14,
+     "place": 15,
      "points": "118.72"
     },
     {
@@ -70530,7 +70530,7 @@
      "nation": "",
      "no": 11,
      "warmup": null,
-     "place": 13,
+     "place": 14,
      "points": "119.24"
     },
     {
@@ -70538,7 +70538,7 @@
      "nation": "",
      "no": 12,
      "warmup": null,
-     "place": 19,
+     "place": 20,
      "points": "115.82"
     },
     {
@@ -70546,7 +70546,7 @@
      "nation": "",
      "no": 13,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "136.65"
     },
     {
@@ -70554,7 +70554,7 @@
      "nation": "",
      "no": 14,
      "warmup": null,
-     "place": 12,
+     "place": 13,
      "points": "120.19"
     },
     {
@@ -70562,7 +70562,7 @@
      "nation": "",
      "no": 15,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "135.94"
     },
     {
@@ -70570,7 +70570,7 @@
      "nation": "",
      "no": 16,
      "warmup": null,
-     "place": 11,
+     "place": 12,
      "points": "120.34"
     },
     {
@@ -70578,7 +70578,7 @@
      "nation": "",
      "no": 17,
      "warmup": null,
-     "place": 3,
+     "place": 4,
      "points": "137.94"
     }
    ],
@@ -124333,5 +124333,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "2b8092fa91e8a863"
+ "rev": "ea1f3f0f445d9a77"
 }
