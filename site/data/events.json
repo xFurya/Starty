@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T11:58:10+03:00",
- "checked": "2026-11-27T11:53:02.322892+00:00",
+ "checked": "2026-11-27T12:01:02.319454+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -70035,7 +70035,7 @@
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "103.76"
     },
     {
@@ -70043,7 +70043,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 13,
+     "place": 14,
      "points": "91.95"
     },
     {
@@ -70051,7 +70051,7 @@
      "nation": "",
      "no": 3,
      "warmup": null,
-     "place": 11,
+     "place": 12,
      "points": "95.71"
     },
     {
@@ -70059,7 +70059,7 @@
      "nation": "",
      "no": 4,
      "warmup": null,
-     "place": 9,
+     "place": 10,
      "points": "103.50"
     },
     {
@@ -70067,7 +70067,7 @@
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 12,
+     "place": 13,
      "points": "94.35"
     },
     {
@@ -70099,7 +70099,7 @@
      "nation": "",
      "no": 9,
      "warmup": null,
-     "place": 10,
+     "place": 11,
      "points": "102.94"
     },
     {
@@ -70115,7 +70115,7 @@
      "nation": "",
      "no": 11,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "104.90"
     },
     {
@@ -70138,7 +70138,9 @@
      "name": "Мария Галушкина",
      "nation": "",
      "no": 14,
-     "warmup": null
+     "warmup": null,
+     "place": 7,
+     "points": "105.43"
     },
     {
      "name": "Дарья Лебедева",
@@ -124171,5 +124173,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "79e2e57ac07c0f52"
+ "rev": "df53f97406968f35"
 }
