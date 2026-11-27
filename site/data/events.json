@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T23:17:18+03:00",
- "checked": "2026-11-27T23:17:18+03:00",
+ "checked": "2026-11-27T20:42:36.727937+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -70861,7 +70861,7 @@
     {
      "name": "Aurelian Chervet",
      "nation": "SUI",
-     "place": 21,
+     "place": 22,
      "points": "96.14",
      "time": "20:23",
      "no": 7,
@@ -70879,7 +70879,7 @@
     {
      "name": "Daniil Valanov",
      "nation": "NOR",
-     "place": 15,
+     "place": 16,
      "points": "107.23",
      "time": "21:25",
      "no": 12,
@@ -70888,7 +70888,7 @@
     {
      "name": "Davide Lewton Brain",
      "nation": "MON",
-     "place": 13,
+     "place": 14,
      "points": "112.04",
      "time": "21:40",
      "no": 14,
@@ -70897,7 +70897,7 @@
     {
      "name": "Ean Weiler",
      "nation": "SUI",
-     "place": 8,
+     "place": 9,
      "points": "117.18",
      "time": "22:43",
      "no": 21,
@@ -70906,7 +70906,7 @@
     {
      "name": "Georgii Reshtenko",
      "nation": "CZE",
-     "place": 7,
+     "place": 8,
      "points": "122.11",
      "time": "22:59",
      "no": 23,
@@ -70915,7 +70915,7 @@
     {
      "name": "Jakub Lofek",
      "nation": "POL",
-     "place": 10,
+     "place": 11,
      "points": "114.75",
      "time": "20:30",
      "no": 8,
@@ -70924,7 +70924,7 @@
     {
      "name": "Jedidiah Lincoln",
      "nation": "GBR",
-     "place": 18,
+     "place": 19,
      "points": "101.11",
      "time": "19:51",
      "no": 4,
@@ -70933,7 +70933,7 @@
     {
      "name": "Jozef Curma",
      "nation": "SVK",
-     "place": 22,
+     "place": 23,
      "points": "85.42",
      "time": "19:28",
      "no": 1,
@@ -70958,7 +70958,7 @@
     {
      "name": "Lev Vinokur",
      "nation": "ISR",
-     "place": 11,
+     "place": 12,
      "points": "114.49",
      "time": "19:35",
      "no": 2,
@@ -70981,7 +70981,7 @@
     {
      "name": "Mahery Randrianarivony",
      "nation": "ESP",
-     "place": 16,
+     "place": 17,
      "points": "102.44",
      "time": "20:54",
      "no": 11,
@@ -71015,7 +71015,7 @@
     {
      "name": "Matvii Yefymenko",
      "nation": "POL",
-     "place": 12,
+     "place": 13,
      "points": "114.40",
      "time": "20:38",
      "no": 9,
@@ -71040,7 +71040,7 @@
     {
      "name": "Nikolajs Krivoseja",
      "nation": "LAT",
-     "place": 23,
+     "place": 24,
      "points": "83.06",
      "time": "20:15",
      "no": 6,
@@ -71051,12 +71051,14 @@
      "nation": "FRA",
      "time": "23:30",
      "no": 24,
-     "warmup": 5
+     "warmup": 5,
+     "place": 7,
+     "points": "123.58"
     },
     {
      "name": "Tadeas Vaclavik",
      "nation": "CZE",
-     "place": 20,
+     "place": 21,
      "points": "98.83",
      "time": "19:59",
      "no": 5,
@@ -71065,7 +71067,7 @@
     {
      "name": "Tobia Oellerer",
      "nation": "AUT",
-     "place": 17,
+     "place": 18,
      "points": "102.21",
      "time": "21:56",
      "no": 16,
@@ -71074,7 +71076,7 @@
     {
      "name": "Valtter Virtanen",
      "nation": "FIN",
-     "place": 14,
+     "place": 15,
      "points": "109.43",
      "time": "20:46",
      "no": 10,
@@ -71083,7 +71085,7 @@
     {
      "name": "Xan Rols",
      "nation": "FRA",
-     "place": 19,
+     "place": 20,
      "points": "100.23",
      "time": "19:43",
      "no": 3,
@@ -71092,7 +71094,7 @@
     {
      "name": "Yanhao Li",
      "nation": "NZL",
-     "place": 9,
+     "place": 10,
      "points": "117.13",
      "time": "22:51",
      "no": 22,
@@ -124821,5 +124823,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "d4093e3117893b51"
+ "rev": "b3a25e2e585cb6f3"
 }
