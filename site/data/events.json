@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T14:41:49+03:00",
- "checked": "2026-11-27T12:37:01.745096+00:00",
+ "checked": "2026-11-27T12:45:01.848789+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69997,7 +69997,7 @@
      "nation": "",
      "no": 12,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "115.27"
     }
    ],
@@ -70019,31 +70019,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Алиса Заикина",
+     "nation": "",
+     "points": "133.99"
+    },
+    {
+     "place": 2,
      "name": "Дарья Лебедева",
      "nation": "",
      "points": "129.27"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Алиса Мильто",
      "nation": "",
      "points": "124.06"
-    },
-    {
-     "place": 3,
-     "name": "Ника Маскайкина",
-     "nation": "",
-     "points": "120.39"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Дарья Лебедева — 129.27\n2. Алиса Мильто — 124.06\n3. Ника Маскайкина — 120.39\n\nРоссияне:\n• Анна Докукина — 12-й\n\nНачало: 13:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Алиса Заикина — 133.99\n2. Дарья Лебедева — 129.27\n3. Алиса Мильто — 124.06\n\nРоссияне:\n• Анна Докукина — 12-й\n\nНачало: 13:00 МСК",
    "field": [
     {
      "name": "Илина Аскарова",
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 14,
+     "place": 15,
      "points": "103.76"
     },
     {
@@ -70051,7 +70051,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 19,
+     "place": 20,
      "points": "91.95"
     },
     {
@@ -70059,7 +70059,7 @@
      "nation": "",
      "no": 3,
      "warmup": null,
-     "place": 17,
+     "place": 18,
      "points": "95.71"
     },
     {
@@ -70067,7 +70067,7 @@
      "nation": "",
      "no": 4,
      "warmup": null,
-     "place": 15,
+     "place": 16,
      "points": "103.50"
     },
     {
@@ -70075,7 +70075,7 @@
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 18,
+     "place": 19,
      "points": "94.35"
     },
     {
@@ -70083,7 +70083,7 @@
      "nation": "",
      "no": 6,
      "warmup": null,
-     "place": 5,
+     "place": 6,
      "points": "115.98"
     },
     {
@@ -70091,7 +70091,7 @@
      "nation": "",
      "no": 7,
      "warmup": null,
-     "place": 9,
+     "place": 10,
      "points": "111.53"
     },
     {
@@ -70099,7 +70099,7 @@
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 10,
+     "place": 11,
      "points": "109.74"
     },
     {
@@ -70107,7 +70107,7 @@
      "nation": "",
      "no": 9,
      "warmup": null,
-     "place": 16,
+     "place": 17,
      "points": "102.94"
     },
     {
@@ -70115,7 +70115,7 @@
      "nation": "",
      "no": 10,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "114.14"
     },
     {
@@ -70123,7 +70123,7 @@
      "nation": "",
      "no": 11,
      "warmup": null,
-     "place": 13,
+     "place": 14,
      "points": "104.90"
     },
     {
@@ -70131,7 +70131,7 @@
      "nation": "",
      "no": 12,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "115.27"
     }
    ],
@@ -124115,5 +124115,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "a928cb8ba029fbf0"
+ "rev": "0670c72cf406dca5"
 }
