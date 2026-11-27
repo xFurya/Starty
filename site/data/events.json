@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-27T17:13:45+03:00",
- "checked": "2026-11-27T15:57:58.464513+00:00",
- "complete": false,
+ "generated": "2026-11-27T18:34:10+03:00",
+ "checked": "2026-11-27T18:34:10+03:00",
+ "complete": true,
  "epoch": 1,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
-  "Golden Skate": "fail",
+  "Golden Skate": "ok",
   "ФФКМ": "ok",
   "Самара": "ok"
  },
@@ -70398,17 +70398,26 @@
    "seg": "ПП",
    "title": "Кубок Москвы (Финал) — юноши ПП",
    "start": "2026-11-27T16:10:00+03:00",
-   "end": "2026-11-27T17:25:00+03:00",
+   "end": "2026-11-27T18:55:00+03:00",
    "venue": "ЛД «Медведково», Москва",
    "intl": false,
    "broadcast": [],
    "ours": [],
    "athletes": [
     "Александр Щербаков",
+    "Алексей Ефременко",
+    "Алексей Заводских",
+    "Артем Федотов",
+    "Георгий Терехов",
+    "Григорий Хорохордин",
+    "Кирилл Жураховский",
     "Максим Брагин",
     "Максим Стрелков",
     "Мирон Андреанов",
+    "Наиль Сагадулин",
     "Павел Грибуля",
+    "Павел Шин",
+    "Платон Жильцов",
     "Степан Юров",
     "Тагар Самбуев",
     "Тимофей Жданов"
@@ -70417,31 +70426,31 @@
    "podium": [
     {
      "place": 1,
-     "name": "Тимофей Бочков",
-     "nation": "",
-     "points": "138.87"
-    },
-    {
-     "place": 2,
      "name": "Алексей Заводских",
      "nation": "",
      "points": "137.94"
     },
     {
-     "place": 3,
+     "place": 2,
      "name": "Артем Федотов",
      "nation": "",
-     "points": "136.65"
+     "points": "138.87"
+    },
+    {
+     "place": 3,
+     "name": "Кирилл Жураховский",
+     "nation": "",
+     "points": "135.94"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Тимофей Бочков — 138.87\n2. Алексей Заводских — 137.94\n3. Артем Федотов — 136.65\n\nНачало: 16:10 МСК",
+   "desc": "Промежуточные итоги:\n1. Алексей Заводских — 137.94\n2. Артем Федотов — 136.65\n3. Кирилл Жураховский — 135.94\n\nНачало: 16:10 МСК",
    "field": [
     {
      "name": "Мирон Андреанов",
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 19,
+     "place": 17,
      "points": "102.63"
     },
     {
@@ -70449,7 +70458,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 13,
+     "place": 11,
      "points": "117.64"
     },
     {
@@ -70457,7 +70466,7 @@
      "nation": "",
      "no": 3,
      "warmup": null,
-     "place": 18,
+     "place": 16,
      "points": "111.79"
     },
     {
@@ -70465,7 +70474,7 @@
      "nation": "",
      "no": 4,
      "warmup": null,
-     "place": 15,
+     "place": 13,
      "points": "117.26"
     },
     {
@@ -70473,7 +70482,7 @@
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 14,
+     "place": 12,
      "points": "117.38"
     },
     {
@@ -70481,7 +70490,7 @@
      "nation": "",
      "no": 6,
      "warmup": null,
-     "place": 16,
+     "place": 14,
      "points": "116.45"
     },
     {
@@ -70489,7 +70498,7 @@
      "nation": "",
      "no": 7,
      "warmup": null,
-     "place": 8,
+     "place": 6,
      "points": "120.57"
     },
     {
@@ -70497,8 +70506,80 @@
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 7,
+     "place": 5,
      "points": "124.35"
+    },
+    {
+     "name": "Павел Шин",
+     "nation": "",
+     "no": 9,
+     "warmup": null,
+     "place": 4,
+     "points": "125.83"
+    },
+    {
+     "name": "Платон Жильцов",
+     "nation": "",
+     "no": 10,
+     "warmup": null,
+     "place": 10,
+     "points": "118.72"
+    },
+    {
+     "name": "Наиль Сагадулин",
+     "nation": "",
+     "no": 11,
+     "warmup": null,
+     "place": 9,
+     "points": "119.24"
+    },
+    {
+     "name": "Георгий Терехов",
+     "nation": "",
+     "no": 12,
+     "warmup": null,
+     "place": 15,
+     "points": "115.82"
+    },
+    {
+     "name": "Артем Федотов",
+     "nation": "",
+     "no": 13,
+     "warmup": null,
+     "place": 2,
+     "points": "136.65"
+    },
+    {
+     "name": "Алексей Ефременко",
+     "nation": "",
+     "no": 14,
+     "warmup": null,
+     "place": 8,
+     "points": "120.19"
+    },
+    {
+     "name": "Кирилл Жураховский",
+     "nation": "",
+     "no": 15,
+     "warmup": null,
+     "place": 3,
+     "points": "135.94"
+    },
+    {
+     "name": "Григорий Хорохордин",
+     "nation": "",
+     "no": 16,
+     "warmup": null,
+     "place": 7,
+     "points": "120.34"
+    },
+    {
+     "name": "Алексей Заводских",
+     "nation": "",
+     "no": 17,
+     "warmup": null,
+     "place": 1,
+     "points": "137.94"
     }
    ],
    "provisional": true,
@@ -70508,12 +70589,21 @@
     "cat": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/CAT004RS.HTM",
     "first": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/SEG007.HTM",
     "names": {
+     "Алексей ЗАВОДСКИХ": "Алексей Заводских",
+     "Артем ФЕДОТОВ": "Артем Федотов",
+     "Кирилл ЖУРАХОВСКИЙ": "Кирилл Жураховский",
+     "Павел ШИН": "Павел Шин",
      "Максим БРАГИН": "Максим Брагин",
      "Александр ЩЕРБАКОВ": "Александр Щербаков",
+     "Григорий ХОРОХОРДИН": "Григорий Хорохордин",
+     "Алексей ЕФРЕМЕНКО": "Алексей Ефременко",
+     "Наиль САГАДУЛИН": "Наиль Сагадулин",
+     "Платон ЖИЛЬЦОВ": "Платон Жильцов",
      "Степан ЮРОВ": "Степан Юров",
      "Тагар САМБУЕВ": "Тагар Самбуев",
      "Павел ГРИБУЛЯ": "Павел Грибуля",
      "Максим СТРЕЛКОВ": "Максим Стрелков",
+     "Георгий ТЕРЕХОВ": "Георгий Терехов",
      "Тимофей ЖДАНОВ": "Тимофей Жданов",
      "Мирон АНДРЕАНОВ": "Мирон Андреанов"
     },
@@ -70544,16 +70634,24 @@
     "Xuanyu Liu / Wenbao Han"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Итог:\n1. Sofia Tridello / Alberto Tommasi — 53.73\n2. Xuanyu Liu / Wenbao Han — 50.97\n3. Sarah Nunez / Blake Eisenach — 50.84\n\nНачало: 18:25 МСК",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Laura Gauch / Linus Mager",
+     "nation": "SUI",
+     "points": "39.13"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Laura Gauch / Linus Mager — 39.13\n\nНачало: 18:25 МСК",
    "field": [
     {
      "name": "Laura Gauch / Linus Mager",
      "nation": "SUI",
-     "time": "18:32",
      "no": 1,
      "warmup": 1,
-     "place": 4,
-     "points": "39.13"
+     "place": 1,
+     "points": "39.13",
+     "time": "18:32"
     },
     {
      "name": "Sarah Nunez / Blake Eisenach",
@@ -70583,6 +70681,7 @@
      "points": "50.97"
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
     "seg": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG005.htm",
@@ -71852,13 +71951,13 @@
    "seg": "РТ",
    "title": "Посвященные государственности Удмуртии — юниорские танцы РТ",
    "start": "2026-11-28T13:45:00+03:00",
-   "end": "2026-11-28T16:20:00+03:00",
+   "end": "2026-11-28T16:05:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
    "desc": "Начало: 13:45 МСК",
    "proto": null
   },
@@ -71870,15 +71969,15 @@
    "level": "senior",
    "seg": "РТ",
    "title": "Посвященные государственности Удмуртии — танцы РТ",
-   "start": "2026-11-28T16:35:00+03:00",
-   "end": "2026-11-28T17:40:00+03:00",
+   "start": "2026-11-28T16:20:00+03:00",
+   "end": "2026-11-28T17:30:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
-   "desc": "Начало: 16:35 МСК",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "desc": "Начало: 16:20 МСК",
    "proto": null
   },
   {
@@ -72196,25 +72295,6 @@
    "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
   },
   {
-   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:pairs-senior-kp",
-   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
-   "tournament": "Посвященные государственности Удмуртии",
-   "kind": "pairs",
-   "level": "senior",
-   "seg": "КП",
-   "title": "Посвященные государственности Удмуртии — пары КП",
-   "start": "2026-11-28T17:55:00+03:00",
-   "end": "2026-11-28T18:20:00+03:00",
-   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
-   "intl": false,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
-   "desc": "Начало: 17:55 МСК",
-   "proto": null
-  },
-  {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:women-senior-kp",
    "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
    "tournament": "Посвященные государственности Удмуртии",
@@ -72222,15 +72302,15 @@
    "level": "senior",
    "seg": "КП",
    "title": "Посвященные государственности Удмуртии — женщины КП",
-   "start": "2026-11-28T18:35:00+03:00",
-   "end": "2026-11-28T20:30:00+03:00",
+   "start": "2026-11-28T17:45:00+03:00",
+   "end": "2026-11-28T19:25:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
-   "desc": "Начало: 18:35 МСК",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "desc": "Начало: 17:45 МСК",
    "proto": null
   },
   {
@@ -72241,15 +72321,15 @@
    "level": "senior",
    "seg": "КП",
    "title": "Посвященные государственности Удмуртии — мужчины КП",
-   "start": "2026-11-28T20:45:00+03:00",
-   "end": "2026-11-28T21:20:00+03:00",
+   "start": "2026-11-28T19:40:00+03:00",
+   "end": "2026-11-28T20:15:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
-   "desc": "Начало: 20:45 МСК",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "desc": "Начало: 19:40 МСК",
    "proto": null
   },
   {
@@ -73115,13 +73195,13 @@
    "seg": "ПТ",
    "title": "Посвященные государственности Удмуртии — юниорские танцы ПТ",
    "start": "2026-11-29T13:30:00+03:00",
-   "end": "2026-11-29T16:25:00+03:00",
+   "end": "2026-11-29T16:10:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
    "desc": "Начало: 13:30 МСК",
    "proto": null
   },
@@ -73302,15 +73382,15 @@
    "level": "senior",
    "seg": "ПТ",
    "title": "Посвященные государственности Удмуртии — танцы ПТ",
-   "start": "2026-11-29T16:40:00+03:00",
+   "start": "2026-11-29T16:25:00+03:00",
    "end": "2026-11-29T17:55:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
-   "desc": "Начало: 16:40 МСК",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "desc": "Начало: 16:25 МСК",
    "proto": null
   },
   {
@@ -73392,25 +73472,6 @@
    "proto": "gs_skate-celje.json"
   },
   {
-   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:pairs-senior-pp",
-   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
-   "tournament": "Посвященные государственности Удмуртии",
-   "kind": "pairs",
-   "level": "senior",
-   "seg": "ПП",
-   "title": "Посвященные государственности Удмуртии — пары ПП",
-   "start": "2026-11-29T18:10:00+03:00",
-   "end": "2026-11-29T18:40:00+03:00",
-   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
-   "intl": false,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
-   "desc": "Начало: 18:10 МСК",
-   "proto": null
-  },
-  {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:women-senior-pp",
    "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
    "tournament": "Посвященные государственности Удмуртии",
@@ -73418,15 +73479,15 @@
    "level": "senior",
    "seg": "ПП",
    "title": "Посвященные государственности Удмуртии — женщины ПП",
-   "start": "2026-11-29T18:55:00+03:00",
-   "end": "2026-11-29T21:05:00+03:00",
+   "start": "2026-11-29T18:10:00+03:00",
+   "end": "2026-11-29T20:30:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
-   "desc": "Начало: 18:55 МСК",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "desc": "Начало: 18:10 МСК",
    "proto": null
   },
   {
@@ -73437,15 +73498,15 @@
    "level": "senior",
    "seg": "ПП",
    "title": "Посвященные государственности Удмуртии — мужчины ПП",
-   "start": "2026-11-29T21:20:00+03:00",
-   "end": "2026-11-29T21:55:00+03:00",
+   "start": "2026-11-29T20:45:00+03:00",
+   "end": "2026-11-29T21:30:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
-   "desc": "Начало: 21:20 МСК",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "desc": "Начало: 20:45 МСК",
    "proto": null
   },
   {
@@ -73457,13 +73518,13 @@
    "seg": "КП",
    "title": "Посвященные государственности Удмуртии — девушки КП",
    "start": "2026-11-30T12:00:00+03:00",
-   "end": "2026-11-30T15:45:00+03:00",
+   "end": "2026-11-30T16:40:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
    "desc": "Начало: 12:00 МСК",
    "proto": null
   },
@@ -73475,15 +73536,15 @@
    "level": "junior",
    "seg": "КП",
    "title": "Посвященные государственности Удмуртии — юноши КП",
-   "start": "2026-11-30T16:00:00+03:00",
-   "end": "2026-11-30T17:30:00+03:00",
+   "start": "2026-11-30T16:55:00+03:00",
+   "end": "2026-11-30T18:15:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
-   "desc": "Начало: 16:00 МСК",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "desc": "Начало: 16:55 МСК",
    "proto": null
   },
   {
@@ -73495,13 +73556,13 @@
    "seg": "ПП",
    "title": "Посвященные государственности Удмуртии — девушки ПП",
    "start": "2026-12-01T12:30:00+03:00",
-   "end": "2026-12-01T15:10:00+03:00",
+   "end": "2026-12-01T15:40:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
    "desc": "Начало: 12:30 МСК",
    "proto": null
   },
@@ -73513,15 +73574,15 @@
    "level": "junior",
    "seg": "ПП",
    "title": "Посвященные государственности Удмуртии — юноши ПП",
-   "start": "2026-12-01T15:25:00+03:00",
-   "end": "2026-12-01T17:10:00+03:00",
+   "start": "2026-12-01T15:55:00+03:00",
+   "end": "2026-12-01T17:30:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
    "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule.pdf",
-   "desc": "Начало: 15:25 МСК",
+   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "desc": "Начало: 15:55 МСК",
    "proto": null
   },
   {
@@ -124280,5 +124341,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "a4e263f04de0a555"
+ "rev": "2dffb86b2221dafd"
 }
