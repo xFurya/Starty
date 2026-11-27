@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T18:34:10+03:00",
- "checked": "2026-11-27T17:01:57.855004+00:00",
+ "checked": "2026-11-27T17:05:58.345021+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -70777,7 +70777,7 @@
      "time": "19:28",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "85.42"
     },
     {
@@ -70812,7 +70812,9 @@
      "nation": "CZE",
      "time": "19:59",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4,
+     "points": "98.83"
     },
     {
      "name": "Nikolajs Krivoseja",
@@ -124362,5 +124364,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "1d0ab7cc1629232a"
+ "rev": "7beb41f648e5769b"
 }
