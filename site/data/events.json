@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-27T00:35:54+03:00",
- "checked": "2026-11-27T04:48:01.727861+00:00",
+ "generated": "2026-11-27T08:07:58+03:00",
+ "checked": "2026-11-27T08:07:58+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69229,7 +69229,7 @@
    "seg": "РТ",
    "title": "GP NHK Trophy — танцы РТ",
    "start": "2026-11-27T06:35:00+03:00",
-   "end": "2026-11-27T07:54:00+03:00",
+   "end": "2026-11-27T07:40:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
    "broadcast": [
@@ -69242,11 +69242,9 @@
     "Emilea Zingas / Vadym Kolesnik",
     "Ikura Kushida / Koshiro Shimada",
     "Juulia Turkkila / Matthias Versluis",
-    "Loicia Demougeot / Theo le Mercier",
     "Marjorie Lajoie / Jean-Luc Baker",
     "Olivia Smart / Tim Dieck",
     "Rika Kihira / Shingo Nishiyama",
-    "Utana Yoshida / Masaya Morita",
     "Yuka Orihara / Juho Pirinen"
    ],
    "src": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
@@ -69257,118 +69255,9 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/watch?v=AP4wM4ixVHY"
     }
    ],
-   "desc": "Итог:\n1. Emilea Zingas / Vadym Kolesnik — 83.16\n2. Christina Carreira / Anthony Ponomarenko — 80.82\n3. Juulia Turkkila / Matthias Versluis — 77.01\n\nНачало: 06:35 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
-    {
-     "name": "Rika Kihira / Shingo Nishiyama",
-     "nation": "JPN",
-     "time": "06:42",
-     "no": 1,
-     "warmup": 1,
-     "place": 8,
-     "points": "62.71"
-    },
-    {
-     "name": "Ikura Kushida / Koshiro Shimada",
-     "nation": "JPN",
-     "time": "06:48",
-     "no": 2,
-     "warmup": 1,
-     "place": 7,
-     "points": "63.77"
-    },
-    {
-     "name": "Marjorie Lajoie / Jean-Luc Baker",
-     "nation": "CAN",
-     "time": "06:55",
-     "no": 3,
-     "warmup": 1,
-     "place": 6,
-     "points": "70.57"
-    },
-    {
-     "name": "Utana Yoshida / Masaya Morita",
-     "nation": "JPN",
-     "time": "07:01",
-     "no": 4,
-     "warmup": 1
-    },
-    {
-     "name": "Yuka Orihara / Juho Pirinen",
-     "nation": "FIN",
-     "time": "07:08",
-     "no": 5,
-     "warmup": 1,
-     "place": 5,
-     "points": "71.93"
-    },
-    {
-     "name": "Loicia Demougeot / Theo le Mercier",
-     "nation": "FRA",
-     "time": "07:21",
-     "no": 6,
-     "warmup": 2
-    },
-    {
-     "name": "Juulia Turkkila / Matthias Versluis",
-     "nation": "FIN",
-     "time": "07:28",
-     "no": 7,
-     "warmup": 2,
-     "place": 3,
-     "points": "77.01"
-    },
-    {
-     "name": "Christina Carreira / Anthony Ponomarenko",
-     "nation": "USA",
-     "time": "07:34",
-     "no": 8,
-     "warmup": 2,
-     "place": 2,
-     "points": "80.82"
-    },
-    {
-     "name": "Emilea Zingas / Vadym Kolesnik",
-     "nation": "USA",
-     "time": "07:41",
-     "no": 9,
-     "warmup": 2,
-     "place": 1,
-     "points": "83.16"
-    },
-    {
-     "name": "Olivia Smart / Tim Dieck",
-     "nation": "ESP",
-     "time": "07:47",
-     "no": 10,
-     "warmup": 2,
-     "place": 4,
-     "points": "75.71"
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG007.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Rika KIHIRA / Shingo NISHIYAMA": "Rika Kihira / Shingo Nishiyama",
-     "Ikura KUSHIDA / Koshiro SHIMADA": "Ikura Kushida / Koshiro Shimada",
-     "Marjorie LAJOIE / Jean-Luc BAKER": "Marjorie Lajoie / Jean-Luc Baker",
-     "Utana YOSHIDA / Masaya MORITA": "Utana Yoshida / Masaya Morita",
-     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
-     "Loicia DEMOUGEOT / Theo le MERCIER": "Loicia Demougeot / Theo le Mercier",
-     "Juulia TURKKILA / Matthias VERSLUIS": "Juulia Turkkila / Matthias Versluis",
-     "Christina CARREIRA / Anthony PONOMARENKO": "Christina Carreira / Anthony Ponomarenko",
-     "Emilea ZINGAS / Vadym KOLESNIK": "Emilea Zingas / Vadym Kolesnik",
-     "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json",
    "podium": [
     {
      "place": 1,
@@ -69388,7 +69277,100 @@
      "nation": "FIN",
      "points": "77.01"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Emilea Zingas / Vadym Kolesnik — 83.16\n2. Christina Carreira / Anthony Ponomarenko — 80.82\n3. Juulia Turkkila / Matthias Versluis — 77.01\n\nНачало: 06:35 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Rika Kihira / Shingo Nishiyama",
+     "nation": "JPN",
+     "no": 1,
+     "warmup": 1,
+     "place": 8,
+     "points": "62.71",
+     "time": "06:42"
+    },
+    {
+     "name": "Ikura Kushida / Koshiro Shimada",
+     "nation": "JPN",
+     "no": 2,
+     "warmup": 1,
+     "place": 7,
+     "points": "63.77",
+     "time": "06:48"
+    },
+    {
+     "name": "Marjorie Lajoie / Jean-Luc Baker",
+     "nation": "CAN",
+     "no": 3,
+     "warmup": 1,
+     "place": 6,
+     "points": "70.57",
+     "time": "06:55"
+    },
+    {
+     "name": "Yuka Orihara / Juho Pirinen",
+     "nation": "FIN",
+     "no": 5,
+     "warmup": 1,
+     "place": 5,
+     "points": "71.93",
+     "time": "07:08"
+    },
+    {
+     "name": "Juulia Turkkila / Matthias Versluis",
+     "nation": "FIN",
+     "no": 7,
+     "warmup": 2,
+     "place": 3,
+     "points": "77.01",
+     "time": "07:28"
+    },
+    {
+     "name": "Christina Carreira / Anthony Ponomarenko",
+     "nation": "USA",
+     "no": 8,
+     "warmup": 2,
+     "place": 2,
+     "points": "80.82",
+     "time": "07:34"
+    },
+    {
+     "name": "Emilea Zingas / Vadym Kolesnik",
+     "nation": "USA",
+     "no": 9,
+     "warmup": 2,
+     "place": 1,
+     "points": "83.16",
+     "time": "07:41"
+    },
+    {
+     "name": "Olivia Smart / Tim Dieck",
+     "nation": "ESP",
+     "no": 10,
+     "warmup": 2,
+     "place": 4,
+     "points": "75.71",
+     "time": "07:47"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG007.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Emilea ZINGAS / Vadym KOLESNIK": "Emilea Zingas / Vadym Kolesnik",
+     "Christina CARREIRA / Anthony PONOMARENKO": "Christina Carreira / Anthony Ponomarenko",
+     "Juulia TURKKILA / Matthias VERSLUIS": "Juulia Turkkila / Matthias Versluis",
+     "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck",
+     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
+     "Marjorie LAJOIE / Jean-Luc BAKER": "Marjorie Lajoie / Jean-Luc Baker",
+     "Ikura KUSHIDA / Koshiro SHIMADA": "Ikura Kushida / Koshiro Shimada",
+     "Rika KIHIRA / Shingo NISHIYAMA": "Rika Kihira / Shingo Nishiyama"
+    },
+    "basis": "judges"
+   },
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:pairs-senior-kp",
@@ -70715,8 +70697,8 @@
    "level": "senior",
    "seg": "ПТ",
    "title": "GP NHK Trophy — танцы ПТ",
-   "start": "2026-11-28T06:00:00+03:00",
-   "end": "2026-11-28T07:25:00+03:00",
+   "start": "2026-11-28T06:05:00+03:00",
+   "end": "2026-11-28T07:21:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
    "broadcast": [
@@ -70729,11 +70711,9 @@
     "Emilea Zingas / Vadym Kolesnik",
     "Ikura Kushida / Koshiro Shimada",
     "Juulia Turkkila / Matthias Versluis",
-    "Loicia Demougeot / Theo le Mercier",
     "Marjorie Lajoie / Jean-Luc Baker",
     "Olivia Smart / Tim Dieck",
     "Rika Kihira / Shingo Nishiyama",
-    "Utana Yoshida / Masaya Morita",
     "Yuka Orihara / Juho Pirinen"
    ],
    "src": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
@@ -70747,47 +70727,63 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Начало: 06:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Начало: 06:05 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Christina Carreira / Anthony Ponomarenko",
-     "nation": "USA"
-    },
-    {
-     "name": "Emilea Zingas / Vadym Kolesnik",
-     "nation": "USA"
+     "name": "Rika Kihira / Shingo Nishiyama",
+     "nation": "JPN",
+     "time": "06:12",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Ikura Kushida / Koshiro Shimada",
-     "nation": "JPN"
-    },
-    {
-     "name": "Juulia Turkkila / Matthias Versluis",
-     "nation": "FIN"
-    },
-    {
-     "name": "Loicia Demougeot / Theo le Mercier",
-     "nation": "FRA"
+     "nation": "JPN",
+     "time": "06:19",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
-     "nation": "CAN"
-    },
-    {
-     "name": "Olivia Smart / Tim Dieck",
-     "nation": "ESP"
-    },
-    {
-     "name": "Rika Kihira / Shingo Nishiyama",
-     "nation": "JPN"
-    },
-    {
-     "name": "Utana Yoshida / Masaya Morita",
-     "nation": "JPN"
+     "nation": "CAN",
+     "time": "06:27",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Yuka Orihara / Juho Pirinen",
-     "nation": "FIN"
+     "nation": "FIN",
+     "time": "06:35",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Olivia Smart / Tim Dieck",
+     "nation": "ESP",
+     "time": "06:50",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Juulia Turkkila / Matthias Versluis",
+     "nation": "FIN",
+     "time": "06:58",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Christina Carreira / Anthony Ponomarenko",
+     "nation": "USA",
+     "time": "07:06",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Emilea Zingas / Vadym Kolesnik",
+     "nation": "USA",
+     "time": "07:13",
+     "no": 8,
+     "warmup": 2
     }
    ],
    "live": {
@@ -70796,14 +70792,12 @@
     "cat": "https://results.isu.org/results/season2627/gpjpn2026/CAT004RS.htm",
     "first": "https://results.isu.org/results/season2627/gpjpn2026/SEG007.htm",
     "names": {
-     "Marjorie LAJOIE / Jean-Luc BAKER": "Marjorie Lajoie / Jean-Luc Baker",
-     "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck",
-     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
-     "Juulia TURKKILA / Matthias VERSLUIS": "Juulia Turkkila / Matthias Versluis",
-     "Loicia DEMOUGEOT / Theo le MERCIER": "Loicia Demougeot / Theo le Mercier",
      "Rika KIHIRA / Shingo NISHIYAMA": "Rika Kihira / Shingo Nishiyama",
      "Ikura KUSHIDA / Koshiro SHIMADA": "Ikura Kushida / Koshiro Shimada",
-     "Utana YOSHIDA / Masaya MORITA": "Utana Yoshida / Masaya Morita",
+     "Marjorie LAJOIE / Jean-Luc BAKER": "Marjorie Lajoie / Jean-Luc Baker",
+     "Yuka ORIHARA / Juho PIRINEN": "Yuka Orihara / Juho Pirinen",
+     "Olivia SMART / Tim DIECK": "Olivia Smart / Tim Dieck",
+     "Juulia TURKKILA / Matthias VERSLUIS": "Juulia Turkkila / Matthias Versluis",
      "Christina CARREIRA / Anthony PONOMARENKO": "Christina Carreira / Anthony Ponomarenko",
      "Emilea ZINGAS / Vadym KOLESNIK": "Emilea Zingas / Vadym Kolesnik"
     },
@@ -74200,6 +74194,9 @@
    "venue": "Graz, Austria",
    "start": "2027-02-10",
    "end": "2027-02-13",
+   "ours": [],
+   "ours_nation": {},
+   "athletes": [],
    "broadcast": [],
    "watch": []
   },
@@ -123950,5 +123947,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "db87ef9badcd13f8"
+ "rev": "69233d0eed636831"
 }
