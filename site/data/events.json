@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-27T09:53:41+03:00",
- "checked": "2026-11-27T08:48:29.189257+00:00",
- "complete": false,
+ "generated": "2026-11-27T11:58:10+03:00",
+ "checked": "2026-11-27T11:58:10+03:00",
+ "complete": true,
  "epoch": 1,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
-  "Golden Skate": "fail",
+  "Golden Skate": "ok",
   "ФФКМ": "ok",
   "Самара": "ok"
  },
@@ -69403,7 +69403,7 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/watch?v=bgarAx1j-OQ"
     }
    ],
    "podium": [
@@ -69540,29 +69540,29 @@
     {
      "name": "Алина Горбачёва",
      "nation": "RUS",
-     "time": "10:23",
      "no": 1,
      "warmup": 1,
      "place": 3,
-     "points": "71.48"
+     "points": "71.48",
+     "time": "10:23"
     },
     {
      "name": "Виктория Сафонова",
      "nation": "BLR",
-     "time": "10:29",
      "no": 2,
      "warmup": 1,
      "place": 9,
-     "points": "63.11"
+     "points": "63.11",
+     "time": "10:29"
     },
     {
      "name": "Аделия Петросян",
      "nation": "RUS",
-     "time": "10:47",
      "no": 5,
      "warmup": 1,
      "place": 8,
-     "points": "65.28"
+     "points": "65.28",
+     "time": "10:47"
     }
    ],
    "athletes": [
@@ -69587,142 +69587,9 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/watch?v=Glj7j2I8g6w"
     }
    ],
-   "desc": "Итог:\n1. Mone Chiba — 77.12\n2. Jia Shin — 75.31\n3. Алина Горбачёва — 71.48\n\nПримечательное:\n• Jia Shin — Личный рекорд за КП: 75.31 (был 74.93)\n\nРоссияне:\n• Алина Горбачёва — 10:23\n• Виктория Сафонова — 10:29\n• Аделия Петросян — 10:47\n\nНачало: 10:15 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
-    {
-     "name": "Алина Горбачёва",
-     "nation": "RUS",
-     "time": "10:23",
-     "no": 1,
-     "warmup": 1,
-     "place": 3,
-     "points": "71.48"
-    },
-    {
-     "name": "Виктория Сафонова",
-     "nation": "BLR",
-     "time": "10:29",
-     "no": 2,
-     "warmup": 1,
-     "place": 9,
-     "points": "63.11"
-    },
-    {
-     "name": "Young You",
-     "nation": "KOR",
-     "time": "10:35",
-     "no": 3,
-     "warmup": 1,
-     "place": 4,
-     "points": "71.42"
-    },
-    {
-     "name": "Mako Yamashita",
-     "nation": "JPN",
-     "time": "10:41",
-     "no": 4,
-     "warmup": 1,
-     "place": 5,
-     "points": "69.34"
-    },
-    {
-     "name": "Аделия Петросян",
-     "nation": "RUS",
-     "time": "10:47",
-     "no": 5,
-     "warmup": 1,
-     "place": 8,
-     "points": "65.28"
-    },
-    {
-     "name": "Julia Sauter",
-     "nation": "ROU",
-     "time": "10:53",
-     "no": 6,
-     "warmup": 1,
-     "place": 10,
-     "points": "61.88"
-    },
-    {
-     "name": "Kimmy Repond",
-     "nation": "SUI",
-     "time": "11:08",
-     "no": 7,
-     "warmup": 2,
-     "place": 11,
-     "points": "61.02"
-    },
-    {
-     "name": "Madeline Schizas",
-     "nation": "CAN",
-     "time": "11:14",
-     "no": 8,
-     "warmup": 2,
-     "place": 7,
-     "points": "68.36"
-    },
-    {
-     "name": "Yuna Aoki",
-     "nation": "JPN",
-     "time": "11:20",
-     "no": 9,
-     "warmup": 2,
-     "place": 6,
-     "points": "69.17"
-    },
-    {
-     "name": "Jia Shin",
-     "nation": "KOR",
-     "time": "11:26",
-     "no": 10,
-     "warmup": 2,
-     "place": 2,
-     "points": "75.31"
-    },
-    {
-     "name": "Sarah Everhardt",
-     "nation": "USA",
-     "time": "11:32",
-     "no": 11,
-     "warmup": 2,
-     "place": 12,
-     "points": "59.05"
-    },
-    {
-     "name": "Mone Chiba",
-     "nation": "JPN",
-     "time": "11:38",
-     "no": 12,
-     "warmup": 2,
-     "place": 1,
-     "points": "77.12"
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG003.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Alina GORBACHEVA": "Алина Горбачёва",
-     "Viktoriia SAFONOVA": "Виктория Сафонова",
-     "Young YOU": "Young You",
-     "Mako YAMASHITA": "Mako Yamashita",
-     "Adeliia PETROSIAN": "Аделия Петросян",
-     "Julia SAUTER": "Julia Sauter",
-     "Kimmy REPOND": "Kimmy Repond",
-     "Madeline SCHIZAS": "Madeline Schizas",
-     "Yuna AOKI": "Yuna Aoki",
-     "Jia SHIN": "Jia Shin",
-     "Sarah EVERHARDT": "Sarah Everhardt",
-     "Mone CHIBA": "Mone Chiba"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json",
    "podium": [
     {
      "place": 1,
@@ -69743,13 +69610,146 @@
      "points": "71.48"
     }
    ],
+   "desc": "Итог:\n1. Mone Chiba — 77.12\n2. Jia Shin — 75.31\n3. Алина Горбачёва — 71.48\n\nПримечательное:\n• Jia Shin — Личный рекорд за КП: 75.31 (был 74.93)\n\nРоссияне:\n• Алина Горбачёва — 10:23\n• Виктория Сафонова — 10:29\n• Аделия Петросян — 10:47\n\nНачало: 10:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Алина Горбачёва",
+     "nation": "RUS",
+     "no": 1,
+     "warmup": 1,
+     "place": 3,
+     "points": "71.48",
+     "time": "10:23"
+    },
+    {
+     "name": "Виктория Сафонова",
+     "nation": "BLR",
+     "no": 2,
+     "warmup": 1,
+     "place": 9,
+     "points": "63.11",
+     "time": "10:29"
+    },
+    {
+     "name": "Young You",
+     "nation": "KOR",
+     "no": 3,
+     "warmup": 1,
+     "place": 4,
+     "points": "71.42",
+     "time": "10:35"
+    },
+    {
+     "name": "Mako Yamashita",
+     "nation": "JPN",
+     "no": 4,
+     "warmup": 1,
+     "place": 5,
+     "points": "69.34",
+     "time": "10:41"
+    },
+    {
+     "name": "Аделия Петросян",
+     "nation": "RUS",
+     "no": 5,
+     "warmup": 1,
+     "place": 8,
+     "points": "65.28",
+     "time": "10:47"
+    },
+    {
+     "name": "Julia Sauter",
+     "nation": "ROU",
+     "no": 6,
+     "warmup": 1,
+     "place": 10,
+     "points": "61.88",
+     "time": "10:53"
+    },
+    {
+     "name": "Kimmy Repond",
+     "nation": "SUI",
+     "no": 7,
+     "warmup": 2,
+     "place": 11,
+     "points": "61.02",
+     "time": "11:08"
+    },
+    {
+     "name": "Madeline Schizas",
+     "nation": "CAN",
+     "no": 8,
+     "warmup": 2,
+     "place": 7,
+     "points": "68.36",
+     "time": "11:14"
+    },
+    {
+     "name": "Yuna Aoki",
+     "nation": "JPN",
+     "no": 9,
+     "warmup": 2,
+     "place": 6,
+     "points": "69.17",
+     "time": "11:20"
+    },
+    {
+     "name": "Jia Shin",
+     "nation": "KOR",
+     "no": 10,
+     "warmup": 2,
+     "place": 2,
+     "points": "75.31",
+     "time": "11:26"
+    },
+    {
+     "name": "Sarah Everhardt",
+     "nation": "USA",
+     "no": 11,
+     "warmup": 2,
+     "place": 12,
+     "points": "59.05",
+     "time": "11:32"
+    },
+    {
+     "name": "Mone Chiba",
+     "nation": "JPN",
+     "no": 12,
+     "warmup": 2,
+     "place": 1,
+     "points": "77.12",
+     "time": "11:38"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG003.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Mone CHIBA": "Mone Chiba",
+     "Jia SHIN": "Jia Shin",
+     "Alina GORBACHEVA": "Алина Горбачёва",
+     "Young YOU": "Young You",
+     "Mako YAMASHITA": "Mako Yamashita",
+     "Yuna AOKI": "Yuna Aoki",
+     "Madeline SCHIZAS": "Madeline Schizas",
+     "Adeliia PETROSIAN": "Аделия Петросян",
+     "Viktoriia SAFONOVA": "Виктория Сафонова",
+     "Julia SAUTER": "Julia Sauter",
+     "Kimmy REPOND": "Kimmy Repond",
+     "Sarah EVERHARDT": "Sarah Everhardt"
+    },
+    "basis": "judges"
+   },
    "facts": [
     {
-     "who": "Jia Shin",
+     "kind": "score",
      "text": "Личный рекорд за КП: 75.31 (был 74.93)",
-     "kind": "score"
+     "who": "Jia Shin"
     }
-   ]
+   ],
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:men-senior-kp",
@@ -69805,7 +69805,7 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/watch?v=Glj7j2I8g6w"
     }
    ],
    "desc": "Россияне:\n• Владислав Дикиджи — 13:14\n• Пётр Гуменник — 13:20\n\nНачало: 13:00 МСК\nТрансляция: Okko / YouTube ISU",
@@ -70987,7 +70987,7 @@
    "seg": "ПП",
    "title": "GP NHK Trophy — женщины ПП",
    "start": "2026-11-28T10:30:00+03:00",
-   "end": "2026-11-28T12:15:00+03:00",
+   "end": "2026-11-28T12:20:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
    "broadcast": [
@@ -70996,16 +70996,25 @@
    ],
    "ours": [
     {
+     "name": "Виктория Сафонова",
+     "nation": "BLR",
+     "time": "11:01",
+     "no": 4,
+     "warmup": 1
+    },
+    {
      "name": "Аделия Петросян",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "11:08",
+     "no": 5,
+     "warmup": 1
     },
     {
      "name": "Алина Горбачёва",
-     "nation": "RUS"
-    },
-    {
-     "name": "Виктория Сафонова",
-     "nation": "BLR"
+     "nation": "RUS",
+     "time": "11:56",
+     "no": 10,
+     "warmup": 2
     }
    ],
    "athletes": [
@@ -71033,55 +71042,91 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Россияне:\n• Аделия Петросян\n• Алина Горбачёва\n• Виктория Сафонова\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Россияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Jia Shin",
-     "nation": "KOR"
-    },
-    {
-     "name": "Julia Sauter",
-     "nation": "ROU"
+     "name": "Sarah Everhardt",
+     "nation": "USA",
+     "time": "10:38",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Kimmy Repond",
-     "nation": "SUI"
+     "nation": "SUI",
+     "time": "10:45",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Madeline Schizas",
-     "nation": "CAN"
-    },
-    {
-     "name": "Mako Yamashita",
-     "nation": "JPN"
-    },
-    {
-     "name": "Mone Chiba",
-     "nation": "JPN"
-    },
-    {
-     "name": "Sarah Everhardt",
-     "nation": "USA"
-    },
-    {
-     "name": "Young You",
-     "nation": "KOR"
-    },
-    {
-     "name": "Yuna Aoki",
-     "nation": "JPN"
-    },
-    {
-     "name": "Аделия Петросян",
-     "nation": "RUS"
-    },
-    {
-     "name": "Алина Горбачёва",
-     "nation": "RUS"
+     "name": "Julia Sauter",
+     "nation": "ROU",
+     "time": "10:53",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Виктория Сафонова",
-     "nation": "BLR"
+     "nation": "BLR",
+     "time": "11:01",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Аделия Петросян",
+     "nation": "RUS",
+     "time": "11:08",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Madeline Schizas",
+     "nation": "CAN",
+     "time": "11:16",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Yuna Aoki",
+     "nation": "JPN",
+     "time": "11:32",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Mako Yamashita",
+     "nation": "JPN",
+     "time": "11:40",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Young You",
+     "nation": "KOR",
+     "time": "11:48",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Алина Горбачёва",
+     "nation": "RUS",
+     "time": "11:56",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Jia Shin",
+     "nation": "KOR",
+     "time": "12:04",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Mone Chiba",
+     "nation": "JPN",
+     "time": "12:12",
+     "no": 12,
+     "warmup": 2
     }
    ],
    "live": {
@@ -71090,18 +71135,18 @@
     "cat": "https://results.isu.org/results/season2627/gpjpn2026/CAT002RS.htm",
     "first": "https://results.isu.org/results/season2627/gpjpn2026/SEG003.htm",
     "names": {
-     "Alina GORBACHEVA": "Алина Горбачёва",
-     "Adeliia PETROSIAN": "Аделия Петросян",
+     "Sarah EVERHARDT": "Sarah Everhardt",
+     "Kimmy REPOND": "Kimmy Repond",
+     "Julia SAUTER": "Julia Sauter",
      "Viktoriia SAFONOVA": "Виктория Сафонова",
+     "Adeliia PETROSIAN": "Аделия Петросян",
      "Madeline SCHIZAS": "Madeline Schizas",
      "Yuna AOKI": "Yuna Aoki",
-     "Mone CHIBA": "Mone Chiba",
      "Mako YAMASHITA": "Mako Yamashita",
-     "Jia SHIN": "Jia Shin",
      "Young YOU": "Young You",
-     "Julia SAUTER": "Julia Sauter",
-     "Kimmy REPOND": "Kimmy Repond",
-     "Sarah EVERHARDT": "Sarah Everhardt"
+     "Alina GORBACHEVA": "Алина Горбачёва",
+     "Jia SHIN": "Jia Shin",
+     "Mone CHIBA": "Mone Chiba"
     },
     "basis": null
    },
@@ -124029,5 +124074,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "ec1ed4acd0439580"
+ "rev": "601aa32f005a4fb6"
 }
