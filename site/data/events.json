@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T18:34:10+03:00",
- "checked": "2026-11-27T17:05:58.345021+00:00",
+ "checked": "2026-11-27T17:21:58.405383+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -70821,7 +70821,9 @@
      "nation": "LAT",
      "time": "20:15",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 6,
+     "points": "83.06"
     },
     {
      "name": "Aurelian Chervet",
@@ -124364,5 +124366,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "7beb41f648e5769b"
+ "rev": "ae08d0cff4efa489"
 }
