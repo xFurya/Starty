@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T09:53:41+03:00",
- "checked": "2026-11-27T07:48:01.581519+00:00",
+ "checked": "2026-11-27T07:56:02.030454+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -69552,7 +69552,7 @@
      "time": "10:29",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "63.11"
     },
     {
@@ -69560,7 +69560,9 @@
      "nation": "RUS",
      "time": "10:47",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4,
+     "points": "65.28"
     }
    ],
    "athletes": [
@@ -69605,7 +69607,7 @@
      "time": "10:29",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "63.11"
     },
     {
@@ -69631,7 +69633,9 @@
      "nation": "RUS",
      "time": "10:47",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4,
+     "points": "65.28"
     },
     {
      "name": "Julia Sauter",
@@ -124005,5 +124009,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "49887e241d141810"
+ "rev": "2fe38ebae6cceec1"
 }
