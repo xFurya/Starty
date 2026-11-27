@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T18:34:10+03:00",
- "checked": "2026-11-27T18:33:58.190939+00:00",
+ "checked": "2026-11-27T18:41:58.578346+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -70755,7 +70755,7 @@
     "Yu-Hsiang Li"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Jakub Lofek — 114.75\n2. Lev Vinokur — 114.49\n3. Matvii Yefymenko — 114.40\n\nНачало: 19:20 МСК",
+   "desc": "Промежуточные итоги:\n1. Makar Suntsev — 130.57\n2. Jakub Lofek — 114.75\n3. Lev Vinokur — 114.49\n\nНачало: 19:20 МСК",
    "field": [
     {
      "name": "Nikolaj Memola",
@@ -70777,7 +70777,7 @@
      "time": "19:28",
      "no": 1,
      "warmup": 1,
-     "place": 11,
+     "place": 12,
      "points": "85.42"
     },
     {
@@ -70786,7 +70786,7 @@
      "time": "19:35",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "114.49"
     },
     {
@@ -70795,7 +70795,7 @@
      "time": "19:43",
      "no": 3,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "100.23"
     },
     {
@@ -70804,7 +70804,7 @@
      "time": "19:51",
      "no": 4,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "101.11"
     },
     {
@@ -70813,7 +70813,7 @@
      "time": "19:59",
      "no": 5,
      "warmup": 1,
-     "place": 9,
+     "place": 10,
      "points": "98.83"
     },
     {
@@ -70822,7 +70822,7 @@
      "time": "20:15",
      "no": 6,
      "warmup": 2,
-     "place": 12,
+     "place": 13,
      "points": "83.06"
     },
     {
@@ -70831,7 +70831,7 @@
      "time": "20:23",
      "no": 7,
      "warmup": 2,
-     "place": 10,
+     "place": 11,
      "points": "96.14"
     },
     {
@@ -70840,7 +70840,7 @@
      "time": "20:30",
      "no": 8,
      "warmup": 2,
-     "place": 1,
+     "place": 2,
      "points": "114.75"
     },
     {
@@ -70849,7 +70849,7 @@
      "time": "20:38",
      "no": 9,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "114.40"
     },
     {
@@ -70858,7 +70858,7 @@
      "time": "20:46",
      "no": 10,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "109.43"
     },
     {
@@ -70867,7 +70867,7 @@
      "time": "20:54",
      "no": 11,
      "warmup": 2,
-     "place": 6,
+     "place": 7,
      "points": "102.44"
     },
     {
@@ -70876,7 +70876,7 @@
      "time": "21:25",
      "no": 12,
      "warmup": 3,
-     "place": 5,
+     "place": 6,
      "points": "107.23"
     },
     {
@@ -70884,7 +70884,9 @@
      "nation": "FIN",
      "time": "21:33",
      "no": 13,
-     "warmup": 3
+     "warmup": 3,
+     "place": 1,
+     "points": "130.57"
     },
     {
      "name": "Davide Lewton Brain",
@@ -71027,21 +71029,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Makar Suntsev",
+     "nation": "FIN",
+     "points": "130.57"
+    },
+    {
+     "place": 2,
      "name": "Jakub Lofek",
      "nation": "POL",
      "points": "114.75"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Lev Vinokur",
      "nation": "ISR",
      "points": "114.49"
-    },
-    {
-     "place": 3,
-     "name": "Matvii Yefymenko",
-     "nation": "POL",
-     "points": "114.40"
     }
    ],
    "provisional": true
@@ -124378,5 +124380,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "086d39d14855e625"
+ "rev": "96731a80bccc895c"
 }
