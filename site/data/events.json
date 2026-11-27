@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T00:35:54+03:00",
- "checked": "2026-11-27T03:56:01.834071+00:00",
+ "checked": "2026-11-27T04:04:02.078823+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69260,7 +69260,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ikura Kushida / Koshiro Shimada — 63.77\n2. Rika Kihira / Shingo Nishiyama — 62.71\n\nНачало: 06:35 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Marjorie Lajoie / Jean-Luc Baker — 70.57\n2. Ikura Kushida / Koshiro Shimada — 63.77\n3. Rika Kihira / Shingo Nishiyama — 62.71\n\nНачало: 06:35 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Rika Kihira / Shingo Nishiyama",
@@ -69268,7 +69268,7 @@
      "time": "06:42",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "62.71"
     },
     {
@@ -69277,7 +69277,7 @@
      "time": "06:48",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "63.77"
     },
     {
@@ -69285,7 +69285,9 @@
      "nation": "CAN",
      "time": "06:55",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "70.57"
     },
     {
      "name": "Utana Yoshida / Masaya Morita",
@@ -69360,12 +69362,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Marjorie Lajoie / Jean-Luc Baker",
+     "nation": "CAN",
+     "points": "70.57"
+    },
+    {
+     "place": 2,
      "name": "Ikura Kushida / Koshiro Shimada",
      "nation": "JPN",
      "points": "63.77"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Rika Kihira / Shingo Nishiyama",
      "nation": "JPN",
      "points": "62.71"
@@ -123933,5 +123941,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "cdd1954686323775"
+ "rev": "69512f717db14451"
 }
