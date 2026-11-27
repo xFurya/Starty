@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-27T11:58:10+03:00",
- "checked": "2026-11-27T12:01:02.319454+00:00",
+ "generated": "2026-11-27T14:41:49+03:00",
+ "checked": "2026-11-27T14:41:49+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69771,20 +69771,20 @@
     {
      "name": "Владислав Дикиджи",
      "nation": "RUS",
-     "time": "13:14",
      "no": 2,
      "warmup": 1,
      "place": 9,
-     "points": "85.46"
+     "points": "85.46",
+     "time": "13:14"
     },
     {
      "name": "Пётр Гуменник",
      "nation": "RUS",
-     "time": "13:20",
      "no": 3,
      "warmup": 1,
      "place": 6,
-     "points": "90.60"
+     "points": "90.60",
+     "time": "13:20"
     }
    ],
    "athletes": [
@@ -69809,142 +69809,9 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=Glj7j2I8g6w"
+     "url": "https://www.youtube.com/watch?v=DvOcPKe2Swc"
     }
    ],
-   "desc": "Итог:\n1. Ilia Malinin — 114.81\n2. Shun Sato — 96.78\n3. Kevin Aymoz — 94.15\n\nРоссияне:\n• Владислав Дикиджи — 13:14\n• Пётр Гуменник — 13:20\n\nНачало: 13:00 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
-    {
-     "name": "Nozomu Yoshioka",
-     "nation": "JPN",
-     "time": "13:08",
-     "no": 1,
-     "warmup": 1,
-     "place": 11,
-     "points": "79.40"
-    },
-    {
-     "name": "Владислав Дикиджи",
-     "nation": "RUS",
-     "time": "13:14",
-     "no": 2,
-     "warmup": 1,
-     "place": 9,
-     "points": "85.46"
-    },
-    {
-     "name": "Пётр Гуменник",
-     "nation": "RUS",
-     "time": "13:20",
-     "no": 3,
-     "warmup": 1,
-     "place": 6,
-     "points": "90.60"
-    },
-    {
-     "name": "Francois Pitot",
-     "nation": "FRA",
-     "time": "13:26",
-     "no": 4,
-     "warmup": 1,
-     "place": 12,
-     "points": "78.06"
-    },
-    {
-     "name": "Vladimir Samoilov",
-     "nation": "POL",
-     "time": "13:32",
-     "no": 5,
-     "warmup": 1,
-     "place": 7,
-     "points": "86.72"
-    },
-    {
-     "name": "Jason Brown",
-     "nation": "USA",
-     "time": "13:38",
-     "no": 6,
-     "warmup": 1,
-     "place": 8,
-     "points": "85.89"
-    },
-    {
-     "name": "Rio Nakata",
-     "nation": "JPN",
-     "time": "13:53",
-     "no": 7,
-     "warmup": 2,
-     "place": 10,
-     "points": "82.62"
-    },
-    {
-     "name": "Lukas Britschgi",
-     "nation": "SUI",
-     "time": "13:59",
-     "no": 8,
-     "warmup": 2,
-     "place": 5,
-     "points": "90.81"
-    },
-    {
-     "name": "Kevin Aymoz",
-     "nation": "FRA",
-     "time": "14:05",
-     "no": 9,
-     "warmup": 2,
-     "place": 3,
-     "points": "94.15"
-    },
-    {
-     "name": "Daniel Grassl",
-     "nation": "ITA",
-     "time": "14:11",
-     "no": 10,
-     "warmup": 2,
-     "place": 4,
-     "points": "91.66"
-    },
-    {
-     "name": "Shun Sato",
-     "nation": "JPN",
-     "time": "14:17",
-     "no": 11,
-     "warmup": 2,
-     "place": 2,
-     "points": "96.78"
-    },
-    {
-     "name": "Ilia Malinin",
-     "nation": "USA",
-     "time": "14:23",
-     "no": 12,
-     "warmup": 2,
-     "place": 1,
-     "points": "114.81"
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG001.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Nozomu YOSHIOKA": "Nozomu Yoshioka",
-     "Vladislav DIKIDZHI": "Владислав Дикиджи",
-     "Petr GUMENNIK": "Пётр Гуменник",
-     "Francois PITOT": "Francois Pitot",
-     "Vladimir SAMOILOV": "Vladimir Samoilov",
-     "Jason BROWN": "Jason Brown",
-     "Rio NAKATA": "Rio Nakata",
-     "Lukas BRITSCHGI": "Lukas Britschgi",
-     "Kevin AYMOZ": "Kevin Aymoz",
-     "Daniel GRASSL": "Daniel Grassl",
-     "Shun SATO": "Shun Sato",
-     "Ilia MALININ": "Ilia Malinin"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json",
    "podium": [
     {
      "place": 1,
@@ -69964,7 +69831,152 @@
      "nation": "FRA",
      "points": "94.15"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Ilia Malinin — 114.81\n2. Shun Sato — 96.78\n3. Kevin Aymoz — 94.15\n\nПримечательное:\n• Ilia Malinin — Выше исторического рекорда за КП: 114.81 (рекорд 113.97)\n• Ilia Malinin — Личный рекорд за КП: 114.81 (был 111.29)\n\nРоссияне:\n• Владислав Дикиджи — 13:14\n• Пётр Гуменник — 13:20\n\nНачало: 13:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Nozomu Yoshioka",
+     "nation": "JPN",
+     "no": 1,
+     "warmup": 1,
+     "place": 11,
+     "points": "79.40",
+     "time": "13:08"
+    },
+    {
+     "name": "Владислав Дикиджи",
+     "nation": "RUS",
+     "no": 2,
+     "warmup": 1,
+     "place": 9,
+     "points": "85.46",
+     "time": "13:14"
+    },
+    {
+     "name": "Пётр Гуменник",
+     "nation": "RUS",
+     "no": 3,
+     "warmup": 1,
+     "place": 6,
+     "points": "90.60",
+     "time": "13:20"
+    },
+    {
+     "name": "Francois Pitot",
+     "nation": "FRA",
+     "no": 4,
+     "warmup": 1,
+     "place": 12,
+     "points": "78.06",
+     "time": "13:26"
+    },
+    {
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "no": 5,
+     "warmup": 1,
+     "place": 7,
+     "points": "86.72",
+     "time": "13:32"
+    },
+    {
+     "name": "Jason Brown",
+     "nation": "USA",
+     "no": 6,
+     "warmup": 1,
+     "place": 8,
+     "points": "85.89",
+     "time": "13:38"
+    },
+    {
+     "name": "Rio Nakata",
+     "nation": "JPN",
+     "no": 7,
+     "warmup": 2,
+     "place": 10,
+     "points": "82.62",
+     "time": "13:53"
+    },
+    {
+     "name": "Lukas Britschgi",
+     "nation": "SUI",
+     "no": 8,
+     "warmup": 2,
+     "place": 5,
+     "points": "90.81",
+     "time": "13:59"
+    },
+    {
+     "name": "Kevin Aymoz",
+     "nation": "FRA",
+     "no": 9,
+     "warmup": 2,
+     "place": 3,
+     "points": "94.15",
+     "time": "14:05"
+    },
+    {
+     "name": "Daniel Grassl",
+     "nation": "ITA",
+     "no": 10,
+     "warmup": 2,
+     "place": 4,
+     "points": "91.66",
+     "time": "14:11"
+    },
+    {
+     "name": "Shun Sato",
+     "nation": "JPN",
+     "no": 11,
+     "warmup": 2,
+     "place": 2,
+     "points": "96.78",
+     "time": "14:17"
+    },
+    {
+     "name": "Ilia Malinin",
+     "nation": "USA",
+     "no": 12,
+     "warmup": 2,
+     "place": 1,
+     "points": "114.81",
+     "time": "14:23"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG001.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Ilia MALININ": "Ilia Malinin",
+     "Shun SATO": "Shun Sato",
+     "Kevin AYMOZ": "Kevin Aymoz",
+     "Daniel GRASSL": "Daniel Grassl",
+     "Lukas BRITSCHGI": "Lukas Britschgi",
+     "Petr GUMENNIK": "Пётр Гуменник",
+     "Vladimir SAMOILOV": "Vladimir Samoilov",
+     "Jason BROWN": "Jason Brown",
+     "Vladislav DIKIDZHI": "Владислав Дикиджи",
+     "Rio NAKATA": "Rio Nakata",
+     "Nozomu YOSHIOKA": "Nozomu Yoshioka",
+     "Francois PITOT": "Francois Pitot"
+    },
+    "basis": "judges"
+   },
+   "facts": [
+    {
+     "who": "Ilia Malinin",
+     "text": "Выше исторического рекорда за КП: 114.81 (рекорд 113.97)",
+     "kind": "record"
+    },
+    {
+     "who": "Ilia Malinin",
+     "text": "Личный рекорд за КП: 114.81 (был 111.29)",
+     "kind": "score"
+    }
+   ],
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "ffkm:2026-11-23_kubok:women-junior-pp",
@@ -69975,7 +69987,7 @@
    "seg": "ПП",
    "title": "Кубок Москвы (Финал) — девушки ПП",
    "start": "2026-11-27T13:00:00+03:00",
-   "end": "2026-11-27T16:45:00+03:00",
+   "end": "2026-11-27T14:45:00+03:00",
    "venue": "ЛД «Медведково», Москва",
    "intl": false,
    "broadcast": [],
@@ -69987,48 +69999,44 @@
      "warmup": null,
      "place": 2,
      "points": "115.27"
-    },
-    {
-     "name": "Алиса Заикина",
-     "nation": "",
-     "no": 21,
-     "warmup": null
-    },
-    {
-     "name": "Софья Смагина",
-     "nation": "",
-     "no": 23,
-     "warmup": null
     }
    ],
    "athletes": [
-    "Алена Принева",
-    "Алиса Заикина",
     "Алиса Корнаухова",
-    "Алиса Мильто",
-    "Алиса Чистякова",
     "Анна Докукина",
     "Валерия Литвинчёва",
-    "Валерия Лукашова",
     "Виктория Сомова",
-    "Дарья Лебедева",
-    "Диана Мильто",
     "Ева Вачасова",
-    "Евдокия Макарова",
     "Елизавета Борисова",
     "Илина Аскарова",
     "Камила Назипова",
     "Лизавета Мельникова",
-    "Майя Сарафанова",
-    "Мария Галушкина",
-    "Ника Маскайкина",
     "София Левшова",
     "Софья Лабуткина",
-    "Софья Смагина",
     "Яна Иванова"
    ],
    "src": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/index.htm",
-   "desc": "Промежуточные итоги:\n1. Елизавета Борисова — 115.98\n2. Анна Докукина — 115.27\n3. Валерия Литвинчёва — 114.14\n\nРоссияне:\n• Анна Докукина — 12-й\n• Алиса Заикина — 21-й\n• Софья Смагина — 23-й\n\nНачало: 13:00 МСК",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Елизавета Борисова",
+     "nation": "",
+     "points": "115.98"
+    },
+    {
+     "place": 2,
+     "name": "Анна Докукина",
+     "nation": "",
+     "points": "115.27"
+    },
+    {
+     "place": 3,
+     "name": "Валерия Литвинчёва",
+     "nation": "",
+     "points": "114.14"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Елизавета Борисова — 115.98\n2. Анна Докукина — 115.27\n3. Валерия Литвинчёва — 114.14\n\nРоссияне:\n• Анна Докукина — 12-й\n\nНачало: 13:00 МСК",
    "field": [
     {
      "name": "Илина Аскарова",
@@ -70125,141 +70133,33 @@
      "warmup": null,
      "place": 2,
      "points": "115.27"
-    },
-    {
-     "name": "Алиса Чистякова",
-     "nation": "",
-     "no": 13,
-     "warmup": null,
-     "place": 4,
-     "points": "111.99"
-    },
-    {
-     "name": "Мария Галушкина",
-     "nation": "",
-     "no": 14,
-     "warmup": null,
-     "place": 7,
-     "points": "105.43"
-    },
-    {
-     "name": "Дарья Лебедева",
-     "nation": "",
-     "no": 15,
-     "warmup": null
-    },
-    {
-     "name": "Евдокия Макарова",
-     "nation": "",
-     "no": 16,
-     "warmup": null
-    },
-    {
-     "name": "Диана Мильто",
-     "nation": "",
-     "no": 17,
-     "warmup": null
-    },
-    {
-     "name": "Валерия Лукашова",
-     "nation": "",
-     "no": 18,
-     "warmup": null
-    },
-    {
-     "name": "Ника Маскайкина",
-     "nation": "",
-     "no": 19,
-     "warmup": null
-    },
-    {
-     "name": "Алиса Мильто",
-     "nation": "",
-     "no": 20,
-     "warmup": null
-    },
-    {
-     "name": "Алиса Заикина",
-     "nation": "",
-     "no": 21,
-     "warmup": null
-    },
-    {
-     "name": "Майя Сарафанова",
-     "nation": "",
-     "no": 22,
-     "warmup": null
-    },
-    {
-     "name": "Софья Смагина",
-     "nation": "",
-     "no": 23,
-     "warmup": null
-    },
-    {
-     "name": "Алена Принева",
-     "nation": "",
-     "no": 24,
-     "warmup": null
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/index.htm",
     "seg": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/SEG006.HTM",
     "cat": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/CAT003RS.HTM",
     "first": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/SEG005.HTM",
     "names": {
-     "Илина АСКАРОВА": "Илина Аскарова",
-     "Камила НАЗИПОВА": "Камила Назипова",
-     "Алиса КОРНАУХОВА": "Алиса Корнаухова",
-     "Яна ИВАНОВА": "Яна Иванова",
-     "Ева ВАЧАСОВА": "Ева Вачасова",
      "Елизавета БОРИСОВА": "Елизавета Борисова",
+     "Анна ДОКУКИНА": "Анна Докукина",
+     "Валерия ЛИТВИНЧЁВА": "Валерия Литвинчёва",
      "София ЛЕВШОВА": "София Левшова",
      "Софья ЛАБУТКИНА": "Софья Лабуткина",
-     "Лизавета МЕЛЬНИКОВА": "Лизавета Мельникова",
-     "Валерия ЛИТВИНЧЁВА": "Валерия Литвинчёва",
      "Виктория СОМОВА": "Виктория Сомова",
-     "Анна ДОКУКИНА": "Анна Докукина",
-     "Алиса ЧИСТЯКОВА": "Алиса Чистякова",
-     "Мария ГАЛУШКИНА": "Мария Галушкина",
-     "Дарья ЛЕБЕДЕВА": "Дарья Лебедева",
-     "Евдокия МАКАРОВА": "Евдокия Макарова",
-     "Диана МИЛЬТО": "Диана Мильто",
-     "Валерия ЛУКАШОВА": "Валерия Лукашова",
-     "Ника МАСКАЙКИНА": "Ника Маскайкина",
-     "Алиса МИЛЬТО": "Алиса Мильто",
-     "Алиса ЗАИКИНА": "Алиса Заикина",
-     "Майя САРАФАНОВА": "Майя Сарафанова",
-     "Софья СМАГИНА": "Софья Смагина",
-     "Алена ПРИНЕВА": "Алена Принева"
+     "Илина АСКАРОВА": "Илина Аскарова",
+     "Яна ИВАНОВА": "Яна Иванова",
+     "Лизавета МЕЛЬНИКОВА": "Лизавета Мельникова",
+     "Алиса КОРНАУХОВА": "Алиса Корнаухова",
+     "Ева ВАЧАСОВА": "Ева Вачасова",
+     "Камила НАЗИПОВА": "Камила Назипова"
     },
     "basis": null
    },
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-11-23_kubok.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Елизавета Борисова",
-     "nation": "",
-     "points": "115.98"
-    },
-    {
-     "place": 2,
-     "name": "Анна Докукина",
-     "nation": "",
-     "points": "115.27"
-    },
-    {
-     "place": 3,
-     "name": "Валерия Литвинчёва",
-     "nation": "",
-     "points": "114.14"
-    }
-   ],
-   "provisional": true
+   "proto": "ffkm_2026-11-23_kubok.json"
   },
   {
    "id": "ffkm:2026-11-23_kubok:men-junior-pp",
@@ -71620,7 +71520,7 @@
    "seg": "ПП",
    "title": "GP NHK Trophy — мужчины ПП",
    "start": "2026-11-28T13:30:00+03:00",
-   "end": "2026-11-28T15:15:00+03:00",
+   "end": "2026-11-28T15:20:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
    "broadcast": [
@@ -71630,11 +71530,17 @@
    "ours": [
     {
      "name": "Владислав Дикиджи",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "14:01",
+     "no": 4,
+     "warmup": 1
     },
     {
      "name": "Пётр Гуменник",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "14:32",
+     "no": 7,
+     "warmup": 2
     }
    ],
    "athletes": [
@@ -71662,55 +71568,91 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Россияне:\n• Владислав Дикиджи\n• Пётр Гуменник\n\nНачало: 13:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Россияне:\n• Владислав Дикиджи — 14:01\n• Пётр Гуменник — 14:32\n\nНачало: 13:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Daniel Grassl",
-     "nation": "ITA"
-    },
-    {
      "name": "Francois Pitot",
-     "nation": "FRA"
-    },
-    {
-     "name": "Ilia Malinin",
-     "nation": "USA"
-    },
-    {
-     "name": "Jason Brown",
-     "nation": "USA"
-    },
-    {
-     "name": "Kevin Aymoz",
-     "nation": "FRA"
-    },
-    {
-     "name": "Lukas Britschgi",
-     "nation": "SUI"
+     "nation": "FRA",
+     "time": "13:38",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Nozomu Yoshioka",
-     "nation": "JPN"
+     "nation": "JPN",
+     "time": "13:45",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Rio Nakata",
-     "nation": "JPN"
-    },
-    {
-     "name": "Shun Sato",
-     "nation": "JPN"
-    },
-    {
-     "name": "Vladimir Samoilov",
-     "nation": "POL"
+     "nation": "JPN",
+     "time": "13:53",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Владислав Дикиджи",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "14:01",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Jason Brown",
+     "nation": "USA",
+     "time": "14:08",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "time": "14:16",
+     "no": 6,
+     "warmup": 1
     },
     {
      "name": "Пётр Гуменник",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "14:32",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Lukas Britschgi",
+     "nation": "SUI",
+     "time": "14:40",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Daniel Grassl",
+     "nation": "ITA",
+     "time": "14:48",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Kevin Aymoz",
+     "nation": "FRA",
+     "time": "14:56",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Shun Sato",
+     "nation": "JPN",
+     "time": "15:04",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Ilia Malinin",
+     "nation": "USA",
+     "time": "15:12",
+     "no": 12,
+     "warmup": 2
     }
    ],
    "live": {
@@ -71719,17 +71661,17 @@
     "cat": "https://results.isu.org/results/season2627/gpjpn2026/CAT001RS.htm",
     "first": "https://results.isu.org/results/season2627/gpjpn2026/SEG001.htm",
     "names": {
-     "Vladislav DIKIDZHI": "Владислав Дикиджи",
-     "Petr GUMENNIK": "Пётр Гуменник",
-     "Kevin AYMOZ": "Kevin Aymoz",
      "Francois PITOT": "Francois Pitot",
-     "Daniel GRASSL": "Daniel Grassl",
-     "Rio NAKATA": "Rio Nakata",
-     "Shun SATO": "Shun Sato",
      "Nozomu YOSHIOKA": "Nozomu Yoshioka",
-     "Vladimir SAMOILOV": "Vladimir Samoilov",
-     "Lukas BRITSCHGI": "Lukas Britschgi",
+     "Rio NAKATA": "Rio Nakata",
+     "Vladislav DIKIDZHI": "Владислав Дикиджи",
      "Jason BROWN": "Jason Brown",
+     "Vladimir SAMOILOV": "Vladimir Samoilov",
+     "Petr GUMENNIK": "Пётр Гуменник",
+     "Lukas BRITSCHGI": "Lukas Britschgi",
+     "Daniel GRASSL": "Daniel Grassl",
+     "Kevin AYMOZ": "Kevin Aymoz",
+     "Shun SATO": "Shun Sato",
      "Ilia MALININ": "Ilia Malinin"
     },
     "basis": null
@@ -124173,5 +124115,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "df53f97406968f35"
+ "rev": "fbd1e743c366ed01"
 }
