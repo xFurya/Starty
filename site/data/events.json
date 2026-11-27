@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T11:58:10+03:00",
- "checked": "2026-11-27T11:25:02.248014+00:00",
+ "checked": "2026-11-27T11:33:01.718902+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69774,7 +69774,7 @@
      "time": "13:14",
      "no": 2,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "85.46"
     },
     {
@@ -69783,7 +69783,7 @@
      "time": "13:20",
      "no": 3,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "90.60"
     }
    ],
@@ -69812,7 +69812,7 @@
      "url": "https://www.youtube.com/watch?v=Glj7j2I8g6w"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Shun Sato — 96.78\n2. Kevin Aymoz — 94.15\n3. Daniel Grassl — 91.66\n\nРоссияне:\n• Владислав Дикиджи — 13:14\n• Пётр Гуменник — 13:20\n\nНачало: 13:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Ilia Malinin — 114.81\n2. Shun Sato — 96.78\n3. Kevin Aymoz — 94.15\n\nРоссияне:\n• Владислав Дикиджи — 13:14\n• Пётр Гуменник — 13:20\n\nНачало: 13:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Nozomu Yoshioka",
@@ -69820,7 +69820,7 @@
      "time": "13:08",
      "no": 1,
      "warmup": 1,
-     "place": 10,
+     "place": 11,
      "points": "79.40"
     },
     {
@@ -69829,7 +69829,7 @@
      "time": "13:14",
      "no": 2,
      "warmup": 1,
-     "place": 8,
+     "place": 9,
      "points": "85.46"
     },
     {
@@ -69838,7 +69838,7 @@
      "time": "13:20",
      "no": 3,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "90.60"
     },
     {
@@ -69847,7 +69847,7 @@
      "time": "13:26",
      "no": 4,
      "warmup": 1,
-     "place": 11,
+     "place": 12,
      "points": "78.06"
     },
     {
@@ -69856,7 +69856,7 @@
      "time": "13:32",
      "no": 5,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "86.72"
     },
     {
@@ -69865,7 +69865,7 @@
      "time": "13:38",
      "no": 6,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "85.89"
     },
     {
@@ -69874,7 +69874,7 @@
      "time": "13:53",
      "no": 7,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "82.62"
     },
     {
@@ -69883,7 +69883,7 @@
      "time": "13:59",
      "no": 8,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "90.81"
     },
     {
@@ -69892,7 +69892,7 @@
      "time": "14:05",
      "no": 9,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "94.15"
     },
     {
@@ -69901,7 +69901,7 @@
      "time": "14:11",
      "no": 10,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "91.66"
     },
     {
@@ -69910,7 +69910,7 @@
      "time": "14:17",
      "no": 11,
      "warmup": 2,
-     "place": 1,
+     "place": 2,
      "points": "96.78"
     },
     {
@@ -69918,7 +69918,9 @@
      "nation": "USA",
      "time": "14:23",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "114.81"
     }
    ],
    "live": {
@@ -69940,30 +69942,29 @@
      "Shun SATO": "Shun Sato",
      "Ilia MALININ": "Ilia Malinin"
     },
-    "basis": null
+    "basis": "judges"
    },
    "proto": "isu_isu-gp-nhk-trophy-2026.json",
    "podium": [
     {
      "place": 1,
+     "name": "Ilia Malinin",
+     "nation": "USA",
+     "points": "114.81"
+    },
+    {
+     "place": 2,
      "name": "Shun Sato",
      "nation": "JPN",
      "points": "96.78"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Kevin Aymoz",
      "nation": "FRA",
      "points": "94.15"
-    },
-    {
-     "place": 3,
-     "name": "Daniel Grassl",
-     "nation": "ITA",
-     "points": "91.66"
     }
-   ],
-   "provisional": true
+   ]
   },
   {
    "id": "ffkm:2026-11-23_kubok:women-junior-pp",
@@ -124168,5 +124169,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "f18ce1d968ae63fd"
+ "rev": "f6a17aba892c85e5"
 }
