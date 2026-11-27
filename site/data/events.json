@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T09:53:41+03:00",
- "checked": "2026-11-27T08:20:01.892186+00:00",
+ "checked": "2026-11-27T08:28:02.075361+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -69552,7 +69552,7 @@
      "time": "10:29",
      "no": 2,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "63.11"
     },
     {
@@ -69561,7 +69561,7 @@
      "time": "10:47",
      "no": 5,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "65.28"
     }
    ],
@@ -69607,7 +69607,7 @@
      "time": "10:29",
      "no": 2,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "63.11"
     },
     {
@@ -69634,7 +69634,7 @@
      "time": "10:47",
      "no": 5,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "65.28"
     },
     {
@@ -69643,7 +69643,7 @@
      "time": "10:53",
      "no": 6,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "61.88"
     },
     {
@@ -69652,7 +69652,7 @@
      "time": "11:08",
      "no": 7,
      "warmup": 2,
-     "place": 8,
+     "place": 9,
      "points": "61.02"
     },
     {
@@ -69661,7 +69661,7 @@
      "time": "11:14",
      "no": 8,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "68.36"
     },
     {
@@ -69669,7 +69669,9 @@
      "nation": "JPN",
      "time": "11:20",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "69.17"
     },
     {
      "name": "Jia Shin",
@@ -124015,5 +124017,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "994ed83a2fdb6278"
+ "rev": "28376cd9b8f0c540"
 }
