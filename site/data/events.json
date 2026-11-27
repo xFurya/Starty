@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T00:35:54+03:00",
- "checked": "2026-11-27T04:24:02.293588+00:00",
+ "checked": "2026-11-27T04:32:01.925586+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69260,7 +69260,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Juulia Turkkila / Matthias Versluis — 77.01\n2. Yuka Orihara / Juho Pirinen — 71.93\n3. Marjorie Lajoie / Jean-Luc Baker — 70.57\n\nНачало: 06:35 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Christina Carreira / Anthony Ponomarenko — 80.82\n2. Juulia Turkkila / Matthias Versluis — 77.01\n3. Yuka Orihara / Juho Pirinen — 71.93\n\nНачало: 06:35 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Rika Kihira / Shingo Nishiyama",
@@ -69268,7 +69268,7 @@
      "time": "06:42",
      "no": 1,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "62.71"
     },
     {
@@ -69277,7 +69277,7 @@
      "time": "06:48",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "63.77"
     },
     {
@@ -69286,7 +69286,7 @@
      "time": "06:55",
      "no": 3,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "70.57"
     },
     {
@@ -69302,7 +69302,7 @@
      "time": "07:08",
      "no": 5,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "71.93"
     },
     {
@@ -69318,7 +69318,7 @@
      "time": "07:28",
      "no": 7,
      "warmup": 2,
-     "place": 1,
+     "place": 2,
      "points": "77.01"
     },
     {
@@ -69326,7 +69326,9 @@
      "nation": "USA",
      "time": "07:34",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "80.82"
     },
     {
      "name": "Emilea Zingas / Vadym Kolesnik",
@@ -69366,21 +69368,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Christina Carreira / Anthony Ponomarenko",
+     "nation": "USA",
+     "points": "80.82"
+    },
+    {
+     "place": 2,
      "name": "Juulia Turkkila / Matthias Versluis",
      "nation": "FIN",
      "points": "77.01"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN",
      "points": "71.93"
-    },
-    {
-     "place": 3,
-     "name": "Marjorie Lajoie / Jean-Luc Baker",
-     "nation": "CAN",
-     "points": "70.57"
     }
    ],
    "provisional": true
@@ -123945,5 +123947,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "5ae33142a5f23568"
+ "rev": "5735f78c03bdc3f2"
 }
