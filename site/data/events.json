@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T18:34:10+03:00",
- "checked": "2026-11-27T18:34:10+03:00",
+ "checked": "2026-11-27T16:01:58.957983+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -70426,31 +70426,31 @@
    "podium": [
     {
      "place": 1,
+     "name": "Тимофей Бочков",
+     "nation": "",
+     "points": "138.87"
+    },
+    {
+     "place": 2,
      "name": "Алексей Заводских",
      "nation": "",
      "points": "137.94"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Артем Федотов",
      "nation": "",
-     "points": "138.87"
-    },
-    {
-     "place": 3,
-     "name": "Кирилл Жураховский",
-     "nation": "",
-     "points": "135.94"
+     "points": "136.65"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Алексей Заводских — 137.94\n2. Артем Федотов — 136.65\n3. Кирилл Жураховский — 135.94\n\nНачало: 16:10 МСК",
+   "desc": "Промежуточные итоги:\n1. Тимофей Бочков — 138.87\n2. Алексей Заводских — 137.94\n3. Артем Федотов — 136.65\n\nНачало: 16:10 МСК",
    "field": [
     {
      "name": "Мирон Андреанов",
      "nation": "",
      "no": 1,
      "warmup": null,
-     "place": 17,
+     "place": 19,
      "points": "102.63"
     },
     {
@@ -70458,7 +70458,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 11,
+     "place": 13,
      "points": "117.64"
     },
     {
@@ -70466,7 +70466,7 @@
      "nation": "",
      "no": 3,
      "warmup": null,
-     "place": 16,
+     "place": 18,
      "points": "111.79"
     },
     {
@@ -70474,7 +70474,7 @@
      "nation": "",
      "no": 4,
      "warmup": null,
-     "place": 13,
+     "place": 15,
      "points": "117.26"
     },
     {
@@ -70482,7 +70482,7 @@
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 12,
+     "place": 14,
      "points": "117.38"
     },
     {
@@ -70490,7 +70490,7 @@
      "nation": "",
      "no": 6,
      "warmup": null,
-     "place": 14,
+     "place": 16,
      "points": "116.45"
     },
     {
@@ -70498,7 +70498,7 @@
      "nation": "",
      "no": 7,
      "warmup": null,
-     "place": 6,
+     "place": 8,
      "points": "120.57"
     },
     {
@@ -70506,7 +70506,7 @@
      "nation": "",
      "no": 8,
      "warmup": null,
-     "place": 5,
+     "place": 7,
      "points": "124.35"
     },
     {
@@ -70514,7 +70514,7 @@
      "nation": "",
      "no": 9,
      "warmup": null,
-     "place": 4,
+     "place": 6,
      "points": "125.83"
     },
     {
@@ -70522,7 +70522,7 @@
      "nation": "",
      "no": 10,
      "warmup": null,
-     "place": 10,
+     "place": 12,
      "points": "118.72"
     },
     {
@@ -70530,7 +70530,7 @@
      "nation": "",
      "no": 11,
      "warmup": null,
-     "place": 9,
+     "place": 11,
      "points": "119.24"
     },
     {
@@ -70538,7 +70538,7 @@
      "nation": "",
      "no": 12,
      "warmup": null,
-     "place": 15,
+     "place": 17,
      "points": "115.82"
     },
     {
@@ -70546,7 +70546,7 @@
      "nation": "",
      "no": 13,
      "warmup": null,
-     "place": 2,
+     "place": 3,
      "points": "136.65"
     },
     {
@@ -70554,7 +70554,7 @@
      "nation": "",
      "no": 14,
      "warmup": null,
-     "place": 8,
+     "place": 10,
      "points": "120.19"
     },
     {
@@ -70562,7 +70562,7 @@
      "nation": "",
      "no": 15,
      "warmup": null,
-     "place": 3,
+     "place": 4,
      "points": "135.94"
     },
     {
@@ -70570,7 +70570,7 @@
      "nation": "",
      "no": 16,
      "warmup": null,
-     "place": 7,
+     "place": 9,
      "points": "120.34"
     },
     {
@@ -70578,7 +70578,7 @@
      "nation": "",
      "no": 17,
      "warmup": null,
-     "place": 1,
+     "place": 2,
      "points": "137.94"
     }
    ],
@@ -70637,9 +70637,21 @@
    "podium": [
     {
      "place": 1,
-     "name": "Laura Gauch / Linus Mager",
-     "nation": "SUI",
-     "points": "39.13"
+     "name": "Sofia Tridello / Alberto Tommasi",
+     "nation": "ITA",
+     "points": "53.73"
+    },
+    {
+     "place": 2,
+     "name": "Xuanyu Liu / Wenbao Han",
+     "nation": "CHN",
+     "points": "50.97"
+    },
+    {
+     "place": 3,
+     "name": "Sarah Nunez / Blake Eisenach",
+     "nation": "USA",
+     "points": "50.84"
     }
    ],
    "desc": "Промежуточные итоги:\n1. Laura Gauch / Linus Mager — 39.13\n\nНачало: 18:25 МСК",
@@ -70695,27 +70707,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Sofia Tridello / Alberto Tommasi",
-     "nation": "ITA",
-     "points": "53.73"
-    },
-    {
-     "place": 2,
-     "name": "Xuanyu Liu / Wenbao Han",
-     "nation": "CHN",
-     "points": "50.97"
-    },
-    {
-     "place": 3,
-     "name": "Sarah Nunez / Blake Eisenach",
-     "nation": "USA",
-     "points": "50.84"
-    }
-   ]
+   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:men-senior-pp",
@@ -124341,5 +124333,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "2dffb86b2221dafd"
+ "rev": "2f1fb1cdc4b45240"
 }
