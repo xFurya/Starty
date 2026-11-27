@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T09:53:41+03:00",
- "checked": "2026-11-27T08:00:02.798654+00:00",
+ "checked": "2026-11-27T08:16:02.442487+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -69651,7 +69651,9 @@
      "nation": "SUI",
      "time": "11:08",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 7,
+     "points": "61.02"
     },
     {
      "name": "Madeline Schizas",
@@ -124011,5 +124013,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "ceaa722a786b86d2"
+ "rev": "5cd12388f3bc89c2"
 }
