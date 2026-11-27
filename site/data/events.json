@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T11:58:10+03:00",
- "checked": "2026-11-27T10:13:02.113823+00:00",
+ "checked": "2026-11-27T10:17:02.238295+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69808,14 +69808,16 @@
      "url": "https://www.youtube.com/watch?v=Glj7j2I8g6w"
     }
    ],
-   "desc": "Россияне:\n• Владислав Дикиджи — 13:14\n• Пётр Гуменник — 13:20\n\nНачало: 13:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Nozomu Yoshioka — 79.40\n\nРоссияне:\n• Владислав Дикиджи — 13:14\n• Пётр Гуменник — 13:20\n\nНачало: 13:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Nozomu Yoshioka",
      "nation": "JPN",
      "time": "13:08",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "79.40"
     },
     {
      "name": "Владислав Дикиджи",
@@ -69916,7 +69918,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json"
+   "proto": "isu_isu-gp-nhk-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Nozomu Yoshioka",
+     "nation": "JPN",
+     "points": "79.40"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "ffkm:2026-11-23_kubok:women-junior-pp",
@@ -124085,5 +124096,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "e397b6724a6ddff0"
+ "rev": "db85b78b3147b972"
 }
