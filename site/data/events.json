@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T08:07:58+03:00",
- "checked": "2026-11-27T06:08:01.523407+00:00",
+ "checked": "2026-11-27T06:24:02.019558+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69418,7 +69418,7 @@
      "time": "08:42",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "49.50"
     },
     {
@@ -69453,7 +69453,9 @@
      "nation": "FRA",
      "time": "09:15",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "52.07"
     },
     {
      "name": "Karina Akopova / Nikita Rakhmanin",
@@ -123976,5 +123978,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "d737d59c3148c8be"
+ "rev": "1c4a4ad8db632f59"
 }
