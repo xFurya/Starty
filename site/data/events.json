@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T11:58:10+03:00",
- "checked": "2026-11-27T11:58:10+03:00",
+ "checked": "2026-11-27T10:13:02.113823+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69978,13 +69978,15 @@
     "Яна Иванова"
    ],
    "src": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/index.htm",
-   "desc": "Россияне:\n• Анна Докукина — 12-й\n• Алиса Заикина — 21-й\n• Софья Смагина — 23-й\n\nНачало: 13:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Илина Аскарова — 103.76\n\nРоссияне:\n• Анна Докукина — 12-й\n• Алиса Заикина — 21-й\n• Софья Смагина — 23-й\n\nНачало: 13:00 МСК",
    "field": [
     {
      "name": "Илина Аскарова",
      "nation": "",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "103.76"
     },
     {
      "name": "Камила Назипова",
@@ -70160,7 +70162,16 @@
    },
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-11-23_kubok.json"
+   "proto": "ffkm_2026-11-23_kubok.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Илина Аскарова",
+     "nation": "",
+     "points": "103.76"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "ffkm:2026-11-23_kubok:men-junior-pp",
@@ -124074,5 +124085,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "601aa32f005a4fb6"
+ "rev": "e397b6724a6ddff0"
 }
