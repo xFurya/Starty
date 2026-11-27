@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-27T08:07:58+03:00",
- "checked": "2026-11-27T06:44:01.509428+00:00",
- "complete": true,
+ "generated": "2026-11-27T09:53:41+03:00",
+ "checked": "2026-11-27T09:53:41+03:00",
+ "complete": false,
  "epoch": 1,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
-  "Golden Skate": "ok",
+  "Golden Skate": "fail",
   "ФФКМ": "ok",
   "Самара": "ok"
  },
@@ -68318,14 +68318,6 @@
      "points": "79.73"
     },
     {
-     "name": "Яромир Фураев",
-     "nation": "",
-     "no": 2,
-     "warmup": null,
-     "place": 27,
-     "points": "59.54"
-    },
-    {
      "name": "Никита Малютин",
      "nation": "",
      "no": 3,
@@ -68366,14 +68358,6 @@
      "points": "70.11"
     },
     {
-     "name": "Кирилл Лутошкин",
-     "nation": "",
-     "no": 8,
-     "warmup": null,
-     "place": 28,
-     "points": "57.80"
-    },
-    {
      "name": "Платон Жильцов",
      "nation": "",
      "no": 9,
@@ -68404,14 +68388,6 @@
      "warmup": null,
      "place": 13,
      "points": "68.45"
-    },
-    {
-     "name": "Степан Федоров",
-     "nation": "",
-     "no": 13,
-     "warmup": null,
-     "place": 26,
-     "points": "59.89"
     },
     {
      "name": "Тимофей Жданов",
@@ -68494,14 +68470,6 @@
      "points": "75.39"
     },
     {
-     "name": "Леонтий Камзолов",
-     "nation": "",
-     "no": 24,
-     "warmup": null,
-     "place": 25,
-     "points": "60.36"
-    },
-    {
      "name": "Артем Федотов",
      "nation": "",
      "no": 25,
@@ -68532,6 +68500,34 @@
      "warmup": null,
      "place": 21,
      "points": "61.33"
+    },
+    {
+     "name": "Кирилл Лутошкин",
+     "nation": "",
+     "place": 28,
+     "points": "57.80",
+     "no": 8
+    },
+    {
+     "name": "Леонтий Камзолов",
+     "nation": "",
+     "place": 25,
+     "points": "60.36",
+     "no": 24
+    },
+    {
+     "name": "Степан Федоров",
+     "nation": "",
+     "place": 26,
+     "points": "59.89",
+     "no": 13
+    },
+    {
+     "name": "Яромир Фураев",
+     "nation": "",
+     "place": 27,
+     "points": "59.54",
+     "no": 2
     }
    ],
    "live": {
@@ -69381,7 +69377,7 @@
    "seg": "КП",
    "title": "GP NHK Trophy — пары КП",
    "start": "2026-11-27T08:35:00+03:00",
-   "end": "2026-11-27T09:42:00+03:00",
+   "end": "2026-11-27T09:45:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
    "broadcast": [
@@ -69410,99 +69406,6 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Итог:\n1. Minerva Fabienne Hase / Nikita Volodin — 75.21\n2. Yuna Nagaoka / Sumitada Moriguchi — 69.78\n3. Karina Akopova / Nikita Rakhmanin — 66.95\n\nНачало: 08:35 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
-    {
-     "name": "Naomi Williams / Lachlan Lewer",
-     "nation": "USA",
-     "time": "08:42",
-     "no": 1,
-     "warmup": 1,
-     "place": 8,
-     "points": "49.50"
-    },
-    {
-     "name": "Chelsea Liu / Ryan Bedard",
-     "nation": "USA",
-     "time": "08:48",
-     "no": 2,
-     "warmup": 1,
-     "place": 5,
-     "points": "59.71"
-    },
-    {
-     "name": "Anna Valesi / Martin Bidar",
-     "nation": "CZE",
-     "time": "08:55",
-     "no": 3,
-     "warmup": 1,
-     "place": 4,
-     "points": "59.77"
-    },
-    {
-     "name": "Jazmine Desrochers / Kieran Thrasher",
-     "nation": "CAN",
-     "time": "09:01",
-     "no": 4,
-     "warmup": 1,
-     "place": 6,
-     "points": "55.27"
-    },
-    {
-     "name": "Camille Kovalev / Pavel Kovalev",
-     "nation": "FRA",
-     "time": "09:15",
-     "no": 5,
-     "warmup": 2,
-     "place": 7,
-     "points": "52.07"
-    },
-    {
-     "name": "Karina Akopova / Nikita Rakhmanin",
-     "nation": "ARM",
-     "time": "09:21",
-     "no": 6,
-     "warmup": 2,
-     "place": 3,
-     "points": "66.95"
-    },
-    {
-     "name": "Yuna Nagaoka / Sumitada Moriguchi",
-     "nation": "JPN",
-     "time": "09:28",
-     "no": 7,
-     "warmup": 2,
-     "place": 2,
-     "points": "69.78"
-    },
-    {
-     "name": "Minerva Fabienne Hase / Nikita Volodin",
-     "nation": "GER",
-     "time": "09:34",
-     "no": 8,
-     "warmup": 2,
-     "place": 1,
-     "points": "75.21"
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG005.htm",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Naomi WILLIAMS / Lachlan LEWER": "Naomi Williams / Lachlan Lewer",
-     "Chelsea LIU / Ryan BEDARD": "Chelsea Liu / Ryan Bedard",
-     "Anna VALESI / Martin BIDAR": "Anna Valesi / Martin Bidar",
-     "Jazmine DESROCHERS / Kieran THRASHER": "Jazmine Desrochers / Kieran Thrasher",
-     "Camille KOVALEV / Pavel KOVALEV": "Camille Kovalev / Pavel Kovalev",
-     "Karina AKOPOVA / Nikita RAKHMANIN": "Karina Akopova / Nikita Rakhmanin",
-     "Yuna NAGAOKA / Sumitada MORIGUCHI": "Yuna Nagaoka / Sumitada Moriguchi",
-     "Minerva Fabienne HASE / Nikita VOLODIN": "Minerva Fabienne Hase / Nikita Volodin"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json",
    "podium": [
     {
      "place": 1,
@@ -69522,7 +69425,100 @@
      "nation": "ARM",
      "points": "66.95"
     }
-   ]
+   ],
+   "desc": "Итог:\n1. Minerva Fabienne Hase / Nikita Volodin — 75.21\n2. Yuna Nagaoka / Sumitada Moriguchi — 69.78\n3. Karina Akopova / Nikita Rakhmanin — 66.95\n\nНачало: 08:35 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Naomi Williams / Lachlan Lewer",
+     "nation": "USA",
+     "no": 1,
+     "warmup": 1,
+     "place": 8,
+     "points": "49.50",
+     "time": "08:42"
+    },
+    {
+     "name": "Chelsea Liu / Ryan Bedard",
+     "nation": "USA",
+     "no": 2,
+     "warmup": 1,
+     "place": 5,
+     "points": "59.71",
+     "time": "08:48"
+    },
+    {
+     "name": "Anna Valesi / Martin Bidar",
+     "nation": "CZE",
+     "no": 3,
+     "warmup": 1,
+     "place": 4,
+     "points": "59.77",
+     "time": "08:55"
+    },
+    {
+     "name": "Jazmine Desrochers / Kieran Thrasher",
+     "nation": "CAN",
+     "no": 4,
+     "warmup": 1,
+     "place": 6,
+     "points": "55.27",
+     "time": "09:01"
+    },
+    {
+     "name": "Camille Kovalev / Pavel Kovalev",
+     "nation": "FRA",
+     "no": 5,
+     "warmup": 2,
+     "place": 7,
+     "points": "52.07",
+     "time": "09:15"
+    },
+    {
+     "name": "Karina Akopova / Nikita Rakhmanin",
+     "nation": "ARM",
+     "no": 6,
+     "warmup": 2,
+     "place": 3,
+     "points": "66.95",
+     "time": "09:21"
+    },
+    {
+     "name": "Yuna Nagaoka / Sumitada Moriguchi",
+     "nation": "JPN",
+     "no": 7,
+     "warmup": 2,
+     "place": 2,
+     "points": "69.78",
+     "time": "09:28"
+    },
+    {
+     "name": "Minerva Fabienne Hase / Nikita Volodin",
+     "nation": "GER",
+     "no": 8,
+     "warmup": 2,
+     "place": 1,
+     "points": "75.21",
+     "time": "09:34"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG005.htm",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Minerva Fabienne HASE / Nikita VOLODIN": "Minerva Fabienne Hase / Nikita Volodin",
+     "Yuna NAGAOKA / Sumitada MORIGUCHI": "Yuna Nagaoka / Sumitada Moriguchi",
+     "Karina AKOPOVA / Nikita RAKHMANIN": "Karina Akopova / Nikita Rakhmanin",
+     "Anna VALESI / Martin BIDAR": "Anna Valesi / Martin Bidar",
+     "Chelsea LIU / Ryan BEDARD": "Chelsea Liu / Ryan Bedard",
+     "Jazmine DESROCHERS / Kieran THRASHER": "Jazmine Desrochers / Kieran Thrasher",
+     "Camille KOVALEV / Pavel KOVALEV": "Camille Kovalev / Pavel Kovalev",
+     "Naomi WILLIAMS / Lachlan LEWER": "Naomi Williams / Lachlan Lewer"
+    },
+    "basis": "judges"
+   },
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:women-senior-kp",
@@ -70118,7 +70114,7 @@
    "seg": "ПП",
    "title": "Кубок Москвы (Финал) — юноши ПП",
    "start": "2026-11-27T16:10:00+03:00",
-   "end": "2026-11-27T20:45:00+03:00",
+   "end": "2026-11-27T19:55:00+03:00",
    "venue": "ЛД «Медведково», Москва",
    "intl": false,
    "broadcast": [],
@@ -70133,8 +70129,6 @@
     "Даниил Жолобов",
     "Илья Малышев",
     "Кирилл Жураховский",
-    "Кирилл Лутошкин",
-    "Леонтий Камзолов",
     "Максим Брагин",
     "Максим Стрелков",
     "Марк Соколов",
@@ -70145,183 +70139,157 @@
     "Павел Грибуля",
     "Павел Шин",
     "Платон Жильцов",
-    "Степан Федоров",
     "Степан Юров",
     "Тагар Самбуев",
     "Тимофей Бочков",
     "Тимофей Жданов",
-    "Яромир Фураев",
     "Ярослав Хрулев"
    ],
    "src": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/index.htm",
    "desc": "Начало: 16:10 МСК",
    "field": [
     {
-     "name": "Кирилл Лутошкин",
+     "name": "Мирон Андреанов",
      "nation": "",
      "no": 1,
      "warmup": null
     },
     {
-     "name": "Яромир Фураев",
+     "name": "Степан Юров",
      "nation": "",
      "no": 2,
      "warmup": null
     },
     {
-     "name": "Степан Федоров",
+     "name": "Тимофей Жданов",
      "nation": "",
      "no": 3,
      "warmup": null
     },
     {
-     "name": "Леонтий Камзолов",
+     "name": "Павел Грибуля",
      "nation": "",
      "no": 4,
      "warmup": null
     },
     {
-     "name": "Мирон Андреанов",
+     "name": "Тагар Самбуев",
      "nation": "",
      "no": 5,
      "warmup": null
     },
     {
-     "name": "Степан Юров",
+     "name": "Максим Стрелков",
      "nation": "",
      "no": 6,
      "warmup": null
     },
     {
-     "name": "Тимофей Жданов",
+     "name": "Александр Щербаков",
      "nation": "",
      "no": 7,
      "warmup": null
     },
     {
-     "name": "Павел Грибуля",
+     "name": "Максим Брагин",
      "nation": "",
      "no": 8,
      "warmup": null
     },
     {
-     "name": "Тагар Самбуев",
+     "name": "Павел Шин",
      "nation": "",
      "no": 9,
      "warmup": null
     },
     {
-     "name": "Максим Стрелков",
+     "name": "Платон Жильцов",
      "nation": "",
      "no": 10,
      "warmup": null
     },
     {
-     "name": "Александр Щербаков",
+     "name": "Наиль Сагадулин",
      "nation": "",
      "no": 11,
      "warmup": null
     },
     {
-     "name": "Максим Брагин",
+     "name": "Георгий Терехов",
      "nation": "",
      "no": 12,
      "warmup": null
     },
     {
-     "name": "Павел Шин",
+     "name": "Артем Федотов",
      "nation": "",
      "no": 13,
      "warmup": null
     },
     {
-     "name": "Платон Жильцов",
+     "name": "Алексей Ефременко",
      "nation": "",
      "no": 14,
      "warmup": null
     },
     {
-     "name": "Наиль Сагадулин",
+     "name": "Кирилл Жураховский",
      "nation": "",
      "no": 15,
      "warmup": null
     },
     {
-     "name": "Георгий Терехов",
+     "name": "Григорий Хорохордин",
      "nation": "",
      "no": 16,
      "warmup": null
     },
     {
-     "name": "Артем Федотов",
+     "name": "Алексей Заводских",
      "nation": "",
      "no": 17,
      "warmup": null
     },
     {
-     "name": "Алексей Ефременко",
+     "name": "Тимофей Бочков",
      "nation": "",
      "no": 18,
      "warmup": null
     },
     {
-     "name": "Кирилл Жураховский",
+     "name": "Ярослав Хрулев",
      "nation": "",
      "no": 19,
      "warmup": null
     },
     {
-     "name": "Григорий Хорохордин",
+     "name": "Марк Соколов",
      "nation": "",
      "no": 20,
      "warmup": null
     },
     {
-     "name": "Алексей Заводских",
+     "name": "Даниил Жолобов",
      "nation": "",
      "no": 21,
      "warmup": null
     },
     {
-     "name": "Тимофей Бочков",
+     "name": "Никита Малютин",
      "nation": "",
      "no": 22,
      "warmup": null
     },
     {
-     "name": "Ярослав Хрулев",
+     "name": "Илья Малышев",
      "nation": "",
      "no": 23,
      "warmup": null
     },
     {
-     "name": "Марк Соколов",
-     "nation": "",
-     "no": 24,
-     "warmup": null
-    },
-    {
-     "name": "Даниил Жолобов",
-     "nation": "",
-     "no": 25,
-     "warmup": null
-    },
-    {
-     "name": "Никита Малютин",
-     "nation": "",
-     "no": 26,
-     "warmup": null
-    },
-    {
-     "name": "Илья Малышев",
-     "nation": "",
-     "no": 27,
-     "warmup": null
-    },
-    {
      "name": "Николай Колесников",
      "nation": "",
-     "no": 28,
+     "no": 24,
      "warmup": null
     }
    ],
@@ -70331,10 +70299,6 @@
     "cat": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/CAT004RS.HTM",
     "first": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/SEG007.HTM",
     "names": {
-     "Кирилл ЛУТОШКИН": "Кирилл Лутошкин",
-     "Яромир ФУРАЕВ": "Яромир Фураев",
-     "Степан ФЕДОРОВ": "Степан Федоров",
-     "Леонтий КАМЗОЛОВ": "Леонтий Камзолов",
      "Мирон АНДРЕАНОВ": "Мирон Андреанов",
      "Степан ЮРОВ": "Степан Юров",
      "Тимофей ЖДАНОВ": "Тимофей Жданов",
@@ -70850,7 +70814,7 @@
    "seg": "ПП",
    "title": "GP NHK Trophy — пары ПП",
    "start": "2026-11-28T08:00:00+03:00",
-   "end": "2026-11-28T09:20:00+03:00",
+   "end": "2026-11-28T09:18:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
    "broadcast": [
@@ -70882,36 +70846,60 @@
    "desc": "Начало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Anna Valesi / Martin Bidar",
-     "nation": "CZE"
+     "name": "Naomi Williams / Lachlan Lewer",
+     "nation": "USA",
+     "time": "08:07",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Camille Kovalev / Pavel Kovalev",
-     "nation": "FRA"
-    },
-    {
-     "name": "Chelsea Liu / Ryan Bedard",
-     "nation": "USA"
+     "nation": "FRA",
+     "time": "08:15",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Jazmine Desrochers / Kieran Thrasher",
-     "nation": "CAN"
+     "nation": "CAN",
+     "time": "08:23",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Chelsea Liu / Ryan Bedard",
+     "nation": "USA",
+     "time": "08:31",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Anna Valesi / Martin Bidar",
+     "nation": "CZE",
+     "time": "08:46",
+     "no": 5,
+     "warmup": 2
     },
     {
      "name": "Karina Akopova / Nikita Rakhmanin",
-     "nation": "ARM"
-    },
-    {
-     "name": "Minerva Fabienne Hase / Nikita Volodin",
-     "nation": "GER"
-    },
-    {
-     "name": "Naomi Williams / Lachlan Lewer",
-     "nation": "USA"
+     "nation": "ARM",
+     "time": "08:54",
+     "no": 6,
+     "warmup": 2
     },
     {
      "name": "Yuna Nagaoka / Sumitada Moriguchi",
-     "nation": "JPN"
+     "nation": "JPN",
+     "time": "09:02",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Minerva Fabienne Hase / Nikita Volodin",
+     "nation": "GER",
+     "time": "09:09",
+     "no": 8,
+     "warmup": 2
     }
    ],
    "live": {
@@ -70920,14 +70908,14 @@
     "cat": "https://results.isu.org/results/season2627/gpjpn2026/CAT003RS.htm",
     "first": "https://results.isu.org/results/season2627/gpjpn2026/SEG005.htm",
     "names": {
-     "Karina AKOPOVA / Nikita RAKHMANIN": "Karina Akopova / Nikita Rakhmanin",
-     "Jazmine DESROCHERS / Kieran THRASHER": "Jazmine Desrochers / Kieran Thrasher",
-     "Anna VALESI / Martin BIDAR": "Anna Valesi / Martin Bidar",
+     "Naomi WILLIAMS / Lachlan LEWER": "Naomi Williams / Lachlan Lewer",
      "Camille KOVALEV / Pavel KOVALEV": "Camille Kovalev / Pavel Kovalev",
-     "Minerva Fabienne HASE / Nikita VOLODIN": "Minerva Fabienne Hase / Nikita Volodin",
-     "Yuna NAGAOKA / Sumitada MORIGUCHI": "Yuna Nagaoka / Sumitada Moriguchi",
+     "Jazmine DESROCHERS / Kieran THRASHER": "Jazmine Desrochers / Kieran Thrasher",
      "Chelsea LIU / Ryan BEDARD": "Chelsea Liu / Ryan Bedard",
-     "Naomi WILLIAMS / Lachlan LEWER": "Naomi Williams / Lachlan Lewer"
+     "Anna VALESI / Martin BIDAR": "Anna Valesi / Martin Bidar",
+     "Karina AKOPOVA / Nikita RAKHMANIN": "Karina Akopova / Nikita Rakhmanin",
+     "Yuna NAGAOKA / Sumitada MORIGUCHI": "Yuna Nagaoka / Sumitada Moriguchi",
+     "Minerva Fabienne HASE / Nikita VOLODIN": "Minerva Fabienne Hase / Nikita Volodin"
     },
     "basis": null
    },
@@ -123981,7 +123969,8 @@
   "Vivi Nurmi": "",
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg",
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
-  "Алена Принева": "photos/889387d6682168ff.jpg"
+  "Алена Принева": "photos/889387d6682168ff.jpg",
+  "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "a533bf04ecfe2888"
+ "rev": "18fc573f838d9ef1"
 }
