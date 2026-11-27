@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T11:58:10+03:00",
- "checked": "2026-11-27T10:33:01.908502+00:00",
+ "checked": "2026-11-27T10:41:02.250194+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69774,7 +69774,7 @@
      "time": "13:14",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "85.46"
     },
     {
@@ -69812,7 +69812,7 @@
      "url": "https://www.youtube.com/watch?v=Glj7j2I8g6w"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Пётр Гуменник — 90.60\n2. Владислав Дикиджи — 85.46\n3. Nozomu Yoshioka — 79.40\n\nРоссияне:\n• Владислав Дикиджи — 13:14\n• Пётр Гуменник — 13:20\n\nНачало: 13:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Пётр Гуменник — 90.60\n2. Vladimir Samoilov — 86.72\n3. Владислав Дикиджи — 85.46\n\nРоссияне:\n• Владислав Дикиджи — 13:14\n• Пётр Гуменник — 13:20\n\nНачало: 13:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Nozomu Yoshioka",
@@ -69820,7 +69820,7 @@
      "time": "13:08",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "79.40"
     },
     {
@@ -69829,7 +69829,7 @@
      "time": "13:14",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "85.46"
     },
     {
@@ -69847,7 +69847,7 @@
      "time": "13:26",
      "no": 4,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "78.06"
     },
     {
@@ -69855,7 +69855,9 @@
      "nation": "POL",
      "time": "13:32",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "86.72"
     },
     {
      "name": "Jason Brown",
@@ -69938,15 +69940,15 @@
     },
     {
      "place": 2,
-     "name": "Владислав Дикиджи",
-     "nation": "RUS",
-     "points": "85.46"
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "points": "86.72"
     },
     {
      "place": 3,
-     "name": "Nozomu Yoshioka",
-     "nation": "JPN",
-     "points": "79.40"
+     "name": "Владислав Дикиджи",
+     "nation": "RUS",
+     "points": "85.46"
     }
    ],
    "provisional": true
@@ -70026,7 +70028,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 4,
+     "place": 5,
      "points": "91.95"
     },
     {
@@ -70049,7 +70051,9 @@
      "name": "Ева Вачасова",
      "nation": "",
      "no": 5,
-     "warmup": null
+     "warmup": null,
+     "place": 4,
+     "points": "94.35"
     },
     {
      "name": "Елизавета Борисова",
@@ -124136,5 +124140,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "95270582c17d5872"
+ "rev": "5207d2585645f4aa"
 }
