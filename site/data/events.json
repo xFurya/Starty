@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T11:58:10+03:00",
- "checked": "2026-11-27T11:01:02.216286+00:00",
+ "checked": "2026-11-27T11:09:02.387300+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69774,7 +69774,7 @@
      "time": "13:14",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "85.46"
     },
     {
@@ -69783,7 +69783,7 @@
      "time": "13:20",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "90.60"
     }
    ],
@@ -69812,7 +69812,7 @@
      "url": "https://www.youtube.com/watch?v=Glj7j2I8g6w"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Пётр Гуменник — 90.60\n2. Vladimir Samoilov — 86.72\n3. Jason Brown — 85.89\n\nРоссияне:\n• Владислав Дикиджи — 13:14\n• Пётр Гуменник — 13:20\n\nНачало: 13:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Lukas Britschgi — 90.81\n2. Пётр Гуменник — 90.60\n3. Vladimir Samoilov — 86.72\n\nРоссияне:\n• Владислав Дикиджи — 13:14\n• Пётр Гуменник — 13:20\n\nНачало: 13:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Nozomu Yoshioka",
@@ -69820,7 +69820,7 @@
      "time": "13:08",
      "no": 1,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "79.40"
     },
     {
@@ -69829,7 +69829,7 @@
      "time": "13:14",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "85.46"
     },
     {
@@ -69838,7 +69838,7 @@
      "time": "13:20",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "90.60"
     },
     {
@@ -69847,7 +69847,7 @@
      "time": "13:26",
      "no": 4,
      "warmup": 1,
-     "place": 7,
+     "place": 8,
      "points": "78.06"
     },
     {
@@ -69856,7 +69856,7 @@
      "time": "13:32",
      "no": 5,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "86.72"
     },
     {
@@ -69865,7 +69865,7 @@
      "time": "13:38",
      "no": 6,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "85.89"
     },
     {
@@ -69874,7 +69874,7 @@
      "time": "13:53",
      "no": 7,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "82.62"
     },
     {
@@ -69882,7 +69882,9 @@
      "nation": "SUI",
      "time": "13:59",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "90.81"
     },
     {
      "name": "Kevin Aymoz",
@@ -69938,21 +69940,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Lukas Britschgi",
+     "nation": "SUI",
+     "points": "90.81"
+    },
+    {
+     "place": 2,
      "name": "Пётр Гуменник",
      "nation": "RUS",
      "points": "90.60"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Vladimir Samoilov",
      "nation": "POL",
      "points": "86.72"
-    },
-    {
-     "place": 3,
-     "name": "Jason Brown",
-     "nation": "USA",
-     "points": "85.89"
     }
    ],
    "provisional": true
@@ -70032,7 +70034,7 @@
      "nation": "",
      "no": 2,
      "warmup": null,
-     "place": 8,
+     "place": 9,
      "points": "91.95"
     },
     {
@@ -70040,7 +70042,7 @@
      "nation": "",
      "no": 3,
      "warmup": null,
-     "place": 6,
+     "place": 7,
      "points": "95.71"
     },
     {
@@ -70056,7 +70058,7 @@
      "nation": "",
      "no": 5,
      "warmup": null,
-     "place": 7,
+     "place": 8,
      "points": "94.35"
     },
     {
@@ -70087,7 +70089,9 @@
      "name": "Лизавета Мельникова",
      "nation": "",
      "no": 9,
-     "warmup": null
+     "warmup": null,
+     "place": 6,
+     "points": "102.94"
     },
     {
      "name": "Валерия Литвинчёва",
@@ -124150,5 +124154,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "2c16e6e391dde3af"
+ "rev": "53f7bf44f6598872"
 }
