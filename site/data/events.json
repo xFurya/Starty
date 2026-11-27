@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-27T18:34:10+03:00",
- "checked": "2026-11-27T20:38:36.335259+00:00",
+ "generated": "2026-11-27T23:17:18+03:00",
+ "checked": "2026-11-27T23:17:18+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -70398,7 +70398,7 @@
    "seg": "ПП",
    "title": "Кубок Москвы (Финал) — юноши ПП",
    "start": "2026-11-27T16:10:00+03:00",
-   "end": "2026-11-27T18:55:00+03:00",
+   "end": "2026-11-27T19:55:00+03:00",
    "venue": "ЛД «Медведково», Москва",
    "intl": false,
    "broadcast": [],
@@ -70410,17 +70410,24 @@
     "Артем Федотов",
     "Георгий Терехов",
     "Григорий Хорохордин",
+    "Даниил Жолобов",
+    "Илья Малышев",
     "Кирилл Жураховский",
     "Максим Брагин",
     "Максим Стрелков",
+    "Марк Соколов",
     "Мирон Андреанов",
     "Наиль Сагадулин",
+    "Никита Малютин",
+    "Николай Колесников",
     "Павел Грибуля",
     "Павел Шин",
     "Платон Жильцов",
     "Степан Юров",
     "Тагар Самбуев",
-    "Тимофей Жданов"
+    "Тимофей Бочков",
+    "Тимофей Жданов",
+    "Ярослав Хрулев"
    ],
    "src": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/index.htm",
    "podium": [
@@ -70580,6 +70587,62 @@
      "warmup": null,
      "place": 5,
      "points": "137.94"
+    },
+    {
+     "name": "Тимофей Бочков",
+     "nation": "",
+     "no": 18,
+     "warmup": null,
+     "place": 4,
+     "points": "138.87"
+    },
+    {
+     "name": "Ярослав Хрулев",
+     "nation": "",
+     "no": 19,
+     "warmup": null,
+     "place": 10,
+     "points": "126.94"
+    },
+    {
+     "name": "Марк Соколов",
+     "nation": "",
+     "no": 20,
+     "warmup": null,
+     "place": 6,
+     "points": "137.43"
+    },
+    {
+     "name": "Даниил Жолобов",
+     "nation": "",
+     "no": 21,
+     "warmup": null,
+     "place": 3,
+     "points": "148.56"
+    },
+    {
+     "name": "Никита Малютин",
+     "nation": "",
+     "no": 22,
+     "warmup": null,
+     "place": 2,
+     "points": "154.35"
+    },
+    {
+     "name": "Илья Малышев",
+     "nation": "",
+     "no": 23,
+     "warmup": null,
+     "place": 9,
+     "points": "132.55"
+    },
+    {
+     "name": "Николай Колесников",
+     "nation": "",
+     "no": 24,
+     "warmup": null,
+     "place": 1,
+     "points": "157.85"
     }
    ],
    "provisional": true,
@@ -70589,9 +70652,16 @@
     "cat": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/CAT004RS.HTM",
     "first": "https://ffkm.ru/results/2026-2027/2026-11-23_kubok/SEG007.HTM",
     "names": {
+     "Николай КОЛЕСНИКОВ": "Николай Колесников",
+     "Никита МАЛЮТИН": "Никита Малютин",
+     "Даниил ЖОЛОБОВ": "Даниил Жолобов",
+     "Тимофей БОЧКОВ": "Тимофей Бочков",
      "Алексей ЗАВОДСКИХ": "Алексей Заводских",
+     "Марк СОКОЛОВ": "Марк Соколов",
      "Артем ФЕДОТОВ": "Артем Федотов",
      "Кирилл ЖУРАХОВСКИЙ": "Кирилл Жураховский",
+     "Илья МАЛЫШЕВ": "Илья Малышев",
+     "Ярослав ХРУЛЕВ": "Ярослав Хрулев",
      "Павел ШИН": "Павел Шин",
      "Максим БРАГИН": "Максим Брагин",
      "Александр ЩЕРБАКОВ": "Александр Щербаков",
@@ -70622,7 +70692,7 @@
    "seg": "КП",
    "title": "CS PGE Warsaw Cup — пары КП",
    "start": "2026-11-27T18:25:00+03:00",
-   "end": "2026-11-27T18:59:00+03:00",
+   "end": "2026-11-27T19:00:00+03:00",
    "venue": "Warsaw, Poland",
    "intl": true,
    "broadcast": [],
@@ -70654,59 +70724,70 @@
      "points": "50.84"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Laura Gauch / Linus Mager — 39.13\n\nНачало: 18:25 МСК",
+   "desc": "Итог:\n1. Sofia Tridello / Alberto Tommasi — 53.73\n2. Xuanyu Liu / Wenbao Han — 50.97\n3. Sarah Nunez / Blake Eisenach — 50.84\n\nПримечательное:\n• Xuanyu Liu / Wenbao Han — Личный рекорд за КП: 50.97 (был 42.85)\n• Sarah Nunez / Blake Eisenach — Личный рекорд за КП: 50.84 (был 46.25)\n\nНачало: 18:25 МСК",
    "field": [
     {
      "name": "Laura Gauch / Linus Mager",
      "nation": "SUI",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 4,
      "points": "39.13",
      "time": "18:32"
     },
     {
      "name": "Sarah Nunez / Blake Eisenach",
      "nation": "USA",
-     "time": "18:38",
      "no": 2,
      "warmup": 1,
      "place": 3,
-     "points": "50.84"
+     "points": "50.84",
+     "time": "18:38"
     },
     {
      "name": "Sofia Tridello / Alberto Tommasi",
      "nation": "ITA",
-     "time": "18:44",
      "no": 3,
      "warmup": 1,
      "place": 1,
-     "points": "53.73"
+     "points": "53.73",
+     "time": "18:44"
     },
     {
      "name": "Xuanyu Liu / Wenbao Han",
      "nation": "CHN",
-     "time": "18:51",
      "no": 4,
      "warmup": 1,
      "place": 2,
-     "points": "50.97"
+     "points": "50.97",
+     "time": "18:51"
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
     "seg": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG005.htm",
     "cat": null,
     "first": null,
     "names": {
-     "Laura GAUCH / Linus MAGER": "Laura Gauch / Linus Mager",
-     "Sarah NUNEZ / Blake EISENACH": "Sarah Nunez / Blake Eisenach",
      "Sofia TRIDELLO / Alberto TOMMASI": "Sofia Tridello / Alberto Tommasi",
-     "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han"
+     "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han",
+     "Sarah NUNEZ / Blake EISENACH": "Sarah Nunez / Blake Eisenach",
+     "Laura GAUCH / Linus MAGER": "Laura Gauch / Linus Mager"
     },
     "basis": "judges"
    },
+   "facts": [
+    {
+     "who": "Xuanyu Liu / Wenbao Han",
+     "text": "Личный рекорд за КП: 50.97 (был 42.85)",
+     "kind": "score"
+    },
+    {
+     "who": "Sarah Nunez / Blake Eisenach",
+     "text": "Личный рекорд за КП: 50.84 (был 46.25)",
+     "kind": "score"
+    }
+   ],
    "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
   },
   {
@@ -70755,299 +70836,6 @@
     "Yu-Hsiang Li"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Corentin Spinar — 143.79\n2. Kyrylo Marsak — 142.52\n3. Maksim Varakin — 134.23\n\nНачало: 19:20 МСК",
-   "field": [
-    {
-     "name": "Nikolaj Memola",
-     "nation": "ITA",
-     "time": "00:01",
-     "no": 28,
-     "warmup": 5
-    },
-    {
-     "name": "Lucas Broussard",
-     "nation": "USA",
-     "time": "00:09",
-     "no": 29,
-     "warmup": 5
-    },
-    {
-     "name": "Jozef Curma",
-     "nation": "SVK",
-     "time": "19:28",
-     "no": 1,
-     "warmup": 1,
-     "place": 23,
-     "points": "85.42"
-    },
-    {
-     "name": "Lev Vinokur",
-     "nation": "ISR",
-     "time": "19:35",
-     "no": 2,
-     "warmup": 1,
-     "place": 12,
-     "points": "114.49"
-    },
-    {
-     "name": "Xan Rols",
-     "nation": "FRA",
-     "time": "19:43",
-     "no": 3,
-     "warmup": 1,
-     "place": 20,
-     "points": "100.23"
-    },
-    {
-     "name": "Jedidiah Lincoln",
-     "nation": "GBR",
-     "time": "19:51",
-     "no": 4,
-     "warmup": 1,
-     "place": 19,
-     "points": "101.11"
-    },
-    {
-     "name": "Tadeas Vaclavik",
-     "nation": "CZE",
-     "time": "19:59",
-     "no": 5,
-     "warmup": 1,
-     "place": 21,
-     "points": "98.83"
-    },
-    {
-     "name": "Nikolajs Krivoseja",
-     "nation": "LAT",
-     "time": "20:15",
-     "no": 6,
-     "warmup": 2,
-     "place": 24,
-     "points": "83.06"
-    },
-    {
-     "name": "Aurelian Chervet",
-     "nation": "SUI",
-     "time": "20:23",
-     "no": 7,
-     "warmup": 2,
-     "place": 22,
-     "points": "96.14"
-    },
-    {
-     "name": "Jakub Lofek",
-     "nation": "POL",
-     "time": "20:30",
-     "no": 8,
-     "warmup": 2,
-     "place": 11,
-     "points": "114.75"
-    },
-    {
-     "name": "Matvii Yefymenko",
-     "nation": "POL",
-     "time": "20:38",
-     "no": 9,
-     "warmup": 2,
-     "place": 13,
-     "points": "114.40"
-    },
-    {
-     "name": "Valtter Virtanen",
-     "nation": "FIN",
-     "time": "20:46",
-     "no": 10,
-     "warmup": 2,
-     "place": 15,
-     "points": "109.43"
-    },
-    {
-     "name": "Mahery Randrianarivony",
-     "nation": "ESP",
-     "time": "20:54",
-     "no": 11,
-     "warmup": 2,
-     "place": 17,
-     "points": "102.44"
-    },
-    {
-     "name": "Daniil Valanov",
-     "nation": "NOR",
-     "time": "21:25",
-     "no": 12,
-     "warmup": 3,
-     "place": 16,
-     "points": "107.23"
-    },
-    {
-     "name": "Makar Suntsev",
-     "nation": "FIN",
-     "time": "21:33",
-     "no": 13,
-     "warmup": 3,
-     "place": 4,
-     "points": "130.57"
-    },
-    {
-     "name": "Davide Lewton Brain",
-     "nation": "MON",
-     "time": "21:40",
-     "no": 14,
-     "warmup": 3,
-     "place": 14,
-     "points": "112.04"
-    },
-    {
-     "name": "Corentin Spinar",
-     "nation": "FRA",
-     "time": "21:48",
-     "no": 15,
-     "warmup": 3,
-     "place": 1,
-     "points": "143.79"
-    },
-    {
-     "name": "Tobia Oellerer",
-     "nation": "AUT",
-     "time": "21:56",
-     "no": 16,
-     "warmup": 3,
-     "place": 18,
-     "points": "102.21"
-    },
-    {
-     "name": "Nikita Starostin",
-     "nation": "GER",
-     "time": "22:04",
-     "no": 17,
-     "warmup": 3,
-     "place": 6,
-     "points": "127.16"
-    },
-    {
-     "name": "Maksim Varakin",
-     "nation": "CRO",
-     "time": "22:20",
-     "no": 18,
-     "warmup": 4,
-     "place": 3,
-     "points": "134.23"
-    },
-    {
-     "name": "Yu-Hsiang Li",
-     "nation": "TPE",
-     "time": "22:28",
-     "no": 19,
-     "warmup": 4,
-     "place": 5,
-     "points": "129.02"
-    },
-    {
-     "name": "Kyrylo Marsak",
-     "nation": "UKR",
-     "time": "22:35",
-     "no": 20,
-     "warmup": 4,
-     "place": 2,
-     "points": "142.52"
-    },
-    {
-     "name": "Ean Weiler",
-     "nation": "SUI",
-     "time": "22:43",
-     "no": 21,
-     "warmup": 4,
-     "place": 9,
-     "points": "117.18"
-    },
-    {
-     "name": "Yanhao Li",
-     "nation": "NZL",
-     "time": "22:51",
-     "no": 22,
-     "warmup": 4,
-     "place": 10,
-     "points": "117.13"
-    },
-    {
-     "name": "Georgii Reshtenko",
-     "nation": "CZE",
-     "time": "22:59",
-     "no": 23,
-     "warmup": 4,
-     "place": 8,
-     "points": "122.11"
-    },
-    {
-     "name": "Samy Hammi",
-     "nation": "FRA",
-     "time": "23:30",
-     "no": 24,
-     "warmup": 5,
-     "place": 7,
-     "points": "123.58"
-    },
-    {
-     "name": "Kornel Witkowski",
-     "nation": "POL",
-     "time": "23:38",
-     "no": 25,
-     "warmup": 5
-    },
-    {
-     "name": "Mark Gorodnitsky",
-     "nation": "ISR",
-     "time": "23:45",
-     "no": 26,
-     "warmup": 5
-    },
-    {
-     "name": "Lucius Kazanecki",
-     "nation": "USA",
-     "time": "23:53",
-     "no": 27,
-     "warmup": 5
-    }
-   ],
-   "live": {
-    "idx": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-    "seg": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG002.htm",
-    "cat": "https://pzlf-wyniki.pl/2627/CSPOL2026/CAT001RS.htm",
-    "first": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG001.htm",
-    "names": {
-     "Jozef CURMA": "Jozef Curma",
-     "Lev VINOKUR": "Lev Vinokur",
-     "Xan ROLS": "Xan Rols",
-     "Jedidiah LINCOLN": "Jedidiah Lincoln",
-     "Tadeas VACLAVIK": "Tadeas Vaclavik",
-     "Nikolajs KRIVOSEJA": "Nikolajs Krivoseja",
-     "Aurelian CHERVET": "Aurelian Chervet",
-     "Jakub LOFEK": "Jakub Lofek",
-     "Matvii YEFYMENKO": "Matvii Yefymenko",
-     "Valtter VIRTANEN": "Valtter Virtanen",
-     "Mahery RANDRIANARIVONY": "Mahery Randrianarivony",
-     "Daniil VALANOV": "Daniil Valanov",
-     "Makar SUNTSEV": "Makar Suntsev",
-     "Davide LEWTON BRAIN": "Davide Lewton Brain",
-     "Corentin SPINAR": "Corentin Spinar",
-     "Tobia OELLERER": "Tobia Oellerer",
-     "Nikita STAROSTIN": "Nikita Starostin",
-     "Maksim VARAKIN": "Maksim Varakin",
-     "Yu-Hsiang LI": "Yu-Hsiang Li",
-     "Kyrylo MARSAK": "Kyrylo Marsak",
-     "Ean WEILER": "Ean Weiler",
-     "Yanhao LI": "Yanhao Li",
-     "Georgii RESHTENKO": "Georgii Reshtenko",
-     "Samy HAMMI": "Samy Hammi",
-     "Kornel WITKOWSKI": "Kornel Witkowski",
-     "Mark GORODNITSKY": "Mark Gorodnitsky",
-     "Lucius KAZANECKI": "Lucius Kazanecki",
-     "Nikolaj MEMOLA": "Nikolaj Memola",
-     "Lucas BROUSSARD": "Lucas Broussard"
-    },
-    "basis": null
-   },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json",
    "podium": [
     {
      "place": 1,
@@ -71068,7 +70856,298 @@
      "points": "134.23"
     }
    ],
-   "provisional": true
+   "desc": "Промежуточные итоги:\n1. Corentin Spinar — 143.79\n2. Kyrylo Marsak — 142.52\n3. Maksim Varakin — 134.23\n\nНачало: 19:20 МСК",
+   "field": [
+    {
+     "name": "Aurelian Chervet",
+     "nation": "SUI",
+     "place": 21,
+     "points": "96.14",
+     "time": "20:23",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Corentin Spinar",
+     "nation": "FRA",
+     "place": 1,
+     "points": "143.79",
+     "time": "21:48",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Daniil Valanov",
+     "nation": "NOR",
+     "place": 15,
+     "points": "107.23",
+     "time": "21:25",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Davide Lewton Brain",
+     "nation": "MON",
+     "place": 13,
+     "points": "112.04",
+     "time": "21:40",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Ean Weiler",
+     "nation": "SUI",
+     "place": 8,
+     "points": "117.18",
+     "time": "22:43",
+     "no": 21,
+     "warmup": 4
+    },
+    {
+     "name": "Georgii Reshtenko",
+     "nation": "CZE",
+     "place": 7,
+     "points": "122.11",
+     "time": "22:59",
+     "no": 23,
+     "warmup": 4
+    },
+    {
+     "name": "Jakub Lofek",
+     "nation": "POL",
+     "place": 10,
+     "points": "114.75",
+     "time": "20:30",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Jedidiah Lincoln",
+     "nation": "GBR",
+     "place": 18,
+     "points": "101.11",
+     "time": "19:51",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Jozef Curma",
+     "nation": "SVK",
+     "place": 22,
+     "points": "85.42",
+     "time": "19:28",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Kornel Witkowski",
+     "nation": "POL",
+     "time": "23:38",
+     "no": 25,
+     "warmup": 5
+    },
+    {
+     "name": "Kyrylo Marsak",
+     "nation": "UKR",
+     "place": 2,
+     "points": "142.52",
+     "time": "22:35",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Lev Vinokur",
+     "nation": "ISR",
+     "place": 11,
+     "points": "114.49",
+     "time": "19:35",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Lucas Broussard",
+     "nation": "USA",
+     "time": "00:09",
+     "no": 29,
+     "warmup": 5
+    },
+    {
+     "name": "Lucius Kazanecki",
+     "nation": "USA",
+     "time": "23:53",
+     "no": 27,
+     "warmup": 5
+    },
+    {
+     "name": "Mahery Randrianarivony",
+     "nation": "ESP",
+     "place": 16,
+     "points": "102.44",
+     "time": "20:54",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Makar Suntsev",
+     "nation": "FIN",
+     "place": 4,
+     "points": "130.57",
+     "time": "21:33",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Maksim Varakin",
+     "nation": "CRO",
+     "place": 3,
+     "points": "134.23",
+     "time": "22:20",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Mark Gorodnitsky",
+     "nation": "ISR",
+     "time": "23:45",
+     "no": 26,
+     "warmup": 5
+    },
+    {
+     "name": "Matvii Yefymenko",
+     "nation": "POL",
+     "place": 12,
+     "points": "114.40",
+     "time": "20:38",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Nikita Starostin",
+     "nation": "GER",
+     "place": 6,
+     "points": "127.16",
+     "time": "22:04",
+     "no": 17,
+     "warmup": 3
+    },
+    {
+     "name": "Nikolaj Memola",
+     "nation": "ITA",
+     "time": "00:01",
+     "no": 28,
+     "warmup": 5
+    },
+    {
+     "name": "Nikolajs Krivoseja",
+     "nation": "LAT",
+     "place": 23,
+     "points": "83.06",
+     "time": "20:15",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Samy Hammi",
+     "nation": "FRA",
+     "time": "23:30",
+     "no": 24,
+     "warmup": 5
+    },
+    {
+     "name": "Tadeas Vaclavik",
+     "nation": "CZE",
+     "place": 20,
+     "points": "98.83",
+     "time": "19:59",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Tobia Oellerer",
+     "nation": "AUT",
+     "place": 17,
+     "points": "102.21",
+     "time": "21:56",
+     "no": 16,
+     "warmup": 3
+    },
+    {
+     "name": "Valtter Virtanen",
+     "nation": "FIN",
+     "place": 14,
+     "points": "109.43",
+     "time": "20:46",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Xan Rols",
+     "nation": "FRA",
+     "place": 19,
+     "points": "100.23",
+     "time": "19:43",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Yanhao Li",
+     "nation": "NZL",
+     "place": 9,
+     "points": "117.13",
+     "time": "22:51",
+     "no": 22,
+     "warmup": 4
+    },
+    {
+     "name": "Yu-Hsiang Li",
+     "nation": "TPE",
+     "place": 5,
+     "points": "129.02",
+     "time": "22:28",
+     "no": 19,
+     "warmup": 4
+    }
+   ],
+   "provisional": true,
+   "live": {
+    "idx": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
+    "seg": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG002.htm",
+    "cat": "https://pzlf-wyniki.pl/2627/CSPOL2026/CAT001RS.htm",
+    "first": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG001.htm",
+    "names": {
+     "Kyrylo MARSAK": "Kyrylo Marsak",
+     "Corentin SPINAR": "Corentin Spinar",
+     "Maksim VARAKIN": "Maksim Varakin",
+     "Georgii RESHTENKO": "Georgii Reshtenko",
+     "Yu-Hsiang LI": "Yu-Hsiang Li",
+     "Nikita STAROSTIN": "Nikita Starostin",
+     "Yanhao LI": "Yanhao Li",
+     "Makar SUNTSEV": "Makar Suntsev",
+     "Ean WEILER": "Ean Weiler",
+     "Davide LEWTON BRAIN": "Davide Lewton Brain",
+     "Matvii YEFYMENKO": "Matvii Yefymenko",
+     "Jakub LOFEK": "Jakub Lofek",
+     "Tobia OELLERER": "Tobia Oellerer",
+     "Valtter VIRTANEN": "Valtter Virtanen",
+     "Daniil VALANOV": "Daniil Valanov",
+     "Mahery RANDRIANARIVONY": "Mahery Randrianarivony",
+     "Lev VINOKUR": "Lev Vinokur",
+     "Jedidiah LINCOLN": "Jedidiah Lincoln",
+     "Tadeas VACLAVIK": "Tadeas Vaclavik",
+     "Aurelian CHERVET": "Aurelian Chervet",
+     "Xan ROLS": "Xan Rols",
+     "Nikolajs KRIVOSEJA": "Nikolajs Krivoseja",
+     "Jozef CURMA": "Jozef Curma",
+     "Samy HAMMI": "Samy Hammi",
+     "Kornel WITKOWSKI": "Kornel Witkowski",
+     "Mark GORODNITSKY": "Mark Gorodnitsky",
+     "Lucius KAZANECKI": "Lucius Kazanecki",
+     "Nikolaj MEMOLA": "Nikolaj Memola",
+     "Lucas BROUSSARD": "Lucas Broussard"
+    },
+    "basis": null
+   },
+   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:dance-senior-pt",
@@ -71485,14 +71564,17 @@
    "seg": "КП",
    "title": "Skate Celje — девушки КП",
    "start": "2026-11-28T10:30:00+03:00",
-   "end": "2026-11-28T18:25:00+03:00",
+   "end": "2026-11-28T16:59:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
    "ours": [
     {
      "name": "Алиса Заикина",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "16:47",
+     "no": 52,
+     "warmup": 9
     }
    ],
    "athletes": [
@@ -71527,7 +71609,6 @@
     "Mariia Sannikova",
     "Milena Velcheva",
     "Minea Montonen",
-    "Nadja Savic",
     "Neea Haapala",
     "Neza Lusic",
     "Nika Sajko",
@@ -71552,223 +71633,377 @@
     "Алиса Заикина"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Алиса Заикина\n\nНачало: 10:30 МСК",
+   "desc": "Россияне:\n• Алиса Заикина — 16:47\n\nНачало: 10:30 МСК",
    "field": [
     {
-     "name": "Ajda Preskar",
-     "nation": "SLO"
-    },
-    {
-     "name": "Aleksandra Janikowska",
-     "nation": "POL"
-    },
-    {
-     "name": "Alica Lengyelova",
-     "nation": "SVK"
-    },
-    {
-     "name": "Andreea Cristiana Maria Lazar",
-     "nation": "ROU"
-    },
-    {
-     "name": "Angel Delevaque",
-     "nation": "NED"
-    },
-    {
-     "name": "Angelica Orsi",
-     "nation": "ITA"
-    },
-    {
-     "name": "Anna Sannikova",
-     "nation": "KAZ"
-    },
-    {
-     "name": "Arina Gertsog",
-     "nation": "GER"
-    },
-    {
-     "name": "Diana Marjanovic",
-     "nation": "SRB"
-    },
-    {
      "name": "Djurdja Nikolic",
-     "nation": "SRB"
-    },
-    {
-     "name": "Ekaterina Balaganskaia",
-     "nation": "SRB"
-    },
-    {
-     "name": "Emma Cerkalova",
-     "nation": "SVK"
-    },
-    {
-     "name": "Enja Sivic",
-     "nation": "SLO"
-    },
-    {
-     "name": "Hana Operckal",
-     "nation": "SLO"
-    },
-    {
-     "name": "Hanna Elteto",
-     "nation": "HUN"
-    },
-    {
-     "name": "Isabella Niederleitner",
-     "nation": "AUT"
-    },
-    {
-     "name": "Jazlynn Höppener",
-     "nation": "NED"
-    },
-    {
-     "name": "Julia Subocz",
-     "nation": "POL"
-    },
-    {
-     "name": "Julia Vaha-ruohola",
-     "nation": "FIN"
-    },
-    {
-     "name": "Katarina Fedorova Coelho",
-     "nation": "POR"
-    },
-    {
-     "name": "Ketevan Makharadze",
-     "nation": "GEO"
-    },
-    {
-     "name": "Lajla Mucic",
-     "nation": "BIH"
-    },
-    {
-     "name": "Lara Achermann",
-     "nation": "NED"
-    },
-    {
-     "name": "Leyla Tosun",
-     "nation": "GER"
-    },
-    {
-     "name": "Liana Smrekar",
-     "nation": "SLO"
-    },
-    {
-     "name": "Lija Kroselj",
-     "nation": "SLO"
-    },
-    {
-     "name": "Lucca Dijkhuizen",
-     "nation": "NED"
-    },
-    {
-     "name": "Luna Rozman",
-     "nation": "SLO"
-    },
-    {
-     "name": "Mariia Sannikova",
-     "nation": "KAZ"
-    },
-    {
-     "name": "Milena Velcheva",
-     "nation": "BUL"
-    },
-    {
-     "name": "Minea Montonen",
-     "nation": "FIN"
-    },
-    {
-     "name": "Nadja Savic",
-     "nation": "SRB"
-    },
-    {
-     "name": "Neea Haapala",
-     "nation": "FIN"
-    },
-    {
-     "name": "Neza Lusic",
-     "nation": "SLO"
-    },
-    {
-     "name": "Nika Sajko",
-     "nation": "CRO"
-    },
-    {
-     "name": "Nina Lazarevic",
-     "nation": "SLO"
-    },
-    {
-     "name": "Polina Bykova",
-     "nation": "SLO"
-    },
-    {
-     "name": "Roos Harkema",
-     "nation": "NED"
-    },
-    {
-     "name": "Summer Wijkhuizen",
-     "nation": "NED"
-    },
-    {
-     "name": "Tamara Grahovac",
-     "nation": "CRO"
-    },
-    {
-     "name": "Tara Plahutar",
-     "nation": "CRO"
-    },
-    {
-     "name": "Teresa Naia Eder",
-     "nation": "AUT"
-    },
-    {
-     "name": "Tereza Havrankova",
-     "nation": "CZE"
-    },
-    {
-     "name": "Tiana Kaligaro",
-     "nation": "SLO"
+     "nation": "SRB",
+     "time": "10:36",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Varvara Abramkina",
-     "nation": "BUL"
+     "nation": "BUL",
+     "time": "10:42",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Varvara Poder",
-     "nation": "EST"
+     "name": "Enja Sivic",
+     "nation": "SLO",
+     "time": "10:47",
+     "no": 3,
+     "warmup": 1
     },
     {
-     "name": "Veronika Taubeova",
-     "nation": "CZE"
+     "name": "Aleksandra Janikowska",
+     "nation": "POL",
+     "time": "10:53",
+     "no": 4,
+     "warmup": 1
     },
     {
-     "name": "Victoria Yonemori",
-     "nation": "AUT"
+     "name": "Neea Haapala",
+     "nation": "FIN",
+     "time": "10:58",
+     "no": 5,
+     "warmup": 1
     },
     {
-     "name": "Vita Kas",
-     "nation": "SLO"
+     "name": "Liana Smrekar",
+     "nation": "SLO",
+     "time": "11:08",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Tara Plahutar",
+     "nation": "CRO",
+     "time": "11:13",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Ekaterina Balaganskaia",
+     "nation": "SRB",
+     "time": "11:19",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Ketevan Makharadze",
+     "nation": "GEO",
+     "time": "11:24",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Mariia Sannikova",
+     "nation": "KAZ",
+     "time": "11:30",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Katarina Fedorova Coelho",
+     "nation": "POR",
+     "time": "11:35",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Angelica Orsi",
+     "nation": "ITA",
+     "time": "11:59",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Tiana Kaligaro",
+     "nation": "SLO",
+     "time": "12:05",
+     "no": 13,
+     "warmup": 3
     },
     {
      "name": "Zala Grum",
-     "nation": "SLO"
+     "nation": "SLO",
+     "time": "12:10",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Jazlynn Höppener",
+     "nation": "NED",
+     "time": "12:16",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Tamara Grahovac",
+     "nation": "CRO",
+     "time": "12:21",
+     "no": 16,
+     "warmup": 3
+    },
+    {
+     "name": "Leyla Tosun",
+     "nation": "GER",
+     "time": "12:27",
+     "no": 17,
+     "warmup": 3
+    },
+    {
+     "name": "Angel Delevaque",
+     "nation": "NED",
+     "time": "12:36",
+     "no": 18,
+     "warmup": 4
+    },
+    {
+     "name": "Ajda Preskar",
+     "nation": "SLO",
+     "time": "12:42",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Lajla Mucic",
+     "nation": "BIH",
+     "time": "12:47",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Andreea Cristiana Maria Lazar",
+     "nation": "ROU",
+     "time": "12:53",
+     "no": 21,
+     "warmup": 4
+    },
+    {
+     "name": "Nina Lazarevic",
+     "nation": "SLO",
+     "time": "12:58",
+     "no": 22,
+     "warmup": 4
+    },
+    {
+     "name": "Minea Montonen",
+     "nation": "FIN",
+     "time": "13:04",
+     "no": 23,
+     "warmup": 4
+    },
+    {
+     "name": "Lija Kroselj",
+     "nation": "SLO",
+     "time": "13:28",
+     "no": 24,
+     "warmup": 5
+    },
+    {
+     "name": "Hana Operckal",
+     "nation": "SLO",
+     "time": "13:33",
+     "no": 25,
+     "warmup": 5
+    },
+    {
+     "name": "Polina Bykova",
+     "nation": "SLO",
+     "time": "13:39",
+     "no": 26,
+     "warmup": 5
+    },
+    {
+     "name": "Isabella Niederleitner",
+     "nation": "AUT",
+     "time": "13:44",
+     "no": 27,
+     "warmup": 5
+    },
+    {
+     "name": "Nika Sajko",
+     "nation": "CRO",
+     "time": "13:50",
+     "no": 28,
+     "warmup": 5
+    },
+    {
+     "name": "Summer Wijkhuizen",
+     "nation": "NED",
+     "time": "13:55",
+     "no": 29,
+     "warmup": 5
+    },
+    {
+     "name": "Julia Subocz",
+     "nation": "POL",
+     "time": "14:05",
+     "no": 30,
+     "warmup": 6
+    },
+    {
+     "name": "Hanna Elteto",
+     "nation": "HUN",
+     "time": "14:10",
+     "no": 31,
+     "warmup": 6
+    },
+    {
+     "name": "Veronika Taubeova",
+     "nation": "CZE",
+     "time": "14:16",
+     "no": 32,
+     "warmup": 6
+    },
+    {
+     "name": "Vita Kas",
+     "nation": "SLO",
+     "time": "14:21",
+     "no": 33,
+     "warmup": 6
+    },
+    {
+     "name": "Diana Marjanovic",
+     "nation": "SRB",
+     "time": "14:27",
+     "no": 34,
+     "warmup": 6
+    },
+    {
+     "name": "Roos Harkema",
+     "nation": "NED",
+     "time": "14:56",
+     "no": 36,
+     "warmup": 7
+    },
+    {
+     "name": "Alica Lengyelova",
+     "nation": "SVK",
+     "time": "15:02",
+     "no": 37,
+     "warmup": 7
+    },
+    {
+     "name": "Victoria Yonemori",
+     "nation": "AUT",
+     "time": "15:07",
+     "no": 38,
+     "warmup": 7
+    },
+    {
+     "name": "Milena Velcheva",
+     "nation": "BUL",
+     "time": "15:13",
+     "no": 39,
+     "warmup": 7
+    },
+    {
+     "name": "Arina Gertsog",
+     "nation": "GER",
+     "time": "15:18",
+     "no": 40,
+     "warmup": 7
+    },
+    {
+     "name": "Anna Sannikova",
+     "nation": "KAZ",
+     "time": "15:24",
+     "no": 41,
+     "warmup": 7
     },
     {
      "name": "Zala Kas",
-     "nation": "SLO"
+     "nation": "SLO",
+     "time": "15:33",
+     "no": 42,
+     "warmup": 8
     },
     {
-     "name": "Zoja Zupancic Prevolsek",
-     "nation": "SLO"
+     "name": "Lucca Dijkhuizen",
+     "nation": "NED",
+     "time": "15:39",
+     "no": 43,
+     "warmup": 8
+    },
+    {
+     "name": "Tereza Havrankova",
+     "nation": "CZE",
+     "time": "15:44",
+     "no": 44,
+     "warmup": 8
+    },
+    {
+     "name": "Teresa Naia Eder",
+     "nation": "AUT",
+     "time": "15:50",
+     "no": 45,
+     "warmup": 8
+    },
+    {
+     "name": "Varvara Poder",
+     "nation": "EST",
+     "time": "15:55",
+     "no": 46,
+     "warmup": 8
     },
     {
      "name": "Zsofia Szeplaki",
-     "nation": "HUN"
+     "nation": "HUN",
+     "time": "16:01",
+     "no": 47,
+     "warmup": 8
+    },
+    {
+     "name": "Neza Lusic",
+     "nation": "SLO",
+     "time": "16:25",
+     "no": 48,
+     "warmup": 9
+    },
+    {
+     "name": "Emma Cerkalova",
+     "nation": "SVK",
+     "time": "16:30",
+     "no": 49,
+     "warmup": 9
+    },
+    {
+     "name": "Luna Rozman",
+     "nation": "SLO",
+     "time": "16:36",
+     "no": 50,
+     "warmup": 9
+    },
+    {
+     "name": "Zoja Zupancic Prevolsek",
+     "nation": "SLO",
+     "time": "16:41",
+     "no": 51,
+     "warmup": 9
     },
     {
      "name": "Алиса Заикина",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "16:47",
+     "no": 52,
+     "warmup": 9
+    },
+    {
+     "name": "Lara Achermann",
+     "nation": "NED",
+     "time": "16:52",
+     "no": 53,
+     "warmup": 9
+    },
+    {
+     "name": "Julia Vaha-ruohola",
+     "nation": "FIN",
+     "no": 35,
+     "warmup": 6
     }
    ],
    "live": {
@@ -71777,60 +72012,59 @@
     "cat": null,
     "first": null,
     "names": {
+     "Djurdja NIKOLIC": "Djurdja Nikolic",
      "Varvara ABRAMKINA": "Varvara Abramkina",
-     "Lara ACHERMANN": "Lara Achermann",
-     "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
-     "Polina BYKOVA": "Polina Bykova",
-     "Emma CERKALOVA": "Emma Cerkalova",
-     "Angel DELEVAQUE": "Angel Delevaque",
-     "Lucca DIJKHUIZEN": "Lucca Dijkhuizen",
-     "Teresa Naia EDER": "Teresa Naia Eder",
-     "Hanna ELTETO": "Hanna Elteto",
-     "Katarina FEDOROVA COELHO": "Katarina Fedorova Coelho",
-     "Arina GERTSOG": "Arina Gertsog",
-     "Tamara GRAHOVAC": "Tamara Grahovac",
-     "Zala GRUM": "Zala Grum",
-     "Neea HAAPALA": "Neea Haapala",
-     "Roos HARKEMA": "Roos Harkema",
-     "Tereza HAVRANKOVA": "Tereza Havrankova",
-     "Jazlynn HÖPPENER": "Jazlynn Höppener",
+     "Enja SIVIC": "Enja Sivic",
      "Aleksandra JANIKOWSKA": "Aleksandra Janikowska",
+     "Neea HAAPALA": "Neea Haapala",
+     "Liana SMREKAR": "Liana Smrekar",
+     "Tara PLAHUTAR": "Tara Plahutar",
+     "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
+     "Ketevan MAKHARADZE": "Ketevan Makharadze",
+     "Mariia SANNIKOVA": "Mariia Sannikova",
+     "Katarina FEDOROVA COELHO": "Katarina Fedorova Coelho",
+     "Angelica ORSI": "Angelica Orsi",
      "Tiana KALIGARO": "Tiana Kaligaro",
-     "Vita KAS": "Vita Kas",
-     "Zala KAS": "Zala Kas",
-     "Lija KROSELJ": "Lija Kroselj",
+     "Zala GRUM": "Zala Grum",
+     "Jazlynn HÖPPENER": "Jazlynn Höppener",
+     "Tamara GRAHOVAC": "Tamara Grahovac",
+     "Leyla TOSUN": "Leyla Tosun",
+     "Angel DELEVAQUE": "Angel Delevaque",
+     "Ajda PRESKAR": "Ajda Preskar",
+     "Lajla MUCIC": "Lajla Mucic",
      "Andreea Cristiana Maria LAZAR": "Andreea Cristiana Maria Lazar",
      "Nina LAZAREVIC": "Nina Lazarevic",
-     "Alica LENGYELOVA": "Alica Lengyelova",
-     "Neza LUSIC": "Neza Lusic",
-     "Ketevan MAKHARADZE": "Ketevan Makharadze",
-     "Diana MARJANOVIC": "Diana Marjanovic",
      "Minea MONTONEN": "Minea Montonen",
-     "Lajla MUCIC": "Lajla Mucic",
-     "Isabella NIEDERLEITNER": "Isabella Niederleitner",
-     "Djurdja NIKOLIC": "Djurdja Nikolic",
+     "Lija KROSELJ": "Lija Kroselj",
      "Hana OPERCKAL": "Hana Operckal",
-     "Angelica ORSI": "Angelica Orsi",
-     "Tara PLAHUTAR": "Tara Plahutar",
-     "Varvara PODER": "Varvara Poder",
-     "Ajda PRESKAR": "Ajda Preskar",
-     "Luna ROZMAN": "Luna Rozman",
+     "Polina BYKOVA": "Polina Bykova",
+     "Isabella NIEDERLEITNER": "Isabella Niederleitner",
      "Nika SAJKO": "Nika Sajko",
-     "Anna SANNIKOVA": "Anna Sannikova",
-     "Mariia SANNIKOVA": "Mariia Sannikova",
-     "Nadja SAVIC": "Nadja Savic",
-     "Enja SIVIC": "Enja Sivic",
-     "Liana SMREKAR": "Liana Smrekar",
-     "Julia SUBOCZ": "Julia Subocz",
-     "Zsofia SZEPLAKI": "Zsofia Szeplaki",
-     "Veronika TAUBEOVA": "Veronika Taubeova",
-     "Leyla TOSUN": "Leyla Tosun",
-     "Julia VAHA-RUOHOLA": "Julia Vaha-ruohola",
-     "Milena VELCHEVA": "Milena Velcheva",
      "Summer WIJKHUIZEN": "Summer Wijkhuizen",
+     "Julia SUBOCZ": "Julia Subocz",
+     "Hanna ELTETO": "Hanna Elteto",
+     "Veronika TAUBEOVA": "Veronika Taubeova",
+     "Vita KAS": "Vita Kas",
+     "Diana MARJANOVIC": "Diana Marjanovic",
+     "Julia VAHA-RUOHOLA": "Julia Vaha-ruohola",
+     "Roos HARKEMA": "Roos Harkema",
+     "Alica LENGYELOVA": "Alica Lengyelova",
      "Victoria YONEMORI": "Victoria Yonemori",
+     "Milena VELCHEVA": "Milena Velcheva",
+     "Arina GERTSOG": "Arina Gertsog",
+     "Anna SANNIKOVA": "Anna Sannikova",
+     "Zala KAS": "Zala Kas",
+     "Lucca DIJKHUIZEN": "Lucca Dijkhuizen",
+     "Tereza HAVRANKOVA": "Tereza Havrankova",
+     "Teresa Naia EDER": "Teresa Naia Eder",
+     "Varvara PODER": "Varvara Poder",
+     "Zsofia SZEPLAKI": "Zsofia Szeplaki",
+     "Neza LUSIC": "Neza Lusic",
+     "Emma CERKALOVA": "Emma Cerkalova",
+     "Luna ROZMAN": "Luna Rozman",
+     "Zoja ZUPANCIC PREVOLSEK": "Zoja Zupancic Prevolsek",
      "Alisa ZAIKINA": "Алиса Заикина",
-     "Zoja ZUPANCIC PREVOLSEK": "Zoja Zupancic Prevolsek"
+     "Lara ACHERMANN": "Lara Achermann"
     },
     "basis": null
    },
@@ -72049,41 +72283,48 @@
    "level": "junior",
    "seg": "КП",
    "title": "Skate Celje — юноши КП",
-   "start": "2026-11-28T16:53:00+03:00",
-   "end": "2026-11-28T17:33:00+03:00",
+   "start": "2026-11-28T16:58:00+03:00",
+   "end": "2026-11-28T17:28:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
    "ours": [],
    "athletes": [
     "Igor Gyula Kind",
-    "Indi Tej Accetto Korosec",
     "Jakub Tykal",
     "Jan Vrsek",
     "Marian Klus"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Начало: 16:53 МСК",
+   "desc": "Начало: 16:58 МСК",
    "field": [
     {
-     "name": "Igor Gyula Kind",
-     "nation": "HUN"
-    },
-    {
-     "name": "Indi Tej Accetto Korosec",
-     "nation": "SLO"
+     "name": "Jan Vrsek",
+     "nation": "CZE",
+     "time": "17:04",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Jakub Tykal",
-     "nation": "CZE"
+     "nation": "CZE",
+     "time": "17:10",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Jan Vrsek",
-     "nation": "CZE"
+     "name": "Igor Gyula Kind",
+     "nation": "HUN",
+     "time": "17:15",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Marian Klus",
-     "nation": "CZE"
+     "nation": "CZE",
+     "time": "17:21",
+     "no": 4,
+     "warmup": 1
     }
    ],
    "live": {
@@ -72092,11 +72333,10 @@
     "cat": null,
     "first": null,
     "names": {
-     "Indi Tej ACCETTO KOROSEC": "Indi Tej Accetto Korosec",
-     "Igor Gyula KIND": "Igor Gyula Kind",
-     "Marian KLUS": "Marian Klus",
+     "Jan VRSEK": "Jan Vrsek",
      "Jakub TYKAL": "Jakub Tykal",
-     "Jan VRSEK": "Jan Vrsek"
+     "Igor Gyula KIND": "Igor Gyula Kind",
+     "Marian KLUS": "Marian Klus"
     },
     "basis": null
    },
@@ -72111,7 +72351,7 @@
    "seg": "КП",
    "title": "CS PGE Warsaw Cup — женщины КП",
    "start": "2026-11-28T17:00:00+03:00",
-   "end": "2026-11-28T22:35:00+03:00",
+   "end": "2026-11-28T22:20:00+03:00",
    "venue": "Warsaw, Poland",
    "intl": true,
    "broadcast": [],
@@ -72159,152 +72399,263 @@
    "desc": "Начало: 17:00 МСК",
    "field": [
     {
-     "name": "Adelija Matjunina",
-     "nation": "LAT"
-    },
-    {
-     "name": "Andrea Montesinos Cantu",
-     "nation": "MEX"
-    },
-    {
-     "name": "Ariadna Gupta Espada",
-     "nation": "ESP"
-    },
-    {
-     "name": "Barbora Vrankova",
-     "nation": "CZE"
-    },
-    {
-     "name": "Ekaterina Kurakova",
-     "nation": "POL"
-    },
-    {
-     "name": "Evelina Stavickyte",
-     "nation": "LTU"
-    },
-    {
-     "name": "Gioia Fiori",
-     "nation": "ITA"
-    },
-    {
-     "name": "Janna Jyrkinen",
-     "nation": "FIN"
-    },
-    {
-     "name": "Jolanda Vos",
-     "nation": "NED"
-    },
-    {
-     "name": "Julia Fennell",
-     "nation": "ISR"
+     "name": "Linda Dzerve",
+     "nation": "LAT",
+     "time": "17:07",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Julia Kasprzyk",
-     "nation": "POL"
-    },
-    {
-     "name": "Julia van Dijk",
-     "nation": "NED"
-    },
-    {
-     "name": "Karolina Bialas",
-     "nation": "POL"
-    },
-    {
-     "name": "Katerina Hanusova",
-     "nation": "CZE"
-    },
-    {
-     "name": "Kristina Lisovskaja",
-     "nation": "EST"
-    },
-    {
-     "name": "Laura Szczesna",
-     "nation": "POL"
-    },
-    {
-     "name": "Linda Dzerve",
-     "nation": "LAT"
-    },
-    {
-     "name": "Mariia Dmitrieva",
-     "nation": "ISR"
-    },
-    {
-     "name": "Meda Variakojyte",
-     "nation": "LTU"
-    },
-    {
-     "name": "Michaela Malkova",
-     "nation": "CZE"
+     "nation": "POL",
+     "time": "17:13",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Milana Mozeiko",
-     "nation": "FRA"
-    },
-    {
-     "name": "Minja Peltonen",
-     "nation": "FIN"
+     "nation": "FRA",
+     "time": "17:19",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Nataly Langerbaur",
-     "nation": "EST"
+     "nation": "EST",
+     "time": "17:25",
+     "no": 4,
+     "warmup": 1
     },
     {
-     "name": "Olesja Leonova",
-     "nation": "EST"
+     "name": "Meda Variakojyte",
+     "nation": "LTU",
+     "time": "17:31",
+     "no": 5,
+     "warmup": 1
     },
     {
-     "name": "Olivia Lengyelova",
-     "nation": "SVK"
-    },
-    {
-     "name": "Oliwia Strokosz",
-     "nation": "POL"
-    },
-    {
-     "name": "Ophelie Clerc",
-     "nation": "SUI"
-    },
-    {
-     "name": "Paula Belevica",
-     "nation": "LAT"
-    },
-    {
-     "name": "Polina Dzsumanyijazova",
-     "nation": "HUN"
-    },
-    {
-     "name": "Sayra Bessire",
-     "nation": "SUI"
-    },
-    {
-     "name": "Selma Valitalo",
-     "nation": "FIN"
-    },
-    {
-     "name": "Sofiia Ekzarkhova",
-     "nation": "UKR"
+     "name": "Gioia Fiori",
+     "nation": "ITA",
+     "time": "17:45",
+     "no": 6,
+     "warmup": 2
     },
     {
      "name": "Sofiia Hryhorenko",
-     "nation": "UKR"
+     "nation": "UKR",
+     "time": "17:51",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Paula Belevica",
+     "nation": "LAT",
+     "time": "17:57",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Jolanda Vos",
+     "nation": "NED",
+     "time": "18:03",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Kristina Lisovskaja",
+     "nation": "EST",
+     "time": "18:09",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Selma Valitalo",
+     "nation": "FIN",
+     "time": "18:37",
+     "no": 11,
+     "warmup": 3
+    },
+    {
+     "name": "Olesja Leonova",
+     "nation": "EST",
+     "time": "18:43",
+     "no": 12,
+     "warmup": 3
+    },
+    {
+     "name": "Ekaterina Kurakova",
+     "nation": "POL",
+     "time": "18:49",
+     "no": 13,
+     "warmup": 3
+    },
+    {
+     "name": "Sayra Bessire",
+     "nation": "SUI",
+     "time": "18:55",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Julia van Dijk",
+     "nation": "NED",
+     "time": "19:01",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Ophelie Clerc",
+     "nation": "SUI",
+     "time": "19:15",
+     "no": 16,
+     "warmup": 4
+    },
+    {
+     "name": "Minja Peltonen",
+     "nation": "FIN",
+     "time": "19:21",
+     "no": 17,
+     "warmup": 4
     },
     {
      "name": "Sofiia Rymshyna",
-     "nation": "UKR"
-    },
-    {
-     "name": "Yelyzaveta Surova",
-     "nation": "POL"
-    },
-    {
-     "name": "Yu-Feng Tsai",
-     "nation": "TPE"
+     "nation": "UKR",
+     "time": "19:27",
+     "no": 18,
+     "warmup": 4
     },
     {
      "name": "Zhasmin Shlaga",
-     "nation": "KGZ"
+     "nation": "KGZ",
+     "time": "19:33",
+     "no": 19,
+     "warmup": 4
+    },
+    {
+     "name": "Julia Fennell",
+     "nation": "ISR",
+     "time": "19:39",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Evelina Stavickyte",
+     "nation": "LTU",
+     "time": "20:07",
+     "no": 21,
+     "warmup": 5
+    },
+    {
+     "name": "Adelija Matjunina",
+     "nation": "LAT",
+     "time": "20:13",
+     "no": 22,
+     "warmup": 5
+    },
+    {
+     "name": "Olivia Lengyelova",
+     "nation": "SVK",
+     "time": "20:19",
+     "no": 23,
+     "warmup": 5
+    },
+    {
+     "name": "Polina Dzsumanyijazova",
+     "nation": "HUN",
+     "time": "20:25",
+     "no": 24,
+     "warmup": 5
+    },
+    {
+     "name": "Karolina Bialas",
+     "nation": "POL",
+     "time": "20:31",
+     "no": 25,
+     "warmup": 5
+    },
+    {
+     "name": "Michaela Malkova",
+     "nation": "CZE",
+     "time": "20:45",
+     "no": 26,
+     "warmup": 6
+    },
+    {
+     "name": "Mariia Dmitrieva",
+     "nation": "ISR",
+     "time": "20:51",
+     "no": 27,
+     "warmup": 6
+    },
+    {
+     "name": "Barbora Vrankova",
+     "nation": "CZE",
+     "time": "20:57",
+     "no": 28,
+     "warmup": 6
+    },
+    {
+     "name": "Katerina Hanusova",
+     "nation": "CZE",
+     "time": "21:03",
+     "no": 29,
+     "warmup": 6
+    },
+    {
+     "name": "Janna Jyrkinen",
+     "nation": "FIN",
+     "time": "21:09",
+     "no": 30,
+     "warmup": 6
+    },
+    {
+     "name": "Ariadna Gupta Espada",
+     "nation": "ESP",
+     "time": "21:15",
+     "no": 31,
+     "warmup": 6
+    },
+    {
+     "name": "Laura Szczesna",
+     "nation": "POL",
+     "time": "21:43",
+     "no": 32,
+     "warmup": 7
+    },
+    {
+     "name": "Andrea Montesinos Cantu",
+     "nation": "MEX",
+     "time": "21:49",
+     "no": 33,
+     "warmup": 7
+    },
+    {
+     "name": "Yu-Feng Tsai",
+     "nation": "TPE",
+     "time": "21:55",
+     "no": 34,
+     "warmup": 7
+    },
+    {
+     "name": "Yelyzaveta Surova",
+     "nation": "POL",
+     "time": "22:01",
+     "no": 35,
+     "warmup": 7
+    },
+    {
+     "name": "Sofiia Ekzarkhova",
+     "nation": "UKR",
+     "time": "22:07",
+     "no": 36,
+     "warmup": 7
+    },
+    {
+     "name": "Oliwia Strokosz",
+     "nation": "POL",
+     "time": "22:13",
+     "no": 37,
+     "warmup": 7
     }
    ],
    "live": {
@@ -72313,43 +72664,43 @@
     "cat": null,
     "first": null,
     "names": {
-     "Katerina HANUSOVA": "Katerina Hanusova",
-     "Michaela MALKOVA": "Michaela Malkova",
-     "Barbora VRANKOVA": "Barbora Vrankova",
-     "Ariadna GUPTA ESPADA": "Ariadna Gupta Espada",
-     "Nataly LANGERBAUR": "Nataly Langerbaur",
-     "Olesja LEONOVA": "Olesja Leonova",
-     "Kristina LISOVSKAJA": "Kristina Lisovskaja",
-     "Janna JYRKINEN": "Janna Jyrkinen",
-     "Minja PELTONEN": "Minja Peltonen",
-     "Selma VALITALO": "Selma Valitalo",
-     "Milana MOZEIKO": "Milana Mozeiko",
-     "Polina DZSUMANYIJAZOVA": "Polina Dzsumanyijazova",
-     "Mariia DMITRIEVA": "Mariia Dmitrieva",
-     "Julia FENNELL": "Julia Fennell",
-     "Gioia FIORI": "Gioia Fiori",
-     "Zhasmin SHLAGA": "Zhasmin Shlaga",
-     "Paula BELEVICA": "Paula Belevica",
      "Linda DZERVE": "Linda Dzerve",
-     "Adelija MATJUNINA": "Adelija Matjunina",
-     "Evelina STAVICKYTE": "Evelina Stavickyte",
-     "Meda VARIAKOJYTE": "Meda Variakojyte",
-     "Andrea MONTESINOS CANTU": "Andrea Montesinos Cantu",
-     "Julia van DIJK": "Julia van Dijk",
-     "Jolanda VOS": "Jolanda Vos",
-     "Karolina BIALAS": "Karolina Bialas",
      "Julia KASPRZYK": "Julia Kasprzyk",
-     "Ekaterina KURAKOVA": "Ekaterina Kurakova",
-     "Oliwia STROKOSZ": "Oliwia Strokosz",
-     "Yelyzaveta SUROVA": "Yelyzaveta Surova",
-     "Laura SZCZESNA": "Laura Szczesna",
-     "Sayra BESSIRE": "Sayra Bessire",
-     "Ophelie CLERC": "Ophelie Clerc",
-     "Olivia LENGYELOVA": "Olivia Lengyelova",
-     "Yu-Feng TSAI": "Yu-Feng Tsai",
-     "Sofiia EKZARKHOVA": "Sofiia Ekzarkhova",
+     "Milana MOZEIKO": "Milana Mozeiko",
+     "Nataly LANGERBAUR": "Nataly Langerbaur",
+     "Meda VARIAKOJYTE": "Meda Variakojyte",
+     "Gioia FIORI": "Gioia Fiori",
      "Sofiia HRYHORENKO": "Sofiia Hryhorenko",
-     "Sofiia RYMSHYNA": "Sofiia Rymshyna"
+     "Paula BELEVICA": "Paula Belevica",
+     "Jolanda VOS": "Jolanda Vos",
+     "Kristina LISOVSKAJA": "Kristina Lisovskaja",
+     "Selma VALITALO": "Selma Valitalo",
+     "Olesja LEONOVA": "Olesja Leonova",
+     "Ekaterina KURAKOVA": "Ekaterina Kurakova",
+     "Sayra BESSIRE": "Sayra Bessire",
+     "Julia van DIJK": "Julia van Dijk",
+     "Ophelie CLERC": "Ophelie Clerc",
+     "Minja PELTONEN": "Minja Peltonen",
+     "Sofiia RYMSHYNA": "Sofiia Rymshyna",
+     "Zhasmin SHLAGA": "Zhasmin Shlaga",
+     "Julia FENNELL": "Julia Fennell",
+     "Evelina STAVICKYTE": "Evelina Stavickyte",
+     "Adelija MATJUNINA": "Adelija Matjunina",
+     "Olivia LENGYELOVA": "Olivia Lengyelova",
+     "Polina DZSUMANYIJAZOVA": "Polina Dzsumanyijazova",
+     "Karolina BIALAS": "Karolina Bialas",
+     "Michaela MALKOVA": "Michaela Malkova",
+     "Mariia DMITRIEVA": "Mariia Dmitrieva",
+     "Barbora VRANKOVA": "Barbora Vrankova",
+     "Katerina HANUSOVA": "Katerina Hanusova",
+     "Janna JYRKINEN": "Janna Jyrkinen",
+     "Ariadna GUPTA ESPADA": "Ariadna Gupta Espada",
+     "Laura SZCZESNA": "Laura Szczesna",
+     "Andrea MONTESINOS CANTU": "Andrea Montesinos Cantu",
+     "Yu-Feng TSAI": "Yu-Feng Tsai",
+     "Yelyzaveta SUROVA": "Yelyzaveta Surova",
+     "Sofiia EKZARKHOVA": "Sofiia Ekzarkhova",
+     "Oliwia STROKOSZ": "Oliwia Strokosz"
     },
     "basis": null
    },
@@ -72402,14 +72753,17 @@
    "seg": "КП",
    "title": "Skate Celje — женщины КП",
    "start": "2026-11-28T21:20:00+03:00",
-   "end": "2026-11-28T22:50:00+03:00",
+   "end": "2026-11-28T22:38:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
    "ours": [
     {
      "name": "Камилла Нелюбова",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "22:14",
+     "no": 9,
+     "warmup": 2
     }
    ],
    "athletes": [
@@ -72427,55 +72781,91 @@
     "Камилла Нелюбова"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Камилла Нелюбова\n\nНачало: 21:20 МСК",
+   "desc": "Россияне:\n• Камилла Нелюбова — 22:14\n\nНачало: 21:20 МСК",
    "field": [
     {
-     "name": "Alexandra Feigin",
-     "nation": "BUL"
-    },
-    {
-     "name": "Ana Scepanovic",
-     "nation": "SRB"
-    },
-    {
-     "name": "Ana Sofia Beschea",
-     "nation": "ROU"
-    },
-    {
-     "name": "Andrea Montesinos Cantu",
-     "nation": "MEX"
-    },
-    {
      "name": "Barbora Tykalova",
-     "nation": "CZE"
-    },
-    {
-     "name": "Dunja Tresnjic",
-     "nation": "SRB"
-    },
-    {
-     "name": "Julija Lovrencic",
-     "nation": "SLO"
+     "nation": "CZE",
+     "time": "21:26",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Mariia Kryzhova",
-     "nation": "SRB"
+     "nation": "SRB",
+     "time": "21:32",
+     "no": 2,
+     "warmup": 1
     },
     {
-     "name": "Melisa Basturk",
-     "nation": "TUR"
-    },
-    {
-     "name": "Ula Zadnikar",
-     "nation": "SLO"
+     "name": "Andrea Montesinos Cantu",
+     "nation": "MEX",
+     "time": "21:37",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Ulla Nieminen",
-     "nation": "FIN"
+     "nation": "FIN",
+     "time": "21:43",
+     "no": 4,
+     "warmup": 1
+    },
+    {
+     "name": "Dunja Tresnjic",
+     "nation": "SRB",
+     "time": "21:48",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Julija Lovrencic",
+     "nation": "SLO",
+     "time": "21:54",
+     "no": 6,
+     "warmup": 1
+    },
+    {
+     "name": "Alexandra Feigin",
+     "nation": "BUL",
+     "time": "22:03",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Ana Scepanovic",
+     "nation": "SRB",
+     "time": "22:09",
+     "no": 8,
+     "warmup": 2
     },
     {
      "name": "Камилла Нелюбова",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "22:14",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Ana Sofia Beschea",
+     "nation": "ROU",
+     "time": "22:20",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Melisa Basturk",
+     "nation": "TUR",
+     "time": "22:25",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Ula Zadnikar",
+     "nation": "SLO",
+     "time": "22:31",
+     "no": 12,
+     "warmup": 2
     }
    ],
    "live": {
@@ -72484,17 +72874,17 @@
     "cat": null,
     "first": null,
     "names": {
-     "Melisa BASTURK": "Melisa Basturk",
-     "Ana Sofia BESCHEA": "Ana Sofia Beschea",
-     "Alexandra FEIGIN": "Alexandra Feigin",
-     "Mariia KRYZHOVA": "Mariia Kryzhova",
-     "Julija LOVRENCIC": "Julija Lovrencic",
-     "Andrea MONTESINOS CANTU": "Andrea Montesinos Cantu",
-     "Kamilla NELIUBOVA": "Камилла Нелюбова",
-     "Ulla NIEMINEN": "Ulla Nieminen",
-     "Ana SCEPANOVIC": "Ana Scepanovic",
-     "Dunja TRESNJIC": "Dunja Tresnjic",
      "Barbora TYKALOVA": "Barbora Tykalova",
+     "Mariia KRYZHOVA": "Mariia Kryzhova",
+     "Andrea MONTESINOS CANTU": "Andrea Montesinos Cantu",
+     "Ulla NIEMINEN": "Ulla Nieminen",
+     "Dunja TRESNJIC": "Dunja Tresnjic",
+     "Julija LOVRENCIC": "Julija Lovrencic",
+     "Alexandra FEIGIN": "Alexandra Feigin",
+     "Ana SCEPANOVIC": "Ana Scepanovic",
+     "Kamilla NELIUBOVA": "Камилла Нелюбова",
+     "Ana Sofia BESCHEA": "Ana Sofia Beschea",
+     "Melisa BASTURK": "Melisa Basturk",
      "Ula ZADNIKAR": "Ula Zadnikar"
     },
     "basis": null
@@ -72510,7 +72900,7 @@
    "seg": "ПП",
    "title": "CS PGE Warsaw Cup — пары ПП",
    "start": "2026-11-28T22:30:00+03:00",
-   "end": "2026-11-28T23:10:00+03:00",
+   "end": "2026-11-28T23:20:00+03:00",
    "venue": "Warsaw, Poland",
    "intl": true,
    "broadcast": [],
@@ -72526,19 +72916,31 @@
    "field": [
     {
      "name": "Laura Gauch / Linus Mager",
-     "nation": "SUI"
+     "nation": "SUI",
+     "time": "22:47",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Sarah Nunez / Blake Eisenach",
-     "nation": "USA"
-    },
-    {
-     "name": "Sofia Tridello / Alberto Tommasi",
-     "nation": "ITA"
+     "nation": "USA",
+     "time": "22:55",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Xuanyu Liu / Wenbao Han",
-     "nation": "CHN"
+     "nation": "CHN",
+     "time": "23:03",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Sofia Tridello / Alberto Tommasi",
+     "nation": "ITA",
+     "time": "23:11",
+     "no": 4,
+     "warmup": 1
     }
    ],
    "live": {
@@ -72547,10 +72949,10 @@
     "cat": "https://pzlf-wyniki.pl/2627/CSPOL2026/CAT003RS.htm",
     "first": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG005.htm",
     "names": {
-     "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han",
-     "Sofia TRIDELLO / Alberto TOMMASI": "Sofia Tridello / Alberto Tommasi",
      "Laura GAUCH / Linus MAGER": "Laura Gauch / Linus Mager",
-     "Sarah NUNEZ / Blake EISENACH": "Sarah Nunez / Blake Eisenach"
+     "Sarah NUNEZ / Blake EISENACH": "Sarah Nunez / Blake Eisenach",
+     "Xuanyu LIU / Wenbao HAN": "Xuanyu Liu / Wenbao Han",
+     "Sofia TRIDELLO / Alberto TOMMASI": "Sofia Tridello / Alberto Tommasi"
     },
     "basis": null
    },
@@ -72565,14 +72967,17 @@
    "seg": "КП",
    "title": "Skate Celje — мужчины КП",
    "start": "2026-11-28T22:48:00+03:00",
-   "end": "2026-11-28T23:48:00+03:00",
+   "end": "2026-11-28T23:38:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
    "ours": [
     {
      "name": "Лев Лазарев",
-     "nation": "RUS"
+     "nation": "RUS",
+     "time": "23:20",
+     "no": 5,
+     "warmup": 2
     }
    ],
    "athletes": [
@@ -72585,35 +72990,56 @@
     "Макар Николаев"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 22:48 МСК",
+   "desc": "Россияне:\n• Лев Лазарев — 23:20\n\nНачало: 22:48 МСК",
    "field": [
     {
-     "name": "Alessandro Liberatore",
-     "nation": "SLO"
-    },
-    {
-     "name": "Anton Skoficz",
-     "nation": "AUT"
-    },
-    {
-     "name": "David Sedej",
-     "nation": "SLO"
-    },
-    {
      "name": "Furkan Emre Incel",
-     "nation": "TUR"
-    },
-    {
-     "name": "Mikayel Salazaryan",
-     "nation": "ARM"
-    },
-    {
-     "name": "Лев Лазарев",
-     "nation": "RUS"
+     "nation": "TUR",
+     "time": "22:54",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Макар Николаев",
-     "nation": "GEO"
+     "nation": "GEO",
+     "time": "23:00",
+     "no": 2,
+     "warmup": 1
+    },
+    {
+     "name": "Mikayel Salazaryan",
+     "nation": "ARM",
+     "time": "23:05",
+     "no": 3,
+     "warmup": 1
+    },
+    {
+     "name": "Anton Skoficz",
+     "nation": "AUT",
+     "time": "23:15",
+     "no": 4,
+     "warmup": 2
+    },
+    {
+     "name": "Лев Лазарев",
+     "nation": "RUS",
+     "time": "23:20",
+     "no": 5,
+     "warmup": 2
+    },
+    {
+     "name": "Alessandro Liberatore",
+     "nation": "SLO",
+     "time": "23:26",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "David Sedej",
+     "nation": "SLO",
+     "time": "23:31",
+     "no": 7,
+     "warmup": 2
     }
    ],
    "live": {
@@ -72623,12 +73049,12 @@
     "first": null,
     "names": {
      "Furkan Emre INCEL": "Furkan Emre Incel",
-     "Lev LAZAREV": "Лев Лазарев",
-     "Alessandro LIBERATORE": "Alessandro Liberatore",
      "Makar NIKOLAEV": "Макар Николаев",
      "Mikayel SALAZARYAN": "Mikayel Salazaryan",
-     "David SEDEJ": "David Sedej",
-     "Anton SKOFICZ": "Anton Skoficz"
+     "Anton SKOFICZ": "Anton Skoficz",
+     "Lev LAZAREV": "Лев Лазарев",
+     "Alessandro LIBERATORE": "Alessandro Liberatore",
+     "David SEDEJ": "David Sedej"
     },
     "basis": null
    },
@@ -72643,7 +73069,7 @@
    "seg": "ПП",
    "title": "Skate Celje — девушки ПП",
    "start": "2026-11-29T10:30:00+03:00",
-   "end": "2026-11-29T19:20:00+03:00",
+   "end": "2026-11-29T19:10:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
@@ -72685,7 +73111,6 @@
     "Mariia Sannikova",
     "Milena Velcheva",
     "Minea Montonen",
-    "Nadja Savic",
     "Neea Haapala",
     "Neza Lusic",
     "Nika Sajko",
@@ -72837,10 +73262,6 @@
      "nation": "FIN"
     },
     {
-     "name": "Nadja Savic",
-     "nation": "SRB"
-    },
-    {
      "name": "Neea Haapala",
      "nation": "FIN"
     },
@@ -72976,7 +73397,6 @@
      "Nika SAJKO": "Nika Sajko",
      "Anna SANNIKOVA": "Anna Sannikova",
      "Mariia SANNIKOVA": "Mariia Sannikova",
-     "Nadja SAVIC": "Nadja Savic",
      "Enja SIVIC": "Enja Sivic",
      "Liana SMREKAR": "Liana Smrekar",
      "Julia SUBOCZ": "Julia Subocz",
@@ -73275,14 +73695,13 @@
    "seg": "ПП",
    "title": "Skate Celje — юноши ПП",
    "start": "2026-11-29T15:25:00+03:00",
-   "end": "2026-11-29T16:10:00+03:00",
+   "end": "2026-11-29T16:00:00+03:00",
    "venue": "Celje, Slovenia",
    "intl": true,
    "broadcast": [],
    "ours": [],
    "athletes": [
     "Igor Gyula Kind",
-    "Indi Tej Accetto Korosec",
     "Jakub Tykal",
     "Jan Vrsek",
     "Marian Klus"
@@ -73293,10 +73712,6 @@
     {
      "name": "Igor Gyula Kind",
      "nation": "HUN"
-    },
-    {
-     "name": "Indi Tej Accetto Korosec",
-     "nation": "SLO"
     },
     {
      "name": "Jakub Tykal",
@@ -73317,7 +73732,6 @@
     "cat": "https://dev.mbit.si/EC/skcel2026/CAT003RS.htm",
     "first": "https://dev.mbit.si/EC/skcel2026/SEG005.htm",
     "names": {
-     "Indi Tej ACCETTO KOROSEC": "Indi Tej Accetto Korosec",
      "Igor Gyula KIND": "Igor Gyula Kind",
      "Marian KLUS": "Marian Klus",
      "Jakub TYKAL": "Jakub Tykal",
@@ -74661,6 +75075,9 @@
    "venue": "Almaty, Kazakhstan",
    "start": "2027-02-10",
    "end": "2027-02-14",
+   "ours": [],
+   "ours_nation": {},
+   "athletes": [],
    "broadcast": [
     "YouTube ISU"
    ],
@@ -110487,7 +110904,8 @@
    "c": "RUS",
    "k": "",
    "was": "p",
-   "y": "2026/27"
+   "y": "2026/27",
+   "p": "1ad50adc5965"
   },
   {
    "n": "Oliwia Strokosz",
@@ -124400,7 +124818,8 @@
   "Александра Александровна Андреева": "photos/92378b3a0937b2d8.jpg",
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg",
-  "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
+  "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
+  "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "63fc5aa2ef3db187"
+ "rev": "d4093e3117893b51"
 }

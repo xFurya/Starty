@@ -14,12 +14,16 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:isu:isu-cs-pge-warsaw-cup-2026:pairs-senior-kp@starty
-DTSTAMP:20261127T153410Z
+DTSTAMP:20261127T201718Z
 DTSTART;TZID=Europe/Moscow:20261127T182500
-DTEND;TZID=Europe/Moscow:20261127T185900
+DTEND;TZID=Europe/Moscow:20261127T190000
 SUMMARY:CS PGE Warsaw Cup — пары КП
-DESCRIPTION:Промежуточные итоги:\n1. Laura Gauch / Linus 
- Mager — 39.13\n\nНачало: 18:25 МСК
+DESCRIPTION:Итог:\n1. Sofia Tridello / Alberto Tommasi — 53.73\n2. Xu
+ anyu Liu / Wenbao Han — 50.97\n3. Sarah Nunez / Blake Eisenach — 50.84
+ \n\nПримечательное:\n• Xuanyu Liu / Wenbao Han — Лич
+ ный рекорд за КП: 50.97 (был 42.85)\n• Sarah Nunez / Bla
+ ke Eisenach — Личный рекорд за КП: 50.84 (был 46.25)\
+ n\nНачало: 18:25 МСК
 LOCATION:Warsaw\, Poland
 URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-pge-warsaw-cup-2026:pairs
  -senior-kp
