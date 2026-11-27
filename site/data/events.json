@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T18:34:10+03:00",
- "checked": "2026-11-27T19:29:58.673720+00:00",
+ "checked": "2026-11-27T19:33:57.800870+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -70777,7 +70777,7 @@
      "time": "19:28",
      "no": 1,
      "warmup": 1,
-     "place": 17,
+     "place": 18,
      "points": "85.42"
     },
     {
@@ -70786,7 +70786,7 @@
      "time": "19:35",
      "no": 2,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "114.49"
     },
     {
@@ -70795,7 +70795,7 @@
      "time": "19:43",
      "no": 3,
      "warmup": 1,
-     "place": 14,
+     "place": 15,
      "points": "100.23"
     },
     {
@@ -70804,7 +70804,7 @@
      "time": "19:51",
      "no": 4,
      "warmup": 1,
-     "place": 13,
+     "place": 14,
      "points": "101.11"
     },
     {
@@ -70813,7 +70813,7 @@
      "time": "19:59",
      "no": 5,
      "warmup": 1,
-     "place": 15,
+     "place": 16,
      "points": "98.83"
     },
     {
@@ -70822,7 +70822,7 @@
      "time": "20:15",
      "no": 6,
      "warmup": 2,
-     "place": 18,
+     "place": 19,
      "points": "83.06"
     },
     {
@@ -70831,7 +70831,7 @@
      "time": "20:23",
      "no": 7,
      "warmup": 2,
-     "place": 16,
+     "place": 17,
      "points": "96.14"
     },
     {
@@ -70840,7 +70840,7 @@
      "time": "20:30",
      "no": 8,
      "warmup": 2,
-     "place": 5,
+     "place": 6,
      "points": "114.75"
     },
     {
@@ -70849,7 +70849,7 @@
      "time": "20:38",
      "no": 9,
      "warmup": 2,
-     "place": 7,
+     "place": 8,
      "points": "114.40"
     },
     {
@@ -70858,7 +70858,7 @@
      "time": "20:46",
      "no": 10,
      "warmup": 2,
-     "place": 9,
+     "place": 10,
      "points": "109.43"
     },
     {
@@ -70867,7 +70867,7 @@
      "time": "20:54",
      "no": 11,
      "warmup": 2,
-     "place": 11,
+     "place": 12,
      "points": "102.44"
     },
     {
@@ -70876,7 +70876,7 @@
      "time": "21:25",
      "no": 12,
      "warmup": 3,
-     "place": 10,
+     "place": 11,
      "points": "107.23"
     },
     {
@@ -70894,7 +70894,7 @@
      "time": "21:40",
      "no": 14,
      "warmup": 3,
-     "place": 8,
+     "place": 9,
      "points": "112.04"
     },
     {
@@ -70912,7 +70912,7 @@
      "time": "21:56",
      "no": 16,
      "warmup": 3,
-     "place": 12,
+     "place": 13,
      "points": "102.21"
     },
     {
@@ -70921,7 +70921,7 @@
      "time": "22:04",
      "no": 17,
      "warmup": 3,
-     "place": 4,
+     "place": 5,
      "points": "127.16"
     },
     {
@@ -70938,7 +70938,9 @@
      "nation": "TPE",
      "time": "22:28",
      "no": 19,
-     "warmup": 4
+     "warmup": 4,
+     "place": 4,
+     "points": "129.02"
     },
     {
      "name": "Kyrylo Marsak",
@@ -124390,5 +124392,5 @@
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg"
  },
- "rev": "555a7cfae37d3079"
+ "rev": "bcfd6e08b113718c"
 }
