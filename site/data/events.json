@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-27T00:35:54+03:00",
- "checked": "2026-11-27T04:04:02.078823+00:00",
+ "checked": "2026-11-27T04:08:02.103132+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -69260,7 +69260,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Marjorie Lajoie / Jean-Luc Baker — 70.57\n2. Ikura Kushida / Koshiro Shimada — 63.77\n3. Rika Kihira / Shingo Nishiyama — 62.71\n\nНачало: 06:35 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Yuka Orihara / Juho Pirinen — 71.93\n2. Marjorie Lajoie / Jean-Luc Baker — 70.57\n3. Ikura Kushida / Koshiro Shimada — 63.77\n\nНачало: 06:35 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Rika Kihira / Shingo Nishiyama",
@@ -69268,7 +69268,7 @@
      "time": "06:42",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "62.71"
     },
     {
@@ -69277,7 +69277,7 @@
      "time": "06:48",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "63.77"
     },
     {
@@ -69286,7 +69286,7 @@
      "time": "06:55",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "70.57"
     },
     {
@@ -69301,7 +69301,9 @@
      "nation": "FIN",
      "time": "07:08",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "71.93"
     },
     {
      "name": "Loicia Demougeot / Theo le Mercier",
@@ -69362,21 +69364,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Yuka Orihara / Juho Pirinen",
+     "nation": "FIN",
+     "points": "71.93"
+    },
+    {
+     "place": 2,
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
      "points": "70.57"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Ikura Kushida / Koshiro Shimada",
      "nation": "JPN",
      "points": "63.77"
-    },
-    {
-     "place": 3,
-     "name": "Rika Kihira / Shingo Nishiyama",
-     "nation": "JPN",
-     "points": "62.71"
     }
    ],
    "provisional": true
@@ -123941,5 +123943,5 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg"
  },
- "rev": "69512f717db14451"
+ "rev": "0ce6cd7c132aa261"
 }
