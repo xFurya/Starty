@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T07:50:52+03:00",
- "checked": "2026-11-28T05:18:15.030724+00:00",
+ "checked": "2026-11-28T05:26:14.855363+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -71434,7 +71434,7 @@
      "url": "https://www.youtube.com/watch?v=lmQdEu6_aZw"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Naomi Williams / Lachlan Lewer — 92.33\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Camille Kovalev / Pavel Kovalev — 95.32\n2. Naomi Williams / Lachlan Lewer — 92.33\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Naomi Williams / Lachlan Lewer",
@@ -71442,7 +71442,7 @@
      "time": "08:07",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "92.33"
     },
     {
@@ -71450,7 +71450,9 @@
      "nation": "FRA",
      "time": "08:15",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "95.32"
     },
     {
      "name": "Jazmine Desrochers / Kieran Thrasher",
@@ -71516,6 +71518,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Camille Kovalev / Pavel Kovalev",
+     "nation": "FRA",
+     "points": "95.32"
+    },
+    {
+     "place": 2,
      "name": "Naomi Williams / Lachlan Lewer",
      "nation": "USA",
      "points": "92.33"
@@ -124963,5 +124971,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "ce10db77ead2d5da"
+ "rev": "e39e60843c4b8993"
 }
