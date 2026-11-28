@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T13:32:04+03:00",
- "checked": "2026-11-28T11:03:25.975597+00:00",
+ "checked": "2026-11-28T11:11:25.723909+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "9",
@@ -72710,7 +72710,9 @@
      "nation": "RUS",
      "time": "14:01",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "164.76"
     },
     {
      "name": "Пётр Гуменник",
@@ -72746,7 +72748,7 @@
      "segment_verified": true
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Rio Nakata — 175.43\n2. Francois Pitot — 144.66\n3. Nozomu Yoshioka — 141.79\n\nРоссияне:\n• Владислав Дикиджи — 14:01\n• Пётр Гуменник — 14:32\n\nНачало: 13:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Rio Nakata — 175.43\n2. Владислав Дикиджи — 164.76\n3. Francois Pitot — 144.66\n\nРоссияне:\n• Владислав Дикиджи — 14:01\n• Пётр Гуменник — 14:32\n\nНачало: 13:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Daniel Grassl",
@@ -72761,7 +72763,7 @@
      "time": "13:38",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "144.66"
     },
     {
@@ -72798,7 +72800,7 @@
      "time": "13:45",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "141.79"
     },
     {
@@ -72829,7 +72831,9 @@
      "nation": "RUS",
      "time": "14:01",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "164.76"
     },
     {
      "name": "Пётр Гуменник",
@@ -72887,15 +72891,15 @@
     },
     {
      "place": 2,
-     "name": "Francois Pitot",
-     "nation": "FRA",
-     "points": "144.66"
+     "name": "Владислав Дикиджи",
+     "nation": "RUS",
+     "points": "164.76"
     },
     {
      "place": 3,
-     "name": "Nozomu Yoshioka",
-     "nation": "JPN",
-     "points": "141.79"
+     "name": "Francois Pitot",
+     "nation": "FRA",
+     "points": "144.66"
     }
    ],
    "provisional": true
@@ -126888,5 +126892,5 @@
   "Ярослав Нечаев": "photos/df55625c66ca78c1.jpg",
   "Ясмина Кадырова": ""
  },
- "rev": "f5c0ec08c8488232"
+ "rev": "f89efefab02d27df"
 }
