@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T10:59:52+03:00",
- "checked": "2026-11-28T09:03:27.378026+00:00",
+ "checked": "2026-11-28T09:07:27.048594+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -303,7 +303,7 @@
    },
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-08-24_pm.json"
+   "proto": null
   },
   {
    "id": "ffkm:2026-08-24_pm:dance-junior-pt",
@@ -647,7 +647,7 @@
    ],
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-08-24_pm.json"
+   "proto": null
   },
   {
    "id": "ffkm:2026-08-24_pm:pairs-junior-kp",
@@ -789,7 +789,7 @@
    },
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-08-24_pm.json"
+   "proto": null
   },
   {
    "id": "ffkm:2026-08-24_pm:women-junior-kp",
@@ -1331,7 +1331,7 @@
    },
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-08-24_pm.json"
+   "proto": null
   },
   {
    "id": "ffkm:2026-08-24_pm:men-junior-kp",
@@ -1659,7 +1659,7 @@
    },
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-08-24_pm.json"
+   "proto": null
   },
   {
    "id": "ffkm:2026-08-24_pm:pairs-junior-pp",
@@ -1801,7 +1801,7 @@
    },
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-08-24_pm.json"
+   "proto": null
   },
   {
    "id": "ffkm:2026-08-24_pm:women-junior-pp",
@@ -2242,7 +2242,7 @@
    },
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-08-24_pm.json"
+   "proto": null
   },
   {
    "id": "ffkm:2026-08-24_pm:men-junior-pp",
@@ -2496,7 +2496,7 @@
    },
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-08-24_pm.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-john-nicks-pairs-international-2026:pairs-senior-kp",
@@ -3090,7 +3090,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-ankara-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-ankara-2026:pairs-junior-kp",
@@ -3299,7 +3299,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-ankara-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-ankara-2026:men-junior-kp",
@@ -3655,7 +3655,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-ankara-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-ankara-2026:dance-junior-rt",
@@ -3894,7 +3894,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-ankara-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-ankara-2026:pairs-junior-pp",
@@ -4147,7 +4147,7 @@
      "who": "Таисия Гусева / Даниил Овчинников"
     }
    ],
-   "proto": "isu_isu-jgp-ankara-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-lombardia-trophy-2026:women-senior-kp",
@@ -4360,7 +4360,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-lombardia-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-ankara-2026:women-junior-pp",
@@ -4841,7 +4841,7 @@
      "who": "Stefania Gladki"
     }
    ],
-   "proto": "isu_isu-jgp-ankara-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-lombardia-trophy-2026:men-senior-kp",
@@ -4990,7 +4990,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-lombardia-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-ankara-2026:men-junior-pp",
@@ -5396,7 +5396,7 @@
      "who": "Habin Choi"
     }
    ],
-   "proto": "isu_isu-jgp-ankara-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-lombardia-trophy-2026:dance-senior-rt",
@@ -5582,7 +5582,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-lombardia-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-ankara-2026:dance-junior-pt",
@@ -5861,7 +5861,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-ankara-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-lombardia-trophy-2026:women-senior-pp",
@@ -6112,7 +6112,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-lombardia-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-lombardia-trophy-2026:men-senior-pp",
@@ -6292,7 +6292,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-lombardia-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-lombardia-trophy-2026:dance-senior-pt",
@@ -6513,7 +6513,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-lombardia-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-batumi-2026:men-junior-kp",
@@ -6806,7 +6806,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-batumi-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-nebelhorn-trophy-2026:men-senior-kp",
@@ -6983,7 +6983,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-batumi-2026:women-junior-kp",
@@ -7357,7 +7357,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-batumi-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-nebelhorn-trophy-2026:pairs-senior-kp",
@@ -7507,7 +7507,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-nebelhorn-trophy-2026:women-senior-kp",
@@ -7639,7 +7639,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-batumi-2026:dance-junior-rt",
@@ -7860,7 +7860,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-batumi-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-nebelhorn-trophy-2026:men-senior-pp",
@@ -8083,7 +8083,7 @@
      "who": "Francois Pitot"
     }
    ],
-   "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:dance-junior-rt",
@@ -8297,7 +8297,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-batumi-2026:men-junior-pp",
@@ -8643,7 +8643,7 @@
      "who": "Hayato Okazaki"
     }
    ],
-   "proto": "isu_isu-jgp-batumi-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-nebelhorn-trophy-2026:dance-senior-rt",
@@ -8802,7 +8802,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:pairs-junior-kp",
@@ -8936,7 +8936,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-nebelhorn-trophy-2026:pairs-senior-pp",
@@ -9124,7 +9124,7 @@
      "who": "Lia Pereira / Trennt Michaud"
     }
    ],
-   "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-batumi-2026:dance-junior-pt",
@@ -9383,7 +9383,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-batumi-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-nebelhorn-trophy-2026:women-senior-pp",
@@ -9556,7 +9556,7 @@
      "who": "Mia Risa Gomez"
     }
    ],
-   "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:dance-junior-pt",
@@ -9812,7 +9812,7 @@
      "who": "Мария Фефелова / Артём Валов"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-batumi-2026:women-junior-pp",
@@ -10248,7 +10248,7 @@
      "who": "Arina Kalugina"
     }
    ],
-   "proto": "isu_isu-jgp-batumi-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-nebelhorn-trophy-2026:dance-senior-pt",
@@ -10439,7 +10439,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-nebelhorn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:pairs-junior-pp",
@@ -10600,7 +10600,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:women-junior-kp",
@@ -10868,7 +10868,7 @@
      "who": "Виктория Стрельцова"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:men-junior-kp",
@@ -11112,7 +11112,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:women-junior-pp",
@@ -11445,7 +11445,7 @@
      "who": "Дарья Лебедева"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026:men-junior-pp",
@@ -11754,7 +11754,7 @@
      "who": "Макар Солодников"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-led-mechty-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:women-senior-kp",
@@ -11961,7 +11961,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-trialeti-trophy.json"
+   "proto": null
   },
   {
    "id": "ffkm:2026-10-01_cm:men-senior-kp",
@@ -12172,7 +12172,7 @@
      "url": "https://okko.sport/sport"
     }
    ],
-   "proto": "ffkm_2026-10-01_cm.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-ljubljana-2026:women-junior-kp",
@@ -12555,7 +12555,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-ljubljana-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:dance-senior-rt",
@@ -12812,7 +12812,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-trialeti-trophy.json"
+   "proto": null
   },
   {
    "id": "ffkm:2026-10-01_cm:pairs-senior-kp",
@@ -12933,7 +12933,7 @@
      "url": "https://okko.sport/sport"
     }
    ],
-   "proto": "ffkm_2026-10-01_cm.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:men-senior-kp",
@@ -13129,7 +13129,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-trialeti-trophy.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-ljubljana-2026:men-junior-kp",
@@ -13395,7 +13395,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-ljubljana-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:pairs-senior-kp",
@@ -13539,7 +13539,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-trialeti-trophy.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:dance-senior-pt",
@@ -13846,7 +13846,7 @@
      "who": "Diana Davis / Gleb Smolkin"
     }
    ],
-   "proto": "isu_isu-cs-trialeti-trophy.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-ljubljana-2026:dance-junior-rt",
@@ -14058,7 +14058,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-ljubljana-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:men-senior-pp",
@@ -14297,7 +14297,7 @@
      "who": "Nika Egadze"
     }
    ],
-   "proto": "isu_isu-cs-trialeti-trophy.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-ljubljana-2026:men-junior-pp",
@@ -14596,7 +14596,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-ljubljana-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-ljubljana-2026:dance-junior-pt",
@@ -14845,7 +14845,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-ljubljana-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:pairs-senior-pp",
@@ -15019,7 +15019,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-trialeti-trophy.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-ljubljana-2026:women-junior-pp",
@@ -15460,7 +15460,7 @@
      "who": "Leandra Tzimpoukakis"
     }
    ],
-   "proto": "isu_isu-jgp-ljubljana-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-trialeti-trophy:women-senior-pp",
@@ -15704,7 +15704,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-trialeti-trophy.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:dance-junior-rt",
@@ -15918,7 +15918,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:pairs-junior-kp",
@@ -16059,7 +16059,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:dance-junior-pt",
@@ -16308,7 +16308,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:pairs-junior-pp",
@@ -16484,7 +16484,7 @@
      "who": "Таисия Гусева / Даниил Овчинников"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:women-junior-kp",
@@ -16768,7 +16768,7 @@
      "who": "София Сарновская"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:men-junior-kp",
@@ -17021,7 +17021,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:women-junior-pp",
@@ -17362,7 +17362,7 @@
      "who": "София Сарновская"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026:men-junior-pp",
@@ -17661,7 +17661,7 @@
      "who": "Никита Малютин"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-memorial-a-g-gorshkova-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:men-junior-kp",
@@ -17905,7 +17905,7 @@
      "who": ""
     }
    ],
-   "proto": "isu_isu-cs-denis-ten-memorial.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:women-junior-kp",
@@ -18300,7 +18300,7 @@
      "who": "Варвара Стахович"
     }
    ],
-   "proto": "isu_isu-cs-denis-ten-memorial.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-gdansk-2026:women-junior-kp",
@@ -18724,7 +18724,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-gdansk-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:women-senior-kp",
@@ -19033,7 +19033,7 @@
      "who": "Виктория Сафонова"
     }
    ],
-   "proto": "isu_isu-cs-denis-ten-memorial.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-gdansk-2026:pairs-junior-kp",
@@ -19237,7 +19237,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-gdansk-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:men-senior-kp",
@@ -19477,7 +19477,7 @@
      "who": "Алекс Лабович"
     }
    ],
-   "proto": "isu_isu-cs-denis-ten-memorial.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:dance-junior-rt",
@@ -19610,7 +19610,7 @@
      "who": "Мария Фефелова / Артём Валов"
     }
    ],
-   "proto": "isu_isu-cs-denis-ten-memorial.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-gdansk-2026:men-junior-kp",
@@ -19934,7 +19934,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-gdansk-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:women-junior-pp",
@@ -20402,7 +20402,7 @@
      "who": "Варвара Стахович"
     }
    ],
-   "proto": "isu_isu-cs-denis-ten-memorial.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-gdansk-2026:dance-junior-rt",
@@ -20666,7 +20666,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-gdansk-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:dance-junior-pt",
@@ -20830,7 +20830,7 @@
      "who": "Мария Фефелова / Артём Валов"
     }
    ],
-   "proto": "isu_isu-cs-denis-ten-memorial.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-gdansk-2026:pairs-junior-pp",
@@ -21068,7 +21068,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-gdansk-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:dance-senior-rt",
@@ -21301,7 +21301,7 @@
      "who": "Екатерина Андреева / Дмитрий Блинов"
     }
    ],
-   "proto": "isu_isu-cs-denis-ten-memorial.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-gdansk-2026:women-junior-pp",
@@ -21781,7 +21781,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-gdansk-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:women-senior-pp",
@@ -22159,7 +22159,7 @@
      "who": "Виктория Сафонова"
     }
    ],
-   "proto": "isu_isu-cs-denis-ten-memorial.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:men-junior-pp",
@@ -22452,7 +22452,7 @@
      "who": "Арсений Федотов"
     }
    ],
-   "proto": "isu_isu-cs-denis-ten-memorial.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:dance-senior-pt",
@@ -22736,7 +22736,7 @@
      "who": "Екатерина Андреева / Дмитрий Блинов"
     }
    ],
-   "proto": "isu_isu-cs-denis-ten-memorial.json"
+   "proto": null
   },
   {
    "id": "gs:tayside-trophy:women-junior-kp",
@@ -22992,7 +22992,7 @@
      "who": "Kaya Tiernan"
     }
    ],
-   "proto": "gs_tayside-trophy.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-denis-ten-memorial:men-senior-pp",
@@ -23312,7 +23312,7 @@
      "who": "Алекс Лабович"
     }
    ],
-   "proto": "isu_isu-cs-denis-ten-memorial.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-gdansk-2026:dance-junior-pt",
@@ -23616,7 +23616,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-jgp-gdansk-2026.json"
+   "proto": null
   },
   {
    "id": "gs:tayside-trophy:men-junior-kp",
@@ -23739,7 +23739,7 @@
     },
     "basis": "judges"
    },
-   "proto": "gs_tayside-trophy.json"
+   "proto": null
   },
   {
    "id": "gs:tayside-trophy:pairs-junior-kp",
@@ -23838,7 +23838,7 @@
      "who": "Amy Ritchie / Mitchell Dunn"
     }
    ],
-   "proto": "gs_tayside-trophy.json"
+   "proto": null
   },
   {
    "id": "gs:tayside-trophy:pairs-senior-kp",
@@ -23977,7 +23977,7 @@
      "who": "Ava Kemp / Yohnatan Elizarov"
     }
    ],
-   "proto": "gs_tayside-trophy.json"
+   "proto": null
   },
   {
    "id": "isu:isu-jgp-gdansk-2026:men-junior-pp",
@@ -24354,7 +24354,7 @@
      "who": "Denis Krouglov"
     }
    ],
-   "proto": "isu_isu-jgp-gdansk-2026.json"
+   "proto": null
   },
   {
    "id": "gs:tayside-trophy:women-senior-kp",
@@ -24529,7 +24529,7 @@
      "who": "Sarina Joos"
     }
    ],
-   "proto": "gs_tayside-trophy.json"
+   "proto": null
   },
   {
    "id": "gs:tayside-trophy:men-senior-kp",
@@ -24677,7 +24677,7 @@
      "who": "Tao Macrae"
     }
    ],
-   "proto": "gs_tayside-trophy.json"
+   "proto": null
   },
   {
    "id": "gs:tayside-trophy:women-junior-pp",
@@ -24985,7 +24985,7 @@
      "who": "Noemi Joos"
     }
    ],
-   "proto": "gs_tayside-trophy.json"
+   "proto": null
   },
   {
    "id": "gs:tayside-trophy:men-junior-pp",
@@ -25136,7 +25136,7 @@
     },
     "basis": "judges"
    },
-   "proto": "gs_tayside-trophy.json"
+   "proto": null
   },
   {
    "id": "gs:tayside-trophy:pairs-junior-pp",
@@ -25264,7 +25264,7 @@
      "who": "Elizabeth Yun / Mitchell Castelletti"
     }
    ],
-   "proto": "gs_tayside-trophy.json"
+   "proto": null
   },
   {
    "id": "gs:tayside-trophy:pairs-senior-pp",
@@ -25447,7 +25447,7 @@
      "who": "Ava Kemp / Yohnatan Elizarov"
     }
    ],
-   "proto": "gs_tayside-trophy.json"
+   "proto": null
   },
   {
    "id": "gs:tayside-trophy:women-senior-pp",
@@ -25648,7 +25648,7 @@
     },
     "basis": "judges"
    },
-   "proto": "gs_tayside-trophy.json"
+   "proto": null
   },
   {
    "id": "gs:tayside-trophy:men-senior-pp",
@@ -25841,7 +25841,7 @@
      "who": "Donovan Carrillo"
     }
    ],
-   "proto": "gs_tayside-trophy.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:dance-junior-rt",
@@ -26055,7 +26055,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:pairs-junior-kp",
@@ -26149,7 +26149,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:dance-junior-pt",
@@ -26398,7 +26398,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:pairs-junior-pp",
@@ -26522,7 +26522,7 @@
      "who": "Зоя Ковязина / Дмитрий Родионов"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:women-junior-kp",
@@ -26784,7 +26784,7 @@
      "who": "Алиса Заикина"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:men-junior-kp",
@@ -27028,7 +27028,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:women-junior-pp",
@@ -27339,7 +27339,7 @@
      "who": "Алиса Заикина"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026:men-junior-pp",
@@ -27648,7 +27648,7 @@
      "who": "Николай Колесников"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-rapsodiya-l-da-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-budapest-trophy:men-junior-kp",
@@ -27788,7 +27788,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-budapest-trophy:women-junior-kp",
@@ -28104,7 +28104,7 @@
      "who": "Jiaying Ellyse Johnson"
     }
    ],
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-budapest-trophy:men-senior-kp",
@@ -28455,7 +28455,7 @@
      "who": "Arlet Levandi"
     }
    ],
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-senior-rt",
@@ -28775,7 +28775,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-junior-rt",
@@ -29060,7 +29060,7 @@
      "who": "Zoe Bianchi / Daniel Basile"
     }
    ],
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-budapest-trophy:women-junior-pp",
@@ -29434,7 +29434,7 @@
      "who": "Амалия Насыбуллина"
     }
    ],
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-budapest-trophy:men-junior-pp",
@@ -29625,7 +29625,7 @@
      "who": "Kirill Sheiko"
     }
    ],
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:women-senior-kp",
@@ -29828,7 +29828,7 @@
      "who": "Камилла Нелюбова"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-budapest-trophy:women-senior-kp",
@@ -30316,7 +30316,7 @@
      "who": "Julia Sauter"
     }
    ],
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men-senior-kp",
@@ -30501,7 +30501,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pairs-senior-kp",
@@ -30653,7 +30653,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:dance-senior-rt",
@@ -30805,7 +30805,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-junior-pt",
@@ -31139,7 +31139,7 @@
      "who": "Zoe Bianchi / Daniel Basile"
     }
    ],
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-budapest-trophy:dance-senior-pt",
@@ -31503,7 +31503,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-budapest-trophy:men-senior-pp",
@@ -31940,7 +31940,7 @@
      "who": "Patrick Blackwell"
     }
    ],
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:women-senior-pp",
@@ -32180,7 +32180,7 @@
      "who": "Ксения Синицына"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:men-senior-pp",
@@ -32408,7 +32408,7 @@
      "who": "Евгений Семененко"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:pairs-senior-pp",
@@ -32588,7 +32588,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-budapest-trophy:women-senior-pp",
@@ -33144,7 +33144,7 @@
      "who": "Алина Горбачёва"
     }
    ],
-   "proto": "isu_isu-cs-budapest-trophy.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026:dance-senior-pt",
@@ -33324,7 +33324,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-rapsodiya-l-da-2026.json"
+   "proto": null
   },
   {
    "id": "gs:blackburn-trophy:dance-junior-rt",
@@ -33523,7 +33523,7 @@
     },
     "basis": null
    },
-   "proto": "gs_blackburn-trophy.json"
+   "proto": null
   },
   {
    "id": "gs:blackburn-trophy:dance-senior-rt",
@@ -33682,7 +33682,7 @@
     },
     "basis": null
    },
-   "proto": "gs_blackburn-trophy.json"
+   "proto": null
   },
   {
    "id": "gs:blackburn-trophy:dance-junior-pt",
@@ -33839,7 +33839,7 @@
     },
     "basis": null
    },
-   "proto": "gs_blackburn-trophy.json"
+   "proto": null
   },
   {
    "id": "gs:golden-bear:men-junior-kp",
@@ -33957,7 +33957,7 @@
      "who": "Daniel Verbat"
     }
    ],
-   "proto": "gs_golden-bear.json"
+   "proto": null
   },
   {
    "id": "gs:golden-bear:women-junior-kp",
@@ -34195,7 +34195,7 @@
      "who": "Paula Kasnar"
     }
    ],
-   "proto": "gs_golden-bear.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:dance-senior-rt",
@@ -34369,7 +34369,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:women-senior-kp",
@@ -34582,7 +34582,7 @@
      "who": "Anastasiia Gubanova"
     }
    ],
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
+   "proto": null
   },
   {
    "id": "gs:golden-bear:men-junior-pp",
@@ -34730,7 +34730,7 @@
      "who": "Daniel Verbat"
     }
    ],
-   "proto": "gs_golden-bear.json"
+   "proto": null
   },
   {
    "id": "gs:golden-bear:women-junior-pp",
@@ -35006,7 +35006,7 @@
      "who": "Lea Marie Castlunger"
     }
    ],
-   "proto": "gs_golden-bear.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:men-senior-kp",
@@ -35202,7 +35202,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:men-senior-kp",
@@ -35398,7 +35398,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:women-senior-kp",
@@ -35601,7 +35601,7 @@
      "who": "Дина Хуснутдинова"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:dance-senior-pt",
@@ -35817,7 +35817,7 @@
      "who": "Laurence Fournier Beaudry / Guillaume Cizeron"
     }
    ],
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
+   "proto": null
   },
   {
    "id": "gs:golden-bear:men-senior-kp",
@@ -35945,7 +35945,7 @@
     },
     "basis": "judges"
    },
-   "proto": "gs_golden-bear.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:pairs-senior-kp",
@@ -36086,7 +36086,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
+   "proto": null
   },
   {
    "id": "gs:golden-bear:women-senior-kp",
@@ -36276,7 +36276,7 @@
      "who": "Katerina Hanusova"
     }
    ],
-   "proto": "gs_golden-bear.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:dance-senior-rt",
@@ -36439,7 +36439,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:pairs-senior-kp",
@@ -36601,7 +36601,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:women-senior-pp",
@@ -36846,7 +36846,7 @@
      "who": "Ami Nakai"
     }
    ],
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
+   "proto": null
   },
   {
    "id": "gs:golden-bear:men-senior-pp",
@@ -36994,7 +36994,7 @@
     },
     "basis": "judges"
    },
-   "proto": "gs_golden-bear.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:men-senior-pp",
@@ -37239,7 +37239,7 @@
      "who": "Глеб Лутфуллин"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
+   "proto": null
   },
   {
    "id": "gs:golden-bear:women-senior-pp",
@@ -37476,7 +37476,7 @@
      "who": "Katerina Hanusova"
     }
    ],
-   "proto": "gs_golden-bear.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:pairs-senior-pp",
@@ -37674,7 +37674,7 @@
      "who": "Александра Бойкова / Дмитрий Козловский"
     }
    ],
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:women-senior-pp",
@@ -37924,7 +37924,7 @@
      "who": "Вероника Яметова"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-grand-prix-de-france-2026:men-senior-pp",
@@ -38152,7 +38152,7 @@
      "who": "Adam Siao Him Fa"
     }
    ],
-   "proto": "isu_isu-gp-grand-prix-de-france-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:pairs-senior-pp",
@@ -38320,7 +38320,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026:dance-senior-pt",
@@ -38519,7 +38519,7 @@
      "who": "Василиса Кагановская / Максим Некрасов"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-nevskij-led-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:dance-junior-rt",
@@ -38733,7 +38733,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:pairs-junior-kp",
@@ -38852,7 +38852,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:dance-junior-pt",
@@ -39123,7 +39123,7 @@
      "who": "Дарья Дрожжина / Иван Тельнов"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:pairs-junior-pp",
@@ -39267,7 +39267,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:women-junior-kp",
@@ -39555,7 +39555,7 @@
      "who": "Виктория Стрельцова"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "gs:crystal-skate:men-junior-kp",
@@ -39622,7 +39622,7 @@
     },
     "basis": "judges"
    },
-   "proto": "gs_crystal-skate.json"
+   "proto": null
   },
   {
    "id": "gs:crystal-skate:women-junior-kp",
@@ -39845,7 +39845,7 @@
      "who": "Leyla Cetin"
     }
    ],
-   "proto": "gs_crystal-skate.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:men-junior-kp",
@@ -40107,7 +40107,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:women-junior-pp",
@@ -40450,7 +40450,7 @@
      "who": "Виктория Стрельцова"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026:men-junior-pp",
@@ -40762,7 +40762,7 @@
      "who": "Макар Солодников"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-krasnoyar-e-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "gs:crystal-skate:men-junior-pp",
@@ -40852,7 +40852,7 @@
      "who": "Bohdan Pomohaibo"
     }
    ],
-   "proto": "gs_crystal-skate.json"
+   "proto": null
   },
   {
    "id": "gs:crystal-skate:men-senior-kp",
@@ -40926,7 +40926,7 @@
      "who": "Filip Kaymakchiev"
     }
    ],
-   "proto": "gs_crystal-skate.json"
+   "proto": null
   },
   {
    "id": "gs:crystal-skate:women-senior-kp",
@@ -41054,7 +41054,7 @@
     },
     "basis": "judges"
    },
-   "proto": "gs_crystal-skate.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:men-senior-kp",
@@ -41250,7 +41250,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:pairs-senior-kp",
@@ -41414,7 +41414,7 @@
      "who": "Ava Kemp / Yohnatan Elizarov"
     }
    ],
-   "proto": "isu_isu-gp-skate-canada-international-2026.json"
+   "proto": null
   },
   {
    "id": "gs:crystal-skate:women-junior-pp",
@@ -41672,7 +41672,7 @@
      "who": "Leyla Cetin"
     }
    ],
-   "proto": "gs_crystal-skate.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:men-senior-kp",
@@ -41868,7 +41868,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:women-senior-kp",
@@ -42071,7 +42071,7 @@
      "who": "Лидия Плескачева"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json"
+   "proto": null
   },
   {
    "id": "gs:crystal-skate:men-senior-pp",
@@ -42164,7 +42164,7 @@
      "who": "Filip Kaymakchiev"
     }
    ],
-   "proto": "gs_crystal-skate.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:dance-senior-rt",
@@ -42338,7 +42338,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json"
+   "proto": null
   },
   {
    "id": "gs:crystal-skate:women-senior-pp",
@@ -42486,7 +42486,7 @@
     },
     "basis": "judges"
    },
-   "proto": "gs_crystal-skate.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:women-senior-kp",
@@ -42719,7 +42719,7 @@
      "who": "Niina Petrokina"
     }
    ],
-   "proto": "isu_isu-gp-skate-canada-international-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:dance-senior-rt",
@@ -42893,7 +42893,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:men-senior-pp",
@@ -43121,7 +43121,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:pairs-senior-pp",
@@ -43301,7 +43301,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-gp-skate-canada-international-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:men-senior-pp",
@@ -43541,7 +43541,7 @@
      "who": "Пётр Гуменник"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:women-senior-pp",
@@ -43776,7 +43776,7 @@
      "who": "Лидия Плескачева"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026:dance-senior-pt",
@@ -43987,7 +43987,7 @@
      "who": "Александра Степанова / Иван Букин"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-krasnoyar-e-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:women-senior-pp",
@@ -44258,7 +44258,7 @@
      "who": "Niina Petrokina"
     }
    ],
-   "proto": "isu_isu-gp-skate-canada-international-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-canada-international-2026:dance-senior-pt",
@@ -44469,7 +44469,7 @@
      "who": "Lilah Fear / Lewis Gibson"
     }
    ],
-   "proto": "isu_isu-gp-skate-canada-international-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:dance-junior-rt",
@@ -44673,7 +44673,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:pairs-junior-kp",
@@ -44824,7 +44824,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:dance-junior-pt",
@@ -45076,7 +45076,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:pairs-junior-pp",
@@ -45243,7 +45243,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:women-junior-kp",
@@ -45515,7 +45515,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:men-junior-kp",
@@ -45777,7 +45777,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:dance-senior-rt",
@@ -45951,7 +45951,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-gp-cup-of-china-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:women-junior-pp",
@@ -46279,7 +46279,7 @@
      "who": "Юлиана Черенева"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:women-senior-kp",
@@ -46507,7 +46507,7 @@
      "who": "Anastasiia Gubanova"
     }
    ],
-   "proto": "isu_isu-gp-cup-of-china-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026:men-junior-pp",
@@ -46819,7 +46819,7 @@
      "who": "Вячеслав Касьяненко"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-zoloto-urala-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:pairs-senior-kp",
@@ -46981,7 +46981,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-gp-cup-of-china-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:men-senior-kp",
@@ -47203,7 +47203,7 @@
      "who": "Shun Sato"
     }
    ],
-   "proto": "isu_isu-gp-cup-of-china-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:dance-senior-pt",
@@ -47407,7 +47407,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-gp-cup-of-china-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:women-senior-pp",
@@ -47668,7 +47668,7 @@
      "who": "Haein Lee"
     }
    ],
-   "proto": "isu_isu-gp-cup-of-china-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:men-senior-kp",
@@ -47853,7 +47853,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:pairs-senior-pp",
@@ -48044,7 +48044,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-gp-cup-of-china-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:women-senior-kp",
@@ -48252,7 +48252,7 @@
      "who": "Мария Елисова"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:pairs-senior-kp",
@@ -48404,7 +48404,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-cup-of-china-2026:men-senior-pp",
@@ -48665,7 +48665,7 @@
      "who": "Kao Miura"
     }
    ],
-   "proto": "isu_isu-gp-cup-of-china-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:men-senior-pp",
@@ -48888,7 +48888,7 @@
      "who": "Глеб Лутфуллин"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:women-senior-pp",
@@ -49123,7 +49123,7 @@
      "who": "Аделия Петросян"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026:pairs-senior-pp",
@@ -49310,7 +49310,7 @@
      "who": "Екатерина Чикмарёва / Матвей Янченков"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-zoloto-urala-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:dance-junior-rt",
@@ -49506,7 +49506,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:pairs-junior-kp",
@@ -49635,7 +49635,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:women-junior-kp",
@@ -49923,7 +49923,7 @@
      "who": "София Сарновская"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:men-junior-kp",
@@ -50195,7 +50195,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:dance-junior-pt",
@@ -50430,7 +50430,7 @@
      "who": "Мария Фефелова / Артём Валов"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:pairs-junior-pp",
@@ -50597,7 +50597,7 @@
      "who": "Таисия Гусева / Даниил Овчинников"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:women-junior-pp",
@@ -50955,7 +50955,7 @@
      "who": "София Сарновская"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026:men-junior-pp",
@@ -51278,7 +51278,7 @@
      "who": "Марк Лукин"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-serdtse-sibiri-sredi-yuniorov-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-america-2026:men-senior-kp",
@@ -51481,7 +51481,7 @@
      "who": "Donovan Carrillo"
     }
    ],
-   "proto": "isu_isu-gp-skate-america-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-america-2026:pairs-senior-kp",
@@ -51640,7 +51640,7 @@
      "who": "Oxana Vouillamoz / Tom Bouvart"
     }
    ],
-   "proto": "isu_isu-gp-skate-america-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:dance-senior-rt",
@@ -51814,7 +51814,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:women-senior-kp",
@@ -52017,7 +52017,7 @@
      "who": "Лидия Плескачева"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:men-senior-kp",
@@ -52202,7 +52202,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:pairs-senior-kp",
@@ -52354,7 +52354,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-america-2026:dance-senior-rt",
@@ -52528,7 +52528,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-gp-skate-america-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-america-2026:women-senior-kp",
@@ -52775,7 +52775,7 @@
      "who": "Ami Nakai"
     }
    ],
-   "proto": "isu_isu-gp-skate-america-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-america-2026:men-senior-pp",
@@ -53020,7 +53020,7 @@
      "who": "Tamir Kuperman"
     }
    ],
-   "proto": "isu_isu-gp-skate-america-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-america-2026:pairs-senior-pp",
@@ -53212,7 +53212,7 @@
      "who": "Katie McBEATH / Balazs Nagy"
     }
    ],
-   "proto": "isu_isu-gp-skate-america-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:dance-senior-pt",
@@ -53416,7 +53416,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:women-senior-pp",
@@ -53656,7 +53656,7 @@
      "who": "Лидия Плескачева"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:men-senior-pp",
@@ -53879,7 +53879,7 @@
      "who": "Лев Лазарев"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:pairs-senior-pp",
@@ -54047,7 +54047,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-america-2026:dance-senior-pt",
@@ -54258,7 +54258,7 @@
      "who": "Katerina Mrazkova / Daniel Mrazek"
     }
    ],
-   "proto": "isu_isu-gp-skate-america-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-skate-america-2026:women-senior-pp",
@@ -54559,7 +54559,7 @@
      "who": "Rino Matsuike"
     }
    ],
-   "proto": "isu_isu-gp-skate-america-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:women-junior-kp",
@@ -54941,7 +54941,7 @@
      "note": "Платно"
     }
    ],
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:pairs-junior-kp",
@@ -55082,7 +55082,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:men-junior-kp",
@@ -55259,7 +55259,7 @@
      "note": "Платно"
     }
    ],
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:women-junior-pp",
@@ -55723,7 +55723,7 @@
      "note": "Платно"
     }
    ],
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:men-junior-kp",
@@ -55874,7 +55874,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:women-junior-kp",
@@ -56105,7 +56105,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:men-senior-kp",
@@ -56186,7 +56186,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:women-senior-kp",
@@ -56307,7 +56307,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:men-junior-pp",
@@ -56507,7 +56507,7 @@
      "note": "Платно"
     }
    ],
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:pairs-junior-pp",
@@ -56677,7 +56677,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:men-senior-kp",
@@ -56990,7 +56990,7 @@
      "note": "Платно"
     }
    ],
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:women-senior-kp",
@@ -57420,7 +57420,7 @@
      "note": "Платно"
     }
    ],
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:men-junior-pp",
@@ -57601,7 +57601,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:women-junior-pp",
@@ -57870,7 +57870,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:men-senior-pp",
@@ -57981,7 +57981,7 @@
      "who": "Арсений Димитриев"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-junior-kp",
@@ -58118,7 +58118,7 @@
      "note": "Платно"
     }
    ],
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026:women-senior-pp",
@@ -58266,7 +58266,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-na-prizy-olimpijskogo-chempiona-f-a-klimova-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-senior-kp",
@@ -58410,7 +58410,7 @@
      "note": "Платно"
     }
    ],
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:men-senior-pp",
@@ -58771,7 +58771,7 @@
      "note": "Платно"
     }
    ],
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:women-senior-pp",
@@ -59269,7 +59269,7 @@
      "note": "Платно"
     }
    ],
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:women-junior-kp",
@@ -59772,7 +59772,7 @@
      "who": "Виктория Стрельцова"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:pairs-senior-kp",
@@ -59936,7 +59936,7 @@
      "who": "Katie McBEATH / Balazs Nagy"
     }
    ],
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:women-senior-kp",
@@ -60149,7 +60149,7 @@
      "who": "Seoyoung Kim"
     }
    ],
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:men-junior-kp",
@@ -60417,7 +60417,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:men-senior-kp",
@@ -60625,7 +60625,7 @@
      "who": "Andreas Nordeback"
     }
    ],
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-junior-pp",
@@ -60801,7 +60801,7 @@
      "note": "Платно"
     }
    ],
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:pairs-senior-pp",
@@ -60992,7 +60992,7 @@
      "note": "Платно"
     }
    ],
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:dance-senior-rt",
@@ -61173,7 +61173,7 @@
      "who": "Laurence Fournier Beaudry / Guillaume Cizeron"
     }
    ],
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:women-junior-pp",
@@ -61746,7 +61746,7 @@
      "who": "Виктория Стрельцова"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:pairs-senior-pp",
@@ -61938,7 +61938,7 @@
      "who": "Audrey Shin / Spencer Akira Howe"
     }
    ],
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:women-senior-pp",
@@ -62203,7 +62203,7 @@
      "who": "Mao Shimada"
     }
    ],
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:dance-junior-rt",
@@ -62424,7 +62424,7 @@
      "note": "Платно"
     }
    ],
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:men-junior-pp",
@@ -62743,7 +62743,7 @@
      "who": "Ильяс Халиуллин"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:men-senior-pp",
@@ -62978,7 +62978,7 @@
      "who": "Andreas Nordeback"
     }
    ],
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:dance-senior-rt",
@@ -63209,7 +63209,7 @@
      "note": "Платно"
     }
    ],
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:women-senior-kp",
@@ -63488,7 +63488,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-finlandia-trophy-2026:dance-senior-pt",
@@ -63709,7 +63709,7 @@
      "who": "Laurence Fournier Beaudry / Guillaume Cizeron"
     }
    ],
-   "proto": "isu_isu-gp-finlandia-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:men-senior-kp",
@@ -63878,7 +63878,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:women-senior-pp",
@@ -64192,7 +64192,7 @@
      "who": "Екатерина Кольцова"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:dance-junior-pt",
@@ -64457,7 +64457,7 @@
      "note": "Платно"
     }
    ],
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:men-senior-pp",
@@ -64656,7 +64656,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-tallinn-trophy-2026:dance-senior-pt",
@@ -64921,7 +64921,7 @@
      "note": "Платно"
     }
    ],
-   "proto": "isu_isu-cs-tallinn-trophy-2026.json"
+   "proto": null
   },
   {
    "id": "ffkm:2026-11-23_kubok:dance-junior-rt",
@@ -65152,7 +65152,7 @@
    },
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-11-23_kubok.json"
+   "proto": null
   },
   {
    "id": "ffkm:2026-11-23_kubok:pairs-junior-kp",
@@ -65265,7 +65265,7 @@
    },
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-11-23_kubok.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:men-junior-kp",
@@ -65486,7 +65486,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": null
   },
   {
    "id": "ffkm:2026-11-23_kubok:dance-junior-pt",
@@ -65753,7 +65753,7 @@
    ],
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-11-23_kubok.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:men-senior-kp",
@@ -65844,7 +65844,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": null
   },
   {
    "id": "ffkm:2026-11-23_kubok:pairs-junior-pp",
@@ -65983,7 +65983,7 @@
    },
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-11-23_kubok.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-junior-kp",
@@ -66394,7 +66394,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-senior-kp",
@@ -66615,7 +66615,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:men-junior-pp",
@@ -66873,7 +66873,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": null
   },
   {
    "id": "ffkm:2026-11-23_kubok:women-junior-kp",
@@ -67296,7 +67296,7 @@
    ],
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-11-23_kubok.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:men-senior-pp",
@@ -67418,7 +67418,7 @@
      "who": "Роман Попов"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:dance-senior-rt",
@@ -67645,7 +67645,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-senior-pp",
@@ -67892,7 +67892,7 @@
     },
     "basis": "judges"
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-junior-pp",
@@ -68239,7 +68239,7 @@
      "who": "Арина Ореховская"
     }
    ],
-   "proto": "fsr_vserossijskie-sorevnovaniya-tyumenskij-meridian-2026.json"
+   "proto": null
   },
   {
    "id": "ffkm:2026-11-23_kubok:men-junior-kp",
@@ -68568,7 +68568,7 @@
    },
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-11-23_kubok.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:men-senior-kp",
@@ -68950,7 +68950,7 @@
      "who": "Lucius Kazanecki"
     }
    ],
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:dance-senior-pt",
@@ -69213,7 +69213,7 @@
     },
     "basis": "judges"
    },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:dance-senior-rt",
@@ -70390,7 +70390,7 @@
    ],
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-11-23_kubok.json"
+   "proto": null
   },
   {
    "id": "ffkm:2026-11-23_kubok:men-junior-pp",
@@ -70744,7 +70744,7 @@
    ],
    "tier": "regional",
    "region": "Москва",
-   "proto": "ffkm_2026-11-23_kubok.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:pairs-senior-kp",
@@ -70851,7 +70851,7 @@
      "who": "Sarah Nunez / Blake Eisenach"
     }
    ],
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:men-senior-pp",
@@ -71277,7 +71277,7 @@
      "who": "Lucas Broussard"
     }
    ],
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:dance-senior-pt",
@@ -72699,7 +72699,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:dance-senior-rt",
@@ -72778,7 +72778,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
+   "proto": null
   },
   {
    "id": "gs:skate-celje:men-junior-kp",
@@ -73209,7 +73209,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:women-senior-kp",
@@ -73330,7 +73330,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:men-senior-kp",
@@ -73385,7 +73385,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
+   "proto": null
   },
   {
    "id": "gs:skate-celje:women-senior-kp",
@@ -73599,7 +73599,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+   "proto": null
   },
   {
    "id": "gs:skate-celje:men-senior-kp",
@@ -74308,7 +74308,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:dance-junior-pt",
@@ -74429,7 +74429,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
+   "proto": null
   },
   {
    "id": "gs:skate-celje:men-junior-pp",
@@ -74671,7 +74671,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
+   "proto": null
   },
   {
    "id": "gs:skate-celje:men-senior-pp",
@@ -74870,7 +74870,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:men-senior-pp",
@@ -74925,7 +74925,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:women-junior-kp",
@@ -75190,7 +75190,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:men-junior-kp",
@@ -75293,7 +75293,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:women-junior-pp",
@@ -75558,7 +75558,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
+   "proto": null
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:men-junior-pp",
@@ -75661,7 +75661,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
+   "proto": null
   },
   {
    "id": "isu:isu-grand-prix-final-2026:pairs-junior-kp",
@@ -126540,5 +126540,5 @@
   "Ярослав Нечаев": "photos/df55625c66ca78c1.jpg",
   "Ясмина Кадырова": ""
  },
- "rev": "658865857f4cc6ce"
+ "rev": "48eafe239bc29bf9"
 }
