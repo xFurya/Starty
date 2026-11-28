@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-28T13:32:04+03:00",
- "checked": "2026-11-28T11:51:26.651124+00:00",
+ "generated": "2026-11-28T14:35:59+03:00",
+ "checked": "2026-11-28T14:35:59+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "9",
@@ -72256,11 +72256,9 @@
    "athletes": [
     "Ajda Preskar",
     "Alica Lengyelova",
-    "Andreea Cristiana Maria Lazar",
     "Angelica Orsi",
     "Anna Sannikova",
     "Arina Gertsog",
-    "Diana Marjanovic",
     "Djurdja Nikolic",
     "Emma Cerkalova",
     "Enja Sivic",
@@ -72268,8 +72266,6 @@
     "Hanna Elteto",
     "Isabella Niederleitner",
     "Jazlynn Höppener",
-    "Julia Subocz",
-    "Julia Vaha-ruohola",
     "Lara Achermann",
     "Liana Smrekar",
     "Lucca Dijkhuizen",
@@ -72281,15 +72277,12 @@
     "Nina Lazarevic",
     "Q",
     "Roos Harkema",
-    "Summer Wijkhuizen",
     "Tamara Grahovac",
     "Teresa Naia Eder",
     "Tereza Havrankova",
     "Tiana Kaligaro",
     "Varvara Poder",
-    "Veronika Taubeova",
     "Victoria Yonemori",
-    "Vita Kas",
     "Zala Kas",
     "Zoja Zupancic Prevolsek",
     "Zsofia Szeplaki",
@@ -72299,46 +72292,40 @@
    "podium": [
     {
      "place": 1,
+     "name": "Julia Vaha-ruohola",
+     "nation": "FIN",
+     "points": "58.27"
+    },
+    {
+     "place": 2,
      "name": "Varvara Abramkina",
      "nation": "BUL",
      "points": "57.70"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Aleksandra Janikowska",
      "nation": "POL",
      "points": "53.39"
-    },
-    {
-     "place": 3,
-     "name": "Angel Delevaque",
-     "nation": "NED",
-     "points": "51.30"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Varvara Abramkina — 57.70\n2. Aleksandra Janikowska — 53.39\n3. Angel Delevaque — 51.30\n\nРоссияне:\n• Алиса Заикина — 16:47\n\nНачало: 10:30 МСК",
+   "desc": "Промежуточные итоги:\n1. Julia Vaha-ruohola — 58.27\n2. Varvara Abramkina — 57.70\n3. Aleksandra Janikowska — 53.39\n\nРоссияне:\n• Алиса Заикина — 16:47\n\nНачало: 10:30 МСК",
    "field": [
     {
      "name": "Djurdja Nikolic",
      "nation": "SRB",
      "no": 1,
      "warmup": 1,
-     "place": 19,
+     "place": 26,
      "points": "29.06",
      "time": "10:36"
-    },
-    {
-     "name": "Q",
-     "nation": "BUL",
-     "no": 2,
-     "warmup": 0
     },
     {
      "name": "Enja Sivic",
      "nation": "SLO",
      "no": 3,
      "warmup": 1,
-     "place": 20,
+     "place": 27,
      "points": "28.98",
      "time": "10:47"
     },
@@ -72347,7 +72334,7 @@
      "nation": "SLO",
      "no": 6,
      "warmup": 30,
-     "place": 14,
+     "place": 21,
      "points": "34.08",
      "time": "11:08"
     },
@@ -72356,7 +72343,7 @@
      "nation": "ITA",
      "no": 12,
      "warmup": 3,
-     "place": 18,
+     "place": 25,
      "points": "31.54",
      "time": "11:59"
     },
@@ -72365,7 +72352,7 @@
      "nation": "SLO",
      "no": 13,
      "warmup": 3,
-     "place": 21,
+     "place": 28,
      "points": "28.35",
      "time": "12:05"
     },
@@ -72374,7 +72361,7 @@
      "nation": "NED",
      "no": 15,
      "warmup": 3,
-     "place": 13,
+     "place": 19,
      "points": "36.57",
      "time": "12:16"
     },
@@ -72383,7 +72370,7 @@
      "nation": "CRO",
      "no": 16,
      "warmup": 3,
-     "place": 24,
+     "place": 31,
      "points": "18.93",
      "time": "12:21"
     },
@@ -72392,25 +72379,16 @@
      "nation": "SLO",
      "no": 19,
      "warmup": 4,
-     "place": 25,
+     "place": 32,
      "points": "17.49",
      "time": "12:42"
-    },
-    {
-     "name": "Andreea Cristiana Maria Lazar",
-     "nation": "ROU",
-     "no": 21,
-     "warmup": 4,
-     "place": 12,
-     "points": "40.03",
-     "time": "12:53"
     },
     {
      "name": "Nina Lazarevic",
      "nation": "SLO",
      "no": 22,
      "warmup": 4,
-     "place": 22,
+     "place": 29,
      "points": "27.30",
      "time": "12:58"
     },
@@ -72419,7 +72397,7 @@
      "nation": "FIN",
      "no": 23,
      "warmup": 4,
-     "place": 16,
+     "place": 23,
      "points": "32.75",
      "time": "13:04"
     },
@@ -72428,7 +72406,7 @@
      "nation": "SLO",
      "no": 25,
      "warmup": 30,
-     "place": 17,
+     "place": 24,
      "points": "32.03",
      "time": "13:33"
     },
@@ -72437,7 +72415,7 @@
      "nation": "AUT",
      "no": 27,
      "warmup": 30,
-     "place": 15,
+     "place": 22,
      "points": "33.64",
      "time": "13:44"
     },
@@ -72446,9 +72424,24 @@
      "nation": "CRO",
      "no": 28,
      "warmup": 30,
-     "place": 23,
+     "place": 30,
      "points": "26.93",
      "time": "13:50"
+    },
+    {
+     "name": "Hanna Elteto",
+     "nation": "HUN",
+     "no": 31,
+     "warmup": 30,
+     "place": 20,
+     "points": "35.31",
+     "time": "14:10"
+    },
+    {
+     "name": "Q",
+     "nation": "FIN",
+     "no": 35,
+     "warmup": null
     },
     {
      "name": "Alica Lengyelova",
@@ -72472,38 +72465,11 @@
      "warmup": 7
     },
     {
-     "name": "Diana Marjanovic",
-     "nation": "SRB",
-     "time": "14:27",
-     "no": 34,
-     "warmup": 6
-    },
-    {
      "name": "Emma Cerkalova",
      "nation": "SVK",
      "time": "16:30",
      "no": 49,
      "warmup": 9
-    },
-    {
-     "name": "Hanna Elteto",
-     "nation": "HUN",
-     "time": "14:10",
-     "no": 31,
-     "warmup": 6
-    },
-    {
-     "name": "Julia Subocz",
-     "nation": "POL",
-     "time": "14:05",
-     "no": 30,
-     "warmup": 6
-    },
-    {
-     "name": "Julia Vaha-ruohola",
-     "nation": "FIN",
-     "no": 35,
-     "warmup": 6
     },
     {
      "name": "Lara Achermann",
@@ -72548,13 +72514,6 @@
      "warmup": 7
     },
     {
-     "name": "Summer Wijkhuizen",
-     "nation": "NED",
-     "time": "13:55",
-     "no": 29,
-     "warmup": 5
-    },
-    {
      "name": "Teresa Naia Eder",
      "nation": "AUT",
      "time": "15:50",
@@ -72576,25 +72535,11 @@
      "warmup": 8
     },
     {
-     "name": "Veronika Taubeova",
-     "nation": "CZE",
-     "time": "14:16",
-     "no": 32,
-     "warmup": 6
-    },
-    {
      "name": "Victoria Yonemori",
      "nation": "AUT",
      "time": "15:07",
      "no": 38,
      "warmup": 7
-    },
-    {
-     "name": "Vita Kas",
-     "nation": "SLO",
-     "time": "14:21",
-     "no": 33,
-     "warmup": 6
     },
     {
      "name": "Zala Kas",
@@ -72644,8 +72589,8 @@
     "first": null,
     "names": {
      "Q": "Q",
-     "Andreea Cristiana Maria LAZAR": "Andreea Cristiana Maria Lazar",
      "Jazlynn HÖPPENER": "Jazlynn Höppener",
+     "Hanna ELTETO": "Hanna Elteto",
      "Liana SMREKAR": "Liana Smrekar",
      "Isabella NIEDERLEITNER": "Isabella Niederleitner",
      "Minea MONTONEN": "Minea Montonen",
@@ -72658,13 +72603,6 @@
      "Nika SAJKO": "Nika Sajko",
      "Tamara GRAHOVAC": "Tamara Grahovac",
      "Ajda PRESKAR": "Ajda Preskar",
-     "Summer WIJKHUIZEN": "Summer Wijkhuizen",
-     "Julia SUBOCZ": "Julia Subocz",
-     "Hanna ELTETO": "Hanna Elteto",
-     "Veronika TAUBEOVA": "Veronika Taubeova",
-     "Vita KAS": "Vita Kas",
-     "Diana MARJANOVIC": "Diana Marjanovic",
-     "Julia VAHA-RUOHOLA": "Julia Vaha-ruohola",
      "Roos HARKEMA": "Roos Harkema",
      "Alica LENGYELOVA": "Alica Lengyelova",
      "Victoria YONEMORI": "Victoria Yonemori",
@@ -72708,15 +72646,17 @@
     {
      "name": "Владислав Дикиджи",
      "nation": "RUS",
+     "place": 2,
+     "points": "164.76",
      "time": "14:01",
      "no": 4,
-     "warmup": 1,
-     "place": 3,
-     "points": "164.76"
+     "warmup": 1
     },
     {
      "name": "Пётр Гуменник",
      "nation": "RUS",
+     "place": 3,
+     "points": "162.51",
      "time": "14:32",
      "no": 7,
      "warmup": 2,
@@ -72750,7 +72690,27 @@
      "segment_verified": true
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Rio Nakata — 175.43\n2. Lukas Britschgi — 175.21\n3. Владислав Дикиджи — 164.76\n\nРоссияне:\n• Владислав Дикиджи — 14:01\n• Пётр Гуменник — 14:32\n\nНачало: 13:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Rio Nakata",
+     "nation": "JPN",
+     "points": "175.43"
+    },
+    {
+     "place": 2,
+     "name": "Владислав Дикиджи",
+     "nation": "RUS",
+     "points": "164.76"
+    },
+    {
+     "place": 3,
+     "name": "Пётр Гуменник",
+     "nation": "RUS",
+     "points": "162.51"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Rio Nakata — 175.43\n2. Владислав Дикиджи — 164.76\n3. Пётр Гуменник — 162.51\n\nРоссияне:\n• Владислав Дикиджи — 14:01\n• Пётр Гуменник — 14:32\n\nНачало: 13:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Daniel Grassl",
@@ -72762,11 +72722,11 @@
     {
      "name": "Francois Pitot",
      "nation": "FRA",
+     "place": 6,
+     "points": "144.66",
      "time": "13:38",
      "no": 1,
-     "warmup": 1,
-     "place": 7,
-     "points": "144.66"
+     "warmup": 1
     },
     {
      "name": "Ilia Malinin",
@@ -72778,11 +72738,11 @@
     {
      "name": "Jason Brown",
      "nation": "USA",
+     "place": 4,
+     "points": "158.91",
      "time": "14:08",
      "no": 5,
-     "warmup": 1,
-     "place": 5,
-     "points": "158.91"
+     "warmup": 1
     },
     {
      "name": "Kevin Aymoz",
@@ -72803,20 +72763,20 @@
     {
      "name": "Nozomu Yoshioka",
      "nation": "JPN",
+     "place": 7,
+     "points": "141.79",
      "time": "13:45",
      "no": 2,
-     "warmup": 1,
-     "place": 8,
-     "points": "141.79"
+     "warmup": 1
     },
     {
      "name": "Rio Nakata",
      "nation": "JPN",
+     "place": 1,
+     "points": "175.43",
      "time": "13:53",
      "no": 3,
-     "warmup": 1,
-     "place": 1,
-     "points": "175.43"
+     "warmup": 1
     },
     {
      "name": "Shun Sato",
@@ -72828,24 +72788,26 @@
     {
      "name": "Vladimir Samoilov",
      "nation": "POL",
+     "place": 5,
+     "points": "145.61",
      "time": "14:16",
      "no": 6,
-     "warmup": 1,
-     "place": 6,
-     "points": "145.61"
+     "warmup": 1
     },
     {
      "name": "Владислав Дикиджи",
      "nation": "RUS",
+     "place": 2,
+     "points": "164.76",
      "time": "14:01",
      "no": 4,
-     "warmup": 1,
-     "place": 3,
-     "points": "164.76"
+     "warmup": 1
     },
     {
      "name": "Пётр Гуменник",
      "nation": "RUS",
+     "place": 3,
+     "points": "162.51",
      "time": "14:32",
      "no": 7,
      "warmup": 2,
@@ -72853,19 +72815,20 @@
      "points": "162.51"
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG002.htm",
     "cat": "https://results.isu.org/results/season2627/gpjpn2026/CAT001RS.htm",
     "first": "https://results.isu.org/results/season2627/gpjpn2026/SEG001.htm",
     "names": {
-     "Francois PITOT": "Francois Pitot",
-     "Nozomu YOSHIOKA": "Nozomu Yoshioka",
      "Rio NAKATA": "Rio Nakata",
+     "Petr GUMENNIK": "Пётр Гуменник",
      "Vladislav DIKIDZHI": "Владислав Дикиджи",
      "Jason BROWN": "Jason Brown",
      "Vladimir SAMOILOV": "Vladimir Samoilov",
-     "Petr GUMENNIK": "Пётр Гуменник",
+     "Francois PITOT": "Francois Pitot",
+     "Nozomu YOSHIOKA": "Nozomu Yoshioka",
      "Lukas BRITSCHGI": "Lukas Britschgi",
      "Daniel GRASSL": "Daniel Grassl",
      "Kevin AYMOZ": "Kevin Aymoz",
@@ -72891,28 +72854,7 @@
      }
     }
    },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Rio Nakata",
-     "nation": "JPN",
-     "points": "175.43"
-    },
-    {
-     "place": 2,
-     "name": "Lukas Britschgi",
-     "nation": "SUI",
-     "points": "175.21"
-    },
-    {
-     "place": 3,
-     "name": "Владислав Дикиджи",
-     "nation": "RUS",
-     "points": "164.76"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:dance-junior-rt",
@@ -72926,7 +72868,9 @@
    "end": "2026-11-28T18:58:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
-   "broadcast": [],
+   "broadcast": [
+    "VK Видео"
+   ],
    "ours": [],
    "athletes": [
     "Алиса Борисова / Дмитрий Гладнев",
@@ -72946,7 +72890,13 @@
     "Полина Пунегова / Дмитрий Кашубин"
    ],
    "src": "https://fsperm.ru/2627/281126/",
-   "desc": "Начало: 16:48 МСК",
+   "watch": [
+    {
+     "name": "VK Видео",
+     "url": "https://vkvideo.ru/live-213287096_456239537"
+    }
+   ],
+   "desc": "Начало: 16:48 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Полина Афанасьева / Максим Кузнецов",
@@ -72991,36 +72941,52 @@
      "warmup": null
     },
     {
-     "name": "Алиса Кремер / Илья Целковский",
-     "nation": ""
-    },
-    {
-     "name": "Арина Кочурова / Иван Карелин",
-     "nation": ""
-    },
-    {
-     "name": "Екатерина Богданова / Ярослав Черняев",
-     "nation": ""
-    },
-    {
-     "name": "Екатерина Соболева / Вячеслав Безумов",
-     "nation": ""
-    },
-    {
-     "name": "Любовь Аникина / Степан Котельников",
-     "nation": ""
-    },
-    {
      "name": "Любовь Скрябина / Григорий Матвеев",
-     "nation": ""
-    },
-    {
-     "name": "Маргарита Иннокентьева Сырова / Илья Павлинов",
-     "nation": ""
+     "nation": "",
+     "no": 8,
+     "warmup": null
     },
     {
      "name": "Полина Пунегова / Дмитрий Кашубин",
-     "nation": ""
+     "nation": "",
+     "no": 9,
+     "warmup": null
+    },
+    {
+     "name": "Арина Кочурова / Иван Карелин",
+     "nation": "",
+     "no": 10,
+     "warmup": null
+    },
+    {
+     "name": "Екатерина Соболева / Вячеслав Безумов",
+     "nation": "",
+     "no": 11,
+     "warmup": null
+    },
+    {
+     "name": "Алиса Кремер / Илья Целковский",
+     "nation": "",
+     "no": 12,
+     "warmup": null
+    },
+    {
+     "name": "Маргарита Иннокентьева Сырова / Илья Павлинов",
+     "nation": "",
+     "no": 13,
+     "warmup": null
+    },
+    {
+     "name": "Екатерина Богданова / Ярослав Черняев",
+     "nation": "",
+     "no": 14,
+     "warmup": null
+    },
+    {
+     "name": "Любовь Аникина / Степан Котельников",
+     "nation": "",
+     "no": 15,
+     "warmup": null
     }
    ],
    "live": {
@@ -73029,21 +72995,21 @@
     "cat": null,
     "first": null,
     "names": {
+     "Алиса Максимовна КРЕМЕР / Илья Валерьевич ЦЕЛКОВСКИЙ": "Алиса Кремер / Илья Целковский",
      "Анна Александровна СОБОЛЕВА / Матвей Игоревич ЧУРАКОВ": "Анна Соболева / Матвей Чураков",
      "Милана Муратовна ЧЕГЕМОВА / Кирилл Сергеевич ЕВГРАФОВ": "Милана Чегемова / Кирилл Евграфов",
+     "Маргарита Иннокентьева СЫРОВА / Илья Петрович ПАВЛИНОВ": "Маргарита Иннокентьева Сырова / Илья Павлинов",
+     "Полина Владимировна ПУНЕГОВА / Дмитрий Александрович КАШУБИН": "Полина Пунегова / Дмитрий Кашубин",
      "Мария Александровна СЕМЁНОВА / Илья Андреевич ИВКИН": "Мария Семёнова / Илья Ивкин",
+     "Екатерина Алексеевна БОГДАНОВА / Ярослав Васильевич ЧЕРНЯЕВ": "Екатерина Богданова / Ярослав Черняев",
+     "Арина Константиновна КОЧУРОВА / Иван Яковлевич КАРЕЛИН": "Арина Кочурова / Иван Карелин",
+     "Любовь Александровна АНИКИНА / Степан Андреевич КОТЕЛЬНИКОВ": "Любовь Аникина / Степан Котельников",
+     "Любовь Сергеевна СКРЯБИНА / Григорий Дмитриевич МАТВЕЕВ": "Любовь Скрябина / Григорий Матвеев",
      "Полина Димитриевна АФАНАСЬЕВА / Максим Сергеевич КУЗНЕЦОВ": "Полина Афанасьева / Максим Кузнецов",
      "Варвара Сергеевна СТЕРЛЯДЕВА / Владислав Денисович МУХИН": "Варвара Стерлядева / Владислав Мухин",
      "Алиса Андреевна БОРИСОВА / Дмитрий Александрович ГЛАДНЕВ": "Алиса Борисова / Дмитрий Гладнев",
-     "Полина Сергеевна КАНЫГИНА / Никита Андреевич МАКСИМОВ": "Полина Каныгина / Никита Максимов",
-     "Любовь Сергеевна СКРЯБИНА / Григорий Дмитриевич МАТВЕЕВ": "Любовь Скрябина / Григорий Матвеев",
-     "Полина Владимировна ПУНЕГОВА / Дмитрий Александрович КАШУБИН": "Полина Пунегова / Дмитрий Кашубин",
-     "Арина Константиновна КОЧУРОВА / Иван Яковлевич КАРЕЛИН": "Арина Кочурова / Иван Карелин",
      "Екатерина Александровна СОБОЛЕВА / Вячеслав Романович БЕЗУМОВ": "Екатерина Соболева / Вячеслав Безумов",
-     "Алиса Максимовна КРЕМЕР / Илья Валерьевич ЦЕЛКОВСКИЙ": "Алиса Кремер / Илья Целковский",
-     "Маргарита Иннокентьева СЫРОВА / Илья Петрович ПАВЛИНОВ": "Маргарита Иннокентьева Сырова / Илья Павлинов",
-     "Екатерина Алексеевна БОГДАНОВА / Ярослав Васильевич ЧЕРНЯЕВ": "Екатерина Богданова / Ярослав Черняев",
-     "Любовь Александровна АНИКИНА / Степан Андреевич КОТЕЛЬНИКОВ": "Любовь Аникина / Степан Котельников"
+     "Полина Сергеевна КАНЫГИНА / Никита Андреевич МАКСИМОВ": "Полина Каныгина / Никита Максимов"
     },
     "basis": null
    },
@@ -73492,7 +73458,9 @@
    "end": "2026-11-28T20:28:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
-   "broadcast": [],
+   "broadcast": [
+    "VK Видео"
+   ],
    "ours": [],
    "athletes": [
     "Александра Прокопец / Александр Васькович",
@@ -73505,7 +73473,13 @@
     "Мария Иванова / Олег Мориц"
    ],
    "src": "https://fsperm.ru/2627/281126/",
-   "desc": "Начало: 19:23 МСК",
+   "watch": [
+    {
+     "name": "VK Видео",
+     "url": "https://vkvideo.ru/live-213287096_456239537"
+    }
+   ],
+   "desc": "Начало: 19:23 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Александра Прокопец / Александр Васькович",
@@ -73571,7 +73545,9 @@
    "end": "2026-11-28T23:00:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
-   "broadcast": [],
+   "broadcast": [
+    "VK Видео"
+   ],
    "ours": [],
    "athletes": [
     "Александра Пискотина",
@@ -73591,7 +73567,13 @@
     "Ульяна Третьякова"
    ],
    "src": "https://fsperm.ru/2627/281126/",
-   "desc": "Начало: 20:45 МСК",
+   "watch": [
+    {
+     "name": "VK Видео",
+     "url": "https://vkvideo.ru/live-213287096_456239537"
+    }
+   ],
+   "desc": "Начало: 20:45 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Александра Пискотина",
@@ -73906,7 +73888,9 @@
    "end": "2026-11-28T23:15:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
-   "broadcast": [],
+   "broadcast": [
+    "VK Видео"
+   ],
    "ours": [],
    "athletes": [
     "Дмитрий Железняк",
@@ -73915,7 +73899,13 @@
     "Станислав Гунтасов"
    ],
    "src": "https://fsperm.ru/2627/281126/",
-   "desc": "Начало: 22:40 МСК",
+   "watch": [
+    {
+     "name": "VK Видео",
+     "url": "https://vkvideo.ru/live-213287096_456239537"
+    }
+   ],
+   "desc": "Начало: 22:40 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Дмитрий Железняк",
@@ -74670,7 +74660,9 @@
    "end": "2026-11-29T15:55:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
-   "broadcast": [],
+   "broadcast": [
+    "VK Видео"
+   ],
    "ours": [],
    "athletes": [
     "Алиса Борисова / Дмитрий Гладнев",
@@ -74690,7 +74682,13 @@
     "Полина Пунегова / Дмитрий Кашубин"
    ],
    "src": "https://fsperm.ru/2627/281126/",
-   "desc": "Начало: 13:30 МСК",
+   "watch": [
+    {
+     "name": "VK Видео",
+     "url": "https://vkvideo.ru/live-213287096_456239538"
+    }
+   ],
+   "desc": "Начало: 13:30 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Алиса Борисова / Дмитрий Гладнев",
@@ -74835,6 +74833,93 @@
    "proto": "gs_skate-celje.json"
   },
   {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:dance-senior-pt",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "dance",
+   "level": "senior",
+   "seg": "ПТ",
+   "title": "Посвященные государственности Удмуртии — танцы ПТ",
+   "start": "2026-11-29T16:05:00+03:00",
+   "end": "2026-11-29T17:15:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [
+    "VK Видео"
+   ],
+   "ours": [],
+   "athletes": [
+    "Александра Прокопец / Александр Васькович",
+    "Алиса Крайнюкова / Семен Нетсев",
+    "Ангелина Сенько / Вадим Кайзер",
+    "Анна Смирнова / Богдан Шамков",
+    "Валерия Бугаевская / Егор Козлов",
+    "Диана Арнет / Мирон Суслов",
+    "Ирина Кузнецова / Андрей Тихомиров",
+    "Мария Иванова / Олег Мориц"
+   ],
+   "src": "https://fsperm.ru/2627/281126/",
+   "watch": [
+    {
+     "name": "VK Видео",
+     "url": "https://vkvideo.ru/live-213287096_456239538"
+    }
+   ],
+   "desc": "Начало: 16:05 МСК\nТрансляция: VK Видео",
+   "field": [
+    {
+     "name": "Александра Прокопец / Александр Васькович",
+     "nation": ""
+    },
+    {
+     "name": "Алиса Крайнюкова / Семен Нетсев",
+     "nation": ""
+    },
+    {
+     "name": "Ангелина Сенько / Вадим Кайзер",
+     "nation": ""
+    },
+    {
+     "name": "Анна Смирнова / Богдан Шамков",
+     "nation": ""
+    },
+    {
+     "name": "Валерия Бугаевская / Егор Козлов",
+     "nation": ""
+    },
+    {
+     "name": "Диана Арнет / Мирон Суслов",
+     "nation": ""
+    },
+    {
+     "name": "Ирина Кузнецова / Андрей Тихомиров",
+     "nation": ""
+    },
+    {
+     "name": "Мария Иванова / Олег Мориц",
+     "nation": ""
+    }
+   ],
+   "live": {
+    "idx": "https://fsperm.ru/2627/281126/",
+    "seg": "https://fsperm.ru/2627/281126/SEG016.HTM",
+    "cat": "https://fsperm.ru/2627/281126/CAT008RS.HTM",
+    "first": "https://fsperm.ru/2627/281126/SEG015.HTM",
+    "names": {
+     "Диана Артуровна АРНЕТ / Мирон Игоревич СУСЛОВ": "Диана Арнет / Мирон Суслов",
+     "Валерия Олеговна БУГАЕВСКАЯ / Егор Петрович КОЗЛОВ": "Валерия Бугаевская / Егор Козлов",
+     "Мария Олеговна ИВАНОВА / Олег Станиславович МОРИЦ": "Мария Иванова / Олег Мориц",
+     "Алиса Константиновна КРАЙНЮКОВА / Семен Романович НЕТСЕВ": "Алиса Крайнюкова / Семен Нетсев",
+     "Ирина Игоревна КУЗНЕЦОВА / Андрей Станиславович ТИХОМИРОВ": "Ирина Кузнецова / Андрей Тихомиров",
+     "Александра Викторовна ПРОКОПЕЦ / Александр Ильич ВАСЬКОВИЧ": "Александра Прокопец / Александр Васькович",
+     "Ангелина Дмитриевна СЕНЬКО / Вадим Павлович КАЙЗЕР": "Ангелина Сенько / Вадим Кайзер",
+     "Анна Алексеевна СМИРНОВА / Богдан Алексеевич ШАМКОВ": "Анна Смирнова / Богдан Шамков"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
+  },
+  {
    "id": "gs:skate-celje:women-senior-pp",
    "tid": "gs:skate-celje",
    "tournament": "Skate Celje",
@@ -74943,163 +75028,6 @@
    "proto": "gs_skate-celje.json"
   },
   {
-   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:dance-senior-pt",
-   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
-   "tournament": "Посвященные государственности Удмуртии",
-   "kind": "dance",
-   "level": "senior",
-   "seg": "ПТ",
-   "title": "Посвященные государственности Удмуртии — танцы ПТ",
-   "start": "2026-11-29T16:25:00+03:00",
-   "end": "2026-11-29T17:35:00+03:00",
-   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
-   "intl": false,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Александра Прокопец / Александр Васькович",
-    "Алиса Крайнюкова / Семен Нетсев",
-    "Ангелина Сенько / Вадим Кайзер",
-    "Анна Смирнова / Богдан Шамков",
-    "Валерия Бугаевская / Егор Козлов",
-    "Диана Арнет / Мирон Суслов",
-    "Ирина Кузнецова / Андрей Тихомиров",
-    "Мария Иванова / Олег Мориц"
-   ],
-   "src": "https://fsperm.ru/2627/281126/",
-   "desc": "Начало: 16:25 МСК",
-   "field": [
-    {
-     "name": "Александра Прокопец / Александр Васькович",
-     "nation": ""
-    },
-    {
-     "name": "Алиса Крайнюкова / Семен Нетсев",
-     "nation": ""
-    },
-    {
-     "name": "Ангелина Сенько / Вадим Кайзер",
-     "nation": ""
-    },
-    {
-     "name": "Анна Смирнова / Богдан Шамков",
-     "nation": ""
-    },
-    {
-     "name": "Валерия Бугаевская / Егор Козлов",
-     "nation": ""
-    },
-    {
-     "name": "Диана Арнет / Мирон Суслов",
-     "nation": ""
-    },
-    {
-     "name": "Ирина Кузнецова / Андрей Тихомиров",
-     "nation": ""
-    },
-    {
-     "name": "Мария Иванова / Олег Мориц",
-     "nation": ""
-    }
-   ],
-   "live": {
-    "idx": "https://fsperm.ru/2627/281126/",
-    "seg": "https://fsperm.ru/2627/281126/SEG016.HTM",
-    "cat": "https://fsperm.ru/2627/281126/CAT008RS.HTM",
-    "first": "https://fsperm.ru/2627/281126/SEG015.HTM",
-    "names": {
-     "Диана Артуровна АРНЕТ / Мирон Игоревич СУСЛОВ": "Диана Арнет / Мирон Суслов",
-     "Валерия Олеговна БУГАЕВСКАЯ / Егор Петрович КОЗЛОВ": "Валерия Бугаевская / Егор Козлов",
-     "Мария Олеговна ИВАНОВА / Олег Станиславович МОРИЦ": "Мария Иванова / Олег Мориц",
-     "Алиса Константиновна КРАЙНЮКОВА / Семен Романович НЕТСЕВ": "Алиса Крайнюкова / Семен Нетсев",
-     "Ирина Игоревна КУЗНЕЦОВА / Андрей Станиславович ТИХОМИРОВ": "Ирина Кузнецова / Андрей Тихомиров",
-     "Александра Викторовна ПРОКОПЕЦ / Александр Ильич ВАСЬКОВИЧ": "Александра Прокопец / Александр Васькович",
-     "Ангелина Дмитриевна СЕНЬКО / Вадим Павлович КАЙЗЕР": "Ангелина Сенько / Вадим Кайзер",
-     "Анна Алексеевна СМИРНОВА / Богдан Алексеевич ШАМКОВ": "Анна Смирнова / Богдан Шамков"
-    },
-    "basis": null
-   },
-   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
-  },
-  {
-   "id": "gs:skate-celje:men-senior-pp",
-   "tid": "gs:skate-celje",
-   "tournament": "Skate Celje",
-   "kind": "men",
-   "level": "senior",
-   "seg": "ПП",
-   "title": "Skate Celje — мужчины ПП",
-   "start": "2026-11-29T18:00:00+03:00",
-   "end": "2026-11-29T19:05:00+03:00",
-   "venue": "Celje, Slovenia",
-   "intl": true,
-   "broadcast": [],
-   "ours": [
-    {
-     "name": "Лев Лазарев",
-     "nation": "RUS"
-    }
-   ],
-   "athletes": [
-    "Alessandro Liberatore",
-    "Anton Skoficz",
-    "David Sedej",
-    "Furkan Emre Incel",
-    "Mikayel Salazaryan",
-    "Лев Лазарев",
-    "Макар Николаев"
-   ],
-   "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 18:00 МСК",
-   "field": [
-    {
-     "name": "Alessandro Liberatore",
-     "nation": "SLO"
-    },
-    {
-     "name": "Anton Skoficz",
-     "nation": "AUT"
-    },
-    {
-     "name": "David Sedej",
-     "nation": "SLO"
-    },
-    {
-     "name": "Furkan Emre Incel",
-     "nation": "TUR"
-    },
-    {
-     "name": "Mikayel Salazaryan",
-     "nation": "ARM"
-    },
-    {
-     "name": "Лев Лазарев",
-     "nation": "RUS"
-    },
-    {
-     "name": "Макар Николаев",
-     "nation": "GEO"
-    }
-   ],
-   "live": {
-    "idx": "https://dev.mbit.si/EC/skcel2026/index.htm",
-    "seg": "https://dev.mbit.si/EC/skcel2026/SEG002.htm",
-    "cat": "https://dev.mbit.si/EC/skcel2026/CAT001RS.htm",
-    "first": "https://dev.mbit.si/EC/skcel2026/SEG001.htm",
-    "names": {
-     "Furkan Emre INCEL": "Furkan Emre Incel",
-     "Lev LAZAREV": "Лев Лазарев",
-     "Alessandro LIBERATORE": "Alessandro Liberatore",
-     "Makar NIKOLAEV": "Макар Николаев",
-     "Mikayel SALAZARYAN": "Mikayel Salazaryan",
-     "David SEDEJ": "David Sedej",
-     "Anton SKOFICZ": "Anton Skoficz"
-    },
-    "basis": null
-   },
-   "proto": "gs_skate-celje.json"
-  },
-  {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:women-senior-pp",
    "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
    "tournament": "Посвященные государственности Удмуртии",
@@ -75107,11 +75035,13 @@
    "level": "senior",
    "seg": "ПП",
    "title": "Посвященные государственности Удмуртии — женщины ПП",
-   "start": "2026-11-29T18:10:00+03:00",
-   "end": "2026-11-29T20:40:00+03:00",
+   "start": "2026-11-29T17:40:00+03:00",
+   "end": "2026-11-29T20:10:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
-   "broadcast": [],
+   "broadcast": [
+    "VK Видео"
+   ],
    "ours": [],
    "athletes": [
     "Александра Пискотина",
@@ -75131,7 +75061,13 @@
     "Ульяна Третьякова"
    ],
    "src": "https://fsperm.ru/2627/281126/",
-   "desc": "Начало: 18:10 МСК",
+   "watch": [
+    {
+     "name": "VK Видео",
+     "url": "https://vkvideo.ru/live-213287096_456239538"
+    }
+   ],
+   "desc": "Начало: 17:40 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Александра Пискотина",
@@ -75221,6 +75157,84 @@
    "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
   },
   {
+   "id": "gs:skate-celje:men-senior-pp",
+   "tid": "gs:skate-celje",
+   "tournament": "Skate Celje",
+   "kind": "men",
+   "level": "senior",
+   "seg": "ПП",
+   "title": "Skate Celje — мужчины ПП",
+   "start": "2026-11-29T18:00:00+03:00",
+   "end": "2026-11-29T19:05:00+03:00",
+   "venue": "Celje, Slovenia",
+   "intl": true,
+   "broadcast": [],
+   "ours": [
+    {
+     "name": "Лев Лазарев",
+     "nation": "RUS"
+    }
+   ],
+   "athletes": [
+    "Alessandro Liberatore",
+    "Anton Skoficz",
+    "David Sedej",
+    "Furkan Emre Incel",
+    "Mikayel Salazaryan",
+    "Лев Лазарев",
+    "Макар Николаев"
+   ],
+   "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
+   "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 18:00 МСК",
+   "field": [
+    {
+     "name": "Alessandro Liberatore",
+     "nation": "SLO"
+    },
+    {
+     "name": "Anton Skoficz",
+     "nation": "AUT"
+    },
+    {
+     "name": "David Sedej",
+     "nation": "SLO"
+    },
+    {
+     "name": "Furkan Emre Incel",
+     "nation": "TUR"
+    },
+    {
+     "name": "Mikayel Salazaryan",
+     "nation": "ARM"
+    },
+    {
+     "name": "Лев Лазарев",
+     "nation": "RUS"
+    },
+    {
+     "name": "Макар Николаев",
+     "nation": "GEO"
+    }
+   ],
+   "live": {
+    "idx": "https://dev.mbit.si/EC/skcel2026/index.htm",
+    "seg": "https://dev.mbit.si/EC/skcel2026/SEG002.htm",
+    "cat": "https://dev.mbit.si/EC/skcel2026/CAT001RS.htm",
+    "first": "https://dev.mbit.si/EC/skcel2026/SEG001.htm",
+    "names": {
+     "Furkan Emre INCEL": "Furkan Emre Incel",
+     "Lev LAZAREV": "Лев Лазарев",
+     "Alessandro LIBERATORE": "Alessandro Liberatore",
+     "Makar NIKOLAEV": "Макар Николаев",
+     "Mikayel SALAZARYAN": "Mikayel Salazaryan",
+     "David SEDEJ": "David Sedej",
+     "Anton SKOFICZ": "Anton Skoficz"
+    },
+    "basis": null
+   },
+   "proto": "gs_skate-celje.json"
+  },
+  {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:men-senior-pp",
    "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
    "tournament": "Посвященные государственности Удмуртии",
@@ -75228,11 +75242,13 @@
    "level": "senior",
    "seg": "ПП",
    "title": "Посвященные государственности Удмуртии — мужчины ПП",
-   "start": "2026-11-29T20:45:00+03:00",
-   "end": "2026-11-29T21:20:00+03:00",
+   "start": "2026-11-29T20:15:00+03:00",
+   "end": "2026-11-29T20:50:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
-   "broadcast": [],
+   "broadcast": [
+    "VK Видео"
+   ],
    "ours": [],
    "athletes": [
     "Дмитрий Железняк",
@@ -75241,7 +75257,13 @@
     "Станислав Гунтасов"
    ],
    "src": "https://fsperm.ru/2627/281126/",
-   "desc": "Начало: 20:45 МСК",
+   "watch": [
+    {
+     "name": "VK Видео",
+     "url": "https://vkvideo.ru/live-213287096_456239538"
+    }
+   ],
+   "desc": "Начало: 20:15 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Дмитрий Железняк",
@@ -75287,7 +75309,9 @@
    "end": "2026-11-30T17:50:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
-   "broadcast": [],
+   "broadcast": [
+    "VK Видео"
+   ],
    "ours": [],
    "athletes": [
     "Агния Хазова",
@@ -75331,7 +75355,13 @@
     "Ярослава Баринова"
    ],
    "src": "https://fsperm.ru/2627/281126/",
-   "desc": "Начало: 12:00 МСК",
+   "watch": [
+    {
+     "name": "VK Видео",
+     "url": "https://vkvideo.ru/live-213287096_456239539"
+    }
+   ],
+   "desc": "Начало: 12:00 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Агния Хазова",
@@ -75552,7 +75582,9 @@
    "end": "2026-11-30T18:25:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
-   "broadcast": [],
+   "broadcast": [
+    "VK Видео"
+   ],
    "ours": [],
    "athletes": [
     "Артем Ермолаев",
@@ -75569,7 +75601,13 @@
     "Яромир Фураев"
    ],
    "src": "https://fsperm.ru/2627/281126/",
-   "desc": "Начало: 16:55 МСК",
+   "watch": [
+    {
+     "name": "VK Видео",
+     "url": "https://vkvideo.ru/live-213287096_456239539"
+    }
+   ],
+   "desc": "Начало: 16:55 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Артем Ермолаев",
@@ -75655,7 +75693,9 @@
    "end": "2026-12-01T18:55:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
-   "broadcast": [],
+   "broadcast": [
+    "VK Видео"
+   ],
    "ours": [],
    "athletes": [
     "Агния Хазова",
@@ -75699,7 +75739,13 @@
     "Ярослава Баринова"
    ],
    "src": "https://fsperm.ru/2627/281126/",
-   "desc": "Начало: 12:30 МСК",
+   "watch": [
+    {
+     "name": "VK Видео",
+     "url": "https://vkvideo.ru/live-213287096_456239540"
+    }
+   ],
+   "desc": "Начало: 12:30 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Агния Хазова",
@@ -75920,7 +75966,9 @@
    "end": "2026-12-01T17:40:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
-   "broadcast": [],
+   "broadcast": [
+    "VK Видео"
+   ],
    "ours": [],
    "athletes": [
     "Артем Ермолаев",
@@ -75937,7 +75985,13 @@
     "Яромир Фураев"
    ],
    "src": "https://fsperm.ru/2627/281126/",
-   "desc": "Начало: 15:55 МСК",
+   "watch": [
+    {
+     "name": "VK Видео",
+     "url": "https://vkvideo.ru/live-213287096_456239540"
+    }
+   ],
+   "desc": "Начало: 15:55 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Артем Ермолаев",
@@ -126902,5 +126956,5 @@
   "Ярослав Нечаев": "photos/df55625c66ca78c1.jpg",
   "Ясмина Кадырова": ""
  },
- "rev": "023dc3c17a187249"
+ "rev": "1996a25cc94ffbbd"
 }
