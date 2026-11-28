@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T06:47:48+03:00",
- "checked": "2026-11-28T06:47:48+03:00",
+ "checked": "2026-11-28T04:07:14.451402+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -71257,24 +71257,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Olivia Smart / Tim Dieck",
+     "nation": "ESP",
+     "points": "110.76"
+    },
+    {
+     "place": 2,
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN",
      "points": "103.99"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
      "points": "102.43"
-    },
-    {
-     "place": 3,
-     "name": "Ikura Kushida / Koshiro Shimada",
-     "nation": "JPN",
-     "points": "97.57"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Yuka Orihara / Juho Pirinen — 103.99\n2. Marjorie Lajoie / Jean-Luc Baker — 102.43\n3. Ikura Kushida / Koshiro Shimada — 97.57\n\nНачало: 06:05 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Olivia Smart / Tim Dieck — 110.76\n2. Yuka Orihara / Juho Pirinen — 103.99\n3. Marjorie Lajoie / Jean-Luc Baker — 102.43\n\nНачало: 06:05 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Christina Carreira / Anthony Ponomarenko",
@@ -71293,7 +71293,7 @@
     {
      "name": "Ikura Kushida / Koshiro Shimada",
      "nation": "JPN",
-     "place": 3,
+     "place": 4,
      "points": "97.57",
      "time": "06:19",
      "no": 2,
@@ -71309,7 +71309,7 @@
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
-     "place": 2,
+     "place": 3,
      "points": "102.43",
      "time": "06:27",
      "no": 3,
@@ -71320,12 +71320,14 @@
      "nation": "ESP",
      "time": "06:50",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "110.76"
     },
     {
      "name": "Rika Kihira / Shingo Nishiyama",
      "nation": "JPN",
-     "place": 4,
+     "place": 5,
      "points": "91.87",
      "time": "06:12",
      "no": 1,
@@ -71334,7 +71336,7 @@
     {
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN",
-     "place": 1,
+     "place": 2,
      "points": "103.99",
      "time": "06:35",
      "no": 4,
@@ -124917,5 +124919,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "68fcfd36508fa507"
+ "rev": "2fe93814afe4ab5b"
 }
