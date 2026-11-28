@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-28T09:57:03+03:00",
- "checked": "2026-11-28T08:15:27.115647+00:00",
- "complete": false,
+ "generated": "2026-11-28T10:59:52+03:00",
+ "checked": "2026-11-28T10:59:52+03:00",
+ "complete": true,
  "epoch": 1,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
-  "Golden Skate": "fail",
+  "Golden Skate": "ok",
   "ФФКМ": "ok",
   "Самара": "ok"
  },
@@ -71635,9 +71635,9 @@
    },
    "facts": [
     {
-     "who": "Minerva Fabienne Hase / Nikita Volodin",
+     "kind": "score",
      "text": "Лучшая в мире оценка сезона за ПП: 137.87",
-     "kind": "score"
+     "who": "Minerva Fabienne Hase / Nikita Volodin"
     },
     {
      "kind": "place",
@@ -71667,6 +71667,8 @@
     {
      "name": "Виктория Сафонова",
      "nation": "BLR",
+     "place": 2,
+     "points": "116.59",
      "time": "11:01",
      "no": 4,
      "warmup": 1,
@@ -71712,32 +71714,43 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/watch?v=Myz2X9hQz-c"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sarah Everhardt — 126.11\n2. Аделия Петросян — 121.62\n3. Виктория Сафонова — 116.59\n\nРоссияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
+   "podium": [
     {
+     "place": 1,
      "name": "Sarah Everhardt",
      "nation": "USA",
-     "time": "10:38",
-     "no": 1,
-     "warmup": 1,
-     "place": 1,
      "points": "126.11"
     },
     {
-     "name": "Kimmy Repond",
-     "nation": "SUI",
-     "time": "10:45",
-     "no": 2,
-     "warmup": 1,
-     "place": 5,
-     "points": "112.15"
+     "place": 2,
+     "name": "Виктория Сафонова",
+     "nation": "BLR",
+     "points": "116.59"
+    },
+    {
+     "place": 3,
+     "name": "Julia Sauter",
+     "nation": "ROU",
+     "points": "114.38"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Sarah Everhardt — 126.11\n2. Виктория Сафонова — 116.59\n3. Julia Sauter — 114.38\n\nРоссияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Jia Shin",
+     "nation": "KOR",
+     "time": "12:04",
+     "no": 11,
+     "warmup": 2
     },
     {
      "name": "Julia Sauter",
      "nation": "ROU",
+     "place": 3,
+     "points": "114.38",
      "time": "10:53",
      "no": 3,
      "warmup": 1,
@@ -71745,22 +71758,13 @@
      "points": "114.38"
     },
     {
-     "name": "Виктория Сафонова",
-     "nation": "BLR",
-     "time": "11:01",
-     "no": 4,
-     "warmup": 1,
-     "place": 3,
-     "points": "116.59"
-    },
-    {
-     "name": "Аделия Петросян",
-     "nation": "RUS",
-     "time": "11:08",
-     "no": 5,
-     "warmup": 1,
-     "place": 2,
-     "points": "121.62"
+     "name": "Kimmy Repond",
+     "nation": "SUI",
+     "place": 4,
+     "points": "112.15",
+     "time": "10:45",
+     "no": 2,
+     "warmup": 1
     },
     {
      "name": "Madeline Schizas",
@@ -71770,18 +71774,27 @@
      "warmup": 1
     },
     {
-     "name": "Yuna Aoki",
-     "nation": "JPN",
-     "time": "11:32",
-     "no": 7,
-     "warmup": 2
-    },
-    {
      "name": "Mako Yamashita",
      "nation": "JPN",
      "time": "11:40",
      "no": 8,
      "warmup": 2
+    },
+    {
+     "name": "Mone Chiba",
+     "nation": "JPN",
+     "time": "12:12",
+     "no": 12,
+     "warmup": 2
+    },
+    {
+     "name": "Sarah Everhardt",
+     "nation": "USA",
+     "place": 1,
+     "points": "126.11",
+     "time": "10:38",
+     "no": 1,
+     "warmup": 1
     },
     {
      "name": "Young You",
@@ -71791,6 +71804,20 @@
      "warmup": 2
     },
     {
+     "name": "Yuna Aoki",
+     "nation": "JPN",
+     "time": "11:32",
+     "no": 7,
+     "warmup": 2
+    },
+    {
+     "name": "Аделия Петросян",
+     "nation": "RUS",
+     "time": "11:08",
+     "no": 5,
+     "warmup": 1
+    },
+    {
      "name": "Алина Горбачёва",
      "nation": "RUS",
      "time": "11:56",
@@ -71798,20 +71825,16 @@
      "warmup": 2
     },
     {
-     "name": "Jia Shin",
-     "nation": "KOR",
-     "time": "12:04",
-     "no": 11,
-     "warmup": 2
-    },
-    {
-     "name": "Mone Chiba",
-     "nation": "JPN",
-     "time": "12:12",
-     "no": 12,
-     "warmup": 2
+     "name": "Виктория Сафонова",
+     "nation": "BLR",
+     "place": 2,
+     "points": "116.59",
+     "time": "11:01",
+     "no": 4,
+     "warmup": 1
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG004.htm",
@@ -71819,9 +71842,9 @@
     "first": "https://results.isu.org/results/season2627/gpjpn2026/SEG003.htm",
     "names": {
      "Sarah EVERHARDT": "Sarah Everhardt",
-     "Kimmy REPOND": "Kimmy Repond",
-     "Julia SAUTER": "Julia Sauter",
      "Viktoriia SAFONOVA": "Виктория Сафонова",
+     "Julia SAUTER": "Julia Sauter",
+     "Kimmy REPOND": "Kimmy Repond",
      "Adeliia PETROSIAN": "Аделия Петросян",
      "Madeline SCHIZAS": "Madeline Schizas",
      "Yuna AOKI": "Yuna Aoki",
@@ -71833,28 +71856,7 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Sarah Everhardt",
-     "nation": "USA",
-     "points": "126.11"
-    },
-    {
-     "place": 2,
-     "name": "Аделия Петросян",
-     "nation": "RUS",
-     "points": "121.62"
-    },
-    {
-     "place": 3,
-     "name": "Виктория Сафонова",
-     "nation": "BLR",
-     "points": "116.59"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "gs:skate-celje:women-junior-kp",
@@ -71918,7 +71920,6 @@
     "Roos Harkema",
     "Summer Wijkhuizen",
     "Tamara Grahovac",
-    "Tara Plahutar",
     "Teresa Naia Eder",
     "Tereza Havrankova",
     "Tiana Kaligaro",
@@ -71934,133 +71935,72 @@
     "Алиса Заикина"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
-   "desc": "Россияне:\n• Алиса Заикина — 16:47\n\nНачало: 10:30 МСК",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Varvara Abramkina",
+     "nation": "BUL",
+     "points": "57.70"
+    },
+    {
+     "place": 2,
+     "name": "Aleksandra Janikowska",
+     "nation": "POL",
+     "points": "53.39"
+    },
+    {
+     "place": 3,
+     "name": "Neea Haapala",
+     "nation": "FIN",
+     "points": "50.76"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Varvara Abramkina — 57.70\n2. Aleksandra Janikowska — 53.39\n3. Neea Haapala — 50.76\n\nРоссияне:\n• Алиса Заикина — 16:47\n\nНачало: 10:30 МСК",
    "field": [
     {
      "name": "Djurdja Nikolic",
      "nation": "SRB",
-     "time": "10:36",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 4,
+     "points": "29.06",
+     "time": "10:36"
     },
     {
      "name": "Varvara Abramkina",
      "nation": "BUL",
-     "time": "10:42",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "57.70",
+     "time": "10:42"
     },
     {
      "name": "Enja Sivic",
      "nation": "SLO",
-     "time": "10:47",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 5,
+     "points": "28.98",
+     "time": "10:47"
     },
     {
      "name": "Aleksandra Janikowska",
      "nation": "POL",
-     "time": "10:53",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "53.39",
+     "time": "10:53"
     },
     {
      "name": "Neea Haapala",
      "nation": "FIN",
-     "time": "10:58",
      "no": 5,
-     "warmup": 1
-    },
-    {
-     "name": "Liana Smrekar",
-     "nation": "SLO",
-     "time": "11:08",
-     "no": 6,
-     "warmup": 2
-    },
-    {
-     "name": "Tara Plahutar",
-     "nation": "CRO",
-     "time": "11:13",
-     "no": 7,
-     "warmup": 2
-    },
-    {
-     "name": "Ekaterina Balaganskaia",
-     "nation": "SRB",
-     "time": "11:19",
-     "no": 8,
-     "warmup": 2
-    },
-    {
-     "name": "Ketevan Makharadze",
-     "nation": "GEO",
-     "time": "11:24",
-     "no": 9,
-     "warmup": 2
-    },
-    {
-     "name": "Mariia Sannikova",
-     "nation": "KAZ",
-     "time": "11:30",
-     "no": 10,
-     "warmup": 2
-    },
-    {
-     "name": "Katarina Fedorova Coelho",
-     "nation": "POR",
-     "time": "11:35",
-     "no": 11,
-     "warmup": 2
-    },
-    {
-     "name": "Angelica Orsi",
-     "nation": "ITA",
-     "time": "11:59",
-     "no": 12,
-     "warmup": 3
-    },
-    {
-     "name": "Tiana Kaligaro",
-     "nation": "SLO",
-     "time": "12:05",
-     "no": 13,
-     "warmup": 3
-    },
-    {
-     "name": "Zala Grum",
-     "nation": "SLO",
-     "time": "12:10",
-     "no": 14,
-     "warmup": 3
-    },
-    {
-     "name": "Jazlynn Höppener",
-     "nation": "NED",
-     "time": "12:16",
-     "no": 15,
-     "warmup": 3
-    },
-    {
-     "name": "Tamara Grahovac",
-     "nation": "CRO",
-     "time": "12:21",
-     "no": 16,
-     "warmup": 3
-    },
-    {
-     "name": "Leyla Tosun",
-     "nation": "GER",
-     "time": "12:27",
-     "no": 17,
-     "warmup": 3
-    },
-    {
-     "name": "Angel Delevaque",
-     "nation": "NED",
-     "time": "12:36",
-     "no": 18,
-     "warmup": 4
+     "warmup": 1,
+     "place": 3,
+     "points": "50.76",
+     "time": "10:58"
     },
     {
      "name": "Ajda Preskar",
@@ -72070,11 +72010,11 @@
      "warmup": 4
     },
     {
-     "name": "Lajla Mucic",
-     "nation": "BIH",
-     "time": "12:47",
-     "no": 20,
-     "warmup": 4
+     "name": "Alica Lengyelova",
+     "nation": "SVK",
+     "time": "15:02",
+     "no": 37,
+     "warmup": 7
     },
     {
      "name": "Andreea Cristiana Maria Lazar",
@@ -72084,122 +72024,24 @@
      "warmup": 4
     },
     {
-     "name": "Nina Lazarevic",
-     "nation": "SLO",
-     "time": "12:58",
-     "no": 22,
+     "name": "Angel Delevaque",
+     "nation": "NED",
+     "time": "12:36",
+     "no": 18,
      "warmup": 4
     },
     {
-     "name": "Minea Montonen",
-     "nation": "FIN",
-     "time": "13:04",
-     "no": 23,
-     "warmup": 4
+     "name": "Angelica Orsi",
+     "nation": "ITA",
+     "time": "11:59",
+     "no": 12,
+     "warmup": 3
     },
     {
-     "name": "Lija Kroselj",
-     "nation": "SLO",
-     "time": "13:28",
-     "no": 24,
-     "warmup": 5
-    },
-    {
-     "name": "Hana Operckal",
-     "nation": "SLO",
-     "time": "13:33",
-     "no": 25,
-     "warmup": 5
-    },
-    {
-     "name": "Polina Bykova",
-     "nation": "SLO",
-     "time": "13:39",
-     "no": 26,
-     "warmup": 5
-    },
-    {
-     "name": "Isabella Niederleitner",
-     "nation": "AUT",
-     "time": "13:44",
-     "no": 27,
-     "warmup": 5
-    },
-    {
-     "name": "Nika Sajko",
-     "nation": "CRO",
-     "time": "13:50",
-     "no": 28,
-     "warmup": 5
-    },
-    {
-     "name": "Summer Wijkhuizen",
-     "nation": "NED",
-     "time": "13:55",
-     "no": 29,
-     "warmup": 5
-    },
-    {
-     "name": "Julia Subocz",
-     "nation": "POL",
-     "time": "14:05",
-     "no": 30,
-     "warmup": 6
-    },
-    {
-     "name": "Hanna Elteto",
-     "nation": "HUN",
-     "time": "14:10",
-     "no": 31,
-     "warmup": 6
-    },
-    {
-     "name": "Veronika Taubeova",
-     "nation": "CZE",
-     "time": "14:16",
-     "no": 32,
-     "warmup": 6
-    },
-    {
-     "name": "Vita Kas",
-     "nation": "SLO",
-     "time": "14:21",
-     "no": 33,
-     "warmup": 6
-    },
-    {
-     "name": "Diana Marjanovic",
-     "nation": "SRB",
-     "time": "14:27",
-     "no": 34,
-     "warmup": 6
-    },
-    {
-     "name": "Roos Harkema",
-     "nation": "NED",
-     "time": "14:56",
-     "no": 36,
-     "warmup": 7
-    },
-    {
-     "name": "Alica Lengyelova",
-     "nation": "SVK",
-     "time": "15:02",
-     "no": 37,
-     "warmup": 7
-    },
-    {
-     "name": "Victoria Yonemori",
-     "nation": "AUT",
-     "time": "15:07",
-     "no": 38,
-     "warmup": 7
-    },
-    {
-     "name": "Milena Velcheva",
-     "nation": "BUL",
-     "time": "15:13",
-     "no": 39,
+     "name": "Anna Sannikova",
+     "nation": "KAZ",
+     "time": "15:24",
+     "no": 41,
      "warmup": 7
     },
     {
@@ -72210,24 +72052,205 @@
      "warmup": 7
     },
     {
-     "name": "Anna Sannikova",
-     "nation": "KAZ",
-     "time": "15:24",
-     "no": 41,
-     "warmup": 7
+     "name": "Diana Marjanovic",
+     "nation": "SRB",
+     "time": "14:27",
+     "no": 34,
+     "warmup": 6
     },
     {
-     "name": "Zala Kas",
+     "name": "Ekaterina Balaganskaia",
+     "nation": "SRB",
+     "time": "11:19",
+     "no": 8,
+     "warmup": 2
+    },
+    {
+     "name": "Emma Cerkalova",
+     "nation": "SVK",
+     "time": "16:30",
+     "no": 49,
+     "warmup": 9
+    },
+    {
+     "name": "Hana Operckal",
      "nation": "SLO",
-     "time": "15:33",
-     "no": 42,
-     "warmup": 8
+     "time": "13:33",
+     "no": 25,
+     "warmup": 5
+    },
+    {
+     "name": "Hanna Elteto",
+     "nation": "HUN",
+     "time": "14:10",
+     "no": 31,
+     "warmup": 6
+    },
+    {
+     "name": "Isabella Niederleitner",
+     "nation": "AUT",
+     "time": "13:44",
+     "no": 27,
+     "warmup": 5
+    },
+    {
+     "name": "Jazlynn Höppener",
+     "nation": "NED",
+     "time": "12:16",
+     "no": 15,
+     "warmup": 3
+    },
+    {
+     "name": "Julia Subocz",
+     "nation": "POL",
+     "time": "14:05",
+     "no": 30,
+     "warmup": 6
+    },
+    {
+     "name": "Julia Vaha-ruohola",
+     "nation": "FIN",
+     "no": 35,
+     "warmup": 6
+    },
+    {
+     "name": "Katarina Fedorova Coelho",
+     "nation": "POR",
+     "time": "11:35",
+     "no": 11,
+     "warmup": 2
+    },
+    {
+     "name": "Ketevan Makharadze",
+     "nation": "GEO",
+     "time": "11:24",
+     "no": 9,
+     "warmup": 2
+    },
+    {
+     "name": "Lajla Mucic",
+     "nation": "BIH",
+     "time": "12:47",
+     "no": 20,
+     "warmup": 4
+    },
+    {
+     "name": "Lara Achermann",
+     "nation": "NED",
+     "time": "16:52",
+     "no": 53,
+     "warmup": 9
+    },
+    {
+     "name": "Leyla Tosun",
+     "nation": "GER",
+     "time": "12:27",
+     "no": 17,
+     "warmup": 3
+    },
+    {
+     "name": "Liana Smrekar",
+     "nation": "SLO",
+     "time": "11:08",
+     "no": 6,
+     "warmup": 2
+    },
+    {
+     "name": "Lija Kroselj",
+     "nation": "SLO",
+     "time": "13:28",
+     "no": 24,
+     "warmup": 5
     },
     {
      "name": "Lucca Dijkhuizen",
      "nation": "NED",
      "time": "15:39",
      "no": 43,
+     "warmup": 8
+    },
+    {
+     "name": "Luna Rozman",
+     "nation": "SLO",
+     "time": "16:36",
+     "no": 50,
+     "warmup": 9
+    },
+    {
+     "name": "Mariia Sannikova",
+     "nation": "KAZ",
+     "time": "11:30",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Milena Velcheva",
+     "nation": "BUL",
+     "time": "15:13",
+     "no": 39,
+     "warmup": 7
+    },
+    {
+     "name": "Minea Montonen",
+     "nation": "FIN",
+     "time": "13:04",
+     "no": 23,
+     "warmup": 4
+    },
+    {
+     "name": "Neza Lusic",
+     "nation": "SLO",
+     "time": "16:25",
+     "no": 48,
+     "warmup": 9
+    },
+    {
+     "name": "Nika Sajko",
+     "nation": "CRO",
+     "time": "13:50",
+     "no": 28,
+     "warmup": 5
+    },
+    {
+     "name": "Nina Lazarevic",
+     "nation": "SLO",
+     "time": "12:58",
+     "no": 22,
+     "warmup": 4
+    },
+    {
+     "name": "Polina Bykova",
+     "nation": "SLO",
+     "time": "13:39",
+     "no": 26,
+     "warmup": 5
+    },
+    {
+     "name": "Roos Harkema",
+     "nation": "NED",
+     "time": "14:56",
+     "no": 36,
+     "warmup": 7
+    },
+    {
+     "name": "Summer Wijkhuizen",
+     "nation": "NED",
+     "time": "13:55",
+     "no": 29,
+     "warmup": 5
+    },
+    {
+     "name": "Tamara Grahovac",
+     "nation": "CRO",
+     "time": "12:21",
+     "no": 16,
+     "warmup": 3
+    },
+    {
+     "name": "Teresa Naia Eder",
+     "nation": "AUT",
+     "time": "15:50",
+     "no": 45,
      "warmup": 8
     },
     {
@@ -72238,11 +72261,11 @@
      "warmup": 8
     },
     {
-     "name": "Teresa Naia Eder",
-     "nation": "AUT",
-     "time": "15:50",
-     "no": 45,
-     "warmup": 8
+     "name": "Tiana Kaligaro",
+     "nation": "SLO",
+     "time": "12:05",
+     "no": 13,
+     "warmup": 3
     },
     {
      "name": "Varvara Poder",
@@ -72252,32 +72275,39 @@
      "warmup": 8
     },
     {
-     "name": "Zsofia Szeplaki",
-     "nation": "HUN",
-     "time": "16:01",
-     "no": 47,
+     "name": "Veronika Taubeova",
+     "nation": "CZE",
+     "time": "14:16",
+     "no": 32,
+     "warmup": 6
+    },
+    {
+     "name": "Victoria Yonemori",
+     "nation": "AUT",
+     "time": "15:07",
+     "no": 38,
+     "warmup": 7
+    },
+    {
+     "name": "Vita Kas",
+     "nation": "SLO",
+     "time": "14:21",
+     "no": 33,
+     "warmup": 6
+    },
+    {
+     "name": "Zala Grum",
+     "nation": "SLO",
+     "time": "12:10",
+     "no": 14,
+     "warmup": 3
+    },
+    {
+     "name": "Zala Kas",
+     "nation": "SLO",
+     "time": "15:33",
+     "no": 42,
      "warmup": 8
-    },
-    {
-     "name": "Neza Lusic",
-     "nation": "SLO",
-     "time": "16:25",
-     "no": 48,
-     "warmup": 9
-    },
-    {
-     "name": "Emma Cerkalova",
-     "nation": "SVK",
-     "time": "16:30",
-     "no": 49,
-     "warmup": 9
-    },
-    {
-     "name": "Luna Rozman",
-     "nation": "SLO",
-     "time": "16:36",
-     "no": 50,
-     "warmup": 9
     },
     {
      "name": "Zoja Zupancic Prevolsek",
@@ -72287,39 +72317,33 @@
      "warmup": 9
     },
     {
+     "name": "Zsofia Szeplaki",
+     "nation": "HUN",
+     "time": "16:01",
+     "no": 47,
+     "warmup": 8
+    },
+    {
      "name": "Алиса Заикина",
      "nation": "RUS",
      "time": "16:47",
      "no": 52,
      "warmup": 9
-    },
-    {
-     "name": "Lara Achermann",
-     "nation": "NED",
-     "time": "16:52",
-     "no": 53,
-     "warmup": 9
-    },
-    {
-     "name": "Julia Vaha-ruohola",
-     "nation": "FIN",
-     "no": 35,
-     "warmup": 6
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://dev.mbit.si/EC/skcel2026/index.htm",
     "seg": "https://dev.mbit.si/EC/skcel2026/SEG007.htm",
     "cat": null,
     "first": null,
     "names": {
-     "Djurdja NIKOLIC": "Djurdja Nikolic",
      "Varvara ABRAMKINA": "Varvara Abramkina",
-     "Enja SIVIC": "Enja Sivic",
      "Aleksandra JANIKOWSKA": "Aleksandra Janikowska",
      "Neea HAAPALA": "Neea Haapala",
+     "Djurdja NIKOLIC": "Djurdja Nikolic",
+     "Enja SIVIC": "Enja Sivic",
      "Liana SMREKAR": "Liana Smrekar",
-     "Tara PLAHUTAR": "Tara Plahutar",
      "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
      "Ketevan MAKHARADZE": "Ketevan Makharadze",
      "Mariia SANNIKOVA": "Mariia Sannikova",
@@ -72425,7 +72449,7 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/watch?v=Myz2X9hQz-c"
     }
    ],
    "desc": "Россияне:\n• Владислав Дикиджи — 14:01\n• Пётр Гуменник — 14:32\n\nНачало: 13:30 МСК\nТрансляция: Okko / YouTube ISU",
@@ -72547,15 +72571,117 @@
    "seg": "РТ",
    "title": "Посвященные государственности Удмуртии — юниорские танцы РТ",
    "start": "2026-11-28T13:45:00+03:00",
-   "end": "2026-11-28T16:05:00+03:00",
+   "end": "2026-11-28T15:55:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "athletes": [
+    "Алиса Борисова / Дмитрий Гладнев",
+    "Алиса Кремер / Илья Целковский",
+    "Анна Соболева / Матвей Чураков",
+    "Арина Кочурова / Иван Карелин",
+    "Варвара Стерлядева / Владислав Мухин",
+    "Екатерина Богданова / Ярослав Черняев",
+    "Екатерина Соболева / Вячеслав Безумов",
+    "Любовь Аникина / Степан Котельников",
+    "Любовь Скрябина / Григорий Матвеев",
+    "Маргарита Иннокентьева Сырова / Илья Павлинов",
+    "Мария Семёнова / Илья Ивкин",
+    "Милана Чегемова / Кирилл Евграфов",
+    "Полина Афанасьева / Максим Кузнецов",
+    "Полина Каныгина / Никита Максимов",
+    "Полина Пунегова / Дмитрий Кашубин"
+   ],
+   "src": "https://fsperm.ru/2627/281126/",
    "desc": "Начало: 13:45 МСК",
-   "proto": null
+   "field": [
+    {
+     "name": "Алиса Борисова / Дмитрий Гладнев",
+     "nation": ""
+    },
+    {
+     "name": "Алиса Кремер / Илья Целковский",
+     "nation": ""
+    },
+    {
+     "name": "Анна Соболева / Матвей Чураков",
+     "nation": ""
+    },
+    {
+     "name": "Арина Кочурова / Иван Карелин",
+     "nation": ""
+    },
+    {
+     "name": "Варвара Стерлядева / Владислав Мухин",
+     "nation": ""
+    },
+    {
+     "name": "Екатерина Богданова / Ярослав Черняев",
+     "nation": ""
+    },
+    {
+     "name": "Екатерина Соболева / Вячеслав Безумов",
+     "nation": ""
+    },
+    {
+     "name": "Любовь Аникина / Степан Котельников",
+     "nation": ""
+    },
+    {
+     "name": "Любовь Скрябина / Григорий Матвеев",
+     "nation": ""
+    },
+    {
+     "name": "Маргарита Иннокентьева Сырова / Илья Павлинов",
+     "nation": ""
+    },
+    {
+     "name": "Мария Семёнова / Илья Ивкин",
+     "nation": ""
+    },
+    {
+     "name": "Милана Чегемова / Кирилл Евграфов",
+     "nation": ""
+    },
+    {
+     "name": "Полина Афанасьева / Максим Кузнецов",
+     "nation": ""
+    },
+    {
+     "name": "Полина Каныгина / Никита Максимов",
+     "nation": ""
+    },
+    {
+     "name": "Полина Пунегова / Дмитрий Кашубин",
+     "nation": ""
+    }
+   ],
+   "live": {
+    "idx": "https://fsperm.ru/2627/281126/",
+    "seg": "https://fsperm.ru/2627/281126/SEG013.HTM",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Любовь Александровна АНИКИНА / Степан Андреевич КОТЕЛЬНИКОВ": "Любовь Аникина / Степан Котельников",
+     "Полина Димитриевна АФАНАСЬЕВА / Максим Сергеевич КУЗНЕЦОВ": "Полина Афанасьева / Максим Кузнецов",
+     "Екатерина Алексеевна БОГДАНОВА / Ярослав Васильевич ЧЕРНЯЕВ": "Екатерина Богданова / Ярослав Черняев",
+     "Алиса Андреевна БОРИСОВА / Дмитрий Александрович ГЛАДНЕВ": "Алиса Борисова / Дмитрий Гладнев",
+     "Полина Сергеевна КАНЫГИНА / Никита Андреевич МАКСИМОВ": "Полина Каныгина / Никита Максимов",
+     "Арина Константиновна КОЧУРОВА / Иван Яковлевич КАРЕЛИН": "Арина Кочурова / Иван Карелин",
+     "Алиса Максимовна КРЕМЕР / Илья Валерьевич ЦЕЛКОВСКИЙ": "Алиса Кремер / Илья Целковский",
+     "Полина Владимировна ПУНЕГОВА / Дмитрий Александрович КАШУБИН": "Полина Пунегова / Дмитрий Кашубин",
+     "Мария Александровна СЕМЁНОВА / Илья Андреевич ИВКИН": "Мария Семёнова / Илья Ивкин",
+     "Любовь Сергеевна СКРЯБИНА / Григорий Дмитриевич МАТВЕЕВ": "Любовь Скрябина / Григорий Матвеев",
+     "Анна Александровна СОБОЛЕВА / Матвей Игоревич ЧУРАКОВ": "Анна Соболева / Матвей Чураков",
+     "Екатерина Александровна СОБОЛЕВА / Вячеслав Романович БЕЗУМОВ": "Екатерина Соболева / Вячеслав Безумов",
+     "Варвара Сергеевна СТЕРЛЯДЕВА / Владислав Денисович МУХИН": "Варвара Стерлядева / Владислав Мухин",
+     "Маргарита Иннокентьева СЫРОВА / Илья Петрович ПАВЛИНОВ": "Маргарита Иннокентьева Сырова / Илья Павлинов",
+     "Милана Муратовна ЧЕГЕМОВА / Кирилл Сергеевич ЕВГРАФОВ": "Милана Чегемова / Кирилл Евграфов"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:dance-senior-rt",
@@ -72566,15 +72692,75 @@
    "seg": "РТ",
    "title": "Посвященные государственности Удмуртии — танцы РТ",
    "start": "2026-11-28T16:20:00+03:00",
-   "end": "2026-11-28T17:30:00+03:00",
+   "end": "2026-11-28T17:25:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "athletes": [
+    "Александра Прокопец / Александр Васькович",
+    "Алиса Крайнюкова / Семен Нетсев",
+    "Ангелина Сенько / Вадим Кайзер",
+    "Анна Смирнова / Богдан Шамков",
+    "Валерия Бугаевская / Егор Козлов",
+    "Диана Арнет / Мирон Суслов",
+    "Ирина Кузнецова / Андрей Тихомиров",
+    "Мария Иванова / Олег Мориц"
+   ],
+   "src": "https://fsperm.ru/2627/281126/",
    "desc": "Начало: 16:20 МСК",
-   "proto": null
+   "field": [
+    {
+     "name": "Александра Прокопец / Александр Васькович",
+     "nation": ""
+    },
+    {
+     "name": "Алиса Крайнюкова / Семен Нетсев",
+     "nation": ""
+    },
+    {
+     "name": "Ангелина Сенько / Вадим Кайзер",
+     "nation": ""
+    },
+    {
+     "name": "Анна Смирнова / Богдан Шамков",
+     "nation": ""
+    },
+    {
+     "name": "Валерия Бугаевская / Егор Козлов",
+     "nation": ""
+    },
+    {
+     "name": "Диана Арнет / Мирон Суслов",
+     "nation": ""
+    },
+    {
+     "name": "Ирина Кузнецова / Андрей Тихомиров",
+     "nation": ""
+    },
+    {
+     "name": "Мария Иванова / Олег Мориц",
+     "nation": ""
+    }
+   ],
+   "live": {
+    "idx": "https://fsperm.ru/2627/281126/",
+    "seg": "https://fsperm.ru/2627/281126/SEG015.HTM",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Диана Артуровна АРНЕТ / Мирон Игоревич СУСЛОВ": "Диана Арнет / Мирон Суслов",
+     "Валерия Олеговна БУГАЕВСКАЯ / Егор Петрович КОЗЛОВ": "Валерия Бугаевская / Егор Козлов",
+     "Мария Олеговна ИВАНОВА / Олег Станиславович МОРИЦ": "Мария Иванова / Олег Мориц",
+     "Алиса Константиновна КРАЙНЮКОВА / Семен Романович НЕТСЕВ": "Алиса Крайнюкова / Семен Нетсев",
+     "Ирина Игоревна КУЗНЕЦОВА / Андрей Станиславович ТИХОМИРОВ": "Ирина Кузнецова / Андрей Тихомиров",
+     "Александра Викторовна ПРОКОПЕЦ / Александр Ильич ВАСЬКОВИЧ": "Александра Прокопец / Александр Васькович",
+     "Ангелина Дмитриевна СЕНЬКО / Вадим Павлович КАЙЗЕР": "Ангелина Сенько / Вадим Кайзер",
+     "Анна Алексеевна СМИРНОВА / Богдан Алексеевич ШАМКОВ": "Анна Смирнова / Богдан Шамков"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
   },
   {
    "id": "gs:skate-celje:men-junior-kp",
@@ -73016,15 +73202,117 @@
    "seg": "КП",
    "title": "Посвященные государственности Удмуртии — женщины КП",
    "start": "2026-11-28T17:45:00+03:00",
-   "end": "2026-11-28T19:25:00+03:00",
+   "end": "2026-11-28T20:00:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "athletes": [
+    "Александра Пискотина",
+    "Анастасия Шигина",
+    "Ангелина Грачева",
+    "Анжелика Евтушенко",
+    "Валерия Мельникова",
+    "Вероника Попова",
+    "Виктория Русеева",
+    "Диана Евлахина",
+    "Екатерина Гайдукова",
+    "Мария Красноженова",
+    "Мария Парамонова",
+    "Милана Архипова",
+    "Полина Тимошенко",
+    "Полина Цурикова",
+    "Ульяна Третьякова"
+   ],
+   "src": "https://fsperm.ru/2627/281126/",
    "desc": "Начало: 17:45 МСК",
-   "proto": null
+   "field": [
+    {
+     "name": "Александра Пискотина",
+     "nation": ""
+    },
+    {
+     "name": "Анастасия Шигина",
+     "nation": ""
+    },
+    {
+     "name": "Ангелина Грачева",
+     "nation": ""
+    },
+    {
+     "name": "Анжелика Евтушенко",
+     "nation": ""
+    },
+    {
+     "name": "Валерия Мельникова",
+     "nation": ""
+    },
+    {
+     "name": "Вероника Попова",
+     "nation": ""
+    },
+    {
+     "name": "Виктория Русеева",
+     "nation": ""
+    },
+    {
+     "name": "Диана Евлахина",
+     "nation": ""
+    },
+    {
+     "name": "Екатерина Гайдукова",
+     "nation": ""
+    },
+    {
+     "name": "Мария Красноженова",
+     "nation": ""
+    },
+    {
+     "name": "Мария Парамонова",
+     "nation": ""
+    },
+    {
+     "name": "Милана Архипова",
+     "nation": ""
+    },
+    {
+     "name": "Полина Тимошенко",
+     "nation": ""
+    },
+    {
+     "name": "Полина Цурикова",
+     "nation": ""
+    },
+    {
+     "name": "Ульяна Третьякова",
+     "nation": ""
+    }
+   ],
+   "live": {
+    "idx": "https://fsperm.ru/2627/281126/",
+    "seg": "https://fsperm.ru/2627/281126/SEG005.HTM",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Милана Андреевна АРХИПОВА": "Милана Архипова",
+     "Екатерина Олеговна ГАЙДУКОВА": "Екатерина Гайдукова",
+     "Ангелина Олеговна ГРАЧЕВА": "Ангелина Грачева",
+     "Диана Викторовна ЕВЛАХИНА": "Диана Евлахина",
+     "Анжелика Павловна ЕВТУШЕНКО": "Анжелика Евтушенко",
+     "Мария Алексеевна КРАСНОЖЕНОВА": "Мария Красноженова",
+     "Валерия Павловна МЕЛЬНИКОВА": "Валерия Мельникова",
+     "Мария Витальевна ПАРАМОНОВА": "Мария Парамонова",
+     "Александра Дмитриевна ПИСКОТИНА": "Александра Пискотина",
+     "Вероника Владимировна ПОПОВА": "Вероника Попова",
+     "Виктория Сергеевна РУСЕЕВА": "Виктория Русеева",
+     "Полина Сергеевна ТИМОШЕНКО": "Полина Тимошенко",
+     "Ульяна Олеговна ТРЕТЬЯКОВА": "Ульяна Третьякова",
+     "Полина Александровна ЦУРИКОВА": "Полина Цурикова",
+     "Анастасия Сергеевна ШИГИНА": "Анастасия Шигина"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:men-senior-kp",
@@ -73040,10 +73328,46 @@
    "intl": false,
    "broadcast": [],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "athletes": [
+    "Дмитрий Железняк",
+    "Егор Баулин",
+    "Иван Макиев",
+    "Станислав Гунтасов"
+   ],
+   "src": "https://fsperm.ru/2627/281126/",
    "desc": "Начало: 19:40 МСК",
-   "proto": null
+   "field": [
+    {
+     "name": "Дмитрий Железняк",
+     "nation": ""
+    },
+    {
+     "name": "Егор Баулин",
+     "nation": ""
+    },
+    {
+     "name": "Иван Макиев",
+     "nation": ""
+    },
+    {
+     "name": "Станислав Гунтасов",
+     "nation": ""
+    }
+   ],
+   "live": {
+    "idx": "https://fsperm.ru/2627/281126/",
+    "seg": "https://fsperm.ru/2627/281126/SEG007.HTM",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Егор Максимович БАУЛИН": "Егор Баулин",
+     "Станислав Олегович ГУНТАСОВ": "Станислав Гунтасов",
+     "Дмитрий Сергеевич ЖЕЛЕЗНЯК": "Дмитрий Железняк",
+     "Иван Юрьевич МАКИЕВ": "Иван Макиев"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
   },
   {
    "id": "gs:skate-celje:women-senior-kp",
@@ -73977,15 +74301,117 @@
    "seg": "ПТ",
    "title": "Посвященные государственности Удмуртии — юниорские танцы ПТ",
    "start": "2026-11-29T13:30:00+03:00",
-   "end": "2026-11-29T16:10:00+03:00",
+   "end": "2026-11-29T15:55:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "athletes": [
+    "Алиса Борисова / Дмитрий Гладнев",
+    "Алиса Кремер / Илья Целковский",
+    "Анна Соболева / Матвей Чураков",
+    "Арина Кочурова / Иван Карелин",
+    "Варвара Стерлядева / Владислав Мухин",
+    "Екатерина Богданова / Ярослав Черняев",
+    "Екатерина Соболева / Вячеслав Безумов",
+    "Любовь Аникина / Степан Котельников",
+    "Любовь Скрябина / Григорий Матвеев",
+    "Маргарита Иннокентьева Сырова / Илья Павлинов",
+    "Мария Семёнова / Илья Ивкин",
+    "Милана Чегемова / Кирилл Евграфов",
+    "Полина Афанасьева / Максим Кузнецов",
+    "Полина Каныгина / Никита Максимов",
+    "Полина Пунегова / Дмитрий Кашубин"
+   ],
+   "src": "https://fsperm.ru/2627/281126/",
    "desc": "Начало: 13:30 МСК",
-   "proto": null
+   "field": [
+    {
+     "name": "Алиса Борисова / Дмитрий Гладнев",
+     "nation": ""
+    },
+    {
+     "name": "Алиса Кремер / Илья Целковский",
+     "nation": ""
+    },
+    {
+     "name": "Анна Соболева / Матвей Чураков",
+     "nation": ""
+    },
+    {
+     "name": "Арина Кочурова / Иван Карелин",
+     "nation": ""
+    },
+    {
+     "name": "Варвара Стерлядева / Владислав Мухин",
+     "nation": ""
+    },
+    {
+     "name": "Екатерина Богданова / Ярослав Черняев",
+     "nation": ""
+    },
+    {
+     "name": "Екатерина Соболева / Вячеслав Безумов",
+     "nation": ""
+    },
+    {
+     "name": "Любовь Аникина / Степан Котельников",
+     "nation": ""
+    },
+    {
+     "name": "Любовь Скрябина / Григорий Матвеев",
+     "nation": ""
+    },
+    {
+     "name": "Маргарита Иннокентьева Сырова / Илья Павлинов",
+     "nation": ""
+    },
+    {
+     "name": "Мария Семёнова / Илья Ивкин",
+     "nation": ""
+    },
+    {
+     "name": "Милана Чегемова / Кирилл Евграфов",
+     "nation": ""
+    },
+    {
+     "name": "Полина Афанасьева / Максим Кузнецов",
+     "nation": ""
+    },
+    {
+     "name": "Полина Каныгина / Никита Максимов",
+     "nation": ""
+    },
+    {
+     "name": "Полина Пунегова / Дмитрий Кашубин",
+     "nation": ""
+    }
+   ],
+   "live": {
+    "idx": "https://fsperm.ru/2627/281126/",
+    "seg": "https://fsperm.ru/2627/281126/SEG014.HTM",
+    "cat": "https://fsperm.ru/2627/281126/CAT007RS.HTM",
+    "first": "https://fsperm.ru/2627/281126/SEG013.HTM",
+    "names": {
+     "Любовь Александровна АНИКИНА / Степан Андреевич КОТЕЛЬНИКОВ": "Любовь Аникина / Степан Котельников",
+     "Полина Димитриевна АФАНАСЬЕВА / Максим Сергеевич КУЗНЕЦОВ": "Полина Афанасьева / Максим Кузнецов",
+     "Екатерина Алексеевна БОГДАНОВА / Ярослав Васильевич ЧЕРНЯЕВ": "Екатерина Богданова / Ярослав Черняев",
+     "Алиса Андреевна БОРИСОВА / Дмитрий Александрович ГЛАДНЕВ": "Алиса Борисова / Дмитрий Гладнев",
+     "Полина Сергеевна КАНЫГИНА / Никита Андреевич МАКСИМОВ": "Полина Каныгина / Никита Максимов",
+     "Арина Константиновна КОЧУРОВА / Иван Яковлевич КАРЕЛИН": "Арина Кочурова / Иван Карелин",
+     "Алиса Максимовна КРЕМЕР / Илья Валерьевич ЦЕЛКОВСКИЙ": "Алиса Кремер / Илья Целковский",
+     "Полина Владимировна ПУНЕГОВА / Дмитрий Александрович КАШУБИН": "Полина Пунегова / Дмитрий Кашубин",
+     "Мария Александровна СЕМЁНОВА / Илья Андреевич ИВКИН": "Мария Семёнова / Илья Ивкин",
+     "Любовь Сергеевна СКРЯБИНА / Григорий Дмитриевич МАТВЕЕВ": "Любовь Скрябина / Григорий Матвеев",
+     "Анна Александровна СОБОЛЕВА / Матвей Игоревич ЧУРАКОВ": "Анна Соболева / Матвей Чураков",
+     "Екатерина Александровна СОБОЛЕВА / Вячеслав Романович БЕЗУМОВ": "Екатерина Соболева / Вячеслав Безумов",
+     "Варвара Сергеевна СТЕРЛЯДЕВА / Владислав Денисович МУХИН": "Варвара Стерлядева / Владислав Мухин",
+     "Маргарита Иннокентьева СЫРОВА / Илья Петрович ПАВЛИНОВ": "Маргарита Иннокентьева Сырова / Илья Павлинов",
+     "Милана Муратовна ЧЕГЕМОВА / Кирилл Сергеевич ЕВГРАФОВ": "Милана Чегемова / Кирилл Евграфов"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
   },
   {
    "id": "gs:skate-celje:men-junior-pp",
@@ -74159,15 +74585,75 @@
    "seg": "ПТ",
    "title": "Посвященные государственности Удмуртии — танцы ПТ",
    "start": "2026-11-29T16:25:00+03:00",
-   "end": "2026-11-29T17:55:00+03:00",
+   "end": "2026-11-29T17:35:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "athletes": [
+    "Александра Прокопец / Александр Васькович",
+    "Алиса Крайнюкова / Семен Нетсев",
+    "Ангелина Сенько / Вадим Кайзер",
+    "Анна Смирнова / Богдан Шамков",
+    "Валерия Бугаевская / Егор Козлов",
+    "Диана Арнет / Мирон Суслов",
+    "Ирина Кузнецова / Андрей Тихомиров",
+    "Мария Иванова / Олег Мориц"
+   ],
+   "src": "https://fsperm.ru/2627/281126/",
    "desc": "Начало: 16:25 МСК",
-   "proto": null
+   "field": [
+    {
+     "name": "Александра Прокопец / Александр Васькович",
+     "nation": ""
+    },
+    {
+     "name": "Алиса Крайнюкова / Семен Нетсев",
+     "nation": ""
+    },
+    {
+     "name": "Ангелина Сенько / Вадим Кайзер",
+     "nation": ""
+    },
+    {
+     "name": "Анна Смирнова / Богдан Шамков",
+     "nation": ""
+    },
+    {
+     "name": "Валерия Бугаевская / Егор Козлов",
+     "nation": ""
+    },
+    {
+     "name": "Диана Арнет / Мирон Суслов",
+     "nation": ""
+    },
+    {
+     "name": "Ирина Кузнецова / Андрей Тихомиров",
+     "nation": ""
+    },
+    {
+     "name": "Мария Иванова / Олег Мориц",
+     "nation": ""
+    }
+   ],
+   "live": {
+    "idx": "https://fsperm.ru/2627/281126/",
+    "seg": "https://fsperm.ru/2627/281126/SEG016.HTM",
+    "cat": "https://fsperm.ru/2627/281126/CAT008RS.HTM",
+    "first": "https://fsperm.ru/2627/281126/SEG015.HTM",
+    "names": {
+     "Диана Артуровна АРНЕТ / Мирон Игоревич СУСЛОВ": "Диана Арнет / Мирон Суслов",
+     "Валерия Олеговна БУГАЕВСКАЯ / Егор Петрович КОЗЛОВ": "Валерия Бугаевская / Егор Козлов",
+     "Мария Олеговна ИВАНОВА / Олег Станиславович МОРИЦ": "Мария Иванова / Олег Мориц",
+     "Алиса Константиновна КРАЙНЮКОВА / Семен Романович НЕТСЕВ": "Алиса Крайнюкова / Семен Нетсев",
+     "Ирина Игоревна КУЗНЕЦОВА / Андрей Станиславович ТИХОМИРОВ": "Ирина Кузнецова / Андрей Тихомиров",
+     "Александра Викторовна ПРОКОПЕЦ / Александр Ильич ВАСЬКОВИЧ": "Александра Прокопец / Александр Васькович",
+     "Ангелина Дмитриевна СЕНЬКО / Вадим Павлович КАЙЗЕР": "Ангелина Сенько / Вадим Кайзер",
+     "Анна Алексеевна СМИРНОВА / Богдан Алексеевич ШАМКОВ": "Анна Смирнова / Богдан Шамков"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
   },
   {
    "id": "gs:skate-celje:men-senior-pp",
@@ -74256,15 +74742,117 @@
    "seg": "ПП",
    "title": "Посвященные государственности Удмуртии — женщины ПП",
    "start": "2026-11-29T18:10:00+03:00",
-   "end": "2026-11-29T20:30:00+03:00",
+   "end": "2026-11-29T20:40:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "athletes": [
+    "Александра Пискотина",
+    "Анастасия Шигина",
+    "Ангелина Грачева",
+    "Анжелика Евтушенко",
+    "Валерия Мельникова",
+    "Вероника Попова",
+    "Виктория Русеева",
+    "Диана Евлахина",
+    "Екатерина Гайдукова",
+    "Мария Красноженова",
+    "Мария Парамонова",
+    "Милана Архипова",
+    "Полина Тимошенко",
+    "Полина Цурикова",
+    "Ульяна Третьякова"
+   ],
+   "src": "https://fsperm.ru/2627/281126/",
    "desc": "Начало: 18:10 МСК",
-   "proto": null
+   "field": [
+    {
+     "name": "Александра Пискотина",
+     "nation": ""
+    },
+    {
+     "name": "Анастасия Шигина",
+     "nation": ""
+    },
+    {
+     "name": "Ангелина Грачева",
+     "nation": ""
+    },
+    {
+     "name": "Анжелика Евтушенко",
+     "nation": ""
+    },
+    {
+     "name": "Валерия Мельникова",
+     "nation": ""
+    },
+    {
+     "name": "Вероника Попова",
+     "nation": ""
+    },
+    {
+     "name": "Виктория Русеева",
+     "nation": ""
+    },
+    {
+     "name": "Диана Евлахина",
+     "nation": ""
+    },
+    {
+     "name": "Екатерина Гайдукова",
+     "nation": ""
+    },
+    {
+     "name": "Мария Красноженова",
+     "nation": ""
+    },
+    {
+     "name": "Мария Парамонова",
+     "nation": ""
+    },
+    {
+     "name": "Милана Архипова",
+     "nation": ""
+    },
+    {
+     "name": "Полина Тимошенко",
+     "nation": ""
+    },
+    {
+     "name": "Полина Цурикова",
+     "nation": ""
+    },
+    {
+     "name": "Ульяна Третьякова",
+     "nation": ""
+    }
+   ],
+   "live": {
+    "idx": "https://fsperm.ru/2627/281126/",
+    "seg": "https://fsperm.ru/2627/281126/SEG006.HTM",
+    "cat": "https://fsperm.ru/2627/281126/CAT003RS.HTM",
+    "first": "https://fsperm.ru/2627/281126/SEG005.HTM",
+    "names": {
+     "Милана Андреевна АРХИПОВА": "Милана Архипова",
+     "Екатерина Олеговна ГАЙДУКОВА": "Екатерина Гайдукова",
+     "Ангелина Олеговна ГРАЧЕВА": "Ангелина Грачева",
+     "Диана Викторовна ЕВЛАХИНА": "Диана Евлахина",
+     "Анжелика Павловна ЕВТУШЕНКО": "Анжелика Евтушенко",
+     "Мария Алексеевна КРАСНОЖЕНОВА": "Мария Красноженова",
+     "Валерия Павловна МЕЛЬНИКОВА": "Валерия Мельникова",
+     "Мария Витальевна ПАРАМОНОВА": "Мария Парамонова",
+     "Александра Дмитриевна ПИСКОТИНА": "Александра Пискотина",
+     "Вероника Владимировна ПОПОВА": "Вероника Попова",
+     "Виктория Сергеевна РУСЕЕВА": "Виктория Русеева",
+     "Полина Сергеевна ТИМОШЕНКО": "Полина Тимошенко",
+     "Ульяна Олеговна ТРЕТЬЯКОВА": "Ульяна Третьякова",
+     "Полина Александровна ЦУРИКОВА": "Полина Цурикова",
+     "Анастасия Сергеевна ШИГИНА": "Анастасия Шигина"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:men-senior-pp",
@@ -74275,15 +74863,51 @@
    "seg": "ПП",
    "title": "Посвященные государственности Удмуртии — мужчины ПП",
    "start": "2026-11-29T20:45:00+03:00",
-   "end": "2026-11-29T21:30:00+03:00",
+   "end": "2026-11-29T21:20:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "athletes": [
+    "Дмитрий Железняк",
+    "Егор Баулин",
+    "Иван Макиев",
+    "Станислав Гунтасов"
+   ],
+   "src": "https://fsperm.ru/2627/281126/",
    "desc": "Начало: 20:45 МСК",
-   "proto": null
+   "field": [
+    {
+     "name": "Дмитрий Железняк",
+     "nation": ""
+    },
+    {
+     "name": "Егор Баулин",
+     "nation": ""
+    },
+    {
+     "name": "Иван Макиев",
+     "nation": ""
+    },
+    {
+     "name": "Станислав Гунтасов",
+     "nation": ""
+    }
+   ],
+   "live": {
+    "idx": "https://fsperm.ru/2627/281126/",
+    "seg": "https://fsperm.ru/2627/281126/SEG008.HTM",
+    "cat": "https://fsperm.ru/2627/281126/CAT004RS.HTM",
+    "first": "https://fsperm.ru/2627/281126/SEG007.HTM",
+    "names": {
+     "Егор Максимович БАУЛИН": "Егор Баулин",
+     "Станислав Олегович ГУНТАСОВ": "Станислав Гунтасов",
+     "Дмитрий Сергеевич ЖЕЛЕЗНЯК": "Дмитрий Железняк",
+     "Иван Юрьевич МАКИЕВ": "Иван Макиев"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:women-junior-kp",
@@ -74294,15 +74918,261 @@
    "seg": "КП",
    "title": "Посвященные государственности Удмуртии — девушки КП",
    "start": "2026-11-30T12:00:00+03:00",
-   "end": "2026-11-30T16:40:00+03:00",
+   "end": "2026-11-30T17:50:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "athletes": [
+    "Агния Хазова",
+    "Александра Одинцова",
+    "Анастасия Гирбасова",
+    "Анастасия Жуланова",
+    "Анна Видилина",
+    "Арина Бойцова",
+    "Валерия Колтакова",
+    "Варвара Воронина",
+    "Вероника Пенькова",
+    "Виктория Наренкова",
+    "Дана Титова",
+    "Дарья Балясникова",
+    "Дарья Курдина",
+    "Дарья Царькова",
+    "Диана Сашина",
+    "Ева Вачасова",
+    "Екатерина Комарова",
+    "Елизавета Андреева",
+    "Катерина Новикова",
+    "Кира Савченко",
+    "Ксения Бородина",
+    "Лизавета Мельникова",
+    "Любовь Измайлова",
+    "Маргарита Дудкина",
+    "Мария Кудряшова",
+    "Мирослава Кривцанова",
+    "Мирослава Лезина",
+    "Полина Косова",
+    "Полина Мозжакова",
+    "Полина Соловьева",
+    "Светлана Вечканова",
+    "София Коваленко",
+    "Софья Копытова",
+    "Ульяна Коренькова",
+    "Ульяна Попова",
+    "Ульяна Семиглазова",
+    "Эвелина Шестакова",
+    "Юлиана Новиченкова",
+    "Ярослава Баринова"
+   ],
+   "src": "https://fsperm.ru/2627/281126/",
    "desc": "Начало: 12:00 МСК",
-   "proto": null
+   "field": [
+    {
+     "name": "Агния Хазова",
+     "nation": ""
+    },
+    {
+     "name": "Александра Одинцова",
+     "nation": ""
+    },
+    {
+     "name": "Анастасия Гирбасова",
+     "nation": ""
+    },
+    {
+     "name": "Анастасия Жуланова",
+     "nation": ""
+    },
+    {
+     "name": "Анна Видилина",
+     "nation": ""
+    },
+    {
+     "name": "Арина Бойцова",
+     "nation": ""
+    },
+    {
+     "name": "Валерия Колтакова",
+     "nation": ""
+    },
+    {
+     "name": "Варвара Воронина",
+     "nation": ""
+    },
+    {
+     "name": "Вероника Пенькова",
+     "nation": ""
+    },
+    {
+     "name": "Виктория Наренкова",
+     "nation": ""
+    },
+    {
+     "name": "Дана Титова",
+     "nation": ""
+    },
+    {
+     "name": "Дарья Балясникова",
+     "nation": ""
+    },
+    {
+     "name": "Дарья Курдина",
+     "nation": ""
+    },
+    {
+     "name": "Дарья Царькова",
+     "nation": ""
+    },
+    {
+     "name": "Диана Сашина",
+     "nation": ""
+    },
+    {
+     "name": "Ева Вачасова",
+     "nation": ""
+    },
+    {
+     "name": "Екатерина Комарова",
+     "nation": ""
+    },
+    {
+     "name": "Елизавета Андреева",
+     "nation": ""
+    },
+    {
+     "name": "Катерина Новикова",
+     "nation": ""
+    },
+    {
+     "name": "Кира Савченко",
+     "nation": ""
+    },
+    {
+     "name": "Ксения Бородина",
+     "nation": ""
+    },
+    {
+     "name": "Лизавета Мельникова",
+     "nation": ""
+    },
+    {
+     "name": "Любовь Измайлова",
+     "nation": ""
+    },
+    {
+     "name": "Маргарита Дудкина",
+     "nation": ""
+    },
+    {
+     "name": "Мария Кудряшова",
+     "nation": ""
+    },
+    {
+     "name": "Мирослава Кривцанова",
+     "nation": ""
+    },
+    {
+     "name": "Мирослава Лезина",
+     "nation": ""
+    },
+    {
+     "name": "Полина Косова",
+     "nation": ""
+    },
+    {
+     "name": "Полина Мозжакова",
+     "nation": ""
+    },
+    {
+     "name": "Полина Соловьева",
+     "nation": ""
+    },
+    {
+     "name": "Светлана Вечканова",
+     "nation": ""
+    },
+    {
+     "name": "София Коваленко",
+     "nation": ""
+    },
+    {
+     "name": "Софья Копытова",
+     "nation": ""
+    },
+    {
+     "name": "Ульяна Коренькова",
+     "nation": ""
+    },
+    {
+     "name": "Ульяна Попова",
+     "nation": ""
+    },
+    {
+     "name": "Ульяна Семиглазова",
+     "nation": ""
+    },
+    {
+     "name": "Эвелина Шестакова",
+     "nation": ""
+    },
+    {
+     "name": "Юлиана Новиченкова",
+     "nation": ""
+    },
+    {
+     "name": "Ярослава Баринова",
+     "nation": ""
+    }
+   ],
+   "live": {
+    "idx": "https://fsperm.ru/2627/281126/",
+    "seg": "https://fsperm.ru/2627/281126/SEG001.HTM",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Ульяна Юрьевна СЕМИГЛАЗОВА": "Ульяна Семиглазова",
+     "Валерия Романовна КОЛТАКОВА": "Валерия Колтакова",
+     "Дарья Сергеевна БАЛЯСНИКОВА": "Дарья Балясникова",
+     "Ульяна Романовна КОРЕНЬКОВА": "Ульяна Коренькова",
+     "Мирослава Дмитриевна ЛЕЗИНА": "Мирослава Лезина",
+     "Виктория Владимировна НАРЕНКОВА": "Виктория Наренкова",
+     "Елизавета Витальевна АНДРЕЕВА": "Елизавета Андреева",
+     "Дарья Максимовна ЦАРЬКОВА": "Дарья Царькова",
+     "Арина Станиславовна БОЙЦОВА": "Арина Бойцова",
+     "Ульяна Ивановна ПОПОВА": "Ульяна Попова",
+     "Анастасия Юрьевна ЖУЛАНОВА": "Анастасия Жуланова",
+     "Катерина Максимовна НОВИКОВА": "Катерина Новикова",
+     "Ксения Константиновна БОРОДИНА": "Ксения Бородина",
+     "Кира Михайловна САВЧЕНКО": "Кира Савченко",
+     "Софья Алексеевна КОПЫТОВА": "Софья Копытова",
+     "Полина Валерьевна КОСОВА": "Полина Косова",
+     "Эвелина Евгеньевна ШЕСТАКОВА": "Эвелина Шестакова",
+     "Диана Александровна САШИНА": "Диана Сашина",
+     "Агния Руслановна ХАЗОВА": "Агния Хазова",
+     "Мария Александровна КУДРЯШОВА": "Мария Кудряшова",
+     "Мирослава Александровна КРИВЦАНОВА": "Мирослава Кривцанова",
+     "Ярослава Алексеевна БАРИНОВА": "Ярослава Баринова",
+     "Лизавета Сергеевна МЕЛЬНИКОВА": "Лизавета Мельникова",
+     "Полина Игоревна СОЛОВЬЕВА": "Полина Соловьева",
+     "Дана Викторовна ТИТОВА": "Дана Титова",
+     "Варвара Денисовна ВОРОНИНА": "Варвара Воронина",
+     "Анастасия Юрьевна ГИРБАСОВА": "Анастасия Гирбасова",
+     "Любовь Борисовна ИЗМАЙЛОВА": "Любовь Измайлова",
+     "Анна Андреевна ВИДИЛИНА": "Анна Видилина",
+     "Екатерина Евгеньевна КОМАРОВА": "Екатерина Комарова",
+     "Александра Павловна ОДИНЦОВА": "Александра Одинцова",
+     "Маргарита Алексеевна ДУДКИНА": "Маргарита Дудкина",
+     "Полина Алексеевна МОЗЖАКОВА": "Полина Мозжакова",
+     "Ева Владимировна ВАЧАСОВА": "Ева Вачасова",
+     "София Сергеевна КОВАЛЕНКО": "София Коваленко",
+     "Вероника Дмитриевна ПЕНЬКОВА": "Вероника Пенькова",
+     "Светлана Даниловна ВЕЧКАНОВА": "Светлана Вечканова",
+     "Дарья Михайловна КУРДИНА": "Дарья Курдина",
+     "Юлиана Валерьевна НОВИЧЕНКОВА": "Юлиана Новиченкова"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:men-junior-kp",
@@ -74313,15 +75183,99 @@
    "seg": "КП",
    "title": "Посвященные государственности Удмуртии — юноши КП",
    "start": "2026-11-30T16:55:00+03:00",
-   "end": "2026-11-30T18:15:00+03:00",
+   "end": "2026-11-30T18:25:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "athletes": [
+    "Артем Ермолаев",
+    "Глеб Дудченко",
+    "Денис Никитин",
+    "Денис Яшин",
+    "Кирилл Лутошкин",
+    "Лев Бобык",
+    "Макар Ушаков",
+    "Максим Дубинин",
+    "Матвей Шнайдер",
+    "Роман Железняк",
+    "Сергей Фролов",
+    "Яромир Фураев"
+   ],
+   "src": "https://fsperm.ru/2627/281126/",
    "desc": "Начало: 16:55 МСК",
-   "proto": null
+   "field": [
+    {
+     "name": "Артем Ермолаев",
+     "nation": ""
+    },
+    {
+     "name": "Глеб Дудченко",
+     "nation": ""
+    },
+    {
+     "name": "Денис Никитин",
+     "nation": ""
+    },
+    {
+     "name": "Денис Яшин",
+     "nation": ""
+    },
+    {
+     "name": "Кирилл Лутошкин",
+     "nation": ""
+    },
+    {
+     "name": "Лев Бобык",
+     "nation": ""
+    },
+    {
+     "name": "Макар Ушаков",
+     "nation": ""
+    },
+    {
+     "name": "Максим Дубинин",
+     "nation": ""
+    },
+    {
+     "name": "Матвей Шнайдер",
+     "nation": ""
+    },
+    {
+     "name": "Роман Железняк",
+     "nation": ""
+    },
+    {
+     "name": "Сергей Фролов",
+     "nation": ""
+    },
+    {
+     "name": "Яромир Фураев",
+     "nation": ""
+    }
+   ],
+   "live": {
+    "idx": "https://fsperm.ru/2627/281126/",
+    "seg": "https://fsperm.ru/2627/281126/SEG003.HTM",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Артем Владимирович ЕРМОЛАЕВ": "Артем Ермолаев",
+     "Денис Алексеевич НИКИТИН": "Денис Никитин",
+     "Сергей Сергеевич ФРОЛОВ": "Сергей Фролов",
+     "Роман Сергеевич ЖЕЛЕЗНЯК": "Роман Железняк",
+     "Макар Сергеевич УШАКОВ": "Макар Ушаков",
+     "Максим Сергеевич ДУБИНИН": "Максим Дубинин",
+     "Глеб Юрьевич ДУДЧЕНКО": "Глеб Дудченко",
+     "Кирилл Андреевич ЛУТОШКИН": "Кирилл Лутошкин",
+     "Денис Игоревич ЯШИН": "Денис Яшин",
+     "Лев Сергеевич БОБЫК": "Лев Бобык",
+     "Матвей Вадимович ШНАЙДЕР": "Матвей Шнайдер",
+     "Яромир Борисович ФУРАЕВ": "Яромир Фураев"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:women-junior-pp",
@@ -74332,15 +75286,261 @@
    "seg": "ПП",
    "title": "Посвященные государственности Удмуртии — девушки ПП",
    "start": "2026-12-01T12:30:00+03:00",
-   "end": "2026-12-01T15:40:00+03:00",
+   "end": "2026-12-01T18:55:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "athletes": [
+    "Агния Хазова",
+    "Александра Одинцова",
+    "Анастасия Гирбасова",
+    "Анастасия Жуланова",
+    "Анна Видилина",
+    "Арина Бойцова",
+    "Валерия Колтакова",
+    "Варвара Воронина",
+    "Вероника Пенькова",
+    "Виктория Наренкова",
+    "Дана Титова",
+    "Дарья Балясникова",
+    "Дарья Курдина",
+    "Дарья Царькова",
+    "Диана Сашина",
+    "Ева Вачасова",
+    "Екатерина Комарова",
+    "Елизавета Андреева",
+    "Катерина Новикова",
+    "Кира Савченко",
+    "Ксения Бородина",
+    "Лизавета Мельникова",
+    "Любовь Измайлова",
+    "Маргарита Дудкина",
+    "Мария Кудряшова",
+    "Мирослава Кривцанова",
+    "Мирослава Лезина",
+    "Полина Косова",
+    "Полина Мозжакова",
+    "Полина Соловьева",
+    "Светлана Вечканова",
+    "София Коваленко",
+    "Софья Копытова",
+    "Ульяна Коренькова",
+    "Ульяна Попова",
+    "Ульяна Семиглазова",
+    "Эвелина Шестакова",
+    "Юлиана Новиченкова",
+    "Ярослава Баринова"
+   ],
+   "src": "https://fsperm.ru/2627/281126/",
    "desc": "Начало: 12:30 МСК",
-   "proto": null
+   "field": [
+    {
+     "name": "Агния Хазова",
+     "nation": ""
+    },
+    {
+     "name": "Александра Одинцова",
+     "nation": ""
+    },
+    {
+     "name": "Анастасия Гирбасова",
+     "nation": ""
+    },
+    {
+     "name": "Анастасия Жуланова",
+     "nation": ""
+    },
+    {
+     "name": "Анна Видилина",
+     "nation": ""
+    },
+    {
+     "name": "Арина Бойцова",
+     "nation": ""
+    },
+    {
+     "name": "Валерия Колтакова",
+     "nation": ""
+    },
+    {
+     "name": "Варвара Воронина",
+     "nation": ""
+    },
+    {
+     "name": "Вероника Пенькова",
+     "nation": ""
+    },
+    {
+     "name": "Виктория Наренкова",
+     "nation": ""
+    },
+    {
+     "name": "Дана Титова",
+     "nation": ""
+    },
+    {
+     "name": "Дарья Балясникова",
+     "nation": ""
+    },
+    {
+     "name": "Дарья Курдина",
+     "nation": ""
+    },
+    {
+     "name": "Дарья Царькова",
+     "nation": ""
+    },
+    {
+     "name": "Диана Сашина",
+     "nation": ""
+    },
+    {
+     "name": "Ева Вачасова",
+     "nation": ""
+    },
+    {
+     "name": "Екатерина Комарова",
+     "nation": ""
+    },
+    {
+     "name": "Елизавета Андреева",
+     "nation": ""
+    },
+    {
+     "name": "Катерина Новикова",
+     "nation": ""
+    },
+    {
+     "name": "Кира Савченко",
+     "nation": ""
+    },
+    {
+     "name": "Ксения Бородина",
+     "nation": ""
+    },
+    {
+     "name": "Лизавета Мельникова",
+     "nation": ""
+    },
+    {
+     "name": "Любовь Измайлова",
+     "nation": ""
+    },
+    {
+     "name": "Маргарита Дудкина",
+     "nation": ""
+    },
+    {
+     "name": "Мария Кудряшова",
+     "nation": ""
+    },
+    {
+     "name": "Мирослава Кривцанова",
+     "nation": ""
+    },
+    {
+     "name": "Мирослава Лезина",
+     "nation": ""
+    },
+    {
+     "name": "Полина Косова",
+     "nation": ""
+    },
+    {
+     "name": "Полина Мозжакова",
+     "nation": ""
+    },
+    {
+     "name": "Полина Соловьева",
+     "nation": ""
+    },
+    {
+     "name": "Светлана Вечканова",
+     "nation": ""
+    },
+    {
+     "name": "София Коваленко",
+     "nation": ""
+    },
+    {
+     "name": "Софья Копытова",
+     "nation": ""
+    },
+    {
+     "name": "Ульяна Коренькова",
+     "nation": ""
+    },
+    {
+     "name": "Ульяна Попова",
+     "nation": ""
+    },
+    {
+     "name": "Ульяна Семиглазова",
+     "nation": ""
+    },
+    {
+     "name": "Эвелина Шестакова",
+     "nation": ""
+    },
+    {
+     "name": "Юлиана Новиченкова",
+     "nation": ""
+    },
+    {
+     "name": "Ярослава Баринова",
+     "nation": ""
+    }
+   ],
+   "live": {
+    "idx": "https://fsperm.ru/2627/281126/",
+    "seg": "https://fsperm.ru/2627/281126/SEG002.HTM",
+    "cat": "https://fsperm.ru/2627/281126/CAT001RS.HTM",
+    "first": "https://fsperm.ru/2627/281126/SEG001.HTM",
+    "names": {
+     "Ульяна Юрьевна СЕМИГЛАЗОВА": "Ульяна Семиглазова",
+     "Валерия Романовна КОЛТАКОВА": "Валерия Колтакова",
+     "Дарья Сергеевна БАЛЯСНИКОВА": "Дарья Балясникова",
+     "Ульяна Романовна КОРЕНЬКОВА": "Ульяна Коренькова",
+     "Мирослава Дмитриевна ЛЕЗИНА": "Мирослава Лезина",
+     "Виктория Владимировна НАРЕНКОВА": "Виктория Наренкова",
+     "Елизавета Витальевна АНДРЕЕВА": "Елизавета Андреева",
+     "Дарья Максимовна ЦАРЬКОВА": "Дарья Царькова",
+     "Арина Станиславовна БОЙЦОВА": "Арина Бойцова",
+     "Ульяна Ивановна ПОПОВА": "Ульяна Попова",
+     "Анастасия Юрьевна ЖУЛАНОВА": "Анастасия Жуланова",
+     "Катерина Максимовна НОВИКОВА": "Катерина Новикова",
+     "Ксения Константиновна БОРОДИНА": "Ксения Бородина",
+     "Кира Михайловна САВЧЕНКО": "Кира Савченко",
+     "Софья Алексеевна КОПЫТОВА": "Софья Копытова",
+     "Полина Валерьевна КОСОВА": "Полина Косова",
+     "Эвелина Евгеньевна ШЕСТАКОВА": "Эвелина Шестакова",
+     "Диана Александровна САШИНА": "Диана Сашина",
+     "Агния Руслановна ХАЗОВА": "Агния Хазова",
+     "Мария Александровна КУДРЯШОВА": "Мария Кудряшова",
+     "Мирослава Александровна КРИВЦАНОВА": "Мирослава Кривцанова",
+     "Ярослава Алексеевна БАРИНОВА": "Ярослава Баринова",
+     "Лизавета Сергеевна МЕЛЬНИКОВА": "Лизавета Мельникова",
+     "Полина Игоревна СОЛОВЬЕВА": "Полина Соловьева",
+     "Дана Викторовна ТИТОВА": "Дана Титова",
+     "Варвара Денисовна ВОРОНИНА": "Варвара Воронина",
+     "Анастасия Юрьевна ГИРБАСОВА": "Анастасия Гирбасова",
+     "Любовь Борисовна ИЗМАЙЛОВА": "Любовь Измайлова",
+     "Анна Андреевна ВИДИЛИНА": "Анна Видилина",
+     "Екатерина Евгеньевна КОМАРОВА": "Екатерина Комарова",
+     "Александра Павловна ОДИНЦОВА": "Александра Одинцова",
+     "Маргарита Алексеевна ДУДКИНА": "Маргарита Дудкина",
+     "Полина Алексеевна МОЗЖАКОВА": "Полина Мозжакова",
+     "Ева Владимировна ВАЧАСОВА": "Ева Вачасова",
+     "София Сергеевна КОВАЛЕНКО": "София Коваленко",
+     "Вероника Дмитриевна ПЕНЬКОВА": "Вероника Пенькова",
+     "Светлана Даниловна ВЕЧКАНОВА": "Светлана Вечканова",
+     "Дарья Михайловна КУРДИНА": "Дарья Курдина",
+     "Юлиана Валерьевна НОВИЧЕНКОВА": "Юлиана Новиченкова"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:men-junior-pp",
@@ -74351,15 +75551,99 @@
    "seg": "ПП",
    "title": "Посвященные государственности Удмуртии — юноши ПП",
    "start": "2026-12-01T15:55:00+03:00",
-   "end": "2026-12-01T17:30:00+03:00",
+   "end": "2026-12-01T17:40:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
    "ours": [],
-   "athletes": [],
-   "src": "https://fsrussia.ru/files/docs/competitons/2627/udmurtia_2026_competition_schedule_271126.pdf",
+   "athletes": [
+    "Артем Ермолаев",
+    "Глеб Дудченко",
+    "Денис Никитин",
+    "Денис Яшин",
+    "Кирилл Лутошкин",
+    "Лев Бобык",
+    "Макар Ушаков",
+    "Максим Дубинин",
+    "Матвей Шнайдер",
+    "Роман Железняк",
+    "Сергей Фролов",
+    "Яромир Фураев"
+   ],
+   "src": "https://fsperm.ru/2627/281126/",
    "desc": "Начало: 15:55 МСК",
-   "proto": null
+   "field": [
+    {
+     "name": "Артем Ермолаев",
+     "nation": ""
+    },
+    {
+     "name": "Глеб Дудченко",
+     "nation": ""
+    },
+    {
+     "name": "Денис Никитин",
+     "nation": ""
+    },
+    {
+     "name": "Денис Яшин",
+     "nation": ""
+    },
+    {
+     "name": "Кирилл Лутошкин",
+     "nation": ""
+    },
+    {
+     "name": "Лев Бобык",
+     "nation": ""
+    },
+    {
+     "name": "Макар Ушаков",
+     "nation": ""
+    },
+    {
+     "name": "Максим Дубинин",
+     "nation": ""
+    },
+    {
+     "name": "Матвей Шнайдер",
+     "nation": ""
+    },
+    {
+     "name": "Роман Железняк",
+     "nation": ""
+    },
+    {
+     "name": "Сергей Фролов",
+     "nation": ""
+    },
+    {
+     "name": "Яромир Фураев",
+     "nation": ""
+    }
+   ],
+   "live": {
+    "idx": "https://fsperm.ru/2627/281126/",
+    "seg": "https://fsperm.ru/2627/281126/SEG004.HTM",
+    "cat": "https://fsperm.ru/2627/281126/CAT002RS.HTM",
+    "first": "https://fsperm.ru/2627/281126/SEG003.HTM",
+    "names": {
+     "Артем Владимирович ЕРМОЛАЕВ": "Артем Ермолаев",
+     "Денис Алексеевич НИКИТИН": "Денис Никитин",
+     "Сергей Сергеевич ФРОЛОВ": "Сергей Фролов",
+     "Роман Сергеевич ЖЕЛЕЗНЯК": "Роман Железняк",
+     "Макар Сергеевич УШАКОВ": "Макар Ушаков",
+     "Максим Сергеевич ДУБИНИН": "Максим Дубинин",
+     "Глеб Юрьевич ДУДЧЕНКО": "Глеб Дудченко",
+     "Кирилл Андреевич ЛУТОШКИН": "Кирилл Лутошкин",
+     "Денис Игоревич ЯШИН": "Денис Яшин",
+     "Лев Сергеевич БОБЫК": "Лев Бобык",
+     "Матвей Вадимович ШНАЙДЕР": "Матвей Шнайдер",
+     "Яромир Борисович ФУРАЕВ": "Яромир Фураев"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
   },
   {
    "id": "isu:isu-grand-prix-final-2026:pairs-junior-kp",
@@ -78306,6 +79590,7 @@
   "Агата Монаширова / Алексей Тамеев",
   "Агата Морозова",
   "Агата Петрова",
+  "Агния Руслановна Хазова",
   "Агния Хазова",
   "Аделина Камалова",
   "Аделина Кузнецова",
@@ -78333,6 +79618,7 @@
   "Александр Галлямов",
   "Александр Голубев",
   "Александр Иванов",
+  "Александр Ильич Васькович",
   "Александр Котов",
   "Александр Кузнецов",
   "Александр Лабович",
@@ -78362,6 +79648,7 @@
   "Александра Буторина / Кирилл Махов",
   "Александра Васенева",
   "Александра Васенева / Максим Ситько",
+  "Александра Викторовна Прокопец",
   "Александра Гончаровская",
   "Александра Гришина",
   "Александра Дмитриевна Пискотина",
@@ -78375,6 +79662,7 @@
   "Александра Матвеева",
   "Александра Нафиева",
   "Александра Одинцова",
+  "Александра Павловна Одинцова",
   "Александра Пискотина",
   "Александра Прокопец",
   "Александра Прокопец / Александр Васькович",
@@ -78427,19 +79715,23 @@
   "Алина Телегина",
   "Алиса Абдуллина",
   "Алиса Абдуллина / Егор Петров",
+  "Алиса Андреевна Борисова",
   "Алиса Блинникова",
   "Алиса Блинникова / Алексей Карпов",
+  "Алиса Борисова / Дмитрий Гладнев",
   "Алиса Боровкова / Максим Евминов",
   "Алиса Горбунова",
   "Алиса Горбунова / Георгий Павловский",
   "Алиса Гориславская",
   "Алиса Двоеглазова",
   "Алиса Заикина",
+  "Алиса Константиновна Крайнюкова",
   "Алиса Корнаухова",
   "Алиса Крайнюкова",
   "Алиса Крайнюкова / Семён Нетсев",
   "Алиса Кремер",
   "Алиса Кремер / Илья Целковский",
+  "Алиса Максимовна Кремер",
   "Алиса Мильто",
   "Алиса Семина",
   "Алиса Цветкова",
@@ -78476,6 +79768,7 @@
   "Анастасия Выровая",
   "Анастасия Высоцкая",
   "Анастасия Высоцкая / Пётр Алексеенко",
+  "Анастасия Гирбасова",
   "Анастасия Гиричева",
   "Анастасия Гиричева / Иван Долгодворов",
   "Анастасия Горшкова",
@@ -78504,6 +79797,7 @@
   "Анастасия Осипенко",
   "Анастасия Сабанцева",
   "Анастасия Сабанцева / Вадим Кайзер",
+  "Анастасия Сергеевна Шигина",
   "Анастасия Тараканова",
   "Анастасия Твердохлебова",
   "Анастасия Твердохлебова / Илья Павлинов",
@@ -78518,9 +79812,13 @@
   "Анастасия Чиннова",
   "Анастасия Шарошкина",
   "Анастасия Шигина",
+  "Анастасия Юрьевна Гирбасова",
   "Анастасия Юрьевна Жуланова",
+  "Ангелина Грачева",
+  "Ангелина Дмитриевна Сенько",
   "Ангелина Кулагина",
   "Ангелина Кулагина / Максим Ихсанов",
+  "Ангелина Олеговна Грачева",
   "Ангелина Пеньковая",
   "Ангелина Сенько",
   "Ангелина Сенько / Вадим Кайзер",
@@ -78540,6 +79838,7 @@
   "Андрей Мозалёв",
   "Андрей Мухортов",
   "Андрей Рудь",
+  "Андрей Станиславович Тихомиров",
   "Андрей Стефунько",
   "Андрей Тихомиров",
   "Андрей Шадерков",
@@ -78550,11 +79849,15 @@
   "Анжелика Евтушенко",
   "Анжелика Любицкая",
   "Анжелика Любицкая / Владислав Глазунов",
+  "Анжелика Павловна Евтушенко",
   "Анисия Ефимова",
   "Анита Куанг Тао Нгуен",
   "Анита Куанг Тао Нгуен / Михаил Домнин",
   "Анна Аввакумова",
   "Анна Александровна Лещенко",
+  "Анна Александровна Соболева",
+  "Анна Алексеевна Смирнова",
+  "Анна Андреевна Видилина",
   "Анна Андреевна Сажаева",
   "Анна Билибина",
   "Анна Билибина / Дмитрий Кашаев",
@@ -78625,6 +79928,7 @@
   "Арина Евгеньевна Марусич",
   "Арина Козырева",
   "Арина Комекова",
+  "Арина Константиновна Кочурова",
   "Арина Коршунова",
   "Арина Кочурова",
   "Арина Кочурова / Иван Карелин",
@@ -78643,6 +79947,7 @@
   "Арина Пузанкова",
   "Арина Романовна Комекова",
   "Арина Селивёрстова",
+  "Арина Станиславовна Бойцова",
   "Арина Теслина",
   "Арина Трипутень",
   "Арина Чернобавская",
@@ -78655,6 +79960,7 @@
   "Арсений Шульц",
   "Артем Андреевич Устинов",
   "Артем Василенко",
+  "Артем Владимирович Ермолаев",
   "Артем Гаманов",
   "Артем Ермолаев",
   "Артем Игоревич Шевнин",
@@ -78680,12 +79986,14 @@
   "Артём Федотов",
   "Артём Фролов",
   "Астарта",
+  "Богдан Алексеевич Шамков",
   "Богдан Денисович Шелапутин",
   "Богдан Шамков",
   "Богдан Шелапутин",
   "Бруклин",
   "Вадим Воронов",
   "Вадим Кайзер",
+  "Вадим Павлович Кайзер",
   "Валентин Сидоренко",
   "Валентин Шаров",
   "Валентина Левитских",
@@ -78695,9 +80003,13 @@
   "Валерия Булдакова",
   "Валерия Гончарук",
   "Валерия Иорданова",
+  "Валерия Колтакова",
   "Валерия Литвинчёва",
   "Валерия Лукашова",
   "Валерия Мельникова",
+  "Валерия Олеговна Бугаевская",
+  "Валерия Павловна Мельникова",
+  "Валерия Романовна Колтакова",
   "Валерия Ходыкина",
   "Валерия Ходыкина / Даниил Бутенко",
   "Валерия Шарапова",
@@ -78713,6 +80025,7 @@
   "Варвара Воронина",
   "Варвара Гарибян",
   "Варвара Гордиенко",
+  "Варвара Денисовна Воронина",
   "Варвара Жданова",
   "Варвара Жданова / Тимур Бабаев-Смирнов",
   "Варвара Кисель",
@@ -78726,6 +80039,7 @@
   "Варвара Рачева",
   "Варвара Родина",
   "Варвара Саламатина",
+  "Варвара Сергеевна Стерлядева",
   "Варвара Слуцкая",
   "Варвара Слуцкая / Глеб Гончаров",
   "Варвара Стахович",
@@ -78745,8 +80059,10 @@
   "Василиса Курлова",
   "Вениамин Башуров",
   "Вероника Артемовна Хвесько",
+  "Вероника Владимировна Попова",
   "Вероника Гаспарян",
   "Вероника Георгиевна Кабалалиева",
+  "Вероника Дмитриевна Пенькова",
   "Вероника Дятчина",
   "Вероника Жилина",
   "Вероника Кабалалиева",
@@ -78754,6 +80070,7 @@
   "Вероника Меренкова / Даниль Галимов",
   "Вероника Митюк",
   "Вероника Пенькова",
+  "Вероника Попова",
   "Вероника Соболева",
   "Вероника Хвесько",
   "Вероника Шиленкова",
@@ -78764,6 +80081,7 @@
   "Виктория Большакова",
   "Виктория Большакова / Глеб Большаков",
   "Виктория Васильева",
+  "Виктория Владимировна Наренкова",
   "Виктория Городецкая",
   "Виктория Губарева",
   "Виктория Двинина",
@@ -78771,12 +80089,15 @@
   "Виктория Жаркова",
   "Виктория Михайлова",
   "Виктория Мокрушина",
+  "Виктория Наренкова",
   "Виктория Павлова",
   "Виктория Пласконная",
   "Виктория Пласконная / Владислав Сытик",
   "Виктория Пласконная / Владислав Сыцик",
   "Виктория Позднякова",
+  "Виктория Русеева",
   "Виктория Сафонова",
+  "Виктория Сергеевна Русеева",
   "Виктория Сивак",
   "Виктория Сивкова",
   "Виктория Сомова",
@@ -78810,6 +80131,7 @@
   "Владислав Виниченко",
   "Владислав Глазунов",
   "Владислав Дворников",
+  "Владислав Денисович Мухин",
   "Владислав Дикиджи",
   "Владислав Левичев",
   "Владислав Михайлов",
@@ -78824,6 +80146,7 @@
   "Владислава Прокофьева",
   "Вячеслав Касьяненко",
   "Вячеслав Проценко",
+  "Вячеслав Романович Безумов",
   "Галина Алексеечкина",
   "Галина Масюк",
   "Георгий Абрамов",
@@ -78842,6 +80165,7 @@
   "Глеб Лутфуллин",
   "Глеб Солович",
   "Глеб Юрьевич Дудченко",
+  "Григорий Дмитриевич Матвеев",
   "Григорий Леонидович Хорохордин",
   "Григорий Матвеев",
   "Григорий Мельников",
@@ -78849,6 +80173,7 @@
   "Григорий Хорохордин",
   "Дамир Бибиков",
   "Дамир Черипка",
+  "Дана Викторовна Титова",
   "Дана Титова",
   "Даниил Бутенко",
   "Даниил Горелкин",
@@ -78895,9 +80220,12 @@
   "Дарья Кардаполова",
   "Дарья Кардаполова / Антон Рязанов",
   "Дарья Кузнецова",
+  "Дарья Курдина",
   "Дарья Лебедева",
   "Дарья Легкая",
+  "Дарья Максимовна Царькова",
   "Дарья Меленевская",
+  "Дарья Михайловна Курдина",
   "Дарья Нестерова",
   "Дарья Никейцева",
   "Дарья Парфенова",
@@ -78909,6 +80237,7 @@
   "Дарья Садкова",
   "Дарья Самохвалова",
   "Дарья Самохвалова / Роман Романычев",
+  "Дарья Сергеевна Балясникова",
   "Дарья Сергеевна Шаронова",
   "Дарья Степанова",
   "Дарья Титенко",
@@ -78921,19 +80250,27 @@
   "Дарья Царькова",
   "Дарья Шаронова",
   "Девид Нарижный",
+  "Денис Алексеевич Никитин",
   "Денис Ауров",
   "Денис Горбушин",
+  "Денис Игоревич Яшин",
   "Денис Кирсанов",
   "Денис Никитин",
   "Денис Яшин",
+  "Диана Александровна Сашина",
   "Диана Арнет",
+  "Диана Арнет / Мирон Суслов",
   "Диана Арнет / Ярослав Черняев",
+  "Диана Артуровна Арнет",
+  "Диана Викторовна Евлахина",
   "Диана Евлахина",
   "Диана Мильто",
   "Диана Сарвартинова",
   "Диана Сарвартинова / Игорь Зубцов",
   "Диана Сашина",
   "Дина Хуснутдинова",
+  "Дмитрий Александрович Гладнев",
+  "Дмитрий Александрович Кашубин",
   "Дмитрий Алиев",
   "Дмитрий Антонович Родионов",
   "Дмитрий Блинов",
@@ -78949,6 +80286,7 @@
   "Дмитрий Прокошев",
   "Дмитрий Пустовалов",
   "Дмитрий Родионов",
+  "Дмитрий Сергеевич Железняк",
   "Дмитрий Симонов",
   "Дмитрий Студеникин",
   "Дмитрий Шелковников",
@@ -78958,6 +80296,7 @@
   "Ева Васюкевич",
   "Ева Васюкевич / Максим Афонин",
   "Ева Вачасова",
+  "Ева Владимировна Вачасова",
   "Ева Гудэ",
   "Ева Гудэ / Андрей Рудь",
   "Ева Жуковская",
@@ -78997,10 +80336,12 @@
   "Егор Карнаухов",
   "Егор Коваленко",
   "Егор Козлов",
+  "Егор Максимович Баулин",
   "Егор Мурашов",
   "Егор Никитин",
   "Егор Павлович Седов",
   "Егор Петров",
+  "Егор Петрович Козлов",
   "Егор Рухин",
   "Егор Седов",
   "Егор Трацевский",
@@ -79009,6 +80350,8 @@
   "Екатерина Авдеева",
   "Екатерина Александровна Андреева",
   "Екатерина Александровна Милютина",
+  "Екатерина Александровна Соболева",
+  "Екатерина Алексеевна Богданова",
   "Екатерина Андреева",
   "Екатерина Андреева / Дмитрий Блинов",
   "Екатерина Анисимова",
@@ -79018,6 +80361,7 @@
   "Екатерина Гейниш",
   "Екатерина Гейниш / Андрей Рудь",
   "Екатерина Дмитриева",
+  "Екатерина Евгеньевна Комарова",
   "Екатерина Кольцова",
   "Екатерина Комарова",
   "Екатерина Корчажникова",
@@ -79037,6 +80381,7 @@
   "Екатерина Серова",
   "Екатерина Сидорина",
   "Екатерина Смирнова",
+  "Екатерина Соболева / Вячеслав Безумов",
   "Екатерина Солдатова",
   "Екатерина Старостина",
   "Екатерина Старостина / Тимофей Столяренко",
@@ -79069,6 +80414,7 @@
   "Елизавета Борисова",
   "Елизавета Бородихина",
   "Елизавета Вахитова",
+  "Елизавета Витальевна Андреева",
   "Елизавета Владимировна Лабутина",
   "Елизавета Дмитриевна Поспелова",
   "Елизавета Дубынина",
@@ -79143,6 +80489,8 @@
   "Иван Теленков",
   "Иван Тельнов",
   "Иван Тертышников",
+  "Иван Юрьевич Макиев",
+  "Иван Яковлевич Карелин",
   "Игнат Пахомов",
   "Игорь Ефимчук",
   "Игорь Зубцов",
@@ -79150,6 +80498,8 @@
   "Идель",
   "Илина Аскарова",
   "Илина Ильшатовна Аскарова",
+  "Илья Андреевич Ивкин",
+  "Илья Валерьевич Целковский",
   "Илья Вегера",
   "Илья Денисович Старков",
   "Илья Долгов",
@@ -79166,6 +80516,7 @@
   "Илья Монопьянц",
   "Илья Неретин",
   "Илья Павлинов",
+  "Илья Петрович Павлинов",
   "Илья Попов",
   "Илья Пыльнев",
   "Илья Старков",
@@ -79175,6 +80526,7 @@
   "Ильяс Датаев",
   "Ильяс Халиуллин",
   "Ирина Гаращук",
+  "Ирина Игоревна Кузнецова",
   "Ирина Королева",
   "Ирина Кузнецова",
   "Ирина Кузнецова / Андрей Тихомиров",
@@ -79201,7 +80553,9 @@
   "Карина Фазуллина",
   "Каролина Красовская",
   "Каролина Красовская / Егор Трацевский",
+  "Катерина Максимовна Новикова",
   "Катерина Мясникова",
+  "Катерина Новикова",
   "Квик Степ",
   "Кира Барышева",
   "Кира Булавкина",
@@ -79214,10 +80568,13 @@
   "Кира Кузьмина",
   "Кира Маркова",
   "Кира Маркова / Илья Ковальчук",
+  "Кира Михайловна Савченко",
   "Кира Моногарова",
   "Кира Пономарева",
+  "Кира Савченко",
   "Кирилл Агарков",
   "Кирилл Алексеев",
+  "Кирилл Андреевич Лутошкин",
   "Кирилл Андреянов",
   "Кирилл Арбузов",
   "Кирилл Былинин",
@@ -79235,6 +80592,7 @@
   "Кирилл Николаев",
   "Кирилл Ноздреватых",
   "Кирилл Сарновский",
+  "Кирилл Сергеевич Евграфов",
   "Кирилл Сергеевич Штурбабин",
   "Кирилл Штурбабин",
   "Кирилл Юрьевич Агарков",
@@ -79262,6 +80620,7 @@
   "Ксения Дмитриевна Логачева",
   "Ксения Кислова",
   "Ксения Клепчукова",
+  "Ксения Константиновна Бородина",
   "Ксения Костыгова",
   "Ксения Кубрина",
   "Ксения Кузьмина",
@@ -79277,6 +80636,7 @@
   "Ксения Шлокова",
   "Лев Бобык",
   "Лев Лазарев",
+  "Лев Сергеевич Бобык",
   "Леонид Новожилов",
   "Леонид Свириденко",
   "Леонтий Камзолов",
@@ -79284,13 +80644,18 @@
   "Лидия Плескачёва",
   "Лидия Рябцева",
   "Лизавета Мельникова",
+  "Лизавета Сергеевна Мельникова",
   "Лилия Галеева",
   "Лилия Литенко",
   "Лилия Литенко / Александр Рыженков",
   "Лилия Литенко / Глеб Солович",
+  "Любовь Александровна Аникина",
   "Любовь Аникина",
   "Любовь Аникина / Степан Котельников",
+  "Любовь Борисовна Измайлова",
+  "Любовь Измайлова",
   "Любовь Рубцова",
+  "Любовь Сергеевна Скрябина",
   "Любовь Скрябина",
   "Любовь Скрябина / Григорий Матвеев",
   "Людмила Фурсова",
@@ -79311,6 +80676,7 @@
   "Макар Николаев",
   "Макар Петров",
   "Макар Пузин",
+  "Макар Сергеевич Ушаков",
   "Макар Солодников",
   "Макар Ушаков",
   "Максим Абрамов",
@@ -79323,6 +80689,7 @@
   "Максим Вахрамеев",
   "Максим Галкин",
   "Максим Денисович Тяпин",
+  "Максим Дубинин",
   "Максим Ихсанов",
   "Максим Ковтун",
   "Максим Кузнецов",
@@ -79330,13 +80697,19 @@
   "Максим Осадчих",
   "Максим Полторак",
   "Максим Савинский",
+  "Максим Сергеевич Дубинин",
+  "Максим Сергеевич Кузнецов",
   "Максим Ситько",
   "Максим Стифунин",
   "Максим Стрелков",
   "Максим Тяпин",
+  "Маргарита Алексеевна Дудкина",
   "Маргарита Базылюк",
   "Маргарита Гребенкина",
+  "Маргарита Дудкина",
   "Маргарита Игонова",
+  "Маргарита Иннокентьева Сырова",
+  "Маргарита Иннокентьева Сырова / Илья Павлинов",
   "Маргарита Котенёва",
   "Маргарита Передельская",
   "Маргарита Смирнова",
@@ -79359,11 +80732,14 @@
   "Мария Александровна Карпанова",
   "Мария Александровна Карпанова / Артем Андреевич Устинов",
   "Мария Александровна Кудряшова",
+  "Мария Александровна Семёнова",
   "Мария Алексеевна Зырянова",
+  "Мария Алексеевна Красноженова",
   "Мария Антоновна Лабутина",
   "Мария Антоновна Тихонова",
   "Мария Артёмова",
   "Мария Бойцова",
+  "Мария Витальевна Парамонова",
   "Мария Волченко",
   "Мария Галушкина",
   "Мария Ганина",
@@ -79379,6 +80755,7 @@
   "Мария Зырянова",
   "Мария Иванова",
   "Мария Иванова / Кирилл Лихачев",
+  "Мария Иванова / Олег Мориц",
   "Мария Ивановна Кулакова",
   "Мария Казьмина",
   "Мария Казьмина / Никита Ворожейкин",
@@ -79388,6 +80765,7 @@
   "Мария Кветная",
   "Мария Кокорина",
   "Мария Котова",
+  "Мария Красноженова",
   "Мария Крыжова",
   "Мария Кудряшова",
   "Мария Кулакова",
@@ -79398,12 +80776,13 @@
   "Мария Михайлова",
   "Мария Муллахметова",
   "Мария Нардюжева",
+  "Мария Олеговна Иванова",
   "Мария Павловна Нардюжева",
   "Мария Парамонова",
   "Мария Поступаева",
   "Мария Пулина",
   "Мария Семенова",
-  "Мария Семенова / Илья Ивкин",
+  "Мария Семёнова / Илья Ивкин",
   "Мария Симонова",
   "Мария Симонова / Денис Кирсанов",
   "Мария Тихонова",
@@ -79429,8 +80808,10 @@
   "Матвей Андреевич Богданов",
   "Матвей Богданов",
   "Матвей Бугаев",
+  "Матвей Вадимович Шнайдер",
   "Матвей Ветлугин",
   "Матвей Грачев",
+  "Матвей Игоревич Чураков",
   "Матвей Лысов",
   "Матвей Самохин",
   "Матвей Чураков",
@@ -79455,6 +80836,7 @@
   "Милана Кузьмина / Дмитрий Студеникин",
   "Милана Лебедева",
   "Милана Максимовна Соколова",
+  "Милана Муратовна Чегемова",
   "Милана Романовна Иванникова",
   "Милана Соколова",
   "Милана Чегемова",
@@ -79462,7 +80844,11 @@
   "Милена Антоновна Мельникова",
   "Милена Мельникова",
   "Мирон Андреанов",
+  "Мирон Игоревич Суслов",
+  "Мирослава Александровна Кривцанова",
+  "Мирослава Дмитриевна Лезина",
   "Мирослава Дмитриевна Лозовцева",
+  "Мирослава Кривцанова",
   "Мирослава Лезина",
   "Мирослава Лозовцева",
   "Мистраль",
@@ -79502,6 +80888,7 @@
   "Ника Алексеевна Губарева",
   "Ника Губарева",
   "Ника Маскайкина",
+  "Никита Андреевич Максимов",
   "Никита Большаков",
   "Никита Волин",
   "Никита Ворожейкин",
@@ -79521,6 +80908,7 @@
   "Оксана Музыка",
   "Оксана Поташева",
   "Олег Мориц",
+  "Олег Станиславович Мориц",
   "Олеся Бразевич",
   "Олеся Бразевич / Игорь Зубцов",
   "Олеся Козлова",
@@ -79558,26 +80946,35 @@
   "Платон Жильцов",
   "Платон Каблуков",
   "Платон Романов",
+  "Полина Александровна Цурикова",
   "Полина Алексеевна Малышева",
+  "Полина Алексеевна Мозжакова",
   "Полина Афанасьева",
   "Полина Афанасьева / Максим Кузнецов",
   "Полина Бершадская",
   "Полина Бусыгина",
+  "Полина Валерьевна Косова",
   "Полина Винкус",
+  "Полина Владимировна Пунегова",
+  "Полина Димитриевна Афанасьева",
   "Полина Жарова",
   "Полина Жарова / Алексей Столяров",
   "Полина Значкова",
+  "Полина Игоревна Соловьева",
   "Полина Ильинична Сажина",
   "Полина Ильинична Сажина / Алексей Андреевич Белкин",
   "Полина Каныгина",
   "Полина Каныгина / Александр Лядов",
+  "Полина Каныгина / Никита Максимов",
   "Полина Королькова",
+  "Полина Косова",
   "Полина Куликова",
   "Полина Ловыгина",
   "Полина Ловыгина / Алексей Морозов",
   "Полина Логвичева",
   "Полина Малышева",
   "Полина Мартыненко",
+  "Полина Мозжакова",
   "Полина Неганова",
   "Полина Неганова / Богдан Шамков",
   "Полина Неганова / Степан Чучкалов",
@@ -79592,7 +80989,10 @@
   "Полина Сажина",
   "Полина Сажина / Алексей Белкин",
   "Полина Сергеевна Бусыгина",
+  "Полина Сергеевна Каныгина",
+  "Полина Сергеевна Тимошенко",
   "Полина Слободчикова",
+  "Полина Соловьева",
   "Полина Старцева",
   "Полина Тимошенко",
   "Полина Тихонова",
@@ -79611,11 +81011,13 @@
   "Роман Витальевич Майер",
   "Роман Глазов",
   "Роман Евгеньевич Шереметьев",
+  "Роман Железняк",
   "Роман Майер",
   "Роман Орлов",
   "Роман Попов",
   "Роман Романычев",
   "Роман Савосин",
+  "Роман Сергеевич Железняк",
   "Роман Сергеевич Попов",
   "Роман Федотов",
   "Роман Хамзин",
@@ -79630,9 +81032,12 @@
   "Санрайз-1",
   "Светлана Анучкина",
   "Светлана Величко",
+  "Светлана Вечканова",
+  "Светлана Даниловна Вечканова",
   "Светлана Кочеткова",
   "Светлана Мамченко",
   "Святослав Нефедов",
+  "Семен Романович Нетсев",
   "Семен Фитерман",
   "Семён Нетсев",
   "Семён Соловьёв",
@@ -79642,6 +81047,8 @@
   "Сергей Воронов",
   "Сергей Кузлякин",
   "Сергей Лагутов",
+  "Сергей Сергеевич Фролов",
+  "Сергей Фролов",
   "Симфония-юниоры",
   "Соната",
   "София Алексова",
@@ -79660,6 +81067,7 @@
   "София Загребаева",
   "София Загребаева / Иван Тертышников",
   "София Касинс",
+  "София Коваленко",
   "София Левшова",
   "София Николаевна Ермолова",
   "София Нуреева",
@@ -79668,11 +81076,13 @@
   "София Поскребышева",
   "София Самуйлик",
   "София Сарновская",
+  "София Сергеевна Коваленко",
   "София Сокольская",
   "София Третьякова",
   "София Шарипова",
   "София Шепелева",
   "Софья Акатьева",
+  "Софья Алексеевна Копытова",
   "Софья Андреевна Лукина",
   "Софья Андреевна Смирнова",
   "Софья Важнова",
@@ -79688,6 +81098,7 @@
   "Софья Каракан",
   "Софья Каракан / Андрей Куваев",
   "Софья Карпова",
+  "Софья Копытова",
   "Софья Кузнецова",
   "Софья Лабуткина",
   "Софья Леонтьева",
@@ -79715,8 +81126,10 @@
   "Софья Шевченко",
   "Софья Шевченко / Андрей Ежлов",
   "Станислав Гунтасов",
+  "Станислав Олегович Гунтасов",
   "Станислава Валуйская",
   "Станислава Константинова",
+  "Степан Андреевич Котельников",
   "Степан Котельников",
   "Степан Маришин",
   "Степан Тартыгин",
@@ -79762,15 +81175,22 @@
   "Ульяна Бобринева",
   "Ульяна Васильева",
   "Ульяна Голубева",
+  "Ульяна Ивановна Попова",
+  "Ульяна Коренькова",
   "Ульяна Курявая",
   "Ульяна Лукьянова",
+  "Ульяна Олеговна Третьякова",
+  "Ульяна Попова",
+  "Ульяна Романовна Коренькова",
   "Ульяна Сафронова",
+  "Ульяна Семиглазова",
   "Ульяна Сергеевна Бессонова",
   "Ульяна Третьякова",
   "Ульяна Трушникова",
   "Ульяна Трушникова / Кирилл Ведерников",
   "Ульяна Черных",
   "Ульяна Черных / Роман Федотов",
+  "Ульяна Юрьевна Семиглазова",
   "Ульяна Явная",
   "Устинья Смирнова",
   "Устинья Смирнова / Матвей Шипилов",
@@ -79781,6 +81201,7 @@
   "Эвелина Валиева",
   "Эвелина Валиева / Александр Островский",
   "Эвелина Валиева / Даниил Лавриненко",
+  "Эвелина Евгеньевна Шестакова",
   "Эвелина Шестакова",
   "Эдуард Камоев",
   "Эдуард Карартынян",
@@ -79819,8 +81240,10 @@
   "Яна Писклякова",
   "Яна Писклякова / Марк Котов",
   "Яна Яценко",
+  "Яромир Борисович Фураев",
   "Яромир Фураев",
   "Ярослав Андреевич Крегель",
+  "Ярослав Васильевич Черняев",
   "Ярослав Евгеньевич Овчинников",
   "Ярослав Крегель",
   "Ярослав Нечаев",
@@ -79828,6 +81251,7 @@
   "Ярослав Сытик",
   "Ярослав Хрулев",
   "Ярослав Черняев",
+  "Ярослава Алексеевна Баринова",
   "Ярослава Баринова",
   "Ярослава Быстрова",
   "Ярослава Воробьева",
@@ -92053,9 +93477,7 @@
   {
    "n": "Александра Одинцова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26",
+   "k": "W",
    "p": "6ddee3713e00"
   },
   {
@@ -92568,9 +93990,7 @@
   {
    "n": "Анастасия Шигина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26",
+   "k": "w",
    "p": "45b6f1992590"
   },
   {
@@ -92678,9 +94098,7 @@
   {
    "n": "Анжелика Евтушенко",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26",
+   "k": "w",
    "p": "4d68ec7601b7"
   },
   {
@@ -92714,9 +94132,7 @@
   {
    "n": "Анна Видилина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26",
+   "k": "W",
    "p": "9aef1245be13"
   },
   {
@@ -92874,9 +94290,7 @@
   {
    "n": "Арина Бойцова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26",
+   "k": "W",
    "p": "953c8e215239"
   },
   {
@@ -93162,9 +94576,7 @@
   {
    "n": "Валерия Бугаевская / Егор Козлов",
    "c": "RUS",
-   "k": "",
-   "was": "D",
-   "y": "2025/26",
+   "k": "d",
    "p": "449667bd75e1"
   },
   {
@@ -93188,9 +94600,7 @@
   {
    "n": "Валерия Мельникова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26",
+   "k": "w",
    "p": "02fc25cce570"
   },
   {
@@ -93222,9 +94632,7 @@
   {
    "n": "Варвара Воронина",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26",
+   "k": "W",
    "p": "f0c484accf05"
   },
   {
@@ -94207,9 +95615,7 @@
   {
    "n": "Егор Баулин",
    "c": "RUS",
-   "k": "",
-   "was": "m",
-   "y": "2025/26",
+   "k": "m",
    "p": "60742f6eae13"
   },
   {
@@ -94299,9 +95705,7 @@
   {
    "n": "Екатерина Комарова",
    "c": "RUS",
-   "k": "",
-   "was": "W",
-   "y": "2025/26",
+   "k": "W",
    "p": "092d6997daff"
   },
   {
@@ -94811,9 +96215,7 @@
   {
    "n": "Ирина Кузнецова / Андрей Тихомиров",
    "c": "RUS",
-   "k": "",
-   "was": "D",
-   "y": "2025/26",
+   "k": "d",
    "p": "153db0725339"
   },
   {
@@ -95284,9 +96686,7 @@
   {
    "n": "Любовь Скрябина / Григорий Матвеев",
    "c": "RUS",
-   "k": "",
-   "was": "D",
-   "y": "2025/26",
+   "k": "D",
    "p": "ec2cebbebfb2"
   },
   {
@@ -95587,9 +96987,7 @@
   {
    "n": "Мария Парамонова",
    "c": "RUS",
-   "k": "",
-   "was": "w",
-   "y": "2025/26",
+   "k": "w",
    "p": "4ccf01003e0c"
   },
   {
@@ -95760,9 +97158,7 @@
   {
    "n": "Матвей Шнайдер",
    "c": "RUS",
-   "k": "",
-   "was": "M",
-   "y": "2025/26",
+   "k": "M",
    "p": "50059919abef"
   },
   {
@@ -96276,9 +97672,7 @@
   {
    "n": "Полина Тимошенко",
    "c": "RUS",
-   "k": "",
-   "was": "w",
-   "y": "2025/26",
+   "k": "w",
    "p": "d42df997fe6f"
   },
   {
@@ -96296,9 +97690,7 @@
   {
    "n": "Полина Цурикова",
    "c": "RUS",
-   "k": "",
-   "was": "w",
-   "y": "2025/26",
+   "k": "w",
    "p": "70c22059c37c"
   },
   {
@@ -96851,9 +98243,7 @@
   {
    "n": "Ульяна Третьякова",
    "c": "RUS",
-   "k": "",
-   "was": "w",
-   "y": "2025/26",
+   "k": "w",
    "p": "3d7c0d948875"
   },
   {
@@ -125120,7 +126510,8 @@
   "Александра Андреева": "photos/92378b3a0937b2d8.jpg",
   "Алена Принева": "photos/889387d6682168ff.jpg",
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
-  "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
+  "Maksim Varakin": "photos/cebbaca1aac7632a.jpg",
+  "Neea Haapala": "photos/e53b48dba15a6d1f.jpg"
  },
- "rev": "b95ec9cf7f9c1721"
+ "rev": "c76a29b2e49c9658"
 }
