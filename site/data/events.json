@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T15:40:08+03:00",
- "checked": "2026-11-28T15:40:08+03:00",
+ "checked": "2026-11-28T13:51:26.830112+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "9",
@@ -72835,97 +72835,127 @@
      "url": "https://vkvideo.ru/live-213287096_456239537"
     }
    ],
-   "desc": "Начало: 16:48 МСК\nТрансляция: VK Видео",
+   "desc": "Промежуточные итоги:\n1. Алиса Кремер / Илья Целковский — 64.71\n2. Анна Соболева / Матвей Чураков — 64.51\n3. Милана Чегемова / Кирилл Евграфов — 55.24\n\nНачало: 16:48 МСК\nТрансляция: VK Видео",
    "field": [
     {
      "name": "Полина Афанасьева / Максим Кузнецов",
      "nation": "",
      "no": 1,
-     "warmup": null
+     "warmup": null,
+     "place": 11,
+     "points": "50.37"
     },
     {
      "name": "Полина Каныгина / Никита Максимов",
      "nation": "",
      "no": 2,
-     "warmup": null
+     "warmup": null,
+     "place": 15,
+     "points": "44.33"
     },
     {
      "name": "Анна Соболева / Матвей Чураков",
      "nation": "",
      "no": 3,
-     "warmup": null
+     "warmup": null,
+     "place": 2,
+     "points": "64.51"
     },
     {
      "name": "Милана Чегемова / Кирилл Евграфов",
      "nation": "",
      "no": 4,
-     "warmup": null
+     "warmup": null,
+     "place": 3,
+     "points": "55.24"
     },
     {
      "name": "Варвара Стерлядева / Владислав Мухин",
      "nation": "",
      "no": 5,
-     "warmup": null
+     "warmup": null,
+     "place": 12,
+     "points": "49.65"
     },
     {
      "name": "Алиса Борисова / Дмитрий Гладнев",
      "nation": "",
      "no": 6,
-     "warmup": null
+     "warmup": null,
+     "place": 13,
+     "points": "48.90"
     },
     {
      "name": "Мария Семёнова / Илья Ивкин",
      "nation": "",
      "no": 7,
-     "warmup": null
+     "warmup": null,
+     "place": 6,
+     "points": "54.47"
     },
     {
      "name": "Любовь Скрябина / Григорий Матвеев",
      "nation": "",
      "no": 8,
-     "warmup": null
+     "warmup": null,
+     "place": 10,
+     "points": "50.75"
     },
     {
      "name": "Полина Пунегова / Дмитрий Кашубин",
      "nation": "",
      "no": 9,
-     "warmup": null
+     "warmup": null,
+     "place": 5,
+     "points": "54.87"
     },
     {
      "name": "Арина Кочурова / Иван Карелин",
      "nation": "",
      "no": 10,
-     "warmup": null
+     "warmup": null,
+     "place": 8,
+     "points": "51.15"
     },
     {
      "name": "Екатерина Соболева / Вячеслав Безумов",
      "nation": "",
      "no": 11,
-     "warmup": null
+     "warmup": null,
+     "place": 14,
+     "points": "46.51"
     },
     {
      "name": "Алиса Кремер / Илья Целковский",
      "nation": "",
      "no": 12,
-     "warmup": null
+     "warmup": null,
+     "place": 1,
+     "points": "64.71"
     },
     {
      "name": "Маргарита Иннокентьева Сырова / Илья Павлинов",
      "nation": "",
      "no": 13,
-     "warmup": null
+     "warmup": null,
+     "place": 4,
+     "points": "55.04"
     },
     {
      "name": "Екатерина Богданова / Ярослав Черняев",
      "nation": "",
      "no": 14,
-     "warmup": null
+     "warmup": null,
+     "place": 7,
+     "points": "51.35"
     },
     {
      "name": "Любовь Аникина / Степан Котельников",
      "nation": "",
      "no": 15,
-     "warmup": null
+     "warmup": null,
+     "place": 9,
+     "points": "50.94"
     }
    ],
    "live": {
@@ -72952,7 +72982,28 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Алиса Кремер / Илья Целковский",
+     "nation": "",
+     "points": "64.71"
+    },
+    {
+     "place": 2,
+     "name": "Анна Соболева / Матвей Чураков",
+     "nation": "",
+     "points": "64.51"
+    },
+    {
+     "place": 3,
+     "name": "Милана Чегемова / Кирилл Евграфов",
+     "nation": "",
+     "points": "55.24"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "gs:skate-celje:men-junior-kp",
@@ -126902,5 +126953,5 @@
   "Ярослав Нечаев": "photos/df55625c66ca78c1.jpg",
   "Ясмина Кадырова": ""
  },
- "rev": "ef50547e4dddb020"
+ "rev": "95c23488dcd51d05"
 }
