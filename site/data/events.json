@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T16:44:21+03:00",
- "checked": "2026-11-28T14:15:57.661677+00:00",
+ "checked": "2026-11-28T14:19:57.471020+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "9",
@@ -73126,7 +73126,7 @@
     "Zhasmin Shlaga"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Промежуточные итоги:\n1. Linda Dzerve — 34.04\n\nНачало: 17:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Julia Kasprzyk — 49.10\n2. Linda Dzerve — 34.04\n\nНачало: 17:00 МСК",
    "field": [
     {
      "name": "Linda Dzerve",
@@ -73134,7 +73134,7 @@
      "time": "17:07",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "34.04"
     },
     {
@@ -73142,7 +73142,9 @@
      "nation": "POL",
      "time": "17:13",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "49.10"
     },
     {
      "name": "Milana Mozeiko",
@@ -73440,6 +73442,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Julia Kasprzyk",
+     "nation": "POL",
+     "points": "49.10"
+    },
+    {
+     "place": 2,
      "name": "Linda Dzerve",
      "nation": "LAT",
      "points": "34.04"
@@ -126972,5 +126980,5 @@
   "Ярослав Нечаев": "photos/df55625c66ca78c1.jpg",
   "Ясмина Кадырова": ""
  },
- "rev": "f6a4c9ce124f4d3e"
+ "rev": "15e486e4529b3b7a"
 }
