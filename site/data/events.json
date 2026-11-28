@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T07:50:52+03:00",
- "checked": "2026-11-28T05:26:14.855363+00:00",
+ "checked": "2026-11-28T05:34:15.018802+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -71434,7 +71434,7 @@
      "url": "https://www.youtube.com/watch?v=lmQdEu6_aZw"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Camille Kovalev / Pavel Kovalev — 95.32\n2. Naomi Williams / Lachlan Lewer — 92.33\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Jazmine Desrochers / Kieran Thrasher — 97.48\n2. Camille Kovalev / Pavel Kovalev — 95.32\n3. Naomi Williams / Lachlan Lewer — 92.33\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Naomi Williams / Lachlan Lewer",
@@ -71442,7 +71442,7 @@
      "time": "08:07",
      "no": 1,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "92.33"
     },
     {
@@ -71451,7 +71451,7 @@
      "time": "08:15",
      "no": 2,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "95.32"
     },
     {
@@ -71459,7 +71459,9 @@
      "nation": "CAN",
      "time": "08:23",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "97.48"
     },
     {
      "name": "Chelsea Liu / Ryan Bedard",
@@ -71518,12 +71520,18 @@
    "podium": [
     {
      "place": 1,
+     "name": "Jazmine Desrochers / Kieran Thrasher",
+     "nation": "CAN",
+     "points": "97.48"
+    },
+    {
+     "place": 2,
      "name": "Camille Kovalev / Pavel Kovalev",
      "nation": "FRA",
      "points": "95.32"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Naomi Williams / Lachlan Lewer",
      "nation": "USA",
      "points": "92.33"
@@ -124971,5 +124979,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "e39e60843c4b8993"
+ "rev": "f0bf67eaa150b37d"
 }
