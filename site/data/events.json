@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T10:59:52+03:00",
- "checked": "2026-11-28T09:11:25.815155+00:00",
+ "checked": "2026-11-28T09:23:26.605042+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -71673,11 +71673,12 @@
     {
      "name": "Виктория Сафонова",
      "nation": "BLR",
-     "place": 8,
+     "place": 9,
      "points": "116.59",
      "time": "11:01",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 10
     },
     {
      "name": "Аделия Петросян",
@@ -71685,8 +71686,9 @@
      "time": "11:08",
      "no": 5,
      "warmup": 1,
-     "place": 6,
-     "points": "121.62"
+     "place": 7,
+     "points": "121.62",
+     "final": 7
     },
     {
      "name": "Алина Горбачёва",
@@ -71694,8 +71696,9 @@
      "time": "11:56",
      "no": 10,
      "warmup": 2,
-     "place": 5,
-     "points": "122.39"
+     "place": 6,
+     "points": "122.39",
+     "final": 5
     }
    ],
    "athletes": [
@@ -71733,18 +71736,18 @@
     },
     {
      "place": 2,
-     "name": "Yuna Aoki",
+     "name": "Mone Chiba",
      "nation": "JPN",
-     "points": "129.81"
+     "points": "137.45"
     },
     {
      "place": 3,
-     "name": "Young You",
-     "nation": "KOR",
-     "points": "128.57"
+     "name": "Yuna Aoki",
+     "nation": "JPN",
+     "points": "129.81"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Jia Shin — 143.71\n2. Yuna Aoki — 129.81\n3. Young You — 128.57\n\nРоссияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Jia Shin — 143.71\n2. Mone Chiba — 137.45\n3. Yuna Aoki — 129.81\n\nИтог турнира:\n1. Jia Shin — 219.02\n2. Mone Chiba — 214.57\n3. Young You — 199.99\n\nПримечательное:\n• Jia Shin — Личный рекорд по сумме: 219.02 (был 212.43)\n\nРоссияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Jia Shin",
@@ -71753,25 +71756,28 @@
      "no": 11,
      "warmup": 2,
      "place": 1,
-     "points": "143.71"
+     "points": "143.71",
+     "final": 1
     },
     {
      "name": "Julia Sauter",
      "nation": "ROU",
-     "place": 10,
+     "place": 11,
      "points": "114.38",
      "time": "10:53",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 11
     },
     {
      "name": "Kimmy Repond",
      "nation": "SUI",
-     "place": 11,
+     "place": 12,
      "points": "112.15",
      "time": "10:45",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 12
     },
     {
      "name": "Madeline Schizas",
@@ -71779,8 +71785,9 @@
      "time": "11:16",
      "no": 6,
      "warmup": 1,
-     "place": 9,
-     "points": "114.92"
+     "place": 10,
+     "points": "114.92",
+     "final": 9
     },
     {
      "name": "Mako Yamashita",
@@ -71788,24 +71795,29 @@
      "time": "11:40",
      "no": 8,
      "warmup": 2,
-     "place": 7,
-     "points": "121.51"
+     "place": 8,
+     "points": "121.51",
+     "final": 6
     },
     {
      "name": "Mone Chiba",
      "nation": "JPN",
      "time": "12:12",
      "no": 12,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "137.45",
+     "final": 2
     },
     {
      "name": "Sarah Everhardt",
      "nation": "USA",
-     "place": 4,
+     "place": 5,
      "points": "126.11",
      "time": "10:38",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 8
     },
     {
      "name": "Young You",
@@ -71813,8 +71825,9 @@
      "time": "11:48",
      "no": 9,
      "warmup": 2,
-     "place": 3,
-     "points": "128.57"
+     "place": 4,
+     "points": "128.57",
+     "final": 3
     },
     {
      "name": "Yuna Aoki",
@@ -71822,8 +71835,9 @@
      "time": "11:32",
      "no": 7,
      "warmup": 2,
-     "place": 2,
-     "points": "129.81"
+     "place": 3,
+     "points": "129.81",
+     "final": 4
     },
     {
      "name": "Аделия Петросян",
@@ -71831,8 +71845,9 @@
      "time": "11:08",
      "no": 5,
      "warmup": 1,
-     "place": 6,
-     "points": "121.62"
+     "place": 7,
+     "points": "121.62",
+     "final": 7
     },
     {
      "name": "Алина Горбачёва",
@@ -71840,20 +71855,21 @@
      "time": "11:56",
      "no": 10,
      "warmup": 2,
-     "place": 5,
-     "points": "122.39"
+     "place": 6,
+     "points": "122.39",
+     "final": 5
     },
     {
      "name": "Виктория Сафонова",
      "nation": "BLR",
-     "place": 8,
+     "place": 9,
      "points": "116.59",
      "time": "11:01",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 10
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG004.htm",
@@ -71873,9 +71889,36 @@
      "Jia SHIN": "Jia Shin",
      "Mone CHIBA": "Mone Chiba"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json"
+   "proto": "isu_isu-gp-nhk-trophy-2026.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Jia Shin",
+     "nation": "KOR",
+     "points": "219.02"
+    },
+    {
+     "place": 2,
+     "name": "Mone Chiba",
+     "nation": "JPN",
+     "points": "214.57"
+    },
+    {
+     "place": 3,
+     "name": "Young You",
+     "nation": "KOR",
+     "points": "199.99"
+    }
+   ],
+   "facts": [
+    {
+     "who": "Jia Shin",
+     "text": "Личный рекорд по сумме: 219.02 (был 212.43)",
+     "kind": "score"
+    }
+   ]
   },
   {
    "id": "gs:skate-celje:women-junior-kp",
@@ -126542,5 +126585,5 @@
   "Ярослав Нечаев": "photos/df55625c66ca78c1.jpg",
   "Ясмина Кадырова": ""
  },
- "rev": "eb6fe1d121ced662"
+ "rev": "e78d55acc0f03e0d"
 }
