@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T09:57:03+03:00",
- "checked": "2026-11-28T09:57:03+03:00",
+ "checked": "2026-11-28T07:47:02.428461+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -71711,14 +71711,16 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Россияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Sarah Everhardt — 126.11\n\nРоссияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Sarah Everhardt",
      "nation": "USA",
      "time": "10:38",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "126.11"
     },
     {
      "name": "Kimmy Repond",
@@ -71819,7 +71821,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json"
+   "proto": "isu_isu-gp-nhk-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Sarah Everhardt",
+     "nation": "USA",
+     "points": "126.11"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "gs:skate-celje:women-junior-kp",
@@ -125087,5 +125098,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "464e8ee3bef4ba39"
+ "rev": "a491364b577531fc"
 }
