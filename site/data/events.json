@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T06:47:48+03:00",
- "checked": "2026-11-28T04:07:14.451402+00:00",
+ "checked": "2026-11-28T04:11:14.001145+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -71263,18 +71263,18 @@
     },
     {
      "place": 2,
-     "name": "Yuka Orihara / Juho Pirinen",
+     "name": "Juulia Turkkila / Matthias Versluis",
      "nation": "FIN",
-     "points": "103.99"
+     "points": "105.72"
     },
     {
      "place": 3,
-     "name": "Marjorie Lajoie / Jean-Luc Baker",
-     "nation": "CAN",
-     "points": "102.43"
+     "name": "Yuka Orihara / Juho Pirinen",
+     "nation": "FIN",
+     "points": "103.99"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Olivia Smart / Tim Dieck — 110.76\n2. Yuka Orihara / Juho Pirinen — 103.99\n3. Marjorie Lajoie / Jean-Luc Baker — 102.43\n\nНачало: 06:05 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Olivia Smart / Tim Dieck — 110.76\n2. Juulia Turkkila / Matthias Versluis — 105.72\n3. Yuka Orihara / Juho Pirinen — 103.99\n\nНачало: 06:05 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Christina Carreira / Anthony Ponomarenko",
@@ -71293,7 +71293,7 @@
     {
      "name": "Ikura Kushida / Koshiro Shimada",
      "nation": "JPN",
-     "place": 4,
+     "place": 5,
      "points": "97.57",
      "time": "06:19",
      "no": 2,
@@ -71304,12 +71304,14 @@
      "nation": "FIN",
      "time": "06:58",
      "no": 6,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "105.72"
     },
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
-     "place": 3,
+     "place": 4,
      "points": "102.43",
      "time": "06:27",
      "no": 3,
@@ -71327,7 +71329,7 @@
     {
      "name": "Rika Kihira / Shingo Nishiyama",
      "nation": "JPN",
-     "place": 5,
+     "place": 6,
      "points": "91.87",
      "time": "06:12",
      "no": 1,
@@ -71336,7 +71338,7 @@
     {
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN",
-     "place": 2,
+     "place": 3,
      "points": "103.99",
      "time": "06:35",
      "no": 4,
@@ -124919,5 +124921,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "2fe93814afe4ab5b"
+ "rev": "96c49e111006cb6c"
 }
