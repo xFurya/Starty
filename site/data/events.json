@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T07:50:52+03:00",
- "checked": "2026-11-28T05:50:15.245597+00:00",
+ "checked": "2026-11-28T05:58:14.616275+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -71494,7 +71494,7 @@
      "url": "https://www.youtube.com/watch?v=lmQdEu6_aZw"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Chelsea Liu / Ryan Bedard — 100.37\n2. Jazmine Desrochers / Kieran Thrasher — 97.48\n3. Camille Kovalev / Pavel Kovalev — 95.32\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Anna Valesi / Martin Bidar — 101.27\n2. Chelsea Liu / Ryan Bedard — 100.37\n3. Jazmine Desrochers / Kieran Thrasher — 97.48\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Naomi Williams / Lachlan Lewer",
@@ -71502,7 +71502,7 @@
      "time": "08:07",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "92.33"
     },
     {
@@ -71511,7 +71511,7 @@
      "time": "08:15",
      "no": 2,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "95.32"
     },
     {
@@ -71520,7 +71520,7 @@
      "time": "08:23",
      "no": 3,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "97.48"
     },
     {
@@ -71529,7 +71529,7 @@
      "time": "08:31",
      "no": 4,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "100.37"
     },
     {
@@ -71537,7 +71537,9 @@
      "nation": "CZE",
      "time": "08:46",
      "no": 5,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "101.27"
     },
     {
      "name": "Karina Akopova / Nikita Rakhmanin",
@@ -71582,21 +71584,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Anna Valesi / Martin Bidar",
+     "nation": "CZE",
+     "points": "101.27"
+    },
+    {
+     "place": 2,
      "name": "Chelsea Liu / Ryan Bedard",
      "nation": "USA",
      "points": "100.37"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Jazmine Desrochers / Kieran Thrasher",
      "nation": "CAN",
      "points": "97.48"
-    },
-    {
-     "place": 3,
-     "name": "Camille Kovalev / Pavel Kovalev",
-     "nation": "FRA",
-     "points": "95.32"
     }
    ],
    "provisional": true
@@ -125041,5 +125043,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "2433a9d47d5db956"
+ "rev": "5feb57f8c370ef35"
 }
