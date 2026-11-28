@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T09:57:03+03:00",
- "checked": "2026-11-28T07:55:01.976447+00:00",
+ "checked": "2026-11-28T08:03:01.768636+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -71711,7 +71711,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sarah Everhardt — 126.11\n2. Kimmy Repond — 112.15\n\nРоссияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Sarah Everhardt — 126.11\n2. Julia Sauter — 114.38\n3. Kimmy Repond — 112.15\n\nРоссияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Sarah Everhardt",
@@ -71728,7 +71728,7 @@
      "time": "10:45",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "112.15"
     },
     {
@@ -71736,7 +71736,9 @@
      "nation": "ROU",
      "time": "10:53",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "114.38"
     },
     {
      "name": "Виктория Сафонова",
@@ -71833,6 +71835,12 @@
     },
     {
      "place": 2,
+     "name": "Julia Sauter",
+     "nation": "ROU",
+     "points": "114.38"
+    },
+    {
+     "place": 3,
      "name": "Kimmy Repond",
      "nation": "SUI",
      "points": "112.15"
@@ -125106,5 +125114,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "0b6f747d2de63116"
+ "rev": "142eefd2c7463a8e"
 }
