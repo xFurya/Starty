@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-28T12:29:24+03:00",
- "checked": "2026-11-28T10:55:25.774131+00:00",
+ "generated": "2026-11-28T13:32:04+03:00",
+ "checked": "2026-11-28T13:32:04+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "9",
@@ -72016,7 +72016,7 @@
      "place": 1,
      "name": "Jia Shin",
      "nation": "KOR",
-     "points": "143.71"
+     "points": "145.53"
     },
     {
      "place": 2,
@@ -72036,7 +72036,7 @@
      "place": 1,
      "name": "Jia Shin",
      "nation": "KOR",
-     "points": "219.02"
+     "points": "220.84"
     },
     {
      "place": 2,
@@ -72051,7 +72051,7 @@
      "points": "199.99"
     }
    ],
-   "desc": "Итог:\n1. Jia Shin — 143.71\n2. Mone Chiba — 137.45\n3. Yuna Aoki — 129.81\n\nИтог турнира:\n1. Jia Shin — 219.02\n2. Mone Chiba — 214.57\n3. Young You — 199.99\n\nПримечательное:\n• Jia Shin — Личный рекорд за ПП: 143.71 (был 141.02)\n• Аделия Петросян — Четверной тулуп\n• Jia Shin — Личный рекорд по сумме: 219.02 (был 212.43)\n\nРоссияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Jia Shin — 145.53\n2. Mone Chiba — 137.45\n3. Yuna Aoki — 129.81\n\nИтог турнира:\n1. Jia Shin — 220.84\n2. Mone Chiba — 214.57\n3. Young You — 199.99\n\nПримечательное:\n• Jia Shin — Личный рекорд за ПП: 143.71 (был 141.02)\n• Аделия Петросян — Четверной тулуп\n• Jia Shin — Личный рекорд по сумме: 219.02 (был 212.43)\n\nРоссияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Sarah Everhardt",
@@ -72159,7 +72159,7 @@
      "no": 11,
      "warmup": 2,
      "place": 1,
-     "points": "143.71",
+     "points": "145.53",
      "final": 1,
      "time": "12:04"
     },
@@ -72214,19 +72214,19 @@
    },
    "facts": [
     {
-     "who": "Аделия Петросян",
+     "kind": "element",
      "text": "Четверной тулуп",
-     "kind": "element"
+     "who": "Аделия Петросян"
     },
     {
-     "who": "Jia Shin",
+     "kind": "score",
      "text": "Личный рекорд за ПП: 143.71 (был 141.02)",
-     "kind": "score"
+     "who": "Jia Shin"
     },
     {
-     "who": "Jia Shin",
+     "kind": "score",
      "text": "Личный рекорд по сумме: 219.02 (был 212.43)",
-     "kind": "score"
+     "who": "Jia Shin"
     }
    ],
    "proto": "isu_isu-gp-nhk-trophy-2026.json"
@@ -72257,13 +72257,11 @@
     "Ajda Preskar",
     "Alica Lengyelova",
     "Andreea Cristiana Maria Lazar",
-    "Angel Delevaque",
     "Angelica Orsi",
     "Anna Sannikova",
     "Arina Gertsog",
     "Diana Marjanovic",
     "Djurdja Nikolic",
-    "Ekaterina Balaganskaia",
     "Emma Cerkalova",
     "Enja Sivic",
     "Hana Operckal",
@@ -72272,22 +72270,15 @@
     "Jazlynn Höppener",
     "Julia Subocz",
     "Julia Vaha-ruohola",
-    "Katarina Fedorova Coelho",
-    "Ketevan Makharadze",
-    "Lajla Mucic",
     "Lara Achermann",
     "Liana Smrekar",
-    "Lija Kroselj",
     "Lucca Dijkhuizen",
     "Luna Rozman",
-    "Mariia Sannikova",
     "Milena Velcheva",
     "Minea Montonen",
-    "Neea Haapala",
     "Neza Lusic",
     "Nika Sajko",
     "Nina Lazarevic",
-    "Polina Bykova",
     "Q",
     "Roos Harkema",
     "Summer Wijkhuizen",
@@ -72299,7 +72290,6 @@
     "Veronika Taubeova",
     "Victoria Yonemori",
     "Vita Kas",
-    "Zala Grum",
     "Zala Kas",
     "Zoja Zupancic Prevolsek",
     "Zsofia Szeplaki",
@@ -72333,7 +72323,7 @@
      "nation": "SRB",
      "no": 1,
      "warmup": 1,
-     "place": 13,
+     "place": 19,
      "points": "29.06",
      "time": "10:36"
     },
@@ -72348,70 +72338,25 @@
      "nation": "SLO",
      "no": 3,
      "warmup": 1,
-     "place": 14,
+     "place": 20,
      "points": "28.98",
      "time": "10:47"
-    },
-    {
-     "name": "Neea Haapala",
-     "nation": "FIN",
-     "no": 5,
-     "warmup": 1,
-     "place": 5,
-     "points": "50.76",
-     "time": "10:58"
     },
     {
      "name": "Liana Smrekar",
      "nation": "SLO",
      "no": 6,
      "warmup": 30,
-     "place": 11,
+     "place": 14,
      "points": "34.08",
      "time": "11:08"
-    },
-    {
-     "name": "Ekaterina Balaganskaia",
-     "nation": "SRB",
-     "no": 8,
-     "warmup": 30,
-     "place": 6,
-     "points": "49.61",
-     "time": "11:19"
-    },
-    {
-     "name": "Ketevan Makharadze",
-     "nation": "GEO",
-     "no": 9,
-     "warmup": 30,
-     "place": 4,
-     "points": "50.86",
-     "time": "11:24"
-    },
-    {
-     "name": "Mariia Sannikova",
-     "nation": "KAZ",
-     "no": 10,
-     "warmup": 30,
-     "place": 8,
-     "points": "43.83",
-     "time": "11:30"
-    },
-    {
-     "name": "Katarina Fedorova Coelho",
-     "nation": "POR",
-     "no": 11,
-     "warmup": 30,
-     "place": 9,
-     "points": "42.20",
-     "time": "11:35"
     },
     {
      "name": "Angelica Orsi",
      "nation": "ITA",
      "no": 12,
      "warmup": 3,
-     "place": 12,
+     "place": 18,
      "points": "31.54",
      "time": "11:59"
     },
@@ -72420,25 +72365,16 @@
      "nation": "SLO",
      "no": 13,
      "warmup": 3,
-     "place": 15,
+     "place": 21,
      "points": "28.35",
      "time": "12:05"
-    },
-    {
-     "name": "Zala Grum",
-     "nation": "SLO",
-     "no": 14,
-     "warmup": 3,
-     "place": 7,
-     "points": "47.11",
-     "time": "12:10"
     },
     {
      "name": "Jazlynn Höppener",
      "nation": "NED",
      "no": 15,
      "warmup": 3,
-     "place": 10,
+     "place": 13,
      "points": "36.57",
      "time": "12:16"
     },
@@ -72447,27 +72383,72 @@
      "nation": "CRO",
      "no": 16,
      "warmup": 3,
-     "place": 16,
+     "place": 24,
      "points": "18.93",
      "time": "12:21"
-    },
-    {
-     "name": "Angel Delevaque",
-     "nation": "NED",
-     "no": 18,
-     "warmup": 4,
-     "place": 3,
-     "points": "51.30",
-     "time": "12:36"
     },
     {
      "name": "Ajda Preskar",
      "nation": "SLO",
      "no": 19,
      "warmup": 4,
-     "place": 17,
+     "place": 25,
      "points": "17.49",
      "time": "12:42"
+    },
+    {
+     "name": "Andreea Cristiana Maria Lazar",
+     "nation": "ROU",
+     "no": 21,
+     "warmup": 4,
+     "place": 12,
+     "points": "40.03",
+     "time": "12:53"
+    },
+    {
+     "name": "Nina Lazarevic",
+     "nation": "SLO",
+     "no": 22,
+     "warmup": 4,
+     "place": 22,
+     "points": "27.30",
+     "time": "12:58"
+    },
+    {
+     "name": "Minea Montonen",
+     "nation": "FIN",
+     "no": 23,
+     "warmup": 4,
+     "place": 16,
+     "points": "32.75",
+     "time": "13:04"
+    },
+    {
+     "name": "Hana Operckal",
+     "nation": "SLO",
+     "no": 25,
+     "warmup": 30,
+     "place": 17,
+     "points": "32.03",
+     "time": "13:33"
+    },
+    {
+     "name": "Isabella Niederleitner",
+     "nation": "AUT",
+     "no": 27,
+     "warmup": 30,
+     "place": 15,
+     "points": "33.64",
+     "time": "13:44"
+    },
+    {
+     "name": "Nika Sajko",
+     "nation": "CRO",
+     "no": 28,
+     "warmup": 30,
+     "place": 23,
+     "points": "26.93",
+     "time": "13:50"
     },
     {
      "name": "Alica Lengyelova",
@@ -72475,13 +72456,6 @@
      "time": "15:02",
      "no": 37,
      "warmup": 7
-    },
-    {
-     "name": "Andreea Cristiana Maria Lazar",
-     "nation": "ROU",
-     "time": "12:53",
-     "no": 21,
-     "warmup": 4
     },
     {
      "name": "Anna Sannikova",
@@ -72512,25 +72486,11 @@
      "warmup": 9
     },
     {
-     "name": "Hana Operckal",
-     "nation": "SLO",
-     "time": "13:33",
-     "no": 25,
-     "warmup": 5
-    },
-    {
      "name": "Hanna Elteto",
      "nation": "HUN",
      "time": "14:10",
      "no": 31,
      "warmup": 6
-    },
-    {
-     "name": "Isabella Niederleitner",
-     "nation": "AUT",
-     "time": "13:44",
-     "no": 27,
-     "warmup": 5
     },
     {
      "name": "Julia Subocz",
@@ -72546,25 +72506,11 @@
      "warmup": 6
     },
     {
-     "name": "Lajla Mucic",
-     "nation": "BIH",
-     "time": "12:47",
-     "no": 20,
-     "warmup": 4
-    },
-    {
      "name": "Lara Achermann",
      "nation": "NED",
      "time": "16:52",
      "no": 53,
      "warmup": 9
-    },
-    {
-     "name": "Lija Kroselj",
-     "nation": "SLO",
-     "time": "13:28",
-     "no": 24,
-     "warmup": 5
     },
     {
      "name": "Lucca Dijkhuizen",
@@ -72588,39 +72534,11 @@
      "warmup": 7
     },
     {
-     "name": "Minea Montonen",
-     "nation": "FIN",
-     "time": "13:04",
-     "no": 23,
-     "warmup": 4
-    },
-    {
      "name": "Neza Lusic",
      "nation": "SLO",
      "time": "16:25",
      "no": 48,
      "warmup": 9
-    },
-    {
-     "name": "Nika Sajko",
-     "nation": "CRO",
-     "time": "13:50",
-     "no": 28,
-     "warmup": 5
-    },
-    {
-     "name": "Nina Lazarevic",
-     "nation": "SLO",
-     "time": "12:58",
-     "no": 22,
-     "warmup": 4
-    },
-    {
-     "name": "Polina Bykova",
-     "nation": "SLO",
-     "time": "13:39",
-     "no": 26,
-     "warmup": 5
     },
     {
      "name": "Roos Harkema",
@@ -72708,6 +72626,9 @@
     }
    ],
    "absences": {
+    "Lija Kroselj": {
+     "status": "WD"
+    },
     "Tara Plahutar": {
      "status": "WD"
     },
@@ -72723,30 +72644,20 @@
     "first": null,
     "names": {
      "Q": "Q",
-     "Angel DELEVAQUE": "Angel Delevaque",
-     "Ketevan MAKHARADZE": "Ketevan Makharadze",
-     "Neea HAAPALA": "Neea Haapala",
-     "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
-     "Zala GRUM": "Zala Grum",
-     "Mariia SANNIKOVA": "Mariia Sannikova",
-     "Katarina FEDOROVA COELHO": "Katarina Fedorova Coelho",
+     "Andreea Cristiana Maria LAZAR": "Andreea Cristiana Maria Lazar",
      "Jazlynn HÖPPENER": "Jazlynn Höppener",
      "Liana SMREKAR": "Liana Smrekar",
+     "Isabella NIEDERLEITNER": "Isabella Niederleitner",
+     "Minea MONTONEN": "Minea Montonen",
+     "Hana OPERCKAL": "Hana Operckal",
      "Angelica ORSI": "Angelica Orsi",
      "Djurdja NIKOLIC": "Djurdja Nikolic",
      "Enja SIVIC": "Enja Sivic",
      "Tiana KALIGARO": "Tiana Kaligaro",
+     "Nina LAZAREVIC": "Nina Lazarevic",
+     "Nika SAJKO": "Nika Sajko",
      "Tamara GRAHOVAC": "Tamara Grahovac",
      "Ajda PRESKAR": "Ajda Preskar",
-     "Lajla MUCIC": "Lajla Mucic",
-     "Andreea Cristiana Maria LAZAR": "Andreea Cristiana Maria Lazar",
-     "Nina LAZAREVIC": "Nina Lazarevic",
-     "Minea MONTONEN": "Minea Montonen",
-     "Lija KROSELJ": "Lija Kroselj",
-     "Hana OPERCKAL": "Hana Operckal",
-     "Polina BYKOVA": "Polina Bykova",
-     "Isabella NIEDERLEITNER": "Isabella Niederleitner",
-     "Nika SAJKO": "Nika Sajko",
      "Summer WIJKHUIZEN": "Summer Wijkhuizen",
      "Julia SUBOCZ": "Julia Subocz",
      "Hanna ELTETO": "Hanna Elteto",
@@ -72831,12 +72742,19 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/streams",
-     "note": "Все эфиры канала"
+     "url": "https://www.youtube.com/watch?v=Yq6iTM7VwMg",
+     "segment_verified": true
     }
    ],
    "desc": "Промежуточные итоги:\n1. Francois Pitot — 144.66\n2. Nozomu Yoshioka — 141.79\n\nРоссияне:\n• Владислав Дикиджи — 14:01\n• Пётр Гуменник — 14:32\n\nНачало: 13:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
+    {
+     "name": "Daniel Grassl",
+     "nation": "ITA",
+     "time": "14:48",
+     "no": 9,
+     "warmup": 2
+    },
     {
      "name": "Francois Pitot",
      "nation": "FRA",
@@ -72845,6 +72763,34 @@
      "warmup": 1,
      "place": 1,
      "points": "144.66"
+    },
+    {
+     "name": "Ilia Malinin",
+     "nation": "USA",
+     "time": "15:12",
+     "no": 12,
+     "warmup": 2
+    },
+    {
+     "name": "Jason Brown",
+     "nation": "USA",
+     "time": "14:08",
+     "no": 5,
+     "warmup": 1
+    },
+    {
+     "name": "Kevin Aymoz",
+     "nation": "FRA",
+     "time": "14:56",
+     "no": 10,
+     "warmup": 2
+    },
+    {
+     "name": "Lukas Britschgi",
+     "nation": "SUI",
+     "time": "14:40",
+     "no": 8,
+     "warmup": 2
     },
     {
      "name": "Nozomu Yoshioka",
@@ -72863,18 +72809,11 @@
      "warmup": 1
     },
     {
-     "name": "Владислав Дикиджи",
-     "nation": "RUS",
-     "time": "14:01",
-     "no": 4,
-     "warmup": 1
-    },
-    {
-     "name": "Jason Brown",
-     "nation": "USA",
-     "time": "14:08",
-     "no": 5,
-     "warmup": 1
+     "name": "Shun Sato",
+     "nation": "JPN",
+     "time": "15:04",
+     "no": 11,
+     "warmup": 2
     },
     {
      "name": "Vladimir Samoilov",
@@ -72884,45 +72823,17 @@
      "warmup": 1
     },
     {
+     "name": "Владислав Дикиджи",
+     "nation": "RUS",
+     "time": "14:01",
+     "no": 4,
+     "warmup": 1
+    },
+    {
      "name": "Пётр Гуменник",
      "nation": "RUS",
      "time": "14:32",
      "no": 7,
-     "warmup": 2
-    },
-    {
-     "name": "Lukas Britschgi",
-     "nation": "SUI",
-     "time": "14:40",
-     "no": 8,
-     "warmup": 2
-    },
-    {
-     "name": "Daniel Grassl",
-     "nation": "ITA",
-     "time": "14:48",
-     "no": 9,
-     "warmup": 2
-    },
-    {
-     "name": "Kevin Aymoz",
-     "nation": "FRA",
-     "time": "14:56",
-     "no": 10,
-     "warmup": 2
-    },
-    {
-     "name": "Shun Sato",
-     "nation": "JPN",
-     "time": "15:04",
-     "no": 11,
-     "warmup": 2
-    },
-    {
-     "name": "Ilia Malinin",
-     "nation": "USA",
-     "time": "15:12",
-     "no": 12,
      "warmup": 2
     }
    ],
@@ -73016,23 +72927,53 @@
    "desc": "Начало: 16:48 МСК",
    "field": [
     {
+     "name": "Полина Афанасьева / Максим Кузнецов",
+     "nation": "",
+     "no": 1,
+     "warmup": null
+    },
+    {
+     "name": "Полина Каныгина / Никита Максимов",
+     "nation": "",
+     "no": 2,
+     "warmup": null
+    },
+    {
+     "name": "Анна Соболева / Матвей Чураков",
+     "nation": "",
+     "no": 3,
+     "warmup": null
+    },
+    {
+     "name": "Милана Чегемова / Кирилл Евграфов",
+     "nation": "",
+     "no": 4,
+     "warmup": null
+    },
+    {
+     "name": "Варвара Стерлядева / Владислав Мухин",
+     "nation": "",
+     "no": 5,
+     "warmup": null
+    },
+    {
      "name": "Алиса Борисова / Дмитрий Гладнев",
-     "nation": ""
+     "nation": "",
+     "no": 6,
+     "warmup": null
+    },
+    {
+     "name": "Мария Семёнова / Илья Ивкин",
+     "nation": "",
+     "no": 7,
+     "warmup": null
     },
     {
      "name": "Алиса Кремер / Илья Целковский",
      "nation": ""
     },
     {
-     "name": "Анна Соболева / Матвей Чураков",
-     "nation": ""
-    },
-    {
      "name": "Арина Кочурова / Иван Карелин",
-     "nation": ""
-    },
-    {
-     "name": "Варвара Стерлядева / Владислав Мухин",
      "nation": ""
     },
     {
@@ -73056,22 +72997,6 @@
      "nation": ""
     },
     {
-     "name": "Мария Семёнова / Илья Ивкин",
-     "nation": ""
-    },
-    {
-     "name": "Милана Чегемова / Кирилл Евграфов",
-     "nation": ""
-    },
-    {
-     "name": "Полина Афанасьева / Максим Кузнецов",
-     "nation": ""
-    },
-    {
-     "name": "Полина Каныгина / Никита Максимов",
-     "nation": ""
-    },
-    {
      "name": "Полина Пунегова / Дмитрий Кашубин",
      "nation": ""
     }
@@ -73082,21 +73007,21 @@
     "cat": null,
     "first": null,
     "names": {
-     "Любовь Александровна АНИКИНА / Степан Андреевич КОТЕЛЬНИКОВ": "Любовь Аникина / Степан Котельников",
+     "Анна Александровна СОБОЛЕВА / Матвей Игоревич ЧУРАКОВ": "Анна Соболева / Матвей Чураков",
+     "Милана Муратовна ЧЕГЕМОВА / Кирилл Сергеевич ЕВГРАФОВ": "Милана Чегемова / Кирилл Евграфов",
+     "Мария Александровна СЕМЁНОВА / Илья Андреевич ИВКИН": "Мария Семёнова / Илья Ивкин",
      "Полина Димитриевна АФАНАСЬЕВА / Максим Сергеевич КУЗНЕЦОВ": "Полина Афанасьева / Максим Кузнецов",
-     "Екатерина Алексеевна БОГДАНОВА / Ярослав Васильевич ЧЕРНЯЕВ": "Екатерина Богданова / Ярослав Черняев",
+     "Варвара Сергеевна СТЕРЛЯДЕВА / Владислав Денисович МУХИН": "Варвара Стерлядева / Владислав Мухин",
      "Алиса Андреевна БОРИСОВА / Дмитрий Александрович ГЛАДНЕВ": "Алиса Борисова / Дмитрий Гладнев",
      "Полина Сергеевна КАНЫГИНА / Никита Андреевич МАКСИМОВ": "Полина Каныгина / Никита Максимов",
-     "Арина Константиновна КОЧУРОВА / Иван Яковлевич КАРЕЛИН": "Арина Кочурова / Иван Карелин",
-     "Алиса Максимовна КРЕМЕР / Илья Валерьевич ЦЕЛКОВСКИЙ": "Алиса Кремер / Илья Целковский",
-     "Полина Владимировна ПУНЕГОВА / Дмитрий Александрович КАШУБИН": "Полина Пунегова / Дмитрий Кашубин",
-     "Мария Александровна СЕМЁНОВА / Илья Андреевич ИВКИН": "Мария Семёнова / Илья Ивкин",
      "Любовь Сергеевна СКРЯБИНА / Григорий Дмитриевич МАТВЕЕВ": "Любовь Скрябина / Григорий Матвеев",
-     "Анна Александровна СОБОЛЕВА / Матвей Игоревич ЧУРАКОВ": "Анна Соболева / Матвей Чураков",
+     "Полина Владимировна ПУНЕГОВА / Дмитрий Александрович КАШУБИН": "Полина Пунегова / Дмитрий Кашубин",
+     "Арина Константиновна КОЧУРОВА / Иван Яковлевич КАРЕЛИН": "Арина Кочурова / Иван Карелин",
      "Екатерина Александровна СОБОЛЕВА / Вячеслав Романович БЕЗУМОВ": "Екатерина Соболева / Вячеслав Безумов",
-     "Варвара Сергеевна СТЕРЛЯДЕВА / Владислав Денисович МУХИН": "Варвара Стерлядева / Владислав Мухин",
+     "Алиса Максимовна КРЕМЕР / Илья Валерьевич ЦЕЛКОВСКИЙ": "Алиса Кремер / Илья Целковский",
      "Маргарита Иннокентьева СЫРОВА / Илья Петрович ПАВЛИНОВ": "Маргарита Иннокентьева Сырова / Илья Павлинов",
-     "Милана Муратовна ЧЕГЕМОВА / Кирилл Сергеевич ЕВГРАФОВ": "Милана Чегемова / Кирилл Евграфов"
+     "Екатерина Алексеевна БОГДАНОВА / Ярослав Васильевич ЧЕРНЯЕВ": "Екатерина Богданова / Ярослав Черняев",
+     "Любовь Александровна АНИКИНА / Степан Андреевич КОТЕЛЬНИКОВ": "Любовь Аникина / Степан Котельников"
     },
     "basis": null
    },
@@ -126955,5 +126880,5 @@
   "Ярослав Нечаев": "photos/df55625c66ca78c1.jpg",
   "Ясмина Кадырова": ""
  },
- "rev": "8b34f9e19365c3f8"
+ "rev": "0660a232116a6e1d"
 }
