@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T08:55:05+03:00",
- "checked": "2026-11-28T08:55:05+03:00",
+ "checked": "2026-11-28T06:14:15.749863+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -71496,29 +71496,29 @@
    "podium": [
     {
      "place": 1,
-     "name": "Anna Valesi / Martin Bidar",
-     "nation": "CZE",
-     "points": "101.27"
+     "name": "Yuna Nagaoka / Sumitada Moriguchi",
+     "nation": "JPN",
+     "points": "125.91"
     },
     {
      "place": 2,
-     "name": "Chelsea Liu / Ryan Bedard",
-     "nation": "USA",
-     "points": "100.37"
+     "name": "Karina Akopova / Nikita Rakhmanin",
+     "nation": "ARM",
+     "points": "111.44"
     },
     {
      "place": 3,
-     "name": "Jazmine Desrochers / Kieran Thrasher",
-     "nation": "CAN",
-     "points": "97.48"
+     "name": "Anna Valesi / Martin Bidar",
+     "nation": "CZE",
+     "points": "101.27"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Anna Valesi / Martin Bidar — 101.27\n2. Chelsea Liu / Ryan Bedard — 100.37\n3. Jazmine Desrochers / Kieran Thrasher — 97.48\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Yuna Nagaoka / Sumitada Moriguchi — 125.91\n2. Karina Akopova / Nikita Rakhmanin — 111.44\n3. Anna Valesi / Martin Bidar — 101.27\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Anna Valesi / Martin Bidar",
      "nation": "CZE",
-     "place": 1,
+     "place": 3,
      "points": "101.27",
      "time": "08:46",
      "no": 5,
@@ -71527,7 +71527,7 @@
     {
      "name": "Camille Kovalev / Pavel Kovalev",
      "nation": "FRA",
-     "place": 4,
+     "place": 6,
      "points": "95.32",
      "time": "08:15",
      "no": 2,
@@ -71536,7 +71536,7 @@
     {
      "name": "Chelsea Liu / Ryan Bedard",
      "nation": "USA",
-     "place": 2,
+     "place": 4,
      "points": "100.37",
      "time": "08:31",
      "no": 4,
@@ -71545,7 +71545,7 @@
     {
      "name": "Jazmine Desrochers / Kieran Thrasher",
      "nation": "CAN",
-     "place": 3,
+     "place": 5,
      "points": "97.48",
      "time": "08:23",
      "no": 3,
@@ -71557,7 +71557,7 @@
      "time": "08:54",
      "no": 6,
      "warmup": 2,
-     "place": 1,
+     "place": 2,
      "points": "111.44"
     },
     {
@@ -71570,7 +71570,7 @@
     {
      "name": "Naomi Williams / Lachlan Lewer",
      "nation": "USA",
-     "place": 5,
+     "place": 7,
      "points": "92.33",
      "time": "08:07",
      "no": 1,
@@ -71581,7 +71581,9 @@
      "nation": "JPN",
      "time": "09:02",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "125.91"
     }
    ],
    "provisional": true,
@@ -125044,5 +125046,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "4cea95bb99e889ad"
+ "rev": "8ad0c3c770157852"
 }
