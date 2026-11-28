@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T14:35:59+03:00",
- "checked": "2026-11-28T12:23:26.557709+00:00",
+ "checked": "2026-11-28T12:27:26.959821+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "9",
@@ -72650,7 +72650,8 @@
      "points": "164.76",
      "time": "14:01",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 7
     },
     {
      "name": "Пётр Гуменник",
@@ -72659,7 +72660,8 @@
      "points": "162.51",
      "time": "14:32",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "final": 6
     }
    ],
    "athletes": [
@@ -72708,7 +72710,7 @@
      "points": "175.43"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Ilia Malinin — 190.50\n2. Kevin Aymoz — 176.34\n3. Rio Nakata — 175.43\n\nРоссияне:\n• Владислав Дикиджи — 14:01\n• Пётр Гуменник — 14:32\n\nНачало: 13:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Ilia Malinin — 190.50\n2. Kevin Aymoz — 176.34\n3. Rio Nakata — 175.43\n\nИтог турнира:\n1. Ilia Malinin — 305.31\n2. Kevin Aymoz — 270.49\n3. Lukas Britschgi — 266.02\n\nПримечательное:\n• Ilia Malinin — Секвенция 4Lz+3A+2A\n• Ilia Malinin — Отрыв от второго места — 34.82 балла\n\nРоссияне:\n• Владислав Дикиджи — 14:01\n• Пётр Гуменник — 14:32\n\nНачало: 13:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Daniel Grassl",
@@ -72717,7 +72719,8 @@
      "no": 9,
      "warmup": 2,
      "place": 5,
-     "points": "171.20"
+     "points": "171.20",
+     "final": 4
     },
     {
      "name": "Francois Pitot",
@@ -72726,7 +72729,8 @@
      "points": "144.66",
      "time": "13:38",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 11
     },
     {
      "name": "Ilia Malinin",
@@ -72735,7 +72739,8 @@
      "no": 12,
      "warmup": 2,
      "place": 1,
-     "points": "190.50"
+     "points": "190.50",
+     "final": 1
     },
     {
      "name": "Jason Brown",
@@ -72744,7 +72749,8 @@
      "points": "158.91",
      "time": "14:08",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "final": 9
     },
     {
      "name": "Kevin Aymoz",
@@ -72753,7 +72759,8 @@
      "no": 10,
      "warmup": 2,
      "place": 2,
-     "points": "176.34"
+     "points": "176.34",
+     "final": 2
     },
     {
      "name": "Lukas Britschgi",
@@ -72762,7 +72769,8 @@
      "no": 8,
      "warmup": 2,
      "place": 4,
-     "points": "175.21"
+     "points": "175.21",
+     "final": 3
     },
     {
      "name": "Nozomu Yoshioka",
@@ -72771,7 +72779,8 @@
      "points": "141.79",
      "time": "13:45",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 12
     },
     {
      "name": "Rio Nakata",
@@ -72780,7 +72789,8 @@
      "points": "175.43",
      "time": "13:53",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 5
     },
     {
      "name": "Shun Sato",
@@ -72789,7 +72799,8 @@
      "no": 11,
      "warmup": 2,
      "place": 9,
-     "points": "151.73"
+     "points": "151.73",
+     "final": 8
     },
     {
      "name": "Vladimir Samoilov",
@@ -72798,7 +72809,8 @@
      "points": "145.61",
      "time": "14:16",
      "no": 6,
-     "warmup": 1
+     "warmup": 1,
+     "final": 10
     },
     {
      "name": "Владислав Дикиджи",
@@ -72807,7 +72819,8 @@
      "points": "164.76",
      "time": "14:01",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 7
     },
     {
      "name": "Пётр Гуменник",
@@ -72816,10 +72829,10 @@
      "points": "162.51",
      "time": "14:32",
      "no": 7,
-     "warmup": 2
+     "warmup": 2,
+     "final": 6
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG002.htm",
@@ -72839,7 +72852,7 @@
      "Shun SATO": "Shun Sato",
      "Ilia MALININ": "Ilia Malinin"
     },
-    "basis": null,
+    "basis": "judges",
     "record_marks": {
      "world": 238.24,
      "personal": {
@@ -72858,7 +72871,39 @@
      }
     }
    },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json"
+   "proto": "isu_isu-gp-nhk-trophy-2026.json",
+   "facts": [
+    {
+     "who": "Ilia Malinin",
+     "text": "Секвенция 4Lz+3A+2A",
+     "kind": "element"
+    },
+    {
+     "who": "Ilia Malinin",
+     "text": "Отрыв от второго места — 34.82 балла",
+     "kind": "place"
+    }
+   ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Ilia Malinin",
+     "nation": "USA",
+     "points": "305.31"
+    },
+    {
+     "place": 2,
+     "name": "Kevin Aymoz",
+     "nation": "FRA",
+     "points": "270.49"
+    },
+    {
+     "place": 3,
+     "name": "Lukas Britschgi",
+     "nation": "SUI",
+     "points": "266.02"
+    }
+   ]
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:dance-junior-rt",
@@ -126960,5 +127005,5 @@
   "Ярослав Нечаев": "photos/df55625c66ca78c1.jpg",
   "Ясмина Кадырова": ""
  },
- "rev": "57ba8d3e99d83d87"
+ "rev": "99f17019fdea83e5"
 }
