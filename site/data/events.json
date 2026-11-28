@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T07:50:52+03:00",
- "checked": "2026-11-28T07:50:52+03:00",
+ "checked": "2026-11-28T05:18:15.030724+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -71434,14 +71434,16 @@
      "url": "https://www.youtube.com/watch?v=lmQdEu6_aZw"
     }
    ],
-   "desc": "Начало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Naomi Williams / Lachlan Lewer — 92.33\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Naomi Williams / Lachlan Lewer",
      "nation": "USA",
      "time": "08:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "92.33"
     },
     {
      "name": "Camille Kovalev / Pavel Kovalev",
@@ -71510,7 +71512,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json"
+   "proto": "isu_isu-gp-nhk-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Naomi Williams / Lachlan Lewer",
+     "nation": "USA",
+     "points": "92.33"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:women-senior-pp",
@@ -124952,5 +124963,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "84f9e59fbe6e1410"
+ "rev": "ce10db77ead2d5da"
 }
