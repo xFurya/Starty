@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T05:46:42+03:00",
- "checked": "2026-11-28T03:23:13.813610+00:00",
+ "checked": "2026-11-28T03:31:14.090782+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -71254,7 +71254,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Rika Kihira / Shingo Nishiyama — 91.87\n\nНачало: 06:05 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Ikura Kushida / Koshiro Shimada — 97.57\n2. Rika Kihira / Shingo Nishiyama — 91.87\n\nНачало: 06:05 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Rika Kihira / Shingo Nishiyama",
@@ -71262,7 +71262,7 @@
      "time": "06:12",
      "no": 1,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "91.87"
     },
     {
@@ -71270,7 +71270,9 @@
      "nation": "JPN",
      "time": "06:19",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "97.57"
     },
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
@@ -71336,6 +71338,12 @@
    "podium": [
     {
      "place": 1,
+     "name": "Ikura Kushida / Koshiro Shimada",
+     "nation": "JPN",
+     "points": "97.57"
+    },
+    {
+     "place": 2,
      "name": "Rika Kihira / Shingo Nishiyama",
      "nation": "JPN",
      "points": "91.87"
@@ -124899,5 +124907,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "6a98a24f95545e30"
+ "rev": "2335c82e934b6d6a"
 }
