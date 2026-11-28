@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:men-
+ senior-kp@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261121T210000
+DTEND;TZID=Europe/Moscow:20261121T222000
+SUMMARY:Идель — мужчины КП
+DESCRIPTION:Итог:\n1. Иван Макиев — 82.21\n2. Конста
+ нтин Сафонов — 73.73\n3. Владислав Дворнико
+ в — 73.70\n\nНачало: 21:00 МСК\nТрансляция: VK Ви
+ део
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-idel
+ -2026-pamyati-ztr-g-s-tarasova:men-senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Идель — мужчины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

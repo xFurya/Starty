@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:ffkm:2026-11-23_kubok:dance-junior-rt@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261123T130000
+DTEND;TZID=Europe/Moscow:20261123T153500
+SUMMARY:Кубок Москвы (Финал) — танцы РТ
+DESCRIPTION:Итог:\n1. Зоя Пестова / Сергей Лагуто
+ в — 72.20\n2. Алиса Кремер / Илья Целковский 
+ — 66.16\n3. Анна Билибина / Дмитрий Кашаев — 
+ 65.55\n\nНачало: 13:00 МСК
+LOCATION:ЛД «Медведково»\, Москва
+URL:https://xfurya.github.io/Starty/#e=ffkm:2026-11-23_kubok:dance-junior-r
+ t
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Кубок Москвы (Финал) — танцы РТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

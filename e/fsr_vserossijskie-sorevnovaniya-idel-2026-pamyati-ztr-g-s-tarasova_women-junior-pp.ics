@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:wome
+ n-junior-pp@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261121T110000
+DTEND;TZID=Europe/Moscow:20261121T172000
+SUMMARY:Идель — девушки ПП
+DESCRIPTION:Итог:\n1. Виктория Стрельцова — 146.09\
+ n2. Софья Смагина — 133.66\n3. Риана Ганиева —
+  131.24\n\nИтог турнира:\n1. Виктория Стрельцо
+ ва — 218.25\n2. Софья Смагина — 207.45\n3. Риана Г
+ аниева — 201.34\n\nПримечательное:\n• Виктор
+ ия Стрельцова — Тройной аксель\n• Викто
+ рия Стрельцова — 3 четверных в программе
+ : 4T\, 4S\, 4S\n• Софья Смагина — 2 четверных в 
+ программе: 4S\, 4T\n\nРоссияне:\n• Виктория С
+ трельцова — 15:34\n• Софья Смагина — 15:39\n\n
+ Начало: 11:00 МСК\nТрансляция: VK Видео
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-idel
+ -2026-pamyati-ztr-g-s-tarasova:women-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Идель — девушки ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

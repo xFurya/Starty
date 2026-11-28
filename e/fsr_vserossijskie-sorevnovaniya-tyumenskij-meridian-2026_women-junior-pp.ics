@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-junior-p
+ p@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261126T160000
+DTEND;TZID=Europe/Moscow:20261126T194500
+SUMMARY:Тюменский меридиан — девушки ПП
+DESCRIPTION:Итог:\n1. Арина Ореховская — 127.18\n2. М
+ ария Кулакова — 114.33\n3. Алина Локтева — 111
+ .46\n\nИтог турнира:\n1. Арина Ореховская — 19
+ 1.30\n2. Мария Кулакова — 169.11\n3. Алина Локте
+ ва — 167.93\n\nПримечательное:\n• Мария Кула
+ кова — После короткой программы — 6-е ме
+ сто\, в итоге — 2-е место\n• Арина Ореховс
+ кая — Отрыв от второго места — 22.19 балла\
+ n\nНачало: 16:00 МСК
+LOCATION:«Каток Прибой»\, Тюмень
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-tyum
+ enskij-meridian-2026:women-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Тюменский меридиан — девушки ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

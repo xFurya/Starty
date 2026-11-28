@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-tallinn-trophy-2026:dance-junior-rt@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261121T154500
+DTEND;TZID=Europe/Moscow:20261121T175000
+SUMMARY:CS Tallinn Trophy — юниорские танцы РТ
+DESCRIPTION:Итог:\n1. Lea Hienne / Louis Varescon — 58.81\n2. Alexia 
+ Kruk / Jan Eisenhaber — 57.78\n3. Zoe Bianchi / Daniel Basile — 56.61\
+ n\nПримечательное:\n• Alexia Kruk / Jan Eisenhaber — Л
+ ичный рекорд за РТ: 57.78 (был 56.50)\n\nНачало: 1
+ 5:45 МСК\nТрансляция: Ice-Stars.TV
+LOCATION:Tallinn\, Estonia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-tallinn-trophy-2026:dance
+ -junior-rt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Tallinn Trophy — юниорские танцы РТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

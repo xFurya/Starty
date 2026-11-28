@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-pge-warsaw-cup-2026:dance-senior-pt@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261126T205000
+DTEND;TZID=Europe/Moscow:20261126T233000
+SUMMARY:CS PGE Warsaw Cup — танцы ПТ
+DESCRIPTION:Итог:\n1. Milla Ruud Reitan / Nikolaj Majorov — 104.21\n2
+ . Sofia Val / Asaf Kazimov — 100.40\n3. Shira Ichilov / Mikhail Nosovits
+ kiy — 98.56\n\nИтог турнира:\n1. Milla Ruud Reitan / Nikolaj 
+ Majorov — 173.26\n2. Sofia Val / Asaf Kazimov — 170.21\n3. Giulia Isab
+ ella Paolino / Andrea Tuba — 167.50\n\nНачало: 20:50 МСК
+LOCATION:Warsaw\, Poland
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-pge-warsaw-cup-2026:dance
+ -senior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS PGE Warsaw Cup — танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

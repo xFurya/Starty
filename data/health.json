@@ -1,0 +1,45 @@
+{
+ "v": 1,
+ "at": "2026-11-28T16:44:21+03:00",
+ "ok": false,
+ "season": "2026-07-01",
+ "problems": [
+  {
+   "kind": "no_starts",
+   "source": "Самара",
+   "where": "1 этап Кубка России, ВС и ВФМ \"Самарочка\", ВФМ \"Новое поколение\" (II этап)",
+   "detail": "турнир идёт, а стартов у него нет",
+   "key": "no_starts:samara:1-etap-kubka-rossii-vs-i-vfm-samarochka-vfm-novoe-pokolenie-ii-etap-",
+   "since": "2026-11-25T00:29:31+03:00"
+  },
+  {
+   "kind": "schedule_unparsed",
+   "source": "ФФККР",
+   "where": "Памяти Панина-Коломенкина (https://fsrussia.ru/files/docs/competitons/2627/panin_memorial_2026_competition_schedule.pdf)",
+   "detail": "расписание найдено, разобрано строк: 0",
+   "key": "schedule_unparsed:fsr:vserossijskie-sorevnovaniya-pamyati-pervogo-russkogo-olimpijskogo-chempiona-n-a-panina-kolomenkina-2026",
+   "since": "2026-11-26T07:49:02+03:00"
+  }
+ ],
+ "counts": {
+  "Golden Skate": 39,
+  "ISU": 156,
+  "ФФККР": 130,
+  "ФФКМ": 18
+ },
+ "fails": {
+  "Golden Skate": 1,
+  "ISU": 0,
+  "Самара": 0,
+  "ФФККР": 0,
+  "ФФКМ": 0
+ },
+ "ref": {
+  "Golden Skate": 39,
+  "ISU": 156,
+  "ФФККР": 130,
+  "ФФКМ": 18
+ },
+ "accepted": {},
+ "notes": []
+}

@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-gp-nhk-trophy-2026:men-senior-kp@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261127T130000
+DTEND;TZID=Europe/Moscow:20261127T143000
+SUMMARY:GP NHK Trophy — мужчины КП
+DESCRIPTION:Итог:\n1. Ilia Malinin — 114.81\n2. Shun Sato — 96.78\n
+ 3. Kevin Aymoz — 94.15\n\nПримечательное:\n• Ilia Malini
+ n — Мировой рекорд за КП: 114.81 (рекорд 113.97)\
+ n• Ilia Malinin — Личный рекорд за КП: 114.81 (был 
+ 111.29)\n\nРоссияне:\n• Владислав Дикиджи — 13
+ :14\n• Пётр Гуменник — 13:20\n\nНачало: 13:00 МСК
+ \nТрансляция: Okko / YouTube ISU
+LOCATION:Tokyo\, Japan
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-nhk-trophy-2026:men-senio
+ r-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GP NHK Trophy — мужчины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

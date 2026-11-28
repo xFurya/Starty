@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:ffkm:2026-11-23_kubok:men-junior-pp@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261127T161000
+DTEND;TZID=Europe/Moscow:20261127T195500
+SUMMARY:Кубок Москвы (Финал) — юноши ПП
+DESCRIPTION:Итог:\n1. Николай Колесников — 157.85\n2
+ . Никита Малютин — 154.35\n3. Даниил Жолобов 
+ — 148.56\n\nИтог турнира:\n1. Николай Колесник
+ ов — 241.94\n2. Никита Малютин — 234.43\n3. Дании
+ л Жолобов — 228.29\n\nПримечательное:\n• Ник
+ олай Колесников — 3 четверных в программ
+ е: 4S\, 4T\, 4T\n• Никита Малютин — 3 четверных
+  в программе: 4S\, 4T\, 4T\n• Даниил Жолобов — 
+ 4 четверных в программе: 4T\, 4Lo\, 4S\, 4Lo\n\nНач
+ ало: 16:10 МСК
+LOCATION:ЛД «Медведково»\, Москва
+URL:https://xfurya.github.io/Starty/#e=ffkm:2026-11-23_kubok:men-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Кубок Москвы (Финал) — юноши ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

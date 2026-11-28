@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-tallinn-trophy-2026:women-senior-pp@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261120T123000
+DTEND;TZID=Europe/Moscow:20261120T175000
+SUMMARY:CS Tallinn Trophy — женщины ПП
+DESCRIPTION:Итог:\n1. Lara Naki Gutmann — 134.60\n2. Maria Eliise Kal
+ juvere — 134.05\n3. Breken Brezden — 117.91\n\nИтог турнира
+ :\n1. Lara Naki Gutmann — 204.85\n2. Maria Eliise Kaljuvere — 203.25\n
+ 3. Breken Brezden — 179.91\n\nПримечательное:\n• Maria E
+ liise Kaljuvere — Личный рекорд за ПП: 134.05\n• Breke
+ n Brezden — Личный рекорд за ПП: 117.91\n• Maria Eliis
+ e Kaljuvere — Личный рекорд по сумме: 203.25\n• Bre
+ ken Brezden — Личный рекорд по сумме: 179.91\n\nНа
+ чало: 12:30 МСК\nТрансляция: Ice-Stars.TV
+LOCATION:Tallinn\, Estonia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-tallinn-trophy-2026:women
+ -senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Tallinn Trophy — женщины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

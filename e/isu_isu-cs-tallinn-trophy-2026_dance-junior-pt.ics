@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-tallinn-trophy-2026:dance-junior-pt@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261122T131000
+DTEND;TZID=Europe/Moscow:20261122T153000
+SUMMARY:CS Tallinn Trophy — юниорские танцы ПТ
+DESCRIPTION:Итог:\n1. Zoe Bianchi / Daniel Basile — 93.77\n2. Lea Hie
+ nne / Louis Varescon — 90.45\n3. Kristyna Stanclova / Karel Kostron — 
+ 79.57\n\nИтог турнира:\n1. Zoe Bianchi / Daniel Basile — 150.
+ 38\n2. Lea Hienne / Louis Varescon — 149.26\n3. Alexia Kruk / Jan Eisenh
+ aber — 137.29\n\nПримечательное:\n• Lea Hienne / Louis V
+ arescon — Личный рекорд за ПТ: 90.45 (был 89.45)\n•
+  Kristyna Stanclova / Karel Kostron — Личный рекорд за П
+ Т: 79.57 (был 78.19)\n• Lea Hienne / Louis Varescon — Личный
+  рекорд по сумме: 149.26 (был 149.03)\n\nНачало: 13:
+ 10 МСК\nТрансляция: Ice-Stars.TV
+LOCATION:Tallinn\, Estonia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-tallinn-trophy-2026:dance
+ -junior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Tallinn Trophy — юниорские танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

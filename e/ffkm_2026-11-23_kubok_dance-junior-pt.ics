@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:ffkm:2026-11-23_kubok:dance-junior-pt@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261124T144500
+DTEND;TZID=Europe/Moscow:20261124T173000
+SUMMARY:Кубок Москвы (Финал) — танцы ПТ
+DESCRIPTION:Итог:\n1. Зоя Пестова / Сергей Лагуто
+ в — 105.04\n2. Анна Билибина / Дмитрий Кашаев 
+ — 102.03\n3. Алиса Кремер / Илья Целковский —
+  96.50\n\nИтог турнира:\n1. Зоя Пестова / Серге
+ й Лагутов — 177.24\n2. Анна Билибина / Дмитри
+ й Кашаев — 167.58\n3. Алиса Кремер / Илья Целк
+ овский — 162.66\n\nПримечательное:\n• Зоя Пе
+ стова / Сергей Лагутов — Отрыв от второг
+ о места — 9.66 балла\n\nНачало: 14:45 МСК
+LOCATION:ЛД «Медведково»\, Москва
+URL:https://xfurya.github.io/Starty/#e=ffkm:2026-11-23_kubok:dance-junior-p
+ t
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Кубок Москвы (Финал) — танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

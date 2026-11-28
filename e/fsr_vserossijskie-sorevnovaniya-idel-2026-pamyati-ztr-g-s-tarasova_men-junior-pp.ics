@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:men-
+ junior-pp@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261121T160000
+DTEND;TZID=Europe/Moscow:20261121T190500
+SUMMARY:Идель — юноши ПП
+DESCRIPTION:Итог:\n1. Ильяс Халиуллин — 166.42\n2. Ле
+ в Бобык — 133.56\n3. Кирилл Былинин — 123.15\n\nИ
+ тог турнира:\n1. Ильяс Халиуллин — 253.17\n2. Л
+ ев Бобык — 204.07\n3. Владислав Виниченко — 1
+ 87.37\n\nПримечательное:\n• Ильяс Халиуллин 
+ — 3 четверных в программе: 4Lz\, 4T\, 4S\n• Иль
+ яс Халиуллин — Отрыв от второго места — 
+ 49.10 балла\n\nНачало: 16:00 МСК\nТрансляция: VK 
+ Видео
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-idel
+ -2026-pamyati-ztr-g-s-tarasova:men-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Идель — юноши ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

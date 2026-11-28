@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:ffkm:2026-11-23_kubok:women-junior-kp@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261125T162000
+DTEND;TZID=Europe/Moscow:20261125T212000
+SUMMARY:Кубок Москвы (Финал) — девушки КП
+DESCRIPTION:Итог:\n1. Алена Принева — 71.94\n2. Софь
+ я Смагина — 71.02\n3. Майя Сарафанова — 69.56\n\
+ nПримечательное:\n• Алиса Заикина — Трой
+ ной аксель\n\nРоссияне:\n• Алиса Заикина 
+ — 6-й\n• Софья Смагина — 17-й\n• Анна Докук
+ ина — 22-й\n\nНачало: 16:20 МСК
+LOCATION:ЛД «Медведково»\, Москва
+URL:https://xfurya.github.io/Starty/#e=ffkm:2026-11-23_kubok:women-junior-k
+ p
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Кубок Москвы (Финал) — девушки КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

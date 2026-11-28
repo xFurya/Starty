@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:wome
+ n-senior-pp@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261122T110000
+DTEND;TZID=Europe/Moscow:20261122T140500
+SUMMARY:Идель — женщины ПП
+DESCRIPTION:Итог:\n1. Алиса Юрова — 137.32\n2. Риана 
+ Кадырова — 134.04\n3. Екатерина Кольцова — 12
+ 8.39\n\nИтог турнира:\n1. Риана Кадырова — 206.2
+ 2\n2. Алиса Юрова — 203.79\n3. Екатерина Кольцо
+ ва — 192.59\n\nПримечательное:\n• Екатерина 
+ Кольцова — После короткой программы — 6-
+ е место\, в итоге — 3-е место\n\nНачало: 11:00 
+ МСК\nТрансляция: VK Видео
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-idel
+ -2026-pamyati-ztr-g-s-tarasova:women-senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Идель — женщины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

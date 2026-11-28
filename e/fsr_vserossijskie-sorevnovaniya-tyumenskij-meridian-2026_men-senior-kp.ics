@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:men-senior-kp@
+ starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261124T164500
+DTEND;TZID=Europe/Moscow:20261124T172000
+SUMMARY:Тюменский меридиан — мужчины КП
+DESCRIPTION:Итог:\n1. Роман Попов — 70.60\n2. Алекса
+ ндр Бородин — 68.55\n3. Никита Сенцов — 62.30\n\
+ nНачало: 16:45 МСК
+LOCATION:«Каток Прибой»\, Тюмень
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-tyum
+ enskij-meridian-2026:men-senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Тюменский меридиан — мужчины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

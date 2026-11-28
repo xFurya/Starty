@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-gp-skate-america-2026:men-senior-pp@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261115T052500
+DTEND;TZID=Europe/Moscow:20261115T071000
+SUMMARY:GP Skate America — мужчины ПП
+DESCRIPTION:Итог:\n1. Daniel Grassl — 188.25\n2. Ilia Malinin — 187
+ .57\n3. Tamir Kuperman — 165.42\n\nИтог турнира:\n1. Ilia Mal
+ inin — 284.31\n2. Daniel Grassl — 274.73\n3. Tamir Kuperman — 248.55
+ \n\nПримечательное:\n• Ilia Malinin — Секвенция
+  4Lz+3A+2A\n• Tamir Kuperman — Личный рекорд за ПП: 16
+ 5.42\n• Tamir Kuperman — Личный рекорд по сумме: 24
+ 8.55\n• Tamir Kuperman — После короткой программ
+ ы — 7-е место\, в итоге — 3-е место\n\nНачало
+ : 05:25 МСК\nТрансляция: Okko / YouTube ISU
+LOCATION:Everett\, USA
+URL:https://xfurya.github.io/Starty/#e=isu:isu-gp-skate-america-2026:men-se
+ nior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GP Skate America — мужчины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

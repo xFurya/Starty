@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-tallinn-trophy-2026:pairs-junior-kp@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261119T165500
+DTEND;TZID=Europe/Moscow:20261119T180000
+SUMMARY:CS Tallinn Trophy — юниорские пары КП
+DESCRIPTION:Итог:\n1. Злата Камалова / Данил Пано
+ в — 60.73\n2. Jolena Grohne / Manuel Rossi — 55.80\n3. Clelia Liget-l
+ atus / Allan Daniel Fisher — 49.49\n\nНачало: 16:55 МСК\nТра
+ нсляция: Ice-Stars.TV
+LOCATION:Tallinn\, Estonia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-tallinn-trophy-2026:pairs
+ -junior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Tallinn Trophy — юниорские пары КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

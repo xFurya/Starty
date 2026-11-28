@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Установка на iPhone — Фигурное катание</title>
+<meta name="description" content="Пошагово: как поставить «Фигурное катание» на iPhone или iPad через SideStore с нуля.">
+<meta name="theme-color" content="#F1F6FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#06101B" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Фигурное катание">
+<meta property="og:title" content="Установка на iPhone">
+<meta property="og:description" content="Пошагово, с нуля: SideStore, LocalDevVPN и «Фигурное катание».">
+<meta property="og:url" content="https://xfurya.github.io/Starty/iphone/">
+<meta property="og:image" content="https://xfurya.github.io/Starty/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../app/icon-64.png">
+<link rel="apple-touch-icon" href="../app/icon-180.png">
+<link rel="preload" href="../assets/fonts/Piazzolla-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/GolosText-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+  .hero { padding: calc(env(safe-area-inset-top) + 20px) 0 4px; }
+  .back { display: inline-flex; align-items: center; gap: 4px; margin: 0 0 30px -4px; padding: 6px 4px; font-weight: 600; font-size: 15px; }
+  .back svg { width: 18px; height: 18px; }
+  .title { font-size: clamp(40px, 10.5vw, 54px); }
+  .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .fact { padding: 6px 12px; border-radius: 999px; background: var(--plate); border: 1px solid var(--plate-line); font-size: 13.5px; font-weight: 600; color: var(--ink2); }
+
+  .alt { display: flex; gap: 14px; padding: 16px; margin-top: 26px; }
+  .alt .t { font-weight: 700; }
+  .alt p { margin: 4px 0 0; font-size: 14.5px; color: var(--ink2); }
+  .alt .btn { margin-top: 12px; min-height: 44px; font-size: 15px; padding: 0 16px; display: inline-flex; }
+
+  .need { padding: 6px 0; }
+  .need .row { padding: 11px 16px; }
+  .need .row .t { font-weight: 500; font-size: 15.5px; }
+  .check { flex: none; width: 22px; height: 22px; border-radius: 7px; background: var(--frost); color: var(--accent); display: grid; place-items: center; }
+  .check svg { width: 14px; height: 14px; }
+  .need .row + .row::before { left: 52px; }
+
+  /* шаги */
+  .part { margin: 40px 4px 4px; font-weight: 700; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink2); }
+  .part small { display: block; margin-top: 4px; font-weight: 500; font-size: 14px; letter-spacing: 0; text-transform: none; color: var(--ink3); }
+  ol.steps { list-style: none; margin: 0; padding: 0; counter-reset: step var(--from, 0); }
+  .step { position: relative; display: grid; grid-template-columns: 34px 1fr; column-gap: 14px; padding: 18px 0 6px; counter-increment: step; }
+  .step::before {
+    content: counter(step); grid-row: 1 / span 9; width: 34px; height: 34px; border-radius: 50%;
+    background: var(--accent); color: var(--on-accent); display: grid; place-items: center; font-weight: 700; font-size: 15.5px;
+  }
+  .step::after { content: ""; position: absolute; left: 16px; top: 60px; bottom: -12px; border-left: 2px solid var(--plate-line); border-radius: 1px; }
+  .step:last-child::after { display: none; }
+  .step h3 { margin: 4px 0 0; font-size: 17.5px; line-height: 1.3; font-weight: 700; }
+  .step p { margin: 6px 0 0; font-size: 15.5px; color: var(--ink2); }
+  .step p b { color: var(--ink); font-weight: 600; white-space: nowrap; }
+  .step .btn { display: inline-flex; margin-top: 12px; min-height: 46px; font-size: 15.5px; padding: 0 18px; }
+  .step .btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .step .btns .btn { margin-top: 0; }
+  .path { display: block; width: fit-content; max-width: 100%; margin-top: 10px; padding: 7px 12px; border-radius: 12px; background: var(--plate); border: 1px solid var(--plate-line); font-size: 14.5px; font-weight: 600; line-height: 1.5; color: var(--ink); }
+  .path i { font-style: normal; color: var(--ink3); margin: 0 2px; }
+  .ver { display: inline-block; margin-right: 6px; padding: 1px 8px; border-radius: 999px; background: var(--frost); color: var(--accent); font-size: 12.5px; font-weight: 700; vertical-align: 1px; }
+
+  /* выбор системы — как переключатель «Короткая / Произвольная» в приложении */
+  .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 12px; padding: 4px; border-radius: 14px; background: var(--frost); }
+  .seg input { position: absolute; opacity: 0; pointer-events: none; }
+  .seg label { text-align: center; padding: 8px 4px; border-radius: 11px; font-size: 14.5px; font-weight: 600; color: var(--ink2); cursor: pointer; border: 1px solid transparent; }
+  #os-win:checked ~ .seg label[for=os-win], #os-mac:checked ~ .seg label[for=os-mac], #os-lin:checked ~ .seg label[for=os-lin] { background: var(--plate); color: var(--accent); border-color: var(--accent); }
+  #os-win:focus-visible ~ .seg label[for=os-win], #os-mac:focus-visible ~ .seg label[for=os-mac], #os-lin:focus-visible ~ .seg label[for=os-lin] { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .os { display: none; }
+  #os-win:checked ~ .os-win, #os-mac:checked ~ .os-mac, #os-lin:checked ~ .os-lin { display: block; }
+  .tabs > input { position: absolute; opacity: 0; pointer-events: none; }
+
+  .copy { display: flex; align-items: center; gap: 10px; margin-top: 10px; padding: 10px 10px 10px 14px; }
+  .copy code { flex: 1; min-width: 0; font: 600 13.5px/1.4 Golos, system-ui, sans-serif; color: var(--ink); overflow-wrap: anywhere; }
+  .copy button { flex: none; border: 0; border-radius: 10px; padding: 9px 12px; background: var(--frost); color: var(--accent); font: 700 14px Golos, system-ui, sans-serif; cursor: pointer; }
+
+  .after .row { align-items: flex-start; }
+  .after .row .s { font-size: 14.5px; margin-top: 4px; }
+  .done { margin-top: 30px; padding: 18px 16px; text-align: center; }
+  .done .t { font: 500 23px/1.2 Piazzolla, Georgia, serif; word-spacing: .07em; }
+  .done p { margin: 6px 0 0; font-size: 14.5px; color: var(--ink2); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="i-check" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17l9-10"/></g>
+    <g id="i-web" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.8"/><path d="M3.2 12h17.6M12 3.2c2.4 2.4 3.6 5.3 3.6 8.8s-1.2 6.4-3.6 8.8M12 3.2C9.6 5.6 8.4 8.5 8.4 12s1.2 6.4 3.6 8.8"/></g>
+    <g id="i-down" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></g>
+    <g id="i-out" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16 16 8M9.5 8H16v6.5"/></g>
+    <g id="i-back" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 5.5 8 12l6.5 6.5"/></g>
+    <g id="i-refresh" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4.5v3.8h-3.8"/></g>
+    <g id="i-up" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.8"/><path d="M12 16.5v-8M8.5 11.5 12 8l3.5 3.5"/></g>
+    <g id="i-apps" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6.5" height="6.5" rx="1.8"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.8"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.8"/><path d="M16.75 14v5.5M14 16.75h5.5"/></g>
+    <g id="i-help" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.8"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-1 .8-1 1.5v.4M12 16.8v.2"/></g>
+  </defs>
+</svg>
+
+<header class="ice hero">
+  <svg class="spark" style="top: 58px; right: 10%;" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.4 4.6 11.4 12 12-7.4.6-11.4 4.6-12 12-.6-7.4-4.6-11.4-12-12C7.4 11.4 11.4 7.4 12 0z"/></svg>
+  <svg class="spark" style="top: 112px; right: 4%; width: 12px; height: 12px;" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.4 4.6 11.4 12 12-7.4.6-11.4 4.6-12 12-.6-7.4-4.6-11.4-12-12C7.4 11.4 11.4 7.4 12 0z"/></svg>
+  <div class="wrap">
+    <a class="back" href="../"><svg viewBox="0 0 24 24"><use href="#i-back"/></svg>Все способы</a>
+    <p class="kicker">iPhone и iPad</p>
+    <h1 class="title">Установка через SideStore</h1>
+    <p class="lead">Мимо App Store iPhone ставит только приложения, подписанные разработчиком. SideStore подписывает их вашим Apple ID: для телефона разработчик вы сами. Компьютер нужен один раз, дальше всё на телефоне.</p>
+    <div class="facts"><span class="fact">Бесплатно</span><span class="fact">Около 20 минут</span><span class="fact">iOS 15 и новее</span></div>
+
+    <div class="plate alt">
+      <span class="tile"><svg viewBox="0 0 24 24"><use href="#i-web"/></svg></span>
+      <div>
+        <div class="t">Не хочется возиться?</div>
+        <p>Веб-версия работает сразу в Safari: всё, кроме уведомлений. Её можно вынести на экран «Домой»: «Поделиться», затем «На экран „Домой“».</p>
+        <a class="btn secondary" href="../web/"><svg viewBox="0 0 24 24"><use href="#i-web"/></svg>Открыть веб-версию</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <h2 class="label">Что понадобится</h2>
+  <div class="plate need">
+    <div class="row"><span class="check"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><span class="txt"><span class="t">iPhone или iPad с iOS 15 или новее</span></span></div>
+    <div class="row"><span class="check"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><span class="txt"><span class="t">Код-пароль на телефоне, без него не выйдет</span></span></div>
+    <div class="row"><span class="check"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><span class="txt"><span class="t">Компьютер с Windows, macOS или Linux и кабель</span></span></div>
+    <div class="row"><span class="check"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><span class="txt"><span class="t">Apple ID, можно завести отдельный</span></span></div>
+    <div class="row"><span class="check"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><span class="txt"><span class="t">Wi-Fi: через мобильную сеть установка не идёт</span></span></div>
+  </div>
+
+  <h2 class="part">На iPhone<small>Приложение-помощник из App Store</small></h2>
+  <ol class="steps" style="--from: 0">
+    <li class="step">
+      <h3>Установите LocalDevVPN</h3>
+      <p>Это не обычный VPN: он работает только внутри телефона и нужен SideStore, чтобы ставить и продлевать приложения без компьютера.</p>
+      <div><a class="btn secondary" href="https://apps.apple.com/app/localdevvpn/id6755608044"><svg viewBox="0 0 24 24"><use href="#i-out"/></svg>Открыть в App Store</a></div>
+    </li>
+    <li class="step">
+      <h3>Включите его</h3>
+      <p>Откройте LocalDevVPN и нажмите <b>Connect</b>. iPhone спросит про конфигурацию VPN: нажмите <b>Разрешить</b> и введите код-пароль.</p>
+    </li>
+  </ol>
+
+  <h2 class="part">На компьютере<small>Только один раз</small></h2>
+  <ol class="steps" style="--from: 2">
+    <li class="step">
+      <h3>Установите iloader</h3>
+      <p>Бесплатная программа, которая ставит SideStore на телефон.</p>
+      <div class="tabs">
+        <input type="radio" name="os" id="os-win" checked><input type="radio" name="os" id="os-mac"><input type="radio" name="os" id="os-lin">
+        <div class="seg" role="tablist"><label for="os-win">Windows</label><label for="os-mac">Mac</label><label for="os-lin">Linux</label></div>
+        <div class="os os-win">
+          <p>Сначала <b>iTunes</b> с сайта Apple: в нём драйвер, через который компьютер видит iPhone. Затем сам iloader.</p>
+          <div class="btns">
+            <a class="btn secondary" href="https://www.apple.com/itunes/download/win64"><svg viewBox="0 0 24 24"><use href="#i-down"/></svg>iTunes</a>
+            <a class="btn secondary" href="https://github.com/nab138/iloader/releases/latest/download/iloader-windows-x64.msi"><svg viewBox="0 0 24 24"><use href="#i-down"/></svg>iloader для Windows</a>
+          </div>
+          <p>Не подойдут 32-битная Windows и Windows 10 на процессоре Arm.</p>
+        </div>
+        <div class="os os-mac">
+          <p>Откройте образ и перенесите iloader в «Программы».</p>
+          <div class="btns"><a class="btn secondary" href="https://github.com/nab138/iloader/releases/latest/download/iloader-darwin-universal.dmg"><svg viewBox="0 0 24 24"><use href="#i-down"/></svg>iloader для Mac</a></div>
+        </div>
+        <div class="os os-lin">
+          <p>Поставьте <b>usbmuxd</b> из пакетов дистрибутива, затем iloader в виде DEB, RPM или AppImage.</p>
+          <div class="btns"><a class="btn secondary" href="https://iloader.app"><svg viewBox="0 0 24 24"><use href="#i-out"/></svg>iloader.app</a></div>
+        </div>
+      </div>
+    </li>
+    <li class="step">
+      <h3>Подключите iPhone кабелем</h3>
+      <p>На телефоне появится «Доверять этому компьютеру?»: нажмите <b>Доверять</b> и введите код-пароль.</p>
+    </li>
+    <li class="step">
+      <h3>Войдите с Apple ID</h3>
+      <p>Откройте iloader и войдите. Подойдёт любой Apple ID, не обязательно тот, что на телефоне. Адрес и пароль вводите точно, регистр букв важен. Если Apple пришлёт код подтверждения, введите его.</p>
+    </li>
+    <li class="step">
+      <h3>Поставьте SideStore</h3>
+      <p>Выберите свой iPhone и нажмите <b>Install SideStore (Stable)</b>. Когда iloader закончит, кабель можно отключить.</p>
+    </li>
+  </ol>
+
+  <h2 class="part">Снова на iPhone<small>Разрешить SideStore запускаться</small></h2>
+  <ol class="steps" style="--from: 6">
+    <li class="step">
+      <h3>Доверьте своему Apple ID</h3>
+      <div class="path">Настройки&nbsp;<i>›</i> Основные&nbsp;<i>›</i> VPN и управление устройством</div>
+      <p>В разделе «Приложение разработчика» выберите свой Apple ID и нажмите <b>Доверять</b>.</p>
+      <p><span class="ver">iOS 18+</span>iPhone предложит разрешить и перезагрузиться: согласитесь и введите код-пароль.</p>
+    </li>
+    <li class="step">
+      <h3>Включите режим разработчика</h3>
+      <div class="path">Настройки&nbsp;<i>›</i> Конфиденциальность и безопасность&nbsp;<i>›</i> Режим разработчика</div>
+      <p>Переключатель в самом низу. Телефон перезагрузится, после этого подтвердите <b>Включить</b> и введите код-пароль.</p>
+      <p><span class="ver">iOS 15</span>Этого шага нет, пропустите.</p>
+    </li>
+    <li class="step">
+      <h3>Войдите в SideStore</h3>
+      <p>Проверьте, что LocalDevVPN включён. Откройте SideStore и войдите тем же Apple ID, что в iloader.</p>
+      <p>Вкладка <b>My Apps</b>, затем нажмите <b>7 DAYS</b> рядом с SideStore. Если спросит про сертификат, ответьте <b>Yes</b> или <b>Refresh Now</b>.</p>
+      <p>SideStore выйдет на экран «Домой» и пришлёт уведомление: так и должно быть. Через несколько секунд его можно открывать снова.</p>
+    </li>
+  </ol>
+
+  <h2 class="part">Фигурное катание<small>Последние два шага</small></h2>
+  <ol class="steps" style="--from: 9">
+    <li class="step">
+      <h3>Добавьте наш источник</h3>
+      <div><a class="btn primary" href="sidestore://source?url=https://xfurya.github.io/Starty/app/sidestore.json"><svg viewBox="0 0 24 24"><use href="#i-apps"/></svg>Добавить в SideStore</a></div>
+      <p>Если кнопка не сработала: в SideStore вкладка <b>Sources</b>, затем <b>+</b>, и вставьте адрес:</p>
+      <div class="plate copy"><code id="src">https://xfurya.github.io/<wbr>Starty/<wbr>app/<wbr>sidestore.json</code><button type="button" id="copy">Копировать</button></div>
+    </li>
+    <li class="step">
+      <h3>Установите приложение</h3>
+      <p>Откройте источник «Фигурное катание» и установите приложение. LocalDevVPN при этом должен быть включён. Значок появится на экране «Домой».</p>
+    </li>
+  </ol>
+
+  <div class="plate done">
+    <div class="t">Готово</div>
+    <p>Уведомления о стартах работают так же, как в любом приложении.</p>
+  </div>
+
+  <h2 class="label">Что дальше</h2>
+  <div class="plate after">
+    <div class="row">
+      <span class="tile"><svg viewBox="0 0 24 24"><use href="#i-refresh"/></svg></span>
+      <span class="txt"><span class="t">Подпись живёт 7 дней</span><span class="s">SideStore продлевает её сам. Если давно не открывали, включите LocalDevVPN, откройте SideStore и нажмите <b>Refresh All</b>. Если срок всё же вышел, приложение не откроется до продления, но данные останутся.</span></span>
+    </div>
+    <div class="row">
+      <span class="tile"><svg viewBox="0 0 24 24"><use href="#i-up"/></svg></span>
+      <span class="txt"><span class="t">Обновления</span><span class="s">Новые версии приходят в SideStore, во вкладку <b>My Apps</b>. Приложение и само скажет, что вышла новая версия.</span></span>
+    </div>
+    <div class="row">
+      <span class="tile"><svg viewBox="0 0 24 24"><use href="#i-apps"/></svg></span>
+      <span class="txt"><span class="t">Не больше трёх приложений</span><span class="s">С бесплатным Apple ID через SideStore можно держать три приложения, включая сам SideStore, и ставить не больше десяти разных за неделю.</span></span>
+    </div>
+    <div class="row">
+      <span class="tile"><svg viewBox="0 0 24 24"><use href="#i-help"/></svg></span>
+      <span class="txt"><span class="t">Если перестало работать</span><span class="s">После обновления iOS SideStore иногда теряет файл пары. Его заменяют через iloader по <a href="https://docs.sidestore.io/docs/advanced/pairing-file">инструкции SideStore</a>. Остальные вопросы — в <a href="https://docs.sidestore.io/docs/troubleshooting">разделе помощи</a>.</span></span>
+    </div>
+  </div>
+
+  <p class="foot">Шаги сверены с <a href="https://docs.sidestore.io/docs/installation/prerequisites">официальной инструкцией SideStore</a>. SideStore и iloader — сторонние бесплатные программы с открытым кодом.</p>
+</main>
+
+<script>
+(function () {
+  // на Mac сразу вкладка Mac, на Linux — Linux
+  var ua = navigator.userAgent, touch = navigator.maxTouchPoints > 1;
+  if (/Macintosh/.test(ua) && !touch) document.getElementById('os-mac').checked = true;
+  else if (/Linux/.test(ua) && !/Android/.test(ua)) document.getElementById('os-lin').checked = true;
+
+  var b = document.getElementById('copy');
+  b.addEventListener('click', function () {
+    var text = document.getElementById('src').textContent;
+    function ok() { b.textContent = 'Скопировано'; setTimeout(function () { b.textContent = 'Копировать'; }, 2000); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(ok, select);
+    } else select();
+    function select() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('src'));
+      var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      b.textContent = 'Выделено';
+    }
+  });
+})();
+</script>
+</body>
+</html>

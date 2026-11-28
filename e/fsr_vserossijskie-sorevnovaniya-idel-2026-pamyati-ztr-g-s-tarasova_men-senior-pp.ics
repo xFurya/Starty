@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-idel-2026-pamyati-ztr-g-s-tarasova:men-
+ senior-pp@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261122T140000
+DTEND;TZID=Europe/Moscow:20261122T153000
+SUMMARY:Идель — мужчины ПП
+DESCRIPTION:Итог:\n1. Константин Сафонов — 141.44\n2
+ . Георгий Терехов — 138.10\n3. Роман Попов — 1
+ 37.20\n\nИтог турнира:\n1. Иван Макиев — 217.96\n2.
+  Константин Сафонов — 215.17\n3. Роман Попов 
+ — 208.85\n\nНачало: 14:00 МСК\nТрансляция: VK Вид
+ ео
+LOCATION:Дворец спорта\, Казань
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-idel
+ -2026-pamyati-ztr-g-s-tarasova:men-senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Идель — мужчины ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

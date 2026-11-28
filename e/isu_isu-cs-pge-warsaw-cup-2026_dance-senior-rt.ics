@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-pge-warsaw-cup-2026:dance-senior-rt@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261125T203500
+DTEND;TZID=Europe/Moscow:20261125T230000
+SUMMARY:CS PGE Warsaw Cup — танцы РТ
+DESCRIPTION:Итог:\n1. Sofia Val / Asaf Kazimov — 69.81\n2. Giulia Isa
+ bella Paolino / Andrea Tuba — 69.16\n3. Milla Ruud Reitan / Nikolaj Majo
+ rov — 69.05\n\nНачало: 20:35 МСК
+LOCATION:Warsaw\, Poland
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-pge-warsaw-cup-2026:dance
+ -senior-rt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS PGE Warsaw Cup — танцы РТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,33 @@
+{
+ "version": "1.0.85",
+ "code": 86,
+ "notes": "Личные протоколы по нажатию на спортсмена, рекорды с табло и точные ссылки на эфиры ISU. Обновлены живые уведомления и вход по почте.",
+ "at": "2026-11-28T09:05:11Z",
+ "android": {
+  "file": "starty-1.0.85.apk",
+  "size": 12933161,
+  "sha256": "854432ca4fea3802039a0bcc8503ffbf18d98d709530acbde5b99201910dd257"
+ },
+ "windows": {
+  "code": 86,
+  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.85/Starty-windows.zip",
+  "size": 14991184,
+  "sha256": "486de6c503e7df3688c08d020c334dca44256be1215e137c31413cb42fa78d0c",
+  "setup": {
+   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.85/starty-setup-1.0.85.exe",
+   "size": 13024879,
+   "sha256": "1459f16c7b170f26e964f47aa37cc7761ecde4f12c223e0e98fbf04527e6a64c"
+  }
+ },
+ "macos": {
+  "code": 86,
+  "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.85/Starty-macos.zip",
+  "size": 22979009,
+  "sha256": "e0855b7467662d496b8db93a3f820578688870d2466e147a3c74a63bfc262685",
+  "dmg": {
+   "url": "https://github.com/xFurya/Starty/releases/download/app-v1.0.85/Starty-macos.dmg",
+   "size": 26222892,
+   "sha256": "83b3db9bdac6ee8654752f2774842f051a46feb9a97c88125aff3f633c1b3fe6"
+  }
+ }
+}

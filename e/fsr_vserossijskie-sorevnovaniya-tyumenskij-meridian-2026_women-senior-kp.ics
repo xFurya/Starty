@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:women-senior-k
+ p@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261125T121500
+DTEND;TZID=Europe/Moscow:20261125T144000
+SUMMARY:Тюменский меридиан — женщины КП
+DESCRIPTION:Итог:\n1. Елизавета Лабутина — 66.99\n2.
+  Мария Лабутина — 65.98\n3. Ника Губарева — 6
+ 1.83\n\nНачало: 12:15 МСК
+LOCATION:«Каток Прибой»\, Тюмень
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-tyum
+ enskij-meridian-2026:women-senior-kp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Тюменский меридиан — женщины КП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

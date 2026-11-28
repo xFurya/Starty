@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:isu:isu-cs-tallinn-trophy-2026:pairs-senior-pp@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261120T200000
+DTEND;TZID=Europe/Moscow:20261120T211000
+SUMMARY:CS Tallinn Trophy — пары ПП
+DESCRIPTION:Итог:\n1. Linzy Fitzpatrick / Keyton Bearinger — 103.07\n
+ 2. Miyu Yunoki / Tristan Taylor — 98.48\n3. Reagan Moss / Jakub Galbavy 
+ — 94.19\n\nИтог турнира:\n1. Linzy Fitzpatrick / Keyton Beari
+ nger — 156.27\n2. Miyu Yunoki / Tristan Taylor — 153.15\n3. Reagan Mos
+ s / Jakub Galbavy — 146.95\n\nПримечательное:\n• Linzy F
+ itzpatrick / Keyton Bearinger — Личный рекорд за ПП: 103
+ .07\n• Miyu Yunoki / Tristan Taylor — Личный рекорд за 
+ ПП: 98.48\n• Reagan Moss / Jakub Galbavy — Личный рекорд
+  за ПП: 94.19\n• Linzy Fitzpatrick / Keyton Bearinger — Личны
+ й рекорд по сумме: 156.27\n• Reagan Moss / Jakub Galbavy 
+ — Личный рекорд по сумме: 146.95\n\nНачало: 20:
+ 00 МСК\nТрансляция: Ice-Stars.TV
+LOCATION:Tallinn\, Estonia
+URL:https://xfurya.github.io/Starty/#e=isu:isu-cs-tallinn-trophy-2026:pairs
+ -senior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CS Tallinn Trophy — пары ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

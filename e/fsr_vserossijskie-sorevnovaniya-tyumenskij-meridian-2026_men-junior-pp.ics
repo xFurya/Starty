@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-tyumenskij-meridian-2026:men-junior-pp@
+ starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261125T144500
+DTEND;TZID=Europe/Moscow:20261125T173000
+SUMMARY:Тюменский меридиан — юноши ПП
+DESCRIPTION:Итог:\n1. Ярослав Крегель — 133.13\n2. Ил
+ ья Старков — 126.79\n3. Андрей Шилин — 126.44\n\n
+ Итог турнира:\n1. Ярослав Крегель — 203.68\n2. 
+ Илья Старков — 194.55\n3. Владислав Левичев 
+ — 190.92\n\nНачало: 14:45 МСК
+LOCATION:«Каток Прибой»\, Тюмень
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-tyum
+ enskij-meridian-2026:men-junior-pp
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Тюменский меридиан — юноши ПП
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

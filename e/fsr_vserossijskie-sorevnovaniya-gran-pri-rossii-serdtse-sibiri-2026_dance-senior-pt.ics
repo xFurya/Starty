@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Starty//Календарь стартов//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+TZNAME:MSK
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:fsr:vserossijskie-sorevnovaniya-gran-pri-rossii-serdtse-sibiri-2026:dan
+ ce-senior-pt@starty
+DTSTAMP:20261128T134421Z
+DTSTART;TZID=Europe/Moscow:20261115T100000
+DTEND;TZID=Europe/Moscow:20261115T112500
+SUMMARY:Гран-при России «Сердце Сибири» — та
+ нцы ПТ
+DESCRIPTION:Итог:\n1. Александра Степанова / Ива
+ н Букин — 121.32\n2. Василиса Кагановская / М
+ аксим Некрасов — 121.12\n3. Ирина Хавронина /
+  Девид Нарижный — 112.98\n\nИтог турнира:\n1. В
+ асилиса Кагановская / Максим Некрасов — 
+ 202.88\n2. Александра Степанова / Иван Букин 
+ — 202.84\n3. Ирина Хавронина / Девид Нарижный
+  — 191.19\n\nНачало: 10:00 МСК\nТрансляция: Перв
+ ый канал / YouTube
+LOCATION:G-Drive Арена\, Омск
+URL:https://xfurya.github.io/Starty/#e=fsr:vserossijskie-sorevnovaniya-gran
+ -pri-rossii-serdtse-sibiri-2026:dance-senior-pt
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Гран-при России «Сердце Сибири» — 
+ танцы ПТ
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
