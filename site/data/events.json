@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-28T00:28:15+03:00",
- "checked": "2026-11-28T00:28:15+03:00",
- "complete": true,
+ "generated": "2026-11-28T05:46:42+03:00",
+ "checked": "2026-11-28T05:46:42+03:00",
+ "complete": false,
  "epoch": 1,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
-  "Golden Skate": "ok",
+  "Golden Skate": "fail",
   "ФФКМ": "ok",
   "Самара": "ok"
  },
@@ -124888,5 +124888,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "d17450d6f57c3bda"
+ "rev": "0ca8a42a8951520e"
 }
