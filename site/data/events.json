@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T16:44:21+03:00",
- "checked": "2026-11-28T16:44:21+03:00",
+ "checked": "2026-11-28T14:15:57.661677+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "9",
@@ -73003,28 +73003,7 @@
     },
     "basis": null
    },
-   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Алиса Кремер / Илья Целковский",
-     "nation": "",
-     "points": "64.71"
-    },
-    {
-     "place": 2,
-     "name": "Анна Соболева / Матвей Чураков",
-     "nation": "",
-     "points": "64.51"
-    },
-    {
-     "place": 3,
-     "name": "Милана Чегемова / Кирилл Евграфов",
-     "nation": "",
-     "points": "55.24"
-    }
-   ],
-   "provisional": true
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
   },
   {
    "id": "gs:skate-celje:men-junior-kp",
@@ -73147,14 +73126,16 @@
     "Zhasmin Shlaga"
    ],
    "src": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
-   "desc": "Начало: 17:00 МСК",
+   "desc": "Промежуточные итоги:\n1. Linda Dzerve — 34.04\n\nНачало: 17:00 МСК",
    "field": [
     {
      "name": "Linda Dzerve",
      "nation": "LAT",
      "time": "17:07",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "34.04"
     },
     {
      "name": "Julia Kasprzyk",
@@ -73455,7 +73436,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json"
+   "proto": "isu_isu-cs-pge-warsaw-cup-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Linda Dzerve",
+     "nation": "LAT",
+     "points": "34.04"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:dance-senior-rt",
@@ -126982,5 +126972,5 @@
   "Ярослав Нечаев": "photos/df55625c66ca78c1.jpg",
   "Ясмина Кадырова": ""
  },
- "rev": "0bc04448f8268e37"
+ "rev": "f6a4c9ce124f4d3e"
 }
