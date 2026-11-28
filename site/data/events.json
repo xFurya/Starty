@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T14:35:59+03:00",
- "checked": "2026-11-28T11:59:26.971739+00:00",
+ "checked": "2026-11-28T12:07:26.714148+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "9",
@@ -72646,7 +72646,7 @@
     {
      "name": "Владислав Дикиджи",
      "nation": "RUS",
-     "place": 4,
+     "place": 5,
      "points": "164.76",
      "time": "14:01",
      "no": 4,
@@ -72655,7 +72655,7 @@
     {
      "name": "Пётр Гуменник",
      "nation": "RUS",
-     "place": 5,
+     "place": 6,
      "points": "162.51",
      "time": "14:32",
      "no": 7,
@@ -72691,24 +72691,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Kevin Aymoz",
+     "nation": "FRA",
+     "points": "176.34"
+    },
+    {
+     "place": 2,
      "name": "Rio Nakata",
      "nation": "JPN",
      "points": "175.43"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Lukas Britschgi",
      "nation": "SUI",
      "points": "175.21"
-    },
-    {
-     "place": 3,
-     "name": "Daniel Grassl",
-     "nation": "ITA",
-     "points": "171.20"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Rio Nakata — 175.43\n2. Lukas Britschgi — 175.21\n3. Daniel Grassl — 171.20\n\nРоссияне:\n• Владислав Дикиджи — 14:01\n• Пётр Гуменник — 14:32\n\nНачало: 13:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Kevin Aymoz — 176.34\n2. Rio Nakata — 175.43\n3. Lukas Britschgi — 175.21\n\nРоссияне:\n• Владислав Дикиджи — 14:01\n• Пётр Гуменник — 14:32\n\nНачало: 13:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Daniel Grassl",
@@ -72716,13 +72716,13 @@
      "time": "14:48",
      "no": 9,
      "warmup": 2,
-     "place": 3,
+     "place": 4,
      "points": "171.20"
     },
     {
      "name": "Francois Pitot",
      "nation": "FRA",
-     "place": 8,
+     "place": 9,
      "points": "144.66",
      "time": "13:38",
      "no": 1,
@@ -72738,7 +72738,7 @@
     {
      "name": "Jason Brown",
      "nation": "USA",
-     "place": 6,
+     "place": 7,
      "points": "158.91",
      "time": "14:08",
      "no": 5,
@@ -72749,7 +72749,9 @@
      "nation": "FRA",
      "time": "14:56",
      "no": 10,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "176.34"
     },
     {
      "name": "Lukas Britschgi",
@@ -72757,13 +72759,13 @@
      "time": "14:40",
      "no": 8,
      "warmup": 2,
-     "place": 2,
+     "place": 3,
      "points": "175.21"
     },
     {
      "name": "Nozomu Yoshioka",
      "nation": "JPN",
-     "place": 9,
+     "place": 10,
      "points": "141.79",
      "time": "13:45",
      "no": 2,
@@ -72772,7 +72774,7 @@
     {
      "name": "Rio Nakata",
      "nation": "JPN",
-     "place": 1,
+     "place": 2,
      "points": "175.43",
      "time": "13:53",
      "no": 3,
@@ -72788,7 +72790,7 @@
     {
      "name": "Vladimir Samoilov",
      "nation": "POL",
-     "place": 7,
+     "place": 8,
      "points": "145.61",
      "time": "14:16",
      "no": 6,
@@ -72797,7 +72799,7 @@
     {
      "name": "Владислав Дикиджи",
      "nation": "RUS",
-     "place": 4,
+     "place": 5,
      "points": "164.76",
      "time": "14:01",
      "no": 4,
@@ -72806,7 +72808,7 @@
     {
      "name": "Пётр Гуменник",
      "nation": "RUS",
-     "place": 5,
+     "place": 6,
      "points": "162.51",
      "time": "14:32",
      "no": 7,
@@ -126954,5 +126956,5 @@
   "Ярослав Нечаев": "photos/df55625c66ca78c1.jpg",
   "Ясмина Кадырова": ""
  },
- "rev": "d34310be95596a8e"
+ "rev": "47c66e9bf48fd3fe"
 }
