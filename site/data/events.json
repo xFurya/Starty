@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-28T07:50:52+03:00",
- "checked": "2026-11-28T06:06:15.320301+00:00",
+ "generated": "2026-11-28T08:55:05+03:00",
+ "checked": "2026-11-28T08:55:05+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -67119,14 +67119,6 @@
      "points": "66.10"
     },
     {
-     "name": "Диана Мильто",
-     "nation": "",
-     "no": 28,
-     "warmup": null,
-     "place": 8,
-     "points": "65.47"
-    },
-    {
      "name": "Ника Маскайкина",
      "nation": "",
      "no": 29,
@@ -67179,6 +67171,13 @@
      "place": 33,
      "points": "48.87",
      "no": 19
+    },
+    {
+     "name": "Диана Мильто",
+     "nation": "",
+     "place": 8,
+     "points": "65.47",
+     "no": 28
     },
     {
      "name": "Евгения Чеботарева",
@@ -70450,6 +70449,26 @@
      "points": "148.56"
     }
    ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Николай Колесников",
+     "nation": "",
+     "points": "241.94"
+    },
+    {
+     "place": 2,
+     "name": "Никита Малютин",
+     "nation": "",
+     "points": "234.43"
+    },
+    {
+     "place": 3,
+     "name": "Даниил Жолобов",
+     "nation": "",
+     "points": "228.29"
+    }
+   ],
    "desc": "Итог:\n1. Николай Колесников — 157.85\n2. Никита Малютин — 154.35\n3. Даниил Жолобов — 148.56\n\nИтог турнира:\n1. Николай Колесников — 241.94\n2. Никита Малютин — 234.43\n3. Даниил Жолобов — 228.29\n\nПримечательное:\n• Николай Колесников — 3 четверных в программе: 4S, 4T, 4T\n• Никита Малютин — 3 четверных в программе: 4S, 4T, 4T\n• Даниил Жолобов — 4 четверных в программе: 4T, 4Lo, 4S, 4Lo\n\nНачало: 16:10 МСК",
    "field": [
     {
@@ -70702,46 +70721,26 @@
     },
     "basis": "judges"
    },
-   "tier": "regional",
-   "region": "Москва",
-   "proto": "ffkm_2026-11-23_kubok.json",
    "facts": [
     {
-     "who": "Николай Колесников",
-     "text": "3 четверных в программе: 4S, 4T, 4T",
-     "kind": "element"
-    },
-    {
-     "who": "Никита Малютин",
-     "text": "3 четверных в программе: 4S, 4T, 4T",
-     "kind": "element"
-    },
-    {
-     "who": "Даниил Жолобов",
+     "kind": "element",
      "text": "4 четверных в программе: 4T, 4Lo, 4S, 4Lo",
-     "kind": "element"
+     "who": "Даниил Жолобов"
+    },
+    {
+     "kind": "element",
+     "text": "3 четверных в программе: 4S, 4T, 4T",
+     "who": "Николай Колесников"
+    },
+    {
+     "kind": "element",
+     "text": "3 четверных в программе: 4S, 4T, 4T",
+     "who": "Никита Малютин"
     }
    ],
-   "total": [
-    {
-     "place": 1,
-     "name": "Николай Колесников",
-     "nation": "",
-     "points": "241.94"
-    },
-    {
-     "place": 2,
-     "name": "Никита Малютин",
-     "nation": "",
-     "points": "234.43"
-    },
-    {
-     "place": 3,
-     "name": "Даниил Жолобов",
-     "nation": "",
-     "points": "228.29"
-    }
-   ]
+   "tier": "regional",
+   "region": "Москва",
+   "proto": "ffkm_2026-11-23_kubok.json"
   },
   {
    "id": "isu:isu-cs-pge-warsaw-cup-2026:pairs-senior-kp",
@@ -71494,52 +71493,63 @@
      "url": "https://www.youtube.com/watch?v=lmQdEu6_aZw"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Karina Akopova / Nikita Rakhmanin — 111.44\n2. Anna Valesi / Martin Bidar — 101.27\n3. Chelsea Liu / Ryan Bedard — 100.37\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Anna Valesi / Martin Bidar",
+     "nation": "CZE",
+     "points": "101.27"
+    },
+    {
+     "place": 2,
+     "name": "Chelsea Liu / Ryan Bedard",
+     "nation": "USA",
+     "points": "100.37"
+    },
+    {
+     "place": 3,
+     "name": "Jazmine Desrochers / Kieran Thrasher",
+     "nation": "CAN",
+     "points": "97.48"
+    }
+   ],
+   "desc": "Промежуточные итоги:\n1. Anna Valesi / Martin Bidar — 101.27\n2. Chelsea Liu / Ryan Bedard — 100.37\n3. Jazmine Desrochers / Kieran Thrasher — 97.48\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Naomi Williams / Lachlan Lewer",
-     "nation": "USA",
-     "time": "08:07",
-     "no": 1,
-     "warmup": 1,
-     "place": 6,
-     "points": "92.33"
+     "name": "Anna Valesi / Martin Bidar",
+     "nation": "CZE",
+     "place": 1,
+     "points": "101.27",
+     "time": "08:46",
+     "no": 5,
+     "warmup": 2
     },
     {
      "name": "Camille Kovalev / Pavel Kovalev",
      "nation": "FRA",
+     "place": 4,
+     "points": "95.32",
      "time": "08:15",
      "no": 2,
-     "warmup": 1,
-     "place": 5,
-     "points": "95.32"
-    },
-    {
-     "name": "Jazmine Desrochers / Kieran Thrasher",
-     "nation": "CAN",
-     "time": "08:23",
-     "no": 3,
-     "warmup": 1,
-     "place": 4,
-     "points": "97.48"
+     "warmup": 1
     },
     {
      "name": "Chelsea Liu / Ryan Bedard",
      "nation": "USA",
+     "place": 2,
+     "points": "100.37",
      "time": "08:31",
      "no": 4,
-     "warmup": 1,
-     "place": 3,
-     "points": "100.37"
+     "warmup": 1
     },
     {
-     "name": "Anna Valesi / Martin Bidar",
-     "nation": "CZE",
-     "time": "08:46",
-     "no": 5,
-     "warmup": 2,
-     "place": 2,
-     "points": "101.27"
+     "name": "Jazmine Desrochers / Kieran Thrasher",
+     "nation": "CAN",
+     "place": 3,
+     "points": "97.48",
+     "time": "08:23",
+     "no": 3,
+     "warmup": 1
     },
     {
      "name": "Karina Akopova / Nikita Rakhmanin",
@@ -71551,59 +71561,48 @@
      "points": "111.44"
     },
     {
-     "name": "Yuna Nagaoka / Sumitada Moriguchi",
-     "nation": "JPN",
-     "time": "09:02",
-     "no": 7,
-     "warmup": 2
-    },
-    {
      "name": "Minerva Fabienne Hase / Nikita Volodin",
      "nation": "GER",
      "time": "09:09",
      "no": 8,
      "warmup": 2
+    },
+    {
+     "name": "Naomi Williams / Lachlan Lewer",
+     "nation": "USA",
+     "place": 5,
+     "points": "92.33",
+     "time": "08:07",
+     "no": 1,
+     "warmup": 1
+    },
+    {
+     "name": "Yuna Nagaoka / Sumitada Moriguchi",
+     "nation": "JPN",
+     "time": "09:02",
+     "no": 7,
+     "warmup": 2
     }
    ],
+   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG006.htm",
     "cat": "https://results.isu.org/results/season2627/gpjpn2026/CAT003RS.htm",
     "first": "https://results.isu.org/results/season2627/gpjpn2026/SEG005.htm",
     "names": {
-     "Naomi WILLIAMS / Lachlan LEWER": "Naomi Williams / Lachlan Lewer",
-     "Camille KOVALEV / Pavel KOVALEV": "Camille Kovalev / Pavel Kovalev",
-     "Jazmine DESROCHERS / Kieran THRASHER": "Jazmine Desrochers / Kieran Thrasher",
-     "Chelsea LIU / Ryan BEDARD": "Chelsea Liu / Ryan Bedard",
      "Anna VALESI / Martin BIDAR": "Anna Valesi / Martin Bidar",
+     "Chelsea LIU / Ryan BEDARD": "Chelsea Liu / Ryan Bedard",
+     "Jazmine DESROCHERS / Kieran THRASHER": "Jazmine Desrochers / Kieran Thrasher",
+     "Camille KOVALEV / Pavel KOVALEV": "Camille Kovalev / Pavel Kovalev",
+     "Naomi WILLIAMS / Lachlan LEWER": "Naomi Williams / Lachlan Lewer",
      "Karina AKOPOVA / Nikita RAKHMANIN": "Karina Akopova / Nikita Rakhmanin",
      "Yuna NAGAOKA / Sumitada MORIGUCHI": "Yuna Nagaoka / Sumitada Moriguchi",
      "Minerva Fabienne HASE / Nikita VOLODIN": "Minerva Fabienne Hase / Nikita Volodin"
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json",
-   "podium": [
-    {
-     "place": 1,
-     "name": "Karina Akopova / Nikita Rakhmanin",
-     "nation": "ARM",
-     "points": "111.44"
-    },
-    {
-     "place": 2,
-     "name": "Anna Valesi / Martin Bidar",
-     "nation": "CZE",
-     "points": "101.27"
-    },
-    {
-     "place": 3,
-     "name": "Chelsea Liu / Ryan Bedard",
-     "nation": "USA",
-     "points": "100.37"
-    }
-   ],
-   "provisional": true
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:women-senior-pp",
@@ -125045,5 +125044,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "3ce4430aa5ab21cf"
+ "rev": "4cea95bb99e889ad"
 }
