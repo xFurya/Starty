@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T06:47:48+03:00",
- "checked": "2026-11-28T04:15:14.249505+00:00",
+ "checked": "2026-11-28T04:27:13.638824+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -71257,24 +71257,24 @@
    "podium": [
     {
      "place": 1,
+     "name": "Emilea Zingas / Vadym Kolesnik",
+     "nation": "USA",
+     "points": "120.13"
+    },
+    {
+     "place": 2,
      "name": "Christina Carreira / Anthony Ponomarenko",
      "nation": "USA",
      "points": "116.06"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Olivia Smart / Tim Dieck",
      "nation": "ESP",
      "points": "110.76"
-    },
-    {
-     "place": 3,
-     "name": "Juulia Turkkila / Matthias Versluis",
-     "nation": "FIN",
-     "points": "105.72"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Christina Carreira / Anthony Ponomarenko — 116.06\n2. Olivia Smart / Tim Dieck — 110.76\n3. Juulia Turkkila / Matthias Versluis — 105.72\n\nНачало: 06:05 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Emilea Zingas / Vadym Kolesnik — 120.13\n2. Christina Carreira / Anthony Ponomarenko — 116.06\n3. Olivia Smart / Tim Dieck — 110.76\n\nИтог турнира:\n1. Emilea Zingas / Vadym Kolesnik — 203.29\n2. Christina Carreira / Anthony Ponomarenko — 196.88\n3. Olivia Smart / Tim Dieck — 186.47\n\nНачало: 06:05 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Christina Carreira / Anthony Ponomarenko",
@@ -71282,24 +71282,29 @@
      "time": "07:06",
      "no": 7,
      "warmup": 2,
-     "place": 1,
-     "points": "116.06"
+     "place": 2,
+     "points": "116.06",
+     "final": 2
     },
     {
      "name": "Emilea Zingas / Vadym Kolesnik",
      "nation": "USA",
      "time": "07:13",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 1,
+     "points": "120.13",
+     "final": 1
     },
     {
      "name": "Ikura Kushida / Koshiro Shimada",
      "nation": "JPN",
-     "place": 6,
+     "place": 7,
      "points": "97.57",
      "time": "06:19",
      "no": 2,
-     "warmup": 1
+     "warmup": 1,
+     "final": 7
     },
     {
      "name": "Juulia Turkkila / Matthias Versluis",
@@ -71307,17 +71312,19 @@
      "time": "06:58",
      "no": 6,
      "warmup": 2,
-     "place": 3,
-     "points": "105.72"
+     "place": 4,
+     "points": "105.72",
+     "final": 4
     },
     {
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
-     "place": 5,
+     "place": 6,
      "points": "102.43",
      "time": "06:27",
      "no": 3,
-     "warmup": 1
+     "warmup": 1,
+     "final": 6
     },
     {
      "name": "Olivia Smart / Tim Dieck",
@@ -71325,29 +71332,31 @@
      "time": "06:50",
      "no": 5,
      "warmup": 2,
-     "place": 2,
-     "points": "110.76"
+     "place": 3,
+     "points": "110.76",
+     "final": 3
     },
     {
      "name": "Rika Kihira / Shingo Nishiyama",
      "nation": "JPN",
-     "place": 7,
+     "place": 8,
      "points": "91.87",
      "time": "06:12",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "final": 8
     },
     {
      "name": "Yuka Orihara / Juho Pirinen",
      "nation": "FIN",
-     "place": 4,
+     "place": 5,
      "points": "103.99",
      "time": "06:35",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "final": 5
     }
    ],
-   "provisional": true,
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG008.htm",
@@ -71363,9 +71372,29 @@
      "Christina CARREIRA / Anthony PONOMARENKO": "Christina Carreira / Anthony Ponomarenko",
      "Emilea ZINGAS / Vadym KOLESNIK": "Emilea Zingas / Vadym Kolesnik"
     },
-    "basis": null
+    "basis": "judges"
    },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json"
+   "proto": "isu_isu-gp-nhk-trophy-2026.json",
+   "total": [
+    {
+     "place": 1,
+     "name": "Emilea Zingas / Vadym Kolesnik",
+     "nation": "USA",
+     "points": "203.29"
+    },
+    {
+     "place": 2,
+     "name": "Christina Carreira / Anthony Ponomarenko",
+     "nation": "USA",
+     "points": "196.88"
+    },
+    {
+     "place": 3,
+     "name": "Olivia Smart / Tim Dieck",
+     "nation": "ESP",
+     "points": "186.47"
+    }
+   ]
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:pairs-senior-pp",
@@ -124923,5 +124952,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "4c0011d74e0b11b8"
+ "rev": "35206f582553776f"
 }
