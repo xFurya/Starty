@@ -66,3 +66,14 @@ self.addEventListener('fetch', (e) => {
   if (path === SCOPE + 'version.json' || path === SCOPE + 'sw.js' || path === MARK) return;
   e.respondWith(cached(req, req.url));
 });
+
+self.addEventListener('notificationclick', (event) => {
+  if (!event.notification.tag.startsWith('starty:')) return;
+  event.notification.close();
+  event.waitUntil((async () => {
+    const pages = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+    const current = pages.find((page) => new URL(page.url).pathname.startsWith(SCOPE));
+    if (current) return current.focus();
+    return self.clients.openWindow(SCOPE);
+  })());
+});
