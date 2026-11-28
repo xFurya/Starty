@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T10:59:52+03:00",
- "checked": "2026-11-28T08:47:25.683944+00:00",
+ "checked": "2026-11-28T08:55:26.039013+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -71667,7 +71667,7 @@
     {
      "name": "Виктория Сафонова",
      "nation": "BLR",
-     "place": 5,
+     "place": 6,
      "points": "116.59",
      "time": "11:01",
      "no": 4,
@@ -71679,7 +71679,7 @@
      "time": "11:08",
      "no": 5,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "121.62"
     },
     {
@@ -71724,18 +71724,18 @@
     },
     {
      "place": 2,
-     "name": "Sarah Everhardt",
-     "nation": "USA",
-     "points": "126.11"
+     "name": "Young You",
+     "nation": "KOR",
+     "points": "128.57"
     },
     {
      "place": 3,
-     "name": "Аделия Петросян",
-     "nation": "RUS",
-     "points": "121.62"
+     "name": "Sarah Everhardt",
+     "nation": "USA",
+     "points": "126.11"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Yuna Aoki — 129.81\n2. Sarah Everhardt — 126.11\n3. Аделия Петросян — 121.62\n\nРоссияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Yuna Aoki — 129.81\n2. Young You — 128.57\n3. Sarah Everhardt — 126.11\n\nРоссияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Jia Shin",
@@ -71747,7 +71747,7 @@
     {
      "name": "Julia Sauter",
      "nation": "ROU",
-     "place": 7,
+     "place": 8,
      "points": "114.38",
      "time": "10:53",
      "no": 3,
@@ -71756,7 +71756,7 @@
     {
      "name": "Kimmy Repond",
      "nation": "SUI",
-     "place": 8,
+     "place": 9,
      "points": "112.15",
      "time": "10:45",
      "no": 2,
@@ -71768,7 +71768,7 @@
      "time": "11:16",
      "no": 6,
      "warmup": 1,
-     "place": 6,
+     "place": 7,
      "points": "114.92"
     },
     {
@@ -71777,7 +71777,7 @@
      "time": "11:40",
      "no": 8,
      "warmup": 2,
-     "place": 4,
+     "place": 5,
      "points": "121.51"
     },
     {
@@ -71790,7 +71790,7 @@
     {
      "name": "Sarah Everhardt",
      "nation": "USA",
-     "place": 2,
+     "place": 3,
      "points": "126.11",
      "time": "10:38",
      "no": 1,
@@ -71801,7 +71801,9 @@
      "nation": "KOR",
      "time": "11:48",
      "no": 9,
-     "warmup": 2
+     "warmup": 2,
+     "place": 2,
+     "points": "128.57"
     },
     {
      "name": "Yuna Aoki",
@@ -71818,7 +71820,7 @@
      "time": "11:08",
      "no": 5,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "121.62"
     },
     {
@@ -71831,7 +71833,7 @@
     {
      "name": "Виктория Сафонова",
      "nation": "BLR",
-     "place": 5,
+     "place": 6,
      "points": "116.59",
      "time": "11:01",
      "no": 4,
@@ -126517,5 +126519,5 @@
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg",
   "Neea Haapala": "photos/e53b48dba15a6d1f.jpg"
  },
- "rev": "c71b44eba08b7741"
+ "rev": "ef837d9a2468de5b"
 }
