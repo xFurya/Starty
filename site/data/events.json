@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T10:59:52+03:00",
- "checked": "2026-11-28T08:39:25.707749+00:00",
+ "checked": "2026-11-28T08:47:25.683944+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "8",
@@ -71667,7 +71667,7 @@
     {
      "name": "Виктория Сафонова",
      "nation": "BLR",
-     "place": 4,
+     "place": 5,
      "points": "116.59",
      "time": "11:01",
      "no": 4,
@@ -71747,7 +71747,7 @@
     {
      "name": "Julia Sauter",
      "nation": "ROU",
-     "place": 6,
+     "place": 7,
      "points": "114.38",
      "time": "10:53",
      "no": 3,
@@ -71756,7 +71756,7 @@
     {
      "name": "Kimmy Repond",
      "nation": "SUI",
-     "place": 7,
+     "place": 8,
      "points": "112.15",
      "time": "10:45",
      "no": 2,
@@ -71768,7 +71768,7 @@
      "time": "11:16",
      "no": 6,
      "warmup": 1,
-     "place": 5,
+     "place": 6,
      "points": "114.92"
     },
     {
@@ -71776,7 +71776,9 @@
      "nation": "JPN",
      "time": "11:40",
      "no": 8,
-     "warmup": 2
+     "warmup": 2,
+     "place": 4,
+     "points": "121.51"
     },
     {
      "name": "Mone Chiba",
@@ -71829,7 +71831,7 @@
     {
      "name": "Виктория Сафонова",
      "nation": "BLR",
-     "place": 4,
+     "place": 5,
      "points": "116.59",
      "time": "11:01",
      "no": 4,
@@ -126515,5 +126517,5 @@
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg",
   "Neea Haapala": "photos/e53b48dba15a6d1f.jpg"
  },
- "rev": "842d39035d97fe41"
+ "rev": "c71b44eba08b7741"
 }
