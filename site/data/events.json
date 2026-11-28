@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T05:46:42+03:00",
- "checked": "2026-11-28T05:46:42+03:00",
+ "checked": "2026-11-28T03:23:13.813610+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -71254,14 +71254,16 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Начало: 06:05 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Rika Kihira / Shingo Nishiyama — 91.87\n\nНачало: 06:05 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Rika Kihira / Shingo Nishiyama",
      "nation": "JPN",
      "time": "06:12",
      "no": 1,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "91.87"
     },
     {
      "name": "Ikura Kushida / Koshiro Shimada",
@@ -71330,7 +71332,16 @@
     },
     "basis": null
    },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json"
+   "proto": "isu_isu-gp-nhk-trophy-2026.json",
+   "podium": [
+    {
+     "place": 1,
+     "name": "Rika Kihira / Shingo Nishiyama",
+     "nation": "JPN",
+     "points": "91.87"
+    }
+   ],
+   "provisional": true
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:pairs-senior-pp",
@@ -124888,5 +124899,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "0ca8a42a8951520e"
+ "rev": "6a98a24f95545e30"
 }
