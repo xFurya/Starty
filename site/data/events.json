@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-28T08:55:05+03:00",
- "checked": "2026-11-28T06:22:15.207717+00:00",
- "complete": true,
+ "generated": "2026-11-28T09:57:03+03:00",
+ "checked": "2026-11-28T09:57:03+03:00",
+ "complete": false,
  "epoch": 1,
  "facts_version": "8",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
-  "Golden Skate": "ok",
+  "Golden Skate": "fail",
   "ФФКМ": "ok",
   "Самара": "ok"
  },
@@ -71464,7 +71464,7 @@
    "seg": "ПП",
    "title": "GP NHK Trophy — пары ПП",
    "start": "2026-11-28T08:00:00+03:00",
-   "end": "2026-11-28T09:18:00+03:00",
+   "end": "2026-11-28T09:20:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
    "broadcast": [
@@ -71513,107 +71513,6 @@
      "points": "111.44"
     }
    ],
-   "desc": "Итог:\n1. Minerva Fabienne Hase / Nikita Volodin — 137.87\n2. Yuna Nagaoka / Sumitada Moriguchi — 125.91\n3. Karina Akopova / Nikita Rakhmanin — 111.44\n\nИтог турнира:\n1. Minerva Fabienne Hase / Nikita Volodin — 213.08\n2. Yuna Nagaoka / Sumitada Moriguchi — 195.69\n3. Karina Akopova / Nikita Rakhmanin — 178.39\n\nПримечательное:\n• Minerva Fabienne Hase / Nikita Volodin — Отрыв от второго места — 17.39 балла\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
-   "field": [
-    {
-     "name": "Anna Valesi / Martin Bidar",
-     "nation": "CZE",
-     "place": 4,
-     "points": "101.27",
-     "time": "08:46",
-     "no": 5,
-     "warmup": 2,
-     "final": 4
-    },
-    {
-     "name": "Camille Kovalev / Pavel Kovalev",
-     "nation": "FRA",
-     "place": 7,
-     "points": "95.32",
-     "time": "08:15",
-     "no": 2,
-     "warmup": 1,
-     "final": 7
-    },
-    {
-     "name": "Chelsea Liu / Ryan Bedard",
-     "nation": "USA",
-     "place": 5,
-     "points": "100.37",
-     "time": "08:31",
-     "no": 4,
-     "warmup": 1,
-     "final": 5
-    },
-    {
-     "name": "Jazmine Desrochers / Kieran Thrasher",
-     "nation": "CAN",
-     "place": 6,
-     "points": "97.48",
-     "time": "08:23",
-     "no": 3,
-     "warmup": 1,
-     "final": 6
-    },
-    {
-     "name": "Karina Akopova / Nikita Rakhmanin",
-     "nation": "ARM",
-     "time": "08:54",
-     "no": 6,
-     "warmup": 2,
-     "place": 3,
-     "points": "111.44",
-     "final": 3
-    },
-    {
-     "name": "Minerva Fabienne Hase / Nikita Volodin",
-     "nation": "GER",
-     "time": "09:09",
-     "no": 8,
-     "warmup": 2,
-     "place": 1,
-     "points": "137.87",
-     "final": 1
-    },
-    {
-     "name": "Naomi Williams / Lachlan Lewer",
-     "nation": "USA",
-     "place": 8,
-     "points": "92.33",
-     "time": "08:07",
-     "no": 1,
-     "warmup": 1,
-     "final": 8
-    },
-    {
-     "name": "Yuna Nagaoka / Sumitada Moriguchi",
-     "nation": "JPN",
-     "time": "09:02",
-     "no": 7,
-     "warmup": 2,
-     "place": 2,
-     "points": "125.91",
-     "final": 2
-    }
-   ],
-   "live": {
-    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
-    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG006.htm",
-    "cat": "https://results.isu.org/results/season2627/gpjpn2026/CAT003RS.htm",
-    "first": "https://results.isu.org/results/season2627/gpjpn2026/SEG005.htm",
-    "names": {
-     "Anna VALESI / Martin BIDAR": "Anna Valesi / Martin Bidar",
-     "Chelsea LIU / Ryan BEDARD": "Chelsea Liu / Ryan Bedard",
-     "Jazmine DESROCHERS / Kieran THRASHER": "Jazmine Desrochers / Kieran Thrasher",
-     "Camille KOVALEV / Pavel KOVALEV": "Camille Kovalev / Pavel Kovalev",
-     "Naomi WILLIAMS / Lachlan LEWER": "Naomi Williams / Lachlan Lewer",
-     "Karina AKOPOVA / Nikita RAKHMANIN": "Karina Akopova / Nikita Rakhmanin",
-     "Yuna NAGAOKA / Sumitada MORIGUCHI": "Yuna Nagaoka / Sumitada Moriguchi",
-     "Minerva Fabienne HASE / Nikita VOLODIN": "Minerva Fabienne Hase / Nikita Volodin"
-    },
-    "basis": "judges"
-   },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json",
    "total": [
     {
      "place": 1,
@@ -71634,13 +71533,119 @@
      "points": "178.39"
     }
    ],
+   "desc": "Итог:\n1. Minerva Fabienne Hase / Nikita Volodin — 137.87\n2. Yuna Nagaoka / Sumitada Moriguchi — 125.91\n3. Karina Akopova / Nikita Rakhmanin — 111.44\n\nИтог турнира:\n1. Minerva Fabienne Hase / Nikita Volodin — 213.08\n2. Yuna Nagaoka / Sumitada Moriguchi — 195.69\n3. Karina Akopova / Nikita Rakhmanin — 178.39\n\nПримечательное:\n• Minerva Fabienne Hase / Nikita Volodin — Лучшая в мире оценка сезона за ПП: 137.87\n• Minerva Fabienne Hase / Nikita Volodin — Отрыв от второго места — 17.39 балла\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "field": [
+    {
+     "name": "Naomi Williams / Lachlan Lewer",
+     "nation": "USA",
+     "no": 1,
+     "warmup": 1,
+     "place": 8,
+     "points": "92.33",
+     "final": 8,
+     "time": "08:07"
+    },
+    {
+     "name": "Camille Kovalev / Pavel Kovalev",
+     "nation": "FRA",
+     "no": 2,
+     "warmup": 1,
+     "place": 7,
+     "points": "95.32",
+     "final": 7,
+     "time": "08:15"
+    },
+    {
+     "name": "Jazmine Desrochers / Kieran Thrasher",
+     "nation": "CAN",
+     "no": 3,
+     "warmup": 1,
+     "place": 6,
+     "points": "97.48",
+     "final": 6,
+     "time": "08:23"
+    },
+    {
+     "name": "Chelsea Liu / Ryan Bedard",
+     "nation": "USA",
+     "no": 4,
+     "warmup": 1,
+     "place": 5,
+     "points": "100.37",
+     "final": 5,
+     "time": "08:31"
+    },
+    {
+     "name": "Anna Valesi / Martin Bidar",
+     "nation": "CZE",
+     "no": 5,
+     "warmup": 2,
+     "place": 4,
+     "points": "101.27",
+     "final": 4,
+     "time": "08:46"
+    },
+    {
+     "name": "Karina Akopova / Nikita Rakhmanin",
+     "nation": "ARM",
+     "no": 6,
+     "warmup": 2,
+     "place": 3,
+     "points": "111.44",
+     "final": 3,
+     "time": "08:54"
+    },
+    {
+     "name": "Yuna Nagaoka / Sumitada Moriguchi",
+     "nation": "JPN",
+     "no": 7,
+     "warmup": 2,
+     "place": 2,
+     "points": "125.91",
+     "final": 2,
+     "time": "09:02"
+    },
+    {
+     "name": "Minerva Fabienne Hase / Nikita Volodin",
+     "nation": "GER",
+     "no": 8,
+     "warmup": 2,
+     "place": 1,
+     "points": "137.87",
+     "final": 1,
+     "time": "09:09"
+    }
+   ],
+   "live": {
+    "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
+    "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG006.htm",
+    "cat": "https://results.isu.org/results/season2627/gpjpn2026/CAT003RS.htm",
+    "first": "https://results.isu.org/results/season2627/gpjpn2026/SEG005.htm",
+    "names": {
+     "Minerva Fabienne HASE / Nikita VOLODIN": "Minerva Fabienne Hase / Nikita Volodin",
+     "Yuna NAGAOKA / Sumitada MORIGUCHI": "Yuna Nagaoka / Sumitada Moriguchi",
+     "Karina AKOPOVA / Nikita RAKHMANIN": "Karina Akopova / Nikita Rakhmanin",
+     "Anna VALESI / Martin BIDAR": "Anna Valesi / Martin Bidar",
+     "Chelsea LIU / Ryan BEDARD": "Chelsea Liu / Ryan Bedard",
+     "Jazmine DESROCHERS / Kieran THRASHER": "Jazmine Desrochers / Kieran Thrasher",
+     "Camille KOVALEV / Pavel KOVALEV": "Camille Kovalev / Pavel Kovalev",
+     "Naomi WILLIAMS / Lachlan LEWER": "Naomi Williams / Lachlan Lewer"
+    },
+    "basis": "judges"
+   },
    "facts": [
     {
      "who": "Minerva Fabienne Hase / Nikita Volodin",
+     "text": "Лучшая в мире оценка сезона за ПП: 137.87",
+     "kind": "score"
+    },
+    {
+     "kind": "place",
      "text": "Отрыв от второго места — 17.39 балла",
-     "kind": "place"
+     "who": "Minerva Fabienne Hase / Nikita Volodin"
     }
-   ]
+   ],
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "isu:isu-gp-nhk-trophy-2026:women-senior-pp",
@@ -125082,5 +125087,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "13d0945c752862c8"
+ "rev": "464e8ee3bef4ba39"
 }
