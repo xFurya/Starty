@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T14:35:59+03:00",
- "checked": "2026-11-28T12:07:26.714148+00:00",
+ "checked": "2026-11-28T12:15:26.775386+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "9",
@@ -72722,7 +72722,7 @@
     {
      "name": "Francois Pitot",
      "nation": "FRA",
-     "place": 9,
+     "place": 10,
      "points": "144.66",
      "time": "13:38",
      "no": 1,
@@ -72765,7 +72765,7 @@
     {
      "name": "Nozomu Yoshioka",
      "nation": "JPN",
-     "place": 10,
+     "place": 11,
      "points": "141.79",
      "time": "13:45",
      "no": 2,
@@ -72785,12 +72785,14 @@
      "nation": "JPN",
      "time": "15:04",
      "no": 11,
-     "warmup": 2
+     "warmup": 2,
+     "place": 8,
+     "points": "151.73"
     },
     {
      "name": "Vladimir Samoilov",
      "nation": "POL",
-     "place": 8,
+     "place": 9,
      "points": "145.61",
      "time": "14:16",
      "no": 6,
@@ -126956,5 +126958,5 @@
   "Ярослав Нечаев": "photos/df55625c66ca78c1.jpg",
   "Ясмина Кадырова": ""
  },
- "rev": "47c66e9bf48fd3fe"
+ "rev": "792fb3a46d8f6ce8"
 }
