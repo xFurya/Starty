@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T05:46:42+03:00",
- "checked": "2026-11-28T03:39:14.855839+00:00",
+ "checked": "2026-11-28T03:47:16.176026+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -71254,7 +71254,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Marjorie Lajoie / Jean-Luc Baker — 102.43\n2. Ikura Kushida / Koshiro Shimada — 97.57\n3. Rika Kihira / Shingo Nishiyama — 91.87\n\nНачало: 06:05 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Yuka Orihara / Juho Pirinen — 103.99\n2. Marjorie Lajoie / Jean-Luc Baker — 102.43\n3. Ikura Kushida / Koshiro Shimada — 97.57\n\nНачало: 06:05 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Rika Kihira / Shingo Nishiyama",
@@ -71262,7 +71262,7 @@
      "time": "06:12",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "91.87"
     },
     {
@@ -71271,7 +71271,7 @@
      "time": "06:19",
      "no": 2,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "97.57"
     },
     {
@@ -71280,7 +71280,7 @@
      "time": "06:27",
      "no": 3,
      "warmup": 1,
-     "place": 1,
+     "place": 2,
      "points": "102.43"
     },
     {
@@ -71288,7 +71288,9 @@
      "nation": "FIN",
      "time": "06:35",
      "no": 4,
-     "warmup": 1
+     "warmup": 1,
+     "place": 1,
+     "points": "103.99"
     },
     {
      "name": "Olivia Smart / Tim Dieck",
@@ -71340,21 +71342,21 @@
    "podium": [
     {
      "place": 1,
+     "name": "Yuka Orihara / Juho Pirinen",
+     "nation": "FIN",
+     "points": "103.99"
+    },
+    {
+     "place": 2,
      "name": "Marjorie Lajoie / Jean-Luc Baker",
      "nation": "CAN",
      "points": "102.43"
     },
     {
-     "place": 2,
+     "place": 3,
      "name": "Ikura Kushida / Koshiro Shimada",
      "nation": "JPN",
      "points": "97.57"
-    },
-    {
-     "place": 3,
-     "name": "Rika Kihira / Shingo Nishiyama",
-     "nation": "JPN",
-     "points": "91.87"
     }
    ],
    "provisional": true
@@ -124915,5 +124917,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "ca724cd1fa183fe1"
+ "rev": "36109f1fd8585ceb"
 }
