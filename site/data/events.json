@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T13:32:04+03:00",
- "checked": "2026-11-28T11:11:25.723909+00:00",
+ "checked": "2026-11-28T11:19:25.495085+00:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "9",
@@ -72748,7 +72748,7 @@
      "segment_verified": true
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Rio Nakata — 175.43\n2. Владислав Дикиджи — 164.76\n3. Francois Pitot — 144.66\n\nРоссияне:\n• Владислав Дикиджи — 14:01\n• Пётр Гуменник — 14:32\n\nНачало: 13:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Rio Nakata — 175.43\n2. Владислав Дикиджи — 164.76\n3. Jason Brown — 158.91\n\nРоссияне:\n• Владислав Дикиджи — 14:01\n• Пётр Гуменник — 14:32\n\nНачало: 13:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Daniel Grassl",
@@ -72763,7 +72763,7 @@
      "time": "13:38",
      "no": 1,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "144.66"
     },
     {
@@ -72778,7 +72778,9 @@
      "nation": "USA",
      "time": "14:08",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 3,
+     "points": "158.91"
     },
     {
      "name": "Kevin Aymoz",
@@ -72800,7 +72802,7 @@
      "time": "13:45",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "141.79"
     },
     {
@@ -72897,9 +72899,9 @@
     },
     {
      "place": 3,
-     "name": "Francois Pitot",
-     "nation": "FRA",
-     "points": "144.66"
+     "name": "Jason Brown",
+     "nation": "USA",
+     "points": "158.91"
     }
    ],
    "provisional": true
@@ -126892,5 +126894,5 @@
   "Ярослав Нечаев": "photos/df55625c66ca78c1.jpg",
   "Ясмина Кадырова": ""
  },
- "rev": "f89efefab02d27df"
+ "rev": "18123b3c787544aa"
 }
