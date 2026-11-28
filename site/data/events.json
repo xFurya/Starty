@@ -1,9 +1,9 @@
 {
- "generated": "2026-11-28T10:59:52+03:00",
- "checked": "2026-11-28T09:23:26.605042+00:00",
+ "generated": "2026-11-28T12:00:47+03:00",
+ "checked": "2026-11-28T12:00:47+03:00",
  "complete": true,
  "epoch": 1,
- "facts_version": "8",
+ "facts_version": "9",
  "sources": {
   "ФФККР": "ok",
   "ISU": "ok",
@@ -640,9 +640,9 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Полина Жарова / Алексей Столяров",
      "text": "Отрыв от второго места — 8.99 балла",
-     "who": "Полина Жарова / Алексей Столяров"
+     "kind": "place"
     }
    ],
    "tier": "regional",
@@ -2183,6 +2183,80 @@
      "final": 21
     }
    ],
+   "absences": {
+    "Алиса Корнаухова": {
+     "status": "NQD"
+    },
+    "Ева Тарасенко": {
+     "status": "NQD"
+    },
+    "Анастасия Чиннова": {
+     "status": "NQD"
+    },
+    "Алиса Чистякова": {
+     "status": "NQD"
+    },
+    "Виктория Позднякова": {
+     "status": "NQD"
+    },
+    "Екатерина Титова": {
+     "status": "NQD"
+    },
+    "Елизавета Дубынина": {
+     "status": "NQD"
+    },
+    "Евдокия Макарова": {
+     "status": "NQD"
+    },
+    "Алина Воробьева": {
+     "status": "NQD"
+    },
+    "Мария Капичникова": {
+     "status": "NQD"
+    },
+    "Алёна Телятникова": {
+     "status": "NQD"
+    },
+    "Анна Ильиных": {
+     "status": "NQD"
+    },
+    "Елизавета Андреева": {
+     "status": "NQD"
+    },
+    "Алина Николаева": {
+     "status": "NQD"
+    },
+    "София Гречихина": {
+     "status": "NQD"
+    },
+    "София Левшова": {
+     "status": "NQD"
+    },
+    "Анастасия Трошкина": {
+     "status": "NQD"
+    },
+    "Елизавета Ильичева": {
+     "status": "NQD"
+    },
+    "Софья Лабуткина": {
+     "status": "NQD"
+    },
+    "Варвара Полуэктова": {
+     "status": "NQD"
+    },
+    "Елизавета Самичева": {
+     "status": "NQD"
+    },
+    "София Сокольская": {
+     "status": "NQD"
+    },
+    "Мелания Гришина": {
+     "status": "NQD"
+    },
+    "Софья Федоркова": {
+     "status": "NQD"
+    }
+   },
    "live": {
     "idx": "https://ffkm.ru/results/2026-2027/2026-08-24_pm/index.htm",
     "seg": "https://ffkm.ru/results/2026-2027/2026-08-24_pm/SEG002.HTM",
@@ -9807,9 +9881,9 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Мария Фефелова / Артём Валов",
      "text": "Отрыв от второго места — 20.40 балла",
-     "who": "Мария Фефелова / Артём Валов"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -10863,9 +10937,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Виктория Стрельцова",
      "text": "Тройной аксель",
-     "who": "Виктория Стрельцова"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -11415,34 +11489,34 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Виктория Стрельцова",
      "text": "3 четверных в программе: 4S, 4T, 4S",
-     "who": "Виктория Стрельцова"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Дарья Лебедева",
      "text": "2 четверных в программе: 4S, 4T",
-     "who": "Дарья Лебедева"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Софья Смагина",
      "text": "Четверной сальхов",
-     "who": "Софья Смагина"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Алена Болдырева",
      "text": "Четверной тулуп",
-     "who": "Алена Болдырева"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Виктория Стрельцова",
      "text": "Тройной аксель",
-     "who": "Виктория Стрельцова"
+     "kind": "element"
     },
     {
-     "kind": "place",
+     "who": "Дарья Лебедева",
      "text": "После короткой программы — 10-е место, в итоге — 3-е место",
-     "who": "Дарья Лебедева"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -11729,29 +11803,29 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Макар Солодников",
      "text": "3 четверных в программе: 4T, 4S, 4S",
-     "who": "Макар Солодников"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Михаил Алексахин",
      "text": "3 четверных в программе: 4T, 4S, 4T",
-     "who": "Михаил Алексахин"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Даниил Жолобов",
      "text": "3 четверных в программе: 4T, 4Lo, 4Lo",
-     "who": "Даниил Жолобов"
+     "kind": "element"
     },
     {
-     "kind": "place",
+     "who": "Эдуард Камоев",
      "text": "После короткой программы — 5-е место, в итоге — 2-е место",
-     "who": "Эдуард Камоев"
+     "kind": "place"
     },
     {
-     "kind": "place",
+     "who": "Макар Солодников",
      "text": "Отрыв от второго места — 16.45 балла",
-     "who": "Макар Солодников"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -16479,9 +16553,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Таисия Гусева / Даниил Овчинников",
      "text": "Четверная подкрутка",
-     "who": "Таисия Гусева / Даниил Овчинников"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -16763,9 +16837,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "София Сарновская",
      "text": "Тройной аксель",
-     "who": "София Сарновская"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -17342,24 +17416,24 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Анна Докукина",
      "text": "3 четверных в программе: 4S, 4T, 4T",
-     "who": "Анна Докукина"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Софья Смагина",
      "text": "2 четверных в программе: 4S, 4T",
-     "who": "Софья Смагина"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Екатерина Корчажникова",
      "text": "2 четверных в программе: 4S, 4S",
-     "who": "Екатерина Корчажникова"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "София Сарновская",
      "text": "Тройной аксель",
-     "who": "София Сарновская"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -17656,9 +17730,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Никита Малютин",
      "text": "3 четверных в программе: 4S, 4T, 4T",
-     "who": "Никита Малютин"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -18365,7 +18439,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -19076,7 +19151,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -19665,7 +19741,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -20451,7 +20528,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -20873,7 +20951,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -21366,7 +21445,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -23361,7 +23441,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -24032,7 +24113,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -26517,9 +26599,9 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Зоя Ковязина / Дмитрий Родионов",
      "text": "Отрыв от второго места — 21.80 балла",
-     "who": "Зоя Ковязина / Дмитрий Родионов"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -26779,9 +26861,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Алиса Заикина",
      "text": "Тройной аксель",
-     "who": "Алиса Заикина"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -27324,19 +27406,19 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Алиса Заикина",
      "text": "2 четверных в программе: 4T, 4T",
-     "who": "Алиса Заикина"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Дарья Лебедева",
      "text": "2 четверных в программе: 4S, 4T",
-     "who": "Дарья Лебедева"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Алиса Заикина",
      "text": "Тройной аксель",
-     "who": "Алиса Заикина"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -27623,29 +27705,29 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Даниил Жолобов",
      "text": "4 четверных в программе: 4T, 4Lz, 4Lo, 4Lo",
-     "who": "Даниил Жолобов"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Николай Колесников",
      "text": "3 четверных в программе: 4S, 4T, 4T",
-     "who": "Николай Колесников"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Ильяс Халиуллин",
      "text": "3 четверных в программе: 4Lz, 4Lz, 4S",
-     "who": "Ильяс Халиуллин"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Михаил Алексахин",
      "text": "3 четверных в программе: 4T, 4S, 4T",
-     "who": "Михаил Алексахин"
+     "kind": "element"
     },
     {
-     "kind": "place",
+     "who": "Николай Колесников",
      "text": "После короткой программы — 12-е место, в итоге — 3-е место",
-     "who": "Николай Колесников"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -29823,9 +29905,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Камилла Нелюбова",
      "text": "Тройной аксель",
-     "who": "Камилла Нелюбова"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -32170,14 +32252,14 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Камилла Нелюбова",
      "text": "Тройной аксель",
-     "who": "Камилла Нелюбова"
+     "kind": "element"
     },
     {
-     "kind": "place",
+     "who": "Ксения Синицына",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "who": "Ксения Синицына"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -32398,14 +32480,14 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Артём Ковалёв",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "who": "Артём Ковалёв"
+     "kind": "place"
     },
     {
-     "kind": "place",
+     "who": "Евгений Семененко",
      "text": "Отрыв от второго места — 43.97 балла",
-     "who": "Евгений Семененко"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -34234,7 +34316,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -34410,7 +34493,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -35047,7 +35131,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -35596,9 +35681,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Дина Хуснутдинова",
      "text": "Тройной аксель",
-     "who": "Дина Хуснутдинова"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -35640,7 +35725,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -36486,7 +36572,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -36642,7 +36729,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -37224,19 +37312,19 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Глеб Лутфуллин",
      "text": "Секвенция 4T+3A+3A",
-     "who": "Глеб Лутфуллин"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Лев Лазарев",
      "text": "5 четверных в программе: 4F, 4Lz, 4S, 4Lz, 4T",
-     "who": "Лев Лазарев"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Глеб Лутфуллин",
      "text": "5 четверных в программе: 4F, 4Lo, 4T, 4S, 4S",
-     "who": "Глеб Лутфуллин"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -37524,7 +37612,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -37904,24 +37993,24 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Милана Лебедева",
      "text": "Четверной сальхов",
-     "who": "Милана Лебедева"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Мария Захарова",
      "text": "2 четверных в программе: 4T, 4T",
-     "who": "Мария Захарова"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Дина Хуснутдинова",
      "text": "Тройной аксель",
-     "who": "Дина Хуснутдинова"
+     "kind": "element"
     },
     {
-     "kind": "place",
+     "who": "Вероника Яметова",
      "text": "После короткой программы — 7-е место, в итоге — 2-е место",
-     "who": "Вероника Яметова"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -37964,7 +38053,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -38514,9 +38604,9 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Василиса Кагановская / Максим Некрасов",
      "text": "Отрыв от второго места — 19.05 балла",
-     "who": "Василиса Кагановская / Максим Некрасов"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -39118,9 +39208,9 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Дарья Дрожжина / Иван Тельнов",
      "text": "После ритм-танца — 6-е место, в итоге — 2-е место",
-     "who": "Дарья Дрожжина / Иван Тельнов"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -39550,9 +39640,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Виктория Стрельцова",
      "text": "Тройной аксель",
-     "who": "Виктория Стрельцова"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -40430,24 +40520,24 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Виктория Стрельцова",
      "text": "2 четверных в программе: 4T, 4S",
-     "who": "Виктория Стрельцова"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Екатерина Корчажникова",
      "text": "2 четверных в программе: 4S, 4S",
-     "who": "Екатерина Корчажникова"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Екатерина Стоцкая",
      "text": "Четверной сальхов",
-     "who": "Екатерина Стоцкая"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Виктория Стрельцова",
      "text": "Тройной аксель",
-     "who": "Виктория Стрельцова"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -40752,14 +40842,14 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Макар Солодников",
      "text": "3 четверных в программе: 4T, 4S, 4S",
-     "who": "Макар Солодников"
+     "kind": "element"
     },
     {
-     "kind": "place",
+     "who": "Макар Солодников",
      "text": "После короткой программы — 5-е место, в итоге — 1-е место",
-     "who": "Макар Солодников"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -41095,7 +41185,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -41287,7 +41378,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -41310,7 +41402,7 @@
      "points": "64.94"
     }
    ],
-   "desc": "Итог:\n1. Lia Pereira / Trennt Michaud — 77.06\n2. Alisa Efimova / Misha Mitrofanov — 70.32\n3. Ava Kemp / Yohnatan Elizarov — 64.94\n\nПримечательное:\n• Lia Pereira / Trennt Michaud — Личный рекорд за КП: 77.06 (был 75.52)\n• Ava Kemp / Yohnatan Elizarov — Личный рекорд за КП: 64.94 (был 64.21)\n\nНачало: 06:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Lia Pereira / Trennt Michaud — 77.06\n2. Alisa Efimova / Misha Mitrofanov — 70.32\n3. Ava Kemp / Yohnatan Elizarov — 64.94\n\nПримечательное:\n• Lia Pereira / Trennt Michaud — Личный рекорд за КП: 77.06\n• Ava Kemp / Yohnatan Elizarov — Личный рекорд за КП: 64.94 (был 64.21)\n\nНачало: 06:15 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Miyu Yunoki / Tristan Taylor",
@@ -41404,9 +41496,9 @@
    },
    "facts": [
     {
-     "kind": "score",
-     "text": "Личный рекорд за КП: 77.06 (был 75.52)",
-     "who": "Lia Pereira / Trennt Michaud"
+     "who": "Lia Pereira / Trennt Michaud",
+     "text": "Личный рекорд за КП: 77.06",
+     "kind": "score"
     },
     {
      "kind": "score",
@@ -42066,9 +42158,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Лидия Плескачева",
      "text": "Тройной аксель",
-     "who": "Лидия Плескачева"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -42537,7 +42629,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -42560,7 +42653,7 @@
      "points": "77.24"
     }
    ],
-   "desc": "Итог:\n1. Mao Shimada — 82.11\n2. Isabeau Levito — 78.50\n3. Niina Petrokina — 77.24\n\nПримечательное:\n• Mao Shimada — Тройной аксель\n• Mao Shimada — Лучшая в мире оценка сезона за КП: 82.11\n• Mao Shimada — Личный рекорд за КП: 82.11 (был 78.84)\n• Isabeau Levito — Личный рекорд за КП: 78.50 (был 73.73)\n• Niina Petrokina — Личный рекорд за КП: 77.24 (был 77.20)\n\nРоссияне:\n• Виктория Сафонова — 22:43\n\nНачало: 22:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Mao Shimada — 82.11\n2. Isabeau Levito — 78.50\n3. Niina Petrokina — 77.24\n\nПримечательное:\n• Mao Shimada — Тройной аксель\n• Mao Shimada — Личный рекорд за КП: 82.11\n• Isabeau Levito — Личный рекорд за КП: 78.50\n• Niina Petrokina — Личный рекорд за КП: 77.24\n• Mao Shimada — Лучшая в мире оценка сезона за КП: 82.11\n\nРоссияне:\n• Виктория Сафонова — 22:43\n\nНачало: 22:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Saki Miyake",
@@ -42699,24 +42792,24 @@
      "who": "Mao Shimada"
     },
     {
-     "kind": "element",
+     "who": "Mao Shimada",
      "text": "Тройной аксель",
-     "who": "Mao Shimada"
+     "kind": "element"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд за КП: 82.11 (был 78.84)",
-     "who": "Mao Shimada"
+     "who": "Mao Shimada",
+     "text": "Личный рекорд за КП: 82.11",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд за КП: 78.50 (был 73.73)",
-     "who": "Isabeau Levito"
+     "who": "Isabeau Levito",
+     "text": "Личный рекорд за КП: 78.50",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд за КП: 77.24 (был 77.20)",
-     "who": "Niina Petrokina"
+     "who": "Niina Petrokina",
+     "text": "Личный рекорд за КП: 77.24",
+     "kind": "score"
     }
    ],
    "proto": null
@@ -42758,7 +42851,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -42934,7 +43028,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -43158,7 +43253,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -43531,14 +43627,14 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Даниил Самсонов",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "who": "Даниил Самсонов"
+     "kind": "place"
     },
     {
-     "kind": "place",
+     "who": "Пётр Гуменник",
      "text": "Отрыв от второго места — 21.66 балла",
-     "who": "Пётр Гуменник"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -43771,9 +43867,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Лидия Плескачева",
      "text": "Тройной аксель",
-     "who": "Лидия Плескачева"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -43982,9 +44078,9 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Александра Степанова / Иван Букин",
      "text": "Отрыв от второго места — 9.84 балла",
-     "who": "Александра Степанова / Иван Букин"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -44039,7 +44135,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -44082,7 +44179,7 @@
      "points": "212.22"
     }
    ],
-   "desc": "Итог:\n1. Mao Shimada — 153.33\n2. Niina Petrokina — 143.83\n3. Jia Shin — 139.14\n\nИтог турнира:\n1. Mao Shimada — 235.44\n2. Niina Petrokina — 221.07\n3. Isabeau Levito — 212.22\n\nПримечательное:\n• Mao Shimada — Тройной аксель\n• Saki Miyake — Тройной аксель\n• Sara-Maude Dupuis — Тройной аксель\n• Mao Shimada — Лучшая в мире сумма сезона: 235.44\n• Mao Shimada — Личный рекорд по сумме: 235.44 (был 231.32)\n• Niina Petrokina — Личный рекорд по сумме: 221.07 (был 216.14)\n\nРоссияне:\n• Виктория Сафонова — 23:15\n\nНачало: 00:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Mao Shimada — 153.33\n2. Niina Petrokina — 143.83\n3. Jia Shin — 139.14\n\nИтог турнира:\n1. Mao Shimada — 235.44\n2. Niina Petrokina — 221.07\n3. Isabeau Levito — 212.22\n\nПримечательное:\n• Mao Shimada — Тройной аксель\n• Saki Miyake — Тройной аксель\n• Sara-Maude Dupuis — Тройной аксель\n• Mao Shimada — Личный рекорд по сумме: 235.44\n• Niina Petrokina — Личный рекорд по сумме: 221.07\n• Mao Shimada — Лучшая в мире сумма сезона: 235.44\n\nРоссияне:\n• Виктория Сафонова — 23:15\n\nНачало: 00:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Anna Pezzetta",
@@ -44233,29 +44330,29 @@
      "who": "Mao Shimada"
     },
     {
-     "kind": "element",
+     "who": "Mao Shimada",
      "text": "Тройной аксель",
-     "who": "Mao Shimada"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Saki Miyake",
      "text": "Тройной аксель",
-     "who": "Saki Miyake"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Sara-Maude Dupuis",
      "text": "Тройной аксель",
-     "who": "Sara-Maude Dupuis"
+     "kind": "element"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 235.44 (был 231.32)",
-     "who": "Mao Shimada"
+     "who": "Mao Shimada",
+     "text": "Личный рекорд по сумме: 235.44",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 221.07 (был 216.14)",
-     "who": "Niina Petrokina"
+     "who": "Niina Petrokina",
+     "text": "Личный рекорд по сумме: 221.07",
+     "kind": "score"
     }
    ],
    "proto": null
@@ -44297,7 +44394,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -44464,9 +44562,9 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Lilah Fear / Lewis Gibson",
      "text": "Отрыв от второго места — 8.22 балла",
-     "who": "Lilah Fear / Lewis Gibson"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -45228,6 +45326,11 @@
      "time": "16:23"
     }
    ],
+   "absences": {
+    "Альбина Камалдинова / Степан Маришин": {
+     "status": "WD"
+    }
+   },
    "live": {
     "idx": "https://fsrussia.ru/results/2627/5etap_jun/index.htm",
     "seg": "https://fsrussia.ru/results/2627/5etap_jun/SEG006.htm",
@@ -45816,7 +45919,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=aX6lnOJOPwg"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -46264,19 +46368,19 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Екатерина Стоцкая",
      "text": "Четверной сальхов",
-     "who": "Екатерина Стоцкая"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Анна Докукина",
      "text": "2 четверных в программе: 4S, 4T",
-     "who": "Анна Докукина"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Юлиана Черенева",
      "text": "Четверной тулуп",
-     "who": "Юлиана Черенева"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -46330,7 +46434,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=LrEzBtKn2k4"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -46353,7 +46458,7 @@
      "points": "72.37"
     }
    ],
-   "desc": "Итог:\n1. Mone Chiba — 76.08\n2. Anastasiia Gubanova — 75.05\n3. Александра Трусова — 72.37\n\nПримечательное:\n• Haein Lee — Тройной аксель\n• Sophie Joline von Felten — Тройной аксель\n• Rinka Watanabe — Тройной аксель\n• Anastasiia Gubanova — Личный рекорд за КП: 75.05 (был 72.63)\n\nРоссияне:\n• Александра Трусова — 11:45\n\nНачало: 11:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Mone Chiba — 76.08\n2. Anastasiia Gubanova — 75.05\n3. Александра Трусова — 72.37\n\nПримечательное:\n• Anastasiia Gubanova — Личный рекорд за КП: 75.05\n• Haein Lee — Тройной аксель\n• Sophie Joline von Felten — Тройной аксель\n• Rinka Watanabe — Тройной аксель\n\nРоссияне:\n• Александра Трусова — 11:45\n\nНачало: 11:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Mako Yamashita",
@@ -46487,24 +46592,24 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Haein Lee",
      "text": "Тройной аксель",
-     "who": "Haein Lee"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Sophie Joline von Felten",
      "text": "Тройной аксель",
-     "who": "Sophie Joline von Felten"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Rinka Watanabe",
      "text": "Тройной аксель",
-     "who": "Rinka Watanabe"
+     "kind": "element"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд за КП: 75.05 (был 72.63)",
-     "who": "Anastasiia Gubanova"
+     "who": "Anastasiia Gubanova",
+     "text": "Личный рекорд за КП: 75.05",
+     "kind": "score"
     }
    ],
    "proto": null
@@ -46809,14 +46914,14 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Ильяс Халиуллин",
      "text": "После короткой программы — 5-е место, в итоге — 2-е место",
-     "who": "Ильяс Халиуллин"
+     "kind": "place"
     },
     {
-     "kind": "place",
+     "who": "Вячеслав Касьяненко",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "who": "Вячеслав Касьяненко"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -46866,7 +46971,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=8S94rHbj22k"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -47041,7 +47147,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=wo0-2FqyLmk"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -47064,7 +47171,7 @@
      "points": "99.72"
     }
    ],
-   "desc": "Итог:\n1. Kao Miura — 102.90\n2. Shun Sato — 101.97\n3. Евгений Семененко — 99.72\n\nПримечательное:\n• Shun Sato — Личный рекорд за КП: 101.97 (был 99.20)\n\nРоссияне:\n• Евгений Семененко — 15:38\n• Владислав Дикиджи — 15:45\n\nНачало: 15:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Kao Miura — 102.90\n2. Shun Sato — 101.97\n3. Евгений Семененко — 99.72\n\nПримечательное:\n• Shun Sato — Личный рекорд за КП: 101.97\n\nРоссияне:\n• Евгений Семененко — 15:38\n• Владислав Дикиджи — 15:45\n\nНачало: 15:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Zhiming Peng",
@@ -47198,9 +47305,9 @@
    },
    "facts": [
     {
-     "kind": "score",
-     "text": "Личный рекорд за КП: 101.97 (был 99.20)",
-     "who": "Shun Sato"
+     "who": "Shun Sato",
+     "text": "Личный рекорд за КП: 101.97",
+     "kind": "score"
     }
    ],
    "proto": null
@@ -47242,7 +47349,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=b0MBGTnjI_M"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -47459,7 +47567,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=6092j03x74M"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -47648,24 +47757,24 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Александра Трусова",
      "text": "Четверной лутц",
-     "who": "Александра Трусова"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Haein Lee",
      "text": "Тройной аксель",
-     "who": "Haein Lee"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Sophie Joline von Felten",
      "text": "Тройной аксель",
-     "who": "Sophie Joline von Felten"
+     "kind": "element"
     },
     {
-     "kind": "place",
+     "who": "Haein Lee",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "who": "Haein Lee"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -47901,7 +48010,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=cMtgaQZGG3g"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -48242,14 +48352,14 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Камилла Нелюбова",
      "text": "Тройной аксель",
-     "who": "Камилла Нелюбова"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Мария Елисова",
      "text": "Тройной аксель",
-     "who": "Мария Елисова"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -48466,7 +48576,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=M20QzKpPhP8"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -48509,7 +48620,7 @@
      "points": "281.62"
     }
    ],
-   "desc": "Итог:\n1. Kao Miura — 190.35\n2. Владислав Дикиджи — 183.58\n3. Евгений Семененко — 181.90\n\nИтог турнира:\n1. Kao Miura — 293.25\n2. Владислав Дикиджи — 282.44\n3. Евгений Семененко — 281.62\n\nПримечательное:\n• Mikhail Shaidorov — Каскад 4T+Eu+4S\n• Kao Miura — Личный рекорд по сумме: 293.25 (был 281.53)\n\nРоссияне:\n• Владислав Дикиджи — 09:16\n• Евгений Семененко — 09:24\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Kao Miura — 190.35\n2. Владислав Дикиджи — 183.58\n3. Евгений Семененко — 181.90\n\nИтог турнира:\n1. Kao Miura — 293.25\n2. Владислав Дикиджи — 282.44\n3. Евгений Семененко — 281.62\n\nПримечательное:\n• Kao Miura — Личный рекорд за ПП: 190.35\n• Mikhail Shaidorov — Каскад 4T+Eu+4S\n• Kao Miura — Личный рекорд по сумме: 293.25\n\nРоссияне:\n• Владислав Дикиджи — 09:16\n• Евгений Семененко — 09:24\n\nНачало: 08:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Lucius Kazanecki",
@@ -48655,14 +48766,19 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Mikhail Shaidorov",
      "text": "Каскад 4T+Eu+4S",
-     "who": "Mikhail Shaidorov"
+     "kind": "element"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 293.25 (был 281.53)",
-     "who": "Kao Miura"
+     "who": "Kao Miura",
+     "text": "Личный рекорд за ПП: 190.35",
+     "kind": "score"
+    },
+    {
+     "who": "Kao Miura",
+     "text": "Личный рекорд по сумме: 293.25",
+     "kind": "score"
     }
    ],
    "proto": null
@@ -48883,9 +48999,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Глеб Лутфуллин",
      "text": "Секвенция 4T+3A+3A",
-     "who": "Глеб Лутфуллин"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -49118,9 +49234,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Аделия Петросян",
      "text": "Четверной тулуп",
-     "who": "Аделия Петросян"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -49305,9 +49421,9 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Екатерина Чикмарёва / Матвей Янченков",
      "text": "Отрыв от второго места — 33.43 балла",
-     "who": "Екатерина Чикмарёва / Матвей Янченков"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -49918,9 +50034,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "София Сарновская",
      "text": "Тройной аксель",
-     "who": "София Сарновская"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -50425,9 +50541,9 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Мария Фефелова / Артём Валов",
      "text": "Отрыв от второго места — 11.14 балла",
-     "who": "Мария Фефелова / Артём Валов"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -50587,14 +50703,14 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Таисия Гусева / Даниил Овчинников",
      "text": "Четверная подкрутка",
-     "who": "Таисия Гусева / Даниил Овчинников"
+     "kind": "element"
     },
     {
-     "kind": "place",
+     "who": "Таисия Гусева / Даниил Овчинников",
      "text": "Отрыв от второго места — 40.97 балла",
-     "who": "Таисия Гусева / Даниил Овчинников"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -50920,39 +51036,39 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Лизавета Мельникова",
      "text": "Четверной лутц",
-     "who": "Лизавета Мельникова"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Алиса Заикина",
      "text": "2 четверных в программе: 4T, 4T",
-     "who": "Алиса Заикина"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Юлиана Черенева",
      "text": "Четверной тулуп",
-     "who": "Юлиана Черенева"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "София Сарновская",
      "text": "Тройной аксель",
-     "who": "София Сарновская"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Валерия Лукашова",
      "text": "Тройной аксель",
-     "who": "Валерия Лукашова"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Алиса Заикина",
      "text": "Тройной аксель",
-     "who": "Алиса Заикина"
+     "kind": "element"
     },
     {
-     "kind": "place",
+     "who": "София Сарновская",
      "text": "Отрыв от второго места — 18.39 балла",
-     "who": "София Сарновская"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -51268,14 +51384,14 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Александр Чмиль",
      "text": "3 четверных в программе: 4Lz, 4Lo, 4S",
-     "who": "Александр Чмиль"
+     "kind": "element"
     },
     {
-     "kind": "place",
+     "who": "Марк Лукин",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "who": "Марк Лукин"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -51319,7 +51435,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=MUMbtiqbsog"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -51342,7 +51459,7 @@
      "points": "86.49"
     }
    ],
-   "desc": "Итог:\n1. Ilia Malinin — 96.74\n2. Sota Yamamoto — 91.29\n3. Donovan Carrillo — 86.49\n\nПримечательное:\n• Donovan Carrillo — Личный рекорд за КП: 86.49 (был 84.97)\n\nНачало: 06:03 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Ilia Malinin — 96.74\n2. Sota Yamamoto — 91.29\n3. Donovan Carrillo — 86.49\n\nПримечательное:\n• Donovan Carrillo — Личный рекорд за КП: 86.49\n\nНачало: 06:03 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Aleksa Rakic",
@@ -51476,9 +51593,9 @@
    },
    "facts": [
     {
-     "kind": "score",
-     "text": "Личный рекорд за КП: 86.49 (был 84.97)",
-     "who": "Donovan Carrillo"
+     "who": "Donovan Carrillo",
+     "text": "Личный рекорд за КП: 86.49",
+     "kind": "score"
     }
    ],
    "proto": null
@@ -51518,7 +51635,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=pcrkPbKSgyw"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -51541,7 +51659,7 @@
      "points": "70.63"
     }
    ],
-   "desc": "Итог:\n1. Minerva Fabienne Hase / Nikita Volodin — 72.71\n2. Alisa Efimova / Misha Mitrofanov — 71.85\n3. Oxana Vouillamoz / Tom Bouvart — 70.63\n\nПримечательное:\n• Oxana Vouillamoz / Tom Bouvart — Личный рекорд за КП: 70.63 (был 65.85)\n\nНачало: 07:50 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Minerva Fabienne Hase / Nikita Volodin — 72.71\n2. Alisa Efimova / Misha Mitrofanov — 71.85\n3. Oxana Vouillamoz / Tom Bouvart — 70.63\n\nПримечательное:\n• Alisa Efimova / Misha Mitrofanov — Личный рекорд за КП: 71.85\n• Oxana Vouillamoz / Tom Bouvart — Личный рекорд за КП: 70.63\n\nНачало: 07:50 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Katie McBEATH / Balazs Nagy",
@@ -51635,9 +51753,14 @@
    },
    "facts": [
     {
-     "kind": "score",
-     "text": "Личный рекорд за КП: 70.63 (был 65.85)",
-     "who": "Oxana Vouillamoz / Tom Bouvart"
+     "who": "Alisa Efimova / Misha Mitrofanov",
+     "text": "Личный рекорд за КП: 71.85",
+     "kind": "score"
+    },
+    {
+     "who": "Oxana Vouillamoz / Tom Bouvart",
+     "text": "Личный рекорд за КП: 70.63",
+     "kind": "score"
     }
    ],
    "proto": null
@@ -52012,9 +52135,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Лидия Плескачева",
      "text": "Тройной аксель",
-     "who": "Лидия Плескачева"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -52182,6 +52305,11 @@
      "time": "15:44"
     }
    ],
+   "absences": {
+    "Арсений Федотов": {
+     "status": "WD"
+    }
+   },
    "live": {
     "idx": "https://fsrussia.ru/results/2627/5etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/5etap_sen/SEG001.htm",
@@ -52393,7 +52521,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -52588,7 +52717,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=MUMbtiqbsog"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -52611,7 +52741,7 @@
      "points": "73.92"
     }
    ],
-   "desc": "Итог:\n1. Ami Nakai — 82.20\n2. Александра Трусова — 74.24\n3. Yujae Kim — 73.92\n\nПримечательное:\n• Ami Nakai — Тройной аксель\n• Ami Nakai — Лучшая в мире оценка сезона за КП: 82.20\n• Ami Nakai — Личный рекорд за КП: 82.20 (был 80.27)\n• Yujae Kim — Тройной аксель\n• Sophie Joline von Felten — Тройной аксель\n• Alexa Gasparotto — Тройной аксель\n\nРоссияне:\n• Аделия Петросян — 03:08\n• Александра Трусова — 03:14\n\nНачало: 02:42 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Ami Nakai — 82.20\n2. Александра Трусова — 74.24\n3. Yujae Kim — 73.92\n\nПримечательное:\n• Ami Nakai — Тройной аксель\n• Ami Nakai — Личный рекорд за КП: 82.20\n• Ami Nakai — Лучшая в мире оценка сезона за КП: 82.20\n• Yujae Kim — Тройной аксель\n• Sophie Joline von Felten — Тройной аксель\n• Alexa Gasparotto — Тройной аксель\n\nРоссияне:\n• Аделия Петросян — 03:08\n• Александра Трусова — 03:14\n\nНачало: 02:42 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Alexa Gasparotto",
@@ -52745,34 +52875,34 @@
    },
    "facts": [
     {
-     "kind": "score",
+     "who": "Ami Nakai",
      "text": "Лучшая в мире оценка сезона за КП: 82.20",
-     "who": "Ami Nakai"
+     "kind": "score"
     },
     {
-     "kind": "element",
+     "who": "Ami Nakai",
      "text": "Тройной аксель",
-     "who": "Ami Nakai"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Yujae Kim",
      "text": "Тройной аксель",
-     "who": "Yujae Kim"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Sophie Joline von Felten",
      "text": "Тройной аксель",
-     "who": "Sophie Joline von Felten"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Alexa Gasparotto",
      "text": "Тройной аксель",
-     "who": "Alexa Gasparotto"
+     "kind": "element"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд за КП: 82.20 (был 80.27)",
-     "who": "Ami Nakai"
+     "who": "Ami Nakai",
+     "text": "Личный рекорд за КП: 82.20",
+     "kind": "score"
     }
    ],
    "proto": null
@@ -52816,7 +52946,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=H_ACIowmT-o"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -52859,7 +52990,7 @@
      "points": "248.55"
     }
    ],
-   "desc": "Итог:\n1. Daniel Grassl — 188.25\n2. Ilia Malinin — 187.57\n3. Tamir Kuperman — 165.42\n\nИтог турнира:\n1. Ilia Malinin — 284.31\n2. Daniel Grassl — 274.73\n3. Tamir Kuperman — 248.55\n\nПримечательное:\n• Ilia Malinin — Секвенция 4Lz+3A+2A\n• Tamir Kuperman — Личный рекорд по сумме: 248.55 (был 230.17)\n• Tamir Kuperman — После короткой программы — 7-е место, в итоге — 3-е место\n\nНачало: 05:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Daniel Grassl — 188.25\n2. Ilia Malinin — 187.57\n3. Tamir Kuperman — 165.42\n\nИтог турнира:\n1. Ilia Malinin — 284.31\n2. Daniel Grassl — 274.73\n3. Tamir Kuperman — 248.55\n\nПримечательное:\n• Ilia Malinin — Секвенция 4Lz+3A+2A\n• Tamir Kuperman — Личный рекорд за ПП: 165.42\n• Tamir Kuperman — Личный рекорд по сумме: 248.55\n• Tamir Kuperman — После короткой программы — 7-е место, в итоге — 3-е место\n\nНачало: 05:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Nikolaj Memola",
@@ -53005,19 +53136,24 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Ilia Malinin",
      "text": "Секвенция 4Lz+3A+2A",
-     "who": "Ilia Malinin"
+     "kind": "element"
     },
     {
-     "kind": "place",
+     "who": "Tamir Kuperman",
      "text": "После короткой программы — 7-е место, в итоге — 3-е место",
-     "who": "Tamir Kuperman"
+     "kind": "place"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 248.55 (был 230.17)",
-     "who": "Tamir Kuperman"
+     "who": "Tamir Kuperman",
+     "text": "Личный рекорд за ПП: 165.42",
+     "kind": "score"
+    },
+    {
+     "who": "Tamir Kuperman",
+     "text": "Личный рекорд по сумме: 248.55",
+     "kind": "score"
     }
    ],
    "proto": null
@@ -53057,7 +53193,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=MigLuH_THlE"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -53100,7 +53237,7 @@
      "points": "187.13"
     }
    ],
-   "desc": "Итог:\n1. Minerva Fabienne Hase / Nikita Volodin — 128.08\n2. Alisa Efimova / Misha Mitrofanov — 119.94\n3. Katie McBEATH / Balazs Nagy — 119.51\n\nИтог турнира:\n1. Minerva Fabienne Hase / Nikita Volodin — 200.79\n2. Alisa Efimova / Misha Mitrofanov — 191.79\n3. Katie McBEATH / Balazs Nagy — 187.13\n\nПримечательное:\n• Katie McBEATH / Balazs Nagy — Личный рекорд за ПП: 119.51 (был 113.78)\n• Katie McBEATH / Balazs Nagy — Личный рекорд по сумме: 187.13 (был 180.95)\n\nНачало: 07:34 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Minerva Fabienne Hase / Nikita Volodin — 128.08\n2. Alisa Efimova / Misha Mitrofanov — 119.94\n3. Katie McBEATH / Balazs Nagy — 119.51\n\nИтог турнира:\n1. Minerva Fabienne Hase / Nikita Volodin — 200.79\n2. Alisa Efimova / Misha Mitrofanov — 191.79\n3. Katie McBEATH / Balazs Nagy — 187.13\n\nПримечательное:\n• Katie Mcbeath / Balazs Nagy — Личный рекорд за ПП: 119.51 (был 113.78)\n• Katie Mcbeath / Balazs Nagy — Личный рекорд по сумме: 187.13 (был 180.95)\n\nНачало: 07:34 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Aurelie Faula / Theo Belle",
@@ -53204,12 +53341,12 @@
     {
      "kind": "score",
      "text": "Личный рекорд за ПП: 119.51 (был 113.78)",
-     "who": "Katie McBEATH / Balazs Nagy"
+     "who": "Katie Mcbeath / Balazs Nagy"
     },
     {
      "kind": "score",
      "text": "Личный рекорд по сумме: 187.13 (был 180.95)",
-     "who": "Katie McBEATH / Balazs Nagy"
+     "who": "Katie Mcbeath / Balazs Nagy"
     }
    ],
    "proto": null
@@ -53646,14 +53783,14 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Мария Захарова",
      "text": "Четверной тулуп",
-     "who": "Мария Захарова"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Лидия Плескачева",
      "text": "Тройной аксель",
-     "who": "Лидия Плескачева"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -53874,9 +54011,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Лев Лазарев",
      "text": "5 четверных в программе: 4F, 4Lz, 4S, 4Lz, 4T",
-     "who": "Лев Лазарев"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -54031,6 +54168,11 @@
      "time": "16:52"
     }
    ],
+   "absences": {
+    "Анастасия Гиричева / Иван Долгодворов": {
+     "status": "WD"
+    }
+   },
    "live": {
     "idx": "https://fsrussia.ru/results/2627/5etap_sen/index.htm",
     "seg": "https://fsrussia.ru/results/2627/5etap_sen/SEG006.htm",
@@ -54086,7 +54228,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=0TmnPSuhrwU"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -54129,7 +54272,7 @@
      "points": "190.88"
     }
    ],
-   "desc": "Итог:\n1. Emilea Zingas / Vadym Kolesnik — 119.36\n2. Evgeniia Lopareva / Geoffrey Brissaud — 115.34\n3. Katerina Mrazkova / Daniel Mrazek — 114.56\n\nИтог турнира:\n1. Emilea Zingas / Vadym Kolesnik — 201.88\n2. Evgeniia Lopareva / Geoffrey Brissaud — 195.28\n3. Katerina Mrazkova / Daniel Mrazek — 190.88\n\nПримечательное:\n• Katerina Mrazkova / Daniel Mrazek — Личный рекорд по сумме: 190.88 (был 190.17)\n\nНачало: 22:10 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Emilea Zingas / Vadym Kolesnik — 119.36\n2. Evgeniia Lopareva / Geoffrey Brissaud — 115.34\n3. Katerina Mrazkova / Daniel Mrazek — 114.56\n\nИтог турнира:\n1. Emilea Zingas / Vadym Kolesnik — 201.88\n2. Evgeniia Lopareva / Geoffrey Brissaud — 195.28\n3. Katerina Mrazkova / Daniel Mrazek — 190.88\n\nПримечательное:\n• Katerina Mrazkova / Daniel Mrazek — Личный рекорд по сумме: 190.88\n\nНачало: 22:10 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Natacha Lagouge / Arnaud Caffa",
@@ -54253,9 +54396,9 @@
    },
    "facts": [
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 190.88 (был 190.17)",
-     "who": "Katerina Mrazkova / Daniel Mrazek"
+     "who": "Katerina Mrazkova / Daniel Mrazek",
+     "text": "Личный рекорд по сумме: 190.88",
+     "kind": "score"
     }
    ],
    "proto": null
@@ -54320,7 +54463,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=H_ACIowmT-o"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -54363,7 +54507,7 @@
      "points": "211.63"
     }
    ],
-   "desc": "Итог:\n1. Ami Nakai — 154.61\n2. Rino Matsuike — 141.33\n3. Александра Трусова — 139.66\n\nИтог турнира:\n1. Ami Nakai — 236.81\n2. Александра Трусова — 213.90\n3. Rino Matsuike — 211.63\n\nПримечательное:\n• Ami Nakai — Тройной аксель\n• Александра Трусова — Четверной лутц\n• Sofia Samodelkina — Тройной аксель\n• Yujae Kim — Тройной аксель\n• Sophie Joline von Felten — Тройной аксель\n• Sara-Maude Dupuis — Тройной аксель\n• Ami Nakai — Лучшая в мире сумма сезона: 236.81\n• Ami Nakai — Личный рекорд по сумме: 236.81 (был 227.08)\n• Rino Matsuike — Личный рекорд по сумме: 211.63 (был 202.21)\n• Ami Nakai — Отрыв от второго места — 22.91 балла\n\nРоссияне:\n• Аделия Петросян — 01:21\n• Александра Трусова — 01:37\n\nНачало: 00:05 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Ami Nakai — 154.61\n2. Rino Matsuike — 141.33\n3. Александра Трусова — 139.66\n\nИтог турнира:\n1. Ami Nakai — 236.81\n2. Александра Трусова — 213.90\n3. Rino Matsuike — 211.63\n\nПримечательное:\n• Ami Nakai — Тройной аксель\n• Ami Nakai — Личный рекорд за ПП: 154.61\n• Ami Nakai — Лучшая в мире оценка сезона за ПП: 154.61\n• Александра Трусова — Четверной лутц\n• Sofia Samodelkina — Тройной аксель\n• Yujae Kim — Тройной аксель\n• Sophie Joline von Felten — Тройной аксель\n• Sara-Maude Dupuis — Тройной аксель\n• Ami Nakai — Личный рекорд по сумме: 236.81\n• Ami Nakai — Лучшая в мире сумма сезона: 236.81\n• Rino Matsuike — Личный рекорд по сумме: 211.63\n• Ami Nakai — Отрыв от второго места — 22.91 балла\n\nРоссияне:\n• Аделия Петросян — 01:21\n• Александра Трусова — 01:37\n\nНачало: 00:05 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Alexa Gasparotto",
@@ -54509,54 +54653,64 @@
    },
    "facts": [
     {
-     "kind": "score",
+     "who": "Ami Nakai",
+     "text": "Лучшая в мире оценка сезона за ПП: 154.61",
+     "kind": "score"
+    },
+    {
+     "who": "Ami Nakai",
      "text": "Лучшая в мире сумма сезона: 236.81",
-     "who": "Ami Nakai"
+     "kind": "score"
     },
     {
-     "kind": "element",
+     "who": "Александра Трусова",
      "text": "Четверной лутц",
-     "who": "Александра Трусова"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Ami Nakai",
      "text": "Тройной аксель",
-     "who": "Ami Nakai"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Sofia Samodelkina",
      "text": "Тройной аксель",
-     "who": "Sofia Samodelkina"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Yujae Kim",
      "text": "Тройной аксель",
-     "who": "Yujae Kim"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Sophie Joline von Felten",
      "text": "Тройной аксель",
-     "who": "Sophie Joline von Felten"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Sara-Maude Dupuis",
      "text": "Тройной аксель",
-     "who": "Sara-Maude Dupuis"
+     "kind": "element"
     },
     {
-     "kind": "place",
+     "who": "Ami Nakai",
      "text": "Отрыв от второго места — 22.91 балла",
-     "who": "Ami Nakai"
+     "kind": "place"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 236.81 (был 227.08)",
-     "who": "Ami Nakai"
+     "who": "Ami Nakai",
+     "text": "Личный рекорд за ПП: 154.61",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 211.63 (был 202.21)",
-     "who": "Rino Matsuike"
+     "who": "Ami Nakai",
+     "text": "Личный рекорд по сумме: 236.81",
+     "kind": "score"
+    },
+    {
+     "who": "Rino Matsuike",
+     "text": "Личный рекорд по сумме: 211.63",
+     "kind": "score"
     }
    ],
    "proto": null
@@ -54882,6 +55036,14 @@
      "points": "43.94"
     }
    ],
+   "absences": {
+    "Noemi Joos": {
+     "status": "WD"
+    },
+    "Hsiang-YU Chan": {
+     "status": "WD"
+    }
+   },
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG011.htm",
@@ -54924,14 +55086,14 @@
    },
    "facts": [
     {
-     "kind": "score",
+     "who": "Sofia Nekrassova",
      "text": "Личный рекорд за КП: 62.73 (был 53.49)",
-     "who": "Sofia Nekrassova"
+     "kind": "score"
     },
     {
-     "kind": "score",
+     "who": "Sophie Erhardt",
      "text": "Личный рекорд за КП: 56.33 (был 56.04)",
-     "who": "Sophie Erhardt"
+     "kind": "score"
     }
    ],
    "watch": [
@@ -55226,6 +55388,11 @@
      "time": "22:20"
     }
    ],
+   "absences": {
+    "Mehmet Uraz Ertas": {
+     "status": "WD"
+    }
+   },
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG009.htm",
@@ -55247,9 +55414,9 @@
    },
    "facts": [
     {
-     "kind": "score",
+     "who": "Matteo Marchioni",
      "text": "Личный рекорд за КП: 64.81 (был 60.16)",
-     "who": "Matteo Marchioni"
+     "kind": "score"
     }
    ],
    "watch": [
@@ -55706,14 +55873,14 @@
    },
    "facts": [
     {
-     "kind": "score",
+     "who": "Sofia Nekrassova",
      "text": "Личный рекорд по сумме: 173.56 (был 168.83)",
-     "who": "Sofia Nekrassova"
+     "kind": "score"
     },
     {
-     "kind": "score",
+     "who": "Sophie Erhardt",
      "text": "Личный рекорд по сумме: 161.43 (был 149.59)",
-     "who": "Sophie Erhardt"
+     "kind": "score"
     }
    ],
    "watch": [
@@ -56470,6 +56637,11 @@
      "time": "18:17"
     }
    ],
+   "absences": {
+    "Romulus Peltonen": {
+     "status": "WD"
+    }
+   },
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG010.htm",
@@ -56490,14 +56662,14 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Ilya Nesterov",
      "text": "После короткой программы — 4-е место, в итоге — 1-е место",
-     "who": "Ilya Nesterov"
+     "kind": "place"
     },
     {
-     "kind": "score",
+     "who": "Matteo Marchioni",
      "text": "Личный рекорд по сумме: 171.36 (был 167.49)",
-     "who": "Matteo Marchioni"
+     "kind": "score"
     }
    ],
    "watch": [
@@ -56951,6 +57123,11 @@
      "time": "23:09"
     }
    ],
+   "absences": {
+    "Nikita Krivosheyev": {
+     "status": "WD"
+    }
+   },
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG001.htm",
@@ -57064,7 +57241,7 @@
      "points": "63.87"
     }
    ],
-   "desc": "Итог:\n1. Lara Naki Gutmann — 70.25\n2. Maria Eliise Kaljuvere — 69.20\n3. Livia Kaiser — 63.87\n\nПримечательное:\n• Maria Eliise Kaljuvere — Личный рекорд за КП: 69.20 (был 66.36)\n\nНачало: 12:15 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Lara Naki Gutmann — 70.25\n2. Maria Eliise Kaljuvere — 69.20\n3. Livia Kaiser — 63.87\n\nПримечательное:\n• Maria Eliise Kaljuvere — Личный рекорд за КП: 69.20\n\nНачало: 12:15 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Nela Snebergerova",
@@ -57408,9 +57585,9 @@
    },
    "facts": [
     {
-     "kind": "score",
-     "text": "Личный рекорд за КП: 69.20 (был 66.36)",
-     "who": "Maria Eliise Kaljuvere"
+     "who": "Maria Eliise Kaljuvere",
+     "text": "Личный рекорд за КП: 69.20",
+     "kind": "score"
     }
    ],
    "watch": [
@@ -57976,9 +58153,9 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Арсений Димитриев",
      "text": "Отрыв от второго места — 59.69 балла",
-     "who": "Арсений Димитриев"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -58314,7 +58491,7 @@
      "points": "52.76"
     }
    ],
-   "desc": "Итог:\n1. Miyu Yunoki / Tristan Taylor — 54.67\n2. Linzy Fitzpatrick / Keyton Bearinger — 53.20\n3. Reagan Moss / Jakub Galbavy — 52.76\n\nПримечательное:\n• Linzy Fitzpatrick / Keyton Bearinger — Личный рекорд за КП: 53.20 (был 45.75)\n\nНачало: 18:05 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Miyu Yunoki / Tristan Taylor — 54.67\n2. Linzy Fitzpatrick / Keyton Bearinger — 53.20\n3. Reagan Moss / Jakub Galbavy — 52.76\n\nПримечательное:\n• Linzy Fitzpatrick / Keyton Bearinger — Личный рекорд за КП: 53.20\n\nНачало: 18:05 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Debora Anna Cohen / Lukas Vochozka",
@@ -58398,9 +58575,9 @@
    },
    "facts": [
     {
-     "kind": "score",
-     "text": "Личный рекорд за КП: 53.20 (был 45.75)",
-     "who": "Linzy Fitzpatrick / Keyton Bearinger"
+     "who": "Linzy Fitzpatrick / Keyton Bearinger",
+     "text": "Личный рекорд за КП: 53.20",
+     "kind": "score"
     }
    ],
    "watch": [
@@ -58493,7 +58670,7 @@
      "points": "213.24"
     }
    ],
-   "desc": "Итог:\n1. Anthony Paradis — 141.91\n2. Matteo Nalbone — 136.42\n3. Gabriele Frangipani — 134.23\n\nИтог турнира:\n1. Gabriele Frangipani — 215.19\n2. Anthony Paradis — 214.33\n3. Hyungyeom Kim — 213.24\n\nПримечательное:\n• Anthony Paradis — Личный рекорд за ПП: 141.91 (был 130.42)\n• Matteo Nalbone — Личный рекорд за ПП: 136.42 (был 123.67)\n• Anthony Paradis — Личный рекорд по сумме: 214.33 (был 193.61)\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Anthony Paradis — 141.91\n2. Matteo Nalbone — 136.42\n3. Gabriele Frangipani — 134.23\n\nИтог турнира:\n1. Gabriele Frangipani — 215.19\n2. Anthony Paradis — 214.33\n3. Hyungyeom Kim — 213.24\n\nПримечательное:\n• Anthony Paradis — Личный рекорд за ПП: 141.91\n• Matteo Nalbone — Личный рекорд за ПП: 136.42\n• Anthony Paradis — Личный рекорд по сумме: 214.33\n\nНачало: 19:25 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Larry Loupolover",
@@ -58716,6 +58893,11 @@
      "time": "22:54"
     }
    ],
+   "absences": {
+    "Euken Alberdi": {
+     "status": "WD"
+    }
+   },
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG002.htm",
@@ -58749,19 +58931,19 @@
    },
    "facts": [
     {
-     "kind": "score",
-     "text": "Личный рекорд за ПП: 141.91 (был 130.42)",
-     "who": "Anthony Paradis"
+     "who": "Anthony Paradis",
+     "text": "Личный рекорд за ПП: 141.91",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд за ПП: 136.42 (был 123.67)",
-     "who": "Matteo Nalbone"
+     "who": "Matteo Nalbone",
+     "text": "Личный рекорд за ПП: 136.42",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 214.33 (был 193.61)",
-     "who": "Anthony Paradis"
+     "who": "Anthony Paradis",
+     "text": "Личный рекорд по сумме: 214.33",
+     "kind": "score"
     }
    ],
    "watch": [
@@ -58865,7 +59047,7 @@
      "points": "179.91"
     }
    ],
-   "desc": "Итог:\n1. Lara Naki Gutmann — 134.60\n2. Maria Eliise Kaljuvere — 134.05\n3. Breken Brezden — 117.91\n\nИтог турнира:\n1. Lara Naki Gutmann — 204.85\n2. Maria Eliise Kaljuvere — 203.25\n3. Breken Brezden — 179.91\n\nПримечательное:\n• Maria Eliise Kaljuvere — Личный рекорд за ПП: 134.05 (был 115.34)\n• Breken Brezden — Личный рекорд за ПП: 117.91 (был 108.37)\n• Maria Eliise Kaljuvere — Личный рекорд по сумме: 203.25 (был 177.80)\n• Breken Brezden — Личный рекорд по сумме: 179.91 (был 160.36)\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Lara Naki Gutmann — 134.60\n2. Maria Eliise Kaljuvere — 134.05\n3. Breken Brezden — 117.91\n\nИтог турнира:\n1. Lara Naki Gutmann — 204.85\n2. Maria Eliise Kaljuvere — 203.25\n3. Breken Brezden — 179.91\n\nПримечательное:\n• Maria Eliise Kaljuvere — Личный рекорд за ПП: 134.05\n• Breken Brezden — Личный рекорд за ПП: 117.91\n• Maria Eliise Kaljuvere — Личный рекорд по сумме: 203.25\n• Breken Brezden — Личный рекорд по сумме: 179.91\n\nНачало: 12:30 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Michelle Dicicco",
@@ -59242,24 +59424,24 @@
    },
    "facts": [
     {
-     "kind": "score",
-     "text": "Личный рекорд за ПП: 134.05 (был 115.34)",
-     "who": "Maria Eliise Kaljuvere"
+     "who": "Maria Eliise Kaljuvere",
+     "text": "Личный рекорд за ПП: 134.05",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд за ПП: 117.91 (был 108.37)",
-     "who": "Breken Brezden"
+     "who": "Breken Brezden",
+     "text": "Личный рекорд за ПП: 117.91",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 203.25 (был 177.80)",
-     "who": "Maria Eliise Kaljuvere"
+     "who": "Maria Eliise Kaljuvere",
+     "text": "Личный рекорд по сумме: 203.25",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 179.91 (был 160.36)",
-     "who": "Breken Brezden"
+     "who": "Breken Brezden",
+     "text": "Личный рекорд по сумме: 179.91",
+     "kind": "score"
     }
    ],
    "watch": [
@@ -59767,9 +59949,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Виктория Стрельцова",
      "text": "Тройной аксель",
-     "who": "Виктория Стрельцова"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -59809,7 +59991,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -59832,7 +60015,7 @@
      "points": "70.81"
     }
    ],
-   "desc": "Итог:\n1. Lia Pereira / Trennt Michaud — 74.39\n2. Annika Hocke / Robert Kunkel — 72.63\n3. Katie McBEATH / Balazs Nagy — 70.81\n\nПримечательное:\n• Annika Hocke / Robert Kunkel — Личный рекорд за КП: 72.63 (был 69.13)\n• Katie McBEATH / Balazs Nagy — Личный рекорд за КП: 70.81 (был 67.62)\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Lia Pereira / Trennt Michaud — 74.39\n2. Annika Hocke / Robert Kunkel — 72.63\n3. Katie McBEATH / Balazs Nagy — 70.81\n\nПримечательное:\n• Annika Hocke / Robert Kunkel — Личный рекорд за КП: 72.63\n• Katie McBEATH / Balazs Nagy — Личный рекорд за КП: 70.81\n\nНачало: 15:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Megan Wessenberg / Denys Strekalin",
@@ -59926,14 +60109,14 @@
    },
    "facts": [
     {
-     "kind": "score",
-     "text": "Личный рекорд за КП: 72.63 (был 69.13)",
-     "who": "Annika Hocke / Robert Kunkel"
+     "who": "Annika Hocke / Robert Kunkel",
+     "text": "Личный рекорд за КП: 72.63",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд за КП: 70.81 (был 67.62)",
-     "who": "Katie McBEATH / Balazs Nagy"
+     "who": "Katie McBEATH / Balazs Nagy",
+     "text": "Личный рекорд за КП: 70.81",
+     "kind": "score"
     }
    ],
    "proto": null
@@ -59977,7 +60160,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=UTsHtoFos6k"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -60000,7 +60184,7 @@
      "points": "69.03"
     }
    ],
-   "desc": "Итог:\n1. Mao Shimada — 79.06\n2. Niina Petrokina — 69.08\n3. Seoyoung Kim — 69.03\n\nПримечательное:\n• Mao Shimada — Тройной аксель\n• Seoyoung Kim — Личный рекорд за КП: 69.03 (был 68.75)\n• Yuseong Kim — Тройной аксель\n\nНачало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Mao Shimada — 79.06\n2. Niina Petrokina — 69.08\n3. Seoyoung Kim — 69.03\n\nПримечательное:\n• Mao Shimada — Тройной аксель\n• Seoyoung Kim — Личный рекорд за КП: 69.03\n• Yuseong Kim — Тройной аксель\n\nНачало: 16:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Janna Jyrkinen",
@@ -60134,19 +60318,19 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Mao Shimada",
      "text": "Тройной аксель",
-     "who": "Mao Shimada"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Yuseong Kim",
      "text": "Тройной аксель",
-     "who": "Yuseong Kim"
+     "kind": "element"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд за КП: 69.03 (был 68.75)",
-     "who": "Seoyoung Kim"
+     "who": "Seoyoung Kim",
+     "text": "Личный рекорд за КП: 69.03",
+     "kind": "score"
     }
    ],
    "proto": null
@@ -60458,7 +60642,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=q-UDEDFe0L4"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -60481,7 +60666,7 @@
      "points": "82.08"
     }
    ],
-   "desc": "Итог:\n1. Mihhail Selevko — 85.01\n2. Yudong Chen — 82.88\n3. Andreas Nordeback — 82.08\n\nПримечательное:\n• Yudong Chen — Личный рекорд за КП: 82.88 (был 80.74)\n• Andreas Nordeback — Личный рекорд за КП: 82.08 (был 79.89)\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Mihhail Selevko — 85.01\n2. Yudong Chen — 82.88\n3. Andreas Nordeback — 82.08\n\nПримечательное:\n• Yudong Chen — Личный рекорд за КП: 82.88\n• Andreas Nordeback — Личный рекорд за КП: 82.08\n\nНачало: 18:25 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Matias Lindfors",
@@ -60615,14 +60800,14 @@
    },
    "facts": [
     {
-     "kind": "score",
-     "text": "Личный рекорд за КП: 82.88 (был 80.74)",
-     "who": "Yudong Chen"
+     "who": "Yudong Chen",
+     "text": "Личный рекорд за КП: 82.88",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд за КП: 82.08 (был 79.89)",
-     "who": "Andreas Nordeback"
+     "who": "Andreas Nordeback",
+     "text": "Личный рекорд за КП: 82.08",
+     "kind": "score"
     }
    ],
    "proto": null
@@ -60784,14 +60969,14 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Злата Камалова / Данил Панов",
      "text": "Отрыв от второго места — 19.85 балла",
-     "who": "Злата Камалова / Данил Панов"
+     "kind": "place"
     },
     {
-     "kind": "score",
+     "who": "Leontina Horcickova / Jindrich Klement",
      "text": "Личный рекорд за ПП: 76.54 (был 75.97)",
-     "who": "Leontina Horcickova / Jindrich Klement"
+     "kind": "score"
     }
    ],
    "watch": [
@@ -60869,7 +61054,7 @@
      "points": "146.95"
     }
    ],
-   "desc": "Итог:\n1. Linzy Fitzpatrick / Keyton Bearinger — 103.07\n2. Miyu Yunoki / Tristan Taylor — 98.48\n3. Reagan Moss / Jakub Galbavy — 94.19\n\nИтог турнира:\n1. Linzy Fitzpatrick / Keyton Bearinger — 156.27\n2. Miyu Yunoki / Tristan Taylor — 153.15\n3. Reagan Moss / Jakub Galbavy — 146.95\n\nПримечательное:\n• Linzy Fitzpatrick / Keyton Bearinger — Личный рекорд за ПП: 103.07 (был 89.11)\n• Miyu Yunoki / Tristan Taylor — Личный рекорд за ПП: 98.48 (был 96.63)\n• Reagan Moss / Jakub Galbavy — Личный рекорд за ПП: 94.19 (был 92.65)\n• Linzy Fitzpatrick / Keyton Bearinger — Личный рекорд по сумме: 156.27 (был 134.86)\n• Reagan Moss / Jakub Galbavy — Личный рекорд по сумме: 146.95 (был 146.74)\n\nНачало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Linzy Fitzpatrick / Keyton Bearinger — 103.07\n2. Miyu Yunoki / Tristan Taylor — 98.48\n3. Reagan Moss / Jakub Galbavy — 94.19\n\nИтог турнира:\n1. Linzy Fitzpatrick / Keyton Bearinger — 156.27\n2. Miyu Yunoki / Tristan Taylor — 153.15\n3. Reagan Moss / Jakub Galbavy — 146.95\n\nПримечательное:\n• Linzy Fitzpatrick / Keyton Bearinger — Личный рекорд за ПП: 103.07\n• Miyu Yunoki / Tristan Taylor — Личный рекорд за ПП: 98.48\n• Reagan Moss / Jakub Galbavy — Личный рекорд за ПП: 94.19\n• Linzy Fitzpatrick / Keyton Bearinger — Личный рекорд по сумме: 156.27\n• Reagan Moss / Jakub Galbavy — Личный рекорд по сумме: 146.95\n\nНачало: 20:00 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Xuanyu Liu / Wenbao Han",
@@ -60960,29 +61145,29 @@
    },
    "facts": [
     {
-     "kind": "score",
-     "text": "Личный рекорд за ПП: 103.07 (был 89.11)",
-     "who": "Linzy Fitzpatrick / Keyton Bearinger"
+     "who": "Linzy Fitzpatrick / Keyton Bearinger",
+     "text": "Личный рекорд за ПП: 103.07",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд за ПП: 98.48 (был 96.63)",
-     "who": "Miyu Yunoki / Tristan Taylor"
+     "who": "Miyu Yunoki / Tristan Taylor",
+     "text": "Личный рекорд за ПП: 98.48",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд за ПП: 94.19 (был 92.65)",
-     "who": "Reagan Moss / Jakub Galbavy"
+     "who": "Reagan Moss / Jakub Galbavy",
+     "text": "Личный рекорд за ПП: 94.19",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 156.27 (был 134.86)",
-     "who": "Linzy Fitzpatrick / Keyton Bearinger"
+     "who": "Linzy Fitzpatrick / Keyton Bearinger",
+     "text": "Личный рекорд по сумме: 156.27",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 146.95 (был 146.74)",
-     "who": "Reagan Moss / Jakub Galbavy"
+     "who": "Reagan Moss / Jakub Galbavy",
+     "text": "Личный рекорд по сумме: 146.95",
+     "kind": "score"
     }
    ],
    "watch": [
@@ -61031,7 +61216,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=yjWJReRLTzE"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -61168,9 +61354,9 @@
    },
    "facts": [
     {
-     "kind": "score",
+     "who": "Laurence Fournier Beaudry / Guillaume Cizeron",
      "text": "Лучшая в мире оценка сезона за РТ: 85.78",
-     "who": "Laurence Fournier Beaudry / Guillaume Cizeron"
+     "kind": "score"
     }
    ],
    "proto": null
@@ -61731,19 +61917,19 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Виктория Стрельцова",
      "text": "3 четверных в программе: 4T, 4S, 4S",
-     "who": "Виктория Стрельцова"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Софья Смагина",
      "text": "2 четверных в программе: 4S, 4T",
-     "who": "Софья Смагина"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Виктория Стрельцова",
      "text": "Тройной аксель",
-     "who": "Виктория Стрельцова"
+     "kind": "element"
     }
    ],
    "proto": null
@@ -61783,7 +61969,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=ffrrZxRSaZ4"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -61826,7 +62013,7 @@
      "points": "193.18"
     }
    ],
-   "desc": "Итог:\n1. Audrey Shin / Spencer Akira Howe — 125.92\n2. Annika Hocke / Robert Kunkel — 123.77\n3. Lia Pereira / Trennt Michaud — 120.89\n\nИтог турнира:\n1. Annika Hocke / Robert Kunkel — 196.40\n2. Lia Pereira / Trennt Michaud — 195.28\n3. Audrey Shin / Spencer Akira Howe — 193.18\n\nПримечательное:\n• Audrey Shin / Spencer Akira Howe — Личный рекорд за ПП: 125.92 (был 116.56)\n• Audrey Shin / Spencer Akira Howe — Личный рекорд по сумме: 193.18 (был 183.81)\n\nНачало: 13:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Audrey Shin / Spencer Akira Howe — 125.92\n2. Annika Hocke / Robert Kunkel — 123.77\n3. Lia Pereira / Trennt Michaud — 120.89\n\nИтог турнира:\n1. Annika Hocke / Robert Kunkel — 196.40\n2. Lia Pereira / Trennt Michaud — 195.28\n3. Audrey Shin / Spencer Akira Howe — 193.18\n\nПримечательное:\n• Audrey Shin / Spencer Akira Howe — Личный рекорд за ПП: 125.92\n• Audrey Shin / Spencer Akira Howe — Личный рекорд по сумме: 193.18\n\nНачало: 13:15 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Irma Caldara / Riccardo Maglio",
@@ -61928,14 +62115,14 @@
    },
    "facts": [
     {
-     "kind": "score",
-     "text": "Личный рекорд за ПП: 125.92 (был 116.56)",
-     "who": "Audrey Shin / Spencer Akira Howe"
+     "who": "Audrey Shin / Spencer Akira Howe",
+     "text": "Личный рекорд за ПП: 125.92",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 193.18 (был 183.81)",
-     "who": "Audrey Shin / Spencer Akira Howe"
+     "who": "Audrey Shin / Spencer Akira Howe",
+     "text": "Личный рекорд по сумме: 193.18",
+     "kind": "score"
     }
    ],
    "proto": null
@@ -61979,7 +62166,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=3lVqLrXDbd0"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -62168,39 +62356,39 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Mao Shimada",
      "text": "Все судьи — +5 за CCoSp4",
-     "who": "Mao Shimada"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Mao Shimada",
      "text": "Четверной тулуп",
-     "who": "Mao Shimada"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Mao Shimada",
      "text": "Тройной аксель",
-     "who": "Mao Shimada"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Yuseong Kim",
      "text": "Тройной аксель",
-     "who": "Yuseong Kim"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Haein Lee",
      "text": "Тройной аксель",
-     "who": "Haein Lee"
+     "kind": "element"
     },
     {
-     "kind": "place",
+     "who": "Isabeau Levito",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "who": "Isabeau Levito"
+     "kind": "place"
     },
     {
-     "kind": "place",
+     "who": "Mao Shimada",
      "text": "Отрыв от второго места — 15.43 балла",
-     "who": "Mao Shimada"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -62387,6 +62575,14 @@
      "time": "17:54"
     }
    ],
+   "absences": {
+    "Aletta Lanyi / Ilya Laurenau": {
+     "status": "WD"
+    },
+    "Villo Mira Szilagyi / Istvan Jaracs": {
+     "status": "WD"
+    }
+   },
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG015.htm",
@@ -62412,9 +62608,9 @@
    },
    "facts": [
     {
-     "kind": "score",
+     "who": "Alexia Kruk / Jan Eisenhaber",
      "text": "Личный рекорд за РТ: 57.78 (был 56.50)",
-     "who": "Alexia Kruk / Jan Eisenhaber"
+     "kind": "score"
     }
    ],
    "watch": [
@@ -62733,14 +62929,14 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Ильяс Халиуллин",
      "text": "3 четверных в программе: 4Lz, 4T, 4S",
-     "who": "Ильяс Халиуллин"
+     "kind": "element"
     },
     {
-     "kind": "place",
+     "who": "Ильяс Халиуллин",
      "text": "Отрыв от второго места — 49.10 балла",
-     "who": "Ильяс Халиуллин"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -62784,7 +62980,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=QwcwU0NdvaY"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -62827,7 +63024,7 @@
      "points": "237.75"
     }
    ],
-   "desc": "Итог:\n1. Mihhail Selevko — 169.98\n2. Adam Siao Him Fa — 158.91\n3. Andreas Nordeback — 158.86\n\nИтог турнира:\n1. Mihhail Selevko — 254.99\n2. Andreas Nordeback — 240.94\n3. Kazuki Tomono — 237.75\n\nПримечательное:\n• Andreas Nordeback — Личный рекорд по сумме: 240.94 (был 230.37)\n\nНачало: 18:15 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Mihhail Selevko — 169.98\n2. Adam Siao Him Fa — 158.91\n3. Andreas Nordeback — 158.86\n\nИтог турнира:\n1. Mihhail Selevko — 254.99\n2. Andreas Nordeback — 240.94\n3. Kazuki Tomono — 237.75\n\nПримечательное:\n• Mihhail Selevko — Личный рекорд за ПП: 169.98\n• Andreas Nordeback — Личный рекорд за ПП: 158.86\n• Andreas Nordeback — Личный рекорд по сумме: 240.94\n\nНачало: 18:15 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Adam Siao Him Fa",
@@ -62973,9 +63170,19 @@
    },
    "facts": [
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 240.94 (был 230.37)",
-     "who": "Andreas Nordeback"
+     "who": "Mihhail Selevko",
+     "text": "Личный рекорд за ПП: 169.98",
+     "kind": "score"
+    },
+    {
+     "who": "Andreas Nordeback",
+     "text": "Личный рекорд за ПП: 158.86",
+     "kind": "score"
+    },
+    {
+     "who": "Andreas Nordeback",
+     "text": "Личный рекорд по сумме: 240.94",
+     "kind": "score"
     }
    ],
    "proto": null
@@ -63033,7 +63240,7 @@
      "points": "71.21"
     }
    ],
-   "desc": "Итог:\n1. Holly Harris / Jason Chan — 74.17\n2. Alicia Fabbri / Marko Jevgeni Gaidajenko — 73.79\n3. Amy Cui / Jonathan Rogers — 71.21\n\nПримечательное:\n• Holly Harris / Jason Chan — Личный рекорд за РТ: 74.17 (был 73.35)\n• Alicia Fabbri / Marko Jevgeni Gaidajenko — Личный рекорд за РТ: 73.79 (был 72.08)\n• Amy Cui / Jonathan Rogers — Личный рекорд за РТ: 71.21 (был 68.50)\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Holly Harris / Jason Chan — 74.17\n2. Alicia Fabbri / Marko Jevgeni Gaidajenko — 73.79\n3. Amy Cui / Jonathan Rogers — 71.21\n\nПримечательное:\n• Holly Harris / Jason Chan — Личный рекорд за РТ: 74.17\n• Alicia Fabbri / Marko Jevgeni Gaidajenko — Личный рекорд за РТ: 73.79\n• Amy Cui / Jonathan Rogers — Личный рекорд за РТ: 71.21\n\nНачало: 18:20 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Holly Harris / Jason Chan",
@@ -63162,6 +63369,11 @@
      "time": "20:17"
     }
    ],
+   "absences": {
+    "Arianna Sassi / Luca Morini": {
+     "status": "WD"
+    }
+   },
    "live": {
     "idx": "https://results.fsresults.info/2026-2027/CSEST2026/index.htm",
     "seg": "https://results.fsresults.info/2026-2027/CSEST2026/SEG007.htm",
@@ -63187,19 +63399,19 @@
    },
    "facts": [
     {
-     "kind": "score",
-     "text": "Личный рекорд за РТ: 74.17 (был 73.35)",
-     "who": "Holly Harris / Jason Chan"
+     "who": "Holly Harris / Jason Chan",
+     "text": "Личный рекорд за РТ: 74.17",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд за РТ: 73.79 (был 72.08)",
-     "who": "Alicia Fabbri / Marko Jevgeni Gaidajenko"
+     "who": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
+     "text": "Личный рекорд за РТ: 73.79",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд за РТ: 71.21 (был 68.50)",
-     "who": "Amy Cui / Jonathan Rogers"
+     "who": "Amy Cui / Jonathan Rogers",
+     "text": "Личный рекорд за РТ: 71.21",
+     "kind": "score"
     }
    ],
    "watch": [
@@ -63527,7 +63739,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=K8UPt8A7Z3Y"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -63694,19 +63907,19 @@
    },
    "facts": [
     {
-     "kind": "score",
+     "who": "Laurence Fournier Beaudry / Guillaume Cizeron",
      "text": "Лучшая в мире оценка сезона за ПТ: 127.13",
-     "who": "Laurence Fournier Beaudry / Guillaume Cizeron"
+     "kind": "score"
     },
     {
-     "kind": "score",
+     "who": "Laurence Fournier Beaudry / Guillaume Cizeron",
      "text": "Лучшая в мире сумма сезона: 212.91",
-     "who": "Laurence Fournier Beaudry / Guillaume Cizeron"
+     "kind": "score"
     },
     {
-     "kind": "place",
+     "who": "Laurence Fournier Beaudry / Guillaume Cizeron",
      "text": "Отрыв от второго места — 22.03 балла",
-     "who": "Laurence Fournier Beaudry / Guillaume Cizeron"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -64157,6 +64370,11 @@
      "time": "13:33"
     }
    ],
+   "absences": {
+    "Мария Котова": {
+     "status": "WD"
+    }
+   },
    "live": {
     "idx": "https://fsrussia.ru/results/2627/idel_2026/index.htm",
     "seg": "https://fsrussia.ru/results/2627/idel_2026/SEG004.htm",
@@ -64187,9 +64405,9 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Екатерина Кольцова",
      "text": "После короткой программы — 6-е место, в итоге — 3-е место",
-     "who": "Екатерина Кольцова"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -64435,19 +64653,19 @@
    },
    "facts": [
     {
-     "kind": "score",
+     "who": "Lea Hienne / Louis Varescon",
      "text": "Личный рекорд за ПТ: 90.45 (был 89.45)",
-     "who": "Lea Hienne / Louis Varescon"
+     "kind": "score"
     },
     {
-     "kind": "score",
+     "who": "Kristyna Stanclova / Karel Kostron",
      "text": "Личный рекорд за ПТ: 79.57 (был 78.19)",
-     "who": "Kristyna Stanclova / Karel Kostron"
+     "kind": "score"
     },
     {
-     "kind": "score",
+     "who": "Lea Hienne / Louis Varescon",
      "text": "Личный рекорд по сумме: 149.26 (был 149.03)",
-     "who": "Lea Hienne / Louis Varescon"
+     "kind": "score"
     }
    ],
    "watch": [
@@ -64731,7 +64949,7 @@
      "points": "175.76"
     }
    ],
-   "desc": "Итог:\n1. Holly Harris / Jason Chan — 111.65\n2. Alicia Fabbri / Marko Jevgeni Gaidajenko — 105.77\n3. Amy Cui / Jonathan Rogers — 104.55\n\nИтог турнира:\n1. Holly Harris / Jason Chan — 185.82\n2. Alicia Fabbri / Marko Jevgeni Gaidajenko — 179.56\n3. Amy Cui / Jonathan Rogers — 175.76\n\nПримечательное:\n• Holly Harris / Jason Chan — Личный рекорд по сумме: 185.82 (был 183.50)\n• Alicia Fabbri / Marko Jevgeni Gaidajenko — Личный рекорд по сумме: 179.56 (был 175.08)\n• Amy Cui / Jonathan Rogers — Личный рекорд по сумме: 175.76 (был 174.09)\n\nНачало: 15:40 МСК\nТрансляция: Ice-Stars.TV",
+   "desc": "Итог:\n1. Holly Harris / Jason Chan — 111.65\n2. Alicia Fabbri / Marko Jevgeni Gaidajenko — 105.77\n3. Amy Cui / Jonathan Rogers — 104.55\n\nИтог турнира:\n1. Holly Harris / Jason Chan — 185.82\n2. Alicia Fabbri / Marko Jevgeni Gaidajenko — 179.56\n3. Amy Cui / Jonathan Rogers — 175.76\n\nПримечательное:\n• Holly Harris / Jason Chan — Личный рекорд за ПТ: 111.65\n• Alicia Fabbri / Marko Jevgeni Gaidajenko — Личный рекорд за ПТ: 105.77\n• Holly Harris / Jason Chan — Личный рекорд по сумме: 185.82\n• Alicia Fabbri / Marko Jevgeni Gaidajenko — Личный рекорд по сумме: 179.56\n• Amy Cui / Jonathan Rogers — Личный рекорд по сумме: 175.76\n\nНачало: 15:40 МСК\nТрансляция: Ice-Stars.TV",
    "field": [
     {
      "name": "Olympia Kalaganis / Emile Deveau",
@@ -64899,19 +65117,29 @@
    },
    "facts": [
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 185.82 (был 183.50)",
-     "who": "Holly Harris / Jason Chan"
+     "who": "Holly Harris / Jason Chan",
+     "text": "Личный рекорд за ПТ: 111.65",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 179.56 (был 175.08)",
-     "who": "Alicia Fabbri / Marko Jevgeni Gaidajenko"
+     "who": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
+     "text": "Личный рекорд за ПТ: 105.77",
+     "kind": "score"
     },
     {
-     "kind": "score",
-     "text": "Личный рекорд по сумме: 175.76 (был 174.09)",
-     "who": "Amy Cui / Jonathan Rogers"
+     "who": "Holly Harris / Jason Chan",
+     "text": "Личный рекорд по сумме: 185.82",
+     "kind": "score"
+    },
+    {
+     "who": "Alicia Fabbri / Marko Jevgeni Gaidajenko",
+     "text": "Личный рекорд по сумме: 179.56",
+     "kind": "score"
+    },
+    {
+     "who": "Amy Cui / Jonathan Rogers",
+     "text": "Личный рекорд по сумме: 175.76",
+     "kind": "score"
     }
    ],
    "watch": [
@@ -65746,9 +65974,9 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Зоя Пестова / Сергей Лагутов",
      "text": "Отрыв от второго места — 9.66 балла",
-     "who": "Зоя Пестова / Сергей Лагутов"
+     "kind": "place"
     }
    ],
    "tier": "regional",
@@ -67289,9 +67517,9 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Алиса Заикина",
      "text": "Тройной аксель",
-     "who": "Алиса Заикина"
+     "kind": "element"
     }
    ],
    "tier": "regional",
@@ -67413,9 +67641,9 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Роман Попов",
      "text": "Отрыв от второго места — 17.84 балла",
-     "who": "Роман Попов"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -67867,6 +68095,11 @@
      "final": 1
     }
    ],
+   "absences": {
+    "Варвара Рачева": {
+     "status": "WD"
+    }
+   },
    "live": {
     "idx": "https://бильман.рф/Events2627/TM2026/index.htm",
     "seg": "https://бильман.рф/Events2627/TM2026/SEG012.HTM",
@@ -68194,6 +68427,44 @@
      "final": 1
     }
    ],
+   "absences": {
+    "Елизавета Поспелова": {
+     "status": "NQD"
+    },
+    "Варвара Кузьминых": {
+     "status": "NQD"
+    },
+    "Евгения Ермакова": {
+     "status": "NQD"
+    },
+    "Виктория Мокрушина": {
+     "status": "NQD"
+    },
+    "Владислава Прокофьева": {
+     "status": "NQD"
+    },
+    "Дарина Леонтьева": {
+     "status": "NQD"
+    },
+    "Милена Мельникова": {
+     "status": "NQD"
+    },
+    "Елизавета Ширяева": {
+     "status": "NQD"
+    },
+    "Софья Карпова": {
+     "status": "NQD"
+    },
+    "Вероника Хвесько": {
+     "status": "NQD"
+    },
+    "Анастасия Докучаева": {
+     "status": "NQD"
+    },
+    "Екатерина Андреева": {
+     "status": "NQD"
+    }
+   },
    "live": {
     "idx": "https://бильман.рф/Events2627/TM2026/index.htm",
     "seg": "https://бильман.рф/Events2627/TM2026/SEG008.HTM",
@@ -68229,14 +68500,14 @@
    },
    "facts": [
     {
-     "kind": "place",
+     "who": "Мария Кулакова",
      "text": "После короткой программы — 6-е место, в итоге — 2-е место",
-     "who": "Мария Кулакова"
+     "kind": "place"
     },
     {
-     "kind": "place",
+     "who": "Арина Ореховская",
      "text": "Отрыв от второго места — 22.19 балла",
-     "who": "Арина Ореховская"
+     "kind": "place"
     }
    ],
    "proto": null
@@ -68900,6 +69171,11 @@
      "time": "20:24"
     }
    ],
+   "absences": {
+    "Matias Lindfors": {
+     "status": "WD"
+    }
+   },
    "live": {
     "idx": "https://pzlf-wyniki.pl/2627/CSPOL2026/index.htm",
     "seg": "https://pzlf-wyniki.pl/2627/CSPOL2026/SEG001.htm",
@@ -68940,14 +69216,14 @@
    },
    "facts": [
     {
-     "kind": "score",
+     "who": "Lucas Broussard",
      "text": "Личный рекорд за КП: 90.16 (был 85.77)",
-     "who": "Lucas Broussard"
+     "kind": "score"
     },
     {
-     "kind": "score",
+     "who": "Lucius Kazanecki",
      "text": "Личный рекорд за КП: 82.63 (был 74.89)",
-     "who": "Lucius Kazanecki"
+     "kind": "score"
     }
    ],
    "proto": null
@@ -69250,8 +69526,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=AP4wM4ixVHY",
-     "segment_verified": true
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -69349,6 +69625,14 @@
      "time": "07:47"
     }
    ],
+   "absences": {
+    "Loicia Demougeot / Theo le Mercier": {
+     "status": "WD"
+    },
+    "Utana Yoshida / Masaya Morita": {
+     "status": "WD"
+    }
+   },
    "live": {
     "idx": "https://results.isu.org/results/season2627/gpjpn2026/index.htm",
     "seg": "https://results.isu.org/results/season2627/gpjpn2026/SEG007.htm",
@@ -69403,8 +69687,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=bgarAx1j-OQ",
-     "segment_verified": true
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -69588,8 +69872,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=Glj7j2I8g6w",
-     "segment_verified": true
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -69746,9 +70030,9 @@
    },
    "facts": [
     {
-     "kind": "score",
+     "who": "Jia Shin",
      "text": "Личный рекорд за КП: 75.31 (был 74.93)",
-     "who": "Jia Shin"
+     "kind": "score"
     }
    ],
    "proto": "isu_isu-gp-nhk-trophy-2026.json"
@@ -69811,8 +70095,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=DvOcPKe2Swc",
-     "segment_verified": true
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "podium": [
@@ -69835,7 +70119,7 @@
      "points": "94.15"
     }
    ],
-   "desc": "Итог:\n1. Ilia Malinin — 114.81\n2. Shun Sato — 96.78\n3. Kevin Aymoz — 94.15\n\nПримечательное:\n• Ilia Malinin — Выше исторического рекорда за КП: 114.81 (рекорд 113.97)\n• Ilia Malinin — Личный рекорд за КП: 114.81 (был 111.29)\n\nРоссияне:\n• Владислав Дикиджи — 13:14\n• Пётр Гуменник — 13:20\n\nНачало: 13:00 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Итог:\n1. Ilia Malinin — 114.81\n2. Shun Sato — 96.78\n3. Kevin Aymoz — 94.15\n\nПримечательное:\n• Ilia Malinin — Мировой рекорд за КП: 114.81 (рекорд 113.97)\n• Ilia Malinin — Личный рекорд за КП: 114.81 (был 111.29)\n\nРоссияне:\n• Владислав Дикиджи — 13:14\n• Пётр Гуменник — 13:20\n\nНачало: 13:00 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Nozomu Yoshioka",
@@ -69969,14 +70253,14 @@
    },
    "facts": [
     {
-     "kind": "record",
-     "text": "Выше исторического рекорда за КП: 114.81 (рекорд 113.97)",
-     "who": "Ilia Malinin"
+     "who": "Ilia Malinin",
+     "text": "Мировой рекорд за КП: 114.81 (рекорд 113.97)",
+     "kind": "record"
     },
     {
-     "kind": "score",
+     "who": "Ilia Malinin",
      "text": "Личный рекорд за КП: 114.81 (был 111.29)",
-     "who": "Ilia Malinin"
+     "kind": "score"
     }
    ],
    "proto": "isu_isu-gp-nhk-trophy-2026.json"
@@ -70333,59 +70617,59 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Дарья Лебедева",
      "text": "3 четверных в программе: 4S, 4T, 4S",
-     "who": "Дарья Лебедева"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Лизавета Мельникова",
      "text": "Четверной лутц",
-     "who": "Лизавета Мельникова"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Алиса Заикина",
      "text": "2 четверных в программе: 4T, 4T",
-     "who": "Алиса Заикина"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Софья Смагина",
      "text": "2 четверных в программе: 4S, 4T",
-     "who": "Софья Смагина"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Анна Докукина",
      "text": "2 четверных в программе: 4S, 4T",
-     "who": "Анна Докукина"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Алиса Чистякова",
      "text": "2 четверных в программе: 4S, 4S",
-     "who": "Алиса Чистякова"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "София Левшова",
      "text": "Четверной тулуп",
-     "who": "София Левшова"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Алиса Заикина",
      "text": "Тройной аксель",
-     "who": "Алиса Заикина"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Майя Сарафанова",
      "text": "Тройной аксель",
-     "who": "Майя Сарафанова"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Ника Маскайкина",
      "text": "Тройной аксель",
-     "who": "Ника Маскайкина"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Алиса Корнаухова",
      "text": "Тройной аксель",
-     "who": "Алиса Корнаухова"
+     "kind": "element"
     }
    ],
    "tier": "regional",
@@ -70727,19 +71011,19 @@
    },
    "facts": [
     {
-     "kind": "element",
+     "who": "Даниил Жолобов",
      "text": "4 четверных в программе: 4T, 4Lo, 4S, 4Lo",
-     "who": "Даниил Жолобов"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Николай Колесников",
      "text": "3 четверных в программе: 4S, 4T, 4T",
-     "who": "Николай Колесников"
+     "kind": "element"
     },
     {
-     "kind": "element",
+     "who": "Никита Малютин",
      "text": "3 четверных в программе: 4S, 4T, 4T",
-     "who": "Никита Малютин"
+     "kind": "element"
     }
    ],
    "tier": "regional",
@@ -70841,14 +71125,14 @@
    },
    "facts": [
     {
-     "kind": "score",
+     "who": "Xuanyu Liu / Wenbao Han",
      "text": "Личный рекорд за КП: 50.97 (был 42.85)",
-     "who": "Xuanyu Liu / Wenbao Han"
+     "kind": "score"
     },
     {
-     "kind": "score",
+     "who": "Sarah Nunez / Blake Eisenach",
      "text": "Личный рекорд за КП: 50.84 (был 46.25)",
-     "who": "Sarah Nunez / Blake Eisenach"
+     "kind": "score"
     }
    ],
    "proto": null
@@ -71272,9 +71556,9 @@
    },
    "facts": [
     {
-     "kind": "score",
+     "who": "Lucas Broussard",
      "text": "Личный рекорд по сумме: 246.70 (был 246.48)",
-     "who": "Lucas Broussard"
+     "kind": "score"
     }
    ],
    "proto": null
@@ -71641,14 +71925,14 @@
    },
    "facts": [
     {
-     "kind": "score",
+     "who": "Minerva Fabienne Hase / Nikita Volodin",
      "text": "Лучшая в мире оценка сезона за ПП: 137.87",
-     "who": "Minerva Fabienne Hase / Nikita Volodin"
+     "kind": "score"
     },
     {
-     "kind": "place",
+     "who": "Minerva Fabienne Hase / Nikita Volodin",
      "text": "Отрыв от второго места — 17.39 балла",
-     "who": "Minerva Fabienne Hase / Nikita Volodin"
+     "kind": "place"
     }
    ],
    "proto": "isu_isu-gp-nhk-trophy-2026.json"
@@ -71673,7 +71957,7 @@
     {
      "name": "Виктория Сафонова",
      "nation": "BLR",
-     "place": 9,
+     "place": 8,
      "points": "116.59",
      "time": "11:01",
      "no": 4,
@@ -71683,16 +71967,17 @@
     {
      "name": "Аделия Петросян",
      "nation": "RUS",
+     "place": 6,
+     "points": "121.62",
      "time": "11:08",
      "no": 5,
-     "warmup": 1,
-     "place": 7,
-     "points": "121.62",
-     "final": 7
+     "warmup": 1
     },
     {
      "name": "Алина Горбачёва",
      "nation": "RUS",
+     "place": 5,
+     "points": "122.39",
      "time": "11:56",
      "no": 10,
      "warmup": 2,
@@ -71736,22 +72021,24 @@
     },
     {
      "place": 2,
-     "name": "Mone Chiba",
-     "nation": "JPN",
-     "points": "137.45"
-    },
-    {
-     "place": 3,
      "name": "Yuna Aoki",
      "nation": "JPN",
      "points": "129.81"
+    },
+    {
+     "place": 3,
+     "name": "Young You",
+     "nation": "KOR",
+     "points": "128.57"
     }
    ],
-   "desc": "Итог:\n1. Jia Shin — 143.71\n2. Mone Chiba — 137.45\n3. Yuna Aoki — 129.81\n\nИтог турнира:\n1. Jia Shin — 219.02\n2. Mone Chiba — 214.57\n3. Young You — 199.99\n\nПримечательное:\n• Jia Shin — Личный рекорд по сумме: 219.02 (был 212.43)\n\nРоссияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Jia Shin — 143.71\n2. Yuna Aoki — 129.81\n3. Young You — 128.57\n\nРоссияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Jia Shin",
      "nation": "KOR",
+     "place": 1,
+     "points": "143.71",
      "time": "12:04",
      "no": 11,
      "warmup": 2,
@@ -71762,7 +72049,7 @@
     {
      "name": "Julia Sauter",
      "nation": "ROU",
-     "place": 11,
+     "place": 10,
      "points": "114.38",
      "time": "10:53",
      "no": 3,
@@ -71772,7 +72059,7 @@
     {
      "name": "Kimmy Repond",
      "nation": "SUI",
-     "place": 12,
+     "place": 11,
      "points": "112.15",
      "time": "10:45",
      "no": 2,
@@ -71782,22 +72069,20 @@
     {
      "name": "Madeline Schizas",
      "nation": "CAN",
+     "place": 9,
+     "points": "114.92",
      "time": "11:16",
      "no": 6,
-     "warmup": 1,
-     "place": 10,
-     "points": "114.92",
-     "final": 9
+     "warmup": 1
     },
     {
      "name": "Mako Yamashita",
      "nation": "JPN",
+     "place": 7,
+     "points": "121.51",
      "time": "11:40",
      "no": 8,
-     "warmup": 2,
-     "place": 8,
-     "points": "121.51",
-     "final": 6
+     "warmup": 2
     },
     {
      "name": "Mone Chiba",
@@ -71812,7 +72097,7 @@
     {
      "name": "Sarah Everhardt",
      "nation": "USA",
-     "place": 5,
+     "place": 4,
      "points": "126.11",
      "time": "10:38",
      "no": 1,
@@ -71822,36 +72107,35 @@
     {
      "name": "Young You",
      "nation": "KOR",
+     "place": 3,
+     "points": "128.57",
      "time": "11:48",
      "no": 9,
-     "warmup": 2,
-     "place": 4,
-     "points": "128.57",
-     "final": 3
+     "warmup": 2
     },
     {
      "name": "Yuna Aoki",
      "nation": "JPN",
+     "place": 2,
+     "points": "129.81",
      "time": "11:32",
      "no": 7,
-     "warmup": 2,
-     "place": 3,
-     "points": "129.81",
-     "final": 4
+     "warmup": 2
     },
     {
      "name": "Аделия Петросян",
      "nation": "RUS",
+     "place": 6,
+     "points": "121.62",
      "time": "11:08",
      "no": 5,
-     "warmup": 1,
-     "place": 7,
-     "points": "121.62",
-     "final": 7
+     "warmup": 1
     },
     {
      "name": "Алина Горбачёва",
      "nation": "RUS",
+     "place": 5,
+     "points": "122.39",
      "time": "11:56",
      "no": 10,
      "warmup": 2,
@@ -71862,7 +72146,7 @@
     {
      "name": "Виктория Сафонова",
      "nation": "BLR",
-     "place": 9,
+     "place": 8,
      "points": "116.59",
      "time": "11:01",
      "no": 4,
@@ -71876,20 +72160,37 @@
     "cat": "https://results.isu.org/results/season2627/gpjpn2026/CAT002RS.htm",
     "first": "https://results.isu.org/results/season2627/gpjpn2026/SEG003.htm",
     "names": {
+     "Jia SHIN": "Jia Shin",
+     "Young YOU": "Young You",
+     "Yuna AOKI": "Yuna Aoki",
+     "Alina GORBACHEVA": "Алина Горбачёва",
+     "Mako YAMASHITA": "Mako Yamashita",
+     "Adeliia PETROSIAN": "Аделия Петросян",
      "Sarah EVERHARDT": "Sarah Everhardt",
+     "Madeline SCHIZAS": "Madeline Schizas",
      "Viktoriia SAFONOVA": "Виктория Сафонова",
      "Julia SAUTER": "Julia Sauter",
      "Kimmy REPOND": "Kimmy Repond",
-     "Adeliia PETROSIAN": "Аделия Петросян",
-     "Madeline SCHIZAS": "Madeline Schizas",
-     "Yuna AOKI": "Yuna Aoki",
-     "Mako YAMASHITA": "Mako Yamashita",
-     "Young YOU": "Young You",
-     "Alina GORBACHEVA": "Алина Горбачёва",
-     "Jia SHIN": "Jia Shin",
      "Mone CHIBA": "Mone Chiba"
     },
-    "basis": "judges"
+    "basis": null,
+    "record_marks": {
+     "world": 185.29,
+     "personal": {
+      "Mone Chiba": 150.02,
+      "Young You": 149.68,
+      "Yuna Aoki": 145.98,
+      "Аделия Петросян": 141.64,
+      "Jia Shin": 141.02,
+      "Mako Yamashita": 136.76,
+      "Kimmy Repond": 133.38,
+      "Sarah Everhardt": 132.96,
+      "Madeline Schizas": 132.47,
+      "Виктория Сафонова": 130.38,
+      "Алина Горбачёва": 130.33,
+      "Julia Sauter": 127.8
+     }
+    }
    },
    "proto": "isu_isu-gp-nhk-trophy-2026.json",
    "total": [
@@ -71966,7 +72267,6 @@
     "Ketevan Makharadze",
     "Lajla Mucic",
     "Lara Achermann",
-    "Leyla Tosun",
     "Liana Smrekar",
     "Lija Kroselj",
     "Lucca Dijkhuizen",
@@ -72012,19 +72312,19 @@
     },
     {
      "place": 3,
-     "name": "Neea Haapala",
-     "nation": "FIN",
-     "points": "50.76"
+     "name": "Ketevan Makharadze",
+     "nation": "GEO",
+     "points": "50.86"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Varvara Abramkina — 57.70\n2. Aleksandra Janikowska — 53.39\n3. Neea Haapala — 50.76\n\nРоссияне:\n• Алиса Заикина — 16:47\n\nНачало: 10:30 МСК",
+   "desc": "Промежуточные итоги:\n1. Varvara Abramkina — 57.70\n2. Aleksandra Janikowska — 53.39\n3. Ketevan Makharadze — 50.86\n\nРоссияне:\n• Алиса Заикина — 16:47\n\nНачало: 10:30 МСК",
    "field": [
     {
      "name": "Djurdja Nikolic",
      "nation": "SRB",
      "no": 1,
      "warmup": 1,
-     "place": 4,
+     "place": 11,
      "points": "29.06",
      "time": "10:36"
     },
@@ -72042,7 +72342,7 @@
      "nation": "SLO",
      "no": 3,
      "warmup": 1,
-     "place": 5,
+     "place": 12,
      "points": "28.98",
      "time": "10:47"
     },
@@ -72060,9 +72360,81 @@
      "nation": "FIN",
      "no": 5,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "50.76",
      "time": "10:58"
+    },
+    {
+     "name": "Liana Smrekar",
+     "nation": "SLO",
+     "no": 6,
+     "warmup": 30,
+     "place": 9,
+     "points": "34.08",
+     "time": "11:08"
+    },
+    {
+     "name": "Ekaterina Balaganskaia",
+     "nation": "SRB",
+     "no": 8,
+     "warmup": 30,
+     "place": 5,
+     "points": "49.61",
+     "time": "11:19"
+    },
+    {
+     "name": "Ketevan Makharadze",
+     "nation": "GEO",
+     "no": 9,
+     "warmup": 30,
+     "place": 3,
+     "points": "50.86",
+     "time": "11:24"
+    },
+    {
+     "name": "Mariia Sannikova",
+     "nation": "KAZ",
+     "no": 10,
+     "warmup": 30,
+     "place": 7,
+     "points": "43.83",
+     "time": "11:30"
+    },
+    {
+     "name": "Katarina Fedorova Coelho",
+     "nation": "POR",
+     "no": 11,
+     "warmup": 30,
+     "place": 8,
+     "points": "42.20",
+     "time": "11:35"
+    },
+    {
+     "name": "Angelica Orsi",
+     "nation": "ITA",
+     "no": 12,
+     "warmup": 3,
+     "place": 10,
+     "points": "31.54",
+     "time": "11:59"
+    },
+    {
+     "name": "Tiana Kaligaro",
+     "nation": "SLO",
+     "no": 13,
+     "warmup": 3,
+     "place": 13,
+     "points": "28.35",
+     "time": "12:05"
+    },
+    {
+     "name": "Zala Grum",
+     "nation": "SLO",
+     "no": 14,
+     "warmup": 3,
+     "place": 6,
+     "points": "47.11",
+     "time": "12:10"
     },
     {
      "name": "Ajda Preskar",
@@ -72093,13 +72465,6 @@
      "warmup": 4
     },
     {
-     "name": "Angelica Orsi",
-     "nation": "ITA",
-     "time": "11:59",
-     "no": 12,
-     "warmup": 3
-    },
-    {
      "name": "Anna Sannikova",
      "nation": "KAZ",
      "time": "15:24",
@@ -72119,13 +72484,6 @@
      "time": "14:27",
      "no": 34,
      "warmup": 6
-    },
-    {
-     "name": "Ekaterina Balaganskaia",
-     "nation": "SRB",
-     "time": "11:19",
-     "no": 8,
-     "warmup": 2
     },
     {
      "name": "Emma Cerkalova",
@@ -72176,20 +72534,6 @@
      "warmup": 6
     },
     {
-     "name": "Katarina Fedorova Coelho",
-     "nation": "POR",
-     "time": "11:35",
-     "no": 11,
-     "warmup": 2
-    },
-    {
-     "name": "Ketevan Makharadze",
-     "nation": "GEO",
-     "time": "11:24",
-     "no": 9,
-     "warmup": 2
-    },
-    {
      "name": "Lajla Mucic",
      "nation": "BIH",
      "time": "12:47",
@@ -72202,20 +72546,6 @@
      "time": "16:52",
      "no": 53,
      "warmup": 9
-    },
-    {
-     "name": "Leyla Tosun",
-     "nation": "GER",
-     "time": "12:27",
-     "no": 17,
-     "warmup": 3
-    },
-    {
-     "name": "Liana Smrekar",
-     "nation": "SLO",
-     "time": "11:08",
-     "no": 6,
-     "warmup": 2
     },
     {
      "name": "Lija Kroselj",
@@ -72237,13 +72567,6 @@
      "time": "16:36",
      "no": 50,
      "warmup": 9
-    },
-    {
-     "name": "Mariia Sannikova",
-     "nation": "KAZ",
-     "time": "11:30",
-     "no": 10,
-     "warmup": 2
     },
     {
      "name": "Milena Velcheva",
@@ -72323,13 +72646,6 @@
      "warmup": 8
     },
     {
-     "name": "Tiana Kaligaro",
-     "nation": "SLO",
-     "time": "12:05",
-     "no": 13,
-     "warmup": 3
-    },
-    {
      "name": "Varvara Poder",
      "nation": "EST",
      "time": "15:55",
@@ -72356,13 +72672,6 @@
      "time": "14:21",
      "no": 33,
      "warmup": 6
-    },
-    {
-     "name": "Zala Grum",
-     "nation": "SLO",
-     "time": "12:10",
-     "no": 14,
-     "warmup": 3
     },
     {
      "name": "Zala Kas",
@@ -72393,6 +72702,11 @@
      "warmup": 9
     }
    ],
+   "absences": {
+    "Tara Plahutar": {
+     "status": "WD"
+    }
+   },
    "provisional": true,
    "live": {
     "idx": "https://dev.mbit.si/EC/skcel2026/index.htm",
@@ -72402,20 +72716,19 @@
     "names": {
      "Varvara ABRAMKINA": "Varvara Abramkina",
      "Aleksandra JANIKOWSKA": "Aleksandra Janikowska",
-     "Neea HAAPALA": "Neea Haapala",
-     "Djurdja NIKOLIC": "Djurdja Nikolic",
-     "Enja SIVIC": "Enja Sivic",
-     "Liana SMREKAR": "Liana Smrekar",
-     "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
      "Ketevan MAKHARADZE": "Ketevan Makharadze",
+     "Neea HAAPALA": "Neea Haapala",
+     "Ekaterina BALAGANSKAIA": "Ekaterina Balaganskaia",
+     "Zala GRUM": "Zala Grum",
      "Mariia SANNIKOVA": "Mariia Sannikova",
      "Katarina FEDOROVA COELHO": "Katarina Fedorova Coelho",
+     "Liana SMREKAR": "Liana Smrekar",
      "Angelica ORSI": "Angelica Orsi",
+     "Djurdja NIKOLIC": "Djurdja Nikolic",
+     "Enja SIVIC": "Enja Sivic",
      "Tiana KALIGARO": "Tiana Kaligaro",
-     "Zala GRUM": "Zala Grum",
      "Jazlynn HÖPPENER": "Jazlynn Höppener",
      "Tamara GRAHOVAC": "Tamara Grahovac",
-     "Leyla TOSUN": "Leyla Tosun",
      "Angel DELEVAQUE": "Angel Delevaque",
      "Ajda PRESKAR": "Ajda Preskar",
      "Lajla MUCIC": "Lajla Mucic",
@@ -72511,8 +72824,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/watch?v=Yq6iTM7VwMg",
-     "segment_verified": true
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "desc": "Россияне:\n• Владислав Дикиджи — 14:01\n• Пётр Гуменник — 14:32\n\nНачало: 13:30 МСК\nТрансляция: Okko / YouTube ISU",
@@ -72621,7 +72934,24 @@
      "Shun SATO": "Shun Sato",
      "Ilia MALININ": "Ilia Malinin"
     },
-    "basis": null
+    "basis": null,
+    "record_marks": {
+     "world": 238.24,
+     "personal": {
+      "Ilia Malinin": 238.24,
+      "Владислав Дикиджи": 205.48,
+      "Shun Sato": 194.86,
+      "Daniel Grassl": 194.72,
+      "Kevin Aymoz": 190.84,
+      "Jason Brown": 185.87,
+      "Пётр Гуменник": 184.49,
+      "Lukas Britschgi": 184.19,
+      "Rio Nakata": 178.96,
+      "Vladimir Samoilov": 164.18,
+      "Francois Pitot": 155.72,
+      "Nozomu Yoshioka": 147.65
+     }
+    }
    },
    "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
@@ -72633,8 +72963,8 @@
    "level": "junior",
    "seg": "РТ",
    "title": "Посвященные государственности Удмуртии — юниорские танцы РТ",
-   "start": "2026-11-28T13:45:00+03:00",
-   "end": "2026-11-28T15:55:00+03:00",
+   "start": "2026-11-28T16:48:00+03:00",
+   "end": "2026-11-28T18:58:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
@@ -72657,7 +72987,7 @@
     "Полина Пунегова / Дмитрий Кашубин"
    ],
    "src": "https://fsperm.ru/2627/281126/",
-   "desc": "Начало: 13:45 МСК",
+   "desc": "Начало: 16:48 МСК",
    "field": [
     {
      "name": "Алиса Борисова / Дмитрий Гладнев",
@@ -72741,85 +73071,6 @@
      "Варвара Сергеевна СТЕРЛЯДЕВА / Владислав Денисович МУХИН": "Варвара Стерлядева / Владислав Мухин",
      "Маргарита Иннокентьева СЫРОВА / Илья Петрович ПАВЛИНОВ": "Маргарита Иннокентьева Сырова / Илья Павлинов",
      "Милана Муратовна ЧЕГЕМОВА / Кирилл Сергеевич ЕВГРАФОВ": "Милана Чегемова / Кирилл Евграфов"
-    },
-    "basis": null
-   },
-   "proto": null
-  },
-  {
-   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:dance-senior-rt",
-   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
-   "tournament": "Посвященные государственности Удмуртии",
-   "kind": "dance",
-   "level": "senior",
-   "seg": "РТ",
-   "title": "Посвященные государственности Удмуртии — танцы РТ",
-   "start": "2026-11-28T16:20:00+03:00",
-   "end": "2026-11-28T17:25:00+03:00",
-   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
-   "intl": false,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Александра Прокопец / Александр Васькович",
-    "Алиса Крайнюкова / Семен Нетсев",
-    "Ангелина Сенько / Вадим Кайзер",
-    "Анна Смирнова / Богдан Шамков",
-    "Валерия Бугаевская / Егор Козлов",
-    "Диана Арнет / Мирон Суслов",
-    "Ирина Кузнецова / Андрей Тихомиров",
-    "Мария Иванова / Олег Мориц"
-   ],
-   "src": "https://fsperm.ru/2627/281126/",
-   "desc": "Начало: 16:20 МСК",
-   "field": [
-    {
-     "name": "Александра Прокопец / Александр Васькович",
-     "nation": ""
-    },
-    {
-     "name": "Алиса Крайнюкова / Семен Нетсев",
-     "nation": ""
-    },
-    {
-     "name": "Ангелина Сенько / Вадим Кайзер",
-     "nation": ""
-    },
-    {
-     "name": "Анна Смирнова / Богдан Шамков",
-     "nation": ""
-    },
-    {
-     "name": "Валерия Бугаевская / Егор Козлов",
-     "nation": ""
-    },
-    {
-     "name": "Диана Арнет / Мирон Суслов",
-     "nation": ""
-    },
-    {
-     "name": "Ирина Кузнецова / Андрей Тихомиров",
-     "nation": ""
-    },
-    {
-     "name": "Мария Иванова / Олег Мориц",
-     "nation": ""
-    }
-   ],
-   "live": {
-    "idx": "https://fsperm.ru/2627/281126/",
-    "seg": "https://fsperm.ru/2627/281126/SEG015.HTM",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Диана Артуровна АРНЕТ / Мирон Игоревич СУСЛОВ": "Диана Арнет / Мирон Суслов",
-     "Валерия Олеговна БУГАЕВСКАЯ / Егор Петрович КОЗЛОВ": "Валерия Бугаевская / Егор Козлов",
-     "Мария Олеговна ИВАНОВА / Олег Станиславович МОРИЦ": "Мария Иванова / Олег Мориц",
-     "Алиса Константиновна КРАЙНЮКОВА / Семен Романович НЕТСЕВ": "Алиса Крайнюкова / Семен Нетсев",
-     "Ирина Игоревна КУЗНЕЦОВА / Андрей Станиславович ТИХОМИРОВ": "Ирина Кузнецова / Андрей Тихомиров",
-     "Александра Викторовна ПРОКОПЕЦ / Александр Ильич ВАСЬКОВИЧ": "Александра Прокопец / Александр Васькович",
-     "Ангелина Дмитриевна СЕНЬКО / Вадим Павлович КАЙЗЕР": "Ангелина Сенько / Вадим Кайзер",
-     "Анна Алексеевна СМИРНОВА / Богдан Алексеевич ШАМКОВ": "Анна Смирнова / Богдан Шамков"
     },
     "basis": null
    },
@@ -73257,6 +73508,85 @@
    "proto": null
   },
   {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:dance-senior-rt",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "dance",
+   "level": "senior",
+   "seg": "РТ",
+   "title": "Посвященные государственности Удмуртии — танцы РТ",
+   "start": "2026-11-28T19:23:00+03:00",
+   "end": "2026-11-28T20:28:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Александра Прокопец / Александр Васькович",
+    "Алиса Крайнюкова / Семен Нетсев",
+    "Ангелина Сенько / Вадим Кайзер",
+    "Анна Смирнова / Богдан Шамков",
+    "Валерия Бугаевская / Егор Козлов",
+    "Диана Арнет / Мирон Суслов",
+    "Ирина Кузнецова / Андрей Тихомиров",
+    "Мария Иванова / Олег Мориц"
+   ],
+   "src": "https://fsperm.ru/2627/281126/",
+   "desc": "Начало: 19:23 МСК",
+   "field": [
+    {
+     "name": "Александра Прокопец / Александр Васькович",
+     "nation": ""
+    },
+    {
+     "name": "Алиса Крайнюкова / Семен Нетсев",
+     "nation": ""
+    },
+    {
+     "name": "Ангелина Сенько / Вадим Кайзер",
+     "nation": ""
+    },
+    {
+     "name": "Анна Смирнова / Богдан Шамков",
+     "nation": ""
+    },
+    {
+     "name": "Валерия Бугаевская / Егор Козлов",
+     "nation": ""
+    },
+    {
+     "name": "Диана Арнет / Мирон Суслов",
+     "nation": ""
+    },
+    {
+     "name": "Ирина Кузнецова / Андрей Тихомиров",
+     "nation": ""
+    },
+    {
+     "name": "Мария Иванова / Олег Мориц",
+     "nation": ""
+    }
+   ],
+   "live": {
+    "idx": "https://fsperm.ru/2627/281126/",
+    "seg": "https://fsperm.ru/2627/281126/SEG015.HTM",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Диана Артуровна АРНЕТ / Мирон Игоревич СУСЛОВ": "Диана Арнет / Мирон Суслов",
+     "Валерия Олеговна БУГАЕВСКАЯ / Егор Петрович КОЗЛОВ": "Валерия Бугаевская / Егор Козлов",
+     "Мария Олеговна ИВАНОВА / Олег Станиславович МОРИЦ": "Мария Иванова / Олег Мориц",
+     "Алиса Константиновна КРАЙНЮКОВА / Семен Романович НЕТСЕВ": "Алиса Крайнюкова / Семен Нетсев",
+     "Ирина Игоревна КУЗНЕЦОВА / Андрей Станиславович ТИХОМИРОВ": "Ирина Кузнецова / Андрей Тихомиров",
+     "Александра Викторовна ПРОКОПЕЦ / Александр Ильич ВАСЬКОВИЧ": "Александра Прокопец / Александр Васькович",
+     "Ангелина Дмитриевна СЕНЬКО / Вадим Павлович КАЙЗЕР": "Ангелина Сенько / Вадим Кайзер",
+     "Анна Алексеевна СМИРНОВА / Богдан Алексеевич ШАМКОВ": "Анна Смирнова / Богдан Шамков"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
+  },
+  {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:women-senior-kp",
    "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
    "tournament": "Посвященные государственности Удмуртии",
@@ -73264,8 +73594,8 @@
    "level": "senior",
    "seg": "КП",
    "title": "Посвященные государственности Удмуртии — женщины КП",
-   "start": "2026-11-28T17:45:00+03:00",
-   "end": "2026-11-28T20:00:00+03:00",
+   "start": "2026-11-28T20:45:00+03:00",
+   "end": "2026-11-28T23:00:00+03:00",
    "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
    "intl": false,
    "broadcast": [],
@@ -73288,7 +73618,7 @@
     "Ульяна Третьякова"
    ],
    "src": "https://fsperm.ru/2627/281126/",
-   "desc": "Начало: 17:45 МСК",
+   "desc": "Начало: 20:45 МСК",
    "field": [
     {
      "name": "Александра Пискотина",
@@ -73372,61 +73702,6 @@
      "Ульяна Олеговна ТРЕТЬЯКОВА": "Ульяна Третьякова",
      "Полина Александровна ЦУРИКОВА": "Полина Цурикова",
      "Анастасия Сергеевна ШИГИНА": "Анастасия Шигина"
-    },
-    "basis": null
-   },
-   "proto": null
-  },
-  {
-   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:men-senior-kp",
-   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
-   "tournament": "Посвященные государственности Удмуртии",
-   "kind": "men",
-   "level": "senior",
-   "seg": "КП",
-   "title": "Посвященные государственности Удмуртии — мужчины КП",
-   "start": "2026-11-28T19:40:00+03:00",
-   "end": "2026-11-28T20:15:00+03:00",
-   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
-   "intl": false,
-   "broadcast": [],
-   "ours": [],
-   "athletes": [
-    "Дмитрий Железняк",
-    "Егор Баулин",
-    "Иван Макиев",
-    "Станислав Гунтасов"
-   ],
-   "src": "https://fsperm.ru/2627/281126/",
-   "desc": "Начало: 19:40 МСК",
-   "field": [
-    {
-     "name": "Дмитрий Железняк",
-     "nation": ""
-    },
-    {
-     "name": "Егор Баулин",
-     "nation": ""
-    },
-    {
-     "name": "Иван Макиев",
-     "nation": ""
-    },
-    {
-     "name": "Станислав Гунтасов",
-     "nation": ""
-    }
-   ],
-   "live": {
-    "idx": "https://fsperm.ru/2627/281126/",
-    "seg": "https://fsperm.ru/2627/281126/SEG007.HTM",
-    "cat": null,
-    "first": null,
-    "names": {
-     "Егор Максимович БАУЛИН": "Егор Баулин",
-     "Станислав Олегович ГУНТАСОВ": "Станислав Гунтасов",
-     "Дмитрий Сергеевич ЖЕЛЕЗНЯК": "Дмитрий Железняк",
-     "Иван Юрьевич МАКИЕВ": "Иван Макиев"
     },
     "basis": null
    },
@@ -73645,6 +73920,61 @@
     "basis": null
    },
    "proto": null
+  },
+  {
+   "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:men-senior-kp",
+   "tid": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026",
+   "tournament": "Посвященные государственности Удмуртии",
+   "kind": "men",
+   "level": "senior",
+   "seg": "КП",
+   "title": "Посвященные государственности Удмуртии — мужчины КП",
+   "start": "2026-11-28T22:40:00+03:00",
+   "end": "2026-11-28T23:15:00+03:00",
+   "venue": "г. Глазов, СКК «Прогресс» «Глазов Арена», Удмуртская Республика",
+   "intl": false,
+   "broadcast": [],
+   "ours": [],
+   "athletes": [
+    "Дмитрий Железняк",
+    "Егор Баулин",
+    "Иван Макиев",
+    "Станислав Гунтасов"
+   ],
+   "src": "https://fsperm.ru/2627/281126/",
+   "desc": "Начало: 22:40 МСК",
+   "field": [
+    {
+     "name": "Дмитрий Железняк",
+     "nation": ""
+    },
+    {
+     "name": "Егор Баулин",
+     "nation": ""
+    },
+    {
+     "name": "Иван Макиев",
+     "nation": ""
+    },
+    {
+     "name": "Станислав Гунтасов",
+     "nation": ""
+    }
+   ],
+   "live": {
+    "idx": "https://fsperm.ru/2627/281126/",
+    "seg": "https://fsperm.ru/2627/281126/SEG007.HTM",
+    "cat": null,
+    "first": null,
+    "names": {
+     "Егор Максимович БАУЛИН": "Егор Баулин",
+     "Станислав Олегович ГУНТАСОВ": "Станислав Гунтасов",
+     "Дмитрий Сергеевич ЖЕЛЕЗНЯК": "Дмитрий Железняк",
+     "Иван Юрьевич МАКИЕВ": "Иван Макиев"
+    },
+    "basis": null
+   },
+   "proto": "fsr_vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026.json"
   },
   {
    "id": "gs:skate-celje:men-senior-kp",
@@ -75746,7 +76076,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "desc": "Россияне:\n• Полина Шешелева / Егор Карнаухов\n\nНачало: 08:45 МСК\nТрансляция: Okko / YouTube ISU",
@@ -75816,7 +76147,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 10:00 МСК\nТрансляция: Okko / YouTube ISU",
@@ -75886,7 +76218,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "desc": "Россияне:\n• София Дзепка\n\nНачало: 11:10 МСК\nТрансляция: Okko / YouTube ISU",
@@ -75956,7 +76289,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "desc": "Россияне:\n• Мария Фефелова / Артём Валов\n\nНачало: 15:15 МСК\nТрансляция: Okko / YouTube ISU",
@@ -76026,7 +76360,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "desc": "Россияне:\n• Полина Шешелева / Егор Карнаухов\n\nНачало: 09:45 МСК\nТрансляция: Okko / YouTube ISU",
@@ -76096,7 +76431,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "desc": "Россияне:\n• Мария Фефелова / Артём Валов\n\nНачало: 11:10 МСК\nТрансляция: Okko / YouTube ISU",
@@ -76166,7 +76502,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "desc": "Россияне:\n• София Дзепка\n\nНачало: 12:30 МСК\nТрансляция: Okko / YouTube ISU",
@@ -76236,7 +76573,8 @@
     },
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ],
    "desc": "Россияне:\n• Лев Лазарев\n\nНачало: 11:00 МСК\nТрансляция: Okko / YouTube ISU",
@@ -76629,7 +76967,8 @@
    "watch": [
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ]
   },
@@ -76732,7 +77071,8 @@
    "watch": [
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ]
   },
@@ -76849,7 +77189,8 @@
    "watch": [
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ]
   },
@@ -76956,7 +77297,8 @@
    "watch": [
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ]
   },
@@ -77033,7 +77375,8 @@
    "watch": [
     {
      "name": "YouTube ISU",
-     "url": "https://www.youtube.com/@SkatingISU/live"
+     "url": "https://www.youtube.com/@SkatingISU/streams",
+     "note": "Все эфиры канала"
     }
    ]
   },
@@ -126585,5 +126928,5 @@
   "Ярослав Нечаев": "photos/df55625c66ca78c1.jpg",
   "Ясмина Кадырова": ""
  },
- "rev": "e78d55acc0f03e0d"
+ "rev": "3a4d516df94e959d"
 }
