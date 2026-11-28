@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-28T09:57:03+03:00",
- "checked": "2026-11-28T08:11:01.584775+00:00",
+ "checked": "2026-11-28T08:15:27.115647+00:00",
  "complete": false,
  "epoch": 1,
  "facts_version": "8",
@@ -71670,7 +71670,7 @@
      "time": "11:01",
      "no": 4,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "116.59"
     },
     {
@@ -71678,7 +71678,9 @@
      "nation": "RUS",
      "time": "11:08",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "121.62"
     },
     {
      "name": "Алина Горбачёва",
@@ -71713,7 +71715,7 @@
      "url": "https://www.youtube.com/@SkatingISU/live"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Sarah Everhardt — 126.11\n2. Виктория Сафонова — 116.59\n3. Julia Sauter — 114.38\n\nРоссияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
+   "desc": "Промежуточные итоги:\n1. Sarah Everhardt — 126.11\n2. Аделия Петросян — 121.62\n3. Виктория Сафонова — 116.59\n\nРоссияне:\n• Виктория Сафонова — 11:01\n• Аделия Петросян — 11:08\n• Алина Горбачёва — 11:56\n\nНачало: 10:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
      "name": "Sarah Everhardt",
@@ -71730,7 +71732,7 @@
      "time": "10:45",
      "no": 2,
      "warmup": 1,
-     "place": 4,
+     "place": 5,
      "points": "112.15"
     },
     {
@@ -71739,7 +71741,7 @@
      "time": "10:53",
      "no": 3,
      "warmup": 1,
-     "place": 3,
+     "place": 4,
      "points": "114.38"
     },
     {
@@ -71748,7 +71750,7 @@
      "time": "11:01",
      "no": 4,
      "warmup": 1,
-     "place": 2,
+     "place": 3,
      "points": "116.59"
     },
     {
@@ -71756,7 +71758,9 @@
      "nation": "RUS",
      "time": "11:08",
      "no": 5,
-     "warmup": 1
+     "warmup": 1,
+     "place": 2,
+     "points": "121.62"
     },
     {
      "name": "Madeline Schizas",
@@ -71839,15 +71843,15 @@
     },
     {
      "place": 2,
-     "name": "Виктория Сафонова",
-     "nation": "BLR",
-     "points": "116.59"
+     "name": "Аделия Петросян",
+     "nation": "RUS",
+     "points": "121.62"
     },
     {
      "place": 3,
-     "name": "Julia Sauter",
-     "nation": "ROU",
-     "points": "114.38"
+     "name": "Виктория Сафонова",
+     "nation": "BLR",
+     "points": "116.59"
     }
    ],
    "provisional": true
@@ -125118,5 +125122,5 @@
   "Ryan Bedard": "photos/c2fe03ace260e6d7.jpg",
   "Maksim Varakin": "photos/cebbaca1aac7632a.jpg"
  },
- "rev": "a7e84af50c8f8b6e"
+ "rev": "b95ec9cf7f9c1721"
 }
