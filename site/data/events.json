@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-28T14:35:59+03:00",
- "checked": "2026-11-28T12:27:26.959821+00:00",
+ "generated": "2026-11-28T15:40:08+03:00",
+ "checked": "2026-11-28T15:40:08+03:00",
  "complete": true,
  "epoch": 1,
  "facts_version": "9",
@@ -72255,68 +72255,56 @@
    ],
    "athletes": [
     "Ajda Preskar",
-    "Alica Lengyelova",
     "Angelica Orsi",
-    "Anna Sannikova",
-    "Arina Gertsog",
     "Djurdja Nikolic",
     "Emma Cerkalova",
     "Enja Sivic",
     "Hana Operckal",
     "Hanna Elteto",
     "Isabella Niederleitner",
-    "Jazlynn Höppener",
     "Lara Achermann",
     "Liana Smrekar",
-    "Lucca Dijkhuizen",
     "Luna Rozman",
-    "Milena Velcheva",
     "Minea Montonen",
     "Neza Lusic",
     "Nika Sajko",
     "Nina Lazarevic",
     "Q",
-    "Roos Harkema",
     "Tamara Grahovac",
-    "Teresa Naia Eder",
-    "Tereza Havrankova",
     "Tiana Kaligaro",
     "Varvara Poder",
-    "Victoria Yonemori",
-    "Zala Kas",
     "Zoja Zupancic Prevolsek",
-    "Zsofia Szeplaki",
     "Алиса Заикина"
    ],
    "src": "https://dev.mbit.si/EC/skcel2026/index.htm",
    "podium": [
     {
      "place": 1,
-     "name": "Julia Vaha-ruohola",
-     "nation": "FIN",
-     "points": "58.27"
+     "name": "Arina Gertsog",
+     "nation": "GER",
+     "points": "66.44"
     },
     {
      "place": 2,
-     "name": "Varvara Abramkina",
-     "nation": "BUL",
-     "points": "57.70"
+     "name": "Alica Lengyelova",
+     "nation": "SVK",
+     "points": "59.90"
     },
     {
      "place": 3,
-     "name": "Aleksandra Janikowska",
-     "nation": "POL",
-     "points": "53.39"
+     "name": "Lucca Dijkhuizen",
+     "nation": "NED",
+     "points": "59.05"
     }
    ],
-   "desc": "Промежуточные итоги:\n1. Julia Vaha-ruohola — 58.27\n2. Varvara Abramkina — 57.70\n3. Aleksandra Janikowska — 53.39\n\nРоссияне:\n• Алиса Заикина — 16:47\n\nНачало: 10:30 МСК",
+   "desc": "Промежуточные итоги:\n1. Arina Gertsog — 66.44\n2. Alica Lengyelova — 59.90\n3. Lucca Dijkhuizen — 59.05\n\nРоссияне:\n• Алиса Заикина — 16:47\n\nНачало: 10:30 МСК",
    "field": [
     {
      "name": "Djurdja Nikolic",
      "nation": "SRB",
      "no": 1,
      "warmup": 1,
-     "place": 26,
+     "place": 36,
      "points": "29.06",
      "time": "10:36"
     },
@@ -72325,7 +72313,7 @@
      "nation": "SLO",
      "no": 3,
      "warmup": 1,
-     "place": 27,
+     "place": 37,
      "points": "28.98",
      "time": "10:47"
     },
@@ -72334,7 +72322,7 @@
      "nation": "SLO",
      "no": 6,
      "warmup": 30,
-     "place": 21,
+     "place": 31,
      "points": "34.08",
      "time": "11:08"
     },
@@ -72343,7 +72331,7 @@
      "nation": "ITA",
      "no": 12,
      "warmup": 3,
-     "place": 25,
+     "place": 35,
      "points": "31.54",
      "time": "11:59"
     },
@@ -72352,25 +72340,16 @@
      "nation": "SLO",
      "no": 13,
      "warmup": 3,
-     "place": 28,
+     "place": 38,
      "points": "28.35",
      "time": "12:05"
-    },
-    {
-     "name": "Jazlynn Höppener",
-     "nation": "NED",
-     "no": 15,
-     "warmup": 3,
-     "place": 19,
-     "points": "36.57",
-     "time": "12:16"
     },
     {
      "name": "Tamara Grahovac",
      "nation": "CRO",
      "no": 16,
      "warmup": 3,
-     "place": 31,
+     "place": 41,
      "points": "18.93",
      "time": "12:21"
     },
@@ -72379,7 +72358,7 @@
      "nation": "SLO",
      "no": 19,
      "warmup": 4,
-     "place": 32,
+     "place": 42,
      "points": "17.49",
      "time": "12:42"
     },
@@ -72388,7 +72367,7 @@
      "nation": "SLO",
      "no": 22,
      "warmup": 4,
-     "place": 29,
+     "place": 39,
      "points": "27.30",
      "time": "12:58"
     },
@@ -72397,7 +72376,7 @@
      "nation": "FIN",
      "no": 23,
      "warmup": 4,
-     "place": 23,
+     "place": 33,
      "points": "32.75",
      "time": "13:04"
     },
@@ -72406,7 +72385,7 @@
      "nation": "SLO",
      "no": 25,
      "warmup": 30,
-     "place": 24,
+     "place": 34,
      "points": "32.03",
      "time": "13:33"
     },
@@ -72415,7 +72394,7 @@
      "nation": "AUT",
      "no": 27,
      "warmup": 30,
-     "place": 22,
+     "place": 32,
      "points": "33.64",
      "time": "13:44"
     },
@@ -72424,7 +72403,7 @@
      "nation": "CRO",
      "no": 28,
      "warmup": 30,
-     "place": 30,
+     "place": 40,
      "points": "26.93",
      "time": "13:50"
     },
@@ -72433,36 +72412,15 @@
      "nation": "HUN",
      "no": 31,
      "warmup": 30,
-     "place": 20,
+     "place": 30,
      "points": "35.31",
      "time": "14:10"
     },
     {
      "name": "Q",
-     "nation": "FIN",
-     "no": 35,
-     "warmup": null
-    },
-    {
-     "name": "Alica Lengyelova",
-     "nation": "SVK",
-     "time": "15:02",
-     "no": 37,
-     "warmup": 7
-    },
-    {
-     "name": "Anna Sannikova",
-     "nation": "KAZ",
-     "time": "15:24",
-     "no": 41,
-     "warmup": 7
-    },
-    {
-     "name": "Arina Gertsog",
      "nation": "GER",
-     "time": "15:18",
      "no": 40,
-     "warmup": 7
+     "warmup": 0
     },
     {
      "name": "Emma Cerkalova",
@@ -72479,25 +72437,11 @@
      "warmup": 9
     },
     {
-     "name": "Lucca Dijkhuizen",
-     "nation": "NED",
-     "time": "15:39",
-     "no": 43,
-     "warmup": 8
-    },
-    {
      "name": "Luna Rozman",
      "nation": "SLO",
      "time": "16:36",
      "no": 50,
      "warmup": 9
-    },
-    {
-     "name": "Milena Velcheva",
-     "nation": "BUL",
-     "time": "15:13",
-     "no": 39,
-     "warmup": 7
     },
     {
      "name": "Neza Lusic",
@@ -72507,45 +72451,10 @@
      "warmup": 9
     },
     {
-     "name": "Roos Harkema",
-     "nation": "NED",
-     "time": "14:56",
-     "no": 36,
-     "warmup": 7
-    },
-    {
-     "name": "Teresa Naia Eder",
-     "nation": "AUT",
-     "time": "15:50",
-     "no": 45,
-     "warmup": 8
-    },
-    {
-     "name": "Tereza Havrankova",
-     "nation": "CZE",
-     "time": "15:44",
-     "no": 44,
-     "warmup": 8
-    },
-    {
      "name": "Varvara Poder",
      "nation": "EST",
      "time": "15:55",
      "no": 46,
-     "warmup": 8
-    },
-    {
-     "name": "Victoria Yonemori",
-     "nation": "AUT",
-     "time": "15:07",
-     "no": 38,
-     "warmup": 7
-    },
-    {
-     "name": "Zala Kas",
-     "nation": "SLO",
-     "time": "15:33",
-     "no": 42,
      "warmup": 8
     },
     {
@@ -72554,13 +72463,6 @@
      "time": "16:41",
      "no": 51,
      "warmup": 9
-    },
-    {
-     "name": "Zsofia Szeplaki",
-     "nation": "HUN",
-     "time": "16:01",
-     "no": 47,
-     "warmup": 8
     },
     {
      "name": "Алиса Заикина",
@@ -72589,7 +72491,6 @@
     "first": null,
     "names": {
      "Q": "Q",
-     "Jazlynn HÖPPENER": "Jazlynn Höppener",
      "Hanna ELTETO": "Hanna Elteto",
      "Liana SMREKAR": "Liana Smrekar",
      "Isabella NIEDERLEITNER": "Isabella Niederleitner",
@@ -72603,18 +72504,7 @@
      "Nika SAJKO": "Nika Sajko",
      "Tamara GRAHOVAC": "Tamara Grahovac",
      "Ajda PRESKAR": "Ajda Preskar",
-     "Roos HARKEMA": "Roos Harkema",
-     "Alica LENGYELOVA": "Alica Lengyelova",
-     "Victoria YONEMORI": "Victoria Yonemori",
-     "Milena VELCHEVA": "Milena Velcheva",
-     "Arina GERTSOG": "Arina Gertsog",
-     "Anna SANNIKOVA": "Anna Sannikova",
-     "Zala KAS": "Zala Kas",
-     "Lucca DIJKHUIZEN": "Lucca Dijkhuizen",
-     "Tereza HAVRANKOVA": "Tereza Havrankova",
-     "Teresa Naia EDER": "Teresa Naia Eder",
      "Varvara PODER": "Varvara Poder",
-     "Zsofia SZEPLAKI": "Zsofia Szeplaki",
      "Neza LUSIC": "Neza Lusic",
      "Emma CERKALOVA": "Emma Cerkalova",
      "Luna ROZMAN": "Luna Rozman",
@@ -72635,7 +72525,7 @@
    "seg": "ПП",
    "title": "GP NHK Trophy — мужчины ПП",
    "start": "2026-11-28T13:30:00+03:00",
-   "end": "2026-11-28T15:20:00+03:00",
+   "end": "2026-11-28T15:15:00+03:00",
    "venue": "Tokyo, Japan",
    "intl": true,
    "broadcast": [
@@ -72646,22 +72536,22 @@
     {
      "name": "Владислав Дикиджи",
      "nation": "RUS",
-     "place": 6,
-     "points": "164.76",
-     "time": "14:01",
      "no": 4,
      "warmup": 1,
-     "final": 7
+     "place": 6,
+     "points": "164.76",
+     "final": 7,
+     "time": "14:01"
     },
     {
      "name": "Пётр Гуменник",
      "nation": "RUS",
-     "place": 7,
-     "points": "162.51",
-     "time": "14:32",
      "no": 7,
      "warmup": 2,
-     "final": 6
+     "place": 7,
+     "points": "162.51",
+     "final": 6,
+     "time": "14:32"
     }
    ],
    "athletes": [
@@ -72710,127 +72600,147 @@
      "points": "175.43"
     }
    ],
+   "total": [
+    {
+     "place": 1,
+     "name": "Ilia Malinin",
+     "nation": "USA",
+     "points": "305.31"
+    },
+    {
+     "place": 2,
+     "name": "Kevin Aymoz",
+     "nation": "FRA",
+     "points": "270.49"
+    },
+    {
+     "place": 3,
+     "name": "Lukas Britschgi",
+     "nation": "SUI",
+     "points": "266.02"
+    }
+   ],
    "desc": "Итог:\n1. Ilia Malinin — 190.50\n2. Kevin Aymoz — 176.34\n3. Rio Nakata — 175.43\n\nИтог турнира:\n1. Ilia Malinin — 305.31\n2. Kevin Aymoz — 270.49\n3. Lukas Britschgi — 266.02\n\nПримечательное:\n• Ilia Malinin — Секвенция 4Lz+3A+2A\n• Ilia Malinin — Отрыв от второго места — 34.82 балла\n\nРоссияне:\n• Владислав Дикиджи — 14:01\n• Пётр Гуменник — 14:32\n\nНачало: 13:30 МСК\nТрансляция: Okko / YouTube ISU",
    "field": [
     {
-     "name": "Daniel Grassl",
-     "nation": "ITA",
-     "time": "14:48",
-     "no": 9,
-     "warmup": 2,
-     "place": 5,
-     "points": "171.20",
-     "final": 4
-    },
-    {
      "name": "Francois Pitot",
      "nation": "FRA",
-     "place": 11,
-     "points": "144.66",
-     "time": "13:38",
      "no": 1,
      "warmup": 1,
-     "final": 11
-    },
-    {
-     "name": "Ilia Malinin",
-     "nation": "USA",
-     "time": "15:12",
-     "no": 12,
-     "warmup": 2,
-     "place": 1,
-     "points": "190.50",
-     "final": 1
-    },
-    {
-     "name": "Jason Brown",
-     "nation": "USA",
-     "place": 8,
-     "points": "158.91",
-     "time": "14:08",
-     "no": 5,
-     "warmup": 1,
-     "final": 9
-    },
-    {
-     "name": "Kevin Aymoz",
-     "nation": "FRA",
-     "time": "14:56",
-     "no": 10,
-     "warmup": 2,
-     "place": 2,
-     "points": "176.34",
-     "final": 2
-    },
-    {
-     "name": "Lukas Britschgi",
-     "nation": "SUI",
-     "time": "14:40",
-     "no": 8,
-     "warmup": 2,
-     "place": 4,
-     "points": "175.21",
-     "final": 3
+     "place": 11,
+     "points": "144.66",
+     "final": 11,
+     "time": "13:38"
     },
     {
      "name": "Nozomu Yoshioka",
      "nation": "JPN",
-     "place": 12,
-     "points": "141.79",
-     "time": "13:45",
      "no": 2,
      "warmup": 1,
-     "final": 12
+     "place": 12,
+     "points": "141.79",
+     "final": 12,
+     "time": "13:45"
     },
     {
      "name": "Rio Nakata",
      "nation": "JPN",
-     "place": 3,
-     "points": "175.43",
-     "time": "13:53",
      "no": 3,
      "warmup": 1,
-     "final": 5
-    },
-    {
-     "name": "Shun Sato",
-     "nation": "JPN",
-     "time": "15:04",
-     "no": 11,
-     "warmup": 2,
-     "place": 9,
-     "points": "151.73",
-     "final": 8
-    },
-    {
-     "name": "Vladimir Samoilov",
-     "nation": "POL",
-     "place": 10,
-     "points": "145.61",
-     "time": "14:16",
-     "no": 6,
-     "warmup": 1,
-     "final": 10
+     "place": 3,
+     "points": "175.43",
+     "final": 5,
+     "time": "13:53"
     },
     {
      "name": "Владислав Дикиджи",
      "nation": "RUS",
-     "place": 6,
-     "points": "164.76",
-     "time": "14:01",
      "no": 4,
      "warmup": 1,
-     "final": 7
+     "place": 6,
+     "points": "164.76",
+     "final": 7,
+     "time": "14:01"
+    },
+    {
+     "name": "Jason Brown",
+     "nation": "USA",
+     "no": 5,
+     "warmup": 1,
+     "place": 8,
+     "points": "158.91",
+     "final": 9,
+     "time": "14:08"
+    },
+    {
+     "name": "Vladimir Samoilov",
+     "nation": "POL",
+     "no": 6,
+     "warmup": 1,
+     "place": 10,
+     "points": "145.61",
+     "final": 10,
+     "time": "14:16"
     },
     {
      "name": "Пётр Гуменник",
      "nation": "RUS",
-     "place": 7,
-     "points": "162.51",
-     "time": "14:32",
      "no": 7,
      "warmup": 2,
-     "final": 6
+     "place": 7,
+     "points": "162.51",
+     "final": 6,
+     "time": "14:32"
+    },
+    {
+     "name": "Lukas Britschgi",
+     "nation": "SUI",
+     "no": 8,
+     "warmup": 2,
+     "place": 4,
+     "points": "175.21",
+     "final": 3,
+     "time": "14:40"
+    },
+    {
+     "name": "Daniel Grassl",
+     "nation": "ITA",
+     "no": 9,
+     "warmup": 2,
+     "place": 5,
+     "points": "171.20",
+     "final": 4,
+     "time": "14:48"
+    },
+    {
+     "name": "Kevin Aymoz",
+     "nation": "FRA",
+     "no": 10,
+     "warmup": 2,
+     "place": 2,
+     "points": "176.34",
+     "final": 2,
+     "time": "14:56"
+    },
+    {
+     "name": "Shun Sato",
+     "nation": "JPN",
+     "no": 11,
+     "warmup": 2,
+     "place": 9,
+     "points": "151.73",
+     "final": 8,
+     "time": "15:04"
+    },
+    {
+     "name": "Ilia Malinin",
+     "nation": "USA",
+     "no": 12,
+     "warmup": 2,
+     "place": 1,
+     "points": "190.50",
+     "final": 1,
+     "time": "15:12"
     }
    ],
    "live": {
@@ -72839,18 +72749,18 @@
     "cat": "https://results.isu.org/results/season2627/gpjpn2026/CAT001RS.htm",
     "first": "https://results.isu.org/results/season2627/gpjpn2026/SEG001.htm",
     "names": {
+     "Ilia MALININ": "Ilia Malinin",
+     "Kevin AYMOZ": "Kevin Aymoz",
      "Rio NAKATA": "Rio Nakata",
-     "Petr GUMENNIK": "Пётр Гуменник",
-     "Vladislav DIKIDZHI": "Владислав Дикиджи",
-     "Jason BROWN": "Jason Brown",
-     "Vladimir SAMOILOV": "Vladimir Samoilov",
-     "Francois PITOT": "Francois Pitot",
-     "Nozomu YOSHIOKA": "Nozomu Yoshioka",
      "Lukas BRITSCHGI": "Lukas Britschgi",
      "Daniel GRASSL": "Daniel Grassl",
-     "Kevin AYMOZ": "Kevin Aymoz",
+     "Vladislav DIKIDZHI": "Владислав Дикиджи",
+     "Petr GUMENNIK": "Пётр Гуменник",
+     "Jason BROWN": "Jason Brown",
      "Shun SATO": "Shun Sato",
-     "Ilia MALININ": "Ilia Malinin"
+     "Vladimir SAMOILOV": "Vladimir Samoilov",
+     "Francois PITOT": "Francois Pitot",
+     "Nozomu YOSHIOKA": "Nozomu Yoshioka"
     },
     "basis": "judges",
     "record_marks": {
@@ -72871,7 +72781,6 @@
      }
     }
    },
-   "proto": "isu_isu-gp-nhk-trophy-2026.json",
    "facts": [
     {
      "who": "Ilia Malinin",
@@ -72884,26 +72793,7 @@
      "kind": "place"
     }
    ],
-   "total": [
-    {
-     "place": 1,
-     "name": "Ilia Malinin",
-     "nation": "USA",
-     "points": "305.31"
-    },
-    {
-     "place": 2,
-     "name": "Kevin Aymoz",
-     "nation": "FRA",
-     "points": "270.49"
-    },
-    {
-     "place": 3,
-     "name": "Lukas Britschgi",
-     "nation": "SUI",
-     "points": "266.02"
-    }
-   ]
+   "proto": "isu_isu-gp-nhk-trophy-2026.json"
   },
   {
    "id": "fsr:vserossijskie-sorevnovaniya-posvyashchennye-gosudarstvennosti-udmurtii-2026:dance-junior-rt",
@@ -73532,18 +73422,24 @@
    "field": [
     {
      "name": "Александра Прокопец / Александр Васькович",
-     "nation": ""
-    },
-    {
-     "name": "Алиса Крайнюкова / Семен Нетсев",
-     "nation": ""
-    },
-    {
-     "name": "Ангелина Сенько / Вадим Кайзер",
-     "nation": ""
+     "nation": "",
+     "no": 1,
+     "warmup": null
     },
     {
      "name": "Анна Смирнова / Богдан Шамков",
+     "nation": "",
+     "no": 2,
+     "warmup": null
+    },
+    {
+     "name": "Алиса Крайнюкова / Семен Нетсев",
+     "nation": "",
+     "no": 3,
+     "warmup": null
+    },
+    {
+     "name": "Ангелина Сенько / Вадим Кайзер",
      "nation": ""
     },
     {
@@ -73569,14 +73465,14 @@
     "cat": null,
     "first": null,
     "names": {
-     "Диана Артуровна АРНЕТ / Мирон Игоревич СУСЛОВ": "Диана Арнет / Мирон Суслов",
-     "Валерия Олеговна БУГАЕВСКАЯ / Егор Петрович КОЗЛОВ": "Валерия Бугаевская / Егор Козлов",
-     "Мария Олеговна ИВАНОВА / Олег Станиславович МОРИЦ": "Мария Иванова / Олег Мориц",
-     "Алиса Константиновна КРАЙНЮКОВА / Семен Романович НЕТСЕВ": "Алиса Крайнюкова / Семен Нетсев",
-     "Ирина Игоревна КУЗНЕЦОВА / Андрей Станиславович ТИХОМИРОВ": "Ирина Кузнецова / Андрей Тихомиров",
      "Александра Викторовна ПРОКОПЕЦ / Александр Ильич ВАСЬКОВИЧ": "Александра Прокопец / Александр Васькович",
-     "Ангелина Дмитриевна СЕНЬКО / Вадим Павлович КАЙЗЕР": "Ангелина Сенько / Вадим Кайзер",
-     "Анна Алексеевна СМИРНОВА / Богдан Алексеевич ШАМКОВ": "Анна Смирнова / Богдан Шамков"
+     "Алиса Константиновна КРАЙНЮКОВА / Семен Романович НЕТСЕВ": "Алиса Крайнюкова / Семен Нетсев",
+     "Анна Алексеевна СМИРНОВА / Богдан Алексеевич ШАМКОВ": "Анна Смирнова / Богдан Шамков",
+     "Валерия Олеговна БУГАЕВСКАЯ / Егор Петрович КОЗЛОВ": "Валерия Бугаевская / Егор Козлов",
+     "Ирина Игоревна КУЗНЕЦОВА / Андрей Станиславович ТИХОМИРОВ": "Ирина Кузнецова / Андрей Тихомиров",
+     "Мария Валерьевна ИВАНОВА / Олег Станиславович МОРИЦ": "Мария Иванова / Олег Мориц",
+     "Диана Артуровна АРНЕТ / Мирон Игоревич СУСЛОВ": "Диана Арнет / Мирон Суслов",
+     "Ангелина Дмитриевна СЕНЬКО / Вадим Павлович КАЙЗЕР": "Ангелина Сенько / Вадим Кайзер"
     },
     "basis": null
    },
@@ -74957,7 +74853,7 @@
     "names": {
      "Диана Артуровна АРНЕТ / Мирон Игоревич СУСЛОВ": "Диана Арнет / Мирон Суслов",
      "Валерия Олеговна БУГАЕВСКАЯ / Егор Петрович КОЗЛОВ": "Валерия Бугаевская / Егор Козлов",
-     "Мария Олеговна ИВАНОВА / Олег Станиславович МОРИЦ": "Мария Иванова / Олег Мориц",
+     "Мария Валерьевна ИВАНОВА / Олег Станиславович МОРИЦ": "Мария Иванова / Олег Мориц",
      "Алиса Константиновна КРАЙНЮКОВА / Семен Романович НЕТСЕВ": "Алиса Крайнюкова / Семен Нетсев",
      "Ирина Игоревна КУЗНЕЦОВА / Андрей Станиславович ТИХОМИРОВ": "Ирина Кузнецова / Андрей Тихомиров",
      "Александра Викторовна ПРОКОПЕЦ / Александр Ильич ВАСЬКОВИЧ": "Александра Прокопец / Александр Васькович",
@@ -81222,6 +81118,7 @@
   "Мария Антоновна Тихонова",
   "Мария Артёмова",
   "Мария Бойцова",
+  "Мария Валерьевна Иванова",
   "Мария Витальевна Парамонова",
   "Мария Волченко",
   "Мария Галушкина",
@@ -127005,5 +126902,5 @@
   "Ярослав Нечаев": "photos/df55625c66ca78c1.jpg",
   "Ясмина Кадырова": ""
  },
- "rev": "99f17019fdea83e5"
+ "rev": "ef50547e4dddb020"
 }
